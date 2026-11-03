@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 /**
  * Portable bounded mesh import and non-destructive, part-aware vertex clustering.
@@ -40,14 +41,15 @@ public final class EditorMeshPipeline {
         }
     }
     /** Optional per-corner source position identities. Empty means the source supplied no indices. */
-    public record Mesh(String name,List<Triangle> triangles,long sourceBytes,List<Long> cornerVertexIds,List<EditorMeshMaterial> materials,EditorGlbReader.Document glbSource,List<Long> faceIds) {
+    public record Mesh(String name,List<Triangle> triangles,long sourceBytes,List<Long> cornerVertexIds,List<EditorMeshMaterial> materials,EditorGlbReader.Document glbSource,List<Long> faceIds,Map<String,EditorMeshFrame> frames) {
+        public Mesh(String name,List<Triangle> triangles,long sourceBytes,List<Long> cornerVertexIds,List<EditorMeshMaterial> materials,EditorGlbReader.Document glbSource,List<Long> faceIds){this(name,triangles,sourceBytes,cornerVertexIds,materials,glbSource,faceIds,Map.of());}
         public Mesh(String name,List<Triangle> triangles,long sourceBytes,List<Long> cornerVertexIds,List<EditorMeshMaterial> materials){this(name,triangles,sourceBytes,cornerVertexIds,materials,null,List.of());}
         public Mesh(String name,List<Triangle> triangles,long sourceBytes,List<Long> cornerVertexIds){this(name,triangles,sourceBytes,cornerVertexIds,List.of());}
         public Mesh(String name,List<Triangle> triangles,long sourceBytes){this(name,triangles,sourceBytes,List.of());}
         public Mesh {
             if(name==null||name.isBlank()||triangles==null
                 ||triangles.size()>MAX_TRIANGLES||sourceBytes<0)throw new IllegalArgumentException("Invalid mesh");
-            triangles=List.copyOf(triangles);materials=List.copyOf(materials);EditorMeshMaterial.validateTable(materials);var known=new HashSet<String>();for(var m:materials)known.add(m.key());for(var t:triangles)if(!t.material().isEmpty()&&!known.contains(t.material()))throw new IllegalArgumentException("Unresolved face material");
+            frames=frames.isEmpty()?Map.of():EditorMeshFrame.validate(frames,triangles.stream().map(Triangle::part).toList());triangles=List.copyOf(triangles);materials=List.copyOf(materials);EditorMeshMaterial.validateTable(materials);var known=new HashSet<String>();for(var m:materials)known.add(m.key());for(var t:triangles)if(!t.material().isEmpty()&&!known.contains(t.material()))throw new IllegalArgumentException("Unresolved face material");
             if(cornerVertexIds==null||!cornerVertexIds.isEmpty()&&cornerVertexIds.size()!=triangles.size()*3)
                 throw new IllegalArgumentException("Source topology corner count mismatch");
             cornerVertexIds=List.copyOf(cornerVertexIds);faceIds=List.copyOf(faceIds);if(!faceIds.isEmpty()&&(faceIds.size()!=triangles.size()||new HashSet<>(faceIds).size()!=faceIds.size()||faceIds.stream().anyMatch(id->id<0)))throw new IllegalArgumentException("Invalid native face IDs");
@@ -95,12 +97,13 @@ public final class EditorMeshPipeline {
     static Mesh obj(String name,String raw,long size,List<EditorMeshMaterial> materials,Map<String,String> aliases)throws IOException{
         List<double[]> xyz=new ArrayList<>(),uv=new ArrayList<>();List<Normal> normals=new ArrayList<>();
         List<Triangle> triangles=new ArrayList<>();
-        List<Long> sourceIds=new ArrayList<>();
+        List<Long> sourceIds=new ArrayList<>();var frames=new TreeMap<String,EditorMeshFrame>();
         String part="Object",material="";
         int lineNumber=0;
         try(var input=new java.io.BufferedReader(new java.io.StringReader(raw))){
             for(String line;(line=input.readLine())!=null;){
                 lineNumber++;String text=line.strip();
+                if(text.startsWith("# beck_native_frame")){String[] fields=text.split("\\s+");if(fields.length!=15||!fields[1].equals("beck_native_frame_v1"))throw new IOException("Unsupported native OBJ frame metadata");if(frames.size()>=MAX_TRIANGLES*3)throw new IOException("OBJ frame count budget exceeded");double[] matrix=new double[12];for(int i=0;i<12;i++)matrix[i]=Double.parseDouble(fields[i+3]);if(frames.putIfAbsent(fields[2],EditorMeshFrame.fromValues(matrix))!=null)throw new IOException("Duplicate native OBJ frame");continue;}
                 int comment=text.indexOf('#');if(comment>=0)text=text.substring(0,comment).strip();
                 if(text.isEmpty()||text.startsWith("#"))continue;
                 String[] tokens=text.split("\\s+",258);
@@ -133,7 +136,7 @@ public final class EditorMeshPipeline {
             throw new IOException("Invalid OBJ at line "+lineNumber,err);
         }
         if(triangles.isEmpty())throw new IOException("OBJ has no faces");
-        return new Mesh(name,triangles,size,sourceIds,materials);
+        try{return new Mesh(name,triangles,size,sourceIds,materials,null,List.of(),frames);}catch(IllegalArgumentException invalid){throw new IOException("Invalid OBJ native frames",invalid);}
     }
     private static int positionIndex(String raw,int count)throws IOException{
         int value=Integer.parseInt(raw);
@@ -259,7 +262,8 @@ public final class EditorMeshPipeline {
         long beforeMemory=estimatedBytes(source.triangles()),afterMemory=estimatedBytes(combined);
         if(beforeMemory>16L*1024*1024)warnings.add("MEMORY: estimated source triangle data >16 MiB (not full process heap)");
         if(combined.isEmpty())warnings.add("INVALID RESULT: reduction removed all drawable triangles. Publishing is disabled.");
-        Mesh result=new Mesh(source.name(),combined,source.sourceBytes(),List.of(),source.materials());
+        var retainedParts=new HashSet<String>();for(var triangle:combined)retainedParts.add(triangle.part());var retainedFrames=new TreeMap<String,EditorMeshFrame>();for(var entry:source.frames().entrySet())if(retainedParts.contains(entry.getKey()))retainedFrames.put(entry.getKey(),entry.getValue());
+        Mesh result=new Mesh(source.name(),combined,source.sourceBytes(),List.of(),source.materials(),null,List.of(),retainedFrames);
         // The over-regressed preview is represented by stats even when no drawable triangles survive.
         return new Result(source,result,level,stats,warnings,beforeMemory,afterMemory);
     }

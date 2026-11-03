@@ -3005,3 +3005,29 @@ Corrected full41547165572/job125625469653 is green advisory but raw307/310: alon
 equipment-da2b21da.txt records exact remote failure. equipment-clean-negative.txt reproduces in fresh main classes; equipment-clean-positive.txt passes43 families/129 stage aliases/53 states/162 unique resources with corrected test. No goldens changed.
 
 Scope: Test integration repair only. Actual packaged TCP stage passed in41547165572, but raw full regression remains unaccepted until corrected-source rerun. DEV211 source-art assertions remain open.
+
+## Local-frame integration — 2026-11-02
+
+### DEV-222 — Per-part framed GLB grouping changes canonical order of interleaved native faces
+
+Intermediate framed export of A/B/A faces produces actual game order A/A/B: second first-corner X7.7274065 instead of native3.8637033 after rotation. Store bounded per-node BECK_native_order descriptors, validate complete permutations, and consume the same ordered faces in native import and the actual game decoder. Source provenance/validation maps now use actual face identities, including shared instances; readback explicitly verifies order.
+
+order-negative.txt records real game mismatch. AssetImportLocalFrameGuiTest now verifies actual interleaved game corners. Source authoring and local tests verify hierarchy, material, original bytes and exact native order without flattening nodes.
+
+Scope: Unpublished integration defect fixed before publication. Existing ordinary assets without order descriptors keep original decoder traversal. No artwork or goldens changed.
+
+### DEV-223 — GLB readback rejects valid sparse native face IDs
+
+A valid single triangle retaining native face7 fails GLB readback with lost/duplicated native face identity, despite unchanged geometry. Map generic ordinals to expected stable native IDs, retain explicit tags on framed/source derivatives and validate canonical face order independently. Invalid readback returns checked IOException.
+
+sparse-negative-5bdd.txt uses exact5bdd5491 writer Git blob. Same SparseGlbControl passes corrected source; portable local test includes face7 without renumbering it.
+
+Scope: Editor export correction only. Existing saved native IDs remain stable; no mass reimport or renumbering. Confirm new exact-source CI separately.
+
+### DEV-224 — Signed-zero local frame values fail cross-format equality after JSON decoding
+
+Valid native frame entries containing -0.0 fail exact GLB frame readback because decimal JSON decoding yields positive zero. Canonicalize only zero-valued frame coefficients at construction. Preserve finite nonzero coefficients, original source bytes, native vertices and raw corner attributes.
+
+zero-negative.txt/zero-positive.txt run the same FrameZeroControl against actual GLB writer/reader. EditorLocalFrameTest guards canonical identity and the final native/OBJ/GLB roundtrip.
+
+Scope: New unpublished component normalization, not an artwork or vertex-normal rewrite. Older native1-4 data stays compatible; native5 explicitly carries the new frame fields.

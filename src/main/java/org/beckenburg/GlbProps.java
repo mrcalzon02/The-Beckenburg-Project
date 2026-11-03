@@ -427,7 +427,7 @@ public final class GlbProps {
             if(material.explicitOrigin()!=null)vehicleUvMaterials.set(vehicleUvMaterials.size()-1,material.explicitOrigin().equals("TOP_LEFT"));
             materialNames.add(material.name());diffuseFactors.add(material.color());if("monitoring_screen_mp_1".equals(resourceName)&&"crt_screen_mp_2".equals(material.name()))vanCrtMaterial=materialIds[i];
         }
-        var result=new ArrayList<Triangle>();for(var primitive:source.primitives())for(int i=0;i<primitive.indices().size();i+=3){
+        var result=new ArrayList<Triangle>();for(var face:source.faces()){var primitive=face.primitive();int i=face.triangle()*3;
             var a=primitive.world().get(primitive.indices().get(i));var b=primitive.world().get(primitive.indices().get(i+1));var c=primitive.world().get(primitive.indices().get(i+2));result.add(new Triangle(runtimeCorner(a),runtimeCorner(b),runtimeCorner(c),materialIds[primitive.material()]));
         }
         return new Model(List.copyOf(result));

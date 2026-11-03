@@ -59,6 +59,8 @@ Pre-existing owner inputs stay in the same chain, not superseded:
 
 **Surface-normal checkpoint2026-11-02:** actual Transform inspector and movement gizmos derive T/B/N from a picked native face. Numeric rotation/scale and oblique dragging share native validation/history, pivot/normal transport and real save/runtime publication. Missing anchors refuse; source-backed GLB provenance remains intact. Maximum normal-bearing native mesh passes under256MiB. Persistent object-local frames, loop/ring, bevel/slide, incremental updates and whole G2 exit remain open.
 
+**Persistent local-frame checkpoint2026-11-02:** native affine part references, local numeric transforms and scaled local-unit gizmos share geometry/history, native5 save/reopen and actual OBJ/GLB/runtime readback. Whole-part edits update frames, partial deformations retain them; original GLB source pivots/metadata survive. Actual interleaved face order is preserved by the shared runtime decoder. Maximum local normal-bearing mesh passes under256MiB. Loop/ring, bevel/slide, incremental updates and full G2 exit remain open.
+
 ### G3 — Sculpting, remeshing, high-fidelity interchange and input
 **Depends on:** G2. **Source:** Topological editor, pages 1–18.
 - Clay/standard, grab, smooth, flatten/planar brushes; falloff, screen-space radius, stroke interpolation, symmetry, topology-safe deltas, brush-local normal rebuild.

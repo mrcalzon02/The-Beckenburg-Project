@@ -20,9 +20,12 @@ public final class EditorGlbReader {
         public Primitive{local=List.copyOf(local);world=List.copyOf(world);indices=List.copyOf(indices);positionIds=List.copyOf(positionIds);faceIds=List.copyOf(faceIds);}
         public String part(){return "glb_node_"+node;}
     }
+    public record Face(Primitive primitive,int triangle,long identity){}
     public static final class Document {
-        private final byte[] original,binary;private final Map<String,Object> root;private final List<Material> materials;private final List<Primitive> primitives;private final double[][] world;private final String fingerprint;private volatile List<EditorMeshMaterial> nativeMaterials;
-        private Document(byte[] original,byte[] binary,Map<String,Object> root,List<Material> materials,List<Primitive> primitives,double[][] world){this.original=original.clone();this.binary=binary.clone();this.root=freezeMap(root);this.materials=List.copyOf(materials);this.primitives=List.copyOf(primitives);this.world=world;fingerprint=EditorMeshPipeline.sourceFingerprint(this.original);}
+        private final byte[] original,binary;private final Map<String,Object> root;private final List<Material> materials;private final List<Primitive> primitives;private final double[][] world;private final String fingerprint;private volatile List<EditorMeshMaterial> nativeMaterials;private final Map<String,EditorMeshFrame> frames;private final List<Face> faces;
+        private Document(byte[] original,byte[] binary,Map<String,Object> root,List<Material> materials,List<Primitive> primitives,double[][] world)throws IOException{this.original=original.clone();this.binary=binary.clone();this.root=freezeMap(root);this.materials=List.copyOf(materials);this.primitives=List.copyOf(primitives);this.world=world;fingerprint=EditorMeshPipeline.sourceFingerprint(this.original);var active=new HashSet<Integer>();for(var p:primitives)active.add(p.node());var found=new TreeMap<String,EditorMeshFrame>();var nodes=arr(root.get("nodes"));for(int i=0;i<nodes.size();i++){var node=obj(nodes.get(i));if(node.get("extensions") instanceof Map<?,?> extensions&&extensions.containsKey("BECK_editor_frame")){var frame=EditorMeshFrame.json(extensions.get("BECK_editor_frame"));if(active.contains(i))found.put("glb_node_"+i,frame);}}frames=Map.copyOf(found);faces=EditorMeshOrder.read(root,primitives);}
+        public List<Face> faces(){return faces;}
+        public Map<String,EditorMeshFrame> frames(){return frames;}
         public String fingerprint(){return fingerprint;}
         public byte[] trailing(){var view=ByteBuffer.wrap(original).order(ByteOrder.LITTLE_ENDIAN);int binHeader=20+view.getInt(12);return Arrays.copyOfRange(original,binHeader+8+view.getInt(binHeader),original.length);}
         public byte[] original(){return original.clone();}public byte[] binary(){return binary.clone();}public Map<String,Object> root(){return root;}public List<Material> materials(){return materials;}public List<Primitive> primitives(){return primitives;}public double[] world(int node){return world[node]==null?null:world[node].clone();}
@@ -39,8 +42,8 @@ public final class EditorGlbReader {
         }
         public Mesh mesh(String name)throws IOException{
             var triangles=new ArrayList<Triangle>();var ids=new ArrayList<Long>();var sources=new HashMap<String,Long>();
-            for(var p:primitives)for(int i=0;i<p.indices.size();i+=3){var a=p.indices.get(i);var b=p.indices.get(i+1);var c=p.indices.get(i+2);triangles.add(new Triangle(p.part(),p.world.get(a),p.world.get(b),p.world.get(c),key(p.material)));for(int index:new int[]{a,b,c})ids.add(sources.computeIfAbsent(p.node+":"+(p.positionIds.isEmpty()?p.positionAccessor+":"+index:"native:"+p.positionIds.get(index)),k->(long)sources.size()));}
-            try{return new Mesh(name,triangles,original.length,ids,nativeMaterials(),this,java.util.stream.LongStream.range(0,triangles.size()).boxed().toList());}catch(UncheckedIOException e){throw e.getCause();}catch(IllegalArgumentException bad){throw new IOException("GLB exceeds native material/mesh budgets",bad);}
+            for(var face:faces){var p=face.primitive();int i=face.triangle()*3;var a=p.indices.get(i);var b=p.indices.get(i+1);var c=p.indices.get(i+2);triangles.add(new Triangle(p.part(),p.world.get(a),p.world.get(b),p.world.get(c),key(p.material)));for(int index:new int[]{a,b,c})ids.add(sources.computeIfAbsent(p.node+":"+(p.positionIds.isEmpty()?p.positionAccessor+":"+index:"native:"+p.positionIds.get(index)),k->(long)sources.size()));}
+            try{return new Mesh(name,triangles,original.length,ids,nativeMaterials(),this,java.util.stream.LongStream.range(0,triangles.size()).boxed().toList(),frames);}catch(UncheckedIOException e){throw e.getCause();}catch(IllegalArgumentException bad){throw new IOException("GLB exceeds native material/mesh budgets",bad);}
         }
         @Override public boolean equals(Object o){return o==this||o instanceof Document d&&Arrays.equals(original,d.original);}
         @Override public int hashCode(){return Arrays.hashCode(original);}
@@ -91,7 +94,7 @@ public final class EditorGlbReader {
         }
         if(primitives.isEmpty())throw new IOException("No drawable triangles");return new Document(bytes,Arrays.copyOfRange(bytes,binaryStart,binaryStart+storedLength),root,materials,primitives,world);
     }
-    private static List<Long> identities(Map<String,Object> primitive,String key,int expected,ByteBuffer binary,int start,int length,List<Object> views)throws IOException{
+    static List<Long> identities(Map<String,Object> primitive,String key,int expected,ByteBuffer binary,int start,int length,List<Object> views)throws IOException{
         Map<?,?> metadata=primitive.get("extras") instanceof Map<?,?> extras?extras:Map.of();if(primitive.get("extensions") instanceof Map<?,?> extensions&&extensions.get("BECK_native_mesh") instanceof Map<?,?> nativeData)metadata=nativeData;if(!metadata.containsKey(key))return List.of();var descriptor=obj(metadata.get(key));if(get(descriptor,"componentType",-1)!=5125||get(descriptor,"count",-1)!=expected)throw new IOException("Invalid native GLB identity metadata");int view=get(descriptor,"bufferView",-1);if(view<0||view>=views.size())throw new IOException("Native GLB identity buffer missing");var accessor=new LinkedHashMap<String,Object>();accessor.put("bufferView",view);var result=new ArrayList<Long>();for(int i=0;i<expected;i++)result.add(Integer.toUnsignedLong(index(binary,start,length,views,accessor,i,5125)));return List.copyOf(result);
     }
     private static boolean wrap(int value){return value==10497||value==33071||value==33648;}

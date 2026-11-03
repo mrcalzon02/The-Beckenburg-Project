@@ -7,6 +7,7 @@ import org.beckenburg.editor.EditorMaterialWorkspace;
 import org.beckenburg.editor.EditorMeshPipeline;
 import org.beckenburg.editor.EditorMeshNormals;
 import org.beckenburg.editor.EditorMeshBasis;
+import org.beckenburg.editor.EditorMeshFrame;
 import org.beckenburg.editor.EditorMeshMaterial;
 import org.beckenburg.editor.EditorObjMaterials;
 import org.beckenburg.editor.EditorMeshTopology;
@@ -22,6 +23,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.List;
 import java.util.Locale;
 import java.util.function.Consumer;
@@ -103,7 +106,7 @@ public final class AssetImportDialog {
     private boolean modelingPreparing;
     private final JButton previewWeld=new JButton("PREVIEW WELD COINCIDENT"),previewDegenerates=new JButton("PREVIEW REMOVE DEGENERATES"),previewUnused=new JButton("PREVIEW REMOVE UNUSED");
     private final JComboBox<EditorTopologyProject.Transform> transformKind=new JComboBox<>(EditorTopologyProject.Transform.values());
-    private final JComboBox<String> transformSpace=new JComboBox<>(new String[]{"World","Surface normal"});
+    private final JComboBox<String> transformSpace=new JComboBox<>(new String[]{"World","Surface normal","Local parts"});
     private final JComboBox<String> transformAxis=new JComboBox<>(new String[]{"X","Y","Z"}),transformPivot=new JComboBox<>(new String[]{"Selection centroid","World origin"});
     private final JSpinner transformAmount=new JSpinner(new SpinnerNumberModel(90d,-36000d,1000000d,1d)),angleSnap=new JSpinner(new SpinnerNumberModel(15d,0d,360d,1d));
     private final JButton previewTransform=new JButton("PREVIEW TRANSFORM");
@@ -231,15 +234,15 @@ public final class AssetImportDialog {
         previewDegenerates.addActionListener(e->beginModelingPreview(EditorTopologyProject::previewRemoveDegenerates));
         previewUnused.addActionListener(e->beginModelingPreview(EditorTopologyProject::previewRemoveUnusedVertices));
         transformKind.addActionListener(e->{clearModelingPreview();transformAmount.setValue(transformKind.getSelectedItem()==EditorTopologyProject.Transform.ROTATE?90d:1d);});
-        transformSpace.setToolTipText("Surface normal uses the active native face: first edge tangent, bitangent and geometric normal. Pick a triangle to set the anchor; area selections retain it.");
-        transformSpace.addActionListener(e->{cancelAxisDrag();cancelBoxSelection();clearModelingPreview();int axis=transformAxis.getSelectedIndex(),pivot=transformPivot.getSelectedIndex();transformAxis.setModel(new DefaultComboBoxModel<>(transformSpace.getSelectedIndex()==0?new String[]{"X","Y","Z"}:new String[]{"Tangent","Bitangent","Normal"}));transformAxis.setSelectedIndex(Math.max(0,axis));transformPivot.setModel(new DefaultComboBoxModel<>(new String[]{"Selection centroid",transformSpace.getSelectedIndex()==0?"World origin":"Active face center"}));transformPivot.setSelectedIndex(Math.max(0,pivot));if(transformSpace.getSelectedIndex()==1&&surfaceBasis()==null)selectionLabel.setText("Pick a triangle to anchor surface-normal axes");refreshMeshControls();preview.repaint();});
+        transformSpace.setToolTipText("Surface uses the active native face. Local uses persisted part axes/pivots, including original GLB node transforms; local movement units follow each frame axis scale.");
+        transformSpace.addActionListener(e->{cancelAxisDrag();cancelBoxSelection();clearModelingPreview();int axis=transformAxis.getSelectedIndex(),pivot=transformPivot.getSelectedIndex();transformAxis.setModel(new DefaultComboBoxModel<>(transformSpace.getSelectedIndex()!=1?new String[]{"X","Y","Z"}:new String[]{"Tangent","Bitangent","Normal"}));transformAxis.setSelectedIndex(Math.max(0,axis));transformPivot.setModel(new DefaultComboBoxModel<>(new String[]{transformSpace.getSelectedIndex()==2?"Per-part centroid":"Selection centroid",transformSpace.getSelectedIndex()==0?"World origin":transformSpace.getSelectedIndex()==1?"Active face center":"Part origin"}));transformPivot.setSelectedIndex(Math.max(0,pivot));if(transformSpace.getSelectedIndex()==1&&surfaceBasis()==null)selectionLabel.setText("Pick a triangle to anchor surface-normal axes");refreshMeshControls();preview.repaint();});
         transformAxis.addActionListener(e->clearModelingPreview());transformPivot.addActionListener(e->clearModelingPreview());transformAmount.addChangeListener(e->clearModelingPreview());angleSnap.addChangeListener(e->clearModelingPreview());
         previewTransform.addActionListener(e->{
             var ids=java.util.Set.copyOf(selectedIds());var operation=(EditorTopologyProject.Transform)transformKind.getSelectedItem();int axis=transformAxis.getSelectedIndex();boolean origin=transformPivot.getSelectedIndex()==1;
             double value=((Number)transformAmount.getValue()).doubleValue(),snap=((Number)angleSnap.getValue()).doubleValue();
             if(operation==EditorTopologyProject.Transform.ROTATE&&snap>0)value=Math.rint(value/snap)*snap;double reviewed=value;
-            Long face=activeSurfaceFace();boolean surface=transformSpace.getSelectedIndex()==1;if(surface&&face==null){selectionLabel.setText("Pick a triangle to anchor surface-normal axes");return;}
-            beginModelingPreview(p->surface?p.previewTransform(ids,operation,axis,reviewed,origin,face):p.previewTransform(ids,operation,axis,reviewed,origin));
+            Long face=activeSurfaceFace();boolean surface=transformSpace.getSelectedIndex()==1,local=transformSpace.getSelectedIndex()==2;if(surface&&face==null){selectionLabel.setText("Pick a triangle to anchor surface-normal axes");return;}
+            beginModelingPreview(p->local?p.previewLocalTransform(ids,operation,axis,reviewed,origin):surface?p.previewTransform(ids,operation,axis,reviewed,origin,face):p.previewTransform(ids,operation,axis,reviewed,origin));
         });
         details.setEditable(false);details.setFont(new Font(Font.MONOSPACED,Font.PLAIN,12));
         JPanel footer=new JPanel(new FlowLayout(FlowLayout.RIGHT,4,4));
@@ -425,7 +428,7 @@ public final class AssetImportDialog {
         previewUv.setEnabled(editable&&selectionMode.getSelectedIndex()==2&&selectedHit!=null);
         if(topologyProject!=null)sourceTextureBytes=topologyProject.snapshot().materials().stream().mapToLong(m->(long)m.width()*m.height()*4).sum();
         previewWeld.setEnabled(editable&&selectionMode.getSelectedIndex()==0&&selectedVertices.size()>1);previewDegenerates.setEnabled(editable);previewUnused.setEnabled(editable);
-        previewTransform.setEnabled(editable&&!selectedIds().isEmpty()&&(transformSpace.getSelectedIndex()==0||activeSurfaceFace()!=null));
+        previewTransform.setEnabled(editable&&!selectedIds().isEmpty()&&(transformSpace.getSelectedIndex()!=1||activeSurfaceFace()!=null));
         for(var component:List.of(transformSpace,transformKind,transformAxis,transformPivot,transformAmount,angleSnap))component.setEnabled(topologyProject!=null&&!busy);
         applyFaceEdit.setEnabled(!busy&&modelingPreview!=null);cancelFaceEdit.setEnabled(modelingPreview!=null||modelingPreparing);
         openMaterials.setEnabled(topologyProject!=null&&!busy);refreshMaterialWindow();
@@ -802,19 +805,14 @@ public final class AssetImportDialog {
         if(topologyProject==null)return null;Long face=selectedHit==null?normalAnchor:Long.valueOf(selectedHit.faceId());return face!=null&&topologyProject.snapshot().faces().stream().anyMatch(f->f.id()==face)?face:null;
     }
     private EditorMeshBasis surfaceBasis(){Long face=activeSurfaceFace();if(face==null)return null;try{return EditorMeshBasis.face(topologyProject.snapshot(),face);}catch(IllegalArgumentException invalid){return null;}}
-    private String axisLabel(int axis){return (transformSpace.getSelectedIndex()==0?"XYZ":"TBN").substring(axis,axis+1);}
+    private String axisLabel(int axis){return (transformSpace.getSelectedIndex()!=1?"XYZ":"TBN").substring(axis,axis+1);}
     private List<GizmoHandle> gizmoHandles(){
-        if(busy||topologyProject==null||source.triangles().isEmpty())return List.of();
-        var ids=selectedIds();if(ids.isEmpty())return List.of();var basis=transformSpace.getSelectedIndex()==1?surfaceBasis():null;if(transformSpace.getSelectedIndex()==1&&basis==null)return List.of();double x=0,y=0,z=0;int count=0;
-        for(var v:topologyProject.snapshot().vertices())if(ids.contains(v.id())){x+=v.x();y+=v.y();z+=v.z();count++;}
-        if(count!=ids.size())return List.of();
-        var view=viewport(workingReference(),0,workingViewportWidth());var camera=projector(workingReference());double wx=x/count,wy=y/count,wz=z/count;var anchor=camera.project(wx,wy,wz);
-        double ax=view.x(anchor.x()),ay=view.y(anchor.y());var handles=new ArrayList<GizmoHandle>();
-        for(int axis=0;axis<3;axis++){
-            var direction=basis==null?EditorMeshPicking.unitAxis(axis):basis.axis(axis);var p=camera.direction(wx,wy,wz,direction);double ux=p.x()*view.scale(),uy=p.y()*view.scale(),length=Math.hypot(ux,uy);
-            if(length>1e-9)handles.add(new GizmoHandle(axis,(int)Math.round(ax+ux/length*48),(int)Math.round(ay+uy/length*48),ax,ay,ux,uy,wx,wy,wz,view.scale(),camera,direction));
-        }
-        return handles;
+        if(busy||topologyProject==null||source.triangles().isEmpty())return List.of();var ids=selectedIds();if(ids.isEmpty())return List.of();boolean local=transformSpace.getSelectedIndex()==2;var basis=transformSpace.getSelectedIndex()==1?surfaceBasis():null;if(transformSpace.getSelectedIndex()==1&&basis==null)return List.of();
+        var groups=new LinkedHashMap<String,double[]>();int count=0;for(var v:topologyProject.snapshot().vertices())if(ids.contains(v.id())){var center=groups.computeIfAbsent(local?v.part():"",key->new double[4]);center[0]+=v.x()/ids.size();center[1]+=v.y()/ids.size();center[2]+=v.z()/ids.size();center[3]++;count++;}if(count!=ids.size())return List.of();
+        var frames=local?topologyProject.frames(groups.keySet()):Map.<String,EditorMeshFrame>of();var view=viewport(workingReference(),0,workingViewportWidth());var camera=projector(workingReference());var handles=new ArrayList<GizmoHandle>();
+        for(var group:groups.entrySet()){var center=group.getValue();double factor=ids.size()/center[3],wx=center[0]*factor,wy=center[1]*factor,wz=center[2]*factor;var anchor=camera.project(wx,wy,wz);double ax=view.x(anchor.x()),ay=view.y(anchor.y());
+            for(int axis=0;axis<3;axis++){var direction=local?frames.get(group.getKey()).vector(axis):basis==null?EditorMeshPicking.unitAxis(axis):basis.axis(axis);var p=camera.direction(wx,wy,wz,direction);double ux=p.x()*view.scale(),uy=p.y()*view.scale(),length=Math.hypot(ux,uy);if(length>1e-9)handles.add(new GizmoHandle(axis,(int)Math.round(ax+ux/length*48),(int)Math.round(ay+uy/length*48),ax,ay,ux,uy,wx,wy,wz,view.scale(),camera,direction));}
+        }return handles;
     }
     private boolean beginAxisDrag(int x,int y){
         if(busy||modelingPreview!=null||x>=workingViewportWidth())return false;
@@ -860,7 +858,7 @@ public final class AssetImportDialog {
         if(axisDrag==null)return;var drag=axisDrag;double delta=dragDelta;axisDrag=null;dragDelta=0;preview.repaint();
         if(topologyProject.revision()!=drag.revision()||topologyProject.snapshot()!=drag.before()){selectionLabel.setText("Move refused");details.append("\nMOVE REFUSED: mesh changed during drag");return;}
         if(delta==0)return;int axis=drag.handle().axis();
-        var direction=drag.handle().direction();meshEdit(()->topologyProject.translateVertices(drag.ids(),direction.x()*delta,direction.y()*delta,direction.z()*delta));
+        var direction=drag.handle().direction();boolean local=transformSpace.getSelectedIndex()==2;meshEdit(()->{if(local)topologyProject.translateLocalVertices(drag.ids(),axis,delta);else topologyProject.translateVertices(drag.ids(),direction.x()*delta,direction.y()*delta,direction.z()*delta);});
         selectionLabel.setText(topologyProject.snapshot()==drag.before()?"Move refused":"Moved "+axisLabel(axis)+" = "+String.format(Locale.ROOT,"%.4f",delta));
     }
     /** Regression panels share source bounds; the separate pending primitive has its own bounds. */

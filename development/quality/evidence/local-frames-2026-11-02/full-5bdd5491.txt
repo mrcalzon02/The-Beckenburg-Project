@@ -1,0 +1,4 @@
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-03T00:22:57.9303861Z FAIL GhostSpriteAtlasIntegrationTest processExit=1
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-03T00:23:09.3045112Z FAIL TwinBodyVisualTest processExit=1
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-03T00:27:41.1388400Z PASS runtime assignments match manifest: 43 families, 129 stage aliases, 53 states, 162 unique resources
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-03T00:32:40.9026577Z REGRESSION SUMMARY passed=308 failed=2 skipped=0 manifest=310

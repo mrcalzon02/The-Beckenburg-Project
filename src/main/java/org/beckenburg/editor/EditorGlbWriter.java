@@ -16,15 +16,16 @@ import javax.imageio.ImageIO;
 public final class EditorGlbWriter {
     private EditorGlbWriter(){}
     /** Readback goes through the same decoder used by actual gameplay. */
-    public static void validate(EditorMeshPipeline.Mesh expected,byte[] bytes)throws IOException{
+    public static void validate(EditorMeshPipeline.Mesh expected,byte[] bytes)throws IOException{try{validateCandidate(expected,bytes);}catch(RuntimeException invalid){throw new IOException("Invalid native GLB readback",invalid);}}
+    private static void validateCandidate(EditorMeshPipeline.Mesh expected,byte[] bytes)throws IOException{
         var actual=EditorGlbReader.read(bytes);var faces=new java.util.HashMap<Long,EditorMeshPipeline.Triangle>();var ids=new java.util.HashMap<Long,java.util.List<Long>>();
         for(int i=0;i<expected.triangles().size();i++){long id=expected.faceIds().isEmpty()?i:expected.faceIds().get(i);faces.put(id,expected.triangles().get(i));if(!expected.cornerVertexIds().isEmpty())ids.put(id,expected.cornerVertexIds().subList(i*3,i*3+3));}
         var originalOffsets=new java.util.HashMap<String,Long>();int originalAccessors=0;long sourceFace=0;
-        if(expected.glbSource()!=null){originalAccessors=EditorGlbReader.arr(expected.glbSource().root().get("accessors")).size();for(var p:expected.glbSource().primitives()){originalOffsets.put(p.node()+":"+p.primitive(),sourceFace);sourceFace+=p.indices().size()/3;}var before=EditorGlbReader.arr(expected.glbSource().root().get("materials"));var after=EditorGlbReader.arr(actual.root().get("materials"));for(int i=0;i<before.size();i++)if(!before.get(i).equals(after.get(i)))throw new IOException("GLB readback changed original material metadata");}
+        if(expected.glbSource()!=null){originalAccessors=EditorGlbReader.arr(expected.glbSource().root().get("accessors")).size();for(var face:expected.glbSource().faces())originalOffsets.put(EditorMeshOrder.key(face.primitive().node(),face.primitive().primitive(),face.triangle()),face.identity());var before=EditorGlbReader.arr(expected.glbSource().root().get("materials"));var after=EditorGlbReader.arr(actual.root().get("materials"));for(int i=0;i<before.size();i++)if(!before.get(i).equals(after.get(i)))throw new IOException("GLB readback changed original material metadata");}
         var seen=new java.util.HashSet<Long>();long ordinal=0;
         for(var primitive:actual.primitives())for(int i=0;i<primitive.indices().size();i+=3){
             boolean generated=expected.glbSource()!=null&&primitive.positionAccessor()>=originalAccessors;
-            long id=expected.glbSource()==null?ordinal++:generated?primitive.faceIds().get(i/3):originalOffsets.get(primitive.node()+":"+primitive.primitive())+i/3;
+            long id=expected.glbSource()==null?(expected.frames().isEmpty()?(expected.faceIds().isEmpty()?ordinal++:expected.faceIds().get((int)ordinal++)):primitive.faceIds().get(i/3)):generated?primitive.faceIds().get(i/3):originalOffsets.get(EditorMeshOrder.key(primitive.node(),primitive.primitive(),i/3));
             var triangle=faces.get(id);if(triangle==null||!seen.add(id))throw new IOException("GLB readback lost/duplicated native face identity");var corners=java.util.List.of(triangle.a(),triangle.b(),triangle.c());
             for(int c=0;c<3;c++){int index=primitive.indices().get(i+c);var a=primitive.world().get(index);var b=corners.get(c);if(!near(a.x(),b.x())||!near(a.y(),b.y())||!near(a.z(),b.z())||!near(a.u(),b.u())||!near(a.v(),b.v()))throw new IOException("GLB readback changed native position/UV/winding");
                 if(generated&&ids.containsKey(id)&&!primitive.positionIds().get(index).equals(ids.get(id).get(c)))throw new IOException("GLB readback changed native position connectivity");
@@ -33,12 +34,23 @@ public final class EditorGlbWriter {
             var material=expected.materials().stream().filter(m->m.key().equals(triangle.material())).findFirst().orElse(EditorMeshMaterial.fallback());var sample=actual.materials().get(primitive.material());var color=sample.color();var factor=material.color();String origin=sample.explicitOrigin()==null?sample.defaultOrigin():sample.explicitOrigin();
             if(!java.util.Arrays.equals(sample.png(),material.png())||!near(color[0],factor.r())||!near(color[1],factor.g())||!near(color[2],factor.b())||!near(color[3],factor.a())||sample.wrapS()!=material.wrapS()||sample.wrapT()!=material.wrapT()||!sample.alpha().equals(material.alpha().name())||!near(sample.cutoff(),material.cutoff())||!origin.equals(material.origin().name()))throw new IOException("GLB readback changed original PNG/material sampling");
         }
+        var rawOffsets=new java.util.IdentityHashMap<EditorGlbReader.Primitive,Integer>();int rawOffset=0;for(var primitive:actual.primitives()){rawOffsets.put(primitive,rawOffset);rawOffset+=primitive.indices().size()/3;}
+        int ordered=0;for(var face:actual.faces()){var primitive=face.primitive();long expectedId=expected.faceIds().isEmpty()?ordered:expected.faceIds().get(ordered);long actualId;
+            if(expected.glbSource()==null){int raw=rawOffsets.get(primitive)+face.triangle();actualId=expected.frames().isEmpty()?(expected.faceIds().isEmpty()?raw:expected.faceIds().get(raw)):primitive.faceIds().get(face.triangle());}
+            else actualId=primitive.positionAccessor()>=originalAccessors?primitive.faceIds().get(face.triangle()):originalOffsets.get(EditorMeshOrder.key(primitive.node(),primitive.primitive(),face.triangle()));
+            if(actualId!=expectedId)throw new IOException("GLB readback changed canonical native face order");ordered++;
+        }
+        for(var entry:expected.frames().entrySet()){
+            String part=entry.getKey();Integer node=null;if(expected.glbSource()!=null)for(var primitive:expected.glbSource().primitives())if(primitive.part().equals(part)){node=primitive.node();break;}
+            if(node==null){var nodes=EditorGlbReader.arr(actual.root().get("nodes"));for(int i=0;i<nodes.size();i++)if(part.equals(EditorGlbReader.obj(nodes.get(i)).get("name"))){if(node!=null)throw new IOException("Ambiguous exported local frame part");node=i;}}
+            if(node==null||!entry.getValue().equals(actual.frames().get("glb_node_"+node)))throw new IOException("GLB readback changed native local frame");
+        }
         if(seen.size()!=faces.size())throw new IOException("GLB readback face count differs from authoritative native state");
     }
     private static boolean near(double a,double b){return Math.abs(a-b)<=1e-5*Math.max(1,Math.max(Math.abs(a),Math.abs(b)));}
     public static byte[] encode(EditorMeshPipeline.Mesh mesh)throws IOException {
         if(mesh.glbSource()!=null)try{return EditorGlbDocumentWriter.encode(mesh);}catch(IllegalArgumentException|IndexOutOfBoundsException|ClassCastException invalid){throw new IOException("Invalid source-backed GLB candidate",invalid);}
-        if(!mesh.materials().isEmpty())return EditorMaterialGlbWriter.encode(mesh);
+        if(!mesh.materials().isEmpty()||!mesh.frames().isEmpty())return EditorMaterialGlbWriter.encode(mesh);
         int count=mesh.triangles().size()*3;
         if(count<3||count>48000)throw new IOException(
             "Export needs 1..16000 triangles per model under existing 4 MiB GLB budget; reduce or split first");

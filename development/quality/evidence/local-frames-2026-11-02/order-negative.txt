@@ -1,0 +1,4 @@
+Exception in thread "main" java.lang.AssertionError: Actual local coordinate 7.7274065017700195 != 3.8637033051562732
+	at org.beckenburg.AssetImportLocalFrameGuiTest.check(AssetImportLocalFrameGuiTest.java:14)
+	at org.beckenburg.AssetImportLocalFrameGuiTest.near(AssetImportLocalFrameGuiTest.java:32)
+	at org.beckenburg.AssetImportLocalFrameGuiTest.main(AssetImportLocalFrameGuiTest.java:45)

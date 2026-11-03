@@ -26,6 +26,7 @@ public final class EditorObjWriter {
         var writer=new BufferedWriter(new OutputStreamWriter(output,StandardCharsets.UTF_8));
         writer.write("# Beckenburg native topology copy: Y up, X/Z horizontal; UVs unmodified\n");
         if(library!=null)writer.write("mtllib "+library+"\n");
+        for(var entry:new TreeMap<>(state.frames()).entrySet()){writer.write("# beck_native_frame_v1 "+entry.getKey());for(double value:entry.getValue().values())writer.write(" "+Double.toString(value));writer.write("\n");}
         for(var v:state.vertices())writer.write("v "+v.x()+" "+v.y()+" "+v.z()+"\n");
         for(var f:state.faces())for(var c:List.of(f.a(),f.b(),f.c()))writer.write("vt "+c.u()+" "+c.v()+"\n");
         for(var f:state.faces()){
@@ -49,6 +50,7 @@ public final class EditorObjWriter {
     }
     static void validate(EditorTopologyProject.State state,EditorMeshPipeline.Mesh parsed)throws IOException{
         var ids=indices(state);
+        if(!parsed.frames().equals(state.frames()))throw new IOException("OBJ readback local frames differ");
         if(!parsed.materials().equals(state.materials()))throw new IOException("OBJ readback material definitions differ");
         if(parsed.triangles().size()!=state.faces().size())throw new IOException("OBJ readback face count differs");
         var expected=new ArrayList<Long>();for(var f:state.faces())for(var c:List.of(f.a(),f.b(),f.c()))expected.add((long)ids.get(c.vertex())-1);

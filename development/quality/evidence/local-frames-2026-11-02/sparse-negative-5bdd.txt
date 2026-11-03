@@ -1,0 +1,3 @@
+Exception in thread "main" java.io.IOException: GLB readback lost/duplicated native face identity
+	at org.beckenburg.editor.EditorGlbWriter.validate(EditorGlbWriter.java:28)
+	at SparseGlbControl.main(SparseGlbControl.java:1)
