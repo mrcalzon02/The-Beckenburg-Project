@@ -62,13 +62,16 @@ public final class CampaignEmbeddedDesktopTest {
             },"Physical van door closes and host sends retreat result");
             until(()->!owner[0].running()&&profile.archives().size()==1,"Host campaign result saved");
             // Reopen the actual profile file: an in-memory result is not durable acceptance.
-            ProfileStore reloaded=new ProfileStore(dir.resolve("profile.properties"));reloaded.load();
-            if(reloaded.archives().size()!=1
-                    ||reloaded.archives().get(0).outcome()!=InvestigationSession.Outcome.RETREATED)
-                throw new AssertionError("Host campaign retreat not durably archived exactly once");
+            // The host writes atomically, but its in-memory archive may update first.
+            until(()->{ProfileStore reloaded=new ProfileStore(dir.resolve("profile.properties"));
+                reloaded.load();
+                return reloaded.archives().size()==1
+                    &&reloaded.archives().get(0).outcome()==InvestigationSession.Outcome.RETREATED;
+            },"Host campaign retreat durably archived exactly once");
             edt(()->{hunter[0].vanDoor();return null;});
             until(()->{var logField=LanLobbyPanel.class.getDeclaredField("log");logField.setAccessible(true);
-                return ((JTextArea)logField.get(lobby[0])).getText().contains("REJECT|");
+                return ((JTextArea)logField.get(lobby[0])).getText().contains(
+                    "REJECT|hunter at cargo button required");
             },"Repeated van-door command must be rejected");
             ProfileStore afterRepeat=new ProfileStore(dir.resolve("profile.properties"));afterRepeat.load();
             if(afterRepeat.archives().size()!=1)
