@@ -38,11 +38,44 @@ public final class CampaignEmbeddedDesktopTest {
                 var view=find(frame[0].getContentPane());if(view==null||!view.isShowing())return false;
                 var tick=LanWorldPanel.class.getDeclaredField("tick");tick.setAccessible(true);return tick.getInt(view)>=3;
             },"Embedded campaign receives advancing world frames");
+            LanHost[] owner={null};LanClient[] hunter={null};
             edt(()->{int windows=0;for(Window w:Window.getWindows())if(w.isShowing())windows++;
                 if(windows!=1)throw new AssertionError("Campaign escaped the game window");
-                // Physical 3D hunters finish through the host-authoritative cargo control.
-                var field=LanLobbyPanel.class.getDeclaredField("connection");field.setAccessible(true);((LanClient)field.get(lobby[0])).vanDoor();return null;});
-            until(()->profile.archives().size()==1,"Host campaign result saved");
+                var hostField=LanLobbyPanel.class.getDeclaredField("hosted");hostField.setAccessible(true);
+                owner[0]=(LanHost)hostField.get(lobby[0]);
+                var clientField=LanLobbyPanel.class.getDeclaredField("connection");clientField.setAccessible(true);
+                hunter[0]=(LanClient)clientField.get(lobby[0]);
+                // Entering the 3D scene switches the hunter to physical controls.
+                // Legacy room-mode EXTRACT must be rejected rather than silently paying out.
+                hunter[0].extract();return null;});
+            until(()->{var logField=LanLobbyPanel.class.getDeclaredField("log");logField.setAccessible(true);
+                return ((JTextArea)logField.get(lobby[0])).getText().contains(
+                    "REJECT|physical hunters must use the van door control");
+            },"Physical campaign hunter cannot use legacy EXTRACT");
+            if(!owner[0].running()||!profile.archives().isEmpty())
+                throw new AssertionError("Rejected extraction changed host campaign state");
+            // Exercise the same host-validated cargo control used by real 3D gameplay.
+            edt(()->{hunter[0].vanDoor();return null;});
+            until(()->{var logField=LanLobbyPanel.class.getDeclaredField("log");logField.setAccessible(true);
+                String messages=((JTextArea)logField.get(lobby[0])).getText();
+                return messages.contains("ACCEPT|VANDOOR|CLOSED")&&messages.contains("RESULT|RETREATED");
+            },"Physical van door closes and host sends retreat result");
+            until(()->!owner[0].running()&&profile.archives().size()==1,"Host campaign result saved");
+            // Reopen the actual profile file: an in-memory result is not durable acceptance.
+            // The host writes atomically, but its in-memory archive may update first.
+            until(()->{ProfileStore reloaded=new ProfileStore(dir.resolve("profile.properties"));
+                reloaded.load();
+                return reloaded.archives().size()==1
+                    &&reloaded.archives().get(0).outcome()==InvestigationSession.Outcome.RETREATED;
+            },"Host campaign retreat durably archived exactly once");
+            edt(()->{hunter[0].vanDoor();return null;});
+            until(()->{var logField=LanLobbyPanel.class.getDeclaredField("log");logField.setAccessible(true);
+                return ((JTextArea)logField.get(lobby[0])).getText().contains(
+                    "REJECT|hunter at cargo button required");
+            },"Repeated van-door command must be rejected");
+            ProfileStore afterRepeat=new ProfileStore(dir.resolve("profile.properties"));afterRepeat.load();
+            if(afterRepeat.archives().size()!=1)
+                throw new AssertionError("Repeated van-door command duplicated the campaign receipt");
             edt(()->{button(frame[0].getContentPane(),"RETURN TO CASTLE LOBBY").doClick();return null;});
             until(()->lobby[0].isShowing(),"Return to same embedded lobby");
             edt(()->{button(lobby[0],"LEAVE LOBBY").doClick();return null;});
