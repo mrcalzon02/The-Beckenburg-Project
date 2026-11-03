@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 2240,
+  "count": 2241,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -22594,6 +22594,16 @@
       "height": 750,
       "bytes": 1300251,
       "sha256": "8c6b62ac13a69dd9546eefd833dc85e876a11e373304f18f5d0e98289f46816d"
+    },
+    {
+      "path": "development/quality/evidence/hunter-animation-2026-11-02/previews/studio-hunter-animation.png",
+      "url": "development/quality/evidence/hunter-animation-2026-11-02/previews/studio-hunter-animation.png",
+      "title": "Studio hunter animation",
+      "kind": "Model inspection",
+      "width": 640,
+      "height": 2232,
+      "bytes": 751144,
+      "sha256": "90d34a7f7c42f0247f106f78f47ec06e11cef1a2410c26e68ef2110766c43527"
     }
   ]
 }

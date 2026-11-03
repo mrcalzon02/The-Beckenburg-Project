@@ -3,6 +3,17 @@
   "updated": "2026-11-02",
   "issues": [
     {
+      "id": "DEV-226",
+      "title": "Playable hunters remain static while walking and crouch by squashing idle art",
+      "status": "fixed-scoped; local Java 17 renderer checks pass; installed multiplayer review pending",
+      "affected": "All three playable hunter appearances in the shared teammate billboard renderer",
+      "symptom": "Received teammate movement uses one standing turnaround; crouch scales that standing image vertically instead of bending knees.",
+      "cause": "Only static four-view hunter art was packaged; RemoteBody crouch altered billboard height without selecting a new pose.",
+      "action": "Add 36 generated transparent pose derivatives: two walking states and crouch across four views for each playable appearance. Select walking from received movement and crouch from host posture, retaining base idle and the same physical dimensions.",
+      "evidence": "HunterSpriteAnimationTest covers actual atlas frames, movement, stop, crouch, teleport, clock reset and production-rasterizer occlusion. CharacterDirectionalVisualTest, CharacterSpriteWorldMotionTest, GroundedSpriteFeetTest and CharacterBillboardAnchorTest pass. Asset-review preview and source/provenance: art/hunters/animation-v1/.",
+      "older_maps": "Shared renderer applies across maps; this is not installed Windows multiplayer or per-map visual acceptance. Alternate concept-only appearances are not selectable and are not claimed implemented."
+    },
+    {
       "id": "DEV-001",
       "title": "Paper-thin loft floor and apparent upstairs light bleed",
       "status": "fixed-scoped",

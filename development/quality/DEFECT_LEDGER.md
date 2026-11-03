@@ -10,6 +10,20 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-226 — Playable hunters remain static while walking and crouch by squashing idle art
+
+**Status:** fixed-scoped; local Java 17 renderer checks pass; installed multiplayer review pending · **Affected:** All three playable hunter appearances in the shared teammate billboard renderer
+
+Received teammate movement uses one standing turnaround; crouch scales that standing image vertically instead of bending knees.
+
+Cause / uncertainty: Only static four-view hunter art was packaged; RemoteBody crouch altered billboard height without selecting a new pose.
+
+Fix / next action: Add 36 generated transparent pose derivatives: two walking states and crouch across four views for each playable appearance. Select walking from received movement and crouch from host posture, retaining base idle and the same physical dimensions.
+
+Evidence and verification: HunterSpriteAnimationTest covers actual atlas frames, movement, stop, crouch, teleport, clock reset and production-rasterizer occlusion. CharacterDirectionalVisualTest, CharacterSpriteWorldMotionTest, GroundedSpriteFeetTest and CharacterBillboardAnchorTest pass. Asset-review preview and source/provenance: art/hunters/animation-v1/.
+
+Older-map obligation: Shared renderer applies across maps; this is not installed Windows multiplayer or per-map visual acceptance. Alternate concept-only appearances are not selectable and are not claimed implemented.
+
 ### DEV-001 — Paper-thin loft floor and apparent upstairs light bleed
 
 **Status:** fixed-scoped · **Affected:** Blackpine inspection loft
@@ -2936,6 +2950,160 @@ Evidence and verification: AssetImportUvGuiTest captures the actual independent 
 
 Older-map obligation: This changes only the independent material workspace composition. Main level and topology tool layouts remain unchanged; it does not implement painting/unwrap.
 
+### DEV-215 — Runtime GLB decoder ignores original node matrix and changes source pivots
+
+**Status:** fixed-scoped; exact prior game negative controls and current actual runtime/human tests pass locally; exact-source CI pending · **Affected:** GlbProps actual runtime decode and source-backed native GLB authoring
+
+The exact previous18001e8a game decoder places the source fixture first vertex at (3,0,2), although its actual matrix plus parent hierarchy places it at (3,0,1).
+
+Cause / uncertainty: Runtime scene traversal applied TRS but silently omitted column-major node.matrix.
+
+Fix / next action: Use the shared bounded runtime reader for actual game and human editor, including original matrix/TRS hierarchy and inverse-transpose normals. Preserve all original transforms and compile edits back into source local coordinates.
+
+Evidence and verification: GlbSourceAuthorityTest matrix fails against exact18001e8a GlbProps and passes against current game. Fixture has parent rotation/translation, a nonuniform matrix child and a shared mesh instance. Bundled1088-source audit finds no active nonidentity node.matrix; source audit is not placed-map acceptance. See evidence/source-glb-2026-11-02/.
+
+Older-map obligation: Do not rewrite source art or infer complete old-map visual acceptance. Retain asset-specific origin rules; inspect actual changed sources individually. Full source-backed GLB rigs/additional attributes and G2-G12 remain open.
+
+### DEV-216 — Generic external GLB textures use inverted legacy PNG origin
+
+**Status:** fixed-scoped; exact prior game negative controls and current actual runtime/human tests pass locally; exact-source CI pending · **Affected:** GlbProps actual runtime decode and source-backed native GLB authoring
+
+The exact previous18001e8a game decoder samples blue ff0000ff at source (.25,.25), where the original external glTF PNG is red ffff0000.
+
+Cause / uncertainty: Legacy bottom-left default was applied to every unnamed/new imported GLB, including standard external glTF images.
+
+Fix / next action: Use source top-left origin for generic external imports unless explicitly declared otherwise; retain exact legacy editor generator and reviewed named-source rules. Keep original image and UV bytes.
+
+Evidence and verification: GlbSourceAuthorityTest uv reproduces old actual runtime failure and current pass. Human source-backed publication checks RGBA8000ff00 on the original asymmetric PNG. Named purchased models, Blender UV/CRT and Hollow Creek BLEND tests pass locally. See evidence/source-glb-2026-11-02/.
+
+Older-map obligation: Do not rewrite source art or infer complete old-map visual acceptance. Retain asset-specific origin rules; inspect actual changed sources individually. Full source-backed GLB rigs/additional attributes and G2-G12 remain open.
+
+### DEV-217 — Packaged full-round test compilation omits shared portable GLB fixture sources
+
+**Status:** fixed-scoped; corrected full41547165572 build and actual TCP stage passed; raw307/310 has separate DEV211/221 failures · **Affected:** build.cmd and build.sh test source lists
+
+Source57337f4f full41546195876/job125622271926 fails before TCP acceptance: EditorGlbAuthoringTest is absent while compiling AssetImportGlbGuiTest and GlbSourceAuthorityTest. Standalone41546137572 and native41546191383 pass because their explicit fixture dependencies are present.
+
+Cause / uncertainty: The game build compiles only top-level host test sources, while new human/runtime tests reuse portable test fixtures in the editor subpackage.
+
+Fix / next action: Include exactly the shared GLB and PNG fixture source files in both standard host build scripts; retain independent editor JAR compilation and do not move test fixtures into production code.
+
+Evidence and verification: Exact failed remote compiler diagnostics retained in source-glb evidence. Clean host test compilation must include all top-level host/hbnet sources plus the two portable fixture dependencies; full corrected acceptance remains distinct from native/standalone passes.
+
+Older-map obligation: Build integration only; no source art/goldens changed. Existing DEV211 advisory art assertions remain open, and failed pre-TCP run does not prove gameplay.
+
+### DEV-218 — Camera picker generalization drops existing enum-typed binary API signatures
+
+**Status:** fixed before perspective publication; actual prior-compiled client fails intermediate and passes final independent JAR · **Affected:** EditorMeshPicking public pick(State,Projection,double,double) and prepare(State,Projection)
+
+A client compiled against the published da2b21da picker throws NoSuchMethodError when the intermediate camera generalization replaces enum parameter signatures with Projector parameters.
+
+Cause / uncertainty: Source calls still compile because Projection implements Projector, but JVM method descriptors include the original enum parameter type.
+
+Fix / next action: Retain original typed overloads and delegate to the new Projector implementation; keep the display-camera requirement for perspective. Add signature guards and run the unchanged prior-compiled client against the real final JAR.
+
+Evidence and verification: perspective-workspace evidence contains real intermediate negative and final positive outputs, the same compiled consumer and source. Consumer was compiled against exact da2b21da picker Git blob. Final independent Java17 JAR and maximum old/new picking tests pass under256MiB.
+
+Older-map obligation: Unpublished intermediate integration defect, corrected before publication. No scene or source asset changes. Portable public signatures remain stable; this does not prove all other G1/G2 APIs or gate completion.
+
+### DEV-219 — Unanchored surface mode unboxes a null native face anchor
+
+**Status:** fixed before surface publication; actual human unanchored-mode refusal and complete workflow pass · **Affected:** AssetImportDialog activeSurfaceFace/normal mode and gizmo painting
+
+Selecting surface-normal mode before a face has been picked throws NullPointerException in controls and painting.
+
+Cause / uncertainty: A conditional expression combined nullable Long normalAnchor with primitive selected face ID, forcing null unboxing.
+
+Fix / next action: Keep the selected face ID explicitly boxed; missing anchor disables transform preview and produces no fake normal gizmo. Require an actual native face before deriving basis.
+
+Evidence and verification: surface-unanchored-negative.txt retains actual intermediate UI exception. AssetImportSurfaceGuiTest selects the visible Transform card and normal mode before picking, verifies disabled preview/empty handles, then completes real surface edits and game publication.
+
+Older-map obligation: Unpublished UI integration defect, corrected before publication. No source assets or other module layouts changed.
+
+### DEV-220 — Nearby projected gizmo handles can capture a precise click on the wrong axis
+
+**Status:** fixed-scoped; exact published d620857e world-space negative control and corrected world/surface GUI checks pass · **Affected:** AssetImportDialog beginAxisDrag; world and surface-normal projected handles
+
+An exact click on later axis2 selects earlier axis1 in published d620857e UI when projected handle hit regions overlap. Intermediate surface mode also reproduces axis2 incorrectly captured as axis0.
+
+Cause / uncertainty: Hit testing chose the first handle within8 pixels rather than the nearest actual handle.
+
+Fix / next action: Choose minimum distance within the existing8-pixel hit radius, keeping stable order for exact ties. Preserve native snapshot/epoch validation, cancellation and shared history.
+
+Evidence and verification: gizmo-d620-negative.txt comes from exact Git d620857e AssetImportDialog compiled separately and run with the same real world-axis control. gizmo-current-positive.txt passes. Surface test finds nearby actual projected handles through real orbit settings, clicks the exact later handle and proves cancel changes no native geometry.
+
+Older-map obligation: Editor input correction only; no map or source geometry is migrated. Identical projected handles remain deterministically tied and can be separated by orbiting the actual camera.
+
+### DEV-221 — Equipment assignment regression still reflects into the removed private GLB JSON reader
+
+**Status:** fixed-scoped; exact5bdd full41551592599 passes equipment assignments; raw308/310 retains only DEV211 art assertions · **Affected:** EquipmentAssetAssignmentsTest after shared GLB decoder extraction
+
+Corrected full41547165572/job125625469653 is green advisory but raw307/310: alongside two DEV211 art assertions, equipment test throws ClassNotFoundException for GlbProps$Json.
+
+Cause / uncertainty: The test fixture decoder was coupled through reflection to the old private parser; production JSON parsing moved to the shared EditorGlbJson. Incremental local output could retain obsolete nested class files, so clean source verification is required.
+
+Fix / next action: Use the actual shared production reader for fixture JSON; keep all original manifest/runtime mapping comparisons. Do not restore a second parser or weaken assignment/art assertions. Compile in a fresh main output directory and run without stale classes.
+
+Evidence and verification: equipment-da2b21da.txt records exact remote failure. equipment-clean-negative.txt reproduces in fresh main classes; equipment-clean-positive.txt passes43 families/129 stage aliases/53 states/162 unique resources with corrected test. No goldens changed.
+
+Older-map obligation: Test integration repair only. Actual packaged TCP stage passed in41547165572, but raw full regression remains unaccepted until corrected-source rerun. DEV211 source-art assertions remain open.
+
+### DEV-222 — Per-part framed GLB grouping changes canonical order of interleaved native faces
+
+**Status:** fixed before local-frame publication; actual game interleaved-order control and source/native tests pass · **Affected:** EditorMaterialGlbWriter, source-backed writer, shared GLB reader and actual GlbProps adapter
+
+Intermediate framed export of A/B/A faces produces actual game order A/A/B: second first-corner X7.7274065 instead of native3.8637033 after rotation.
+
+Cause / uncertainty: Grouping primitives into actual per-part nodes changed traversal order without carrying canonical native face sequence.
+
+Fix / next action: Store bounded per-node BECK_native_order descriptors, validate complete permutations, and consume the same ordered faces in native import and the actual game decoder. Source provenance/validation maps now use actual face identities, including shared instances; readback explicitly verifies order.
+
+Evidence and verification: order-negative.txt records real game mismatch. AssetImportLocalFrameGuiTest now verifies actual interleaved game corners. Source authoring and local tests verify hierarchy, material, original bytes and exact native order without flattening nodes.
+
+Older-map obligation: Unpublished integration defect fixed before publication. Existing ordinary assets without order descriptors keep original decoder traversal. No artwork or goldens changed.
+
+### DEV-223 — GLB readback rejects valid sparse native face IDs
+
+**Status:** fixed-scoped; exact published5bdd writer negative and corrected public encoder/readback control passed · **Affected:** EditorGlbWriter generic native face identity mapping
+
+A valid single triangle retaining native face7 fails GLB readback with lost/duplicated native face identity, despite unchanged geometry.
+
+Cause / uncertainty: Generic output ordinal0 was looked up as native ID0 rather than mapped through the expected native face sequence; sparse IDs after repairs need not start at zero.
+
+Fix / next action: Map generic ordinals to expected stable native IDs, retain explicit tags on framed/source derivatives and validate canonical face order independently. Invalid readback returns checked IOException.
+
+Evidence and verification: sparse-negative-5bdd.txt uses exact5bdd5491 writer Git blob. Same SparseGlbControl passes corrected source; portable local test includes face7 without renumbering it.
+
+Older-map obligation: Editor export correction only. Existing saved native IDs remain stable; no mass reimport or renumbering. Confirm new exact-source CI separately.
+
+### DEV-224 — Signed-zero local frame values fail cross-format equality after JSON decoding
+
+**Status:** fixed before local-frame publication; actual negative/positive GLB readback controls and native guard passed · **Affected:** New EditorMeshFrame component canonical numeric representation
+
+Valid native frame entries containing -0.0 fail exact GLB frame readback because decimal JSON decoding yields positive zero.
+
+Cause / uncertainty: The new frame record distinguished signed zero while its numeric JSON representation did not preserve that distinction.
+
+Fix / next action: Canonicalize only zero-valued frame coefficients at construction. Preserve finite nonzero coefficients, original source bytes, native vertices and raw corner attributes.
+
+Evidence and verification: zero-negative.txt/zero-positive.txt run the same FrameZeroControl against actual GLB writer/reader. EditorLocalFrameTest guards canonical identity and the final native/OBJ/GLB roundtrip.
+
+Older-map obligation: New unpublished component normalization, not an artwork or vertex-normal rewrite. Older native1-4 data stays compatible; native5 explicitly carries the new frame fields.
+
+### DEV-225 — Concurrent main installer and full acceptance fail host campaign persistence assertion
+
+**Status:** fixed in integrated editor branch; packaged desktop/TCP and complete native suite pass locally; exact remote acceptance pending · **Affected:** main ce146a69 packaged startup/multiplayer acceptance
+
+Both workflows stop at AssertionError: Host campaign result saved.
+
+Cause / uncertainty: Desktop test enters physical 3D then calls legacy EXTRACT; main ce146a69 rejects this by design. Isolated current-main LanHost/LanCase plus physical vanDoor request passes actual campaign desktop persistence/navigation.
+
+Fix / next action: Merged main ce146a69 without weakening extraction enforcement; desktop test uses physical vanDoor. Retained both recovery histories and all editor changes.
+
+Evidence and verification: main ce146a69 full41566564774 and installer41566564773; raw failed-step logs retained in native-bevel-2026-11-02. Positive current-main host class test and exact proposed patch retained beside negative remote logs. Merged production JAR desktop, all eight physical/room-mode TCP scenarios and native suite logs: campaign-merge-2026-11-02.
+
+Older-map obligation: Campaign/host behavior requires actual packaged regression; no map or release acceptance inferred.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
@@ -2953,90 +3121,3 @@ House, Farmhouse, School, Church, Castle and all other previously authored areas
 ## Continuity
 
 At every map/model checkpoint: update open issues; check for related defects in reused assets; record new checks and remaining limitations; refresh the shared gallery; commit and push actual evidence. Before a fix is marked complete, rerun the checks it can affect (especially stairs after changing floor depth).
-
-## Source-backed GLB defects — 2026-11-02
-
-### DEV-215 — Runtime GLB decoder ignores original node matrix and changes source pivots
-
-The exact previous18001e8a game decoder places the source fixture first vertex at (3,0,2), although its actual matrix plus parent hierarchy places it at (3,0,1). Use the shared bounded runtime reader for actual game and human editor, including original matrix/TRS hierarchy and inverse-transpose normals. Preserve all original transforms and compile edits back into source local coordinates.
-
-GlbSourceAuthorityTest matrix fails against exact18001e8a GlbProps and passes against current game. Fixture has parent rotation/translation, a nonuniform matrix child and a shared mesh instance. Bundled1088-source audit finds no active nonidentity node.matrix; source audit is not placed-map acceptance. See evidence/source-glb-2026-11-02/.
-
-Scope: Do not rewrite source art or infer complete old-map visual acceptance. Retain asset-specific origin rules; inspect actual changed sources individually. Full source-backed GLB rigs/additional attributes and G2-G12 remain open.
-
-### DEV-216 — Generic external GLB textures use inverted legacy PNG origin
-
-The exact previous18001e8a game decoder samples blue ff0000ff at source (.25,.25), where the original external glTF PNG is red ffff0000. Use source top-left origin for generic external imports unless explicitly declared otherwise; retain exact legacy editor generator and reviewed named-source rules. Keep original image and UV bytes.
-
-GlbSourceAuthorityTest uv reproduces old actual runtime failure and current pass. Human source-backed publication checks RGBA8000ff00 on the original asymmetric PNG. Named purchased models, Blender UV/CRT and Hollow Creek BLEND tests pass locally. See evidence/source-glb-2026-11-02/.
-
-Scope: Do not rewrite source art or infer complete old-map visual acceptance. Retain asset-specific origin rules; inspect actual changed sources individually. Full source-backed GLB rigs/additional attributes and G2-G12 remain open.
-
-## DEV-217 — Packaged test compilation omits portable GLB fixtures
-
-Exact57337f4f full41546195876/job125622271926 fails compiling host GLB tests because the top-level test glob excludes EditorGlbAuthoringTest and its PNG fixture. Native41546191383 and standalone41546137572 pass with explicit dependencies. Both standard build scripts now include those two shared test sources. No production fixture code or art/golden changes. Corrected full/TCP acceptance remains pending and DEV211 remains open.
-
-## DEV-218 — Camera extension drops existing compiled picker signatures
-
-The unpublished Projector generalization passed source tests but a client compiled against exact da2b21da picker failed with NoSuchMethodError. Restored enum-typed public pick/prepare overloads delegating to Projector. The identical compiled consumer now passes against the actual independent JAR; signature guards and maximum camera/orthographic tests pass. Actual negative/positive outputs and consumer are in perspective-workspace evidence. No source art or scene edits; fixed before perspective publication.
-
-## Surface integration and observed full-round defects — 2026-11-02
-
-### DEV-219 — Unanchored surface mode unboxes a null native face anchor
-
-Selecting surface-normal mode before a face has been picked throws NullPointerException in controls and painting. Keep the selected face ID explicitly boxed; missing anchor disables transform preview and produces no fake normal gizmo. Require an actual native face before deriving basis.
-
-surface-unanchored-negative.txt retains actual intermediate UI exception. AssetImportSurfaceGuiTest selects the visible Transform card and normal mode before picking, verifies disabled preview/empty handles, then completes real surface edits and game publication.
-
-Scope: Unpublished UI integration defect, corrected before publication. No source assets or other module layouts changed.
-
-### DEV-220 — Nearby projected gizmo handles can capture a precise click on the wrong axis
-
-An exact click on later axis2 selects earlier axis1 in published d620857e UI when projected handle hit regions overlap. Intermediate surface mode also reproduces axis2 incorrectly captured as axis0. Choose minimum distance within the existing8-pixel hit radius, keeping stable order for exact ties. Preserve native snapshot/epoch validation, cancellation and shared history.
-
-gizmo-d620-negative.txt comes from exact Git d620857e AssetImportDialog compiled separately and run with the same real world-axis control. gizmo-current-positive.txt passes. Surface test finds nearby actual projected handles through real orbit settings, clicks the exact later handle and proves cancel changes no native geometry.
-
-Scope: Editor input correction only; no map or source geometry is migrated. Identical projected handles remain deterministically tied and can be separated by orbiting the actual camera.
-
-### DEV-221 — Equipment assignment regression still reflects into the removed private GLB JSON reader
-
-Corrected full41547165572/job125625469653 is green advisory but raw307/310: alongside two DEV211 art assertions, equipment test throws ClassNotFoundException for GlbProps$Json. Use the actual shared production reader for fixture JSON; keep all original manifest/runtime mapping comparisons. Do not restore a second parser or weaken assignment/art assertions. Compile in a fresh main output directory and run without stale classes.
-
-equipment-da2b21da.txt records exact remote failure. equipment-clean-negative.txt reproduces in fresh main classes; equipment-clean-positive.txt passes43 families/129 stage aliases/53 states/162 unique resources with corrected test. No goldens changed.
-
-Scope: Test integration repair only. Actual packaged TCP stage passed in41547165572, but raw full regression remains unaccepted until corrected-source rerun. DEV211 source-art assertions remain open.
-
-## Local-frame integration — 2026-11-02
-
-### DEV-222 — Per-part framed GLB grouping changes canonical order of interleaved native faces
-
-Intermediate framed export of A/B/A faces produces actual game order A/A/B: second first-corner X7.7274065 instead of native3.8637033 after rotation. Store bounded per-node BECK_native_order descriptors, validate complete permutations, and consume the same ordered faces in native import and the actual game decoder. Source provenance/validation maps now use actual face identities, including shared instances; readback explicitly verifies order.
-
-order-negative.txt records real game mismatch. AssetImportLocalFrameGuiTest now verifies actual interleaved game corners. Source authoring and local tests verify hierarchy, material, original bytes and exact native order without flattening nodes.
-
-Scope: Unpublished integration defect fixed before publication. Existing ordinary assets without order descriptors keep original decoder traversal. No artwork or goldens changed.
-
-### DEV-223 — GLB readback rejects valid sparse native face IDs
-
-A valid single triangle retaining native face7 fails GLB readback with lost/duplicated native face identity, despite unchanged geometry. Map generic ordinals to expected stable native IDs, retain explicit tags on framed/source derivatives and validate canonical face order independently. Invalid readback returns checked IOException.
-
-sparse-negative-5bdd.txt uses exact5bdd5491 writer Git blob. Same SparseGlbControl passes corrected source; portable local test includes face7 without renumbering it.
-
-Scope: Editor export correction only. Existing saved native IDs remain stable; no mass reimport or renumbering. Confirm new exact-source CI separately.
-
-### DEV-224 — Signed-zero local frame values fail cross-format equality after JSON decoding
-
-Valid native frame entries containing -0.0 fail exact GLB frame readback because decimal JSON decoding yields positive zero. Canonicalize only zero-valued frame coefficients at construction. Preserve finite nonzero coefficients, original source bytes, native vertices and raw corner attributes.
-
-zero-negative.txt/zero-positive.txt run the same FrameZeroControl against actual GLB writer/reader. EditorLocalFrameTest guards canonical identity and the final native/OBJ/GLB roundtrip.
-
-Scope: New unpublished component normalization, not an artwork or vertex-normal rewrite. Older native1-4 data stays compatible; native5 explicitly carries the new frame fields.
-
-
-### DEV-225 — Concurrent main host campaign persistence assertion
-
-OPEN: exact main ce146a69 full41566564774 and installer41566564773 both fail `Host campaign result saved`. Raw failed-step logs are retained in evidence/native-bevel-2026-11-02. Cause is unverified; temporal proximity to independent LAN extraction changes is not causation. Inspect actual packaged test and host persistence before changing code or expectations. Older-map/campaign acceptance remains unproven.
-
-DEV225 diagnosis: desktop fixture enters 3D then calls legacy EXTRACT, which ce146a69 correctly rejects. Actual current-main LanHost/LanCase compiled in isolated build output passes the same embedded desktop campaign when invoking physical vanDoor. Positive raw log and exact test patch retained. Integration/packaged acceptance remains pending; do not relax host enforcement.
-
-DEV225 integrated fix: merged ce146a69 host behavior, changed only desktop fixture request to physical vanDoor. Production JAR actual campaign persistence/navigation, eight TCP retreat scenarios, clean host-test compilation and full native editor/service suite PASS. Evidence campaign-merge-2026-11-02; remote acceptance pending.
