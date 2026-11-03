@@ -9,7 +9,7 @@ public final class VanModuleIntegrationTest {
     private static void ok(boolean yes,String label){
         if(!yes)throw new AssertionError(label);
     }
-    public static void main(String[] args){
+    public static void main(String[] args)throws Exception{
         ok(Math.abs(VanStaging.REAR-VanStaging.FRONT-4.256)<.001,"manufacturer-sized long cargo bay");
         ok(Math.abs(VanStaging.HALF_WIDTH*2-2.059)<.001,"road-vehicle body width");
         ok(VanStaging.INTERIOR_HEIGHT>=2.10,"full height workstation and overhead lights");
@@ -74,8 +74,9 @@ public final class VanModuleIntegrationTest {
         ok(VanInteriorLayout.openAisle(0,0),"straight aisle is not obstructed");
         for(double z=VanStaging.FRONT+.34;z<=1.10;z+=.15)
             ok(VanInteriorLayout.openAisle(0,z),"centre walkway blocked at "+z);
+        try(var fixture=AuthoredTestSupport.userFixture()){
         for(HouseMap.Site site:HouseMap.Site.values()){
-            var map=new HouseMap(site);
+            var map=fixture.map(site);
             var van=map.van();
             var spawn=van.spawn();
             ok(map.traversable(spawn.x(),spawn.z()),"spawn clear "+site);
@@ -91,6 +92,7 @@ public final class VanModuleIntegrationTest {
                 ok(local.x()<0 && local.z()>=VanStaging.FRONT,
                     "solo bought item mounted on physical left rack");
             }
+        }
         }
         ok(java.util.Arrays.asList(InGamePauseMenu.options()).contains("Exit Game"),
             "Exit Game available without extraction");

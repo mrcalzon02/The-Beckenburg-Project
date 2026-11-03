@@ -21,6 +21,10 @@ public final class VanRackStockTest {
                 var v=p.vertex(new GlbProps.Vertex(x,y,z,0,0));double[] q={v.x(),v.y(),v.z()};for(int n=0;n<3;n++){lo[n]=Math.min(lo[n],q[n]);hi[n]=Math.max(hi[n],q[n]);}
             }
             check(lo[0]>-VanStaging.INTERIOR_HALF_WIDTH&&hi[0]<=-.51+.001&&lo[1]>VanStaging.FLOOR_Y&&hi[1]<VanInteriorLayout.ROOF_Y&&lo[2]>=-1.941&&hi[2]<=1.541,"stored model must fit actual shelves and leave aisle clear");
+            check(!(lo[0]<-VanInteriorLayout.WHEEL_WELL_INNER_X&&hi[0]>-VanInteriorLayout.WHEEL_WELL_OUTER_X
+                &&lo[1]<VanInteriorLayout.WHEEL_WELL_TOP&&hi[1]>VanStaging.FLOOR_Y
+                &&lo[2]<VanInteriorLayout.WHEEL_WELL_REAR-1e-8&&hi[2]>VanInteriorLayout.WHEEL_WELL_FRONT+1e-8),
+                "native-sized stock must not be buried inside the rear wheel housing: "+p.entry().id());
             double[] nativeSize={b.x1()-b.x0(),b.y1()-b.y0(),b.z1()-b.z0()},placedSize={hi[0]-lo[0],hi[1]-lo[1],hi[2]-lo[2]};Arrays.sort(nativeSize);Arrays.sort(placedSize);
             for(int n=0;n<3;n++)check(Math.abs(nativeSize[n]-placedSize[n])<1e-7,"stock must retain native metres, without shrinking");
             for(double[] other:volumes)check(!(lo[0]<other[3]-.001&&hi[0]>other[0]+.001&&lo[1]<other[4]-.001&&hi[1]>other[1]+.001&&lo[2]<other[5]-.001&&hi[2]>other[2]+.001),"physical stock meshes overlap");
