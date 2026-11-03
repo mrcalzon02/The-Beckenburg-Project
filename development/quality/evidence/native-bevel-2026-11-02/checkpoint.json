@@ -26,5 +26,14 @@
     "native-suite.txt": "0a360052deb98511fa377a8282b4456b7d484c7832f617508a45310435215ddc",
     "README.md": "40a69d32d55976daa5c88017d0640c06fe5059a8da0f8d944159e3c6d2692645",
     "source-edge.glb": "0c57d4c06e73e10f7a6c137d9ec64080ed7939a719e8a96e3a371d964bde6f6e"
-  }
+  },
+  "publishedSource": "4496c5d5d6753d21a9ca8630eb0b61214a39e411",
+  "remoteVerified": true,
+  "ci": {
+    "standalone": 41568226584,
+    "native": 41568230411,
+    "full": 41568234297,
+    "state": "Dispatched exact4496c5d5; retain live handles without restart"
+  },
+  "concurrentMain": "ce146a69 independent LAN room extraction fix; preserved on main"
 }
