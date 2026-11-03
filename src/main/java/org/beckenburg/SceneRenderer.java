@@ -2563,6 +2563,9 @@ public final class SceneRenderer {
     }
     /** First-person network rendering with low-poly teammate models and host-managed doors. */
     private final HunterSpriteAnimation.Tracker hunterAnimation=new HunterSpriteAnimation.Tracker();
+    private HouseMap hunterAnimationMap;
+    HunterSpriteAnimation.Pose hunterPose(int slot){return hunterAnimation.current(slot);}
+    void forgetHunter(int slot){hunterAnimation.forget(slot);}
     public record RemoteBody(double x,double y,double z,int slot,int heading,String appearance,boolean crouched) {
         public RemoteBody(double x,double y,double z,int slot,int heading,String appearance){this(x,y,z,slot,heading,appearance,false);}
         public RemoteBody(double x,double y,double z,int slot,int heading){this(x,y,z,slot,heading,"observer");}
@@ -3602,6 +3605,7 @@ public final class SceneRenderer {
      */
     private void renderCharacterSprites(HouseMap map,int ghostRoom,boolean visibleGhost,
             int hunterRoom,double clock,List<RemoteBody> others,Apparition apparition){
+        if(hunterAnimationMap!=map){hunterAnimation.reset();hunterAnimationMap=map;}
         if(visibleGhost){
             double gx=apparition==null?map.centerX(ghostRoom):apparition.x();
             double gz=apparition==null?map.centerZ(ghostRoom):apparition.z();

@@ -395,6 +395,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     hunterVisuals.getOrDefault(who,"observer"),hunterPostures.getOrDefault(who,false)));
             }else if(p.size()==3&&p.get(0).equals("PEER")&&p.get(1).equals("LEFT")){
                 int gone=LanProtocol.integer(p.get(2),0,5);
+                renderer.forgetHunter(gone);videoRenderer.forgetHunter(gone);photoRenderer.forgetHunter(gone);
                 if(gone!=seat){peers.remove(gone);hunterNames.remove(gone);hunterVisuals.remove(gone);}
                 feedback="INVESTIGATOR "+(gone+1)+" DISCONNECTED - CASE CONTINUES";
             }else if((p.size()==2||p.size()==3||p.size()==4)&&p.get(0).equals("FORM")){
@@ -1071,6 +1072,13 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         lastCameraRenderTick=-100000; // A manual channel switch can sample immediately.
         if(vanDisplay)VanLiveScreens.camera(null,"SWITCHING CAMERA");
     }
+    /** Shared by the live viewport and packaged host/client gameplay acceptance. */
+    void renderWorld(){
+        hauntings.removeIf(e->tick>=e.untilTick());
+        renderer.setHauntings(new ArrayList<>(hauntings));
+        renderer.setAdditionalGhostBodies(new ArrayList<>(pairedGhostBodies.values()));
+        renderer.drawNetwork(map,new ArrayList<>(peers.values()),apparition,tick*.1,List.copyOf(counterMarks));
+    }
     private void frame(){
         toolGrip.advance();
         if(toolGrip.held()&&!toolPlacement&&ToolBeltHud.repeatable(equippedGear[activeGearSlot])
@@ -1187,10 +1195,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         }
         renderer.rackToolTiers=java.util.Map.of();
         renderer.rackInventory=rackSnapshot.stock();
-        hauntings.removeIf(e->tick>=e.untilTick());
-        renderer.setHauntings(new ArrayList<>(hauntings));
-        renderer.setAdditionalGhostBodies(new ArrayList<>(pairedGhostBodies.values()));
-        renderer.drawNetwork(map,new ArrayList<>(peers.values()),apparition,tick*.1,List.copyOf(counterMarks));
+        renderWorld();
         // A camera carried in hand shows its own live, pose-correct rear LCD.
         // Only sample when a visible investigator has the device equipped;
         // bound the extra synchronous lens render to 2.5 samples per second.

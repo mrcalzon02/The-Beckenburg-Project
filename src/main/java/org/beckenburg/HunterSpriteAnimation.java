@@ -48,6 +48,10 @@ public final class HunterSpriteAnimation {
     public static final class Tracker {
         private record Step(double x,double z,double clock,double moved,double distance,String identity){}
         private final Map<Integer,Step> seats=new HashMap<>();
+        private final Map<Integer,Pose> poses=new HashMap<>();
+        public Pose current(int slot){return poses.getOrDefault(slot,Pose.IDLE);}
+        public void reset(){seats.clear();poses.clear();}
+        public void forget(int slot){seats.remove(slot);poses.remove(slot);}
         public Pose sample(SceneRenderer.RemoteBody body,double clock){
             Step old=seats.get(body.slot());
             double moved=Double.NEGATIVE_INFINITY,distance=0;
@@ -59,9 +63,10 @@ public final class HunterSpriteAnimation {
                 }
             }
             seats.put(body.slot(),new Step(body.x(),body.z(),clock,moved,distance,body.appearance()));
-            if(body.crouched())return Pose.CROUCH;
-            if(clock-moved>.20)return Pose.IDLE;
-            return ((int)Math.floor(distance/.32)&1)==0?Pose.WALK_A:Pose.WALK_B;
+            Pose pose=body.crouched()?Pose.CROUCH:clock-moved>.20?Pose.IDLE:
+                ((int)Math.floor(distance/.32)&1)==0?Pose.WALK_A:Pose.WALK_B;
+            poses.put(body.slot(),pose);
+            return pose;
         }
     }
 }
