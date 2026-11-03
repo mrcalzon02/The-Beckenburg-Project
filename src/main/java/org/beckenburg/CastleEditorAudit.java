@@ -58,7 +58,7 @@ public final class CastleEditorAudit {
             result.add(new Finding("SPAWN_WALL_INTERSECTION", "SPAWN", "start",
                 "Player spawn centre is inside an authored solid wall.", sx, 0, sz));
         int tx = (int) Math.floor(sx), tz = (int) Math.floor(sz);
-        if (tx >= 0 && tx < CastleHubMap.WIDTH && tz >= 0 && tz < CastleHubMap.HEIGHT &&
+        if (tx >= CastleWorldBounds.MIN_X && tx < CastleHubMap.WIDTH && tz >= 0 && tz < CastleHubMap.HEIGHT &&
             scene.navBlocked(tx, tz))
             result.add(new Finding("SPAWN_BLOCKED_NAV", "SPAWN", "start",
                 "Spawn sits on an editor-blocked navigation tile.", sx, 0, sz));

@@ -1,0 +1,30 @@
+{
+  "scope": "CASTLE_CONSTRUCTION_FOUNDATION_NOT_COMPLETE_REBUILD",
+  "owner_priority": "Complete Castle before remaining maps",
+  "defect": "DEV-234",
+  "source_before": "97c4ccb9b59c3b12806993df1d19c58ec03248ff",
+  "capture": {
+    "path": "development/levels/rebuild/captures/castle-construction/signed-annex-native.png",
+    "sha256": "1bd6b3680567ba6ef99561adbfb18fcd1d05867c0e62418a382513fe63003f30",
+    "source": "Actual EditorAgentService.capture -> SceneRenderer.drawCastle, temporary native floor/wall control; original profile untouched"
+  },
+  "passed": [
+    "Java17 package and audio audit",
+    "Packaged signed construction/service capture",
+    "CastleSnapshotContractTest",
+    "CastleEditorGeometryTest",
+    "CastleDocumentRecoveryTest",
+    "CastleHubIntegrationTest",
+    "CastleHeadquartersRevisionTest",
+    "CastlePortalSlotTest",
+    "EditorAgentServiceTest"
+  ],
+  "remaining": [
+    "Construct complete actual native Castle architecture, protected training annex, upper lodging and roof/load paths",
+    "Create persisted editor terrain holes beneath actual cellar and architectural floor voids",
+    "Implement/verify negative-floor movement, stair/guard/body/optical/object and support rules",
+    "Fit all source-scale models, supported fixtures, services and environmental detail",
+    "Verify all stations/residents/gear/campaign/network/gate and complete Castle-case-Castle journey",
+    "Actual native/runtime visual and required hardware performance acceptance; no round-time testing"
+  ]
+}

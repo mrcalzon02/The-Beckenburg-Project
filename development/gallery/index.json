@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 2317,
+  "count": 2319,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -20276,6 +20276,16 @@
       "sha256": "f63348a4ce71e7f5fc85e17f92d8e133e8f5f335c803839641d59e2e9f41aa37"
     },
     {
+      "path": "development/levels/rebuild/captures/castle-construction/signed-annex-native.png",
+      "url": "development/levels/rebuild/captures/castle-construction/signed-annex-native.png",
+      "title": "Signed annex native",
+      "kind": "Runtime capture",
+      "width": 800,
+      "height": 500,
+      "bytes": 127588,
+      "sha256": "1bd6b3680567ba6ef99561adbfb18fcd1d05867c0e62418a382513fe63003f30"
+    },
+    {
       "path": "development/levels/rebuild/captures/church-upper-openings/door-7-8.png",
       "url": "development/levels/rebuild/captures/church-upper-openings/door-7-8.png",
       "title": "Door 7 8",
@@ -21124,6 +21134,16 @@
       "height": 800,
       "bytes": 1468391,
       "sha256": "1bd1a2cfd6d090762d7d96ed0acae8e7c8bc61f5fcb6e00f7726f9b5b63c752d"
+    },
+    {
+      "path": "development/levels/rebuild/previews/castle-revised-rough-plan.png",
+      "url": "development/levels/rebuild/previews/castle-revised-rough-plan.png",
+      "title": "Castle revised rough plan",
+      "kind": "Planning diagram",
+      "width": 2100,
+      "height": 1208,
+      "bytes": 103045,
+      "sha256": "f219fe7e1caf7c0cfda84c78c6a5d2c62fb067be437be73243e1d5132dd3cbef"
     },
     {
       "path": "development/levels/rebuild/previews/church-revised-rough-plan.png",

@@ -2251,7 +2251,7 @@ public final class SceneRenderer {
             if(!faceInFrustum(f))continue;
             lastGpuFrustumFaces++;
             int room=f.room>=0?f.room:map==null?
-                (((f.a.x+f.b.x+f.c.x)/3<0||(f.a.x+f.b.x+f.c.x)/3>CastleHubMap.WIDTH
+                (((f.a.x+f.b.x+f.c.x)/3<CastleWorldBounds.MIN_X||(f.a.x+f.b.x+f.c.x)/3>CastleHubMap.WIDTH
                     ||(f.a.z+f.b.z+f.c.z)/3<0||(f.a.z+f.b.z+f.c.z)/3>CastleHubMap.HEIGHT)?13:0):
                 map.roomAt((f.a.x+f.b.x+f.c.x)/3,
                     (f.a.y+f.b.y+f.c.y)/3,(f.a.z+f.b.z+f.c.z)/3);
@@ -2956,7 +2956,7 @@ public final class SceneRenderer {
         var owned=new ArrayList<Face>(source.size());
         for(var face:source){
             double x=(face.a.x+face.b.x+face.c.x)/3,z=(face.a.z+face.b.z+face.c.z)/3;
-            owned.add(face.owned(x<0||x>CastleHubMap.WIDTH||z<0||z>CastleHubMap.HEIGHT?13:0));
+            owned.add(face.owned(x<CastleWorldBounds.MIN_X||x>CastleHubMap.WIDTH||z<0||z>CastleHubMap.HEIGHT?13:0));
         }
         return partitionWorld(owned);
     }
@@ -3153,7 +3153,7 @@ public final class SceneRenderer {
         boolean gpuFrame=drawGpuFaces(castle,null);
         if(!gpuFrame)for(Face face:castle){
             double mx=(face.a.x+face.b.x+face.c.x)/3,mz=(face.a.z+face.b.z+face.c.z)/3;
-            int room=mx<0||mx>CastleHubMap.WIDTH||mz<0||mz>CastleHubMap.HEIGHT||map.outside(mx,mz)?13:0;
+            int room=mx<CastleWorldBounds.MIN_X||mx>CastleHubMap.WIDTH||mz<0||mz>CastleHubMap.HEIGHT||map.outside(mx,mz)?13:0;
             drawLitFace(face,room,0);
         }
         sceneWater(null,gpuFrame,clock);long geometryRendered=System.nanoTime();

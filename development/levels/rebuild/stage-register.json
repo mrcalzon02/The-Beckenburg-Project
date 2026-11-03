@@ -386,18 +386,33 @@
           "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
+          "evidence": [
+            "tools/build_map_rebuild_roughs.py",
+            "development/levels/rebuild/castle/rough-layout.json",
+            "development/levels/rebuild/castle/rough-plan.svg",
+            "development/levels/rebuild/castle/rough-sections.svg",
+            "development/levels/rebuild/castle/rough-asset-bounds.json",
+            "development/levels/rebuild/castle/rough-decisions.md",
+            "development/levels/rebuild/castle/rough-render-verification.json",
+            "development/levels/rebuild/castle/search-envelope.json",
+            "development/levels/rebuild/castle/search-layout.json",
+            "development/levels/rebuild/previews/castle-revised-rough-plan.png"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
+          "next_action": "Complete Castle first per owner override. Preserve39 accessible spaces and all9 station/5 resident coordinates, peaceful HQ and canonical parked van. Construct actual architecture/terrain/detail and prove all hub functions; rough alone is not completion."
         },
         "S03": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
+          "evidence": [
+            "src/main/java/org/beckenburg/CastleWorldBounds.java",
+            "src/main/java/org/beckenburg/CastleEditorAgent.java",
+            "src/test/java/org/beckenburg/CastleSignedConstructionTest.java"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Build full actual native Castle geometry now that signed annex/cellar authoring and runtime floor support are implemented. Terrain punching, new stair physics, room/roof/support/fixtures, functional interfaces and complete verification remain open."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -3416,5 +3431,10 @@
     ],
     "status": "REQUIRED_NOT_RUNTIME_ACCEPTED",
     "rule": "Count actual traversable spaces including circulation; preserve coherent sealed context and prevent objective/ghost/interaction leakage. Build maps; round-duration testing is outside this task."
+  },
+  "execution_priority_override": {
+    "site": "CASTLE",
+    "owner_direction_date": "2026-11-03",
+    "rule": "Complete the full Castle revision and actual hub verification before continuing remaining maps. Other28 packets remain in scope; no round-duration testing."
   }
 }

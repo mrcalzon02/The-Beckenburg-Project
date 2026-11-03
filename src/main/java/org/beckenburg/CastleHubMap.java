@@ -7,12 +7,14 @@ public final class CastleHubMap {
     public SoundDocument sounds(){return sounds;}
     private final dev.mrcalzon.water.WaterDocument water=WorldWater.load("castle");
     public dev.mrcalzon.water.WaterDocument water(){return water;}
-    private final char[][] grid=new char[HEIGHT][WIDTH];
+    private static final int GRID_WIDTH=WIDTH-CastleWorldBounds.MIN_X;
+    private final char[][] grid=new char[HEIGHT][GRID_WIDTH];
     /** All navigable ground cells, including the entrance apron. Immutable so
      * the renderer never needs to rediscover the map or drop distant tiles. */
     public record GroundCell(int x,int z){}
-    private final java.util.List<GroundCell> groundCells;
-    public java.util.List<GroundCell> groundCells(){return groundCells;}
+    private java.util.List<GroundCell> groundCells=java.util.List.of();
+    private long groundRevision=Long.MIN_VALUE;
+    public java.util.List<GroundCell> groundCells(){refreshGround();return groundCells;}
     private final java.util.Set<String> openDoors=new java.util.HashSet<>();
     private long doorRevision;
     public long doorRevision(){return doorRevision;}
@@ -78,17 +80,23 @@ public final class CastleHubMap {
      * wings, a covered north block and an open south courtyard.
      * Purchasing stations retain their physically reachable world coordinates.
      */
-    public CastleHubMap(){
+    public CastleHubMap(){refreshGround();}
+    /** Native editor floor changes refresh the same runtime support index. */
+    private void refreshGround(){
+        var scene=CastleLevelEdits.current();long revision=scene.revision();
+        if(groundRevision==revision)return;
+        var floors=scene.surfaces().stream().filter(s->s.kind()==CastleLevelEdits.Kind.FLOOR&&Math.abs(s.base())<.18).toList();
         for(char[] row:grid)java.util.Arrays.fill(row,'#');
-        for(int z=0;z<HEIGHT;z++)for(int x=0;x<WIDTH;x++)
-            if(CastleRooms.ground(x+.5,z+.5))grid[z][x]='.';
         var cells=new java.util.ArrayList<GroundCell>();
-        for(int z=0;z<HEIGHT;z++)for(int x=0;x<WIDTH;x++)if(!solid(x,z))cells.add(new GroundCell(x,z));
-        groundCells=java.util.List.copyOf(cells);
-
+        for(int z=0;z<HEIGHT;z++)for(int x=CastleWorldBounds.MIN_X;x<WIDTH;x++){
+            double px=x+.5,pz=z+.5;
+            boolean supported=CastleRooms.ground(px,pz)||floors.stream().anyMatch(s->px>=s.x0()&&px<=s.x1()&&pz>=s.z0()&&pz<=s.z1());
+            if(supported){grid[z][x-CastleWorldBounds.MIN_X]='.';cells.add(new GroundCell(x,z));}
+        }
+        groundCells=java.util.List.copyOf(cells);groundRevision=revision;
     }
     private void carve(int x0,int z0,int x1,int z1){
-        for(int z=z0;z<=z1;z++)for(int x=x0;x<=x1;x++)grid[z][x]='.';
+        for(int z=z0;z<=z1;z++)for(int x=x0;x<=x1;x++)grid[z][x-CastleWorldBounds.MIN_X]='.';
     }
     /** Courtyard paving is open to the sky; both lateral wings remain indoors. */
     public boolean outside(double x,double z){
@@ -100,7 +108,7 @@ public final class CastleHubMap {
                 solid((int)Math.floor(x),(int)Math.floor(z)))
             throw new IllegalArgumentException("floor location must be navigable");
         var room=CastleRooms.at(x,0,z);
-        int nativeMaterial=room==null?MaterialAtlas.STONE:room.material();
+        int nativeMaterial=CastleLevelEdits.current().floorSurfaceMaterial(x,z,0,room==null?MaterialAtlas.STONE:room.material());
         return CastleLevelEdits.current().floorMaterial((int)Math.floor(x),
             (int)Math.floor(z),nativeMaterial);
     }
@@ -125,20 +133,25 @@ public final class CastleHubMap {
         queue.add(new int[]{13,19});
         while(!queue.isEmpty()){
             int[] point=queue.removeFirst();
-            int x=point[0],z=point[1],key=z*WIDTH+x;
-            if(x<0||x>=WIDTH||z<0||z>=HEIGHT||solid(x,z)||!seen.add(key))continue;
+            int x=point[0],z=point[1];
+            if(!CastleWorldBounds.cell(x,z))continue;
+            int key=CastleWorldBounds.cellKey(x,z);
+            if(solid(x,z)||!seen.add(key))continue;
             queue.add(new int[]{x+1,z});queue.add(new int[]{x-1,z});
             queue.add(new int[]{x,z+1});queue.add(new int[]{x,z-1});
         }
-        for(int z=0;z<HEIGHT;z++)for(int x=0;x<WIDTH;x++)
-            if(!solid(x,z)&&!seen.contains(z*WIDTH+x))return false;
+        for(int z=0;z<HEIGHT;z++)for(int x=CastleWorldBounds.MIN_X;x<WIDTH;x++)
+            if(!solid(x,z)&&!seen.contains(CastleWorldBounds.cellKey(x,z)))return false;
         for(Station station:Station.values())
             if(solid((int)station.x,(int)station.z))return false;
         return true;
     }
-    public char tile(int x,int z){return x<0||z<0||x>=WIDTH||z>=HEIGHT?'#':grid[z][x];}
+    public char tile(int x,int z){refreshGround();return !CastleWorldBounds.cell(x,z)?'#':grid[z][x-CastleWorldBounds.MIN_X];}
     public boolean solid(int x,int z){return tile(x,z)=='#';}
 
+    private static boolean groundSupports(double x,double z){
+        return CastleRooms.ground(x,z)||CastleLevelEdits.current().floorSupports(x,z,0);
+    }
     public boolean traversable(double x,double z){return groundTraversable(x,z,0);}
     private boolean groundTraversable(double x,double z,double elevation){
         return groundTraversable(x,z,elevation,true);
@@ -152,8 +165,8 @@ public final class CastleHubMap {
         if(CastleHubArchitecturalPlan.onStairs(x,z)&&elevation+.10<CastleHubArchitecturalPlan.stairHeight(x,z))return false;
         if(!Double.isFinite(x)||!Double.isFinite(z))return false;
         double r=.21;
-        if(!CastleRooms.ground(x-r,z-r)||!CastleRooms.ground(x+r,z-r)
-            ||!CastleRooms.ground(x-r,z+r)||!CastleRooms.ground(x+r,z+r))return false;
+        if(!groundSupports(x-r,z-r)||!groundSupports(x+r,z-r)
+            ||!groundSupports(x-r,z+r)||!groundSupports(x+r,z+r))return false;
         var edits=CastleLevelEdits.current();
         if(edits.navBlocked((int)Math.floor(x),(int)Math.floor(z))
             ||edits.wallBlocks(x,elevation,z,r)

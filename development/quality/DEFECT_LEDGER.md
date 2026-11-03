@@ -10,6 +10,20 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-234 — Castle native bounds reject coherent west annex and cellar construction
+
+**Status:** fixed-scoped authoring/runtime foundation; full Castle geometry and terrain remain unfinished · **Affected:** Castle native geometry, human editor tools, shared agent service, ground support and cell persistence
+
+Actual pre-fix Castle rejects annex-floor at negative X; surfaces/props below -0.5 are forbidden and naive negative cells would alias legacy paint/nav IDs.
+
+Cause / uncertainty: The old headquarters assumes a nonnegative44x36 footprint and ground/upper authoring only; runtime ground support ignores added native floors.
+
+Fix / next action: Add signed bounded extent and append-only cell encoding, permit actual cellar source heights, refresh runtime ground support on native edits/undo/redo, use native floor materials, update human authoring bounds and expose strict put-surface/remove-surface through shared history.
+
+Evidence and verification: development/levels/rebuild/verification/castle-construction-2026-11-03; pre-fix real JAR refuses negative floor; final packaged test passes actual floor/wall/nav, native save/reopen, history, all2232 unique cells and service renderer capture.
+
+Older-map obligation: Castle-only authoring expansion. Preserve all1584 original cell keys and saved custom native scenes. Below-ground source support does not punch terrain or prove new cellar traversal; those remain required next.
+
 ### DEV-233 — Viewport controls regression expects retired physical extraction shortcut
 
 **Status:** fixed-scoped; actual packaged TCP viewport controls pass locally · **Affected:** LanWorldControlsTest assertion after VIEW3D

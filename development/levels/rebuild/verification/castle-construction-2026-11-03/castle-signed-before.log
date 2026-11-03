@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.IllegalArgumentException: Invalid architectural surface annex-floor
+	at org.beckenburg.CastleLevelEdits$Surface.<init>(CastleLevelEdits.java:65)
+	at org.beckenburg.CastleSignedConstructionTest.main(CastleSignedConstructionTest.java:12)

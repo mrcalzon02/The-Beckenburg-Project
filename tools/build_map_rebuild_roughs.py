@@ -10,6 +10,7 @@ import hashlib
 import importlib.util
 import json
 import math
+import re
 import struct
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -1044,6 +1045,107 @@ def church():
             'Verify grounded parish arrival, stairs, closed/open doors, ghost/hunter routes, rituals, electrical operation, native/runtime/network parity and required performance; no round-time testing.'])
 
 
+def castle():
+    zones,links,fit,sleeping=[],[],[],[]
+    def room(key,name,bounds,y,owner,kind='inside',height=3.4):
+        zones.append(dict(id=key,name=name,bounds=bounds,y=y,height=height,owner=owner,kind=kind,purpose=name))
+    for key,name,bounds,owner,kind in [
+        ('armory','Existing quartermaster issue and equipment stock',[1,1,10.5,11.5],'armory','inside'),
+        ('contracts','Existing briefing and campaign contracts',[10.5,1,19.5,11.5],'contracts','inside'),
+        ('role-lounge','Role wardrobe and lounge',[19.5,5,28.5,11.5],'wardrobe','inside'),
+        ('ground-wc','Discreet ground sanitary room',[19.5,1,23.5,5],'wardrobe','inside'),
+        ('ground-wash','Ground washing and handwashing',[23.5,1,28.5,5],'wardrobe','inside'),
+        ('practice','Existing spectral practice and ritual scholar',[1,11.5,10.5,22],'practice','inside'),
+        ('common','Headquarters common dining and training approach',[1,22,10.5,28],'practice','inside'),
+        ('kitchen','Household food preparation and cooking',[1,28,6.5,34],'practice','inside'),
+        ('washup','Dirty dish washing',[6.5,28,10.5,31],'practice','inside'),
+        ('pantry','Household dry food storage',[6.5,31,10.5,34],'practice','inside'),
+        ('network','Existing communications and network desk',[20.5,11.5,28.5,21],'operations','inside'),
+        ('operations','Existing settings counter and operations work',[20.5,21,28.5,34],'operations','inside'),
+        ('archive','Existing Common Archive and Lore Master',[28.5,4,43,17.5],'archive','inside'),
+        ('store','Quartermaster physical stock and retrieval aisles',[28.5,17.5,37,34],'store','inside'),
+        ('repair','Repair and separated chemistry task work',[37,17.5,43,26],'store','inside'),
+        ('infirmary','Private first aid recovery and handwashing',[37,26,43,34],'store','inside'),
+        ('training-entry','Protected three-rite training distribution',[-17,26,1,30],'practice','circulation'),
+        ('train-b','Protected Banishment training bay',[-17,14,-11,26],'practice','inside'),
+        ('train-c','Protected Cleansing training bay',[-11,14,-5,26],'practice','inside'),
+        ('train-a','Protected Absolution training bay',[-5,14,1,26],'practice','inside')]:room(key,name,bounds,0,owner,kind)
+    room('stage','Arrival courtyard and existing expedition approach',[10.5,11.5,20.5,34],0,'court','staging',12)
+    room('entry','Existing gate threshold',[13.2,34,17.8,36],0,'gate','outside',12)
+    room('library','Existing upper library',[10.5,1,19.5,11.5],3.4,'library')
+    room('gallery','Existing main stair upper gallery',[16,11.5,19,22],3.4,'library','circulation')
+    room('res-hall','Upper west residence circulation',[7.5,1,10.5,34],3.4,'library','circulation')
+    for i,z in enumerate([11.5,18.5,25.5]):
+        key=f'lodging-{i+1}';room(key,f'Two-place investigator lodging {i+1}',[1,z,7.5,z+7],3.4,'library');sleeping.append(key)
+        for offset in [2,5]:fit.append(dict(space=key,asset='bed_5',origin=[4.25,3.4,z+offset]))
+    room('upper-wash','Resident washing and private shower bays',[1,1,7.5,7],3.4,'library')
+    room('upper-wc','Resident WC bays',[1,7,4,11.5],3.4,'library')
+    room('linen','Clean resident linen',[4,7,7.5,11.5],3.4,'library')
+    room('eave-store','Sealed shallow eave storage',[1,32.5,7.5,34],3.4,'library')
+    for key,name,bounds in [
+        ('east-bridge','Retained upper east bridge',[19,20,21.2,22]),
+        ('east-north-walk','Retained upper north-east wall walk',[19.2,12,21.2,20]),
+        ('east-south-walk','Retained upper south-east wall walk',[19.2,22,21.2,31]),
+        ('south-walk','Retained southern battlement return',[10.5,31,21.2,33]),
+        ('west-walk','Retained western battlement return',[10.5,12,12.5,31]),
+        ('north-west-link','Continuous library to west return infill',[10.5,11.5,12.5,12])]:room(key,name,bounds,3.4,'court','outside',8)
+    for key,name,bounds,kind in [
+        ('cellar-stair','Relic and plant cellar stair',[37,17.5,43,26],'circulation'),
+        ('cellar-hall','Separated relic and plant service approach',[28.5,17.5,37,26],'circulation'),
+        ('vault','Controlled captured relic vault',[28.5,26,37,34],'inside'),
+        ('plant','Heating water and electrical plant',[37,26,43,34],'inside')]:room(key,name,bounds,-3,'store',kind,3)
+    byid={z['id']:z for z in zones}
+    def door(a,b,x,z,width=1.4):
+        y=byid[a]['y'];assert byid[b]['y']==y
+        links.append(dict(id=f'L{len(links)+1:02}',a=a,b=b,kind='level',width=width,points=[review.center(byid[a]),[x,y,z],review.center(byid[b])],threshold=[x,y,z],access='peaceful-headquarters',note='Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.'))
+    for a,b,x,z in [
+        ('entry','stage',15.5,34),('stage','contracts',13.5,11.5),('stage','practice',10.5,16.5),('stage','common',10.5,25.5),
+        ('stage','network',20.5,16.5),('stage','operations',20.5,25.5),('armory','contracts',10.5,6.5),('contracts','role-lounge',19.5,6.5),
+        ('armory','practice',5.5,11.5),('role-lounge','network',22.5,11.5),('role-lounge','ground-wc',21.5,5),('role-lounge','ground-wash',26,5),
+        ('practice','common',5.5,22),('common','kitchen',4,28),('common','washup',8.5,28),('kitchen','pantry',6.5,32.5),
+        ('network','operations',24,21),('network','archive',28.5,14),('role-lounge','archive',28.5,7.5),
+        ('operations','store',28.5,24.5),('archive','store',33,17.5),('store','repair',37,22),('store','infirmary',37,30),
+        ('common','training-entry',1,27),('training-entry','train-b',-14,26),('training-entry','train-c',-8,26),('training-entry','train-a',-2,26),
+        ('library','gallery',17.5,11.5),('library','res-hall',10.5,6.5),('res-hall','upper-wash',7.5,4),('res-hall','linen',7.5,9),('linen','upper-wc',4,9),('upper-wash','upper-wc',2.5,7),
+        ('res-hall','lodging-1',7.5,15),('res-hall','lodging-2',7.5,22),('res-hall','lodging-3',7.5,29),('res-hall','eave-store',7.5,33.25),
+        ('gallery','east-bridge',19,21),('east-bridge','east-north-walk',20.2,20),('east-bridge','east-south-walk',20.2,22),
+        ('east-south-walk','south-walk',20.2,31),('south-walk','west-walk',11.5,31),('west-walk','north-west-link',11.5,12),('north-west-link','library',11.5,11.5),
+        ('cellar-stair','cellar-hall',37,22),('cellar-hall','vault',33,26),('vault','plant',37,30)]:door(a,b,x,z,.9 if b=='eave-store' else 1.4)
+    links.append(dict(id=f'L{len(links)+1:02}',a='stage',b='gallery',kind='stairs',width=3,points=[[17.5,0,32],[17.5,3.4,22]],rise_m=3.4,run_m=10,headroom_m=2.2,landing_depth_m=1.5,risers=20,
+        construction='Retain actual signed-Z incline and existing upper gallery; no invented replacement centre diagonal.',note='Current Castle source stair has bottom atZ32 and top atZ22. Native/source geometry and guards require retained verification.'))
+    links.append(dict(id=f'L{len(links)+1:02}',a='cellar-stair',b='repair',kind='stairs',width=1.3,points=[[40,-3,19.2],[40,0,24]],rise_m=3,run_m=4.8,headroom_m=2.2,landing_depth_m=1.5,risers=18,
+        construction='New cellar flight needs actual saved terrain hole, full-run deck void, side bypass and guarded repair-bay landing.',note='Repair benches and chemistry work must remain outside flight/guard operating clearances.'))
+    sources=['CastleRooms.java','CastleHubArchitecturalPlan.java','CastleHubMap.java','CastleRelations.java','CastleSurroundings.java']
+    pins=[dict(path='src/main/java/org/beckenburg/'+name,sha256=hashlib.sha256((ROOT/'src/main/java/org/beckenburg'/name).read_bytes()).hexdigest()) for name in sources]
+    station_source=(ROOT/'src/main/java/org/beckenburg/CastleHubMap.java').read_text(encoding='utf-8')
+    station_rooms={'ARMORY_UV':'armory','ARMORY_SALT':'armory','ROLE':'role-lounge','CONTRACT':'contracts','EXPEDITION':'stage','MULTIPLAYER':'network','OPTIONS':'operations','SPECTRAL':'practice','ARCHIVE':'archive'}
+    stations=[dict(id=k,space=station_rooms[k],point=[float(x),0,float(z)]) for k,x,z in re.findall(r'([A-Z_]+)\(([0-9.]+),([0-9.]+),"',station_source)]
+    assert {s['id'] for s in stations}==set(station_rooms)
+    resident_source=(ROOT/'src/main/java/org/beckenburg/CastleRelations.java').read_text(encoding='utf-8')
+    resident_rooms={'MATTHIS_ROOK':'archive','ELSBETH_VALE':'armory','ROWAN_PIKE':'network','TOMAS_GREAVES':'stage','MIRELLE_ASH':'practice'}
+    residents=[dict(id=k,space=resident_rooms[k],point=[float(x),0,float(z)]) for k,x,z in re.findall(r'([A-Z_]+)\("[^"]+","[^"]+",([0-9.]+),([0-9.]+)\)',resident_source)]
+    assert {r['id'] for r in residents}==set(resident_rooms)
+    return dict(version=2,id='CASTLE',title='Castle Beckenburg — retained core and bounded household rough',role='headquarters',status='S02_DESIGN_STUDY_NOT_RUNTIME_ACCEPTED',site_bounds=[-18,0,44,37],zones=zones,links=links,
+        owner_contract=['armory','contracts','wardrobe','practice','court','operations','archive','store','gate','library'],source_pins=pins,station_bindings=stations,resident_bindings=residents,
+        capacity='Retain six-player headquarters, physical equipment and all existing campaign/network/role/archive functions. Six lodging beds in three twin rooms; normal-use household facilities do not introduce new mission rules.',
+        fit_assets=['bed_5','level_bath_basin','toilet_mp_1'],prop_fit_reservations=fit,expected_single_beds=6,sleeping_spaces=sleeping,
+        rituals=[dict(rite='Banishment',zone='train-b',point=[-14,0,20]),dict(rite='Cleansing',zone='train-c',point=[-8,0,20]),dict(rite='Absolution',zone='train-a',point=[-2,0,20])],
+        ritual_role='Protected training only. Preserve actual tutorial/service contracts and peaceful headquarters; no live haunting, mission anchors or campaign result settlement is created by these bays.',
+        staging=dict(zone='stage',point=[13.3,0,27.7],yaw=0,cargo_route=[[15.5,0,34],[15.5,0,20],[13.5,0,16.6]],note='Exact CastleSurroundings canonical parked van placement retained. EXPEDITION station13.5/16.6 remains real action; parked van cargo is non-operational/closed as current source.'),
+        terrain_cutouts=[dict(bounds=[28.5,17.5,43,34],world_surface_y=-.65,method='Persisted editor terrain punching beneath new relic/plant cellar and flight; actual structural ceilings/cover and architectural stair void remain required.')],
+        runtime_integration_obligations=['Current CastleHubMap grid is44x36 with nonnegative coordinates. West training extension requires signed bounds or native support integration; do not ship geometry outside legacy collision bounds without this change.',
+            'Retain native current station/resident/door/van authority and player journals. Upper west lodging requires a real bearing/roof refit rather than stamping rooms into the existing single-storey roof.',
+            'Retain upper rampart mesh/guards. The small northwest library-return infill must be authored as physical support, never assumed from adjacent plan labels.',
+            'Inspect existing fixtures before new partition placement and relocate useful source assets deliberately; no stock/journal/resident is discarded to clear a plan rectangle.'],
+        decisions=['Use actual compact native headquarters as retained coordinate authority rather than the older vastly expanded planning diagram.',
+            'Keep all nine station and five resident coordinates inside their real operating rooms; add private household support and six lodging beds within the west footprint.',
+            'Three protected training bays use a bounded annex; no live investigation takes place in peaceful HQ.',
+            'Stock, repair/chemistry and first aid have bounded tasks; relic vault and plant remain separate from public headquarters routines.'],
+        remaining=['Build actual native partitions/roof/load paths, room ownership, protected training mode bindings, upper floor and fixture support.',
+            'Implement signed/native ground support for the annex and real world terrain punching below the cellar, with body/object/render/optical filled-ground negatives.',
+            'Verify all original stations/residents, campaign persistence, equipment issue/return, network menu and exit behavior after construction; preserve<=40 accessible spaces and no round-time testing.'])
+
+
 SEARCH_LIMIT=json.loads((OUT/'SEARCH_ENVELOPE_POLICY.json').read_text(encoding='utf-8'))['maximum_accessible_spaces']
 
 
@@ -1059,7 +1161,9 @@ def apply_search_envelope(data):
         'ACADEMY': 'stage entry grounds quad west east north south reception lecture lab-entry lab reading library-issue office-entry office dining serving kitchen main-stair east-stair upper-west upper-north upper-east upper-main-stair upper-east-stair dorm-1 dorm-3 study archive cellar-hall cellar-stair plant student-change student-wc student-shower visitor-wc lab-prep',
         'COLLEGE': 'stage entry green teaching-lobby teaching-hall lecture seminar lab-entry lab meeting admin teaching-stair upper-teaching-stair upper-teaching library-stair issue upper-library-stair upper-library-landing bridge-lobby bridge bridge-return res-bridge-approach teaching-library-link upper-res-hall res-west-1 res-east-1 upper-north-cross upper-north-stair north-stair north-cross res-hall cafe west-cellar-stair west-tunnel maintenance cross-tunnel east-tunnel east-cellar-stair res-cellar-stair rear-hall',
     }
-    if data['id']=='CHURCH':
+    if data['id']=='CASTLE':
+        opened=all_ids-set('eave-store pantry linen'.split())
+    elif data['id']=='CHURCH':
         opened=all_ids-set('vault-west-a vault-west-b vault-east vault-north'.split())
     elif data['id']=='MANSION':
         closed=set('coats visitor-wc pantry cold-store refuse suite-bath guest-a-bath guest-b guest-b-entry guest-b-bath staff-bath'.split())
@@ -1070,6 +1174,7 @@ def apply_search_envelope(data):
     for zone in data['zones']:
         zone['player_access']='OPEN_SEARCH' if zone['id'] in opened else 'SEALED_CONTEXT'
         zone['gameplay_eligible']=zone['id'] in opened
+        if data.get('role')=='headquarters':zone['live_haunting_eligible']=False
     barriers=[]
     for link in data['links']:
         traversable=link['a'] in opened and link['b'] in opened
@@ -1093,7 +1198,8 @@ def apply_search_envelope(data):
 def validate(data):
     zones={z['id']:z for z in data['zones']}
     assert len(zones)==len(data['zones'])
-    assert {z['owner'] for z in zones.values()}==set(range(15)), 'All stable gameplay owners must be mapped'
+    expected_owners=set(data.get('owner_contract',range(15)))
+    assert {z['owner'] for z in zones.values()}==expected_owners, 'All native gameplay owners must be mapped'
     for a in zones.values():
         x0,z0,x1,z1=a['bounds']; assert x1>x0 and z1>z0 and a['height']>0
         for b in zones.values():
@@ -1108,9 +1214,12 @@ def validate(data):
             x0,z0,x1,z1=room['bounds'];assert x0<=p[0]<=x1 and z0<=p[2]<=z1 and abs(room['y']-p[1])<1e-7,link
         if link['kind']=='stairs':
             assert link['run_m']>=link['rise_m']*1.6-1e-7
-            start,end=link['points']; assert start[0]==end[0] and end[2]>start[2]
-            assert start[2]-a['bounds'][1]>=link['landing_depth_m']-1e-7, 'Bottom landing '+link['id']
-            assert b['bounds'][3]-end[2]>=link['landing_depth_m']-1e-7, 'Top landing '+link['id']
+            start,end=link['points']; assert start[0]==end[0] and end[2]!=start[2]
+            assert abs(link['rise_m']-abs(end[1]-start[1]))<1e-7 and abs(link['run_m']-math.hypot(end[0]-start[0],end[2]-start[2]))<1e-7,'Stair measurements must match real endpoints'
+            bottom=start[2]-a['bounds'][1] if end[2]>start[2] else a['bounds'][3]-start[2]
+            top=b['bounds'][3]-end[2] if end[2]>start[2] else end[2]-b['bounds'][1]
+            assert bottom>=link['landing_depth_m']-1e-7, 'Bottom landing '+link['id']
+            assert top>=link['landing_depth_m']-1e-7, 'Top landing '+link['id']
             for room in [a,b]:
                 assert room['bounds'][0]+link['width']/2<=start[0]<=room['bounds'][2]-link['width']/2
         else:
@@ -1183,6 +1292,10 @@ def validate(data):
                     for bk in b['spaces']:
                         aa=zones[ak]['bounds'];bb=zones[bk]['bounds']
                         assert math.hypot(max(aa[0]-bb[2],bb[0]-aa[2],0),max(aa[1]-bb[3],bb[1]-aa[3],0))>=2-1e-7,('Campus building footprints must be genuinely separate',ak,bk)
+    if data.get('role')=='headquarters':assert all(not z['live_haunting_eligible'] for z in zones.values()),'Peaceful headquarters cannot become a live haunting'
+    for binding in data.get('station_bindings',[])+data.get('resident_bindings',[]):
+        z=zones[binding['space']];x,y,zz=binding['point'];x0,z0,x1,z1=z['bounds']
+        assert x0<x<x1 and z0<zz<z1 and y==z['y'] and z['player_access']=='OPEN_SEARCH',binding
     for flow in data.get('flow_reservations',[]):
         assert not set(flow['path']) & set(flow['avoid']),flow
         for a,b in zip(flow['path'],flow['path'][1:]):assert b in graph[a],(flow['id'],a,b,'missing doorway or stair')
@@ -1202,7 +1315,7 @@ def validate(data):
     if 'search_envelope' in data:
         opened={z['id'] for z in zones.values() if z['player_access']=='OPEN_SEARCH'}
         assert len(opened)<=SEARCH_LIMIT,(data['id'],'Search exceeds owner limit',len(opened))
-        assert {zones[k]['owner'] for k in opened}==set(range(15)),'Open search must retain deliberate stable owner mapping'
+        assert {zones[k]['owner'] for k in opened}==expected_owners,'Open search must retain deliberate native owner mapping'
         assert all(r['zone'] in opened for r in data['rituals']),'Ritual behind permanent seal'
         reached=set();pending=['stage']
         while pending:
@@ -1269,7 +1382,7 @@ def asset_bounds(names=None):
 def main():
     envelopes={}
     parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');args=parser.parse_args()
-    for folder,data in [('school',school()),('prison',prison()),('mansion',mansion()),('farmhouse',farmhouse()),('asylum',asylum()),('academy',academy()),('college',college()),('church',church())]:
+    for folder,data in [('school',school()),('prison',prison()),('mansion',mansion()),('farmhouse',farmhouse()),('asylum',asylum()),('academy',academy()),('college',college()),('church',church()),('castle',castle())]:
         data=apply_search_envelope(data)
         spaces,links=validate(data)
         envelopes[data['id']]=dict(folder=folder,accessible=data['search_envelope']['accessible_spaces'],sealed=data['search_envelope']['sealed_context_spaces'])

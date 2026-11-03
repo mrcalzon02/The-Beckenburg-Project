@@ -27,8 +27,8 @@ public final class CastleLevelEdits {
             if(!id.matches("[A-Za-z0-9_-]{1,45}")||!modelAllowed(mesh)
                 ||!Double.isFinite(x+y+z+scale+yaw+halfX+halfZ)
                 ||scale<=0||scale>10||halfX<0||halfZ<0||halfX>10||halfZ>10
-                ||x<0||x>CastleHubMap.WIDTH||z<0||z>CastleHubMap.HEIGHT
-                ||y<-.5||y>CastleHubArchitecturalPlan.UPPER_CEILING+2)
+                ||x<CastleWorldBounds.MIN_X||x>CastleHubMap.WIDTH||z<0||z>CastleHubMap.HEIGHT
+                ||y<CastleWorldBounds.MIN_Y||y>CastleHubArchitecturalPlan.UPPER_CEILING+2)
                 throw new IllegalArgumentException("Invalid editable prop "+id);
         }
     }
@@ -39,8 +39,8 @@ public final class CastleLevelEdits {
             if(!id.matches("[A-Za-z0-9_-]{1,45}")
                 ||!modelAllowed(on)||!modelAllowed(off)||mount==null
                 ||!Double.isFinite(x+y+z+scale+yaw+radius+power)
-                ||x<0||x>CastleHubMap.WIDTH||z<0||z>CastleHubMap.HEIGHT
-                ||y<0||y>9||scale<=0||scale>4||radius<1||radius>24
+                ||x<CastleWorldBounds.MIN_X||x>CastleHubMap.WIDTH||z<0||z>CastleHubMap.HEIGHT
+                ||y<CastleWorldBounds.MIN_Y||y>9||scale<=0||scale>4||radius<1||radius>24
                 ||power<0||power>10)
                 throw new IllegalArgumentException("Invalid editable lamp "+id);
         }
@@ -56,8 +56,8 @@ public final class CastleLevelEdits {
         public Surface {
             if(id==null||!id.matches("[A-Za-z0-9_-]{1,45}")||kind==null
                ||!Double.isFinite(x0+z0+x1+z1+base+height)
-               ||x0<0||z0<0||x1>CastleHubMap.WIDTH||z1>CastleHubMap.HEIGHT
-               ||x1<x0||z1<z0||base<-.5||base>12||height<=0||height>12
+               ||x0<CastleWorldBounds.MIN_X||z0<0||x1>CastleHubMap.WIDTH||z1>CastleHubMap.HEIGHT
+               ||x1<x0||z1<z0||base<CastleWorldBounds.MIN_Y||base>12||height<=0||height>12
                ||material<0||material>=MaterialAtlas.COUNT
                ||(kind==Kind.WALL
                    ? !((x1-x0>.15&&z1==z0)||(z1-z0>.15&&x1==x0))
@@ -157,6 +157,12 @@ public final class CastleLevelEdits {
             &&z>=s.z0()&&z<=s.z1())return true;
         return false;
     }
+    /** Match structuralDecks/slabCells first-native-surface material authority. */
+    public synchronized int floorSurfaceMaterial(double x,double z,double standing,int fallback){
+        for(Surface s:surfaces.values())if(s.kind()==Kind.FLOOR&&Math.abs(s.base()-standing)<.18
+            &&x>=s.x0()&&x<=s.x1()&&z>=s.z0()&&z<=s.z1())return s.material();
+        return fallback;
+    }
     /** Geometry undo is a complete in-memory scene snapshot, not a partial UI undo. */
     public record Snapshot(List<Prop> props,List<Lamp> lamps,List<Surface> surfaces,
         Map<String,double[]> stations,Map<Integer,Integer> floorPaint,
@@ -171,11 +177,11 @@ public final class CastleLevelEdits {
             if(!stations.keySet().equals(stationIds))throw new IllegalArgumentException("Incomplete station snapshot");
             if(props.stream().map(Prop::id).distinct().count()!=props.size()||lamps.stream().map(Lamp::id).distinct().count()!=lamps.size()
                 ||surfaces.stream().map(Surface::id).distinct().count()!=surfaces.size())throw new IllegalArgumentException("Duplicate snapshot ID");
-            for(var paint:floorPaint.entrySet()){checkTile(paint.getKey()%CastleHubMap.WIDTH,paint.getKey()/CastleHubMap.WIDTH);checkMaterial(paint.getValue());}
+            for(var paint:floorPaint.entrySet()){checkCellKey(paint.getKey());checkMaterial(paint.getValue());}
             for(var paint:wallPaint.entrySet()){
                 if(paint.getKey()<0||paint.getKey()>=CastleHubArchitecturalPlan.walls().size())throw new IllegalArgumentException("Invalid snapshot wall");checkMaterial(paint.getValue());
             }
-            for(int tile:navBlocked)checkTile(tile%CastleHubMap.WIDTH,tile/CastleHubMap.WIDTH);
+            for(int tile:navBlocked)checkCellKey(tile);
             for(var door:doors.entrySet()){
                 var slot=CastleDoorSlots.require(door.getKey());
                 if(door.getValue()==CastleDoorSlots.Type.EMPTY||slot.gate()!=(door.getValue()==CastleDoorSlots.Type.PORTCULLIS))throw new IllegalArgumentException("Invalid snapshot door");
@@ -311,7 +317,7 @@ public final class CastleLevelEdits {
         return new Prop(id,f.mesh(),f.x(),y,f.z(),f.scale(),f.yaw(),
             f.halfWidth(),f.halfDepth(),upper);
     }
-    private static int tile(int x,int z){return z*CastleHubMap.WIDTH+x;}
+    private static int tile(int x,int z){return CastleWorldBounds.cellKey(x,z);}
     public synchronized List<Prop> props(){return List.copyOf(props.values());}
     public synchronized List<Lamp> lamps(){return List.copyOf(lamps.values());}
     public synchronized long revision(){return revision;}
@@ -349,7 +355,7 @@ public final class CastleLevelEdits {
     }
     public synchronized void removeLamp(String id){if(lamps.remove(id)!=null)revision++;}
     public synchronized int floorMaterial(int x,int z,int fallback){
-        return floorPaint.getOrDefault(tile(x,z),fallback);
+        return CastleWorldBounds.cell(x,z)?floorPaint.getOrDefault(tile(x,z),fallback):fallback;
     }
     public synchronized int wallMaterial(int index,int fallback){
         return wallPaint.getOrDefault(index,fallback);
@@ -368,15 +374,18 @@ public final class CastleLevelEdits {
         revision++;
     }
     public synchronized boolean navBlocked(int x,int z){
-        return navBlocked.contains(tile(x,z));
+        return CastleWorldBounds.cell(x,z)&&navBlocked.contains(tile(x,z));
     }
     public synchronized void setNavBlocked(int x,int z,boolean blocked){
         checkTile(x,z);if(blocked)navBlocked.add(tile(x,z));
         else navBlocked.remove(tile(x,z));revision++;
     }
     private static void checkTile(int x,int z){
-        if(x<0||x>=CastleHubMap.WIDTH||z<0||z>=CastleHubMap.HEIGHT)
+        if(!CastleWorldBounds.cell(x,z))
             throw new IllegalArgumentException("Tile outside castle");
+    }
+    private static void checkCellKey(int key){
+        if(!CastleWorldBounds.cellKeyValid(key))throw new IllegalArgumentException("Invalid Castle cell ID");
     }
     private static void checkMaterial(int material){
         if(material<0||material>=MaterialAtlas.COUNT)
@@ -470,7 +479,7 @@ public final class CastleLevelEdits {
             for(String key:p.stringPropertyNames()){
                 if(key.startsWith("floor.")){
                     int t=Integer.parseInt(key.substring(6)),m=integer(p,key);
-                    checkTile(t%CastleHubMap.WIDTH,t/CastleHubMap.WIDTH);
+                    checkCellKey(t);
                     checkMaterial(m);newFloor.put(t,m);
                 }else if(key.startsWith("wall.")){
                     int w=Integer.parseInt(key.substring(5)),m=integer(p,key);
@@ -479,7 +488,7 @@ public final class CastleLevelEdits {
                     checkMaterial(m);newWalls.put(w,m);
                 }else if(key.startsWith("nav.")){
                     int t=Integer.parseInt(key.substring(4));
-                    checkTile(t%CastleHubMap.WIDTH,t/CastleHubMap.WIDTH);
+                    checkCellKey(t);
                     if(Boolean.parseBoolean(p.getProperty(key)))newNav.add(t);
                 }
             }

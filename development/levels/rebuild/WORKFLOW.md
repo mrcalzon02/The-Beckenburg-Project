@@ -158,3 +158,8 @@ Owner clarification: build the maps; round-time testing is not part of this oper
 ## Church bounded construction rough - 3 November
 
 Church revised S02:33 spaces,29 accessible,4 sealed crypt vaults. Preserve characteristic footprint and0/+3/+6/-3 elevations; separate crypt stair beneath music wing frees nave seating. Forty native-size chair reservations keep2m centre and0.87m side aisles; parish/vestry/organ functions have real child rooms. Three measured flights include landing/headroom/guard obligations; tower threshold lies beyond choir guard. Full saved editor terrain punching under entire crypt remains mandatory. Plan reviewed; no runtime/stage acceptance. Continue Castle and remaining remote/annex roughs under<=40 accessible-space cap. Build maps without round-time testing.
+
+
+## Castle full-revision priority and construction foundation - 3 November
+
+Owner directs finishing Castle completely before resuming other locations. Revised source keeps actual HQ core,9 stations,5 residents, parked van,39 accessible spaces and protected training; no live HQ haunting or round-time testing. Actual implementation now permits signed west-annex and negative cellar native authoring, preserves all old cell IDs, refreshes runtime ground support after live edits/history, and exposes bounded surface edits through the real Castle Editor Agent. Tests pass old/new native geometry, history/recovery, stations, doors and actual service. Actual annex/body/optical/terrain/lower-stair/roof/room/detail construction is not complete. Next: construct full native Castle, saved editor terrain holes and correct lower/upper physics, then furnish/refine and verify the entire working hub before returning to other maps.

@@ -1,0 +1,295 @@
+{
+  "site": "CASTLE",
+  "status": "DESIGN_ONLY_SEALS_NOT_RUNTIME_IMPLEMENTED",
+  "maximum": 40,
+  "accessible_spaces": 39,
+  "sealed_context_spaces": 3,
+  "count_rule": "Every OPEN_SEARCH space counts, including corridors, stairs, service rooms, exterior sectors and staging. Stable fifteen gameplay owners are not the room budget.",
+  "barriers": [
+    {
+      "link": "L16",
+      "a": "kitchen",
+      "b": "pantry",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L31",
+      "a": "res-hall",
+      "b": "linen",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L32",
+      "a": "linen",
+      "b": "upper-wc",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L37",
+      "a": "res-hall",
+      "b": "eave-store",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    }
+  ],
+  "gameplay_rule": "Evidence, ghost spawn/anchor, hiding, switches/tasks, ritual sites, loose objective props and required travel belong only to the connected open envelope. Context windows may show rooms, but no interaction or required search crosses the seal.",
+  "context_rule": "Retain coherent historical rooms/assets behind permanent boundaries. Restrict whole wings to their hallways where useful; do not count shuttable ordinary doors as permanent seals.",
+  "next_gate": "Build actual permanent seals and audit runtime player/ghost/object/optical boundaries and all objective placements; construct the maps inside the forty-space cap. Round-duration testing is outside this rebuild task.",
+  "spaces": [
+    {
+      "id": "armory",
+      "name": "Existing quartermaster issue and equipment stock",
+      "owner": "armory",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "contracts",
+      "name": "Existing briefing and campaign contracts",
+      "owner": "contracts",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "role-lounge",
+      "name": "Role wardrobe and lounge",
+      "owner": "wardrobe",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "ground-wc",
+      "name": "Discreet ground sanitary room",
+      "owner": "wardrobe",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "ground-wash",
+      "name": "Ground washing and handwashing",
+      "owner": "wardrobe",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "practice",
+      "name": "Existing spectral practice and ritual scholar",
+      "owner": "practice",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "common",
+      "name": "Headquarters common dining and training approach",
+      "owner": "practice",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "kitchen",
+      "name": "Household food preparation and cooking",
+      "owner": "practice",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "washup",
+      "name": "Dirty dish washing",
+      "owner": "practice",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "pantry",
+      "name": "Household dry food storage",
+      "owner": "practice",
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "network",
+      "name": "Existing communications and network desk",
+      "owner": "operations",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "operations",
+      "name": "Existing settings counter and operations work",
+      "owner": "operations",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "archive",
+      "name": "Existing Common Archive and Lore Master",
+      "owner": "archive",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "store",
+      "name": "Quartermaster physical stock and retrieval aisles",
+      "owner": "store",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "repair",
+      "name": "Repair and separated chemistry task work",
+      "owner": "store",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "infirmary",
+      "name": "Private first aid recovery and handwashing",
+      "owner": "store",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "training-entry",
+      "name": "Protected three-rite training distribution",
+      "owner": "practice",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "train-b",
+      "name": "Protected Banishment training bay",
+      "owner": "practice",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "train-c",
+      "name": "Protected Cleansing training bay",
+      "owner": "practice",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "train-a",
+      "name": "Protected Absolution training bay",
+      "owner": "practice",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "stage",
+      "name": "Arrival courtyard and existing expedition approach",
+      "owner": "court",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "entry",
+      "name": "Existing gate threshold",
+      "owner": "gate",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "library",
+      "name": "Existing upper library",
+      "owner": "library",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "gallery",
+      "name": "Existing main stair upper gallery",
+      "owner": "library",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "res-hall",
+      "name": "Upper west residence circulation",
+      "owner": "library",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "lodging-1",
+      "name": "Two-place investigator lodging 1",
+      "owner": "library",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "lodging-2",
+      "name": "Two-place investigator lodging 2",
+      "owner": "library",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "lodging-3",
+      "name": "Two-place investigator lodging 3",
+      "owner": "library",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-wash",
+      "name": "Resident washing and private shower bays",
+      "owner": "library",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-wc",
+      "name": "Resident WC bays",
+      "owner": "library",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "linen",
+      "name": "Clean resident linen",
+      "owner": "library",
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "eave-store",
+      "name": "Sealed shallow eave storage",
+      "owner": "library",
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "east-bridge",
+      "name": "Retained upper east bridge",
+      "owner": "court",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "east-north-walk",
+      "name": "Retained upper north-east wall walk",
+      "owner": "court",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "east-south-walk",
+      "name": "Retained upper south-east wall walk",
+      "owner": "court",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "south-walk",
+      "name": "Retained southern battlement return",
+      "owner": "court",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "west-walk",
+      "name": "Retained western battlement return",
+      "owner": "court",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "north-west-link",
+      "name": "Continuous library to west return infill",
+      "owner": "court",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "cellar-stair",
+      "name": "Relic and plant cellar stair",
+      "owner": "store",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "cellar-hall",
+      "name": "Separated relic and plant service approach",
+      "owner": "store",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "vault",
+      "name": "Controlled captured relic vault",
+      "owner": "store",
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "plant",
+      "name": "Heating water and electrical plant",
+      "owner": "store",
+      "access": "OPEN_SEARCH"
+    }
+  ]
+}

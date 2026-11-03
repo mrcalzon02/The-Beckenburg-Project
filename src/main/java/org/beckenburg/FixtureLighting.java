@@ -474,7 +474,7 @@ public final class FixtureLighting {
    double t=(ceiling-ay)/(by-ay);
    if(t<=EPS||t>=1-EPS)continue;
    double x=ax+(bx-ax)*t,z=az+(bz-az)*t;
-   if(x<=0||x>=CastleHubMap.WIDTH||z<=0||z>=CastleHubMap.HEIGHT
+   if(x<=CastleWorldBounds.MIN_X||x>=CastleHubMap.WIDTH||z<=0||z>=CastleHubMap.HEIGHT
       ||map.solid((int)Math.floor(x),(int)Math.floor(z))
       ||map.outside(x,z)||CastleHubArchitecturalPlan.onStairs(x,z))continue;
    if(ceiling==CastleHubArchitecturalPlan.UPPER_CEILING){

@@ -12,6 +12,10 @@ Preserve coherent complete buildings and useful assets as inaccessible context. 
 
 This direction supersedes any earlier implication that all architectural spaces in a rough must be playable. Follow [the active policy](rebuild/SEARCH_ENVELOPE_POLICY.json) and [all-site envelope register](rebuild/search-envelope-register.json). The current rough access annotations are construction requirements, not implemented runtime seals or accepted runtime construction.
 
+## Owner priority override - complete Castle first
+
+The owner directs completing Castle's full revision as the central hub and primary testing area before returning to the remaining maps. Castle now proceeds through construction, terrain, interiors/detail and actual functional/native/runtime verification as one complete location. Preserve its campaign, equipment, network, role, resident, protected tutorial and gate-exit contracts. The rest of the roster remains in scope and resumes afterward in the established stage batches. Maximum40 accessible spaces and exclusion of round-duration testing remain active. A Castle rough or implementation checkpoint is not completion.
+
 ## 1. Outcome and governing decisions
 
 Every location must make sense as a place before it is dressed as a horror level. Its terrain, construction, circulation, services, daily activities and subsequent damage must explain its appearance. A prison needs actual cells and control layers; a school needs a coherent teaching day, washrooms and specialist spaces; a home needs ordinary household relationships. A room name and an asset count establish neither architecture nor identity.

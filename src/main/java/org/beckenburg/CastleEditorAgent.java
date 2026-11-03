@@ -26,11 +26,31 @@ public final class CastleEditorAgent implements EditorAgentService.Host<CastleLe
     public java.util.Set<EditorAgentService.Capability> capabilities(){
         return java.util.EnumSet.allOf(EditorAgentService.Capability.class);
     }
-    public List<String> operations(){return List.of("set-spawn");}
+    public List<String> operations(){return List.of("set-spawn","put-surface","remove-surface");}
     public void apply(String operation, Map<String,String> args){
-        if(!operation.equals("set-spawn")||!args.keySet().equals(java.util.Set.of("x","z","yaw")))
-            throw new IllegalArgumentException("Expected set-spawn with x, z, yaw (radians)");
-        scene.setSpawn(Double.parseDouble(args.get("x")),Double.parseDouble(args.get("z")),Double.parseDouble(args.get("yaw")));
+        switch(operation){
+            case "set-spawn" -> {
+                exact(args,"x","z","yaw");
+                scene.setSpawn(number(args,"x"),number(args,"z"),number(args,"yaw"));
+            }
+            case "put-surface" -> {
+                exact(args,"id","kind","x0","z0","x1","z1","base","height","material");
+                scene.put(new CastleLevelEdits.Surface(args.get("id"),CastleLevelEdits.Kind.valueOf(args.get("kind")),
+                    number(args,"x0"),number(args,"z0"),number(args,"x1"),number(args,"z1"),
+                    number(args,"base"),number(args,"height"),Integer.parseInt(args.get("material"))));
+            }
+            case "remove-surface" -> {
+                exact(args,"id");
+                if(scene.surfaces().stream().noneMatch(s->s.id().equals(args.get("id"))))
+                    throw new IllegalArgumentException("Unknown native Castle surface");
+                scene.removeSurface(args.get("id"));
+            }
+            default -> throw new IllegalArgumentException("Unsupported native Castle operation: "+operation);
+        }
+    }
+    private static double number(Map<String,String> args,String key){return Double.parseDouble(args.get(key));}
+    private static void exact(Map<String,String> args,String...keys){
+        if(!args.keySet().equals(java.util.Set.of(keys)))throw new IllegalArgumentException("Expected fields: "+String.join(", ",keys));
     }
     public void validate(){
         for(var node:project.hierarchy())

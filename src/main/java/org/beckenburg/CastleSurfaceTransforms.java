@@ -20,11 +20,11 @@ final class CastleSurfaceTransforms {
                     if(Math.abs(pickZ-z0)<=Math.abs(pickZ-z1))
                         z0=clip(z0+dz,0,z1-.2);
                     else z1=clip(z1+dz,z0+.2,CastleHubMap.HEIGHT);
-                }else x0=x1=clip(x0+dx,0,CastleHubMap.WIDTH);
+                }else x0=x1=clip(x0+dx,CastleWorldBounds.MIN_X,CastleHubMap.WIDTH);
             }else {
                 if(vertex){
                     if(Math.abs(pickX-x0)<=Math.abs(pickX-x1))
-                        x0=clip(x0+dx,0,x1-.2);
+                        x0=clip(x0+dx,CastleWorldBounds.MIN_X,x1-.2);
                     else x1=clip(x1+dx,x0+.2,CastleHubMap.WIDTH);
                 }else z0=z1=clip(z0+dz,0,CastleHubMap.HEIGHT);
             }
@@ -35,7 +35,7 @@ final class CastleSurfaceTransforms {
                 Math.min(Math.abs(pickX-x0),Math.abs(pickX-x1))
                 <=Math.min(Math.abs(pickZ-z0),Math.abs(pickZ-z1));
             if(editX){
-                if(nearLeft)x0=clip(x0+dx,0,x1-.2);
+                if(nearLeft)x0=clip(x0+dx,CastleWorldBounds.MIN_X,x1-.2);
                 else x1=clip(x1+dx,x0+.2,CastleHubMap.WIDTH);
             }
             if(vertex||!editX){

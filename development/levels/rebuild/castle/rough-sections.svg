@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="840" viewBox="0 0 1200 840">
+<rect width="1200" height="840" fill="#f5f4ef"/>
+<g font-family="Arial" fill="#1c2a37"><text x="30" y="35" font-size="24">Castle Beckenburg: proposed stair sections</text>
+<text x="30" y="60" font-size="15">S02 dimensions only. Full-run architectural voids plus editor world-ground opening remain to be built and tested.</text>
+<text x="30" y="155" font-size="19">stage to gallery - OPEN_ROUTE</text>
+<path d="M110,360 H177.5 M627.5,207.0 h67.5" stroke="#536477" stroke-width="8" fill="none"/>
+<path d="M177.5,360 L627.5,207.0" stroke="#a86516" stroke-width="5"/>
+<path d="M177.5,261.0 L627.5,107.99999999999999" stroke="#307e99" stroke-dasharray="5 4" fill="none"/>
+<text x="680" y="200" font-size="17">Rise 3.4 m / run 10 m / clear width 3 m</text>
+<text x="680" y="230" font-size="17">20 risers, 0.170 m each (proposed)</text>
+<text x="680" y="260" font-size="17">1.5 m landing reservations at both ends</text>
+<text x="680" y="290" font-size="17">Cyan: 2.2 m headroom envelope above flight</text>
+<text x="680" y="320" font-size="17">Floor/roof depth and underside rays require actual geometry</text>
+<text x="30" y="495" font-size="19">cellar-stair to repair - OPEN_ROUTE</text>
+<path d="M110,700 H177.5 M393.5,565 h67.5" stroke="#536477" stroke-width="8" fill="none"/>
+<path d="M177.5,700 L393.5,565" stroke="#a86516" stroke-width="5"/>
+<path d="M177.5,601.0 L393.5,466.0" stroke="#307e99" stroke-dasharray="5 4" fill="none"/>
+<text x="680" y="540" font-size="17">Rise 3 m / run 4.8 m / clear width 1.3 m</text>
+<text x="680" y="570" font-size="17">18 risers, 0.167 m each (proposed)</text>
+<text x="680" y="600" font-size="17">1.5 m landing reservations at both ends</text>
+<text x="680" y="630" font-size="17">Cyan: 2.2 m headroom envelope above flight</text>
+<text x="680" y="660" font-size="17">Floor/roof depth and underside rays require actual geometry</text>
+</g></svg>

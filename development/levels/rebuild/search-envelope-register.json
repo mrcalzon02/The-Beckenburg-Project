@@ -23,10 +23,10 @@
       "id": "CASTLE",
       "folder": "castle",
       "maximum": 40,
-      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
-      "accessible": null,
-      "sealed": null,
-      "evidence": null
+      "status": "DESIGN_ENVELOPE_AUTHORED_NOT_RUNTIME_VERIFIED",
+      "accessible": 39,
+      "sealed": 3,
+      "evidence": "development/levels/rebuild/castle/search-envelope.json"
     },
     {
       "id": "CHURCH",

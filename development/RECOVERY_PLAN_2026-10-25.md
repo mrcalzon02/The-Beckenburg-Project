@@ -332,3 +332,6 @@ All nine selectable maps pass the shared physical route check. Final packaged Ch
 
 
 DEV-233: corrected stale LanWorldControlsTest after actual before-state reproduction. Real X-key extraction is rejected for physical hunters and leaves the round running; real TCP VANDOOR then closes cargo and synchronizes RETREATED. Packaged local test passes without production-policy changes. Exact906 acceptance handles editor41681790664/GPU41681802504/full41681818348 remain live; inspect terminal raw evidence and do not restart. Continue Asylum rough batch.
+
+
+DEV-234: Castle full revision now takes priority per owner. Implemented real signed annex/cellar authoring foundation, native dynamic floor support, stable legacy cell encoding and bounded surface transactions through the actual Editor Agent. Final Java17 package/audio, packaged construction capture and eight relevant native/hub/service checks pass locally. Native source/journal/history and existing stations remain intact. Full new geometry, editor terrain holes, lower-floor movement, detailed fit-out and complete hub journey/performance remain open. Proceed with actual Castle construction before other maps; no round-duration testing.
