@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 2313,
+  "count": 2314,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -21054,6 +21054,16 @@
       "height": 200,
       "bytes": 30873,
       "sha256": "2258d97e973ac9e7b3d0aa6fe02ea2bcaf0f6d95c4cb1b588cbb4451f8c11103"
+    },
+    {
+      "path": "development/levels/rebuild/previews/asylum-revised-rough-plan.png",
+      "url": "development/levels/rebuild/previews/asylum-revised-rough-plan.png",
+      "title": "Asylum revised rough plan",
+      "kind": "Planning diagram",
+      "width": 1500,
+      "height": 1216,
+      "bytes": 127531,
+      "sha256": "9233270fc9a0f12c8118dc965b9e77454f41b309b1f4bc8e2f2565c182f827f1"
     },
     {
       "path": "development/levels/rebuild/previews/briar-rebuild-blender-basement-terrain-cutaway.png",

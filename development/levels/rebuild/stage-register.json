@@ -256,11 +256,20 @@
           "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
+          "evidence": [
+            "tools/build_map_rebuild_roughs.py",
+            "development/levels/rebuild/asylum/rough-layout.json",
+            "development/levels/rebuild/asylum/rough-plan.svg",
+            "development/levels/rebuild/asylum/rough-sections.svg",
+            "development/levels/rebuild/asylum/rough-asset-bounds.json",
+            "development/levels/rebuild/asylum/rough-decisions.md",
+            "development/levels/rebuild/asylum/rough-render-verification.json",
+            "development/levels/rebuild/previews/asylum-revised-rough-plan.png"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Finish measured reference/support/privacy review in roster rough batch; build actual care/clinical/service geometry, operational patient lift, native clinical bed derivatives, stairs and persisted editor cellar holes. Dispatched generic Asylum remains unaccepted."
         },
         "S03": {
           "status": "NOT_AUDITED",

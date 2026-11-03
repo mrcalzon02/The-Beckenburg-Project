@@ -128,3 +128,8 @@ Revised S02 Farmhouse adds34 architectural spaces/36 proposed connections: bound
 
 
 DEV-233: corrected stale LanWorldControlsTest after actual before-state reproduction. Real X-key extraction is rejected for physical hunters and leaves the round running; real TCP VANDOOR then closes cargo and synchronizes RETREATED. Packaged local test passes without production-policy changes. Exact906 acceptance handles editor41681790664/GPU41681802504/full41681818348 remain live; inspect terminal raw evidence and do not restart. Continue Asylum rough batch.
+
+
+## Asylum care-pavilion rough checkpoint - 3 November
+
+Revised S02 Asylum authority generates67 spaces/78 proposed links, sixteen patient places in eight bounded rooms, floor-specific observation/linen/sanitation, admissions privacy, treatment clean/soiled services, changing/bathing/drying, separate food/dirty dish routes, quiet care, patient lift reservation and separate cellar laundry/plant. Six program route sequences and sixteen native-sized bed reservations are checked. Two-rectangle saved editor terrain-hole union is explicit. PNG reviewed; no runtime dispatch or stage accepted. Continue Academy/College/Church/Castle and remote/annex rough batch; retain House construction pilot and all physical/native/network/performance gates.

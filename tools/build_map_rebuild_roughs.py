@@ -520,6 +520,136 @@ def farmhouse():
             'Shape farm terrain around lane, orchard, drained workyard and outbuildings; prove canonical van support, six-player/hunt routes, rituals, networking, native parity and hardware performance.'])
 
 
+def asylum():
+    zones,links,fit,sleeping=[],[],[],[]
+    def room(key,name,bounds,y,owner,kind='inside',height=3.4):
+        zones.append(dict(id=key,name=name,bounds=bounds,y=y,height=height,owner=owner,kind=kind,purpose=name))
+    for prefix,y,owner in [('ground',0,4),('upper',3.4,7)]:
+        for key,x,z in [('north-a',10,12),('north-b',16,12),('south-a',10,22),('south-b',16,22)]:
+            sid=f'{prefix}-{key}';room(sid,f'{prefix.title()} two-place patient room {key}',[x,z,x+6,z+7],y,owner);sleeping.append(sid)
+            for offset in [2.1,5]:fit.append(dict(space=sid,asset='bed_5',origin=[x+3,y,z+offset]))
+        for key,name,bounds,kind in [
+            ('ward-link','Daylight ward distribution',[10,19,26,22],'circulation'),
+            ('observation','Staff observation and notes',[22,12,26,16],'inside'),
+            ('linen','Ward clean linen and supplies',[22,16,26,19],'inside'),
+            ('wc','Screened patient WC bays',[22,22,26,25.5],'inside'),
+            ('wash','Private patient washing and assistance',[22,25.5,26,29],'inside')]:room(prefix+'-'+key,prefix.title()+' '+name,bounds,y,owner,kind)
+    for key,name,bounds,owner,kind in [
+        ('spine','Main patient and staff distribution',[26,12,29,50],0,'circulation'),
+        ('main-stair','Main stair with clear bypass',[29,20,35,30],0,'circulation'),
+        ('staff-office','Staff coordination and private work',[29,12,35,20],0,'inside'),
+        ('service-link','Staff-only service distribution',[35,16,54,20],0,'circulation'),
+        ('admission','Public reception and waiting',[26,50,35,58],1,'inside'),
+        ('interview','Private admissions interview',[35,50,41,54],1,'inside'),
+        ('visitor-wc','Visitor WC outside care wards',[35,54,38,58],1,'inside'),
+        ('records','Confidential records office',[38,54,44,58],8,'inside'),
+        ('day','Supervised sitting crafts and ordinary activity',[10,40,26,50],2,'inside'),
+        ('clinical-link','Clinical approach outside work rooms',[29,30,35,40],5,'circulation'),
+        ('treatment','Treatment examination and handwashing',[35,30,45,40],5,'inside'),
+        ('clinical-clean','Clean treatment stores',[35,26,40,30],5,'inside'),
+        ('clinical-soiled','Enclosed soiled treatment utility',[40,26,45,30],5,'inside'),
+        ('clinical-service','Rear clinical utility service approach',[35,24,54,26],0,'circulation'),
+        ('staff-rest','Staff rest and changing',[35,20,40,24],0,'inside'),
+        ('staff-wc','Staff sanitary room',[40,20,45,24],0,'inside'),
+        ('hydro-change','Private hydrotherapy changing',[45,30,49,35],6,'inside'),
+        ('hydro-bath','Assisted bathing treatment room',[49,30,54,40],6,'inside'),
+        ('hydro-dry','Private drying and recovery',[45,35,49,40],6,'inside'),
+        ('dining','Sixteen-place ward dining',[29,40,41,50],3,'inside'),
+        ('kitchen','Food preparation cooking and serving',[41,44,48,48],3,'inside'),
+        ('washup','Meal return and dish washing',[48,44,54,48],3,'inside'),
+        ('meal-return','Dining dish return outside cooking',[41,48,54,50],3,'circulation'),
+        ('food-store','Dry and cool food storage reservations',[41,40,48,44],3,'inside'),
+        ('receiving','Food and household receiving',[48,40,54,44],3,'inside'),
+        ('service','Service passage separated from care rooms',[54,24,57,50],0,'circulation'),
+        ('refuse','Enclosed refuse awaiting collection',[57,40,61,44],3,'inside'),
+        ('service-stair','Independent basement service stair',[54,12,60,24],0,'circulation'),
+        ('quiet-lobby','Calm-room care and staff approach',[45,12,54,16],9,'circulation'),
+        ('quiet','Short-stay quiet care room',[45,4,50,12],9,'inside'),
+        ('quiet-observation','Quiet care observation and support',[50,4,54,12],9,'inside'),
+        ('quiet-wc','Private quiet-care WC and washing',[45,0,50,4],9,'inside'),
+        ('chapel','Quiet remembrance chapel',[10,2,22,10],10,'inside'),
+        ('lift','Patient lift lower landing and shaft reservation',[22,31,26,36],0,'circulation')]:room(key,name,bounds,0,owner,kind)
+    room('upper-spine','Upper ward circulation',[26,12,29,40],3.4,7,'circulation')
+    room('upper-stair','Upper main stair and guarded landing',[29,20,35,30],3.4,7,'circulation')
+    room('upper-lift','Patient lift upper landing reservation',[22,31,26,36],3.4,7,'circulation')
+    for key,name,bounds,kind in [
+        ('cellar-stair','Basement service stair',[54,12,60,24],'circulation'),
+        ('cellar-service','Basement service distribution',[54,24,57,50],'circulation'),
+        ('cellar-cross','Plant and laundry approach',[35,36,54,40],'circulation'),
+        ('plant','Boiler hot water and electrical operating clearances',[35,24,45,36],'inside'),
+        ('maintenance','Maintenance workshop and stores',[45,24,54,36],'inside'),
+        ('dirty-laundry','Soiled linen receiving and washing',[35,40,39,50],'inside'),
+        ('clean-laundry','Clean laundry drying and finishing',[39,40,43,50],'inside'),
+        ('clean-store','Finished clean linen storage',[43,40,54,50],'inside')]:room(key,name,bounds,-3,11,kind,3)
+    room('court','Daylight court: no upper deck',[10,29,26,40],0,12,'outside',12)
+    room('grounds','Stepped pavilion grounds envelope only',[4,0,64,58],0,12,'outside',12)
+    room('entry','Public drive and patient arrival',[4,58,64,70],0,13,'outside',12)
+    room('stage','Canonical investigation van apron',[24,70,40,83],0,14,'staging',3)
+    byid={z['id']:z for z in zones}
+    def door(a,b,x,z,width=1.4,access='care'):
+        y=byid[a]['y'];assert byid[b]['y']==y
+        links.append(dict(id=f'L{len(links)+1:02}',a=a,b=b,kind='level',width=width,points=[review.center(byid[a]),[x,y,z],review.center(byid[b])],threshold=[x,y,z],access=access,
+            note='Authored proposed doorway; centre lines are diagrams, not host navigation proof.'))
+    for prefix in ['ground','upper']:
+        hall='spine' if prefix=='ground' else 'upper-spine'
+        for key,x,z in [('north-a',13,19),('north-b',19,19),('south-a',13,22),('south-b',19,22)]:door(prefix+'-'+key,prefix+'-ward-link',x,z)
+        for key,x,z in [('observation',26,14),('linen',26,17.5),('wc',26,24),('wash',26,27)]:door(prefix+'-'+key,hall,x,z)
+        door(prefix+'-ward-link',hall,26,20.5)
+    for a,b,x,z in [
+        ('stage','entry',32,70),('entry','admission',30,58),('admission','visitor-wc',35,56),
+        ('admission','interview',35,52),('interview','records',39.5,54),('admission','spine',27.5,50),
+        ('spine','day',26,45),('day','court',18,40),('ground-south-a','court',13,29),
+        ('spine','staff-office',29,16),('staff-office','service-link',35,18),('service-link','staff-rest',37.5,20),
+        ('staff-rest','staff-wc',40,22),('spine','main-stair',29,28),('spine','clinical-link',29,35),
+        ('clinical-link','treatment',35,35),('service','clinical-service',54,25),('clinical-service','clinical-clean',37.5,26),('clinical-service','clinical-soiled',42.5,26),('treatment','clinical-clean',37.5,30),('treatment','clinical-soiled',42.5,30),
+        ('treatment','hydro-change',45,32.5),('hydro-change','hydro-bath',49,32.5),
+        ('hydro-bath','hydro-dry',49,37.5),('hydro-dry','treatment',45,37.5),
+        ('spine','dining',29,45),('dining','kitchen',41,46),('dining','meal-return',41,49),('meal-return','washup',51,48),
+        ('kitchen','food-store',44,44),('receiving','food-store',48,42),('washup','receiving',51,44),('receiving','service',54,42),
+        ('service','refuse',57,42),('service','service-stair',55.5,24),('service-stair','service-link',54,18),
+        ('service-link','quiet-lobby',49,16),('quiet-lobby','quiet',47.5,12),('quiet-lobby','quiet-observation',52,12),
+        ('quiet','quiet-wc',47.5,4),('quiet-observation','quiet',50,8),
+        ('spine','lift',26,33.5),('upper-spine','upper-lift',26,33.5),('upper-spine','upper-stair',29,28),
+        ('cellar-stair','cellar-service',55.5,24),('cellar-service','cellar-cross',54,38),
+        ('cellar-cross','plant',40,36),('cellar-cross','maintenance',49,36),
+        ('cellar-cross','dirty-laundry',37,40),('cellar-cross','clean-laundry',41,40),
+        ('clean-laundry','clean-store',43,45),('cellar-cross','clean-store',48,40),
+        ('grounds','chapel',16,10),('grounds','court',10,35),('grounds','entry',60,58),
+        ('grounds','service-stair',57,12),('grounds','refuse',61,42),('grounds','service',57,48)]:door(a,b,x,z)
+    for a,b,x,z,y0,y1,width in [('main-stair','upper-stair',32,22,0,3.4,1.6),('cellar-stair','service-stair',57,14,-3,0,1.5)]:
+        rise=y1-y0;run=rise*1.6
+        links.append(dict(id=f'L{len(links)+1:02}',a=a,b=b,kind='stairs',width=width,points=[[x,y0,z],[x,y1,z+run]],rise_m=rise,run_m=run,headroom_m=2.2,landing_depth_m=1.5,risers=20 if rise>3 else 18,
+            construction='Full deck openings, actual floor/roof depth, clear bypass and continuous guards required.',note='Physical movement, care access and lift operation remain unproved.'))
+    return dict(version=2,id='ASYLUM',title='St. Dymphna Hospital — revised care-pavilion rough',
+        status='S02_DESIGN_STUDY_NOT_RUNTIME_ACCEPTED',site_bounds=[4,0,64,84],zones=zones,links=links,
+        capacity='Sixteen ward places: four two-place rooms per floor. Quiet care is short-stay support, not an extra permanent bed or a supernatural premise.',
+        fit_assets=['bed_5','toilet_mp_1','level_bath_basin','level_bathtub'],prop_fit_reservations=fit,expected_single_beds=16,sleeping_spaces=sleeping,
+        asset_decision='Native single beds establish full-scale spatial reservations only. Author and inspect appropriate clinical bed derivatives rather than presenting domestic masters as final hospital equipment.',
+        rituals=[dict(rite='Banishment',zone='chapel',point=[16,0,6]),dict(rite='Cleansing',zone='plant',point=[40,-3,30]),dict(rite='Absolution',zone='day',point=[18,0,45])],
+        staging=dict(zone='stage',point=[32,0,76],yaw=-math.pi/2,cargo_route=[[28.372,0,76],[30,0,64],[30,0,58]],note='Use actual canonical van; arrival surface/support and six-player unloading remain unproved.'),
+        terrain_cutouts=[dict(bounds=b,world_surface_y=-.65,method='Persisted editor AdaptiveTerrainTopology punched leaves under actual cellar union; not yet authored') for b in [[35,24,57,50],[54,12,60,24]]],
+        flow_reservations=[dict(id=key,path=path,avoid=avoid) for key,path,avoid in [
+            ('public-visitor',['stage','entry','admission','visitor-wc'],sleeping+['treatment','quiet','hydro-bath']),
+            ('food-delivery',['service','receiving','food-store','kitchen','dining'],['washup','treatment','clinical-soiled']),
+            ('dirty-dishes',['dining','meal-return','washup'],['kitchen','food-store']),
+            ('clean-clinical',['service','clinical-service','clinical-clean','treatment'],['clinical-soiled','staff-rest','staff-wc']),
+            ('soiled-clinical',['treatment','clinical-soiled','clinical-service','service'],['clinical-clean','staff-rest','staff-wc']),
+            ('dirty-linen',['service','service-stair','cellar-stair','cellar-service','cellar-cross','dirty-laundry'],['clean-laundry','clean-store','food-store','kitchen'])]],
+        service_interfaces=[dict(spaces=['dirty-laundry','clean-laundry'],plane_x=39,through_door=False,operation='Sealed dirty-to-clean laundry transfer equipment; actual support/drains and contamination separation remain to be authored.')],
+        lift_reservation=dict(spaces=['lift','upper-lift'],rise_m=3.4,operation='Patient transport lift required; no implemented elevator or navigation edge is claimed by this rough.',failure_route='Main physical stair remains available; validate mission return and host authority independently.'),
+        decisions=['Replace generic cross-wing rooms with stepped west care pavilion, daylight court and east treatment/service wing.',
+            'Eight patient places on each floor have their own ward circulation, observation, clean linen and separate screened WC/washing.',
+            'Admissions interview and visitor sanitation remain outside private sleeping and treatment functions.',
+            'Hydrotherapy has bounded changing, bathing and drying; treatment clean and soiled utility remain separate.',
+            'Food receiving, cooking and dirty dish return are separate; laundry and plant use an independent service stair.',
+            'Illness, admission and quiet-care rooms are normal-use functions, not explanations for haunting or automatic narrative punishment.'],
+        remaining=['Fit clinical fixtures, bed derivatives, bedside clearances, screened assistance and services at actual source scale.',
+            'Resolve clean/soiled laundry transfer interfaces, observation glazing and controlled care thresholds without ghost-event or power-loss softlocks.',
+            'Author the actual patient lift, full-run stair/deck openings, roof/structure and courtyard access without stamping an upper floor over daylight.',
+            'Punch saved editor world terrain under the complete cellar union; prove body/ray/object/render passage and filled-ground negatives.',
+            'Complete terrain, native/runtime parity, van routes, electrical operation, hunts, rituals, networking, weathering/story and physical hardware acceptance.'])
+
+
 def validate(data):
     zones={z['id']:z for z in data['zones']}
     assert len(zones)==len(data['zones'])
@@ -568,7 +698,7 @@ def validate(data):
                 assert y+lo[1]>=room['y']-1e-6 and y+hi[1]<room['y']+room['height']
                 assert x+hi[0]<=bx or x+lo[0]>=bxx or z+hi[2]<=bz or z+lo[2]>=bzz, 'Cell bed/fixture overlap '+cell['space']
         assert not any({l['a'],l['b']}=={'visitors','visitor-custody'} for l in data['links']), 'Visitor booth divider is not a custody doorway'
-    if data['id'] in ('MANSION','FARMHOUSE'):
+    if data.get('prop_fit_reservations'):
         measured={a['asset']:a for a in asset_bounds(data['fit_assets'])['assets']}
         placed=[]
         for item in data['prop_fit_reservations']:
@@ -580,12 +710,20 @@ def validate(data):
                 if previous['space']!=item['space']:continue
                 assert any(hi[k]<=pl[k] or lo[k]>=ph[k] for k in range(3)),(previous,item,'native asset overlap')
             placed.append((item,lo,hi))
-        assert sum(i['asset']=='bed_5' for i in data['prop_fit_reservations'])==(4 if data['id']=='MANSION' else 2)
+        assert sum(i['asset']=='bed_5' for i in data['prop_fit_reservations'])==data.get('expected_single_beds',4 if data['id']=='MANSION' else 2)
         # Bedrooms must have a circulation doorway; a private bathroom cannot
         # become the only route to a guest sleeping space.
-        for key in (['suite-bed','guest-a','guest-b','staff-a','staff-b'] if data['id']=='MANSION' else ['parents','children']):
+        for key in data.get('sleeping_spaces',(['suite-bed','guest-a','guest-b','staff-a','staff-b'] if data['id']=='MANSION' else ['parents','children'])):
             adjacent=[zones[b] for b in graph[key]]
             assert any(z['kind']=='circulation' for z in adjacent),key
+    for flow in data.get('flow_reservations',[]):
+        assert not set(flow['path']) & set(flow['avoid']),flow
+        for a,b in zip(flow['path'],flow['path'][1:]):assert b in graph[a],(flow['id'],a,b,'missing doorway or stair')
+    if data['id']=='ASYLUM':
+        for floor in [0,3.4]:
+            beds=[p for p in data['prop_fit_reservations'] if p['asset']=='bed_5' and zones[p['space']]['y']==floor]
+            assert len(beds)==8 and len({p['space'] for p in beds})==4,'Four two-place rooms per floor'
+        assert not any({l['a'],l['b']}=={'dirty-laundry','clean-laundry'} for l in data['links']),'Clean transfer is not a through-door'
     for rite in data['rituals']:
         room=zones[rite['zone']];x,y,z=rite['point'];x0,z0,x1,z1=room['bounds']
         assert x0+2.2<=x<=x1-2.2 and z0+2.2<=z<=z1-2.2, 'Ritual clear area '+rite['zone']
@@ -638,7 +776,7 @@ def asset_bounds(names=None):
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');args=parser.parse_args()
-    for folder,data in [('school',school()),('prison',prison()),('mansion',mansion()),('farmhouse',farmhouse())]:
+    for folder,data in [('school',school()),('prison',prison()),('mansion',mansion()),('farmhouse',farmhouse()),('asylum',asylum())]:
         spaces,links=validate(data)
         outputs={'rough-layout.json':json.dumps(data,indent=2,ensure_ascii=False)+'\n',
                  'rough-plan.svg':review.render_svg(data),'rough-sections.svg':sections(data),
