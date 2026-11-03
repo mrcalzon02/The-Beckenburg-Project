@@ -1,0 +1,49 @@
+compile-gpu-java17	Compile GPU and complete authoritative game sources	2026-11-03T01:57:52.0448375Z PASS GPU generation identity, viewport isolation and frame bridge
+compile-gpu-java17	Compile GPU and complete authoritative game sources	2026-11-03T01:57:52.3865589Z PASS camera-direction culling preserves near apertures and rotation
+compile-gpu-java17	Compile GPU and complete authoritative game sources	2026-11-03T01:57:54.4044843Z PASS packed/legacy readback: exact color, alpha, vertical flip, linear depth, native order, buffer position and dimensions
+windows-build	Package canonical assets with Java 17	2026-11-03T01:57:56.2084911Z PASS: authored 126 textured PSX GLBs, 788556 bytes (42 equipment categories x 3 physical tiers)
+windows-build	Package canonical assets with Java 17	2026-11-03T01:58:12.9765889Z PASS JAR audio: 19 WAVs, six scores, 13 sound zones, 11 weather bundles
+windows-build	Measure actual House viewports from van to interior (CPU baseline + screenshot HUD)	2026-11-03T01:58:30.2306409Z PASS six authored van-to-house viewport captures, real scene metrics, peer sprites and PNG HUD
+windows-build	Verify prepared scenery reuse, image parity and scene invalidation	2026-11-03T01:58:41.4173559Z PASS prepared House scenery: reuse, exact pixels, rotation, new-map invalidation and budget
+windows-build	Verify conservative static shell chunks preserve functional world geometry	2026-11-03T01:58:51.6328691Z PASS room-owned static shell chunks, original geometry parity across van, yard, entrance and upstairs; rejected_faces=3292
+windows-build	Verify stationary world resource and lighting contracts	2026-11-03T01:59:00.9986902Z PASS intentionally lit VAN map and sparse unallocated material IDs within 96MiB Java heap
+windows-build	Verify stationary world resource and lighting contracts	2026-11-03T01:59:01.2173373Z PASS separately revisioned live TV/map pixels and static material independence
+windows-build	Verify stationary world resource and lighting contracts	2026-11-03T01:59:11.9727844Z PASS all-map dynamic source parity, camera reuse, moved/held/hidden clutter, animated fixtures, water/power, bounded overflow and map disposal
+windows-build	Verify stationary world resource and lighting contracts	2026-11-03T01:59:17.6205929Z PASS exact direct/sample RGB float bits, lazy immutable copies, all tints/normals, emission, candle/TV changes, blackout, doors and all map types
+windows-build	Verify stationary world resource and lighting contracts	2026-11-03T02:00:16.8464154Z PASS complete dependency/sparse/dense vertex-batch parity across Castle and all map types, real flicker/blackout/doors, scene changes and immutable published arrays (recording backend)
+windows-build	Verify stationary world resource and lighting contracts	2026-11-03T02:00:17.9806212Z PASS actual UV vertex lighting blocked by closed authored doors; open-door positive controls on House/Farmhouse/School
+windows-build	Verify stationary world resource and lighting contracts	2026-11-03T02:01:04.3243226Z PASS real Castle and all10 map-type submission residency, portable flashlight/firelight transitions, light updates, occlusion, UV, resize, editor and scene transitions (recording backend)
+windows-build	Verify stationary world resource and lighting contracts	2026-11-03T02:01:05.8076486Z PASS prepared fixture scalar/normal probes, flicker, blackout, real breaker and Castle occluder revisions
+windows-build	Verify stationary world resource and lighting contracts	2026-11-03T02:01:05.9623797Z PASS exact PSX quantization pixels across every channel, dither phase, preset and mixed RGB frame
+windows-build	Verify stationary world resource and lighting contracts	2026-11-03T02:01:11.8678305Z PASS portable equipment atlas labels, one material, larger plaques and targeted readable exhibit titles
+windows-build	Verify C3 House basement authored depth ownership without portal culling	2026-11-03T02:01:19.7526773Z PASS C3 source-only House depth-ownership reference, 20 authored views, basement positive controls and 20 pixel owner/depth captures; build\e2e\viewport-profile\house-c3-depth-reference.csv
+windows-build	Verify flyover preview readiness and finite fallback clock	2026-11-03T02:01:20.7834716Z PASS flyover readiness: cold hold, prepared start, bounded fallback, late frame monotonicity, software mode
+windows-build	Launch GPU-capable native executable in explicit software recovery mode	2026-11-03T02:03:01.5090443Z ^[[36;1m  Write-Host 'PASS GPU-native Windows executable / software recovery / menu'^[[0m
+windows-build	Launch GPU-capable native executable in explicit software recovery mode	2026-11-03T02:03:14.2338056Z PASS GPU-native Windows executable / software recovery / menu
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:04:05.2325941Z GPU ROTATION PASS 6 real house directions, fresh frame identity each; average_ms=678 worst_ms=1162
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:04:05.2559012Z GPU STATIC LIGHT CACHE PASS hits=1340 builds=0 bytes=64320 faces=670
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:04:05.2588441Z GPU HOUSE RESIDENT SHELL PASS batches=158 builds=158 reuse=672 bytes=3732480
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:04:08.3988154Z GPU OPENING PASS HOUSE frame=0 t=0.0 submitted=3249
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:04:08.5818726Z GPU OPENING PASS HOUSE frame=1 t=0.39 submitted=3256
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:04:09.1013170Z GPU OPENING PASS HOUSE frame=2 t=0.78 submitted=3373
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:04:09.1805113Z GPU OPENING PASS HOUSE frame=3 t=0.94 submitted=3374
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:04:12.1577193Z GPU OPENING PASS FARMHOUSE frame=0 t=0.0 submitted=4242
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:04:12.4791193Z GPU OPENING PASS FARMHOUSE frame=1 t=0.75 submitted=4318
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:04:12.5806202Z GPU OPENING PASS FARMHOUSE frame=2 t=0.94 submitted=4348
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:04:16.4162441Z GPU OPENING PASS SCHOOL frame=0 t=0.0 submitted=5300
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:04:16.7949132Z GPU OPENING PASS SCHOOL frame=1 t=0.75 submitted=5466
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:04:16.9732833Z GPU OPENING PASS SCHOOL frame=2 t=0.94 submitted=5519
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:04:29.2352004Z PASS five real GPU viewport lighting audits plus warm unchanged-frame reuse at van and house entry
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:04:31.9079398Z PASS OpenGL per-fragment flashlight and retained unchanged House VBO uploads
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:04:32.0056649Z PASS production OpenGL flashlight: unblocked positive, 9248 first-surface pixel checks across both submission orders, exact depth, finite reach. Synthetic controls, not map acceptance.
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:04:32.1522419Z GPU RESIDENT VBO PASS first_upload=96 repeat_upload=0 repeat_reused=96 revised_upload=96 revised_pixels=19492 new_scene_upload=96
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:04:37.4668020Z PASS Beckenburg OpenGL 3.3 real House/Castle, flyovers, flashlight and VBO reuse
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:05:07.2300867Z PASS actual OpenGL Castle and 11 map types including persisted USER fixture: zero unchanged uploads, real torch, flicker, blackout, door, resize and return
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:05:16.9938055Z GPU UI PASS real Castle home loaded
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:05:18.0813428Z GPU UI PASS invoked real solo.deploy / START ROUND action
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:05:22.5778629Z GPU UI PASS HOUSE hunter ready=2943ms, walk=0.4033210344000011m, frames=19, real extraction=RETREATED, Castle home restored
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:05:22.8912660Z GPU UI PASS invoked real solo.deploy / START ROUND action
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:05:35.2428607Z GPU UI PASS FARMHOUSE hunter ready=11361ms, walk=0.3268743527999973m, frames=19, real extraction=RETREATED, Castle home restored
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:05:35.4368449Z GPU UI PASS invoked real solo.deploy / START ROUND action
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:05:37.5957203Z GPU UI PASS SCHOOL hunter ready=1179ms, walk=0.31795134960000127m, frames=14, real extraction=RETREATED, Castle home restored
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-03T02:05:37.6028749Z GPU UI PASS 3 real case dispatch / hunter / movement / extraction / menu cycles

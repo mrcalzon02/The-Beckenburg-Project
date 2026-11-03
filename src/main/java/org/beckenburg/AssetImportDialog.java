@@ -98,6 +98,8 @@ public final class AssetImportDialog {
     private boolean lassoGesture;
     private final JComboBox<EditorTopologyProject.FaceEdit> faceOperation=new JComboBox<>(EditorTopologyProject.FaceEdit.values());
     private final JSpinner faceAmount=new JSpinner(new SpinnerNumberModel(.25,-10000d,10000d,.05));
+    private final JSpinner bevelDepth=new JSpinner(new SpinnerNumberModel(.1,.000001,10000d,.05));
+    private final JButton previewBevel=new JButton("PREVIEW BEVEL");
     private final JButton previewFaceEdit=new JButton("PREVIEW FACE EDIT"),applyFaceEdit=new JButton("APPLY MODEL EDIT"),cancelFaceEdit=new JButton("CANCEL MODEL EDIT");
     private EditorTopologyProject.EditPreview modelingPreview;
     private EditorMeshPipeline.Mesh modelingMesh;
@@ -228,6 +230,8 @@ public final class AssetImportDialog {
         });
         previewMaterial.addActionListener(e->{if(selectedHit!=null&&materialList.getSelectedItem() instanceof EditorMeshMaterial material){long face=selectedHit.faceId();beginModelingPreview(p->p.previewBindMaterial(face,material));}});
         previewFaceEdit.addActionListener(e->previewModelingEdit());cancelFaceEdit.addActionListener(e->clearModelingPreview());
+        bevelDepth.addChangeListener(e->clearModelingPreview());
+        previewBevel.addActionListener(e->{if(busy||topologyProject==null||selectedHit==null||selectionMode.getSelectedIndex()==2)return;var hit=selectedHit;boolean corner=selectionMode.getSelectedIndex()==0;double depth=((Number)bevelDepth.getValue()).doubleValue();beginModelingPreview(p->p.previewBevel(corner?hit.vertexId():hit.edgeA(),corner?hit.vertexId():hit.edgeB(),hit.faceId(),depth));});
         applyFaceEdit.addActionListener(e->{if(modelingPreview!=null&&!busy){var edit=modelingPreview;meshEdit(()->topologyProject.applyPreview(edit));if(topologyProject.snapshot()==edit.snapshot()){selectedHit=null;selectionLabel.setText("Model edit committed");}clearModelingPreview();}});
         previewWeld.setToolTipText("Select vertices with X-ray/area selection. Exact coincident positions weld per part; UV seams stay per corner.");
         previewWeld.addActionListener(e->{var ids=java.util.Set.copyOf(selectedVertices);beginModelingPreview(p->p.previewWeld(ids));});
@@ -261,10 +265,11 @@ public final class AssetImportDialog {
         inspectorCards.add("Transform",EditorTopologyWorkspace.column(EditorTopologyWorkspace.form("Space",transformSpace,"Operation",transformKind,"Axis",transformAxis,"Degrees / factor",transformAmount,"Pivot",transformPivot,"Angle snap",angleSnap),previewTransform));
         inspectorCards.add("Create",EditorTopologyWorkspace.column(EditorTopologyWorkspace.form("Primitive",primitiveKind,"Width",primitiveWidth,"Height",primitiveHeight,"Depth",primitiveDepth,"Segments",primitiveSegments,"Rings / grid",primitiveRings),previewPrimitive,applyPrimitive));
         inspectorCards.add("Face",EditorTopologyWorkspace.column(EditorTopologyWorkspace.form("Operation",faceOperation,"Distance / fraction",faceAmount),previewFaceEdit));
+        inspectorCards.add("Bevel",EditorTopologyWorkspace.column(EditorTopologyWorkspace.form("Cut depth",bevelDepth),previewBevel,new JLabel("Pick one EDGE or VERTEX in the working view."),new JLabel("Closed convex support; one flat cut."),new JLabel("Cap: active face material, planar UVs.")));
         inspectorCards.add("Repair",EditorTopologyWorkspace.column(previewWeld,previewDegenerates,previewUnused));
         inspectorCards.add("Review",EditorTopologyWorkspace.column(new JLabel("Geometry regression (0 = original)"),slider,reset,preset));
         var toolsBar=new JPanel(new GridLayout(0,1,2,3));ButtonGroup toolModes=new ButtonGroup();
-        String[] toolNames={"Select","Move","Transform","Create","Face","Repair","Review"};
+        String[] toolNames={"Select","Move","Transform","Create","Face","Bevel","Repair","Review"};
         for(int i=0;i<toolNames.length;i++){int index=i;var button=new JToggleButton(toolNames[i]);button.setMargin(new Insets(8,5,8,5));button.setToolTipText("Show "+toolNames[i].toLowerCase(Locale.ROOT)+" settings");button.addActionListener(e->{((CardLayout)inspectorCards.getLayout()).show(inspectorCards, index==2?"Transform":toolNames[index]);toolTitle.setText(toolNames[index].toUpperCase(Locale.ROOT));workspace.setInspectorVisible(true);});toolModes.add(button);toolsBar.add(button);if(i==0)button.setSelected(true);}
         var toolsDock=new JPanel(new CardLayout());var toolsPanel=new JPanel(new BorderLayout());toolsPanel.add(toolsBar,BorderLayout.NORTH);toolsDock.add(toolsPanel,"Tools");
         var partsPanel=new JPanel(new BorderLayout(3,5));partsPanel.setBorder(BorderFactory.createEmptyBorder(3,2,3,2));var partsHead=EditorTopologyWorkspace.column(new JLabel("NATIVE MESH PARTS"),partSearch);partsPanel.add(partsHead,BorderLayout.NORTH);partsPanel.add(new JScrollPane(partList),BorderLayout.CENTER);toolsDock.add(partsPanel,"Parts");toolsDock.setPreferredSize(new Dimension(76,500));
@@ -423,6 +428,7 @@ public final class AssetImportDialog {
         boxSelect.setEnabled(editable);xraySelect.setEnabled(editable);areaShape.setEnabled(editable);
         faceOperation.setEnabled(topologyProject!=null&&!busy);faceAmount.setEnabled(topologyProject!=null&&!busy);
         previewFaceEdit.setEnabled(editable&&selectionMode.getSelectedIndex()==2&&selectedHit!=null);
+        previewBevel.setEnabled(editable&&selectionMode.getSelectedIndex()!=2&&selectedHit!=null);
         chooseMaterial.setEnabled(editable&&selectionMode.getSelectedIndex()==2&&selectedHit!=null);previewMaterial.setEnabled(chooseMaterial.isEnabled()&&materialList.getSelectedItem()!=null);
         for(var c:List.of(materialList,materialWrap,materialAlpha,materialOrigin,uvOperation,uvScope,uvPivot,uvFirst,uvSecond))c.setEnabled(editable);
         previewUv.setEnabled(editable&&selectionMode.getSelectedIndex()==2&&selectedHit!=null);

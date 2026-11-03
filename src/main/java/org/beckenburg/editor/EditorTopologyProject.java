@@ -212,6 +212,11 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         if(!topology(after).manifold())throw new IllegalArgumentException("Model edit would introduce invalid topology");
         return new EditPreview(this,state,after,revision,operation+" face "+faceId+" / +3 vertices, +6 triangles");
     }
+    public synchronized EditPreview previewBevel(long first,long second,long activeFace,double depth){
+        var selected=first==second?Set.of(first):Set.of(first,second);var beforeTopology=topology(state);if(!beforeTopology.manifold())throw new IllegalArgumentException("Bevel requires oriented manifold input; inspect or repair topology first");
+        String part=state.vertices().stream().filter(v->v.id()==first).map(Vertex::part).findFirst().orElseThrow(()->new IllegalArgumentException("Unknown native bevel vertex"));for(var edge:beforeTopology.edges())if(edge.boundary()&&beforeTopology.faces().get(edge.face()).part().equals(part))throw new IllegalArgumentException("Bevel requires a closed native part");
+        var after=EditorMeshBevel.build(state,selected,activeFace,depth);var checked=topology(after);if(!checked.manifold()||checked.boundaryEdges()!=beforeTopology.boundaryEdges())throw new IllegalArgumentException("Native bevel would create invalid or open topology");return new EditPreview(this,state,after,revision,(first==second?"CORNER":"EDGE")+" BEVEL / "+first+(first==second?"":" - "+second)+" / cut depth "+depth+" / "+after.faces().size()+" faces");
+    }
     public synchronized void applyPreview(EditPreview preview){
         Objects.requireNonNull(preview);
         if(preview.canceled||preview.owner!=this||preview.before!=state||preview.revision!=revision)throw new IllegalArgumentException("Model preview is canceled or belongs to a stale or foreign native revision");

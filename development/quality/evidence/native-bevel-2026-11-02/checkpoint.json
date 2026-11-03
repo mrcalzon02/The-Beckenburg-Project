@@ -1,0 +1,30 @@
+{
+  "local": "PASS native suite, final source-GLB GUI/runtime render and independent attributed bevel stress",
+  "priorSource": "72c99b7aa2a054a4c6605a13f556b92980fa49f8",
+  "priorCI": {
+    "standalone": 41562939268,
+    "native": 41562947315,
+    "gpu": 41562962371,
+    "full": 41562955851,
+    "fullRaw": "308 passed, 2 failed, 0 skipped; DEV211"
+  },
+  "remaining": "Full G2 and G3-G12 remain open",
+  "sha256": {
+    "corner.btop": "c0a9922a6e08337ba23821746d589f79b78c5facd5d8c1943368633f8be57d41",
+    "edge.btop": "ca236d8e377ea24033ee0d198708897adafc274d38a5f8eba0b2d49a82cc237b",
+    "edge.glb": "3276a315f192517c7c0c4e93d1258a0e35bacd20825b9653b1fff6cb4acea0c0",
+    "edge.obj.zip": "fb3f3f9748da801ce62fa0a1def4232ea5b714c9627f4efef290c81c387c761e",
+    "full-72c99b7a.txt": "dbdd3dfa9d0bf1d670a1a8d7fc332808573897011f3191f3f0c67ba12f1ff5a6",
+    "gpu-72c99b7a.txt": "6c4464858418724bf41c47ad63e13038179e702430c7a749442a75defe0665b7",
+    "human-bevel-model.btop": "1647ee033b4db40d000e57cbc929270c1a9ae88389b260e40649b2b430715821",
+    "human-bevel-runtime.glb": "9b30901b8f82247bf2c47a86ee6e5e3bc75ff81aa366c083032a8039f0c54060",
+    "human-bevel-runtime.png": "131c24aa8f7e685d6241eefa226cd26b72d4bc1a4c625e1f4705bf73b31db6da",
+    "human-bevel-source.glb": "a61d174abfa3d08d6aec44bb01391294372a27ffee3ae239786a69f3033978b3",
+    "human-corner-bevel-preview.png": "959e79bebc6b8c2fb5a1848e9fb012e3700bd210a11f9129774802cd81191dda",
+    "human-edge-bevel-model.png": "9152ceea00c8f9461f63fbea8ef45ba34710652a29f7e7b114830293492acfc4",
+    "human-edge-bevel-preview.png": "40b69ddfee96740c3804200fb547a2a0e0639aad8bfe0f294d02328f400c1249",
+    "native-suite.txt": "0a360052deb98511fa377a8282b4456b7d484c7832f617508a45310435215ddc",
+    "README.md": "40a69d32d55976daa5c88017d0640c06fe5059a8da0f8d944159e3c6d2692645",
+    "source-edge.glb": "0c57d4c06e73e10f7a6c137d9ec64080ed7939a719e8a96e3a371d964bde6f6e"
+  }
+}
