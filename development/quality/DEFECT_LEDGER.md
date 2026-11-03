@@ -3036,3 +3036,5 @@ Scope: New unpublished component normalization, not an artwork or vertex-normal 
 ### DEV-225 — Concurrent main host campaign persistence assertion
 
 OPEN: exact main ce146a69 full41566564774 and installer41566564773 both fail `Host campaign result saved`. Raw failed-step logs are retained in evidence/native-bevel-2026-11-02. Cause is unverified; temporal proximity to independent LAN extraction changes is not causation. Inspect actual packaged test and host persistence before changing code or expectations. Older-map/campaign acceptance remains unproven.
+
+DEV225 diagnosis: desktop fixture enters 3D then calls legacy EXTRACT, which ce146a69 correctly rejects. Actual current-main LanHost/LanCase compiled in isolated build output passes the same embedded desktop campaign when invoking physical vanDoor. Positive raw log and exact test patch retained. Integration/packaged acceptance remains pending; do not relax host enforcement.

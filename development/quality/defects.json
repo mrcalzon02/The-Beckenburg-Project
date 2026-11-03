@@ -2414,12 +2414,12 @@
     {
       "id": "DEV-225",
       "title": "Concurrent main installer and full acceptance fail host campaign persistence assertion",
-      "status": "open; exact remote failure observed, cause not yet established",
+      "status": "diagnosed; tested test correction retained, main integration and packaged CI pending",
       "affected": "main ce146a69 packaged startup/multiplayer acceptance",
       "symptom": "Both workflows stop at AssertionError: Host campaign result saved.",
-      "cause": "Unverified; follows independent LAN extraction changes, which alone do not prove causation.",
-      "action": "Inspect packaged test and host result persistence before changing implementation or expectations. Preserve editor branch and main concurrent work.",
-      "evidence": "main ce146a69 full41566564774 and installer41566564773; raw failed-step logs retained in native-bevel-2026-11-02.",
+      "cause": "Desktop test enters physical 3D then calls legacy EXTRACT; main ce146a69 rejects this by design. Isolated current-main LanHost/LanCase plus physical vanDoor request passes actual campaign desktop persistence/navigation.",
+      "action": "Integrate concurrent main host changes preserving editor work, then apply retained campaign-physical-control.patch and run packaged acceptance. Do not restore forbidden remote extraction.",
+      "evidence": "main ce146a69 full41566564774 and installer41566564773; raw failed-step logs retained in native-bevel-2026-11-02. Positive current-main host class test and exact proposed patch retained beside negative remote logs.",
       "older_maps": "Campaign/host behavior requires actual packaged regression; no map or release acceptance inferred."
     }
   ],
