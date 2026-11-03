@@ -2347,15 +2347,15 @@
   "source_pins": [
     {
       "path": "src/main/java/org/beckenburg/CastleRooms.java",
-      "sha256": "aace0c0aaecadee9ef7455f827f55fd96da23adeee7c45dac9595afb1b61b75f"
+      "sha256": "8a1a432301d4aefed21c6c8724b9579ed26627a73d7cd93f27a55c87823c5b96"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleHubArchitecturalPlan.java",
-      "sha256": "7bb80def3093fb637731a1abd79815508a9d64a75ee6e3500d29e152b3a830bf"
+      "sha256": "c94dd706ee10c44efc84067037a27d802369a551413049f939967aebd1a167e0"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleHubMap.java",
-      "sha256": "6308790b253a06c0bd5f0a1728ef293a2e7c3bc35c45490867ea1cd3eb9a81fc"
+      "sha256": "f47c0d8288ee6d555cd8fbcb386119a3a7136ac8c66a1ab4f8913b85d07b9c53"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleRelations.java",
@@ -2364,6 +2364,34 @@
     {
       "path": "src/main/java/org/beckenburg/CastleSurroundings.java",
       "sha256": "0fc179cf0dc66f6d882ebcd948e0e13ebcc60a081f34a9d23d49ed67d63b59fd"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/CastleLevelEdits.java",
+      "sha256": "02e0a0538d7f77af73d6081ff443406ce4ba2b4a376a79c1c6f95ecc54c7859b"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/CastleAnnex.java",
+      "sha256": "b43c94f6b3142004d8a40f383f6d90daf15d3bc5b4e575119ed5896b897b9df9"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/CastleCellar.java",
+      "sha256": "2ca79b35c2813a5da33219b30cc4bec62474f2f2ced1d232e3990736efde808d"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/CastleCellarLayout.java",
+      "sha256": "edc01bd66e23fb1cc13f56e53f568e841421db679cf110354c49a838ca0491fd"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/CastleWorldTerrain.java",
+      "sha256": "d54a4203ae37732ac9b6da22ede11544111a2513fb0fdac91dfa985ca26ba915"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/CastleHubDecor.java",
+      "sha256": "ca95d302254ad4a5ff1f95b3547c4192a5f8327931dd40e558bb58a13d7f715b"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/CastleDoorSlots.java",
+      "sha256": "2685498d8b14b1c487c2941cf7b3c30e78629436d983324cf1a33b6dca27a34e"
     }
   ],
   "station_bindings": [

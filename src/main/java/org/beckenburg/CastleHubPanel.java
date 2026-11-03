@@ -232,6 +232,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
     }
     /** Never teleport from upper gallery to the ground by crossing an unguarded edge. */
     static boolean safeElevationTransition(double from,double to,double x,double z){
+        if(!Double.isFinite(from+to)||Math.abs(to-from)>.26)return false;
         if(from>2.0 && to<0.5 && !CastleHubArchitecturalPlan.onStairs(x,z))return false;
         return true;
     }
@@ -274,7 +275,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
             down.clear();look.release();noticeTicks=0;repaint();return;
         }
         if(station==null){
-            if(!orientation.active()&&elevation<1.8&&
+            if(!orientation.active()&&elevation>=-.3&&elevation<1.8&&
                 CastleWarehouse.aimed(map,renderer.x,renderer.z,renderer.yaw)){
                 openWarehouseInventory();return;
             }
@@ -342,12 +343,12 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
                 notice=(portal.gate()?"Courtyard portcullis":"Castle door")+
                     (open?" raised / passage clear.":" closed / passage secured.");
                 noticeTicks=130;
-            }else if(elevation<=1.8&&
+            }else if(elevation>=-.3&&elevation<=1.8&&
                     CastleRelations.aimed(map,renderer.x,renderer.z,renderer.yaw)!=null){
                 openResident(CastleRelations.aimed(map,renderer.x,renderer.z,renderer.yaw));
             }else if(CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw)!=null){
                 use(null);
-            }else if(elevation>1.8){
+            }else if(elevation>1.8||elevation<-.3){
                 notice="Return to the ground floor to use workstations.";noticeTicks=90;
             }else use(CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw)!=null?
                 null:map.aimed(renderer.x,renderer.z,renderer.yaw));
@@ -411,12 +412,12 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
                 g.setColor(new Color(164,223,242));g.drawString(tier,left+16,h-104);
                 g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,12));
             }
-            CastleHubMap.Station station=elevation>1.8?null:map.aimed(renderer.x,renderer.z,renderer.yaw);
+            CastleHubMap.Station station=(elevation>1.8||elevation<-.3)?null:map.aimed(renderer.x,renderer.z,renderer.yaw);
             boolean atSwitch=elevation<=1.8&&
                 CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw)!=null;
-            boolean atWarehouse=elevation<=1.8&&CastleWarehouse.aimed(map,renderer.x,renderer.z,renderer.yaw);
+            boolean atWarehouse=elevation>=-.3&&elevation<=1.8&&CastleWarehouse.aimed(map,renderer.x,renderer.z,renderer.yaw);
             var atDoor=map.aimedDoor(renderer.x,elevation,renderer.z,renderer.yaw);
-            var resident=elevation<=1.8?CastleRelations.aimed(map,renderer.x,renderer.z,renderer.yaw):null;
+            var resident=(elevation>=-.3&&elevation<=1.8)?CastleRelations.aimed(map,renderer.x,renderer.z,renderer.yaw):null;
             var nameplate=renderer.castleResidentNameplate(resident);
             if(nameplate!=null){
                 int nameX=(int)Math.round(nameplate.x()*(double)w/renderer.width());

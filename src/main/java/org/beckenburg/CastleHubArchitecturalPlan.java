@@ -135,6 +135,7 @@ public final class CastleHubArchitecturalPlan {
         vertical(out,19.5,1,11.5,GROUND_CEILING,UPPER_CEILING,MaterialAtlas.STONE);
         horizontal(out,11.5,10.5,19.5,GROUND_CEILING,UPPER_CEILING,MaterialAtlas.STONE,17.5);
         out.addAll(CastleAnnex.walls());
+        out.addAll(CastleCellarLayout.WALLS);
         return List.copyOf(out);
     }
     private static void horizontal(List<Wall> out,double z,double from,double to,
@@ -224,6 +225,8 @@ public final class CastleHubArchitecturalPlan {
     }
     /** Walkable 3D height follows a physical incline and retains underpasses. */
     public static double elevation(double x,double z,double oldElevation){
+        double lower=CastleCellar.elevation(x,z,oldElevation);
+        if(Double.isFinite(lower))return lower;
         if(oldElevation>2.0&&upperWalkable(x,z))return GROUND_CEILING;
         if(onStairs(x,z))return stairHeight(x,z);
         return 0;

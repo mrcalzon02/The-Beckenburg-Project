@@ -409,31 +409,58 @@
           "evidence": [
             "src/main/java/org/beckenburg/CastleWorldBounds.java",
             "src/main/java/org/beckenburg/CastleEditorAgent.java",
-            "src/test/java/org/beckenburg/CastleSignedConstructionTest.java"
+            "src/test/java/org/beckenburg/CastleSignedConstructionTest.java",
+            "development/levels/rebuild/verification/castle-cellar-2026-11-03/README.md",
+            "development/levels/rebuild/verification/castle-cellar-2026-11-03/verification.json"
           ],
-          "defects": [],
-          "next_action": "Build full actual native Castle geometry now that signed annex/cellar authoring and runtime floor support are implemented. Terrain punching, new stair physics, room/roof/support/fixtures, functional interfaces and complete verification remain open."
+          "defects": [
+            "DEV-236",
+            "DEV-237",
+            "DEV-238"
+          ],
+          "next_action": "Complete full Castle first: construct remaining ground domestic/service rooms, upper roof/bearing/lodging and six beds, native fit-out and protected training bindings, then full hub verification. Actual annex/cellar, saved terrain hole and native editable architectural void are built and locally checked; no complete-stage acceptance."
         },
         "S04": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "evidence": [
+            "development/levels/rebuild/verification/castle-cellar-2026-11-03/README.md",
+            "development/levels/rebuild/verification/castle-cellar-2026-11-03/verification.json"
+          ],
+          "defects": [
+            "DEV-236",
+            "DEV-237",
+            "DEV-238"
+          ],
+          "next_action": "Complete full Castle first: construct remaining ground domestic/service rooms, upper roof/bearing/lodging and six beds, native fit-out and protected training bindings, then full hub verification. Actual annex/cellar, saved terrain hole and native editable architectural void are built and locally checked; no complete-stage acceptance."
         },
         "S05": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "evidence": [
+            "development/levels/rebuild/verification/castle-cellar-2026-11-03/README.md",
+            "development/levels/rebuild/verification/castle-cellar-2026-11-03/verification.json"
+          ],
+          "defects": [
+            "DEV-236",
+            "DEV-237",
+            "DEV-238"
+          ],
+          "next_action": "Complete full Castle first: construct remaining ground domestic/service rooms, upper roof/bearing/lodging and six beds, native fit-out and protected training bindings, then full hub verification. Actual annex/cellar, saved terrain hole and native editable architectural void are built and locally checked; no complete-stage acceptance."
         },
         "S06": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "evidence": [
+            "development/levels/rebuild/verification/castle-cellar-2026-11-03/README.md",
+            "development/levels/rebuild/verification/castle-cellar-2026-11-03/verification.json"
+          ],
+          "defects": [
+            "DEV-236",
+            "DEV-237",
+            "DEV-238"
+          ],
+          "next_action": "Complete full Castle first: construct remaining ground domestic/service rooms, upper roof/bearing/lodging and six beds, native fit-out and protected training bindings, then full hub verification. Actual annex/cellar, saved terrain hole and native editable architectural void are built and locally checked; no complete-stage acceptance."
         },
         "S07": {
           "status": "NOT_AUDITED",

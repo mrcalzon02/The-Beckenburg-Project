@@ -50,7 +50,7 @@ public final class CastleLevelEdits {
     }
     /** Axis-aligned editable architectural solids. Wall is a line extrusion,
      * floor is a horizontal slab, roof is a ridge with editable pitch. */
-    public enum Kind { WALL, FLOOR, ROOF }
+    public enum Kind { WALL, FLOOR, ROOF, VOID }
     public record Surface(String id,Kind kind,double x0,double z0,double x1,double z1,
                           double base,double height,int material) {
         public Surface {
@@ -107,6 +107,14 @@ public final class CastleLevelEdits {
     private List<CastleHubArchitecturalPlan.Wall> cachedWalls=List.of();
     private List<CastleHubArchitecturalPlan.Deck> cachedDecks=List.of();
     private List<CastleHubArchitecturalPlan.Roof> cachedRoofs=List.of();
+    private List<Surface> cachedOpenings=List.of();
+    public synchronized List<Surface> openings(){ensureGeometryCache();return cachedOpenings;}
+    public synchronized boolean floorOpening(double x,double z,double height){
+        ensureGeometryCache();
+        for(var s:cachedOpenings)if(Math.abs(s.base()-height)<1e-7
+            &&x>s.x0()&&x<s.x1()&&z>s.z0()&&z<s.z1())return true;
+        return false;
+    }
     public synchronized List<Surface> surfaces(){return List.copyOf(surfaces.values());}
     /** Cached immutable collision/shadow primitives: per-pixel light rays must
      * never rebuild or allocate entire geometry lists while rendering. */
@@ -115,11 +123,14 @@ public final class CastleLevelEdits {
         List<CastleHubArchitecturalPlan.Wall> wallList=new ArrayList<>();
         List<CastleHubArchitecturalPlan.Deck> deckList=new ArrayList<>();
         List<CastleHubArchitecturalPlan.Roof> roofList=new ArrayList<>();
+        List<Surface> openingList=new ArrayList<>();
         for(var surface:surfaces.values())switch(surface.kind()){
             case WALL -> wallList.add(surface.wall());
             case FLOOR -> deckList.add(surface.deck());
             case ROOF -> roofList.add(surface.roof());
+            case VOID -> openingList.add(surface);
         }
+        cachedOpenings=List.copyOf(openingList);
         for(var marker:CastleHubArchitecturalPlan.walls())
             if(marker.hasDoor())wallList.add(marker);
         cachedWalls=List.copyOf(wallList);
@@ -154,7 +165,7 @@ public final class CastleLevelEdits {
     public synchronized boolean floorSupports(double x,double z,double height){
         for(Surface s:surfaces.values())if(s.kind()==Kind.FLOOR
             &&Math.abs(s.base()-height)<.18&&x>=s.x0()&&x<=s.x1()
-            &&z>=s.z0()&&z<=s.z1())return true;
+            &&z>=s.z0()&&z<=s.z1()&&!floorOpening(x,z,s.base()))return true;
         return false;
     }
     /** Match structuralDecks/slabCells first-native-surface material authority. */
@@ -309,6 +320,7 @@ public final class CastleLevelEdits {
                 chandelier?4.2:4.0));
         }
         CastleAnnex.installDefaults(surfaces,lamps);
+        CastleCellar.installDefaults(surfaces,lamps);
         for(var station:CastleHubMap.Station.values())
             stations.put(station,new double[]{station.x,station.z});
         spawnX=13.5;spawnZ=19.3;spawnYaw=Math.PI;
@@ -327,6 +339,18 @@ public final class CastleLevelEdits {
         for(var p:props.values())if(p.upper()==upper)
             out.add(new CastleHubMap.Furnishing(p.mesh(),p.x(),p.z(),p.scale(),
                 p.yaw(),p.halfX(),p.halfZ()));
+        return List.copyOf(out);
+    }
+    /** Lower furniture cannot cast a phantom body footprint on the ground store. */
+    public synchronized List<CastleHubMap.Furnishing> furnishingsAt(double feet){
+        List<CastleHubMap.Furnishing> out=new ArrayList<>();
+        for(var p:props.values()){
+            double[] bounds=SceneRenderer.castleBounds(p.mesh());
+            // castleProp seats the actual mesh minimum on the saved support Y.
+            double low=p.y(),high=low+bounds[4]*p.scale();
+            if(high>feet+.04&&low<feet+1.8)
+                out.add(new CastleHubMap.Furnishing(p.mesh(),p.x(),p.z(),p.scale(),p.yaw(),p.halfX(),p.halfZ()));
+        }
         return List.copyOf(out);
     }
     public synchronized double[] spawn(){return new double[]{spawnX,spawnZ,spawnYaw};}
@@ -441,6 +465,8 @@ public final class CastleLevelEdits {
             }
             int annexVersion=Integer.parseInt(p.getProperty("annex.layout","0"));
             if(annexVersion<0||annexVersion>1)throw new IllegalArgumentException("Unsupported Castle annex layout version");
+            int cellarVersion=Integer.parseInt(p.getProperty("cellar.layout","0"));
+            if(cellarVersion<0||cellarVersion>1)throw new IllegalArgumentException("Unsupported Castle cellar layout version");
             if(Integer.parseInt(p.getProperty("structure.layout","1"))<2){defaults();return;}
         }catch(RuntimeException invalid){throw new IOException("Invalid/unsupported Castle layout version",invalid);}
         try{
@@ -549,6 +575,16 @@ public final class CastleLevelEdits {
                         &&Math.abs(floor.base())<1e-7&&Math.abs(ceiling.base()-3.4)<1e-7
                         &&lamp.x()>=floor.x0()&&lamp.x()<=floor.x1()&&lamp.z()>=floor.z0()&&lamp.z()<=floor.z1()
                         &&lamp.x()>=ceiling.x0()&&lamp.x()<=ceiling.x1()&&lamp.z()>=ceiling.z0()&&lamp.z()<=ceiling.z1())
+                        incomingLights.putIfAbsent(lamp.id(),lamp);
+                }
+            }
+            if(Integer.parseInt(p.getProperty("cellar.layout","0"))<1){
+                for(var lamp:lamps.values())if(lamp.id().startsWith("cellar-light-")){
+                    String room=lamp.id().substring("cellar-light-".length());
+                    if(room.startsWith("stair-"))room="cellar-stair";
+                    Surface floor=parsed.get("cellar-floor-"+room);
+                    if(floor!=null&&floor.kind()==Kind.FLOOR&&Math.abs(floor.base()+3)<1e-7
+                        &&lamp.x()>=floor.x0()&&lamp.x()<=floor.x1()&&lamp.z()>=floor.z0()&&lamp.z()<=floor.z1())
                         incomingLights.putIfAbsent(lamp.id(),lamp);
                 }
             }
@@ -671,6 +707,7 @@ public final class CastleLevelEdits {
         p.setProperty("structure.layout","2");
         p.setProperty("lighting.layout","2");
         p.setProperty("annex.layout","1");
+        p.setProperty("cellar.layout","1");
         p.setProperty("fortification.layout","2");
         p.setProperty("gate.layout","2");
         p.setProperty("windows.layout","2");

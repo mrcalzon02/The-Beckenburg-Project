@@ -73,15 +73,17 @@ public final class CastleHubMap {
     public record Furnishing(String mesh,double x,double z,double scale,double yaw,
                              double halfWidth,double halfDepth) { }
     public static java.util.List<Furnishing> furnishings(){
-        var all=new java.util.ArrayList<>(CastleLevelEdits.current().furnishings(false));
+        var all=new java.util.ArrayList<>(CastleLevelEdits.current().furnishingsAt(0));
         all.addAll(CastleArchive.furnishings());return java.util.List.copyOf(all);
     }
     /** Articulated H-plan with real hall passages, two connected eastern service
      * wings, a covered north block and an open south courtyard.
      * Purchasing stations retain their physically reachable world coordinates.
      */
-    public CastleHubMap(){refreshGround();}
-    public AuthoredSitePhysics worldSurface(){return CastleWorldTerrain.surface();}
+    private final AuthoredSitePhysics worldSurface;
+    public CastleHubMap(){this(CastleWorldTerrain.surface());}
+    CastleHubMap(AuthoredSitePhysics worldSurface){this.worldSurface=java.util.Objects.requireNonNull(worldSurface);refreshGround();}
+    public AuthoredSitePhysics worldSurface(){return worldSurface;}
     /** Native editor floor changes refresh the same runtime support index. */
     private void refreshGround(){
         var scene=CastleLevelEdits.current();long revision=scene.revision();
@@ -121,7 +123,8 @@ public final class CastleHubMap {
             return z<=10.7?LanSound.Cue.STEP_WOOD:LanSound.Cue.STEP_STONE;
         if(CastleHubArchitecturalPlan.onStairs(x,z))
             return LanSound.Cue.STEP_STONE;
-        return switch(floorMaterial(x,z)){
+        int material=elevation<0?CastleLevelEdits.current().floorSurfaceMaterial(x,z,elevation,MaterialAtlas.STONE):floorMaterial(x,z);
+        return switch(material){
             case MaterialAtlas.CARPET->LanSound.Cue.STEP_CARPET;
             case MaterialAtlas.PARQUET,MaterialAtlas.AGED_WOOD->LanSound.Cue.STEP_WOOD;
             default->LanSound.Cue.STEP_STONE;
@@ -151,7 +154,8 @@ public final class CastleHubMap {
     public boolean solid(int x,int z){return tile(x,z)=='#';}
 
     private static boolean groundSupports(double x,double z){
-        return CastleRooms.ground(x,z)||CastleLevelEdits.current().floorSupports(x,z,0);
+        return CastleLevelEdits.current().floorSupports(x,z,0)
+            ||(!CastleCellar.opening(x,z)&&CastleRooms.ground(x,z));
     }
     public boolean traversable(double x,double z){return groundTraversable(x,z,0);}
     private boolean groundTraversable(double x,double z,double elevation){
@@ -163,6 +167,7 @@ public final class CastleHubMap {
         return groundTraversable(x,z,0,false);
     }
     private boolean groundTraversable(double x,double z,double elevation,boolean includeResident){
+        if(CastleCellar.onFlight(x,z)&&Math.abs(elevation-CastleCellar.stairHeight(z))>.01)return false;
         if(worldSurface().bodyBlocked(new LevelDefinition.Vec(x,elevation,z),1.8,.21))return false;
         if(CastleHubArchitecturalPlan.onStairs(x,z)&&elevation+.10<CastleHubArchitecturalPlan.stairHeight(x,z))return false;
         if(!Double.isFinite(x)||!Double.isFinite(z))return false;
@@ -185,8 +190,9 @@ public final class CastleHubMap {
     /** True three-dimensional walk path: landings and upper corridors ignore
      * solid ground-wall cells only when physically above their lintels. */
     public boolean traversable(double x,double z,double elevation){
-        if(!Double.isFinite(elevation)||elevation<0)return false;
+        if(!Double.isFinite(elevation))return false;
         if(worldSurface().bodyBlocked(new LevelDefinition.Vec(x,elevation,z),1.8,.21))return false;
+        if(elevation<0)return cellarTraversable(x,z,elevation);
         double radius=.21;
         if(CastleHubArchitecturalPlan.onStairs(x,z) && elevation>.1
                 && (x<16+radius||x>19-radius))return false;
@@ -209,6 +215,20 @@ public final class CastleHubMap {
                 return false;
         }
         return groundTraversable(x,z,elevation);
+    }
+    private boolean cellarTraversable(double x,double z,double elevation){
+        if(!CastleCellar.active()||elevation<CastleCellar.FLOOR-.01)return false;
+        var edits=CastleLevelEdits.current();double r=.21;
+        double expected=CastleCellar.onFlight(x,z)?CastleCellar.stairHeight(z):CastleCellar.FLOOR;
+        if(Math.abs(elevation-expected)>.01)return false;
+        for(double dx:new double[]{-r,r})for(double dz:new double[]{-r,r})
+            if(!edits.floorSupports(x+dx,z+dz,elevation)
+                &&!(Math.abs(elevation)<.18&&groundSupports(x+dx,z+dz)))return false;
+        if(edits.wallBlocks(x,elevation,z,r)||closedLeafBlocks(x,elevation,z,r)
+            ||CastleRooms.slabBodyBlocks(x,elevation,z,r,1.8))return false;
+        for(Furnishing item:edits.furnishingsAt(elevation))
+            if(Math.abs(x-item.x())<item.halfWidth()+r&&Math.abs(z-item.z())<item.halfDepth()+r)return false;
+        return true;
     }
     /** Interaction uses actual position and camera orientation, not a free-floating button. */
     public Station aimed(double playerX,double playerZ,double yaw){

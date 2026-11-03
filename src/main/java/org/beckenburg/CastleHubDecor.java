@@ -123,9 +123,9 @@ public final class CastleHubDecor {
                         double scale,double yaw,Mount mount){
         public boolean attached(CastleHubMap map){
             if(mount==Mount.CEILING)
-                return !map.solid((int)Math.floor(x),(int)Math.floor(z))
-                    &&!map.outside(x,z)&&Math.abs(y-CastleRooms.mountHeight(x,z,y>4))<.025;
-            return CastleHubArchitecturalPlan.mountingWall(x,y,z,yaw);
+                return CastleRooms.structuralDecks().stream().anyMatch(d->x>d.x0()&&x<d.x1()&&z>d.z0()&&z<d.z1()
+                    &&Math.abs(y-CastleRooms.slabBottom(x,z,d.height()))<.025);
+            return CastleWallLampMount.resolve(this,CastleLevelEdits.current().walls()).supported();
         }
     }
     private static Light ceiling(String family,double x,double z,double scale){
@@ -205,7 +205,8 @@ public final class CastleHubDecor {
         new Switch(20.73,1.20,14,-Math.PI/2),
         new Switch(28.73,1.20,9,-Math.PI/2),
         new Switch(28.73,1.20,26.0,-Math.PI/2),
-        new Switch(10.73,4.60,6.0,-Math.PI/2));
+        new Switch(10.73,4.60,6.0,-Math.PI/2),
+        new Switch(28.73,-1.80,24.5,-Math.PI/2));
     /** Players must stand on traversable ground and actually look at a switch. */
     public static Switch aimed(CastleHubMap map,double x,double z,double yaw){
         return aimed(map,x,0,z,yaw);

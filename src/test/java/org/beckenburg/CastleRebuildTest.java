@@ -69,7 +69,7 @@ public final class CastleRebuildTest {
         for(var light:CastleHubDecor.LIGHTS)check(light.attached(map),"real lamp support "+light);
         for(var sw:CastleHubDecor.SWITCHES){
             check(CastleHubArchitecturalPlan.mountingWall(sw.x(),sw.y(),sw.z(),sw.yaw()),"switch mounting "+sw);
-            double x=sw.x()-Math.sin(sw.yaw())*.8,z=sw.z()-Math.cos(sw.yaw())*.8,feet=sw.y()>4?3.4:0;
+            double x=sw.x()-Math.sin(sw.yaw())*.8,z=sw.z()-Math.cos(sw.yaw())*.8,feet=sw.y()<0?-3:sw.y()>4?3.4:0;
             check(map.traversable(x,z,feet),"reachable physical switch "+sw);
             check(CastleHubDecor.aimed(map,x,feet,z,sw.yaw())!=null,"operable physical switch");
         }

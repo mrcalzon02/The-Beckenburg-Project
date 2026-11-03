@@ -25,7 +25,8 @@ public final class CastleRooms {
         new Room("library","Upper library",10.5,1,19.5,11.5,3.4,6.8,false,MaterialAtlas.PARQUET));
     public static Room at(double x,double feet,double z){
         for(var r:ALL)if(Math.abs(r.floor-feet)<.3&&r.contains(x,z))return r;
-        return CastleAnnex.roomAt(x,feet,z);
+        var cellar=CastleCellar.roomAt(x,feet,z);
+        return cellar!=null?cellar:CastleAnnex.roomAt(x,feet,z);
     }
     public static boolean ground(double x,double z){return at(x,0,z)!=null;}
     public static double mountHeight(double x,double z,boolean upper){
@@ -34,18 +35,36 @@ public final class CastleRooms {
         return room.ceiling-SLAB;
     }
     public static String circuit(double x,double y,double z){
+        if(CastleCellar.active()&&(y<0||(y<1.2&&CastleCellar.opening(x,z))))return "cellar";
         var r=at(x,y>4?3.4:0,z);return r==null?"court":r.x0()<1?"practice":r.id;
     }
     private static long structureRevision=-1;
     private static List<CastleHubArchitecturalPlan.Deck> cachedStructure=List.of();
+    private static List<CastleLevelEdits.Surface> cachedFloors=List.of();
     public static synchronized List<CastleHubArchitecturalPlan.Deck> structuralDecks(){
         if(structureRevision==CastleLevelEdits.current().revision())return cachedStructure;
+        cachedFloors=CastleLevelEdits.current().surfaces().stream().filter(s->s.kind()==CastleLevelEdits.Kind.FLOOR).toList();
         var out=new ArrayList<>(CastleLevelEdits.current().decks());
         for(var r:ALL){
             if(r.floor==0)out.add(new CastleHubArchitecturalPlan.Deck(r.x0,r.z0,r.x1,r.z1,0,r.material));
             if(!r.outside)out.add(new CastleHubArchitecturalPlan.Deck(r.x0,r.z0,r.x1,r.z1,r.ceiling,MaterialAtlas.CEILING));
         }
-        structureRevision=CastleLevelEdits.current().revision();return cachedStructure=List.copyOf(out);
+        var cut=new ArrayList<CastleHubArchitecturalPlan.Deck>();
+        for(var d:out)cut.addAll(CastleCellar.cut(d));
+        structureRevision=CastleLevelEdits.current().revision();return cachedStructure=List.copyOf(cut);
+    }
+    /** Native floor depth is part of the solid, including the filled stone stair masses. */
+    public static double slabBottom(double x,double z,double top){
+        structuralDecks();
+        for(var s:cachedFloors)if(Math.abs(s.base()-top)<1e-8&&x>=s.x0()&&x<=s.x1()&&z>=s.z0()&&z<=s.z1())
+            return s.base()-s.height();
+        return top-SLAB;
+    }
+    public static boolean slabBodyBlocks(double x,double feet,double z,double radius,double height){
+        for(var d:structuralDecks())if(d.height()>feet+.26
+            &&slabBottom((d.x0()+d.x1())/2,(d.z0()+d.z1())/2,d.height())<feet+height
+            &&x+radius>d.x0()&&x-radius<d.x1()&&z+radius>d.z0()&&z-radius<d.z1())return true;
+        return false;
     }
     public record Cell(double x0,double z0,double x1,double z1,double top,int material){}
     public record Edge(double x0,double z0,double x1,double z1,double top){}

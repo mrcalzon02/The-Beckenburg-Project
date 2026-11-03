@@ -45,7 +45,7 @@ public final class CastleDoorSlots {
            Math.round(wall.portalCenter()*100));
    if(!names.add(id))throw new IllegalStateException("Duplicate physical portal "+id);
    slots.add(new Slot(id,wall.x0(),wall.z0(),wall.x1(),wall.z1(),
-       wall.bottom(),gate?2.95:CastleHubArchitecturalPlan.DOOR_HEIGHT,gate));
+       wall.bottom(),gate?2.95:wall.bottom()<0?2.4:CastleHubArchitecturalPlan.DOOR_HEIGHT,gate));
   }
   if(slots.stream().filter(Slot::gate).count()!=1)
    throw new IllegalStateException("Castle requires exactly one courtyard gate socket");

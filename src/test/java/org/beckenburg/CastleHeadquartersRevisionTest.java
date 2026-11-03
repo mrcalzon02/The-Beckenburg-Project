@@ -6,10 +6,21 @@ import java.util.UUID;
 /** Real source models, walkable warehouse and persisted Castle-to-mission preparation. */
 public final class CastleHeadquartersRevisionTest {
  private static void check(boolean value,String message){if(!value)throw new AssertionError(message);}
+ private static void enclosed(String mesh,double x,double y,double z,double scale,double yaw){
+  var bounds=SceneRenderer.castleBounds(mesh);double half=CastleDoorSlots.MASONRY_THICKNESS/2;
+  for(var triangle:GlbProps.model(mesh).triangles())for(var v:new GlbProps.Vertex[]{triangle.a(),triangle.b(),triangle.c()}){
+   double dx=(v.x()-bounds[0])*scale,dz=(v.z()-bounds[2])*scale;
+   double wx=x+dx*Math.cos(yaw)-dz*Math.sin(yaw),wz=z+dx*Math.sin(yaw)+dz*Math.cos(yaw);
+   double wy=y+(v.y()-bounds[1])*scale;
+   check(wx>28.5+half&&wx<43-half&&wz>17.5+half&&wz<34-half&&wy>=-1e-7&&wy<3.4-CastleRooms.SLAB,
+       "actual transformed warehouse mesh crosses wall/floor/ceiling: "+mesh+" at "+wx+","+wy+","+wz);
+  }
+ }
  public static void main(String[] args)throws Exception {
   var map=new CastleHubMap();
   check(map.valid(),"original Castle Beckenburg stations remain connected");
   check(CastleWarehouse.racks().size()==15,"fifteen open retail fixtures with clear browsing aisles");
+  for(var rack:CastleWarehouse.racks())enclosed(CastleWarehouse.SHELF,rack.x(),0,rack.z(),rack.scale(),rack.yaw());
   long portable=EquipmentRegistry.all().stream()
       .filter(tool->tool.origin()!=EquipmentRegistry.Origin.TRUCK).count();
   check(CastleWarehouse.exhibits().size()==(portable+1)*3,
@@ -30,8 +41,7 @@ public final class CastleHeadquartersRevisionTest {
    }
    check((x1-x0)*scale<=.551&&(y1-y0)*scale<=.621&&(z1-z0)*scale<=.501,
        "source GLB mesh must fit a real display bay");
-   check(exhibit.x()>29&&exhibit.x()<42&&exhibit.z()>18&&exhibit.z()<33.5,
-     "models remain in enclosed east warehouse");
+   enclosed(exhibit.mesh(),exhibit.x(),exhibit.y(),exhibit.z(),exhibit.scale(),exhibit.yaw());
   }
   check(!map.traversable(CastleWarehouse.racks().get(0).x(),CastleWarehouse.racks().get(0).z()),
     "shelf is a physical navigation blocker");

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 2322,
+  "count": 2325,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -20274,6 +20274,36 @@
       "height": 200,
       "bytes": 31021,
       "sha256": "f63348a4ce71e7f5fc85e17f92d8e133e8f5f335c803839641d59e2e9f41aa37"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/cellar-hall-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/cellar-hall-runtime.png",
+      "title": "Cellar hall runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 332634,
+      "sha256": "645c24a0fa9197db894ab33f54c326f564021a9cbe15f50c73707875b60a39e2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/cellar-stair-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/cellar-stair-runtime.png",
+      "title": "Cellar stair runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 607193,
+      "sha256": "6e3a0be5bb4b88d4d2a26bd5788b56977db6cd7d4c363ac3f2f53c89ed8a3298"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/pre-lighting-cellar-stair-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/pre-lighting-cellar-stair-runtime.png",
+      "title": "Pre lighting cellar stair runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 629248,
+      "sha256": "513f96e90957af88f9eba34c9f1ebaee636f92d2c5e432e5516fad4433e90598"
     },
     {
       "path": "development/levels/rebuild/captures/castle-construction/rejected-training-annex-tree.png",

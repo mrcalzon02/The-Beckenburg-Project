@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: Unreachable actual cellar room cellar-stair / [training-entry, train-c, train-b, train-a]
+	at org.beckenburg.CastleCellarConstructionTest.check(CastleCellarConstructionTest.java:11)
+	at org.beckenburg.CastleCellarConstructionTest.main(CastleCellarConstructionTest.java:33)

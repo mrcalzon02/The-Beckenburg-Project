@@ -63,6 +63,6 @@ public final class CastleWorldTerrainTest {
         }
         require(count==terrain.triangleCount(),"Duplicate/missing procedural terrain in Castle: "+count+" vs "+terrain.triangleCount());
         require(map.traversable(13,19),"Castle spawn lost ground support");
-        System.out.println("PASS Castle persisted editor hole:120 cut leaves, "+count+" shared render/body/optical/support faces; whole-footprint passage and actual filled-world negatives. Architectural cellar/stair remains separate work.");
+        System.out.println("PASS Castle persisted editor hole:120 cut leaves, "+count+" shared render/body/optical/support faces; whole-footprint passage and actual filled-world negatives. Architectural stair/void is covered separately by CastleCellarConstructionTest.");
     }
 }

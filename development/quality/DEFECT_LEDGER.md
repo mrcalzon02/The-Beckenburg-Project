@@ -3230,6 +3230,48 @@ Evidence and verification: rebuild/captures/castle-construction/rejected-trainin
 
 Older-map obligation: Castle-specific environment conflict. Other sites require individual building/tree/fixture audits; no complete Castle or roster acceptance inferred.
 
+### DEV-236 — Castle cellar flight cannot join the ground landing across the player radius
+
+**Status:** fixed-scoped; final packaged104609-position native spawn flood and native/filled-floor negative controls pass · **Affected:** New Castle cellar stair / native floor support, slab depth and shared editable opening
+
+Initial packaged flood reaches the annex but no cellar room. Successive stair probes show the upper landing and first descending tread individually supported but their radius-spanning transition blocked. A subsequent explicit ascent sweep also exposes an incorrect top-landing handoff atZ24.
+
+Cause / uncertainty: Legacy ground rooms and new native negative-height tread support were queried separately. The original path also assumes uniform slab depth, no persisted architectural void and elevation-free ground furnishings/interactions. Outside the flight, the lower resolver selected the cellar floor even when one riser below the actual ground landing.
+
+Fix / next action: Combine adjacent real landing/tread support without permitting height teleportation; persist a native VOID edited through the same human inspector/history and actual Editor Agent put/remove-surface operations. Render/occlude actual native floor depth, including filled stair masses. Keep below-ground furniture vertical overlap, headroom, circuit, footfall and ground workstation access elevation-aware. Transfer to the real upper landing only within a physical step height; explicitly sweep both descent and ascent rather than inferring return travel from reachability.
+
+Evidence and verification: build/castle-cellar-rejected-landing.log and first-route-probe.log retained under rebuild/verification/castle-cellar-2026-11-03. Corrected packaged CastleCellarConstructionTest reaches104609 physical positions from native spawn and all4 cellar/4 annex rooms; actual filled editor world and removed architectural VOID block the same passage. Native service undo/redo restores/removes physical and optical access. Actual runtime stair/hall captures retained. Rejected upper-return log is preserved; corrected explicit 25mm descending and ascending sweeps pass.
+
+Older-map obligation: New Castle construction defect repaired before its checkpoint. Other multi-level locations retain separate route/headroom/furniture/terrain audits; no complete Castle or roster acceptance inferred.
+
+### DEV-237 — New Castle stair guard blocks the eastern warehouse browsing aisle
+
+**Status:** fixed-scoped; real browsing positions and transformed rack/exhibit mesh containment pass · **Affected:** Castle ground warehouse / eastern rack bank and north rack
+
+Packaged CastleRebuildTest rejects the LASER_GRID browsing position at40.5/18.74 after constructing the cellar guard.
+
+Cause / uncertainty: Legacy rack positions share space with the planned floor opening. The earlier HQ test also hardcodes equipment centre X<42 instead of checking actual wall faces and transformed mesh extents.
+
+Fix / next action: Retain all15 racks and every portable family/tier. Move eastern bank toX42.45, inside the actual masonry face with a continuous facing aisle; shift north rack toX37.6. Replace arbitrary centre margin with every actual transformed rack/exhibit vertex bounded by real floor, wall and ceiling faces. Keep the existing all-exhibit browsing/body checks.
+
+Evidence and verification: rebuild/verification/castle-cellar-2026-11-03: rejected warehouse aisle and legacy centre-bound logs; final CastleRebuildTest and CastleHeadquartersRevisionTest. Actual final stair and lower hall runtime captures are retained in captures/castle-construction.
+
+Older-map obligation: Castle construction regression repaired before publication. Other site furniture layouts and saved custom edits need individual mesh, circulation and stair/guard audits; no blanket acceptance.
+
+### DEV-238 — New enclosed Castle cellar flight has no direct fixed lighting
+
+**Status:** fixed-scoped; two supported native stair sconces, actual illumination checks and viewed runtime capture · **Affected:** Castle cellar stair fit-out
+
+Initial structural runtime view leaves the lower flight dark despite the side-bypass room ceiling fitting.
+
+Cause / uncertainty: The full-height stone stair cheeks correctly occlude the side-room lamp; the enclosed flight needs its own mounted fittings.
+
+Fix / next action: Add two source-model wall lamps fitted to the actual native cheeks/guard, share the cellar circuit and retain ceiling lamps for the four lower rooms. Wall attachment checks consume the same native masonry and fitted pose as rendering.
+
+Evidence and verification: pre-lighting-cellar-stair-runtime.png and final cellar-stair-runtime.png; CastleCellarConstructionTest verifies native attachment, actual stair/room light energy, circuit separation and unobstructed continuous body sweeps.
+
+Older-map obligation: New Castle structural-to-fit-out issue. Other enclosed stairs need individual support/occlusion/brightness and body-clearance reviews; no inferred older-map repair.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

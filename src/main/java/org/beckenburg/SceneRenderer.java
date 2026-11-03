@@ -2824,7 +2824,7 @@ public final class SceneRenderer {
     private static void castleSlabs(List<Face> out,CastleHubMap map){
         var cells=CastleRooms.slabCells(CastleRooms.structuralDecks());
         for(var c:cells){
-            double x0=c.x0(),x1=c.x1(),z0=c.z0(),z1=c.z1(),y=c.top(),bottom=y-CastleRooms.SLAB;
+            double x0=c.x0(),x1=c.x1(),z0=c.z0(),z1=c.z1(),y=c.top(),bottom=CastleRooms.slabBottom((x0+x1)/2,(z0+z1)/2,y);
             int mat=c.material();
             double mx=(x0+x1)*.5,mz=(z0+z1)*.5;
             if(y==0){
@@ -2843,7 +2843,7 @@ public final class SceneRenderer {
                 x0,z1,x1,z1,x1,z0,x0,z0,0xffffff);
         }
         for(var e:CastleRooms.edges(cells))texturedQuad(out,new Point(e.x0(),e.top(),e.z0()),new Point(e.x1(),e.top(),e.z1()),
-            new Point(e.x1(),e.top()==0?EXTERIOR_GROUND_Y:e.top()-CastleRooms.SLAB,e.z1()),new Point(e.x0(),e.top()==0?EXTERIOR_GROUND_Y:e.top()-CastleRooms.SLAB,e.z0()),MaterialAtlas.STONE,
+            new Point(e.x1(),e.top()==0&&!CastleCellar.openingRim((e.x0()+e.x1())/2,(e.z0()+e.z1())/2)?EXTERIOR_GROUND_Y:CastleRooms.slabBottom((e.x0()+e.x1())/2,(e.z0()+e.z1())/2,e.top()),e.z1()),new Point(e.x0(),e.top()==0&&!CastleCellar.openingRim((e.x0()+e.x1())/2,(e.z0()+e.z1())/2)?EXTERIOR_GROUND_Y:CastleRooms.slabBottom((e.x0()+e.x1())/2,(e.z0()+e.z1())/2,e.top()),e.z0()),MaterialAtlas.STONE,
             0,1,Math.hypot(e.x1()-e.x0(),e.z1()-e.z0()),1,Math.hypot(e.x1()-e.x0(),e.z1()-e.z0()),0,0,0,0xffffff);
     }
     private static void castleRoof(List<Face> out,CastleHubArchitecturalPlan.Roof roof){
@@ -3083,7 +3083,7 @@ public final class SceneRenderer {
         for(var trim:CastleHubArchitecturalPlan.trims())if(trim.mesh().contains("tower"))
             imported(castle,trim.mesh(),trim.x(),trim.y(),trim.z(),trim.sx(),trim.sy(),trim.sz(),trim.yaw());
         for(var roof:CastleLevelEdits.current().roofs())castleRoof(castle,roof);
-        for(var sw:CastleHubDecor.SWITCHES)
+        for(var sw:CastleHubDecor.SWITCHES)if(sw.y()>=0||CastleCellar.active())
             mountedLamp(castle,new CastleHubDecor.Light("light_switch_1","light_switch_1",
                 sw.x(),sw.y(),sw.z(),.85,sw.yaw(),CastleHubDecor.Mount.WALL),true);
         for(var piece:CastleServiceFixtures.all())

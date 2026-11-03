@@ -445,7 +445,7 @@ public final class FixtureLighting {
   }
   // The same structural slabs supply visible tops, soffits, edges and occlusion.
   for(var slab:CastleRooms.structuralDecks())
-   if(CastleDoorSlots.crossesBox(ax,ay,az,bx,by,bz,slab.x0(),slab.height()-CastleRooms.SLAB,slab.z0(),
+   if(CastleDoorSlots.crossesBox(ax,ay,az,bx,by,bz,slab.x0(),CastleRooms.slabBottom((slab.x0()+slab.x1())/2,(slab.z0()+slab.z1())/2,slab.height()),slab.z0(),
        slab.x1(),slab.height(),slab.z1()))return false;
   // Sloping roof faces cast shadows too. Trace the signed elevation
   // against each left/right planar roof face, not a fake flat ceiling.
