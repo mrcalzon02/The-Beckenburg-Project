@@ -4,6 +4,14 @@ Owner direction: 31 October 2026, America/Anchorage. Status: **planning delivere
 
 Execution was subsequently authorized on 31 October. Follow [the live rebuild workflow](rebuild/WORKFLOW.md), [source/capture inventory](rebuild/source-baseline.json) and stage register for actual progress. The planning checkpoint status above is historical, not a claim that execution remains unstarted.
 
+## Owner amendment - 3 November 2026: bounded accessible search
+
+Every site must contain at most **40 accessible search spaces**. Count corridors, stairs, service rooms, exterior search sectors and staging conservatively; the stable fifteen gameplay zones do not represent the number of rooms players search. Build the maps inside that size budget. The owner explicitly excludes round-duration testing from this task; do not introduce timed-mission acceptance gates.
+
+Preserve coherent complete buildings and useful assets as inaccessible context. Seal individual rooms or entire wings permanently, exposing only a hallway where appropriate. Historical household/clinical/educational capacity does not require every bed, WC, store or service room to be searchable. All tasks, evidence, hiding, ghost anchors/spawns, ritual sites and required routes must remain inside the connected accessible portion. Author real fixed leaves/infill, capped stairs and render/body/optical/ghost/object/interaction boundaries; ordinary shuttable or unlockable doors do not count as seals. No ghost event or power transition may open the context.
+
+This direction supersedes any earlier implication that all architectural spaces in a rough must be playable. Follow [the active policy](rebuild/SEARCH_ENVELOPE_POLICY.json) and [all-site envelope register](rebuild/search-envelope-register.json). The current rough access annotations are construction requirements, not implemented runtime seals or accepted runtime construction.
+
 ## 1. Outcome and governing decisions
 
 Every location must make sense as a place before it is dressed as a horror level. Its terrain, construction, circulation, services, daily activities and subsequent damage must explain its appearance. A prison needs actual cells and control layers; a school needs a coherent teaching day, washrooms and specialist spaces; a home needs ordinary household relationships. A room name and an asset count establish neither architecture nor identity.
@@ -86,7 +94,7 @@ Use current atlas route widths and ritual reservations as initial design inputs,
 
 **Work:** Build full-scale walkable ground, shell masses, actual openings, ramps/flights, landings, upper deck voids and temporary safety guards. Use continuous supporting surfaces and real floor depth. Integrate standing elevations, physical doors and zone ownership early. Place placeholder colliders for the largest necessary machines/furniture, reserving their operating and maintenance clearances.
 
-Run swept movement from the van through every required room and socket approach, both directions on stairs, standing/crouched and with open/closed doors as appropriate. Test threshold bodies and headroom, not only route centre lines. Check multi-floor ownership and representative host/guest movement now. Record timed arrival-to-entry, main loop, farthest required area and extraction routes; compare against the intended hunt/mission pacing without inventing universal time targets.
+Run swept movement from the van through every required room and socket approach, both directions on stairs, standing/crouched and with open/closed doors as appropriate. Test threshold bodies and headroom, not only route centre lines. Check multi-floor ownership and representative host/guest movement now. Verify actual arrival, return and extraction geometry; round-duration testing is outside this task.
 
 **Deliverables:** Playable empty blockouts, route logs, stair sections, before/after captures and unresolved exceptions.
 

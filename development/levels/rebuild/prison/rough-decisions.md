@@ -17,3 +17,8 @@ Three 4.4 m ritual clear-area reservations occupy the isolation washing/work roo
 Checks performed: unique rooms, all fifteen owner mappings, same-floor overlap rejection, door endpoints/thresholds, complete diagram connectivity, stair run/landing/width reservations, ritual bounds, thirty-two cell distribution and native fixture/bed fit. The labeled planning PNG was visually reviewed. These checks do not establish capsule traversal, actual headroom, fixture support, door swings, booth acoustics, security releases, hide budget, hunter/ghost routes, rituals, networking, GPU performance or human visual acceptance.
 
 Next: finish measured reference/privacy/service decisions with the roster rough batch, then build and inspect real native/runtime geometry, editor terrain holes, cell fittings, galleries and services through the shared construction pipeline. The original parallel-wing concept and useful source assets are retained; the generic room collection is not accepted as the finished penitentiary.
+
+
+## Owner amendment - bounded player search, 3 November
+
+This site exposes **37 accessible spaces** and retains **61 sealed context spaces**, maximum40 including circulation/outside/staging. The complete historical room program above is not the playable search count. Follow search-envelope.json and search-layout.json for the connected open portion and exact permanent boundary list. The current annotations have not built runtime seals. All objectives/ghost activity/interaction and required routes must stay open-side; construct the actual map geometry and validate real permanent boundaries. Round-duration testing is outside this task.

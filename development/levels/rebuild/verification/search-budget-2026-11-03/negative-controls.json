@@ -1,0 +1,31 @@
+{
+  "scope": "ACTUAL_DESIGN_VALIDATOR_NOT_RUNTIME_SEAL_PROOF",
+  "maximum": 40,
+  "controls": [
+    {
+      "case": "over-forty",
+      "rejected": true,
+      "reason": "('COLLEGE', 'Search exceeds owner limit', 41)"
+    },
+    {
+      "case": "sealed-ritual",
+      "rejected": true,
+      "reason": "Ritual clear area project"
+    },
+    {
+      "case": "eligible-sealed-room",
+      "rejected": true,
+      "reason": "Gameplay eligible behind seal"
+    },
+    {
+      "case": "missing-boundary",
+      "rejected": true,
+      "reason": "Missing permanent search boundary"
+    },
+    {
+      "case": "route-through-seal",
+      "rejected": true,
+      "reason": ""
+    }
+  ]
+}

@@ -1,0 +1,1799 @@
+{
+  "id": "FARMHOUSE",
+  "title": "Hollowmere Farm — revised domestic and working-yard rough",
+  "status": "SEARCH_GRAPH_DESIGN_NOT_RUNTIME_CONSTRUCTION",
+  "construction_source": "rough-layout.json",
+  "artifact_role": "Open search graph only; full structure, furnishings and sealed context remain in rough-layout.json.",
+  "site_bounds": [
+    3,
+    0,
+    50,
+    51
+  ],
+  "zones": [
+    {
+      "id": "mudroom",
+      "name": "Boot removal coats and muddy entrance",
+      "bounds": [
+        20,
+        22,
+        26,
+        28
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "Boot removal coats and muddy entrance",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "parlour",
+      "name": "Family sitting and visitor reception",
+      "bounds": [
+        12,
+        20,
+        20,
+        28
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 1,
+      "kind": "inside",
+      "purpose": "Family sitting and visitor reception",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "dining",
+      "name": "Six-place family dining",
+      "bounds": [
+        12,
+        16,
+        20,
+        20
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 3,
+      "kind": "inside",
+      "purpose": "Six-place family dining",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "kitchen",
+      "name": "Cooking and sink cleanup",
+      "bounds": [
+        12,
+        13,
+        20,
+        16
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 2,
+      "kind": "inside",
+      "purpose": "Cooking and sink cleanup",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "pantry",
+      "name": "Dry household food storage",
+      "bounds": [
+        12,
+        10,
+        15,
+        13
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 2,
+      "kind": "inside",
+      "purpose": "Dry household food storage",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "prep",
+      "name": "Food preparation and garden receiving",
+      "bounds": [
+        15,
+        10,
+        20,
+        13
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 2,
+      "kind": "inside",
+      "purpose": "Food preparation and garden receiving",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "stairs",
+      "name": "Domestic stair bay with side circulation",
+      "bounds": [
+        20,
+        12,
+        26,
+        22
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 4,
+      "kind": "circulation",
+      "purpose": "Domestic stair bay with side circulation",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "cleaner",
+      "name": "Household cleaning and utility cupboard",
+      "bounds": [
+        20,
+        10,
+        26,
+        12
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 4,
+      "kind": "inside",
+      "purpose": "Household cleaning and utility cupboard",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "barn-aisle",
+      "name": "Through barn aisle and loading approach",
+      "bounds": [
+        35,
+        9,
+        39,
+        24
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 10,
+      "kind": "circulation",
+      "purpose": "Through barn aisle and loading approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "stall-a",
+      "name": "Livestock stall A and access gate",
+      "bounds": [
+        31,
+        9,
+        35,
+        15
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 10,
+      "kind": "inside",
+      "purpose": "Livestock stall A and access gate",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "stall-b",
+      "name": "Livestock stall B and access gate",
+      "bounds": [
+        31,
+        15,
+        35,
+        21
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 10,
+      "kind": "inside",
+      "purpose": "Livestock stall B and access gate",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "feed",
+      "name": "Feed store separate from equipment",
+      "bounds": [
+        31,
+        21,
+        35,
+        24
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 10,
+      "kind": "inside",
+      "purpose": "Feed store separate from equipment",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "equipment",
+      "name": "Agricultural equipment bay",
+      "bounds": [
+        39,
+        9,
+        43,
+        16
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 10,
+      "kind": "inside",
+      "purpose": "Agricultural equipment bay",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "loft-stair",
+      "name": "Barn loft stair and lower landings",
+      "bounds": [
+        39,
+        16,
+        43,
+        24
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 10,
+      "kind": "circulation",
+      "purpose": "Barn loft stair and lower landings",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "repair",
+      "name": "Tool repair bench and clear work aisle",
+      "bounds": [
+        31,
+        26,
+        36,
+        33
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 11,
+      "kind": "inside",
+      "purpose": "Tool repair bench and clear work aisle",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "parts",
+      "name": "Repair parts and dry tools",
+      "bounds": [
+        36,
+        26,
+        39,
+        30
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 11,
+      "kind": "inside",
+      "purpose": "Repair parts and dry tools",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "work-store",
+      "name": "Screened work consumables and lockable storage",
+      "bounds": [
+        36,
+        30,
+        39,
+        33
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 11,
+      "kind": "inside",
+      "purpose": "Screened work consumables and lockable storage",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "laundry",
+      "name": "Separate wash laundry and drying support",
+      "bounds": [
+        27,
+        26,
+        31,
+        33
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 11,
+      "kind": "inside",
+      "purpose": "Separate wash laundry and drying support",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "upper-hall",
+      "name": "Upper bedroom circulation",
+      "bounds": [
+        20,
+        10,
+        23,
+        28
+      ],
+      "y": 3,
+      "height": 3,
+      "owner": 5,
+      "kind": "circulation",
+      "purpose": "Upper bedroom circulation",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "upper-stair",
+      "name": "Main stair upper landing and void",
+      "bounds": [
+        23,
+        12,
+        26,
+        22
+      ],
+      "y": 3,
+      "height": 3,
+      "owner": 5,
+      "kind": "circulation",
+      "purpose": "Main stair upper landing and void",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "wc",
+      "name": "Private family WC",
+      "bounds": [
+        23,
+        22,
+        26,
+        25
+      ],
+      "y": 3,
+      "height": 3,
+      "owner": 5,
+      "kind": "inside",
+      "purpose": "Private family WC",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "wash",
+      "name": "Family washing room",
+      "bounds": [
+        23,
+        25,
+        26,
+        28
+      ],
+      "y": 3,
+      "height": 3,
+      "owner": 5,
+      "kind": "inside",
+      "purpose": "Family washing room",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "parents",
+      "name": "Parents bedroom and personal storage",
+      "bounds": [
+        12,
+        20,
+        20,
+        28
+      ],
+      "y": 3,
+      "height": 3,
+      "owner": 6,
+      "kind": "inside",
+      "purpose": "Parents bedroom and personal storage",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "children",
+      "name": "Two child beds and play/storage",
+      "bounds": [
+        12,
+        14,
+        20,
+        20
+      ],
+      "y": 3,
+      "height": 3,
+      "owner": 7,
+      "kind": "inside",
+      "purpose": "Two child beds and play/storage",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "linen",
+      "name": "Household linen and seasonal storage",
+      "bounds": [
+        12,
+        10,
+        20,
+        14
+      ],
+      "y": 3,
+      "height": 3,
+      "owner": 5,
+      "kind": "inside",
+      "purpose": "Household linen and seasonal storage",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "hayloft",
+      "name": "Supported hay deck with clear retrieval aisle",
+      "bounds": [
+        31,
+        16,
+        39,
+        24
+      ],
+      "y": 3,
+      "height": 3,
+      "owner": 8,
+      "kind": "inside",
+      "purpose": "Supported hay deck with clear retrieval aisle",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "loft-landing",
+      "name": "Guarded loft stair arrival",
+      "bounds": [
+        39,
+        16,
+        43,
+        24
+      ],
+      "y": 3,
+      "height": 3,
+      "owner": 8,
+      "kind": "circulation",
+      "purpose": "Guarded loft stair arrival",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "cellar-stair",
+      "name": "Cellar access below domestic stair bay",
+      "bounds": [
+        20,
+        12,
+        26,
+        22
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 9,
+      "kind": "circulation",
+      "purpose": "Cellar access below domestic stair bay",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "cellar-landing",
+      "name": "Cellar receiving landing",
+      "bounds": [
+        20,
+        22,
+        26,
+        28
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 9,
+      "kind": "circulation",
+      "purpose": "Cellar receiving landing",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "root-store",
+      "name": "Root crop storage and retrieval aisle",
+      "bounds": [
+        12,
+        14,
+        20,
+        28
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 9,
+      "kind": "inside",
+      "purpose": "Root crop storage and retrieval aisle",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "preserves",
+      "name": "Preserved food shelves",
+      "bounds": [
+        12,
+        10,
+        20,
+        14
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 9,
+      "kind": "inside",
+      "purpose": "Preserved food shelves",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "grounds",
+      "name": "Orchard and workyard envelope only",
+      "bounds": [
+        3,
+        0,
+        48,
+        34
+      ],
+      "y": 0,
+      "height": 12,
+      "owner": 12,
+      "kind": "outside",
+      "purpose": "Orchard and workyard envelope only",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "entry",
+      "name": "Lane arrival and equipment approach",
+      "bounds": [
+        3,
+        34,
+        50,
+        50
+      ],
+      "y": 0,
+      "height": 12,
+      "owner": 13,
+      "kind": "outside",
+      "purpose": "Lane arrival and equipment approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "stage",
+      "name": "Canonical van staging clear of barn deliveries",
+      "bounds": [
+        18,
+        38,
+        34,
+        50
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 14,
+      "kind": "staging",
+      "purpose": "Canonical van staging clear of barn deliveries",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          26.0,
+          0,
+          44.0
+        ],
+        [
+          26,
+          0,
+          38
+        ],
+        [
+          26.5,
+          0,
+          42.0
+        ]
+      ],
+      "threshold": [
+        26,
+        0,
+        38
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "grounds",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          26.5,
+          0,
+          42.0
+        ],
+        [
+          24,
+          0,
+          34
+        ],
+        [
+          25.5,
+          0,
+          17.0
+        ]
+      ],
+      "threshold": [
+        24,
+        0,
+        34
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L03",
+      "a": "grounds",
+      "b": "mudroom",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          25.5,
+          0,
+          17.0
+        ],
+        [
+          23,
+          0,
+          28
+        ],
+        [
+          23.0,
+          0,
+          25.0
+        ]
+      ],
+      "threshold": [
+        23,
+        0,
+        28
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L04",
+      "a": "mudroom",
+      "b": "parlour",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          23.0,
+          0,
+          25.0
+        ],
+        [
+          20,
+          0,
+          25
+        ],
+        [
+          16.0,
+          0,
+          24.0
+        ]
+      ],
+      "threshold": [
+        20,
+        0,
+        25
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L05",
+      "a": "mudroom",
+      "b": "stairs",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          23.0,
+          0,
+          25.0
+        ],
+        [
+          23,
+          0,
+          22
+        ],
+        [
+          23.0,
+          0,
+          17.0
+        ]
+      ],
+      "threshold": [
+        23,
+        0,
+        22
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L06",
+      "a": "parlour",
+      "b": "dining",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          16.0,
+          0,
+          24.0
+        ],
+        [
+          16,
+          0,
+          20
+        ],
+        [
+          16.0,
+          0,
+          18.0
+        ]
+      ],
+      "threshold": [
+        16,
+        0,
+        20
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L07",
+      "a": "dining",
+      "b": "kitchen",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          16.0,
+          0,
+          18.0
+        ],
+        [
+          16,
+          0,
+          16
+        ],
+        [
+          16.0,
+          0,
+          14.5
+        ]
+      ],
+      "threshold": [
+        16,
+        0,
+        16
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L08",
+      "a": "dining",
+      "b": "stairs",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          16.0,
+          0,
+          18.0
+        ],
+        [
+          20,
+          0,
+          18
+        ],
+        [
+          23.0,
+          0,
+          17.0
+        ]
+      ],
+      "threshold": [
+        20,
+        0,
+        18
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L09",
+      "a": "kitchen",
+      "b": "prep",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          16.0,
+          0,
+          14.5
+        ],
+        [
+          17,
+          0,
+          13
+        ],
+        [
+          17.5,
+          0,
+          11.5
+        ]
+      ],
+      "threshold": [
+        17,
+        0,
+        13
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L10",
+      "a": "prep",
+      "b": "pantry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          17.5,
+          0,
+          11.5
+        ],
+        [
+          15,
+          0,
+          11.5
+        ],
+        [
+          13.5,
+          0,
+          11.5
+        ]
+      ],
+      "threshold": [
+        15,
+        0,
+        11.5
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L11",
+      "a": "prep",
+      "b": "grounds",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          17.5,
+          0,
+          11.5
+        ],
+        [
+          17,
+          0,
+          10
+        ],
+        [
+          25.5,
+          0,
+          17.0
+        ]
+      ],
+      "threshold": [
+        17,
+        0,
+        10
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L12",
+      "a": "stairs",
+      "b": "cleaner",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          23.0,
+          0,
+          17.0
+        ],
+        [
+          23,
+          0,
+          12
+        ],
+        [
+          23.0,
+          0,
+          11.0
+        ]
+      ],
+      "threshold": [
+        23,
+        0,
+        12
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L13",
+      "a": "upper-hall",
+      "b": "upper-stair",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          21.5,
+          3,
+          19.0
+        ],
+        [
+          23,
+          3,
+          21
+        ],
+        [
+          24.5,
+          3,
+          17.0
+        ]
+      ],
+      "threshold": [
+        23,
+        3,
+        21
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L14",
+      "a": "upper-hall",
+      "b": "wc",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          21.5,
+          3,
+          19.0
+        ],
+        [
+          23,
+          3,
+          23.5
+        ],
+        [
+          24.5,
+          3,
+          23.5
+        ]
+      ],
+      "threshold": [
+        23,
+        3,
+        23.5
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L15",
+      "a": "upper-hall",
+      "b": "wash",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          21.5,
+          3,
+          19.0
+        ],
+        [
+          23,
+          3,
+          26.5
+        ],
+        [
+          24.5,
+          3,
+          26.5
+        ]
+      ],
+      "threshold": [
+        23,
+        3,
+        26.5
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L16",
+      "a": "upper-hall",
+      "b": "parents",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          21.5,
+          3,
+          19.0
+        ],
+        [
+          20,
+          3,
+          24
+        ],
+        [
+          16.0,
+          3,
+          24.0
+        ]
+      ],
+      "threshold": [
+        20,
+        3,
+        24
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L17",
+      "a": "upper-hall",
+      "b": "children",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          21.5,
+          3,
+          19.0
+        ],
+        [
+          20,
+          3,
+          17
+        ],
+        [
+          16.0,
+          3,
+          17.0
+        ]
+      ],
+      "threshold": [
+        20,
+        3,
+        17
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L18",
+      "a": "upper-hall",
+      "b": "linen",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          21.5,
+          3,
+          19.0
+        ],
+        [
+          20,
+          3,
+          11.5
+        ],
+        [
+          16.0,
+          3,
+          12.0
+        ]
+      ],
+      "threshold": [
+        20,
+        3,
+        11.5
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L19",
+      "a": "cellar-stair",
+      "b": "cellar-landing",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          23.0,
+          -3,
+          17.0
+        ],
+        [
+          23,
+          -3,
+          22
+        ],
+        [
+          23.0,
+          -3,
+          25.0
+        ]
+      ],
+      "threshold": [
+        23,
+        -3,
+        22
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L20",
+      "a": "cellar-landing",
+      "b": "root-store",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          23.0,
+          -3,
+          25.0
+        ],
+        [
+          20,
+          -3,
+          25
+        ],
+        [
+          16.0,
+          -3,
+          21.0
+        ]
+      ],
+      "threshold": [
+        20,
+        -3,
+        25
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L21",
+      "a": "root-store",
+      "b": "preserves",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          16.0,
+          -3,
+          21.0
+        ],
+        [
+          16,
+          -3,
+          14
+        ],
+        [
+          16.0,
+          -3,
+          12.0
+        ]
+      ],
+      "threshold": [
+        16,
+        -3,
+        14
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L22",
+      "a": "grounds",
+      "b": "barn-aisle",
+      "kind": "level",
+      "width": 2.4,
+      "points": [
+        [
+          25.5,
+          0,
+          17.0
+        ],
+        [
+          37,
+          0,
+          9
+        ],
+        [
+          37.0,
+          0,
+          16.5
+        ]
+      ],
+      "threshold": [
+        37,
+        0,
+        9
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L23",
+      "a": "grounds",
+      "b": "barn-aisle",
+      "kind": "level",
+      "width": 2.4,
+      "points": [
+        [
+          25.5,
+          0,
+          17.0
+        ],
+        [
+          37,
+          0,
+          24
+        ],
+        [
+          37.0,
+          0,
+          16.5
+        ]
+      ],
+      "threshold": [
+        37,
+        0,
+        24
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L24",
+      "a": "barn-aisle",
+      "b": "stall-a",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          37.0,
+          0,
+          16.5
+        ],
+        [
+          35,
+          0,
+          12
+        ],
+        [
+          33.0,
+          0,
+          12.0
+        ]
+      ],
+      "threshold": [
+        35,
+        0,
+        12
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L25",
+      "a": "barn-aisle",
+      "b": "stall-b",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          37.0,
+          0,
+          16.5
+        ],
+        [
+          35,
+          0,
+          18
+        ],
+        [
+          33.0,
+          0,
+          18.0
+        ]
+      ],
+      "threshold": [
+        35,
+        0,
+        18
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L26",
+      "a": "barn-aisle",
+      "b": "feed",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          37.0,
+          0,
+          16.5
+        ],
+        [
+          35,
+          0,
+          22.5
+        ],
+        [
+          33.0,
+          0,
+          22.5
+        ]
+      ],
+      "threshold": [
+        35,
+        0,
+        22.5
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L27",
+      "a": "barn-aisle",
+      "b": "equipment",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          37.0,
+          0,
+          16.5
+        ],
+        [
+          39,
+          0,
+          12
+        ],
+        [
+          41.0,
+          0,
+          12.5
+        ]
+      ],
+      "threshold": [
+        39,
+        0,
+        12
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L28",
+      "a": "barn-aisle",
+      "b": "loft-stair",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          37.0,
+          0,
+          16.5
+        ],
+        [
+          39,
+          0,
+          17.5
+        ],
+        [
+          41.0,
+          0,
+          20.0
+        ]
+      ],
+      "threshold": [
+        39,
+        0,
+        17.5
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L29",
+      "a": "loft-landing",
+      "b": "hayloft",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          41.0,
+          3,
+          20.0
+        ],
+        [
+          39,
+          3,
+          23
+        ],
+        [
+          35.0,
+          3,
+          20.0
+        ]
+      ],
+      "threshold": [
+        39,
+        3,
+        23
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L30",
+      "a": "grounds",
+      "b": "repair",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          25.5,
+          0,
+          17.0
+        ],
+        [
+          33,
+          0,
+          26
+        ],
+        [
+          33.5,
+          0,
+          29.5
+        ]
+      ],
+      "threshold": [
+        33,
+        0,
+        26
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L31",
+      "a": "repair",
+      "b": "parts",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          33.5,
+          0,
+          29.5
+        ],
+        [
+          36,
+          0,
+          28
+        ],
+        [
+          37.5,
+          0,
+          28.0
+        ]
+      ],
+      "threshold": [
+        36,
+        0,
+        28
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L32",
+      "a": "repair",
+      "b": "work-store",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          33.5,
+          0,
+          29.5
+        ],
+        [
+          36,
+          0,
+          31.5
+        ],
+        [
+          37.5,
+          0,
+          31.5
+        ]
+      ],
+      "threshold": [
+        36,
+        0,
+        31.5
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L33",
+      "a": "grounds",
+      "b": "laundry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          25.5,
+          0,
+          17.0
+        ],
+        [
+          29,
+          0,
+          33
+        ],
+        [
+          29.0,
+          0,
+          29.5
+        ]
+      ],
+      "threshold": [
+        29,
+        0,
+        33
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L34",
+      "a": "stairs",
+      "b": "upper-stair",
+      "kind": "stairs",
+      "width": 1.2,
+      "points": [
+        [
+          24.5,
+          0,
+          13.6
+        ],
+        [
+          24.5,
+          3,
+          18.4
+        ]
+      ],
+      "rise_m": 3,
+      "run_m": 4.800000000000001,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 18,
+      "construction": "Full-run deck void and structural depth; reserve continuous guards, side bypass and clear end landings.",
+      "note": "Domestic flights use separate X lanes; no assumed ladder-only hayloft access. Physical proof remains open.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L35",
+      "a": "cellar-stair",
+      "b": "stairs",
+      "kind": "stairs",
+      "width": 1.2,
+      "points": [
+        [
+          21.5,
+          -3,
+          13.6
+        ],
+        [
+          21.5,
+          0,
+          18.4
+        ]
+      ],
+      "rise_m": 3,
+      "run_m": 4.800000000000001,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 18,
+      "construction": "Full-run deck void and structural depth; reserve continuous guards, side bypass and clear end landings.",
+      "note": "Domestic flights use separate X lanes; no assumed ladder-only hayloft access. Physical proof remains open.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L36",
+      "a": "loft-stair",
+      "b": "loft-landing",
+      "kind": "stairs",
+      "width": 1.2,
+      "points": [
+        [
+          41,
+          0,
+          17.5
+        ],
+        [
+          41,
+          3,
+          22.3
+        ]
+      ],
+      "rise_m": 3,
+      "run_m": 4.800000000000001,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 18,
+      "construction": "Full-run deck void and structural depth; reserve continuous guards, side bypass and clear end landings.",
+      "note": "Domestic flights use separate X lanes; no assumed ladder-only hayloft access. Physical proof remains open.",
+      "player_access": "OPEN_ROUTE"
+    }
+  ],
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "hayloft",
+      "point": [
+        35,
+        3,
+        20
+      ]
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "root-store",
+      "point": [
+        16,
+        -3,
+        21
+      ]
+    },
+    {
+      "rite": "Absolution",
+      "zone": "grounds",
+      "point": [
+        7,
+        0,
+        5
+      ]
+    }
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      26,
+      0,
+      44
+    ],
+    "yaw": -1.5707963267948966,
+    "cargo_route": [
+      [
+        22.372,
+        0,
+        44
+      ],
+      [
+        23,
+        0,
+        34
+      ],
+      [
+        23,
+        0,
+        28
+      ]
+    ],
+    "note": "Canonical van source; terrain support and six-player unloading remain unproved."
+  },
+  "search_envelope": {
+    "status": "DESIGN_ONLY_SEALS_NOT_RUNTIME_IMPLEMENTED",
+    "maximum": 40,
+    "accessible_spaces": 34,
+    "sealed_context_spaces": 0,
+    "count_rule": "Every OPEN_SEARCH space counts, including corridors, stairs, service rooms, exterior sectors and staging. Stable fifteen gameplay owners are not the room budget.",
+    "barriers": [],
+    "gameplay_rule": "Evidence, ghost spawn/anchor, hiding, switches/tasks, ritual sites, loose objective props and required travel belong only to the connected open envelope. Context windows may show rooms, but no interaction or required search crosses the seal.",
+    "context_rule": "Retain coherent historical rooms/assets behind permanent boundaries. Restrict whole wings to their hallways where useful; do not count shuttable ordinary doors as permanent seals.",
+    "next_gate": "Build actual permanent seals and audit runtime player/ghost/object/optical boundaries and all objective placements; construct the maps inside the forty-space cap. Round-duration testing is outside this rebuild task."
+  }
+}

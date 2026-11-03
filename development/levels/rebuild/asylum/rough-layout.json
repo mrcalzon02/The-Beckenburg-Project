@@ -23,7 +23,9 @@
       "height": 3.4,
       "owner": 4,
       "kind": "inside",
-      "purpose": "Ground two-place patient room north-a"
+      "purpose": "Ground two-place patient room north-a",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "ground-north-b",
@@ -38,7 +40,9 @@
       "height": 3.4,
       "owner": 4,
       "kind": "inside",
-      "purpose": "Ground two-place patient room north-b"
+      "purpose": "Ground two-place patient room north-b",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "ground-south-a",
@@ -53,7 +57,9 @@
       "height": 3.4,
       "owner": 4,
       "kind": "inside",
-      "purpose": "Ground two-place patient room south-a"
+      "purpose": "Ground two-place patient room south-a",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "ground-south-b",
@@ -68,7 +74,9 @@
       "height": 3.4,
       "owner": 4,
       "kind": "inside",
-      "purpose": "Ground two-place patient room south-b"
+      "purpose": "Ground two-place patient room south-b",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "ground-ward-link",
@@ -83,7 +91,9 @@
       "height": 3.4,
       "owner": 4,
       "kind": "circulation",
-      "purpose": "Ground Daylight ward distribution"
+      "purpose": "Ground Daylight ward distribution",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "ground-observation",
@@ -98,7 +108,9 @@
       "height": 3.4,
       "owner": 4,
       "kind": "inside",
-      "purpose": "Ground Staff observation and notes"
+      "purpose": "Ground Staff observation and notes",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "ground-linen",
@@ -113,7 +125,9 @@
       "height": 3.4,
       "owner": 4,
       "kind": "inside",
-      "purpose": "Ground Ward clean linen and supplies"
+      "purpose": "Ground Ward clean linen and supplies",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "ground-wc",
@@ -128,7 +142,9 @@
       "height": 3.4,
       "owner": 4,
       "kind": "inside",
-      "purpose": "Ground Screened patient WC bays"
+      "purpose": "Ground Screened patient WC bays",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "ground-wash",
@@ -143,7 +159,9 @@
       "height": 3.4,
       "owner": 4,
       "kind": "inside",
-      "purpose": "Ground Private patient washing and assistance"
+      "purpose": "Ground Private patient washing and assistance",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "upper-north-a",
@@ -158,7 +176,9 @@
       "height": 3.4,
       "owner": 7,
       "kind": "inside",
-      "purpose": "Upper two-place patient room north-a"
+      "purpose": "Upper two-place patient room north-a",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "upper-north-b",
@@ -173,7 +193,9 @@
       "height": 3.4,
       "owner": 7,
       "kind": "inside",
-      "purpose": "Upper two-place patient room north-b"
+      "purpose": "Upper two-place patient room north-b",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "upper-south-a",
@@ -188,7 +210,9 @@
       "height": 3.4,
       "owner": 7,
       "kind": "inside",
-      "purpose": "Upper two-place patient room south-a"
+      "purpose": "Upper two-place patient room south-a",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "upper-south-b",
@@ -203,7 +227,9 @@
       "height": 3.4,
       "owner": 7,
       "kind": "inside",
-      "purpose": "Upper two-place patient room south-b"
+      "purpose": "Upper two-place patient room south-b",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "upper-ward-link",
@@ -218,7 +244,9 @@
       "height": 3.4,
       "owner": 7,
       "kind": "circulation",
-      "purpose": "Upper Daylight ward distribution"
+      "purpose": "Upper Daylight ward distribution",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "upper-observation",
@@ -233,7 +261,9 @@
       "height": 3.4,
       "owner": 7,
       "kind": "inside",
-      "purpose": "Upper Staff observation and notes"
+      "purpose": "Upper Staff observation and notes",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "upper-linen",
@@ -248,7 +278,9 @@
       "height": 3.4,
       "owner": 7,
       "kind": "inside",
-      "purpose": "Upper Ward clean linen and supplies"
+      "purpose": "Upper Ward clean linen and supplies",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "upper-wc",
@@ -263,7 +295,9 @@
       "height": 3.4,
       "owner": 7,
       "kind": "inside",
-      "purpose": "Upper Screened patient WC bays"
+      "purpose": "Upper Screened patient WC bays",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "upper-wash",
@@ -278,7 +312,9 @@
       "height": 3.4,
       "owner": 7,
       "kind": "inside",
-      "purpose": "Upper Private patient washing and assistance"
+      "purpose": "Upper Private patient washing and assistance",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "spine",
@@ -293,7 +329,9 @@
       "height": 3.4,
       "owner": 0,
       "kind": "circulation",
-      "purpose": "Main patient and staff distribution"
+      "purpose": "Main patient and staff distribution",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "main-stair",
@@ -308,7 +346,9 @@
       "height": 3.4,
       "owner": 0,
       "kind": "circulation",
-      "purpose": "Main stair with clear bypass"
+      "purpose": "Main stair with clear bypass",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "staff-office",
@@ -323,7 +363,9 @@
       "height": 3.4,
       "owner": 0,
       "kind": "inside",
-      "purpose": "Staff coordination and private work"
+      "purpose": "Staff coordination and private work",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "service-link",
@@ -338,7 +380,9 @@
       "height": 3.4,
       "owner": 0,
       "kind": "circulation",
-      "purpose": "Staff-only service distribution"
+      "purpose": "Staff-only service distribution",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "admission",
@@ -353,7 +397,9 @@
       "height": 3.4,
       "owner": 1,
       "kind": "inside",
-      "purpose": "Public reception and waiting"
+      "purpose": "Public reception and waiting",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "interview",
@@ -368,7 +414,9 @@
       "height": 3.4,
       "owner": 1,
       "kind": "inside",
-      "purpose": "Private admissions interview"
+      "purpose": "Private admissions interview",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "visitor-wc",
@@ -383,7 +431,9 @@
       "height": 3.4,
       "owner": 1,
       "kind": "inside",
-      "purpose": "Visitor WC outside care wards"
+      "purpose": "Visitor WC outside care wards",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "records",
@@ -398,7 +448,9 @@
       "height": 3.4,
       "owner": 8,
       "kind": "inside",
-      "purpose": "Confidential records office"
+      "purpose": "Confidential records office",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "day",
@@ -413,7 +465,9 @@
       "height": 3.4,
       "owner": 2,
       "kind": "inside",
-      "purpose": "Supervised sitting crafts and ordinary activity"
+      "purpose": "Supervised sitting crafts and ordinary activity",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "clinical-link",
@@ -428,7 +482,9 @@
       "height": 3.4,
       "owner": 5,
       "kind": "circulation",
-      "purpose": "Clinical approach outside work rooms"
+      "purpose": "Clinical approach outside work rooms",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "treatment",
@@ -443,7 +499,9 @@
       "height": 3.4,
       "owner": 5,
       "kind": "inside",
-      "purpose": "Treatment examination and handwashing"
+      "purpose": "Treatment examination and handwashing",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "clinical-clean",
@@ -458,7 +516,9 @@
       "height": 3.4,
       "owner": 5,
       "kind": "inside",
-      "purpose": "Clean treatment stores"
+      "purpose": "Clean treatment stores",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "clinical-soiled",
@@ -473,7 +533,9 @@
       "height": 3.4,
       "owner": 5,
       "kind": "inside",
-      "purpose": "Enclosed soiled treatment utility"
+      "purpose": "Enclosed soiled treatment utility",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "clinical-service",
@@ -488,7 +550,9 @@
       "height": 3.4,
       "owner": 0,
       "kind": "circulation",
-      "purpose": "Rear clinical utility service approach"
+      "purpose": "Rear clinical utility service approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "staff-rest",
@@ -503,7 +567,9 @@
       "height": 3.4,
       "owner": 0,
       "kind": "inside",
-      "purpose": "Staff rest and changing"
+      "purpose": "Staff rest and changing",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "staff-wc",
@@ -518,7 +584,9 @@
       "height": 3.4,
       "owner": 0,
       "kind": "inside",
-      "purpose": "Staff sanitary room"
+      "purpose": "Staff sanitary room",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "hydro-change",
@@ -533,7 +601,9 @@
       "height": 3.4,
       "owner": 6,
       "kind": "inside",
-      "purpose": "Private hydrotherapy changing"
+      "purpose": "Private hydrotherapy changing",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "hydro-bath",
@@ -548,7 +618,9 @@
       "height": 3.4,
       "owner": 6,
       "kind": "inside",
-      "purpose": "Assisted bathing treatment room"
+      "purpose": "Assisted bathing treatment room",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "hydro-dry",
@@ -563,7 +635,9 @@
       "height": 3.4,
       "owner": 6,
       "kind": "inside",
-      "purpose": "Private drying and recovery"
+      "purpose": "Private drying and recovery",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "dining",
@@ -578,7 +652,9 @@
       "height": 3.4,
       "owner": 3,
       "kind": "inside",
-      "purpose": "Sixteen-place ward dining"
+      "purpose": "Sixteen-place ward dining",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "kitchen",
@@ -593,7 +669,9 @@
       "height": 3.4,
       "owner": 3,
       "kind": "inside",
-      "purpose": "Food preparation cooking and serving"
+      "purpose": "Food preparation cooking and serving",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "washup",
@@ -608,7 +686,9 @@
       "height": 3.4,
       "owner": 3,
       "kind": "inside",
-      "purpose": "Meal return and dish washing"
+      "purpose": "Meal return and dish washing",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "meal-return",
@@ -623,7 +703,9 @@
       "height": 3.4,
       "owner": 3,
       "kind": "circulation",
-      "purpose": "Dining dish return outside cooking"
+      "purpose": "Dining dish return outside cooking",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "food-store",
@@ -638,7 +720,9 @@
       "height": 3.4,
       "owner": 3,
       "kind": "inside",
-      "purpose": "Dry and cool food storage reservations"
+      "purpose": "Dry and cool food storage reservations",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "receiving",
@@ -653,7 +737,9 @@
       "height": 3.4,
       "owner": 3,
       "kind": "inside",
-      "purpose": "Food and household receiving"
+      "purpose": "Food and household receiving",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "service",
@@ -668,7 +754,9 @@
       "height": 3.4,
       "owner": 0,
       "kind": "circulation",
-      "purpose": "Service passage separated from care rooms"
+      "purpose": "Service passage separated from care rooms",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "refuse",
@@ -683,7 +771,9 @@
       "height": 3.4,
       "owner": 3,
       "kind": "inside",
-      "purpose": "Enclosed refuse awaiting collection"
+      "purpose": "Enclosed refuse awaiting collection",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "service-stair",
@@ -698,7 +788,9 @@
       "height": 3.4,
       "owner": 0,
       "kind": "circulation",
-      "purpose": "Independent basement service stair"
+      "purpose": "Independent basement service stair",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "quiet-lobby",
@@ -713,7 +805,9 @@
       "height": 3.4,
       "owner": 9,
       "kind": "circulation",
-      "purpose": "Calm-room care and staff approach"
+      "purpose": "Calm-room care and staff approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "quiet",
@@ -728,7 +822,9 @@
       "height": 3.4,
       "owner": 9,
       "kind": "inside",
-      "purpose": "Short-stay quiet care room"
+      "purpose": "Short-stay quiet care room",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "quiet-observation",
@@ -743,7 +839,9 @@
       "height": 3.4,
       "owner": 9,
       "kind": "inside",
-      "purpose": "Quiet care observation and support"
+      "purpose": "Quiet care observation and support",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "quiet-wc",
@@ -758,7 +856,9 @@
       "height": 3.4,
       "owner": 9,
       "kind": "inside",
-      "purpose": "Private quiet-care WC and washing"
+      "purpose": "Private quiet-care WC and washing",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "chapel",
@@ -773,7 +873,9 @@
       "height": 3.4,
       "owner": 10,
       "kind": "inside",
-      "purpose": "Quiet remembrance chapel"
+      "purpose": "Quiet remembrance chapel",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "lift",
@@ -788,7 +890,9 @@
       "height": 3.4,
       "owner": 0,
       "kind": "circulation",
-      "purpose": "Patient lift lower landing and shaft reservation"
+      "purpose": "Patient lift lower landing and shaft reservation",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "upper-spine",
@@ -803,7 +907,9 @@
       "height": 3.4,
       "owner": 7,
       "kind": "circulation",
-      "purpose": "Upper ward circulation"
+      "purpose": "Upper ward circulation",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "upper-stair",
@@ -818,7 +924,9 @@
       "height": 3.4,
       "owner": 7,
       "kind": "circulation",
-      "purpose": "Upper main stair and guarded landing"
+      "purpose": "Upper main stair and guarded landing",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "upper-lift",
@@ -833,7 +941,9 @@
       "height": 3.4,
       "owner": 7,
       "kind": "circulation",
-      "purpose": "Patient lift upper landing reservation"
+      "purpose": "Patient lift upper landing reservation",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "cellar-stair",
@@ -848,7 +958,9 @@
       "height": 3,
       "owner": 11,
       "kind": "circulation",
-      "purpose": "Basement service stair"
+      "purpose": "Basement service stair",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "cellar-service",
@@ -863,7 +975,9 @@
       "height": 3,
       "owner": 11,
       "kind": "circulation",
-      "purpose": "Basement service distribution"
+      "purpose": "Basement service distribution",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "cellar-cross",
@@ -878,7 +992,9 @@
       "height": 3,
       "owner": 11,
       "kind": "circulation",
-      "purpose": "Plant and laundry approach"
+      "purpose": "Plant and laundry approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "plant",
@@ -893,7 +1009,9 @@
       "height": 3,
       "owner": 11,
       "kind": "inside",
-      "purpose": "Boiler hot water and electrical operating clearances"
+      "purpose": "Boiler hot water and electrical operating clearances",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "maintenance",
@@ -908,7 +1026,9 @@
       "height": 3,
       "owner": 11,
       "kind": "inside",
-      "purpose": "Maintenance workshop and stores"
+      "purpose": "Maintenance workshop and stores",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "dirty-laundry",
@@ -923,7 +1043,9 @@
       "height": 3,
       "owner": 11,
       "kind": "inside",
-      "purpose": "Soiled linen receiving and washing"
+      "purpose": "Soiled linen receiving and washing",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "clean-laundry",
@@ -938,7 +1060,9 @@
       "height": 3,
       "owner": 11,
       "kind": "inside",
-      "purpose": "Clean laundry drying and finishing"
+      "purpose": "Clean laundry drying and finishing",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "clean-store",
@@ -953,7 +1077,9 @@
       "height": 3,
       "owner": 11,
       "kind": "inside",
-      "purpose": "Finished clean linen storage"
+      "purpose": "Finished clean linen storage",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "court",
@@ -968,7 +1094,9 @@
       "height": 12,
       "owner": 12,
       "kind": "outside",
-      "purpose": "Daylight court: no upper deck"
+      "purpose": "Daylight court: no upper deck",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "grounds",
@@ -983,7 +1111,9 @@
       "height": 12,
       "owner": 12,
       "kind": "outside",
-      "purpose": "Stepped pavilion grounds envelope only"
+      "purpose": "Stepped pavilion grounds envelope only",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "entry",
@@ -998,7 +1128,9 @@
       "height": 12,
       "owner": 13,
       "kind": "outside",
-      "purpose": "Public drive and patient arrival"
+      "purpose": "Public drive and patient arrival",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "stage",
@@ -1013,7 +1145,9 @@
       "height": 3,
       "owner": 14,
       "kind": "staging",
-      "purpose": "Canonical investigation van apron"
+      "purpose": "Canonical investigation van apron",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     }
   ],
   "links": [
@@ -1046,7 +1180,8 @@
         19
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L02",
@@ -1077,7 +1212,9 @@
         19
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L03",
@@ -1108,7 +1245,8 @@
         22
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L04",
@@ -1139,7 +1277,9 @@
         22
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L05",
@@ -1170,7 +1310,8 @@
         14
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L06",
@@ -1201,7 +1342,9 @@
         17.5
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L07",
@@ -1232,7 +1375,8 @@
         24
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L08",
@@ -1263,7 +1407,9 @@
         27
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L09",
@@ -1294,7 +1440,8 @@
         20.5
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L10",
@@ -1325,7 +1472,8 @@
         19
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L11",
@@ -1356,7 +1504,9 @@
         19
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L12",
@@ -1387,7 +1537,8 @@
         22
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L13",
@@ -1418,7 +1569,9 @@
         22
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L14",
@@ -1449,7 +1602,9 @@
         14
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L15",
@@ -1480,7 +1635,9 @@
         17.5
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L16",
@@ -1511,7 +1668,8 @@
         24
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L17",
@@ -1542,7 +1700,9 @@
         27
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L18",
@@ -1573,7 +1733,8 @@
         20.5
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L19",
@@ -1604,7 +1765,8 @@
         70
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L20",
@@ -1635,7 +1797,8 @@
         58
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L21",
@@ -1666,7 +1829,9 @@
         56
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L22",
@@ -1697,7 +1862,8 @@
         52
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L23",
@@ -1728,7 +1894,8 @@
         54
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L24",
@@ -1759,7 +1926,8 @@
         50
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L25",
@@ -1790,7 +1958,8 @@
         45
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L26",
@@ -1821,7 +1990,8 @@
         40
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L27",
@@ -1852,7 +2022,8 @@
         29
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L28",
@@ -1883,7 +2054,8 @@
         16
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L29",
@@ -1914,7 +2086,8 @@
         18
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L30",
@@ -1945,7 +2118,9 @@
         20
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L31",
@@ -1976,7 +2151,9 @@
         22
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L32",
@@ -2007,7 +2184,8 @@
         28
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L33",
@@ -2038,7 +2216,8 @@
         35
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L34",
@@ -2069,7 +2248,8 @@
         35
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L35",
@@ -2100,7 +2280,8 @@
         25
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L36",
@@ -2131,7 +2312,9 @@
         26
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L37",
@@ -2162,7 +2345,8 @@
         26
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L38",
@@ -2193,7 +2377,9 @@
         30
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L39",
@@ -2224,7 +2410,8 @@
         30
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L40",
@@ -2255,7 +2442,8 @@
         32.5
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L41",
@@ -2286,7 +2474,8 @@
         32.5
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L42",
@@ -2317,7 +2506,8 @@
         37.5
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L43",
@@ -2348,7 +2538,8 @@
         37.5
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L44",
@@ -2379,7 +2570,8 @@
         45
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L45",
@@ -2410,7 +2602,9 @@
         46
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L46",
@@ -2441,7 +2635,9 @@
         49
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L47",
@@ -2472,7 +2668,9 @@
         48
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L48",
@@ -2503,7 +2701,9 @@
         44
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L49",
@@ -2534,7 +2734,9 @@
         42
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L50",
@@ -2565,7 +2767,9 @@
         44
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L51",
@@ -2596,7 +2800,9 @@
         42
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L52",
@@ -2627,7 +2833,9 @@
         42
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L53",
@@ -2658,7 +2866,8 @@
         24
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L54",
@@ -2689,7 +2898,8 @@
         18
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L55",
@@ -2720,7 +2930,8 @@
         16
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L56",
@@ -2751,7 +2962,8 @@
         12
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L57",
@@ -2782,7 +2994,9 @@
         12
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L58",
@@ -2813,7 +3027,9 @@
         4
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L59",
@@ -2844,7 +3060,9 @@
         8
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L60",
@@ -2875,7 +3093,9 @@
         33.5
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L61",
@@ -2906,7 +3126,9 @@
         33.5
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L62",
@@ -2937,7 +3159,8 @@
         28
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L63",
@@ -2968,7 +3191,8 @@
         24
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L64",
@@ -2999,7 +3223,8 @@
         38
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L65",
@@ -3030,7 +3255,8 @@
         36
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L66",
@@ -3061,7 +3287,9 @@
         36
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L67",
@@ -3092,7 +3320,9 @@
         40
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L68",
@@ -3123,7 +3353,9 @@
         40
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L69",
@@ -3154,7 +3386,9 @@
         45
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L70",
@@ -3185,7 +3419,9 @@
         40
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L71",
@@ -3216,7 +3452,8 @@
         10
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L72",
@@ -3247,7 +3484,8 @@
         35
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L73",
@@ -3278,7 +3516,8 @@
         58
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L74",
@@ -3309,7 +3548,8 @@
         12
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L75",
@@ -3340,7 +3580,9 @@
         42
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L76",
@@ -3371,7 +3613,8 @@
         48
       ],
       "access": "care",
-      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof."
+      "note": "Authored proposed doorway; centre lines are diagrams, not host navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L77",
@@ -3397,7 +3640,8 @@
       "landing_depth_m": 1.5,
       "risers": 20,
       "construction": "Full deck openings, actual floor/roof depth, clear bypass and continuous guards required.",
-      "note": "Physical movement, care access and lift operation remain unproved."
+      "note": "Physical movement, care access and lift operation remain unproved.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L78",
@@ -3423,7 +3667,8 @@
       "landing_depth_m": 1.5,
       "risers": 18,
       "construction": "Full deck openings, actual floor/roof depth, clear bypass and continuous guards required.",
-      "note": "Physical movement, care access and lift operation remain unproved."
+      "note": "Physical movement, care access and lift operation remain unproved.",
+      "player_access": "OPEN_ROUTE"
     }
   ],
   "capacity": "Sixteen ward places: four two-place rooms per floor. Quiet care is short-stay support, not an extra permanent bed or a supernatural premise.",
@@ -3690,7 +3935,8 @@
         "treatment",
         "quiet",
         "hydro-bath"
-      ]
+      ],
+      "scope": "HISTORICAL_NORMAL_USE_NOT_PLAYER_SEARCH"
     },
     {
       "id": "food-delivery",
@@ -3705,7 +3951,8 @@
         "washup",
         "treatment",
         "clinical-soiled"
-      ]
+      ],
+      "scope": "HISTORICAL_NORMAL_USE_NOT_PLAYER_SEARCH"
     },
     {
       "id": "dirty-dishes",
@@ -3717,7 +3964,8 @@
       "avoid": [
         "kitchen",
         "food-store"
-      ]
+      ],
+      "scope": "HISTORICAL_NORMAL_USE_NOT_PLAYER_SEARCH"
     },
     {
       "id": "clean-clinical",
@@ -3731,7 +3979,8 @@
         "clinical-soiled",
         "staff-rest",
         "staff-wc"
-      ]
+      ],
+      "scope": "HISTORICAL_NORMAL_USE_NOT_PLAYER_SEARCH"
     },
     {
       "id": "soiled-clinical",
@@ -3745,7 +3994,8 @@
         "clinical-clean",
         "staff-rest",
         "staff-wc"
-      ]
+      ],
+      "scope": "HISTORICAL_NORMAL_USE_NOT_PLAYER_SEARCH"
     },
     {
       "id": "dirty-linen",
@@ -3762,7 +4012,8 @@
         "clean-store",
         "food-store",
         "kitchen"
-      ]
+      ],
+      "scope": "HISTORICAL_NORMAL_USE_NOT_PLAYER_SEARCH"
     }
   ],
   "service_interfaces": [
@@ -3799,5 +4050,206 @@
     "Author the actual patient lift, full-run stair/deck openings, roof/structure and courtyard access without stamping an upper floor over daylight.",
     "Punch saved editor world terrain under the complete cellar union; prove body/ray/object/render passage and filled-ground negatives.",
     "Complete terrain, native/runtime parity, van routes, electrical operation, hunts, rituals, networking, weathering/story and physical hardware acceptance."
-  ]
+  ],
+  "search_envelope": {
+    "status": "DESIGN_ONLY_SEALS_NOT_RUNTIME_IMPLEMENTED",
+    "maximum": 40,
+    "accessible_spaces": 40,
+    "sealed_context_spaces": 27,
+    "count_rule": "Every OPEN_SEARCH space counts, including corridors, stairs, service rooms, exterior sectors and staging. Stable fifteen gameplay owners are not the room budget.",
+    "barriers": [
+      {
+        "link": "L02",
+        "a": "ground-north-b",
+        "b": "ground-ward-link",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L04",
+        "a": "ground-south-b",
+        "b": "ground-ward-link",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L06",
+        "a": "ground-linen",
+        "b": "spine",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L08",
+        "a": "ground-wash",
+        "b": "spine",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L11",
+        "a": "upper-north-b",
+        "b": "upper-ward-link",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L13",
+        "a": "upper-south-b",
+        "b": "upper-ward-link",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L14",
+        "a": "upper-observation",
+        "b": "upper-spine",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L15",
+        "a": "upper-linen",
+        "b": "upper-spine",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L17",
+        "a": "upper-wash",
+        "b": "upper-spine",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L21",
+        "a": "admission",
+        "b": "visitor-wc",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L30",
+        "a": "service-link",
+        "b": "staff-rest",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L36",
+        "a": "clinical-service",
+        "b": "clinical-clean",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L38",
+        "a": "treatment",
+        "b": "clinical-clean",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L45",
+        "a": "dining",
+        "b": "kitchen",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L46",
+        "a": "dining",
+        "b": "meal-return",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L51",
+        "a": "receiving",
+        "b": "service",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L52",
+        "a": "service",
+        "b": "refuse",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L57",
+        "a": "quiet-lobby",
+        "b": "quiet-observation",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L58",
+        "a": "quiet",
+        "b": "quiet-wc",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L59",
+        "a": "quiet-observation",
+        "b": "quiet",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L60",
+        "a": "spine",
+        "b": "lift",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L61",
+        "a": "upper-spine",
+        "b": "upper-lift",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L66",
+        "a": "cellar-cross",
+        "b": "maintenance",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L67",
+        "a": "cellar-cross",
+        "b": "dirty-laundry",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L68",
+        "a": "cellar-cross",
+        "b": "clean-laundry",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L70",
+        "a": "cellar-cross",
+        "b": "clean-store",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L75",
+        "a": "grounds",
+        "b": "refuse",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      }
+    ],
+    "gameplay_rule": "Evidence, ghost spawn/anchor, hiding, switches/tasks, ritual sites, loose objective props and required travel belong only to the connected open envelope. Context windows may show rooms, but no interaction or required search crosses the seal.",
+    "context_rule": "Retain coherent historical rooms/assets behind permanent boundaries. Restrict whole wings to their hallways where useful; do not count shuttable ordinary doors as permanent seals.",
+    "next_gate": "Build actual permanent seals and audit runtime player/ghost/object/optical boundaries and all objective placements; construct the maps inside the forty-space cap. Round-duration testing is outside this rebuild task."
+  }
 }

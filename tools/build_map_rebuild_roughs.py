@@ -766,6 +766,240 @@ def academy():
             'Shape quad/service terrain, place canonical van and prove six-player/hunt/ritual routes, native parity, networking, performance and final environmental storytelling.'])
 
 
+def college():
+    zones,links,fit,sleeping=[],[],[],[]
+    def room(key,name,bounds,y,owner,kind='inside',height=3.6):
+        zones.append(dict(id=key,name=name,bounds=bounds,y=y,height=height,owner=owner,kind=kind,purpose=name))
+    for key,name,bounds,owner,kind in [
+        ('teaching-hall','Teaching block distribution',[20,10,24,54],0,'circulation'),
+        ('teaching-lobby','Public teaching reception',[20,54,28,62],0,'circulation'),
+        ('lecture','Thirty-two-place clear-span lecture room',[6,34,20,54],5,'inside'),
+        ('seminar','Sixteen-place discussion seminar',[6,24,20,34],2,'inside'),
+        ('lab','Sixteen-place practical teaching benches',[6,10,16,22],3,'inside'),
+        ('lab-prep','Secure practical supplies',[16,10,20,16],3,'inside'),
+        ('lab-wash','Practical cleanup and handwashing',[16,16,20,22],3,'inside'),
+        ('lab-entry','Practical coats and approach',[6,22,20,24],3,'circulation'),
+        ('teaching-stair','Teaching and tunnel access stair bay',[24,34,30,46],0,'circulation'),
+        ('cleaner','Public teaching cleaner supplies',[24,46,28,50],0,'inside'),
+        ('public-wc','Public teaching WC bays',[24,50,28,54],0,'inside'),
+        ('admin','Campus administration work room',[28,46,36,54],1,'inside'),
+        ('meeting','Private staff and visitor meeting',[28,54,36,58],1,'inside'),
+        ('records','Confidential administration records',[28,58,36,62],1,'inside'),
+        ('library-stair','Library public stair bay',[24,4,30,16],6,'circulation'),
+        ('issue','Library issue return and enquiry',[24,16,30,20],6,'inside'),
+        ('library-hall','Library distribution',[30,10,34,20],6,'circulation'),
+        ('reading','Quiet daylit library reading',[34,10,50,20],6,'inside'),
+        ('open-stacks','Public reference shelves',[30,4,38,10],6,'inside'),
+        ('library-office','Library staff work and returns',[38,4,44,10],6,'inside'),
+        ('reference','Small-group reference consultation',[44,4,50,10],6,'inside'),
+        ('res-hall','Residence and union distribution',[50,20,54,64],0,'circulation'),
+        ('res-lift','Residence accessible lift reservation',[42,20,50,28],0,'circulation'),
+        ('laundry','Residence laundry and drying support',[42,28,50,36],4,'inside'),
+        ('union-common','Union informal common room',[42,36,50,44],4,'inside'),
+        ('cafe','Twenty-place union cafe seating',[42,44,50,60],4,'inside'),
+        ('service-base','Union staff service and utility',[54,16,62,24],4,'inside'),
+        ('staff-cleaner','Union cleaner and work supplies',[54,24,58,28],4,'inside'),
+        ('staff-wc','Union staff WC and washing',[58,24,62,28],4,'inside'),
+        ('staff-rest','Union staff rest and changing',[54,28,62,32],4,'inside'),
+        ('north-cross','North stair approach',[54,32,62,36],0,'circulation'),
+        ('food-store','Cafe provisions',[54,36,58,44],4,'inside'),
+        ('receiving','Cafe delivery receiving',[58,36,62,44],4,'inside'),
+        ('kitchen','Cafe cooking and serving',[54,44,62,52],4,'inside'),
+        ('washup','Cafe dish return and cleanup',[54,52,62,60],4,'inside'),
+        ('south-cross','South stair approach',[54,60,62,64],0,'circulation'),
+        ('north-stair','Independent north residence stair',[62,24,68,36],0,'circulation'),
+        ('south-stair','Independent south residence stair',[62,52,68,64],0,'circulation'),
+        ('res-cellar-stair','Residence tunnel exit stair',[42,60,50,72],0,'circulation'),
+        ('rear-hall','Tunnel exit to rear service yard',[50,64,54,72],0,'circulation')]:room(key,name,bounds,0,owner,kind,7.2 if key=='lecture' else 3.6)
+    for key,name,bounds,owner,kind in [
+        ('upper-teaching','Upper teaching circulation',[20,10,24,54],10,'circulation'),
+        ('upper-teaching-stair','Teaching stair guarded arrival',[24,34,30,46],10,'circulation'),
+        ('tutorial','Small-group tutorial and staff study',[24,46,36,54],10,'inside'),
+        ('project','Upper supervised project room',[6,10,20,24],10,'inside'),
+        ('upper-seminar','Upper discussion and quiet study',[6,24,20,34],10,'inside'),
+        ('upper-library-stair','Upper library guarded arrival',[24,4,30,16],8,'circulation'),
+        ('upper-library-landing','Upper library stair approach',[24,16,30,20],8,'circulation'),
+        ('upper-stacks','Upper library book stacks',[30,4,42,16],8,'inside'),
+        ('upper-reading','Upper quiet reading',[42,4,50,16],8,'inside'),
+        ('bridge-lobby','Public library bridge approach',[30,16,50,20],7,'circulation'),
+        ('bridge','Supported upper campus bridge',[50,16,54,20],7,'circulation'),
+        ('bridge-return','Upper bridge return to residence',[50,20,54,28],7,'circulation'),
+        ('upper-res-hall','Private residence corridor',[50,28,54,64],9,'circulation'),
+        ('upper-res-lift','Residence lift upper landing',[42,20,50,28],9,'circulation'),
+        ('bath-entry','Residence private washing approach',[54,20,62,24],9,'circulation'),
+        ('res-wc','Residence screened WC bays',[54,16,58,20],9,'inside'),
+        ('res-shower','Residence private shower bays',[58,16,62,20],9,'inside'),
+        ('upper-north-cross','North residence stair approach',[54,32,62,36],9,'circulation'),
+        ('upper-south-cross','South residence stair approach',[54,60,62,64],9,'circulation'),
+        ('upper-north-stair','North residence guarded arrival',[62,24,68,36],9,'circulation'),
+        ('upper-south-stair','South residence guarded arrival',[62,52,68,64],9,'circulation')]:room(key,name,bounds,3.6,owner,kind)
+    for side,x,starts in [('west',42,[28,36,44,52]),('east',54,[24,36,44,52])]:
+        for i,z in enumerate(starts):
+            key=f'res-{side}-{i+1}';room(key,f'Private twin residence {side} {i+1}',[x,z,x+8,z+8],3.6,9);sleeping.append(key)
+            for offset in [2.5,5.5]:fit.append(dict(space=key,asset='bed_5',origin=[x+4,3.6,z+offset]))
+    for key,name,bounds,kind in [
+        ('west-tunnel','West building service distribution',[20,10,24,54],'circulation'),
+        ('plant','Teaching heating water and electrical plant',[12,10,20,24],'inside'),
+        ('maintenance','Campus maintenance and parts',[12,24,20,34],'inside'),
+        ('west-cellar-stair','Teaching tunnel stair',[24,34,30,46],'circulation'),
+        ('cross-tunnel','Supported tunnel below campus green',[30,38,46,42],'circulation'),
+        ('east-tunnel','Residence tunnel return',[42,42,46,60],'circulation'),
+        ('east-cellar-stair','Residence tunnel exit stair',[42,60,50,72],'circulation')]:room(key,name,bounds,-3,11,kind,3)
+    room('green','Shared campus green envelope',[3,0,72,72],0,12,'outside',12)
+    room('entry','Public campus approach',[3,72,72,84],0,13,'outside',12)
+    room('stage','Canonical campus roadhead van apron',[24,84,40,97],0,14,'staging',3)
+    byid={z['id']:z for z in zones}
+    def door(a,b,x,z,width=1.4):
+        y=byid[a]['y'];assert byid[b]['y']==y
+        links.append(dict(id=f'L{len(links)+1:02}',a=a,b=b,kind='level',width=width,points=[review.center(byid[a]),[x,y,z],review.center(byid[b])],threshold=[x,y,z],access='residential' if 'res-' in a+b else 'campus',note='Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.'))
+    for a,b,x,z in [
+        ('stage','entry',32,84),('entry','green',32,72),('green','teaching-lobby',24,62),('teaching-lobby','teaching-hall',22,54),
+        ('teaching-hall','lecture',20,44),('teaching-hall','seminar',20,28),('teaching-hall','lab-entry',20,23),('lab-entry','lab',12,22),
+        ('lab','lab-prep',16,13),('lab','lab-wash',16,19),('teaching-hall','teaching-stair',24,44),
+        ('teaching-hall','cleaner',24,48),('teaching-hall','public-wc',24,52),('teaching-lobby','meeting',28,56),('meeting','admin',32,54),('meeting','records',32,58),
+        ('green','issue',27,20),('issue','library-hall',30,18),('issue','library-stair',27,16),('library-hall','reading',34,15),
+        ('library-hall','open-stacks',32,10),('reading','library-office',41,10),('reading','reference',47,10),
+        ('green','res-hall',52,64),('res-hall','res-lift',50,24),('res-hall','laundry',50,32),('res-hall','union-common',50,40),('res-hall','cafe',50,48),
+        ('res-hall','service-base',54,22),('res-hall','staff-rest',54,30),('staff-rest','staff-cleaner',56,28),('staff-rest','staff-wc',60,28),
+        ('res-hall','north-cross',54,34),('north-cross','north-stair',62,34.5),('res-hall','south-cross',54,62),('south-cross','south-stair',62,62),
+        ('green','receiving',62,40),('receiving','food-store',58,40),('food-store','kitchen',56,44),('kitchen','res-hall',54,48),('washup','res-hall',54,56),
+        ('res-hall','rear-hall',52,64),('rear-hall','res-cellar-stair',50,69),('rear-hall','green',52,72),('north-stair','green',68,30),('south-stair','green',68,58),
+        ('upper-teaching','upper-teaching-stair',24,44),('upper-teaching','tutorial',24,50),('upper-teaching','project',20,16),('upper-teaching','upper-seminar',20,28),
+        ('upper-teaching','upper-library-stair',24,14),('upper-library-stair','upper-library-landing',27,16),
+        ('upper-library-landing','bridge-lobby',30,18),('bridge-lobby','upper-stacks',36,16),('bridge-lobby','upper-reading',46,16),('bridge-lobby','bridge',50,18),
+        ('bridge','bridge-return',52,20),('bridge-return','upper-res-hall',52,28),('bridge-return','upper-res-lift',50,24),('bridge-return','bath-entry',54,22),
+        ('bath-entry','res-wc',56,20),('bath-entry','res-shower',60,20),('upper-res-hall','upper-north-cross',54,34),('upper-north-cross','upper-north-stair',62,34.5),
+        ('upper-res-hall','upper-south-cross',54,62),('upper-south-cross','upper-south-stair',62,62),
+        ('west-tunnel','plant',20,16),('west-tunnel','maintenance',20,28),('west-tunnel','west-cellar-stair',24,40),
+        ('west-cellar-stair','cross-tunnel',30,40),('cross-tunnel','east-tunnel',44,42),('east-tunnel','east-cellar-stair',44,60)]:door(a,b,x,z)
+    for side,x,starts in [('west',50,[28,36,44,52]),('east',54,[24,36,44,52])]:
+        for i,z in enumerate(starts):door('bridge-return' if side=='east' and i==0 else 'upper-res-hall',f'res-{side}-{i+1}',x,z+3)
+    for a,b,x,z,y0,y1,width in [
+        ('teaching-stair','upper-teaching-stair',27,36,0,3.6,1.5),('library-stair','upper-library-stair',27,6,0,3.6,1.5),
+        ('north-stair','upper-north-stair',65,26,0,3.6,1.5),('south-stair','upper-south-stair',65,54,0,3.6,1.5),
+        ('west-cellar-stair','teaching-stair',27,36,-3,0,1.4),('east-cellar-stair','res-cellar-stair',46,62,-3,0,1.4)]:
+        rise=y1-y0;run=rise*1.6
+        links.append(dict(id=f'L{len(links)+1:02}',a=a,b=b,kind='stairs',width=width,points=[[x,y0,z],[x,y1,z+run]],rise_m=rise,run_m=run,headroom_m=2.2,landing_depth_m=1.5,risers=20 if rise>3 else 18,
+            construction='Full-run voids and structural undersides; clear side bypass and both end landings remain to be physically built.',note='Separate real entrance/return flights; no floor-hopping graph substitute.'))
+    # Keep six metres of real ground between the library and residence.
+    # Apply the same authored offset to rooms, thresholds, flights and props;
+    # only the connecting bridge/tunnel lengths change.
+    shifted=set(['res-hall','res-lift','laundry','union-common','cafe','service-base','staff-cleaner','staff-wc','staff-rest','north-cross','food-store','receiving','kitchen','washup','south-cross','north-stair','south-stair','res-cellar-stair','rear-hall','upper-res-hall','upper-res-lift','bath-entry','res-wc','res-shower','upper-north-cross','upper-south-cross','upper-north-stair','upper-south-stair','east-cellar-stair','entry','stage']+sleeping)
+    for key in shifted:
+        box=byid[key]['bounds'];box[1]+=6;box[3]+=6
+    byid['bridge-return']['bounds'][3]+=6
+    byid['east-tunnel']['bounds'][3]+=6
+    byid['green']['bounds'][3]+=6
+    for item in fit:item['origin'][2]+=6
+    for link in links:
+        if link['kind']=='stairs':
+            if link['a'] in shifted:
+                assert link['b'] in shifted
+                for point in link['points']:point[2]+=6
+        else:
+            if link['a'] in shifted or link['b'] in shifted:link['threshold'][2]+=6
+            link['points']=[review.center(byid[link['a']]),link['threshold'].copy(),review.center(byid[link['b']])]
+    # The library is also four metres clear of the teaching block: separate
+    # buildings need a real gap, not a party wall with three different names.
+    library_keys={'library-stair','issue','library-hall','reading','open-stacks','library-office','reference','upper-library-stair','upper-library-landing','upper-stacks','upper-reading','bridge-lobby'}
+    for key in library_keys:
+        box=byid[key]['bounds'];box[0]+=4;box[2]+=4
+    links[:]=[l for l in links if {l['a'],l['b']}!={'upper-teaching','upper-library-stair'}]
+    byid['bridge']['bounds']=[50,20,54,24]
+    byid['bridge-return']['bounds']=[50,24,54,26]
+    room('teaching-library-link','Four-metre teaching to library upper link',[24,12,28,16],3.6,7,'circulation')
+    room('res-bridge-approach','Residence bridge landing outside bedrooms',[50,26,54,34],3.6,7,'circulation')
+    byid={z['id']:z for z in zones}
+    for link in links:
+        if link['kind']=='stairs':
+            if link['a'] in library_keys:
+                assert link['b'] in library_keys
+                for point in link['points']:point[0]+=4
+        else:
+            if link['a'] in library_keys or link['b'] in library_keys:link['threshold'][0]+=4
+            if link['a']=='bridge-return' and link['b']!='bridge':link['a']='res-bridge-approach'
+            if link['b']=='bridge-return' and link['a']!='bridge':link['b']='res-bridge-approach'
+            if {link['a'],link['b']}=={'bridge-lobby','bridge'}:link['threshold']=[52,3.6,20]
+            if {link['a'],link['b']}=={'bridge','bridge-return'}:link['threshold']=[52,3.6,24]
+            link['points']=[review.center(byid[link['a']]),link['threshold'].copy(),review.center(byid[link['b']])]
+    door('upper-teaching','teaching-library-link',24,14)
+    door('teaching-library-link','upper-library-stair',28,14)
+    door('bridge-return','res-bridge-approach',52,26)
+    ground={z['id'] for z in zones if z['y']==0 and z['kind'] not in ('outside','staging')}
+    buildings=[dict(id='teaching',spaces=sorted(ground-library_keys-shifted)),dict(id='library',spaces=sorted(ground&library_keys)),dict(id='residence-union',spaces=sorted(ground&shifted))]
+    for i,link in enumerate(links,1):link['id']=f'L{i:02}'
+    return dict(version=2,id='COLLEGE',title='Beckenburg College — revised three-building campus rough',status='S02_DESIGN_STUDY_NOT_RUNTIME_ACCEPTED',site_bounds=[3,0,72,104],zones=zones,links=links,
+        building_groups=buildings,
+        capacity='Eight private twin residence rooms: sixteen places. Thirty-two lecture, sixteen seminar/practical and twenty cafe places are separate bounded activity capacities.',
+        fit_assets=['bed_5','level_student_desk','chair_mp_5','toilet_mp_1','level_bath_basin'],prop_fit_reservations=fit,expected_single_beds=16,sleeping_spaces=sleeping,
+        rituals=[dict(rite='Banishment',zone='lecture',point=[13,0,44]),dict(rite='Cleansing',zone='maintenance',point=[16,-3,29]),dict(rite='Absolution',zone='green',point=[35,0,30])],
+        staging=dict(zone='stage',point=[32,0,96],yaw=-math.pi/2,cargo_route=[[28.372,0,96],[24,0,78],[24,0,62]],note='Canonical van and actual future surface support required; arrival diagrams are not traversability proof.'),
+        terrain_cutouts=[dict(bounds=b,world_surface_y=-.65,method='Persisted editor terrain punching under exact tunnel/plant/stair union; not yet authored. Real ceilings and supported ground cover must close buried segments without restoring interior collision.') for b in [[20,10,24,54],[12,10,20,34],[24,34,30,46],[30,38,46,42],[42,42,46,66],[42,66,50,78]]],
+        bridge_reservation=dict(spaces=['teaching-library-link','bridge','bridge-return','res-bridge-approach'],standing_y=3.6,width_m=4,design='Supported upper links cross four metres between teaching and library and the stepped two-to-six-metre library/residence separation; columns/abutments and clear ground underpass need real structure and collision proof.'),
+        lift_reservation=dict(spaces=['res-lift','upper-res-lift'],rise_m=3.6,operation='Operational accessible lift remains to be authored; two ordinary residential stair return paths remain independently reserved.'),
+        flow_reservations=[dict(id=key,path=path,avoid=avoid) for key,path,avoid in [
+            ('public-wc',['green','teaching-lobby','teaching-hall','public-wc'],sleeping+['lab','admin']),
+            ('food-delivery',['green','receiving','food-store','kitchen','res-hall','cafe'],['washup','staff-wc']),
+            ('dirty-dishes',['cafe','res-hall','washup'],['kitchen','food-store']),
+            ('north-residential-return',['upper-res-hall','upper-north-cross','upper-north-stair','north-stair','green'],sleeping+['kitchen']),
+            ('south-residential-return',['upper-res-hall','upper-south-cross','upper-south-stair','south-stair','green'],sleeping+['kitchen']),
+            ('tunnel-return',['west-tunnel','west-cellar-stair','cross-tunnel','east-tunnel','east-cellar-stair','res-cellar-stair','rear-hall','green'],['plant','maintenance'])]],
+        decisions=['Three genuinely separate teaching/library/residence footprints face a shared green; tall lecture has no upper floor stamped through it.',
+            'Public classrooms, practical prep/cleanup, administration and library issue/reading/stacks have separate normal-use rooms.',
+            'Eight twin residence rooms have actual bounds, independent hall doors, shared private sanitation, laundry and two upper return stairs.',
+            'Library bridge joins circulation outside sleeping rooms; underground service return avoids walking through operating plant or stores.',
+            'Cafe cooking, receiving, provisions and dirty return are bounded; shared public hall is an explicit serving/return interface still needing physical fit and privacy review.'],
+        remaining=['Place full-scale teaching/cafe/library/bedroom fixtures and individual storage, support and services without shrinking source assets.',
+            'Build real bridge load paths, abutments, glass/guards, roof and upper privacy controls; retain unobstructed ground routes.',
+            'Author actual lift, sanitary bays, power/water/drainage, tunnel roof/ground cover and separate service machinery access.',
+            'Punch saved editor ground beneath the entire buried union, build real stairs/deck holes and test filled-ground render/body/optical/object negative controls.',
+            'Complete terrain around three buildings and canonical van; prove six-player/hunt/ritual routes, native/runtime/network parity, performance and final weathered storytelling detail.'])
+
+
+SEARCH_LIMIT=json.loads((OUT/'SEARCH_ENVELOPE_POLICY.json').read_text(encoding='utf-8'))['maximum_accessible_spaces']
+
+
+def apply_search_envelope(data):
+    """Owner's 3 November scope: coherent building, bounded accessible search.
+    Count every traversable authored space, including circulation and exterior
+    sectors. Context stays modeled but all incident player links are sealed.
+    """
+    all_ids={z['id'] for z in data['zones']}
+    selected={
+        'PRISON': 'stage entry yard reception intake records sally guard guard-link a-front-link a-lower-gallery a-stair a-upper-stair a-upper-gallery b-front-link b-lower-gallery b-stair b-upper-stair b-upper-gallery a-lower-cell-01 a-upper-cell-01 b-lower-cell-01 b-upper-cell-01 cross a-rear-link b-rear-link dining medical-link medical-store sluice isolation-link isolation-wash chapel plant-stair lower-stair plant isolation-cell-1',
+        'ASYLUM': 'stage entry grounds court spine main-stair upper-stair upper-spine ground-ward-link ground-north-a ground-south-a upper-ward-link upper-north-a upper-south-a admission interview records day clinical-link treatment hydro-change hydro-bath hydro-dry dining service-stair service-link staff-office quiet-lobby quiet chapel cellar-stair cellar-service cellar-cross plant clinical-service service clinical-soiled ground-wc upper-wc ground-observation',
+        'ACADEMY': 'stage entry grounds quad west east north south reception lecture lab-entry lab reading library-issue office-entry office dining serving kitchen main-stair east-stair upper-west upper-north upper-east upper-main-stair upper-east-stair dorm-1 dorm-3 study archive cellar-hall cellar-stair plant student-change student-wc student-shower visitor-wc lab-prep',
+        'COLLEGE': 'stage entry green teaching-lobby teaching-hall lecture seminar lab-entry lab meeting admin teaching-stair upper-teaching-stair upper-teaching library-stair issue upper-library-stair upper-library-landing bridge-lobby bridge bridge-return res-bridge-approach teaching-library-link upper-res-hall res-west-1 res-east-1 upper-north-cross upper-north-stair north-stair north-cross res-hall cafe west-cellar-stair west-tunnel maintenance cross-tunnel east-tunnel east-cellar-stair res-cellar-stair rear-hall',
+    }
+    if data['id']=='MANSION':
+        closed=set('coats visitor-wc pantry cold-store refuse suite-bath guest-a-bath guest-b guest-b-entry guest-b-bath staff-bath'.split())
+        opened=all_ids-closed
+    elif data['id'] in selected:opened=set(selected[data['id']].split())
+    else:opened=all_ids
+    assert opened<=all_ids,(data['id'],'Unknown accessible room',opened-all_ids)
+    for zone in data['zones']:
+        zone['player_access']='OPEN_SEARCH' if zone['id'] in opened else 'SEALED_CONTEXT'
+        zone['gameplay_eligible']=zone['id'] in opened
+    barriers=[]
+    for link in data['links']:
+        traversable=link['a'] in opened and link['b'] in opened
+        link['player_access']='OPEN_ROUTE' if traversable else 'SEALED_NO_ROUTE'
+        if not traversable:
+            boundary=(link['a'] in opened)!=(link['b'] in opened)
+            link['closure']='structural_deck_and_partition' if link['kind']=='stairs' else 'fixed_closed_leaf_or_solid_infill'
+            if boundary:barriers.append(dict(link=link['id'],a=link['a'],b=link['b'],kind=link['closure'],
+                requirement='Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal.'))
+    for flow in data.get('flow_reservations',[]):flow['scope']='HISTORICAL_NORMAL_USE_NOT_PLAYER_SEARCH'
+    data['search_envelope']=dict(status='DESIGN_ONLY_SEALS_NOT_RUNTIME_IMPLEMENTED',maximum=SEARCH_LIMIT,
+        accessible_spaces=len(opened),sealed_context_spaces=len(all_ids-opened),
+        count_rule='Every OPEN_SEARCH space counts, including corridors, stairs, service rooms, exterior sectors and staging. Stable fifteen gameplay owners are not the room budget.',
+        barriers=barriers,
+        gameplay_rule='Evidence, ghost spawn/anchor, hiding, switches/tasks, ritual sites, loose objective props and required travel belong only to the connected open envelope. Context windows may show rooms, but no interaction or required search crosses the seal.',
+        context_rule='Retain coherent historical rooms/assets behind permanent boundaries. Restrict whole wings to their hallways where useful; do not count shuttable ordinary doors as permanent seals.',
+        next_gate='Build actual permanent seals and audit runtime player/ghost/object/optical boundaries and all objective placements; construct the maps inside the forty-space cap. Round-duration testing is outside this rebuild task.')
+    return data
+
+
 def validate(data):
     zones={z['id']:z for z in data['zones']}
     assert len(zones)==len(data['zones'])
@@ -776,6 +1010,7 @@ def validate(data):
             if a['id']>=b['id'] or a['y']!=b['y'] or a['kind'] in ('outside','staging') or b['kind'] in ('outside','staging'):continue
             bx,bz,bxx,bzz=b['bounds']
             assert min(x1,bxx)<=max(x0,bx)+1e-8 or min(z1,bzz)<=max(z0,bz)+1e-8, (a['id'],b['id'],'overlap')
+    assert len({l['id'] for l in data['links']})==len(data['links']),'Duplicate link identity'
     graph={k:set() for k in zones}
     for link in data['links']:
         a,b=zones[link['a']],zones[link['b']]
@@ -792,6 +1027,11 @@ def validate(data):
             x,y,z=link['threshold']
             for room in [a,b]:
                 x0,z0,x1,z1=room['bounds'];assert x0<=x<=x1 and z0<=z<=z1,(link,'threshold outside')
+        if link['kind']!='stairs' and all(r['kind'] not in ('outside','staging') for r in [a,b]):
+            x,y,z=link['threshold'];aa=a['bounds'];bb=b['bounds'];half=link['width']/2+.08
+            on_x=any(abs(x-u)<1e-7 for u in [aa[0],aa[2]]) and any(abs(x-u)<1e-7 for u in [bb[0],bb[2]])
+            on_z=any(abs(z-u)<1e-7 for u in [aa[1],aa[3]]) and any(abs(z-u)<1e-7 for u in [bb[1],bb[3]])
+            assert (on_x and max(aa[1],bb[1])+half<=z<=min(aa[3],bb[3])-half) or (on_z and max(aa[0],bb[0])+half<=x<=min(aa[2],bb[2])-half),(link['id'],a['id'],b['id'],'door width crosses corner or not on shared boundary')
         graph[a['id']].add(b['id']);graph[b['id']].add(a['id'])
     reached=set();pending=['stage']
     while pending:
@@ -832,6 +1072,16 @@ def validate(data):
         for key in data.get('sleeping_spaces',(['suite-bed','guest-a','guest-b','staff-a','staff-b'] if data['id']=='MANSION' else ['parents','children'])):
             adjacent=[zones[b] for b in graph[key]]
             assert any(z['kind']=='circulation' for z in adjacent),key
+    if data['id']=='COLLEGE':
+        groups=data['building_groups'];assert len(groups)==3
+        assigned=[key for g in groups for key in g['spaces']]
+        assert len(assigned)==len(set(assigned))
+        for i,a in enumerate(groups):
+            for b in groups[i+1:]:
+                for ak in a['spaces']:
+                    for bk in b['spaces']:
+                        aa=zones[ak]['bounds'];bb=zones[bk]['bounds']
+                        assert math.hypot(max(aa[0]-bb[2],bb[0]-aa[2],0),max(aa[1]-bb[3],bb[1]-aa[3],0))>=2-1e-7,('Campus building footprints must be genuinely separate',ak,bk)
     for flow in data.get('flow_reservations',[]):
         assert not set(flow['path']) & set(flow['avoid']),flow
         for a,b in zip(flow['path'],flow['path'][1:]):assert b in graph[a],(flow['id'],a,b,'missing doorway or stair')
@@ -848,7 +1098,32 @@ def validate(data):
                 if other['kind'] in ('outside','staging') or other['y']!=y:continue
                 bx,bz,bxx,bzz=other['bounds']
                 assert min(x+2.2,bxx)<=max(x-2.2,bx) or min(z+2.2,bzz)<=max(z-2.2,bz), 'Ritual intersects '+other['id']
+    if 'search_envelope' in data:
+        opened={z['id'] for z in zones.values() if z['player_access']=='OPEN_SEARCH'}
+        assert len(opened)<=SEARCH_LIMIT,(data['id'],'Search exceeds owner limit',len(opened))
+        assert {zones[k]['owner'] for k in opened}==set(range(15)),'Open search must retain deliberate stable owner mapping'
+        assert all(r['zone'] in opened for r in data['rituals']),'Ritual behind permanent seal'
+        reached=set();pending=['stage']
+        while pending:
+            key=pending.pop()
+            if key in reached:continue
+            reached.add(key);pending.extend((graph[key]&opened)-reached)
+        assert reached==opened,(data['id'],'Disconnected open search',opened-reached)
+        for link in data['links']:
+            assert (link['player_access']=='OPEN_ROUTE')==(link['a'] in opened and link['b'] in opened)
+        assert all(z['gameplay_eligible']==(z['id'] in opened) for z in zones.values()),'Gameplay eligible behind seal'
+        boundary={l['id'] for l in data['links'] if (l['a'] in opened)!=(l['b'] in opened)}
+        assert boundary=={b['link'] for b in data['search_envelope']['barriers']},'Missing permanent search boundary'
+        assert data['search_envelope']['sealed_context_spaces']==len(zones)-len(opened)
+        assert data['search_envelope']['accessible_spaces']==len(opened)
     return len(zones),len(data['links'])
+
+
+def render_search_svg(data):
+    view=dict(data,id=data['id']+f" / {data['search_envelope']['accessible_spaces']} accessible, {data['search_envelope']['sealed_context_spaces']} sealed")
+    view['links']=[l for l in data['links'] if l['player_access']=='OPEN_ROUTE']
+    view['zones']=[dict(z,name=z['name']+(' [SEALED CONTEXT]' if z['player_access']=='SEALED_CONTEXT' else ' [OPEN]')) for z in data['zones']]
+    return review.render_svg(view)
 
 
 def sections(data):
@@ -861,7 +1136,7 @@ def sections(data):
     for index,link in enumerate(x for x in data['links'] if x['kind']=='stairs'):
         run,rise=link['run_m'],link['rise_m'];base=360+index*340;left=110;scale=45
         x0=left+1.5*scale;x1=x0+run*scale;y0=base;y1=base-rise*scale
-        out.extend([f'<text x="30" y="{base-205}" font-size="19">{link["a"]} to {link["b"]}</text>',
+        out.extend([f'<text x="30" y="{base-205}" font-size="19">{link["a"]} to {link["b"]} - {link.get("player_access","UNREVIEWED")}</text>',
                     f'<path d="M{left},{y0} H{x0} M{x1},{y1} h{1.5*scale}" stroke="#536477" stroke-width="8" fill="none"/>',
                     f'<path d="M{x0},{y0} L{x1},{y1}" stroke="#a86516" stroke-width="5"/>',
                     f'<path d="M{x0},{y0-2.2*scale} L{x1},{y1-2.2*scale}" stroke="#307e99" stroke-dasharray="5 4" fill="none"/>',
@@ -891,18 +1166,36 @@ def asset_bounds(names=None):
 
 
 def main():
+    envelopes={}
     parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');args=parser.parse_args()
-    for folder,data in [('school',school()),('prison',prison()),('mansion',mansion()),('farmhouse',farmhouse()),('asylum',asylum()),('academy',academy())]:
+    for folder,data in [('school',school()),('prison',prison()),('mansion',mansion()),('farmhouse',farmhouse()),('asylum',asylum()),('academy',academy()),('college',college())]:
+        data=apply_search_envelope(data)
         spaces,links=validate(data)
+        envelopes[data['id']]=dict(folder=folder,accessible=data['search_envelope']['accessible_spaces'],sealed=data['search_envelope']['sealed_context_spaces'])
         outputs={'rough-layout.json':json.dumps(data,indent=2,ensure_ascii=False)+'\n',
-                 'rough-plan.svg':review.render_svg(data),'rough-sections.svg':sections(data),
+                 'rough-plan.svg':render_search_svg(data),'rough-sections.svg':sections(data),
                  'rough-asset-bounds.json':json.dumps(asset_bounds(data.get('fit_assets')),indent=2)+'\n',
-                 'rough-volumes.obj':review.render_obj(data)}
+                 'rough-volumes.obj':review.render_obj(data),
+                 'search-layout.json':json.dumps(dict(id=data['id'],title=data['title'],status='SEARCH_GRAPH_DESIGN_NOT_RUNTIME_CONSTRUCTION',construction_source='rough-layout.json',artifact_role='Open search graph only; full structure, furnishings and sealed context remain in rough-layout.json.',site_bounds=data['site_bounds'],zones=[z for z in data['zones'] if z['player_access']=='OPEN_SEARCH'],links=[l for l in data['links'] if l['player_access']=='OPEN_ROUTE'],rituals=data['rituals'],staging=data['staging'],search_envelope=data['search_envelope']),indent=2,ensure_ascii=False)+'\n',
+                 'search-envelope.json':json.dumps(dict(site=data['id'],**data['search_envelope'],spaces=[dict(id=z['id'],name=z['name'],owner=z['owner'],access=z['player_access']) for z in data['zones']]),indent=2,ensure_ascii=False)+'\n'}
         for name,text in outputs.items():
             path=OUT/folder/name;raw=text.encode('utf-8')
             if args.check:assert path.is_file() and path.read_bytes()==raw, 'Stale '+str(path)
             else:path.write_bytes(raw)
-        print(f'PASS {folder} revised S02 study: {spaces} architectural spaces / {links} reserved connections; geometry and acceptance remain open')
+        print(f"PASS {folder} revised S02 study: {spaces} architectural spaces / {links} reserved connections; {data['search_envelope']['accessible_spaces']} accessible / {data['search_envelope']['sealed_context_spaces']} sealed; geometry and acceptance remain open")
+    catalog=json.loads((ROOT/'development/levels/edge-sky-plans/catalog.json').read_text(encoding='utf-8'))
+    sites=[]
+    for site in catalog['maps']:
+        authored=envelopes.get(site['id'])
+        sites.append(dict(id=site['id'],folder=site['folder'],maximum=SEARCH_LIMIT,
+            status='DESIGN_ENVELOPE_AUTHORED_NOT_RUNTIME_VERIFIED' if authored else 'ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED',
+            accessible=authored['accessible'] if authored else None,sealed=authored['sealed'] if authored else None,
+            evidence=f"development/levels/rebuild/{site['folder']}/search-envelope.json" if authored else None))
+    assert len(sites)==29
+    raw=(json.dumps(dict(policy='development/levels/rebuild/SEARCH_ENVELOPE_POLICY.json',sites=sites),indent=2)+'\n').encode('utf-8')
+    path=OUT/'search-envelope-register.json'
+    if args.check:assert path.read_bytes()==raw,'Stale search-envelope roster'
+    else:path.write_bytes(raw)
 
 
 if __name__=='__main__':main()

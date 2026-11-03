@@ -138,3 +138,18 @@ Revised S02 Asylum authority generates67 spaces/78 proposed links, sixteen patie
 ## Academy residential cloister checkpoint - 3 November
 
 Revised Academy S02 generates61 spaces/68 proposed links: real open quadrangle, covered public/staff circulation,16 pupil plus4 staff native-sized bed reservations, separate student/staff sanitation, bounded teaching/lab/library functions, kitchen/dirty-return/service rooms and two upper return stairs. North ground services support the reserved residence footprint; headmaster/records/private WC have a covered approach. Full editor terrain punching required for archive/plant/stair footprint. Plan reviewed; no stage/runtime promotion. Next College/Church/Castle and remaining remote/annex roughs, preserving batch order and all final physical/native/network/performance gates.
+
+
+## College three-building checkpoint - 3 November
+
+Revised S02 College now generates81 spaces/88 proposed links, genuinely separated teaching/library/residence buildings, sixteen beds in eight private twin rooms, upper bridges outside bedrooms, independent residence stairs/lift reservation and a service tunnel with two ground exits. Full-width shared-boundary doorway validation now passes all seven revised studies. Six named program/return paths, native bed fit, real ground building separation and six stair sections are checked. Buried tunnels require saved editor punching plus actual structural ceilings/ground cover. PNG reviewed; no runtime/stage acceptance. Continue Church/Castle and remote/annex rough batch.
+
+
+## Owner search-size amendment applied - 3 November
+
+Owner explicitly caps actual accessible rooms at about40 per site to limit search scope. Policy now covers all29 packets and supersedes any implied all-room access. Count includes corridors/stairs/services/exterior sectors/staging; fifteen stable mission owners are not the room budget. Revised envelopes: School40, Prison37, Mansion39, Farmhouse34, Asylum40, Academy38, College40. Preserve complete normal-use architecture as sealed context; do not assign objectives, hiding or ghost spawn/anchor activity beyond seals. Seven complete open layouts and explicit boundary lists pass budget/connectivity/owner/ritual/gameplay eligibility checks; five actual negative controls reject invalid revisions. Gray plan rooms and red boundary crosses show sealed context; cyan/amber routes stay inside open envelopes. These are design constraints pending actual native/runtime fixed leaves, infill/capped stairs, collision/interaction/ghost tests and actual map construction. Remaining22 room-level audits remain explicit in search-envelope-register.json.
+
+College design now has81 total architectural spaces but only40 accessible;41 are sealed context. This is not an81-room investigation. Existing complete building capacity/fixtures remain useful behind seals. Continue Church/Castle and remote/annex roughs under the new cap, then native/runtime construction in the approved batch order.
+
+
+Owner clarification: build the maps; round-time testing is not part of this operation. Removed timed-mission gates from the active plan, all29 briefs, policy, register and rough generator. Preserve functional geometry/terrain/route and required gameplay verification; do not stall construction for round-duration experiments.

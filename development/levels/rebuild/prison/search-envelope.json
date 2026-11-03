@@ -1,0 +1,967 @@
+{
+  "site": "PRISON",
+  "status": "DESIGN_ONLY_SEALS_NOT_RUNTIME_IMPLEMENTED",
+  "maximum": 40,
+  "accessible_spaces": 37,
+  "sealed_context_spaces": 61,
+  "count_rule": "Every OPEN_SEARCH space counts, including corridors, stairs, service rooms, exterior sectors and staging. Stable fifteen gameplay owners are not the room budget.",
+  "barriers": [
+    {
+      "link": "L002",
+      "a": "a-lower-cell-02",
+      "b": "a-lower-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L003",
+      "a": "a-lower-cell-03",
+      "b": "a-lower-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L004",
+      "a": "a-lower-cell-04",
+      "b": "a-lower-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L005",
+      "a": "a-lower-cell-05",
+      "b": "a-lower-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L006",
+      "a": "a-lower-cell-06",
+      "b": "a-lower-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L007",
+      "a": "a-lower-cell-07",
+      "b": "a-lower-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L008",
+      "a": "a-lower-cell-08",
+      "b": "a-lower-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L010",
+      "a": "a-upper-cell-02",
+      "b": "a-upper-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L011",
+      "a": "a-upper-cell-03",
+      "b": "a-upper-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L012",
+      "a": "a-upper-cell-04",
+      "b": "a-upper-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L013",
+      "a": "a-upper-cell-05",
+      "b": "a-upper-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L014",
+      "a": "a-upper-cell-06",
+      "b": "a-upper-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L015",
+      "a": "a-upper-cell-07",
+      "b": "a-upper-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L016",
+      "a": "a-upper-cell-08",
+      "b": "a-upper-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L018",
+      "a": "b-lower-cell-02",
+      "b": "b-lower-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L019",
+      "a": "b-lower-cell-03",
+      "b": "b-lower-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L020",
+      "a": "b-lower-cell-04",
+      "b": "b-lower-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L021",
+      "a": "b-lower-cell-05",
+      "b": "b-lower-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L022",
+      "a": "b-lower-cell-06",
+      "b": "b-lower-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L023",
+      "a": "b-lower-cell-07",
+      "b": "b-lower-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L024",
+      "a": "b-lower-cell-08",
+      "b": "b-lower-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L026",
+      "a": "b-upper-cell-02",
+      "b": "b-upper-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L027",
+      "a": "b-upper-cell-03",
+      "b": "b-upper-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L028",
+      "a": "b-upper-cell-04",
+      "b": "b-upper-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L029",
+      "a": "b-upper-cell-05",
+      "b": "b-upper-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L030",
+      "a": "b-upper-cell-06",
+      "b": "b-upper-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L031",
+      "a": "b-upper-cell-07",
+      "b": "b-upper-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L032",
+      "a": "b-upper-cell-08",
+      "b": "b-upper-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L035",
+      "a": "a-lower-gallery",
+      "b": "a-dayhall",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L036",
+      "a": "a-lower-gallery",
+      "b": "a-change",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L041",
+      "a": "a-upper-rear-stair",
+      "b": "a-upper-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L043",
+      "a": "a-dayhall",
+      "b": "a-stair",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L051",
+      "a": "b-lower-gallery",
+      "b": "b-dayhall",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L052",
+      "a": "b-lower-gallery",
+      "b": "b-change",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L057",
+      "a": "b-upper-rear-stair",
+      "b": "b-upper-gallery",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L059",
+      "a": "b-dayhall",
+      "b": "b-stair",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L069",
+      "a": "entry",
+      "b": "public-wc",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L070",
+      "a": "intake",
+      "b": "holding",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L072",
+      "a": "search",
+      "b": "sally",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L075",
+      "a": "guard",
+      "b": "staff",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L076",
+      "a": "guard",
+      "b": "staff-wc",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L079",
+      "a": "guard",
+      "b": "b-front-aisle",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L081",
+      "a": "a-dayhall",
+      "b": "yard",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L082",
+      "a": "b-dayhall",
+      "b": "yard",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L086",
+      "a": "entry",
+      "b": "visitors",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L087",
+      "a": "intake",
+      "b": "visitor-custody",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L090",
+      "a": "isolation-link",
+      "b": "observation",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L092",
+      "a": "isolation-link",
+      "b": "isolation-cell-2",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L096",
+      "a": "dining",
+      "b": "kitchen",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L101",
+      "a": "medical-link",
+      "b": "exam",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L106",
+      "a": "plant",
+      "b": "laundry",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L107",
+      "a": "entry",
+      "b": "east-service",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    }
+  ],
+  "gameplay_rule": "Evidence, ghost spawn/anchor, hiding, switches/tasks, ritual sites, loose objective props and required travel belong only to the connected open envelope. Context windows may show rooms, but no interaction or required search crosses the seal.",
+  "context_rule": "Retain coherent historical rooms/assets behind permanent boundaries. Restrict whole wings to their hallways where useful; do not count shuttable ordinary doors as permanent seals.",
+  "next_gate": "Build actual permanent seals and audit runtime player/ghost/object/optical boundaries and all objective placements; construct the maps inside the forty-space cap. Round-duration testing is outside this rebuild task.",
+  "spaces": [
+    {
+      "id": "a-lower-cell-01",
+      "name": "A lower single cell 1",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "a-lower-cell-02",
+      "name": "A lower single cell 2",
+      "owner": 0,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "a-lower-cell-03",
+      "name": "A lower single cell 3",
+      "owner": 0,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "a-lower-cell-04",
+      "name": "A lower single cell 4",
+      "owner": 0,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "a-lower-cell-05",
+      "name": "A lower single cell 5",
+      "owner": 0,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "a-lower-cell-06",
+      "name": "A lower single cell 6",
+      "owner": 0,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "a-lower-cell-07",
+      "name": "A lower single cell 7",
+      "owner": 0,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "a-lower-cell-08",
+      "name": "A lower single cell 8",
+      "owner": 0,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "a-lower-gallery",
+      "name": "A lower cell-door gallery",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "a-upper-cell-01",
+      "name": "A upper single cell 1",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "a-upper-cell-02",
+      "name": "A upper single cell 2",
+      "owner": 7,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "a-upper-cell-03",
+      "name": "A upper single cell 3",
+      "owner": 7,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "a-upper-cell-04",
+      "name": "A upper single cell 4",
+      "owner": 7,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "a-upper-cell-05",
+      "name": "A upper single cell 5",
+      "owner": 7,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "a-upper-cell-06",
+      "name": "A upper single cell 6",
+      "owner": 7,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "a-upper-cell-07",
+      "name": "A upper single cell 7",
+      "owner": 7,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "a-upper-cell-08",
+      "name": "A upper single cell 8",
+      "owner": 7,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "a-upper-gallery",
+      "name": "A upper cell-door gallery",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "a-rear-link",
+      "name": "A rear secure cross-link",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "a-front-link",
+      "name": "A front secure cross-link",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "a-dayhall",
+      "name": "A supervised dayhall",
+      "owner": 0,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "a-rear-stair",
+      "name": "A alternate rear stair bay",
+      "owner": 0,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "a-rear-bypass",
+      "name": "A rear dayhall bypass",
+      "owner": 0,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "a-upper-rear-stair",
+      "name": "A upper alternate landing",
+      "owner": 7,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "a-change",
+      "name": "A prisoner wash changing and benches",
+      "owner": 0,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "a-showers",
+      "name": "A three shower bays and drainage",
+      "owner": 0,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "a-stair",
+      "name": "A independent stair bay",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "a-upper-stair",
+      "name": "A upper stair void and landing",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "a-front-aisle",
+      "name": "A front bypass aisle",
+      "owner": 0,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "b-lower-cell-01",
+      "name": "B lower single cell 1",
+      "owner": 4,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "b-lower-cell-02",
+      "name": "B lower single cell 2",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "b-lower-cell-03",
+      "name": "B lower single cell 3",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "b-lower-cell-04",
+      "name": "B lower single cell 4",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "b-lower-cell-05",
+      "name": "B lower single cell 5",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "b-lower-cell-06",
+      "name": "B lower single cell 6",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "b-lower-cell-07",
+      "name": "B lower single cell 7",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "b-lower-cell-08",
+      "name": "B lower single cell 8",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "b-lower-gallery",
+      "name": "B lower cell-door gallery",
+      "owner": 4,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "b-upper-cell-01",
+      "name": "B upper single cell 1",
+      "owner": 10,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "b-upper-cell-02",
+      "name": "B upper single cell 2",
+      "owner": 10,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "b-upper-cell-03",
+      "name": "B upper single cell 3",
+      "owner": 10,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "b-upper-cell-04",
+      "name": "B upper single cell 4",
+      "owner": 10,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "b-upper-cell-05",
+      "name": "B upper single cell 5",
+      "owner": 10,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "b-upper-cell-06",
+      "name": "B upper single cell 6",
+      "owner": 10,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "b-upper-cell-07",
+      "name": "B upper single cell 7",
+      "owner": 10,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "b-upper-cell-08",
+      "name": "B upper single cell 8",
+      "owner": 10,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "b-upper-gallery",
+      "name": "B upper cell-door gallery",
+      "owner": 10,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "b-rear-link",
+      "name": "B rear secure cross-link",
+      "owner": 4,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "b-front-link",
+      "name": "B front secure cross-link",
+      "owner": 4,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "b-dayhall",
+      "name": "B supervised dayhall",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "b-rear-stair",
+      "name": "B alternate rear stair bay",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "b-rear-bypass",
+      "name": "B rear dayhall bypass",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "b-upper-rear-stair",
+      "name": "B upper alternate landing",
+      "owner": 10,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "b-change",
+      "name": "B prisoner wash changing and benches",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "b-showers",
+      "name": "B three shower bays and drainage",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "b-stair",
+      "name": "B independent stair bay",
+      "owner": 4,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "b-upper-stair",
+      "name": "B upper stair void and landing",
+      "owner": 10,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "b-front-aisle",
+      "name": "B front bypass aisle",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "reception",
+      "name": "Public reception and identity check",
+      "owner": 1,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "intake",
+      "name": "Search and intake custody corridor",
+      "owner": 1,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "holding",
+      "name": "Supervised temporary holding",
+      "owner": 1,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "search",
+      "name": "Private search and belongings",
+      "owner": 1,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "records",
+      "name": "Prisoner records and staff work",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "public-wc",
+      "name": "Public sanitary room",
+      "owner": 9,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "sally",
+      "name": "Vehicle sally port and double-gate control",
+      "owner": 2,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "guard",
+      "name": "Guard control and dispatch",
+      "owner": 2,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "staff",
+      "name": "Staff rest and lockers",
+      "owner": 2,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "staff-wc",
+      "name": "Staff sanitary room",
+      "owner": 2,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "guard-link",
+      "name": "Controlled B-block entrance",
+      "owner": 2,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "visitors",
+      "name": "Public visiting booths",
+      "owner": 6,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "visitor-custody",
+      "name": "Custody visiting booths",
+      "owner": 6,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "cross",
+      "name": "Rear secure distribution passage",
+      "owner": 2,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "dining",
+      "name": "Thirty-four-place mess",
+      "owner": 3,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "kitchen",
+      "name": "Kitchen cooking and serving",
+      "owner": 3,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "food-store",
+      "name": "Secure dry and chilled food store",
+      "owner": 3,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "wash-up",
+      "name": "Wash-up refuse and service handling",
+      "owner": 3,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "medical-link",
+      "name": "Medical reception and private access",
+      "owner": 5,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "exam",
+      "name": "Medical examination and handwashing",
+      "owner": 5,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "recovery",
+      "name": "Two-bed recovery observation",
+      "owner": 5,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "medical-store",
+      "name": "Clean medical supplies",
+      "owner": 5,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "sluice",
+      "name": "Soiled utility wash and linen",
+      "owner": 5,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "chapel",
+      "name": "Worship and reconciliation",
+      "owner": 6,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "isolation-link",
+      "name": "Observed isolation corridor",
+      "owner": 8,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "isolation-cell-1",
+      "name": "Isolation single cell one with sanitary bay",
+      "owner": 8,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "isolation-cell-2",
+      "name": "Isolation single cell two with sanitary bay",
+      "owner": 8,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "observation",
+      "name": "Isolation observation and controlled supplies",
+      "owner": 8,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "isolation-service",
+      "name": "Isolation clinical and linen service",
+      "owner": 8,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "isolation-wash",
+      "name": "Isolation washing and work room",
+      "owner": 8,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "plant-stair",
+      "name": "Separate plant stair enclosure",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "lower-stair",
+      "name": "Plant stair and maintenance access",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "plant",
+      "name": "Heating hot water and electrical plant",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "laundry",
+      "name": "Laundry showers supply and maintenance store",
+      "owner": 11,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "yard",
+      "name": "Bounded exercise yard around plant headhouse",
+      "owner": 12,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "entry",
+      "name": "Front public approach and perimeter roadhead",
+      "owner": 13,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "north-service",
+      "name": "North food and maintenance delivery apron",
+      "owner": 13,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "east-service",
+      "name": "East exterior service walk",
+      "owner": 13,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "west-service",
+      "name": "West exterior service walk",
+      "owner": 13,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "stage",
+      "name": "Canonical van staging and extraction reservation",
+      "owner": 14,
+      "access": "OPEN_SEARCH"
+    }
+  ]
+}

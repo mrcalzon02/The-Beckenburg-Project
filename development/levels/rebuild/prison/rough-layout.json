@@ -23,7 +23,9 @@
       "height": 3,
       "owner": 0,
       "kind": "inside",
-      "purpose": "A lower single cell 1"
+      "purpose": "A lower single cell 1",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "a-lower-cell-02",
@@ -38,7 +40,9 @@
       "height": 3,
       "owner": 0,
       "kind": "inside",
-      "purpose": "A lower single cell 2"
+      "purpose": "A lower single cell 2",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "a-lower-cell-03",
@@ -53,7 +57,9 @@
       "height": 3,
       "owner": 0,
       "kind": "inside",
-      "purpose": "A lower single cell 3"
+      "purpose": "A lower single cell 3",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "a-lower-cell-04",
@@ -68,7 +74,9 @@
       "height": 3,
       "owner": 0,
       "kind": "inside",
-      "purpose": "A lower single cell 4"
+      "purpose": "A lower single cell 4",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "a-lower-cell-05",
@@ -83,7 +91,9 @@
       "height": 3,
       "owner": 0,
       "kind": "inside",
-      "purpose": "A lower single cell 5"
+      "purpose": "A lower single cell 5",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "a-lower-cell-06",
@@ -98,7 +108,9 @@
       "height": 3,
       "owner": 0,
       "kind": "inside",
-      "purpose": "A lower single cell 6"
+      "purpose": "A lower single cell 6",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "a-lower-cell-07",
@@ -113,7 +125,9 @@
       "height": 3,
       "owner": 0,
       "kind": "inside",
-      "purpose": "A lower single cell 7"
+      "purpose": "A lower single cell 7",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "a-lower-cell-08",
@@ -128,7 +142,9 @@
       "height": 3,
       "owner": 0,
       "kind": "inside",
-      "purpose": "A lower single cell 8"
+      "purpose": "A lower single cell 8",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "a-lower-gallery",
@@ -143,7 +159,9 @@
       "height": 3,
       "owner": 0,
       "kind": "circulation",
-      "purpose": "A lower cell-door gallery"
+      "purpose": "A lower cell-door gallery",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "a-upper-cell-01",
@@ -158,7 +176,9 @@
       "height": 3,
       "owner": 7,
       "kind": "inside",
-      "purpose": "A upper single cell 1"
+      "purpose": "A upper single cell 1",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "a-upper-cell-02",
@@ -173,7 +193,9 @@
       "height": 3,
       "owner": 7,
       "kind": "inside",
-      "purpose": "A upper single cell 2"
+      "purpose": "A upper single cell 2",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "a-upper-cell-03",
@@ -188,7 +210,9 @@
       "height": 3,
       "owner": 7,
       "kind": "inside",
-      "purpose": "A upper single cell 3"
+      "purpose": "A upper single cell 3",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "a-upper-cell-04",
@@ -203,7 +227,9 @@
       "height": 3,
       "owner": 7,
       "kind": "inside",
-      "purpose": "A upper single cell 4"
+      "purpose": "A upper single cell 4",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "a-upper-cell-05",
@@ -218,7 +244,9 @@
       "height": 3,
       "owner": 7,
       "kind": "inside",
-      "purpose": "A upper single cell 5"
+      "purpose": "A upper single cell 5",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "a-upper-cell-06",
@@ -233,7 +261,9 @@
       "height": 3,
       "owner": 7,
       "kind": "inside",
-      "purpose": "A upper single cell 6"
+      "purpose": "A upper single cell 6",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "a-upper-cell-07",
@@ -248,7 +278,9 @@
       "height": 3,
       "owner": 7,
       "kind": "inside",
-      "purpose": "A upper single cell 7"
+      "purpose": "A upper single cell 7",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "a-upper-cell-08",
@@ -263,7 +295,9 @@
       "height": 3,
       "owner": 7,
       "kind": "inside",
-      "purpose": "A upper single cell 8"
+      "purpose": "A upper single cell 8",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "a-upper-gallery",
@@ -278,7 +312,9 @@
       "height": 3,
       "owner": 7,
       "kind": "circulation",
-      "purpose": "A upper cell-door gallery"
+      "purpose": "A upper cell-door gallery",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "a-rear-link",
@@ -293,7 +329,9 @@
       "height": 3,
       "owner": 0,
       "kind": "circulation",
-      "purpose": "A rear secure cross-link"
+      "purpose": "A rear secure cross-link",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "a-front-link",
@@ -308,7 +346,9 @@
       "height": 3,
       "owner": 0,
       "kind": "circulation",
-      "purpose": "A front secure cross-link"
+      "purpose": "A front secure cross-link",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "a-dayhall",
@@ -323,7 +363,9 @@
       "height": 6.8,
       "owner": 0,
       "kind": "inside",
-      "purpose": "A supervised dayhall"
+      "purpose": "A supervised dayhall",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "a-rear-stair",
@@ -338,7 +380,9 @@
       "height": 6.8,
       "owner": 0,
       "kind": "circulation",
-      "purpose": "A alternate rear stair bay"
+      "purpose": "A alternate rear stair bay",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "a-rear-bypass",
@@ -353,7 +397,9 @@
       "height": 6.8,
       "owner": 0,
       "kind": "circulation",
-      "purpose": "A rear dayhall bypass"
+      "purpose": "A rear dayhall bypass",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "a-upper-rear-stair",
@@ -368,7 +414,9 @@
       "height": 3,
       "owner": 7,
       "kind": "circulation",
-      "purpose": "A upper alternate landing"
+      "purpose": "A upper alternate landing",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "a-change",
@@ -383,7 +431,9 @@
       "height": 3,
       "owner": 0,
       "kind": "inside",
-      "purpose": "A prisoner wash changing and benches"
+      "purpose": "A prisoner wash changing and benches",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "a-showers",
@@ -398,7 +448,9 @@
       "height": 3,
       "owner": 0,
       "kind": "inside",
-      "purpose": "A three shower bays and drainage"
+      "purpose": "A three shower bays and drainage",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "a-stair",
@@ -413,7 +465,9 @@
       "height": 6.8,
       "owner": 0,
       "kind": "circulation",
-      "purpose": "A independent stair bay"
+      "purpose": "A independent stair bay",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "a-upper-stair",
@@ -428,7 +482,9 @@
       "height": 3,
       "owner": 7,
       "kind": "circulation",
-      "purpose": "A upper stair void and landing"
+      "purpose": "A upper stair void and landing",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "a-front-aisle",
@@ -443,7 +499,9 @@
       "height": 3,
       "owner": 0,
       "kind": "circulation",
-      "purpose": "A front bypass aisle"
+      "purpose": "A front bypass aisle",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "b-lower-cell-01",
@@ -458,7 +516,9 @@
       "height": 3,
       "owner": 4,
       "kind": "inside",
-      "purpose": "B lower single cell 1"
+      "purpose": "B lower single cell 1",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "b-lower-cell-02",
@@ -473,7 +533,9 @@
       "height": 3,
       "owner": 4,
       "kind": "inside",
-      "purpose": "B lower single cell 2"
+      "purpose": "B lower single cell 2",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "b-lower-cell-03",
@@ -488,7 +550,9 @@
       "height": 3,
       "owner": 4,
       "kind": "inside",
-      "purpose": "B lower single cell 3"
+      "purpose": "B lower single cell 3",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "b-lower-cell-04",
@@ -503,7 +567,9 @@
       "height": 3,
       "owner": 4,
       "kind": "inside",
-      "purpose": "B lower single cell 4"
+      "purpose": "B lower single cell 4",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "b-lower-cell-05",
@@ -518,7 +584,9 @@
       "height": 3,
       "owner": 4,
       "kind": "inside",
-      "purpose": "B lower single cell 5"
+      "purpose": "B lower single cell 5",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "b-lower-cell-06",
@@ -533,7 +601,9 @@
       "height": 3,
       "owner": 4,
       "kind": "inside",
-      "purpose": "B lower single cell 6"
+      "purpose": "B lower single cell 6",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "b-lower-cell-07",
@@ -548,7 +618,9 @@
       "height": 3,
       "owner": 4,
       "kind": "inside",
-      "purpose": "B lower single cell 7"
+      "purpose": "B lower single cell 7",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "b-lower-cell-08",
@@ -563,7 +635,9 @@
       "height": 3,
       "owner": 4,
       "kind": "inside",
-      "purpose": "B lower single cell 8"
+      "purpose": "B lower single cell 8",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "b-lower-gallery",
@@ -578,7 +652,9 @@
       "height": 3,
       "owner": 4,
       "kind": "circulation",
-      "purpose": "B lower cell-door gallery"
+      "purpose": "B lower cell-door gallery",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "b-upper-cell-01",
@@ -593,7 +669,9 @@
       "height": 3,
       "owner": 10,
       "kind": "inside",
-      "purpose": "B upper single cell 1"
+      "purpose": "B upper single cell 1",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "b-upper-cell-02",
@@ -608,7 +686,9 @@
       "height": 3,
       "owner": 10,
       "kind": "inside",
-      "purpose": "B upper single cell 2"
+      "purpose": "B upper single cell 2",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "b-upper-cell-03",
@@ -623,7 +703,9 @@
       "height": 3,
       "owner": 10,
       "kind": "inside",
-      "purpose": "B upper single cell 3"
+      "purpose": "B upper single cell 3",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "b-upper-cell-04",
@@ -638,7 +720,9 @@
       "height": 3,
       "owner": 10,
       "kind": "inside",
-      "purpose": "B upper single cell 4"
+      "purpose": "B upper single cell 4",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "b-upper-cell-05",
@@ -653,7 +737,9 @@
       "height": 3,
       "owner": 10,
       "kind": "inside",
-      "purpose": "B upper single cell 5"
+      "purpose": "B upper single cell 5",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "b-upper-cell-06",
@@ -668,7 +754,9 @@
       "height": 3,
       "owner": 10,
       "kind": "inside",
-      "purpose": "B upper single cell 6"
+      "purpose": "B upper single cell 6",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "b-upper-cell-07",
@@ -683,7 +771,9 @@
       "height": 3,
       "owner": 10,
       "kind": "inside",
-      "purpose": "B upper single cell 7"
+      "purpose": "B upper single cell 7",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "b-upper-cell-08",
@@ -698,7 +788,9 @@
       "height": 3,
       "owner": 10,
       "kind": "inside",
-      "purpose": "B upper single cell 8"
+      "purpose": "B upper single cell 8",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "b-upper-gallery",
@@ -713,7 +805,9 @@
       "height": 3,
       "owner": 10,
       "kind": "circulation",
-      "purpose": "B upper cell-door gallery"
+      "purpose": "B upper cell-door gallery",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "b-rear-link",
@@ -728,7 +822,9 @@
       "height": 3,
       "owner": 4,
       "kind": "circulation",
-      "purpose": "B rear secure cross-link"
+      "purpose": "B rear secure cross-link",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "b-front-link",
@@ -743,7 +839,9 @@
       "height": 3,
       "owner": 4,
       "kind": "circulation",
-      "purpose": "B front secure cross-link"
+      "purpose": "B front secure cross-link",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "b-dayhall",
@@ -758,7 +856,9 @@
       "height": 6.8,
       "owner": 4,
       "kind": "inside",
-      "purpose": "B supervised dayhall"
+      "purpose": "B supervised dayhall",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "b-rear-stair",
@@ -773,7 +873,9 @@
       "height": 6.8,
       "owner": 4,
       "kind": "circulation",
-      "purpose": "B alternate rear stair bay"
+      "purpose": "B alternate rear stair bay",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "b-rear-bypass",
@@ -788,7 +890,9 @@
       "height": 6.8,
       "owner": 4,
       "kind": "circulation",
-      "purpose": "B rear dayhall bypass"
+      "purpose": "B rear dayhall bypass",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "b-upper-rear-stair",
@@ -803,7 +907,9 @@
       "height": 3,
       "owner": 10,
       "kind": "circulation",
-      "purpose": "B upper alternate landing"
+      "purpose": "B upper alternate landing",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "b-change",
@@ -818,7 +924,9 @@
       "height": 3,
       "owner": 4,
       "kind": "inside",
-      "purpose": "B prisoner wash changing and benches"
+      "purpose": "B prisoner wash changing and benches",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "b-showers",
@@ -833,7 +941,9 @@
       "height": 3,
       "owner": 4,
       "kind": "inside",
-      "purpose": "B three shower bays and drainage"
+      "purpose": "B three shower bays and drainage",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "b-stair",
@@ -848,7 +958,9 @@
       "height": 6.8,
       "owner": 4,
       "kind": "circulation",
-      "purpose": "B independent stair bay"
+      "purpose": "B independent stair bay",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "b-upper-stair",
@@ -863,7 +975,9 @@
       "height": 3,
       "owner": 10,
       "kind": "circulation",
-      "purpose": "B upper stair void and landing"
+      "purpose": "B upper stair void and landing",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "b-front-aisle",
@@ -878,7 +992,9 @@
       "height": 3,
       "owner": 4,
       "kind": "circulation",
-      "purpose": "B front bypass aisle"
+      "purpose": "B front bypass aisle",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "reception",
@@ -893,7 +1009,9 @@
       "height": 3,
       "owner": 1,
       "kind": "inside",
-      "purpose": "Public reception and identity check"
+      "purpose": "Public reception and identity check",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "intake",
@@ -908,7 +1026,9 @@
       "height": 3,
       "owner": 1,
       "kind": "circulation",
-      "purpose": "Search and intake custody corridor"
+      "purpose": "Search and intake custody corridor",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "holding",
@@ -923,7 +1043,9 @@
       "height": 3,
       "owner": 1,
       "kind": "inside",
-      "purpose": "Supervised temporary holding"
+      "purpose": "Supervised temporary holding",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "search",
@@ -938,7 +1060,9 @@
       "height": 3,
       "owner": 1,
       "kind": "inside",
-      "purpose": "Private search and belongings"
+      "purpose": "Private search and belongings",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "records",
@@ -953,7 +1077,9 @@
       "height": 3,
       "owner": 9,
       "kind": "inside",
-      "purpose": "Prisoner records and staff work"
+      "purpose": "Prisoner records and staff work",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "public-wc",
@@ -968,7 +1094,9 @@
       "height": 3,
       "owner": 9,
       "kind": "inside",
-      "purpose": "Public sanitary room"
+      "purpose": "Public sanitary room",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "sally",
@@ -983,7 +1111,9 @@
       "height": 4,
       "owner": 2,
       "kind": "circulation",
-      "purpose": "Vehicle sally port and double-gate control"
+      "purpose": "Vehicle sally port and double-gate control",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "guard",
@@ -998,7 +1128,9 @@
       "height": 3,
       "owner": 2,
       "kind": "inside",
-      "purpose": "Guard control and dispatch"
+      "purpose": "Guard control and dispatch",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "staff",
@@ -1013,7 +1145,9 @@
       "height": 3,
       "owner": 2,
       "kind": "inside",
-      "purpose": "Staff rest and lockers"
+      "purpose": "Staff rest and lockers",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "staff-wc",
@@ -1028,7 +1162,9 @@
       "height": 3,
       "owner": 2,
       "kind": "inside",
-      "purpose": "Staff sanitary room"
+      "purpose": "Staff sanitary room",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "guard-link",
@@ -1043,7 +1179,9 @@
       "height": 3,
       "owner": 2,
       "kind": "circulation",
-      "purpose": "Controlled B-block entrance"
+      "purpose": "Controlled B-block entrance",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "visitors",
@@ -1058,7 +1196,9 @@
       "height": 3,
       "owner": 6,
       "kind": "inside",
-      "purpose": "Public visiting booths"
+      "purpose": "Public visiting booths",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "visitor-custody",
@@ -1073,7 +1213,9 @@
       "height": 3,
       "owner": 6,
       "kind": "inside",
-      "purpose": "Custody visiting booths"
+      "purpose": "Custody visiting booths",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "cross",
@@ -1088,7 +1230,9 @@
       "height": 3,
       "owner": 2,
       "kind": "circulation",
-      "purpose": "Rear secure distribution passage"
+      "purpose": "Rear secure distribution passage",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "dining",
@@ -1103,7 +1247,9 @@
       "height": 3,
       "owner": 3,
       "kind": "inside",
-      "purpose": "Thirty-four-place mess"
+      "purpose": "Thirty-four-place mess",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "kitchen",
@@ -1118,7 +1264,9 @@
       "height": 3,
       "owner": 3,
       "kind": "inside",
-      "purpose": "Kitchen cooking and serving"
+      "purpose": "Kitchen cooking and serving",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "food-store",
@@ -1133,7 +1281,9 @@
       "height": 3,
       "owner": 3,
       "kind": "inside",
-      "purpose": "Secure dry and chilled food store"
+      "purpose": "Secure dry and chilled food store",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "wash-up",
@@ -1148,7 +1298,9 @@
       "height": 3,
       "owner": 3,
       "kind": "inside",
-      "purpose": "Wash-up refuse and service handling"
+      "purpose": "Wash-up refuse and service handling",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "medical-link",
@@ -1163,7 +1315,9 @@
       "height": 3,
       "owner": 5,
       "kind": "circulation",
-      "purpose": "Medical reception and private access"
+      "purpose": "Medical reception and private access",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "exam",
@@ -1178,7 +1332,9 @@
       "height": 3,
       "owner": 5,
       "kind": "inside",
-      "purpose": "Medical examination and handwashing"
+      "purpose": "Medical examination and handwashing",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "recovery",
@@ -1193,7 +1349,9 @@
       "height": 3,
       "owner": 5,
       "kind": "inside",
-      "purpose": "Two-bed recovery observation"
+      "purpose": "Two-bed recovery observation",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "medical-store",
@@ -1208,7 +1366,9 @@
       "height": 3,
       "owner": 5,
       "kind": "inside",
-      "purpose": "Clean medical supplies"
+      "purpose": "Clean medical supplies",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "sluice",
@@ -1223,7 +1383,9 @@
       "height": 3,
       "owner": 5,
       "kind": "inside",
-      "purpose": "Soiled utility wash and linen"
+      "purpose": "Soiled utility wash and linen",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "chapel",
@@ -1238,7 +1400,9 @@
       "height": 4,
       "owner": 6,
       "kind": "inside",
-      "purpose": "Worship and reconciliation"
+      "purpose": "Worship and reconciliation",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "isolation-link",
@@ -1253,7 +1417,9 @@
       "height": 3,
       "owner": 8,
       "kind": "circulation",
-      "purpose": "Observed isolation corridor"
+      "purpose": "Observed isolation corridor",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "isolation-cell-1",
@@ -1268,7 +1434,9 @@
       "height": 3,
       "owner": 8,
       "kind": "inside",
-      "purpose": "Isolation single cell one with sanitary bay"
+      "purpose": "Isolation single cell one with sanitary bay",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "isolation-cell-2",
@@ -1283,7 +1451,9 @@
       "height": 3,
       "owner": 8,
       "kind": "inside",
-      "purpose": "Isolation single cell two with sanitary bay"
+      "purpose": "Isolation single cell two with sanitary bay",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "observation",
@@ -1298,7 +1468,9 @@
       "height": 3,
       "owner": 8,
       "kind": "inside",
-      "purpose": "Isolation observation and controlled supplies"
+      "purpose": "Isolation observation and controlled supplies",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "isolation-service",
@@ -1313,7 +1485,9 @@
       "height": 3,
       "owner": 8,
       "kind": "inside",
-      "purpose": "Isolation clinical and linen service"
+      "purpose": "Isolation clinical and linen service",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "isolation-wash",
@@ -1328,7 +1502,9 @@
       "height": 3,
       "owner": 8,
       "kind": "inside",
-      "purpose": "Isolation washing and work room"
+      "purpose": "Isolation washing and work room",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "plant-stair",
@@ -1343,7 +1519,9 @@
       "height": 3,
       "owner": 11,
       "kind": "circulation",
-      "purpose": "Separate plant stair enclosure"
+      "purpose": "Separate plant stair enclosure",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "lower-stair",
@@ -1358,7 +1536,9 @@
       "height": 3,
       "owner": 11,
       "kind": "circulation",
-      "purpose": "Plant stair and maintenance access"
+      "purpose": "Plant stair and maintenance access",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "plant",
@@ -1373,7 +1553,9 @@
       "height": 3,
       "owner": 11,
       "kind": "inside",
-      "purpose": "Heating hot water and electrical plant"
+      "purpose": "Heating hot water and electrical plant",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "laundry",
@@ -1388,7 +1570,9 @@
       "height": 3,
       "owner": 11,
       "kind": "inside",
-      "purpose": "Laundry showers supply and maintenance store"
+      "purpose": "Laundry showers supply and maintenance store",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "yard",
@@ -1403,7 +1587,9 @@
       "height": 12,
       "owner": 12,
       "kind": "outside",
-      "purpose": "Bounded exercise yard around plant headhouse"
+      "purpose": "Bounded exercise yard around plant headhouse",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "entry",
@@ -1418,7 +1604,9 @@
       "height": 12,
       "owner": 13,
       "kind": "outside",
-      "purpose": "Front public approach and perimeter roadhead"
+      "purpose": "Front public approach and perimeter roadhead",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "north-service",
@@ -1433,7 +1621,9 @@
       "height": 12,
       "owner": 13,
       "kind": "outside",
-      "purpose": "North food and maintenance delivery apron"
+      "purpose": "North food and maintenance delivery apron",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "east-service",
@@ -1448,7 +1638,9 @@
       "height": 12,
       "owner": 13,
       "kind": "outside",
-      "purpose": "East exterior service walk"
+      "purpose": "East exterior service walk",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "west-service",
@@ -1463,7 +1655,9 @@
       "height": 12,
       "owner": 13,
       "kind": "outside",
-      "purpose": "West exterior service walk"
+      "purpose": "West exterior service walk",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "stage",
@@ -1478,7 +1672,9 @@
       "height": 3,
       "owner": 14,
       "kind": "staging",
-      "purpose": "Canonical van staging and extraction reservation"
+      "purpose": "Canonical van staging and extraction reservation",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     }
   ],
   "links": [
@@ -1511,7 +1707,8 @@
         26.6
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L002",
@@ -1542,7 +1739,9 @@
         30.1
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L003",
@@ -1573,7 +1772,9 @@
         33.6
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L004",
@@ -1604,7 +1805,9 @@
         37.1
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L005",
@@ -1635,7 +1838,9 @@
         40.6
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L006",
@@ -1666,7 +1871,9 @@
         44.1
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L007",
@@ -1697,7 +1904,9 @@
         47.6
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L008",
@@ -1728,7 +1937,9 @@
         51.1
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L009",
@@ -1759,7 +1970,8 @@
         26.6
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L010",
@@ -1790,7 +2002,9 @@
         30.1
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L011",
@@ -1821,7 +2035,9 @@
         33.6
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L012",
@@ -1852,7 +2068,9 @@
         37.1
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L013",
@@ -1883,7 +2101,9 @@
         40.6
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L014",
@@ -1914,7 +2134,9 @@
         44.1
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L015",
@@ -1945,7 +2167,9 @@
         47.6
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L016",
@@ -1976,7 +2200,9 @@
         51.1
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L017",
@@ -2007,7 +2233,8 @@
         26.6
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L018",
@@ -2038,7 +2265,9 @@
         30.1
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L019",
@@ -2069,7 +2298,9 @@
         33.6
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L020",
@@ -2100,7 +2331,9 @@
         37.1
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L021",
@@ -2131,7 +2364,9 @@
         40.6
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L022",
@@ -2162,7 +2397,9 @@
         44.1
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L023",
@@ -2193,7 +2430,9 @@
         47.6
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L024",
@@ -2224,7 +2463,9 @@
         51.1
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L025",
@@ -2255,7 +2496,8 @@
         26.6
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L026",
@@ -2286,7 +2528,9 @@
         30.1
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L027",
@@ -2317,7 +2561,9 @@
         33.6
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L028",
@@ -2348,7 +2594,9 @@
         37.1
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L029",
@@ -2379,7 +2627,9 @@
         40.6
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L030",
@@ -2410,7 +2660,9 @@
         44.1
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L031",
@@ -2441,7 +2693,9 @@
         47.6
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L032",
@@ -2472,7 +2726,9 @@
         51.1
       ],
       "access": "individual-cell",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L033",
@@ -2503,7 +2759,8 @@
         24
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L034",
@@ -2534,7 +2791,8 @@
         52
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L035",
@@ -2565,7 +2823,9 @@
         42
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L036",
@@ -2596,7 +2856,9 @@
         26
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L037",
@@ -2627,7 +2889,9 @@
         25
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L038",
@@ -2658,7 +2922,9 @@
         28
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L039",
@@ -2689,7 +2955,9 @@
         38
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L040",
@@ -2720,7 +2988,9 @@
         38
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L041",
@@ -2751,7 +3021,9 @@
         36.5
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L042",
@@ -2782,7 +3054,8 @@
         22
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L043",
@@ -2813,7 +3086,9 @@
         46
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L044",
@@ -2844,7 +3119,9 @@
         46
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L045",
@@ -2875,7 +3152,8 @@
         55
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L046",
@@ -2906,7 +3184,8 @@
         56
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L047",
@@ -2932,7 +3211,8 @@
       "landing_depth_m": 1.5,
       "risers": 20,
       "construction": "Independent straight flight, full-run deck void, top bridge to cell-door gallery and both end landings.",
-      "note": "Actual stair geometry, guards and headroom remain to be built."
+      "note": "Actual stair geometry, guards and headroom remain to be built.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L048",
@@ -2958,7 +3238,9 @@
       "landing_depth_m": 1.5,
       "risers": 20,
       "construction": "Second separated gallery flight and landing; same required deck opening and guard contract.",
-      "note": "Provides alternate vertical circulation instead of a single long gallery trap."
+      "note": "Provides alternate vertical circulation instead of a single long gallery trap.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "structural_deck_and_partition"
     },
     {
       "id": "L049",
@@ -2989,7 +3271,8 @@
         24
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L050",
@@ -3020,7 +3303,8 @@
         52
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L051",
@@ -3051,7 +3335,9 @@
         42
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L052",
@@ -3082,7 +3368,9 @@
         26
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L053",
@@ -3113,7 +3401,9 @@
         25
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L054",
@@ -3144,7 +3434,9 @@
         28
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L055",
@@ -3175,7 +3467,9 @@
         38
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L056",
@@ -3206,7 +3500,9 @@
         38
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L057",
@@ -3237,7 +3533,9 @@
         36.5
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L058",
@@ -3268,7 +3566,8 @@
         22
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L059",
@@ -3299,7 +3598,9 @@
         46
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L060",
@@ -3330,7 +3631,9 @@
         46
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L061",
@@ -3361,7 +3664,8 @@
         55
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L062",
@@ -3392,7 +3696,8 @@
         56
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L063",
@@ -3418,7 +3723,8 @@
       "landing_depth_m": 1.5,
       "risers": 20,
       "construction": "Independent straight flight, full-run deck void, top bridge to cell-door gallery and both end landings.",
-      "note": "Actual stair geometry, guards and headroom remain to be built."
+      "note": "Actual stair geometry, guards and headroom remain to be built.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L064",
@@ -3444,7 +3750,9 @@
       "landing_depth_m": 1.5,
       "risers": 20,
       "construction": "Second separated gallery flight and landing; same required deck opening and guard contract.",
-      "note": "Provides alternate vertical circulation instead of a single long gallery trap."
+      "note": "Provides alternate vertical circulation instead of a single long gallery trap.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "structural_deck_and_partition"
     },
     {
       "id": "L065",
@@ -3475,7 +3783,8 @@
         68
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L066",
@@ -3506,7 +3815,8 @@
         68
       ],
       "access": "public",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L067",
@@ -3537,7 +3847,8 @@
         62
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L068",
@@ -3568,7 +3879,8 @@
         65
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L069",
@@ -3599,7 +3911,9 @@
         68
       ],
       "access": "public",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L070",
@@ -3630,7 +3944,9 @@
         60
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L071",
@@ -3661,7 +3977,9 @@
         60
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L072",
@@ -3692,7 +4010,9 @@
         61
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L073",
@@ -3723,7 +4043,8 @@
         58
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L074",
@@ -3754,7 +4075,8 @@
         61
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L075",
@@ -3785,7 +4107,9 @@
         64
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L076",
@@ -3816,7 +4140,9 @@
         64
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L077",
@@ -3847,7 +4173,8 @@
         61
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L078",
@@ -3878,7 +4205,8 @@
         58
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L079",
@@ -3909,7 +4237,9 @@
         58
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L080",
@@ -3940,7 +4270,8 @@
         58
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L081",
@@ -3971,7 +4302,9 @@
         42
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L082",
@@ -4002,7 +4335,9 @@
         42
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L083",
@@ -4033,7 +4368,8 @@
         22
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L084",
@@ -4064,7 +4400,8 @@
         28
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L085",
@@ -4095,7 +4432,8 @@
         22
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L086",
@@ -4126,7 +4464,9 @@
         68
       ],
       "access": "public",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L087",
@@ -4157,7 +4497,9 @@
         60
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L088",
@@ -4188,7 +4530,8 @@
         34
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L089",
@@ -4219,7 +4562,8 @@
         19
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L090",
@@ -4250,7 +4594,9 @@
         17
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L091",
@@ -4281,7 +4627,8 @@
         20.25
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L092",
@@ -4312,7 +4659,9 @@
         24.75
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L093",
@@ -4343,7 +4692,9 @@
         18
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L094",
@@ -4374,7 +4725,8 @@
         30.5
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L095",
@@ -4405,7 +4757,8 @@
         16
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L096",
@@ -4436,7 +4789,9 @@
         8
       ],
       "access": "service",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L097",
@@ -4467,7 +4822,9 @@
         12
       ],
       "access": "service",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L098",
@@ -4498,7 +4855,9 @@
         12
       ],
       "access": "service",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L099",
@@ -4529,7 +4888,9 @@
         4
       ],
       "access": "service",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L100",
@@ -4560,7 +4921,8 @@
         16
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L101",
@@ -4591,7 +4953,9 @@
         7
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L102",
@@ -4622,7 +4986,9 @@
         7
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L103",
@@ -4653,7 +5019,8 @@
         13
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L104",
@@ -4684,7 +5051,8 @@
         13
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L105",
@@ -4715,7 +5083,8 @@
         31
       ],
       "access": "service",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L106",
@@ -4746,7 +5115,9 @@
         34
       ],
       "access": "service",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L107",
@@ -4777,7 +5148,9 @@
         68
       ],
       "access": "service",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L108",
@@ -4808,7 +5181,9 @@
         4
       ],
       "access": "service",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L109",
@@ -4839,7 +5214,9 @@
         4
       ],
       "access": "service",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L110",
@@ -4870,7 +5247,9 @@
         58
       ],
       "access": "service",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L111",
@@ -4901,7 +5280,8 @@
         78
       ],
       "access": "custody",
-      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior."
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L112",
@@ -4927,7 +5307,8 @@
       "landing_depth_m": 1.5,
       "risers": 18,
       "construction": "Independent service stair with saved editor world hole and matching ground deck void.",
-      "note": "Do not allow the yard terrain or a backdrop sheet to cap the plant."
+      "note": "Do not allow the yard terrain or a backdrop sheet to cap the plant.",
+      "player_access": "OPEN_ROUTE"
     }
   ],
   "capacity": "32 single cells across two wings and two floors, plus two isolation places; 34 prisoners maximum in the proposed normal-use program.",
@@ -5967,5 +6348,381 @@
     "Construct the six shared shower bays, floor drains and two isolation sanitary bays in actual geometry.",
     "Author booth glazing, security release mechanisms, roof structure, cell windows, services and exact guard/deck voids.",
     "Complete native terrain holes, actual van/capsule stair routes, hunt/ritual tests, networking and runtime/native/GPU/human acceptance."
-  ]
+  ],
+  "search_envelope": {
+    "status": "DESIGN_ONLY_SEALS_NOT_RUNTIME_IMPLEMENTED",
+    "maximum": 40,
+    "accessible_spaces": 37,
+    "sealed_context_spaces": 61,
+    "count_rule": "Every OPEN_SEARCH space counts, including corridors, stairs, service rooms, exterior sectors and staging. Stable fifteen gameplay owners are not the room budget.",
+    "barriers": [
+      {
+        "link": "L002",
+        "a": "a-lower-cell-02",
+        "b": "a-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L003",
+        "a": "a-lower-cell-03",
+        "b": "a-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L004",
+        "a": "a-lower-cell-04",
+        "b": "a-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L005",
+        "a": "a-lower-cell-05",
+        "b": "a-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L006",
+        "a": "a-lower-cell-06",
+        "b": "a-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L007",
+        "a": "a-lower-cell-07",
+        "b": "a-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L008",
+        "a": "a-lower-cell-08",
+        "b": "a-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L010",
+        "a": "a-upper-cell-02",
+        "b": "a-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L011",
+        "a": "a-upper-cell-03",
+        "b": "a-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L012",
+        "a": "a-upper-cell-04",
+        "b": "a-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L013",
+        "a": "a-upper-cell-05",
+        "b": "a-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L014",
+        "a": "a-upper-cell-06",
+        "b": "a-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L015",
+        "a": "a-upper-cell-07",
+        "b": "a-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L016",
+        "a": "a-upper-cell-08",
+        "b": "a-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L018",
+        "a": "b-lower-cell-02",
+        "b": "b-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L019",
+        "a": "b-lower-cell-03",
+        "b": "b-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L020",
+        "a": "b-lower-cell-04",
+        "b": "b-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L021",
+        "a": "b-lower-cell-05",
+        "b": "b-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L022",
+        "a": "b-lower-cell-06",
+        "b": "b-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L023",
+        "a": "b-lower-cell-07",
+        "b": "b-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L024",
+        "a": "b-lower-cell-08",
+        "b": "b-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L026",
+        "a": "b-upper-cell-02",
+        "b": "b-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L027",
+        "a": "b-upper-cell-03",
+        "b": "b-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L028",
+        "a": "b-upper-cell-04",
+        "b": "b-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L029",
+        "a": "b-upper-cell-05",
+        "b": "b-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L030",
+        "a": "b-upper-cell-06",
+        "b": "b-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L031",
+        "a": "b-upper-cell-07",
+        "b": "b-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L032",
+        "a": "b-upper-cell-08",
+        "b": "b-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L035",
+        "a": "a-lower-gallery",
+        "b": "a-dayhall",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L036",
+        "a": "a-lower-gallery",
+        "b": "a-change",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L041",
+        "a": "a-upper-rear-stair",
+        "b": "a-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L043",
+        "a": "a-dayhall",
+        "b": "a-stair",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L051",
+        "a": "b-lower-gallery",
+        "b": "b-dayhall",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L052",
+        "a": "b-lower-gallery",
+        "b": "b-change",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L057",
+        "a": "b-upper-rear-stair",
+        "b": "b-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L059",
+        "a": "b-dayhall",
+        "b": "b-stair",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L069",
+        "a": "entry",
+        "b": "public-wc",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L070",
+        "a": "intake",
+        "b": "holding",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L072",
+        "a": "search",
+        "b": "sally",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L075",
+        "a": "guard",
+        "b": "staff",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L076",
+        "a": "guard",
+        "b": "staff-wc",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L079",
+        "a": "guard",
+        "b": "b-front-aisle",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L081",
+        "a": "a-dayhall",
+        "b": "yard",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L082",
+        "a": "b-dayhall",
+        "b": "yard",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L086",
+        "a": "entry",
+        "b": "visitors",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L087",
+        "a": "intake",
+        "b": "visitor-custody",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L090",
+        "a": "isolation-link",
+        "b": "observation",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L092",
+        "a": "isolation-link",
+        "b": "isolation-cell-2",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L096",
+        "a": "dining",
+        "b": "kitchen",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L101",
+        "a": "medical-link",
+        "b": "exam",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L106",
+        "a": "plant",
+        "b": "laundry",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L107",
+        "a": "entry",
+        "b": "east-service",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      }
+    ],
+    "gameplay_rule": "Evidence, ghost spawn/anchor, hiding, switches/tasks, ritual sites, loose objective props and required travel belong only to the connected open envelope. Context windows may show rooms, but no interaction or required search crosses the seal.",
+    "context_rule": "Retain coherent historical rooms/assets behind permanent boundaries. Restrict whole wings to their hallways where useful; do not count shuttable ordinary doors as permanent seals.",
+    "next_gate": "Build actual permanent seals and audit runtime player/ghost/object/optical boundaries and all objective placements; construct the maps inside the forty-space cap. Round-duration testing is outside this rebuild task."
+  }
 }

@@ -23,7 +23,9 @@
       "height": 3.6,
       "owner": 0,
       "kind": "circulation",
-      "purpose": "Entrance vestibule and guest orientation"
+      "purpose": "Entrance vestibule and guest orientation",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "visitor-wc",
@@ -38,7 +40,9 @@
       "height": 3.6,
       "owner": 0,
       "kind": "inside",
-      "purpose": "Visitor WC outside private residence"
+      "purpose": "Visitor WC outside private residence",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "coats",
@@ -53,7 +57,9 @@
       "height": 3.6,
       "owner": 0,
       "kind": "inside",
-      "purpose": "Guest coats and event cloakroom"
+      "purpose": "Guest coats and event cloakroom",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "hall",
@@ -68,7 +74,9 @@
       "height": 3.6,
       "owner": 0,
       "kind": "circulation",
-      "purpose": "Formal reception and stair approach"
+      "purpose": "Formal reception and stair approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "grand-stair",
@@ -83,7 +91,9 @@
       "height": 3.6,
       "owner": 0,
       "kind": "circulation",
-      "purpose": "Grand stair with clear lower landing"
+      "purpose": "Grand stair with clear lower landing",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "library",
@@ -98,7 +108,9 @@
       "height": 3.6,
       "owner": 1,
       "kind": "inside",
-      "purpose": "Library shelves and reading tables"
+      "purpose": "Library shelves and reading tables",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "drawing",
@@ -113,7 +125,9 @@
       "height": 3.6,
       "owner": 5,
       "kind": "inside",
-      "purpose": "Drawing room seated reception"
+      "purpose": "Drawing room seated reception",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "dining",
@@ -128,7 +142,9 @@
       "height": 3.6,
       "owner": 2,
       "kind": "inside",
-      "purpose": "Twelve-place formal dining"
+      "purpose": "Twelve-place formal dining",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "morning",
@@ -143,7 +159,9 @@
       "height": 3.6,
       "owner": 6,
       "kind": "inside",
-      "purpose": "Morning room and household breakfast"
+      "purpose": "Morning room and household breakfast",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "ballroom",
@@ -158,7 +176,9 @@
       "height": 7.2,
       "owner": 4,
       "kind": "inside",
-      "purpose": "Clear-span ballroom without upper deck"
+      "purpose": "Clear-span ballroom without upper deck",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "service-pass",
@@ -173,7 +193,9 @@
       "height": 3.6,
       "owner": 3,
       "kind": "circulation",
-      "purpose": "Dining serving passage"
+      "purpose": "Dining serving passage",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "kitchen",
@@ -188,7 +210,9 @@
       "height": 3.6,
       "owner": 3,
       "kind": "inside",
-      "purpose": "Cooking and preparation with separate wash-up"
+      "purpose": "Cooking and preparation with separate wash-up",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "scullery",
@@ -203,7 +227,9 @@
       "height": 3.6,
       "owner": 3,
       "kind": "inside",
-      "purpose": "Dirty return and utensil washing"
+      "purpose": "Dirty return and utensil washing",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "pantry",
@@ -218,7 +244,9 @@
       "height": 3.6,
       "owner": 3,
       "kind": "inside",
-      "purpose": "Dry provisions and preparation pantry"
+      "purpose": "Dry provisions and preparation pantry",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "cold-store",
@@ -233,7 +261,9 @@
       "height": 3.6,
       "owner": 3,
       "kind": "inside",
-      "purpose": "Cold storage and dairy work"
+      "purpose": "Cold storage and dairy work",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "service",
@@ -248,7 +278,9 @@
       "height": 3.6,
       "owner": 9,
       "kind": "circulation",
-      "purpose": "Rear household service distribution"
+      "purpose": "Rear household service distribution",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "receiving",
@@ -263,7 +295,9 @@
       "height": 3.6,
       "owner": 3,
       "kind": "inside",
-      "purpose": "Delivery inspection and unpacking"
+      "purpose": "Delivery inspection and unpacking",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "refuse",
@@ -278,7 +312,9 @@
       "height": 3.6,
       "owner": 3,
       "kind": "inside",
-      "purpose": "Enclosed waste awaiting service collection"
+      "purpose": "Enclosed waste awaiting service collection",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "service-stair",
@@ -293,7 +329,9 @@
       "height": 3.6,
       "owner": 9,
       "kind": "circulation",
-      "purpose": "Independent household service stair"
+      "purpose": "Independent household service stair",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "gallery",
@@ -308,7 +346,9 @@
       "height": 3.6,
       "owner": 7,
       "kind": "circulation",
-      "purpose": "Upper formal gallery and stair landing"
+      "purpose": "Upper formal gallery and stair landing",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "suite-entry",
@@ -323,7 +363,9 @@
       "height": 3.6,
       "owner": 8,
       "kind": "circulation",
-      "purpose": "Private suite entrance and sitting lobby"
+      "purpose": "Private suite entrance and sitting lobby",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "suite-bed",
@@ -338,7 +380,9 @@
       "height": 3.6,
       "owner": 8,
       "kind": "inside",
-      "purpose": "Principal bedroom"
+      "purpose": "Principal bedroom",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "suite-dress",
@@ -353,7 +397,9 @@
       "height": 3.6,
       "owner": 8,
       "kind": "inside",
-      "purpose": "Principal dressing room"
+      "purpose": "Principal dressing room",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "suite-bath",
@@ -368,7 +414,9 @@
       "height": 3.6,
       "owner": 8,
       "kind": "inside",
-      "purpose": "Principal private bath and WC"
+      "purpose": "Principal private bath and WC",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "guest-a",
@@ -383,7 +431,9 @@
       "height": 3.6,
       "owner": 7,
       "kind": "inside",
-      "purpose": "Guest bedroom A"
+      "purpose": "Guest bedroom A",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "guest-a-entry",
@@ -398,7 +448,9 @@
       "height": 3.6,
       "owner": 7,
       "kind": "circulation",
-      "purpose": "Guest A private entry"
+      "purpose": "Guest A private entry",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "guest-a-bath",
@@ -413,7 +465,9 @@
       "height": 3.6,
       "owner": 7,
       "kind": "inside",
-      "purpose": "Guest A private washing and WC"
+      "purpose": "Guest A private washing and WC",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "guest-b",
@@ -428,7 +482,9 @@
       "height": 3.6,
       "owner": 7,
       "kind": "inside",
-      "purpose": "Guest bedroom B"
+      "purpose": "Guest bedroom B",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "guest-b-entry",
@@ -443,7 +499,9 @@
       "height": 3.6,
       "owner": 7,
       "kind": "circulation",
-      "purpose": "Guest B private entry"
+      "purpose": "Guest B private entry",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "guest-b-bath",
@@ -458,7 +516,9 @@
       "height": 3.6,
       "owner": 7,
       "kind": "inside",
-      "purpose": "Guest B private washing and WC"
+      "purpose": "Guest B private washing and WC",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "upper-service-link",
@@ -473,7 +533,9 @@
       "height": 3.6,
       "owner": 9,
       "kind": "circulation",
-      "purpose": "Controlled formal-to-service threshold"
+      "purpose": "Controlled formal-to-service threshold",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "staff-corridor",
@@ -488,7 +550,9 @@
       "height": 3.6,
       "owner": 9,
       "kind": "circulation",
-      "purpose": "Staff sleeping access"
+      "purpose": "Staff sleeping access",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "staff-a",
@@ -503,7 +567,9 @@
       "height": 3.6,
       "owner": 9,
       "kind": "inside",
-      "purpose": "Two staff beds and personal storage A"
+      "purpose": "Two staff beds and personal storage A",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "staff-b",
@@ -518,7 +584,9 @@
       "height": 3.6,
       "owner": 9,
       "kind": "inside",
-      "purpose": "Two staff beds and personal storage B"
+      "purpose": "Two staff beds and personal storage B",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "staff-bath",
@@ -533,7 +601,9 @@
       "height": 3.6,
       "owner": 9,
       "kind": "inside",
-      "purpose": "Staff washing and separate WC bays"
+      "purpose": "Staff washing and separate WC bays",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
     },
     {
       "id": "linen",
@@ -548,7 +618,9 @@
       "height": 3.6,
       "owner": 9,
       "kind": "inside",
-      "purpose": "Clean linen and household supplies"
+      "purpose": "Clean linen and household supplies",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "upper-service",
@@ -563,7 +635,9 @@
       "height": 3.6,
       "owner": 9,
       "kind": "circulation",
-      "purpose": "Upper service passage"
+      "purpose": "Upper service passage",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "upper-service-stair",
@@ -578,7 +652,9 @@
       "height": 3.6,
       "owner": 9,
       "kind": "circulation",
-      "purpose": "Service stair upper landing"
+      "purpose": "Service stair upper landing",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "attic-stair",
@@ -593,7 +669,9 @@
       "height": 3,
       "owner": 10,
       "kind": "circulation",
-      "purpose": "Attic stair and guarded landing"
+      "purpose": "Attic stair and guarded landing",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "attic-passage",
@@ -608,7 +686,9 @@
       "height": 3,
       "owner": 10,
       "kind": "circulation",
-      "purpose": "Attic distribution under roof"
+      "purpose": "Attic distribution under roof",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "archive",
@@ -623,7 +703,9 @@
       "height": 3,
       "owner": 10,
       "kind": "inside",
-      "purpose": "Estate archive: dry papers and shelving"
+      "purpose": "Estate archive: dry papers and shelving",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "attic-store",
@@ -638,7 +720,9 @@
       "height": 3,
       "owner": 10,
       "kind": "inside",
-      "purpose": "Disused furniture and clear ritual bay"
+      "purpose": "Disused furniture and clear ritual bay",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "cellar-stair",
@@ -653,7 +737,9 @@
       "height": 3,
       "owner": 11,
       "kind": "circulation",
-      "purpose": "Cellar service stair"
+      "purpose": "Cellar service stair",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "cellar-pass",
@@ -668,7 +754,9 @@
       "height": 3,
       "owner": 11,
       "kind": "circulation",
-      "purpose": "Cellar service distribution"
+      "purpose": "Cellar service distribution",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "plant",
@@ -683,7 +771,9 @@
       "height": 3,
       "owner": 11,
       "kind": "inside",
-      "purpose": "Heat hot water and electrical maintenance"
+      "purpose": "Heat hot water and electrical maintenance",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "cellar-provisions",
@@ -698,7 +788,9 @@
       "height": 3,
       "owner": 11,
       "kind": "inside",
-      "purpose": "Cool provisions separate from plant"
+      "purpose": "Cool provisions separate from plant",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "wine",
@@ -713,7 +805,9 @@
       "height": 3,
       "owner": 11,
       "kind": "inside",
-      "purpose": "Wine racks and retrieval aisle"
+      "purpose": "Wine racks and retrieval aisle",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "garden",
@@ -728,7 +822,9 @@
       "height": 12,
       "owner": 12,
       "kind": "outside",
-      "purpose": "Estate garden envelope: terrain not accepted"
+      "purpose": "Estate garden envelope: terrain not accepted",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "entry",
@@ -743,7 +839,9 @@
       "height": 12,
       "owner": 13,
       "kind": "outside",
-      "purpose": "Entrance terrace and carriage approach"
+      "purpose": "Entrance terrace and carriage approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "stage",
@@ -758,7 +856,9 @@
       "height": 3,
       "owner": 14,
       "kind": "staging",
-      "purpose": "Canonical van unloading reservation"
+      "purpose": "Canonical van unloading reservation",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     }
   ],
   "links": [
@@ -791,7 +891,8 @@
         65
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L02",
@@ -822,7 +923,8 @@
         50
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L03",
@@ -853,7 +955,9 @@
         45.5
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L04",
@@ -884,7 +988,9 @@
         48.5
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L05",
@@ -915,7 +1021,8 @@
         44
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L06",
@@ -946,7 +1053,8 @@
         36
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L07",
@@ -977,7 +1085,8 @@
         40
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L08",
@@ -1008,7 +1117,8 @@
         30
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L09",
@@ -1039,7 +1149,8 @@
         36
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L10",
@@ -1070,7 +1181,8 @@
         39
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L11",
@@ -1101,7 +1213,8 @@
         43
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L12",
@@ -1132,7 +1245,8 @@
         42
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L13",
@@ -1163,7 +1277,8 @@
         37
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L14",
@@ -1194,7 +1309,8 @@
         46
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L15",
@@ -1225,7 +1341,8 @@
         32
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L16",
@@ -1256,7 +1373,8 @@
         28
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L17",
@@ -1287,7 +1405,8 @@
         28
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L18",
@@ -1318,7 +1437,8 @@
         24
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L19",
@@ -1349,7 +1469,9 @@
         20
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L20",
@@ -1380,7 +1502,9 @@
         20
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L21",
@@ -1411,7 +1535,8 @@
         24
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L22",
@@ -1442,7 +1567,8 @@
         29
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L23",
@@ -1473,7 +1599,8 @@
         14
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L24",
@@ -1504,7 +1631,8 @@
         23
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L25",
@@ -1535,7 +1663,9 @@
         23
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L26",
@@ -1566,7 +1696,8 @@
         20
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L27",
@@ -1597,7 +1728,9 @@
         23
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L28",
@@ -1628,7 +1761,8 @@
         2
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L29",
@@ -1659,7 +1793,8 @@
         30
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L30",
@@ -1690,7 +1825,8 @@
         40
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L31",
@@ -1721,7 +1857,8 @@
         50
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L32",
@@ -1752,7 +1889,8 @@
         38
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L33",
@@ -1783,7 +1921,8 @@
         40
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L34",
@@ -1814,7 +1953,8 @@
         40
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L35",
@@ -1845,7 +1985,9 @@
         46
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L36",
@@ -1876,7 +2018,8 @@
         28.5
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L37",
@@ -1907,7 +2050,8 @@
         28.5
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L38",
@@ -1938,7 +2082,9 @@
         27
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L39",
@@ -1969,7 +2115,9 @@
         34.5
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L40",
@@ -2000,7 +2148,9 @@
         34.5
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L41",
@@ -2031,7 +2181,9 @@
         33
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L42",
@@ -2062,7 +2214,8 @@
         30
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L43",
@@ -2093,7 +2246,8 @@
         26
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L44",
@@ -2124,7 +2278,8 @@
         24
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L45",
@@ -2155,7 +2310,9 @@
         24
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
     },
     {
       "id": "L46",
@@ -2186,7 +2343,8 @@
         20
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L47",
@@ -2217,7 +2375,8 @@
         20
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L48",
@@ -2248,7 +2407,8 @@
         22
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L49",
@@ -2279,7 +2439,8 @@
         29
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L50",
@@ -2310,7 +2471,8 @@
         14
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L51",
@@ -2341,7 +2503,8 @@
         14
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L52",
@@ -2372,7 +2535,8 @@
         18
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L53",
@@ -2403,7 +2567,8 @@
         25
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L54",
@@ -2434,7 +2599,8 @@
         14
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L55",
@@ -2465,7 +2631,8 @@
         17
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L56",
@@ -2496,7 +2663,8 @@
         24
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L57",
@@ -2527,7 +2695,8 @@
         20
       ],
       "access": "household",
-      "note": "Proposed physical threshold; diagram lines do not establish navigation."
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L58",
@@ -2553,7 +2722,8 @@
       "landing_depth_m": 1.5,
       "risers": 20,
       "construction": "Separate flights stacked with full-run deck voids, real structure depth and continuous guards; landings remain clear.",
-      "note": "Measured reservation only; physical capsule/headroom and underside tests remain required."
+      "note": "Measured reservation only; physical capsule/headroom and underside tests remain required.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L59",
@@ -2579,7 +2749,8 @@
       "landing_depth_m": 1.5,
       "risers": 18,
       "construction": "Separate flights stacked with full-run deck voids, real structure depth and continuous guards; landings remain clear.",
-      "note": "Measured reservation only; physical capsule/headroom and underside tests remain required."
+      "note": "Measured reservation only; physical capsule/headroom and underside tests remain required.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L60",
@@ -2605,7 +2776,8 @@
       "landing_depth_m": 1.5,
       "risers": 20,
       "construction": "Separate flights stacked with full-run deck voids, real structure depth and continuous guards; landings remain clear.",
-      "note": "Measured reservation only; physical capsule/headroom and underside tests remain required."
+      "note": "Measured reservation only; physical capsule/headroom and underside tests remain required.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L61",
@@ -2631,7 +2803,8 @@
       "landing_depth_m": 1.5,
       "risers": 20,
       "construction": "Separate flights stacked with full-run deck voids, real structure depth and continuous guards; landings remain clear.",
-      "note": "Measured reservation only; physical capsule/headroom and underside tests remain required."
+      "note": "Measured reservation only; physical capsule/headroom and underside tests remain required.",
+      "player_access": "OPEN_ROUTE"
     }
   ],
   "capacity": "Principal pair, two guest bedrooms for up to four guests, four staff beds; twelve-place formal dining.",
@@ -2861,5 +3034,87 @@
     "Separate electrical/hot-water plant from food and paper stores with actual enclosure and maintenance access.",
     "Punch saved editor world terrain beneath the complete cellar; test render/body/optical/object passage with filled-ground negatives.",
     "Build terrain and garden around play instead of rectangular pads; prove native/runtime parity, van routes, hunts, rituals, networking and hardware performance."
-  ]
+  ],
+  "search_envelope": {
+    "status": "DESIGN_ONLY_SEALS_NOT_RUNTIME_IMPLEMENTED",
+    "maximum": 40,
+    "accessible_spaces": 39,
+    "sealed_context_spaces": 11,
+    "count_rule": "Every OPEN_SEARCH space counts, including corridors, stairs, service rooms, exterior sectors and staging. Stable fifteen gameplay owners are not the room budget.",
+    "barriers": [
+      {
+        "link": "L03",
+        "a": "foyer",
+        "b": "visitor-wc",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L04",
+        "a": "foyer",
+        "b": "coats",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L19",
+        "a": "kitchen",
+        "b": "pantry",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L20",
+        "a": "scullery",
+        "b": "cold-store",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L25",
+        "a": "receiving",
+        "b": "refuse",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L27",
+        "a": "refuse",
+        "b": "garden",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L35",
+        "a": "suite-dress",
+        "b": "suite-bath",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L38",
+        "a": "guest-a-entry",
+        "b": "guest-a-bath",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L39",
+        "a": "gallery",
+        "b": "guest-b-entry",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L45",
+        "a": "staff-corridor",
+        "b": "staff-bath",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      }
+    ],
+    "gameplay_rule": "Evidence, ghost spawn/anchor, hiding, switches/tasks, ritual sites, loose objective props and required travel belong only to the connected open envelope. Context windows may show rooms, but no interaction or required search crosses the seal.",
+    "context_rule": "Retain coherent historical rooms/assets behind permanent boundaries. Restrict whole wings to their hallways where useful; do not count shuttable ordinary doors as permanent seals.",
+    "next_gate": "Build actual permanent seals and audit runtime player/ghost/object/optical boundaries and all objective placements; construct the maps inside the forty-space cap. Round-duration testing is outside this rebuild task."
+  }
 }

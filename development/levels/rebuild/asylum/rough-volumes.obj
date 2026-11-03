@@ -1,4 +1,5 @@
 # ROUGH SPACE VOLUMES ONLY; NOT A WALKABLE LEVEL. Units: metres; Y up.
+# player_access: OPEN_SEARCH
 o ground-north-a
 v 10 0 12
 v 16 0 12
@@ -14,6 +15,7 @@ f 1 2 6 5
 f 2 3 7 6
 f 3 4 8 7
 f 4 1 5 8
+# player_access: SEALED_CONTEXT
 o ground-north-b
 v 16 0 12
 v 22 0 12
@@ -29,6 +31,7 @@ f 9 10 14 13
 f 10 11 15 14
 f 11 12 16 15
 f 12 9 13 16
+# player_access: OPEN_SEARCH
 o ground-south-a
 v 10 0 22
 v 16 0 22
@@ -44,6 +47,7 @@ f 17 18 22 21
 f 18 19 23 22
 f 19 20 24 23
 f 20 17 21 24
+# player_access: SEALED_CONTEXT
 o ground-south-b
 v 16 0 22
 v 22 0 22
@@ -59,6 +63,7 @@ f 25 26 30 29
 f 26 27 31 30
 f 27 28 32 31
 f 28 25 29 32
+# player_access: OPEN_SEARCH
 o ground-ward-link
 v 10 0 19
 v 26 0 19
@@ -74,6 +79,7 @@ f 33 34 38 37
 f 34 35 39 38
 f 35 36 40 39
 f 36 33 37 40
+# player_access: OPEN_SEARCH
 o ground-observation
 v 22 0 12
 v 26 0 12
@@ -89,6 +95,7 @@ f 41 42 46 45
 f 42 43 47 46
 f 43 44 48 47
 f 44 41 45 48
+# player_access: SEALED_CONTEXT
 o ground-linen
 v 22 0 16
 v 26 0 16
@@ -104,6 +111,7 @@ f 49 50 54 53
 f 50 51 55 54
 f 51 52 56 55
 f 52 49 53 56
+# player_access: OPEN_SEARCH
 o ground-wc
 v 22 0 22
 v 26 0 22
@@ -119,6 +127,7 @@ f 57 58 62 61
 f 58 59 63 62
 f 59 60 64 63
 f 60 57 61 64
+# player_access: SEALED_CONTEXT
 o ground-wash
 v 22 0 25.5
 v 26 0 25.5
@@ -134,6 +143,7 @@ f 65 66 70 69
 f 66 67 71 70
 f 67 68 72 71
 f 68 65 69 72
+# player_access: OPEN_SEARCH
 o upper-north-a
 v 10 3.4 12
 v 16 3.4 12
@@ -149,6 +159,7 @@ f 73 74 78 77
 f 74 75 79 78
 f 75 76 80 79
 f 76 73 77 80
+# player_access: SEALED_CONTEXT
 o upper-north-b
 v 16 3.4 12
 v 22 3.4 12
@@ -164,6 +175,7 @@ f 81 82 86 85
 f 82 83 87 86
 f 83 84 88 87
 f 84 81 85 88
+# player_access: OPEN_SEARCH
 o upper-south-a
 v 10 3.4 22
 v 16 3.4 22
@@ -179,6 +191,7 @@ f 89 90 94 93
 f 90 91 95 94
 f 91 92 96 95
 f 92 89 93 96
+# player_access: SEALED_CONTEXT
 o upper-south-b
 v 16 3.4 22
 v 22 3.4 22
@@ -194,6 +207,7 @@ f 97 98 102 101
 f 98 99 103 102
 f 99 100 104 103
 f 100 97 101 104
+# player_access: OPEN_SEARCH
 o upper-ward-link
 v 10 3.4 19
 v 26 3.4 19
@@ -209,6 +223,7 @@ f 105 106 110 109
 f 106 107 111 110
 f 107 108 112 111
 f 108 105 109 112
+# player_access: SEALED_CONTEXT
 o upper-observation
 v 22 3.4 12
 v 26 3.4 12
@@ -224,6 +239,7 @@ f 113 114 118 117
 f 114 115 119 118
 f 115 116 120 119
 f 116 113 117 120
+# player_access: SEALED_CONTEXT
 o upper-linen
 v 22 3.4 16
 v 26 3.4 16
@@ -239,6 +255,7 @@ f 121 122 126 125
 f 122 123 127 126
 f 123 124 128 127
 f 124 121 125 128
+# player_access: OPEN_SEARCH
 o upper-wc
 v 22 3.4 22
 v 26 3.4 22
@@ -254,6 +271,7 @@ f 129 130 134 133
 f 130 131 135 134
 f 131 132 136 135
 f 132 129 133 136
+# player_access: SEALED_CONTEXT
 o upper-wash
 v 22 3.4 25.5
 v 26 3.4 25.5
@@ -269,6 +287,7 @@ f 137 138 142 141
 f 138 139 143 142
 f 139 140 144 143
 f 140 137 141 144
+# player_access: OPEN_SEARCH
 o spine
 v 26 0 12
 v 29 0 12
@@ -284,6 +303,7 @@ f 145 146 150 149
 f 146 147 151 150
 f 147 148 152 151
 f 148 145 149 152
+# player_access: OPEN_SEARCH
 o main-stair
 v 29 0 20
 v 35 0 20
@@ -299,6 +319,7 @@ f 153 154 158 157
 f 154 155 159 158
 f 155 156 160 159
 f 156 153 157 160
+# player_access: OPEN_SEARCH
 o staff-office
 v 29 0 12
 v 35 0 12
@@ -314,6 +335,7 @@ f 161 162 166 165
 f 162 163 167 166
 f 163 164 168 167
 f 164 161 165 168
+# player_access: OPEN_SEARCH
 o service-link
 v 35 0 16
 v 54 0 16
@@ -329,6 +351,7 @@ f 169 170 174 173
 f 170 171 175 174
 f 171 172 176 175
 f 172 169 173 176
+# player_access: OPEN_SEARCH
 o admission
 v 26 0 50
 v 35 0 50
@@ -344,6 +367,7 @@ f 177 178 182 181
 f 178 179 183 182
 f 179 180 184 183
 f 180 177 181 184
+# player_access: OPEN_SEARCH
 o interview
 v 35 0 50
 v 41 0 50
@@ -359,6 +383,7 @@ f 185 186 190 189
 f 186 187 191 190
 f 187 188 192 191
 f 188 185 189 192
+# player_access: SEALED_CONTEXT
 o visitor-wc
 v 35 0 54
 v 38 0 54
@@ -374,6 +399,7 @@ f 193 194 198 197
 f 194 195 199 198
 f 195 196 200 199
 f 196 193 197 200
+# player_access: OPEN_SEARCH
 o records
 v 38 0 54
 v 44 0 54
@@ -389,6 +415,7 @@ f 201 202 206 205
 f 202 203 207 206
 f 203 204 208 207
 f 204 201 205 208
+# player_access: OPEN_SEARCH
 o day
 v 10 0 40
 v 26 0 40
@@ -404,6 +431,7 @@ f 209 210 214 213
 f 210 211 215 214
 f 211 212 216 215
 f 212 209 213 216
+# player_access: OPEN_SEARCH
 o clinical-link
 v 29 0 30
 v 35 0 30
@@ -419,6 +447,7 @@ f 217 218 222 221
 f 218 219 223 222
 f 219 220 224 223
 f 220 217 221 224
+# player_access: OPEN_SEARCH
 o treatment
 v 35 0 30
 v 45 0 30
@@ -434,6 +463,7 @@ f 225 226 230 229
 f 226 227 231 230
 f 227 228 232 231
 f 228 225 229 232
+# player_access: SEALED_CONTEXT
 o clinical-clean
 v 35 0 26
 v 40 0 26
@@ -449,6 +479,7 @@ f 233 234 238 237
 f 234 235 239 238
 f 235 236 240 239
 f 236 233 237 240
+# player_access: OPEN_SEARCH
 o clinical-soiled
 v 40 0 26
 v 45 0 26
@@ -464,6 +495,7 @@ f 241 242 246 245
 f 242 243 247 246
 f 243 244 248 247
 f 244 241 245 248
+# player_access: OPEN_SEARCH
 o clinical-service
 v 35 0 24
 v 54 0 24
@@ -479,6 +511,7 @@ f 249 250 254 253
 f 250 251 255 254
 f 251 252 256 255
 f 252 249 253 256
+# player_access: SEALED_CONTEXT
 o staff-rest
 v 35 0 20
 v 40 0 20
@@ -494,6 +527,7 @@ f 257 258 262 261
 f 258 259 263 262
 f 259 260 264 263
 f 260 257 261 264
+# player_access: SEALED_CONTEXT
 o staff-wc
 v 40 0 20
 v 45 0 20
@@ -509,6 +543,7 @@ f 265 266 270 269
 f 266 267 271 270
 f 267 268 272 271
 f 268 265 269 272
+# player_access: OPEN_SEARCH
 o hydro-change
 v 45 0 30
 v 49 0 30
@@ -524,6 +559,7 @@ f 273 274 278 277
 f 274 275 279 278
 f 275 276 280 279
 f 276 273 277 280
+# player_access: OPEN_SEARCH
 o hydro-bath
 v 49 0 30
 v 54 0 30
@@ -539,6 +575,7 @@ f 281 282 286 285
 f 282 283 287 286
 f 283 284 288 287
 f 284 281 285 288
+# player_access: OPEN_SEARCH
 o hydro-dry
 v 45 0 35
 v 49 0 35
@@ -554,6 +591,7 @@ f 289 290 294 293
 f 290 291 295 294
 f 291 292 296 295
 f 292 289 293 296
+# player_access: OPEN_SEARCH
 o dining
 v 29 0 40
 v 41 0 40
@@ -569,6 +607,7 @@ f 297 298 302 301
 f 298 299 303 302
 f 299 300 304 303
 f 300 297 301 304
+# player_access: SEALED_CONTEXT
 o kitchen
 v 41 0 44
 v 48 0 44
@@ -584,6 +623,7 @@ f 305 306 310 309
 f 306 307 311 310
 f 307 308 312 311
 f 308 305 309 312
+# player_access: SEALED_CONTEXT
 o washup
 v 48 0 44
 v 54 0 44
@@ -599,6 +639,7 @@ f 313 314 318 317
 f 314 315 319 318
 f 315 316 320 319
 f 316 313 317 320
+# player_access: SEALED_CONTEXT
 o meal-return
 v 41 0 48
 v 54 0 48
@@ -614,6 +655,7 @@ f 321 322 326 325
 f 322 323 327 326
 f 323 324 328 327
 f 324 321 325 328
+# player_access: SEALED_CONTEXT
 o food-store
 v 41 0 40
 v 48 0 40
@@ -629,6 +671,7 @@ f 329 330 334 333
 f 330 331 335 334
 f 331 332 336 335
 f 332 329 333 336
+# player_access: SEALED_CONTEXT
 o receiving
 v 48 0 40
 v 54 0 40
@@ -644,6 +687,7 @@ f 337 338 342 341
 f 338 339 343 342
 f 339 340 344 343
 f 340 337 341 344
+# player_access: OPEN_SEARCH
 o service
 v 54 0 24
 v 57 0 24
@@ -659,6 +703,7 @@ f 345 346 350 349
 f 346 347 351 350
 f 347 348 352 351
 f 348 345 349 352
+# player_access: SEALED_CONTEXT
 o refuse
 v 57 0 40
 v 61 0 40
@@ -674,6 +719,7 @@ f 353 354 358 357
 f 354 355 359 358
 f 355 356 360 359
 f 356 353 357 360
+# player_access: OPEN_SEARCH
 o service-stair
 v 54 0 12
 v 60 0 12
@@ -689,6 +735,7 @@ f 361 362 366 365
 f 362 363 367 366
 f 363 364 368 367
 f 364 361 365 368
+# player_access: OPEN_SEARCH
 o quiet-lobby
 v 45 0 12
 v 54 0 12
@@ -704,6 +751,7 @@ f 369 370 374 373
 f 370 371 375 374
 f 371 372 376 375
 f 372 369 373 376
+# player_access: OPEN_SEARCH
 o quiet
 v 45 0 4
 v 50 0 4
@@ -719,6 +767,7 @@ f 377 378 382 381
 f 378 379 383 382
 f 379 380 384 383
 f 380 377 381 384
+# player_access: SEALED_CONTEXT
 o quiet-observation
 v 50 0 4
 v 54 0 4
@@ -734,6 +783,7 @@ f 385 386 390 389
 f 386 387 391 390
 f 387 388 392 391
 f 388 385 389 392
+# player_access: SEALED_CONTEXT
 o quiet-wc
 v 45 0 0
 v 50 0 0
@@ -749,6 +799,7 @@ f 393 394 398 397
 f 394 395 399 398
 f 395 396 400 399
 f 396 393 397 400
+# player_access: OPEN_SEARCH
 o chapel
 v 10 0 2
 v 22 0 2
@@ -764,6 +815,7 @@ f 401 402 406 405
 f 402 403 407 406
 f 403 404 408 407
 f 404 401 405 408
+# player_access: SEALED_CONTEXT
 o lift
 v 22 0 31
 v 26 0 31
@@ -779,6 +831,7 @@ f 409 410 414 413
 f 410 411 415 414
 f 411 412 416 415
 f 412 409 413 416
+# player_access: OPEN_SEARCH
 o upper-spine
 v 26 3.4 12
 v 29 3.4 12
@@ -794,6 +847,7 @@ f 417 418 422 421
 f 418 419 423 422
 f 419 420 424 423
 f 420 417 421 424
+# player_access: OPEN_SEARCH
 o upper-stair
 v 29 3.4 20
 v 35 3.4 20
@@ -809,6 +863,7 @@ f 425 426 430 429
 f 426 427 431 430
 f 427 428 432 431
 f 428 425 429 432
+# player_access: SEALED_CONTEXT
 o upper-lift
 v 22 3.4 31
 v 26 3.4 31
@@ -824,6 +879,7 @@ f 433 434 438 437
 f 434 435 439 438
 f 435 436 440 439
 f 436 433 437 440
+# player_access: OPEN_SEARCH
 o cellar-stair
 v 54 -3 12
 v 60 -3 12
@@ -839,6 +895,7 @@ f 441 442 446 445
 f 442 443 447 446
 f 443 444 448 447
 f 444 441 445 448
+# player_access: OPEN_SEARCH
 o cellar-service
 v 54 -3 24
 v 57 -3 24
@@ -854,6 +911,7 @@ f 449 450 454 453
 f 450 451 455 454
 f 451 452 456 455
 f 452 449 453 456
+# player_access: OPEN_SEARCH
 o cellar-cross
 v 35 -3 36
 v 54 -3 36
@@ -869,6 +927,7 @@ f 457 458 462 461
 f 458 459 463 462
 f 459 460 464 463
 f 460 457 461 464
+# player_access: OPEN_SEARCH
 o plant
 v 35 -3 24
 v 45 -3 24
@@ -884,6 +943,7 @@ f 465 466 470 469
 f 466 467 471 470
 f 467 468 472 471
 f 468 465 469 472
+# player_access: SEALED_CONTEXT
 o maintenance
 v 45 -3 24
 v 54 -3 24
@@ -899,6 +959,7 @@ f 473 474 478 477
 f 474 475 479 478
 f 475 476 480 479
 f 476 473 477 480
+# player_access: SEALED_CONTEXT
 o dirty-laundry
 v 35 -3 40
 v 39 -3 40
@@ -914,6 +975,7 @@ f 481 482 486 485
 f 482 483 487 486
 f 483 484 488 487
 f 484 481 485 488
+# player_access: SEALED_CONTEXT
 o clean-laundry
 v 39 -3 40
 v 43 -3 40
@@ -929,6 +991,7 @@ f 489 490 494 493
 f 490 491 495 494
 f 491 492 496 495
 f 492 489 493 496
+# player_access: SEALED_CONTEXT
 o clean-store
 v 43 -3 40
 v 54 -3 40
@@ -944,6 +1007,7 @@ f 497 498 502 501
 f 498 499 503 502
 f 499 500 504 503
 f 500 497 501 504
+# player_access: OPEN_SEARCH
 o court
 v 10 0 29
 v 26 0 29
@@ -959,6 +1023,7 @@ f 505 506 510 509
 f 506 507 511 510
 f 507 508 512 511
 f 508 505 509 512
+# player_access: OPEN_SEARCH
 o grounds
 v 4 0 0
 v 64 0 0
@@ -974,6 +1039,7 @@ f 513 514 518 517
 f 514 515 519 518
 f 515 516 520 519
 f 516 513 517 520
+# player_access: OPEN_SEARCH
 o entry
 v 4 0 58
 v 64 0 58
@@ -989,6 +1055,7 @@ f 521 522 526 525
 f 522 523 527 526
 f 523 524 528 527
 f 524 521 525 528
+# player_access: OPEN_SEARCH
 o stage
 v 24 0 70
 v 40 0 70

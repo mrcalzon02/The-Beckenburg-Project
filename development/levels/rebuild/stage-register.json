@@ -156,10 +156,12 @@
             "development/levels/rebuild/academy/rough-asset-bounds.json",
             "development/levels/rebuild/academy/rough-decisions.md",
             "development/levels/rebuild/academy/rough-render-verification.json",
-            "development/levels/rebuild/previews/academy-revised-rough-plan.png"
+            "development/levels/rebuild/previews/academy-revised-rough-plan.png",
+            "development/levels/rebuild/academy/search-envelope.json",
+            "development/levels/rebuild/academy/search-layout.json"
           ],
           "defects": [],
-          "next_action": "Finish reference/support/privacy/accessibility review in full roster rough batch; construct real cloister/residence/teaching/service geometry, independent upper return stairs and persisted editor archive holes. Generic runtime remains unaccepted."
+          "next_action": "Finish reference/support/privacy/accessibility review in full roster rough batch; construct real cloister/residence/teaching/service geometry, independent upper return stairs and persisted editor archive holes. Generic runtime remains unaccepted. Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -275,10 +277,12 @@
             "development/levels/rebuild/asylum/rough-asset-bounds.json",
             "development/levels/rebuild/asylum/rough-decisions.md",
             "development/levels/rebuild/asylum/rough-render-verification.json",
-            "development/levels/rebuild/previews/asylum-revised-rough-plan.png"
+            "development/levels/rebuild/previews/asylum-revised-rough-plan.png",
+            "development/levels/rebuild/asylum/search-envelope.json",
+            "development/levels/rebuild/asylum/search-layout.json"
           ],
           "defects": [],
-          "next_action": "Finish measured reference/support/privacy review in roster rough batch; build actual care/clinical/service geometry, operational patient lift, native clinical bed derivatives, stairs and persisted editor cellar holes. Dispatched generic Asylum remains unaccepted."
+          "next_action": "Finish measured reference/support/privacy review in roster rough batch; build actual care/clinical/service geometry, operational patient lift, native clinical bed derivatives, stairs and persisted editor cellar holes. Dispatched generic Asylum remains unaccepted. Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -386,7 +390,7 @@
           "source_sha": null,
           "evidence": [],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -494,7 +498,7 @@
           "source_sha": null,
           "evidence": [],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -600,11 +604,22 @@
           "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
+          "evidence": [
+            "tools/build_map_rebuild_roughs.py",
+            "development/levels/rebuild/college/rough-layout.json",
+            "development/levels/rebuild/college/rough-plan.svg",
+            "development/levels/rebuild/college/rough-sections.svg",
+            "development/levels/rebuild/college/rough-asset-bounds.json",
+            "development/levels/rebuild/college/rough-decisions.md",
+            "development/levels/rebuild/college/rough-render-verification.json",
+            "development/levels/rebuild/previews/college-revised-rough-plan.png",
+            "development/levels/rebuild/college/search-envelope.json",
+            "development/levels/rebuild/college/search-layout.json"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete references/support/privacy/accessibility and shared cafe-interface review in roster rough batch; construct actual three-building campus, upper bridges, lift, stairs, buried tunnel roofs/cover and persisted editor terrain holes. Dispatched College remains unaccepted. Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -718,10 +733,12 @@
             "development/levels/rebuild/farmhouse/rough-asset-bounds.json",
             "development/levels/rebuild/farmhouse/rough-decisions.md",
             "development/levels/rebuild/farmhouse/rough-render-verification.json",
-            "development/levels/rebuild/previews/farmhouse-revised-rough-plan.png"
+            "development/levels/rebuild/previews/farmhouse-revised-rough-plan.png",
+            "development/levels/rebuild/farmhouse/search-envelope.json",
+            "development/levels/rebuild/farmhouse/search-layout.json"
           ],
           "defects": [],
-          "next_action": "Complete references/fixture/support review in full roster rough batch; then build physical household/barn/laundry geometry, separate stairs and persisted editor cellar holes. Dispatched Farmhouse remains unchanged and unaccepted."
+          "next_action": "Complete references/fixture/support review in full roster rough batch; then build physical household/barn/laundry geometry, separate stairs and persisted editor cellar holes. Dispatched Farmhouse remains unchanged and unaccepted. Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -840,7 +857,7 @@
           "defects": [
             "DEV-174"
           ],
-          "next_action": "Editor-punched world floor now passes isolated House movement/object/optical and exact-render tests. Complete rough layout batch and remaining House terrain, parcel, structural/facility and full mission/LAN/GPU gates before promotion."
+          "next_action": "Editor-punched world floor now passes isolated House movement/object/optical and exact-render tests. Complete rough layout batch and remaining House terrain, parcel, structural/facility and full mission/LAN/GPU gates before promotion. Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "IN_PROGRESS",
@@ -966,10 +983,12 @@
             "development/levels/rebuild/mansion/rough-asset-bounds.json",
             "development/levels/rebuild/mansion/rough-decisions.md",
             "development/levels/rebuild/mansion/rough-render-verification.json",
-            "development/levels/rebuild/previews/mansion-revised-rough-plan.png"
+            "development/levels/rebuild/previews/mansion-revised-rough-plan.png",
+            "development/levels/rebuild/mansion/search-envelope.json",
+            "development/levels/rebuild/mansion/search-layout.json"
           ],
           "defects": [],
-          "next_action": "Complete references/support/privacy in full roster rough batch, then construct real formal/private/service spaces, stacked stairs, roof and saved editor cellar terrain holes. Dispatched generic Mansion remains unaccepted."
+          "next_action": "Complete references/support/privacy in full roster rough batch, then construct real formal/private/service spaces, stacked stairs, roof and saved editor cellar terrain holes. Dispatched generic Mansion remains unaccepted. Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -1084,10 +1103,12 @@
             "development/levels/rebuild/prison/rough-sections.svg",
             "development/levels/rebuild/prison/rough-asset-bounds.json",
             "development/levels/rebuild/prison/rough-decisions.md",
-            "development/levels/rebuild/previews/prison-revised-rough-plan.png"
+            "development/levels/rebuild/previews/prison-revised-rough-plan.png",
+            "development/levels/rebuild/prison/search-envelope.json",
+            "development/levels/rebuild/prison/search-layout.json"
           ],
           "defects": [],
-          "next_action": "Complete reference/privacy/service decisions in the complete-roster rough batch, then construct real cells, galleries, two flights per wing, security releases and editor terrain holes. Generic dispatched Prison remains unaccepted by this design study."
+          "next_action": "Complete reference/privacy/service decisions in the complete-roster rough batch, then construct real cells, galleries, two flights per wing, security releases and editor terrain holes. Generic dispatched Prison remains unaccepted by this design study. Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -1200,10 +1221,12 @@
             "development/levels/rebuild/school/rough-sections.svg",
             "development/levels/rebuild/school/rough-asset-bounds.json",
             "development/levels/rebuild/school/rough-decisions.md",
-            "development/levels/rebuild/previews/school-revised-rough-plan.png"
+            "development/levels/rebuild/previews/school-revised-rough-plan.png",
+            "development/levels/rebuild/school/search-envelope.json",
+            "development/levels/rebuild/school/search-layout.json"
           ],
           "defects": [],
-          "next_action": "Resolve secondary upper exit, detailed privacy/fixture/PE storage and structural decisions in the rough batch; then build actual collision/render geometry and saved editor terrain opening. No School runtime rebuild accepted."
+          "next_action": "Resolve secondary upper exit, detailed privacy/fixture/PE storage and structural decisions in the rough batch; then build actual collision/render geometry and saved editor terrain opening. No School runtime rebuild accepted. Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -1312,7 +1335,7 @@
           "source_sha": null,
           "evidence": [],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -1423,7 +1446,7 @@
           "source_sha": null,
           "evidence": [],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -1533,7 +1556,7 @@
           "source_sha": null,
           "evidence": [],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -1643,7 +1666,7 @@
           "source_sha": null,
           "evidence": [],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -1753,7 +1776,7 @@
           "source_sha": null,
           "evidence": [],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -1863,7 +1886,7 @@
           "source_sha": null,
           "evidence": [],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -1973,7 +1996,7 @@
           "source_sha": null,
           "evidence": [],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -2083,7 +2106,7 @@
           "source_sha": null,
           "evidence": [],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -2193,7 +2216,7 @@
           "source_sha": null,
           "evidence": [],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -2303,7 +2326,7 @@
           "source_sha": null,
           "evidence": [],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -2413,7 +2436,7 @@
           "source_sha": null,
           "evidence": [],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -2523,7 +2546,7 @@
           "source_sha": null,
           "evidence": [],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -2633,7 +2656,7 @@
           "source_sha": null,
           "evidence": [],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -2742,7 +2765,7 @@
           "source_sha": null,
           "evidence": [],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -2851,7 +2874,7 @@
           "source_sha": null,
           "evidence": [],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -2960,7 +2983,7 @@
           "source_sha": null,
           "evidence": [],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -3069,7 +3092,7 @@
           "source_sha": null,
           "evidence": [],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -3178,7 +3201,7 @@
           "source_sha": null,
           "evidence": [],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -3288,7 +3311,7 @@
           "source_sha": null,
           "evidence": [],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "NOT_AUDITED",
@@ -3369,5 +3392,18 @@
       "retained floor/wall/stair support"
     ],
     "rule": "Architectural floor voids alone do not pass; no transparency, replacement invisible supports or render-only clipping. Audit every site independently."
+  },
+  "search_envelope_gate": {
+    "owner_direction_date": "2026-11-03",
+    "policy": "development/levels/rebuild/SEARCH_ENVELOPE_POLICY.json",
+    "register": "development/levels/rebuild/search-envelope-register.json",
+    "maximum_accessible_spaces": 40,
+    "required_for": [
+      "S02",
+      "S03",
+      "S11"
+    ],
+    "status": "REQUIRED_NOT_RUNTIME_ACCEPTED",
+    "rule": "Count actual traversable spaces including circulation; preserve coherent sealed context and prevent objective/ghost/interaction leakage. Build maps; round-duration testing is outside this task."
   }
 }

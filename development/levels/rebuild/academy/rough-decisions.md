@@ -17,3 +17,8 @@ Cellar archive and heat/water/electrical plant have separate enclosures off a se
 Three4.4m ritual clear areas are reserved in upper study, archive and open quadrangle. Canonical van transform and cargo route are explicit. Outside grounds/quad rectangles are planning envelopes, not accepted rectangular terrain stamps. Final contours, foundations, paving, drainage, landscape edges, weathering and supported storytelling props remain to be authored.
 
 Checks: unique rooms, all15 owners, same-floor overlap rejection, proposed thresholds/endpoints, graph connectivity, twenty source-sized beds and sleeping/circulation interfaces, stair run/width/landing dimensions, ritual areas and four program route exclusions. Labeled planning PNG visually reviewed. No map stage, native/runtime construction, hunter/ghost route, ritual/electrical/network or physical hardware acceptance is granted. Next: College, Church, Castle and remaining remote/annex roughs before general blockout.
+
+
+## Owner amendment - bounded player search, 3 November
+
+This site exposes **38 accessible spaces** and retains **23 sealed context spaces**, maximum40 including circulation/outside/staging. The complete historical room program above is not the playable search count. Follow search-envelope.json and search-layout.json for the connected open portion and exact permanent boundary list. The current annotations have not built runtime seals. All objectives/ghost activity/interaction and required routes must stay open-side; construct the actual map geometry and validate real permanent boundaries. Round-duration testing is outside this task.

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "owner_direction_date": "2026-11-03",
+  "maximum_accessible_spaces": 40,
+  "scope": "All 28 base sites, including Castle HQ, plus cemetery/mortuary annex. HQ retains its station functions inside the same accessible-space cap.",
+  "count_rule": "Count every separately traversable named architectural space, including corridors, stairs, service rooms, outside search sectors and staging. Parent gameplay zones, room labels and temporarily shut ordinary doors cannot hide extra search rooms.",
+  "context_rule": "Keep coherent normal-use architecture and assets behind permanent sealed room/wing boundaries; a wing may expose its hallway while rooms remain inaccessible. Do not compress or discard useful source assets just to satisfy the search cap.",
+  "gameplay_rule": "All evidence, task controls, hiding sockets, ghost spawns/anchors, loose objective items, ritual sites and required player/ghost travel stay in the connected accessible envelope. No objective, interaction prompt or ghost event may require or open sealed context.",
+  "seal_contract": [
+    "Author real native/runtime rendering, player/object collision, ghost-navigation and interaction boundaries. Optical behavior must match opaque infill/leaves or intentional viewing glass; viewing context does not allow task interaction.",
+    "Use fixed closed leaves, infill or capped stairs with sealed side access; ordinary doors, keys and power states are not permanent seals.",
+    "Maintain adequate arrival, extraction, stair and hunter return routes inside the reduced envelope."
+  ],
+  "acceptance": [
+    "Check exact room-level accessible count <=40; do not substitute the stable fifteen gameplay-zone count.",
+    "Validate the accessible graph from actual arrival, all required tasks and return routes; then prove real runtime movement/placement.",
+    "Check sealed-context escape/interaction/ghost/object negative controls and actual native/runtime/network parity before acceptance."
+  ],
+  "status": "OWNER_CONSTRAINT_ACTIVE; actual runtime seals remain to be constructed and verified",
+  "round_duration_testing": "OUT_OF_SCOPE_BY_OWNER_2026_11_03"
+}

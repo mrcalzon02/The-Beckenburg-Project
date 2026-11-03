@@ -23,7 +23,9 @@
       "height": 3,
       "owner": 0,
       "kind": "circulation",
-      "purpose": "Boot removal coats and muddy entrance"
+      "purpose": "Boot removal coats and muddy entrance",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "parlour",
@@ -38,7 +40,9 @@
       "height": 3,
       "owner": 1,
       "kind": "inside",
-      "purpose": "Family sitting and visitor reception"
+      "purpose": "Family sitting and visitor reception",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "dining",
@@ -53,7 +57,9 @@
       "height": 3,
       "owner": 3,
       "kind": "inside",
-      "purpose": "Six-place family dining"
+      "purpose": "Six-place family dining",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "kitchen",
@@ -68,7 +74,9 @@
       "height": 3,
       "owner": 2,
       "kind": "inside",
-      "purpose": "Cooking and sink cleanup"
+      "purpose": "Cooking and sink cleanup",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "pantry",
@@ -83,7 +91,9 @@
       "height": 3,
       "owner": 2,
       "kind": "inside",
-      "purpose": "Dry household food storage"
+      "purpose": "Dry household food storage",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "prep",
@@ -98,7 +108,9 @@
       "height": 3,
       "owner": 2,
       "kind": "inside",
-      "purpose": "Food preparation and garden receiving"
+      "purpose": "Food preparation and garden receiving",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "stairs",
@@ -113,7 +125,9 @@
       "height": 3,
       "owner": 4,
       "kind": "circulation",
-      "purpose": "Domestic stair bay with side circulation"
+      "purpose": "Domestic stair bay with side circulation",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "cleaner",
@@ -128,7 +142,9 @@
       "height": 3,
       "owner": 4,
       "kind": "inside",
-      "purpose": "Household cleaning and utility cupboard"
+      "purpose": "Household cleaning and utility cupboard",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "barn-aisle",
@@ -143,7 +159,9 @@
       "height": 3,
       "owner": 10,
       "kind": "circulation",
-      "purpose": "Through barn aisle and loading approach"
+      "purpose": "Through barn aisle and loading approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "stall-a",
@@ -158,7 +176,9 @@
       "height": 3,
       "owner": 10,
       "kind": "inside",
-      "purpose": "Livestock stall A and access gate"
+      "purpose": "Livestock stall A and access gate",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "stall-b",
@@ -173,7 +193,9 @@
       "height": 3,
       "owner": 10,
       "kind": "inside",
-      "purpose": "Livestock stall B and access gate"
+      "purpose": "Livestock stall B and access gate",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "feed",
@@ -188,7 +210,9 @@
       "height": 3,
       "owner": 10,
       "kind": "inside",
-      "purpose": "Feed store separate from equipment"
+      "purpose": "Feed store separate from equipment",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "equipment",
@@ -203,7 +227,9 @@
       "height": 3,
       "owner": 10,
       "kind": "inside",
-      "purpose": "Agricultural equipment bay"
+      "purpose": "Agricultural equipment bay",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "loft-stair",
@@ -218,7 +244,9 @@
       "height": 3,
       "owner": 10,
       "kind": "circulation",
-      "purpose": "Barn loft stair and lower landings"
+      "purpose": "Barn loft stair and lower landings",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "repair",
@@ -233,7 +261,9 @@
       "height": 3,
       "owner": 11,
       "kind": "inside",
-      "purpose": "Tool repair bench and clear work aisle"
+      "purpose": "Tool repair bench and clear work aisle",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "parts",
@@ -248,7 +278,9 @@
       "height": 3,
       "owner": 11,
       "kind": "inside",
-      "purpose": "Repair parts and dry tools"
+      "purpose": "Repair parts and dry tools",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "work-store",
@@ -263,7 +295,9 @@
       "height": 3,
       "owner": 11,
       "kind": "inside",
-      "purpose": "Screened work consumables and lockable storage"
+      "purpose": "Screened work consumables and lockable storage",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "laundry",
@@ -278,7 +312,9 @@
       "height": 3,
       "owner": 11,
       "kind": "inside",
-      "purpose": "Separate wash laundry and drying support"
+      "purpose": "Separate wash laundry and drying support",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "upper-hall",
@@ -293,7 +329,9 @@
       "height": 3,
       "owner": 5,
       "kind": "circulation",
-      "purpose": "Upper bedroom circulation"
+      "purpose": "Upper bedroom circulation",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "upper-stair",
@@ -308,7 +346,9 @@
       "height": 3,
       "owner": 5,
       "kind": "circulation",
-      "purpose": "Main stair upper landing and void"
+      "purpose": "Main stair upper landing and void",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "wc",
@@ -323,7 +363,9 @@
       "height": 3,
       "owner": 5,
       "kind": "inside",
-      "purpose": "Private family WC"
+      "purpose": "Private family WC",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "wash",
@@ -338,7 +380,9 @@
       "height": 3,
       "owner": 5,
       "kind": "inside",
-      "purpose": "Family washing room"
+      "purpose": "Family washing room",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "parents",
@@ -353,7 +397,9 @@
       "height": 3,
       "owner": 6,
       "kind": "inside",
-      "purpose": "Parents bedroom and personal storage"
+      "purpose": "Parents bedroom and personal storage",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "children",
@@ -368,7 +414,9 @@
       "height": 3,
       "owner": 7,
       "kind": "inside",
-      "purpose": "Two child beds and play/storage"
+      "purpose": "Two child beds and play/storage",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "linen",
@@ -383,7 +431,9 @@
       "height": 3,
       "owner": 5,
       "kind": "inside",
-      "purpose": "Household linen and seasonal storage"
+      "purpose": "Household linen and seasonal storage",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "hayloft",
@@ -398,7 +448,9 @@
       "height": 3,
       "owner": 8,
       "kind": "inside",
-      "purpose": "Supported hay deck with clear retrieval aisle"
+      "purpose": "Supported hay deck with clear retrieval aisle",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "loft-landing",
@@ -413,7 +465,9 @@
       "height": 3,
       "owner": 8,
       "kind": "circulation",
-      "purpose": "Guarded loft stair arrival"
+      "purpose": "Guarded loft stair arrival",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "cellar-stair",
@@ -428,7 +482,9 @@
       "height": 3,
       "owner": 9,
       "kind": "circulation",
-      "purpose": "Cellar access below domestic stair bay"
+      "purpose": "Cellar access below domestic stair bay",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "cellar-landing",
@@ -443,7 +499,9 @@
       "height": 3,
       "owner": 9,
       "kind": "circulation",
-      "purpose": "Cellar receiving landing"
+      "purpose": "Cellar receiving landing",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "root-store",
@@ -458,7 +516,9 @@
       "height": 3,
       "owner": 9,
       "kind": "inside",
-      "purpose": "Root crop storage and retrieval aisle"
+      "purpose": "Root crop storage and retrieval aisle",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "preserves",
@@ -473,7 +533,9 @@
       "height": 3,
       "owner": 9,
       "kind": "inside",
-      "purpose": "Preserved food shelves"
+      "purpose": "Preserved food shelves",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "grounds",
@@ -488,7 +550,9 @@
       "height": 12,
       "owner": 12,
       "kind": "outside",
-      "purpose": "Orchard and workyard envelope only"
+      "purpose": "Orchard and workyard envelope only",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "entry",
@@ -503,7 +567,9 @@
       "height": 12,
       "owner": 13,
       "kind": "outside",
-      "purpose": "Lane arrival and equipment approach"
+      "purpose": "Lane arrival and equipment approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "stage",
@@ -518,7 +584,9 @@
       "height": 3,
       "owner": 14,
       "kind": "staging",
-      "purpose": "Canonical van staging clear of barn deliveries"
+      "purpose": "Canonical van staging clear of barn deliveries",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     }
   ],
   "links": [
@@ -551,7 +619,8 @@
         38
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L02",
@@ -582,7 +651,8 @@
         34
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L03",
@@ -613,7 +683,8 @@
         28
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L04",
@@ -644,7 +715,8 @@
         25
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L05",
@@ -675,7 +747,8 @@
         22
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L06",
@@ -706,7 +779,8 @@
         20
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L07",
@@ -737,7 +811,8 @@
         16
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L08",
@@ -768,7 +843,8 @@
         18
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L09",
@@ -799,7 +875,8 @@
         13
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L10",
@@ -830,7 +907,8 @@
         11.5
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L11",
@@ -861,7 +939,8 @@
         10
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L12",
@@ -892,7 +971,8 @@
         12
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L13",
@@ -923,7 +1003,8 @@
         21
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L14",
@@ -954,7 +1035,8 @@
         23.5
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L15",
@@ -985,7 +1067,8 @@
         26.5
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L16",
@@ -1016,7 +1099,8 @@
         24
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L17",
@@ -1047,7 +1131,8 @@
         17
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L18",
@@ -1078,7 +1163,8 @@
         11.5
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L19",
@@ -1109,7 +1195,8 @@
         22
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L20",
@@ -1140,7 +1227,8 @@
         25
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L21",
@@ -1171,7 +1259,8 @@
         14
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L22",
@@ -1202,7 +1291,8 @@
         9
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L23",
@@ -1233,7 +1323,8 @@
         24
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L24",
@@ -1264,7 +1355,8 @@
         12
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L25",
@@ -1295,7 +1387,8 @@
         18
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L26",
@@ -1326,7 +1419,8 @@
         22.5
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L27",
@@ -1357,7 +1451,8 @@
         12
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L28",
@@ -1388,7 +1483,8 @@
         17.5
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L29",
@@ -1419,7 +1515,8 @@
         23
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L30",
@@ -1450,7 +1547,8 @@
         26
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L31",
@@ -1481,7 +1579,8 @@
         28
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L32",
@@ -1512,7 +1611,8 @@
         31.5
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L33",
@@ -1543,7 +1643,8 @@
         33
       ],
       "access": "household",
-      "note": "Proposed opening; diagram connectivity is not actual capsule traversal."
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L34",
@@ -1569,7 +1670,8 @@
       "landing_depth_m": 1.5,
       "risers": 18,
       "construction": "Full-run deck void and structural depth; reserve continuous guards, side bypass and clear end landings.",
-      "note": "Domestic flights use separate X lanes; no assumed ladder-only hayloft access. Physical proof remains open."
+      "note": "Domestic flights use separate X lanes; no assumed ladder-only hayloft access. Physical proof remains open.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L35",
@@ -1595,7 +1697,8 @@
       "landing_depth_m": 1.5,
       "risers": 18,
       "construction": "Full-run deck void and structural depth; reserve continuous guards, side bypass and clear end landings.",
-      "note": "Domestic flights use separate X lanes; no assumed ladder-only hayloft access. Physical proof remains open."
+      "note": "Domestic flights use separate X lanes; no assumed ladder-only hayloft access. Physical proof remains open.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L36",
@@ -1621,7 +1724,8 @@
       "landing_depth_m": 1.5,
       "risers": 18,
       "construction": "Full-run deck void and structural depth; reserve continuous guards, side bypass and clear end landings.",
-      "note": "Domestic flights use separate X lanes; no assumed ladder-only hayloft access. Physical proof remains open."
+      "note": "Domestic flights use separate X lanes; no assumed ladder-only hayloft access. Physical proof remains open.",
+      "player_access": "OPEN_ROUTE"
     }
   ],
   "capacity": "Family of four, six dining places, two livestock stalls and bounded equipment/feed work areas.",
@@ -1788,5 +1892,16 @@
     "Author foundation/roof/loft support, daylight/ventilation, dry hay handling and separated utility/electrical services.",
     "Punch the saved world terrain beneath the cellar union and build actual deck/stair openings; test body/ray/object passage and filled-ground negatives.",
     "Shape farm terrain around lane, orchard, drained workyard and outbuildings; prove canonical van support, six-player/hunt routes, rituals, networking, native parity and hardware performance."
-  ]
+  ],
+  "search_envelope": {
+    "status": "DESIGN_ONLY_SEALS_NOT_RUNTIME_IMPLEMENTED",
+    "maximum": 40,
+    "accessible_spaces": 34,
+    "sealed_context_spaces": 0,
+    "count_rule": "Every OPEN_SEARCH space counts, including corridors, stairs, service rooms, exterior sectors and staging. Stable fifteen gameplay owners are not the room budget.",
+    "barriers": [],
+    "gameplay_rule": "Evidence, ghost spawn/anchor, hiding, switches/tasks, ritual sites, loose objective props and required travel belong only to the connected open envelope. Context windows may show rooms, but no interaction or required search crosses the seal.",
+    "context_rule": "Retain coherent historical rooms/assets behind permanent boundaries. Restrict whole wings to their hallways where useful; do not count shuttable ordinary doors as permanent seals.",
+    "next_gate": "Build actual permanent seals and audit runtime player/ghost/object/optical boundaries and all objective placements; construct the maps inside the forty-space cap. Round-duration testing is outside this rebuild task."
+  }
 }

@@ -17,3 +17,8 @@ The three ritual reservations retain 4.4 m clear areas before prop filling. Cano
 Checks: unique spaces, all fifteen owners, no same-floor indoor overlap, proposed door endpoints/thresholds, connected diagram, measured stair run/width/landing reservations, ritual clear areas, full-scale native prop bounds and bedroom-to-circulation interfaces. The labeled four-level PNG was visually reviewed. These checks grant no stage acceptance, runtime integration, ghost/hunter traversal, electrical operation, ritual completion, networking, physical performance or final visual approval.
 
 Next: finish the full roster rough batch, resolve measured references and detailed support/privacy, then construct actual shared native/runtime geometry. Preserve all source assets; do not dispatch this study as a completed location.
+
+
+## Owner amendment - bounded player search, 3 November
+
+This site exposes **39 accessible spaces** and retains **11 sealed context spaces**, maximum40 including circulation/outside/staging. The complete historical room program above is not the playable search count. Follow search-envelope.json and search-layout.json for the connected open portion and exact permanent boundary list. The current annotations have not built runtime seals. All objectives/ghost activity/interaction and required routes must stay open-side; construct the actual map geometry and validate real permanent boundaries. Round-duration testing is outside this task.

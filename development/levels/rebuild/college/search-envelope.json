@@ -1,0 +1,718 @@
+{
+  "site": "COLLEGE",
+  "status": "DESIGN_ONLY_SEALS_NOT_RUNTIME_IMPLEMENTED",
+  "maximum": 40,
+  "accessible_spaces": 40,
+  "sealed_context_spaces": 41,
+  "count_rule": "Every OPEN_SEARCH space counts, including corridors, stairs, service rooms, exterior sectors and staging. Stable fifteen gameplay owners are not the room budget.",
+  "barriers": [
+    {
+      "link": "L09",
+      "a": "lab",
+      "b": "lab-prep",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L10",
+      "a": "lab",
+      "b": "lab-wash",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L12",
+      "a": "teaching-hall",
+      "b": "cleaner",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L13",
+      "a": "teaching-hall",
+      "b": "public-wc",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L16",
+      "a": "meeting",
+      "b": "records",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L18",
+      "a": "issue",
+      "b": "library-hall",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L25",
+      "a": "res-hall",
+      "b": "res-lift",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L26",
+      "a": "res-hall",
+      "b": "laundry",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L27",
+      "a": "res-hall",
+      "b": "union-common",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L29",
+      "a": "res-hall",
+      "b": "service-base",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L30",
+      "a": "res-hall",
+      "b": "staff-rest",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L35",
+      "a": "res-hall",
+      "b": "south-cross",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L37",
+      "a": "green",
+      "b": "receiving",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L40",
+      "a": "kitchen",
+      "b": "res-hall",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L41",
+      "a": "washup",
+      "b": "res-hall",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L46",
+      "a": "south-stair",
+      "b": "green",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L48",
+      "a": "upper-teaching",
+      "b": "tutorial",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L49",
+      "a": "upper-teaching",
+      "b": "project",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L50",
+      "a": "upper-teaching",
+      "b": "upper-seminar",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L53",
+      "a": "bridge-lobby",
+      "b": "upper-stacks",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L54",
+      "a": "bridge-lobby",
+      "b": "upper-reading",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L58",
+      "a": "res-bridge-approach",
+      "b": "upper-res-lift",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L59",
+      "a": "res-bridge-approach",
+      "b": "bath-entry",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L64",
+      "a": "upper-res-hall",
+      "b": "upper-south-cross",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L66",
+      "a": "west-tunnel",
+      "b": "plant",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L73",
+      "a": "upper-res-hall",
+      "b": "res-west-2",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L74",
+      "a": "upper-res-hall",
+      "b": "res-west-3",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L75",
+      "a": "upper-res-hall",
+      "b": "res-west-4",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L77",
+      "a": "upper-res-hall",
+      "b": "res-east-2",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L78",
+      "a": "upper-res-hall",
+      "b": "res-east-3",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L79",
+      "a": "upper-res-hall",
+      "b": "res-east-4",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    }
+  ],
+  "gameplay_rule": "Evidence, ghost spawn/anchor, hiding, switches/tasks, ritual sites, loose objective props and required travel belong only to the connected open envelope. Context windows may show rooms, but no interaction or required search crosses the seal.",
+  "context_rule": "Retain coherent historical rooms/assets behind permanent boundaries. Restrict whole wings to their hallways where useful; do not count shuttable ordinary doors as permanent seals.",
+  "next_gate": "Build actual permanent seals and audit runtime player/ghost/object/optical boundaries and all objective placements; construct the maps inside the forty-space cap. Round-duration testing is outside this rebuild task.",
+  "spaces": [
+    {
+      "id": "teaching-hall",
+      "name": "Teaching block distribution",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "teaching-lobby",
+      "name": "Public teaching reception",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "lecture",
+      "name": "Thirty-two-place clear-span lecture room",
+      "owner": 5,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "seminar",
+      "name": "Sixteen-place discussion seminar",
+      "owner": 2,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "lab",
+      "name": "Sixteen-place practical teaching benches",
+      "owner": 3,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "lab-prep",
+      "name": "Secure practical supplies",
+      "owner": 3,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "lab-wash",
+      "name": "Practical cleanup and handwashing",
+      "owner": 3,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "lab-entry",
+      "name": "Practical coats and approach",
+      "owner": 3,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "teaching-stair",
+      "name": "Teaching and tunnel access stair bay",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "cleaner",
+      "name": "Public teaching cleaner supplies",
+      "owner": 0,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "public-wc",
+      "name": "Public teaching WC bays",
+      "owner": 0,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "admin",
+      "name": "Campus administration work room",
+      "owner": 1,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "meeting",
+      "name": "Private staff and visitor meeting",
+      "owner": 1,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "records",
+      "name": "Confidential administration records",
+      "owner": 1,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "library-stair",
+      "name": "Library public stair bay",
+      "owner": 6,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "issue",
+      "name": "Library issue return and enquiry",
+      "owner": 6,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "library-hall",
+      "name": "Library distribution",
+      "owner": 6,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "reading",
+      "name": "Quiet daylit library reading",
+      "owner": 6,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "open-stacks",
+      "name": "Public reference shelves",
+      "owner": 6,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "library-office",
+      "name": "Library staff work and returns",
+      "owner": 6,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "reference",
+      "name": "Small-group reference consultation",
+      "owner": 6,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "res-hall",
+      "name": "Residence and union distribution",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "res-lift",
+      "name": "Residence accessible lift reservation",
+      "owner": 0,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "laundry",
+      "name": "Residence laundry and drying support",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "union-common",
+      "name": "Union informal common room",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "cafe",
+      "name": "Twenty-place union cafe seating",
+      "owner": 4,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "service-base",
+      "name": "Union staff service and utility",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "staff-cleaner",
+      "name": "Union cleaner and work supplies",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "staff-wc",
+      "name": "Union staff WC and washing",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "staff-rest",
+      "name": "Union staff rest and changing",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "north-cross",
+      "name": "North stair approach",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "food-store",
+      "name": "Cafe provisions",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "receiving",
+      "name": "Cafe delivery receiving",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "kitchen",
+      "name": "Cafe cooking and serving",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "washup",
+      "name": "Cafe dish return and cleanup",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "south-cross",
+      "name": "South stair approach",
+      "owner": 0,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "north-stair",
+      "name": "Independent north residence stair",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "south-stair",
+      "name": "Independent south residence stair",
+      "owner": 0,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "res-cellar-stair",
+      "name": "Residence tunnel exit stair",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "rear-hall",
+      "name": "Tunnel exit to rear service yard",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-teaching",
+      "name": "Upper teaching circulation",
+      "owner": 10,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-teaching-stair",
+      "name": "Teaching stair guarded arrival",
+      "owner": 10,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "tutorial",
+      "name": "Small-group tutorial and staff study",
+      "owner": 10,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "project",
+      "name": "Upper supervised project room",
+      "owner": 10,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "upper-seminar",
+      "name": "Upper discussion and quiet study",
+      "owner": 10,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "upper-library-stair",
+      "name": "Upper library guarded arrival",
+      "owner": 8,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-library-landing",
+      "name": "Upper library stair approach",
+      "owner": 8,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-stacks",
+      "name": "Upper library book stacks",
+      "owner": 8,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "upper-reading",
+      "name": "Upper quiet reading",
+      "owner": 8,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "bridge-lobby",
+      "name": "Public library bridge approach",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "bridge",
+      "name": "Supported upper campus bridge",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "bridge-return",
+      "name": "Upper bridge return to residence",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-res-hall",
+      "name": "Private residence corridor",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-res-lift",
+      "name": "Residence lift upper landing",
+      "owner": 9,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "bath-entry",
+      "name": "Residence private washing approach",
+      "owner": 9,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "res-wc",
+      "name": "Residence screened WC bays",
+      "owner": 9,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "res-shower",
+      "name": "Residence private shower bays",
+      "owner": 9,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "upper-north-cross",
+      "name": "North residence stair approach",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-south-cross",
+      "name": "South residence stair approach",
+      "owner": 9,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "upper-north-stair",
+      "name": "North residence guarded arrival",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-south-stair",
+      "name": "South residence guarded arrival",
+      "owner": 9,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "res-west-1",
+      "name": "Private twin residence west 1",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "res-west-2",
+      "name": "Private twin residence west 2",
+      "owner": 9,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "res-west-3",
+      "name": "Private twin residence west 3",
+      "owner": 9,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "res-west-4",
+      "name": "Private twin residence west 4",
+      "owner": 9,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "res-east-1",
+      "name": "Private twin residence east 1",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "res-east-2",
+      "name": "Private twin residence east 2",
+      "owner": 9,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "res-east-3",
+      "name": "Private twin residence east 3",
+      "owner": 9,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "res-east-4",
+      "name": "Private twin residence east 4",
+      "owner": 9,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "west-tunnel",
+      "name": "West building service distribution",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "plant",
+      "name": "Teaching heating water and electrical plant",
+      "owner": 11,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "maintenance",
+      "name": "Campus maintenance and parts",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "west-cellar-stair",
+      "name": "Teaching tunnel stair",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "cross-tunnel",
+      "name": "Supported tunnel below campus green",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "east-tunnel",
+      "name": "Residence tunnel return",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "east-cellar-stair",
+      "name": "Residence tunnel exit stair",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "green",
+      "name": "Shared campus green envelope",
+      "owner": 12,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "entry",
+      "name": "Public campus approach",
+      "owner": 13,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "stage",
+      "name": "Canonical campus roadhead van apron",
+      "owner": 14,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "teaching-library-link",
+      "name": "Four-metre teaching to library upper link",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "res-bridge-approach",
+      "name": "Residence bridge landing outside bedrooms",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    }
+  ]
+}

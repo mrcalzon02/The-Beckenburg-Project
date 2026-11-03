@@ -15,3 +15,8 @@ The cellar comprises produce, preserves, stair and receiving landing. Persisted 
 Ritual clear-area reservations occupy hayloft, root store and orchard edge. Canonical van placement and cargo approach remain explicit. Outside rectangles represent workyard/orchard/lane envelopes, not accepted terrain pads. Foundations, drainage, hay ventilation, roof/loft supports, separated utilities, arrival support and weathering/story layers remain to be authored.
 
 Checks: all15 owners, unique spaces, same-floor indoor separation, proposed thresholds/endpoints, diagram connectivity, stair dimensions/landings, ritual areas and seven native prop reservations. The labeled planning PNG was visually reviewed. No runtime, gameplay, networking, GPU/hardware or human visual acceptance is inferred. Next: continue full roster roughs, then construct actual native/runtime geometry through the proven House workflow.
+
+
+## Owner amendment - bounded player search, 3 November
+
+This site exposes **34 accessible spaces** and retains **0 sealed context spaces**, maximum40 including circulation/outside/staging. The complete historical room program above is not the playable search count. Follow search-envelope.json and search-layout.json for the connected open portion and exact permanent boundary list. The current annotations have not built runtime seals. All objectives/ghost activity/interaction and required routes must stay open-side; construct the actual map geometry and validate real permanent boundaries. Round-duration testing is outside this task.

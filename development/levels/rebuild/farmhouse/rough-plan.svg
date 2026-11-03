@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="2463" viewBox="0 0 1280 2463">
 <style>text{font-family:Arial,sans-serif;fill:#1c2a37}.small{font-size:12px}.label{font-size:13px;font-weight:bold}.title{font-size:26px;font-weight:bold}</style>
 <rect width="100%" height="100%" fill="#f5f4ef"/><text x="32" y="38" class="title">Hollowmere Farm — revised domestic and working-yard rough</text>
-<text x="32" y="65" font-size="15">FARMHOUSE · ROUGH LAYOUT v2 · metres · planning only</text>
+<text x="32" y="65" font-size="15">FARMHOUSE / 34 accessible, 0 sealed · ROUGH LAYOUT v2 · metres · planning only</text>
 <text x="32" y="90" class="small">Cyan: route reservation · amber dashed: elevation change · B/C/A: ritual clear areas · numbered spaces: key below</text>
 <text x="32" y="138.0" font-size="18">Standing elevation Y -3 m</text>
 <path d="M147.0,155.0 v561.0" stroke="#dfdfd8"/><text x="147.0" y="149.0" class="small">10</text>
@@ -15,10 +15,10 @@
 <path d="M70.0,485.0 h517.0" stroke="#dfdfd8"/><text x="40.0" y="489.0" class="small">30</text>
 <path d="M70.0,595.0 h517.0" stroke="#dfdfd8"/><text x="40.0" y="599.0" class="small">40</text>
 <path d="M70.0,705.0 h517.0" stroke="#dfdfd8"/><text x="40.0" y="709.0" class="small">50</text>
-<rect x="169.0" y="309.0" width="88.0" height="154.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Root crop storage and retrieval aisle; 8 × 14 m; Y -3</title></rect>
-<rect x="169.0" y="265.0" width="88.0" height="44.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Preserved food shelves; 8 × 4 m; Y -3</title></rect>
-<rect x="257.0" y="287.0" width="66.0" height="110.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Cellar access below domestic stair bay; 6 × 10 m; Y -3</title></rect>
-<rect x="257.0" y="397.0" width="66.0" height="66.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Cellar receiving landing; 6 × 6 m; Y -3</title></rect>
+<rect x="169.0" y="309.0" width="88.0" height="154.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Root crop storage and retrieval aisle [OPEN]; 8 × 14 m; Y -3</title></rect>
+<rect x="169.0" y="265.0" width="88.0" height="44.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Preserved food shelves [OPEN]; 8 × 4 m; Y -3</title></rect>
+<rect x="257.0" y="287.0" width="66.0" height="110.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Cellar access below domestic stair bay [OPEN]; 6 × 10 m; Y -3</title></rect>
+<rect x="257.0" y="397.0" width="66.0" height="66.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Cellar receiving landing [OPEN]; 6 × 6 m; Y -3</title></rect>
 <path d="M290.0,342.0 L290.0,397.0 L290.0,430.0" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L19: Proposed opening; diagram connectivity is not actual capsule traversal.</title></path>
 <path d="M290.0,430.0 L257.0,430.0 L213.0,386.0" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L20: Proposed opening; diagram connectivity is not actual capsule traversal.</title></path>
 <path d="M213.0,386.0 L213.0,309.0 L213.0,287.0" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L21: Proposed opening; diagram connectivity is not actual capsule traversal.</title></path>
@@ -43,27 +43,27 @@
 <path d="M70.0,1126.0 h517.0" stroke="#dfdfd8"/><text x="40.0" y="1130.0" class="small">30</text>
 <path d="M70.0,1236.0 h517.0" stroke="#dfdfd8"/><text x="40.0" y="1240.0" class="small">40</text>
 <path d="M70.0,1346.0 h517.0" stroke="#dfdfd8"/><text x="40.0" y="1350.0" class="small">50</text>
-<rect x="70.0" y="796.0" width="495.0" height="374.0" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Orchard and workyard envelope only; 45 × 34 m; Y 0</title></rect>
-<rect x="70.0" y="1170.0" width="517.0" height="176.0" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Lane arrival and equipment approach; 47 × 16 m; Y 0</title></rect>
-<rect x="235.0" y="1214.0" width="176.0" height="132.0" fill="#afcecf" stroke="#536477" stroke-width="1.4"><title>Canonical van staging clear of barn deliveries; 16 × 12 m; Y 0</title></rect>
-<rect x="169.0" y="1016.0" width="88.0" height="88.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Family sitting and visitor reception; 8 × 8 m; Y 0</title></rect>
-<rect x="169.0" y="972.0" width="88.0" height="44.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Six-place family dining; 8 × 4 m; Y 0</title></rect>
-<rect x="169.0" y="939.0" width="88.0" height="33.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Cooking and sink cleanup; 8 × 3 m; Y 0</title></rect>
-<rect x="169.0" y="906.0" width="33.0" height="33.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Dry household food storage; 3 × 3 m; Y 0</title></rect>
-<rect x="202.0" y="906.0" width="55.0" height="33.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Food preparation and garden receiving; 5 × 3 m; Y 0</title></rect>
-<rect x="257.0" y="906.0" width="66.0" height="22.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Household cleaning and utility cupboard; 6 × 2 m; Y 0</title></rect>
-<rect x="378.0" y="895.0" width="44.0" height="66.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Livestock stall A and access gate; 4 × 6 m; Y 0</title></rect>
-<rect x="378.0" y="961.0" width="44.0" height="66.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Livestock stall B and access gate; 4 × 6 m; Y 0</title></rect>
-<rect x="378.0" y="1027.0" width="44.0" height="33.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Feed store separate from equipment; 4 × 3 m; Y 0</title></rect>
-<rect x="466.0" y="895.0" width="44.0" height="77.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Agricultural equipment bay; 4 × 7 m; Y 0</title></rect>
-<rect x="378.0" y="1082.0" width="55.0" height="77.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Tool repair bench and clear work aisle; 5 × 7 m; Y 0</title></rect>
-<rect x="433.0" y="1082.0" width="33.0" height="44.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Repair parts and dry tools; 3 × 4 m; Y 0</title></rect>
-<rect x="433.0" y="1126.0" width="33.0" height="33.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Screened work consumables and lockable storage; 3 × 3 m; Y 0</title></rect>
-<rect x="334.0" y="1082.0" width="44.0" height="77.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Separate wash laundry and drying support; 4 × 7 m; Y 0</title></rect>
-<rect x="257.0" y="1038.0" width="66.0" height="66.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Boot removal coats and muddy entrance; 6 × 6 m; Y 0</title></rect>
-<rect x="257.0" y="928.0" width="66.0" height="110.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Domestic stair bay with side circulation; 6 × 10 m; Y 0</title></rect>
-<rect x="422.0" y="895.0" width="44.0" height="165.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Through barn aisle and loading approach; 4 × 15 m; Y 0</title></rect>
-<rect x="466.0" y="972.0" width="44.0" height="88.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Barn loft stair and lower landings; 4 × 8 m; Y 0</title></rect>
+<rect x="70.0" y="796.0" width="495.0" height="374.0" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Orchard and workyard envelope only [OPEN]; 45 × 34 m; Y 0</title></rect>
+<rect x="70.0" y="1170.0" width="517.0" height="176.0" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Lane arrival and equipment approach [OPEN]; 47 × 16 m; Y 0</title></rect>
+<rect x="235.0" y="1214.0" width="176.0" height="132.0" fill="#afcecf" stroke="#536477" stroke-width="1.4"><title>Canonical van staging clear of barn deliveries [OPEN]; 16 × 12 m; Y 0</title></rect>
+<rect x="169.0" y="1016.0" width="88.0" height="88.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Family sitting and visitor reception [OPEN]; 8 × 8 m; Y 0</title></rect>
+<rect x="169.0" y="972.0" width="88.0" height="44.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Six-place family dining [OPEN]; 8 × 4 m; Y 0</title></rect>
+<rect x="169.0" y="939.0" width="88.0" height="33.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Cooking and sink cleanup [OPEN]; 8 × 3 m; Y 0</title></rect>
+<rect x="169.0" y="906.0" width="33.0" height="33.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Dry household food storage [OPEN]; 3 × 3 m; Y 0</title></rect>
+<rect x="202.0" y="906.0" width="55.0" height="33.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Food preparation and garden receiving [OPEN]; 5 × 3 m; Y 0</title></rect>
+<rect x="257.0" y="906.0" width="66.0" height="22.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Household cleaning and utility cupboard [OPEN]; 6 × 2 m; Y 0</title></rect>
+<rect x="378.0" y="895.0" width="44.0" height="66.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Livestock stall A and access gate [OPEN]; 4 × 6 m; Y 0</title></rect>
+<rect x="378.0" y="961.0" width="44.0" height="66.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Livestock stall B and access gate [OPEN]; 4 × 6 m; Y 0</title></rect>
+<rect x="378.0" y="1027.0" width="44.0" height="33.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Feed store separate from equipment [OPEN]; 4 × 3 m; Y 0</title></rect>
+<rect x="466.0" y="895.0" width="44.0" height="77.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Agricultural equipment bay [OPEN]; 4 × 7 m; Y 0</title></rect>
+<rect x="378.0" y="1082.0" width="55.0" height="77.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Tool repair bench and clear work aisle [OPEN]; 5 × 7 m; Y 0</title></rect>
+<rect x="433.0" y="1082.0" width="33.0" height="44.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Repair parts and dry tools [OPEN]; 3 × 4 m; Y 0</title></rect>
+<rect x="433.0" y="1126.0" width="33.0" height="33.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Screened work consumables and lockable storage [OPEN]; 3 × 3 m; Y 0</title></rect>
+<rect x="334.0" y="1082.0" width="44.0" height="77.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Separate wash laundry and drying support [OPEN]; 4 × 7 m; Y 0</title></rect>
+<rect x="257.0" y="1038.0" width="66.0" height="66.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Boot removal coats and muddy entrance [OPEN]; 6 × 6 m; Y 0</title></rect>
+<rect x="257.0" y="928.0" width="66.0" height="110.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Domestic stair bay with side circulation [OPEN]; 6 × 10 m; Y 0</title></rect>
+<rect x="422.0" y="895.0" width="44.0" height="165.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Through barn aisle and loading approach [OPEN]; 4 × 15 m; Y 0</title></rect>
+<rect x="466.0" y="972.0" width="44.0" height="88.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Barn loft stair and lower landings [OPEN]; 4 × 8 m; Y 0</title></rect>
 <path d="M323.0,1280.0 L323.0,1214.0 L328.5,1258.0" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L01: Proposed opening; diagram connectivity is not actual capsule traversal.</title></path>
 <path d="M328.5,1258.0 L301.0,1170.0 L317.5,983.0" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L02: Proposed opening; diagram connectivity is not actual capsule traversal.</title></path>
 <path d="M317.5,983.0 L290.0,1104.0 L290.0,1071.0" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L03: Proposed opening; diagram connectivity is not actual capsule traversal.</title></path>
@@ -130,15 +130,15 @@
 <path d="M70.0,1767.0 h517.0" stroke="#dfdfd8"/><text x="40.0" y="1771.0" class="small">30</text>
 <path d="M70.0,1877.0 h517.0" stroke="#dfdfd8"/><text x="40.0" y="1881.0" class="small">40</text>
 <path d="M70.0,1987.0 h517.0" stroke="#dfdfd8"/><text x="40.0" y="1991.0" class="small">50</text>
-<rect x="290.0" y="1679.0" width="33.0" height="33.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Private family WC; 3 × 3 m; Y 3</title></rect>
-<rect x="290.0" y="1712.0" width="33.0" height="33.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Family washing room; 3 × 3 m; Y 3</title></rect>
-<rect x="169.0" y="1657.0" width="88.0" height="88.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Parents bedroom and personal storage; 8 × 8 m; Y 3</title></rect>
-<rect x="169.0" y="1591.0" width="88.0" height="66.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Two child beds and play/storage; 8 × 6 m; Y 3</title></rect>
-<rect x="169.0" y="1547.0" width="88.0" height="44.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Household linen and seasonal storage; 8 × 4 m; Y 3</title></rect>
-<rect x="378.0" y="1613.0" width="88.0" height="88.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Supported hay deck with clear retrieval aisle; 8 × 8 m; Y 3</title></rect>
-<rect x="257.0" y="1547.0" width="33.0" height="198.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Upper bedroom circulation; 3 × 18 m; Y 3</title></rect>
-<rect x="290.0" y="1569.0" width="33.0" height="110.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Main stair upper landing and void; 3 × 10 m; Y 3</title></rect>
-<rect x="466.0" y="1613.0" width="44.0" height="88.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Guarded loft stair arrival; 4 × 8 m; Y 3</title></rect>
+<rect x="290.0" y="1679.0" width="33.0" height="33.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Private family WC [OPEN]; 3 × 3 m; Y 3</title></rect>
+<rect x="290.0" y="1712.0" width="33.0" height="33.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Family washing room [OPEN]; 3 × 3 m; Y 3</title></rect>
+<rect x="169.0" y="1657.0" width="88.0" height="88.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Parents bedroom and personal storage [OPEN]; 8 × 8 m; Y 3</title></rect>
+<rect x="169.0" y="1591.0" width="88.0" height="66.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Two child beds and play/storage [OPEN]; 8 × 6 m; Y 3</title></rect>
+<rect x="169.0" y="1547.0" width="88.0" height="44.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Household linen and seasonal storage [OPEN]; 8 × 4 m; Y 3</title></rect>
+<rect x="378.0" y="1613.0" width="88.0" height="88.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Supported hay deck with clear retrieval aisle [OPEN]; 8 × 8 m; Y 3</title></rect>
+<rect x="257.0" y="1547.0" width="33.0" height="198.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Upper bedroom circulation [OPEN]; 3 × 18 m; Y 3</title></rect>
+<rect x="290.0" y="1569.0" width="33.0" height="110.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Main stair upper landing and void [OPEN]; 3 × 10 m; Y 3</title></rect>
+<rect x="466.0" y="1613.0" width="44.0" height="88.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Guarded loft stair arrival [OPEN]; 4 × 8 m; Y 3</title></rect>
 <path d="M273.5,1646.0 L290.0,1668.0 L306.5,1624.0" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L13: Proposed opening; diagram connectivity is not actual capsule traversal.</title></path>
 <path d="M273.5,1646.0 L290.0,1695.5 L306.5,1695.5" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L14: Proposed opening; diagram connectivity is not actual capsule traversal.</title></path>
 <path d="M273.5,1646.0 L290.0,1728.5 L306.5,1728.5" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L15: Proposed opening; diagram connectivity is not actual capsule traversal.</title></path>
@@ -162,38 +162,38 @@
 <rect x="397.8" y="1632.8" width="48.4" height="48.4" fill="none" stroke="#812c6b" stroke-width="2"/><text x="449.2" y="1657.0" class="label">B</text>
 <path d="M1150,1497.0 v-35 l-5,9 m5,-9 l5,9" fill="none" stroke="#283949" stroke-width="2"/><text x="1144" y="1454.0" class="label">N</text>
 <path d="M1080,1547.0 h110.0" stroke="#283949" stroke-width="3"/><text x="1080" y="1565.0" class="small">10 metres</text>
-<text x="32" y="2055.0" class="small">1. Boot removal coats and muddy entrance (6×6; Y+0)</text>
-<text x="446" y="2055.0" class="small">2. Family sitting and visitor reception (8×8; Y+0)</text>
-<text x="860" y="2055.0" class="small">3. Six-place family dining (8×4; Y+0)</text>
-<text x="32" y="2085.0" class="small">4. Cooking and sink cleanup (8×3; Y+0)</text>
-<text x="446" y="2085.0" class="small">5. Dry household food storage (3×3; Y+0)</text>
-<text x="860" y="2085.0" class="small">6. Food preparation and garden receiving (5×3; Y+0)</text>
-<text x="32" y="2115.0" class="small">7. Domestic stair bay with side circulation (6×10; Y+0)</text>
-<text x="446" y="2115.0" class="small">8. Household cleaning and utility cupboard (6×2; Y+0)</text>
-<text x="860" y="2115.0" class="small">9. Through barn aisle and loading approach (4×15; Y+0)</text>
-<text x="32" y="2145.0" class="small">10. Livestock stall A and access gate (4×6; Y+0)</text>
-<text x="446" y="2145.0" class="small">11. Livestock stall B and access gate (4×6; Y+0)</text>
-<text x="860" y="2145.0" class="small">12. Feed store separate from equipment (4×3; Y+0)</text>
-<text x="32" y="2175.0" class="small">13. Agricultural equipment bay (4×7; Y+0)</text>
-<text x="446" y="2175.0" class="small">14. Barn loft stair and lower landings (4×8; Y+0)</text>
-<text x="860" y="2175.0" class="small">15. Tool repair bench and clear work aisle (5×7; Y+0)</text>
-<text x="32" y="2205.0" class="small">16. Repair parts and dry tools (3×4; Y+0)</text>
-<text x="446" y="2205.0" class="small">17. Screened work consumables and lockable storage (3×3; Y+0)</text>
-<text x="860" y="2205.0" class="small">18. Separate wash laundry and drying support (4×7; Y+0)</text>
-<text x="32" y="2235.0" class="small">19. Upper bedroom circulation (3×18; Y+3)</text>
-<text x="446" y="2235.0" class="small">20. Main stair upper landing and void (3×10; Y+3)</text>
-<text x="860" y="2235.0" class="small">21. Private family WC (3×3; Y+3)</text>
-<text x="32" y="2265.0" class="small">22. Family washing room (3×3; Y+3)</text>
-<text x="446" y="2265.0" class="small">23. Parents bedroom and personal storage (8×8; Y+3)</text>
-<text x="860" y="2265.0" class="small">24. Two child beds and play/storage (8×6; Y+3)</text>
-<text x="32" y="2295.0" class="small">25. Household linen and seasonal storage (8×4; Y+3)</text>
-<text x="446" y="2295.0" class="small">26. Supported hay deck with clear retrieval aisle (8×8; Y+3)</text>
-<text x="860" y="2295.0" class="small">27. Guarded loft stair arrival (4×8; Y+3)</text>
-<text x="32" y="2325.0" class="small">28. Cellar access below domestic stair bay (6×10; Y-3)</text>
-<text x="446" y="2325.0" class="small">29. Cellar receiving landing (6×6; Y-3)</text>
-<text x="860" y="2325.0" class="small">30. Root crop storage and retrieval aisle (8×14; Y-3)</text>
-<text x="32" y="2355.0" class="small">31. Preserved food shelves (8×4; Y-3)</text>
-<text x="446" y="2355.0" class="small">32. Orchard and workyard envelope only (45×34; Y+0)</text>
-<text x="860" y="2355.0" class="small">33. Lane arrival and equipment approach (47×16; Y+0)</text>
-<text x="32" y="2385.0" class="small">34. Canonical van staging clear of barn deliveries (16×12; Y+0)</text>
+<text x="32" y="2055.0" class="small">1. Boot removal coats and muddy entrance [OPEN] (6×6; Y+0)</text>
+<text x="446" y="2055.0" class="small">2. Family sitting and visitor reception [OPEN] (8×8; Y+0)</text>
+<text x="860" y="2055.0" class="small">3. Six-place family dining [OPEN] (8×4; Y+0)</text>
+<text x="32" y="2085.0" class="small">4. Cooking and sink cleanup [OPEN] (8×3; Y+0)</text>
+<text x="446" y="2085.0" class="small">5. Dry household food storage [OPEN] (3×3; Y+0)</text>
+<text x="860" y="2085.0" class="small">6. Food preparation and garden receiving [OPEN] (5×3; Y+0)</text>
+<text x="32" y="2115.0" class="small">7. Domestic stair bay with side circulation [OPEN] (6×10; Y+0)</text>
+<text x="446" y="2115.0" class="small">8. Household cleaning and utility cupboard [OPEN] (6×2; Y+0)</text>
+<text x="860" y="2115.0" class="small">9. Through barn aisle and loading approach [OPEN] (4×15; Y+0)</text>
+<text x="32" y="2145.0" class="small">10. Livestock stall A and access gate [OPEN] (4×6; Y+0)</text>
+<text x="446" y="2145.0" class="small">11. Livestock stall B and access gate [OPEN] (4×6; Y+0)</text>
+<text x="860" y="2145.0" class="small">12. Feed store separate from equipment [OPEN] (4×3; Y+0)</text>
+<text x="32" y="2175.0" class="small">13. Agricultural equipment bay [OPEN] (4×7; Y+0)</text>
+<text x="446" y="2175.0" class="small">14. Barn loft stair and lower landings [OPEN] (4×8; Y+0)</text>
+<text x="860" y="2175.0" class="small">15. Tool repair bench and clear work aisle [OPEN] (5×7; Y+0)</text>
+<text x="32" y="2205.0" class="small">16. Repair parts and dry tools [OPEN] (3×4; Y+0)</text>
+<text x="446" y="2205.0" class="small">17. Screened work consumables and lockable storage [OPEN] (3×3; Y+0)</text>
+<text x="860" y="2205.0" class="small">18. Separate wash laundry and drying support [OPEN] (4×7; Y+0)</text>
+<text x="32" y="2235.0" class="small">19. Upper bedroom circulation [OPEN] (3×18; Y+3)</text>
+<text x="446" y="2235.0" class="small">20. Main stair upper landing and void [OPEN] (3×10; Y+3)</text>
+<text x="860" y="2235.0" class="small">21. Private family WC [OPEN] (3×3; Y+3)</text>
+<text x="32" y="2265.0" class="small">22. Family washing room [OPEN] (3×3; Y+3)</text>
+<text x="446" y="2265.0" class="small">23. Parents bedroom and personal storage [OPEN] (8×8; Y+3)</text>
+<text x="860" y="2265.0" class="small">24. Two child beds and play/storage [OPEN] (8×6; Y+3)</text>
+<text x="32" y="2295.0" class="small">25. Household linen and seasonal storage [OPEN] (8×4; Y+3)</text>
+<text x="446" y="2295.0" class="small">26. Supported hay deck with clear retrieval aisle [OPEN] (8×8; Y+3)</text>
+<text x="860" y="2295.0" class="small">27. Guarded loft stair arrival [OPEN] (4×8; Y+3)</text>
+<text x="32" y="2325.0" class="small">28. Cellar access below domestic stair bay [OPEN] (6×10; Y-3)</text>
+<text x="446" y="2325.0" class="small">29. Cellar receiving landing [OPEN] (6×6; Y-3)</text>
+<text x="860" y="2325.0" class="small">30. Root crop storage and retrieval aisle [OPEN] (8×14; Y-3)</text>
+<text x="32" y="2355.0" class="small">31. Preserved food shelves [OPEN] (8×4; Y-3)</text>
+<text x="446" y="2355.0" class="small">32. Orchard and workyard envelope only [OPEN] (45×34; Y+0)</text>
+<text x="860" y="2355.0" class="small">33. Lane arrival and equipment approach [OPEN] (47×16; Y+0)</text>
+<text x="32" y="2385.0" class="small">34. Canonical van staging clear of barn deliveries [OPEN] (16×12; Y+0)</text>
 </svg>

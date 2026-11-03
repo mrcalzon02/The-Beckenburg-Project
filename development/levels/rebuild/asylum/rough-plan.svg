@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="2940" viewBox="0 0 1280 2940">
 <style>text{font-family:Arial,sans-serif;fill:#1c2a37}.small{font-size:12px}.label{font-size:13px;font-weight:bold}.title{font-size:26px;font-weight:bold}</style>
 <rect width="100%" height="100%" fill="#f5f4ef"/><text x="32" y="38" class="title">St. Dymphna Hospital — revised care-pavilion rough</text>
-<text x="32" y="65" font-size="15">ASYLUM · ROUGH LAYOUT v2 · metres · planning only</text>
+<text x="32" y="65" font-size="15">ASYLUM / 40 accessible, 27 sealed · ROUGH LAYOUT v2 · metres · planning only</text>
 <text x="32" y="90" class="small">Cyan: route reservation · amber dashed: elevation change · B/C/A: ritual clear areas · numbered spaces: key below</text>
 <text x="32" y="138.0" font-size="18">Standing elevation Y -3 m</text>
 <path d="M113.6,155.0 v610.0" stroke="#dfdfd8"/><text x="113.6" y="149.0" class="small">10</text>
@@ -19,22 +19,17 @@
 <path d="M70.0,590.7 h435.7" stroke="#dfdfd8"/><text x="40.0" y="594.7" class="small">60</text>
 <path d="M70.0,663.3 h435.7" stroke="#dfdfd8"/><text x="40.0" y="667.3" class="small">70</text>
 <path d="M70.0,736.0 h435.7" stroke="#dfdfd8"/><text x="40.0" y="740.0" class="small">80</text>
-<rect x="295.1" y="329.3" width="72.6" height="87.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Boiler hot water and electrical operating clearances; 10 × 12 m; Y -3</title></rect>
-<rect x="367.7" y="329.3" width="65.4" height="87.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Maintenance workshop and stores; 9 × 12 m; Y -3</title></rect>
-<rect x="295.1" y="445.5" width="29.0" height="72.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Soiled linen receiving and washing; 4 × 10 m; Y -3</title></rect>
-<rect x="324.2" y="445.5" width="29.0" height="72.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Clean laundry drying and finishing; 4 × 10 m; Y -3</title></rect>
-<rect x="353.2" y="445.5" width="79.9" height="72.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Finished clean linen storage; 11 × 10 m; Y -3</title></rect>
-<rect x="433.1" y="242.1" width="43.6" height="87.1" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Basement service stair; 6 × 12 m; Y -3</title></rect>
-<rect x="433.1" y="329.3" width="21.8" height="188.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Basement service distribution; 3 × 26 m; Y -3</title></rect>
-<rect x="295.1" y="416.4" width="138.0" height="29.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Plant and laundry approach; 19 × 4 m; Y -3</title></rect>
+<rect x="295.1" y="329.3" width="72.6" height="87.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Boiler hot water and electrical operating clearances [OPEN]; 10 × 12 m; Y -3</title></rect>
+<rect x="367.7" y="329.3" width="65.4" height="87.1" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Maintenance workshop and stores [SEALED CONTEXT]; 9 × 12 m; Y -3</title></rect>
+<rect x="295.1" y="445.5" width="29.0" height="72.6" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Soiled linen receiving and washing [SEALED CONTEXT]; 4 × 10 m; Y -3</title></rect>
+<rect x="324.2" y="445.5" width="29.0" height="72.6" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Clean laundry drying and finishing [SEALED CONTEXT]; 4 × 10 m; Y -3</title></rect>
+<rect x="353.2" y="445.5" width="79.9" height="72.6" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Finished clean linen storage [SEALED CONTEXT]; 11 × 10 m; Y -3</title></rect>
+<rect x="433.1" y="242.1" width="43.6" height="87.1" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Basement service stair [OPEN]; 6 × 12 m; Y -3</title></rect>
+<rect x="433.1" y="329.3" width="21.8" height="188.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Basement service distribution [OPEN]; 3 × 26 m; Y -3</title></rect>
+<rect x="295.1" y="416.4" width="138.0" height="29.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Plant and laundry approach [OPEN]; 19 × 4 m; Y -3</title></rect>
 <path d="M454.9,285.7 L444.0,329.3 L444.0,423.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L63: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M444.0,423.7 L433.1,431.0 L364.1,431.0" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L64: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M364.1,431.0 L331.4,416.4 L331.4,372.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L65: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M364.1,431.0 L396.8,416.4 L400.4,372.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L66: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M364.1,431.0 L309.6,445.5 L309.6,481.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L67: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M364.1,431.0 L338.7,445.5 L338.7,481.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L68: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M338.7,481.8 L353.2,481.8 L393.2,481.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L69: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M364.1,431.0 L389.5,445.5 L393.2,481.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L70: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M454.9,256.7 L454.9,291.5" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L78: Physical movement, care access and lift operation remain unproved.</title></path>
 <text x="458.9" y="251.7" class="small">↕ L78</text>
 <circle cx="454.9" cy="285.7" r="10" fill="#f8f7f1" stroke="#536477"/><text x="454.9" y="289.7" text-anchor="middle" class="small">56</text>
@@ -64,65 +59,60 @@
 <path d="M70.0,1280.7 h435.7" stroke="#dfdfd8"/><text x="40.0" y="1284.7" class="small">60</text>
 <path d="M70.0,1353.3 h435.7" stroke="#dfdfd8"/><text x="40.0" y="1357.3" class="small">70</text>
 <path d="M70.0,1426.0 h435.7" stroke="#dfdfd8"/><text x="40.0" y="1430.0" class="small">80</text>
-<rect x="113.6" y="1055.6" width="116.2" height="79.9" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Daylight court: no upper deck; 16 × 11 m; Y 0</title></rect>
-<rect x="70.0" y="845.0" width="435.7" height="421.2" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Stepped pavilion grounds envelope only; 60 × 58 m; Y 0</title></rect>
-<rect x="70.0" y="1266.2" width="435.7" height="87.1" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Public drive and patient arrival; 60 × 12 m; Y 0</title></rect>
-<rect x="215.2" y="1353.3" width="116.2" height="94.4" fill="#afcecf" stroke="#536477" stroke-width="1.4"><title>Canonical investigation van apron; 16 × 13 m; Y 0</title></rect>
-<rect x="113.6" y="932.1" width="43.6" height="50.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Ground two-place patient room north-a; 6 × 7 m; Y 0</title></rect>
-<rect x="157.1" y="932.1" width="43.6" height="50.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Ground two-place patient room north-b; 6 × 7 m; Y 0</title></rect>
-<rect x="113.6" y="1004.8" width="43.6" height="50.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Ground two-place patient room south-a; 6 × 7 m; Y 0</title></rect>
-<rect x="157.1" y="1004.8" width="43.6" height="50.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Ground two-place patient room south-b; 6 × 7 m; Y 0</title></rect>
-<rect x="200.7" y="932.1" width="29.0" height="29.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Ground Staff observation and notes; 4 × 4 m; Y 0</title></rect>
-<rect x="200.7" y="961.2" width="29.0" height="21.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Ground Ward clean linen and supplies; 4 × 3 m; Y 0</title></rect>
-<rect x="200.7" y="1004.8" width="29.0" height="25.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Ground Screened patient WC bays; 4 × 3.5 m; Y 0</title></rect>
-<rect x="200.7" y="1030.2" width="29.0" height="25.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Ground Private patient washing and assistance; 4 × 3.5 m; Y 0</title></rect>
-<rect x="251.5" y="932.1" width="43.6" height="58.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Staff coordination and private work; 6 × 8 m; Y 0</title></rect>
-<rect x="229.8" y="1208.1" width="65.4" height="58.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Public reception and waiting; 9 × 8 m; Y 0</title></rect>
-<rect x="295.1" y="1208.1" width="43.6" height="29.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Private admissions interview; 6 × 4 m; Y 0</title></rect>
-<rect x="295.1" y="1237.1" width="21.8" height="29.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Visitor WC outside care wards; 3 × 4 m; Y 0</title></rect>
-<rect x="316.9" y="1237.1" width="43.6" height="29.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Confidential records office; 6 × 4 m; Y 0</title></rect>
-<rect x="113.6" y="1135.5" width="116.2" height="72.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Supervised sitting crafts and ordinary activity; 16 × 10 m; Y 0</title></rect>
-<rect x="295.1" y="1062.9" width="72.6" height="72.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Treatment examination and handwashing; 10 × 10 m; Y 0</title></rect>
-<rect x="295.1" y="1033.8" width="36.3" height="29.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Clean treatment stores; 5 × 4 m; Y 0</title></rect>
-<rect x="331.4" y="1033.8" width="36.3" height="29.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Enclosed soiled treatment utility; 5 × 4 m; Y 0</title></rect>
-<rect x="295.1" y="990.2" width="36.3" height="29.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Staff rest and changing; 5 × 4 m; Y 0</title></rect>
-<rect x="331.4" y="990.2" width="36.3" height="29.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Staff sanitary room; 5 × 4 m; Y 0</title></rect>
-<rect x="367.7" y="1062.9" width="29.0" height="36.3" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Private hydrotherapy changing; 4 × 5 m; Y 0</title></rect>
-<rect x="396.8" y="1062.9" width="36.3" height="72.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Assisted bathing treatment room; 5 × 10 m; Y 0</title></rect>
-<rect x="367.7" y="1099.2" width="29.0" height="36.3" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Private drying and recovery; 4 × 5 m; Y 0</title></rect>
-<rect x="251.5" y="1135.5" width="87.1" height="72.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Sixteen-place ward dining; 12 × 10 m; Y 0</title></rect>
-<rect x="338.7" y="1164.5" width="50.8" height="29.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Food preparation cooking and serving; 7 × 4 m; Y 0</title></rect>
-<rect x="389.5" y="1164.5" width="43.6" height="29.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Meal return and dish washing; 6 × 4 m; Y 0</title></rect>
-<rect x="338.7" y="1135.5" width="50.8" height="29.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Dry and cool food storage reservations; 7 × 4 m; Y 0</title></rect>
-<rect x="389.5" y="1135.5" width="43.6" height="29.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Food and household receiving; 6 × 4 m; Y 0</title></rect>
-<rect x="454.9" y="1135.5" width="29.0" height="29.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Enclosed refuse awaiting collection; 4 × 4 m; Y 0</title></rect>
-<rect x="367.7" y="874.0" width="36.3" height="58.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Short-stay quiet care room; 5 × 8 m; Y 0</title></rect>
-<rect x="404.0" y="874.0" width="29.0" height="58.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Quiet care observation and support; 4 × 8 m; Y 0</title></rect>
-<rect x="367.7" y="845.0" width="36.3" height="29.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Private quiet-care WC and washing; 5 × 4 m; Y 0</title></rect>
-<rect x="113.6" y="859.5" width="87.1" height="58.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Quiet remembrance chapel; 12 × 8 m; Y 0</title></rect>
-<rect x="113.6" y="983.0" width="116.2" height="21.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Ground Daylight ward distribution; 16 × 3 m; Y 0</title></rect>
-<rect x="229.8" y="932.1" width="21.8" height="276.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Main patient and staff distribution; 3 × 38 m; Y 0</title></rect>
-<rect x="251.5" y="990.2" width="43.6" height="72.6" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Main stair with clear bypass; 6 × 10 m; Y 0</title></rect>
-<rect x="295.1" y="961.2" width="138.0" height="29.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Staff-only service distribution; 19 × 4 m; Y 0</title></rect>
-<rect x="251.5" y="1062.9" width="43.6" height="72.6" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Clinical approach outside work rooms; 6 × 10 m; Y 0</title></rect>
-<rect x="295.1" y="1019.3" width="138.0" height="14.5" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Rear clinical utility service approach; 19 × 2 m; Y 0</title></rect>
-<rect x="338.7" y="1193.6" width="94.4" height="14.5" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Dining dish return outside cooking; 13 × 2 m; Y 0</title></rect>
-<rect x="433.1" y="1019.3" width="21.8" height="188.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Service passage separated from care rooms; 3 × 26 m; Y 0</title></rect>
-<rect x="433.1" y="932.1" width="43.6" height="87.1" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Independent basement service stair; 6 × 12 m; Y 0</title></rect>
-<rect x="367.7" y="932.1" width="65.4" height="29.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Calm-room care and staff approach; 9 × 4 m; Y 0</title></rect>
-<rect x="200.7" y="1070.1" width="29.0" height="36.3" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Patient lift lower landing and shaft reservation; 4 × 5 m; Y 0</title></rect>
+<rect x="113.6" y="1055.6" width="116.2" height="79.9" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Daylight court: no upper deck [OPEN]; 16 × 11 m; Y 0</title></rect>
+<rect x="70.0" y="845.0" width="435.7" height="421.2" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Stepped pavilion grounds envelope only [OPEN]; 60 × 58 m; Y 0</title></rect>
+<rect x="70.0" y="1266.2" width="435.7" height="87.1" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Public drive and patient arrival [OPEN]; 60 × 12 m; Y 0</title></rect>
+<rect x="215.2" y="1353.3" width="116.2" height="94.4" fill="#afcecf" stroke="#536477" stroke-width="1.4"><title>Canonical investigation van apron [OPEN]; 16 × 13 m; Y 0</title></rect>
+<rect x="113.6" y="932.1" width="43.6" height="50.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Ground two-place patient room north-a [OPEN]; 6 × 7 m; Y 0</title></rect>
+<rect x="157.1" y="932.1" width="43.6" height="50.8" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Ground two-place patient room north-b [SEALED CONTEXT]; 6 × 7 m; Y 0</title></rect>
+<rect x="113.6" y="1004.8" width="43.6" height="50.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Ground two-place patient room south-a [OPEN]; 6 × 7 m; Y 0</title></rect>
+<rect x="157.1" y="1004.8" width="43.6" height="50.8" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Ground two-place patient room south-b [SEALED CONTEXT]; 6 × 7 m; Y 0</title></rect>
+<rect x="200.7" y="932.1" width="29.0" height="29.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Ground Staff observation and notes [OPEN]; 4 × 4 m; Y 0</title></rect>
+<rect x="200.7" y="961.2" width="29.0" height="21.8" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Ground Ward clean linen and supplies [SEALED CONTEXT]; 4 × 3 m; Y 0</title></rect>
+<rect x="200.7" y="1004.8" width="29.0" height="25.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Ground Screened patient WC bays [OPEN]; 4 × 3.5 m; Y 0</title></rect>
+<rect x="200.7" y="1030.2" width="29.0" height="25.4" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Ground Private patient washing and assistance [SEALED CONTEXT]; 4 × 3.5 m; Y 0</title></rect>
+<rect x="251.5" y="932.1" width="43.6" height="58.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Staff coordination and private work [OPEN]; 6 × 8 m; Y 0</title></rect>
+<rect x="229.8" y="1208.1" width="65.4" height="58.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Public reception and waiting [OPEN]; 9 × 8 m; Y 0</title></rect>
+<rect x="295.1" y="1208.1" width="43.6" height="29.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Private admissions interview [OPEN]; 6 × 4 m; Y 0</title></rect>
+<rect x="295.1" y="1237.1" width="21.8" height="29.0" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Visitor WC outside care wards [SEALED CONTEXT]; 3 × 4 m; Y 0</title></rect>
+<rect x="316.9" y="1237.1" width="43.6" height="29.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Confidential records office [OPEN]; 6 × 4 m; Y 0</title></rect>
+<rect x="113.6" y="1135.5" width="116.2" height="72.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Supervised sitting crafts and ordinary activity [OPEN]; 16 × 10 m; Y 0</title></rect>
+<rect x="295.1" y="1062.9" width="72.6" height="72.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Treatment examination and handwashing [OPEN]; 10 × 10 m; Y 0</title></rect>
+<rect x="295.1" y="1033.8" width="36.3" height="29.0" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Clean treatment stores [SEALED CONTEXT]; 5 × 4 m; Y 0</title></rect>
+<rect x="331.4" y="1033.8" width="36.3" height="29.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Enclosed soiled treatment utility [OPEN]; 5 × 4 m; Y 0</title></rect>
+<rect x="295.1" y="990.2" width="36.3" height="29.0" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Staff rest and changing [SEALED CONTEXT]; 5 × 4 m; Y 0</title></rect>
+<rect x="331.4" y="990.2" width="36.3" height="29.0" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Staff sanitary room [SEALED CONTEXT]; 5 × 4 m; Y 0</title></rect>
+<rect x="367.7" y="1062.9" width="29.0" height="36.3" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Private hydrotherapy changing [OPEN]; 4 × 5 m; Y 0</title></rect>
+<rect x="396.8" y="1062.9" width="36.3" height="72.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Assisted bathing treatment room [OPEN]; 5 × 10 m; Y 0</title></rect>
+<rect x="367.7" y="1099.2" width="29.0" height="36.3" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Private drying and recovery [OPEN]; 4 × 5 m; Y 0</title></rect>
+<rect x="251.5" y="1135.5" width="87.1" height="72.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Sixteen-place ward dining [OPEN]; 12 × 10 m; Y 0</title></rect>
+<rect x="338.7" y="1164.5" width="50.8" height="29.0" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Food preparation cooking and serving [SEALED CONTEXT]; 7 × 4 m; Y 0</title></rect>
+<rect x="389.5" y="1164.5" width="43.6" height="29.0" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Meal return and dish washing [SEALED CONTEXT]; 6 × 4 m; Y 0</title></rect>
+<rect x="338.7" y="1135.5" width="50.8" height="29.0" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Dry and cool food storage reservations [SEALED CONTEXT]; 7 × 4 m; Y 0</title></rect>
+<rect x="389.5" y="1135.5" width="43.6" height="29.0" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Food and household receiving [SEALED CONTEXT]; 6 × 4 m; Y 0</title></rect>
+<rect x="454.9" y="1135.5" width="29.0" height="29.0" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Enclosed refuse awaiting collection [SEALED CONTEXT]; 4 × 4 m; Y 0</title></rect>
+<rect x="367.7" y="874.0" width="36.3" height="58.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Short-stay quiet care room [OPEN]; 5 × 8 m; Y 0</title></rect>
+<rect x="404.0" y="874.0" width="29.0" height="58.1" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Quiet care observation and support [SEALED CONTEXT]; 4 × 8 m; Y 0</title></rect>
+<rect x="367.7" y="845.0" width="36.3" height="29.0" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Private quiet-care WC and washing [SEALED CONTEXT]; 5 × 4 m; Y 0</title></rect>
+<rect x="113.6" y="859.5" width="87.1" height="58.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Quiet remembrance chapel [OPEN]; 12 × 8 m; Y 0</title></rect>
+<rect x="113.6" y="983.0" width="116.2" height="21.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Ground Daylight ward distribution [OPEN]; 16 × 3 m; Y 0</title></rect>
+<rect x="229.8" y="932.1" width="21.8" height="276.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Main patient and staff distribution [OPEN]; 3 × 38 m; Y 0</title></rect>
+<rect x="251.5" y="990.2" width="43.6" height="72.6" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Main stair with clear bypass [OPEN]; 6 × 10 m; Y 0</title></rect>
+<rect x="295.1" y="961.2" width="138.0" height="29.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Staff-only service distribution [OPEN]; 19 × 4 m; Y 0</title></rect>
+<rect x="251.5" y="1062.9" width="43.6" height="72.6" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Clinical approach outside work rooms [OPEN]; 6 × 10 m; Y 0</title></rect>
+<rect x="295.1" y="1019.3" width="138.0" height="14.5" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Rear clinical utility service approach [OPEN]; 19 × 2 m; Y 0</title></rect>
+<rect x="338.7" y="1193.6" width="94.4" height="14.5" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Dining dish return outside cooking [SEALED CONTEXT]; 13 × 2 m; Y 0</title></rect>
+<rect x="433.1" y="1019.3" width="21.8" height="188.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Service passage separated from care rooms [OPEN]; 3 × 26 m; Y 0</title></rect>
+<rect x="433.1" y="932.1" width="43.6" height="87.1" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Independent basement service stair [OPEN]; 6 × 12 m; Y 0</title></rect>
+<rect x="367.7" y="932.1" width="65.4" height="29.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Calm-room care and staff approach [OPEN]; 9 × 4 m; Y 0</title></rect>
+<rect x="200.7" y="1070.1" width="29.0" height="36.3" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Patient lift lower landing and shaft reservation [SEALED CONTEXT]; 4 × 5 m; Y 0</title></rect>
 <path d="M135.4,957.6 L135.4,983.0 L171.7,993.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L01: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M178.9,957.6 L178.9,983.0 L171.7,993.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L02: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M135.4,1030.2 L135.4,1004.8 L171.7,993.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L03: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M178.9,1030.2 L178.9,1004.8 L171.7,993.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L04: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M215.2,946.7 L229.8,946.7 L240.7,1070.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L05: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M215.2,972.1 L229.8,972.1 L240.7,1070.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L06: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M215.2,1017.5 L229.8,1019.3 L240.7,1070.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L07: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M215.2,1042.9 L229.8,1041.1 L240.7,1070.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L08: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M171.7,993.9 L229.8,993.9 L240.7,1070.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L09: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M273.3,1400.5 L273.3,1353.3 L287.9,1309.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L19: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M287.9,1309.8 L258.8,1266.2 L262.4,1237.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L20: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M262.4,1237.1 L295.1,1251.7 L306.0,1251.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L21: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M262.4,1237.1 L295.1,1222.6 L316.9,1222.6" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L22: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M316.9,1222.6 L327.8,1237.1 L338.7,1251.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L23: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M262.4,1237.1 L240.7,1208.1 L240.7,1070.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L24: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
@@ -131,42 +121,25 @@
 <path d="M135.4,1030.2 L135.4,1055.6 L171.7,1095.5" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L27: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M240.7,1070.1 L251.5,961.2 L273.3,961.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L28: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M273.3,961.2 L295.1,975.7 L364.1,975.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L29: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M364.1,975.7 L313.3,990.2 L313.3,1004.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L30: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M313.3,1004.8 L331.4,1004.8 L349.6,1004.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L31: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M240.7,1070.1 L251.5,1048.3 L273.3,1026.5" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L32: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M240.7,1070.1 L251.5,1099.2 L273.3,1099.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L33: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M273.3,1099.2 L295.1,1099.2 L331.4,1099.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L34: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M444.0,1113.7 L433.1,1026.5 L364.1,1026.5" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L35: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M364.1,1026.5 L313.3,1033.8 L313.3,1048.3" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L36: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M364.1,1026.5 L349.6,1033.8 L349.6,1048.3" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L37: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M331.4,1099.2 L313.3,1062.9 L313.3,1048.3" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L38: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M331.4,1099.2 L349.6,1062.9 L349.6,1048.3" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L39: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M331.4,1099.2 L367.7,1081.0 L382.3,1081.0" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L40: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M382.3,1081.0 L396.8,1081.0 L414.9,1099.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L41: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M414.9,1099.2 L396.8,1117.3 L382.3,1117.3" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L42: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M382.3,1117.3 L367.7,1117.3 L331.4,1099.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L43: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M240.7,1070.1 L251.5,1171.8 L295.1,1171.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L44: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M295.1,1171.8 L338.7,1179.0 L364.1,1179.0" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L45: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M295.1,1171.8 L338.7,1200.8 L385.9,1200.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L46: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M385.9,1200.8 L411.3,1193.6 L411.3,1179.0" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L47: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M364.1,1179.0 L360.5,1164.5 L364.1,1150.0" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L48: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M411.3,1150.0 L389.5,1150.0 L364.1,1150.0" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L49: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M411.3,1179.0 L411.3,1164.5 L411.3,1150.0" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L50: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M411.3,1150.0 L433.1,1150.0 L444.0,1113.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L51: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M444.0,1113.7 L454.9,1150.0 L469.4,1150.0" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L52: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M444.0,1113.7 L444.0,1019.3 L454.9,975.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L53: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M454.9,975.7 L433.1,975.7 L364.1,975.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L54: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M364.1,975.7 L396.8,961.2 L400.4,946.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L55: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M400.4,946.7 L385.9,932.1 L385.9,903.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L56: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M400.4,946.7 L418.6,932.1 L418.6,903.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L57: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M385.9,903.1 L385.9,874.0 L385.9,859.5" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L58: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M418.6,903.1 L404.0,903.1 L385.9,903.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L59: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M240.7,1070.1 L229.8,1088.3 L215.2,1088.3" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L60: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M287.9,1055.6 L157.1,917.6 L157.1,888.6" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L71: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M287.9,1055.6 L113.6,1099.2 L171.7,1095.5" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L72: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M287.9,1055.6 L476.7,1266.2 L287.9,1309.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L73: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M287.9,1055.6 L454.9,932.1 L454.9,975.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L74: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M287.9,1055.6 L483.9,1150.0 L469.4,1150.0" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L75: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M287.9,1055.6 L454.9,1193.6 L444.0,1113.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L76: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M273.3,1004.8 L273.3,1044.3" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L77: Physical movement, care access and lift operation remain unproved.</title></path>
 <text x="277.3" y="999.8" class="small">↕ L77</text>
@@ -240,28 +213,22 @@
 <path d="M70.0,1970.7 h435.7" stroke="#dfdfd8"/><text x="40.0" y="1974.7" class="small">60</text>
 <path d="M70.0,2043.3 h435.7" stroke="#dfdfd8"/><text x="40.0" y="2047.3" class="small">70</text>
 <path d="M70.0,2116.0 h435.7" stroke="#dfdfd8"/><text x="40.0" y="2120.0" class="small">80</text>
-<rect x="113.6" y="1622.1" width="43.6" height="50.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Upper two-place patient room north-a; 6 × 7 m; Y 3.4</title></rect>
-<rect x="157.1" y="1622.1" width="43.6" height="50.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Upper two-place patient room north-b; 6 × 7 m; Y 3.4</title></rect>
-<rect x="113.6" y="1694.8" width="43.6" height="50.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Upper two-place patient room south-a; 6 × 7 m; Y 3.4</title></rect>
-<rect x="157.1" y="1694.8" width="43.6" height="50.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Upper two-place patient room south-b; 6 × 7 m; Y 3.4</title></rect>
-<rect x="200.7" y="1622.1" width="29.0" height="29.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Upper Staff observation and notes; 4 × 4 m; Y 3.4</title></rect>
-<rect x="200.7" y="1651.2" width="29.0" height="21.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Upper Ward clean linen and supplies; 4 × 3 m; Y 3.4</title></rect>
-<rect x="200.7" y="1694.8" width="29.0" height="25.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Upper Screened patient WC bays; 4 × 3.5 m; Y 3.4</title></rect>
-<rect x="200.7" y="1720.2" width="29.0" height="25.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Upper Private patient washing and assistance; 4 × 3.5 m; Y 3.4</title></rect>
-<rect x="113.6" y="1673.0" width="116.2" height="21.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Upper Daylight ward distribution; 16 × 3 m; Y 3.4</title></rect>
-<rect x="229.8" y="1622.1" width="21.8" height="203.3" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Upper ward circulation; 3 × 28 m; Y 3.4</title></rect>
-<rect x="251.5" y="1680.2" width="43.6" height="72.6" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Upper main stair and guarded landing; 6 × 10 m; Y 3.4</title></rect>
-<rect x="200.7" y="1760.1" width="29.0" height="36.3" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Patient lift upper landing reservation; 4 × 5 m; Y 3.4</title></rect>
+<rect x="113.6" y="1622.1" width="43.6" height="50.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Upper two-place patient room north-a [OPEN]; 6 × 7 m; Y 3.4</title></rect>
+<rect x="157.1" y="1622.1" width="43.6" height="50.8" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Upper two-place patient room north-b [SEALED CONTEXT]; 6 × 7 m; Y 3.4</title></rect>
+<rect x="113.6" y="1694.8" width="43.6" height="50.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Upper two-place patient room south-a [OPEN]; 6 × 7 m; Y 3.4</title></rect>
+<rect x="157.1" y="1694.8" width="43.6" height="50.8" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Upper two-place patient room south-b [SEALED CONTEXT]; 6 × 7 m; Y 3.4</title></rect>
+<rect x="200.7" y="1622.1" width="29.0" height="29.0" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Upper Staff observation and notes [SEALED CONTEXT]; 4 × 4 m; Y 3.4</title></rect>
+<rect x="200.7" y="1651.2" width="29.0" height="21.8" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Upper Ward clean linen and supplies [SEALED CONTEXT]; 4 × 3 m; Y 3.4</title></rect>
+<rect x="200.7" y="1694.8" width="29.0" height="25.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Upper Screened patient WC bays [OPEN]; 4 × 3.5 m; Y 3.4</title></rect>
+<rect x="200.7" y="1720.2" width="29.0" height="25.4" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Upper Private patient washing and assistance [SEALED CONTEXT]; 4 × 3.5 m; Y 3.4</title></rect>
+<rect x="113.6" y="1673.0" width="116.2" height="21.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Upper Daylight ward distribution [OPEN]; 16 × 3 m; Y 3.4</title></rect>
+<rect x="229.8" y="1622.1" width="21.8" height="203.3" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Upper ward circulation [OPEN]; 3 × 28 m; Y 3.4</title></rect>
+<rect x="251.5" y="1680.2" width="43.6" height="72.6" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Upper main stair and guarded landing [OPEN]; 6 × 10 m; Y 3.4</title></rect>
+<rect x="200.7" y="1760.1" width="29.0" height="36.3" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Patient lift upper landing reservation [SEALED CONTEXT]; 4 × 5 m; Y 3.4</title></rect>
 <path d="M135.4,1647.6 L135.4,1673.0 L171.7,1683.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L10: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M178.9,1647.6 L178.9,1673.0 L171.7,1683.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L11: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M135.4,1720.2 L135.4,1694.8 L171.7,1683.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L12: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M178.9,1720.2 L178.9,1694.8 L171.7,1683.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L13: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M215.2,1636.7 L229.8,1636.7 L240.7,1723.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L14: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M215.2,1662.1 L229.8,1662.1 L240.7,1723.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L15: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M215.2,1707.5 L229.8,1709.3 L240.7,1723.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L16: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M215.2,1732.9 L229.8,1731.1 L240.7,1723.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L17: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M171.7,1683.9 L229.8,1683.9 L240.7,1723.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L18: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
-<path d="M240.7,1723.8 L229.8,1778.3 L215.2,1778.3" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L61: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M240.7,1723.8 L251.5,1738.3 L273.3,1716.5" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L62: Authored proposed doorway; centre lines are diagrams, not host navigation proof.</title></path>
 <path d="M273.3,1694.8 L273.3,1734.3" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L77: Physical movement, care access and lift operation remain unproved.</title></path>
 <text x="277.3" y="1729.3" class="small">↕ L77</text>
@@ -279,71 +246,71 @@
 <circle cx="215.2" cy="1778.3" r="10" fill="#f8f7f1" stroke="#536477"/><text x="215.2" y="1782.3" text-anchor="middle" class="small">55</text>
 <path d="M1150,1595.0 v-35 l-5,9 m5,-9 l5,9" fill="none" stroke="#283949" stroke-width="2"/><text x="1144" y="1552.0" class="label">N</text>
 <path d="M1080,1645.0 h72.6" stroke="#283949" stroke-width="3"/><text x="1080" y="1663.0" class="small">10 metres</text>
-<text x="32" y="2202.0" class="small">1. Ground two-place patient room north-a (6×7; Y+0)</text>
-<text x="446" y="2202.0" class="small">2. Ground two-place patient room north-b (6×7; Y+0)</text>
-<text x="860" y="2202.0" class="small">3. Ground two-place patient room south-a (6×7; Y+0)</text>
-<text x="32" y="2232.0" class="small">4. Ground two-place patient room south-b (6×7; Y+0)</text>
-<text x="446" y="2232.0" class="small">5. Ground Daylight ward distribution (16×3; Y+0)</text>
-<text x="860" y="2232.0" class="small">6. Ground Staff observation and notes (4×4; Y+0)</text>
-<text x="32" y="2262.0" class="small">7. Ground Ward clean linen and supplies (4×3; Y+0)</text>
-<text x="446" y="2262.0" class="small">8. Ground Screened patient WC bays (4×3.5; Y+0)</text>
-<text x="860" y="2262.0" class="small">9. Ground Private patient washing and assistance (4×3.5; Y+0)</text>
-<text x="32" y="2292.0" class="small">10. Upper two-place patient room north-a (6×7; Y+3.4)</text>
-<text x="446" y="2292.0" class="small">11. Upper two-place patient room north-b (6×7; Y+3.4)</text>
-<text x="860" y="2292.0" class="small">12. Upper two-place patient room south-a (6×7; Y+3.4)</text>
-<text x="32" y="2322.0" class="small">13. Upper two-place patient room south-b (6×7; Y+3.4)</text>
-<text x="446" y="2322.0" class="small">14. Upper Daylight ward distribution (16×3; Y+3.4)</text>
-<text x="860" y="2322.0" class="small">15. Upper Staff observation and notes (4×4; Y+3.4)</text>
-<text x="32" y="2352.0" class="small">16. Upper Ward clean linen and supplies (4×3; Y+3.4)</text>
-<text x="446" y="2352.0" class="small">17. Upper Screened patient WC bays (4×3.5; Y+3.4)</text>
-<text x="860" y="2352.0" class="small">18. Upper Private patient washing and assistance (4×3.5; Y+3.4)</text>
-<text x="32" y="2382.0" class="small">19. Main patient and staff distribution (3×38; Y+0)</text>
-<text x="446" y="2382.0" class="small">20. Main stair with clear bypass (6×10; Y+0)</text>
-<text x="860" y="2382.0" class="small">21. Staff coordination and private work (6×8; Y+0)</text>
-<text x="32" y="2412.0" class="small">22. Staff-only service distribution (19×4; Y+0)</text>
-<text x="446" y="2412.0" class="small">23. Public reception and waiting (9×8; Y+0)</text>
-<text x="860" y="2412.0" class="small">24. Private admissions interview (6×4; Y+0)</text>
-<text x="32" y="2442.0" class="small">25. Visitor WC outside care wards (3×4; Y+0)</text>
-<text x="446" y="2442.0" class="small">26. Confidential records office (6×4; Y+0)</text>
-<text x="860" y="2442.0" class="small">27. Supervised sitting crafts and ordinary activity (16×10; Y+0)</text>
-<text x="32" y="2472.0" class="small">28. Clinical approach outside work rooms (6×10; Y+0)</text>
-<text x="446" y="2472.0" class="small">29. Treatment examination and handwashing (10×10; Y+0)</text>
-<text x="860" y="2472.0" class="small">30. Clean treatment stores (5×4; Y+0)</text>
-<text x="32" y="2502.0" class="small">31. Enclosed soiled treatment utility (5×4; Y+0)</text>
-<text x="446" y="2502.0" class="small">32. Rear clinical utility service approach (19×2; Y+0)</text>
-<text x="860" y="2502.0" class="small">33. Staff rest and changing (5×4; Y+0)</text>
-<text x="32" y="2532.0" class="small">34. Staff sanitary room (5×4; Y+0)</text>
-<text x="446" y="2532.0" class="small">35. Private hydrotherapy changing (4×5; Y+0)</text>
-<text x="860" y="2532.0" class="small">36. Assisted bathing treatment room (5×10; Y+0)</text>
-<text x="32" y="2562.0" class="small">37. Private drying and recovery (4×5; Y+0)</text>
-<text x="446" y="2562.0" class="small">38. Sixteen-place ward dining (12×10; Y+0)</text>
-<text x="860" y="2562.0" class="small">39. Food preparation cooking and serving (7×4; Y+0)</text>
-<text x="32" y="2592.0" class="small">40. Meal return and dish washing (6×4; Y+0)</text>
-<text x="446" y="2592.0" class="small">41. Dining dish return outside cooking (13×2; Y+0)</text>
-<text x="860" y="2592.0" class="small">42. Dry and cool food storage reservations (7×4; Y+0)</text>
-<text x="32" y="2622.0" class="small">43. Food and household receiving (6×4; Y+0)</text>
-<text x="446" y="2622.0" class="small">44. Service passage separated from care rooms (3×26; Y+0)</text>
-<text x="860" y="2622.0" class="small">45. Enclosed refuse awaiting collection (4×4; Y+0)</text>
-<text x="32" y="2652.0" class="small">46. Independent basement service stair (6×12; Y+0)</text>
-<text x="446" y="2652.0" class="small">47. Calm-room care and staff approach (9×4; Y+0)</text>
-<text x="860" y="2652.0" class="small">48. Short-stay quiet care room (5×8; Y+0)</text>
-<text x="32" y="2682.0" class="small">49. Quiet care observation and support (4×8; Y+0)</text>
-<text x="446" y="2682.0" class="small">50. Private quiet-care WC and washing (5×4; Y+0)</text>
-<text x="860" y="2682.0" class="small">51. Quiet remembrance chapel (12×8; Y+0)</text>
-<text x="32" y="2712.0" class="small">52. Patient lift lower landing and shaft reservation (4×5; Y+0)</text>
-<text x="446" y="2712.0" class="small">53. Upper ward circulation (3×28; Y+3.4)</text>
-<text x="860" y="2712.0" class="small">54. Upper main stair and guarded landing (6×10; Y+3.4)</text>
-<text x="32" y="2742.0" class="small">55. Patient lift upper landing reservation (4×5; Y+3.4)</text>
-<text x="446" y="2742.0" class="small">56. Basement service stair (6×12; Y-3)</text>
-<text x="860" y="2742.0" class="small">57. Basement service distribution (3×26; Y-3)</text>
-<text x="32" y="2772.0" class="small">58. Plant and laundry approach (19×4; Y-3)</text>
-<text x="446" y="2772.0" class="small">59. Boiler hot water and electrical operating clearances (10×12; Y-3)</text>
-<text x="860" y="2772.0" class="small">60. Maintenance workshop and stores (9×12; Y-3)</text>
-<text x="32" y="2802.0" class="small">61. Soiled linen receiving and washing (4×10; Y-3)</text>
-<text x="446" y="2802.0" class="small">62. Clean laundry drying and finishing (4×10; Y-3)</text>
-<text x="860" y="2802.0" class="small">63. Finished clean linen storage (11×10; Y-3)</text>
-<text x="32" y="2832.0" class="small">64. Daylight court: no upper deck (16×11; Y+0)</text>
-<text x="446" y="2832.0" class="small">65. Stepped pavilion grounds envelope only (60×58; Y+0)</text>
-<text x="860" y="2832.0" class="small">66. Public drive and patient arrival (60×12; Y+0)</text>
-<text x="32" y="2862.0" class="small">67. Canonical investigation van apron (16×13; Y+0)</text>
+<text x="32" y="2202.0" class="small">1. Ground two-place patient room north-a [OPEN] (6×7; Y+0)</text>
+<text x="446" y="2202.0" class="small">2. Ground two-place patient room north-b [SEALED CONTEXT] (6×7; Y+0)</text>
+<text x="860" y="2202.0" class="small">3. Ground two-place patient room south-a [OPEN] (6×7; Y+0)</text>
+<text x="32" y="2232.0" class="small">4. Ground two-place patient room south-b [SEALED CONTEXT] (6×7; Y+0)</text>
+<text x="446" y="2232.0" class="small">5. Ground Daylight ward distribution [OPEN] (16×3; Y+0)</text>
+<text x="860" y="2232.0" class="small">6. Ground Staff observation and notes [OPEN] (4×4; Y+0)</text>
+<text x="32" y="2262.0" class="small">7. Ground Ward clean linen and supplies [SEALED CONTEXT] (4×3; Y+0)</text>
+<text x="446" y="2262.0" class="small">8. Ground Screened patient WC bays [OPEN] (4×3.5; Y+0)</text>
+<text x="860" y="2262.0" class="small">9. Ground Private patient washing and assistance [SEALED CONTEXT] (4×3.5; Y+0)</text>
+<text x="32" y="2292.0" class="small">10. Upper two-place patient room north-a [OPEN] (6×7; Y+3.4)</text>
+<text x="446" y="2292.0" class="small">11. Upper two-place patient room north-b [SEALED CONTEXT] (6×7; Y+3.4)</text>
+<text x="860" y="2292.0" class="small">12. Upper two-place patient room south-a [OPEN] (6×7; Y+3.4)</text>
+<text x="32" y="2322.0" class="small">13. Upper two-place patient room south-b [SEALED CONTEXT] (6×7; Y+3.4)</text>
+<text x="446" y="2322.0" class="small">14. Upper Daylight ward distribution [OPEN] (16×3; Y+3.4)</text>
+<text x="860" y="2322.0" class="small">15. Upper Staff observation and notes [SEALED CONTEXT] (4×4; Y+3.4)</text>
+<text x="32" y="2352.0" class="small">16. Upper Ward clean linen and supplies [SEALED CONTEXT] (4×3; Y+3.4)</text>
+<text x="446" y="2352.0" class="small">17. Upper Screened patient WC bays [OPEN] (4×3.5; Y+3.4)</text>
+<text x="860" y="2352.0" class="small">18. Upper Private patient washing and assistance [SEALED CONTEXT] (4×3.5; Y+3.4)</text>
+<text x="32" y="2382.0" class="small">19. Main patient and staff distribution [OPEN] (3×38; Y+0)</text>
+<text x="446" y="2382.0" class="small">20. Main stair with clear bypass [OPEN] (6×10; Y+0)</text>
+<text x="860" y="2382.0" class="small">21. Staff coordination and private work [OPEN] (6×8; Y+0)</text>
+<text x="32" y="2412.0" class="small">22. Staff-only service distribution [OPEN] (19×4; Y+0)</text>
+<text x="446" y="2412.0" class="small">23. Public reception and waiting [OPEN] (9×8; Y+0)</text>
+<text x="860" y="2412.0" class="small">24. Private admissions interview [OPEN] (6×4; Y+0)</text>
+<text x="32" y="2442.0" class="small">25. Visitor WC outside care wards [SEALED CONTEXT] (3×4; Y+0)</text>
+<text x="446" y="2442.0" class="small">26. Confidential records office [OPEN] (6×4; Y+0)</text>
+<text x="860" y="2442.0" class="small">27. Supervised sitting crafts and ordinary activity [OPEN] (16×10; Y+0)</text>
+<text x="32" y="2472.0" class="small">28. Clinical approach outside work rooms [OPEN] (6×10; Y+0)</text>
+<text x="446" y="2472.0" class="small">29. Treatment examination and handwashing [OPEN] (10×10; Y+0)</text>
+<text x="860" y="2472.0" class="small">30. Clean treatment stores [SEALED CONTEXT] (5×4; Y+0)</text>
+<text x="32" y="2502.0" class="small">31. Enclosed soiled treatment utility [OPEN] (5×4; Y+0)</text>
+<text x="446" y="2502.0" class="small">32. Rear clinical utility service approach [OPEN] (19×2; Y+0)</text>
+<text x="860" y="2502.0" class="small">33. Staff rest and changing [SEALED CONTEXT] (5×4; Y+0)</text>
+<text x="32" y="2532.0" class="small">34. Staff sanitary room [SEALED CONTEXT] (5×4; Y+0)</text>
+<text x="446" y="2532.0" class="small">35. Private hydrotherapy changing [OPEN] (4×5; Y+0)</text>
+<text x="860" y="2532.0" class="small">36. Assisted bathing treatment room [OPEN] (5×10; Y+0)</text>
+<text x="32" y="2562.0" class="small">37. Private drying and recovery [OPEN] (4×5; Y+0)</text>
+<text x="446" y="2562.0" class="small">38. Sixteen-place ward dining [OPEN] (12×10; Y+0)</text>
+<text x="860" y="2562.0" class="small">39. Food preparation cooking and serving [SEALED CONTEXT] (7×4; Y+0)</text>
+<text x="32" y="2592.0" class="small">40. Meal return and dish washing [SEALED CONTEXT] (6×4; Y+0)</text>
+<text x="446" y="2592.0" class="small">41. Dining dish return outside cooking [SEALED CONTEXT] (13×2; Y+0)</text>
+<text x="860" y="2592.0" class="small">42. Dry and cool food storage reservations [SEALED CONTEXT] (7×4; Y+0)</text>
+<text x="32" y="2622.0" class="small">43. Food and household receiving [SEALED CONTEXT] (6×4; Y+0)</text>
+<text x="446" y="2622.0" class="small">44. Service passage separated from care rooms [OPEN] (3×26; Y+0)</text>
+<text x="860" y="2622.0" class="small">45. Enclosed refuse awaiting collection [SEALED CONTEXT] (4×4; Y+0)</text>
+<text x="32" y="2652.0" class="small">46. Independent basement service stair [OPEN] (6×12; Y+0)</text>
+<text x="446" y="2652.0" class="small">47. Calm-room care and staff approach [OPEN] (9×4; Y+0)</text>
+<text x="860" y="2652.0" class="small">48. Short-stay quiet care room [OPEN] (5×8; Y+0)</text>
+<text x="32" y="2682.0" class="small">49. Quiet care observation and support [SEALED CONTEXT] (4×8; Y+0)</text>
+<text x="446" y="2682.0" class="small">50. Private quiet-care WC and washing [SEALED CONTEXT] (5×4; Y+0)</text>
+<text x="860" y="2682.0" class="small">51. Quiet remembrance chapel [OPEN] (12×8; Y+0)</text>
+<text x="32" y="2712.0" class="small">52. Patient lift lower landing and shaft reservation [SEALED CONTEXT] (4×5; Y+0)</text>
+<text x="446" y="2712.0" class="small">53. Upper ward circulation [OPEN] (3×28; Y+3.4)</text>
+<text x="860" y="2712.0" class="small">54. Upper main stair and guarded landing [OPEN] (6×10; Y+3.4)</text>
+<text x="32" y="2742.0" class="small">55. Patient lift upper landing reservation [SEALED CONTEXT] (4×5; Y+3.4)</text>
+<text x="446" y="2742.0" class="small">56. Basement service stair [OPEN] (6×12; Y-3)</text>
+<text x="860" y="2742.0" class="small">57. Basement service distribution [OPEN] (3×26; Y-3)</text>
+<text x="32" y="2772.0" class="small">58. Plant and laundry approach [OPEN] (19×4; Y-3)</text>
+<text x="446" y="2772.0" class="small">59. Boiler hot water and electrical operating clearances [OPEN] (10×12; Y-3)</text>
+<text x="860" y="2772.0" class="small">60. Maintenance workshop and stores [SEALED CONTEXT] (9×12; Y-3)</text>
+<text x="32" y="2802.0" class="small">61. Soiled linen receiving and washing [SEALED CONTEXT] (4×10; Y-3)</text>
+<text x="446" y="2802.0" class="small">62. Clean laundry drying and finishing [SEALED CONTEXT] (4×10; Y-3)</text>
+<text x="860" y="2802.0" class="small">63. Finished clean linen storage [SEALED CONTEXT] (11×10; Y-3)</text>
+<text x="32" y="2832.0" class="small">64. Daylight court: no upper deck [OPEN] (16×11; Y+0)</text>
+<text x="446" y="2832.0" class="small">65. Stepped pavilion grounds envelope only [OPEN] (60×58; Y+0)</text>
+<text x="860" y="2832.0" class="small">66. Public drive and patient arrival [OPEN] (60×12; Y+0)</text>
+<text x="32" y="2862.0" class="small">67. Canonical investigation van apron [OPEN] (16×13; Y+0)</text>
 </svg>

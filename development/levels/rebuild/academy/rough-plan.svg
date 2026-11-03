@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="2880" viewBox="0 0 1280 2880">
 <style>text{font-family:Arial,sans-serif;fill:#1c2a37}.small{font-size:12px}.label{font-size:13px;font-weight:bold}.title{font-size:26px;font-weight:bold}</style>
 <rect width="100%" height="100%" fill="#f5f4ef"/><text x="32" y="38" class="title">St. Alban Academy — revised residential cloister rough</text>
-<text x="32" y="65" font-size="15">ACADEMY · ROUGH LAYOUT v2 · metres · planning only</text>
+<text x="32" y="65" font-size="15">ACADEMY / 38 accessible, 23 sealed · ROUGH LAYOUT v2 · metres · planning only</text>
 <text x="32" y="90" class="small">Cyan: route reservation · amber dashed: elevation change · B/C/A: ritual clear areas · numbered spaces: key below</text>
 <text x="32" y="138.0" font-size="18">Standing elevation Y -3 m</text>
 <path d="M122.1,155.0 v610.0" stroke="#dfdfd8"/><text x="122.1" y="149.0" class="small">10</text>
@@ -19,10 +19,10 @@
 <path d="M70.0,601.3 h438.9" stroke="#dfdfd8"/><text x="40.0" y="605.3" class="small">60</text>
 <path d="M70.0,675.7 h438.9" stroke="#dfdfd8"/><text x="40.0" y="679.7" class="small">70</text>
 <path d="M70.0,750.1 h438.9" stroke="#dfdfd8"/><text x="40.0" y="754.1" class="small">80</text>
-<rect x="99.8" y="318.7" width="44.6" height="119.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Dry institutional archive; 6 × 16 m; Y -3</title></rect>
-<rect x="144.4" y="318.7" width="44.6" height="119.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Heat water and electrical maintenance; 6 × 16 m; Y -3</title></rect>
-<rect x="99.8" y="437.7" width="89.3" height="29.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Archive and plant service approach; 12 × 4 m; Y -3</title></rect>
-<rect x="99.8" y="467.4" width="89.3" height="81.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Cellar stair below entrance range; 12 × 11 m; Y -3</title></rect>
+<rect x="99.8" y="318.7" width="44.6" height="119.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Dry institutional archive [OPEN]; 6 × 16 m; Y -3</title></rect>
+<rect x="144.4" y="318.7" width="44.6" height="119.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Heat water and electrical maintenance [OPEN]; 6 × 16 m; Y -3</title></rect>
+<rect x="99.8" y="437.7" width="89.3" height="29.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Archive and plant service approach [OPEN]; 12 × 4 m; Y -3</title></rect>
+<rect x="99.8" y="467.4" width="89.3" height="81.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Cellar stair below entrance range [OPEN]; 12 × 11 m; Y -3</title></rect>
 <path d="M144.4,508.4 L166.7,467.4 L144.4,452.6" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L59: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M144.4,452.6 L122.1,437.7 L122.1,378.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L60: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M144.4,452.6 L166.7,437.7 L166.7,378.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L61: Exact proposed opening; diagram paths are not runtime movement.</title></path>
@@ -51,47 +51,46 @@
 <path d="M70.0,1291.3 h438.9" stroke="#dfdfd8"/><text x="40.0" y="1295.3" class="small">60</text>
 <path d="M70.0,1365.7 h438.9" stroke="#dfdfd8"/><text x="40.0" y="1369.7" class="small">70</text>
 <path d="M70.0,1440.1 h438.9" stroke="#dfdfd8"/><text x="40.0" y="1444.1" class="small">80</text>
-<rect x="211.3" y="1008.7" width="148.8" height="148.8" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Open quadrangle with real daylight; 20 × 20 m; Y 0</title></rect>
-<rect x="70.0" y="845.0" width="438.9" height="409.1" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Academy service grounds envelope; 59 × 55 m; Y 0</title></rect>
-<rect x="70.0" y="1254.1" width="438.9" height="96.7" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Gate court and public approach; 59 × 13 m; Y 0</title></rect>
-<rect x="226.2" y="1350.9" width="119.0" height="96.7" fill="#afcecf" stroke="#536477" stroke-width="1.4"><title>Canonical van gate apron; 16 × 13 m; Y 0</title></rect>
-<rect x="211.3" y="1179.8" width="74.4" height="59.5" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Visitor reception and waiting; 10 × 8 m; Y 0</title></rect>
-<rect x="285.7" y="1179.8" width="29.8" height="29.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Visitor WC outside residence; 4 × 4 m; Y 0</title></rect>
-<rect x="285.7" y="1209.5" width="29.8" height="29.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Coats and visitor supplies; 4 × 4 m; Y 0</title></rect>
-<rect x="99.8" y="1083.0" width="89.3" height="74.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Library quiet reading; 12 × 10 m; Y 0</title></rect>
-<rect x="99.8" y="1053.3" width="89.3" height="29.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Library issue return and staff desk; 12 × 4 m; Y 0</title></rect>
-<rect x="99.8" y="1008.7" width="89.3" height="44.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Open library stacks; 12 × 6 m; Y 0</title></rect>
-<rect x="129.5" y="912.0" width="59.5" height="74.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Headmaster private meeting room; 8 × 10 m; Y 0</title></rect>
-<rect x="99.8" y="912.0" width="29.8" height="29.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Staff private sanitary support; 4 × 4 m; Y 0</title></rect>
-<rect x="99.8" y="941.7" width="29.8" height="44.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Confidential staff records; 4 × 6 m; Y 0</title></rect>
-<rect x="211.3" y="874.8" width="44.6" height="37.2" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Household laundry and wash work; 6 × 5 m; Y 0</title></rect>
-<rect x="256.0" y="874.8" width="44.6" height="37.2" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Household stores under north residence; 6 × 5 m; Y 0</title></rect>
-<rect x="300.6" y="874.8" width="44.6" height="37.2" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Kitchen and household staff changing; 6 × 5 m; Y 0</title></rect>
-<rect x="345.2" y="874.8" width="44.6" height="37.2" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Bulk food supplies and delivery buffer; 6 × 5 m; Y 0</title></rect>
-<rect x="211.3" y="912.0" width="89.3" height="74.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Twenty-place pupil and staff dining; 12 × 10 m; Y 0</title></rect>
-<rect x="300.6" y="912.0" width="44.6" height="44.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Kitchen preparation and cooking; 6 × 6 m; Y 0</title></rect>
-<rect x="345.2" y="912.0" width="37.2" height="22.3" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Food provisions; 5 × 3 m; Y 0</title></rect>
-<rect x="345.2" y="934.3" width="37.2" height="52.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Dirty dishes and cleanup; 5 × 7 m; Y 0</title></rect>
-<rect x="382.4" y="912.0" width="37.2" height="44.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Service receiving and unpacking; 5 × 6 m; Y 0</title></rect>
-<rect x="382.4" y="956.6" width="37.2" height="29.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Enclosed refuse awaiting removal; 5 × 4 m; Y 0</title></rect>
-<rect x="382.4" y="1083.0" width="89.3" height="96.7" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Sixteen-place teaching room; 12 × 13 m; Y 0</title></rect>
-<rect x="382.4" y="986.3" width="59.5" height="74.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Practical teaching benches and handwashing; 8 × 10 m; Y 0</title></rect>
-<rect x="442.0" y="986.3" width="29.8" height="44.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Secure practical supplies and preparation; 4 × 6 m; Y 0</title></rect>
-<rect x="442.0" y="1031.0" width="29.8" height="29.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Practical cleanup and sink; 4 × 4 m; Y 0</title></rect>
-<rect x="189.0" y="912.0" width="22.3" height="327.3" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>West sheltered cloister; 3 × 44 m; Y 0</title></rect>
-<rect x="360.1" y="986.3" width="22.3" height="267.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>East teaching cloister and return; 3 × 36 m; Y 0</title></rect>
-<rect x="211.3" y="986.3" width="148.8" height="22.3" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>North dining cloister; 20 × 3 m; Y 0</title></rect>
-<rect x="211.3" y="1157.4" width="148.8" height="22.3" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>South entrance cloister; 20 × 3 m; Y 0</title></rect>
-<rect x="99.8" y="986.3" width="89.3" height="22.3" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Covered administration approach; 12 × 3 m; Y 0</title></rect>
-<rect x="300.6" y="956.6" width="44.6" height="29.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Dining serving passage; 6 × 4 m; Y 0</title></rect>
-<rect x="382.4" y="1060.7" width="89.3" height="22.3" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Lab coats and approach; 12 × 3 m; Y 0</title></rect>
-<rect x="99.8" y="1157.4" width="89.3" height="81.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Main stair and archive approach; 12 × 11 m; Y 0</title></rect>
-<rect x="382.4" y="1179.8" width="89.3" height="74.4" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Independent east return stair; 12 × 10 m; Y 0</title></rect>
+<rect x="211.3" y="1008.7" width="148.8" height="148.8" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Open quadrangle with real daylight [OPEN]; 20 × 20 m; Y 0</title></rect>
+<rect x="70.0" y="845.0" width="438.9" height="409.1" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Academy service grounds envelope [OPEN]; 59 × 55 m; Y 0</title></rect>
+<rect x="70.0" y="1254.1" width="438.9" height="96.7" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Gate court and public approach [OPEN]; 59 × 13 m; Y 0</title></rect>
+<rect x="226.2" y="1350.9" width="119.0" height="96.7" fill="#afcecf" stroke="#536477" stroke-width="1.4"><title>Canonical van gate apron [OPEN]; 16 × 13 m; Y 0</title></rect>
+<rect x="211.3" y="1179.8" width="74.4" height="59.5" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Visitor reception and waiting [OPEN]; 10 × 8 m; Y 0</title></rect>
+<rect x="285.7" y="1179.8" width="29.8" height="29.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Visitor WC outside residence [OPEN]; 4 × 4 m; Y 0</title></rect>
+<rect x="285.7" y="1209.5" width="29.8" height="29.8" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Coats and visitor supplies [SEALED CONTEXT]; 4 × 4 m; Y 0</title></rect>
+<rect x="99.8" y="1083.0" width="89.3" height="74.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Library quiet reading [OPEN]; 12 × 10 m; Y 0</title></rect>
+<rect x="99.8" y="1053.3" width="89.3" height="29.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Library issue return and staff desk [OPEN]; 12 × 4 m; Y 0</title></rect>
+<rect x="99.8" y="1008.7" width="89.3" height="44.6" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Open library stacks [SEALED CONTEXT]; 12 × 6 m; Y 0</title></rect>
+<rect x="129.5" y="912.0" width="59.5" height="74.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Headmaster private meeting room [OPEN]; 8 × 10 m; Y 0</title></rect>
+<rect x="99.8" y="912.0" width="29.8" height="29.8" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Staff private sanitary support [SEALED CONTEXT]; 4 × 4 m; Y 0</title></rect>
+<rect x="99.8" y="941.7" width="29.8" height="44.6" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Confidential staff records [SEALED CONTEXT]; 4 × 6 m; Y 0</title></rect>
+<rect x="211.3" y="874.8" width="44.6" height="37.2" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Household laundry and wash work [SEALED CONTEXT]; 6 × 5 m; Y 0</title></rect>
+<rect x="256.0" y="874.8" width="44.6" height="37.2" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Household stores under north residence [SEALED CONTEXT]; 6 × 5 m; Y 0</title></rect>
+<rect x="300.6" y="874.8" width="44.6" height="37.2" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Kitchen and household staff changing [SEALED CONTEXT]; 6 × 5 m; Y 0</title></rect>
+<rect x="345.2" y="874.8" width="44.6" height="37.2" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Bulk food supplies and delivery buffer [SEALED CONTEXT]; 6 × 5 m; Y 0</title></rect>
+<rect x="211.3" y="912.0" width="89.3" height="74.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Twenty-place pupil and staff dining [OPEN]; 12 × 10 m; Y 0</title></rect>
+<rect x="300.6" y="912.0" width="44.6" height="44.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Kitchen preparation and cooking [OPEN]; 6 × 6 m; Y 0</title></rect>
+<rect x="345.2" y="912.0" width="37.2" height="22.3" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Food provisions [SEALED CONTEXT]; 5 × 3 m; Y 0</title></rect>
+<rect x="345.2" y="934.3" width="37.2" height="52.1" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Dirty dishes and cleanup [SEALED CONTEXT]; 5 × 7 m; Y 0</title></rect>
+<rect x="382.4" y="912.0" width="37.2" height="44.6" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Service receiving and unpacking [SEALED CONTEXT]; 5 × 6 m; Y 0</title></rect>
+<rect x="382.4" y="956.6" width="37.2" height="29.8" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Enclosed refuse awaiting removal [SEALED CONTEXT]; 5 × 4 m; Y 0</title></rect>
+<rect x="382.4" y="1083.0" width="89.3" height="96.7" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Sixteen-place teaching room [OPEN]; 12 × 13 m; Y 0</title></rect>
+<rect x="382.4" y="986.3" width="59.5" height="74.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Practical teaching benches and handwashing [OPEN]; 8 × 10 m; Y 0</title></rect>
+<rect x="442.0" y="986.3" width="29.8" height="44.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Secure practical supplies and preparation [OPEN]; 4 × 6 m; Y 0</title></rect>
+<rect x="442.0" y="1031.0" width="29.8" height="29.8" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Practical cleanup and sink [SEALED CONTEXT]; 4 × 4 m; Y 0</title></rect>
+<rect x="189.0" y="912.0" width="22.3" height="327.3" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>West sheltered cloister [OPEN]; 3 × 44 m; Y 0</title></rect>
+<rect x="360.1" y="986.3" width="22.3" height="267.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>East teaching cloister and return [OPEN]; 3 × 36 m; Y 0</title></rect>
+<rect x="211.3" y="986.3" width="148.8" height="22.3" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>North dining cloister [OPEN]; 20 × 3 m; Y 0</title></rect>
+<rect x="211.3" y="1157.4" width="148.8" height="22.3" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>South entrance cloister [OPEN]; 20 × 3 m; Y 0</title></rect>
+<rect x="99.8" y="986.3" width="89.3" height="22.3" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Covered administration approach [OPEN]; 12 × 3 m; Y 0</title></rect>
+<rect x="300.6" y="956.6" width="44.6" height="29.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Dining serving passage [OPEN]; 6 × 4 m; Y 0</title></rect>
+<rect x="382.4" y="1060.7" width="89.3" height="22.3" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Lab coats and approach [OPEN]; 12 × 3 m; Y 0</title></rect>
+<rect x="99.8" y="1157.4" width="89.3" height="81.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Main stair and archive approach [OPEN]; 12 × 11 m; Y 0</title></rect>
+<rect x="382.4" y="1179.8" width="89.3" height="74.4" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Independent east return stair [OPEN]; 12 × 10 m; Y 0</title></rect>
 <path d="M285.7,1399.2 L285.7,1350.9 L289.5,1302.5" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L01: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M289.5,1302.5 L494.0,1254.1 L289.5,1049.6" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L02: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M289.5,1049.6 L248.5,1239.3 L248.5,1209.5" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L03: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M248.5,1209.5 L285.7,1194.6 L300.6,1194.6" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L04: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M248.5,1209.5 L285.7,1224.4 L300.6,1224.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L05: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M248.5,1209.5 L248.5,1179.8 L285.7,1168.6" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L06: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M285.7,1168.6 L211.3,1168.6 L200.2,1075.6" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L07: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M285.7,1168.6 L360.1,1168.6 L371.3,1120.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L08: Exact proposed opening; diagram paths are not runtime movement.</title></path>
@@ -101,31 +100,16 @@
 <path d="M285.7,997.5 L285.7,1008.7 L285.7,1083.0" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L12: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M200.2,1075.6 L189.0,1120.2 L144.4,1120.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L13: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M200.2,1075.6 L189.0,1068.2 L144.4,1068.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L14: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M144.4,1068.2 L144.4,1053.3 L144.4,1031.0" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L15: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M144.4,1068.2 L144.4,1083.0 L144.4,1120.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L16: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M200.2,1075.6 L189.0,997.5 L144.4,997.5" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L17: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M144.4,997.5 L159.3,986.3 L159.3,949.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L18: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M159.3,949.1 L129.5,926.8 L114.6,926.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L19: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M159.3,949.1 L129.5,964.0 L114.6,964.0" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L20: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M289.5,1049.6 L233.7,874.8 L233.7,893.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L21: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M289.5,1049.6 L278.3,874.8 L278.3,893.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L22: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M322.9,934.3 L322.9,912.0 L322.9,893.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L23: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M289.5,1049.6 L322.9,874.8 L322.9,893.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L24: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M363.8,923.1 L363.8,912.0 L367.6,893.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L25: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M285.7,997.5 L256.0,986.3 L256.0,949.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L26: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M256.0,949.1 L300.6,971.5 L322.9,971.5" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L27: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M322.9,971.5 L322.9,956.6 L322.9,934.3" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L28: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M322.9,971.5 L345.2,971.5 L363.8,960.3" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L29: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M322.9,934.3 L345.2,923.1 L363.8,923.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L30: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M363.8,923.1 L382.4,923.1 L401.0,934.3" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L31: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M363.8,960.3 L382.4,971.5 L401.0,971.5" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L32: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M401.0,934.3 L419.6,934.3 L289.5,1049.6" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L33: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M401.0,971.5 L419.6,971.5 L289.5,1049.6" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L34: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M371.3,1120.2 L382.4,1127.7 L427.1,1131.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L35: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M371.3,1120.2 L382.4,1071.9 L427.1,1071.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L36: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M427.1,1071.9 L412.2,1060.7 L412.2,1023.5" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L37: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M412.2,1023.5 L442.0,1008.7 L456.8,1008.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L38: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M412.2,1023.5 L442.0,1045.9 L456.8,1045.9" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L39: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M200.2,1075.6 L189.0,1168.6 L144.4,1198.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L40: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M371.3,1120.2 L382.4,1246.7 L427.1,1217.0" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L41: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M427.1,1217.0 L471.7,1217.0 L289.5,1049.6" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L42: Exact proposed opening; diagram paths are not runtime movement.</title></path>
@@ -191,27 +175,27 @@
 <path d="M70.0,1981.3 h438.9" stroke="#dfdfd8"/><text x="40.0" y="1985.3" class="small">60</text>
 <path d="M70.0,2055.7 h438.9" stroke="#dfdfd8"/><text x="40.0" y="2059.7" class="small">70</text>
 <path d="M70.0,2130.1 h438.9" stroke="#dfdfd8"/><text x="40.0" y="2134.1" class="small">80</text>
-<rect x="99.8" y="1602.0" width="44.6" height="37.2" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Student screened WC bays; 6 × 5 m; Y 3.6</title></rect>
-<rect x="144.4" y="1602.0" width="44.6" height="37.2" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Private student shower bays; 6 × 5 m; Y 3.6</title></rect>
-<rect x="99.8" y="1676.3" width="89.3" height="22.3" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Residential linen and cleaning supplies; 12 × 3 m; Y 3.6</title></rect>
-<rect x="99.8" y="1698.7" width="44.6" height="59.5" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Two resident staff beds A; 6 × 8 m; Y 3.6</title></rect>
-<rect x="144.4" y="1698.7" width="44.6" height="59.5" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Two resident staff beds B; 6 × 8 m; Y 3.6</title></rect>
-<rect x="99.8" y="1780.5" width="44.6" height="37.2" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Resident staff WC and washing; 6 × 5 m; Y 3.6</title></rect>
-<rect x="144.4" y="1780.5" width="44.6" height="37.2" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Resident staff work room; 6 × 5 m; Y 3.6</title></rect>
-<rect x="99.8" y="1817.7" width="89.3" height="29.8" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Staff common room; 12 × 4 m; Y 3.6</title></rect>
-<rect x="382.4" y="1676.3" width="89.3" height="74.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Supervised restricted library stacks; 12 × 10 m; Y 3.6</title></rect>
-<rect x="382.4" y="1773.0" width="89.3" height="96.7" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Quiet advanced study and research; 12 × 13 m; Y 3.6</title></rect>
-<rect x="211.3" y="1564.8" width="44.6" height="89.3" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Four-place pupil sleeping room 1; 6 × 12 m; Y 3.6</title></rect>
-<rect x="256.0" y="1564.8" width="44.6" height="89.3" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Four-place pupil sleeping room 2; 6 × 12 m; Y 3.6</title></rect>
-<rect x="300.6" y="1564.8" width="44.6" height="89.3" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Four-place pupil sleeping room 3; 6 × 12 m; Y 3.6</title></rect>
-<rect x="345.2" y="1564.8" width="44.6" height="89.3" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Four-place pupil sleeping room 4; 6 × 12 m; Y 3.6</title></rect>
-<rect x="189.0" y="1602.0" width="22.3" height="327.3" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Upper west residential passage; 3 × 44 m; Y 3.6</title></rect>
-<rect x="211.3" y="1654.0" width="171.1" height="22.3" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Upper dormitory distribution; 23 × 3 m; Y 3.6</title></rect>
-<rect x="360.1" y="1676.3" width="22.3" height="267.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Upper teaching-library return; 3 × 36 m; Y 3.6</title></rect>
-<rect x="99.8" y="1847.4" width="89.3" height="81.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Main stair guarded upper landing; 12 × 11 m; Y 3.6</title></rect>
-<rect x="382.4" y="1869.8" width="89.3" height="74.4" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>East stair guarded upper landing; 12 × 10 m; Y 3.6</title></rect>
-<rect x="99.8" y="1639.1" width="89.3" height="37.2" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Residential washing approach; 12 × 5 m; Y 3.6</title></rect>
-<rect x="99.8" y="1758.2" width="89.3" height="22.3" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Staff sleeping approach; 12 × 3 m; Y 3.6</title></rect>
+<rect x="99.8" y="1602.0" width="44.6" height="37.2" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Student screened WC bays [OPEN]; 6 × 5 m; Y 3.6</title></rect>
+<rect x="144.4" y="1602.0" width="44.6" height="37.2" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Private student shower bays [OPEN]; 6 × 5 m; Y 3.6</title></rect>
+<rect x="99.8" y="1676.3" width="89.3" height="22.3" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Residential linen and cleaning supplies [SEALED CONTEXT]; 12 × 3 m; Y 3.6</title></rect>
+<rect x="99.8" y="1698.7" width="44.6" height="59.5" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Two resident staff beds A [SEALED CONTEXT]; 6 × 8 m; Y 3.6</title></rect>
+<rect x="144.4" y="1698.7" width="44.6" height="59.5" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Two resident staff beds B [SEALED CONTEXT]; 6 × 8 m; Y 3.6</title></rect>
+<rect x="99.8" y="1780.5" width="44.6" height="37.2" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Resident staff WC and washing [SEALED CONTEXT]; 6 × 5 m; Y 3.6</title></rect>
+<rect x="144.4" y="1780.5" width="44.6" height="37.2" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Resident staff work room [SEALED CONTEXT]; 6 × 5 m; Y 3.6</title></rect>
+<rect x="99.8" y="1817.7" width="89.3" height="29.8" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Staff common room [SEALED CONTEXT]; 12 × 4 m; Y 3.6</title></rect>
+<rect x="382.4" y="1676.3" width="89.3" height="74.4" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Supervised restricted library stacks [SEALED CONTEXT]; 12 × 10 m; Y 3.6</title></rect>
+<rect x="382.4" y="1773.0" width="89.3" height="96.7" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Quiet advanced study and research [OPEN]; 12 × 13 m; Y 3.6</title></rect>
+<rect x="211.3" y="1564.8" width="44.6" height="89.3" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Four-place pupil sleeping room 1 [OPEN]; 6 × 12 m; Y 3.6</title></rect>
+<rect x="256.0" y="1564.8" width="44.6" height="89.3" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Four-place pupil sleeping room 2 [SEALED CONTEXT]; 6 × 12 m; Y 3.6</title></rect>
+<rect x="300.6" y="1564.8" width="44.6" height="89.3" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Four-place pupil sleeping room 3 [OPEN]; 6 × 12 m; Y 3.6</title></rect>
+<rect x="345.2" y="1564.8" width="44.6" height="89.3" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Four-place pupil sleeping room 4 [SEALED CONTEXT]; 6 × 12 m; Y 3.6</title></rect>
+<rect x="189.0" y="1602.0" width="22.3" height="327.3" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Upper west residential passage [OPEN]; 3 × 44 m; Y 3.6</title></rect>
+<rect x="211.3" y="1654.0" width="171.1" height="22.3" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Upper dormitory distribution [OPEN]; 23 × 3 m; Y 3.6</title></rect>
+<rect x="360.1" y="1676.3" width="22.3" height="267.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Upper teaching-library return [OPEN]; 3 × 36 m; Y 3.6</title></rect>
+<rect x="99.8" y="1847.4" width="89.3" height="81.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Main stair guarded upper landing [OPEN]; 12 × 11 m; Y 3.6</title></rect>
+<rect x="382.4" y="1869.8" width="89.3" height="74.4" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>East stair guarded upper landing [OPEN]; 12 × 10 m; Y 3.6</title></rect>
+<rect x="99.8" y="1639.1" width="89.3" height="37.2" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Residential washing approach [OPEN]; 12 × 5 m; Y 3.6</title></rect>
+<rect x="99.8" y="1758.2" width="89.3" height="22.3" fill="#d8d4cf" stroke="#536477" stroke-width="1.4"><title>Staff sleeping approach [SEALED CONTEXT]; 12 × 3 m; Y 3.6</title></rect>
 <path d="M200.2,1765.6 L189.0,1914.4 L144.4,1888.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L43: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M200.2,1765.6 L211.3,1665.2 L296.9,1665.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L44: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M296.9,1665.2 L371.3,1676.3 L371.3,1810.2" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L45: Exact proposed opening; diagram paths are not runtime movement.</title></path>
@@ -219,19 +203,9 @@
 <path d="M200.2,1765.6 L189.0,1657.7 L144.4,1657.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L47: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M144.4,1657.7 L122.1,1639.1 L122.1,1620.5" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L48: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M144.4,1657.7 L166.7,1639.1 L166.7,1620.5" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L49: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M200.2,1765.6 L189.0,1687.5 L144.4,1687.5" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L50: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M200.2,1765.6 L189.0,1769.3 L144.4,1769.3" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L51: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M144.4,1769.3 L122.1,1758.2 L122.1,1728.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L52: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M144.4,1769.3 L166.7,1758.2 L166.7,1728.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L53: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M144.4,1769.3 L122.1,1780.5 L122.1,1799.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L54: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M144.4,1769.3 L166.7,1780.5 L166.7,1799.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L55: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M200.2,1765.6 L189.0,1832.6 L144.4,1832.6" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L56: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M371.3,1810.2 L382.4,1713.5 L427.1,1713.5" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L57: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M371.3,1810.2 L382.4,1817.7 L427.1,1821.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L58: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M296.9,1665.2 L218.8,1654.0 L233.7,1609.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L62: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M296.9,1665.2 L263.4,1654.0 L278.3,1609.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L63: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M296.9,1665.2 L308.0,1654.0 L322.9,1609.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L64: Exact proposed opening; diagram paths are not runtime movement.</title></path>
-<path d="M296.9,1665.2 L352.7,1654.0 L367.6,1609.4" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L65: Exact proposed opening; diagram paths are not runtime movement.</title></path>
 <path d="M166.7,1862.3 L166.7,1905.2" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L66: Measured section reservation; actual six-player and ghost traversal unproved.</title></path>
 <text x="170.7" y="1900.2" class="small">↕ L66</text>
 <path d="M449.4,1884.6 L449.4,1927.5" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L67: Measured section reservation; actual six-player and ghost traversal unproved.</title></path>
@@ -260,65 +234,65 @@
 <rect x="410.7" y="1801.3" width="32.7" height="32.7" fill="none" stroke="#812c6b" stroke-width="2"/><text x="446.4" y="1817.7" class="label">B</text>
 <path d="M1150,1595.0 v-35 l-5,9 m5,-9 l5,9" fill="none" stroke="#283949" stroke-width="2"/><text x="1144" y="1552.0" class="label">N</text>
 <path d="M1080,1645.0 h74.4" stroke="#283949" stroke-width="3"/><text x="1080" y="1663.0" class="small">10 metres</text>
-<text x="32" y="2202.0" class="small">1. West sheltered cloister (3×44; Y+0)</text>
-<text x="446" y="2202.0" class="small">2. East teaching cloister and return (3×36; Y+0)</text>
-<text x="860" y="2202.0" class="small">3. North dining cloister (20×3; Y+0)</text>
-<text x="32" y="2232.0" class="small">4. South entrance cloister (20×3; Y+0)</text>
-<text x="446" y="2232.0" class="small">5. Visitor reception and waiting (10×8; Y+0)</text>
-<text x="860" y="2232.0" class="small">6. Visitor WC outside residence (4×4; Y+0)</text>
-<text x="32" y="2262.0" class="small">7. Coats and visitor supplies (4×4; Y+0)</text>
-<text x="446" y="2262.0" class="small">8. Library quiet reading (12×10; Y+0)</text>
-<text x="860" y="2262.0" class="small">9. Library issue return and staff desk (12×4; Y+0)</text>
-<text x="32" y="2292.0" class="small">10. Open library stacks (12×6; Y+0)</text>
-<text x="446" y="2292.0" class="small">11. Headmaster private meeting room (8×10; Y+0)</text>
-<text x="860" y="2292.0" class="small">12. Covered administration approach (12×3; Y+0)</text>
-<text x="32" y="2322.0" class="small">13. Staff private sanitary support (4×4; Y+0)</text>
-<text x="446" y="2322.0" class="small">14. Confidential staff records (4×6; Y+0)</text>
-<text x="860" y="2322.0" class="small">15. Household laundry and wash work (6×5; Y+0)</text>
-<text x="32" y="2352.0" class="small">16. Household stores under north residence (6×5; Y+0)</text>
-<text x="446" y="2352.0" class="small">17. Kitchen and household staff changing (6×5; Y+0)</text>
-<text x="860" y="2352.0" class="small">18. Bulk food supplies and delivery buffer (6×5; Y+0)</text>
-<text x="32" y="2382.0" class="small">19. Twenty-place pupil and staff dining (12×10; Y+0)</text>
-<text x="446" y="2382.0" class="small">20. Kitchen preparation and cooking (6×6; Y+0)</text>
-<text x="860" y="2382.0" class="small">21. Dining serving passage (6×4; Y+0)</text>
-<text x="32" y="2412.0" class="small">22. Food provisions (5×3; Y+0)</text>
-<text x="446" y="2412.0" class="small">23. Dirty dishes and cleanup (5×7; Y+0)</text>
-<text x="860" y="2412.0" class="small">24. Service receiving and unpacking (5×6; Y+0)</text>
-<text x="32" y="2442.0" class="small">25. Enclosed refuse awaiting removal (5×4; Y+0)</text>
-<text x="446" y="2442.0" class="small">26. Sixteen-place teaching room (12×13; Y+0)</text>
-<text x="860" y="2442.0" class="small">27. Practical teaching benches and handwashing (8×10; Y+0)</text>
-<text x="32" y="2472.0" class="small">28. Secure practical supplies and preparation (4×6; Y+0)</text>
-<text x="446" y="2472.0" class="small">29. Practical cleanup and sink (4×4; Y+0)</text>
-<text x="860" y="2472.0" class="small">30. Lab coats and approach (12×3; Y+0)</text>
-<text x="32" y="2502.0" class="small">31. Main stair and archive approach (12×11; Y+0)</text>
-<text x="446" y="2502.0" class="small">32. Independent east return stair (12×10; Y+0)</text>
-<text x="860" y="2502.0" class="small">33. Upper west residential passage (3×44; Y+3.6)</text>
-<text x="32" y="2532.0" class="small">34. Upper dormitory distribution (23×3; Y+3.6)</text>
-<text x="446" y="2532.0" class="small">35. Upper teaching-library return (3×36; Y+3.6)</text>
-<text x="860" y="2532.0" class="small">36. Main stair guarded upper landing (12×11; Y+3.6)</text>
-<text x="32" y="2562.0" class="small">37. East stair guarded upper landing (12×10; Y+3.6)</text>
-<text x="446" y="2562.0" class="small">38. Residential washing approach (12×5; Y+3.6)</text>
-<text x="860" y="2562.0" class="small">39. Student screened WC bays (6×5; Y+3.6)</text>
-<text x="32" y="2592.0" class="small">40. Private student shower bays (6×5; Y+3.6)</text>
-<text x="446" y="2592.0" class="small">41. Residential linen and cleaning supplies (12×3; Y+3.6)</text>
-<text x="860" y="2592.0" class="small">42. Two resident staff beds A (6×8; Y+3.6)</text>
-<text x="32" y="2622.0" class="small">43. Two resident staff beds B (6×8; Y+3.6)</text>
-<text x="446" y="2622.0" class="small">44. Staff sleeping approach (12×3; Y+3.6)</text>
-<text x="860" y="2622.0" class="small">45. Resident staff WC and washing (6×5; Y+3.6)</text>
-<text x="32" y="2652.0" class="small">46. Resident staff work room (6×5; Y+3.6)</text>
-<text x="446" y="2652.0" class="small">47. Staff common room (12×4; Y+3.6)</text>
-<text x="860" y="2652.0" class="small">48. Supervised restricted library stacks (12×10; Y+3.6)</text>
-<text x="32" y="2682.0" class="small">49. Quiet advanced study and research (12×13; Y+3.6)</text>
-<text x="446" y="2682.0" class="small">50. Four-place pupil sleeping room 1 (6×12; Y+3.6)</text>
-<text x="860" y="2682.0" class="small">51. Four-place pupil sleeping room 2 (6×12; Y+3.6)</text>
-<text x="32" y="2712.0" class="small">52. Four-place pupil sleeping room 3 (6×12; Y+3.6)</text>
-<text x="446" y="2712.0" class="small">53. Four-place pupil sleeping room 4 (6×12; Y+3.6)</text>
-<text x="860" y="2712.0" class="small">54. Dry institutional archive (6×16; Y-3)</text>
-<text x="32" y="2742.0" class="small">55. Heat water and electrical maintenance (6×16; Y-3)</text>
-<text x="446" y="2742.0" class="small">56. Archive and plant service approach (12×4; Y-3)</text>
-<text x="860" y="2742.0" class="small">57. Cellar stair below entrance range (12×11; Y-3)</text>
-<text x="32" y="2772.0" class="small">58. Open quadrangle with real daylight (20×20; Y+0)</text>
-<text x="446" y="2772.0" class="small">59. Academy service grounds envelope (59×55; Y+0)</text>
-<text x="860" y="2772.0" class="small">60. Gate court and public approach (59×13; Y+0)</text>
-<text x="32" y="2802.0" class="small">61. Canonical van gate apron (16×13; Y+0)</text>
+<text x="32" y="2202.0" class="small">1. West sheltered cloister [OPEN] (3×44; Y+0)</text>
+<text x="446" y="2202.0" class="small">2. East teaching cloister and return [OPEN] (3×36; Y+0)</text>
+<text x="860" y="2202.0" class="small">3. North dining cloister [OPEN] (20×3; Y+0)</text>
+<text x="32" y="2232.0" class="small">4. South entrance cloister [OPEN] (20×3; Y+0)</text>
+<text x="446" y="2232.0" class="small">5. Visitor reception and waiting [OPEN] (10×8; Y+0)</text>
+<text x="860" y="2232.0" class="small">6. Visitor WC outside residence [OPEN] (4×4; Y+0)</text>
+<text x="32" y="2262.0" class="small">7. Coats and visitor supplies [SEALED CONTEXT] (4×4; Y+0)</text>
+<text x="446" y="2262.0" class="small">8. Library quiet reading [OPEN] (12×10; Y+0)</text>
+<text x="860" y="2262.0" class="small">9. Library issue return and staff desk [OPEN] (12×4; Y+0)</text>
+<text x="32" y="2292.0" class="small">10. Open library stacks [SEALED CONTEXT] (12×6; Y+0)</text>
+<text x="446" y="2292.0" class="small">11. Headmaster private meeting room [OPEN] (8×10; Y+0)</text>
+<text x="860" y="2292.0" class="small">12. Covered administration approach [OPEN] (12×3; Y+0)</text>
+<text x="32" y="2322.0" class="small">13. Staff private sanitary support [SEALED CONTEXT] (4×4; Y+0)</text>
+<text x="446" y="2322.0" class="small">14. Confidential staff records [SEALED CONTEXT] (4×6; Y+0)</text>
+<text x="860" y="2322.0" class="small">15. Household laundry and wash work [SEALED CONTEXT] (6×5; Y+0)</text>
+<text x="32" y="2352.0" class="small">16. Household stores under north residence [SEALED CONTEXT] (6×5; Y+0)</text>
+<text x="446" y="2352.0" class="small">17. Kitchen and household staff changing [SEALED CONTEXT] (6×5; Y+0)</text>
+<text x="860" y="2352.0" class="small">18. Bulk food supplies and delivery buffer [SEALED CONTEXT] (6×5; Y+0)</text>
+<text x="32" y="2382.0" class="small">19. Twenty-place pupil and staff dining [OPEN] (12×10; Y+0)</text>
+<text x="446" y="2382.0" class="small">20. Kitchen preparation and cooking [OPEN] (6×6; Y+0)</text>
+<text x="860" y="2382.0" class="small">21. Dining serving passage [OPEN] (6×4; Y+0)</text>
+<text x="32" y="2412.0" class="small">22. Food provisions [SEALED CONTEXT] (5×3; Y+0)</text>
+<text x="446" y="2412.0" class="small">23. Dirty dishes and cleanup [SEALED CONTEXT] (5×7; Y+0)</text>
+<text x="860" y="2412.0" class="small">24. Service receiving and unpacking [SEALED CONTEXT] (5×6; Y+0)</text>
+<text x="32" y="2442.0" class="small">25. Enclosed refuse awaiting removal [SEALED CONTEXT] (5×4; Y+0)</text>
+<text x="446" y="2442.0" class="small">26. Sixteen-place teaching room [OPEN] (12×13; Y+0)</text>
+<text x="860" y="2442.0" class="small">27. Practical teaching benches and handwashing [OPEN] (8×10; Y+0)</text>
+<text x="32" y="2472.0" class="small">28. Secure practical supplies and preparation [OPEN] (4×6; Y+0)</text>
+<text x="446" y="2472.0" class="small">29. Practical cleanup and sink [SEALED CONTEXT] (4×4; Y+0)</text>
+<text x="860" y="2472.0" class="small">30. Lab coats and approach [OPEN] (12×3; Y+0)</text>
+<text x="32" y="2502.0" class="small">31. Main stair and archive approach [OPEN] (12×11; Y+0)</text>
+<text x="446" y="2502.0" class="small">32. Independent east return stair [OPEN] (12×10; Y+0)</text>
+<text x="860" y="2502.0" class="small">33. Upper west residential passage [OPEN] (3×44; Y+3.6)</text>
+<text x="32" y="2532.0" class="small">34. Upper dormitory distribution [OPEN] (23×3; Y+3.6)</text>
+<text x="446" y="2532.0" class="small">35. Upper teaching-library return [OPEN] (3×36; Y+3.6)</text>
+<text x="860" y="2532.0" class="small">36. Main stair guarded upper landing [OPEN] (12×11; Y+3.6)</text>
+<text x="32" y="2562.0" class="small">37. East stair guarded upper landing [OPEN] (12×10; Y+3.6)</text>
+<text x="446" y="2562.0" class="small">38. Residential washing approach [OPEN] (12×5; Y+3.6)</text>
+<text x="860" y="2562.0" class="small">39. Student screened WC bays [OPEN] (6×5; Y+3.6)</text>
+<text x="32" y="2592.0" class="small">40. Private student shower bays [OPEN] (6×5; Y+3.6)</text>
+<text x="446" y="2592.0" class="small">41. Residential linen and cleaning supplies [SEALED CONTEXT] (12×3; Y+3.6)</text>
+<text x="860" y="2592.0" class="small">42. Two resident staff beds A [SEALED CONTEXT] (6×8; Y+3.6)</text>
+<text x="32" y="2622.0" class="small">43. Two resident staff beds B [SEALED CONTEXT] (6×8; Y+3.6)</text>
+<text x="446" y="2622.0" class="small">44. Staff sleeping approach [SEALED CONTEXT] (12×3; Y+3.6)</text>
+<text x="860" y="2622.0" class="small">45. Resident staff WC and washing [SEALED CONTEXT] (6×5; Y+3.6)</text>
+<text x="32" y="2652.0" class="small">46. Resident staff work room [SEALED CONTEXT] (6×5; Y+3.6)</text>
+<text x="446" y="2652.0" class="small">47. Staff common room [SEALED CONTEXT] (12×4; Y+3.6)</text>
+<text x="860" y="2652.0" class="small">48. Supervised restricted library stacks [SEALED CONTEXT] (12×10; Y+3.6)</text>
+<text x="32" y="2682.0" class="small">49. Quiet advanced study and research [OPEN] (12×13; Y+3.6)</text>
+<text x="446" y="2682.0" class="small">50. Four-place pupil sleeping room 1 [OPEN] (6×12; Y+3.6)</text>
+<text x="860" y="2682.0" class="small">51. Four-place pupil sleeping room 2 [SEALED CONTEXT] (6×12; Y+3.6)</text>
+<text x="32" y="2712.0" class="small">52. Four-place pupil sleeping room 3 [OPEN] (6×12; Y+3.6)</text>
+<text x="446" y="2712.0" class="small">53. Four-place pupil sleeping room 4 [SEALED CONTEXT] (6×12; Y+3.6)</text>
+<text x="860" y="2712.0" class="small">54. Dry institutional archive [OPEN] (6×16; Y-3)</text>
+<text x="32" y="2742.0" class="small">55. Heat water and electrical maintenance [OPEN] (6×16; Y-3)</text>
+<text x="446" y="2742.0" class="small">56. Archive and plant service approach [OPEN] (12×4; Y-3)</text>
+<text x="860" y="2742.0" class="small">57. Cellar stair below entrance range [OPEN] (12×11; Y-3)</text>
+<text x="32" y="2772.0" class="small">58. Open quadrangle with real daylight [OPEN] (20×20; Y+0)</text>
+<text x="446" y="2772.0" class="small">59. Academy service grounds envelope [OPEN] (59×55; Y+0)</text>
+<text x="860" y="2772.0" class="small">60. Gate court and public approach [OPEN] (59×13; Y+0)</text>
+<text x="32" y="2802.0" class="small">61. Canonical van gate apron [OPEN] (16×13; Y+0)</text>
 </svg>

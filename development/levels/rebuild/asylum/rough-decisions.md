@@ -17,3 +17,8 @@ Main stair reserves3.4m rise over5.44m run at1.6m width; service cellar stair re
 Three4.4m ritual clear areas are reserved in chapel, plant and day room before prop fill. Canonical van transform/cargo approach is explicit. Outside envelopes do not accept stamped terrain pads: foundations, garden paths, contours, drainage and service courts must be shaped and reviewed.
 
 Checks: unique rooms, all15 owner mappings, same-floor indoor overlap rejection, proposed endpoints/thresholds, diagram connectivity, bed count/distribution/source-scale bounds, bedroom circulation interfaces, stair run/landing/width reservations, ritual bounds and explicit program-route exclusions. Planning PNG was visually reviewed. No stage acceptance, runtime integration, ghost/hunter/lift/electrical operation, network parity or physical GPU performance is inferred. Next: finish the remaining roster roughs before general blockout, with measured references and real native/runtime construction still required.
+
+
+## Owner amendment - bounded player search, 3 November
+
+This site exposes **40 accessible spaces** and retains **27 sealed context spaces**, maximum40 including circulation/outside/staging. The complete historical room program above is not the playable search count. Follow search-envelope.json and search-layout.json for the connected open portion and exact permanent boundary list. The current annotations have not built runtime seals. All objectives/ghost activity/interaction and required routes must stay open-side; construct the actual map geometry and validate real permanent boundaries. Round-duration testing is outside this task.

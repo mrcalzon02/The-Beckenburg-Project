@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 2315,
+  "count": 2316,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -21062,8 +21062,8 @@
       "kind": "Planning diagram",
       "width": 1500,
       "height": 1172,
-      "bytes": 123917,
-      "sha256": "4abcfe58cc512ffdfbb69f4ca78b0dea12f7afd19820efa28cadf83759590ee9"
+      "bytes": 122779,
+      "sha256": "eb5fa310cdfbb6f52906803fd75273ea1350bff9620b498fb23c8529754d137a"
     },
     {
       "path": "development/levels/rebuild/previews/asylum-revised-rough-plan.png",
@@ -21072,8 +21072,8 @@
       "kind": "Planning diagram",
       "width": 1500,
       "height": 1216,
-      "bytes": 127531,
-      "sha256": "9233270fc9a0f12c8118dc965b9e77454f41b309b1f4bc8e2f2565c182f827f1"
+      "bytes": 130866,
+      "sha256": "fc2307fd53e29b07445dac63be49e482018688be6afac98bbd1bc72777b32569"
     },
     {
       "path": "development/levels/rebuild/previews/briar-rebuild-blender-basement-terrain-cutaway.png",
@@ -21126,14 +21126,24 @@
       "sha256": "1bd1a2cfd6d090762d7d96ed0acae8e7c8bc61f5fcb6e00f7726f9b5b63c752d"
     },
     {
+      "path": "development/levels/rebuild/previews/college-revised-rough-plan.png",
+      "url": "development/levels/rebuild/previews/college-revised-rough-plan.png",
+      "title": "College revised rough plan",
+      "kind": "Planning diagram",
+      "width": 2100,
+      "height": 1494,
+      "bytes": 167886,
+      "sha256": "bcb6049efe6938116c38615f7aee062a250ab09886e6dc3ac17c958de2952cc3"
+    },
+    {
       "path": "development/levels/rebuild/previews/farmhouse-revised-rough-plan.png",
       "url": "development/levels/rebuild/previews/farmhouse-revised-rough-plan.png",
       "title": "Farmhouse revised rough plan",
       "kind": "Planning diagram",
       "width": 1500,
       "height": 974,
-      "bytes": 80480,
-      "sha256": "52c2da2a201888724741042db8467954c1a6e70238ba675582a6e505d236c47e"
+      "bytes": 79931,
+      "sha256": "f1eb5e4ea9eae856f955ab8795a484a65af748351580a44b193ef0f837108fbe"
     },
     {
       "path": "development/levels/rebuild/previews/mansion-revised-rough-plan.png",
@@ -21142,8 +21152,8 @@
       "kind": "Planning diagram",
       "width": 1500,
       "height": 1614,
-      "bytes": 109280,
-      "sha256": "c63bf2d1fa21a102fcb85d538a5100dce13c05010038c3cbf86983bcec889efa"
+      "bytes": 111095,
+      "sha256": "aa8e2324446b5d6466126998a7e3f13875ef76496ebd09ff02979bf87b6da5c4"
     },
     {
       "path": "development/levels/rebuild/previews/prison-revised-rough-plan.png",
@@ -21152,8 +21162,8 @@
       "kind": "Planning diagram",
       "width": 2100,
       "height": 1626,
-      "bytes": 176570,
-      "sha256": "bbf78bac43ef533c2d52e41e748876e8d9ab9544f3c65b8c35d1b8477b54cc8d"
+      "bytes": 173237,
+      "sha256": "0ec8867adbfba384ad97d924606fd2e645da37117f508f1a5c623f75b08ab337"
     },
     {
       "path": "development/levels/rebuild/previews/rejected-legacy-envelope-blender-exterior.png",
@@ -21172,8 +21182,8 @@
       "kind": "Planning diagram",
       "width": 1500,
       "height": 1018,
-      "bytes": 92497,
-      "sha256": "e3467192c3f1b8436ad57e9cd69ccf39085015f0182fb0ebce1d7cebe406da54"
+      "bytes": 91917,
+      "sha256": "fc5cb4a23934fd12ba1bcac3f1b9299d975d5a3e70cf34ff5f40df2a4e250d8c"
     },
     {
       "path": "development/levels/rebuild/previews/source-blockouts-native-fitout.png",

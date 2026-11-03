@@ -25,10 +25,11 @@ $line=New-Object System.Drawing.Pen([System.Drawing.Color]::FromArgb(83,100,119)
 $route=New-Object System.Drawing.Pen([System.Drawing.Color]::FromArgb(48,126,153),1.5)
 $stair=New-Object System.Drawing.Pen([System.Drawing.Color]::FromArgb(168,101,22),2)
 $stair.DashStyle=[System.Drawing.Drawing2D.DashStyle]::Dash
+$seal=New-Object System.Drawing.Pen([System.Drawing.Color]::FromArgb(150,57,49),2)
 $colors=@{inside=[System.Drawing.Color]::FromArgb(208,216,226);outside=[System.Drawing.Color]::FromArgb(197,214,190);circulation=[System.Drawing.Color]::FromArgb(178,203,212);staging=[System.Drawing.Color]::FromArgb(175,206,207)}
 $g.DrawString($data.title,$title,$ink,25,20)
-$g.DrawString('S02 revised design study | metres | source coordinates only | no runtime or physical acceptance',$font,$ink,25,58)
-$g.DrawString('Numbered rooms map to the key below. Cyan lines are connection diagrams; amber lines reserve real stair runs.',$small,$ink,25,82)
+$g.DrawString("S02 design only | $($data.search_envelope.accessible_spaces) accessible / $($data.search_envelope.sealed_context_spaces) SEALED | maximum 40 | no runtime acceptance",$font,$ink,25,58)
+$g.DrawString('Gray rooms are permanently SEALED context. Red crosses mark closure boundaries. Cyan/amber show open-route design only.',$small,$ink,25,82)
 for($i=0;$i -lt $levels.Count;$i++){
     $y=$levels[$i];$ox=25+($i%3)*$columnWidth;$oy=120+[Math]::Floor($i/3)*$panelHeight
     $scale=[Math]::Min(8.0,[Math]::Min([double](($columnWidth-40)/($data.site_bounds[2]-$data.site_bounds[0])),[double](($panelHeight-60)/($data.site_bounds[3]-$data.site_bounds[1]))))
@@ -39,12 +40,25 @@ for($i=0;$i -lt $levels.Count;$i++){
         if($z.y -ne $y){continue}
         $bounds=$z.bounds;$x=$baseX+($bounds[0]-$data.site_bounds[0])*$scale;$zz=$baseZ+($bounds[1]-$data.site_bounds[1])*$scale
         $w=($bounds[2]-$bounds[0])*$scale;$d=($bounds[3]-$bounds[1])*$scale
-        $brush=New-Object System.Drawing.SolidBrush($colors[$z.kind])
+        $fill=if($z.player_access -eq 'SEALED_CONTEXT'){[System.Drawing.Color]::FromArgb(216,212,207)}else{$colors[$z.kind]}
+        $brush=New-Object System.Drawing.SolidBrush($fill)
         $g.FillRectangle($brush,[single]$x,[single]$zz,[single]$w,[single]$d);$brush.Dispose()
         $g.DrawRectangle($line,[single]$x,[single]$zz,[single]$w,[single]$d)
     }
     foreach($link in $data.links){
         if(-not @($link.points | Where-Object {$_[1] -eq $y}).Count){continue}
+        if($link.player_access -eq 'SEALED_NO_ROUTE'){
+            $za=@($data.zones | Where-Object id -eq $link.a)[0];$zb=@($data.zones | Where-Object id -eq $link.b)[0]
+            if(($za.player_access -eq 'OPEN_SEARCH') -ne ($zb.player_access -eq 'OPEN_SEARCH')){
+                $point=if($link.kind -eq 'stairs'){if($za.player_access -eq 'OPEN_SEARCH'){$link.points[0]}else{$link.points[-1]}}else{$link.threshold}
+                if($point[1] -eq $y){
+                    $sx=$baseX+($point[0]-$data.site_bounds[0])*$scale;$sz=$baseZ+($point[2]-$data.site_bounds[1])*$scale
+                    $g.DrawLine($seal,[single]($sx-4),[single]($sz-4),[single]($sx+4),[single]($sz+4))
+                    $g.DrawLine($seal,[single]($sx-4),[single]($sz+4),[single]($sx+4),[single]($sz-4))
+                }
+            }
+            continue
+        }
         $pen=if($link.kind -eq 'stairs'){$stair}else{$route}
         for($j=0;$j -lt $link.points.Count-1;$j++){
             $a=$link.points[$j];$b=$link.points[$j+1]
@@ -62,12 +76,12 @@ for($i=0;$i -lt $levels.Count;$i++){
 }
 $legendTop=120+$rows*$panelHeight
 for($j=0;$j -lt $data.zones.Count;$j++){
-    $z=$data.zones[$j];$text="$($j+1). $($z.name) [owner $($z.owner)]"
+    $z=$data.zones[$j];$access=if($z.player_access -eq 'SEALED_CONTEXT'){'SEALED'}else{'OPEN'};$text="$($j+1). $($z.name) [$access]"
     $g.DrawString($text,$small,$ink,[single](25+($j%3)*$columnWidth),[single]($legendTop+[Math]::Floor($j/3)*22))
 }
 $destination=Join-Path $rebuildRoot "previews/$Site-revised-rough-plan.png"
 $bitmap.Save($destination,[System.Drawing.Imaging.ImageFormat]::Png)
-$g.Dispose();$bitmap.Dispose();$ink.Dispose();$font.Dispose();$small.Dispose();$title.Dispose();$line.Dispose();$route.Dispose();$stair.Dispose()
+$g.Dispose();$bitmap.Dispose();$ink.Dispose();$font.Dispose();$small.Dispose();$title.Dispose();$line.Dispose();$route.Dispose();$stair.Dispose();$seal.Dispose()
 $report=[ordered]@{status='PLANNING_DIAGRAM_NOT_RUNTIME_CAPTURE';source_sha256=(Get-FileHash -Algorithm SHA256 -LiteralPath $sourcePath).Hash.ToLower();png_sha256=(Get-FileHash -Algorithm SHA256 -LiteralPath $destination).Hash.ToLower();source="development/levels/rebuild/$Site/rough-layout.json";png="development/levels/rebuild/previews/$Site-revised-rough-plan.png"} | ConvertTo-Json
 [System.IO.File]::WriteAllText((Join-Path $rebuildRoot "$Site/rough-render-verification.json"),$report.Replace("`r`n","`n")+"`n",(New-Object System.Text.UTF8Encoding($false)))
 Write-Output "Rendered measured planning diagram: $destination"
