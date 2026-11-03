@@ -1,0 +1,28 @@
+{
+  "source_sha": "91e8f47b40c4494b51f9c72eeacde3c59d982033",
+  "runs": [
+    {
+      "id": 41731821001,
+      "workflow": "Editor Agent Service Acceptance",
+      "last_observed": "in_progress"
+    },
+    {
+      "id": 41731832476,
+      "workflow": "Beckenburg GPU Renderer Acceptance",
+      "last_observed": "queued"
+    }
+  ],
+  "prior_source_full_run": {
+    "id": 41726781593,
+    "job": 126233554539,
+    "source_sha": "b5e15c25c22be5762678b172e0dcc08934737f1e",
+    "last_observed": "in_progress; actual TCP/gear/van steps passed; advisory regression step live"
+  },
+  "full_dispatch": {
+    "state": "NOT_DISPATCHED; preserve the live prior-source full run",
+    "wait_for_terminal_run": 41726781593,
+    "target_source": "91e8f47b40c4494b51f9c72eeacde3c59d982033",
+    "reason": "Existing full workflow cancels in-progress verification on a new dispatch for the same branch. Read raw full transcript before dispatching next source."
+  },
+  "next": "Poll these exact handles without restarting; continue full Castle construction. No remote acceptance claimed."
+}
