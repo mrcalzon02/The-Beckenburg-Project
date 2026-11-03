@@ -10,6 +10,20 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-231 — Hunter pose history survives level replacement and departed seats
+
+**Status:** fixed-scoped; actual TCP gameplay and RTX OpenGL acceptance pass · **Affected:** Shared hunter animation tracker and LanWorldPanel peer lifecycle
+
+Reusing a seat near its prior coordinates in another scene can animate a newly stationary hunter; departing seats retain their last sampled pose.
+
+Cause / uncertainty: Renderer animation state was keyed by seat without a scene boundary or explicit peer-departure reset.
+
+Fix / next action: Reset the tracker when the world map instance changes and forget a departing seat in world, video and photo renderers. Exercise the same world-render method used by live gameplay.
+
+Evidence and verification: LanHunterAnimationGameplayTest passes real STEP and Ctrl transitions for all three classes, stop, scene replacement and departing crouched seat through actual TCP/onEvent/renderWorld. A separate compiled negative control omitting scene reset fails exactly at new scene resets gait cleric. Positive RTX 5070 OpenGL test exits 0. development/quality/evidence/hunter-gameplay-2026-11-02/.
+
+Older-map obligation: Shared lifecycle applies to every map; acceptance captures use House fixtures. No all-map or multi-PC animation acceptance is inferred.
+
 ### DEV-230 — Rear cargo liner, roof and hinges sit behind the donor body and generic doors discard its atlas
 
 **Status:** fixed-scoped; 13 focused checks pass; installed GPU review pending · **Affected:** Shared Castle and every investigation-arrival van
@@ -68,7 +82,7 @@ Older-map obligation: Test-fixture correction only; no runtime level selection b
 
 ### DEV-226 — Playable hunters remain static while walking and crouch by squashing idle art
 
-**Status:** fixed-scoped; local Java 17 renderer checks pass; installed multiplayer review pending · **Affected:** All three playable hunter appearances in the shared teammate billboard renderer
+**Status:** fixed-scoped; real TCP gameplay and local native RTX OpenGL build verified; multi-PC review pending · **Affected:** All three playable hunter appearances in the shared teammate billboard renderer
 
 Received teammate movement uses one standing turnaround; crouch scales that standing image vertically instead of bending knees.
 

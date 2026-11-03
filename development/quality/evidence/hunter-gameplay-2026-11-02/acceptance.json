@@ -1,0 +1,33 @@
+{
+  "runtime_source_commit": "c876e163",
+  "native_package_matches_tested_gpu_jar": true,
+  "captures": 24,
+  "gpu": "NVIDIA GeForce RTX 5070, OpenGL 3.3, NVIDIA 616.64",
+  "software_gameplay": "pass",
+  "gpu_gameplay": "pass, exit 0",
+  "full_packaged_tcp_round": "pass",
+  "missing_scene_reset_negative_control": "expected failure: new scene resets gait cleric",
+  "native_gpu_smoke": "PASS House/Castle/flyovers/flashlight/VBO reuse; native process completed",
+  "artifacts": [
+    {
+      "path": "build/hunter-gameplay-source/gpu-client/target/BeckenburgGPU.jar",
+      "bytes": 371750655,
+      "sha256": "35ae0c2431db3904959177c3ebc794de281b6289c6adfeff068028883880259b"
+    },
+    {
+      "path": "build/playable-hunters/Beckenburg-Hunters/app/BeckenburgGPU.jar",
+      "bytes": 371750655,
+      "sha256": "35ae0c2431db3904959177c3ebc794de281b6289c6adfeff068028883880259b"
+    },
+    {
+      "path": "build/playable-hunters/Beckenburg-Hunters/Beckenburg-Hunters.exe",
+      "bytes": 599552,
+      "sha256": "c521d7a636aab669a0a189d55a2bf2d4a707182db6ebbe0a32f3850ddb6123bb"
+    },
+    {
+      "path": "build/hunter-gameplay-source/build/beckenburg-game.jar",
+      "bytes": 357305474,
+      "sha256": "b73e6cf25af1b85556fa4affa41a2b17d7ede29775baff7b82890ee46c7bd709"
+    }
+  ]
+}

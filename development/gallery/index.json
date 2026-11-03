@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 2283,
+  "count": 2307,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -23024,6 +23024,246 @@
       "height": 2232,
       "bytes": 751144,
       "sha256": "90d34a7f7c42f0247f106f78f47ec06e11cef1a2410c26e68ef2110766c43527"
+    },
+    {
+      "path": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/gpu/cleric-crouch.png",
+      "url": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/gpu/cleric-crouch.png",
+      "title": "Cleric crouch",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 89883,
+      "sha256": "f4e772c3d9611cde4d788abaf398d18b9db906a35881fb41af9917efe168decd"
+    },
+    {
+      "path": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/gpu/cleric-idle.png",
+      "url": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/gpu/cleric-idle.png",
+      "title": "Cleric idle",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 90345,
+      "sha256": "25fb5e11899c669826df346e407a4a6c0a71bf039cd881e02767b5cdf8773e66"
+    },
+    {
+      "path": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/gpu/cleric-walk_a.png",
+      "url": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/gpu/cleric-walk_a.png",
+      "title": "Cleric walk a",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 88985,
+      "sha256": "a294e184db56ede10f80dd56e60f71112d6feec6192c86e777e90005c0ca0f6c"
+    },
+    {
+      "path": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/gpu/cleric-walk_b.png",
+      "url": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/gpu/cleric-walk_b.png",
+      "title": "Cleric walk b",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 91886,
+      "sha256": "7a92d93b533517cf3af0c37079e822b04a79cc6bbe81e145c2878609d2677dd7"
+    },
+    {
+      "path": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/gpu/demonologist-crouch.png",
+      "url": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/gpu/demonologist-crouch.png",
+      "title": "Demonologist crouch",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 89959,
+      "sha256": "ae8db13a0a1951cd3b7df941027fbe0473542c1290f9f2e372de459b2f3333f3"
+    },
+    {
+      "path": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/gpu/demonologist-idle.png",
+      "url": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/gpu/demonologist-idle.png",
+      "title": "Demonologist idle",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 90706,
+      "sha256": "73a18d7a3693cb9f37f69bc2dbe01bf47399fcee7d02b739dd43aefc39c23700"
+    },
+    {
+      "path": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/gpu/demonologist-walk_a.png",
+      "url": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/gpu/demonologist-walk_a.png",
+      "title": "Demonologist walk a",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 87303,
+      "sha256": "d57e194c9029991d01edaf7b5282020e9e6430813820a5c953bc246d6c677344"
+    },
+    {
+      "path": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/gpu/demonologist-walk_b.png",
+      "url": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/gpu/demonologist-walk_b.png",
+      "title": "Demonologist walk b",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 88986,
+      "sha256": "9fb219d9e1975d3b07910c425ad4b1476a89252b6b625e65122068b3e16e2f98"
+    },
+    {
+      "path": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/gpu/observer-crouch.png",
+      "url": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/gpu/observer-crouch.png",
+      "title": "Observer crouch",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 89965,
+      "sha256": "64165516451b3593f8dfd5bb5ccb3b36714715eda059d6cc776cb2889b8cebc9"
+    },
+    {
+      "path": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/gpu/observer-idle.png",
+      "url": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/gpu/observer-idle.png",
+      "title": "Observer idle",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 90406,
+      "sha256": "59ed4d2a7b97006bc1dcec166f88a375222e6fca2ded4e8039ad1b5c21e60020"
+    },
+    {
+      "path": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/gpu/observer-walk_a.png",
+      "url": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/gpu/observer-walk_a.png",
+      "title": "Observer walk a",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 87359,
+      "sha256": "7c4fb5eb336e2e95975997333275b9bda3ec8a9f213de67369b63a248b0f064e"
+    },
+    {
+      "path": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/gpu/observer-walk_b.png",
+      "url": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/gpu/observer-walk_b.png",
+      "title": "Observer walk b",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 88853,
+      "sha256": "b0c296ad21dd2eb287270a39f0c720c9324d8b2eedac99202bf0caaf3b3e64ce"
+    },
+    {
+      "path": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/software/cleric-crouch.png",
+      "url": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/software/cleric-crouch.png",
+      "title": "Cleric crouch",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 95548,
+      "sha256": "5a5b04480388ee05e931279512b58c121e10c8fbcfe3f7a599d18cb254ca890f"
+    },
+    {
+      "path": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/software/cleric-idle.png",
+      "url": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/software/cleric-idle.png",
+      "title": "Cleric idle",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 95771,
+      "sha256": "81c16005194226e1ccc384ec7eae293000706c83c75f0131a8b19b62d7d80c42"
+    },
+    {
+      "path": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/software/cleric-walk_a.png",
+      "url": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/software/cleric-walk_a.png",
+      "title": "Cleric walk a",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 97114,
+      "sha256": "8f9908b4e680af107be3b51e9ca3cf20b23a8c6bd390a8c83a1abf028dc1b00e"
+    },
+    {
+      "path": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/software/cleric-walk_b.png",
+      "url": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/software/cleric-walk_b.png",
+      "title": "Cleric walk b",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 99018,
+      "sha256": "002d129f3d102f03194affb57c49a461e0198af4b4e6a5c95f4fd51c6a96c782"
+    },
+    {
+      "path": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/software/demonologist-crouch.png",
+      "url": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/software/demonologist-crouch.png",
+      "title": "Demonologist crouch",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 95601,
+      "sha256": "2bfb969a24ecc1f3f556cc2a8553ca8b7c3ab0d5555365d01e8b2ffb83ccd54c"
+    },
+    {
+      "path": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/software/demonologist-idle.png",
+      "url": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/software/demonologist-idle.png",
+      "title": "Demonologist idle",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 96219,
+      "sha256": "605e592bc3ea2e1b19b10b5332562888a210d5642c67a588e17a47c17d6b84af"
+    },
+    {
+      "path": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/software/demonologist-walk_a.png",
+      "url": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/software/demonologist-walk_a.png",
+      "title": "Demonologist walk a",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 94515,
+      "sha256": "6edb796d1b7ab28dec8f920512a079f51a275787c409a65bb6fa67c549f162f9"
+    },
+    {
+      "path": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/software/demonologist-walk_b.png",
+      "url": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/software/demonologist-walk_b.png",
+      "title": "Demonologist walk b",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 97099,
+      "sha256": "0243d83f4a2a3099fb3ef5e03235a28fc008450b7ff69e3f243b359404e2528f"
+    },
+    {
+      "path": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/software/observer-crouch.png",
+      "url": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/software/observer-crouch.png",
+      "title": "Observer crouch",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 95612,
+      "sha256": "64ec8882e9872e9544e88a05b217e4fdab5d74a0e2e2bef974ddf1308ac59735"
+    },
+    {
+      "path": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/software/observer-idle.png",
+      "url": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/software/observer-idle.png",
+      "title": "Observer idle",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 95903,
+      "sha256": "84da5d07b08cd79b2edf853265be2a6cbb9189f7b019616f4d713c2baa50b3d1"
+    },
+    {
+      "path": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/software/observer-walk_a.png",
+      "url": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/software/observer-walk_a.png",
+      "title": "Observer walk a",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 94499,
+      "sha256": "9ec35af2dbc2d6ef143245f6cc80e52c4fad2e5c835c24ffd9e2b0c20c386b54"
+    },
+    {
+      "path": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/software/observer-walk_b.png",
+      "url": "development/quality/evidence/hunter-gameplay-2026-11-02/captures/runtime/software/observer-walk_b.png",
+      "title": "Observer walk b",
+      "kind": "Runtime capture",
+      "width": 320,
+      "height": 200,
+      "bytes": 96998,
+      "sha256": "f9f292ef564491a0cd3606f4f33db1c4d54dd46ac09345080a7cc5d930f4a0f3"
     }
   ]
 }

@@ -127,7 +127,7 @@ public final class LanHunterAnimationGameplayTest {
                 check(render(viewer,seat,null)==HunterSpriteAnimation.Pose.IDLE,"Ctrl restores idle "+role);
                 // Scene replacement must not inherit this seat's prior walk stride.
                 camera.drawNetwork(new HouseMap(),List.of(new SceneRenderer.RemoteBody(x+.1,y,z,seat,180,role)),
-                    (SceneRenderer.Apparition)null,100);
+                    (SceneRenderer.Apparition)null,(int)field(viewer.panel,"tick")*.1+.1);
                 check(camera.hunterPose(seat)==HunterSpriteAnimation.Pose.IDLE,"new scene resets gait "+role);
                 System.out.println("PASS gameplay "+role+": TCP STEP -> WALK_A/WALK_B; stop -> IDLE; Ctrl -> CROUCH -> IDLE; scene reset");
             }
