@@ -34,7 +34,7 @@ public final class LanVanExtractionIntegrationTest {
     private static void check(boolean value,String message){
         if(!value)throw new AssertionError(message);
     }
-    private static void run(int hunters,boolean outside,boolean departed)throws Exception {
+    private static void run(int hunters,boolean outside,boolean departed,boolean roomMode)throws Exception {
         try(LanHost host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,
                 CustomContract.standard(hunters))){
             List<Wire> peers=new ArrayList<>();
@@ -51,6 +51,11 @@ public final class LanVanExtractionIntegrationTest {
                     if(departed){
                         missing.close();
                         leader.expect("PEER|LEFT|1");
+                    }else if(roomMode){
+                        missing.client.extract();
+                        check(missing.expect("REJECT|").contains("operate the exit from inside the van"),
+                            "room-mode field hunter cannot extract remotely");
+                        check(host.running(),"rejected remote room-mode extraction must not end the round");
                     }else{
                         missing.client.view3D();
                         missing.expect("ACCEPT|VIEW3D");
@@ -60,10 +65,24 @@ public final class LanVanExtractionIntegrationTest {
                         check(host.running(),"rejected outside request must not end the round");
                     }
                 }
-                leader.client.view3D();
-                leader.expect("ACCEPT|VIEW3D");
-                leader.client.vanDoor();
-                leader.expect("ACCEPT|VANDOOR|CLOSED");
+                if(roomMode){
+                    // A mixed party must count the physically present hunter, too.
+                    if(!outside&&hunters>1){
+                        peers.get(1).client.view3D();
+                        peers.get(1).expect("ACCEPT|VIEW3D");
+                    }
+                    leader.client.extract();
+                    leader.expect("ACCEPT|EXTRACT");
+                }else{
+                    leader.client.view3D();
+                    leader.expect("ACCEPT|VIEW3D");
+                    leader.client.extract();
+                    check(leader.expect("REJECT|").contains("physical hunters must use the van door control"),
+                        "legacy EXTRACT must not bypass physical van control");
+                    check(host.running(),"rejected physical EXTRACT cannot finish the round");
+                    leader.client.vanDoor();
+                    leader.expect("ACCEPT|VANDOOR|CLOSED");
+                }
                 leader.expect("RESULT|RETREATED");
                 check(!host.running(),"host ends the investigation immediately");
                 check(leader.saw("VANDOOR|1"),"physical door close broadcast");
@@ -78,7 +97,7 @@ public final class LanVanExtractionIntegrationTest {
                     check(peer.count("RESULT|RETREATED")==1,
                         "exactly one result per connected hunter");
                 }
-                leader.client.vanDoor();
+                if(roomMode)leader.client.extract();else leader.client.vanDoor();
                 leader.expect("REJECT|");
                 Thread.sleep(150);
                 check(leader.count("RESULT|RETREATED")==1,"repeat input cannot settle twice");
@@ -90,10 +109,12 @@ public final class LanVanExtractionIntegrationTest {
         }
     }
     public static void main(String[] args)throws Exception {
-        run(1,false,false);
-        run(3,false,false);
-        run(3,true,false);
-        run(3,true,true);
-        System.out.println("PASS: solo/all-aboard/outside/departed host van extraction, status and once-only result");
+        for(boolean roomMode:new boolean[]{false,true}){
+            run(1,false,false,roomMode);
+            run(3,false,false,roomMode);
+            run(3,true,false,roomMode);
+            run(3,true,true,roomMode);
+        }
+        System.out.println("PASS: physical and legacy room-mode solo/all-aboard/outside/departed retreat, roster and once-only result");
     }
 }

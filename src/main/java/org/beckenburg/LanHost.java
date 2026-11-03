@@ -1805,7 +1805,14 @@ public final class LanHost implements AutoCloseable {
                             boolean near=!peer.worldMode||RitualSites.site(map,rite).near(world.body(peer.slot));
                             yield mission.performRite(peer.slot,rite,here,near);
                         }
-                        case "EXTRACT" -> mission.extract(peer.slot,here);
+                        case "EXTRACT" -> {
+                            // Room-mode clients retain the abstract staging action.
+                            // Physical clients must operate the actual cargo control.
+                            if(peer.worldMode)
+                                throw new IllegalArgumentException("physical hunters must use the van door control");
+                            closeVanDoorsAndFinish(peer);
+                            yield new LanCase.Report(true,"TEAM WITHDREW - haunting unresolved");
+                        }
                         default -> throw new AssertionError();
                     };
                     answerHunter(peer,p.get(0),result);
@@ -2055,7 +2062,7 @@ public final class LanHost implements AutoCloseable {
      * The legacy team settlement remains separate pending per-seat economy policy.
      */
     private void closeVanDoorsAndFinish(Peer peer){
-        if(!insideVan(peer.slot))throw new IllegalArgumentException("operate the exit from inside the van");
+        if(!aboardForRetreat(peer.slot))throw new IllegalArgumentException("operate the exit from inside the van");
         if(map.van().cargoDoorClosed())throw new IllegalArgumentException("van doors already sealed");
         map.van().setCargoDoorClosed(true);
         for(int i=0;i<HUNTERS;i++)
@@ -2066,7 +2073,7 @@ public final class LanHost implements AutoCloseable {
             }
         boolean[] aboard=new boolean[HUNTERS];
         for(int i=0;i<HUNTERS;i++)
-            aboard[i]=seats[i]!=null&&mission.alive(i)&&insideVan(i);
+            aboard[i]=aboardForRetreat(i);
         LanCase.Report report=mission.extractWithRoster(peer.slot,HouseMap.EXTRACTION_ROOM,aboard);
         if(!report.accepted()){
             map.van().setCargoDoorClosed(false);
@@ -2077,6 +2084,15 @@ public final class LanHost implements AutoCloseable {
         // silently represented as aboard, even while legacy team rewards persist.
         for(int i=0;i<HUNTERS;i++)
             notifyHunters("EXTRACTION|"+i+"|"+(mission.extracted(i)?1:0));
+    }
+    /** Room-mode staging is an intentional abstract control. A 3D hunter must
+     * physically be inside the cargo area; disconnected seats never count.
+     */
+    private boolean aboardForRetreat(int seat){
+        Peer occupant=seats[seat];
+        return occupant!=null&&mission.alive(seat)
+            &&(occupant.worldMode?insideVan(seat)
+                :hunterRooms[seat]==HouseMap.EXTRACTION_ROOM);
     }
     private boolean insideVan(int seat){
         LanWorld.Body body=world.body(seat);
