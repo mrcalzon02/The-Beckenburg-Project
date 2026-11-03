@@ -18,6 +18,21 @@ public final class CampaignEmbeddedDesktopTest {
         long end=System.nanoTime()+15_000_000_000L;
         while(System.nanoTime()<end){if(edt(condition))return;Thread.sleep(50);}throw new AssertionError(label);
     }
+    static String lobbyLog(LanLobbyPanel panel)throws Exception{
+        var field=LanLobbyPanel.class.getDeclaredField("log");
+        field.setAccessible(true);
+        return ((JTextArea)field.get(panel)).getText();
+    }
+    static void untilLogged(java.util.concurrent.Callable<Boolean> condition,
+                            String label,LanLobbyPanel panel)throws Exception{
+        try{until(condition,label);}
+        catch(AssertionError failure){
+            // Preserve the actual GUI-received protocol transcript in Windows CI.
+            // A timeout alone cannot distinguish a missing packet from a different
+            // host rejection or a lost/late Swing dispatch.
+            throw new AssertionError(label+"; lobby transcript:\n"+edt(()->lobbyLog(panel)),failure);
+        }
+    }
     public static void main(String[] args)throws Exception{
         if(GraphicsEnvironment.isHeadless())throw new AssertionError("Desktop required");
         Path dir=Files.createTempDirectory("embedded-campaign");var profile=new ProfileStore(dir.resolve("profile.properties"));
@@ -47,11 +62,13 @@ public final class CampaignEmbeddedDesktopTest {
                 hunter[0]=(LanClient)clientField.get(lobby[0]);
                 // Entering the 3D scene switches the hunter to physical controls.
                 // Legacy room-mode EXTRACT must be rejected rather than silently paying out.
-                hunter[0].extract();return null;});
-            until(()->{var logField=LanLobbyPanel.class.getDeclaredField("log");logField.setAccessible(true);
-                return ((JTextArea)logField.get(lobby[0])).getText().contains(
-                    "REJECT|physical hunters must use the van door control");
-            },"Physical campaign hunter cannot use legacy EXTRACT");
+                return null;});
+            untilLogged(()->lobbyLog(lobby[0]).contains("ACCEPT|VIEW3D"),
+                "Host acknowledged physical mode through the campaign GUI",lobby[0]);
+            edt(()->{hunter[0].extract();return null;});
+            untilLogged(()->lobbyLog(lobby[0]).contains(
+                    "REJECT|physical hunters must use the van door control"),
+                "Physical campaign hunter cannot use legacy EXTRACT",lobby[0]);
             if(!owner[0].running()||!profile.archives().isEmpty())
                 throw new AssertionError("Rejected extraction changed host campaign state");
             // Exercise the same host-validated cargo control used by real 3D gameplay.
