@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 2308,
+  "count": 2309,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -20274,6 +20274,16 @@
       "height": 200,
       "bytes": 31021,
       "sha256": "f63348a4ce71e7f5fc85e17f92d8e133e8f5f335c803839641d59e2e9f41aa37"
+    },
+    {
+      "path": "development/levels/rebuild/captures/editor-service/church-nave-before.png",
+      "url": "development/levels/rebuild/captures/editor-service/church-nave-before.png",
+      "title": "Church nave before",
+      "kind": "Runtime capture",
+      "width": 560,
+      "height": 350,
+      "bytes": 319657,
+      "sha256": "c1cd9bb200f25f4070c6f8996a50778da9d0dd33b805bdb45d87becdab549769"
     },
     {
       "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/00-entrance-and-coat-vestibule/east.png",
