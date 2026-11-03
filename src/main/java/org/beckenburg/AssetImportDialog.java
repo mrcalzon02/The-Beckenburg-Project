@@ -74,7 +74,14 @@ public final class AssetImportDialog {
     private final JComboBox<EditorMeshPicking.Projection> meshView=new JComboBox<>(EditorMeshPicking.Projection.values());
     private final JComboBox<String> selectionMode=new JComboBox<>(new String[]{"VERTEX","EDGE","FACE"});
     private final JLabel selectionLabel=new JLabel("Click a triangle in the working mesh");
-    private EditorMeshPicking.Hit selectedHit;
+    private EditorMeshPicking.Hit selectedHit,hoverHit;
+    private EditorTopologyProject.State pickingState,hoverState;
+    private EditorMeshPicking.Projector pickingCamera,hoverCamera;
+    private EditorMeshPicking.Prepared preparedPicking;
+    private Viewport hoverViewport;
+    private int hoverMode;
+    private record ViewKey(EditorMeshPicking.Projector camera,int left,int width,int height,double panX,double panY,double zoom){}
+    private final java.util.IdentityHashMap<List<EditorMeshPipeline.Triangle>,java.util.Map<ViewKey,Viewport>> viewportCache=new java.util.IdentityHashMap<>();
     private Long normalAnchor;
     private final JSpinner meshSnap=new JSpinner(new SpinnerNumberModel(.05,0d,1000d,.05));
     private record GizmoHandle(int axis,int x,int y,double anchorX,double anchorY,double unitX,double unitY,double worldX,double worldY,double worldZ,double scale,EditorMeshPicking.Projector camera,EditorMeshPipeline.Normal direction){}
@@ -174,13 +181,15 @@ public final class AssetImportDialog {
         meshView.setToolTipText("Perspective: right-drag to orbit, middle-drag to pan, wheel to zoom. Fit view restores framing.");
         fitCamera.setVisible(false);fitCamera.addActionListener(e->{cancelAxisDrag();cancelBoxSelection();cameraZoom=1;cameraPanX=0;cameraPanY=0;preview.repaint();});selectionMode.addActionListener(e->{cancelAxisDrag();refreshMeshControls();preview.repaint();});
         preview.addMouseListener(new MouseAdapter(){
-            @Override public void mousePressed(MouseEvent e){if(e.getButton()==MouseEvent.BUTTON1){if(!beginAxisDrag(e.getX(),e.getY())){
+            @Override public void mouseExited(MouseEvent e){clearHover();}
+            @Override public void mousePressed(MouseEvent e){clearHover();if(e.getButton()==MouseEvent.BUTTON1){if(!beginAxisDrag(e.getX(),e.getY())){
                 if(boxSelect.isSelected()&&!busy&&modelingPreview==null&&topologyProject!=null&&e.getX()<workingViewportWidth()){boxStart=e.getPoint();boxEnd=e.getPoint();selectionPath=new ArrayList<>();selectionPath.add(e.getPoint());lassoGesture=areaShape.getSelectedIndex()==1;preview.repaint();}
                 else pickMesh(e.getX(),e.getY());
             }}else {cancelAxisDrag();cancelBoxSelection();if(source!=null&&projection()==EditorMeshPicking.Projection.PERSPECTIVE){cameraGesture=e.getPoint();cameraButton=e.getButton();}}}
             @Override public void mouseReleased(MouseEvent e){if(e.getButton()==MouseEvent.BUTTON1){if(axisDrag!=null)finishAxisDrag();else finishBoxSelection();}else cameraGesture=null;}
         });
-        preview.addMouseMotionListener(new MouseMotionAdapter(){@Override public void mouseDragged(MouseEvent e){
+        preview.addMouseMotionListener(new MouseMotionAdapter(){@Override public void mouseMoved(MouseEvent e){hoverMesh(e.getX(),e.getY());}
+            @Override public void mouseDragged(MouseEvent e){clearHover();
             if(cameraGesture!=null){int dx=e.getX()-cameraGesture.x,dy=e.getY()-cameraGesture.y;cameraGesture=e.getPoint();
                 if(cameraButton==MouseEvent.BUTTON3){cameraYaw=Math.IEEEremainder(cameraYaw+dx*.5,360);cameraPitch=Math.max(-85,Math.min(85,cameraPitch+dy*.5));}
                 else if(cameraButton==MouseEvent.BUTTON2){var view=viewport(workingReference(),0,workingViewportWidth());cameraPanX-=dx/view.scale();cameraPanY-=dy/view.scale();}preview.repaint();return;}
@@ -778,18 +787,31 @@ public final class AssetImportDialog {
         int y(double value){return height/2+(int)Math.round((value-centerY)*scale);}
     }
     private Viewport viewport(List<EditorMeshPipeline.Triangle> reference,int left,int width){
-        var camera=projector(reference);double xmin=Double.POSITIVE_INFINITY,ymin=xmin,xmax=Double.NEGATIVE_INFINITY,ymax=xmax;
+        var camera=projector(reference);var key=new ViewKey(camera,left,width,getPreviewHeight(),cameraPanX,cameraPanY,cameraZoom);
+        if(viewportCache.size()>4)viewportCache.clear();var cache=viewportCache.computeIfAbsent(reference,k->new java.util.HashMap<>());var cached=cache.get(key);if(cached!=null)return cached;if(cache.size()>16)cache.clear();
+        double xmin=Double.POSITIVE_INFINITY,ymin=xmin,xmax=Double.NEGATIVE_INFINITY,ymax=xmax;
         for(var t:reference)for(var v:List.of(t.a(),t.b(),t.c())){
             var p=camera.project(v.x(),v.y(),v.z());xmin=Math.min(xmin,p.x());xmax=Math.max(xmax,p.x());ymin=Math.min(ymin,p.y());ymax=Math.max(ymax,p.y());
         }
         double scale=Math.min((width-26)/Math.max(1e-6,xmax-xmin),(getPreviewHeight()-36)/Math.max(1e-6,ymax-ymin));
-        return new Viewport((xmin+xmax)*.5+(camera.perspective()?cameraPanX:0),(ymin+ymax)*.5+(camera.perspective()?cameraPanY:0),scale*(camera.perspective()?cameraZoom:1),left,width,getPreviewHeight());
+        var result=new Viewport((xmin+xmax)*.5+(camera.perspective()?cameraPanX:0),(ymin+ymax)*.5+(camera.perspective()?cameraPanY:0),scale*(camera.perspective()?cameraZoom:1),left,width,getPreviewHeight());cache.put(key,result);return result;
+    }
+    private EditorMeshPicking.Hit nativePick(EditorTopologyProject.State state,EditorMeshPicking.Projector camera,double x,double y){
+        if(pickingState!=state||pickingCamera!=camera){preparedPicking=EditorMeshPicking.prepare(state,camera);pickingState=state;pickingCamera=camera;}
+        return preparedPicking.pick(x,y).orElse(null);
+    }
+    private void clearHover(){if(hoverHit!=null){hoverHit=null;preview.repaint();}}
+    private void hoverMesh(int x,int y){
+        if(busy||modelingPreview!=null||topologyProject==null||source==null||source.triangles().isEmpty()||x<0||x>=workingViewportWidth()||y<0||y>=getPreviewHeight()){clearHover();return;}
+        var view=viewport(workingReference(),0,workingViewportWidth());var camera=projector(workingReference());var state=topologyProject.snapshot();
+        var hit=nativePick(state,camera,(x-view.left()-view.width()/2)/view.scale()+view.centerX(),(y-view.height()/2)/view.scale()+view.centerY());
+        hoverState=state;hoverCamera=camera;hoverViewport=view;hoverMode=selectionMode.getSelectedIndex();hoverHit=hit;preview.repaint();
     }
     private void pickMesh(int x,int y){
         if(busy||modelingPreview!=null||topologyProject==null||source.triangles().isEmpty()||x<0||x>=workingViewportWidth())return;
         var view=viewport(workingReference(),0,workingViewportWidth());
         double px=(x-view.left()-view.width()/2)/view.scale()+view.centerX(),py=(y-view.height()/2)/view.scale()+view.centerY();
-        selectedHit=EditorMeshPicking.pick(topologyProject.snapshot(),projector(workingReference()),px,py).orElse(null);
+        selectedHit=nativePick(topologyProject.snapshot(),projector(workingReference()),px,py);
         if(selectedHit!=null)normalAnchor=selectedHit.faceId();
         if(selectedHit==null){selectedVertex=null;selectedVertices=java.util.Set.of();selectionLabel.setText("No triangle selected");refreshMeshControls();preview.repaint();return;}
         if(selectionMode.getSelectedIndex()==0){vertexId.setValue(selectedHit.vertexId());selectVertex();}
@@ -890,6 +912,10 @@ public final class AssetImportDialog {
             for(int i=0;i<tris.size();i+=step){var triangle=tris.get(i);for(var v:List.of(triangle.a(),triangle.b(),triangle.c()))try{
                 double length=screenLength*camera.worldScale(v.x(),v.y(),v.z());var n=EditorMeshNormals.unit(EditorMeshNormals.effective(triangle,v));var a=camera.project(v.x(),v.y(),v.z());var b=camera.project(v.x()+n.x()*length,v.y()+n.y()*length,v.z()+n.z()*length);g.drawLine(view.x(a.x()),view.y(a.y()),view.x(b.x()),view.y(b.y()));
             }catch(IllegalArgumentException degenerate){/* Degenerate geometry has no derived normal; native diagnostics retain the issue. */}}
+        }
+        if(title.equals("WORKING MESH")&&hoverHit!=null&&!busy&&modelingPreview==null&&topologyProject.snapshot()==hoverState&&hoverCamera==camera&&view.equals(hoverViewport)&&hoverMode==selectionMode.getSelectedIndex()){
+            var face=hoverState.faces().stream().filter(f->f.id()==hoverHit.faceId()).findFirst().orElse(null);
+            if(face!=null){long[] ids=hoverMode==0?new long[]{hoverHit.vertexId()}:hoverMode==1?new long[]{hoverHit.edgeA(),hoverHit.edgeB()}:new long[]{face.a().vertex(),face.b().vertex(),face.c().vertex()};int[] xs=new int[ids.length],ys=new int[ids.length];for(int i=0;i<ids.length;i++){long id=ids[i];var vertex=hoverState.vertices().stream().filter(v->v.id()==id).findFirst().orElseThrow();var point=camera.project(vertex.x(),vertex.y(),vertex.z());xs[i]=view.x(point.x());ys[i]=view.y(point.y());}g.setColor(new Color(90,220,255));g.setStroke(new BasicStroke(3));if(hoverMode==0)g.drawOval(xs[0]-6,ys[0]-6,12,12);else if(hoverMode==1)g.drawLine(xs[0],ys[0],xs[1],ys[1]);else{g.drawPolygon(xs,ys,3);g.setColor(new Color(90,220,255,45));g.fillPolygon(xs,ys,3);}g.setStroke(new BasicStroke(1));}
         }
         if(title.equals("WORKING MESH")&&selectedVertex!=null&&selectedVertices.contains(selectedVertex.id())){
             var v=selectedVertex;var p=camera.project(v.x(),v.y(),v.z());int px=view.x(p.x()),py=view.y(p.y());
