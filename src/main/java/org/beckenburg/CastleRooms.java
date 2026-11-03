@@ -25,7 +25,7 @@ public final class CastleRooms {
         new Room("library","Upper library",10.5,1,19.5,11.5,3.4,6.8,false,MaterialAtlas.PARQUET));
     public static Room at(double x,double feet,double z){
         for(var r:ALL)if(Math.abs(r.floor-feet)<.3&&r.contains(x,z))return r;
-        return null;
+        return CastleAnnex.roomAt(x,feet,z);
     }
     public static boolean ground(double x,double z){return at(x,0,z)!=null;}
     public static double mountHeight(double x,double z,boolean upper){
@@ -34,7 +34,7 @@ public final class CastleRooms {
         return room.ceiling-SLAB;
     }
     public static String circuit(double x,double y,double z){
-        var r=at(x,y>4?3.4:0,z);return r==null?"court":r.id;
+        var r=at(x,y>4?3.4:0,z);return r==null?"court":r.x0()<1?"practice":r.id;
     }
     private static long structureRevision=-1;
     private static List<CastleHubArchitecturalPlan.Deck> cachedStructure=List.of();

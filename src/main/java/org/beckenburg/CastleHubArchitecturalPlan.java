@@ -110,7 +110,11 @@ public final class CastleHubArchitecturalPlan {
         vertical(out,1,1,16,0,GROUND_CEILING,MaterialAtlas.STONE);
         vertical(out,1,16,17.8,0,1.05,MaterialAtlas.STONE);
         vertical(out,1,16,17.8,2.45,GROUND_CEILING,MaterialAtlas.STONE);
-        vertical(out,1,17.8,26,0,GROUND_CEILING,MaterialAtlas.STONE);
+        // Real annex doorway; retain the adjacent historical casement.
+        vertical(out,1,17.8,24.3,0,GROUND_CEILING,MaterialAtlas.STONE);
+        vertical(out,1,25.7,26,0,GROUND_CEILING,MaterialAtlas.STONE);
+        vertical(out,1,24.3,25.7,DOOR_HEIGHT,GROUND_CEILING,MaterialAtlas.STONE);
+        out.add(new Wall(1,24.3,1,25.7,0,0,MaterialAtlas.STONE,25,1.4));
         vertical(out,1,26,27.8,0,1.05,MaterialAtlas.STONE);
         vertical(out,1,26,27.8,2.45,GROUND_CEILING,MaterialAtlas.STONE);
         vertical(out,1,27.8,34,0,GROUND_CEILING,MaterialAtlas.STONE);
@@ -130,6 +134,7 @@ public final class CastleHubArchitecturalPlan {
         vertical(out,10.5,1,11.5,GROUND_CEILING,UPPER_CEILING,MaterialAtlas.STONE);
         vertical(out,19.5,1,11.5,GROUND_CEILING,UPPER_CEILING,MaterialAtlas.STONE);
         horizontal(out,11.5,10.5,19.5,GROUND_CEILING,UPPER_CEILING,MaterialAtlas.STONE,17.5);
+        out.addAll(CastleAnnex.walls());
         return List.copyOf(out);
     }
     private static void horizontal(List<Wall> out,double z,double from,double to,

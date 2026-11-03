@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: all fittings feed the game light engine
+	at org.beckenburg.CastleLightingPlacementRepairTest.check(CastleLightingPlacementRepairTest.java:11)
+	at org.beckenburg.CastleLightingPlacementRepairTest.main(CastleLightingPlacementRepairTest.java:66)

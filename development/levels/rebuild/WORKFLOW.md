@@ -163,3 +163,12 @@ Church revised S02:33 spaces,29 accessible,4 sealed crypt vaults. Preserve chara
 ## Castle full-revision priority and construction foundation - 3 November
 
 Owner directs finishing Castle completely before resuming other locations. Revised source keeps actual HQ core,9 stations,5 residents, parked van,39 accessible spaces and protected training; no live HQ haunting or round-time testing. Actual implementation now permits signed west-annex and negative cellar native authoring, preserves all old cell IDs, refreshes runtime ground support after live edits/history, and exposes bounded surface edits through the real Castle Editor Agent. Tests pass old/new native geometry, history/recovery, stations, doors and actual service. Actual annex/body/optical/terrain/lower-stair/roof/room/detail construction is not complete. Next: construct full native Castle, saved editor terrain holes and correct lower/upper physics, then furnish/refine and verify the entire working hub before returning to other maps.
+
+
+## Castle native training annex — 3 November
+
+Actual native surfaces generated from the Castle rough authority now build four ground rooms, shared cut doorways, buried foundations, timber beams, supported ceilings/lamps and a pitched roof. The Castle facade has a real 1.4m connection while preserving its adjacent casement. Runtime and human editor consume the same native defaults.
+
+The packaged CastleTrainingAnnexTest reaches all four rooms through 81,366 physical positions from native spawn. It checks real partition and closed/open door body/optical collision, indoor circuits, fixture support and beam clearance, switch-off lighting energy, exact save/reopen. Seven accompanying Castle regressions pass; retained logs state their scope. New scene migration only adds annex lamps to matching existing architecture, and preserves deliberate current-version deletions.
+
+The first render exposed a tree in the corridor (DEV-235). The rejected image is retained and labeled; the corrected capture is actual runtime structural construction. No furnishing, training-exercise binding, cellar, upper lodging, whole-hub visual acceptance or full Castle completion is claimed. Next: build saved editor terrain punching and real cellar circulation, then complete upper construction and fit-out before resuming other locations. No round-time testing.

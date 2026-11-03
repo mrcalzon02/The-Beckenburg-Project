@@ -304,7 +304,7 @@
       "name": "Protected three-rite training distribution",
       "bounds": [
         -17,
-        26,
+        24,
         1,
         30
       ],
@@ -324,7 +324,7 @@
         -17,
         14,
         -11,
-        26
+        24
       ],
       "y": 0,
       "height": 3.4,
@@ -342,7 +342,7 @@
         -11,
         14,
         -5,
-        26
+        24
       ],
       "y": 0,
       "height": 3.4,
@@ -360,7 +360,7 @@
         -5,
         14,
         1,
-        26
+        24
       ],
       "y": 0,
       "height": 3.4,
@@ -1521,18 +1521,18 @@
         [
           1,
           0,
-          27
+          25
         ],
         [
           -8.0,
           0,
-          28.0
+          27.0
         ]
       ],
       "threshold": [
         1,
         0,
-        27
+        25
       ],
       "access": "peaceful-headquarters",
       "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
@@ -1548,23 +1548,23 @@
         [
           -8.0,
           0,
-          28.0
+          27.0
         ],
         [
           -14,
           0,
-          26
+          24
         ],
         [
           -14.0,
           0,
-          20.0
+          19.0
         ]
       ],
       "threshold": [
         -14,
         0,
-        26
+        24
       ],
       "access": "peaceful-headquarters",
       "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
@@ -1580,23 +1580,23 @@
         [
           -8.0,
           0,
-          28.0
+          27.0
         ],
         [
           -8,
           0,
-          26
+          24
         ],
         [
           -8.0,
           0,
-          20.0
+          19.0
         ]
       ],
       "threshold": [
         -8,
         0,
-        26
+        24
       ],
       "access": "peaceful-headquarters",
       "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
@@ -1612,23 +1612,23 @@
         [
           -8.0,
           0,
-          28.0
+          27.0
         ],
         [
           -2,
           0,
-          26
+          24
         ],
         [
           -2.0,
           0,
-          20.0
+          19.0
         ]
       ],
       "threshold": [
         -2,
         0,
-        26
+        24
       ],
       "access": "peaceful-headquarters",
       "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
@@ -2347,11 +2347,11 @@
   "source_pins": [
     {
       "path": "src/main/java/org/beckenburg/CastleRooms.java",
-      "sha256": "0c09236923fe0b13a63f8096b59c48623d72b2815e84279647f8608c1539c651"
+      "sha256": "aace0c0aaecadee9ef7455f827f55fd96da23adeee7c45dac9595afb1b61b75f"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleHubArchitecturalPlan.java",
-      "sha256": "89df90f773ca4a5a7873fb1f7da9f11cef94f22d3701852e1caae2a775aa8646"
+      "sha256": "7bb80def3093fb637731a1abd79815508a9d64a75ee6e3500d29e152b3a830bf"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleHubMap.java",
@@ -2363,7 +2363,7 @@
     },
     {
       "path": "src/main/java/org/beckenburg/CastleSurroundings.java",
-      "sha256": "ddc8f98fe0e5eb80358d3b5dc636b1f30983f96636ea4a0d22d05a1c9fa59594"
+      "sha256": "0fc179cf0dc66f6d882ebcd948e0e13ebcc60a081f34a9d23d49ed67d63b59fd"
     }
   ],
   "station_bindings": [

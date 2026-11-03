@@ -308,6 +308,7 @@ public final class CastleLevelEdits {
                 f.scale(),f.yaw(),f.mount(),chandelier?10.5:9.8,
                 chandelier?4.2:4.0));
         }
+        CastleAnnex.installDefaults(surfaces,lamps);
         for(var station:CastleHubMap.Station.values())
             stations.put(station,new double[]{station.x,station.z});
         spawnX=13.5;spawnZ=19.3;spawnYaw=Math.PI;
@@ -438,6 +439,8 @@ public final class CastleLevelEdits {
                 int version=Integer.parseInt(p.getProperty(layout+".layout","1"));
                 if(version<0||version>2)throw new IllegalArgumentException("Unsupported Castle "+layout+" layout version "+version);
             }
+            int annexVersion=Integer.parseInt(p.getProperty("annex.layout","0"));
+            if(annexVersion<0||annexVersion>1)throw new IllegalArgumentException("Unsupported Castle annex layout version");
             if(Integer.parseInt(p.getProperty("structure.layout","1"))<2){defaults();return;}
         }catch(RuntimeException invalid){throw new IOException("Invalid/unsupported Castle layout version",invalid);}
         try{
@@ -533,6 +536,20 @@ public final class CastleLevelEdits {
                     incomingLights.putIfAbsent(id,new Lamp(id,fixture.on(),fixture.off(),
                         fixture.x(),fixture.y(),fixture.z(),fixture.scale(),fixture.yaw(),
                         fixture.mount(),chandelier?10.5:9.8,chandelier?4.2:4.0));
+                }
+            }
+            // Add new lighting only to an older document that actually contains
+            // its native floor and ceiling. Never populate an absent legacy annex
+            // or resurrect a deliberately removed current-version fitting.
+            if(Integer.parseInt(p.getProperty("annex.layout","0"))<1){
+                for(var lamp:lamps.values())if(lamp.id().startsWith("annex-light-")){
+                    String room=lamp.id().substring("annex-light-".length());
+                    Surface floor=parsed.get("annex-floor-"+room),ceiling=parsed.get("annex-ceiling-"+room);
+                    if(floor!=null&&ceiling!=null&&floor.kind()==Kind.FLOOR&&ceiling.kind()==Kind.FLOOR
+                        &&Math.abs(floor.base())<1e-7&&Math.abs(ceiling.base()-3.4)<1e-7
+                        &&lamp.x()>=floor.x0()&&lamp.x()<=floor.x1()&&lamp.z()>=floor.z0()&&lamp.z()<=floor.z1()
+                        &&lamp.x()>=ceiling.x0()&&lamp.x()<=ceiling.x1()&&lamp.z()>=ceiling.z0()&&lamp.z()<=ceiling.z1())
+                        incomingLights.putIfAbsent(lamp.id(),lamp);
                 }
             }
             // Older authored castle saves receive only newly introduced
@@ -653,6 +670,7 @@ public final class CastleLevelEdits {
         Properties p=new Properties();p.setProperty("format","1");
         p.setProperty("structure.layout","2");
         p.setProperty("lighting.layout","2");
+        p.setProperty("annex.layout","1");
         p.setProperty("fortification.layout","2");
         p.setProperty("gate.layout","2");
         p.setProperty("windows.layout","2");

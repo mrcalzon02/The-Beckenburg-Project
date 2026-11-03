@@ -1066,10 +1066,10 @@ def castle():
         ('store','Quartermaster physical stock and retrieval aisles',[28.5,17.5,37,34],'store','inside'),
         ('repair','Repair and separated chemistry task work',[37,17.5,43,26],'store','inside'),
         ('infirmary','Private first aid recovery and handwashing',[37,26,43,34],'store','inside'),
-        ('training-entry','Protected three-rite training distribution',[-17,26,1,30],'practice','circulation'),
-        ('train-b','Protected Banishment training bay',[-17,14,-11,26],'practice','inside'),
-        ('train-c','Protected Cleansing training bay',[-11,14,-5,26],'practice','inside'),
-        ('train-a','Protected Absolution training bay',[-5,14,1,26],'practice','inside')]:room(key,name,bounds,0,owner,kind)
+        ('training-entry','Protected three-rite training distribution',[-17,24,1,30],'practice','circulation'),
+        ('train-b','Protected Banishment training bay',[-17,14,-11,24],'practice','inside'),
+        ('train-c','Protected Cleansing training bay',[-11,14,-5,24],'practice','inside'),
+        ('train-a','Protected Absolution training bay',[-5,14,1,24],'practice','inside')]:room(key,name,bounds,0,owner,kind)
     room('stage','Arrival courtyard and existing expedition approach',[10.5,11.5,20.5,34],0,'court','staging',12)
     room('entry','Existing gate threshold',[13.2,34,17.8,36],0,'gate','outside',12)
     room('library','Existing upper library',[10.5,1,19.5,11.5],3.4,'library')
@@ -1105,7 +1105,7 @@ def castle():
         ('practice','common',5.5,22),('common','kitchen',4,28),('common','washup',8.5,28),('kitchen','pantry',6.5,32.5),
         ('network','operations',24,21),('network','archive',28.5,14),('role-lounge','archive',28.5,7.5),
         ('operations','store',28.5,24.5),('archive','store',33,17.5),('store','repair',37,22),('store','infirmary',37,30),
-        ('common','training-entry',1,27),('training-entry','train-b',-14,26),('training-entry','train-c',-8,26),('training-entry','train-a',-2,26),
+        ('common','training-entry',1,25),('training-entry','train-b',-14,24),('training-entry','train-c',-8,24),('training-entry','train-a',-2,24),
         ('library','gallery',17.5,11.5),('library','res-hall',10.5,6.5),('res-hall','upper-wash',7.5,4),('res-hall','linen',7.5,9),('linen','upper-wc',4,9),('upper-wash','upper-wc',2.5,7),
         ('res-hall','lodging-1',7.5,15),('res-hall','lodging-2',7.5,22),('res-hall','lodging-3',7.5,29),('res-hall','eave-store',7.5,33.25),
         ('gallery','east-bridge',19,21),('east-bridge','east-north-walk',20.2,20),('east-bridge','east-south-walk',20.2,22),

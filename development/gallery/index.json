@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 2319,
+  "count": 2321,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -20276,6 +20276,16 @@
       "sha256": "f63348a4ce71e7f5fc85e17f92d8e133e8f5f335c803839641d59e2e9f41aa37"
     },
     {
+      "path": "development/levels/rebuild/captures/castle-construction/rejected-training-annex-tree.png",
+      "url": "development/levels/rebuild/captures/castle-construction/rejected-training-annex-tree.png",
+      "title": "Rejected training annex tree",
+      "kind": "Rejected runtime study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 333431,
+      "sha256": "e5d3b781d9071cbebb924af44d24627c61ebd70f4e3a1d8283f403bb63bc1ed9"
+    },
+    {
       "path": "development/levels/rebuild/captures/castle-construction/signed-annex-native.png",
       "url": "development/levels/rebuild/captures/castle-construction/signed-annex-native.png",
       "title": "Signed annex native",
@@ -20284,6 +20294,16 @@
       "height": 500,
       "bytes": 127588,
       "sha256": "1bd6b3680567ba6ef99561adbfb18fcd1d05867c0e62418a382513fe63003f30"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/training-annex-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/training-annex-runtime.png",
+      "title": "Training annex runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 373598,
+      "sha256": "4959e70a9bd153a033eeb078b911df01f003be137c9822f86730dc11998d85e6"
     },
     {
       "path": "development/levels/rebuild/captures/church-upper-openings/door-7-8.png",
@@ -21142,8 +21162,8 @@
       "kind": "Planning diagram",
       "width": 2100,
       "height": 1208,
-      "bytes": 103045,
-      "sha256": "f219fe7e1caf7c0cfda84c78c6a5d2c62fb067be437be73243e1d5132dd3cbef"
+      "bytes": 102868,
+      "sha256": "90cf5619b601116c03363442c2e1f0171b34878f6e5817944bc319833970d673"
     },
     {
       "path": "development/levels/rebuild/previews/church-revised-rough-plan.png",

@@ -63,7 +63,7 @@ public final class CastleLightingPlacementRepairTest {
                 "mounting plate must be fitted to the masonry face");
         }
         var lighting=new FixtureLighting(map);
-        check(lighting.sources().size()==lamps.size(),"all fittings feed the game light engine");
+        check(lighting.sources().size()==CastleLevelEdits.current().lamps().size(),"all fittings feed the game light engine");
         // Verify the actual illumination source is no longer buried in masonry.
         var editedLamps=CastleLevelEdits.current().lamps();
         for(int i=0;i<editedLamps.size();i++){
@@ -100,23 +100,27 @@ public final class CastleLightingPlacementRepairTest {
         try{
             Path file=folder.resolve("castle.properties");
             var fresh=new CastleLevelEdits(file);
-            check(fresh.lamps().size()==lamps.size(),"new scene receives extra lamp instances");
+            check(fresh.lamps().size()==lamps.size()+CastleAnnex.SPACES.size(),"new scene receives extra lamp instances");
             // Simulate an authentic older document with only its original 17
             // fixture rows and no lighting version. Do not wipe other content.
             fresh.save();
             var older=new Properties();
             try(var input=Files.newInputStream(file)){older.load(input);}
-            older.remove("lighting.layout");
+            older.remove("lighting.layout");older.remove("annex.layout");
             older.setProperty("lamps.count","17");
             try(var output=Files.newOutputStream(file)){older.store(output,"legacy castle");}
             var migrated=new CastleLevelEdits(file);
-            check(migrated.lamps().size()==lamps.size(),"existing scene receives current room coverage");
+            check(migrated.lamps().size()==lamps.size()+CastleAnnex.SPACES.size(),"existing scene receives current room coverage");
             migrated.removeLamp("lighting2_0");
             migrated.save();
             var reloaded=new CastleLevelEdits(file);
-            check(reloaded.lamps().size()==lamps.size()-1
+            check(reloaded.lamps().size()==lamps.size()+CastleAnnex.SPACES.size()-1
                 &&reloaded.lamps().stream().noneMatch(l->l.id().equals("lighting2_0")),
                 "removing an upgraded lamp persists; no unwanted resurrection");
+
+            reloaded.removeLamp("annex-light-train-b");reloaded.save();
+            check(new CastleLevelEdits(file).lamps().stream().noneMatch(l->l.id().equals("annex-light-train-b")),
+                "deliberately removed annex fixture stays removed after save/reopen");
 
             var parent=reloaded.props().stream().filter(p->p.id().startsWith("ground")
                 &&Math.abs(p.x()-13.5)<.01&&Math.abs(p.z()-3.4)<.01)

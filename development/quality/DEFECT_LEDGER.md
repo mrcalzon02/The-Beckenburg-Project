@@ -3216,6 +3216,20 @@ Evidence and verification: main ce146a69 full41566564774 and installer4156656477
 
 Older-map obligation: Campaign/host behavior requires actual packaged regression; no map or release acceptance inferred.
 
+### DEV-235 — Legacy Castle tree belt intersects new training annex
+
+**Status:** fixed-scoped; actual packaged render and physical annex regression pass · **Affected:** Castle west training annex / CastleSurroundings
+
+First runtime capture shows an original exterior tree occupying the new interior corridor.
+
+Cause / uncertainty: Legacy western tree coordinates predate the signed west extension.
+
+Fix / next action: Move the existing western belt beyond the annex west wall; retain models and population. Offset new bay lamps away from actual roof beams; version native annex-light migration so deleted lights stay deleted.
+
+Evidence and verification: rebuild/captures/castle-construction/rejected-training-annex-tree.png and training-annex-runtime.png; verification/castle-annex-2026-11-03 packaged tests, actual 81366-position native-spawn flood, closed/open body and optical leaf, fixture support/clearance and switch-off energy.
+
+Older-map obligation: Castle-specific environment conflict. Other sites require individual building/tree/fixture audits; no complete Castle or roster acceptance inferred.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
