@@ -329,3 +329,6 @@ DEV-232 repairs the reproduced Church failure: contained choir-loft doors now pe
 Next: finish the complete roster rough batch and use this service diagnostic at map checkpoints; retain outstanding physical van shortcut test correction and both art-golden diagnoses. Full map rebuild remains active.
 
 All nine selectable maps pass the shared physical route check. Final packaged Church regression passes; no map acceptance is inferred.
+
+
+DEV-233: corrected stale LanWorldControlsTest after actual before-state reproduction. Real X-key extraction is rejected for physical hunters and leaves the round running; real TCP VANDOOR then closes cargo and synchronizes RETREATED. Packaged local test passes without production-policy changes. Exact906 acceptance handles editor41681790664/GPU41681802504/full41681818348 remain live; inspect terminal raw evidence and do not restart. Continue Asylum rough batch.

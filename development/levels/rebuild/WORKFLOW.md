@@ -125,3 +125,6 @@ Revised S02 Mansion authority now generates50 spaces/61 proposed connections, se
 ## Farmhouse working-yard rough checkpoint - 3 November
 
 Revised S02 Farmhouse adds34 architectural spaces/36 proposed connections: bounded household food/cleanup/storage, private WC/washing, parents/two-child sleeping, stall/feed/equipment bays off4m barn aisle, real loft stair, separate repair/parts/consumables/laundry and two-rectangle saved-terrain cellar-hole reservation. Seven native asset bounds/pivots fit source scale. A2m service gap prevents the rear barn doorway opening into the parts store. Labelled plan reviewed; no runtime dispatch or stage acceptance. Continue Asylum/Academy/College/Church/Castle and remote/annex roughs; actual fixture/support/terrain/navigation and full acceptance remain open.
+
+
+DEV-233: corrected stale LanWorldControlsTest after actual before-state reproduction. Real X-key extraction is rejected for physical hunters and leaves the round running; real TCP VANDOOR then closes cargo and synchronizes RETREATED. Packaged local test passes without production-policy changes. Exact906 acceptance handles editor41681790664/GPU41681802504/full41681818348 remain live; inspect terminal raw evidence and do not restart. Continue Asylum rough batch.

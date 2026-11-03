@@ -65,10 +65,15 @@ public final class LanWorldControlsTest {
                 check(a.await("REJECT|CLEANSE").contains("haunting anchor"),
                     "legacy host rejects a ritual from the van rather than the physical anchor");
                 press(panel,KeyEvent.VK_3);check(panel.selectedTool()==LanCase.Tool.SPIRIT_BOX,"hotkey 3 selects spirit box");
-                press(panel,KeyEvent.VK_X);check(a.await("ACCEPT|EXTRACT").contains("TEAM WITHDREW"),"3D viewport can extract from van");
+                press(panel,KeyEvent.VK_X);
+                check(a.await("REJECT|").contains("physical hunters must use the van door control"),
+                    "physical viewport shortcut cannot bypass the van door");
+                check(host.running(),"rejected extraction must leave the round active");
+                a.client.vanDoor();
+                check(a.await("ACCEPT|VANDOOR|CLOSED").contains("CLOSED"),"physical door control closes the van over TCP");
                 check(a.await("RESULT|RETREATED").contains("RETREATED"),"outcome synchronized");
             }finally{SwingUtilities.invokeAndWait(panel::close);}
-            System.out.println("PASS: LAN 3D hotkeys dispatch real host-owned scan, ward, cleanse and extraction");
+            System.out.println("PASS: LAN viewport hotkeys dispatch host-owned tools; legacy extraction rejected and physical van door completes synchronized retreat");
         }
     }
 }

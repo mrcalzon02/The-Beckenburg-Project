@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: missing host acknowledgment ACCEPT|EXTRACT
+	at org.beckenburg.LanWorldControlsTest$Peer.await(LanWorldControlsTest.java:23)
+	at org.beckenburg.LanWorldControlsTest.main(LanWorldControlsTest.java:68)

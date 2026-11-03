@@ -10,6 +10,20 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-233 — Viewport controls regression expects retired physical extraction shortcut
+
+**Status:** fixed-scoped; actual packaged TCP viewport controls pass locally · **Affected:** LanWorldControlsTest assertion after VIEW3D
+
+The test waits for ACCEPT|EXTRACT although the host correctly rejects EXTRACT from physical hunters.
+
+Cause / uncertainty: Old room-mode extraction expectation survived the physical van door contract change.
+
+Fix / next action: Retain actual X-key dispatch, assert host rejection and active round, then issue physical VANDOOR over TCP and require closed-door acknowledgment plus synchronized retreat result. Host behavior is unchanged.
+
+Evidence and verification: development/levels/rebuild/verification/physical-controls-2026-11-03 before/after logs; main127 full41672923465 advisory failure independently reproduced.
+
+Older-map obligation: Shared control regression; no map unlock or release acceptance. Existing full van extraction integration remains authoritative for occupancy and abandonment policy.
+
 ### DEV-232 — Contained Church choir loft doors are sealed by the tall nave wall and stair guard
 
 **Status:** fixed-scoped; packaged upper-door and editor-service traversal checks pass locally · **Affected:** Church upper choir loft to tower/archive; shared contained-upper-wall opening authority
