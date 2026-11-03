@@ -12,6 +12,7 @@ public final class HouseMap {
     private final LevelDefinition level;
     private final SiteTerrain terrain;
     private final AuthoredSitePhysics nativeSite;
+    private final List<List<Portal>> wallPortals;
     private final AuthoredSitePhysics worldSurface;
     AuthoredSitePhysics worldSurface(){return worldSurface;}
     public boolean nativeSite(){return nativeSite!=null;}
@@ -73,6 +74,7 @@ public final class HouseMap {
     }
     HouseMap(Site site,LevelDefinition definition,AuthoredSitePhysics worldSurface){
         this.site=Objects.requireNonNull(site);level=Objects.requireNonNull(definition);guards=level.guards();
+        wallPortals=level.rooms().stream().map(r->level.wallPortals(r.id())).toList();
         this.worldSurface=worldSurface;
         terrain=SiteTerrain.of(level);
         nativeSite=HollowCreekLevel.is(level)?HollowCreekLevel.physics():null;
@@ -213,7 +215,7 @@ public final class HouseMap {
         return Math.abs(dx*c+dz*s)<hx+radius&&Math.abs(-dx*s+dz*c)<hz+radius;
     }
     private boolean wallOpening(Room room,boolean edgeAlongX,double normal,double tangent,double y,double radius,boolean ray,int selectedPortal,double bodyHeight){
-        for(Portal p:level.portalsFrom(room.id())){
+        for(Portal p:wallPortals.get(room.id())){
             if(p.kind().equals("stair"))continue;
             if(p.alongX()!=edgeAlongX)continue;
             double plane=edgeAlongX?p.z():p.x(),mid=edgeAlongX?p.x():p.z();

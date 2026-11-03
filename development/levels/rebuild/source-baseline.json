@@ -9,13 +9,13 @@
   "current_runtime_source_fingerprints": [
     {
       "path": "src/main/java/org/beckenburg/LevelPlans.java",
-      "bytes": 35396,
-      "sha256": "b06d4e610871e6440506810c14fe42e9331ccef14e1abcf45b419e9bdac2c59c"
+      "bytes": 35473,
+      "sha256": "4d8187a30c06c46729bb38530bda578b2a6464bcc817f72344437c64946f2fe7"
     },
     {
       "path": "src/main/java/org/beckenburg/LevelDefinition.java",
-      "bytes": 7328,
-      "sha256": "170b552859b01ea54c8cf70c3897ff4296a1fa90e9d0427fb3d0bb14657d6921"
+      "bytes": 8897,
+      "sha256": "4e4e490751fe6440730cedcb8b4f2d3b6fa59d6c3f5d885a132f33ee6d7ce430"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleHubMap.java",
@@ -48,7 +48,7 @@
       "sha256": "6e05bdb86fe59b0b959b00a0f633dff784cf11ec931b5a402104d045cc908ebf"
     }
   ],
-  "capture_provenance_note": "Built-in investigation geometry captured from the synchronized baseline; diagnostic camera corrections do not alter geometry. Castle after-resident-fix captures are separate; current source fingerprints include the resident-placement correction. Existing native shell previews are historical source studies, especially Hollow Creek, and do not replace its newer native/runtime authority.",
+  "capture_provenance_note": "Built-in investigation geometry captured from the synchronized baseline; diagnostic camera corrections do not alter geometry. Castle after-resident-fix captures are separate; current source fingerprints include the resident-placement and Church upper-door corrections; baseline captures remain historical before-state. Existing native shell previews are historical source studies, especially Hollow Creek, and do not replace its newer native/runtime authority.",
   "scope": {
     "base_locations": 28,
     "annexes": 1

@@ -10,6 +10,20 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-232 — Contained Church choir loft doors are sealed by the tall nave wall and stair guard
+
+**Status:** fixed-scoped; packaged upper-door and editor-service traversal checks pass locally · **Affected:** Church upper choir loft to tower/archive; shared contained-upper-wall opening authority
+
+Actual swept movement cannot reach tower stair, organ archive or belfry and six functional sockets; nine failed goals, 159429 states.
+
+Cause / uncertainty: Tall nave boundary ignores upper child portals; tower threshold at Z31 overlaps choir stair side guard.
+
+Fix / next action: Share eligible contained-upper portals between physical and rendered walls, retain lower wall/jamb/lintel, and move tower threshold to Z32.65 beyond the guard. Expose the same open-route solver as mission-open-routes in the actual Editor Agent Service.
+
+Evidence and verification: development/levels/rebuild/verification/church-openings-2026-11-03: before failure, after 169097 swept positions Y-3..6, closed/open/crouch/optical and actual triangle controls. Runtime captures show both upper openings.
+
+Older-map obligation: Run shared traversal against every selectable map; preserve saved terrain surface in audit clones. Open-route success does not accept closed-door interaction, hunts, complete map quality or hardware performance.
+
 ### DEV-231 — Hunter pose history survives level replacement and departed seats
 
 **Status:** fixed-scoped; actual TCP gameplay and RTX OpenGL acceptance pass · **Affected:** Shared hunter animation tracker and LanWorldPanel peer lifecycle

@@ -249,7 +249,8 @@ public final class LevelPlans {
         b.door(0,3,18,0,22,1.1,false);b.door(0,4,22,0,12,2,true);
         b.door(0,5,26,0,20,1.5,false);b.door(5,6,30,0,14,1.1,true);
         b.door(4,6,26,0,9,1.1,false);b.door(2,3,14,0,26,1.1,true);
-        b.door(7,8,18,3,31,1.05,false);b.door(7,9,26,3,31,1.05,false);
+        // Keep the tower threshold beyond the choir stair's side guard.
+        b.door(7,8,18,3,32.65,1.05,false);b.door(7,9,26,3,31,1.05,false);
         b.door(1,13,22,0,39,1.8,true);b.door(6,12,34,0,10,1.1,false);
         b.flight(0,7,19.2,27,19.2,31.8,0,3);
         b.flight(11,0,24.8,22.8,24.8,18,-3,0);

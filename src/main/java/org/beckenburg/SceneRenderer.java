@@ -1603,11 +1603,15 @@ public final class SceneRenderer {
                 return;
             }
         }
-        var openings=level.portals().stream().filter(p->!p.kind().equals("stair")&&p.alongX()==alongX
-            &&(p.a()==r.id()||p.b()==r.id())&&nearPlane(p.y(),r.y())
+        var openings=level.wallPortals(r.id()).stream().filter(p->!p.kind().equals("stair")&&p.alongX()==alongX
+            &&p.y()>=r.y()-.01&&p.y()<r.y()+r.height()
             &&nearPlane(alongX?p.z():p.x(),plane)).sorted(java.util.Comparator.comparingDouble(p->alongX?p.x():p.z())).toList();
         double direction=nearPlane(plane,alongX?r.z0():r.x0())?1:-1;
         double facePlane=plane+direction*LevelDefinition.WALL_HALF_THICKNESS;
+        if(openings.stream().anyMatch(p->!nearPlane(p.y(),r.y()))){
+            levelTallWall(out,r,alongX,plane,facePlane,from,to,openings);
+            return;
+        }
         double at=from;int mat=LevelMaterials.wall(r);
         for(var p:openings){
             double mid=alongX?p.x():p.z(),lo=Math.max(from,mid-p.width()/2),hi=Math.min(to,mid+p.width()/2);
@@ -1627,6 +1631,37 @@ public final class SceneRenderer {
             at=Math.max(at,hi);
         }
         levelWallPatch(out,r,alongX,facePlane,at,to,r.y(),r.y()+r.height()-.04,mat);
+    }
+    /** Partition both height and length so an upper opening never removes a
+     * lower wall band or fills another opening sharing the same horizontal bay. */
+    private static void levelTallWall(List<Face> out,LevelDefinition.Room r,
+            boolean alongX,double plane,double facePlane,double from,double to,List<LevelDefinition.Portal> openings){
+        var xs=new java.util.TreeSet<Double>();var ys=new java.util.TreeSet<Double>();
+        double top=r.y()+r.height()-.04;xs.add(from);xs.add(to);ys.add(r.y());ys.add(top);
+        var cuts=new ArrayList<double[]>();
+        for(var p:openings){
+            double mid=alongX?p.x():p.z(),lo=Math.max(from,mid-p.width()/2),hi=Math.min(to,mid+p.width()/2);
+            double sill=Math.max(r.y(),p.y()+(p.kind().equals("window")?1:0));
+            double head=Math.min(top,p.y()+(p.kind().equals("window")?2.35:2.32));
+            if(hi<=lo||head<=sill)continue;
+            xs.add(lo);xs.add(hi);ys.add(sill);ys.add(head);cuts.add(new double[]{lo,hi,sill,head});
+            // A contained loft suppresses its duplicate walls. Its enclosing
+            // volume therefore owns the frame for that portal as well.
+            if(p.a()==r.id()||(p.a()!=r.id()&&p.b()!=r.id())){
+                double xx=alongX?lo-.055:plane-.11,zz=alongX?plane-.11:lo-.055;
+                texturedBox(out,xx,sill,zz,alongX?.07:.22,head-sill,alongX?.22:.07,LevelMaterials.WOOD);
+                texturedBox(out,alongX?hi-.015:plane-.11,sill,alongX?plane-.11:hi-.015,
+                    alongX?.07:.22,head-sill,alongX?.22:.07,LevelMaterials.WOOD);
+                texturedBox(out,xx,head-.045,zz,alongX?hi-lo+.11:.22,.09,alongX?.22:hi-lo+.11,LevelMaterials.WOOD);
+                if(p.kind().equals("window"))texturedBox(out,xx,sill-.045,zz,alongX?hi-lo+.11:.22,.07,alongX?.22:hi-lo+.11,LevelMaterials.WOOD);
+            }
+        }
+        var xx=new ArrayList<>(xs);var yy=new ArrayList<>(ys);
+        for(int x=0;x<xx.size()-1;x++)for(int y=0;y<yy.size()-1;y++){
+            double a=xx.get(x),b=xx.get(x+1),lo=yy.get(y),hi=yy.get(y+1),mx=(a+b)/2,my=(lo+hi)/2;
+            if(cuts.stream().anyMatch(c->mx>c[0]&&mx<c[1]&&my>c[2]&&my<c[3]))continue;
+            levelWallPatch(out,r,alongX,facePlane,a,b,lo,hi,LevelMaterials.wall(r));
+        }
     }
     private static void levelRail(List<Face> out,double x0,double y0,double z0,double x1,double y1,double z1){
         double length=Math.hypot(x1-x0,z1-z0);int count=Math.max(1,(int)Math.ceil(length/.24));

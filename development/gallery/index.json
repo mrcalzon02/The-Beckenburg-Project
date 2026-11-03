@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 2309,
+  "count": 2311,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -20274,6 +20274,26 @@
       "height": 200,
       "bytes": 31021,
       "sha256": "f63348a4ce71e7f5fc85e17f92d8e133e8f5f335c803839641d59e2e9f41aa37"
+    },
+    {
+      "path": "development/levels/rebuild/captures/church-upper-openings/door-7-8.png",
+      "url": "development/levels/rebuild/captures/church-upper-openings/door-7-8.png",
+      "title": "Door 7 8",
+      "kind": "Runtime capture",
+      "width": 960,
+      "height": 600,
+      "bytes": 883047,
+      "sha256": "69477def57dbc5b94f9cddf92f330bf3646410068e68a693a36938c79375ead0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/church-upper-openings/door-7-9.png",
+      "url": "development/levels/rebuild/captures/church-upper-openings/door-7-9.png",
+      "title": "Door 7 9",
+      "kind": "Runtime capture",
+      "width": 960,
+      "height": 600,
+      "bytes": 1031813,
+      "sha256": "032e7003e0aa392de680abafd2340fd5a3dc668665a8cfd9a110f91224c2ccd4"
     },
     {
       "path": "development/levels/rebuild/captures/editor-service/church-nave-before.png",

@@ -1,0 +1,776 @@
+{
+  "inspection": {
+    "result": {
+      "sceneId": "beckenburg/church",
+      "revision": 2,
+      "document": "C:\\Users\\Admin\\Documents\\ChatGPT\\Phasmaphobia alike\\The-Beckenburg-Project\\build\\rebuild-editor-service\\church\\.beckenburg\\editor\\levels\\church.bscn",
+      "state": {
+        "sceneId": "beckenburg/church",
+        "ids": [
+          "prop-0",
+          "prop-1",
+          "prop-2",
+          "prop-3",
+          "prop-4",
+          "prop-5",
+          "prop-6",
+          "prop-7",
+          "prop-8",
+          "prop-9",
+          "prop-10",
+          "prop-11",
+          "prop-12",
+          "prop-13",
+          "prop-14",
+          "prop-15",
+          "prop-16",
+          "prop-17",
+          "prop-18",
+          "prop-19",
+          "prop-20",
+          "prop-21",
+          "prop-22",
+          "prop-23",
+          "prop-24",
+          "prop-25",
+          "prop-26",
+          "prop-27",
+          "prop-28",
+          "prop-29",
+          "prop-30",
+          "prop-31"
+        ],
+        "props": [
+          {
+            "mesh": "chair_mp_5",
+            "room": 0,
+            "x": 18.55,
+            "y": 0.0,
+            "z": 33.0,
+            "scale": 1.0,
+            "yaw": 1.5707963267948966,
+            "halfX": 0.32,
+            "halfZ": 0.34,
+            "height": 0.95,
+            "support": "floor"
+          },
+          {
+            "mesh": "dinner_table_1",
+            "room": 1,
+            "x": 19.7,
+            "y": 0.0,
+            "z": 35.7,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.85,
+            "halfZ": 0.55,
+            "height": 0.86,
+            "support": "floor"
+          },
+          {
+            "mesh": "chair_mp_5",
+            "room": 1,
+            "x": 19.699999999999996,
+            "y": 0.0,
+            "z": 36.89999999999999,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.32,
+            "halfZ": 0.34,
+            "height": 0.95,
+            "support": "floor"
+          },
+          {
+            "mesh": "book_mp_2",
+            "room": 1,
+            "x": 19.7,
+            "y": 0.87,
+            "z": 35.7,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.0,
+            "halfZ": 0.0,
+            "height": 0.1,
+            "support": "dinner_table_1"
+          },
+          {
+            "mesh": "dinner_table_1",
+            "room": 2,
+            "x": 11.7,
+            "y": 0.0,
+            "z": 27.7,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.85,
+            "halfZ": 0.55,
+            "height": 0.86,
+            "support": "floor"
+          },
+          {
+            "mesh": "chair_mp_5",
+            "room": 2,
+            "x": 11.700000000000001,
+            "y": 0.0,
+            "z": 28.89999999999999,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.32,
+            "halfZ": 0.34,
+            "height": 0.95,
+            "support": "floor"
+          },
+          {
+            "mesh": "book_mp_2",
+            "room": 2,
+            "x": 11.7,
+            "y": 0.87,
+            "z": 27.7,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.0,
+            "halfZ": 0.0,
+            "height": 0.1,
+            "support": "dinner_table_1"
+          },
+          {
+            "mesh": "shelf_mp_6",
+            "room": 2,
+            "x": 16.500000000000004,
+            "y": 0.0,
+            "z": 26.5,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.41,
+            "halfZ": 0.11,
+            "height": 1.29,
+            "support": "floor"
+          },
+          {
+            "mesh": "dinner_table_1",
+            "room": 3,
+            "x": 11.7,
+            "y": 0.0,
+            "z": 19.7,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.85,
+            "halfZ": 0.55,
+            "height": 0.86,
+            "support": "floor"
+          },
+          {
+            "mesh": "chair_mp_5",
+            "room": 3,
+            "x": 11.700000000000001,
+            "y": 0.0,
+            "z": 20.89999999999999,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.32,
+            "halfZ": 0.34,
+            "height": 0.95,
+            "support": "floor"
+          },
+          {
+            "mesh": "book_mp_2",
+            "room": 3,
+            "x": 11.7,
+            "y": 0.87,
+            "z": 19.7,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.0,
+            "halfZ": 0.0,
+            "height": 0.1,
+            "support": "dinner_table_1"
+          },
+          {
+            "mesh": "dinner_table_1",
+            "room": 4,
+            "x": 19.7,
+            "y": 0.0,
+            "z": 7.7,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.85,
+            "halfZ": 0.55,
+            "height": 0.86,
+            "support": "floor"
+          },
+          {
+            "mesh": "chair_mp_5",
+            "room": 4,
+            "x": 19.699999999999996,
+            "y": 0.0,
+            "z": 8.900000000000002,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.32,
+            "halfZ": 0.34,
+            "height": 0.95,
+            "support": "floor"
+          },
+          {
+            "mesh": "book_mp_2",
+            "room": 4,
+            "x": 19.7,
+            "y": 0.87,
+            "z": 7.7,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.0,
+            "halfZ": 0.0,
+            "height": 0.1,
+            "support": "dinner_table_1"
+          },
+          {
+            "mesh": "dinner_table_1",
+            "room": 5,
+            "x": 27.7,
+            "y": 0.0,
+            "z": 15.7,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.85,
+            "halfZ": 0.55,
+            "height": 0.86,
+            "support": "floor"
+          },
+          {
+            "mesh": "chair_mp_5",
+            "room": 5,
+            "x": 27.699999999999996,
+            "y": 0.0,
+            "z": 16.9,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.32,
+            "halfZ": 0.34,
+            "height": 0.95,
+            "support": "floor"
+          },
+          {
+            "mesh": "book_mp_2",
+            "room": 5,
+            "x": 27.7,
+            "y": 0.87,
+            "z": 15.7,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.0,
+            "halfZ": 0.0,
+            "height": 0.1,
+            "support": "dinner_table_1"
+          },
+          {
+            "mesh": "dinner_table_1",
+            "room": 6,
+            "x": 28.099999999999994,
+            "y": 0.0,
+            "z": 7.700000000000001,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.85,
+            "halfZ": 0.55,
+            "height": 0.86,
+            "support": "floor"
+          },
+          {
+            "mesh": "chair_mp_5",
+            "room": 6,
+            "x": 27.699999999999996,
+            "y": 0.0,
+            "z": 8.900000000000002,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.32,
+            "halfZ": 0.34,
+            "height": 0.95,
+            "support": "floor"
+          },
+          {
+            "mesh": "book_mp_2",
+            "room": 6,
+            "x": 28.099999999999994,
+            "y": 0.87,
+            "z": 7.700000000000001,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.0,
+            "halfZ": 0.0,
+            "height": 0.1,
+            "support": "dinner_table_1"
+          },
+          {
+            "mesh": "dinner_table_1",
+            "room": 7,
+            "x": 21.29999999999999,
+            "y": 3.0,
+            "z": 27.699999999999996,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.85,
+            "halfZ": 0.55,
+            "height": 0.86,
+            "support": "floor"
+          },
+          {
+            "mesh": "chair_mp_5",
+            "room": 7,
+            "x": 20.89999999999999,
+            "y": 3.0,
+            "z": 28.89999999999999,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.32,
+            "halfZ": 0.34,
+            "height": 0.95,
+            "support": "floor"
+          },
+          {
+            "mesh": "book_mp_2",
+            "room": 7,
+            "x": 21.29999999999999,
+            "y": 3.87,
+            "z": 27.699999999999996,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.0,
+            "halfZ": 0.0,
+            "height": 0.1,
+            "support": "dinner_table_1"
+          },
+          {
+            "mesh": "chair_mp_5",
+            "room": 8,
+            "x": 10.55,
+            "y": 3.0,
+            "z": 33.0,
+            "scale": 1.0,
+            "yaw": 1.5707963267948966,
+            "halfX": 0.32,
+            "halfZ": 0.34,
+            "height": 0.95,
+            "support": "floor"
+          },
+          {
+            "mesh": "dinner_table_1",
+            "room": 9,
+            "x": 27.7,
+            "y": 3.0,
+            "z": 27.7,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.85,
+            "halfZ": 0.55,
+            "height": 0.86,
+            "support": "floor"
+          },
+          {
+            "mesh": "chair_mp_5",
+            "room": 9,
+            "x": 27.699999999999996,
+            "y": 3.0,
+            "z": 28.89999999999999,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.32,
+            "halfZ": 0.34,
+            "height": 0.95,
+            "support": "floor"
+          },
+          {
+            "mesh": "book_mp_2",
+            "room": 9,
+            "x": 27.7,
+            "y": 3.87,
+            "z": 27.7,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.0,
+            "halfZ": 0.0,
+            "height": 0.1,
+            "support": "dinner_table_1"
+          },
+          {
+            "mesh": "shelf_mp_6",
+            "room": 9,
+            "x": 32.49999999999998,
+            "y": 3.0,
+            "z": 26.5,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.41,
+            "halfZ": 0.11,
+            "height": 1.29,
+            "support": "floor"
+          },
+          {
+            "mesh": "chair_mp_5",
+            "room": 10,
+            "x": 10.55,
+            "y": 6.0,
+            "z": 33.0,
+            "scale": 1.0,
+            "yaw": 1.5707963267948966,
+            "halfX": 0.32,
+            "halfZ": 0.34,
+            "height": 0.95,
+            "support": "floor"
+          },
+          {
+            "mesh": "dinner_table_1",
+            "room": 11,
+            "x": 11.7,
+            "y": -3.0,
+            "z": 7.7,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.85,
+            "halfZ": 0.55,
+            "height": 0.86,
+            "support": "floor"
+          },
+          {
+            "mesh": "chair_mp_5",
+            "room": 11,
+            "x": 11.700000000000001,
+            "y": -3.0,
+            "z": 8.900000000000002,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.32,
+            "halfZ": 0.34,
+            "height": 0.95,
+            "support": "floor"
+          },
+          {
+            "mesh": "book_mp_2",
+            "room": 11,
+            "x": 11.7,
+            "y": -2.13,
+            "z": 7.7,
+            "scale": 1.0,
+            "yaw": 0.0,
+            "halfX": 0.0,
+            "halfZ": 0.0,
+            "height": 0.1,
+            "support": "dinner_table_1"
+          }
+        ]
+      },
+      "hierarchy": [
+        {
+          "id": "prop-0",
+          "kind": "PROP",
+          "label": "chair_mp_5 / room 0",
+          "x": 18.55,
+          "y": 0.0,
+          "z": 33.0
+        },
+        {
+          "id": "prop-1",
+          "kind": "PROP",
+          "label": "dinner_table_1 / room 1",
+          "x": 19.7,
+          "y": 0.0,
+          "z": 35.7
+        },
+        {
+          "id": "prop-2",
+          "kind": "PROP",
+          "label": "chair_mp_5 / room 1",
+          "x": 19.699999999999996,
+          "y": 0.0,
+          "z": 36.89999999999999
+        },
+        {
+          "id": "prop-3",
+          "kind": "PROP",
+          "label": "book_mp_2 / room 1",
+          "x": 19.7,
+          "y": 0.87,
+          "z": 35.7
+        },
+        {
+          "id": "prop-4",
+          "kind": "PROP",
+          "label": "dinner_table_1 / room 2",
+          "x": 11.7,
+          "y": 0.0,
+          "z": 27.7
+        },
+        {
+          "id": "prop-5",
+          "kind": "PROP",
+          "label": "chair_mp_5 / room 2",
+          "x": 11.700000000000001,
+          "y": 0.0,
+          "z": 28.89999999999999
+        },
+        {
+          "id": "prop-6",
+          "kind": "PROP",
+          "label": "book_mp_2 / room 2",
+          "x": 11.7,
+          "y": 0.87,
+          "z": 27.7
+        },
+        {
+          "id": "prop-7",
+          "kind": "PROP",
+          "label": "shelf_mp_6 / room 2",
+          "x": 16.500000000000004,
+          "y": 0.0,
+          "z": 26.5
+        },
+        {
+          "id": "prop-8",
+          "kind": "PROP",
+          "label": "dinner_table_1 / room 3",
+          "x": 11.7,
+          "y": 0.0,
+          "z": 19.7
+        },
+        {
+          "id": "prop-9",
+          "kind": "PROP",
+          "label": "chair_mp_5 / room 3",
+          "x": 11.700000000000001,
+          "y": 0.0,
+          "z": 20.89999999999999
+        },
+        {
+          "id": "prop-10",
+          "kind": "PROP",
+          "label": "book_mp_2 / room 3",
+          "x": 11.7,
+          "y": 0.87,
+          "z": 19.7
+        },
+        {
+          "id": "prop-11",
+          "kind": "PROP",
+          "label": "dinner_table_1 / room 4",
+          "x": 19.7,
+          "y": 0.0,
+          "z": 7.7
+        },
+        {
+          "id": "prop-12",
+          "kind": "PROP",
+          "label": "chair_mp_5 / room 4",
+          "x": 19.699999999999996,
+          "y": 0.0,
+          "z": 8.900000000000002
+        },
+        {
+          "id": "prop-13",
+          "kind": "PROP",
+          "label": "book_mp_2 / room 4",
+          "x": 19.7,
+          "y": 0.87,
+          "z": 7.7
+        },
+        {
+          "id": "prop-14",
+          "kind": "PROP",
+          "label": "dinner_table_1 / room 5",
+          "x": 27.7,
+          "y": 0.0,
+          "z": 15.7
+        },
+        {
+          "id": "prop-15",
+          "kind": "PROP",
+          "label": "chair_mp_5 / room 5",
+          "x": 27.699999999999996,
+          "y": 0.0,
+          "z": 16.9
+        },
+        {
+          "id": "prop-16",
+          "kind": "PROP",
+          "label": "book_mp_2 / room 5",
+          "x": 27.7,
+          "y": 0.87,
+          "z": 15.7
+        },
+        {
+          "id": "prop-17",
+          "kind": "PROP",
+          "label": "dinner_table_1 / room 6",
+          "x": 28.099999999999994,
+          "y": 0.0,
+          "z": 7.700000000000001
+        },
+        {
+          "id": "prop-18",
+          "kind": "PROP",
+          "label": "chair_mp_5 / room 6",
+          "x": 27.699999999999996,
+          "y": 0.0,
+          "z": 8.900000000000002
+        },
+        {
+          "id": "prop-19",
+          "kind": "PROP",
+          "label": "book_mp_2 / room 6",
+          "x": 28.099999999999994,
+          "y": 0.87,
+          "z": 7.700000000000001
+        },
+        {
+          "id": "prop-20",
+          "kind": "PROP",
+          "label": "dinner_table_1 / room 7",
+          "x": 21.29999999999999,
+          "y": 3.0,
+          "z": 27.699999999999996
+        },
+        {
+          "id": "prop-21",
+          "kind": "PROP",
+          "label": "chair_mp_5 / room 7",
+          "x": 20.89999999999999,
+          "y": 3.0,
+          "z": 28.89999999999999
+        },
+        {
+          "id": "prop-22",
+          "kind": "PROP",
+          "label": "book_mp_2 / room 7",
+          "x": 21.29999999999999,
+          "y": 3.87,
+          "z": 27.699999999999996
+        },
+        {
+          "id": "prop-23",
+          "kind": "PROP",
+          "label": "chair_mp_5 / room 8",
+          "x": 10.55,
+          "y": 3.0,
+          "z": 33.0
+        },
+        {
+          "id": "prop-24",
+          "kind": "PROP",
+          "label": "dinner_table_1 / room 9",
+          "x": 27.7,
+          "y": 3.0,
+          "z": 27.7
+        },
+        {
+          "id": "prop-25",
+          "kind": "PROP",
+          "label": "chair_mp_5 / room 9",
+          "x": 27.699999999999996,
+          "y": 3.0,
+          "z": 28.89999999999999
+        },
+        {
+          "id": "prop-26",
+          "kind": "PROP",
+          "label": "book_mp_2 / room 9",
+          "x": 27.7,
+          "y": 3.87,
+          "z": 27.7
+        },
+        {
+          "id": "prop-27",
+          "kind": "PROP",
+          "label": "shelf_mp_6 / room 9",
+          "x": 32.49999999999998,
+          "y": 3.0,
+          "z": 26.5
+        },
+        {
+          "id": "prop-28",
+          "kind": "PROP",
+          "label": "chair_mp_5 / room 10",
+          "x": 10.55,
+          "y": 6.0,
+          "z": 33.0
+        },
+        {
+          "id": "prop-29",
+          "kind": "PROP",
+          "label": "dinner_table_1 / room 11",
+          "x": 11.7,
+          "y": -3.0,
+          "z": 7.7
+        },
+        {
+          "id": "prop-30",
+          "kind": "PROP",
+          "label": "chair_mp_5 / room 11",
+          "x": 11.700000000000001,
+          "y": -3.0,
+          "z": 8.900000000000002
+        },
+        {
+          "id": "prop-31",
+          "kind": "PROP",
+          "label": "book_mp_2 / room 11",
+          "x": 11.7,
+          "y": -2.13,
+          "z": 7.7
+        }
+      ],
+      "capabilities": [
+        "TRANSACT",
+        "CAPTURE",
+        "UNDO",
+        "INSPECT",
+        "SAVE",
+        "RECOVER_PREVIOUS",
+        "REDO",
+        "TEST",
+        "REOPEN"
+      ],
+      "operations": [
+        "move-prop"
+      ],
+      "tests": [
+        "mission-runtime-parity",
+        "mission-open-routes"
+      ]
+    },
+    "ok": true
+  },
+  "tests": [
+    {
+      "result": {
+        "sceneId": "beckenburg/church",
+        "revision": 2,
+        "result": [
+          {
+            "code": "NATIVE_PROP_PARITY",
+            "passed": true,
+            "detail": "HouseMap props equal current unsaved authoring props"
+          },
+          {
+            "code": "NATIVE_COLLIDER_PARITY",
+            "passed": true,
+            "detail": "Native collider list contains each colliding authored prop"
+          }
+        ]
+      },
+      "ok": true
+    },
+    {
+      "result": {
+        "sceneId": "beckenburg/church",
+        "revision": 2,
+        "result": [
+          {
+            "code": "OPEN_ROUTE_REACHABILITY",
+            "passed": true,
+            "detail": "church production-2026-10-20-lived-location-v1-126d478354fe8ce9-126d478354fe8ce9: 169097 swept positions, Y-3.0..6.0; open doors only, live state unchanged"
+          }
+        ]
+      },
+      "ok": true
+    }
+  ]
+}
