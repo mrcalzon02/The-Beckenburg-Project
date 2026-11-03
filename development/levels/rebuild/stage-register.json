@@ -690,11 +690,20 @@
           "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
+          "evidence": [
+            "tools/build_map_rebuild_roughs.py",
+            "development/levels/rebuild/farmhouse/rough-layout.json",
+            "development/levels/rebuild/farmhouse/rough-plan.svg",
+            "development/levels/rebuild/farmhouse/rough-sections.svg",
+            "development/levels/rebuild/farmhouse/rough-asset-bounds.json",
+            "development/levels/rebuild/farmhouse/rough-decisions.md",
+            "development/levels/rebuild/farmhouse/rough-render-verification.json",
+            "development/levels/rebuild/previews/farmhouse-revised-rough-plan.png"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete references/fixture/support review in full roster rough batch; then build physical household/barn/laundry geometry, separate stairs and persisted editor cellar holes. Dispatched Farmhouse remains unchanged and unaccepted."
         },
         "S03": {
           "status": "NOT_AUDITED",

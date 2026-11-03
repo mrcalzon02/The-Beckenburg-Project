@@ -120,3 +120,8 @@ All nine selectable maps pass the shared physical route check. Final packaged Ch
 ## Mansion household rough checkpoint - 3 November
 
 Revised S02 Mansion authority now generates50 spaces/61 proposed connections, separate formal/private/household circulation, two guest suites, principal washing/dressing, four staff beds, independent service stairs and an exact two-rectangle cellar terrain-hole union. Actual source-sized bed/bathroom bounds and pivots are checked. Planning PNG and four flight sections remain design evidence only. No stage accepted; dispatched Mansion is unchanged. Next: Farmhouse and the remaining roster roughs before general blockout.
+
+
+## Farmhouse working-yard rough checkpoint - 3 November
+
+Revised S02 Farmhouse adds34 architectural spaces/36 proposed connections: bounded household food/cleanup/storage, private WC/washing, parents/two-child sleeping, stall/feed/equipment bays off4m barn aisle, real loft stair, separate repair/parts/consumables/laundry and two-rectangle saved-terrain cellar-hole reservation. Seven native asset bounds/pivots fit source scale. A2m service gap prevents the rear barn doorway opening into the parts store. Labelled plan reviewed; no runtime dispatch or stage acceptance. Continue Asylum/Academy/College/Church/Castle and remote/annex roughs; actual fixture/support/terrain/navigation and full acceptance remain open.

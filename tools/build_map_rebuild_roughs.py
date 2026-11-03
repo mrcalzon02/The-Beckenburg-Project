@@ -431,6 +431,95 @@ def mansion():
             'Build terrain and garden around play instead of rectangular pads; prove native/runtime parity, van routes, hunts, rituals, networking and hardware performance.'])
 
 
+def farmhouse():
+    zones,links=[],[]
+    def room(key,name,bounds,y,owner,kind='inside',height=3):
+        zones.append(dict(id=key,name=name,bounds=bounds,y=y,height=height,owner=owner,kind=kind,purpose=name))
+    for key,name,bounds,owner,kind in [
+        ('mudroom','Boot removal coats and muddy entrance',[20,22,26,28],0,'circulation'),
+        ('parlour','Family sitting and visitor reception',[12,20,20,28],1,'inside'),
+        ('dining','Six-place family dining',[12,16,20,20],3,'inside'),
+        ('kitchen','Cooking and sink cleanup',[12,13,20,16],2,'inside'),
+        ('pantry','Dry household food storage',[12,10,15,13],2,'inside'),
+        ('prep','Food preparation and garden receiving',[15,10,20,13],2,'inside'),
+        ('stairs','Domestic stair bay with side circulation',[20,12,26,22],4,'circulation'),
+        ('cleaner','Household cleaning and utility cupboard',[20,10,26,12],4,'inside'),
+        ('barn-aisle','Through barn aisle and loading approach',[35,9,39,24],10,'circulation'),
+        ('stall-a','Livestock stall A and access gate',[31,9,35,15],10,'inside'),
+        ('stall-b','Livestock stall B and access gate',[31,15,35,21],10,'inside'),
+        ('feed','Feed store separate from equipment',[31,21,35,24],10,'inside'),
+        ('equipment','Agricultural equipment bay',[39,9,43,16],10,'inside'),
+        ('loft-stair','Barn loft stair and lower landings',[39,16,43,24],10,'circulation'),
+        ('repair','Tool repair bench and clear work aisle',[31,26,36,33],11,'inside'),
+        ('parts','Repair parts and dry tools',[36,26,39,30],11,'inside'),
+        ('work-store','Screened work consumables and lockable storage',[36,30,39,33],11,'inside'),
+        ('laundry','Separate wash laundry and drying support',[27,26,31,33],11,'inside')]:room(key,name,bounds,0,owner,kind)
+    for key,name,bounds,owner,kind in [
+        ('upper-hall','Upper bedroom circulation',[20,10,23,28],5,'circulation'),
+        ('upper-stair','Main stair upper landing and void',[23,12,26,22],5,'circulation'),
+        ('wc','Private family WC',[23,22,26,25],5,'inside'),
+        ('wash','Family washing room',[23,25,26,28],5,'inside'),
+        ('parents','Parents bedroom and personal storage',[12,20,20,28],6,'inside'),
+        ('children','Two child beds and play/storage',[12,14,20,20],7,'inside'),
+        ('linen','Household linen and seasonal storage',[12,10,20,14],5,'inside'),
+        ('hayloft','Supported hay deck with clear retrieval aisle',[31,16,39,24],8,'inside'),
+        ('loft-landing','Guarded loft stair arrival',[39,16,43,24],8,'circulation')]:room(key,name,bounds,3,owner,kind)
+    for key,name,bounds,kind in [
+        ('cellar-stair','Cellar access below domestic stair bay',[20,12,26,22],'circulation'),
+        ('cellar-landing','Cellar receiving landing',[20,22,26,28],'circulation'),
+        ('root-store','Root crop storage and retrieval aisle',[12,14,20,28],'inside'),
+        ('preserves','Preserved food shelves',[12,10,20,14],'inside')]:room(key,name,bounds,-3,9,kind)
+    room('grounds','Orchard and workyard envelope only',[3,0,48,34],0,12,'outside',12)
+    room('entry','Lane arrival and equipment approach',[3,34,50,50],0,13,'outside',12)
+    room('stage','Canonical van staging clear of barn deliveries',[18,38,34,50],0,14,'staging')
+    byid={z['id']:z for z in zones}
+    def door(a,b,x,z,width=1.2,access='household'):
+        y=byid[a]['y'];assert byid[b]['y']==y
+        links.append(dict(id=f'L{len(links)+1:02}',a=a,b=b,kind='level',width=width,points=[review.center(byid[a]),[x,y,z],review.center(byid[b])],threshold=[x,y,z],access=access,
+            note='Proposed opening; diagram connectivity is not actual capsule traversal.'))
+    for a,b,x,z in [
+        ('stage','entry',26,38),('entry','grounds',24,34),('grounds','mudroom',23,28),
+        ('mudroom','parlour',20,25),('mudroom','stairs',23,22),('parlour','dining',16,20),
+        ('dining','kitchen',16,16),('dining','stairs',20,18),('kitchen','prep',17,13),
+        ('prep','pantry',15,11.5),('prep','grounds',17,10),('stairs','cleaner',23,12),
+        ('upper-hall','upper-stair',23,21),('upper-hall','wc',23,23.5),('upper-hall','wash',23,26.5),
+        ('upper-hall','parents',20,24),('upper-hall','children',20,17),('upper-hall','linen',20,11.5),
+        ('cellar-stair','cellar-landing',23,22),('cellar-landing','root-store',20,25),('root-store','preserves',16,14),
+        ('grounds','barn-aisle',37,9),('grounds','barn-aisle',37,24),('barn-aisle','stall-a',35,12),
+        ('barn-aisle','stall-b',35,18),('barn-aisle','feed',35,22.5),('barn-aisle','equipment',39,12),
+        ('barn-aisle','loft-stair',39,17.5),('loft-landing','hayloft',39,23),
+        ('grounds','repair',33,26),('repair','parts',36,28),('repair','work-store',36,31.5),
+        ('grounds','laundry',29,33)]:door(a,b,x,z,2.4 if 'barn-aisle' in (a,b) and 'grounds' in (a,b) else 1.2)
+    for a,b,x,z,y0,y1,width in [
+        ('stairs','upper-stair',24.5,13.6,0,3,1.2),
+        ('cellar-stair','stairs',21.5,13.6,-3,0,1.2),
+        ('loft-stair','loft-landing',41,17.5,0,3,1.2)]:
+        run=(y1-y0)*1.6
+        links.append(dict(id=f'L{len(links)+1:02}',a=a,b=b,kind='stairs',width=width,points=[[x,y0,z],[x,y1,z+run]],rise_m=y1-y0,run_m=run,headroom_m=2.2,landing_depth_m=1.5,risers=18,
+            construction='Full-run deck void and structural depth; reserve continuous guards, side bypass and clear end landings.',
+            note='Domestic flights use separate X lanes; no assumed ladder-only hayloft access. Physical proof remains open.'))
+    return dict(version=2,id='FARMHOUSE',title='Hollowmere Farm — revised domestic and working-yard rough',
+        status='S02_DESIGN_STUDY_NOT_RUNTIME_ACCEPTED',site_bounds=[3,0,50,51],zones=zones,links=links,
+        capacity='Family of four, six dining places, two livestock stalls and bounded equipment/feed work areas.',
+        rituals=[dict(rite='Banishment',zone='hayloft',point=[35,3,20]),dict(rite='Cleansing',zone='root-store',point=[16,-3,21]),dict(rite='Absolution',zone='grounds',point=[7,0,5])],
+        staging=dict(zone='stage',point=[26,0,44],yaw=-math.pi/2,cargo_route=[[22.372,0,44],[23,0,34],[23,0,28]],note='Canonical van source; terrain support and six-player unloading remain unproved.'),
+        terrain_cutouts=[dict(bounds=b,world_surface_y=-.65,method='Actual saved editor punched leaves, not yet authored') for b in [[12,10,20,28],[20,12,26,28]]],
+        fit_assets=['bed_4','bed_5','level_stall','level_hay_bale','toilet_mp_1','level_bath_basin'],
+        prop_fit_reservations=[dict(space=space,asset=asset,origin=origin) for space,asset,origin in [
+            ('parents','bed_4',[16,3,24]),('children','bed_5',[16,3,15.8]),('children','bed_5',[16,3,18.3]),
+            ('wc','toilet_mp_1',[24.5,3.235,23.1]),('wash','level_bath_basin',[25.4,3,26]),
+            ('stall-a','level_stall',[33,0,12]),('stall-b','level_stall',[33,0,18])]],
+        decisions=['Retain the original house/barn/tool-shed grouping and source floor elevations; extend the domestic north/south walls to Z10/28 to reserve storage and proper landings instead of preserving a deficient room trace.',
+            'Provide private bounded WC and washing rooms off upper circulation, not a basin standing in the landing.',
+            'Food preparation and pantry are distinct from muddy entrance and household cleaning storage.',
+            'Barn gates open onto a four-metre through aisle; stall/feed/equipment functions remain bounded, with a real stair to the hay deck.',
+            'Laundry has its own workyard entrance and drainage requirement outside the tool/consumables enclosure.'],
+        remaining=['Fit and support native full-scale furniture, stall gates, feed bins, workbench, bathroom and washing fixtures; reserve real door swings.',
+            'Author foundation/roof/loft support, daylight/ventilation, dry hay handling and separated utility/electrical services.',
+            'Punch the saved world terrain beneath the cellar union and build actual deck/stair openings; test body/ray/object passage and filled-ground negatives.',
+            'Shape farm terrain around lane, orchard, drained workyard and outbuildings; prove canonical van support, six-player/hunt routes, rituals, networking, native parity and hardware performance.'])
+
+
 def validate(data):
     zones={z['id']:z for z in data['zones']}
     assert len(zones)==len(data['zones'])
@@ -479,7 +568,7 @@ def validate(data):
                 assert y+lo[1]>=room['y']-1e-6 and y+hi[1]<room['y']+room['height']
                 assert x+hi[0]<=bx or x+lo[0]>=bxx or z+hi[2]<=bz or z+lo[2]>=bzz, 'Cell bed/fixture overlap '+cell['space']
         assert not any({l['a'],l['b']}=={'visitors','visitor-custody'} for l in data['links']), 'Visitor booth divider is not a custody doorway'
-    if data['id']=='MANSION':
+    if data['id'] in ('MANSION','FARMHOUSE'):
         measured={a['asset']:a for a in asset_bounds(data['fit_assets'])['assets']}
         placed=[]
         for item in data['prop_fit_reservations']:
@@ -491,10 +580,10 @@ def validate(data):
                 if previous['space']!=item['space']:continue
                 assert any(hi[k]<=pl[k] or lo[k]>=ph[k] for k in range(3)),(previous,item,'native asset overlap')
             placed.append((item,lo,hi))
-        assert sum(i['asset']=='bed_5' for i in data['prop_fit_reservations'])==4
+        assert sum(i['asset']=='bed_5' for i in data['prop_fit_reservations'])==(4 if data['id']=='MANSION' else 2)
         # Bedrooms must have a circulation doorway; a private bathroom cannot
         # become the only route to a guest sleeping space.
-        for key in ['suite-bed','guest-a','guest-b','staff-a','staff-b']:
+        for key in (['suite-bed','guest-a','guest-b','staff-a','staff-b'] if data['id']=='MANSION' else ['parents','children']):
             adjacent=[zones[b] for b in graph[key]]
             assert any(z['kind']=='circulation' for z in adjacent),key
     for rite in data['rituals']:
@@ -549,7 +638,7 @@ def asset_bounds(names=None):
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');args=parser.parse_args()
-    for folder,data in [('school',school()),('prison',prison()),('mansion',mansion())]:
+    for folder,data in [('school',school()),('prison',prison()),('mansion',mansion()),('farmhouse',farmhouse())]:
         spaces,links=validate(data)
         outputs={'rough-layout.json':json.dumps(data,indent=2,ensure_ascii=False)+'\n',
                  'rough-plan.svg':review.render_svg(data),'rough-sections.svg':sections(data),

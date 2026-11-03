@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 2312,
+  "count": 2313,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -21104,6 +21104,16 @@
       "height": 800,
       "bytes": 1468391,
       "sha256": "1bd1a2cfd6d090762d7d96ed0acae8e7c8bc61f5fcb6e00f7726f9b5b63c752d"
+    },
+    {
+      "path": "development/levels/rebuild/previews/farmhouse-revised-rough-plan.png",
+      "url": "development/levels/rebuild/previews/farmhouse-revised-rough-plan.png",
+      "title": "Farmhouse revised rough plan",
+      "kind": "Planning diagram",
+      "width": 1500,
+      "height": 974,
+      "bytes": 80480,
+      "sha256": "52c2da2a201888724741042db8467954c1a6e70238ba675582a6e505d236c47e"
     },
     {
       "path": "development/levels/rebuild/previews/mansion-revised-rough-plan.png",
