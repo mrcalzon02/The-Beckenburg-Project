@@ -1,7 +1,18 @@
 {
   "priorSource": "48f30628a071922bc11ca236dc8d82bee629f99c",
   "local": "PASS full native human/service/recovery/CLI, clean compilation, independent Java17 maxima under256MiB, old compiled client, source preservation and actual negative controls",
-  "ci": "pending new-source publication",
+  "ci": {
+    "standalone": 41562939268,
+    "nativeTerrainHost": 41562947315,
+    "fullRound": 41562955851,
+    "gpu": 41562962371,
+    "state": "live at exact72c99b7a; retain handles without restarting on observation timeout",
+    "previousSurfaceNative": 41551587369,
+    "previousSurfaceStandalone": 41551583883,
+    "previousSurfaceState": "SUCCESS",
+    "previousFull": 41551592599,
+    "previousFullState": "raw308/310, DEV221 equipment fix accepted; DEV211 art2 remain open"
+  },
   "sha256": {
     "src\\main\\java\\org\\beckenburg\\AssetImportDialog.java": "296371b7fdd46ddb1a40d2321bfd2fe2f34f010d324dde485e0387979636e44a",
     "src\\main\\java\\org\\beckenburg\\GlbProps.java": "23374f6492f4a9a0d76bc09de00ee5d6cf484c358b56634766721aae24f33b01",
@@ -33,5 +44,7 @@
     "development\\quality\\evidence\\local-frames-2026-11-02\\SparseGlbControl.java": "4d161de336632c884dd7798a47080804e2eb70894365c53bdcd0cb30f75de04d",
     "development\\quality\\evidence\\local-frames-2026-11-02\\zero-negative.txt": "7bf4cff257cc498c76859eb19af7a91b37a36fa3018c0ec86639fbc25fcca95a",
     "development\\quality\\evidence\\local-frames-2026-11-02\\zero-positive.txt": "2b19b18dbf43346b2010a2639cf391a1baa082d5424043104d1aa663715e1daf"
-  }
+  },
+  "publishedSource": "72c99b7aa2a054a4c6605a13f556b92980fa49f8",
+  "remoteVerified": true
 }
