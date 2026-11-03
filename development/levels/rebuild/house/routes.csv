@@ -1,0 +1,20 @@
+route_id,source_a,source_b,source_kind,reserved_clear_width_m,source_polyline_length_m,predicted_walk_seconds_at_1_4_mps,source_note,physical_acceptance
+L01,r00,r01,level,1.15,6.395,4.57,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L02,r01,r02,level,1.15,7.0,5.0,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L03,r02,r03,level,1.15,6.162,4.4,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L04,r03,r04,level,1.15,5.5,3.93,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L05,r04,r00,level,1.4,4.5,3.21,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L06,r01,r04,level,1.1,6.905,4.93,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L07,r05,r06,level,1.1,6.768,4.83,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L08,r05,r07,level,1.1,8.515,6.08,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L09,r05,r08,level,1.05,7.302,5.22,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L10,r06,r07,level,1.05,7.0,5.0,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L11,r09,r10,level,1.1,7.302,5.22,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L12,r09,r11,level,1.1,8.354,5.97,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L13,r10,r11,level,1.05,8.408,6.01,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L14,r00,entry,level,1.2,17.5,12.5,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L15,r02,grounds,level,1.1,15.5,11.07,Existing door relation traced from LevelPlans; exact aperture stays in runtime source.,NOT_PHYSICALLY_VERIFIED
+L16,r04,r05,stairs,1.5,5.66,4.04,"Existing stair relation; preserve actual separate runtime flights, deck cuts and guards.",NOT_PHYSICALLY_VERIFIED
+L17,r09,r04,stairs,1.5,5.66,4.04,"Existing stair relation; preserve actual separate runtime flights, deck cuts and guards.",NOT_PHYSICALLY_VERIFIED
+L18,grounds,entry,level,2,22.0,15.71,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L19,entry,stage,level,2,16.643,11.89,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED

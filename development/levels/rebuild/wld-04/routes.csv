@@ -1,0 +1,16 @@
+route_id,source_a,source_b,source_kind,reserved_clear_width_m,source_polyline_length_m,predicted_walk_seconds_at_1_4_mps,source_note,physical_acceptance
+L01,stage,entry,level,2,12.0,8.57,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L02,entry,lower,level,2,20.518,14.66,Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement.,NOT_PHYSICALLY_VERIFIED
+L03,lower,bend,stairs,2,20.736,14.81,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L04,bend,clearing,stairs,2,14.457,10.33,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L05,clearing,hut,level,2,18.198,13.0,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L06,hut,bend,stairs,2,22.825,16.3,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L07,clearing,ruin,level,2,17.0,12.14,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L08,ruin,store,level,1.5,13.246,9.46,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L09,store,return,stairs,2,16.401,11.72,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L10,return,entry,stairs,2,21.424,15.3,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L11,return,clearing,stairs,2,31.922,22.8,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L12,clearing,foot,level,2,14.0,10.0,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L13,foot,landing,stairs,2,6.021,4.3,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L14,landing,cab,stairs,1.5,5.5,3.93,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L15,cab,deck,level,2,6.0,4.29,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED

@@ -1,0 +1,10 @@
+Source: a99d0a1dac4944fb1b3297add502b3291590fd4d
+Workflow: https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41352069449
+Job: 124984232156; completed success. Raw log excerpts:
+2026-11-01T21:29:12.5207996Z PASS Castle native recovery: deterministic saves, distinct backups, full codec roundtrip, same singleton recovery, shared undo, invalid backup refusal and legacy migrations
+2026-11-01T21:29:12.5523554Z TEST PASS CastleDocumentRecoveryTest elapsed=1041ms
+2026-11-01T21:29:13.5397202Z TEST PASS CastleEditorGeometryTest elapsed=987ms
+2026-11-01T21:29:14.3668930Z TEST PASS CastleLightingPlacementRepairTest elapsed=827ms
+2026-11-01T21:38:36.8146758Z REGRESSION SUMMARY passed=306 failed=0 skipped=0 manifest=306
+Native editor workflow 41352028873 also completed success at the same source.
+This is source/packaged acceptance. Physical installed-game acceptance remains separate.

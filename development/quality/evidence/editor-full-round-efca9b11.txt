@@ -1,0 +1,7 @@
+Source: efca9b11f225334afc75cc8491be603ca442b244
+Workflow: https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41357690056
+Job: 125001188140; completed success. Raw log excerpts:
+2026-11-01T22:35:16.2353437Z TEST PASS EditorChangeIntegrationTest elapsed=900ms
+2026-11-01T22:46:49.1973508Z REGRESSION SUMMARY passed=307 failed=0 skipped=0 manifest=307
+Native editor workflow 41357679458 and independent editor workflow 41357684425 also succeeded at the same source.
+This accepts the scoped source and packaged regression checks; later mesh-editing changes and physical installed acceptance are separate.

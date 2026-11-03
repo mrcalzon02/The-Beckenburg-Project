@@ -1,0 +1,22 @@
+Source: 1bf003a7e350898fee56e6a03316ad0446333389
+Full run: 41400736403 / job125131798027 SUCCESS
+Standalone41400724255 / native41400730712 SUCCESS
+Raw full-round job excerpts:
+2026-11-02T06:36:16.1697551Z PASS: TCP EMF drop, empty slot, E pickup, ownership, reach, rollback and duplicate rejection
+2026-11-02T06:36:24.0325728Z PASS all ten packaged scenes, left menu, responsive layout and live button
+2026-11-02T06:37:06.8535241Z PASS packaged pictures, async UI load, saved chapter order, prototype privacy and actual locked/unlocked dispatch
+2026-11-02T06:37:56.2536378Z PASS: 576 explicitly approved packaged GLBs, real triangles and embedded textures
+2026-11-02T06:37:56.2918229Z TEST PASS PackagedSourceModelsTest elapsed=18386ms
+2026-11-02T06:38:24.9869674Z PASS: TCP EMF drop, empty slot, E pickup, ownership, reach, rollback and duplicate rejection
+2026-11-02T06:39:11.6277224Z PASS: ordered nonblocking TCP delivery, bounded backlog, slow-peer isolation
+2026-11-02T06:39:37.1646403Z PASS: TCP heartbeat RTT 0/50/150ms, one lost PONG, recovery and host continuity
+2026-11-02T06:41:27.0376568Z PASS: human controls Twin A, Twin B autonomously patrols and streams live positions over TCP
+2026-11-02T06:42:27.7276368Z PASS: TCP placed sensor, motion alarm, retrieval, ghost privacy
+2026-11-02T06:43:09.4567688Z PASS: genuine TCP EOF emits exactly one disconnect; local close stays silent
+2026-11-02T06:43:09.6518496Z PASS: 12 TCP exits deliver LEAVE and EOF despite unread incoming updates
+2026-11-02T06:43:39.8413885Z PASS: four TCP clients, seats/readiness/start, host-validated moves, ghost parity, damage, authority, replay and private projection
+2026-11-02T06:45:21.0317778Z PASS real TCP crouch/stand snapshots, unchanged authoritative feet and ghost-role rejection
+2026-11-02T06:45:27.9362455Z PASS TCP UV power, genuine positioned trace, exhaustion blackout, ghost privacy and physical powered laser installation
+2026-11-02T06:46:05.1078164Z PASS real TCP campaign co-op, six-seat cap, bot substitution/refund, guest isolation, host receipt and multiplayer lobby purchases
+2026-11-02T06:48:08.3209647Z REGRESSION SUMMARY passed=310 failed=0 skipped=0 manifest=310
+2026-11-02T06:48:24.9236711Z PASS Beckenburg packaged desktop, multiplayer UI and solo case startup

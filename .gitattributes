@@ -3,3 +3,9 @@ water-module/reference/ocean_surface.gdshader -text
 
 # Preserve exact multiplayer evidence bytes across operating systems.
 docs/network/receipts/* -text -whitespace
+
+# Editor scene packages fingerprint exact source/OBJ bytes. CRLF conversion
+# would invalidate the persisted source and mesh SHA on Windows checkout.
+development/levels/rebuild/**/terrain-world/** -text
+# Derived rough studies also carry exact source/render hashes and stale checks.
+development/levels/rebuild/**/rough-* -text

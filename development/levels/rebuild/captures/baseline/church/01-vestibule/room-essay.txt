@@ -1,0 +1,12 @@
+Room 1: Vestibule
+Site: St. Brigid Parish / production-2026-10-20-lived-location-v1-38d7eb377b0d2ccf
+Bounds (X,Z): 18.00,34.00 -> 26.00,39.00; floor 0.00m; clear height 3.00m
+Geometric centre: 22.00,36.50; traversable: true
+Actual 4-view camera: 22.00,0.00,36.50; displacement 0.00m
+Portal access / windows / stairs: P2 door -> 0 Nave 1.80m @(22.00,0.00,34.00); P12 door -> 13 Churchyard gate and steps 1.80m @(22.00,0.00,39.00)
+Connected in authored portal graph to van: true
+Props: 3; sockets: 6
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

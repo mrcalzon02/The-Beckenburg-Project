@@ -1,0 +1,14 @@
+SITE SCHOOL / Ravenshade School
+Status: PLAYABLE
+Room capture: 60 actual full-direction PNGs; 0 missing/failed views; 1 geometric centres obstructed.
+Route graph (from van): [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+Architecture: 15 gameplay zones; 37 portals; 2 flights; 210 decorative/physical props.
+
+Expected typology features (name-based candidates, NOT a visual pass): 10
+Recognizable by authored zone name: [reception, classroom, laboratory, gymnasium, cafeteria, library, nurse]
+Not recognizable by zone name: [student toilets, changing rooms, accessible washroom]
+A feature may exist within a larger room; inspect screenshots and props before declaring it absent.
+USER PRIORITY: inspect student bathrooms, door privacy, accessible circulation, locker/changing relationship, and their adjacency to classrooms and gym.
+
+MANUAL REVIEW REQUIRED: graphics and architecture cannot be certified by automatic room-name matching, frame hashes or prop counts.
+Access condition is a door-open baseline; test doors closed/locked and escape/fire routes separately before changes.

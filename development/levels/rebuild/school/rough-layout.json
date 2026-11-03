@@ -1,0 +1,2128 @@
+{
+  "version": 2,
+  "id": "SCHOOL",
+  "title": "Ravenshade School — revised function-first rough",
+  "status": "S02_DESIGN_STUDY_NOT_RUNTIME_ACCEPTED",
+  "site_bounds": [
+    1,
+    2,
+    55,
+    59
+  ],
+  "zones": [
+    {
+      "id": "foyer",
+      "name": "Pupil entrance and visitor vestibule",
+      "bounds": [
+        20,
+        30,
+        25,
+        36
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "Pupil entrance and visitor vestibule"
+    },
+    {
+      "id": "interview",
+      "name": "Visitor reception and interview",
+      "bounds": [
+        25,
+        30,
+        30,
+        33
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 0,
+      "kind": "inside",
+      "purpose": "Visitor reception and interview"
+    },
+    {
+      "id": "visitor-wc",
+      "name": "Visitor WC from public vestibule",
+      "bounds": [
+        25,
+        33,
+        27.5,
+        36
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 0,
+      "kind": "inside",
+      "purpose": "Visitor WC from public vestibule"
+    },
+    {
+      "id": "office",
+      "name": "Administration work room",
+      "bounds": [
+        27.5,
+        33,
+        30,
+        36
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 0,
+      "kind": "inside",
+      "purpose": "Administration work room"
+    },
+    {
+      "id": "corridor",
+      "name": "Ground public teaching corridor",
+      "bounds": [
+        20,
+        12,
+        23,
+        30
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 1,
+      "kind": "circulation",
+      "purpose": "Ground public teaching corridor"
+    },
+    {
+      "id": "staff",
+      "name": "Staff rest and work room",
+      "bounds": [
+        23,
+        15,
+        27.2,
+        20
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 1,
+      "kind": "inside",
+      "purpose": "Staff rest and work room"
+    },
+    {
+      "id": "cleaner",
+      "name": "Cleaner sink and supplies",
+      "bounds": [
+        23,
+        12,
+        25,
+        15
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 1,
+      "kind": "inside",
+      "purpose": "Cleaner sink and supplies"
+    },
+    {
+      "id": "staff-wc",
+      "name": "Staff sanitary room",
+      "bounds": [
+        25,
+        12,
+        27.2,
+        15
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 1,
+      "kind": "inside",
+      "purpose": "Staff sanitary room"
+    },
+    {
+      "id": "service-stair",
+      "name": "Plant service stair and rear delivery exit",
+      "bounds": [
+        27.2,
+        12,
+        30,
+        20
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 1,
+      "kind": "circulation",
+      "purpose": "Plant service stair and rear delivery exit"
+    },
+    {
+      "id": "main-stair",
+      "name": "Main stair bay with lower approach",
+      "bounds": [
+        23,
+        20,
+        30,
+        30
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 1,
+      "kind": "circulation",
+      "purpose": "Main stair bay with lower approach"
+    },
+    {
+      "id": "class-a",
+      "name": "Class A: 24 desks and teaching area",
+      "bounds": [
+        10,
+        24,
+        20,
+        34
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 2,
+      "kind": "inside",
+      "purpose": "Class A: 24 desks and teaching area"
+    },
+    {
+      "id": "class-a-store",
+      "name": "Class A coats and teaching store",
+      "bounds": [
+        10,
+        34,
+        20,
+        36
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 2,
+      "kind": "inside",
+      "purpose": "Class A coats and teaching store"
+    },
+    {
+      "id": "science",
+      "name": "Shared practical science teaching",
+      "bounds": [
+        10,
+        12,
+        20,
+        21
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 3,
+      "kind": "inside",
+      "purpose": "Shared practical science teaching"
+    },
+    {
+      "id": "science-prep",
+      "name": "Science preparation and secure supplies",
+      "bounds": [
+        10,
+        21,
+        20,
+        24
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 3,
+      "kind": "inside",
+      "purpose": "Science preparation and secure supplies"
+    },
+    {
+      "id": "dining",
+      "name": "Dining: two classes in one sitting",
+      "bounds": [
+        30,
+        24,
+        38,
+        36
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 4,
+      "kind": "inside",
+      "purpose": "Dining: two classes in one sitting"
+    },
+    {
+      "id": "kitchen",
+      "name": "Preparation cooking and controlled serving",
+      "bounds": [
+        38,
+        28,
+        42,
+        36
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 4,
+      "kind": "inside",
+      "purpose": "Preparation cooking and controlled serving"
+    },
+    {
+      "id": "receiving",
+      "name": "Food receiving wash-up and refuse exit",
+      "bounds": [
+        42,
+        28,
+        46,
+        36
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 4,
+      "kind": "inside",
+      "purpose": "Food receiving wash-up and refuse exit"
+    },
+    {
+      "id": "gym-link",
+      "name": "Public dining-to-gym connector",
+      "bounds": [
+        38,
+        24,
+        42,
+        28
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 4,
+      "kind": "circulation",
+      "purpose": "Public dining-to-gym connector"
+    },
+    {
+      "id": "health-link",
+      "name": "Health and changing corridor",
+      "bounds": [
+        30,
+        12,
+        32,
+        24
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 5,
+      "kind": "circulation",
+      "purpose": "Health and changing corridor"
+    },
+    {
+      "id": "nurse",
+      "name": "Private nurse consultation and rest",
+      "bounds": [
+        32,
+        18,
+        38,
+        24
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 5,
+      "kind": "inside",
+      "purpose": "Private nurse consultation and rest"
+    },
+    {
+      "id": "change-a",
+      "name": "Changing group A lockers and bench",
+      "bounds": [
+        32,
+        12,
+        36,
+        15
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 5,
+      "kind": "inside",
+      "purpose": "Changing group A lockers and bench"
+    },
+    {
+      "id": "shower-a",
+      "name": "Group A screened washing",
+      "bounds": [
+        36,
+        12,
+        38,
+        15
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 5,
+      "kind": "inside",
+      "purpose": "Group A screened washing"
+    },
+    {
+      "id": "change-b",
+      "name": "Changing group B lockers and bench",
+      "bounds": [
+        32,
+        15,
+        36,
+        18
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 5,
+      "kind": "inside",
+      "purpose": "Changing group B lockers and bench"
+    },
+    {
+      "id": "shower-b",
+      "name": "Group B screened washing",
+      "bounds": [
+        36,
+        15,
+        38,
+        18
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 5,
+      "kind": "inside",
+      "purpose": "Group B screened washing"
+    },
+    {
+      "id": "gym",
+      "name": "Multipurpose PE hall: no upper floor",
+      "bounds": [
+        38,
+        8,
+        50,
+        24
+      ],
+      "y": 0,
+      "height": 7.2,
+      "owner": 6,
+      "kind": "inside",
+      "purpose": "Multipurpose PE hall: no upper floor"
+    },
+    {
+      "id": "upper-corridor",
+      "name": "Upper public teaching corridor",
+      "bounds": [
+        20,
+        12,
+        23,
+        36
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "circulation",
+      "purpose": "Upper public teaching corridor"
+    },
+    {
+      "id": "wash-a",
+      "name": "Student washroom A with screened entry",
+      "bounds": [
+        23,
+        12,
+        30,
+        17
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "inside",
+      "purpose": "Student washroom A with screened entry"
+    },
+    {
+      "id": "wash-b",
+      "name": "Student washroom B with screened entry",
+      "bounds": [
+        23,
+        17,
+        30,
+        22
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "inside",
+      "purpose": "Student washroom B with screened entry"
+    },
+    {
+      "id": "upper-stair",
+      "name": "Guarded stair void and top landing",
+      "bounds": [
+        23,
+        22,
+        30,
+        30
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "circulation",
+      "purpose": "Guarded stair void and top landing"
+    },
+    {
+      "id": "upper-lobby",
+      "name": "Daylit library and assembly lobby",
+      "bounds": [
+        23,
+        30,
+        30,
+        36
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "circulation",
+      "purpose": "Daylit library and assembly lobby"
+    },
+    {
+      "id": "library",
+      "name": "Library reading lending and stacks",
+      "bounds": [
+        10,
+        24,
+        20,
+        36
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 8,
+      "kind": "inside",
+      "purpose": "Library reading lending and stacks"
+    },
+    {
+      "id": "class-b",
+      "name": "Class B: 24 desks and teaching area",
+      "bounds": [
+        10,
+        12,
+        20,
+        22
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 9,
+      "kind": "inside",
+      "purpose": "Class B: 24 desks and teaching area"
+    },
+    {
+      "id": "class-b-store",
+      "name": "Class B coats and teaching store",
+      "bounds": [
+        10,
+        22,
+        20,
+        24
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 9,
+      "kind": "inside",
+      "purpose": "Class B coats and teaching store"
+    },
+    {
+      "id": "assembly",
+      "name": "Assembly: 48 pupils and staff",
+      "bounds": [
+        30,
+        24,
+        42,
+        36
+      ],
+      "y": 3.6,
+      "height": 4.5,
+      "owner": 10,
+      "kind": "inside",
+      "purpose": "Assembly: 48 pupils and staff"
+    },
+    {
+      "id": "lower-stair",
+      "name": "Cellar service stair",
+      "bounds": [
+        27.2,
+        12,
+        30,
+        20
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "circulation",
+      "purpose": "Cellar service stair"
+    },
+    {
+      "id": "plant",
+      "name": "Boiler hot-water and electrical maintenance",
+      "bounds": [
+        23,
+        12,
+        27.2,
+        20
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "inside",
+      "purpose": "Boiler hot-water and electrical maintenance"
+    },
+    {
+      "id": "plant-store",
+      "name": "Maintenance store and clear ritual reservation",
+      "bounds": [
+        23,
+        20,
+        30,
+        30
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "inside",
+      "purpose": "Maintenance store and clear ritual reservation"
+    },
+    {
+      "id": "grounds",
+      "name": "Outdoor grounds: footprint is envelope only",
+      "bounds": [
+        5,
+        2,
+        55,
+        36
+      ],
+      "y": 0,
+      "height": 12,
+      "owner": 12,
+      "kind": "outside",
+      "purpose": "Outdoor grounds: footprint is envelope only"
+    },
+    {
+      "id": "entry",
+      "name": "School forecourt and shared arrival support",
+      "bounds": [
+        1,
+        36,
+        55,
+        58.4
+      ],
+      "y": 0,
+      "height": 12,
+      "owner": 13,
+      "kind": "outside",
+      "purpose": "School forecourt and shared arrival support"
+    },
+    {
+      "id": "stage",
+      "name": "Canonical van arrival reservation",
+      "bounds": [
+        18,
+        45,
+        38,
+        58
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 14,
+      "kind": "staging",
+      "purpose": "Canonical van arrival reservation"
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "foyer",
+      "b": "interview",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          22.5,
+          0,
+          33.0
+        ],
+        [
+          25,
+          0,
+          31.5
+        ],
+        [
+          27.5,
+          0,
+          31.5
+        ]
+      ],
+      "threshold": [
+        25,
+        0,
+        31.5
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L02",
+      "a": "foyer",
+      "b": "visitor-wc",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          22.5,
+          0,
+          33.0
+        ],
+        [
+          25,
+          0,
+          34.5
+        ],
+        [
+          26.25,
+          0,
+          34.5
+        ]
+      ],
+      "threshold": [
+        25,
+        0,
+        34.5
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L03",
+      "a": "interview",
+      "b": "office",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          27.5,
+          0,
+          31.5
+        ],
+        [
+          28.75,
+          0,
+          33
+        ],
+        [
+          28.75,
+          0,
+          34.5
+        ]
+      ],
+      "threshold": [
+        28.75,
+        0,
+        33
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L04",
+      "a": "foyer",
+      "b": "corridor",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          22.5,
+          0,
+          33.0
+        ],
+        [
+          21.5,
+          0,
+          30
+        ],
+        [
+          21.5,
+          0,
+          21.0
+        ]
+      ],
+      "threshold": [
+        21.5,
+        0,
+        30
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L05",
+      "a": "corridor",
+      "b": "staff",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          21.5,
+          0,
+          21.0
+        ],
+        [
+          23,
+          0,
+          17
+        ],
+        [
+          25.1,
+          0,
+          17.5
+        ]
+      ],
+      "threshold": [
+        23,
+        0,
+        17
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L06",
+      "a": "corridor",
+      "b": "cleaner",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          21.5,
+          0,
+          21.0
+        ],
+        [
+          23,
+          0,
+          13.5
+        ],
+        [
+          24.0,
+          0,
+          13.5
+        ]
+      ],
+      "threshold": [
+        23,
+        0,
+        13.5
+      ],
+      "access": "service",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L07",
+      "a": "staff",
+      "b": "staff-wc",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          25.1,
+          0,
+          17.5
+        ],
+        [
+          26,
+          0,
+          15
+        ],
+        [
+          26.1,
+          0,
+          13.5
+        ]
+      ],
+      "threshold": [
+        26,
+        0,
+        15
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L08",
+      "a": "main-stair",
+      "b": "service-stair",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          26.5,
+          0,
+          25.0
+        ],
+        [
+          28.5,
+          0,
+          20
+        ],
+        [
+          28.6,
+          0,
+          16.0
+        ]
+      ],
+      "threshold": [
+        28.5,
+        0,
+        20
+      ],
+      "access": "service",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L09",
+      "a": "corridor",
+      "b": "main-stair",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          21.5,
+          0,
+          21.0
+        ],
+        [
+          23,
+          0,
+          21
+        ],
+        [
+          26.5,
+          0,
+          25.0
+        ]
+      ],
+      "threshold": [
+        23,
+        0,
+        21
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L10",
+      "a": "corridor",
+      "b": "class-a",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          21.5,
+          0,
+          21.0
+        ],
+        [
+          20,
+          0,
+          27
+        ],
+        [
+          15.0,
+          0,
+          29.0
+        ]
+      ],
+      "threshold": [
+        20,
+        0,
+        27
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L11",
+      "a": "class-a",
+      "b": "class-a-store",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          15.0,
+          0,
+          29.0
+        ],
+        [
+          15,
+          0,
+          34
+        ],
+        [
+          15.0,
+          0,
+          35.0
+        ]
+      ],
+      "threshold": [
+        15,
+        0,
+        34
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L12",
+      "a": "corridor",
+      "b": "science",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          21.5,
+          0,
+          21.0
+        ],
+        [
+          20,
+          0,
+          17
+        ],
+        [
+          15.0,
+          0,
+          16.5
+        ]
+      ],
+      "threshold": [
+        20,
+        0,
+        17
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L13",
+      "a": "science",
+      "b": "science-prep",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          15.0,
+          0,
+          16.5
+        ],
+        [
+          17,
+          0,
+          21
+        ],
+        [
+          15.0,
+          0,
+          22.5
+        ]
+      ],
+      "threshold": [
+        17,
+        0,
+        21
+      ],
+      "access": "service",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L14",
+      "a": "main-stair",
+      "b": "dining",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          26.5,
+          0,
+          25.0
+        ],
+        [
+          30,
+          0,
+          26
+        ],
+        [
+          34.0,
+          0,
+          30.0
+        ]
+      ],
+      "threshold": [
+        30,
+        0,
+        26
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L15",
+      "a": "dining",
+      "b": "kitchen",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          0,
+          30.0
+        ],
+        [
+          38,
+          0,
+          31
+        ],
+        [
+          40.0,
+          0,
+          32.0
+        ]
+      ],
+      "threshold": [
+        38,
+        0,
+        31
+      ],
+      "access": "service",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L16",
+      "a": "kitchen",
+      "b": "receiving",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          40.0,
+          0,
+          32.0
+        ],
+        [
+          42,
+          0,
+          31
+        ],
+        [
+          44.0,
+          0,
+          32.0
+        ]
+      ],
+      "threshold": [
+        42,
+        0,
+        31
+      ],
+      "access": "service",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L17",
+      "a": "dining",
+      "b": "gym-link",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          0,
+          30.0
+        ],
+        [
+          38,
+          0,
+          26
+        ],
+        [
+          40.0,
+          0,
+          26.0
+        ]
+      ],
+      "threshold": [
+        38,
+        0,
+        26
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L18",
+      "a": "gym-link",
+      "b": "gym",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          40.0,
+          0,
+          26.0
+        ],
+        [
+          40,
+          0,
+          24
+        ],
+        [
+          44.0,
+          0,
+          16.0
+        ]
+      ],
+      "threshold": [
+        40,
+        0,
+        24
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L19",
+      "a": "main-stair",
+      "b": "health-link",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          26.5,
+          0,
+          25.0
+        ],
+        [
+          30,
+          0,
+          21
+        ],
+        [
+          31.0,
+          0,
+          18.0
+        ]
+      ],
+      "threshold": [
+        30,
+        0,
+        21
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L20",
+      "a": "health-link",
+      "b": "nurse",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          31.0,
+          0,
+          18.0
+        ],
+        [
+          32,
+          0,
+          21
+        ],
+        [
+          35.0,
+          0,
+          21.0
+        ]
+      ],
+      "threshold": [
+        32,
+        0,
+        21
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L21",
+      "a": "health-link",
+      "b": "change-a",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          31.0,
+          0,
+          18.0
+        ],
+        [
+          32,
+          0,
+          13.5
+        ],
+        [
+          34.0,
+          0,
+          13.5
+        ]
+      ],
+      "threshold": [
+        32,
+        0,
+        13.5
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L22",
+      "a": "change-a",
+      "b": "shower-a",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          0,
+          13.5
+        ],
+        [
+          36,
+          0,
+          13.5
+        ],
+        [
+          37.0,
+          0,
+          13.5
+        ]
+      ],
+      "threshold": [
+        36,
+        0,
+        13.5
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L23",
+      "a": "health-link",
+      "b": "change-b",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          31.0,
+          0,
+          18.0
+        ],
+        [
+          32,
+          0,
+          16.5
+        ],
+        [
+          34.0,
+          0,
+          16.5
+        ]
+      ],
+      "threshold": [
+        32,
+        0,
+        16.5
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L24",
+      "a": "change-b",
+      "b": "shower-b",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          0,
+          16.5
+        ],
+        [
+          36,
+          0,
+          16.5
+        ],
+        [
+          37.0,
+          0,
+          16.5
+        ]
+      ],
+      "threshold": [
+        36,
+        0,
+        16.5
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L25",
+      "a": "upper-corridor",
+      "b": "wash-a",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          21.5,
+          3.6,
+          24.0
+        ],
+        [
+          23,
+          3.6,
+          13.2
+        ],
+        [
+          26.5,
+          3.6,
+          14.5
+        ]
+      ],
+      "threshold": [
+        23,
+        3.6,
+        13.2
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L26",
+      "a": "upper-corridor",
+      "b": "wash-b",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          21.5,
+          3.6,
+          24.0
+        ],
+        [
+          23,
+          3.6,
+          18.2
+        ],
+        [
+          26.5,
+          3.6,
+          19.5
+        ]
+      ],
+      "threshold": [
+        23,
+        3.6,
+        18.2
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L27",
+      "a": "upper-corridor",
+      "b": "upper-stair",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          21.5,
+          3.6,
+          24.0
+        ],
+        [
+          23,
+          3.6,
+          29
+        ],
+        [
+          26.5,
+          3.6,
+          26.0
+        ]
+      ],
+      "threshold": [
+        23,
+        3.6,
+        29
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L28",
+      "a": "upper-corridor",
+      "b": "upper-lobby",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          21.5,
+          3.6,
+          24.0
+        ],
+        [
+          23,
+          3.6,
+          33
+        ],
+        [
+          26.5,
+          3.6,
+          33.0
+        ]
+      ],
+      "threshold": [
+        23,
+        3.6,
+        33
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L29",
+      "a": "upper-corridor",
+      "b": "library",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          21.5,
+          3.6,
+          24.0
+        ],
+        [
+          20,
+          3.6,
+          30
+        ],
+        [
+          15.0,
+          3.6,
+          30.0
+        ]
+      ],
+      "threshold": [
+        20,
+        3.6,
+        30
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L30",
+      "a": "upper-corridor",
+      "b": "class-b",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          21.5,
+          3.6,
+          24.0
+        ],
+        [
+          20,
+          3.6,
+          17
+        ],
+        [
+          15.0,
+          3.6,
+          17.0
+        ]
+      ],
+      "threshold": [
+        20,
+        3.6,
+        17
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L31",
+      "a": "class-b",
+      "b": "class-b-store",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          15.0,
+          3.6,
+          17.0
+        ],
+        [
+          15,
+          3.6,
+          22
+        ],
+        [
+          15.0,
+          3.6,
+          23.0
+        ]
+      ],
+      "threshold": [
+        15,
+        3.6,
+        22
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L32",
+      "a": "upper-lobby",
+      "b": "assembly",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          26.5,
+          3.6,
+          33.0
+        ],
+        [
+          30,
+          3.6,
+          33
+        ],
+        [
+          36.0,
+          3.6,
+          30.0
+        ]
+      ],
+      "threshold": [
+        30,
+        3.6,
+        33
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L33",
+      "a": "lower-stair",
+      "b": "plant",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          28.6,
+          -3,
+          16.0
+        ],
+        [
+          27.2,
+          -3,
+          18.8
+        ],
+        [
+          25.1,
+          -3,
+          16.0
+        ]
+      ],
+      "threshold": [
+        27.2,
+        -3,
+        18.8
+      ],
+      "access": "service",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L34",
+      "a": "plant",
+      "b": "plant-store",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          25.1,
+          -3,
+          16.0
+        ],
+        [
+          26,
+          -3,
+          20
+        ],
+        [
+          26.5,
+          -3,
+          25.0
+        ]
+      ],
+      "threshold": [
+        26,
+        -3,
+        20
+      ],
+      "access": "service",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L35",
+      "a": "foyer",
+      "b": "entry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          22.5,
+          0,
+          33.0
+        ],
+        [
+          22.5,
+          0,
+          36
+        ],
+        [
+          28.0,
+          0,
+          47.2
+        ]
+      ],
+      "threshold": [
+        22.5,
+        0,
+        36
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L36",
+      "a": "service-stair",
+      "b": "grounds",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          28.6,
+          0,
+          16.0
+        ],
+        [
+          28.5,
+          0,
+          12
+        ],
+        [
+          30.0,
+          0,
+          19.0
+        ]
+      ],
+      "threshold": [
+        28.5,
+        0,
+        12
+      ],
+      "access": "service",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L37",
+      "a": "science",
+      "b": "grounds",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          15.0,
+          0,
+          16.5
+        ],
+        [
+          10,
+          0,
+          16
+        ],
+        [
+          30.0,
+          0,
+          19.0
+        ]
+      ],
+      "threshold": [
+        10,
+        0,
+        16
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L38",
+      "a": "class-a",
+      "b": "grounds",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          15.0,
+          0,
+          29.0
+        ],
+        [
+          10,
+          0,
+          28
+        ],
+        [
+          30.0,
+          0,
+          19.0
+        ]
+      ],
+      "threshold": [
+        10,
+        0,
+        28
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L39",
+      "a": "gym",
+      "b": "grounds",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          44.0,
+          0,
+          16.0
+        ],
+        [
+          44,
+          0,
+          8
+        ],
+        [
+          30.0,
+          0,
+          19.0
+        ]
+      ],
+      "threshold": [
+        44,
+        0,
+        8
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L40",
+      "a": "receiving",
+      "b": "grounds",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          44.0,
+          0,
+          32.0
+        ],
+        [
+          46,
+          0,
+          32
+        ],
+        [
+          30.0,
+          0,
+          19.0
+        ]
+      ],
+      "threshold": [
+        46,
+        0,
+        32
+      ],
+      "access": "service",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L41",
+      "a": "grounds",
+      "b": "entry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          30.0,
+          0,
+          19.0
+        ],
+        [
+          52,
+          0,
+          36
+        ],
+        [
+          28.0,
+          0,
+          47.2
+        ]
+      ],
+      "threshold": [
+        52,
+        0,
+        36
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L42",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          28.0,
+          0,
+          51.5
+        ],
+        [
+          28,
+          0,
+          45
+        ],
+        [
+          28.0,
+          0,
+          47.2
+        ]
+      ],
+      "threshold": [
+        28,
+        0,
+        45
+      ],
+      "access": "public",
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+    },
+    {
+      "id": "L43",
+      "a": "main-stair",
+      "b": "upper-stair",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          25,
+          0,
+          22
+        ],
+        [
+          25,
+          3.6,
+          27.76
+        ]
+      ],
+      "rise_m": 3.6,
+      "run_m": 5.760000000000002,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 20,
+      "construction": "Straight flight; reserve full-run deck void, structural depth, guards and unobstructed end landings. Actual capsule/ceiling proof required.",
+      "note": "Measured section reservation, not a generic centre-to-centre diagonal ramp."
+    },
+    {
+      "id": "L44",
+      "a": "lower-stair",
+      "b": "service-stair",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          28.5,
+          -3,
+          13.5
+        ],
+        [
+          28.5,
+          0,
+          18.3
+        ]
+      ],
+      "rise_m": 3,
+      "run_m": 4.800000000000001,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 18,
+      "construction": "Straight flight; reserve full-run deck void, structural depth, guards and unobstructed end landings. Actual capsule/ceiling proof required.",
+      "note": "Measured section reservation, not a generic centre-to-centre diagonal ramp."
+    }
+  ],
+  "capacity": "48 pupils in two general classes; one shared 24-place practical science room; six staff positions",
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "assembly",
+      "point": [
+        36,
+        3.6,
+        30
+      ]
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "plant-store",
+      "point": [
+        26.5,
+        -3,
+        25
+      ]
+    },
+    {
+      "rite": "Absolution",
+      "zone": "grounds",
+      "point": [
+        49,
+        0,
+        31
+      ]
+    }
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      28,
+      0,
+      51
+    ],
+    "yaw": -1.5707963267948966,
+    "cargo_route": [
+      [
+        24.372,
+        0,
+        51
+      ],
+      [
+        22.5,
+        0,
+        40
+      ],
+      [
+        22.5,
+        0,
+        36
+      ]
+    ],
+    "note": "Canonical VanStaging source; no substitute vehicle mesh. Arrival remains to be physically authored."
+  },
+  "terrain_cutouts": [
+    {
+      "bounds": [
+        23,
+        12,
+        30,
+        30
+      ],
+      "world_surface_y": -0.65,
+      "method": "Persisted editor AdaptiveTerrainTopology punched leaves; not authored yet"
+    }
+  ],
+  "furniture_reservations": [
+    {
+      "space": "class-a",
+      "model": "level_student_desk",
+      "columns": [
+        11.5,
+        12.75,
+        14,
+        16,
+        17.25,
+        18.5
+      ],
+      "rows": [
+        26,
+        27.8,
+        29.6,
+        31.4
+      ],
+      "chair_offset_z": 0.72,
+      "model_scale": 1,
+      "required_quantity": 24,
+      "note": "Measured source desk 1.1 x 0.65 m; native chair bounds and pivots retained. 0.9 m central aisle; final collider/door approaches untested."
+    },
+    {
+      "space": "class-b",
+      "model": "level_student_desk",
+      "columns": [
+        11.5,
+        12.75,
+        14,
+        16,
+        17.25,
+        18.5
+      ],
+      "rows": [
+        14,
+        15.8,
+        17.6,
+        19.4
+      ],
+      "chair_offset_z": 0.72,
+      "model_scale": 1,
+      "required_quantity": 24,
+      "note": "Measured source desk 1.1 x 0.65 m; native chair bounds and pivots retained. 0.9 m central aisle; final collider/door approaches untested."
+    }
+  ],
+  "sanitary_reservations": [
+    {
+      "space": "wash-a",
+      "entry_screen_depth_m": 1.5,
+      "stall_count": 3,
+      "stall_reservation_m": [
+        1.5,
+        2
+      ],
+      "shared_wash_zone_m": [
+        3,
+        2
+      ],
+      "note": "Place full-scale source WCs/basins; no miniature accessibility stall. Detail placement and privacy rays remain in blockout."
+    },
+    {
+      "space": "wash-b",
+      "entry_screen_depth_m": 1.5,
+      "stall_count": 3,
+      "stall_reservation_m": [
+        1.5,
+        2
+      ],
+      "shared_wash_zone_m": [
+        3,
+        2
+      ],
+      "note": "Place full-scale source WCs/basins; no miniature accessibility stall. Detail placement and privacy rays remain in blockout."
+    }
+  ],
+  "decisions": [
+    "Replace broad locker-corridor washroom partitions with separate bounded sanitary rooms off a 3 m public corridor.",
+    "Keep the gym a separate 7.2 m clear volume; upper assembly has its own 4.5 m height and roof.",
+    "Food receiving and refuse leave by the east service yard, never through teaching rooms.",
+    "Plant access has a rear service door and separate stair; it does not require entering nurse or pupil washrooms.",
+    "Classroom stores, staff facilities and private visitor interview have explicit floor area instead of generic props in a hall."
+  ],
+  "remaining": [
+    "Engineer secondary upper-floor emergency exit and route fairness; no code-compliance claim.",
+    "Resolve individual sanitary/changing/PE-equipment fixtures and privacy screens in actual geometry.",
+    "Author structural beams/roof, complete source furniture clearances, electrical/acoustic ownership and hiding budget.",
+    "Punch editor world terrain and prove full-body traversal, doors, networking, gameplay, human and GPU gates."
+  ]
+}

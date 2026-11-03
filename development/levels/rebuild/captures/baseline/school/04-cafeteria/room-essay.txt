@@ -1,0 +1,12 @@
+Room 4: Cafeteria
+Site: Ravenshade School / production-2026-10-20-lived-location-v1-97b23b0a6674e5b7
+Bounds (X,Z): 28.00,24.00 -> 40.00,38.00; floor 0.00m; clear height 3.60m
+Geometric centre: 34.00,31.00; traversable: true
+Actual 4-view camera: 34.00,0.00,31.00; displacement 0.00m
+Portal access / windows / stairs: P4 door -> 0 Front office and foyer 1.35m @(28.00,0.00,35.00); P9 door -> 5 Nurse office 1.20m @(31.00,0.00,24.00); P10 door -> 6 Gymnasium 1.80m @(37.00,0.00,24.00); P24 window -> 13 School steps and bus loop 1.25m @(35.00,0.00,38.00)
+Connected in authored portal graph to van: true
+Props: 40; sockets: 9
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

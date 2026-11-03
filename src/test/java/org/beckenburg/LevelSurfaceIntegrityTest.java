@@ -42,8 +42,9 @@ public final class LevelSurfaceIntegrityTest {
         return area;
     }
     public static void main(String[] args)throws Exception{
-        for(var site:List.of(HouseMap.Site.HOUSE,HouseMap.Site.FARMHOUSE,HouseMap.Site.SCHOOL)){
-            HouseMap map=new HouseMap(site);var level=map.level();List<Rect> walls=new ArrayList<>();
+        boolean rebuild=args.length>0&&args[0].equals("HOUSE_REBUILD");
+        for(var site:rebuild?List.of(HouseMap.Site.HOUSE):List.of(HouseMap.Site.HOUSE,HouseMap.Site.FARMHOUSE,HouseMap.Site.SCHOOL)){
+            HouseMap map=rebuild?HouseRebuild.graybox():new HouseMap(site);var level=map.level();List<Rect> walls=new ArrayList<>();
             for(Room r:level.rooms())if(!r.outside()){
                 check(LevelMaterials.floor(r)!=LevelMaterials.wall(r),site+" wall and floor share finish "+r.id());
                 List<Object> deck=generated("levelDeck",new Class<?>[]{List.class,LevelDefinition.class,Room.class,boolean.class},level,r,false);

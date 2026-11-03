@@ -24,6 +24,8 @@ cp assets/runtime/directional-sprites.zip build/classes/org/beckenburg/direction
 # Six distinct identity-locked four-view Hunter/Elder character profiles.
 test -s assets/runtime/character-directions.zip
 cp assets/runtime/character-directions.zip build/classes/org/beckenburg/character-directions.zip
+test -s assets/runtime/hunter-animation.zip
+cp assets/runtime/hunter-animation.zip build/classes/org/beckenburg/hunter-animation.zip
 test -s assets/runtime/twins-directions.zip
 cp assets/runtime/twins-directions.zip build/classes/org/beckenburg/twins-directions.zip
 test -s assets/runtime/lore-master-directions.zip
@@ -127,7 +129,7 @@ if [ "${1:-}" = "--capture-only" ]; then
     echo "CASTLE_CAPTURE_RUNTIME_READY: compiled real game sources with runtime assets"
     exit 0
 fi
-javac --release 17 -encoding UTF-8 -cp build/classes -d build/test src/test/java/hbnet/*.java src/test/java/org/beckenburg/*.java
+javac --release 17 -encoding UTF-8 -cp build/classes -d build/test src/test/java/hbnet/*.java src/test/java/org/beckenburg/*.java src/test/java/org/beckenburg/editor/EditorGlbAuthoringTest.java src/test/java/org/beckenburg/editor/EditorMeshMaterialTest.java
 # Cosmetic HUD composition diagnostics must never block a functional game release.
 if ! java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.ToolBeltHudTest; then
     printf '%s\n' 'ADVISORY: hunter tool belt/held-device presentation check failed (nonblocking)' >&2

@@ -1,0 +1,17 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+stage,Perimeter van apron,Unload at the controlled perimeter roadhead,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Perimeter gate approach,Approach the secured public entrance,16,10,0,3,sally;stage,REVIEW_IN_S02,NOT_ESTABLISHED
+sally,Vehicle sally port,Transfer arrivals through separately controlled thresholds,16,10,0,3,entry;guard;intake;yard,REVIEW_IN_S02,NOT_ESTABLISHED
+intake,Intake and records,Search admit and record incoming prisoners,16,10,0,3,block-a;sally,REVIEW_IN_S02,NOT_ESTABLISHED
+guard,Guard station,Observe entrances and control secured routes,12,10,0,3,block-b;sally,REVIEW_IN_S02,NOT_ESTABLISHED
+block-a,Main cell block,House prisoners in individual constructed cells and a supervised aisle,12,36,0,6.8,cross;gallery-a;intake;yard,REVIEW_IN_S02,NOT_ESTABLISHED
+block-b,Secondary cell block,House a second cell group with distinct controlled access,12,36,0,6.8,chapel;cross;gallery-b;guard;yard,REVIEW_IN_S02,NOT_ESTABLISHED
+yard,Exercise yard,Exercise within a physically secured outdoor enclosure,24,36,0,3,block-a;block-b;cross;sally,REVIEW_IN_S02,NOT_ESTABLISHED
+cross,Rear cross passage,Distribute supervised movements between cell wings and support,48,6,0,3,block-a;block-b;isolation;medical;mess;plant;yard,REVIEW_IN_S02,NOT_ESTABLISHED
+mess,Mess hall,Prepare serve and clear meals under controlled movement,18,12,0,3,cross;medical,REVIEW_IN_S02,NOT_ESTABLISHED
+medical,Infirmary,Treat patients with privacy and clinical support,18,12,0,3,cross;mess,REVIEW_IN_S02,NOT_ESTABLISHED
+chapel,Chapel / visitation,Separate supervised visitation from worship use by real partitions,12,18,0,3,block-b;isolation,REVIEW_IN_S02,NOT_ESTABLISHED
+isolation,Isolation wing,Accommodate isolated cells with observation and sanitation,12,18,0,3,chapel;cross,REVIEW_IN_S02,NOT_ESTABLISHED
+gallery-a,A-block upper gallery,Supervise and access upper A-block cells behind guards,4,36,3.4,3,block-a,REVIEW_IN_S02,NOT_ESTABLISHED
+gallery-b,B-block upper gallery,Supervise and access upper B-block cells behind guards,4,36,3.4,3,block-b,REVIEW_IN_S02,NOT_ESTABLISHED
+plant,Boiler and maintenance,Maintain heating power water and service distribution,24,20,-3,3,cross,REVIEW_IN_S02,NOT_ESTABLISHED

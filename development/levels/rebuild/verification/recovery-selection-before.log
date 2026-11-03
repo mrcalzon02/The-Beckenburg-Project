@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: all planned location families remain indexed
+	at org.beckenburg.SiteSelectionTest.ok(SiteSelectionTest.java:5)
+	at org.beckenburg.SiteSelectionTest.main(SiteSelectionTest.java:7)

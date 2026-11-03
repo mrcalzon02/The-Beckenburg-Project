@@ -1,0 +1,16 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+stage,Lower access van apron,Unload at the lower battery roadhead,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Lower access track,Approach along the actual access track,16,14,0,3,approach;stage,REVIEW_IN_S02,NOT_ESTABLISHED
+approach,Cut hillside approach,Climb through a supported hillside cutting,16,14,2,3,entry;yard,REVIEW_IN_S02,NOT_ESTABLISHED
+yard,Upper battery yard,Distribute crew and maintenance access across the battery,20,20,4,3,approach;east;west,REVIEW_IN_S02,NOT_ESTABLISHED
+west,West casemate,House an inert western defensive emplacement,16,14,4,3,gallery;magazine;yard,REVIEW_IN_S02,NOT_ESTABLISHED
+east,East casemate,House an inert eastern defensive emplacement,16,14,4,3,gallery;service;yard,REVIEW_IN_S02,NOT_ESTABLISHED
+gallery,Upper protected gallery,Move between protected upper defensive positions,20,8,4,3,director;east;west,REVIEW_IN_S02,NOT_ESTABLISHED
+magazine,Empty magazine,Show empty secure storage with credible access control,16,12,4,3,barracks;west,REVIEW_IN_S02,NOT_ESTABLISHED
+service,Maintenance shelter,Maintain tools and installation components,16,12,4,3,east;plant,REVIEW_IN_S02,NOT_ESTABLISHED
+director,Observation director post,Observe the defended horizon from a deliberate sightline,12,16,7,3,gallery,REVIEW_IN_S02,NOT_ESTABLISHED
+barracks,Lower barrack room,Sleep eat and store crew belongings with sanitation,16,12,0,3,lowgallery;magazine,REVIEW_IN_S02,NOT_ESTABLISHED
+lowgallery,Lower gallery,Reach protected lower rooms through actual gallery geometry,20,8,0,3,barracks;plant;records,REVIEW_IN_S02,NOT_ESTABLISHED
+plant,Ventilation and power room,Maintain ventilation and independent power distribution,16,12,0,3,lowgallery;pump;service,REVIEW_IN_S02,NOT_ESTABLISHED
+records,Duty records room,Record duty maintenance and installation history,10,12,0,3,lowgallery;pump,REVIEW_IN_S02,NOT_ESTABLISHED
+pump,Drainage pump chamber,Collect and pump drainage through a real low-point service space,10,12,0,3,plant;records,REVIEW_IN_S02,NOT_ESTABLISHED

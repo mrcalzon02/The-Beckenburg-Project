@@ -1,0 +1,11 @@
+Source6445403a36b18bcadbe2454ebb1f13824e3fcb82; GPU run41506353573, Mesa job125491776409
+Renderer/GLB writer/GPU/water/lighting code unchanged througha8130789 (git diff verified). This is GPU scope evidence, not new UV human workflow or whole G0-G12 acceptance.
+2026-11-02T19:28:45.5617137Z PASS actual OpenGL Castle and 11 map types including persisted USER fixture: zero unchanged uploads, real torch, flicker, blackout, door, resize and return
+2026-11-02T19:28:54.8807917Z GPU UI PASS real Castle home loaded
+2026-11-02T19:28:55.7238917Z GPU UI PASS invoked real solo.deploy / START ROUND action
+2026-11-02T19:28:59.8478663Z GPU UI PASS HOUSE hunter ready=2359ms, walk=0.7134926159999964m, frames=23, real extraction=RETREATED, Castle home restored
+2026-11-02T19:29:00.0578126Z GPU UI PASS invoked real solo.deploy / START ROUND action
+2026-11-02T19:29:12.1368246Z GPU UI PASS FARMHOUSE hunter ready=11175ms, walk=0.47994854879999593m, frames=20, real extraction=RETREATED, Castle home restored
+2026-11-02T19:29:12.2764448Z GPU UI PASS invoked real solo.deploy / START ROUND action
+2026-11-02T19:29:14.0538921Z GPU UI PASS SCHOOL hunter ready=883ms, walk=0.4784756664000014m, frames=19, real extraction=RETREATED, Castle home restored
+2026-11-02T19:29:14.0567796Z GPU UI PASS 3 real case dispatch / hunter / movement / extraction / menu cycles

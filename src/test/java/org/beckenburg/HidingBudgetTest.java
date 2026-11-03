@@ -3,9 +3,10 @@ import java.util.*;
 /** Shared combined cap and exact density counts on every currently built map. */
 public final class HidingBudgetTest {
  static void check(boolean ok,String message){if(!ok)throw new AssertionError(message);}
- public static void main(String[] args){
+ public static void main(String[] args)throws Exception{
+  try(var user=AuthoredTestSupport.userFixture()){
   var levels=new ArrayList<LevelDefinition>();
-  for(var site:HouseMap.Site.values())levels.add(LevelPlans.build(site));
+  for(var site:HouseMap.Site.values())levels.add(site==HouseMap.Site.USER?user.authored().level():LevelPlans.build(site));
   levels.add(BlackpineLevel.build());
   for(var level:levels){
    check(HidingBudget.candidates(level).size()==HidingBudget.MAXIMUM,"Insufficient authored candidates "+level.id());
@@ -30,5 +31,6 @@ public final class HidingBudgetTest {
   }
   for(int bad:new int[]{-1,101}){boolean rejected=false;try{HidingBudget.allowance(bad);}catch(IllegalArgumentException e){rejected=true;}check(rejected,"Invalid density");}
   System.out.println("PASS combined indoor/outdoor maximum "+HidingBudget.MAXIMUM+" on "+levels.size()+" built locations, all 101 density settings, zero-cover and monotonic selection");
+  }
  }
 }

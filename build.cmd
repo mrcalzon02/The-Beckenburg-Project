@@ -20,6 +20,9 @@ if not exist build\test mkdir build\test
 > build\sources-tests.txt (
   for %%F in (src\test\java\hbnet\*.java) do @echo "src/test/java/hbnet/%%~nxF"
   for %%F in (src\test\java\org\beckenburg\*.java) do @echo "src/test/java/org/beckenburg/%%~nxF"
+  rem Native GLB GUI/runtime tests share portable source/PNG fixtures.
+  echo "src/test/java/org/beckenburg/editor/EditorGlbAuthoringTest.java"
+  echo "src/test/java/org/beckenburg/editor/EditorMeshMaterialTest.java"
 )
 javac --release 17 -encoding UTF-8 -d build\classes @build\sources-main.txt || exit /b 1
 rem Asset thumbnails are baked from reviewed 3D model captures and shipped inside JAR.
@@ -47,6 +50,8 @@ if not exist build\classes\org\beckenburg mkdir build\classes\org\beckenburg
 copy /Y assets\runtime\directional-sprites.zip build\classes\org\beckenburg\directional-sprites.zip >nul || exit /b 1
 if not exist assets\runtime\character-directions.zip (echo ERROR: required approved character direction sprites missing & exit /b 1)
 copy /Y assets\runtime\character-directions.zip build\classes\org\beckenburg\character-directions.zip >nul || exit /b 1
+if not exist assets\runtime\hunter-animation.zip (echo ERROR: hunter animation sprites missing & exit /b 1)
+copy /Y assets\runtime\hunter-animation.zip build\classes\org\beckenburg\hunter-animation.zip >nul || exit /b 1
 if not exist assets\runtime\twins-directions.zip (echo ERROR: independent Twins PNGs missing & exit /b 1)
 copy /Y assets\runtime\twins-directions.zip build\classes\org\beckenburg\twins-directions.zip >nul || exit /b 1
 if not exist assets\runtime\lore-master-directions.zip (echo ERROR: approved Lore Master sprites missing & exit /b 1)

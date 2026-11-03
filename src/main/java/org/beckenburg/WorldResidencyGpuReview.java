@@ -103,7 +103,8 @@ public final class WorldResidencyGpuReview {
         frame("castle-resize-repeat",renderer,null,castle,4.3,true);
         renderer.setRenderSize(640,400);
         for(var site:HouseMap.Site.values()){
-            var map=new HouseMap(site);var at=map.spawn(0);renderer.x=at.x();renderer.z=at.z();renderer.eyeHeight=at.y()+1.62;renderer.yaw=Math.PI/3;renderer.pitch=-.1;
+            var map=site==HouseMap.Site.USER?ReviewMapFixtures.userLevel(ROOT):new HouseMap(site);
+            var at=map.spawn(0);renderer.x=at.x();renderer.z=at.z();renderer.eyeHeight=at.y()+1.62;renderer.yaw=Math.PI/3;renderer.pitch=-.1;
             frame(site+"-first",renderer,map,null,2.5,true);
             var result=frame(site+"-repeat",renderer,map,null,2.5,true);
             save(site.toString().toLowerCase(Locale.ROOT),renderer,map,null,result,2.5,true);
@@ -113,6 +114,6 @@ public final class WorldResidencyGpuReview {
         frame("castle-return",renderer,null,castle,4.3,true);
         frame("castle-return-repeat",renderer,null,castle,4.3,true);
         liveTextures();
-        System.out.println("PASS actual OpenGL Castle and all10 map types: zero unchanged uploads, real torch, flicker, blackout, door, resize and return");
+        System.out.println("PASS actual OpenGL Castle and "+HouseMap.Site.values().length+" map types including persisted USER fixture: zero unchanged uploads, real torch, flicker, blackout, door, resize and return");
     }
 }

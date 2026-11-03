@@ -1,0 +1,15 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+stage,Dam access van apron,Unload at the dam access road,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Dam service forecourt,Enter the maintenance forecourt,16,14,0,3,crest;stage,REVIEW_IN_S02,NOT_ESTABLISHED
+crest,Guarded dam crest,Traverse the guarded crest with water kept below boundaries,64,8,0,3,control;east-stair;entry;west-stair,REVIEW_IN_S02,NOT_ESTABLISHED
+control,Control room,Observe and control plant from supported consoles,18,14,0,3,crest;office,REVIEW_IN_S02,NOT_ESTABLISHED
+office,Shift records office,Record shifts maintenance and operational history,18,12,0,3,control;west-stair,REVIEW_IN_S02,NOT_ESTABLISHED
+west-stair,West service stair enclosure,Descend internally through a supported stair enclosure,10,26,0,3,crest;office;turbine,REVIEW_IN_S02,NOT_ESTABLISHED
+turbine,Turbine hall,Inspect turbine machinery and its maintenance clearances,28,26,-6,8,east-stair;gallery;plant;west-stair;workshop,REVIEW_IN_S02,NOT_ESTABLISHED
+workshop,Maintenance workshop,Repair plant components on real work surfaces,18,14,-6,3,east-stair;turbine,REVIEW_IN_S02,NOT_ESTABLISHED
+east-stair,East external stair court,Use a separate guarded exterior descent,12,26,0,3,crest;return;spillway;turbine;workshop,REVIEW_IN_S02,NOT_ESTABLISHED
+gallery,Lower service gallery,Inspect lower civil and plant services,28,10,-10,3,return;turbine;valve,REVIEW_IN_S02,NOT_ESTABLISHED
+valve,Valve inspection room,Reach and maintain a distinct valve installation,14,16,-10,3,gallery;return,REVIEW_IN_S02,NOT_ESTABLISHED
+return,Lower maintenance return,Return through an independent lower service route,14,16,-10,3,east-stair;gallery;valve,REVIEW_IN_S02,NOT_ESTABLISHED
+spillway,Guarded spillway observation,Observe the spillway from a physically protected position,12,14,-6,3,east-stair,REVIEW_IN_S02,NOT_ESTABLISHED
+plant,Switchgear room,Maintain electrical distribution in a separate plant space,18,14,-6,3,turbine,REVIEW_IN_S02,NOT_ESTABLISHED

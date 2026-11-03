@@ -1,0 +1,15 @@
+SITE PRISON / Beckenburg Penitentiary
+Status: PLAYABLE
+Room capture: 60 actual full-direction PNGs; 0 missing/failed views; 1 geometric centres obstructed.
+Route graph (from van): [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+Architecture: 15 gameplay zones; 29 portals; 2 flights; 34 decorative/physical props.
+
+Expected typology features (name-based candidates, NOT a visual pass): 12
+Recognizable by authored zone name: [sally port, intake, guard station, cell block, isolation, infirmary, visitation, mess]
+Not recognizable by zone name: [secure gallery, showers, secure yard, perimeter control]
+A feature may exist within a larger room; inspect screenshots and props before declaring it absent.
+STRUCTURAL PRIORITY: Shares the generic LevelPlans.wing cross-wing floorplan. Renaming rooms and furnishing them does not establish the claimed institution's spatial function.
+USER PRIORITY: inspect actual individual cells, corridor/gallery supervision, locked sequence (public -> intake -> controlled circulation -> cells), visitation separation and secure yard/perimeter.
+
+MANUAL REVIEW REQUIRED: graphics and architecture cannot be certified by automatic room-name matching, frame hashes or prop counts.
+Access condition is a door-open baseline; test doors closed/locked and escape/fire routes separately before changes.

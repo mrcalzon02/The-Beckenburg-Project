@@ -1,0 +1,12 @@
+Room 2: Farm kitchen
+Site: Hollowmere Farm / production-2026-10-20-lived-location-v1-51c40097d2dcf39e
+Bounds (X,Z): 12.00,12.00 -> 20.00,19.00; floor 0.00m; clear height 3.00m
+Geometric centre: 16.00,15.50; traversable: true
+Actual 4-view camera: 16.00,0.00,15.50; displacement 0.00m
+Portal access / windows / stairs: P3 door -> 1 Farm parlour 1.10m @(16.00,0.00,19.00); P4 door -> 3 Family dining room 1.10m @(20.00,0.00,13.50); P10 door -> 12 Orchard and ritual field 1.10m @(16.00,0.00,12.00); P17 window -> 12 Orchard and ritual field 1.25m @(12.00,0.00,15.00)
+Connected in authored portal graph to van: true
+Props: 14; sockets: 6
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

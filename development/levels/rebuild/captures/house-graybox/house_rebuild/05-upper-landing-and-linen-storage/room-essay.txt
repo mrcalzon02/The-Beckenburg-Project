@@ -1,0 +1,12 @@
+Room 5: Upper landing and linen storage
+Site: The Briar House — rebuild graybox / first-principles-graybox-v1-e720596579840f0c
+Bounds (X,Z): 18.00,13.20 -> 21.60,20.50; floor 2.80m; clear height 2.80m
+Geometric centre: 19.80,16.85; traversable: false
+Actual 4-view camera: 20.15,2.13,17.20; displacement 0.49m
+Portal access / windows / stairs: P8 door -> 6 Parents bedroom and dressing 1.05m @(18.00,2.80,19.00); P9 door -> 7 Child bedroom and study 1.05m @(18.00,2.80,13.95); P10 door -> 8 Family bathroom 1.05m @(19.00,2.80,13.20); P16 stair -> 4 Stair and service passage 1.50m @(20.50,0.00,14.00); P26 window -> 13 Street and entrance approach 1.25m @(19.80,2.80,20.50); STAIR0 4 -> 5 floor 0.00 to 2.80
+Connected in authored portal graph to van: true
+Props: 0; sockets: 4
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

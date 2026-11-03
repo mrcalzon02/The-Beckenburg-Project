@@ -1,0 +1,35 @@
+{
+  "schema": "beckenburg.editor-change-evidence/v1",
+  "sourceSha": "efca9b11f225334afc75cc8491be603ca442b244",
+  "scope": "Commit-only native mission delta metadata and human editor resource revision invalidation",
+  "local": [
+    "Complete native Java 17 source compilation",
+    "EditorChangeIntegrationTest",
+    "Full native editor acceptance script with actual GUI cache identity checks",
+    "Independent Java 17 editor JAR and EditorCorePortabilityTest metadata-failure fallback"
+  ],
+  "nativeCi": {
+    "run": 41357679458,
+    "status": "success"
+  },
+  "standaloneCi": {
+    "run": 41357684425,
+    "status": "success"
+  },
+  "fullCi": {
+    "run": 41357690056,
+    "status": "success; raw manifest verified",
+    "expectedManifest": 307,
+    "passed": 307,
+    "failed": 0,
+    "skipped": 0,
+    "manifest": 307,
+    "rawEvidence": "editor-full-round-efca9b11.txt"
+  },
+  "limits": [
+    "No scene stored in change metadata; edits remain on native authoring objects.",
+    "Physics bounds use actual collider placement; render bounds and incremental GPU buffers are not claimed.",
+    "Castle conservatively invalidates the whole scene.",
+    "G1 broader migration/adoption, G2-G12 and authenticated MCP remain open."
+  ]
+}

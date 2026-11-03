@@ -4,8 +4,9 @@ import org.beckenburg.LevelDefinition.*;
 public final class AuthoredLevelPhysicsTest {
  private static int failures;
  public static void main(String[] args){
-  for(HouseMap.Site site:new HouseMap.Site[]{HouseMap.Site.HOUSE,HouseMap.Site.FARMHOUSE,HouseMap.Site.SCHOOL}){
-   HouseMap map=new HouseMap(site);
+  boolean rebuild=args.length>0&&args[0].equals("HOUSE_REBUILD");
+  for(HouseMap.Site site:rebuild?new HouseMap.Site[]{HouseMap.Site.HOUSE}:new HouseMap.Site[]{HouseMap.Site.HOUSE,HouseMap.Site.FARMHOUSE,HouseMap.Site.SCHOOL}){
+   HouseMap map=rebuild?HouseRebuild.graybox():new HouseMap(site);
    LanWorld world=new LanWorld(map);
    var outsideCargo=map.van().world(0,VanStaging.FRONT-.5);
    check(map.roomAt(outsideCargo.x(),0,outsideCargo.z())==13,site+" road must not inherit van protection");
@@ -18,7 +19,7 @@ public final class AuthoredLevelPhysicsTest {
     Vec p=r.spawn();check(map.roomAt(p.x(),p.y(),p.z())==r.id(),site+" spawn owner "+r.id());
     check(map.traversable(p.x(),p.y(),p.z()),site+" blocked spawn "+r.id());
    }
-   for(Portal p:map.level().portals())if(p.door()&&args.length==0){
+   for(Portal p:map.level().portals())if(p.door()&&(args.length==0||rebuild)){
     double dx=p.alongX()?0:.6,dz=p.alongX()?.6:0;
     Vec a=new Vec(p.x()-dx,p.y(),p.z()-dz);
     check(map.resolveMove(a,p.x()+dx,p.z()+dz)==null,site+" closed door crossed "+p.id());

@@ -1,0 +1,12 @@
+Room 5: Nurse office
+Site: Ravenshade School / production-2026-10-20-lived-location-v1-97b23b0a6674e5b7
+Bounds (X,Z): 28.00,18.00 -> 34.00,24.00; floor 0.00m; clear height 3.60m
+Geometric centre: 31.00,21.00; traversable: true
+Actual 4-view camera: 31.00,0.00,21.00; displacement 0.00m
+Portal access / windows / stairs: P7 door -> 1 Main school corridor 1.20m @(28.00,0.00,21.00); P9 door -> 4 Cafeteria 1.20m @(31.00,0.00,24.00); P11 door -> 6 Gymnasium 1.35m @(34.00,0.00,21.00)
+Connected in authored portal graph to van: true
+Props: 10; sockets: 7
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

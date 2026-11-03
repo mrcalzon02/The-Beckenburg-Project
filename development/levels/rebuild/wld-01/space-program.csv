@@ -1,0 +1,15 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+stage,Logging-road van apron,Unload beside the established logging road,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Camp gate and roadhead,Enter through the working camp boundary,16,12,0,3,stage;wash;yard,REVIEW_IN_S02,NOT_ESTABLISHED
+yard,Stacked-timber yard,Receive sort and stack timber without blocking routes,24,28,0,3,entry;mess;mill;shed;trail,REVIEW_IN_S02,NOT_ESTABLISHED
+mill,Sawmill floor,Feed process and discharge timber through real machinery,18,28,0,6,foundations;mill-deck;shed;yard,REVIEW_IN_S02,NOT_ESTABLISHED
+mill-deck,Sawmill inspection deck,Inspect machinery from a supported guarded deck,6,18,3,3,mill,REVIEW_IN_S02,NOT_ESTABLISHED
+mess,Mess hall,Cook serve and clear crew meals,18,16,0,3,bunk;wash;yard,REVIEW_IN_S02,NOT_ESTABLISHED
+bunk,Bunkhouse,Sleep and store crew belongings near washing facilities,18,20,0,3,mess;trail,REVIEW_IN_S02,NOT_ESTABLISHED
+cabin-a,Foreman cabin,Manage the camp and live in the foreman cabin,10,12,0,3,store;trail,REVIEW_IN_S02,NOT_ESTABLISHED
+cabin-b,Logging cabin,Provide separate crew sleeping and domestic activity,10,12,0,3,foundations;store;trail,REVIEW_IN_S02,NOT_ESTABLISHED
+shed,Equipment repair shed,Repair tools and machinery with working clearance,14,12,0,3,mill;yard,REVIEW_IN_S02,NOT_ESTABLISHED
+wash,Washhouse,Wash and change after timber work,10,10,0,3,entry;mess,REVIEW_IN_S02,NOT_ESTABLISHED
+foundations,Original foundations,Show earlier construction through grounded remains,14,18,0,3,cabin-b;mill,REVIEW_IN_S02,NOT_ESTABLISHED
+trail,Cabin trail junction,Connect cabins along supported woodland paths,24,12,0,3,bunk;cabin-a;cabin-b;yard,REVIEW_IN_S02,NOT_ESTABLISHED
+store,Payroll / stores office,Administer payroll supplies and work records,14,10,0,3,cabin-a;cabin-b,REVIEW_IN_S02,NOT_ESTABLISHED

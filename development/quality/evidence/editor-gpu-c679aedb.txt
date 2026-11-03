@@ -1,0 +1,7 @@
+Source: c679aedbca82e2e334f22e2500a93f9515868a9f
+Run: https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41368128355
+Mesa job: 125033956963
+Raw terminal job-log excerpts. This verifies the existing DEV-176 persisted USER repair; physical hardware FPS acceptance remains separate.
+2026-11-02T00:43:37.5619463Z PASS Beckenburg OpenGL 3.3 real House/Castle, flyovers, flashlight and VBO reuse
+2026-11-02T00:43:58.8869550Z PASS actual OpenGL Castle and 11 map types including persisted USER fixture: zero unchanged uploads, real torch, flicker, blackout, door, resize and return
+2026-11-02T00:44:25.4514516Z GPU UI PASS 3 real case dispatch / hunter / movement / extraction / menu cycles

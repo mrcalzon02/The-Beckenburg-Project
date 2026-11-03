@@ -12,7 +12,8 @@ public final class CastleRelations {
     public enum Resident {
         MATTHIS_ROOK("Matthis Rook","Lore Master",36.00,10.35),
         ELSBETH_VALE("Elsbeth Vale","Quartermaster",6.35,4.75),
-        ROWAN_PIKE("Rowan Pike","Communications",23.75,17.40),
+        // Stand beside the network desk, clear of its chair at (24.1,17.7).
+        ROWAN_PIKE("Rowan Pike","Communications",23.30,17.40),
         TOMAS_GREAVES("Tomas Greaves","Expedition Marshal",14.80,16.35),
         MIRELLE_ASH("Sister Mirelle Ash","Ritual Scholar",6.15,17.30);
         public final String name,profession;

@@ -18,6 +18,12 @@ public final class LanTelegraphedHudTest {
         }
         return count;
     }
+    private static void capture(String[] args,String name,BufferedImage image){
+        if(args.length==0)return;
+        try{var root=java.nio.file.Path.of(args[0]);java.nio.file.Files.createDirectories(root);
+            javax.imageio.ImageIO.write(image,"PNG",root.resolve(name).toFile());}
+        catch(java.io.IOException failure){throw new RuntimeException(failure);}
+    }
     public static void main(String[] args)throws Exception{
         try(LanHost server=new LanHost("127.0.0.1",0);
             LanClient hunter=new LanClient("127.0.0.1",server.port(),false,"Cleric",s->{})){
@@ -37,8 +43,18 @@ public final class LanTelegraphedHudTest {
                     BufferedImage after=new BufferedImage(850,555,BufferedImage.TYPE_INT_RGB);
                     Graphics2D g=after.createGraphics();panel[0].paint(g);g.dispose();
                     pixels[1]=warningPixels(after);
+                    capture(args,"strike-warning.png",after);
                     panel[0].onEvent("THREAT|EVADED|0");
                     ok(panel[0].caseFeedback().contains("EVADED"),"evasion feedback visible");
+                    var resolved=new BufferedImage(850,555,BufferedImage.TYPE_INT_RGB);
+                    var resolvedGraphics=resolved.createGraphics();panel[0].paint(resolvedGraphics);resolvedGraphics.dispose();
+                    int green=0;
+                    for(int y=87;y<119;y++)for(int x=10;x<720;x++){
+                        int rgb=resolved.getRGB(x,y),r=(rgb>>>16)&255,gc=(rgb>>>8)&255,b=rgb&255;
+                        if(gc>r+35&&gc>b+20)green++;
+                    }
+                    ok(green>80&&warningPixels(resolved)<pixels[1],"Host evasion replaces warning with visible resolved feedback");
+                    capture(args,"strike-evaded.png",resolved);
                 });
                 ok(pixels[1]>pixels[0]+80,"warning text must visibly change HUD colors: "+pixels[0]+" "+pixels[1]);
             }finally{SwingUtilities.invokeAndWait(panel[0]::close);}

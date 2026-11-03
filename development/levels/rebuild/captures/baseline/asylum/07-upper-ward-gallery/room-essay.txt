@@ -1,0 +1,12 @@
+Room 7: Upper ward gallery
+Site: St. Dymphna Hospital / production-2026-10-20-lived-location-v1-3edfcaaae4318eb8
+Bounds (X,Z): 21.00,10.00 -> 27.00,34.00; floor 3.40m; clear height 3.00m
+Geometric centre: 24.00,22.00; traversable: true
+Actual 4-view camera: 24.00,3.40,22.00; displacement 0.00m
+Portal access / windows / stairs: P12 door -> 8 Records office 1.20m @(21.00,3.40,30.00); P13 door -> 9 Seclusion ward 1.20m @(21.00,3.40,14.00); P14 door -> 10 Chapel 1.35m @(27.00,3.40,22.00); P18 stair -> 0 Central ward corridor 1.50m @(22.25,0.00,12.00); STAIR0 0 -> 7 floor 0.00 to 3.40
+Connected in authored portal graph to van: true
+Props: 5; sockets: 7
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

@@ -422,6 +422,7 @@ public final class SceneRenderer {
             double x,double y,double z,double sx,double sy,double sz,double yaw){
         var variation=FoliageVariation.profile(id,x,z);
         final double cos=Math.cos(yaw+variation.rotation()),sin=Math.sin(yaw+variation.rotation());
+        boolean importedNormals=ImportedAssetLibrary.approved(id);
         double height=FoliageVariation.foliage(id)?model.triangles().stream().flatMap(t->java.util.stream.Stream.of(t.a(),t.b(),t.c())).mapToDouble(GlbProps.Vertex::y).max().orElse(1)*sy:1;
         for(GlbProps.Triangle t:model.triangles()){
             GlbProps.Vertex[] vv={t.a(),t.b(),t.c()};
@@ -435,8 +436,13 @@ public final class SceneRenderer {
             int material=FoliageVariation.foliage(id)&&FoliageVariation.leafMaterial(GlbProps.materialName(t.material()))?GlbProps.foliageMaterial(t.material(),variation.seed()):t.material();
             out.add(new Face(pp[0],pp[1],pp[2],0xffffff,id.equals("tv_mp_1")&&GlbProps.materialName(t.material()).equals("crt_screen_mp_1")?GlbProps.televisionMaterial(x,y,z):material,
                 vv[0].u(),vv[0].v(),vv[1].u(),vv[1].v(),
-                vv[2].u(),vv[2].v()));
+                vv[2].u(),vv[2].v(),-1,importedNormals?importedNormal(vv[0],sx,sy,sz,cos,sin):null,importedNormals?importedNormal(vv[1],sx,sy,sz,cos,sin):null,importedNormals?importedNormal(vv[2],sx,sy,sz,cos,sin):null));
         }
+    }
+    /** Authored model directions use the same world inverse-transpose as actual position placement. */
+    private static Point importedNormal(GlbProps.Vertex v,double sx,double sy,double sz,double cos,double sin){
+        if(sx==0||sy==0||sz==0)return null;double x=v.nx()/sx,y=v.ny()/sy,z=v.nz()/sz,length=Math.hypot(Math.hypot(x,y),z);
+        if(length==0||!Double.isFinite(length))return null;x/=length;y/=length;z/=length;return new Point(x*cos-z*sin,y,x*sin+z*cos);
     }
     /** Align castle prop footprints to authored sockets and rest their measured
      * lowest vertex on the supporting surface. GLB source origins are arbitrary. */
@@ -544,6 +550,10 @@ public final class SceneRenderer {
     /** Standard van shell and service fixtures. Reused unchanged on every location. */
     private static void vanBox(List<Face> faces,VanStaging van,
             double lx,double y,double lz,double sx,double sy,double sz,int material){
+        vanBox(faces,van,lx,y,lz,sx,sy,sz,material,true);
+    }
+    private static void vanBox(List<Face> faces,VanStaging van,
+            double lx,double y,double lz,double sx,double sy,double sz,int material,boolean bottom){
         // Translate all eight corners, preserving van yaw (including ninety-degree sites).
         VanStaging.Position a=van.world(lx,lz),b=van.world(lx+sx,lz),
             c=van.world(lx+sx,lz+sz),d=van.world(lx,lz+sz);
@@ -556,48 +566,42 @@ public final class SceneRenderer {
         texturedQuad(faces,p1,p2,p6,p5,material,0,0,sz,0,sz,sy,0,sy,0xf1f1f1);
         texturedQuad(faces,p2,p3,p7,p6,material,0,0,sx,0,sx,sy,0,sy,0xdadada);
         texturedQuad(faces,p4,p5,p6,p7,material,0,0,sx,0,sx,sz,0,sz,0xffffff);
-        texturedQuad(faces,p3,p2,p1,p0,material,0,0,sx,0,sx,sz,0,sz,0xbebebe);
+        if(bottom)texturedQuad(faces,p3,p2,p1,p0,material,0,0,sx,0,sx,sz,0,sz,0xbebebe);
     }
     /** Two independent cargo leaves pivot around the outer rear jambs.
      * Host collision remains authoritative in VanStaging: shut leaves seal
      * the doorway and opened leaves swing beyond the rear cargo entrance.
      */
     private static void cargoDoorLeaf(List<Face> faces,VanStaging van,boolean left){
-        double w=VanStaging.HALF_WIDTH,front=VanStaging.FRONT;
-        double hingeX=left?-w+.09:w-.09;
-        double inward=left?1:-1;
-        double span=w-.09;
-        // A proper pair of outward-opening rear doors, not an opaque sliding block.
-        double swing=van.cargoDoorClosed()?0:(left?-Math.toRadians(99):Math.toRadians(99));
-        double endX=hingeX+inward*span*Math.cos(swing);
-        double endZ=front+inward*span*Math.sin(swing);
-        // Two parallel surfaces make the door visible both inside and outside.
-        double nx=-(endZ-front)/span*.035,nz=(endX-hingeX)/span*.035;
-        VanStaging.Position a=van.world(hingeX+nx,front+nz);
-        VanStaging.Position b=van.world(endX+nx,endZ+nz);
-        VanStaging.Position c=van.world(endX-nx,endZ-nz);
-        VanStaging.Position d=van.world(hingeX-nx,front-nz);
-        Point a0=new Point(a.x(),VanStaging.FLOOR_Y,a.z()),a1=new Point(a.x(),VanStaging.ROOF_Y-.12,a.z());
-        Point b0=new Point(b.x(),VanStaging.FLOOR_Y,b.z()),b1=new Point(b.x(),VanStaging.ROOF_Y-.12,b.z());
-        Point c0=new Point(c.x(),VanStaging.FLOOR_Y,c.z()),c1=new Point(c.x(),VanStaging.ROOF_Y-.12,c.z());
-        Point d0=new Point(d.x(),VanStaging.FLOOR_Y,d.z()),d1=new Point(d.x(),VanStaging.ROOF_Y-.12,d.z());
-        quad(faces,a0,b0,b1,a1,left?0x78838b:0x707b83);
-        quad(faces,c0,d0,d1,c1,0x596770);
-        quad(faces,a0,d0,d1,a1,0x48565d);
-        quad(faces,b0,c0,c1,b1,0x616e77);
-        quad(faces,a1,b1,c1,d1,0x9ca3a5);
-        // A visible inset window is mounted in each door's upper half.
-        double u0=.20,u1=.83;
-        VanStaging.Position p=van.world(hingeX+(endX-hingeX)*u0+nx*.15,
-                                      front+(endZ-front)*u0+nz*.15);
-        VanStaging.Position q=van.world(hingeX+(endX-hingeX)*u1+nx*.15,
-                                      front+(endZ-front)*u1+nz*.15);
-        quad(faces,new Point(p.x(),1.68,p.z()),new Point(q.x(),1.68,q.z()),
-             new Point(q.x(),2.28,q.z()),new Point(p.x(),2.28,p.z()),0x344856);
-        // Door handles remain readable when shut or fully open.
-        VanStaging.Position handle=van.world(hingeX+(endX-hingeX)*.88,
-                                             front+(endZ-front)*.88);
-        box(faces,handle.x()-.045,.96,handle.z()-.04,.09,.13,.08,0xd8c9a1);
+        int material=GlbProps.model("ggbot_car08_van_shell").triangles().get(0).material();
+        var triangles=VanBodyGeometry.door(left);
+        for(var triangle:triangles){
+            Point[] outer=new Point[3],inner=new Point[3];
+            for(int i=0;i<3;i++){
+                var p=VanBodyGeometry.doorPoint(triangle[i],left,van.cargoDoorClosed(),-.015);
+                var q=VanBodyGeometry.doorPoint(triangle[i],left,van.cargoDoorClosed(),.025);
+                var a=van.world(p[0],p[2]);var b=van.world(q[0],q[2]);
+                outer[i]=new Point(a.x(),p[1],a.z());inner[i]=new Point(b.x(),q[1],b.z());
+            }
+            faces.add(new Face(outer[0],outer[1],outer[2],0xffffff,material,
+                triangle[0].u(),triangle[0].v(),triangle[1].u(),triangle[1].v(),triangle[2].u(),triangle[2].v()));
+            faces.add(new Face(inner[2],inner[1],inner[0],0xffffff,MaterialAtlas.IRON,0,0,1,0,1,1));
+        }
+        // Join only the perimeter edges; no internal diagonal seam or floating handle.
+        var first=triangles.get(0);var last=triangles.get(2);
+        var boundary=left?new VanBodyGeometry.Corner[]{first[0],first[1],last[1],first[2],triangles.get(1)[1]}
+            :new VanBodyGeometry.Corner[]{first[0],first[2],last[2],first[1],triangles.get(1)[2]};
+        for(int i=0;i<boundary.length;i++){
+            Point[] p=new Point[4];var a=boundary[i];var b=boundary[(i+1)%boundary.length];
+            int n=0;for(var v:new VanBodyGeometry.Corner[]{a,b,b,a}){
+                var q=VanBodyGeometry.doorPoint(v,left,van.cargoDoorClosed(),n<2?-.015:.025);
+                var world=van.world(q[0],q[2]);p[n++]=new Point(world.x(),q[1],world.z());
+            }
+            texturedQuad(faces,p[0],p[1],p[2],p[3],MaterialAtlas.IRON,0,0,1,0,1,.04,0,.04,0xffffff);
+        }
+        double hinge=left?-VanStaging.HALF_WIDTH:VanStaging.HALF_WIDTH;
+        for(double y:new double[]{.78,1.55,2.30})
+            vanBox(faces,van,hinge-.022,y,VanStaging.FRONT-.045,.044,.12,.09,MaterialAtlas.IRON);
     }
 
     /** Fit the shipped textured GGBot van mesh onto the one authoritative
@@ -608,9 +612,9 @@ public final class SceneRenderer {
      */
     static double[] vanExteriorLocal(double x,double y,double z){
         double span=VanStaging.REAR+VanStaging.CAB_LENGTH-VanStaging.FRONT;
-        return new double[]{x*VanStaging.HALF_WIDTH/1.71,
+        return new double[]{x*VanStaging.HALF_WIDTH/VanBodyGeometry.SOURCE_HALF_WIDTH,
             y*VanStaging.ROOF_Y/2.32,
-            VanStaging.FRONT+(z+2.10)*span/4.14};
+            VanStaging.FRONT+(z-VanBodyGeometry.SOURCE_REAR)*span/(2.04-VanBodyGeometry.SOURCE_REAR)};
     }
     /** The original GLB has a sealed rear cap and passenger interior. Keep the
      * textured *external* metal, cab, windows and volumetric tyres, but cut the
@@ -671,6 +675,24 @@ public final class SceneRenderer {
             new Point(cc.x(),yTop,cc.z()),
             new Point(d.x(),yTop,d.z()),material,
             0,0,len,0,len,yTop-yBottom,0,yTop-yBottom,0xffffff);
+    }
+    /** Finish the measured gap between exterior sheet metal and cargo liner
+     * at the actual donor rear opening, so no liner edge hangs behind it. */
+    private static void vanRearFrame(List<Face> out,VanStaging van){
+        double w=VanStaging.HALF_WIDTH,iw=VanStaging.INTERIOR_HALF_WIDTH;
+        double h=VanStaging.ROOF_Y,shoulder=VanStaging.ROOF_SHOULDER_Y,ir=VanStaging.INTERIOR_ROOF_HALF_WIDTH;
+        double outerShoulder=VanBodyGeometry.SOURCE_SHOULDER_Y*h/2.32;
+        double crown=VanBodyGeometry.SOURCE_CROWN_X*w/VanBodyGeometry.SOURCE_HALF_WIDTH;
+        double[][] outer={{-w,VanStaging.FLOOR_Y},{-w,outerShoulder},{-crown,h},{crown,h},{w,outerShoulder},{w,VanStaging.FLOOR_Y}};
+        double[][] inner={{-iw,VanStaging.FLOOR_Y},{-iw,shoulder},{-ir,h-.095},{ir,h-.095},{iw,shoulder},{iw,VanStaging.FLOOR_Y}};
+        for(int i=0;i<5;i++){
+            Point[] p=new Point[4];int n=0;
+            for(var q:new double[][]{outer[i],outer[i+1],inner[i+1],inner[i]}){
+                var world=van.world(q[0],VanStaging.FRONT+.028);p[n++]=new Point(world.x(),q[1],world.z());
+            }
+            texturedQuad(out,p[0],p[1],p[2],p[3],MaterialAtlas.IRON,0,0,1,0,1,.15,0,.15,0xffffff);
+        }
+        vanBox(out,van,-w,VanStaging.FLOOR_Y-.07,VanStaging.FRONT,w*2,.07,.06,MaterialAtlas.IRON);
     }
     /** One complete reusable VAN, shared by solo and network world renderers.
      * Architectural shell, floor, supports and socket data are all local to
@@ -764,7 +786,13 @@ public final class SceneRenderer {
         double floor=VanStaging.FLOOR_Y,h=VanStaging.ROOF_Y,iw=VanStaging.INTERIOR_HALF_WIDTH;
         double ir=VanStaging.INTERIOR_ROOF_HALF_WIDTH,shoulder=VanStaging.ROOF_SHOULDER_Y;
         // Raised van deck and a supported fold-out loading ramp share the movement surface.
-        vanBox(faces,van,-w,floor-.13,f,w*2,.13,r-f,MaterialAtlas.IRON);
+        // The deck stops at each wheel housing's inner wall. A full-width
+        // slab here would slice visibly through the exterior wheel barrels.
+        double wellFront=VanInteriorLayout.WHEEL_WELL_FRONT,wellRear=VanInteriorLayout.WHEEL_WELL_REAR;
+        double wellInner=VanInteriorLayout.WHEEL_WELL_INNER_X;
+        vanBox(faces,van,-w,floor-.13,f,w*2,.13,wellFront-f,MaterialAtlas.IRON);
+        vanBox(faces,van,-wellInner,floor-.13,wellFront,wellInner*2,.13,wellRear-wellFront,MaterialAtlas.IRON);
+        vanBox(faces,van,-w,floor-.13,wellRear,w*2,.13,r-wellRear,MaterialAtlas.IRON);
         vanBox(faces,van,-.50,floor+.001,f+.08,1,.012,r-f-.20,MaterialAtlas.IRON);
         for(double z=f+.3;z<r-.2;z+=.35)vanBox(faces,van,-.49,floor+.014,z,.98,.006,.018,MaterialAtlas.IRON);
         var ra=van.world(-VanStaging.RAMP_HALF_WIDTH,f-VanStaging.RAMP_LENGTH);
@@ -778,26 +806,26 @@ public final class SceneRenderer {
         vanImportedExterior(faces,van);
         // Preserve only the useful existing cargo liner, deck, ramp, support,
         // bulkhead, operational fixtures and accessible six-hunter interior.
-        vanBox(faces,van,-iw,floor+.02,f+.08,.025,shoulder-floor-.03,r-f-.16,MaterialAtlas.AGED_WOOD);
-        vanBox(faces,van,iw-.025,floor+.02,f+.08,.025,shoulder-floor-.03,r-f-.16,MaterialAtlas.AGED_WOOD);
-        vanSlope(faces,van,-iw+.025,shoulder,-ir,h-.095,f+.08,r-.08,MaterialAtlas.CEILING);
-        vanSlope(faces,van,iw-.025,shoulder,ir,h-.095,f+.08,r-.08,MaterialAtlas.CEILING);
-        vanBox(faces,van,-ir,h-.095,f+.08,ir*2,.025,r-f-.16,MaterialAtlas.CEILING);
+        vanBox(faces,van,-iw,floor,f,.025,shoulder-floor,r-f-.08,MaterialAtlas.AGED_WOOD);
+        vanBox(faces,van,iw-.025,floor,f,.025,shoulder-floor,r-f-.08,MaterialAtlas.AGED_WOOD);
+        vanSlope(faces,van,-iw+.025,shoulder,-ir,h-.095,f,r-.08,MaterialAtlas.CEILING);
+        vanSlope(faces,van,iw-.025,shoulder,ir,h-.095,f,r-.08,MaterialAtlas.CEILING);
+        vanBox(faces,van,-ir,h-.095,f,ir*2,.025,r-f-.08,MaterialAtlas.CEILING);
+        vanRearFrame(faces,van);
         // Driver's cab remains partitioned: the actual model cab is nonwalkable.
         vanBox(faces,van,-iw,floor,r-.08,iw*2,h-floor,.08,MaterialAtlas.IRON);
-        for(double x:new double[]{-iw,iw-.19})
-            vanBox(faces,van,x,floor,f+.65,.19,.25,.84,MaterialAtlas.IRON);
+        for(double x:new double[]{-VanInteriorLayout.WHEEL_WELL_OUTER_X,VanInteriorLayout.WHEEL_WELL_INNER_X})
+            vanBox(faces,van,x,floor,VanInteriorLayout.WHEEL_WELL_FRONT,
+                VanInteriorLayout.WHEEL_WELL_OUTER_X-VanInteriorLayout.WHEEL_WELL_INNER_X,
+                VanInteriorLayout.WHEEL_WELL_TOP-floor,
+                VanInteriorLayout.WHEEL_WELL_REAR-VanInteriorLayout.WHEEL_WELL_FRONT,MaterialAtlas.IRON,false);
         for(double z=f+.35;z<r-.15;z+=.65){
             for(double x:new double[]{-iw+.025,iw-.055})vanBox(faces,van,x,floor+.03,z,.03,shoulder-floor-.05,.035,MaterialAtlas.IRON);
             vanBox(faces,van,-ir,h-.13,z,ir*2,.025,.035,MaterialAtlas.IRON);
         }
         vanBox(faces,van,-iw+.03,floor+.05,-1.91,.035,1.93,3.45,MaterialAtlas.IRON);
-        for(int row=0;row<6;row++){
-            double y=floor+.14+row*.33,top=y+.315;
-            double t=Math.max(0,(top-VanStaging.ROOF_SHOULDER_Y)/(VanInteriorLayout.ROOF_Y-VanStaging.ROOF_SHOULDER_Y));
-            double back=-iw+t*(iw-ir)+.025;
-            vanBox(faces,van,back,y-.025,-1.94,-.51-back,.025,3.48,MaterialAtlas.AGED_WOOD);
-        }
+        for(int row=0;row<6;row++)for(var bay:VanInteriorLayout.shelfBays(row))
+            vanBox(faces,van,bay.back(),bay.y()-.025,bay.z0(),-.51-bay.back(),.025,bay.z1()-bay.z0(),MaterialAtlas.AGED_WOOD);
         for(double z:new double[]{-1.2,-.2,.8})
             vanBox(faces,van,.85,floor+1.36,z-.10,.04,.14,.20,MaterialAtlas.IRON);
         for(var light:VanInteriorLayout.CEILING_LIGHTS){var pos=van.world(0,light.z());imported(faces,"level_utility_light",pos.x(),light.mountY(),pos.z(),light.scale(),van.placement().yaw());}
@@ -1032,7 +1060,15 @@ public final class SceneRenderer {
         double x0=level.room(13).x0()-45,x1=level.room(13).x1()+60,z0=level.room(12).z0()-50,z1=level.room(13).z1()+50;
         int ground=LevelEnclosure.setting(level.id())==LevelEnclosure.Setting.URBAN?LevelMaterials.CONCRETE:MaterialAtlas.FOLIAGE;
         var terrain=SiteTerrain.of(level);
-        if(level.id().equals("blackpine")){
+        var worldSurface=WorldTerrainSurface.of(level);
+        if(worldSurface!=null){
+            for(int i=0;i<worldSurface.triangleCount();i++){
+                var t=worldSurface.triangle(i);var a=t.a();var b=t.b();var c=t.c();
+                faces.add(new Face(new Point(a.x(),a.y(),a.z()),new Point(b.x(),b.y(),b.z()),
+                    new Point(c.x(),c.y(),c.z()),0x9a9e89,ground,
+                    a.x()*.25,a.z()*.25,b.x()*.25,b.z()*.25,c.x()*.25,c.z()*.25));
+            }
+        }else if(level.id().equals("blackpine")){
             ground=GlbProps.model("level_woodland_floor").triangles().get(0).material();
         if(terrain==null)texturedQuad(faces,new Point(x0,-.08,z0),new Point(x1,-.08,z0),new Point(x1,-.08,z1),new Point(x0,-.08,z1),ground,0,0,(x1-x0)*.3,0,(x1-x0)*.3,(z1-z0)*.3,0,(z1-z0)*.3,0x9a9e89);
         else terrainBackdrop(faces,terrain,x0,z0,x1,z1,ground);
@@ -1712,7 +1748,10 @@ public final class SceneRenderer {
             int owner=map.roomAt((guard.x0()+guard.x1())/2,guard.y(),(guard.z0()+guard.z1())/2);
             own(out,part,owner<0?4:owner);
         }
-        if(map.site()==HouseMap.Site.HOUSE)houseExterior(out,level);
+        // This skin contains the original House's measured facade/porch.
+        // A revised House definition must not inherit that unrelated envelope
+        // merely because it uses the same gameplay site slot.
+        if(map.site()==HouseMap.Site.HOUSE&&level.id().equals("house"))houseExterior(out,level);
         else {
         // Roofs follow the actual upper footprint; pitched planes meet at a ridge.
         for(var r:level.rooms())if(!r.outside()&&r.y()>=0&&level.rooms().stream().noneMatch(up->!up.outside()&&up.y()>r.y()
@@ -2130,7 +2169,7 @@ public final class SceneRenderer {
             result=new Vertex(p,u,v,Math.max(rgb.r(),glow.r()),
                 Math.max(rgb.g(),glow.g()),Math.max(rgb.b(),glow.b()));
         }else result=litVertex(p,u,v,material,room,true);
-        if(normal!=null){var n=fixtureLighting.sampleNormal(room,p.x,p.y,p.z,normal.x,normal.y,normal.z);var base=fixtureLighting.sample(room,p.x,p.y,p.z);result=new Vertex(p,u,v,Math.max(0,result.r+n.r()-base.r()),Math.max(0,result.g+n.g()-base.g()),Math.max(0,result.b+n.b()-base.b()));}
+        result=normalLight(result,p,room,normal);
         // Static fixture/emissive and occlusion-approved local lights retain
         // their CPU probes. The handheld camera lamp is now evaluated for
         // every visible fragment by OpenGL, rather than baked per vertex.
@@ -2545,6 +2584,10 @@ public final class SceneRenderer {
         }
     }
     /** First-person network rendering with low-poly teammate models and host-managed doors. */
+    private final HunterSpriteAnimation.Tracker hunterAnimation=new HunterSpriteAnimation.Tracker();
+    private HouseMap hunterAnimationMap;
+    HunterSpriteAnimation.Pose hunterPose(int slot){return hunterAnimation.current(slot);}
+    void forgetHunter(int slot){hunterAnimation.forget(slot);}
     public record RemoteBody(double x,double y,double z,int slot,int heading,String appearance,boolean crouched) {
         public RemoteBody(double x,double y,double z,int slot,int heading,String appearance){this(x,y,z,slot,heading,appearance,false);}
         public RemoteBody(double x,double y,double z,int slot,int heading){this(x,y,z,slot,heading,"observer");}
@@ -2652,12 +2695,12 @@ public final class SceneRenderer {
     private void castleRamparts(List<Face> out){
         double y=CastleHubArchitecturalPlan.GROUND_CEILING;
         for(int xx=2;xx<43;xx+=2){
-            
+
             box(out,xx,y,33.80,1.10,.78,.32,0x8c7c6a);
             if(xx<28)box(out,xx,y,.84,1.10,.78,.32,0x8c7c6a);
         }
         for(int zz=2;zz<34;zz+=2){
-            
+
             box(out,.84,y,zz,.32,.78,1.10,0x8c7c6a);
             if(zz>=4)box(out,42.84,y,zz,.32,.78,1.10,0x8c7c6a);
         }
@@ -3340,7 +3383,7 @@ public final class SceneRenderer {
         return length<1e-8?a:new Point(x/length,y/length,z/length);
     }
     private static double edge2(Point a,Point b){return (a.x-b.x)*(a.x-b.x)+(a.y-b.y)*(a.y-b.y)+(a.z-b.z)*(a.z-b.z);}
-    /** 
+    /**
      * CPU fallback only: exact conservative screen-bounds rejection against
      * ALREADY DRAWN depth. If even the triangle's NEAREST point is behind
      * every pixel in its snapped raster bounding box, none of its pixels
@@ -3395,14 +3438,22 @@ public final class SceneRenderer {
             &&depth<lightingSubdivisionLimit(Math.max(0,
                 Math.min(ca0.z,Math.min(cb0.z,cc0.z))))
             &&Math.max(edge2(f.a,f.b),Math.max(edge2(f.b,f.c),edge2(f.c,f.a)))>2.6){
-            Point ab=mid(f.a,f.b),bc=mid(f.b,f.c),ca=mid(f.c,f.a);double abu=(f.au+f.bu)/2,abv=(f.av+f.bv)/2,bcu=(f.bu+f.cu)/2,bcv=(f.bv+f.cv)/2,cau=(f.cu+f.au)/2,cav=(f.cv+f.av)/2;
-            drawLitFace(new Face(f.a,ab,ca,f.color,f.material,f.au,f.av,abu,abv,cau,cav),room,depth+1);drawLitFace(new Face(ab,f.b,bc,f.color,f.material,abu,abv,f.bu,f.bv,bcu,bcv),room,depth+1);drawLitFace(new Face(ca,bc,f.c,f.color,f.material,cau,cav,bcu,bcv,f.cu,f.cv),room,depth+1);drawLitFace(new Face(ab,bc,ca,f.color,f.material,abu,abv,bcu,bcv,cau,cav),room,depth+1);return;
+            for(var child:subdivideLitFace(f))drawLitFace(child,room,depth+1);return;
         }
-        List<Vertex> pts=clip(litVertex(f.a,f.au,f.av,f.material,room),litVertex(f.b,f.bu,f.bv,f.material,room),litVertex(f.c,f.cu,f.cv,f.material,room));var weather=weatherCoating(f,room);
+        List<Vertex> pts=clip(normalLight(litVertex(f.a,f.au,f.av,f.material,room),f.a,room,f.na),normalLight(litVertex(f.b,f.bu,f.bv,f.material,room),f.b,room,f.nb),normalLight(litVertex(f.c,f.cu,f.cv,f.material,room),f.c,room,f.nc));var weather=weatherCoating(f,room);
         double wet=weather==null?0:weather.wet();
         double snow=weather==null?0:Math.min(1,weather.snowMetres()/.06);
         for(int i=1;i<pts.size()-1;i++)
             triangle(pts.get(0),pts.get(i),pts.get(i+1),f.color,f.material,1,wet,snow);
+    }
+    private Vertex normalLight(Vertex result,Point world,int room,Point normal){
+        if(normal==null)return result;var n=fixtureLighting.sampleNormal(room,world.x,world.y,world.z,normal.x,normal.y,normal.z);var base=fixtureLighting.sample(room,world.x,world.y,world.z);
+        return new Vertex(result.p,result.u,result.v,Math.max(0,result.r+n.r()-base.r()),Math.max(0,result.g+n.g()-base.g()),Math.max(0,result.b+n.b()-base.b()));
+    }
+    private static List<Face> subdivideLitFace(Face f){
+        Point ab=mid(f.a,f.b),bc=mid(f.b,f.c),ca=mid(f.c,f.a),nab=midNormal(f.na,f.nb),nbc=midNormal(f.nb,f.nc),nca=midNormal(f.nc,f.na);
+        double abu=(f.au+f.bu)/2,abv=(f.av+f.bv)/2,bcu=(f.bu+f.cu)/2,bcv=(f.bv+f.cv)/2,cau=(f.cu+f.au)/2,cav=(f.cv+f.av)/2;
+        return List.of(new Face(f.a,ab,ca,f.color,f.material,f.au,f.av,abu,abv,cau,cav,f.room,f.na,nab,nca),new Face(ab,f.b,bc,f.color,f.material,abu,abv,f.bu,f.bv,bcu,bcv,f.room,nab,f.nb,nbc),new Face(ca,bc,f.c,f.color,f.material,cau,cav,bcu,bcv,f.cu,f.cv,f.room,nca,nbc,f.nc),new Face(ab,bc,ca,f.color,f.material,abu,abv,bcu,bcv,cau,cav,f.room,nab,nbc,nca));
     }
     /** Register only exposed walkable ground or outward roof faces. Real room
      * topology, not ghost location, determines if a surface sees the sky. */
@@ -3576,6 +3627,7 @@ public final class SceneRenderer {
      */
     private void renderCharacterSprites(HouseMap map,int ghostRoom,boolean visibleGhost,
             int hunterRoom,double clock,List<RemoteBody> others,Apparition apparition){
+        if(hunterAnimationMap!=map){hunterAnimation.reset();hunterAnimationMap=map;}
         if(visibleGhost){
             double gx=apparition==null?map.centerX(ghostRoom):apparition.x();
             double gz=apparition==null?map.centerZ(ghostRoom):apparition.z();
@@ -3632,13 +3684,11 @@ public final class SceneRenderer {
                 0,"observer",1.75,1.04,map.groundHeight(map.centerX(hunterRoom)-1.25,map.centerZ(hunterRoom)+2,hunterRoom)-(eyeHeight-1.62),255,lamp,renderWidth,renderHeight,focal);
         }
         for(RemoteBody person:others){
+            var pose=hunterAnimation.sample(person,clock);
             double distance=Math.hypot(person.x()-x,person.z()-z);
             if(distance>14||distance<1.35)continue;
-            DirectionalSprites.draw(pixels,depths,x,z,yaw,pitch,person.x(),person.z(),
-                person.heading(),person.appearance(),
-                CharacterVisuals.shape(person.appearance()).height()*(person.crouched()?HunterPosture.CROUCH_HEIGHT/HunterPosture.STANDING_HEIGHT:1),
-                CharacterVisuals.shape(person.appearance()).width(),
-                person.y()-(eyeHeight-1.62),255,lamp,renderWidth,renderHeight,focal);
+            DirectionalSprites.drawHunter(pixels,depths,x,z,yaw,pitch,person,pose,
+                person.y()-(eyeHeight-1.62),lamp,renderWidth,renderHeight,focal);
         }
     }
     /** Render the actual v1 glTF meshes with perspective UVs and alpha. The
@@ -3832,6 +3882,15 @@ public final class SceneRenderer {
         }
     }
 
+    /** Material window uses the production import, clip, depth and textured triangle pipeline. */
+    void drawNativeMaterialReview(GlbProps.Model model,double rotation){
+        for(int yy=0;yy<renderHeight;yy++)for(int xx=0;xx<renderWidth;xx++)pixels[yy*renderWidth+xx]=((xx/16+yy/16)&1)==0?0x41474f:0x343a42;
+        Arrays.fill(depths,Double.POSITIVE_INFINITY);environmentLight=1;weatherLightScale=1;fogDensity=0;
+        x=0;z=-3.3;eyeHeight=1.1;yaw=0;pitch=0;lamp=false;
+        var bounds=devAssetBounds(model);double scale=2/Math.max(.0001,Math.max(bounds[3],Math.max(bounds[4],bounds[5])));double cx=bounds[0]*scale,cz=bounds[2]*scale;
+        var faces=new ArrayList<Face>();imported(faces,"native_material_review",model,-cx*Math.cos(rotation)+cz*Math.sin(rotation),.1-bounds[1]*scale,-cx*Math.sin(rotation)-cz*Math.cos(rotation),scale,scale,scale,rotation);
+        for(var f:faces){if(!faceInFrustum(f))continue;var clipped=clip(new Vertex(camera(f.a),f.au,f.av),new Vertex(camera(f.b),f.bu,f.bv),new Vertex(camera(f.c),f.cu,f.cv));for(int k=1;k+1<clipped.size();k++)triangle(clipped.get(0),clipped.get(k),clipped.get(k+1),f.color,f.material,1);}
+    }
     /**
      * Separate DEV ASSET ROOM scene, deliberately not a HouseMap.Site or player
      * lobby. Uses the *production* GLB->Face importer, perspective UV sampler,

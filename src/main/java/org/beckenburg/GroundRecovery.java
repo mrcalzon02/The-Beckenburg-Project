@@ -7,7 +7,9 @@ public final class GroundRecovery {
     public static Vec recover(HouseMap map,Vec pose,int roomHint,double bodyHeight){
         if(pose!=null&&Double.isFinite(pose.x()+pose.y()+pose.z())){
             int actual=map.roomAt(pose.x(),pose.y(),pose.z());
-            if(actual>=0&&map.traversable(pose.x(),pose.y(),pose.z(),bodyHeight)&&Math.abs(pose.y()-map.groundHeight(pose.x(),pose.z(),actual))<.02)return pose;
+            Double support=map.supportNear(pose.x(),pose.z(),pose.y());
+            if(actual>=0&&support!=null&&map.traversable(pose.x(),pose.y(),pose.z(),bodyHeight)
+                &&Math.abs(pose.y()-support)<.02)return pose;
             double floor=map.groundHeight(pose.x(),pose.z(),roomHint);
             Double vanFloor=map.van().supportHeight(pose.x(),pose.z());if(vanFloor!=null)floor=vanFloor;
             for(var stair:map.level().stairs())if((stair.a()==roomHint||stair.b()==roomHint)&&stair.contains(pose.x(),pose.z(),0))floor=stair.yAt(pose.x(),pose.z());

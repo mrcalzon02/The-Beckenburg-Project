@@ -1,0 +1,30 @@
+{
+  "source_sha": "ddcef3bea3923fa8f2245b161095de1aeab82547",
+  "full_round": {
+    "run": 41320069837,
+    "status": "completed",
+    "conclusion": "success",
+    "advisory": {
+      "passed": 240,
+      "failed": 12,
+      "unexecuted": 45,
+      "manifest": 297
+    }
+  },
+  "gpu": {
+    "run": 41320075324,
+    "status": "completed",
+    "conclusion": "failure",
+    "windows_build": "success",
+    "java17_compile": "success",
+    "core_mesa_smoke": "pass from actual transcript",
+    "following_world_residency": "fails after Hollow Creek before USER; saved frame CSV retained"
+  },
+  "room_audit": {
+    "run": 41320065087,
+    "status": "last observed in_progress",
+    "active_step": "Capture nine playable sites, native prototype and Castle hub",
+    "advisory_labels": "Not sufficient to prove individual checks; raw terminal transcript still required"
+  },
+  "acceptance": "No full map, gameplay, LAN or physical GPU acceptance inferred"
+}

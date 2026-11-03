@@ -54,20 +54,28 @@ public final class ImportedAssetLibrary {
     }
     public static synchronized String publish(Path original,byte[] output,int level,
                                               int before,int after,String warnings)throws IOException{
-        if(!Files.isRegularFile(original,LinkOption.NOFOLLOW_LINKS))throw new IOException("Original is not a regular file");
-        byte[] source=Files.readAllBytes(original);
-        if(source.length==0||source.length>32L*1024*1024)
-            throw new IOException("Source exceeds importer size budget");
+        return publishReviewed(original,output,level,before,after,warnings,null,null);
+    }
+    /** Checked human publication: source bytes must still match the reviewed input.
+     * Optional native authoring bytes are retained alongside the original/GLB.
+     */
+    public static synchronized String publishReviewed(Path original,byte[] output,int level,int before,int after,
+                                                       String warnings,String expectedSourceSha,byte[] authoring)throws IOException{
+        byte[] source=org.beckenburg.editor.EditorMeshPipeline.readSource(original,32*1024*1024);
+        if(expectedSourceSha!=null&&!expectedSourceSha.equals(hex(sha256(source))))
+            throw new IOException("Model source changed after review; reopen it before publishing");
+        if(authoring!=null)org.beckenburg.editor.EditorTopologyProject.decode(authoring);
         if(output==null||output.length<28||output.length>4_000_000)
             throw new IOException("Optimized GLB does not fit game decoder");
         String ext=extension(original);
-        if(!Set.of("obj","stl","glb").contains(ext))throw new IOException("Unsupported source type");
-        // The portable mesh regression exporter substitutes a single
-        // checkerboard material. Never lose a GLB's authored UV/material
-        // assignment, even if a caller bypasses the Swing import dialog.
-        if(ext.equals("glb") && level!=0)
+        if(!Set.of("obj","stl","glb","btop").contains(ext))throw new IOException("Unsupported source type");
+        // Preserve the native source/authoring identity and main's material-loss refusal.
+        if(ext.equals("glb")&&level!=0)
             throw new IOException("Textured GLB regression is unsupported: retain original UVs/materials; optimize in a material-preserving authoring tool");
-        String id="import_"+hex(sha256(join(source,output))).substring(0,16);
+        java.security.MessageDigest identity;
+        try{identity=java.security.MessageDigest.getInstance("SHA-256");}catch(java.security.NoSuchAlgorithmException impossible){throw new IOException(impossible);}
+        identity.update(source);identity.update(output);if(authoring!=null)identity.update(authoring);
+        String id="import_"+hex(identity.digest()).substring(0,16);
         Files.createDirectories(root());
         Path mesh=root().resolve(id+".glb");
         if(Files.isRegularFile(mesh,LinkOption.NOFOLLOW_LINKS)){
@@ -76,7 +84,14 @@ public final class ImportedAssetLibrary {
         }else atomic(mesh,output);
         Path sourcePath=root().resolve(id+".source."+ext);
         if(!Files.exists(sourcePath,LinkOption.NOFOLLOW_LINKS))atomic(sourcePath,source);
+        else if(!Arrays.equals(source,Files.readAllBytes(sourcePath)))throw new IOException("Original source archive collision");
+        if(authoring!=null){
+            Path nativePath=root().resolve(id+".authoring.btop");
+            if(!Files.exists(nativePath,LinkOption.NOFOLLOW_LINKS))atomic(nativePath,authoring);
+            else if(!Arrays.equals(authoring,Files.readAllBytes(nativePath)))throw new IOException("Native authoring archive collision");
+        }
         Properties p=new Properties();
+        if(authoring!=null){p.setProperty("authoringSha256",hex(sha256(authoring)));p.setProperty("authoringBytes",Integer.toString(authoring.length));}
         p.setProperty("version","1");p.setProperty("id",id);
         p.setProperty("sourceName",original.getFileName().toString());
         p.setProperty("sourceSha256",hex(sha256(source)));
@@ -104,10 +119,6 @@ public final class ImportedAssetLibrary {
             try{Files.move(temp,target,StandardCopyOption.ATOMIC_MOVE);}
             catch(AtomicMoveNotSupportedException ignored){Files.move(temp,target);}
         }finally{Files.deleteIfExists(temp);}
-    }
-    private static byte[] join(byte[] a,byte[] b){
-        byte[] merged=new byte[a.length+b.length];System.arraycopy(a,0,merged,0,a.length);
-        System.arraycopy(b,0,merged,a.length,b.length);return merged;
     }
     private static byte[] sha256(byte[] data)throws IOException{
         try{return MessageDigest.getInstance("SHA-256").digest(data);}

@@ -1,0 +1,6 @@
+Source: 1e505d5ed16a886218e4bdf00e585c9194d582ae
+Job: 125094435997
+Raw terminal job-log excerpt; physical hardware acceptance remains separate:
+2026-11-02T04:28:09.3894718Z PASS Beckenburg OpenGL 3.3 real House/Castle, flyovers, flashlight and VBO reuse
+2026-11-02T04:28:33.8849361Z PASS actual OpenGL Castle and 11 map types including persisted USER fixture: zero unchanged uploads, real torch, flicker, blackout, door, resize and return
+2026-11-02T04:29:03.2331152Z GPU UI PASS 3 real case dispatch / hunter / movement / extraction / menu cycles

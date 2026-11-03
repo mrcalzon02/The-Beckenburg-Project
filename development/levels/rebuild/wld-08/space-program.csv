@@ -1,0 +1,15 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+stage,Prepared station van apron,Unload at the prepared station roadhead,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Flagged arrival lane,Follow a flagged supported arrival route,16,14,0,3,court;mess;stage;store,REVIEW_IN_S02,NOT_ESTABLISHED
+court,Station service court,Receive supplies and connect sheltered station functions,24,30,0,3,dorm;entry;lab;radio;records,REVIEW_IN_S02,NOT_ESTABLISHED
+lab,Observation laboratory,Observe record and work with research instruments,18,18,0,3,court;generator;store;tunnel,REVIEW_IN_S02,NOT_ESTABLISHED
+dorm,Dormitory,Sleep and store personal equipment near washing,18,18,0,3,array;court;mess;tunnel,REVIEW_IN_S02,NOT_ESTABLISHED
+mess,Mess / galley,Cook eat and clear meals within the heated station,18,12,0,3,dorm;entry,REVIEW_IN_S02,NOT_ESTABLISHED
+radio,Radio room,Maintain communications through actual radio work surfaces,12,14,0,3,court;generator;records,REVIEW_IN_S02,NOT_ESTABLISHED
+records,Log archive,Preserve and consult station logs,12,14,0,3,array;court;radio,REVIEW_IN_S02,NOT_ESTABLISHED
+generator,Generator / water shed,Maintain generation water and service distribution,18,18,0,3,lab;radio;tunnel-n,REVIEW_IN_S02,NOT_ESTABLISHED
+array,Exterior instrument array,Service exposed instruments along a bounded route,18,20,0,3,dorm;records;shelter,REVIEW_IN_S02,NOT_ESTABLISHED
+store,Cold stores,Store supplies under appropriate shelter,18,12,0,3,entry;lab,REVIEW_IN_S02,NOT_ESTABLISHED
+tunnel,Heated service tunnel,Move between major buildings through a heated tunnel,24,10,-2.5,3,dorm;lab;tunnel-n,REVIEW_IN_S02,NOT_ESTABLISHED
+tunnel-n,Generator tunnel branch,Reach generator services on a separate tunnel branch,18,8,-2.5,3,generator;tunnel,REVIEW_IN_S02,NOT_ESTABLISHED
+shelter,Array wind shelter,Shelter during instrument maintenance without blocking access,8,12,0,3,array,REVIEW_IN_S02,NOT_ESTABLISHED

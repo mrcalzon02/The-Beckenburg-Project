@@ -1,0 +1,16 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+r00,Front office and foyer,Receive visitors and administer entry before teaching areas,8.0,6.0,0.0,3.6,entry;r01;r02;r04,REVIEW_IN_S02,NOT_ESTABLISHED
+r01,Main school corridor,Distribute pupils to classrooms and specialist facilities,8.0,20.0,0.0,3.6,r00;r02;r03;r05;r07;r11,REVIEW_IN_S02,NOT_ESTABLISHED
+r02,Classroom A,Teach pupils with desk aisles and clear board sightlines,10.0,14.0,0.0,3.6,r00;r01;r03,REVIEW_IN_S02,NOT_ESTABLISHED
+r03,Science classroom,Teach practical science with water supplies and storage,10.0,12.0,0.0,3.6,grounds;r01;r02,REVIEW_IN_S02,NOT_ESTABLISHED
+r04,Cafeteria,Serve meals with kitchen delivery and cleanup support,12.0,14.0,0.0,3.6,r00;r05;r06,REVIEW_IN_S02,NOT_ESTABLISHED
+r05,Nurse office,Provide private assessment first aid and rest,6.0,6.0,0.0,3.6,r01;r04;r06,REVIEW_IN_S02,NOT_ESTABLISHED
+r06,Gymnasium,Support physical education with changing and washing nearby,12.0,16.0,0.0,7.2,grounds;r04;r05,REVIEW_IN_S02,NOT_ESTABLISHED
+r07,Upper locker corridor,Connect teaching rooms and independent sanitary child spaces,8.0,26.0,3.6,3.6,r01;r08;r09;r10,REVIEW_IN_S02,NOT_ESTABLISHED
+r08,School library,Read borrow and return books through usable aisles,10.0,14.0,3.6,3.6,r07;r09,REVIEW_IN_S02,NOT_ESTABLISHED
+r09,Classroom B,Teach a second class with its own teaching position,10.0,12.0,3.6,3.6,r07;r08,REVIEW_IN_S02,NOT_ESTABLISHED
+r10,Assembly hall,Gather pupils for assembly with separate volume and exits,12.0,14.0,3.6,4.5,r07,REVIEW_IN_S02,NOT_ESTABLISHED
+r11,Boiler and electrical room,Maintain plant through service access away from pupil activity,24.0,26.0,-3.0,3.0,r01,REVIEW_IN_S02,NOT_ESTABLISHED
+grounds,Rear grounds / exterior,Play outdoors and reach secondary exits,46,37,0,12,entry;r03;r06,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Approach / arrival,Arrive from the road and orient at the school entrance,50,20.4,0,12,grounds;r00;stage,REVIEW_IN_S02,NOT_ESTABLISHED
+stage,Van service apron,Unload equipment without blocking the pupil arrival route,16.0,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED

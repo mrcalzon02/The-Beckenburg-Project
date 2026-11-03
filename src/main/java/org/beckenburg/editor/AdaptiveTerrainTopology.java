@@ -135,6 +135,8 @@ public final class AdaptiveTerrainTopology {
         return cutouts.stream().sorted(NODE_ORDER).toList();
     }
     public int cutoutCount() { return cutouts.size(); }
+    /** The owning source datum/grid; cut authoring must use these coordinates. */
+    public StitchedHeightmapWorld world() { return source; }
     public Snapshot snapshot() { return new Snapshot(splitNodes(), cutoutNodes()); }
     public boolean isCutout(Node leaf) {
         Objects.requireNonNull(leaf);

@@ -1,0 +1,142 @@
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	﻿2026-11-01T15:18:49.4768294Z ##[group]Run sudo apt-get update -qq
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:49.4768771Z ^[[36;1msudo apt-get update -qq^[[0m
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:49.4769187Z ^[[36;1msudo apt-get install -y xvfb libgl1-mesa-dri libglu1-mesa^[[0m
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:49.4769750Z ^[[36;1mLIBGL_ALWAYS_SOFTWARE=1 xvfb-run -a java -jar build/gpu/BeckenburgGPU.jar --gpu-smoke^[[0m
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:49.4770427Z ^[[36;1mLIBGL_ALWAYS_SOFTWARE=1 xvfb-run -a java -jar build/gpu/BeckenburgGPU.jar --world-residency-review^[[0m
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:49.4770983Z ^[[36;1mtest -s build/world-residency-review/frames.csv^[[0m
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:49.4771775Z ^[[36;1mLIBGL_ALWAYS_SOFTWARE=1 xvfb-run -a java -jar build/gpu/BeckenburgGPU.jar --gpu-ui-smoke^[[0m
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:49.4772873Z ^[[36;1mtest -s build/e2e/gpu/investigation-house.png^[[0m
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:49.4773533Z ^[[36;1mtest -s build/e2e/gpu/castle-headquarters.png^[[0m
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:49.4774143Z ^[[36;1mtest -s build/e2e/gpu/continuous-route.csv^[[0m
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:49.4774801Z ^[[36;1mtest -s build/e2e/gpu/continuous-route-summary.txt^[[0m
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:49.4775500Z ^[[36;1mtest -s build/e2e/gpu/ui/case-cycles.csv^[[0m
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:49.4806371Z shell: /usr/bin/bash -e {0}
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:49.4806823Z env:
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:49.4807378Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:49.4808260Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:49.4808943Z ##[endgroup]
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:56.6736026Z Reading package lists...
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:56.8733726Z Building dependency tree...
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:56.8741163Z Reading state information...
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.0103848Z xvfb is already the newest version (2:21.1.12-1ubuntu1.9).
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.0104986Z libgl1-mesa-dri is already the newest version (25.2.8-0ubuntu0.24.04.4).
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.0105911Z libgl1-mesa-dri set to manually installed.
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.0106643Z The following additional packages will be installed:
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.0107323Z   libopengl0
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.0309599Z The following NEW packages will be installed:
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.0313860Z   libglu1-mesa libopengl0
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.0526894Z 0 upgraded, 2 newly installed, 0 to remove and 6 not upgraded.
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.0527615Z Need to get 185 kB of archives.
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.0528250Z After this operation, 603 kB of additional disk space will be used.
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.0529005Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.0848888Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libopengl0 amd64 1.7.0-1build1 [32.8 kB]
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.1011012Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libglu1-mesa amd64 9.0.2-1.1build1 [152 kB]
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.3727200Z Fetched 185 kB in 0s (2970 kB/s)
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.4053999Z Selecting previously unselected package libopengl0:amd64.
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.4592541Z (Reading database ...
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.4593421Z (Reading database ... 5%
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.4593783Z (Reading database ... 10%
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.4594157Z (Reading database ... 15%
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.4594485Z (Reading database ... 20%
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.4594819Z (Reading database ... 25%
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.4595156Z (Reading database ... 30%
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.4595475Z (Reading database ... 35%
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.4595794Z (Reading database ... 40%
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.4596102Z (Reading database ... 45%
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.4596431Z (Reading database ... 50%
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.5101624Z (Reading database ... 55%
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:57.7988143Z (Reading database ... 60%
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:58.0709211Z (Reading database ... 65%
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:58.3338455Z (Reading database ... 70%
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:58.5541873Z (Reading database ... 75%
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:58.9857122Z (Reading database ... 80%
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:18:59.4606569Z (Reading database ... 85%
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:00.0753590Z (Reading database ... 90%
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:00.6535558Z (Reading database ... 95%
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:00.6536179Z (Reading database ... 100%
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:00.6536892Z (Reading database ... 215504 files and directories currently installed.)
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:00.6581091Z Preparing to unpack .../libopengl0_1.7.0-1build1_amd64.deb ...
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:00.6617996Z Unpacking libopengl0:amd64 (1.7.0-1build1) ...
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:00.6936077Z Selecting previously unselected package libglu1-mesa:amd64.
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:00.7076640Z Preparing to unpack .../libglu1-mesa_9.0.2-1.1build1_amd64.deb ...
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:00.7087039Z Unpacking libglu1-mesa:amd64 (9.0.2-1.1build1) ...
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:00.7568314Z Setting up libopengl0:amd64 (1.7.0-1build1) ...
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:00.7593153Z Setting up libglu1-mesa:amd64 (9.0.2-1.1build1) ...
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:00.7617905Z Processing triggers for libc-bin (2.39-0ubuntu8.9) ...
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:01.8807316Z
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:01.8807804Z Running kernel seems to be up-to-date.
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:01.8808129Z
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:01.8808286Z No services need to be restarted.
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:01.8808539Z
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:01.8808683Z No containers need to be restarted.
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:01.8808979Z
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:01.8809155Z No user sessions are running outdated binaries.
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:01.8809475Z
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:01.8809754Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:04.6654711Z ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:04.6655966Z ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:04.6657040Z ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:04.6658216Z ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:04.6659436Z ALSA lib confmisc.c:1342:(snd_func_refer) error evaluating name
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:04.6660661Z ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:04.6661962Z ALSA lib conf.c:5731:(snd_config_expand) Evaluate error: No such file or directory
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:04.6663299Z ALSA lib pcm.c:2721:(snd_pcm_open_noupdate) Unknown PCM default
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:07.9746568Z Beckenburg GPU initialized: OpenGL llvmpipe (LLVM 20.1.2, 256 bits) / 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.4
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:08.0078790Z Nov 01, 2026 3:19:07 PM java.util.prefs.FileSystemPreferences$1 run
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:08.0079605Z INFO: Created user preferences directory.
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:13.0684137Z GPU CAPTURE build/e2e/gpu/investigation-house.png (312612 bytes)
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:17.3245940Z GPU CAPTURE build/e2e/gpu/castle-headquarters.png (291346 bytes)
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:21.2789985Z GPU ROTATION PASS 6 real house directions, fresh frame identity each; average_ms=652 worst_ms=1125
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:21.3025387Z GPU STATIC LIGHT CACHE PASS hits=1340 builds=0 bytes=64320 faces=670
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:21.3044912Z GPU HOUSE RESIDENT SHELL PASS batches=158 builds=158 reuse=672 bytes=3732480
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:24.4443074Z GPU CAPTURE build/e2e/gpu/level-opening-house-00.png (240994 bytes)
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:24.4460727Z GPU OPENING PASS HOUSE frame=0 t=0.0 submitted=3249
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:24.6195788Z GPU CAPTURE build/e2e/gpu/level-opening-house-01.png (177214 bytes)
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:24.6223589Z GPU OPENING PASS HOUSE frame=1 t=0.39 submitted=3256
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:24.9960102Z GPU CAPTURE build/e2e/gpu/level-opening-house-02.png (214597 bytes)
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:24.9961083Z GPU OPENING PASS HOUSE frame=2 t=0.78 submitted=3373
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:25.1056195Z GPU CAPTURE build/e2e/gpu/level-opening-house-03.png (186243 bytes)
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:25.1057044Z GPU OPENING PASS HOUSE frame=3 t=0.94 submitted=3374
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:27.8654260Z GPU CAPTURE build/e2e/gpu/level-opening-farmhouse-00.png (164961 bytes)
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:27.8655308Z GPU OPENING PASS FARMHOUSE frame=0 t=0.0 submitted=4242
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:28.1837958Z GPU CAPTURE build/e2e/gpu/level-opening-farmhouse-01.png (170209 bytes)
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:28.1838634Z GPU OPENING PASS FARMHOUSE frame=1 t=0.75 submitted=4318
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:28.2956237Z GPU CAPTURE build/e2e/gpu/level-opening-farmhouse-02.png (173111 bytes)
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:28.2957098Z GPU OPENING PASS FARMHOUSE frame=2 t=0.94 submitted=4348
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:32.1597047Z GPU CAPTURE build/e2e/gpu/level-opening-school-00.png (165964 bytes)
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:32.1597860Z GPU OPENING PASS SCHOOL frame=0 t=0.0 submitted=5300
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:32.5567542Z GPU CAPTURE build/e2e/gpu/level-opening-school-01.png (191841 bytes)
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:32.5568121Z GPU OPENING PASS SCHOOL frame=1 t=0.75 submitted=5466
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:32.7237030Z GPU CAPTURE build/e2e/gpu/level-opening-school-02.png (160890 bytes)
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:32.7237658Z GPU OPENING PASS SCHOOL frame=2 t=0.94 submitted=5519
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:35.8233872Z GPU LIGHTING AUDIT room=14 cpu_build_ms=50.18 cpu_gpu_geometry_ms=2955.01 cpu_shadow_rays=276468 cpu_light_samples=164106 cpu_normal_rays=0 submitted_gpu_triangles=264671 end_to_end_ms=3082.44 frame_id=6395
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:35.8737147Z GPU LIGHTMAP REUSE room=14 warm_cpu_geometry_ms=11.38 warm_shadow_rays=0 warm_samples=46566 warm_cache_hits=46566 invalidated_cells=0 light_candidates=0 end_to_end_ms=49.73 frame_id=6396
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:38.4994912Z GPU LIGHTING AUDIT room=13 cpu_build_ms=49.55 cpu_gpu_geometry_ms=2500.09 cpu_shadow_rays=240997 cpu_light_samples=143718 cpu_normal_rays=0 submitted_gpu_triangles=190776 end_to_end_ms=2622.56 frame_id=7100
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:41.4809855Z GPU LIGHTING AUDIT room=12 cpu_build_ms=48.00 cpu_gpu_geometry_ms=2861.78 cpu_shadow_rays=273580 cpu_light_samples=164298 cpu_normal_rays=0 submitted_gpu_triangles=266072 end_to_end_ms=2982.23 frame_id=7918
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:44.0293757Z GPU LIGHTING AUDIT room=0 cpu_build_ms=83.92 cpu_gpu_geometry_ms=2390.64 cpu_shadow_rays=224607 cpu_light_samples=137502 cpu_normal_rays=0 submitted_gpu_triangles=182667 end_to_end_ms=2547.28 frame_id=8515
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:44.1084063Z GPU LIGHTMAP REUSE room=0 warm_cpu_geometry_ms=5.18 warm_shadow_rays=0 warm_samples=27438 warm_cache_hits=27438 invalidated_cells=0 light_candidates=0 end_to_end_ms=78.33 frame_id=8516
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:44.8399441Z GPU LIGHTING AUDIT room=4 cpu_build_ms=31.89 cpu_gpu_geometry_ms=661.28 cpu_shadow_rays=84730 cpu_light_samples=89517 cpu_normal_rays=0 submitted_gpu_triangles=98696 end_to_end_ms=730.39 frame_id=8865
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:44.8401285Z PASS five real GPU viewport lighting audits plus warm unchanged-frame reuse at van and house entry
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:47.4267794Z GPU CAPTURE build/e2e/gpu/house-torch-off.png (196660 bytes)
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:47.5293764Z GPU CAPTURE build/e2e/gpu/house-torch-on.png (219130 bytes)
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:47.5626972Z GPU FLASHLIGHT image_changed_pixels=45337 brighter_pixels=37032 initial_uploaded_bytes=17536032 repeat_uploaded_bytes=0 repeat_reused_bytes=17536032 repeated_batches=630
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:47.5628416Z PASS OpenGL per-fragment flashlight and retained unchanged House VBO uploads
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:47.6604760Z PASS production OpenGL flashlight: unblocked positive, 9248 first-surface pixel checks across both submission orders, exact depth, finite reach. Synthetic controls, not map acceptance.
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:47.7953493Z GPU CAPTURE build/e2e/gpu/resident-vbo-original.png (2184 bytes)
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:47.8063651Z GPU CAPTURE build/e2e/gpu/resident-vbo-revision.png (2184 bytes)
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:47.8088353Z GPU RESIDENT VBO PASS first_upload=96 repeat_upload=0 repeat_reused=96 revised_upload=96 revised_pixels=19492 new_scene_upload=96
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:51.0127491Z GPU CAPTURE build/e2e/gpu/continuous-house-0.png (110181 bytes)
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:51.8339855Z GPU CAPTURE build/e2e/gpu/continuous-house-3.png (239121 bytes)
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:52.1933288Z GPU CAPTURE build/e2e/gpu/continuous-house-5.png (219439 bytes)
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:53.1703228Z GPU CONTINUOUS ROUTE samples=33 cpu_p50_ms=10.080 cpu_p95_ms=75.892 gl_issue_p95_ms=37.668 gl_readback_p95_ms=14.921 end_to_end_p95_ms=146.165
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:53.1704568Z PASS Beckenburg OpenGL 3.3 real House/Castle, flyovers, flashlight and VBO reuse
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:54.2847725Z ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:54.2849393Z ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:54.2850507Z ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:54.2851510Z ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:54.2852566Z ALSA lib confmisc.c:1342:(snd_func_refer) error evaluating name
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:54.2853891Z ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:54.2855023Z ALSA lib conf.c:5731:(snd_config_expand) Evaluate error: No such file or directory
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:54.2855892Z ALSA lib pcm.c:2721:(snd_pcm_open_noupdate) Unknown PCM default
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:19:54.4033364Z Beckenburg GPU initialized: OpenGL llvmpipe (LLVM 20.1.2, 256 bits) / 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.4
+opengl-mesa-smoke	Mesa OpenGL 3.3 real engine smoke	2026-11-01T15:20:20.3428944Z ##[error]Process completed with exit code 1.

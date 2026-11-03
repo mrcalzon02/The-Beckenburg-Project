@@ -1,0 +1,12 @@
+Room 4: Ballroom
+Site: Blackthorn Manor / production-2026-10-20-lived-location-v1-87d5c036158d1207
+Bounds (X,Z): 26.00,24.67 -> 38.00,32.00; floor 0.00m; clear height 3.60m
+Geometric centre: 32.00,28.33; traversable: true
+Actual 4-view camera: 32.00,0.00,28.33; displacement 0.00m
+Portal access / windows / stairs: P3 door -> 0 Grand staircase hall 1.35m @(26.00,0.00,28.33); P10 door -> 5 Drawing room 1.20m @(32.00,0.00,24.67); P23 window -> 12 Rear garden terrace 1.25m @(38.00,0.00,28.33)
+Connected in authored portal graph to van: true
+Props: 3; sockets: 7
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

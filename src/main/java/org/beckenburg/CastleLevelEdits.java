@@ -2,10 +2,9 @@ package org.beckenburg;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
+import org.beckenburg.editor.EditorDocumentStore;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.EnumMap;
@@ -163,7 +162,51 @@ public final class CastleLevelEdits {
         Map<String,double[]> stations,Map<Integer,Integer> floorPaint,
         Map<Integer,Integer> wallPaint,Set<Integer> navBlocked,
         Map<String,CastleDoorSlots.Type> doors,
-        double spawnX,double spawnZ,double spawnYaw){}
+        double spawnX,double spawnZ,double spawnYaw){
+        public Snapshot {
+            props=List.copyOf(props);lamps=List.copyOf(lamps);surfaces=List.copyOf(surfaces);
+            stations=copyStations(stations);floorPaint=Map.copyOf(floorPaint);wallPaint=Map.copyOf(wallPaint);
+            navBlocked=Set.copyOf(navBlocked);doors=Map.copyOf(doors);
+            var stationIds=new java.util.HashSet<String>();for(var station:CastleHubMap.Station.values())stationIds.add(station.name());
+            if(!stations.keySet().equals(stationIds))throw new IllegalArgumentException("Incomplete station snapshot");
+            if(props.stream().map(Prop::id).distinct().count()!=props.size()||lamps.stream().map(Lamp::id).distinct().count()!=lamps.size()
+                ||surfaces.stream().map(Surface::id).distinct().count()!=surfaces.size())throw new IllegalArgumentException("Duplicate snapshot ID");
+            for(var paint:floorPaint.entrySet()){checkTile(paint.getKey()%CastleHubMap.WIDTH,paint.getKey()/CastleHubMap.WIDTH);checkMaterial(paint.getValue());}
+            for(var paint:wallPaint.entrySet()){
+                if(paint.getKey()<0||paint.getKey()>=CastleHubArchitecturalPlan.walls().size())throw new IllegalArgumentException("Invalid snapshot wall");checkMaterial(paint.getValue());
+            }
+            for(int tile:navBlocked)checkTile(tile%CastleHubMap.WIDTH,tile/CastleHubMap.WIDTH);
+            for(var door:doors.entrySet()){
+                var slot=CastleDoorSlots.require(door.getKey());
+                if(door.getValue()==CastleDoorSlots.Type.EMPTY||slot.gate()!=(door.getValue()==CastleDoorSlots.Type.PORTCULLIS))throw new IllegalArgumentException("Invalid snapshot door");
+            }
+            if(!Double.isFinite(spawnX+spawnZ+spawnYaw)||spawnX<1||spawnX>42||spawnZ<1||spawnZ>34)throw new IllegalArgumentException("Invalid snapshot spawn");
+        }
+        private static Map<String,double[]> copyStations(Map<String,double[]> source){
+            var copy=new LinkedHashMap<String,double[]>();
+            for(var entry:source.entrySet()){
+                double[] value=entry.getValue();
+                if(value==null||value.length!=2||!Double.isFinite(value[0])||!Double.isFinite(value[1])||value[0]<1||value[0]>42||value[1]<1||value[1]>34)
+                    throw new IllegalArgumentException("Invalid station snapshot coordinates");
+                copy.put(Objects.requireNonNull(entry.getKey()),value.clone());
+            }
+            return Collections.unmodifiableMap(copy);
+        }
+        @Override public Map<String,double[]> stations(){return copyStations(stations);}
+        @Override public boolean equals(Object value){
+            if(this==value)return true;if(!(value instanceof Snapshot other))return false;
+            if(!props.equals(other.props)||!lamps.equals(other.lamps)||!surfaces.equals(other.surfaces)
+                ||!floorPaint.equals(other.floorPaint)||!wallPaint.equals(other.wallPaint)||!navBlocked.equals(other.navBlocked)
+                ||!doors.equals(other.doors)||Double.compare(spawnX,other.spawnX)!=0||Double.compare(spawnZ,other.spawnZ)!=0
+                ||Double.compare(spawnYaw,other.spawnYaw)!=0||!stations.keySet().equals(other.stations.keySet()))return false;
+            for(var entry:stations.entrySet())if(!java.util.Arrays.equals(entry.getValue(),other.stations.get(entry.getKey())))return false;
+            return true;
+        }
+        @Override public int hashCode(){
+            int coordinates=0;for(var entry:stations.entrySet())coordinates+=entry.getKey().hashCode()^java.util.Arrays.hashCode(entry.getValue());
+            return Objects.hash(props,lamps,surfaces,coordinates,floorPaint,wallPaint,navBlocked,doors,spawnX,spawnZ,spawnYaw);
+        }
+    }
     public synchronized Snapshot snapshot(){
         Map<String,double[]> coords=new LinkedHashMap<>();
         for(var item:stations.entrySet())coords.put(item.getKey().name(),item.getValue().clone());
@@ -177,8 +220,8 @@ public final class CastleLevelEdits {
         props.clear();for(var p:snapshot.props())props.put(p.id(),p);
         lamps.clear();for(var l:snapshot.lamps())lamps.put(l.id(),l);
         surfaces.clear();for(var s:snapshot.surfaces())surfaces.put(s.id(),s);
-        stations.clear();for(var st:CastleHubMap.Station.values())
-            stations.put(st,snapshot.stations().get(st.name()).clone());
+        var savedStations=snapshot.stations();stations.clear();for(var st:CastleHubMap.Station.values())
+            stations.put(st,savedStations.get(st.name()).clone());
         floorPaint.clear();floorPaint.putAll(snapshot.floorPaint());
         wallPaint.clear();wallPaint.putAll(snapshot.wallPaint());
         navBlocked.clear();navBlocked.addAll(snapshot.navBlocked());
@@ -186,7 +229,7 @@ public final class CastleLevelEdits {
         spawnX=snapshot.spawnX();spawnZ=snapshot.spawnZ();spawnYaw=snapshot.spawnYaw();
         revision++;
     }
-    private static final CastleLevelEdits DEFAULT=new CastleLevelEdits(defaultPath());
+    private static final class DefaultScene {private static final CastleLevelEdits INSTANCE=new CastleLevelEdits(defaultPath());}
     private final Path path;
     private final Map<String,Prop> props=new LinkedHashMap<>();
     private final Map<String,Lamp> lamps=new LinkedHashMap<>();
@@ -197,14 +240,17 @@ public final class CastleLevelEdits {
     private final Set<Integer> navBlocked=new java.util.HashSet<>();
     private double spawnX=13.5,spawnZ=19.3,spawnYaw=Math.PI;
     private long revision=1;
-    public static CastleLevelEdits current(){return DEFAULT;}
+    private String diskFingerprint;
+    public static CastleLevelEdits current(){return DefaultScene.INSTANCE;}
     private static Path defaultPath(){
         return Path.of(System.getProperty("user.home"),".beckenburg","editor","castle.properties");
     }
-    public CastleLevelEdits(Path path) {
+    public CastleLevelEdits(Path path) {this(path,true);}
+    // The decoder uses native codec scratch state, never attached to an editor or agent.
+    private CastleLevelEdits(Path path,boolean loadFromDisk) {
         this.path=Objects.requireNonNull(path).toAbsolutePath().normalize();
         defaults();
-        if(Files.isRegularFile(path))try{load();}catch(IOException e){
+        if(loadFromDisk&&(Files.exists(this.path)||Files.exists(EditorDocumentStore.journal(this.path))))try{load();}catch(IOException e){
             throw new IllegalStateException("Castle editor overrides cannot load: "+path,e);
         }
     }
@@ -343,16 +389,48 @@ public final class CastleLevelEdits {
     private static int integer(Properties p,String name){
         return Integer.parseInt(Objects.requireNonNull(p.getProperty(name),name));
     }
-    private void load()throws IOException{
+    /** Reload into this same runtime object, restoring all live state on failure. */
+    public synchronized void reopen()throws IOException{
+        Snapshot before=snapshot();String priorFingerprint=diskFingerprint;
+        try{load();revision++;}
+        catch(IOException|RuntimeException failure){restore(before);diskFingerprint=priorFingerprint;throw failure;}
+    }
+    private static Properties readProperties(Path file)throws IOException{return readProperties(EditorDocumentStore.readDocument(file));}
+    private static Properties readProperties(byte[] bytes)throws IOException{
         Properties p=new Properties();
-        try(InputStream in=Files.newInputStream(path)){p.load(in);}
-        if(!"1".equals(p.getProperty("format")))
-            throw new IOException("Unsupported castle editor document version");
+        try(InputStream in=new java.io.ByteArrayInputStream(bytes)){p.load(in);}
+        catch(IllegalArgumentException malformed){throw new IOException("Invalid castle properties",malformed);}
+        return p;
+    }
+    private static CastleLevelEdits decode(Path file)throws IOException{
+        var decoded=new CastleLevelEdits(file,false);
+        decoded.decode(readProperties(file));return decoded;
+    }
+    private void load()throws IOException{
+        EditorDocumentStore.recoverPending(path,CastleLevelEdits::decode);
+        byte[] bytes=EditorDocumentStore.readDocument(path);Properties p=readProperties(bytes);
+        var decoded=new CastleLevelEdits(path,false);decoded.decode(p);
+        diskFingerprint=EditorDocumentStore.fingerprint(bytes);
         if(Integer.parseInt(p.getProperty("structure.layout","1"))<2){
             Path backup=path.resolveSibling(path.getFileName()+".before-structure-v2.properties");
-            if(!Files.exists(backup))Files.copy(path,backup);
-            defaults();save();return;
-        }
+            if(!Files.exists(backup))Files.write(backup,bytes,java.nio.file.StandardOpenOption.CREATE_NEW,java.nio.file.StandardOpenOption.WRITE);
+            restore(decoded.snapshot());save();
+        }else restore(decoded.snapshot());
+    }
+    /** Explicit disk recovery, reloaded into this same authoritative runtime object. */
+    public static void recoverSavedDocument()throws IOException{recoverPreviousDocument(defaultPath());}
+    private static void recoverPreviousDocument(Path path)throws IOException{EditorDocumentStore.restorePrevious(path,CastleLevelEdits::decode);}
+    public synchronized void recoverPrevious()throws IOException{recoverPreviousDocument(path);reopen();}
+    private void decode(Properties p)throws IOException{
+        if(!"1".equals(p.getProperty("format")))
+            throw new IOException("Unsupported castle editor document version");
+        try{
+            for(String layout:List.of("structure","lighting","fortification","gate","windows","furniture")){
+                int version=Integer.parseInt(p.getProperty(layout+".layout","1"));
+                if(version<0||version>2)throw new IllegalArgumentException("Unsupported Castle "+layout+" layout version "+version);
+            }
+            if(Integer.parseInt(p.getProperty("structure.layout","1"))<2){defaults();return;}
+        }catch(RuntimeException invalid){throw new IOException("Invalid/unsupported Castle layout version",invalid);}
         try{
             Map<String,Prop> incomingProps=new LinkedHashMap<>();
             Map<String,Lamp> incomingLights=new LinkedHashMap<>();
@@ -558,10 +636,10 @@ public final class CastleLevelEdits {
             stations.clear();stations.putAll(newStations);
             floorPaint.clear();floorPaint.putAll(newFloor);wallPaint.clear();wallPaint.putAll(newWalls);
             navBlocked.clear();navBlocked.addAll(newNav);
-            spawnX=sx;spawnZ=sz;spawnYaw=syaw;revision++;
+            spawnX=sx;spawnZ=sz;spawnYaw=syaw;snapshot();revision++;
         }catch(RuntimeException e){throw new IOException("Invalid castle editor document: "+path,e);}
     }
-    /** Atomic replacement prevents partial save data if the app is interrupted. */
+    /** Journaled atomic save, with one prior valid distinct document for explicit recovery. */
     public synchronized void save()throws IOException{
         Properties p=new Properties();p.setProperty("format","1");
         p.setProperty("structure.layout","2");
@@ -572,7 +650,7 @@ public final class CastleLevelEdits {
         p.setProperty("furniture.layout","2");
         p.setProperty("doors.count",String.valueOf(doorAssignments.size()));
         int di=0;
-        for(var assigned:doorAssignments.entrySet()){
+        for(var assigned:new java.util.TreeMap<>(doorAssignments).entrySet()){
             String prefix="doors."+(di++)+".";
             p.setProperty(prefix+"id",assigned.getKey());
             p.setProperty(prefix+"type",assigned.getValue().name());
@@ -615,15 +693,24 @@ public final class CastleLevelEdits {
         for(int t:navBlocked)p.setProperty("nav."+t,"true");
         p.setProperty("spawn.x",""+spawnX);p.setProperty("spawn.z",""+spawnZ);
         p.setProperty("spawn.yaw",""+spawnYaw);
-        Files.createDirectories(path.getParent());
-        Path pending=Files.createTempFile(path.getParent(),"castle-", ".pending");
-        try{
-            try(OutputStream out=Files.newOutputStream(pending)){p.store(out,"Beckenburg developer castle scene");}
-            try{Files.move(pending,path,StandardCopyOption.ATOMIC_MOVE,StandardCopyOption.REPLACE_EXISTING);}
-            catch(java.nio.file.AtomicMoveNotSupportedException ex){
-                Files.move(pending,path,StandardCopyOption.REPLACE_EXISTING);
+        java.security.MessageDigest digest;
+        try{digest=java.security.MessageDigest.getInstance("SHA-256");}catch(java.security.NoSuchAlgorithmException impossible){throw new AssertionError(impossible);}
+        EditorDocumentStore.saveIfUnchanged(path,output->{
+            var out=new java.security.DigestOutputStream(output,digest);
+            // Use the standard escaping one bounded field at a time. Drop only
+            // its timestamp header; sorted fields make identical saves identical.
+            var field=new Properties();var encoded=new java.io.ByteArrayOutputStream();
+            for(String key:new java.util.TreeSet<>(p.stringPropertyNames())){
+                field.clear();field.setProperty(key,p.getProperty(key));encoded.reset();field.store(encoded,null);
+                byte[] line=encoded.toByteArray();int start=0;
+                while(start<line.length&&line[start++]!='\n'){}
+                out.write(line,start,line.length-start);
             }
-        }finally{Files.deleteIfExists(pending);}
+        },CastleLevelEdits::decode,file->{
+            decode(file);
+            if(!p.equals(readProperties(file)))throw new IOException("Castle save readback differs from live state");
+        },diskFingerprint);
+        diskFingerprint=java.util.HexFormat.of().formatHex(digest.digest());
     }
     public Path path(){return path;}
 }

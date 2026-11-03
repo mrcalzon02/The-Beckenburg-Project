@@ -1,0 +1,12 @@
+Room 7: Logging cabin
+Site: Blackpine Logging Camp / blackpine-graded-terrain-v1-956b39436d9150a3
+Bounds (X,Z): 34.00,4.00 -> 40.00,12.00; floor 1.60m; clear height 3.00m
+Geometric centre: 37.00,8.00; traversable: true
+Actual 4-view camera: 37.00,1.60,8.00; displacement 0.00m
+Portal access / windows / stairs: P15 door -> 12 Timber yard and cabin paths 1.20m @(37.00,1.60,12.00); P16 door -> 12 Timber yard and cabin paths 1.20m @(40.00,1.60,8.00); P26 window -> 12 Timber yard and cabin paths 1.25m @(34.00,1.60,8.00)
+Connected in authored portal graph to van: true
+Props: 15; sockets: 7
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

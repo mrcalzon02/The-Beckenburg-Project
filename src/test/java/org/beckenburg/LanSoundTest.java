@@ -21,8 +21,11 @@ public final class LanSoundTest {
         LanWorld.Body facingNorth=new LanWorld.Body(cx,cz,0,room);
         LanSound.CueEvent ahead=LanSound.project(map,facingNorth,room,cx,cz+1.5,LanSound.Cue.WHISPER,15);
         ok(ahead!=null&&ahead.pan()==0,"source ahead centered");
-        LanSound.CueEvent right=LanSound.project(map,facingNorth,room,cx-2,cz,LanSound.Cue.DISTURB,15);
-        LanSound.CueEvent left=LanSound.project(map,facingNorth,room,cx+2,cz,LanSound.Cue.DISTURB,15);
+        // Hall X offsets cross native stairs into other floors/rooms. Use its
+        // real flat Z axis with a rotated listener to test full stereo pan.
+        LanWorld.Body facingEast=new LanWorld.Body(cx,map.spawn(room).y(),cz,90,room);
+        LanSound.CueEvent right=LanSound.project(map,facingEast,room,cx,cz+2,LanSound.Cue.DISTURB,15);
+        LanSound.CueEvent left=LanSound.project(map,facingEast,room,cx,cz-2,LanSound.Cue.DISTURB,15);
         ok(right!=null&&right.pan()==100&&left!=null&&left.pan()==-100,"listener-relative stereo pan");
         ok(map.roomAt(cx,cz)==room,"valid origin");
         ok(LanSound.project(map,facingNorth,HouseMap.EXTRACTION_ROOM,cx,cz,LanSound.Cue.WHISPER,0)==null,"safe van not valid ghost source");
@@ -34,7 +37,7 @@ public final class LanSoundTest {
         // The underlying room bed and doors are independently modeled.
         int hall=4,bedroom=6;
         var hallBody=new LanWorld.Body(map.centerX(hall),map.centerZ(hall),0,hall);
-        var bedBody=new LanWorld.Body(map.centerX(bedroom),map.centerZ(bedroom),0,bedroom);
+        var bedBody=new LanWorld.Body(map.centerX(bedroom),map.spawn(bedroom).y(),map.centerZ(bedroom),0,bedroom);
         var hard=LanSound.project(map,hallBody,hall,map.centerX(hall),map.centerZ(hall),
             LanSound.Cue.DISTURB,30);
         var soft=LanSound.project(map,bedBody,bedroom,map.centerX(bedroom),

@@ -1,0 +1,22 @@
+route_id,source_a,source_b,source_kind,reserved_clear_width_m,source_polyline_length_m,predicted_walk_seconds_at_1_4_mps,source_note,physical_acceptance
+L01,stage,entry,level,2,12.0,8.57,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L02,entry,plaza,level,2,13.0,9.29,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L03,plaza,lobby,level,2,28.178,20.13,Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement.,NOT_PHYSICALLY_VERIFIED
+L04,lobby,lecture,level,1.5,16.0,11.43,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L05,lecture,lab,level,1.5,14.0,10.0,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L06,lab,seminar,level,1.5,16.0,11.43,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L07,seminar,lobby,level,1.5,14.0,10.0,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L08,lab,library,level,1.5,22.136,15.81,Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement.,NOT_PHYSICALLY_VERIFIED
+L09,library,res-lobby,level,1.5,31.113,22.22,Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement.,NOT_PHYSICALLY_VERIFIED
+L10,res-lobby,union,level,1.5,15.0,10.71,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L11,union,plaza,level,2,22.864,16.33,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L12,union,admin,level,1.5,14.0,10.0,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L13,admin,rear,level,2,18.0,12.86,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L14,rear,res-lobby,level,2,14.708,10.51,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L15,library,stacks,stairs,1.5,3.6,2.57,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L16,stacks,bridge,level,1.5,13.899,9.93,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L17,bridge,dorm,level,1.5,18.929,13.52,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L18,dorm,res-lobby,stairs,1.5,3.6,2.57,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L19,lab,tunnel,stairs,1.5,4.359,3.11,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L20,tunnel,tunnel-west,level,1.5,19.209,13.72,Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement.,NOT_PHYSICALLY_VERIFIED
+L21,tunnel-west,lobby,stairs,1.5,4.69,3.35,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED

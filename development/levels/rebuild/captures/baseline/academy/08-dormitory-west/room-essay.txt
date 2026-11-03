@@ -1,0 +1,12 @@
+Room 8: Dormitory west
+Site: St. Alban Academy / production-2026-10-20-lived-location-v1-35f49587a92eecc8
+Bounds (X,Z): 10.00,21.00 -> 21.00,34.00; floor 3.60m; clear height 3.00m
+Geometric centre: 15.50,27.50; traversable: true
+Actual 4-view camera: 15.50,3.60,27.50; displacement 0.00m
+Portal access / windows / stairs: P12 door -> 7 Upper cloister 1.20m @(21.00,3.60,30.00); P15 door -> 9 Dormitory east 1.10m @(15.50,3.60,21.00); P26 window -> 12 Rear quadrangle 1.25m @(10.00,3.60,30.00)
+Connected in authored portal graph to van: true
+Props: 5; sockets: 7
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

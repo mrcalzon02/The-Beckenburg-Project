@@ -50,6 +50,7 @@ for (room,mid,color),group in groups.items():
     obj=bpy.data.objects.new(f'Runtime room {room} material {mid}',mesh);rooms.get(room,rooms[13]).objects.link(obj);mesh.materials.append(materials[key])
     if materials[key].get('light_transmitting_surface',False):obj.visible_shadow=False
     obj['source']='Exact runtime SceneRenderer triangles, original UV and material';obj['zone']=room
+    obj['runtime_material']=mid;obj['runtime_color']=color
     # Paper-thin soil/litter stamps are surface detail, not shadow-casting roofs.
     if name=='blackpine' and room==12 and verts and .005<=min(p[2] for p in verts) and max(p[2] for p in verts)<.04:obj.visible_shadow=False
 
@@ -111,6 +112,7 @@ if lighting_path.exists():
 bpy.ops.object.light_add(type='SUN',location=(15,-15,20));bpy.context.object.rotation_euler=(.38,-.55,-.9);bpy.context.object.data.energy=.7;bpy.context.object.data.color=(.40,.55,.85)
 camera_poses={'castle-rebuild':((59,-65,38),(22,-18,2)),'blackpine':((79,-85,46),(33,-30,1.5)),
               'house':((28,-34,3.8),(19,-19,3.0)),
+              'briar-rebuild':((36,-39,22),(17,-16,1.4)),
               'farmhouse':((55,-48,15),(27,-20,2.8)),
               'school':((58,-57,17),(28,-24,3.5)),
               'arrival-road':((12,-14,9),(0,5,1.0)),
@@ -132,7 +134,8 @@ scene['hiding_density']=json.loads((SRC/'scene-settings.json').read_text()).get(
 out=ROOT/'development/levels/blender';out.mkdir(parents=True,exist_ok=True)
 suffix='-dressed' if name=='blackpine' else ''
 if '--output-suffix' in sys.argv:suffix=sys.argv[sys.argv.index('--output-suffix')+1]
-bpy.ops.wm.save_as_mainfile(filepath=str(out/(name+(suffix if name=='blackpine' else '-complete')+'.blend')),compress=True)
+filename_suffix=suffix if name=='blackpine' or '--output-suffix' in sys.argv else '-complete'
+bpy.ops.wm.save_as_mainfile(filepath=str(out/(name+filename_suffix+'.blend')),compress=True)
 if '--no-render' not in sys.argv:
     scene.render.image_settings.file_format='PNG';scene.render.filepath=str(ROOT/f'development/levels/previews/{name}{suffix}-blender-exterior.png');bpy.ops.render.render(write_still=True)
-print('EDITABLE_LEVEL_COMPLETE',name,len(faces),'runtime triangles')
+print('EDITABLE_GRAYBOX_SOURCE' if name=='briar-rebuild' else 'EDITABLE_LEVEL_COMPLETE',name,len(faces),'runtime triangles')

@@ -1,0 +1,12 @@
+Room 11: Cellar storage
+Site: The Briar House / production-2026-10-20-lived-location-v1-31a060513814dc2d
+Bounds (X,Z): 12.00,10.00 -> 18.00,24.00; floor -3.00m; clear height 3.00m
+Geometric centre: 15.00,17.00; traversable: true
+Actual 4-view camera: 15.00,-3.00,17.00; displacement 0.00m
+Portal access / windows / stairs: P13 door -> 9 Cellar stair landing 1.10m @(18.00,-3.00,21.00); P14 door -> 10 Boiler and breaker room 1.05m @(18.00,-3.00,12.50)
+Connected in authored portal graph to van: true
+Props: 17; sockets: 6
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

@@ -1,0 +1,12 @@
+Room 5: Drawing room
+Site: Blackthorn Manor / production-2026-10-20-lived-location-v1-87d5c036158d1207
+Bounds (X,Z): 26.00,17.33 -> 38.00,24.67; floor 0.00m; clear height 3.60m
+Geometric centre: 32.00,21.00; traversable: true
+Actual 4-view camera: 32.00,0.00,21.00; displacement 0.00m
+Portal access / windows / stairs: P5 door -> 0 Grand staircase hall 1.35m @(26.00,0.00,21.00); P10 door -> 4 Ballroom 1.20m @(32.00,0.00,24.67); P11 door -> 6 Morning room 1.20m @(32.00,0.00,17.33); P24 window -> 12 Rear garden terrace 1.25m @(38.00,0.00,21.00)
+Connected in authored portal graph to van: true
+Props: 8; sockets: 7
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

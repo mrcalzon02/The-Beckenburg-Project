@@ -1,0 +1,19 @@
+route_id,source_a,source_b,source_kind,reserved_clear_width_m,source_polyline_length_m,predicted_walk_seconds_at_1_4_mps,source_note,physical_acceptance
+L01,stage,entry,level,2,12.0,8.57,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L02,entry,yard,level,2,20.0,14.29,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L03,yard,mess,level,2,21.166,15.12,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L04,mess,bunk,level,1.5,18.0,12.86,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L05,bunk,trail,level,2,21.0,15.0,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L06,trail,yard,level,2,20.0,14.29,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L07,trail,cabin-a,level,2,12.708,9.08,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L08,cabin-a,store,level,1.5,11.385,8.13,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L09,store,cabin-b,level,1.5,17.464,12.47,Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement.,NOT_PHYSICALLY_VERIFIED
+L10,cabin-b,trail,level,2,19.416,13.87,Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement.,NOT_PHYSICALLY_VERIFIED
+L11,cabin-b,foundations,level,2,12.616,9.01,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L12,foundations,mill,level,2,31.064,22.19,Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement.,NOT_PHYSICALLY_VERIFIED
+L13,mill,yard,level,2,22.498,16.07,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L14,yard,shed,level,2,22.901,16.36,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L15,shed,mill,level,1.5,20.142,14.39,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L16,mess,wash,level,1.5,13.944,9.96,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L17,wash,entry,level,2,26.571,18.98,Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement.,NOT_PHYSICALLY_VERIFIED
+L18,mill,mill-deck,stairs,1.5,8.367,5.98,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED

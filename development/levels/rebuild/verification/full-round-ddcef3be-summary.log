@@ -1,0 +1,48 @@
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:15:20.7765802Z 	at org.beckenburg.GhostVoicePackRoutingTest.main(GhostVoicePackRoutingTest.java:28)
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:15:20.7970722Z FAIL GhostVoicePackRoutingTest processExit=1
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:15:20.7971404Z TEST START org.beckenburg.HorrorAudioRoutingTest
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:15:59.1384257Z 	at org.beckenburg.LevelOpeningFlyoverTest.main(LevelOpeningFlyoverTest.java:8)
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:15:59.1852944Z FAIL LevelOpeningFlyoverTest processExit=1
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:15:59.1853595Z TEST START org.beckenburg.CampaignAllyTest
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:17:00.9092329Z 	at org.beckenburg.HandheldSpiritBoxEvidenceTest.main(HandheldSpiritBoxEvidenceTest.java:10)
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:17:00.9434737Z FAIL HandheldSpiritBoxEvidenceTest processExit=1
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:17:00.9436119Z TEST START org.beckenburg.SoloEnvironmentalEvidenceTest
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:17:12.8658443Z 	at org.beckenburg.LanGhostHearingTest.main(LanGhostHearingTest.java:19)
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:17:12.8887622Z FAIL LanGhostHearingTest processExit=1
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:17:12.8888621Z TEST START org.beckenburg.LanGhostHearingIntegrationTest
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:17:33.4116229Z 	at org.beckenburg.LanSpatialEvidenceIntegrationTest.main(LanSpatialEvidenceIntegrationTest.java:67)
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:17:33.4398482Z FAIL LanSpatialEvidenceIntegrationTest processExit=1
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:17:33.4399398Z TEST START org.beckenburg.LanIncapacitationHudTest
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:18:46.4848410Z 	at org.beckenburg.LanSoundTest.main(LanSoundTest.java:26)
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:18:46.5053735Z FAIL LanSoundTest processExit=1
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:18:46.5054792Z TEST START org.beckenburg.LanSoundIntegrationTest
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:18:52.2972753Z 	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:18:53.4136153Z FAIL LanSoundHudTest processExit=1
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:18:53.4136886Z TEST START org.beckenburg.LanAcousticsTest
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:19:20.3645462Z 	at org.beckenburg.LanTelegraphedHudTest.main(LanTelegraphedHudTest.java:43)
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:19:21.4845434Z FAIL LanTelegraphedHudTest processExit=1
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:19:21.4846066Z TEST START org.beckenburg.LanApparitionTest
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:19:27.2873364Z 	at org.beckenburg.DirectionalSpritesIntegrationTest.main(DirectionalSpritesIntegrationTest.java:14)
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:19:27.4146869Z FAIL DirectionalSpritesIntegrationTest processExit=1
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:19:27.4148013Z TEST START org.beckenburg.CharacterDirectionalVisualTest
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:21:30.7959733Z 	at org.beckenburg.RoomAcousticPresetsTest.main(RoomAcousticPresetsTest.java:12)
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:21:30.8398781Z FAIL RoomAcousticPresetsTest processExit=1
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:21:30.8399864Z TEST START org.beckenburg.LanFieldSensorNetworkTest
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:22:59.9633016Z PASS rebuilt House shell follows authored coordinates: 20817 elevated vertices
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:23:00.0382006Z ##[error]Exception in thread "main" java.lang.AssertionError: Editor scene integrity failed
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:23:00.0385795Z 	at org.beckenburg.HouseRebuildTerrainTest.require(HouseRebuildTerrainTest.java:10)
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:23:00.0391703Z 	at org.beckenburg.HouseRebuildPhysicsTest.main(HouseRebuildPhysicsTest.java:12)
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:23:00.0764525Z FAIL HouseRebuildPhysicsTest processExit=1
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:23:00.0765744Z TEST START org.beckenburg.AuthoredLevelReachabilityTest
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:25:00.6908192Z 	at org.beckenburg.HidingBudgetTest.main(HidingBudgetTest.java:8)
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:25:00.7333609Z FAIL HidingBudgetTest processExit=1
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:25:00.7431838Z FAIL STOP: 12 broken tests; no game artifact permitted
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:25:00.7431838Z FAIL STOP: 12 broken tests; no game artifact permitted
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:25:00.7432610Z REGRESSION SUMMARY passed=240 failed=12 skipped=0 manifest=297
+packaged-multiplayer-round	Diagnose full regression manifest (advisory; not a release gate)	2026-11-01T15:25:00.7462764Z ##[error]Exception in thread "main" java.lang.IllegalStateException: Release regression gate failed: 12 test failures; 45 not executed
+packaged-multiplayer-round	Launch the actual Windows executable and require menu-ready diagnostics	2026-11-01T15:25:37.7461268Z ^[[36;1m      Set-Content -LiteralPath 'build\e2e\native-executable-load.txt' -Encoding utf8^[[0m
+packaged-multiplayer-round	Launch the actual Windows executable and require menu-ready diagnostics	2026-11-01T15:25:37.7461878Z ^[[36;1m  Write-Host 'PASS Native Windows executable loaded to the Castle; not just a running splash'^[[0m
+packaged-multiplayer-round	Launch the actual Windows executable and require menu-ready diagnostics	2026-11-01T15:25:37.7462309Z ^[[36;1m} finally {^[[0m
+packaged-multiplayer-round	Launch the actual Windows executable and require menu-ready diagnostics	2026-11-01T15:25:37.7536940Z ##[endgroup]
+packaged-multiplayer-round	Launch the actual Windows executable and require menu-ready diagnostics	2026-11-01T15:25:47.3537982Z PASS Native Windows executable loaded to the Castle; not just a running splash
+packaged-multiplayer-round	Preserve test evidence and crash diagnostics even on failure	﻿2026-11-01T15:25:47.5028185Z ##[group]Run New-Item -ItemType Directory -Force 'build\e2e\diagnostics' | Out-Null

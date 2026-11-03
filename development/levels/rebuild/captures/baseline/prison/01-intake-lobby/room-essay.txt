@@ -1,0 +1,12 @@
+Room 1: Intake lobby
+Site: Beckenburg Penitentiary / production-2026-10-20-lived-location-v1-60942e272a0ae2d0
+Bounds (X,Z): 8.00,26.00 -> 20.00,34.00; floor 0.00m; clear height 3.40m
+Geometric centre: 14.00,30.00; traversable: true
+Actual 4-view camera: 14.00,0.00,30.00; displacement 0.00m
+Portal access / windows / stairs: P2 door -> 0 Main cell block 1.35m @(20.00,0.00,30.00); P8 door -> 2 Guard station 1.20m @(14.00,0.00,26.00); P20 window -> 12 Exercise yard 1.25m @(8.00,0.00,30.00)
+Connected in authored portal graph to van: true
+Props: 3; sockets: 8
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

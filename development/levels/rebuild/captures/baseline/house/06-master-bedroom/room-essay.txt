@@ -1,0 +1,12 @@
+Room 6: Master bedroom
+Site: The Briar House / production-2026-10-20-lived-location-v1-31a060513814dc2d
+Bounds (X,Z): 12.00,17.00 -> 18.00,24.00; floor 3.00m; clear height 3.00m
+Geometric centre: 15.00,20.50; traversable: true
+Actual 4-view camera: 15.00,3.00,20.50; displacement 0.00m
+Portal access / windows / stairs: P8 door -> 5 Upper landing 1.10m @(18.00,3.00,21.50); P11 door -> 7 Child bedroom 1.05m @(15.00,3.00,17.00); P23 window -> 12 Rear yard and patio 1.25m @(12.00,3.00,20.00); P26 window -> 13 Front porch and approach 1.25m @(15.00,3.00,24.00)
+Connected in authored portal graph to van: true
+Props: 13; sockets: 7
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

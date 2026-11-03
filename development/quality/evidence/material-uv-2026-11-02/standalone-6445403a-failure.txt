@@ -1,0 +1,8 @@
+Source 6445403a36b18bcadbe2454ebb1f13824e3fcb82; standalone run41506322166 job125486457313
+Raw failure excerpt; dependency alias negative/positive control recorded separately.
+2026-11-02T19:05:01.8946594Z ##[error]Exception in thread "main" java.io.IOException: Material dependency escapes the asset root
+2026-11-02T19:05:01.8947888Z 	at org.beckenburg.editor.EditorObjMaterials$Reader.resolve(EditorObjMaterials.java:38)
+2026-11-02T19:05:01.8948526Z 	at org.beckenburg.editor.EditorObjMaterials.capture(EditorObjMaterials.java:26)
+2026-11-02T19:05:01.8949098Z 	at org.beckenburg.editor.EditorObjMaterials.capture(EditorObjMaterials.java:19)
+2026-11-02T19:05:01.8949656Z 	at org.beckenburg.editor.EditorMeshMaterialTest.main(EditorMeshMaterialTest.java:41)
+2026-11-02T19:05:01.9157952Z ##[error]Process completed with exit code 1.

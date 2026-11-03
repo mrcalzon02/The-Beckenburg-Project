@@ -1,0 +1,21 @@
+route_id,source_a,source_b,source_kind,reserved_clear_width_m,source_polyline_length_m,predicted_walk_seconds_at_1_4_mps,source_note,physical_acceptance
+L01,stage,entry,level,2,11.0,7.86,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L02,entry,reception,level,2,11.0,7.86,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L03,reception,south,level,1.5,9.0,6.43,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L04,south,west,level,1.5,29.263,20.9,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L05,west,north,level,1.5,29.263,20.9,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L06,north,east,level,1.5,29.263,20.9,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L07,east,south,level,1.5,29.263,20.9,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L08,south,quad,level,2,15.0,10.71,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L09,quad,north,level,2,15.0,10.71,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L10,west,library,level,1.5,9.0,6.43,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L11,north,dining,level,1.5,8.0,5.71,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L12,north,office,level,1.5,27.81,19.86,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L13,east,lecture,level,1.5,13.831,9.88,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L14,lecture,lab,level,1.5,15.0,10.71,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L15,lab,east,level,1.5,16.16,11.54,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L16,south,rear,level,2,30.0,21.43,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L17,rear,lecture,level,2,16.0,11.43,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L18,north,upper,stairs,1.5,3.6,2.57,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L19,upper,dorm,level,1.5,8.0,5.71,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED
+L20,west,archive,stairs,1.5,9.487,6.78,Reserve a supported route and actual boundary opening; centre line is schematic.,NOT_PHYSICALLY_VERIFIED

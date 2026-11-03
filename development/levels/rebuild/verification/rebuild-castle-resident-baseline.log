@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: Resident sprite must stand on accessible Castle floor: Matthis Rook
+	at org.beckenburg.CastleSupportArtTest.check(CastleSupportArtTest.java:8)
+	at org.beckenburg.CastleSupportArtTest.main(CastleSupportArtTest.java:33)

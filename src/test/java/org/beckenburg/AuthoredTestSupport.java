@@ -2,7 +2,51 @@ package org.beckenburg;
 
 /** Physical test fixtures use authored metre coordinates and explicit elevation. */
 final class AuthoredTestSupport {
+    /** Persist a real USER project in an isolated profile, retain every map in
+     * all-map tests, and restore the developer profile before assertions run. */
+    record UserFixture(java.nio.file.Path folder,HouseMap authored) implements AutoCloseable {
+        HouseMap map(HouseMap.Site site){return site==HouseMap.Site.USER?authored:new HouseMap(site);}
+        public void close()throws java.io.IOException{
+            try(var files=java.nio.file.Files.walk(folder)){
+                for(var file:files.sorted(java.util.Comparator.reverseOrder()).toList())java.nio.file.Files.deleteIfExists(file);
+            }
+        }
+    }
+    static UserFixture userFixture()throws java.io.IOException{
+        var folder=java.nio.file.Files.createTempDirectory("beckenburg-authored-fixture-");
+        String home=System.getProperty("user.home"),selected=UserLevelLibrary.activeId();
+        try{
+            var fixture=new UserFixture(folder,ReviewMapFixtures.userLevel(folder));
+            check(home.equals(System.getProperty("user.home"))&&java.util.Objects.equals(selected,UserLevelLibrary.activeId()),
+                "Persisted USER fixture must leave developer profile and selection unchanged");
+            return fixture;
+        }catch(java.io.IOException|RuntimeException|Error failure){
+            try(var files=java.nio.file.Files.walk(folder)){
+                for(var file:files.sorted(java.util.Comparator.reverseOrder()).toList())java.nio.file.Files.deleteIfExists(file);
+            }
+            throw failure;
+        }
+    }
     static final HouseMap.Site[] SITES={HouseMap.Site.HOUSE,HouseMap.Site.FARMHOUSE,HouseMap.Site.SCHOOL};
+    /** Cardinal hearing fixtures must share actual room AND floor support;
+     * an X offset across the House stairs can otherwise enter another storey. */
+    record AcousticFixture(int room,LevelDefinition.Vec at){}
+    static AcousticFixture flatCross(HouseMap map,double radius){
+      for(int room=0;room<map.interiorRoomCount();room++){
+        var bounds=map.level().room(room);
+        for(double x=bounds.x0()+radius;x<=bounds.x1()-radius;x+=.25)
+            for(double z=bounds.z0()+radius;z<=bounds.z1()-radius;z+=.25){
+                double y=map.groundHeight(x,z,room);boolean valid=true;
+                for(double[] delta:new double[][]{{0,0},{radius,0},{-radius,0},{0,radius},{0,-radius}}){
+                    double px=x+delta[0],pz=z+delta[1];
+                    if(map.roomAt(px,y,pz)!=room||Math.abs(map.groundHeight(px,pz,room)-y)>.01
+                        ||!map.traversable(px,y,pz)){valid=false;break;}
+                }
+                if(valid)return new AcousticFixture(room,new LevelDefinition.Vec(x,y,z));
+            }
+      }
+        throw new AssertionError("No authored flat cardinal hearing fixture in the house");
+    }
     static LevelDefinition.Portal door(HouseMap map,int a,int b){return map.level().portals().stream()
         .filter(p->p.door()&&p.joins(a,b)).findFirst().orElseThrow();}
     static LevelDefinition.Vec side(HouseMap map,LevelDefinition.Portal p,int room,double distance){

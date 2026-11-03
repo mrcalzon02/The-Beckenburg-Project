@@ -39,6 +39,132 @@ jobs:
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorCorePortabilityTest
           if errorlevel 1 exit /b 1
+      - name: Verify bounded native-mesh half-edge adjacency and topology diagnostics
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorMeshTopologyTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorMeshTopologyTest
+          if errorlevel 1 exit /b 1
+          java -Xmx256m -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorMeshTopologyTest --stress
+          if errorlevel 1 exit /b 1
+      - name: Verify indexed editable topology and journaled native save compatibility
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorTopologyProjectTest.java
+          if errorlevel 1 exit /b 1
+          java -Xmx256m -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorTopologyProjectTest
+          if errorlevel 1 exit /b 1
+      - name: Verify five parametric primitives through native topology and history
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorMeshPrimitivesTest.java
+          if errorlevel 1 exit /b 1
+          java -Xmx256m -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorMeshPrimitivesTest
+          if errorlevel 1 exit /b 1
+      - name: Verify native indexed triangle picking in four projections
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorMeshPickingTest.java
+          if errorlevel 1 exit /b 1
+          java -Xmx256m -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorMeshPickingTest
+          if errorlevel 1 exit /b 1
+          java -Xmx256m -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorMeshPickingTest --stress
+          if errorlevel 1 exit /b 1
+      - name: Verify authored OBJ indices and native UV seam identities
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorObjIdentityTest.java
+          if errorlevel 1 exit /b 1
+          java -Xmx256m -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorObjIdentityTest --stress
+          if errorlevel 1 exit /b 1
+      - name: Verify native face modeling and coherent reviewed publication snapshots
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorFaceModelingTest.java
+          if errorlevel 1 exit /b 1
+          java -Xmx256m -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorFaceModelingTest
+          if errorlevel 1 exit /b 1
+      - name: Verify explicit native vertex weld and degenerate repair
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorMeshRepairTest.java
+          if errorlevel 1 exit /b 1
+          java -Xmx256m -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorMeshRepairTest --stress
+          if errorlevel 1 exit /b 1
+      - name: Verify native OBJ export and explicit unused vertex cleanup
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorObjWriterTest.java
+          if errorlevel 1 exit /b 1
+          java -Xmx256m -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorObjWriterTest
+          if errorlevel 1 exit /b 1
+      - name: Verify native previewed global rotation and scale
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorTransformTest.java
+          if errorlevel 1 exit /b 1
+          java -Xmx256m -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorTransformTest --stress
+          if errorlevel 1 exit /b 1
+      - name: Verify authored corner normals and native v1/v2 interchange
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorCornerNormalsTest.java
+          if errorlevel 1 exit /b 1
+          java -Xmx256m -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorCornerNormalsTest --stress
+          if errorlevel 1 exit /b 1
+      - name: Verify original editor requirement sources and complete page extracts
+        shell: cmd
+        run: python tools\audit_editor_requirements.py --require-originals --output build\editor-kit\requirements-audit.json
+      - name: Verify native materials and OBJ MTL PNG bundle interchange
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorMeshMaterialTest.java
+          if errorlevel 1 exit /b 1
+          java -Xmx256m -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorMeshMaterialTest
+          if errorlevel 1 exit /b 1
+      - name: Verify source-backed GLB hierarchy pivots instances and material preservation
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorGlbAuthoringTest.java
+          if errorlevel 1 exit /b 1
+          java -Xmx256m -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorGlbAuthoringTest
+          if errorlevel 1 exit /b 1
+      - name: Verify perspective camera picking and exact projective gizmos under bounded memory
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorPerspectivePickingTest.java
+          if errorlevel 1 exit /b 1
+          java -Xmx256m -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorPerspectivePickingTest --stress
+          if errorlevel 1 exit /b 1
+      - name: Verify surface-normal transforms and oblique camera axes under bounded memory
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorSurfaceTransformTest.java
+          if errorlevel 1 exit /b 1
+          java -Xmx256m -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorSurfaceTransformTest --stress
+          if errorlevel 1 exit /b 1
+      - name: Verify persistent affine local frames and real native OBJ GLB roundtrips
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorLocalFrameTest.java
+          if errorlevel 1 exit /b 1
+          java -Xmx256m -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorLocalFrameTest --stress
+          if errorlevel 1 exit /b 1
+      - name: Verify native UV face and island transforms under bounded memory
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorUvTransformTest.java
+          if errorlevel 1 exit /b 1
+          java -Xmx256m -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorUvTransformTest --stress
+          if errorlevel 1 exit /b 1
+      - name: Verify failed undo and redo preserve committed history
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorHistoryFailureTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorHistoryFailureTest
+          if errorlevel 1 exit /b 1
       - name: Verify game-independent runtime scene contract
         shell: cmd
         run: |
@@ -94,9 +220,11 @@ jobs:
       - name: Verify portable scene document save, readback and safe restore
         shell: cmd
         run: |
-          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\RuntimeSceneDocumentTest.java
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\RuntimeSceneDocumentTest.java src\test\java\org\beckenburg\editor\EditorDocumentStoreTest.java
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.RuntimeSceneDocumentTest
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorDocumentStoreTest
           if errorlevel 1 exit /b 1
       - name: Verify optional environment modules in isolation
         shell: cmd
@@ -239,6 +367,13 @@ jobs:
           javac --release 17 -encoding UTF-8 -cp build\\editor-kit\\LevelEditorKit-Java17.jar -d build\\editor-kit\\test src\\test\\java\\org\\beckenburg\\editor\\TerrainRouteMaterialOverlayTest.java
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp build\\editor-kit\\LevelEditorKit-Java17.jar;build\\editor-kit\\test org.beckenburg.editor.TerrainRouteMaterialOverlayTest
+          if errorlevel 1 exit /b 1
+      - name: Verify closed native edge and corner bevel, attributes and bounded topology
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorMeshBevelTest.java
+          if errorlevel 1 exit /b 1
+          java -Xmx256m -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorMeshBevelTest --stress
           if errorlevel 1 exit /b 1
       - uses: actions/upload-artifact@v4
         with:

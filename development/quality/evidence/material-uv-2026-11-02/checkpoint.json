@@ -1,0 +1,75 @@
+{
+  "schema": "beckenburg.uv-and-originals-handoff/v1",
+  "date": "2026-11-02",
+  "branch": "map/first-principles-rebuild-plan",
+  "uvImplementationSha": "31876318f03760fe7a60866de174302e6c30a39b",
+  "g0IntakeSha": "a8130789835a6a2928a8840f1f5c3038960a1a72",
+  "publication": "both commits pushed and exact remote SHA verified",
+  "g0": {
+    "status": "accepted intake/indexing/current-state audit only",
+    "originalPdfs": 8,
+    "pages": 143,
+    "originalByteSizeAndSha": "verified",
+    "fourPriorShaPins": "exact matches",
+    "threeOlderShaPins": "newly established from recovered owner originals",
+    "priorTranscriptions": "retained; complete direct page extracts additionally verified",
+    "strictAudit": "0 errors;0 gaps; --require-originals exit0",
+    "evidence": "development/quality/evidence/editor-originals-audit-2026-11-02.json"
+  },
+  "uvAcceptance": {
+    "standalone": {
+      "run": 41508789243,
+      "job": 125494894856,
+      "status": "success"
+    },
+    "native": {
+      "run": 41508797528,
+      "job": 125494926967,
+      "status": "success",
+      "actualHumanUvAndMaterials": "raw PASS"
+    }
+  },
+  "latestLive": [
+    {
+      "id": 41510523692,
+      "source": "a8130789835a6a2928a8840f1f5c3038960a1a72",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 41510538086,
+      "source": "a8130789835a6a2928a8840f1f5c3038960a1a72",
+      "status": "in_progress",
+      "conclusion": null
+    }
+  ],
+  "olderAcceptance": {
+    "full": {
+      "source": "6445403a36b18bcadbe2454ebb1f13824e3fcb82",
+      "run": 41506342845,
+      "job": 125486528370,
+      "passed": 308,
+      "failed": 2,
+      "skipped": 0,
+      "manifest": 310,
+      "defect": "DEV211 remains open; green advisory workflow not full manifest acceptance"
+    },
+    "gpu": {
+      "source": "6445403a36b18bcadbe2454ebb1f13824e3fcb82",
+      "run": 41506353573,
+      "mesaJob": 125491776409,
+      "status": "success",
+      "actual11Maps": "PASS",
+      "threeRealUiCycles": "PASS",
+      "currentGraphicsCodeEquivalence": "git diff confirms renderer/GlbProps/GLB writers/GPU/water/lighting unchanged througha8130789"
+    }
+  },
+  "next": [
+    "Poll exact latest standalone41510523692/full41510538086 handles; verify original-source guard and raw manifest; never restart live runs",
+    "Continue actual G2 editable GLB preserving original source node/pivot/UV/material/normal identities; retain read-only GLB until backed by authoritative native/runtime support",
+    "Complete remaining G1/G2 contracts and modeling/selection; then native TP painting/layers/UV algorithms and G3-G12 under original gates",
+    "Investigate DEV211 using actual original art/source evidence before changing goldens; do not silently bless new hashes",
+    "Keep independent model/material/other module layouts, shared native state/history and main level UI scope"
+  ],
+  "goal": "active; full Editor Agent Service/G0-G12 objective not complete"
+}

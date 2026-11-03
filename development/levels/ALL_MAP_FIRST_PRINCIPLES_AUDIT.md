@@ -1,4 +1,6 @@
 # Project Beckenburg — All-Map First-Principles Architecture Audit
+
+31 October execution roadmap: [complete-roster staged rebuild](FIRST_PRINCIPLES_REBUILD_PLAN.md), [29 location work packages](FIRST_PRINCIPLES_SITE_PACKAGES.md), and [stage register](rebuild/stage-register.json). The preliminary findings below inform baseline inspection; the new plan claims no completed rebuild or manual acceptance of the full capture set.
 **Established:** 2026-10-30  
 **Authority:** Java 17 runtime geometry, collision, doors, fixtures and SceneRenderer.  
 **Status:** Baseline capture workflow and auditable inspection matrix implemented. Visual judgement remains human-reviewed.

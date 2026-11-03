@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 /**
  * Portable bounded mesh import and non-destructive, part-aware vertex clustering.
@@ -22,22 +23,37 @@ import java.util.Set;
 public final class EditorMeshPipeline {
     public static final long MAX_SOURCE_BYTES=32L*1024*1024;
     public static final int MAX_TRIANGLES=120000;
-    public record Vertex(double x,double y,double z,double u,double v) {
+    /** Authored corner direction; magnitude is retained in native/OBJ, normalized for glTF/runtime. */
+    public record Normal(double x,double y,double z){
+        public Normal{if(!Double.isFinite(x)||!Double.isFinite(y)||!Double.isFinite(z)||!Double.isFinite(Math.hypot(Math.hypot(x,y),z))||Math.hypot(Math.hypot(x,y),z)==0)throw new IllegalArgumentException("Invalid corner normal");}
+    }
+    public record Vertex(double x,double y,double z,double u,double v,Normal normal) {
+        public Vertex(double x,double y,double z,double u,double v){this(x,y,z,u,v,null);}
         public Vertex {
             if(!Double.isFinite(x+y+z+u+v))throw new IllegalArgumentException("Nonfinite vertex");
         }
     }
-    public record Triangle(String part,Vertex a,Vertex b,Vertex c) {
+    public record Triangle(String part,Vertex a,Vertex b,Vertex c,String material) {
+        public Triangle(String part,Vertex a,Vertex b,Vertex c){this(part,a,b,c,"");}
         public Triangle {
-            if(part==null||part.isBlank()||a==null||b==null||c==null)
+            if(part==null||part.isBlank()||a==null||b==null||c==null||material==null)
                 throw new IllegalArgumentException("Invalid triangle");
         }
     }
-    public record Mesh(String name,List<Triangle> triangles,long sourceBytes) {
+    /** Optional per-corner source position identities. Empty means the source supplied no indices. */
+    public record Mesh(String name,List<Triangle> triangles,long sourceBytes,List<Long> cornerVertexIds,List<EditorMeshMaterial> materials,EditorGlbReader.Document glbSource,List<Long> faceIds,Map<String,EditorMeshFrame> frames) {
+        public Mesh(String name,List<Triangle> triangles,long sourceBytes,List<Long> cornerVertexIds,List<EditorMeshMaterial> materials,EditorGlbReader.Document glbSource,List<Long> faceIds){this(name,triangles,sourceBytes,cornerVertexIds,materials,glbSource,faceIds,Map.of());}
+        public Mesh(String name,List<Triangle> triangles,long sourceBytes,List<Long> cornerVertexIds,List<EditorMeshMaterial> materials){this(name,triangles,sourceBytes,cornerVertexIds,materials,null,List.of());}
+        public Mesh(String name,List<Triangle> triangles,long sourceBytes,List<Long> cornerVertexIds){this(name,triangles,sourceBytes,cornerVertexIds,List.of());}
+        public Mesh(String name,List<Triangle> triangles,long sourceBytes){this(name,triangles,sourceBytes,List.of());}
         public Mesh {
             if(name==null||name.isBlank()||triangles==null
                 ||triangles.size()>MAX_TRIANGLES||sourceBytes<0)throw new IllegalArgumentException("Invalid mesh");
-            triangles=List.copyOf(triangles);
+            frames=frames.isEmpty()?Map.of():EditorMeshFrame.validate(frames,triangles.stream().map(Triangle::part).toList());triangles=List.copyOf(triangles);materials=List.copyOf(materials);EditorMeshMaterial.validateTable(materials);var known=new HashSet<String>();for(var m:materials)known.add(m.key());for(var t:triangles)if(!t.material().isEmpty()&&!known.contains(t.material()))throw new IllegalArgumentException("Unresolved face material");
+            if(cornerVertexIds==null||!cornerVertexIds.isEmpty()&&cornerVertexIds.size()!=triangles.size()*3)
+                throw new IllegalArgumentException("Source topology corner count mismatch");
+            cornerVertexIds=List.copyOf(cornerVertexIds);faceIds=List.copyOf(faceIds);if(!faceIds.isEmpty()&&(faceIds.size()!=triangles.size()||new HashSet<>(faceIds).size()!=faceIds.size()||faceIds.stream().anyMatch(id->id<0)))throw new IllegalArgumentException("Invalid native face IDs");
+            for(long id:cornerVertexIds)if(id<0)throw new IllegalArgumentException("Invalid source position ID");
         }
     }
     public record PartStats(String name,int before,int after,int verticesBefore,int verticesAfter,
@@ -51,50 +67,76 @@ public final class EditorMeshPipeline {
     }
     private EditorMeshPipeline(){}
 
-    public static Mesh read(Path file)throws IOException{
-        if(!Files.isRegularFile(file))throw new IOException("Not a regular model file");
-        long length=Files.size(file);
-        if(length<=0||length>MAX_SOURCE_BYTES)throw new IOException("Model exceeds 32 MiB input ceiling");
-        byte[] raw=Files.readAllBytes(file);
-        String name=file.getFileName().toString();
+    public static byte[] readSource(Path file,int maximum)throws IOException{
+        if(maximum<1||maximum>MAX_SOURCE_BYTES)throw new IllegalArgumentException("Invalid source budget");
+        if(!Files.isRegularFile(file,java.nio.file.LinkOption.NOFOLLOW_LINKS))throw new IOException("Not a regular model file");
+        if(Files.size(file)>maximum)throw new IOException("Model source exceeds byte budget");
+        try(var input=Files.newInputStream(file)){
+            byte[] raw=input.readNBytes(maximum+1);
+            if(raw.length==0||raw.length>maximum)throw new IOException("Model source exceeds byte budget");return raw;
+        }
+    }
+    public static String sourceFingerprint(byte[] bytes){
+        try{return java.util.HexFormat.of().formatHex(java.security.MessageDigest.getInstance("SHA-256").digest(bytes));}
+        catch(java.security.NoSuchAlgorithmException impossible){throw new AssertionError(impossible);}
+    }
+    public static Mesh read(Path file)throws IOException{return EditorObjMaterials.capture(file).mesh();}
+    /** Parse exactly the captured source bytes whose digest is shown/reviewed by the host. */
+    public static Mesh read(String name,byte[] source)throws IOException{
+        if(source.length==0||source.length>MAX_SOURCE_BYTES)throw new IOException("Model source exceeds byte budget");
+        return decode(name,source.clone());
+    }
+    private static Mesh decode(String name,byte[] raw)throws IOException{
         String lower=name.toLowerCase(Locale.ROOT);
-        if(lower.endsWith(".obj"))return obj(name,new String(raw,StandardCharsets.UTF_8),length);
-        if(lower.endsWith(".stl"))return stl(name,raw,length);
+        if(lower.endsWith(".obj.zip"))return EditorObjBundle.read(name,raw);
+        if(lower.endsWith(".obj"))return obj(name,new String(raw,StandardCharsets.UTF_8),raw.length,List.of(),Map.of());
+        if(lower.endsWith(".stl"))return stl(name,raw,raw.length);
         throw new IOException("Portable mesh reader supports OBJ and STL; GLB uses the game's glTF decoder");
     }
 
-    private static Mesh obj(String name,String raw,long size)throws IOException{
-        List<double[]> xyz=new ArrayList<>(),uv=new ArrayList<>();
+    static Mesh obj(String name,String raw,long size,List<EditorMeshMaterial> materials,Map<String,String> aliases)throws IOException{
+        List<double[]> xyz=new ArrayList<>(),uv=new ArrayList<>();List<Normal> normals=new ArrayList<>();
         List<Triangle> triangles=new ArrayList<>();
-        String part="Object";
+        List<Long> sourceIds=new ArrayList<>();var frames=new TreeMap<String,EditorMeshFrame>();
+        String part="Object",material="";
         int lineNumber=0;
-        try{
-            for(String line:raw.split("\\R")){
+        try(var input=new java.io.BufferedReader(new java.io.StringReader(raw))){
+            for(String line;(line=input.readLine())!=null;){
                 lineNumber++;String text=line.strip();
+                if(text.startsWith("# beck_native_frame")){String[] fields=text.split("\\s+");if(fields.length!=15||!fields[1].equals("beck_native_frame_v1"))throw new IOException("Unsupported native OBJ frame metadata");if(frames.size()>=MAX_TRIANGLES*3)throw new IOException("OBJ frame count budget exceeded");double[] matrix=new double[12];for(int i=0;i<12;i++)matrix[i]=Double.parseDouble(fields[i+3]);if(frames.putIfAbsent(fields[2],EditorMeshFrame.fromValues(matrix))!=null)throw new IOException("Duplicate native OBJ frame");continue;}
+                int comment=text.indexOf('#');if(comment>=0)text=text.substring(0,comment).strip();
                 if(text.isEmpty()||text.startsWith("#"))continue;
-                String[] tokens=text.split("\\s+");
+                String[] tokens=text.split("\\s+",258);
                 switch(tokens[0]){
+                    case "mtllib" -> {if(aliases.isEmpty())throw new IOException("OBJ material library requires source-file context");}
+                    case "usemtl" -> {String label=text.substring(6).strip();material=aliases.get(label);if(material==null)throw new IOException("Unresolved OBJ material: "+label);}
                     case "o","g" -> {if(tokens.length>1)part=tokens[1];}
                     case "v" -> {if(tokens.length<4)throw new IOException("Invalid OBJ position");
+                        if(xyz.size()>=MAX_TRIANGLES*3)throw new IOException("OBJ position declaration budget exceeded");
                         xyz.add(new double[]{Double.parseDouble(tokens[1]),Double.parseDouble(tokens[2]),Double.parseDouble(tokens[3])});}
                     case "vt" -> {if(tokens.length<3)throw new IOException("Invalid OBJ UV");
+                        if(uv.size()>=MAX_TRIANGLES*3)throw new IOException("OBJ UV declaration budget exceeded");
                         uv.add(new double[]{Double.parseDouble(tokens[1]),Double.parseDouble(tokens[2])});}
+                    case "vn" -> {if(tokens.length!=4)throw new IOException("Invalid OBJ normal");
+                        if(normals.size()>=MAX_TRIANGLES*3)throw new IOException("OBJ normal declaration budget exceeded");
+                        normals.add(new Normal(Double.parseDouble(tokens[1]),Double.parseDouble(tokens[2]),Double.parseDouble(tokens[3])));}
                     case "f" -> {
                         if(tokens.length<4||tokens.length>257)throw new IOException("Invalid OBJ face degree");
-                        Vertex first=faceVertex(tokens[1],xyz,uv),previous=faceVertex(tokens[2],xyz,uv);
+                        ObjCorner first=faceVertex(tokens[1],xyz,uv,normals),previous=faceVertex(tokens[2],xyz,uv,normals);
                         for(int k=3;k<tokens.length;k++){
-                            Vertex next=faceVertex(tokens[k],xyz,uv);
-                            triangles.add(new Triangle(part,first,previous,next));previous=next;
+                            ObjCorner next=faceVertex(tokens[k],xyz,uv,normals);
+                            triangles.add(new Triangle(part,first.vertex(),previous.vertex(),next.vertex(),material));
+                            sourceIds.add((long)first.index());sourceIds.add((long)previous.index());sourceIds.add((long)next.index());previous=next;
                             if(triangles.size()>MAX_TRIANGLES)throw new IOException("OBJ triangle budget exceeded");
                         }
                     }
                 }
             }
-        }catch(NumberFormatException|IndexOutOfBoundsException err){
+        }catch(IllegalArgumentException|IndexOutOfBoundsException err){
             throw new IOException("Invalid OBJ at line "+lineNumber,err);
         }
         if(triangles.isEmpty())throw new IOException("OBJ has no faces");
-        return new Mesh(name,triangles,size);
+        try{return new Mesh(name,triangles,size,sourceIds,materials,null,List.of(),frames);}catch(IllegalArgumentException invalid){throw new IOException("Invalid OBJ native frames",invalid);}
     }
     private static int positionIndex(String raw,int count)throws IOException{
         int value=Integer.parseInt(raw);
@@ -102,17 +144,20 @@ public final class EditorMeshPipeline {
         if(value==0||index<0||index>=count)throw new IOException("OBJ index out of bounds");
         return index;
     }
-    private static Vertex faceVertex(String s,List<double[]> xyz,List<double[]> uv)throws IOException{
+    private record ObjCorner(Vertex vertex,int index){}
+    private static ObjCorner faceVertex(String s,List<double[]> xyz,List<double[]> uv,List<Normal> normals)throws IOException{
         String[] indices=s.split("/",-1);
         if(indices.length>3)throw new IOException("Invalid OBJ face reference");
-        double[] p=xyz.get(positionIndex(indices[0],xyz.size()));
+        int index=positionIndex(indices[0],xyz.size());double[] p=xyz.get(index);
         double u=0,v=0;
         if(indices.length>1&&!indices[1].isEmpty()){
             double[] t=uv.get(positionIndex(indices[1],uv.size()));
             u=t[0];v=t[1];
         }
-        return new Vertex(p[0],p[1],p[2],u,v);
+        Normal normal=indices.length==3&&!indices[2].isEmpty()?normals.get(positionIndex(indices[2],normals.size())):null;
+        return new ObjCorner(new Vertex(p[0],p[1],p[2],u,v,normal),index);
     }
+    private static Normal optionalNormal(double x,double y,double z)throws IOException{try{return x==0&&y==0&&z==0?null:new Normal(x,y,z);}catch(IllegalArgumentException invalid){throw new IOException("Invalid STL normal",invalid);}}
     private static Mesh stl(String name,byte[] raw,long size)throws IOException{
         List<Triangle> triangles=new ArrayList<>();
         if(raw.length>=84){
@@ -120,10 +165,10 @@ public final class EditorMeshPipeline {
             if(declared<=MAX_TRIANGLES&&84L+declared*50==raw.length){
                 ByteBuffer b=ByteBuffer.wrap(raw).order(ByteOrder.LITTLE_ENDIAN);
                 for(int i=0;i<declared;i++){
-                    int off=84+i*50;Vertex[] p=new Vertex[3];
+                    int off=84+i*50;Vertex[] p=new Vertex[3];Normal normal=optionalNormal(b.getFloat(off),b.getFloat(off+4),b.getFloat(off+8));
                     for(int v=0;v<3;v++){
                         int at=off+12+v*12;
-                        p[v]=new Vertex(b.getFloat(at),b.getFloat(at+4),b.getFloat(at+8),0,0);
+                        p[v]=new Vertex(b.getFloat(at),b.getFloat(at+4),b.getFloat(at+8),0,0,normal);
                     }
                     triangles.add(new Triangle("Solid",p[0],p[1],p[2]));
                 }
@@ -131,21 +176,23 @@ public final class EditorMeshPipeline {
                 return new Mesh(name,triangles,size);
             }
         }
-        String part="Solid";List<Vertex> points=new ArrayList<>(3);
+        String part="Solid";List<Vertex> points=new ArrayList<>(3);Normal facetNormal=null;
         int lineNumber=0;
         try{
             for(String line:new String(raw,StandardCharsets.US_ASCII).split("\\R")){
                 lineNumber++;String[] v=line.trim().split("\\s+");
                 if(v.length>1&&v[0].equalsIgnoreCase("solid"))part=v[1];
+                if(v.length==5&&v[0].equalsIgnoreCase("facet")&&v[1].equalsIgnoreCase("normal"))facetNormal=optionalNormal(Double.parseDouble(v[2]),Double.parseDouble(v[3]),Double.parseDouble(v[4]));
+                if(v[0].equalsIgnoreCase("endfacet"))facetNormal=null;
                 if(v.length>=4&&v[0].equalsIgnoreCase("vertex")){
-                    points.add(new Vertex(Double.parseDouble(v[1]),Double.parseDouble(v[2]),Double.parseDouble(v[3]),0,0));
+                    points.add(new Vertex(Double.parseDouble(v[1]),Double.parseDouble(v[2]),Double.parseDouble(v[3]),0,0,facetNormal));
                     if(points.size()==3){
                         triangles.add(new Triangle(part,points.get(0),points.get(1),points.get(2)));points.clear();
                         if(triangles.size()>MAX_TRIANGLES)throw new IOException("STL triangle budget exceeded");
                     }
                 }
             }
-        }catch(NumberFormatException e){throw new IOException("Invalid STL at line "+lineNumber,e);}
+        }catch(IllegalArgumentException e){throw new IOException("Invalid STL at line "+lineNumber,e);}
         if(triangles.isEmpty()||!points.isEmpty())throw new IOException("No complete STL triangles");
         return new Mesh(name,triangles,size);
     }
@@ -154,6 +201,7 @@ public final class EditorMeshPipeline {
      * and heads must remain named parts, never merged into an anonymous mesh. */
     public static Result regress(Mesh source,int level){
         if(level<0||level>12)throw new IllegalArgumentException("Regression level 0..12");
+        if(source.glbSource()!=null&&level>0)throw new IllegalArgumentException("Source-backed GLB reduction requires preserved node/primitive bindings; use native model edits");
         if(level==0){
             Map<String,List<Triangle>> groups=new LinkedHashMap<>();
             for(Triangle t:source.triangles())
@@ -193,8 +241,8 @@ public final class EditorMeshPipeline {
             for(Triangle t:entry.getValue()){
                 Vertex a=snap(t.a(),cell),b=snap(t.b(),cell),c=snap(t.c(),cell);
                 if(area2(a,b,c)<1e-20)continue;
-                String key=corner(a)+"|"+corner(b)+"|"+corner(c);
-                if(seen.add(key))output.add(new Triangle(entry.getKey(),a,b,c));
+                String key=t.material()+"|"+a+"|"+b+"|"+c;
+                if(seen.add(key))output.add(EditorMeshNormals.transport(t,new Triangle(entry.getKey(),a,b,c,t.material())));
             }
             after.put(entry.getKey(),output);
         }
@@ -214,11 +262,12 @@ public final class EditorMeshPipeline {
         long beforeMemory=estimatedBytes(source.triangles()),afterMemory=estimatedBytes(combined);
         if(beforeMemory>16L*1024*1024)warnings.add("MEMORY: estimated source triangle data >16 MiB (not full process heap)");
         if(combined.isEmpty())warnings.add("INVALID RESULT: reduction removed all drawable triangles. Publishing is disabled.");
-        Mesh result=new Mesh(source.name(),combined,source.sourceBytes());
+        var retainedParts=new HashSet<String>();for(var triangle:combined)retainedParts.add(triangle.part());var retainedFrames=new TreeMap<String,EditorMeshFrame>();for(var entry:source.frames().entrySet())if(retainedParts.contains(entry.getKey()))retainedFrames.put(entry.getKey(),entry.getValue());
+        Mesh result=new Mesh(source.name(),combined,source.sourceBytes(),List.of(),source.materials(),null,List.of(),retainedFrames);
         // The over-regressed preview is represented by stats even when no drawable triangles survive.
         return new Result(source,result,level,stats,warnings,beforeMemory,afterMemory);
     }
-    private static long estimatedBytes(List<Triangle> triangles){return (long)triangles.size()*3*5*8;}
+    private static long estimatedBytes(List<Triangle> triangles){long bytes=(long)triangles.size()*3*5*8;for(var t:triangles)for(var v:List.of(t.a(),t.b(),t.c()))if(v.normal()!=null)bytes+=3*8;return bytes;}
     private static int uniqueVertices(List<Triangle> list){
         Set<String> values=new HashSet<>();
         for(Triangle t:list){values.add(corner(t.a()));values.add(corner(t.b()));values.add(corner(t.c()));}
@@ -228,7 +277,7 @@ public final class EditorMeshPipeline {
     private static Vertex snap(Vertex v,double cell){
         if(cell==0)return v;
         return new Vertex(Math.rint(v.x()/cell)*cell,Math.rint(v.y()/cell)*cell,
-            Math.rint(v.z()/cell)*cell,v.u(),v.v());
+            Math.rint(v.z()/cell)*cell,v.u(),v.v(),v.normal());
     }
     private static double area2(Vertex a,Vertex b,Vertex c){
         double x=b.x()-a.x(),y=b.y()-a.y(),z=b.z()-a.z();

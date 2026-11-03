@@ -1,0 +1,46 @@
+GPU CAPTURE build\e2e\gpu\investigation-house.png (313146 bytes)
+GPU CAPTURE build\e2e\gpu\castle-headquarters.png (293036 bytes)
+GPU ROTATION PASS 6 real house directions, fresh frame identity each; average_ms=346 worst_ms=591
+GPU STATIC LIGHT CACHE PASS hits=1340 builds=0 bytes=64320 faces=670
+GPU HOUSE RESIDENT SHELL PASS batches=158 builds=158 reuse=672 bytes=3732480
+GPU CAPTURE build\e2e\gpu\level-opening-house-00.png (234494 bytes)
+GPU OPENING PASS HOUSE frame=0 t=0.0 submitted=3249
+GPU CAPTURE build\e2e\gpu\level-opening-house-01.png (223791 bytes)
+GPU OPENING PASS HOUSE frame=1 t=0.39 submitted=3256
+GPU CAPTURE build\e2e\gpu\level-opening-house-02.png (226649 bytes)
+GPU OPENING PASS HOUSE frame=2 t=0.78 submitted=3373
+GPU CAPTURE build\e2e\gpu\level-opening-house-03.png (189408 bytes)
+GPU OPENING PASS HOUSE frame=3 t=0.94 submitted=3374
+GPU CAPTURE build\e2e\gpu\level-opening-farmhouse-00.png (193258 bytes)
+GPU OPENING PASS FARMHOUSE frame=0 t=0.0 submitted=4242
+GPU CAPTURE build\e2e\gpu\level-opening-farmhouse-01.png (169518 bytes)
+GPU OPENING PASS FARMHOUSE frame=1 t=0.75 submitted=4318
+GPU CAPTURE build\e2e\gpu\level-opening-farmhouse-02.png (176206 bytes)
+GPU OPENING PASS FARMHOUSE frame=2 t=0.94 submitted=4348
+GPU CAPTURE build\e2e\gpu\level-opening-school-00.png (175720 bytes)
+GPU OPENING PASS SCHOOL frame=0 t=0.0 submitted=5300
+GPU CAPTURE build\e2e\gpu\level-opening-school-01.png (192661 bytes)
+GPU OPENING PASS SCHOOL frame=1 t=0.75 submitted=5466
+GPU CAPTURE build\e2e\gpu\level-opening-school-02.png (161453 bytes)
+GPU OPENING PASS SCHOOL frame=2 t=0.94 submitted=5519
+GPU LIGHTING AUDIT room=14 cpu_build_ms=34.03 cpu_gpu_geometry_ms=1509.34 cpu_shadow_rays=276468 cpu_light_samples=164106 cpu_normal_rays=0 submitted_gpu_triangles=264671 end_to_end_ms=1615.97 frame_id=6395
+GPU LIGHTMAP REUSE room=14 warm_cpu_geometry_ms=4.63 warm_shadow_rays=0 warm_samples=46566 warm_cache_hits=46566 invalidated_cells=0 light_candidates=0 end_to_end_ms=40.98 frame_id=6396
+GPU LIGHTING AUDIT room=13 cpu_build_ms=30.53 cpu_gpu_geometry_ms=1242.67 cpu_shadow_rays=240997 cpu_light_samples=143718 cpu_normal_rays=0 submitted_gpu_triangles=190776 end_to_end_ms=1345.86 frame_id=7100
+GPU LIGHTING AUDIT room=12 cpu_build_ms=28.05 cpu_gpu_geometry_ms=1438.92 cpu_shadow_rays=273580 cpu_light_samples=164298 cpu_normal_rays=0 submitted_gpu_triangles=266072 end_to_end_ms=1539.59 frame_id=7918
+GPU LIGHTING AUDIT room=0 cpu_build_ms=28.66 cpu_gpu_geometry_ms=1197.74 cpu_shadow_rays=224607 cpu_light_samples=137502 cpu_normal_rays=0 submitted_gpu_triangles=182667 end_to_end_ms=1263.09 frame_id=8515
+GPU LIGHTMAP REUSE room=0 warm_cpu_geometry_ms=2.82 warm_shadow_rays=0 warm_samples=27438 warm_cache_hits=27438 invalidated_cells=0 light_candidates=0 end_to_end_ms=39.81 frame_id=8516
+GPU LIGHTING AUDIT room=4 cpu_build_ms=22.91 cpu_gpu_geometry_ms=333.74 cpu_shadow_rays=84730 cpu_light_samples=89517 cpu_normal_rays=0 submitted_gpu_triangles=98696 end_to_end_ms=393.71 frame_id=8865
+PASS five real GPU viewport lighting audits plus warm unchanged-frame reuse at van and house entry
+GPU CAPTURE build\e2e\gpu\house-torch-off.png (197547 bytes)
+GPU CAPTURE build\e2e\gpu\house-torch-on.png (219919 bytes)
+GPU FLASHLIGHT image_changed_pixels=45375 brighter_pixels=37067 initial_uploaded_bytes=17536032 repeat_uploaded_bytes=0 repeat_reused_bytes=17536032 repeated_batches=630
+PASS OpenGL per-fragment flashlight and retained unchanged House VBO uploads
+PASS production OpenGL flashlight: unblocked positive, 9248 first-surface pixel checks across both submission orders, exact depth, finite reach. Synthetic controls, not map acceptance.
+GPU CAPTURE build\e2e\gpu\resident-vbo-original.png (2184 bytes)
+GPU CAPTURE build\e2e\gpu\resident-vbo-revision.png (2184 bytes)
+GPU RESIDENT VBO PASS first_upload=96 repeat_upload=0 repeat_reused=96 revised_upload=96 revised_pixels=19492 new_scene_upload=96
+GPU CAPTURE build\e2e\gpu\continuous-house-0.png (125855 bytes)
+GPU CAPTURE build\e2e\gpu\continuous-house-3.png (238358 bytes)
+GPU CAPTURE build\e2e\gpu\continuous-house-5.png (220733 bytes)
+GPU CONTINUOUS ROUTE samples=33 cpu_p50_ms=5.063 cpu_p95_ms=38.760 gl_issue_p95_ms=3.388 gl_readback_p95_ms=1.651 end_to_end_p95_ms=74.148
+PASS Beckenburg OpenGL 3.3 real House/Castle, flyovers, flashlight and VBO reuse

@@ -1,0 +1,12 @@
+Room 10: Tutorial room
+Site: Beckenburg College / production-2026-10-20-lived-location-v1-c3226f8e5f4a671c
+Bounds (X,Z): 29.00,10.00 -> 45.00,38.00; floor 3.60m; clear height 3.00m
+Geometric centre: 37.00,24.00; traversable: true
+Actual 4-view camera: 37.00,3.60,24.00; displacement 0.00m
+Portal access / windows / stairs: P14 door -> 7 Upper campus bridge 1.35m @(29.00,3.60,24.00); P28 window -> 12 Rear quadrangle 1.25m @(45.00,3.60,24.00)
+Connected in authored portal graph to van: true
+Props: 3; sockets: 15
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

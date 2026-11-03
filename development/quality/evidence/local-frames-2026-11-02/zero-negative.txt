@@ -1,0 +1,4 @@
+Exception in thread "main" java.io.IOException: GLB readback changed native local frame
+	at org.beckenburg.editor.EditorGlbWriter.validateCandidate(EditorGlbWriter.java:46)
+	at org.beckenburg.editor.EditorGlbWriter.validate(EditorGlbWriter.java:19)
+	at FrameZeroControl.main(FrameZeroControl.java:1)

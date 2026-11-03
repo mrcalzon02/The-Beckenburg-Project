@@ -19,22 +19,27 @@ public final class EditorHistory<S> {
         Objects.requireNonNull(command);
         S before=project.snapshot();
         try{command.run();}
-        catch(RuntimeException|Error failure){
-            project.restore(before);
-            throw failure;
-        }
+        catch(RuntimeException|Error failure){rollback(before,failure);throw failure;}
         undo.push(before);
         if(undo.size()>capacity)undo.removeLast();
         redo.clear();
     }
     public boolean canUndo(){return !undo.isEmpty();}
+    public boolean isFor(EditorProject<?> candidate){return project==candidate;}
     public boolean canRedo(){return !redo.isEmpty();}
+    private void rollback(S before,Throwable failure){
+        try{project.restore(before);}catch(RuntimeException|Error rollbackFailure){if(rollbackFailure!=failure)failure.addSuppressed(rollbackFailure);}
+    }
     public boolean undo(){
         if(undo.isEmpty())return false;
-        redo.push(project.snapshot());project.restore(undo.pop());return true;
+        S before=project.snapshot();
+        try{project.restore(undo.peek());}catch(RuntimeException|Error failure){rollback(before,failure);throw failure;}
+        undo.pop();redo.push(before);return true;
     }
     public boolean redo(){
         if(redo.isEmpty())return false;
-        undo.push(project.snapshot());project.restore(redo.pop());return true;
+        S before=project.snapshot();
+        try{project.restore(redo.peek());}catch(RuntimeException|Error failure){rollback(before,failure);throw failure;}
+        redo.pop();undo.push(before);return true;
     }
 }

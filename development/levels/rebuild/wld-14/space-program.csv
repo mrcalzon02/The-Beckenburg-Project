@@ -1,0 +1,24 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+stage,Roadhead van apron,Unload at the headland roadhead,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Worn headland approach,Follow a drained supported approach,16,12,0,3,porch;stage,REVIEW_IN_S02,NOT_ESTABLISHED
+porch,Keeper porch,Shelter before entering the keeper dwelling,16,12,0,3,entry;foyer,REVIEW_IN_S02,NOT_ESTABLISHED
+foyer,Keeper entrance,Remove outdoor clothing and distribute household arrivals,8,12,0,3,kitchen;porch;sitting,REVIEW_IN_S02,NOT_ESTABLISHED
+sitting,Sitting room,Rest and receive visitors away from tower work,8,12,0,3,foyer;workroom,REVIEW_IN_S02,NOT_ESTABLISHED
+kitchen,Keeper kitchen,Prepare household meals with cleanup and storage,10,12,0,3,foyer;store;yard,REVIEW_IN_S02,NOT_ESTABLISHED
+workroom,Maintenance workroom,Maintain station equipment on supported work surfaces,12,12,0,3,service-stair;sitting;store,REVIEW_IN_S02,NOT_ESTABLISHED
+store,Dry store,Store dry supplies near service access,14,12,0,3,kitchen;passage;stairs;workroom,REVIEW_IN_S02,NOT_ESTABLISHED
+stairs,Main stair hall,Reach the private upper dwelling through actual stairs,6,24,0,3,store;upperhall,REVIEW_IN_S02,NOT_ESTABLISHED
+bed,Keeper bedroom,Sleep and store personal belongings,12,12,3.2,3,service-upper;study,REVIEW_IN_S02,NOT_ESTABLISHED
+study,Signal records study,Keep signal and maintenance records,14,12,3.2,3,bed;upperhall,REVIEW_IN_S02,NOT_ESTABLISHED
+upperhall,Upper stair landing,Distribute upper rooms without crossing private beds,6,24,3.2,3,stairs;study,REVIEW_IN_S02,NOT_ESTABLISHED
+service-stair,Service stair landing,Begin the independent dwelling service stair,4,24,0,3,service-upper;workroom,REVIEW_IN_S02,NOT_ESTABLISHED
+service-upper,Upper service landing,Connect the service stair to upper support spaces,4,24,3.2,3,bed;service-stair,REVIEW_IN_S02,NOT_ESTABLISHED
+passage,Attached covered tower passage,Reach the tower beneath continuous weather cover,8,15.5,0,3,store;tower0,REVIEW_IN_S02,NOT_ESTABLISHED
+generator,Generator and oil house,Generate station power and separately store service supplies,10,12,0,3,yard,REVIEW_IN_S02,NOT_ESTABLISHED
+yard,Service yard and cistern reserve,Maintain water storage and station infrastructure,14,14,0,3,generator;kitchen,REVIEW_IN_S02,NOT_ESTABLISHED
+tower0,Tower base,Enter and maintain the real tower base,9.0,9.0,0.0,3.6,passage;tower1,REVIEW_IN_S02,NOT_ESTABLISHED
+tower1,First tower landing,Turn and rest at the first supported landing,9.0,9.0,3.6,3.6,tower0;tower2,REVIEW_IN_S02,NOT_ESTABLISHED
+tower2,Second tower landing,Turn and rest at the second supported landing,9.0,9.0,7.2,3.6,tower1;tower3,REVIEW_IN_S02,NOT_ESTABLISHED
+tower3,Third tower landing,Turn and rest at the third supported landing,9.0,9.0,10.8,3.6,tower2;tower4,REVIEW_IN_S02,NOT_ESTABLISHED
+tower4,Watch room,Observe conditions beneath the lantern level,9.0,9.0,14.4,3.6,tower3;tower5,REVIEW_IN_S02,NOT_ESTABLISHED
+tower5,Lantern room,Maintain the lantern within its supported glazed structure,9.0,9.0,18.0,3.6,tower4,REVIEW_IN_S02,NOT_ESTABLISHED

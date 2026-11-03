@@ -1,0 +1,12 @@
+Room 5: Lecture theatre
+Site: Beckenburg College / production-2026-10-20-lived-location-v1-c3226f8e5f4a671c
+Bounds (X,Z): 29.00,19.33 -> 45.00,28.67; floor 0.00m; clear height 3.60m
+Geometric centre: 37.00,24.00; traversable: true
+Actual 4-view camera: 37.00,0.00,24.00; displacement 0.00m
+Portal access / windows / stairs: P5 door -> 0 Campus concourse 1.35m @(29.00,0.00,24.00); P10 door -> 4 Student union cafe 1.20m @(37.00,0.00,28.67); P11 door -> 6 Library reading room 1.20m @(37.00,0.00,19.33); P24 window -> 12 Rear quadrangle 1.25m @(45.00,0.00,24.00)
+Connected in authored portal graph to van: true
+Props: 3; sockets: 9
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

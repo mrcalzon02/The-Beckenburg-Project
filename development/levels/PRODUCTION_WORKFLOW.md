@@ -1,5 +1,7 @@
 # Repeatable authored-level workflow
 
+31 October 2026 owner-directed renewal: follow the [first-principles rebuild plan](FIRST_PRINCIPLES_REBUILD_PLAN.md), [29 site work packages](FIRST_PRINCIPLES_SITE_PACKAGES.md), and [stage register](rebuild/stage-register.json). The new instruction is breadth by stage across 28 base locations plus the mortuary annex: all rough layouts, then physical blockouts, then terrain/structure, functional prop fill and successive refinement passes. This supersedes older serial site sequencing below while retaining the House method pilot, recovery priorities and all technical acceptance requirements. This checkpoint is planning only; no rebuild stage is marked accepted.
+
 24 October additions: every investigation map consumes the shared
 [equal hiding allowance](../quality/HIDING_SPOT_BUDGET.md), then finishes with
 the [story-detail and authored Easter-egg phases](FINAL_STORY_AND_EASTER_EGGS.md).

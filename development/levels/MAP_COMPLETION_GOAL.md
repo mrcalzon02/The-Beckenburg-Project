@@ -1,5 +1,7 @@
 # All-map completion goal
 
+**31 October 2026 sequencing update:** The owner requests a first-principles rebuild using stage batches across the existing roster. The [detailed rebuild plan](FIRST_PRINCIPLES_REBUILD_PLAN.md) and [per-location packages](FIRST_PRINCIPLES_SITE_PACKAGES.md) govern that renewal, with [explicit per-site stage decisions](rebuild/stage-register.json). Their breadth-first sequencing supersedes older one-map-at-a-time instructions below. Preserve accepted assets and source history; complete the House construction-method pilot before propagating its method. Existing completion/recovery gates remain binding. Plan delivery is not map acceptance.
+
 User-authorized 23 October 2026: continue the existing map roster until map
 construction, required model creation, review and detail work are complete.
 Use the active unified checkout and preserve concurrent work and existing maps.

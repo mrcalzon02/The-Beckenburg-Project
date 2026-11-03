@@ -1,0 +1,16 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+r00,Foyer,Receive visitors and store outdoor clothing,6.0,3.0,0.0,3.0,entry;r01;r04,REVIEW_IN_S02,NOT_ESTABLISHED
+r01,Living room,Sit together and receive household visitors,6.0,7.0,0.0,3.0,r00;r02;r04,REVIEW_IN_S02,NOT_ESTABLISHED
+r02,Family kitchen,Store prepare and wash up household meals,6.0,7.0,0.0,3.0,grounds;r01;r03,REVIEW_IN_S02,NOT_ESTABLISHED
+r03,Dining nook,Eat together next to kitchen service,6.0,5.0,0.0,3.0,r02;r04,REVIEW_IN_S02,NOT_ESTABLISHED
+r04,Main hall and stair,Connect shared rooms and independent stair flights,6.0,6.0,0.0,3.0,r00;r01;r03;r05;r09,REVIEW_IN_S02,NOT_ESTABLISHED
+r05,Upper landing,Reach private rooms without crossing bedrooms,6.0,9.0,3.0,3.0,r04;r06;r07;r08,REVIEW_IN_S02,NOT_ESTABLISHED
+r06,Master bedroom,Sleep and dress with bedside and clothing storage,6.0,7.0,3.0,3.0,r05;r07,REVIEW_IN_S02,NOT_ESTABLISHED
+r07,Child bedroom,Sleep play and study with personal storage,6.0,7.0,3.0,3.0,r05;r06,REVIEW_IN_S02,NOT_ESTABLISHED
+r08,Bathroom,Wash bathe and use private sanitary fittings,6.0,5.0,3.0,3.0,r05,REVIEW_IN_S02,NOT_ESTABLISHED
+r09,Cellar stair landing,Enter cellar services without obstructing the stair,6.0,9.0,-3.0,3.0,r04;r10;r11,REVIEW_IN_S02,NOT_ESTABLISHED
+r10,Boiler and breaker room,Maintain heating power hot water and laundry,6.0,5.0,-3.0,3.0,r09;r11,REVIEW_IN_S02,NOT_ESTABLISHED
+r11,Cellar storage,Store seasonal household goods on accessible shelves,6.0,14.0,-3.0,3.0,r09;r10,REVIEW_IN_S02,NOT_ESTABLISHED
+grounds,Rear grounds / exterior,Use the garden and maintain a real patio/path,24,22,0,12,entry;r02,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Approach / arrival,Approach the covered household entrance from the street,28,19.4,0,12,grounds;r00;stage,REVIEW_IN_S02,NOT_ESTABLISHED
+stage,Van service apron,Unload equipment from the canonical parked van,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED

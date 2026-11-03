@@ -1,0 +1,2500 @@
+{
+  "schema_version": 1,
+  "roster_source": {
+    "path": "development/levels/edge-sky-plans/catalog.json",
+    "bytes": 5819,
+    "sha256": "fb03e3f5140a0a1e014cbdc6b65d95e6d76f67a5d3cfac24366fabea43cad9ae"
+  },
+  "baseline_main_sha": "fba22b2a3eb56871eeda009f7cd0ab8c4ad4aa5c",
+  "current_runtime_source_fingerprints": [
+    {
+      "path": "src/main/java/org/beckenburg/LevelPlans.java",
+      "bytes": 35396,
+      "sha256": "b06d4e610871e6440506810c14fe42e9331ccef14e1abcf45b419e9bdac2c59c"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/LevelDefinition.java",
+      "bytes": 7328,
+      "sha256": "170b552859b01ea54c8cf70c3897ff4296a1fa90e9d0427fb3d0bb14657d6921"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/CastleHubMap.java",
+      "bytes": 11795,
+      "sha256": "0d357fc307da3316f9e1d20ca6a1dc3ddab0a21b95629ea135ceab016b91c14a"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/CastleRelations.java",
+      "bytes": 15014,
+      "sha256": "30dbb6ff4ef4a423a73aaf6795cff4347542ff8abda4ab3b47ce0155b5e225e2"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/DomesticFitout.java",
+      "bytes": 7091,
+      "sha256": "bb6ae43d2efec60addad92c49e757fd88a4d32625f18ca4ed8b6e9110292ecae"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/LevelDressing.java",
+      "bytes": 13568,
+      "sha256": "345e3f02c6ca3be16328a9f3a9240abb975fe94431afe13116747227930b64bd"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/BlackpineLevel.java",
+      "bytes": 4049,
+      "sha256": "5a5b95c075a617af3b88f53caefa14e1c1f045c9983dcee9334450301e422522"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/HollowCreekLevel.java",
+      "bytes": 3187,
+      "sha256": "6e05bdb86fe59b0b959b00a0f633dff784cf11ec931b5a402104d045cc908ebf"
+    }
+  ],
+  "capture_provenance_note": "Built-in investigation geometry captured from the synchronized baseline; diagnostic camera corrections do not alter geometry. Castle after-resident-fix captures are separate; current source fingerprints include the resident-placement correction. Existing native shell previews are historical source studies, especially Hollow Creek, and do not replace its newer native/runtime authority.",
+  "scope": {
+    "base_locations": 28,
+    "annexes": 1
+  },
+  "acceptance_policy": "Inventory and capture coverage only; never auto-accept a map or stage.",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "title": "St. Alban Academy",
+      "folder": "academy",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/academy/layout.json",
+          "bytes": 19592,
+          "sha256": "46ddfa3e1e57e67c0ce51518da8dfe0b040f0d3f2b716850ec3ae0359244bdc5"
+        },
+        {
+          "path": "development/levels/blockouts/academy/implementation.json",
+          "bytes": 8902,
+          "sha256": "f90b8239e6dc1b59806ee9c395932c56ad27576b536e7cd3f42f0a3d0ead4894"
+        },
+        {
+          "path": "development/levels/blockouts/academy/NEXT.md",
+          "bytes": 1020,
+          "sha256": "b6fc7978f7ac211ae62288837d68372dfaeb9eeb02b90a5535a3e0916f3b3f37"
+        },
+        {
+          "path": "development/levels/blockouts/academy/rough-shell.blend",
+          "bytes": 179338,
+          "sha256": "22f4aacd7215d1e173f7ff12e0f47ff398344c1871f66284ef8d6308e9703d46"
+        },
+        {
+          "path": "development/levels/blockouts/academy/rough-shell.glb",
+          "bytes": 1325140,
+          "sha256": "84e178be286ad9f49ebe29d0273d39c24a4b8f85c601d822f7be5b7cb3ab443c"
+        },
+        {
+          "path": "development/levels/blockouts/academy/preview.png",
+          "bytes": 649637,
+          "sha256": "c4846edc934c0590e59e048f90b9c3e05ae6ee5f8f74e1d72a2f626d1382baac"
+        },
+        {
+          "path": "development/levels/model-requirements/academy.json",
+          "bytes": 26083,
+          "sha256": "616bd406f102d3bdf4c32a5d0b271c87cce20532496e406160843f4123a16828"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/academy/plan.json",
+          "bytes": 52644,
+          "sha256": "a4924660f463af191b5c1ef65e519516ed25f6bca6db80f3bc27aabf91c23a51"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [
+        "development/levels/power-plans/academy.json"
+      ],
+      "planning_spaces": 17,
+      "planning_elevations_m": [
+        -3,
+        0,
+        3.6
+      ],
+      "generic_purpose_reservations": [
+        "stage",
+        "entry",
+        "reception",
+        "south",
+        "west",
+        "north",
+        "east",
+        "quad",
+        "library",
+        "lecture",
+        "lab",
+        "dining",
+        "office",
+        "dorm",
+        "upper",
+        "archive",
+        "rear"
+      ],
+      "runtime_capture": {
+        "kind": "RUNTIME_RENDERER_DIAGNOSTIC",
+        "matrix": {
+          "path": "development/levels/rebuild/captures/baseline/academy/room-matrix.csv",
+          "bytes": 3638,
+          "sha256": "063debc40a2b6df401643c413fb4abdfe32b2ffe48d8f1dbec63cbfc1b8cac31"
+        },
+        "rooms": 15,
+        "directional_views": 60,
+        "missing_views": 0,
+        "displaced_cameras": 1,
+        "manual_acceptance": "NOT_ACCEPTED",
+        "authored_scene_identity": "Site: St. Alban Academy / production-2026-10-20-lived-location-v1-35f49587a92eecc8"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "ASYLUM",
+      "title": "St. Dymphna Hospital",
+      "folder": "asylum",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/asylum/layout.json",
+          "bytes": 18981,
+          "sha256": "d3a12c5153d18c7aa27f851ba2ac1c7d408d94cff29d2f6362445b11eea9d63b"
+        },
+        {
+          "path": "development/levels/blockouts/asylum/implementation.json",
+          "bytes": 8993,
+          "sha256": "9f64d3daee273ec59d9f3a5dfbf066d141f7f175c54546baece0848c0a9980f6"
+        },
+        {
+          "path": "development/levels/blockouts/asylum/NEXT.md",
+          "bytes": 1044,
+          "sha256": "f7f69e8ccd4450054f4eed03350347b2504a2dadbbedda202f7aed2b68564766"
+        },
+        {
+          "path": "development/levels/blockouts/asylum/rough-shell.blend",
+          "bytes": 178025,
+          "sha256": "a87e8468dce9179630b96e1145e87be933135f79a02a9f2ac8ef688511dadf11"
+        },
+        {
+          "path": "development/levels/blockouts/asylum/rough-shell.glb",
+          "bytes": 1334272,
+          "sha256": "b649a2af291f43b0897e9bb9c846610ff38ee82233d090a31eb4e30a7e4ea1dd"
+        },
+        {
+          "path": "development/levels/blockouts/asylum/preview.png",
+          "bytes": 622392,
+          "sha256": "9f0d66c0433c5718f60023a3f5750771fc70af3f3c50327a2ce3015126ba7bf0"
+        },
+        {
+          "path": "development/levels/model-requirements/asylum.json",
+          "bytes": 24460,
+          "sha256": "b038ebd1478b1c0c6976b8c3620fdaf869e465e2b9f85f1b0971bb5eb09e3e4a"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/asylum/plan.json",
+          "bytes": 52669,
+          "sha256": "756624d524b3619117ee145e2fdf9900bc7f0848f686137c075386b20f34a850"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [
+        "development/levels/power-plans/asylum.json"
+      ],
+      "planning_spaces": 16,
+      "planning_elevations_m": [
+        -3,
+        0,
+        3.4
+      ],
+      "generic_purpose_reservations": [
+        "stage",
+        "entry",
+        "reception",
+        "spine",
+        "records",
+        "day",
+        "ward",
+        "west-link",
+        "treatment",
+        "hydro",
+        "dining",
+        "chapel",
+        "court",
+        "upper",
+        "upper-ward",
+        "plant"
+      ],
+      "runtime_capture": {
+        "kind": "RUNTIME_RENDERER_DIAGNOSTIC",
+        "matrix": {
+          "path": "development/levels/rebuild/captures/baseline/asylum/room-matrix.csv",
+          "bytes": 3643,
+          "sha256": "e5000b8cdd05cb9ca6e1feb79a52ff2ce810d65d16398686ffebe7023b19c1ec"
+        },
+        "rooms": 15,
+        "directional_views": 60,
+        "missing_views": 0,
+        "displaced_cameras": 1,
+        "manual_acceptance": "NOT_ACCEPTED",
+        "authored_scene_identity": "Site: St. Dymphna Hospital / production-2026-10-20-lived-location-v1-3edfcaaae4318eb8"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "CASTLE",
+      "title": "Castle Beckenburg",
+      "folder": "castle",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/castle/layout.json",
+          "bytes": 27085,
+          "sha256": "6c0c1c078c3423e9debd16fcbc8de1af4b6f011f3b6ba0ab7d48be9754be7d22"
+        },
+        {
+          "path": "development/levels/model-requirements/castle.json",
+          "bytes": 36051,
+          "sha256": "a8b34cfd97980fc558f63e4a3de269bbb952b7c9d1b04d20167405674a20ed89"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/castle/plan.json",
+          "bytes": 62504,
+          "sha256": "a9ade361c6dbe6b1b38ab96a52e558ea3eafa62e86564618db450a7dcdd6068e"
+        },
+        {
+          "path": "development/levels/blender/castle-rebuild-complete.blend",
+          "bytes": 13785584,
+          "sha256": "7ad2be8badeaeff1e3729ec732f042d985c18e817bb7ecb04719c8d2c1021611"
+        },
+        {
+          "path": "development/levels/CASTLE_REBUILD_WORKFLOW.md",
+          "bytes": 6514,
+          "sha256": "a3846313082007e877ca1d08cf7e6c261eba4ced7cd9fba4c61195fa086e3ff1"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [
+        "development/levels/blockouts/castle/implementation.json",
+        "development/levels/blockouts/castle/NEXT.md",
+        "development/levels/blockouts/castle/rough-shell.blend",
+        "development/levels/blockouts/castle/rough-shell.glb",
+        "development/levels/blockouts/castle/preview.png",
+        "development/levels/power-plans/castle.json"
+      ],
+      "planning_spaces": 23,
+      "planning_elevations_m": [
+        -3,
+        0,
+        3.6,
+        6.5
+      ],
+      "generic_purpose_reservations": [
+        "stage",
+        "entry",
+        "court",
+        "great",
+        "map",
+        "dining",
+        "west",
+        "archive",
+        "armory",
+        "workshop",
+        "infirmary",
+        "chapel",
+        "research",
+        "radio",
+        "upper",
+        "lodging",
+        "restoration",
+        "vault",
+        "train-entry",
+        "train-b",
+        "train-c",
+        "train-a",
+        "north"
+      ],
+      "runtime_capture": {
+        "kind": "RUNTIME_RENDERER_DIAGNOSTIC",
+        "matrix": {
+          "path": "development/levels/rebuild/captures/baseline/castle/castle-rooms.csv",
+          "bytes": 1231,
+          "sha256": "d84b34491031c52e899026838ec0cd98cbb4fef3ba8e8a9709a9af3c3e3bcf0e"
+        },
+        "rooms": 10,
+        "directional_views": 40,
+        "missing_views": 0,
+        "displaced_cameras": 0,
+        "manual_acceptance": "NOT_ACCEPTED"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "CHURCH",
+      "title": "St. Brigid Parish",
+      "folder": "church",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/church/layout.json",
+          "bytes": 17931,
+          "sha256": "e5ed72ba9fa9bd002b34f75b951c876b5416666db80e219142f604159b80baca"
+        },
+        {
+          "path": "development/levels/model-requirements/church.json",
+          "bytes": 23595,
+          "sha256": "715367027f88925b78c621e361eb8f4c42c4566d28f0042681ac18ab213ca621"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/church/plan.json",
+          "bytes": 46592,
+          "sha256": "17d8978e3223288511fd304a7412fee4b8fa362f35fd2dd45dd88779852c6f63"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [
+        "development/levels/blockouts/church/implementation.json",
+        "development/levels/blockouts/church/NEXT.md",
+        "development/levels/blockouts/church/rough-shell.blend",
+        "development/levels/blockouts/church/rough-shell.glb",
+        "development/levels/blockouts/church/preview.png",
+        "development/levels/power-plans/church.json"
+      ],
+      "planning_spaces": 15,
+      "planning_elevations_m": [
+        -3.0,
+        0.0,
+        3.0,
+        6.0
+      ],
+      "generic_purpose_reservations": [
+        "r00",
+        "r01",
+        "r02",
+        "r03",
+        "r04",
+        "r05",
+        "r06",
+        "r07",
+        "r08",
+        "r09",
+        "r10",
+        "r11",
+        "grounds",
+        "entry",
+        "stage"
+      ],
+      "runtime_capture": {
+        "kind": "RUNTIME_RENDERER_DIAGNOSTIC",
+        "matrix": {
+          "path": "development/levels/rebuild/captures/baseline/church/room-matrix.csv",
+          "bytes": 3534,
+          "sha256": "4c96126d169f642837d8bb6f2a6a1e0122f6033bafe28c8c56afddbf178de78e"
+        },
+        "rooms": 15,
+        "directional_views": 60,
+        "missing_views": 0,
+        "displaced_cameras": 1,
+        "manual_acceptance": "NOT_ACCEPTED",
+        "authored_scene_identity": "Site: St. Brigid Parish / production-2026-10-20-lived-location-v1-38d7eb377b0d2ccf"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "COLLEGE",
+      "title": "Beckenburg College",
+      "folder": "college",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/college/layout.json",
+          "bytes": 19997,
+          "sha256": "e424444d53ba348e83d53af4a3066722d9c1003b3e27abc638b25d7f900307e4"
+        },
+        {
+          "path": "development/levels/blockouts/college/implementation.json",
+          "bytes": 8785,
+          "sha256": "9fb8ba28ff4ce8ce0cf6438469c9dca2a72207a07e49f41d8b5f8e11f94b4e28"
+        },
+        {
+          "path": "development/levels/blockouts/college/NEXT.md",
+          "bytes": 1041,
+          "sha256": "ae9dfa4beee4a22b6450c274c15e235ba8cfac9fde25da0be4c4de1913e2bd67"
+        },
+        {
+          "path": "development/levels/blockouts/college/rough-shell.blend",
+          "bytes": 184592,
+          "sha256": "ad5328a656b07d9c5cdd00cd118aba54ac7f75a70a1f606c38d1b0358a6ad1e0"
+        },
+        {
+          "path": "development/levels/blockouts/college/rough-shell.glb",
+          "bytes": 1536112,
+          "sha256": "4da60e9e6bae49a0950c4737686e63404121524862cf28ce0c93e271b8fc9465"
+        },
+        {
+          "path": "development/levels/blockouts/college/preview.png",
+          "bytes": 632966,
+          "sha256": "e2d866b81d1cabcbc5197a8b5004673a77c57cb5cff8b4571d6cee9e9424a4c7"
+        },
+        {
+          "path": "development/levels/model-requirements/college.json",
+          "bytes": 25798,
+          "sha256": "7bca014a7353006ff291d3323005af2c37a897fb86c21a2cd40836a19d67dad3"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/college/plan.json",
+          "bytes": 54847,
+          "sha256": "afe8368cd64899102f0dbe0c8955dc2b28730c3fdbba8e3919d34b2d962d4cc2"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [
+        "development/levels/power-plans/college.json"
+      ],
+      "planning_spaces": 17,
+      "planning_elevations_m": [
+        -3,
+        0,
+        3.6
+      ],
+      "generic_purpose_reservations": [
+        "stage",
+        "entry",
+        "plaza",
+        "lobby",
+        "lecture",
+        "seminar",
+        "lab",
+        "library",
+        "stacks",
+        "bridge",
+        "dorm",
+        "res-lobby",
+        "union",
+        "admin",
+        "rear",
+        "tunnel",
+        "tunnel-west"
+      ],
+      "runtime_capture": {
+        "kind": "RUNTIME_RENDERER_DIAGNOSTIC",
+        "matrix": {
+          "path": "development/levels/rebuild/captures/baseline/college/room-matrix.csv",
+          "bytes": 3771,
+          "sha256": "d2e0b973a72f65b345d13b04d5f9ad2d8825f9a0760c6818293e35d920cd532c"
+        },
+        "rooms": 15,
+        "directional_views": 60,
+        "missing_views": 0,
+        "displaced_cameras": 1,
+        "manual_acceptance": "NOT_ACCEPTED",
+        "authored_scene_identity": "Site: Beckenburg College / production-2026-10-20-lived-location-v1-c3226f8e5f4a671c"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "FARMHOUSE",
+      "title": "Hollowmere Farm",
+      "folder": "farmhouse",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/farmhouse/layout.json",
+          "bytes": 17767,
+          "sha256": "e050c3627240ac10ba6f44191e549ac631bb9a43c7701cb2daf8291f12c00895"
+        },
+        {
+          "path": "development/levels/model-requirements/farmhouse.json",
+          "bytes": 21937,
+          "sha256": "c40df2674d59486abb220485808c4d45957992fdec56553f42d79a9f74344e1a"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/farmhouse/plan.json",
+          "bytes": 46507,
+          "sha256": "df4af341d94ac31c0529a13ea922483ce762ef48d5351e9855974111d6de6898"
+        },
+        {
+          "path": "development/levels/blender/farmhouse-complete.blend",
+          "bytes": 16566617,
+          "sha256": "5c548893eb80f7fbd2390b9c92715adc72cbfa3fcd488e51b5d2c1b3bb3ba74a"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [
+        "development/levels/blockouts/farmhouse/implementation.json",
+        "development/levels/blockouts/farmhouse/NEXT.md",
+        "development/levels/blockouts/farmhouse/rough-shell.blend",
+        "development/levels/blockouts/farmhouse/rough-shell.glb",
+        "development/levels/blockouts/farmhouse/preview.png",
+        "development/levels/power-plans/farmhouse.json"
+      ],
+      "planning_spaces": 15,
+      "planning_elevations_m": [
+        -3.0,
+        0.0,
+        3.0
+      ],
+      "generic_purpose_reservations": [
+        "r00",
+        "r01",
+        "r02",
+        "r03",
+        "r04",
+        "r05",
+        "r06",
+        "r07",
+        "r08",
+        "r09",
+        "r10",
+        "r11",
+        "grounds",
+        "entry",
+        "stage"
+      ],
+      "runtime_capture": {
+        "kind": "RUNTIME_RENDERER_DIAGNOSTIC",
+        "matrix": {
+          "path": "development/levels/rebuild/captures/baseline/farmhouse/room-matrix.csv",
+          "bytes": 3662,
+          "sha256": "9bf1bba35e5e6d281e47f47c2992faeb14dba1b54e475ab06fbae325d25e292d"
+        },
+        "rooms": 15,
+        "directional_views": 60,
+        "missing_views": 0,
+        "displaced_cameras": 0,
+        "manual_acceptance": "NOT_ACCEPTED",
+        "authored_scene_identity": "Site: Hollowmere Farm / production-2026-10-20-lived-location-v1-51c40097d2dcf39e"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "HOUSE",
+      "title": "The Briar House",
+      "folder": "house",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/house/layout.json",
+          "bytes": 19556,
+          "sha256": "1076c2f3bc2c13f785c278bb6490172458e1461510c9a2b9f6cc928276bcfa9c"
+        },
+        {
+          "path": "development/levels/model-requirements/house.json",
+          "bytes": 21520,
+          "sha256": "6de09bc70a692d9a859f48fe23df5220763617c3420d666a163a4b6edf5a0547"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/house/plan.json",
+          "bytes": 47706,
+          "sha256": "12027dfe42b79ceeaf6468003c6b25b8d9042a3842576a4bbe2522843529e4ab"
+        },
+        {
+          "path": "development/levels/blender/house-complete.blend",
+          "bytes": 19090463,
+          "sha256": "20a56e33b9dd02a3b1f322592668e7799bfdbe654acbb448d34705a097e6c347"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [
+        "development/levels/blockouts/house/implementation.json",
+        "development/levels/blockouts/house/NEXT.md",
+        "development/levels/blockouts/house/rough-shell.blend",
+        "development/levels/blockouts/house/rough-shell.glb",
+        "development/levels/blockouts/house/preview.png",
+        "development/levels/power-plans/house.json"
+      ],
+      "planning_spaces": 15,
+      "planning_elevations_m": [
+        -3.0,
+        0.0,
+        3.0
+      ],
+      "generic_purpose_reservations": [
+        "r00",
+        "r01",
+        "r02",
+        "r03",
+        "r04",
+        "r05",
+        "r06",
+        "r07",
+        "r08",
+        "r09",
+        "r10",
+        "r11",
+        "grounds",
+        "entry",
+        "stage"
+      ],
+      "runtime_capture": {
+        "kind": "RUNTIME_RENDERER_DIAGNOSTIC",
+        "matrix": {
+          "path": "development/levels/rebuild/captures/baseline/house/room-matrix.csv",
+          "bytes": 3611,
+          "sha256": "902d283e8385fb87f483e323f2245836aff1cc1a2b67718713d28fadbb7ee01a"
+        },
+        "rooms": 15,
+        "directional_views": 60,
+        "missing_views": 0,
+        "displaced_cameras": 1,
+        "manual_acceptance": "NOT_ACCEPTED",
+        "authored_scene_identity": "Site: The Briar House / production-2026-10-20-lived-location-v1-31a060513814dc2d"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "MANSION",
+      "title": "Blackthorn Manor",
+      "folder": "mansion",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/mansion/layout.json",
+          "bytes": 19830,
+          "sha256": "a909daacc0e24fca86dbfd01027ec476b34ca79d4b2c9b8a647b9e4ea4e015d6"
+        },
+        {
+          "path": "development/levels/blockouts/mansion/implementation.json",
+          "bytes": 9555,
+          "sha256": "1c5fd4b8640d3bfb30e74e7e1537f83b74baceef06b0eefcac0d77ff9c70a074"
+        },
+        {
+          "path": "development/levels/blockouts/mansion/NEXT.md",
+          "bytes": 1052,
+          "sha256": "070b1d364b527101c18ff89af75bd6aa9315d93854417bb739083c3355a86c13"
+        },
+        {
+          "path": "development/levels/blockouts/mansion/rough-shell.blend",
+          "bytes": 181396,
+          "sha256": "23ebd55b9bc028324547a0b15aea27d4ea3d47f03d8063663bb8be398936c83a"
+        },
+        {
+          "path": "development/levels/blockouts/mansion/rough-shell.glb",
+          "bytes": 1381828,
+          "sha256": "0ce64ffb798021c4ee8891b15e3a318a497ac0017685b236c7b9e3c565ef2322"
+        },
+        {
+          "path": "development/levels/blockouts/mansion/preview.png",
+          "bytes": 634326,
+          "sha256": "f546695e916e4a79ebf3f53f0b3a1ac36ef8cfc011020cd5c0476d6ce463736d"
+        },
+        {
+          "path": "development/levels/model-requirements/mansion.json",
+          "bytes": 25276,
+          "sha256": "96dfa132d12afd6b36cefcdb5998c89fa263e364836d22fa7473d3d2baec03e4"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/mansion/plan.json",
+          "bytes": 50740,
+          "sha256": "255ab7e2fca3d87ba0e122adcb83d57779684aec92c777abd047392f86055756"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [
+        "development/levels/power-plans/mansion.json"
+      ],
+      "planning_spaces": 17,
+      "planning_elevations_m": [
+        -3,
+        0,
+        3.6,
+        7.2
+      ],
+      "generic_purpose_reservations": [
+        "stage",
+        "entry",
+        "foyer",
+        "stair",
+        "drawing",
+        "library",
+        "ballroom",
+        "dining",
+        "scullery",
+        "service",
+        "garden",
+        "greenhouse",
+        "gallery",
+        "suite",
+        "servants",
+        "attic",
+        "cellar"
+      ],
+      "runtime_capture": {
+        "kind": "RUNTIME_RENDERER_DIAGNOSTIC",
+        "matrix": {
+          "path": "development/levels/rebuild/captures/baseline/mansion/room-matrix.csv",
+          "bytes": 3536,
+          "sha256": "26144c762d62461a8256a8c55f614a8435c453a88d4c0c27774b6915bbcd38ab"
+        },
+        "rooms": 15,
+        "directional_views": 60,
+        "missing_views": 0,
+        "displaced_cameras": 1,
+        "manual_acceptance": "NOT_ACCEPTED",
+        "authored_scene_identity": "Site: Blackthorn Manor / production-2026-10-20-lived-location-v1-87d5c036158d1207"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "PRISON",
+      "title": "Beckenburg Penitentiary",
+      "folder": "prison",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/prison/layout.json",
+          "bytes": 20259,
+          "sha256": "ab20558ecb1820020a7dd872f81ae079291134422db7e8e59a8dbedc7954205a"
+        },
+        {
+          "path": "development/levels/blockouts/prison/implementation.json",
+          "bytes": 9687,
+          "sha256": "499901f5eaa627401367f8e98afb78b18cd98420ce25560d638b49cddf154b22"
+        },
+        {
+          "path": "development/levels/blockouts/prison/NEXT.md",
+          "bytes": 1087,
+          "sha256": "4ed26a85645ffecc9e26ff67a3c2e1bb56064e933c6448a59fad90377227fa31"
+        },
+        {
+          "path": "development/levels/blockouts/prison/rough-shell.blend",
+          "bytes": 181230,
+          "sha256": "1e39c3f2985162ee691bd258518dfb47e4e4b9844d59ff106f816ef0c874dfcb"
+        },
+        {
+          "path": "development/levels/blockouts/prison/rough-shell.glb",
+          "bytes": 1399208,
+          "sha256": "ccba5c8671dbe58870c5610b6a5782772cac5040595c103754ff1b8920ff2085"
+        },
+        {
+          "path": "development/levels/blockouts/prison/preview.png",
+          "bytes": 645412,
+          "sha256": "ad7e42c0a7de02c05f4442d55aedf4791d3bb00c97481934fafce28accb6b869"
+        },
+        {
+          "path": "development/levels/model-requirements/prison.json",
+          "bytes": 24075,
+          "sha256": "58f7ebef6048042a15b54669ccbc5286a54ba692b289794885043b187dbce138"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/prison/plan.json",
+          "bytes": 53175,
+          "sha256": "46a329419a7ee1f6a3e0ca9cb9d223ce27c85c4d79af1006496cc08a80a24a6c"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [
+        "development/levels/power-plans/prison.json"
+      ],
+      "planning_spaces": 16,
+      "planning_elevations_m": [
+        -3,
+        0,
+        3.4
+      ],
+      "generic_purpose_reservations": [
+        "stage",
+        "entry",
+        "sally",
+        "intake",
+        "guard",
+        "block-a",
+        "block-b",
+        "yard",
+        "cross",
+        "mess",
+        "medical",
+        "chapel",
+        "isolation",
+        "gallery-a",
+        "gallery-b",
+        "plant"
+      ],
+      "runtime_capture": {
+        "kind": "RUNTIME_RENDERER_DIAGNOSTIC",
+        "matrix": {
+          "path": "development/levels/rebuild/captures/baseline/prison/room-matrix.csv",
+          "bytes": 3590,
+          "sha256": "40e79925fc55a1a6a07d28263b94181854c0dfedd754b716bb3981aa27be1651"
+        },
+        "rooms": 15,
+        "directional_views": 60,
+        "missing_views": 0,
+        "displaced_cameras": 1,
+        "manual_acceptance": "NOT_ACCEPTED",
+        "authored_scene_identity": "Site: Beckenburg Penitentiary / production-2026-10-20-lived-location-v1-60942e272a0ae2d0"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "SCHOOL",
+      "title": "Ravenshade School",
+      "folder": "school",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/school/layout.json",
+          "bytes": 20596,
+          "sha256": "811fdf96d90cf1e154e4279f924a3c108a7c5318c98d2d2fff644ac854736b00"
+        },
+        {
+          "path": "development/levels/model-requirements/school.json",
+          "bytes": 23981,
+          "sha256": "957ab3af04ea94ffb5c8f8bff0a4098d96ac310dd6ca83252e615980206ec51a"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/school/plan.json",
+          "bytes": 49340,
+          "sha256": "d0469ac53fc3cdb960cd156de20df6883a3a742ead22e52b5ccad26f4e4eea17"
+        },
+        {
+          "path": "development/levels/blender/school-complete.blend",
+          "bytes": 18222350,
+          "sha256": "f45a7b859ea4c94c246099b209d2d5eade73c46a01d4ad3d61c4cd319897090b"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [
+        "development/levels/blockouts/school/implementation.json",
+        "development/levels/blockouts/school/NEXT.md",
+        "development/levels/blockouts/school/rough-shell.blend",
+        "development/levels/blockouts/school/rough-shell.glb",
+        "development/levels/blockouts/school/preview.png",
+        "development/levels/power-plans/school.json"
+      ],
+      "planning_spaces": 15,
+      "planning_elevations_m": [
+        -3.0,
+        0.0,
+        3.6
+      ],
+      "generic_purpose_reservations": [
+        "r00",
+        "r01",
+        "r02",
+        "r03",
+        "r04",
+        "r05",
+        "r06",
+        "r07",
+        "r08",
+        "r09",
+        "r10",
+        "r11",
+        "grounds",
+        "entry",
+        "stage"
+      ],
+      "runtime_capture": {
+        "kind": "RUNTIME_RENDERER_DIAGNOSTIC",
+        "matrix": {
+          "path": "development/levels/rebuild/captures/baseline/school/room-matrix.csv",
+          "bytes": 3792,
+          "sha256": "2840e8800b7769e0fe081199513eb9e2f8f479cd669fd26ea1e1696673a148a7"
+        },
+        "rooms": 15,
+        "directional_views": 60,
+        "missing_views": 0,
+        "displaced_cameras": 1,
+        "manual_acceptance": "NOT_ACCEPTED",
+        "authored_scene_identity": "Site: Ravenshade School / production-2026-10-20-lived-location-v1-97b23b0a6674e5b7"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "WLD-01",
+      "title": "Blackpine Logging Camp",
+      "folder": "wld-01",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/wld-01/layout.json",
+          "bytes": 17434,
+          "sha256": "ebdfe3334052edac85caaad5e52f9c940cec1c26cd4a12cd67cae8b2a512281a"
+        },
+        {
+          "path": "development/levels/model-requirements/wld-01.json",
+          "bytes": 21421,
+          "sha256": "d25526572c4e5f5228f5f1cc2ee6ff2804d5efd6f6324913034f1331a7d53574"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/wld-01/plan.json",
+          "bytes": 51679,
+          "sha256": "de6eda72403154264967c8cb584f04e06e330c57884e08f8d453b2332a08249b"
+        },
+        {
+          "path": "development/levels/power-plans/wld-01.json",
+          "bytes": 1561,
+          "sha256": "46dd1bdc9e2b527e6ba7b80a42a4009b45ccb9600db22e810b69e6644ba76e06"
+        },
+        {
+          "path": "development/levels/blender/blackpine-worklights.blend",
+          "bytes": 12100234,
+          "sha256": "be26906441b3ec7f23e45a491471613cfbb2ac58b4ef44c466d5e5494a8a8d9b"
+        },
+        {
+          "path": "development/levels/blender/blackpine-mill-expanded.blend",
+          "bytes": 12145540,
+          "sha256": "8c5ac5e67a9703c0f662d966ceec285d3129d5f6768be5404e2d76a754ee9e34"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [
+        "development/levels/blockouts/wld-01/implementation.json",
+        "development/levels/blockouts/wld-01/NEXT.md",
+        "development/levels/blockouts/wld-01/rough-shell.blend",
+        "development/levels/blockouts/wld-01/rough-shell.glb",
+        "development/levels/blockouts/wld-01/preview.png"
+      ],
+      "planning_spaces": 14,
+      "planning_elevations_m": [
+        0,
+        3
+      ],
+      "generic_purpose_reservations": [
+        "stage",
+        "entry",
+        "yard",
+        "mill",
+        "mill-deck",
+        "mess",
+        "bunk",
+        "cabin-a",
+        "cabin-b",
+        "shed",
+        "wash",
+        "foundations",
+        "trail",
+        "store"
+      ],
+      "runtime_capture": {
+        "kind": "RUNTIME_RENDERER_DIAGNOSTIC",
+        "matrix": {
+          "path": "development/levels/rebuild/captures/baseline/blackpine/room-matrix.csv",
+          "bytes": 3763,
+          "sha256": "dc7985424fde0a6ff57a9606f40a8681b11973a913ac42c77b147c5e93a5cd0a"
+        },
+        "rooms": 15,
+        "directional_views": 60,
+        "missing_views": 0,
+        "displaced_cameras": 0,
+        "manual_acceptance": "NOT_ACCEPTED",
+        "authored_scene_identity": "Site: Blackpine Logging Camp / blackpine-graded-terrain-v1-956b39436d9150a3"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "WLD-02",
+      "title": "Camp Hollow Creek",
+      "folder": "wld-02",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/wld-02/layout.json",
+          "bytes": 14108,
+          "sha256": "a60a1cd25311f701933f79af3454d67e1830ca60218a5e8733e5e13a50d9fdff"
+        },
+        {
+          "path": "development/levels/blockouts/wld-02/implementation.json",
+          "bytes": 2189,
+          "sha256": "bebdef5c7cd6ecec926b60f4feabaff8d7b1bde1fcfed695e416cbcb4e3e2924"
+        },
+        {
+          "path": "development/levels/blockouts/wld-02/NEXT.md",
+          "bytes": 1009,
+          "sha256": "70278b75ff943a15b04d620b4e8ec0fa2c49064473e2437dad5a146db88c0ada"
+        },
+        {
+          "path": "development/levels/blockouts/wld-02/rough-shell.blend",
+          "bytes": 125982,
+          "sha256": "2d7115522c7bf0e6b0173f069c916ad23a46bb5e872c222f73eced06237e20dd"
+        },
+        {
+          "path": "development/levels/blockouts/wld-02/rough-shell.glb",
+          "bytes": 1008220,
+          "sha256": "68258cb0851a60f6f82ed5a24233713fadd6a316dd0fdfc5e894e103a1d743b1"
+        },
+        {
+          "path": "development/levels/blockouts/wld-02/preview.png",
+          "bytes": 596571,
+          "sha256": "733f8b17a5a70c7da86206d6623faf6680e3e0891dec7aa8643c5ce0c3a25c92"
+        },
+        {
+          "path": "development/levels/model-requirements/wld-02.json",
+          "bytes": 19442,
+          "sha256": "fdd6dd333a16baf29d64aa918f4121a015ee40f8b0a19b87a900a705386bd3ca"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/wld-02/plan.json",
+          "bytes": 55750,
+          "sha256": "3422f9f2776f415a225ece47b708f574c13b5abbec77775fb1584976a363ddae"
+        },
+        {
+          "path": "development/levels/power-plans/wld-02.json",
+          "bytes": 2196,
+          "sha256": "8c50134f6f2186739939911108c5fe89dfcaf8e43477284a7df08937f681009c"
+        },
+        {
+          "path": "development/levels/hollow-creek/hollow-creek-route-grade.blend",
+          "bytes": 34061239,
+          "sha256": "96d6f8dc295739fbe48d3d1b9e07f764f4a7efcd196fcfff589aa9006373a506"
+        },
+        {
+          "path": "development/levels/hollow-creek/route-grade.json",
+          "bytes": 1726,
+          "sha256": "e038dd7b6efb8f943f7e0431ab55cf7f7c769fc26f05cef1dd5969826cd699a9"
+        },
+        {
+          "path": "development/levels/hollow-creek/hollow-creek-green-grass.blend",
+          "bytes": 33898427,
+          "sha256": "e7d53ad52972b5963132876aa40540fa197c8f92db131d8360c90c378ee7740f"
+        },
+        {
+          "path": "development/levels/hollow-creek/green-grass.json",
+          "bytes": 98506,
+          "sha256": "cbdaef58080c7f1bca9d72c0f957fb0b381ce781c5a0460ad1eb555a41db5fc0"
+        },
+        {
+          "path": "development/levels/DEVELOPMENT_HANDOFF_2026-10-25_WATER_RUNTIME.md",
+          "bytes": 11636,
+          "sha256": "2a90106d917553e2bbf78768c139a48f5e1b6477acf680595febbd408245c261"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [],
+      "planning_spaces": 13,
+      "planning_elevations_m": [
+        0
+      ],
+      "generic_purpose_reservations": [
+        "stage",
+        "entry",
+        "ranger",
+        "bath",
+        "pavilion",
+        "camp-a",
+        "camp-b",
+        "junction",
+        "camper",
+        "shore",
+        "dock",
+        "creek",
+        "store"
+      ],
+      "runtime_capture": {
+        "kind": "RUNTIME_RENDERER_DIAGNOSTIC",
+        "matrix": {
+          "path": "development/levels/rebuild/captures/baseline/hollow_creek/room-matrix.csv",
+          "bytes": 3977,
+          "sha256": "f6b98c5e307628072957ddfdeed22f6d56807387153c06870eaaf58bf21f0551"
+        },
+        "rooms": 15,
+        "directional_views": 60,
+        "missing_views": 0,
+        "displaced_cameras": 2,
+        "manual_acceptance": "NOT_ACCEPTED",
+        "authored_scene_identity": "Site: Camp Hollow Creek / native-site-v1-f46e6482c5ffa735"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "WLD-03",
+      "title": "Red Mesa Ancestral Caves",
+      "folder": "wld-03",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/wld-03/layout.json",
+          "bytes": 16872,
+          "sha256": "c93985a00ace4efc8391f75d848527dea27d46325c6a029456c39f900b194374"
+        },
+        {
+          "path": "development/levels/blockouts/wld-03/implementation.json",
+          "bytes": 5557,
+          "sha256": "a31589a651b071b3d219b4f9ad15974d4c41cd84f5d684ab2ae37c30f004c17e"
+        },
+        {
+          "path": "development/levels/blockouts/wld-03/NEXT.md",
+          "bytes": 1082,
+          "sha256": "ec589dadab9f4cfe65c470507ce59a4745be4d5784d7d1a623e127ac982c0835"
+        },
+        {
+          "path": "development/levels/blockouts/wld-03/rough-shell.blend",
+          "bytes": 146444,
+          "sha256": "b807b01d85fc00fe33f79e1b6aec0ff5df570184e252d376f38500ba60f7d28c"
+        },
+        {
+          "path": "development/levels/blockouts/wld-03/rough-shell.glb",
+          "bytes": 1282068,
+          "sha256": "ee55b508ff0f1e90aab3d4cc30c5ef911c0b5026a990f74a3d2d3a47b67a1719"
+        },
+        {
+          "path": "development/levels/blockouts/wld-03/preview.png",
+          "bytes": 623226,
+          "sha256": "c70a02ac817e7fda889c89226e80740719d0df50eadcdd91e8d38cdcb00e747b"
+        },
+        {
+          "path": "development/levels/model-requirements/wld-03.json",
+          "bytes": 20031,
+          "sha256": "6b400950209c325f4675cb52e132eec6ad9de609d22d4303e8517afd670ac5cb"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/wld-03/plan.json",
+          "bytes": 54353,
+          "sha256": "ad6cf5d14fb380f720b53ea0a609e0b1ee5e8a6cc27873a1505ef771e4f89a04"
+        },
+        {
+          "path": "development/levels/power-plans/wld-03.json",
+          "bytes": 1575,
+          "sha256": "ab9c25bf29fc7ee8b31dde3c87f99098901dbc59764fe506e3023ae4caf95c96"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [],
+      "planning_spaces": 14,
+      "planning_elevations_m": [
+        0,
+        4,
+        8
+      ],
+      "generic_purpose_reservations": [
+        "stage",
+        "entry",
+        "floor",
+        "shelter",
+        "wash",
+        "lower-path",
+        "upper-path",
+        "dwellings",
+        "gallery",
+        "fork",
+        "chamber",
+        "lower-cave",
+        "return",
+        "alcove"
+      ],
+      "runtime_capture": {
+        "kind": "NO_RUNTIME_CAPTURE",
+        "matrix": null,
+        "rooms": 0,
+        "directional_views": 0,
+        "missing_views": 0,
+        "displaced_cameras": 0,
+        "manual_acceptance": "NOT_ACCEPTED"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "WLD-04",
+      "title": "Widow's Peak Fire Lookout",
+      "folder": "wld-04",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/wld-04/layout.json",
+          "bytes": 15681,
+          "sha256": "0a477753e3b1cc8613421df2ae293c06ba034b7663b769410098596f57c426c9"
+        },
+        {
+          "path": "development/levels/blockouts/wld-04/implementation.json",
+          "bytes": 7177,
+          "sha256": "9182aa7405f9e8d27f85b0bb795d35a025530eab9d4df25128347249b276cf31"
+        },
+        {
+          "path": "development/levels/blockouts/wld-04/NEXT.md",
+          "bytes": 1047,
+          "sha256": "2a5bdd82a13684f4ba224d80a22a7f92f1e83c8a27c4dfe2ace3a28f6dc818b2"
+        },
+        {
+          "path": "development/levels/blockouts/wld-04/rough-shell.blend",
+          "bytes": 144500,
+          "sha256": "d3174563d6f470f765188b86c6fa00157b09d3dbbed88bdc23fbc44478c424f9"
+        },
+        {
+          "path": "development/levels/blockouts/wld-04/rough-shell.glb",
+          "bytes": 1041840,
+          "sha256": "db76a58bdb589b28e3fb80f32846780af6a7283ede47a773e9175007eeeed728"
+        },
+        {
+          "path": "development/levels/blockouts/wld-04/preview.png",
+          "bytes": 608611,
+          "sha256": "6c0a4655340e533c47709501e93a6e170cc3b42a39f9d98cb027faded82e4ac7"
+        },
+        {
+          "path": "development/levels/model-requirements/wld-04.json",
+          "bytes": 17497,
+          "sha256": "acdce4f4b7cdf3de7bdfc354532798d8134b07146df50341eee8024f4dd1a788"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/wld-04/plan.json",
+          "bytes": 54108,
+          "sha256": "c380b6ef0388b1ff94a5ba1f1a3c59bf1647d18edbe1f28a84959159a7e1d403"
+        },
+        {
+          "path": "development/levels/power-plans/wld-04.json",
+          "bytes": 1547,
+          "sha256": "c2261144c88f7e35a1f3ba56405323ef7df3470d78b519e7deb1a57fa7f5e15b"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [],
+      "planning_spaces": 13,
+      "planning_elevations_m": [
+        0,
+        3,
+        6,
+        10.5,
+        15
+      ],
+      "generic_purpose_reservations": [
+        "stage",
+        "entry",
+        "lower",
+        "bend",
+        "clearing",
+        "hut",
+        "ruin",
+        "store",
+        "return",
+        "foot",
+        "landing",
+        "cab",
+        "deck"
+      ],
+      "runtime_capture": {
+        "kind": "NO_RUNTIME_CAPTURE",
+        "matrix": null,
+        "rooms": 0,
+        "directional_views": 0,
+        "missing_views": 0,
+        "displaced_cameras": 0,
+        "manual_acceptance": "NOT_ACCEPTED"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "WLD-05",
+      "title": "Dead Man's Claim",
+      "folder": "wld-05",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/wld-05/layout.json",
+          "bytes": 17400,
+          "sha256": "5b0ca78e4e8992bd4ae01226f7c745b73fe9881a20a0f0693fd6cff1d15a4970"
+        },
+        {
+          "path": "development/levels/blockouts/wld-05/implementation.json",
+          "bytes": 7634,
+          "sha256": "5345a1b6d2256df089cf5cd061ce1ab61caf5814cd2f568052acedc899ecdf29"
+        },
+        {
+          "path": "development/levels/blockouts/wld-05/NEXT.md",
+          "bytes": 1018,
+          "sha256": "d91ba243f6597d84c1b50ce0f36314d7d7a47f6e284f994d4cbea50fc80189e7"
+        },
+        {
+          "path": "development/levels/blockouts/wld-05/rough-shell.blend",
+          "bytes": 162445,
+          "sha256": "77212b2da77eb6c75415f39fee5eda3457c8790e79124c68324e0faf4969817f"
+        },
+        {
+          "path": "development/levels/blockouts/wld-05/rough-shell.glb",
+          "bytes": 1125972,
+          "sha256": "14e9ecfd815f57e60a89103a120138f0b430872bf84ba3d73d9ba27f3e8fedc2"
+        },
+        {
+          "path": "development/levels/blockouts/wld-05/preview.png",
+          "bytes": 621574,
+          "sha256": "329bc06dcbe10fdf82c2716a79b49a789f0d2936139d3d411e8793cc1f0c9adb"
+        },
+        {
+          "path": "development/levels/model-requirements/wld-05.json",
+          "bytes": 21340,
+          "sha256": "94d5645de166a78eec1ab546f2179b088ddbfa237e697857bf2ac8235b6a8c37"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/wld-05/plan.json",
+          "bytes": 50889,
+          "sha256": "f2189dfb90e775ddfa6133420790a0a41fa394c152cbbd01db8c9009665c2f34"
+        },
+        {
+          "path": "development/levels/power-plans/wld-05.json",
+          "bytes": 1547,
+          "sha256": "77c00dc7c46bdfa364cb95610cf80426cb313354921d1021b6773e0790580c5c"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [],
+      "planning_spaces": 14,
+      "planning_elevations_m": [
+        -10,
+        -6,
+        0
+      ],
+      "generic_purpose_reservations": [
+        "stage",
+        "entry",
+        "shack",
+        "assay",
+        "stores",
+        "adit",
+        "haul",
+        "ore-west",
+        "ore-east",
+        "cross",
+        "lift",
+        "lower",
+        "vent",
+        "wash"
+      ],
+      "runtime_capture": {
+        "kind": "NO_RUNTIME_CAPTURE",
+        "matrix": null,
+        "rooms": 0,
+        "directional_views": 0,
+        "missing_views": 0,
+        "displaced_cameras": 0,
+        "manual_acceptance": "NOT_ACCEPTED"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "WLD-06",
+      "title": "Drowned Fisherman's Wharf",
+      "folder": "wld-06",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/wld-06/layout.json",
+          "bytes": 17457,
+          "sha256": "f37184525debe30440a0d215c685e22ef40561077ee6ae6fb823e7587dc99304"
+        },
+        {
+          "path": "development/levels/blockouts/wld-06/implementation.json",
+          "bytes": 3779,
+          "sha256": "d8c3bc4de3df2ffed106cbb6fee75a6de09d485ebb674010cea2b8c4b729bcab"
+        },
+        {
+          "path": "development/levels/blockouts/wld-06/NEXT.md",
+          "bytes": 1002,
+          "sha256": "268f3de40a75d0ab34e0137d898e11e309f650805622b89024910c3183b4550f"
+        },
+        {
+          "path": "development/levels/blockouts/wld-06/rough-shell.blend",
+          "bytes": 138703,
+          "sha256": "4246d229ca6d8279b574598385c61a7aeec92b6996de6869bcd25d58e8c260cc"
+        },
+        {
+          "path": "development/levels/blockouts/wld-06/rough-shell.glb",
+          "bytes": 1121320,
+          "sha256": "7bbcb9d852a5abc844f19e7af54754cf051a39700f3209e6418254e5167370c4"
+        },
+        {
+          "path": "development/levels/blockouts/wld-06/preview.png",
+          "bytes": 629117,
+          "sha256": "09856139aeb3ca284c151a89140041a54544103eb2420bb4288f7cabeb2d6495"
+        },
+        {
+          "path": "development/levels/model-requirements/wld-06.json",
+          "bytes": 18828,
+          "sha256": "24272936093f582ae7b576c2aedb87f8b4312f37bb4fdba75dfa9eab2fa363a4"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/wld-06/plan.json",
+          "bytes": 54520,
+          "sha256": "5592aba38c722e93b534248ff943d320fd094fa2831798ceaf923a98dbb0bfee"
+        },
+        {
+          "path": "development/levels/power-plans/wld-06.json",
+          "bytes": 1543,
+          "sha256": "3ed1f234bf863d87e724c2e39a28652d9232e8338ca878188f1a68435ab217c3"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [],
+      "planning_spaces": 14,
+      "planning_elevations_m": [
+        -2.5,
+        0
+      ],
+      "generic_purpose_reservations": [
+        "stage",
+        "entry",
+        "cottage-a",
+        "cottage-b",
+        "quay",
+        "pier-w",
+        "pier-e",
+        "crossdock",
+        "boathouse",
+        "net",
+        "fish",
+        "undercroft",
+        "west-stair",
+        "east-stair"
+      ],
+      "runtime_capture": {
+        "kind": "NO_RUNTIME_CAPTURE",
+        "matrix": null,
+        "rooms": 0,
+        "directional_views": 0,
+        "missing_views": 0,
+        "displaced_cameras": 0,
+        "manual_acceptance": "NOT_ACCEPTED"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "WLD-07",
+      "title": "Saint Bartholomew's Forgotten Cemetery",
+      "folder": "wld-07",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/wld-07/layout.json",
+          "bytes": 16113,
+          "sha256": "d22635124d4e8167df3e5057c0c155ab1759e348995ba2d34946ff0959fd85ac"
+        },
+        {
+          "path": "development/levels/blockouts/wld-07/implementation.json",
+          "bytes": 4273,
+          "sha256": "62f174d605ed02e4946b4eb0ca0fa6f1bc303d48a5abc6cf1f45f83bf2564f2c"
+        },
+        {
+          "path": "development/levels/blockouts/wld-07/NEXT.md",
+          "bytes": 1035,
+          "sha256": "90e640a3ae22a78df5eecb6e12bb90761073fafadf8187c06e82d09db4b9d40a"
+        },
+        {
+          "path": "development/levels/blockouts/wld-07/rough-shell.blend",
+          "bytes": 140908,
+          "sha256": "d2565a85dee123c4450760e8e085b42b5bad4a6e31dcb4656b28cc83d346659d"
+        },
+        {
+          "path": "development/levels/blockouts/wld-07/rough-shell.glb",
+          "bytes": 1267756,
+          "sha256": "f005cb36ec0debc52b832e26b4b3abf0b98ac09e52cd7e40dca64a2a45cc7528"
+        },
+        {
+          "path": "development/levels/blockouts/wld-07/preview.png",
+          "bytes": 612079,
+          "sha256": "e3c441e40dd2db4246285fd868a6bc51aa8d073658e030fe92284acbd997ffe2"
+        },
+        {
+          "path": "development/levels/model-requirements/wld-07.json",
+          "bytes": 20489,
+          "sha256": "e04011f9f46b3ad5bdcc8464949d4028315ce66cf18466dd7f0d89325bf26e39"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/wld-07/plan.json",
+          "bytes": 52065,
+          "sha256": "801ac1220f33d0badcbfc60f372dd4fe0ecd6db15e336dfe3ded2fb54e1eb4d0"
+        },
+        {
+          "path": "development/levels/power-plans/wld-07.json",
+          "bytes": 1567,
+          "sha256": "fc5824b1a2ab513ecd3b0a6555286dc24e83d10b5ae837ffa7823b146e911f7c"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [],
+      "planning_spaces": 13,
+      "planning_elevations_m": [
+        -3,
+        0
+      ],
+      "generic_purpose_reservations": [
+        "stage",
+        "entry",
+        "avenue",
+        "chapel",
+        "cottage",
+        "garden",
+        "east-graves",
+        "old-graves",
+        "tool",
+        "west-stair",
+        "east-stair",
+        "ossuary",
+        "chamber"
+      ],
+      "runtime_capture": {
+        "kind": "NO_RUNTIME_CAPTURE",
+        "matrix": null,
+        "rooms": 0,
+        "directional_views": 0,
+        "missing_views": 0,
+        "displaced_cameras": 0,
+        "manual_acceptance": "NOT_ACCEPTED"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "WLD-08",
+      "title": "Northwatch Research Station",
+      "folder": "wld-08",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/wld-08/layout.json",
+          "bytes": 18768,
+          "sha256": "616f6928fa4a55515027b3b3dd434ba6db6d044df2ab9ecb19e862efb675955b"
+        },
+        {
+          "path": "development/levels/blockouts/wld-08/implementation.json",
+          "bytes": 7157,
+          "sha256": "5c421f90cabd23613b51da4a26d6cdaf3477a02bb939510e670adc2dc5f839fa"
+        },
+        {
+          "path": "development/levels/blockouts/wld-08/NEXT.md",
+          "bytes": 1051,
+          "sha256": "c1518c8a0af735bfc3d5e8a89cc2f989eb97f9c09bcd14d8b67d68a511c623a2"
+        },
+        {
+          "path": "development/levels/blockouts/wld-08/rough-shell.blend",
+          "bytes": 162159,
+          "sha256": "6bb50ff62ff1b8ebb353c5ac6d525d9e966dd4fca8c2331e8366a5a337ed3eb0"
+        },
+        {
+          "path": "development/levels/blockouts/wld-08/rough-shell.glb",
+          "bytes": 1208536,
+          "sha256": "7e40adddaf0bd42a36b740778d1ebb825c36e2b7c08902b26cdaf3db77d9e41d"
+        },
+        {
+          "path": "development/levels/blockouts/wld-08/preview.png",
+          "bytes": 638716,
+          "sha256": "95cc28f8cdc3802d60e6d26de3dee1e8f36c0257f03d8b090ddbab33123c330b"
+        },
+        {
+          "path": "development/levels/model-requirements/wld-08.json",
+          "bytes": 22092,
+          "sha256": "903df5ce171360fe4b0877b12d4f8632b284fb629667a797ad9f911522c6b8d0"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/wld-08/plan.json",
+          "bytes": 53637,
+          "sha256": "7d97ed5332286d6672cbced97cc0a1483853ac5b16aa761d893ddee6428dc107"
+        },
+        {
+          "path": "development/levels/power-plans/wld-08.json",
+          "bytes": 1542,
+          "sha256": "48111f933ce63147ee1edb536c7dc75cb141917703e5c772763f6e59081e9322"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [],
+      "planning_spaces": 14,
+      "planning_elevations_m": [
+        -2.5,
+        0
+      ],
+      "generic_purpose_reservations": [
+        "stage",
+        "entry",
+        "court",
+        "lab",
+        "dorm",
+        "mess",
+        "radio",
+        "records",
+        "generator",
+        "array",
+        "store",
+        "tunnel",
+        "tunnel-n",
+        "shelter"
+      ],
+      "runtime_capture": {
+        "kind": "NO_RUNTIME_CAPTURE",
+        "matrix": null,
+        "rooms": 0,
+        "directional_views": 0,
+        "missing_views": 0,
+        "displaced_cameras": 0,
+        "manual_acceptance": "NOT_ACCEPTED"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "WLD-09",
+      "title": "Blackwater Hydroelectric Dam",
+      "folder": "wld-09",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/wld-09/layout.json",
+          "bytes": 18101,
+          "sha256": "ac4bae32f511b941ff9a2345d8906899b8d4599eb886b3c3dd32f2b87c60f155"
+        },
+        {
+          "path": "development/levels/blockouts/wld-09/implementation.json",
+          "bytes": 8137,
+          "sha256": "a4b613615932b446137989253cfad3c29c40d64a4ce0f0497adb180ca13a0832"
+        },
+        {
+          "path": "development/levels/blockouts/wld-09/NEXT.md",
+          "bytes": 1040,
+          "sha256": "ced5d70c44f5e877a5b1dba3da00a31b85fb849d1c772aadb90afd9c3e3e53a7"
+        },
+        {
+          "path": "development/levels/blockouts/wld-09/rough-shell.blend",
+          "bytes": 155751,
+          "sha256": "f377b7d01f1dbf1da555629743a01649784abcd68af87211d679c1d218d26edd"
+        },
+        {
+          "path": "development/levels/blockouts/wld-09/rough-shell.glb",
+          "bytes": 1299856,
+          "sha256": "faa319abaf63c8afb572c033e811ccc1fde07e3c188f164008a2e783e8fab183"
+        },
+        {
+          "path": "development/levels/blockouts/wld-09/preview.png",
+          "bytes": 629592,
+          "sha256": "740fd8abb16b0d149da1f2425f18a9c5e73f69e6fa03f11469e59e08ffe8fc10"
+        },
+        {
+          "path": "development/levels/model-requirements/wld-09.json",
+          "bytes": 22559,
+          "sha256": "bb7419304d252d55ced83665115d272dfd694985fa5df3d90eba8b80cfdc78dd"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/wld-09/plan.json",
+          "bytes": 54150,
+          "sha256": "c1fd94e700452a294df5afec4f3f7aba934fabba35050b084771f57714e9d864"
+        },
+        {
+          "path": "development/levels/power-plans/wld-09.json",
+          "bytes": 1548,
+          "sha256": "b8762085895270fbec067b3112fc64b6057a664281947cf8e3d68e79f5af91d4"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [],
+      "planning_spaces": 14,
+      "planning_elevations_m": [
+        -10,
+        -6,
+        0
+      ],
+      "generic_purpose_reservations": [
+        "stage",
+        "entry",
+        "crest",
+        "control",
+        "office",
+        "west-stair",
+        "turbine",
+        "workshop",
+        "east-stair",
+        "gallery",
+        "valve",
+        "return",
+        "spillway",
+        "plant"
+      ],
+      "runtime_capture": {
+        "kind": "NO_RUNTIME_CAPTURE",
+        "matrix": null,
+        "rooms": 0,
+        "directional_views": 0,
+        "missing_views": 0,
+        "displaced_cameras": 0,
+        "manual_acceptance": "NOT_ACCEPTED"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "WLD-10",
+      "title": "Monastery of Ashen Bells",
+      "folder": "wld-10",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/wld-10/layout.json",
+          "bytes": 20391,
+          "sha256": "e4a430b4e197d6ec42908a347294bd2a53641ac1c8e6be50d722d5f6540b91bb"
+        },
+        {
+          "path": "development/levels/blockouts/wld-10/implementation.json",
+          "bytes": 9582,
+          "sha256": "923abc0e78b7b9611e5c6f089c42056ecf9bb707640efc30642b4e88521cdf55"
+        },
+        {
+          "path": "development/levels/blockouts/wld-10/NEXT.md",
+          "bytes": 983,
+          "sha256": "54b8cea1526861aff7dc5c520bcf4c5f4a59cc3b2835222ed4fc67ff40975d60"
+        },
+        {
+          "path": "development/levels/blockouts/wld-10/rough-shell.blend",
+          "bytes": 182168,
+          "sha256": "c0ec8b3cad2d72ccc2a86fcba1c268992f20574462de82a119dd322c1d2efaee"
+        },
+        {
+          "path": "development/levels/blockouts/wld-10/rough-shell.glb",
+          "bytes": 1463620,
+          "sha256": "c830cc6debaa00d5cf52cafc2241ce99def79e6203f4ca76cc54400e4f3d2881"
+        },
+        {
+          "path": "development/levels/blockouts/wld-10/preview.png",
+          "bytes": 641392,
+          "sha256": "3238203f7fbc5170c85fa3ee47bdc6920b574768f968361176518f437b7bea92"
+        },
+        {
+          "path": "development/levels/model-requirements/wld-10.json",
+          "bytes": 25788,
+          "sha256": "9e97cf7a63e52ceed7ea7ecdaff840c56330beab5ff73ae15ee1cd82a719d2d7"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/wld-10/plan.json",
+          "bytes": 55729,
+          "sha256": "5ac8405ed26e6c51a72d21b88672da356fc9ec768f2632133bea449439b355ae"
+        },
+        {
+          "path": "development/levels/power-plans/wld-10.json",
+          "bytes": 1541,
+          "sha256": "1b368efd9eab52cf1b710df5361ac19dd0daa92306af442ed4dcb69611cb9f81"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [],
+      "planning_spaces": 17,
+      "planning_elevations_m": [
+        -3,
+        0,
+        6
+      ],
+      "generic_purpose_reservations": [
+        "stage",
+        "entry",
+        "gatehouse",
+        "west",
+        "east",
+        "north",
+        "south",
+        "garden",
+        "archive",
+        "refectory",
+        "dorm",
+        "tower-base",
+        "bell",
+        "catacombs",
+        "chamber",
+        "vestry",
+        "rear"
+      ],
+      "runtime_capture": {
+        "kind": "NO_RUNTIME_CAPTURE",
+        "matrix": null,
+        "rooms": 0,
+        "directional_views": 0,
+        "missing_views": 0,
+        "displaced_cameras": 0,
+        "manual_acceptance": "NOT_ACCEPTED"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "WLD-11",
+      "title": "Mourning Marsh",
+      "folder": "wld-11",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/wld-11/layout.json",
+          "bytes": 15243,
+          "sha256": "a16ce066da5d6eb9bc7a008c07f1ba9713f49573f85f86647dd3d38d327ab5bf"
+        },
+        {
+          "path": "development/levels/blockouts/wld-11/implementation.json",
+          "bytes": 3106,
+          "sha256": "389c3c953d09a0b3508794ebdf95c400a1066ac55c18a178157d698fe7f7e165"
+        },
+        {
+          "path": "development/levels/blockouts/wld-11/NEXT.md",
+          "bytes": 1014,
+          "sha256": "e8816f6c6a56f38ff91256f013815f57daa9bccab9f53dc95e2ef5300bad1956"
+        },
+        {
+          "path": "development/levels/blockouts/wld-11/rough-shell.blend",
+          "bytes": 133316,
+          "sha256": "51bf1fec4af047a401a047260523b5c91365e04c692a7be46257f377af55b6dc"
+        },
+        {
+          "path": "development/levels/blockouts/wld-11/rough-shell.glb",
+          "bytes": 1084104,
+          "sha256": "0e9642e80ae5ecb725c2fdb2e0e7d4aa6477bf6404bc04ade243c393afd68d7f"
+        },
+        {
+          "path": "development/levels/blockouts/wld-11/preview.png",
+          "bytes": 602864,
+          "sha256": "4f5defdd92d8760828c59ec2e6f4a22908d6c1d2e4007df3054cc91d54b2503f"
+        },
+        {
+          "path": "development/levels/model-requirements/wld-11.json",
+          "bytes": 18233,
+          "sha256": "90747ea20be900845e728260eff60b1c291ae0cc9f03624a5b19b836f82b90d4"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/wld-11/plan.json",
+          "bytes": 52912,
+          "sha256": "7fdf7a4fd202d3baa4d30ee4e8c749ffac6e59a1bcd32459b178c90fb8436e0d"
+        },
+        {
+          "path": "development/levels/power-plans/wld-11.json",
+          "bytes": 1544,
+          "sha256": "bff9b3e8891491e06fde3ef41a88d25cd8b3607f71191a02acb910b2280f124c"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [],
+      "planning_spaces": 13,
+      "planning_elevations_m": [
+        0,
+        1.2
+      ],
+      "generic_purpose_reservations": [
+        "stage",
+        "entry",
+        "main",
+        "service",
+        "south-deck",
+        "north-deck",
+        "house-a",
+        "house-b",
+        "chapel",
+        "warehouse",
+        "shack",
+        "ferry",
+        "pump"
+      ],
+      "runtime_capture": {
+        "kind": "NO_RUNTIME_CAPTURE",
+        "matrix": null,
+        "rooms": 0,
+        "directional_views": 0,
+        "missing_views": 0,
+        "displaced_cameras": 0,
+        "manual_acceptance": "NOT_ACCEPTED"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "WLD-12",
+      "title": "Gallows Pass Railway",
+      "folder": "wld-12",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/wld-12/layout.json",
+          "bytes": 17166,
+          "sha256": "a873a8669fdec20b35cdcfdb0c8b97e39b9ef18b26aa545423b61961918b155d"
+        },
+        {
+          "path": "development/levels/blockouts/wld-12/implementation.json",
+          "bytes": 4658,
+          "sha256": "7c985b31192bdc302365258bad0d6ab92a342e777f81ce9b14f508a76569e5dc"
+        },
+        {
+          "path": "development/levels/blockouts/wld-12/NEXT.md",
+          "bytes": 1096,
+          "sha256": "a74e622342915c51f4a709e0e3e60cefca9d24894f3943e89d5cef0d391ace8e"
+        },
+        {
+          "path": "development/levels/blockouts/wld-12/rough-shell.blend",
+          "bytes": 142268,
+          "sha256": "4a91504c0dcfaccd3e515599182494e7918c5c0c6b64f26affbd9b83156bc773"
+        },
+        {
+          "path": "development/levels/blockouts/wld-12/rough-shell.glb",
+          "bytes": 1342336,
+          "sha256": "b1d0d8929cdc63cc5561a5de773fb17e7a5d9aadd4cd16003860837f8aa51f98"
+        },
+        {
+          "path": "development/levels/blockouts/wld-12/preview.png",
+          "bytes": 607808,
+          "sha256": "582b97d4a5dd3afa9d29abca5b2a5160431ff601deecc884d53981995972b7e7"
+        },
+        {
+          "path": "development/levels/model-requirements/wld-12.json",
+          "bytes": 20854,
+          "sha256": "92c1f0aa3bb0cc41ecc157e50f6c5b7a739752406ffd71bd29038fe79dfb2951"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/wld-12/plan.json",
+          "bytes": 57554,
+          "sha256": "7619e54d583766b0645b3338770629d89952c5b8ed03d7bdcec02e37aa53c34b"
+        },
+        {
+          "path": "development/levels/power-plans/wld-12.json",
+          "bytes": 1535,
+          "sha256": "9b62dd935cb497a172f3ed842b46486d31f48d48e818f3de2b7b5b9d8f42b5b5"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [],
+      "planning_spaces": 14,
+      "planning_elevations_m": [
+        -3,
+        0
+      ],
+      "generic_purpose_reservations": [
+        "stage",
+        "entry",
+        "signal",
+        "cutting",
+        "coach-a",
+        "coach-b",
+        "siding",
+        "store",
+        "trestle",
+        "tunnel",
+        "refuge",
+        "lower",
+        "west-return",
+        "crossing"
+      ],
+      "runtime_capture": {
+        "kind": "NO_RUNTIME_CAPTURE",
+        "matrix": null,
+        "rooms": 0,
+        "directional_views": 0,
+        "missing_views": 0,
+        "displaced_cameras": 0,
+        "manual_acceptance": "NOT_ACCEPTED"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "WLD-13",
+      "title": "Greywater Cannery",
+      "folder": "wld-13",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/wld-13/layout.json",
+          "bytes": 17939,
+          "sha256": "4d8dd90826c02b30cb4c64073f745a847f63e16110aaa4f8297b4543e0c6a732"
+        },
+        {
+          "path": "development/levels/blockouts/wld-13/implementation.json",
+          "bytes": 7100,
+          "sha256": "252e330cb14cb56ee30ffb296085f9f083d03268c6ee39904e85a9bc0d8b06da"
+        },
+        {
+          "path": "development/levels/blockouts/wld-13/NEXT.md",
+          "bytes": 1024,
+          "sha256": "c64cf98a6c691e0621c01eb801ae999bb8c6ec200ca23476acbb443c735fcecc"
+        },
+        {
+          "path": "development/levels/blockouts/wld-13/rough-shell.blend",
+          "bytes": 160790,
+          "sha256": "77fdeac0c3c3774a53807b8f992db88983cc89ab808026a25dc6afa62a5a08f3"
+        },
+        {
+          "path": "development/levels/blockouts/wld-13/rough-shell.glb",
+          "bytes": 1238476,
+          "sha256": "d815edf727f4543d79e5f1d8ab1297d67e105a738a1e89f85d0daf0bb6a0e531"
+        },
+        {
+          "path": "development/levels/blockouts/wld-13/preview.png",
+          "bytes": 635552,
+          "sha256": "b8d54f90f01ee4b3e30c2ebd31c586fd31faa7fc393ed2bb02424b04c394dd92"
+        },
+        {
+          "path": "development/levels/model-requirements/wld-13.json",
+          "bytes": 20678,
+          "sha256": "0098af4d5a6cd29541e9440b1f8fe4f5d01c3e65a0e7431076d1922cf1137561"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/wld-13/plan.json",
+          "bytes": 53658,
+          "sha256": "85c5df5eb3bfa76d72707041c0e6bb1861c4892cc0bd453332b8a3313c85bce6"
+        },
+        {
+          "path": "development/levels/power-plans/wld-13.json",
+          "bytes": 1539,
+          "sha256": "b0493375e6eed8dc66e0068c3642baaac06ea6730eddfcff0bf74071f10b7798"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [],
+      "planning_spaces": 14,
+      "planning_elevations_m": [
+        0,
+        3
+      ],
+      "generic_purpose_reservations": [
+        "stage",
+        "entry",
+        "processing",
+        "cold",
+        "boiler",
+        "wash",
+        "office",
+        "stores",
+        "dock",
+        "bunk",
+        "mess",
+        "forest",
+        "side-yard",
+        "gallery"
+      ],
+      "runtime_capture": {
+        "kind": "NO_RUNTIME_CAPTURE",
+        "matrix": null,
+        "rooms": 0,
+        "directional_views": 0,
+        "missing_views": 0,
+        "displaced_cameras": 0,
+        "manual_acceptance": "NOT_ACCEPTED"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "WLD-14",
+      "title": "Morrow Point Lightstation",
+      "folder": "wld-14",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/wld-14/layout.json",
+          "bytes": 37268,
+          "sha256": "080e5ac734ad19a9027c775b2beb84f5717855eaa5461cc569106e38b7537800"
+        },
+        {
+          "path": "development/levels/blockouts/wld-14/implementation.json",
+          "bytes": 9063,
+          "sha256": "d97da8b755f4a93707e247ed8b6056637912e9d623f5a463d7c1e93b0c890ea9"
+        },
+        {
+          "path": "development/levels/blockouts/wld-14/NEXT.md",
+          "bytes": 1496,
+          "sha256": "d1b09c78e0c5a1689c2bd8d8716ed7e0043bc687ccb048d49ced7f9425b7d414"
+        },
+        {
+          "path": "development/levels/blockouts/wld-14/rough-shell.blend",
+          "bytes": 452827,
+          "sha256": "6b8d0496c954c075010f6fe6c53264cf6880168668c432b43b72dc886284a27b"
+        },
+        {
+          "path": "development/levels/blockouts/wld-14/rough-shell.glb",
+          "bytes": 2937220,
+          "sha256": "81dbb0d76ea5e0e6259c35915e9ed6e0bd6fd6930f04e7c5b4531b05e5334c00"
+        },
+        {
+          "path": "development/levels/blockouts/wld-14/preview.png",
+          "bytes": 691358,
+          "sha256": "3d5b7c6af0c6fd7845c660fd67f8f661b15139a6d4f2966e35ad9d88c6d17082"
+        },
+        {
+          "path": "development/levels/model-requirements/wld-14.json",
+          "bytes": 16064,
+          "sha256": "f90a7552c683bdebff50ada8d926bff8975eabc638aa0b2bc2184dd22e9e8a0a"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/wld-14/plan.json",
+          "bytes": 69299,
+          "sha256": "47a1093461933eb34fa45de1f2e7c748cb920b8d2b1930a581fc4a751bb439fa"
+        },
+        {
+          "path": "development/levels/power-plans/wld-14.json",
+          "bytes": 1537,
+          "sha256": "6a420d92408eb12964a3bafb822a3d150b057bcd08861a42ac59e1c0430aa628"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [],
+      "planning_spaces": 23,
+      "planning_elevations_m": [
+        0,
+        3.2,
+        3.6,
+        7.2,
+        10.8,
+        14.4,
+        18.0
+      ],
+      "generic_purpose_reservations": [],
+      "runtime_capture": {
+        "kind": "NO_RUNTIME_CAPTURE",
+        "matrix": null,
+        "rooms": 0,
+        "directional_views": 0,
+        "missing_views": 0,
+        "displaced_cameras": 0,
+        "manual_acceptance": "NOT_ACCEPTED"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "WLD-15",
+      "title": "MV Saint Elara",
+      "folder": "wld-15",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/wld-15/layout.json",
+          "bytes": 17569,
+          "sha256": "7e73e778acdf196caf28e4be5a9bf264035eb9ffa6f8bdaff413aadf280c10c3"
+        },
+        {
+          "path": "development/levels/blockouts/wld-15/implementation.json",
+          "bytes": 6092,
+          "sha256": "325e61bee60fe3f56c4ba693b7101c0172a6c2b80137d566c1e83972b3b00088"
+        },
+        {
+          "path": "development/levels/blockouts/wld-15/NEXT.md",
+          "bytes": 1449,
+          "sha256": "e2ef3e19f0ea78cd21ebe3812c49cf5df007385896a47b2d08628a03ca305703"
+        },
+        {
+          "path": "development/levels/blockouts/wld-15/rough-shell.blend",
+          "bytes": 310113,
+          "sha256": "87b775383b64882aff41699b1638649951f69f4e75f97909b31e2815a6266f24"
+        },
+        {
+          "path": "development/levels/blockouts/wld-15/rough-shell.glb",
+          "bytes": 1314904,
+          "sha256": "b5eb478c1f1e876f453452ca978c361520df47f588568e8bd931c3849da792d5"
+        },
+        {
+          "path": "development/levels/blockouts/wld-15/preview.png",
+          "bytes": 622051,
+          "sha256": "4e673faf43c0d235aca70d1325d42dec8014ccac49efaac2a2f067456c6328f4"
+        },
+        {
+          "path": "development/levels/model-requirements/wld-15.json",
+          "bytes": 12154,
+          "sha256": "83c815b4a7b6fcdf78f72510f4620bc51097526a92cec1b15539cd9195b42db3"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/wld-15/plan.json",
+          "bytes": 53557,
+          "sha256": "c7d9d909ea4fb262f6ecc60fa7a24a49e6464ea59113f20608a4786422f2b50f"
+        },
+        {
+          "path": "development/levels/power-plans/wld-15.json",
+          "bytes": 1557,
+          "sha256": "25eb0d9cf05995f3c66f8f516a8c13fdacc766988dd77f00d6daaef465026893"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [],
+      "planning_spaces": 16,
+      "planning_elevations_m": [
+        -3,
+        0,
+        3,
+        6
+      ],
+      "generic_purpose_reservations": [],
+      "runtime_capture": {
+        "kind": "NO_RUNTIME_CAPTURE",
+        "matrix": null,
+        "rooms": 0,
+        "directional_views": 0,
+        "missing_views": 0,
+        "displaced_cameras": 0,
+        "manual_acceptance": "NOT_ACCEPTED"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "WLD-16",
+      "title": "Eight Pines Motor Lodge",
+      "folder": "wld-16",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/wld-16/layout.json",
+          "bytes": 18485,
+          "sha256": "58c73bd8f3693cad8bc163b03546b177c5e84bf835d7715605d56a71af3fe054"
+        },
+        {
+          "path": "development/levels/blockouts/wld-16/implementation.json",
+          "bytes": 3395,
+          "sha256": "28208bd15962bff139ed2029dc2fe4d3449c79a7e43257a11ce9337d6f99db3a"
+        },
+        {
+          "path": "development/levels/blockouts/wld-16/NEXT.md",
+          "bytes": 1522,
+          "sha256": "d6fb2b0866e63947a375db0043e83508c1c296d84db14a1e7d19f8e9514ab521"
+        },
+        {
+          "path": "development/levels/blockouts/wld-16/rough-shell.blend",
+          "bytes": 205467,
+          "sha256": "3fcc5b6c4344e6bf3fd57d5aac16c8da862fc076de2ef63c544a92754dba4ccf"
+        },
+        {
+          "path": "development/levels/blockouts/wld-16/rough-shell.glb",
+          "bytes": 1764484,
+          "sha256": "5f5464357dad7b301301fb947a1b71e4234f0ba35800afe126a9859b2c8b0a61"
+        },
+        {
+          "path": "development/levels/blockouts/wld-16/preview.png",
+          "bytes": 674457,
+          "sha256": "924f7e5ba595f2cabcf9bef9bb7025e36b8286f8c2501e70d2de563d90a5514c"
+        },
+        {
+          "path": "development/levels/model-requirements/wld-16.json",
+          "bytes": 14526,
+          "sha256": "a5d8ac7fe31b2be4ac349ec3657d812fda477a87934566c8092dc230d810937d"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/wld-16/plan.json",
+          "bytes": 51992,
+          "sha256": "6d9719765e84bdef9f26702741da6ba7decca3d42de5dbbf5b4a9eee9af8bfef"
+        },
+        {
+          "path": "development/levels/power-plans/wld-16.json",
+          "bytes": 1554,
+          "sha256": "b1e17bb00dc42fbca511ed734bdc0b78cbb08ed88cedc48ad3c9d74c5b19a79a"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [],
+      "planning_spaces": 19,
+      "planning_elevations_m": [
+        0
+      ],
+      "generic_purpose_reservations": [],
+      "runtime_capture": {
+        "kind": "NO_RUNTIME_CAPTURE",
+        "matrix": null,
+        "rooms": 0,
+        "directional_views": 0,
+        "missing_views": 0,
+        "displaced_cameras": 0,
+        "manual_acceptance": "NOT_ACCEPTED"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "WLD-17",
+      "title": "Battery Brackenhead",
+      "folder": "wld-17",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/wld-17/layout.json",
+          "bytes": 16435,
+          "sha256": "392474ba8bbdd4c03ac96283355bc4f08023fc72d745fe0643c608f5f75e9e37"
+        },
+        {
+          "path": "development/levels/blockouts/wld-17/implementation.json",
+          "bytes": 7001,
+          "sha256": "6fc3de5b8cab5244ca775c8ead0415490c659d120ac57ba75344d57e1890ec31"
+        },
+        {
+          "path": "development/levels/blockouts/wld-17/NEXT.md",
+          "bytes": 1470,
+          "sha256": "915046752f82cc66fd2cf08dc1565c2a341eea1c74b2b4d3b95cbc8075d87b6a"
+        },
+        {
+          "path": "development/levels/blockouts/wld-17/rough-shell.blend",
+          "bytes": 250325,
+          "sha256": "ce7c0090f94cccb2222316ad3f3aeede73290ed20c8b47f821c975f5e3947988"
+        },
+        {
+          "path": "development/levels/blockouts/wld-17/rough-shell.glb",
+          "bytes": 1693676,
+          "sha256": "202020ddc1c27820125dd2ccb5b26563f7563a6b7dbc328799e2f394e6570551"
+        },
+        {
+          "path": "development/levels/blockouts/wld-17/preview.png",
+          "bytes": 634295,
+          "sha256": "e39a09574275c67c6bb7532266a1b52a062d83da74ae0171aaa0bb4caa306750"
+        },
+        {
+          "path": "development/levels/model-requirements/wld-17.json",
+          "bytes": 11217,
+          "sha256": "a870127884214bbef6325fc43454bf48c72b67d5632863785b7e304dfb1d489a"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/wld-17/plan.json",
+          "bytes": 50092,
+          "sha256": "40c8606fc3148b6182b886cf1644a5cff0b5bc6c248005b5a5a232d55ce1e596"
+        },
+        {
+          "path": "development/levels/power-plans/wld-17.json",
+          "bytes": 1543,
+          "sha256": "dc00d27aaa0c320bfe1d3eac332312d390f95f32797471ac9c7030fa112f2851"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [],
+      "planning_spaces": 15,
+      "planning_elevations_m": [
+        0,
+        2,
+        4,
+        7
+      ],
+      "generic_purpose_reservations": [],
+      "runtime_capture": {
+        "kind": "NO_RUNTIME_CAPTURE",
+        "matrix": null,
+        "rooms": 0,
+        "directional_views": 0,
+        "missing_views": 0,
+        "displaced_cameras": 0,
+        "manual_acceptance": "NOT_ACCEPTED"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "WLD-18",
+      "title": "Site Cinder-6",
+      "folder": "wld-18",
+      "expansion": false,
+      "source_inventory": [
+        {
+          "path": "development/levels/layouts/wld-18/layout.json",
+          "bytes": 18085,
+          "sha256": "64ef060d286f7f0e3b3b8b128b857df006de4ff34ce1390c3da94c5420f8fbc1"
+        },
+        {
+          "path": "development/levels/blockouts/wld-18/implementation.json",
+          "bytes": 6647,
+          "sha256": "38b5cf2d410d6df8bfb78449083d114dfe03b700f17fda088d6ac08b06ac12ed"
+        },
+        {
+          "path": "development/levels/blockouts/wld-18/NEXT.md",
+          "bytes": 1456,
+          "sha256": "4d963a311da6667de1459b3d7190b41d76b588a20d26f6a5567ab5a37221773f"
+        },
+        {
+          "path": "development/levels/blockouts/wld-18/rough-shell.blend",
+          "bytes": 269767,
+          "sha256": "8d50374a1daef03110ea79263aa7f2858fd2ee47d907b1fadd13cf2ca698ea46"
+        },
+        {
+          "path": "development/levels/blockouts/wld-18/rough-shell.glb",
+          "bytes": 1730836,
+          "sha256": "810d80b78e7465c322bc4eb48c13a9e529959545bf953429750fe388b1cff97f"
+        },
+        {
+          "path": "development/levels/blockouts/wld-18/preview.png",
+          "bytes": 613973,
+          "sha256": "12c2a5b617739c3595e6df6b910a103b8068f45a4e91668bc45552b3119359bc"
+        },
+        {
+          "path": "development/levels/model-requirements/wld-18.json",
+          "bytes": 12071,
+          "sha256": "de37256815336151c0082c842884bde222d064aac7b704658a5616ada8fd497a"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/wld-18/plan.json",
+          "bytes": 53746,
+          "sha256": "73fbe71d5fb63e4dcdd4dabddc0de4c1358a6fd94f54c80e5cb2a0bf40f97598"
+        },
+        {
+          "path": "development/levels/power-plans/wld-18.json",
+          "bytes": 1563,
+          "sha256": "18e2b68d815c4f5ff2e25c59d513d8fd07a5fd4a926e4c9b7262cf301d2e3fc5"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [],
+      "planning_spaces": 16,
+      "planning_elevations_m": [
+        -8,
+        -4,
+        0
+      ],
+      "generic_purpose_reservations": [],
+      "runtime_capture": {
+        "kind": "NO_RUNTIME_CAPTURE",
+        "matrix": null,
+        "rooms": 0,
+        "directional_views": 0,
+        "missing_views": 0,
+        "displaced_cameras": 0,
+        "manual_acceptance": "NOT_ACCEPTED"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "title": "Saint Bartholomew's Cemetery & Vale Mortuary",
+      "folder": "wld-07-mortuary",
+      "expansion": true,
+      "source_inventory": [
+        {
+          "path": "development/levels/layout-expansions/wld-07-mortuary/layout.json",
+          "bytes": 22856,
+          "sha256": "36dd0c843f6162bbb7461f729a20bf2c4ed5345f7c74cb7eb89ec37379fb06c0"
+        },
+        {
+          "path": "development/levels/blockouts/wld-07-mortuary/implementation.json",
+          "bytes": 7014,
+          "sha256": "5c4ab5f80bda622b31068e4ad2ea18f9e93340792e393e3fc08fbc500d482bb4"
+        },
+        {
+          "path": "development/levels/blockouts/wld-07-mortuary/NEXT.md",
+          "bytes": 1287,
+          "sha256": "dd2deaed8ec9f77dcd41f83b14bc1b4f9d85ee38fdcdd3370c8f74f36d1cdd87"
+        },
+        {
+          "path": "development/levels/blockouts/wld-07-mortuary/rough-shell.blend",
+          "bytes": 289120,
+          "sha256": "014e0a8a06c078acbe305af9f6994a5c73698ff3abb52b9667fb01a8198fd13f"
+        },
+        {
+          "path": "development/levels/blockouts/wld-07-mortuary/rough-shell.glb",
+          "bytes": 2269244,
+          "sha256": "b2a89076c5721ac3f025855dffbd358a910227a3ebcc3f4bc40ba8c8bdb5a3ea"
+        },
+        {
+          "path": "development/levels/blockouts/wld-07-mortuary/preview.png",
+          "bytes": 702972,
+          "sha256": "eefcdda2c343c7323561d974f0980fadb28d9a49d699111fcc1458a39adce000"
+        },
+        {
+          "path": "development/levels/model-requirements/wld-07-mortuary.json",
+          "bytes": 14314,
+          "sha256": "6e4a2e25288809065a04ba35fcf3aa84c6b2bffd1cfd1e0911e771da3bbf9120"
+        },
+        {
+          "path": "development/levels/edge-sky-plans/wld-07-mortuary/plan.json",
+          "bytes": 59959,
+          "sha256": "c9260e42c6b7c57504b3c5dc549d3091281d3b765c0fbdb8424219eeb17c9bcd"
+        },
+        {
+          "path": "development/levels/power-plans/wld-07-mortuary.json",
+          "bytes": 1635,
+          "sha256": "19335025248e6a7d75df7fe6a3d648ca9cd9cc21c9214d250c5e4000522a3c85"
+        }
+      ],
+      "absent_optional_or_unimplemented_inputs": [],
+      "planning_spaces": 20,
+      "planning_elevations_m": [
+        -3,
+        0
+      ],
+      "generic_purpose_reservations": [
+        "stage",
+        "entry",
+        "avenue",
+        "chapel",
+        "cottage",
+        "garden",
+        "east-graves",
+        "old-graves",
+        "tool",
+        "west-stair",
+        "east-stair",
+        "ossuary",
+        "chamber"
+      ],
+      "runtime_capture": {
+        "kind": "NO_RUNTIME_CAPTURE",
+        "matrix": null,
+        "rooms": 0,
+        "directional_views": 0,
+        "missing_views": 0,
+        "displaced_cameras": 0,
+        "manual_acceptance": "NOT_ACCEPTED"
+      },
+      "stage_decision": "IN_PROGRESS",
+      "next_action": "Inspect sources/captures and finish function program; no automatic architecture approval."
+    }
+  ]
+}

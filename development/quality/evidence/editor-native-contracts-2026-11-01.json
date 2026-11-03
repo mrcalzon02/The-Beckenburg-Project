@@ -1,0 +1,75 @@
+{
+  "schema": "beckenburg.editor-native-contracts/v1",
+  "sourceSha": "47b4ad47b6761dad3692c2391e3f2a678604a79d",
+  "implementationSha": "f8ebb9b4",
+  "mergedMain": "e1a9b5f81a2d472a63126da2c2bb3a9101a3ba04",
+  "branch": "map/first-principles-rebuild-plan",
+  "remoteReadback": "git ls-remote matched exact47b4ad47",
+  "localChecks": [
+    "Complete native Java17 source compilation after merging main e1a9b5f8",
+    "EditorAgentServiceTest including bounded unending-reader input refusal",
+    "EditorChangeIntegrationTest",
+    "EditorDiskRevisionTest: real mission/Castle peers, current singleton/game readback, unsaved edits, observe/undo/save, deletion/recovery and USER pinning",
+    "CastleSnapshotContractTest: immutable values, complete native validation, canonical door history and isolated default profile child",
+    "EditorSchemaCompatibilityTest: no metadata/yaw/future-layout flattening",
+    "LevelAuthoringIdentityTest and LevelAuthoringRecoveryTest",
+    "CastleDocumentRecoveryTest and existing Castle geometry/lighting migration tests",
+    "Actual Windows EditorAgentGuiTest and AssetImportTopologyGuiTest, real renderer/component PNGs and corner-for-corner runtime GLB readback",
+    "Public CLI fresh processes: House independent of corrupt Castle, structured open failures, explicit pre-open native recovery, Windows-1252/Unicode paths, stale codes and native parity",
+    "Independent editor JAR: EditorHistoryFailureTest, EditorDocumentStoreTest actual child crashes/staged races, RuntimeSceneContractTest, EditorCorePortabilityTest, EditorTopologyProjectTest"
+  ],
+  "negativeControl": {
+    "source": "0fb70ac20610f5e373e64f0243aafde92c7d1e2d",
+    "test": "EditorHistoryFailureTest",
+    "result": "Expected failure against previous compiled EditorHistory: partial host state and lost undo/redo stacks",
+    "log": "history-restore-negative.txt"
+  },
+  "ci": {
+    "nativeHost": {
+      "run": 41367120522,
+      "status": "success"
+    },
+    "standalone": {
+      "run": 41367126147,
+      "status": "success"
+    },
+    "fullRound": {
+      "run": 41367132677,
+      "status": "success",
+      "expectedManifest": 310,
+      "passed": 310,
+      "failed": 0,
+      "skipped": 0,
+      "rawExcerpt": "editor-full-round-47b4ad47.txt"
+    },
+    "gpu": {
+      "sourceSha": "c679aedbca82e2e334f22e2500a93f9515868a9f",
+      "run": 41368128355,
+      "status": "success",
+      "rawExcerpt": "editor-gpu-c679aedb.txt"
+    }
+  },
+  "priorAcceptedSource": {
+    "sourceSha": "0fb70ac20610f5e373e64f0243aafde92c7d1e2d",
+    "fullRound": 41360981244,
+    "passed": 307,
+    "failed": 0,
+    "skipped": 0,
+    "nativeHost": 41360968300,
+    "standalone": 41360973706
+  },
+  "canonicalLfSourceSha256": {
+    "src\\main\\java\\org\\beckenburg\\CastleLevelEdits.java": "2a1580dd3b634bdd62e3fcd765d09adba87026ecb2a45d4e3fc2bd86bdc1ca57",
+    "src\\main\\java\\org\\beckenburg\\LevelAuthoringSession.java": "4d58ad675ea3376baf22471e6d4956be0ae61e3eb0a38064d773124953d3cad1",
+    "src\\main\\java\\org\\beckenburg\\EditorAgentCli.java": "c2d33373e95ca565e9a7734641091844ea5e510bbdcb49451d1baf26e07fee83",
+    "src\\main\\java\\org\\beckenburg\\editor\\EditorHistory.java": "894ddb3fbbf48cec190e75d8a3e1c8ba89b41270cfd339d3624c7f34e039c19b",
+    "src\\main\\java\\org\\beckenburg\\editor\\RuntimeSceneDocument.java": "2dd7bed61376dfd6912d4208b510313c79a2f30fc133decd4933661b577bce3f",
+    "src\\main\\java\\org\\beckenburg\\SceneRenderer.java": "99dcbae842cdffb81dd2d74ea5516b4d289232fbf79c96478f665d87b117e4d8"
+  },
+  "limits": [
+    "Trusted local source/service/headless scope; authenticated MCP and broad scripting remain later gates.",
+    "Partial G2 indexed vertex authoring is delivered; primitives/picking/gizmos/edge-face modeling/material-normal interchange remain open.",
+    "No G0-G12, physical installed-loop, power-loss or FPS completion inferred.",
+    "Upstream6b9088f4 GPU41362364664 failed before USER-first (DEV-176), not UI smoke. Current persisted USER source passed actual Mesa all11 map residency plus three real UI cycles in GPU41368128355 at c679aedb. No physical GPU/FPS completion inferred."
+  ]
+}

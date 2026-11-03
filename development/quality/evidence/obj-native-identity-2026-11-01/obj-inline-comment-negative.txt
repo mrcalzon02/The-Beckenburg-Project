@@ -1,0 +1,13 @@
+Exception in thread "main" java.io.IOException: Invalid OBJ at line 11
+	at org.beckenburg.editor.EditorMeshPipeline.obj(EditorMeshPipeline.java:108)
+	at org.beckenburg.editor.EditorMeshPipeline.decode(EditorMeshPipeline.java:75)
+	at org.beckenburg.editor.EditorMeshPipeline.read(EditorMeshPipeline.java:71)
+	at org.beckenburg.editor.EditorObjIdentityTest.main(EditorObjIdentityTest.java:27)
+Caused by: java.lang.NumberFormatException: For input string: "#"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:654)
+	at java.base/java.lang.Integer.parseInt(Integer.java:786)
+	at org.beckenburg.editor.EditorMeshPipeline.positionIndex(EditorMeshPipeline.java:114)
+	at org.beckenburg.editor.EditorMeshPipeline.faceVertex(EditorMeshPipeline.java:122)
+	at org.beckenburg.editor.EditorMeshPipeline.obj(EditorMeshPipeline.java:100)
+	... 3 more

@@ -1,13 +1,10 @@
 package org.beckenburg.editor;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
@@ -24,7 +21,6 @@ public final class RuntimeSceneDocument {
     private static final int MAGIC=0x4253434e; // BSCN
     public static final int VERSION=1;
     private static final int MAX_NODES=4096,MAX_COMPONENTS=32,MAX_PROPS=128;
-    private static final long MAX_FILE_BYTES=8L*1024*1024;
     private RuntimeSceneDocument(){}
     private static String checked(String value,int max,String what)throws IOException {
         if(value==null||value.length()>max)
@@ -63,14 +59,18 @@ public final class RuntimeSceneDocument {
             }
         }
     }
-    public static void save(Path destination,RuntimeScene scene)throws IOException{
+    public static void save(Path destination,RuntimeScene scene)throws IOException{save(destination,scene,null,false);}
+    /** Return the exact saved revision; null expected requires a new document. */
+    public static String saveIfUnchanged(Path destination,RuntimeScene scene,String expectedSha256)throws IOException{
+        return save(destination,scene,expectedSha256,true);
+    }
+    private static String save(Path destination,RuntimeScene scene,String expectedSha256,boolean guarded)throws IOException{
         Objects.requireNonNull(destination);Objects.requireNonNull(scene);
         validate(scene);
-        Path parent=destination.toAbsolutePath().normalize().getParent();
-        Files.createDirectories(parent);
-        Path temp=Files.createTempFile(parent,".runtime-scene-",".tmp");
-        try{
-            try(var out=new DataOutputStream(new BufferedOutputStream(Files.newOutputStream(temp)))){
+        java.security.MessageDigest digest;
+        try{digest=java.security.MessageDigest.getInstance("SHA-256");}catch(java.security.NoSuchAlgorithmException impossible){throw new AssertionError(impossible);}
+        EditorDocumentStore.Writer writer=output->{
+            try(var out=new DataOutputStream(new BufferedOutputStream(new java.security.DigestOutputStream(output,digest)))){
                 out.writeInt(MAGIC);out.writeInt(VERSION);out.writeUTF(scene.sceneId());
                 out.writeInt(scene.nodes().size());
                 for(var n:scene.nodes()){
@@ -93,21 +93,32 @@ public final class RuntimeSceneDocument {
                     }
                 }
             }
-            if(Files.size(temp)>MAX_FILE_BYTES)
-                throw new IOException("Scene document exceeds 8 MiB budget");
-            var check=load(temp);
+        };
+        EditorDocumentStore.Validator prepared=temp->{
+            var check=readRaw(temp);
             if(!check.sceneId().equals(scene.sceneId())
                 ||!check.nodes().equals(scene.nodes()))
                 throw new IOException("Scene save/readback did not preserve nodes");
-            Files.move(temp,destination,StandardCopyOption.ATOMIC_MOVE,
-                StandardCopyOption.REPLACE_EXISTING);
-        }finally{Files.deleteIfExists(temp);}
+        };
+        if(guarded)EditorDocumentStore.saveIfUnchanged(destination,writer,RuntimeSceneDocument::readRaw,prepared,expectedSha256);
+        else EditorDocumentStore.save(destination,writer,RuntimeSceneDocument::readRaw,prepared);
+        return java.util.HexFormat.of().formatHex(digest.digest());
     }
-    public static InMemoryRuntimeScene load(Path path)throws IOException{
-        Objects.requireNonNull(path);
-        if(!Files.isRegularFile(path)||Files.size(path)>MAX_FILE_BYTES)
-            throw new IOException("Missing or oversized scene document");
-        try(var in=new DataInputStream(new BufferedInputStream(Files.newInputStream(path)))){
+    public record Loaded(InMemoryRuntimeScene scene,String fingerprint){}
+    public static InMemoryRuntimeScene load(Path path)throws IOException{return loadRevision(path).scene();}
+    public static Loaded loadRevision(Path path)throws IOException{
+        Objects.requireNonNull(path);recoverPending(path);byte[] bytes=EditorDocumentStore.readDocument(path);
+        return new Loaded(decode(bytes),EditorDocumentStore.fingerprint(bytes));
+    }
+    public static void recoverPending(Path path)throws IOException{
+        EditorDocumentStore.recoverPending(path,RuntimeSceneDocument::readRaw);
+    }
+    public static void restorePrevious(Path path,EditorDocumentStore.Validator hostValidator)throws IOException{
+        EditorDocumentStore.restorePrevious(path,RuntimeSceneDocument::readRaw,hostValidator);
+    }
+    static InMemoryRuntimeScene readRaw(Path path)throws IOException{return decode(EditorDocumentStore.readDocument(path));}
+    private static InMemoryRuntimeScene decode(byte[] bytes)throws IOException{
+        try(var in=new DataInputStream(new java.io.ByteArrayInputStream(bytes))){
             if(in.readInt()!=MAGIC||in.readInt()!=VERSION)
                 throw new IOException("Unsupported editor scene document");
             String id=read(in,128,"scene ID");

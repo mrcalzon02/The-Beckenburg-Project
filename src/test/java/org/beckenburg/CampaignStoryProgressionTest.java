@@ -104,13 +104,46 @@ public final class CampaignStoryProgressionTest {
             var farmRound=round(third,pinned);win(farmRound);
             check(loaded.settleStory(farmRound,2)&&loaded.storyCheckpoint()==3,
                 "Three genuine victories unlock the fourth chapter index");
-            blocked=false;
-            try{loaded.dispatchStory(3);}catch(IllegalArgumentException unavailable){blocked=true;}
-            check(blocked,"Chapter four cannot silently use House geometry as a placeholder");
             ProfileStore persisted=new ProfileStore(file);persisted.load();
             check(persisted.storySeed()==pinned&&persisted.storyCheckpoint()==3
                 &&persisted.archives().size()==5,
                 "Story seed, victories, replay income and archives remain intact on disk");
+            List<SiteCatalog.Location> laterBuilt=List.of(SiteCatalog.Location.MANSION,
+                SiteCatalog.Location.PRISON,SiteCatalog.Location.ASYLUM,SiteCatalog.Location.ACADEMY,
+                SiteCatalog.Location.COLLEGE,SiteCatalog.Location.CHURCH);
+            Set<String> dispatchedSources=new HashSet<>();
+            for(int offset=0;offset<laterBuilt.size();offset++){
+                int ordinal=offset+3;
+                blocked=false;
+                try{persisted.dispatchStory(ordinal+1);}catch(IllegalArgumentException locked){blocked=true;}
+                check(blocked,"Cannot skip the next real victory gate at chapter "+ordinal);
+                var chapter=persisted.dispatchStory(ordinal);
+                check(chapter.built()&&chapter.map()==laterBuilt.get(offset),
+                    "Canonical chapter resolves its own currently dispatched map: "+ordinal);
+                var mission=round(chapter,pinned);
+                check(mission.map().site().name().equals(chapter.map().name())
+                    &&dispatchedSources.add(mission.map().level().id()),
+                    "No House fallback or reused source for "+chapter.name());
+                win(mission);
+                check(persisted.settleStory(mission,ordinal)&&persisted.storyCheckpoint()==ordinal+1,
+                    "Physical victory advances exactly one current chapter: "+ordinal);
+                int paid=persisted.currency();
+                check(!persisted.settleStory(mission,ordinal)&&persisted.currency()==paid,
+                    "Every later receipt remains idempotent");
+                var reloaded=new ProfileStore(file);reloaded.load();
+                check(reloaded.storySeed()==pinned&&reloaded.storyCheckpoint()==ordinal+1
+                    &&reloaded.archives().size()==ordinal+3,
+                    "Later victory, archive and seed survive restart: "+ordinal);
+                persisted=reloaded;
+            }
+            check(persisted.storyCheckpoint()==9,"All nine current built-ins have real victory gates");
+            for(int ordinal=9;ordinal<CampaignStory.LENGTH;ordinal++){
+                check(!CampaignStory.chapter(pinned,ordinal).built(),
+                    "Unintegrated destination remains unavailable: "+ordinal);
+                blocked=false;
+                try{persisted.dispatchStory(ordinal);}catch(IllegalArgumentException unavailable){blocked=true;}
+                check(blocked,"An unfinished destination cannot silently use another map: "+ordinal);
+            }
             ProfileStore multiplayer=new ProfileStore(network);
             multiplayer.addNetworkPayout(UUID.randomUUID(),4000,50);
             check(multiplayer.currency()==4000&&persisted.currency()!=4000,
@@ -120,7 +153,7 @@ public final class CampaignStoryProgressionTest {
             check(ProfileStore.multiplayerPath().equals(ProfileStore.defaultPath()
                 .resolveSibling("multiplayer.properties")),
                 "Production LAN payouts use a different profile filename");
-            System.out.println("PASS 22-chapter seeded campaign, three playable victory gates, replay rewards and separate LAN wallet");
+            System.out.println("PASS 22-chapter seeded campaign, nine actual map victory gates, unfinished destination locks, persisted replay rewards and separate LAN wallet");
         }finally{
             Files.deleteIfExists(file);Files.deleteIfExists(network);
             Files.deleteIfExists(directory);

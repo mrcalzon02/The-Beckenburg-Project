@@ -1,0 +1,12 @@
+Room 6: Parents bedroom and dressing
+Site: The Briar House — rebuild graybox / first-principles-graybox-v1-e720596579840f0c
+Bounds (X,Z): 12.00,14.70 -> 18.00,20.50; floor 2.80m; clear height 2.80m
+Geometric centre: 15.00,17.60; traversable: true
+Actual 4-view camera: 15.00,2.80,17.60; displacement 0.00m
+Portal access / windows / stairs: P8 door -> 5 Upper landing and linen storage 1.05m @(18.00,2.80,19.00); P22 window -> 12 Rear garden and patio reservation 1.25m @(12.00,2.80,17.60); P23 window -> 13 Street and entrance approach 1.25m @(15.00,2.80,20.50)
+Connected in authored portal graph to van: true
+Props: 0; sockets: 4
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

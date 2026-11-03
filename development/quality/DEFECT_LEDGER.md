@@ -10,6 +10,90 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-231 — Hunter pose history survives level replacement and departed seats
+
+**Status:** fixed-scoped; actual TCP gameplay and RTX OpenGL acceptance pass · **Affected:** Shared hunter animation tracker and LanWorldPanel peer lifecycle
+
+Reusing a seat near its prior coordinates in another scene can animate a newly stationary hunter; departing seats retain their last sampled pose.
+
+Cause / uncertainty: Renderer animation state was keyed by seat without a scene boundary or explicit peer-departure reset.
+
+Fix / next action: Reset the tracker when the world map instance changes and forget a departing seat in world, video and photo renderers. Exercise the same world-render method used by live gameplay.
+
+Evidence and verification: LanHunterAnimationGameplayTest passes real STEP and Ctrl transitions for all three classes, stop, scene replacement and departing crouched seat through actual TCP/onEvent/renderWorld. A separate compiled negative control omitting scene reset fails exactly at new scene resets gait cleric. Positive RTX 5070 OpenGL test exits 0. development/quality/evidence/hunter-gameplay-2026-11-02/.
+
+Older-map obligation: Shared lifecycle applies to every map; acceptance captures use House fixtures. No all-map or multi-PC animation acceptance is inferred.
+
+### DEV-230 — Rear cargo liner, roof and hinges sit behind the donor body and generic doors discard its atlas
+
+**Status:** fixed-scoped; 13 focused checks pass; installed GPU review pending · **Affected:** Shared Castle and every investigation-arrival van
+
+Rear liner/roof/floor project behind the outer shell; doors pivot from unsupported points and use plain panels with invented windows.
+
+Cause / uncertainty: Exterior fit uses bumper Z -2.10 rather than actual donor rear sheet-metal Z -1.982265830, shifting the body about 19cm forward of its interior. Donor large rear panel faces were omitted.
+
+Fix / next action: Use actual donor rear datum; join liner and exterior profiles with a finished rear frame; restore all six original donor door triangles/UV corners and attach visible hinges at outer jambs.
+
+Evidence and verification: VanRearFitTest checks actual rear datum, rendered UV corners and pivot attachment; matched rear-open, rear-closed and rear-frame views at all three captured sites. See development/levels/previews/van-unification/ and development/quality/evidence/van-unification-2026-11-02/.
+
+Older-map obligation: Shared-module code and all-site station regression verified; individual image review covers Castle, House and Hollow Creek. No complete older-map or installed GPU acceptance inferred.
+
+### DEV-229 — Full-width cargo deck slices through the exterior rear wheel barrels
+
+**Status:** fixed-scoped; 13 focused checks pass; installed GPU review pending · **Affected:** Shared Castle and every investigation-arrival van
+
+From outside, the raised cargo floor forms a horizontal sheet across each rear tyre.
+
+Cause / uncertainty: Prototype floor slab spans the full body width through the donor wheel opening; a bottom face on a wheel cover repeats the intersection.
+
+Fix / next action: Split the deck around both wheel openings, terminating it at the housing inner wall; leave wheel-well undersides open. Optical floor slabs share the cutout.
+
+Evidence and verification: VanWheelWellTest rejects actual deck triangles overlapping wheel volumes; matched exterior-wheel closeups at Castle, House and Hollow Creek. See development/levels/previews/van-unification/ and development/quality/evidence/van-unification-2026-11-02/.
+
+Older-map obligation: Shared-module code and all-site station regression verified; individual image review covers Castle, House and Hollow Creek. No complete older-map or installed GPU acceptance inferred.
+
+### DEV-227 — Imported rear tyres protrude through the unified van cargo floor
+
+**Status:** fixed-scoped; 13 focused local checks pass; installed GPU review pending · **Affected:** Shared Castle and investigation-arrival van module; runtime captures at Castle, House and Hollow Creek
+
+Rear tread and hub remain exposed above the cargo floor and beyond the small legacy wheel cover.
+
+Cause / uncertainty: Imported tyre bounds exceed the prototype cover in both height and longitudinal span.
+
+Fix / next action: Fit closed 3D metal wheel housings around the actual tyres; wrap lower shelving and native-size stock packing around the housing; share shelf and housing coordinates with optical/aim blockers.
+
+Evidence and verification: development/levels/previews/van-unification/: 42 matched before/after production software-renderer PNGs. VanWheelWellTest fails baseline actual cap geometry and passes repair; VanRackStockTest checks all 372 units per tier with no housing intersections. Thirteen passing focused logs: development/quality/evidence/van-unification-2026-11-02/.
+
+Older-map obligation: Shared assembly repair reaches every VanStaging consumer. All-site station access includes a persisted custom map. Individual visual evidence covers Castle, House and Hollow Creek only; this does not certify every older map, installed gameplay or GPU performance.
+
+### DEV-228 — All-site van integration test depends on a selected developer custom level
+
+**Status:** fixed-scoped; isolated all-site check passes · **Affected:** VanModuleIntegrationTest, USER site
+
+The all-site test throws No authored user level selected on a clean profile.
+
+Cause / uncertainty: Site.values() includes USER but the test constructs HouseMap(USER) without authoring/selecting a fixture.
+
+Fix / next action: Use existing AuthoredTestSupport.userFixture() and fixture.map(site), preserving USER and all built-in locations in the assertions.
+
+Evidence and verification: VanModuleIntegrationTest.log in development/quality/evidence/van-unification-2026-11-02/; isolated test home and temporary directory; no developer selection required.
+
+Older-map obligation: Test-fixture correction only; no runtime level selection behavior changes.
+
+### DEV-226 — Playable hunters remain static while walking and crouch by squashing idle art
+
+**Status:** fixed-scoped; real TCP gameplay and local native RTX OpenGL build verified; multi-PC review pending · **Affected:** All three playable hunter appearances in the shared teammate billboard renderer
+
+Received teammate movement uses one standing turnaround; crouch scales that standing image vertically instead of bending knees.
+
+Cause / uncertainty: Only static four-view hunter art was packaged; RemoteBody crouch altered billboard height without selecting a new pose.
+
+Fix / next action: Add 36 generated transparent pose derivatives: two walking states and crouch across four views for each playable appearance. Select walking from received movement and crouch from host posture, retaining base idle and the same physical dimensions.
+
+Evidence and verification: HunterSpriteAnimationTest covers actual atlas frames, movement, stop, crouch, teleport, clock reset and production-rasterizer occlusion. CharacterDirectionalVisualTest, CharacterSpriteWorldMotionTest, GroundedSpriteFeetTest and CharacterBillboardAnchorTest pass. Asset-review preview and source/provenance: art/hunters/animation-v1/.
+
+Older-map obligation: Shared renderer applies across maps; this is not installed Windows multiplayer or per-map visual acceptance. Alternate concept-only appearances are not selectable and are not claimed implemented.
+
 ### DEV-001 — Paper-thin loft floor and apparent upstairs light bleed
 
 **Status:** fixed-scoped · **Affected:** Blackpine inspection loft
@@ -2250,17 +2334,19 @@ Evidence and verification: Source push and remote readback confirmed. New Castle
 
 Older-map obligation: Audit actual inventory/store routing in campaign preparation, multiplayer van rack, campaign co-op host/guest screens and existing menu back navigation individually. One Castle routing fix is not cross-mode persistence acceptance.
 
-### DEV-166 — Investigation doors snap instead of swinging
+### DEV-166 — Investigation doors snap between poses rather than physically swinging
 
-**Status:** animation-source-pushed-CI-and-installed-review-pending · **Affected:** House/Farmhouse/School and other HouseMap investigation portals, both solo and LAN
+**Status:** animation-source-pushed-CI-and-installed-review-pending · **Affected:** House, Farmhouse, School and shared HouseMap investigation portals (solo/LAN, including host door snapshots)
 
-The first House door instantly teleported to its open or closed pose, and the renderer's portal-only retained-mesh key could change the entire GPU scene identity when that door switched state. This was separately reported with an interaction hitch and full-screen flash (issue #44).
+Pressing E instantly swaps closed/open geometry; no visible motion, and the old portal-key cache path also resets the complete OpenGL scene while repainting.
 
-Code commits `814d7c1`, `ad2176c`, and `d1c857c` add a reversible, 450ms eased leaf swing, a moving-leaf centre-ray hit target, and settled-state GPU mesh caching keyed by the door pose, without a global GPU scene ID replacement. Solo now plays the door cue (`6def2a3`). `DoorSwingTest` was committed in `62b0ef3` and added to the full regression manifest in `b0afe0a`. An unrelated pre-existing `GpuUiSmoke` duplicate-variable compilation blocker was repaired in `f8fe48e`.
+Cause / uncertainty: Door state was stored solely as a Boolean, consumed directly by imported door geometry and interaction rays. Portal geometry caching reused the portal-only residency key, forcing GPU scene ID change when the same door switched pose.
 
-**Verification:** Source pushed; exact-source Java/full-round/GPU acceptance and actual Windows door-open/close captures remain pending. Physical collision still follows authoritative Boolean state immediately (not the rendered moving leaf). Broad CPU occlusion invalidation and installed hitch remain tracked separately under issue #44. Confirm pivot accuracy, first-frame continuity, LAN host/guest parity, light-through-door behavior, collision, and door sound before closing.
+Fix / next action: Source commits 814d7c1, ad2176c, d1c857c animate per-door eased visual opening/closing for 450ms, support mid-swing reversal and unchanged host snapshots, render moving leaves as transient meshes with settled-pose-specific retained GPU keys and maintain ray alignment. 62b0ef3 adds DoorSwingTest to full regression manifest b0afe0a4. 6def2a3 aligns solo door sound with LanSound.Cue.DOOR. Compile blocker in unrelated GPU acceptance smoke variable repaired in f8fe48e. Authoritative open/closed collision remains immediate; physical sweep collision is a separate acceptance/design concern. Broad CPU lighting-cache invalidation remains in issue #44.
 
-**Older-map obligation:** Inspect each authored site's hinge/pivot and multi-leaf doors, Castle gates, and van doors independently; do not generalize House acceptance.
+Evidence and verification: Live user report 2026-10-29 (House door snaps, hitches, flashes). Source pushes verified individually; full-round CI and real installed Windows GPU frame/motion capture pending. Do not claim measured 450ms visible animation without hardware frames and profile.
+
+Older-map obligation: Audit all authored site door meshes, hinge pivots, double doors/gates, Castle doorway and van cargo doors independently; shared HouseMap source alone does not certify older maps.
 
 ### DEV-167 — 26 numbered model assets require source/UV/material and rendered visual repair
 
@@ -2286,9 +2372,555 @@ Cause / uncertainty: EditorMeshPipeline flattens imported GLB geometry to triang
 
 Fix / next action: Commit 2a3271b adds persistent publish guard; 0af5f9f disables unsafe GUI button and blocks bypass; df65881 adds regression check for unchanged level-zero GLB bytes and refusal of nonzero GLB regression. Source-only/no-destructive GLB publishing remains available; material-preserving decimation remains future implementation.
 
-Evidence and verification: Editor guard commits 2a3271b and 0af5f9f read back, test df65881 added; matching Windows installer workflow 41380366927 and developer room workflow 41380366943 completed success at source ce0c01d4. Original GLB publishing byte-identical at level zero, reduced GLB material-loss path blocked. GUI manual interaction and preexisting damaged derivative audit remain open. Asset-specific visual assertions removed from release-blocking GlbPropsTest in eec70ef.
+Evidence and verification: Editor guard commits 2a3271b and 0af5f9f read back, test df65881 added; matching Windows installer workflow 41380366927 and developer room workflow 41380366943 completed success at source ce0c01d4. Original GLB publishing byte-identical at level zero, reduced GLB material-loss path blocked. GUI manual interaction and preexisting damaged derivative audit remain open. Asset-specific visual assertions removed from release-blocking GlbPropsTest in eec70ef. Reconciled native host suite passes: AssetImportTopologyGuiTest drives the actual slider, proves nonzero GLB publish stays disabled and level0 re-enables; AssetImportRuntimeTest proves exact level0 bytes and native nonzero refusal. Preexisting damaged derivatives remain unaudited.
 
 Older-map obligation: Identify previously imported GLB derivatives that used nonzero regression; compare source/runtime SHA and visual texture mapping, replace only after authoring a real corrected derivative. Do not infer existing models have been repaired by the new guard.
+
+### DEV-208 — Castle resident placement assertion treated its own body as an obstruction
+
+**Status:** corrected-locally; wider resident approach review pending · **Affected:** CastleSupportArtTest / Matthis Rook placement inspection
+
+The advisory CI and local test failed at Matthis Rook although CastleHubIntegrationTest intentionally requires that players cannot walk through his body.
+
+Cause / uncertainty: The placement test called player traversable at the resident centre, which correctly includes CastleArchive.occupies.
+
+Fix / next action: Use a shared ground-placement query that excludes only character occupancy and retains floors, walls, doors, furnishings, warehouse and service fixture collision. Keep normal player traversal unchanged.
+
+Evidence and verification: CastleSupportArtTest now passes with negative controls for unsupported ground, furniture intersection and preserved keeper-body collision; CastleHubIntegrationTest also passes. Historical branch identifier DEV-169 collided with main Hollow Creek alpha-tree defect; canonical merged identifier is DEV-208. See DEFECT_ID_RECONCILIATION_2026-11-01.md.
+
+Older-map obligation: Separate support/placement from self-collision in actor placement checks; never relax actual furniture or wall collision to satisfy a test.
+
+### DEV-170 — Labeling the USER authoring slot throws Unknown site USER
+
+**Status:** corrected-locally; remote acceptance pending · **Affected:** MissionSites.title / campaign-board and lobby authoring labels
+
+Full-round advisory run 41273695792 and local MissionBoardIntegrationTest reach IllegalArgumentException Unknown site USER while enumerating authoring enums.
+
+Cause / uncertainty: The USER enum was added to editor availability but is deliberately absent from built-in MissionSites/campaign order; title delegated unconditionally to that roster.
+
+Fix / next action: Provide the established User authored level slot label without opening a user project or adding a campaign chapter.
+
+Evidence and verification: Actual MissionBoardIntegrationTest passes locally, covering packaged pictures, asynchronous loading, retained 22-chapter order, prototype privacy and locked/unlocked dispatch.
+
+Older-map obligation: Keep custom authoring slots separate from fixed built-in/campaign roster and saved ordinals; do not silently substitute a built-in map.
+
+### DEV-171 — House graybox top stair intersects the foyer partition
+
+**Status:** corrected-locally; pilot only · **Affected:** Isolated Briar House rebuild graybox
+
+The first actual physics run failed the last ascent steps, top landing and descent; swept navigation could not reach four upper rooms.
+
+Cause / uncertainty: The stair ended 0.20m from a lower-floor partition, within the capsule/wall clearance at the last rise.
+
+Fix / next action: Move the foyer partition and doorway to leave 0.60m clearance beyond the top stair endpoint. Keep the shared physics unchanged.
+
+Evidence and verification: house-rebuild-physics-first.log and house-rebuild-reachability-first.log reproduce failure; final physics and 61,328-position swept reachability pass, with all 15 zones and sockets reached.
+
+Older-map obligation: Recheck both ends of every flight after changing room proportions; graph or midpoint checks do not certify landings.
+
+### DEV-172 — House graybox service panel placed inside its doorway aperture
+
+**Status:** corrected-locally; pilot only · **Affected:** House rebuild heating/laundry service room
+
+AuthoredUtilitiesTest HOUSE_REBUILD failed service-panel has clear operating position.
+
+Cause / uncertainty: Panel and cellar/service doorway were authored at the same wall coordinate.
+
+Fix / next action: Move the panel onto actual solid wall north of the doorway, preserving the aperture and working approach.
+
+Evidence and verification: house-rebuild-utilities-first.log fails; current utility checks pass twelve switches, the panel, fourteen acoustic links and two stairs.
+
+Older-map obligation: Review fixtures against every actual aperture and clear aim/operating point after layout edits.
+
+### DEV-173 — Legacy House envelope overlaid on a smaller rebuilt interior
+
+**Status:** corrected-locally; shared renderer source binding · **Affected:** House rebuild graybox; future revised sources using House gameplay slot
+
+Native export showed blank outer walls and a legacy roof hiding actual revised windows and entrances.
+
+Cause / uncertainty: Renderer selected fixed original House cladding/porch coordinates by the HouseMap site enum, independent of the revised LevelDefinition.
+
+Fix / next action: Bind that fixed legacy skin only to the original house source ID. Revised definitions use their own authored shell. Register and test the correct suburban setting.
+
+Evidence and verification: HouseRebuildShellTest failed at x24 beyond the revised footprint before correction; now checks 20,817 elevated shell vertices and correct setting. Real runtime/native views and rejected source are retained.
+
+Older-map obligation: Audit every hardcoded facade/roof/enclosure against its source coordinates before reusing a gameplay slot.
+
+### DEV-174 — Basement architectural opening does not remove the broad world-ground sheet
+
+**Status:** fixed in isolated House pilot; other cellar/cavity sites remain open · **Affected:** Rebuilt House pilot and older cellar/cavity maps requiring independent audit
+
+Architectural stair/deck openings can pass movement while a separate broad world-ground/backdrop sheet still spans the basement elevation. Owner explicitly requires genuine world-floor holes.
+
+Cause / uncertainty: Room/deck voids and the broad terrain/backdrop surface currently have different generation paths. The latter is not removed by the architectural void.
+
+Fix / next action: Use saved editor AdaptiveTerrainTopology punched leaves and actual TerrainEntranceMesh geometry; bind the same missing triangles into real rendering, native body/support and optical queries. Test an unpunched negative control and original PNG byte preservation.
+
+Evidence and verification: HouseRebuildTerrainTest passes: 30 saved subdivisions/52 punched leaves; source PNG unchanged; reopen, idempotence and atomic invalid-boundary rollback; 3,430 exact shared render/body/support/optical faces; real cellar-stair player/object/sight passage; separately published unpunched editor-world control blocks all three. HouseRebuildPhysicsTest still reaches all 15 zones through 61,328 swept positions. TerrainSceneNativePhysicsTest passes existing terrain/rail, stale/tamper and replay checks. Reopened native pilot matches 37,949 runtime triangles/UVs; basement cutaway and actual stair views retained. No all-map acceptance.
+
+Older-map obligation: Individually audit House, Farmhouse, School, Church, institutional service basements, crypts, mines, tunnels and all stacked remote cavities.
+
+### DEV-175 — Selection and campaign regressions still assume three built-in maps
+
+**Status:** fixed in regression coverage; no map art or promotion acceptance implied · **Affected:** SiteSelectionTest and CampaignStoryProgressionTest on current nine-built-in catalog plus USER authoring slot
+
+Selection fails its nine-total-enum assumption before rendering; campaign fails after third victory because it assumes chapter four must be unavailable.
+
+Cause / uncertainty: Tests predate the current built-in availability and USER slot; restoring the older lock state would change current production behavior.
+
+Fix / next action: Assert the explicit nine-built-in dispatch contract, isolate the USER profile, render each distinct source and retain prototype rejection. Exercise physical campaign victories, no-skip locks, duplicate-receipt rejection, restart persistence and correct source ownership through all nine available chapters; reject all unintegrated destinations. Run these independently in the existing map audit workflow.
+
+Evidence and verification: Before: SiteSelectionTest fails all-planned-families assertion; CampaignStoryProgressionTest fails fourth-chapter-unavailable assertion. After: both pass against packaged JAR, all nine maps rendered and all nine actual victory gates persisted. Logs in development/levels/rebuild/verification/recovery-*-{before,after}.log. This does not certify generic institution architecture, LAN or physical GPU acceptance.
+
+Older-map obligation: Current dispatch availability does not accept any generic institution layout; rebuilt geometry still requires all per-map gates.
+
+### DEV-176 — All-map reviews construct USER without a persisted project
+
+**Status:** fixed-scoped; raw310/310 regression plus actual all11-map GPU and three UI cycles accepted · **Affected:** WorldResidencyGpuReview and LevelOpeningFlyoverTest; RoomAcousticPresetsTest, HidingBudgetTest, AllMapLightingCoverageTest, VanLightingAndCastleDoorTest; AllMapArchitecturalJoinTest
+
+Mesa workflow 41320075324 passes the core smoke, then world-residency exits after HOLLOW_CREEK; the retained frame CSV has every built-in/prototype but no USER row. Flyover regression similarly instantiates every enum without its authoring prerequisite.
+
+Cause / uncertainty: USER is a selected authored-project slot, not a built-in map. The reviews construct it in an empty default authoring profile.
+
+Fix / next action: Create and persist an explicit House-derived USER source inside an isolated review evidence home; assert absent selection fails first, load the actual saved source, restore the real home before frame sampling, and retain USER coverage. Reuse that real persisted fixture through AuthoredTestSupport for all four all-map regressions, retain every enum value and original behavioral assertion, and clean only the temporary profile.
+
+Evidence and verification: Downloaded exact-SHA Mesa artifact ends after HOLLOW_CREEK-torch-repeat. New packaged LevelOpeningFlyoverTest passes all eleven map enum values including persisted USER and unchanged physical spawn. Java 17 package/all-root-tests compile. Real GPU review remains pending new-source CI; do not call it fixed on GPU yet. Full-round 41324869128 at fcf7c52e passed packaged TCP/UI but raw manifest was 260 passed / 12 failed / 27 unexecuted of 299, including these four absent-USER failures. All four were reproduced locally, then passed with the persisted fixture: soundscape sample parity, 12 locations at 101 hiding densities, USER physical lighting, and all 11 van map types. Before/after logs retained under build/editor-agent-evidence. Earlier exact-source GPU 41322252644 at d4294b4c passed; no newer hardware or full manifest acceptance is inferred. Next full-round 41327744396 at 11b57bbf executes all 300 tests (291 pass / 9 fail / 0 unexecuted), exposing the same missing-USER prerequisite in AllMapArchitecturalJoinTest. It now retains all original boundary/aperture assertions with the persisted fixture and passes 7,544 closed and 1,962 open probes including USER locally; exact newest-source CI pending. Exact ff93601a source CI: full-round 41330858899 raw summary passed=303 failed=0 skipped=0 manifest=303; native editor host 41330853164 success. See evidence/editor-full-round-ff93601a.txt. Physical installed acceptance remains separate. Later main6b9088f4 GPU41362364664 still lacks this branch repair and reproduces the same pre-USER stop. Combined c679aedb GPU41368128355 SUCCESS, actual residency all11 map types including persisted USER and all three UI cycles; raw excerpts in evidence/editor-gpu-c679aedb.txt. Physical hardware acceptance remains separate.
+
+Older-map obligation: Every enum-driven review must handle USER prerequisites explicitly rather than assuming a built-in source or selecting a developer project.
+
+### DEV-177 — Windows checkout rewrites hash-bound editor terrain source bytes
+
+**Status:** local attribute fix and Git checkout-filter proof; exact-source CI pending · **Affected:** Saved House editor terrain world.properties and published world.obj; HouseRebuildTerrainTest in Windows CI
+
+Full-round 41320069837 at ddcef3be passes 61,328 pilot positions and utilities but fails Editor scene integrity. Raw full-manifest transcript contradicts advisory step success labels.
+
+Cause / uncertainty: Git autocrlf=true converts the committed LF properties and OBJ into CRLF, changing both persisted source and mesh fingerprints. Reproduced with git cat-file --filters: stored OBJ SHA 0c18e683... becomes 1db2c7cf..., world properties df6b917f... becomes 2f03b7b3....
+
+Fix / next action: Mark saved rebuild terrain-world files -text in .gitattributes so byte fingerprints survive checkout; add an actual Git-filter verifier for true/false/input modes and include concrete inspector errors in terrain failures. Do not weaken hash or tamper checks.
+
+Evidence and verification: Git-filter verifier proves all five saved world files match committed bytes across Windows/Unix/input checkout configurations. Packaged House pilot passes again, including 61,328 swept positions and real editor-hole positive/negative controls. Existing source and native physics hashes remain unchanged. Exact new-source Windows CI remains pending.
+
+Older-map obligation: Preserve exact authoring source and published geometry bytes for every future saved terrain world; line-ending portability is not permission to bypass source staleness or tamper checks.
+
+### DEV-178 — Editor agent CLI recursively encodes Path as Iterable
+
+**Status:** fixed-scoped; local Java 17 native and public-process tests pass · **Affected:** New EditorAgentCli inspect/capture/save JSON output
+
+Initial native service acceptance raised StackOverflowError while encoding an inspection document path.
+
+Cause / uncertainty: java.nio.file.Path implements Iterable<Path>; the output encoder treated path components as nested lists before string conversion.
+
+Fix / next action: Encode Path as a string before the iterable branch. Keep public CLI process coverage for inspect, edit/save, capture, native parity and reopen.
+
+Evidence and verification: EditorAgentServiceTest, EditorAgentGuiTest and tools/verify_editor_agent_cli.py pass locally on Java 17; real House/Castle PNGs generated and inspected. Exact-source CI pending publication.
+
+Older-map obligation: Protocol correction applies to every supported host; no map geometry changed or broader map fitness asserted.
+
+### DEV-179 — Mission deletion renumbers surviving authored object IDs
+
+**Status:** fixed-scoped; local native, GUI and headless regressions pass; exact-source CI pending · **Affected:** LevelAuthoringSession hierarchy, saved BSCN nodes, undo and agent ID lookup
+
+Removing prop index zero changed every later prop-N identity; saving recreated IDs from indices.
+
+Cause / uncertainty: Hierarchy and serializer regenerated IDs from current list positions, and history retained only prop values.
+
+Fix / next action: Preserve BSCN v1 node IDs, assign new UUID IDs on add, snapshot IDs with native props, resolve agent edits by persisted ID and keep one native scene.
+
+Evidence and verification: LevelAuthoringIdentityTest passes deletion, stable-ID move, shared undo/redo, deterministic repeated saves, reopen and real HouseMap prop equality. Existing Windows GUI and public CLI tests rerun.
+
+Older-map obligation: Existing BSCN v1 IDs remain valid; no map geometry or broad fitness acceptance implied.
+
+### DEV-180 — Existing USER authoring session follows another active custom document
+
+**Status:** fixed-scoped; local two-project ownership regression passes; exact-source CI pending · **Affected:** LevelAuthoringSession USER id, documentPath, save and reopen
+
+After opening one USER session then selecting a second project, the older session resolved the second project ID/path dynamically and could save its props there.
+
+Cause / uncertainty: Session identity and destination were read from global UserLevelLibrary.activeId/activeDocument on every access.
+
+Fix / next action: Pin document ID and path at session open. Save and reopen use the pinned source and destination.
+
+Evidence and verification: LevelAuthoringIdentityTest creates two projects with different templates, saves/reopens the older session while the second is active, proves second bytes unchanged, then verifies first through real game loading.
+
+Older-map obligation: Ownership protection covers all new USER sessions; no corrupted prior project is automatically reconstructed.
+
+### DEV-181 — Mission BSCN load silently flattens unsupported portable transforms
+
+**Status:** fixed-scoped; local native rejection and state-preservation regression passes; exact-source CI pending · **Affected:** LevelAuthoringSession native loader and LevelPlans authored mission load
+
+Portable nodes can express parenting, pitch/roll and nonuniform scale, but mission loading discarded those fields and built different native geometry.
+
+Cause / uncertainty: Loader consumed only world position, yaw and scaleX without checking unsupported transform fields; native apply also used weaker prop validation.
+
+Fix / next action: Reject unsupported parent/pitch/roll/nonuniform transformations explicitly and apply the same native prop validator in editor and game loading.
+
+Evidence and verification: LevelAuthoringIdentityTest saves an actual valid portable BSCN with nonuniform scale, requires native reopen failure and checks the entire previous scene snapshot remains intact. Existing scene persistence and real editor checks pass.
+
+Older-map obligation: Existing supported yaw/uniform-scale documents are preserved. Unsupported externally authored documents require explicit conversion rather than silent geometry loss.
+
+### DEV-182 — BSCN output budget checked only after full serialization
+
+**Status:** fixed-scoped; local portable crash/storage and native persistence tests pass; exact-source CI pending · **Affected:** RuntimeSceneDocument save output, including mission and terrain/rail documents
+
+Valid node/component count limits still allow more than 8 MiB of serialized properties; the previous implementation checked file size only after writing the complete temporary file.
+
+Cause / uncertainty: MAX_FILE_BYTES was enforced after stream closure rather than during output, permitting unbounded excess temporary-file writes relative to the document budget.
+
+Fix / next action: Route BSCN encoding through EditorDocumentStore with a bounded output stream, staged readback validation, forced journal and atomic replacement. Leave the current document unchanged on budget failure.
+
+Evidence and verification: EditorDocumentStoreTest rejects both a writer exceeding 8 MiB and a real BSCN scene with otherwise valid 30-by-128 large-property entries, preserving exact target bytes and no pending journal. Actual child-process crash/replay, native mission recovery, terrain/rail publication and HCS2 physics regressions pass locally.
+
+Older-map obligation: The bound applies to all BSCN producers without changing format v1 or existing source files. It does not certify other serializers or physical power-loss durability.
+
+### DEV-183 — LAN HUD receives but does not paint sound captions and strike warnings
+
+**Status:** fixed-scoped; exact-source full regression 41330858899 passed 303/303 · **Affected:** LanWorldPanel accessibility, muted/no-device sound cues and telegraphed strike feedback
+
+Unchanged LanSoundHudTest and LanTelegraphedHudTest fail with absent lavender caption pixels and warning pixel counts 0/0 despite valid received state.
+
+Cause / uncertainty: The current paint path no longer consumes activeSoundCaption, threatUntilTick or threatOutcome; only state and diegetic monitor updates remain.
+
+Fix / next action: Restore transient caption and strike/resolution bars, including arrival/journal overlays. Keep simultaneous warning/caption rows distinct and expire host-timed feedback.
+
+Evidence and verification: Original pixel assertions now pass; added simultaneous-caption, rendered expiry and resolved-evasion checks pass through native LanWorldPanel with real local TCP peers. Inspected PNGs under development/quality/evidence/lan-hud-2026-11-01 are actual headless HUD component captures, not world/gameplay acceptance. Exact ff93601a source CI: full-round 41330858899 raw summary passed=303 failed=0 skipped=0 manifest=303; native editor host 41330853164 success. See evidence/editor-full-round-ff93601a.txt. Physical installed acceptance remains separate.
+
+Older-map obligation: The shared LAN HUD fix applies across maps. Installed-game, muted-device and arrival-case acceptance remain separate.
+
+### DEV-184 — Ground recovery snaps an accepted lower-floor move onto overlapping stairs
+
+**Status:** fixed-scoped; exact-source full regression 41330858899 passed 303/303 · **Affected:** GroundRecovery, HouseMap position-relative support, LanWorld host ticks and LanSpatialEvidenceIntegrationTest
+
+Accepted House movement at x21.93/y0/z18 is changed on the next tick to x22.18/y1.5/z18 in room5, then subsequent real TCP motion is collision-rejected.
+
+Cause / uncertainty: Walking resolves support relative to current elevation, while recovery validates against groundHeight and nominal stair height above valid feet.
+
+Fix / next action: Reuse the exact position-relative supportNear query already used by movement before treating supported feet as penetration. Preserve existing traversability/body-height checks and true penetration recovery.
+
+Evidence and verification: GroundRecoverySupportParityTest fails against the previous compiled GroundRecovery at the exact floor-jump assertion and passes after the fix. Accepted host movement, same-floor round trip, .06m/10m penetration controls, shipped room spawns, original graded-terrain recovery in an isolated output directory, authored stairs/physics, and four-peer spatial evidence round all pass locally. Exact ff93601a source CI: full-round 41330858899 raw summary passed=303 failed=0 skipped=0 manifest=303; native editor host 41330853164 success. See evidence/editor-full-round-ff93601a.txt. Physical installed acceptance remains separate.
+
+Older-map obligation: No geometry or body-clearance rule changed. Broader underside/stair visual clearance and each map fitness gate remain unaccepted; valid supported poses must not be reinterpreted by a second height authority.
+
+### DEV-185 — Legacy regression contracts reject approved voice/sprite packs and neutral Spirit Box readings
+
+**Status:** fixed-scoped; exact-source full regression 41330858899 passed 303/303 · **Affected:** GhostVoicePackRoutingTest, DirectionalSpritesIntegrationTest and HandheldSpiritBoxEvidenceTest
+
+Tests expect exactly 20 strike routes, 45 total frames, and automatic voice detection from generic event strength; actual approved runtime has 24 strike routes, 61 frames and host-attested spoken responses.
+
+Cause / uncertainty: Assertions predate eight unique voice expansion clips, sixteen Castle support frames, and the explicit real-vocal Spirit Box contract.
+
+Fix / next action: Retain exact coverage of all twenty legacy strike lines plus four approved contextual strike lines; verify all sixty-one frames and actor directions; require static from generic scans and verify real spoken positives through the existing host-authorized TCP integration.
+
+Evidence and verification: Updated exact-set/count and native depth/manifestation assertions pass. GhostVoiceExpansionTest, SpiritBoxResponsesTest and LanSpiritBoxAudioIntegrationTest also pass, proving the expansion, actual packaged speech, real host vocal replies, withheld/non-vocal/range rules and no van-wide broadcast. No production asset or speech-evidence rule was changed. Exact ff93601a source CI: full-round 41330858899 raw summary passed=303 failed=0 skipped=0 manifest=303; native editor host 41330853164 success. See evidence/editor-full-round-ff93601a.txt. Physical installed acceptance remains separate.
+
+Older-map obligation: These are compatibility assertions for current approved source contracts, not art-quality, subjective audio or full gameplay acceptance.
+
+### DEV-186 — Acoustic direction fixtures cross native stairs while claiming one room/floor
+
+**Status:** fixed-scoped; exact-source full regression 41330858899 passed 303/303 · **Affected:** LanGhostHearingTest, LanSoundTest and spatial evidence integration diagnostics
+
+House hall spawn plus X offsets resolves to staircase support at +1.5m/room5 or -1.5m/room9, so forged same-room source assertions receive null instead of a bearing.
+
+Cause / uncertainty: Older flat-room offsets and zero-height listener constructors ignore authored stairs and actual bedroom elevation.
+
+Fix / next action: Select cardinal hearing points through native room/support/body queries, use the hall flat axis with a rotated listener for full stereo pan, and retain actual listener elevation. Spatial TCP checks now read host BODY/SITE state, fail immediately on rejection, and verify actual same-room/floor distance and return coordinates.
+
+Evidence and verification: All original direction, door attenuation, privacy, stereo-energy and malformed-frame assertions pass locally. The native probe records the exact changed floor/room for the old offsets; real TCP spatial-range completion passes after the independent GroundRecovery production fix. Exact ff93601a source CI: full-round 41330858899 raw summary passed=303 failed=0 skipped=0 manifest=303; native editor host 41330853164 success. See evidence/editor-full-round-ff93601a.txt. Physical installed acceptance remains separate.
+
+Older-map obligation: Fixture selection never changes geometry, substitutes a preview map, drops a bearing or skips a native collision check. Cross-floor audio-model acceptance remains a separate gate.
+
+### DEV-187 — Castle editor properties saves lack journal recovery and distinct previous versions
+
+**Status:** fixed-scoped; exact-source native CI and full 306/306 regression accepted · **Affected:** CastleLevelEdits native properties persistence and Castle human/headless editor service
+
+Mission documents support interrupted-save replay and explicit previous-save recovery, while Castle properties writes have no journal or previous version and timestamps change identical saves.
+
+Cause / uncertainty: Castle retains a separate temporary-file replacement serializer with a non-atomic fallback, rather than the shared validated EditorDocumentStore.
+
+Fix / next action: Preserve native Properties format and all existing migrations; use the bounded native decoder for readback and recovery validation, deterministic sorted bytes, journaled atomic replacement and one prior distinct document. Enable recovery on the authoritative singleton through the same human menu, shared history and CLI.
+
+Evidence and verification: CastleDocumentRecoveryTest passes native full-state roundtrip, removed objects, no-op backup retention, corrupt source and invalid backup refusal, same-singleton recovery/undo and legacy migrations. Existing CastleEditorGeometryTest and CastleLightingPlacementRepairTest pass unchanged. Extended actual Windows editor menu and headless fresh-process acceptance pass. Exact a99d0a1d source native workflow41352028873 SUCCESS and full41352069449 raw passed=306 failed=0 skipped=0 manifest=306; see evidence/editor-full-round-a99d0a1d.txt.
+
+Older-map obligation: Castle properties only. Mission/BSCN format unchanged. Decoding uses private native codec state with no renderer/editor/agent binding. Generic store process-crash tests remain applicable; physical power-loss and installed-game acceptance remain separate.
+
+### DEV-188 — Headless editor JSON uses Windows system encoding instead of UTF-8
+
+**Status:** fixed-scoped; exact-source native CI and full 306/306 regression accepted · **Affected:** EditorAgentCli main response stream and Castle hierarchy labels
+
+The public Castle inspect response contains bullet characters encoded as Windows-1252 byte 0x95, causing the UTF-8 Python client to fail decoding JSON.
+
+Cause / uncertainty: Input explicitly selects UTF-8, but the response stream reused System.out and therefore inherited the Java 17 platform encoding.
+
+Fix / next action: Wrap the captured stdout stream with an explicit UTF-8 PrintStream before redirecting runtime diagnostics to stderr. Force Windows-1252 as the test JVM default and require exact native Unicode labels in decoded responses. Follow-up also encodes stderr as UTF-8, preserving Unicode startup diagnostics under a Windows-1252 JVM default.
+
+Evidence and verification: Expanded verify_editor_agent_cli.py reproduces UnicodeDecodeError before the fix and passes mission/Castle edit, save, fresh-process reopen and recovery after the fix; native Castle bullet labels survive UTF-8 decoding. Exact a99d0a1d source native workflow41352028873 SUCCESS and full41352069449 raw passed=306 failed=0 skipped=0 manifest=306; see evidence/editor-full-round-a99d0a1d.txt. Extended process tests use an accented Castle home path and decode both channels strictly as UTF-8.
+
+Older-map obligation: Applies to the shared local CLI for every host. Does not add a listener, authentication or arbitrary script execution.
+
+### DEV-189 — Human mesh import report prints literal newline escapes
+
+**Status:** fixed-scoped; native41358289381 and standalone41358301989 CI accepted · **Affected:** AssetImportDialog style/texture warnings and source report
+
+The actual import dock displays a literal backslash-n between style commentary and source metadata, producing an unnecessarily long horizontally clipped report line.
+
+Cause / uncertainty: Three report strings contain a double-escaped newline instead of a Java newline escape.
+
+Fix / next action: Use actual newline escapes; assert the complete human report contains no literal backslash-n sequence.
+
+Evidence and verification: Actual before capture development/quality/evidence/mesh-topology-2026-11-01/import-review-before-newline-fix.png; corrected actual GUI capture import-review.png. AssetImportTopologyGuiTest loads real OBJ, reviews topology, publishes actual runtime GLB and proves exact source preservation.
+
+Older-map obligation: Human import report only; no model geometry/material or game-world edits.
+
+### DEV-190 — Human asset publication can reread a source changed after review
+
+**Status:** fixed-scoped; exact-source native/standalone and full307/307 at0fb70ac2 accepted · **Affected:** AssetImportDialog source observation/publication and ImportedAssetLibrary provenance
+
+A reviewed OBJ can be published with stale geometry but newly changed source archive; GLB regression0 rereads and directly publishes externally replaced geometry that the user never reviewed.
+
+Cause / uncertainty: The human importer retained decoded triangles but no fingerprint of their exact captured bytes, and publication reopened the source without a revision precondition.
+
+Fix / next action: Parse the captured bounded OBJ/STL bytes and pin their SHA; retain the exact GLB/native load fingerprint. Refuse changed sources before publication and check again when capturing registry input. Preserve exact native authoring bytes alongside the original/runtime model. Disable edits during publication.
+
+Evidence and verification: AssetImportTopologyGuiTest modifies actual OBJ geometry after review and replaces a valid zero-regression GLB; both attempts fail with no new approved asset or source overwrite. Successful publication compares every runtime triangle corner and exact original/authoring archive bytes. Exact0fb70ac2 native41360968300 and standalone41360973706 SUCCESS; full41360981244 raw307/307, no failed/skipped entries. Later native adapter guard adoption has separate evidence.
+
+Older-map obligation: Human import path only. Existing programmatic publish remains source-compatible; the human workflow uses the checked entry point. No existing art or map geometry changed.
+
+### DEV-191 — Native topology prototype used a backup validator as a save precondition
+
+**Status:** fixed-scoped; exact-source native/standalone and full307/307 at0fb70ac2 accepted · **Affected:** New EditorTopologyProject competing-editor saves and portable EditorDocumentStore API
+
+The new two-editor regression initially failed because a stale native topology editor overwrote a newer save despite its validator throwing IOException.
+
+Cause / uncertainty: The existing format validator intentionally controls whether prior bytes qualify for backup; invalid prior data may still be replaced. It is not an authorization or optimistic-concurrency hook.
+
+Fix / next action: Add a separate saveIfUnchanged operation with an expected SHA or expected-missing state, checked under the writer lock after staging and before backup/journal/source replacement. Adopt it for the native topology project. Keep existing unguarded save behavior explicit and compatible.
+
+Evidence and verification: EditorTopologyProjectTest reproduces two live projects on one native file, verifies refusal preserves newer disk and unsaved live edits, then observes/reopens/saves successfully. EditorDocumentStoreTest injects a noncooperative write during staging and external deletion; guarded saves preserve both. Existing real child-process crash/replay tests continue to pass. Exact0fb70ac2 native41360968300 and standalone41360973706 SUCCESS; full41360981244 raw307/307, no failed/skipped entries. Later native adapter guard adoption has separate evidence.
+
+Older-map obligation: Caught in the new indexed-topology prototype before delivery. Legacy mission/Castle callers retain their prior semantics until explicit resource-fingerprint adoption; do not infer that all existing serializers now enforce this new precondition.
+
+### DEV-192 — Castle snapshots expose mutable station arrays and compare array identity
+
+**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted · **Affected:** CastleLevelEdits.Snapshot and shared history observations
+
+Caller-owned station arrays/maps can mutate a retained snapshot; two snapshots of equal native state compare unequal because arrays use identity.
+
+Cause / uncertainty: The public record had no defensive constructor/accessor or structural station equality.
+
+Fix / next action: Defensively own all collections/coordinate arrays, return isolated coordinate copies, validate structural fields and implement value equality/hash.
+
+Evidence and verification: CastleSnapshotContractTest mutates constructor inputs and accessor arrays, verifies retained/native values and equality/hash, then restores and saves/reopens exact state. Exact47b4ad47: native41367120522 and standalone41367126147 SUCCESS; full41367132677 raw310/310, zero failed/skipped. See evidence/editor-native-contracts-2026-11-01.json.
+
+Older-map obligation: Native snapshot values only; no map/model geometry changes.
+
+### DEV-193 — Castle decoder accepts station states rejected by the human editor
+
+**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted · **Affected:** Castle properties load and previous-save recovery
+
+Nonfinite/out-of-world station coordinates can pass the old native decoder; backup validation can install data the live editor cannot represent.
+
+Cause / uncertainty: Station properties were parsed without the bounds/finite checks used by setStation; format validation did not validate a complete native snapshot.
+
+Fix / next action: Validate complete native snapshot invariants during decode and reject invalid station data before recovery replacement.
+
+Evidence and verification: NaN station backup and x999 current-file controls preserve exact valid target/live scene on failure; actual human bounds are shared. Exact47b4ad47: native41367120522 and standalone41367126147 SUCCESS; full41367132677 raw310/310, zero failed/skipped. See evidence/editor-native-contracts-2026-11-01.json.
+
+Older-map obligation: Invalid external/backup data is refused; existing valid native saves and legacy geometry/lighting migrations retain their acceptance.
+
+### DEV-194 — Mission native loading silently discards unsupported metadata and contradictory yaw
+
+**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted · **Affected:** LevelAuthoringSession BSCN adapter
+
+Unknown component properties, custom node labels/layers and yaw fields inconsistent with portable transforms are ignored then lost or misinterpreted on native save.
+
+Cause / uncertainty: The native adapter extracted its known prop fields without checking the rest of the portable node contract.
+
+Fix / next action: Refuse unrepresentable fields/metadata and inconsistent duplicate yaw while retaining the existing legacy optional-yaw fallback.
+
+Evidence and verification: EditorSchemaCompatibilityTest preserves exact source bytes/live state for all negative cases and proves legacy yaw save/reopen; existing native identity tests remain intact. Exact47b4ad47: native41367120522 and standalone41367126147 SUCCESS; full41367132677 raw310/310, zero failed/skipped. See evidence/editor-native-contracts-2026-11-01.json.
+
+Older-map obligation: No claim that arbitrary generic BSCN data is supported by native mission runtime; unsupported schemas fail explicitly.
+
+### DEV-195 — Castle future layout versions can be rewritten as current version2
+
+**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted · **Affected:** Castle properties schema migrations
+
+A format1 file with layout3 is interpreted with current fields and a later save stamps layout2, risking loss of future data.
+
+Cause / uncertainty: Migration branches checked only whether layout versions were below2; newer unsupported versions were accepted.
+
+Fix / next action: Reject future/invalid layout versions before applying live state; retain supported legacy0/1 and current2 handling.
+
+Evidence and verification: EditorSchemaCompatibilityTest protects exact bytes and native state for future versions of all six layout families. Exact47b4ad47: native41367120522 and standalone41367126147 SUCCESS; full41367132677 raw310/310, zero failed/skipped. See evidence/editor-native-contracts-2026-11-01.json.
+
+Older-map obligation: Older supported migrations remain tested separately; this does not admit unknown future schemas.
+
+### DEV-196 — Explicit Castle codecs eagerly initialize an unrelated default profile
+
+**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted · **Affected:** CastleLevelEdits default singleton initialization
+
+Constructing a codec for an explicit path can fail on, read or migrate the default user Castle instead of only touching the selected resource.
+
+Cause / uncertainty: The default runtime singleton was created in the outer class static initializer.
+
+Fix / next action: Initialize the authoritative runtime through a lazy holder accessed only by current(); explicit codecs remain scoped to their own paths.
+
+Evidence and verification: A fresh child with a corrupt unrelated default profile successfully saves/reopens an explicit file without touching the sentinel; actual current() still rejects the corrupt default. Exact47b4ad47: native41367120522 and standalone41367126147 SUCCESS; full41367132677 raw310/310, zero failed/skipped. See evidence/editor-native-contracts-2026-11-01.json.
+
+Older-map obligation: Agent adapters continue to require the actual singleton; no independent codec instance is admitted as game runtime.
+
+### DEV-197 — Value-equivalent Castle door order changes rotate prior-save history
+
+**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted · **Affected:** Castle Properties serializer and distinct backups
+
+Removing/reinstalling the same fixed door changes map insertion order and serialized numeric indices despite identical native authoring value.
+
+Cause / uncertainty: Door entries were emitted in mutable insertion order.
+
+Fix / next action: Serialize fixed door socket assignments in canonical ID order.
+
+Evidence and verification: CastleSnapshotContractTest proves equal native values after a door cycle produce identical bytes and retain the actual prior distinct saved version. Exact47b4ad47: native41367120522 and standalone41367126147 SUCCESS; full41367132677 raw310/310, zero failed/skipped. See evidence/editor-native-contracts-2026-11-01.json.
+
+Older-map obligation: Canonical writer ordering is compatible with existing ID-based readers; no door geometry or behavior changes.
+
+### DEV-198 — Headless request cap is checked after unbounded readLine buffering
+
+**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted · **Affected:** EditorAgentCli input protocol
+
+A delimiter-free oversized request can grow the entire line in memory before the advertised request limit is checked.
+
+Cause / uncertainty: BufferedReader.readLine was called before inspecting the length.
+
+Fix / next action: Read with a bounded builder, emit a structured protocol failure and stop on overflow/read failure; document code-unit limits precisely.
+
+Evidence and verification: The native service test supplies a guarded unending reader and proves failure before32768 characters are consumed and before any scene edit. Exact47b4ad47: native41367120522 and standalone41367126147 SUCCESS; full41367132677 raw310/310, zero failed/skipped. See evidence/editor-native-contracts-2026-11-01.json.
+
+Older-map obligation: Trusted local protocol only; no remote listener/security sandbox is claimed.
+
+### DEV-199 — Failed undo/redo consumes history before the native restore succeeds
+
+**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted · **Affected:** Portable EditorHistory and all project adapters
+
+A host restore failure can leave partial state and pop/move undo/redo entries, preventing a safe retry; rollback failure can hide the original command cause.
+
+Cause / uncertainty: History stacks were modified before restore committed, and rollback exceptions replaced original failures.
+
+Fix / next action: Restore from peeked targets first, roll back partial failure, commit stack transfer only on success, and preserve rollback failures as suppressed causes.
+
+Evidence and verification: EditorHistoryFailureTest proves retained stacks/state/retry and failure provenance; it fails against the previous compiled0fb70ac2 implementation and passes after repair. Exact47b4ad47: native41367120522 and standalone41367126147 SUCCESS; full41367132677 raw310/310, zero failed/skipped. See evidence/editor-native-contracts-2026-11-01.json.
+
+Older-map obligation: Native adapters and standalone projects share this boundary; arbitrary persistently broken host restores cannot be claimed successful.
+
+### DEV-200 — Room audit omitted real exterior views beyond its search radius
+
+**Status:** corrected-locally; complete-roster baseline review pending · **Affected:** School and generic institution exterior zones; other large exterior ownership volumes
+
+The first baseline recorded 56 views and four missing views for School and several institutions despite existing outdoor support.
+
+Cause / uncertainty: The seven-metre camera search stayed inside building footprints that overlap the exterior gameplay ownership rectangle. ALL also included the unrelated USER authoring slot.
+
+Fix / next action: Search the full owning room bounds when the local search finds no valid same-zone camera; skip USER in built-in ALL scope while retaining explicit USER audits. Permit direct CASTLE capture.
+
+Evidence and verification: Corrected School/Prison/College and other targeted audit logs show 60 directional views, zero missing, and an explicitly displaced exterior camera. Actual matrices and PNGs: development/levels/rebuild/captures/baseline/. Historical branch identifier DEV-167 was reused independently on main; canonical merged identifier is DEV-200. See DEFECT_ID_RECONCILIATION_2026-11-01.md; original evidence is retained.
+
+Older-map obligation: Inspect displaced cameras and coverage individually; camera availability never proves route or architecture acceptance.
+
+### DEV-201 — Rowan Pike intersects the Castle network-desk chair
+
+**Status:** corrected-locally; publication and visual closeout pending · **Affected:** Castle Beckenburg operations / Rowan Pike
+
+After excluding the keeper self-collision from placement inspection, CastleSupportArtTest reproducibly failed for Rowan Pike.
+
+Cause / uncertainty: Resident (23.75,17.40) intersected chair_mp_5 at (24.1,17.7), whose collider is half-width .35/half-depth .39 plus .21 body clearance.
+
+Fix / next action: Move the shared resident/render/interaction anchor to (23.30,17.40), preserving the chair and network station.
+
+Evidence and verification: Measured collision inspection identified the exact chair; CastleSupportArtTest, CastleRelationsTest and CastleHubIntegrationTest pass locally with JDK17. Separate real-renderer after views: development/levels/rebuild/captures/after-resident-fix/castle/. Historical branch identifier DEV-168 was reused independently on main; canonical merged identifier is DEV-201. See DEFECT_ID_RECONCILIATION_2026-11-01.md; original evidence is retained.
+
+Older-map obligation: Audit every resident and supporting furniture independently; do not generalize to investigation props or moved editor fixtures.
+
+### DEV-202 — OBJ import implicitly welds distinct authored position indices
+
+**Status:** fixed-scoped; exact-source native/standalone and raw310/310 regression accepted · **Affected:** EditorMeshPipeline OBJ reader, EditorMeshTopology derivation and actual human native mesh import
+
+Six referenced source positions containing a distinct coincident pair become five native vertices, creating an unintended shared edit and disconnected fan. Moving one authored source vertex can drag another piece.
+
+Cause / uncertainty: The OBJ parser discarded source position references and native import inferred connectivity only from part and coordinate equality.
+
+Fix / next action: Retain immutable optional per-corner source position identities; build native topology from those identities, keeping corner UVs separate. Verify contradictory source references, preserve the legacy unindexed constructor and keep BTOP v1 native state unchanged.
+
+Evidence and verification: Exact1e505d5e parser/topology classes reproduce the six-to-five assertion failure. Corrected native importer keeps six identities, original sharing and UV seams, negative OBJ indices/fans, shared undo/redo and save/reopen. Real human import/move/publication verifies the unrelated coincident vertex remains stationary, exact source/native archives and every native GLB corner. Maximum120000 indexed faces/360000 vertices pass in the independent Java17 JAR under256MiB. See evidence/obj-native-identity-2026-11-01/. Exact4be25e3a native41390504086 and standalone41390498466 SUCCESS; full41390507634 raw310/310, zero failed/skipped.
+
+Older-map obligation: Existing saved BTOP IDs remain authoritative and are never silently split/rebuilt. Previously welded native projects require explicit source-based reimport and edit review. Unindexed STL/render buffers retain their documented per-part geometric connectivity policy; full normal/material interchange remains open.
+
+### DEV-203 — Inline OBJ face comments are parsed as vertex references
+
+**Status:** fixed-scoped; exact-source native/standalone and raw310/310 regression accepted · **Affected:** Portable OBJ source reader and human importer
+
+An otherwise readable authored face followed by an inline comment fails with an invalid OBJ/# position-index exception.
+
+Cause / uncertainty: Only whole comment lines were skipped; the face tokenizer included trailing comment words as vertex references.
+
+Fix / next action: Strip trailing comments before bounded tokenization and stream lines. Bound position/UV declarations to the portable source-index budget.
+
+Evidence and verification: Exact1e505d5e parser fails the targeted comment check with Invalid OBJ at line11 caused by index #. Corrected reader retains the same authored corner identities with or without the trailing comment; native source bytes remain archived unchanged. See evidence/obj-native-identity-2026-11-01/obj-inline-comment-negative.txt. Exact4be25e3a native41390504086 and standalone41390498466 SUCCESS; full41390507634 raw310/310, zero failed/skipped.
+
+Older-map obligation: No authored source file is rewritten. Existing native formats and previously readable OBJ geometry retain their version and native state.
+
+### DEV-204 — Model publication can pair an old reviewed runtime mesh with newer native authoring state
+
+**Status:** fixed-scoped; exact-source native/standalone and raw310/310 regression accepted · **Affected:** Actual AssetImportDialog, EditorTopologyProject native observations/reviewed saves and runtime publication
+
+A real native edit after review can save/archive native X=-0.25 while publishing cached runtime X=0.0; independent UI dirty flags may miss native changes.
+
+Cause / uncertainty: The reviewed reduction was checked against a UI mesh cache, not the native owner/revision. Native save and later serialization were separate state observations.
+
+Fix / next action: Use owner-bound immutable native observations, refuse stale review before writes, atomically validate/save/capture the reviewed native bytes and fingerprint, publish the same reviewed render input, and derive unsaved state from the native project. Explicit re-review refreshes actual native state while retaining valid selection.
+
+Evidence and verification: AssetImportPublicationRevisionGuiTest against exact4be25e3a UI source prints actual runtime x=0.0 / actual native x=-0.25 and fails. Corrected actual UI refuses all stale writes, then publishes matching native/runtime data after real human re-review. Native tests verify immutable saved bytes, fingerprint, later unsaved edits, and distinct epoch handling. Full local native service/modeling/GUI/CLI suite passes. See evidence/face-modeling-2026-11-01/. Exact848f8b21 native41396364295 and standalone41396361150 SUCCESS; full41396371226 raw310/310, zero failed/skipped. GPU41396374380 all11-map residency and three UI cycles also SUCCESS.
+
+Older-map obligation: Existing mismatched published derivatives are not silently rewritten; compare their original/native/runtime provenance individually. No new agent/MCP mesh operations are enabled.
+
+### DEV-205 — Topological editor exposes every tool row and crowds out the working viewport
+
+**Status:** fixed-scoped; local actual GUI/native tests passed, remote acceptance pending · **Affected:** AssetImportDialog / topological model workspace only
+
+Owner reports a horrifically messy modeling UI: all primitive, vertex, selection, transform, face, repair and reduction controls compete with a shallow viewport; ordinary editing shows a redundant comparison.
+
+Cause / uncertainty: Unconditional stacked controls and fixed two-view assumptions accumulated with native modeling operations.
+
+Fix / next action: Use a model-owned contextual workspace, native part outliner, single working view, explicit/pending comparisons, collapsible diagnostics and focus restoration. Preserve actual native handlers/history/persistence/runtime publication. Main level-view source is unchanged.
+
+Evidence and verification: EditorTopologyWorkspaceGuiTest plus actual human picking/selection/modeling/export/publication tests pass locally. Fixture captures: development/quality/evidence/topology-workspace-2026-11-01/. Full standards applicability review: docs/editor/requirements/MODULE_WORKSPACE_AUDIT.md.
+
+Older-map obligation: No map/model art modified. Other modules require their own workflow-specific workspace audit; do not inherit this model layout or claim complete gold-standard acceptance.
+
+### DEV-206 — Authored corner normals are discarded by model import, native state and export
+
+**Status:** fixed-scoped; exact pre-fix negative control and local native/portable/human tests passed; remote acceptance pending · **Affected:** OBJ/STL importer, native indexed corner schema, transform/modeling paths, OBJ/GLB export and read-only GLB normal inspection
+
+A real OBJ normal(0,0,2) becomes zero direction in the actual game decoder after editor publication. Hard-edge/smooth corner attributes cannot survive native save or transforms.
+
+Cause / uncertainty: Portable vertices and native corners contained only position/UV data; vn/STL directions were discarded and generated GLB omitted NORMAL.
+
+Fix / next action: Keep validated optional immutable corner normals; write v2 only for normal-bearing BTOP and preserve v1 otherwise. Retain raw OBJ/native values, apply inverse-transpose/differential under native edits, preserve stable IDs and UVs, validate real importer readback and write normalized glTF NORMAL. Show actual attributes in the model-only overlay/read-only GLB view.
+
+Evidence and verification: Exact3cd88128 old importer/writer fails NormalLossControl through the real GlbProps decoder with0,0,0; corrected classes pass the identical control. EditorCornerNormalsTest --stress and AssetImportNormalsGuiTest pass; see evidence/corner-normals-2026-11-02/.
+
+Older-map obligation: No source art rewritten. Existing normal-less native files retain v1 encoding. Audit each previously published derivative against its own authored source; do not silently replace registered imports or claim all materials preserved.
+
+### DEV-207 — Imported model normals do not reach software lighting and are dropped during subdivision
+
+**Status:** fixed-scoped; local production placement/subdivision/native-light parity tests passed; GPU/full regression pending · **Affected:** SceneRenderer imported mesh placement, software drawLitFace and directional-light preparation
+
+Even decoded authored normal metadata is omitted from imported Face attributes; software drawLitFace samples without normals and its subdivided children lose normal/owner attributes. GPU has a directional path that software does not match.
+
+Cause / uncertainty: Imported faces used the no-normal constructor, software vertices bypassed directional sampling, and subdivision used the geometry-only constructor.
+
+Fix / next action: Carry actual registered import directions through world inverse-transpose/yaw, preserve/interpolate normal and owner attributes through software subdivision, and share the existing directional adjustment between software and GPU vertex preparation. Preserve concurrent source-alpha repairs during reconciliation.
+
+Evidence and verification: AssetImportNormalsGuiTest inspects actual production faces after nonuniform placement/yaw, actual subdivided faces/owners and actual native House lamp direction response; software and GPU prepared RGB match. Real fixture rasterizer and UI captures are in evidence/corner-normals-2026-11-02/.
+
+Older-map obligation: No broad visual signoff: inspect existing authored-normal props/van and renderer behavior individually. Required actual GPU/full-round checks remain source-pinned and pending until observed.
 
 ### DEV-169 — Hollow Creek 67 original alpha tree billboards rendered as opaque black rectangles
 
@@ -2303,6 +2935,244 @@ Fix / next action: Source glTF ALPHA BLEND support and hardware-neutral RGB+alph
 Evidence and verification: Source glTF audit 41409865926 artifact 13124519834: 67 two-triangle source BLEND textures, valid PNG alpha (representative source 520105 clear + 30093 partial + 39626 opaque pixels). Windows real game build and source material test in 41410917812 success; developer-room 998-asset screenshot artifact 13125039813 verifies all 67 black rectangles gone. In the black-card bounding regions over 67 assets, total dark pixels fell from 2,242,086 to 6,059; sample asset 284 fell from 33,429 to 86. Actual image comparisons preserve branch silhouettes. Production runtime catalog now 997 LOADED, 1 source-only. The original 26 DEV-167 target review remains closed. Corrected audit regression step 'Validate Hollow Creek source approval and catalog membership' succeeded in followup Windows run 41412400705 at commit 23af62e, confirming 16 TerrainFoundationAssets meshes and Matthis recognized as approved original source models. 67 before/after actual screenshot comparisons and per-asset pixel metrics packaged separately for owner review.
 
 Older-map obligation: Verify Hollow Creek tree billboard compositing in playable camera view, under weather/lighting and hardware GPU backend (if active). Inspect 16 approved terrain GLBs independently before any integration of unfinished maps. Pavilion services remains unapproved until separately justified; never auto-promote it.
+
+### DEV-209 — Normal-aware OBJ export can bypass degenerate refusal or leak an unchecked error
+
+**Status:** fixed-scoped; exact intermediate negative control and current native I/O refusal tests passed; remote acceptance pending · **Affected:** EditorObjWriter normal-bearing and missing-normal degenerate face export
+
+Intermediate47f563b exports a degenerate triangle when its corners have explicit normals; missing-normal degenerate faces can escape as unchecked normal-math errors rather than the existing checked export refusal.
+
+Cause / uncertainty: The new normal writer validated attributes only through effective corner normals; authored values bypassed geometric face validation and derived-vector validation used unchecked math exceptions.
+
+Fix / next action: Validate finite nondegenerate face geometry independently of authored attributes and adapt invalid normal math to IOException in writing/readback. Preserve missing or pre-existing destinations on refusal.
+
+Evidence and verification: Exact47f563b EditorObjWriter compiled from its Git blob fails the current production-backend test with Degenerate face exported, authored=true. Corrected EditorCornerNormalsTest checks both authored/missing-normal cases and structured IOException with no destination publication. See evidence/corner-normals-2026-11-02/.
+
+Older-map obligation: Regression was found and corrected in this local implementation before remote publication. Keep normal metadata validation distinct from geometry validity; no silent repair or broad map acceptance.
+
+### DEV-210 — Identity model transforms can alter raw normal values or introduce floating-point drift
+
+**Status:** fixed-scoped; exact intermediate negative control and current native epoch/history checks passed; remote acceptance pending · **Affected:** EditorTopologyProject previewTransform with unit scale or whole-turn rotation
+
+Intermediate47f563b accepts axis scale1 on authored normal(0,0,2) because normal normalization changes its stored magnitude. Whole-turn rotations can also produce tiny coordinate differences instead of a no-op.
+
+Cause / uncertainty: Identity detection relied on equality after floating-point coordinate and attribute transformation rather than rejecting mathematically neutral input before computing it.
+
+Fix / next action: Reject unit scales and rotations equivalent to whole turns before native geometry/normal work. Preserve exact snapshot, epoch and history on refusal.
+
+Evidence and verification: Exact47f563b native project compiled from its Git blob fails the current identity-transform regression with Invalid normal input accepted. Corrected EditorCornerNormalsTest checks axis scale1, rotation360 and unchanged snapshot/revision/history.
+
+Older-map obligation: No source art rewritten. Intermediate regression was corrected before remote publication; identity actions must not manufacture dirty state, new asset hashes or metadata normalization.
+
+### DEV-211 — Merged atlas checkpoint has two failing full-regression art assertions despite green advisory workflow
+
+**Status:** open; exact terminal raw 308/310 recorded; source-art review required before any golden update · **Affected:** GhostSpriteAtlasIntegrationTest, TwinBodyVisualTest at merged source bcd7469828f8736a5dfb5c6266a48543573fb294
+
+Full run41486307374 completed with green workflow status but raw regression job125417465992 reports passed308 failed2 skipped0 manifest310. Ghost archive bytes6883065 differ from expected6868626; Twin A side-frame fingerprint differs from previous approved silhouette.
+
+Cause / uncertainty: Full manifest is explicitly advisory in this workflow. Main source atlas repairs were merged; existing fixed-byte/fingerprint expectations have not been reconciled through actual visual/source review. Green workflow status is insufficient acceptance.
+
+Fix / next action: Retain raw failures and previous goldens, compare actual atlas/side silhouette against approved original source before determining test staleness versus visual regression. Do not change artwork or bless new hashes merely to pass. Keep factual renderer acceptance separate.
+
+Evidence and verification: development/quality/evidence/editor-full-round-bcd74698.txt records exact failures and summary. Companion GPU41486319863 job125420512759 genuinely passes actual11-map residency and3 UI cycles; see editor-gpu-bcd74698.txt.
+
+Older-map obligation: No blanket old-map/art acceptance. Preserve original owner art, all source repairs, and existing visual-golden tests until reviewed.
+
+### DEV-212 — OBJ material declarations are silently discarded by geometry-only native import and GLB fallback
+
+**Status:** fixed-scoped; actual human material window/native/bundle/runtime tests pass locally; exact-source CI pending · **Affected:** EditorMeshPipeline OBJ mtllib/usemtl, EditorTopologyProject native schema and EditorGlbWriter
+
+Actual previous3ca731b5 pipeline imports a material-bearing OBJ but exposes no native material table and emits generated checkerboard instead of original map_Kd PNG/material assignment.
+
+Cause / uncertainty: Native triangles held geometry/UV/normals only and the GLB writer generated one fallback atlas; no immutable source material/binding schema or dependency capture existed.
+
+Fix / next action: Capture original PNG, factors, alpha/cutoff, wraps and UV origin in native BTOPv3 with face references. Use explicit MTL parsing/context/dependency validation, same preview/history/save and actual game GLB compiler; preserve material-bearing OBJ via validated atomic bundle. Plain export refuses material loss. Material window has independent layout and native UV/face selection, not a parallel scene.
+
+Evidence and verification: Exact3ca731b5 Git blobs compiled in build/material-negative-control reproduce geometry-only import. EditorMeshMaterialTest checks native/history/fresh open, real OBJ/MTL dependencies and bundle readback. AssetImportMaterialsGuiTest drives actual face selection/window/PNG/cancel/apply/save/publish, exact UV/RGBA/wrap/tint and real renderer screenshot; repeated scoped previews release transient runtime registrations. Fixture evidence material-workspace-2026-11-02.
+
+Older-map obligation: Do not bulk-reimport existing assets, overwrite source textures or flatten GLB node/pivot/material provenance. Existing geometry-only v1 and normal v2 paths remain compatible. Full painting/PBR/editable source GLB remains open.
+
+### DEV-213 — OBJ material dependency containment compares lexical aliases with canonical asset root
+
+**Status:** fixed-scoped; exact318 standalone41508789243 and native41508797528 SUCCESS, including real material/UV regressions · **Affected:** EditorObjMaterials.Reader.resolve; standalone Windows material import41506322166/job125486457313
+
+A dependency inside the selected asset root is rejected with Material dependency escapes the asset root. Native suite passes while Windows standalone material test fails; an in-root directory junction reproduces the same exception against exact644 editor JAR.
+
+Cause / uncertainty: Asset root was canonicalized with toRealPath, but containment first compared an uncanonicalized dependency path, so equivalent alias/short-path spellings could differ.
+
+Fix / next action: Resolve the dependency to its canonical real path before checking containment against the canonical root. Retain relative-path restrictions and actual outside-root refusal; record canonical dependency fingerprints.
+
+Evidence and verification: Exact644 standalone raw excerpt under evidence/material-uv-2026-11-02. DependencyAliasControl compiled against the exact published JAR fails through build/material-root-alias, then passes against corrected source with one original material. EditorMeshMaterialTest still refuses ../outside dependency and changed MTL. Actual source-aware OBJ/MTL human UV test also passes. Corrected source31876318 exact standalone job125494894856 passes native material and maximum UV steps; native job125494926967 raw human material/UV and complete suite PASS are retained in material-uv evidence.
+
+Older-map obligation: No bulk source migration or bypass of containment. Keep absolute/outside-root, unsupported options and changed-dependency guards. Await exact new-source standalone acceptance.
+
+### DEV-214 — Material UV inspector can grow wider than its viewport and clip numeric input
+
+**Status:** fixed before UV publication; actual window capture and input-bounds assertion passed · **Affected:** EditorMaterialWorkspace material/UV properties scroll pane
+
+UV transform explanatory label expanded the inspector preferred width, showing a horizontal scrollbar and clipping the angle spinner at the right side.
+
+Cause / uncertainty: Scroll pane used raw preferred width of the settings/tab content rather than tracking the available inspector width.
+
+Fix / next action: Use a Scrollable properties container that tracks viewport width; wrap explanatory text and preserve a bounded minimum inspector width. Label shared native Apply as Apply edit for both materials and UV operations.
+
+Evidence and verification: AssetImportUvGuiTest captures the actual independent material window and asserts the UV input bounds fit inside it, while proving current native snapshot/material/selection and runtime UVs.
+
+Older-map obligation: This changes only the independent material workspace composition. Main level and topology tool layouts remain unchanged; it does not implement painting/unwrap.
+
+### DEV-215 — Runtime GLB decoder ignores original node matrix and changes source pivots
+
+**Status:** fixed-scoped; exact prior game negative controls and current actual runtime/human tests pass locally; exact-source CI pending · **Affected:** GlbProps actual runtime decode and source-backed native GLB authoring
+
+The exact previous18001e8a game decoder places the source fixture first vertex at (3,0,2), although its actual matrix plus parent hierarchy places it at (3,0,1).
+
+Cause / uncertainty: Runtime scene traversal applied TRS but silently omitted column-major node.matrix.
+
+Fix / next action: Use the shared bounded runtime reader for actual game and human editor, including original matrix/TRS hierarchy and inverse-transpose normals. Preserve all original transforms and compile edits back into source local coordinates.
+
+Evidence and verification: GlbSourceAuthorityTest matrix fails against exact18001e8a GlbProps and passes against current game. Fixture has parent rotation/translation, a nonuniform matrix child and a shared mesh instance. Bundled1088-source audit finds no active nonidentity node.matrix; source audit is not placed-map acceptance. See evidence/source-glb-2026-11-02/.
+
+Older-map obligation: Do not rewrite source art or infer complete old-map visual acceptance. Retain asset-specific origin rules; inspect actual changed sources individually. Full source-backed GLB rigs/additional attributes and G2-G12 remain open.
+
+### DEV-216 — Generic external GLB textures use inverted legacy PNG origin
+
+**Status:** fixed-scoped; exact prior game negative controls and current actual runtime/human tests pass locally; exact-source CI pending · **Affected:** GlbProps actual runtime decode and source-backed native GLB authoring
+
+The exact previous18001e8a game decoder samples blue ff0000ff at source (.25,.25), where the original external glTF PNG is red ffff0000.
+
+Cause / uncertainty: Legacy bottom-left default was applied to every unnamed/new imported GLB, including standard external glTF images.
+
+Fix / next action: Use source top-left origin for generic external imports unless explicitly declared otherwise; retain exact legacy editor generator and reviewed named-source rules. Keep original image and UV bytes.
+
+Evidence and verification: GlbSourceAuthorityTest uv reproduces old actual runtime failure and current pass. Human source-backed publication checks RGBA8000ff00 on the original asymmetric PNG. Named purchased models, Blender UV/CRT and Hollow Creek BLEND tests pass locally. See evidence/source-glb-2026-11-02/.
+
+Older-map obligation: Do not rewrite source art or infer complete old-map visual acceptance. Retain asset-specific origin rules; inspect actual changed sources individually. Full source-backed GLB rigs/additional attributes and G2-G12 remain open.
+
+### DEV-217 — Packaged full-round test compilation omits shared portable GLB fixture sources
+
+**Status:** fixed-scoped; corrected full41547165572 build and actual TCP stage passed; raw307/310 has separate DEV211/221 failures · **Affected:** build.cmd and build.sh test source lists
+
+Source57337f4f full41546195876/job125622271926 fails before TCP acceptance: EditorGlbAuthoringTest is absent while compiling AssetImportGlbGuiTest and GlbSourceAuthorityTest. Standalone41546137572 and native41546191383 pass because their explicit fixture dependencies are present.
+
+Cause / uncertainty: The game build compiles only top-level host test sources, while new human/runtime tests reuse portable test fixtures in the editor subpackage.
+
+Fix / next action: Include exactly the shared GLB and PNG fixture source files in both standard host build scripts; retain independent editor JAR compilation and do not move test fixtures into production code.
+
+Evidence and verification: Exact failed remote compiler diagnostics retained in source-glb evidence. Clean host test compilation must include all top-level host/hbnet sources plus the two portable fixture dependencies; full corrected acceptance remains distinct from native/standalone passes.
+
+Older-map obligation: Build integration only; no source art/goldens changed. Existing DEV211 advisory art assertions remain open, and failed pre-TCP run does not prove gameplay.
+
+### DEV-218 — Camera picker generalization drops existing enum-typed binary API signatures
+
+**Status:** fixed before perspective publication; actual prior-compiled client fails intermediate and passes final independent JAR · **Affected:** EditorMeshPicking public pick(State,Projection,double,double) and prepare(State,Projection)
+
+A client compiled against the published da2b21da picker throws NoSuchMethodError when the intermediate camera generalization replaces enum parameter signatures with Projector parameters.
+
+Cause / uncertainty: Source calls still compile because Projection implements Projector, but JVM method descriptors include the original enum parameter type.
+
+Fix / next action: Retain original typed overloads and delegate to the new Projector implementation; keep the display-camera requirement for perspective. Add signature guards and run the unchanged prior-compiled client against the real final JAR.
+
+Evidence and verification: perspective-workspace evidence contains real intermediate negative and final positive outputs, the same compiled consumer and source. Consumer was compiled against exact da2b21da picker Git blob. Final independent Java17 JAR and maximum old/new picking tests pass under256MiB.
+
+Older-map obligation: Unpublished intermediate integration defect, corrected before publication. No scene or source asset changes. Portable public signatures remain stable; this does not prove all other G1/G2 APIs or gate completion.
+
+### DEV-219 — Unanchored surface mode unboxes a null native face anchor
+
+**Status:** fixed before surface publication; actual human unanchored-mode refusal and complete workflow pass · **Affected:** AssetImportDialog activeSurfaceFace/normal mode and gizmo painting
+
+Selecting surface-normal mode before a face has been picked throws NullPointerException in controls and painting.
+
+Cause / uncertainty: A conditional expression combined nullable Long normalAnchor with primitive selected face ID, forcing null unboxing.
+
+Fix / next action: Keep the selected face ID explicitly boxed; missing anchor disables transform preview and produces no fake normal gizmo. Require an actual native face before deriving basis.
+
+Evidence and verification: surface-unanchored-negative.txt retains actual intermediate UI exception. AssetImportSurfaceGuiTest selects the visible Transform card and normal mode before picking, verifies disabled preview/empty handles, then completes real surface edits and game publication.
+
+Older-map obligation: Unpublished UI integration defect, corrected before publication. No source assets or other module layouts changed.
+
+### DEV-220 — Nearby projected gizmo handles can capture a precise click on the wrong axis
+
+**Status:** fixed-scoped; exact published d620857e world-space negative control and corrected world/surface GUI checks pass · **Affected:** AssetImportDialog beginAxisDrag; world and surface-normal projected handles
+
+An exact click on later axis2 selects earlier axis1 in published d620857e UI when projected handle hit regions overlap. Intermediate surface mode also reproduces axis2 incorrectly captured as axis0.
+
+Cause / uncertainty: Hit testing chose the first handle within8 pixels rather than the nearest actual handle.
+
+Fix / next action: Choose minimum distance within the existing8-pixel hit radius, keeping stable order for exact ties. Preserve native snapshot/epoch validation, cancellation and shared history.
+
+Evidence and verification: gizmo-d620-negative.txt comes from exact Git d620857e AssetImportDialog compiled separately and run with the same real world-axis control. gizmo-current-positive.txt passes. Surface test finds nearby actual projected handles through real orbit settings, clicks the exact later handle and proves cancel changes no native geometry.
+
+Older-map obligation: Editor input correction only; no map or source geometry is migrated. Identical projected handles remain deterministically tied and can be separated by orbiting the actual camera.
+
+### DEV-221 — Equipment assignment regression still reflects into the removed private GLB JSON reader
+
+**Status:** fixed-scoped; exact5bdd full41551592599 passes equipment assignments; raw308/310 retains only DEV211 art assertions · **Affected:** EquipmentAssetAssignmentsTest after shared GLB decoder extraction
+
+Corrected full41547165572/job125625469653 is green advisory but raw307/310: alongside two DEV211 art assertions, equipment test throws ClassNotFoundException for GlbProps$Json.
+
+Cause / uncertainty: The test fixture decoder was coupled through reflection to the old private parser; production JSON parsing moved to the shared EditorGlbJson. Incremental local output could retain obsolete nested class files, so clean source verification is required.
+
+Fix / next action: Use the actual shared production reader for fixture JSON; keep all original manifest/runtime mapping comparisons. Do not restore a second parser or weaken assignment/art assertions. Compile in a fresh main output directory and run without stale classes.
+
+Evidence and verification: equipment-da2b21da.txt records exact remote failure. equipment-clean-negative.txt reproduces in fresh main classes; equipment-clean-positive.txt passes43 families/129 stage aliases/53 states/162 unique resources with corrected test. No goldens changed.
+
+Older-map obligation: Test integration repair only. Actual packaged TCP stage passed in41547165572, but raw full regression remains unaccepted until corrected-source rerun. DEV211 source-art assertions remain open.
+
+### DEV-222 — Per-part framed GLB grouping changes canonical order of interleaved native faces
+
+**Status:** fixed before local-frame publication; actual game interleaved-order control and source/native tests pass · **Affected:** EditorMaterialGlbWriter, source-backed writer, shared GLB reader and actual GlbProps adapter
+
+Intermediate framed export of A/B/A faces produces actual game order A/A/B: second first-corner X7.7274065 instead of native3.8637033 after rotation.
+
+Cause / uncertainty: Grouping primitives into actual per-part nodes changed traversal order without carrying canonical native face sequence.
+
+Fix / next action: Store bounded per-node BECK_native_order descriptors, validate complete permutations, and consume the same ordered faces in native import and the actual game decoder. Source provenance/validation maps now use actual face identities, including shared instances; readback explicitly verifies order.
+
+Evidence and verification: order-negative.txt records real game mismatch. AssetImportLocalFrameGuiTest now verifies actual interleaved game corners. Source authoring and local tests verify hierarchy, material, original bytes and exact native order without flattening nodes.
+
+Older-map obligation: Unpublished integration defect fixed before publication. Existing ordinary assets without order descriptors keep original decoder traversal. No artwork or goldens changed.
+
+### DEV-223 — GLB readback rejects valid sparse native face IDs
+
+**Status:** fixed-scoped; exact published5bdd writer negative and corrected public encoder/readback control passed · **Affected:** EditorGlbWriter generic native face identity mapping
+
+A valid single triangle retaining native face7 fails GLB readback with lost/duplicated native face identity, despite unchanged geometry.
+
+Cause / uncertainty: Generic output ordinal0 was looked up as native ID0 rather than mapped through the expected native face sequence; sparse IDs after repairs need not start at zero.
+
+Fix / next action: Map generic ordinals to expected stable native IDs, retain explicit tags on framed/source derivatives and validate canonical face order independently. Invalid readback returns checked IOException.
+
+Evidence and verification: sparse-negative-5bdd.txt uses exact5bdd5491 writer Git blob. Same SparseGlbControl passes corrected source; portable local test includes face7 without renumbering it.
+
+Older-map obligation: Editor export correction only. Existing saved native IDs remain stable; no mass reimport or renumbering. Confirm new exact-source CI separately.
+
+### DEV-224 — Signed-zero local frame values fail cross-format equality after JSON decoding
+
+**Status:** fixed before local-frame publication; actual negative/positive GLB readback controls and native guard passed · **Affected:** New EditorMeshFrame component canonical numeric representation
+
+Valid native frame entries containing -0.0 fail exact GLB frame readback because decimal JSON decoding yields positive zero.
+
+Cause / uncertainty: The new frame record distinguished signed zero while its numeric JSON representation did not preserve that distinction.
+
+Fix / next action: Canonicalize only zero-valued frame coefficients at construction. Preserve finite nonzero coefficients, original source bytes, native vertices and raw corner attributes.
+
+Evidence and verification: zero-negative.txt/zero-positive.txt run the same FrameZeroControl against actual GLB writer/reader. EditorLocalFrameTest guards canonical identity and the final native/OBJ/GLB roundtrip.
+
+Older-map obligation: New unpublished component normalization, not an artwork or vertex-normal rewrite. Older native1-4 data stays compatible; native5 explicitly carries the new frame fields.
+
+### DEV-225 — Concurrent main installer and full acceptance fail host campaign persistence assertion
+
+**Status:** fixed in integrated editor branch; packaged desktop/TCP and complete native suite pass locally; exact remote acceptance pending · **Affected:** main ce146a69 packaged startup/multiplayer acceptance
+
+Both workflows stop at AssertionError: Host campaign result saved.
+
+Cause / uncertainty: Desktop test enters physical 3D then calls legacy EXTRACT; main ce146a69 rejects this by design. Isolated current-main LanHost/LanCase plus physical vanDoor request passes actual campaign desktop persistence/navigation.
+
+Fix / next action: Merged main ce146a69 without weakening extraction enforcement; desktop test uses physical vanDoor. Retained both recovery histories and all editor changes.
+
+Evidence and verification: main ce146a69 full41566564774 and installer41566564773; raw failed-step logs retained in native-bevel-2026-11-02. Positive current-main host class test and exact proposed patch retained beside negative remote logs. Merged production JAR desktop, all eight physical/room-mode TCP scenarios and native suite logs: campaign-merge-2026-11-02.
+
+Older-map obligation: Campaign/host behavior requires actual packaged regression; no map or release acceptance inferred.
 
 ## Required audit categories
 

@@ -1,0 +1,34 @@
+{
+  "schema": "beckenburg.native-obj-identity/v1",
+  "baselineSha": "1e505d5ed16a886218e4bdf00e585c9194d582ae",
+  "localChecks": [
+    "Exact prior native parser/topology negative controls reproduce identity loss and inline-comment failure",
+    "Complete native Java17 compilation",
+    "Actual human importer/edit/save/publication; exact source/native archives and every real GLB corner",
+    "Independent editor JAR: pipeline, adjacency, native topology, primitives, picking, core portability and OBJ identity tests",
+    "Independent maximum indexed OBJ parser/topology under256MiB"
+  ],
+  "canonicalLfSha256": {
+    "src/main/java/org/beckenburg/editor/EditorMeshPipeline.java": "e57d86766639f1c311538810af2f044821898b018d2c558282f0e140393412a9",
+    "src/main/java/org/beckenburg/editor/EditorMeshTopology.java": "a65d8a2069942e74b5eb2db3226a834b83d5964a5c09013f6d9b1f0a3447e1cb",
+    "src/test/java/org/beckenburg/editor/EditorObjIdentityTest.java": "18b5efc3ef044e0d617f43e41c55a3645995097c4fb40f180a1dd05010a33459",
+    "src/test/java/org/beckenburg/AssetImportTopologyGuiTest.java": "3d492688d7db62a2736efd2581e06bf581663c13c5feae306fd086e9991af222"
+  },
+  "limits": [
+    "Only referenced OBJ position identity is added; unreferenced declarations/full normals/materials remain outside current authoring interchange",
+    "Existing BTOP documents retain their explicit IDs; no silent split/repair",
+    "No new agent/MCP mesh operations or G2 exit acceptance"
+  ],
+  "ci": {
+    "standalone": 41390498466,
+    "nativeHost": 41390504086,
+    "fullRound": 41390507634,
+    "status": "success",
+    "passed": 310,
+    "failed": 0,
+    "skipped": 0
+  },
+  "sourceSha": "4be25e3a61f865dd4d185c5fdf88489fb36851f8",
+  "implementationCommit": "4006e527",
+  "remoteReadback": "git ls-remote matched exact4be25e3a on approved branch"
+}

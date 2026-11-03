@@ -1,0 +1,4311 @@
+{
+  "schema_version": 1,
+  "scope": "28 base locations plus existing annex",
+  "status": "AUTHORED_FUNCTION_REQUIREMENTS_NOT_RUNTIME_COMPLETION",
+  "note": "Activities describe normal site use. Historical dates, capacities, final dimensions, child-space subdivision and reference acceptance remain per-site design work. Current source coordinates remain unchanged.",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "folder": "academy",
+      "source_layout": "development/levels/layouts/academy/layout.json",
+      "source_layout_sha256": "46ddfa3e1e57e67c0ce51518da8dfe0b040f0d3f2b716850ec3ae0359244bdc5",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "stage",
+          "source_name": "Gate van apron",
+          "intended_activity": "Unload expedition equipment at the gate",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Front gate court",
+          "intended_activity": "Arrive and orient before entering school grounds",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "reception",
+          "source_name": "Reception hall",
+          "intended_activity": "Receive visitors and control access to teaching areas",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "south",
+          "source_name": "South cloister",
+          "intended_activity": "Distribute arrivals to the cloister ranges",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "west",
+          "source_name": "West cloister",
+          "intended_activity": "Connect teaching rooms under weather cover",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "north",
+          "source_name": "North cloister",
+          "intended_activity": "Connect library and quiet study rooms",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "east",
+          "source_name": "East cloister",
+          "intended_activity": "Connect dining and supervised residential access",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "quad",
+          "source_name": "Inner quadrangle",
+          "intended_activity": "Provide daylight and outdoor communal space",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "library",
+          "source_name": "Library",
+          "intended_activity": "Read and consult books at supported desks",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "lecture",
+          "source_name": "Lecture room",
+          "intended_activity": "Teach a seated group with a clear teaching position",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "lab",
+          "source_name": "Laboratory / study",
+          "intended_activity": "Carry out supervised practical study with storage",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "dining",
+          "source_name": "Dining hall",
+          "intended_activity": "Serve communal meals from an adjacent service kitchen",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "office",
+          "source_name": "Headmaster office",
+          "intended_activity": "Meet staff and safeguard administration records",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "dorm",
+          "source_name": "Upper dormitory",
+          "intended_activity": "Sleep with individual storage and nearby washing",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "upper",
+          "source_name": "Upper north gallery",
+          "intended_activity": "Distribute residents without passing through sleeping rooms",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "archive",
+          "source_name": "Basement archive",
+          "intended_activity": "Store institutional records away from routine student traffic",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "rear",
+          "source_name": "Rear quadrangle / service yard",
+          "intended_activity": "Receive deliveries and remove waste through service access",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Residential teaching range for sixteen pupils and approximately four resident staff, sharing study, meals, washing and cloister circulation.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "dorm",
+          "requirement": "Sixteen sleeping places, individual storage, WC and showers",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "office",
+          "requirement": "Staff work and private sanitary support",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "dining",
+          "requirement": "Kitchen, pantry and washing-up",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "reception",
+          "requirement": "Visitor reception and WC",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "lab",
+          "requirement": "Practical work, handwashing and secure supply storage",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "ASYLUM",
+      "folder": "asylum",
+      "source_layout": "development/levels/layouts/asylum/layout.json",
+      "source_layout_sha256": "d3a12c5153d18c7aa27f851ba2ac1c7d408d94cff29d2f6362445b11eea9d63b",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "stage",
+          "source_name": "Front-drive van apron",
+          "intended_activity": "Stage equipment clear of patient arrival",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Front drive",
+          "intended_activity": "Approach reception along the public drive",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "reception",
+          "source_name": "Admissions reception",
+          "intended_activity": "Receive patients and visitors with private interview space",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "spine",
+          "source_name": "Central ward corridor",
+          "intended_activity": "Distribute staff and patients to separate ward functions",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "records",
+          "source_name": "Records office",
+          "intended_activity": "Keep confidential patient records under staff control",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "day",
+          "source_name": "Day room",
+          "intended_activity": "Provide supervised sitting and ordinary daytime activity",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "ward",
+          "source_name": "Patient ward",
+          "intended_activity": "Accommodate patient beds with observation and bedside access",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "west-link",
+          "source_name": "Garden ward passage",
+          "intended_activity": "Connect ward activity to sheltered garden access",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "treatment",
+          "source_name": "Treatment theatre",
+          "intended_activity": "Provide a treatment workspace with clean supply access",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "hydro",
+          "source_name": "Hydrotherapy room",
+          "intended_activity": "Provide private bathing and associated drying/changing",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "dining",
+          "source_name": "Dining ward",
+          "intended_activity": "Serve ward meals with adjacent food-service provision",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "chapel",
+          "source_name": "Remembrance chapel",
+          "intended_activity": "Offer quiet remembrance without crossing treatment work",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "court",
+          "source_name": "Walled courtyard",
+          "intended_activity": "Provide daylight and supervised outdoor activity",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "upper",
+          "source_name": "Upper ward gallery",
+          "intended_activity": "Connect upper care rooms and staff support",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "upper-ward",
+          "source_name": "Upper patient ward",
+          "intended_activity": "Accommodate upper patient beds with nearby sanitation",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "plant",
+          "source_name": "Basement boiler",
+          "intended_activity": "Maintain heating and utilities through service access",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Sixteen patient places split between ground and upper wards, with staff support, treatment, daytime activity and private sanitation.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "reception",
+          "requirement": "Private admissions interview and visitor WC",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "ward",
+          "requirement": "Eight patient places, nearby WC/bathing and staff observation",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "upper-ward",
+          "requirement": "Eight patient places and upper-floor sanitation",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "spine",
+          "requirement": "Staff base plus clean/soiled utility and linen separation",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "treatment",
+          "requirement": "Treatment, handwashing and clean stores",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "hydro",
+          "requirement": "Private changing and drying",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "dining",
+          "requirement": "Service kitchen and cleanup",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "plant",
+          "requirement": "Laundry and plant operating access",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "CASTLE",
+      "folder": "castle",
+      "source_layout": "development/levels/layouts/castle/layout.json",
+      "source_layout_sha256": "6c0c1c078c3423e9debd16fcbc8de1af4b6f011f3b6ba0ab7d48be9754be7d22",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "stage",
+          "source_name": "Expedition van departure apron",
+          "intended_activity": "Load the canonical van and begin expeditions",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Gatehouse / arrival court",
+          "intended_activity": "Arrive through the existing gate sequence",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "court",
+          "source_name": "Central castle courtyard",
+          "intended_activity": "Orient investigators between headquarters functions",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "great",
+          "source_name": "Great hall / briefing",
+          "intended_activity": "Brief a team around supported map and contract surfaces",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "map",
+          "source_name": "Map / assignment office",
+          "intended_activity": "Prepare assignments and maintain operational records",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "dining",
+          "source_name": "Kitchen / common room",
+          "intended_activity": "Prepare and share meals with cleanup provision",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "west",
+          "source_name": "West service passage",
+          "intended_activity": "Connect back-of-house service rooms",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "archive",
+          "source_name": "Occult archive / study",
+          "intended_activity": "Consult and preserve occult records with staff oversight",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "armory",
+          "source_name": "Armory / supply shop",
+          "intended_activity": "Issue and return physical equipment from organized stock",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "workshop",
+          "source_name": "Machine / chemistry workshop",
+          "intended_activity": "Repair and prepare tools with safe working clearance",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "infirmary",
+          "source_name": "Infirmary",
+          "intended_activity": "Provide first aid and temporary recovery",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "chapel",
+          "source_name": "Chapel / sanctuary",
+          "intended_activity": "Provide quiet reflection and study of ritual practice",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "research",
+          "source_name": "Research laboratory",
+          "intended_activity": "Examine samples and documents at supported task surfaces",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "radio",
+          "source_name": "Radio / network operations",
+          "intended_activity": "Coordinate communications and network operations",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "upper",
+          "source_name": "Upper west gallery",
+          "intended_activity": "Reach upper rooms without intersecting stairs or guards",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "lodging",
+          "source_name": "Investigator accommodation",
+          "intended_activity": "Sleep and store personal belongings away from public work",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "restoration",
+          "source_name": "Restoration gallery",
+          "intended_activity": "Explain repair of the historic building through actual work areas",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "vault",
+          "source_name": "Captured relic vault",
+          "intended_activity": "Secure captured objects with deliberate access control",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "train-entry",
+          "source_name": "Protected training vestibule",
+          "intended_activity": "Enter practice spaces without entering live ritual activity",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "train-b",
+          "source_name": "Banishment training bay",
+          "intended_activity": "Practice banishment through its real tutorial contract",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "train-c",
+          "source_name": "Cleansing training bay",
+          "intended_activity": "Practice cleansing through its real tutorial contract",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "train-a",
+          "source_name": "Absolution training bay",
+          "intended_activity": "Practice absolution through its real tutorial contract",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "north",
+          "source_name": "North covered walk",
+          "intended_activity": "Connect northern functions under continuous cover",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Existing investigator headquarters with six-player team circulation and real equipment stock; lodging and workshops serve the building rather than inventing extra investigation rules.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "lodging",
+          "requirement": "Sleeping, washing, WC and personal storage",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "dining",
+          "requirement": "Kitchen preparation, serving and cleanup",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "workshop",
+          "requirement": "Repair/chemistry task separation and supported storage",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "infirmary",
+          "requirement": "Private recovery and handwashing",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "armory",
+          "requirement": "Actual stock aisles and issue/return space",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "radio",
+          "requirement": "Communications chair/desk/resident clearance",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "CHURCH",
+      "folder": "church",
+      "source_layout": "development/levels/layouts/church/layout.json",
+      "source_layout_sha256": "e5ed72ba9fa9bd002b34f75b951c876b5416666db80e219142f604159b80baca",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "r00",
+          "source_name": "Nave",
+          "intended_activity": "Gather worshippers with clear seating and aisles",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r01",
+          "source_name": "Vestibule",
+          "intended_activity": "Shelter arrivals before entering the nave",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r02",
+          "source_name": "Parish office",
+          "intended_activity": "Administer parish work with confidential storage",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r03",
+          "source_name": "Confessional chamber",
+          "intended_activity": "Provide a private conversation enclosure",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r04",
+          "source_name": "Chancel and altar",
+          "intended_activity": "Support worship with an intelligible altar arrangement",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r05",
+          "source_name": "Side chapel",
+          "intended_activity": "Provide a smaller quiet worship setting",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r06",
+          "source_name": "Vestry",
+          "intended_activity": "Store and prepare vestments and service materials",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r07",
+          "source_name": "Choir loft",
+          "intended_activity": "Accommodate singers with safe loft access",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r08",
+          "source_name": "Bell tower stair chamber",
+          "intended_activity": "Provide actual tower ascent with landings and guards",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r09",
+          "source_name": "Organ archive",
+          "intended_activity": "Store music and organ maintenance records",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r10",
+          "source_name": "Belfry",
+          "intended_activity": "House bells with supported access and framed openings",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r11",
+          "source_name": "Crypt",
+          "intended_activity": "Accommodate burial or memorial functions beneath the church",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "grounds",
+          "source_name": "Rear grounds / exterior",
+          "intended_activity": "Provide cemetery maintenance and rear access",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Approach / arrival",
+          "intended_activity": "Approach the public church entrance",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "stage",
+          "source_name": "Van service apron",
+          "intended_activity": "Stage expedition equipment without blocking parish access",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Small parish worship building with approximately forty seated places, choir, parish work and memorial/crypt access.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "r02",
+          "requirement": "Parish office and discreet sanitary support",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "r06",
+          "requirement": "Vestment preparation and washing",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "r07",
+          "requirement": "Choir circulation outside loft guards",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "r09",
+          "requirement": "Music storage and organ maintenance access",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "COLLEGE",
+      "folder": "college",
+      "source_layout": "development/levels/layouts/college/layout.json",
+      "source_layout_sha256": "e424444d53ba348e83d53af4a3066722d9c1003b3e27abc638b25d7f900307e4",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "stage",
+          "source_name": "Campus service van apron",
+          "intended_activity": "Unload equipment at the campus roadhead",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Campus green approach",
+          "intended_activity": "Orient arrivals toward distinct academic buildings",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "plaza",
+          "source_name": "Main facade plaza",
+          "intended_activity": "Distribute pedestrians between building entrances",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "lobby",
+          "source_name": "Teaching lobby",
+          "intended_activity": "Receive teaching-block users and identify destinations",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "lecture",
+          "source_name": "Lecture theatre",
+          "intended_activity": "Teach a larger seated audience with clear sightlines",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "seminar",
+          "source_name": "Seminar classroom",
+          "intended_activity": "Teach discussion groups around usable tables",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "lab",
+          "source_name": "Laboratory",
+          "intended_activity": "Support supervised practical work and service storage",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "library",
+          "source_name": "Library reading room",
+          "intended_activity": "Read and consult material in quiet daylit space",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "stacks",
+          "source_name": "Library stacks",
+          "intended_activity": "Store and retrieve books through real aisles",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "bridge",
+          "source_name": "Upper campus bridge",
+          "intended_activity": "Connect library floors through a supported bridge",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "dorm",
+          "source_name": "Dormitory corridor / rooms",
+          "intended_activity": "Provide private residential rooms with shared facilities",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "res-lobby",
+          "source_name": "Residence stair lobby",
+          "intended_activity": "Distribute residents between stairs and private rooms",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "union",
+          "source_name": "Union cafe",
+          "intended_activity": "Prepare and serve informal food with cleanup support",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "admin",
+          "source_name": "Administration office",
+          "intended_activity": "Handle institutional administration and records",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "rear",
+          "source_name": "Rear quad and parking",
+          "intended_activity": "Receive deliveries without occupying the campus green",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "tunnel",
+          "source_name": "Maintenance tunnel hub",
+          "intended_activity": "Distribute maintenance access beneath selected buildings",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "tunnel-west",
+          "source_name": "West service tunnel",
+          "intended_activity": "Connect western services through supported tunnel geometry",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Bounded campus subset with teaching, library and sixteen residence places; classroom capacity and bridge routes are resolved separately from the wider institution.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "dorm",
+          "requirement": "Sixteen sleeping places in actual private rooms plus shared WC/showers",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "lab",
+          "requirement": "Task benches, handwashing and service storage",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "union",
+          "requirement": "Food preparation, serving and cleanup",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "lobby",
+          "requirement": "Public WC and cleaner storage",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "admin",
+          "requirement": "Staff meeting and records",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "library",
+          "requirement": "Staff issue/return and quiet reading separation",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "FARMHOUSE",
+      "folder": "farmhouse",
+      "source_layout": "development/levels/layouts/farmhouse/layout.json",
+      "source_layout_sha256": "e050c3627240ac10ba6f44191e549ac631bb9a43c7701cb2daf8291f12c00895",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "r00",
+          "source_name": "Mudroom",
+          "intended_activity": "Remove muddy clothing before entering shared rooms",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r01",
+          "source_name": "Farm parlour",
+          "intended_activity": "Sit and receive visitors away from farm work",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r02",
+          "source_name": "Farm kitchen",
+          "intended_activity": "Prepare household meals with water and storage",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r03",
+          "source_name": "Family dining room",
+          "intended_activity": "Eat together next to food preparation",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r04",
+          "source_name": "Central stair passage",
+          "intended_activity": "Connect family rooms and separate stair flights",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r05",
+          "source_name": "Upper farm landing",
+          "intended_activity": "Reach bedrooms and a private washroom",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r06",
+          "source_name": "Parents bedroom",
+          "intended_activity": "Sleep with personal storage and bedside access",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r07",
+          "source_name": "Child bedroom",
+          "intended_activity": "Sleep and play with age-appropriate storage",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r08",
+          "source_name": "Barn hayloft",
+          "intended_activity": "Store dry hay on a supported loading deck",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r09",
+          "source_name": "Root cellar",
+          "intended_activity": "Store produce in suitable cellar conditions",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r10",
+          "source_name": "Barn interior",
+          "intended_activity": "Shelter agricultural work with feed and stall access",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r11",
+          "source_name": "Tool shed",
+          "intended_activity": "Repair tools and store parts near the workyard",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "grounds",
+          "source_name": "Rear grounds / exterior",
+          "intended_activity": "Connect farm buildings through drained working ground",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Approach / arrival",
+          "intended_activity": "Arrive through the lane and yard",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "stage",
+          "source_name": "Van service apron",
+          "intended_activity": "Unload expedition equipment clear of agricultural circulation",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Family farmhouse with a working barn/hayloft and separate tool maintenance; domestic and agricultural traffic remain distinct.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "r05",
+          "requirement": "Private WC, basin and washing child room",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "r02",
+          "requirement": "Food storage and cleanup",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "r10",
+          "requirement": "Stall/feed and equipment bays",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "r11",
+          "requirement": "Repair bench, parts and laundry separation",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "HOUSE",
+      "folder": "house",
+      "source_layout": "development/levels/layouts/house/layout.json",
+      "source_layout_sha256": "1076c2f3bc2c13f785c278bb6490172458e1461510c9a2b9f6cc928276bcfa9c",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "r00",
+          "source_name": "Foyer",
+          "intended_activity": "Receive visitors and store outdoor clothing",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r01",
+          "source_name": "Living room",
+          "intended_activity": "Sit together and receive household visitors",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r02",
+          "source_name": "Family kitchen",
+          "intended_activity": "Store prepare and wash up household meals",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r03",
+          "source_name": "Dining nook",
+          "intended_activity": "Eat together next to kitchen service",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r04",
+          "source_name": "Main hall and stair",
+          "intended_activity": "Connect shared rooms and independent stair flights",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r05",
+          "source_name": "Upper landing",
+          "intended_activity": "Reach private rooms without crossing bedrooms",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r06",
+          "source_name": "Master bedroom",
+          "intended_activity": "Sleep and dress with bedside and clothing storage",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r07",
+          "source_name": "Child bedroom",
+          "intended_activity": "Sleep play and study with personal storage",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r08",
+          "source_name": "Bathroom",
+          "intended_activity": "Wash bathe and use private sanitary fittings",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r09",
+          "source_name": "Cellar stair landing",
+          "intended_activity": "Enter cellar services without obstructing the stair",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r10",
+          "source_name": "Boiler and breaker room",
+          "intended_activity": "Maintain heating power hot water and laundry",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r11",
+          "source_name": "Cellar storage",
+          "intended_activity": "Store seasonal household goods on accessible shelves",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "grounds",
+          "source_name": "Rear grounds / exterior",
+          "intended_activity": "Use the garden and maintain a real patio/path",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Approach / arrival",
+          "intended_activity": "Approach the covered household entrance from the street",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "stage",
+          "source_name": "Van service apron",
+          "intended_activity": "Unload equipment from the canonical parked van",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Family dwelling: one double and one single sleeping place; shared living, cooking, dining and cellar services.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "r02",
+          "requirement": "Fitted cooking, washing and food-storage zones",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "r08",
+          "requirement": "Toilet, basin and bath with usable approaches",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "r10",
+          "requirement": "Separate heating/hot-water and laundry operating clearances",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "r05",
+          "requirement": "Linen storage outside stairs and bedroom approaches",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "MANSION",
+      "folder": "mansion",
+      "source_layout": "development/levels/layouts/mansion/layout.json",
+      "source_layout_sha256": "a909daacc0e24fca86dbfd01027ec476b34ca79d4b2c9b8a647b9e4ea4e015d6",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "stage",
+          "source_name": "Carriage-drive van apron",
+          "intended_activity": "Unload equipment on the carriage approach",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Entrance terrace",
+          "intended_activity": "Receive guests beneath a formal entrance sequence",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "foyer",
+          "source_name": "Entrance foyer",
+          "intended_activity": "Receive coats and orient guests to reception rooms",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "stair",
+          "source_name": "Grand stair hall",
+          "intended_activity": "Distribute formal circulation around the main stair",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "drawing",
+          "source_name": "Drawing room",
+          "intended_activity": "Receive and entertain visitors in seated groups",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "library",
+          "source_name": "Library",
+          "intended_activity": "Read and consult the household collection",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "ballroom",
+          "source_name": "Ballroom",
+          "intended_activity": "Gather and dance in a structurally clear large room",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "dining",
+          "source_name": "Dining hall",
+          "intended_activity": "Serve formal meals from the service side",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "scullery",
+          "source_name": "Scullery / kitchen",
+          "intended_activity": "Prepare food and clean utensils behind reception rooms",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "service",
+          "source_name": "Servants corridor",
+          "intended_activity": "Move staff supplies and waste without crossing formal events",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "garden",
+          "source_name": "Walled rear garden",
+          "intended_activity": "Use and maintain a bounded estate garden",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "greenhouse",
+          "source_name": "Greenhouse",
+          "intended_activity": "Raise and maintain plants with water and storage",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "gallery",
+          "source_name": "Upper gallery",
+          "intended_activity": "Distribute guests and residents to private upper rooms",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "suite",
+          "source_name": "Master suite",
+          "intended_activity": "Sleep dress and wash with private support spaces",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "servants",
+          "source_name": "Upper servants passage",
+          "intended_activity": "Connect staff accommodation and service stairs",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "attic",
+          "source_name": "Attic archive",
+          "intended_activity": "Store estate records and disused belongings",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "cellar",
+          "source_name": "Wine cellar",
+          "intended_activity": "Store and retrieve cellar provisions through service access",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Bounded estate wing: principal suite, two guest-room child spaces and four staff sleeping places; separate reception and household service.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "scullery",
+          "requirement": "Preparation, scullery, pantry and waste service",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "gallery",
+          "requirement": "Two separately bounded guest bedrooms",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "suite",
+          "requirement": "Private washing/WC and dressing",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "servants",
+          "requirement": "Four sleeping places and staff sanitation",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "foyer",
+          "requirement": "Visitor WC outside private residence",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "PRISON",
+      "folder": "prison",
+      "source_layout": "development/levels/layouts/prison/layout.json",
+      "source_layout_sha256": "ab20558ecb1820020a7dd872f81ae079291134422db7e8e59a8dbedc7954205a",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "stage",
+          "source_name": "Perimeter van apron",
+          "intended_activity": "Unload at the controlled perimeter roadhead",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Perimeter gate approach",
+          "intended_activity": "Approach the secured public entrance",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "sally",
+          "source_name": "Vehicle sally port",
+          "intended_activity": "Transfer arrivals through separately controlled thresholds",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "intake",
+          "source_name": "Intake and records",
+          "intended_activity": "Search admit and record incoming prisoners",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "guard",
+          "source_name": "Guard station",
+          "intended_activity": "Observe entrances and control secured routes",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "block-a",
+          "source_name": "Main cell block",
+          "intended_activity": "House prisoners in individual constructed cells and a supervised aisle",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "block-b",
+          "source_name": "Secondary cell block",
+          "intended_activity": "House a second cell group with distinct controlled access",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "yard",
+          "source_name": "Exercise yard",
+          "intended_activity": "Exercise within a physically secured outdoor enclosure",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "cross",
+          "source_name": "Rear cross passage",
+          "intended_activity": "Distribute supervised movements between cell wings and support",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "mess",
+          "source_name": "Mess hall",
+          "intended_activity": "Prepare serve and clear meals under controlled movement",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "medical",
+          "source_name": "Infirmary",
+          "intended_activity": "Treat patients with privacy and clinical support",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "chapel",
+          "source_name": "Chapel / visitation",
+          "intended_activity": "Separate supervised visitation from worship use by real partitions",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "isolation",
+          "source_name": "Isolation wing",
+          "intended_activity": "Accommodate isolated cells with observation and sanitation",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "gallery-a",
+          "source_name": "A-block upper gallery",
+          "intended_activity": "Supervise and access upper A-block cells behind guards",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "gallery-b",
+          "source_name": "B-block upper gallery",
+          "intended_activity": "Supervise and access upper B-block cells behind guards",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "plant",
+          "source_name": "Boiler and maintenance",
+          "intended_activity": "Maintain heating power water and service distribution",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Bounded two-wing compound: eight single cells per wing per floor over two floors, plus two isolation cells; thirty-four prisoner places in the proposed design.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "block-a",
+          "requirement": "Eight real single cells per floor; beds, WC, basin and barred/solid door interfaces",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "block-b",
+          "requirement": "Eight real single cells per floor with separately controlled access",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "gallery-a",
+          "requirement": "Actual upper cells, guarded galleries and physical stair landing",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "gallery-b",
+          "requirement": "Actual upper cells, guarded galleries and independent stairs",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "intake",
+          "requirement": "Search, holding, records and staff/public sanitary facilities",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "guard",
+          "requirement": "Supervision and physically placed gate controls",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "mess",
+          "requirement": "Preparation kitchen, food store, washing-up and controlled serving",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "chapel",
+          "requirement": "Physically separate visitation and worship areas",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "medical",
+          "requirement": "Examination and clean storage",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "isolation",
+          "requirement": "Two cells, observation and private sanitary provision",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "plant",
+          "requirement": "Maintenance and shower-service distribution",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "SCHOOL",
+      "folder": "school",
+      "source_layout": "development/levels/layouts/school/layout.json",
+      "source_layout_sha256": "811fdf96d90cf1e154e4279f924a3c108a7c5318c98d2d2fff644ac854736b00",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "r00",
+          "source_name": "Front office and foyer",
+          "intended_activity": "Receive visitors and administer entry before teaching areas",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r01",
+          "source_name": "Main school corridor",
+          "intended_activity": "Distribute pupils to classrooms and specialist facilities",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r02",
+          "source_name": "Classroom A",
+          "intended_activity": "Teach pupils with desk aisles and clear board sightlines",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r03",
+          "source_name": "Science classroom",
+          "intended_activity": "Teach practical science with water supplies and storage",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r04",
+          "source_name": "Cafeteria",
+          "intended_activity": "Serve meals with kitchen delivery and cleanup support",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r05",
+          "source_name": "Nurse office",
+          "intended_activity": "Provide private assessment first aid and rest",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r06",
+          "source_name": "Gymnasium",
+          "intended_activity": "Support physical education with changing and washing nearby",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r07",
+          "source_name": "Upper locker corridor",
+          "intended_activity": "Connect teaching rooms and independent sanitary child spaces",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r08",
+          "source_name": "School library",
+          "intended_activity": "Read borrow and return books through usable aisles",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r09",
+          "source_name": "Classroom B",
+          "intended_activity": "Teach a second class with its own teaching position",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r10",
+          "source_name": "Assembly hall",
+          "intended_activity": "Gather pupils for assembly with separate volume and exits",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "r11",
+          "source_name": "Boiler and electrical room",
+          "intended_activity": "Maintain plant through service access away from pupil activity",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "grounds",
+          "source_name": "Rear grounds / exterior",
+          "intended_activity": "Play outdoors and reach secondary exits",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Approach / arrival",
+          "intended_activity": "Arrive from the road and orient at the school entrance",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "stage",
+          "source_name": "Van service apron",
+          "intended_activity": "Unload equipment without blocking the pupil arrival route",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Two general classes of 24 pupils sharing one science room, library, meals, assembly and physical education; approximately six staff support positions.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "r00",
+          "requirement": "Visitor/admin interview and accessible WC",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "r04",
+          "requirement": "Food delivery, kitchen preparation, cleanup and refuse",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "r06",
+          "requirement": "Two changing/shower groups and equipment store",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "r07",
+          "requirement": "Independently bounded student washrooms with privacy at entrances",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "r05",
+          "requirement": "Nurse consultation, rest and handwashing",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "r01",
+          "requirement": "Staff room, cleaner cupboard and classroom storage",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "WLD-01",
+      "folder": "wld-01",
+      "source_layout": "development/levels/layouts/wld-01/layout.json",
+      "source_layout_sha256": "ebdfe3334052edac85caaad5e52f9c940cec1c26cd4a12cd67cae8b2a512281a",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "stage",
+          "source_name": "Logging-road van apron",
+          "intended_activity": "Unload beside the established logging road",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Camp gate and roadhead",
+          "intended_activity": "Enter through the working camp boundary",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "yard",
+          "source_name": "Stacked-timber yard",
+          "intended_activity": "Receive sort and stack timber without blocking routes",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "mill",
+          "source_name": "Sawmill floor",
+          "intended_activity": "Feed process and discharge timber through real machinery",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "mill-deck",
+          "source_name": "Sawmill inspection deck",
+          "intended_activity": "Inspect machinery from a supported guarded deck",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "mess",
+          "source_name": "Mess hall",
+          "intended_activity": "Cook serve and clear crew meals",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "bunk",
+          "source_name": "Bunkhouse",
+          "intended_activity": "Sleep and store crew belongings near washing facilities",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "cabin-a",
+          "source_name": "Foreman cabin",
+          "intended_activity": "Manage the camp and live in the foreman cabin",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "cabin-b",
+          "source_name": "Logging cabin",
+          "intended_activity": "Provide separate crew sleeping and domestic activity",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "shed",
+          "source_name": "Equipment repair shed",
+          "intended_activity": "Repair tools and machinery with working clearance",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "wash",
+          "source_name": "Washhouse",
+          "intended_activity": "Wash and change after timber work",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "foundations",
+          "source_name": "Original foundations",
+          "intended_activity": "Show earlier construction through grounded remains",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "trail",
+          "source_name": "Cabin trail junction",
+          "intended_activity": "Connect cabins along supported woodland paths",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "store",
+          "source_name": "Payroll / stores office",
+          "intended_activity": "Administer payroll supplies and work records",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Small timber operation with twelve crew sleeping places, communal meals/washing, log processing and maintenance.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "bunk",
+          "requirement": "Twelve sleeping places and personal storage",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "mess",
+          "requirement": "Cooking, food storage and cleanup",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "wash",
+          "requirement": "Private WC, wash and change facilities",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "mill",
+          "requirement": "Machine feed/output and maintenance envelopes",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "shed",
+          "requirement": "Repair surfaces and parts storage",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "WLD-02",
+      "folder": "wld-02",
+      "source_layout": "development/levels/layouts/wld-02/layout.json",
+      "source_layout_sha256": "a60a1cd25311f701933f79af3454d67e1830ca60218a5e8733e5e13a50d9fdff",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "stage",
+          "source_name": "Camp-road van apron",
+          "intended_activity": "Unload at the real campground roadhead",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Ranger gate / noticeboard",
+          "intended_activity": "Check notices and orient at the ranger entrance",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "ranger",
+          "source_name": "Ranger cabin",
+          "intended_activity": "Administer campsite use and provide ranger shelter",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "bath",
+          "source_name": "Bathhouse",
+          "intended_activity": "Provide private toilets washing and maintenance access",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "pavilion",
+          "source_name": "Dining pavilion",
+          "intended_activity": "Eat and shelter under the supported communal pavilion",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "camp-a",
+          "source_name": "West tent pitches",
+          "intended_activity": "Pitch tents with circulation and service clearances",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "camp-b",
+          "source_name": "East tent pitches",
+          "intended_activity": "Provide a second campsite cluster fitted to terrain",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "junction",
+          "source_name": "Trail-marker junction",
+          "intended_activity": "Orient walkers between actual trail branches",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "camper",
+          "source_name": "Abandoned camper",
+          "intended_activity": "Show a distinct former camping occupation",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "shore",
+          "source_name": "Lakeside clearing",
+          "intended_activity": "Reach the shore without eroding an unsupported bank",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "dock",
+          "source_name": "Lake dock",
+          "intended_activity": "Access lake-related gear on a supported dock",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "creek",
+          "source_name": "Creek footbridge",
+          "intended_activity": "Cross the creek on a real supported bridge",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "store",
+          "source_name": "Ranger tool store",
+          "intended_activity": "Maintain tools supplies and campground infrastructure",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Two campsite clusters; count actual fitted pitches and amenities from the preserved native authority before changing capacity.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "bath",
+          "requirement": "Private WC/washing and maintenance access",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "ranger",
+          "requirement": "Small ranger work/living and service provision",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "camp-a",
+          "requirement": "Individually fitted tent pads with access",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "camp-b",
+          "requirement": "Individually fitted tent pads with access",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "store",
+          "requirement": "Generator/distribution service and tools",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "WLD-03",
+      "folder": "wld-03",
+      "source_layout": "development/levels/layouts/wld-03/layout.json",
+      "source_layout_sha256": "c93985a00ace4efc8391f75d848527dea27d46325c6a029456c39f900b194374",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "stage",
+          "source_name": "Canyon-road van apron",
+          "intended_activity": "Unload at the canyon roadhead",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Canyon mouth",
+          "intended_activity": "Enter the canyon through a bounded approach",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "floor",
+          "source_name": "Canyon floor",
+          "intended_activity": "Traverse the natural canyon drainage floor",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "shelter",
+          "source_name": "Modern expedition shelter",
+          "intended_activity": "Shelter expedition personnel and everyday supplies",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "wash",
+          "source_name": "Expedition sample shelter",
+          "intended_activity": "Handle and record expedition samples at task surfaces",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "lower-path",
+          "source_name": "Lower switchback terrace",
+          "intended_activity": "Climb the lower terrace on a supported switchback",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "upper-path",
+          "source_name": "Upper switchback terrace",
+          "intended_activity": "Reach the upper terrace through real graded transitions",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "dwellings",
+          "source_name": "Fictional cliff-dwelling terrace",
+          "intended_activity": "Show fictional historical occupation in researched context",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "gallery",
+          "source_name": "Cave entrance gallery",
+          "intended_activity": "Pass through a geologically coherent cave threshold",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "fork",
+          "source_name": "Branching cave junction",
+          "intended_activity": "Choose between physically separate cave passages",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "chamber",
+          "source_name": "Dry side chamber",
+          "intended_activity": "Explore a dry enclosed chamber with safe headroom",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "lower-cave",
+          "source_name": "Lower cave chamber",
+          "intended_activity": "Reach a distinctly lower supported cave chamber",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "return",
+          "source_name": "Rock-arch return shelf",
+          "intended_activity": "Return along a supported natural shelf",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "alcove",
+          "source_name": "Expedition records alcove",
+          "intended_activity": "Consult expedition records protected from exposure",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Fictional archaeological occupation with a later four-person expedition presence; preserve geological and cultural research boundaries.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "shelter",
+          "requirement": "Four expedition sleeping/storage places",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "wash",
+          "requirement": "Sample handling and separated camp hygiene provision",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "alcove",
+          "requirement": "Supported records and supply storage",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "WLD-04",
+      "folder": "wld-04",
+      "source_layout": "development/levels/layouts/wld-04/layout.json",
+      "source_layout_sha256": "0a477753e3b1cc8613421df2ae293c06ba034b7663b769410098596f57c426c9",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "stage",
+          "source_name": "Forest-road van apron",
+          "intended_activity": "Unload at the forest-road stopping place",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Lower trail gate",
+          "intended_activity": "Enter the managed trail through its gate",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "lower",
+          "source_name": "Lower signed trail",
+          "intended_activity": "Climb the lower route along actual terrain",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "bend",
+          "source_name": "Boulder trail bend",
+          "intended_activity": "Turn around a grounded boulder landmark",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "clearing",
+          "source_name": "Hillside clearing",
+          "intended_activity": "Orient between station facilities and tower access",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "hut",
+          "source_name": "Maintenance hut",
+          "intended_activity": "Maintain the outpost using stored tools",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "ruin",
+          "source_name": "Ruined ranger station",
+          "intended_activity": "Show the footprint and remnants of an earlier station",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "store",
+          "source_name": "Ranger store",
+          "intended_activity": "Store station supplies beneath real shelter",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "return",
+          "source_name": "Contour return path",
+          "intended_activity": "Return along a supported contour path",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "foot",
+          "source_name": "Tower footing / fenced base",
+          "intended_activity": "Enter the supported fenced tower base",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "landing",
+          "source_name": "Tower midway landing",
+          "intended_activity": "Rest and turn on a real intermediate tower landing",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "cab",
+          "source_name": "Lookout cab",
+          "intended_activity": "Observe and communicate from the lookout cabin",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "deck",
+          "source_name": "Lookout exterior deck",
+          "intended_activity": "Inspect the horizon behind actual tower guardrails",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "One-person lookout duty station with occasional maintenance support; tower remains an optional risky branch.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "hut",
+          "requirement": "Maintenance work, emergency shelter and sanitary provision",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "cab",
+          "requirement": "Observation, radio and one sleeping place",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "store",
+          "requirement": "Fuel/supply and service separation",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "WLD-05",
+      "folder": "wld-05",
+      "source_layout": "development/levels/layouts/wld-05/layout.json",
+      "source_layout_sha256": "5b0ca78e4e8992bd4ae01226f7c745b73fe9881a20a0f0693fd6cff1d15a4970",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "stage",
+          "source_name": "Mine-road van apron",
+          "intended_activity": "Unload at the mine service road",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Mine gate / surface yard",
+          "intended_activity": "Receive workers and deliveries in the surface yard",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "shack",
+          "source_name": "Miners shack",
+          "intended_activity": "Shelter crew and store daily personal items",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "assay",
+          "source_name": "Assay office",
+          "intended_activity": "Prepare and record ore samples",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "stores",
+          "source_name": "Surface stores",
+          "intended_activity": "Store tools and consumables beside surface access",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "adit",
+          "source_name": "Adit mouth",
+          "intended_activity": "Enter the excavated workings through a supported adit",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "haul",
+          "source_name": "Main haul junction",
+          "intended_activity": "Distribute haul and pedestrian movement underground",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "ore-west",
+          "source_name": "West ore room",
+          "intended_activity": "Work one ore face with credible shoring",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "ore-east",
+          "source_name": "East ore room",
+          "intended_activity": "Work a separate ore face and equipment position",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "cross",
+          "source_name": "North crosscut",
+          "intended_activity": "Connect extraction routes through an actual crosscut",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "lift",
+          "source_name": "Collapsed lift barrier bay",
+          "intended_activity": "Observe collapsed lift remains from a contained safe bay",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "lower",
+          "source_name": "Lower working chamber",
+          "intended_activity": "Access lower extraction workings by real stairs or grade",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "vent",
+          "source_name": "Ventilation return",
+          "intended_activity": "Return through a physically supported ventilation passage",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "wash",
+          "source_name": "Surface washhouse",
+          "intended_activity": "Wash and change before leaving the worksite",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Bounded mine workings supported by a six-person surface crew shelter and actual haul/ventilation/service routines.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "shack",
+          "requirement": "Six crew rest places and meal preparation",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "wash",
+          "requirement": "Private WC, washing and changing",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "stores",
+          "requirement": "Tools, consumables and source/distribution services",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "WLD-06",
+      "folder": "wld-06",
+      "source_layout": "development/levels/layouts/wld-06/layout.json",
+      "source_layout_sha256": "f37184525debe30440a0d215c685e22ef40561077ee6ae6fb823e7587dc99304",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "stage",
+          "source_name": "Shore-road van apron",
+          "intended_activity": "Unload beside the shore access road",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Shore street",
+          "intended_activity": "Distribute arrivals along a coherent shore street",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "cottage-a",
+          "source_name": "West fisherman cottage",
+          "intended_activity": "Accommodate one fishing household",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "cottage-b",
+          "source_name": "East fisherman cottage",
+          "intended_activity": "Accommodate a distinct second fishing household",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "quay",
+          "source_name": "Quay apron",
+          "intended_activity": "Transfer landed goods between shore and piers",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "pier-w",
+          "source_name": "West dock walkway",
+          "intended_activity": "Reach west-side boats and working sheds",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "pier-e",
+          "source_name": "East dock walkway",
+          "intended_activity": "Reach east-side boats and working sheds",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "crossdock",
+          "source_name": "Cross-dock",
+          "intended_activity": "Transfer goods between the parallel piers",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "boathouse",
+          "source_name": "Boathouse",
+          "intended_activity": "Store and maintain small watercraft",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "net",
+          "source_name": "Net shed",
+          "intended_activity": "Dry repair and store nets with task clearance",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "fish",
+          "source_name": "Fish house",
+          "intended_activity": "Handle and store landed catch",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "undercroft",
+          "source_name": "Dry tidal undercroft",
+          "intended_activity": "Inspect a dry accessible tidal understructure",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "west-stair",
+          "source_name": "West shore stair bay",
+          "intended_activity": "Descend from the west shore with guards",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "east-stair",
+          "source_name": "East shore stair bay",
+          "intended_activity": "Provide an independent guarded eastern descent",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Two fishing households and a small working landing; shared pier transfer, storage and repair space.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "cottage-a",
+          "requirement": "Cooking, sleeping and private sanitation",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "cottage-b",
+          "requirement": "Cooking, sleeping and private sanitation",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "fish",
+          "requirement": "Catch receiving, wash and cold-storage task separation",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "net",
+          "requirement": "Net repair and drying clearance",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "WLD-07",
+      "folder": "wld-07",
+      "source_layout": "development/levels/layouts/wld-07/layout.json",
+      "source_layout_sha256": "d22635124d4e8167df3e5057c0c155ab1759e348995ba2d34946ff0959fd85ac",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "stage",
+          "source_name": "Cemetery-lane van apron",
+          "intended_activity": "Unload at the cemetery lane",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Lychgate and entry court",
+          "intended_activity": "Enter through the lychgate and orient respectfully",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "avenue",
+          "source_name": "Main cemetery avenue",
+          "intended_activity": "Follow the principal burial-ground procession route",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "chapel",
+          "source_name": "Ruined chapel",
+          "intended_activity": "Gather for memorial use within surviving structure",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "cottage",
+          "source_name": "Caretaker cottage",
+          "intended_activity": "House the caretaker and everyday domestic functions",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "garden",
+          "source_name": "Memorial garden",
+          "intended_activity": "Remember the dead in a distinct maintained garden",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "east-graves",
+          "source_name": "East grave plots",
+          "intended_activity": "Arrange later grave plots along supported paths",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "old-graves",
+          "source_name": "Old numbered markers",
+          "intended_activity": "Preserve the earlier burial pattern and markers",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "tool",
+          "source_name": "Caretaker tool store",
+          "intended_activity": "Maintain grounds with stored tools",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "west-stair",
+          "source_name": "West ossuary vestibule",
+          "intended_activity": "Reach the ossuary through its western vestibule",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "east-stair",
+          "source_name": "East ossuary vestibule",
+          "intended_activity": "Provide an independent eastern ossuary connection",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "ossuary",
+          "source_name": "Ossuary passage",
+          "intended_activity": "Move through a supported underground memorial passage",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "chamber",
+          "source_name": "Memorial record chamber",
+          "intended_activity": "Keep burial records and memorial material",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Small maintained burial ground with caretaker dwelling, memorial chapel and two ossuary entrances.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "cottage",
+          "requirement": "Caretaker cooking, sleeping and sanitation",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "tool",
+          "requirement": "Maintenance and electrical service provision",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "chamber",
+          "requirement": "Supported burial records and archive storage",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "WLD-08",
+      "folder": "wld-08",
+      "source_layout": "development/levels/layouts/wld-08/layout.json",
+      "source_layout_sha256": "616f6928fa4a55515027b3b3dd434ba6db6d044df2ab9ecb19e862efb675955b",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "stage",
+          "source_name": "Prepared station van apron",
+          "intended_activity": "Unload at the prepared station roadhead",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Flagged arrival lane",
+          "intended_activity": "Follow a flagged supported arrival route",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "court",
+          "source_name": "Station service court",
+          "intended_activity": "Receive supplies and connect sheltered station functions",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "lab",
+          "source_name": "Observation laboratory",
+          "intended_activity": "Observe record and work with research instruments",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "dorm",
+          "source_name": "Dormitory",
+          "intended_activity": "Sleep and store personal equipment near washing",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "mess",
+          "source_name": "Mess / galley",
+          "intended_activity": "Cook eat and clear meals within the heated station",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "radio",
+          "source_name": "Radio room",
+          "intended_activity": "Maintain communications through actual radio work surfaces",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "records",
+          "source_name": "Log archive",
+          "intended_activity": "Preserve and consult station logs",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "generator",
+          "source_name": "Generator / water shed",
+          "intended_activity": "Maintain generation water and service distribution",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "array",
+          "source_name": "Exterior instrument array",
+          "intended_activity": "Service exposed instruments along a bounded route",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "store",
+          "source_name": "Cold stores",
+          "intended_activity": "Store supplies under appropriate shelter",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "tunnel",
+          "source_name": "Heated service tunnel",
+          "intended_activity": "Move between major buildings through a heated tunnel",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "tunnel-n",
+          "source_name": "Generator tunnel branch",
+          "intended_activity": "Reach generator services on a separate tunnel branch",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "shelter",
+          "source_name": "Array wind shelter",
+          "intended_activity": "Shelter during instrument maintenance without blocking access",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Eight-person remote research station with four paired bunk spaces, shared meals/washing, research and independent services.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "dorm",
+          "requirement": "Eight bunks, WC, showers and clothing transition",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "mess",
+          "requirement": "Cooking, food storage and cleanup",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "lab",
+          "requirement": "Research benches, sample storage and handwashing",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "generator",
+          "requirement": "Source, distribution, water plant and maintenance access",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "WLD-09",
+      "folder": "wld-09",
+      "source_layout": "development/levels/layouts/wld-09/layout.json",
+      "source_layout_sha256": "ac4bae32f511b941ff9a2345d8906899b8d4599eb886b3c3dd32f2b87c60f155",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "stage",
+          "source_name": "Dam access van apron",
+          "intended_activity": "Unload at the dam access road",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Dam service forecourt",
+          "intended_activity": "Enter the maintenance forecourt",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "crest",
+          "source_name": "Guarded dam crest",
+          "intended_activity": "Traverse the guarded crest with water kept below boundaries",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "control",
+          "source_name": "Control room",
+          "intended_activity": "Observe and control plant from supported consoles",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "office",
+          "source_name": "Shift records office",
+          "intended_activity": "Record shifts maintenance and operational history",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "west-stair",
+          "source_name": "West service stair enclosure",
+          "intended_activity": "Descend internally through a supported stair enclosure",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "turbine",
+          "source_name": "Turbine hall",
+          "intended_activity": "Inspect turbine machinery and its maintenance clearances",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "workshop",
+          "source_name": "Maintenance workshop",
+          "intended_activity": "Repair plant components on real work surfaces",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "east-stair",
+          "source_name": "East external stair court",
+          "intended_activity": "Use a separate guarded exterior descent",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "gallery",
+          "source_name": "Lower service gallery",
+          "intended_activity": "Inspect lower civil and plant services",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "valve",
+          "source_name": "Valve inspection room",
+          "intended_activity": "Reach and maintain a distinct valve installation",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "return",
+          "source_name": "Lower maintenance return",
+          "intended_activity": "Return through an independent lower service route",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "spillway",
+          "source_name": "Guarded spillway observation",
+          "intended_activity": "Observe the spillway from a physically protected position",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "plant",
+          "source_name": "Switchgear room",
+          "intended_activity": "Maintain electrical distribution in a separate plant space",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Bounded dam/powerhouse maintenance area with approximately six concurrent worker positions; no visitor access through active hydraulic spaces.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "office",
+          "requirement": "Shift work, rest and staff sanitary provision",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "workshop",
+          "requirement": "Bench work, spares and safe maintenance clearance",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "control",
+          "requirement": "Supported panels and separate records work",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "plant",
+          "requirement": "Source/distribution and switchgear operating approaches",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "WLD-10",
+      "folder": "wld-10",
+      "source_layout": "development/levels/layouts/wld-10/layout.json",
+      "source_layout_sha256": "e4a430b4e197d6ec42908a347294bd2a53641ac1c8e6be50d722d5f6540b91bb",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "stage",
+          "source_name": "Mountain-road van apron",
+          "intended_activity": "Unload at the mountain-road terminus",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Monastery gate terrace",
+          "intended_activity": "Approach the monastery through its gate terrace",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "gatehouse",
+          "source_name": "Gatehouse",
+          "intended_activity": "Receive visitors and supervise entry",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "west",
+          "source_name": "West cloister",
+          "intended_activity": "Connect western communal rooms under cover",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "east",
+          "source_name": "East cloister",
+          "intended_activity": "Connect eastern residential/service rooms under cover",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "north",
+          "source_name": "North cloister",
+          "intended_activity": "Connect archive and worship functions under cover",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "south",
+          "source_name": "South cloister",
+          "intended_activity": "Close the sheltered communal circulation loop",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "garden",
+          "source_name": "Herb garden",
+          "intended_activity": "Grow and maintain herbs beside water access",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "archive",
+          "source_name": "Archive",
+          "intended_activity": "Read and preserve monastic records",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "refectory",
+          "source_name": "Refectory",
+          "intended_activity": "Prepare serve and clear communal meals",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "dorm",
+          "source_name": "Dormitory",
+          "intended_activity": "Sleep with personal storage and nearby sanitation",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "tower-base",
+          "source_name": "Bell tower stair base",
+          "intended_activity": "Enter a supported bell-tower stair",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "bell",
+          "source_name": "Bell chamber",
+          "intended_activity": "Maintain and operate bells from guarded structure",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "catacombs",
+          "source_name": "Catacomb cross passage",
+          "intended_activity": "Connect underground burial and memorial spaces",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "chamber",
+          "source_name": "Subterranean chapter chamber",
+          "intended_activity": "Gather or consult memorial records below ground",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "vestry",
+          "source_name": "Wash / vestry",
+          "intended_activity": "Wash and prepare clothing or worship materials",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "rear",
+          "source_name": "Rear service terrace",
+          "intended_activity": "Receive supplies along a separate supported service terrace",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Twelve-person communal monastery with worship, meals, washing, work, archive and protected circulation.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "dorm",
+          "requirement": "Twelve sleeping places with personal storage and sanitation",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "refectory",
+          "requirement": "Kitchen, pantry, dining and cleanup",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "gatehouse",
+          "requirement": "Visitor reception and sanitary support",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "vestry",
+          "requirement": "Washing, clothing and worship preparation",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "WLD-11",
+      "folder": "wld-11",
+      "source_layout": "development/levels/layouts/wld-11/layout.json",
+      "source_layout_sha256": "a16ce066da5d6eb9bc7a008c07f1ba9713f49573f85f86647dd3d38d327ab5bf",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "stage",
+          "source_name": "Causeway van apron",
+          "intended_activity": "Unload on a supported dry causeway",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Raised causeway landing",
+          "intended_activity": "Enter the raised settlement at a stable landing",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "main",
+          "source_name": "Main settlement boardwalk",
+          "intended_activity": "Distribute residents along the main boardwalk",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "service",
+          "source_name": "Service boardwalk",
+          "intended_activity": "Carry supplies along a parallel service boardwalk",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "south-deck",
+          "source_name": "South crossing deck",
+          "intended_activity": "Connect routes at the southern supported crossing",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "north-deck",
+          "source_name": "North crossing deck",
+          "intended_activity": "Connect routes at the northern supported crossing",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "house-a",
+          "source_name": "West stilt house",
+          "intended_activity": "Live and sleep in a supported western stilt house",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "house-b",
+          "source_name": "East stilt house",
+          "intended_activity": "Live and sleep in a distinct eastern stilt house",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "chapel",
+          "source_name": "Settlement chapel",
+          "intended_activity": "Gather for settlement worship or remembrance",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "warehouse",
+          "source_name": "Flooded warehouse dry deck",
+          "intended_activity": "Store goods on the warehouse dry deck",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "shack",
+          "source_name": "Fishing shack",
+          "intended_activity": "Work and store fishing equipment in shelter",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "ferry",
+          "source_name": "Ferry stage",
+          "intended_activity": "Reach a former ferry landing without water traversal",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "pump",
+          "source_name": "Pump / wash shelter",
+          "intended_activity": "Maintain pumping and washing facilities above floodwater",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Two stilt households and shared settlement work/worship, connected entirely through supported dry routes.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "house-a",
+          "requirement": "Sleeping, cooking and private sanitation",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "house-b",
+          "requirement": "Sleeping, cooking and private sanitation",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "pump",
+          "requirement": "Washing, sanitation service and electrical distribution",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "warehouse",
+          "requirement": "Dry stock aisles above floodwater",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "WLD-12",
+      "folder": "wld-12",
+      "source_layout": "development/levels/layouts/wld-12/layout.json",
+      "source_layout_sha256": "a873a8669fdec20b35cdcfdb0c8b97e39b9ef18b26aa545423b61961918b155d",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "stage",
+          "source_name": "Maintenance-road van apron",
+          "intended_activity": "Unload at the railway maintenance road",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Rail access gate",
+          "intended_activity": "Enter through the controlled maintenance access",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "signal",
+          "source_name": "Signal hut",
+          "intended_activity": "Observe track conditions and maintain signaling records",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "cutting",
+          "source_name": "Rail cutting",
+          "intended_activity": "Traverse the actual railway cutting beside alignment",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "coach-a",
+          "source_name": "Derailed passenger coach",
+          "intended_activity": "Inspect passenger compartments and their surviving circulation",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "coach-b",
+          "source_name": "Derailed baggage coach",
+          "intended_activity": "Inspect baggage storage and service access",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "siding",
+          "source_name": "Maintenance siding",
+          "intended_activity": "Move maintenance equipment clear of the main line",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "store",
+          "source_name": "Track stores hut",
+          "intended_activity": "Store track tools and replacement parts",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "trestle",
+          "source_name": "Trestle guarded deck",
+          "intended_activity": "Cross on a supported guarded railway structure",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "tunnel",
+          "source_name": "Tunnel mouth / dry bore",
+          "intended_activity": "Enter a dry supported tunnel with proper clearance",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "refuge",
+          "source_name": "Tunnel maintenance refuge",
+          "intended_activity": "Stand clear of the tunnel route in a real recess",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "lower",
+          "source_name": "Lower service walkway",
+          "intended_activity": "Maintain the underside through a separate supported walkway",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "west-return",
+          "source_name": "Cutting west return path",
+          "intended_activity": "Return beside the cutting along grounded terrain",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "crossing",
+          "source_name": "North maintenance crossing",
+          "intended_activity": "Cross the alignment at a deliberately authored maintenance point",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Bounded track-maintenance and derailment site; coaches retain compartment and baggage functions without implying an operating train.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "signal",
+          "requirement": "Duty work, records and discreet sanitary support",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "coach-a",
+          "requirement": "Real compartment, corridor and lavatory layout",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "coach-b",
+          "requirement": "Baggage storage and service aisle",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "store",
+          "requirement": "Tools, spares and electrical service",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "WLD-13",
+      "folder": "wld-13",
+      "source_layout": "development/levels/layouts/wld-13/layout.json",
+      "source_layout_sha256": "4d8dd90826c02b30cb4c64073f745a847f63e16110aaa4f8297b4543e0c6a732",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "stage",
+          "source_name": "Forest-road van apron",
+          "intended_activity": "Unload at the forest service road",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Cannery gate / service yard",
+          "intended_activity": "Receive deliveries through the cannery service yard",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "processing",
+          "source_name": "Fish-processing floor",
+          "intended_activity": "Receive prepare process and discharge catch",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "cold",
+          "source_name": "Refrigerated stores",
+          "intended_activity": "Hold perishable stock with service access",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "boiler",
+          "source_name": "Boiler house",
+          "intended_activity": "Generate process heat and support maintenance",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "wash",
+          "source_name": "Workers washroom",
+          "intended_activity": "Wash and change separately from food processing",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "office",
+          "source_name": "Managers office",
+          "intended_activity": "Administer production payroll and records",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "stores",
+          "source_name": "Packing / dry stores",
+          "intended_activity": "Pack and store processed goods before dispatch",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "dock",
+          "source_name": "Shipping dock",
+          "intended_activity": "Load finished goods at the supported shipping dock",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "bunk",
+          "source_name": "Workers bunkhouse",
+          "intended_activity": "Sleep and store workers belongings",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "mess",
+          "source_name": "Workers mess",
+          "intended_activity": "Prepare and serve crew meals",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "forest",
+          "source_name": "Forest edge return",
+          "intended_activity": "Return along the actual forest-edge path",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "side-yard",
+          "source_name": "East service return",
+          "intended_activity": "Move services and waste around the processing hall",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "gallery",
+          "source_name": "Inspection mezzanine",
+          "intended_activity": "Inspect processing equipment from a supported guarded mezzanine",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Small processing plant with eight crew lodging places; receiving, processing, cold storage, packing and dispatch remain distinct.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "processing",
+          "requirement": "Receiving, processing, packing transfer and hygiene boundaries",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "wash",
+          "requirement": "WC, showers, changing and cleaner storage",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "bunk",
+          "requirement": "Eight sleeping places and personal storage",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "mess",
+          "requirement": "Cooking, food storage and cleanup",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "boiler",
+          "requirement": "Process plant and generator/distribution maintenance",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "WLD-14",
+      "folder": "wld-14",
+      "source_layout": "development/levels/layouts/wld-14/layout.json",
+      "source_layout_sha256": "080e5ac734ad19a9027c775b2beb84f5717855eaa5461cc569106e38b7537800",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "stage",
+          "source_name": "Roadhead van apron",
+          "intended_activity": "Unload at the headland roadhead",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Worn headland approach",
+          "intended_activity": "Follow a drained supported approach",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "porch",
+          "source_name": "Keeper porch",
+          "intended_activity": "Shelter before entering the keeper dwelling",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "foyer",
+          "source_name": "Keeper entrance",
+          "intended_activity": "Remove outdoor clothing and distribute household arrivals",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "sitting",
+          "source_name": "Sitting room",
+          "intended_activity": "Rest and receive visitors away from tower work",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "kitchen",
+          "source_name": "Keeper kitchen",
+          "intended_activity": "Prepare household meals with cleanup and storage",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "workroom",
+          "source_name": "Maintenance workroom",
+          "intended_activity": "Maintain station equipment on supported work surfaces",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "store",
+          "source_name": "Dry store",
+          "intended_activity": "Store dry supplies near service access",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "stairs",
+          "source_name": "Main stair hall",
+          "intended_activity": "Reach the private upper dwelling through actual stairs",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "bed",
+          "source_name": "Keeper bedroom",
+          "intended_activity": "Sleep and store personal belongings",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "study",
+          "source_name": "Signal records study",
+          "intended_activity": "Keep signal and maintenance records",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "upperhall",
+          "source_name": "Upper stair landing",
+          "intended_activity": "Distribute upper rooms without crossing private beds",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "service-stair",
+          "source_name": "Service stair landing",
+          "intended_activity": "Begin the independent dwelling service stair",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "service-upper",
+          "source_name": "Upper service landing",
+          "intended_activity": "Connect the service stair to upper support spaces",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "passage",
+          "source_name": "Attached covered tower passage",
+          "intended_activity": "Reach the tower beneath continuous weather cover",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "generator",
+          "source_name": "Generator and oil house",
+          "intended_activity": "Generate station power and separately store service supplies",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "yard",
+          "source_name": "Service yard and cistern reserve",
+          "intended_activity": "Maintain water storage and station infrastructure",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "tower0",
+          "source_name": "Tower base",
+          "intended_activity": "Enter and maintain the real tower base",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "tower1",
+          "source_name": "First tower landing",
+          "intended_activity": "Turn and rest at the first supported landing",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "tower2",
+          "source_name": "Second tower landing",
+          "intended_activity": "Turn and rest at the second supported landing",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "tower3",
+          "source_name": "Third tower landing",
+          "intended_activity": "Turn and rest at the third supported landing",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "tower4",
+          "source_name": "Watch room",
+          "intended_activity": "Observe conditions beneath the lantern level",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "tower5",
+          "source_name": "Lantern room",
+          "intended_activity": "Maintain the lantern within its supported glazed structure",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Keeper dwelling for a small household with separate tower duty, generator and service access; no automatic tower-objective requirement.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "kitchen",
+          "requirement": "Food preparation, storage and cleanup",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "upperhall",
+          "requirement": "Private keeper bathroom and linen storage",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "bed",
+          "requirement": "Private sleeping/dressing",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "generator",
+          "requirement": "Generation, distribution and separated service stores",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "WLD-15",
+      "folder": "wld-15",
+      "source_layout": "development/levels/layouts/wld-15/layout.json",
+      "source_layout_sha256": "7e73e778acdf196caf28e4be5a9bf264035eb9ffa6f8bdaff413aadf280c10c3",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "stage",
+          "source_name": "Quayside van apron",
+          "intended_activity": "Unload from the van on the quayside",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Quay cargo lane",
+          "intended_activity": "Transfer equipment along the quay cargo lane",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "quay",
+          "source_name": "Mooring quay",
+          "intended_activity": "Moor and service the permanently retired vessel",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "portpier",
+          "source_name": "Port service pier",
+          "intended_activity": "Reach the port side along a supported service pier",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "aft",
+          "source_name": "Aft working deck",
+          "intended_activity": "Handle working-deck gear with clear deck circulation",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "processing",
+          "source_name": "Fish processing hall",
+          "intended_activity": "Process catch through an intelligible equipment sequence",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "galley",
+          "source_name": "Galley",
+          "intended_activity": "Prepare crew meals within the galley",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "mess",
+          "source_name": "Crew mess",
+          "intended_activity": "Eat together clear of galley work",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "side",
+          "source_name": "Starboard deck walkway",
+          "intended_activity": "Move along the supported starboard side deck",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "fore",
+          "source_name": "Foredeck",
+          "intended_activity": "Work mooring and deck gear forward",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "engine",
+          "source_name": "Engine room",
+          "intended_activity": "Maintain propulsion machinery without implying active sailing",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "hold",
+          "source_name": "Chilled fish hold",
+          "intended_activity": "Store chilled catch within a dry sealed hold",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "pump",
+          "source_name": "Bilge pump room",
+          "intended_activity": "Maintain bilge pumps below the working decks",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "crew",
+          "source_name": "Crew bunks",
+          "intended_activity": "Sleep and store crew belongings with sanitary provision",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "bridge",
+          "source_name": "Wheelhouse",
+          "intended_activity": "Observe navigation and vessel records from the wheelhouse",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "net",
+          "source_name": "Net and gear store",
+          "intended_activity": "Dry repair and store fishing nets and gear",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Permanently moored retired catcher/processor for an eight-person former crew; it does not sail or create new transport gameplay.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "crew",
+          "requirement": "Eight bunks, WC/showers and personal storage",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "galley",
+          "requirement": "Food preparation, cold/dry provision and cleanup",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "engine",
+          "requirement": "Machinery maintenance and generation/distribution access",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "processing",
+          "requirement": "Coherent feed/processing/output and washdown zones",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "WLD-16",
+      "folder": "wld-16",
+      "source_layout": "development/levels/layouts/wld-16/layout.json",
+      "source_layout_sha256": "58c73bd8f3693cad8bc163b03546b177c5e84bf835d7715605d56a71af3fe054",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "stage",
+          "source_name": "Roadside van bay",
+          "intended_activity": "Unload from the roadside service bay",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Motor court entrance",
+          "intended_activity": "Enter the motor court without crossing private rooms",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "court",
+          "source_name": "Uneven parking court",
+          "intended_activity": "Park and distribute guests through a drained courtyard",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "westwalk",
+          "source_name": "West exterior room walk",
+          "intended_activity": "Reach west guest rooms along a clear exterior walk",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "eastwalk",
+          "source_name": "East exterior room walk",
+          "intended_activity": "Reach east guest rooms along a clear exterior walk",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "northwalk",
+          "source_name": "North connecting walk",
+          "intended_activity": "Connect guest walks through a supported northern route",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "office",
+          "source_name": "Reception and key desk",
+          "intended_activity": "Receive guests issue keys and manage records",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "manager",
+          "source_name": "Manager apartment",
+          "intended_activity": "Provide separate manager living and sleeping functions",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "laundry",
+          "source_name": "Linen and laundry",
+          "intended_activity": "Wash dry and store guest linen",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "plant",
+          "source_name": "Heating and service room",
+          "intended_activity": "Maintain heating power and water distribution",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "service",
+          "source_name": "Rear service yard",
+          "intended_activity": "Receive supplies and remove waste behind guest activity",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "room1",
+          "source_name": "West guest room 1",
+          "intended_activity": "Sleep wash and store luggage in west guest unit one",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "room5",
+          "source_name": "East guest room 5",
+          "intended_activity": "Sleep wash and store luggage in east guest unit five",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "room2",
+          "source_name": "West guest room 2",
+          "intended_activity": "Sleep wash and store luggage in west guest unit two",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "room6",
+          "source_name": "East guest room 6",
+          "intended_activity": "Sleep wash and store luggage in east guest unit six",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "room3",
+          "source_name": "West guest room 3",
+          "intended_activity": "Sleep wash and store luggage in west guest unit three",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "room7",
+          "source_name": "East guest room 7",
+          "intended_activity": "Sleep wash and store luggage in east guest unit seven",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "room4",
+          "source_name": "West guest room 4",
+          "intended_activity": "Sleep wash and store luggage in west guest unit four",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "room8",
+          "source_name": "East guest room 8",
+          "intended_activity": "Sleep wash and store luggage in east guest unit eight",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Eight guest units, each with its own sanitary child space, plus separate manager accommodation and housekeeping/service rooms.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "room1",
+          "requirement": "Private sanitary compartment",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "room2",
+          "requirement": "Private sanitary compartment",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "room3",
+          "requirement": "Private sanitary compartment",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "room4",
+          "requirement": "Private sanitary compartment",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "room5",
+          "requirement": "Private sanitary compartment",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "room6",
+          "requirement": "Private sanitary compartment",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "room7",
+          "requirement": "Private sanitary compartment",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "room8",
+          "requirement": "Private sanitary compartment",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "manager",
+          "requirement": "Separate living, cooking, sleeping and sanitation",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "laundry",
+          "requirement": "Dirty/clean linen, washing, drying and storage",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "WLD-17",
+      "folder": "wld-17",
+      "source_layout": "development/levels/layouts/wld-17/layout.json",
+      "source_layout_sha256": "392474ba8bbdd4c03ac96283355bc4f08023fc72d745fe0643c608f5f75e9e37",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "stage",
+          "source_name": "Lower access van apron",
+          "intended_activity": "Unload at the lower battery roadhead",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Lower access track",
+          "intended_activity": "Approach along the actual access track",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "approach",
+          "source_name": "Cut hillside approach",
+          "intended_activity": "Climb through a supported hillside cutting",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "yard",
+          "source_name": "Upper battery yard",
+          "intended_activity": "Distribute crew and maintenance access across the battery",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "west",
+          "source_name": "West casemate",
+          "intended_activity": "House an inert western defensive emplacement",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "east",
+          "source_name": "East casemate",
+          "intended_activity": "House an inert eastern defensive emplacement",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "gallery",
+          "source_name": "Upper protected gallery",
+          "intended_activity": "Move between protected upper defensive positions",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "magazine",
+          "source_name": "Empty magazine",
+          "intended_activity": "Show empty secure storage with credible access control",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "service",
+          "source_name": "Maintenance shelter",
+          "intended_activity": "Maintain tools and installation components",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "director",
+          "source_name": "Observation director post",
+          "intended_activity": "Observe the defended horizon from a deliberate sightline",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "barracks",
+          "source_name": "Lower barrack room",
+          "intended_activity": "Sleep eat and store crew belongings with sanitation",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "lowgallery",
+          "source_name": "Lower gallery",
+          "intended_activity": "Reach protected lower rooms through actual gallery geometry",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "plant",
+          "source_name": "Ventilation and power room",
+          "intended_activity": "Maintain ventilation and independent power distribution",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "records",
+          "source_name": "Duty records room",
+          "intended_activity": "Record duty maintenance and installation history",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "pump",
+          "source_name": "Drainage pump chamber",
+          "intended_activity": "Collect and pump drainage through a real low-point service space",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Bounded historic battery for an eight-person duty detachment; emplacements and magazines remain inert.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "barracks",
+          "requirement": "Eight sleeping places, food/rest and sanitary support",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "service",
+          "requirement": "Repair bench and stores",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "plant",
+          "requirement": "Ventilation, source/distribution and service clearances",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "WLD-18",
+      "folder": "wld-18",
+      "source_layout": "development/levels/layouts/wld-18/layout.json",
+      "source_layout_sha256": "64ef060d286f7f0e3b3b8b128b857df006de4ff34ce1390c3da94c5420f8fbc1",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "stage",
+          "source_name": "Service road van apron",
+          "intended_activity": "Unload at the existing maintenance roadhead",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Security approach",
+          "intended_activity": "Approach through a controlled security threshold",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "servicehouse",
+          "source_name": "Surface service building",
+          "intended_activity": "Receive and administer service staff",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "yard",
+          "source_name": "Fenced maintenance yard",
+          "intended_activity": "Move deliveries within the enclosed maintenance yard",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "head",
+          "source_name": "Access headhouse",
+          "intended_activity": "Enter the inert underground installation",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "shop",
+          "source_name": "Maintenance workshop",
+          "intended_activity": "Maintain components at workbenches and stores",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "exit",
+          "source_name": "Hillside emergency exit",
+          "intended_activity": "Reach an independent supported hillside emergency exit",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "upperring",
+          "source_name": "Upper shaft gallery",
+          "intended_activity": "Traverse a guarded upper annular shaft gallery",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "lowring",
+          "source_name": "Lower shaft gallery",
+          "intended_activity": "Traverse a separately supported lower shaft gallery",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "west",
+          "source_name": "Upper west access",
+          "intended_activity": "Connect western upper service rooms",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "records",
+          "source_name": "Maintenance records",
+          "intended_activity": "Consult maintenance records on supported task furniture",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "exhibit",
+          "source_name": "Inert control equipment room",
+          "intended_activity": "Inspect inert disconnected control racks",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "east",
+          "source_name": "Lower east access",
+          "intended_activity": "Connect eastern lower service rooms",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "crew",
+          "source_name": "Lower crew room",
+          "intended_activity": "Rest and store crew belongings away from plant",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "pump",
+          "source_name": "Sump and pump room",
+          "intended_activity": "Maintain sump collection at the actual low point",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "plant",
+          "source_name": "Lower ventilation plant",
+          "intended_activity": "Maintain air-handling and service distribution",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Inert former installation with six crew rest places, service plant and independent emergency egress around guarded shaft levels.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "crew",
+          "requirement": "Six rest places, meals and private sanitation",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "servicehouse",
+          "requirement": "Administration and visitor/staff sanitary provision",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "shop",
+          "requirement": "Bench work and parts storage",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "plant",
+          "requirement": "Source/distribution, ventilation and maintenance access",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "folder": "wld-07-mortuary",
+      "source_layout": "development/levels/layout-expansions/wld-07-mortuary/layout.json",
+      "source_layout_sha256": "36dd0c843f6162bbb7461f729a20bf2c4ed5345f7c74cb7eb89ec37379fb06c0",
+      "status": "FUNCTION_REQUIREMENTS_AUTHORED_DIMENSIONS_UNACCEPTED",
+      "spaces": [
+        {
+          "id": "stage",
+          "source_name": "Cemetery-lane van apron",
+          "intended_activity": "Unload at the shared cemetery lane",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "entry",
+          "source_name": "Lychgate and entry court",
+          "intended_activity": "Enter the parent burial ground",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "avenue",
+          "source_name": "Main cemetery avenue",
+          "intended_activity": "Follow the principal procession route",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "chapel",
+          "source_name": "Ruined chapel",
+          "intended_activity": "Use the existing memorial chapel",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "cottage",
+          "source_name": "Caretaker cottage",
+          "intended_activity": "Maintain the caretaker dwelling",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "garden",
+          "source_name": "Memorial garden",
+          "intended_activity": "Visit the memorial garden",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "east-graves",
+          "source_name": "East grave plots",
+          "intended_activity": "Reach later burial plots",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "old-graves",
+          "source_name": "Old numbered markers",
+          "intended_activity": "Preserve earlier numbered markers",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "tool",
+          "source_name": "Caretaker tool store",
+          "intended_activity": "Maintain grounds from the shared tool store",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "west-stair",
+          "source_name": "West ossuary vestibule",
+          "intended_activity": "Enter the western ossuary vestibule",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "east-stair",
+          "source_name": "East ossuary vestibule",
+          "intended_activity": "Enter the eastern ossuary vestibule",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "ossuary",
+          "source_name": "Ossuary passage",
+          "intended_activity": "Traverse the existing underground memorial passage",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "chamber",
+          "source_name": "Memorial record chamber",
+          "intended_activity": "Consult cemetery records",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "mort-reception",
+          "source_name": "Vale Mortuary reception",
+          "intended_activity": "Receive visitors and arrange funeral services",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "mort-viewing",
+          "source_name": "Viewing room",
+          "intended_activity": "Gather privately for viewing and remembrance",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "mort-prep",
+          "source_name": "Preparation room",
+          "intended_activity": "Prepare remains privately with washing and clean/soiled separation",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "mort-cold",
+          "source_name": "Cold storage",
+          "intended_activity": "Store remains in a separate serviced cold space",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "mort-office",
+          "source_name": "Mortuary office",
+          "intended_activity": "Administer confidential records and staff tasks",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "mort-bay",
+          "source_name": "Discreet service bay",
+          "intended_activity": "Receive transfers through a discreet service entrance",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        },
+        {
+          "id": "mort-hall",
+          "source_name": "Mortuary side hall",
+          "intended_activity": "Connect public and staff functions through controlled privacy thresholds",
+          "dimensions_status": "REVIEW_IN_S02",
+          "runtime_integration_status": "NOT_ESTABLISHED_BY_THIS_PROGRAM"
+        }
+      ],
+      "normal_use_design_capacity": "Shared cemetery mission plus a small mortuary; separate public viewing and confidential staff/preparation/transfer functions.",
+      "required_child_spaces_or_task_zones": [
+        {
+          "parent_space": "cottage",
+          "requirement": "Caretaker domestic and sanitary support",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "mort-reception",
+          "requirement": "Visitor WC and confidential consultation",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "mort-viewing",
+          "requirement": "Private viewing room separated from service transfer",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "mort-prep",
+          "requirement": "Preparation, handwashing, clean/soiled separation and staff-only storage",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "mort-office",
+          "requirement": "Confidential records and staff changing/WC",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        },
+        {
+          "parent_space": "mort-cold",
+          "requirement": "Serviced cold storage with maintenance clearance",
+          "status": "REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN"
+        }
+      ],
+      "privacy_and_service_rule": "Public arrivals must not cross private sleeping, washing or confidential work; goods, maintenance and waste need a credible service route. Spatial access classes are design requirements, not new gameplay permissions or locks.",
+      "capacity_note": "Proposed design program for normal former use; verify against measured assets and final plans. These are not historical facts, current NPC counts or changes to the six-player contract."
+    }
+  ]
+}

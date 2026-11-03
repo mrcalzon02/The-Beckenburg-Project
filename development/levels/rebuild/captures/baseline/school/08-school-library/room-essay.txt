@@ -1,0 +1,12 @@
+Room 8: School library
+Site: Ravenshade School / production-2026-10-20-lived-location-v1-97b23b0a6674e5b7
+Bounds (X,Z): 10.00,24.00 -> 20.00,38.00; floor 3.60m; clear height 3.60m
+Geometric centre: 15.00,31.00; traversable: true
+Actual 4-view camera: 15.00,3.60,31.00; displacement 0.00m
+Portal access / windows / stairs: P12 door -> 7 Upper locker corridor 1.35m @(20.00,3.60,31.00); P15 door -> 9 Classroom B 1.20m @(15.00,3.60,24.00); P26 window -> 13 School steps and bus loop 1.25m @(15.00,3.60,38.00)
+Connected in authored portal graph to van: true
+Props: 12; sockets: 8
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

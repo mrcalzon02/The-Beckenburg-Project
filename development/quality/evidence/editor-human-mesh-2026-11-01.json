@@ -1,0 +1,79 @@
+{
+  "schema": "beckenburg.human-mesh-g2/v1",
+  "publishedSource": "cfcdea5b5d5cbb0126783a63c9a2a0c4db97048a",
+  "accepted": {
+    "primitives": {
+      "sha": "721103f271143e1f4036f9841d6761130388e3f7",
+      "native": 41368621679,
+      "standalone": 41368616675
+    },
+    "picking": {
+      "sha": "1d323311d975a86159fe2ebd6207a6f09770d3ab",
+      "native": 41369066729,
+      "standalone": 41369064320,
+      "full": 41369072022,
+      "passed": 310,
+      "failed": 0,
+      "skipped": 0
+    },
+    "gizmos": {
+      "sha": "cfcdea5b5d5cbb0126783a63c9a2a0c4db97048a",
+      "native": 41369687086,
+      "standalone": 41369683760
+    }
+  },
+  "limits": [
+    "Partial G2, no gate completion inferred",
+    "No new agent/headless/MCP mesh operations",
+    "Area gestures replace vertex selection; additive/subtractive and edge/face regions remain open",
+    "Rotation/scale, local/normal transforms, loop/ring, reversible modeling, full normal/material interchange and laterG3-G12 remain open",
+    "No physical hardware/installed acceptance inferred"
+  ],
+  "areaSelectionSourceSha": "41bbf57374070df9655dae71e4b9b041d3401009",
+  "areaSelectionCheckpoint": {
+    "feature": "Human visible/X-ray vertex boxes and lassos, immutable native projection BVH, bounded work and multi-selection gizmo integration",
+    "publication": "local implementation checkpoint, reconciled main merge follows",
+    "checks": [
+      "Complete Java17 host compilation",
+      "Independent editor JAR Java17 build",
+      "EditorMeshPickingTest --stress under256MiB:120000 faces/360000 vertices, all visible vertex queries, dense-work refusal, exact concave lasso and overlapping visibility",
+      "Actual workspace-only AssetImportBoxSelectionGuiTest: mouse box/lasso visible/Xray, cancellation, stale revision, group move/undo/redo and every native game-decoder corner"
+    ],
+    "canonicalLfSha256": {
+      "src/main/java/org/beckenburg/AssetImportDialog.java": "34d82c484bb65de5d0211cd1256fd07111934e8f49ea9a4622e8386a8f89a9a3",
+      "src/main/java/org/beckenburg/editor/EditorMeshPicking.java": "ba01550f908c0fe55dcf42438c148f0a020d598dc6cb1ff2c4ce9ceb9ac8c531",
+      "src/test/java/org/beckenburg/AssetImportBoxSelectionGuiTest.java": "5d25c89dc169ac50eb599d6e25cf2337639add4b44de0aae3d90217677800ef4",
+      "src/test/java/org/beckenburg/editor/EditorMeshPickingTest.java": "efc54224fe78c8cfe90c2ca49daa0f4d42af9337f249e73cb67248c9f90cbea5"
+    },
+    "standaloneArtifact": "build/editor-kit/LevelEditorKit-area-selection.jar (workspace-local java.io.tmpdir avoids sandbox cross-root jar staging)"
+  },
+  "reconciled": {
+    "mainSha": "e2d6fd3329247eae94502893dd486247f989e404",
+    "checks": [
+      "Complete merged Java17 compilation",
+      "Entire native host/service/real GUI/area selection/CLI suite PASS",
+      "Actual GUI nonzero GLB reduction disabled, level0 re-enabled; exact source/native archives and every published runtime corner verified",
+      "Exact six merged GLB resource copies hash-verified in local runtime classpath"
+    ],
+    "canonicalLfSha256": {
+      "src/main/java/org/beckenburg/AssetImportDialog.java": "8c58662a72e9e94141618eb0d4c3cf318578b91bc06e8401339ca23871157240",
+      "src/main/java/org/beckenburg/ImportedAssetLibrary.java": "ea570005a40da1f3b1225890de008f72df0a9c7b2527ad66a8c9f8becf959ef3",
+      "src/main/java/org/beckenburg/GlbProps.java": "550aafea44aba1896769e887f5567b9adc04a15ac1abb6957385198724d2feca",
+      "src/main/java/org/beckenburg/editor/EditorMeshPicking.java": "ba01550f908c0fe55dcf42438c148f0a020d598dc6cb1ff2c4ce9ceb9ac8c531",
+      "src/test/java/org/beckenburg/AssetImportTopologyGuiTest.java": "19c189c3c2df9bac85041a42b4fe396e30f6b5d0104b36c05d9fb4260ffcd336",
+      "src/test/java/org/beckenburg/AssetImportBoxSelectionGuiTest.java": "5d25c89dc169ac50eb599d6e25cf2337639add4b44de0aae3d90217677800ef4"
+    },
+    "publication": "remote verified; all four exact-source acceptance workflows successful",
+    "sourceSha": "1e505d5ed16a886218e4bdf00e585c9194d582ae",
+    "ci": {
+      "standalone": 41387774742,
+      "nativeHost": 41387782860,
+      "fullRound": 41387790138,
+      "gpu": 41387796364,
+      "status": "success",
+      "passed": 310,
+      "failed": 0,
+      "skipped": 0
+    }
+  }
+}

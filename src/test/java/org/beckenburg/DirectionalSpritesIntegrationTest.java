@@ -10,10 +10,12 @@ public final class DirectionalSpritesIntegrationTest {
         // 12 original Observer/Banshee frames + 24 approved hero/Elder frames
         // - 3 overlapping Observer views (front/side/back; three_quarter is new)
         // + 8 separate Twins + 4 lore-master
-        // (Matthis Rook) views. Do not drop approved images to meet a stale 41.
-        check(DirectionalSprites.frameCount()==45,
-            "12 legacy, 24 masters, 3 Observer overlaps, 8 Twins and 4 lore-master frames");
-        for(String actor:new String[]{"twins_a","twins_b","lore_master"})
+        // (Matthis Rook) views + 16 accepted Castle support views.
+        // Do not drop approved art to satisfy a previous pack's count.
+        check(DirectionalSprites.frameCount()==61,
+            "12 legacy + 24 masters - 3 Observer overlaps + 8 Twins + 4 lore-master + 16 Castle support frames");
+        for(String actor:new String[]{"twins_a","twins_b","lore_master",
+                "elsbeth_vale","rowan_pike","tomas_greaves","sister_mirelle_ash"})
             for(int sector=0;sector<8;sector++)
                 check(DirectionalSprites.frame(actor,sector)!=null,
                     "Approved distinct actor facing missing: "+actor+"/"+sector);
@@ -41,6 +43,6 @@ public final class DirectionalSpritesIntegrationTest {
         check(!Arrays.equals(hidden,renderer.pixels()),"network manifestation draws image in real house");
         renderer.drawNetwork(map,List.of(),(SceneRenderer.Apparition)null,1);
         check(Arrays.equals(hidden,renderer.pixels()),"hidden ghost never draws");
-        System.out.println("PASS: 45 verified frames incl. Twins and lore master, 8 camera sectors, depth occlusion and real LAN ghost renderer");
+        System.out.println("PASS: 61 verified frames including Twins, lore master and Castle support; 8 sectors, depth occlusion and real LAN ghost renderer");
     }
 }

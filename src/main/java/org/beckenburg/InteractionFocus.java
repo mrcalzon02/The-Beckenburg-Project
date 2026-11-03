@@ -118,7 +118,13 @@ public final class InteractionFocus {
             blocker=Math.min(blocker,t);
             if(FieldEquipment.functional(item.entry().id())||item.entry().id().equals("HEALTH_SUPPLIES")||item.entry().id().equals("SANITY_MEDICATION"))candidate(targets,Kind.RACK,item.entry().id()+":"+item.entry().tier()+":"+item.unit(),label(item.entry().id())+" "+item.entry().tier(),t);
         }
-        for(int row=0;row<6;row++){double y=VanStaging.FLOOR_Y+.14+row*.33,t=Math.max(0,(y+.315-VanStaging.ROOF_SHOULDER_Y)/(VanInteriorLayout.ROOF_Y-VanStaging.ROOF_SHOULDER_Y)),back=-VanStaging.INTERIOR_HALF_WIDTH+t*(VanStaging.INTERIOR_HALF_WIDTH-VanStaging.INTERIOR_ROOF_HALF_WIDTH)+.025;blocker=Math.min(blocker,box(vr,new VanInteriorLayout.Bounds(back,y-.025,-1.94,-.51,y,1.54)));}
+        for(int row=0;row<6;row++)for(var bay:VanInteriorLayout.shelfBays(row))
+            blocker=Math.min(blocker,box(vr,new VanInteriorLayout.Bounds(bay.back(),bay.y()-.025,bay.z0(),-.51,bay.y(),bay.z1())));
+        for(double side:new double[]{-1,1}){
+            double inner=side*VanInteriorLayout.WHEEL_WELL_INNER_X,outer=side*VanInteriorLayout.WHEEL_WELL_OUTER_X;
+            blocker=Math.min(blocker,box(vr,new VanInteriorLayout.Bounds(Math.min(inner,outer),VanStaging.FLOOR_Y,
+                VanInteriorLayout.WHEEL_WELL_FRONT,Math.max(inner,outer),VanInteriorLayout.WHEEL_WELL_TOP,VanInteriorLayout.WHEEL_WELL_REAR)));
+        }
         final double obstruction=blocker;
         return targets.stream().filter(t->t.distance<=obstruction+.015).sorted(Comparator.comparingDouble(Target::distance)).filter(t->{double d=Math.max(0,t.distance-.045);return map.clearInteractionSight(r[0],r[1],r[2],r[0]+r[3]*d,r[1]+r[4]*d,r[2]+r[5]*d,t.kind==Kind.DOOR?Integer.parseInt(t.id):-1);}).findFirst().orElse(null);
     }

@@ -13,6 +13,13 @@ HorrorAudioRoutingTest
 GhostVoicePackRoutingTest
 HorrorAudioRoutingTest
 CastleHubIntegrationTest
+CastleDocumentRecoveryTest
+EditorChangeIntegrationTest
+EditorDiskRevisionTest
+CastleSnapshotContractTest
+EditorSchemaCompatibilityTest
+CastleEditorGeometryTest
+CastleLightingPlacementRepairTest
 CastleHomeInteractionTest
 CampaignBoardPanelTest
 MissionBoardIntegrationTest
@@ -71,6 +78,8 @@ GhostEvidenceMatrixTest
 LanFieldEquipmentIntegrationTest
 LanMeasuredEvidenceTest
 HandheldSpiritBoxEvidenceTest
+SpiritBoxResponsesTest
+LanSpiritBoxAudioIntegrationTest
 SoloEnvironmentalEvidenceTest
 GhostBehaviorTest
 LanGhostIdentityTest
@@ -122,6 +131,8 @@ GhostManifestationVisualTest
 DirectionalSpritesIntegrationTest
 CharacterDirectionalVisualTest
 CharacterSpriteWorldMotionTest
+HunterSpriteAnimationTest
+LanHunterAnimationGameplayTest
 TwinBodyVisualTest
 TwinCompanionAiTest
 TwinCompanionSharedActionTest
@@ -188,6 +199,8 @@ LanGhostHidingBoundaryTest
 MaterialAtlasTest
 TeamCalloutTest
 VanStagingTest
+VanWheelWellTest
+VanRearFitTest
 VanNavigationVisualTest
 GhostPracticeTest
 GhostPracticeHunterAiTest
@@ -205,6 +218,8 @@ LanLobbyTest
 LanOwnerReadyAckTest
 SmokeTest
 AuthoredLevelPhysicsTest
+GroundRecoverySupportParityTest
+HouseRebuildPhysicsTest
 AuthoredLevelReachabilityTest
 AuthoredLevelStateTest
 AuthoredLevelNetworkTest
@@ -308,3 +323,6 @@ DynamicGeometryRetentionTest
 GpuReadbackTest
 PreparedLightWriteTest
 PreparedLightBatchParityTest
+EditorAgentServiceTest
+LevelAuthoringIdentityTest
+LevelAuthoringRecoveryTest

@@ -3,6 +3,7 @@ package org.beckenburg;
 import javax.swing.*;
 import org.beckenburg.editor.EditorTool;
 import org.beckenburg.editor.EditorHistory;
+import org.beckenburg.editor.EditorAgentService;
 import org.beckenburg.LevelDefinition.Prop;
 import org.beckenburg.editor.EditorPalettePanel;
 import javax.swing.event.ChangeListener;
@@ -32,8 +33,10 @@ public final class DeveloperLevelEditor extends JPanel {
     private final EditorHistory<CastleLevelEdits.Snapshot> history=new EditorHistory<>(project,60);
     /** The same inspector, GLB browser and camera can target a live mission source. */
     private LevelAuthoringSession mission;
-    private EditorHistory<List<Prop>> missionHistory;
+    private EditorHistory<LevelAuthoringSession.Snapshot> missionHistory;
+    private EditorAgentService<LevelAuthoringSession.Snapshot> missionAgent;
     private HouseMap missionMap;
+    private long missionMapRevision=-1;
     private HouseMap.Site missionSite;
     private boolean castleDirty,missionDirty;
     private double maxX(){return mission==null?CastleHubMap.WIDTH:missionMap==null?HouseMap.WIDTH:missionMap.width();}
@@ -41,9 +44,9 @@ public final class DeveloperLevelEditor extends JPanel {
     private void refreshMissionPreview(){missionMap=null;}
     private boolean saveCurrent(){
         try{
-            if(mission==null){project.save();castleDirty=false;
+            if(mission==null){castleAgent.save(data.revision());castleDirty=false;
                 status.setText("SAVED  "+project.documentPath());
-            }else{mission.save();missionDirty=false;
+            }else{missionAgent.save(mission.revision());missionDirty=false;
                 status.setText("SAVED  "+mission.documentPath());
             }
             viewport.requestFocusInWindow();return true;
@@ -65,7 +68,15 @@ public final class DeveloperLevelEditor extends JPanel {
         // Use the playable HouseMap itself, not a second scene interpretation.
         var playable=new HouseMap(site,loaded.level());
         mission=loaded;missionSite=site;
-        missionHistory=new EditorHistory<>(loaded,60);missionMap=playable;
+        missionHistory=new EditorHistory<>(loaded,60);missionMap=playable;missionMapRevision=loaded.revision();
+        missionAgent=new EditorAgentService<>(new LevelEditorAgent(loaded,this::currentMissionMap,renderer,()->{
+            requireEditorThread();
+            if(mission!=loaded)throw new IllegalStateException("Scene is no longer active");
+        }),missionHistory,event->{
+            missionDirty=true;
+            if(event.details().fullScene()||!event.details().dependencies().isEmpty())refreshMissionPreview();
+            refresh();
+        },()->missionDirty=false);
         var spawn=playable.level().room(0).spawn();
         renderer.x=spawn.x();renderer.z=spawn.z();
         renderer.eyeHeight=spawn.y()+1.62;renderer.yaw=0;renderer.pitch=-.12;
@@ -190,6 +201,26 @@ public final class DeveloperLevelEditor extends JPanel {
     }
     private final CastleHubMap map=new CastleHubMap();
     private final SceneRenderer renderer=new SceneRenderer();
+    private final EditorAgentService<CastleLevelEdits.Snapshot> castleAgent=new EditorAgentService<>(
+        new CastleEditorAgent(project,map,renderer,()->{
+            requireEditorThread();
+            if(mission!=null)throw new IllegalStateException("Castle is not the active scene");
+        }),history,()->{castleDirty=true;refresh();},()->castleDirty=false);
+    private void requireEditorThread(){
+        if(!SwingUtilities.isEventDispatchThread()||editorClosed)
+            throw new IllegalStateException("Editor must be open and called on its event thread");
+    }
+    /** Future transports must dispatch to the EDT and bind this active service. */
+    public EditorAgentService<?> agentService(){
+        requireEditorThread();return mission==null?castleAgent:missionAgent;
+    }
+    private HouseMap currentMissionMap(){
+        if(mission==null)throw new IllegalStateException("No mission is active");
+        if(missionMap==null||missionMapRevision!=mission.revision()){
+            missionMap=new HouseMap(missionSite,mission.level());missionMapRevision=mission.revision();
+        }
+        return missionMap;
+    }
     private final JPanel viewport=new JPanel(){
         @Override protected void paintComponent(Graphics g){
             super.paintComponent(g);
@@ -425,6 +456,8 @@ public final class DeveloperLevelEditor extends JPanel {
         commands.add(newLevel);commands.add(openLevel);
         undoButton.addActionListener(e->undo());redoButton.addActionListener(e->redo());
         commands.add(undoButton);commands.add(redoButton);
+        JButton evidence=button("VERIFY SCENE");
+        evidence.addActionListener(e->showAgentEvidence());commands.add(evidence);
         JButton authoringGuide=button("PSX GUIDE");
         authoringGuide.setToolTipText("Offline editor engineering reference and machine manifest");
         authoringGuide.addActionListener(e->org.beckenburg.editor.EditorAuthoringReference.show(window));
@@ -505,7 +538,7 @@ public final class DeveloperLevelEditor extends JPanel {
             }else if(JOptionPane.showConfirmDialog(window,
                 "Reset all castle scene overrides?","Reset level",
                 JOptionPane.YES_NO_OPTION,JOptionPane.WARNING_MESSAGE)==JOptionPane.YES_OPTION){
-                data.reset();refresh();save();
+                operate(()->data.reset());refresh();save();
             }
         });
         commands.add(save);commands.add(export);commands.add(reset);header.add(commands,BorderLayout.EAST);
@@ -722,8 +755,8 @@ public final class DeveloperLevelEditor extends JPanel {
     }
     private void operate(Runnable action){
         try{
-            if(mission==null){history.execute(action);castleDirty=true;}
-            else{missionHistory.execute(action);missionDirty=true;refreshMissionPreview();}
+            if(mission==null){castleAgent.edit(action);castleDirty=true;}
+            else{missionAgent.edit(action);missionDirty=true;refreshMissionPreview();}
             updateNav();status.setText("Modified scene — SAVE to persist");
         }
         catch(RuntimeException e){JOptionPane.showMessageDialog(window,e.getMessage(),
@@ -985,8 +1018,7 @@ public final class DeveloperLevelEditor extends JPanel {
                 renderer.drawCastle(map,clock,true);
                 requestLightVolumePreview();
             }else{
-                if(missionMap==null)missionMap=new HouseMap(missionSite,mission.level());
-                renderer.drawPractice(missionMap,List.of(),clock);
+                renderer.drawPractice(currentMissionMap(),List.of(),clock);
             }
         }
         catch(RuntimeException problem){
@@ -1267,18 +1299,53 @@ public final class DeveloperLevelEditor extends JPanel {
         refresh();selectId(selected.kind,id);
     }
     private void undo(){
-        if(mission==null){if(!history.undo())return;castleDirty=true;}
-        else{if(!missionHistory.undo())return;missionDirty=true;refreshMissionPreview();}
+        var service=agentService();
+        if(!service.undo(service.inspect().revision()).result())return;
         chosen=null;renderer.clearEditorSelection();refresh();
         status.setText("Undo • scene modified, SAVE to persist");
     }
     private void redo(){
-        if(mission==null){if(!history.redo())return;castleDirty=true;}
-        else{if(!missionHistory.redo())return;missionDirty=true;refreshMissionPreview();}
+        var service=agentService();
+        if(!service.redo(service.inspect().revision()).result())return;
         chosen=null;renderer.clearEditorSelection();refresh();
         status.setText("Redo • scene modified, SAVE to persist");
     }
     private void save(){saveCurrent();}
+    private void showAgentEvidence(){
+        var service=agentService();
+        var choices=new ArrayList<>(List.of("INSPECT","TEST","CAPTURE PNG","REOPEN SAVED"));
+        if(service.inspect().capabilities().contains(EditorAgentService.Capability.RECOVER_PREVIOUS))choices.add("RECOVER PREVIOUS SAVE");
+        String choice=(String)JOptionPane.showInputDialog(window,"Inspect, test or capture the active game scene.",
+            "Scene verification",JOptionPane.PLAIN_MESSAGE,null,
+            choices.toArray(),"INSPECT");
+        if(choice==null)return;
+        try{
+            var state=service.inspect();Object result;
+            switch(choice){
+                case "TEST" -> result=service.test(state.revision(),state.tests().get(0));
+                case "CAPTURE PNG" -> {
+                    JFileChooser chooser=new JFileChooser();chooser.setSelectedFile(new java.io.File("editor-scene.png"));
+                    if(chooser.showSaveDialog(window)!=JFileChooser.APPROVE_OPTION)return;
+                    result=service.capture(state.revision(),chooser.getSelectedFile().toPath());
+                }
+                case "REOPEN SAVED" -> {
+                    if(JOptionPane.showConfirmDialog(window,"Reopen saved scene? Current edits remain undoable.",
+                        "Reopen",JOptionPane.OK_CANCEL_OPTION)!=JOptionPane.OK_OPTION)return;
+                    result=service.reopen(state.revision());
+                }
+                case "RECOVER PREVIOUS SAVE" -> {
+                    if(JOptionPane.showConfirmDialog(window,"Restore the previous valid saved scene? Current live edits remain undoable.",
+                        "Recover saved scene",JOptionPane.OK_CANCEL_OPTION)!=JOptionPane.OK_OPTION)return;
+                    result=service.recoverPrevious(state.revision());
+                }
+                default -> result=state;
+            }
+            JTextArea report=new JTextArea(result.toString(),24,90);report.setEditable(false);report.setLineWrap(true);
+            JOptionPane.showMessageDialog(window,new JScrollPane(report),"Scene evidence",JOptionPane.INFORMATION_MESSAGE);
+        }catch(IOException|RuntimeException failure){
+            JOptionPane.showMessageDialog(window,failure.toString(),"Scene verification failed",JOptionPane.ERROR_MESSAGE);
+        }
+    }
     private void export(){
         JFileChooser chooser=new JFileChooser();chooser.setDialogTitle("Export level editor document");
         chooser.setSelectedFile(new java.io.File(mission==null

@@ -51,6 +51,15 @@ public final class TerrainSceneNativePhysics {
     }
     public static Loaded load(StitchedHeightmapWorld world,RuntimeScene scene)
             throws IOException{
+        byte[] encoded=encode(world,scene);
+        String checksum=hash(encoded);
+        var runtime=AuthoredSitePhysics.read(new ByteArrayInputStream(encoded),checksum,List.of());
+        int walk=0;
+        for(int i=0;i<runtime.triangleCount();i++)if((runtime.triangle(i).flags()&SUPPORT)!=0)walk++;
+        return new Loaded(runtime,checksum,runtime.triangleCount(),walk,runtime.componentCount());
+    }
+    /** Exact bytes consumed by the runtime; also used by the packaged-site exporter. */
+    public static byte[] encode(StitchedHeightmapWorld world,RuntimeScene scene)throws IOException{
         Objects.requireNonNull(world);Objects.requireNonNull(scene);
         var issues=new ArrayList<String>(TerrainScenePackage.inspect(world,scene));
         issues.addAll(TerrainRailScenePackage.inspect(world,scene));
@@ -109,9 +118,6 @@ public final class TerrainSceneNativePhysics {
                 throw new IOException("Published scene exceeds HCS2 runtime byte budget");
             encoded=buffer.toByteArray();
         }
-        String checksum=hash(encoded);
-        var runtime=AuthoredSitePhysics.read(new ByteArrayInputStream(encoded),
-            checksum,List.of());
-        return new Loaded(runtime,checksum,total,walk,groups.size());
+        return encoded;
     }
 }

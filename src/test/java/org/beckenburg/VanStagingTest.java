@@ -43,9 +43,9 @@ public final class VanStagingTest {
         check(outer.size()>200,"reusable van includes most original exterior geometry");
         check(outer.stream().allMatch(t->t.material()>=GlbProps.TEXTURE_BASE),
             "van exterior keeps the imported texture atlas, not flat body colors");
-        var rearEdge=SceneRenderer.vanExteriorLocal(0,0,-2.10);
+        var rearEdge=SceneRenderer.vanExteriorLocal(0,0,VanBodyGeometry.SOURCE_REAR);
         var frontEdge=SceneRenderer.vanExteriorLocal(0,0,2.04);
-        var roofEdge=SceneRenderer.vanExteriorLocal(1.71,2.32,0);
+        var roofEdge=SceneRenderer.vanExteriorLocal(VanBodyGeometry.SOURCE_HALF_WIDTH,2.32,0);
         check(Math.abs(rearEdge[2]-VanStaging.FRONT)<1e-6,
             "source model rear aligned to operational cargo entrance");
         check(Math.abs(frontEdge[2]-(VanStaging.REAR+VanStaging.CAB_LENGTH))<1e-6,

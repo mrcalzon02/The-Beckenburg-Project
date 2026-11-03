@@ -5,9 +5,10 @@ public final class AuthoredUtilitiesTest {
     private static final java.util.List<String> failures=new java.util.ArrayList<>();
     private static void check(boolean yes,String why){if(!yes&&!failures.contains(why))failures.add(why);}
     public static void main(String[] args){
+        boolean rebuild=args.length>0&&args[0].equals("HOUSE_REBUILD");
         int switches=0,doors=0,stairs=0;
-        for(HouseMap.Site site:new HouseMap.Site[]{HouseMap.Site.HOUSE,HouseMap.Site.FARMHOUSE,HouseMap.Site.SCHOOL}){
-            HouseMap map=new HouseMap(site);RoomLighting lights=new RoomLighting();
+        for(HouseMap.Site site:rebuild?new HouseMap.Site[]{HouseMap.Site.HOUSE}:new HouseMap.Site[]{HouseMap.Site.HOUSE,HouseMap.Site.FARMHOUSE,HouseMap.Site.SCHOOL}){
+            HouseMap map=rebuild?HouseRebuild.graybox():new HouseMap(site);RoomLighting lights=new RoomLighting();
             for(int room=0;room<HouseMap.INDOOR_ROOMS;room++){
                 var socket=map.level().socket("switch",room);
                 var plate=RoomLighting.location(map,room);

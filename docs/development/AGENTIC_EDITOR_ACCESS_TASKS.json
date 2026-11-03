@@ -13,7 +13,7 @@
   "sourceOfTruth": "Real runtime scene and existing editor transactions; no parallel simulated preview",
   "gates": {
     "release": "Only objective broken build, launch, essential gameplay, required multiplayer or updater function may block release. Art and diagnostics are advisory.",
-    "security": "Agent interfaces disabled by default, authenticated, loopback only, least privilege, no shell/filesystem access.",
+    "security": "No listener is opened by the trusted local service/CLI; the process retains normal user file permissions. Later remote interfaces require explicit opt-in, authentication and scoped capabilities; no arbitrary shell/filesystem or player-session surface.",
     "completion": "Do not count draft documentation, unpublished blobs, packaging, or missing real installed runtime as completed machine access."
   },
   "milestones": [
@@ -29,11 +29,12 @@
             "development/RECOVERY_PLAN_2026-10-25.md",
             ".github/workflows/standalone-editor-kit.yml"
           ],
-          "status": "planned",
+          "status": "in_progress",
           "accept": [
             "Exact-source SHA and linked workflow outcome",
             "No-regression baseline recorded"
-          ]
+          ],
+          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
         }
       ]
     },
@@ -49,12 +50,13 @@
             "src/main/java/org/beckenburg/CastleEditorProject.java",
             "src/main/java/org/beckenburg/editor/RuntimeScene.java"
           ],
-          "status": "planned",
+          "status": "tested",
           "accept": [
             "Read same scene instance as GUI and game",
             "Unsaved manual edit immediately visible through service",
-            "Stable IDs and consistent snapshot; no mutation API"
-          ]
+            "Stable IDs and immutable observations; writes use separate checked transactions"
+          ],
+          "implementationEvidence": "Native EditorAgentServiceTest, EditorAgentGuiTest, LevelAuthoringIdentityTest and CastleSnapshotContractTest; exact-source checkpoints retained below. Trusted local scope; remote authentication remains M1-02/M5."
         },
         {
           "id": "M1-02",
@@ -79,15 +81,16 @@
             "src/main/java/org/beckenburg/SceneRenderer.java",
             "src/main/java/org/beckenburg/CastleEditorAudit.java"
           ],
-          "status": "planned",
+          "status": "tested",
           "dependsOn": [
-            "M1-02"
+            "M1-01"
           ],
           "accept": [
             "PNG originates from real runtime/editor renderer",
             "Includes current scene revision and provenance",
             "Audit warnings remain advisory"
-          ]
+          ],
+          "implementationEvidence": "Actual SceneRenderer captures from native service/GUI/headless tests include exact scene/revision/renderer provenance; advisory audit limitations are explicit."
         },
         {
           "id": "M1-04",
@@ -95,7 +98,7 @@
           "scope": [
             "src/test/java/org/beckenburg/DeveloperEditorLaunchTest.java"
           ],
-          "status": "planned",
+          "status": "in_progress",
           "dependsOn": [
             "M1-01",
             "M1-02",
@@ -105,7 +108,8 @@
             "Live open editor, manual edit, remote-local readback and screenshot",
             "Denied anonymous and mutation request tests",
             "Saved test logs and commit SHA"
-          ]
+          ],
+          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
         }
       ]
     },
@@ -120,15 +124,16 @@
             "src/main/java/org/beckenburg/editor/EditorHistory.java",
             "src/main/java/org/beckenburg/editor/RuntimeScene.java"
           ],
-          "status": "planned",
+          "status": "tested",
           "dependsOn": [
-            "M1-04"
+            "M1-01"
           ],
           "accept": [
             "One authoritative transaction and one undo event",
             "Stale revision rejected and no scene change",
             "Partial batch failure restores exact prior snapshot"
-          ]
+          ],
+          "implementationEvidence": "Native stale/batch/cancellation rollback tests, shared human undo/redo, source disk guard and failed-restore regression; no generic scripting or remote writes are admitted."
         },
         {
           "id": "M2-02",
@@ -137,7 +142,7 @@
             "src/main/java/org/beckenburg/CastleLevelEdits.java",
             "src/main/java/org/beckenburg/DeveloperLevelEditor.java"
           ],
-          "status": "planned",
+          "status": "in_progress",
           "dependsOn": [
             "M2-01"
           ],
@@ -145,7 +150,8 @@
             "Agent and human GUI observe identical result",
             "Duplicate idempotency request makes no second object",
             "Undo/redo and save/reload preserve scene"
-          ]
+          ],
+          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
         }
       ]
     },
@@ -159,7 +165,7 @@
           "scope": [
             "src/main/java/org/beckenburg/CastleEditorAudit.java"
           ],
-          "status": "planned",
+          "status": "in_progress",
           "dependsOn": [
             "M2-02"
           ],
@@ -167,7 +173,8 @@
             "Return separately committed/saved/verified flags",
             "Failures are structured, revisioned and truthful",
             "Real engine-generated evidence; no source artwork substitute"
-          ]
+          ],
+          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
         },
         {
           "id": "M3-02",
@@ -191,7 +198,7 @@
           "scope": [
             "src/main/java/org/beckenburg/editor/RuntimeScene.java"
           ],
-          "status": "planned",
+          "status": "in_progress",
           "dependsOn": [
             "M3-02"
           ],
@@ -199,7 +206,8 @@
             "Only supported adapters are advertised",
             "Door/opening collision and stair reachability proof",
             "Measured render timing where available; no invented FPS"
-          ]
+          ],
+          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
         }
       ]
     },
@@ -209,19 +217,21 @@
       "tasks": [
         {
           "id": "M4-01",
-          "name": "CLI and script execution against same Editor Agent Service",
+          "name": "Trusted headless CLI batches against the same service; broad scripting deferred",
           "scope": [
             "src/main/java/org/beckenburg/editor/RuntimeScene.java"
           ],
-          "status": "planned",
+          "status": "tested",
           "dependsOn": [
-            "M3-01"
+            "M2-01",
+            "M1-03"
           ],
           "accept": [
             "No Swing dependency in headless service",
             "Deterministic edit, readback, exit code and rollback",
             "No fake viewport when renderer unavailable"
-          ]
+          ],
+          "implementationEvidence": "Public process protocol tests: native mission/Castle edit/save/reopen/recovery, real PNG and collider parity, corrupt-start recovery without placeholder scene, Unicode/Windows-1252 channels, stale/refusal exit codes. Portable renderer-less host cannot fake capture."
         },
         {
           "id": "M4-02",
@@ -229,7 +239,7 @@
           "scope": [
             "src/test/java/org/beckenburg/editor/EditorCorePortabilityTest.java"
           ],
-          "status": "planned",
+          "status": "in_progress",
           "dependsOn": [
             "M4-01"
           ],
@@ -237,7 +247,8 @@
             "No Castle imports",
             "Same protocol and error semantics",
             "Save/reload deterministic"
-          ]
+          ],
+          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
         }
       ]
     },
@@ -506,5 +517,297 @@
         "status": "planned"
       }
     ]
+  },
+  "activeOwnerGoal": {
+    "date": "2026-11-01",
+    "order": [
+      "finish small reusable Editor Agent Service over proven human/runtime operations",
+      "continue staged G0 through G12"
+    ],
+    "branch": "map/first-principles-rebuild-plan",
+    "status": "active",
+    "reference": "docs/development/EDITOR_AGENT_SERVICE.md"
+  },
+  "implementationCheckpoints": [
+    {
+      "sourceSha": "a3886b6cb62e0ac64d1a15f2d562b11738037bec",
+      "scope": "Native active Castle/mission service, shared transactions/history, save/reopen, real captures, targeted checks, trusted local headless protocol",
+      "localEvidence": [
+        "EditorAgentServiceTest",
+        "EditorAgentGuiTest",
+        "EditorCorePortabilityTest",
+        "LevelAuthoringSessionTest",
+        "DeveloperLevelEditorDataTest",
+        "tools/verify_editor_agent_cli.py"
+      ],
+      "standaloneCi": {
+        "run": 41323907995,
+        "status": "success"
+      },
+      "fullRoundCi": {
+        "run": 41323912531,
+        "status": "cancelled-superseded"
+      },
+      "limitations": [
+        "No authenticated MCP/network adapter",
+        "No installed-release or full gameplay acceptance"
+      ]
+    },
+    {
+      "sourceSha": "fcf7c52eb1368b3b016044a781e6c8966b419604",
+      "scope": "G1 persisted mission IDs, identity snapshots, pinned USER document ownership and native unsupported-transform rejection",
+      "localEvidence": [
+        "LevelAuthoringIdentityTest",
+        "LevelAuthoringSessionTest",
+        "EditorAgentServiceTest",
+        "EditorAgentGuiTest",
+        "tools/verify_editor_agent_cli.py"
+      ],
+      "standaloneCi": {
+        "run": 41324865446,
+        "status": "success"
+      },
+      "fullRoundCi": {
+        "run": 41324869128,
+        "status": "success-required-steps; advisory-manifest-failed",
+        "passed": 260,
+        "failed": 12,
+        "unexecuted": 27,
+        "manifest": 299
+      },
+      "limitations": [
+        "G0 original PDF byte verification unavailable",
+        "G1 journaling, cancellation, broader migrations and revision/resource events remain",
+        "Dedicated service workflow cannot dispatch until present on default branch (HTTP 404)"
+      ]
+    },
+    {
+      "sourceSha": "5ebc7ab89ef7312d0c7085febaca4699544056de",
+      "scope": "G1 journaled and bounded BSCN persistence, explicit native mission save recovery and cancellable typed batches",
+      "localEvidence": [
+        "EditorDocumentStoreTest (actual process halt before/after atomic replacement)",
+        "LevelAuthoringRecoveryTest",
+        "EditorAgentServiceTest (real changed-prop cancellation rollback)",
+        "EditorAgentGuiTest (real recovery chooser and confirmation)",
+        "tools/verify_editor_agent_host.cmd",
+        "terrain/rail scene publication and native HCS2 regressions"
+      ],
+      "standaloneCi": {
+        "run": 41327215891,
+        "status": "success"
+      },
+      "nativeHostCi": {
+        "run": 41327218903,
+        "status": "success"
+      },
+      "evidence": "development/quality/evidence/editor-persistence-5ebc7ab8.json",
+      "limitations": [
+        "Castle properties persistence not yet journaled; recovery capability unavailable there",
+        "Process-crash recovery is not all-filesystem physical power-loss acceptance",
+        "Broader migrations, incremental deltas and dependency ownership/revision events remain G1 work",
+        "Authenticated MCP and full G0-G12 acceptance remain open"
+      ]
+    },
+    {
+      "sourceSha": "11b57bbf72556e82a079939f166e1608a33ed363",
+      "scope": "REC-01 four map-wide regressions use a real persisted USER prerequisite without dropping assertions or map types",
+      "localEvidence": [
+        "RoomAcousticPresetsTest",
+        "HidingBudgetTest",
+        "AllMapLightingCoverageTest",
+        "VanLightingAndCastleDoorTest"
+      ],
+      "fullRoundCi": {
+        "run": 41327744396,
+        "status": "success-required-steps; advisory-manifest-failed",
+        "passed": 291,
+        "failed": 9,
+        "unexecuted": 0,
+        "manifest": 300
+      },
+      "evidence": "development/quality/evidence/persisted-user-regressions-2026-11-01.json",
+      "limitations": [
+        "This checkpoint left nine full-manifest failures; all are addressed locally by the later ff93601a checkpoint, whose exact-source CI remains pending.",
+        "Full-manifest and physical acceptance not inferred from scoped passes"
+      ]
+    },
+    {
+      "sourceSha": "ff93601a9921ff210e408dee99921592184b472e",
+      "scope": "REC-01 actual movement/recovery support parity, restored accessibility HUD paint, and source-backed evidence/content/acoustic fixtures",
+      "localEvidence": [
+        "All nine failures from full-round 41327744396 reproduced and passing after full Java 17 compilation",
+        "GroundRecoverySupportParityTest plus failure against previous compiled GroundRecovery",
+        "LanSpatialEvidenceIntegrationTest (actual host SITE/BODY and four TCP peers)",
+        "Unchanged original HUD pixel assertions plus simultaneous caption, rendered expiry and evasion feedback",
+        "GhostVoiceExpansionTest, SpiritBoxResponsesTest, LanSpiritBoxAudioIntegrationTest",
+        "AuthoredLevelPhysicsTest and TerrainAndRecoveryTest (scratch output directory)"
+      ],
+      "nativeHostCi": {
+        "run": 41330853164,
+        "status": "success"
+      },
+      "fullRoundCi": {
+        "run": 41330858899,
+        "status": "success",
+        "manifestEntries": 303,
+        "passed": 303,
+        "failed": 0,
+        "unexecuted": 0
+      },
+      "evidence": "development/quality/evidence/editor-full-round-ff93601a.txt",
+      "limitations": [
+        "HUD PNGs are native headless component captures with unstarted world background, not full gameplay visuals",
+        "No art/geometry changed, no installed/hardware or G1-G12 completion inferred"
+      ]
+    },
+    {
+      "sourceSha": "a99d0a1dac4944fb1b3297add502b3291590fd4d",
+      "scope": "Native Castle journal/recovery parity and UTF-8 local protocol",
+      "localEvidence": [
+        "CastleDocumentRecoveryTest",
+        "CastleEditorGeometryTest",
+        "CastleLightingPlacementRepairTest",
+        "EditorAgentGuiTest",
+        "headlessProtocol",
+        "EditorAgentServiceTest",
+        "LevelAuthoringIdentityTest",
+        "LevelAuthoringRecoveryTest",
+        "GroundRecoverySupportParityTest"
+      ],
+      "nativeHostCi": {
+        "run": 41352028873,
+        "status": "success"
+      },
+      "fullRoundCi": {
+        "run": 41352069449,
+        "status": "success",
+        "manifestEntries": 306,
+        "passed": 306,
+        "failed": 0,
+        "unexecuted": 0
+      },
+      "evidence": "development/quality/evidence/castle-editor-persistence-2026-11-01.json",
+      "limitations": [
+        "G1 incremental deltas, dependency/resource revision events and broader migrations remain open"
+      ]
+    },
+    {
+      "sourceSha": "efca9b11f225334afc75cc8491be603ca442b244",
+      "scope": "Commit-only native mission deltas, fingerprints/dependencies and human viewport revision invalidation",
+      "nativeHostCi": {
+        "run": 41357679458,
+        "status": "success"
+      },
+      "standaloneCi": {
+        "run": 41357684425,
+        "status": "success"
+      },
+      "fullRoundCi": {
+        "run": 41357690056,
+        "status": "success",
+        "manifestEntries": 307,
+        "passed": 307,
+        "failed": 0,
+        "unexecuted": 0
+      },
+      "evidence": "development/quality/evidence/editor-changes-2026-11-01.json",
+      "limitations": [
+        "Granular Castle changes, rendering dirty regions and broader schema migrations remain open",
+        "No complete G1-G12 or installed acceptance inferred"
+      ]
+    },
+    {
+      "sourceSha": "96aea89824f67aa9bb25cac9ed9a4c4cff524900",
+      "scope": "G2 read-only half-edge foundation in real human mesh importer",
+      "localEvidence": [
+        "EditorMeshTopologyTest",
+        "Maximum input --stress under256MiB heap",
+        "AssetImportTopologyGuiTest",
+        "AssetImportRuntimeTest",
+        "Independent editor JAR and complete native Java17 compilation"
+      ],
+      "nativeHostCi": {
+        "run": 41358289381,
+        "status": "success"
+      },
+      "standaloneCi": {
+        "run": 41358301989,
+        "status": "success"
+      },
+      "evidence": "development/quality/evidence/mesh-topology-2026-11-01/evidence.json",
+      "limitations": [
+        "Read-only derived topology, not completed editable G2 authoring",
+        "Native topology persistence, vertex/edge/face operations, full materials/normals and later stages remain open"
+      ]
+    },
+    {
+      "sourceSha": "0fb70ac20610f5e373e64f0243aafde92c7d1e2d",
+      "scope": "Human indexed vertex edit/undo/native save/reopen/fresh load with checked runtime publication",
+      "nativeHostCi": {
+        "run": 41360968300,
+        "status": "success"
+      },
+      "standaloneCi": {
+        "run": 41360973706,
+        "status": "success"
+      },
+      "fullRoundCi": {
+        "run": 41360981244,
+        "status": "success",
+        "passed": 307,
+        "failed": 0,
+        "unexecuted": 0
+      },
+      "evidence": "development/quality/evidence/mesh-topology-2026-11-01/indexed-authoring-evidence.json",
+      "limitations": [
+        "G2 remains partial; no agent mesh commands are admitted",
+        "Later resource/snapshot/bootstrap contracts have a separate checkpoint"
+      ]
+    },
+    {
+      "sourceSha": "47b4ad47b6761dad3692c2391e3f2a678604a79d",
+      "scope": "Trusted native service contracts complete locally: conditional disk saves, immutable values, schema fidelity, bootstrap recovery, bounded protocol and failure-safe history; main renderer reconciled",
+      "localEvidence": [
+        "Complete native Java17 source compilation after merging main e1a9b5f8",
+        "EditorAgentServiceTest including bounded unending-reader input refusal",
+        "EditorChangeIntegrationTest",
+        "EditorDiskRevisionTest: real mission/Castle peers, current singleton/game readback, unsaved edits, observe/undo/save, deletion/recovery and USER pinning",
+        "CastleSnapshotContractTest: immutable values, complete native validation, canonical door history and isolated default profile child",
+        "EditorSchemaCompatibilityTest: no metadata/yaw/future-layout flattening",
+        "LevelAuthoringIdentityTest and LevelAuthoringRecoveryTest",
+        "CastleDocumentRecoveryTest and existing Castle geometry/lighting migration tests",
+        "Actual Windows EditorAgentGuiTest and AssetImportTopologyGuiTest, real renderer/component PNGs and corner-for-corner runtime GLB readback",
+        "Public CLI fresh processes: House independent of corrupt Castle, structured open failures, explicit pre-open native recovery, Windows-1252/Unicode paths, stale codes and native parity",
+        "Independent editor JAR: EditorHistoryFailureTest, EditorDocumentStoreTest actual child crashes/staged races, RuntimeSceneContractTest, EditorCorePortabilityTest, EditorTopologyProjectTest"
+      ],
+      "nativeHostCi": {
+        "run": 41367120522,
+        "status": "in_progress"
+      },
+      "standaloneCi": {
+        "run": 41367126147,
+        "status": "in_progress"
+      },
+      "fullRoundCi": {
+        "run": 41367132677,
+        "status": "in_progress",
+        "manifestEntries": 310
+      },
+      "evidence": "development/quality/evidence/editor-native-contracts-2026-11-01.json",
+      "limitations": [
+        "Exact current-source CI not yet terminal",
+        "Authenticated MCP, full G0-G12 and physical installed/hardware gates remain separate"
+      ]
+    }
+  ],
+  "nextGoalWork": [
+    "Verify new exact-source310 native/standalone/full results for disk/snapshot/schema/bootstrap/history contracts",
+    "Continue G2 human parametric primitives and actual selection/gizmos on the same indexed project; then reversible edge/face modeling and material/normal interchange",
+    "Continue dependency-ordered G3-G12 without fake scene data or premature gate completion; original PDF bytes and installed hardware acceptance remain separate"
+  ],
+  "ownerPriority": {
+    "date": "2026-11-01",
+    "scope": "Deliver the small trusted in-process service and headless interface around proven human/native operations first; authenticated remote/MCP and broad scripting remain later stages.",
+    "dependencyAdjustment": "Local inspection, capture and transactions do not require the originally proposed loopback transport; installed/authenticated acceptance retains its separate requirements."
   }
 }

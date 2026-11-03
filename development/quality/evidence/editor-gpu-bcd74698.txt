@@ -1,0 +1,11 @@
+Source bcd7469828f8736a5dfb5c6266a48543573fb294
+GitHub job 125420512759; terminal raw log excerpt retrieved 2026-11-02
+2026-11-02T17:03:46.4852089Z PASS actual OpenGL Castle and 11 map types including persisted USER fixture: zero unchanged uploads, real torch, flicker, blackout, door, resize and return
+2026-11-02T17:03:55.7791598Z GPU UI PASS real Castle home loaded
+2026-11-02T17:03:56.9839977Z GPU UI PASS invoked real solo.deploy / START ROUND action
+2026-11-02T17:04:00.8304184Z GPU UI PASS HOUSE hunter ready=2378ms, walk=0.5730514175999986m, frames=28, real extraction=RETREATED, Castle home restored
+2026-11-02T17:04:00.9993812Z GPU UI PASS invoked real solo.deploy / START ROUND action
+2026-11-02T17:04:13.3077119Z GPU UI PASS FARMHOUSE hunter ready=11183ms, walk=0.4278817775999997m, frames=20, real extraction=RETREATED, Castle home restored
+2026-11-02T17:04:13.4826600Z GPU UI PASS invoked real solo.deploy / START ROUND action
+2026-11-02T17:04:15.8006065Z GPU UI PASS SCHOOL hunter ready=1037ms, walk=0.5424711359999961m, frames=18, real extraction=RETREATED, Castle home restored
+2026-11-02T17:04:15.8029435Z GPU UI PASS 3 real case dispatch / hunter / movement / extraction / menu cycles

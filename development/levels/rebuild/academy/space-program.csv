@@ -1,0 +1,18 @@
+space_id,source_name,intended_activity,inherited_width_m,inherited_depth_m,inherited_standing_y_m,inherited_clear_height_m,source_adjacencies,dimension_decision,physical_acceptance
+stage,Gate van apron,Unload expedition equipment at the gate,16,12,0,3,entry,REVIEW_IN_S02,NOT_ESTABLISHED
+entry,Front gate court,Arrive and orient before entering school grounds,16,10,0,3,reception;stage,REVIEW_IN_S02,NOT_ESTABLISHED
+reception,Reception hall,Receive visitors and control access to teaching areas,16,12,0,3,entry;south,REVIEW_IN_S02,NOT_ESTABLISHED
+south,South cloister,Distribute arrivals to the cloister ranges,40,6,0,3,east;quad;rear;reception;west,REVIEW_IN_S02,NOT_ESTABLISHED
+west,West cloister,Connect teaching rooms under weather cover,6,24,0,3,archive;library;north;south,REVIEW_IN_S02,NOT_ESTABLISHED
+north,North cloister,Connect library and quiet study rooms,40,6,0,3,dining;east;office;quad;upper;west,REVIEW_IN_S02,NOT_ESTABLISHED
+east,East cloister,Connect dining and supervised residential access,6,24,0,3,lab;lecture;north;south,REVIEW_IN_S02,NOT_ESTABLISHED
+quad,Inner quadrangle,Provide daylight and outdoor communal space,28,24,0,3,north;south,REVIEW_IN_S02,NOT_ESTABLISHED
+library,Library,Read and consult books at supported desks,12,24,0,3,west,REVIEW_IN_S02,NOT_ESTABLISHED
+lecture,Lecture room,Teach a seated group with a clear teaching position,16,14,0,3,east;lab;rear,REVIEW_IN_S02,NOT_ESTABLISHED
+lab,Laboratory / study,Carry out supervised practical study with storage,16,16,0,3,east;lecture,REVIEW_IN_S02,NOT_ESTABLISHED
+dining,Dining hall,Serve communal meals from an adjacent service kitchen,28,10,0,3,north,REVIEW_IN_S02,NOT_ESTABLISHED
+office,Headmaster office,Meet staff and safeguard administration records,12,16,0,3,north,REVIEW_IN_S02,NOT_ESTABLISHED
+dorm,Upper dormitory,Sleep with individual storage and nearby washing,28,10,3.6,3,upper,REVIEW_IN_S02,NOT_ESTABLISHED
+upper,Upper north gallery,Distribute residents without passing through sleeping rooms,40,6,3.6,3,dorm;north,REVIEW_IN_S02,NOT_ESTABLISHED
+archive,Basement archive,Store institutional records away from routine student traffic,12,24,-3,3,west,REVIEW_IN_S02,NOT_ESTABLISHED
+rear,Rear quadrangle / service yard,Receive deliveries and remove waste through service access,16,18,0,3,lecture;south,REVIEW_IN_S02,NOT_ESTABLISHED

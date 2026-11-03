@@ -1,0 +1,12 @@
+Room 5: Washhouse
+Site: Blackpine Logging Camp / blackpine-graded-terrain-v1-956b39436d9150a3
+Bounds (X,Z): 6.00,36.00 -> 12.00,42.00; floor 0.83m; clear height 3.00m
+Geometric centre: 9.00,39.00; traversable: true
+Actual 4-view camera: 9.00,0.83,39.00; displacement 0.00m
+Portal access / windows / stairs: P12 door -> 12 Timber yard and cabin paths 1.20m @(9.00,0.83,42.00)
+Connected in authored portal graph to van: true
+Props: 8; sockets: 6
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its 
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

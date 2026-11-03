@@ -6,6 +6,10 @@
 
 ## How to use this compendium
 
+**Implementation amendment, 2026-11-01:** the owner activated a goal to finish the small [Editor Agent Service](../development/EDITOR_AGENT_SERVICE.md), then continue G0–G12. The native active-project service has local Java 17, real Windows editor and public headless-process evidence; the [G0 current-state audit](requirements/CURRENT_STATE_AUDIT.md) records exact scope and gaps. Original source sections below remain historical requirements, not updated acceptance claims. Authenticated MCP and unfinished terrain/model/audio capabilities remain gated.
+
+**G1 follow-up:** stable mission IDs, pinned USER document ownership, journaled BSCN persistence, explicit native save recovery and cooperative batch cancellation now have scoped Java 17 portable/Windows CI evidence at `5ebc7ab8` (standalone run `41327215891`, native runtime/service run `41327218903`). The human recovery menu, shared undo, actual scene captures and headless protocol are tested against real host state. Castle properties persistence, broader migrations/deltas/dependency events and the complete G0–G12 acceptance remain unfinished; see the linked audit and normal recovery log.
+
 - **Part I — Unified engineering brief:** the requirements across all editor, terrain, animation, AI, audio, scripting and genre sources, organized by shared contracts, dependencies and acceptance. This is an editorial synthesis and does not replace the source-derived details.
 - **Part II — Previously committed implementation contracts:** existing canonical guides reproduced in full with their original repository paths. Their historical dates and status statements remain exactly as authored, even when newer work advanced them.
 - **Part III — New original-document source transcriptions:** four complete available PDF text extractions with original page markers. Original PDF art, diagrams and exact pagination/formatting are not duplicated here.

@@ -1,0 +1,3 @@
+Exact published6445403a independent editor JAR through in-root directory junction: IOException Material dependency escapes the asset root.
+Corrected source through same alias: PASS canonical dependency alias: 1
+Current EditorMeshMaterialTest: outside-root refusal and changed-MTL refusal still PASS.

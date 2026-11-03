@@ -1,6 +1,6 @@
 # Unified Editor/Engine Requirements — staged integration plan
 
-**Owner intake:** 2026-10-31. **Target:** reusable, portable Java 17 editor/engine kit, integrated through existing Beckenburg host adapters without a parallel renderer, scene model, audio state, collision solver, or AI world. **Status:** PLANNED; this plan itself implements no features. **Source register:** [DOCUMENT_CHAIN.md](DOCUMENT_CHAIN.md) and [DOCUMENT_CHAIN.json](DOCUMENT_CHAIN.json).
+**Owner intake:** 2026-10-31. **Target:** reusable, portable Java 17 editor/engine kit, integrated through existing Beckenburg host adapters without a parallel renderer, scene model, audio state, collision solver, or AI world. **Status:** ACTIVE; G0 intake accepted2026-11-02, G1–G12 remain partial/planned. This plan itself implements no runtime features. **Source register:** [DOCUMENT_CHAIN.md](DOCUMENT_CHAIN.md) and [DOCUMENT_CHAIN.json](DOCUMENT_CHAIN.json).
 
 ## Authority, scope, and existing chain
 
@@ -22,13 +22,15 @@ Pre-existing owner inputs stay in the same chain, not superseded:
 
 ## Stages and acceptance gates
 
+**2026-11-01 owner priority:** first finish the small [Editor Agent Service](../../development/EDITOR_AGENT_SERVICE.md) around existing human operations and authoritative runtime adapters, then continue G0–G12. The service now has local Java 17, actual Windows editor and headless-process acceptance for native mission/Castle state, shared history, save/reopen, renderer capture and focused tests. This does not admit unfinished terrain/model/audio operations or close full G11: authenticated MCP, scripting and broader host acceptance remain gated.
+
 ### G0 — Requirements intake, deduplication and current-state audit
-**Inputs:** all seven owner document references (four new, three prior) and current Beckenburg code/recovery work. **Deliverable:** this chain manifest, exact source provenance, requirement-to-module map, and audit of what exists, what overlaps, what is a proposal, and what cannot compile on Java 17.
+**Inputs:** all eight owner document references (the original seven plus Texture Painting) and current Beckenburg code/recovery work. **Deliverable:** this chain manifest, exact source provenance, requirement-to-module map, and audit of what exists, what overlaps, what is a proposal, and what cannot compile on Java 17.
 - Record the existing EditorProject / RuntimeScene / EditorHistory / EditorMeshPipeline / TerrainLayerStack / AdaptiveTerrainTopology / TerrainSceneNativePhysics entry points.
 - Audit SoundDocument, SoundVolume, LevelSoundscape, SoundVolumeEditor, EditorSoundLab/Profile, Room/portal geometry, existing javax.sound playback and LAN voice before selecting a hardware backend.
 - Audit EditorAnimationClip/Lab and model import pipelines before adding a separate rig animation controller.
 - Maintain separate states: EXISTING_VERIFIED, PARTIAL, PLANNED, BLOCKED, OUT_OF_SCOPE; a document commit never counts as feature completion.
-**Exit:** source hashes checked, owner documents indexed, no orphaned prior requirements. **Plan entry accepted; runtime features are not.**
+**Exit:** source hashes checked, owner documents indexed, no orphaned prior requirements. **Accepted2026-11-02:** eight original PDFs/143 direct page extractions, prior transcriptions and module contracts indexed; `audit_editor_requirements.py --require-originals` reports0 errors/0 gaps. See CURRENT_STATE_AUDIT.md for actual code/evidence and open gates. Runtime features are not accepted by this intake gate.
 
 ### G1 — Stable portable runtime/editor and transactional data contracts
 **Depends on:** G0. **Sources:** Engine base; Level Editor gold standards; terrain/landscape contracts.
@@ -37,6 +39,8 @@ Pre-existing owner inputs stay in the same chain, not superseded:
 - Preserve the existing game-owned graphics/physics backend and game-level authority. Expose **adapters**, not another render engine.
 - Establish schema migrations with compatibility tests before adding new component types. Add capability flags so unsupported host features do not claim success.
 **Exit:** standalone kit compiles on Java 17; round-trip/migration/rollback and existing scene tests pass; the same node is consumed by editor and real host.
+
+**2026-11-02 owner addition:** [Texture Painting](TEXTURE_PAINTING_INTEGRATION.md) extends G2/G3/G10/G11/G12. Materials require their own modification window and texture/UV layout; the modeling and level modules retain their own layouts. This extends the full plan without renumbering or closing its gates.
 
 ### G2 — Topological mesh foundation and parametric modeling (human operated)
 **Depends on:** G1. **Source:** Topological editor, pages 1–9, 15–18.
@@ -47,9 +51,20 @@ Pre-existing owner inputs stay in the same chain, not superseded:
 - Native topology+editor-state binary with version/migration; explicit glTF/GLB and OBJ import/export, coordinates/handedness, normals, UV and material roundtrip; no OBJ as hot editing state.
 **Exit:** create/edit/export/import/reopen a textured sample with correct facing, geometry counts and transformed hard-edge normals; tests prove roundtrip, manifold controls, undo and bounded memory. Capture actual editor frames as advisory review.
 
+**Implementation checkpoint:** [indexed mesh authoring](../INDEXED_MESH_AUTHORING.md) provides real human vertex editing, stable indexed native state, undo/save/reopen, topology diagnostics and checked runtime publication. This is partial G2; native-indexed OBJ copy/readback and explicit unused-vertex cleanup are also implemented. Authored normals/material interchange and the remaining exit requirements above are unchanged.
+
+**Source-backed GLB checkpoint2026-11-02:** supported static indexed PNG GLB now uses the same game decoder and actual native BTOPv4. Original hierarchy/matrix/TRS pivots, shared instances and raw source materials/bytes survive edits, human EXPORT GLB and fresh reopen. Model and Material Editor retain independent windows/layouts with shared native authority/history. Unsupported rigs/morph/additional/sparse attributes/texture transforms remain read-only; full PBR rendering, remaining modeling and whole G2 exit remain open. See [actual authoring scope](../INDEXED_MESH_AUTHORING.md#source-backed-static-glb-and-separate-workspaces).
+
+**Perspective checkpoint2026-11-02:** actual model viewport now has perspective orbit/pan/zoom/fit. Drawing, BVH triangle/box/lasso selection and projective axis gestures use the same immutable fitted camera; native edits still use shared validation/history and real runtime publication. Actual human checks and maximum120000-face/360000-vertex256MiB portable picking pass. Loop/ring, local/normal tools, bevel/slide, incremental updates and full G2 exit remain open.
+
+**Surface-normal checkpoint2026-11-02:** actual Transform inspector and movement gizmos derive T/B/N from a picked native face. Numeric rotation/scale and oblique dragging share native validation/history, pivot/normal transport and real save/runtime publication. Missing anchors refuse; source-backed GLB provenance remains intact. Maximum normal-bearing native mesh passes under256MiB. Persistent object-local frames, loop/ring, bevel/slide, incremental updates and whole G2 exit remain open.
+
+**Persistent local-frame checkpoint2026-11-02:** native affine part references, local numeric transforms and scaled local-unit gizmos share geometry/history, native5 save/reopen and actual OBJ/GLB/runtime readback. Whole-part edits update frames, partial deformations retain them; original GLB source pivots/metadata survive. Actual interleaved face order is preserved by the shared runtime decoder. Maximum local normal-bearing mesh passes under256MiB. Loop/ring, bevel/slide, incremental updates and full G2 exit remain open.
+
 ### G3 — Sculpting, remeshing, high-fidelity interchange and input
 **Depends on:** G2. **Source:** Topological editor, pages 1–18.
 - Clay/standard, grab, smooth, flatten/planar brushes; falloff, screen-space radius, stroke interpolation, symmetry, topology-safe deltas, brush-local normal rebuild.
+- Implement the human texture/UV workflow mapped in [Texture Painting integration](TEXTURE_PAINTING_INTEGRATION.md): layered Albedo/Roughness/Metallic/Normal, blend modes, localized MIP updates/tile undo, seam-aware projection/symmetry, unwrap/packing/pins/density/relax, brush UX, autosave/recovery and live links. Match source/native/runtime channel capabilities explicitly; unrendered channels and larger resolution targets remain open until actual backends support them.
 - Non-destructive quad-dominant remesh preview and controlled apply; do not arbitrarily remesh authored textured geometry, erase hand-placed UVs or change low-poly styling without authorization. Treat non-manifold repair as explicit preview/transaction.
 - Asynchronous save/export and bounded regional GPU buffer updates. Add pressure/tilt and high-frequency tablet adapters only where hardware APIs are available, with mouse fallback. Mocap/VRPN/OpenVR adapters optional, isolated and bounded.
 **Exit:** deterministic stroke replay and undo, geometry/UV preservation, no missing faces after sculpt, performance tests demonstrate no full-frame global mesh rebuild during local strokes.
@@ -148,3 +163,6 @@ The PDFs contain useful architecture and **illustrative code**, not a fully test
 - **Diagnostics, not blockers:** subjective artwork fidelity, LOD cosmetic seams that do not objectively break required functionality, audio taste, stylized PSX look, brush ergonomics, balancing and visual captures.
 - Test each stage by editing its **actual modules**, not a fake parallel system. Record exact commit SHA, CI run ID, OS, generated files/hashes, and remaining gates in the normal recovery document.
 - Sequence may overlap work on independent modules, but a later stage cannot mark accepted before the foundational data contract and its own end-to-end acceptance.
+
+
+**2026-11-02 native bevel checkpoint:** Model Editor Bevel card previews and commits a single flat convex support-edge/corner cut through authoritative native history. Closed topology, original retained IDs, seam UV/raw normal interpolation, active-face cap material, PNG/source/frame preservation and native/OBJ bundle/GLB readback are verified. Actual human controls, save/reopen, source-backed GLB publication and production renderer capture pass; near-maximum119988-face input passes under256MiB in independent Java17 kit. Evidence: `development/quality/evidence/native-bevel-2026-11-02`. Full G2 remains open: segmented/concave/region bevels, loop/ring, slide, incremental buffers and later painting/gates are not accepted by this checkpoint.

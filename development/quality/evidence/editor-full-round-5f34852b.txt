@@ -1,0 +1,30 @@
+Source: 5f34852b202f364c60fd88dd172cd4b78c090307
+Run: https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41398597964
+Job: 125125263677
+Native and standalone runs: 41398593057 / 41398588377, both success
+Raw full-round job excerpts (not inferred from workflow status):
+2026-11-02T06:15:44.1375471Z PASS: TCP EMF drop, empty slot, E pickup, ownership, reach, rollback and duplicate rejection
+2026-11-02T06:15:51.9203940Z PASS all ten packaged scenes, left menu, responsive layout and live button
+2026-11-02T06:16:42.0568020Z PASS packaged pictures, async UI load, saved chapter order, prototype privacy and actual locked/unlocked dispatch
+2026-11-02T06:17:32.5350954Z PASS: 576 explicitly approved packaged GLBs, real triangles and embedded textures
+2026-11-02T06:17:32.5895326Z TEST PASS PackagedSourceModelsTest elapsed=14620ms
+2026-11-02T06:18:28.4395250Z PASS: TCP EMF drop, empty slot, E pickup, ownership, reach, rollback and duplicate rejection
+2026-11-02T06:19:19.6413634Z PASS: ordered nonblocking TCP delivery, bounded backlog, slow-peer isolation
+2026-11-02T06:19:45.3040575Z PASS: TCP heartbeat RTT 0/50/150ms, one lost PONG, recovery and host continuity
+2026-11-02T06:21:35.8743840Z PASS: human controls Twin A, Twin B autonomously patrols and streams live positions over TCP
+2026-11-02T06:22:38.9509662Z PASS: sensor placement, pickup, tier limits, coexisting nodes and bounded frames
+2026-11-02T06:22:39.8512906Z PASS: book world pose, proximity, pickup, snapshot
+2026-11-02T06:22:39.9851350Z PASS: deployed lights, switching, tier housings, multiplayer pickup
+2026-11-02T06:22:45.8705784Z PASS: TCP placed sensor, motion alarm, retrieval, ghost privacy
+2026-11-02T06:23:28.1487674Z PASS van exit lane, 6 seats, physical aim/pickup and visible held tool
+2026-11-02T06:23:32.5611770Z PASS: genuine TCP EOF emits exactly one disconnect; local close stays silent
+2026-11-02T06:23:32.8693012Z PASS: 12 TCP exits deliver LEAVE and EOF despite unread incoming updates
+2026-11-02T06:24:05.8697151Z PASS: four TCP clients, seats/readiness/start, host-validated moves, ghost parity, damage, authority, replay and private projection
+2026-11-02T06:25:17.3659156Z PASS pickup/examination/ownership, throw/drop/gravity, impact sound, swept walls/ceilings, upper floors, physical poltergeist hits/misses, ghost privacy and bounded replication
+2026-11-02T06:25:19.2759524Z PASS real sockets: pickup/throw/ownership/privacy, ghost fixture activation/replay, rejected remote switching and reachable player deactivation
+2026-11-02T06:25:39.6766669Z PASS real-socket centre-ray clutter and shelf pickups, exact stock decrement, forged/stale target rejection and hunter-only interaction
+2026-11-02T06:25:57.0521750Z PASS real TCP crouch/stand snapshots, unchanged authoritative feet and ghost-role rejection
+2026-11-02T06:26:04.9791548Z PASS TCP UV power, genuine positioned trace, exhaustion blackout, ghost privacy and physical powered laser installation
+2026-11-02T06:26:44.4497710Z PASS real TCP campaign co-op, six-seat cap, bot substitution/refund, guest isolation, host receipt and multiplayer lobby purchases
+2026-11-02T06:28:56.4138457Z REGRESSION SUMMARY passed=310 failed=0 skipped=0 manifest=310
+2026-11-02T06:29:12.7334234Z PASS Beckenburg packaged desktop, multiplayer UI and solo case startup
