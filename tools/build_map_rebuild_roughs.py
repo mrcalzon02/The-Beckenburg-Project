@@ -138,6 +138,172 @@ def school():
                    'Punch editor world terrain and prove full-body traversal, doors, networking, gameplay, human and GPU gates.'])
 
 
+def prison():
+    zones, links = [], []
+
+    def room(key,name,bounds,y,height,owner,kind='inside'):
+        zones.append(dict(id=key,name=name,bounds=bounds,y=y,height=height,owner=owner,kind=kind,purpose=name))
+
+    # The two original parallel-wing masses are replaced by actual cells,
+    # their corridor and dayhall, with the gallery on the CELL DOOR side.
+    cells=[]
+    for wing,cell_x,gallery_x,day_x,stair_x,owners in [
+        ('a',[10,14],[14,16],[16,22],[16,20],(0,7)),
+        ('b',[54,58],[52,54],[46,52],[48,52],(4,10))]:
+        for floor,y,owner in [('lower',0,owners[0]),('upper',3.4,owners[1])]:
+            for index in range(8):
+                z=24+index*3.5;key=f'{wing}-{floor}-cell-{index+1:02}'
+                room(key,f'{wing.upper()} {floor} single cell {index+1}',[cell_x[0],z,cell_x[1],z+3.5],y,3,owner)
+                cells.append(dict(space=key,wing=wing,standing_y=y,capacity=1,door=[14 if wing=='a' else 54,y,z+2.6],
+                    bed_reservation=[cell_x[0]+.18,z+.65,cell_x[0]+1.13,z+2.75] if wing=='a' else [cell_x[1]-1.13,z+.65,cell_x[1]-.18,z+2.75],
+                    wc_origin=[13.3 if wing=='a' else 54.7,y+.235,z+.70],wc_yaw=0,
+                    basin_origin=[12.05 if wing=='a' else 55.95,y,z+.33],
+                    note='Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout.'))
+            room(f'{wing}-{floor}-gallery',f'{wing.upper()} {floor} cell-door gallery',
+                 [gallery_x[0],24,gallery_x[1],52 if floor=='lower' else 58],y,3,owner,'circulation')
+        owner=owners[0]
+        room(f'{wing}-rear-link',f'{wing.upper()} rear secure cross-link',
+             [10 if wing=='a' else 52,22,16 if wing=='a' else 58,24],0,3,owner,'circulation')
+        room(f'{wing}-front-link',f'{wing.upper()} front secure cross-link',
+             [10 if wing=='a' else 52,52,16 if wing=='a' else 58,58],0,3,owner,'circulation')
+        room(f'{wing}-dayhall',f'{wing.upper()} supervised dayhall',[day_x[0],38,day_x[1],46],0,6.8,owner)
+        room(f'{wing}-rear-stair',f'{wing.upper()} alternate rear stair bay',[stair_x[0],28,stair_x[1],38],0,6.8,owner,'circulation')
+        room(f'{wing}-rear-bypass',f'{wing.upper()} rear dayhall bypass',[20 if wing=='a' else 46,28,22 if wing=='a' else 48,38],0,6.8,owner,'circulation')
+        room(f'{wing}-upper-rear-stair',f'{wing.upper()} upper alternate landing',[stair_x[0],28,stair_x[1],38],3.4,3,owners[1],'circulation')
+        room(f'{wing}-change',f'{wing.upper()} prisoner wash changing and benches',
+             [16 if wing=='a' else 49,22,19 if wing=='a' else 52,28],0,3,owner)
+        room(f'{wing}-showers',f'{wing.upper()} three shower bays and drainage',
+             [19 if wing=='a' else 46,22,22 if wing=='a' else 49,28],0,3,owner)
+        room(f'{wing}-stair',f'{wing.upper()} independent stair bay',[stair_x[0],46,stair_x[1],58],0,6.8,owner,'circulation')
+        room(f'{wing}-upper-stair',f'{wing.upper()} upper stair void and landing',[stair_x[0],46,stair_x[1],58],3.4,3,owners[1],'circulation')
+        room(f'{wing}-front-aisle',f'{wing.upper()} front bypass aisle',[20 if wing=='a' else 46,46,22 if wing=='a' else 48,58],0,3,owner,'circulation')
+    # Public reception and the visitor side of the booths stay outside custody.
+    room('reception','Public reception and identity check',[10,62,18,68],0,3,1)
+    room('intake','Search and intake custody corridor',[10,58,18,62],0,3,1,'circulation')
+    room('holding','Supervised temporary holding',[18,58,22,62],0,3,1)
+    room('search','Private search and belongings',[22,58,26,64],0,3,1)
+    room('records','Prisoner records and staff work',[18,62,22,68],0,3,9)
+    room('public-wc','Public sanitary room',[22,64,26,68],0,3,9)
+    room('sally','Vehicle sally port and double-gate control',[26,58,42,68],0,4,2,'circulation')
+    room('guard','Guard control and dispatch',[42,58,50,64],0,3,2)
+    room('staff','Staff rest and lockers',[42,64,46.8,68],0,3,2)
+    room('staff-wc','Staff sanitary room',[46.8,64,50,68],0,3,2)
+    room('guard-link','Controlled B-block entrance',[50,58,58,68],0,3,2,'circulation')
+    room('visitors','Public visiting booths',[0,58,6,68],0,3,6)
+    room('visitor-custody','Custody visiting booths',[6,58,10,68],0,3,6)
+    room('cross','Rear secure distribution passage',[10,16,58,22],0,3,2,'circulation')
+    room('dining','Thirty-four-place mess',[10,4,22,16],0,3,3)
+    room('kitchen','Kitchen cooking and serving',[22,4,28,12],0,3,3)
+    room('food-store','Secure dry and chilled food store',[22,12,25,16],0,3,3)
+    room('wash-up','Wash-up refuse and service handling',[25,12,28,16],0,3,3)
+    room('medical-link','Medical reception and private access',[28,4,32,16],0,3,5,'circulation')
+    room('exam','Medical examination and handwashing',[32,4,39,10],0,3,5)
+    room('recovery','Two-bed recovery observation',[39,4,46,10],0,3,5)
+    room('medical-store','Clean medical supplies',[32,10,39,16],0,3,5)
+    room('sluice','Soiled utility wash and linen',[39,10,46,16],0,3,5)
+    room('chapel','Worship and reconciliation',[58,34,70,52],0,4,6)
+    room('isolation-link','Observed isolation corridor',[58,16,61,34],0,3,8,'circulation')
+    room('isolation-cell-1','Isolation single cell one with sanitary bay',[61,18,66,22.5],0,3,8)
+    room('isolation-cell-2','Isolation single cell two with sanitary bay',[61,22.5,66,27],0,3,8)
+    room('observation','Isolation observation and controlled supplies',[61,16,70,18],0,3,8)
+    room('isolation-service','Isolation clinical and linen service',[66,18,70,27],0,3,8)
+    room('isolation-wash','Isolation washing and work room',[61,27,70,34],0,3,8)
+    room('plant-stair','Separate plant stair enclosure',[28,22,32,34],0,3,11,'circulation')
+    room('lower-stair','Plant stair and maintenance access',[28,22,32,34],-3,3,11,'circulation')
+    room('plant','Heating hot water and electrical plant',[32,22,46,34],-3,3,11)
+    room('laundry','Laundry showers supply and maintenance store',[28,34,46,42],-3,3,11)
+    room('yard','Bounded exercise yard around plant headhouse',[22,22,46,58],0,12,12,'outside')
+    room('entry','Front public approach and perimeter roadhead',[0,68,76,94],0,12,13,'outside')
+    room('north-service','North food and maintenance delivery apron',[0,0,76,4],0,12,13,'outside')
+    room('east-service','East exterior service walk',[70,4,76,68],0,12,13,'outside')
+    room('west-service','West exterior service walk',[0,4,6,58],0,12,13,'outside')
+    room('stage','Canonical van staging and extraction reservation',[24,78,44,92],0,3,14,'staging')
+    byid={z['id']:z for z in zones}
+
+    def door(a,b,x,z,width=1.2,access='custody'):
+        ra,rb=byid[a],byid[b];assert ra['y']==rb['y'];y=ra['y']
+        links.append(dict(id=f'L{len(links)+1:03}',a=a,b=b,kind='level',width=width,
+            points=[review.center(ra),[x,y,z],review.center(rb)],threshold=[x,y,z],access=access,
+            note='Proposed physical threshold; route diagrams do not prove traversability or lock behavior.'))
+    for cell in cells:
+        wing=cell['wing'];floor='lower' if cell['standing_y']==0 else 'upper'
+        door(cell['space'],f'{wing}-{floor}-gallery',cell['door'][0],cell['door'][2],1.05,'individual-cell')
+    for wing in ['a','b']:
+        gx=15 if wing=='a' else 53;edge=16 if wing=='a' else 52
+        door(f'{wing}-lower-gallery',f'{wing}-rear-link',gx,24)
+        door(f'{wing}-lower-gallery',f'{wing}-front-link',gx,52)
+        door(f'{wing}-lower-gallery',f'{wing}-dayhall',edge,42,1.8)
+        door(f'{wing}-lower-gallery',f'{wing}-change',edge,26)
+        door(f'{wing}-change',f'{wing}-showers',19 if wing=='a' else 49,25)
+        door(f'{wing}-change',f'{wing}-rear-stair',17.5 if wing=='a' else 50.5,28)
+        door(f'{wing}-rear-stair',f'{wing}-dayhall',18 if wing=='a' else 50,38,1.5)
+        door(f'{wing}-rear-bypass',f'{wing}-dayhall',21 if wing=='a' else 47,38,1.5)
+        door(f'{wing}-upper-rear-stair',f'{wing}-upper-gallery',edge,36.5,1.5)
+        door(f'{wing}-rear-link','cross',gx,22,1.5)
+        door(f'{wing}-dayhall',f'{wing}-stair',18 if wing=='a' else 50,46,1.5)
+        door(f'{wing}-dayhall',f'{wing}-front-aisle',21 if wing=='a' else 47,46,1.5)
+        door(f'{wing}-stair',f'{wing}-front-link',edge,55,1.5)
+        door(f'{wing}-upper-stair',f'{wing}-upper-gallery',edge,56,1.5)
+        x=18 if wing=='a' else 50
+        links.append(dict(id=f'L{len(links)+1:03}',a=f'{wing}-stair',b=f'{wing}-upper-stair',kind='stairs',
+            width=1.5,points=[[x,0,48],[x,3.4,53.44]],rise_m=3.4,run_m=5.44,headroom_m=2.2,
+            landing_depth_m=1.5,risers=20,construction='Independent straight flight, full-run deck void, top bridge to cell-door gallery and both end landings.',note='Actual stair geometry, guards and headroom remain to be built.'))
+        links.append(dict(id=f'L{len(links)+1:03}',a=f'{wing}-rear-stair',b=f'{wing}-upper-rear-stair',kind='stairs',
+            width=1.5,points=[[x,0,30],[x,3.4,35.44]],rise_m=3.4,run_m=5.44,headroom_m=2.2,
+            landing_depth_m=1.5,risers=20,construction='Second separated gallery flight and landing; same required deck opening and guard contract.',note='Provides alternate vertical circulation instead of a single long gallery trap.'))
+    for row in [
+        ('entry','sally',34,68),('entry','reception',14,68),('reception','intake',14,62),
+        ('reception','records',18,65),('entry','public-wc',24,68),('intake','holding',18,60),
+        ('holding','search',22,60),('search','sally',26,61),('intake','a-front-link',14,58),
+        ('sally','guard',42,61),('guard','staff',44,64),('guard','staff-wc',48.4,64),('guard','guard-link',50,61),
+        ('guard-link','b-front-link',55,58),('guard','b-front-aisle',47,58),
+        ('sally','yard',34,58),('a-dayhall','yard',22,42),('b-dayhall','yard',46,42),
+        ('yard','cross',40,22),('yard','plant-stair',28,28),('plant-stair','cross',30,22),
+        ('entry','visitors',3,68),('intake','visitor-custody',10,60),
+        ('chapel','isolation-link',59.5,34),
+        ('isolation-link','cross',58,19),('isolation-link','observation',61,17),
+        ('isolation-link','isolation-cell-1',61,20.25),('isolation-link','isolation-cell-2',61,24.75),
+        ('observation','isolation-service',68,18),('isolation-link','isolation-wash',61,30.5),
+        ('cross','dining',16,16),('dining','kitchen',22,8),('kitchen','food-store',23.5,12),
+        ('kitchen','wash-up',26.5,12),('kitchen','north-service',25,4),
+        ('cross','medical-link',30,16),('medical-link','exam',32,7),('exam','recovery',39,7),
+        ('medical-link','medical-store',32,13),('medical-store','sluice',39,13),
+        ('lower-stair','plant',32,31),('plant','laundry',38,34),
+        ('entry','east-service',73,68),('east-service','north-service',73,4),
+        ('north-service','west-service',3,4),('west-service','visitors',3,58),('stage','entry',34,78)]:
+        access='service' if any(k in row[:2] for k in ['north-service','east-service','west-service','plant','laundry','lower-stair','kitchen','food-store','wash-up']) else 'custody'
+        if set(row[:2]) in [{'entry','visitors'},{'entry','reception'},{'entry','public-wc'}]:access='public'
+        door(*row,access=access)
+    links.append(dict(id=f'L{len(links)+1:03}',a='lower-stair',b='plant-stair',kind='stairs',width=1.5,
+        points=[[30,-3,24],[30,0,28.8]],rise_m=3,run_m=4.8,headroom_m=2.2,landing_depth_m=1.5,
+        risers=18,construction='Independent service stair with saved editor world hole and matching ground deck void.',note='Do not allow the yard terrain or a backdrop sheet to cap the plant.'))
+    return dict(version=2,id='PRISON',title='Beckenburg Penitentiary — revised cellhouse rough',
+        status='S02_DESIGN_STUDY_NOT_RUNTIME_ACCEPTED',site_bounds=[-4,-4,78,94],zones=zones,links=links,
+        capacity='32 single cells across two wings and two floors, plus two isolation places; 34 prisoners maximum in the proposed normal-use program.',
+        rituals=[dict(rite='Banishment',zone='isolation-wash',point=[65.5,0,30.5]),
+                 dict(rite='Cleansing',zone='sluice',point=[42.5,0,13]),
+                 dict(rite='Absolution',zone='chapel',point=[64,0,43])],
+        staging=dict(zone='stage',point=[34,0,85],yaw=-math.pi/2,cargo_route=[[30.372,0,85],[34,0,73],[34,0,68]],note='Canonical VanStaging transform; actual shared van must appear in later arrival review.'),
+        terrain_cutouts=[dict(bounds=[28,22,46,42],world_surface_y=-.65,
+            method='Persisted editor topology under the full plant/laundry footprint, not authored yet')],
+        cell_fit_reservations=cells,
+        fit_assets=['level_trace_camp_bed','toilet_mp_1','level_bath_basin','level_workbench'],
+        asset_decision='Camp-bed bounds provide a full-scale compact-bed fit reference only; author a fixed steel cell-bed derivative instead of placing a folding camp bed as final prison furniture.',
+        security_interfaces=[dict(spaces=['visitors','visitor-custody'],plane_x=6,open_door=False,
+                                 note='Glazed/meshed supervised booth divider; no visitor-to-custody through-route.'),
+                             dict(spaces=['sally','yard'],two_sided_manual_release=True,
+                                  note='Ordinary custody control and event behavior cannot softlock hunters on power failure; physical gate/release acceptance required.')],
+        decisions=['Build 32 actual cell rooms with independent doors, native-sized sanitary fittings and two storeys of continuous cell-door gallery.',
+                   'Preserve the exercise yard as an orientation landmark; shape its terrain around the service headhouse instead of stamping a rectangular pad.',
+                   'Public visitors approach reception and exterior booth entrance without passing through cell blocks or medical care.',
+                   'Medical examination, recovery, clean stores and soiled utility have separate bounded functions; medical access comes from the rear distribution passage.',
+                   'Kitchen deliveries and refuse use the north service apron; prisoner movement does not cross cooking/store rooms.'],
+        remaining=['Resolve individual prisoner/staff/visitor fixture positions and privacy screens with actual full-scale support and approach rays.',
+                   'Construct the six shared shower bays, floor drains and two isolation sanitary bays in actual geometry.',
+                   'Author booth glazing, security release mechanisms, roof structure, cell windows, services and exact guard/deck voids.',
+                   'Complete native terrain holes, actual van/capsule stair routes, hunt/ritual tests, networking and runtime/native/GPU/human acceptance.'])
+
+
 def validate(data):
     zones={z['id']:z for z in data['zones']}
     assert len(zones)==len(data['zones'])
@@ -171,6 +337,21 @@ def validate(data):
         if key in reached:continue
         reached.add(key);pending.extend(graph[key]-reached)
     assert reached==set(zones), set(zones)-reached
+    if data['id']=='PRISON':
+        cells=data['cell_fit_reservations'];assert len(cells)==32
+        for wing in ['a','b']:
+            for floor in [0,3.4]:assert sum(c['wing']==wing and c['standing_y']==floor for c in cells)==8
+        measured={a['asset']:a for a in asset_bounds(data['fit_assets'])['assets']}
+        for cell in cells:
+            room=zones[cell['space']];x0,z0,x1,z1=room['bounds'];bx,bz,bxx,bzz=cell['bed_reservation']
+            assert x0+.08<=bx<bxx<=x1-.08 and z0+.08<=bz<bzz<=z1-.08
+            for asset,field in [('toilet_mp_1','wc_origin'),('level_bath_basin','basin_origin')]:
+                x,y,z=cell[field];lo,hi=measured[asset]['local_min'],measured[asset]['local_max']
+                assert x+lo[0]>=x0+.08-1e-6 and x+hi[0]<=x1-.08+1e-6
+                assert z+lo[2]>=z0+.08-1e-6 and z+hi[2]<=z1-.08+1e-6
+                assert y+lo[1]>=room['y']-1e-6 and y+hi[1]<room['y']+room['height']
+                assert x+hi[0]<=bx or x+lo[0]>=bxx or z+hi[2]<=bz or z+lo[2]>=bzz, 'Cell bed/fixture overlap '+cell['space']
+        assert not any({l['a'],l['b']}=={'visitors','visitor-custody'} for l in data['links']), 'Visitor booth divider is not a custody doorway'
     for rite in data['rituals']:
         room=zones[rite['zone']];x,y,z=rite['point'];x0,z0,x1,z1=room['bounds']
         assert x0+2.2<=x<=x1-2.2 and z0+2.2<=z<=z1-2.2, 'Ritual clear area '+rite['zone']
@@ -183,9 +364,11 @@ def validate(data):
 
 
 def sections(data):
-    out=['<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="840" viewBox="0 0 1200 840">',
-         '<rect width="1200" height="840" fill="#f5f4ef"/>',
-         '<g font-family="Arial" fill="#1c2a37"><text x="30" y="35" font-size="24">Ravenshade School: proposed stair sections</text>',
+    height=160+340*sum(link['kind']=='stairs' for link in data['links'])
+    title=review.esc(data['title'].split(' —')[0])
+    out=[f'<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="{height}" viewBox="0 0 1200 {height}">',
+         f'<rect width="1200" height="{height}" fill="#f5f4ef"/>',
+         f'<g font-family="Arial" fill="#1c2a37"><text x="30" y="35" font-size="24">{title}: proposed stair sections</text>',
          '<text x="30" y="60" font-size="15">S02 dimensions only. Full-run architectural voids plus editor world-ground opening remain to be built and tested.</text>']
     for index,link in enumerate(x for x in data['links'] if x['kind']=='stairs'):
         run,rise=link['run_m'],link['rise_m'];base=360+index*340;left=110;scale=45
@@ -202,9 +385,9 @@ def sections(data):
     return '\n'.join(out+['</g></svg>'])
 
 
-def asset_bounds():
+def asset_bounds(names=None):
     records=[]
-    for name in ['level_student_desk','chair_mp_5','toilet_mp_1','level_bath_basin']:
+    for name in names or ['level_student_desk','chair_mp_5','toilet_mp_1','level_bath_basin']:
         path=ROOT/'assets/runtime/models'/(name+'.glb');raw=path.read_bytes()
         size,kind=struct.unpack_from('<II',raw,12);assert kind==0x4e4f534a
         document=json.loads(raw[20:20+size])
@@ -221,11 +404,11 @@ def asset_bounds():
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');args=parser.parse_args()
-    for folder,data in [('school',school())]:
+    for folder,data in [('school',school()),('prison',prison())]:
         spaces,links=validate(data)
         outputs={'rough-layout.json':json.dumps(data,indent=2,ensure_ascii=False)+'\n',
                  'rough-plan.svg':review.render_svg(data),'rough-sections.svg':sections(data),
-                 'rough-asset-bounds.json':json.dumps(asset_bounds(),indent=2)+'\n',
+                 'rough-asset-bounds.json':json.dumps(asset_bounds(data.get('fit_assets')),indent=2)+'\n',
                  'rough-volumes.obj':review.render_obj(data)}
         for name,text in outputs.items():
             path=OUT/folder/name;raw=text.encode('utf-8')

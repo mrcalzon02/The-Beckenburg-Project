@@ -6,10 +6,14 @@ $sourcePath=Join-Path $rebuildRoot "$Site/rough-layout.json"
 $data=Get-Content -LiteralPath $sourcePath -Raw | ConvertFrom-Json
 $levels=@($data.zones.y | Sort-Object -Unique)
 $columns=3
+$wide=($data.site_bounds[2]-$data.site_bounds[0]) -gt 60
+$canvasWidth=if($wide){2100}else{1500}
+$columnWidth=($canvasWidth-15)/3
+$panelHeight=if($wide){720}else{530}
 $rows=[Math]::Ceiling($levels.Count/$columns)
 $legendRows=[Math]::Ceiling($data.zones.Count/3)
-$height=[int](100+$rows*530+80+$legendRows*22)
-$bitmap=New-Object System.Drawing.Bitmap(1500,$height)
+$height=[int](100+$rows*$panelHeight+80+$legendRows*22)
+$bitmap=New-Object System.Drawing.Bitmap($canvasWidth,$height)
 $g=[System.Drawing.Graphics]::FromImage($bitmap)
 $g.SmoothingMode=[System.Drawing.Drawing2D.SmoothingMode]::AntiAlias
 $g.Clear([System.Drawing.Color]::FromArgb(245,244,239))
@@ -26,7 +30,8 @@ $g.DrawString($data.title,$title,$ink,25,20)
 $g.DrawString('S02 revised design study | metres | source coordinates only | no runtime or physical acceptance',$font,$ink,25,58)
 $g.DrawString('Numbered rooms map to the key below. Cyan lines are connection diagrams; amber lines reserve real stair runs.',$small,$ink,25,82)
 for($i=0;$i -lt $levels.Count;$i++){
-    $y=$levels[$i];$ox=25+($i%3)*495;$oy=120+[Math]::Floor($i/3)*530;$scale=8
+    $y=$levels[$i];$ox=25+($i%3)*$columnWidth;$oy=120+[Math]::Floor($i/3)*$panelHeight
+    $scale=[Math]::Min(8.0,[Math]::Min([double](($columnWidth-40)/($data.site_bounds[2]-$data.site_bounds[0])),[double](($panelHeight-60)/($data.site_bounds[3]-$data.site_bounds[1]))))
     $g.DrawString("Standing Y $y m",$font,$ink,[single]$ox,[single]$oy)
     $baseX=$ox+10;$baseZ=$oy+30
     $ordered=@($data.zones | Sort-Object @{Expression={if($_.kind -eq 'outside'){0}elseif($_.kind -eq 'staging'){1}else{2}}})
@@ -52,12 +57,13 @@ for($i=0;$i -lt $levels.Count;$i++){
         $g.FillEllipse([System.Drawing.Brushes]::White,[single]($x-9),[single]($zz-9),18,18)
         $g.DrawString(($j+1).ToString(),$small,$ink,[single]($x-7),[single]($zz-7))
     }
-    $g.DrawString('N up | 10 m = 80 pixels | plan envelopes include unshaped exterior',$small,$ink,[single]$ox,[single]($oy+505))
+    $caption='N up | 10 m = '+([Math]::Round($scale*10,1))+' pixels | plan envelopes include unshaped exterior'
+    $g.DrawString($caption,$small,$ink,[single]$ox,[single]($oy+$panelHeight-25))
 }
-$legendTop=120+$rows*530
+$legendTop=120+$rows*$panelHeight
 for($j=0;$j -lt $data.zones.Count;$j++){
     $z=$data.zones[$j];$text="$($j+1). $($z.name) [owner $($z.owner)]"
-    $g.DrawString($text,$small,$ink,[single](25+($j%3)*495),[single]($legendTop+[Math]::Floor($j/3)*22))
+    $g.DrawString($text,$small,$ink,[single](25+($j%3)*$columnWidth),[single]($legendTop+[Math]::Floor($j/3)*22))
 }
 $destination=Join-Path $rebuildRoot "previews/$Site-revised-rough-plan.png"
 $bitmap.Save($destination,[System.Drawing.Imaging.ImageFormat]::Png)

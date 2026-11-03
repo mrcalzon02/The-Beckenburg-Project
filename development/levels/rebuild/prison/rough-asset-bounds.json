@@ -1,0 +1,89 @@
+{
+  "status": "SOURCE_BOUNDS_FOR_ROUGH_PLANNING_ONLY",
+  "assets": [
+    {
+      "asset": "level_trace_camp_bed",
+      "path": "assets/runtime/models/level_trace_camp_bed.glb",
+      "sha256": "f75c0f437d5abb3e3d9891475a440a92fb04690df078e3d437e7be68301d6f2e",
+      "local_min": [
+        -0.4625000059604645,
+        0,
+        -1.0225000381469727
+      ],
+      "local_max": [
+        0.46250003576278687,
+        0.8199999928474426,
+        1.0225000381469727
+      ],
+      "size_m": [
+        0.9250000417232513,
+        0.8199999928474426,
+        2.0450000762939453
+      ],
+      "note": "Static GLB POSITION bounds with identity nodes; native pivot preserved. Actual placed support/collider fit remains unverified."
+    },
+    {
+      "asset": "toilet_mp_1",
+      "path": "assets/runtime/models/toilet_mp_1.glb",
+      "sha256": "4fe48e46a8a10acf35167ddc6cc62aaaba645c9996b5325bb505d164d9512f3e",
+      "local_min": [
+        -0.2812015414237976,
+        -0.23454469442367554,
+        -0.6022419929504395
+      ],
+      "local_max": [
+        0.28120169043540955,
+        0.7718119025230408,
+        0.2945196032524109
+      ],
+      "size_m": [
+        0.5624032318592072,
+        1.0063565969467163,
+        0.8967615962028503
+      ],
+      "note": "Static GLB POSITION bounds with identity nodes; native pivot preserved. Actual placed support/collider fit remains unverified."
+    },
+    {
+      "asset": "level_bath_basin",
+      "path": "assets/runtime/models/level_bath_basin.glb",
+      "sha256": "d73a6dbc5349adb329f8019ee153199b3dfc7c65e89423d9390068f865388aaf",
+      "local_min": [
+        -0.33000001311302185,
+        0,
+        -0.25
+      ],
+      "local_max": [
+        0.33000001311302185,
+        1.1360000371932983,
+        0.25
+      ],
+      "size_m": [
+        0.6600000262260437,
+        1.1360000371932983,
+        0.5
+      ],
+      "note": "Static GLB POSITION bounds with identity nodes; native pivot preserved. Actual placed support/collider fit remains unverified."
+    },
+    {
+      "asset": "level_workbench",
+      "path": "assets/runtime/models/level_workbench.glb",
+      "sha256": "ff58b646de7af142a2d17a2de6d30af4c87fc570a0fbc39fe41f56d1073197c3",
+      "local_min": [
+        -0.8999999761581421,
+        0,
+        -0.3400000035762787
+      ],
+      "local_max": [
+        0.8999999761581421,
+        1.2200000286102295,
+        0.36500000953674316
+      ],
+      "size_m": [
+        1.7999999523162842,
+        1.2200000286102295,
+        0.7050000131130219
+      ],
+      "note": "Static GLB POSITION bounds with identity nodes; native pivot preserved. Actual placed support/collider fit remains unverified."
+    }
+  ]
+}

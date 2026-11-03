@@ -1039,11 +1039,19 @@
           "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
+          "evidence": [
+            "tools/build_map_rebuild_roughs.py",
+            "development/levels/rebuild/prison/rough-layout.json",
+            "development/levels/rebuild/prison/rough-plan.svg",
+            "development/levels/rebuild/prison/rough-sections.svg",
+            "development/levels/rebuild/prison/rough-asset-bounds.json",
+            "development/levels/rebuild/prison/rough-decisions.md",
+            "development/levels/rebuild/previews/prison-revised-rough-plan.png"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Complete reference/privacy/service decisions in the complete-roster rough batch, then construct real cells, galleries, two flights per wing, security releases and editor terrain holes. Generic dispatched Prison remains unaccepted by this design study."
         },
         "S03": {
           "status": "NOT_AUDITED",

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 2307,
+  "count": 2308,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -21074,6 +21074,16 @@
       "height": 800,
       "bytes": 1468391,
       "sha256": "1bd1a2cfd6d090762d7d96ed0acae8e7c8bc61f5fcb6e00f7726f9b5b63c752d"
+    },
+    {
+      "path": "development/levels/rebuild/previews/prison-revised-rough-plan.png",
+      "url": "development/levels/rebuild/previews/prison-revised-rough-plan.png",
+      "title": "Prison revised rough plan",
+      "kind": "Planning diagram",
+      "width": 2100,
+      "height": 1626,
+      "bytes": 176570,
+      "sha256": "bbf78bac43ef533c2d52e41e748876e8d9ab9544f3c65b8c35d1b8477b54cc8d"
     },
     {
       "path": "development/levels/rebuild/previews/rejected-legacy-envelope-blender-exterior.png",
