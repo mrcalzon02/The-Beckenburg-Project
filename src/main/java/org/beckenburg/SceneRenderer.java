@@ -1113,7 +1113,8 @@ public final class SceneRenderer {
     private static void castleTerrain(List<Face> out,double west,double north,double east,double south){
         double step=CastleSurroundings.TERRAIN_STEP;
         for(double x=Math.floor(west/step)*step;x<east;x+=step)for(double z=Math.floor(north/step)*step;z<south;z+=step){
-            if(!CastleSurroundings.landscapeContains(x+step*.5,z+step*.5))continue;
+            if(!CastleSurroundings.landscapeContains(x+step*.5,z+step*.5)
+                ||CastleWorldTerrain.replaces(x+step*.5,z+step*.5))continue;
             texturedQuad(out,new Point(x,CastleSurroundings.groundHeight(x,z),z),
                 new Point(x+step,CastleSurroundings.groundHeight(x+step,z),z),
                 new Point(x+step,CastleSurroundings.groundHeight(x+step,z+step),z+step),
@@ -1135,6 +1136,13 @@ public final class SceneRenderer {
         // More than 0.6m vertical separation also prevents far-plane depth quantization
         // from producing flashing earth through pavement or interior floors.
         castleTerrain(out,-180,-160,220,220);
+        var world=CastleWorldTerrain.surface();
+        for(int i=0;i<world.triangleCount();i++){
+            var t=world.triangle(i);var a=t.a();var b=t.b();var c=t.c();
+            out.add(new Face(new Point(a.x(),a.y(),a.z()),new Point(b.x(),b.y(),b.z()),
+                new Point(c.x(),c.y(),c.z()),0x6e7866,MaterialAtlas.FOLIAGE,
+                a.x()*.25,a.z()*.25,b.x()*.25,b.z()*.25,c.x()*.25,c.z()*.25));
+        }
         for(var tree:CastleSurroundings.trees())castleProp(out,"level_tree_conifer_worn",tree.x(),CastleSurroundings.groundHeight(tree.x(),tree.z()),tree.z(),tree.scale(),tree.x()*.2);
         mountains(out,22,17);var points=CastleSurroundings.road();int asphalt=VanArrivalStreet.surfaceMaterial(false);double uv=0;
         for(int i=0;i<points.size()-1;i++){

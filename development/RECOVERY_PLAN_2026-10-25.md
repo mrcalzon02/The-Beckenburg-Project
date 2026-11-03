@@ -344,3 +344,14 @@ Actual native surfaces generated from the Castle rough authority now build four 
 The packaged CastleTrainingAnnexTest reaches all four rooms through 81,366 physical positions from native spawn. It checks real partition and closed/open door body/optical collision, indoor circuits, fixture support and beam clearance, switch-off lighting energy, exact save/reopen. Seven accompanying Castle regressions pass; retained logs state their scope. New scene migration only adds annex lamps to matching existing architecture, and preserves deliberate current-version deletions.
 
 The first render exposed a tree in the corridor (DEV-235). The rejected image is retained and labeled; the corrected capture is actual runtime structural construction. No furnishing, training-exercise binding, cellar, upper lodging, whole-hub visual acceptance or full Castle completion is claimed. Next: build saved editor terrain punching and real cellar circulation, then complete upper construction and fit-out before resuming other locations. No round-time testing.
+
+
+## Castle saved editor terrain — 3 November
+
+Actual editor StitchedHeightmapWorld and AdaptiveTerrainTopology now persist120 punched leaves over the entire planned cellar footprint X28.5..43/Z17.5..34. TerrainFootprintCutout performs the edits; source heights remain unchanged. A second authoring run adds zero splits/cuts and produces the same SHA256 9f3d717b1ef7d5f532dcb5a66a84b02d348bbe4852bae17b351b7de993598882.
+
+The editor-published scene exports746 faces through TerrainSceneNativePhysics. Production JAR loads the exact fingerprinted export. Castle renderer replaces the corresponding procedural ground cells with these actual faces, avoiding duplicate hidden ground. Native body and lighting queries consume the same surface. The real Editor Agent Services host exposes castle-world-terrain diagnostics through its normal TEST endpoint.
+
+Packaged CastleWorldTerrainTest verifies every half-metre sample over the whole opening, body/optical/support passage, uncut surrounding support/collision, editor/package checksum parity, exactly746 rendered world triangles and a separate actual unpunched editor-world negative. Annex, lighting, snapshot, recovery, geometry, portal, hub, signed construction and House saved-terrain regressions pass. Native triangle inspection PNG was viewed; it is labeled native terrain inspection, not runtime cellar completion.
+
+Next: construct actual cellar walls/floors and architectural deck void, continuous flight/landings/guards, elevation-aware furnishings and lower movement. Current architectural ground floor remains intact until that construction is integrated; this checkpoint does not claim that players can enter a completed cellar. Finish full Castle before the remaining locations; no round-time testing.

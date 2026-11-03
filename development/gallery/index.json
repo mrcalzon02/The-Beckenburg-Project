@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 2321,
+  "count": 2322,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -21164,6 +21164,16 @@
       "height": 1208,
       "bytes": 102868,
       "sha256": "90cf5619b601116c03363442c2e1f0171b34878f6e5817944bc319833970d673"
+    },
+    {
+      "path": "development/levels/rebuild/previews/castle-saved-terrain-inspection.png",
+      "url": "development/levels/rebuild/previews/castle-saved-terrain-inspection.png",
+      "title": "Castle saved terrain inspection",
+      "kind": "Native terrain inspection",
+      "width": 1100,
+      "height": 830,
+      "bytes": 45710,
+      "sha256": "8277b67eb15b90fa12b5c48e3ff44dbca7f8472146bc0c79dd29be2fbaa2bf97"
     },
     {
       "path": "development/levels/rebuild/previews/church-revised-rough-plan.png",

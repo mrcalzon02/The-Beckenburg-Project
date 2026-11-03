@@ -67,8 +67,23 @@ public final class CastleEditorAgent implements EditorAgentService.Host<CastleLe
         if(!ImageIO.write(image,"png",file.toFile()))throw new IOException("PNG writer unavailable");
         return new EditorAgentService.Capture(file,image.getWidth(),image.getHeight(),"SceneRenderer.drawCastle");
     }
-    public List<String> tests(){return List.of("castle-scene-audit");}
+    public List<String> tests(){return List.of("castle-scene-audit","castle-world-terrain");}
     public List<EditorAgentService.Check> test(String id){
+        if(id.equals("castle-world-terrain")){
+            var terrain=map.worldSurface();
+            boolean hole=true;
+            for(double x=28.75;x<43;x+=.5)for(double z=17.75;z<34;z+=.5)
+                hole&=terrain.clearSight(new LevelDefinition.Vec(x,.1,z),new LevelDefinition.Vec(x,-1,z))
+                    &&terrain.support(x,z,0,4)==null
+                    &&!terrain.bodyBlocked(new LevelDefinition.Vec(x,-1,z),1.8,.1);
+            return List.of(new EditorAgentService.Check("CASTLE_WORLD_CELLAR_HOLE",hole,
+                "Packaged saved editor terrain "+terrain.sha256()+" / "+terrain.triangleCount()
+                +" shared faces; whole-footprint body/optical/support passage only; architectural stair not certified"),
+                new EditorAgentService.Check("CASTLE_WORLD_RETAINED_GROUND",
+                    terrain.support(25,20,0,4)!=null
+                    &&!terrain.clearSight(new LevelDefinition.Vec(25,.1,20),new LevelDefinition.Vec(25,-1,20)),
+                    "Unpunched editor ground retains support and optical collision"));
+        }
         if(!id.equals("castle-scene-audit"))throw new IllegalArgumentException("Unsupported test: "+id);
         var findings=CastleEditorAudit.inspect(scene);
         if(findings.isEmpty())return List.of(new EditorAgentService.Check("CASTLE_SCENE_AUDIT",true,"No advisory findings"));

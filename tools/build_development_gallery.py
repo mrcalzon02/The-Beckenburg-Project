@@ -23,6 +23,7 @@ for path in sorted(set(paths)):
     elif '/fixture-join-diagnostic/' in path:kind='Runtime lighting diagnostic'
     elif '/rebuild/previews/rejected-' in path:kind='Rejected native study'
     elif '/rebuild/previews/' in path and 'rough-plan' in p.stem:kind='Planning diagram'
+    elif '/rebuild/previews/' in path and p.stem.endswith('terrain-inspection'):kind='Native terrain inspection'
     elif '/rebuild/previews/' in path and p.stem.endswith('cutaway'):kind='Native inspection cutaway'
     elif '/rebuild/captures/' in path and p.stem.startswith('rejected-'):kind='Rejected runtime study'
     elif '/rebuild/captures/house-graybox/' in path:kind='Runtime graybox capture'

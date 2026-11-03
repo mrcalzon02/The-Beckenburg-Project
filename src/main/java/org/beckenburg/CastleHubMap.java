@@ -81,6 +81,7 @@ public final class CastleHubMap {
      * Purchasing stations retain their physically reachable world coordinates.
      */
     public CastleHubMap(){refreshGround();}
+    public AuthoredSitePhysics worldSurface(){return CastleWorldTerrain.surface();}
     /** Native editor floor changes refresh the same runtime support index. */
     private void refreshGround(){
         var scene=CastleLevelEdits.current();long revision=scene.revision();
@@ -162,6 +163,7 @@ public final class CastleHubMap {
         return groundTraversable(x,z,0,false);
     }
     private boolean groundTraversable(double x,double z,double elevation,boolean includeResident){
+        if(worldSurface().bodyBlocked(new LevelDefinition.Vec(x,elevation,z),1.8,.21))return false;
         if(CastleHubArchitecturalPlan.onStairs(x,z)&&elevation+.10<CastleHubArchitecturalPlan.stairHeight(x,z))return false;
         if(!Double.isFinite(x)||!Double.isFinite(z))return false;
         double r=.21;
@@ -184,6 +186,7 @@ public final class CastleHubMap {
      * solid ground-wall cells only when physically above their lintels. */
     public boolean traversable(double x,double z,double elevation){
         if(!Double.isFinite(elevation)||elevation<0)return false;
+        if(worldSurface().bodyBlocked(new LevelDefinition.Vec(x,elevation,z),1.8,.21))return false;
         double radius=.21;
         if(CastleHubArchitecturalPlan.onStairs(x,z) && elevation>.1
                 && (x<16+radius||x>19-radius))return false;

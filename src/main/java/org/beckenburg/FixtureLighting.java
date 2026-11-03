@@ -421,6 +421,7 @@ public final class FixtureLighting {
  }
  static boolean castleRayClear(CastleHubMap map,double ax,double ay,double az,double bx,double by,double bz){
   if(map==null||!Double.isFinite(ax+ay+az+bx+by+bz))return false;
+  if(!map.worldSurface().clearSight(new LevelDefinition.Vec(ax,ay,az),new LevelDefinition.Vec(bx,by,bz)))return false;
   final double EPS=0.0001;
   for(var slot:CastleDoorSlots.all()){
    var type=CastleLevelEdits.current().doorType(slot.id());
