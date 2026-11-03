@@ -1,7 +1,20 @@
 {
   "previousSource": "055af5d56a7389699d86f4a10935d817c4db230b",
   "localChecks": "PASS: full native suite; independent JAR surface/camera/orthographic maxima under256MiB; old compiled client; source-backed GLB; fresh main/host test compilation; equipment assignments",
-  "ci": "pending publication",
+  "ci": {
+    "standalone": 41551583883,
+    "nativeTerrainHost": 41551587369,
+    "fullRound": 41551592599,
+    "state": "live at exact5bdd5491 source; retain handles, do not restart on polling timeout",
+    "previousPerspectiveNative": 41548346638,
+    "previousPerspectiveStandalone": 41548342073,
+    "previousPerspectiveState": "SUCCESS at d620857e",
+    "previousFull": 41547165572,
+    "previousFullState": "SUCCESS advisory; raw307/310 includes DEV211 art2 plus DEV221, now fixed/clean-output verified",
+    "gpuScope": "57337f4f41546201023 SUCCESS; covered actual decoder/writers/renderers/assets unchanged through5bdd5491, verified by git diff",
+    "mainInstaller": 41511686704,
+    "mainInstallerState": "SUCCESS at3fb2ed0c; separate from editor source and physical hardware acceptance"
+  },
   "sha256": {
     "src\\main\\java\\org\\beckenburg\\AssetImportDialog.java": "40fa6475786c34cf9d0f76bf79415d8271db01a85d95343e8092f4dd7241ce3d",
     "src\\main\\java\\org\\beckenburg\\editor\\EditorMeshBasis.java": "4c069161a12c8237570fb69b938e7270362b3e81365dc7b4c4469b30fdbcabfa",
@@ -29,5 +42,7 @@
     "development\\quality\\evidence\\surface-transforms-2026-11-02\\surface-native-final.txt": "9dfef33a367bbd70a4c6f24a0119af019e973ea2018a0573f86b0d42239777d5",
     "development\\quality\\evidence\\surface-transforms-2026-11-02\\surface-nearest-negative.txt": "7c75d8ecf82805d0141ec8fb5b766914313f205d1a8a16c2175c1fe77654a5d7",
     "development\\quality\\evidence\\surface-transforms-2026-11-02\\surface-unanchored-negative.txt": "a567061a2fdafda9d520057a64963f6559e959e7cba924a3d3f4a747ddbeeb98"
-  }
+  },
+  "publishedSource": "5bdd54914224be59eb1cdd29539d5e342ee6079d",
+  "remoteVerified": true
 }
