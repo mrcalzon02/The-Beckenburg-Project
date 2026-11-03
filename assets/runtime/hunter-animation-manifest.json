@@ -1,0 +1,226 @@
+{
+  "format": "hunter-animation-v1",
+  "size": [
+    128,
+    224
+  ],
+  "generator": "built-in image_gen",
+  "frames": [
+    {
+      "entry": "cleric/walk_a/front.png",
+      "sha256": "7d56709d4ca749f1f7570c7571edf1d7b3db53ee2b27c33963c09eb99539c926",
+      "source": "art/hunters/animation-v1/cleric.png",
+      "source_sha256": "745c6bda1af0758b05e14a619ecf39cd5cf2465dd64e0b46e18cc10d33d41c9e"
+    },
+    {
+      "entry": "cleric/walk_a/side.png",
+      "sha256": "258a4e391acb38e202e1e05d64556ad23eba5596130d3f729d5ae094f64c88b0",
+      "source": "art/hunters/animation-v1/cleric.png",
+      "source_sha256": "745c6bda1af0758b05e14a619ecf39cd5cf2465dd64e0b46e18cc10d33d41c9e"
+    },
+    {
+      "entry": "cleric/walk_a/back.png",
+      "sha256": "5130358d2a4058dfcc459c0e6e0ba93b73161094f80ba0beebc7b79ce8c187d7",
+      "source": "art/hunters/animation-v1/cleric.png",
+      "source_sha256": "745c6bda1af0758b05e14a619ecf39cd5cf2465dd64e0b46e18cc10d33d41c9e"
+    },
+    {
+      "entry": "cleric/walk_a/three_quarter.png",
+      "sha256": "b15351cccd4f70931d84fcbb702e2d96e7c1555718e16570d6f90561eea2b27c",
+      "source": "art/hunters/animation-v1/cleric.png",
+      "source_sha256": "745c6bda1af0758b05e14a619ecf39cd5cf2465dd64e0b46e18cc10d33d41c9e"
+    },
+    {
+      "entry": "cleric/walk_b/front.png",
+      "sha256": "7de3ed273bfcf045aa34d160f86e6f11df280fb7f288956136ef3319b096ca02",
+      "source": "art/hunters/animation-v1/cleric.png",
+      "source_sha256": "745c6bda1af0758b05e14a619ecf39cd5cf2465dd64e0b46e18cc10d33d41c9e"
+    },
+    {
+      "entry": "cleric/walk_b/side.png",
+      "sha256": "caf631d811c2b8e8faaab7ff350f0e5a4982f8cbfa248055626a57904213a189",
+      "source": "art/hunters/animation-v1/cleric.png",
+      "source_sha256": "745c6bda1af0758b05e14a619ecf39cd5cf2465dd64e0b46e18cc10d33d41c9e"
+    },
+    {
+      "entry": "cleric/walk_b/back.png",
+      "sha256": "fad335e83c5b49e8f1dc9109f61aeea4c9ea8f5c71d006b389a27fe9c7e173e1",
+      "source": "art/hunters/animation-v1/cleric.png",
+      "source_sha256": "745c6bda1af0758b05e14a619ecf39cd5cf2465dd64e0b46e18cc10d33d41c9e"
+    },
+    {
+      "entry": "cleric/walk_b/three_quarter.png",
+      "sha256": "ea0f2ac73fc93bf63ce6db821f154dd74274ea4cc3663d3c5c4db01878d88da5",
+      "source": "art/hunters/animation-v1/cleric.png",
+      "source_sha256": "745c6bda1af0758b05e14a619ecf39cd5cf2465dd64e0b46e18cc10d33d41c9e"
+    },
+    {
+      "entry": "cleric/crouch/front.png",
+      "sha256": "1cd00d332b754bed45dcb1828b46ccad17abab7b511e8b7a4d833410133ecebc",
+      "source": "art/hunters/animation-v1/cleric.png",
+      "source_sha256": "745c6bda1af0758b05e14a619ecf39cd5cf2465dd64e0b46e18cc10d33d41c9e"
+    },
+    {
+      "entry": "cleric/crouch/side.png",
+      "sha256": "6e1d7c2949d40526bdda41ef851e434462d1785075a1dbc0e0b69323495e92bc",
+      "source": "art/hunters/animation-v1/cleric.png",
+      "source_sha256": "745c6bda1af0758b05e14a619ecf39cd5cf2465dd64e0b46e18cc10d33d41c9e"
+    },
+    {
+      "entry": "cleric/crouch/back.png",
+      "sha256": "ffedd88b10761f261e185d87cf27bfacfb5aa28148e87ef83ff292c2b50a3650",
+      "source": "art/hunters/animation-v1/cleric.png",
+      "source_sha256": "745c6bda1af0758b05e14a619ecf39cd5cf2465dd64e0b46e18cc10d33d41c9e"
+    },
+    {
+      "entry": "cleric/crouch/three_quarter.png",
+      "sha256": "fb8e1ec7503f9d8d0389e05cd9d4410c522b3bac85c429aaa12c4efd309faca2",
+      "source": "art/hunters/animation-v1/cleric.png",
+      "source_sha256": "745c6bda1af0758b05e14a619ecf39cd5cf2465dd64e0b46e18cc10d33d41c9e"
+    },
+    {
+      "entry": "observer/walk_a/front.png",
+      "sha256": "ca72790054d8b12f4d06301f0f87ce79a741b036f0b253e8142058d3495c30df",
+      "source": "art/hunters/animation-v1/observer.png",
+      "source_sha256": "bb6921d5611113213dbfe6befa5b87228a21c62021457fbce9896ced70b02a96"
+    },
+    {
+      "entry": "observer/walk_a/side.png",
+      "sha256": "64ba058a06d51aa8d3bcb40ddcc7801c46f586aa518d47b80bbd90cfbe3ca8b0",
+      "source": "art/hunters/animation-v1/observer.png",
+      "source_sha256": "bb6921d5611113213dbfe6befa5b87228a21c62021457fbce9896ced70b02a96"
+    },
+    {
+      "entry": "observer/walk_a/back.png",
+      "sha256": "b1e8b681880305aa688e96090b5e18072bffc5c6fc20d6cf20c79988039c40f0",
+      "source": "art/hunters/animation-v1/observer.png",
+      "source_sha256": "bb6921d5611113213dbfe6befa5b87228a21c62021457fbce9896ced70b02a96"
+    },
+    {
+      "entry": "observer/walk_a/three_quarter.png",
+      "sha256": "2765761d4129fcc51c691521ce8b7c2d07f400d6a0e3ee055e648377f5f71b62",
+      "source": "art/hunters/animation-v1/observer.png",
+      "source_sha256": "bb6921d5611113213dbfe6befa5b87228a21c62021457fbce9896ced70b02a96"
+    },
+    {
+      "entry": "observer/walk_b/front.png",
+      "sha256": "0c51ce912b35f4bb6655da777ba20a047cdd7a249a5bcf721ab1a55c6fb8d14d",
+      "source": "art/hunters/animation-v1/observer.png",
+      "source_sha256": "bb6921d5611113213dbfe6befa5b87228a21c62021457fbce9896ced70b02a96"
+    },
+    {
+      "entry": "observer/walk_b/side.png",
+      "sha256": "165cac9af19265d4065ec870fa79332bdf3ab0814ce34108b8ac1240392f8124",
+      "source": "art/hunters/animation-v1/observer.png",
+      "source_sha256": "bb6921d5611113213dbfe6befa5b87228a21c62021457fbce9896ced70b02a96"
+    },
+    {
+      "entry": "observer/walk_b/back.png",
+      "sha256": "be46afe4052f8e94b5d843a4c1fc1def9c535050894abc942ffc470972cf12df",
+      "source": "art/hunters/animation-v1/observer.png",
+      "source_sha256": "bb6921d5611113213dbfe6befa5b87228a21c62021457fbce9896ced70b02a96"
+    },
+    {
+      "entry": "observer/walk_b/three_quarter.png",
+      "sha256": "ed06671740d6bd79b5b75c8350b18302f76bf2a07c51af396950c4bcb4ea3970",
+      "source": "art/hunters/animation-v1/observer.png",
+      "source_sha256": "bb6921d5611113213dbfe6befa5b87228a21c62021457fbce9896ced70b02a96"
+    },
+    {
+      "entry": "observer/crouch/front.png",
+      "sha256": "846021022c86c0bc0ba8ca019be1a357809eb8ed1b9d39333b9846869eb221cd",
+      "source": "art/hunters/animation-v1/observer.png",
+      "source_sha256": "bb6921d5611113213dbfe6befa5b87228a21c62021457fbce9896ced70b02a96"
+    },
+    {
+      "entry": "observer/crouch/side.png",
+      "sha256": "3213431e3ca624c54c1612725a6cdf9a40cf6af07f73de9134b26203c90aec62",
+      "source": "art/hunters/animation-v1/observer.png",
+      "source_sha256": "bb6921d5611113213dbfe6befa5b87228a21c62021457fbce9896ced70b02a96"
+    },
+    {
+      "entry": "observer/crouch/back.png",
+      "sha256": "c813696d1513dee8750201acdcdb932e6e7ff525cdd6414f14dc9962aa337d90",
+      "source": "art/hunters/animation-v1/observer.png",
+      "source_sha256": "bb6921d5611113213dbfe6befa5b87228a21c62021457fbce9896ced70b02a96"
+    },
+    {
+      "entry": "observer/crouch/three_quarter.png",
+      "sha256": "a7a571465d394a2eebccf23e5782944b62135fa574034e65f426a8c7395cf2ae",
+      "source": "art/hunters/animation-v1/observer.png",
+      "source_sha256": "bb6921d5611113213dbfe6befa5b87228a21c62021457fbce9896ced70b02a96"
+    },
+    {
+      "entry": "demonologist/walk_a/front.png",
+      "sha256": "a3ba92aa245d8b8cb28357c9f92fbdc7002ad71507237cec3acaa9da289db255",
+      "source": "art/hunters/animation-v1/demonologist.png",
+      "source_sha256": "40ebf6c1c76e709631b6ab3afa369306742ee6ac4fb0d15e0717654f08017a51"
+    },
+    {
+      "entry": "demonologist/walk_a/side.png",
+      "sha256": "60bc6b93ab71bfb3d63b039922870f37349390328b11fd4856ed050b5219166a",
+      "source": "art/hunters/animation-v1/demonologist.png",
+      "source_sha256": "40ebf6c1c76e709631b6ab3afa369306742ee6ac4fb0d15e0717654f08017a51"
+    },
+    {
+      "entry": "demonologist/walk_a/back.png",
+      "sha256": "1638f3d4759b2cc57aff73d7ffe7248699c15eb7d20925c81551c03d4857d834",
+      "source": "art/hunters/animation-v1/demonologist.png",
+      "source_sha256": "40ebf6c1c76e709631b6ab3afa369306742ee6ac4fb0d15e0717654f08017a51"
+    },
+    {
+      "entry": "demonologist/walk_a/three_quarter.png",
+      "sha256": "83753016d03adab6f96805cc932d81ceb2febc6598627b26d5a065a95ccacbee",
+      "source": "art/hunters/animation-v1/demonologist.png",
+      "source_sha256": "40ebf6c1c76e709631b6ab3afa369306742ee6ac4fb0d15e0717654f08017a51"
+    },
+    {
+      "entry": "demonologist/walk_b/front.png",
+      "sha256": "87d50acda7c3718833bc272b6d03725be4ab05283e14be2970411dcfb8d310b9",
+      "source": "art/hunters/animation-v1/demonologist.png",
+      "source_sha256": "40ebf6c1c76e709631b6ab3afa369306742ee6ac4fb0d15e0717654f08017a51"
+    },
+    {
+      "entry": "demonologist/walk_b/side.png",
+      "sha256": "73a509e6d222602c68daa9408d4ff5e55c7eac9c2024571bc94cecbbf783c93f",
+      "source": "art/hunters/animation-v1/demonologist.png",
+      "source_sha256": "40ebf6c1c76e709631b6ab3afa369306742ee6ac4fb0d15e0717654f08017a51"
+    },
+    {
+      "entry": "demonologist/walk_b/back.png",
+      "sha256": "f850b6bf619200ec97feadf34a3eb912d7b09f971d778617a9caacf4fc4dfc3e",
+      "source": "art/hunters/animation-v1/demonologist.png",
+      "source_sha256": "40ebf6c1c76e709631b6ab3afa369306742ee6ac4fb0d15e0717654f08017a51"
+    },
+    {
+      "entry": "demonologist/walk_b/three_quarter.png",
+      "sha256": "2af1f7f6f3315a92097f113ae25791495cbec518333ddbb64e822004a354b094",
+      "source": "art/hunters/animation-v1/demonologist.png",
+      "source_sha256": "40ebf6c1c76e709631b6ab3afa369306742ee6ac4fb0d15e0717654f08017a51"
+    },
+    {
+      "entry": "demonologist/crouch/front.png",
+      "sha256": "c2b8ba443f6773d89770388bd96f3931527b2439d80962ae65a4d003ef08a9b3",
+      "source": "art/hunters/animation-v1/demonologist.png",
+      "source_sha256": "40ebf6c1c76e709631b6ab3afa369306742ee6ac4fb0d15e0717654f08017a51"
+    },
+    {
+      "entry": "demonologist/crouch/side.png",
+      "sha256": "3efbf1e6fb8eeaeb786a308fe159c709c578d345833f96ba257bde308864a268",
+      "source": "art/hunters/animation-v1/demonologist.png",
+      "source_sha256": "40ebf6c1c76e709631b6ab3afa369306742ee6ac4fb0d15e0717654f08017a51"
+    },
+    {
+      "entry": "demonologist/crouch/back.png",
+      "sha256": "6a2a71bb6eba4b3837191529b0bc873c6eb6b44b24a538ae5d92a0a3499461d0",
+      "source": "art/hunters/animation-v1/demonologist.png",
+      "source_sha256": "40ebf6c1c76e709631b6ab3afa369306742ee6ac4fb0d15e0717654f08017a51"
+    },
+    {
+      "entry": "demonologist/crouch/three_quarter.png",
+      "sha256": "67b26b22e633873df0f539f974c1daa096ad0e4063ec3d8f38ee56595f9cf75a",
+      "source": "art/hunters/animation-v1/demonologist.png",
+      "source_sha256": "40ebf6c1c76e709631b6ab3afa369306742ee6ac4fb0d15e0717654f08017a51"
+    }
+  ]
+}
