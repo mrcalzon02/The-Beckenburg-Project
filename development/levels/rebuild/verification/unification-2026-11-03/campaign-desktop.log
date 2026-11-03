@@ -1,0 +1,6 @@
+2026-11-03T08:51:30.683179Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=software tactical overview output=1044x656 first_frame_state=software-fallback-ready
+2026-11-03T08:51:40.031902600Z [AWT-EventQueue-0] RENDER SLOW stage=idle faces=82076 visible_faces=32469 culled_faces=49607 target=574x360 build_ms=1536 lighting_raster_ms=260
+2026-11-03T08:51:43.671723300Z [AWT-EventQueue-0] RENDER SLOW stage=idle faces=141730 visible_faces=90523 culled_faces=51207 target=574x360 build_ms=25 lighting_raster_ms=214
+Exception in thread "main" java.lang.AssertionError: Physical campaign hunter cannot use legacy EXTRACT
+	at org.beckenburg.CampaignEmbeddedDesktopTest.until(CampaignEmbeddedDesktopTest.java:19)
+	at org.beckenburg.CampaignEmbeddedDesktopTest.main(CampaignEmbeddedDesktopTest.java:51)

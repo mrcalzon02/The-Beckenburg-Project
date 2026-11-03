@@ -1,0 +1,48 @@
+{
+  "unified_source": "b503c67d4de9f0ab53732009ab467fbac69d5837",
+  "online_main_merged": "ca31e54eabb8d30b2114a63b6c003c4df70f909a",
+  "pending_editor_checkpoint": "f672140b",
+  "initial_merge": "e76d7817",
+  "production_package": "PASS complete Java 17 package including audio audit; runtime identical after subsequent test-only main merge",
+  "fresh_tests": "PASS full root test compilation; focused acceptance below",
+  "actual_packaged_tcp_round": "PASS host/join/evidence/identification/ritual/settlement",
+  "desktop_campaign": "PASS privacy-safe VIEW3D/rejected EXTRACT/physical van door/durable one-time receipt/same-window return",
+  "native_publication": "PASS stale review rejects writes; reviewed native/runtime publication coherent",
+  "picking": "PASS indexed orthographic and perspective math plus real perspective GUI gestures/history/save/reopen/publication",
+  "gallery": "2307 PNGs, index current",
+  "remaining": "Exact-source CI and main integration readback; full 29-packet map rebuild remains active. Main merge is an integration checkpoint, not map acceptance.",
+  "logs": [
+    {
+      "path": "development/levels/rebuild/verification/unification-2026-11-03/package.log",
+      "sha256": "c51afd72b046e8c89fe74b86aa0838b70b745a36c560b2594985965a492ccb91"
+    },
+    {
+      "path": "development/levels/rebuild/verification/unification-2026-11-03/full-round.log",
+      "sha256": "0e2486b28590675a58cc4f5bdb3a1f7b7dec2321334eaaee26d0dae4032bcb85"
+    },
+    {
+      "path": "development/levels/rebuild/verification/unification-2026-11-03/native-publication.log",
+      "sha256": "b714965473eec3a5ad32c548827f688202aa9bbb70fb9f3cf5d7793d1137740b"
+    },
+    {
+      "path": "development/levels/rebuild/verification/unification-2026-11-03/campaign-desktop.log",
+      "sha256": "4d7ea49bdf92c762cbc140a49c03f4ef9f144fd458aae8381b3f169b36a3b9fc"
+    },
+    {
+      "path": "development/levels/rebuild/verification/unification-2026-11-03/campaign-desktop-reconciled.log",
+      "sha256": "2d0bc85394c110a6c91a67a2a9cad132392d78ecd5dce5afc273edc43b3e4315"
+    },
+    {
+      "path": "development/levels/rebuild/verification/unification-2026-11-03/picking.log",
+      "sha256": "15a4ae0aa660cc0895fe3aaea2ec94be94f3503ef48fcf5c7e3b31c063f2a430"
+    },
+    {
+      "path": "development/levels/rebuild/verification/unification-2026-11-03/perspective-picking.log",
+      "sha256": "c5efe1c4b8328cd761bb5d02f9385c474ffeef8ae32b28189e9e8eba8952baa1"
+    },
+    {
+      "path": "development/levels/rebuild/verification/unification-2026-11-03/editor-perspective-gui.log",
+      "sha256": "6f8b9a6eb231eaf016e6aef2bf1c61807f176085b9943a5054b8b5c510c8c256"
+    }
+  ]
+}
