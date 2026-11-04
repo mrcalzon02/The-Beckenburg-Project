@@ -1,0 +1,13 @@
+{
+  "commit": "0f718640dc5ef134445630c972fb7cbd117585c7",
+  "branch": "map/first-principles-rebuild-plan",
+  "published_utc": "2026-11-04T09:03:22.779809+00:00",
+  "remote_verified_images": {
+    "development/assets/castle-museum/previews/four-poster-rebuild/quarter.png": "43db0283179758ef3e059458aa0c1118ac9baca44522245323f422bc8a6c09ba",
+    "development/levels/rebuild/captures/castle-construction/fireplace-0-runtime.png": "63ea012ea3827bc389662a5cd32b97362a7763672a70569589a3608d81044ab0"
+  },
+  "gallery": "Published branch HTML and exact image bytes read back;2515 indexed PNGs. Main Pages deployment not claimed. Shared working gallery restored to union2545 captures to preserve other chats.",
+  "validation": "32 scoped isolated-package checks pass;327 manifest entries preflight only; fresh exact-source native/GPU/full runs are live, not passed. Prior full325 summary remains322/3.",
+  "concurrent_work": "Safe-area, resident animation, foot shadows, their source/build/manifest/quality records remain uncommitted and untouched by this scoped checkpoint.",
+  "remaining": "Full Castle and29-packet rebuild remain in progress. Preserve live handles; inspect actual full regression summary before inferring success."
+}
