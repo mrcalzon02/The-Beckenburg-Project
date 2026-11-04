@@ -10,6 +10,20 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-263 — Crouch and stand snap the local camera between eye heights
+
+**Status:** fixed-scoped; camera math and actual TCP posture tests pass; installed acceptance pending · **Affected:** Castle, solo investigation and LAN hunter camera
+
+Pressing Ctrl abruptly jumps the eye by 0.70m; LAN only renders on the 110ms gameplay timer.
+
+Cause / uncertainty: Viewport eye height is assigned directly from the binary physical posture.
+
+Fix / next action: Add a shared critically damped camera transition, retain independent physical feet for collision/evidence and moving support, and animate LAN camera-only frames at 33ms without extra STEP/actions. Ignore Ctrl key-repeat in Castle and solo; retain host posture authority and reset on site changes.
+
+Evidence and verification: development/quality/evidence/crouch-smoothing-2026-11-04/: CrouchCameraTest, expanded real TCP CrouchNetworkTest, low-ceiling/sprint/feet checks, hunter animation gameplay, Castle interaction and sprite floor regressions.
+
+Older-map obligation: Shared player camera paths cover investigation sites and Castle; physical posture dimensions and movement rules remain unchanged.
+
 ### DEV-260 — Castle residents remain static despite hunter walk and crouch animation
 
 **Status:** fixed-scoped; focused local acceptance; installed release acceptance pending · **Affected:** All five Castle residents

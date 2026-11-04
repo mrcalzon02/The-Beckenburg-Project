@@ -32,6 +32,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
     private double clock;
     private double elevation;
     private boolean castleLightsOn=true,crouched,storeOpen;
+    private final CrouchCamera crouchCamera=new CrouchCamera();
     private double gateExitSeconds=-1;
     private boolean gateExitCancelled;
     private final JPanel quartermaster;
@@ -224,7 +225,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
             }
         }
         clock+=dt;
-        renderer.eyeHeight=HunterPosture.eye(crouched)+elevation;
+        renderer.eyeHeight=crouchCamera.advance(crouched,dt)+elevation;
         GraphicsOptions.current().configure(renderer,getWidth(),getHeight(),true);
         renderer.drawCastle(map,clock,castleLightsOn);
         if(noticeTicks>0)noticeTicks--;
@@ -353,7 +354,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
             }else use(CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw)!=null?
                 null:map.aimed(renderer.x,renderer.z,renderer.yaw));
         }
-        if(key==KeyEvent.VK_CONTROL){crouched=!crouched;notice=crouched?"Crouched / Ctrl to stand":"Standing";noticeTicks=60;}
+        if(key==KeyEvent.VK_CONTROL&&!down.contains(key)){crouched=!crouched;notice=crouched?"Crouched / Ctrl to stand":"Standing";noticeTicks=60;}
         if(key==KeyEvent.VK_F)renderer.lamp=!renderer.lamp;
         if(key==KeyEvent.VK_L){
             if(CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw)!=null)use(null);

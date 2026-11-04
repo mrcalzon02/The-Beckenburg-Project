@@ -31,6 +31,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private LanChat.Channel heldVoice;
     private int chatVisibleUntil;
     private final javax.swing.Timer timer;
+    private final javax.swing.Timer postureTimer;
+    private final CrouchCamera crouchCamera=new CrouchCamera();
+    private long lastPostureFrame=System.nanoTime();
     private final Set<Integer> keys=new HashSet<>();
     private String feedback="Awaiting host world snapshot";
     private int lastTurn=-1,tick,visibleGhost=-1,health=100,sanity=100,evidence;
@@ -43,7 +46,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private final java.util.ArrayDeque<Integer> activityHistory=new java.util.ArrayDeque<>();
     private boolean vanDisplay,concealed,crouched;
     private final Map<Integer,Boolean> hunterPostures=new HashMap<>();
-    private double eyeOffset(){return HunterPosture.eye(crouched);}
+    private double eyeOffset(){return crouchCamera.eye();}
     private int vanMapScroll;
     private final Map<Integer,VanSensorStations.Station> sensorNodes=new HashMap<>();
     private final Map<Integer,VanSiteMapScreen.Reading> sensorReadings=new HashMap<>();
@@ -194,6 +197,12 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         });
         addFocusListener(mouseLook);addFocusListener(this);
         timer=new javax.swing.Timer(110,e->frame());timer.start();
+        // Render camera easing between network ticks without sending extra STEP/actions.
+        postureTimer=new javax.swing.Timer(33,e->{
+            long now=System.nanoTime();double dt=Math.min(.05,Math.max(0,(now-lastPostureFrame)/1e9));lastPostureFrame=now;
+            if(!isShowing()||opening!=null||!caseResult.isEmpty()||crouchCamera.settled(crouched))return;
+            advanceCrouchCamera(dt);renderWorld();repaint();
+        });postureTimer.start();
     }
     @Override public void doLayout(){
         super.doLayout();
@@ -239,7 +248,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     public void close(){
         if(opening!=null){opening.close();opening=null;}
         clearPlacementSelection();
-        toolGrip.reset();releaseVoice();timer.stop();keys.clear();mouseLook.close();recorderAudio.close();audio.close();atmosphere.close();buildingAudio.close();
+        toolGrip.reset();releaseVoice();timer.stop();postureTimer.stop();keys.clear();mouseLook.close();recorderAudio.close();audio.close();atmosphere.close();buildingAudio.close();
         VanLiveScreens.suspendCamera();
         capturedCameraImage=null;
         pendingPhoto=null;
@@ -305,7 +314,8 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 map=new HouseMap(HouseMap.Site.valueOf(p.get(1)));lights.setSourceRunning(true);
                 map.configureHiding(renderer.hidingDensity);
                 if(!map.level().revision().equals(p.get(2)))throw new IllegalArgumentException("incompatible level revision");
-                renderer.eyeHeight=map.floorY(HouseMap.EXTRACTION_ROOM)+1.62;
+                crouched=false;crouchCamera.reset(false);lastPostureFrame=System.nanoTime();
+                renderer.eyeHeight=map.floorY(HouseMap.EXTRACTION_ROOM)+crouchCamera.eye();
                 rackSnapshot.reset();
                 buildingAudio.setMap(map);audio.clearFixtures();
                 peers.clear();videoCameras.clear();renderer.videoCameras.clear();renderer.dotsPositions.clear();renderer.droppedGear.clear();apparition=null;
@@ -1071,6 +1081,10 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         capturedCameraImage=null;
         lastCameraRenderTick=-100000; // A manual channel switch can sample immediately.
         if(vanDisplay)VanLiveScreens.camera(null,"SWITCHING CAMERA");
+    }
+    void advanceCrouchCamera(double dt){
+        double feet=renderer.eyeHeight-eyeOffset();
+        renderer.eyeHeight=feet+crouchCamera.advance(crouched,dt);
     }
     /** Shared by the live viewport and packaged host/client gameplay acceptance. */
     void renderWorld(){
