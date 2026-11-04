@@ -1,0 +1,11 @@
+{
+  "source": "30354e24ce6b7cdf82e82694fd132d6a673c6d6a",
+  "full_run": 41770104678,
+  "summary": "passed=322 failed=2 skipped=0 manifest=324",
+  "unique_passes": 322,
+  "failures": [
+    "GhostSpriteAtlasIntegrationTest",
+    "TwinBodyVisualTest"
+  ],
+  "note": "Overall success includes advisory regression failures; actual complete suite now reached summary after classloader repair. No waiver or golden changes."
+}

@@ -56,8 +56,10 @@ def build(*unused):
                     if kind in ['arm','shin']:
                         if abs(u-.5)<.014:rgb=(.39,.41,.42)
                         if (.16<v<.19 or .82<v<.85) and (.15<u<.25 or .75<u<.85):rgb=(.075,.05,.03)
-                    # Sparse tiny oxide pits rather than granite-scale noise.
-                    if rng.random()<.006:rgb=(.13,.105,.08)
+                    # Broad low-contrast patina survives the PSX rasterizer;
+                    # isolated dark texels read as holes/polka dots at game scale.
+                    patina=.012*math.sin(xx*.11)*math.sin(yy*.073)
+                    rgb=tuple(max(0,min(1,c+patina)) for c in rgb)
                 pos=((oy+yy)*size+ox+xx)*4;pixels[pos:pos+4]=[*rgb,1]
     image=bpy.data.images.new('Castle field harness / component atlas',size,size);image.pixels=pixels;image.pack()
     mat=bpy.data.materials.new('Castle field harness / painted steel leather stone');mat.use_nodes=True
@@ -79,8 +81,17 @@ def build(*unused):
                           y-d*math.cos(start+(end-start)*i/n)-ridge*max(0,math.cos(start+(end-start)*i/n))**8,z) for i in range(n+1)])
         for j in range(len(rows)-1):
             for k in range(n):
+                slot=region;u0=k/n;u1=(k+1)/n
+                if name=='cuirass':
+                    a=start+(end-start)*k/n;b=start+(end-start)*(k+1)/n
+                    if math.cos((a+b)/2)>=0:
+                        slot='chest';u0=(a+math.pi/2)/math.pi;u1=(b+math.pi/2)/math.pi
+                    else:
+                        slot='back'
+                        if a<0:a+=2*math.pi;b+=2*math.pi
+                        u0=(a-math.pi/2)/math.pi;u1=(b-math.pi/2)/math.pi
                 face([rows[j][k],rows[j][k+1],rows[j+1][k+1],rows[j+1][k]],
-                     [(k/n,j/(len(rows)-1)),((k+1)/n,j/(len(rows)-1)),((k+1)/n,(j+1)/(len(rows)-1)),(k/n,(j+1)/(len(rows)-1))],region)
+                     [(u0,j/(len(rows)-1)),(u1,j/(len(rows)-1)),(u1,(j+1)/(len(rows)-1)),(u0,(j+1)/(len(rows)-1))],slot)
         if cap:
             for row in [rows[0],list(reversed(rows[-1]))]:
                 face(row[:-1],[(.5+.45*math.sin(2*math.pi*i/n),.5+.45*math.cos(2*math.pi*i/n)) for i in range(n)],region)

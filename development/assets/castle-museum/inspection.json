@@ -8,8 +8,8 @@
     ],
     "meshes": 1,
     "triangles": 1036,
-    "sha256": "75697d7821aa93a86e133bcfdc96d8b6f7a4b13d6f5ae235f5fd740b55d5eb84",
-    "status": "EXPORTED_STUDY_REQUIRES_RENDER_REVIEW_AND_RUNTIME_FIT"
+    "sha256": "9b802fa08e06d3acd0c21fded0b608e09eaa6afea0490d3c75cb2ee7e4da9738",
+    "status": "NATIVE_ARCHIVE_RUNTIME_PILOT_VERIFIED"
   },
   {
     "id": "level_castle_museum_rope",
@@ -19,9 +19,9 @@
       0.9799999818205833
     ],
     "meshes": 34,
-    "triangles": 1344,
-    "sha256": "fd9f15a79673a754f296f35e55e7ab473d975922e009690a5e991611f1714d1e",
-    "status": "EXPORTED_STUDY_REQUIRES_RENDER_REVIEW_AND_RUNTIME_FIT"
+    "triangles": 264,
+    "sha256": "f6505bd0f9271be2e1dceaed7edb425840d94f76c1d9955c6c68acd8c560bdf9",
+    "status": "NATIVE_ARCHIVE_RUNTIME_PILOT_VERIFIED"
   },
   {
     "id": "level_castle_museum_plaque",
@@ -33,7 +33,7 @@
     "meshes": 9,
     "triangles": 9128,
     "sha256": "f106c9679bbfb72c12d2cc7affb6bba9f56892caa132e8eaea4c506cf1c39245",
-    "status": "EXPORTED_STUDY_REQUIRES_RENDER_REVIEW_AND_RUNTIME_FIT"
+    "status": "OWNER_REJECTED_STUDY_REQUIRES_REFERENCE_REWORK"
   },
   {
     "id": "level_castle_tapestry",
@@ -45,7 +45,7 @@
     "meshes": 9,
     "triangles": 1312,
     "sha256": "9e67da386ec813ac3f1ba99cc33e021ae5a9dcc62babb138e9cd727309bf964e",
-    "status": "EXPORTED_STUDY_REQUIRES_RENDER_REVIEW_AND_RUNTIME_FIT"
+    "status": "OWNER_REJECTED_STUDY_REQUIRES_REFERENCE_REWORK"
   },
   {
     "id": "level_castle_four_poster_bed",
@@ -57,7 +57,7 @@
     "meshes": 57,
     "triangles": 2740,
     "sha256": "97aea6ae19ffa4dfdead2c084fcdd518ca5734c6b67dfa1e73709dd31fa3a495",
-    "status": "EXPORTED_STUDY_REQUIRES_RENDER_REVIEW_AND_RUNTIME_FIT"
+    "status": "OWNER_REJECTED_STUDY_REQUIRES_REFERENCE_REWORK"
   },
   {
     "id": "level_castle_heraldic_arms",
@@ -69,7 +69,7 @@
     "meshes": 32,
     "triangles": 896,
     "sha256": "2ac9edab1e62109270a261047c4053a1a8abd42f689f5b143f7c557c05629d12",
-    "status": "EXPORTED_STUDY_REQUIRES_RENDER_REVIEW_AND_RUNTIME_FIT"
+    "status": "OWNER_REJECTED_STUDY_REQUIRES_REFERENCE_REWORK"
   },
   {
     "id": "level_castle_founder_statue",
@@ -81,7 +81,7 @@
     "meshes": 25,
     "triangles": 2296,
     "sha256": "73d86e3f6ecb7fd50bf6f514835abf980f8d57894d1fb478b60b0cfe5018a592",
-    "status": "EXPORTED_STUDY_REQUIRES_RENDER_REVIEW_AND_RUNTIME_FIT"
+    "status": "OWNER_REJECTED_STUDY_REQUIRES_REFERENCE_REWORK"
   },
   {
     "id": "level_castle_great_fireplace",
@@ -93,6 +93,12 @@
     "meshes": 48,
     "triangles": 1128,
     "sha256": "05c8ccaaa6727c1dce810792c54efd6b9a0b4f3322cef195fc468e9fbc71cf36",
-    "status": "EXPORTED_STUDY_REQUIRES_RENDER_REVIEW_AND_RUNTIME_FIT"
+    "status": "OWNER_REJECTED_STUDY_REQUIRES_REFERENCE_REWORK"
+  },
+  {
+    "id": "level_castle_armour_label",
+    "triangles": 86,
+    "sha256": "374e1f1005cc6ba52f4ec989c1f094dde34e20bb0a0fab42ff0244c51fb43d1e",
+    "status": "NATIVE_ARCHIVE_RUNTIME_PILOT_VERIFIED"
   }
 ]

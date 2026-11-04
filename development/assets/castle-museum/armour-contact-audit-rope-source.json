@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "phase": "rope-source",
+  "source_sha256": null,
+  "triangle_count": 264,
+  "tolerance_metres": 0.001,
+  "criterion": "Every geometry component reaches the floor plinth through actual surface intersection/contact, not shared object name or bounding-box overlap",
+  "components": [
+    {
+      "id": 0,
+      "vertices": 48,
+      "bounds": [
+        [
+          -1.059999942779541,
+          -0.1385640650987625,
+          0.0
+        ],
+        [
+          -0.7400000095367432,
+          0.1385640650987625,
+          1.0
+        ]
+      ],
+      "contacts": [
+        2
+      ],
+      "supported": true
+    },
+    {
+      "id": 1,
+      "vertices": 48,
+      "bounds": [
+        [
+          0.7400000095367432,
+          -0.1385640650987625,
+          0.0
+        ],
+        [
+          1.059999942779541,
+          0.1385640650987625,
+          1.0
+        ]
+      ],
+      "contacts": [
+        2
+      ],
+      "supported": true
+    },
+    {
+      "id": 2,
+      "vertices": 42,
+      "bounds": [
+        [
+          -0.8999999761581421,
+          -0.019999999552965164,
+          0.7526794672012329
+        ],
+        [
+          0.8999999761581421,
+          0.019999999552965164,
+          0.9473205208778381
+        ]
+      ],
+      "contacts": [
+        0,
+        1
+      ],
+      "supported": true
+    }
+  ]
+}

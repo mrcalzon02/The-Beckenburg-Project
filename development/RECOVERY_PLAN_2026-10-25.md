@@ -436,3 +436,14 @@ Owner further requires car/character-scale triangle counts and no detached float
 
 
 Published30354e24 checkpoint: upper construction and explicitly unaccepted museum studies. Corrected low-poly armour feet PNG independently read back from remote, SHA49d017056a8dc0992a9c618004057b6f60e05ce1c9deffa011dae7c4084710e4. Exact native41770092421, GPU41770098733 and full41770104678 are confirmed live/queued at30354e24. Preserve these handles; inspect actual full324-entry summary after the preflight classloader repair. Do not restart an observation timeout or cancel a live full run by dispatching a replacement. Full Castle/29-packet acceptance remains open; next finish reference-led museum assets/material/placement, protected training, plant/relic services and actual full hub journey.
+
+
+## Native archive museum pilot — 3 November
+
+A reference-led low-count field harness (1036 triangles), original textured accession caption (86) and continuous velvet barrier (264) now occupy the archive through CastleMuseum native default props. This begins the retained museum -> partial ruin -> restoration -> operating-base story. Full source-size geometry fits the actual room and shared floor. Both rope ends connect to posts; caption post/frame/weighted foot are supported. Independent source/export contact graphs are retained; the armour detached-helmet negative still fails as required. No new hiding sockets, rooms, stations, live hauntings or case rules are introduced.
+
+Actual SceneRenderer.drawCastle captures through EditorAgentService show the display, readable caption, metal/velvet finish and preserved aisle. Tests retain keeper access, all checked native fixtures and exact save/reopen. Current325-entry manifest preflight executes no bodies; actual named museum and retained Castle checks are listed in verification/castle-museum-2026-11-03. The whole-site39-space physical flood remains part of that checked set.
+
+Previous exact30354e24 native41770092421 and GPU41770098733 succeed, including actual Linux compile/Windows build/Mesa smoke. Full41770104678 reaches a real324-entry summary:322 distinct passes,2 unchanged sprite-art failures,0 skipped. No waiver/golden changes; overall workflow success is not all-test success. The preflight classloader failure is resolved. Physical hardware and complete Castle acceptance remain separate.
+
+DEV-251 preserves misleading diagnostic domains and the actual corrected controls; production rasterizer is unchanged. DEV-252 preserves rejected software-texture/flat-post studies. Other original museum candidates remain rejected and outside runtime; next independently refine four-posters, massive fireplaces, tapestries/paintings/carpets, statues and heraldic displays to the same reference/budget/contact standard, then complete training, relic/plant services, story/ruin/restoration layers and full hub journey. No stage is accepted; all29 map packets remain in scope. No round-time testing.

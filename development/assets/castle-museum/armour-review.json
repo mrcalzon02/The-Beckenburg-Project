@@ -1,5 +1,5 @@
 {
-  "status": "GEOMETRY_BUDGET_AND_EXPORTED_CONTACT_VERIFIED_ART_AND_RUNTIME_NOT_ACCEPTED",
+  "status": "NATIVE_ARCHIVE_RUNTIME_PILOT_VERIFIED_FULL_CASTLE_FINISH_OPEN",
   "model": {
     "id": "level_castle_armour_display",
     "dimensions_blender": [
@@ -9,8 +9,8 @@
     ],
     "meshes": 1,
     "triangles": 1036,
-    "sha256": "75697d7821aa93a86e133bcfdc96d8b6f7a4b13d6f5ae235f5fd740b55d5eb84",
-    "status": "EXPORTED_STUDY_REQUIRES_RENDER_REVIEW_AND_RUNTIME_FIT"
+    "sha256": "9b802fa08e06d3acd0c21fded0b608e09eaa6afea0490d3c75cb2ee7e4da9738",
+    "status": "NATIVE_ARCHIVE_RUNTIME_PILOT_VERIFIED"
   },
   "benchmark": {
     "cars": {
@@ -27,8 +27,8 @@
   "contact": "armour-contact-audit-export.json",
   "negative": "armour-contact-audit-negative-detached-helmet.json",
   "source_files": {
-    "development/assets/build_castle_museum.py": "f8516ca3c84dba218d04e28fcf0f914450a4cc16a43a262b4c72cdeb56f3d289",
-    "development/assets/castle_armour_lowpoly.py": "57e88509207bb8431af1acd68cafb463f040b5e2b3ca3796e109eab607a2ad66",
+    "development/assets/build_castle_museum.py": "92c0f4de8879e557cf23a8021a88273b0e11b671fc5568e461475908ea4c68d3",
+    "development/assets/castle_armour_lowpoly.py": "c467ed31f057b7e83a77306dd045a0320e1b0ec7b135301051858716491197ef",
     "development/assets/inspect_castle_armour_contacts.py": "755f7e366540e1292f11eae06222d432d4c8aff05f1b8d6290de0b4464d268e8"
   },
   "captures": {
@@ -39,13 +39,29 @@
     "level_castle_armour_display-clay-quarter.png": "11f7042a2c0d66c656c9fa5d40526091dea89dfd5769d1b12e154319ca5b6c8c",
     "level_castle_armour_display-clay-rear.png": "8acbe4fb37560c2a2a75e405e44a3a93c33b584405f9c62538e16c2c495dbd56",
     "level_castle_armour_display-clay-side.png": "cd065ade1ebb4ffec2d8e37997002385e911bcd3754786978324bcbe1ae60fd9",
-    "level_castle_armour_display-feet-front.png": "a02b9f32d50f7cac50b1d5069fd38505cc6dddb03dde6f36f34132b07aef2e77",
-    "level_castle_armour_display-feet-quarter.png": "49d017056a8dc0992a9c618004057b6f60e05ce1c9deffa011dae7c4084710e4",
-    "level_castle_armour_display-feet-side.png": "ed067ca2e56fcaf99e7f4dab86d43ecff33f3b56b127c98cb4f723f81ebee226",
-    "level_castle_armour_display-front.png": "17b92f96fabaa7cfbbb016c32ad2abe849429f54fb4cd64e2d1ec3b824944035",
-    "level_castle_armour_display-quarter.png": "5f8723d52a26213ad68c5d5fab51d584273f560f9b78c9cb371cac7f908ab8b5",
-    "level_castle_armour_display-rear.png": "5e9a4db18d9d02b19d29b8e3510f052d5eb411f064718af0f9e9f6f08d216074",
-    "level_castle_armour_display-side.png": "404283095b54e2f9dfd0f4b2b17beef58cbac5db55c6f5eb7d163b2af8872a94"
+    "level_castle_armour_display-feet-front.png": "a759279b62f14a59c6f5eb3c684d934d2272c71207030f282719fdcddfef3dc5",
+    "level_castle_armour_display-feet-quarter.png": "e848ed0bd4e21094c8d99760b2f79306fbf02d4fc399ecddc3a7ffa4931bd517",
+    "level_castle_armour_display-feet-side.png": "1f89171df7ead53f1c8afcc2ea274ae49704cf3434aefd6af24e6dc0c768d122",
+    "level_castle_armour_display-front.png": "52852b4d19dbf78740df4b7084c9400303ad273128427871d2b3ed70e46c2038",
+    "level_castle_armour_display-quarter.png": "8386a8058b336e7d2da0fd9b75c7f815246cca32843cfc30da838fdc2afe4f70",
+    "level_castle_armour_display-rear.png": "016c7171dbe0bbf101d7f279e4e90898f62f6db839c9e74c1c4a2dfd003978c7",
+    "level_castle_armour_display-side.png": "bc9fe86574a117912966e32b09f1529b385f26f972cc107abbabe2e7d2bb32a3"
   },
-  "limits": "Actual export1036 triangles including plinth;41 components reach floor support graph through triangle intersection or<=1mm surface contact. Detached-helmet negative fails as required. Rejected primitive, floating-foot and dense studies retained. Other kit members remain owner-rejected preliminary studies. Runtime placement/performance and final visual/material acceptance remain open."
+  "limits": "Three reviewed native pilot models: armour1036/caption86/barrier264 triangles. Full kit/site art and platform acceptance remain open.",
+  "runtime_evidence": "development\\levels\\rebuild\\verification\\castle-museum-2026-11-03\\verification.json",
+  "geometry_review": {
+    "anatomical_silhouette": 4,
+    "connected_assembly": 5,
+    "measured_triangle_budget": 5,
+    "source_UV_and_texture_readability": 4,
+    "museum_context": 4,
+    "scale": "out of5; current artifact only, not whole kit/site acceptance",
+    "reason": "Four-sided clay/actual software views and castle captures reviewed. Low-count forged shapes, closed feet and actual fastenings retain readability at game scale. Fine components use texture details. Armour/label fit the archive and preserve all checked hub functions; broader restoration wear and remaining displays still unfinished."
+  },
+  "runtime_integrated": [
+    "level_castle_armour_display",
+    "level_castle_armour_label",
+    "level_castle_museum_rope"
+  ],
+  "remaining": "Other original study assets remain rejected/quarantined. Complete their independent reference/triangle-budget/contact/material reviews, protected training, services, restoration wear/story and full Castle acceptance."
 }

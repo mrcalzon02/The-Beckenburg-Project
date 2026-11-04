@@ -3316,7 +3316,7 @@ Older-map obligation: Keep GhostSpriteAtlasIntegrationTest and TwinBodyVisualTes
 
 ### DEV-242 — GPU source compile job exhausts its limit before compilation during canonical checkout
 
-**Status:** mitigation implemented; exact-source remote compile remains pending · **Affected:** Existing GPU workflow Linux compile-gpu-java17 job
+**Status:** fixed-scoped; fresh actual Linux compile, Windows build and Mesa smoke succeed · **Affected:** Existing GPU workflow Linux compile-gpu-java17 job
 
 GPU run41731832476/job126250898962 is cancelled while git fetch is running; source compilation never starts. Windows build and actual Mesa smoke succeed at91e8f47b.
 
@@ -3324,7 +3324,7 @@ Cause / uncertainty: Canonical repository checkout consumes the full10-minute co
 
 Fix / next action: Allow20 bounded minutes for the same full checkout, source compile and unchanged contract checks. Do not alter runtime performance thresholds or omit assets/tests.
 
-Evidence and verification: development/levels/rebuild/verification/castle-ground-2026-11-03/prior-gpu-compile-91e.log and prior-gpu-91e.json; fresh GPU run required.
+Evidence and verification: development/levels/rebuild/verification/castle-ground-2026-11-03/prior-gpu-compile-91e.log and prior-gpu-91e.json; fresh GPU run required. GPU41770098733 at30354e24: windows-build, compile-gpu-java17 and opengl-mesa-smoke all success. Physical hardware acceptance remains separate.
 
 Older-map obligation: CI preparation correction only; physical GPU/platform acceptance remains independent and cannot be inferred from source compilation or software Mesa.
 
@@ -3372,7 +3372,7 @@ Older-map obligation: Shared Castle renderer correction applies to legacy edited
 
 ### DEV-246 — Regression preflight cannot load test classes with the real CI command
 
-**Status:** fixed-scoped; actual main-only CI command and malformed-entry controls pass · **Affected:** Full regression manifest runner / workflow41738088189 at50829e61
+**Status:** fixed-scoped; actual full324-entry run now completes with322 unique passes and2 pre-existing art failures · **Affected:** Full regression manifest runner / workflow41738088189 at50829e61
 
 Overall workflow is green, but raw advisory step aborts before executing any regression: ClassNotFoundException BeckenburgDiagnosticsTest.
 
@@ -3380,7 +3380,7 @@ Cause / uncertainty: Preflight uses its parent classloader, while the real workf
 
 Fix / next action: Preflight uses an additional closeable loader for the actual build/test root. Add subprocess coverage for the precise main-only workflow classpath; retain duplicate, qualified-name and missing-class negatives.
 
-Evidence and verification: development/levels/rebuild/verification/castle-upper-2026-11-03/prior-ground-full-50829.log; BeckenburgRegressionManifestTest.log verifies324 names without launching tests.
+Evidence and verification: development/levels/rebuild/verification/castle-upper-2026-11-03/prior-ground-full-50829.log; BeckenburgRegressionManifestTest.log verifies324 names without launching tests. Actual subsequent full41770104678 at30354e24 reaches summary322/2/0 of324; raw log under castle-museum-2026-11-03.
 
 Older-map obligation: CI verification repair only. Prior overall success does not certify skipped regression bodies. Fresh exact-source full run must reach its actual summary.
 
@@ -3439,6 +3439,34 @@ Fix / next action: Reauthor low-count silhouette and component-specific texture 
 Evidence and verification: development/assets/castle-museum/armour-review.json, armour-contact-audit-export.json, armour-contact-audit-negative-detached-helmet.json and reviewed close feet captures; rejected dense/foot studies retained.
 
 Older-map obligation: Apply owner budget/attachment direction to future model work and audit existing assets individually. Other museum kit members remain unaccepted and outside runtime.
+
+### DEV-251 — Asset/floor diagnostics use an over-broad anatomical region or native-only support domain
+
+**Status:** corrected diagnostic domains; actual control reproduces misleading results; no renderer change · **Affected:** Castle museum development probes, not a production floor/rasterizer defect
+
+A pixel rectangle below the torso counts the intentional gap between thigh guards as uncovered chest; native-only floor query misses the shared authored archive deck. A tiny body probe also falls inside deliberate step-clearance tolerance.
+
+Cause / uncertainty: Inspection probes are used beyond their spatial/authoring API domain.
+
+Fix / next action: Use actual closed-torso image region and depth ownership, shared structural slabs over the full footprint, physical/optical slab probes outside step tolerance. Remove the ineffective epsilon rasterizer experiment completely.
+
+Evidence and verification: development/levels/rebuild/verification/castle-museum-2026-11-03/ProbeDomainControl.java and museum-probe-control.log:48 intentional-gap pixels,0 uncovered true torso; native-only false/shared floor true. Actual native display checks pass.
+
+Older-map obligation: Keep existing floor/body/ray requirements. This correction does not certify unaudited older assets or justify loosening production geometry checks.
+
+### DEV-252 — Candidate museum textures and fine-detail geometry do not read correctly in the real diffuse renderer
+
+**Status:** fixed for scoped armour/caption/barrier pilot; remaining kit requires independent review · **Affected:** Castle museum candidate armour atlas, label geometry and brass post finish
+
+Initial source texture uses dark speckling and a broad unintended back seam; first plaque uses9128 triangles of text geometry; post finish reads flat under diffuse-only lighting.
+
+Cause / uncertainty: Studio lighting and polygon-based details are used without sufficient actual software-renderer review.
+
+Fix / next action: Separate chest/back atlas regions, remove isolated high-contrast pits, use original readable label text in bitmap texture on86 triangles, reduce barrier1344->264 and paint coherent circumferential metal/velvet shading. Preserve source and actual Castle rejected/final captures.
+
+Evidence and verification: development/assets/castle-museum/previews/rejected-software-texture, rejected-flat-brass-runtime and current source/runtime captures; armour1036/caption86/barrier264 independent contact reports and CastleMuseumConstructionTest.
+
+Older-map obligation: Existing scenery remains individually unaudited. These three reviewed models do not accept the other rejected museum studies or unrelated legacy UV/material work.
 
 ## Required audit categories
 

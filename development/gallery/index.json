@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 2417,
+  "count": 2438,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/level_castle_armour_display-clay-feet-front.png",
@@ -80,8 +80,8 @@
       "kind": "Unaccepted model study",
       "width": 800,
       "height": 800,
-      "bytes": 622196,
-      "sha256": "a02b9f32d50f7cac50b1d5069fd38505cc6dddb03dde6f36f34132b07aef2e77"
+      "bytes": 613552,
+      "sha256": "a759279b62f14a59c6f5eb3c684d934d2272c71207030f282719fdcddfef3dc5"
     },
     {
       "path": "development/assets/castle-museum/previews/level_castle_armour_display-feet-quarter.png",
@@ -90,8 +90,8 @@
       "kind": "Unaccepted model study",
       "width": 800,
       "height": 800,
-      "bytes": 652686,
-      "sha256": "49d017056a8dc0992a9c618004057b6f60e05ce1c9deffa011dae7c4084710e4"
+      "bytes": 644539,
+      "sha256": "e848ed0bd4e21094c8d99760b2f79306fbf02d4fc399ecddc3a7ffa4931bd517"
     },
     {
       "path": "development/assets/castle-museum/previews/level_castle_armour_display-feet-side.png",
@@ -100,8 +100,8 @@
       "kind": "Unaccepted model study",
       "width": 800,
       "height": 800,
-      "bytes": 586995,
-      "sha256": "ed067ca2e56fcaf99e7f4dab86d43ecff33f3b56b127c98cb4f723f81ebee226"
+      "bytes": 580433,
+      "sha256": "1f89171df7ead53f1c8afcc2ea274ae49704cf3434aefd6af24e6dc0c768d122"
     },
     {
       "path": "development/assets/castle-museum/previews/level_castle_armour_display-front.png",
@@ -110,8 +110,8 @@
       "kind": "Unaccepted model study",
       "width": 800,
       "height": 800,
-      "bytes": 520794,
-      "sha256": "17b92f96fabaa7cfbbb016c32ad2abe849429f54fb4cd64e2d1ec3b824944035"
+      "bytes": 517524,
+      "sha256": "52852b4d19dbf78740df4b7084c9400303ad273128427871d2b3ed70e46c2038"
     },
     {
       "path": "development/assets/castle-museum/previews/level_castle_armour_display-quarter.png",
@@ -120,8 +120,8 @@
       "kind": "Unaccepted model study",
       "width": 800,
       "height": 800,
-      "bytes": 525290,
-      "sha256": "5f8723d52a26213ad68c5d5fab51d584273f560f9b78c9cb371cac7f908ab8b5"
+      "bytes": 522891,
+      "sha256": "8386a8058b336e7d2da0fd9b75c7f815246cca32843cfc30da838fdc2afe4f70"
     },
     {
       "path": "development/assets/castle-museum/previews/level_castle_armour_display-rear.png",
@@ -130,8 +130,8 @@
       "kind": "Unaccepted model study",
       "width": 800,
       "height": 800,
-      "bytes": 515676,
-      "sha256": "5e9a4db18d9d02b19d29b8e3510f052d5eb411f064718af0f9e9f6f08d216074"
+      "bytes": 513057,
+      "sha256": "016c7171dbe0bbf101d7f279e4e90898f62f6db839c9e74c1c4a2dfd003978c7"
     },
     {
       "path": "development/assets/castle-museum/previews/level_castle_armour_display-side.png",
@@ -140,8 +140,8 @@
       "kind": "Unaccepted model study",
       "width": 800,
       "height": 800,
-      "bytes": 498693,
-      "sha256": "404283095b54e2f9dfd0f4b2b17beef58cbac5db55c6f5eb7d163b2af8872a94"
+      "bytes": 497446,
+      "sha256": "bc9fe86574a117912966e32b09f1529b385f26f972cc107abbabe2e7d2bb32a3"
     },
     {
       "path": "development/assets/castle-museum/previews/level_castle_founder_statue-front.png",
@@ -434,6 +434,66 @@
       "sha256": "3b3cba3039af84fa4a1c3179f6c63b2a82ed940b3802940a4099e1d211a71a2a"
     },
     {
+      "path": "development/assets/castle-museum/previews/rejected-dense-rope/level_castle_museum_rope-front.png",
+      "url": "development/assets/castle-museum/previews/rejected-dense-rope/level_castle_museum_rope-front.png",
+      "title": "Level castle museum rope front",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 468554,
+      "sha256": "1125b3389ac2005e7fa7f6cb52da04b84ff1edcc58f97f977b49eee3662136d6"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-dense-rope/level_castle_museum_rope-quarter.png",
+      "url": "development/assets/castle-museum/previews/rejected-dense-rope/level_castle_museum_rope-quarter.png",
+      "title": "Level castle museum rope quarter",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 471438,
+      "sha256": "026c58162b7f835385a6dd06b57751bb0088131cdcfd078851f3c10ee6f26be3"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-dense-rope/level_castle_museum_rope-rear.png",
+      "url": "development/assets/castle-museum/previews/rejected-dense-rope/level_castle_museum_rope-rear.png",
+      "title": "Level castle museum rope rear",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 474940,
+      "sha256": "070d0275b8d46d6b6f965e240b66db1bd33f7ee227e5d9abe82f30340a0fc0ef"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-flat-brass-runtime/museum-armour-runtime.png",
+      "url": "development/assets/castle-museum/previews/rejected-flat-brass-runtime/museum-armour-runtime.png",
+      "title": "Museum armour runtime",
+      "kind": "Rejected model study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 471045,
+      "sha256": "46687211e2797dd364f6cfd13a12a35606d368dd3f382f2a7f571b23343b956b"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-flat-brass-runtime/museum-caption-runtime.png",
+      "url": "development/assets/castle-museum/previews/rejected-flat-brass-runtime/museum-caption-runtime.png",
+      "title": "Museum caption runtime",
+      "kind": "Rejected model study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 363812,
+      "sha256": "9ab86c4d3ece02c30f007eb91434a62538a23b9d89356609f4c67b5f11101564"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-flat-brass-runtime/museum-gallery-runtime.png",
+      "url": "development/assets/castle-museum/previews/rejected-flat-brass-runtime/museum-gallery-runtime.png",
+      "title": "Museum gallery runtime",
+      "kind": "Rejected model study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 676190,
+      "sha256": "174e391293ec29940c238c7f30823982d623bda68ddf4e972adce615a35406a6"
+    },
+    {
       "path": "development/assets/castle-museum/previews/rejected-floating-sabatons/level_castle_armour_display-clay-front.png",
       "url": "development/assets/castle-museum/previews/rejected-floating-sabatons/level_castle_armour_display-clay-front.png",
       "title": "Level castle armour display clay front",
@@ -574,6 +634,46 @@
       "sha256": "c820244f37c15b6165e5c8f52ade93bb0c43db123548cc416d50e2eed54ab5fd"
     },
     {
+      "path": "development/assets/castle-museum/previews/rejected-software-texture/armour-source-runtime-0.png",
+      "url": "development/assets/castle-museum/previews/rejected-software-texture/armour-source-runtime-0.png",
+      "title": "Armour source runtime 0",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 107170,
+      "sha256": "c481213d84665d8e7035c265ad3eb00f25f47ef712787b54a1b46e27a86f7f99"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-software-texture/armour-source-runtime-1.png",
+      "url": "development/assets/castle-museum/previews/rejected-software-texture/armour-source-runtime-1.png",
+      "title": "Armour source runtime 1",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 99591,
+      "sha256": "6aefc64a96ee1bc5b5181e38b18952d15712b8557d7e73312278a4f1744bdc22"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-software-texture/armour-source-runtime-2.png",
+      "url": "development/assets/castle-museum/previews/rejected-software-texture/armour-source-runtime-2.png",
+      "title": "Armour source runtime 2",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 109091,
+      "sha256": "5a083d65d4cb01a6b0089531f50a8b491878e84241936edf28976ad0b78bfcbb"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-software-texture/armour-source-runtime-3.png",
+      "url": "development/assets/castle-museum/previews/rejected-software-texture/armour-source-runtime-3.png",
+      "title": "Armour source runtime 3",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 99252,
+      "sha256": "bdd19aa14841803341a403855e7a6f15739a3b0d6dc83feac1d8396677fe3055"
+    },
+    {
       "path": "development/assets/castle-museum/previews/rejected-wide-armour/level_castle_armour_display-clay-front.png",
       "url": "development/assets/castle-museum/previews/rejected-wide-armour/level_castle_armour_display-clay-front.png",
       "title": "Level castle armour display clay front",
@@ -612,6 +712,86 @@
       "height": 800,
       "bytes": 496500,
       "sha256": "dee863394cda59bbf5e8ae25680aa70dd99ce607eb3012f8865045ef997e919f"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/runtime-material/armour-source-runtime-0.png",
+      "url": "development/assets/castle-museum/previews/runtime-material/armour-source-runtime-0.png",
+      "title": "Armour source runtime 0",
+      "kind": "Unaccepted model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 112049,
+      "sha256": "9ffebcef984a47eeb7b797a0a221a427cb118a7e3817e9d0961ff4692c826a39"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/runtime-material/armour-source-runtime-1.png",
+      "url": "development/assets/castle-museum/previews/runtime-material/armour-source-runtime-1.png",
+      "title": "Armour source runtime 1",
+      "kind": "Unaccepted model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 100963,
+      "sha256": "4cbf45fc9328fc3181ad2bd070e56c8e00c0329923aa8300fa90c9066a751761"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/runtime-material/armour-source-runtime-2.png",
+      "url": "development/assets/castle-museum/previews/runtime-material/armour-source-runtime-2.png",
+      "title": "Armour source runtime 2",
+      "kind": "Unaccepted model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 113486,
+      "sha256": "06ad2ce78dbb8921ee8ebf3ab8c29045780c7b00448098af1e734bf877672625"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/runtime-material/armour-source-runtime-3.png",
+      "url": "development/assets/castle-museum/previews/runtime-material/armour-source-runtime-3.png",
+      "title": "Armour source runtime 3",
+      "kind": "Unaccepted model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 101276,
+      "sha256": "836ba891cbdd4a26aa66ab780156f8f97b6179b5cb62cac041a656b390cfc0ee"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/runtime-material/level_castle_armour_label-source-runtime-0.png",
+      "url": "development/assets/castle-museum/previews/runtime-material/level_castle_armour_label-source-runtime-0.png",
+      "title": "Level castle armour label source runtime 0",
+      "kind": "Unaccepted model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 64567,
+      "sha256": "69d8d4a0e11cba43e7d0d788ebcd711a135c60e936ce51ca936196338cfbb0c5"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/runtime-material/level_castle_armour_label-source-runtime-1.png",
+      "url": "development/assets/castle-museum/previews/runtime-material/level_castle_armour_label-source-runtime-1.png",
+      "title": "Level castle armour label source runtime 1",
+      "kind": "Unaccepted model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 66237,
+      "sha256": "f0e441747669cb4c5e12144153e799ad7c6627d82d7e96959e70ec8c949f2b28"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/runtime-material/level_castle_armour_label-source-runtime-2.png",
+      "url": "development/assets/castle-museum/previews/runtime-material/level_castle_armour_label-source-runtime-2.png",
+      "title": "Level castle armour label source runtime 2",
+      "kind": "Unaccepted model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 70887,
+      "sha256": "f975971e28159192580334567511e7aedf49dce8672846720c992d5c0ec03412"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/runtime-material/level_castle_armour_label-source-runtime-3.png",
+      "url": "development/assets/castle-museum/previews/runtime-material/level_castle_armour_label-source-runtime-3.png",
+      "title": "Level castle armour label source runtime 3",
+      "kind": "Unaccepted model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 65433,
+      "sha256": "2b41fe2ae8efec8b749dbcf2a4c812aff46e500a4b33f29c36ecb7efb5ffc868"
     },
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -21164,6 +21344,36 @@
       "height": 625,
       "bytes": 497045,
       "sha256": "62218c6f6ffe2f96ee94dcc8af0d71255440b118482a28d4579ab9f63e432b55"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/museum-armour-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/museum-armour-runtime.png",
+      "title": "Museum armour runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 476837,
+      "sha256": "bc75d77014f71e32e2d9ad854b1807d578b1106280220f500bb19beec4810e7b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/museum-caption-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/museum-caption-runtime.png",
+      "title": "Museum caption runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 368346,
+      "sha256": "5c7f8705c78bc6bf8458b1fa56efe732cea6e88ecedda64e26ba3607f85e8ead"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/museum-gallery-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/museum-gallery-runtime.png",
+      "title": "Museum gallery runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 679925,
+      "sha256": "2c18003daeb724fa92399632ed920aeba154bb6118e3aeab686fd06c2755d1a8"
     },
     {
       "path": "development/levels/rebuild/captures/castle-construction/pre-lighting-cellar-stair-runtime.png",

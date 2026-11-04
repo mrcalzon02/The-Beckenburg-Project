@@ -16,7 +16,7 @@ OUT.mkdir(parents=True,exist_ok=True)
 (OUT/'previews').mkdir(exist_ok=True)
 bpy.ops.wm.read_factory_settings(use_empty=True)
 assets=[]
-parser=argparse.ArgumentParser();parser.add_argument('--only');parser.add_argument('--clay',action='store_true')
+parser=argparse.ArgumentParser();parser.add_argument('--only',default='armour_display');parser.add_argument('--clay',action='store_true')
 options=parser.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
 current=''
 
