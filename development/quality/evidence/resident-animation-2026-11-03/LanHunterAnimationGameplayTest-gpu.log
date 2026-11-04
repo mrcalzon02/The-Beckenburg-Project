@@ -1,0 +1,29 @@
+Beckenburg GPU initialized: OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64
+2026-11-04T16:23:52.138846300Z [main] ACTIVE_RENDERER GPU OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64 / scene triangles OpenGL, UI Swing
+2026-11-04T16:23:52.847181300Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=GPU world-space output=0x0 first_frame_state=not-yet-ready
+2026-11-04T16:23:52.865394300Z [AWT-EventQueue-0] OPENING FLIGHT CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=fallback-without-gpu-frame
+2026-11-04T16:23:52.865394300Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=GPU world-space output=0x0 first_frame_state=not-yet-ready
+2026-11-04T16:23:52.878572400Z [AWT-EventQueue-0] OPENING FLIGHT CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=fallback-without-gpu-frame
+2026-11-04T16:23:52.878572400Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=GPU world-space output=0x0 first_frame_state=not-yet-ready
+2026-11-04T16:23:52.884656600Z [AWT-EventQueue-0] OPENING FLIGHT CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=fallback-without-gpu-frame
+2026-11-04T16:23:52.904886600Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=GPU world-space output=0x0 first_frame_state=not-yet-ready
+2026-11-04T16:23:52.913543800Z [AWT-EventQueue-0] OPENING FLIGHT CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=fallback-without-gpu-frame
+2026-11-04T16:23:52.913543800Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=GPU world-space output=0x0 first_frame_state=not-yet-ready
+2026-11-04T16:23:52.922194800Z [AWT-EventQueue-0] OPENING FLIGHT CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=fallback-without-gpu-frame
+2026-11-04T16:23:52.922194800Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=GPU world-space output=0x0 first_frame_state=not-yet-ready
+2026-11-04T16:23:52.926736500Z [AWT-EventQueue-0] OPENING FLIGHT CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=fallback-without-gpu-frame
+2026-11-04T16:23:52.944975800Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=GPU world-space output=0x0 first_frame_state=not-yet-ready
+2026-11-04T16:23:52.952581Z [AWT-EventQueue-0] OPENING FLIGHT CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=fallback-without-gpu-frame
+2026-11-04T16:23:52.952581Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=GPU world-space output=0x0 first_frame_state=not-yet-ready
+2026-11-04T16:23:52.962295600Z [AWT-EventQueue-0] OPENING FLIGHT CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=fallback-without-gpu-frame
+2026-11-04T16:23:52.962295600Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=GPU world-space output=0x0 first_frame_state=not-yet-ready
+2026-11-04T16:23:52.965361Z [AWT-EventQueue-0] OPENING FLIGHT CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=fallback-without-gpu-frame
+2026-11-04T16:23:54.959157300Z [AWT-EventQueue-0] RENDER SLOW stage=idle faces=113893 visible_faces=79059 culled_faces=34834 target=320x200 build_ms=1439 lighting_raster_ms=521
+2026-11-04T16:23:55.388399900Z [beckenburg-opengl] GPU FRAME SLOW id=326 surfaces=324 target=320x200 raster_ms=424 readback_ms=6 uploaded_batches=324 reused_batches=0 uploaded_bytes=9363168 reuse_saved_bytes=0 superseded=0
+2026-11-04T16:23:57.179243600Z [main] RENDER SLOW stage=idle faces=127401 visible_faces=81223 culled_faces=46178 target=320x200 build_ms=37 lighting_raster_ms=414
+PASS gameplay cleric: TCP STEP -> WALK_A/WALK_B; stop -> IDLE; Ctrl -> CROUCH -> IDLE; scene reset
+2026-11-04T16:23:59.477371700Z [main] RENDER SLOW stage=idle faces=127401 visible_faces=81223 culled_faces=46178 target=320x200 build_ms=35 lighting_raster_ms=465
+PASS gameplay observer: TCP STEP -> WALK_A/WALK_B; stop -> IDLE; Ctrl -> CROUCH -> IDLE; scene reset
+PASS gameplay demonologist: TCP STEP -> WALK_A/WALK_B; stop -> IDLE; Ctrl -> CROUCH -> IDLE; scene reset
+2026-11-04T16:24:01.847990500Z [AWT-EventQueue-0] RENDER SLOW stage=idle faces=127439 visible_faces=81223 culled_faces=46216 target=320x200 build_ms=23 lighting_raster_ms=426
+PASS real TCP and live gameplay panel hunter animation; captures=build\e2e\hunter-animation-gameplay-gpu

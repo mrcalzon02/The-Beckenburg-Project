@@ -1,0 +1,14 @@
+2026-11-04T09:04:47.217907200Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=software tactical overview output=0x0 first_frame_state=software-fallback-ready
+2026-11-04T09:04:47.232037Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=software tactical overview output=0x0 first_frame_state=software-fallback-ready
+2026-11-04T09:04:47.245679500Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=software tactical overview output=0x0 first_frame_state=software-fallback-ready
+2026-11-04T09:04:47.274546500Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=software tactical overview output=0x0 first_frame_state=software-fallback-ready
+2026-11-04T09:04:47.282105300Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=software tactical overview output=0x0 first_frame_state=software-fallback-ready
+2026-11-04T09:04:47.290710Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=software tactical overview output=0x0 first_frame_state=software-fallback-ready
+2026-11-04T09:04:47.314086600Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=software tactical overview output=0x0 first_frame_state=software-fallback-ready
+2026-11-04T09:04:47.321178500Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=software tactical overview output=0x0 first_frame_state=software-fallback-ready
+2026-11-04T09:04:47.329249600Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=software tactical overview output=0x0 first_frame_state=software-fallback-ready
+2026-11-04T09:04:49.309066300Z [AWT-EventQueue-0] RENDER SLOW stage=idle faces=108379 visible_faces=57762 culled_faces=50617 target=320x200 build_ms=1459 lighting_raster_ms=472
+PASS gameplay cleric: TCP STEP -> WALK_A/WALK_B; stop -> IDLE; Ctrl -> CROUCH -> IDLE; scene reset
+PASS gameplay observer: TCP STEP -> WALK_A/WALK_B; stop -> IDLE; Ctrl -> CROUCH -> IDLE; scene reset
+PASS gameplay demonologist: TCP STEP -> WALK_A/WALK_B; stop -> IDLE; Ctrl -> CROUCH -> IDLE; scene reset
+PASS real TCP and live gameplay panel hunter animation; captures=build\e2e\hunter-animation-gameplay
