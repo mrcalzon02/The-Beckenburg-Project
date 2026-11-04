@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 2576,
+  "count": 2584,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -25312,8 +25312,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 356210,
-      "sha256": "5ba1c39fcafd61699f945be4800d7d7b46198b6e4f84e2fc1cc5a3f2d5b8ffd9"
+      "bytes": 361414,
+      "sha256": "150d7b6ad0203c0c6242642d1e267543da771f1df8c06398fc72f68090f612c6"
     },
     {
       "path": "development/quality/castle-resident-art/captures/elsbeth-vale-angle-1-off.png",
@@ -25322,8 +25322,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 536141,
-      "sha256": "2cf0ea85239f49bd8bd68b5c5c2d182738240237db1f681a1d655fa9b3e7cf6f"
+      "bytes": 528394,
+      "sha256": "74d26f5ba11c55dbf0f4bf3403c4dac421ba3faf59207c4d55a1f484fb525354"
     },
     {
       "path": "development/quality/castle-resident-art/captures/elsbeth-vale-angle-2-classic.png",
@@ -25332,8 +25332,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 344664,
-      "sha256": "dde963c7c7f2a364729db6c2c75aac5b546b23ab5bfeb368f625a7c519d6174a"
+      "bytes": 354316,
+      "sha256": "f245732bab566ff144387aa784fdcb7929eaebb5315593d117a168f7edd128ea"
     },
     {
       "path": "development/quality/castle-resident-art/captures/elsbeth-vale-angle-2-off.png",
@@ -25342,8 +25342,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 530708,
-      "sha256": "fb8eb6ead89756c7bf85c059884dc79ec5afed44c324a9f303f8725c22b5e541"
+      "bytes": 539236,
+      "sha256": "d4cf78414c617d4ed60a556899da88cb8998f472e874b1f64105dbf0f8ecdac9"
     },
     {
       "path": "development/quality/castle-resident-art/captures/elsbeth-vale-angle-3-classic.png",
@@ -25352,8 +25352,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 339091,
-      "sha256": "2d01dcbbb0841e7aa7f9b62cf08dc89daae2e0bb019fb98dfabcf04c32d0abe5"
+      "bytes": 346479,
+      "sha256": "4ed80381d47eca69c78c46de7df2f701e72a14c493167ddfe4745e79f3ec1aa0"
     },
     {
       "path": "development/quality/castle-resident-art/captures/elsbeth-vale-angle-3-off.png",
@@ -25362,8 +25362,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 537084,
-      "sha256": "62c5e6a3fdb47ec43b8a4637369b66db8ac51b86d6a7fe4bf0685234f6c5e679"
+      "bytes": 543596,
+      "sha256": "b0ddba11ff68df3a4b2bbe3f9e02c465d42c9adf58c783ab58936573e26af0d1"
     },
     {
       "path": "development/quality/castle-resident-art/captures/elsbeth-vale-angle-4-classic.png",
@@ -25372,8 +25372,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 348705,
-      "sha256": "46163d5765fa243abf6a695bdd076ed82ee2f8f6dcddcd173d00b86062f8c64c"
+      "bytes": 354930,
+      "sha256": "8f8f049a603b24529a373c037a562157a027d2eced82c470c6c6b0db871ebc89"
     },
     {
       "path": "development/quality/castle-resident-art/captures/elsbeth-vale-angle-4-off.png",
@@ -25382,8 +25382,88 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 568378,
-      "sha256": "306e94250f1174c68f607a068ba61811e9cd033d8f2916b7a6450c4042e9dc49"
+      "bytes": 565819,
+      "sha256": "e273fa285479b433b6f9035e82b938daa9f15aad1f3d4466feacc5354ab4e354"
+    },
+    {
+      "path": "development/quality/castle-resident-art/captures/matthis-rook-angle-1-classic.png",
+      "url": "development/quality/castle-resident-art/captures/matthis-rook-angle-1-classic.png",
+      "title": "Matthis rook angle 1 classic",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 350911,
+      "sha256": "017bf59bcfbdb302ad98af2f22bac9ae6baf319b2ea0fa138e91743149641db7"
+    },
+    {
+      "path": "development/quality/castle-resident-art/captures/matthis-rook-angle-1-off.png",
+      "url": "development/quality/castle-resident-art/captures/matthis-rook-angle-1-off.png",
+      "title": "Matthis rook angle 1 off",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 532191,
+      "sha256": "f2b13ac546a69c07e81a3aa5cdf02ecd5fabcd92e92c6b14c31668c7ae9f0f60"
+    },
+    {
+      "path": "development/quality/castle-resident-art/captures/matthis-rook-angle-2-classic.png",
+      "url": "development/quality/castle-resident-art/captures/matthis-rook-angle-2-classic.png",
+      "title": "Matthis rook angle 2 classic",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 320597,
+      "sha256": "ce39b2c42c03c4c95e52cb1d4457fe43fc842efcec94bef5865a8ab2ea786768"
+    },
+    {
+      "path": "development/quality/castle-resident-art/captures/matthis-rook-angle-2-off.png",
+      "url": "development/quality/castle-resident-art/captures/matthis-rook-angle-2-off.png",
+      "title": "Matthis rook angle 2 off",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 496093,
+      "sha256": "b78a9643eb15945e0badc7e133efc689f1a83379a7a99b173ffeae28eeb2893b"
+    },
+    {
+      "path": "development/quality/castle-resident-art/captures/matthis-rook-angle-3-classic.png",
+      "url": "development/quality/castle-resident-art/captures/matthis-rook-angle-3-classic.png",
+      "title": "Matthis rook angle 3 classic",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 350037,
+      "sha256": "3e53b8e524be35d3cc1036dc1fd0338dc6ddc7de277e122731c9fd31e324cea6"
+    },
+    {
+      "path": "development/quality/castle-resident-art/captures/matthis-rook-angle-3-off.png",
+      "url": "development/quality/castle-resident-art/captures/matthis-rook-angle-3-off.png",
+      "title": "Matthis rook angle 3 off",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 562432,
+      "sha256": "ac4fd004c3fad4ee1306adb3bfc7eb63344decac0dd76c2f9353baaa35342d73"
+    },
+    {
+      "path": "development/quality/castle-resident-art/captures/matthis-rook-angle-4-classic.png",
+      "url": "development/quality/castle-resident-art/captures/matthis-rook-angle-4-classic.png",
+      "title": "Matthis rook angle 4 classic",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 340538,
+      "sha256": "9fa7b99affd676595d5b6ae8e4f93802d5ec0129b82f5f1665a8b7e93724ffe2"
+    },
+    {
+      "path": "development/quality/castle-resident-art/captures/matthis-rook-angle-4-off.png",
+      "url": "development/quality/castle-resident-art/captures/matthis-rook-angle-4-off.png",
+      "title": "Matthis rook angle 4 off",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 522753,
+      "sha256": "2da37b19820c954a48ed35265f4d87a084c297b0577f86b23e15f263d1a3a617"
     },
     {
       "path": "development/quality/castle-resident-art/captures/rowan-pike-angle-1-classic.png",
@@ -25392,8 +25472,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 367367,
-      "sha256": "c605a2e5c67213c8fa84527945c912bff63e4e5b21d06dbcb528a99dfdc106f6"
+      "bytes": 383760,
+      "sha256": "a4a53bcb2bac9acde95a4b29a9fde6fe851a3cca08a2cf6c719fcc3b1c94c10a"
     },
     {
       "path": "development/quality/castle-resident-art/captures/rowan-pike-angle-1-off.png",
@@ -25402,8 +25482,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 579005,
-      "sha256": "d05057e1bc72569ccf2db5a0fefc51911da388786cd4f4e8f952c5d24bec4b23"
+      "bytes": 625399,
+      "sha256": "b32a8ad3708eb2ff5851e6c1df88113ab65ef136e1c0883bb3d246b31cb70398"
     },
     {
       "path": "development/quality/castle-resident-art/captures/rowan-pike-angle-2-classic.png",
@@ -25412,8 +25492,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 330510,
-      "sha256": "1ced1462c840def5239e4d4a3e769b2b105a6ab0e07afcdbaeac7a5efd3813b0"
+      "bytes": 347253,
+      "sha256": "c7aa35948946430b3d3266130c25586dcb182479321804bf6f20224e27f7cbe1"
     },
     {
       "path": "development/quality/castle-resident-art/captures/rowan-pike-angle-2-off.png",
@@ -25422,8 +25502,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 522828,
-      "sha256": "d91202e93d905a611fd8db92f3733d9d95015691e8ef640a0a5f1177a5c33284"
+      "bytes": 570678,
+      "sha256": "5b7eb6c96a174fcba20a2f7ab53c5423d52bd7bbf516efda56fb5f07b92c8365"
     },
     {
       "path": "development/quality/castle-resident-art/captures/rowan-pike-angle-3-classic.png",
@@ -25432,8 +25512,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 345969,
-      "sha256": "567878e21a3ab00cf8c2c29a1c1ca8ec2c8fdbdf52aecf59eb362d710b2851d9"
+      "bytes": 374584,
+      "sha256": "3103762586414e40526da986b0224e94cc3c012c2b4222bf3314c4c40e514a92"
     },
     {
       "path": "development/quality/castle-resident-art/captures/rowan-pike-angle-3-off.png",
@@ -25442,8 +25522,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 461423,
-      "sha256": "5004f678ebee555cec4d3070f48ca646578ac226aea64966afac6215b84ead18"
+      "bytes": 501240,
+      "sha256": "b23f5724970872197589b69b8e46b9770ab7246881e50eb622bdf55a1446b72d"
     },
     {
       "path": "development/quality/castle-resident-art/captures/rowan-pike-angle-4-classic.png",
@@ -25452,8 +25532,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 376046,
-      "sha256": "d19d34a8bba64913c20251a8ceccc59390b32b37ad011a77c81c00d839824f81"
+      "bytes": 365896,
+      "sha256": "4481c4a78183060d442bfd20fdcecbf76f5087f54b0dba4926e5d1365c241386"
     },
     {
       "path": "development/quality/castle-resident-art/captures/rowan-pike-angle-4-off.png",
@@ -25462,8 +25542,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 564874,
-      "sha256": "571d0c404c81d8b3e37c7937d2a8aee9c4f24e38a820302803c97827d90b9d70"
+      "bytes": 560411,
+      "sha256": "57af60375cf7d107d2c08ead3a144f582b897efe8f276f6aba30125c7ad01b88"
     },
     {
       "path": "development/quality/castle-resident-art/captures/sister-mirelle-ash-angle-1-classic.png",
@@ -25472,8 +25552,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 376585,
-      "sha256": "6da93fe429e05f503fa4bf9a9b265c11b230379bde0e197b9e1314d1f9cdba7c"
+      "bytes": 384239,
+      "sha256": "a5e75d1ca80559896126016807a8a1070af8c57eb367202ebccfc3419d1ab50d"
     },
     {
       "path": "development/quality/castle-resident-art/captures/sister-mirelle-ash-angle-1-off.png",
@@ -25482,8 +25562,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 592554,
-      "sha256": "a1834542ba673d62fa6fe846c5afb0e183627799e5a06ffab55f752adf1db900"
+      "bytes": 596230,
+      "sha256": "54136ca95463354c6b1c2b804d0b4c047c934878c7008967ba65a0d4be9cfe28"
     },
     {
       "path": "development/quality/castle-resident-art/captures/sister-mirelle-ash-angle-2-classic.png",
@@ -25492,8 +25572,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 353137,
-      "sha256": "58e3c68554a7b91e973240758bfe7447165d3968f3a63dc2eb5e1a792c11b197"
+      "bytes": 365344,
+      "sha256": "d5097de893350f5cf6318b53e5d559105636b901ff3d197db9f4de1297f82691"
     },
     {
       "path": "development/quality/castle-resident-art/captures/sister-mirelle-ash-angle-2-off.png",
@@ -25502,8 +25582,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 523821,
-      "sha256": "b8cd7faa996f8ec14d4b619af425ff40883e2a914600a65d2b7644eda19a5923"
+      "bytes": 544709,
+      "sha256": "5410272699fe616d8b2bb279082b1b8010a03fa1daac34831d8cbd4493c6d6ad"
     },
     {
       "path": "development/quality/castle-resident-art/captures/sister-mirelle-ash-angle-3-classic.png",
@@ -25512,8 +25592,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 378349,
-      "sha256": "b3526fd782e33b21c0e17b5b3964fa48d39281e4d25e6d581605566c187774fb"
+      "bytes": 386755,
+      "sha256": "8d1294da67a36036b9e0b5679017dcdfb76eadc2bbf53d2485b2b37d2cff4a8a"
     },
     {
       "path": "development/quality/castle-resident-art/captures/sister-mirelle-ash-angle-3-off.png",
@@ -25522,8 +25602,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 532688,
-      "sha256": "8d42dc097d97a1e7368152e00b089726b378f8c66443375ce273add555abd80f"
+      "bytes": 555477,
+      "sha256": "4bb4845f4903263b2ae9f0dca4c4bc35f84d49f1b85eb36261d75692d2049a35"
     },
     {
       "path": "development/quality/castle-resident-art/captures/sister-mirelle-ash-angle-4-classic.png",
@@ -25532,8 +25612,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 359866,
-      "sha256": "05136bf9e6cfe58ea7c28eccc52ce91cb47d12f8d4f308a5397471b97e2966cf"
+      "bytes": 368293,
+      "sha256": "0c037da80b83409f1b5b1df45ec089f16c617750697e72fe6eefea0dfae65127"
     },
     {
       "path": "development/quality/castle-resident-art/captures/sister-mirelle-ash-angle-4-off.png",
@@ -25542,8 +25622,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 572918,
-      "sha256": "b760dc5f8b671475cb0e2954f9ba09eb61821878b54303c311b6325048f38f62"
+      "bytes": 559421,
+      "sha256": "397805832e72d108484eb212ae69eb0e8c4a3cbe47e5154c7c98064b341d18ff"
     },
     {
       "path": "development/quality/castle-resident-art/captures/tomas-greaves-angle-1-classic.png",
@@ -25552,8 +25632,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 332303,
-      "sha256": "1449a91c009866c87b38558be87f80bf0d18e97b9a6419f35baa8ac9108e4d80"
+      "bytes": 374955,
+      "sha256": "34377aac42da4b62ace5bba221bb9dd2fdd212fbc1eabba83b7f0f6421490f6c"
     },
     {
       "path": "development/quality/castle-resident-art/captures/tomas-greaves-angle-1-off.png",
@@ -25562,8 +25642,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 553933,
-      "sha256": "4778d2a84d4240442785832fef8eb7da3ecf375d0274bbada6a73564534665ec"
+      "bytes": 601723,
+      "sha256": "e3a95434654425e065f0bad625e53dd26a1ebad94f37745edc27269081a5e456"
     },
     {
       "path": "development/quality/castle-resident-art/captures/tomas-greaves-angle-2-classic.png",
@@ -25572,8 +25652,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 324446,
-      "sha256": "8e3b67a6a71580010ff162cb81a6beefab52fab2317c931bc70ba04147480721"
+      "bytes": 348281,
+      "sha256": "2cff54d92c1a8a0d79cd972eb224a00f453116d24f227b016eb8fc7c8d5fc74a"
     },
     {
       "path": "development/quality/castle-resident-art/captures/tomas-greaves-angle-2-off.png",
@@ -25582,8 +25662,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 487967,
-      "sha256": "464aa6e0b781d0b4cd382fddc31abf54e7c3363fe3142c196af59dfb3ef3b4a4"
+      "bytes": 529806,
+      "sha256": "64c2eb6b0a28e5fa73e188089a96dd64af2d9ec48f27eafc447e7c28cae5299e"
     },
     {
       "path": "development/quality/castle-resident-art/captures/tomas-greaves-angle-3-classic.png",
@@ -25592,8 +25672,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 310186,
-      "sha256": "bb9daca05aa98098f002d16c0832d6e46306b7f32deb0d9e98b2be013def81be"
+      "bytes": 366187,
+      "sha256": "b1fbfed1088851f1188c4a7a56f9735006b25d82d3e8b404aab4bca40daeb960"
     },
     {
       "path": "development/quality/castle-resident-art/captures/tomas-greaves-angle-3-off.png",
@@ -25602,8 +25682,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 432706,
-      "sha256": "3b91a88900a1a9557fb45c7b6d8413cc0ed8152372059fb384c534cb2ec85937"
+      "bytes": 539164,
+      "sha256": "ca238dbcb9261c778974aacce560b159786891f4b1af18b0f0f7014f5e92b437"
     },
     {
       "path": "development/quality/castle-resident-art/captures/tomas-greaves-angle-4-classic.png",
@@ -25612,8 +25692,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 323302,
-      "sha256": "a9534904ecd64bb5c5b393d6fc8d7e727319c70a88e07791e37bdcded40877d9"
+      "bytes": 351392,
+      "sha256": "d2568e06a90aa3c691c3df645cc4dc6ebe0e8ca038da031e65327d73345121c3"
     },
     {
       "path": "development/quality/castle-resident-art/captures/tomas-greaves-angle-4-off.png",
@@ -25622,8 +25702,8 @@
       "kind": "Development review",
       "width": 854,
       "height": 480,
-      "bytes": 534458,
-      "sha256": "ddbdfc7d44929b55d64e9d19fd7571f2a7da146fcbcae21eb52ed186172ae9b7"
+      "bytes": 591884,
+      "sha256": "271ec7327b514f183fbd069c2923ff04c44db2620a3e9fbca1b6b6ccb19f6cdf"
     },
     {
       "path": "development/quality/castle-resident-art/source-diagnostic/previews/elsbeth-vale-current-front-matte.png",
