@@ -1,0 +1,100 @@
+{
+  "format": "castle-support-standing-repair-v2",
+  "generator": "built-in image_gen",
+  "reason": "Complete boots, connected foot silhouettes and transparent sole margins for all Castle residents",
+  "preserved": "Original concept masters remain unchanged. Generated derivatives and deterministic extraction are retained.",
+  "archives": [
+    {
+      "path": "assets/runtime/castle-support-directions.zip",
+      "sha256": "7cce7691d9538100874b8557a76884408fb88cf62464e2db25bc9048b976a37f",
+      "frames": [
+        {
+          "entry": "assets/castle_support/elsbeth_vale/front.png",
+          "sha256": "3c158216b115de9253bcda04c306f38801129cf1fb6a7b23f4188ac43d546e83"
+        },
+        {
+          "entry": "assets/castle_support/elsbeth_vale/side.png",
+          "sha256": "6582bb914d823aa213c22d914c1680a5dbe4f226e633377ef916c1b7323bdc6d"
+        },
+        {
+          "entry": "assets/castle_support/elsbeth_vale/back.png",
+          "sha256": "0bc3a5fe56bd509e2c0854b5444861b7920801ed715185b2cfc758028769a038"
+        },
+        {
+          "entry": "assets/castle_support/elsbeth_vale/right.png",
+          "sha256": "f96e67a0ade3c791a90b6e1b64e9c2de97f1a765250561663b59e02d5b3165b8"
+        },
+        {
+          "entry": "assets/castle_support/rowan_pike/front.png",
+          "sha256": "7cbc128ae0b412755112cd145df278be79457b8d1cb6c920c204f0e1b6d85a39"
+        },
+        {
+          "entry": "assets/castle_support/rowan_pike/side.png",
+          "sha256": "2d9b0bf1edad9f2f42b38dc6d5ef24b45310d6629757ce411dffb1b102780e72"
+        },
+        {
+          "entry": "assets/castle_support/rowan_pike/back.png",
+          "sha256": "882fff056848f069bc3660fbdd186bb27457953ac80fc5eea87a90aa0e150ca7"
+        },
+        {
+          "entry": "assets/castle_support/rowan_pike/right.png",
+          "sha256": "f411808860e26bd5365d576be2928d1272b99332d061170ebb1cc80b91d4dde4"
+        },
+        {
+          "entry": "assets/castle_support/tomas_greaves/front.png",
+          "sha256": "245cfaafe2203938fb98392094d3ea43a2d826ac5cff8cb7a78f23943e411880"
+        },
+        {
+          "entry": "assets/castle_support/tomas_greaves/side.png",
+          "sha256": "d8e90a48c46f3d2548317c56d94bbec4cdd1652101628a1159ad6b80cce03115"
+        },
+        {
+          "entry": "assets/castle_support/tomas_greaves/back.png",
+          "sha256": "9467be9287b9329ba0a3c9f9a2045e9ee2a39eadc0afc40a2cfe9e598d9c2c64"
+        },
+        {
+          "entry": "assets/castle_support/tomas_greaves/right.png",
+          "sha256": "2bd0a9a3323d222712b85189d36dd823683c0e36c929fd4516d53a1075e3ebae"
+        },
+        {
+          "entry": "assets/castle_support/sister_mirelle_ash/front.png",
+          "sha256": "9aac6fdf0848aa94879bde616dcf0aaf25dc665174c6ff77cf91865d9031e58d"
+        },
+        {
+          "entry": "assets/castle_support/sister_mirelle_ash/side.png",
+          "sha256": "a8e24ddc3650adf53e79ee1843d21bec8396f2b2c8a4723a312b4e4b7554c89e"
+        },
+        {
+          "entry": "assets/castle_support/sister_mirelle_ash/back.png",
+          "sha256": "a8693fdd79d673b06d90b060bc4b55b24db6d1646a911921b11871a5af98c6fb"
+        },
+        {
+          "entry": "assets/castle_support/sister_mirelle_ash/right.png",
+          "sha256": "5248dbda77385409221f97e633482009d4eb1f6fe2a3593cec2b12f2272c134f"
+        }
+      ]
+    },
+    {
+      "path": "assets/runtime/lore-master-directions.zip",
+      "sha256": "60c0f6f8d129207d8abc95ae514f8f984958945dd7ec48d9f68f3bd3b5d12292",
+      "frames": [
+        {
+          "entry": "assets/lore_master/front.png",
+          "sha256": "414c5abb60e86e8fc21cb9c7e847fac61555f7d61079175af767ab30bdfe71e6"
+        },
+        {
+          "entry": "assets/lore_master/side.png",
+          "sha256": "cbcc43284e47a1b28748f23c429b5198d7436af3f01cbef4a5c46b4b8d42e938"
+        },
+        {
+          "entry": "assets/lore_master/back.png",
+          "sha256": "c915f1c228375ba62c6370f8ac8e25e076fdaa3d3f07ddc408bdebcd59e7c0c2"
+        },
+        {
+          "entry": "assets/lore_master/right.png",
+          "sha256": "5f54450e51b46cb946d9c80bebc430cc550bd937f81f0c388ee34f39f293bafb"
+        }
+      ]
+    }
+  ]
+}

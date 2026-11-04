@@ -42,7 +42,6 @@ public final class CastleResidentArtRenderAudit {
             "resident,view,preset,camera_x,camera_z,render_width,render_height,file\n");
 
         for (CastleRelations.Resident resident : CastleRelations.Resident.values()) {
-            if (resident == CastleRelations.Resident.MATTHIS_ROOK) continue;
             var npcRoom = CastleRooms.at(resident.x, 0, resident.z);
             int views = 0;
             for (double[] delta : CAMERAS) {

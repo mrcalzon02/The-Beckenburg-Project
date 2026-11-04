@@ -10,6 +10,48 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-260 — Castle residents remain static despite hunter walk and crouch animation
+
+**Status:** fixed-scoped; focused local acceptance; installed release acceptance pending · **Affected:** All five Castle residents
+
+Residents only display standing turnarounds.
+
+Cause / uncertainty: Castle sprites bypassed animation and lacked a movement routine.
+
+Fix / next action: Package 60 authored directional walk/crouch poses; bounded collision-checked routines pause for approaching players; dialogue targeting and labels follow actual positions.
+
+Evidence and verification: development/quality/evidence/resident-animation-2026-11-03/ and development/levels/previews/resident-animation-2026-11-04/
+
+Older-map obligation: Shared rendering changes cover visible actors across maps; individual terrain and installed-copy visual acceptance remain separate.
+
+### DEV-261 — Visible entities lack circular ground contact shadows
+
+**Status:** fixed-scoped; focused local acceptance; installed release acceptance pending · **Affected:** Players, Castle residents, ghosts and both Twins bodies
+
+Actors appear visually disconnected from their support surface.
+
+Cause / uncertainty: Sprite rendering never submitted a ground contact decal.
+
+Fix / next action: Project soft black circular disks at actual support height; reject walls, sky and floor holes by receiver depth; preserve depth and keep ghost shadows independent of hover animation.
+
+Evidence and verification: development/quality/evidence/resident-animation-2026-11-03/ and development/levels/previews/resident-animation-2026-11-04/
+
+Older-map obligation: Shared rendering changes cover visible actors across maps; individual terrain and installed-copy visual acceptance remain separate.
+
+### DEV-262 — Standing resident crops lose boots and pitched projection clips shoe rows
+
+**Status:** fixed-scoped; focused local acceptance; installed release acceptance pending · **Affected:** Five Castle resident standing turnarounds and shared human sprite floor projection
+
+Standing Elsbeth boots end at a straight cutoff and look buried.
+
+Cause / uncertainty: The original cutout bounds truncate boots; midpoint projection and linear screen-depth interpolation further clip feet when pitched.
+
+Fix / next action: Rebuild all five standing turnarounds with complete boots and transparent sole margins, preserving concept masters; use exact endpoint projection and ray/card depth. SpriteFloorContactTest rejects the old projection with 49 missing opaque pixels and passes corrected rendering.
+
+Evidence and verification: development/quality/evidence/resident-animation-2026-11-03/ and development/levels/previews/resident-animation-2026-11-04/
+
+Older-map obligation: Shared rendering changes cover visible actors across maps; individual terrain and installed-copy visual acceptance remain separate.
+
 ### DEV-234 — Castle native bounds reject coherent west annex and cellar construction
 
 **Status:** fixed-scoped authoring/runtime foundation; full Castle geometry and terrain remain unfinished · **Affected:** Castle native geometry, human editor tools, shared agent service, ground support and cell persistence

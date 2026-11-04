@@ -353,6 +353,18 @@ public final class DirectionalSprites {
             body.appearance(),height,shape.width(),elevation,255,lamp,renderWidth,renderHeight,focal,
             false,LanGhostAnimation.Phase.LURK,0,image);
     }
+    public static void drawResident(int[] pixels,double[] depth,double cameraX,double cameraZ,
+            double yaw,double pitch,CastleRelations.Resident resident,CastleResidentAnimation.Body body,
+            double elevation,boolean lamp,int renderWidth,int renderHeight,double focal){
+        String id=CastleResidentAnimation.identity(resident);
+        var image=CastleResidentAnimation.frame(resident,
+            stableFacing(id,body.heading(),body.x(),body.z(),cameraX,cameraZ),body.pose());
+        double height=1.79*(body.pose()==HunterSpriteAnimation.Pose.CROUCH
+            ?HunterPosture.CROUCH_HEIGHT/HunterPosture.STANDING_HEIGHT:1);
+        drawPose(pixels,depth,cameraX,cameraZ,yaw,pitch,body.x(),body.z(),body.heading(),
+            id,height,.98,elevation,255,lamp,renderWidth,renderHeight,focal,
+            false,LanGhostAnimation.Phase.LURK,0,image);
+    }
     private static void drawPose(int[] pixels,double[] depth,double cameraX,double cameraZ,
             double yaw,double pitch,double entityX,double entityZ,int heading,
             String character,double height,double width,double elevation,int opacity,boolean lamp,
@@ -361,6 +373,9 @@ public final class DirectionalSprites {
         if(pixels.length!=renderWidth*renderHeight||depth.length!=renderWidth*renderHeight
                 ||opacity<=0||height<=0)return;
         if(!Double.isFinite(entityX)||!Double.isFinite(entityZ))return;
+        if(GroundedSpriteFeet.isGroundedHuman(character))
+            EntityFootShadow.draw(pixels,depth,cameraX,cameraZ,yaw,pitch,entityX,entityZ,
+                elevation,.38,145*Math.min(255,opacity)/255,renderWidth,renderHeight,focal);
         double dx=entityX-cameraX,dz=entityZ-cameraZ;
         double right=-dx*Math.cos(yaw)+dz*Math.sin(yaw);
         double ahead=dx*Math.sin(yaw)+dz*Math.cos(yaw);
@@ -369,13 +384,12 @@ public final class DirectionalSprites {
         double baseY=elevation-1.62,topY=elevation+height-1.62;
         double nearBottom=baseY*sy+ahead*cy,nearTop=topY*sy+ahead*cy;
         if(nearBottom<NEAR||nearTop<NEAR)return;
-        // A billboard is a vertical, flat cutout. Camera pitch repositions it
-        // on screen but must never tip, skew or resize head versus feet.
-        // Use one centre depth for both endpoints and horizontal projection.
+        // Keep the card upright, but project its top and floor contact using
+        // their own depths. A midpoint depth puts pitched feet below the floor.
         double anchorDepth=(nearBottom+nearTop)/2;
         if(anchorDepth<NEAR)return;
-        double foot=renderHeight/2.0-(baseY*cy-ahead*sy)/anchorDepth*focal;
-        double head=renderHeight/2.0-(topY*cy-ahead*sy)/anchorDepth*focal;
+        double foot=renderHeight/2.0-(baseY*cy-ahead*sy)/nearBottom*focal;
+        double head=renderHeight/2.0-(topY*cy-ahead*sy)/nearTop*focal;
         if(head>=foot)return;
         BufferedImage sprite=poseImage!=null?poseImage:frame(character,stableFacing(character,heading,
             entityX,entityZ,cameraX,cameraZ),phase,animationFrame);
@@ -404,11 +418,10 @@ public final class DirectionalSprites {
         for(int py=y0;py<=y1;py++){
             int v=(int)((py+.5-head)/screenHeight*sh);
             if(v<0||v>=sh)continue;
-            // A pitched camera gives the head and feet different view-space depths.
-            // Testing the entire character at its midpoint erroneously buries the
-            // feet behind the floor. Interpolate the billboard's projected depth.
-            double verticalFraction=Math.max(0,Math.min(1,(py+.5-head)/screenHeight));
-            double rowDepth=nearTop+(nearBottom-nearTop)*verticalFraction;
+            // Exact ray/card intersection after alpha-padding translation.
+            // Linear screen-depth interpolation can still bury the shoe rows.
+            double screenUp=(renderHeight*.5-py-.5)/focal;
+            double rowDepth=ahead/(cy-screenUp*sy);
             for(int px=x0;px<=x1;px++){
                 int u=(int)((px+.5-(cx-halfW))/screenWidth*sw);
                 if(u<0||u>=sw)continue;
