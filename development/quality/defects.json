@@ -3,6 +3,28 @@
   "updated": "2026-11-03",
   "issues": [
     {
+      "id": "DEV-254",
+      "title": "Safe areas lack a shared animated energy boundary matching ghost exclusion",
+      "status": "fixed-scoped; focused CPU/TCP and actual OpenGL evidence; installer acceptance pending",
+      "affected": "Shared van at investigation sites, entire Castle HQ, and settled active protective wards",
+      "symptom": "The investigation van has no recognizable sanctuary haze; the old optional arena cue uses rectangular motes rather than a circular fading dome.",
+      "cause": "Protection and visualization use separate room/rectangle rules; normal investigations do not enable the prior arena-only presentation.",
+      "action": "Add a shared circular van dome and whole-Castle sanctuary, animated blue cloud/wisp material with continuous wall-to-crown fading, settled-ward reuse, swept host exclusion, protected spawning/combat, Twins handling and public ghost-view snapshots.",
+      "evidence": "development/levels/previews/safe-area-barrier/: actual runtime frames and two 12-frame animations. SafeAreaBarrierTest, SafeAreaHazeTest, LanSafeAreaBarrierTest, existing ghost/counter/Twins/van checks and complete TCP round pass. Actual RTX 5070 OpenGL frames pass. Logs: development/quality/evidence/safe-area-barrier-2026-11-03/.",
+      "older_maps": "All built-in/custom-map ghost spawns tested. Visual captures cover the dispatched House and Castle; older-map terrain/lighting and installed full-game acceptance remain individual obligations. House rebuild remains a separate graybox and is not claimed dispatched."
+    },
+    {
+      "id": "DEV-255",
+      "title": "Ward ground seals remain at world Y zero and appear before landing",
+      "status": "fixed-scoped; focused CPU/TCP and actual OpenGL evidence; installer acceptance pending",
+      "affected": "Shared van at investigation sites, entire Castle HQ, and settled active protective wards",
+      "symptom": "A thrown or upstairs ward can show its seal at ground-floor height rather than at its actual settled support.",
+      "cause": "The renderer hardcodes Y .038 and does not distinguish a landed ward from a flying projectile when drawing ground bars.",
+      "action": "Resolve the settled support once for both seal and haze; keep airborne projectiles visible without advertising sanctuary; place upstairs seals at the authoritative floor height.",
+      "evidence": "development/levels/previews/safe-area-barrier/: actual runtime frames and two 12-frame animations. SafeAreaBarrierTest, SafeAreaHazeTest, LanSafeAreaBarrierTest, existing ghost/counter/Twins/van checks and complete TCP round pass. Actual RTX 5070 OpenGL frames pass. Logs: development/quality/evidence/safe-area-barrier-2026-11-03/.",
+      "older_maps": "All built-in/custom-map ghost spawns tested. Visual captures cover the dispatched House and Castle; older-map terrain/lighting and installed full-game acceptance remain individual obligations. House rebuild remains a separate graybox and is not claimed dispatched."
+    },
+    {
       "id": "DEV-234",
       "title": "Castle native bounds reject coherent west annex and cellar construction",
       "status": "fixed-scoped authoring/runtime foundation; full Castle geometry and terrain remain unfinished",

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 2438,
+  "count": 2468,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/level_castle_armour_display-clay-feet-front.png",
@@ -80,8 +80,8 @@
       "kind": "Unaccepted model study",
       "width": 800,
       "height": 800,
-      "bytes": 613552,
-      "sha256": "a759279b62f14a59c6f5eb3c684d934d2272c71207030f282719fdcddfef3dc5"
+      "bytes": 687000,
+      "sha256": "a86d4384d75542f81970291d9ec946aa8b906c0c0d2d24a820edae9ec66bc29f"
     },
     {
       "path": "development/assets/castle-museum/previews/level_castle_armour_display-feet-quarter.png",
@@ -90,8 +90,8 @@
       "kind": "Unaccepted model study",
       "width": 800,
       "height": 800,
-      "bytes": 644539,
-      "sha256": "e848ed0bd4e21094c8d99760b2f79306fbf02d4fc399ecddc3a7ffa4931bd517"
+      "bytes": 742657,
+      "sha256": "5828a236081d3a4cf71c497d7b88b38e9a9957aec1400611001981cfa99b922c"
     },
     {
       "path": "development/assets/castle-museum/previews/level_castle_armour_display-feet-side.png",
@@ -100,8 +100,8 @@
       "kind": "Unaccepted model study",
       "width": 800,
       "height": 800,
-      "bytes": 580433,
-      "sha256": "1f89171df7ead53f1c8afcc2ea274ae49704cf3434aefd6af24e6dc0c768d122"
+      "bytes": 639349,
+      "sha256": "3216d97bc610afc4aab1ed4ad6c202701d1ee8a5e9334ad98d2e2a5cf6bc8418"
     },
     {
       "path": "development/assets/castle-museum/previews/level_castle_armour_display-front.png",
@@ -110,8 +110,8 @@
       "kind": "Unaccepted model study",
       "width": 800,
       "height": 800,
-      "bytes": 517524,
-      "sha256": "52852b4d19dbf78740df4b7084c9400303ad273128427871d2b3ed70e46c2038"
+      "bytes": 548144,
+      "sha256": "b0bea42af3bc1bf253332a8bb316af9bc7c626388c8711cfe1ee6cd894c5072d"
     },
     {
       "path": "development/assets/castle-museum/previews/level_castle_armour_display-quarter.png",
@@ -120,8 +120,8 @@
       "kind": "Unaccepted model study",
       "width": 800,
       "height": 800,
-      "bytes": 522891,
-      "sha256": "8386a8058b336e7d2da0fd9b75c7f815246cca32843cfc30da838fdc2afe4f70"
+      "bytes": 553798,
+      "sha256": "29a91e9dfa32e103b1e5b2482c1a09ac6514cecfc1dbddb522a62a72e64e107a"
     },
     {
       "path": "development/assets/castle-museum/previews/level_castle_armour_display-rear.png",
@@ -130,8 +130,8 @@
       "kind": "Unaccepted model study",
       "width": 800,
       "height": 800,
-      "bytes": 513057,
-      "sha256": "016c7171dbe0bbf101d7f279e4e90898f62f6db839c9e74c1c4a2dfd003978c7"
+      "bytes": 529587,
+      "sha256": "dfb4af2b2a8263305c08d49971e15f5aeeba9634cf12d9a89172810528de395b"
     },
     {
       "path": "development/assets/castle-museum/previews/level_castle_armour_display-side.png",
@@ -140,8 +140,8 @@
       "kind": "Unaccepted model study",
       "width": 800,
       "height": 800,
-      "bytes": 497446,
-      "sha256": "bc9fe86574a117912966e32b09f1529b385f26f972cc107abbabe2e7d2bb32a3"
+      "bytes": 519484,
+      "sha256": "8d880c81fbf3e47409bf67aaf9d75a8c6030a6fa219c195c4051c70838ab6154"
     },
     {
       "path": "development/assets/castle-museum/previews/level_castle_founder_statue-front.png",
@@ -10364,6 +10364,306 @@
       "height": 600,
       "bytes": 593455,
       "sha256": "48ad705aca52f899347bebca7c243d7112e619e975ff38792cedc806ed514980"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/castle-courtyard-00.png",
+      "url": "development/levels/previews/safe-area-barrier/castle-courtyard-00.png",
+      "title": "Castle courtyard 00",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 256662,
+      "sha256": "80afa91667796615ed47fe344924a0e2bc4fe103d9b788f2850e9352f668b101"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/castle-sanctuary-00.png",
+      "url": "development/levels/previews/safe-area-barrier/castle-sanctuary-00.png",
+      "title": "Castle sanctuary 00",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 240972,
+      "sha256": "b6a6cc9d4ec85bc44491c2c9967c6d767a5e1e454c55f3a035cea00a37a24111"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/gpu-van-0.png",
+      "url": "development/levels/previews/safe-area-barrier/gpu-van-0.png",
+      "title": "Gpu van 0",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 154217,
+      "sha256": "2e874dd49302d2c78a5e6ee0f547e42cc0e393b2105d2747a158b752f838cf25"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/gpu-van-1.png",
+      "url": "development/levels/previews/safe-area-barrier/gpu-van-1.png",
+      "title": "Gpu van 1",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 153567,
+      "sha256": "9b1c7e6dd9c6b568c7b38599a0de7084b3c24e675f7af2a170d2d33e3b9a19aa"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/gpu-van-2.png",
+      "url": "development/levels/previews/safe-area-barrier/gpu-van-2.png",
+      "title": "Gpu van 2",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 154135,
+      "sha256": "74824fc71253bf340a1f4ad0a5d95139c15d37290fcc85cead5b039275313195"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/van-exterior-00.png",
+      "url": "development/levels/previews/safe-area-barrier/van-exterior-00.png",
+      "title": "Van exterior 00",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 150158,
+      "sha256": "55d992e1dad795534a14ac7f056cc0417f0a5626839706f23bb6b205dca18ee2"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/van-exterior-01.png",
+      "url": "development/levels/previews/safe-area-barrier/van-exterior-01.png",
+      "title": "Van exterior 01",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 149823,
+      "sha256": "e9f741408f9968dff42f55d0363884be1361c517cb9181b6d50872a1f5c337eb"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/van-exterior-02.png",
+      "url": "development/levels/previews/safe-area-barrier/van-exterior-02.png",
+      "title": "Van exterior 02",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 149799,
+      "sha256": "0834ad00e46b39b67f3579a069cb81e287646e7aafe7fdd370e35b07187e9f7a"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/van-exterior-03.png",
+      "url": "development/levels/previews/safe-area-barrier/van-exterior-03.png",
+      "title": "Van exterior 03",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 149631,
+      "sha256": "daa549fb15c5125c9a5e6d600a903ffa178b1dd1315e95be677e18b29d488007"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/van-exterior-04.png",
+      "url": "development/levels/previews/safe-area-barrier/van-exterior-04.png",
+      "title": "Van exterior 04",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 149862,
+      "sha256": "4ac2af1ae2a8517543226b2478dd50c22deae6c9a9479585ed745253368a2dee"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/van-exterior-05.png",
+      "url": "development/levels/previews/safe-area-barrier/van-exterior-05.png",
+      "title": "Van exterior 05",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 149744,
+      "sha256": "ea7e1d653f1dc697217385b38c40fb6bcf4fb056eea2b0796fb027abb10ea601"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/van-exterior-06.png",
+      "url": "development/levels/previews/safe-area-barrier/van-exterior-06.png",
+      "title": "Van exterior 06",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 148869,
+      "sha256": "0c89f0c1637f0a41bc2eb4371186158a032f7f6eeea4fdc7342256d484f5bf22"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/van-exterior-07.png",
+      "url": "development/levels/previews/safe-area-barrier/van-exterior-07.png",
+      "title": "Van exterior 07",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 149123,
+      "sha256": "9cf54b1151e1d377a61d3b3c2d5add612ed446603c4a35795b90a299adc6b63e"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/van-exterior-08.png",
+      "url": "development/levels/previews/safe-area-barrier/van-exterior-08.png",
+      "title": "Van exterior 08",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 149397,
+      "sha256": "9b41ad10c66acfe7084bd3d5a947c2aac6b9ad18d7a0612d3d1da10b9edb8a5c"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/van-exterior-09.png",
+      "url": "development/levels/previews/safe-area-barrier/van-exterior-09.png",
+      "title": "Van exterior 09",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 149767,
+      "sha256": "fd7525109a41d2f51a2e08025c4c09bccc0380eaf85b309b1fbca50315039b95"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/van-exterior-10.png",
+      "url": "development/levels/previews/safe-area-barrier/van-exterior-10.png",
+      "title": "Van exterior 10",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 150043,
+      "sha256": "4dddaed1f1e6039933a38a42018d5e4f282c555a5eb9e3f6cc56ab53996ae2c4"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/van-exterior-11.png",
+      "url": "development/levels/previews/safe-area-barrier/van-exterior-11.png",
+      "title": "Van exterior 11",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 150013,
+      "sha256": "79fe40cd8b7746435cc0723cc326bf206e2e6700202cd0c97e32398e4a5d2c04"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/van-inside-00.png",
+      "url": "development/levels/previews/safe-area-barrier/van-inside-00.png",
+      "title": "Van inside 00",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 124060,
+      "sha256": "7f9ab504b9e02caa951ce09a2e626b6271e4a8c93267e3420e387acf41ca9601"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/van-ward-00.png",
+      "url": "development/levels/previews/safe-area-barrier/van-ward-00.png",
+      "title": "Van ward 00",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 373783,
+      "sha256": "0626546e6a215fa9a9c6775caaff0b47def8d570931c76c2122697fd1f93f77e"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/van-ward-01.png",
+      "url": "development/levels/previews/safe-area-barrier/van-ward-01.png",
+      "title": "Van ward 01",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 373808,
+      "sha256": "323e87847da1749e82cd85224b3e468d002c846c0a89645218be993551f31077"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/van-ward-02.png",
+      "url": "development/levels/previews/safe-area-barrier/van-ward-02.png",
+      "title": "Van ward 02",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 373531,
+      "sha256": "04fa4be90f677430b43c7896ff3c971c2aaadd1623a12e082523c0b97bfaff28"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/van-ward-03.png",
+      "url": "development/levels/previews/safe-area-barrier/van-ward-03.png",
+      "title": "Van ward 03",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 373341,
+      "sha256": "e2eb0498921e52ba3beeaa2c1404328c19db20f49fd5dca968040f1f71c34985"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/van-ward-04.png",
+      "url": "development/levels/previews/safe-area-barrier/van-ward-04.png",
+      "title": "Van ward 04",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 372901,
+      "sha256": "1298aae8c97db5be2be83c0bde8bf654e96e7f14e8200c1b37451e33f258369b"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/van-ward-05.png",
+      "url": "development/levels/previews/safe-area-barrier/van-ward-05.png",
+      "title": "Van ward 05",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 372856,
+      "sha256": "8e627091f8e51e3a64a5035014973a0d0c9c45eadee4c1c464b0ad0896a6b114"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/van-ward-06.png",
+      "url": "development/levels/previews/safe-area-barrier/van-ward-06.png",
+      "title": "Van ward 06",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 372393,
+      "sha256": "bc5b1df916693d43c03cee8dcc32b20576459d8cb8e03d2313dab25c9337f90b"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/van-ward-07.png",
+      "url": "development/levels/previews/safe-area-barrier/van-ward-07.png",
+      "title": "Van ward 07",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 372358,
+      "sha256": "4612c170f61b87c1f5f01f72a2da790a04e0c630ce2ae1ea9c1c605d3af52512"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/van-ward-08.png",
+      "url": "development/levels/previews/safe-area-barrier/van-ward-08.png",
+      "title": "Van ward 08",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 371558,
+      "sha256": "82192105ab3ae0d71da94f54a2e5605b277e815b06c8ea68852ae3cefa5930cc"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/van-ward-09.png",
+      "url": "development/levels/previews/safe-area-barrier/van-ward-09.png",
+      "title": "Van ward 09",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 371217,
+      "sha256": "7b7d7136ad43428c08a835130b5e6b5323843f0469ef86a6f258c251168b1ca8"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/van-ward-10.png",
+      "url": "development/levels/previews/safe-area-barrier/van-ward-10.png",
+      "title": "Van ward 10",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 371394,
+      "sha256": "c04c9e4a8807438482d2eeaf6e8531c175aa64fa3e38d9f5e6af0c42df10e3ed"
+    },
+    {
+      "path": "development/levels/previews/safe-area-barrier/van-ward-11.png",
+      "url": "development/levels/previews/safe-area-barrier/van-ward-11.png",
+      "title": "Van ward 11",
+      "kind": "Runtime capture",
+      "width": 640,
+      "height": 400,
+      "bytes": 371258,
+      "sha256": "d3ff9710e71e3df6d09e169ebd5384b950f09f8960c616da787a26cf31701cd7"
     },
     {
       "path": "development/levels/previews/school-blender-exterior.png",

@@ -74,6 +74,8 @@ public final class HunterCounters {
                 }
             }
         }
+        map.setTemporarySafeAreas(active.stream().filter(item->item.kind==Kind.WARD&&!item.airborne&&!item.used&&tick<item.expires)
+            .map(item->SafeAreaBarrier.ward(item.x,item.feetY,item.z)).toList());
         return new Impact(repelled,tracked,warded);
     }
     private final java.util.Map<Integer,double[]> trajectories=new java.util.HashMap<>();

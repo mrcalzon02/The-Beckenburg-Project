@@ -31,7 +31,7 @@ for path in sorted(set(paths)):
     elif '/rebuild/captures/baseline/' in path:kind='Runtime baseline capture'
     elif '/rebuild/captures/' in path:kind='Runtime capture'
     elif '/castle-survey/' in path:kind='Runtime GPU capture'
-    elif '/lighting-camera-audit/' in path or '/van-castle-repair/' in path or '/metal-refinement/' in path or '/van-unification/' in path:kind='Runtime capture'
+    elif '/lighting-camera-audit/' in path or '/van-castle-repair/' in path or '/metal-refinement/' in path or '/van-unification/' in path or '/safe-area-barrier/' in path:kind='Runtime capture'
     elif '/water-editor/' in path:kind='Editor UI verification'
     elif '/equipment-menu/' in path:kind='Model inspection'
     elif '/menu-workflow/' in path:kind='Game UI verification'

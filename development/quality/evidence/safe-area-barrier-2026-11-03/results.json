@@ -1,0 +1,102 @@
+[
+  {
+    "test": "SafeAreaBarrierTest",
+    "exit": 0,
+    "seconds": 1.125
+  },
+  {
+    "test": "SafeAreaHazeTest",
+    "exit": 0,
+    "seconds": 0.125
+  },
+  {
+    "test": "HunterCountersTest",
+    "exit": 0,
+    "seconds": 0.281
+  },
+  {
+    "test": "LanGhostSpatialTest",
+    "exit": 0,
+    "seconds": 0.312
+  },
+  {
+    "test": "LanGhostHidingBoundaryTest",
+    "exit": 0,
+    "seconds": 0.282
+  },
+  {
+    "test": "LanSpatialCombatTest",
+    "exit": 0,
+    "seconds": 0.343
+  },
+  {
+    "test": "LanTelegraphedStrikeTest",
+    "exit": 0,
+    "seconds": 0.297
+  },
+  {
+    "test": "LanGhostPursuitTest",
+    "exit": 0,
+    "seconds": 0.328
+  },
+  {
+    "test": "GhostDomainTest",
+    "exit": 0,
+    "seconds": 0.453
+  },
+  {
+    "test": "GhostAiNavigationAuditTest",
+    "exit": 0,
+    "seconds": 0.313
+  },
+  {
+    "test": "TwinCompanionAiTest",
+    "exit": 0,
+    "seconds": 0.375
+  },
+  {
+    "test": "TwinCompanionSharedActionTest",
+    "exit": 0,
+    "seconds": 0.312
+  },
+  {
+    "test": "LanTwinPlayerCompanionTest",
+    "exit": 0,
+    "seconds": 9.907
+  },
+  {
+    "test": "SpiritualWarTest",
+    "exit": 0,
+    "seconds": 0.14
+  },
+  {
+    "test": "VanModuleIntegrationTest",
+    "exit": 0,
+    "seconds": 1.547
+  },
+  {
+    "test": "VanCargoDoorTest",
+    "exit": 0,
+    "seconds": 2.125
+  },
+  {
+    "test": "LanSixHunterVanTest",
+    "exit": 0,
+    "seconds": 1.625
+  },
+  {
+    "test": "LanCaseIntegrationTest",
+    "exit": 0,
+    "seconds": 5.016
+  },
+  {
+    "test": "BeckenburgFullRoundE2ETest",
+    "exit": 0,
+    "seconds": 10.984
+  },
+  {
+    "test": "LanSafeAreaBarrierTest",
+    "exit": 0,
+    "evidence": "Four genuine TCP peers; actual DEPLOY|WARD acknowledgment, settled public SAFEAREA snapshot, host GSTEP rejection and GVIEW3D snapshot re-entry."
+  }
+]
