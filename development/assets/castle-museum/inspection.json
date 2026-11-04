@@ -8,8 +8,8 @@
     ],
     "meshes": 1,
     "triangles": 1036,
-    "sha256": "9b802fa08e06d3acd0c21fded0b608e09eaa6afea0490d3c75cb2ee7e4da9738",
-    "status": "NATIVE_ARCHIVE_RUNTIME_PILOT_VERIFIED"
+    "sha256": "f1a59408bc99af5ed8ec0a6dae03e727a1c4ddd9623259e4e18d325d8eab1a90",
+    "status": "SCOPED_NATIVE_PILOT_VERIFIED"
   },
   {
     "id": "level_castle_museum_rope",
@@ -50,14 +50,14 @@
   {
     "id": "level_castle_four_poster_bed",
     "dimensions_blender": [
-      2.3400001525878906,
-      1.600000023841858,
-      2.490000009536743
+      2.197999954223633,
+      1.4199999570846558,
+      2.3399999141693115
     ],
-    "meshes": 57,
-    "triangles": 2740,
-    "sha256": "97aea6ae19ffa4dfdead2c084fcdd518ca5734c6b67dfa1e73709dd31fa3a495",
-    "status": "OWNER_REJECTED_STUDY_REQUIRES_REFERENCE_REWORK"
+    "meshes": 1,
+    "triangles": 828,
+    "sha256": "eddf15f7d5c713fa2a9310cd38ffb99261f9549d5320d09bc74185464b334c36",
+    "status": "SCOPED_NATIVE_PILOT_VERIFIED"
   },
   {
     "id": "level_castle_heraldic_arms",
@@ -90,10 +90,10 @@
       1.0399999916553497,
       2.8499999046325684
     ],
-    "meshes": 48,
-    "triangles": 1128,
-    "sha256": "05c8ccaaa6727c1dce810792c54efd6b9a0b4f3322cef195fc468e9fbc71cf36",
-    "status": "OWNER_REJECTED_STUDY_REQUIRES_REFERENCE_REWORK"
+    "meshes": 1,
+    "triangles": 56,
+    "sha256": "f0620f000d61d936838e06e4b999655a31e641bb856d35954fb8b062eb82603e",
+    "status": "SCOPED_NATIVE_PILOT_VERIFIED"
   },
   {
     "id": "level_castle_armour_label",

@@ -10,6 +10,48 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-260 — Castle residents remain static despite hunter walk and crouch animation
+
+**Status:** fixed-scoped; focused local acceptance; installed release acceptance pending · **Affected:** All five Castle residents
+
+Residents only display standing turnarounds.
+
+Cause / uncertainty: Castle sprites bypassed animation and lacked a movement routine.
+
+Fix / next action: Package 60 authored directional walk/crouch poses; bounded collision-checked routines pause for approaching players; dialogue targeting and labels follow actual positions.
+
+Evidence and verification: development/quality/evidence/resident-animation-2026-11-03/ and development/levels/previews/resident-animation-2026-11-04/
+
+Older-map obligation: Shared rendering changes cover visible actors across maps; individual terrain and installed-copy visual acceptance remain separate.
+
+### DEV-261 — Visible entities lack circular ground contact shadows
+
+**Status:** fixed-scoped; focused local acceptance; installed release acceptance pending · **Affected:** Players, Castle residents, ghosts and both Twins bodies
+
+Actors appear visually disconnected from their support surface.
+
+Cause / uncertainty: Sprite rendering never submitted a ground contact decal.
+
+Fix / next action: Project soft black circular disks at actual support height; reject walls, sky and floor holes by receiver depth; preserve depth and keep ghost shadows independent of hover animation.
+
+Evidence and verification: development/quality/evidence/resident-animation-2026-11-03/ and development/levels/previews/resident-animation-2026-11-04/
+
+Older-map obligation: Shared rendering changes cover visible actors across maps; individual terrain and installed-copy visual acceptance remain separate.
+
+### DEV-262 — Standing resident crops lose boots and pitched projection clips shoe rows
+
+**Status:** fixed-scoped; focused local acceptance; installed release acceptance pending · **Affected:** Five Castle resident standing turnarounds and shared human sprite floor projection
+
+Standing Elsbeth boots end at a straight cutoff and look buried.
+
+Cause / uncertainty: The original cutout bounds truncate boots; midpoint projection and linear screen-depth interpolation further clip feet when pitched.
+
+Fix / next action: Rebuild all five standing turnarounds with complete boots and transparent sole margins, preserving concept masters; use exact endpoint projection and ray/card depth. SpriteFloorContactTest rejects the old projection with 49 missing opaque pixels and passes corrected rendering.
+
+Evidence and verification: development/quality/evidence/resident-animation-2026-11-03/ and development/levels/previews/resident-animation-2026-11-04/
+
+Older-map obligation: Shared rendering changes cover visible actors across maps; individual terrain and installed-copy visual acceptance remain separate.
+
 ### DEV-234 — Castle native bounds reject coherent west annex and cellar construction
 
 **Status:** fixed-scoped authoring/runtime foundation; full Castle geometry and terrain remain unfinished · **Affected:** Castle native geometry, human editor tools, shared agent service, ground support and cell persistence
@@ -3467,6 +3509,48 @@ Fix / next action: Separate chest/back atlas regions, remove isolated high-contr
 Evidence and verification: development/assets/castle-museum/previews/rejected-software-texture, rejected-flat-brass-runtime and current source/runtime captures; armour1036/caption86/barrier264 independent contact reports and CastleMuseumConstructionTest.
 
 Older-map obligation: Existing scenery remains individually unaudited. These three reviewed models do not accept the other rejected museum studies or unrelated legacy UV/material work.
+
+### DEV-253 — Merged full-suite lighting parity times out despite isolated all-site correctness passing
+
+**Status:** OPEN CI deadline/performance investigation; isolated local parity passes · **Affected:** PreparedLightBatchParityTest on merged Castle checkpoint6fcb9791, full workflow41775037193
+
+Actual325-entry suite records322 passes and3 failures: two prior sprite-art defects plus PreparedLightBatchParityTest exceeding90seconds. Workflow green is advisory and not complete regression acceptance.
+
+Cause / uncertainty: Unknown runner/workload sensitivity; isolated current packaged all-site parity passes locally. No functional float mismatch has been observed. Timing evidence must distinguish Castle cost from the other map types.
+
+Fix / next action: Retain exact CI raw summary and isolated pass. Keep all-site geometry/float/immutability coverage and90-second deadline unchanged. Profile by site and reproduce in exact-source CI before closure; do not accept complete Castle performance from native/GPU success.
+
+Evidence and verification: development/levels/rebuild/verification/castle-museum-2026-11-03/merged-full-6fcb.log, merged-ci-summary.json and merged-parity-isolated.log
+
+Older-map obligation: Test covers Castle and all authored site types. New map dressing does not certify older-map performance or waive sprite-art failures.
+
+### DEV-256 — Castle candidate surfaces lack credible authored materials and fireplace obstructs light-switch approach
+
+**Status:** fixed-scoped source/export/native pilot; final32 checks pass; full Castle/platform acceptance open · **Affected:** Castle tester beds, archive armour and new cold common-room fireplace
+
+Owner rejects flat/striped procedural wood, cloth, steel and stone. First fireplace location obstructs the common-room east-wall light-switch standing point.
+
+Cause / uncertainty: Simple procedural atlas regions do not supply convincing authored detail; initial fireplace reservation checks door routes but misses the nearby existing switch approach.
+
+Fix / next action: Use built-in image generation for each actual atlas, including a genuinely transparent curtain PNG; pack512px textures/256px curtains, preserve original mesh/UV bytes and actual support. Shift the26-face fireplace fromx8.4 tox7.6, bearing flush to actual42cm north masonry; retain all body/ray/door/switch/flood checks.
+
+Evidence and verification: development/assets/castle-museum/imagegen-geometry-invariants.json, source-inspection/imagegen, generated masters/prompts and rejected surface studies; CastleTesterBedTest/CastleFireplaceTest and actual editor-service captures. Final evidence: development/levels/rebuild/verification/castle-imagegen-2026-11-03/verification.json.
+
+Older-map obligation: No automatic visual acceptance for old maps or remaining museum studies. Apply owner low-count and texture-detail direction individually, keeping physical support and fixture approaches.
+
+### DEV-257 — Tester bed stretches decorative atlas onto thin edges and overlaps canopy beam end-caps
+
+**Status:** fixed-scoped source/export/native pilot; final32 checks pass; full Castle/platform acceptance open · **Affected:** New Castle tester-bed source, exported GLB and six native lodging placements
+
+Owner identifies poor UV mapping and dark rectangular patches at canopy/post corners.
+
+Cause / uncertainty: Per-face normalised UVs squeeze whole panels onto thin bedding/headboard edges. Four full cornice boxes duplicate coplanar end areas, producing black corner self-shadowing.
+
+Fix / next action: Use consistent physical wood grain scale, reserve carved atlas for broad inward headboard, fold narrow bedding edge UVs; replace four intersecting beam boxes with one16-face mitered ring. Bed drops844->828tri with unchanged outer bounds. Check actual exported end-face area equals1.42x.18m on both ends; preserve rejected corner/UV views.
+
+Evidence and verification: development/assets/castle-museum/previews/rejected-bed-uv and rejected-bed-canopy-joints; final four-poster-rebuild studio/software views; CastleTesterBedTest and source/export contact reports. Final evidence: development/levels/rebuild/verification/castle-imagegen-2026-11-03/verification.json.
+
+Older-map obligation: These corrected UVs/joints apply to the new bed only. Audit other older furniture and remaining museum studies individually.
 
 ## Required audit categories
 

@@ -13,7 +13,9 @@ public final class CastleMuseum {
         new Exhibit("museum-armour-caption","level_castle_armour_label",32.3,0,6.0,0,
             "Original collection label retained by the base custodians"),
         new Exhibit("museum-armour-barrier","level_castle_museum_rope",31.5,0,6.45,0,
-            "Retained velvet barrier protects the reconstructed museum display without closing the gallery"));
+            "Retained velvet barrier protects the reconstructed museum display without closing the gallery"),
+        new Exhibit("heritage-common-fireplace","level_castle_great_fireplace",7.6,0,22.66,0,
+            "Restored cold limestone fireplace; retained ashlar, original collection heraldry and capped historic heating context"));
     public static void installDefaults(Map<String,CastleLevelEdits.Prop> props){
         for(var e:EXHIBITS){
             double[] b=SceneRenderer.castleBounds(e.mesh());double c=Math.abs(Math.cos(e.yaw())),s=Math.abs(Math.sin(e.yaw()));

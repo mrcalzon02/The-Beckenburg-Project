@@ -1,0 +1,17 @@
+{
+  "commit": "6fcb979194137db9e3518091dccce4a4396899e3",
+  "run": 41775037193,
+  "summary": "passed=322 failed=3 skipped=0 manifest=325",
+  "failures": [
+    "GhostSpriteAtlasIntegrationTest: unchanged sprite bytes",
+    "TwinBodyVisualTest: unchanged approved crop mismatch",
+    "PreparedLightBatchParityTest: 90-second timeout"
+  ],
+  "isolated_local_parity": "PASS complete all-site check; no deadline or production threshold changes",
+  "native_run": 41775037349,
+  "native": "success",
+  "gpu_run": 41775037214,
+  "gpu": "success",
+  "gallery_run": 41775037350,
+  "gallery": "success"
+}

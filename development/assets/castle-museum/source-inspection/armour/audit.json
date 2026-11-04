@@ -1,6 +1,6 @@
 {
   "source": "development\\assets\\castle-museum\\exports\\level_castle_armour_display.glb",
-  "sha256": "9b802fa08e06d3acd0c21fded0b608e09eaa6afea0490d3c75cb2ee7e4da9738",
+  "sha256": "f1a59408bc99af5ed8ec0a6dae03e727a1c4ddd9623259e4e18d325d8eab1a90",
   "materials": [
     {
       "mesh": 0,
@@ -23,10 +23,10 @@
   "images": [
     {
       "id": 0,
-      "name": "Castle field harness / component atlas",
+      "name": "Castle field harness / generated component atlas",
       "width": 512,
       "height": 512,
-      "png_sha256": "b20da74485daf4a34dcb0f6c1610ca1d1945f5b72a2c6e7995a2e20b5c132363",
+      "png_sha256": "dd59a75080539159a84cb7950c78f967cfc20a616182075ee7164ec1d26c0c7b",
       "overlay_triangles": 1036
     }
   ]

@@ -2,6 +2,8 @@ package org.beckenburg;
 
 /** Authored Beckenburg castle ground floor. All workstations have physical positions. */
 public final class CastleHubMap {
+    private final CastleResidentAnimation.Routine residents=new CastleResidentAnimation.Routine();
+    public CastleResidentAnimation.Routine residents(){return residents;}
     public static final int WIDTH=44, HEIGHT=36;
     private final SoundDocument sounds=SoundDocument.load("castle");
     public SoundDocument sounds(){return sounds;}
@@ -159,6 +161,13 @@ public final class CastleHubMap {
         return CastleLevelEdits.current().floorSupports(x,z,0)
             ||(!CastleCellar.opening(x,z)&&CastleRooms.ground(x,z));
     }
+    private boolean residentOccupies(double x,double z,double radius){
+        for(var r:CastleRelations.Resident.values()){
+            var body=residents.body(r);
+            if(Math.hypot(x-body.x(),z-body.z())<.38+radius)return true;
+        }
+        return false;
+    }
     public boolean traversable(double x,double z){return groundTraversable(x,z,0);}
     private boolean groundTraversable(double x,double z,double elevation){
         return groundTraversable(x,z,elevation,true);
@@ -182,7 +191,7 @@ public final class CastleHubMap {
             ||CastleSurroundings.courtyardVanBlocks(x,z,r)
             ||CastleWarehouse.blocks(x,z,r)
             ||CastleServiceFixtures.blocks(x,z,r)
-            ||(includeResident&&CastleArchive.occupies(x,z,r))
+            ||(includeResident&&residentOccupies(x,z,r))
             ||closedLeafBlocks(x,elevation,z,r))return false;
         for(Furnishing item:furnishings())
             if(Math.abs(x-item.x())<item.halfWidth()+r &&

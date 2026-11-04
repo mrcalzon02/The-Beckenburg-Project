@@ -1,9 +1,11 @@
 {
-  "status": "ARMOUR_AND_CAPTION_NATIVE_PILOT_REMAINING_KIT_REQUIRES_REFERENCE_REWORK",
+  "status": "NATIVE_ARCHIVE_LODGINGS_AND_COMMON_FIREPLACE_FULL_CASTLE_OPEN",
   "runtime_integrated": [
     "level_castle_armour_display",
     "level_castle_armour_label",
-    "level_castle_museum_rope"
+    "level_castle_museum_rope",
+    "level_castle_four_poster_bed",
+    "level_castle_great_fireplace"
   ],
   "armour": "Source/export contact and measured-budget checks retained; cleaned front/back atlas and original86-triangle caption now placed in archive,29 packaged native/hub checks pass. Full Castle finish not accepted.",
   "other_assets": "Initial studies require independent primary-reference redesign/review before integration.",
@@ -15,7 +17,10 @@
     "previews/rejected-dense-armour"
   ],
   "references": "reference-brief.md",
-  "next": "Finish reference-led armour geometry, validate real supports/attachments, then authored surfacing and actual runtime fit; rework the rest of the kit from references.",
+  "next": "Finish remaining tapestry/paintings/carpets, statues and heraldic displays; protected training/services and ruin/restoration detail. Resolve actual DEV-253 CI timeout; do not accept full Castle yet.",
   "runtime_evidence": "development\\levels\\rebuild\\verification\\castle-museum-2026-11-03\\verification.json",
-  "remaining": "Other original study assets remain rejected/quarantined. Complete their independent reference/triangle-budget/contact/material reviews, protected training, services, restoration wear/story and full Castle acceptance."
+  "remaining": "Other original study assets remain rejected/quarantined. Complete their independent reference/triangle-budget/contact/material reviews, protected training, services, restoration wear/story and full Castle acceptance.",
+  "bed": "828tri: final physical-scale wood UVs, folded bedding-edge mapping, carved inward headboard only, four transparent curtain sides and mitered canopy ring. Source/export contact and no-overlap end-area regression.",
+  "fireplace": "26 authored faces/56tri, generated512px atlas, common-room hearth bearing on floor/back wall; cold retained fitting, no live fire/flue claim.",
+  "surfaces": "Built-in image-generation masters plus packed512px derivatives and256px transparent curtains. Prompts and originals retained in textures/. No procedural/PIL art substituted."
 }

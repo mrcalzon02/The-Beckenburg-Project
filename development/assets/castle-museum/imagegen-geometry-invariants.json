@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "criterion": "Armour/fireplace expanded position/normal/UV bytes unchanged during surface replacement. Bed receives owner-requested UV and canopy-joint correction with unchanged bounds,828tri and actual exported support/end-area tests.",
+  "models": [
+    {
+      "model": "armour_display",
+      "expanded_position_normal_sha256": "a4aab0aa12e290c1ab062a9ca6b5c89fbd4590de9c65744fcae801d6e2914a8b",
+      "final_uv_sha256": "be0324fc85b18ae7859fabded4e657e2705031320d10c01a561e0cd65ef9f46f",
+      "previous_uv_sha256": "be0324fc85b18ae7859fabded4e657e2705031320d10c01a561e0cd65ef9f46f",
+      "uv_change": "UNCHANGED",
+      "compared_with": "previews/rejected-procedural-armour/armour-before-imagegen.glb",
+      "current_model_sha256": "f1a59408bc99af5ed8ec0a6dae03e727a1c4ddd9623259e4e18d325d8eab1a90"
+    },
+    {
+      "model": "four_poster_bed",
+      "previous_uv_sha256": "b15bc7e46493391cc6765d482ef6b0d5f73c80adb83185a6d8b0d836072e11cf",
+      "uv_change": "INTENTIONAL consistent grain scale, inward-only headboard and folded bedding edges",
+      "compared_with": "previews/rejected-procedural-bed/bed-before-imagegen.glb",
+      "geometry_change": "INTENTIONAL mitered continuous canopy ring replaces four overlapping box end caps;844->828tri",
+      "final_geometry_evidence": "CastleTesterBedTest actual exported end-surface area,828tri; current bed-source/export contacts and reimported four views",
+      "historical_uv_sha256": "37e859029ad33ecde3630416a0e2fb10a2e3e9652cffde8f50075e80e2cf8048",
+      "historical_geometry_sha256": "02f4eec45497c7c590c34593ad58e6556590afd9e0c384a42c029fcacdfa40ea",
+      "current_model_sha256": "eddf15f7d5c713fa2a9310cd38ffb99261f9549d5320d09bc74185464b334c36"
+    },
+    {
+      "model": "great_fireplace",
+      "expanded_position_normal_sha256": "7204e96c313aeb5e229c5ff485143a0da12be45c2153a2ed3510ea1c62438192",
+      "final_uv_sha256": "68cc7fa99cfd64538c5e33dfb3c8da8f355ea1dfd78a81c515c20184eaa1b231",
+      "previous_uv_sha256": "68cc7fa99cfd64538c5e33dfb3c8da8f355ea1dfd78a81c515c20184eaa1b231",
+      "uv_change": "UNCHANGED",
+      "compared_with": "previews/rejected-fireplace-procedural-refinement/procedural-refinement.glb",
+      "current_model_sha256": "f0620f000d61d936838e06e4b999655a31e641bb856d35954fb8b062eb82603e"
+    }
+  ]
+}

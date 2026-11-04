@@ -102,9 +102,10 @@ public final class CastleRelations {
         if(playerRoom==null)return null;
         Resident best=null;double bestDistance=Double.MAX_VALUE;
         for(Resident resident:Resident.values()){
-            var npcRoom=CastleRooms.at(resident.x,0,resident.z);
+            var body=map.residents().body(resident);
+            var npcRoom=CastleRooms.at(body.x(),0,body.z());
             if(npcRoom==null||!npcRoom.id().equals(playerRoom.id()))continue;
-            double dx=resident.x-x,dz=resident.z-z,dist=Math.hypot(dx,dz);
+            double dx=body.x()-x,dz=body.z()-z,dist=Math.hypot(dx,dz);
             if(dist<.5||dist>3.2)continue;
             if((dx*Math.sin(yaw)+dz*Math.cos(yaw))/dist<.84)continue;
             if(dist<bestDistance){best=resident;bestDistance=dist;}

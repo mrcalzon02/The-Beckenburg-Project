@@ -1,8 +1,168 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 2438,
+  "count": 2576,
   "images": [
+    {
+      "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
+      "url": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
+      "title": "Fireplace 0 source material",
+      "kind": "Unaccepted model study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 223791,
+      "sha256": "97740fca601e95781cf6e2829b6ee97dfa8d85c27520f96b83ef9e2ed9a70e15"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-1-source-material.png",
+      "url": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-1-source-material.png",
+      "title": "Fireplace 1 source material",
+      "kind": "Unaccepted model study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 122461,
+      "sha256": "9c4a36a68461056601d41a61b2ecdd27fcf56c814f911becdce9487db5b63690"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-2-source-material.png",
+      "url": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-2-source-material.png",
+      "title": "Fireplace 2 source material",
+      "kind": "Unaccepted model study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 249777,
+      "sha256": "86d4b7c228ba54e482d99051ad97124e7a7c942670e8bc77fe85bc4f36774275"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-3-source-material.png",
+      "url": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-3-source-material.png",
+      "title": "Fireplace 3 source material",
+      "kind": "Unaccepted model study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 122912,
+      "sha256": "95b8b739881d9114649a5a7a60cddb0dbf86a8eb70af39116cfac1e1542cd2b6"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/fireplace-rebuild/front.png",
+      "url": "development/assets/castle-museum/previews/fireplace-rebuild/front.png",
+      "title": "Front",
+      "kind": "Unaccepted model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 1021873,
+      "sha256": "a720b40f257ea83ef2a1c2d0c553200ff9db2b934698906c3a5a3c442c959fd1"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/fireplace-rebuild/quarter.png",
+      "url": "development/assets/castle-museum/previews/fireplace-rebuild/quarter.png",
+      "title": "Quarter",
+      "kind": "Unaccepted model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 1102304,
+      "sha256": "8d42196f22616a650a12153a568795fb2ab267ae5165945a28e0475304cfec10"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/fireplace-rebuild/rear.png",
+      "url": "development/assets/castle-museum/previews/fireplace-rebuild/rear.png",
+      "title": "Rear",
+      "kind": "Unaccepted model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 1051613,
+      "sha256": "9d620a1ec8bd83ff9461b7598df456933d7f3fdef26541ac66f32b900218d245"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/fireplace-rebuild/side.png",
+      "url": "development/assets/castle-museum/previews/fireplace-rebuild/side.png",
+      "title": "Side",
+      "kind": "Unaccepted model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 839286,
+      "sha256": "b2dd6404c0b296831cf009a9f933315c55096a145097dc584e846e3280eb3857"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/four-poster-rebuild/head.png",
+      "url": "development/assets/castle-museum/previews/four-poster-rebuild/head.png",
+      "title": "Head",
+      "kind": "Unaccepted model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 968120,
+      "sha256": "2dee1b3ef0da8c87c45f28481afd40cf115d8be4485dde230c2c5d7f0c579ff3"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/four-poster-rebuild/quarter.png",
+      "url": "development/assets/castle-museum/previews/four-poster-rebuild/quarter.png",
+      "title": "Quarter",
+      "kind": "Unaccepted model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 997187,
+      "sha256": "43db0283179758ef3e059458aa0c1118ac9baca44522245323f422bc8a6c09ba"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/four-poster-rebuild/rear.png",
+      "url": "development/assets/castle-museum/previews/four-poster-rebuild/rear.png",
+      "title": "Rear",
+      "kind": "Unaccepted model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 796860,
+      "sha256": "4fc00135e491c03035112116081397cf1fb2bc5856af11148691dc48255e6ced"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/four-poster-rebuild/side.png",
+      "url": "development/assets/castle-museum/previews/four-poster-rebuild/side.png",
+      "title": "Side",
+      "kind": "Unaccepted model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 837998,
+      "sha256": "492e9c5ec54fbd12a3f9693660a6d75c21f61c00a29c3735ad45e7c77850b187"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/four-poster-rebuild/tester-bed-0-source-material.png",
+      "url": "development/assets/castle-museum/previews/four-poster-rebuild/tester-bed-0-source-material.png",
+      "title": "Tester bed 0 source material",
+      "kind": "Unaccepted model study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 204098,
+      "sha256": "448ada92ec4d290573644e9fa6d1a51b12338662d8e4f2e53e00c17bce1a3f1c"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/four-poster-rebuild/tester-bed-1-source-material.png",
+      "url": "development/assets/castle-museum/previews/four-poster-rebuild/tester-bed-1-source-material.png",
+      "title": "Tester bed 1 source material",
+      "kind": "Unaccepted model study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 207047,
+      "sha256": "a1b15f41739e9a1ba5407943eb184208721ea60c9386a32257039b8b3abd26d0"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/four-poster-rebuild/tester-bed-2-source-material.png",
+      "url": "development/assets/castle-museum/previews/four-poster-rebuild/tester-bed-2-source-material.png",
+      "title": "Tester bed 2 source material",
+      "kind": "Unaccepted model study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 203605,
+      "sha256": "642eff0579c7afb20534b0d1a453d537619c66fe52db3aa37db437625772f931"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/four-poster-rebuild/tester-bed-3-source-material.png",
+      "url": "development/assets/castle-museum/previews/four-poster-rebuild/tester-bed-3-source-material.png",
+      "title": "Tester bed 3 source material",
+      "kind": "Unaccepted model study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 201488,
+      "sha256": "1c5fcee4d911ff4e8181503babdbad269185c3c6e8daa0b772dc341f9cafa14a"
+    },
     {
       "path": "development/assets/castle-museum/previews/level_castle_armour_display-clay-feet-front.png",
       "url": "development/assets/castle-museum/previews/level_castle_armour_display-clay-feet-front.png",
@@ -80,8 +240,8 @@
       "kind": "Unaccepted model study",
       "width": 800,
       "height": 800,
-      "bytes": 613552,
-      "sha256": "a759279b62f14a59c6f5eb3c684d934d2272c71207030f282719fdcddfef3dc5"
+      "bytes": 687000,
+      "sha256": "a86d4384d75542f81970291d9ec946aa8b906c0c0d2d24a820edae9ec66bc29f"
     },
     {
       "path": "development/assets/castle-museum/previews/level_castle_armour_display-feet-quarter.png",
@@ -90,8 +250,8 @@
       "kind": "Unaccepted model study",
       "width": 800,
       "height": 800,
-      "bytes": 644539,
-      "sha256": "e848ed0bd4e21094c8d99760b2f79306fbf02d4fc399ecddc3a7ffa4931bd517"
+      "bytes": 742657,
+      "sha256": "5828a236081d3a4cf71c497d7b88b38e9a9957aec1400611001981cfa99b922c"
     },
     {
       "path": "development/assets/castle-museum/previews/level_castle_armour_display-feet-side.png",
@@ -100,8 +260,8 @@
       "kind": "Unaccepted model study",
       "width": 800,
       "height": 800,
-      "bytes": 580433,
-      "sha256": "1f89171df7ead53f1c8afcc2ea274ae49704cf3434aefd6af24e6dc0c768d122"
+      "bytes": 639349,
+      "sha256": "3216d97bc610afc4aab1ed4ad6c202701d1ee8a5e9334ad98d2e2a5cf6bc8418"
     },
     {
       "path": "development/assets/castle-museum/previews/level_castle_armour_display-front.png",
@@ -110,8 +270,8 @@
       "kind": "Unaccepted model study",
       "width": 800,
       "height": 800,
-      "bytes": 517524,
-      "sha256": "52852b4d19dbf78740df4b7084c9400303ad273128427871d2b3ed70e46c2038"
+      "bytes": 548144,
+      "sha256": "b0bea42af3bc1bf253332a8bb316af9bc7c626388c8711cfe1ee6cd894c5072d"
     },
     {
       "path": "development/assets/castle-museum/previews/level_castle_armour_display-quarter.png",
@@ -120,8 +280,8 @@
       "kind": "Unaccepted model study",
       "width": 800,
       "height": 800,
-      "bytes": 522891,
-      "sha256": "8386a8058b336e7d2da0fd9b75c7f815246cca32843cfc30da838fdc2afe4f70"
+      "bytes": 553798,
+      "sha256": "29a91e9dfa32e103b1e5b2482c1a09ac6514cecfc1dbddb522a62a72e64e107a"
     },
     {
       "path": "development/assets/castle-museum/previews/level_castle_armour_display-rear.png",
@@ -130,8 +290,8 @@
       "kind": "Unaccepted model study",
       "width": 800,
       "height": 800,
-      "bytes": 513057,
-      "sha256": "016c7171dbe0bbf101d7f279e4e90898f62f6db839c9e74c1c4a2dfd003978c7"
+      "bytes": 529587,
+      "sha256": "dfb4af2b2a8263305c08d49971e15f5aeeba9634cf12d9a89172810528de395b"
     },
     {
       "path": "development/assets/castle-museum/previews/level_castle_armour_display-side.png",
@@ -140,8 +300,8 @@
       "kind": "Unaccepted model study",
       "width": 800,
       "height": 800,
-      "bytes": 497446,
-      "sha256": "bc9fe86574a117912966e32b09f1529b385f26f972cc107abbabe2e7d2bb32a3"
+      "bytes": 519484,
+      "sha256": "8d880c81fbf3e47409bf67aaf9d75a8c6030a6fa219c195c4051c70838ab6154"
     },
     {
       "path": "development/assets/castle-museum/previews/level_castle_founder_statue-front.png",
@@ -354,6 +514,176 @@
       "sha256": "68c9e31d24068137e60220ec8e8c246d37e5ac96c585363399751563461d3f5e"
     },
     {
+      "path": "development/assets/castle-museum/previews/rejected-bed-camera/blocked-native-view.png",
+      "url": "development/assets/castle-museum/previews/rejected-bed-camera/blocked-native-view.png",
+      "title": "Blocked native view",
+      "kind": "Rejected model study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 179069,
+      "sha256": "0aa791e1500c7ae942b284c4ba6590d55b0a402f9a50fca8b93b31909be0f0ed"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-bed-canopy-joints/head.png",
+      "url": "development/assets/castle-museum/previews/rejected-bed-canopy-joints/head.png",
+      "title": "Head",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 967069,
+      "sha256": "043045852345795be003a6705f5b8abce3e560811012a61759bf67da9c1b7f27"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-bed-canopy-joints/quarter.png",
+      "url": "development/assets/castle-museum/previews/rejected-bed-canopy-joints/quarter.png",
+      "title": "Quarter",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 994841,
+      "sha256": "a412d2d5abd1002670764a7e9a534a03f3b4de3f59a7a2188948c489b5bba909"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-bed-canopy-joints/rear.png",
+      "url": "development/assets/castle-museum/previews/rejected-bed-canopy-joints/rear.png",
+      "title": "Rear",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 794296,
+      "sha256": "dfae3d8f162e5b42ad4c7baf42fd2cd47979fa6612faaf89f638b10582345b85"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-bed-canopy-joints/side.png",
+      "url": "development/assets/castle-museum/previews/rejected-bed-canopy-joints/side.png",
+      "title": "Side",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 837631,
+      "sha256": "fd3a142876ea3b0d5f43e950c3c9a8c9d1f75a08f55df10675fd0f1c81a0ce50"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-bed-canopy-joints/tester-bed-0-source-material.png",
+      "url": "development/assets/castle-museum/previews/rejected-bed-canopy-joints/tester-bed-0-source-material.png",
+      "title": "Tester bed 0 source material",
+      "kind": "Rejected model study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 204066,
+      "sha256": "1db065faa9da59df264c9d3f650f5028f00e8ed7d208fc8bc4ea59b445156bc3"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-bed-canopy-joints/tester-bed-1-source-material.png",
+      "url": "development/assets/castle-museum/previews/rejected-bed-canopy-joints/tester-bed-1-source-material.png",
+      "title": "Tester bed 1 source material",
+      "kind": "Rejected model study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 206836,
+      "sha256": "a073028dcfd2d1618e6b23801c70cb8007b5d10fdf31da2ea32f8556ce68bb32"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-bed-canopy-joints/tester-bed-2-source-material.png",
+      "url": "development/assets/castle-museum/previews/rejected-bed-canopy-joints/tester-bed-2-source-material.png",
+      "title": "Tester bed 2 source material",
+      "kind": "Rejected model study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 203547,
+      "sha256": "e78d77691316feca680671e73e17d91c1f7c0db0e74fcc7350d86020be764664"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-bed-canopy-joints/tester-bed-3-source-material.png",
+      "url": "development/assets/castle-museum/previews/rejected-bed-canopy-joints/tester-bed-3-source-material.png",
+      "title": "Tester bed 3 source material",
+      "kind": "Rejected model study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 201366,
+      "sha256": "0a06f42aa8e4d95e4cef3a311cf21d75de08e90bad558588624037ac2174cbc7"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-bed-uv/head.png",
+      "url": "development/assets/castle-museum/previews/rejected-bed-uv/head.png",
+      "title": "Head",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 972000,
+      "sha256": "afe6d55bdb81f4417ec75c94834bbcee0662aac07c04f9777ab1a2126189b5fb"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-bed-uv/quarter.png",
+      "url": "development/assets/castle-museum/previews/rejected-bed-uv/quarter.png",
+      "title": "Quarter",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 994703,
+      "sha256": "3cab4ae74d4b5d81b0cc092aadc168c3d2697e220085133d3852398c60745144"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-bed-uv/rear.png",
+      "url": "development/assets/castle-museum/previews/rejected-bed-uv/rear.png",
+      "title": "Rear",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 810373,
+      "sha256": "0bf5d41e25008300d7da4e923118518987a73525a96d34cac42552f719851e8e"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-bed-uv/side.png",
+      "url": "development/assets/castle-museum/previews/rejected-bed-uv/side.png",
+      "title": "Side",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 828510,
+      "sha256": "3923ce4fc63026a440e0e9d230c07244b8a97a9cc5f9a938b1db998ca532091a"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-bed-uv/tester-bed-0-source-material.png",
+      "url": "development/assets/castle-museum/previews/rejected-bed-uv/tester-bed-0-source-material.png",
+      "title": "Tester bed 0 source material",
+      "kind": "Rejected model study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 224181,
+      "sha256": "cb8606aee663ab7757c3c1a8891a9d4f008ac8c058b7ddcf28a5f82d44acea3d"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-bed-uv/tester-bed-1-source-material.png",
+      "url": "development/assets/castle-museum/previews/rejected-bed-uv/tester-bed-1-source-material.png",
+      "title": "Tester bed 1 source material",
+      "kind": "Rejected model study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 231242,
+      "sha256": "893b03ac23fbd36f9947626642705e7c46e818f963e227b43bc0a4344f0ae98f"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-bed-uv/tester-bed-2-source-material.png",
+      "url": "development/assets/castle-museum/previews/rejected-bed-uv/tester-bed-2-source-material.png",
+      "title": "Tester bed 2 source material",
+      "kind": "Rejected model study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 224618,
+      "sha256": "3f63b11d86919f24985ca471f66cbb1a150620992037b240e63d6cfeb91b45f3"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-bed-uv/tester-bed-3-source-material.png",
+      "url": "development/assets/castle-museum/previews/rejected-bed-uv/tester-bed-3-source-material.png",
+      "title": "Tester bed 3 source material",
+      "kind": "Rejected model study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 244505,
+      "sha256": "4b73d4ff4f36e657dcd2b49369f3770a010197d0ce12c0d16c31e4c297d4d047"
+    },
+    {
       "path": "development/assets/castle-museum/previews/rejected-dense-armour/level_castle_armour_display-clay-front.png",
       "url": "development/assets/castle-museum/previews/rejected-dense-armour/level_castle_armour_display-clay-front.png",
       "title": "Level castle armour display clay front",
@@ -462,6 +792,86 @@
       "height": 800,
       "bytes": 474940,
       "sha256": "070d0275b8d46d6b6f965e240b66db1bd33f7ee227e5d9abe82f30340a0fc0ef"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-fireplace-procedural-refinement/front.png",
+      "url": "development/assets/castle-museum/previews/rejected-fireplace-procedural-refinement/front.png",
+      "title": "Front",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 797645,
+      "sha256": "492588a84212491ddf1976109d4416c281e719e7bb984982965157a1b0ef335f"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-fireplace-procedural-refinement/quarter.png",
+      "url": "development/assets/castle-museum/previews/rejected-fireplace-procedural-refinement/quarter.png",
+      "title": "Quarter",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 840550,
+      "sha256": "3765c48ff67450cbfe58f196c83439bd5d1c416454df4c1118b26a9e4ad28506"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-fireplace-procedural-refinement/rear.png",
+      "url": "development/assets/castle-museum/previews/rejected-fireplace-procedural-refinement/rear.png",
+      "title": "Rear",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 825669,
+      "sha256": "fa341c52abf1eda6e7165a1ad88901d594ab459388fada5b5284f54b79d0ccd0"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-fireplace-procedural-refinement/side.png",
+      "url": "development/assets/castle-museum/previews/rejected-fireplace-procedural-refinement/side.png",
+      "title": "Side",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 701392,
+      "sha256": "8ebf39f9acf8dd63bd2e1a355241b290530292dfa09a2ba72ed29e26365529da"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-fireplace-texture/front.png",
+      "url": "development/assets/castle-museum/previews/rejected-fireplace-texture/front.png",
+      "title": "Front",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 857604,
+      "sha256": "8bef1262b76261dbe3dff844690aa3bedb835fe8ccc643d5abaa1cb0a89c737e"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-fireplace-texture/quarter.png",
+      "url": "development/assets/castle-museum/previews/rejected-fireplace-texture/quarter.png",
+      "title": "Quarter",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 916901,
+      "sha256": "66711e5a1125a26df421ef6549ffdf3456cc2976ea9397832bf072073096b4ad"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-fireplace-texture/rear.png",
+      "url": "development/assets/castle-museum/previews/rejected-fireplace-texture/rear.png",
+      "title": "Rear",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 893698,
+      "sha256": "443babe0dcf00e20c71eeeb41be8ac961bee15c7b600f96fa5ec4607b5374dd6"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-fireplace-texture/side.png",
+      "url": "development/assets/castle-museum/previews/rejected-fireplace-texture/side.png",
+      "title": "Side",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 744871,
+      "sha256": "ec81e2d431d300b24aeb2a618e3e19ab2e55606178aeb59b7fd2fefaa365b77d"
     },
     {
       "path": "development/assets/castle-museum/previews/rejected-flat-brass-runtime/museum-armour-runtime.png",
@@ -634,6 +1044,286 @@
       "sha256": "c820244f37c15b6165e5c8f52ade93bb0c43db123548cc416d50e2eed54ab5fd"
     },
     {
+      "path": "development/assets/castle-museum/previews/rejected-primitive-bed/level_castle_four_poster_bed-front.png",
+      "url": "development/assets/castle-museum/previews/rejected-primitive-bed/level_castle_four_poster_bed-front.png",
+      "title": "Level castle four poster bed front",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 581867,
+      "sha256": "080a23ba17fbfd8db1d895b0883096716807896a289503447d4ffd6586b35395"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-primitive-bed/level_castle_four_poster_bed-quarter.png",
+      "url": "development/assets/castle-museum/previews/rejected-primitive-bed/level_castle_four_poster_bed-quarter.png",
+      "title": "Level castle four poster bed quarter",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 677568,
+      "sha256": "64e8b901d9e8ef3d9c75f23ddbfb511c167153ee90e7ca91a18163fdbe3f02a5"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-primitive-bed/level_castle_four_poster_bed-rear.png",
+      "url": "development/assets/castle-museum/previews/rejected-primitive-bed/level_castle_four_poster_bed-rear.png",
+      "title": "Level castle four poster bed rear",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 630579,
+      "sha256": "5f1bebb2d3cb99af0bd02e616eb133a800d42a022f8fdf3aa54f5ec5472bbb00"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-primitive-fireplace/level_castle_great_fireplace-front.png",
+      "url": "development/assets/castle-museum/previews/rejected-primitive-fireplace/level_castle_great_fireplace-front.png",
+      "title": "Level castle great fireplace front",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 651037,
+      "sha256": "fc43aced79f7cd33fcc2161541fd57d247424f0ba2e50d49a443900fa9475dca"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-primitive-fireplace/level_castle_great_fireplace-quarter.png",
+      "url": "development/assets/castle-museum/previews/rejected-primitive-fireplace/level_castle_great_fireplace-quarter.png",
+      "title": "Level castle great fireplace quarter",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 704381,
+      "sha256": "d277b912da2fd0663747ca22bdb62e5e7408267b9b4eb3b72af62c18bf2d2544"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-primitive-fireplace/level_castle_great_fireplace-rear.png",
+      "url": "development/assets/castle-museum/previews/rejected-primitive-fireplace/level_castle_great_fireplace-rear.png",
+      "title": "Level castle great fireplace rear",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 644688,
+      "sha256": "86d37bd97f96d806a95b99c54328aae2043182d6c0f1b3b013d87cf2857fe1e6"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-clay-feet-front.png",
+      "url": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-clay-feet-front.png",
+      "title": "Level castle armour display clay feet front",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 522862,
+      "sha256": "574fa0bd97a5cc7ab7e29229fabd25d1f3c22558100772331fdb4a3e6b61943e"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-clay-feet-quarter.png",
+      "url": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-clay-feet-quarter.png",
+      "title": "Level castle armour display clay feet quarter",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 552037,
+      "sha256": "7ced85f0d404cee7ce67da34cdde575b3cbd4bdd95fa8fcf09fb1fead7ce2aec"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-clay-feet-side.png",
+      "url": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-clay-feet-side.png",
+      "title": "Level castle armour display clay feet side",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 503386,
+      "sha256": "8ed08f97ad5a4843b6d6bb72c0c45e4b41350eb2a5d8b77a9f3c5fbb54e8277c"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-clay-front.png",
+      "url": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-clay-front.png",
+      "title": "Level castle armour display clay front",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 496086,
+      "sha256": "8c21476eb98cc27e4aab7204e6e94949e75b3508558a1c878f0245547e987121"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-clay-quarter.png",
+      "url": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-clay-quarter.png",
+      "title": "Level castle armour display clay quarter",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 503930,
+      "sha256": "11f7042a2c0d66c656c9fa5d40526091dea89dfd5769d1b12e154319ca5b6c8c"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-clay-rear.png",
+      "url": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-clay-rear.png",
+      "title": "Level castle armour display clay rear",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 503237,
+      "sha256": "8acbe4fb37560c2a2a75e405e44a3a93c33b584405f9c62538e16c2c495dbd56"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-clay-side.png",
+      "url": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-clay-side.png",
+      "title": "Level castle armour display clay side",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 479197,
+      "sha256": "cd065ade1ebb4ffec2d8e37997002385e911bcd3754786978324bcbe1ae60fd9"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-feet-front.png",
+      "url": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-feet-front.png",
+      "title": "Level castle armour display feet front",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 613552,
+      "sha256": "a759279b62f14a59c6f5eb3c684d934d2272c71207030f282719fdcddfef3dc5"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-feet-quarter.png",
+      "url": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-feet-quarter.png",
+      "title": "Level castle armour display feet quarter",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 644539,
+      "sha256": "e848ed0bd4e21094c8d99760b2f79306fbf02d4fc399ecddc3a7ffa4931bd517"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-feet-side.png",
+      "url": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-feet-side.png",
+      "title": "Level castle armour display feet side",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 580433,
+      "sha256": "1f89171df7ead53f1c8afcc2ea274ae49704cf3434aefd6af24e6dc0c768d122"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-front.png",
+      "url": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-front.png",
+      "title": "Level castle armour display front",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 517524,
+      "sha256": "52852b4d19dbf78740df4b7084c9400303ad273128427871d2b3ed70e46c2038"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-quarter.png",
+      "url": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-quarter.png",
+      "title": "Level castle armour display quarter",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 522891,
+      "sha256": "8386a8058b336e7d2da0fd9b75c7f815246cca32843cfc30da838fdc2afe4f70"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-rear.png",
+      "url": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-rear.png",
+      "title": "Level castle armour display rear",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 513057,
+      "sha256": "016c7171dbe0bbf101d7f279e4e90898f62f6db839c9e74c1c4a2dfd003978c7"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-side.png",
+      "url": "development/assets/castle-museum/previews/rejected-procedural-armour/level_castle_armour_display-side.png",
+      "title": "Level castle armour display side",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 497446,
+      "sha256": "bc9fe86574a117912966e32b09f1529b385f26f972cc107abbabe2e7d2bb32a3"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-procedural-bed/head.png",
+      "url": "development/assets/castle-museum/previews/rejected-procedural-bed/head.png",
+      "title": "Head",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 833512,
+      "sha256": "900c044522d4e8fe5d0c2e511c4918f838a79eda70b68f9d2f3edb0b03a9a36a"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-procedural-bed/quarter.png",
+      "url": "development/assets/castle-museum/previews/rejected-procedural-bed/quarter.png",
+      "title": "Quarter",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 849681,
+      "sha256": "3ec8daa9f149d5eda129939992e05ceda7b9fda3c5ca371ae4490edbdd2ef98c"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-procedural-bed/rear.png",
+      "url": "development/assets/castle-museum/previews/rejected-procedural-bed/rear.png",
+      "title": "Rear",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 689806,
+      "sha256": "c947096f027d62da97661d7244e113afdcfa920fb8fa8d15f1a5c4d2341c1b07"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-procedural-bed/side.png",
+      "url": "development/assets/castle-museum/previews/rejected-procedural-bed/side.png",
+      "title": "Side",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 900,
+      "bytes": 733489,
+      "sha256": "b50a295cf8aa11e177bae04d37bfbd7b6c392f1dbbb355de2a4d03a98c0fee45"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-procedural-bed/tester-bed-0-source-material.png",
+      "url": "development/assets/castle-museum/previews/rejected-procedural-bed/tester-bed-0-source-material.png",
+      "title": "Tester bed 0 source material",
+      "kind": "Rejected model study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 114167,
+      "sha256": "1de62fb9e59f0b4aec9e5973fd031226a701660eaa7ac0d98a0d4b55e386f669"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-procedural-bed/tester-bed-1-source-material.png",
+      "url": "development/assets/castle-museum/previews/rejected-procedural-bed/tester-bed-1-source-material.png",
+      "title": "Tester bed 1 source material",
+      "kind": "Rejected model study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 121471,
+      "sha256": "c2041d2b6099aa08396feab7e6e5e04af2a1ccfe70f834b82333613268ffa24b"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-procedural-bed/tester-bed-2-source-material.png",
+      "url": "development/assets/castle-museum/previews/rejected-procedural-bed/tester-bed-2-source-material.png",
+      "title": "Tester bed 2 source material",
+      "kind": "Rejected model study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 115511,
+      "sha256": "c6e6185a2d85e634c1f852c3a3a76e42b6303b17a48cafb44d7165c028f59e95"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-procedural-bed/tester-bed-3-source-material.png",
+      "url": "development/assets/castle-museum/previews/rejected-procedural-bed/tester-bed-3-source-material.png",
+      "title": "Tester bed 3 source material",
+      "kind": "Rejected model study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 127778,
+      "sha256": "a52ad3ca98dd0719e71e3ab250210e86844729a6b82e2775952f4cf9a038f55a"
+    },
+    {
       "path": "development/assets/castle-museum/previews/rejected-software-texture/armour-source-runtime-0.png",
       "url": "development/assets/castle-museum/previews/rejected-software-texture/armour-source-runtime-0.png",
       "title": "Armour source runtime 0",
@@ -752,6 +1442,46 @@
       "height": 800,
       "bytes": 101276,
       "sha256": "836ba891cbdd4a26aa66ab780156f8f97b6179b5cb62cac041a656b390cfc0ee"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/runtime-material/level_castle_armour_display-source-runtime-0.png",
+      "url": "development/assets/castle-museum/previews/runtime-material/level_castle_armour_display-source-runtime-0.png",
+      "title": "Level castle armour display source runtime 0",
+      "kind": "Unaccepted model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 140290,
+      "sha256": "b5996eb5db3103de5c347b8f76243b163b870b6b9e0c09eb4a589b9819d4da1c"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/runtime-material/level_castle_armour_display-source-runtime-1.png",
+      "url": "development/assets/castle-museum/previews/runtime-material/level_castle_armour_display-source-runtime-1.png",
+      "title": "Level castle armour display source runtime 1",
+      "kind": "Unaccepted model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 123521,
+      "sha256": "9f6592fcd9c8353af9f988671dc0bbd40af5b046b763435571f5d3cb55c34c5a"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/runtime-material/level_castle_armour_display-source-runtime-2.png",
+      "url": "development/assets/castle-museum/previews/runtime-material/level_castle_armour_display-source-runtime-2.png",
+      "title": "Level castle armour display source runtime 2",
+      "kind": "Unaccepted model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 145714,
+      "sha256": "4e5a2a49f0261b1eb469e4d6ce92b1e421a291759ec107d9f7d4940b655de666"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/runtime-material/level_castle_armour_display-source-runtime-3.png",
+      "url": "development/assets/castle-museum/previews/runtime-material/level_castle_armour_display-source-runtime-3.png",
+      "title": "Level castle armour display source runtime 3",
+      "kind": "Unaccepted model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 123544,
+      "sha256": "a3792337e28319c7a61680705183f82de93df6269e7c10eb5d11f048b43d1912"
     },
     {
       "path": "development/assets/castle-museum/previews/runtime-material/level_castle_armour_label-source-runtime-0.png",
@@ -9804,6 +10534,616 @@
       "height": 600,
       "bytes": 510298,
       "sha256": "fdab83282d54839655658d0f17254cc35db8a3dcbe22cbb794247f37567d7f11"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/model-production/animation-asset-review.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/model-production/animation-asset-review.png",
+      "title": "Animation asset review",
+      "kind": "Model inspection",
+      "width": 640,
+      "height": 3720,
+      "bytes": 1715739,
+      "sha256": "537a0d103aaf8f9fe4e5ed7fead166f00c1bc314a0b16512468df5be849e0932"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/runtime/elsbeth_vale-crouch-runtime.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/runtime/elsbeth_vale-crouch-runtime.png",
+      "title": "Elsbeth vale crouch runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 559654,
+      "sha256": "c17a535e2e8388fe3ea3e919a6baca59dc01a3a79bdedd37b5038819464f6480"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/runtime/elsbeth_vale-idle-runtime.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/runtime/elsbeth_vale-idle-runtime.png",
+      "title": "Elsbeth vale idle runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 524824,
+      "sha256": "2c9b94cef50b432a354e0b876fd8c27ef95bc89bd0b3a8cf3f3445bff96c740f"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/runtime/elsbeth_vale-walk_a-runtime.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/runtime/elsbeth_vale-walk_a-runtime.png",
+      "title": "Elsbeth vale walk a runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 528152,
+      "sha256": "9113d1e0dc98dc92cba8e892496c2261813466703378555afd1a374c31dc8f31"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/runtime/elsbeth_vale-walk_b-runtime.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/runtime/elsbeth_vale-walk_b-runtime.png",
+      "title": "Elsbeth vale walk b runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 542800,
+      "sha256": "c84e3c87412d726ac21aaa03b0dc8fa57b26a0e3258364ccba944f92f60619f4"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/runtime/matthis_rook-crouch-runtime.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/runtime/matthis_rook-crouch-runtime.png",
+      "title": "Matthis rook crouch runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 543339,
+      "sha256": "298a4bc635355ffdf4bf96beb5dc3b62114930ec2357333b1e22fa89fd60b1b8"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/runtime/matthis_rook-idle-runtime.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/runtime/matthis_rook-idle-runtime.png",
+      "title": "Matthis rook idle runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 520741,
+      "sha256": "03d1ee11f4f2ef069027507c93c7fe94925183b5eeac6ab15e6eb84e8f3841d0"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/runtime/matthis_rook-walk_a-runtime.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/runtime/matthis_rook-walk_a-runtime.png",
+      "title": "Matthis rook walk a runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 525510,
+      "sha256": "524cb5bcba6adf957fd6cfeb86c2d9cff950bea42526516271cc17a394b286b8"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/runtime/matthis_rook-walk_b-runtime.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/runtime/matthis_rook-walk_b-runtime.png",
+      "title": "Matthis rook walk b runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 538355,
+      "sha256": "6f5457f1ba3dc3a001747cc764dbd977b95b1cf7c880337ceeb836a8886d8559"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/runtime/mirelle_ash-crouch-runtime.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/runtime/mirelle_ash-crouch-runtime.png",
+      "title": "Mirelle ash crouch runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 671953,
+      "sha256": "55245ae1dfa86f29d81aa5c188b7e571068e60edb9ed027eee3ec11bee033798"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/runtime/mirelle_ash-idle-runtime.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/runtime/mirelle_ash-idle-runtime.png",
+      "title": "Mirelle ash idle runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 675597,
+      "sha256": "74a0ca118c2028bb26ab548dd193cea40c7989beabdf30561d0109bea23f76c4"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/runtime/mirelle_ash-walk_a-runtime.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/runtime/mirelle_ash-walk_a-runtime.png",
+      "title": "Mirelle ash walk a runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 673388,
+      "sha256": "507d6ad11e4a5d3c3eb4ebc4acc9da868f4a2ca9472d9cf3c86f653da1aaf078"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/runtime/mirelle_ash-walk_b-runtime.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/runtime/mirelle_ash-walk_b-runtime.png",
+      "title": "Mirelle ash walk b runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 675181,
+      "sha256": "39efe6b9c1bc1dad5dc660f4000c29553b19ed9a43d962a310f741ebc3fdd566"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/runtime/rowan_pike-crouch-runtime.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/runtime/rowan_pike-crouch-runtime.png",
+      "title": "Rowan pike crouch runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 630385,
+      "sha256": "20784931c2d7beb608be680dee195314ac7ea323723abb5fa9d5347a960aa196"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/runtime/rowan_pike-idle-runtime.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/runtime/rowan_pike-idle-runtime.png",
+      "title": "Rowan pike idle runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 636009,
+      "sha256": "8e6b591e30658ab1a0b63fbe96d76e155eb0357b8a22bb9d26b8243a085f1eb6"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/runtime/rowan_pike-walk_a-runtime.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/runtime/rowan_pike-walk_a-runtime.png",
+      "title": "Rowan pike walk a runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 637498,
+      "sha256": "ffd9f3d56c0654f6e93214324ba37cc999f7a458faf5e51f6b48ad69f72d7248"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/runtime/rowan_pike-walk_b-runtime.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/runtime/rowan_pike-walk_b-runtime.png",
+      "title": "Rowan pike walk b runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 638180,
+      "sha256": "eac9c901a80956d3abdfa654e510302f0a59daff769793832e6b794d3d7c5d47"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/runtime/tomas_greaves-crouch-runtime.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/runtime/tomas_greaves-crouch-runtime.png",
+      "title": "Tomas greaves crouch runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 617364,
+      "sha256": "06fdc1844d7c9e962563d35cc81b79e33422ad67958ed47d0f39d00e1c736012"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/runtime/tomas_greaves-idle-runtime.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/runtime/tomas_greaves-idle-runtime.png",
+      "title": "Tomas greaves idle runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 601153,
+      "sha256": "907da673808d6ba392f73d3ae517223f14675c5ab0b0b28a5c46a8ca2aec087e"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/runtime/tomas_greaves-walk_a-runtime.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/runtime/tomas_greaves-walk_a-runtime.png",
+      "title": "Tomas greaves walk a runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 602039,
+      "sha256": "298df1bad383dc184c8b7b045d6d1adbc59250d9d8035a277ea3e1bb8f8af894"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/runtime/tomas_greaves-walk_b-runtime.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/runtime/tomas_greaves-walk_b-runtime.png",
+      "title": "Tomas greaves walk b runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 615009,
+      "sha256": "3f4c9d3105cac9e46dcedef4083ad8454e7a1eb11a3163b2bbc8a90015114839"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/elsbeth-vale-angle-1-classic.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/elsbeth-vale-angle-1-classic.png",
+      "title": "Elsbeth vale angle 1 classic",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 361414,
+      "sha256": "150d7b6ad0203c0c6242642d1e267543da771f1df8c06398fc72f68090f612c6"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/elsbeth-vale-angle-1-off.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/elsbeth-vale-angle-1-off.png",
+      "title": "Elsbeth vale angle 1 off",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 528394,
+      "sha256": "74d26f5ba11c55dbf0f4bf3403c4dac421ba3faf59207c4d55a1f484fb525354"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/elsbeth-vale-angle-2-classic.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/elsbeth-vale-angle-2-classic.png",
+      "title": "Elsbeth vale angle 2 classic",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 354316,
+      "sha256": "f245732bab566ff144387aa784fdcb7929eaebb5315593d117a168f7edd128ea"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/elsbeth-vale-angle-2-off.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/elsbeth-vale-angle-2-off.png",
+      "title": "Elsbeth vale angle 2 off",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 539236,
+      "sha256": "d4cf78414c617d4ed60a556899da88cb8998f472e874b1f64105dbf0f8ecdac9"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/elsbeth-vale-angle-3-classic.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/elsbeth-vale-angle-3-classic.png",
+      "title": "Elsbeth vale angle 3 classic",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 346479,
+      "sha256": "4ed80381d47eca69c78c46de7df2f701e72a14c493167ddfe4745e79f3ec1aa0"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/elsbeth-vale-angle-3-off.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/elsbeth-vale-angle-3-off.png",
+      "title": "Elsbeth vale angle 3 off",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 543596,
+      "sha256": "b0ddba11ff68df3a4b2bbe3f9e02c465d42c9adf58c783ab58936573e26af0d1"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/elsbeth-vale-angle-4-classic.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/elsbeth-vale-angle-4-classic.png",
+      "title": "Elsbeth vale angle 4 classic",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 354930,
+      "sha256": "8f8f049a603b24529a373c037a562157a027d2eced82c470c6c6b0db871ebc89"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/elsbeth-vale-angle-4-off.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/elsbeth-vale-angle-4-off.png",
+      "title": "Elsbeth vale angle 4 off",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 565819,
+      "sha256": "e273fa285479b433b6f9035e82b938daa9f15aad1f3d4466feacc5354ab4e354"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/matthis-rook-angle-1-classic.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/matthis-rook-angle-1-classic.png",
+      "title": "Matthis rook angle 1 classic",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 350911,
+      "sha256": "017bf59bcfbdb302ad98af2f22bac9ae6baf319b2ea0fa138e91743149641db7"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/matthis-rook-angle-1-off.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/matthis-rook-angle-1-off.png",
+      "title": "Matthis rook angle 1 off",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 532191,
+      "sha256": "f2b13ac546a69c07e81a3aa5cdf02ecd5fabcd92e92c6b14c31668c7ae9f0f60"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/matthis-rook-angle-2-classic.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/matthis-rook-angle-2-classic.png",
+      "title": "Matthis rook angle 2 classic",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 320597,
+      "sha256": "ce39b2c42c03c4c95e52cb1d4457fe43fc842efcec94bef5865a8ab2ea786768"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/matthis-rook-angle-2-off.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/matthis-rook-angle-2-off.png",
+      "title": "Matthis rook angle 2 off",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 496093,
+      "sha256": "b78a9643eb15945e0badc7e133efc689f1a83379a7a99b173ffeae28eeb2893b"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/matthis-rook-angle-3-classic.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/matthis-rook-angle-3-classic.png",
+      "title": "Matthis rook angle 3 classic",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 350037,
+      "sha256": "3e53b8e524be35d3cc1036dc1fd0338dc6ddc7de277e122731c9fd31e324cea6"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/matthis-rook-angle-3-off.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/matthis-rook-angle-3-off.png",
+      "title": "Matthis rook angle 3 off",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 562432,
+      "sha256": "ac4fd004c3fad4ee1306adb3bfc7eb63344decac0dd76c2f9353baaa35342d73"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/matthis-rook-angle-4-classic.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/matthis-rook-angle-4-classic.png",
+      "title": "Matthis rook angle 4 classic",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 340538,
+      "sha256": "d6f398b789bded55ddcbdbdfd3944c4cfbe87818fa0ba8ed0c2901ba89979fa5"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/matthis-rook-angle-4-off.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/matthis-rook-angle-4-off.png",
+      "title": "Matthis rook angle 4 off",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 522749,
+      "sha256": "88fe27de9d12ef1a8db0d5d78bd5b7bc0f64b5ae1e4a24d8c8b2fc5984086f7e"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/rowan-pike-angle-1-classic.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/rowan-pike-angle-1-classic.png",
+      "title": "Rowan pike angle 1 classic",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 383760,
+      "sha256": "a4a53bcb2bac9acde95a4b29a9fde6fe851a3cca08a2cf6c719fcc3b1c94c10a"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/rowan-pike-angle-1-off.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/rowan-pike-angle-1-off.png",
+      "title": "Rowan pike angle 1 off",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 625399,
+      "sha256": "b32a8ad3708eb2ff5851e6c1df88113ab65ef136e1c0883bb3d246b31cb70398"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/rowan-pike-angle-2-classic.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/rowan-pike-angle-2-classic.png",
+      "title": "Rowan pike angle 2 classic",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 347257,
+      "sha256": "97aa3443e36c5a90434150651e168d0d94e6a29e99574d725d0fd3bfa3699f19"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/rowan-pike-angle-2-off.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/rowan-pike-angle-2-off.png",
+      "title": "Rowan pike angle 2 off",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 570669,
+      "sha256": "2d31eb7af20645aa00cf14a2d22ef9cea28691b7b1ddc0829945b05d97448a80"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/rowan-pike-angle-3-classic.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/rowan-pike-angle-3-classic.png",
+      "title": "Rowan pike angle 3 classic",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 374584,
+      "sha256": "3103762586414e40526da986b0224e94cc3c012c2b4222bf3314c4c40e514a92"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/rowan-pike-angle-3-off.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/rowan-pike-angle-3-off.png",
+      "title": "Rowan pike angle 3 off",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 501240,
+      "sha256": "b23f5724970872197589b69b8e46b9770ab7246881e50eb622bdf55a1446b72d"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/rowan-pike-angle-4-classic.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/rowan-pike-angle-4-classic.png",
+      "title": "Rowan pike angle 4 classic",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 365896,
+      "sha256": "4481c4a78183060d442bfd20fdcecbf76f5087f54b0dba4926e5d1365c241386"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/rowan-pike-angle-4-off.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/rowan-pike-angle-4-off.png",
+      "title": "Rowan pike angle 4 off",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 560411,
+      "sha256": "57af60375cf7d107d2c08ead3a144f582b897efe8f276f6aba30125c7ad01b88"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/sister-mirelle-ash-angle-1-classic.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/sister-mirelle-ash-angle-1-classic.png",
+      "title": "Sister mirelle ash angle 1 classic",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 384239,
+      "sha256": "a5e75d1ca80559896126016807a8a1070af8c57eb367202ebccfc3419d1ab50d"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/sister-mirelle-ash-angle-1-off.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/sister-mirelle-ash-angle-1-off.png",
+      "title": "Sister mirelle ash angle 1 off",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 596230,
+      "sha256": "54136ca95463354c6b1c2b804d0b4c047c934878c7008967ba65a0d4be9cfe28"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/sister-mirelle-ash-angle-2-classic.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/sister-mirelle-ash-angle-2-classic.png",
+      "title": "Sister mirelle ash angle 2 classic",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 365344,
+      "sha256": "d5097de893350f5cf6318b53e5d559105636b901ff3d197db9f4de1297f82691"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/sister-mirelle-ash-angle-2-off.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/sister-mirelle-ash-angle-2-off.png",
+      "title": "Sister mirelle ash angle 2 off",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 544709,
+      "sha256": "5410272699fe616d8b2bb279082b1b8010a03fa1daac34831d8cbd4493c6d6ad"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/sister-mirelle-ash-angle-3-classic.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/sister-mirelle-ash-angle-3-classic.png",
+      "title": "Sister mirelle ash angle 3 classic",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 386755,
+      "sha256": "8d1294da67a36036b9e0b5679017dcdfb76eadc2bbf53d2485b2b37d2cff4a8a"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/sister-mirelle-ash-angle-3-off.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/sister-mirelle-ash-angle-3-off.png",
+      "title": "Sister mirelle ash angle 3 off",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 555477,
+      "sha256": "4bb4845f4903263b2ae9f0dca4c4bc35f84d49f1b85eb36261d75692d2049a35"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/sister-mirelle-ash-angle-4-classic.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/sister-mirelle-ash-angle-4-classic.png",
+      "title": "Sister mirelle ash angle 4 classic",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 368293,
+      "sha256": "0c037da80b83409f1b5b1df45ec089f16c617750697e72fe6eefea0dfae65127"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/sister-mirelle-ash-angle-4-off.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/sister-mirelle-ash-angle-4-off.png",
+      "title": "Sister mirelle ash angle 4 off",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 559421,
+      "sha256": "397805832e72d108484eb212ae69eb0e8c4a3cbe47e5154c7c98064b341d18ff"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/tomas-greaves-angle-1-classic.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/tomas-greaves-angle-1-classic.png",
+      "title": "Tomas greaves angle 1 classic",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 374955,
+      "sha256": "34377aac42da4b62ace5bba221bb9dd2fdd212fbc1eabba83b7f0f6421490f6c"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/tomas-greaves-angle-1-off.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/tomas-greaves-angle-1-off.png",
+      "title": "Tomas greaves angle 1 off",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 601723,
+      "sha256": "e3a95434654425e065f0bad625e53dd26a1ebad94f37745edc27269081a5e456"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/tomas-greaves-angle-2-classic.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/tomas-greaves-angle-2-classic.png",
+      "title": "Tomas greaves angle 2 classic",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 348281,
+      "sha256": "2cff54d92c1a8a0d79cd972eb224a00f453116d24f227b016eb8fc7c8d5fc74a"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/tomas-greaves-angle-2-off.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/tomas-greaves-angle-2-off.png",
+      "title": "Tomas greaves angle 2 off",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 529806,
+      "sha256": "64c2eb6b0a28e5fa73e188089a96dd64af2d9ec48f27eafc447e7c28cae5299e"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/tomas-greaves-angle-3-classic.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/tomas-greaves-angle-3-classic.png",
+      "title": "Tomas greaves angle 3 classic",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 366187,
+      "sha256": "b1fbfed1088851f1188c4a7a56f9735006b25d82d3e8b404aab4bca40daeb960"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/tomas-greaves-angle-3-off.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/tomas-greaves-angle-3-off.png",
+      "title": "Tomas greaves angle 3 off",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 539164,
+      "sha256": "ca238dbcb9261c778974aacce560b159786891f4b1af18b0f0f7014f5e92b437"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/tomas-greaves-angle-4-classic.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/tomas-greaves-angle-4-classic.png",
+      "title": "Tomas greaves angle 4 classic",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 351392,
+      "sha256": "d2568e06a90aa3c691c3df645cc4dc6ebe0e8ca038da031e65327d73345121c3"
+    },
+    {
+      "path": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/tomas-greaves-angle-4-off.png",
+      "url": "development/levels/previews/resident-animation-2026-11-04/standing-runtime/tomas-greaves-angle-4-off.png",
+      "title": "Tomas greaves angle 4 off",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 591882,
+      "sha256": "df6b9acd7f07467dde6098bd6d48145bc73ef40661066f98f22735a796a19767"
     },
     {
       "path": "development/levels/previews/runtime/farmhouse-00-mudroom.png",
@@ -21306,6 +22646,26 @@
       "sha256": "6e3a0be5bb4b88d4d2a26bd5788b56977db6cd7d4c363ac3f2f53c89ed8a3298"
     },
     {
+      "path": "development/levels/rebuild/captures/castle-construction/fireplace-0-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/fireplace-0-runtime.png",
+      "title": "Fireplace 0 runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 782216,
+      "sha256": "63ea012ea3827bc389662a5cd32b97362a7763672a70569589a3608d81044ab0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/fireplace-1-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/fireplace-1-runtime.png",
+      "title": "Fireplace 1 runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 836535,
+      "sha256": "8b5063d2cf28f7ad472f29306bf17901583b87fefcce9aa04eff4081653906ca"
+    },
+    {
       "path": "development/levels/rebuild/captures/castle-construction/ground-infirmary-runtime.png",
       "url": "development/levels/rebuild/captures/castle-construction/ground-infirmary-runtime.png",
       "title": "Ground infirmary runtime",
@@ -21352,8 +22712,8 @@
       "kind": "Runtime capture",
       "width": 1000,
       "height": 625,
-      "bytes": 476837,
-      "sha256": "bc75d77014f71e32e2d9ad854b1807d578b1106280220f500bb19beec4810e7b"
+      "bytes": 522679,
+      "sha256": "05caf4e5be4be11eee6ff4b7d49d99503140b245c6da86af23e49b0cccf88c3e"
     },
     {
       "path": "development/levels/rebuild/captures/castle-construction/museum-caption-runtime.png",
@@ -21362,8 +22722,8 @@
       "kind": "Runtime capture",
       "width": 1000,
       "height": 625,
-      "bytes": 368346,
-      "sha256": "5c7f8705c78bc6bf8458b1fa56efe732cea6e88ecedda64e26ba3607f85e8ead"
+      "bytes": 465623,
+      "sha256": "edf65c4b22a21977434611618795e34aa19cd1198a3716e69fdf37b75afad7ac"
     },
     {
       "path": "development/levels/rebuild/captures/castle-construction/museum-gallery-runtime.png",
@@ -21372,8 +22732,8 @@
       "kind": "Runtime capture",
       "width": 1000,
       "height": 625,
-      "bytes": 679925,
-      "sha256": "2c18003daeb724fa92399632ed920aeba154bb6118e3aeab686fd06c2755d1a8"
+      "bytes": 700743,
+      "sha256": "7c5ef69f10057891b9bd2442cd407c967890281c222dd8c829d66afec19159f2"
     },
     {
       "path": "development/levels/rebuild/captures/castle-construction/pre-lighting-cellar-stair-runtime.png",
@@ -21404,6 +22764,26 @@
       "height": 500,
       "bytes": 127588,
       "sha256": "1bd6b3680567ba6ef99561adbfb18fcd1d05867c0e62418a382513fe63003f30"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/tester-bed-0-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/tester-bed-0-runtime.png",
+      "title": "Tester bed 0 runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 680199,
+      "sha256": "81fd162e00de7b211317808d573a8707ce9f1116281f75b818e35bde7bda1ad7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/tester-bed-1-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/tester-bed-1-runtime.png",
+      "title": "Tester bed 1 runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 638754,
+      "sha256": "a02fa711f0797618c34fcfa5a9f4164e479f8c761dd15a903a8ec269a6758b3e"
     },
     {
       "path": "development/levels/rebuild/captures/castle-construction/training-annex-runtime.png",

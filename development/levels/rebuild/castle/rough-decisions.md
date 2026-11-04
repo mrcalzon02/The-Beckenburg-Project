@@ -22,7 +22,7 @@ Packaged CastleWorldTerrainTest verifies every half-metre sample over the whole 
 Next: construct actual cellar walls/floors and architectural deck void, continuous flight/landings/guards, elevation-aware furnishings and lower movement. Current architectural ground floor remains intact until that construction is integrated; this checkpoint does not claim that players can enter a completed cellar. Finish full Castle before the remaining locations; no round-time testing.
 
 
-## Castle native cellar construction — 3 November
+## Castle native cellar construction â€” 3 November
 
 Native defaults now construct four cellar rooms atY-3, their actual wall/lintel/portal boundaries, an18-riser stone flight, lower/upper landings, masonry cheeks and protected ground opening. tools/build_castle_cellar.py derives room/wall/flight coordinates from the revised Castle rough. Six native lamps include four supported ceiling fittings and two fitted stair-wall sconces; the lower wall switch controls the cellar independently of the store above.
 
@@ -37,7 +37,7 @@ DEV-236 retains both rejected landing-transition and upper-return evidence. DEV-
 No stage is accepted here. Remaining Castle work includes ground domestic/service partitions and fit-out, the actual upper west roof/bearing/lodging refit and six beds, supported household/service/relic/plant details, protected training-exercise bindings, permanent context seals and full Castle-to-case-to-Castle acceptance. Keep39 planned accessible spaces within the40-space cap. Finish Castle before returning to other maps. No round-time testing.
 
 
-## Castle native ground programme — 3 November
+## Castle native ground programme â€” 3 November
 
 The real native default now has16 coherent core ground rooms:15 open rooms and one permanently sealed pantry. tools/build_castle_ground.py derives33 new internal wall/lintel/portal records and child-room volumes from the approved Castle rough. This separates WC/washing, wardrobe lounge, practice/common/kitchen/wash-up, network/operations, and stock/repair/infirmary functions. Existing stations/residents, source-size furnishings and the previous exterior openings are retained. Native privacy doors serve the WC/washing rooms; the sealed pantry has solid infill and no player-openable portal.
 
@@ -58,7 +58,7 @@ DEV-239 preserves the blocked stock-switch approach. DEV-240 preserves an isolat
 No stage is accepted. Next: actual upper west bearing/roof/lodging refit with six lodging beds, bathroom/WC and sealed linen/eave context, preserving real library/rampart access. Then complete fit-out, protected training bindings, relic/plant services, weathering/environmental story and full Castle-to-case-to-Castle acceptance. The plan remains39 accessible spaces within the40 cap. Finish Castle before the remaining maps. No round-time testing.
 
 
-## Native upper construction checkpoint — 3 November
+## Native upper construction checkpoint â€” 3 November
 
 The west roof eave now sits atY6.8 above actual native upper floors, ceilings and bearing partitions; the training-annex roof remains at3.4. The upper programme includes a residence hall, three twin lodging rooms/six measured beds, private wash/WC, seven real casements and permanently sealed linen/eave context. A new library connection and northwest infill complete the existing rampart circuit. Original wall and ground/cellar portal identities are preserved; new same-XZ upper doors receive elevation suffixes. Native upper-room metadata, windows, doors and controls require actual saved upper construction, with conditional supported-lamp migration and persisted deletions.
 
@@ -74,10 +74,10 @@ No stage is accepted here. Next: integrate/refine the museum/restoration kit, pr
 Owner rejected the initial museum asset kit as too primitive, especially unsupported armour tasset slabs (DEV-249). Candidate GLBs are quarantined under development/assets/castle-museum/exports, outside runtime delivery. Met public-domain harness and breastplate photographs/catalogues have now been examined; source-linked reference brief and actual rejected studies are preserved. A new shaped/articulated armour reconstruction has four-direction clay and material inspection, but remains an unaccepted study. Review/rebuild the rest of the kit from primary references before promotion. The upper construction checkpoint remains separate from this unfinished asset-quality work.
 
 
-Owner further requires car/character-scale triangle counts and no detached floating pieces. Shipped cars measure372–457 triangles; Matthis proxy1239. Current reauthored armour1036 including plinth, with texture-authored small details. The feet now have a continuous toe/instep/side/heel silhouette. All41 source and independently reimported export components reach the plinth through real triangle surface intersections/contact within1mm; an actual detached-helmet negative is rejected. These scoped geometry/budget checks do not grant full asset/art/runtime acceptance. Details/benchmarks/rejected studies: development/assets/castle-museum/armour-review.json and reference-brief.md; DEV-249/250.
+Owner further requires car/character-scale triangle counts and no detached floating pieces. Shipped cars measure372â€“457 triangles; Matthis proxy1239. Current reauthored armour1036 including plinth, with texture-authored small details. The feet now have a continuous toe/instep/side/heel silhouette. All41 source and independently reimported export components reach the plinth through real triangle surface intersections/contact within1mm; an actual detached-helmet negative is rejected. These scoped geometry/budget checks do not grant full asset/art/runtime acceptance. Details/benchmarks/rejected studies: development/assets/castle-museum/armour-review.json and reference-brief.md; DEV-249/250.
 
 
-## Native archive museum pilot — 3 November
+## Native archive museum pilot â€” 3 November
 
 A reference-led low-count field harness (1036 triangles), original textured accession caption (86) and continuous velvet barrier (264) now occupy the archive through CastleMuseum native default props. This begins the retained museum -> partial ruin -> restoration -> operating-base story. Full source-size geometry fits the actual room and shared floor. Both rope ends connect to posts; caption post/frame/weighted foot are supported. Independent source/export contact graphs are retained; the armour detached-helmet negative still fails as required. No new hiding sockets, rooms, stations, live hauntings or case rules are introduced.
 
@@ -86,3 +86,12 @@ Actual SceneRenderer.drawCastle captures through EditorAgentService show the dis
 Previous exact30354e24 native41770092421 and GPU41770098733 succeed, including actual Linux compile/Windows build/Mesa smoke. Full41770104678 reaches a real324-entry summary:322 distinct passes,2 unchanged sprite-art failures,0 skipped. No waiver/golden changes; overall workflow success is not all-test success. The preflight classloader failure is resolved. Physical hardware and complete Castle acceptance remain separate.
 
 DEV-251 preserves misleading diagnostic domains and the actual corrected controls; production rasterizer is unchanged. DEV-252 preserves rejected software-texture/flat-post studies. Other original museum candidates remain rejected and outside runtime; next independently refine four-posters, massive fireplaces, tapestries/paintings/carpets, statues and heraldic displays to the same reference/budget/contact standard, then complete training, relic/plant services, story/ruin/restoration layers and full hub journey. No stage is accepted; all29 map packets remain in scope. No round-time testing.
+
+
+## Generated materials, bed UVs and canopy joints — 3 November
+
+Owner-directed built-in image generation now supplies fireplace, bed, curtain and armour artwork. Actual runtime GLBs: fireplace26 authored faces/56tri, armour1036, bed828 after replacing overlapping roof-rail end-caps with a mitered ring. Bed grain has consistent physical scale, carving only on the inward headboard and folded edge UVs. Actual GLB positions/normals and intentional UV/geometry changes are documented. Source/export support and detached-helmet negative controls remain enforced. Six native lodging beds, archive armour and cold common-room fireplace are captured through the real editor service.
+
+All32 targeted checks pass against pinned02bf804a plus explicit scoped source overlays, isolated from uncommitted safe-area work and its locked shared JAR. Actual final327-entry preflight executes no bodies; no all-regression-success claim. Native fixture switches, full39-space flood/3 seals, basement terrain opening and save/reopen remain checked. Fireplacex8.4 blocked an existing switch approach; x7.6/z22.66 passes the retained check without changing its criterion. Generated alpha253/255 is correctly tested against the real MASK cutoff, not forced opaque or threshold-waived.
+
+Prior merged6fcb9791 native41775037349/GPU41775037214 succeeded; full41775037193 truly completed322/3 out of325, including two existing art failures and90-second PreparedLightBatchParityTest timeout. Isolated current parity passes around50seconds; DEV-253 remains open until exact CI evidence resolves it. No round-time tests. Evidence/source snapshots: verification/castle-imagegen-2026-11-03. Full Castle and all29 packets remain active; finish remaining museum kit, protected training/services, ruin/restoration detail and full hub acceptance next.

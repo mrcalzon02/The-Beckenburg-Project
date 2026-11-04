@@ -3174,29 +3174,20 @@ public final class SceneRenderer {
         sceneWater(null,gpuFrame,clock);long geometryRendered=System.nanoTime();
         // Four real approved source-art directions, composited after castle
         // geometry with its actual depth buffer (never through walls).
+        double playerFloor=CastleHubArchitecturalPlan.elevation(x,z,eyeHeight-1.62);
+        if(eyeHeight-playerFloor>=.9&&eyeHeight-playerFloor<=1.8)
+            EntityFootShadow.draw(pixels,depths,x,z,yaw,pitch,x,z,playerFloor-(eyeHeight-1.62),
+                .38,145,renderWidth,renderHeight,focal);
         if(eyeHeight<2.0){
-            DirectionalSprites.draw(pixels,depths,x,z,yaw,pitch,
-                CastleArchive.KEEPER_X,CastleArchive.KEEPER_Z,0,"lore_master",
-                1.79,.98,GroundedSpriteFeet.relativeElevation(0,eyeHeight),255,
-                lightsOn&&map.lightOn(CastleArchive.KEEPER_X,1.0,
-                    CastleArchive.KEEPER_Z),renderWidth,renderHeight,focal);
-            // Same physical coordinates as the existing independent dialogue zones.
+            map.residents().update(map,clock,x,z);
             for(var resident:CastleRelations.Resident.values()){
-                if(resident==CastleRelations.Resident.MATTHIS_ROOK)continue;
-                String art=switch(resident){
-                    case ELSBETH_VALE->"elsbeth_vale";
-                    case ROWAN_PIKE->"rowan_pike";
-                    case TOMAS_GREAVES->"tomas_greaves";
-                    case MIRELLE_ASH->"sister_mirelle_ash";
-                    case MATTHIS_ROOK->throw new AssertionError("Matthis already drawn");
-                };
-                DirectionalSprites.draw(pixels,depths,x,z,yaw,pitch,
-                    resident.x,resident.z,0,art,1.79,.98,
-                    GroundedSpriteFeet.relativeElevation(0,eyeHeight),255,
-                    lightsOn&&map.lightOn(resident.x,1.0,resident.z),
-                    renderWidth,renderHeight,focal);
+                var body=map.residents().body(resident);
+                DirectionalSprites.drawResident(pixels,depths,x,z,yaw,pitch,resident,body,
+                    GroundedSpriteFeet.relativeElevation(0,eyeHeight),
+                    lightsOn&&map.lightOn(body.x(),1.0,body.z()),renderWidth,renderHeight,focal);
             }
         }
+
         renderWeatherMeshes();
         long psxStart=System.nanoTime();
         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
@@ -3219,10 +3210,13 @@ public final class SceneRenderer {
      */
     public Nameplate castleResidentNameplate(CastleRelations.Resident resident){
         if(resident==null||eyeHeight>2.0)return null;
-        double distance=Math.hypot(resident.x-x,resident.z-z);
+        var body=waterCastle==null?new CastleResidentAnimation.Body(resident.x,resident.z,0,HunterSpriteAnimation.Pose.IDLE)
+            :waterCastle.residents().body(resident);
+        double height=body.pose()==HunterSpriteAnimation.Pose.CROUCH?HunterPosture.CROUCH_HEIGHT/HunterPosture.STANDING_HEIGHT:1;
+        double distance=Math.hypot(body.x()-x,body.z()-z);
         if(distance<.55||distance>3.2)return null;
-        Point torso=camera(new Point(resident.x,1.25,resident.z));
-        Point head=camera(new Point(resident.x,2.02,resident.z));
+        Point torso=camera(new Point(body.x(),1.25*height,body.z()));
+        Point head=camera(new Point(body.x(),2.02*height,body.z()));
         if(torso.z<NEAR||head.z<NEAR)return null;
         int px=(int)Math.round(renderWidth*.5+torso.x/torso.z*focal);
         int py=(int)Math.round(renderHeight*.5-torso.y/torso.z*focal);
@@ -3678,6 +3672,11 @@ public final class SceneRenderer {
     private void renderCharacterSprites(HouseMap map,int ghostRoom,boolean visibleGhost,
             int hunterRoom,double clock,List<RemoteBody> others,Apparition apparition){
         if(hunterAnimationMap!=map){hunterAnimation.reset();hunterAnimationMap=map;}
+        double playerFloor=map.groundHeight(x,z,map.roomAt(x,eyeHeight-1,z));
+        if(eyeHeight-playerFloor>=.9&&eyeHeight-playerFloor<=1.8)
+            EntityFootShadow.draw(pixels,depths,x,z,yaw,pitch,x,z,playerFloor-(eyeHeight-1.62),
+                .38,145,renderWidth,renderHeight,focal);
+
         if(visibleGhost){
             double gx=apparition==null?map.centerX(ghostRoom):apparition.x();
             double gz=apparition==null?map.centerZ(ghostRoom):apparition.z();
@@ -3690,6 +3689,9 @@ public final class SceneRenderer {
             int alpha=phase==LanGhostAnimation.Phase.MATERIALIZE
                     ?Math.max(45,(int)(255*progress/(double)LanGhostAnimation.MATERIALIZE_TICKS))
                     :phase==LanGhostAnimation.Phase.RECOVER?205:255;
+            EntityFootShadow.draw(pixels,depths,x,z,yaw,pitch,gx,gz,
+                (apparition==null?map.groundHeight(gx,gz,ghostRoom):apparition.y())-(eyeHeight-1.62),
+                .42,145*alpha/255,renderWidth,renderHeight,focal);
             if(apparition!=null&&apparition.orb()){
                 renderSpiritOrb(gx,gz,(apparition==null?map.groundHeight(gx,gz,ghostRoom):apparition.y())+.98+.18*Math.sin(clock*4),clock,apparition.greenTint());
             }else{
@@ -3708,6 +3710,10 @@ public final class SceneRenderer {
         // Separate Twin member B is positioned and disclosed by the host.
         // It does not create a second GhostDomain or a second damage source.
         for(Apparition companion:additionalGhostBodies){
+            EntityFootShadow.draw(pixels,depths,x,z,yaw,pitch,companion.x(),companion.z(),
+                companion.y()-(eyeHeight-1.62),.42,145,renderWidth,renderHeight,focal);
+
+
             if(companion.orb()){
                 renderSpiritOrb(companion.x(),companion.z(),companion.y()+.98,clock,companion.greenTint());
             }else{

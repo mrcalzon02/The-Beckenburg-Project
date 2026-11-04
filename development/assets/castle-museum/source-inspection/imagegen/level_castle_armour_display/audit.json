@@ -1,0 +1,33 @@
+{
+  "source": "assets\\runtime\\models\\level_castle_armour_display.glb",
+  "sha256": "f1a59408bc99af5ed8ec0a6dae03e727a1c4ddd9623259e4e18d325d8eab1a90",
+  "materials": [
+    {
+      "mesh": 0,
+      "primitive": 0,
+      "material": "Castle field harness / painted steel leather stone",
+      "image": 0,
+      "triangles": 1036,
+      "uv_u": [
+        0.00390625,
+        0.99609375
+      ],
+      "uv_v": [
+        0.12890625,
+        0.99609375
+      ],
+      "source_sampler": "glTF normalized UV0, SVG V-origin top-left"
+    }
+  ],
+  "warnings": [],
+  "images": [
+    {
+      "id": 0,
+      "name": "Castle field harness / generated component atlas",
+      "width": 512,
+      "height": 512,
+      "png_sha256": "dd59a75080539159a84cb7950c78f967cfc20a616182075ee7164ec1d26c0c7b",
+      "overlay_triangles": 1036
+    }
+  ]
+}

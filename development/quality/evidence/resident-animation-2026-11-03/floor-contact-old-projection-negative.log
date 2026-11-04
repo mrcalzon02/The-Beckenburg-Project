@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: floor clips opaque body pixels: elsbeth_vale pitch=-0.5 eye=2.05 missing=49/4977
+	at org.beckenburg.SpriteFloorContactTest.check(SpriteFloorContactTest.java:4)
+	at org.beckenburg.SpriteFloorContactTest.main(SpriteFloorContactTest.java:19)
