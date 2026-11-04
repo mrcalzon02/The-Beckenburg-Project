@@ -121,6 +121,8 @@ public final class SceneRenderer {
     public double x=20.5,z=27.5,yaw=-Math.PI/2,pitch=-.09;
     /** Actual current eye elevation in world space; supports real stair ascent. */
     public double eyeHeight=1.62;
+    /** Physical support for solo evidence when the camera eases between postures. */
+    public double playerFeetElevation=Double.NaN;
     public boolean lamp=true;
     public double lampReach=7.5,lampIntensity=.72;
     public double lampWidth=.44;
@@ -245,6 +247,7 @@ public final class SceneRenderer {
         // not the world frame or HUD cached at a different pose/tick.
         x+=Math.sin(yaw)*.12;z+=Math.cos(yaw)*.12;
         eyeHeight=source.eyeHeight-.04;
+        playerFeetElevation=source.playerFeetElevation;
         lamp=source.lamp;lampReach=source.lampReach;
         lampIntensity=source.lampIntensity;lampWidth=source.lampWidth;
         flameLamp=source.flameLamp;
@@ -3277,7 +3280,8 @@ public final class SceneRenderer {
         soloPlacedSalt=session.placedSalt();
         setHauntings(session.hauntings());
         uvLamp=session.uvPowered();uvTier=EquipmentTiers.Tier.I;uvTick=session.ticks();
-        uvMarks=session.uvVisible(x,eyeHeight-HunterPosture.eye(session.crouched()),z,yaw);
+        uvMarks=session.uvVisible(x,Double.isFinite(playerFeetElevation)?playerFeetElevation:
+            eyeHeight-HunterPosture.eye(session.crouched()),z,yaw);
         render(map,room,visible,
             session.wardPrepared()?session.anchorRoom():-1,-1,clock,allies,figure,session.counterMarks());
     }

@@ -668,6 +668,7 @@ public final class InvestigationGame {
         private final Set<Integer> down=new HashSet<>();
         private final HouseMap map;
         private final SceneRenderer scene=new SceneRenderer();
+        private final CrouchCamera crouchCamera=new CrouchCamera();
         private final SceneRenderer photoRenderer=new SceneRenderer();
         private final RoomLighting lights=new RoomLighting();
         private final InvestigationSession session;
@@ -928,7 +929,7 @@ public final class InvestigationGame {
                 chatInput.requestFocusInWindow();
             }
         }
-        private double feetY(){return scene.eyeHeight-HunterPosture.eye(session.crouched());}
+        private double feetY(){return scene.eyeHeight-crouchCamera.eye();}
         private int currentRoom(){return map.roomAt(scene.x,feetY(),scene.z);}
         private boolean atVanFloor(){return Math.abs(feetY()-map.floorY(HouseMap.EXTRACTION_ROOM))<.25;}
         private EquipmentLoadout.Item aimedRack(){return atVanFloor()
@@ -1034,7 +1035,7 @@ public final class InvestigationGame {
             }
             var prior=new LevelDefinition.Vec(scene.x,feetY(),scene.z);
             var supported=GroundRecovery.recover(map,prior,lastSupportedRoom,HunterPosture.height(session.crouched()));
-            if(!supported.equals(prior)){scene.x=supported.x();scene.z=supported.z();scene.eyeHeight=supported.y()+HunterPosture.eye(session.crouched());}
+            if(!supported.equals(prior)){scene.x=supported.x();scene.z=supported.z();scene.eyeHeight=supported.y()+crouchCamera.eye();}
             int safe=map.roomAt(scene.x,feetY(),scene.z);if(safe>=0&&map.traversable(scene.x,feetY(),scene.z,HunterPosture.height(session.crouched())))lastSupportedRoom=safe;
             atmosphere.setActive(isShowing());
             buildingSoundscape.setActive(isShowing());
@@ -1042,6 +1043,7 @@ public final class InvestigationGame {
             buildingSoundscape.setContext(outdoorRoom,lights.breaker());buildingSoundscape.listener(scene.x,scene.eyeHeight,scene.z,scene.yaw,lights.breaker());
             atmosphere.setOutside(outdoorRoom>=0&&map.outside(outdoorRoom));
             long now=System.nanoTime();double dt=Math.max(0,Math.min(.075,(now-last)/1e9));last=now;
+            double feet=feetY();scene.eyeHeight=feet+crouchCamera.advance(session.crouched(),dt);
             double forward=wheelOpen||chatInput.isVisible()?0:
                 (down.contains(KeyEvent.VK_W)?1:0)-(down.contains(KeyEvent.VK_S)?1:0);
             double strafe=wheelOpen||chatInput.isVisible()?0:
@@ -1062,10 +1064,11 @@ public final class InvestigationGame {
                     moved=map.resolveMove(new LevelDefinition.Vec(scene.x,feetY(),scene.z),scene.x+dx,scene.z,HunterPosture.height(session.crouched()));
                     if(moved==null)moved=map.resolveMove(new LevelDefinition.Vec(scene.x,feetY(),scene.z),scene.x,scene.z+dz,HunterPosture.height(session.crouched()));
                 }
-                if(moved!=null){session.leaveHiding();scene.x=moved.x();scene.z=moved.z();scene.eyeHeight=moved.y()+HunterPosture.eye(session.crouched());}
+                if(moved!=null){session.leaveHiding();scene.x=moved.x();scene.z=moved.z();scene.eyeHeight=moved.y()+crouchCamera.eye();}
                 if(Math.hypot(scene.x-priorX,scene.z-priorZ)>.0001)
                     GameSfx.play(LanSound.stepCue(map,currentRoom()));
             }
+            scene.playerFeetElevation=feetY();
             accumulator+=dt;
             while(accumulator>=.1){
                 session.clutterLook(scene.yaw,scene.pitch);
@@ -1332,7 +1335,7 @@ public final class InvestigationGame {
                 scene.lamp=!scene.lamp;
                 GameSfx.play(scene.lamp?LanSound.Cue.DEVICE_ON:LanSound.Cue.DEVICE_OFF);
             }
-            if(key==KeyEvent.VK_CONTROL){double feet=feetY();if(session.posture(!session.crouched(),scene.x,feet,scene.z))scene.eyeHeight=feet+HunterPosture.eye(session.crouched());}
+            if(key==KeyEvent.VK_CONTROL&&!down.contains(key)){double feet=feetY();if(session.posture(!session.crouched(),scene.x,feet,scene.z))scene.eyeHeight=feet+crouchCamera.eye();}
             if(key==KeyEvent.VK_L)session.toggleHide(scene.x,feetY(),scene.z);
             if(key==KeyEvent.VK_F5||key==KeyEvent.VK_F12||key==KeyEvent.VK_CLOSE_BRACKET){
                 var o=new LooseClutter.Observer(0,scene.x,feetY(),scene.z,scene.yaw,scene.pitch,true,HunterPosture.eye(session.crouched()));

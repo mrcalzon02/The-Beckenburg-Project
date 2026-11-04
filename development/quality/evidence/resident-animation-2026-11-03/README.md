@@ -17,4 +17,4 @@ The upper character concept masters were preserved. New derivative standing shee
 
 Latest independently inspected existing CI: full round `41804015121` PASS and renderer `41804010652` PASS at `0f718640`; installer `41775227415` PASS at `02bf804a`. Those predate this implementation. No claim of an installed-copy update, new installer publication, complete regression-suite acceptance, or multi-PC visual acceptance is made here.
 
-Publication: automatic approval review rejected the GitHub push because explicit source/asset export authorization is required. Local implementation and evidence are complete; remote publication awaits user approval.
+Publication: user explicitly authorized the source/art/log upload and merge. PR #61 merged as `55bea511eb8199ddebdc21b615a8e96a46f59946`; the remote main SHA was independently read back.
