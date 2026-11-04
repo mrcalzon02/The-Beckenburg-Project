@@ -81,3 +81,154 @@ Owner direction: unify, merge and publish before resuming the map rebuild. Prese
 Complete Java 17 package and fresh root-test compilation pass. Actual packaged TCP host/join/evidence/identification/ritual/settlement passes. Reconciled desktop campaign passes physical mode acknowledgement, refused legacy extraction, actual van control, durable one-time result and same-window return. Native stale-publication protection, indexed/perspective picking and real perspective mouse/history/save/reopen/publication checks pass. Gallery has 2,307 indexed PNGs. Logs and exact source references are retained under `verification/unification-2026-11-03/`.
 
 Prior map-source `d4294b4c` runs 41322252644 (GPU), 41322260127 (full multiplayer) and 41322265955 (room audit) are terminal SUCCESS. Raw logs prove the saved editor terrain-hole and persisted USER fixes. That older full run still has advisory 260 passed / 12 failed / 25 unexecuted of 297, and Church swept traversal still fails; later editor recovery records have their own newer results. Do not transfer old counters or map acceptance to the unified source. Next: verify unified remote/main publication and exact-source checks, then resume the complete roster rough batch, starting with actual Prison cell/gallery/service construction decisions. Full map goal remains active.
+
+
+## Unification published, roster roughing resumed — 3 November
+
+PR #58 merged successfully. Remote main and rebuild branch were independently read back at `127bead2e3a519f2c985701d5a37fcd86d8fc2ee`; local main and the active rebuild checkout were fast-forwarded to that same commit. This completes the owner's unify/merge/publish-first instruction. Main's exact-source full multiplayer 41672923465, installer 41672923313, GPU 41672923389, native editor 41672923352 and map audit 41672923322 are live at last poll. Gallery index 41672923226 passes; Pages 41672915772 is queued. Preserve these handles and inspect actual terminal results rather than launching duplicates.
+
+Resumed S02 with Prison: 98 actual architectural-space reservations and 112 connections. Thirty-two independent ordinary cells plus two isolation cells, cell-door galleries, two separated flights per wing, shared showers/changing, public/custody visitor separation, real intake/search/holding/records/guard functions, medical/food-service separation and underground plant/laundry now have explicit measured locations. The fifth stair serves the basement, whose full editor hole is reserved but not authored. Source-sized cell fixture/bed fit is checked; compact camp-bed bounds are a size reference only, with a fixed steel bed derivative still required. Planning SVG/PNG and five stair sections are generated from one authority. No runtime promotion or stage acceptance is granted.
+
+Next: inspect merged-main CI and Church's still-open traversal issue against current source, then continue the entire roster rough batch (Mansion, Farmhouse, Asylum, Academy, College, Church, Castle and remote/annex packets). Finish all 29 rough decisions before general blockout; House remains the proven construction-method pilot. Full map goal remains active.
+
+
+Merged-source follow-up: installer 41672923313 and native editor 41672923352 are terminal SUCCESS; Pages 41672915772 and gallery index 41672923226 also SUCCESS. The deployed gallery returns HTTP 200 and its actual basement-terrain cutaway PNG exactly matches the committed `127bead2` bytes (record under `verification/unification-2026-11-03/deployed-gallery.json`). GPU 41672923389, full multiplayer 41672923465 and complete room audit 41672923322 remain live at last read. These successes do not accept the complete roster.
+
+The new Prison rough and labeled PNG are being checkpointed on the rebuild branch after unification. They remain subsequent S02 work rather than a new runtime release; their gallery deployment follows the next accepted batch integration. Full map scope and all unaccepted stage gates remain intact.
+
+
+## Editor-agent use verified — 3 November
+
+Owner asked that Editor Agent Services be useful to the map rebuild. Inspected the actual mission host over `EditorAgentCli` in a dedicated project home. Church inspection exposes INSPECT/TRANSACT/UNDO/REDO/SAVE/REOPEN/RECOVER_PREVIOUS/CAPTURE/TEST, but its only mutation operation is `move-prop`; its only test is `mission-runtime-parity`. Executed that test against the native session: all 32 current Church props and their colliders match the actual runtime. Captured and visually inspected the real `SceneRenderer.drawPractice` output through the service, retained in `captures/editor-service/`. No prop was moved merely to demonstrate an API.
+
+This service is useful immediately for fit-out edits, native parity, journals/recovery and real render evidence. It does not yet expose architecture, stairs or terrain edits, and its parity test does not certify traversability. Those structural operations must be connected to the same human-editor/native authority when the rebuild needs them; do not mislabel Java/rough-plan edits as service transactions.
+
+Merged main 127bead2 GPU41672923389, full41672923465 and room audit41672923322 are now terminal SUCCESS. Raw full transcript executes all315 tests: 312 pass and three fail (GhostSpriteAtlasIntegrationTest, TwinBodyVisualTest, LanWorldControlsTest). Raw GPU proves all11 map types including persisted USER. Actual map audit still reports Church traversal failure. Local reproduction reaches -3..+3 but cannot enter rooms8/9/10 (nine room/socket goals,159429 states). LanWorldControlsTest locally reproduces obsolete ACCEPT|EXTRACT expectation after entering VIEW3D. Next: use the service for supported native inspection/evidence while fixing actual Church upper-opening authority and the stale physical-extraction control test; preserve art golden tests until their source changes are inspected. Then continue the entire roster rough batch. Full map goal remains active.
+
+
+## Native editor service now checks physical routes — 3 November
+
+Implemented mission-open-routes on the actual LevelEditorAgent used by the editor and CLI. It shares the runtime swept-capsule flood with AuthoredLevelReachabilityTest, clones door state without touching live state, and preserves persisted editor terrain surfaces. This is an open-door goal check, not hunt/interaction/complete-map acceptance. Supported mission mutations remain move-prop; architecture and terrain punching are not falsely presented as agent transactions.
+
+DEV-232 repairs the reproduced Church failure: contained choir-loft doors now penetrate the tall parent nave wall in rendering and physics, and the tower threshold moves past the stair guard. Actual packaged regression checks closed/open player and optical collision, crouch, rendered aperture, solid jamb/lintel/lower wall, all15 room goals and functional sockets. The actual service reports native parity and169097 reached positions, Y-3..6. House saved editor terrain holes and filled-ground negative controls remain passing, with61328 physical pilot route positions. Actual door captures are in captures/church-upper-openings; detailed logs/service response in verification/church-openings-2026-11-03. No stage is promoted.
+
+Next: finish the complete roster rough batch and use this service diagnostic at map checkpoints; retain outstanding physical van shortcut test correction and both art-golden diagnoses. Full map rebuild remains active.
+
+All nine selectable maps pass the shared physical route check. Final packaged Church regression passes; no map acceptance is inferred.
+
+
+## Mansion household rough checkpoint - 3 November
+
+Revised S02 Mansion authority now generates50 spaces/61 proposed connections, separate formal/private/household circulation, two guest suites, principal washing/dressing, four staff beds, independent service stairs and an exact two-rectangle cellar terrain-hole union. Actual source-sized bed/bathroom bounds and pivots are checked. Planning PNG and four flight sections remain design evidence only. No stage accepted; dispatched Mansion is unchanged. Next: Farmhouse and the remaining roster roughs before general blockout.
+
+
+## Farmhouse working-yard rough checkpoint - 3 November
+
+Revised S02 Farmhouse adds34 architectural spaces/36 proposed connections: bounded household food/cleanup/storage, private WC/washing, parents/two-child sleeping, stall/feed/equipment bays off4m barn aisle, real loft stair, separate repair/parts/consumables/laundry and two-rectangle saved-terrain cellar-hole reservation. Seven native asset bounds/pivots fit source scale. A2m service gap prevents the rear barn doorway opening into the parts store. Labelled plan reviewed; no runtime dispatch or stage acceptance. Continue Asylum/Academy/College/Church/Castle and remote/annex roughs; actual fixture/support/terrain/navigation and full acceptance remain open.
+
+
+DEV-233: corrected stale LanWorldControlsTest after actual before-state reproduction. Real X-key extraction is rejected for physical hunters and leaves the round running; real TCP VANDOOR then closes cargo and synchronizes RETREATED. Packaged local test passes without production-policy changes. Exact906 acceptance handles editor41681790664/GPU41681802504/full41681818348 remain live; inspect terminal raw evidence and do not restart. Continue Asylum rough batch.
+
+
+## Asylum care-pavilion rough checkpoint - 3 November
+
+Revised S02 Asylum authority generates67 spaces/78 proposed links, sixteen patient places in eight bounded rooms, floor-specific observation/linen/sanitation, admissions privacy, treatment clean/soiled services, changing/bathing/drying, separate food/dirty dish routes, quiet care, patient lift reservation and separate cellar laundry/plant. Six program route sequences and sixteen native-sized bed reservations are checked. Two-rectangle saved editor terrain-hole union is explicit. PNG reviewed; no runtime dispatch or stage accepted. Continue Academy/College/Church/Castle and remote/annex rough batch; retain House construction pilot and all physical/native/network/performance gates.
+
+
+## Academy residential cloister checkpoint - 3 November
+
+Revised Academy S02 generates61 spaces/68 proposed links: real open quadrangle, covered public/staff circulation,16 pupil plus4 staff native-sized bed reservations, separate student/staff sanitation, bounded teaching/lab/library functions, kitchen/dirty-return/service rooms and two upper return stairs. North ground services support the reserved residence footprint; headmaster/records/private WC have a covered approach. Full editor terrain punching required for archive/plant/stair footprint. Plan reviewed; no stage/runtime promotion. Next College/Church/Castle and remaining remote/annex roughs, preserving batch order and all final physical/native/network/performance gates.
+
+
+## College three-building checkpoint - 3 November
+
+Revised S02 College now generates81 spaces/88 proposed links, genuinely separated teaching/library/residence buildings, sixteen beds in eight private twin rooms, upper bridges outside bedrooms, independent residence stairs/lift reservation and a service tunnel with two ground exits. Full-width shared-boundary doorway validation now passes all seven revised studies. Six named program/return paths, native bed fit, real ground building separation and six stair sections are checked. Buried tunnels require saved editor punching plus actual structural ceilings/ground cover. PNG reviewed; no runtime/stage acceptance. Continue Church/Castle and remote/annex rough batch.
+
+
+## Owner search-size amendment applied - 3 November
+
+Owner explicitly caps actual accessible rooms at about40 per site to limit search scope. Policy now covers all29 packets and supersedes any implied all-room access. Count includes corridors/stairs/services/exterior sectors/staging; fifteen stable mission owners are not the room budget. Revised envelopes: School40, Prison37, Mansion39, Farmhouse34, Asylum40, Academy38, College40. Preserve complete normal-use architecture as sealed context; do not assign objectives, hiding or ghost spawn/anchor activity beyond seals. Seven complete open layouts and explicit boundary lists pass budget/connectivity/owner/ritual/gameplay eligibility checks; five actual negative controls reject invalid revisions. Gray plan rooms and red boundary crosses show sealed context; cyan/amber routes stay inside open envelopes. These are design constraints pending actual native/runtime fixed leaves, infill/capped stairs, collision/interaction/ghost tests and actual map construction. Remaining22 room-level audits remain explicit in search-envelope-register.json.
+
+College design now has81 total architectural spaces but only40 accessible;41 are sealed context. This is not an81-room investigation. Existing complete building capacity/fixtures remain useful behind seals. Continue Church/Castle and remote/annex roughs under the new cap, then native/runtime construction in the approved batch order.
+
+
+Owner clarification: build the maps; round-time testing is not part of this operation. Removed timed-mission gates from the active plan, all29 briefs, policy, register and rough generator. Preserve functional geometry/terrain/route and required gameplay verification; do not stall construction for round-duration experiments.
+
+
+## Church bounded construction rough - 3 November
+
+Church revised S02:33 spaces,29 accessible,4 sealed crypt vaults. Preserve characteristic footprint and0/+3/+6/-3 elevations; separate crypt stair beneath music wing frees nave seating. Forty native-size chair reservations keep2m centre and0.87m side aisles; parish/vestry/organ functions have real child rooms. Three measured flights include landing/headroom/guard obligations; tower threshold lies beyond choir guard. Full saved editor terrain punching under entire crypt remains mandatory. Plan reviewed; no runtime/stage acceptance. Continue Castle and remaining remote/annex roughs under<=40 accessible-space cap. Build maps without round-time testing.
+
+
+## Castle full-revision priority and construction foundation - 3 November
+
+Owner directs finishing Castle completely before resuming other locations. Revised source keeps actual HQ core,9 stations,5 residents, parked van,39 accessible spaces and protected training; no live HQ haunting or round-time testing. Actual implementation now permits signed west-annex and negative cellar native authoring, preserves all old cell IDs, refreshes runtime ground support after live edits/history, and exposes bounded surface edits through the real Castle Editor Agent. Tests pass old/new native geometry, history/recovery, stations, doors and actual service. Actual annex/body/optical/terrain/lower-stair/roof/room/detail construction is not complete. Next: construct full native Castle, saved editor terrain holes and correct lower/upper physics, then furnish/refine and verify the entire working hub before returning to other maps.
+
+
+## Castle native training annex — 3 November
+
+Actual native surfaces generated from the Castle rough authority now build four ground rooms, shared cut doorways, buried foundations, timber beams, supported ceilings/lamps and a pitched roof. The Castle facade has a real 1.4m connection while preserving its adjacent casement. Runtime and human editor consume the same native defaults.
+
+The packaged CastleTrainingAnnexTest reaches all four rooms through 81,366 physical positions from native spawn. It checks real partition and closed/open door body/optical collision, indoor circuits, fixture support and beam clearance, switch-off lighting energy, exact save/reopen. Seven accompanying Castle regressions pass; retained logs state their scope. New scene migration only adds annex lamps to matching existing architecture, and preserves deliberate current-version deletions.
+
+The first render exposed a tree in the corridor (DEV-235). The rejected image is retained and labeled; the corrected capture is actual runtime structural construction. No furnishing, training-exercise binding, cellar, upper lodging, whole-hub visual acceptance or full Castle completion is claimed. Next: build saved editor terrain punching and real cellar circulation, then complete upper construction and fit-out before resuming other locations. No round-time testing.
+
+
+## Castle saved editor terrain — 3 November
+
+Actual editor StitchedHeightmapWorld and AdaptiveTerrainTopology now persist120 punched leaves over the entire planned cellar footprint X28.5..43/Z17.5..34. TerrainFootprintCutout performs the edits; source heights remain unchanged. A second authoring run adds zero splits/cuts and produces the same SHA256 9f3d717b1ef7d5f532dcb5a66a84b02d348bbe4852bae17b351b7de993598882.
+
+The editor-published scene exports746 faces through TerrainSceneNativePhysics. Production JAR loads the exact fingerprinted export. Castle renderer replaces the corresponding procedural ground cells with these actual faces, avoiding duplicate hidden ground. Native body and lighting queries consume the same surface. The real Editor Agent Services host exposes castle-world-terrain diagnostics through its normal TEST endpoint.
+
+Packaged CastleWorldTerrainTest verifies every half-metre sample over the whole opening, body/optical/support passage, uncut surrounding support/collision, editor/package checksum parity, exactly746 rendered world triangles and a separate actual unpunched editor-world negative. Annex, lighting, snapshot, recovery, geometry, portal, hub, signed construction and House saved-terrain regressions pass. Native triangle inspection PNG was viewed; it is labeled native terrain inspection, not runtime cellar completion.
+
+Next: construct actual cellar walls/floors and architectural deck void, continuous flight/landings/guards, elevation-aware furnishings and lower movement. Current architectural ground floor remains intact until that construction is integrated; this checkpoint does not claim that players can enter a completed cellar. Finish full Castle before the remaining locations; no round-time testing.
+
+
+Published Castle terrain checkpoint0c888742 and lock-file cleanupb5e15c25; exact remote branch heads verified. Source-bound rough/baseline/gallery fingerprints refreshed after native terrain changes. Native41726765803, GPU41726772731 and full41726781593 dispatched once atb5e15c25, initially queued; preserve handles, inspect actual results and full raw transcript before any acceptance claim. Exact saved Castle/House terrain bytes pass all three Git EOL modes. Next actual construction: floor opening, continuous lower flight/landings/guards and elevation-aware support/props/interactions, then full Castle upper/refinement. Terrain hole alone is not cellar traversal.
+
+
+## Castle native cellar construction — 3 November
+
+Native defaults now construct four cellar rooms atY-3, their actual wall/lintel/portal boundaries, an18-riser stone flight, lower/upper landings, masonry cheeks and protected ground opening. tools/build_castle_cellar.py derives room/wall/flight coordinates from the revised Castle rough. Six native lamps include four supported ceiling fittings and two fitted stair-wall sconces; the lower wall switch controls the cellar independently of the store above.
+
+A persisted native VOID named cellar-stair-opening subtracts the architectural slab atY0. It is selectable/editable through the human inspector and the same actual Editor Agent put-surface/remove-surface operations, shared history and native codec. Removing it closes actual body/head and optical passage while the editor terrain hole remains punched; undo/redo restores/removes the physical opening. Native floor height/depth supplies the rendered tops, soffits/edges and solid light blockers, including the filled stone step masses.
+
+The existing saved editor world hole remains authoritative beneath the entire cellar. The actual packaged CastleCellarConstructionTest flood reaches104609 physical states from native spawn and all four cellar/four annex rooms. Explicit25mm descent AND ascent sweeps pass. Filled editor-world and removed-native-VOID negatives block the same real flight. Checks cover lower leaf closed/open body/optical behavior and aiming, no elevation teleports, headroom, unsupported ground, actual lamp attachment/brightness, independent circuit, native save/reopen, source-sized furniture vertical overlap and elevation-specific footfall. Ground workstation/resident/warehouse prompts are restricted to the ground floor.
+
+All22 targeted packaged tests listed in verification.json pass. This includes retained showroom/stock, source GLB wall clearance, original stations, real inventory/campaign preparation, residents, orientation, menus, native history/recovery, all11 van map types including persisted USER, and the separate House saved-terrain pilot. These checks do not certify the complete revised Castle or all multiplayer/platform/release behavior. Historical logs without a test-class name, rejected-* logs and the first route probe retain earlier states; the named final logs and verification.json are the checkpoint authority.
+
+DEV-236 retains both rejected landing-transition and upper-return evidence. DEV-237 retains blocked warehouse browsing and stale centre-bound evidence. All15 racks, portable equipment families and tiers are retained; eastern/north racks move clear of the guarded flight. Every transformed rack/exhibit vertex fits the actual masonry/floor/ceiling faces, and all browsing stands remain traversable. DEV-238 retains the pre-lighting stair capture and adds supported in-flight light. Final actual runtime stair/hall captures were viewed and are published with the shared gallery; pre-lighting-cellar-stair-runtime.png is the earlier structural view.
+
+No stage is accepted here. Remaining Castle work includes ground domestic/service partitions and fit-out, the actual upper west roof/bearing/lodging refit and six beds, supported household/service/relic/plant details, protected training-exercise bindings, permanent context seals and full Castle-to-case-to-Castle acceptance. Keep39 planned accessible spaces within the40-space cap. Finish Castle before returning to other maps. No round-time testing.
+
+
+Published native cellar checkpoint91e8f47b, remote SHA and actual stair PNG bytes verified. Local final22-test suite passes, including104609 native-spawn physical states, explicit descent/ascent, removed-VOID and filled-world controls, real lower leaf, six supported lamps/circuit and retained stock/GLB containment. Exact new native41731821001 is live and GPU41731832476 queued. Priorb5e full41726781593/job126233554539 remains live (actual TCP/gear/van steps passed; advisory manifest running); do not dispatch a competing full run because its concurrency policy cancels the existing one. Inspect raw transcript when terminal, then dispatch exact cellar source. Handles/publication readback are in verification/castle-cellar-2026-11-03. Full Castle and all-map goal remain unfinished.
+
+Next construction: remaining ground domestic/service rooms, followed by upper roof/bearing/lodging and six beds. Before adding the ground X37 store/repair/infirmary partitions, deliberately relocate the still-live east warehouse rack bank out of the future repair/infirmary rooms into coherent stock space; retain all15 source-sized fixtures, every family/tier and every usable browsing aisle. Do not simply partition through functioning stock. Inspect existing wardrobe/lounge and kitchen/common furniture before new walls. Native source generation, real fixtures/clearances and actual room/route/circuit ownership must follow the same coordinates. Protected training bindings, fit-out/detail, permanent context seals and full hub acceptance remain. No round-time testing.
+
+
+## Castle native ground programme — 3 November
+
+The real native default now has16 coherent core ground rooms:15 open rooms and one permanently sealed pantry. tools/build_castle_ground.py derives33 new internal wall/lintel/portal records and child-room volumes from the approved Castle rough. This separates WC/washing, wardrobe lounge, practice/common/kitchen/wash-up, network/operations, and stock/repair/infirmary functions. Existing stations/residents, source-size furnishings and the previous exterior openings are retained. Native privacy doors serve the WC/washing rooms; the sealed pantry has solid infill and no player-openable portal.
+
+All15 source-sized stock racks, every portable family/tier and readable equipment plaques now fit inside the bounded X28.5..37 stock room. West/east browsing aisles, main stock entrance, repair/infirmary door approaches and the existing counter are physically usable. The repair and infirmary rooms no longer contain displaced warehouse banks. Fourteen native fixtures reuse real source models: WC/toilet/basins, two showers, cooking/sink counters, wash-up counter, repair/preparation benches and first-aid bed/basin/table. Every transformed fixture vertex fits its room's actual wall/floor/ceiling faces. No guessed-top tabletop dressing was added.
+
+Room-specific circuits and reachable switches cover every open core room. A supported kitchen task light illuminates the cooking surface. Actual kitchen, washing, stock and infirmary runtime captures were viewed; these show basic functional fit-out, not final atmospheric/detail acceptance. Default authoring dimensions and runtime native attachment remain separate checks. Published cellar doorway IDs remain unchanged; new same-X/Z ground slots receive an elevation suffix and independent closed/open body/optical state and native assignments.
+
+A real native-spawn flood reaches99855 states, all15 open core rooms and all4 cellar rooms while the pantry stays inaccessible. Separate retained checks reach all4 annex rooms and both cellar ascent/descent routes. The native programme follows tagged saved partition surfaces. A scene without those new surfaces retains its original broad room owners and does not gain new ground switches or phantom ground door frames/body/optical blockers. Existing custom native objects/geometry are preserved rather than overwritten.
+
+All25 targeted packaged tests listed in verification.json pass. Actual Editor Agent Services inspect the rebuilt scene, run saved-world diagnostics and capture its kitchen at the exact native revision; ground-editor-service.txt retains the response. Named class logs plus verification.json are final authority; native-test.log is an earlier construction pass. This includes actual room/stock/fixture/lighting/door/native-history checks plus retained stations, campaign equipment preparation, network inventory, residents, menus, orientation, source GLB clearance, all11 van map types including persisted USER and House saved-terrain checks. No complete-map, physical hardware or full multiplayer/platform acceptance is claimed here.
+
+CI audit found a real verification defect (DEV-241): prior b5e full41726781593 is green overall, but its raw advisory suite records316 passes (315 unique), two unchanged art failures, then aborts on a qualified terrain test name before emitting a summary. The new terrain check did not run there. Fixed all new entries to short names, retained each family once, removed the duplicate HorrorAudioRoutingTest occurrence, and made the actual runner preflight every name/compiled entrypoint before launching processes. --validate accepts321 unique entries without executing tests. Actual subprocess negative controls reject qualified tail, duplicate and missing class before any test starts. Both original art tests/goldens remain unchanged; fresh exact-source full CI is required.
+
+Prior cellar native41731821001 succeeded. GPU41731832476 Windows and Mesa jobs succeeded, but the Linux source compile job spent its entire10-minute limit in git fetch and was cancelled before compilation. Its identical full checkout/compile/contracts now get20 bounded minutes; no assets, contracts or runtime performance thresholds were removed. Remote compile acceptance remains pending (DEV-242).
+
+DEV-239 preserves the blocked stock-switch approach. DEV-240 preserves an isolated current-source controlled omission reproducing No ceiling at -8,27; the original intermediate JAR was not retained, and the negative helper is explicitly labeled rather than presented as that artifact. DEV-243 verifies absence of phantom child-room owners/controls/leaves when the native programme is absent. Rejected/control evidence and final passing logs are kept distinct.
+
+No stage is accepted. Next: actual upper west bearing/roof/lodging refit with six lodging beds, bathroom/WC and sealed linen/eave context, preserving real library/rampart access. Then complete fit-out, protected training bindings, relic/plant services, weathering/environmental story and full Castle-to-case-to-Castle acceptance. The plan remains39 accessible spaces within the40 cap. Finish Castle before the remaining maps. No round-time testing.
+
+
+Published ground checkpoint50829e61: exact branch SHA and actual Editor Agent kitchen PNG bytes read back. Local25 targeted checks and321-entry manifest preflight pass; preflight executes no test bodies. Native41738078868, GPU41738083540 and full41738088189 are confirmed live at50829e61. Preserve these handles and inspect actual raw full summary; never infer321 test passes from preflight or advisory green. Prior b5e raw suite aborted after316 pass events/2 art failures; old91 GPU Linux fetch timeout is retained, not passed off as successful compilation. Exact handles/publication evidence: verification/castle-ground-2026-11-03.
+
+Next actual work: raise/refit the west upper bearing walls and roof; author the upper hall, three twin lodging rooms with six beds, private wash/WC, permanently sealed linen/eave context, actual library connection and northwest rampart infill. The annex roof remains lower; retain west casements, original stations/residents, ground pantry seal, all15 stock racks and the usable cellar stair/terrain void. Then finish services/training/plant/relic fit-out and detailed weathering/story before full hub acceptance. Full29-packet rebuild remains in scope; Castle is not complete. No round-time testing.

@@ -32,7 +32,7 @@ public final class CastleRebuildTest {
         }
         for(var room:CastleRooms.ALL)if(room.floor()==0){
             boolean reachable=false;for(int i=0;i<seen.length;i++)if(seen[i]&&room.contains((i%width)*.25,(i/width)*.25)){reachable=true;break;}
-            check(reachable,"supported route to "+room.name());
+            check(CastleGroundLayout.SEALED.contains(room.id())?!reachable:reachable,"open-room route or permanent context seal: "+room.name());
         }
         double elevation=0;
         for(double z=32.2;z>=21.8;z-=.05){elevation=CastleHubArchitecturalPlan.elevation(17.5,z,elevation);check(map.traversable(17.5,z,elevation),"stair ascent "+z);}
@@ -69,12 +69,12 @@ public final class CastleRebuildTest {
         for(var light:CastleHubDecor.LIGHTS)check(light.attached(map),"real lamp support "+light);
         for(var sw:CastleHubDecor.SWITCHES){
             check(CastleHubArchitecturalPlan.mountingWall(sw.x(),sw.y(),sw.z(),sw.yaw()),"switch mounting "+sw);
-            double x=sw.x()-Math.sin(sw.yaw())*.8,z=sw.z()-Math.cos(sw.yaw())*.8,feet=sw.y()>4?3.4:0;
+            double x=sw.x()-Math.sin(sw.yaw())*.8,z=sw.z()-Math.cos(sw.yaw())*.8,feet=sw.y()<0?-3:sw.y()>4?3.4:0;
             check(map.traversable(x,z,feet),"reachable physical switch "+sw);
             check(CastleHubDecor.aimed(map,x,feet,z,sw.yaw())!=null,"operable physical switch");
         }
         var lighting=new FixtureLighting(map);lighting.castleFrame(true,20);
-        for(var room:CastleRooms.ALL)if(!room.id().equals("gate")){
+        for(var room:CastleRooms.ALL)if(!room.id().equals("gate")&&!CastleUpperLayout.SEALED.contains(room.id())){
             double x=(room.x0()+room.x1())*.5,z=(room.z0()+room.z1())*.5,y=room.floor()+1;
             var lit=lighting.sample(0,x,y,z);lighting.castleFrame(false,20);var dark=lighting.sample(0,x,y,z);
             check(lit.energy()>dark.energy()+.08,"usable real lighting in "+room.name()+": "+lit.energy()+" vs "+dark.energy());

@@ -104,7 +104,10 @@ public final class GlbProps {
         // Exact-source fireplace A/B real-render captures show the wood and
         // green-marble islands aligned only when sampled at glTF's top-left V.
         // No source mesh, UV coordinates, or original PNG pixels are modified.
-        return "level_fireplace".equals(name)||
+        // Both wall-sconce power states share the original top-left glTF atlas.
+        // Inverting V paints the tube strip onto the housing and gray casing onto the diffuser.
+        return "lamp_3_on".equals(name)||"lamp_3_off".equals(name)||
+            "level_fireplace".equals(name)||
             "metal_barrel_mp_1".equals(name)||
             "canned_food_mp_1".equals(name)||"canned_food_mp_2".equals(name)||
             "kenney_medieval_detail_barrel".equals(name)||

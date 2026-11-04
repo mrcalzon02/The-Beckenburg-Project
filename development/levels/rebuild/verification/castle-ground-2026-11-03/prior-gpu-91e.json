@@ -1,0 +1,290 @@
+{
+  "createdAt": "2026-11-03T22:33:30Z",
+  "displayTitle": "Beckenburg GPU Renderer Acceptance",
+  "event": "workflow_dispatch",
+  "headBranch": "map/first-principles-rebuild-plan",
+  "jobs": [
+    {
+      "completedAt": "2026-11-03T22:46:47Z",
+      "conclusion": "cancelled",
+      "databaseId": 126250898962,
+      "name": "compile-gpu-java17",
+      "startedAt": "2026-11-03T22:36:43Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-03T22:36:45Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-03T22:36:44Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:46:44Z",
+          "conclusion": "cancelled",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-11-03T22:36:45Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:46:44Z",
+          "conclusion": "skipped",
+          "name": "Run actions/setup-java@v4",
+          "number": 3,
+          "startedAt": "2026-11-03T22:46:44Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:46:44Z",
+          "conclusion": "skipped",
+          "name": "Compile GPU and complete authoritative game sources",
+          "number": 4,
+          "startedAt": "2026-11-03T22:46:44Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:46:45Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 8,
+          "startedAt": "2026-11-03T22:46:44Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:46:45Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 9,
+          "startedAt": "2026-11-03T22:46:45Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41731832476/job/126250898962"
+    },
+    {
+      "completedAt": "2026-11-03T22:40:22Z",
+      "conclusion": "success",
+      "databaseId": 126250899316,
+      "name": "windows-build",
+      "startedAt": "2026-11-03T22:33:44Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-03T22:33:47Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-03T22:33:45Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:35:11Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-11-03T22:33:47Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:35:11Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-java@v4",
+          "number": 3,
+          "startedAt": "2026-11-03T22:35:11Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:35:52Z",
+          "conclusion": "success",
+          "name": "Package canonical assets with Java 17",
+          "number": 4,
+          "startedAt": "2026-11-03T22:35:11Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:36:04Z",
+          "conclusion": "success",
+          "name": "Measure actual House viewports from van to interior (CPU baseline + screenshot HUD)",
+          "number": 5,
+          "startedAt": "2026-11-03T22:35:52Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:36:13Z",
+          "conclusion": "success",
+          "name": "Verify prepared scenery reuse, image parity and scene invalidation",
+          "number": 6,
+          "startedAt": "2026-11-03T22:36:04Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:36:21Z",
+          "conclusion": "success",
+          "name": "Verify conservative static shell chunks preserve functional world geometry",
+          "number": 7,
+          "startedAt": "2026-11-03T22:36:13Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:38:31Z",
+          "conclusion": "success",
+          "name": "Verify stationary world resource and lighting contracts",
+          "number": 8,
+          "startedAt": "2026-11-03T22:36:21Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:38:39Z",
+          "conclusion": "success",
+          "name": "Verify C3 House basement authored depth ownership without portal culling",
+          "number": 9,
+          "startedAt": "2026-11-03T22:38:31Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:38:40Z",
+          "conclusion": "success",
+          "name": "Verify flyover preview readiness and finite fallback clock",
+          "number": 10,
+          "startedAt": "2026-11-03T22:38:39Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:38:42Z",
+          "conclusion": "success",
+          "name": "Preserve viewport profile frames, stage CSV and HUD even if another GPU check fails",
+          "number": 11,
+          "startedAt": "2026-11-03T22:38:40Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:39:35Z",
+          "conclusion": "success",
+          "name": "Package actual OpenGL 3.3 backend and source assets",
+          "number": 12,
+          "startedAt": "2026-11-03T22:38:42Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:39:51Z",
+          "conclusion": "success",
+          "name": "Assemble Windows GPU-first native launcher",
+          "number": 13,
+          "startedAt": "2026-11-03T22:39:35Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:40:04Z",
+          "conclusion": "success",
+          "name": "Launch GPU-capable native executable in explicit software recovery mode",
+          "number": 14,
+          "startedAt": "2026-11-03T22:39:51Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:40:17Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 15,
+          "startedAt": "2026-11-03T22:40:04Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:40:17Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-java@v4",
+          "number": 29,
+          "startedAt": "2026-11-03T22:40:17Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:40:20Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 30,
+          "startedAt": "2026-11-03T22:40:17Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:40:20Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 31,
+          "startedAt": "2026-11-03T22:40:20Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41731832476/job/126250899316"
+    },
+    {
+      "completedAt": "2026-11-03T22:42:56Z",
+      "conclusion": "success",
+      "databaseId": 126254286469,
+      "name": "opengl-mesa-smoke",
+      "startedAt": "2026-11-03T22:40:24Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-03T22:40:27Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-03T22:40:25Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:40:40Z",
+          "conclusion": "success",
+          "name": "Run actions/download-artifact@v4",
+          "number": 2,
+          "startedAt": "2026-11-03T22:40:27Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:40:40Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-java@v4",
+          "number": 3,
+          "startedAt": "2026-11-03T22:40:40Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:42:51Z",
+          "conclusion": "success",
+          "name": "Mesa OpenGL 3.3 real engine smoke",
+          "number": 4,
+          "startedAt": "2026-11-03T22:40:40Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:42:54Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 5,
+          "startedAt": "2026-11-03T22:42:51Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:42:54Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-java@v4",
+          "number": 10,
+          "startedAt": "2026-11-03T22:42:54Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T22:42:54Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 11,
+          "startedAt": "2026-11-03T22:42:54Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41731832476/job/126254286469"
+    }
+  ],
+  "updatedAt": "2026-11-03T22:46:48Z"
+}

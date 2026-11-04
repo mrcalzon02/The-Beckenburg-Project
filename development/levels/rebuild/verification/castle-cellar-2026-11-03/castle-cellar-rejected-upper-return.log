@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: Continuous ascending body sweep blocked at 24.0
+	at org.beckenburg.CastleCellarConstructionTest.check(CastleCellarConstructionTest.java:11)
+	at org.beckenburg.CastleCellarConstructionTest.main(CastleCellarConstructionTest.java:50)

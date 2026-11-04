@@ -1,0 +1,26 @@
+{
+  "source_sha": "b5e15c25c22be5762678b172e0dcc08934737f1e",
+  "state_at_dispatch": "queued; no remote acceptance claimed",
+  "runs": [
+    {
+      "id": 41726765803,
+      "workflow": "Editor Agent Service Acceptance"
+    },
+    {
+      "id": 41726772731,
+      "workflow": "Beckenburg GPU Renderer Acceptance"
+    },
+    {
+      "id": 41726781593,
+      "workflow": "Beckenburg Full Multiplayer Acceptance"
+    }
+  ],
+  "next": "Inspect these exact runs/raw regression transcript without restarting. Continue actual Castle architectural cellar opening and continuous stair; all-map rebuild remains incomplete.",
+  "observed_final": {
+    "native": "success",
+    "gpu": "success",
+    "full_workflow": "success; advisory regression aborts on invalid qualified manifest entry",
+    "full_raw_scope": "316 pass events / 315 unique; GhostSpriteAtlasIntegrationTest and TwinBodyVisualTest fail; no final suite summary; terrain test skipped by invalid entry",
+    "evidence": "../castle-ground-2026-11-03/prior-ci-observation.json"
+  }
+}

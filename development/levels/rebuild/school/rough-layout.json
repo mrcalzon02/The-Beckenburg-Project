@@ -23,7 +23,9 @@
       "height": 3.6,
       "owner": 0,
       "kind": "circulation",
-      "purpose": "Pupil entrance and visitor vestibule"
+      "purpose": "Pupil entrance and visitor vestibule",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "interview",
@@ -38,7 +40,9 @@
       "height": 3.6,
       "owner": 0,
       "kind": "inside",
-      "purpose": "Visitor reception and interview"
+      "purpose": "Visitor reception and interview",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "visitor-wc",
@@ -53,7 +57,9 @@
       "height": 3.6,
       "owner": 0,
       "kind": "inside",
-      "purpose": "Visitor WC from public vestibule"
+      "purpose": "Visitor WC from public vestibule",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "office",
@@ -68,7 +74,9 @@
       "height": 3.6,
       "owner": 0,
       "kind": "inside",
-      "purpose": "Administration work room"
+      "purpose": "Administration work room",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "corridor",
@@ -83,7 +91,9 @@
       "height": 3.6,
       "owner": 1,
       "kind": "circulation",
-      "purpose": "Ground public teaching corridor"
+      "purpose": "Ground public teaching corridor",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "staff",
@@ -98,7 +108,9 @@
       "height": 3.6,
       "owner": 1,
       "kind": "inside",
-      "purpose": "Staff rest and work room"
+      "purpose": "Staff rest and work room",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "cleaner",
@@ -113,7 +125,9 @@
       "height": 3.6,
       "owner": 1,
       "kind": "inside",
-      "purpose": "Cleaner sink and supplies"
+      "purpose": "Cleaner sink and supplies",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "staff-wc",
@@ -128,7 +142,9 @@
       "height": 3.6,
       "owner": 1,
       "kind": "inside",
-      "purpose": "Staff sanitary room"
+      "purpose": "Staff sanitary room",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "service-stair",
@@ -143,7 +159,9 @@
       "height": 3.6,
       "owner": 1,
       "kind": "circulation",
-      "purpose": "Plant service stair and rear delivery exit"
+      "purpose": "Plant service stair and rear delivery exit",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "main-stair",
@@ -158,7 +176,9 @@
       "height": 3.6,
       "owner": 1,
       "kind": "circulation",
-      "purpose": "Main stair bay with lower approach"
+      "purpose": "Main stair bay with lower approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "class-a",
@@ -173,7 +193,9 @@
       "height": 3.6,
       "owner": 2,
       "kind": "inside",
-      "purpose": "Class A: 24 desks and teaching area"
+      "purpose": "Class A: 24 desks and teaching area",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "class-a-store",
@@ -188,7 +210,9 @@
       "height": 3.6,
       "owner": 2,
       "kind": "inside",
-      "purpose": "Class A coats and teaching store"
+      "purpose": "Class A coats and teaching store",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "science",
@@ -203,7 +227,9 @@
       "height": 3.6,
       "owner": 3,
       "kind": "inside",
-      "purpose": "Shared practical science teaching"
+      "purpose": "Shared practical science teaching",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "science-prep",
@@ -218,7 +244,9 @@
       "height": 3.6,
       "owner": 3,
       "kind": "inside",
-      "purpose": "Science preparation and secure supplies"
+      "purpose": "Science preparation and secure supplies",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "dining",
@@ -233,7 +261,9 @@
       "height": 3.6,
       "owner": 4,
       "kind": "inside",
-      "purpose": "Dining: two classes in one sitting"
+      "purpose": "Dining: two classes in one sitting",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "kitchen",
@@ -248,7 +278,9 @@
       "height": 3.6,
       "owner": 4,
       "kind": "inside",
-      "purpose": "Preparation cooking and controlled serving"
+      "purpose": "Preparation cooking and controlled serving",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "receiving",
@@ -263,7 +295,9 @@
       "height": 3.6,
       "owner": 4,
       "kind": "inside",
-      "purpose": "Food receiving wash-up and refuse exit"
+      "purpose": "Food receiving wash-up and refuse exit",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "gym-link",
@@ -278,7 +312,9 @@
       "height": 3.6,
       "owner": 4,
       "kind": "circulation",
-      "purpose": "Public dining-to-gym connector"
+      "purpose": "Public dining-to-gym connector",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "health-link",
@@ -293,7 +329,9 @@
       "height": 3.6,
       "owner": 5,
       "kind": "circulation",
-      "purpose": "Health and changing corridor"
+      "purpose": "Health and changing corridor",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "nurse",
@@ -308,7 +346,9 @@
       "height": 3.6,
       "owner": 5,
       "kind": "inside",
-      "purpose": "Private nurse consultation and rest"
+      "purpose": "Private nurse consultation and rest",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "change-a",
@@ -323,7 +363,9 @@
       "height": 3.6,
       "owner": 5,
       "kind": "inside",
-      "purpose": "Changing group A lockers and bench"
+      "purpose": "Changing group A lockers and bench",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "shower-a",
@@ -338,7 +380,9 @@
       "height": 3.6,
       "owner": 5,
       "kind": "inside",
-      "purpose": "Group A screened washing"
+      "purpose": "Group A screened washing",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "change-b",
@@ -353,7 +397,9 @@
       "height": 3.6,
       "owner": 5,
       "kind": "inside",
-      "purpose": "Changing group B lockers and bench"
+      "purpose": "Changing group B lockers and bench",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "shower-b",
@@ -368,7 +414,9 @@
       "height": 3.6,
       "owner": 5,
       "kind": "inside",
-      "purpose": "Group B screened washing"
+      "purpose": "Group B screened washing",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "gym",
@@ -383,7 +431,9 @@
       "height": 7.2,
       "owner": 6,
       "kind": "inside",
-      "purpose": "Multipurpose PE hall: no upper floor"
+      "purpose": "Multipurpose PE hall: no upper floor",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "upper-corridor",
@@ -398,7 +448,9 @@
       "height": 3.6,
       "owner": 7,
       "kind": "circulation",
-      "purpose": "Upper public teaching corridor"
+      "purpose": "Upper public teaching corridor",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "wash-a",
@@ -413,7 +465,9 @@
       "height": 3.6,
       "owner": 7,
       "kind": "inside",
-      "purpose": "Student washroom A with screened entry"
+      "purpose": "Student washroom A with screened entry",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "wash-b",
@@ -428,7 +482,9 @@
       "height": 3.6,
       "owner": 7,
       "kind": "inside",
-      "purpose": "Student washroom B with screened entry"
+      "purpose": "Student washroom B with screened entry",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "upper-stair",
@@ -443,7 +499,9 @@
       "height": 3.6,
       "owner": 7,
       "kind": "circulation",
-      "purpose": "Guarded stair void and top landing"
+      "purpose": "Guarded stair void and top landing",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "upper-lobby",
@@ -458,7 +516,9 @@
       "height": 3.6,
       "owner": 7,
       "kind": "circulation",
-      "purpose": "Daylit library and assembly lobby"
+      "purpose": "Daylit library and assembly lobby",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "library",
@@ -473,7 +533,9 @@
       "height": 3.6,
       "owner": 8,
       "kind": "inside",
-      "purpose": "Library reading lending and stacks"
+      "purpose": "Library reading lending and stacks",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "class-b",
@@ -488,7 +550,9 @@
       "height": 3.6,
       "owner": 9,
       "kind": "inside",
-      "purpose": "Class B: 24 desks and teaching area"
+      "purpose": "Class B: 24 desks and teaching area",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "class-b-store",
@@ -503,7 +567,9 @@
       "height": 3.6,
       "owner": 9,
       "kind": "inside",
-      "purpose": "Class B coats and teaching store"
+      "purpose": "Class B coats and teaching store",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "assembly",
@@ -518,7 +584,9 @@
       "height": 4.5,
       "owner": 10,
       "kind": "inside",
-      "purpose": "Assembly: 48 pupils and staff"
+      "purpose": "Assembly: 48 pupils and staff",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "lower-stair",
@@ -533,7 +601,9 @@
       "height": 3,
       "owner": 11,
       "kind": "circulation",
-      "purpose": "Cellar service stair"
+      "purpose": "Cellar service stair",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "plant",
@@ -548,7 +618,9 @@
       "height": 3,
       "owner": 11,
       "kind": "inside",
-      "purpose": "Boiler hot-water and electrical maintenance"
+      "purpose": "Boiler hot-water and electrical maintenance",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "plant-store",
@@ -563,7 +635,9 @@
       "height": 3,
       "owner": 11,
       "kind": "inside",
-      "purpose": "Maintenance store and clear ritual reservation"
+      "purpose": "Maintenance store and clear ritual reservation",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "grounds",
@@ -578,7 +652,9 @@
       "height": 12,
       "owner": 12,
       "kind": "outside",
-      "purpose": "Outdoor grounds: footprint is envelope only"
+      "purpose": "Outdoor grounds: footprint is envelope only",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "entry",
@@ -593,7 +669,9 @@
       "height": 12,
       "owner": 13,
       "kind": "outside",
-      "purpose": "School forecourt and shared arrival support"
+      "purpose": "School forecourt and shared arrival support",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     },
     {
       "id": "stage",
@@ -608,7 +686,9 @@
       "height": 3,
       "owner": 14,
       "kind": "staging",
-      "purpose": "Canonical van arrival reservation"
+      "purpose": "Canonical van arrival reservation",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
     }
   ],
   "links": [
@@ -641,7 +721,8 @@
         31.5
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L02",
@@ -672,7 +753,8 @@
         34.5
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L03",
@@ -703,7 +785,8 @@
         33
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L04",
@@ -734,7 +817,8 @@
         30
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L05",
@@ -765,7 +849,8 @@
         17
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L06",
@@ -796,7 +881,8 @@
         13.5
       ],
       "access": "service",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L07",
@@ -827,7 +913,8 @@
         15
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L08",
@@ -858,7 +945,8 @@
         20
       ],
       "access": "service",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L09",
@@ -889,7 +977,8 @@
         21
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L10",
@@ -920,7 +1009,8 @@
         27
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L11",
@@ -951,7 +1041,8 @@
         34
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L12",
@@ -982,7 +1073,8 @@
         17
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L13",
@@ -1013,7 +1105,8 @@
         21
       ],
       "access": "service",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L14",
@@ -1044,7 +1137,8 @@
         26
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L15",
@@ -1075,7 +1169,8 @@
         31
       ],
       "access": "service",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L16",
@@ -1106,7 +1201,8 @@
         31
       ],
       "access": "service",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L17",
@@ -1137,7 +1233,8 @@
         26
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L18",
@@ -1168,7 +1265,8 @@
         24
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L19",
@@ -1199,7 +1297,8 @@
         21
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L20",
@@ -1230,7 +1329,8 @@
         21
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L21",
@@ -1261,7 +1361,8 @@
         13.5
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L22",
@@ -1292,7 +1393,8 @@
         13.5
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L23",
@@ -1323,7 +1425,8 @@
         16.5
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L24",
@@ -1354,7 +1457,8 @@
         16.5
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L25",
@@ -1385,7 +1489,8 @@
         13.2
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L26",
@@ -1416,7 +1521,8 @@
         18.2
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L27",
@@ -1447,7 +1553,8 @@
         29
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L28",
@@ -1478,7 +1585,8 @@
         33
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L29",
@@ -1509,7 +1617,8 @@
         30
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L30",
@@ -1540,7 +1649,8 @@
         17
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L31",
@@ -1571,7 +1681,8 @@
         22
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L32",
@@ -1602,7 +1713,8 @@
         33
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L33",
@@ -1633,7 +1745,8 @@
         18.8
       ],
       "access": "service",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L34",
@@ -1664,7 +1777,8 @@
         20
       ],
       "access": "service",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L35",
@@ -1695,7 +1809,8 @@
         36
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L36",
@@ -1726,7 +1841,8 @@
         12
       ],
       "access": "service",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L37",
@@ -1757,7 +1873,8 @@
         16
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L38",
@@ -1788,7 +1905,8 @@
         28
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L39",
@@ -1819,7 +1937,8 @@
         8
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L40",
@@ -1850,7 +1969,8 @@
         32
       ],
       "access": "service",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L41",
@@ -1881,7 +2001,8 @@
         36
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L42",
@@ -1912,7 +2033,8 @@
         45
       ],
       "access": "public",
-      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof."
+      "note": "Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L43",
@@ -1938,7 +2060,8 @@
       "landing_depth_m": 1.5,
       "risers": 20,
       "construction": "Straight flight; reserve full-run deck void, structural depth, guards and unobstructed end landings. Actual capsule/ceiling proof required.",
-      "note": "Measured section reservation, not a generic centre-to-centre diagonal ramp."
+      "note": "Measured section reservation, not a generic centre-to-centre diagonal ramp.",
+      "player_access": "OPEN_ROUTE"
     },
     {
       "id": "L44",
@@ -1964,7 +2087,8 @@
       "landing_depth_m": 1.5,
       "risers": 18,
       "construction": "Straight flight; reserve full-run deck void, structural depth, guards and unobstructed end landings. Actual capsule/ceiling proof required.",
-      "note": "Measured section reservation, not a generic centre-to-centre diagonal ramp."
+      "note": "Measured section reservation, not a generic centre-to-centre diagonal ramp.",
+      "player_access": "OPEN_ROUTE"
     }
   ],
   "capacity": "48 pupils in two general classes; one shared 24-place practical science room; six staff positions",
@@ -2124,5 +2248,16 @@
     "Resolve individual sanitary/changing/PE-equipment fixtures and privacy screens in actual geometry.",
     "Author structural beams/roof, complete source furniture clearances, electrical/acoustic ownership and hiding budget.",
     "Punch editor world terrain and prove full-body traversal, doors, networking, gameplay, human and GPU gates."
-  ]
+  ],
+  "search_envelope": {
+    "status": "DESIGN_ONLY_SEALS_NOT_RUNTIME_IMPLEMENTED",
+    "maximum": 40,
+    "accessible_spaces": 40,
+    "sealed_context_spaces": 0,
+    "count_rule": "Every OPEN_SEARCH space counts, including corridors, stairs, service rooms, exterior sectors and staging. Stable fifteen gameplay owners are not the room budget.",
+    "barriers": [],
+    "gameplay_rule": "Evidence, ghost spawn/anchor, hiding, switches/tasks, ritual sites, loose objective props and required travel belong only to the connected open envelope. Context windows may show rooms, but no interaction or required search crosses the seal.",
+    "context_rule": "Retain coherent historical rooms/assets behind permanent boundaries. Restrict whole wings to their hallways where useful; do not count shuttable ordinary doors as permanent seals.",
+    "next_gate": "Build actual permanent seals and audit runtime player/ghost/object/optical boundaries and all objective placements; construct the maps inside the forty-space cap. Round-duration testing is outside this rebuild task."
+  }
 }

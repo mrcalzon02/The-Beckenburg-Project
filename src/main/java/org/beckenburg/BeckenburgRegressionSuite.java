@@ -23,16 +23,36 @@ public final class BeckenburgRegressionSuite {
         if(!Files.isRegularFile(manifest))throw new IOException("Regression manifest absent");
         List<String> tests=Files.readAllLines(manifest,StandardCharsets.UTF_8).stream()
             .map(String::trim).filter(s->!s.isEmpty()&&!s.startsWith("#")).toList();
+        // Validate the entire manifest BEFORE launching any process. A malformed
+        // last entry must not hide the completed suite's summary or skip new tests.
+        var unique=new java.util.HashSet<String>();
+        // CI launches this main class with build/classes only. Its child tests
+        // live in build/test, so preflight must use the same additional root.
+        try(var entries=new java.net.URLClassLoader(new java.net.URL[]{Path.of("build/test").toUri().toURL()},BeckenburgRegressionSuite.class.getClassLoader())){
+        for(String test:tests){
+            if(!test.matches("[A-Za-z][A-Za-z0-9_]*Test"))throw new IllegalArgumentException("Invalid regression entry: "+test);
+            if(!unique.add(test))throw new IllegalArgumentException("Duplicate regression entry: "+test);
+            if("SmokeTest".equals(test)&&!Files.exists(Path.of("build/test/org/beckenburg/SmokeTest.class")))continue;
+            var type=Class.forName("org.beckenburg."+test,false,entries);
+            var entry=type.getMethod("main",String[].class);
+            if(!java.lang.reflect.Modifier.isStatic(entry.getModifiers())||entry.getReturnType()!=void.class)
+                throw new IllegalArgumentException("Regression entry lacks public static void main: "+test);
+        }
+        }
         if(tests.size()<145 || !tests.containsAll(List.of("BeckenburgDiagnosticsTest",
-            "CastleHubIntegrationTest","BeckenburgUpdatesTest","GameplaySmokeTest",
-            "LanWorldIntegrationTest")))throw new IllegalStateException("Regression manifest incomplete");
+            "CastleHubIntegrationTest","BeckenburgUpdatesTest","GameplaySmokeTest","LanWorldIntegrationTest",
+            "CastleTrainingAnnexTest","CastleWorldTerrainTest","CastleCellarConstructionTest",
+            "CastleGroundConstructionTest","CastleUpperConstructionTest","CastleMuseumConstructionTest","BeckenburgRegressionManifestTest")))
+            throw new IllegalStateException("Regression manifest incomplete");
+        if(args.length==1&&args[0].equals("--validate")){
+            System.out.println("PASS regression manifest preflight: "+tests.size()+" unique short names and available entrypoints; no tests executed");return;
+        }
+        if(args.length!=0)throw new IllegalArgumentException("Usage: BeckenburgRegressionSuite [--validate]");
         String java=Path.of(System.getProperty("java.home"),"bin",
             System.getProperty("os.name","").toLowerCase().contains("win")?"java.exe":"java").toString();
         String classpath=String.join(File.pathSeparator,"build/classes","build/test");
         int failed=0,passed=0,skipped=0;
         for(String test:tests){
-            if(!test.matches("[A-Za-z][A-Za-z0-9_]*Test"))
-                throw new IllegalArgumentException("Invalid regression entry: "+test);
             if("SmokeTest".equals(test)&&!Files.exists(Path.of("build/test/org/beckenburg/SmokeTest.class"))){
                 System.out.println("SKIP optional SmokeTest source absent");
                 skipped++;continue;

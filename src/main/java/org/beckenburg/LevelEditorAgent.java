@@ -78,8 +78,18 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
         if(!ImageIO.write(image,"png",file.toFile()))throw new IOException("PNG writer unavailable");
         return new EditorAgentService.Capture(file,image.getWidth(),image.getHeight(),"SceneRenderer.drawPractice");
     }
-    public List<String> tests(){return List.of("mission-runtime-parity");}
+    public List<String> tests(){return List.of("mission-runtime-parity","mission-open-routes");}
     public List<EditorAgentService.Check> test(String id){
+        if(id.equals("mission-open-routes")){
+            var result=LevelTraversalAudit.inspect(map.get());
+            var checks=new java.util.ArrayList<EditorAgentService.Check>();
+            checks.add(new EditorAgentService.Check("OPEN_ROUTE_REACHABILITY",result.passed(),
+                result.level()+" "+result.revision()+": "+result.positions()+" swept positions, Y"+result.lowest()+".."+result.highest()
+                    +"; open doors only, live state unchanged"));
+            for(var finding:result.findings())checks.add(new EditorAgentService.Check(finding.code(),false,
+                "room "+finding.room()+": "+finding.detail()));
+            return List.copyOf(checks);
+        }
         if(!id.equals("mission-runtime-parity"))throw new IllegalArgumentException("Unsupported test: "+id);
         var level=map.get().level();
         boolean props=level.props().equals(session.props());

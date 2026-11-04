@@ -1,0 +1,21 @@
+{
+  "status": "ARMOUR_AND_CAPTION_NATIVE_PILOT_REMAINING_KIT_REQUIRES_REFERENCE_REWORK",
+  "runtime_integrated": [
+    "level_castle_armour_display",
+    "level_castle_armour_label",
+    "level_castle_museum_rope"
+  ],
+  "armour": "Source/export contact and measured-budget checks retained; cleaned front/back atlas and original86-triangle caption now placed in archive,29 packaged native/hub checks pass. Full Castle finish not accepted.",
+  "other_assets": "Initial studies require independent primary-reference redesign/review before integration.",
+  "rejected": [
+    "previews/rejected-primitive-armour",
+    "previews/rejected-wide-armour",
+    "previews/rejected-open-spandrels",
+    "previews/rejected-floating-sabatons",
+    "previews/rejected-dense-armour"
+  ],
+  "references": "reference-brief.md",
+  "next": "Finish reference-led armour geometry, validate real supports/attachments, then authored surfacing and actual runtime fit; rework the rest of the kit from references.",
+  "runtime_evidence": "development\\levels\\rebuild\\verification\\castle-museum-2026-11-03\\verification.json",
+  "remaining": "Other original study assets remain rejected/quarantined. Complete their independent reference/triangle-budget/contact/material reviews, protected training, services, restoration wear/story and full Castle acceptance."
+}

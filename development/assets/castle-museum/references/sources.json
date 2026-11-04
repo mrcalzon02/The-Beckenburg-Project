@@ -1,0 +1,30 @@
+[
+  {
+    "id": "met-field-harness",
+    "image": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/24696/2295959/main-image",
+    "catalogue": "https://www.metmuseum.org/art/collection/search/24696",
+    "rights": "Public Domain as marked in Met object catalogue; reference only, not used as an asset texture"
+  },
+  {
+    "id": "met-field-harness-front",
+    "image": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/24696/2296161/main-image",
+    "catalogue": "https://www.metmuseum.org/art/collection/search/24696",
+    "rights": "Public Domain as marked in Met object catalogue; reference only, not used as an asset texture"
+  },
+  {
+    "id": "met-breastplate-tassets",
+    "image": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/35917/1360061/main-image",
+    "catalogue": "https://www.metmuseum.org/art/collection/search/35917",
+    "rights": "Public Domain as marked in Met object catalogue; reference only, not used as an asset texture"
+  },
+  {
+    "id": "met-sabaton-27.183.82",
+    "catalogue": "https://www.metmuseum.org/art/collection/search/34870",
+    "rights": "Public Domain as marked by Met catalogue",
+    "examined": [
+      "met-sabaton.jpg",
+      "met-sabaton-side.jpg",
+      "met-sabaton-quarter.jpg"
+    ]
+  }
+]

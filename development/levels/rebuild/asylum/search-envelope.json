@@ -1,0 +1,606 @@
+{
+  "site": "ASYLUM",
+  "status": "DESIGN_ONLY_SEALS_NOT_RUNTIME_IMPLEMENTED",
+  "maximum": 40,
+  "accessible_spaces": 40,
+  "sealed_context_spaces": 27,
+  "count_rule": "Every OPEN_SEARCH space counts, including corridors, stairs, service rooms, exterior sectors and staging. Stable fifteen gameplay owners are not the room budget.",
+  "barriers": [
+    {
+      "link": "L02",
+      "a": "ground-north-b",
+      "b": "ground-ward-link",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L04",
+      "a": "ground-south-b",
+      "b": "ground-ward-link",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L06",
+      "a": "ground-linen",
+      "b": "spine",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L08",
+      "a": "ground-wash",
+      "b": "spine",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L11",
+      "a": "upper-north-b",
+      "b": "upper-ward-link",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L13",
+      "a": "upper-south-b",
+      "b": "upper-ward-link",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L14",
+      "a": "upper-observation",
+      "b": "upper-spine",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L15",
+      "a": "upper-linen",
+      "b": "upper-spine",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L17",
+      "a": "upper-wash",
+      "b": "upper-spine",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L21",
+      "a": "admission",
+      "b": "visitor-wc",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L30",
+      "a": "service-link",
+      "b": "staff-rest",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L36",
+      "a": "clinical-service",
+      "b": "clinical-clean",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L38",
+      "a": "treatment",
+      "b": "clinical-clean",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L45",
+      "a": "dining",
+      "b": "kitchen",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L46",
+      "a": "dining",
+      "b": "meal-return",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L51",
+      "a": "receiving",
+      "b": "service",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L52",
+      "a": "service",
+      "b": "refuse",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L57",
+      "a": "quiet-lobby",
+      "b": "quiet-observation",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L58",
+      "a": "quiet",
+      "b": "quiet-wc",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L59",
+      "a": "quiet-observation",
+      "b": "quiet",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L60",
+      "a": "spine",
+      "b": "lift",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L61",
+      "a": "upper-spine",
+      "b": "upper-lift",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L66",
+      "a": "cellar-cross",
+      "b": "maintenance",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L67",
+      "a": "cellar-cross",
+      "b": "dirty-laundry",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L68",
+      "a": "cellar-cross",
+      "b": "clean-laundry",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L70",
+      "a": "cellar-cross",
+      "b": "clean-store",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L75",
+      "a": "grounds",
+      "b": "refuse",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    }
+  ],
+  "gameplay_rule": "Evidence, ghost spawn/anchor, hiding, switches/tasks, ritual sites, loose objective props and required travel belong only to the connected open envelope. Context windows may show rooms, but no interaction or required search crosses the seal.",
+  "context_rule": "Retain coherent historical rooms/assets behind permanent boundaries. Restrict whole wings to their hallways where useful; do not count shuttable ordinary doors as permanent seals.",
+  "next_gate": "Build actual permanent seals and audit runtime player/ghost/object/optical boundaries and all objective placements; construct the maps inside the forty-space cap. Round-duration testing is outside this rebuild task.",
+  "spaces": [
+    {
+      "id": "ground-north-a",
+      "name": "Ground two-place patient room north-a",
+      "owner": 4,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "ground-north-b",
+      "name": "Ground two-place patient room north-b",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "ground-south-a",
+      "name": "Ground two-place patient room south-a",
+      "owner": 4,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "ground-south-b",
+      "name": "Ground two-place patient room south-b",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "ground-ward-link",
+      "name": "Ground Daylight ward distribution",
+      "owner": 4,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "ground-observation",
+      "name": "Ground Staff observation and notes",
+      "owner": 4,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "ground-linen",
+      "name": "Ground Ward clean linen and supplies",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "ground-wc",
+      "name": "Ground Screened patient WC bays",
+      "owner": 4,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "ground-wash",
+      "name": "Ground Private patient washing and assistance",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "upper-north-a",
+      "name": "Upper two-place patient room north-a",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-north-b",
+      "name": "Upper two-place patient room north-b",
+      "owner": 7,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "upper-south-a",
+      "name": "Upper two-place patient room south-a",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-south-b",
+      "name": "Upper two-place patient room south-b",
+      "owner": 7,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "upper-ward-link",
+      "name": "Upper Daylight ward distribution",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-observation",
+      "name": "Upper Staff observation and notes",
+      "owner": 7,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "upper-linen",
+      "name": "Upper Ward clean linen and supplies",
+      "owner": 7,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "upper-wc",
+      "name": "Upper Screened patient WC bays",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-wash",
+      "name": "Upper Private patient washing and assistance",
+      "owner": 7,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "spine",
+      "name": "Main patient and staff distribution",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "main-stair",
+      "name": "Main stair with clear bypass",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "staff-office",
+      "name": "Staff coordination and private work",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "service-link",
+      "name": "Staff-only service distribution",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "admission",
+      "name": "Public reception and waiting",
+      "owner": 1,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "interview",
+      "name": "Private admissions interview",
+      "owner": 1,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "visitor-wc",
+      "name": "Visitor WC outside care wards",
+      "owner": 1,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "records",
+      "name": "Confidential records office",
+      "owner": 8,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "day",
+      "name": "Supervised sitting crafts and ordinary activity",
+      "owner": 2,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "clinical-link",
+      "name": "Clinical approach outside work rooms",
+      "owner": 5,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "treatment",
+      "name": "Treatment examination and handwashing",
+      "owner": 5,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "clinical-clean",
+      "name": "Clean treatment stores",
+      "owner": 5,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "clinical-soiled",
+      "name": "Enclosed soiled treatment utility",
+      "owner": 5,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "clinical-service",
+      "name": "Rear clinical utility service approach",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "staff-rest",
+      "name": "Staff rest and changing",
+      "owner": 0,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "staff-wc",
+      "name": "Staff sanitary room",
+      "owner": 0,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "hydro-change",
+      "name": "Private hydrotherapy changing",
+      "owner": 6,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "hydro-bath",
+      "name": "Assisted bathing treatment room",
+      "owner": 6,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "hydro-dry",
+      "name": "Private drying and recovery",
+      "owner": 6,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "dining",
+      "name": "Sixteen-place ward dining",
+      "owner": 3,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "kitchen",
+      "name": "Food preparation cooking and serving",
+      "owner": 3,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "washup",
+      "name": "Meal return and dish washing",
+      "owner": 3,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "meal-return",
+      "name": "Dining dish return outside cooking",
+      "owner": 3,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "food-store",
+      "name": "Dry and cool food storage reservations",
+      "owner": 3,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "receiving",
+      "name": "Food and household receiving",
+      "owner": 3,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "service",
+      "name": "Service passage separated from care rooms",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "refuse",
+      "name": "Enclosed refuse awaiting collection",
+      "owner": 3,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "service-stair",
+      "name": "Independent basement service stair",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "quiet-lobby",
+      "name": "Calm-room care and staff approach",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "quiet",
+      "name": "Short-stay quiet care room",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "quiet-observation",
+      "name": "Quiet care observation and support",
+      "owner": 9,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "quiet-wc",
+      "name": "Private quiet-care WC and washing",
+      "owner": 9,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "chapel",
+      "name": "Quiet remembrance chapel",
+      "owner": 10,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "lift",
+      "name": "Patient lift lower landing and shaft reservation",
+      "owner": 0,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "upper-spine",
+      "name": "Upper ward circulation",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-stair",
+      "name": "Upper main stair and guarded landing",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-lift",
+      "name": "Patient lift upper landing reservation",
+      "owner": 7,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "cellar-stair",
+      "name": "Basement service stair",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "cellar-service",
+      "name": "Basement service distribution",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "cellar-cross",
+      "name": "Plant and laundry approach",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "plant",
+      "name": "Boiler hot water and electrical operating clearances",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "maintenance",
+      "name": "Maintenance workshop and stores",
+      "owner": 11,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "dirty-laundry",
+      "name": "Soiled linen receiving and washing",
+      "owner": 11,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "clean-laundry",
+      "name": "Clean laundry drying and finishing",
+      "owner": 11,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "clean-store",
+      "name": "Finished clean linen storage",
+      "owner": 11,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "court",
+      "name": "Daylight court: no upper deck",
+      "owner": 12,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "grounds",
+      "name": "Stepped pavilion grounds envelope only",
+      "owner": 12,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "entry",
+      "name": "Public drive and patient arrival",
+      "owner": 13,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "stage",
+      "name": "Canonical investigation van apron",
+      "owner": 14,
+      "access": "OPEN_SEARCH"
+    }
+  ]
+}

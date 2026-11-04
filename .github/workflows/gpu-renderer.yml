@@ -28,7 +28,9 @@ permissions:
 jobs:
   compile-gpu-java17:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    # A verified run spent the full 10-minute job limit in repository checkout.
+    # Preserve all compile/contracts; allow bounded preparation of the canonical assets.
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4

@@ -1,0 +1,2380 @@
+{
+  "version": 2,
+  "id": "CHURCH",
+  "title": "St. Brigid Parish — revised worship and crypt rough",
+  "status": "S02_DESIGN_STUDY_NOT_RUNTIME_ACCEPTED",
+  "site_bounds": [
+    1,
+    0,
+    44,
+    59
+  ],
+  "zones": [
+    {
+      "id": "nave",
+      "name": "Forty-place nave with centre and side aisles",
+      "bounds": [
+        18,
+        12,
+        26,
+        26
+      ],
+      "y": 0,
+      "height": 6,
+      "owner": 0,
+      "kind": "inside",
+      "purpose": "Forty-place nave with centre and side aisles",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "rear-nave",
+      "name": "Under-choir circulation and stair approach",
+      "bounds": [
+        18,
+        26,
+        26,
+        34
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "Under-choir circulation and stair approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "vestibule",
+      "name": "Weather vestibule and arrival",
+      "bounds": [
+        18,
+        34,
+        26,
+        39
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 1,
+      "kind": "circulation",
+      "purpose": "Weather vestibule and arrival",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "parish-lobby",
+      "name": "Parish work approach",
+      "bounds": [
+        13,
+        30,
+        18,
+        34
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 2,
+      "kind": "circulation",
+      "purpose": "Parish work approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "office",
+      "name": "Private parish work and meetings",
+      "bounds": [
+        10,
+        26,
+        15,
+        30
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 2,
+      "kind": "inside",
+      "purpose": "Private parish work and meetings",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "records",
+      "name": "Confidential parish records",
+      "bounds": [
+        15,
+        26,
+        18,
+        30
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 2,
+      "kind": "inside",
+      "purpose": "Confidential parish records",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "parish-wc",
+      "name": "Discreet parish sanitary support",
+      "bounds": [
+        10,
+        30,
+        13,
+        34
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 2,
+      "kind": "inside",
+      "purpose": "Discreet parish sanitary support",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "conversation-entry",
+      "name": "Quiet conversation waiting and access",
+      "bounds": [
+        14,
+        18,
+        18,
+        26
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 3,
+      "kind": "circulation",
+      "purpose": "Quiet conversation waiting and access",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "confessional",
+      "name": "Private confessional conversation enclosure",
+      "bounds": [
+        10,
+        18,
+        14,
+        22
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 3,
+      "kind": "inside",
+      "purpose": "Private confessional conversation enclosure",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "consultation",
+      "name": "Private parish consultation",
+      "bounds": [
+        10,
+        22,
+        14,
+        26
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 3,
+      "kind": "inside",
+      "purpose": "Private parish consultation",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "chancel",
+      "name": "Chancel and supported altar arrangement",
+      "bounds": [
+        18,
+        6,
+        26,
+        12
+      ],
+      "y": 0,
+      "height": 5,
+      "owner": 4,
+      "kind": "inside",
+      "purpose": "Chancel and supported altar arrangement",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "chapel",
+      "name": "Side chapel and quiet remembrance",
+      "bounds": [
+        26,
+        14,
+        34,
+        26
+      ],
+      "y": 0,
+      "height": 4,
+      "owner": 5,
+      "kind": "inside",
+      "purpose": "Side chapel and quiet remembrance",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "vestry",
+      "name": "Vestment preparation and service work",
+      "bounds": [
+        26,
+        6,
+        31,
+        14
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 6,
+      "kind": "inside",
+      "purpose": "Vestment preparation and service work",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "vestry-wash",
+      "name": "Vestry washing and supported sink",
+      "bounds": [
+        31,
+        6,
+        34,
+        10
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 6,
+      "kind": "inside",
+      "purpose": "Vestry washing and supported sink",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "vestments",
+      "name": "Dry vestment storage",
+      "bounds": [
+        31,
+        10,
+        34,
+        14
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 6,
+      "kind": "inside",
+      "purpose": "Dry vestment storage",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "crypt-entry",
+      "name": "Separate crypt stair and clear side bypass",
+      "bounds": [
+        26,
+        26,
+        34,
+        34
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 11,
+      "kind": "circulation",
+      "purpose": "Separate crypt stair and clear side bypass",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "choir-stair",
+      "name": "Choir landing outside flight guards",
+      "bounds": [
+        18,
+        26,
+        21,
+        34
+      ],
+      "y": 3,
+      "height": 3,
+      "owner": 7,
+      "kind": "circulation",
+      "purpose": "Choir landing outside flight guards",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "choir",
+      "name": "Choir seating and music stands",
+      "bounds": [
+        21,
+        26,
+        26,
+        34
+      ],
+      "y": 3,
+      "height": 3,
+      "owner": 7,
+      "kind": "inside",
+      "purpose": "Choir seating and music stands",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "tower-stair",
+      "name": "Tower stair and protected side bypass",
+      "bounds": [
+        10,
+        26,
+        18,
+        34
+      ],
+      "y": 3,
+      "height": 3,
+      "owner": 8,
+      "kind": "circulation",
+      "purpose": "Tower stair and protected side bypass",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "music-entry",
+      "name": "Music and organ service approach",
+      "bounds": [
+        26,
+        26,
+        29,
+        34
+      ],
+      "y": 3,
+      "height": 3,
+      "owner": 9,
+      "kind": "circulation",
+      "purpose": "Music and organ service approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "music-archive",
+      "name": "Music scores and parish performance archive",
+      "bounds": [
+        29,
+        26,
+        34,
+        30
+      ],
+      "y": 3,
+      "height": 3,
+      "owner": 9,
+      "kind": "inside",
+      "purpose": "Music scores and parish performance archive",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "organ-service",
+      "name": "Organ maintenance and working clearance",
+      "bounds": [
+        29,
+        30,
+        34,
+        34
+      ],
+      "y": 3,
+      "height": 3,
+      "owner": 9,
+      "kind": "inside",
+      "purpose": "Organ maintenance and working clearance",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "belfry",
+      "name": "Bell frame with guarded inspection access",
+      "bounds": [
+        10,
+        26,
+        18,
+        34
+      ],
+      "y": 6,
+      "height": 3,
+      "owner": 10,
+      "kind": "inside",
+      "purpose": "Bell frame with guarded inspection access",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "crypt-stair",
+      "name": "Crypt stair lower approach",
+      "bounds": [
+        26,
+        26,
+        34,
+        34
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "circulation",
+      "purpose": "Crypt stair lower approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "crypt-aisle",
+      "name": "Crypt distribution and memorial approach",
+      "bounds": [
+        22,
+        12,
+        26,
+        34
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "circulation",
+      "purpose": "Crypt distribution and memorial approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "crypt-memorial",
+      "name": "Crypt memorial chamber and clear rite bay",
+      "bounds": [
+        10,
+        26,
+        22,
+        34
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "inside",
+      "purpose": "Crypt memorial chamber and clear rite bay",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "vault-west-a",
+      "name": "Sealed western burial vault A",
+      "bounds": [
+        10,
+        12,
+        16,
+        26
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "inside",
+      "purpose": "Sealed western burial vault A",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "vault-west-b",
+      "name": "Sealed western burial vault B",
+      "bounds": [
+        16,
+        12,
+        22,
+        26
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "inside",
+      "purpose": "Sealed western burial vault B",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "vault-east",
+      "name": "Sealed eastern burial vault",
+      "bounds": [
+        26,
+        12,
+        34,
+        26
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "inside",
+      "purpose": "Sealed eastern burial vault",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "vault-north",
+      "name": "Sealed under-chancel burial vault",
+      "bounds": [
+        10,
+        6,
+        34,
+        12
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "inside",
+      "purpose": "Sealed under-chancel burial vault",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "grounds",
+      "name": "Churchyard and cemetery envelope",
+      "bounds": [
+        4,
+        0,
+        40,
+        39
+      ],
+      "y": 0,
+      "height": 12,
+      "owner": 12,
+      "kind": "outside",
+      "purpose": "Churchyard and cemetery envelope",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "entry",
+      "name": "Churchyard gate and entrance approach",
+      "bounds": [
+        1,
+        39,
+        44,
+        58.4
+      ],
+      "y": 0,
+      "height": 12,
+      "owner": 13,
+      "kind": "outside",
+      "purpose": "Churchyard gate and entrance approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "stage",
+      "name": "Canonical parish van apron",
+      "bounds": [
+        14,
+        45,
+        30,
+        58
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 14,
+      "kind": "staging",
+      "purpose": "Canonical parish van apron",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          22.0,
+          0,
+          51.5
+        ],
+        [
+          22,
+          0,
+          45
+        ],
+        [
+          22.5,
+          0,
+          48.7
+        ]
+      ],
+      "threshold": [
+        22,
+        0,
+        45
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "vestibule",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          22.5,
+          0,
+          48.7
+        ],
+        [
+          22,
+          0,
+          39
+        ],
+        [
+          22.0,
+          0,
+          36.5
+        ]
+      ],
+      "threshold": [
+        22,
+        0,
+        39
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L03",
+      "a": "vestibule",
+      "b": "rear-nave",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          22.0,
+          0,
+          36.5
+        ],
+        [
+          22,
+          0,
+          34
+        ],
+        [
+          22.0,
+          0,
+          30.0
+        ]
+      ],
+      "threshold": [
+        22,
+        0,
+        34
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L04",
+      "a": "rear-nave",
+      "b": "parish-lobby",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          22.0,
+          0,
+          30.0
+        ],
+        [
+          18,
+          0,
+          32
+        ],
+        [
+          15.5,
+          0,
+          32.0
+        ]
+      ],
+      "threshold": [
+        18,
+        0,
+        32
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L05",
+      "a": "parish-lobby",
+      "b": "office",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          15.5,
+          0,
+          32.0
+        ],
+        [
+          14,
+          0,
+          30
+        ],
+        [
+          12.5,
+          0,
+          28.0
+        ]
+      ],
+      "threshold": [
+        14,
+        0,
+        30
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L06",
+      "a": "parish-lobby",
+      "b": "records",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          15.5,
+          0,
+          32.0
+        ],
+        [
+          16.5,
+          0,
+          30
+        ],
+        [
+          16.5,
+          0,
+          28.0
+        ]
+      ],
+      "threshold": [
+        16.5,
+        0,
+        30
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L07",
+      "a": "parish-lobby",
+      "b": "parish-wc",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          15.5,
+          0,
+          32.0
+        ],
+        [
+          13,
+          0,
+          32
+        ],
+        [
+          11.5,
+          0,
+          32.0
+        ]
+      ],
+      "threshold": [
+        13,
+        0,
+        32
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L08",
+      "a": "nave",
+      "b": "conversation-entry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          22.0,
+          0,
+          19.0
+        ],
+        [
+          18,
+          0,
+          22
+        ],
+        [
+          16.0,
+          0,
+          22.0
+        ]
+      ],
+      "threshold": [
+        18,
+        0,
+        22
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L09",
+      "a": "conversation-entry",
+      "b": "confessional",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          16.0,
+          0,
+          22.0
+        ],
+        [
+          14,
+          0,
+          20
+        ],
+        [
+          12.0,
+          0,
+          20.0
+        ]
+      ],
+      "threshold": [
+        14,
+        0,
+        20
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L10",
+      "a": "conversation-entry",
+      "b": "consultation",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          16.0,
+          0,
+          22.0
+        ],
+        [
+          14,
+          0,
+          24
+        ],
+        [
+          12.0,
+          0,
+          24.0
+        ]
+      ],
+      "threshold": [
+        14,
+        0,
+        24
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L11",
+      "a": "nave",
+      "b": "chapel",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          22.0,
+          0,
+          19.0
+        ],
+        [
+          26,
+          0,
+          20
+        ],
+        [
+          30.0,
+          0,
+          20.0
+        ]
+      ],
+      "threshold": [
+        26,
+        0,
+        20
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L12",
+      "a": "chancel",
+      "b": "vestry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          22.0,
+          0,
+          9.0
+        ],
+        [
+          26,
+          0,
+          9
+        ],
+        [
+          28.5,
+          0,
+          10.0
+        ]
+      ],
+      "threshold": [
+        26,
+        0,
+        9
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L13",
+      "a": "vestry",
+      "b": "chapel",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          28.5,
+          0,
+          10.0
+        ],
+        [
+          28.5,
+          0,
+          14
+        ],
+        [
+          30.0,
+          0,
+          20.0
+        ]
+      ],
+      "threshold": [
+        28.5,
+        0,
+        14
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L14",
+      "a": "vestry",
+      "b": "vestry-wash",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          28.5,
+          0,
+          10.0
+        ],
+        [
+          31,
+          0,
+          8
+        ],
+        [
+          32.5,
+          0,
+          8.0
+        ]
+      ],
+      "threshold": [
+        31,
+        0,
+        8
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L15",
+      "a": "vestry",
+      "b": "vestments",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          28.5,
+          0,
+          10.0
+        ],
+        [
+          31,
+          0,
+          12
+        ],
+        [
+          32.5,
+          0,
+          12.0
+        ]
+      ],
+      "threshold": [
+        31,
+        0,
+        12
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L16",
+      "a": "chapel",
+      "b": "crypt-entry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          30.0,
+          0,
+          20.0
+        ],
+        [
+          28.5,
+          0,
+          26
+        ],
+        [
+          30.0,
+          0,
+          30.0
+        ]
+      ],
+      "threshold": [
+        28.5,
+        0,
+        26
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L17",
+      "a": "chapel",
+      "b": "grounds",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          30.0,
+          0,
+          20.0
+        ],
+        [
+          34,
+          0,
+          20
+        ],
+        [
+          22.0,
+          0,
+          19.5
+        ]
+      ],
+      "threshold": [
+        34,
+        0,
+        20
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L18",
+      "a": "vestry",
+      "b": "grounds",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          28.5,
+          0,
+          10.0
+        ],
+        [
+          28.5,
+          0,
+          6
+        ],
+        [
+          22.0,
+          0,
+          19.5
+        ]
+      ],
+      "threshold": [
+        28.5,
+        0,
+        6
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L19",
+      "a": "choir-stair",
+      "b": "choir",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          19.5,
+          3,
+          30.0
+        ],
+        [
+          21,
+          3,
+          33
+        ],
+        [
+          23.5,
+          3,
+          30.0
+        ]
+      ],
+      "threshold": [
+        21,
+        3,
+        33
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L20",
+      "a": "choir-stair",
+      "b": "tower-stair",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          19.5,
+          3,
+          30.0
+        ],
+        [
+          18,
+          3,
+          33.25
+        ],
+        [
+          14.0,
+          3,
+          30.0
+        ]
+      ],
+      "threshold": [
+        18,
+        3,
+        33.25
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L21",
+      "a": "choir",
+      "b": "music-entry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          23.5,
+          3,
+          30.0
+        ],
+        [
+          26,
+          3,
+          32.7
+        ],
+        [
+          27.5,
+          3,
+          30.0
+        ]
+      ],
+      "threshold": [
+        26,
+        3,
+        32.7
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L22",
+      "a": "music-entry",
+      "b": "music-archive",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          27.5,
+          3,
+          30.0
+        ],
+        [
+          29,
+          3,
+          28
+        ],
+        [
+          31.5,
+          3,
+          28.0
+        ]
+      ],
+      "threshold": [
+        29,
+        3,
+        28
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L23",
+      "a": "music-entry",
+      "b": "organ-service",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          27.5,
+          3,
+          30.0
+        ],
+        [
+          29,
+          3,
+          32
+        ],
+        [
+          31.5,
+          3,
+          32.0
+        ]
+      ],
+      "threshold": [
+        29,
+        3,
+        32
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L24",
+      "a": "crypt-stair",
+      "b": "crypt-aisle",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          30.0,
+          -3,
+          30.0
+        ],
+        [
+          26,
+          -3,
+          30
+        ],
+        [
+          24.0,
+          -3,
+          23.0
+        ]
+      ],
+      "threshold": [
+        26,
+        -3,
+        30
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L25",
+      "a": "crypt-aisle",
+      "b": "crypt-memorial",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          24.0,
+          -3,
+          23.0
+        ],
+        [
+          22,
+          -3,
+          30
+        ],
+        [
+          16.0,
+          -3,
+          30.0
+        ]
+      ],
+      "threshold": [
+        22,
+        -3,
+        30
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L26",
+      "a": "crypt-memorial",
+      "b": "vault-west-a",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          16.0,
+          -3,
+          30.0
+        ],
+        [
+          13,
+          -3,
+          26
+        ],
+        [
+          13.0,
+          -3,
+          19.0
+        ]
+      ],
+      "threshold": [
+        13,
+        -3,
+        26
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L27",
+      "a": "crypt-aisle",
+      "b": "vault-west-b",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          24.0,
+          -3,
+          23.0
+        ],
+        [
+          22,
+          -3,
+          20
+        ],
+        [
+          19.0,
+          -3,
+          19.0
+        ]
+      ],
+      "threshold": [
+        22,
+        -3,
+        20
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L28",
+      "a": "crypt-aisle",
+      "b": "vault-east",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          24.0,
+          -3,
+          23.0
+        ],
+        [
+          26,
+          -3,
+          20
+        ],
+        [
+          30.0,
+          -3,
+          19.0
+        ]
+      ],
+      "threshold": [
+        26,
+        -3,
+        20
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L29",
+      "a": "crypt-aisle",
+      "b": "vault-north",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          24.0,
+          -3,
+          23.0
+        ],
+        [
+          24,
+          -3,
+          12
+        ],
+        [
+          22.0,
+          -3,
+          9.0
+        ]
+      ],
+      "threshold": [
+        24,
+        -3,
+        12
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L30",
+      "a": "grounds",
+      "b": "entry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          22.0,
+          0,
+          19.5
+        ],
+        [
+          6,
+          0,
+          39
+        ],
+        [
+          22.5,
+          0,
+          48.7
+        ]
+      ],
+      "threshold": [
+        6,
+        0,
+        39
+      ],
+      "opening": "doorway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L31",
+      "a": "nave",
+      "b": "rear-nave",
+      "kind": "level",
+      "width": 7.6,
+      "points": [
+        [
+          22.0,
+          0,
+          19.0
+        ],
+        [
+          22,
+          0,
+          26
+        ],
+        [
+          22.0,
+          0,
+          30.0
+        ]
+      ],
+      "threshold": [
+        22,
+        0,
+        26
+      ],
+      "opening": "open structural archway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L32",
+      "a": "nave",
+      "b": "chancel",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          22.0,
+          0,
+          19.0
+        ],
+        [
+          22,
+          0,
+          12
+        ],
+        [
+          22.0,
+          0,
+          9.0
+        ]
+      ],
+      "threshold": [
+        22,
+        0,
+        12
+      ],
+      "opening": "open chancel archway",
+      "access": "parish",
+      "note": "Exact proposed threshold; roof, wall, leaf and circulation must share this authority.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L33",
+      "a": "rear-nave",
+      "b": "choir-stair",
+      "kind": "stairs",
+      "width": 1.3,
+      "points": [
+        [
+          19.5,
+          0,
+          27.6
+        ],
+        [
+          19.5,
+          3,
+          32.400000000000006
+        ]
+      ],
+      "rise_m": 3,
+      "run_m": 4.800000000000001,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 18,
+      "construction": "Real full-run voids, floor/roof depth, guards and unobstructed side bypass/end landings required.",
+      "note": "Tower threshold is beyond the choir flight side guard, not inside its run. Crypt flight is outside nave seating.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L34",
+      "a": "tower-stair",
+      "b": "belfry",
+      "kind": "stairs",
+      "width": 1.3,
+      "points": [
+        [
+          16.5,
+          3,
+          27.6
+        ],
+        [
+          16.5,
+          6,
+          32.400000000000006
+        ]
+      ],
+      "rise_m": 3,
+      "run_m": 4.800000000000001,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 18,
+      "construction": "Real full-run voids, floor/roof depth, guards and unobstructed side bypass/end landings required.",
+      "note": "Tower threshold is beyond the choir flight side guard, not inside its run. Crypt flight is outside nave seating.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L35",
+      "a": "crypt-stair",
+      "b": "crypt-entry",
+      "kind": "stairs",
+      "width": 1.3,
+      "points": [
+        [
+          31.5,
+          -3,
+          27.6
+        ],
+        [
+          31.5,
+          0,
+          32.400000000000006
+        ]
+      ],
+      "rise_m": 3,
+      "run_m": 4.800000000000001,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 18,
+      "construction": "Real full-run voids, floor/roof depth, guards and unobstructed side bypass/end landings required.",
+      "note": "Tower threshold is beyond the choir flight side guard, not inside its run. Crypt flight is outside nave seating.",
+      "player_access": "OPEN_ROUTE"
+    }
+  ],
+  "capacity": "Forty seated nave places, a small choir and bounded parish work; normal-use seats do not create forty search rooms.",
+  "seating_aisles": [
+    {
+      "name": "centre",
+      "bounds": [
+        21,
+        12,
+        23,
+        26
+      ]
+    },
+    {
+      "name": "west side",
+      "bounds": [
+        18.08,
+        12,
+        18.95,
+        26
+      ]
+    },
+    {
+      "name": "east side",
+      "bounds": [
+        25.05,
+        12,
+        25.92,
+        26
+      ]
+    }
+  ],
+  "fit_assets": [
+    "chair_mp_5",
+    "toilet_mp_1",
+    "level_bath_basin"
+  ],
+  "prop_fit_reservations": [
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        19.3,
+        0,
+        13.5
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        20.3,
+        0,
+        13.5
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        23.7,
+        0,
+        13.5
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        24.7,
+        0,
+        13.5
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        19.3,
+        0,
+        14.7
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        20.3,
+        0,
+        14.7
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        23.7,
+        0,
+        14.7
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        24.7,
+        0,
+        14.7
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        19.3,
+        0,
+        15.9
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        20.3,
+        0,
+        15.9
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        23.7,
+        0,
+        15.9
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        24.7,
+        0,
+        15.9
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        19.3,
+        0,
+        17.1
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        20.3,
+        0,
+        17.1
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        23.7,
+        0,
+        17.1
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        24.7,
+        0,
+        17.1
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        19.3,
+        0,
+        18.3
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        20.3,
+        0,
+        18.3
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        23.7,
+        0,
+        18.3
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        24.7,
+        0,
+        18.3
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        19.3,
+        0,
+        19.5
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        20.3,
+        0,
+        19.5
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        23.7,
+        0,
+        19.5
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        24.7,
+        0,
+        19.5
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        19.3,
+        0,
+        20.7
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        20.3,
+        0,
+        20.7
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        23.7,
+        0,
+        20.7
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        24.7,
+        0,
+        20.7
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        19.3,
+        0,
+        21.9
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        20.3,
+        0,
+        21.9
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        23.7,
+        0,
+        21.9
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        24.7,
+        0,
+        21.9
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        19.3,
+        0,
+        23.1
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        20.3,
+        0,
+        23.1
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        23.7,
+        0,
+        23.1
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        24.7,
+        0,
+        23.1
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        19.3,
+        0,
+        24.299999999999997
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        20.3,
+        0,
+        24.299999999999997
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        23.7,
+        0,
+        24.299999999999997
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "nave",
+      "asset": "chair_mp_5",
+      "origin": [
+        24.7,
+        0,
+        24.299999999999997
+      ],
+      "yaw": 3.141592653589793
+    },
+    {
+      "space": "parish-wc",
+      "asset": "toilet_mp_1",
+      "origin": [
+        11.5,
+        0.235,
+        31.2
+      ]
+    },
+    {
+      "space": "parish-wc",
+      "asset": "level_bath_basin",
+      "origin": [
+        10.6,
+        0,
+        33.1
+      ]
+    },
+    {
+      "space": "vestry-wash",
+      "asset": "level_bath_basin",
+      "origin": [
+        33.4,
+        0,
+        8
+      ]
+    }
+  ],
+  "expected_single_beds": 0,
+  "sleeping_spaces": [],
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "chapel",
+      "point": [
+        30,
+        0,
+        20
+      ]
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "crypt-memorial",
+      "point": [
+        16,
+        -3,
+        30
+      ]
+    },
+    {
+      "rite": "Absolution",
+      "zone": "grounds",
+      "point": [
+        7,
+        0,
+        7
+      ]
+    }
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      22,
+      0,
+      51
+    ],
+    "yaw": -1.5707963267948966,
+    "cargo_route": [
+      [
+        18.372,
+        0,
+        51
+      ],
+      [
+        22,
+        0,
+        42
+      ],
+      [
+        22,
+        0,
+        39
+      ]
+    ],
+    "note": "Use actual canonical van, ground support and parish gate clearance; no substitute vehicle geometry."
+  },
+  "terrain_cutouts": [
+    {
+      "bounds": [
+        10,
+        6,
+        34,
+        34
+      ],
+      "world_surface_y": -0.65,
+      "method": "Persisted editor AdaptiveTerrainTopology punching below the entire crypt including sealed vaults and stair. Architectural ceilings/foundation cover and floor voids remain separate construction requirements."
+    }
+  ],
+  "structural_interfaces": [
+    {
+      "id": "choir-front",
+      "standing_y": 3,
+      "bounds": [
+        18,
+        26,
+        26,
+        34
+      ],
+      "requirement": "Only rear choir has a deck. Nave/chancel remain tall, open volumes; build supported beam/pier load paths, guard and full flight opening."
+    },
+    {
+      "id": "bell-frame",
+      "standing_y": 6,
+      "bounds": [
+        10,
+        26,
+        18,
+        34
+      ],
+      "requirement": "Tower masonry piers pass to ground foundations; bell load attaches to real braced frame, not floating roof props."
+    }
+  ],
+  "flow_reservations": [
+    {
+      "id": "public-arrival",
+      "path": [
+        "stage",
+        "entry",
+        "vestibule",
+        "rear-nave",
+        "nave",
+        "chancel"
+      ],
+      "avoid": [
+        "office",
+        "records",
+        "crypt-entry"
+      ],
+      "scope": "HISTORICAL_NORMAL_USE_NOT_PLAYER_SEARCH"
+    },
+    {
+      "id": "chapel-return",
+      "path": [
+        "nave",
+        "chapel",
+        "grounds",
+        "entry"
+      ],
+      "avoid": [
+        "vestry-wash",
+        "vestments"
+      ],
+      "scope": "HISTORICAL_NORMAL_USE_NOT_PLAYER_SEARCH"
+    },
+    {
+      "id": "crypt-access",
+      "path": [
+        "chapel",
+        "crypt-entry",
+        "crypt-stair",
+        "crypt-aisle",
+        "crypt-memorial"
+      ],
+      "avoid": [
+        "nave",
+        "vault-west-a",
+        "vault-west-b",
+        "vault-east",
+        "vault-north"
+      ],
+      "scope": "HISTORICAL_NORMAL_USE_NOT_PLAYER_SEARCH"
+    }
+  ],
+  "decisions": [
+    "Retain the distinctive parish footprint, nave/chancel, side chapel, choir at+3, belfry at+6 and crypt at-3, while replacing unsupported use of leftover room collections.",
+    "Move crypt flight to an east ground bay beneath music service; keep forty actual-sized nave seat reservations and clear centre/side aisles.",
+    "Parish meetings, confidential records and discreet sanitary room are bounded; vestry preparation, washing and dry vestments are separate.",
+    "Keep choir/tower thresholds beyond guard ends. Full physical upper-wall holes, supports and optical/player passage remain required.",
+    "Keep the memorial crypt playable while four larger burial vaults remain permanently sealed context, without tasks or ghost anchors inside."
+  ],
+  "remaining": [
+    "Author/inspect actual altar, choir, organ-maintenance, bell frame, masonry/roof beams, seating, support and source materials.",
+    "Construct permanent vault barriers, actual runtime sockets and shared native ownership inside the accessible envelope.",
+    "Punch saved world terrain below the complete crypt, with actual roof/ground cover and architectural stair openings; prove body/optical/object/render holes using filled-ground negatives.",
+    "Verify grounded parish arrival, stairs, closed/open doors, ghost/hunter routes, rituals, electrical operation, native/runtime/network parity and required performance; no round-time testing."
+  ],
+  "search_envelope": {
+    "status": "DESIGN_ONLY_SEALS_NOT_RUNTIME_IMPLEMENTED",
+    "maximum": 40,
+    "accessible_spaces": 29,
+    "sealed_context_spaces": 4,
+    "count_rule": "Every OPEN_SEARCH space counts, including corridors, stairs, service rooms, exterior sectors and staging. Stable fifteen gameplay owners are not the room budget.",
+    "barriers": [
+      {
+        "link": "L26",
+        "a": "crypt-memorial",
+        "b": "vault-west-a",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L27",
+        "a": "crypt-aisle",
+        "b": "vault-west-b",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L28",
+        "a": "crypt-aisle",
+        "b": "vault-east",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L29",
+        "a": "crypt-aisle",
+        "b": "vault-north",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      }
+    ],
+    "gameplay_rule": "Evidence, ghost spawn/anchor, hiding, switches/tasks, ritual sites, loose objective props and required travel belong only to the connected open envelope. Context windows may show rooms, but no interaction or required search crosses the seal.",
+    "context_rule": "Retain coherent historical rooms/assets behind permanent boundaries. Restrict whole wings to their hallways where useful; do not count shuttable ordinary doors as permanent seals.",
+    "next_gate": "Build actual permanent seals and audit runtime player/ghost/object/optical boundaries and all objective placements; construct the maps inside the forty-space cap. Round-duration testing is outside this rebuild task."
+  }
+}

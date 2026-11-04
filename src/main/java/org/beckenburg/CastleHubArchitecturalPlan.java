@@ -30,7 +30,7 @@ public final class CastleHubArchitecturalPlan {
     /** Continuous exterior wing roofs: the middle courtyard remains open sky.
      * The library uses a higher roof above its genuinely walkable upper storey. */
     private static final List<Roof> ROOFS=List.of(
-        new Roof(1,10.5,1,34,GROUND_CEILING,1.70,MaterialAtlas.STONE),
+        new Roof(1,10.5,1,34,UPPER_CEILING,1.70,MaterialAtlas.STONE),
         new Roof(10.5,19.5,1,11.5,UPPER_CEILING,2.0,MaterialAtlas.STONE),
         new Roof(21.2,28.5,1,34,GROUND_CEILING,1.85,MaterialAtlas.STONE),
         new Roof(28.5,43,4,34,GROUND_CEILING,2.20,MaterialAtlas.AGED_WOOD)
@@ -44,7 +44,26 @@ public final class CastleHubArchitecturalPlan {
     }
     public record Trim(String mesh,double x,double y,double z,
                        double sx,double sy,double sz,double yaw){}
-    private static final List<Wall> WALLS=buildWalls();
+    private static final List<Wall> LEGACY_WALLS=buildWalls();
+    private static final List<Wall> WALLS=upperWalls();
+    private static List<Wall> upperWalls(){
+        var out=new ArrayList<Wall>();
+        for(var w:LEGACY_WALLS){
+            boolean west=w.x0()==10.5&&w.x1()==10.5&&w.z0()==1&&w.z1()==11.5&&w.bottom()==3.4&&w.top()==6.8;
+            boolean south=w.horizontal()&&w.z0()==11.5&&w.x0()>=10.5&&w.x1()<=19.5&&w.bottom()>=3.4&&!w.hasDoor();
+            if(!west&&!south)out.add(w);
+        }
+        out.addAll(CastleUpperLayout.WALLS);return List.copyOf(out);
+    }
+    /** Keep every previously published wall ID, even when upper solids are replaced. */
+    public static String defaultWallId(Wall wall){
+        if(CastleGroundLayout.WALLS.contains(wall))return "ground-wall"+CastleGroundLayout.WALLS.indexOf(wall);
+        int previous=LEGACY_WALLS.indexOf(wall);
+        if(previous>=0)return "wall"+previous;
+        int upper=CastleUpperLayout.WALLS.indexOf(wall);
+        if(upper<0)throw new IllegalArgumentException("Unowned Castle wall");
+        return "upper-wall"+upper;
+    }
     private static final List<Deck> DECKS=List.of(
         // Functional second storey: library above the contract hall.
         new Deck(10.5,1,19.5,11.5,GROUND_CEILING,MaterialAtlas.PARQUET),
@@ -110,7 +129,11 @@ public final class CastleHubArchitecturalPlan {
         vertical(out,1,1,16,0,GROUND_CEILING,MaterialAtlas.STONE);
         vertical(out,1,16,17.8,0,1.05,MaterialAtlas.STONE);
         vertical(out,1,16,17.8,2.45,GROUND_CEILING,MaterialAtlas.STONE);
-        vertical(out,1,17.8,26,0,GROUND_CEILING,MaterialAtlas.STONE);
+        // Real annex doorway; retain the adjacent historical casement.
+        vertical(out,1,17.8,24.3,0,GROUND_CEILING,MaterialAtlas.STONE);
+        vertical(out,1,25.7,26,0,GROUND_CEILING,MaterialAtlas.STONE);
+        vertical(out,1,24.3,25.7,DOOR_HEIGHT,GROUND_CEILING,MaterialAtlas.STONE);
+        out.add(new Wall(1,24.3,1,25.7,0,0,MaterialAtlas.STONE,25,1.4));
         vertical(out,1,26,27.8,0,1.05,MaterialAtlas.STONE);
         vertical(out,1,26,27.8,2.45,GROUND_CEILING,MaterialAtlas.STONE);
         vertical(out,1,27.8,34,0,GROUND_CEILING,MaterialAtlas.STONE);
@@ -130,6 +153,9 @@ public final class CastleHubArchitecturalPlan {
         vertical(out,10.5,1,11.5,GROUND_CEILING,UPPER_CEILING,MaterialAtlas.STONE);
         vertical(out,19.5,1,11.5,GROUND_CEILING,UPPER_CEILING,MaterialAtlas.STONE);
         horizontal(out,11.5,10.5,19.5,GROUND_CEILING,UPPER_CEILING,MaterialAtlas.STONE,17.5);
+        out.addAll(CastleAnnex.walls());
+        out.addAll(CastleCellarLayout.WALLS);
+        out.addAll(CastleGroundLayout.WALLS);
         return List.copyOf(out);
     }
     private static void horizontal(List<Wall> out,double z,double from,double to,
@@ -219,6 +245,8 @@ public final class CastleHubArchitecturalPlan {
     }
     /** Walkable 3D height follows a physical incline and retains underpasses. */
     public static double elevation(double x,double z,double oldElevation){
+        double lower=CastleCellar.elevation(x,z,oldElevation);
+        if(Double.isFinite(lower))return lower;
         if(oldElevation>2.0&&upperWalkable(x,z))return GROUND_CEILING;
         if(onStairs(x,z))return stairHeight(x,z);
         return 0;

@@ -31,6 +31,11 @@ Inspect existing facilities first. Each row is a requirement to resolve in the r
 | dining | Service kitchen and cleanup | REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN |
 | plant | Laundry and plant operating access | REVIEW_EXISTING_OR_AUTHOR_IN_ROUGH_PLAN |
 
+## Accessible search envelope
+
+Owner direction, 3 November: maximum **40 accessible search spaces** for this site, including corridors, stairs, service rooms, outdoor search sectors and staging. Build the maps inside this size budget; round-duration testing is outside this task. Retain complete normal-use architecture as sealed context. A wing may expose only its hallway; permanent closures must keep tasks, evidence, ghost activity and required routes in the connected open portion. See [search-envelope policy](../SEARCH_ENVELOPE_POLICY.json) and [all-site register](../search-envelope-register.json). Stable fifteen gameplay zones are not a substitute for actual accessible room counts.
+
+
 ## Dimension and construction decisions
 
 Review inherited room size against actual task furniture, capacity, source-mesh bounds, door swings, window privacy, stair headroom, service access and the ritual/hiding contracts. No inherited rectangle is accepted merely because it already has a name. Real child rooms need physical walls/openings and an explicit mapping into stable gameplay zones.

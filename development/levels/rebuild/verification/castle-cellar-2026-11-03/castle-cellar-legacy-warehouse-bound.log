@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: models remain in enclosed east warehouse
+	at org.beckenburg.CastleHeadquartersRevisionTest.check(CastleHeadquartersRevisionTest.java:8)
+	at org.beckenburg.CastleHeadquartersRevisionTest.main(CastleHeadquartersRevisionTest.java:33)

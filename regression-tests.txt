@@ -11,7 +11,6 @@ SoundCoverageTest
 AudioDeviceRecoveryTest
 HorrorAudioRoutingTest
 GhostVoicePackRoutingTest
-HorrorAudioRoutingTest
 CastleHubIntegrationTest
 CastleDocumentRecoveryTest
 EditorChangeIntegrationTest
@@ -19,6 +18,8 @@ EditorDiskRevisionTest
 CastleSnapshotContractTest
 EditorSchemaCompatibilityTest
 CastleEditorGeometryTest
+CastleSignedConstructionTest
+CastleTrainingAnnexTest
 CastleLightingPlacementRepairTest
 CastleHomeInteractionTest
 CampaignBoardPanelTest
@@ -221,6 +222,7 @@ AuthoredLevelPhysicsTest
 GroundRecoverySupportParityTest
 HouseRebuildPhysicsTest
 AuthoredLevelReachabilityTest
+ChurchUpperDoorTest
 AuthoredLevelStateTest
 AuthoredLevelNetworkTest
 AuthoredLevelRitualCaseTest
@@ -326,3 +328,12 @@ PreparedLightBatchParityTest
 EditorAgentServiceTest
 LevelAuthoringIdentityTest
 LevelAuthoringRecoveryTest
+CastleWorldTerrainTest
+CastleCellarConstructionTest
+CastleGroundConstructionTest
+BeckenburgRegressionManifestTest
+
+CastleUpperConstructionTest
+WallLampSourceUvTest
+WallLampMountPlateTest
+CastleMuseumConstructionTest

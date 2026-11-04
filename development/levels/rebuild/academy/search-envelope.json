@@ -1,0 +1,514 @@
+{
+  "site": "ACADEMY",
+  "status": "DESIGN_ONLY_SEALS_NOT_RUNTIME_IMPLEMENTED",
+  "maximum": 40,
+  "accessible_spaces": 38,
+  "sealed_context_spaces": 23,
+  "count_rule": "Every OPEN_SEARCH space counts, including corridors, stairs, service rooms, exterior sectors and staging. Stable fifteen gameplay owners are not the room budget.",
+  "barriers": [
+    {
+      "link": "L05",
+      "a": "reception",
+      "b": "reception-store",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L15",
+      "a": "library-issue",
+      "b": "stacks",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L19",
+      "a": "office",
+      "b": "staff-ground-wc",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L20",
+      "a": "office",
+      "b": "office-records",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L21",
+      "a": "grounds",
+      "b": "laundry",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L22",
+      "a": "grounds",
+      "b": "house-store",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L23",
+      "a": "kitchen",
+      "b": "staff-change",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L24",
+      "a": "grounds",
+      "b": "staff-change",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L29",
+      "a": "serving",
+      "b": "washup",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L30",
+      "a": "kitchen",
+      "b": "pantry",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L33",
+      "a": "receiving",
+      "b": "grounds",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L34",
+      "a": "refuse",
+      "b": "grounds",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L39",
+      "a": "lab",
+      "b": "lab-wash",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L50",
+      "a": "upper-west",
+      "b": "linen",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L51",
+      "a": "upper-west",
+      "b": "staff-hall",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L56",
+      "a": "upper-west",
+      "b": "staff-common",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L57",
+      "a": "upper-east",
+      "b": "restricted",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L63",
+      "a": "upper-north",
+      "b": "dorm-2",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L65",
+      "a": "upper-north",
+      "b": "dorm-4",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    }
+  ],
+  "gameplay_rule": "Evidence, ghost spawn/anchor, hiding, switches/tasks, ritual sites, loose objective props and required travel belong only to the connected open envelope. Context windows may show rooms, but no interaction or required search crosses the seal.",
+  "context_rule": "Retain coherent historical rooms/assets behind permanent boundaries. Restrict whole wings to their hallways where useful; do not count shuttable ordinary doors as permanent seals.",
+  "next_gate": "Build actual permanent seals and audit runtime player/ghost/object/optical boundaries and all objective placements; construct the maps inside the forty-space cap. Round-duration testing is outside this rebuild task.",
+  "spaces": [
+    {
+      "id": "west",
+      "name": "West sheltered cloister",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "east",
+      "name": "East teaching cloister and return",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "north",
+      "name": "North dining cloister",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "south",
+      "name": "South entrance cloister",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "reception",
+      "name": "Visitor reception and waiting",
+      "owner": 1,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "visitor-wc",
+      "name": "Visitor WC outside residence",
+      "owner": 1,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "reception-store",
+      "name": "Coats and visitor supplies",
+      "owner": 1,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "reading",
+      "name": "Library quiet reading",
+      "owner": 6,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "library-issue",
+      "name": "Library issue return and staff desk",
+      "owner": 6,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "stacks",
+      "name": "Open library stacks",
+      "owner": 6,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "office",
+      "name": "Headmaster private meeting room",
+      "owner": 5,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "office-entry",
+      "name": "Covered administration approach",
+      "owner": 5,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "staff-ground-wc",
+      "name": "Staff private sanitary support",
+      "owner": 5,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "office-records",
+      "name": "Confidential staff records",
+      "owner": 5,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "laundry",
+      "name": "Household laundry and wash work",
+      "owner": 0,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "house-store",
+      "name": "Household stores under north residence",
+      "owner": 0,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "staff-change",
+      "name": "Kitchen and household staff changing",
+      "owner": 5,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "bulk-food",
+      "name": "Bulk food supplies and delivery buffer",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "dining",
+      "name": "Twenty-place pupil and staff dining",
+      "owner": 4,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "kitchen",
+      "name": "Kitchen preparation and cooking",
+      "owner": 4,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "serving",
+      "name": "Dining serving passage",
+      "owner": 4,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "pantry",
+      "name": "Food provisions",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "washup",
+      "name": "Dirty dishes and cleanup",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "receiving",
+      "name": "Service receiving and unpacking",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "refuse",
+      "name": "Enclosed refuse awaiting removal",
+      "owner": 4,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "lecture",
+      "name": "Sixteen-place teaching room",
+      "owner": 2,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "lab",
+      "name": "Practical teaching benches and handwashing",
+      "owner": 3,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "lab-prep",
+      "name": "Secure practical supplies and preparation",
+      "owner": 3,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "lab-wash",
+      "name": "Practical cleanup and sink",
+      "owner": 3,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "lab-entry",
+      "name": "Lab coats and approach",
+      "owner": 3,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "main-stair",
+      "name": "Main stair and archive approach",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "east-stair",
+      "name": "Independent east return stair",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-west",
+      "name": "Upper west residential passage",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-north",
+      "name": "Upper dormitory distribution",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-east",
+      "name": "Upper teaching-library return",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-main-stair",
+      "name": "Main stair guarded upper landing",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-east-stair",
+      "name": "East stair guarded upper landing",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "student-change",
+      "name": "Residential washing approach",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "student-wc",
+      "name": "Student screened WC bays",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "student-shower",
+      "name": "Private student shower bays",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "linen",
+      "name": "Residential linen and cleaning supplies",
+      "owner": 7,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "staff-a",
+      "name": "Two resident staff beds A",
+      "owner": 5,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "staff-b",
+      "name": "Two resident staff beds B",
+      "owner": 5,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "staff-hall",
+      "name": "Staff sleeping approach",
+      "owner": 5,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "staff-wash",
+      "name": "Resident staff WC and washing",
+      "owner": 5,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "staff-work",
+      "name": "Resident staff work room",
+      "owner": 5,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "staff-common",
+      "name": "Staff common room",
+      "owner": 5,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "restricted",
+      "name": "Supervised restricted library stacks",
+      "owner": 10,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "study",
+      "name": "Quiet advanced study and research",
+      "owner": 10,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "dorm-1",
+      "name": "Four-place pupil sleeping room 1",
+      "owner": 8,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "dorm-2",
+      "name": "Four-place pupil sleeping room 2",
+      "owner": 8,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "dorm-3",
+      "name": "Four-place pupil sleeping room 3",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "dorm-4",
+      "name": "Four-place pupil sleeping room 4",
+      "owner": 9,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "archive",
+      "name": "Dry institutional archive",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "plant",
+      "name": "Heat water and electrical maintenance",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "cellar-hall",
+      "name": "Archive and plant service approach",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "cellar-stair",
+      "name": "Cellar stair below entrance range",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "quad",
+      "name": "Open quadrangle with real daylight",
+      "owner": 12,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "grounds",
+      "name": "Academy service grounds envelope",
+      "owner": 12,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "entry",
+      "name": "Gate court and public approach",
+      "owner": 13,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "stage",
+      "name": "Canonical van gate apron",
+      "owner": 14,
+      "access": "OPEN_SEARCH"
+    }
+  ]
+}

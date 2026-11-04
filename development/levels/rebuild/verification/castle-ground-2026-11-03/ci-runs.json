@@ -1,0 +1,23 @@
+{
+  "source_sha": "50829e61bc741ab72a012ff893da42aec03f5c6f",
+  "runs": [
+    {
+      "id": 41738078868,
+      "workflow": "Editor Agent Service Acceptance",
+      "last_observed": "in_progress"
+    },
+    {
+      "id": 41738083540,
+      "workflow": "Beckenburg GPU Renderer Acceptance",
+      "last_observed": "in_progress"
+    },
+    {
+      "id": 41738088189,
+      "workflow": "Beckenburg Full Multiplayer Acceptance",
+      "last_observed": "in_progress"
+    }
+  ],
+  "rule": "Preserve these exact handles; observation timeout is not terminal. Inspect full raw321-entry transcript, not advisory workflow badge, when terminal. Do not dispatch competing full verification while this one is live.",
+  "prior_runs": "prior-ci-observation.json",
+  "next": "Continue actual Castle upper west roof/bearing/lodging and six beds; all map goal remains active and incomplete."
+}

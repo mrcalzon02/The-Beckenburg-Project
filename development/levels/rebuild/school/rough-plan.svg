@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="2670" viewBox="0 0 1280 2670">
 <style>text{font-family:Arial,sans-serif;fill:#1c2a37}.small{font-size:12px}.label{font-size:13px;font-weight:bold}.title{font-size:26px;font-weight:bold}</style>
 <rect width="100%" height="100%" fill="#f5f4ef"/><text x="32" y="38" class="title">Ravenshade School — revised function-first rough</text>
-<text x="32" y="65" font-size="15">SCHOOL · ROUGH LAYOUT v2 · metres · planning only</text>
+<text x="32" y="65" font-size="15">SCHOOL / 40 accessible, 0 sealed · ROUGH LAYOUT v2 · metres · planning only</text>
 <text x="32" y="90" class="small">Cyan: route reservation · amber dashed: elevation change · B/C/A: ritual clear areas · numbered spaces: key below</text>
 <text x="32" y="138.0" font-size="18">Standing elevation Y -3 m</text>
 <path d="M166.3,155.0 v610.0" stroke="#dfdfd8"/><text x="166.3" y="149.0" class="small">10</text>
@@ -14,9 +14,9 @@
 <path d="M70.0,454.6 h577.9" stroke="#dfdfd8"/><text x="40.0" y="458.6" class="small">30</text>
 <path d="M70.0,561.7 h577.9" stroke="#dfdfd8"/><text x="40.0" y="565.7" class="small">40</text>
 <path d="M70.0,668.7 h577.9" stroke="#dfdfd8"/><text x="40.0" y="672.7" class="small">50</text>
-<rect x="305.4" y="262.0" width="44.9" height="85.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Boiler hot-water and electrical maintenance; 4.2 × 8 m; Y -3</title></rect>
-<rect x="305.4" y="347.6" width="74.9" height="107.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Maintenance store and clear ritual reservation; 7 × 10 m; Y -3</title></rect>
-<rect x="350.4" y="262.0" width="30.0" height="85.6" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Cellar service stair; 2.8 × 8 m; Y -3</title></rect>
+<rect x="305.4" y="262.0" width="44.9" height="85.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Boiler hot-water and electrical maintenance [OPEN]; 4.2 × 8 m; Y -3</title></rect>
+<rect x="305.4" y="347.6" width="74.9" height="107.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Maintenance store and clear ritual reservation [OPEN]; 7 × 10 m; Y -3</title></rect>
+<rect x="350.4" y="262.0" width="30.0" height="85.6" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Cellar service stair [OPEN]; 2.8 × 8 m; Y -3</title></rect>
 <path d="M365.4,304.8 L350.4,334.8 L327.9,304.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L33: Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.</title></path>
 <path d="M327.9,304.8 L337.5,347.6 L342.9,401.1" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L34: Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.</title></path>
 <path d="M364.3,278.1 L364.3,329.4" fill="none" stroke="#a86516" stroke-width="2.2" stroke-dasharray="6 4"><title>L44: Measured section reservation, not a generic centre-to-centre diagonal ramp.</title></path>
@@ -38,34 +38,34 @@
 <path d="M70.0,1144.6 h577.9" stroke="#dfdfd8"/><text x="40.0" y="1148.6" class="small">30</text>
 <path d="M70.0,1251.7 h577.9" stroke="#dfdfd8"/><text x="40.0" y="1255.7" class="small">40</text>
 <path d="M70.0,1358.7 h577.9" stroke="#dfdfd8"/><text x="40.0" y="1362.7" class="small">50</text>
-<rect x="112.8" y="845.0" width="535.1" height="363.9" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Outdoor grounds: footprint is envelope only; 50 × 34 m; Y 0</title></rect>
-<rect x="70.0" y="1208.9" width="577.9" height="239.7" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>School forecourt and shared arrival support; 54 × 22.4 m; Y 0</title></rect>
-<rect x="251.9" y="1305.2" width="214.0" height="139.1" fill="#afcecf" stroke="#536477" stroke-width="1.4"><title>Canonical van arrival reservation; 20 × 13 m; Y 0</title></rect>
-<rect x="326.8" y="1144.6" width="53.5" height="32.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Visitor reception and interview; 5 × 3 m; Y 0</title></rect>
-<rect x="326.8" y="1176.8" width="26.8" height="32.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Visitor WC from public vestibule; 2.5 × 3 m; Y 0</title></rect>
-<rect x="353.6" y="1176.8" width="26.8" height="32.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Administration work room; 2.5 × 3 m; Y 0</title></rect>
-<rect x="305.4" y="984.1" width="44.9" height="53.5" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Staff rest and work room; 4.2 × 5 m; Y 0</title></rect>
-<rect x="305.4" y="952.0" width="21.4" height="32.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Cleaner sink and supplies; 2 × 3 m; Y 0</title></rect>
-<rect x="326.8" y="952.0" width="23.5" height="32.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Staff sanitary room; 2.2 × 3 m; Y 0</title></rect>
-<rect x="166.3" y="1080.4" width="107.0" height="107.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Class A: 24 desks and teaching area; 10 × 10 m; Y 0</title></rect>
-<rect x="166.3" y="1187.5" width="107.0" height="21.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Class A coats and teaching store; 10 × 2 m; Y 0</title></rect>
-<rect x="166.3" y="952.0" width="107.0" height="96.3" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Shared practical science teaching; 10 × 9 m; Y 0</title></rect>
-<rect x="166.3" y="1048.3" width="107.0" height="32.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Science preparation and secure supplies; 10 × 3 m; Y 0</title></rect>
-<rect x="380.4" y="1080.4" width="85.6" height="128.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Dining: two classes in one sitting; 8 × 12 m; Y 0</title></rect>
-<rect x="466.0" y="1123.2" width="42.8" height="85.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Preparation cooking and controlled serving; 4 × 8 m; Y 0</title></rect>
-<rect x="508.8" y="1123.2" width="42.8" height="85.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Food receiving wash-up and refuse exit; 4 × 8 m; Y 0</title></rect>
-<rect x="401.8" y="1016.2" width="64.2" height="64.2" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Private nurse consultation and rest; 6 × 6 m; Y 0</title></rect>
-<rect x="401.8" y="952.0" width="42.8" height="32.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Changing group A lockers and bench; 4 × 3 m; Y 0</title></rect>
-<rect x="444.6" y="952.0" width="21.4" height="32.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Group A screened washing; 2 × 3 m; Y 0</title></rect>
-<rect x="401.8" y="984.1" width="42.8" height="32.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Changing group B lockers and bench; 4 × 3 m; Y 0</title></rect>
-<rect x="444.6" y="984.1" width="21.4" height="32.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Group B screened washing; 2 × 3 m; Y 0</title></rect>
-<rect x="466.0" y="909.2" width="128.4" height="171.2" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Multipurpose PE hall: no upper floor; 12 × 16 m; Y 0</title></rect>
-<rect x="273.3" y="1144.6" width="53.5" height="64.2" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Pupil entrance and visitor vestibule; 5 × 6 m; Y 0</title></rect>
-<rect x="273.3" y="952.0" width="32.1" height="192.6" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Ground public teaching corridor; 3 × 18 m; Y 0</title></rect>
-<rect x="350.4" y="952.0" width="30.0" height="85.6" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Plant service stair and rear delivery exit; 2.8 × 8 m; Y 0</title></rect>
-<rect x="305.4" y="1037.6" width="74.9" height="107.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Main stair bay with lower approach; 7 × 10 m; Y 0</title></rect>
-<rect x="466.0" y="1080.4" width="42.8" height="42.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Public dining-to-gym connector; 4 × 4 m; Y 0</title></rect>
-<rect x="380.4" y="952.0" width="21.4" height="128.4" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Health and changing corridor; 2 × 12 m; Y 0</title></rect>
+<rect x="112.8" y="845.0" width="535.1" height="363.9" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>Outdoor grounds: footprint is envelope only [OPEN]; 50 × 34 m; Y 0</title></rect>
+<rect x="70.0" y="1208.9" width="577.9" height="239.7" fill="#c5d6be" stroke="#536477" stroke-width="1.4"><title>School forecourt and shared arrival support [OPEN]; 54 × 22.4 m; Y 0</title></rect>
+<rect x="251.9" y="1305.2" width="214.0" height="139.1" fill="#afcecf" stroke="#536477" stroke-width="1.4"><title>Canonical van arrival reservation [OPEN]; 20 × 13 m; Y 0</title></rect>
+<rect x="326.8" y="1144.6" width="53.5" height="32.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Visitor reception and interview [OPEN]; 5 × 3 m; Y 0</title></rect>
+<rect x="326.8" y="1176.8" width="26.8" height="32.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Visitor WC from public vestibule [OPEN]; 2.5 × 3 m; Y 0</title></rect>
+<rect x="353.6" y="1176.8" width="26.8" height="32.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Administration work room [OPEN]; 2.5 × 3 m; Y 0</title></rect>
+<rect x="305.4" y="984.1" width="44.9" height="53.5" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Staff rest and work room [OPEN]; 4.2 × 5 m; Y 0</title></rect>
+<rect x="305.4" y="952.0" width="21.4" height="32.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Cleaner sink and supplies [OPEN]; 2 × 3 m; Y 0</title></rect>
+<rect x="326.8" y="952.0" width="23.5" height="32.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Staff sanitary room [OPEN]; 2.2 × 3 m; Y 0</title></rect>
+<rect x="166.3" y="1080.4" width="107.0" height="107.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Class A: 24 desks and teaching area [OPEN]; 10 × 10 m; Y 0</title></rect>
+<rect x="166.3" y="1187.5" width="107.0" height="21.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Class A coats and teaching store [OPEN]; 10 × 2 m; Y 0</title></rect>
+<rect x="166.3" y="952.0" width="107.0" height="96.3" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Shared practical science teaching [OPEN]; 10 × 9 m; Y 0</title></rect>
+<rect x="166.3" y="1048.3" width="107.0" height="32.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Science preparation and secure supplies [OPEN]; 10 × 3 m; Y 0</title></rect>
+<rect x="380.4" y="1080.4" width="85.6" height="128.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Dining: two classes in one sitting [OPEN]; 8 × 12 m; Y 0</title></rect>
+<rect x="466.0" y="1123.2" width="42.8" height="85.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Preparation cooking and controlled serving [OPEN]; 4 × 8 m; Y 0</title></rect>
+<rect x="508.8" y="1123.2" width="42.8" height="85.6" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Food receiving wash-up and refuse exit [OPEN]; 4 × 8 m; Y 0</title></rect>
+<rect x="401.8" y="1016.2" width="64.2" height="64.2" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Private nurse consultation and rest [OPEN]; 6 × 6 m; Y 0</title></rect>
+<rect x="401.8" y="952.0" width="42.8" height="32.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Changing group A lockers and bench [OPEN]; 4 × 3 m; Y 0</title></rect>
+<rect x="444.6" y="952.0" width="21.4" height="32.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Group A screened washing [OPEN]; 2 × 3 m; Y 0</title></rect>
+<rect x="401.8" y="984.1" width="42.8" height="32.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Changing group B lockers and bench [OPEN]; 4 × 3 m; Y 0</title></rect>
+<rect x="444.6" y="984.1" width="21.4" height="32.1" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Group B screened washing [OPEN]; 2 × 3 m; Y 0</title></rect>
+<rect x="466.0" y="909.2" width="128.4" height="171.2" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Multipurpose PE hall: no upper floor [OPEN]; 12 × 16 m; Y 0</title></rect>
+<rect x="273.3" y="1144.6" width="53.5" height="64.2" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Pupil entrance and visitor vestibule [OPEN]; 5 × 6 m; Y 0</title></rect>
+<rect x="273.3" y="952.0" width="32.1" height="192.6" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Ground public teaching corridor [OPEN]; 3 × 18 m; Y 0</title></rect>
+<rect x="350.4" y="952.0" width="30.0" height="85.6" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Plant service stair and rear delivery exit [OPEN]; 2.8 × 8 m; Y 0</title></rect>
+<rect x="305.4" y="1037.6" width="74.9" height="107.0" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Main stair bay with lower approach [OPEN]; 7 × 10 m; Y 0</title></rect>
+<rect x="466.0" y="1080.4" width="42.8" height="42.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Public dining-to-gym connector [OPEN]; 4 × 4 m; Y 0</title></rect>
+<rect x="380.4" y="952.0" width="21.4" height="128.4" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Health and changing corridor [OPEN]; 2 × 12 m; Y 0</title></rect>
 <path d="M300.1,1176.8 L326.8,1160.7 L353.6,1160.7" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L01: Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.</title></path>
 <path d="M300.1,1176.8 L326.8,1192.8 L340.2,1192.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L02: Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.</title></path>
 <path d="M353.6,1160.7 L367.0,1176.8 L367.0,1192.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L03: Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.</title></path>
@@ -145,15 +145,15 @@
 <path d="M70.0,1834.6 h577.9" stroke="#dfdfd8"/><text x="40.0" y="1838.6" class="small">30</text>
 <path d="M70.0,1941.7 h577.9" stroke="#dfdfd8"/><text x="40.0" y="1945.7" class="small">40</text>
 <path d="M70.0,2048.7 h577.9" stroke="#dfdfd8"/><text x="40.0" y="2052.7" class="small">50</text>
-<rect x="305.4" y="1642.0" width="74.9" height="53.5" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Student washroom A with screened entry; 7 × 5 m; Y 3.6</title></rect>
-<rect x="305.4" y="1695.5" width="74.9" height="53.5" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Student washroom B with screened entry; 7 × 5 m; Y 3.6</title></rect>
-<rect x="166.3" y="1770.4" width="107.0" height="128.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Library reading lending and stacks; 10 × 12 m; Y 3.6</title></rect>
-<rect x="166.3" y="1642.0" width="107.0" height="107.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Class B: 24 desks and teaching area; 10 × 10 m; Y 3.6</title></rect>
-<rect x="166.3" y="1749.0" width="107.0" height="21.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Class B coats and teaching store; 10 × 2 m; Y 3.6</title></rect>
-<rect x="380.4" y="1770.4" width="128.4" height="128.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Assembly: 48 pupils and staff; 12 × 12 m; Y 3.6</title></rect>
-<rect x="273.3" y="1642.0" width="32.1" height="256.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Upper public teaching corridor; 3 × 24 m; Y 3.6</title></rect>
-<rect x="305.4" y="1749.0" width="74.9" height="85.6" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Guarded stair void and top landing; 7 × 8 m; Y 3.6</title></rect>
-<rect x="305.4" y="1834.6" width="74.9" height="64.2" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Daylit library and assembly lobby; 7 × 6 m; Y 3.6</title></rect>
+<rect x="305.4" y="1642.0" width="74.9" height="53.5" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Student washroom A with screened entry [OPEN]; 7 × 5 m; Y 3.6</title></rect>
+<rect x="305.4" y="1695.5" width="74.9" height="53.5" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Student washroom B with screened entry [OPEN]; 7 × 5 m; Y 3.6</title></rect>
+<rect x="166.3" y="1770.4" width="107.0" height="128.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Library reading lending and stacks [OPEN]; 10 × 12 m; Y 3.6</title></rect>
+<rect x="166.3" y="1642.0" width="107.0" height="107.0" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Class B: 24 desks and teaching area [OPEN]; 10 × 10 m; Y 3.6</title></rect>
+<rect x="166.3" y="1749.0" width="107.0" height="21.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Class B coats and teaching store [OPEN]; 10 × 2 m; Y 3.6</title></rect>
+<rect x="380.4" y="1770.4" width="128.4" height="128.4" fill="#d0d8e2" stroke="#536477" stroke-width="1.4"><title>Assembly: 48 pupils and staff [OPEN]; 12 × 12 m; Y 3.6</title></rect>
+<rect x="273.3" y="1642.0" width="32.1" height="256.8" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Upper public teaching corridor [OPEN]; 3 × 24 m; Y 3.6</title></rect>
+<rect x="305.4" y="1749.0" width="74.9" height="85.6" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Guarded stair void and top landing [OPEN]; 7 × 8 m; Y 3.6</title></rect>
+<rect x="305.4" y="1834.6" width="74.9" height="64.2" fill="#b2cbd4" stroke="#536477" stroke-width="1.4"><title>Daylit library and assembly lobby [OPEN]; 7 × 6 m; Y 3.6</title></rect>
 <path d="M289.4,1770.4 L305.4,1654.9 L342.9,1668.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L25: Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.</title></path>
 <path d="M289.4,1770.4 L305.4,1708.4 L342.9,1722.3" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L26: Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.</title></path>
 <path d="M289.4,1770.4 L305.4,1823.9 L342.9,1791.8" fill="none" stroke="#307e99" stroke-width="2.2" ><title>L27: Exact proposed threshold; centre-to-door polylines are diagrams, not navigation proof.</title></path>
@@ -176,44 +176,44 @@
 <rect x="421.0" y="1811.1" width="47.1" height="47.1" fill="none" stroke="#812c6b" stroke-width="2"/><text x="471.1" y="1834.6" class="label">B</text>
 <path d="M1150,1595.0 v-35 l-5,9 m5,-9 l5,9" fill="none" stroke="#283949" stroke-width="2"/><text x="1144" y="1552.0" class="label">N</text>
 <path d="M1080,1645.0 h107.0" stroke="#283949" stroke-width="3"/><text x="1080" y="1663.0" class="small">10 metres</text>
-<text x="32" y="2202.0" class="small">1. Pupil entrance and visitor vestibule (5×6; Y+0)</text>
-<text x="446" y="2202.0" class="small">2. Visitor reception and interview (5×3; Y+0)</text>
-<text x="860" y="2202.0" class="small">3. Visitor WC from public vestibule (2.5×3; Y+0)</text>
-<text x="32" y="2232.0" class="small">4. Administration work room (2.5×3; Y+0)</text>
-<text x="446" y="2232.0" class="small">5. Ground public teaching corridor (3×18; Y+0)</text>
-<text x="860" y="2232.0" class="small">6. Staff rest and work room (4.2×5; Y+0)</text>
-<text x="32" y="2262.0" class="small">7. Cleaner sink and supplies (2×3; Y+0)</text>
-<text x="446" y="2262.0" class="small">8. Staff sanitary room (2.2×3; Y+0)</text>
-<text x="860" y="2262.0" class="small">9. Plant service stair and rear delivery exit (2.8×8; Y+0)</text>
-<text x="32" y="2292.0" class="small">10. Main stair bay with lower approach (7×10; Y+0)</text>
-<text x="446" y="2292.0" class="small">11. Class A: 24 desks and teaching area (10×10; Y+0)</text>
-<text x="860" y="2292.0" class="small">12. Class A coats and teaching store (10×2; Y+0)</text>
-<text x="32" y="2322.0" class="small">13. Shared practical science teaching (10×9; Y+0)</text>
-<text x="446" y="2322.0" class="small">14. Science preparation and secure supplies (10×3; Y+0)</text>
-<text x="860" y="2322.0" class="small">15. Dining: two classes in one sitting (8×12; Y+0)</text>
-<text x="32" y="2352.0" class="small">16. Preparation cooking and controlled serving (4×8; Y+0)</text>
-<text x="446" y="2352.0" class="small">17. Food receiving wash-up and refuse exit (4×8; Y+0)</text>
-<text x="860" y="2352.0" class="small">18. Public dining-to-gym connector (4×4; Y+0)</text>
-<text x="32" y="2382.0" class="small">19. Health and changing corridor (2×12; Y+0)</text>
-<text x="446" y="2382.0" class="small">20. Private nurse consultation and rest (6×6; Y+0)</text>
-<text x="860" y="2382.0" class="small">21. Changing group A lockers and bench (4×3; Y+0)</text>
-<text x="32" y="2412.0" class="small">22. Group A screened washing (2×3; Y+0)</text>
-<text x="446" y="2412.0" class="small">23. Changing group B lockers and bench (4×3; Y+0)</text>
-<text x="860" y="2412.0" class="small">24. Group B screened washing (2×3; Y+0)</text>
-<text x="32" y="2442.0" class="small">25. Multipurpose PE hall: no upper floor (12×16; Y+0)</text>
-<text x="446" y="2442.0" class="small">26. Upper public teaching corridor (3×24; Y+3.6)</text>
-<text x="860" y="2442.0" class="small">27. Student washroom A with screened entry (7×5; Y+3.6)</text>
-<text x="32" y="2472.0" class="small">28. Student washroom B with screened entry (7×5; Y+3.6)</text>
-<text x="446" y="2472.0" class="small">29. Guarded stair void and top landing (7×8; Y+3.6)</text>
-<text x="860" y="2472.0" class="small">30. Daylit library and assembly lobby (7×6; Y+3.6)</text>
-<text x="32" y="2502.0" class="small">31. Library reading lending and stacks (10×12; Y+3.6)</text>
-<text x="446" y="2502.0" class="small">32. Class B: 24 desks and teaching area (10×10; Y+3.6)</text>
-<text x="860" y="2502.0" class="small">33. Class B coats and teaching store (10×2; Y+3.6)</text>
-<text x="32" y="2532.0" class="small">34. Assembly: 48 pupils and staff (12×12; Y+3.6)</text>
-<text x="446" y="2532.0" class="small">35. Cellar service stair (2.8×8; Y-3)</text>
-<text x="860" y="2532.0" class="small">36. Boiler hot-water and electrical maintenance (4.2×8; Y-3)</text>
-<text x="32" y="2562.0" class="small">37. Maintenance store and clear ritual reservation (7×10; Y-3)</text>
-<text x="446" y="2562.0" class="small">38. Outdoor grounds: footprint is envelope only (50×34; Y+0)</text>
-<text x="860" y="2562.0" class="small">39. School forecourt and shared arrival support (54×22.4; Y+0)</text>
-<text x="32" y="2592.0" class="small">40. Canonical van arrival reservation (20×13; Y+0)</text>
+<text x="32" y="2202.0" class="small">1. Pupil entrance and visitor vestibule [OPEN] (5×6; Y+0)</text>
+<text x="446" y="2202.0" class="small">2. Visitor reception and interview [OPEN] (5×3; Y+0)</text>
+<text x="860" y="2202.0" class="small">3. Visitor WC from public vestibule [OPEN] (2.5×3; Y+0)</text>
+<text x="32" y="2232.0" class="small">4. Administration work room [OPEN] (2.5×3; Y+0)</text>
+<text x="446" y="2232.0" class="small">5. Ground public teaching corridor [OPEN] (3×18; Y+0)</text>
+<text x="860" y="2232.0" class="small">6. Staff rest and work room [OPEN] (4.2×5; Y+0)</text>
+<text x="32" y="2262.0" class="small">7. Cleaner sink and supplies [OPEN] (2×3; Y+0)</text>
+<text x="446" y="2262.0" class="small">8. Staff sanitary room [OPEN] (2.2×3; Y+0)</text>
+<text x="860" y="2262.0" class="small">9. Plant service stair and rear delivery exit [OPEN] (2.8×8; Y+0)</text>
+<text x="32" y="2292.0" class="small">10. Main stair bay with lower approach [OPEN] (7×10; Y+0)</text>
+<text x="446" y="2292.0" class="small">11. Class A: 24 desks and teaching area [OPEN] (10×10; Y+0)</text>
+<text x="860" y="2292.0" class="small">12. Class A coats and teaching store [OPEN] (10×2; Y+0)</text>
+<text x="32" y="2322.0" class="small">13. Shared practical science teaching [OPEN] (10×9; Y+0)</text>
+<text x="446" y="2322.0" class="small">14. Science preparation and secure supplies [OPEN] (10×3; Y+0)</text>
+<text x="860" y="2322.0" class="small">15. Dining: two classes in one sitting [OPEN] (8×12; Y+0)</text>
+<text x="32" y="2352.0" class="small">16. Preparation cooking and controlled serving [OPEN] (4×8; Y+0)</text>
+<text x="446" y="2352.0" class="small">17. Food receiving wash-up and refuse exit [OPEN] (4×8; Y+0)</text>
+<text x="860" y="2352.0" class="small">18. Public dining-to-gym connector [OPEN] (4×4; Y+0)</text>
+<text x="32" y="2382.0" class="small">19. Health and changing corridor [OPEN] (2×12; Y+0)</text>
+<text x="446" y="2382.0" class="small">20. Private nurse consultation and rest [OPEN] (6×6; Y+0)</text>
+<text x="860" y="2382.0" class="small">21. Changing group A lockers and bench [OPEN] (4×3; Y+0)</text>
+<text x="32" y="2412.0" class="small">22. Group A screened washing [OPEN] (2×3; Y+0)</text>
+<text x="446" y="2412.0" class="small">23. Changing group B lockers and bench [OPEN] (4×3; Y+0)</text>
+<text x="860" y="2412.0" class="small">24. Group B screened washing [OPEN] (2×3; Y+0)</text>
+<text x="32" y="2442.0" class="small">25. Multipurpose PE hall: no upper floor [OPEN] (12×16; Y+0)</text>
+<text x="446" y="2442.0" class="small">26. Upper public teaching corridor [OPEN] (3×24; Y+3.6)</text>
+<text x="860" y="2442.0" class="small">27. Student washroom A with screened entry [OPEN] (7×5; Y+3.6)</text>
+<text x="32" y="2472.0" class="small">28. Student washroom B with screened entry [OPEN] (7×5; Y+3.6)</text>
+<text x="446" y="2472.0" class="small">29. Guarded stair void and top landing [OPEN] (7×8; Y+3.6)</text>
+<text x="860" y="2472.0" class="small">30. Daylit library and assembly lobby [OPEN] (7×6; Y+3.6)</text>
+<text x="32" y="2502.0" class="small">31. Library reading lending and stacks [OPEN] (10×12; Y+3.6)</text>
+<text x="446" y="2502.0" class="small">32. Class B: 24 desks and teaching area [OPEN] (10×10; Y+3.6)</text>
+<text x="860" y="2502.0" class="small">33. Class B coats and teaching store [OPEN] (10×2; Y+3.6)</text>
+<text x="32" y="2532.0" class="small">34. Assembly: 48 pupils and staff [OPEN] (12×12; Y+3.6)</text>
+<text x="446" y="2532.0" class="small">35. Cellar service stair [OPEN] (2.8×8; Y-3)</text>
+<text x="860" y="2532.0" class="small">36. Boiler hot-water and electrical maintenance [OPEN] (4.2×8; Y-3)</text>
+<text x="32" y="2562.0" class="small">37. Maintenance store and clear ritual reservation [OPEN] (7×10; Y-3)</text>
+<text x="446" y="2562.0" class="small">38. Outdoor grounds: footprint is envelope only [OPEN] (50×34; Y+0)</text>
+<text x="860" y="2562.0" class="small">39. School forecourt and shared arrival support [OPEN] (54×22.4; Y+0)</text>
+<text x="32" y="2592.0" class="small">40. Canonical van arrival reservation [OPEN] (20×13; Y+0)</text>
 </svg>

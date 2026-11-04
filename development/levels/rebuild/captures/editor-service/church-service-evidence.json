@@ -1,0 +1,43 @@
+{
+  "source_commit": "d72d1c2099d601e63b8e4c6b4fe65f8c0868daca",
+  "transport": "EditorAgentCli stdin/stdout -> EditorAgentService -> actual LevelAuthoringSession/HouseMap/SceneRenderer",
+  "scene": "beckenburg/church",
+  "revision": 2,
+  "operations": [
+    "move-prop"
+  ],
+  "native_prop_count": 32,
+  "test": {
+    "ok": true,
+    "result": {
+      "sceneId": "beckenburg/church",
+      "revision": 2,
+      "result": [
+        {
+          "code": "NATIVE_PROP_PARITY",
+          "passed": true,
+          "detail": "HouseMap props equal current unsaved authoring props"
+        },
+        {
+          "code": "NATIVE_COLLIDER_PARITY",
+          "passed": true,
+          "detail": "Native collider list contains each colliding authored prop"
+        }
+      ]
+    }
+  },
+  "capture": {
+    "ok": true,
+    "result": {
+      "sceneId": "beckenburg/church",
+      "revision": 2,
+      "result": {
+        "file": "C:\\Users\\Admin\\Documents\\ChatGPT\\Phasmaphobia alike\\The-Beckenburg-Project\\development\\levels\\rebuild\\captures\\editor-service\\church-nave-before.png",
+        "width": 560,
+        "height": 350,
+        "renderer": "SceneRenderer.drawPractice"
+      }
+    }
+  },
+  "limitation": "Mission gateway currently exposes move-prop only; no architecture or terrain mutation operations. Runtime parity checks cover props/colliders, not full reachability."
+}

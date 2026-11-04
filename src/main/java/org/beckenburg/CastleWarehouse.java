@@ -17,10 +17,12 @@ public final class CastleWarehouse {
  private static List<Exhibit> exhibits;
  private static List<Rack> createRacks(){
   var out=new ArrayList<Rack>();
-  for(double z:new double[]{19.4,21.55,27.5,29.65,31.8})out.add(new Rack(29.95,z,1,-Math.PI/2));
-  for(double z:new double[]{19.4,21.55,23.7,25.85,28,30.15})out.add(new Rack(41.65,z,1,Math.PI/2));
-  out.add(new Rack(32.2,18.1,1,0));out.add(new Rack(39.1,18.1,1,0));
-  out.add(new Rack(34.5,32.75,1,Math.PI));out.add(new Rack(37,32.75,1,Math.PI));
+  // Source-sized stock fixtures stay in the bounded stock room; leave the west entrance
+  // and east repair/infirmary doorways open, with two continuous browsing aisles.
+  for(double z:new double[]{19.0,21.15,27.2,29.35,31.5})out.add(new Rack(29.15,z,1,-Math.PI/2));
+  for(double z:new double[]{19.0,23.9,26.05,28.2,32.3})out.add(new Rack(36.35,z,1,Math.PI/2));
+  for(double x:new double[]{31.6,33.8}){out.add(new Rack(x,18.1,1,0));out.add(new Rack(x,32.75,1,Math.PI));}
+  out.add(new Rack(32.5,28,1,0));
   return List.copyOf(out);
  }
  public static synchronized List<Exhibit> exhibits(){

@@ -1,0 +1,162 @@
+{
+  "scope": "Native archive museum pilot: supported armour, readable caption and attached velvet barrier; not complete Castle acceptance",
+  "tests": {
+    "BeckenburgRegressionManifestTest": {
+      "passed": true,
+      "log": "BeckenburgRegressionManifestTest.log",
+      "sha256": "41859a1886265163a74bf68c7713d4723b800c62044299165fae92e9cc8463dd"
+    },
+    "CastleGroundConstructionTest": {
+      "passed": true,
+      "log": "CastleGroundConstructionTest.log",
+      "sha256": "d7cb9a2c9d1f05fb8e6ef7606cbbb97dd95ac80ea8ba8b77d36d66d8f931061e"
+    },
+    "CastleRebuildTest": {
+      "passed": true,
+      "log": "CastleRebuildTest.log",
+      "sha256": "787a4cff5996703fc450171a229972849eb88e716e602afe3ae7f7eeec59368c"
+    },
+    "CastleHeadquartersRevisionTest": {
+      "passed": true,
+      "log": "CastleHeadquartersRevisionTest.log",
+      "sha256": "98b1c10b5ea0088ea01132e92111d8d258e4ecbf6738b81423815d7abd04bac0"
+    },
+    "CastleCellarConstructionTest": {
+      "passed": true,
+      "log": "CastleCellarConstructionTest.log",
+      "sha256": "80e38d1aec0a0a627ffda138745778ccd5fecb524f6a4ccb15bc1360d78eb45e"
+    },
+    "CastleTrainingAnnexTest": {
+      "passed": true,
+      "log": "CastleTrainingAnnexTest.log",
+      "sha256": "e06970622b302fc490b7b3c1a3501d75084dc21a24bea5cd711287d2163af446"
+    },
+    "CastleWorldTerrainTest": {
+      "passed": true,
+      "log": "CastleWorldTerrainTest.log",
+      "sha256": "6242110dded78948d82d210f3f485ce85448fcf300256175d440dae2712c0aaf"
+    },
+    "CastleLightingPlacementRepairTest": {
+      "passed": true,
+      "log": "CastleLightingPlacementRepairTest.log",
+      "sha256": "3e7e9fb1278c9e76df96d8a4105a812a6b0fbf42ec7f551b249370fce50e4cb1"
+    },
+    "CastleSnapshotContractTest": {
+      "passed": true,
+      "log": "CastleSnapshotContractTest.log",
+      "sha256": "11c5a80c58c4dd77dccdd707b4e32f5cf75c424c4f0c402776a014ccd9a78a70"
+    },
+    "CastleDocumentRecoveryTest": {
+      "passed": true,
+      "log": "CastleDocumentRecoveryTest.log",
+      "sha256": "90cd0cbf6339db63a6433d272beee7325aa55f76570438d114ff612d28a489d5"
+    },
+    "CastleEditorGeometryTest": {
+      "passed": true,
+      "log": "CastleEditorGeometryTest.log",
+      "sha256": "bbd32c3108aa5cb1bee720390a1d686de41daa2131ab041182159254e276eb96"
+    },
+    "CastlePortalSlotTest": {
+      "passed": true,
+      "log": "CastlePortalSlotTest.log",
+      "sha256": "8679f37379f314a8b00ff8ff1150e3bdb680a7b583a7167f18faba86f43ac81e"
+    },
+    "CastleHubIntegrationTest": {
+      "passed": true,
+      "log": "CastleHubIntegrationTest.log",
+      "sha256": "637def90a0df7516a0ce86b440d3fd10300660270290b0ca71f40c1c65212144"
+    },
+    "CastleSignedConstructionTest": {
+      "passed": true,
+      "log": "CastleSignedConstructionTest.log",
+      "sha256": "ea486b0b5bd37db6027ebe7aaf1ce0786be023a3fd6642e7e09f672afbc243fb"
+    },
+    "CastleHomeInteractionTest": {
+      "passed": true,
+      "log": "CastleHomeInteractionTest.log",
+      "sha256": "1f441c5d1162591cc31db27e160949ab9a30d895feb7f9e5d174438f1cb8c8f3"
+    },
+    "CastleInventoryWorkstationTest": {
+      "passed": true,
+      "log": "CastleInventoryWorkstationTest.log",
+      "sha256": "99883161026c9d51200bbe5af3ea93c6d5132910bfdcdd541153cd7d324d2b7a"
+    },
+    "CastleOrientationTest": {
+      "passed": true,
+      "log": "CastleOrientationTest.log",
+      "sha256": "86b31007c35bba35a08868dc2df2b8d1db37af1ea3629c091605ac581856a4e3"
+    },
+    "CastleContainedMenuTest": {
+      "passed": true,
+      "log": "CastleContainedMenuTest.log",
+      "sha256": "e62ec3aec1f8c104e43886a64db38b5605a448069d435f7f6e17b4ab89dcf83e"
+    },
+    "CastleRelationsTest": {
+      "passed": true,
+      "log": "CastleRelationsTest.log",
+      "sha256": "13dfb2033c48260b9a50fa09672b966c85a75fcbc95c5b28dcb0505d8ff0e6e4"
+    },
+    "CastleShelfLabelsTest": {
+      "passed": true,
+      "log": "CastleShelfLabelsTest.log",
+      "sha256": "fd82906959ff9c5ccd817cb1a360fb86a2de3c9abbed27b67d3af3f52427fa9a"
+    },
+    "CastleEditorAuditTest": {
+      "passed": true,
+      "log": "CastleEditorAuditTest.log",
+      "sha256": "fcd4126ec731599503ad65f80ea86b218788c3e2f7428ddfc7704a3225a0f9d1"
+    },
+    "CastleFurnitureWallAuditTest": {
+      "passed": true,
+      "log": "CastleFurnitureWallAuditTest.log",
+      "sha256": "4a3f5065c0d4a487c912b3fd61a73f9ee644447f392285d16644beb78f92c2ac"
+    },
+    "VanLightingAndCastleDoorTest": {
+      "passed": true,
+      "log": "VanLightingAndCastleDoorTest.log",
+      "sha256": "e70dccc2307c6874d47e60190a1fc719d9f33921773d0c6b853f1093d03589e7"
+    },
+    "HouseRebuildTerrainTest": {
+      "passed": true,
+      "log": "HouseRebuildTerrainTest.log",
+      "sha256": "ba55b67d5822620aed0ee5b4eff7cb7ab63fe59dbabc3b9607bfd5cf9f75551f"
+    },
+    "EditorAgentServiceTest": {
+      "passed": true,
+      "log": "EditorAgentServiceTest.log",
+      "sha256": "ede8a972cb7d835ff06939800a0da8b5420d3d5a25064e6bf6ea4f304fea5262"
+    },
+    "CastleUpperConstructionTest": {
+      "passed": true,
+      "log": "CastleUpperConstructionTest.log",
+      "sha256": "bb1854a033642712e8697cf1cae1c0bbcf5fcf91dd307ee9c275ecb73136c370"
+    },
+    "WallLampSourceUvTest": {
+      "passed": true,
+      "log": "WallLampSourceUvTest.log",
+      "sha256": "47cf6222699c321886c3bd28b9443d7d5e30eb47b8007b1b6662c54804bb000f"
+    },
+    "WallLampMountPlateTest": {
+      "passed": true,
+      "log": "WallLampMountPlateTest.log",
+      "sha256": "df67d4484afbf614d77324c3a9fffca302e8b10e8741918116ac54d7561d9f38"
+    },
+    "CastleMuseumConstructionTest": {
+      "passed": true,
+      "log": "CastleMuseumConstructionTest.log",
+      "sha256": "fbec34f336c9c866c7b30454cb5071ac1a1873a60b26dd04919842331ee73def"
+    }
+  },
+  "assets": {
+    "level_castle_armour_display": "9b802fa08e06d3acd0c21fded0b608e09eaa6afea0490d3c75cb2ee7e4da9738",
+    "level_castle_armour_label": "374e1f1005cc6ba52f4ec989c1f094dde34e20bb0a0fab42ff0244c51fb43d1e",
+    "level_castle_museum_rope": "f6505bd0f9271be2e1dceaed7edb425840d94f76c1d9955c6c68acd8c560bdf9"
+  },
+  "sources": {
+    "src/main/java/org/beckenburg/CastleMuseum.java": "71abda4bdb31ec5dac1fc7e98c6e3ad471932fe236c3f4b1af74123925096759",
+    "src/main/java/org/beckenburg/CastleLevelEdits.java": "fa6283d52484223521c8d34548e93ba1c5ac1f0fc06445e4ff49f80c58f9aee4",
+    "src/main/java/org/beckenburg/LevelAssets.java": "42e708edb872649e22b5b375229152e5a5b05b803abf94ea3aae831820650732",
+    "src/main/java/org/beckenburg/BeckenburgRegressionSuite.java": "b4761a7fdb3aa7010073ef1b67005e4cd954c8090920f8655288a7363efbcea3",
+    "src/test/java/org/beckenburg/CastleMuseumConstructionTest.java": "a2ccc54f84c1362a3818cc916458218adccbb76c37cae4a8c52eed177f9058a8"
+  }
+}

@@ -1,0 +1,5 @@
+Actual EditorAgentService inspect/test/capture
+scene=beckenburg/castle
+revision=36
+renderer=SceneRenderer.drawCastle
+[Check[code=CASTLE_WORLD_CELLAR_HOLE, passed=true, detail=Packaged saved editor terrain 9f3d717b1ef7d5f532dcb5a66a84b02d348bbe4852bae17b351b7de993598882 / 746 shared faces; whole-footprint body/optical/support passage only; architectural stair not certified], Check[code=CASTLE_WORLD_RETAINED_GROUND, passed=true, detail=Unpunched editor ground retains support and optical collision]]

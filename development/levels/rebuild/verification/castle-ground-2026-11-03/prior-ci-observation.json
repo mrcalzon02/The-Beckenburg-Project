@@ -1,0 +1,23 @@
+{
+  "full_run": 41726781593,
+  "full_job": 126233554539,
+  "source": "b5e15c25c22be5762678b172e0dcc08934737f1e",
+  "workflow_conclusion": "success; regression step advisory",
+  "raw_test_pass_count": 316,
+  "raw_unique_pass_count": 315,
+  "raw_test_failures": [
+    "GhostSpriteAtlasIntegrationTest",
+    "TwinBodyVisualTest"
+  ],
+  "manifest_aborted_on": "org.beckenburg.CastleWorldTerrainTest",
+  "summary_emitted": false,
+  "native_cellar_run": 41731821001,
+  "native_cellar_conclusion": "success",
+  "gpu_cellar_run": 41731832476,
+  "gpu_jobs": {
+    "compile-gpu-java17": "cancelled",
+    "windows-build": "success",
+    "opengl-mesa-smoke": "success"
+  },
+  "new_exact_source_full_required": true
+}

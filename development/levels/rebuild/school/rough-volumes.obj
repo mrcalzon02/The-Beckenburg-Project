@@ -1,4 +1,5 @@
 # ROUGH SPACE VOLUMES ONLY; NOT A WALKABLE LEVEL. Units: metres; Y up.
+# player_access: OPEN_SEARCH
 o foyer
 v 20 0 30
 v 25 0 30
@@ -14,6 +15,7 @@ f 1 2 6 5
 f 2 3 7 6
 f 3 4 8 7
 f 4 1 5 8
+# player_access: OPEN_SEARCH
 o interview
 v 25 0 30
 v 30 0 30
@@ -29,6 +31,7 @@ f 9 10 14 13
 f 10 11 15 14
 f 11 12 16 15
 f 12 9 13 16
+# player_access: OPEN_SEARCH
 o visitor-wc
 v 25 0 33
 v 27.5 0 33
@@ -44,6 +47,7 @@ f 17 18 22 21
 f 18 19 23 22
 f 19 20 24 23
 f 20 17 21 24
+# player_access: OPEN_SEARCH
 o office
 v 27.5 0 33
 v 30 0 33
@@ -59,6 +63,7 @@ f 25 26 30 29
 f 26 27 31 30
 f 27 28 32 31
 f 28 25 29 32
+# player_access: OPEN_SEARCH
 o corridor
 v 20 0 12
 v 23 0 12
@@ -74,6 +79,7 @@ f 33 34 38 37
 f 34 35 39 38
 f 35 36 40 39
 f 36 33 37 40
+# player_access: OPEN_SEARCH
 o staff
 v 23 0 15
 v 27.2 0 15
@@ -89,6 +95,7 @@ f 41 42 46 45
 f 42 43 47 46
 f 43 44 48 47
 f 44 41 45 48
+# player_access: OPEN_SEARCH
 o cleaner
 v 23 0 12
 v 25 0 12
@@ -104,6 +111,7 @@ f 49 50 54 53
 f 50 51 55 54
 f 51 52 56 55
 f 52 49 53 56
+# player_access: OPEN_SEARCH
 o staff-wc
 v 25 0 12
 v 27.2 0 12
@@ -119,6 +127,7 @@ f 57 58 62 61
 f 58 59 63 62
 f 59 60 64 63
 f 60 57 61 64
+# player_access: OPEN_SEARCH
 o service-stair
 v 27.2 0 12
 v 30 0 12
@@ -134,6 +143,7 @@ f 65 66 70 69
 f 66 67 71 70
 f 67 68 72 71
 f 68 65 69 72
+# player_access: OPEN_SEARCH
 o main-stair
 v 23 0 20
 v 30 0 20
@@ -149,6 +159,7 @@ f 73 74 78 77
 f 74 75 79 78
 f 75 76 80 79
 f 76 73 77 80
+# player_access: OPEN_SEARCH
 o class-a
 v 10 0 24
 v 20 0 24
@@ -164,6 +175,7 @@ f 81 82 86 85
 f 82 83 87 86
 f 83 84 88 87
 f 84 81 85 88
+# player_access: OPEN_SEARCH
 o class-a-store
 v 10 0 34
 v 20 0 34
@@ -179,6 +191,7 @@ f 89 90 94 93
 f 90 91 95 94
 f 91 92 96 95
 f 92 89 93 96
+# player_access: OPEN_SEARCH
 o science
 v 10 0 12
 v 20 0 12
@@ -194,6 +207,7 @@ f 97 98 102 101
 f 98 99 103 102
 f 99 100 104 103
 f 100 97 101 104
+# player_access: OPEN_SEARCH
 o science-prep
 v 10 0 21
 v 20 0 21
@@ -209,6 +223,7 @@ f 105 106 110 109
 f 106 107 111 110
 f 107 108 112 111
 f 108 105 109 112
+# player_access: OPEN_SEARCH
 o dining
 v 30 0 24
 v 38 0 24
@@ -224,6 +239,7 @@ f 113 114 118 117
 f 114 115 119 118
 f 115 116 120 119
 f 116 113 117 120
+# player_access: OPEN_SEARCH
 o kitchen
 v 38 0 28
 v 42 0 28
@@ -239,6 +255,7 @@ f 121 122 126 125
 f 122 123 127 126
 f 123 124 128 127
 f 124 121 125 128
+# player_access: OPEN_SEARCH
 o receiving
 v 42 0 28
 v 46 0 28
@@ -254,6 +271,7 @@ f 129 130 134 133
 f 130 131 135 134
 f 131 132 136 135
 f 132 129 133 136
+# player_access: OPEN_SEARCH
 o gym-link
 v 38 0 24
 v 42 0 24
@@ -269,6 +287,7 @@ f 137 138 142 141
 f 138 139 143 142
 f 139 140 144 143
 f 140 137 141 144
+# player_access: OPEN_SEARCH
 o health-link
 v 30 0 12
 v 32 0 12
@@ -284,6 +303,7 @@ f 145 146 150 149
 f 146 147 151 150
 f 147 148 152 151
 f 148 145 149 152
+# player_access: OPEN_SEARCH
 o nurse
 v 32 0 18
 v 38 0 18
@@ -299,6 +319,7 @@ f 153 154 158 157
 f 154 155 159 158
 f 155 156 160 159
 f 156 153 157 160
+# player_access: OPEN_SEARCH
 o change-a
 v 32 0 12
 v 36 0 12
@@ -314,6 +335,7 @@ f 161 162 166 165
 f 162 163 167 166
 f 163 164 168 167
 f 164 161 165 168
+# player_access: OPEN_SEARCH
 o shower-a
 v 36 0 12
 v 38 0 12
@@ -329,6 +351,7 @@ f 169 170 174 173
 f 170 171 175 174
 f 171 172 176 175
 f 172 169 173 176
+# player_access: OPEN_SEARCH
 o change-b
 v 32 0 15
 v 36 0 15
@@ -344,6 +367,7 @@ f 177 178 182 181
 f 178 179 183 182
 f 179 180 184 183
 f 180 177 181 184
+# player_access: OPEN_SEARCH
 o shower-b
 v 36 0 15
 v 38 0 15
@@ -359,6 +383,7 @@ f 185 186 190 189
 f 186 187 191 190
 f 187 188 192 191
 f 188 185 189 192
+# player_access: OPEN_SEARCH
 o gym
 v 38 0 8
 v 50 0 8
@@ -374,6 +399,7 @@ f 193 194 198 197
 f 194 195 199 198
 f 195 196 200 199
 f 196 193 197 200
+# player_access: OPEN_SEARCH
 o upper-corridor
 v 20 3.6 12
 v 23 3.6 12
@@ -389,6 +415,7 @@ f 201 202 206 205
 f 202 203 207 206
 f 203 204 208 207
 f 204 201 205 208
+# player_access: OPEN_SEARCH
 o wash-a
 v 23 3.6 12
 v 30 3.6 12
@@ -404,6 +431,7 @@ f 209 210 214 213
 f 210 211 215 214
 f 211 212 216 215
 f 212 209 213 216
+# player_access: OPEN_SEARCH
 o wash-b
 v 23 3.6 17
 v 30 3.6 17
@@ -419,6 +447,7 @@ f 217 218 222 221
 f 218 219 223 222
 f 219 220 224 223
 f 220 217 221 224
+# player_access: OPEN_SEARCH
 o upper-stair
 v 23 3.6 22
 v 30 3.6 22
@@ -434,6 +463,7 @@ f 225 226 230 229
 f 226 227 231 230
 f 227 228 232 231
 f 228 225 229 232
+# player_access: OPEN_SEARCH
 o upper-lobby
 v 23 3.6 30
 v 30 3.6 30
@@ -449,6 +479,7 @@ f 233 234 238 237
 f 234 235 239 238
 f 235 236 240 239
 f 236 233 237 240
+# player_access: OPEN_SEARCH
 o library
 v 10 3.6 24
 v 20 3.6 24
@@ -464,6 +495,7 @@ f 241 242 246 245
 f 242 243 247 246
 f 243 244 248 247
 f 244 241 245 248
+# player_access: OPEN_SEARCH
 o class-b
 v 10 3.6 12
 v 20 3.6 12
@@ -479,6 +511,7 @@ f 249 250 254 253
 f 250 251 255 254
 f 251 252 256 255
 f 252 249 253 256
+# player_access: OPEN_SEARCH
 o class-b-store
 v 10 3.6 22
 v 20 3.6 22
@@ -494,6 +527,7 @@ f 257 258 262 261
 f 258 259 263 262
 f 259 260 264 263
 f 260 257 261 264
+# player_access: OPEN_SEARCH
 o assembly
 v 30 3.6 24
 v 42 3.6 24
@@ -509,6 +543,7 @@ f 265 266 270 269
 f 266 267 271 270
 f 267 268 272 271
 f 268 265 269 272
+# player_access: OPEN_SEARCH
 o lower-stair
 v 27.2 -3 12
 v 30 -3 12
@@ -524,6 +559,7 @@ f 273 274 278 277
 f 274 275 279 278
 f 275 276 280 279
 f 276 273 277 280
+# player_access: OPEN_SEARCH
 o plant
 v 23 -3 12
 v 27.2 -3 12
@@ -539,6 +575,7 @@ f 281 282 286 285
 f 282 283 287 286
 f 283 284 288 287
 f 284 281 285 288
+# player_access: OPEN_SEARCH
 o plant-store
 v 23 -3 20
 v 30 -3 20
@@ -554,6 +591,7 @@ f 289 290 294 293
 f 290 291 295 294
 f 291 292 296 295
 f 292 289 293 296
+# player_access: OPEN_SEARCH
 o grounds
 v 5 0 2
 v 55 0 2
@@ -569,6 +607,7 @@ f 297 298 302 301
 f 298 299 303 302
 f 299 300 304 303
 f 300 297 301 304
+# player_access: OPEN_SEARCH
 o entry
 v 1 0 36
 v 55 0 36
@@ -584,6 +623,7 @@ f 305 306 310 309
 f 306 307 311 310
 f 307 308 312 311
 f 308 305 309 312
+# player_access: OPEN_SEARCH
 o stage
 v 18 0 45
 v 38 0 45

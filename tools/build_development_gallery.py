@@ -5,8 +5,8 @@ from pathlib import Path
 import argparse, hashlib, html, json, struct, subprocess
 from urllib.parse import quote
 ROOT=Path(__file__).resolve().parents[1]
-parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');args=parser.parse_args()
-paths=subprocess.check_output(['git','ls-files','--cached','--others','--exclude-standard','-z','development'],cwd=ROOT).decode('utf-8').split('\0')
+parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');parser.add_argument('--tracked-only',action='store_true',help='Index the staged checkpoint without unrelated untracked captures');args=parser.parse_args()
+paths=subprocess.check_output(['git','ls-files','--cached',* ([] if args.tracked_only else ['--others','--exclude-standard']),'-z','development'],cwd=ROOT).decode('utf-8').split('\0')
 items=[]
 for path in sorted(set(paths)):
     if not path.lower().endswith('.png'):continue
@@ -22,8 +22,11 @@ for path in sorted(set(paths)):
     elif '/performance/hardware/' in path:kind='Runtime GPU diagnostic'
     elif '/fixture-join-diagnostic/' in path:kind='Runtime lighting diagnostic'
     elif '/rebuild/previews/rejected-' in path:kind='Rejected native study'
+    elif '/previews/rejected-' in path:kind='Rejected model study'
     elif '/rebuild/previews/' in path and 'rough-plan' in p.stem:kind='Planning diagram'
+    elif '/rebuild/previews/' in path and p.stem.endswith('terrain-inspection'):kind='Native terrain inspection'
     elif '/rebuild/previews/' in path and p.stem.endswith('cutaway'):kind='Native inspection cutaway'
+    elif '/rebuild/captures/' in path and p.stem.startswith('rejected-'):kind='Rejected runtime study'
     elif '/rebuild/captures/house-graybox/' in path:kind='Runtime graybox capture'
     elif '/rebuild/captures/baseline/' in path:kind='Runtime baseline capture'
     elif '/rebuild/captures/' in path:kind='Runtime capture'
@@ -39,6 +42,7 @@ for path in sorted(set(paths)):
     elif '-blender-' in path or 'native-fitout' in p.stem or 'native-circuit' in p.stem:kind='Native scene overview'
     elif 'studio' in p.stem:kind='Model inspection'
     elif any(t in path for t in ['/runtime/','-runtime/','/blackpine/','/mill-lighting/','/mill-expansion/','/van/','/optical-evidence/']):kind='Runtime capture'
+    elif '/castle-museum/previews/' in path:kind='Unaccepted model study'
     elif p.stem.startswith('level_') or '/model-production/' in path or '/equipment-catalog/' in path:kind='Model inspection'
     title=p.stem.replace('_',' ').replace('-',' ').strip().capitalize()
     items.append(dict(path=path,url=quote(path,safe='/'),title=title,kind=kind,width=w,height=h,bytes=len(data),sha256=hashlib.sha256(data).hexdigest()))

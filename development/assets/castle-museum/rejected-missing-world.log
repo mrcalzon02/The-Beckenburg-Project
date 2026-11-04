@@ -1,0 +1,769 @@
+Traceback (most recent call last):
+  File "C:\Program Files\Blender Foundation\Blender 5.0\5.0\scripts\modules\addon_utils.py", line 432, in enable
+    mod = importlib.import_module(module_name)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Blender Foundation\Blender 5.0\5.0\python\Lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\5.0\extensions\blender_org\BAM\__init__.py", line 2, in <module>
+    from . import BAM_MaterialManager_M
+  File "C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\5.0\extensions\blender_org\BAM\BAM_MaterialManager_M.py", line 41, in <module>
+    from .BAM_MatOverlay_M import bmoverlay
+  File "C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\5.0\extensions\blender_org\BAM\BAM_MatOverlay_M.py", line 223, in <module>
+    bmoverlay = BAMMaterialOverlay()
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\5.0\extensions\blender_org\BAM\BAM_MatOverlay_M.py", line 63, in __init__
+    self.shader = gpu.shader.from_builtin('UNIFORM_COLOR')
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SystemError: GPU functions for drawing are not available in background mode
+Traceback (most recent call last):
+  File "C:\Program Files\Blender Foundation\Blender 5.0\5.0\scripts\modules\addon_utils.py", line 432, in enable
+    mod = importlib.import_module(module_name)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Blender Foundation\Blender 5.0\5.0\python\Lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\5.0\extensions\blender_org\wheel_o_matic\__init__.py", line 24, in <module>
+    from . import wom_render
+  File "C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\5.0\extensions\blender_org\wheel_o_matic\wom_render.py", line 99, in <module>
+    class OBJECT_OT_wom_draw_locators(bpy.types.Operator):
+  File "C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\5.0\extensions\blender_org\wheel_o_matic\wom_render.py", line 135, in OBJECT_OT_wom_draw_locators
+    shader = gpu.shader.from_builtin('UNIFORM_COLOR')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SystemError: GPU functions for drawing are not available in background mode
+C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Project\development\assets\build_castle_museum.py:22: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat=bpy.data.materials.new(name);mat.use_nodes=True
+INFO:glTFImporter:Starting glTF 2.0 export
+Reloading external rigs...
+Reloading external metarigs...
+[BAM] MaterialManager Module Loaded
+Batch Material Helper: Properties registered successfully
+Batch Material Helper: Properties unregistered successfully
+Info: Saved as "armour_display.blend"
+INFO Draco mesh compression is available, use library at C:\Program Files\Blender Foundation\Blender 5.0\5.0\scripts\addons_core\io_scene_gltf2\extern_draco.dll
+18:08:57 | INFO: Starting glTF 2.0 export
+18:08:57 | INFO: Extracting primitive: Cube
+INFO:glTFImporter:Extracting primitive: Cube
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cube.001
+INFO:glTFImporter:Extracting primitive: Cube.001
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere
+INFO:glTFImporter:Extracting primitive: Sphere
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder
+INFO:glTFImporter:Extracting primitive: Cylinder
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.001
+INFO:glTFImporter:Extracting primitive: Sphere.001
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.001
+INFO:glTFImporter:Extracting primitive: Cylinder.001
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.002
+INFO:glTFImporter:Extracting primitive: Sphere.002
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.002
+INFO:glTFImporter:Extracting primitive: Cylinder.002
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.003
+INFO:glTFImporter:Extracting primitive: Sphere.003
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.003
+INFO:glTFImporter:Extracting primitive: Cylinder.003
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.004
+INFO:glTFImporter:Extracting primitive: Sphere.004
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cube.002
+INFO:glTFImporter:Extracting primitive: Cube.002
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cube.003
+INFO:glTFImporter:Extracting primitive: Cube.003
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cube.004
+INFO:glTFImporter:Extracting primitive: Cube.004
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.005
+INFO:glTFImporter:Extracting primitive: Sphere.005
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.006
+INFO:glTFImporter:Extracting primitive: Sphere.006
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.004
+INFO:glTFImporter:Extracting primitive: Cylinder.004
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.007
+INFO:glTFImporter:Extracting primitive: Sphere.007
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.005
+INFO:glTFImporter:Extracting primitive: Cylinder.005
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.008
+INFO:glTFImporter:Extracting primitive: Sphere.008
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.009
+INFO:glTFImporter:Extracting primitive: Sphere.009
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.010
+INFO:glTFImporter:Extracting primitive: Sphere.010
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.011
+INFO:glTFImporter:Extracting primitive: Sphere.011
+18:08:57 | INFO: Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.012
+INFO:glTFImporter:Primitives created: 1
+INFO:glTFImporter:Extracting primitive: Sphere.012
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.006
+INFO:glTFImporter:Extracting primitive: Cylinder.006
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.013
+INFO:glTFImporter:Extracting primitive: Sphere.013
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.007
+INFO:glTFImporter:Extracting primitive: Cylinder.007
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.014
+INFO:glTFImporter:Extracting primitive: Sphere.014
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.015
+INFO:glTFImporter:Extracting primitive: Sphere.015
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.016
+INFO:glTFImporter:Extracting primitive: Sphere.016
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.017
+INFO:glTFImporter:Extracting primitive: Sphere.017
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.008
+INFO:glTFImporter:Extracting primitive: Cylinder.008
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.018
+INFO:glTFImporter:Extracting primitive: Sphere.018
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cube.005
+INFO:glTFImporter:Extracting primitive: Cube.005
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.009
+INFO:glTFImporter:Extracting primitive: Cylinder.009
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.019
+INFO:glTFImporter:Extracting primitive: Sphere.019
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.020
+INFO:glTFImporter:Extracting primitive: Sphere.020
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.021
+INFO:glTFImporter:Extracting primitive: Sphere.021
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.022
+INFO:glTFImporter:Extracting primitive: Sphere.022
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Finished glTF 2.0 export in 0.05001640319824219 s
+INFO:glTFImporter:Finished glTF 2.0 export in 0.05001640319824219 s
+C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Project\development\assets\build_castle_museum.py:22: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat=bpy.data.materials.new(name);mat.use_nodes=True
+INFO:glTFImporter:Starting glTF 2.0 export
+
+Info: Saved as "museum_rope.blend"
+18:08:57 | INFO: Starting glTF 2.0 export
+18:08:57 | INFO: Extracting primitive: Cylinder.010
+INFO:glTFImporter:Extracting primitive: Cylinder.010
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.011
+INFO:glTFImporter:Extracting primitive: Cylinder.011
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.023
+INFO:glTFImporter:Extracting primitive: Sphere.023
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.012
+INFO:glTFImporter:Extracting primitive: Cylinder.012
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.013
+INFO:glTFImporter:Extracting primitive: Cylinder.013
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.014
+INFO:glTFImporter:Extracting primitive: Cylinder.014
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Extracting primitive: Cylinder.015
+18:08:57 | INFO: Extracting primitive: Cylinder.015
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.024
+INFO:glTFImporter:Extracting primitive: Sphere.024
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.016
+INFO:glTFImporter:Extracting primitive: Cylinder.016
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.017
+INFO:glTFImporter:Extracting primitive: Cylinder.017
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.018
+INFO:glTFImporter:Extracting primitive: Cylinder.018
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.019
+INFO:glTFImporter:Extracting primitive: Cylinder.019
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+INFO:glTFImporter:Extracting primitive: Cylinder.020
+18:08:57 | INFO: Extracting primitive: Cylinder.020
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.021
+INFO:glTFImporter:Extracting primitive: Cylinder.021
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.022
+INFO:glTFImporter:Extracting primitive: Cylinder.022
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.023
+INFO:glTFImporter:Extracting primitive: Cylinder.023
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.024
+INFO:glTFImporter:Extracting primitive: Cylinder.024
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.025
+INFO:glTFImporter:Extracting primitive: Cylinder.025
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.026
+INFO:glTFImporter:Extracting primitive: Cylinder.026
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.027
+INFO:glTFImporter:Extracting primitive: Cylinder.027
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.028
+INFO:glTFImporter:Extracting primitive: Cylinder.028
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.029
+INFO:glTFImporter:Extracting primitive: Cylinder.029
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.030
+INFO:glTFImporter:Extracting primitive: Cylinder.030
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.031
+INFO:glTFImporter:Extracting primitive: Cylinder.031
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.032
+INFO:glTFImporter:Extracting primitive: Cylinder.032
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.033
+INFO:glTFImporter:Extracting primitive: Cylinder.033
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.034
+INFO:glTFImporter:Extracting primitive: Cylinder.034
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.035
+INFO:glTFImporter:Extracting primitive: Cylinder.035
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.036
+INFO:glTFImporter:Extracting primitive: Cylinder.036
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.037
+INFO:glTFImporter:Extracting primitive: Cylinder.037
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.038
+INFO:glTFImporter:Extracting primitive: Cylinder.038
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.039
+INFO:glTFImporter:Extracting primitive: Cylinder.039
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.040
+INFO:glTFImporter:Extracting primitive: Cylinder.040
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.041
+INFO:glTFImporter:Extracting primitive: Cylinder.041
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Finished glTF 2.0 export in 0.028814315795898438 s
+INFO:glTFImporter:Finished glTF 2.0 export in 0.028814315795898438 s
+
+INFO:glTFImporter:Starting glTF 2.0 export
+Info: Saved as "museum_plaque.blend"
+18:08:57 | INFO: Starting glTF 2.0 export
+INFO:glTFImporter:Extracting primitive: Cube.006
+18:08:57 | INFO: Extracting primitive: Cube.006
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cube.007
+INFO:glTFImporter:Extracting primitive: Cube.007
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Text
+INFO:glTFImporter:Extracting primitive: Text
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Text.001
+INFO:glTFImporter:Extracting primitive: Text.001
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Text.002
+INFO:glTFImporter:Extracting primitive: Text.002
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.025
+INFO:glTFImporter:Extracting primitive: Sphere.025
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.026
+INFO:glTFImporter:Extracting primitive: Sphere.026
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.027
+INFO:glTFImporter:Extracting primitive: Sphere.027
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.028
+INFO:glTFImporter:Extracting primitive: Sphere.028
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Finished glTF 2.0 export in 0.019106626510620117 s
+INFO:glTFImporter:Finished glTF 2.0 export in 0.019106626510620117 s
+
+INFO:glTFImporter:Starting glTF 2.0 export
+Info: Saved as "tapestry.blend"
+18:08:57 | INFO: Starting glTF 2.0 export
+18:08:57 | INFO: Extracting primitive: Woven draped hanging
+INFO:glTFImporter:Extracting primitive: Woven draped hanging
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cylinder.042
+INFO:glTFImporter:Extracting primitive: Cylinder.042
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.029
+INFO:glTFImporter:Extracting primitive: Sphere.029
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Sphere.030
+INFO:glTFImporter:Extracting primitive: Sphere.030
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cube.008
+INFO:glTFImporter:Extracting primitive: Cube.008
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cube.009
+INFO:glTFImporter:Extracting primitive: Cube.009
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cube.010
+INFO:glTFImporter:Extracting primitive: Cube.010
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cube.011
+INFO:glTFImporter:Extracting primitive: Cube.011
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Extracting primitive: Cube.012
+INFO:glTFImporter:Extracting primitive: Cube.012
+18:08:57 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:57 | INFO: Finished glTF 2.0 export in 0.01275634765625 s
+INFO:glTFImporter:Finished glTF 2.0 export in 0.01275634765625 s
+
+INFO:glTFImporter:Starting glTF 2.0 export
+Info: Saved as "four_poster_bed.blend"
+18:08:58 | INFO: Starting glTF 2.0 export
+18:08:58 | INFO: Extracting primitive: Cube.013
+INFO:glTFImporter:Extracting primitive: Cube.013
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Sphere.031
+INFO:glTFImporter:Extracting primitive: Sphere.031
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.014
+INFO:glTFImporter:Extracting primitive: Cube.014
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.015
+INFO:glTFImporter:Extracting primitive: Cube.015
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.016
+INFO:glTFImporter:Extracting primitive: Cube.016
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.017
+INFO:glTFImporter:Extracting primitive: Cube.017
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Sphere.032
+INFO:glTFImporter:Extracting primitive: Sphere.032
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.018
+INFO:glTFImporter:Extracting primitive: Cube.018
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.019
+INFO:glTFImporter:Extracting primitive: Cube.019
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.020
+INFO:glTFImporter:Extracting primitive: Cube.020
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.021
+INFO:glTFImporter:Extracting primitive: Cube.021
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Sphere.033
+INFO:glTFImporter:Extracting primitive: Sphere.033
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.022
+INFO:glTFImporter:Extracting primitive: Cube.022
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.023
+INFO:glTFImporter:Extracting primitive: Cube.023
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.024
+INFO:glTFImporter:Extracting primitive: Cube.024
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.025
+INFO:glTFImporter:Extracting primitive: Cube.025
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Sphere.034
+INFO:glTFImporter:Extracting primitive: Sphere.034
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.026
+INFO:glTFImporter:Extracting primitive: Cube.026
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.027
+INFO:glTFImporter:Extracting primitive: Cube.027
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.028
+INFO:glTFImporter:Extracting primitive: Cube.028
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.029
+INFO:glTFImporter:Extracting primitive: Cube.029
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.030
+INFO:glTFImporter:Extracting primitive: Cube.030
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.031
+INFO:glTFImporter:Extracting primitive: Cube.031
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.032
+INFO:glTFImporter:Extracting primitive: Cube.032
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.033
+INFO:glTFImporter:Extracting primitive: Cube.033
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.034
+INFO:glTFImporter:Extracting primitive: Cube.034
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.035
+INFO:glTFImporter:Extracting primitive: Cube.035
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.036
+INFO:glTFImporter:Extracting primitive: Cube.036
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.037
+INFO:glTFImporter:Extracting primitive: Cube.037
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.038
+INFO:glTFImporter:Extracting primitive: Cube.038
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.039
+INFO:glTFImporter:Extracting primitive: Cube.039
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.040
+INFO:glTFImporter:Extracting primitive: Cube.040
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.041
+INFO:glTFImporter:Extracting primitive: Cube.041
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.042
+INFO:glTFImporter:Extracting primitive: Cube.042
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Sphere.035
+INFO:glTFImporter:Extracting primitive: Sphere.035
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Sphere.036
+INFO:glTFImporter:Extracting primitive: Sphere.036
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cube.043
+INFO:glTFImporter:Extracting primitive: Cube.043
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cylinder.043
+INFO:glTFImporter:Extracting primitive: Cylinder.043
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cylinder.044
+INFO:glTFImporter:Extracting primitive: Cylinder.044
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cylinder.045
+INFO:glTFImporter:Extracting primitive: Cylinder.045
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cylinder.046
+INFO:glTFImporter:Extracting primitive: Cylinder.046
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cylinder.047
+INFO:glTFImporter:Extracting primitive: Cylinder.047
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cylinder.048
+INFO:glTFImporter:Extracting primitive: Cylinder.048
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cylinder.049
+INFO:glTFImporter:Extracting primitive: Cylinder.049
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cylinder.050
+INFO:glTFImporter:Extracting primitive: Cylinder.050
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cylinder.051
+INFO:glTFImporter:Extracting primitive: Cylinder.051
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cylinder.052
+INFO:glTFImporter:Extracting primitive: Cylinder.052
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cylinder.053
+INFO:glTFImporter:Extracting primitive: Cylinder.053
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cylinder.054
+INFO:glTFImporter:Extracting primitive: Cylinder.054
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+INFO:glTFImporter:Extracting primitive: Cylinder.055
+INFO:glTFImporter:Primitives created: 1
+INFO:glTFImporter:Extracting primitive: Cylinder.056
+INFO:glTFImporter:Primitives created: 1
+INFO:glTFImporter:Extracting primitive: Cylinder.057
+INFO:glTFImporter:Primitives created: 1
+INFO:glTFImporter:Extracting primitive: Cylinder.058
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cylinder.055
+INFO:glTFImporter:Extracting primitive: Cylinder.059
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cylinder.056
+INFO:glTFImporter:Extracting primitive: Cylinder.060
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cylinder.057
+INFO:glTFImporter:Extracting primitive: Cylinder.061
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cylinder.058
+18:08:58 | INFO: Primitives created: 1
+INFO:glTFImporter:Extracting primitive: Cylinder.062
+18:08:58 | INFO: Extracting primitive: Cylinder.059
+18:08:58 | INFO: Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cylinder.060
+18:08:58 | INFO: Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cylinder.061
+18:08:58 | INFO: Primitives created: 1
+18:08:58 | INFO: Extracting primitive: Cylinder.062
+INFO:glTFImporter:Primitives created: 1
+18:08:58 | INFO: Primitives created: 1
+18:08:58 | INFO: Finished glTF 2.0 export in 0.05036020278930664 s
+INFO:glTFImporter:Finished glTF 2.0 export in 0.05036020278930664 s
+
+18:08:58 | INFO: Data are loaded, start creating Blender stuff
+INFO:glTFImporter:Data are loaded, start creating Blender stuff
+18:08:58 | INFO: Blender create Mesh node Cube
+INFO:glTFImporter:Blender create Mesh node Cube
+18:08:58 | INFO: Blender create Mesh node Cube.001
+INFO:glTFImporter:Blender create Mesh node Cube.001
+18:08:58 | INFO: Blender create Mesh node Sphere
+INFO:glTFImporter:Blender create Mesh node Sphere
+18:08:58 | INFO: Blender create Mesh node Cylinder
+INFO:glTFImporter:Blender create Mesh node Cylinder
+18:08:58 | INFO: Blender create Mesh node Sphere.001
+INFO:glTFImporter:Blender create Mesh node Sphere.001
+18:08:58 | INFO: Blender create Mesh node Cylinder.001
+INFO:glTFImporter:Blender create Mesh node Cylinder.001
+18:08:58 | INFO: Blender create Mesh node Sphere.002
+INFO:glTFImporter:Blender create Mesh node Sphere.002
+18:08:58 | INFO: Blender create Mesh node Cylinder.002
+INFO:glTFImporter:Blender create Mesh node Cylinder.002
+18:08:58 | INFO: Blender create Mesh node Sphere.003
+INFO:glTFImporter:Blender create Mesh node Sphere.003
+18:08:58 | INFO: Blender create Mesh node Cylinder.003
+18:08:58 | INFO: Blender create Mesh node Sphere.004
+INFO:glTFImporter:Blender create Mesh node Cylinder.003
+INFO:glTFImporter:Blender create Mesh node Sphere.004
+18:08:58 | INFO: Blender create Mesh node Cube.002
+INFO:glTFImporter:Blender create Mesh node Cube.002
+18:08:58 | INFO: Blender create Mesh node Cube.003
+INFO:glTFImporter:Blender create Mesh node Cube.003
+18:08:58 | INFO: Blender create Mesh node Cube.004
+INFO:glTFImporter:Blender create Mesh node Cube.004
+18:08:58 | INFO: Blender create Mesh node Sphere.005
+INFO:glTFImporter:Blender create Mesh node Sphere.005
+18:08:58 | INFO: Blender create Mesh node Sphere.006
+INFO:glTFImporter:Blender create Mesh node Sphere.006
+18:08:58 | INFO: Blender create Mesh node Cylinder.004
+INFO:glTFImporter:Blender create Mesh node Cylinder.004
+18:08:58 | INFO: Blender create Mesh node Sphere.007
+INFO:glTFImporter:Blender create Mesh node Sphere.007
+18:08:58 | INFO: Blender create Mesh node Cylinder.005
+INFO:glTFImporter:Blender create Mesh node Cylinder.005
+18:08:58 | INFO: Blender create Mesh node Sphere.008
+INFO:glTFImporter:Blender create Mesh node Sphere.008
+18:08:58 | INFO: Blender create Mesh node Sphere.009
+INFO:glTFImporter:Blender create Mesh node Sphere.009
+18:08:58 | INFO: Blender create Mesh node Sphere.010
+INFO:glTFImporter:Blender create Mesh node Sphere.010
+18:08:58 | INFO: Blender create Mesh node Sphere.011
+INFO:glTFImporter:Blender create Mesh node Sphere.011
+18:08:58 | INFO: Blender create Mesh node Sphere.012
+INFO:glTFImporter:Blender create Mesh node Sphere.012
+18:08:58 | INFO: Blender create Mesh node Cylinder.006
+INFO:glTFImporter:Blender create Mesh node Cylinder.006
+18:08:58 | INFO: Blender create Mesh node Sphere.013
+INFO:glTFImporter:Blender create Mesh node Sphere.013
+18:08:58 | INFO: Blender create Mesh node Cylinder.007
+INFO:glTFImporter:Blender create Mesh node Cylinder.007
+18:08:58 | INFO: Blender create Mesh node Sphere.014
+INFO:glTFImporter:Blender create Mesh node Sphere.014
+18:08:58 | INFO: Blender create Mesh node Sphere.015
+INFO:glTFImporter:Blender create Mesh node Sphere.015
+18:08:58 | INFO: Blender create Mesh node Sphere.016
+INFO:glTFImporter:Blender create Mesh node Sphere.016
+18:08:58 | INFO: Blender create Mesh node Sphere.017
+INFO:glTFImporter:Blender create Mesh node Sphere.017
+18:08:58 | INFO: Blender create Mesh node Cylinder.008
+INFO:glTFImporter:Blender create Mesh node Cylinder.008
+18:08:58 | INFO: Blender create Mesh node Sphere.018
+INFO:glTFImporter:Blender create Mesh node Sphere.018
+18:08:58 | INFO: Blender create Mesh node Cube.005
+INFO:glTFImporter:Blender create Mesh node Cube.005
+18:08:58 | INFO: Blender create Mesh node Cylinder.009
+INFO:glTFImporter:Blender create Mesh node Cylinder.009
+18:08:58 | INFO: Blender create Mesh node Sphere.019
+INFO:glTFImporter:Blender create Mesh node Sphere.019
+18:08:58 | INFO: Blender create Mesh node Sphere.020
+INFO:glTFImporter:Blender create Mesh node Sphere.020
+18:08:58 | INFO: Blender create Mesh node Sphere.021
+INFO:glTFImporter:Blender create Mesh node Sphere.021
+18:08:58 | INFO: Blender create Mesh node Sphere.022
+INFO:glTFImporter:Blender create Mesh node Sphere.022
+18:08:58 | INFO: glTF import finished in 0.02s
+INFO:glTFImporter:glTF import finished in 0.02s
+C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Project\development\assets\build_castle_museum.py:211: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  assert all(m.use_nodes and any(n.type=='TEX_IMAGE' and n.image for n in m.node_tree.nodes) for o in meshes for m in o.data.materials)
+Blender 5.0.0 (hash a37564c4df7a built 2025-11-18 11:06:54)
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Project\development\assets\build_castle_museum.py", line 215, in <module>
+    scene.world.color=(.16,.16,.16)
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'color'
+
+Blender quit

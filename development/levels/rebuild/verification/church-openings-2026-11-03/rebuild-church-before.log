@@ -1,0 +1,12 @@
+church reached elevations -3.0..3.0
+UNREACHABLE CHURCH room=8 Bell tower stair chamber
+UNREACHABLE CHURCH room=9 Organ archive
+UNREACHABLE CHURCH room=10 Belfry
+UNREACHABLE SOCKET CHURCH evidence room=8
+UNREACHABLE SOCKET CHURCH evidence room=9
+UNREACHABLE SOCKET CHURCH evidence room=10
+UNREACHABLE SOCKET CHURCH switch room=8
+UNREACHABLE SOCKET CHURCH switch room=9
+UNREACHABLE SOCKET CHURCH switch room=10
+Exception in thread "main" java.lang.AssertionError: CHURCH 9 unreachable goals, visited=159429
+	at org.beckenburg.AuthoredLevelReachabilityTest.main(AuthoredLevelReachabilityTest.java:33)

@@ -1,0 +1,385 @@
+{
+  "site": "MANSION",
+  "status": "DESIGN_ONLY_SEALS_NOT_RUNTIME_IMPLEMENTED",
+  "maximum": 40,
+  "accessible_spaces": 39,
+  "sealed_context_spaces": 11,
+  "count_rule": "Every OPEN_SEARCH space counts, including corridors, stairs, service rooms, exterior sectors and staging. Stable fifteen gameplay owners are not the room budget.",
+  "barriers": [
+    {
+      "link": "L03",
+      "a": "foyer",
+      "b": "visitor-wc",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L04",
+      "a": "foyer",
+      "b": "coats",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L19",
+      "a": "kitchen",
+      "b": "pantry",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L20",
+      "a": "scullery",
+      "b": "cold-store",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L25",
+      "a": "receiving",
+      "b": "refuse",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L27",
+      "a": "refuse",
+      "b": "garden",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L35",
+      "a": "suite-dress",
+      "b": "suite-bath",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L38",
+      "a": "guest-a-entry",
+      "b": "guest-a-bath",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L39",
+      "a": "gallery",
+      "b": "guest-b-entry",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    },
+    {
+      "link": "L45",
+      "a": "staff-corridor",
+      "b": "staff-bath",
+      "kind": "fixed_closed_leaf_or_solid_infill",
+      "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+    }
+  ],
+  "gameplay_rule": "Evidence, ghost spawn/anchor, hiding, switches/tasks, ritual sites, loose objective props and required travel belong only to the connected open envelope. Context windows may show rooms, but no interaction or required search crosses the seal.",
+  "context_rule": "Retain coherent historical rooms/assets behind permanent boundaries. Restrict whole wings to their hallways where useful; do not count shuttable ordinary doors as permanent seals.",
+  "next_gate": "Build actual permanent seals and audit runtime player/ghost/object/optical boundaries and all objective placements; construct the maps inside the forty-space cap. Round-duration testing is outside this rebuild task.",
+  "spaces": [
+    {
+      "id": "foyer",
+      "name": "Entrance vestibule and guest orientation",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "visitor-wc",
+      "name": "Visitor WC outside private residence",
+      "owner": 0,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "coats",
+      "name": "Guest coats and event cloakroom",
+      "owner": 0,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "hall",
+      "name": "Formal reception and stair approach",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "grand-stair",
+      "name": "Grand stair with clear lower landing",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "library",
+      "name": "Library shelves and reading tables",
+      "owner": 1,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "drawing",
+      "name": "Drawing room seated reception",
+      "owner": 5,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "dining",
+      "name": "Twelve-place formal dining",
+      "owner": 2,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "morning",
+      "name": "Morning room and household breakfast",
+      "owner": 6,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "ballroom",
+      "name": "Clear-span ballroom without upper deck",
+      "owner": 4,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "service-pass",
+      "name": "Dining serving passage",
+      "owner": 3,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "kitchen",
+      "name": "Cooking and preparation with separate wash-up",
+      "owner": 3,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "scullery",
+      "name": "Dirty return and utensil washing",
+      "owner": 3,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "pantry",
+      "name": "Dry provisions and preparation pantry",
+      "owner": 3,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "cold-store",
+      "name": "Cold storage and dairy work",
+      "owner": 3,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "service",
+      "name": "Rear household service distribution",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "receiving",
+      "name": "Delivery inspection and unpacking",
+      "owner": 3,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "refuse",
+      "name": "Enclosed waste awaiting service collection",
+      "owner": 3,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "service-stair",
+      "name": "Independent household service stair",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "gallery",
+      "name": "Upper formal gallery and stair landing",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "suite-entry",
+      "name": "Private suite entrance and sitting lobby",
+      "owner": 8,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "suite-bed",
+      "name": "Principal bedroom",
+      "owner": 8,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "suite-dress",
+      "name": "Principal dressing room",
+      "owner": 8,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "suite-bath",
+      "name": "Principal private bath and WC",
+      "owner": 8,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "guest-a",
+      "name": "Guest bedroom A",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "guest-a-entry",
+      "name": "Guest A private entry",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "guest-a-bath",
+      "name": "Guest A private washing and WC",
+      "owner": 7,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "guest-b",
+      "name": "Guest bedroom B",
+      "owner": 7,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "guest-b-entry",
+      "name": "Guest B private entry",
+      "owner": 7,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "guest-b-bath",
+      "name": "Guest B private washing and WC",
+      "owner": 7,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "upper-service-link",
+      "name": "Controlled formal-to-service threshold",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "staff-corridor",
+      "name": "Staff sleeping access",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "staff-a",
+      "name": "Two staff beds and personal storage A",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "staff-b",
+      "name": "Two staff beds and personal storage B",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "staff-bath",
+      "name": "Staff washing and separate WC bays",
+      "owner": 9,
+      "access": "SEALED_CONTEXT"
+    },
+    {
+      "id": "linen",
+      "name": "Clean linen and household supplies",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-service",
+      "name": "Upper service passage",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-service-stair",
+      "name": "Service stair upper landing",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "attic-stair",
+      "name": "Attic stair and guarded landing",
+      "owner": 10,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "attic-passage",
+      "name": "Attic distribution under roof",
+      "owner": 10,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "archive",
+      "name": "Estate archive: dry papers and shelving",
+      "owner": 10,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "attic-store",
+      "name": "Disused furniture and clear ritual bay",
+      "owner": 10,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "cellar-stair",
+      "name": "Cellar service stair",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "cellar-pass",
+      "name": "Cellar service distribution",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "plant",
+      "name": "Heat hot water and electrical maintenance",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "cellar-provisions",
+      "name": "Cool provisions separate from plant",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "wine",
+      "name": "Wine racks and retrieval aisle",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "garden",
+      "name": "Estate garden envelope: terrain not accepted",
+      "owner": 12,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "entry",
+      "name": "Entrance terrace and carriage approach",
+      "owner": 13,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "stage",
+      "name": "Canonical van unloading reservation",
+      "owner": 14,
+      "access": "OPEN_SEARCH"
+    }
+  ]
+}

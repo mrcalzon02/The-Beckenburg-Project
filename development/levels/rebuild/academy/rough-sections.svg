@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1180" viewBox="0 0 1200 1180">
+<rect width="1200" height="1180" fill="#f5f4ef"/>
+<g font-family="Arial" fill="#1c2a37"><text x="30" y="35" font-size="24">St. Alban Academy: proposed stair sections</text>
+<text x="30" y="60" font-size="15">S02 dimensions only. Full-run architectural voids plus editor world-ground opening remain to be built and tested.</text>
+<text x="30" y="155" font-size="19">main-stair to upper-main-stair - OPEN_ROUTE</text>
+<path d="M110,360 H177.5 M436.70000000000005,198.0 h67.5" stroke="#536477" stroke-width="8" fill="none"/>
+<path d="M177.5,360 L436.70000000000005,198.0" stroke="#a86516" stroke-width="5"/>
+<path d="M177.5,261.0 L436.70000000000005,98.99999999999999" stroke="#307e99" stroke-dasharray="5 4" fill="none"/>
+<text x="680" y="200" font-size="17">Rise 3.6 m / run 5.76 m / clear width 1.5 m</text>
+<text x="680" y="230" font-size="17">20 risers, 0.180 m each (proposed)</text>
+<text x="680" y="260" font-size="17">1.5 m landing reservations at both ends</text>
+<text x="680" y="290" font-size="17">Cyan: 2.2 m headroom envelope above flight</text>
+<text x="680" y="320" font-size="17">Floor/roof depth and underside rays require actual geometry</text>
+<text x="30" y="495" font-size="19">east-stair to upper-east-stair - OPEN_ROUTE</text>
+<path d="M110,700 H177.5 M436.70000000000005,538.0 h67.5" stroke="#536477" stroke-width="8" fill="none"/>
+<path d="M177.5,700 L436.70000000000005,538.0" stroke="#a86516" stroke-width="5"/>
+<path d="M177.5,601.0 L436.70000000000005,439.0" stroke="#307e99" stroke-dasharray="5 4" fill="none"/>
+<text x="680" y="540" font-size="17">Rise 3.6 m / run 5.76 m / clear width 1.5 m</text>
+<text x="680" y="570" font-size="17">20 risers, 0.180 m each (proposed)</text>
+<text x="680" y="600" font-size="17">1.5 m landing reservations at both ends</text>
+<text x="680" y="630" font-size="17">Cyan: 2.2 m headroom envelope above flight</text>
+<text x="680" y="660" font-size="17">Floor/roof depth and underside rays require actual geometry</text>
+<text x="30" y="835" font-size="19">cellar-stair to main-stair - OPEN_ROUTE</text>
+<path d="M110,1040 H177.5 M393.5,905 h67.5" stroke="#536477" stroke-width="8" fill="none"/>
+<path d="M177.5,1040 L393.5,905" stroke="#a86516" stroke-width="5"/>
+<path d="M177.5,941.0 L393.5,806.0" stroke="#307e99" stroke-dasharray="5 4" fill="none"/>
+<text x="680" y="880" font-size="17">Rise 3 m / run 4.8 m / clear width 1.3 m</text>
+<text x="680" y="910" font-size="17">18 risers, 0.167 m each (proposed)</text>
+<text x="680" y="940" font-size="17">1.5 m landing reservations at both ends</text>
+<text x="680" y="970" font-size="17">Cyan: 2.2 m headroom envelope above flight</text>
+<text x="680" y="1000" font-size="17">Floor/roof depth and underside rays require actual geometry</text>
+</g></svg>

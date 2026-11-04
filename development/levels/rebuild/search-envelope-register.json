@@ -1,0 +1,266 @@
+{
+  "policy": "development/levels/rebuild/SEARCH_ENVELOPE_POLICY.json",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "folder": "academy",
+      "maximum": 40,
+      "status": "DESIGN_ENVELOPE_AUTHORED_NOT_RUNTIME_VERIFIED",
+      "accessible": 38,
+      "sealed": 23,
+      "evidence": "development/levels/rebuild/academy/search-envelope.json"
+    },
+    {
+      "id": "ASYLUM",
+      "folder": "asylum",
+      "maximum": 40,
+      "status": "DESIGN_ENVELOPE_AUTHORED_NOT_RUNTIME_VERIFIED",
+      "accessible": 40,
+      "sealed": 27,
+      "evidence": "development/levels/rebuild/asylum/search-envelope.json"
+    },
+    {
+      "id": "CASTLE",
+      "folder": "castle",
+      "maximum": 40,
+      "status": "DESIGN_ENVELOPE_AUTHORED_NOT_RUNTIME_VERIFIED",
+      "accessible": 39,
+      "sealed": 3,
+      "evidence": "development/levels/rebuild/castle/search-envelope.json"
+    },
+    {
+      "id": "CHURCH",
+      "folder": "church",
+      "maximum": 40,
+      "status": "DESIGN_ENVELOPE_AUTHORED_NOT_RUNTIME_VERIFIED",
+      "accessible": 29,
+      "sealed": 4,
+      "evidence": "development/levels/rebuild/church/search-envelope.json"
+    },
+    {
+      "id": "COLLEGE",
+      "folder": "college",
+      "maximum": 40,
+      "status": "DESIGN_ENVELOPE_AUTHORED_NOT_RUNTIME_VERIFIED",
+      "accessible": 40,
+      "sealed": 41,
+      "evidence": "development/levels/rebuild/college/search-envelope.json"
+    },
+    {
+      "id": "FARMHOUSE",
+      "folder": "farmhouse",
+      "maximum": 40,
+      "status": "DESIGN_ENVELOPE_AUTHORED_NOT_RUNTIME_VERIFIED",
+      "accessible": 34,
+      "sealed": 0,
+      "evidence": "development/levels/rebuild/farmhouse/search-envelope.json"
+    },
+    {
+      "id": "HOUSE",
+      "folder": "house",
+      "maximum": 40,
+      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
+      "accessible": null,
+      "sealed": null,
+      "evidence": null
+    },
+    {
+      "id": "MANSION",
+      "folder": "mansion",
+      "maximum": 40,
+      "status": "DESIGN_ENVELOPE_AUTHORED_NOT_RUNTIME_VERIFIED",
+      "accessible": 39,
+      "sealed": 11,
+      "evidence": "development/levels/rebuild/mansion/search-envelope.json"
+    },
+    {
+      "id": "PRISON",
+      "folder": "prison",
+      "maximum": 40,
+      "status": "DESIGN_ENVELOPE_AUTHORED_NOT_RUNTIME_VERIFIED",
+      "accessible": 37,
+      "sealed": 61,
+      "evidence": "development/levels/rebuild/prison/search-envelope.json"
+    },
+    {
+      "id": "SCHOOL",
+      "folder": "school",
+      "maximum": 40,
+      "status": "DESIGN_ENVELOPE_AUTHORED_NOT_RUNTIME_VERIFIED",
+      "accessible": 40,
+      "sealed": 0,
+      "evidence": "development/levels/rebuild/school/search-envelope.json"
+    },
+    {
+      "id": "WLD-01",
+      "folder": "wld-01",
+      "maximum": 40,
+      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
+      "accessible": null,
+      "sealed": null,
+      "evidence": null
+    },
+    {
+      "id": "WLD-02",
+      "folder": "wld-02",
+      "maximum": 40,
+      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
+      "accessible": null,
+      "sealed": null,
+      "evidence": null
+    },
+    {
+      "id": "WLD-03",
+      "folder": "wld-03",
+      "maximum": 40,
+      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
+      "accessible": null,
+      "sealed": null,
+      "evidence": null
+    },
+    {
+      "id": "WLD-04",
+      "folder": "wld-04",
+      "maximum": 40,
+      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
+      "accessible": null,
+      "sealed": null,
+      "evidence": null
+    },
+    {
+      "id": "WLD-05",
+      "folder": "wld-05",
+      "maximum": 40,
+      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
+      "accessible": null,
+      "sealed": null,
+      "evidence": null
+    },
+    {
+      "id": "WLD-06",
+      "folder": "wld-06",
+      "maximum": 40,
+      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
+      "accessible": null,
+      "sealed": null,
+      "evidence": null
+    },
+    {
+      "id": "WLD-07",
+      "folder": "wld-07",
+      "maximum": 40,
+      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
+      "accessible": null,
+      "sealed": null,
+      "evidence": null
+    },
+    {
+      "id": "WLD-08",
+      "folder": "wld-08",
+      "maximum": 40,
+      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
+      "accessible": null,
+      "sealed": null,
+      "evidence": null
+    },
+    {
+      "id": "WLD-09",
+      "folder": "wld-09",
+      "maximum": 40,
+      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
+      "accessible": null,
+      "sealed": null,
+      "evidence": null
+    },
+    {
+      "id": "WLD-10",
+      "folder": "wld-10",
+      "maximum": 40,
+      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
+      "accessible": null,
+      "sealed": null,
+      "evidence": null
+    },
+    {
+      "id": "WLD-11",
+      "folder": "wld-11",
+      "maximum": 40,
+      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
+      "accessible": null,
+      "sealed": null,
+      "evidence": null
+    },
+    {
+      "id": "WLD-12",
+      "folder": "wld-12",
+      "maximum": 40,
+      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
+      "accessible": null,
+      "sealed": null,
+      "evidence": null
+    },
+    {
+      "id": "WLD-13",
+      "folder": "wld-13",
+      "maximum": 40,
+      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
+      "accessible": null,
+      "sealed": null,
+      "evidence": null
+    },
+    {
+      "id": "WLD-14",
+      "folder": "wld-14",
+      "maximum": 40,
+      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
+      "accessible": null,
+      "sealed": null,
+      "evidence": null
+    },
+    {
+      "id": "WLD-15",
+      "folder": "wld-15",
+      "maximum": 40,
+      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
+      "accessible": null,
+      "sealed": null,
+      "evidence": null
+    },
+    {
+      "id": "WLD-16",
+      "folder": "wld-16",
+      "maximum": 40,
+      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
+      "accessible": null,
+      "sealed": null,
+      "evidence": null
+    },
+    {
+      "id": "WLD-17",
+      "folder": "wld-17",
+      "maximum": 40,
+      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
+      "accessible": null,
+      "sealed": null,
+      "evidence": null
+    },
+    {
+      "id": "WLD-18",
+      "folder": "wld-18",
+      "maximum": 40,
+      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
+      "accessible": null,
+      "sealed": null,
+      "evidence": null
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "folder": "wld-07-mortuary",
+      "maximum": 40,
+      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
+      "accessible": null,
+      "sealed": null,
+      "evidence": null
+    }
+  ]
+}

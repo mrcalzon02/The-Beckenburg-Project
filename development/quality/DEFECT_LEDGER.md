@@ -10,6 +10,48 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-234 — Castle native bounds reject coherent west annex and cellar construction
+
+**Status:** fixed-scoped authoring/runtime foundation; full Castle geometry and terrain remain unfinished · **Affected:** Castle native geometry, human editor tools, shared agent service, ground support and cell persistence
+
+Actual pre-fix Castle rejects annex-floor at negative X; surfaces/props below -0.5 are forbidden and naive negative cells would alias legacy paint/nav IDs.
+
+Cause / uncertainty: The old headquarters assumes a nonnegative44x36 footprint and ground/upper authoring only; runtime ground support ignores added native floors.
+
+Fix / next action: Add signed bounded extent and append-only cell encoding, permit actual cellar source heights, refresh runtime ground support on native edits/undo/redo, use native floor materials, update human authoring bounds and expose strict put-surface/remove-surface through shared history.
+
+Evidence and verification: development/levels/rebuild/verification/castle-construction-2026-11-03; pre-fix real JAR refuses negative floor; final packaged test passes actual floor/wall/nav, native save/reopen, history, all2232 unique cells and service renderer capture.
+
+Older-map obligation: Castle-only authoring expansion. Preserve all1584 original cell keys and saved custom native scenes. Below-ground source support does not punch terrain or prove new cellar traversal; those remain required next.
+
+### DEV-233 — Viewport controls regression expects retired physical extraction shortcut
+
+**Status:** fixed-scoped; actual packaged TCP viewport controls pass locally · **Affected:** LanWorldControlsTest assertion after VIEW3D
+
+The test waits for ACCEPT|EXTRACT although the host correctly rejects EXTRACT from physical hunters.
+
+Cause / uncertainty: Old room-mode extraction expectation survived the physical van door contract change.
+
+Fix / next action: Retain actual X-key dispatch, assert host rejection and active round, then issue physical VANDOOR over TCP and require closed-door acknowledgment plus synchronized retreat result. Host behavior is unchanged.
+
+Evidence and verification: development/levels/rebuild/verification/physical-controls-2026-11-03 before/after logs; main127 full41672923465 advisory failure independently reproduced.
+
+Older-map obligation: Shared control regression; no map unlock or release acceptance. Existing full van extraction integration remains authoritative for occupancy and abandonment policy.
+
+### DEV-232 — Contained Church choir loft doors are sealed by the tall nave wall and stair guard
+
+**Status:** fixed-scoped; packaged upper-door and editor-service traversal checks pass locally · **Affected:** Church upper choir loft to tower/archive; shared contained-upper-wall opening authority
+
+Actual swept movement cannot reach tower stair, organ archive or belfry and six functional sockets; nine failed goals, 159429 states.
+
+Cause / uncertainty: Tall nave boundary ignores upper child portals; tower threshold at Z31 overlaps choir stair side guard.
+
+Fix / next action: Share eligible contained-upper portals between physical and rendered walls, retain lower wall/jamb/lintel, and move tower threshold to Z32.65 beyond the guard. Expose the same open-route solver as mission-open-routes in the actual Editor Agent Service.
+
+Evidence and verification: development/levels/rebuild/verification/church-openings-2026-11-03: before failure, after 169097 swept positions Y-3..6, closed/open/crouch/optical and actual triangle controls. Runtime captures show both upper openings.
+
+Older-map obligation: Run shared traversal against every selectable map; preserve saved terrain surface in audit clones. Open-route success does not accept closed-door interaction, hunts, complete map quality or hardware performance.
+
 ### DEV-231 — Hunter pose history survives level replacement and departed seats
 
 **Status:** fixed-scoped; actual TCP gameplay and RTX OpenGL acceptance pass · **Affected:** Shared hunter animation tracker and LanWorldPanel peer lifecycle
@@ -3173,6 +3215,258 @@ Fix / next action: Merged main ce146a69 without weakening extraction enforcement
 Evidence and verification: main ce146a69 full41566564774 and installer41566564773; raw failed-step logs retained in native-bevel-2026-11-02. Positive current-main host class test and exact proposed patch retained beside negative remote logs. Merged production JAR desktop, all eight physical/room-mode TCP scenarios and native suite logs: campaign-merge-2026-11-02.
 
 Older-map obligation: Campaign/host behavior requires actual packaged regression; no map or release acceptance inferred.
+
+### DEV-235 — Legacy Castle tree belt intersects new training annex
+
+**Status:** fixed-scoped; actual packaged render and physical annex regression pass · **Affected:** Castle west training annex / CastleSurroundings
+
+First runtime capture shows an original exterior tree occupying the new interior corridor.
+
+Cause / uncertainty: Legacy western tree coordinates predate the signed west extension.
+
+Fix / next action: Move the existing western belt beyond the annex west wall; retain models and population. Offset new bay lamps away from actual roof beams; version native annex-light migration so deleted lights stay deleted.
+
+Evidence and verification: rebuild/captures/castle-construction/rejected-training-annex-tree.png and training-annex-runtime.png; verification/castle-annex-2026-11-03 packaged tests, actual 81366-position native-spawn flood, closed/open body and optical leaf, fixture support/clearance and switch-off energy.
+
+Older-map obligation: Castle-specific environment conflict. Other sites require individual building/tree/fixture audits; no complete Castle or roster acceptance inferred.
+
+### DEV-236 — Castle cellar flight cannot join the ground landing across the player radius
+
+**Status:** fixed-scoped; final packaged104609-position native spawn flood and native/filled-floor negative controls pass · **Affected:** New Castle cellar stair / native floor support, slab depth and shared editable opening
+
+Initial packaged flood reaches the annex but no cellar room. Successive stair probes show the upper landing and first descending tread individually supported but their radius-spanning transition blocked. A subsequent explicit ascent sweep also exposes an incorrect top-landing handoff atZ24.
+
+Cause / uncertainty: Legacy ground rooms and new native negative-height tread support were queried separately. The original path also assumes uniform slab depth, no persisted architectural void and elevation-free ground furnishings/interactions. Outside the flight, the lower resolver selected the cellar floor even when one riser below the actual ground landing.
+
+Fix / next action: Combine adjacent real landing/tread support without permitting height teleportation; persist a native VOID edited through the same human inspector/history and actual Editor Agent put/remove-surface operations. Render/occlude actual native floor depth, including filled stair masses. Keep below-ground furniture vertical overlap, headroom, circuit, footfall and ground workstation access elevation-aware. Transfer to the real upper landing only within a physical step height; explicitly sweep both descent and ascent rather than inferring return travel from reachability.
+
+Evidence and verification: build/castle-cellar-rejected-landing.log and first-route-probe.log retained under rebuild/verification/castle-cellar-2026-11-03. Corrected packaged CastleCellarConstructionTest reaches104609 physical positions from native spawn and all4 cellar/4 annex rooms; actual filled editor world and removed architectural VOID block the same passage. Native service undo/redo restores/removes physical and optical access. Actual runtime stair/hall captures retained. Rejected upper-return log is preserved; corrected explicit 25mm descending and ascending sweeps pass.
+
+Older-map obligation: New Castle construction defect repaired before its checkpoint. Other multi-level locations retain separate route/headroom/furniture/terrain audits; no complete Castle or roster acceptance inferred.
+
+### DEV-237 — New Castle stair guard blocks the eastern warehouse browsing aisle
+
+**Status:** fixed-scoped; real browsing positions and transformed rack/exhibit mesh containment pass · **Affected:** Castle ground warehouse / eastern rack bank and north rack
+
+Packaged CastleRebuildTest rejects the LASER_GRID browsing position at40.5/18.74 after constructing the cellar guard.
+
+Cause / uncertainty: Legacy rack positions share space with the planned floor opening. The earlier HQ test also hardcodes equipment centre X<42 instead of checking actual wall faces and transformed mesh extents.
+
+Fix / next action: Retain all15 racks and every portable family/tier. Move eastern bank toX42.45, inside the actual masonry face with a continuous facing aisle; shift north rack toX37.6. Replace arbitrary centre margin with every actual transformed rack/exhibit vertex bounded by real floor, wall and ceiling faces. Keep the existing all-exhibit browsing/body checks.
+
+Evidence and verification: rebuild/verification/castle-cellar-2026-11-03: rejected warehouse aisle and legacy centre-bound logs; final CastleRebuildTest and CastleHeadquartersRevisionTest. Actual final stair and lower hall runtime captures are retained in captures/castle-construction.
+
+Older-map obligation: Castle construction regression repaired before publication. Other site furniture layouts and saved custom edits need individual mesh, circulation and stair/guard audits; no blanket acceptance.
+
+### DEV-238 — New enclosed Castle cellar flight has no direct fixed lighting
+
+**Status:** fixed-scoped; two supported native stair sconces, actual illumination checks and viewed runtime capture · **Affected:** Castle cellar stair fit-out
+
+Initial structural runtime view leaves the lower flight dark despite the side-bypass room ceiling fitting.
+
+Cause / uncertainty: The full-height stone stair cheeks correctly occlude the side-room lamp; the enclosed flight needs its own mounted fittings.
+
+Fix / next action: Add two source-model wall lamps fitted to the actual native cheeks/guard, share the cellar circuit and retain ceiling lamps for the four lower rooms. Wall attachment checks consume the same native masonry and fitted pose as rendering.
+
+Evidence and verification: pre-lighting-cellar-stair-runtime.png and final cellar-stair-runtime.png; CastleCellarConstructionTest verifies native attachment, actual stair/room light energy, circuit separation and unobstructed continuous body sweeps.
+
+Older-map obligation: New Castle structural-to-fit-out issue. Other enclosed stairs need individual support/occlusion/brightness and body-clearance reviews; no inferred older-map repair.
+
+### DEV-239 — Bounded Castle stock layout blocks the original store light switch approach
+
+**Status:** fixed-scoped; actual ground routes, all stock browsing stands and all room switches pass · **Affected:** Castle stock room / existing switch at28.73,26
+
+First ground construction test cannot stand at the legacy stock switch after fitting all15 racks into the bounded stock room.
+
+Cause / uncertainty: The relocated western rack bank projects into the former approach by40mm.
+
+Fix / next action: Move the same switch to25.9 on the real shoulder beside the entrance; preserve15 source-sized racks and all family/tier stock.
+
+Evidence and verification: development/levels/rebuild/verification/castle-ground-2026-11-03/castle-ground-rejected-stock-switch.log; final native route/switch/stock checks.
+
+Older-map obligation: Audit every location fixture approach after new walls or relocated stock; no general older-map repair inferred.
+
+### DEV-240 — Ground-room authoring helper loses the existing native annex ceiling query
+
+**Status:** fixed-scoped; packaged annex fixture, brightness, physical routes and exact save/reopen pass · **Affected:** CastleRooms.mountHeight / existing west annex
+
+Targeted CastleTrainingAnnexTest throws No ceiling at -8,27 after separating default fixture authoring from live singleton initialization.
+
+Cause / uncertainty: The authoring-only ceiling lookup considered the new core room table but omitted the generated annex spaces.
+
+Fix / next action: Include generated annex ceiling dimensions in authoring queries; retain actual native slab attachment as the independent runtime support check.
+
+Evidence and verification: development/levels/rebuild/verification/castle-ground-2026-11-03/castle-ground-rejected-annex-ceiling.log and final CastleTrainingAnnexTest. The retained log is an explicitly labeled current-source controlled omission; the original intermediate JAR was not retained.
+
+Older-map obligation: Castle helper regression repaired before ground publication; custom/legacy native geometry still needs actual support, not a guessed mount plane.
+
+### DEV-241 — Full regression manifest aborts on qualified new test names after running prior tests
+
+**Status:** local repair verified; fresh exact-source full CI still required · **Affected:** regression-tests.txt / actual BeckenburgRegressionSuite runner
+
+Prior b5e full41726781593 is green at workflow level but raw job aborts on org.beckenburg.CastleWorldTerrainTest without a final regression summary. Terrain check is not executed.
+
+Cause / uncertainty: The real runner accepts short class names only; new terrain/cellar entries used fully qualified names. Full preflight also exposes an existing duplicate HorrorAudioRoutingTest.
+
+Fix / next action: Use canonical short names, preserve each test once, validate every name/compiled entrypoint before launching children, require all Castle construction tests, and expose --validate. Actual subprocess negative controls reject qualified tail, duplicate and missing class before any test launches.
+
+Evidence and verification: development/levels/rebuild/verification/castle-ground-2026-11-03/prior-full-b5e.log; final321-entry --validate and BeckenburgRegressionManifestTest logs. Prior raw316 test passes,2 art failures, then invalid-entry abort; no full acceptance inferred.
+
+Older-map obligation: Keep GhostSpriteAtlasIntegrationTest and TwinBodyVisualTest artwork/goldens unchanged. No omission, duplicate inflation or advisory-green badge substitutes for complete raw-suite execution.
+
+### DEV-242 — GPU source compile job exhausts its limit before compilation during canonical checkout
+
+**Status:** fixed-scoped; fresh actual Linux compile, Windows build and Mesa smoke succeed · **Affected:** Existing GPU workflow Linux compile-gpu-java17 job
+
+GPU run41731832476/job126250898962 is cancelled while git fetch is running; source compilation never starts. Windows build and actual Mesa smoke succeed at91e8f47b.
+
+Cause / uncertainty: Canonical repository checkout consumes the full10-minute compile-job deadline.
+
+Fix / next action: Allow20 bounded minutes for the same full checkout, source compile and unchanged contract checks. Do not alter runtime performance thresholds or omit assets/tests.
+
+Evidence and verification: development/levels/rebuild/verification/castle-ground-2026-11-03/prior-gpu-compile-91e.log and prior-gpu-91e.json; fresh GPU run required. GPU41770098733 at30354e24: windows-build, compile-gpu-java17 and opengl-mesa-smoke all success. Physical hardware acceptance remains separate.
+
+Older-map obligation: CI preparation correction only; physical GPU/platform acceptance remains independent and cannot be inferred from source compilation or software Mesa.
+
+### DEV-243 — New ground room owners and controls must not appear in older native geometry
+
+**Status:** fixed-scoped; native-structure-removal negative controls pass · **Affected:** Castle legacy/custom saved scenes / ground child-room metadata, switches and portal availability
+
+Source audit of the first ground refit finds that unconditional child room owners, new static switches and door sockets can describe rooms absent from an older native document.
+
+Cause / uncertainty: Room/circuit tables and socket metadata are compiled separately from the loaded native surface snapshot.
+
+Fix / next action: Tag the actual new native partition surfaces; activate child owners/new controls and ground portal rendering/body/optical behavior only with that native programme. Retain original broad room owners for saved geometry without those surfaces and retain every published lower doorway ID.
+
+Evidence and verification: development/levels/rebuild/verification/castle-ground-2026-11-03/CastleGroundConstructionTest checks removed programme surfaces, legacy owners, unavailable new switches and a forced closed ground leaf that must not create phantom body/optical blockage.
+
+Older-map obligation: Custom native documents and their objects are preserved. This is a source/negative-control repair, not a claim that every older edited Castle scene has been visually audited.
+
+### DEV-244 — Wall-sconce atlas inverted across both power states
+
+**Status:** fixed-scoped; actual source-pixel and three-angle castle comparisons pass · **Affected:** lamp_3_on / lamp_3_off at every runtime site using these shared models
+
+Gray casing paints the fluorescent tubes while yellow/white strips wrap the housing edges.
+
+Cause / uncertainty: Legacy bottom-left V sampling reverses the original glTF top-left embedded PNG atlas.
+
+Fix / next action: Use original glTF image origin for exactly these two inspected model identities; preserve source GLB geometry, UV coordinates, image pixels, pivots and mounts.
+
+Evidence and verification: development/quality/evidence/wall-lamp-uv-2026-11-03; WallLampSourceUvTest fails with original JAR and passes all64 actual triangle-centroid samples after correction. Three-angle actual Castle on/off captures retained in development/captures/wall-lamp-runtime.
+
+Older-map obligation: Shared model repair applies to old sites using these identities. Other models retain their existing origin; no claim that unrelated legacy assets are UV-audited.
+
+### DEV-245 — Wall-light backing plate is oversized and untextured
+
+**Status:** fixed-scoped; actual textured renderer faces, source-geometry contact and captures verified · **Affected:** Castle wall-light mounting plates, including edited scenes and lower/upper fixtures
+
+A large flat brown rectangle extends above and below the textured light housing.
+
+Cause / uncertainty: Renderer adds a hardcoded untextured30x40x5.2cm primitive independent of fixture scale.
+
+Fix / next action: Replace with a compact scaled strap using the original lamp metal atlas region on all six faces; seat into masonry and meet actual source rear lip.
+
+Evidence and verification: development/quality/evidence/wall-lamp-bracket-2026-11-03; WallLampMountPlateTest verifies actual renderer materials/UVs, texture variation, source-triangle and masonry contact; actual five-angle on/off captures under development/captures/wall-lamp-runtime/textured-bracket.
+
+Older-map obligation: Shared Castle renderer correction applies to legacy edited scenes; unrelated map mounting assemblies retain individual audit obligations.
+
+### DEV-246 — Regression preflight cannot load test classes with the real CI command
+
+**Status:** fixed-scoped; actual full324-entry run now completes with322 unique passes and2 pre-existing art failures · **Affected:** Full regression manifest runner / workflow41738088189 at50829e61
+
+Overall workflow is green, but raw advisory step aborts before executing any regression: ClassNotFoundException BeckenburgDiagnosticsTest.
+
+Cause / uncertainty: Preflight uses its parent classloader, while the real workflow starts with build/classes only; child tests live in build/test.
+
+Fix / next action: Preflight uses an additional closeable loader for the actual build/test root. Add subprocess coverage for the precise main-only workflow classpath; retain duplicate, qualified-name and missing-class negatives.
+
+Evidence and verification: development/levels/rebuild/verification/castle-upper-2026-11-03/prior-ground-full-50829.log; BeckenburgRegressionManifestTest.log verifies324 names without launching tests. Actual subsequent full41770104678 at30354e24 reaches summary322/2/0 of324; raw log under castle-museum-2026-11-03.
+
+Older-map obligation: CI verification repair only. Prior overall success does not certify skipped regression bodies. Fresh exact-source full run must reach its actual summary.
+
+### DEV-247 — Old geometry probes assume every Castle aperture and fitting is on the ground storey
+
+**Status:** corrected-probes; actual fixture vertices and all authored casement coordinates pass · **Affected:** CastleGroundConstructionTest ceiling clearance and CastlePortalSlotTest casement sampling
+
+New upper walls are falsely intersected by standing-body volume around a ground ceiling lamp; added upper casements are probed at ground window coordinates.
+
+Cause / uncertainty: Geometry checks substitute a1.55m standing-body volume for imported lamp vertices, and fixed x1/y1.85 for all window slots.
+
+Fix / next action: Check actual transformed ceiling-lamp vertices against native masonry; sample each casement at its own wall plane, sill/head and storey while retaining solid sill/lintel and no-body-passage negatives.
+
+Evidence and verification: development/levels/rebuild/verification/castle-upper-2026-11-03/rejected-legacy-* logs reproduce both earlier probes against actual new geometry; final named checks pass.
+
+Older-map obligation: These are inspection-probe corrections, not removal of clearance/optical requirements. Original ground windows and fittings remain checked.
+
+### DEV-248 — South rampart capture contains flat polygon patches in the night sky
+
+**Status:** open; visual source classification required · **Affected:** Castle southern upper exterior view
+
+Actual upper-south-walk-runtime capture shows isolated flat dark polygon patches above the distant horizon.
+
+Cause / uncertainty: Unclassified: sky/environment rendering requires source and matched camera review.
+
+Fix / next action: Retain actual capture and inspect sky/cloud/environment geometry during Castle exterior/story refinement; do not claim visual completion.
+
+Evidence and verification: development/levels/rebuild/captures/castle-construction/upper-south-walk-runtime.png
+
+Older-map obligation: Other sky profiles and exterior maps remain independently unaudited; no global fix or acceptance is inferred.
+
+### DEV-249 — Owner rejects primitive Castle museum studies, especially disconnected armour slabs
+
+**Status:** rejected; reference-led armour reconstruction and whole-kit reference review in progress · **Affected:** Candidate Castle museum kit, not integrated into runtime
+
+Armour reads as generic primitive shapes; three tasset slabs float in front of the torso. Other museum studies lack adequate reference examination and finish.
+
+Cause / uncertainty: First asset construction pass substituted generic primitive assemblies and procedural surface noise for measured object anatomy, suspended articulation and design-specific reference work.
+
+Fix / next action: Quarantine initial studies outside runtime delivery. Examine primary museum references and actual photographs; rebuild shaped articulated shells, visible fastenings and proper load paths; inspect actual exported geometry in clay before surfacing and runtime placement. Review every other kit member independently.
+
+Evidence and verification: development/assets/castle-museum/reference-brief.md; references/sources.json; previews/rejected-primitive-armour and rejected-wide-armour; castle_armour_geometry.py and reimported clay studies.
+
+Older-map obligation: Existing legacy decorations are not assumed correct. This rejection blocks promotion of the new museum kit; older-map source/art audits remain separate.
+
+### DEV-250 — Dense museum armour uses the wrong triangle budget and disconnected-looking foot strips
+
+**Status:** candidate corrected; exported1036-triangle geometry/contact checks pass; full art/runtime acceptance remains open · **Affected:** Castle museum armour study, quarantined outside runtime
+
+Reference rebuild grows to40,796 triangles using geometric rivets/trim; sabaton strips look detached. Owner requires car/character-scale budgets, sharp lower-count shapes, texture-authored detail and no floating pieces.
+
+Cause / uncertainty: Fine details are over-modelled and foot anatomy is approximated by separate strips rather than a coherent enclosing shape.
+
+Fix / next action: Reauthor low-count silhouette and component-specific texture atlas; close toe/side/heel geometry; anchor actual suspension to faceted plate surfaces; audit every export component through actual surface contact graph and reject a real detached-helmet negative.
+
+Evidence and verification: development/assets/castle-museum/armour-review.json, armour-contact-audit-export.json, armour-contact-audit-negative-detached-helmet.json and reviewed close feet captures; rejected dense/foot studies retained.
+
+Older-map obligation: Apply owner budget/attachment direction to future model work and audit existing assets individually. Other museum kit members remain unaccepted and outside runtime.
+
+### DEV-251 — Asset/floor diagnostics use an over-broad anatomical region or native-only support domain
+
+**Status:** corrected diagnostic domains; actual control reproduces misleading results; no renderer change · **Affected:** Castle museum development probes, not a production floor/rasterizer defect
+
+A pixel rectangle below the torso counts the intentional gap between thigh guards as uncovered chest; native-only floor query misses the shared authored archive deck. A tiny body probe also falls inside deliberate step-clearance tolerance.
+
+Cause / uncertainty: Inspection probes are used beyond their spatial/authoring API domain.
+
+Fix / next action: Use actual closed-torso image region and depth ownership, shared structural slabs over the full footprint, physical/optical slab probes outside step tolerance. Remove the ineffective epsilon rasterizer experiment completely.
+
+Evidence and verification: development/levels/rebuild/verification/castle-museum-2026-11-03/ProbeDomainControl.java and museum-probe-control.log:48 intentional-gap pixels,0 uncovered true torso; native-only false/shared floor true. Actual native display checks pass.
+
+Older-map obligation: Keep existing floor/body/ray requirements. This correction does not certify unaudited older assets or justify loosening production geometry checks.
+
+### DEV-252 — Candidate museum textures and fine-detail geometry do not read correctly in the real diffuse renderer
+
+**Status:** fixed for scoped armour/caption/barrier pilot; remaining kit requires independent review · **Affected:** Castle museum candidate armour atlas, label geometry and brass post finish
+
+Initial source texture uses dark speckling and a broad unintended back seam; first plaque uses9128 triangles of text geometry; post finish reads flat under diffuse-only lighting.
+
+Cause / uncertainty: Studio lighting and polygon-based details are used without sufficient actual software-renderer review.
+
+Fix / next action: Separate chest/back atlas regions, remove isolated high-contrast pits, use original readable label text in bitmap texture on86 triangles, reduce barrier1344->264 and paint coherent circumferential metal/velvet shading. Preserve source and actual Castle rejected/final captures.
+
+Evidence and verification: development/assets/castle-museum/previews/rejected-software-texture, rejected-flat-brass-runtime and current source/runtime captures; armour1036/caption86/barrier264 independent contact reports and CastleMuseumConstructionTest.
+
+Older-map obligation: Existing scenery remains individually unaudited. These three reviewed models do not accept the other rejected museum studies or unrelated legacy UV/material work.
 
 ## Required audit categories
 

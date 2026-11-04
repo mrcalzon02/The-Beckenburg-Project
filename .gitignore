@@ -20,3 +20,6 @@ invitation.secret
 
 /gpu-client/target/
 /logs/
+
+# Transient lock files are recreated by native editor scene readers.
+development/levels/rebuild/**/terrain-world/**/*.editor.lock

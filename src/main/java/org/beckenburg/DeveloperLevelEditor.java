@@ -39,6 +39,7 @@ public final class DeveloperLevelEditor extends JPanel {
     private long missionMapRevision=-1;
     private HouseMap.Site missionSite;
     private boolean castleDirty,missionDirty;
+    private double minX(){return mission==null?CastleWorldBounds.MIN_X:0;}
     private double maxX(){return mission==null?CastleHubMap.WIDTH:missionMap==null?HouseMap.WIDTH:missionMap.width();}
     private double maxZ(){return mission==null?CastleHubMap.HEIGHT:missionMap==null?HouseMap.HEIGHT:missionMap.height();}
     private void refreshMissionPreview(){missionMap=null;}
@@ -248,7 +249,7 @@ public final class DeveloperLevelEditor extends JPanel {
         "STONE","PLASTER","PARQUET","CERAMIC","DOOR","CEILING","CARPET","BRICK",
         "WALLPAPER","CONCRETE","SOIL","IRON","FOLIAGE","AGED_WOOD","WINDOW","RITUAL"
     });
-    private final JSpinner tileX=new JSpinner(new SpinnerNumberModel(13,0,CastleHubMap.WIDTH-1,1));
+    private final JSpinner tileX=new JSpinner(new SpinnerNumberModel(13,CastleWorldBounds.MIN_X,CastleHubMap.WIDTH-1,1));
     private final JSpinner tileZ=new JSpinner(new SpinnerNumberModel(19,0,CastleHubMap.HEIGHT-1,1));
     private final JSpinner wallIndex=new JSpinner(new SpinnerNumberModel(0,0,CastleHubArchitecturalPlan.walls().size()-1,1));
     private final JCheckBox navOverlay=new JCheckBox("3D navigation overlay",false);
@@ -725,7 +726,7 @@ public final class DeveloperLevelEditor extends JPanel {
         }));tools.add(wall);
         tools.add(new JLabel("Wall ID"));tools.add(wallIndex);
         JButton focusTile=button("CAMERA TILE");focusTile.addActionListener(e->{
-            tileX.setValue((int)Math.max(0,Math.min(CastleHubMap.WIDTH-1,Math.floor(renderer.x))));
+            tileX.setValue((int)Math.max(CastleWorldBounds.MIN_X,Math.min(CastleHubMap.WIDTH-1,Math.floor(renderer.x))));
             tileZ.setValue((int)Math.max(0,Math.min(CastleHubMap.HEIGHT-1,Math.floor(renderer.z))));
             updateNav();
         });tools.add(focusTile);
@@ -770,7 +771,7 @@ public final class DeveloperLevelEditor extends JPanel {
         String mesh=(String)library.getSelectedItem();if(mesh==null)return;
         double aheadX=renderer.x+Math.sin(renderer.yaw)*2.4;
         double aheadZ=renderer.z+Math.cos(renderer.yaw)*2.4;
-        if(aheadX<0||aheadX>CastleHubMap.WIDTH||aheadZ<0||aheadZ>CastleHubMap.HEIGHT){
+        if(aheadX<CastleWorldBounds.MIN_X||aheadX>CastleHubMap.WIDTH||aheadZ<0||aheadZ>CastleHubMap.HEIGHT){
             status.setText("Move inside the level before placing an asset");return;
         }
         String id="custom"+System.nanoTime();
@@ -989,7 +990,7 @@ public final class DeveloperLevelEditor extends JPanel {
     private void advance(double amount){
         renderer.x+=Math.sin(renderer.yaw)*amount;
         renderer.z+=Math.cos(renderer.yaw)*amount;
-        renderer.x=Math.max(.2,Math.min(maxX()-.2,renderer.x));
+        renderer.x=Math.max(minX()+.2,Math.min(maxX()-.2,renderer.x));
         renderer.z=Math.max(.2,Math.min(maxZ()-.2,renderer.z));
     }
     private void frame(){
@@ -1094,7 +1095,7 @@ public final class DeveloperLevelEditor extends JPanel {
             // Keep placement deterministic when looking at the horizon.
             travel=3.5/Math.max(.15,forward);
         }
-        return new Point(snap(clamp(renderer.x+dx*travel,.5,maxX()-.5)),
+        return new Point(snap(clamp(renderer.x+dx*travel,minX()+.5,maxX()-.5)),
             snap(clamp(renderer.z+dz*travel,.5,maxZ()-.5)));
     }
     private void editViewport(int fromX,int fromY,Point begin,Point end){
@@ -1141,7 +1142,7 @@ public final class DeveloperLevelEditor extends JPanel {
                 if(chosen!=null){
                     modifying=true;
                     try{
-                        x.setValue(clamp(value(x)+end.x-begin.x,0,CastleHubMap.WIDTH));
+                        x.setValue(clamp(value(x)+end.x-begin.x,CastleWorldBounds.MIN_X,CastleHubMap.WIDTH));
                         z.setValue(clamp(value(z)+end.z-begin.z,0,CastleHubMap.HEIGHT));
                     }
                     finally{modifying=false;}
@@ -1187,13 +1188,13 @@ public final class DeveloperLevelEditor extends JPanel {
         if(kind==CastleLevelEdits.Kind.WALL){
             if(x1-x0>=z1-z0){
                 z0=z1=begin.z;
-                if(x1-x0<.2)x1=clamp(x0+2,0,CastleHubMap.WIDTH);
+                if(x1-x0<.2)x1=clamp(x0+2,CastleWorldBounds.MIN_X,CastleHubMap.WIDTH);
             }else{
                 x0=x1=begin.x;
                 if(z1-z0<.2)z1=clamp(z0+2,0,CastleHubMap.HEIGHT);
             }
         }else{
-            if(x1-x0<.2)x1=clamp(x0+2,0,CastleHubMap.WIDTH);
+            if(x1-x0<.2)x1=clamp(x0+2,CastleWorldBounds.MIN_X,CastleHubMap.WIDTH);
             if(z1-z0<.2)z1=clamp(z0+2,0,CastleHubMap.HEIGHT);
         }
         String id="shape"+System.nanoTime();
@@ -1258,7 +1259,7 @@ public final class DeveloperLevelEditor extends JPanel {
         if(mission!=null){status.setText("Mission fixtures use authored level light sockets");return;}
         String id="light"+System.nanoTime();
         operate(()->data.put(new CastleLevelEdits.Lamp(id,"ceiling_lamp_1_on",
-            "ceiling_lamp_1_off",target.x,clamp(value(workPlane)+3.38,0,9),
+            "ceiling_lamp_1_off",target.x,clamp(value(workPlane)+3.38,CastleWorldBounds.MIN_Y,9),
             target.z,.8,0,CastleHubDecor.Mount.CEILING,
             value(radius),value(power))));
         refresh();selectId("LAMP",id);
@@ -1279,13 +1280,13 @@ public final class DeveloperLevelEditor extends JPanel {
             case "PROP" -> {
                 var p=data.props().stream().filter(v->v.id().equals(selected.id)).findFirst().orElseThrow();
                 operate(()->data.put(new CastleLevelEdits.Prop(id,p.mesh(),
-                    clamp(p.x()+1,0,CastleHubMap.WIDTH),p.y(),p.z(),p.scale(),p.yaw(),
+                    clamp(p.x()+1,CastleWorldBounds.MIN_X,CastleHubMap.WIDTH),p.y(),p.z(),p.scale(),p.yaw(),
                     p.halfX(),p.halfZ(),p.upper())));
             }
             case "LAMP" -> {
                 var l=data.lamps().stream().filter(v->v.id().equals(selected.id)).findFirst().orElseThrow();
                 operate(()->data.put(new CastleLevelEdits.Lamp(id,l.on(),l.off(),
-                    clamp(l.x()+1,0,CastleHubMap.WIDTH),l.y(),l.z(),l.scale(),
+                    clamp(l.x()+1,CastleWorldBounds.MIN_X,CastleHubMap.WIDTH),l.y(),l.z(),l.scale(),
                     l.yaw(),l.mount(),l.radius(),l.power())));
             }
             case "SURFACE" -> {

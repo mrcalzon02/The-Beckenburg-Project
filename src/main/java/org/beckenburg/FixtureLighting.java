@@ -421,8 +421,10 @@ public final class FixtureLighting {
  }
  static boolean castleRayClear(CastleHubMap map,double ax,double ay,double az,double bx,double by,double bz){
   if(map==null||!Double.isFinite(ax+ay+az+bx+by+bz))return false;
+  if(!map.worldSurface().clearSight(new LevelDefinition.Vec(ax,ay,az),new LevelDefinition.Vec(bx,by,bz)))return false;
   final double EPS=0.0001;
   for(var slot:CastleDoorSlots.all()){
+   if(!CastleDoorSlots.available(slot))continue;
    var type=CastleLevelEdits.current().doorType(slot.id());
    if(type==CastleDoorSlots.Type.WOOD){if(CastleTimberDoors.crosses(slot,map.doorOpen(slot.id()),ax,ay,az,bx,by,bz))return false;}
    else if(type!=CastleDoorSlots.Type.EMPTY&&!map.doorOpen(slot.id())&&CastleDoorSlots.crossesLeaf(slot,ax,ay,az,bx,by,bz))return false;
@@ -444,7 +446,7 @@ public final class FixtureLighting {
   }
   // The same structural slabs supply visible tops, soffits, edges and occlusion.
   for(var slab:CastleRooms.structuralDecks())
-   if(CastleDoorSlots.crossesBox(ax,ay,az,bx,by,bz,slab.x0(),slab.height()-CastleRooms.SLAB,slab.z0(),
+   if(CastleDoorSlots.crossesBox(ax,ay,az,bx,by,bz,slab.x0(),CastleRooms.slabBottom((slab.x0()+slab.x1())/2,(slab.z0()+slab.z1())/2,slab.height()),slab.z0(),
        slab.x1(),slab.height(),slab.z1()))return false;
   // Sloping roof faces cast shadows too. Trace the signed elevation
   // against each left/right planar roof face, not a fake flat ceiling.
@@ -474,7 +476,7 @@ public final class FixtureLighting {
    double t=(ceiling-ay)/(by-ay);
    if(t<=EPS||t>=1-EPS)continue;
    double x=ax+(bx-ax)*t,z=az+(bz-az)*t;
-   if(x<=0||x>=CastleHubMap.WIDTH||z<=0||z>=CastleHubMap.HEIGHT
+   if(x<=CastleWorldBounds.MIN_X||x>=CastleHubMap.WIDTH||z<=0||z>=CastleHubMap.HEIGHT
       ||map.solid((int)Math.floor(x),(int)Math.floor(z))
       ||map.outside(x,z)||CastleHubArchitecturalPlan.onStairs(x,z))continue;
    if(ceiling==CastleHubArchitecturalPlan.UPPER_CEILING){

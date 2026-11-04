@@ -1,0 +1,68 @@
+{
+  "status": "SOURCE_BOUNDS_FOR_ROUGH_PLANNING_ONLY",
+  "assets": [
+    {
+      "asset": "bed_5",
+      "path": "assets/runtime/models/bed_5.glb",
+      "sha256": "402cd296a440fd6b6e0320acba190c1f6773f1fc3c4622c2a524725d1278652c",
+      "local_min": [
+        -1.370335340499878,
+        2.7700842508693313e-08,
+        -0.750335693359375
+      ],
+      "local_max": [
+        1.3703371286392212,
+        0.9621344208717346,
+        0.7403361201286316
+      ],
+      "size_m": [
+        2.740672469139099,
+        0.9621343931708921,
+        1.4906718134880066
+      ],
+      "note": "Static GLB POSITION bounds with identity nodes; native pivot preserved. Actual placed support/collider fit remains unverified."
+    },
+    {
+      "asset": "level_bath_basin",
+      "path": "assets/runtime/models/level_bath_basin.glb",
+      "sha256": "d73a6dbc5349adb329f8019ee153199b3dfc7c65e89423d9390068f865388aaf",
+      "local_min": [
+        -0.33000001311302185,
+        0,
+        -0.25
+      ],
+      "local_max": [
+        0.33000001311302185,
+        1.1360000371932983,
+        0.25
+      ],
+      "size_m": [
+        0.6600000262260437,
+        1.1360000371932983,
+        0.5
+      ],
+      "note": "Static GLB POSITION bounds with identity nodes; native pivot preserved. Actual placed support/collider fit remains unverified."
+    },
+    {
+      "asset": "toilet_mp_1",
+      "path": "assets/runtime/models/toilet_mp_1.glb",
+      "sha256": "4fe48e46a8a10acf35167ddc6cc62aaaba645c9996b5325bb505d164d9512f3e",
+      "local_min": [
+        -0.2812015414237976,
+        -0.23454469442367554,
+        -0.6022419929504395
+      ],
+      "local_max": [
+        0.28120169043540955,
+        0.7718119025230408,
+        0.2945196032524109
+      ],
+      "size_m": [
+        0.5624032318592072,
+        1.0063565969467163,
+        0.8967615962028503
+      ],
+      "note": "Static GLB POSITION bounds with identity nodes; native pivot preserved. Actual placed support/collider fit remains unverified."
+    }
+  ]
+}

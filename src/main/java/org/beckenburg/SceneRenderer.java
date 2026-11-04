@@ -516,12 +516,11 @@ public final class SceneRenderer {
         // still lies *inside* the stone, so never centre the imported sconce
         // on that saved coordinate. Fit its furthest-back triangles instead.
         if(fixture.mount()==CastleHubDecor.Mount.WALL&&wallPose.supported()){
-            if(Math.abs(sy)>.5)
-                box(out,wallPose.plateX()-.026,fixture.y()-.20,wallPose.wallZ()-.15,
-                    .052,.40,.30,0x635447);
-            else
-                box(out,wallPose.wallX()-.15,fixture.y()-.20,wallPose.plateZ()-.026,
-                    .30,.40,.052,0x635447);
+            var plate=CastleWallLampMount.plate(fixture,wallPose);
+            // Reuse the original sconce's weathered steel atlas region, not a flat color
+            // or the fluorescent strip. Both power states retain the same metal finish.
+            int metal=GlbProps.model(fixture.off()).triangles().get(0).material();
+            lampPlate(out,plate,metal);
         }
         for(GlbProps.Triangle t:model.triangles()){
             GlbProps.Vertex[] vv={t.a(),t.b(),t.c()};
@@ -537,6 +536,13 @@ public final class SceneRenderer {
                 vv[0].u(),vv[0].v(),vv[1].u(),vv[1].v(),
                 vv[2].u(),vv[2].v()));
         }
+    }
+    private static void lampPlate(List<Face> out,CastleWallLampMount.Plate p,int metal){
+        double x=p.x(),y=p.y(),z=p.z(),sx=p.width(),sy=p.height(),sz=p.depth();
+        Point a=new Point(x,y,z),b=new Point(x+sx,y,z),c=new Point(x+sx,y+sy,z),d=new Point(x,y+sy,z);
+        Point e=new Point(x,y,z+sz),f=new Point(x+sx,y,z+sz),g=new Point(x+sx,y+sy,z+sz),h=new Point(x,y+sy,z+sz);
+        for(Point[] side:new Point[][]{{a,b,c,d},{f,e,h,g},{e,a,d,h},{b,f,g,c},{d,c,g,h},{e,f,b,a}})
+            texturedQuad(out,side[0],side[1],side[2],side[3],metal,.08,.60,.92,.60,.92,.95,.08,.95,0xffffff);
     }
     /** All investigation locations use placed, licensed scenery GLBs with
      * matching host-side collision. No purchasable tools occur in map furnishings.
@@ -1113,7 +1119,8 @@ public final class SceneRenderer {
     private static void castleTerrain(List<Face> out,double west,double north,double east,double south){
         double step=CastleSurroundings.TERRAIN_STEP;
         for(double x=Math.floor(west/step)*step;x<east;x+=step)for(double z=Math.floor(north/step)*step;z<south;z+=step){
-            if(!CastleSurroundings.landscapeContains(x+step*.5,z+step*.5))continue;
+            if(!CastleSurroundings.landscapeContains(x+step*.5,z+step*.5)
+                ||CastleWorldTerrain.replaces(x+step*.5,z+step*.5))continue;
             texturedQuad(out,new Point(x,CastleSurroundings.groundHeight(x,z),z),
                 new Point(x+step,CastleSurroundings.groundHeight(x+step,z),z),
                 new Point(x+step,CastleSurroundings.groundHeight(x+step,z+step),z+step),
@@ -1135,6 +1142,13 @@ public final class SceneRenderer {
         // More than 0.6m vertical separation also prevents far-plane depth quantization
         // from producing flashing earth through pavement or interior floors.
         castleTerrain(out,-180,-160,220,220);
+        var world=CastleWorldTerrain.surface();
+        for(int i=0;i<world.triangleCount();i++){
+            var t=world.triangle(i);var a=t.a();var b=t.b();var c=t.c();
+            out.add(new Face(new Point(a.x(),a.y(),a.z()),new Point(b.x(),b.y(),b.z()),
+                new Point(c.x(),c.y(),c.z()),0x6e7866,MaterialAtlas.FOLIAGE,
+                a.x()*.25,a.z()*.25,b.x()*.25,b.z()*.25,c.x()*.25,c.z()*.25));
+        }
         for(var tree:CastleSurroundings.trees())castleProp(out,"level_tree_conifer_worn",tree.x(),CastleSurroundings.groundHeight(tree.x(),tree.z()),tree.z(),tree.scale(),tree.x()*.2);
         mountains(out,22,17);var points=CastleSurroundings.road();int asphalt=VanArrivalStreet.surfaceMaterial(false);double uv=0;
         for(int i=0;i<points.size()-1;i++){
@@ -1603,11 +1617,15 @@ public final class SceneRenderer {
                 return;
             }
         }
-        var openings=level.portals().stream().filter(p->!p.kind().equals("stair")&&p.alongX()==alongX
-            &&(p.a()==r.id()||p.b()==r.id())&&nearPlane(p.y(),r.y())
+        var openings=level.wallPortals(r.id()).stream().filter(p->!p.kind().equals("stair")&&p.alongX()==alongX
+            &&p.y()>=r.y()-.01&&p.y()<r.y()+r.height()
             &&nearPlane(alongX?p.z():p.x(),plane)).sorted(java.util.Comparator.comparingDouble(p->alongX?p.x():p.z())).toList();
         double direction=nearPlane(plane,alongX?r.z0():r.x0())?1:-1;
         double facePlane=plane+direction*LevelDefinition.WALL_HALF_THICKNESS;
+        if(openings.stream().anyMatch(p->!nearPlane(p.y(),r.y()))){
+            levelTallWall(out,r,alongX,plane,facePlane,from,to,openings);
+            return;
+        }
         double at=from;int mat=LevelMaterials.wall(r);
         for(var p:openings){
             double mid=alongX?p.x():p.z(),lo=Math.max(from,mid-p.width()/2),hi=Math.min(to,mid+p.width()/2);
@@ -1627,6 +1645,37 @@ public final class SceneRenderer {
             at=Math.max(at,hi);
         }
         levelWallPatch(out,r,alongX,facePlane,at,to,r.y(),r.y()+r.height()-.04,mat);
+    }
+    /** Partition both height and length so an upper opening never removes a
+     * lower wall band or fills another opening sharing the same horizontal bay. */
+    private static void levelTallWall(List<Face> out,LevelDefinition.Room r,
+            boolean alongX,double plane,double facePlane,double from,double to,List<LevelDefinition.Portal> openings){
+        var xs=new java.util.TreeSet<Double>();var ys=new java.util.TreeSet<Double>();
+        double top=r.y()+r.height()-.04;xs.add(from);xs.add(to);ys.add(r.y());ys.add(top);
+        var cuts=new ArrayList<double[]>();
+        for(var p:openings){
+            double mid=alongX?p.x():p.z(),lo=Math.max(from,mid-p.width()/2),hi=Math.min(to,mid+p.width()/2);
+            double sill=Math.max(r.y(),p.y()+(p.kind().equals("window")?1:0));
+            double head=Math.min(top,p.y()+(p.kind().equals("window")?2.35:2.32));
+            if(hi<=lo||head<=sill)continue;
+            xs.add(lo);xs.add(hi);ys.add(sill);ys.add(head);cuts.add(new double[]{lo,hi,sill,head});
+            // A contained loft suppresses its duplicate walls. Its enclosing
+            // volume therefore owns the frame for that portal as well.
+            if(p.a()==r.id()||(p.a()!=r.id()&&p.b()!=r.id())){
+                double xx=alongX?lo-.055:plane-.11,zz=alongX?plane-.11:lo-.055;
+                texturedBox(out,xx,sill,zz,alongX?.07:.22,head-sill,alongX?.22:.07,LevelMaterials.WOOD);
+                texturedBox(out,alongX?hi-.015:plane-.11,sill,alongX?plane-.11:hi-.015,
+                    alongX?.07:.22,head-sill,alongX?.22:.07,LevelMaterials.WOOD);
+                texturedBox(out,xx,head-.045,zz,alongX?hi-lo+.11:.22,.09,alongX?.22:hi-lo+.11,LevelMaterials.WOOD);
+                if(p.kind().equals("window"))texturedBox(out,xx,sill-.045,zz,alongX?hi-lo+.11:.22,.07,alongX?.22:hi-lo+.11,LevelMaterials.WOOD);
+            }
+        }
+        var xx=new ArrayList<>(xs);var yy=new ArrayList<>(ys);
+        for(int x=0;x<xx.size()-1;x++)for(int y=0;y<yy.size()-1;y++){
+            double a=xx.get(x),b=xx.get(x+1),lo=yy.get(y),hi=yy.get(y+1),mx=(a+b)/2,my=(lo+hi)/2;
+            if(cuts.stream().anyMatch(c->mx>c[0]&&mx<c[1]&&my>c[2]&&my<c[3]))continue;
+            levelWallPatch(out,r,alongX,facePlane,a,b,lo,hi,LevelMaterials.wall(r));
+        }
     }
     private static void levelRail(List<Face> out,double x0,double y0,double z0,double x1,double y1,double z1){
         double length=Math.hypot(x1-x0,z1-z0);int count=Math.max(1,(int)Math.ceil(length/.24));
@@ -2216,7 +2265,7 @@ public final class SceneRenderer {
             if(!faceInFrustum(f))continue;
             lastGpuFrustumFaces++;
             int room=f.room>=0?f.room:map==null?
-                (((f.a.x+f.b.x+f.c.x)/3<0||(f.a.x+f.b.x+f.c.x)/3>CastleHubMap.WIDTH
+                (((f.a.x+f.b.x+f.c.x)/3<CastleWorldBounds.MIN_X||(f.a.x+f.b.x+f.c.x)/3>CastleHubMap.WIDTH
                     ||(f.a.z+f.b.z+f.c.z)/3<0||(f.a.z+f.b.z+f.c.z)/3>CastleHubMap.HEIGHT)?13:0):
                 map.roomAt((f.a.x+f.b.x+f.c.x)/3,
                     (f.a.y+f.b.y+f.c.y)/3,(f.a.z+f.b.z+f.c.z)/3);
@@ -2781,7 +2830,7 @@ public final class SceneRenderer {
     private static void castleSlabs(List<Face> out,CastleHubMap map){
         var cells=CastleRooms.slabCells(CastleRooms.structuralDecks());
         for(var c:cells){
-            double x0=c.x0(),x1=c.x1(),z0=c.z0(),z1=c.z1(),y=c.top(),bottom=y-CastleRooms.SLAB;
+            double x0=c.x0(),x1=c.x1(),z0=c.z0(),z1=c.z1(),y=c.top(),bottom=CastleRooms.slabBottom((x0+x1)/2,(z0+z1)/2,y);
             int mat=c.material();
             double mx=(x0+x1)*.5,mz=(z0+z1)*.5;
             if(y==0){
@@ -2800,7 +2849,7 @@ public final class SceneRenderer {
                 x0,z1,x1,z1,x1,z0,x0,z0,0xffffff);
         }
         for(var e:CastleRooms.edges(cells))texturedQuad(out,new Point(e.x0(),e.top(),e.z0()),new Point(e.x1(),e.top(),e.z1()),
-            new Point(e.x1(),e.top()==0?EXTERIOR_GROUND_Y:e.top()-CastleRooms.SLAB,e.z1()),new Point(e.x0(),e.top()==0?EXTERIOR_GROUND_Y:e.top()-CastleRooms.SLAB,e.z0()),MaterialAtlas.STONE,
+            new Point(e.x1(),e.top()==0&&!CastleCellar.openingRim((e.x0()+e.x1())/2,(e.z0()+e.z1())/2)?EXTERIOR_GROUND_Y:CastleRooms.slabBottom((e.x0()+e.x1())/2,(e.z0()+e.z1())/2,e.top()),e.z1()),new Point(e.x0(),e.top()==0&&!CastleCellar.openingRim((e.x0()+e.x1())/2,(e.z0()+e.z1())/2)?EXTERIOR_GROUND_Y:CastleRooms.slabBottom((e.x0()+e.x1())/2,(e.z0()+e.z1())/2,e.top()),e.z0()),MaterialAtlas.STONE,
             0,1,Math.hypot(e.x1()-e.x0(),e.z1()-e.z0()),1,Math.hypot(e.x1()-e.x0(),e.z1()-e.z0()),0,0,0,0xffffff);
     }
     private static void castleRoof(List<Face> out,CastleHubArchitecturalPlan.Roof roof){
@@ -2921,7 +2970,7 @@ public final class SceneRenderer {
         var owned=new ArrayList<Face>(source.size());
         for(var face:source){
             double x=(face.a.x+face.b.x+face.c.x)/3,z=(face.a.z+face.b.z+face.c.z)/3;
-            owned.add(face.owned(x<0||x>CastleHubMap.WIDTH||z<0||z>CastleHubMap.HEIGHT?13:0));
+            owned.add(face.owned(x<CastleWorldBounds.MIN_X||x>CastleHubMap.WIDTH||z<0||z>CastleHubMap.HEIGHT?13:0));
         }
         return partitionWorld(owned);
     }
@@ -3040,7 +3089,7 @@ public final class SceneRenderer {
         for(var trim:CastleHubArchitecturalPlan.trims())if(trim.mesh().contains("tower"))
             imported(castle,trim.mesh(),trim.x(),trim.y(),trim.z(),trim.sx(),trim.sy(),trim.sz(),trim.yaw());
         for(var roof:CastleLevelEdits.current().roofs())castleRoof(castle,roof);
-        for(var sw:CastleHubDecor.SWITCHES)
+        for(var sw:CastleHubDecor.SWITCHES)if(CastleHubDecor.switchAvailable(sw))
             mountedLamp(castle,new CastleHubDecor.Light("light_switch_1","light_switch_1",
                 sw.x(),sw.y(),sw.z(),.85,sw.yaw(),CastleHubDecor.Mount.WALL),true);
         for(var piece:CastleServiceFixtures.all())
@@ -3090,6 +3139,7 @@ public final class SceneRenderer {
         }
         castleActiveAssemblies.clear();
         for(var slot:CastleDoorSlots.all()){
+            if(!CastleDoorSlots.available(slot))continue;
             var type=edits.doorType(slot.id());boolean open=map.doorOpen(slot.id());
             var key=new CastleDoorKey(slot.id(),type,open);
             castleActiveAssemblies.add(castleAssemblies.computeIfAbsent(key,k->{
@@ -3118,7 +3168,7 @@ public final class SceneRenderer {
         boolean gpuFrame=drawGpuFaces(castle,null);
         if(!gpuFrame)for(Face face:castle){
             double mx=(face.a.x+face.b.x+face.c.x)/3,mz=(face.a.z+face.b.z+face.c.z)/3;
-            int room=mx<0||mx>CastleHubMap.WIDTH||mz<0||mz>CastleHubMap.HEIGHT||map.outside(mx,mz)?13:0;
+            int room=mx<CastleWorldBounds.MIN_X||mx>CastleHubMap.WIDTH||mz<0||mz>CastleHubMap.HEIGHT||map.outside(mx,mz)?13:0;
             drawLitFace(face,room,0);
         }
         sceneWater(null,gpuFrame,clock);long geometryRendered=System.nanoTime();

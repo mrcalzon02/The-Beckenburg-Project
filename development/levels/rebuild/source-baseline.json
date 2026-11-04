@@ -9,18 +9,18 @@
   "current_runtime_source_fingerprints": [
     {
       "path": "src/main/java/org/beckenburg/LevelPlans.java",
-      "bytes": 35396,
-      "sha256": "b06d4e610871e6440506810c14fe42e9331ccef14e1abcf45b419e9bdac2c59c"
+      "bytes": 34995,
+      "sha256": "eb02f17620a9adcb55da0edcb3ac31a86b2089de7c075fbdf8c76c5369866647"
     },
     {
       "path": "src/main/java/org/beckenburg/LevelDefinition.java",
-      "bytes": 7328,
-      "sha256": "170b552859b01ea54c8cf70c3897ff4296a1fa90e9d0427fb3d0bb14657d6921"
+      "bytes": 8778,
+      "sha256": "cae18bbee0d7f62af91ab281ae3842a451853422a6058fbc757e1c7ff92b6ac5"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleHubMap.java",
-      "bytes": 11795,
-      "sha256": "0d357fc307da3316f9e1d20ca6a1dc3ddab0a21b95629ea135ceab016b91c14a"
+      "bytes": 14638,
+      "sha256": "3f48c7cb796fbe475b0fa5ab14249fd5db5e43dbab135925dfba4652ad0ced5a"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleRelations.java",
@@ -48,7 +48,7 @@
       "sha256": "6e05bdb86fe59b0b959b00a0f633dff784cf11ec931b5a402104d045cc908ebf"
     }
   ],
-  "capture_provenance_note": "Built-in investigation geometry captured from the synchronized baseline; diagnostic camera corrections do not alter geometry. Castle after-resident-fix captures are separate; current source fingerprints include the resident-placement correction. Existing native shell previews are historical source studies, especially Hollow Creek, and do not replace its newer native/runtime authority.",
+  "capture_provenance_note": "Built-in investigation geometry captured from the synchronized baseline; diagnostic camera corrections do not alter geometry. Castle after-resident-fix captures are separate; current source fingerprints include the resident-placement and Church upper-door corrections; baseline captures remain historical before-state. Existing native shell previews are historical source studies, especially Hollow Creek, and do not replace its newer native/runtime authority.",
   "scope": {
     "base_locations": 28,
     "annexes": 1

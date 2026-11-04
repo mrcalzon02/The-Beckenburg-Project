@@ -25,6 +25,9 @@ public record LevelDefinition(String id, String revision, String title,
         // different stair/prop/socket coordinates cannot silently share a map.
         try{
             String data="wall-shell-v2"+id+rooms+portals+stairs+voids+props+sockets+colliders+dock+ambience+guardSegments(stairs,voids)+water.revision()+sounds.revision();
+            var inherited=new java.util.ArrayList<String>();
+            for(Room r:rooms)for(Portal p:portals)if(inheritsWallPortal(r,p,rooms))inherited.add(r.id()+":"+p.id());
+            if(!inherited.isEmpty())data+="contained-upper-openings-v1"+inherited;
             byte[] hash=java.security.MessageDigest.getInstance("SHA-256").digest(data.getBytes(java.nio.charset.StandardCharsets.UTF_8));
             revision=revision+"-"+java.util.HexFormat.of().formatHex(hash,0,8);
         }catch(java.security.NoSuchAlgorithmException impossible){throw new AssertionError(impossible);}
@@ -68,6 +71,28 @@ public record LevelDefinition(String id, String revision, String title,
     public Room room(int id){return rooms.get(id);}
     public double floorY(int room){return room(room).y();}
     public List<Portal> portalsFrom(int room){return portals.stream().filter(p->p.a()==room||p.b()==room).toList();}
+    /** Physical wall authority includes openings owned by a contained upper
+     * deck. Acoustic/gameplay graph ownership remains on the original portal. */
+    public List<Portal> wallPortals(int room){
+        Room r=room(room);
+        return portals.stream().filter(p->p.a()==room||p.b()==room||inheritsWallPortal(r,p,rooms)).toList();
+    }
+    private static boolean inheritsWallPortal(Room outer,Portal portal,List<Room> rooms){
+        if(outer.outside()||portal.kind().equals("stair")||portal.a()==outer.id()||portal.b()==outer.id()
+            ||portal.y()<=outer.y()+.05)return false;
+        boolean boundary=portal.alongX()
+            ?Math.abs(portal.z()-outer.z0())<.01||Math.abs(portal.z()-outer.z1())<.01
+            :Math.abs(portal.x()-outer.x0())<.01||Math.abs(portal.x()-outer.x1())<.01;
+        if(!boundary)return false;
+        for(int owner:new int[]{portal.a(),portal.b()}){
+            Room child=rooms.get(owner);
+            if(!child.outside()&&Math.abs(child.y()-portal.y())<.01
+                &&child.y()+child.height()<=outer.y()+outer.height()+.01
+                &&child.x0()>=outer.x0()-.01&&child.x1()<=outer.x1()+.01
+                &&child.z0()>=outer.z0()-.01&&child.z1()<=outer.z1()+.01)return true;
+        }
+        return false;
+    }
     public Socket socket(String type,int room){return sockets.stream().filter(s->s.type().equals(type)&&s.room()==room).findFirst().orElse(null);}
     public boolean floorVoid(double x,double y,double z){return voids.stream().anyMatch(v->Math.abs(v.y()-y)<.05&&v.contains(x,z));}
     public List<Guard> guards(){return guardSegments(stairs,voids);}

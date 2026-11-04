@@ -1,0 +1,115 @@
+{
+  "status": "PASS",
+  "phase": "label-export",
+  "source_sha256": "374e1f1005cc6ba52f4ec989c1f094dde34e20bb0a0fab42ff0244c51fb43d1e",
+  "triangle_count": 86,
+  "tolerance_metres": 0.001,
+  "criterion": "Every geometry component reaches the floor plinth through actual surface intersection/contact, not shared object name or bounding-box overlap",
+  "components": [
+    {
+      "id": 0,
+      "vertices": 8,
+      "bounds": [
+        [
+          -0.27000001072883606,
+          -0.07215534150600433,
+          0.823513925075531
+        ],
+        [
+          0.27000001072883606,
+          0.07215534150600433,
+          1.09648597240448
+        ]
+      ],
+      "contacts": [
+        2,
+        3,
+        4
+      ],
+      "supported": true
+    },
+    {
+      "id": 1,
+      "vertices": 8,
+      "bounds": [
+        [
+          -0.17000000178813934,
+          -0.10499998927116394,
+          -1.1920928955078125e-07
+        ],
+        [
+          0.17000000178813934,
+          0.17500001192092896,
+          0.035999953746795654
+        ]
+      ],
+      "contacts": [
+        2
+      ],
+      "supported": true
+    },
+    {
+      "id": 2,
+      "vertices": 8,
+      "bounds": [
+        [
+          -0.017000000923871994,
+          0.017999976873397827,
+          0.03599989414215088
+        ],
+        [
+          0.017000000923871994,
+          0.05199999362230301,
+          0.9950000047683716
+        ]
+      ],
+      "contacts": [
+        0,
+        1
+      ],
+      "supported": true
+    },
+    {
+      "id": 3,
+      "vertices": 24,
+      "bounds": [
+        [
+          -0.26999998092651367,
+          -0.08574996888637543,
+          0.8323888778686523
+        ],
+        [
+          0.26999998092651367,
+          0.05312290042638779,
+          1.1028252840042114
+        ]
+      ],
+      "contacts": [
+        0,
+        4
+      ],
+      "supported": true
+    },
+    {
+      "id": 4,
+      "vertices": 4,
+      "bounds": [
+        [
+          -0.25,
+          -0.06415614485740662,
+          0.8519941568374634
+        ],
+        [
+          0.25,
+          0.041498422622680664,
+          1.0785712003707886
+        ]
+      ],
+      "contacts": [
+        0,
+        3
+      ],
+      "supported": true
+    }
+  ]
+}

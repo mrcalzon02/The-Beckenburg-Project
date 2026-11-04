@@ -7,12 +7,14 @@ public final class CastleHubMap {
     public SoundDocument sounds(){return sounds;}
     private final dev.mrcalzon.water.WaterDocument water=WorldWater.load("castle");
     public dev.mrcalzon.water.WaterDocument water(){return water;}
-    private final char[][] grid=new char[HEIGHT][WIDTH];
+    private static final int GRID_WIDTH=WIDTH-CastleWorldBounds.MIN_X;
+    private final char[][] grid=new char[HEIGHT][GRID_WIDTH];
     /** All navigable ground cells, including the entrance apron. Immutable so
      * the renderer never needs to rediscover the map or drop distant tiles. */
     public record GroundCell(int x,int z){}
-    private final java.util.List<GroundCell> groundCells;
-    public java.util.List<GroundCell> groundCells(){return groundCells;}
+    private java.util.List<GroundCell> groundCells=java.util.List.of();
+    private long groundRevision=Long.MIN_VALUE;
+    public java.util.List<GroundCell> groundCells(){refreshGround();return groundCells;}
     private final java.util.Set<String> openDoors=new java.util.HashSet<>();
     private long doorRevision;
     public long doorRevision(){return doorRevision;}
@@ -31,6 +33,7 @@ public final class CastleHubMap {
         if(!Double.isFinite(x+z+yaw))return null;
         CastleDoorSlots.Slot nearest=null;double best=0;
         for(var slot:CastleDoorSlots.all()){
+            if(!CastleDoorSlots.available(slot))continue;
             if(Math.abs(elevation-slot.bottom())>.6||CastleLevelEdits.current().doorType(slot.id())==CastleDoorSlots.Type.EMPTY)continue;
             double dx=slot.centerX()-x,dz=slot.centerZ()-z,d=Math.hypot(dx,dz);
             if(d<.35||d>2.8)continue;
@@ -41,6 +44,7 @@ public final class CastleHubMap {
     }
     private boolean closedLeafBlocks(double x,double y,double z,double r){
         for(var slot:CastleDoorSlots.all()){
+            if(!CastleDoorSlots.available(slot))continue;
             var type=CastleLevelEdits.current().doorType(slot.id());
             if(type==CastleDoorSlots.Type.WOOD){if(CastleTimberDoors.blocks(slot,doorOpen(slot.id()),x,y,z,r))return true;}
             else if(type!=CastleDoorSlots.Type.EMPTY&&!doorOpen(slot.id())&&CastleDoorSlots.leafBlocks(slot,x,y,z,r))return true;
@@ -71,24 +75,33 @@ public final class CastleHubMap {
     public record Furnishing(String mesh,double x,double z,double scale,double yaw,
                              double halfWidth,double halfDepth) { }
     public static java.util.List<Furnishing> furnishings(){
-        var all=new java.util.ArrayList<>(CastleLevelEdits.current().furnishings(false));
+        var all=new java.util.ArrayList<>(CastleLevelEdits.current().furnishingsAt(0));
         all.addAll(CastleArchive.furnishings());return java.util.List.copyOf(all);
     }
     /** Articulated H-plan with real hall passages, two connected eastern service
      * wings, a covered north block and an open south courtyard.
      * Purchasing stations retain their physically reachable world coordinates.
      */
-    public CastleHubMap(){
+    private final AuthoredSitePhysics worldSurface;
+    public CastleHubMap(){this(CastleWorldTerrain.surface());}
+    CastleHubMap(AuthoredSitePhysics worldSurface){this.worldSurface=java.util.Objects.requireNonNull(worldSurface);refreshGround();}
+    public AuthoredSitePhysics worldSurface(){return worldSurface;}
+    /** Native editor floor changes refresh the same runtime support index. */
+    private void refreshGround(){
+        var scene=CastleLevelEdits.current();long revision=scene.revision();
+        if(groundRevision==revision)return;
+        var floors=scene.surfaces().stream().filter(s->s.kind()==CastleLevelEdits.Kind.FLOOR&&Math.abs(s.base())<.18).toList();
         for(char[] row:grid)java.util.Arrays.fill(row,'#');
-        for(int z=0;z<HEIGHT;z++)for(int x=0;x<WIDTH;x++)
-            if(CastleRooms.ground(x+.5,z+.5))grid[z][x]='.';
         var cells=new java.util.ArrayList<GroundCell>();
-        for(int z=0;z<HEIGHT;z++)for(int x=0;x<WIDTH;x++)if(!solid(x,z))cells.add(new GroundCell(x,z));
-        groundCells=java.util.List.copyOf(cells);
-
+        for(int z=0;z<HEIGHT;z++)for(int x=CastleWorldBounds.MIN_X;x<WIDTH;x++){
+            double px=x+.5,pz=z+.5;
+            boolean supported=CastleRooms.ground(px,pz)||floors.stream().anyMatch(s->px>=s.x0()&&px<=s.x1()&&pz>=s.z0()&&pz<=s.z1());
+            if(supported){grid[z][x-CastleWorldBounds.MIN_X]='.';cells.add(new GroundCell(x,z));}
+        }
+        groundCells=java.util.List.copyOf(cells);groundRevision=revision;
     }
     private void carve(int x0,int z0,int x1,int z1){
-        for(int z=z0;z<=z1;z++)for(int x=x0;x<=x1;x++)grid[z][x]='.';
+        for(int z=z0;z<=z1;z++)for(int x=x0;x<=x1;x++)grid[z][x-CastleWorldBounds.MIN_X]='.';
     }
     /** Courtyard paving is open to the sky; both lateral wings remain indoors. */
     public boolean outside(double x,double z){
@@ -100,7 +113,7 @@ public final class CastleHubMap {
                 solid((int)Math.floor(x),(int)Math.floor(z)))
             throw new IllegalArgumentException("floor location must be navigable");
         var room=CastleRooms.at(x,0,z);
-        int nativeMaterial=room==null?MaterialAtlas.STONE:room.material();
+        int nativeMaterial=CastleLevelEdits.current().floorSurfaceMaterial(x,z,0,room==null?MaterialAtlas.STONE:room.material());
         return CastleLevelEdits.current().floorMaterial((int)Math.floor(x),
             (int)Math.floor(z),nativeMaterial);
     }
@@ -112,7 +125,8 @@ public final class CastleHubMap {
             return z<=10.7?LanSound.Cue.STEP_WOOD:LanSound.Cue.STEP_STONE;
         if(CastleHubArchitecturalPlan.onStairs(x,z))
             return LanSound.Cue.STEP_STONE;
-        return switch(floorMaterial(x,z)){
+        int material=elevation<0?CastleLevelEdits.current().floorSurfaceMaterial(x,z,elevation,MaterialAtlas.STONE):floorMaterial(x,z);
+        return switch(material){
             case MaterialAtlas.CARPET->LanSound.Cue.STEP_CARPET;
             case MaterialAtlas.PARQUET,MaterialAtlas.AGED_WOOD->LanSound.Cue.STEP_WOOD;
             default->LanSound.Cue.STEP_STONE;
@@ -125,20 +139,26 @@ public final class CastleHubMap {
         queue.add(new int[]{13,19});
         while(!queue.isEmpty()){
             int[] point=queue.removeFirst();
-            int x=point[0],z=point[1],key=z*WIDTH+x;
-            if(x<0||x>=WIDTH||z<0||z>=HEIGHT||solid(x,z)||!seen.add(key))continue;
+            int x=point[0],z=point[1];
+            if(!CastleWorldBounds.cell(x,z))continue;
+            int key=CastleWorldBounds.cellKey(x,z);
+            if(solid(x,z)||!seen.add(key))continue;
             queue.add(new int[]{x+1,z});queue.add(new int[]{x-1,z});
             queue.add(new int[]{x,z+1});queue.add(new int[]{x,z-1});
         }
-        for(int z=0;z<HEIGHT;z++)for(int x=0;x<WIDTH;x++)
-            if(!solid(x,z)&&!seen.contains(z*WIDTH+x))return false;
+        for(int z=0;z<HEIGHT;z++)for(int x=CastleWorldBounds.MIN_X;x<WIDTH;x++)
+            if(!solid(x,z)&&!seen.contains(CastleWorldBounds.cellKey(x,z)))return false;
         for(Station station:Station.values())
             if(solid((int)station.x,(int)station.z))return false;
         return true;
     }
-    public char tile(int x,int z){return x<0||z<0||x>=WIDTH||z>=HEIGHT?'#':grid[z][x];}
+    public char tile(int x,int z){refreshGround();return !CastleWorldBounds.cell(x,z)?'#':grid[z][x-CastleWorldBounds.MIN_X];}
     public boolean solid(int x,int z){return tile(x,z)=='#';}
 
+    private static boolean groundSupports(double x,double z){
+        return CastleLevelEdits.current().floorSupports(x,z,0)
+            ||(!CastleCellar.opening(x,z)&&CastleRooms.ground(x,z));
+    }
     public boolean traversable(double x,double z){return groundTraversable(x,z,0);}
     private boolean groundTraversable(double x,double z,double elevation){
         return groundTraversable(x,z,elevation,true);
@@ -149,11 +169,13 @@ public final class CastleHubMap {
         return groundTraversable(x,z,0,false);
     }
     private boolean groundTraversable(double x,double z,double elevation,boolean includeResident){
+        if(CastleCellar.onFlight(x,z)&&Math.abs(elevation-CastleCellar.stairHeight(z))>.01)return false;
+        if(worldSurface().bodyBlocked(new LevelDefinition.Vec(x,elevation,z),1.8,.21))return false;
         if(CastleHubArchitecturalPlan.onStairs(x,z)&&elevation+.10<CastleHubArchitecturalPlan.stairHeight(x,z))return false;
         if(!Double.isFinite(x)||!Double.isFinite(z))return false;
         double r=.21;
-        if(!CastleRooms.ground(x-r,z-r)||!CastleRooms.ground(x+r,z-r)
-            ||!CastleRooms.ground(x-r,z+r)||!CastleRooms.ground(x+r,z+r))return false;
+        if(!groundSupports(x-r,z-r)||!groundSupports(x+r,z-r)
+            ||!groundSupports(x-r,z+r)||!groundSupports(x+r,z+r))return false;
         var edits=CastleLevelEdits.current();
         if(edits.navBlocked((int)Math.floor(x),(int)Math.floor(z))
             ||edits.wallBlocks(x,elevation,z,r)
@@ -170,18 +192,22 @@ public final class CastleHubMap {
     /** True three-dimensional walk path: landings and upper corridors ignore
      * solid ground-wall cells only when physically above their lintels. */
     public boolean traversable(double x,double z,double elevation){
-        if(!Double.isFinite(elevation)||elevation<0)return false;
+        if(!Double.isFinite(elevation))return false;
+        if(worldSurface().bodyBlocked(new LevelDefinition.Vec(x,elevation,z),1.8,.21))return false;
+        if(elevation<0)return cellarTraversable(x,z,elevation);
         double radius=.21;
         if(CastleHubArchitecturalPlan.onStairs(x,z) && elevation>.1
                 && (x<16+radius||x>19-radius))return false;
         if(elevation>2.0){
             if(CastleHubArchitecturalPlan.upperWalkable(x,z)){
+                if(Math.abs(elevation-3.4)>.05)return false;
                 if(!CastleHubArchitecturalPlan.upperClearance(x,z,radius)
                     ||CastleRooms.guardBlocks(x,z,radius)
+                    ||CastleRooms.slabBodyBlocks(x,elevation,z,radius,1.8)
                     ||CastleLevelEdits.current().wallBlocks(x,elevation,z,radius)
                     ||closedLeafBlocks(x,elevation,z,radius))
                     return false;
-                for(Furnishing item:CastleLevelEdits.current().furnishings(true))
+                for(Furnishing item:CastleLevelEdits.current().furnishingsAt(elevation))
                     if(Math.abs(x-item.x())<item.halfWidth()+radius&&
                         Math.abs(z-item.z())<item.halfDepth()+radius)return false;
                 return true;
@@ -193,6 +219,20 @@ public final class CastleHubMap {
                 return false;
         }
         return groundTraversable(x,z,elevation);
+    }
+    private boolean cellarTraversable(double x,double z,double elevation){
+        if(!CastleCellar.active()||elevation<CastleCellar.FLOOR-.01)return false;
+        var edits=CastleLevelEdits.current();double r=.21;
+        double expected=CastleCellar.onFlight(x,z)?CastleCellar.stairHeight(z):CastleCellar.FLOOR;
+        if(Math.abs(elevation-expected)>.01)return false;
+        for(double dx:new double[]{-r,r})for(double dz:new double[]{-r,r})
+            if(!edits.floorSupports(x+dx,z+dz,elevation)
+                &&!(Math.abs(elevation)<.18&&groundSupports(x+dx,z+dz)))return false;
+        if(edits.wallBlocks(x,elevation,z,r)||closedLeafBlocks(x,elevation,z,r)
+            ||CastleRooms.slabBodyBlocks(x,elevation,z,r,1.8))return false;
+        for(Furnishing item:edits.furnishingsAt(elevation))
+            if(Math.abs(x-item.x())<item.halfWidth()+r&&Math.abs(z-item.z())<item.halfDepth()+r)return false;
+        return true;
     }
     /** Interaction uses actual position and camera orientation, not a free-floating button. */
     public Station aimed(double playerX,double playerZ,double yaw){

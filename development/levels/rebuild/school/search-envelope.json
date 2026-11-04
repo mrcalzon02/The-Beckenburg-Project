@@ -1,0 +1,254 @@
+{
+  "site": "SCHOOL",
+  "status": "DESIGN_ONLY_SEALS_NOT_RUNTIME_IMPLEMENTED",
+  "maximum": 40,
+  "accessible_spaces": 40,
+  "sealed_context_spaces": 0,
+  "count_rule": "Every OPEN_SEARCH space counts, including corridors, stairs, service rooms, exterior sectors and staging. Stable fifteen gameplay owners are not the room budget.",
+  "barriers": [],
+  "gameplay_rule": "Evidence, ghost spawn/anchor, hiding, switches/tasks, ritual sites, loose objective props and required travel belong only to the connected open envelope. Context windows may show rooms, but no interaction or required search crosses the seal.",
+  "context_rule": "Retain coherent historical rooms/assets behind permanent boundaries. Restrict whole wings to their hallways where useful; do not count shuttable ordinary doors as permanent seals.",
+  "next_gate": "Build actual permanent seals and audit runtime player/ghost/object/optical boundaries and all objective placements; construct the maps inside the forty-space cap. Round-duration testing is outside this rebuild task.",
+  "spaces": [
+    {
+      "id": "foyer",
+      "name": "Pupil entrance and visitor vestibule",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "interview",
+      "name": "Visitor reception and interview",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "visitor-wc",
+      "name": "Visitor WC from public vestibule",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "office",
+      "name": "Administration work room",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "corridor",
+      "name": "Ground public teaching corridor",
+      "owner": 1,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "staff",
+      "name": "Staff rest and work room",
+      "owner": 1,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "cleaner",
+      "name": "Cleaner sink and supplies",
+      "owner": 1,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "staff-wc",
+      "name": "Staff sanitary room",
+      "owner": 1,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "service-stair",
+      "name": "Plant service stair and rear delivery exit",
+      "owner": 1,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "main-stair",
+      "name": "Main stair bay with lower approach",
+      "owner": 1,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "class-a",
+      "name": "Class A: 24 desks and teaching area",
+      "owner": 2,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "class-a-store",
+      "name": "Class A coats and teaching store",
+      "owner": 2,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "science",
+      "name": "Shared practical science teaching",
+      "owner": 3,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "science-prep",
+      "name": "Science preparation and secure supplies",
+      "owner": 3,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "dining",
+      "name": "Dining: two classes in one sitting",
+      "owner": 4,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "kitchen",
+      "name": "Preparation cooking and controlled serving",
+      "owner": 4,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "receiving",
+      "name": "Food receiving wash-up and refuse exit",
+      "owner": 4,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "gym-link",
+      "name": "Public dining-to-gym connector",
+      "owner": 4,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "health-link",
+      "name": "Health and changing corridor",
+      "owner": 5,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "nurse",
+      "name": "Private nurse consultation and rest",
+      "owner": 5,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "change-a",
+      "name": "Changing group A lockers and bench",
+      "owner": 5,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "shower-a",
+      "name": "Group A screened washing",
+      "owner": 5,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "change-b",
+      "name": "Changing group B lockers and bench",
+      "owner": 5,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "shower-b",
+      "name": "Group B screened washing",
+      "owner": 5,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "gym",
+      "name": "Multipurpose PE hall: no upper floor",
+      "owner": 6,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-corridor",
+      "name": "Upper public teaching corridor",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "wash-a",
+      "name": "Student washroom A with screened entry",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "wash-b",
+      "name": "Student washroom B with screened entry",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-stair",
+      "name": "Guarded stair void and top landing",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-lobby",
+      "name": "Daylit library and assembly lobby",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "library",
+      "name": "Library reading lending and stacks",
+      "owner": 8,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "class-b",
+      "name": "Class B: 24 desks and teaching area",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "class-b-store",
+      "name": "Class B coats and teaching store",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "assembly",
+      "name": "Assembly: 48 pupils and staff",
+      "owner": 10,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "lower-stair",
+      "name": "Cellar service stair",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "plant",
+      "name": "Boiler hot-water and electrical maintenance",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "plant-store",
+      "name": "Maintenance store and clear ritual reservation",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "grounds",
+      "name": "Outdoor grounds: footprint is envelope only",
+      "owner": 12,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "entry",
+      "name": "School forecourt and shared arrival support",
+      "owner": 13,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "stage",
+      "name": "Canonical van arrival reservation",
+      "owner": 14,
+      "access": "OPEN_SEARCH"
+    }
+  ]
+}

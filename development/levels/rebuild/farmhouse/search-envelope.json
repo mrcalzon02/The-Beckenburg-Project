@@ -1,0 +1,218 @@
+{
+  "site": "FARMHOUSE",
+  "status": "DESIGN_ONLY_SEALS_NOT_RUNTIME_IMPLEMENTED",
+  "maximum": 40,
+  "accessible_spaces": 34,
+  "sealed_context_spaces": 0,
+  "count_rule": "Every OPEN_SEARCH space counts, including corridors, stairs, service rooms, exterior sectors and staging. Stable fifteen gameplay owners are not the room budget.",
+  "barriers": [],
+  "gameplay_rule": "Evidence, ghost spawn/anchor, hiding, switches/tasks, ritual sites, loose objective props and required travel belong only to the connected open envelope. Context windows may show rooms, but no interaction or required search crosses the seal.",
+  "context_rule": "Retain coherent historical rooms/assets behind permanent boundaries. Restrict whole wings to their hallways where useful; do not count shuttable ordinary doors as permanent seals.",
+  "next_gate": "Build actual permanent seals and audit runtime player/ghost/object/optical boundaries and all objective placements; construct the maps inside the forty-space cap. Round-duration testing is outside this rebuild task.",
+  "spaces": [
+    {
+      "id": "mudroom",
+      "name": "Boot removal coats and muddy entrance",
+      "owner": 0,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "parlour",
+      "name": "Family sitting and visitor reception",
+      "owner": 1,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "dining",
+      "name": "Six-place family dining",
+      "owner": 3,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "kitchen",
+      "name": "Cooking and sink cleanup",
+      "owner": 2,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "pantry",
+      "name": "Dry household food storage",
+      "owner": 2,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "prep",
+      "name": "Food preparation and garden receiving",
+      "owner": 2,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "stairs",
+      "name": "Domestic stair bay with side circulation",
+      "owner": 4,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "cleaner",
+      "name": "Household cleaning and utility cupboard",
+      "owner": 4,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "barn-aisle",
+      "name": "Through barn aisle and loading approach",
+      "owner": 10,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "stall-a",
+      "name": "Livestock stall A and access gate",
+      "owner": 10,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "stall-b",
+      "name": "Livestock stall B and access gate",
+      "owner": 10,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "feed",
+      "name": "Feed store separate from equipment",
+      "owner": 10,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "equipment",
+      "name": "Agricultural equipment bay",
+      "owner": 10,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "loft-stair",
+      "name": "Barn loft stair and lower landings",
+      "owner": 10,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "repair",
+      "name": "Tool repair bench and clear work aisle",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "parts",
+      "name": "Repair parts and dry tools",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "work-store",
+      "name": "Screened work consumables and lockable storage",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "laundry",
+      "name": "Separate wash laundry and drying support",
+      "owner": 11,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-hall",
+      "name": "Upper bedroom circulation",
+      "owner": 5,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "upper-stair",
+      "name": "Main stair upper landing and void",
+      "owner": 5,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "wc",
+      "name": "Private family WC",
+      "owner": 5,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "wash",
+      "name": "Family washing room",
+      "owner": 5,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "parents",
+      "name": "Parents bedroom and personal storage",
+      "owner": 6,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "children",
+      "name": "Two child beds and play/storage",
+      "owner": 7,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "linen",
+      "name": "Household linen and seasonal storage",
+      "owner": 5,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "hayloft",
+      "name": "Supported hay deck with clear retrieval aisle",
+      "owner": 8,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "loft-landing",
+      "name": "Guarded loft stair arrival",
+      "owner": 8,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "cellar-stair",
+      "name": "Cellar access below domestic stair bay",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "cellar-landing",
+      "name": "Cellar receiving landing",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "root-store",
+      "name": "Root crop storage and retrieval aisle",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "preserves",
+      "name": "Preserved food shelves",
+      "owner": 9,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "grounds",
+      "name": "Orchard and workyard envelope only",
+      "owner": 12,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "entry",
+      "name": "Lane arrival and equipment approach",
+      "owner": 13,
+      "access": "OPEN_SEARCH"
+    },
+    {
+      "id": "stage",
+      "name": "Canonical van staging clear of barn deliveries",
+      "owner": 14,
+      "access": "OPEN_SEARCH"
+    }
+  ]
+}

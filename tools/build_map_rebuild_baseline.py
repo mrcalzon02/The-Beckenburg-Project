@@ -126,7 +126,7 @@ def build():
                                                        for name in runtime_sources],
                 'capture_provenance_note': 'Built-in investigation geometry captured from the synchronized baseline; '
                     'diagnostic camera corrections do not alter geometry. Castle after-resident-fix captures are separate; '
-                    'current source fingerprints include the resident-placement correction. Existing native shell previews '
+                    'current source fingerprints include the resident-placement and Church upper-door corrections; baseline captures remain historical before-state. Existing native shell previews '
                     'are historical source studies, especially Hollow Creek, and do not replace its newer native/runtime authority.',
                 'scope': {'base_locations': catalog['base_maps'], 'annexes': catalog['additive_expansions']},
                 'acceptance_policy': 'Inventory and capture coverage only; never auto-accept a map or stage.',

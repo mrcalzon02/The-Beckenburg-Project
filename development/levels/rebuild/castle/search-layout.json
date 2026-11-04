@@ -1,0 +1,2245 @@
+{
+  "id": "CASTLE",
+  "title": "Castle Beckenburg — retained core and bounded household rough",
+  "status": "SEARCH_GRAPH_DESIGN_NOT_RUNTIME_CONSTRUCTION",
+  "construction_source": "rough-layout.json",
+  "artifact_role": "Open search graph only; full structure, furnishings and sealed context remain in rough-layout.json.",
+  "site_bounds": [
+    -18,
+    0,
+    44,
+    37
+  ],
+  "zones": [
+    {
+      "id": "armory",
+      "name": "Existing quartermaster issue and equipment stock",
+      "bounds": [
+        1,
+        1,
+        10.5,
+        11.5
+      ],
+      "y": 0,
+      "height": 3.4,
+      "owner": "armory",
+      "kind": "inside",
+      "purpose": "Existing quartermaster issue and equipment stock",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "contracts",
+      "name": "Existing briefing and campaign contracts",
+      "bounds": [
+        10.5,
+        1,
+        19.5,
+        11.5
+      ],
+      "y": 0,
+      "height": 3.4,
+      "owner": "contracts",
+      "kind": "inside",
+      "purpose": "Existing briefing and campaign contracts",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "role-lounge",
+      "name": "Role wardrobe and lounge",
+      "bounds": [
+        19.5,
+        5,
+        28.5,
+        11.5
+      ],
+      "y": 0,
+      "height": 3.4,
+      "owner": "wardrobe",
+      "kind": "inside",
+      "purpose": "Role wardrobe and lounge",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "ground-wc",
+      "name": "Discreet ground sanitary room",
+      "bounds": [
+        19.5,
+        1,
+        23.5,
+        5
+      ],
+      "y": 0,
+      "height": 3.4,
+      "owner": "wardrobe",
+      "kind": "inside",
+      "purpose": "Discreet ground sanitary room",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "ground-wash",
+      "name": "Ground washing and handwashing",
+      "bounds": [
+        23.5,
+        1,
+        28.5,
+        5
+      ],
+      "y": 0,
+      "height": 3.4,
+      "owner": "wardrobe",
+      "kind": "inside",
+      "purpose": "Ground washing and handwashing",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "practice",
+      "name": "Existing spectral practice and ritual scholar",
+      "bounds": [
+        1,
+        11.5,
+        10.5,
+        22
+      ],
+      "y": 0,
+      "height": 3.4,
+      "owner": "practice",
+      "kind": "inside",
+      "purpose": "Existing spectral practice and ritual scholar",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "common",
+      "name": "Headquarters common dining and training approach",
+      "bounds": [
+        1,
+        22,
+        10.5,
+        28
+      ],
+      "y": 0,
+      "height": 3.4,
+      "owner": "practice",
+      "kind": "inside",
+      "purpose": "Headquarters common dining and training approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "kitchen",
+      "name": "Household food preparation and cooking",
+      "bounds": [
+        1,
+        28,
+        6.5,
+        34
+      ],
+      "y": 0,
+      "height": 3.4,
+      "owner": "practice",
+      "kind": "inside",
+      "purpose": "Household food preparation and cooking",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "washup",
+      "name": "Dirty dish washing",
+      "bounds": [
+        6.5,
+        28,
+        10.5,
+        31
+      ],
+      "y": 0,
+      "height": 3.4,
+      "owner": "practice",
+      "kind": "inside",
+      "purpose": "Dirty dish washing",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "network",
+      "name": "Existing communications and network desk",
+      "bounds": [
+        20.5,
+        11.5,
+        28.5,
+        21
+      ],
+      "y": 0,
+      "height": 3.4,
+      "owner": "operations",
+      "kind": "inside",
+      "purpose": "Existing communications and network desk",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "operations",
+      "name": "Existing settings counter and operations work",
+      "bounds": [
+        20.5,
+        21,
+        28.5,
+        34
+      ],
+      "y": 0,
+      "height": 3.4,
+      "owner": "operations",
+      "kind": "inside",
+      "purpose": "Existing settings counter and operations work",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "archive",
+      "name": "Existing Common Archive and Lore Master",
+      "bounds": [
+        28.5,
+        4,
+        43,
+        17.5
+      ],
+      "y": 0,
+      "height": 3.4,
+      "owner": "archive",
+      "kind": "inside",
+      "purpose": "Existing Common Archive and Lore Master",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "store",
+      "name": "Quartermaster physical stock and retrieval aisles",
+      "bounds": [
+        28.5,
+        17.5,
+        37,
+        34
+      ],
+      "y": 0,
+      "height": 3.4,
+      "owner": "store",
+      "kind": "inside",
+      "purpose": "Quartermaster physical stock and retrieval aisles",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "repair",
+      "name": "Repair and separated chemistry task work",
+      "bounds": [
+        37,
+        17.5,
+        43,
+        26
+      ],
+      "y": 0,
+      "height": 3.4,
+      "owner": "store",
+      "kind": "inside",
+      "purpose": "Repair and separated chemistry task work",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "infirmary",
+      "name": "Private first aid recovery and handwashing",
+      "bounds": [
+        37,
+        26,
+        43,
+        34
+      ],
+      "y": 0,
+      "height": 3.4,
+      "owner": "store",
+      "kind": "inside",
+      "purpose": "Private first aid recovery and handwashing",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "training-entry",
+      "name": "Protected three-rite training distribution",
+      "bounds": [
+        -17,
+        24,
+        1,
+        30
+      ],
+      "y": 0,
+      "height": 3.4,
+      "owner": "practice",
+      "kind": "circulation",
+      "purpose": "Protected three-rite training distribution",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "train-b",
+      "name": "Protected Banishment training bay",
+      "bounds": [
+        -17,
+        14,
+        -11,
+        24
+      ],
+      "y": 0,
+      "height": 3.4,
+      "owner": "practice",
+      "kind": "inside",
+      "purpose": "Protected Banishment training bay",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "train-c",
+      "name": "Protected Cleansing training bay",
+      "bounds": [
+        -11,
+        14,
+        -5,
+        24
+      ],
+      "y": 0,
+      "height": 3.4,
+      "owner": "practice",
+      "kind": "inside",
+      "purpose": "Protected Cleansing training bay",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "train-a",
+      "name": "Protected Absolution training bay",
+      "bounds": [
+        -5,
+        14,
+        1,
+        24
+      ],
+      "y": 0,
+      "height": 3.4,
+      "owner": "practice",
+      "kind": "inside",
+      "purpose": "Protected Absolution training bay",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "stage",
+      "name": "Arrival courtyard and existing expedition approach",
+      "bounds": [
+        10.5,
+        11.5,
+        20.5,
+        34
+      ],
+      "y": 0,
+      "height": 12,
+      "owner": "court",
+      "kind": "staging",
+      "purpose": "Arrival courtyard and existing expedition approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "entry",
+      "name": "Existing gate threshold",
+      "bounds": [
+        13.2,
+        34,
+        17.8,
+        36
+      ],
+      "y": 0,
+      "height": 12,
+      "owner": "gate",
+      "kind": "outside",
+      "purpose": "Existing gate threshold",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "library",
+      "name": "Existing upper library",
+      "bounds": [
+        10.5,
+        1,
+        19.5,
+        11.5
+      ],
+      "y": 3.4,
+      "height": 3.4,
+      "owner": "library",
+      "kind": "inside",
+      "purpose": "Existing upper library",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "gallery",
+      "name": "Existing main stair upper gallery",
+      "bounds": [
+        16,
+        11.5,
+        19,
+        22
+      ],
+      "y": 3.4,
+      "height": 3.4,
+      "owner": "library",
+      "kind": "circulation",
+      "purpose": "Existing main stair upper gallery",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "res-hall",
+      "name": "Upper west residence circulation",
+      "bounds": [
+        7.5,
+        1,
+        10.5,
+        34
+      ],
+      "y": 3.4,
+      "height": 3.4,
+      "owner": "library",
+      "kind": "circulation",
+      "purpose": "Upper west residence circulation",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "lodging-1",
+      "name": "Two-place investigator lodging 1",
+      "bounds": [
+        1,
+        11.5,
+        7.5,
+        18.5
+      ],
+      "y": 3.4,
+      "height": 3.4,
+      "owner": "library",
+      "kind": "inside",
+      "purpose": "Two-place investigator lodging 1",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "lodging-2",
+      "name": "Two-place investigator lodging 2",
+      "bounds": [
+        1,
+        18.5,
+        7.5,
+        25.5
+      ],
+      "y": 3.4,
+      "height": 3.4,
+      "owner": "library",
+      "kind": "inside",
+      "purpose": "Two-place investigator lodging 2",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "lodging-3",
+      "name": "Two-place investigator lodging 3",
+      "bounds": [
+        1,
+        25.5,
+        7.5,
+        32.5
+      ],
+      "y": 3.4,
+      "height": 3.4,
+      "owner": "library",
+      "kind": "inside",
+      "purpose": "Two-place investigator lodging 3",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "upper-wash",
+      "name": "Resident washing and private shower bays",
+      "bounds": [
+        1,
+        1,
+        7.5,
+        7
+      ],
+      "y": 3.4,
+      "height": 3.4,
+      "owner": "library",
+      "kind": "inside",
+      "purpose": "Resident washing and private shower bays",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "upper-wc",
+      "name": "Resident WC bays",
+      "bounds": [
+        1,
+        7,
+        4,
+        11.5
+      ],
+      "y": 3.4,
+      "height": 3.4,
+      "owner": "library",
+      "kind": "inside",
+      "purpose": "Resident WC bays",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "east-bridge",
+      "name": "Retained upper east bridge",
+      "bounds": [
+        19,
+        20,
+        21.2,
+        22
+      ],
+      "y": 3.4,
+      "height": 8,
+      "owner": "court",
+      "kind": "outside",
+      "purpose": "Retained upper east bridge",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "east-north-walk",
+      "name": "Retained upper north-east wall walk",
+      "bounds": [
+        19.2,
+        12,
+        21.2,
+        20
+      ],
+      "y": 3.4,
+      "height": 8,
+      "owner": "court",
+      "kind": "outside",
+      "purpose": "Retained upper north-east wall walk",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "east-south-walk",
+      "name": "Retained upper south-east wall walk",
+      "bounds": [
+        19.2,
+        22,
+        21.2,
+        31
+      ],
+      "y": 3.4,
+      "height": 8,
+      "owner": "court",
+      "kind": "outside",
+      "purpose": "Retained upper south-east wall walk",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "south-walk",
+      "name": "Retained southern battlement return",
+      "bounds": [
+        10.5,
+        31,
+        21.2,
+        33
+      ],
+      "y": 3.4,
+      "height": 8,
+      "owner": "court",
+      "kind": "outside",
+      "purpose": "Retained southern battlement return",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "west-walk",
+      "name": "Retained western battlement return",
+      "bounds": [
+        10.5,
+        12,
+        12.5,
+        31
+      ],
+      "y": 3.4,
+      "height": 8,
+      "owner": "court",
+      "kind": "outside",
+      "purpose": "Retained western battlement return",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "north-west-link",
+      "name": "Continuous library to west return infill",
+      "bounds": [
+        10.5,
+        11.5,
+        12.5,
+        12
+      ],
+      "y": 3.4,
+      "height": 8,
+      "owner": "court",
+      "kind": "outside",
+      "purpose": "Continuous library to west return infill",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "cellar-stair",
+      "name": "Relic and plant cellar stair",
+      "bounds": [
+        37,
+        17.5,
+        43,
+        26
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": "store",
+      "kind": "circulation",
+      "purpose": "Relic and plant cellar stair",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "cellar-hall",
+      "name": "Separated relic and plant service approach",
+      "bounds": [
+        28.5,
+        17.5,
+        37,
+        26
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": "store",
+      "kind": "circulation",
+      "purpose": "Separated relic and plant service approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "vault",
+      "name": "Controlled captured relic vault",
+      "bounds": [
+        28.5,
+        26,
+        37,
+        34
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": "store",
+      "kind": "inside",
+      "purpose": "Controlled captured relic vault",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    },
+    {
+      "id": "plant",
+      "name": "Heating water and electrical plant",
+      "bounds": [
+        37,
+        26,
+        43,
+        34
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": "store",
+      "kind": "inside",
+      "purpose": "Heating water and electrical plant",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true,
+      "live_haunting_eligible": false
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "entry",
+      "b": "stage",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          15.5,
+          0,
+          35.0
+        ],
+        [
+          15.5,
+          0,
+          34
+        ],
+        [
+          15.5,
+          0,
+          22.75
+        ]
+      ],
+      "threshold": [
+        15.5,
+        0,
+        34
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L02",
+      "a": "stage",
+      "b": "contracts",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          15.5,
+          0,
+          22.75
+        ],
+        [
+          13.5,
+          0,
+          11.5
+        ],
+        [
+          15.0,
+          0,
+          6.25
+        ]
+      ],
+      "threshold": [
+        13.5,
+        0,
+        11.5
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L03",
+      "a": "stage",
+      "b": "practice",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          15.5,
+          0,
+          22.75
+        ],
+        [
+          10.5,
+          0,
+          16.5
+        ],
+        [
+          5.75,
+          0,
+          16.75
+        ]
+      ],
+      "threshold": [
+        10.5,
+        0,
+        16.5
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L04",
+      "a": "stage",
+      "b": "common",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          15.5,
+          0,
+          22.75
+        ],
+        [
+          10.5,
+          0,
+          25.5
+        ],
+        [
+          5.75,
+          0,
+          25.0
+        ]
+      ],
+      "threshold": [
+        10.5,
+        0,
+        25.5
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L05",
+      "a": "stage",
+      "b": "network",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          15.5,
+          0,
+          22.75
+        ],
+        [
+          20.5,
+          0,
+          16.5
+        ],
+        [
+          24.5,
+          0,
+          16.25
+        ]
+      ],
+      "threshold": [
+        20.5,
+        0,
+        16.5
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L06",
+      "a": "stage",
+      "b": "operations",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          15.5,
+          0,
+          22.75
+        ],
+        [
+          20.5,
+          0,
+          25.5
+        ],
+        [
+          24.5,
+          0,
+          27.5
+        ]
+      ],
+      "threshold": [
+        20.5,
+        0,
+        25.5
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L07",
+      "a": "armory",
+      "b": "contracts",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          5.75,
+          0,
+          6.25
+        ],
+        [
+          10.5,
+          0,
+          6.5
+        ],
+        [
+          15.0,
+          0,
+          6.25
+        ]
+      ],
+      "threshold": [
+        10.5,
+        0,
+        6.5
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L08",
+      "a": "contracts",
+      "b": "role-lounge",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          15.0,
+          0,
+          6.25
+        ],
+        [
+          19.5,
+          0,
+          6.5
+        ],
+        [
+          24.0,
+          0,
+          8.25
+        ]
+      ],
+      "threshold": [
+        19.5,
+        0,
+        6.5
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L09",
+      "a": "armory",
+      "b": "practice",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          5.75,
+          0,
+          6.25
+        ],
+        [
+          5.5,
+          0,
+          11.5
+        ],
+        [
+          5.75,
+          0,
+          16.75
+        ]
+      ],
+      "threshold": [
+        5.5,
+        0,
+        11.5
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L10",
+      "a": "role-lounge",
+      "b": "network",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          24.0,
+          0,
+          8.25
+        ],
+        [
+          22.5,
+          0,
+          11.5
+        ],
+        [
+          24.5,
+          0,
+          16.25
+        ]
+      ],
+      "threshold": [
+        22.5,
+        0,
+        11.5
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L11",
+      "a": "role-lounge",
+      "b": "ground-wc",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          24.0,
+          0,
+          8.25
+        ],
+        [
+          21.5,
+          0,
+          5
+        ],
+        [
+          21.5,
+          0,
+          3.0
+        ]
+      ],
+      "threshold": [
+        21.5,
+        0,
+        5
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L12",
+      "a": "role-lounge",
+      "b": "ground-wash",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          24.0,
+          0,
+          8.25
+        ],
+        [
+          26,
+          0,
+          5
+        ],
+        [
+          26.0,
+          0,
+          3.0
+        ]
+      ],
+      "threshold": [
+        26,
+        0,
+        5
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L13",
+      "a": "practice",
+      "b": "common",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          5.75,
+          0,
+          16.75
+        ],
+        [
+          5.5,
+          0,
+          22
+        ],
+        [
+          5.75,
+          0,
+          25.0
+        ]
+      ],
+      "threshold": [
+        5.5,
+        0,
+        22
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L14",
+      "a": "common",
+      "b": "kitchen",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          5.75,
+          0,
+          25.0
+        ],
+        [
+          4,
+          0,
+          28
+        ],
+        [
+          3.75,
+          0,
+          31.0
+        ]
+      ],
+      "threshold": [
+        4,
+        0,
+        28
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L15",
+      "a": "common",
+      "b": "washup",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          5.75,
+          0,
+          25.0
+        ],
+        [
+          8.5,
+          0,
+          28
+        ],
+        [
+          8.5,
+          0,
+          29.5
+        ]
+      ],
+      "threshold": [
+        8.5,
+        0,
+        28
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L17",
+      "a": "network",
+      "b": "operations",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          24.5,
+          0,
+          16.25
+        ],
+        [
+          24,
+          0,
+          21
+        ],
+        [
+          24.5,
+          0,
+          27.5
+        ]
+      ],
+      "threshold": [
+        24,
+        0,
+        21
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L18",
+      "a": "network",
+      "b": "archive",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          24.5,
+          0,
+          16.25
+        ],
+        [
+          28.5,
+          0,
+          14
+        ],
+        [
+          35.75,
+          0,
+          10.75
+        ]
+      ],
+      "threshold": [
+        28.5,
+        0,
+        14
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L19",
+      "a": "role-lounge",
+      "b": "archive",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          24.0,
+          0,
+          8.25
+        ],
+        [
+          28.5,
+          0,
+          7.5
+        ],
+        [
+          35.75,
+          0,
+          10.75
+        ]
+      ],
+      "threshold": [
+        28.5,
+        0,
+        7.5
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L20",
+      "a": "operations",
+      "b": "store",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          24.5,
+          0,
+          27.5
+        ],
+        [
+          28.5,
+          0,
+          24.5
+        ],
+        [
+          32.75,
+          0,
+          25.75
+        ]
+      ],
+      "threshold": [
+        28.5,
+        0,
+        24.5
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L21",
+      "a": "archive",
+      "b": "store",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          35.75,
+          0,
+          10.75
+        ],
+        [
+          33,
+          0,
+          17.5
+        ],
+        [
+          32.75,
+          0,
+          25.75
+        ]
+      ],
+      "threshold": [
+        33,
+        0,
+        17.5
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L22",
+      "a": "store",
+      "b": "repair",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          32.75,
+          0,
+          25.75
+        ],
+        [
+          37,
+          0,
+          22
+        ],
+        [
+          40.0,
+          0,
+          21.75
+        ]
+      ],
+      "threshold": [
+        37,
+        0,
+        22
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L23",
+      "a": "store",
+      "b": "infirmary",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          32.75,
+          0,
+          25.75
+        ],
+        [
+          37,
+          0,
+          30
+        ],
+        [
+          40.0,
+          0,
+          30.0
+        ]
+      ],
+      "threshold": [
+        37,
+        0,
+        30
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L24",
+      "a": "common",
+      "b": "training-entry",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          5.75,
+          0,
+          25.0
+        ],
+        [
+          1,
+          0,
+          25
+        ],
+        [
+          -8.0,
+          0,
+          27.0
+        ]
+      ],
+      "threshold": [
+        1,
+        0,
+        25
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L25",
+      "a": "training-entry",
+      "b": "train-b",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          -8.0,
+          0,
+          27.0
+        ],
+        [
+          -14,
+          0,
+          24
+        ],
+        [
+          -14.0,
+          0,
+          19.0
+        ]
+      ],
+      "threshold": [
+        -14,
+        0,
+        24
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L26",
+      "a": "training-entry",
+      "b": "train-c",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          -8.0,
+          0,
+          27.0
+        ],
+        [
+          -8,
+          0,
+          24
+        ],
+        [
+          -8.0,
+          0,
+          19.0
+        ]
+      ],
+      "threshold": [
+        -8,
+        0,
+        24
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L27",
+      "a": "training-entry",
+      "b": "train-a",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          -8.0,
+          0,
+          27.0
+        ],
+        [
+          -2,
+          0,
+          24
+        ],
+        [
+          -2.0,
+          0,
+          19.0
+        ]
+      ],
+      "threshold": [
+        -2,
+        0,
+        24
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L28",
+      "a": "library",
+      "b": "gallery",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          15.0,
+          3.4,
+          6.25
+        ],
+        [
+          17.5,
+          3.4,
+          11.5
+        ],
+        [
+          17.5,
+          3.4,
+          16.75
+        ]
+      ],
+      "threshold": [
+        17.5,
+        3.4,
+        11.5
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L29",
+      "a": "library",
+      "b": "res-hall",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          15.0,
+          3.4,
+          6.25
+        ],
+        [
+          10.5,
+          3.4,
+          6.5
+        ],
+        [
+          9.0,
+          3.4,
+          17.5
+        ]
+      ],
+      "threshold": [
+        10.5,
+        3.4,
+        6.5
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L30",
+      "a": "res-hall",
+      "b": "upper-wash",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          9.0,
+          3.4,
+          17.5
+        ],
+        [
+          7.5,
+          3.4,
+          4
+        ],
+        [
+          4.25,
+          3.4,
+          4.0
+        ]
+      ],
+      "threshold": [
+        7.5,
+        3.4,
+        4
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L33",
+      "a": "upper-wash",
+      "b": "upper-wc",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          4.25,
+          3.4,
+          4.0
+        ],
+        [
+          2.5,
+          3.4,
+          7
+        ],
+        [
+          2.5,
+          3.4,
+          9.25
+        ]
+      ],
+      "threshold": [
+        2.5,
+        3.4,
+        7
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L34",
+      "a": "res-hall",
+      "b": "lodging-1",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          9.0,
+          3.4,
+          17.5
+        ],
+        [
+          7.5,
+          3.4,
+          15
+        ],
+        [
+          4.25,
+          3.4,
+          15.0
+        ]
+      ],
+      "threshold": [
+        7.5,
+        3.4,
+        15
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L35",
+      "a": "res-hall",
+      "b": "lodging-2",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          9.0,
+          3.4,
+          17.5
+        ],
+        [
+          7.5,
+          3.4,
+          22
+        ],
+        [
+          4.25,
+          3.4,
+          22.0
+        ]
+      ],
+      "threshold": [
+        7.5,
+        3.4,
+        22
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L36",
+      "a": "res-hall",
+      "b": "lodging-3",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          9.0,
+          3.4,
+          17.5
+        ],
+        [
+          7.5,
+          3.4,
+          29
+        ],
+        [
+          4.25,
+          3.4,
+          29.0
+        ]
+      ],
+      "threshold": [
+        7.5,
+        3.4,
+        29
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L38",
+      "a": "gallery",
+      "b": "east-bridge",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          17.5,
+          3.4,
+          16.75
+        ],
+        [
+          19,
+          3.4,
+          21
+        ],
+        [
+          20.1,
+          3.4,
+          21.0
+        ]
+      ],
+      "threshold": [
+        19,
+        3.4,
+        21
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L39",
+      "a": "east-bridge",
+      "b": "east-north-walk",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          20.1,
+          3.4,
+          21.0
+        ],
+        [
+          20.2,
+          3.4,
+          20
+        ],
+        [
+          20.2,
+          3.4,
+          16.0
+        ]
+      ],
+      "threshold": [
+        20.2,
+        3.4,
+        20
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L40",
+      "a": "east-bridge",
+      "b": "east-south-walk",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          20.1,
+          3.4,
+          21.0
+        ],
+        [
+          20.2,
+          3.4,
+          22
+        ],
+        [
+          20.2,
+          3.4,
+          26.5
+        ]
+      ],
+      "threshold": [
+        20.2,
+        3.4,
+        22
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L41",
+      "a": "east-south-walk",
+      "b": "south-walk",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          20.2,
+          3.4,
+          26.5
+        ],
+        [
+          20.2,
+          3.4,
+          31
+        ],
+        [
+          15.85,
+          3.4,
+          32.0
+        ]
+      ],
+      "threshold": [
+        20.2,
+        3.4,
+        31
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L42",
+      "a": "south-walk",
+      "b": "west-walk",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          15.85,
+          3.4,
+          32.0
+        ],
+        [
+          11.5,
+          3.4,
+          31
+        ],
+        [
+          11.5,
+          3.4,
+          21.5
+        ]
+      ],
+      "threshold": [
+        11.5,
+        3.4,
+        31
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L43",
+      "a": "west-walk",
+      "b": "north-west-link",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          11.5,
+          3.4,
+          21.5
+        ],
+        [
+          11.5,
+          3.4,
+          12
+        ],
+        [
+          11.5,
+          3.4,
+          11.75
+        ]
+      ],
+      "threshold": [
+        11.5,
+        3.4,
+        12
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L44",
+      "a": "north-west-link",
+      "b": "library",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          11.5,
+          3.4,
+          11.75
+        ],
+        [
+          11.5,
+          3.4,
+          11.5
+        ],
+        [
+          15.0,
+          3.4,
+          6.25
+        ]
+      ],
+      "threshold": [
+        11.5,
+        3.4,
+        11.5
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L45",
+      "a": "cellar-stair",
+      "b": "cellar-hall",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          40.0,
+          -3,
+          21.75
+        ],
+        [
+          37,
+          -3,
+          22
+        ],
+        [
+          32.75,
+          -3,
+          21.75
+        ]
+      ],
+      "threshold": [
+        37,
+        -3,
+        22
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L46",
+      "a": "cellar-hall",
+      "b": "vault",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          32.75,
+          -3,
+          21.75
+        ],
+        [
+          33,
+          -3,
+          26
+        ],
+        [
+          32.75,
+          -3,
+          30.0
+        ]
+      ],
+      "threshold": [
+        33,
+        -3,
+        26
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L47",
+      "a": "vault",
+      "b": "plant",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          32.75,
+          -3,
+          30.0
+        ],
+        [
+          37,
+          -3,
+          30
+        ],
+        [
+          40.0,
+          -3,
+          30.0
+        ]
+      ],
+      "threshold": [
+        37,
+        -3,
+        30
+      ],
+      "access": "peaceful-headquarters",
+      "note": "Proposed native opening; preserve all nine workstation and five resident coordinates/approaches.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L48",
+      "a": "stage",
+      "b": "gallery",
+      "kind": "stairs",
+      "width": 3,
+      "points": [
+        [
+          17.5,
+          0,
+          32
+        ],
+        [
+          17.5,
+          3.4,
+          22
+        ]
+      ],
+      "rise_m": 3.4,
+      "run_m": 10,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 20,
+      "construction": "Retain actual signed-Z incline and existing upper gallery; no invented replacement centre diagonal.",
+      "note": "Current Castle source stair has bottom atZ32 and top atZ22. Native/source geometry and guards require retained verification.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L49",
+      "a": "cellar-stair",
+      "b": "repair",
+      "kind": "stairs",
+      "width": 1.3,
+      "points": [
+        [
+          40,
+          -3,
+          19.2
+        ],
+        [
+          40,
+          0,
+          24
+        ]
+      ],
+      "rise_m": 3,
+      "run_m": 4.8,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 18,
+      "construction": "New cellar flight needs actual saved terrain hole, full-run deck void, side bypass and guarded repair-bay landing.",
+      "note": "Repair benches and chemistry work must remain outside flight/guard operating clearances.",
+      "player_access": "OPEN_ROUTE"
+    }
+  ],
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "train-b",
+      "point": [
+        -14,
+        0,
+        20
+      ]
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "train-c",
+      "point": [
+        -8,
+        0,
+        20
+      ]
+    },
+    {
+      "rite": "Absolution",
+      "zone": "train-a",
+      "point": [
+        -2,
+        0,
+        20
+      ]
+    }
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      13.3,
+      0,
+      27.7
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        15.5,
+        0,
+        34
+      ],
+      [
+        15.5,
+        0,
+        20
+      ],
+      [
+        13.5,
+        0,
+        16.6
+      ]
+    ],
+    "note": "Exact CastleSurroundings canonical parked van placement retained. EXPEDITION station13.5/16.6 remains real action; parked van cargo is non-operational/closed as current source."
+  },
+  "search_envelope": {
+    "status": "DESIGN_ONLY_SEALS_NOT_RUNTIME_IMPLEMENTED",
+    "maximum": 40,
+    "accessible_spaces": 39,
+    "sealed_context_spaces": 3,
+    "count_rule": "Every OPEN_SEARCH space counts, including corridors, stairs, service rooms, exterior sectors and staging. Stable fifteen gameplay owners are not the room budget.",
+    "barriers": [
+      {
+        "link": "L16",
+        "a": "kitchen",
+        "b": "pantry",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L31",
+        "a": "res-hall",
+        "b": "linen",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L32",
+        "a": "linen",
+        "b": "upper-wc",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L37",
+        "a": "res-hall",
+        "b": "eave-store",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      }
+    ],
+    "gameplay_rule": "Evidence, ghost spawn/anchor, hiding, switches/tasks, ritual sites, loose objective props and required travel belong only to the connected open envelope. Context windows may show rooms, but no interaction or required search crosses the seal.",
+    "context_rule": "Retain coherent historical rooms/assets behind permanent boundaries. Restrict whole wings to their hallways where useful; do not count shuttable ordinary doors as permanent seals.",
+    "next_gate": "Build actual permanent seals and audit runtime player/ghost/object/optical boundaries and all objective placements; construct the maps inside the forty-space cap. Round-duration testing is outside this rebuild task."
+  }
+}

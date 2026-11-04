@@ -1,0 +1,18 @@
+{
+  "source_sha": "906fb89a8d212d8614499ab53c75c04606aa8e47",
+  "status": "ALL_THREE_WORKFLOWS_TERMINAL_SUCCESS",
+  "runs": {
+    "editor_agent_service": 41681790664,
+    "gpu_renderer": 41681802504,
+    "full_multiplayer": 41681818348
+  },
+  "next_action": "Review terminal raw regression outcomes without restarting these completed runs. New controls contract correction99ca9973 is later source and is only locally verified.",
+  "jobs": {
+    "native_editor_service": 126077074464,
+    "windows_gpu_build": 126077111177,
+    "java17_gpu_compile": 126077111585,
+    "actual_mesa_opengl": 126086672224,
+    "full_multiplayer": 126077169150
+  },
+  "raw_advisory_review": "Full regression advisory transcript not yet reviewed at this checkpoint; workflow success does not mean every advisory test passed."
+}

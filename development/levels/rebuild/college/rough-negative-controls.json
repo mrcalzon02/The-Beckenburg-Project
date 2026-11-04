@@ -1,0 +1,15 @@
+{
+  "status": "DESIGN_VALIDATOR_NEGATIVES_NOT_RUNTIME_PROOF",
+  "controls": [
+    {
+      "case": "door-corner",
+      "rejected": true,
+      "reason": "('L72', 'upper-res-hall', 'res-west-1', 'door width crosses corner or not on shared boundary')"
+    },
+    {
+      "case": "duplicate-link",
+      "rejected": true,
+      "reason": "Duplicate link identity"
+    }
+  ]
+}

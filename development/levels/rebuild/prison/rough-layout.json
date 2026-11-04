@@ -1,0 +1,6728 @@
+{
+  "version": 2,
+  "id": "PRISON",
+  "title": "Beckenburg Penitentiary — revised cellhouse rough",
+  "status": "S02_DESIGN_STUDY_NOT_RUNTIME_ACCEPTED",
+  "site_bounds": [
+    -4,
+    -4,
+    78,
+    94
+  ],
+  "zones": [
+    {
+      "id": "a-lower-cell-01",
+      "name": "A lower single cell 1",
+      "bounds": [
+        10,
+        24.0,
+        14,
+        27.5
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 0,
+      "kind": "inside",
+      "purpose": "A lower single cell 1",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "a-lower-cell-02",
+      "name": "A lower single cell 2",
+      "bounds": [
+        10,
+        27.5,
+        14,
+        31.0
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 0,
+      "kind": "inside",
+      "purpose": "A lower single cell 2",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "a-lower-cell-03",
+      "name": "A lower single cell 3",
+      "bounds": [
+        10,
+        31.0,
+        14,
+        34.5
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 0,
+      "kind": "inside",
+      "purpose": "A lower single cell 3",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "a-lower-cell-04",
+      "name": "A lower single cell 4",
+      "bounds": [
+        10,
+        34.5,
+        14,
+        38.0
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 0,
+      "kind": "inside",
+      "purpose": "A lower single cell 4",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "a-lower-cell-05",
+      "name": "A lower single cell 5",
+      "bounds": [
+        10,
+        38.0,
+        14,
+        41.5
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 0,
+      "kind": "inside",
+      "purpose": "A lower single cell 5",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "a-lower-cell-06",
+      "name": "A lower single cell 6",
+      "bounds": [
+        10,
+        41.5,
+        14,
+        45.0
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 0,
+      "kind": "inside",
+      "purpose": "A lower single cell 6",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "a-lower-cell-07",
+      "name": "A lower single cell 7",
+      "bounds": [
+        10,
+        45.0,
+        14,
+        48.5
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 0,
+      "kind": "inside",
+      "purpose": "A lower single cell 7",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "a-lower-cell-08",
+      "name": "A lower single cell 8",
+      "bounds": [
+        10,
+        48.5,
+        14,
+        52.0
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 0,
+      "kind": "inside",
+      "purpose": "A lower single cell 8",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "a-lower-gallery",
+      "name": "A lower cell-door gallery",
+      "bounds": [
+        14,
+        24,
+        16,
+        52
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "A lower cell-door gallery",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "a-upper-cell-01",
+      "name": "A upper single cell 1",
+      "bounds": [
+        10,
+        24.0,
+        14,
+        27.5
+      ],
+      "y": 3.4,
+      "height": 3,
+      "owner": 7,
+      "kind": "inside",
+      "purpose": "A upper single cell 1",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "a-upper-cell-02",
+      "name": "A upper single cell 2",
+      "bounds": [
+        10,
+        27.5,
+        14,
+        31.0
+      ],
+      "y": 3.4,
+      "height": 3,
+      "owner": 7,
+      "kind": "inside",
+      "purpose": "A upper single cell 2",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "a-upper-cell-03",
+      "name": "A upper single cell 3",
+      "bounds": [
+        10,
+        31.0,
+        14,
+        34.5
+      ],
+      "y": 3.4,
+      "height": 3,
+      "owner": 7,
+      "kind": "inside",
+      "purpose": "A upper single cell 3",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "a-upper-cell-04",
+      "name": "A upper single cell 4",
+      "bounds": [
+        10,
+        34.5,
+        14,
+        38.0
+      ],
+      "y": 3.4,
+      "height": 3,
+      "owner": 7,
+      "kind": "inside",
+      "purpose": "A upper single cell 4",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "a-upper-cell-05",
+      "name": "A upper single cell 5",
+      "bounds": [
+        10,
+        38.0,
+        14,
+        41.5
+      ],
+      "y": 3.4,
+      "height": 3,
+      "owner": 7,
+      "kind": "inside",
+      "purpose": "A upper single cell 5",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "a-upper-cell-06",
+      "name": "A upper single cell 6",
+      "bounds": [
+        10,
+        41.5,
+        14,
+        45.0
+      ],
+      "y": 3.4,
+      "height": 3,
+      "owner": 7,
+      "kind": "inside",
+      "purpose": "A upper single cell 6",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "a-upper-cell-07",
+      "name": "A upper single cell 7",
+      "bounds": [
+        10,
+        45.0,
+        14,
+        48.5
+      ],
+      "y": 3.4,
+      "height": 3,
+      "owner": 7,
+      "kind": "inside",
+      "purpose": "A upper single cell 7",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "a-upper-cell-08",
+      "name": "A upper single cell 8",
+      "bounds": [
+        10,
+        48.5,
+        14,
+        52.0
+      ],
+      "y": 3.4,
+      "height": 3,
+      "owner": 7,
+      "kind": "inside",
+      "purpose": "A upper single cell 8",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "a-upper-gallery",
+      "name": "A upper cell-door gallery",
+      "bounds": [
+        14,
+        24,
+        16,
+        58
+      ],
+      "y": 3.4,
+      "height": 3,
+      "owner": 7,
+      "kind": "circulation",
+      "purpose": "A upper cell-door gallery",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "a-rear-link",
+      "name": "A rear secure cross-link",
+      "bounds": [
+        10,
+        22,
+        16,
+        24
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "A rear secure cross-link",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "a-front-link",
+      "name": "A front secure cross-link",
+      "bounds": [
+        10,
+        52,
+        16,
+        58
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "A front secure cross-link",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "a-dayhall",
+      "name": "A supervised dayhall",
+      "bounds": [
+        16,
+        38,
+        22,
+        46
+      ],
+      "y": 0,
+      "height": 6.8,
+      "owner": 0,
+      "kind": "inside",
+      "purpose": "A supervised dayhall",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "a-rear-stair",
+      "name": "A alternate rear stair bay",
+      "bounds": [
+        16,
+        28,
+        20,
+        38
+      ],
+      "y": 0,
+      "height": 6.8,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "A alternate rear stair bay",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "a-rear-bypass",
+      "name": "A rear dayhall bypass",
+      "bounds": [
+        20,
+        28,
+        22,
+        38
+      ],
+      "y": 0,
+      "height": 6.8,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "A rear dayhall bypass",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "a-upper-rear-stair",
+      "name": "A upper alternate landing",
+      "bounds": [
+        16,
+        28,
+        20,
+        38
+      ],
+      "y": 3.4,
+      "height": 3,
+      "owner": 7,
+      "kind": "circulation",
+      "purpose": "A upper alternate landing",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "a-change",
+      "name": "A prisoner wash changing and benches",
+      "bounds": [
+        16,
+        22,
+        19,
+        28
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 0,
+      "kind": "inside",
+      "purpose": "A prisoner wash changing and benches",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "a-showers",
+      "name": "A three shower bays and drainage",
+      "bounds": [
+        19,
+        22,
+        22,
+        28
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 0,
+      "kind": "inside",
+      "purpose": "A three shower bays and drainage",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "a-stair",
+      "name": "A independent stair bay",
+      "bounds": [
+        16,
+        46,
+        20,
+        58
+      ],
+      "y": 0,
+      "height": 6.8,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "A independent stair bay",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "a-upper-stair",
+      "name": "A upper stair void and landing",
+      "bounds": [
+        16,
+        46,
+        20,
+        58
+      ],
+      "y": 3.4,
+      "height": 3,
+      "owner": 7,
+      "kind": "circulation",
+      "purpose": "A upper stair void and landing",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "a-front-aisle",
+      "name": "A front bypass aisle",
+      "bounds": [
+        20,
+        46,
+        22,
+        58
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "A front bypass aisle",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "b-lower-cell-01",
+      "name": "B lower single cell 1",
+      "bounds": [
+        54,
+        24.0,
+        58,
+        27.5
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 4,
+      "kind": "inside",
+      "purpose": "B lower single cell 1",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "b-lower-cell-02",
+      "name": "B lower single cell 2",
+      "bounds": [
+        54,
+        27.5,
+        58,
+        31.0
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 4,
+      "kind": "inside",
+      "purpose": "B lower single cell 2",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "b-lower-cell-03",
+      "name": "B lower single cell 3",
+      "bounds": [
+        54,
+        31.0,
+        58,
+        34.5
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 4,
+      "kind": "inside",
+      "purpose": "B lower single cell 3",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "b-lower-cell-04",
+      "name": "B lower single cell 4",
+      "bounds": [
+        54,
+        34.5,
+        58,
+        38.0
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 4,
+      "kind": "inside",
+      "purpose": "B lower single cell 4",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "b-lower-cell-05",
+      "name": "B lower single cell 5",
+      "bounds": [
+        54,
+        38.0,
+        58,
+        41.5
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 4,
+      "kind": "inside",
+      "purpose": "B lower single cell 5",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "b-lower-cell-06",
+      "name": "B lower single cell 6",
+      "bounds": [
+        54,
+        41.5,
+        58,
+        45.0
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 4,
+      "kind": "inside",
+      "purpose": "B lower single cell 6",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "b-lower-cell-07",
+      "name": "B lower single cell 7",
+      "bounds": [
+        54,
+        45.0,
+        58,
+        48.5
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 4,
+      "kind": "inside",
+      "purpose": "B lower single cell 7",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "b-lower-cell-08",
+      "name": "B lower single cell 8",
+      "bounds": [
+        54,
+        48.5,
+        58,
+        52.0
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 4,
+      "kind": "inside",
+      "purpose": "B lower single cell 8",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "b-lower-gallery",
+      "name": "B lower cell-door gallery",
+      "bounds": [
+        52,
+        24,
+        54,
+        52
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 4,
+      "kind": "circulation",
+      "purpose": "B lower cell-door gallery",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "b-upper-cell-01",
+      "name": "B upper single cell 1",
+      "bounds": [
+        54,
+        24.0,
+        58,
+        27.5
+      ],
+      "y": 3.4,
+      "height": 3,
+      "owner": 10,
+      "kind": "inside",
+      "purpose": "B upper single cell 1",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "b-upper-cell-02",
+      "name": "B upper single cell 2",
+      "bounds": [
+        54,
+        27.5,
+        58,
+        31.0
+      ],
+      "y": 3.4,
+      "height": 3,
+      "owner": 10,
+      "kind": "inside",
+      "purpose": "B upper single cell 2",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "b-upper-cell-03",
+      "name": "B upper single cell 3",
+      "bounds": [
+        54,
+        31.0,
+        58,
+        34.5
+      ],
+      "y": 3.4,
+      "height": 3,
+      "owner": 10,
+      "kind": "inside",
+      "purpose": "B upper single cell 3",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "b-upper-cell-04",
+      "name": "B upper single cell 4",
+      "bounds": [
+        54,
+        34.5,
+        58,
+        38.0
+      ],
+      "y": 3.4,
+      "height": 3,
+      "owner": 10,
+      "kind": "inside",
+      "purpose": "B upper single cell 4",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "b-upper-cell-05",
+      "name": "B upper single cell 5",
+      "bounds": [
+        54,
+        38.0,
+        58,
+        41.5
+      ],
+      "y": 3.4,
+      "height": 3,
+      "owner": 10,
+      "kind": "inside",
+      "purpose": "B upper single cell 5",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "b-upper-cell-06",
+      "name": "B upper single cell 6",
+      "bounds": [
+        54,
+        41.5,
+        58,
+        45.0
+      ],
+      "y": 3.4,
+      "height": 3,
+      "owner": 10,
+      "kind": "inside",
+      "purpose": "B upper single cell 6",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "b-upper-cell-07",
+      "name": "B upper single cell 7",
+      "bounds": [
+        54,
+        45.0,
+        58,
+        48.5
+      ],
+      "y": 3.4,
+      "height": 3,
+      "owner": 10,
+      "kind": "inside",
+      "purpose": "B upper single cell 7",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "b-upper-cell-08",
+      "name": "B upper single cell 8",
+      "bounds": [
+        54,
+        48.5,
+        58,
+        52.0
+      ],
+      "y": 3.4,
+      "height": 3,
+      "owner": 10,
+      "kind": "inside",
+      "purpose": "B upper single cell 8",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "b-upper-gallery",
+      "name": "B upper cell-door gallery",
+      "bounds": [
+        52,
+        24,
+        54,
+        58
+      ],
+      "y": 3.4,
+      "height": 3,
+      "owner": 10,
+      "kind": "circulation",
+      "purpose": "B upper cell-door gallery",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "b-rear-link",
+      "name": "B rear secure cross-link",
+      "bounds": [
+        52,
+        22,
+        58,
+        24
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 4,
+      "kind": "circulation",
+      "purpose": "B rear secure cross-link",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "b-front-link",
+      "name": "B front secure cross-link",
+      "bounds": [
+        52,
+        52,
+        58,
+        58
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 4,
+      "kind": "circulation",
+      "purpose": "B front secure cross-link",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "b-dayhall",
+      "name": "B supervised dayhall",
+      "bounds": [
+        46,
+        38,
+        52,
+        46
+      ],
+      "y": 0,
+      "height": 6.8,
+      "owner": 4,
+      "kind": "inside",
+      "purpose": "B supervised dayhall",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "b-rear-stair",
+      "name": "B alternate rear stair bay",
+      "bounds": [
+        48,
+        28,
+        52,
+        38
+      ],
+      "y": 0,
+      "height": 6.8,
+      "owner": 4,
+      "kind": "circulation",
+      "purpose": "B alternate rear stair bay",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "b-rear-bypass",
+      "name": "B rear dayhall bypass",
+      "bounds": [
+        46,
+        28,
+        48,
+        38
+      ],
+      "y": 0,
+      "height": 6.8,
+      "owner": 4,
+      "kind": "circulation",
+      "purpose": "B rear dayhall bypass",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "b-upper-rear-stair",
+      "name": "B upper alternate landing",
+      "bounds": [
+        48,
+        28,
+        52,
+        38
+      ],
+      "y": 3.4,
+      "height": 3,
+      "owner": 10,
+      "kind": "circulation",
+      "purpose": "B upper alternate landing",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "b-change",
+      "name": "B prisoner wash changing and benches",
+      "bounds": [
+        49,
+        22,
+        52,
+        28
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 4,
+      "kind": "inside",
+      "purpose": "B prisoner wash changing and benches",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "b-showers",
+      "name": "B three shower bays and drainage",
+      "bounds": [
+        46,
+        22,
+        49,
+        28
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 4,
+      "kind": "inside",
+      "purpose": "B three shower bays and drainage",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "b-stair",
+      "name": "B independent stair bay",
+      "bounds": [
+        48,
+        46,
+        52,
+        58
+      ],
+      "y": 0,
+      "height": 6.8,
+      "owner": 4,
+      "kind": "circulation",
+      "purpose": "B independent stair bay",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "b-upper-stair",
+      "name": "B upper stair void and landing",
+      "bounds": [
+        48,
+        46,
+        52,
+        58
+      ],
+      "y": 3.4,
+      "height": 3,
+      "owner": 10,
+      "kind": "circulation",
+      "purpose": "B upper stair void and landing",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "b-front-aisle",
+      "name": "B front bypass aisle",
+      "bounds": [
+        46,
+        46,
+        48,
+        58
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 4,
+      "kind": "circulation",
+      "purpose": "B front bypass aisle",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "reception",
+      "name": "Public reception and identity check",
+      "bounds": [
+        10,
+        62,
+        18,
+        68
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 1,
+      "kind": "inside",
+      "purpose": "Public reception and identity check",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "intake",
+      "name": "Search and intake custody corridor",
+      "bounds": [
+        10,
+        58,
+        18,
+        62
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 1,
+      "kind": "circulation",
+      "purpose": "Search and intake custody corridor",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "holding",
+      "name": "Supervised temporary holding",
+      "bounds": [
+        18,
+        58,
+        22,
+        62
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 1,
+      "kind": "inside",
+      "purpose": "Supervised temporary holding",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "search",
+      "name": "Private search and belongings",
+      "bounds": [
+        22,
+        58,
+        26,
+        64
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 1,
+      "kind": "inside",
+      "purpose": "Private search and belongings",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "records",
+      "name": "Prisoner records and staff work",
+      "bounds": [
+        18,
+        62,
+        22,
+        68
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 9,
+      "kind": "inside",
+      "purpose": "Prisoner records and staff work",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "public-wc",
+      "name": "Public sanitary room",
+      "bounds": [
+        22,
+        64,
+        26,
+        68
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 9,
+      "kind": "inside",
+      "purpose": "Public sanitary room",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "sally",
+      "name": "Vehicle sally port and double-gate control",
+      "bounds": [
+        26,
+        58,
+        42,
+        68
+      ],
+      "y": 0,
+      "height": 4,
+      "owner": 2,
+      "kind": "circulation",
+      "purpose": "Vehicle sally port and double-gate control",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "guard",
+      "name": "Guard control and dispatch",
+      "bounds": [
+        42,
+        58,
+        50,
+        64
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 2,
+      "kind": "inside",
+      "purpose": "Guard control and dispatch",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "staff",
+      "name": "Staff rest and lockers",
+      "bounds": [
+        42,
+        64,
+        46.8,
+        68
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 2,
+      "kind": "inside",
+      "purpose": "Staff rest and lockers",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "staff-wc",
+      "name": "Staff sanitary room",
+      "bounds": [
+        46.8,
+        64,
+        50,
+        68
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 2,
+      "kind": "inside",
+      "purpose": "Staff sanitary room",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "guard-link",
+      "name": "Controlled B-block entrance",
+      "bounds": [
+        50,
+        58,
+        58,
+        68
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 2,
+      "kind": "circulation",
+      "purpose": "Controlled B-block entrance",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "visitors",
+      "name": "Public visiting booths",
+      "bounds": [
+        0,
+        58,
+        6,
+        68
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 6,
+      "kind": "inside",
+      "purpose": "Public visiting booths",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "visitor-custody",
+      "name": "Custody visiting booths",
+      "bounds": [
+        6,
+        58,
+        10,
+        68
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 6,
+      "kind": "inside",
+      "purpose": "Custody visiting booths",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "cross",
+      "name": "Rear secure distribution passage",
+      "bounds": [
+        10,
+        16,
+        58,
+        22
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 2,
+      "kind": "circulation",
+      "purpose": "Rear secure distribution passage",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "dining",
+      "name": "Thirty-four-place mess",
+      "bounds": [
+        10,
+        4,
+        22,
+        16
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 3,
+      "kind": "inside",
+      "purpose": "Thirty-four-place mess",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "kitchen",
+      "name": "Kitchen cooking and serving",
+      "bounds": [
+        22,
+        4,
+        28,
+        12
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 3,
+      "kind": "inside",
+      "purpose": "Kitchen cooking and serving",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "food-store",
+      "name": "Secure dry and chilled food store",
+      "bounds": [
+        22,
+        12,
+        25,
+        16
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 3,
+      "kind": "inside",
+      "purpose": "Secure dry and chilled food store",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "wash-up",
+      "name": "Wash-up refuse and service handling",
+      "bounds": [
+        25,
+        12,
+        28,
+        16
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 3,
+      "kind": "inside",
+      "purpose": "Wash-up refuse and service handling",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "medical-link",
+      "name": "Medical reception and private access",
+      "bounds": [
+        28,
+        4,
+        32,
+        16
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 5,
+      "kind": "circulation",
+      "purpose": "Medical reception and private access",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "exam",
+      "name": "Medical examination and handwashing",
+      "bounds": [
+        32,
+        4,
+        39,
+        10
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 5,
+      "kind": "inside",
+      "purpose": "Medical examination and handwashing",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "recovery",
+      "name": "Two-bed recovery observation",
+      "bounds": [
+        39,
+        4,
+        46,
+        10
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 5,
+      "kind": "inside",
+      "purpose": "Two-bed recovery observation",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "medical-store",
+      "name": "Clean medical supplies",
+      "bounds": [
+        32,
+        10,
+        39,
+        16
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 5,
+      "kind": "inside",
+      "purpose": "Clean medical supplies",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "sluice",
+      "name": "Soiled utility wash and linen",
+      "bounds": [
+        39,
+        10,
+        46,
+        16
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 5,
+      "kind": "inside",
+      "purpose": "Soiled utility wash and linen",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "chapel",
+      "name": "Worship and reconciliation",
+      "bounds": [
+        58,
+        34,
+        70,
+        52
+      ],
+      "y": 0,
+      "height": 4,
+      "owner": 6,
+      "kind": "inside",
+      "purpose": "Worship and reconciliation",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "isolation-link",
+      "name": "Observed isolation corridor",
+      "bounds": [
+        58,
+        16,
+        61,
+        34
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 8,
+      "kind": "circulation",
+      "purpose": "Observed isolation corridor",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "isolation-cell-1",
+      "name": "Isolation single cell one with sanitary bay",
+      "bounds": [
+        61,
+        18,
+        66,
+        22.5
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 8,
+      "kind": "inside",
+      "purpose": "Isolation single cell one with sanitary bay",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "isolation-cell-2",
+      "name": "Isolation single cell two with sanitary bay",
+      "bounds": [
+        61,
+        22.5,
+        66,
+        27
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 8,
+      "kind": "inside",
+      "purpose": "Isolation single cell two with sanitary bay",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "observation",
+      "name": "Isolation observation and controlled supplies",
+      "bounds": [
+        61,
+        16,
+        70,
+        18
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 8,
+      "kind": "inside",
+      "purpose": "Isolation observation and controlled supplies",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "isolation-service",
+      "name": "Isolation clinical and linen service",
+      "bounds": [
+        66,
+        18,
+        70,
+        27
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 8,
+      "kind": "inside",
+      "purpose": "Isolation clinical and linen service",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "isolation-wash",
+      "name": "Isolation washing and work room",
+      "bounds": [
+        61,
+        27,
+        70,
+        34
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 8,
+      "kind": "inside",
+      "purpose": "Isolation washing and work room",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "plant-stair",
+      "name": "Separate plant stair enclosure",
+      "bounds": [
+        28,
+        22,
+        32,
+        34
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 11,
+      "kind": "circulation",
+      "purpose": "Separate plant stair enclosure",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "lower-stair",
+      "name": "Plant stair and maintenance access",
+      "bounds": [
+        28,
+        22,
+        32,
+        34
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "circulation",
+      "purpose": "Plant stair and maintenance access",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "plant",
+      "name": "Heating hot water and electrical plant",
+      "bounds": [
+        32,
+        22,
+        46,
+        34
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "inside",
+      "purpose": "Heating hot water and electrical plant",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "laundry",
+      "name": "Laundry showers supply and maintenance store",
+      "bounds": [
+        28,
+        34,
+        46,
+        42
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "inside",
+      "purpose": "Laundry showers supply and maintenance store",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "yard",
+      "name": "Bounded exercise yard around plant headhouse",
+      "bounds": [
+        22,
+        22,
+        46,
+        58
+      ],
+      "y": 0,
+      "height": 12,
+      "owner": 12,
+      "kind": "outside",
+      "purpose": "Bounded exercise yard around plant headhouse",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "entry",
+      "name": "Front public approach and perimeter roadhead",
+      "bounds": [
+        0,
+        68,
+        76,
+        94
+      ],
+      "y": 0,
+      "height": 12,
+      "owner": 13,
+      "kind": "outside",
+      "purpose": "Front public approach and perimeter roadhead",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "north-service",
+      "name": "North food and maintenance delivery apron",
+      "bounds": [
+        0,
+        0,
+        76,
+        4
+      ],
+      "y": 0,
+      "height": 12,
+      "owner": 13,
+      "kind": "outside",
+      "purpose": "North food and maintenance delivery apron",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "east-service",
+      "name": "East exterior service walk",
+      "bounds": [
+        70,
+        4,
+        76,
+        68
+      ],
+      "y": 0,
+      "height": 12,
+      "owner": 13,
+      "kind": "outside",
+      "purpose": "East exterior service walk",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "west-service",
+      "name": "West exterior service walk",
+      "bounds": [
+        0,
+        4,
+        6,
+        58
+      ],
+      "y": 0,
+      "height": 12,
+      "owner": 13,
+      "kind": "outside",
+      "purpose": "West exterior service walk",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "stage",
+      "name": "Canonical van staging and extraction reservation",
+      "bounds": [
+        24,
+        78,
+        44,
+        92
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 14,
+      "kind": "staging",
+      "purpose": "Canonical van staging and extraction reservation",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    }
+  ],
+  "links": [
+    {
+      "id": "L001",
+      "a": "a-lower-cell-01",
+      "b": "a-lower-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          12.0,
+          0,
+          25.75
+        ],
+        [
+          14,
+          0,
+          26.6
+        ],
+        [
+          15.0,
+          0,
+          38.0
+        ]
+      ],
+      "threshold": [
+        14,
+        0,
+        26.6
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L002",
+      "a": "a-lower-cell-02",
+      "b": "a-lower-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          12.0,
+          0,
+          29.25
+        ],
+        [
+          14,
+          0,
+          30.1
+        ],
+        [
+          15.0,
+          0,
+          38.0
+        ]
+      ],
+      "threshold": [
+        14,
+        0,
+        30.1
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L003",
+      "a": "a-lower-cell-03",
+      "b": "a-lower-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          12.0,
+          0,
+          32.75
+        ],
+        [
+          14,
+          0,
+          33.6
+        ],
+        [
+          15.0,
+          0,
+          38.0
+        ]
+      ],
+      "threshold": [
+        14,
+        0,
+        33.6
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L004",
+      "a": "a-lower-cell-04",
+      "b": "a-lower-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          12.0,
+          0,
+          36.25
+        ],
+        [
+          14,
+          0,
+          37.1
+        ],
+        [
+          15.0,
+          0,
+          38.0
+        ]
+      ],
+      "threshold": [
+        14,
+        0,
+        37.1
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L005",
+      "a": "a-lower-cell-05",
+      "b": "a-lower-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          12.0,
+          0,
+          39.75
+        ],
+        [
+          14,
+          0,
+          40.6
+        ],
+        [
+          15.0,
+          0,
+          38.0
+        ]
+      ],
+      "threshold": [
+        14,
+        0,
+        40.6
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L006",
+      "a": "a-lower-cell-06",
+      "b": "a-lower-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          12.0,
+          0,
+          43.25
+        ],
+        [
+          14,
+          0,
+          44.1
+        ],
+        [
+          15.0,
+          0,
+          38.0
+        ]
+      ],
+      "threshold": [
+        14,
+        0,
+        44.1
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L007",
+      "a": "a-lower-cell-07",
+      "b": "a-lower-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          12.0,
+          0,
+          46.75
+        ],
+        [
+          14,
+          0,
+          47.6
+        ],
+        [
+          15.0,
+          0,
+          38.0
+        ]
+      ],
+      "threshold": [
+        14,
+        0,
+        47.6
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L008",
+      "a": "a-lower-cell-08",
+      "b": "a-lower-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          12.0,
+          0,
+          50.25
+        ],
+        [
+          14,
+          0,
+          51.1
+        ],
+        [
+          15.0,
+          0,
+          38.0
+        ]
+      ],
+      "threshold": [
+        14,
+        0,
+        51.1
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L009",
+      "a": "a-upper-cell-01",
+      "b": "a-upper-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          12.0,
+          3.4,
+          25.75
+        ],
+        [
+          14,
+          3.4,
+          26.6
+        ],
+        [
+          15.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "threshold": [
+        14,
+        3.4,
+        26.6
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L010",
+      "a": "a-upper-cell-02",
+      "b": "a-upper-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          12.0,
+          3.4,
+          29.25
+        ],
+        [
+          14,
+          3.4,
+          30.1
+        ],
+        [
+          15.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "threshold": [
+        14,
+        3.4,
+        30.1
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L011",
+      "a": "a-upper-cell-03",
+      "b": "a-upper-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          12.0,
+          3.4,
+          32.75
+        ],
+        [
+          14,
+          3.4,
+          33.6
+        ],
+        [
+          15.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "threshold": [
+        14,
+        3.4,
+        33.6
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L012",
+      "a": "a-upper-cell-04",
+      "b": "a-upper-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          12.0,
+          3.4,
+          36.25
+        ],
+        [
+          14,
+          3.4,
+          37.1
+        ],
+        [
+          15.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "threshold": [
+        14,
+        3.4,
+        37.1
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L013",
+      "a": "a-upper-cell-05",
+      "b": "a-upper-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          12.0,
+          3.4,
+          39.75
+        ],
+        [
+          14,
+          3.4,
+          40.6
+        ],
+        [
+          15.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "threshold": [
+        14,
+        3.4,
+        40.6
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L014",
+      "a": "a-upper-cell-06",
+      "b": "a-upper-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          12.0,
+          3.4,
+          43.25
+        ],
+        [
+          14,
+          3.4,
+          44.1
+        ],
+        [
+          15.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "threshold": [
+        14,
+        3.4,
+        44.1
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L015",
+      "a": "a-upper-cell-07",
+      "b": "a-upper-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          12.0,
+          3.4,
+          46.75
+        ],
+        [
+          14,
+          3.4,
+          47.6
+        ],
+        [
+          15.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "threshold": [
+        14,
+        3.4,
+        47.6
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L016",
+      "a": "a-upper-cell-08",
+      "b": "a-upper-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          12.0,
+          3.4,
+          50.25
+        ],
+        [
+          14,
+          3.4,
+          51.1
+        ],
+        [
+          15.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "threshold": [
+        14,
+        3.4,
+        51.1
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L017",
+      "a": "b-lower-cell-01",
+      "b": "b-lower-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          56.0,
+          0,
+          25.75
+        ],
+        [
+          54,
+          0,
+          26.6
+        ],
+        [
+          53.0,
+          0,
+          38.0
+        ]
+      ],
+      "threshold": [
+        54,
+        0,
+        26.6
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L018",
+      "a": "b-lower-cell-02",
+      "b": "b-lower-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          56.0,
+          0,
+          29.25
+        ],
+        [
+          54,
+          0,
+          30.1
+        ],
+        [
+          53.0,
+          0,
+          38.0
+        ]
+      ],
+      "threshold": [
+        54,
+        0,
+        30.1
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L019",
+      "a": "b-lower-cell-03",
+      "b": "b-lower-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          56.0,
+          0,
+          32.75
+        ],
+        [
+          54,
+          0,
+          33.6
+        ],
+        [
+          53.0,
+          0,
+          38.0
+        ]
+      ],
+      "threshold": [
+        54,
+        0,
+        33.6
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L020",
+      "a": "b-lower-cell-04",
+      "b": "b-lower-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          56.0,
+          0,
+          36.25
+        ],
+        [
+          54,
+          0,
+          37.1
+        ],
+        [
+          53.0,
+          0,
+          38.0
+        ]
+      ],
+      "threshold": [
+        54,
+        0,
+        37.1
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L021",
+      "a": "b-lower-cell-05",
+      "b": "b-lower-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          56.0,
+          0,
+          39.75
+        ],
+        [
+          54,
+          0,
+          40.6
+        ],
+        [
+          53.0,
+          0,
+          38.0
+        ]
+      ],
+      "threshold": [
+        54,
+        0,
+        40.6
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L022",
+      "a": "b-lower-cell-06",
+      "b": "b-lower-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          56.0,
+          0,
+          43.25
+        ],
+        [
+          54,
+          0,
+          44.1
+        ],
+        [
+          53.0,
+          0,
+          38.0
+        ]
+      ],
+      "threshold": [
+        54,
+        0,
+        44.1
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L023",
+      "a": "b-lower-cell-07",
+      "b": "b-lower-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          56.0,
+          0,
+          46.75
+        ],
+        [
+          54,
+          0,
+          47.6
+        ],
+        [
+          53.0,
+          0,
+          38.0
+        ]
+      ],
+      "threshold": [
+        54,
+        0,
+        47.6
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L024",
+      "a": "b-lower-cell-08",
+      "b": "b-lower-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          56.0,
+          0,
+          50.25
+        ],
+        [
+          54,
+          0,
+          51.1
+        ],
+        [
+          53.0,
+          0,
+          38.0
+        ]
+      ],
+      "threshold": [
+        54,
+        0,
+        51.1
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L025",
+      "a": "b-upper-cell-01",
+      "b": "b-upper-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          56.0,
+          3.4,
+          25.75
+        ],
+        [
+          54,
+          3.4,
+          26.6
+        ],
+        [
+          53.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "threshold": [
+        54,
+        3.4,
+        26.6
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L026",
+      "a": "b-upper-cell-02",
+      "b": "b-upper-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          56.0,
+          3.4,
+          29.25
+        ],
+        [
+          54,
+          3.4,
+          30.1
+        ],
+        [
+          53.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "threshold": [
+        54,
+        3.4,
+        30.1
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L027",
+      "a": "b-upper-cell-03",
+      "b": "b-upper-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          56.0,
+          3.4,
+          32.75
+        ],
+        [
+          54,
+          3.4,
+          33.6
+        ],
+        [
+          53.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "threshold": [
+        54,
+        3.4,
+        33.6
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L028",
+      "a": "b-upper-cell-04",
+      "b": "b-upper-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          56.0,
+          3.4,
+          36.25
+        ],
+        [
+          54,
+          3.4,
+          37.1
+        ],
+        [
+          53.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "threshold": [
+        54,
+        3.4,
+        37.1
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L029",
+      "a": "b-upper-cell-05",
+      "b": "b-upper-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          56.0,
+          3.4,
+          39.75
+        ],
+        [
+          54,
+          3.4,
+          40.6
+        ],
+        [
+          53.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "threshold": [
+        54,
+        3.4,
+        40.6
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L030",
+      "a": "b-upper-cell-06",
+      "b": "b-upper-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          56.0,
+          3.4,
+          43.25
+        ],
+        [
+          54,
+          3.4,
+          44.1
+        ],
+        [
+          53.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "threshold": [
+        54,
+        3.4,
+        44.1
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L031",
+      "a": "b-upper-cell-07",
+      "b": "b-upper-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          56.0,
+          3.4,
+          46.75
+        ],
+        [
+          54,
+          3.4,
+          47.6
+        ],
+        [
+          53.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "threshold": [
+        54,
+        3.4,
+        47.6
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L032",
+      "a": "b-upper-cell-08",
+      "b": "b-upper-gallery",
+      "kind": "level",
+      "width": 1.05,
+      "points": [
+        [
+          56.0,
+          3.4,
+          50.25
+        ],
+        [
+          54,
+          3.4,
+          51.1
+        ],
+        [
+          53.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "threshold": [
+        54,
+        3.4,
+        51.1
+      ],
+      "access": "individual-cell",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L033",
+      "a": "a-lower-gallery",
+      "b": "a-rear-link",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          15.0,
+          0,
+          38.0
+        ],
+        [
+          15,
+          0,
+          24
+        ],
+        [
+          13.0,
+          0,
+          23.0
+        ]
+      ],
+      "threshold": [
+        15,
+        0,
+        24
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L034",
+      "a": "a-lower-gallery",
+      "b": "a-front-link",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          15.0,
+          0,
+          38.0
+        ],
+        [
+          15,
+          0,
+          52
+        ],
+        [
+          13.0,
+          0,
+          55.0
+        ]
+      ],
+      "threshold": [
+        15,
+        0,
+        52
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L035",
+      "a": "a-lower-gallery",
+      "b": "a-dayhall",
+      "kind": "level",
+      "width": 1.8,
+      "points": [
+        [
+          15.0,
+          0,
+          38.0
+        ],
+        [
+          16,
+          0,
+          42
+        ],
+        [
+          19.0,
+          0,
+          42.0
+        ]
+      ],
+      "threshold": [
+        16,
+        0,
+        42
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L036",
+      "a": "a-lower-gallery",
+      "b": "a-change",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          15.0,
+          0,
+          38.0
+        ],
+        [
+          16,
+          0,
+          26
+        ],
+        [
+          17.5,
+          0,
+          25.0
+        ]
+      ],
+      "threshold": [
+        16,
+        0,
+        26
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L037",
+      "a": "a-change",
+      "b": "a-showers",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          17.5,
+          0,
+          25.0
+        ],
+        [
+          19,
+          0,
+          25
+        ],
+        [
+          20.5,
+          0,
+          25.0
+        ]
+      ],
+      "threshold": [
+        19,
+        0,
+        25
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L038",
+      "a": "a-change",
+      "b": "a-rear-stair",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          17.5,
+          0,
+          25.0
+        ],
+        [
+          17.5,
+          0,
+          28
+        ],
+        [
+          18.0,
+          0,
+          33.0
+        ]
+      ],
+      "threshold": [
+        17.5,
+        0,
+        28
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L039",
+      "a": "a-rear-stair",
+      "b": "a-dayhall",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          18.0,
+          0,
+          33.0
+        ],
+        [
+          18,
+          0,
+          38
+        ],
+        [
+          19.0,
+          0,
+          42.0
+        ]
+      ],
+      "threshold": [
+        18,
+        0,
+        38
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L040",
+      "a": "a-rear-bypass",
+      "b": "a-dayhall",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          21.0,
+          0,
+          33.0
+        ],
+        [
+          21,
+          0,
+          38
+        ],
+        [
+          19.0,
+          0,
+          42.0
+        ]
+      ],
+      "threshold": [
+        21,
+        0,
+        38
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L041",
+      "a": "a-upper-rear-stair",
+      "b": "a-upper-gallery",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          18.0,
+          3.4,
+          33.0
+        ],
+        [
+          16,
+          3.4,
+          36.5
+        ],
+        [
+          15.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "threshold": [
+        16,
+        3.4,
+        36.5
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L042",
+      "a": "a-rear-link",
+      "b": "cross",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          13.0,
+          0,
+          23.0
+        ],
+        [
+          15,
+          0,
+          22
+        ],
+        [
+          34.0,
+          0,
+          19.0
+        ]
+      ],
+      "threshold": [
+        15,
+        0,
+        22
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L043",
+      "a": "a-dayhall",
+      "b": "a-stair",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          19.0,
+          0,
+          42.0
+        ],
+        [
+          18,
+          0,
+          46
+        ],
+        [
+          18.0,
+          0,
+          52.0
+        ]
+      ],
+      "threshold": [
+        18,
+        0,
+        46
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L044",
+      "a": "a-dayhall",
+      "b": "a-front-aisle",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          19.0,
+          0,
+          42.0
+        ],
+        [
+          21,
+          0,
+          46
+        ],
+        [
+          21.0,
+          0,
+          52.0
+        ]
+      ],
+      "threshold": [
+        21,
+        0,
+        46
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L045",
+      "a": "a-stair",
+      "b": "a-front-link",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          18.0,
+          0,
+          52.0
+        ],
+        [
+          16,
+          0,
+          55
+        ],
+        [
+          13.0,
+          0,
+          55.0
+        ]
+      ],
+      "threshold": [
+        16,
+        0,
+        55
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L046",
+      "a": "a-upper-stair",
+      "b": "a-upper-gallery",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          18.0,
+          3.4,
+          52.0
+        ],
+        [
+          16,
+          3.4,
+          56
+        ],
+        [
+          15.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "threshold": [
+        16,
+        3.4,
+        56
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L047",
+      "a": "a-stair",
+      "b": "a-upper-stair",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          18,
+          0,
+          48
+        ],
+        [
+          18,
+          3.4,
+          53.44
+        ]
+      ],
+      "rise_m": 3.4,
+      "run_m": 5.44,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 20,
+      "construction": "Independent straight flight, full-run deck void, top bridge to cell-door gallery and both end landings.",
+      "note": "Actual stair geometry, guards and headroom remain to be built.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L048",
+      "a": "a-rear-stair",
+      "b": "a-upper-rear-stair",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          18,
+          0,
+          30
+        ],
+        [
+          18,
+          3.4,
+          35.44
+        ]
+      ],
+      "rise_m": 3.4,
+      "run_m": 5.44,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 20,
+      "construction": "Second separated gallery flight and landing; same required deck opening and guard contract.",
+      "note": "Provides alternate vertical circulation instead of a single long gallery trap.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "structural_deck_and_partition"
+    },
+    {
+      "id": "L049",
+      "a": "b-lower-gallery",
+      "b": "b-rear-link",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          53.0,
+          0,
+          38.0
+        ],
+        [
+          53,
+          0,
+          24
+        ],
+        [
+          55.0,
+          0,
+          23.0
+        ]
+      ],
+      "threshold": [
+        53,
+        0,
+        24
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L050",
+      "a": "b-lower-gallery",
+      "b": "b-front-link",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          53.0,
+          0,
+          38.0
+        ],
+        [
+          53,
+          0,
+          52
+        ],
+        [
+          55.0,
+          0,
+          55.0
+        ]
+      ],
+      "threshold": [
+        53,
+        0,
+        52
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L051",
+      "a": "b-lower-gallery",
+      "b": "b-dayhall",
+      "kind": "level",
+      "width": 1.8,
+      "points": [
+        [
+          53.0,
+          0,
+          38.0
+        ],
+        [
+          52,
+          0,
+          42
+        ],
+        [
+          49.0,
+          0,
+          42.0
+        ]
+      ],
+      "threshold": [
+        52,
+        0,
+        42
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L052",
+      "a": "b-lower-gallery",
+      "b": "b-change",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          53.0,
+          0,
+          38.0
+        ],
+        [
+          52,
+          0,
+          26
+        ],
+        [
+          50.5,
+          0,
+          25.0
+        ]
+      ],
+      "threshold": [
+        52,
+        0,
+        26
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L053",
+      "a": "b-change",
+      "b": "b-showers",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          50.5,
+          0,
+          25.0
+        ],
+        [
+          49,
+          0,
+          25
+        ],
+        [
+          47.5,
+          0,
+          25.0
+        ]
+      ],
+      "threshold": [
+        49,
+        0,
+        25
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L054",
+      "a": "b-change",
+      "b": "b-rear-stair",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          50.5,
+          0,
+          25.0
+        ],
+        [
+          50.5,
+          0,
+          28
+        ],
+        [
+          50.0,
+          0,
+          33.0
+        ]
+      ],
+      "threshold": [
+        50.5,
+        0,
+        28
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L055",
+      "a": "b-rear-stair",
+      "b": "b-dayhall",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          50.0,
+          0,
+          33.0
+        ],
+        [
+          50,
+          0,
+          38
+        ],
+        [
+          49.0,
+          0,
+          42.0
+        ]
+      ],
+      "threshold": [
+        50,
+        0,
+        38
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L056",
+      "a": "b-rear-bypass",
+      "b": "b-dayhall",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          47.0,
+          0,
+          33.0
+        ],
+        [
+          47,
+          0,
+          38
+        ],
+        [
+          49.0,
+          0,
+          42.0
+        ]
+      ],
+      "threshold": [
+        47,
+        0,
+        38
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L057",
+      "a": "b-upper-rear-stair",
+      "b": "b-upper-gallery",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          50.0,
+          3.4,
+          33.0
+        ],
+        [
+          52,
+          3.4,
+          36.5
+        ],
+        [
+          53.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "threshold": [
+        52,
+        3.4,
+        36.5
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L058",
+      "a": "b-rear-link",
+      "b": "cross",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          55.0,
+          0,
+          23.0
+        ],
+        [
+          53,
+          0,
+          22
+        ],
+        [
+          34.0,
+          0,
+          19.0
+        ]
+      ],
+      "threshold": [
+        53,
+        0,
+        22
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L059",
+      "a": "b-dayhall",
+      "b": "b-stair",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          49.0,
+          0,
+          42.0
+        ],
+        [
+          50,
+          0,
+          46
+        ],
+        [
+          50.0,
+          0,
+          52.0
+        ]
+      ],
+      "threshold": [
+        50,
+        0,
+        46
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L060",
+      "a": "b-dayhall",
+      "b": "b-front-aisle",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          49.0,
+          0,
+          42.0
+        ],
+        [
+          47,
+          0,
+          46
+        ],
+        [
+          47.0,
+          0,
+          52.0
+        ]
+      ],
+      "threshold": [
+        47,
+        0,
+        46
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L061",
+      "a": "b-stair",
+      "b": "b-front-link",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          50.0,
+          0,
+          52.0
+        ],
+        [
+          52,
+          0,
+          55
+        ],
+        [
+          55.0,
+          0,
+          55.0
+        ]
+      ],
+      "threshold": [
+        52,
+        0,
+        55
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L062",
+      "a": "b-upper-stair",
+      "b": "b-upper-gallery",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          50.0,
+          3.4,
+          52.0
+        ],
+        [
+          52,
+          3.4,
+          56
+        ],
+        [
+          53.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "threshold": [
+        52,
+        3.4,
+        56
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L063",
+      "a": "b-stair",
+      "b": "b-upper-stair",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          50,
+          0,
+          48
+        ],
+        [
+          50,
+          3.4,
+          53.44
+        ]
+      ],
+      "rise_m": 3.4,
+      "run_m": 5.44,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 20,
+      "construction": "Independent straight flight, full-run deck void, top bridge to cell-door gallery and both end landings.",
+      "note": "Actual stair geometry, guards and headroom remain to be built.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L064",
+      "a": "b-rear-stair",
+      "b": "b-upper-rear-stair",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          50,
+          0,
+          30
+        ],
+        [
+          50,
+          3.4,
+          35.44
+        ]
+      ],
+      "rise_m": 3.4,
+      "run_m": 5.44,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 20,
+      "construction": "Second separated gallery flight and landing; same required deck opening and guard contract.",
+      "note": "Provides alternate vertical circulation instead of a single long gallery trap.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "structural_deck_and_partition"
+    },
+    {
+      "id": "L065",
+      "a": "entry",
+      "b": "sally",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          38.0,
+          0,
+          81.0
+        ],
+        [
+          34,
+          0,
+          68
+        ],
+        [
+          34.0,
+          0,
+          63.0
+        ]
+      ],
+      "threshold": [
+        34,
+        0,
+        68
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L066",
+      "a": "entry",
+      "b": "reception",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          38.0,
+          0,
+          81.0
+        ],
+        [
+          14,
+          0,
+          68
+        ],
+        [
+          14.0,
+          0,
+          65.0
+        ]
+      ],
+      "threshold": [
+        14,
+        0,
+        68
+      ],
+      "access": "public",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L067",
+      "a": "reception",
+      "b": "intake",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          14.0,
+          0,
+          65.0
+        ],
+        [
+          14,
+          0,
+          62
+        ],
+        [
+          14.0,
+          0,
+          60.0
+        ]
+      ],
+      "threshold": [
+        14,
+        0,
+        62
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L068",
+      "a": "reception",
+      "b": "records",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          14.0,
+          0,
+          65.0
+        ],
+        [
+          18,
+          0,
+          65
+        ],
+        [
+          20.0,
+          0,
+          65.0
+        ]
+      ],
+      "threshold": [
+        18,
+        0,
+        65
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L069",
+      "a": "entry",
+      "b": "public-wc",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          38.0,
+          0,
+          81.0
+        ],
+        [
+          24,
+          0,
+          68
+        ],
+        [
+          24.0,
+          0,
+          66.0
+        ]
+      ],
+      "threshold": [
+        24,
+        0,
+        68
+      ],
+      "access": "public",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L070",
+      "a": "intake",
+      "b": "holding",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          14.0,
+          0,
+          60.0
+        ],
+        [
+          18,
+          0,
+          60
+        ],
+        [
+          20.0,
+          0,
+          60.0
+        ]
+      ],
+      "threshold": [
+        18,
+        0,
+        60
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L071",
+      "a": "holding",
+      "b": "search",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          20.0,
+          0,
+          60.0
+        ],
+        [
+          22,
+          0,
+          60
+        ],
+        [
+          24.0,
+          0,
+          61.0
+        ]
+      ],
+      "threshold": [
+        22,
+        0,
+        60
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L072",
+      "a": "search",
+      "b": "sally",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          24.0,
+          0,
+          61.0
+        ],
+        [
+          26,
+          0,
+          61
+        ],
+        [
+          34.0,
+          0,
+          63.0
+        ]
+      ],
+      "threshold": [
+        26,
+        0,
+        61
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L073",
+      "a": "intake",
+      "b": "a-front-link",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          14.0,
+          0,
+          60.0
+        ],
+        [
+          14,
+          0,
+          58
+        ],
+        [
+          13.0,
+          0,
+          55.0
+        ]
+      ],
+      "threshold": [
+        14,
+        0,
+        58
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L074",
+      "a": "sally",
+      "b": "guard",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          0,
+          63.0
+        ],
+        [
+          42,
+          0,
+          61
+        ],
+        [
+          46.0,
+          0,
+          61.0
+        ]
+      ],
+      "threshold": [
+        42,
+        0,
+        61
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L075",
+      "a": "guard",
+      "b": "staff",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          46.0,
+          0,
+          61.0
+        ],
+        [
+          44,
+          0,
+          64
+        ],
+        [
+          44.4,
+          0,
+          66.0
+        ]
+      ],
+      "threshold": [
+        44,
+        0,
+        64
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L076",
+      "a": "guard",
+      "b": "staff-wc",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          46.0,
+          0,
+          61.0
+        ],
+        [
+          48.4,
+          0,
+          64
+        ],
+        [
+          48.4,
+          0,
+          66.0
+        ]
+      ],
+      "threshold": [
+        48.4,
+        0,
+        64
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L077",
+      "a": "guard",
+      "b": "guard-link",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          46.0,
+          0,
+          61.0
+        ],
+        [
+          50,
+          0,
+          61
+        ],
+        [
+          54.0,
+          0,
+          63.0
+        ]
+      ],
+      "threshold": [
+        50,
+        0,
+        61
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L078",
+      "a": "guard-link",
+      "b": "b-front-link",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          54.0,
+          0,
+          63.0
+        ],
+        [
+          55,
+          0,
+          58
+        ],
+        [
+          55.0,
+          0,
+          55.0
+        ]
+      ],
+      "threshold": [
+        55,
+        0,
+        58
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L079",
+      "a": "guard",
+      "b": "b-front-aisle",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          46.0,
+          0,
+          61.0
+        ],
+        [
+          47,
+          0,
+          58
+        ],
+        [
+          47.0,
+          0,
+          52.0
+        ]
+      ],
+      "threshold": [
+        47,
+        0,
+        58
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L080",
+      "a": "sally",
+      "b": "yard",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          0,
+          63.0
+        ],
+        [
+          34,
+          0,
+          58
+        ],
+        [
+          34.0,
+          0,
+          40.0
+        ]
+      ],
+      "threshold": [
+        34,
+        0,
+        58
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L081",
+      "a": "a-dayhall",
+      "b": "yard",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          19.0,
+          0,
+          42.0
+        ],
+        [
+          22,
+          0,
+          42
+        ],
+        [
+          34.0,
+          0,
+          40.0
+        ]
+      ],
+      "threshold": [
+        22,
+        0,
+        42
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L082",
+      "a": "b-dayhall",
+      "b": "yard",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          49.0,
+          0,
+          42.0
+        ],
+        [
+          46,
+          0,
+          42
+        ],
+        [
+          34.0,
+          0,
+          40.0
+        ]
+      ],
+      "threshold": [
+        46,
+        0,
+        42
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L083",
+      "a": "yard",
+      "b": "cross",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          0,
+          40.0
+        ],
+        [
+          40,
+          0,
+          22
+        ],
+        [
+          34.0,
+          0,
+          19.0
+        ]
+      ],
+      "threshold": [
+        40,
+        0,
+        22
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L084",
+      "a": "yard",
+      "b": "plant-stair",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          0,
+          40.0
+        ],
+        [
+          28,
+          0,
+          28
+        ],
+        [
+          30.0,
+          0,
+          28.0
+        ]
+      ],
+      "threshold": [
+        28,
+        0,
+        28
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L085",
+      "a": "plant-stair",
+      "b": "cross",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          30.0,
+          0,
+          28.0
+        ],
+        [
+          30,
+          0,
+          22
+        ],
+        [
+          34.0,
+          0,
+          19.0
+        ]
+      ],
+      "threshold": [
+        30,
+        0,
+        22
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L086",
+      "a": "entry",
+      "b": "visitors",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          38.0,
+          0,
+          81.0
+        ],
+        [
+          3,
+          0,
+          68
+        ],
+        [
+          3.0,
+          0,
+          63.0
+        ]
+      ],
+      "threshold": [
+        3,
+        0,
+        68
+      ],
+      "access": "public",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L087",
+      "a": "intake",
+      "b": "visitor-custody",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          14.0,
+          0,
+          60.0
+        ],
+        [
+          10,
+          0,
+          60
+        ],
+        [
+          8.0,
+          0,
+          63.0
+        ]
+      ],
+      "threshold": [
+        10,
+        0,
+        60
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L088",
+      "a": "chapel",
+      "b": "isolation-link",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          64.0,
+          0,
+          43.0
+        ],
+        [
+          59.5,
+          0,
+          34
+        ],
+        [
+          59.5,
+          0,
+          25.0
+        ]
+      ],
+      "threshold": [
+        59.5,
+        0,
+        34
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L089",
+      "a": "isolation-link",
+      "b": "cross",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          59.5,
+          0,
+          25.0
+        ],
+        [
+          58,
+          0,
+          19
+        ],
+        [
+          34.0,
+          0,
+          19.0
+        ]
+      ],
+      "threshold": [
+        58,
+        0,
+        19
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L090",
+      "a": "isolation-link",
+      "b": "observation",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          59.5,
+          0,
+          25.0
+        ],
+        [
+          61,
+          0,
+          17
+        ],
+        [
+          65.5,
+          0,
+          17.0
+        ]
+      ],
+      "threshold": [
+        61,
+        0,
+        17
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L091",
+      "a": "isolation-link",
+      "b": "isolation-cell-1",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          59.5,
+          0,
+          25.0
+        ],
+        [
+          61,
+          0,
+          20.25
+        ],
+        [
+          63.5,
+          0,
+          20.25
+        ]
+      ],
+      "threshold": [
+        61,
+        0,
+        20.25
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L092",
+      "a": "isolation-link",
+      "b": "isolation-cell-2",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          59.5,
+          0,
+          25.0
+        ],
+        [
+          61,
+          0,
+          24.75
+        ],
+        [
+          63.5,
+          0,
+          24.75
+        ]
+      ],
+      "threshold": [
+        61,
+        0,
+        24.75
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L093",
+      "a": "observation",
+      "b": "isolation-service",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          65.5,
+          0,
+          17.0
+        ],
+        [
+          68,
+          0,
+          18
+        ],
+        [
+          68.0,
+          0,
+          22.5
+        ]
+      ],
+      "threshold": [
+        68,
+        0,
+        18
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L094",
+      "a": "isolation-link",
+      "b": "isolation-wash",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          59.5,
+          0,
+          25.0
+        ],
+        [
+          61,
+          0,
+          30.5
+        ],
+        [
+          65.5,
+          0,
+          30.5
+        ]
+      ],
+      "threshold": [
+        61,
+        0,
+        30.5
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L095",
+      "a": "cross",
+      "b": "dining",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          0,
+          19.0
+        ],
+        [
+          16,
+          0,
+          16
+        ],
+        [
+          16.0,
+          0,
+          10.0
+        ]
+      ],
+      "threshold": [
+        16,
+        0,
+        16
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L096",
+      "a": "dining",
+      "b": "kitchen",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          16.0,
+          0,
+          10.0
+        ],
+        [
+          22,
+          0,
+          8
+        ],
+        [
+          25.0,
+          0,
+          8.0
+        ]
+      ],
+      "threshold": [
+        22,
+        0,
+        8
+      ],
+      "access": "service",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L097",
+      "a": "kitchen",
+      "b": "food-store",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          25.0,
+          0,
+          8.0
+        ],
+        [
+          23.5,
+          0,
+          12
+        ],
+        [
+          23.5,
+          0,
+          14.0
+        ]
+      ],
+      "threshold": [
+        23.5,
+        0,
+        12
+      ],
+      "access": "service",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L098",
+      "a": "kitchen",
+      "b": "wash-up",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          25.0,
+          0,
+          8.0
+        ],
+        [
+          26.5,
+          0,
+          12
+        ],
+        [
+          26.5,
+          0,
+          14.0
+        ]
+      ],
+      "threshold": [
+        26.5,
+        0,
+        12
+      ],
+      "access": "service",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L099",
+      "a": "kitchen",
+      "b": "north-service",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          25.0,
+          0,
+          8.0
+        ],
+        [
+          25,
+          0,
+          4
+        ],
+        [
+          38.0,
+          0,
+          2.0
+        ]
+      ],
+      "threshold": [
+        25,
+        0,
+        4
+      ],
+      "access": "service",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L100",
+      "a": "cross",
+      "b": "medical-link",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          0,
+          19.0
+        ],
+        [
+          30,
+          0,
+          16
+        ],
+        [
+          30.0,
+          0,
+          10.0
+        ]
+      ],
+      "threshold": [
+        30,
+        0,
+        16
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L101",
+      "a": "medical-link",
+      "b": "exam",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          30.0,
+          0,
+          10.0
+        ],
+        [
+          32,
+          0,
+          7
+        ],
+        [
+          35.5,
+          0,
+          7.0
+        ]
+      ],
+      "threshold": [
+        32,
+        0,
+        7
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L102",
+      "a": "exam",
+      "b": "recovery",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          35.5,
+          0,
+          7.0
+        ],
+        [
+          39,
+          0,
+          7
+        ],
+        [
+          42.5,
+          0,
+          7.0
+        ]
+      ],
+      "threshold": [
+        39,
+        0,
+        7
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L103",
+      "a": "medical-link",
+      "b": "medical-store",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          30.0,
+          0,
+          10.0
+        ],
+        [
+          32,
+          0,
+          13
+        ],
+        [
+          35.5,
+          0,
+          13.0
+        ]
+      ],
+      "threshold": [
+        32,
+        0,
+        13
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L104",
+      "a": "medical-store",
+      "b": "sluice",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          35.5,
+          0,
+          13.0
+        ],
+        [
+          39,
+          0,
+          13
+        ],
+        [
+          42.5,
+          0,
+          13.0
+        ]
+      ],
+      "threshold": [
+        39,
+        0,
+        13
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L105",
+      "a": "lower-stair",
+      "b": "plant",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          30.0,
+          -3,
+          28.0
+        ],
+        [
+          32,
+          -3,
+          31
+        ],
+        [
+          39.0,
+          -3,
+          28.0
+        ]
+      ],
+      "threshold": [
+        32,
+        -3,
+        31
+      ],
+      "access": "service",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L106",
+      "a": "plant",
+      "b": "laundry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          39.0,
+          -3,
+          28.0
+        ],
+        [
+          38,
+          -3,
+          34
+        ],
+        [
+          37.0,
+          -3,
+          38.0
+        ]
+      ],
+      "threshold": [
+        38,
+        -3,
+        34
+      ],
+      "access": "service",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L107",
+      "a": "entry",
+      "b": "east-service",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          38.0,
+          0,
+          81.0
+        ],
+        [
+          73,
+          0,
+          68
+        ],
+        [
+          73.0,
+          0,
+          36.0
+        ]
+      ],
+      "threshold": [
+        73,
+        0,
+        68
+      ],
+      "access": "service",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L108",
+      "a": "east-service",
+      "b": "north-service",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          73.0,
+          0,
+          36.0
+        ],
+        [
+          73,
+          0,
+          4
+        ],
+        [
+          38.0,
+          0,
+          2.0
+        ]
+      ],
+      "threshold": [
+        73,
+        0,
+        4
+      ],
+      "access": "service",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L109",
+      "a": "north-service",
+      "b": "west-service",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          38.0,
+          0,
+          2.0
+        ],
+        [
+          3,
+          0,
+          4
+        ],
+        [
+          3.0,
+          0,
+          31.0
+        ]
+      ],
+      "threshold": [
+        3,
+        0,
+        4
+      ],
+      "access": "service",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L110",
+      "a": "west-service",
+      "b": "visitors",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          3.0,
+          0,
+          31.0
+        ],
+        [
+          3,
+          0,
+          58
+        ],
+        [
+          3.0,
+          0,
+          63.0
+        ]
+      ],
+      "threshold": [
+        3,
+        0,
+        58
+      ],
+      "access": "service",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L111",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          0,
+          85.0
+        ],
+        [
+          34,
+          0,
+          78
+        ],
+        [
+          38.0,
+          0,
+          81.0
+        ]
+      ],
+      "threshold": [
+        34,
+        0,
+        78
+      ],
+      "access": "custody",
+      "note": "Proposed physical threshold; route diagrams do not prove traversability or lock behavior.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L112",
+      "a": "lower-stair",
+      "b": "plant-stair",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          30,
+          -3,
+          24
+        ],
+        [
+          30,
+          0,
+          28.8
+        ]
+      ],
+      "rise_m": 3,
+      "run_m": 4.8,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 18,
+      "construction": "Independent service stair with saved editor world hole and matching ground deck void.",
+      "note": "Do not allow the yard terrain or a backdrop sheet to cap the plant.",
+      "player_access": "OPEN_ROUTE"
+    }
+  ],
+  "capacity": "32 single cells across two wings and two floors, plus two isolation places; 34 prisoners maximum in the proposed normal-use program.",
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "isolation-wash",
+      "point": [
+        65.5,
+        0,
+        30.5
+      ]
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "sluice",
+      "point": [
+        42.5,
+        0,
+        13
+      ]
+    },
+    {
+      "rite": "Absolution",
+      "zone": "chapel",
+      "point": [
+        64,
+        0,
+        43
+      ]
+    }
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      34,
+      0,
+      85
+    ],
+    "yaw": -1.5707963267948966,
+    "cargo_route": [
+      [
+        30.372,
+        0,
+        85
+      ],
+      [
+        34,
+        0,
+        73
+      ],
+      [
+        34,
+        0,
+        68
+      ]
+    ],
+    "note": "Canonical VanStaging transform; actual shared van must appear in later arrival review."
+  },
+  "terrain_cutouts": [
+    {
+      "bounds": [
+        28,
+        22,
+        46,
+        42
+      ],
+      "world_surface_y": -0.65,
+      "method": "Persisted editor topology under the full plant/laundry footprint, not authored yet"
+    }
+  ],
+  "cell_fit_reservations": [
+    {
+      "space": "a-lower-cell-01",
+      "wing": "a",
+      "standing_y": 0,
+      "capacity": 1,
+      "door": [
+        14,
+        0,
+        26.6
+      ],
+      "bed_reservation": [
+        10.18,
+        24.65,
+        11.129999999999999,
+        26.75
+      ],
+      "wc_origin": [
+        13.3,
+        0.235,
+        24.7
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        12.05,
+        0,
+        24.33
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "a-lower-cell-02",
+      "wing": "a",
+      "standing_y": 0,
+      "capacity": 1,
+      "door": [
+        14,
+        0,
+        30.1
+      ],
+      "bed_reservation": [
+        10.18,
+        28.15,
+        11.129999999999999,
+        30.25
+      ],
+      "wc_origin": [
+        13.3,
+        0.235,
+        28.2
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        12.05,
+        0,
+        27.83
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "a-lower-cell-03",
+      "wing": "a",
+      "standing_y": 0,
+      "capacity": 1,
+      "door": [
+        14,
+        0,
+        33.6
+      ],
+      "bed_reservation": [
+        10.18,
+        31.65,
+        11.129999999999999,
+        33.75
+      ],
+      "wc_origin": [
+        13.3,
+        0.235,
+        31.7
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        12.05,
+        0,
+        31.33
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "a-lower-cell-04",
+      "wing": "a",
+      "standing_y": 0,
+      "capacity": 1,
+      "door": [
+        14,
+        0,
+        37.1
+      ],
+      "bed_reservation": [
+        10.18,
+        35.15,
+        11.129999999999999,
+        37.25
+      ],
+      "wc_origin": [
+        13.3,
+        0.235,
+        35.2
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        12.05,
+        0,
+        34.83
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "a-lower-cell-05",
+      "wing": "a",
+      "standing_y": 0,
+      "capacity": 1,
+      "door": [
+        14,
+        0,
+        40.6
+      ],
+      "bed_reservation": [
+        10.18,
+        38.65,
+        11.129999999999999,
+        40.75
+      ],
+      "wc_origin": [
+        13.3,
+        0.235,
+        38.7
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        12.05,
+        0,
+        38.33
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "a-lower-cell-06",
+      "wing": "a",
+      "standing_y": 0,
+      "capacity": 1,
+      "door": [
+        14,
+        0,
+        44.1
+      ],
+      "bed_reservation": [
+        10.18,
+        42.15,
+        11.129999999999999,
+        44.25
+      ],
+      "wc_origin": [
+        13.3,
+        0.235,
+        42.2
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        12.05,
+        0,
+        41.83
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "a-lower-cell-07",
+      "wing": "a",
+      "standing_y": 0,
+      "capacity": 1,
+      "door": [
+        14,
+        0,
+        47.6
+      ],
+      "bed_reservation": [
+        10.18,
+        45.65,
+        11.129999999999999,
+        47.75
+      ],
+      "wc_origin": [
+        13.3,
+        0.235,
+        45.7
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        12.05,
+        0,
+        45.33
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "a-lower-cell-08",
+      "wing": "a",
+      "standing_y": 0,
+      "capacity": 1,
+      "door": [
+        14,
+        0,
+        51.1
+      ],
+      "bed_reservation": [
+        10.18,
+        49.15,
+        11.129999999999999,
+        51.25
+      ],
+      "wc_origin": [
+        13.3,
+        0.235,
+        49.2
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        12.05,
+        0,
+        48.83
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "a-upper-cell-01",
+      "wing": "a",
+      "standing_y": 3.4,
+      "capacity": 1,
+      "door": [
+        14,
+        3.4,
+        26.6
+      ],
+      "bed_reservation": [
+        10.18,
+        24.65,
+        11.129999999999999,
+        26.75
+      ],
+      "wc_origin": [
+        13.3,
+        3.635,
+        24.7
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        12.05,
+        3.4,
+        24.33
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "a-upper-cell-02",
+      "wing": "a",
+      "standing_y": 3.4,
+      "capacity": 1,
+      "door": [
+        14,
+        3.4,
+        30.1
+      ],
+      "bed_reservation": [
+        10.18,
+        28.15,
+        11.129999999999999,
+        30.25
+      ],
+      "wc_origin": [
+        13.3,
+        3.635,
+        28.2
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        12.05,
+        3.4,
+        27.83
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "a-upper-cell-03",
+      "wing": "a",
+      "standing_y": 3.4,
+      "capacity": 1,
+      "door": [
+        14,
+        3.4,
+        33.6
+      ],
+      "bed_reservation": [
+        10.18,
+        31.65,
+        11.129999999999999,
+        33.75
+      ],
+      "wc_origin": [
+        13.3,
+        3.635,
+        31.7
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        12.05,
+        3.4,
+        31.33
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "a-upper-cell-04",
+      "wing": "a",
+      "standing_y": 3.4,
+      "capacity": 1,
+      "door": [
+        14,
+        3.4,
+        37.1
+      ],
+      "bed_reservation": [
+        10.18,
+        35.15,
+        11.129999999999999,
+        37.25
+      ],
+      "wc_origin": [
+        13.3,
+        3.635,
+        35.2
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        12.05,
+        3.4,
+        34.83
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "a-upper-cell-05",
+      "wing": "a",
+      "standing_y": 3.4,
+      "capacity": 1,
+      "door": [
+        14,
+        3.4,
+        40.6
+      ],
+      "bed_reservation": [
+        10.18,
+        38.65,
+        11.129999999999999,
+        40.75
+      ],
+      "wc_origin": [
+        13.3,
+        3.635,
+        38.7
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        12.05,
+        3.4,
+        38.33
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "a-upper-cell-06",
+      "wing": "a",
+      "standing_y": 3.4,
+      "capacity": 1,
+      "door": [
+        14,
+        3.4,
+        44.1
+      ],
+      "bed_reservation": [
+        10.18,
+        42.15,
+        11.129999999999999,
+        44.25
+      ],
+      "wc_origin": [
+        13.3,
+        3.635,
+        42.2
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        12.05,
+        3.4,
+        41.83
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "a-upper-cell-07",
+      "wing": "a",
+      "standing_y": 3.4,
+      "capacity": 1,
+      "door": [
+        14,
+        3.4,
+        47.6
+      ],
+      "bed_reservation": [
+        10.18,
+        45.65,
+        11.129999999999999,
+        47.75
+      ],
+      "wc_origin": [
+        13.3,
+        3.635,
+        45.7
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        12.05,
+        3.4,
+        45.33
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "a-upper-cell-08",
+      "wing": "a",
+      "standing_y": 3.4,
+      "capacity": 1,
+      "door": [
+        14,
+        3.4,
+        51.1
+      ],
+      "bed_reservation": [
+        10.18,
+        49.15,
+        11.129999999999999,
+        51.25
+      ],
+      "wc_origin": [
+        13.3,
+        3.635,
+        49.2
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        12.05,
+        3.4,
+        48.83
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "b-lower-cell-01",
+      "wing": "b",
+      "standing_y": 0,
+      "capacity": 1,
+      "door": [
+        54,
+        0,
+        26.6
+      ],
+      "bed_reservation": [
+        56.87,
+        24.65,
+        57.82,
+        26.75
+      ],
+      "wc_origin": [
+        54.7,
+        0.235,
+        24.7
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        55.95,
+        0,
+        24.33
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "b-lower-cell-02",
+      "wing": "b",
+      "standing_y": 0,
+      "capacity": 1,
+      "door": [
+        54,
+        0,
+        30.1
+      ],
+      "bed_reservation": [
+        56.87,
+        28.15,
+        57.82,
+        30.25
+      ],
+      "wc_origin": [
+        54.7,
+        0.235,
+        28.2
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        55.95,
+        0,
+        27.83
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "b-lower-cell-03",
+      "wing": "b",
+      "standing_y": 0,
+      "capacity": 1,
+      "door": [
+        54,
+        0,
+        33.6
+      ],
+      "bed_reservation": [
+        56.87,
+        31.65,
+        57.82,
+        33.75
+      ],
+      "wc_origin": [
+        54.7,
+        0.235,
+        31.7
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        55.95,
+        0,
+        31.33
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "b-lower-cell-04",
+      "wing": "b",
+      "standing_y": 0,
+      "capacity": 1,
+      "door": [
+        54,
+        0,
+        37.1
+      ],
+      "bed_reservation": [
+        56.87,
+        35.15,
+        57.82,
+        37.25
+      ],
+      "wc_origin": [
+        54.7,
+        0.235,
+        35.2
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        55.95,
+        0,
+        34.83
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "b-lower-cell-05",
+      "wing": "b",
+      "standing_y": 0,
+      "capacity": 1,
+      "door": [
+        54,
+        0,
+        40.6
+      ],
+      "bed_reservation": [
+        56.87,
+        38.65,
+        57.82,
+        40.75
+      ],
+      "wc_origin": [
+        54.7,
+        0.235,
+        38.7
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        55.95,
+        0,
+        38.33
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "b-lower-cell-06",
+      "wing": "b",
+      "standing_y": 0,
+      "capacity": 1,
+      "door": [
+        54,
+        0,
+        44.1
+      ],
+      "bed_reservation": [
+        56.87,
+        42.15,
+        57.82,
+        44.25
+      ],
+      "wc_origin": [
+        54.7,
+        0.235,
+        42.2
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        55.95,
+        0,
+        41.83
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "b-lower-cell-07",
+      "wing": "b",
+      "standing_y": 0,
+      "capacity": 1,
+      "door": [
+        54,
+        0,
+        47.6
+      ],
+      "bed_reservation": [
+        56.87,
+        45.65,
+        57.82,
+        47.75
+      ],
+      "wc_origin": [
+        54.7,
+        0.235,
+        45.7
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        55.95,
+        0,
+        45.33
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "b-lower-cell-08",
+      "wing": "b",
+      "standing_y": 0,
+      "capacity": 1,
+      "door": [
+        54,
+        0,
+        51.1
+      ],
+      "bed_reservation": [
+        56.87,
+        49.15,
+        57.82,
+        51.25
+      ],
+      "wc_origin": [
+        54.7,
+        0.235,
+        49.2
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        55.95,
+        0,
+        48.83
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "b-upper-cell-01",
+      "wing": "b",
+      "standing_y": 3.4,
+      "capacity": 1,
+      "door": [
+        54,
+        3.4,
+        26.6
+      ],
+      "bed_reservation": [
+        56.87,
+        24.65,
+        57.82,
+        26.75
+      ],
+      "wc_origin": [
+        54.7,
+        3.635,
+        24.7
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        55.95,
+        3.4,
+        24.33
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "b-upper-cell-02",
+      "wing": "b",
+      "standing_y": 3.4,
+      "capacity": 1,
+      "door": [
+        54,
+        3.4,
+        30.1
+      ],
+      "bed_reservation": [
+        56.87,
+        28.15,
+        57.82,
+        30.25
+      ],
+      "wc_origin": [
+        54.7,
+        3.635,
+        28.2
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        55.95,
+        3.4,
+        27.83
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "b-upper-cell-03",
+      "wing": "b",
+      "standing_y": 3.4,
+      "capacity": 1,
+      "door": [
+        54,
+        3.4,
+        33.6
+      ],
+      "bed_reservation": [
+        56.87,
+        31.65,
+        57.82,
+        33.75
+      ],
+      "wc_origin": [
+        54.7,
+        3.635,
+        31.7
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        55.95,
+        3.4,
+        31.33
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "b-upper-cell-04",
+      "wing": "b",
+      "standing_y": 3.4,
+      "capacity": 1,
+      "door": [
+        54,
+        3.4,
+        37.1
+      ],
+      "bed_reservation": [
+        56.87,
+        35.15,
+        57.82,
+        37.25
+      ],
+      "wc_origin": [
+        54.7,
+        3.635,
+        35.2
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        55.95,
+        3.4,
+        34.83
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "b-upper-cell-05",
+      "wing": "b",
+      "standing_y": 3.4,
+      "capacity": 1,
+      "door": [
+        54,
+        3.4,
+        40.6
+      ],
+      "bed_reservation": [
+        56.87,
+        38.65,
+        57.82,
+        40.75
+      ],
+      "wc_origin": [
+        54.7,
+        3.635,
+        38.7
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        55.95,
+        3.4,
+        38.33
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "b-upper-cell-06",
+      "wing": "b",
+      "standing_y": 3.4,
+      "capacity": 1,
+      "door": [
+        54,
+        3.4,
+        44.1
+      ],
+      "bed_reservation": [
+        56.87,
+        42.15,
+        57.82,
+        44.25
+      ],
+      "wc_origin": [
+        54.7,
+        3.635,
+        42.2
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        55.95,
+        3.4,
+        41.83
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "b-upper-cell-07",
+      "wing": "b",
+      "standing_y": 3.4,
+      "capacity": 1,
+      "door": [
+        54,
+        3.4,
+        47.6
+      ],
+      "bed_reservation": [
+        56.87,
+        45.65,
+        57.82,
+        47.75
+      ],
+      "wc_origin": [
+        54.7,
+        3.635,
+        45.7
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        55.95,
+        3.4,
+        45.33
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    },
+    {
+      "space": "b-upper-cell-08",
+      "wing": "b",
+      "standing_y": 3.4,
+      "capacity": 1,
+      "door": [
+        54,
+        3.4,
+        51.1
+      ],
+      "bed_reservation": [
+        56.87,
+        49.15,
+        57.82,
+        51.25
+      ],
+      "wc_origin": [
+        54.7,
+        3.635,
+        49.2
+      ],
+      "wc_yaw": 0,
+      "basin_origin": [
+        55.95,
+        3.4,
+        48.83
+      ],
+      "note": "Full-scale WC native pivot corrected by +0.235 m; fixed steel bed remains to be authored at 2.1 x 0.95 m. Clear circulation/door/fixture support requires actual blockout."
+    }
+  ],
+  "fit_assets": [
+    "level_trace_camp_bed",
+    "toilet_mp_1",
+    "level_bath_basin",
+    "level_workbench"
+  ],
+  "asset_decision": "Camp-bed bounds provide a full-scale compact-bed fit reference only; author a fixed steel cell-bed derivative instead of placing a folding camp bed as final prison furniture.",
+  "security_interfaces": [
+    {
+      "spaces": [
+        "visitors",
+        "visitor-custody"
+      ],
+      "plane_x": 6,
+      "open_door": false,
+      "note": "Glazed/meshed supervised booth divider; no visitor-to-custody through-route."
+    },
+    {
+      "spaces": [
+        "sally",
+        "yard"
+      ],
+      "two_sided_manual_release": true,
+      "note": "Ordinary custody control and event behavior cannot softlock hunters on power failure; physical gate/release acceptance required."
+    }
+  ],
+  "decisions": [
+    "Build 32 actual cell rooms with independent doors, native-sized sanitary fittings and two storeys of continuous cell-door gallery.",
+    "Preserve the exercise yard as an orientation landmark; shape its terrain around the service headhouse instead of stamping a rectangular pad.",
+    "Public visitors approach reception and exterior booth entrance without passing through cell blocks or medical care.",
+    "Medical examination, recovery, clean stores and soiled utility have separate bounded functions; medical access comes from the rear distribution passage.",
+    "Kitchen deliveries and refuse use the north service apron; prisoner movement does not cross cooking/store rooms."
+  ],
+  "remaining": [
+    "Resolve individual prisoner/staff/visitor fixture positions and privacy screens with actual full-scale support and approach rays.",
+    "Construct the six shared shower bays, floor drains and two isolation sanitary bays in actual geometry.",
+    "Author booth glazing, security release mechanisms, roof structure, cell windows, services and exact guard/deck voids.",
+    "Complete native terrain holes, actual van/capsule stair routes, hunt/ritual tests, networking and runtime/native/GPU/human acceptance."
+  ],
+  "search_envelope": {
+    "status": "DESIGN_ONLY_SEALS_NOT_RUNTIME_IMPLEMENTED",
+    "maximum": 40,
+    "accessible_spaces": 37,
+    "sealed_context_spaces": 61,
+    "count_rule": "Every OPEN_SEARCH space counts, including corridors, stairs, service rooms, exterior sectors and staging. Stable fifteen gameplay owners are not the room budget.",
+    "barriers": [
+      {
+        "link": "L002",
+        "a": "a-lower-cell-02",
+        "b": "a-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L003",
+        "a": "a-lower-cell-03",
+        "b": "a-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L004",
+        "a": "a-lower-cell-04",
+        "b": "a-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L005",
+        "a": "a-lower-cell-05",
+        "b": "a-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L006",
+        "a": "a-lower-cell-06",
+        "b": "a-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L007",
+        "a": "a-lower-cell-07",
+        "b": "a-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L008",
+        "a": "a-lower-cell-08",
+        "b": "a-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L010",
+        "a": "a-upper-cell-02",
+        "b": "a-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L011",
+        "a": "a-upper-cell-03",
+        "b": "a-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L012",
+        "a": "a-upper-cell-04",
+        "b": "a-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L013",
+        "a": "a-upper-cell-05",
+        "b": "a-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L014",
+        "a": "a-upper-cell-06",
+        "b": "a-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L015",
+        "a": "a-upper-cell-07",
+        "b": "a-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L016",
+        "a": "a-upper-cell-08",
+        "b": "a-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L018",
+        "a": "b-lower-cell-02",
+        "b": "b-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L019",
+        "a": "b-lower-cell-03",
+        "b": "b-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L020",
+        "a": "b-lower-cell-04",
+        "b": "b-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L021",
+        "a": "b-lower-cell-05",
+        "b": "b-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L022",
+        "a": "b-lower-cell-06",
+        "b": "b-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L023",
+        "a": "b-lower-cell-07",
+        "b": "b-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L024",
+        "a": "b-lower-cell-08",
+        "b": "b-lower-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L026",
+        "a": "b-upper-cell-02",
+        "b": "b-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L027",
+        "a": "b-upper-cell-03",
+        "b": "b-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L028",
+        "a": "b-upper-cell-04",
+        "b": "b-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L029",
+        "a": "b-upper-cell-05",
+        "b": "b-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L030",
+        "a": "b-upper-cell-06",
+        "b": "b-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L031",
+        "a": "b-upper-cell-07",
+        "b": "b-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L032",
+        "a": "b-upper-cell-08",
+        "b": "b-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L035",
+        "a": "a-lower-gallery",
+        "b": "a-dayhall",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L036",
+        "a": "a-lower-gallery",
+        "b": "a-change",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L041",
+        "a": "a-upper-rear-stair",
+        "b": "a-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L043",
+        "a": "a-dayhall",
+        "b": "a-stair",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L051",
+        "a": "b-lower-gallery",
+        "b": "b-dayhall",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L052",
+        "a": "b-lower-gallery",
+        "b": "b-change",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L057",
+        "a": "b-upper-rear-stair",
+        "b": "b-upper-gallery",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L059",
+        "a": "b-dayhall",
+        "b": "b-stair",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L069",
+        "a": "entry",
+        "b": "public-wc",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L070",
+        "a": "intake",
+        "b": "holding",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L072",
+        "a": "search",
+        "b": "sally",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L075",
+        "a": "guard",
+        "b": "staff",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L076",
+        "a": "guard",
+        "b": "staff-wc",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L079",
+        "a": "guard",
+        "b": "b-front-aisle",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L081",
+        "a": "a-dayhall",
+        "b": "yard",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L082",
+        "a": "b-dayhall",
+        "b": "yard",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L086",
+        "a": "entry",
+        "b": "visitors",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L087",
+        "a": "intake",
+        "b": "visitor-custody",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L090",
+        "a": "isolation-link",
+        "b": "observation",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L092",
+        "a": "isolation-link",
+        "b": "isolation-cell-2",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L096",
+        "a": "dining",
+        "b": "kitchen",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L101",
+        "a": "medical-link",
+        "b": "exam",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L106",
+        "a": "plant",
+        "b": "laundry",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L107",
+        "a": "entry",
+        "b": "east-service",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      }
+    ],
+    "gameplay_rule": "Evidence, ghost spawn/anchor, hiding, switches/tasks, ritual sites, loose objective props and required travel belong only to the connected open envelope. Context windows may show rooms, but no interaction or required search crosses the seal.",
+    "context_rule": "Retain coherent historical rooms/assets behind permanent boundaries. Restrict whole wings to their hallways where useful; do not count shuttable ordinary doors as permanent seals.",
+    "next_gate": "Build actual permanent seals and audit runtime player/ghost/object/optical boundaries and all objective placements; construct the maps inside the forty-space cap. Round-duration testing is outside this rebuild task."
+  }
+}

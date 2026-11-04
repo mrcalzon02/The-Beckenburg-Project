@@ -56,3 +56,10 @@ or multiplayer acceptance.
 11. **Desquareify:** apply [DESQUAREIFY_GATE.md](DESQUAREIFY_GATE.md) between rough blocking and accepted terrain. Check actual terrain shape/grades/materials, useful play-area boundaries and visible canonical van, not just a diagram. Retain rectangles only for real measured constructed objects.
 
 12. **Remote power:** apply REMOTE_SITE_POWER.md; verify placed source/board/wiring, authored loads, host ghost trip and permitted reset, blackout access and LAN/reconnect. Do not infer working circuits from a generator prop.
+
+
+## Owner model-work direction — 3 November2026
+
+Keep character-scale props near the measured shipped car/character triangle budgets, using simpler sharper silhouettes and authored texture detail. Benchmark actual source meshes for each asset instead of adding thousands of geometric rivets, tiny seams or rods. Current comparison: cars372–457 triangles, Matthis proxy1239. The Castle armour is capped at1250 including plinth; buildings and other scales require their own explicit measured contract.
+
+No detached floating pieces. Demonstrate actual support, overlapping surfaces or credible connected fastenings at every assembly. One object name, joined meshes or overall bounding-box overlap is not proof. Inspect feet/ankles, waist suspensions, hands/cuffs, helmets/collars and concealed rear supports from side/rear/close views. Preserve rejected studies, check actual exported geometry, and do not use simplification as an excuse for anatomically incoherent primitives.

@@ -1,0 +1,6 @@
+{
+  "scope": "Current production source with only authored annex ceiling fallback removed; reproduces the observed No ceiling at -8,27 helper regression. This is a controlled negative, not the lost original intermediate JAR.",
+  "source_sha256": "5a6d7d3b3580eb56c2ec885e7bf1c3eca63a847184f5ba8009229e5a8bda8df9",
+  "classpath_order": "build/negative-annex-classes;build/beckenburg-game.jar;build/test",
+  "test": "org.beckenburg.CastleTrainingAnnexTest"
+}

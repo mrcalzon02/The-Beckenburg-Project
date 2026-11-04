@@ -1,0 +1,15 @@
+{
+  "scope": "ACTUAL_DESIGN_VALIDATOR_NOT_RUNTIME_PROOF",
+  "controls": [
+    {
+      "case": "nave-aisle-obstruction",
+      "rejected": true,
+      "reason": "('Seat blocks reserved nave aisle', 'centre', {'space': 'nave', 'asset': 'chair_mp_5', 'origin': [22, 0, 13.5], 'yaw': 3.141592653589793})"
+    },
+    {
+      "case": "objective-eligible-sealed-vault",
+      "rejected": true,
+      "reason": "Gameplay eligible behind seal"
+    }
+  ]
+}

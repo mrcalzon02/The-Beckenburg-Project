@@ -17,3 +17,8 @@ Three 4.4 m ritual clear-area reservations occupy upper assembly, the cellar mai
 The LOC/NPS Public School No. 4 report was reopened: its description distinguishes phased corridors, sanitary facilities, nurse accommodation, gym and assembly additions. It informs the functional separation, not these game dimensions. No measured historical plan was copied. See `ARCHITECTURAL_REFERENCES.md`.
 
 Outstanding S02 decisions include the secondary upper-floor exit, detailed sanitary/privacy and PE-equipment storage, structural support under the assembly hall and full terrain/parcel composition. After the roster rough batch, build real walls/openings, consume the same coordinates in rendering and physics, author the saved editor hole, and prove physical routes before accepting this design.
+
+
+## Owner amendment - bounded player search, 3 November
+
+This site exposes **40 accessible spaces** and retains **0 sealed context spaces**, maximum40 including circulation/outside/staging. The complete historical room program above is not the playable search count. Follow search-envelope.json and search-layout.json for the connected open portion and exact permanent boundary list. The current annotations have not built runtime seals. All objectives/ghost activity/interaction and required routes must stay open-side; construct the actual map geometry and validate real permanent boundaries. Round-duration testing is outside this task.

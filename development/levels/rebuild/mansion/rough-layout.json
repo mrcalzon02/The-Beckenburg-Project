@@ -1,0 +1,3120 @@
+{
+  "version": 2,
+  "id": "MANSION",
+  "title": "Blackthorn Manor — revised household-first rough",
+  "status": "S02_DESIGN_STUDY_NOT_RUNTIME_ACCEPTED",
+  "site_bounds": [
+    3,
+    0,
+    57,
+    79
+  ],
+  "zones": [
+    {
+      "id": "foyer",
+      "name": "Entrance vestibule and guest orientation",
+      "bounds": [
+        20,
+        44,
+        24,
+        50
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "Entrance vestibule and guest orientation",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "visitor-wc",
+      "name": "Visitor WC outside private residence",
+      "bounds": [
+        24,
+        44,
+        28,
+        47
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 0,
+      "kind": "inside",
+      "purpose": "Visitor WC outside private residence",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "coats",
+      "name": "Guest coats and event cloakroom",
+      "bounds": [
+        24,
+        47,
+        28,
+        50
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 0,
+      "kind": "inside",
+      "purpose": "Guest coats and event cloakroom",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "hall",
+      "name": "Formal reception and stair approach",
+      "bounds": [
+        20,
+        36,
+        28,
+        44
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "Formal reception and stair approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "grand-stair",
+      "name": "Grand stair with clear lower landing",
+      "bounds": [
+        20,
+        24,
+        28,
+        36
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "Grand stair with clear lower landing",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "library",
+      "name": "Library shelves and reading tables",
+      "bounds": [
+        8,
+        24,
+        20,
+        36
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 1,
+      "kind": "inside",
+      "purpose": "Library shelves and reading tables",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "drawing",
+      "name": "Drawing room seated reception",
+      "bounds": [
+        8,
+        36,
+        20,
+        50
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 5,
+      "kind": "inside",
+      "purpose": "Drawing room seated reception",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "dining",
+      "name": "Twelve-place formal dining",
+      "bounds": [
+        28,
+        32,
+        40,
+        42
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 2,
+      "kind": "inside",
+      "purpose": "Twelve-place formal dining",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "morning",
+      "name": "Morning room and household breakfast",
+      "bounds": [
+        28,
+        42,
+        40,
+        50
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 6,
+      "kind": "inside",
+      "purpose": "Morning room and household breakfast",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "ballroom",
+      "name": "Clear-span ballroom without upper deck",
+      "bounds": [
+        40,
+        30,
+        54,
+        50
+      ],
+      "y": 0,
+      "height": 7.2,
+      "owner": 4,
+      "kind": "inside",
+      "purpose": "Clear-span ballroom without upper deck",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "service-pass",
+      "name": "Dining serving passage",
+      "bounds": [
+        28,
+        28,
+        40,
+        32
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 3,
+      "kind": "circulation",
+      "purpose": "Dining serving passage",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "kitchen",
+      "name": "Cooking and preparation with separate wash-up",
+      "bounds": [
+        28,
+        20,
+        36,
+        28
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 3,
+      "kind": "inside",
+      "purpose": "Cooking and preparation with separate wash-up",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "scullery",
+      "name": "Dirty return and utensil washing",
+      "bounds": [
+        36,
+        20,
+        40,
+        28
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 3,
+      "kind": "inside",
+      "purpose": "Dirty return and utensil washing",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "pantry",
+      "name": "Dry provisions and preparation pantry",
+      "bounds": [
+        28,
+        14,
+        34,
+        20
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 3,
+      "kind": "inside",
+      "purpose": "Dry provisions and preparation pantry",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "cold-store",
+      "name": "Cold storage and dairy work",
+      "bounds": [
+        34,
+        14,
+        40,
+        20
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 3,
+      "kind": "inside",
+      "purpose": "Cold storage and dairy work",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "service",
+      "name": "Rear household service distribution",
+      "bounds": [
+        40,
+        14,
+        43,
+        30
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 9,
+      "kind": "circulation",
+      "purpose": "Rear household service distribution",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "receiving",
+      "name": "Delivery inspection and unpacking",
+      "bounds": [
+        43,
+        20,
+        49,
+        26
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 3,
+      "kind": "inside",
+      "purpose": "Delivery inspection and unpacking",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "refuse",
+      "name": "Enclosed waste awaiting service collection",
+      "bounds": [
+        49,
+        20,
+        53,
+        26
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 3,
+      "kind": "inside",
+      "purpose": "Enclosed waste awaiting service collection",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "service-stair",
+      "name": "Independent household service stair",
+      "bounds": [
+        40,
+        2,
+        46,
+        14
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 9,
+      "kind": "circulation",
+      "purpose": "Independent household service stair",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "gallery",
+      "name": "Upper formal gallery and stair landing",
+      "bounds": [
+        20,
+        24,
+        28,
+        50
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "circulation",
+      "purpose": "Upper formal gallery and stair landing",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "suite-entry",
+      "name": "Private suite entrance and sitting lobby",
+      "bounds": [
+        8,
+        36,
+        20,
+        40
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 8,
+      "kind": "circulation",
+      "purpose": "Private suite entrance and sitting lobby",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "suite-bed",
+      "name": "Principal bedroom",
+      "bounds": [
+        8,
+        40,
+        16,
+        50
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 8,
+      "kind": "inside",
+      "purpose": "Principal bedroom",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "suite-dress",
+      "name": "Principal dressing room",
+      "bounds": [
+        16,
+        40,
+        20,
+        46
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 8,
+      "kind": "inside",
+      "purpose": "Principal dressing room",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "suite-bath",
+      "name": "Principal private bath and WC",
+      "bounds": [
+        16,
+        46,
+        20,
+        50
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 8,
+      "kind": "inside",
+      "purpose": "Principal private bath and WC",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "guest-a",
+      "name": "Guest bedroom A",
+      "bounds": [
+        8,
+        24,
+        16,
+        30
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "inside",
+      "purpose": "Guest bedroom A",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "guest-a-entry",
+      "name": "Guest A private entry",
+      "bounds": [
+        16,
+        27,
+        20,
+        30
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "circulation",
+      "purpose": "Guest A private entry",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "guest-a-bath",
+      "name": "Guest A private washing and WC",
+      "bounds": [
+        16,
+        24,
+        20,
+        27
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "inside",
+      "purpose": "Guest A private washing and WC",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "guest-b",
+      "name": "Guest bedroom B",
+      "bounds": [
+        8,
+        30,
+        16,
+        36
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "inside",
+      "purpose": "Guest bedroom B",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "guest-b-entry",
+      "name": "Guest B private entry",
+      "bounds": [
+        16,
+        33,
+        20,
+        36
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "circulation",
+      "purpose": "Guest B private entry",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "guest-b-bath",
+      "name": "Guest B private washing and WC",
+      "bounds": [
+        16,
+        30,
+        20,
+        33
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "inside",
+      "purpose": "Guest B private washing and WC",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "upper-service-link",
+      "name": "Controlled formal-to-service threshold",
+      "bounds": [
+        28,
+        28,
+        40,
+        32
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 9,
+      "kind": "circulation",
+      "purpose": "Controlled formal-to-service threshold",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "staff-corridor",
+      "name": "Staff sleeping access",
+      "bounds": [
+        28,
+        20,
+        40,
+        24
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 9,
+      "kind": "circulation",
+      "purpose": "Staff sleeping access",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "staff-a",
+      "name": "Two staff beds and personal storage A",
+      "bounds": [
+        28,
+        14,
+        34,
+        20
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 9,
+      "kind": "inside",
+      "purpose": "Two staff beds and personal storage A",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "staff-b",
+      "name": "Two staff beds and personal storage B",
+      "bounds": [
+        34,
+        14,
+        40,
+        20
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 9,
+      "kind": "inside",
+      "purpose": "Two staff beds and personal storage B",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "staff-bath",
+      "name": "Staff washing and separate WC bays",
+      "bounds": [
+        28,
+        24,
+        34,
+        28
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 9,
+      "kind": "inside",
+      "purpose": "Staff washing and separate WC bays",
+      "player_access": "SEALED_CONTEXT",
+      "gameplay_eligible": false
+    },
+    {
+      "id": "linen",
+      "name": "Clean linen and household supplies",
+      "bounds": [
+        34,
+        24,
+        40,
+        28
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 9,
+      "kind": "inside",
+      "purpose": "Clean linen and household supplies",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "upper-service",
+      "name": "Upper service passage",
+      "bounds": [
+        40,
+        14,
+        43,
+        30
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 9,
+      "kind": "circulation",
+      "purpose": "Upper service passage",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "upper-service-stair",
+      "name": "Service stair upper landing",
+      "bounds": [
+        40,
+        2,
+        46,
+        14
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 9,
+      "kind": "circulation",
+      "purpose": "Service stair upper landing",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "attic-stair",
+      "name": "Attic stair and guarded landing",
+      "bounds": [
+        40,
+        2,
+        46,
+        14
+      ],
+      "y": 7.2,
+      "height": 3,
+      "owner": 10,
+      "kind": "circulation",
+      "purpose": "Attic stair and guarded landing",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "attic-passage",
+      "name": "Attic distribution under roof",
+      "bounds": [
+        40,
+        14,
+        43,
+        28
+      ],
+      "y": 7.2,
+      "height": 3,
+      "owner": 10,
+      "kind": "circulation",
+      "purpose": "Attic distribution under roof",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "archive",
+      "name": "Estate archive: dry papers and shelving",
+      "bounds": [
+        28,
+        14,
+        40,
+        21
+      ],
+      "y": 7.2,
+      "height": 3,
+      "owner": 10,
+      "kind": "inside",
+      "purpose": "Estate archive: dry papers and shelving",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "attic-store",
+      "name": "Disused furniture and clear ritual bay",
+      "bounds": [
+        28,
+        21,
+        40,
+        28
+      ],
+      "y": 7.2,
+      "height": 3,
+      "owner": 10,
+      "kind": "inside",
+      "purpose": "Disused furniture and clear ritual bay",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "cellar-stair",
+      "name": "Cellar service stair",
+      "bounds": [
+        40,
+        2,
+        46,
+        14
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "circulation",
+      "purpose": "Cellar service stair",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "cellar-pass",
+      "name": "Cellar service distribution",
+      "bounds": [
+        40,
+        14,
+        43,
+        28
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "circulation",
+      "purpose": "Cellar service distribution",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "plant",
+      "name": "Heat hot water and electrical maintenance",
+      "bounds": [
+        32,
+        14,
+        40,
+        20
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "inside",
+      "purpose": "Heat hot water and electrical maintenance",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "cellar-provisions",
+      "name": "Cool provisions separate from plant",
+      "bounds": [
+        28,
+        14,
+        32,
+        20
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "inside",
+      "purpose": "Cool provisions separate from plant",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "wine",
+      "name": "Wine racks and retrieval aisle",
+      "bounds": [
+        28,
+        20,
+        40,
+        28
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "inside",
+      "purpose": "Wine racks and retrieval aisle",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "garden",
+      "name": "Estate garden envelope: terrain not accepted",
+      "bounds": [
+        3,
+        0,
+        57,
+        50
+      ],
+      "y": 0,
+      "height": 12,
+      "owner": 12,
+      "kind": "outside",
+      "purpose": "Estate garden envelope: terrain not accepted",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "entry",
+      "name": "Entrance terrace and carriage approach",
+      "bounds": [
+        3,
+        50,
+        57,
+        65
+      ],
+      "y": 0,
+      "height": 12,
+      "owner": 13,
+      "kind": "outside",
+      "purpose": "Entrance terrace and carriage approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "stage",
+      "name": "Canonical van unloading reservation",
+      "bounds": [
+        20,
+        65,
+        36,
+        78
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 14,
+      "kind": "staging",
+      "purpose": "Canonical van unloading reservation",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          28.0,
+          0,
+          71.5
+        ],
+        [
+          28,
+          0,
+          65
+        ],
+        [
+          30.0,
+          0,
+          57.5
+        ]
+      ],
+      "threshold": [
+        28,
+        0,
+        65
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "foyer",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          30.0,
+          0,
+          57.5
+        ],
+        [
+          22,
+          0,
+          50
+        ],
+        [
+          22.0,
+          0,
+          47.0
+        ]
+      ],
+      "threshold": [
+        22,
+        0,
+        50
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L03",
+      "a": "foyer",
+      "b": "visitor-wc",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          22.0,
+          0,
+          47.0
+        ],
+        [
+          24,
+          0,
+          45.5
+        ],
+        [
+          26.0,
+          0,
+          45.5
+        ]
+      ],
+      "threshold": [
+        24,
+        0,
+        45.5
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L04",
+      "a": "foyer",
+      "b": "coats",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          22.0,
+          0,
+          47.0
+        ],
+        [
+          24,
+          0,
+          48.5
+        ],
+        [
+          26.0,
+          0,
+          48.5
+        ]
+      ],
+      "threshold": [
+        24,
+        0,
+        48.5
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L05",
+      "a": "foyer",
+      "b": "hall",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          22.0,
+          0,
+          47.0
+        ],
+        [
+          22,
+          0,
+          44
+        ],
+        [
+          24.0,
+          0,
+          40.0
+        ]
+      ],
+      "threshold": [
+        22,
+        0,
+        44
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L06",
+      "a": "hall",
+      "b": "grand-stair",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          24.0,
+          0,
+          40.0
+        ],
+        [
+          24,
+          0,
+          36
+        ],
+        [
+          24.0,
+          0,
+          30.0
+        ]
+      ],
+      "threshold": [
+        24,
+        0,
+        36
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L07",
+      "a": "hall",
+      "b": "drawing",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          24.0,
+          0,
+          40.0
+        ],
+        [
+          20,
+          0,
+          40
+        ],
+        [
+          14.0,
+          0,
+          43.0
+        ]
+      ],
+      "threshold": [
+        20,
+        0,
+        40
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L08",
+      "a": "grand-stair",
+      "b": "library",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          24.0,
+          0,
+          30.0
+        ],
+        [
+          20,
+          0,
+          30
+        ],
+        [
+          14.0,
+          0,
+          30.0
+        ]
+      ],
+      "threshold": [
+        20,
+        0,
+        30
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L09",
+      "a": "library",
+      "b": "drawing",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          14.0,
+          0,
+          30.0
+        ],
+        [
+          14,
+          0,
+          36
+        ],
+        [
+          14.0,
+          0,
+          43.0
+        ]
+      ],
+      "threshold": [
+        14,
+        0,
+        36
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L10",
+      "a": "hall",
+      "b": "dining",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          24.0,
+          0,
+          40.0
+        ],
+        [
+          28,
+          0,
+          39
+        ],
+        [
+          34.0,
+          0,
+          37.0
+        ]
+      ],
+      "threshold": [
+        28,
+        0,
+        39
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L11",
+      "a": "hall",
+      "b": "morning",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          24.0,
+          0,
+          40.0
+        ],
+        [
+          28,
+          0,
+          43
+        ],
+        [
+          34.0,
+          0,
+          46.0
+        ]
+      ],
+      "threshold": [
+        28,
+        0,
+        43
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L12",
+      "a": "dining",
+      "b": "morning",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          0,
+          37.0
+        ],
+        [
+          34,
+          0,
+          42
+        ],
+        [
+          34.0,
+          0,
+          46.0
+        ]
+      ],
+      "threshold": [
+        34,
+        0,
+        42
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L13",
+      "a": "dining",
+      "b": "ballroom",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          0,
+          37.0
+        ],
+        [
+          40,
+          0,
+          37
+        ],
+        [
+          47.0,
+          0,
+          40.0
+        ]
+      ],
+      "threshold": [
+        40,
+        0,
+        37
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L14",
+      "a": "morning",
+      "b": "ballroom",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          0,
+          46.0
+        ],
+        [
+          40,
+          0,
+          46
+        ],
+        [
+          47.0,
+          0,
+          40.0
+        ]
+      ],
+      "threshold": [
+        40,
+        0,
+        46
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L15",
+      "a": "dining",
+      "b": "service-pass",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          0,
+          37.0
+        ],
+        [
+          34,
+          0,
+          32
+        ],
+        [
+          34.0,
+          0,
+          30.0
+        ]
+      ],
+      "threshold": [
+        34,
+        0,
+        32
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L16",
+      "a": "service-pass",
+      "b": "kitchen",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          0,
+          30.0
+        ],
+        [
+          32,
+          0,
+          28
+        ],
+        [
+          32.0,
+          0,
+          24.0
+        ]
+      ],
+      "threshold": [
+        32,
+        0,
+        28
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L17",
+      "a": "service-pass",
+      "b": "scullery",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          0,
+          30.0
+        ],
+        [
+          38,
+          0,
+          28
+        ],
+        [
+          38.0,
+          0,
+          24.0
+        ]
+      ],
+      "threshold": [
+        38,
+        0,
+        28
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L18",
+      "a": "kitchen",
+      "b": "scullery",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          32.0,
+          0,
+          24.0
+        ],
+        [
+          36,
+          0,
+          24
+        ],
+        [
+          38.0,
+          0,
+          24.0
+        ]
+      ],
+      "threshold": [
+        36,
+        0,
+        24
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L19",
+      "a": "kitchen",
+      "b": "pantry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          32.0,
+          0,
+          24.0
+        ],
+        [
+          31,
+          0,
+          20
+        ],
+        [
+          31.0,
+          0,
+          17.0
+        ]
+      ],
+      "threshold": [
+        31,
+        0,
+        20
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L20",
+      "a": "scullery",
+      "b": "cold-store",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          38.0,
+          0,
+          24.0
+        ],
+        [
+          38,
+          0,
+          20
+        ],
+        [
+          37.0,
+          0,
+          17.0
+        ]
+      ],
+      "threshold": [
+        38,
+        0,
+        20
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L21",
+      "a": "scullery",
+      "b": "service",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          38.0,
+          0,
+          24.0
+        ],
+        [
+          40,
+          0,
+          24
+        ],
+        [
+          41.5,
+          0,
+          22.0
+        ]
+      ],
+      "threshold": [
+        40,
+        0,
+        24
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L22",
+      "a": "service-pass",
+      "b": "service",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          0,
+          30.0
+        ],
+        [
+          40,
+          0,
+          29
+        ],
+        [
+          41.5,
+          0,
+          22.0
+        ]
+      ],
+      "threshold": [
+        40,
+        0,
+        29
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L23",
+      "a": "service",
+      "b": "service-stair",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          41.5,
+          0,
+          22.0
+        ],
+        [
+          41.5,
+          0,
+          14
+        ],
+        [
+          43.0,
+          0,
+          8.0
+        ]
+      ],
+      "threshold": [
+        41.5,
+        0,
+        14
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L24",
+      "a": "service",
+      "b": "receiving",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          41.5,
+          0,
+          22.0
+        ],
+        [
+          43,
+          0,
+          23
+        ],
+        [
+          46.0,
+          0,
+          23.0
+        ]
+      ],
+      "threshold": [
+        43,
+        0,
+        23
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L25",
+      "a": "receiving",
+      "b": "refuse",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          46.0,
+          0,
+          23.0
+        ],
+        [
+          49,
+          0,
+          23
+        ],
+        [
+          51.0,
+          0,
+          23.0
+        ]
+      ],
+      "threshold": [
+        49,
+        0,
+        23
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L26",
+      "a": "receiving",
+      "b": "garden",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          46.0,
+          0,
+          23.0
+        ],
+        [
+          46,
+          0,
+          20
+        ],
+        [
+          30.0,
+          0,
+          25.0
+        ]
+      ],
+      "threshold": [
+        46,
+        0,
+        20
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L27",
+      "a": "refuse",
+      "b": "garden",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          51.0,
+          0,
+          23.0
+        ],
+        [
+          53,
+          0,
+          23
+        ],
+        [
+          30.0,
+          0,
+          25.0
+        ]
+      ],
+      "threshold": [
+        53,
+        0,
+        23
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L28",
+      "a": "service-stair",
+      "b": "garden",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          43.0,
+          0,
+          8.0
+        ],
+        [
+          43,
+          0,
+          2
+        ],
+        [
+          30.0,
+          0,
+          25.0
+        ]
+      ],
+      "threshold": [
+        43,
+        0,
+        2
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L29",
+      "a": "library",
+      "b": "garden",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          14.0,
+          0,
+          30.0
+        ],
+        [
+          8,
+          0,
+          30
+        ],
+        [
+          30.0,
+          0,
+          25.0
+        ]
+      ],
+      "threshold": [
+        8,
+        0,
+        30
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L30",
+      "a": "ballroom",
+      "b": "garden",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          47.0,
+          0,
+          40.0
+        ],
+        [
+          54,
+          0,
+          40
+        ],
+        [
+          30.0,
+          0,
+          25.0
+        ]
+      ],
+      "threshold": [
+        54,
+        0,
+        40
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L31",
+      "a": "garden",
+      "b": "entry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          30.0,
+          0,
+          25.0
+        ],
+        [
+          55,
+          0,
+          50
+        ],
+        [
+          30.0,
+          0,
+          57.5
+        ]
+      ],
+      "threshold": [
+        55,
+        0,
+        50
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L32",
+      "a": "gallery",
+      "b": "suite-entry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          24.0,
+          3.6,
+          37.0
+        ],
+        [
+          20,
+          3.6,
+          38
+        ],
+        [
+          14.0,
+          3.6,
+          38.0
+        ]
+      ],
+      "threshold": [
+        20,
+        3.6,
+        38
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L33",
+      "a": "suite-entry",
+      "b": "suite-bed",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          14.0,
+          3.6,
+          38.0
+        ],
+        [
+          12,
+          3.6,
+          40
+        ],
+        [
+          12.0,
+          3.6,
+          45.0
+        ]
+      ],
+      "threshold": [
+        12,
+        3.6,
+        40
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L34",
+      "a": "suite-entry",
+      "b": "suite-dress",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          14.0,
+          3.6,
+          38.0
+        ],
+        [
+          18,
+          3.6,
+          40
+        ],
+        [
+          18.0,
+          3.6,
+          43.0
+        ]
+      ],
+      "threshold": [
+        18,
+        3.6,
+        40
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L35",
+      "a": "suite-dress",
+      "b": "suite-bath",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          18.0,
+          3.6,
+          43.0
+        ],
+        [
+          18,
+          3.6,
+          46
+        ],
+        [
+          18.0,
+          3.6,
+          48.0
+        ]
+      ],
+      "threshold": [
+        18,
+        3.6,
+        46
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L36",
+      "a": "gallery",
+      "b": "guest-a-entry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          24.0,
+          3.6,
+          37.0
+        ],
+        [
+          20,
+          3.6,
+          28.5
+        ],
+        [
+          18.0,
+          3.6,
+          28.5
+        ]
+      ],
+      "threshold": [
+        20,
+        3.6,
+        28.5
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L37",
+      "a": "guest-a-entry",
+      "b": "guest-a",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          18.0,
+          3.6,
+          28.5
+        ],
+        [
+          16,
+          3.6,
+          28.5
+        ],
+        [
+          12.0,
+          3.6,
+          27.0
+        ]
+      ],
+      "threshold": [
+        16,
+        3.6,
+        28.5
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L38",
+      "a": "guest-a-entry",
+      "b": "guest-a-bath",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          18.0,
+          3.6,
+          28.5
+        ],
+        [
+          18,
+          3.6,
+          27
+        ],
+        [
+          18.0,
+          3.6,
+          25.5
+        ]
+      ],
+      "threshold": [
+        18,
+        3.6,
+        27
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L39",
+      "a": "gallery",
+      "b": "guest-b-entry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          24.0,
+          3.6,
+          37.0
+        ],
+        [
+          20,
+          3.6,
+          34.5
+        ],
+        [
+          18.0,
+          3.6,
+          34.5
+        ]
+      ],
+      "threshold": [
+        20,
+        3.6,
+        34.5
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L40",
+      "a": "guest-b-entry",
+      "b": "guest-b",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          18.0,
+          3.6,
+          34.5
+        ],
+        [
+          16,
+          3.6,
+          34.5
+        ],
+        [
+          12.0,
+          3.6,
+          33.0
+        ]
+      ],
+      "threshold": [
+        16,
+        3.6,
+        34.5
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L41",
+      "a": "guest-b-entry",
+      "b": "guest-b-bath",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          18.0,
+          3.6,
+          34.5
+        ],
+        [
+          18,
+          3.6,
+          33
+        ],
+        [
+          18.0,
+          3.6,
+          31.5
+        ]
+      ],
+      "threshold": [
+        18,
+        3.6,
+        33
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L42",
+      "a": "gallery",
+      "b": "upper-service-link",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          24.0,
+          3.6,
+          37.0
+        ],
+        [
+          28,
+          3.6,
+          30
+        ],
+        [
+          34.0,
+          3.6,
+          30.0
+        ]
+      ],
+      "threshold": [
+        28,
+        3.6,
+        30
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L43",
+      "a": "upper-service",
+      "b": "linen",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          41.5,
+          3.6,
+          22.0
+        ],
+        [
+          40,
+          3.6,
+          26
+        ],
+        [
+          37.0,
+          3.6,
+          26.0
+        ]
+      ],
+      "threshold": [
+        40,
+        3.6,
+        26
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L44",
+      "a": "linen",
+      "b": "staff-corridor",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          37.0,
+          3.6,
+          26.0
+        ],
+        [
+          37,
+          3.6,
+          24
+        ],
+        [
+          34.0,
+          3.6,
+          22.0
+        ]
+      ],
+      "threshold": [
+        37,
+        3.6,
+        24
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L45",
+      "a": "staff-corridor",
+      "b": "staff-bath",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          3.6,
+          22.0
+        ],
+        [
+          31,
+          3.6,
+          24
+        ],
+        [
+          31.0,
+          3.6,
+          26.0
+        ]
+      ],
+      "threshold": [
+        31,
+        3.6,
+        24
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "SEALED_NO_ROUTE",
+      "closure": "fixed_closed_leaf_or_solid_infill"
+    },
+    {
+      "id": "L46",
+      "a": "staff-corridor",
+      "b": "staff-a",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          3.6,
+          22.0
+        ],
+        [
+          31,
+          3.6,
+          20
+        ],
+        [
+          31.0,
+          3.6,
+          17.0
+        ]
+      ],
+      "threshold": [
+        31,
+        3.6,
+        20
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L47",
+      "a": "staff-corridor",
+      "b": "staff-b",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          3.6,
+          22.0
+        ],
+        [
+          37,
+          3.6,
+          20
+        ],
+        [
+          37.0,
+          3.6,
+          17.0
+        ]
+      ],
+      "threshold": [
+        37,
+        3.6,
+        20
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L48",
+      "a": "staff-corridor",
+      "b": "upper-service",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          3.6,
+          22.0
+        ],
+        [
+          40,
+          3.6,
+          22
+        ],
+        [
+          41.5,
+          3.6,
+          22.0
+        ]
+      ],
+      "threshold": [
+        40,
+        3.6,
+        22
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L49",
+      "a": "upper-service-link",
+      "b": "upper-service",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          3.6,
+          30.0
+        ],
+        [
+          40,
+          3.6,
+          29
+        ],
+        [
+          41.5,
+          3.6,
+          22.0
+        ]
+      ],
+      "threshold": [
+        40,
+        3.6,
+        29
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L50",
+      "a": "upper-service",
+      "b": "upper-service-stair",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          41.5,
+          3.6,
+          22.0
+        ],
+        [
+          41.5,
+          3.6,
+          14
+        ],
+        [
+          43.0,
+          3.6,
+          8.0
+        ]
+      ],
+      "threshold": [
+        41.5,
+        3.6,
+        14
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L51",
+      "a": "attic-stair",
+      "b": "attic-passage",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          43.0,
+          7.2,
+          8.0
+        ],
+        [
+          41.5,
+          7.2,
+          14
+        ],
+        [
+          41.5,
+          7.2,
+          21.0
+        ]
+      ],
+      "threshold": [
+        41.5,
+        7.2,
+        14
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L52",
+      "a": "attic-passage",
+      "b": "archive",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          41.5,
+          7.2,
+          21.0
+        ],
+        [
+          40,
+          7.2,
+          18
+        ],
+        [
+          34.0,
+          7.2,
+          17.5
+        ]
+      ],
+      "threshold": [
+        40,
+        7.2,
+        18
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L53",
+      "a": "attic-passage",
+      "b": "attic-store",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          41.5,
+          7.2,
+          21.0
+        ],
+        [
+          40,
+          7.2,
+          25
+        ],
+        [
+          34.0,
+          7.2,
+          24.5
+        ]
+      ],
+      "threshold": [
+        40,
+        7.2,
+        25
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L54",
+      "a": "cellar-stair",
+      "b": "cellar-pass",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          43.0,
+          -3,
+          8.0
+        ],
+        [
+          41.5,
+          -3,
+          14
+        ],
+        [
+          41.5,
+          -3,
+          21.0
+        ]
+      ],
+      "threshold": [
+        41.5,
+        -3,
+        14
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L55",
+      "a": "cellar-pass",
+      "b": "plant",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          41.5,
+          -3,
+          21.0
+        ],
+        [
+          40,
+          -3,
+          17
+        ],
+        [
+          36.0,
+          -3,
+          17.0
+        ]
+      ],
+      "threshold": [
+        40,
+        -3,
+        17
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L56",
+      "a": "cellar-pass",
+      "b": "wine",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          41.5,
+          -3,
+          21.0
+        ],
+        [
+          40,
+          -3,
+          24
+        ],
+        [
+          34.0,
+          -3,
+          24.0
+        ]
+      ],
+      "threshold": [
+        40,
+        -3,
+        24
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L57",
+      "a": "wine",
+      "b": "cellar-provisions",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          -3,
+          24.0
+        ],
+        [
+          30,
+          -3,
+          20
+        ],
+        [
+          30.0,
+          -3,
+          17.0
+        ]
+      ],
+      "threshold": [
+        30,
+        -3,
+        20
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L58",
+      "a": "grand-stair",
+      "b": "gallery",
+      "kind": "stairs",
+      "width": 1.8,
+      "points": [
+        [
+          24,
+          0,
+          26
+        ],
+        [
+          24,
+          3.6,
+          31.76
+        ]
+      ],
+      "rise_m": 3.6,
+      "run_m": 5.760000000000001,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 20,
+      "construction": "Separate flights stacked with full-run deck voids, real structure depth and continuous guards; landings remain clear.",
+      "note": "Measured reservation only; physical capsule/headroom and underside tests remain required.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L59",
+      "a": "cellar-stair",
+      "b": "service-stair",
+      "kind": "stairs",
+      "width": 1.3,
+      "points": [
+        [
+          43,
+          -3,
+          4
+        ],
+        [
+          43,
+          0,
+          8.8
+        ]
+      ],
+      "rise_m": 3,
+      "run_m": 4.800000000000001,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 18,
+      "construction": "Separate flights stacked with full-run deck voids, real structure depth and continuous guards; landings remain clear.",
+      "note": "Measured reservation only; physical capsule/headroom and underside tests remain required.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L60",
+      "a": "service-stair",
+      "b": "upper-service-stair",
+      "kind": "stairs",
+      "width": 1.3,
+      "points": [
+        [
+          43,
+          0,
+          4
+        ],
+        [
+          43,
+          3.6,
+          9.760000000000002
+        ]
+      ],
+      "rise_m": 3.6,
+      "run_m": 5.760000000000001,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 20,
+      "construction": "Separate flights stacked with full-run deck voids, real structure depth and continuous guards; landings remain clear.",
+      "note": "Measured reservation only; physical capsule/headroom and underside tests remain required.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L61",
+      "a": "upper-service-stair",
+      "b": "attic-stair",
+      "kind": "stairs",
+      "width": 1.3,
+      "points": [
+        [
+          43,
+          3.6,
+          4
+        ],
+        [
+          43,
+          7.2,
+          9.760000000000002
+        ]
+      ],
+      "rise_m": 3.6,
+      "run_m": 5.760000000000001,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 20,
+      "construction": "Separate flights stacked with full-run deck voids, real structure depth and continuous guards; landings remain clear.",
+      "note": "Measured reservation only; physical capsule/headroom and underside tests remain required.",
+      "player_access": "OPEN_ROUTE"
+    }
+  ],
+  "capacity": "Principal pair, two guest bedrooms for up to four guests, four staff beds; twelve-place formal dining.",
+  "fit_assets": [
+    "bed_4",
+    "bed_5",
+    "toilet_mp_1",
+    "level_bath_basin",
+    "level_bathtub"
+  ],
+  "prop_fit_reservations": [
+    {
+      "space": "suite-bed",
+      "asset": "bed_4",
+      "origin": [
+        12,
+        3.6,
+        45
+      ]
+    },
+    {
+      "space": "guest-a",
+      "asset": "bed_4",
+      "origin": [
+        12,
+        3.6,
+        26.5
+      ]
+    },
+    {
+      "space": "guest-b",
+      "asset": "bed_4",
+      "origin": [
+        12,
+        3.6,
+        32.5
+      ]
+    },
+    {
+      "space": "staff-a",
+      "asset": "bed_5",
+      "origin": [
+        31,
+        3.6,
+        15.7
+      ]
+    },
+    {
+      "space": "staff-a",
+      "asset": "bed_5",
+      "origin": [
+        31,
+        3.6,
+        18.3
+      ]
+    },
+    {
+      "space": "staff-b",
+      "asset": "bed_5",
+      "origin": [
+        37,
+        3.6,
+        15.7
+      ]
+    },
+    {
+      "space": "staff-b",
+      "asset": "bed_5",
+      "origin": [
+        37,
+        3.6,
+        18.3
+      ]
+    },
+    {
+      "space": "suite-bath",
+      "asset": "level_bathtub",
+      "origin": [
+        18,
+        3.585,
+        49
+      ]
+    },
+    {
+      "space": "suite-bath",
+      "asset": "toilet_mp_1",
+      "origin": [
+        19.3,
+        3.835,
+        47.1
+      ]
+    },
+    {
+      "space": "suite-bath",
+      "asset": "level_bath_basin",
+      "origin": [
+        16.6,
+        3.6,
+        47.1
+      ]
+    },
+    {
+      "space": "guest-a-bath",
+      "asset": "toilet_mp_1",
+      "origin": [
+        19.2,
+        3.835,
+        25
+      ]
+    },
+    {
+      "space": "guest-a-bath",
+      "asset": "level_bath_basin",
+      "origin": [
+        16.6,
+        3.6,
+        25
+      ]
+    },
+    {
+      "space": "guest-b-bath",
+      "asset": "toilet_mp_1",
+      "origin": [
+        19.2,
+        3.835,
+        31
+      ]
+    },
+    {
+      "space": "guest-b-bath",
+      "asset": "level_bath_basin",
+      "origin": [
+        16.6,
+        3.6,
+        31
+      ]
+    }
+  ],
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "ballroom",
+      "point": [
+        47,
+        0,
+        40
+      ]
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "wine",
+      "point": [
+        34,
+        -3,
+        24
+      ]
+    },
+    {
+      "rite": "Absolution",
+      "zone": "garden",
+      "point": [
+        14,
+        0,
+        14
+      ]
+    }
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      28,
+      0,
+      71
+    ],
+    "yaw": -1.5707963267948966,
+    "cargo_route": [
+      [
+        24.372,
+        0,
+        71
+      ],
+      [
+        22,
+        0,
+        57
+      ],
+      [
+        22,
+        0,
+        50
+      ]
+    ],
+    "note": "Use actual canonical VanStaging placement; apron and cart route remain to be physically proved."
+  },
+  "terrain_cutouts": [
+    {
+      "bounds": [
+        40,
+        2,
+        46,
+        14
+      ],
+      "world_surface_y": -0.65,
+      "method": "Persisted editor AdaptiveTerrainTopology punched leaves beneath cellar/stair union; not yet authored"
+    },
+    {
+      "bounds": [
+        28,
+        14,
+        43,
+        28
+      ],
+      "world_surface_y": -0.65,
+      "method": "Persisted editor AdaptiveTerrainTopology punched leaves beneath cellar/stair union; not yet authored"
+    }
+  ],
+  "decisions": [
+    "Formal arrival reaches reception, library, drawing, dining and ballroom without crossing kitchens or private bedrooms.",
+    "Every guest bedroom has a bounded entry and private washing/WC; principal bedroom, dressing and bath are separately bounded.",
+    "Delivery, unpacking, refuse, cold/dry storage, cooking and dirty wash-up occupy a service wing with its own circulation.",
+    "Four staff beds and staff sanitation are reached from the service stair; cellar and attic do not require traversing a bedroom.",
+    "Ballroom is a tall independent wing: no automatic upper floor stamps; roof structure must span it credibly."
+  ],
+  "remaining": [
+    "Resolve actual furniture/fixture support, full-scale room fit, door swings and screened sanitary approaches.",
+    "Author stacked service stair return/landing guard interfaces, grand stair floor openings and roof/headroom geometry.",
+    "Separate electrical/hot-water plant from food and paper stores with actual enclosure and maintenance access.",
+    "Punch saved editor world terrain beneath the complete cellar; test render/body/optical/object passage with filled-ground negatives.",
+    "Build terrain and garden around play instead of rectangular pads; prove native/runtime parity, van routes, hunts, rituals, networking and hardware performance."
+  ],
+  "search_envelope": {
+    "status": "DESIGN_ONLY_SEALS_NOT_RUNTIME_IMPLEMENTED",
+    "maximum": 40,
+    "accessible_spaces": 39,
+    "sealed_context_spaces": 11,
+    "count_rule": "Every OPEN_SEARCH space counts, including corridors, stairs, service rooms, exterior sectors and staging. Stable fifteen gameplay owners are not the room budget.",
+    "barriers": [
+      {
+        "link": "L03",
+        "a": "foyer",
+        "b": "visitor-wc",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L04",
+        "a": "foyer",
+        "b": "coats",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L19",
+        "a": "kitchen",
+        "b": "pantry",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L20",
+        "a": "scullery",
+        "b": "cold-store",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L25",
+        "a": "receiving",
+        "b": "refuse",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L27",
+        "a": "refuse",
+        "b": "garden",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L35",
+        "a": "suite-dress",
+        "b": "suite-bath",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L38",
+        "a": "guest-a-entry",
+        "b": "guest-a-bath",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L39",
+        "a": "gallery",
+        "b": "guest-b-entry",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L45",
+        "a": "staff-corridor",
+        "b": "staff-bath",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      }
+    ],
+    "gameplay_rule": "Evidence, ghost spawn/anchor, hiding, switches/tasks, ritual sites, loose objective props and required travel belong only to the connected open envelope. Context windows may show rooms, but no interaction or required search crosses the seal.",
+    "context_rule": "Retain coherent historical rooms/assets behind permanent boundaries. Restrict whole wings to their hallways where useful; do not count shuttable ordinary doors as permanent seals.",
+    "next_gate": "Build actual permanent seals and audit runtime player/ghost/object/optical boundaries and all objective placements; construct the maps inside the forty-space cap. Round-duration testing is outside this rebuild task."
+  }
+}

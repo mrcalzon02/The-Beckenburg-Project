@@ -1,0 +1,2365 @@
+{
+  "id": "COLLEGE",
+  "title": "Beckenburg College — revised three-building campus rough",
+  "status": "SEARCH_GRAPH_DESIGN_NOT_RUNTIME_CONSTRUCTION",
+  "construction_source": "rough-layout.json",
+  "artifact_role": "Open search graph only; full structure, furnishings and sealed context remain in rough-layout.json.",
+  "site_bounds": [
+    3,
+    0,
+    72,
+    104
+  ],
+  "zones": [
+    {
+      "id": "teaching-hall",
+      "name": "Teaching block distribution",
+      "bounds": [
+        20,
+        10,
+        24,
+        54
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "Teaching block distribution",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "teaching-lobby",
+      "name": "Public teaching reception",
+      "bounds": [
+        20,
+        54,
+        28,
+        62
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "Public teaching reception",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "lecture",
+      "name": "Thirty-two-place clear-span lecture room",
+      "bounds": [
+        6,
+        34,
+        20,
+        54
+      ],
+      "y": 0,
+      "height": 7.2,
+      "owner": 5,
+      "kind": "inside",
+      "purpose": "Thirty-two-place clear-span lecture room",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "seminar",
+      "name": "Sixteen-place discussion seminar",
+      "bounds": [
+        6,
+        24,
+        20,
+        34
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 2,
+      "kind": "inside",
+      "purpose": "Sixteen-place discussion seminar",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "lab",
+      "name": "Sixteen-place practical teaching benches",
+      "bounds": [
+        6,
+        10,
+        16,
+        22
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 3,
+      "kind": "inside",
+      "purpose": "Sixteen-place practical teaching benches",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "lab-entry",
+      "name": "Practical coats and approach",
+      "bounds": [
+        6,
+        22,
+        20,
+        24
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 3,
+      "kind": "circulation",
+      "purpose": "Practical coats and approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "teaching-stair",
+      "name": "Teaching and tunnel access stair bay",
+      "bounds": [
+        24,
+        34,
+        30,
+        46
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "Teaching and tunnel access stair bay",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "admin",
+      "name": "Campus administration work room",
+      "bounds": [
+        28,
+        46,
+        36,
+        54
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 1,
+      "kind": "inside",
+      "purpose": "Campus administration work room",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "meeting",
+      "name": "Private staff and visitor meeting",
+      "bounds": [
+        28,
+        54,
+        36,
+        58
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 1,
+      "kind": "inside",
+      "purpose": "Private staff and visitor meeting",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "library-stair",
+      "name": "Library public stair bay",
+      "bounds": [
+        28,
+        4,
+        34,
+        16
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 6,
+      "kind": "circulation",
+      "purpose": "Library public stair bay",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "issue",
+      "name": "Library issue return and enquiry",
+      "bounds": [
+        28,
+        16,
+        34,
+        20
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 6,
+      "kind": "inside",
+      "purpose": "Library issue return and enquiry",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "res-hall",
+      "name": "Residence and union distribution",
+      "bounds": [
+        50,
+        26,
+        54,
+        70
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "Residence and union distribution",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "cafe",
+      "name": "Twenty-place union cafe seating",
+      "bounds": [
+        42,
+        50,
+        50,
+        66
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 4,
+      "kind": "inside",
+      "purpose": "Twenty-place union cafe seating",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "north-cross",
+      "name": "North stair approach",
+      "bounds": [
+        54,
+        38,
+        62,
+        42
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "North stair approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "north-stair",
+      "name": "Independent north residence stair",
+      "bounds": [
+        62,
+        30,
+        68,
+        42
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "Independent north residence stair",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "res-cellar-stair",
+      "name": "Residence tunnel exit stair",
+      "bounds": [
+        42,
+        66,
+        50,
+        78
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "Residence tunnel exit stair",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "rear-hall",
+      "name": "Tunnel exit to rear service yard",
+      "bounds": [
+        50,
+        70,
+        54,
+        78
+      ],
+      "y": 0,
+      "height": 3.6,
+      "owner": 0,
+      "kind": "circulation",
+      "purpose": "Tunnel exit to rear service yard",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "upper-teaching",
+      "name": "Upper teaching circulation",
+      "bounds": [
+        20,
+        10,
+        24,
+        54
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 10,
+      "kind": "circulation",
+      "purpose": "Upper teaching circulation",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "upper-teaching-stair",
+      "name": "Teaching stair guarded arrival",
+      "bounds": [
+        24,
+        34,
+        30,
+        46
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 10,
+      "kind": "circulation",
+      "purpose": "Teaching stair guarded arrival",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "upper-library-stair",
+      "name": "Upper library guarded arrival",
+      "bounds": [
+        28,
+        4,
+        34,
+        16
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 8,
+      "kind": "circulation",
+      "purpose": "Upper library guarded arrival",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "upper-library-landing",
+      "name": "Upper library stair approach",
+      "bounds": [
+        28,
+        16,
+        34,
+        20
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 8,
+      "kind": "circulation",
+      "purpose": "Upper library stair approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "bridge-lobby",
+      "name": "Public library bridge approach",
+      "bounds": [
+        34,
+        16,
+        54,
+        20
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "circulation",
+      "purpose": "Public library bridge approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "bridge",
+      "name": "Supported upper campus bridge",
+      "bounds": [
+        50,
+        20,
+        54,
+        24
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "circulation",
+      "purpose": "Supported upper campus bridge",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "bridge-return",
+      "name": "Upper bridge return to residence",
+      "bounds": [
+        50,
+        24,
+        54,
+        26
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "circulation",
+      "purpose": "Upper bridge return to residence",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "upper-res-hall",
+      "name": "Private residence corridor",
+      "bounds": [
+        50,
+        34,
+        54,
+        70
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 9,
+      "kind": "circulation",
+      "purpose": "Private residence corridor",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "upper-north-cross",
+      "name": "North residence stair approach",
+      "bounds": [
+        54,
+        38,
+        62,
+        42
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 9,
+      "kind": "circulation",
+      "purpose": "North residence stair approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "upper-north-stair",
+      "name": "North residence guarded arrival",
+      "bounds": [
+        62,
+        30,
+        68,
+        42
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 9,
+      "kind": "circulation",
+      "purpose": "North residence guarded arrival",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "res-west-1",
+      "name": "Private twin residence west 1",
+      "bounds": [
+        42,
+        34,
+        50,
+        42
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 9,
+      "kind": "inside",
+      "purpose": "Private twin residence west 1",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "res-east-1",
+      "name": "Private twin residence east 1",
+      "bounds": [
+        54,
+        30,
+        62,
+        38
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 9,
+      "kind": "inside",
+      "purpose": "Private twin residence east 1",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "west-tunnel",
+      "name": "West building service distribution",
+      "bounds": [
+        20,
+        10,
+        24,
+        54
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "circulation",
+      "purpose": "West building service distribution",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "maintenance",
+      "name": "Campus maintenance and parts",
+      "bounds": [
+        12,
+        24,
+        20,
+        34
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "inside",
+      "purpose": "Campus maintenance and parts",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "west-cellar-stair",
+      "name": "Teaching tunnel stair",
+      "bounds": [
+        24,
+        34,
+        30,
+        46
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "circulation",
+      "purpose": "Teaching tunnel stair",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "cross-tunnel",
+      "name": "Supported tunnel below campus green",
+      "bounds": [
+        30,
+        38,
+        46,
+        42
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "circulation",
+      "purpose": "Supported tunnel below campus green",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "east-tunnel",
+      "name": "Residence tunnel return",
+      "bounds": [
+        42,
+        42,
+        46,
+        66
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "circulation",
+      "purpose": "Residence tunnel return",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "east-cellar-stair",
+      "name": "Residence tunnel exit stair",
+      "bounds": [
+        42,
+        66,
+        50,
+        78
+      ],
+      "y": -3,
+      "height": 3,
+      "owner": 11,
+      "kind": "circulation",
+      "purpose": "Residence tunnel exit stair",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "green",
+      "name": "Shared campus green envelope",
+      "bounds": [
+        3,
+        0,
+        72,
+        78
+      ],
+      "y": 0,
+      "height": 12,
+      "owner": 12,
+      "kind": "outside",
+      "purpose": "Shared campus green envelope",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "entry",
+      "name": "Public campus approach",
+      "bounds": [
+        3,
+        78,
+        72,
+        90
+      ],
+      "y": 0,
+      "height": 12,
+      "owner": 13,
+      "kind": "outside",
+      "purpose": "Public campus approach",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "stage",
+      "name": "Canonical campus roadhead van apron",
+      "bounds": [
+        24,
+        90,
+        40,
+        103
+      ],
+      "y": 0,
+      "height": 3,
+      "owner": 14,
+      "kind": "staging",
+      "purpose": "Canonical campus roadhead van apron",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "teaching-library-link",
+      "name": "Four-metre teaching to library upper link",
+      "bounds": [
+        24,
+        12,
+        28,
+        16
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "circulation",
+      "purpose": "Four-metre teaching to library upper link",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    },
+    {
+      "id": "res-bridge-approach",
+      "name": "Residence bridge landing outside bedrooms",
+      "bounds": [
+        50,
+        26,
+        54,
+        34
+      ],
+      "y": 3.6,
+      "height": 3.6,
+      "owner": 7,
+      "kind": "circulation",
+      "purpose": "Residence bridge landing outside bedrooms",
+      "player_access": "OPEN_SEARCH",
+      "gameplay_eligible": true
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          32.0,
+          0,
+          96.5
+        ],
+        [
+          32,
+          0,
+          90
+        ],
+        [
+          37.5,
+          0,
+          84.0
+        ]
+      ],
+      "threshold": [
+        32,
+        0,
+        90
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "green",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          37.5,
+          0,
+          84.0
+        ],
+        [
+          32,
+          0,
+          78
+        ],
+        [
+          37.5,
+          0,
+          39.0
+        ]
+      ],
+      "threshold": [
+        32,
+        0,
+        78
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L03",
+      "a": "green",
+      "b": "teaching-lobby",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          37.5,
+          0,
+          39.0
+        ],
+        [
+          24,
+          0,
+          62
+        ],
+        [
+          24.0,
+          0,
+          58.0
+        ]
+      ],
+      "threshold": [
+        24,
+        0,
+        62
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L04",
+      "a": "teaching-lobby",
+      "b": "teaching-hall",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          24.0,
+          0,
+          58.0
+        ],
+        [
+          22,
+          0,
+          54
+        ],
+        [
+          22.0,
+          0,
+          32.0
+        ]
+      ],
+      "threshold": [
+        22,
+        0,
+        54
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L05",
+      "a": "teaching-hall",
+      "b": "lecture",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          22.0,
+          0,
+          32.0
+        ],
+        [
+          20,
+          0,
+          44
+        ],
+        [
+          13.0,
+          0,
+          44.0
+        ]
+      ],
+      "threshold": [
+        20,
+        0,
+        44
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L06",
+      "a": "teaching-hall",
+      "b": "seminar",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          22.0,
+          0,
+          32.0
+        ],
+        [
+          20,
+          0,
+          28
+        ],
+        [
+          13.0,
+          0,
+          29.0
+        ]
+      ],
+      "threshold": [
+        20,
+        0,
+        28
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L07",
+      "a": "teaching-hall",
+      "b": "lab-entry",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          22.0,
+          0,
+          32.0
+        ],
+        [
+          20,
+          0,
+          23
+        ],
+        [
+          13.0,
+          0,
+          23.0
+        ]
+      ],
+      "threshold": [
+        20,
+        0,
+        23
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L08",
+      "a": "lab-entry",
+      "b": "lab",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          13.0,
+          0,
+          23.0
+        ],
+        [
+          12,
+          0,
+          22
+        ],
+        [
+          11.0,
+          0,
+          16.0
+        ]
+      ],
+      "threshold": [
+        12,
+        0,
+        22
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L11",
+      "a": "teaching-hall",
+      "b": "teaching-stair",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          22.0,
+          0,
+          32.0
+        ],
+        [
+          24,
+          0,
+          44
+        ],
+        [
+          27.0,
+          0,
+          40.0
+        ]
+      ],
+      "threshold": [
+        24,
+        0,
+        44
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L14",
+      "a": "teaching-lobby",
+      "b": "meeting",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          24.0,
+          0,
+          58.0
+        ],
+        [
+          28,
+          0,
+          56
+        ],
+        [
+          32.0,
+          0,
+          56.0
+        ]
+      ],
+      "threshold": [
+        28,
+        0,
+        56
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L15",
+      "a": "meeting",
+      "b": "admin",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          32.0,
+          0,
+          56.0
+        ],
+        [
+          32,
+          0,
+          54
+        ],
+        [
+          32.0,
+          0,
+          50.0
+        ]
+      ],
+      "threshold": [
+        32,
+        0,
+        54
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L17",
+      "a": "green",
+      "b": "issue",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          37.5,
+          0,
+          39.0
+        ],
+        [
+          31,
+          0,
+          20
+        ],
+        [
+          31.0,
+          0,
+          18.0
+        ]
+      ],
+      "threshold": [
+        31,
+        0,
+        20
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L19",
+      "a": "issue",
+      "b": "library-stair",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          31.0,
+          0,
+          18.0
+        ],
+        [
+          31,
+          0,
+          16
+        ],
+        [
+          31.0,
+          0,
+          10.0
+        ]
+      ],
+      "threshold": [
+        31,
+        0,
+        16
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L24",
+      "a": "green",
+      "b": "res-hall",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          37.5,
+          0,
+          39.0
+        ],
+        [
+          52,
+          0,
+          70
+        ],
+        [
+          52.0,
+          0,
+          48.0
+        ]
+      ],
+      "threshold": [
+        52,
+        0,
+        70
+      ],
+      "access": "residential",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L28",
+      "a": "res-hall",
+      "b": "cafe",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          52.0,
+          0,
+          48.0
+        ],
+        [
+          50,
+          0,
+          54
+        ],
+        [
+          46.0,
+          0,
+          58.0
+        ]
+      ],
+      "threshold": [
+        50,
+        0,
+        54
+      ],
+      "access": "residential",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L33",
+      "a": "res-hall",
+      "b": "north-cross",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          52.0,
+          0,
+          48.0
+        ],
+        [
+          54,
+          0,
+          40
+        ],
+        [
+          58.0,
+          0,
+          40.0
+        ]
+      ],
+      "threshold": [
+        54,
+        0,
+        40
+      ],
+      "access": "residential",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L34",
+      "a": "north-cross",
+      "b": "north-stair",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          58.0,
+          0,
+          40.0
+        ],
+        [
+          62,
+          0,
+          40.5
+        ],
+        [
+          65.0,
+          0,
+          36.0
+        ]
+      ],
+      "threshold": [
+        62,
+        0,
+        40.5
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L42",
+      "a": "res-hall",
+      "b": "rear-hall",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          52.0,
+          0,
+          48.0
+        ],
+        [
+          52,
+          0,
+          70
+        ],
+        [
+          52.0,
+          0,
+          74.0
+        ]
+      ],
+      "threshold": [
+        52,
+        0,
+        70
+      ],
+      "access": "residential",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L43",
+      "a": "rear-hall",
+      "b": "res-cellar-stair",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          52.0,
+          0,
+          74.0
+        ],
+        [
+          50,
+          0,
+          75
+        ],
+        [
+          46.0,
+          0,
+          72.0
+        ]
+      ],
+      "threshold": [
+        50,
+        0,
+        75
+      ],
+      "access": "residential",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L44",
+      "a": "rear-hall",
+      "b": "green",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          52.0,
+          0,
+          74.0
+        ],
+        [
+          52,
+          0,
+          78
+        ],
+        [
+          37.5,
+          0,
+          39.0
+        ]
+      ],
+      "threshold": [
+        52,
+        0,
+        78
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L45",
+      "a": "north-stair",
+      "b": "green",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          65.0,
+          0,
+          36.0
+        ],
+        [
+          68,
+          0,
+          36
+        ],
+        [
+          37.5,
+          0,
+          39.0
+        ]
+      ],
+      "threshold": [
+        68,
+        0,
+        36
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L47",
+      "a": "upper-teaching",
+      "b": "upper-teaching-stair",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          22.0,
+          3.6,
+          32.0
+        ],
+        [
+          24,
+          3.6,
+          44
+        ],
+        [
+          27.0,
+          3.6,
+          40.0
+        ]
+      ],
+      "threshold": [
+        24,
+        3.6,
+        44
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L51",
+      "a": "upper-library-stair",
+      "b": "upper-library-landing",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          31.0,
+          3.6,
+          10.0
+        ],
+        [
+          31,
+          3.6,
+          16
+        ],
+        [
+          31.0,
+          3.6,
+          18.0
+        ]
+      ],
+      "threshold": [
+        31,
+        3.6,
+        16
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L52",
+      "a": "upper-library-landing",
+      "b": "bridge-lobby",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          31.0,
+          3.6,
+          18.0
+        ],
+        [
+          34,
+          3.6,
+          18
+        ],
+        [
+          44.0,
+          3.6,
+          18.0
+        ]
+      ],
+      "threshold": [
+        34,
+        3.6,
+        18
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L55",
+      "a": "bridge-lobby",
+      "b": "bridge",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          44.0,
+          3.6,
+          18.0
+        ],
+        [
+          52,
+          3.6,
+          20
+        ],
+        [
+          52.0,
+          3.6,
+          22.0
+        ]
+      ],
+      "threshold": [
+        52,
+        3.6,
+        20
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L56",
+      "a": "bridge",
+      "b": "bridge-return",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          52.0,
+          3.6,
+          22.0
+        ],
+        [
+          52,
+          3.6,
+          24
+        ],
+        [
+          52.0,
+          3.6,
+          25.0
+        ]
+      ],
+      "threshold": [
+        52,
+        3.6,
+        24
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L57",
+      "a": "res-bridge-approach",
+      "b": "upper-res-hall",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          52.0,
+          3.6,
+          30.0
+        ],
+        [
+          52,
+          3.6,
+          34
+        ],
+        [
+          52.0,
+          3.6,
+          52.0
+        ]
+      ],
+      "threshold": [
+        52,
+        3.6,
+        34
+      ],
+      "access": "residential",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L62",
+      "a": "upper-res-hall",
+      "b": "upper-north-cross",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          52.0,
+          3.6,
+          52.0
+        ],
+        [
+          54,
+          3.6,
+          40
+        ],
+        [
+          58.0,
+          3.6,
+          40.0
+        ]
+      ],
+      "threshold": [
+        54,
+        3.6,
+        40
+      ],
+      "access": "residential",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L63",
+      "a": "upper-north-cross",
+      "b": "upper-north-stair",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          58.0,
+          3.6,
+          40.0
+        ],
+        [
+          62,
+          3.6,
+          40.5
+        ],
+        [
+          65.0,
+          3.6,
+          36.0
+        ]
+      ],
+      "threshold": [
+        62,
+        3.6,
+        40.5
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L67",
+      "a": "west-tunnel",
+      "b": "maintenance",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          22.0,
+          -3,
+          32.0
+        ],
+        [
+          20,
+          -3,
+          28
+        ],
+        [
+          16.0,
+          -3,
+          29.0
+        ]
+      ],
+      "threshold": [
+        20,
+        -3,
+        28
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L68",
+      "a": "west-tunnel",
+      "b": "west-cellar-stair",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          22.0,
+          -3,
+          32.0
+        ],
+        [
+          24,
+          -3,
+          40
+        ],
+        [
+          27.0,
+          -3,
+          40.0
+        ]
+      ],
+      "threshold": [
+        24,
+        -3,
+        40
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L69",
+      "a": "west-cellar-stair",
+      "b": "cross-tunnel",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          27.0,
+          -3,
+          40.0
+        ],
+        [
+          30,
+          -3,
+          40
+        ],
+        [
+          38.0,
+          -3,
+          40.0
+        ]
+      ],
+      "threshold": [
+        30,
+        -3,
+        40
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L70",
+      "a": "cross-tunnel",
+      "b": "east-tunnel",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          38.0,
+          -3,
+          40.0
+        ],
+        [
+          44,
+          -3,
+          42
+        ],
+        [
+          44.0,
+          -3,
+          54.0
+        ]
+      ],
+      "threshold": [
+        44,
+        -3,
+        42
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L71",
+      "a": "east-tunnel",
+      "b": "east-cellar-stair",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          44.0,
+          -3,
+          54.0
+        ],
+        [
+          44,
+          -3,
+          66
+        ],
+        [
+          46.0,
+          -3,
+          72.0
+        ]
+      ],
+      "threshold": [
+        44,
+        -3,
+        66
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L72",
+      "a": "upper-res-hall",
+      "b": "res-west-1",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          52.0,
+          3.6,
+          52.0
+        ],
+        [
+          50,
+          3.6,
+          37
+        ],
+        [
+          46.0,
+          3.6,
+          38.0
+        ]
+      ],
+      "threshold": [
+        50,
+        3.6,
+        37
+      ],
+      "access": "residential",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L76",
+      "a": "res-bridge-approach",
+      "b": "res-east-1",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          52.0,
+          3.6,
+          30.0
+        ],
+        [
+          54,
+          3.6,
+          33
+        ],
+        [
+          58.0,
+          3.6,
+          34.0
+        ]
+      ],
+      "threshold": [
+        54,
+        3.6,
+        33
+      ],
+      "access": "residential",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L80",
+      "a": "teaching-stair",
+      "b": "upper-teaching-stair",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          27,
+          0,
+          36
+        ],
+        [
+          27,
+          3.6,
+          41.76
+        ]
+      ],
+      "rise_m": 3.6,
+      "run_m": 5.760000000000001,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 20,
+      "construction": "Full-run voids and structural undersides; clear side bypass and both end landings remain to be physically built.",
+      "note": "Separate real entrance/return flights; no floor-hopping graph substitute.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L81",
+      "a": "library-stair",
+      "b": "upper-library-stair",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          31,
+          0,
+          6
+        ],
+        [
+          31,
+          3.6,
+          11.760000000000002
+        ]
+      ],
+      "rise_m": 3.6,
+      "run_m": 5.760000000000001,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 20,
+      "construction": "Full-run voids and structural undersides; clear side bypass and both end landings remain to be physically built.",
+      "note": "Separate real entrance/return flights; no floor-hopping graph substitute.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L82",
+      "a": "north-stair",
+      "b": "upper-north-stair",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          65,
+          0,
+          32
+        ],
+        [
+          65,
+          3.6,
+          37.760000000000005
+        ]
+      ],
+      "rise_m": 3.6,
+      "run_m": 5.760000000000001,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 20,
+      "construction": "Full-run voids and structural undersides; clear side bypass and both end landings remain to be physically built.",
+      "note": "Separate real entrance/return flights; no floor-hopping graph substitute.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L84",
+      "a": "west-cellar-stair",
+      "b": "teaching-stair",
+      "kind": "stairs",
+      "width": 1.4,
+      "points": [
+        [
+          27,
+          -3,
+          36
+        ],
+        [
+          27,
+          0,
+          40.8
+        ]
+      ],
+      "rise_m": 3,
+      "run_m": 4.800000000000001,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 18,
+      "construction": "Full-run voids and structural undersides; clear side bypass and both end landings remain to be physically built.",
+      "note": "Separate real entrance/return flights; no floor-hopping graph substitute.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L85",
+      "a": "east-cellar-stair",
+      "b": "res-cellar-stair",
+      "kind": "stairs",
+      "width": 1.4,
+      "points": [
+        [
+          46,
+          -3,
+          68
+        ],
+        [
+          46,
+          0,
+          72.8
+        ]
+      ],
+      "rise_m": 3,
+      "run_m": 4.800000000000001,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 18,
+      "construction": "Full-run voids and structural undersides; clear side bypass and both end landings remain to be physically built.",
+      "note": "Separate real entrance/return flights; no floor-hopping graph substitute.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L86",
+      "a": "upper-teaching",
+      "b": "teaching-library-link",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          22.0,
+          3.6,
+          32.0
+        ],
+        [
+          24,
+          3.6,
+          14
+        ],
+        [
+          26.0,
+          3.6,
+          14.0
+        ]
+      ],
+      "threshold": [
+        24,
+        3.6,
+        14
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L87",
+      "a": "teaching-library-link",
+      "b": "upper-library-stair",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          26.0,
+          3.6,
+          14.0
+        ],
+        [
+          28,
+          3.6,
+          14
+        ],
+        [
+          31.0,
+          3.6,
+          10.0
+        ]
+      ],
+      "threshold": [
+        28,
+        3.6,
+        14
+      ],
+      "access": "campus",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L88",
+      "a": "bridge-return",
+      "b": "res-bridge-approach",
+      "kind": "level",
+      "width": 1.4,
+      "points": [
+        [
+          52.0,
+          3.6,
+          25.0
+        ],
+        [
+          52,
+          3.6,
+          26
+        ],
+        [
+          52.0,
+          3.6,
+          30.0
+        ]
+      ],
+      "threshold": [
+        52,
+        3.6,
+        26
+      ],
+      "access": "residential",
+      "note": "Exact proposed threshold; diagram lines do not establish capsule or privacy acceptance.",
+      "player_access": "OPEN_ROUTE"
+    }
+  ],
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "lecture",
+      "point": [
+        13,
+        0,
+        44
+      ]
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "maintenance",
+      "point": [
+        16,
+        -3,
+        29
+      ]
+    },
+    {
+      "rite": "Absolution",
+      "zone": "green",
+      "point": [
+        35,
+        0,
+        30
+      ]
+    }
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      32,
+      0,
+      96
+    ],
+    "yaw": -1.5707963267948966,
+    "cargo_route": [
+      [
+        28.372,
+        0,
+        96
+      ],
+      [
+        24,
+        0,
+        78
+      ],
+      [
+        24,
+        0,
+        62
+      ]
+    ],
+    "note": "Canonical van and actual future surface support required; arrival diagrams are not traversability proof."
+  },
+  "search_envelope": {
+    "status": "DESIGN_ONLY_SEALS_NOT_RUNTIME_IMPLEMENTED",
+    "maximum": 40,
+    "accessible_spaces": 40,
+    "sealed_context_spaces": 41,
+    "count_rule": "Every OPEN_SEARCH space counts, including corridors, stairs, service rooms, exterior sectors and staging. Stable fifteen gameplay owners are not the room budget.",
+    "barriers": [
+      {
+        "link": "L09",
+        "a": "lab",
+        "b": "lab-prep",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L10",
+        "a": "lab",
+        "b": "lab-wash",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L12",
+        "a": "teaching-hall",
+        "b": "cleaner",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L13",
+        "a": "teaching-hall",
+        "b": "public-wc",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L16",
+        "a": "meeting",
+        "b": "records",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L18",
+        "a": "issue",
+        "b": "library-hall",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L25",
+        "a": "res-hall",
+        "b": "res-lift",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L26",
+        "a": "res-hall",
+        "b": "laundry",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L27",
+        "a": "res-hall",
+        "b": "union-common",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L29",
+        "a": "res-hall",
+        "b": "service-base",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L30",
+        "a": "res-hall",
+        "b": "staff-rest",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L35",
+        "a": "res-hall",
+        "b": "south-cross",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L37",
+        "a": "green",
+        "b": "receiving",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L40",
+        "a": "kitchen",
+        "b": "res-hall",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L41",
+        "a": "washup",
+        "b": "res-hall",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L46",
+        "a": "south-stair",
+        "b": "green",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L48",
+        "a": "upper-teaching",
+        "b": "tutorial",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L49",
+        "a": "upper-teaching",
+        "b": "project",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L50",
+        "a": "upper-teaching",
+        "b": "upper-seminar",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L53",
+        "a": "bridge-lobby",
+        "b": "upper-stacks",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L54",
+        "a": "bridge-lobby",
+        "b": "upper-reading",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L58",
+        "a": "res-bridge-approach",
+        "b": "upper-res-lift",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L59",
+        "a": "res-bridge-approach",
+        "b": "bath-entry",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L64",
+        "a": "upper-res-hall",
+        "b": "upper-south-cross",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L66",
+        "a": "west-tunnel",
+        "b": "plant",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L73",
+        "a": "upper-res-hall",
+        "b": "res-west-2",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L74",
+        "a": "upper-res-hall",
+        "b": "res-west-3",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L75",
+        "a": "upper-res-hall",
+        "b": "res-west-4",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L77",
+        "a": "upper-res-hall",
+        "b": "res-east-2",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L78",
+        "a": "upper-res-hall",
+        "b": "res-east-3",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      },
+      {
+        "link": "L79",
+        "a": "upper-res-hall",
+        "b": "res-east-4",
+        "kind": "fixed_closed_leaf_or_solid_infill",
+        "requirement": "Permanent body/object/ghost/interaction boundary; rendering and optical response must match solid leaf/infill or intended glazing. No player key, power state, event or damaged leaf may reopen it. Author and verify native/runtime collision; annotation alone is not a seal."
+      }
+    ],
+    "gameplay_rule": "Evidence, ghost spawn/anchor, hiding, switches/tasks, ritual sites, loose objective props and required travel belong only to the connected open envelope. Context windows may show rooms, but no interaction or required search crosses the seal.",
+    "context_rule": "Retain coherent historical rooms/assets behind permanent boundaries. Restrict whole wings to their hallways where useful; do not count shuttable ordinary doors as permanent seals.",
+    "next_gate": "Build actual permanent seals and audit runtime player/ghost/object/optical boundaries and all objective placements; construct the maps inside the forty-space cap. Round-duration testing is outside this rebuild task."
+  }
+}
