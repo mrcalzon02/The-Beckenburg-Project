@@ -7,7 +7,7 @@ public final class CastleMuseumAssetReview {
   String id=args.length==0?"level_castle_armour_display":args[0];
   var file=Path.of("development/assets/castle-museum/exports/"+id+".glb");
   byte[] bytes=Files.readAllBytes(file);var model=GlbProps.decode(bytes);
-  if(model.triangles().size()!=(id.endsWith("_label")?86:id.endsWith("_rope")?264:1036))throw new AssertionError("Measured armour budget changed");
+  if(model.triangles().size()!=(id.endsWith("_fireplace")?56:id.endsWith("_bed")?828:id.endsWith("_label")?86:id.endsWith("_rope")?264:1036))throw new AssertionError("Measured armour budget changed");
   var folder=Path.of("development/assets/castle-museum/previews/runtime-material");Files.createDirectories(folder);
   var r=new SceneRenderer();r.setRenderSize(800,800);
   for(int i=0;i<4;i++){

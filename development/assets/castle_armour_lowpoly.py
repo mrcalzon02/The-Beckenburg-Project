@@ -1,6 +1,6 @@
 """Sharp, low-count museum harness with an authored component texture atlas.
 
-Budget reference: shipped cars372â€“457 triangles; Matthis proxy1239 triangles.
+Budget reference: shipped cars372Ã¢â‚¬â€œ457 triangles; Matthis proxy1239 triangles.
 Target<=1250 including the display plinth. Rivets, etching, narrow lames,
 perforations and edge wear are texture details, not hundreds of small meshes.
 """
@@ -19,49 +19,10 @@ def build(*unused):
         'shin':(384,112,64,192),'knee':(448,112,64,96),'waist':(0,160,128,64),
         'tasset':(128,160,128,128),'foot':(0,288,128,128),'leather':(128,288,64,128),
         'stone':(256,320,128,128)}
-    rng=random.Random(249);pixels=[.12,.12,.12,1]*(size*size)
-    for kind,(ox,oy,w,h) in regions.items():
-        for yy in range(h):
-            for xx in range(w):
-                u=xx/max(1,w-1);v=yy/max(1,h-1)
-                noise=rng.uniform(-.009,.009)
-                if kind=='stone':
-                    value=.31+noise+.018*math.sin(xx*.14)*math.sin(yy*.11)
-                    rgb=(value*1.04,value,value*.88)
-                elif kind=='leather':
-                    value=.065+noise
-                    rgb=(value*1.3,value*.7,value*.45)
-                    if xx<3 or xx>w-4:rgb=(.15,.10,.055)
-                else:
-                    # Broad hand-burnished metal shading; dark sides, rubbed centre.
-                    value=.24+.115*(math.sin(math.pi*u)**.7)+noise+.007*math.sin(yy*.8)
-                    rgb=(value*.94,value,value*1.035)
-                    edge=min(xx,yy,w-1-xx,h-1-yy)
-                    if edge<2:rgb=(.39,.40,.41)
-                    elif edge<4:rgb=(.13,.14,.15)
-                    if kind=='chest':
-                        if abs(u-.5)<.004:rgb=(.37,.39,.40)
-                    # Lapped sheet edges: a shadow above a narrow bright return.
-                    n={'waist':4,'tasset':5,'shoulder':4,'foot':6,'hand':4}.get(kind)
-                    if n:
-                        f=(v*n)%1
-                        if f<.045:rgb=(.105,.115,.125)
-                        elif f<.075:rgb=(.42,.43,.44)
-                        # Peened rivets remain painted at proper plate margins.
-                        for ru in [.10,.90]:
-                            if ((u-ru)*w)**2+((f-.24)*h/n)**2<2.0**2:rgb=(.45,.35,.17)
-                    if kind=='helmet':
-                        for ru in [.24,.35,.65,.76]:
-                            if ((u-ru)*w)**2+((v-.31)*h)**2<2.2**2:rgb=(.025,.025,.025)
-                    if kind in ['arm','shin']:
-                        if abs(u-.5)<.014:rgb=(.39,.41,.42)
-                        if (.16<v<.19 or .82<v<.85) and (.15<u<.25 or .75<u<.85):rgb=(.075,.05,.03)
-                    # Broad low-contrast patina survives the PSX rasterizer;
-                    # isolated dark texels read as holes/polka dots at game scale.
-                    patina=.012*math.sin(xx*.11)*math.sin(yy*.073)
-                    rgb=tuple(max(0,min(1,c+patina)) for c in rgb)
-                pos=((oy+yy)*size+ox+xx)*4;pixels[pos:pos+4]=[*rgb,1]
-    image=bpy.data.images.new('Castle field harness / component atlas',size,size);image.pixels=pixels;image.pack()
+    # Owner direction: generated material artwork, original UV islands unchanged.
+    image=bpy.data.images.load(str(Path(__file__).with_name('castle-museum')/'textures/armour-imagegen-master.png'))
+    image.name='Castle field harness / generated component atlas';image.scale(512,512)
+    image.filepath_raw=str(Path(__file__).with_name('castle-museum')/'textures/armour-runtime-atlas.png');image.file_format='PNG';image.save();image.pack()
     mat=bpy.data.materials.new('Castle field harness / painted steel leather stone');mat.use_nodes=True
     shader=mat.node_tree.nodes.get('Principled BSDF');shader.inputs['Roughness'].default_value=.58;shader.inputs['Metallic'].default_value=.32
     tex=mat.node_tree.nodes.new('ShaderNodeTexImage');tex.image=image;tex.interpolation='Closest';mat.node_tree.links.new(tex.outputs['Color'],shader.inputs['Base Color'])
@@ -202,7 +163,7 @@ def build(*unused):
     bm=bmesh.new();bm.from_mesh(mesh);bmesh.ops.remove_doubles(bm,verts=list(bm.verts),dist=.000001)
     bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces));bm.to_mesh(mesh);bm.free()
     mesh.calc_loop_triangles()
-    obj['triangle_budget_reference']='Cars372â€“457; Matthis proxy1239; target<=1250 including plinth'
+    obj['triangle_budget_reference']='Cars372Ã¢â‚¬â€œ457; Matthis proxy1239; target<=1250 including plinth'
     obj['authored_triangle_count']=len(mesh.loop_triangles)
     if len(mesh.loop_triangles)>1250:raise RuntimeError('Armour exceeds measured character-model budget: '+str(len(mesh.loop_triangles)))
     audit_contacts(mesh)

@@ -9,7 +9,7 @@
     ],
     "meshes": 1,
     "triangles": 1036,
-    "sha256": "9b802fa08e06d3acd0c21fded0b608e09eaa6afea0490d3c75cb2ee7e4da9738",
+    "sha256": "f1a59408bc99af5ed8ec0a6dae03e727a1c4ddd9623259e4e18d325d8eab1a90",
     "status": "NATIVE_ARCHIVE_RUNTIME_PILOT_VERIFIED"
   },
   "benchmark": {
@@ -28,7 +28,7 @@
   "negative": "armour-contact-audit-negative-detached-helmet.json",
   "source_files": {
     "development/assets/build_castle_museum.py": "92c0f4de8879e557cf23a8021a88273b0e11b671fc5568e461475908ea4c68d3",
-    "development/assets/castle_armour_lowpoly.py": "c467ed31f057b7e83a77306dd045a0320e1b0ec7b135301051858716491197ef",
+    "development/assets/castle_armour_lowpoly.py": "a76be2a932caab5bec54224018427784e5d2b40984b875a6bf1bba0114de473e",
     "development/assets/inspect_castle_armour_contacts.py": "755f7e366540e1292f11eae06222d432d4c8aff05f1b8d6290de0b4464d268e8"
   },
   "captures": {
@@ -39,16 +39,16 @@
     "level_castle_armour_display-clay-quarter.png": "11f7042a2c0d66c656c9fa5d40526091dea89dfd5769d1b12e154319ca5b6c8c",
     "level_castle_armour_display-clay-rear.png": "8acbe4fb37560c2a2a75e405e44a3a93c33b584405f9c62538e16c2c495dbd56",
     "level_castle_armour_display-clay-side.png": "cd065ade1ebb4ffec2d8e37997002385e911bcd3754786978324bcbe1ae60fd9",
-    "level_castle_armour_display-feet-front.png": "a759279b62f14a59c6f5eb3c684d934d2272c71207030f282719fdcddfef3dc5",
-    "level_castle_armour_display-feet-quarter.png": "e848ed0bd4e21094c8d99760b2f79306fbf02d4fc399ecddc3a7ffa4931bd517",
-    "level_castle_armour_display-feet-side.png": "1f89171df7ead53f1c8afcc2ea274ae49704cf3434aefd6af24e6dc0c768d122",
-    "level_castle_armour_display-front.png": "52852b4d19dbf78740df4b7084c9400303ad273128427871d2b3ed70e46c2038",
-    "level_castle_armour_display-quarter.png": "8386a8058b336e7d2da0fd9b75c7f815246cca32843cfc30da838fdc2afe4f70",
-    "level_castle_armour_display-rear.png": "016c7171dbe0bbf101d7f279e4e90898f62f6db839c9e74c1c4a2dfd003978c7",
-    "level_castle_armour_display-side.png": "bc9fe86574a117912966e32b09f1529b385f26f972cc107abbabe2e7d2bb32a3"
+    "level_castle_armour_display-feet-front.png": "a86d4384d75542f81970291d9ec946aa8b906c0c0d2d24a820edae9ec66bc29f",
+    "level_castle_armour_display-feet-quarter.png": "5828a236081d3a4cf71c497d7b88b38e9a9957aec1400611001981cfa99b922c",
+    "level_castle_armour_display-feet-side.png": "3216d97bc610afc4aab1ed4ad6c202701d1ee8a5e9334ad98d2e2a5cf6bc8418",
+    "level_castle_armour_display-front.png": "b0bea42af3bc1bf253332a8bb316af9bc7c626388c8711cfe1ee6cd894c5072d",
+    "level_castle_armour_display-quarter.png": "29a91e9dfa32e103b1e5b2482c1a09ac6514cecfc1dbddb522a62a72e64e107a",
+    "level_castle_armour_display-rear.png": "dfb4af2b2a8263305c08d49971e15f5aeeba9634cf12d9a89172810528de395b",
+    "level_castle_armour_display-side.png": "8d880c81fbf3e47409bf67aaf9d75a8c6030a6fa219c195c4051c70838ab6154"
   },
-  "limits": "Three reviewed native pilot models: armour1036/caption86/barrier264 triangles. Full kit/site art and platform acceptance remain open.",
-  "runtime_evidence": "development\\levels\\rebuild\\verification\\castle-museum-2026-11-03\\verification.json",
+  "limits": "Scoped native armour/caption/barrier, six828-triangle tester beds and26-face cold fireplace. Full kit/site/platform acceptance remains open.",
+  "runtime_evidence": "development/levels/rebuild/verification/castle-imagegen-2026-11-03/verification.json",
   "geometry_review": {
     "anatomical_silhouette": 4,
     "connected_assembly": 5,
@@ -63,5 +63,6 @@
     "level_castle_armour_label",
     "level_castle_museum_rope"
   ],
-  "remaining": "Other original study assets remain rejected/quarantined. Complete their independent reference/triangle-budget/contact/material reviews, protected training, services, restoration wear/story and full Castle acceptance."
+  "remaining": "Other original study assets remain rejected/quarantined. Complete their independent reference/triangle-budget/contact/material reviews, protected training, services, restoration wear/story and full Castle acceptance.",
+  "surface_revision": "Owner-requested built-in image-generation component atlas; original1036-triangle geometry/UVs retained. See textures/armour-imagegen-master.png and bed-armour-imagegen-prompts.txt."
 }

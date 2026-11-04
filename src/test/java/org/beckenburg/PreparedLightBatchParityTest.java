@@ -53,6 +53,8 @@ public final class PreparedLightBatchParityTest {
         fast.roomLights=new RoomLighting();dense.roomLights=new RoomLighting();fast.lamp=dense.lamp=false;
         var sites=new ArrayList<HouseMap.Site>();sites.add(null);sites.addAll(Arrays.asList(HouseMap.Site.values()));
         for(var site:sites){
+            long started=System.nanoTime();
+            System.out.println("PARITY BEGIN site="+(site==null?"CASTLE":site.name()));
             var castle=site==null?new CastleHubMap():null;var map=site==null?null:new HouseMap(site);
             if(map==null){fast.x=dense.x=22;fast.z=dense.z=57;fast.eyeHeight=dense.eyeHeight=24;fast.yaw=dense.yaw=Math.PI;fast.pitch=dense.pitch=-.5;}
             else{var p=map.spawn(0);fast.x=dense.x=p.x();fast.z=dense.z=p.z();fast.eyeHeight=dense.eyeHeight=p.y()+1.62;fast.yaw=dense.yaw=Math.PI/3;fast.pitch=dense.pitch=-.1;}
@@ -65,6 +67,7 @@ public final class PreparedLightBatchParityTest {
                 compare(draw(backend,fast,map,castle,clock,on),draw(backend,dense,map,castle,clock,on));
                 for(var entry:saved.entrySet())check(Arrays.equals(entry.getKey(),entry.getValue()),"Published arrays stay immutable across relighting and doors");
             }
+            System.out.println("PARITY END site="+(site==null?"CASTLE":site.name())+" elapsed_ms="+((System.nanoTime()-started)/1_000_000));
         }
         System.out.println("PASS complete dependency/sparse/dense vertex-batch parity across Castle and all map types, real flicker/blackout/doors, scene changes and immutable published arrays (recording backend)");
     }

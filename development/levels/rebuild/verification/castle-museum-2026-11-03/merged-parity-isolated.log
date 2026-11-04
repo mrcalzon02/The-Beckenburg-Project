@@ -1,0 +1,7 @@
+2026-11-04T07:39:17.550691100Z [main] RENDER SLOW stage=idle faces=87193 visible_faces=22805 culled_faces=64388 target=320x200 build_ms=877 lighting_raster_ms=383
+2026-11-04T07:39:19.882245800Z [main] RENDER SLOW stage=idle faces=204024 visible_faces=63909 culled_faces=140115 target=320x200 build_ms=217 lighting_raster_ms=494
+2026-11-04T07:39:22.100360700Z [main] RENDER SLOW stage=idle faces=153462 visible_faces=33984 culled_faces=119478 target=320x200 build_ms=23 lighting_raster_ms=483
+2026-11-04T07:39:24.368190200Z [main] RENDER SLOW stage=idle faces=155658 visible_faces=33547 culled_faces=122111 target=320x200 build_ms=21 lighting_raster_ms=570
+2026-11-04T07:39:26.659486500Z [main] RENDER SLOW stage=idle faces=148138 visible_faces=31886 culled_faces=116252 target=320x200 build_ms=40 lighting_raster_ms=512
+2026-11-04T07:39:29.255022700Z [main] RENDER SLOW stage=idle faces=229971 visible_faces=154958 culled_faces=75013 target=320x200 build_ms=1575 lighting_raster_ms=132
+PASS complete dependency/sparse/dense vertex-batch parity across Castle and all map types, real flicker/blackout/doors, scene changes and immutable published arrays (recording backend)

@@ -1,7 +1,7 @@
 {
   "status": "FAIL",
   "phase": "negative-detached-helmet",
-  "source_sha256": "9b802fa08e06d3acd0c21fded0b608e09eaa6afea0490d3c75cb2ee7e4da9738",
+  "source_sha256": "f1a59408bc99af5ed8ec0a6dae03e727a1c4ddd9623259e4e18d325d8eab1a90",
   "triangle_count": 1036,
   "tolerance_metres": 0.001,
   "criterion": "Every geometry component reaches the floor plinth through actual surface intersection/contact, not shared object name or bounding-box overlap",

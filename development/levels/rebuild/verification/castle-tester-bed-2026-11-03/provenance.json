@@ -1,0 +1,13 @@
+{
+  "base_commit": "02bf804a525d11077146b83228e6262376a4868d",
+  "source_overlays": {
+    "src/main/java/org/beckenburg/CastleUpper.java": "1b881e49af480b8565cade89661c019a83b87595c0141fd6063892d6d23a87a2",
+    "src/main/java/org/beckenburg/LevelAssets.java": "5e0bb8bba950648c275fc783047bd7f3c783945345da36743b020b3451f2a65f",
+    "src/main/java/org/beckenburg/BeckenburgRegressionSuite.java": "3807eb9989334a755cacf8b9ec257484436d20e192ba89f651ca2d022fd84a55",
+    "src/test/java/org/beckenburg/CastleTesterBedTest.java": "8206ba46c84d81ccf673285723cdfdc92a7a026447025f0d30e0df61149df733",
+    "src/test/java/org/beckenburg/PreparedLightBatchParityTest.java": "d70350f267756c01ffb1d61e2fde539acfbda992305557443fd49e0c34dd6028",
+    "regression-tests.txt": "e10779bc5a1b7a62b38c287d71a8110ab14f1a63e65409dd82037c1c1710b0ac"
+  },
+  "jar_sha256": "fa37f0d136ea18d067453485e2d5cfeaf2eabf0ca459c4cc5661e32cf3a2a461",
+  "purpose": "Isolated baseline main/test compilation with only Castle bed and parity-diagnostic changes; shared runtime resource JAR copied without any classes; other task left untouched"
+}

@@ -1,0 +1,104 @@
+{
+  "status": "NATIVE_PILOT_VERIFIED_FULL_CASTLE_OPEN",
+  "phase": "fireplace-export",
+  "source_sha256": "f0620f000d61d936838e06e4b999655a31e641bb856d35954fb8b062eb82603e",
+  "triangle_count": 56,
+  "tolerance_metres": 0.001,
+  "criterion": "Every geometry component reaches the floor plinth through actual surface intersection/contact, not shared object name or bounding-box overlap",
+  "components": [
+    {
+      "id": 0,
+      "vertices": 8,
+      "bounds": [
+        [
+          -1.559999942779541,
+          -0.6700000166893005,
+          0.0
+        ],
+        [
+          1.559999942779541,
+          0.4699999988079071,
+          0.14000000059604645
+        ]
+      ],
+      "contacts": [
+        1
+      ],
+      "supported": true
+    },
+    {
+      "id": 1,
+      "vertices": 24,
+      "bounds": [
+        [
+          -1.399999976158142,
+          -0.3499999940395355,
+          0.14000000059604645
+        ],
+        [
+          1.399999976158142,
+          0.3499999940395355,
+          2.8499999046325684
+        ]
+      ],
+      "contacts": [
+        0,
+        2
+      ],
+      "supported": true
+    },
+    {
+      "id": 2,
+      "vertices": 8,
+      "bounds": [
+        [
+          -1.4800000190734863,
+          -0.4699999988079071,
+          1.940000057220459
+        ],
+        [
+          1.4800000190734863,
+          0.3700000047683716,
+          2.0399999618530273
+        ]
+      ],
+      "contacts": [
+        1
+      ],
+      "supported": true
+    }
+  ],
+  "authored_faces": 26,
+  "dimensions_metres": [
+    3.119999885559082,
+    1.1399999856948853,
+    2.8499999046325684
+  ],
+  "reference": "https://www.metmuseum.org/art/collection/search/471241",
+  "scope": "Original26-face restored castle fireplace; real backed/splayed opening, hearth, borne mantel; ornament/masonry/iron/soot in one512px atlas. Cold retained fitting, no live fire or working flue claimed.",
+  "runtime_evidence": "development/levels/rebuild/verification/castle-imagegen-2026-11-03/verification.json",
+  "generated_materials": "Built-in image_gen tool; original masters and exact prompts in textures/,512px runtime atlases/256px curtains",
+  "captures": {
+    "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png": "97740fca601e95781cf6e2829b6ee97dfa8d85c27520f96b83ef9e2ed9a70e15",
+    "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-1-source-material.png": "9c4a36a68461056601d41a61b2ecdd27fcf56c814f911becdce9487db5b63690",
+    "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-2-source-material.png": "86d4b7c228ba54e482d99051ad97124e7a7c942670e8bc77fe85bc4f36774275",
+    "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-3-source-material.png": "95b8b739881d9114649a5a7a60cddb0dbf86a8eb70af39116cfac1e1542cd2b6",
+    "development/assets/castle-museum/previews/fireplace-rebuild/front.png": "a720b40f257ea83ef2a1c2d0c553200ff9db2b934698906c3a5a3c442c959fd1",
+    "development/assets/castle-museum/previews/fireplace-rebuild/quarter.png": "8d42196f22616a650a12153a568795fb2ab267ae5165945a28e0475304cfec10",
+    "development/assets/castle-museum/previews/fireplace-rebuild/rear.png": "9d620a1ec8bd83ff9461b7598df456933d7f3fdef26541ac66f32b900218d245",
+    "development/assets/castle-museum/previews/fireplace-rebuild/side.png": "b2dd6404c0b296831cf009a9f933315c55096a145097dc584e846e3280eb3857",
+    "development/levels/rebuild/captures/castle-construction/fireplace-0-runtime.png": "63ea012ea3827bc389662a5cd32b97362a7763672a70569589a3608d81044ab0",
+    "development/levels/rebuild/captures/castle-construction/fireplace-1-runtime.png": "8b5063d2cf28f7ad472f29306bf17901583b87fefcce9aa04eff4081653906ca"
+  },
+  "source_files": {
+    "development/assets/build_castle_fireplace.py": "db7ecb516e7fc6763ee40890cdf6530d24ca667ed9b6c75c66734ff720361397"
+  },
+  "review": {
+    "geometry": 5,
+    "physical_support": 5,
+    "material_readability": 4,
+    "native_fit": 4,
+    "scale": "out of5, scoped current artifact only",
+    "reason": "Actual exported studio and software material views plus editor-service Castle captures reviewed. Retained ground/upper flood, switch access and source-size fixture checks pass. No complete Castle/platform acceptance inferred."
+  }
+}

@@ -1,0 +1,24 @@
+C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Project\development\assets\build_castle_bed.py:22: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat=bpy.data.materials.new('Restored oak / worn woven burgundy / linen');mat.use_nodes=True
+C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Project\development\assets\build_castle_bed.py:109: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  curtain_mat=bpy.data.materials.new('Burgundy curtain sprites / alpha cutout');curtain_mat.use_nodes=True
+Info: Saved as "four_poster_bed.blend"
+INFO Draco mesh compression is available, use library at C:\Program Files\Blender Foundation\Blender 5.0\5.0\scripts\addons_core\io_scene_gltf2\extern_draco.dll
+23:42:22 | INFO: Starting glTF 2.0 export
+23:42:22 | WARNING: Mesh Continuous shaped oak post is not valid, and may be exported wrongly
+23:42:22 | INFO: Extracting primitive: Continuous shaped oak post
+23:42:22 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+23:42:22 | INFO: Primitives created: 2
+23:42:22 | INFO: Finished glTF 2.0 export in 0.006074666976928711 s
+
+23:42:23 | INFO: Data are loaded, start creating Blender stuff
+23:42:23 | INFO: Blender create Mesh node Continuous shaped oak post
+23:42:23 | INFO: glTF import finished in 0.00s
+00:03.937  render           | Saved: 'C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Project\development\assets\castle-museum\previews\four-poster-rebuild\quarter.png'
+00:06.406  render           | Saved: 'C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Project\development\assets\castle-museum\previews\four-poster-rebuild\head.png'
+00:08.828  render           | Saved: 'C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Project\development\assets\castle-museum\previews\four-poster-rebuild\side.png'
+00:11.062  render           | Saved: 'C:\Users\Admin\Documents\ChatGPT\Phasmaphobia alike\The-Beckenburg-Project\development\assets\castle-museum\previews\four-poster-rebuild\rear.png'
+PASS bed source/export contacts; 828 triangles; independent reimported four-view renders; visual/runtime acceptance pending
+Blender 5.0.0 (hash a37564c4df7a built 2025-11-18 11:06:54)
+
+Blender quit

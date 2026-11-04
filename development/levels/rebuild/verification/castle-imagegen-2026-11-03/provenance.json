@@ -1,0 +1,15 @@
+{
+  "base_commit": "02bf804a525d11077146b83228e6262376a4868d",
+  "source_overlays": {
+    "src/main/java/org/beckenburg/CastleUpper.java": "1b881e49af480b8565cade89661c019a83b87595c0141fd6063892d6d23a87a2",
+    "src/main/java/org/beckenburg/CastleMuseum.java": "234ae6b2ae617bb832d47c7134a2f14f789c5036496124a4fc9415d408e4e10b",
+    "src/main/java/org/beckenburg/LevelAssets.java": "386776c739aa82869e51a8b9ee77e9fe71f48b4eba2e54ac080213db9c960959",
+    "src/main/java/org/beckenburg/BeckenburgRegressionSuite.java": "1b7dc4296f170fe08dfd2864338a4d97c3c6da531bddc6c10cf856652a0c54c1",
+    "src/test/java/org/beckenburg/CastleTesterBedTest.java": "2639f2c810dac7893b724dbb69b2da92158381ed2fbe517688eb82d162410f88",
+    "src/test/java/org/beckenburg/CastleFireplaceTest.java": "913565b8ead6b2d0a77e793b2e756ac0de8a3f946efdb266e4d9218a9807f3b6",
+    "src/test/java/org/beckenburg/PreparedLightBatchParityTest.java": "d70350f267756c01ffb1d61e2fde539acfbda992305557443fd49e0c34dd6028",
+    "regression-tests.txt": "af1d3a6ca3d3fd94e3ee8a32034c7c167dfdf85827fdf71a09fb64cca89cb1e2"
+  },
+  "jar_sha256": "31ab4ad4a7f2e1a8155fa240131dfe49942c9ab9a904bd8c488eb89e6ee3fd04",
+  "purpose": "Isolated baseline main/test compilation with only Castle bed and parity-diagnostic changes; shared runtime resource JAR copied without any classes; other task left untouched"
+}

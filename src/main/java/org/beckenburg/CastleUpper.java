@@ -68,7 +68,7 @@ public final class CastleUpper {
         }
         int n=0;
         for(var bed:CastleUpperLayout.BEDS){
-            prop(props,"upper-bed-"+n,"bed_5",bed.x(),bed.z(),0);
+            prop(props,"upper-bed-"+n,"level_castle_four_poster_bed",bed.x(),bed.z(),0);
             prop(props,"upper-bedside-"+n++,"bedside_table_1",2,bed.z(),0);
         }
         surfaces.put("upper-floor-north-west-link",new CastleLevelEdits.Surface("upper-floor-north-west-link",CastleLevelEdits.Kind.FLOOR,
