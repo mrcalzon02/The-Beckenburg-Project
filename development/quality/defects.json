@@ -2630,6 +2630,17 @@
       "action": "Use original glTF image origin for exactly these two inspected model identities; preserve source GLB geometry, UV coordinates, image pixels, pivots and mounts.",
       "evidence": "development/quality/evidence/wall-lamp-uv-2026-11-03; WallLampSourceUvTest fails with original JAR and passes all64 actual triangle-centroid samples after correction. Three-angle actual Castle on/off captures retained in development/captures/wall-lamp-runtime.",
       "older_maps": "Shared model repair applies to old sites using these identities. Other models retain their existing origin; no claim that unrelated legacy assets are UV-audited."
+    },
+    {
+      "id": "DEV-245",
+      "title": "Wall-light backing plate is oversized and untextured",
+      "status": "fixed-scoped; actual textured renderer faces, source-geometry contact and captures verified",
+      "affected": "Castle wall-light mounting plates, including edited scenes and lower/upper fixtures",
+      "symptom": "A large flat brown rectangle extends above and below the textured light housing.",
+      "cause": "Renderer adds a hardcoded untextured30x40x5.2cm primitive independent of fixture scale.",
+      "action": "Replace with a compact scaled strap using the original lamp metal atlas region on all six faces; seat into masonry and meet actual source rear lip.",
+      "evidence": "development/quality/evidence/wall-lamp-bracket-2026-11-03; WallLampMountPlateTest verifies actual renderer materials/UVs, texture variation, source-triangle and masonry contact; actual five-angle on/off captures under development/captures/wall-lamp-runtime/textured-bracket.",
+      "older_maps": "Shared Castle renderer correction applies to legacy edited scenes; unrelated map mounting assemblies retain individual audit obligations."
     }
   ],
   "audit_categories": [

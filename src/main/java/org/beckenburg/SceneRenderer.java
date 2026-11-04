@@ -516,12 +516,11 @@ public final class SceneRenderer {
         // still lies *inside* the stone, so never centre the imported sconce
         // on that saved coordinate. Fit its furthest-back triangles instead.
         if(fixture.mount()==CastleHubDecor.Mount.WALL&&wallPose.supported()){
-            if(Math.abs(sy)>.5)
-                box(out,wallPose.plateX()-.026,fixture.y()-.20,wallPose.wallZ()-.15,
-                    .052,.40,.30,0x635447);
-            else
-                box(out,wallPose.wallX()-.15,fixture.y()-.20,wallPose.plateZ()-.026,
-                    .30,.40,.052,0x635447);
+            var plate=CastleWallLampMount.plate(fixture,wallPose);
+            // Reuse the original sconce's weathered steel atlas region, not a flat color
+            // or the fluorescent strip. Both power states retain the same metal finish.
+            int metal=GlbProps.model(fixture.off()).triangles().get(0).material();
+            lampPlate(out,plate,metal);
         }
         for(GlbProps.Triangle t:model.triangles()){
             GlbProps.Vertex[] vv={t.a(),t.b(),t.c()};
@@ -537,6 +536,13 @@ public final class SceneRenderer {
                 vv[0].u(),vv[0].v(),vv[1].u(),vv[1].v(),
                 vv[2].u(),vv[2].v()));
         }
+    }
+    private static void lampPlate(List<Face> out,CastleWallLampMount.Plate p,int metal){
+        double x=p.x(),y=p.y(),z=p.z(),sx=p.width(),sy=p.height(),sz=p.depth();
+        Point a=new Point(x,y,z),b=new Point(x+sx,y,z),c=new Point(x+sx,y+sy,z),d=new Point(x,y+sy,z);
+        Point e=new Point(x,y,z+sz),f=new Point(x+sx,y,z+sz),g=new Point(x+sx,y+sy,z+sz),h=new Point(x,y+sy,z+sz);
+        for(Point[] side:new Point[][]{{a,b,c,d},{f,e,h,g},{e,a,d,h},{b,f,g,c},{d,c,g,h},{e,f,b,a}})
+            texturedQuad(out,side[0],side[1],side[2],side[3],metal,.08,.60,.92,.60,.92,.95,.08,.95,0xffffff);
     }
     /** All investigation locations use placed, licensed scenery GLBs with
      * matching host-side collision. No purchasable tools occur in map furnishings.

@@ -59,7 +59,7 @@ public final class CastleLightingPlacementRepairTest {
             }
             check(Math.abs((pose.wallX()-pose.plateX())*Math.sin(fixture.yaw())
                            +(pose.wallZ()-pose.plateZ())*Math.cos(fixture.yaw())
-                           -(CastleDoorSlots.MASONRY_THICKNESS*.5+.025))<.00001,
+                           -(CastleDoorSlots.MASONRY_THICKNESS*.5+.011))<.00001,
                 "mounting plate must be fitted to the masonry face");
         }
         var lighting=new FixtureLighting(map);

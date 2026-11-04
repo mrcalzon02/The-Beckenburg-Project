@@ -3356,6 +3356,20 @@ Evidence and verification: development/quality/evidence/wall-lamp-uv-2026-11-03;
 
 Older-map obligation: Shared model repair applies to old sites using these identities. Other models retain their existing origin; no claim that unrelated legacy assets are UV-audited.
 
+### DEV-245 — Wall-light backing plate is oversized and untextured
+
+**Status:** fixed-scoped; actual textured renderer faces, source-geometry contact and captures verified · **Affected:** Castle wall-light mounting plates, including edited scenes and lower/upper fixtures
+
+A large flat brown rectangle extends above and below the textured light housing.
+
+Cause / uncertainty: Renderer adds a hardcoded untextured30x40x5.2cm primitive independent of fixture scale.
+
+Fix / next action: Replace with a compact scaled strap using the original lamp metal atlas region on all six faces; seat into masonry and meet actual source rear lip.
+
+Evidence and verification: development/quality/evidence/wall-lamp-bracket-2026-11-03; WallLampMountPlateTest verifies actual renderer materials/UVs, texture variation, source-triangle and masonry contact; actual five-angle on/off captures under development/captures/wall-lamp-runtime/textured-bracket.
+
+Older-map obligation: Shared Castle renderer correction applies to legacy edited scenes; unrelated map mounting assemblies retain individual audit obligations.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

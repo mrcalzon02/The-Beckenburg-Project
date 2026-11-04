@@ -10,7 +10,7 @@ import java.util.List;
 final class CastleWallLampMount {
     private CastleWallLampMount() {}
     static final double CLEARANCE = .018;
-    private static final double PLATE_OFFSET = .025;
+    private static final double PLATE_OFFSET = .011;
 
     record Pose(double x,double z,double wallX,double wallZ,
                 double plateX,double plateZ,boolean supported) {}
@@ -46,6 +46,17 @@ final class CastleWallLampMount {
         double move=reach+half+CLEARANCE-nearest;
         return new Pose(fixture.x()-fx*move,fixture.z()-fz*move,wx,wz,
                 wx-fx*(half+PLATE_OFFSET),wz-fz*(half+PLATE_OFFSET),true);
+    }
+
+    /** Compact steel strap follows the source fixture scale and meets its rear lip.
+     * The inner millimetre seats into masonry; the front overlaps the 18mm clearance. */
+    record Plate(double x,double y,double z,double width,double height,double depth) {}
+    static Plate plate(CastleHubDecor.Light fixture,Pose pose){
+        double width=.76*fixture.scale(),height=.12*fixture.scale(),depth=.024;
+        double y=fixture.y()+.07*fixture.scale()-height/2;
+        return Math.abs(Math.sin(fixture.yaw()))>.5
+            ?new Plate(pose.plateX()-depth/2,y,pose.wallZ()-width/2,depth,height,width)
+            :new Plate(pose.wallX()-width/2,y,pose.plateZ()-depth/2,width,height,depth);
     }
 
     private static double rearExtent(CastleHubDecor.Light fixture,String mesh){

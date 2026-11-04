@@ -409,3 +409,8 @@ Next actual work: raise/refit the west upper bearing walls and roof; author the 
 ## Owner-priority wall-light repair — 3 November
 
 Castle expansion held at owner request. Correct original PNG V origin for shared lamp_3_on/off only. Original meshes, UVs, images, pivots and mounting remain byte-identical. The old JAR fails the original-source centroid test; all64 source samples pass with the corrected runtime sampler. Actual three-angle on/off castle comparisons reviewed. Five named UV/lighting/castle checks pass; raw evidence and source hashes under development/quality/evidence/wall-lamp-uv-2026-11-03, captures under development/captures/wall-lamp-runtime. This is a scoped model correction, not full castle acceptance. Unfinished upper construction remains local for resumption after this correction. Prior ground workflows41738078868/41738083540/41738088189 report success; raw full-suite artifact download remains unverified and must not be reported as all-test success.
+
+
+## Owner-priority wall-light bracket — 3 November
+
+Replace flat brown oversized plate with a compact scaled steel strap. All six actual renderer faces use the source lamp metal atlas region, not untextured color. Masonry contact and clipped actual source-triangle connection pass for27 current-scene fittings; the unpublished upper revision remains separate. Original source assets remain unchanged. Actual five-angle on/off captures reviewed. Exact evidence: development/quality/evidence/wall-lamp-bracket-2026-11-03. Full-map acceptance remains open.

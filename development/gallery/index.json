@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 2341,
+  "count": 2351,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -862,6 +862,106 @@
       "height": 625,
       "bytes": 493050,
       "sha256": "17f9374cf293ba3d62848c31371db2cad5e849e276411cecfa10a16bb9902be9"
+    },
+    {
+      "path": "development/captures/wall-lamp-runtime/textured-bracket/wall-lamp-0-off.png",
+      "url": "development/captures/wall-lamp-runtime/textured-bracket/wall-lamp-0-off.png",
+      "title": "Wall lamp 0 off",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 276949,
+      "sha256": "2539911ec09428bba04184b9c66ebed7bcd58da2aeb0fc4f603f94f6575dd49e"
+    },
+    {
+      "path": "development/captures/wall-lamp-runtime/textured-bracket/wall-lamp-0-on.png",
+      "url": "development/captures/wall-lamp-runtime/textured-bracket/wall-lamp-0-on.png",
+      "title": "Wall lamp 0 on",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 284093,
+      "sha256": "97cc9f6540af3c089a6a181d6dedc0aaef0e3da1acc3434fd864c2ca57bd9359"
+    },
+    {
+      "path": "development/captures/wall-lamp-runtime/textured-bracket/wall-lamp-1-off.png",
+      "url": "development/captures/wall-lamp-runtime/textured-bracket/wall-lamp-1-off.png",
+      "title": "Wall lamp 1 off",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 275677,
+      "sha256": "9a5cf92d3f89295841c60fdac9f196fc8294c741c33e6f11fe9c67f401e1dc5f"
+    },
+    {
+      "path": "development/captures/wall-lamp-runtime/textured-bracket/wall-lamp-1-on.png",
+      "url": "development/captures/wall-lamp-runtime/textured-bracket/wall-lamp-1-on.png",
+      "title": "Wall lamp 1 on",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 380356,
+      "sha256": "a3c53baa69a603ff81f90cf300473862e9410241896eb0c6af10fa4ebcf69cc0"
+    },
+    {
+      "path": "development/captures/wall-lamp-runtime/textured-bracket/wall-lamp-2-off.png",
+      "url": "development/captures/wall-lamp-runtime/textured-bracket/wall-lamp-2-off.png",
+      "title": "Wall lamp 2 off",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 371005,
+      "sha256": "5b556fe2416821397215a6728b12d725712015e4035b1aa47246bbc7c08966f5"
+    },
+    {
+      "path": "development/captures/wall-lamp-runtime/textured-bracket/wall-lamp-2-on.png",
+      "url": "development/captures/wall-lamp-runtime/textured-bracket/wall-lamp-2-on.png",
+      "title": "Wall lamp 2 on",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 497023,
+      "sha256": "b24e7f4be9bfdcdc52bd1a7dc19ae2d68f2d18ac89cbcf2589bb631b1d6ac5cb"
+    },
+    {
+      "path": "development/captures/wall-lamp-runtime/textured-bracket/wall-lamp-3-off.png",
+      "url": "development/captures/wall-lamp-runtime/textured-bracket/wall-lamp-3-off.png",
+      "title": "Wall lamp 3 off",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 217089,
+      "sha256": "e3d9b018f88093c8cb74b34f85766a9d8b788849c5a1ec84cb1ae41de6eeca99"
+    },
+    {
+      "path": "development/captures/wall-lamp-runtime/textured-bracket/wall-lamp-3-on.png",
+      "url": "development/captures/wall-lamp-runtime/textured-bracket/wall-lamp-3-on.png",
+      "title": "Wall lamp 3 on",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 352783,
+      "sha256": "04bec92bfb1431279aa8a0f61752492d875c3958759715d02a8807fe92a85379"
+    },
+    {
+      "path": "development/captures/wall-lamp-runtime/textured-bracket/wall-lamp-4-off.png",
+      "url": "development/captures/wall-lamp-runtime/textured-bracket/wall-lamp-4-off.png",
+      "title": "Wall lamp 4 off",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 329593,
+      "sha256": "6d8529e78676b7821a25627f45a8edd5f9d392c39cc0f5990949185b232b46de"
+    },
+    {
+      "path": "development/captures/wall-lamp-runtime/textured-bracket/wall-lamp-4-on.png",
+      "url": "development/captures/wall-lamp-runtime/textured-bracket/wall-lamp-4-on.png",
+      "title": "Wall lamp 4 on",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 481486,
+      "sha256": "9ed80eebfc39fd4746832a6a3560f147740b4a765574076a79f6ade99cb49b04"
     },
     {
       "path": "development/levels/blockouts/academy/preview.png",
