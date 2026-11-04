@@ -5,8 +5,8 @@ from pathlib import Path
 import argparse, hashlib, html, json, struct, subprocess
 from urllib.parse import quote
 ROOT=Path(__file__).resolve().parents[1]
-parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');args=parser.parse_args()
-paths=subprocess.check_output(['git','ls-files','--cached','--others','--exclude-standard','-z','development'],cwd=ROOT).decode('utf-8').split('\0')
+parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');parser.add_argument('--tracked-only',action='store_true',help='Index the staged checkpoint without unrelated untracked captures');args=parser.parse_args()
+paths=subprocess.check_output(['git','ls-files','--cached',* ([] if args.tracked_only else ['--others','--exclude-standard']),'-z','development'],cwd=ROOT).decode('utf-8').split('\0')
 items=[]
 for path in sorted(set(paths)):
     if not path.lower().endswith('.png'):continue

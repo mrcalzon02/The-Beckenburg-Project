@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 2329,
+  "count": 2341,
   "images": [
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -742,6 +742,126 @@
       "height": 512,
       "bytes": 296278,
       "sha256": "621f975fdaf5087a67f865c294583f7d803794d070e79565a940bf60d86c7aca"
+    },
+    {
+      "path": "development/captures/wall-lamp-runtime/after/wall-lamp-0-off.png",
+      "url": "development/captures/wall-lamp-runtime/after/wall-lamp-0-off.png",
+      "title": "Wall lamp 0 off",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 275931,
+      "sha256": "dab5b968ad8282d2e7c535fc47cab8d103e5da34517fd4d941d4f7d0567986ef"
+    },
+    {
+      "path": "development/captures/wall-lamp-runtime/after/wall-lamp-0-on.png",
+      "url": "development/captures/wall-lamp-runtime/after/wall-lamp-0-on.png",
+      "title": "Wall lamp 0 on",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 283705,
+      "sha256": "8affcca55e8ca1679478e82168b47b78d81bed67a2afd7484fd20328953ee0aa"
+    },
+    {
+      "path": "development/captures/wall-lamp-runtime/after/wall-lamp-1-off.png",
+      "url": "development/captures/wall-lamp-runtime/after/wall-lamp-1-off.png",
+      "title": "Wall lamp 1 off",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 275047,
+      "sha256": "2db8e9f2145073c32157c1d17af1e6bbb4dd4ebc221c763038cecd339448602b"
+    },
+    {
+      "path": "development/captures/wall-lamp-runtime/after/wall-lamp-1-on.png",
+      "url": "development/captures/wall-lamp-runtime/after/wall-lamp-1-on.png",
+      "title": "Wall lamp 1 on",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 380041,
+      "sha256": "1d3049da5f94a1be91fc3bc315360c336fbe8cea3dbbd77938ed106f709846b6"
+    },
+    {
+      "path": "development/captures/wall-lamp-runtime/after/wall-lamp-2-off.png",
+      "url": "development/captures/wall-lamp-runtime/after/wall-lamp-2-off.png",
+      "title": "Wall lamp 2 off",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 369416,
+      "sha256": "02e16a250635c41be76c033ad951b6cac5d1d2ddcbf400f0bce25ee457de0e3a"
+    },
+    {
+      "path": "development/captures/wall-lamp-runtime/after/wall-lamp-2-on.png",
+      "url": "development/captures/wall-lamp-runtime/after/wall-lamp-2-on.png",
+      "title": "Wall lamp 2 on",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 495897,
+      "sha256": "c504fd5e8748173f5b0d7deb486c55a9661227e621ef4b5f66bb495ebc24a344"
+    },
+    {
+      "path": "development/captures/wall-lamp-runtime/before/wall-lamp-0-off.png",
+      "url": "development/captures/wall-lamp-runtime/before/wall-lamp-0-off.png",
+      "title": "Wall lamp 0 off",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 276540,
+      "sha256": "46b9ea260d77827c6c5d07b264fbd10a880f7455ce0a0b1b8a7b8e733f583261"
+    },
+    {
+      "path": "development/captures/wall-lamp-runtime/before/wall-lamp-0-on.png",
+      "url": "development/captures/wall-lamp-runtime/before/wall-lamp-0-on.png",
+      "title": "Wall lamp 0 on",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 279222,
+      "sha256": "35cb92913348a1da27ba0b7c5d1e8762ea886711bcc26a000a49365fd46c29c5"
+    },
+    {
+      "path": "development/captures/wall-lamp-runtime/before/wall-lamp-1-off.png",
+      "url": "development/captures/wall-lamp-runtime/before/wall-lamp-1-off.png",
+      "title": "Wall lamp 1 off",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 275639,
+      "sha256": "0d8a92c544b730e4eb7171633bc355752ab934afc8ff357f07c3387396d90da7"
+    },
+    {
+      "path": "development/captures/wall-lamp-runtime/before/wall-lamp-1-on.png",
+      "url": "development/captures/wall-lamp-runtime/before/wall-lamp-1-on.png",
+      "title": "Wall lamp 1 on",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 376365,
+      "sha256": "8d78697836b482f8203ec3165cc24c3c92050e3f132a8418622423c523765457"
+    },
+    {
+      "path": "development/captures/wall-lamp-runtime/before/wall-lamp-2-off.png",
+      "url": "development/captures/wall-lamp-runtime/before/wall-lamp-2-off.png",
+      "title": "Wall lamp 2 off",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 369804,
+      "sha256": "7e3ae7e52159042c26529dd2bd913533ee81c740ee908f17439d1b9d81717b56"
+    },
+    {
+      "path": "development/captures/wall-lamp-runtime/before/wall-lamp-2-on.png",
+      "url": "development/captures/wall-lamp-runtime/before/wall-lamp-2-on.png",
+      "title": "Wall lamp 2 on",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 493050,
+      "sha256": "17f9374cf293ba3d62848c31371db2cad5e849e276411cecfa10a16bb9902be9"
     },
     {
       "path": "development/levels/blockouts/academy/preview.png",

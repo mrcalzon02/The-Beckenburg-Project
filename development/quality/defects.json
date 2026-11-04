@@ -2619,6 +2619,17 @@
       "action": "Tag the actual new native partition surfaces; activate child owners/new controls and ground portal rendering/body/optical behavior only with that native programme. Retain original broad room owners for saved geometry without those surfaces and retain every published lower doorway ID.",
       "evidence": "development/levels/rebuild/verification/castle-ground-2026-11-03/CastleGroundConstructionTest checks removed programme surfaces, legacy owners, unavailable new switches and a forced closed ground leaf that must not create phantom body/optical blockage.",
       "older_maps": "Custom native documents and their objects are preserved. This is a source/negative-control repair, not a claim that every older edited Castle scene has been visually audited."
+    },
+    {
+      "id": "DEV-244",
+      "title": "Wall-sconce atlas inverted across both power states",
+      "status": "fixed-scoped; actual source-pixel and three-angle castle comparisons pass",
+      "affected": "lamp_3_on / lamp_3_off at every runtime site using these shared models",
+      "symptom": "Gray casing paints the fluorescent tubes while yellow/white strips wrap the housing edges.",
+      "cause": "Legacy bottom-left V sampling reverses the original glTF top-left embedded PNG atlas.",
+      "action": "Use original glTF image origin for exactly these two inspected model identities; preserve source GLB geometry, UV coordinates, image pixels, pivots and mounts.",
+      "evidence": "development/quality/evidence/wall-lamp-uv-2026-11-03; WallLampSourceUvTest fails with original JAR and passes all64 actual triangle-centroid samples after correction. Three-angle actual Castle on/off captures retained in development/captures/wall-lamp-runtime.",
+      "older_maps": "Shared model repair applies to old sites using these identities. Other models retain their existing origin; no claim that unrelated legacy assets are UV-audited."
     }
   ],
   "audit_categories": [

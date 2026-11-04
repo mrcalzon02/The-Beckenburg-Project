@@ -3342,6 +3342,20 @@ Evidence and verification: development/levels/rebuild/verification/castle-ground
 
 Older-map obligation: Custom native documents and their objects are preserved. This is a source/negative-control repair, not a claim that every older edited Castle scene has been visually audited.
 
+### DEV-244 — Wall-sconce atlas inverted across both power states
+
+**Status:** fixed-scoped; actual source-pixel and three-angle castle comparisons pass · **Affected:** lamp_3_on / lamp_3_off at every runtime site using these shared models
+
+Gray casing paints the fluorescent tubes while yellow/white strips wrap the housing edges.
+
+Cause / uncertainty: Legacy bottom-left V sampling reverses the original glTF top-left embedded PNG atlas.
+
+Fix / next action: Use original glTF image origin for exactly these two inspected model identities; preserve source GLB geometry, UV coordinates, image pixels, pivots and mounts.
+
+Evidence and verification: development/quality/evidence/wall-lamp-uv-2026-11-03; WallLampSourceUvTest fails with original JAR and passes all64 actual triangle-centroid samples after correction. Three-angle actual Castle on/off captures retained in development/captures/wall-lamp-runtime.
+
+Older-map obligation: Shared model repair applies to old sites using these identities. Other models retain their existing origin; no claim that unrelated legacy assets are UV-audited.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
