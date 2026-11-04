@@ -2,42 +2,47 @@
   {
     "test": "SafeAreaBarrierTest",
     "exit": 0,
-    "seconds": 1.125
+    "seconds": 1.093
   },
   {
     "test": "SafeAreaHazeTest",
     "exit": 0,
-    "seconds": 0.125
+    "seconds": 0.094
+  },
+  {
+    "test": "LanSafeAreaBarrierTest",
+    "exit": 0,
+    "seconds": 0.781
   },
   {
     "test": "HunterCountersTest",
     "exit": 0,
-    "seconds": 0.281
+    "seconds": 0.313
   },
   {
     "test": "LanGhostSpatialTest",
     "exit": 0,
-    "seconds": 0.312
+    "seconds": 0.297
   },
   {
     "test": "LanGhostHidingBoundaryTest",
     "exit": 0,
-    "seconds": 0.282
+    "seconds": 0.297
   },
   {
     "test": "LanSpatialCombatTest",
     "exit": 0,
-    "seconds": 0.343
+    "seconds": 0.375
   },
   {
     "test": "LanTelegraphedStrikeTest",
     "exit": 0,
-    "seconds": 0.297
+    "seconds": 0.312
   },
   {
     "test": "LanGhostPursuitTest",
     "exit": 0,
-    "seconds": 0.328
+    "seconds": 0.313
   },
   {
     "test": "GhostDomainTest",
@@ -47,7 +52,7 @@
   {
     "test": "GhostAiNavigationAuditTest",
     "exit": 0,
-    "seconds": 0.313
+    "seconds": 0.312
   },
   {
     "test": "TwinCompanionAiTest",
@@ -57,32 +62,32 @@
   {
     "test": "TwinCompanionSharedActionTest",
     "exit": 0,
-    "seconds": 0.312
+    "seconds": 0.297
   },
   {
     "test": "LanTwinPlayerCompanionTest",
     "exit": 0,
-    "seconds": 9.907
+    "seconds": 9.906
   },
   {
     "test": "SpiritualWarTest",
     "exit": 0,
-    "seconds": 0.14
+    "seconds": 0.141
   },
   {
     "test": "VanModuleIntegrationTest",
     "exit": 0,
-    "seconds": 1.547
+    "seconds": 1.562
   },
   {
     "test": "VanCargoDoorTest",
     "exit": 0,
-    "seconds": 2.125
+    "seconds": 2.579
   },
   {
     "test": "LanSixHunterVanTest",
     "exit": 0,
-    "seconds": 1.625
+    "seconds": 1.609
   },
   {
     "test": "LanCaseIntegrationTest",
@@ -92,11 +97,6 @@
   {
     "test": "BeckenburgFullRoundE2ETest",
     "exit": 0,
-    "seconds": 10.984
-  },
-  {
-    "test": "LanSafeAreaBarrierTest",
-    "exit": 0,
-    "evidence": "Four genuine TCP peers; actual DEPLOY|WARD acknowledgment, settled public SAFEAREA snapshot, host GSTEP rejection and GVIEW3D snapshot re-entry."
+    "seconds": 10.953
   }
 ]
