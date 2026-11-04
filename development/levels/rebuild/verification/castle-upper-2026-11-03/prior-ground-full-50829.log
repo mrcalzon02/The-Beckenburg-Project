@@ -1,0 +1,565 @@
+packaged-multiplayer-round	UNKNOWN STEP	﻿2026-11-03T23:18:37.3406928Z Current runner version: '2.338.2'
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3424798Z ##[group]Runner Image Provisioner
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3425301Z Hosted Compute Agent
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3425645Z Version: 20261021.618
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3425990Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3426385Z Build Date: 2026-10-21T00:45:21Z
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3426766Z Worker ID: {46a2fbde-7eaa-4384-8da0-4f9114915808}
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3427154Z Region: westus3
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3427485Z Cloud: Azure
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3427818Z ##[endgroup]
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3428583Z ##[group]Operating System
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3429059Z Microsoft Windows Server 2025
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3429491Z 10.0.26100
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3429911Z Datacenter
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3430196Z ##[endgroup]
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3430483Z ##[group]Runner Image
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3430816Z Image: windows-2025-vs2026
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3431137Z Version: 20261030.294.1
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3432093Z Included Software: https://github.com/actions/runner-images/blob/win25-vs2026/20261030.294/images/windows/Windows2025-VS2026-Readme.md
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3432986Z Image Release: https://github.com/actions/runner-images/releases/tag/win25-vs2026%2F20261030.294
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3433538Z ##[endgroup]
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3434174Z ##[group]GITHUB_TOKEN Permissions
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3435314Z Contents: read
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3435647Z Metadata: read
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3435945Z ##[endgroup]
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3437241Z Secret source: Actions
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3437736Z Cache mode: write
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3438144Z Prepare workflow directory
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3649850Z Prepare all required actions
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.3682517Z Getting action download info
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.6558816Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:37.7400630Z Download action repository 'actions/setup-java@v4' (SHA:cf277c60eb25467037889841efdb72551f06f6c3)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:38.4244116Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:38.6777995Z Complete job name: packaged-multiplayer-round
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:38.8559396Z ##[group]Run actions/checkout@v4
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:38.8560471Z with:
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:38.8561146Z   repository: mrcalzon02/The-Beckenburg-Project
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:38.8565776Z   token: ***
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:38.8566249Z   ssh-strict: true
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:38.8566717Z   ssh-user: git
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:38.8567232Z   persist-credentials: true
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:38.8567778Z   clean: true
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:38.8568267Z   sparse-checkout-cone-mode: true
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:38.8568885Z   fetch-depth: 1
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:38.8569353Z   fetch-tags: false
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:38.8569851Z   show-progress: true
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:38.8570349Z   lfs: false
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:38.8570813Z   submodules: false
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:38.8571326Z   set-safe-directory: true
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:38.8571885Z   allow-unsafe-pr-checkout: false
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:38.8572604Z ##[endgroup]
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:38.9687559Z Syncing repository: mrcalzon02/The-Beckenburg-Project
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:38.9689378Z ##[group]Getting Git version info
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:38.9690557Z Working directory is 'D:\a\The-Beckenburg-Project\The-Beckenburg-Project'
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:39.0091090Z [command]"C:\Program Files\Git\bin\git.exe" version
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:39.4114269Z git version 2.56.0.windows.4
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:39.4154111Z ##[endgroup]
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:39.4171466Z Temporarily overriding HOME='D:\a\_temp\1dd3af7c-7b94-4d12-8c8e-913c6d5c726c' before making global git config changes
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:39.4172732Z Adding repository directory to the temporary git global config as a safe directory
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:39.4180094Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\The-Beckenburg-Project\The-Beckenburg-Project
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:39.4770866Z Deleting the contents of 'D:\a\The-Beckenburg-Project\The-Beckenburg-Project'
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:39.4775100Z ##[group]Initializing the repository
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:39.4780926Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\The-Beckenburg-Project\The-Beckenburg-Project
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:39.5732166Z Initialized empty Git repository in D:/a/The-Beckenburg-Project/The-Beckenburg-Project/.git/
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:39.5761603Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/mrcalzon02/The-Beckenburg-Project
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:39.6497141Z ##[endgroup]
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:39.6497502Z ##[group]Disabling automatic garbage collection
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:39.6503694Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:39.6751676Z ##[endgroup]
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:39.6752010Z ##[group]Setting up auth
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:39.6759548Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:39.7012173Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:41.1114196Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:41.1367702Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:41.5343801Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:41.5601515Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:41.9389190Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:41.9648531Z ##[endgroup]
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:41.9648918Z ##[group]Fetching the repository
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:18:41.9658104Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +50829e61bc741ab72a012ff893da42aec03f5c6f:refs/remotes/origin/map/first-principles-rebuild-plan
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:15.6388940Z From https://github.com/mrcalzon02/The-Beckenburg-Project
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:15.6389723Z  * [new ref]         50829e61bc741ab72a012ff893da42aec03f5c6f -> origin/map/first-principles-rebuild-plan
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:15.6423042Z ##[endgroup]
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:15.6423681Z ##[group]Determining the checkout info
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:15.6426121Z ##[endgroup]
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:15.6436399Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:15.6986823Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:15.7281745Z ##[group]Checking out the ref
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:15.7291076Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B map/first-principles-rebuild-plan refs/remotes/origin/map/first-principles-rebuild-plan
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:17.0405492Z Updating files:   3% (263/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:17.3119663Z Updating files:   4% (333/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:17.5042541Z Updating files:   5% (416/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:17.6628196Z Updating files:   6% (499/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:17.7840840Z Updating files:   7% (582/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:17.8099616Z Updating files:   7% (633/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:17.8887632Z Updating files:   8% (666/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:17.9458660Z Updating files:   9% (749/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:18.1412092Z Updating files:  10% (832/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:18.4964253Z Updating files:  11% (915/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:18.7340702Z Updating files:  12% (998/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:18.7902397Z Updating files:  13% (1081/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:18.8572332Z Updating files:  13% (1113/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:18.8717151Z Updating files:  14% (1164/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:18.9145031Z Updating files:  15% (1247/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:19.0083521Z Updating files:  16% (1331/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:19.0587516Z Updating files:  17% (1414/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:19.1222097Z Updating files:  18% (1497/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:19.3751399Z Updating files:  19% (1580/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:19.4422596Z Updating files:  20% (1663/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:19.5658630Z Updating files:  21% (1746/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:19.7467904Z Updating files:  22% (1829/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:19.7923216Z Updating files:  23% (1912/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:20.0746588Z Updating files:  23% (1924/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:20.1009453Z Updating files:  24% (1996/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:20.7994362Z Updating files:  25% (2079/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:21.6147518Z Updating files:  26% (2162/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:21.8012041Z Updating files:  27% (2245/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:21.8615228Z Updating files:  27% (2266/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:21.9495872Z Updating files:  28% (2328/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:22.1726218Z Updating files:  29% (2411/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:22.2541211Z Updating files:  30% (2494/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:22.3658789Z Updating files:  31% (2578/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:22.3800201Z Updating files:  32% (2661/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:22.3973586Z Updating files:  33% (2744/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:23.1881730Z Updating files:  34% (2827/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:23.8245886Z Updating files:  34% (2842/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:24.7563324Z Updating files:  34% (2850/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:24.7931088Z Updating files:  35% (2910/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:24.8061315Z Updating files:  36% (2993/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:24.8194388Z Updating files:  36% (3037/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:24.8294308Z Updating files:  37% (3076/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:24.9777712Z Updating files:  38% (3159/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:25.1586334Z Updating files:  39% (3243/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:25.2269887Z Updating files:  40% (3326/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:25.5658403Z Updating files:  41% (3409/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:25.9028133Z Updating files:  42% (3492/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:26.3370742Z Updating files:  42% (3495/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:26.6621368Z Updating files:  43% (3575/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:26.8109650Z Updating files:  44% (3658/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:26.9661093Z Updating files:  44% (3697/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:27.3284713Z Updating files:  45% (3741/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:27.3864650Z Updating files:  46% (3824/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:27.5492117Z Updating files:  47% (3908/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:27.6999116Z Updating files:  48% (3991/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:27.8088601Z Updating files:  49% (4074/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:27.8100586Z Updating files:  50% (4157/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:27.8274437Z Updating files:  50% (4168/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:27.8522350Z Updating files:  51% (4240/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:27.8764496Z Updating files:  52% (4323/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:27.9000220Z Updating files:  53% (4406/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:27.9222312Z Updating files:  54% (4490/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:27.9467418Z Updating files:  55% (4573/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:27.9714420Z Updating files:  56% (4656/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:27.9967864Z Updating files:  57% (4739/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:28.0186391Z Updating files:  58% (4822/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:28.0441234Z Updating files:  59% (4905/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:28.0690233Z Updating files:  60% (4988/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:28.0937011Z Updating files:  61% (5071/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:28.1169611Z Updating files:  62% (5155/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:28.1387817Z Updating files:  63% (5238/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:28.1933825Z Updating files:  64% (5321/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:28.2127976Z Updating files:  65% (5404/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:28.2941739Z Updating files:  66% (5487/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:28.6566703Z Updating files:  67% (5570/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:28.6660104Z Updating files:  68% (5653/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:28.6737407Z Updating files:  69% (5736/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:28.6834673Z Updating files:  70% (5820/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:28.8256139Z Updating files:  71% (5903/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:28.8966544Z Updating files:  71% (5979/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:28.9089819Z Updating files:  72% (5986/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:28.9235393Z Updating files:  73% (6069/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:28.9642514Z Updating files:  74% (6152/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:28.9797507Z Updating files:  75% (6235/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:28.9979203Z Updating files:  76% (6318/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.0219320Z Updating files:  77% (6402/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.1283432Z Updating files:  78% (6485/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.1663899Z Updating files:  79% (6568/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.2080110Z Updating files:  80% (6651/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.2893015Z Updating files:  81% (6734/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.3170940Z Updating files:  82% (6817/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.3384900Z Updating files:  83% (6900/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.3551441Z Updating files:  84% (6983/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.3727167Z Updating files:  85% (7067/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.4019292Z Updating files:  86% (7150/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.4164300Z Updating files:  87% (7233/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.4282281Z Updating files:  88% (7316/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.4393604Z Updating files:  89% (7399/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.4515530Z Updating files:  90% (7482/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.4635938Z Updating files:  91% (7565/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.4758153Z Updating files:  92% (7648/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.4855472Z Updating files:  93% (7732/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.4949775Z Updating files:  94% (7815/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.5037122Z Updating files:  95% (7898/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.5130717Z Updating files:  96% (7981/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.5221281Z Updating files:  97% (8064/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.5318945Z Updating files:  98% (8147/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.5426283Z Updating files:  99% (8230/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.5426702Z Updating files: 100% (8313/8313)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.5426888Z Updating files: 100% (8313/8313), done.
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.5583549Z Switched to a new branch 'map/first-principles-rebuild-plan'
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.5593497Z branch 'map/first-principles-rebuild-plan' set up to track 'origin/map/first-principles-rebuild-plan'.
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.7683774Z ##[endgroup]
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.7989983Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.8236629Z 50829e61bc741ab72a012ff893da42aec03f5c6f
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.8624472Z ##[group]Run actions/setup-java@v4
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.8624682Z with:
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.8624817Z   distribution: temurin
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.8624950Z   java-version: 17
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.8625067Z   java-package: jdk
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.8625188Z   check-latest: false
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.8625311Z   server-id: github
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.8625434Z   server-username: GITHUB_ACTOR
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.8625583Z   server-password: GITHUB_TOKEN
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.8625738Z   overwrite-settings: true
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.8625874Z   job-status: success
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.8627317Z   token: ***
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:29.8627462Z ##[endgroup]
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:30.0036916Z ##[warning]setup-java v4 is deprecated and will no longer receive updates. Please migrate to actions/setup-java@v5.
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:30.0044094Z ##[group]Installed distributions
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:30.0068011Z Resolved Java 17.0.20+101 from tool-cache
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:30.0068389Z Setting Java 17.0.20+101 as the default
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:30.0082201Z (node:7648) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:30.0082597Z (Use `node --trace-deprecation ...` to show where the warning was created)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:30.0085265Z Creating toolchains.xml for JDK version 17 from temurin
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:30.0158437Z Writing to C:\Users\runneradmin\.m2\toolchains.xml
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:30.0161774Z
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:30.0162084Z Java configuration:
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:30.0162442Z   Distribution: temurin
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:30.0162677Z   Version: 17.0.20+101
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:30.0163393Z   Path: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.20-101\x64
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:30.0163566Z
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:30.0163838Z ##[endgroup]
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:30.0180671Z Creating settings.xml with server-id: github
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:30.0180959Z Writing to C:\Users\runneradmin\.m2\settings.xml
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:30.0429086Z ##[group]Run build.cmd e2e
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:30.0429333Z ^[[36;1mbuild.cmd e2e^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:30.0457389Z shell: C:\Windows\system32\cmd.EXE /D /E:ON /V:OFF /S /C "CALL "{0}""
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:30.0457960Z env:
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:30.0461140Z   JAVA_HOME: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.20-101\x64
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:30.0461554Z   JAVA_HOME_17_X64: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.20-101\x64
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:30.0461785Z ##[endgroup]
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:41.9867181Z Note: src\main\java\org\beckenburg\LanLobbyPanel.java uses or overrides a deprecated API.
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:41.9868300Z Note: Recompile with -Xlint:deprecation for details.
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:45.2042363Z Baked 200 approved model-render UI icons, Castle splash and native desktop icon
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:47.6552645Z PASS: authored 126 textured PSX GLBs, 788556 bytes (42 equipment categories x 3 physical tiers)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:47.7674892Z Prepared 15 CC0 medieval castle meshes
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:52.7611449Z Note: src\test\java\org\beckenburg\PsxHorrorUiTest.java uses unchecked or unsafe operations.
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:52.7612356Z Note: Recompile with -Xlint:unchecked for details.
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:53.2042509Z ToolBeltHudTest PASS
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:54.6126923Z PASS camera R aim / LMB shutter separation and real rear LCD pixels
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:54.8474682Z DOTS I deployed visual: blender_dots_projector_1_deployed
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:54.8957764Z DOTS II deployed visual: blender_dots_projector_2_deployed
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:54.9407711Z DOTS III deployed visual: blender_dots_projector_3_deployed
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:19:54.9408086Z DotsProjectorModelDiagnosticTest PASS
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:06.2618538Z PASS JAR audio: 19 WAVs, six scores, 13 sound zones, 11 weather bundles
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:06.9145249Z E2E PASS Host listening; hunter owner, remote hunter and human ghost joined
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:06.9998040Z E2E PASS Ready and started; all clients received shared mission launch
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:07.0289230Z E2E PASS Guest entered authoritative 3D scene; spectral privacy enforced
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:07.1459221Z E2E PASS Host hunter reached haunting anchor through real room topology
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:07.2428986Z E2E PASS All evidence tools measured and shared; no auto-confirmation or ghost leak
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:10.4853375Z E2E PASS Human submitted SPIRIT hypothesis; host confirmed identification to team
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:10.8475832Z E2E PASS Ward placed at anchor; correct rite initiated at authored circle
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:16.7550900Z E2E PASS Host, second hunter and ghost all received ABSOLVED round result and payout
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:16.7765244Z E2E PASS Post-round commands rejected; match cannot continue after result
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:17.6075117Z PASS Beckenburg full LAN host/join/evidence/identity/ritual/settlement round
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:18.1117659Z Verified packaged jar through independent TCP multiplayer end-to-end case
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:18.1294465Z ##[group]Run java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.LanDroppedGearIntegrationTest
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:18.1295094Z ^[[36;1mjava -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.LanDroppedGearIntegrationTest^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:18.1313847Z shell: C:\Windows\system32\cmd.EXE /D /E:ON /V:OFF /S /C "CALL "{0}""
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:18.1314088Z env:
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:18.1314300Z   JAVA_HOME: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.20-101\x64
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:18.1314669Z   JAVA_HOME_17_X64: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.20-101\x64
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:18.1314941Z ##[endgroup]
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:19.2481754Z PASS: TCP EMF drop, empty slot, E pickup, ownership, reach, rollback and duplicate rejection
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:20.3487503Z ##[group]Run java -Djava.awt.headless=true -ea -cp "build\\classes;build\\test" org.beckenburg.LanVanExtractionIntegrationTest
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:20.3488054Z ^[[36;1mjava -Djava.awt.headless=true -ea -cp "build\\classes;build\\test" org.beckenburg.LanVanExtractionIntegrationTest^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:20.3506326Z shell: C:\Windows\system32\cmd.EXE /D /E:ON /V:OFF /S /C "CALL "{0}""
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:20.3506527Z env:
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:20.3506710Z   JAVA_HOME: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.20-101\x64
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:20.3507013Z   JAVA_HOME_17_X64: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.20-101\x64
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:20.3507238Z ##[endgroup]
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.4732557Z PASS: physical and legacy room-mode solo/all-aboard/outside/departed retreat, roster and once-only result
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.5014441Z ##[group]Run java -Djava.awt.headless=true -ea -cp build\classes org.beckenburg.BeckenburgRegressionSuite
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.5014954Z ^[[36;1mjava -Djava.awt.headless=true -ea -cp build\classes org.beckenburg.BeckenburgRegressionSuite^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.5034017Z shell: C:\Windows\system32\cmd.EXE /D /E:ON /V:OFF /S /C "CALL "{0}""
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.5034232Z env:
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.5034428Z   JAVA_HOME: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.20-101\x64
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.5034729Z   JAVA_HOME_17_X64: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.20-101\x64
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.5034958Z ##[endgroup]
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.5673395Z ##[error]Exception in thread "main" java.lang.ClassNotFoundException: org.beckenburg.BeckenburgDiagnosticsTest
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.5674544Z 	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.5675015Z 	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.5675350Z 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.5675606Z 	at java.base/java.lang.Class.forName0(Native Method)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.5675813Z 	at java.base/java.lang.Class.forName(Class.java:469)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.5676084Z 	at org.beckenburg.BeckenburgRegressionSuite.main(BeckenburgRegressionSuite.java:33)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.5777110Z ##[error]Process completed with exit code 1.
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.5899745Z ##[group]Run java -Djava.awt.headless=true -ea -cp "build\\classes;build\\test" org.beckenburg.GhostVoiceExpansionTest
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.5900279Z ^[[36;1mjava -Djava.awt.headless=true -ea -cp "build\\classes;build\\test" org.beckenburg.GhostVoiceExpansionTest^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.5919280Z shell: C:\Windows\system32\cmd.EXE /D /E:ON /V:OFF /S /C "CALL "{0}""
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.5919491Z env:
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.5919692Z   JAVA_HOME: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.20-101\x64
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.5920010Z   JAVA_HOME_17_X64: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.20-101\x64
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.5920255Z ##[endgroup]
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.7492971Z PASS GhostVoiceExpansionTest / eight unique clips, legacy routing, long-form hunt and alias
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.7938041Z ##[group]Run $ErrorActionPreference='Stop'
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.7938297Z ^[[36;1m$ErrorActionPreference='Stop'^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.7938743Z ^[[36;1m& java '-Djava.awt.headless=false' '-Dbeckenburg.debug.overlay=true' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.BeckenburgDesktopE2ETest^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.7939156Z ^[[36;1mif ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.7939609Z ^[[36;1m& java '-Djava.awt.headless=false' '-Dbeckenburg.debug.overlay=true' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.CampaignEmbeddedDesktopTest^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.7940111Z ^[[36;1mif ($LASTEXITCODE -ne 0) { throw "Packaged desktop/UI acceptance failed: exit $LASTEXITCODE" }^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.7988262Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.7988611Z env:
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.7988796Z   JAVA_HOME: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.20-101\x64
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.7989299Z   JAVA_HOME_17_X64: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.20-101\x64
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:22.7989550Z ##[endgroup]
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:34.0333412Z Beckenburg environment audio temporarily unavailable: No line matching interface SourceDataLine supporting format PCM_SIGNED 16000.0 Hz, 16 bit, stereo, 4 bytes/frame, little-endian is supported.
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:34.0389872Z Beckenburg soundtrack audio temporarily unavailable: No line matching interface SourceDataLine supporting format PCM_SIGNED 22050.0 Hz, 16 bit, mono, 2 bytes/frame, little-endian is supported.
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:34.7390712Z Beckenburg effects audio temporarily unavailable: No line matching interface SourceDataLine supporting format PCM_SIGNED 16000.0 Hz, 16 bit, stereo, 4 bytes/frame, little-endian is supported.
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:36.2020110Z E2E PASS Castle-first startup, pause/options overlay, Quartermaster and multiplayer workstation
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:39.6271566Z Beckenburg weather audio temporarily unavailable: No line matching interface SourceDataLine supporting format PCM_SIGNED 16000.0 Hz, 16 bit, mono, 2 bytes/frame, little-endian is supported.
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:39.6969497Z Beckenburg building audio temporarily unavailable: No line matching interface SourceDataLine supporting format PCM_SIGNED 16000.0 Hz, 16 bit, mono, 2 bytes/frame, little-endian is supported.
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:39.6971153Z Beckenburg soundtrack audio temporarily unavailable: No line matching interface SourceDataLine supporting format PCM_SIGNED 22050.0 Hz, 16 bit, mono, 2 bytes/frame, little-endian is supported.
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:40.1282489Z E2E PASS real House dispatch, skippable flyover and 3 advancing gameplay frames
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:40.1866206Z PASS Beckenburg packaged desktop, multiplayer UI and solo case startup
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:44.7564375Z 2026-11-03T23:20:44.754278600Z [AWT-EventQueue-0] OPENING FLIGHT HOUSE backend=software tactical overview output=1028x656 first_frame_state=software-fallback-ready
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:44.8855391Z Beckenburg effects audio temporarily unavailable: No line matching interface SourceDataLine supporting format PCM_SIGNED 16000.0 Hz, 16 bit, stereo, 4 bytes/frame, little-endian is supported.
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:44.8904960Z Beckenburg effects audio temporarily unavailable: No line matching interface SourceDataLine supporting format PCM_SIGNED 16000.0 Hz, 16 bit, stereo, 4 bytes/frame, little-endian is supported.
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:45.1610790Z PASS real embedded solo campaign: two bots, saved catalog loadout, advancing 3D frames, host result, same-window return
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:45.4617807Z ##[group]Run $ErrorActionPreference='Stop'
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:45.4618100Z ^[[36;1m$ErrorActionPreference='Stop'^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:45.4618386Z ^[[36;1mNew-Item -ItemType Directory -Force 'build\e2e\package-input','build\e2e\app' | Out-Null^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:45.4618846Z ^[[36;1mCopy-Item -LiteralPath 'build\beckenburg-game.jar' -Destination 'build\e2e\package-input\beckenburg-game.jar' -Force^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:45.4619508Z ^[[36;1m& jpackage --type app-image --name Beckenburg --input 'build\e2e\package-input' --main-jar beckenburg-game.jar --main-class org.beckenburg.InvestigationGame --dest 'build\e2e\app' --vendor 'Beckenburg Project'^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:45.4620126Z ^[[36;1mif ($LASTEXITCODE -ne 0) { throw "Windows native app-image could not be produced" }^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:45.4620432Z ^[[36;1mif (-not (Test-Path 'build\e2e\app\Beckenburg\Beckenburg.exe')) {^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:45.4620690Z ^[[36;1m  throw 'Native Beckenburg.exe absent from app-image'^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:45.4620926Z ^[[36;1m}^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:45.4673984Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:45.4674201Z env:
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:45.4674404Z   JAVA_HOME: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.20-101\x64
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:45.4674735Z   JAVA_HOME_17_X64: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.20-101\x64
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:45.4675158Z ##[endgroup]
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6288023Z ##[group]Run $ErrorActionPreference='Stop'
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6288303Z ^[[36;1m$ErrorActionPreference='Stop'^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6288533Z ^[[36;1m$exe=(Resolve-Path 'build\e2e\app\Beckenburg\Beckenburg.exe').Path^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6288793Z ^[[36;1m$diag=Join-Path $env:USERPROFILE '.beckenburg\diagnostics'^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6288990Z ^[[36;1m$began=Get-Date^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6289116Z ^[[36;1m$proc=$null^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6289232Z ^[[36;1m$ready=$false^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6289346Z ^[[36;1mtry {^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6289500Z ^[[36;1m  $proc=Start-Process -FilePath $exe -PassThru^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6289688Z ^[[36;1m  $deadline=(Get-Date).AddSeconds(45)^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6289863Z ^[[36;1m  while ((Get-Date) -lt $deadline) {^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6290146Z ^[[36;1m    if ($proc.HasExited) { throw "Beckenburg.exe exited before menu initialization: $($proc.ExitCode)" }^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6290439Z ^[[36;1m    if (Test-Path $diag) {^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6290656Z ^[[36;1m      $logs=@(Get-ChildItem $diag -Filter 'session-*.log' -File |^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6290923Z ^[[36;1m              Where-Object { $_.LastWriteTime -ge $began.AddSeconds(-1) } |^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6291160Z ^[[36;1m              Sort-Object LastWriteTime -Descending)^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6291343Z ^[[36;1m      foreach ($file in $logs) {^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6291563Z ^[[36;1m        $body=Get-Content -LiteralPath $file.FullName -Raw^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6291860Z ^[[36;1m        if ($body.Contains('PHASE ready') -and $body.Contains('PHASE Castle home available')) {^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6292105Z ^[[36;1m          $ready=$true^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6292237Z ^[[36;1m          break^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6292354Z ^[[36;1m        }^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6292467Z ^[[36;1m      }^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6292571Z ^[[36;1m    }^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6292687Z ^[[36;1m    if ($ready) { break }^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6292843Z ^[[36;1m    Start-Sleep -Milliseconds 350^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6292988Z ^[[36;1m  }^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6293243Z ^[[36;1m  if (-not $ready) { throw 'Native executable never reached ready / Castle home available; inspect diagnostic logs' }^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6293598Z ^[[36;1m  'PASS: native Windows app-image reached fully initialized Castle' |^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6293906Z ^[[36;1m      Set-Content -LiteralPath 'build\e2e\native-executable-load.txt' -Encoding utf8^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6294260Z ^[[36;1m  Write-Host 'PASS Native Windows executable loaded to the Castle; not just a running splash'^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6294507Z ^[[36;1m} finally {^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6294659Z ^[[36;1m  if ($null -ne $proc -and -not $proc.HasExited) {^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6294897Z ^[[36;1m    Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6295097Z ^[[36;1m  }^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6295205Z ^[[36;1m}^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6359324Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6359534Z env:
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6359731Z   JAVA_HOME: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.20-101\x64
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6360032Z   JAVA_HOME_17_X64: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.20-101\x64
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:20:59.6360259Z ##[endgroup]
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.5853490Z PASS Native Windows executable loaded to the Castle; not just a running splash
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6655961Z ##[group]Run New-Item -ItemType Directory -Force 'build\e2e\diagnostics' | Out-Null
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6656459Z ^[[36;1mNew-Item -ItemType Directory -Force 'build\e2e\diagnostics' | Out-Null^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6656731Z ^[[36;1m$folder=Join-Path $env:USERPROFILE '.beckenburg\diagnostics'^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6656939Z ^[[36;1mif (Test-Path $folder) {^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6657094Z ^[[36;1m  Get-ChildItem $folder -File |^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6657553Z ^[[36;1m    Where-Object { $_.Name -match '^(session-|crash-)' } |^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6657764Z ^[[36;1m    Sort-Object LastWriteTime -Descending |^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6657946Z ^[[36;1m    Select-Object -First 6 |^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6658097Z ^[[36;1m    ForEach-Object {^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6658300Z ^[[36;1m      $content=Get-Content $_.FullName -Raw -ErrorAction SilentlyContinue^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6658523Z ^[[36;1m      if ($null -ne $content) {^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6658779Z ^[[36;1m        $content=$content.Replace($env:USERPROFILE,'<USER_HOME>')^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6659103Z ^[[36;1m        Set-Content -LiteralPath (Join-Path 'build\e2e\diagnostics' $_.Name) -Value $content -Encoding utf8^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6659372Z ^[[36;1m      }^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6659480Z ^[[36;1m    }^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6659584Z ^[[36;1m}^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6659746Z ^[[36;1m# HotSpot can crash below Java exception handling. Preserve the^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6660018Z ^[[36;1m# JVM fatal error report along with the existing release diagnostics.^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6660259Z ^[[36;1m# Skip native minidumps (potentially multi-GB).^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6660527Z ^[[36;1mGet-ChildItem -Path . -Filter 'hs_err_pid*.log' -File -ErrorAction SilentlyContinue |^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6660784Z ^[[36;1m  Sort-Object LastWriteTime -Descending |^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6660953Z ^[[36;1m  Select-Object -First 5 |^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6661094Z ^[[36;1m  ForEach-Object {^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6661311Z ^[[36;1m    $body=Get-Content -LiteralPath $_.FullName -Raw -ErrorAction SilentlyContinue^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6661544Z ^[[36;1m    if ($null -ne $body) {^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6661715Z ^[[36;1m      $body=$body.Replace($env:USERPROFILE,'<USER_HOME>')^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6662013Z ^[[36;1m      Set-Content -LiteralPath (Join-Path 'build\e2e\diagnostics' $_.Name) -Value $body -Encoding utf8^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6662268Z ^[[36;1m    }^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6662369Z ^[[36;1m  }^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6662560Z ^[[36;1m"revision=$env:GITHUB_SHA" | Set-Content 'build\e2e\revision.txt' -Encoding ascii^[[0m
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6711638Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6711832Z env:
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6712014Z   JAVA_HOME: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.20-101\x64
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6712301Z   JAVA_HOME_17_X64: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.20-101\x64
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:09.6712520Z ##[endgroup]
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:10.0033784Z ##[group]Run actions/upload-artifact@v4
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:10.0034060Z with:
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:10.0034244Z   name: beckenburg-e2e-41738088189
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:10.0034732Z   path: build/e2e/**
+packaged-multiplayer-round	UNKNOWN STEP	build/classes/org/beckenburg/ui/item-icons/*.png
+packaged-multiplayer-round	UNKNOWN STEP	build/classes/org/beckenburg/ui/branding/*.png
+packaged-multiplayer-round	UNKNOWN STEP	build/Beckenburg.ico
+packaged-multiplayer-round	UNKNOWN STEP
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:10.0035161Z   if-no-files-found: warn
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:10.0035351Z   retention-days: 14
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:10.0035556Z   compression-level: 6
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:10.0035764Z   overwrite: false
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:10.0035940Z   include-hidden-files: false
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:10.0036138Z env:
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:10.0036374Z   JAVA_HOME: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.20-101\x64
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:10.0036710Z   JAVA_HOME_17_X64: C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.20-101\x64
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:10.0037021Z ##[endgroup]
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:10.1389450Z (node:7836) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:10.1390240Z (Use `node --trace-deprecation ...` to show where the warning was created)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:10.2382162Z Multiple search paths detected. Calculating the least common ancestor of all paths
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:10.2385127Z The least common ancestor is D:\a\The-Beckenburg-Project\The-Beckenburg-Project\build. This will be the root directory of the artifact
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:10.2386098Z With the provided path, there will be 572 files uploaded
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:10.2390912Z Artifact name is valid!
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:10.2392117Z Root directory input is valid!
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:10.6030636Z Beginning upload of artifact content to blob storage
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:10.8062485Z (node:7836) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:11.9253915Z Uploaded bytes 8388608
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:12.0665407Z Uploaded bytes 16777216
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:12.1130730Z Uploaded bytes 25165824
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:12.1565486Z Uploaded bytes 33554432
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:12.3381038Z Uploaded bytes 41943040
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:12.3755526Z Uploaded bytes 50331648
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:12.4159833Z Uploaded bytes 58720256
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:12.4168752Z Uploaded bytes 67108864
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:12.6037543Z Uploaded bytes 75497472
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:12.6464472Z Uploaded bytes 83886080
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:12.8708549Z Uploaded bytes 92274688
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:12.9688406Z Uploaded bytes 100663296
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:13.2163588Z Uploaded bytes 109051904
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:13.3025204Z Uploaded bytes 117440512
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:13.5106061Z Uploaded bytes 125829120
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:13.6327578Z Uploaded bytes 134217728
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:13.8866459Z Uploaded bytes 142606336
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:14.0274741Z Uploaded bytes 150994944
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:14.2710922Z Uploaded bytes 159383552
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:14.3753053Z Uploaded bytes 167772160
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:14.6438541Z Uploaded bytes 176160768
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:14.8193707Z Uploaded bytes 184549376
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:14.9020434Z Uploaded bytes 192937984
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:15.2329203Z Uploaded bytes 201326592
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:15.2826481Z Uploaded bytes 209715200
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:15.4148867Z Uploaded bytes 218103808
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:15.7085199Z Uploaded bytes 226492416
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:15.7648479Z Uploaded bytes 234881024
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:15.9394664Z Uploaded bytes 243269632
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:16.1226684Z Uploaded bytes 251658240
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:16.3330311Z Uploaded bytes 260046848
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:16.4528741Z Uploaded bytes 268435456
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:16.7191250Z Uploaded bytes 276824064
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:16.8320044Z Uploaded bytes 285212672
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:17.1105675Z Uploaded bytes 293601280
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:17.1731712Z Uploaded bytes 301989888
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:17.3704325Z Uploaded bytes 310378496
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:17.5372373Z Uploaded bytes 318767104
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:17.7317313Z Uploaded bytes 327155712
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:17.9111868Z Uploaded bytes 335544320
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:18.1109930Z Uploaded bytes 343932928
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:18.3036774Z Uploaded bytes 352321536
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:18.6371774Z Uploaded bytes 360710144
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:19.0463197Z Uploaded bytes 369098752
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:19.4567982Z Uploaded bytes 377487360
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:19.8052180Z Uploaded bytes 385875968
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:20.3131736Z Uploaded bytes 394264576
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:20.8727015Z Uploaded bytes 402653184
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:21.0383190Z Uploaded bytes 411041792
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:21.1929899Z Uploaded bytes 419430400
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:21.3732325Z Uploaded bytes 427819008
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:21.6124774Z Uploaded bytes 436207616
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:21.6955932Z Uploaded bytes 444596224
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:21.8778199Z Uploaded bytes 452984832
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:22.0331403Z Uploaded bytes 461373440
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:22.2621351Z Uploaded bytes 469762048
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:22.6128172Z Uploaded bytes 478150656
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:22.7708637Z Uploaded bytes 486539264
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:22.8517428Z Uploaded bytes 494927872
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:23.0083633Z Uploaded bytes 503316480
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:23.1781688Z Uploaded bytes 511705088
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:23.3832957Z Uploaded bytes 520093696
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:23.6070580Z Uploaded bytes 528482304
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:23.7812260Z Uploaded bytes 536870912
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:23.8725689Z Uploaded bytes 545259520
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:24.1198605Z Uploaded bytes 553648128
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:24.3096796Z Uploaded bytes 562036736
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:24.5324615Z Uploaded bytes 570425344
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:24.6658971Z Uploaded bytes 578813952
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:24.8156147Z Uploaded bytes 587202560
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:24.9197552Z Uploaded bytes 595591168
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:25.1253734Z Uploaded bytes 603979776
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:25.3200953Z Uploaded bytes 612368384
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:25.4670474Z Uploaded bytes 620756992
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:25.6369665Z Uploaded bytes 629145600
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:25.7691510Z Uploaded bytes 637534208
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:25.9768022Z Uploaded bytes 645922816
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:26.1732132Z Uploaded bytes 654311424
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:26.3834289Z Uploaded bytes 662700032
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:26.5144061Z Uploaded bytes 671088640
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:26.6711126Z Uploaded bytes 679477248
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:26.8619847Z Uploaded bytes 687865856
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:27.0358261Z Uploaded bytes 696254464
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:27.2945114Z Uploaded bytes 704643072
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:27.4469898Z Uploaded bytes 713031680
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:27.5547296Z Uploaded bytes 721420288
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:27.8728166Z Uploaded bytes 729808896
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:27.9259714Z Uploaded bytes 738197504
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:28.1134593Z Uploaded bytes 746586112
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:28.3706489Z Uploaded bytes 754974720
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:28.4748293Z Uploaded bytes 763363328
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:28.7067026Z Uploaded bytes 771751936
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:28.8548935Z Uploaded bytes 780140544
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:29.0132883Z Uploaded bytes 786378862
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:29.0767582Z Finished uploading artifact content to blob storage!
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:29.0770354Z SHA256 digest of uploaded artifact zip is 68b3fa2b173ec70ba0489f1483ebed0ba5e285bd49ac9741fc951e045d1c0055
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:29.0772025Z Finalizing artifact upload
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:29.6666619Z Artifact beckenburg-e2e-41738088189.zip successfully finalized. Artifact ID 13279547258
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:29.6667239Z Artifact beckenburg-e2e-41738088189 has been successfully uploaded! Final size is 786378862 bytes. Artifact ID is 13279547258
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:29.6678679Z Artifact download URL: https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41738088189/artifacts/13279547258
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:29.7018083Z Post job cleanup.
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:29.8129105Z (node:1704) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:29.8129531Z (Use `node --trace-deprecation ...` to show where the warning was created)
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:29.8376568Z Post job cleanup.
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:29.9555881Z [command]"C:\Program Files\Git\bin\git.exe" version
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:29.9844003Z git version 2.56.0.windows.4
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:29.9897219Z Temporarily overriding HOME='D:\a\_temp\bb575ecc-5a07-40a3-b108-0e673aa324da' before making global git config changes
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:29.9897891Z Adding repository directory to the temporary git global config as a safe directory
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:29.9904597Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\The-Beckenburg-Project\The-Beckenburg-Project
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:30.0202630Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:30.0485794Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:30.4580141Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:30.4826332Z http.https://github.com/.extraheader
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:30.4863596Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:30.5163591Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:30.9466638Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:30.9732325Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:31.4244214Z Cleaning up orphan processes
+packaged-multiplayer-round	UNKNOWN STEP	2026-11-03T23:21:31.4408277Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-java@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

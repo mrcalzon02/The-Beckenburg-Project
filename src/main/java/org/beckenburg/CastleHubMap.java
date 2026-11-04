@@ -200,12 +200,14 @@ public final class CastleHubMap {
                 && (x<16+radius||x>19-radius))return false;
         if(elevation>2.0){
             if(CastleHubArchitecturalPlan.upperWalkable(x,z)){
+                if(Math.abs(elevation-3.4)>.05)return false;
                 if(!CastleHubArchitecturalPlan.upperClearance(x,z,radius)
                     ||CastleRooms.guardBlocks(x,z,radius)
+                    ||CastleRooms.slabBodyBlocks(x,elevation,z,radius,1.8)
                     ||CastleLevelEdits.current().wallBlocks(x,elevation,z,radius)
                     ||closedLeafBlocks(x,elevation,z,radius))
                     return false;
-                for(Furnishing item:CastleLevelEdits.current().furnishings(true))
+                for(Furnishing item:CastleLevelEdits.current().furnishingsAt(elevation))
                     if(Math.abs(x-item.x())<item.halfWidth()+radius&&
                         Math.abs(z-item.z())<item.halfDepth()+radius)return false;
                 return true;

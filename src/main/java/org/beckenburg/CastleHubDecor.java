@@ -182,7 +182,7 @@ public final class CastleHubDecor {
         for(var l:LEGACY_LIGHTS)out.add(l.mount()==Mount.CEILING?
             new Light(l.on(),l.off(),l.x(),CastleRooms.mountHeight(l.x(),l.z(),l.y()>4),l.z(),l.scale(),l.yaw(),l.mount()):l);
         for(var r:CastleRooms.ALL){
-            if(r.outside())continue;
+            if(r.outside()||CastleUpper.isRoom(r.id()))continue;
             for(double x=r.x0()+2;x<r.x1()-1;x+=4.0)
                 for(double z=r.z0()+2;z<r.z1()-1;z+=4.0){
                     double y=r.ceiling()-CastleRooms.SLAB,px=x,pz=z;
@@ -191,7 +191,7 @@ public final class CastleHubDecor {
                 }
         }
         // Small service rooms still need an actual supported fitting when a 4m grid has no sample.
-        for(var r:CastleRooms.ALL)if(!r.outside()){
+        for(var r:CastleRooms.ALL)if(!r.outside()&&!CastleUpper.isRoom(r.id())){
             double ceiling=r.ceiling()-CastleRooms.SLAB;
             if(out.stream().noneMatch(l->l.mount()==Mount.CEILING&&Math.abs(l.y()-ceiling)<.1
                 &&l.x()>r.x0()+.6&&l.x()<r.x1()-.6&&l.z()>r.z0()+.6&&l.z()<r.z1()-.6))
@@ -224,12 +224,13 @@ public final class CastleHubDecor {
         new Switch(20.73,1.20,14,-Math.PI/2),
         new Switch(28.73,1.20,9,-Math.PI/2),
         new Switch(28.73,1.20,25.9,-Math.PI/2),
-        new Switch(10.73,4.60,6.0,-Math.PI/2),
+        new Switch(10.73,4.60,10.3,-Math.PI/2),
         new Switch(28.73,-1.80,24.5,-Math.PI/2)));
-        result.addAll(GROUND_SWITCHES);return List.copyOf(result);
+        result.addAll(GROUND_SWITCHES);result.addAll(CastleUpper.SWITCHES);return List.copyOf(result);
     }
     public static boolean switchAvailable(Switch s){
-        return (s.y()>=0||CastleCellar.active())&&(!GROUND_SWITCHES.contains(s)||CastleGround.active());
+        return (s.y()>=0||CastleCellar.active())&&(!GROUND_SWITCHES.contains(s)||CastleGround.active())
+            &&(!CastleUpper.SWITCHES.contains(s)||CastleUpper.active());
     }
     /** Players must stand on traversable ground and actually look at a switch. */
     public static Switch aimed(CastleHubMap map,double x,double z,double yaw){

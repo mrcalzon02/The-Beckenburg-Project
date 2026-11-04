@@ -282,7 +282,7 @@ public final class CastleLevelEdits {
         int surfaceId=0;
         for(var wall:CastleHubArchitecturalPlan.walls()){
             int index=surfaceId++;
-            String wallId=CastleGroundLayout.WALLS.contains(wall)?"ground-wall"+CastleGroundLayout.WALLS.indexOf(wall):"wall"+index;
+            String wallId=CastleHubArchitecturalPlan.defaultWallId(wall);
             if(!wall.hasDoor())surfaces.put(wallId,
                 new Surface(wallId,Kind.WALL,
                     Math.min(wall.x0(),wall.x1()),Math.min(wall.z0(),wall.z1()),
@@ -323,6 +323,7 @@ public final class CastleLevelEdits {
         CastleAnnex.installDefaults(surfaces,lamps);
         CastleCellar.installDefaults(surfaces,lamps);
         CastleGround.installDefaults(props);
+        CastleUpper.installDefaults(surfaces,props,lamps);
         for(var station:CastleHubMap.Station.values())
             stations.put(station,new double[]{station.x,station.z});
         spawnX=13.5;spawnZ=19.3;spawnYaw=Math.PI;
@@ -469,6 +470,8 @@ public final class CastleLevelEdits {
             if(annexVersion<0||annexVersion>1)throw new IllegalArgumentException("Unsupported Castle annex layout version");
             int cellarVersion=Integer.parseInt(p.getProperty("cellar.layout","0"));
             if(cellarVersion<0||cellarVersion>1)throw new IllegalArgumentException("Unsupported Castle cellar layout version");
+            int upperVersion=Integer.parseInt(p.getProperty("upper.layout","0"));
+            if(upperVersion<0||upperVersion>1)throw new IllegalArgumentException("Unsupported Castle upper layout version");
             if(Integer.parseInt(p.getProperty("structure.layout","1"))<2){defaults();return;}
         }catch(RuntimeException invalid){throw new IOException("Invalid/unsupported Castle layout version",invalid);}
         try{
@@ -588,6 +591,26 @@ public final class CastleLevelEdits {
                     if(floor!=null&&floor.kind()==Kind.FLOOR&&Math.abs(floor.base()+3)<1e-7
                         &&lamp.x()>=floor.x0()&&lamp.x()<=floor.x1()&&lamp.z()>=floor.z0()&&lamp.z()<=floor.z1())
                         incomingLights.putIfAbsent(lamp.id(),lamp);
+                }
+            }
+            // Add fixtures only to an older document with the actual supporting upper construction.
+            if(Integer.parseInt(p.getProperty("upper.layout","0"))<1
+                &&parsed.values().stream().anyMatch(v->v.id().startsWith("upper-floor-")&&v.kind()==Kind.FLOOR&&v.base()==3.4)){
+                for(var lamp:lamps.values())if(lamp.id().startsWith("upper-light-")){
+                    String room=CastleUpper.lampRoom(lamp.id());
+                    boolean supported;
+                    if("ramparts".equals(room)){
+                        supported=parsed.values().stream().anyMatch(v->v.kind()==Kind.FLOOR&&v.base()==3.4
+                            &&lamp.x()>=v.x0()&&lamp.x()<=v.x1()&&lamp.z()>=v.z0()&&lamp.z()<=v.z1())
+                            &&CastleWallLampMount.resolve(lamp.fixture(),parsed.values().stream().filter(v->v.kind()==Kind.WALL).map(Surface::wall).toList()).supported();
+                    }else{
+                        Surface floor=parsed.get("upper-floor-"+room),ceiling=parsed.get("upper-ceiling-"+room);
+                        supported=floor!=null&&ceiling!=null&&floor.kind()==Kind.FLOOR&&ceiling.kind()==Kind.FLOOR
+                            &&floor.base()==3.4&&ceiling.base()==6.8
+                            &&lamp.x()>=floor.x0()&&lamp.x()<=floor.x1()&&lamp.z()>=floor.z0()&&lamp.z()<=floor.z1()
+                            &&lamp.x()>=ceiling.x0()&&lamp.x()<=ceiling.x1()&&lamp.z()>=ceiling.z0()&&lamp.z()<=ceiling.z1();
+                    }
+                    if(supported)incomingLights.putIfAbsent(lamp.id(),lamp);
                 }
             }
             // Older authored castle saves receive only newly introduced
@@ -710,6 +733,7 @@ public final class CastleLevelEdits {
         p.setProperty("lighting.layout","2");
         p.setProperty("annex.layout","1");
         p.setProperty("cellar.layout","1");
+        p.setProperty("upper.layout","1");
         p.setProperty("fortification.layout","2");
         p.setProperty("gate.layout","2");
         p.setProperty("windows.layout","2");

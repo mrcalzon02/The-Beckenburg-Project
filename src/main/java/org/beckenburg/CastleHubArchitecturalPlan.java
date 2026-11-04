@@ -30,7 +30,7 @@ public final class CastleHubArchitecturalPlan {
     /** Continuous exterior wing roofs: the middle courtyard remains open sky.
      * The library uses a higher roof above its genuinely walkable upper storey. */
     private static final List<Roof> ROOFS=List.of(
-        new Roof(1,10.5,1,34,GROUND_CEILING,1.70,MaterialAtlas.STONE),
+        new Roof(1,10.5,1,34,UPPER_CEILING,1.70,MaterialAtlas.STONE),
         new Roof(10.5,19.5,1,11.5,UPPER_CEILING,2.0,MaterialAtlas.STONE),
         new Roof(21.2,28.5,1,34,GROUND_CEILING,1.85,MaterialAtlas.STONE),
         new Roof(28.5,43,4,34,GROUND_CEILING,2.20,MaterialAtlas.AGED_WOOD)
@@ -44,7 +44,26 @@ public final class CastleHubArchitecturalPlan {
     }
     public record Trim(String mesh,double x,double y,double z,
                        double sx,double sy,double sz,double yaw){}
-    private static final List<Wall> WALLS=buildWalls();
+    private static final List<Wall> LEGACY_WALLS=buildWalls();
+    private static final List<Wall> WALLS=upperWalls();
+    private static List<Wall> upperWalls(){
+        var out=new ArrayList<Wall>();
+        for(var w:LEGACY_WALLS){
+            boolean west=w.x0()==10.5&&w.x1()==10.5&&w.z0()==1&&w.z1()==11.5&&w.bottom()==3.4&&w.top()==6.8;
+            boolean south=w.horizontal()&&w.z0()==11.5&&w.x0()>=10.5&&w.x1()<=19.5&&w.bottom()>=3.4&&!w.hasDoor();
+            if(!west&&!south)out.add(w);
+        }
+        out.addAll(CastleUpperLayout.WALLS);return List.copyOf(out);
+    }
+    /** Keep every previously published wall ID, even when upper solids are replaced. */
+    public static String defaultWallId(Wall wall){
+        if(CastleGroundLayout.WALLS.contains(wall))return "ground-wall"+CastleGroundLayout.WALLS.indexOf(wall);
+        int previous=LEGACY_WALLS.indexOf(wall);
+        if(previous>=0)return "wall"+previous;
+        int upper=CastleUpperLayout.WALLS.indexOf(wall);
+        if(upper<0)throw new IllegalArgumentException("Unowned Castle wall");
+        return "upper-wall"+upper;
+    }
     private static final List<Deck> DECKS=List.of(
         // Functional second storey: library above the contract hall.
         new Deck(10.5,1,19.5,11.5,GROUND_CEILING,MaterialAtlas.PARQUET),

@@ -1,0 +1,51 @@
+{
+  "status": "GEOMETRY_BUDGET_AND_EXPORTED_CONTACT_VERIFIED_ART_AND_RUNTIME_NOT_ACCEPTED",
+  "model": {
+    "id": "level_castle_armour_display",
+    "dimensions_blender": [
+      0.8199999928474426,
+      0.6299999952316284,
+      2.055000066757202
+    ],
+    "meshes": 1,
+    "triangles": 1036,
+    "sha256": "75697d7821aa93a86e133bcfdc96d8b6f7a4b13d6f5ae235f5fd740b55d5eb84",
+    "status": "EXPORTED_STUDY_REQUIRES_RENDER_REVIEW_AND_RUNTIME_FIT"
+  },
+  "benchmark": {
+    "cars": {
+      "ggbot_car01": 438,
+      "ggbot_car05": 454,
+      "ggbot_car07": 457,
+      "ggbot_car08_van_shell": 372
+    },
+    "character": {
+      "level_npc_matthis_rook_proxy": 1239
+    },
+    "armour_cap_including_plinth": 1250
+  },
+  "contact": "armour-contact-audit-export.json",
+  "negative": "armour-contact-audit-negative-detached-helmet.json",
+  "source_files": {
+    "development/assets/build_castle_museum.py": "f8516ca3c84dba218d04e28fcf0f914450a4cc16a43a262b4c72cdeb56f3d289",
+    "development/assets/castle_armour_lowpoly.py": "57e88509207bb8431af1acd68cafb463f040b5e2b3ca3796e109eab607a2ad66",
+    "development/assets/inspect_castle_armour_contacts.py": "755f7e366540e1292f11eae06222d432d4c8aff05f1b8d6290de0b4464d268e8"
+  },
+  "captures": {
+    "level_castle_armour_display-clay-feet-front.png": "574fa0bd97a5cc7ab7e29229fabd25d1f3c22558100772331fdb4a3e6b61943e",
+    "level_castle_armour_display-clay-feet-quarter.png": "7ced85f0d404cee7ce67da34cdde575b3cbd4bdd95fa8fcf09fb1fead7ce2aec",
+    "level_castle_armour_display-clay-feet-side.png": "8ed08f97ad5a4843b6d6bb72c0c45e4b41350eb2a5d8b77a9f3c5fbb54e8277c",
+    "level_castle_armour_display-clay-front.png": "8c21476eb98cc27e4aab7204e6e94949e75b3508558a1c878f0245547e987121",
+    "level_castle_armour_display-clay-quarter.png": "11f7042a2c0d66c656c9fa5d40526091dea89dfd5769d1b12e154319ca5b6c8c",
+    "level_castle_armour_display-clay-rear.png": "8acbe4fb37560c2a2a75e405e44a3a93c33b584405f9c62538e16c2c495dbd56",
+    "level_castle_armour_display-clay-side.png": "cd065ade1ebb4ffec2d8e37997002385e911bcd3754786978324bcbe1ae60fd9",
+    "level_castle_armour_display-feet-front.png": "a02b9f32d50f7cac50b1d5069fd38505cc6dddb03dde6f36f34132b07aef2e77",
+    "level_castle_armour_display-feet-quarter.png": "49d017056a8dc0992a9c618004057b6f60e05ce1c9deffa011dae7c4084710e4",
+    "level_castle_armour_display-feet-side.png": "ed067ca2e56fcaf99e7f4dab86d43ecff33f3b56b127c98cb4f723f81ebee226",
+    "level_castle_armour_display-front.png": "17b92f96fabaa7cfbbb016c32ad2abe849429f54fb4cd64e2d1ec3b824944035",
+    "level_castle_armour_display-quarter.png": "5f8723d52a26213ad68c5d5fab51d584273f560f9b78c9cb371cac7f908ab8b5",
+    "level_castle_armour_display-rear.png": "5e9a4db18d9d02b19d29b8e3510f052d5eb411f064718af0f9e9f6f08d216074",
+    "level_castle_armour_display-side.png": "404283095b54e2f9dfd0f4b2b17beef58cbac5db55c6f5eb7d163b2af8872a94"
+  },
+  "limits": "Actual export1036 triangles including plinth;41 components reach floor support graph through triangle intersection or<=1mm surface contact. Detached-helmet negative fails as required. Rejected primitive, floating-foot and dense studies retained. Other kit members remain owner-rejected preliminary studies. Runtime placement/performance and final visual/material acceptance remain open."
+}

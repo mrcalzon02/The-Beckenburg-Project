@@ -74,7 +74,7 @@ public final class CastleRebuildTest {
             check(CastleHubDecor.aimed(map,x,feet,z,sw.yaw())!=null,"operable physical switch");
         }
         var lighting=new FixtureLighting(map);lighting.castleFrame(true,20);
-        for(var room:CastleRooms.ALL)if(!room.id().equals("gate")){
+        for(var room:CastleRooms.ALL)if(!room.id().equals("gate")&&!CastleUpperLayout.SEALED.contains(room.id())){
             double x=(room.x0()+room.x1())*.5,z=(room.z0()+room.z1())*.5,y=room.floor()+1;
             var lit=lighting.sample(0,x,y,z);lighting.castleFrame(false,20);var dark=lighting.sample(0,x,y,z);
             check(lit.energy()>dark.energy()+.08,"usable real lighting in "+room.name()+": "+lit.energy()+" vs "+dark.energy());

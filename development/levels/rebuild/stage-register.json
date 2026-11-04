@@ -413,7 +413,9 @@
             "development/levels/rebuild/verification/castle-cellar-2026-11-03/README.md",
             "development/levels/rebuild/verification/castle-cellar-2026-11-03/verification.json",
             "development/levels/rebuild/verification/castle-ground-2026-11-03/README.md",
-            "development/levels/rebuild/verification/castle-ground-2026-11-03/verification.json"
+            "development/levels/rebuild/verification/castle-ground-2026-11-03/verification.json",
+            "development/levels/rebuild/verification/castle-upper-2026-11-03/README.md",
+            "development/levels/rebuild/verification/castle-upper-2026-11-03/verification.json"
           ],
           "defects": [
             "DEV-236",
@@ -423,23 +425,35 @@
             "DEV-240",
             "DEV-241",
             "DEV-242",
-            "DEV-243"
+            "DEV-243",
+            "DEV-244",
+            "DEV-245",
+            "DEV-246",
+            "DEV-247",
+            "DEV-248"
           ],
-          "next_action": "Finish Castle first. Native ground core now has15 reachable open rooms, sealed pantry, coherent stock/service/domestic fixtures and controls; annex/cellar retained. Construct upper roof/bearing/lodging/six beds and sealed context, then detailed fit-out/training/plant/relic services and full hub acceptance. No stage accepted; fresh complete raw-suite/GPU checks required."
+          "next_action": "Finish Castle first. Whole-site native construction reaches39 open spaces; retain3 permanent seals and existing hub contracts. Integrate museum/ruin/restoration story assets including four-posters, protected training and relic/plant services, then actual full hub and visual acceptance. Fresh raw complete suite/GPU/platform checks remain required; no stage accepted."
         },
         "S04": {
           "status": "IN_PROGRESS",
           "source_sha": null,
           "evidence": [
             "development/levels/rebuild/verification/castle-cellar-2026-11-03/README.md",
-            "development/levels/rebuild/verification/castle-cellar-2026-11-03/verification.json"
+            "development/levels/rebuild/verification/castle-cellar-2026-11-03/verification.json",
+            "development/levels/rebuild/verification/castle-upper-2026-11-03/README.md",
+            "development/levels/rebuild/verification/castle-upper-2026-11-03/verification.json"
           ],
           "defects": [
             "DEV-236",
             "DEV-237",
-            "DEV-238"
+            "DEV-238",
+            "DEV-244",
+            "DEV-245",
+            "DEV-246",
+            "DEV-247",
+            "DEV-248"
           ],
-          "next_action": "Complete full Castle first: construct remaining ground domestic/service rooms, upper roof/bearing/lodging and six beds, native fit-out and protected training bindings, then full hub verification. Actual annex/cellar, saved terrain hole and native editable architectural void are built and locally checked; no complete-stage acceptance."
+          "next_action": "Finish Castle first. Whole-site native construction reaches39 open spaces; retain3 permanent seals and existing hub contracts. Integrate museum/ruin/restoration story assets including four-posters, protected training and relic/plant services, then actual full hub and visual acceptance. Fresh raw complete suite/GPU/platform checks remain required; no stage accepted."
         },
         "S05": {
           "status": "IN_PROGRESS",
@@ -448,7 +462,9 @@
             "development/levels/rebuild/verification/castle-cellar-2026-11-03/README.md",
             "development/levels/rebuild/verification/castle-cellar-2026-11-03/verification.json",
             "development/levels/rebuild/verification/castle-ground-2026-11-03/README.md",
-            "development/levels/rebuild/verification/castle-ground-2026-11-03/verification.json"
+            "development/levels/rebuild/verification/castle-ground-2026-11-03/verification.json",
+            "development/levels/rebuild/verification/castle-upper-2026-11-03/README.md",
+            "development/levels/rebuild/verification/castle-upper-2026-11-03/verification.json"
           ],
           "defects": [
             "DEV-236",
@@ -458,9 +474,15 @@
             "DEV-240",
             "DEV-241",
             "DEV-242",
-            "DEV-243"
+            "DEV-243",
+            "DEV-244",
+            "DEV-245",
+            "DEV-246",
+            "DEV-247",
+            "DEV-248",
+            "DEV-249"
           ],
-          "next_action": "Finish Castle first. Native ground core now has15 reachable open rooms, sealed pantry, coherent stock/service/domestic fixtures and controls; annex/cellar retained. Construct upper roof/bearing/lodging/six beds and sealed context, then detailed fit-out/training/plant/relic services and full hub acceptance. No stage accepted; fresh complete raw-suite/GPU checks required."
+          "next_action": "Owner rejected primitive museum kit. Finish reference-led armour and independently rework/review all other museum assets before runtime promotion; then complete protected training, relic/plant services, detailed castle restoration story and full hub/visual/platform acceptance. Preserve39 open spaces and3 seals. No stage accepted."
         },
         "S06": {
           "status": "IN_PROGRESS",
@@ -469,7 +491,9 @@
             "development/levels/rebuild/verification/castle-cellar-2026-11-03/README.md",
             "development/levels/rebuild/verification/castle-cellar-2026-11-03/verification.json",
             "development/levels/rebuild/verification/castle-ground-2026-11-03/README.md",
-            "development/levels/rebuild/verification/castle-ground-2026-11-03/verification.json"
+            "development/levels/rebuild/verification/castle-ground-2026-11-03/verification.json",
+            "development/levels/rebuild/verification/castle-upper-2026-11-03/README.md",
+            "development/levels/rebuild/verification/castle-upper-2026-11-03/verification.json"
           ],
           "defects": [
             "DEV-236",
@@ -479,25 +503,39 @@
             "DEV-240",
             "DEV-241",
             "DEV-242",
-            "DEV-243"
+            "DEV-243",
+            "DEV-244",
+            "DEV-245",
+            "DEV-246",
+            "DEV-247",
+            "DEV-248",
+            "DEV-249"
           ],
-          "next_action": "Finish Castle first. Native ground core now has15 reachable open rooms, sealed pantry, coherent stock/service/domestic fixtures and controls; annex/cellar retained. Construct upper roof/bearing/lodging/six beds and sealed context, then detailed fit-out/training/plant/relic services and full hub acceptance. No stage accepted; fresh complete raw-suite/GPU checks required."
+          "next_action": "Owner rejected primitive museum kit. Finish reference-led armour and independently rework/review all other museum assets before runtime promotion; then complete protected training, relic/plant services, detailed castle restoration story and full hub/visual/platform acceptance. Preserve39 open spaces and3 seals. No stage accepted."
         },
         "S07": {
           "status": "IN_PROGRESS",
           "source_sha": null,
           "evidence": [
             "development/levels/rebuild/verification/castle-ground-2026-11-03/README.md",
-            "development/levels/rebuild/verification/castle-ground-2026-11-03/verification.json"
+            "development/levels/rebuild/verification/castle-ground-2026-11-03/verification.json",
+            "development/levels/rebuild/verification/castle-upper-2026-11-03/README.md",
+            "development/levels/rebuild/verification/castle-upper-2026-11-03/verification.json"
           ],
           "defects": [
             "DEV-239",
             "DEV-240",
             "DEV-241",
             "DEV-242",
-            "DEV-243"
+            "DEV-243",
+            "DEV-244",
+            "DEV-245",
+            "DEV-246",
+            "DEV-247",
+            "DEV-248",
+            "DEV-249"
           ],
-          "next_action": "Finish Castle first. Native ground core now has15 reachable open rooms, sealed pantry, coherent stock/service/domestic fixtures and controls; annex/cellar retained. Construct upper roof/bearing/lodging/six beds and sealed context, then detailed fit-out/training/plant/relic services and full hub acceptance. No stage accepted; fresh complete raw-suite/GPU checks required."
+          "next_action": "Owner rejected primitive museum kit. Finish reference-led armour and independently rework/review all other museum assets before runtime promotion; then complete protected training, relic/plant services, detailed castle restoration story and full hub/visual/platform acceptance. Preserve39 open spaces and3 seals. No stage accepted."
         },
         "S08": {
           "status": "NOT_AUDITED",

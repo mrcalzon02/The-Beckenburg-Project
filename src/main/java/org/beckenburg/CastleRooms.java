@@ -17,13 +17,16 @@ public final class CastleRooms {
         var rooms=new ArrayList<>(CastleGroundLayout.ROOMS);
         rooms.add(new Room("court","Arrival courtyard",10.5,11.5,20.5,34,0,Double.NaN,true,MaterialAtlas.STONE));
         rooms.add(new Room("gate","Gate threshold",13.2,34,17.8,36,0,Double.NaN,true,MaterialAtlas.STONE));
-        rooms.add(new Room("library","Upper library",10.5,1,19.5,11.5,3.4,6.8,false,MaterialAtlas.PARQUET));
+        rooms.addAll(CastleUpperLayout.ROOMS);
         return List.copyOf(rooms);
     }
     public static Room at(double x,double feet,double z){
         if(Math.abs(feet)<.3&&!CastleGround.active())
             for(var r:CastleGround.LEGACY_ROOMS)if(r.contains(x,z))return r;
-        for(var r:ALL)if(Math.abs(r.floor-feet)<.3&&r.contains(x,z))return r;
+        for(var r:ALL)if(Math.abs(r.floor-feet)<.3&&r.contains(x,z)){
+            if(CastleUpper.isRoom(r.id())&&(!CastleUpper.active()||!CastleLevelEdits.current().floorSupports(x,z,3.4)))continue;
+            return r;
+        }
         var cellar=CastleCellar.roomAt(x,feet,z);
         return cellar!=null?cellar:CastleAnnex.roomAt(x,feet,z);
     }
@@ -38,7 +41,7 @@ public final class CastleRooms {
     }
     public static String circuit(double x,double y,double z){
         if(CastleCellar.active()&&(y<0||(y<1.2&&CastleCellar.opening(x,z))))return "cellar";
-        var r=at(x,y>4?3.4:0,z);return r==null?"court":r.x0()<1?"practice":r.id;
+        var r=at(x,y>4?3.4:0,z);return r==null?"court":r.floor()==3.4&&r.outside()?"ramparts":r.x0()<1?"practice":r.id;
     }
     private static long structureRevision=-1;
     private static List<CastleHubArchitecturalPlan.Deck> cachedStructure=List.of();
@@ -48,6 +51,7 @@ public final class CastleRooms {
         cachedFloors=CastleLevelEdits.current().surfaces().stream().filter(s->s.kind()==CastleLevelEdits.Kind.FLOOR).toList();
         var out=new ArrayList<>(CastleLevelEdits.current().decks());
         for(var r:ALL){
+            if(CastleUpper.isRoom(r.id()))continue;
             if(r.floor==0)out.add(new CastleHubArchitecturalPlan.Deck(r.x0,r.z0,r.x1,r.z1,0,r.material));
             if(!r.outside)out.add(new CastleHubArchitecturalPlan.Deck(r.x0,r.z0,r.x1,r.z1,r.ceiling,MaterialAtlas.CEILING));
         }

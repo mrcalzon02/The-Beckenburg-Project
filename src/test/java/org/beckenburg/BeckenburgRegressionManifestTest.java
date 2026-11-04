@@ -26,6 +26,14 @@ public final class BeckenburgRegressionManifestTest {
         var names=Files.readAllLines(Path.of("regression-tests.txt")).stream().map(String::trim)
             .filter(s->!s.isEmpty()&&!s.startsWith("#")).toList();
         var good=run(names);check(good.code()==0&&good.text().contains("no tests executed")&&!good.text().contains("TEST START"),"Valid actual manifest preflight failed: "+good.text());
+        // Match the real workflow command: parent process has main classes only.
+        Path workflowLog=Files.createTempFile("regression-ci-classpath-",".log");
+        String executable=Path.of(System.getProperty("java.home"),"bin",System.getProperty("os.name").toLowerCase().contains("win")?"java.exe":"java").toString();
+        var workflow=new ProcessBuilder(executable,"-Djava.awt.headless=true","-ea","-cp",Path.of("build/classes").toAbsolutePath().toString(),
+            "org.beckenburg.BeckenburgRegressionSuite","--validate").redirectErrorStream(true).redirectOutput(workflowLog.toFile()).start();
+        if(!workflow.waitFor(30,TimeUnit.SECONDS)){workflow.destroyForcibly();throw new AssertionError("CI-classpath preflight hung");}
+        String workflowText=Files.readString(workflowLog);
+        check(workflow.exitValue()==0&&workflowText.contains("no tests executed")&&!workflowText.contains("TEST START"),"Actual CI main-only classpath cannot validate test entrypoints: "+workflowText);
         var qualified=new ArrayList<>(names);qualified.set(qualified.size()-1,"org.beckenburg.CastleGroundConstructionTest");
         var bad=run(qualified);check(bad.code()!=0&&bad.text().contains("Invalid regression entry")&&!bad.text().contains("TEST START"),"Qualified last entry launches tests before refusal");
         var duplicate=new ArrayList<>(names);duplicate.set(duplicate.size()-1,"CastleHubIntegrationTest");

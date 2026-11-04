@@ -1,0 +1,15 @@
+{
+  "status": "OWNER_REJECTED_INITIAL_KIT_REBUILDING_FROM_PRIMARY_REFERENCES",
+  "runtime_integrated": false,
+  "armour": "Low-count reference-led rebuild:1036 triangles, sharp shapes and one authored512px atlas. All41 actual export components supported through contact/intersection within1mm; actual detached-helmet negative rejected. Geometry study remains outside runtime pending placement/material/visual review.",
+  "other_assets": "Initial studies require independent primary-reference redesign/review before integration.",
+  "rejected": [
+    "previews/rejected-primitive-armour",
+    "previews/rejected-wide-armour",
+    "previews/rejected-open-spandrels",
+    "previews/rejected-floating-sabatons",
+    "previews/rejected-dense-armour"
+  ],
+  "references": "reference-brief.md",
+  "next": "Finish reference-led armour geometry, validate real supports/attachments, then authored surfacing and actual runtime fit; rework the rest of the kit from references."
+}

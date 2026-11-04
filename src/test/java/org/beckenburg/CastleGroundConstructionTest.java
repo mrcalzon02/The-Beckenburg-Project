@@ -71,8 +71,19 @@ public final class CastleGroundConstructionTest {
             var control=CastleHubDecor.SWITCHES.stream().filter(sw->CastleRooms.circuit(sw.x(),sw.y(),sw.z()).equals(r.id())).findFirst().orElseThrow();
             map.toggleCircuit(control);check(!map.lightOn(x,1.4,z),"Room switch controls wrong circuit "+r.id());map.toggleCircuit(control);
         }
-        for(var lamp:scene.lamps())if(lamp.mount()==CastleHubDecor.Mount.CEILING)
-            check(!scene.wallBlocks(lamp.x(),lamp.y()-.1,lamp.z(),.48),"Ceiling fixture intersects new partition: "+lamp.id());
+        // Inspect actual fixture vertices: wallBlocks is a standing-body query
+        // and incorrectly reaches through the ceiling into the next storey.
+        for(var lamp:scene.lamps())if(lamp.mount()==CastleHubDecor.Mount.CEILING){
+            double[] b=SceneRenderer.castleBounds(lamp.on());
+            for(var t:GlbProps.model(lamp.on()).triangles())for(var v:List.of(t.a(),t.b(),t.c())){
+                double dx=(v.x()-b[0])*lamp.scale(),dz=(v.z()-b[2])*lamp.scale();
+                double x=lamp.x()+dx*Math.cos(lamp.yaw())-dz*Math.sin(lamp.yaw()),z=lamp.z()+dx*Math.sin(lamp.yaw())+dz*Math.cos(lamp.yaw());
+                double y=lamp.y()+(v.y()-b[1]-b[4])*lamp.scale(),half=CastleDoorSlots.MASONRY_THICKNESS/2;
+                for(var w:scene.walls())if(!w.hasDoor()&&y>w.bottom()&&y<w.top())
+                    check(w.horizontal()?!(x>w.x0()&&x<w.x1()&&Math.abs(z-w.z0())<half):!(z>w.z0()&&z<w.z1()&&Math.abs(x-w.x0())<half),
+                        "Actual ceiling mesh intersects partition: "+lamp.id());
+            }
+        }
         for(var sw:CastleHubDecor.SWITCHES){
             double feet=sw.y()<0?-3:sw.y()>4?3.4:0,x=sw.x()-Math.sin(sw.yaw())*.8,z=sw.z()-Math.cos(sw.yaw())*.8;
             check(map.traversable(x,z,feet)&&CastleHubDecor.aimed(map,x,feet,z,sw.yaw())!=null,"Switch inaccessible after room refit "+sw);

@@ -2641,6 +2641,61 @@
       "action": "Replace with a compact scaled strap using the original lamp metal atlas region on all six faces; seat into masonry and meet actual source rear lip.",
       "evidence": "development/quality/evidence/wall-lamp-bracket-2026-11-03; WallLampMountPlateTest verifies actual renderer materials/UVs, texture variation, source-triangle and masonry contact; actual five-angle on/off captures under development/captures/wall-lamp-runtime/textured-bracket.",
       "older_maps": "Shared Castle renderer correction applies to legacy edited scenes; unrelated map mounting assemblies retain individual audit obligations."
+    },
+    {
+      "id": "DEV-246",
+      "title": "Regression preflight cannot load test classes with the real CI command",
+      "status": "fixed-scoped; actual main-only CI command and malformed-entry controls pass",
+      "affected": "Full regression manifest runner / workflow41738088189 at50829e61",
+      "symptom": "Overall workflow is green, but raw advisory step aborts before executing any regression: ClassNotFoundException BeckenburgDiagnosticsTest.",
+      "cause": "Preflight uses its parent classloader, while the real workflow starts with build/classes only; child tests live in build/test.",
+      "action": "Preflight uses an additional closeable loader for the actual build/test root. Add subprocess coverage for the precise main-only workflow classpath; retain duplicate, qualified-name and missing-class negatives.",
+      "evidence": "development/levels/rebuild/verification/castle-upper-2026-11-03/prior-ground-full-50829.log; BeckenburgRegressionManifestTest.log verifies324 names without launching tests.",
+      "older_maps": "CI verification repair only. Prior overall success does not certify skipped regression bodies. Fresh exact-source full run must reach its actual summary."
+    },
+    {
+      "id": "DEV-247",
+      "title": "Old geometry probes assume every Castle aperture and fitting is on the ground storey",
+      "status": "corrected-probes; actual fixture vertices and all authored casement coordinates pass",
+      "affected": "CastleGroundConstructionTest ceiling clearance and CastlePortalSlotTest casement sampling",
+      "symptom": "New upper walls are falsely intersected by standing-body volume around a ground ceiling lamp; added upper casements are probed at ground window coordinates.",
+      "cause": "Geometry checks substitute a1.55m standing-body volume for imported lamp vertices, and fixed x1/y1.85 for all window slots.",
+      "action": "Check actual transformed ceiling-lamp vertices against native masonry; sample each casement at its own wall plane, sill/head and storey while retaining solid sill/lintel and no-body-passage negatives.",
+      "evidence": "development/levels/rebuild/verification/castle-upper-2026-11-03/rejected-legacy-* logs reproduce both earlier probes against actual new geometry; final named checks pass.",
+      "older_maps": "These are inspection-probe corrections, not removal of clearance/optical requirements. Original ground windows and fittings remain checked."
+    },
+    {
+      "id": "DEV-248",
+      "title": "South rampart capture contains flat polygon patches in the night sky",
+      "status": "open; visual source classification required",
+      "affected": "Castle southern upper exterior view",
+      "symptom": "Actual upper-south-walk-runtime capture shows isolated flat dark polygon patches above the distant horizon.",
+      "cause": "Unclassified: sky/environment rendering requires source and matched camera review.",
+      "action": "Retain actual capture and inspect sky/cloud/environment geometry during Castle exterior/story refinement; do not claim visual completion.",
+      "evidence": "development/levels/rebuild/captures/castle-construction/upper-south-walk-runtime.png",
+      "older_maps": "Other sky profiles and exterior maps remain independently unaudited; no global fix or acceptance is inferred."
+    },
+    {
+      "id": "DEV-249",
+      "title": "Owner rejects primitive Castle museum studies, especially disconnected armour slabs",
+      "status": "rejected; reference-led armour reconstruction and whole-kit reference review in progress",
+      "affected": "Candidate Castle museum kit, not integrated into runtime",
+      "symptom": "Armour reads as generic primitive shapes; three tasset slabs float in front of the torso. Other museum studies lack adequate reference examination and finish.",
+      "cause": "First asset construction pass substituted generic primitive assemblies and procedural surface noise for measured object anatomy, suspended articulation and design-specific reference work.",
+      "action": "Quarantine initial studies outside runtime delivery. Examine primary museum references and actual photographs; rebuild shaped articulated shells, visible fastenings and proper load paths; inspect actual exported geometry in clay before surfacing and runtime placement. Review every other kit member independently.",
+      "evidence": "development/assets/castle-museum/reference-brief.md; references/sources.json; previews/rejected-primitive-armour and rejected-wide-armour; castle_armour_geometry.py and reimported clay studies.",
+      "older_maps": "Existing legacy decorations are not assumed correct. This rejection blocks promotion of the new museum kit; older-map source/art audits remain separate."
+    },
+    {
+      "id": "DEV-250",
+      "title": "Dense museum armour uses the wrong triangle budget and disconnected-looking foot strips",
+      "status": "candidate corrected; exported1036-triangle geometry/contact checks pass; full art/runtime acceptance remains open",
+      "affected": "Castle museum armour study, quarantined outside runtime",
+      "symptom": "Reference rebuild grows to40,796 triangles using geometric rivets/trim; sabaton strips look detached. Owner requires car/character-scale budgets, sharp lower-count shapes, texture-authored detail and no floating pieces.",
+      "cause": "Fine details are over-modelled and foot anatomy is approximated by separate strips rather than a coherent enclosing shape.",
+      "action": "Reauthor low-count silhouette and component-specific texture atlas; close toe/side/heel geometry; anchor actual suspension to faceted plate surfaces; audit every export component through actual surface contact graph and reject a real detached-helmet negative.",
+      "evidence": "development/assets/castle-museum/armour-review.json, armour-contact-audit-export.json, armour-contact-audit-negative-detached-helmet.json and reviewed close feet captures; rejected dense/foot studies retained.",
+      "older_maps": "Apply owner budget/attachment direction to future model work and audit existing assets individually. Other museum kit members remain unaccepted and outside runtime."
     }
   ],
   "audit_categories": [

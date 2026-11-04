@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: Ceiling fixture intersects new partition: lighting2_14
+	at org.beckenburg.CastleGroundConstructionTest.check(CastleGroundConstructionTest.java:10)
+	at org.beckenburg.CastleGroundConstructionTest.main(CastleGroundConstructionTest.java:75)

@@ -413,8 +413,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
                 g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,12));
             }
             CastleHubMap.Station station=(elevation>1.8||elevation<-.3)?null:map.aimed(renderer.x,renderer.z,renderer.yaw);
-            boolean atSwitch=elevation<=1.8&&
-                CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw)!=null;
+            boolean atSwitch=CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw)!=null;
             boolean atWarehouse=elevation>=-.3&&elevation<=1.8&&CastleWarehouse.aimed(map,renderer.x,renderer.z,renderer.yaw);
             var atDoor=map.aimedDoor(renderer.x,elevation,renderer.z,renderer.yaw);
             var resident=(elevation>=-.3&&elevation<=1.8)?CastleRelations.aimed(map,renderer.x,renderer.z,renderer.yaw):null;

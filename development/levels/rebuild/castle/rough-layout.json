@@ -2347,15 +2347,15 @@
   "source_pins": [
     {
       "path": "src/main/java/org/beckenburg/CastleRooms.java",
-      "sha256": "32609f7ba07c6ff34680b093b0a7fbeaf6e2159d693dc690429ddfa0c353e847"
+      "sha256": "beaf2b3711bea1e29c5dcf5f7472345dde70dba85591256fae5e9118367f6264"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleHubArchitecturalPlan.java",
-      "sha256": "5becf6e43727284b63a0a63395c9d75d22ec372392c09eb003866c28d8017fba"
+      "sha256": "302b4aae3ce2073c294c098aa607b85383041680f44e64479ed3e460c334d81f"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleHubMap.java",
-      "sha256": "9cbd7cc450bbce6aeb1f1a080fded6e787a7e99bb9f1e7360edd56395df27ee4"
+      "sha256": "3f48c7cb796fbe475b0fa5ab14249fd5db5e43dbab135925dfba4652ad0ced5a"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleRelations.java",
@@ -2367,7 +2367,7 @@
     },
     {
       "path": "src/main/java/org/beckenburg/CastleLevelEdits.java",
-      "sha256": "8f31fd049eca1965d22b159c3906eafa41063fe8033a269c632315b0acae9063"
+      "sha256": "21d844cc0ea1f71c3c1be3ee7518c7452d25c3bdfaa6c20bfd10d3510531693c"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleAnnex.java",
@@ -2387,11 +2387,11 @@
     },
     {
       "path": "src/main/java/org/beckenburg/CastleHubDecor.java",
-      "sha256": "86e2ec32d69bddb907426c8bafec09d75e6805aa767b35fbbf73546a0c49c781"
+      "sha256": "33173e9eb22d57c670d4b4abeb18f33666528ee665e2b801afe01d6e813ee62d"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleDoorSlots.java",
-      "sha256": "90be96e62dda00fcaad6f129f4e95390683d99f2f9c3f1718913f6e7e763c9be"
+      "sha256": "ffa81a232e3e6507fd3c72f1e248bf3603a4d29a3d58fe1454a9561356198c2a"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleGround.java",
@@ -2400,6 +2400,14 @@
     {
       "path": "src/main/java/org/beckenburg/CastleGroundLayout.java",
       "sha256": "b877a8defeef67d6ea561aa3cecfb374e623f2b98faf28ee86b6e0f814fb6e16"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/CastleUpper.java",
+      "sha256": "07b247a9e3cd320cd88c39ee2e03e2976ff9bce7ad81d635f3337dc253a89d9a"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/CastleUpperLayout.java",
+      "sha256": "40eedb41c8598a471f8d05d6488d6e8aae1c1ecf1464875a2dae905b4e3bb42c"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleWarehouse.java",

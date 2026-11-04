@@ -22,6 +22,7 @@ for path in sorted(set(paths)):
     elif '/performance/hardware/' in path:kind='Runtime GPU diagnostic'
     elif '/fixture-join-diagnostic/' in path:kind='Runtime lighting diagnostic'
     elif '/rebuild/previews/rejected-' in path:kind='Rejected native study'
+    elif '/previews/rejected-' in path:kind='Rejected model study'
     elif '/rebuild/previews/' in path and 'rough-plan' in p.stem:kind='Planning diagram'
     elif '/rebuild/previews/' in path and p.stem.endswith('terrain-inspection'):kind='Native terrain inspection'
     elif '/rebuild/previews/' in path and p.stem.endswith('cutaway'):kind='Native inspection cutaway'
@@ -41,6 +42,7 @@ for path in sorted(set(paths)):
     elif '-blender-' in path or 'native-fitout' in p.stem or 'native-circuit' in p.stem:kind='Native scene overview'
     elif 'studio' in p.stem:kind='Model inspection'
     elif any(t in path for t in ['/runtime/','-runtime/','/blackpine/','/mill-lighting/','/mill-expansion/','/van/','/optical-evidence/']):kind='Runtime capture'
+    elif '/castle-museum/previews/' in path:kind='Unaccepted model study'
     elif p.stem.startswith('level_') or '/model-production/' in path or '/equipment-catalog/' in path:kind='Model inspection'
     title=p.stem.replace('_',' ').replace('-',' ').strip().capitalize()
     items.append(dict(path=path,url=quote(path,safe='/'),title=title,kind=kind,width=w,height=h,bytes=len(data),sha256=hashlib.sha256(data).hexdigest()))

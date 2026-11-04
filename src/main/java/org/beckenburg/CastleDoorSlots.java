@@ -17,7 +17,8 @@ public final class CastleDoorSlots {
  private static final List<WindowSlot> WINDOWS=List.of(
     new WindowSlot("west-casement-north",1,16,17.8,1.05,2.45),
     new WindowSlot("west-casement-south",1,26,27.8,1.05,2.45));
- public static List<WindowSlot> windows(){return WINDOWS;}
+ private static final List<WindowSlot> UPPER_WINDOWS=java.util.stream.Stream.concat(WINDOWS.stream(),CastleUpperLayout.WINDOWS.stream()).toList();
+ public static List<WindowSlot> windows(){return CastleUpper.active()?UPPER_WINDOWS:WINDOWS;}
  public record Slot(String id,double x0,double z0,double x1,double z1,
                     double bottom,double clearHeight,boolean gate) {
   public boolean horizontal(){return z0==z1;}
@@ -27,14 +28,16 @@ public final class CastleDoorSlots {
  }
  private static final List<Slot> SLOTS=discover();
  private static final java.util.Set<String> GROUND_IDS=groundIds();
- private static java.util.Set<String> groundIds(){
+ private static final java.util.Set<String> UPPER_IDS=layoutIds(CastleUpperLayout.WALLS);
+ private static java.util.Set<String> groundIds(){return layoutIds(CastleGroundLayout.WALLS);}
+ private static java.util.Set<String> layoutIds(List<CastleHubArchitecturalPlan.Wall> walls){
   var result=new HashSet<String>();
-  for(var slot:SLOTS)for(var wall:CastleGroundLayout.WALLS)
+  for(var slot:SLOTS)for(var wall:walls)
    if(wall.hasDoor()&&slot.bottom()==wall.bottom()&&slot.x0()==wall.x0()&&slot.x1()==wall.x1()
       &&slot.z0()==wall.z0()&&slot.z1()==wall.z1())result.add(slot.id());
   return java.util.Set.copyOf(result);
  }
- public static boolean available(Slot slot){return !GROUND_IDS.contains(slot.id())||CastleGround.active();}
+ public static boolean available(Slot slot){return (!GROUND_IDS.contains(slot.id())||CastleGround.active())&&(!UPPER_IDS.contains(slot.id())||CastleUpper.active());}
  private static final java.util.Map<String,Slot> BY_ID=indexSlots();
  private static java.util.Map<String,Slot> indexSlots(){
   var result=new java.util.HashMap<String,Slot>();
@@ -75,7 +78,7 @@ public final class CastleDoorSlots {
   if(slot==null)throw new IllegalArgumentException("Unknown physical castle doorway "+id);
   return slot;
  }
- public static Type initial(Slot slot){return slot.gate()?Type.PORTCULLIS:slot.bottom()==0&&slot.horizontal()&&Math.abs(slot.centerZ()-5)<1e-7
+ public static Type initial(Slot slot){return slot.gate()?Type.PORTCULLIS:CastleUpper.privateDoor(slot)?Type.WOOD:slot.bottom()==0&&slot.horizontal()&&Math.abs(slot.centerZ()-5)<1e-7
     &&(Math.abs(slot.centerX()-21.5)<1e-7||Math.abs(slot.centerX()-26)<1e-7)?Type.WOOD:Type.EMPTY;}
  /** Solid core geometry has identical extent for visuals, collision and shadows. */
  public static boolean containsWall(CastleHubArchitecturalPlan.Wall wall,

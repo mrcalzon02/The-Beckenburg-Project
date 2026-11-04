@@ -26,19 +26,23 @@ public final class BeckenburgRegressionSuite {
         // Validate the entire manifest BEFORE launching any process. A malformed
         // last entry must not hide the completed suite's summary or skip new tests.
         var unique=new java.util.HashSet<String>();
+        // CI launches this main class with build/classes only. Its child tests
+        // live in build/test, so preflight must use the same additional root.
+        try(var entries=new java.net.URLClassLoader(new java.net.URL[]{Path.of("build/test").toUri().toURL()},BeckenburgRegressionSuite.class.getClassLoader())){
         for(String test:tests){
             if(!test.matches("[A-Za-z][A-Za-z0-9_]*Test"))throw new IllegalArgumentException("Invalid regression entry: "+test);
             if(!unique.add(test))throw new IllegalArgumentException("Duplicate regression entry: "+test);
             if("SmokeTest".equals(test)&&!Files.exists(Path.of("build/test/org/beckenburg/SmokeTest.class")))continue;
-            var type=Class.forName("org.beckenburg."+test,false,BeckenburgRegressionSuite.class.getClassLoader());
+            var type=Class.forName("org.beckenburg."+test,false,entries);
             var entry=type.getMethod("main",String[].class);
             if(!java.lang.reflect.Modifier.isStatic(entry.getModifiers())||entry.getReturnType()!=void.class)
                 throw new IllegalArgumentException("Regression entry lacks public static void main: "+test);
         }
+        }
         if(tests.size()<145 || !tests.containsAll(List.of("BeckenburgDiagnosticsTest",
             "CastleHubIntegrationTest","BeckenburgUpdatesTest","GameplaySmokeTest","LanWorldIntegrationTest",
             "CastleTrainingAnnexTest","CastleWorldTerrainTest","CastleCellarConstructionTest",
-            "CastleGroundConstructionTest","BeckenburgRegressionManifestTest")))
+            "CastleGroundConstructionTest","CastleUpperConstructionTest","BeckenburgRegressionManifestTest")))
             throw new IllegalStateException("Regression manifest incomplete");
         if(args.length==1&&args[0].equals("--validate")){
             System.out.println("PASS regression manifest preflight: "+tests.size()+" unique short names and available entrypoints; no tests executed");return;

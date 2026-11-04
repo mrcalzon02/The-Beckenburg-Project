@@ -3370,6 +3370,76 @@ Evidence and verification: development/quality/evidence/wall-lamp-bracket-2026-1
 
 Older-map obligation: Shared Castle renderer correction applies to legacy edited scenes; unrelated map mounting assemblies retain individual audit obligations.
 
+### DEV-246 — Regression preflight cannot load test classes with the real CI command
+
+**Status:** fixed-scoped; actual main-only CI command and malformed-entry controls pass · **Affected:** Full regression manifest runner / workflow41738088189 at50829e61
+
+Overall workflow is green, but raw advisory step aborts before executing any regression: ClassNotFoundException BeckenburgDiagnosticsTest.
+
+Cause / uncertainty: Preflight uses its parent classloader, while the real workflow starts with build/classes only; child tests live in build/test.
+
+Fix / next action: Preflight uses an additional closeable loader for the actual build/test root. Add subprocess coverage for the precise main-only workflow classpath; retain duplicate, qualified-name and missing-class negatives.
+
+Evidence and verification: development/levels/rebuild/verification/castle-upper-2026-11-03/prior-ground-full-50829.log; BeckenburgRegressionManifestTest.log verifies324 names without launching tests.
+
+Older-map obligation: CI verification repair only. Prior overall success does not certify skipped regression bodies. Fresh exact-source full run must reach its actual summary.
+
+### DEV-247 — Old geometry probes assume every Castle aperture and fitting is on the ground storey
+
+**Status:** corrected-probes; actual fixture vertices and all authored casement coordinates pass · **Affected:** CastleGroundConstructionTest ceiling clearance and CastlePortalSlotTest casement sampling
+
+New upper walls are falsely intersected by standing-body volume around a ground ceiling lamp; added upper casements are probed at ground window coordinates.
+
+Cause / uncertainty: Geometry checks substitute a1.55m standing-body volume for imported lamp vertices, and fixed x1/y1.85 for all window slots.
+
+Fix / next action: Check actual transformed ceiling-lamp vertices against native masonry; sample each casement at its own wall plane, sill/head and storey while retaining solid sill/lintel and no-body-passage negatives.
+
+Evidence and verification: development/levels/rebuild/verification/castle-upper-2026-11-03/rejected-legacy-* logs reproduce both earlier probes against actual new geometry; final named checks pass.
+
+Older-map obligation: These are inspection-probe corrections, not removal of clearance/optical requirements. Original ground windows and fittings remain checked.
+
+### DEV-248 — South rampart capture contains flat polygon patches in the night sky
+
+**Status:** open; visual source classification required · **Affected:** Castle southern upper exterior view
+
+Actual upper-south-walk-runtime capture shows isolated flat dark polygon patches above the distant horizon.
+
+Cause / uncertainty: Unclassified: sky/environment rendering requires source and matched camera review.
+
+Fix / next action: Retain actual capture and inspect sky/cloud/environment geometry during Castle exterior/story refinement; do not claim visual completion.
+
+Evidence and verification: development/levels/rebuild/captures/castle-construction/upper-south-walk-runtime.png
+
+Older-map obligation: Other sky profiles and exterior maps remain independently unaudited; no global fix or acceptance is inferred.
+
+### DEV-249 — Owner rejects primitive Castle museum studies, especially disconnected armour slabs
+
+**Status:** rejected; reference-led armour reconstruction and whole-kit reference review in progress · **Affected:** Candidate Castle museum kit, not integrated into runtime
+
+Armour reads as generic primitive shapes; three tasset slabs float in front of the torso. Other museum studies lack adequate reference examination and finish.
+
+Cause / uncertainty: First asset construction pass substituted generic primitive assemblies and procedural surface noise for measured object anatomy, suspended articulation and design-specific reference work.
+
+Fix / next action: Quarantine initial studies outside runtime delivery. Examine primary museum references and actual photographs; rebuild shaped articulated shells, visible fastenings and proper load paths; inspect actual exported geometry in clay before surfacing and runtime placement. Review every other kit member independently.
+
+Evidence and verification: development/assets/castle-museum/reference-brief.md; references/sources.json; previews/rejected-primitive-armour and rejected-wide-armour; castle_armour_geometry.py and reimported clay studies.
+
+Older-map obligation: Existing legacy decorations are not assumed correct. This rejection blocks promotion of the new museum kit; older-map source/art audits remain separate.
+
+### DEV-250 — Dense museum armour uses the wrong triangle budget and disconnected-looking foot strips
+
+**Status:** candidate corrected; exported1036-triangle geometry/contact checks pass; full art/runtime acceptance remains open · **Affected:** Castle museum armour study, quarantined outside runtime
+
+Reference rebuild grows to40,796 triangles using geometric rivets/trim; sabaton strips look detached. Owner requires car/character-scale budgets, sharp lower-count shapes, texture-authored detail and no floating pieces.
+
+Cause / uncertainty: Fine details are over-modelled and foot anatomy is approximated by separate strips rather than a coherent enclosing shape.
+
+Fix / next action: Reauthor low-count silhouette and component-specific texture atlas; close toe/side/heel geometry; anchor actual suspension to faceted plate surfaces; audit every export component through actual surface contact graph and reject a real detached-helmet negative.
+
+Evidence and verification: development/assets/castle-museum/armour-review.json, armour-contact-audit-export.json, armour-contact-audit-negative-detached-helmet.json and reviewed close feet captures; rejected dense/foot studies retained.
+
+Older-map obligation: Apply owner budget/attachment direction to future model work and audit existing assets individually. Other museum kit members remain unaccepted and outside runtime.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

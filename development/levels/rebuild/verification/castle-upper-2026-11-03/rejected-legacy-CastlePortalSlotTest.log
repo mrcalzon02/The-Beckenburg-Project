@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: window admits light through the full wall thickness upper-wash-west
+	at org.beckenburg.CastlePortalSlotTest.check(CastlePortalSlotTest.java:7)
+	at org.beckenburg.CastlePortalSlotTest.main(CastlePortalSlotTest.java:41)
