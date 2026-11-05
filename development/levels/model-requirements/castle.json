@@ -977,5 +977,25 @@
     "Quantities and asset budgets await room dressing plans.",
     "Existing candidates are verified filenames, not certified fit or finished availability.",
     "This is a model worklist, not implemented gameplay."
-  ]
+  ],
+  "proposed_crypt_sarcophagus_inventory": {
+    "source": "development/levels/primitive-props-v1/castle-crypt-proposal.json",
+    "computed_count_report": "development/levels/primitive-props-v1/crypt-review/castle-crypt-count.json",
+    "geometry_preview": "development/levels/primitive-props-v1/crypt-review/castle-crypt-preview.glb",
+    "level_authority": "EXPANDED_CASTLE_UNBUILT_CHAPEL_CRYPT_NOT_PLAYABLE_CASTLE",
+    "proposed_total": 8,
+    "planned_chambers": {
+      "crypt-west": 4,
+      "crypt-east": 4
+    },
+    "variant_counts": {
+      "level_blockout_sarcophagus_plain": 3,
+      "level_blockout_sarcophagus_inscribed": 3,
+      "level_blockout_sarcophagus_effigy": 2
+    },
+    "current_playable_castle_installed_count": 0,
+    "current_playable_castle_crypt_room_count": 0,
+    "status": "PROVISIONAL_SPATIAL_DESIGN_NOT_BUILT_OR_RUNTIME_APPROVED",
+    "forbidden_auto_placement": "Do not use existing relic vault, plant basement or stairs as burial-room authority."
+  }
 }
