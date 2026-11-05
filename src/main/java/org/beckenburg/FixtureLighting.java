@@ -36,9 +36,16 @@ public final class FixtureLighting {
  private static final int DOOR_JOURNAL_LIMIT=64;
  private final ArrayDeque<DoorShadowChange> doorJournal=new ArrayDeque<>();
  private long discardedDoorChangesThrough=-1;
+ // Distinguish one door transition from multiple portal changes. No archive
+ // is valid after a different door moves, or a structural map revision.
+ private long doorTransitionSerial;
+ private DoorShadowChange lastDoorTransition;
  private void recordDoorChange(long version,LevelDefinition.Portal house,
                                CastleDoorSlots.Slot castle){
-  doorJournal.addLast(new DoorShadowChange(version,house,castle));
+  var change=new DoorShadowChange(version,house,castle);
+  doorJournal.addLast(change);
+  lastDoorTransition=change;
+  doorTransitionSerial++;
   if(doorJournal.size()>DOOR_JOURNAL_LIMIT)
    discardedDoorChangesThrough=doorJournal.removeFirst().revision();
  }
@@ -97,10 +104,20 @@ public final class FixtureLighting {
   private final Map<Object,Boolean> values=new HashMap<>();
   private long epoch=-1,globalEpoch=-1;
   private final long[] capturedSourceRevisions;
+  private long seenDoorTransitions;
+  // Reuse static visibility for the opposite pose of exactly ONE portal.
+  // Each immutable chunk owns at most one alternate, never 2^N door states.
+  private LevelDefinition.Portal alternatePortal;
+  private boolean alternateOpen;
+  private Map<Object,Boolean> alternateRays=new HashMap<>();
   private StationaryShadows(FixtureLighting owner){
    this.owner=owner;this.capturedSourceRevisions=new long[owner.sources.size()];
+   this.seenDoorTransitions=owner.doorTransitionSerial;
   }
-  public void release(){owner.stationaryShadowEntries-=values.size();values.clear();epoch=-1;globalEpoch=-1;}
+  public void release(){
+   owner.stationaryShadowEntries-=values.size();values.clear();
+   owner.discardAlternateShadows(this);epoch=-1;globalEpoch=-1;
+  }
   /** Focused diagnostic for verifying retained actual source/ray entries. */
   int entriesForSource(int source){
    int count=0;for(var key:values.keySet())if(shadowSourceId(key)==source)count++;
@@ -108,7 +125,48 @@ public final class FixtureLighting {
   }
  }
 
- private long stationaryShadowEntries;
+ private long stationaryShadowEntries,stationaryArchiveEntries,stationaryArchiveReuses;
+ private static final int MAX_ALTERNATE_SHADOW_RAYS=150_000;
+ private final boolean alternateDoorShadowCache=
+     !Boolean.getBoolean("beckenburg.lighting.doorShadowArchive.disabled");
+ public long archivedStationaryShadowEntries(){return stationaryArchiveEntries;}
+ public long reusedStationaryDoorShadowRays(){return stationaryArchiveReuses;}
+ private void discardAlternateShadows(StationaryShadows shadow){
+  stationaryArchiveEntries-=shadow.alternateRays.size();
+  shadow.alternateRays.clear();
+  shadow.alternatePortal=null;
+ }
+ private void exchangeDoorShadows(StationaryShadows shadow,
+         LevelDefinition.Portal door){
+  boolean open=door.door()?map.doorOpen(door.id()):map.windowOpen(door.id());
+  boolean restore=shadow.alternatePortal==door && shadow.alternateOpen==open;
+  Map<Object,Boolean> old=shadow.alternateRays;
+  int capacity=Math.max(0,MAX_ALTERNATE_SHADOW_RAYS
+      -(int)(stationaryArchiveEntries-old.size()));
+  var newlyArchived=new HashMap<Object,Boolean>();
+  var scan=shadow.values.entrySet().iterator();
+  while(scan.hasNext()){
+   var entry=scan.next();
+   int id=shadowSourceId(entry.getKey());
+   if(id<0||id>=sourceOcclusionRevisions.length){
+    scan.remove();continue;
+   }
+   long seen=shadow.capturedSourceRevisions[id];
+   if(seen==sourceOcclusionRevisions[id]
+       ||!stationaryRayChanged(entry.getKey(),seen))continue;
+   if(newlyArchived.size()<capacity)
+    newlyArchived.put(entry.getKey(),entry.getValue());
+   scan.remove();
+  }
+  stationaryArchiveEntries-=old.size();
+  if(restore)for(var entry:old.entrySet())
+   if(shadow.values.putIfAbsent(entry.getKey(),entry.getValue())==null)
+    stationaryArchiveReuses++;
+  shadow.alternateRays=newlyArchived;
+  shadow.alternatePortal=door;
+  shadow.alternateOpen=!open;
+  stationaryArchiveEntries+=newlyArchived.size();
+ }
  private StationaryShadows activeShadows;
  public StationaryShadows newStationaryShadows(){return new StationaryShadows(this);}
  public StationaryShadows useStationaryShadows(StationaryShadows next){
@@ -120,16 +178,20 @@ public final class FixtureLighting {
   var previous=activeShadows;
   if(next!=null){
    if(next.owner!=this)throw new IllegalArgumentException("Shadows belong to a different lighting scene");
+   long transitions=doorTransitionSerial-next.seenDoorTransitions;
+   boolean oneHouseDoor=alternateDoorShadowCache&&transitions==1
+       &&lastDoorTransition!=null&&lastDoorTransition.house()!=null;
    if(next.epoch!=regionEpoch){
     int before=next.values.size();
     if(next.globalEpoch!=occluderEpoch
         ||next.capturedSourceRevisions.length!=sourceOcclusionRevisions.length){
-     // A real global structural change invalidates every visibility result.
-     next.values.clear();
+     // A true structural change invalidates both portal poses.
+     next.values.clear();discardAlternateShadows(next);
+    }else if(oneHouseDoor){
+     exchangeDoorShadows(next,lastDoorTransition.house());
     }else{
-     // Preserve same-side stationary rays even for a lamp whose range
-     // includes the changing door. Source-wide eviction rebuilt tens of
-     // thousands of unrelated rays on real House door transitions.
+     // Keep the original conservative logic for unrelated/multiple doors.
+     if(transitions!=0)discardAlternateShadows(next);
      next.values.entrySet().removeIf(entry->{
       int id=shadowSourceId(entry.getKey());
       if(id<0||id>=sourceOcclusionRevisions.length)return true;
@@ -143,7 +205,11 @@ public final class FixtureLighting {
         sourceOcclusionRevisions.length);
     next.globalEpoch=occluderEpoch;
     next.epoch=regionEpoch;
+   }else if(transitions!=0){
+    // A distant portal move cannot be assumed safe for a later ray.
+    discardAlternateShadows(next);
    }
+   next.seenDoorTransitions=doorTransitionSerial;
   }
   activeShadows=next;return previous;
  }
