@@ -1,13 +1,13 @@
 {
   "schema": "beckenburg.source-mesh-readiness/1",
   "status": "SOURCE_ONLY_REVIEW_NOT_PRODUCTION_APPROVAL",
-  "catalog_sha256": "abfc2980bd08f35703b8d78241c62535fcdd3f2827a9c687ac43753259a2e719",
+  "catalog_sha256": "42a0f3fe5061283e017e9a53f872daf3e871d18dc46cde9023222eb5bea47306",
   "model_count": 253,
   "map_kit_count": 29,
   "validated_source_glbs": 253,
   "runtime_approved_models": 0,
   "native_rendered_models_accepted_here": 0,
-  "models_with_diagnostic_flags": 196,
+  "models_with_diagnostic_flags": 103,
   "purpose": "Recorded geometry and next-stage review; never game asset approval",
   "required_before_production": [
     "Native four-view in-engine screenshots and texture/material inspection",
@@ -51,1072 +51,506 @@
     {
       "model": "level_blockout_doorway",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_stair_flight",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_guardrail",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_storage_shelf",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_workbench",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_utility_panel",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_console",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_ward_bed",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_cell_door",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_pew",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_student_desk",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_archive_cabinet",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_barn_stall",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_log_stack",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_camp_tent",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_lookout_platform",
       "diagnostics": [
-        "review_vertical_scale",
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint",
+        "review_vertical_scale"
       ]
     },
     {
       "model": "level_blockout_cave_support",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_ore_cart",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_dock_bay",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_cemetery_marker",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_radio_mast",
       "diagnostics": [
-        "review_vertical_scale",
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_hydro_turbine",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_vertical_scale"
       ]
     },
     {
       "model": "level_blockout_rail_signal",
       "diagnostics": [
-        "review_vertical_scale",
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_cannery_conveyor",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_lighthouse_optic",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_vertical_scale"
       ]
     },
     {
       "model": "level_blockout_mooring_bollard",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_motel_sign",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_blast_door",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_shaft_ring",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_mortuary_trolley",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_quartermaster_counter",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_map_pinboard",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_relic_containment",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_ritual_training_rig",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_restoration_scaffold",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_privacy_screen",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_guard_keyboard",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_lecture_lectern",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_lookout_spotter",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_mine_ventilation",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_assay_balance",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_cloister_arcade",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_headmaster_desk",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_lab_fume_hood",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_dorm_bunk_partition",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_lecture_tier_row",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_college_cafe_counter",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_hospital_hydro_tub",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_hospital_treatment_theatre",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_bedside_trolley",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_hospital_chart_station",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_gym_wall_bars",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_school_scoreboard",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_organ_pipe_console",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_bell_frame_rope",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_confessional_screen",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_stone_altar",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_crypt_niche_wall",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_ballroom_chandelier",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_greenhouse_potting_bench",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_grand_stair_newel",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_wine_rack",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_monastery_well",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_monastery_scriptorium",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_prison_sally_gate",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_prison_gallery_rail",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_prison_isolation_fixture",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_barn_hayloft_bales",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_farm_trough_gate",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_root_cellar_bins",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_feed_sack_stack",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_family_photo_cluster",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_toy_chest_scatter",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_cellar_service_manifold",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_house_mailbox",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_motel_reception_counter",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_sawmill_headdrig",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_sawmill_dust_hopper",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_timber_offcut_pile",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_diesel_generator_skid",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_floor_contact_offset"
       ]
     },
     {
       "model": "level_blockout_site_distribution_board",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_supported_cable_tray",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_field_first_aid",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_campfire_ring_grate",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_ranger_trail_sign",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_camp_washstand",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_abandoned_camper_shell",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_canyon_rockfall_barrier",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_survey_marker_cases",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_cave_bend_modules",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_mine_hoist_winch",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_mine_sorting_bins",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_net_drying_frame",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_boathouse_slip_cradle",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_fish_sorting_bench",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_cemetery_gate",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_grave_caretaker_tools",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_research_airlock",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_weather_instrument_array",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_insulated_tunnel_collar",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_dam_spillway_actuator",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_dam_valve_manifold",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_marsh_boardwalk",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_marsh_ferry_stage",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_railway_passenger_coach",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_railway_coupler_wheelset",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_rail_switch_assembly",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_signal_hut_lever_bank",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_rail_trestle_bay",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_cannery_can_seamer",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_cannery_boiler",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_cannery_coldroom_door",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_cannery_payroll_clock",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_lighthouse_lantern_cage",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_lighthouse_cistern",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_lighthouse_oil_storage",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_lighthouse_cliff_guard",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_ship_hull_bow_section",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_ship_watertight_bulkhead",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_ship_engine_block",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_ship_bilge_pump",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_ship_wheelhouse_console",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_ship_net_boom",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_ship_gangway_rails",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_ship_crew_berth",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_motel_laundry_unit",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_motel_parking_stops",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_motel_walkway_canopy",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_casemate_empty_mount",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_casemate_ventilation",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_barracks_lockers",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_coastal_security_fence",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_cinder_hollow_shaft_liner",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_cinder_sump_pump",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_cinder_escape_landing",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_mortuary_prep_table",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_mortuary_cold_storage",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_mortuary_viewing_seat",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_mortuary_service_screen",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_sarcophagus_plain",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_sarcophagus_inscribed",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_sarcophagus_effigy",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_relic_mourning_locket",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_relic_votive_bell",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_relic_bronze_astrolabe",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_relic_sealed_urn",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_relic_black_mirror",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_relic_bound_folio",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_relic_reliquary_box",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_relic_pilgrim_lantern",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_relic_ossuary_keys",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_relic_censer",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_relic_burial_mask",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_relic_pilgrim_chalice",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_relic_padded_tray",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_relic_locking_showcase",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_relic_barred_shelf",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_relic_inventory_placard",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_relic_repair_stand",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_relic_open_guard",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_castle_wall_tapestry",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_ossuary_display_rack",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_votive_candle_stand",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_medical_resuscitation_cart",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_library_book_return_cart",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_prison_cell_cot",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_logging_sawbuck",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_mooring_rope_coils",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
       "model": "level_blockout_marsh_reed_cluster",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_rail_buffer_stop",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_cannery_cargo_pallet",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_lighthouse_foghorn",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_coastal_ammo_crate",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_research_sample_station",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_motel_ice_machine",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ]
     },
     {
       "model": "level_blockout_dam_service_grating",
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_cinder_decon_frame",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ]
-    },
-    {
-      "model": "level_blockout_mine_pick_tool_rack",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ]
     },
     {
@@ -1189,6 +623,12 @@
       "model": "level_blockout_mine_braced_portal",
       "diagnostics": [
         "review_attachment_anchor"
+      ]
+    },
+    {
+      "model": "level_blockout_marsh_flatboat",
+      "diagnostics": [
+        "review_mount_constraint"
       ]
     },
     {
@@ -1282,9 +722,12 @@
       "depth_m": 0.3175,
       "min_y_m": 0.0,
       "max_y_m": 2.275,
-      "mount_hint": "unclassified",
+      "mount_hint": "opening",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -1344,9 +787,12 @@
       "depth_m": 1.77,
       "min_y_m": 0.0,
       "max_y_m": 1.265,
-      "mount_hint": "unclassified",
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -1405,9 +851,12 @@
       "depth_m": 0.08,
       "min_y_m": 0.0,
       "max_y_m": 1.05,
-      "mount_hint": "unclassified",
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -1467,10 +916,11 @@
       "depth_m": 0.75,
       "min_y_m": 0.0,
       "max_y_m": 1.8,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -1529,10 +979,11 @@
       "depth_m": 0.78,
       "min_y_m": 0.03,
       "max_y_m": 0.94,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -1592,9 +1043,12 @@
       "depth_m": 0.35,
       "min_y_m": 0.36,
       "max_y_m": 1.68,
-      "mount_hint": "unclassified",
+      "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -1634,10 +1088,11 @@
       "depth_m": 0.75,
       "min_y_m": 0.015,
       "max_y_m": 1.55,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -1671,10 +1126,11 @@
       "depth_m": 2.0,
       "min_y_m": 0.0,
       "max_y_m": 1.27,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -1707,9 +1163,12 @@
       "depth_m": 0.2,
       "min_y_m": 0.0,
       "max_y_m": 2.14,
-      "mount_hint": "unclassified",
+      "mount_hint": "opening",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -1745,10 +1204,11 @@
       "depth_m": 0.57,
       "min_y_m": -0.005,
       "max_y_m": 1.3,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -1781,10 +1241,11 @@
       "depth_m": 1.205,
       "min_y_m": 0.0,
       "max_y_m": 1.035,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -1822,10 +1283,11 @@
       "depth_m": 0.527,
       "min_y_m": 0.0,
       "max_y_m": 2.0,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -1855,10 +1317,11 @@
       "depth_m": 1.13,
       "min_y_m": 0.015,
       "max_y_m": 1.565,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -1889,10 +1352,11 @@
       "depth_m": 2.55,
       "min_y_m": -0.005,
       "max_y_m": 1.355,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -1924,10 +1388,11 @@
       "depth_m": 3.2,
       "min_y_m": 0.0,
       "max_y_m": 1.73,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -1957,10 +1422,13 @@
       "depth_m": 3.0,
       "min_y_m": 0.0,
       "max_y_m": 4.69,
-      "mount_hint": "unclassified",
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "review_vertical_scale",
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint",
+        "review_vertical_scale"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -1993,9 +1461,12 @@
       "depth_m": 0.555,
       "min_y_m": 0.0,
       "max_y_m": 2.73,
-      "mount_hint": "unclassified",
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -2029,10 +1500,11 @@
       "depth_m": 1.74,
       "min_y_m": 0.05,
       "max_y_m": 1.105,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -2067,9 +1539,12 @@
       "depth_m": 2.45,
       "min_y_m": -0.015,
       "max_y_m": 2.035,
-      "mount_hint": "unclassified",
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -2103,9 +1578,12 @@
       "depth_m": 0.42,
       "min_y_m": 0.0,
       "max_y_m": 1.68,
-      "mount_hint": "unclassified",
+      "mount_hint": "terrain",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -2141,10 +1619,12 @@
       "depth_m": 2.1,
       "min_y_m": 0.0,
       "max_y_m": 4.48,
-      "mount_hint": "unclassified",
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "review_vertical_scale",
-        "legacy_model_missing_mount_metadata"
+        "review_vertical_scale"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -2178,10 +1658,11 @@
       "depth_m": 2.1,
       "min_y_m": 0.0,
       "max_y_m": 1.62,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -2214,10 +1695,12 @@
       "depth_m": 0.82,
       "min_y_m": 0.0,
       "max_y_m": 4.535,
-      "mount_hint": "unclassified",
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "review_vertical_scale",
-        "legacy_model_missing_mount_metadata"
+        "review_vertical_scale"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -2251,10 +1734,11 @@
       "depth_m": 1.06,
       "min_y_m": 0.0,
       "max_y_m": 0.985,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -2287,10 +1771,11 @@
       "depth_m": 2.5,
       "min_y_m": 0.0,
       "max_y_m": 2.33,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -2323,9 +1808,12 @@
       "depth_m": 0.65,
       "min_y_m": 0.0,
       "max_y_m": 1.15,
-      "mount_hint": "unclassified",
+      "mount_hint": "water",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -2358,10 +1846,11 @@
       "depth_m": 0.195,
       "min_y_m": 0.0,
       "max_y_m": 3.5,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -2394,9 +1883,12 @@
       "depth_m": 0.525,
       "min_y_m": 0.0,
       "max_y_m": 2.8,
-      "mount_hint": "unclassified",
+      "mount_hint": "opening",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -2428,9 +1920,12 @@
       "depth_m": 4.702,
       "min_y_m": 0.0,
       "max_y_m": 1.5,
-      "mount_hint": "unclassified",
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -2464,10 +1959,11 @@
       "depth_m": 1.95,
       "min_y_m": -0.01,
       "max_y_m": 0.92,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -2498,10 +1994,11 @@
       "depth_m": 0.87,
       "min_y_m": 0.015,
       "max_y_m": 1.65,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -2535,9 +2032,12 @@
       "depth_m": 0.335,
       "min_y_m": 0.085,
       "max_y_m": 2.455,
-      "mount_hint": "unclassified",
+      "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -2574,10 +2074,11 @@
       "depth_m": 1.45,
       "min_y_m": 0.0,
       "max_y_m": 2.215,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -2611,10 +2112,11 @@
       "depth_m": 1.65,
       "min_y_m": 0.0,
       "max_y_m": 1.56,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -2645,10 +2147,11 @@
       "depth_m": 1.65,
       "min_y_m": 0.0,
       "max_y_m": 2.76,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -2682,10 +2185,11 @@
       "depth_m": 0.42,
       "min_y_m": 0.0,
       "max_y_m": 2.16,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -2718,9 +2222,12 @@
       "depth_m": 0.34,
       "min_y_m": 0.01,
       "max_y_m": 2.17,
-      "mount_hint": "unclassified",
+      "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -2755,10 +2262,11 @@
       "depth_m": 0.874,
       "min_y_m": 0.0,
       "max_y_m": 1.365,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -2793,10 +2301,11 @@
       "depth_m": 0.75,
       "min_y_m": 0.015,
       "max_y_m": 1.18,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -2830,10 +2339,11 @@
       "depth_m": 1.26,
       "min_y_m": 0.0,
       "max_y_m": 1.5,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -2867,9 +2377,12 @@
       "depth_m": 0.62,
       "min_y_m": 0.0,
       "max_y_m": 1.03,
-      "mount_hint": "unclassified",
+      "mount_hint": "display_surface",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -2902,9 +2415,12 @@
       "depth_m": 0.7,
       "min_y_m": 0.0,
       "max_y_m": 3.21,
-      "mount_hint": "unclassified",
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -2939,10 +2455,11 @@
       "depth_m": 0.86,
       "min_y_m": 0.065,
       "max_y_m": 0.87,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -2977,10 +2494,11 @@
       "depth_m": 0.94,
       "min_y_m": 0.02,
       "max_y_m": 2.24,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -3015,10 +2533,11 @@
       "depth_m": 2.38,
       "min_y_m": 0.0,
       "max_y_m": 2.27,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -3052,10 +2571,11 @@
       "depth_m": 0.955,
       "min_y_m": -0.005,
       "max_y_m": 1.325,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -3090,10 +2610,11 @@
       "depth_m": 0.99,
       "min_y_m": 0.0,
       "max_y_m": 2.17,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -3126,10 +2647,11 @@
       "depth_m": 1.13,
       "min_y_m": 0.0,
       "max_y_m": 1.7,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -3164,10 +2686,11 @@
       "depth_m": 2.05,
       "min_y_m": 0.025,
       "max_y_m": 2.8,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -3203,10 +2726,11 @@
       "depth_m": 0.62,
       "min_y_m": -0.025,
       "max_y_m": 1.195,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -3242,9 +2766,12 @@
       "depth_m": 0.55,
       "min_y_m": -0.325,
       "max_y_m": 2.02,
-      "mount_hint": "unclassified",
+      "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -3278,9 +2805,12 @@
       "depth_m": 0.7,
       "min_y_m": -0.005,
       "max_y_m": 2.4,
-      "mount_hint": "unclassified",
+      "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -3316,9 +2846,12 @@
       "depth_m": 0.241,
       "min_y_m": 0.495,
       "max_y_m": 2.82,
-      "mount_hint": "unclassified",
+      "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -3353,10 +2886,11 @@
       "depth_m": 1.21,
       "min_y_m": 0.01,
       "max_y_m": 2.905,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -3390,9 +2924,12 @@
       "depth_m": 0.9775,
       "min_y_m": 0.0,
       "max_y_m": 3.21,
-      "mount_hint": "unclassified",
+      "mount_hint": "ceiling",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -3425,10 +2962,11 @@
       "depth_m": 1.5,
       "min_y_m": 0.0,
       "max_y_m": 2.625,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -3461,10 +2999,11 @@
       "depth_m": 1.18,
       "min_y_m": 0.0,
       "max_y_m": 1.77,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -3498,9 +3037,12 @@
       "depth_m": 0.6,
       "min_y_m": 0.0,
       "max_y_m": 2.655,
-      "mount_hint": "unclassified",
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -3534,9 +3076,12 @@
       "depth_m": 1.66,
       "min_y_m": 1.775,
       "max_y_m": 3.315,
-      "mount_hint": "unclassified",
+      "mount_hint": "ceiling",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -3572,10 +3117,11 @@
       "depth_m": 0.815,
       "min_y_m": 0.005,
       "max_y_m": 2.25,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -3608,10 +3154,11 @@
       "depth_m": 0.34,
       "min_y_m": 0.0,
       "max_y_m": 1.74,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -3644,10 +3191,11 @@
       "depth_m": 0.68,
       "min_y_m": 0.005,
       "max_y_m": 2.06,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -3682,10 +3230,11 @@
       "depth_m": 2.04,
       "min_y_m": 0.0,
       "max_y_m": 2.81,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -3719,10 +3268,11 @@
       "depth_m": 0.9401,
       "min_y_m": 0.0,
       "max_y_m": 1.135,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -3755,9 +3305,12 @@
       "depth_m": 0.45,
       "min_y_m": 0.0,
       "max_y_m": 3.045,
-      "mount_hint": "unclassified",
+      "mount_hint": "opening",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -3789,9 +3342,12 @@
       "depth_m": 1.26,
       "min_y_m": 0.0,
       "max_y_m": 1.16,
-      "mount_hint": "unclassified",
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -3825,10 +3381,11 @@
       "depth_m": 1.86,
       "min_y_m": 0.02,
       "max_y_m": 1.95,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -3861,10 +3418,11 @@
       "depth_m": 1.415,
       "min_y_m": -0.005,
       "max_y_m": 1.645,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -3897,10 +3455,11 @@
       "depth_m": 1.16,
       "min_y_m": 0.0,
       "max_y_m": 2.2,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -3933,10 +3492,11 @@
       "depth_m": 0.93,
       "min_y_m": 0.0,
       "max_y_m": 0.94,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -3969,10 +3529,11 @@
       "depth_m": 1.6591,
       "min_y_m": 0.0,
       "max_y_m": 0.685,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -4007,9 +3568,12 @@
       "depth_m": 0.208,
       "min_y_m": -0.005,
       "max_y_m": 2.505,
-      "mount_hint": "unclassified",
+      "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -4046,10 +3610,11 @@
       "depth_m": 0.815,
       "min_y_m": 0.0,
       "max_y_m": 0.83,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -4085,10 +3650,11 @@
       "depth_m": 0.9,
       "min_y_m": -0.005,
       "max_y_m": 1.945,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -4124,9 +3690,12 @@
       "depth_m": 0.5675,
       "min_y_m": 0.0,
       "max_y_m": 2.19,
-      "mount_hint": "unclassified",
+      "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -4162,10 +3731,11 @@
       "depth_m": 0.92,
       "min_y_m": 0.015,
       "max_y_m": 1.44,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -4199,9 +3769,12 @@
       "depth_m": 1.64,
       "min_y_m": 0.0,
       "max_y_m": 2.75,
-      "mount_hint": "unclassified",
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -4236,10 +3809,11 @@
       "depth_m": 1.42,
       "min_y_m": 0.0,
       "max_y_m": 2.57,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -4272,10 +3846,11 @@
       "depth_m": 2.2354,
       "min_y_m": 0.0,
       "max_y_m": 0.535,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -4325,9 +3900,12 @@
       "depth_m": 1.14,
       "min_y_m": -0.11,
       "max_y_m": 1.86,
-      "mount_hint": "unclassified",
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_floor_contact_offset"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -4378,9 +3956,12 @@
       "depth_m": 0.575,
       "min_y_m": 0.04,
       "max_y_m": 2.12,
-      "mount_hint": "unclassified",
+      "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -4429,9 +4010,12 @@
       "depth_m": 0.59,
       "min_y_m": 1.98,
       "max_y_m": 2.395,
-      "mount_hint": "unclassified",
+      "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -4470,10 +4054,11 @@
       "depth_m": 0.6695,
       "min_y_m": -0.03,
       "max_y_m": 1.935,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -4507,9 +4092,12 @@
       "depth_m": 1.7984,
       "min_y_m": 0.005,
       "max_y_m": 0.4,
-      "mount_hint": "unclassified",
+      "mount_hint": "terrain",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -4544,9 +4132,12 @@
       "depth_m": 0.48,
       "min_y_m": 0.0,
       "max_y_m": 2.74,
-      "mount_hint": "unclassified",
+      "mount_hint": "terrain",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -4581,10 +4172,11 @@
       "depth_m": 0.745,
       "min_y_m": 0.0,
       "max_y_m": 2.68,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -4621,10 +4213,11 @@
       "depth_m": 1.94,
       "min_y_m": -0.01,
       "max_y_m": 2.485,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -4657,9 +4250,12 @@
       "depth_m": 1.3,
       "min_y_m": 0.0,
       "max_y_m": 1.58,
-      "mount_hint": "unclassified",
+      "mount_hint": "terrain",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -4696,10 +4292,11 @@
       "depth_m": 1.55,
       "min_y_m": 0.0,
       "max_y_m": 1.27,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -4730,9 +4327,12 @@
       "depth_m": 1.895,
       "min_y_m": 0.0,
       "max_y_m": 2.69,
-      "mount_hint": "unclassified",
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -4768,9 +4368,12 @@
       "depth_m": 1.14,
       "min_y_m": 0.005,
       "max_y_m": 1.71,
-      "mount_hint": "unclassified",
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -4805,10 +4408,11 @@
       "depth_m": 1.09,
       "min_y_m": 0.0,
       "max_y_m": 1.29,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -4841,9 +4445,12 @@
       "depth_m": 1.3125,
       "min_y_m": 0.0,
       "max_y_m": 2.225,
-      "mount_hint": "unclassified",
+      "mount_hint": "water",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -4877,9 +4484,12 @@
       "depth_m": 3.52,
       "min_y_m": 0.005,
       "max_y_m": 1.145,
-      "mount_hint": "unclassified",
+      "mount_hint": "water",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -4915,10 +4525,11 @@
       "depth_m": 1.005,
       "min_y_m": 0.0,
       "max_y_m": 1.075,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -4951,9 +4562,12 @@
       "depth_m": 0.68,
       "min_y_m": -0.005,
       "max_y_m": 3.135,
-      "mount_hint": "unclassified",
+      "mount_hint": "opening",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -4988,10 +4602,11 @@
       "depth_m": 0.63,
       "min_y_m": 0.0,
       "max_y_m": 2.235,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -5025,9 +4640,12 @@
       "depth_m": 1.205,
       "min_y_m": 0.0,
       "max_y_m": 3.07,
-      "mount_hint": "unclassified",
+      "mount_hint": "opening",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -5065,9 +4683,12 @@
       "depth_m": 0.69,
       "min_y_m": 0.0,
       "max_y_m": 2.935,
-      "mount_hint": "unclassified",
+      "mount_hint": "roof",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -5102,9 +4723,12 @@
       "depth_m": 0.79,
       "min_y_m": 0.005,
       "max_y_m": 2.83,
-      "mount_hint": "unclassified",
+      "mount_hint": "opening",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -5138,9 +4762,12 @@
       "depth_m": 1.02,
       "min_y_m": 0.0,
       "max_y_m": 2.475,
-      "mount_hint": "unclassified",
+      "mount_hint": "terrain",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -5177,10 +4804,11 @@
       "depth_m": 0.7,
       "min_y_m": -0.02,
       "max_y_m": 1.87,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -5212,9 +4840,12 @@
       "depth_m": 3.17,
       "min_y_m": 0.0,
       "max_y_m": 2.395,
-      "mount_hint": "unclassified",
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -5248,9 +4879,12 @@
       "depth_m": 1.95,
       "min_y_m": 0.005,
       "max_y_m": 1.87,
-      "mount_hint": "unclassified",
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -5284,10 +4918,11 @@
       "depth_m": 5.825,
       "min_y_m": -0.02,
       "max_y_m": 2.785,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -5319,10 +4954,11 @@
       "depth_m": 1.55,
       "min_y_m": 0.02,
       "max_y_m": 0.94,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -5356,9 +4992,12 @@
       "depth_m": 4.2311,
       "min_y_m": 0.005,
       "max_y_m": 1.135,
-      "mount_hint": "unclassified",
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -5392,10 +5031,11 @@
       "depth_m": 0.82,
       "min_y_m": 0.035,
       "max_y_m": 2.04,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -5427,9 +5067,12 @@
       "depth_m": 2.8,
       "min_y_m": 0.005,
       "max_y_m": 2.57,
-      "mount_hint": "unclassified",
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -5464,10 +5107,11 @@
       "depth_m": 1.395,
       "min_y_m": 0.005,
       "max_y_m": 2.14,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -5502,10 +5146,11 @@
       "depth_m": 1.8175,
       "min_y_m": 0.0,
       "max_y_m": 2.265,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -5540,9 +5185,12 @@
       "depth_m": 0.54,
       "min_y_m": 0.0,
       "max_y_m": 2.505,
-      "mount_hint": "unclassified",
+      "mount_hint": "opening",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -5578,9 +5226,12 @@
       "depth_m": 0.5195,
       "min_y_m": 0.0,
       "max_y_m": 1.89,
-      "mount_hint": "unclassified",
+      "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -5614,9 +5265,12 @@
       "depth_m": 2.6,
       "min_y_m": 0.0,
       "max_y_m": 3.175,
-      "mount_hint": "unclassified",
+      "mount_hint": "roof",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -5650,10 +5304,11 @@
       "depth_m": 1.96,
       "min_y_m": 0.005,
       "max_y_m": 2.28,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -5688,10 +5343,11 @@
       "depth_m": 1.1,
       "min_y_m": -0.005,
       "max_y_m": 1.41,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -5723,9 +5379,12 @@
       "depth_m": 0.63,
       "min_y_m": 0.0,
       "max_y_m": 2.255,
-      "mount_hint": "unclassified",
+      "mount_hint": "terrain",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -5758,9 +5417,12 @@
       "depth_m": 4.51,
       "min_y_m": 0.01,
       "max_y_m": 2.01,
-      "mount_hint": "unclassified",
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -5795,9 +5457,12 @@
       "depth_m": 1.17,
       "min_y_m": 0.0,
       "max_y_m": 3.08,
-      "mount_hint": "unclassified",
+      "mount_hint": "opening",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -5832,10 +5497,11 @@
       "depth_m": 1.66,
       "min_y_m": 0.005,
       "max_y_m": 1.955,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -5869,9 +5535,12 @@
       "depth_m": 1.31,
       "min_y_m": 0.005,
       "max_y_m": 1.205,
-      "mount_hint": "unclassified",
+      "mount_hint": "water",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -5906,10 +5575,11 @@
       "depth_m": 0.93,
       "min_y_m": 0.02,
       "max_y_m": 1.91,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -5942,9 +5612,12 @@
       "depth_m": 0.98,
       "min_y_m": 0.0,
       "max_y_m": 1.945,
-      "mount_hint": "unclassified",
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -5978,9 +5651,12 @@
       "depth_m": 3.7,
       "min_y_m": -0.01,
       "max_y_m": 1.52,
-      "mount_hint": "unclassified",
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -6016,10 +5692,11 @@
       "depth_m": 2.13,
       "min_y_m": 0.0,
       "max_y_m": 1.82,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -6054,10 +5731,11 @@
       "depth_m": 1.0225,
       "min_y_m": 0.0,
       "max_y_m": 1.1,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -6090,9 +5768,12 @@
       "depth_m": 3.475,
       "min_y_m": 0.0,
       "max_y_m": 0.22,
-      "mount_hint": "unclassified",
+      "mount_hint": "terrain",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -6126,9 +5807,12 @@
       "depth_m": 1.84,
       "min_y_m": 0.0,
       "max_y_m": 2.82,
-      "mount_hint": "unclassified",
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -6161,9 +5845,12 @@
       "depth_m": 2.18,
       "min_y_m": 0.0,
       "max_y_m": 1.38,
-      "mount_hint": "unclassified",
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -6197,9 +5884,12 @@
       "depth_m": 1.13,
       "min_y_m": 0.0,
       "max_y_m": 1.9,
-      "mount_hint": "unclassified",
+      "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -6235,10 +5925,11 @@
       "depth_m": 0.83,
       "min_y_m": 0.01,
       "max_y_m": 2.2,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -6270,9 +5961,12 @@
       "depth_m": 0.14,
       "min_y_m": 0.0,
       "max_y_m": 2.44,
-      "mount_hint": "unclassified",
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -6304,9 +5998,12 @@
       "depth_m": 4.83,
       "min_y_m": 0.0,
       "max_y_m": 3.28,
-      "mount_hint": "unclassified",
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -6341,10 +6038,11 @@
       "depth_m": 1.72,
       "min_y_m": 0.005,
       "max_y_m": 1.1,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -6376,9 +6074,12 @@
       "depth_m": 2.55,
       "min_y_m": 0.02,
       "max_y_m": 1.52,
-      "mount_hint": "unclassified",
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -6413,10 +6114,11 @@
       "depth_m": 2.29,
       "min_y_m": 0.015,
       "max_y_m": 1.235,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -6451,10 +6153,11 @@
       "depth_m": 0.975,
       "min_y_m": 0.005,
       "max_y_m": 2.315,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -6488,10 +6191,11 @@
       "depth_m": 1.705,
       "min_y_m": 0.0,
       "max_y_m": 1.43,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -6525,10 +6229,11 @@
       "depth_m": 1.87,
       "min_y_m": -0.005,
       "max_y_m": 2.7,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -6562,10 +6267,11 @@
       "depth_m": 2.6,
       "min_y_m": 0.0,
       "max_y_m": 1.0575,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -6600,10 +6306,11 @@
       "depth_m": 2.59,
       "min_y_m": 0.0,
       "max_y_m": 1.1325,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -6639,10 +6346,11 @@
       "depth_m": 2.72,
       "min_y_m": 0.0,
       "max_y_m": 1.2625,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -6675,9 +6383,12 @@
       "depth_m": 0.665,
       "min_y_m": 0.0,
       "max_y_m": 0.408,
-      "mount_hint": "unclassified",
+      "mount_hint": "display_surface",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -6712,9 +6423,12 @@
       "depth_m": 0.74,
       "min_y_m": 0.01,
       "max_y_m": 0.87,
-      "mount_hint": "unclassified",
+      "mount_hint": "display_surface",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -6749,9 +6463,12 @@
       "depth_m": 0.68,
       "min_y_m": -0.15,
       "max_y_m": 0.92,
-      "mount_hint": "unclassified",
+      "mount_hint": "display_surface",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -6786,9 +6503,12 @@
       "depth_m": 0.9,
       "min_y_m": 0.01,
       "max_y_m": 1.035,
-      "mount_hint": "unclassified",
+      "mount_hint": "display_surface",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -6823,9 +6543,12 @@
       "depth_m": 0.83,
       "min_y_m": 0.0,
       "max_y_m": 1.595,
-      "mount_hint": "unclassified",
+      "mount_hint": "display_surface",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -6860,9 +6583,12 @@
       "depth_m": 0.93,
       "min_y_m": 0.0,
       "max_y_m": 0.36,
-      "mount_hint": "unclassified",
+      "mount_hint": "display_surface",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -6896,9 +6622,12 @@
       "depth_m": 0.85,
       "min_y_m": 0.0,
       "max_y_m": 0.74,
-      "mount_hint": "unclassified",
+      "mount_hint": "display_surface",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -6932,9 +6661,12 @@
       "depth_m": 0.64,
       "min_y_m": 0.0,
       "max_y_m": 1.4025,
-      "mount_hint": "unclassified",
+      "mount_hint": "display_surface",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -6969,9 +6701,12 @@
       "depth_m": 0.8,
       "min_y_m": 0.0,
       "max_y_m": 0.2925,
-      "mount_hint": "unclassified",
+      "mount_hint": "display_surface",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -7006,9 +6741,12 @@
       "depth_m": 0.86,
       "min_y_m": 0.0,
       "max_y_m": 1.36,
-      "mount_hint": "unclassified",
+      "mount_hint": "display_surface",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -7043,9 +6781,12 @@
       "depth_m": 0.68,
       "min_y_m": 0.0,
       "max_y_m": 0.95,
-      "mount_hint": "unclassified",
+      "mount_hint": "display_surface",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -7080,9 +6821,12 @@
       "depth_m": 0.68,
       "min_y_m": 0.0,
       "max_y_m": 0.905,
-      "mount_hint": "unclassified",
+      "mount_hint": "display_surface",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -7117,9 +6861,12 @@
       "depth_m": 1.005,
       "min_y_m": 0.0,
       "max_y_m": 0.27,
-      "mount_hint": "unclassified",
+      "mount_hint": "display_surface",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -7157,10 +6904,11 @@
       "depth_m": 1.25,
       "min_y_m": 0.0,
       "max_y_m": 2.62,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -7192,10 +6940,11 @@
       "depth_m": 0.955,
       "min_y_m": 0.0,
       "max_y_m": 2.45,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -7231,9 +6980,12 @@
       "depth_m": 0.4,
       "min_y_m": 0.0,
       "max_y_m": 1.105,
-      "mount_hint": "unclassified",
+      "mount_hint": "display_surface",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -7270,9 +7022,12 @@
       "depth_m": 0.94,
       "min_y_m": 0.0,
       "max_y_m": 1.325,
-      "mount_hint": "unclassified",
+      "mount_hint": "display_surface",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -7308,9 +7063,12 @@
       "depth_m": 1.72,
       "min_y_m": 0.0,
       "max_y_m": 2.58,
-      "mount_hint": "unclassified",
+      "mount_hint": "display_surface",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -7345,9 +7103,12 @@
       "depth_m": 0.1415,
       "min_y_m": 0.01,
       "max_y_m": 2.7825,
-      "mount_hint": "unclassified",
+      "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -7382,10 +7143,11 @@
       "depth_m": 0.65,
       "min_y_m": 0.03,
       "max_y_m": 2.505,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -7418,10 +7180,11 @@
       "depth_m": 0.52,
       "min_y_m": 0.01,
       "max_y_m": 1.31,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -7455,10 +7218,11 @@
       "depth_m": 0.63,
       "min_y_m": -0.009,
       "max_y_m": 1.22,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -7493,10 +7257,11 @@
       "depth_m": 0.65,
       "min_y_m": 0.001,
       "max_y_m": 1.24,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -7527,10 +7292,11 @@
       "depth_m": 0.8,
       "min_y_m": 0.0,
       "max_y_m": 1.235,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -7561,10 +7327,11 @@
       "depth_m": 0.88,
       "min_y_m": 0.0,
       "max_y_m": 1.38,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -7596,10 +7363,11 @@
       "depth_m": 1.158,
       "min_y_m": 0.0,
       "max_y_m": 0.139,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -7632,9 +7400,12 @@
       "depth_m": 0.65,
       "min_y_m": -0.005,
       "max_y_m": 1.2,
-      "mount_hint": "unclassified",
+      "mount_hint": "terrain",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -7667,9 +7438,12 @@
       "depth_m": 2.6,
       "min_y_m": 0.0,
       "max_y_m": 1.38,
-      "mount_hint": "unclassified",
+      "mount_hint": "terrain",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_mount_constraint"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -7702,10 +7476,11 @@
       "depth_m": 1.04,
       "min_y_m": 0.03,
       "max_y_m": 1.0175,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -7737,10 +7512,11 @@
       "depth_m": 1.4125,
       "min_y_m": 0.005,
       "max_y_m": 1.62,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -7773,10 +7549,11 @@
       "depth_m": 0.85,
       "min_y_m": 0.0,
       "max_y_m": 0.7375,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -7811,10 +7588,11 @@
       "depth_m": 0.95,
       "min_y_m": 0.01,
       "max_y_m": 1.65,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -7848,10 +7626,11 @@
       "depth_m": 0.903,
       "min_y_m": 0.0,
       "max_y_m": 1.715,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -7882,9 +7661,12 @@
       "depth_m": 3.06,
       "min_y_m": 0.0,
       "max_y_m": 1.36,
-      "mount_hint": "unclassified",
+      "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
-        "legacy_model_missing_mount_metadata"
+        "review_attachment_anchor"
       ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -7918,10 +7700,11 @@
       "depth_m": 0.82,
       "min_y_m": 0.0,
       "max_y_m": 2.64,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -7953,10 +7736,11 @@
       "depth_m": 0.36,
       "min_y_m": 0.005,
       "max_y_m": 1.88,
-      "mount_hint": "unclassified",
-      "diagnostics": [
-        "legacy_model_missing_mount_metadata"
-      ],
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -7994,6 +7778,9 @@
       "min_y_m": 0.105,
       "max_y_m": 2.285,
       "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
         "review_attachment_anchor"
       ],
@@ -8037,6 +7824,9 @@
       "min_y_m": 0.005,
       "max_y_m": 2.295,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -8072,6 +7862,9 @@
       "min_y_m": 0.005,
       "max_y_m": 2.77,
       "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
         "review_attachment_anchor"
       ],
@@ -8111,6 +7904,9 @@
       "min_y_m": 1.305,
       "max_y_m": 2.7241,
       "mount_hint": "ceiling",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
         "review_attachment_anchor"
       ],
@@ -8151,6 +7947,9 @@
       "min_y_m": 0.02,
       "max_y_m": 2.7,
       "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
         "review_attachment_anchor"
       ],
@@ -8190,6 +7989,9 @@
       "min_y_m": 0.16,
       "max_y_m": 1.51,
       "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
         "review_attachment_anchor"
       ],
@@ -8230,6 +8032,9 @@
       "min_y_m": 0.275,
       "max_y_m": 2.645,
       "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
         "review_attachment_anchor"
       ],
@@ -8269,6 +8074,9 @@
       "min_y_m": 0.001,
       "max_y_m": 0.058,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -8305,6 +8113,9 @@
       "min_y_m": 0.0,
       "max_y_m": 2.435,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -8339,6 +8150,9 @@
       "min_y_m": 0.005,
       "max_y_m": 1.11,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -8373,6 +8187,9 @@
       "min_y_m": 0.01,
       "max_y_m": 0.84,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -8408,6 +8225,9 @@
       "min_y_m": 0.005,
       "max_y_m": 2.015,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -8444,6 +8264,9 @@
       "min_y_m": 1.83,
       "max_y_m": 3.095,
       "mount_hint": "roof",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
         "review_attachment_anchor"
       ],
@@ -8480,6 +8303,9 @@
       "min_y_m": 0.01,
       "max_y_m": 1.965,
       "mount_hint": "roof",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
         "review_attachment_anchor"
       ],
@@ -8519,6 +8345,9 @@
       "min_y_m": 0.0,
       "max_y_m": 2.02,
       "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
         "review_attachment_anchor"
       ],
@@ -8555,6 +8384,9 @@
       "min_y_m": 0.0,
       "max_y_m": 1.195,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -8591,6 +8423,9 @@
       "min_y_m": 0.0,
       "max_y_m": 1.535,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -8628,6 +8463,9 @@
       "min_y_m": 0.0,
       "max_y_m": 2.23,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -8663,6 +8501,9 @@
       "min_y_m": 0.7125,
       "max_y_m": 2.33,
       "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
         "review_attachment_anchor"
       ],
@@ -8702,6 +8543,9 @@
       "min_y_m": 0.0,
       "max_y_m": 2.08,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -8740,6 +8584,9 @@
       "min_y_m": 0.005,
       "max_y_m": 1.61,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -8774,6 +8621,9 @@
       "min_y_m": 0.0,
       "max_y_m": 2.44,
       "mount_hint": "ceiling",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
         "review_attachment_anchor"
       ],
@@ -8811,6 +8661,9 @@
       "min_y_m": 0.0,
       "max_y_m": 2.225,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -8844,6 +8697,9 @@
       "min_y_m": 0.015,
       "max_y_m": 1.65,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -8879,6 +8735,9 @@
       "min_y_m": 0.0,
       "max_y_m": 1.145,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -8914,6 +8773,9 @@
       "min_y_m": 0.0,
       "max_y_m": 2.44,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -8947,6 +8809,9 @@
       "min_y_m": 0.0,
       "max_y_m": 1.25,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -8980,6 +8845,9 @@
       "min_y_m": 0.0,
       "max_y_m": 2.61,
       "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
         "review_attachment_anchor"
       ],
@@ -9015,6 +8883,9 @@
       "min_y_m": 0.0,
       "max_y_m": 1.53,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -9049,6 +8920,9 @@
       "min_y_m": 0.01,
       "max_y_m": 1.99,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -9082,7 +8956,12 @@
       "min_y_m": 0.11,
       "max_y_m": 0.6,
       "mount_hint": "water",
-      "diagnostics": [],
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_mount_constraint"
+      ],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -9116,6 +8995,9 @@
       "min_y_m": 0.0,
       "max_y_m": 0.6225,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -9149,6 +9031,9 @@
       "min_y_m": 0.0,
       "max_y_m": 2.1,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -9182,6 +9067,9 @@
       "min_y_m": 0.0,
       "max_y_m": 1.57,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -9216,6 +9104,9 @@
       "min_y_m": 0.07,
       "max_y_m": 1.73,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -9251,6 +9142,9 @@
       "min_y_m": 0.0,
       "max_y_m": 3.2,
       "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
         "review_attachment_anchor"
       ],
@@ -9288,6 +9182,9 @@
       "min_y_m": 0.0,
       "max_y_m": 1.54,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -9323,6 +9220,9 @@
       "min_y_m": 0.0,
       "max_y_m": 1.73,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -9357,6 +9257,9 @@
       "min_y_m": 0.01,
       "max_y_m": 2.63,
       "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
         "review_attachment_anchor"
       ],
@@ -9394,6 +9297,9 @@
       "min_y_m": 0.01,
       "max_y_m": 1.165,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -9429,6 +9335,9 @@
       "min_y_m": 0.045,
       "max_y_m": 0.8875,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -9465,6 +9374,9 @@
       "min_y_m": 0.13,
       "max_y_m": 2.325,
       "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
         "review_attachment_anchor"
       ],
@@ -9502,6 +9414,9 @@
       "min_y_m": 0.065,
       "max_y_m": 2.785,
       "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
         "review_attachment_anchor"
       ],
@@ -9539,6 +9454,9 @@
       "min_y_m": 0.0,
       "max_y_m": 3.02,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -9572,6 +9490,9 @@
       "min_y_m": 0.0,
       "max_y_m": 0.8525,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -9608,6 +9529,9 @@
       "min_y_m": 0.0,
       "max_y_m": 2.7996,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -9644,6 +9568,9 @@
       "min_y_m": 0.0,
       "max_y_m": 1.67,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -9678,6 +9605,9 @@
       "min_y_m": 0.01,
       "max_y_m": 2.3482,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -9711,6 +9641,9 @@
       "min_y_m": 0.025,
       "max_y_m": 1.155,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -9744,6 +9677,9 @@
       "min_y_m": 0.0,
       "max_y_m": 0.54,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -9776,6 +9712,9 @@
       "min_y_m": 0.12,
       "max_y_m": 1.44,
       "mount_hint": "ceiling",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
         "review_attachment_anchor"
       ],
@@ -9814,6 +9753,9 @@
       "min_y_m": 0.02,
       "max_y_m": 1.66,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -9847,6 +9789,9 @@
       "min_y_m": 0.01,
       "max_y_m": 1.022,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -9882,6 +9827,9 @@
       "min_y_m": 0.005,
       "max_y_m": 1.65,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -9916,6 +9864,9 @@
       "min_y_m": 0.01,
       "max_y_m": 0.435,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -9948,6 +9899,9 @@
       "min_y_m": 0.02,
       "max_y_m": 1.045,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -9982,6 +9936,9 @@
       "min_y_m": 0.0,
       "max_y_m": 3.76,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -10017,6 +9974,9 @@
       "min_y_m": 0.0,
       "max_y_m": 1.46,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -10049,6 +10009,9 @@
       "min_y_m": 0.07,
       "max_y_m": 1.7,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -10083,6 +10046,9 @@
       "min_y_m": 0.0,
       "max_y_m": 1.495,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -10115,6 +10081,9 @@
       "min_y_m": 0.0,
       "max_y_m": 1.445,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -10149,6 +10118,9 @@
       "min_y_m": 0.015,
       "max_y_m": 1.245,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -10182,6 +10154,9 @@
       "min_y_m": 0.0,
       "max_y_m": 2.43,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -10218,6 +10193,9 @@
       "min_y_m": 0.095,
       "max_y_m": 1.668,
       "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [
         "review_attachment_anchor"
       ],
@@ -10255,6 +10233,9 @@
       "min_y_m": 0.01,
       "max_y_m": 1.2775,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -10290,6 +10271,9 @@
       "min_y_m": 0.0,
       "max_y_m": 1.385,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -10325,6 +10309,9 @@
       "min_y_m": 0.005,
       "max_y_m": 1.0575,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -10360,6 +10347,9 @@
       "min_y_m": 0.005,
       "max_y_m": 1.85,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -10395,6 +10385,9 @@
       "min_y_m": 0.0,
       "max_y_m": 1.735,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -10430,6 +10423,9 @@
       "min_y_m": 0.055,
       "max_y_m": 1.6,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -10463,6 +10459,9 @@
       "min_y_m": 0.0,
       "max_y_m": 2.275,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -10496,6 +10495,9 @@
       "min_y_m": 0.0,
       "max_y_m": 2.75,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -10528,6 +10530,9 @@
       "min_y_m": 0.0,
       "max_y_m": 0.845,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -10562,6 +10567,9 @@
       "min_y_m": 0.025,
       "max_y_m": 0.825,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
@@ -10595,6 +10603,9 @@
       "min_y_m": 0.0,
       "max_y_m": 2.67,
       "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
       "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
