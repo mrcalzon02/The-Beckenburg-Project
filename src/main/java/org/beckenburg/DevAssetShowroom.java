@@ -683,6 +683,100 @@ public final class DevAssetShowroom implements AutoCloseable {
         Files.writeString(folder.resolve("review-summary.txt"),status,StandardCharsets.UTF_8);
         System.out.println(status);
     }
+    /**
+     * Reusable headless inspection of an actual multi-floor wing. Filters stay
+     * outside the runtime approval registry and only select showroom entries.
+     * Each screenshot is drawn by the same multi-storey SceneRenderer method
+     * used by the interactive room, not a generated model illustration.
+     */
+    public static void captureGallery(Path folder,int maxEntries,String kind,
+                                      String query,int wingNumber)throws IOException{
+        if(wingNumber<0||wingNumber>999)
+            throw new IllegalArgumentException("Gallery wing index must be 0..999");
+        Files.createDirectories(folder);
+        List<DevAssetReviewCatalog.Entry> candidates=DevAssetReviewCatalog.entries();
+        if(kind!=null){
+            String requested=kind.toUpperCase(Locale.ROOT);
+            if(!Set.of("ALL","HUNTER","GHOST","CASTLE_NPC","EQUIPMENT",
+                "IMPORTED","WORLD_MODEL","SOURCE_ONLY").contains(requested))
+                throw new IllegalArgumentException("Unknown gallery kind: "+kind);
+            if(!requested.equals("ALL"))
+                candidates=candidates.stream()
+                    .filter(e->e.kind().name().equals(requested)).toList();
+        }
+        if(query!=null&&!query.isBlank()){
+            String needle=query.toLowerCase(Locale.ROOT);
+            candidates=candidates.stream().filter(e->e.key().toLowerCase(Locale.ROOT)
+                .contains(needle)).toList();
+        }
+        if(maxEntries>0)
+            candidates=candidates.subList(0,Math.min(maxEntries,candidates.size()));
+        List<DevAssetReviewCatalog.Entry> wing=DevAssetGalleryLayout.wing(candidates,wingNumber);
+        if(wing.isEmpty())
+            throw new IOException("No matching models for gallery wing "+wingNumber);
+        StringBuilder locations=new StringBuilder(
+            "kind,id,wing,floor,bay,slot,worldX,worldY,worldZ,reviewOnly\n");
+        for(int i=0;i<wing.size();i++){
+            var item=wing.get(i);
+            var address=DevAssetGalleryLayout.address(i);
+            locations.append(item.kind()).append(',').append(csv(item.id())).append(',')
+                .append(wingNumber).append(',').append(address.floor()+1).append(',')
+                .append(address.bay()+1).append(',').append(address.slot()+1).append(',')
+                .append(DevAssetGalleryLayout.standX(address.slot())).append(',')
+                .append(DevAssetGalleryLayout.floorY(address.floor())).append(',')
+                .append(DevAssetGalleryLayout.standZ(address.bay(),address.slot()))
+                .append(',').append(item.kind()==DevAssetReviewCatalog.Kind.SOURCE_ONLY)
+                .append('\n');
+        }
+        Files.writeString(folder.resolve("gallery-placements.csv"),locations,
+            StandardCharsets.UTF_8);
+        SceneRenderer scene=new SceneRenderer();
+        scene.setRenderSize(640,400);scene.lamp=false;
+        int images=0;
+        for(int floor=0;floor<DevAssetGalleryLayout.FLOORS;floor++)
+            for(int bayIndex=0;bayIndex<DevAssetGalleryLayout.BAYS_PER_FLOOR;bayIndex++){
+                List<DevAssetReviewCatalog.Entry> members=
+                    DevAssetGalleryLayout.bay(wing,floor,bayIndex);
+                if(members.isEmpty())continue;
+                scene.x=0;scene.z=DevAssetGalleryLayout.bayEntranceZ(bayIndex);
+                scene.eyeHeight=DevAssetGalleryLayout.eyeY(floor);
+                scene.yaw=0;scene.pitch=-.06;
+                scene.drawDevAssetGallery(wing,0,0);
+                // Caption below the actual unmodified render so it never
+                // conceals subtle UV seams or ground-contact problems.
+                BufferedImage sheet=new BufferedImage(640,490,BufferedImage.TYPE_INT_RGB);
+                Graphics2D g=sheet.createGraphics();
+                try{
+                    g.setColor(new Color(16,18,24));g.fillRect(0,0,640,490);
+                    g.drawImage(scene.image(),0,0,null);
+                    g.setColor(Color.WHITE);g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,11));
+                    g.drawString("SOURCE REVIEW WING "+(wingNumber+1)+
+                        " / FLOOR "+(floor+1)+" / BAY "+(bayIndex+1)+
+                        " (NOT GAMEPLAY APPROVED)",12,416);
+                    for(int slot=0;slot<members.size();slot++){
+                        var item=members.get(slot);
+                        String label=(slot+1)+" "+item.id();
+                        if(label.length()>33)label=label.substring(0,30)+"...";
+                        g.drawString(label,10+(slot%3)*213,440+(slot/3)*20);
+                    }
+                }finally{g.dispose();}
+                Path image=folder.resolve(String.format(Locale.ROOT,
+                    "gallery-wing-%03d-floor-%02d-bay-%02d.png",
+                    wingNumber+1,floor+1,bayIndex+1));
+                if(!ImageIO.write(sheet,"png",image.toFile()))
+                    throw new IOException("PNG capture writer unavailable");
+                images++;
+            }
+        String status="renderer=SceneRenderer.drawDevAssetGallery\n"+
+            "mode=3 real floor decks / 4 bays each / 6 individually reviewable stands\n"+
+            "wing="+(wingNumber+1)+"\nmodels="+wing.size()+
+            "\nimages="+images+"\nsourceOnlyNotGameApproved=true\n"+
+            "Models shown on each floor are selected by world camera altitude; "+
+            "captures are source-review evidence, not gameplay approval.\n";
+        Files.writeString(folder.resolve("gallery-summary.txt"),status,StandardCharsets.UTF_8);
+        System.out.print(status);
+    }
+
     /** Real renderer capture of the opt-in topology source patch, not concept art. */
     public static void captureTopology(Path folder)throws IOException {
         DevTerrainTopologyLab lab=DevTerrainTopologyLab.open();
@@ -785,23 +879,32 @@ public final class DevAssetShowroom implements AutoCloseable {
     }
     private static String csv(String value){return "\""+value.replace("\"","\"\"").replace("\n"," ")+"\"";}
     public static void main(String[] args)throws Exception{
-        boolean selected=false,capture=false,terrainCapture=false,infrastructureCapture=false;
-        int limit=0;Path output=Path.of("build","dev-room");
-        String focus=null;
+        boolean selected=false,capture=false,galleryCapture=false,
+            terrainCapture=false,infrastructureCapture=false;
+        int limit=0,wingNumber=0;Path output=Path.of("build","dev-room");
+        String focus=null,kind=null,query=null;
         for(String arg:args){
             if(arg.equals("--dev-room"))selected=true;
             else if(arg.equals("--capture"))capture=true;
+            else if(arg.equals("--gallery-capture"))galleryCapture=true;
             else if(arg.equals("--terrain-qa-capture"))terrainCapture=true;
             else if(arg.equals("--infrastructure-demo-capture"))infrastructureCapture=true;
             else if(arg.startsWith("--limit="))limit=Integer.parseInt(arg.substring(8));
             else if(arg.startsWith("--output="))output=Path.of(arg.substring(9));
             else if(arg.startsWith("--asset="))focus=arg.substring(8);
+            else if(arg.startsWith("--kind="))kind=arg.substring(7);
+            else if(arg.startsWith("--filter="))query=arg.substring(9);
+            else if(arg.startsWith("--wing="))wingNumber=Integer.parseInt(arg.substring(7));
             else throw new IllegalArgumentException("Unknown dev-room option "+arg);
         }
         if(!selected)throw new IllegalArgumentException("Explicit --dev-room required");
         if(limit<0||limit>10000)throw new IllegalArgumentException("Invalid review limit");
-        if((capture?1:0)+(terrainCapture?1:0)+(infrastructureCapture?1:0)>1)
+        if((capture?1:0)+(galleryCapture?1:0)+(terrainCapture?1:0)+
+            (infrastructureCapture?1:0)>1)
             throw new IllegalArgumentException("Choose only one DEV room capture mode");
+        if((kind!=null||query!=null||wingNumber!=0)&&!galleryCapture)
+            throw new IllegalArgumentException("--kind, --filter and --wing require --gallery-capture");
+        if(galleryCapture){captureGallery(output,limit,kind,query,wingNumber);return;}
         if(infrastructureCapture){captureInfrastructure(output);return;}
         if(terrainCapture){captureTopology(output);return;}
         if(capture){capture(output,limit,focus);return;}
