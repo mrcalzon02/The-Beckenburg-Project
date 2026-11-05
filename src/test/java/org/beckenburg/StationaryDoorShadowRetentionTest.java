@@ -32,7 +32,7 @@ public final class StationaryDoorShadowRetentionTest {
   var prev=light.useStationaryShadows(shadows,before);
   try{
    for(int i=0;i<5;i++)light.prepareVertex(room,MaterialAtlas.STONE,
-       rx+i*.02,ry,rz,0,0,0,false);
+       rx+i*.08,ry,rz,0,0,0,false);
   }finally{light.restoreStationaryShadows(prev);}
   int entries=shadows.entriesForSource(id);
   check(entries>=3,"Expected same-side rays from fixture "+id+", found "+entries);
