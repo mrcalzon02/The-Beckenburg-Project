@@ -19,6 +19,33 @@ import javax.imageio.ImageIO;
  */
 public final class DirectionalSprites {
     private static final int W=SceneRenderer.W,H=SceneRenderer.H;
+    /** Test-only, current-thread observation of pixels emitted by the REAL
+     * character compositor. Never infer NPC pixels by subtracting full Castle
+     * renders: lighting caches and scenery can legitimately change between frames. */
+    static final class HumanRenderTrace {
+        final String identity;
+        final int width,height;
+        final byte[] pixels;
+        int visibleBody,visibleSole,hiddenSole,hiddenBody,belowFloor;
+        double closestSole=Double.POSITIVE_INFINITY;
+        int bottomVisible=-1;
+        HumanRenderTrace(String identity,int width,int height){
+            this.identity=identity;this.width=width;this.height=height;
+            this.pixels=new byte[width*height];
+        }
+    }
+    private static final ThreadLocal<HumanRenderTrace> ACTIVE_HUMAN_TRACE=new ThreadLocal<>();
+    static void beginHumanRenderTrace(String identity,int width,int height){
+        if(identity==null||width<=0||height<=0||ACTIVE_HUMAN_TRACE.get()!=null)
+            throw new IllegalArgumentException("invalid or nested character render trace");
+        ACTIVE_HUMAN_TRACE.set(new HumanRenderTrace(identity,width,height));
+    }
+    static HumanRenderTrace endHumanRenderTrace(){
+        HumanRenderTrace result=ACTIVE_HUMAN_TRACE.get();
+        ACTIVE_HUMAN_TRACE.remove();
+        if(result==null)throw new IllegalStateException("No human trace started");
+        return result;
+    }
     private static final double FOCAL=153.0,NEAR=.065; // exactly match SceneRenderer
     private static final String[] FACINGS={"front","front","side", "back_three_quarter",
             "back","back_three_quarter_mirrored","side_mirrored","front"};
@@ -400,9 +427,13 @@ public final class DirectionalSprites {
         // changes with player angle. World positions, feet and plane axes never
         // chase the camera; this also eliminates screen-space floor corrections.
         if(GroundedSpriteFeet.isGroundedHuman(character)){
+            HumanRenderTrace observer=ACTIVE_HUMAN_TRACE.get();
+            if(observer!=null&&(!observer.identity.equals(character)
+                    ||observer.width!=renderWidth||observer.height!=renderHeight))
+                observer=null;
             drawWorldLockedHuman(pixels,depth,cameraX,cameraZ,yaw,pitch,
                 entityX,entityZ,heading,sprite,height,width,elevation,opacity,
-                lamp,renderWidth,renderHeight,focal);
+                lamp,renderWidth,renderHeight,focal,observer);
             return;
         }
         // Grounded people have direction-dependent transparent bottom padding.
@@ -505,7 +536,7 @@ public final class DirectionalSprites {
             double cameraX,double cameraZ,double yaw,double pitch,
             double entityX,double entityZ,int heading,BufferedImage sprite,
             double height,double width,double elevation,int opacity,boolean lamp,
-            int renderWidth,int renderHeight,double focal){
+            int renderWidth,int renderHeight,double focal,HumanRenderTrace observer){
         int view=stableFacingForWorldPlane(heading,entityX,entityZ,cameraX,cameraZ);
         double[] axis=worldPlaneAxis(heading,view);
         double ax=axis[0],az=axis[1];
@@ -568,6 +599,26 @@ public final class DirectionalSprites {
                 int alpha=(argb>>>24)*Math.min(255,opacity)/255;
                 if(alpha<24)continue;
                 int pixel=py*renderWidth+px;
+                if(observer!=null){
+                    double aboveFloor=rayDepth*rayY-cardBottom;
+                    // The foot region is independently measured in world
+                    // metres, not against arbitrary screen-space Castle pixels.
+                    boolean solePixel=aboveFloor>=-1e-5&&aboveFloor<=.08
+                        &&ty>=soleRow-Math.max(4,sh/14)&&alpha>=96;
+                    if(rayDepth>=depth[pixel]){
+                        observer.hiddenBody++;
+                        if(solePixel)observer.hiddenSole++;
+                    }else{
+                        observer.pixels[pixel]=1;
+                        observer.visibleBody++;
+                        observer.bottomVisible=Math.max(py,observer.bottomVisible);
+                        if(aboveFloor<-.005)observer.belowFloor++;
+                        if(solePixel){
+                            observer.visibleSole++;
+                            observer.closestSole=Math.min(observer.closestSole,Math.max(0,aboveFloor));
+                        }
+                    }
+                }
                 if(rayDepth>=depth[pixel])continue;
                 int red=(int)Math.min(255,((argb>>>16)&255)*illumination);
                 int green=(int)Math.min(255,((argb>>>8)&255)*illumination);
