@@ -367,36 +367,38 @@ public final class DirectionalSprites {
             LanGhostAnimation.Phase phase,int animationFrame){
         drawPose(pixels,depth,cameraX,cameraZ,yaw,pitch,entityX,entityZ,heading,
             character,height,width,elevation,opacity,lamp,renderWidth,renderHeight,focal,
-            ancientTint,phase,animationFrame,null);
+            ancientTint,phase,animationFrame,null,-1);
     }
     public static void drawHunter(int[] pixels,double[] depth,double cameraX,double cameraZ,
             double yaw,double pitch,SceneRenderer.RemoteBody body,HunterSpriteAnimation.Pose pose,
             double elevation,boolean lamp,int renderWidth,int renderHeight,double focal){
-        BufferedImage image=HunterSpriteAnimation.frame(body.appearance(),
-            stableFacing(body.appearance(),body.heading(),body.x(),body.z(),cameraX,cameraZ),pose);
+        int chosenView=stableFacing(body.appearance(),body.heading(),body.x(),body.z(),
+            cameraX,cameraZ);
+        BufferedImage image=HunterSpriteAnimation.frame(body.appearance(),chosenView,pose);
         var shape=CharacterVisuals.shape(body.appearance());
         double height=shape.height()*(body.crouched()?HunterPosture.CROUCH_HEIGHT/HunterPosture.STANDING_HEIGHT:1);
         drawPose(pixels,depth,cameraX,cameraZ,yaw,pitch,body.x(),body.z(),body.heading(),
             body.appearance(),height,shape.width(),elevation,255,lamp,renderWidth,renderHeight,focal,
-            false,LanGhostAnimation.Phase.LURK,0,image);
+            false,LanGhostAnimation.Phase.LURK,0,image,chosenView);
     }
     public static void drawResident(int[] pixels,double[] depth,double cameraX,double cameraZ,
             double yaw,double pitch,CastleRelations.Resident resident,CastleResidentAnimation.Body body,
             double elevation,boolean lamp,int renderWidth,int renderHeight,double focal){
         String id=CastleResidentAnimation.identity(resident);
-        var image=CastleResidentAnimation.frame(resident,
-            stableFacing(id,body.heading(),body.x(),body.z(),cameraX,cameraZ),body.pose());
+        int chosenView=stableFacing(id,body.heading(),body.x(),body.z(),cameraX,cameraZ);
+        var image=CastleResidentAnimation.frame(resident,chosenView,body.pose());
         double height=1.79*(body.pose()==HunterSpriteAnimation.Pose.CROUCH
             ?HunterPosture.CROUCH_HEIGHT/HunterPosture.STANDING_HEIGHT:1);
         drawPose(pixels,depth,cameraX,cameraZ,yaw,pitch,body.x(),body.z(),body.heading(),
             id,height,.98,elevation,255,lamp,renderWidth,renderHeight,focal,
-            false,LanGhostAnimation.Phase.LURK,0,image);
+            false,LanGhostAnimation.Phase.LURK,0,image,chosenView);
     }
     private static void drawPose(int[] pixels,double[] depth,double cameraX,double cameraZ,
             double yaw,double pitch,double entityX,double entityZ,int heading,
             String character,double height,double width,double elevation,int opacity,boolean lamp,
             int renderWidth,int renderHeight,double focal,boolean ancientTint,
-            LanGhostAnimation.Phase phase,int animationFrame,BufferedImage poseImage){
+            LanGhostAnimation.Phase phase,int animationFrame,BufferedImage poseImage,
+            int selectedView){
         if(pixels.length!=renderWidth*renderHeight||depth.length!=renderWidth*renderHeight
                 ||opacity<=0||height<=0)return;
         if(!Double.isFinite(entityX)||!Double.isFinite(entityZ))return;
@@ -419,8 +421,12 @@ public final class DirectionalSprites {
         double head=renderHeight/2.0-(topY*cy-ahead*sy)/nearTop*focal;
         double geometricFoot=foot;
         if(head>=foot)return;
-        BufferedImage sprite=poseImage!=null?poseImage:frame(character,stableFacing(character,heading,
-            entityX,entityZ,cameraX,cameraZ),phase,animationFrame);
+        // The image and its world-locked plane must use the SAME hysteresis-
+        // filtered view. A second raw facing() call can rotate the physical
+        // card 90 degrees while its art still shows the preceding direction.
+        int view=selectedView>=0?selectedView:stableFacing(character,heading,
+            entityX,entityZ,cameraX,cameraZ);
+        BufferedImage sprite=poseImage!=null?poseImage:frame(character,view,phase,animationFrame);
         // Living people are world objects, not camera-facing overlays. Their
         // visible card is one of two static, intersecting planes defined by the
         // actor's own heading (front/back or left/right). Only the ART view
@@ -432,7 +438,7 @@ public final class DirectionalSprites {
                     ||observer.width!=renderWidth||observer.height!=renderHeight))
                 observer=null;
             drawWorldLockedHuman(pixels,depth,cameraX,cameraZ,yaw,pitch,
-                entityX,entityZ,heading,sprite,height,width,elevation,opacity,
+                entityX,entityZ,heading,view,sprite,height,width,elevation,opacity,
                 lamp,renderWidth,renderHeight,focal,observer);
             return;
         }
@@ -534,10 +540,9 @@ public final class DirectionalSprites {
     }
     private static void drawWorldLockedHuman(int[] pixels,double[] depth,
             double cameraX,double cameraZ,double yaw,double pitch,
-            double entityX,double entityZ,int heading,BufferedImage sprite,
+            double entityX,double entityZ,int heading,int view,BufferedImage sprite,
             double height,double width,double elevation,int opacity,boolean lamp,
             int renderWidth,int renderHeight,double focal,HumanRenderTrace observer){
-        int view=stableFacingForWorldPlane(heading,entityX,entityZ,cameraX,cameraZ);
         double[] axis=worldPlaneAxis(heading,view);
         double ax=axis[0],az=axis[1];
         double nx=-az,nz=ax,cy=Math.cos(pitch),sy=Math.sin(pitch);
@@ -637,10 +642,4 @@ public final class DirectionalSprites {
             }
         }
     }
-    private static int stableFacingForWorldPlane(int heading,double entityX,double entityZ,
-            double cameraX,double cameraZ){
-        // Stable discrete view selection changes the approved *texture only*.
-        return facing(heading,entityX,entityZ,cameraX,cameraZ);
-    }
-
 }

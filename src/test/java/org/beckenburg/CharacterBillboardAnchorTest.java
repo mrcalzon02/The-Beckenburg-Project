@@ -31,6 +31,14 @@ public final class CharacterBillboardAnchorTest {
         check(deliberateOrbit==2,"meaningful camera orbit still changes perspective");
         check(DirectionalSprites.stableFacing("lore_master",0,0,0,
             cameraX(80),cameraZ(80))>=0,"Matthis uses the same stable pivots");
+        int latched=DirectionalSprites.stableFacing("rowan_pike",0,0,0,
+            cameraX(65),cameraZ(65));
+        int raw=DirectionalSprites.facing(0,0,0,cameraX(65),cameraZ(65));
+        // At a hysteresis threshold the stable art can deliberately differ
+        // from raw facing; using raw geometry creates an instant 90-degree
+        // flicker even though the image has not yet changed.
+        check(latched==initial&&latched!=raw,
+            "hysteresis produces a deliberate held frame distinct from raw facing");
         // The selected front/back and side card geometries are the same
         // fixed planes regardless of camera yaw, proximity or strafe.
         for(int heading:new int[]{0,45,90,180,270}){
