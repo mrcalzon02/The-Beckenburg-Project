@@ -737,9 +737,30 @@ public final class DevAssetShowroom implements AutoCloseable {
         }
         Files.writeString(folder.resolve("gallery-placements.csv"),locations,
             StandardCharsets.UTF_8);
+        // These diagnostics use the native decoder, not source-file presence.
+        // A red error plinth may still produce pixels, so no gallery may call
+        // such a stand a successfully decoded model.
+        int failedModels=0;
+        StringBuilder audits=new StringBuilder(
+            "kind,id,state,triangles,materials,textureSamples,sourceOnly\n");
+        for(var member:wing){
+            var audit=DevAssetReviewCatalog.audit(member);
+            audits.append(member.kind()).append(',').append(csv(member.id()))
+                .append(',').append(audit.state()).append(',')
+                .append(audit.triangles()).append(',').append(audit.materials())
+                .append(',').append(audit.textureSamples()).append(',')
+                .append(member.kind()==DevAssetReviewCatalog.Kind.SOURCE_ONLY)
+                .append('\n');
+            if(!audit.loaded()||audit.triangles()==0&&!member.sprite())
+                failedModels++;
+        }
+        Files.writeString(folder.resolve("gallery-model-audits.csv"),audits,
+            StandardCharsets.UTF_8);
         SceneRenderer scene=new SceneRenderer();
         scene.setRenderSize(640,400);scene.lamp=false;
-        int images=0;
+        int images=0,failedBays=0;
+        StringBuilder visibility=new StringBuilder(
+            "wing,floor,bay,stands,changedPixels,visible\n");
         for(int floor=0;floor<DevAssetGalleryLayout.FLOORS;floor++)
             for(int bayIndex=0;bayIndex<DevAssetGalleryLayout.BAYS_PER_FLOOR;bayIndex++){
                 List<DevAssetReviewCatalog.Entry> members=
@@ -748,7 +769,21 @@ public final class DevAssetShowroom implements AutoCloseable {
                 scene.x=0;scene.z=DevAssetGalleryLayout.bayEntranceZ(bayIndex);
                 scene.eyeHeight=DevAssetGalleryLayout.eyeY(floor);
                 scene.yaw=0;scene.pitch=-.06;
+                // A full scene capture can contain plinths and walls but no
+                // actual models. Compare the SAME camera with empty staging
+                // to verify a distinguishable model silhouette exists.
+                scene.drawDevAssetGallery(List.of(),0,0);
+                int[] baseline=scene.pixels().clone();
                 scene.drawDevAssetGallery(wing,0,0);
+                int changed=0;
+                int[] visiblePixels=scene.pixels();
+                for(int n=0;n<baseline.length;n++)
+                    if(baseline[n]!=visiblePixels[n])changed++;
+                if(changed<=20)failedBays++;
+                visibility.append(wingNumber+1).append(',').append(floor+1)
+                    .append(',').append(bayIndex+1).append(',')
+                    .append(members.size()).append(',').append(changed)
+                    .append(',').append(changed>20).append('\n');
                 // Caption below the actual unmodified render so it never
                 // conceals subtle UV seams or ground-contact problems.
                 BufferedImage sheet=new BufferedImage(640,490,BufferedImage.TYPE_INT_RGB);
@@ -774,14 +809,23 @@ public final class DevAssetShowroom implements AutoCloseable {
                     throw new IOException("PNG capture writer unavailable");
                 images++;
             }
+        Files.writeString(folder.resolve("gallery-visibility.csv"),visibility,
+            StandardCharsets.UTF_8);
         String status="renderer=SceneRenderer.drawDevAssetGallery\n"+
             "mode=3 real floor decks / 4 bays each / 6 individually reviewable stands\n"+
             "wing="+(wingNumber+1)+"\nmodels="+wing.size()+
-            "\nimages="+images+"\nsourceOnlyNotGameApproved=true\n"+
+            "\nimages="+images+"\nundecodableModels="+failedModels+
+            "\ninvisibleBays="+failedBays+"\nsourceOnlyNotGameApproved=true\n"+
             "Models shown on each floor are selected by world camera altitude; "+
             "captures are source-review evidence, not gameplay approval.\n";
         Files.writeString(folder.resolve("gallery-summary.txt"),status,StandardCharsets.UTF_8);
         System.out.print(status);
+        // This is a DEV inspection regression, never a game-release blocker.
+        // Keep the PNGs and CSVs for diagnosis even when a bay is unreadable.
+        if(failedModels>0||failedBays>0)
+            throw new IOException("DEV gallery model visibility failed: "+
+                failedModels+" undecodable models, "+failedBays+
+                " empty/invisible bays; see gallery CSV and PNG artifact");
     }
 
     /** Real renderer capture of the opt-in topology source patch, not concept art. */
