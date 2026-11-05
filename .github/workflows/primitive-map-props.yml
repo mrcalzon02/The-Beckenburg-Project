@@ -6,6 +6,7 @@ on:
       - 'development/levels/primitive-props-v1/catalog.json'
       - 'development/levels/primitive-props-v1/build.py'
       - 'development/levels/primitive-props-v1/audit.py'
+      - 'development/levels/primitive-props-v1/geometry_regression.py'
       - 'development/levels/primitive-props-v1/kits.py'
       - 'development/levels/primitive-props-v1/castle-crypt-proposal.json'
       - 'development/levels/primitive-props-v1/crypt.py'
@@ -55,7 +56,7 @@ jobs:
           root=Path("development/levels/primitive-props-v1")
           catalog=json.loads((root/"catalog.json").read_text())
           verification=json.loads((root/"verification.json").read_text())
-          assert len(catalog["models"])==160
+          assert len(catalog["models"])==178
           assert len(catalog["models"])==len(verification["models"])
           fitted=json.loads((root/"fit-verification.json").read_text())
           assert fitted["sites"]==5 and fitted["placements"]==61
@@ -87,6 +88,8 @@ jobs:
         run: python development/levels/primitive-props-v1/relics.py
       - name: Verify relic placements and 3D sources byte-for-byte
         run: python development/levels/primitive-props-v1/relics.py --check
+      - name: Verify refined prop orientation, shaft opening and actual GLB bounds
+        run: python development/levels/primitive-props-v1/geometry_regression.py
       - name: Independently decode embedded GLB PNGs and audit map assignments
         run: python development/levels/primitive-props-v1/audit.py
       - name: Preserve generated model assets on main (no force)

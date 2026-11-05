@@ -64,11 +64,19 @@ def triangles(parts):
         if material not in PALETTE: raise ValueError(material)
         if kind == "box":
             w,h,d=part["size"];yaw=part.get("yaw",0.0)
+            # Roll rotates local XY first; yaw then rotates around world Y.
+            # This is essential for upright fan/radial hardware. Yaw-only
+            # would turn every blade sideways instead of around the hub.
+            roll=part.get("roll",0.0)
+            if not all(math.isfinite(a) for a in (roll,yaw)):
+                raise ValueError("nonfinite part angle")
+            sr,cr=math.sin(roll),math.cos(roll)
             sn,cs=math.sin(yaw),math.cos(yaw)
             corners=[]
             for x,y,z in [(-1,-1,-1),(1,-1,-1),(1,1,-1),(-1,1,-1),(-1,-1,1),(1,-1,1),(1,1,1),(-1,1,1)]:
                 x*=w/2;y*=h/2;z*=d/2
-                corners.append([px+x*cs-z*sn,py+y,pz+x*sn+z*cs])
+                xr,yr=x*cr-y*sr,x*sr+y*cr
+                corners.append([px+xr*cs-z*sn,py+yr,pz+xr*sn+z*cs])
             for ids in ((0,3,2,1),(4,5,6,7),(4,7,3,0),(1,2,6,5),(3,7,6,2),(0,1,5,4)):
                 face([corners[i] for i in ids],material)
         elif kind == "cylinder":

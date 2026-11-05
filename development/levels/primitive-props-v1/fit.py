@@ -30,6 +30,10 @@ def local_extent(part):
     kind=part["type"]
     if kind in ("box","tri_prism"):
         w,h,d=part["size"]
+        if kind=="box":
+            roll=part.get("roll",0.0)
+            c,s=abs(math.cos(roll)),abs(math.sin(roll))
+            return (c*w/2+s*h/2,s*w/2+c*h/2,d/2)
         return w/2,h/2,d/2
     if kind=="cylinder":
         r,half=part["radius"],part["height"]/2
