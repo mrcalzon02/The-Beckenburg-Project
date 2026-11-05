@@ -134,12 +134,12 @@ public final class LevelOpeningCinematicVisualTest {
                 +"\nunique_pixels="+diversity(raw)+"\nprewarm_passes="+warm.passes()
                 +"\nprewarm_ms="+warm.elapsedMs()
                 +"\nstatic_shell_chunks="+warm.staticShellChunks()
-                +"\\nstatic_shell_faces="+warm.staticFaces()
-                +"\\nstatic_preparation_ms="+warm.staticPreparationMs()
-                +"\\nstaged_scenery_instances="+warm.stagedSceneryInstances()
-                +"\\nscene_revision="+warm.sceneRevision()
-                +"\\nprebake_shell_reused="+warm.shellReused()
-                +"\\nprebake_scenery_reused="+warm.sceneryReused()+"\\n";
+                +"\nstatic_shell_faces="+warm.staticFaces()
+                +"\nstatic_preparation_ms="+warm.staticPreparationMs()
+                +"\nstaged_scenery_instances="+warm.stagedSceneryInstances()
+                +"\nscene_revision="+warm.sceneRevision()
+                +"\nprebake_shell_reused="+warm.shellReused()
+                +"\nprebake_scenery_reused="+warm.sceneryReused()+"\n";
             Files.writeString(root.resolve("verification.txt"),summary,StandardCharsets.UTF_8);
             System.out.println("PASS true 3D map-to-van approach on SOFTWARE backend, "
                 +diversity(raw)+" distinct sampled colors, prewarm="+warm.passes()
