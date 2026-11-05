@@ -180,7 +180,11 @@ public final class DevAssetShowroom implements AutoCloseable {
         window.setVisible(true);
         viewport.requestFocusInWindow();
     }
-    private void reload(){all=DevAssetReviewCatalog.entries();filter();}
+    private void reload(){
+        DevAssetReviewCatalog.invalidateSourceReviewCache();
+        all=DevAssetReviewCatalog.entries();
+        filter();
+    }
     private void filter(){
         String kind=String.valueOf(type.getSelectedItem());
         String q=search.getText().trim().toLowerCase(Locale.ROOT);
@@ -188,7 +192,7 @@ public final class DevAssetShowroom implements AutoCloseable {
             .filter(e->q.isEmpty()||e.key().toLowerCase(Locale.ROOT).contains(q)).toList();
         listModel.clear();
         for(var e:visible)listModel.addElement(e);
-        page=0;floor=0;bayNumber=0;selected=-1;showPage();
+        page=0;floor=0;bayNumber=0;selected=-1;catalog.clearSelection();showPage();
     }
     /** Next/previous physical bay; automatically continues onto another floor/wing. */
     private void changePage(int delta){
@@ -200,19 +204,19 @@ public final class DevAssetShowroom implements AutoCloseable {
         page=destination/capacity;
         floor=(destination%capacity)/DevAssetGalleryLayout.BAYS_PER_FLOOR;
         bayNumber=destination%DevAssetGalleryLayout.BAYS_PER_FLOOR;
-        selected=-1;showPage();
+        selected=-1;catalog.clearSelection();showPage();
     }
     private void changeFloor(int delta){
         if(visible.isEmpty())return;
         int destination=DevAssetGalleryLayout.clampFloor(floor+delta);
         if(destination*DevAssetGalleryLayout.SLOTS_PER_FLOOR>=wing.size())return;
-        floor=destination;selected=-1;showPage();
+        floor=destination;selected=-1;catalog.clearSelection();showPage();
     }
     private void changeWing(int delta){
         if(visible.isEmpty())return;
         int last=(visible.size()-1)/DevAssetGalleryLayout.SLOTS_PER_WING;
         page=Math.max(0,Math.min(last,page+delta));
-        selected=-1;showPage();
+        selected=-1;catalog.clearSelection();showPage();
     }
     private void showPage(){
         wing=DevAssetGalleryLayout.wing(visible,page);
@@ -437,6 +441,7 @@ public final class DevAssetShowroom implements AutoCloseable {
                     cameraBay*DevAssetGalleryLayout.SLOTS_PER_BAY;
                 if(start<wing.size()&&(floor!=cameraFloor||bayNumber!=cameraBay)){
                     floor=cameraFloor;bayNumber=cameraBay;selected=-1;
+                    catalog.clearSelection();
                     bay=DevAssetGalleryLayout.bay(wing,floor,bayNumber);
                     updateGalleryStatus();
                 }
@@ -472,9 +477,11 @@ public final class DevAssetShowroom implements AutoCloseable {
     }
     /** Human signoff is stored separately from automatically checked-in source art. */
     private void recordManualReview(String verdict){
-        DevAssetReviewCatalog.Entry e=catalog.getSelectedValue();
-        if(e==null&&selected>=0&&selected<bay.size())e=bay.get(selected);
-        if(e==null){status.setText("Choose an asset first");return;}
+        // Manual review follows the *visible selected stand*, never an
+        // old selection from another physical floor or catalog page.
+        DevAssetReviewCatalog.Entry e=selected>=0&&selected<bay.size()
+            ?bay.get(selected):null;
+        if(e==null){status.setText("Select a current gallery stand (1–6) first");return;}
         // A deliberately unfinished graybox may be reviewed for geometry,
         // but must never be logged as visually production-approved.
         if(e.id().startsWith("level_blockout_")&&verdict.equals("VISUAL_APPROVED"))
