@@ -1,13 +1,13 @@
 # Map-specific primitive prop blockouts (v1)
 
-The authoritative planning backlog is [catalog.json](catalog.json), which maps **41 starter props to 28 proposed maps plus the separate Vale Mortuary expansion**. It augments the existing `development/levels/model-requirements/*.json` files rather than replacing their full room-by-room checklists.
+The authoritative planning backlog is [catalog.json](catalog.json), which maps **139 individual study models across 28 planned maps plus the Vale Mortuary expansion**. It augments the existing `development/levels/model-requirements/*.json` files rather than replacing their full room-by-room checklists.
 
 ## What this package is
 
-- Measured, ground-origin, Y-up glTF 2.0 geometry in metres: basic boxes, faceted cylinders, and an enclosed tent prism. The colors are placeholder materials, not final textured UV assets.
+- Measured, ground-origin, Y-up glTF 2.0 geometry in metres: basic boxes, faceted cylinders, and an enclosed tent prism. The colors are placeholder material factors over a deliberately tiny **valid embedded 2×2 PNG swatch**, not final authored UV textures.
 - Each `level_blockout_*.glb` is an individually selectable study asset. No duplicate of any existing finished `level_*` model is overwritten.
 - The catalogue's `sites[].prototypes` field is an **assignment proposal**, not an automatic scene placement. No map availability, collision, navmesh, lighting, acoustics, interactivity or network state has been modified.
-- These 41 starter studies cover structural openings/rails, storage/workshop fixtures, institutions, archives, camps/mining, maritime/industrial scenes, new lighthouse/lodge/bunker/shaft locations and the mortuary addition. Phase 2 adds Castle inventory counters, map board, relic containment, training rig and restoration scaffold, plus institutional medical/security and remote mechanical landmarks.
+- The collection contains **139 distinct GLB models made of 1,292 primitive pieces** (98 added in the expanded-map pass). It covers structural opening/rails, Castle service and training fixtures, academic/hospital/chapel and domestic interiors, forests/campgrounds/caverns, generator/electrical studies, maritime/industrial scenes, lightstation/lodge/bunker/shaft structures and mortuary fixtures. Each study remains independent and replaceable.
 - Existing source LOD/original model assets remain unchanged. Completed prop models require geometry refinement, proper UV/materials, origin/orientation review, scene placement, and actual editor/renderer acceptance.
 
 ## Rebuild / inspect
@@ -15,6 +15,11 @@ The authoritative planning backlog is [catalog.json](catalog.json), which maps *
 ```bash
 python development/levels/primitive-props-v1/build.py
 python development/levels/primitive-props-v1/build.py --check
+python development/levels/primitive-props-v1/fit.py
+python development/levels/primitive-props-v1/fit.py --check
+python development/levels/primitive-props-v1/kits.py
+python development/levels/primitive-props-v1/kits.py --check
+python development/levels/primitive-props-v1/audit.py
 ```
 
 No external Python dependencies are required. `build.py` writes independent binary GLBs to `models/` and `verification.json`; `--check` compares all files to the catalog-derived deterministic bytes. Confirm individual GLBs through the game's existing import/review path before approving their use. All source-coordinate changes should be made in `catalog.json`, not by post-export ad hoc edits.
@@ -119,3 +124,74 @@ If an ordinary player has modified their Castle via the editor, the audit
 reads the local `CastleLevelEdits.current()` scene; CI evaluates its own
 fresh default scene. Neither run edits those overrides. A blocked placement
 is a real stop condition **for that proposal only**, not a release failure.
+
+
+## Expanded map-model library — 139 models, 29 map kits (verified)
+
+The expanded worklist has been authored as **98 additional primitive GLBs**,
+bringing the catalog to **139 independent meshes**. The major construction
+groups include:
+
+- **Academy, asylum, college, parish and school:** cloister bays, administrator
+  desk, lecture tiers, lab hood, dorm bunks, patient bath/examination carts,
+  nurse records, gym fixtures, organ, bell frame, confessional, altar and
+  crypt recesses.
+- **Farmhouse, Briar House, manor and Castle:** loft hay, trough, root-bin,
+  feed sacks, toy chest, domestic pipes, unlettered house post, grand-stair
+  balustrade, chandelier, greenhouse benches, monastery well and scriptorium.
+- **Forests, camps, caves, mine and research:** stopped sawmill, extractor,
+  survey marker, camper shell, campsite ring, rockfall barricade, mine winch,
+  inert generator, main breaker cabinet, cable tray, Northwatch airlock and
+  weather instruments.
+- **Coast, dam, cannery and rail:** raised marsh walk, boat haul cradle, fishing
+  net support, railcar/wheelset/switch, valve gallery, dam actuator, processing
+  machinery, boiler, lighthouse lantern/cistern, and dry shoreline structures.
+- **Saint Elara, Eight Pines, Brackenhead, Cinder-6 and Vale Mortuary:**
+  visual bow and watertight-bulkhead proxies, marine engine/pump/helm/boom,
+  lodging laundry/canopy/parking equipment, empty period casemate and barrack
+  lockers, open-center shaft liner, pump/grate and mortuary preparation/cold
+  storage/viewing/service fittings.
+
+**Model construction is not the same as functional gameplay integration.**
+These shapes have no working interactions, opening doors, powered machinery,
+lighting, sound, AI collision, networking, water mechanics or playable routes.
+No existing runtime asset was overwritten. Existing source 3D models and
+environment assets remain authoritative until separately reviewed.
+
+### Review all 29 map palettes
+
+The [site-kits directory](site-kits/) now contains **78 deterministic
+source-only GLB contact-room pages**, arranged as 3 columns × 2 rows per page.
+Each specimen keeps its original scale in metres, and the stand's floor
+position is computed from the source geometry rather than assumed. See
+[site-kits/index.json](site-kits/index.json) to identify each of the
+**402 displayed map-specific model assignments**, including an exact model ID,
+slot, source ground offset, page and SHA-256 digest. The six universal
+architecture/utility models remain assigned to each location but are not
+duplicated physically on every gallery page.
+
+Open the individual GLBs in [models/](models/) for close inspection, or
+the site-specific sheets for whole-map family comparisons. The contact
+rooms are NOT placements in proposed level shell coordinates; the 61
+route-aware arrangements in [placements/](placements/) remain a **separate**
+five-map experiment. In particular, expanded-Castle coordinates are not
+playable-Castle coordinates.
+
+### Independent integrity gates
+
+[build.py](build.py) regenerates all model binaries. [fit.py](fit.py)
+regenerates the five route-aware placement previews. [kits.py](kits.py)
+regenerates the 29 map portfolios. [audit.py](audit.py) independently parses
+the GLB headers, indexed triangles, UV/material accessors and embedded
+PNG bytes (signature, CRC and lossless decompression), compares SHA-256 hashes,
+checks explicit catalog assignment symmetry and verifies every kit's contents.
+No dependency beyond the Python standard library is required.
+
+The GitHub Action publishes the reproducible binaries via a bounded non-force
+push and checks their exact bytes. This is **mesh-format, integrity and
+authoring-gallery validation**, not in-engine 3D appearance, actual texture
+art, or mission-playability acceptance.
+
+The next acceptance pass is individual four-angle in-engine source preview,
+room-shell geometry matching and replacement of simplified constructions with
+appropriately textured, properly anchored and collider-validated meshes.
