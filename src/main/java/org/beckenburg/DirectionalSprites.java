@@ -390,6 +390,7 @@ public final class DirectionalSprites {
         if(anchorDepth<NEAR)return;
         double foot=renderHeight/2.0-(baseY*cy-ahead*sy)/nearBottom*focal;
         double head=renderHeight/2.0-(topY*cy-ahead*sy)/nearTop*focal;
+        double geometricFoot=foot;
         if(head>=foot)return;
         BufferedImage sprite=poseImage!=null?poseImage:frame(character,stableFacing(character,heading,
             entityX,entityZ,cameraX,cameraZ),phase,animationFrame);
@@ -406,8 +407,13 @@ public final class DirectionalSprites {
         double cx=renderWidth/2.0+right/anchorDepth*focal;
         // Re-centre the authored silhouette on its immutable world pivot.
         // Old code treated arbitrary transparent frame margins as body width.
-        if(GroundedSpriteFeet.isGroundedHuman(character))
+        if(GroundedSpriteFeet.isGroundedHuman(character)){
             cx+=(sprite.getWidth()*.5-bodyPivotX(sprite))*2*halfW/sprite.getWidth();
+            double correction=GroundedSpriteFeet.renderedFloorCorrection(depth,
+                renderWidth,renderHeight,cx,geometricFoot,nearBottom,halfW*2);
+            head+=correction;
+            foot+=correction;
+        }
         int x0=Math.max(0,(int)Math.floor(cx-halfW)),x1=Math.min(renderWidth-1,(int)Math.ceil(cx+halfW));
         int y0=Math.max(0,(int)Math.floor(head)),y1=Math.min(renderHeight-1,(int)Math.ceil(foot));
         if(x0>x1||y0>y1)return;

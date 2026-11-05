@@ -3,6 +3,17 @@
   "updated": "2026-11-04",
   "issues": [
     {
+      "id": "DEV-263",
+      "title": "Character boots visibly float above the Castle floor despite earlier alpha-pad correction",
+      "status": "source fix committed; isolated Java 17 unit test PASS; exact-source CI and installed render acceptance pending",
+      "affected": "All grounded human sprite billboards in Castle and investigation scenes; ghost hovering remains deliberate",
+      "symptom": "NPC boot soles visibly detach from the rendered floor at certain camera views, as in the user-provided Castle screenshot.",
+      "cause": "Global last-visible-alpha row could be fooled by fringe or isolated cutout pixels; geometry floor is independently pixel-snapped, but the character sole was anchored only to the ideal projected plane.",
+      "action": "Find substantial centered shoe alpha rows; lock only human sprite vertical projection to a consistent sloping depth-buffer floor crossing at multiple foot columns. Preserve original artwork, world coordinates, collisions, depth occlusion and ghost effects. Add GroundedSpriteFeetTest to full regression manifest.",
+      "evidence": "User screenshot 2026-11-04; local isolated Java 17 grounding regression PASS. Exact-source GPU screenshot is still required.",
+      "older_maps": "Shared billboard path affects Castle and cases: audit all maps at standing/crouched camera eye heights, near walls, holes, floors and stairs."
+    },
+    {
       "status": "fixed-scoped; focused local acceptance; installed release acceptance pending",
       "evidence": "development/quality/evidence/resident-animation-2026-11-03/ and development/levels/previews/resident-animation-2026-11-04/",
       "older_maps": "Shared rendering changes cover visible actors across maps; individual terrain and installed-copy visual acceptance remain separate.",

@@ -25,7 +25,10 @@ public final class GroundedSpriteFeetTest {
             "intentional ghost floating must be untouched");
         BufferedImage frame=new BufferedImage(128,224,BufferedImage.TYPE_INT_ARGB);
         for(int y=2;y<=205;y++)for(int x=12;x<116;x++)frame.setRGB(x,y,0xff8899aa);
-        check(GroundedSpriteFeet.lastVisibleRow(frame)==205,"cutout foot location");
+        // A lone fringe or matte pixel below the real boots is not ground contact.
+        frame.setRGB(3,223,0xff8899aa);
+        frame.setRGB(60,221,0x308899aa);
+        check(GroundedSpriteFeet.lastVisibleRow(frame)==205,"substantial sole, not stray pixel, sets the foot anchor");
         near(GroundedSpriteFeet.bottomPaddingShift(frame,112),9.0,
             "transparent tail has 18 pixels and half-scale shift should be 9");
         for(double screenHeight:new double[]{32,112,264}){
@@ -38,6 +41,20 @@ public final class GroundedSpriteFeetTest {
         full.setRGB(4,7,0xff000000);
         near(GroundedSpriteFeet.bottomPaddingShift(full,100),0,
             "already grounded art must be unmodified");
-        System.out.println("PASS human sprite world foot anchor, camera movement and original alpha bounds");
+        // An ideal horizontal support plane intersects the sprite's world
+        // foot depth at row 100; a snapped GPU plane shifts that crossing.
+        int w=80,h=200;double[] floorDepth=new double[w*h];
+        java.util.Arrays.fill(floorDepth,Double.POSITIVE_INFINITY);
+        for(int x=0;x<w;x++)for(int y=0;y<h;y++)
+            floorDepth[y*w+x]=4.0+(102-y)*.07;
+        near(GroundedSpriteFeet.renderedFloorCorrection(floorDepth,w,h,40,100,4.0,30),
+            2,"rendered floor contact corrects a two-pixel raster displacement");
+        java.util.Arrays.fill(floorDepth,Double.POSITIVE_INFINITY);
+        near(GroundedSpriteFeet.renderedFloorCorrection(floorDepth,w,h,40,100,4.0,30),
+            0,"sky or missing floor cannot move shoes");
+        for(int y=0;y<h;y++)for(int x=0;x<w;x++)floorDepth[y*w+x]=3.0;
+        near(GroundedSpriteFeet.renderedFloorCorrection(floorDepth,w,h,40,100,4.0,30),
+            0,"flat near wall cannot masquerade as a sloping floor");
+        System.out.println("PASS human sprite alpha shoe anchor and rendered-floor depth lock");
     }
 }

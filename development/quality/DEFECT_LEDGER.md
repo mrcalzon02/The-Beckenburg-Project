@@ -10,6 +10,20 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-263 — Character boots visibly float above the Castle floor despite earlier alpha-pad correction
+
+**Status:** source fix committed; isolated Java 17 unit test PASS; exact-source CI and installed render acceptance pending · **Affected:** All grounded human sprite billboards in Castle and investigation scenes
+
+NPC boot soles visibly detach from the rendered floor at certain camera views, as in the user-provided Castle screenshot.
+
+Cause / uncertainty: Global last-visible-alpha row could be fooled by fringe or isolated cutout pixels; pixel-snapped floor geometry and the unsnapped billboard projected different screen positions.
+
+Fix / next action: Determine the shoe row using a substantive centered alpha span; correct human billboard screen projection only when multiple depth-buffer columns confirm a consistent sloping floor crossing. Do not move world coordinates, edit source sprites, or alter ghost hover effects. Run exact-source GPU Castle capture and installed acceptance; retain previous failure evidence.
+
+Evidence and verification: User screenshot (2026-11-04), local isolated Java 17 grounding unit test PASS; exact-source CI and installation remain pending.
+
+Older-map obligation: Audit grounded NPCs and multiplayer hunters across Castle, House and other maps, especially on stairs, inclines, near walls and floor holes.
+
 ### DEV-260 — Castle residents remain static despite hunter walk and crouch animation
 
 **Status:** fixed-scoped; focused local acceptance; installed release acceptance pending · **Affected:** All five Castle residents
