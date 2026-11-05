@@ -29,7 +29,7 @@ final class CastlePortalTrim {
         if(end-start<=.10||head-foot<=.20)return List.of();
         // The opening spans from start..end and foot..head. Both jambs
         // are INSIDE it; the trim header stops below the solid stone lintel.
-        double trim=Math.min(.15,(end-start)*.10,(head-foot)*.20);
+        double trim=Math.min(.15,Math.min((end-start)*.10,(head-foot)*.20));
         double rise=head-foot-trim;
         if(portal.horizontal()){
             double z=portal.z0();
