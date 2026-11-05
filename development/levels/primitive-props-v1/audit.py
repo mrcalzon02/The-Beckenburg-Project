@@ -160,6 +160,53 @@ def main() -> None:
     for site in sites.values():
         if len(site["prototypes"]) < 6:
             raise ValueError("Incomplete site palette " + site["id"])
+    kitfile = ROOT / "site-kits" / "index.json"
+    if not kitfile.is_file():
+        raise ValueError("Missing source-only 3D map-kit index")
+    kits = json.loads(kitfile.read_text(encoding="utf-8"))
+    if kits["planning_packets"] != 29 or kits["model_library_count"] != len(models):
+        raise ValueError("Stale map-kit catalog")
+    if kits["runtime_approved"] is not False:
+        raise ValueError("Map kit scenes accidentally marked for gameplay")
+    rendered = set()
+    stand_count = 0
+    for kit in kits["sites"]:
+        sid = kit["site"]
+        if sid not in sites:
+            raise ValueError("Unknown model kit site " + sid)
+        if kit["shared_shell_models"] != sorted(catalog["shared_reuse"]):
+            raise ValueError("Unstable shared kit designations")
+        expected = [name for name in sites[sid]["prototypes"]
+                    if name not in catalog["shared_reuse"]]
+        if kit["specific_models"] != expected:
+            raise ValueError("Kit missing or reordering model sample " + sid)
+        stands = []
+        for page in kit["pages"]:
+            filename = page["file"]
+            if filename in rendered or not re.fullmatch(
+                    r"level_blockout_kit_[a-z0-9_]+_p[0-9]{2}\\.glb", filename):
+                raise ValueError("Duplicate or invalid kit page name")
+            rendered.add(filename)
+            doc, data = read_glb(ROOT / "site-kits" / filename)
+            if (doc["nodes"][0]["name"] != page["name"]
+                or hashlib.sha256(data).hexdigest() != page["sha256"]
+                or len(data) != page["bytes"]):
+                raise ValueError("Corrupt or mismatched source-only map kit " + filename)
+            triangles = sum(doc["accessors"][p["indices"]]["count"] // 3
+                            for p in doc["meshes"][0]["primitives"])
+            if triangles != page["triangles"] or triangles > 3500:
+                raise ValueError("Exceeded kit-page triangle budget")
+            stands.extend(sample["id"] for sample in page["display_slots"])
+        if stands != expected:
+            raise ValueError("Site contact sheets omit a prototype " + sid)
+        stand_count += len(stands)
+    actual_kits = {p.name for p in (ROOT / "site-kits").glob("*.glb")}
+    if actual_kits != rendered or kits["total_pages"] != len(rendered):
+        raise ValueError("Untracked or missing site kit GLBs")
+    if kits["total_stands"] != stand_count or len(kits["sites"]) != 29:
+        raise ValueError("Map-kit contact sheet count mismatch")
+    print("PASS 3D kit gallery:", len(rendered), "pages,", stand_count,
+          "true-scale source-only model stands")
     print("PASS graybox library:", len(models), "separate GLBs,",
           len(sites), "planning packets,", tris, "triangles;",
           "all embedded PNGs decode with valid signatures, CRCs and IDAT")
