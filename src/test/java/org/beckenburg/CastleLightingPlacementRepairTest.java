@@ -135,13 +135,15 @@ public final class CastleLightingPlacementRepairTest {
                 CastleHubDecor.meshHeight(parent.mesh())*parent.scale()+.008))<.00001,
                 "book must rest on real table mesh height");
             reloaded.put(new CastleLevelEdits.Prop(parent.id(),parent.mesh(),
-                parent.x()+.6,parent.y(),parent.z()+.5,parent.scale(),parent.yaw(),
+                parent.x()+.6,parent.y(),parent.z()+.5,parent.scale(),
+                parent.yaw()+Math.PI/2,
                 parent.halfX(),parent.halfZ(),parent.upper()));
             check(CastleHubDecor.placedAccents(reloaded).stream().anyMatch(a->
                 a.mesh().equals("open_book_mp_1")
                 &&Math.abs(a.x()-parent.x()-.6)<.001
-                &&Math.abs(a.z()-parent.z()-.5)<.001),
-                "decorations follow the relocated editor prop");
+                &&Math.abs(a.z()-parent.z()-.5)<.001
+                &&Math.abs(a.yaw()-book.yaw()-Math.PI/2)<.00001),
+                "decorations must follow BOTH the translation and rotation of their editor support");
             reloaded.removeProp(parent.id());
             check(CastleHubDecor.placedAccents(reloaded).stream().noneMatch(a->
                 a.mesh().equals("open_book_mp_1")
