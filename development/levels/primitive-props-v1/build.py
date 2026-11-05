@@ -62,14 +62,24 @@ def triangles(parts):
                 if axis=="x":x,y,z=y,-x,z
                 elif axis=="z":x,y,z=x,-z,y
                 elif axis!="y":raise ValueError(axis)
-                return [px+x,py+y,pz+z]
+                yaw=part.get("yaw",0)
+                c,si=math.cos(yaw),math.sin(yaw)
+                return [px+x*c-z*si,py+y,pz+x*si+z*c]
             for i in range(seg):
                 lo,ln,hi,hn=at(i,-h/2),at(i+1,-h/2),at(i,h/2),at(i+1,h/2)
                 face([lo,hi,hn,ln],material)
                 # End centers must be transformed in the same way as the perimeter.
                 axis=part.get("axis","y")
-                top = [px+h/2,py,pz] if axis=="x" else [px,py,pz+h/2] if axis=="z" else [px,py+h/2,pz]
-                bot = [px-h/2,py,pz] if axis=="x" else [px,py,pz-h/2] if axis=="z" else [px,py-h/2,pz]
+                yaw=part.get("yaw",0);co,si=math.cos(yaw),math.sin(yaw)
+                if axis=="x":
+                    top=[px+(h/2)*co,py,pz+(h/2)*si]
+                    bot=[px-(h/2)*co,py,pz-(h/2)*si]
+                elif axis=="z":
+                    top=[px-(h/2)*si,py,pz+(h/2)*co]
+                    bot=[px+(h/2)*si,py,pz-(h/2)*co]
+                else:
+                    top=[px,py+h/2,pz]
+                    bot=[px,py-h/2,pz]
                 face([top,hn,hi],material)
                 face([bot,lo,ln],material)
         elif kind == "tri_prism":
