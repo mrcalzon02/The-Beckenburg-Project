@@ -12,7 +12,7 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ### DEV-275 — DEV Room reports green despite failed source-only decoder and catalog diagnostics
 
-**Status:** Corrected test semantics, source-only roster accounting, and strict DEV QA workflow steps; full exact-source Windows rerun pending · **Affected:** Developer Asset Room diagnostic workflow, Castle source relic decoder, native Castle graybox fit, Hollow Creek asset registry
+**Status:** VERIFIED DEV-QA repair: Windows native review 42130219315 PASS with strict Hollow Creek roster, 22 Castle relics, source-only models and Castle fit; no release or full gameplay acceptance inferred · **Affected:** Developer Asset Room diagnostic workflow, Castle source relic decoder, native Castle graybox fit, Hollow Creek asset registry
 
 Green workflow 42126655787 uploaded captures even though three advisory assertions failed; test marked REVIEW_REGISTRATION source meshes as undecodable and omitted 18 new source refinement models.
 
@@ -20,13 +20,13 @@ Cause / uncertainty: Audit.loaded() excluded successful source-only REVIEW_REGIS
 
 Fix / next action: Count source-only models as decodable without approving them; check refinement roster dynamically; require proper source-only classification; make native source audit, Castle fit and gallery capture steps fail the DEV-only workflow on regression while keeping cosmetic checks out of release blocking.
 
-Evidence and verification: Workflow 42126655787 passed superficially with three suppressed assertion errors in job logs; strict workflow 42128827427 correctly exposed independent astrolabe geometry error. Commits 2f70f63b, 0764e27e, 80858c52, 365c6958, eb5f642d and 84997117; final follow-up Windows acceptance pending.
+Evidence and verification: Workflow 42126655787 passed superficially with three suppressed assertion errors in job logs; strict workflow 42128827427 correctly exposed independent astrolabe geometry error. Commits 2f70f63b, 0764e27e, 80858c52, 365c6958, eb5f642d and 84997117; final follow-up Windows acceptance pending. Native full run 42130219315 PASS; independent fast gallery 42131185143 PASS after fixes.
 
 Older-map obligation: All future location/model catalogs and source-only inspection rosters must compare actual registry membership and decoded GLB status without changing runtime approval.
 
 ### DEV-274 — Castle bronze astrolabe dial penetrates floor and rotates radial markers around wrong axis
 
-**Status:** Source mesh corrected at aa33e7b; deterministic GLB regeneration and geometry regression passed 42129321468; native source-only Windows recheck pending · **Affected:** Castle relic source-only astrolabe model and all proposed vault/museum display banks using the shared GLB
+**Status:** VERIFIED SOURCE-ONLY repair: deterministic GLB/geometry generator 42129321468 PASS; native 22-relic/crypt decode, Castle fit and screenshot workflow 42130219315 PASS; final texture/in-world placement remains unapproved · **Affected:** Castle relic source-only astrolabe model and all proposed vault/museum display banks using the shared GLB
 
 Native relic decoder refused the astrolabe as below-floor bounds; source ring extended down to -0.15 m and ornaments below ground.
 
@@ -34,13 +34,13 @@ Cause / uncertainty: The bronze vertical disc was centered at y=.31 with .46 m r
 
 Fix / next action: Raise dial assembly .16 m, rotate its ticks and needle in face-plane roll, add a bronze load-bearing support and keep the wood base at y≈.005 m. Preserve source-only/never-runtime-approved status and require exact regenerated GLB/grounded source checks.
 
-Evidence and verification: Real DEV Room 42128827427 error 'Off-ground/reversed model bounds level_blockout_relic_bronze_astrolabe'; source commit aa33e7b4, generator and geometry regression run 42129321468 PASS, native follow-up pending.
+Evidence and verification: Real DEV Room 42128827427 error 'Off-ground/reversed model bounds level_blockout_relic_bronze_astrolabe'; source commit aa33e7b4, generator and geometry regression run 42129321468 PASS, native follow-up pending. Native full run 42130219315 PASS; independent fast gallery 42131185143 PASS after fixes.
 
 Older-map obligation: Audit other relic mounts and display plinths independently when fitting them into Castle/Church/Mortuary; source-only ground contact is not actual scene fit.
 
 ### DEV-273 — DEV Room multi-floor camera starts inside previous bay cannery machine
 
-**Status:** Gallery camera origin and regression patched; Java17 address/clearance smoke 42129937613 passed; updated Windows screenshot acceptance pending · **Affected:** All 3-storey developer asset-room wings, especially floor 2 bay 2 with cannery boiler behind the camera
+**Status:** VERIFIED DEV ROOM repair: 42130219315 full native renderer and 42131185143 fast gallery PASS; screenshot floor2/bay2 visibly readable and 23911/256000 delta rather than previous 256000/256000 camera-occlusion; gameplay placement remains unapproved · **Affected:** All 3-storey developer asset-room wings, especially floor 2 bay 2 with cannery boiler behind the camera
 
 Native floor-2/bay-2 screenshot was almost entirely an opaque teal machine texture rather than six readable asset stands; delta-based visibility reported 256000 changed pixels and falsely passed.
 
@@ -48,7 +48,7 @@ Cause / uncertainty: The entrance camera was placed only .5 m ahead of the previ
 
 Fix / next action: Move each bay entrance to 6 m before its front row and 4 m past the previous rear row, assert both clearances in Java layout test, and reject gallery captures with over 60% pixel replacement compared with an empty review stage. Shorten model labels to distinctive suffixes for readable contact sheets.
 
-Evidence and verification: Directly inspected 12 native gallery PNGs and gallery-visibility.csv from artifact of 42128827427; floor2/bay2 showed 256000/256000 changed pixels. Source commits 32a53128, af785d61, 795739ce, 8de31911; smoke run 42129937613 PASS, native rerun pending.
+Evidence and verification: Directly inspected 12 native gallery PNGs and gallery-visibility.csv from artifact of 42128827427; floor2/bay2 showed 256000/256000 changed pixels. Source commits 32a53128, af785d61, 795739ce, 8de31911; smoke run 42129937613 PASS, native rerun pending. Native full run 42130219315 PASS; independent fast gallery 42131185143 PASS after fixes.
 
 Older-map obligation: The DEV Room is isolated from playable scenes; apply adjacent-prop camera/view obstruction checks when authoring actual multi-floor maps and their editor inspection viewpoints.
 
