@@ -1426,6 +1426,9 @@ public final class SceneRenderer {
     private String shellSourceRevision="";
     private List<Face> preparedShellFaces=List.of();
     private List<ShellChunk> preparedShellChunks=List.of();
+    // Material IDs belong to authored immutable chunks; preparing them once
+    // eliminates a LinkedHashSet scan/boxing every visible GPU frame.
+    private List<int[]> preparedShellMaterials=List.of();
     private boolean shellChunkCulling=true;
     /** Functional reference only; no player-facing option is introduced. */
     public void setShellChunkCulling(boolean enabled){shellChunkCulling=enabled;}
@@ -1975,6 +1978,38 @@ public final class SceneRenderer {
     // shadow touching plaster must not retessellate distant timber merely
     // because both materials share one 256-face shell chunk.
     private final java.util.Map<ShellGpuKey,ShellChunk> residentShellMaterialBounds=new java.util.HashMap<>();
+    /** A lighting generation only changes when factors or occlusion actually
+     * change; a camera movement does NOT. Cache each chunk/material's spatial
+     * regionVersion until that generation changes, but keep the original
+     * exact cell lookup on revisions to preserve door-local correctness. */
+    private record ShellRegionStamp(long generation,long regionVersion){}
+    private final java.util.Map<ShellGpuKey,ShellRegionStamp> shellRegionStamps=new java.util.HashMap<>();
+    private FixtureLighting shellRegionLighting;
+    private long shellRegionChecks,shellRegionReuses;
+    public record ShellRegionStats(long spatialChecks,long generationReuses,int cachedRegions){}
+    public ShellRegionStats shellRegionStats(){
+        return new ShellRegionStats(shellRegionChecks,shellRegionReuses,shellRegionStamps.size());
+    }
+    private long cachedShellRegionVersion(ShellGpuKey key,ShellChunk bounds){
+        if(shellRegionLighting!=fixtureLighting){
+            // A new map has a different real light-field, even if its numeric
+            // generation accidentally equals that of an old map.
+            shellRegionLighting=fixtureLighting;
+            shellRegionStamps.clear();
+        }
+        long generation=fixtureLighting.frameRevision();
+        var current=shellRegionStamps.get(key);
+        if(current!=null&&current.generation()==generation){
+            shellRegionReuses++;
+            return current.regionVersion();
+        }
+        shellRegionChecks++;
+        long revision=fixtureLighting.regionVersion(
+            bounds.minX-.09,bounds.minY-.09,bounds.minZ-.09,
+            bounds.maxX+.09,bounds.maxY+.09,bounds.maxZ+.09);
+        shellRegionStamps.put(key,new ShellRegionStamp(generation,revision));
+        return revision;
+    }
     private long shellResidentBuilds,shellResidentHits,shellResidentBytes;
     public record ShellResidentStats(long builds,long hits,long bytes,int batches){}
     public ShellResidentStats shellResidentStats(){
@@ -2003,6 +2038,8 @@ public final class SceneRenderer {
         stableGpuBytes=0;
         residentShell.clear();
         residentShellMaterialBounds.clear();
+        shellRegionStamps.clear();
+        shellRegionLighting=null;
         shellResidentBytes=0;
     }
     /** Keep camera-space rasterization on OpenGL while retaining the stationary
@@ -2101,18 +2138,14 @@ public final class SceneRenderer {
             // Retained geometry keeps the full close-range probe topology.
             // Walking across a distance threshold must not retessellate walls.
             int lod=chunk.room>=0&&chunk.room<12?3:0;
-            var materials=new java.util.LinkedHashSet<Integer>();
-            for(int i=chunk.start;i<chunk.end;i++)
-                materials.add(preparedShellFaces.get(i).material);
+            int[] materials=preparedShellMaterials.get(chunkIndex);
             var stale=new java.util.HashSet<Integer>();
             var versions=new java.util.HashMap<Integer,Long>();
             for(int material:materials){
                 ShellGpuKey key=new ShellGpuKey(chunkIndex,material);
                 ShellChunk region=residentShellMaterialBounds.computeIfAbsent(
                     key,ignored->shellMaterialBounds(chunk,material));
-                long version=fixtureLighting.regionVersion(
-                    region.minX-.09,region.minY-.09,region.minZ-.09,
-                    region.maxX+.09,region.maxY+.09,region.maxZ+.09);
+                long version=cachedShellRegionVersion(key,region);
                 versions.put(material,version);
                 ResidentShell prev=residentShell.get(key);
                 if(prev==null||prev.lod()!=lod||prev.lightVersion()!=version)
@@ -2156,8 +2189,8 @@ public final class SceneRenderer {
                     shellResidentBytes+=(long)vertices.length*Float.BYTES;
                     shellResidentBuilds++;
                 }
-                shellResidentHits+=materials.size()-stale.size();
-            }else shellResidentHits+=materials.size();
+                shellResidentHits+=materials.length-stale.size();
+            }else shellResidentHits+=materials.length;
             lastGpuFrustumFaces+=chunk.end-chunk.start;
             for(int material:materials){
                 ResidentShell prepared=residentShell.get(new ShellGpuKey(chunkIndex,material));
@@ -2336,6 +2369,7 @@ public final class SceneRenderer {
         shellSourceMap=map;shellSourceRevision=revision;
         preparedShellFaces=buildLevelShell(map);
         var chunks=new ArrayList<ShellChunk>();
+        var materialLists=new ArrayList<int[]>();
         var roomIds=new java.util.HashSet<Integer>();
         for(int from=0;from<preparedShellFaces.size();){
             int room=preparedShellFaces.get(from).room;
@@ -2348,8 +2382,10 @@ public final class SceneRenderer {
             }
             double minX=Double.POSITIVE_INFINITY,minY=minX,minZ=minX;
             double maxX=Double.NEGATIVE_INFINITY,maxY=maxX,maxZ=maxX;
+            var materialIds=new java.util.LinkedHashSet<Integer>();
             for(int i=from;i<end;i++){
                 var face=preparedShellFaces.get(i);
+                materialIds.add(face.material);
                 for(Point point:new Point[]{face.a,face.b,face.c}){
                     minX=Math.min(minX,point.x);maxX=Math.max(maxX,point.x);
                     minY=Math.min(minY,point.y);maxY=Math.max(maxY,point.y);
@@ -2357,10 +2393,12 @@ public final class SceneRenderer {
                 }
             }
             chunks.add(new ShellChunk(room,from,end,minX,minY,minZ,maxX,maxY,maxZ));
+            materialLists.add(materialIds.stream().mapToInt(Integer::intValue).toArray());
             from=end;
         }
         shellPreparedRoomCount=roomIds.size();
         preparedShellChunks=List.copyOf(chunks);
+        preparedShellMaterials=List.copyOf(materialLists);
         return preparedShellChunks;
     }
     /** Convex-box rejection: only a shared outside plane for every corner
