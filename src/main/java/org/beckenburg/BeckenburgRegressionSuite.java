@@ -17,6 +17,11 @@ import java.util.concurrent.TimeUnit;
 public final class BeckenburgRegressionSuite {
     private BeckenburgRegressionSuite(){}
     private static final long TEST_TIMEOUT_SECONDS=90;
+    // Dense-versus-sparse lighting parity covers Castle and every authored map.
+    // Castle alone can take over a minute on hosted CI; do not turn runner
+    // scheduling variance into a false render-integrity failure. All parity
+    // assertions still run, and the process remains bounded.
+    private static final long LIGHT_BATCH_PARITY_TIMEOUT_SECONDS=180;
     private static final int MAX_FAILURES=12;
     public static void main(String[] args)throws Exception{
         Path manifest=Path.of("regression-tests.txt");
@@ -61,12 +66,14 @@ public final class BeckenburgRegressionSuite {
             Instant started=Instant.now();
             Process p=new ProcessBuilder(java,"-Djava.awt.headless=true","-ea",
                 "-cp",classpath,"org.beckenburg."+test).inheritIO().start();
-            boolean exited=p.waitFor(TEST_TIMEOUT_SECONDS,TimeUnit.SECONDS);
+            long timeoutSeconds="PreparedLightBatchParityTest".equals(test)
+                ?LIGHT_BATCH_PARITY_TIMEOUT_SECONDS:TEST_TIMEOUT_SECONDS;
+            boolean exited=p.waitFor(timeoutSeconds,TimeUnit.SECONDS);
             if(!exited){
                 p.destroyForcibly();
                 p.waitFor(10,TimeUnit.SECONDS);
                 failed++;
-                System.err.println("FAIL TIMEOUT "+test+" after "+TEST_TIMEOUT_SECONDS+" s");
+                System.err.println("FAIL TIMEOUT "+test+" after "+timeoutSeconds+" s");
             }else if(p.exitValue()!=0){
                 failed++;
                 System.err.println("FAIL "+test+" processExit="+p.exitValue());
