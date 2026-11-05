@@ -241,7 +241,8 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  }
  private void draw(Frame frame){
   long started=System.nanoTime();
-  if(uploadedSceneId!=frame.sceneId()){
+  boolean firstFrameForScene=uploadedSceneId!=frame.sceneId();
+  if(firstFrameForScene){
    // A new scene must never reuse prior scene IDs or retain orphaned VBOs.
    // All OpenGL deletion occurs on the owning render worker.
    uploadedSceneId=frame.sceneId();
@@ -349,6 +350,24 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   frameTiming=new FrameTiming(frame.sceneId(),frame.frameId(),
       rasterReady-started,finished-rasterReady,finished-started);
   latest=new Result(frame.sceneId(),frame.frameId(),targetWidth,targetHeight,argb,depth);
+  if(firstFrameForScene){
+   // Grounded Stage 3 measurement, emitted only after the real GL worker has
+   // processed a new scene. CPU submission counters are NOT GPU uploads.
+   // These are actual Mesh.setVertices/texture uploads, but GL wall time
+   // (including synchronous readback) is not a GPU timer-query result.
+   BeckenburgDiagnostics.record("GPU SCENE FIRST FRAME scene="+frame.sceneId()
+      +" frame="+frame.frameId()
+      +" surface_batches="+frame.surfaces().size()
+      +" vbo_uploaded_batches="+frameUploadedBatches
+      +" vbo_uploaded_bytes="+frameUploadBytes
+      +" vbo_reused_batches="+frameReusedBatches
+      +" vbo_reused_bytes="+frameReusedBytes
+      +" textures_uploaded="+frameTextureUploads
+      +" texture_uploaded_bytes="+frameTextureBytes
+      +" gl_worker_ms="+(finished-started)/1_000_000.0
+      +" readback_ms="+(finished-rasterReady)/1_000_000.0
+      +" measurement=gl_worker_not_gpu_timestamp");
+  }
   if(finished-started>200_000_000L&&finished-lastSlowReportNs>5_000_000_000L){
    lastSlowReportNs=finished;
    BeckenburgDiagnostics.record("GPU FRAME SLOW id="+frame.frameId()+
