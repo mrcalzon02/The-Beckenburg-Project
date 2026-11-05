@@ -500,18 +500,15 @@ public final class SceneRenderer {
     private static void mountedLamp(List<Face> out,CastleHubDecor.Light fixture,boolean on){
         String mesh=on?fixture.on():fixture.off();
         GlbProps.Model model=GlbProps.model(mesh);
-        double minX=Double.POSITIVE_INFINITY,minY=minX,minZ=minX;
-        double maxX=Double.NEGATIVE_INFINITY,maxY=maxX,maxZ=maxX;
-        for(GlbProps.Triangle t:model.triangles())for(GlbProps.Vertex v:
-                new GlbProps.Vertex[]{t.a(),t.b(),t.c()}){
-            minX=Math.min(minX,v.x());maxX=Math.max(maxX,v.x());
-            minY=Math.min(minY,v.y());maxY=Math.max(maxY,v.y());
-            minZ=Math.min(minZ,v.z());maxZ=Math.max(maxZ,v.z());
-        }
-        double ox=(minX+maxX)*.5,oz=(minZ+maxZ)*.5;
-        double oy=fixture.mount()==CastleHubDecor.Mount.CEILING?maxY:(minY+maxY)*.5;
-        double s=fixture.scale(),cy=Math.cos(fixture.yaw()),sy=Math.sin(fixture.yaw());
+        // Keep the exact same local pivot when the fixture changes power state.
+        // The fitted wall yaw comes from the masonry tangent, not saved drift.
+        double[] anchor=castleBounds(fixture.off());
+        double ox=anchor[0],oz=anchor[2];
+        double oy=fixture.mount()==CastleHubDecor.Mount.CEILING
+            ?anchor[1]+anchor[4]:anchor[1]+anchor[4]*.5;
+        double s=fixture.scale();
         var wallPose=CastleWallLampMount.resolve(fixture,CastleLevelEdits.current().walls());
+        double cy=Math.cos(wallPose.yaw()),sy=Math.sin(wallPose.yaw());
         // The real masonry is 42 cm thick. A 20 cm offset from its centreline
         // still lies *inside* the stone, so never centre the imported sconce
         // on that saved coordinate. Fit its furthest-back triangles instead.
