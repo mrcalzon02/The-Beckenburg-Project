@@ -11,7 +11,7 @@ import fit
 ROOT=Path(__file__).resolve().parent
 catalog=json.loads((ROOT/"catalog.json").read_text(encoding="utf-8"))
 models={m["id"]:m for m in catalog["models"]}
-assert len(models)==len(catalog["models"])==253
+assert len(models)==len(catalog["models"])==283
 assert len(catalog["sites"])==29
 assert all(m["runtime_approved"] is False for m in models.values())
 
@@ -150,7 +150,7 @@ print("PASS: grounded motel guest bed")
 
 # All source models carry explicitly provisional physical mounting contracts.
 mount_types={"floor","wall","ceiling","roof","opening","structure","water","terrain","display_surface"}
-assert len(models)==253
+assert len(models)==283
 assert all(m.get("authoring_hints",{}).get("mount") in mount_types for m in models.values())
 assert all(m["authoring_hints"]["mount_confidence"]=="provisional_unreviewed" for m in models.values())
 assert all(m["authoring_hints"]["source_pivot_reviewed"] is False for m in models.values())
@@ -162,3 +162,28 @@ assert item("relic_ossuary_keys")["authoring_hints"]["mount"]=="display_surface"
 assert item("cannery_coldroom_door")["authoring_hints"]["mount"]=="opening"
 assert item("family_photo_cluster")["authoring_hints"]["mount"]=="wall"
 print("PASS: all 253 source models have provisional, unapproved mount contracts")
+
+# Newly introduced map-specific props remain individually decodable and unapproved.
+third_wave=("domestic_exterior_shutters","domestic_roof_gutter","domestic_wall_downspout","domestic_picket_fence","domestic_garden_gate","domestic_cellar_steps","camp_bathhouse_privacy_stalls","camp_field_cot","camp_tent_entry_flaps","camp_woodpile_lean_to","camp_manual_water_pump","cave_ledge_rope_guard","cave_plank_rope_bridge","cave_survey_cairns","cave_layered_sandstone","cave_excavation_trestle","rail_station_canopy","rail_semaphore_pole","rail_station_clock","rail_luggage_cart","rail_tunnel_mouth","lighthouse_tower_wall_course","lighthouse_spiral_tread_module","lighthouse_keeper_porch","lighthouse_lens_pedestal","lighthouse_cliff_drain","mortuary_wash_sink_station","mortuary_visitors_registry_desk","castle_crypt_column","castle_sarcophagus_stand",)
+assert len(third_wave)==30 and len(models)==283
+for suffix in third_wave:
+    model=item(suffix)
+    h=model["authoring_hints"]
+    assert model["runtime_approved"] is False
+    assert h["mount_confidence"]=="provisional_unreviewed"
+    assert h["source_pivot_reviewed"] is False
+    assert h["renderer_orientation_reviewed"] is False
+    assert h["runtime_placement"] is False
+    bbox,lo,hi=fit.footprint(model,0,0,0)
+    assert -.12<=lo and hi<4.1, (suffix,lo,hi)
+    assert bbox[2]-bbox[0]<6 and bbox[3]-bbox[1]<6
+    raw,tri=glb(model)
+    doc,binary=read_glb(ROOT/"models"/(model["id"]+".glb"))
+    assert raw==binary and 0<tri<=3500 and doc["extras"]["runtimeApproved"] is False
+tower=item("lighthouse_tower_wall_course")
+assert sum(p["type"]=="box" for p in tower["parts"])>=12
+assert not any(p["type"]=="cylinder" for p in tower["parts"])
+assert not any(p["type"]=="box" and p["size"][0]>1.2 and p["size"][1]>1.7
+               and abs(p["p"][0])<.5 for p in item("rail_tunnel_mouth")["parts"])
+assert all(len(s["prototypes"])==len(set(s["prototypes"])) for s in catalog["sites"])
+print("PASS: 30 new independent map geometry studies remain non-playable")

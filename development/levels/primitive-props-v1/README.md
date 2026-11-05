@@ -1,13 +1,13 @@
 # Map-specific primitive prop blockouts (v1)
 
-The authoritative planning backlog is [catalog.json](catalog.json), which maps **253 individual study models across 28 planned maps plus the Vale Mortuary expansion**. It augments the existing `development/levels/model-requirements/*.json` files rather than replacing their full room-by-room checklists.
+The authoritative planning backlog is [catalog.json](catalog.json), which maps **283 individual study models across 28 planned maps plus the Vale Mortuary expansion**. It augments the existing `development/levels/model-requirements/*.json` files rather than replacing their full room-by-room checklists.
 
 ## What this package is
 
 - Measured, ground-origin, Y-up glTF 2.0 geometry in metres: basic boxes, faceted cylinders, and an enclosed tent prism. The model material colors are placeholder glTF factors, now complemented by **individually embedded deterministic 32×32 procedural RGB albedo studies** with nondegenerate planar UV0. These do not replace final hand-authored textures.
 - Each `level_blockout_*.glb` is an individually selectable study asset. No duplicate of any existing finished `level_*` model is overwritten.
 - The catalogue's `sites[].prototypes` field is an **assignment proposal**, not an automatic scene placement. No map availability, collision, navmesh, lighting, acoustics, interactivity or network state has been modified.
-- The collection contains **253 distinct GLB models** (116 expanded-map additions, three countable sarcophagi, and 18 additional relic/display definitions). It covers structural opening/rails, Castle service and training fixtures, academic/hospital/chapel and domestic interiors, forests/campgrounds/caverns, generator/electrical studies, maritime/industrial scenes, lightstation/lodge/bunker/shaft structures and mortuary fixtures. Each study remains independent and replaceable.
+- The collection contains **283 distinct GLB models** (116 expanded-map additions, three countable sarcophagi, and 18 additional relic/display definitions). It covers structural opening/rails, Castle service and training fixtures, academic/hospital/chapel and domestic interiors, forests/campgrounds/caverns, generator/electrical studies, maritime/industrial scenes, lightstation/lodge/bunker/shaft structures and mortuary fixtures. Each study remains independent and replaceable.
 - Existing source LOD/original model assets remain unchanged. Completed prop models require geometry refinement, proper UV/materials, origin/orientation review, scene placement, and actual editor/renderer acceptance.
 
 ## Rebuild / inspect
@@ -348,3 +348,17 @@ The source-readiness audit found the motel guest bed hovering **0.12m** above it
 The initial 178 primitive studies now carry explicit editor-authoring mount categories: floor, wall, ceiling, roof, opening, structure, terrain, water and display surface. Existing newer source objects retain their prior mount choices. All **253 models** now have `mount_confidence="provisional_unreviewed"`, `source_pivot_reviewed=false`, `renderer_orientation_reviewed=false` and `runtime_placement=false`.
 
 Classification is a physical placement *proposal* only, **not** a verified orientation, correct pivot, collider or actual editor import. Readiness diagnostics now distinguish wall/ceiling/doorway attachment from structural, water, terrain and relic display constraints, while preserving all legitimate height and ground-offset warnings. Nothing changes live map geometry or gameplay state.
+
+## Primitive geometry production pass — 30 additional studies (283 total)
+
+Each newly constructed low-poly model has its own GLB identity, source geometry, map-kit assignment and provisional physical mounting contract.
+
+- **House/Farm/Mansion/Lodge/Lightkeeper (6):** paired shutters, open roof gutter, supported downspout, separated picket fence, framed gate and timber cellar staircase.
+- **Camp Hollow Creek (5):** real bathhouse privacy partitions, field cot, separated tent entrance flap geometry, stacked log lean-to and manual pump.
+- **Red Mesa caves (5):** ledge boundary posts, open rope bridge, survey stone cairns, geological wall strata and supported excavation trestle.
+- **Gallows Pass Railway (5):** four-post platform canopy, raised semaphore, wall clock, wheeled luggage cart and open tunnel mouth.
+- **Morrow Point Lightstation (5):** twelve-part open tower wall course, individual radial stair-tread module, keeper porch, optic pedestal and rockside storm drain.
+- **Vale Mortuary (2):** basin/faucet station and reception visitor register with separate bell.
+- **Castle crypt proposals (2):** funerary stone column and standalone support for existing sarcophagus variants.
+
+No source asset is automatically imported into a level, promoted to a runtime approval, used as wall collision or attached to a real shaft. Shaft rings remain open; Castle's eight sarcophagi remain proposed and **zero installed** in the current playable scene. These models still need native four-angle screenshots, material UV inspection, editor pivot/orientation acceptance, clearance and collision/navigation tests.
