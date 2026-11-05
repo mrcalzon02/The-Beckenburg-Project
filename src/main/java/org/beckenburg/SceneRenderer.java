@@ -2840,13 +2840,28 @@ public final class SceneRenderer {
     private static void architecturalWall(List<Face> out,CastleHubArchitecturalPlan.Wall wall){
         if(wall.hasDoor())return;
         double half=CastleDoorSlots.MASONRY_THICKNESS*.5;
-        if(wall.horizontal())
-            texturedBox(out,wall.x0(),wall.bottom(),wall.z0()-half,
-                wall.x1()-wall.x0(),wall.top()-wall.bottom(),
-                CastleDoorSlots.MASONRY_THICKNESS,wall.material());
-        else texturedBox(out,wall.x0()-half,wall.bottom(),wall.z0(),
-                CastleDoorSlots.MASONRY_THICKNESS,wall.top()-wall.bottom(),
-                wall.z1()-wall.z0(),wall.material());
+        double x=wall.horizontal()?wall.x0():wall.x0()-half;
+        double z=wall.horizontal()?wall.z0()-half:wall.z0();
+        double sx=wall.horizontal()?wall.x1()-wall.x0():CastleDoorSlots.MASONRY_THICKNESS;
+        double sz=wall.horizontal()?CastleDoorSlots.MASONRY_THICKNESS:wall.z1()-wall.z0();
+        double top=wall.top();
+        // The ground wall cap and the upstairs floor used to occupy the same Y plane.
+        // Keep all vertical faces (including true collision-sized masonry) but replace
+        // the cap with only its uncovered portions. Moving the floor up or drawing a
+        // decal would hide the symptom without fixing the overlapping triangles.
+        var boxFaces=new ArrayList<Face>(12);
+        texturedBox(boxFaces,x,wall.bottom(),z,sx,top-wall.bottom(),sz,wall.material());
+        for(var face:boxFaces){
+            boolean upward=Math.abs(face.a.y-top)<1e-8
+                &&Math.abs(face.b.y-top)<1e-8&&Math.abs(face.c.y-top)<1e-8;
+            if(!upward)out.add(face);
+        }
+        for(var patch:CastleWallCaps.exposed(x,z,x+sx,z+sz,top,CastleRooms.structuralDecks()))
+            texturedQuad(out,new Point(patch.x0(),top,patch.z0()),
+                new Point(patch.x1(),top,patch.z0()),new Point(patch.x1(),top,patch.z1()),
+                new Point(patch.x0(),top,patch.z1()),wall.material(),
+                patch.x0()-x,patch.z0()-z,patch.x1()-x,patch.z0()-z,
+                patch.x1()-x,patch.z1()-z,patch.x0()-x,patch.z1()-z,0xffffff);
     }
     private static void castleDoorLeaf(List<Face> out,CastleDoorSlots.Slot slot,
                                         CastleDoorSlots.Type type,boolean open){
