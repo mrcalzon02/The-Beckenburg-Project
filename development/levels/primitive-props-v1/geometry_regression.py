@@ -93,3 +93,17 @@ for suffix in ("domestic_pitched_roof_module","timber_roof_truss","camp_tarp_she
 assert sum(1 for p in item("lighthouse_access_ladder")["parts"] if p["type"]=="box")>=16
 assert all(len(s["prototypes"])==len(set(s["prototypes"])) for s in catalog["sites"])
 print("PASS: 43 new model studies decoded; open arches, roof slopes, per-map coverage")
+
+# Inclined cannery conveyor deck must be physically seated on the posts.
+chute=item("cannery_overhead_chute")
+deck=chute["parts"][0]
+assert math.isclose(deck["roll"],-math.pi/18,abs_tol=1e-6)
+for rail in chute["parts"][1:3]:
+    assert rail["roll"]==deck["roll"]
+posts=[p for p in chute["parts"] if p["type"]=="box" and abs(p["p"][0])==1.09]
+assert len(posts)==4
+for post in posts:
+    height=deck["p"][1]+post["p"][0]*math.tan(deck["roll"])-.05/math.cos(deck["roll"])
+    assert abs(post["p"][1]+post["size"][1]/2-height)<.001, (post,height)
+    assert abs(post["p"][1]-post["size"][1]/2)<.001
+print("PASS inclined cannery deck and 4 true-height supports")

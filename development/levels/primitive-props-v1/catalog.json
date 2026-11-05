@@ -34840,7 +34840,8 @@
             0.1,
             0.76
           ],
-          "material": "industrial"
+          "material": "industrial",
+          "roll": -0.1745329
         },
         {
           "type": "box",
@@ -34854,7 +34855,8 @@
             0.23,
             0.07
           ],
-          "material": "metal"
+          "material": "metal",
+          "roll": -0.1745329
         },
         {
           "type": "box",
@@ -34868,18 +34870,19 @@
             0.23,
             0.07
           ],
-          "material": "metal"
+          "material": "metal",
+          "roll": -0.1745329
         },
         {
           "type": "box",
           "p": [
             -1.09,
-            0.71,
+            0.7857,
             -0.33
           ],
           "size": [
             0.12,
-            1.39,
+            1.5714,
             0.11
           ],
           "material": "metal"
@@ -34888,12 +34891,12 @@
           "type": "box",
           "p": [
             -1.09,
-            0.71,
+            0.7857,
             0.33
           ],
           "size": [
             0.12,
-            1.39,
+            1.5714,
             0.11
           ],
           "material": "metal"
@@ -34902,12 +34905,12 @@
           "type": "box",
           "p": [
             1.09,
-            0.71,
+            0.5935,
             -0.33
           ],
           "size": [
             0.12,
-            1.39,
+            1.187,
             0.11
           ],
           "material": "metal"
@@ -34916,12 +34919,12 @@
           "type": "box",
           "p": [
             1.09,
-            0.71,
+            0.5935,
             0.33
           ],
           "size": [
             0.12,
-            1.39,
+            1.187,
             0.11
           ],
           "material": "metal"
@@ -34941,7 +34944,7 @@
           "material": "metal"
         }
       ],
-      "notes": "Supported chute and side rails, item movement not simulated.",
+      "notes": "Declined deck and its two rolled side rails share the same 10-degree slope; all four floor posts now terminate at the underside of the inclined deck. Source geometry only, no item transport, collision or network behavior.",
       "authoring_stage": "primitive_blockout",
       "runtime_approved": false,
       "authoring_hints": {
