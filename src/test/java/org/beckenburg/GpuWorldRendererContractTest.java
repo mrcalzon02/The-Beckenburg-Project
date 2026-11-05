@@ -65,6 +65,42 @@ public final class GpuWorldRendererContractTest {
   try{new GpuWorldRenderer.Frame(0,10,640,360,275.4f,1f,.7f,List.of(triangle));}
   catch(IllegalArgumentException expected){denied=true;}
   check(denied,"invalid scene identities cannot be submitted");
-  System.out.println("PASS GPU generation identity, viewport isolation and frame bridge");
+  // Stage 3: an enqueued frame is NOT a GL upload. The loading worker may
+  // advance priority stages only after the owning GL thread has published
+  // a readback for the same scene and at least the requested frame ID.
+  GpuWorldRenderer finished=new GpuWorldRenderer(){
+   public boolean ready(){return true;}
+   public void submit(GpuWorldRenderer.Frame frame){}
+   public GpuWorldRenderer.Result latest(){return result;}
+   public String rendererDescription(){return "headless fake; no GL context";}
+  };
+  check(GpuWorldRenderer.awaitPreparedFrame(finished,9,10,0,()->false),
+      "Matching completed scene/frame acknowledges staged uploads");
+  check(!GpuWorldRenderer.awaitPreparedFrame(finished,8,10,0,()->false),
+      "Another scene's completed frame must never acknowledge staged uploads");
+  check(!GpuWorldRenderer.awaitPreparedFrame(finished,9,11,0,()->false),
+      "Older completed frame must not acknowledge a newer pending submission");
+  check(!GpuWorldRenderer.awaitPreparedFrame(finished,9,11,1_000_000L,()->true),
+      "Cancelled loading must leave without waiting for the GL worker");
+  final int[] observed={0};
+  GpuWorldRenderer delayed=new GpuWorldRenderer(){
+   public boolean ready(){return true;}
+   public void submit(GpuWorldRenderer.Frame frame){}
+   public GpuWorldRenderer.Result latest(){return ++observed[0]<3?null:result;}
+   public String rendererDescription(){return "headless delayed fake";}
+  };
+  check(GpuWorldRenderer.awaitPreparedFrame(delayed,9,10,100_000_000L,()->false)
+      &&observed[0]>=3,
+      "Loading must acknowledge actual asynchronous completion, not only submit");
+  GpuWorldRenderer stopped=new GpuWorldRenderer(){
+   public boolean ready(){return false;}
+   public void submit(GpuWorldRenderer.Frame frame){}
+   public GpuWorldRenderer.Result latest(){return null;}
+   public String rendererDescription(){return "headless stopped fake";}
+  };
+  check(!GpuWorldRenderer.awaitPreparedFrame(stopped,9,10,100_000_000L,()->false),
+      "Stopped GL backend must fail fast without hanging case startup");
+  System.out.println("PASS GPU generation identity, viewport isolation, "
+      +"frame bridge and bounded real-upload acknowledgement");
  }
 }
