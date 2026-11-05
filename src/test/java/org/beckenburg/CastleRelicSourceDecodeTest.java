@@ -65,6 +65,12 @@ public final class CastleRelicSourceDecodeTest {
                 check(Double.isFinite(audit.minY())&&Double.isFinite(audit.maxY())
                     &&audit.maxY()>audit.minY()&&audit.minY()>=-.001,
                     "Off-ground/reversed model bounds "+id);
+                if(id.equals("level_blockout_relic_bronze_astrolabe")){
+                    check(audit.minY()<=.02&&audit.maxY()>1.0,
+                        "Astrolabe upright dial or grounded timber display regressed: "+audit);
+                    check(audit.state().equals("REVIEW_REGISTRATION"),
+                        "Astrolabe cannot enter production registry by accident");
+                }
                 int withArea=0;
                 for(var tri:model.triangles()){
                     var a=tri.a();var b=tri.b();var c=tri.c();
