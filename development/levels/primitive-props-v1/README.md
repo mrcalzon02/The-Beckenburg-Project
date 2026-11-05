@@ -1,13 +1,13 @@
 # Map-specific primitive prop blockouts (v1)
 
-The authoritative planning backlog is [catalog.json](catalog.json), which maps **30 starter props to 28 proposed maps plus the separate Vale Mortuary expansion**. It augments the existing `development/levels/model-requirements/*.json` files rather than replacing their full room-by-room checklists.
+The authoritative planning backlog is [catalog.json](catalog.json), which maps **41 starter props to 28 proposed maps plus the separate Vale Mortuary expansion**. It augments the existing `development/levels/model-requirements/*.json` files rather than replacing their full room-by-room checklists.
 
 ## What this package is
 
 - Measured, ground-origin, Y-up glTF 2.0 geometry in metres: basic boxes, faceted cylinders, and an enclosed tent prism. The colors are placeholder materials, not final textured UV assets.
 - Each `level_blockout_*.glb` is an individually selectable study asset. No duplicate of any existing finished `level_*` model is overwritten.
 - The catalogue's `sites[].prototypes` field is an **assignment proposal**, not an automatic scene placement. No map availability, collision, navmesh, lighting, acoustics, interactivity or network state has been modified.
-- These 30 starter studies cover structural openings/rails, storage/workshop fixtures, institutions, archives, camps/mining, maritime/industrial scenes, new lighthouse/lodge/bunker/shaft locations and the mortuary addition.
+- These 41 starter studies cover structural openings/rails, storage/workshop fixtures, institutions, archives, camps/mining, maritime/industrial scenes, new lighthouse/lodge/bunker/shaft locations and the mortuary addition. Phase 2 adds Castle inventory counters, map board, relic containment, training rig and restoration scaffold, plus institutional medical/security and remote mechanical landmarks.
 - Existing source LOD/original model assets remain unchanged. Completed prop models require geometry refinement, proper UV/materials, origin/orientation review, scene placement, and actual editor/renderer acceptance.
 
 ## Rebuild / inspect
