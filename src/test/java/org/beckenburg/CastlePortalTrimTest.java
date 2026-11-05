@@ -56,6 +56,30 @@ public final class CastlePortalTrimTest {
         for(var beam:CastlePortalTrim.beams(portal,List.of(portal,lintel)))
             check(beam.top()<=6.25+1e-8,
                 "Editor-defined doorway extends into upper wall");
+        if(ignored.length>0){
+            // Genuine scene captures: stage the upper residence aperture and
+            // courtyard gate through the EXACT playable renderer. These are
+            // not image mockups or approximated portal sketches.
+            var directory=java.nio.file.Path.of(ignored[0]);
+            java.nio.file.Files.createDirectories(directory);
+            var map=new CastleHubMap();
+            var scene=new SceneRenderer();
+            scene.setRenderSize(960,540);
+            scene.setPsxPreset(PsxPipeline.Preset.OFF);
+            scene.lamp=false;
+            scene.x=9.4;scene.z=6.5;scene.eyeHeight=5.02;
+            scene.yaw=Math.PI/2;scene.pitch=-.07;
+            scene.drawCastle(map,0,true);
+            check(javax.imageio.ImageIO.write(scene.image(),"png",
+                directory.resolve("castle-upper-residence-doorway.png").toFile()),
+                "Could not save actual Castle upper doorway");
+            scene.x=15.5;scene.z=30.0;scene.eyeHeight=1.62;
+            scene.yaw=0;scene.pitch=-.08;
+            scene.drawCastle(map,0,true);
+            check(javax.imageio.ImageIO.write(scene.image(),"png",
+                directory.resolve("castle-courtyard-gate-trim.png").toFile()),
+                "Could not save actual Castle gate scene");
+        }
         System.out.println("PASS Castle authored portal geometry: "+checked+
             " openings ("+upper+" upper, "+gates+" gate), no floor or wall intrusion");
     }
