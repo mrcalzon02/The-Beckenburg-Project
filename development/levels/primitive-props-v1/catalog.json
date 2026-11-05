@@ -48,7 +48,11 @@
         "level_blockout_domestic_wall_bookcase",
         "level_blockout_school_chalkboard",
         "level_blockout_school_locker_bank",
-        "level_blockout_science_instrument_table"
+        "level_blockout_science_instrument_table",
+        "level_blockout_school_cafeteria_table",
+        "level_blockout_school_wall_coat_rack",
+        "level_blockout_school_auditorium_stage",
+        "level_blockout_school_library_globe"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -81,7 +85,11 @@
         "level_blockout_institution_linen_cabinet",
         "level_blockout_mortuary_instrument_trolley",
         "level_blockout_mortuary_cold_drawer_wall",
-        "level_blockout_mortuary_wash_sink_station"
+        "level_blockout_mortuary_wash_sink_station",
+        "level_blockout_hospital_mobile_iv_stand",
+        "level_blockout_hospital_ward_screen",
+        "level_blockout_hospital_sterilizer_cabinet",
+        "level_blockout_hospital_patient_call_panel"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -226,7 +234,11 @@
         "level_blockout_school_chalkboard",
         "level_blockout_school_locker_bank",
         "level_blockout_science_instrument_table",
-        "level_blockout_rail_station_clock"
+        "level_blockout_rail_station_clock",
+        "level_blockout_school_cafeteria_table",
+        "level_blockout_school_wall_coat_rack",
+        "level_blockout_school_auditorium_stage",
+        "level_blockout_school_library_globe"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -384,7 +396,8 @@
         "level_blockout_pipe_riser_support",
         "level_blockout_school_locker_bank",
         "level_blockout_institution_linen_cabinet",
-        "level_blockout_prison_guard_station"
+        "level_blockout_prison_guard_station",
+        "level_blockout_prison_visitation_counter"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -413,7 +426,11 @@
         "level_blockout_school_chalkboard",
         "level_blockout_school_locker_bank",
         "level_blockout_science_instrument_table",
-        "level_blockout_institution_linen_cabinet"
+        "level_blockout_institution_linen_cabinet",
+        "level_blockout_school_cafeteria_table",
+        "level_blockout_school_wall_coat_rack",
+        "level_blockout_school_auditorium_stage",
+        "level_blockout_school_library_globe"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -732,7 +749,8 @@
         "level_blockout_cinder_cable_rack",
         "level_blockout_research_battery_bank",
         "level_blockout_cave_survey_tripod",
-        "level_blockout_cave_excavation_trestle"
+        "level_blockout_cave_excavation_trestle",
+        "level_blockout_hospital_sterilizer_cabinet"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -763,7 +781,10 @@
         "level_blockout_research_battery_bank",
         "level_blockout_dam_pressure_gauge_panel",
         "level_blockout_rail_coal_bunker",
-        "level_blockout_hydro_handwheel_valve"
+        "level_blockout_hydro_handwheel_valve",
+        "level_blockout_dam_service_catwalk",
+        "level_blockout_dam_turbine_access_hatch",
+        "level_blockout_dam_spillway_guard_screen"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -849,7 +870,8 @@
         "level_blockout_camp_water_tank",
         "level_blockout_camp_footbridge_module",
         "level_blockout_marsh_deadwood_snag",
-        "level_blockout_marsh_hunting_blind"
+        "level_blockout_marsh_hunting_blind",
+        "level_blockout_dam_spillway_guard_screen"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -921,7 +943,10 @@
         "level_blockout_wharf_crab_pot",
         "level_blockout_cannery_overhead_chute",
         "level_blockout_hydro_handwheel_valve",
-        "level_blockout_wharf_open_fish_crates"
+        "level_blockout_wharf_open_fish_crates",
+        "level_blockout_cannery_hanging_hook_rail",
+        "level_blockout_cannery_rinse_bench",
+        "level_blockout_cannery_cart_dolly"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -1023,7 +1048,10 @@
         "level_blockout_hydro_handwheel_valve",
         "level_blockout_ship_open_cargo_hatch",
         "level_blockout_wharf_open_fish_crates",
-        "level_blockout_rail_luggage_cart"
+        "level_blockout_rail_luggage_cart",
+        "level_blockout_cannery_hanging_hook_rail",
+        "level_blockout_cannery_rinse_bench",
+        "level_blockout_cannery_cart_dolly"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -1106,7 +1134,8 @@
         "level_blockout_bunker_observation_scope",
         "level_blockout_cinder_cable_rack",
         "level_blockout_bunker_support_arch",
-        "level_blockout_lighthouse_cliff_drain"
+        "level_blockout_lighthouse_cliff_drain",
+        "level_blockout_dam_service_catwalk"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -1156,7 +1185,9 @@
         "level_blockout_dam_pressure_gauge_panel",
         "level_blockout_cave_rockfall_heap",
         "level_blockout_bunker_support_arch",
-        "level_blockout_cave_ledge_rope_guard"
+        "level_blockout_cave_ledge_rope_guard",
+        "level_blockout_dam_service_catwalk",
+        "level_blockout_dam_turbine_access_hatch"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -1199,7 +1230,11 @@
         "level_blockout_mortuary_cold_drawer_wall",
         "level_blockout_mortuary_flower_wreath",
         "level_blockout_mortuary_wash_sink_station",
-        "level_blockout_mortuary_visitors_registry_desk"
+        "level_blockout_mortuary_visitors_registry_desk",
+        "level_blockout_hospital_mobile_iv_stand",
+        "level_blockout_hospital_ward_screen",
+        "level_blockout_hospital_sterilizer_cabinet",
+        "level_blockout_hospital_patient_call_panel"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     }
@@ -8636,7 +8671,7 @@
           "type": "box",
           "p": [
             0,
-            0.55,
+            0.93,
             0.07
           ],
           "size": [
@@ -8701,18 +8736,18 @@
           "material": "accent"
         }
       ],
-      "notes": "Review-only chart surface; does not contain actual private patient records.",
+      "notes": "Rolling chart board: stand post raised so it no longer buries 0.325m below floor; this is a mobile floor-mounted study, NOT a fixed wall object or patient-data screen.",
       "authoring_stage": "primitive_blockout",
       "runtime_approved": false,
       "authoring_hints": {
-        "mount": "wall",
+        "mount": "floor",
         "front": "-Z",
         "units": "metres",
         "mount_confidence": "provisional_unreviewed",
         "source_pivot_reviewed": false,
         "renderer_orientation_reviewed": false,
         "runtime_placement": false,
-        "placement_origin_policy": "evaluate_attachment_against_real_scene",
+        "placement_origin_policy": "ground_candidate_not_verified",
         "required_checks": [
           "native four-view screenshot and material/UV inspection",
           "source-ground / wall / roof attachment and world pivot review",
@@ -12504,7 +12539,7 @@
     },
     {
       "id": "level_blockout_family_photo_cluster",
-      "label": "House family photographs on standing gallery panel",
+      "label": "Four individual hanging family photo frames",
       "category": "domestic",
       "maps": [
         "HOUSE",
@@ -12516,159 +12551,341 @@
         {
           "type": "box",
           "p": [
-            0,
-            1.56,
-            0.06
-          ],
-          "size": [
-            2.01,
-            1.89,
-            0.1
-          ],
-          "material": "wood"
-        },
-        {
-          "type": "box",
-          "p": [
             -0.54,
             1.7,
-            -0.01
+            0.035
           ],
           "size": [
             0.65,
             0.8,
-            0.05
+            0.035
           ],
-          "material": "accent"
+          "material": "wood"
         },
         {
           "type": "box",
           "p": [
             -0.54,
             1.7,
-            -0.05
+            -0.028
           ],
           "size": [
             0.52,
             0.67,
-            0.016
+            0.022
           ],
           "material": "canvas"
         },
         {
           "type": "box",
           "p": [
-            0.43,
-            1.87,
-            -0.01
+            -0.8300000000000001,
+            1.7,
+            -0.063
           ],
           "size": [
-            0.55,
-            0.64,
-            0.05
+            0.075,
+            0.8,
+            0.073
           ],
-          "material": "accent"
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.25,
+            1.7,
+            -0.063
+          ],
+          "size": [
+            0.075,
+            0.8,
+            0.073
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.54,
+            1.335,
+            -0.063
+          ],
+          "size": [
+            0.65,
+            0.075,
+            0.073
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.54,
+            2.065,
+            -0.063
+          ],
+          "size": [
+            0.65,
+            0.075,
+            0.073
+          ],
+          "material": "wood"
         },
         {
           "type": "box",
           "p": [
             0.43,
             1.87,
-            -0.05
+            0.035
+          ],
+          "size": [
+            0.55,
+            0.64,
+            0.035
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.43,
+            1.87,
+            -0.028
           ],
           "size": [
             0.42000000000000004,
             0.51,
-            0.016
+            0.022
           ],
           "material": "canvas"
         },
         {
           "type": "box",
           "p": [
+            0.18999999999999997,
+            1.87,
+            -0.063
+          ],
+          "size": [
+            0.075,
+            0.64,
+            0.073
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.67,
+            1.87,
+            -0.063
+          ],
+          "size": [
+            0.075,
+            0.64,
+            0.073
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.43,
+            1.585,
+            -0.063
+          ],
+          "size": [
+            0.55,
+            0.075,
+            0.073
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.43,
+            2.1550000000000002,
+            -0.063
+          ],
+          "size": [
+            0.55,
+            0.075,
+            0.073
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
             0.26,
             1.09,
-            -0.01
+            0.035
           ],
           "size": [
             0.77,
             0.52,
-            0.05
+            0.035
           ],
-          "material": "accent"
+          "material": "wood"
         },
         {
           "type": "box",
           "p": [
             0.26,
             1.09,
-            -0.05
+            -0.028
           ],
           "size": [
             0.64,
             0.39,
-            0.016
+            0.022
           ],
           "material": "canvas"
         },
         {
           "type": "box",
           "p": [
+            -0.08999999999999997,
+            1.09,
+            -0.063
+          ],
+          "size": [
+            0.075,
+            0.52,
+            0.073
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.61,
+            1.09,
+            -0.063
+          ],
+          "size": [
+            0.075,
+            0.52,
+            0.073
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.26,
+            0.8650000000000001,
+            -0.063
+          ],
+          "size": [
+            0.77,
+            0.075,
+            0.073
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.26,
+            1.3150000000000002,
+            -0.063
+          ],
+          "size": [
+            0.77,
+            0.075,
+            0.073
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
             -0.58,
             1.02,
-            -0.01
+            0.035
           ],
           "size": [
             0.48,
             0.55,
-            0.05
+            0.035
           ],
-          "material": "accent"
+          "material": "wood"
         },
         {
           "type": "box",
           "p": [
             -0.58,
             1.02,
-            -0.05
+            -0.028
           ],
           "size": [
             0.35,
             0.42000000000000004,
-            0.016
+            0.022
           ],
           "material": "canvas"
         },
         {
           "type": "box",
           "p": [
-            -0.9,
-            0.44,
-            0.1
+            -0.7849999999999999,
+            1.02,
+            -0.063
           ],
           "size": [
-            0.1,
-            0.89,
-            0.1
+            0.075,
+            0.55,
+            0.073
           ],
           "material": "wood"
         },
         {
           "type": "box",
           "p": [
-            0.9,
-            0.44,
-            0.1
+            -0.375,
+            1.02,
+            -0.063
           ],
           "size": [
-            0.1,
-            0.89,
-            0.1
+            0.075,
+            0.55,
+            0.073
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.58,
+            0.78,
+            -0.063
+          ],
+          "size": [
+            0.48,
+            0.075,
+            0.073
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.58,
+            1.26,
+            -0.063
+          ],
+          "size": [
+            0.48,
+            0.075,
+            0.073
           ],
           "material": "wood"
         }
       ],
-      "notes": "Blank family-frame layouts; no likenesses, identifiable people or scripted photographs.",
+      "notes": "Four independent frame silhouettes, each with thin back, own picture surface and four solid frame rails; no shared room-wide backplate, no feet, no real portraits or likenesses. Mounting relative to wall remains provisional.",
       "authoring_stage": "primitive_blockout",
       "runtime_approved": false,
       "authoring_hints": {
@@ -13690,7 +13907,7 @@
           "type": "cylinder",
           "p": [
             -0.75,
-            0.12,
+            0.23,
             0
           ],
           "radius": 0.23,
@@ -13703,7 +13920,7 @@
           "type": "cylinder",
           "p": [
             0.75,
-            0.12,
+            0.23,
             0
           ],
           "radius": 0.23,
@@ -13754,7 +13971,7 @@
           "material": "industrial"
         }
       ],
-      "notes": "Static remote service source. No powered circuit behavior, fuel tank simulation, exhaust or load handling.",
+      "notes": "Ground-contact emergency generator wheels now sit at y=0; existing chassis skirt remains above grade. Inert source study, no fuel, power or circuit behavior.",
       "authoring_stage": "primitive_blockout",
       "runtime_approved": false,
       "authoring_hints": {
@@ -50425,6 +50642,2798 @@
           "collision/navmesh",
           "map room clearance",
           "explicit editor acceptance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_school_cafeteria_table",
+      "label": "School cafeteria bench table",
+      "category": "institutional",
+      "maps": [
+        "SCHOOL",
+        "COLLEGE",
+        "ACADEMY"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.81,
+            0
+          ],
+          "size": [
+            2.28,
+            0.11,
+            0.75
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.48,
+            -0.73
+          ],
+          "size": [
+            2.19,
+            0.09,
+            0.33
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.48,
+            0.73
+          ],
+          "size": [
+            2.19,
+            0.09,
+            0.33
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.95,
+            0.27,
+            -0.7
+          ],
+          "size": [
+            0.12,
+            0.54,
+            0.11
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.95,
+            0.27,
+            0.7
+          ],
+          "size": [
+            0.12,
+            0.54,
+            0.11
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.95,
+            0.27,
+            -0.7
+          ],
+          "size": [
+            0.12,
+            0.54,
+            0.11
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.95,
+            0.27,
+            0.7
+          ],
+          "size": [
+            0.12,
+            0.54,
+            0.11
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.91,
+            0.34,
+            0
+          ],
+          "size": [
+            0.08,
+            0.62,
+            1.68
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.91,
+            0.34,
+            0
+          ],
+          "size": [
+            0.08,
+            0.62,
+            1.68
+          ],
+          "material": "metal"
+        }
+      ],
+      "notes": "Separate benches and supported tabletop, not a single fused cube; seating remains noninteractive.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "mount_confidence": "provisional_unreviewed",
+        "source_pivot_reviewed": false,
+        "renderer_orientation_reviewed": false,
+        "runtime_placement": false,
+        "placement_origin_policy": "ground_candidate_not_verified",
+        "required_checks": [
+          "native four-view renderer",
+          "model ground/attachment and orientation",
+          "UV/material",
+          "opening and physical clearance",
+          "collision and navigation",
+          "explicit editor import approval"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_school_wall_coat_rack",
+      "label": "School corridor wall coat rail with hooks",
+      "category": "institutional",
+      "maps": [
+        "SCHOOL",
+        "ACADEMY",
+        "COLLEGE"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.46,
+            0
+          ],
+          "size": [
+            2.64,
+            0.19,
+            0.12
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.08,
+            1.33,
+            -0.13
+          ],
+          "size": [
+            0.08,
+            0.3,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.08,
+            1.2,
+            -0.23
+          ],
+          "size": [
+            0.22,
+            0.075,
+            0.21
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.54,
+            1.33,
+            -0.13
+          ],
+          "size": [
+            0.08,
+            0.3,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.54,
+            1.2,
+            -0.23
+          ],
+          "size": [
+            0.22,
+            0.075,
+            0.21
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.33,
+            -0.13
+          ],
+          "size": [
+            0.08,
+            0.3,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.2,
+            -0.23
+          ],
+          "size": [
+            0.22,
+            0.075,
+            0.21
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.54,
+            1.33,
+            -0.13
+          ],
+          "size": [
+            0.08,
+            0.3,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.54,
+            1.2,
+            -0.23
+          ],
+          "size": [
+            0.22,
+            0.075,
+            0.21
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.08,
+            1.33,
+            -0.13
+          ],
+          "size": [
+            0.08,
+            0.3,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.08,
+            1.2,
+            -0.23
+          ],
+          "size": [
+            0.22,
+            0.075,
+            0.21
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.21,
+            1.46,
+            0.13
+          ],
+          "size": [
+            0.15,
+            0.26,
+            0.2
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.21,
+            1.46,
+            0.13
+          ],
+          "size": [
+            0.15,
+            0.26,
+            0.2
+          ],
+          "material": "wood"
+        }
+      ],
+      "notes": "Discrete wall hooks; no hanging character clothing or overlap with door hinges.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "wall",
+        "front": "-Z",
+        "units": "metres",
+        "mount_confidence": "provisional_unreviewed",
+        "source_pivot_reviewed": false,
+        "renderer_orientation_reviewed": false,
+        "runtime_placement": false,
+        "placement_origin_policy": "evaluate_attachment_against_real_scene",
+        "required_checks": [
+          "native four-view renderer",
+          "model ground/attachment and orientation",
+          "UV/material",
+          "opening and physical clearance",
+          "collision and navigation",
+          "explicit editor import approval"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_school_auditorium_stage",
+      "label": "Assembly hall stage deck and steps",
+      "category": "institutional",
+      "maps": [
+        "SCHOOL",
+        "COLLEGE",
+        "ACADEMY"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.48,
+            0
+          ],
+          "size": [
+            3.52,
+            0.2,
+            2.13
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.51,
+            0.2,
+            -0.78
+          ],
+          "size": [
+            0.16,
+            0.41,
+            0.16
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.51,
+            0.2,
+            0.78
+          ],
+          "size": [
+            0.16,
+            0.41,
+            0.16
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.51,
+            0.2,
+            -0.78
+          ],
+          "size": [
+            0.16,
+            0.41,
+            0.16
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.51,
+            0.2,
+            0.78
+          ],
+          "size": [
+            0.16,
+            0.41,
+            0.16
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.13,
+            -1.38
+          ],
+          "size": [
+            1.31,
+            0.25,
+            0.34
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.33,
+            -1.1099999999999999
+          ],
+          "size": [
+            1.31,
+            0.25,
+            0.34
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.56,
+            0.96,
+            0.93
+          ],
+          "size": [
+            0.08,
+            0.87,
+            0.09
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.56,
+            0.96,
+            0.93
+          ],
+          "size": [
+            0.08,
+            0.87,
+            0.09
+          ],
+          "material": "metal"
+        }
+      ],
+      "notes": "Staged assembly platform with two distinguishable approach steps. No stage/door gameplay path added.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "mount_confidence": "provisional_unreviewed",
+        "source_pivot_reviewed": false,
+        "renderer_orientation_reviewed": false,
+        "runtime_placement": false,
+        "placement_origin_policy": "ground_candidate_not_verified",
+        "required_checks": [
+          "native four-view renderer",
+          "model ground/attachment and orientation",
+          "UV/material",
+          "opening and physical clearance",
+          "collision and navigation",
+          "explicit editor import approval"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_school_library_globe",
+      "label": "Faceted school globe on wooden table stand",
+      "category": "teaching",
+      "maps": [
+        "SCHOOL",
+        "ACADEMY",
+        "COLLEGE"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.12,
+            0
+          ],
+          "size": [
+            0.53,
+            0.18,
+            0.53
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.46,
+            0
+          ],
+          "radius": 0.06,
+          "height": 0.56,
+          "material": "metal",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            0.15,
+            0.74,
+            0
+          ],
+          "size": [
+            0.38,
+            0.08,
+            0.08
+          ],
+          "material": "metal",
+          "yaw": 0
+        },
+        {
+          "type": "box",
+          "p": [
+            0.10606601717798213,
+            0.74,
+            0.10606601717798211
+          ],
+          "size": [
+            0.38,
+            0.08,
+            0.08
+          ],
+          "material": "metal",
+          "yaw": 0.7853982
+        },
+        {
+          "type": "frustum",
+          "p": [
+            0,
+            0.67,
+            0
+          ],
+          "bottom_radius": 0.38,
+          "top_radius": 0.36,
+          "height": 0.32,
+          "material": "accent",
+          "segments": 12
+        },
+        {
+          "type": "frustum",
+          "p": [
+            0,
+            0.96,
+            0
+          ],
+          "bottom_radius": 0.36,
+          "top_radius": 0.2,
+          "height": 0.28,
+          "material": "accent",
+          "segments": 12
+        },
+        {
+          "type": "frustum",
+          "p": [
+            0,
+            1.15,
+            0
+          ],
+          "bottom_radius": 0.2,
+          "top_radius": 0,
+          "height": 0.14,
+          "material": "accent",
+          "segments": 12
+        }
+      ],
+      "notes": "Faceted globelike geographic display, nonfunctional and without actual map texture.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "display_surface",
+        "front": "-Z",
+        "units": "metres",
+        "mount_confidence": "provisional_unreviewed",
+        "source_pivot_reviewed": false,
+        "renderer_orientation_reviewed": false,
+        "runtime_placement": false,
+        "placement_origin_policy": "evaluate_attachment_against_real_scene",
+        "required_checks": [
+          "native four-view renderer",
+          "model ground/attachment and orientation",
+          "UV/material",
+          "opening and physical clearance",
+          "collision and navigation",
+          "explicit editor import approval"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_hospital_mobile_iv_stand",
+      "label": "Ward IV pole, ring hooks and four casters",
+      "category": "medical",
+      "maps": [
+        "ASYLUM",
+        "WLD-07-MORTUARY"
+      ],
+      "parts": [
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.01,
+            0
+          ],
+          "radius": 0.055,
+          "height": 2.02,
+          "material": "metal",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.42,
+            0.13,
+            0
+          ],
+          "size": [
+            0.88,
+            0.12,
+            0.12
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.42,
+            0.13,
+            0
+          ],
+          "size": [
+            0.88,
+            0.12,
+            0.12
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.13,
+            -0.42
+          ],
+          "size": [
+            0.12,
+            0.12,
+            0.88
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.13,
+            0.42
+          ],
+          "size": [
+            0.12,
+            0.12,
+            0.88
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.42,
+            0.075,
+            -0.42
+          ],
+          "radius": 0.07,
+          "height": 0.12,
+          "material": "dark",
+          "axis": "x",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.42,
+            0.075,
+            0.42
+          ],
+          "radius": 0.07,
+          "height": 0.12,
+          "material": "dark",
+          "axis": "x",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.42,
+            0.075,
+            -0.42
+          ],
+          "radius": 0.07,
+          "height": 0.12,
+          "material": "dark",
+          "axis": "x",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.42,
+            0.075,
+            0.42
+          ],
+          "radius": 0.07,
+          "height": 0.12,
+          "material": "dark",
+          "axis": "x",
+          "segments": 8
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.06,
+            0
+          ],
+          "size": [
+            0.75,
+            0.075,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.35,
+            1.93,
+            0
+          ],
+          "size": [
+            0.065,
+            0.29,
+            0.055
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.35,
+            1.93,
+            0
+          ],
+          "size": [
+            0.065,
+            0.29,
+            0.055
+          ],
+          "material": "metal"
+        }
+      ],
+      "notes": "Grounded mobile pole, four separate casters and discrete hooks. No medical gameplay mechanics.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "mount_confidence": "provisional_unreviewed",
+        "source_pivot_reviewed": false,
+        "renderer_orientation_reviewed": false,
+        "runtime_placement": false,
+        "placement_origin_policy": "ground_candidate_not_verified",
+        "required_checks": [
+          "native four-view renderer",
+          "model ground/attachment and orientation",
+          "UV/material",
+          "opening and physical clearance",
+          "collision and navigation",
+          "explicit editor import approval"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_hospital_ward_screen",
+      "label": "Three-panel folding privacy screen and feet",
+      "category": "medical",
+      "maps": [
+        "ASYLUM",
+        "WLD-07-MORTUARY"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.79,
+            1.16,
+            0
+          ],
+          "size": [
+            0.68,
+            2.12,
+            0.045
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.16,
+            0
+          ],
+          "size": [
+            0.68,
+            2.12,
+            0.045
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.79,
+            1.16,
+            0
+          ],
+          "size": [
+            0.68,
+            2.12,
+            0.045
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.17,
+            1.15,
+            0.02
+          ],
+          "size": [
+            0.08,
+            2.24,
+            0.1
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.4,
+            1.15,
+            0.02
+          ],
+          "size": [
+            0.08,
+            2.24,
+            0.1
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.4,
+            1.15,
+            0.02
+          ],
+          "size": [
+            0.08,
+            2.24,
+            0.1
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.17,
+            1.15,
+            0.02
+          ],
+          "size": [
+            0.08,
+            2.24,
+            0.1
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.02,
+            0.1,
+            0
+          ],
+          "size": [
+            0.4,
+            0.2,
+            0.52
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.02,
+            0.1,
+            0
+          ],
+          "size": [
+            0.4,
+            0.2,
+            0.52
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.29,
+            0.04
+          ],
+          "size": [
+            2.46,
+            0.09,
+            0.09
+          ],
+          "material": "metal"
+        }
+      ],
+      "notes": "Separate freestanding fabric panels; no wall collider, hinges or curtains clipping rooms.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "mount_confidence": "provisional_unreviewed",
+        "source_pivot_reviewed": false,
+        "renderer_orientation_reviewed": false,
+        "runtime_placement": false,
+        "placement_origin_policy": "ground_candidate_not_verified",
+        "required_checks": [
+          "native four-view renderer",
+          "model ground/attachment and orientation",
+          "UV/material",
+          "opening and physical clearance",
+          "collision and navigation",
+          "explicit editor import approval"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_hospital_sterilizer_cabinet",
+      "label": "Medical sterilization equipment cabinet",
+      "category": "medical",
+      "maps": [
+        "ASYLUM",
+        "WLD-07-MORTUARY",
+        "WLD-08"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.75,
+            0
+          ],
+          "size": [
+            1.18,
+            1.43,
+            0.72
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.16,
+            -0.39
+          ],
+          "size": [
+            1.03,
+            0.62,
+            0.04
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.24,
+            1.44,
+            -0.43
+          ],
+          "size": [
+            0.26,
+            0.14,
+            0.04
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.25,
+            1.44,
+            -0.43
+          ],
+          "size": [
+            0.24,
+            0.14,
+            0.04
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.46,
+            0.075,
+            0
+          ],
+          "size": [
+            0.12,
+            0.15,
+            0.8
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.46,
+            0.075,
+            0
+          ],
+          "size": [
+            0.12,
+            0.15,
+            0.8
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.34,
+            0.73,
+            -0.43
+          ],
+          "size": [
+            0.12,
+            0.07,
+            0.09
+          ],
+          "material": "silver"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.34,
+            0.73,
+            -0.43
+          ],
+          "size": [
+            0.12,
+            0.07,
+            0.09
+          ],
+          "material": "silver"
+        }
+      ],
+      "notes": "Inert equipment cabinet with separate doors and controls, no medical safety or infection simulation.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "mount_confidence": "provisional_unreviewed",
+        "source_pivot_reviewed": false,
+        "renderer_orientation_reviewed": false,
+        "runtime_placement": false,
+        "placement_origin_policy": "ground_candidate_not_verified",
+        "required_checks": [
+          "native four-view renderer",
+          "model ground/attachment and orientation",
+          "UV/material",
+          "opening and physical clearance",
+          "collision and navigation",
+          "explicit editor import approval"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_hospital_patient_call_panel",
+      "label": "Ward bedside call panel",
+      "category": "medical",
+      "maps": [
+        "ASYLUM",
+        "WLD-07-MORTUARY"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.52,
+            0.03
+          ],
+          "size": [
+            0.45,
+            0.89,
+            0.12
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.72,
+            -0.05
+          ],
+          "size": [
+            0.31,
+            0.18,
+            0.035
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.37,
+            -0.065
+          ],
+          "radius": 0.12,
+          "height": 0.08,
+          "material": "redcloth",
+          "axis": "z",
+          "segments": 12
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.14,
+            0.19,
+            -0.05
+          ],
+          "size": [
+            0.11,
+            0.07,
+            0.035
+          ],
+          "material": "ivory"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.14,
+            0.19,
+            -0.05
+          ],
+          "size": [
+            0.11,
+            0.07,
+            0.035
+          ],
+          "material": "ivory"
+        }
+      ],
+      "notes": "Wall-mounted visual controls only; no call dispatch or powered lighting.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "wall",
+        "front": "-Z",
+        "units": "metres",
+        "mount_confidence": "provisional_unreviewed",
+        "source_pivot_reviewed": false,
+        "renderer_orientation_reviewed": false,
+        "runtime_placement": false,
+        "placement_origin_policy": "evaluate_attachment_against_real_scene",
+        "required_checks": [
+          "native four-view renderer",
+          "model ground/attachment and orientation",
+          "UV/material",
+          "opening and physical clearance",
+          "collision and navigation",
+          "explicit editor import approval"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_dam_service_catwalk",
+      "label": "Hydroelectric service catwalk grating and braces",
+      "category": "hydro",
+      "maps": [
+        "WLD-09",
+        "WLD-18",
+        "WLD-17"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.55,
+            -0.53
+          ],
+          "size": [
+            3.74,
+            0.12,
+            0.13
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.55,
+            0.53
+          ],
+          "size": [
+            3.74,
+            0.12,
+            0.13
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.62,
+            0.55,
+            0
+          ],
+          "size": [
+            0.11,
+            0.07,
+            1.18
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.3,
+            0.55,
+            0
+          ],
+          "size": [
+            0.11,
+            0.07,
+            1.18
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.9800000000000001,
+            0.55,
+            0
+          ],
+          "size": [
+            0.11,
+            0.07,
+            1.18
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.6600000000000001,
+            0.55,
+            0
+          ],
+          "size": [
+            0.11,
+            0.07,
+            1.18
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.3400000000000001,
+            0.55,
+            0
+          ],
+          "size": [
+            0.11,
+            0.07,
+            1.18
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.020000000000000018,
+            0.55,
+            0
+          ],
+          "size": [
+            0.11,
+            0.07,
+            1.18
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.2999999999999998,
+            0.55,
+            0
+          ],
+          "size": [
+            0.11,
+            0.07,
+            1.18
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.6200000000000001,
+            0.55,
+            0
+          ],
+          "size": [
+            0.11,
+            0.07,
+            1.18
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.94,
+            0.55,
+            0
+          ],
+          "size": [
+            0.11,
+            0.07,
+            1.18
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.2599999999999998,
+            0.55,
+            0
+          ],
+          "size": [
+            0.11,
+            0.07,
+            1.18
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.58,
+            0.55,
+            0
+          ],
+          "size": [
+            0.11,
+            0.07,
+            1.18
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.63,
+            0.82,
+            -0.61
+          ],
+          "size": [
+            0.085,
+            0.72,
+            0.085
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.63,
+            0.82,
+            0.61
+          ],
+          "size": [
+            0.085,
+            0.72,
+            0.085
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.55,
+            0.82,
+            -0.61
+          ],
+          "size": [
+            0.085,
+            0.72,
+            0.085
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.55,
+            0.82,
+            0.61
+          ],
+          "size": [
+            0.085,
+            0.72,
+            0.085
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.55,
+            0.82,
+            -0.61
+          ],
+          "size": [
+            0.085,
+            0.72,
+            0.085
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.55,
+            0.82,
+            0.61
+          ],
+          "size": [
+            0.085,
+            0.72,
+            0.085
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.63,
+            0.82,
+            -0.61
+          ],
+          "size": [
+            0.085,
+            0.72,
+            0.085
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.63,
+            0.82,
+            0.61
+          ],
+          "size": [
+            0.085,
+            0.72,
+            0.085
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.17,
+            -0.6
+          ],
+          "size": [
+            3.55,
+            0.08,
+            0.075
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.17,
+            0.6
+          ],
+          "size": [
+            3.55,
+            0.08,
+            0.075
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.71,
+            0.26,
+            0
+          ],
+          "size": [
+            0.12,
+            0.51,
+            1.3
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.71,
+            0.26,
+            0
+          ],
+          "size": [
+            0.12,
+            0.51,
+            1.3
+          ],
+          "material": "metal"
+        }
+      ],
+      "notes": "Eleven open metal deck slats and side guards; no certified railing or walkable collision.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "structure",
+        "front": "-Z",
+        "units": "metres",
+        "mount_confidence": "provisional_unreviewed",
+        "source_pivot_reviewed": false,
+        "renderer_orientation_reviewed": false,
+        "runtime_placement": false,
+        "placement_origin_policy": "evaluate_attachment_against_real_scene",
+        "required_checks": [
+          "native four-view renderer",
+          "model ground/attachment and orientation",
+          "UV/material",
+          "opening and physical clearance",
+          "collision and navigation",
+          "explicit editor import approval"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_dam_turbine_access_hatch",
+      "label": "Open service hatch with separate raised lid",
+      "category": "hydro",
+      "maps": [
+        "WLD-09",
+        "WLD-18"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.92,
+            0.19,
+            0
+          ],
+          "size": [
+            0.18,
+            0.37,
+            1.3
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.92,
+            0.19,
+            0
+          ],
+          "size": [
+            0.18,
+            0.37,
+            1.3
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.19,
+            -0.58
+          ],
+          "size": [
+            2,
+            0.38,
+            0.16
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.19,
+            0.58
+          ],
+          "size": [
+            2,
+            0.38,
+            0.16
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.95,
+            1,
+            0.18
+          ],
+          "size": [
+            0.09,
+            1.45,
+            0.89
+          ],
+          "material": "metal",
+          "roll": 0.3839724
+        },
+        {
+          "type": "box",
+          "p": [
+            1.1,
+            0.76,
+            0.23
+          ],
+          "size": [
+            0.71,
+            0.07,
+            0.09
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.82,
+            0.09,
+            0
+          ],
+          "size": [
+            0.15,
+            0.16,
+            1.4
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.82,
+            0.09,
+            0
+          ],
+          "size": [
+            0.15,
+            0.16,
+            1.4
+          ],
+          "material": "stone"
+        }
+      ],
+      "notes": "Hatch center kept empty. Lid static and separate; does not cut playable floors.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "structure",
+        "front": "-Z",
+        "units": "metres",
+        "mount_confidence": "provisional_unreviewed",
+        "source_pivot_reviewed": false,
+        "renderer_orientation_reviewed": false,
+        "runtime_placement": false,
+        "placement_origin_policy": "evaluate_attachment_against_real_scene",
+        "required_checks": [
+          "native four-view renderer",
+          "model ground/attachment and orientation",
+          "UV/material",
+          "opening and physical clearance",
+          "collision and navigation",
+          "explicit editor import approval"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_dam_spillway_guard_screen",
+      "label": "Dam coarse debris guard bars",
+      "category": "hydro",
+      "maps": [
+        "WLD-09",
+        "WLD-11"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -1.22,
+            1.16,
+            0
+          ],
+          "size": [
+            0.09,
+            2.3,
+            0.12
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.87,
+            1.16,
+            0
+          ],
+          "size": [
+            0.09,
+            2.3,
+            0.12
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.52,
+            1.16,
+            0
+          ],
+          "size": [
+            0.09,
+            2.3,
+            0.12
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.17,
+            1.16,
+            0
+          ],
+          "size": [
+            0.09,
+            2.3,
+            0.12
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.17,
+            1.16,
+            0
+          ],
+          "size": [
+            0.09,
+            2.3,
+            0.12
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.52,
+            1.16,
+            0
+          ],
+          "size": [
+            0.09,
+            2.3,
+            0.12
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.87,
+            1.16,
+            0
+          ],
+          "size": [
+            0.09,
+            2.3,
+            0.12
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.22,
+            1.16,
+            0
+          ],
+          "size": [
+            0.09,
+            2.3,
+            0.12
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.11,
+            0
+          ],
+          "size": [
+            2.62,
+            0.12,
+            0.18
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.18,
+            0
+          ],
+          "size": [
+            2.62,
+            0.12,
+            0.18
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.24,
+            0
+          ],
+          "size": [
+            2.62,
+            0.12,
+            0.18
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.1,
+            0.07,
+            0
+          ],
+          "size": [
+            0.34,
+            0.14,
+            0.45
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.1,
+            0.07,
+            0
+          ],
+          "size": [
+            0.34,
+            0.14,
+            0.45
+          ],
+          "material": "stone"
+        }
+      ],
+      "notes": "Open debris bars instead of a wall-sized filled plate; no water force, flow or occlusion approval.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "structure",
+        "front": "-Z",
+        "units": "metres",
+        "mount_confidence": "provisional_unreviewed",
+        "source_pivot_reviewed": false,
+        "renderer_orientation_reviewed": false,
+        "runtime_placement": false,
+        "placement_origin_policy": "evaluate_attachment_against_real_scene",
+        "required_checks": [
+          "native four-view renderer",
+          "model ground/attachment and orientation",
+          "UV/material",
+          "opening and physical clearance",
+          "collision and navigation",
+          "explicit editor import approval"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_cannery_hanging_hook_rail",
+      "label": "Cannery suspended processing hook line",
+      "category": "industrial",
+      "maps": [
+        "WLD-13",
+        "WLD-15"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.32,
+            0
+          ],
+          "size": [
+            2.86,
+            0.09,
+            0.12
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -1.1,
+            2.11,
+            0
+          ],
+          "radius": 0.065,
+          "height": 0.34,
+          "material": "metal",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.1,
+            1.85,
+            0.06
+          ],
+          "size": [
+            0.09,
+            0.24,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.9900000000000001,
+            1.74,
+            0.06
+          ],
+          "size": [
+            0.28,
+            0.08,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.55,
+            2.11,
+            0
+          ],
+          "radius": 0.065,
+          "height": 0.34,
+          "material": "metal",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.55,
+            1.85,
+            0.06
+          ],
+          "size": [
+            0.09,
+            0.24,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.44000000000000006,
+            1.74,
+            0.06
+          ],
+          "size": [
+            0.28,
+            0.08,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            2.11,
+            0
+          ],
+          "radius": 0.065,
+          "height": 0.34,
+          "material": "metal",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.85,
+            0.06
+          ],
+          "size": [
+            0.09,
+            0.24,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.11,
+            1.74,
+            0.06
+          ],
+          "size": [
+            0.28,
+            0.08,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.55,
+            2.11,
+            0
+          ],
+          "radius": 0.065,
+          "height": 0.34,
+          "material": "metal",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            0.55,
+            1.85,
+            0.06
+          ],
+          "size": [
+            0.09,
+            0.24,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.66,
+            1.74,
+            0.06
+          ],
+          "size": [
+            0.28,
+            0.08,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            1.1,
+            2.11,
+            0
+          ],
+          "radius": 0.065,
+          "height": 0.34,
+          "material": "metal",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            1.1,
+            1.85,
+            0.06
+          ],
+          "size": [
+            0.09,
+            0.24,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.2100000000000002,
+            1.74,
+            0.06
+          ],
+          "size": [
+            0.28,
+            0.08,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.18,
+            2.56,
+            0
+          ],
+          "size": [
+            0.1,
+            0.52,
+            0.14
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.18,
+            2.56,
+            0
+          ],
+          "size": [
+            0.1,
+            0.52,
+            0.14
+          ],
+          "material": "industrial"
+        }
+      ],
+      "notes": "Five separated unladen hooks and overhead rails; no moving conveyor or hanging biological matter.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "ceiling",
+        "front": "-Z",
+        "units": "metres",
+        "mount_confidence": "provisional_unreviewed",
+        "source_pivot_reviewed": false,
+        "renderer_orientation_reviewed": false,
+        "runtime_placement": false,
+        "placement_origin_policy": "evaluate_attachment_against_real_scene",
+        "required_checks": [
+          "native four-view renderer",
+          "model ground/attachment and orientation",
+          "UV/material",
+          "opening and physical clearance",
+          "collision and navigation",
+          "explicit editor import approval"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_cannery_rinse_bench",
+      "label": "Industrial wash table and exposed drain",
+      "category": "industrial",
+      "maps": [
+        "WLD-13",
+        "WLD-15"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.88,
+            0
+          ],
+          "size": [
+            1.93,
+            0.14,
+            0.91
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.8,
+            0.43,
+            -0.34
+          ],
+          "size": [
+            0.12,
+            0.86,
+            0.12
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.8,
+            0.43,
+            0.34
+          ],
+          "size": [
+            0.12,
+            0.86,
+            0.12
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.8,
+            0.43,
+            -0.34
+          ],
+          "size": [
+            0.12,
+            0.86,
+            0.12
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.8,
+            0.43,
+            0.34
+          ],
+          "size": [
+            0.12,
+            0.86,
+            0.12
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.92,
+            0
+          ],
+          "size": [
+            1.45,
+            0.095,
+            0.55
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.76,
+            1.04,
+            -0.4
+          ],
+          "size": [
+            0.12,
+            0.37,
+            0.12
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.76,
+            1.04,
+            -0.4
+          ],
+          "size": [
+            0.12,
+            0.37,
+            0.12
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.61,
+            0.33,
+            0.23
+          ],
+          "radius": 0.1,
+          "height": 0.68,
+          "material": "metal",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            0.61,
+            1.35,
+            0.18
+          ],
+          "size": [
+            0.25,
+            0.09,
+            0.35
+          ],
+          "material": "silver"
+        }
+      ],
+      "notes": "Independent sink region, splash uprights and pipe; no water hydraulic behavior.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "mount_confidence": "provisional_unreviewed",
+        "source_pivot_reviewed": false,
+        "renderer_orientation_reviewed": false,
+        "runtime_placement": false,
+        "placement_origin_policy": "ground_candidate_not_verified",
+        "required_checks": [
+          "native four-view renderer",
+          "model ground/attachment and orientation",
+          "UV/material",
+          "opening and physical clearance",
+          "collision and navigation",
+          "explicit editor import approval"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_cannery_cart_dolly",
+      "label": "Four-wheel cannery crate-handling dolly",
+      "category": "industrial",
+      "maps": [
+        "WLD-13",
+        "WLD-15"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.23,
+            0
+          ],
+          "size": [
+            1.28,
+            0.16,
+            0.91
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.51,
+            0.09,
+            -0.35
+          ],
+          "radius": 0.1,
+          "height": 0.13,
+          "material": "metal",
+          "axis": "x",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.51,
+            0.09,
+            0.35
+          ],
+          "radius": 0.1,
+          "height": 0.13,
+          "material": "metal",
+          "axis": "x",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.51,
+            0.09,
+            -0.35
+          ],
+          "radius": 0.1,
+          "height": 0.13,
+          "material": "metal",
+          "axis": "x",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.51,
+            0.09,
+            0.35
+          ],
+          "radius": 0.1,
+          "height": 0.13,
+          "material": "metal",
+          "axis": "x",
+          "segments": 8
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.47,
+            0.53,
+            0.3
+          ],
+          "size": [
+            0.1,
+            0.6,
+            0.12
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.47,
+            0.53,
+            0.3
+          ],
+          "size": [
+            0.1,
+            0.6,
+            0.12
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.83,
+            0.3
+          ],
+          "size": [
+            1.09,
+            0.09,
+            0.12
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.36,
+            0
+          ],
+          "size": [
+            0.96,
+            0.15,
+            0.66
+          ],
+          "material": "industrial"
+        }
+      ],
+      "notes": "Grounded wheels and load shelf, no cargo physics.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "mount_confidence": "provisional_unreviewed",
+        "source_pivot_reviewed": false,
+        "renderer_orientation_reviewed": false,
+        "runtime_placement": false,
+        "placement_origin_policy": "ground_candidate_not_verified",
+        "required_checks": [
+          "native four-view renderer",
+          "model ground/attachment and orientation",
+          "UV/material",
+          "opening and physical clearance",
+          "collision and navigation",
+          "explicit editor import approval"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_prison_visitation_counter",
+      "label": "Prison visitor booth divider and seated counter",
+      "category": "security",
+      "maps": [
+        "PRISON"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.72,
+            0
+          ],
+          "size": [
+            2.51,
+            0.14,
+            0.77
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.08,
+            0.35,
+            -0.28
+          ],
+          "size": [
+            0.11,
+            0.69,
+            0.12
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.08,
+            0.35,
+            0.28
+          ],
+          "size": [
+            0.11,
+            0.69,
+            0.12
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.08,
+            0.35,
+            -0.28
+          ],
+          "size": [
+            0.11,
+            0.69,
+            0.12
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.08,
+            0.35,
+            0.28
+          ],
+          "size": [
+            0.11,
+            0.69,
+            0.12
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.9,
+            1.57,
+            0
+          ],
+          "size": [
+            0.1,
+            1.61,
+            0.11
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.57,
+            0
+          ],
+          "size": [
+            0.1,
+            1.61,
+            0.11
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.9,
+            1.57,
+            0
+          ],
+          "size": [
+            0.1,
+            1.61,
+            0.11
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.57,
+            0
+          ],
+          "size": [
+            2.32,
+            1.47,
+            0.035
+          ],
+          "material": "glass"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.21,
+            -0.12
+          ],
+          "size": [
+            0.35,
+            0.28,
+            0.08
+          ],
+          "material": "metal"
+        }
+      ],
+      "notes": "Separated counter and glazed partition; review material transparency and access, no conversation mechanics.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "mount_confidence": "provisional_unreviewed",
+        "source_pivot_reviewed": false,
+        "renderer_orientation_reviewed": false,
+        "runtime_placement": false,
+        "placement_origin_policy": "ground_candidate_not_verified",
+        "required_checks": [
+          "native four-view renderer",
+          "model ground/attachment and orientation",
+          "UV/material",
+          "opening and physical clearance",
+          "collision and navigation",
+          "explicit editor import approval"
         ]
       }
     }

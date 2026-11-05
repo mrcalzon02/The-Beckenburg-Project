@@ -1,13 +1,13 @@
 # Map-specific primitive prop blockouts (v1)
 
-The authoritative planning backlog is [catalog.json](catalog.json), which maps **283 individual study models across 28 planned maps plus the Vale Mortuary expansion**. It augments the existing `development/levels/model-requirements/*.json` files rather than replacing their full room-by-room checklists.
+The authoritative planning backlog is [catalog.json](catalog.json), which maps **298 individual study models across 28 planned maps plus the Vale Mortuary expansion**. It augments the existing `development/levels/model-requirements/*.json` files rather than replacing their full room-by-room checklists.
 
 ## What this package is
 
 - Measured, ground-origin, Y-up glTF 2.0 geometry in metres: basic boxes, faceted cylinders, and an enclosed tent prism. The model material colors are placeholder glTF factors, now complemented by **individually embedded deterministic 32×32 procedural RGB albedo studies** with nondegenerate planar UV0. These do not replace final hand-authored textures.
 - Each `level_blockout_*.glb` is an individually selectable study asset. No duplicate of any existing finished `level_*` model is overwritten.
 - The catalogue's `sites[].prototypes` field is an **assignment proposal**, not an automatic scene placement. No map availability, collision, navmesh, lighting, acoustics, interactivity or network state has been modified.
-- The collection contains **283 distinct GLB models** (116 expanded-map additions, three countable sarcophagi, and 18 additional relic/display definitions). It covers structural opening/rails, Castle service and training fixtures, academic/hospital/chapel and domestic interiors, forests/campgrounds/caverns, generator/electrical studies, maritime/industrial scenes, lightstation/lodge/bunker/shaft structures and mortuary fixtures. Each study remains independent and replaceable.
+- The collection contains **298 distinct GLB models** (116 expanded-map additions, three countable sarcophagi, and 18 additional relic/display definitions). It covers structural opening/rails, Castle service and training fixtures, academic/hospital/chapel and domestic interiors, forests/campgrounds/caverns, generator/electrical studies, maritime/industrial scenes, lightstation/lodge/bunker/shaft structures and mortuary fixtures. Each study remains independent and replaceable.
 - Existing source LOD/original model assets remain unchanged. Completed prop models require geometry refinement, proper UV/materials, origin/orientation review, scene placement, and actual editor/renderer acceptance.
 
 ## Rebuild / inspect
@@ -362,3 +362,11 @@ Each newly constructed low-poly model has its own GLB identity, source geometry,
 - **Castle crypt proposals (2):** funerary stone column and standalone support for existing sarcophagus variants.
 
 No source asset is automatically imported into a level, promoted to a runtime approval, used as wall collision or attached to a real shaft. Shaft rings remain open; Castle's eight sarcophagi remain proposed and **zero installed** in the current playable scene. These models still need native four-angle screenshots, material UV inspection, editor pivot/orientation acceptance, clearance and collision/navigation tests.
+
+## Geometry refinement and map-specific development (298 models)
+
+**Three existing visual/placement defects corrected:** the remote diesel generator's left/right wheels previously hung 11 cm through the ground plane; they now align to local Y=0. The *rolling* hospital chart stand was incorrectly classified as a wall fixture and buried its center support below the floor; it is now a grounded mobile floor study. The domestic family-photo set used one giant backing plate and two standing posts, despite representing wall-hung picture frames; the single stretched board and posts are now replaced with four individually framed pictures (no real faces).
+
+**15 additional independent primitive GLBs** extend the school/college/academy (cafeteria table, wall coat hooks, assembly stage, display globe), hospital/mortuary (IV stand, folding screens, sterilizer, bedside call controls), dam (open deck catwalk, open service hatch, guard screen), cannery/ship (overhead hook rail, supported rinse bench, wheeled trolley) and prison (visitation counter) map kits.
+
+All models are **source-only** with provisional attachments and never modify gameplay scenes, lights, navmesh, collision or editor asset approvals. The new independent regression exercises contact geometry, missing wall backplates, source model byte identity and all new GLB files. Other inherited tall-object, aperture and attachment warnings are still diagnostics, not launch-test blockers.

@@ -11,7 +11,7 @@ import fit
 ROOT=Path(__file__).resolve().parent
 catalog=json.loads((ROOT/"catalog.json").read_text(encoding="utf-8"))
 models={m["id"]:m for m in catalog["models"]}
-assert len(models)==len(catalog["models"])==283
+assert len(models)==len(catalog["models"])==298
 assert len(catalog["sites"])==29
 assert all(m["runtime_approved"] is False for m in models.values())
 
@@ -150,7 +150,7 @@ print("PASS: grounded motel guest bed")
 
 # All source models carry explicitly provisional physical mounting contracts.
 mount_types={"floor","wall","ceiling","roof","opening","structure","water","terrain","display_surface"}
-assert len(models)==283
+assert len(models)==298
 assert all(m.get("authoring_hints",{}).get("mount") in mount_types for m in models.values())
 assert all(m["authoring_hints"]["mount_confidence"]=="provisional_unreviewed" for m in models.values())
 assert all(m["authoring_hints"]["source_pivot_reviewed"] is False for m in models.values())
@@ -165,7 +165,7 @@ print("PASS: all 253 source models have provisional, unapproved mount contracts"
 
 # Newly introduced map-specific props remain individually decodable and unapproved.
 third_wave=("domestic_exterior_shutters","domestic_roof_gutter","domestic_wall_downspout","domestic_picket_fence","domestic_garden_gate","domestic_cellar_steps","camp_bathhouse_privacy_stalls","camp_field_cot","camp_tent_entry_flaps","camp_woodpile_lean_to","camp_manual_water_pump","cave_ledge_rope_guard","cave_plank_rope_bridge","cave_survey_cairns","cave_layered_sandstone","cave_excavation_trestle","rail_station_canopy","rail_semaphore_pole","rail_station_clock","rail_luggage_cart","rail_tunnel_mouth","lighthouse_tower_wall_course","lighthouse_spiral_tread_module","lighthouse_keeper_porch","lighthouse_lens_pedestal","lighthouse_cliff_drain","mortuary_wash_sink_station","mortuary_visitors_registry_desk","castle_crypt_column","castle_sarcophagus_stand",)
-assert len(third_wave)==30 and len(models)==283
+assert len(third_wave)==30 and len(models)==298
 for suffix in third_wave:
     model=item(suffix)
     h=model["authoring_hints"]
@@ -187,3 +187,40 @@ assert not any(p["type"]=="box" and p["size"][0]>1.2 and p["size"][1]>1.7
                and abs(p["p"][0])<.5 for p in item("rail_tunnel_mouth")["parts"])
 assert all(len(s["prototypes"])==len(set(s["prototypes"])) for s in catalog["sites"])
 print("PASS: 30 new independent map geometry studies remain non-playable")
+
+# Refinement batch: grounded service vehicles, supported mobile chart station,
+# four standalone photo frames (never one giant backing board).
+generator=item("diesel_generator_skid")
+wheels=[p for p in generator["parts"] if p["type"]=="cylinder" and p.get("axis")=="x"]
+assert len(wheels)==2 and all(abs(p["p"][1]-p["radius"])<1e-7 for p in wheels)
+assert abs(fit.footprint(generator,0,0,0)[1])<.03
+
+mobile=item("hospital_chart_station")
+assert mobile["authoring_hints"]["mount"]=="floor"
+assert fit.footprint(mobile,0,0,0)[1]>=-.025
+assert not any(p["type"]=="box" and p["size"][1]>1.7 and p["p"][1]<.8 for p in mobile["parts"])
+
+photos=item("family_photo_cluster")
+assert photos["authoring_hints"]["mount"]=="wall"
+assert len(photos["parts"])==24
+assert not any(p["type"]=="box" and p["size"][0]>1.4 and p["size"][1]>1.4 for p in photos["parts"])
+for short in ("diesel_generator_skid","hospital_chart_station","family_photo_cluster"):
+    m=item(short)
+    raw,tri=glb(m)
+    doc,stored=read_glb(ROOT/"models"/(m["id"]+".glb"))
+    assert 0<tri<=3500 and raw==stored and doc["extras"]["runtimeApproved"] is False
+
+new_round=("school_cafeteria_table","school_wall_coat_rack","school_auditorium_stage","school_library_globe","hospital_mobile_iv_stand","hospital_ward_screen","hospital_sterilizer_cabinet","hospital_patient_call_panel","dam_service_catwalk","dam_turbine_access_hatch","dam_spillway_guard_screen","cannery_hanging_hook_rail","cannery_rinse_bench","cannery_cart_dolly","prison_visitation_counter",)
+assert len(new_round)==15 and len(models)==298
+for short in new_round:
+    m=item(short)
+    meta=m["authoring_hints"]
+    assert m["runtime_approved"] is False and meta["runtime_placement"] is False
+    assert meta["source_pivot_reviewed"] is False and meta["renderer_orientation_reviewed"] is False
+    bounds,lo,hi=fit.footprint(m,0,0,0)
+    assert -0.08<=lo and hi<4.4, (short,lo,hi)
+    assert bounds[2]-bounds[0]<6 and bounds[3]-bounds[1]<6
+    raw,tri=glb(m)
+    doc,stored=read_glb(ROOT/"models"/(m["id"]+".glb"))
+    assert stored==raw and 0<tri<=3500 and doc["extras"]["runtimeApproved"] is False
+print("PASS: 15 location-specific models, grounded rolling supports, separate hanging photo frames")
