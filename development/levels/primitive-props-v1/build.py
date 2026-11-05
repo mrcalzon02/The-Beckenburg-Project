@@ -97,8 +97,8 @@ def white_png():
         return (struct.pack(">I",len(payload)) + kind + payload
                 + struct.pack(">I",zlib.crc32(kind+payload)&0xffffffff))
     ihdr=struct.pack(">IIBBBBB",2,2,8,2,0,0,0)
-    scan=b"".join(b"\\x00"+b"\\xff\\xff\\xff"*2 for _ in range(2))
-    return b"\\x89PNG\\r\\n\\x1a\\n"+chunk(b"IHDR",ihdr)+chunk(b"IDAT",zlib.compress(scan,9))+chunk(b"IEND",b"")
+    scan=b"".join(b"\x00"+b"\xff\xff\xff"*2 for _ in range(2))
+    return b"\x89PNG\r\n\x1a\n"+chunk(b"IHDR",ihdr)+chunk(b"IDAT",zlib.compress(scan,9))+chunk(b"IEND",b"")
 
 def glb(model):
     groups=triangles(model["parts"])
