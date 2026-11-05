@@ -37,9 +37,13 @@ public final class ShellRegionRevisionCacheTest {
         renderer.yaw+=.12;
         renderer.drawPractice(map,List.of(),0);
         var rotated=renderer.shellRegionStats();
-        require(rotated.spatialChecks()==cold.spatialChecks()
+        // Rotation may reveal previously unseen chunks; each newly admitted
+        // material needs ONE initial lookup, not a fresh scan of every region
+        // that was already cached before rotating the camera.
+        require(rotated.spatialChecks()-warm.spatialChecks()
+                    ==rotated.cachedRegions()-warm.cachedRegions()
                 &&rotated.generationReuses()>warm.generationReuses(),
-            "Camera rotation cannot invalidate static room lighting region stamps");
+            "Camera rotation must only evaluate newly visible material regions");
         var portal=map.level().portals().stream().filter(p->p.door()).findFirst().orElseThrow();
         map.toggleDoor(portal.id());
         renderer.drawPractice(map,List.of(),0);
