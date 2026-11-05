@@ -42,7 +42,7 @@ jobs:
           root=Path("development/levels/primitive-props-v1")
           catalog=json.loads((root/"catalog.json").read_text())
           verification=json.loads((root/"verification.json").read_text())
-          assert len(catalog["models"])==30==len(verification["models"])
+          assert len(catalog["models"])==41==len(verification["models"])
           assert len(catalog["sites"])==29
           for rec in verification["models"]:
               data=(root/"models"/(rec["id"]+".glb")).read_bytes()
@@ -65,7 +65,7 @@ jobs:
             echo "All generated grayboxes already match main."
             exit 0
           fi
-          git commit -m "Generate 30 reproducible primitive-map GLB prototypes"
+          git commit -m "Generate 41 reproducible primitive-map GLB prototypes"
           for attempt in 1 2 3; do
             if git push origin HEAD:main; then
               echo "Generated grayboxes pushed on attempt $attempt."
