@@ -43,11 +43,24 @@ def verify_png(data: bytes) -> None:
         raise ValueError("Unexpected PNG structure / trailing bytes")
     width, height, depth, colors, comp, filt, interlace = struct.unpack(
         ">IIBBBBB", chunks[0][1])
-    if (width, height, depth, colors, comp, filt, interlace) != (2, 2, 8, 2, 0, 0, 0):
-        raise ValueError("Unexpected 2x2 RGB study swatch")
+    if (width, height, depth, colors, comp, filt, interlace) != (32, 32, 8, 2, 0, 0, 0):
+        raise ValueError("Expected small native 32x32 RGB procedural albedo")
     raw = zlib.decompress(chunks[1][1])
-    if raw != (bytes((0,)) + bytes((255,)) * 6) * 2:
-        raise ValueError("PNG RGB payload was not losslessly decoded to white 2x2")
+    row_bytes = 1 + 3 * width
+    if len(raw) != row_bytes * height:
+        raise ValueError("PNG scanline byte count does not match IHDR")
+    pixels = []
+    for y in range(height):
+        start = y * row_bytes
+        if raw[start] != 0:
+            raise ValueError("PNG unhandled filter; expected unfiltered scanlines")
+        for i in range(start + 1, start + row_bytes, 3):
+            r,g,b = raw[i:i+3]
+            if r != g or g != b or not 170 <= r <= 252:
+                raise ValueError("Study albedo channels out of grayscale range")
+            pixels.append(r)
+    if len(set(pixels)) < 12:
+        raise ValueError("Flat material texture is not a meaningful albedo pattern")
 
 
 def read_glb(path: Path) -> tuple[dict, bytes]:
@@ -73,13 +86,24 @@ def read_glb(path: Path) -> tuple[dict, bytes]:
     if doc["extras"]["runtimeApproved"] is not False:
         raise ValueError("A primitive was silently runtime-approved")
     images = doc["images"]
-    if len(images) != 1 or images[0]["mimeType"] != "image/png":
-        raise ValueError("Missing embedded PNG")
-    view = doc["bufferViews"][images[0]["bufferView"]]
-    off, size = view["byteOffset"], view["byteLength"]
-    if off < 0 or size <= 0 or off + size > len(binary):
-        raise ValueError("PNG image out of bounds")
-    verify_png(binary[off:off + size])
+    materials = doc["materials"]
+    textures = doc["textures"]
+    samplers = doc["samplers"]
+    if (len(images) != len(textures) or len(materials) != len(images)
+        or len(images) < 1 or len(images) > 64 or len(samplers) != 1):
+        raise ValueError("One embedded PNG and texture per material expected")
+    if samplers[0].get("wrapS") != 10497 or samplers[0].get("wrapT") != 10497:
+        raise ValueError("Procedural albedo must wrap on both axes")
+    for i, (material, image, tex) in enumerate(zip(materials, images, textures)):
+        if (image["mimeType"] != "image/png"
+            or tex["source"] != i or tex["sampler"] != 0
+            or material["pbrMetallicRoughness"]["baseColorTexture"]["index"] != i):
+            raise ValueError("One-to-one glTF albedo material wiring lost")
+        view = doc["bufferViews"][image["bufferView"]]
+        off, size = view["byteOffset"], view["byteLength"]
+        if off < 0 or size <= 0 or off + size > len(binary):
+            raise ValueError("Material PNG buffer view is out of bounds")
+        verify_png(binary[off:off + size])
     for mesh in doc["meshes"]:
         for part in mesh["primitives"]:
             attrs = part["attributes"]
