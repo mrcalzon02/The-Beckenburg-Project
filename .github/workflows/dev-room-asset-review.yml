@@ -22,6 +22,9 @@ on:
       - 'src/main/java/org/beckenburg/LevelAssets.java'
       - 'src/main/java/org/beckenburg/LevelPlans.java'
       - 'src/main/java/org/beckenburg/DevAssetReviewCatalog.java'
+      - 'src/main/java/org/beckenburg/DevAssetGalleryLayout.java'
+      - 'src/test/java/org/beckenburg/DevAssetGalleryLayoutTest.java'
+      - 'src/main/java/org/beckenburg/DevAssetShowroom.java'
       - 'src/test/java/org/beckenburg/HollowCreekDevCatalogClassificationTest.java'
       - 'src/test/java/org/beckenburg/HollowCreekBillboardAlphaRuntimeTest.java'
       - 'src/main/java/org/beckenburg/DevAssetShowroom.java'
@@ -65,6 +68,30 @@ jobs:
       - name: Compile and package actual assets (functional)
         shell: cmd
         run: build.cmd e2e
+      - name: Verify reusable three-storey gallery layout and deterministic slot mapping
+        shell: cmd
+        run: |
+          if not exist build\\dev-room\\test mkdir build\\dev-room\\test
+          javac --release 17 -encoding UTF-8 -cp build\\beckenburg-game.jar -d build\\dev-room\\test src\\test\\java\\org\\beckenburg\\DevAssetGalleryLayoutTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\\beckenburg-game.jar;build\\dev-room\\test org.beckenburg.DevAssetGalleryLayoutTest
+          if errorlevel 1 exit /b 1
+      - name: Capture all three model-gallery floors and source-only refinement bays (advisory)
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          & java '-Djava.awt.headless=true' -cp 'build/beckenburg-game.jar' 'org.beckenburg.DevAssetShowroom' '--dev-room' '--gallery-capture' '--kind=SOURCE_ONLY' '--limit=72' '--output=build/dev-room/multi-floor-source-gallery'
+          if ($LASTEXITCODE -ne 0) { throw 'Multi-floor source gallery renderer capture failed' }
+          $shots = @(Get-ChildItem 'build/dev-room/multi-floor-source-gallery' -Filter '*.png')
+          if ($shots.Count -ne 12) { throw "Expected 12 real gallery bay PNGs across three floors; got $($shots.Count)" }
+          $positions = @(Import-Csv 'build/dev-room/multi-floor-source-gallery/gallery-placements.csv')
+          if ($positions.Count -ne 72) { throw "Expected 72 stable inspection slots, got $($positions.Count)" }
+          if (@($positions | Where-Object { $_.floor -eq '3' }).Count -ne 24) { throw 'Third floor models were not indexed' }
+          & java '-Djava.awt.headless=true' -cp 'build/beckenburg-game.jar' 'org.beckenburg.DevAssetShowroom' '--dev-room' '--gallery-capture' '--filter=level_blockout_refined_' '--limit=72' '--output=build/dev-room/multi-floor-refinements'
+          if ($LASTEXITCODE -ne 0) { throw 'Refinement gallery renderer capture failed' }
+          $refined = @(Import-Csv 'build/dev-room/multi-floor-refinements/gallery-placements.csv')
+          if ($refined.Count -ne 15) { throw "Expected 15 source-only refinements, got $($refined.Count)" }
+          Write-Host 'PASS: twelve multi-floor source-bay captures and fifteen refinement placements'
       - name: Check actual Twins source alpha strips with game decoder (advisory)
         continue-on-error: true
         shell: cmd
