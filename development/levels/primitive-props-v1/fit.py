@@ -35,6 +35,13 @@ def local_extent(part):
             c,s=abs(math.cos(roll)),abs(math.sin(roll))
             return (c*w/2+s*h/2,s*w/2+c*h/2,d/2)
         return w/2,h/2,d/2
+    if kind=="frustum":
+        r=max(part["bottom_radius"],part["top_radius"])
+        half=part["height"]/2
+        axis=part.get("axis","y")
+        return ((r,half,r) if axis=="y" else
+                (half,r,r) if axis=="x" else
+                (r,r,half))
     if kind=="cylinder":
         r,half=part["radius"],part["height"]/2
         axis=part.get("axis","y")
@@ -164,7 +171,7 @@ def world_part(part,instance):
     dx,dz=transform_horizontal(px,pz,instance["yaw_rad"])
     x,y,z=instance["position"]
     p["p"]=[round(x+dx,7),round(y+py,7),round(z+dz,7)]
-    if part["type"] in ("box","cylinder"):
+    if part["type"] in ("box","cylinder","frustum"):
         p["yaw"]=round(part.get("yaw",0)+instance["yaw_rad"],7)
     return p
 

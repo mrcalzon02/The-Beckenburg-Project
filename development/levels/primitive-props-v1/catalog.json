@@ -33797,159 +33797,107 @@
       ],
       "parts": [
         {
-          "type": "cylinder",
+          "type": "frustum",
           "p": [
             -0.62,
-            0.3655,
+            0.3485,
             0.61
           ],
-          "radius": 0.26599999999999996,
-          "height": 0.6715,
+          "bottom_radius": 0.2717,
+          "top_radius": 0.10640000000000001,
+          "height": 0.697,
           "material": "stone",
-          "axis": "y",
           "segments": 8
         },
         {
-          "type": "cylinder",
+          "type": "frustum",
           "p": [
             -0.62,
-            0.697,
+            0.7735,
             0.61
           ],
-          "radius": 0.1577,
-          "height": 0.28900000000000003,
+          "bottom_radius": 0.10640000000000001,
+          "top_radius": 0,
+          "height": 0.153,
           "material": "stone",
-          "axis": "y",
           "segments": 8
         },
         {
-          "type": "cylinder",
-          "p": [
-            -0.62,
-            0.816,
-            0.61
-          ],
-          "radius": 0.056999999999999995,
-          "height": 0.06375,
-          "material": "stone",
-          "axis": "y",
-          "segments": 8
-        },
-        {
-          "type": "cylinder",
+          "type": "frustum",
           "p": [
             0.24,
-            0.5375,
+            0.5125,
             0.47
           ],
-          "radius": 0.294,
-          "height": 0.9875,
+          "bottom_radius": 0.30029999999999996,
+          "top_radius": 0.11760000000000001,
+          "height": 1.025,
           "material": "stone",
-          "axis": "y",
           "segments": 8
         },
         {
-          "type": "cylinder",
+          "type": "frustum",
           "p": [
             0.24,
-            1.025,
+            1.1375,
             0.47
           ],
-          "radius": 0.17429999999999998,
-          "height": 0.42500000000000004,
+          "bottom_radius": 0.11760000000000001,
+          "top_radius": 0,
+          "height": 0.22499999999999998,
           "material": "stone",
-          "axis": "y",
           "segments": 8
         },
         {
-          "type": "cylinder",
-          "p": [
-            0.24,
-            1.2,
-            0.47
-          ],
-          "radius": 0.063,
-          "height": 0.09375,
-          "material": "stone",
-          "axis": "y",
-          "segments": 8
-        },
-        {
-          "type": "cylinder",
+          "type": "frustum",
           "p": [
             0.64,
-            0.3096,
+            0.29519999999999996,
             -0.35
           ],
-          "radius": 0.22399999999999998,
-          "height": 0.5688,
+          "bottom_radius": 0.2288,
+          "top_radius": 0.08960000000000001,
+          "height": 0.5903999999999999,
           "material": "stone",
-          "axis": "y",
           "segments": 8
         },
         {
-          "type": "cylinder",
+          "type": "frustum",
           "p": [
             0.64,
-            0.5903999999999999,
+            0.6552,
             -0.35
           ],
-          "radius": 0.1328,
-          "height": 0.24480000000000002,
+          "bottom_radius": 0.08960000000000001,
+          "top_radius": 0,
+          "height": 0.1296,
           "material": "stone",
-          "axis": "y",
           "segments": 8
         },
         {
-          "type": "cylinder",
-          "p": [
-            0.64,
-            0.6911999999999999,
-            -0.35
-          ],
-          "radius": 0.048,
-          "height": 0.054,
-          "material": "stone",
-          "axis": "y",
-          "segments": 8
-        },
-        {
-          "type": "cylinder",
+          "type": "frustum",
           "p": [
             -0.2,
-            0.4386,
+            0.41819999999999996,
             -0.48
           ],
-          "radius": 0.252,
-          "height": 0.8058000000000001,
+          "bottom_radius": 0.25739999999999996,
+          "top_radius": 0.1008,
+          "height": 0.8363999999999999,
           "material": "stone",
-          "axis": "y",
           "segments": 8
         },
         {
-          "type": "cylinder",
+          "type": "frustum",
           "p": [
             -0.2,
-            0.8363999999999999,
+            0.9282,
             -0.48
           ],
-          "radius": 0.14939999999999998,
-          "height": 0.34680000000000005,
+          "bottom_radius": 0.1008,
+          "top_radius": 0,
+          "height": 0.18359999999999999,
           "material": "stone",
-          "axis": "y",
-          "segments": 8
-        },
-        {
-          "type": "cylinder",
-          "p": [
-            -0.2,
-            0.9792,
-            -0.48
-          ],
-          "radius": 0.054,
-          "height": 0.0765,
-          "material": "stone",
-          "axis": "y",
           "segments": 8
         },
         {
@@ -33967,7 +33915,7 @@
           "material": "stone"
         }
       ],
-      "notes": "Several rising mineral spires rather than pillars; source geometry only.",
+      "notes": "Tapered two-stage mineral spires with true pointed apexes, replacing flat-ended cylinder towers; source-only, collision pending.",
       "authoring_stage": "primitive_blockout",
       "runtime_approved": false,
       "authoring_hints": {

@@ -169,15 +169,22 @@ def main() -> None:
             or not model["parts"]):
             raise ValueError("Invalid source-only model definition " + name)
         for part in model["parts"]:
-            if part["type"] not in ("box", "cylinder", "tri_prism"):
+            if part["type"] not in ("box", "cylinder", "tri_prism", "frustum"):
                 raise ValueError("Unexpected primitive construction")
-            nums = part["p"] + (part["size"] if "size" in part
-                                 else [part["radius"], part["height"]])
-            if not all(isinstance(n, (int, float)) and math.isfinite(n) for n in nums):
+            if part["type"]=="frustum":
+                dims=[part["bottom_radius"],part["top_radius"],part["height"]]
+                if not (dims[0]>0 and dims[1]>=0 and dims[2]>0
+                        and part.get("axis","y") in ("x","y","z")
+                        and isinstance(part.get("segments",10),int)
+                        and 6<=part.get("segments",10)<=24):
+                    raise ValueError("Invalid tapered primitive")
+            else:
+                dims=part.get("size", [part.get("radius"), part.get("height")])
+                if any(n <= 0 for n in dims):
+                    raise ValueError("Non-positive dimension")
+            nums=part["p"]+dims+[part[k] for k in ("yaw","roll") if k in part]
+            if not all(isinstance(n,(int,float)) and math.isfinite(n) for n in nums):
                 raise ValueError("Nonfinite primitive geometry")
-            dims = part.get("size", [part.get("radius"), part.get("height")])
-            if any(n <= 0 for n in dims):
-                raise ValueError("Non-positive dimension")
         actual = [sid for sid, site in sites.items() if name in site["prototypes"]]
         expected = set(sites) if "*" in model["maps"] else set(model["maps"])
         if set(actual) != expected:

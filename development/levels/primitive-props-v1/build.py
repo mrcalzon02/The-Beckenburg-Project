@@ -109,6 +109,35 @@ def triangles(parts):
                     bot=[px,py-h/2,pz]
                 face([top,hn,hi],material)
                 face([bot,lo,ln],material)
+        elif kind == "frustum":
+            # Low-poly taper with an optional true point at the upper end.
+            seg=part.get("segments",10)
+            rb,rt,h=part["bottom_radius"],part["top_radius"],part["height"]
+            axis=part.get("axis","y")
+            yaw=part.get("yaw",0)
+            if not (isinstance(seg,int) and 6<=seg<=24 and rb>0
+                    and rt>=0 and h>0 and axis in ("x","y","z")
+                    and math.isfinite(yaw)):
+                raise ValueError("invalid frustum")
+            co,si=math.cos(yaw),math.sin(yaw)
+            def point(x,y,z):
+                if axis=="x": x,y,z=y,-x,z
+                elif axis=="z": x,y,z=x,-z,y
+                return [px+x*co-z*si,py+y,pz+x*si+z*co]
+            def ring(i,y,r):
+                angle=2*math.pi*(i%seg)/seg
+                return point(r*math.cos(angle),y,r*math.sin(angle))
+            base=point(0,-h/2,0)
+            tip=point(0,h/2,0)
+            for i in range(seg):
+                lo,ln=ring(i,-h/2,rb),ring(i+1,-h/2,rb)
+                if rt>0:
+                    hi,hn=ring(i,h/2,rt),ring(i+1,h/2,rt)
+                    face([lo,hi,hn,ln],material)
+                    face([tip,hn,hi],material)
+                else:
+                    face([lo,tip,ln],material)
+                face([base,lo,ln],material)
         elif kind == "tri_prism":
             w,h,d=part["size"];xl,xr=px-w/2,px+w/2;low,high=py-h/2,py+h/2;zn,zf=pz-d/2,pz+d/2
             a,b,c=[xl,low,zn],[xr,low,zn],[px,high,zn]

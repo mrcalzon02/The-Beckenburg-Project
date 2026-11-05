@@ -107,3 +107,15 @@ for post in posts:
     assert abs(post["p"][1]+post["size"][1]/2-height)<.001, (post,height)
     assert abs(post["p"][1]-post["size"][1]/2)<.001
 print("PASS inclined cannery deck and 4 true-height supports")
+
+# Frustum regression: pointed tips have zero top radius and never produce
+# collapsed duplicate-cap triangles in the committed GLB.
+rocks=item("cavern_stalagmite_cluster")
+tapers=[p for p in rocks["parts"] if p["type"]=="frustum"]
+assert len(tapers)==8 and sum(p["top_radius"]==0 for p in tapers)==4
+assert not any(p["type"]=="cylinder" for p in rocks["parts"])
+raw,triangle_count=glb(rocks)
+doc,stored=read_glb(ROOT/"models"/(rocks["id"]+".glb"))
+assert raw==stored and 0<triangle_count<=3500
+assert doc["extras"]["runtimeApproved"] is False
+print("PASS tapered cavern spires and deterministic source GLB")

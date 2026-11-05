@@ -320,3 +320,9 @@ All newly defined models contain `authoring_hints` for expected mount, facing, u
 ### Follow-on geometry correction — inclined cannery chute
 
 The cannery chute source model now rotates its deck and both guard rails together by 10 degrees, with four vertical supports recomputed to contact the actual sloped underside and remain floor-origin. The source regression checks the front/back posts against the inclined deck analytically; a tilted visible panel no longer floats above unchanged post heights. This is an authoring model only, not operational conveyance.
+
+## Geometry refinement: frustum low-poly source primitive
+
+The deterministic builder now accepts source parts of `type: frustum` with `bottom_radius`, `top_radius`, `height`, and optional `segments` / `axis` / `yaw`. A zero upper radius creates a real point with nondegenerate triangles, enabling tapered stone spires, trees and funnels without cylinder-stacking. The footprint fitter and independent binary integrity validator both recognize the new primitive. The existing cavern stalagmite cluster now has actual tapered facets instead of flat cylinder tops.
+
+This is a source-model enhancement only. Existing gameplay geometry, collision, navmesh and lighting are not modified.
