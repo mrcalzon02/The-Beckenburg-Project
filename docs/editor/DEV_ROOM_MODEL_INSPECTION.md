@@ -115,8 +115,8 @@ infrastructure capture.
 
 Open **Actions → DEV Room Model Gallery - Fast Inspection → Run workflow**.
 Inputs are `kind` (default SOURCE_ONLY), `filter` (case-insensitive ID
-substring), `wing` (zero-based, default 0), and `limit` (default 72; set
-0 to consider all filtered models before selecting the wing). The workflow also
+substring), `wing` (zero-based, default 0), and `limit` (default 0,
+meaning all filtered models are eligible for the selected 72-slot wing). The workflow also
 re-runs when the primitive-model builder finishes successfully on main, and
 when the gallery implementation itself changes.
 
