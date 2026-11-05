@@ -1439,13 +1439,16 @@ public final class SceneRenderer {
         String revision=map.level().revision()+":"+map.hidingDensity();
         boolean sameShell=map==shellSourceMap&&revision.equals(shellSourceRevision);
         boolean sameScenery=map==scenerySourceMap&&revision.equals(sceneryRevision);
-        if(!map.nativeSite())staticShellChunks(map);
-        // The native terrain renderer has its own owner and caches; do not
-        // manufacture a House shell for a native authored site.
-        int count=map.nativeSite()?0:scenery(map).instances().size();
-        return new StaticPreparation(revision,map.nativeSite()||sameShell,
-            map.nativeSite()||sameScenery,preparedShellChunks.size(),
-            preparedShellFaces.size(),count,System.nanoTime()-started);
+        // Native sites have a separate terrain owner and cache lifecycle.
+        // Do not report stale House geometry from an earlier renderer scene
+        // as though it had been prebaked for a native level.
+        if(map.nativeSite())return new StaticPreparation(revision,false,false,
+            0,0,0,System.nanoTime()-started);
+        staticShellChunks(map);
+        int count=scenery(map).instances().size();
+        return new StaticPreparation(revision,sameShell,sameScenery,
+            preparedShellChunks.size(),preparedShellFaces.size(),
+            count,System.nanoTime()-started);
     }
     private List<Face> preparedShellFaces=List.of();
     private List<ShellChunk> preparedShellChunks=List.of();
