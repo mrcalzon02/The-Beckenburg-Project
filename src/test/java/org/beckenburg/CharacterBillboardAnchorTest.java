@@ -113,6 +113,40 @@ public final class CharacterBillboardAnchorTest {
         check(SceneRenderer.gpuCompositeForReadback(java.util.Map.of(),readback,
                 12,640,360)==null,
             "evicted or unknown GPU frame must not composite unsynchronized NPCs");
+        // Actual packaged Tomas art through the REAL compositor. A fixed
+        // body at a fixed world location must track a camera pan continuously
+        // without sideways teleports, vanishing edge-on or losing its shoes.
+        int renderWidth=640,renderHeight=360;double focal=275;
+        var standing=new CastleResidentAnimation.Body(0,0,0,HunterSpriteAnimation.Pose.IDLE);
+        double lastCentroid=Double.NEGATIVE_INFINITY;
+        for(int turn=-3;turn<=3;turn++){
+            double yaw=turn*.04;
+            int[] pixels=new int[renderWidth*renderHeight];
+            double[] depth=new double[pixels.length];
+            java.util.Arrays.fill(depth,Double.POSITIVE_INFINITY);
+            DirectionalSprites.beginHumanRenderTrace("tomas_greaves",renderWidth,renderHeight);
+            DirectionalSprites.drawResident(pixels,depth,0,-3,yaw,0,
+                CastleRelations.Resident.TOMAS_GREAVES,standing,0,true,
+                renderWidth,renderHeight,focal);
+            var trace=DirectionalSprites.endHumanRenderTrace();
+            int leftEdge=renderWidth,rightEdge=-1;
+            long sumX=0;int count=0;
+            for(int pixel=0;pixel<trace.pixels.length;pixel++)if(trace.pixels[pixel]!=0){
+                int px=pixel%renderWidth;
+                leftEdge=Math.min(leftEdge,px);rightEdge=Math.max(rightEdge,px);
+                sumX+=px;count++;
+            }
+            check(count>=120&&rightEdge-leftEdge>=12,
+                "real Tomas sprite collapses edge-on during camera pan "+turn);
+            double centroid=sumX/(double)count;
+            if(turn>-3){
+                check(centroid>lastCentroid+2&&centroid-lastCentroid<30,
+                    "Tomas slides or jumps rather than following smooth camera pan "+turn);
+            }
+            lastCentroid=centroid;
+            check(trace.belowFloor==0,
+                "camera-facing Tomas emits art below the physical castle floor");
+        }
         System.out.println("PASS Castle camera-facing depth-tested NPCs: smooth orbit, persistent facing, fixed floor and async GPU pose alignment");
     }
 }
