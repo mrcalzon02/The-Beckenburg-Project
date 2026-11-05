@@ -38,6 +38,10 @@ public final class LevelOpeningFlyoverTest {
                 "Location flyover begins well above architecture and descends");
             ok(Math.hypot(start.x()-player.x(),start.z()-player.z())>5,
                 "The opening camera must survey the authored level, not start in the van");
+            var visibleFraming=LevelOpeningFlyover.framing(map);
+            ok(Math.hypot(start.x()-visibleFraming.cx(),start.z()-visibleFraming.cz())<15
+                    &&start.y()-visibleFraming.top()<=12,
+                "3D opening cannot begin beyond the perspective renderer's visible geometry range");
             for(int i=0;i<=100;i++){
                 var pose=flight.pose(i/100.);
                 ok(Double.isFinite(pose.x()+pose.y()+pose.z()+pose.yaw()+pose.pitch()),

@@ -89,9 +89,15 @@ public final class LevelOpeningCinematicVisualTest {
                 "3D fly-in did not render a real scene (requests="+status.requests()
                 +", failures="+status.failures()+")");
             var raw=cinematic.latest3DFrame();
-            check(diversity(raw)>45,
-                "3D loading screenshot must contain textured scene depth, not a flat map");
             image(root,"real-world-3d-first-aerial.png",raw);
+            Files.writeString(root.resolve("aerial-diagnostics.txt"),
+                "rendered_pixels="+raw.getWidth()*raw.getHeight()
+                +"\nunique_colors="+diversity(raw)
+                +"\nfirst_frame_ms="+status.firstFrameElapsedMs()
+                +"\nfailures="+status.failures()+"\n",StandardCharsets.UTF_8);
+            check(diversity(raw)>45,
+                "3D loading renderer produced an empty/flat aerial image: "
+                    +diversity(raw)+" sampled colors, screenshot preserved");
             BufferedImage composed=new BufferedImage(640,360,BufferedImage.TYPE_INT_RGB);
             Graphics2D g=composed.createGraphics();
             try{cinematic.draw(g,640,360);}finally{g.dispose();}

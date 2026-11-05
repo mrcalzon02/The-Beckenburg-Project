@@ -56,10 +56,16 @@ public final class LevelOpeningFlyover {
         var framing=framing(map);
         double cx=framing.cx(),cz=framing.cz(),span=framing.span(),top=framing.top();
         var dock=map.van().placement();
-        double elevation=top+Math.max(15,span*.55);
-        aerial=lookAt(cx-span*.58,elevation,cz-span*.79,cx,top*.35,cz);
-        orbit=lookAt(cx+span*.48,top+Math.max(11,span*.30),cz-span*.38,
-            cx,top*.35,cz);
+        // This renderer has a finite useful world range around the camera.
+        // The old high/far aerial camera put even the nearest architecture
+        // beyond its visible range on some sites, producing an empty sky.
+        // Survey nearby authored geometry in 3D and move across the location
+        // rather than trying to frame the entire level from miles away.
+        double sweep=Math.min(9,Math.max(5,span*.35));
+        double elevation=top+Math.min(11,Math.max(8,span*.26));
+        aerial=lookAt(cx-sweep,elevation,cz-sweep*.82,cx,top*.35,cz);
+        orbit=lookAt(cx+sweep*.85,top+Math.min(9,Math.max(7,span*.22)),
+            cz-sweep*.68,cx,top*.35,cz);
         // An authored cargo entrance, NOT a guessed line towards the van's
         // centre: world() rotates this flight corridor with the real truck.
         // The default loading cargo door is open, with an existing walkable
