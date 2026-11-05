@@ -64,6 +64,11 @@ public final class CharacterBillboardAnchorTest {
             double floorV=(fixed.top()-fixed.bottom())/1.79*sole;
             check(Math.abs(floorV-sole)<1e-12,
                 "every approved shoe pixel must map to unchanged world floor");
+            check(DirectionalSprites.groundedUvAboveFloor(floorV,sole),
+                "substantial boot sole must remain visible at support height");
+            check(!DirectionalSprites.groundedUvAboveFloor(sole+1.0/224.0,sole)
+                    &&!DirectionalSprites.groundedUvAboveFloor(-.01,sole),
+                "stray artist fringe or transparent matte below sole must not render beneath floor");
         }
         System.out.println("PASS Castle world-locked characters: fixed geometry, height, lateral pivot and alpha shoe UV");
     }

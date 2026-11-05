@@ -473,6 +473,11 @@ public final class DirectionalSprites {
     /** Fixed world geometry for a character pose. Directional art must not
      * change the pose's physical dimensions or its origin/pivot. */
     record WorldLockedCard(double left,double right,double bottom,double top){}
+    /** Source alpha below the detected substantial boot sole is stray matte
+     * or fringe, never physical geometry beneath the supporting floor. */
+    static boolean groundedUvAboveFloor(double v,double sole){
+        return Double.isFinite(v+sole)&&v>=0&&v<=sole;
+    }
     static WorldLockedCard worldLockedHumanCard(double height,double width,double elevation){
         if(!Double.isFinite(height+width+elevation)||height<=0||width<=0)
             throw new IllegalArgumentException("invalid grounded human dimensions");
@@ -557,8 +562,8 @@ public final class DirectionalSprites {
                 // Art-specific alpha margins change texture sampling, never
                 // the 3D plane: the authored last shoe row touches floor Y.
                 double v=(cardTop-rayDepth*rayY)/height*sole;
-                if(u<0||u>=1||v<0||v>=1)continue;
-                int tx=(int)(u*sw),ty=(int)(v*sh);
+                if(u<0||u>=1||!groundedUvAboveFloor(v,sole))continue;
+                int tx=(int)(u*sw),ty=Math.min(soleRow,(int)(v*sh));
                 int argb=sprite.getRGB(tx,ty);
                 int alpha=(argb>>>24)*Math.min(255,opacity)/255;
                 if(alpha<24)continue;
