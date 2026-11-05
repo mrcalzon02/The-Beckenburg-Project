@@ -1,13 +1,13 @@
 {
   "schema": "beckenburg.source-mesh-readiness/1",
   "status": "SOURCE_ONLY_REVIEW_NOT_PRODUCTION_APPROVAL",
-  "catalog_sha256": "ebec4779c7130937d4915a5d67b075001d8c903ae6e05222cf40db139c7d91e2",
-  "model_count": 283,
+  "catalog_sha256": "26789546f9b4e2be98e39c55087cba427eb062a865e1c5f5a9c0802534acea6f",
+  "model_count": 298,
   "map_kit_count": 29,
-  "validated_source_glbs": 283,
+  "validated_source_glbs": 298,
   "runtime_approved_models": 0,
   "native_rendered_models_accepted_here": 0,
-  "models_with_diagnostic_flags": 123,
+  "models_with_diagnostic_flags": 128,
   "purpose": "Recorded geometry and next-stage review; never game asset approval",
   "required_before_production": [
     "Native four-view in-engine screenshots and texture/material inspection",
@@ -17,16 +17,16 @@
     "Explicit approved runtime model registration and tested scene placement"
   ],
   "map_kit_assignments": {
-    "ACADEMY": 29,
-    "ASYLUM": 25,
+    "ACADEMY": 33,
+    "ASYLUM": 29,
     "CASTLE": 61,
     "CHURCH": 35,
-    "COLLEGE": 25,
+    "COLLEGE": 29,
     "FARMHOUSE": 35,
     "HOUSE": 27,
     "MANSION": 37,
-    "PRISON": 27,
-    "SCHOOL": 21,
+    "PRISON": 28,
+    "SCHOOL": 25,
     "WLD-01": 41,
     "WLD-02": 36,
     "WLD-03": 26,
@@ -34,18 +34,18 @@
     "WLD-05": 36,
     "WLD-06": 29,
     "WLD-07": 31,
-    "WLD-08": 28,
-    "WLD-09": 23,
+    "WLD-08": 29,
+    "WLD-09": 26,
     "WLD-10": 42,
-    "WLD-11": 28,
+    "WLD-11": 29,
     "WLD-12": 29,
-    "WLD-13": 27,
+    "WLD-13": 30,
     "WLD-14": 40,
-    "WLD-15": 46,
+    "WLD-15": 49,
     "WLD-16": 34,
-    "WLD-17": 33,
-    "WLD-18": 42,
-    "WLD-07-MORTUARY": 35
+    "WLD-17": 34,
+    "WLD-18": 44,
+    "WLD-07-MORTUARY": 39
   },
   "diagnostics": [
     {
@@ -158,12 +158,6 @@
       ]
     },
     {
-      "model": "level_blockout_hospital_chart_station",
-      "diagnostics": [
-        "review_attachment_anchor"
-      ]
-    },
-    {
       "model": "level_blockout_gym_wall_bars",
       "diagnostics": [
         "review_attachment_anchor"
@@ -221,12 +215,6 @@
       "model": "level_blockout_sawmill_headdrig",
       "diagnostics": [
         "review_mount_constraint"
-      ]
-    },
-    {
-      "model": "level_blockout_diesel_generator_skid",
-      "diagnostics": [
-        "review_floor_contact_offset"
       ]
     },
     {
@@ -785,6 +773,48 @@
       "model": "level_blockout_castle_crypt_column",
       "diagnostics": [
         "review_mount_constraint"
+      ]
+    },
+    {
+      "model": "level_blockout_school_wall_coat_rack",
+      "diagnostics": [
+        "review_attachment_anchor"
+      ]
+    },
+    {
+      "model": "level_blockout_school_library_globe",
+      "diagnostics": [
+        "review_mount_constraint"
+      ]
+    },
+    {
+      "model": "level_blockout_hospital_patient_call_panel",
+      "diagnostics": [
+        "review_attachment_anchor"
+      ]
+    },
+    {
+      "model": "level_blockout_dam_service_catwalk",
+      "diagnostics": [
+        "review_mount_constraint"
+      ]
+    },
+    {
+      "model": "level_blockout_dam_turbine_access_hatch",
+      "diagnostics": [
+        "review_mount_constraint"
+      ]
+    },
+    {
+      "model": "level_blockout_dam_spillway_guard_screen",
+      "diagnostics": [
+        "review_mount_constraint"
+      ]
+    },
+    {
+      "model": "level_blockout_cannery_hanging_hook_rail",
+      "diagnostics": [
+        "review_attachment_anchor"
       ]
     }
   ],
@@ -2875,7 +2905,7 @@
         "wood"
       ],
       "triangles": 124,
-      "glb_sha256": "7be208071c121b490ed064c4b80e1455d2cfd3d7b9ee50fc82adb6450894a582",
+      "glb_sha256": "0df865e987abe2ab4b74f607513f3d27cfe6bbf8bdaeb62909cc4b1ff821fb1b",
       "model_bounds_xz": [
         -0.48,
         -0.205,
@@ -2884,15 +2914,13 @@
       ],
       "width_m": 0.96,
       "depth_m": 0.55,
-      "min_y_m": -0.325,
+      "min_y_m": -0.01,
       "max_y_m": 2.02,
-      "mount_hint": "wall",
+      "mount_hint": "floor",
       "mount_confidence": "provisional_unreviewed",
       "source_pivot_reviewed": false,
       "renderer_orientation_reviewed": false,
-      "diagnostics": [
-        "review_attachment_anchor"
-      ],
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -3662,32 +3690,31 @@
     },
     {
       "id": "level_blockout_family_photo_cluster",
-      "label": "House family photographs on standing gallery panel",
+      "label": "Four individual hanging family photo frames",
       "maps": [
         "FARMHOUSE",
         "HOUSE",
         "MANSION",
         "WLD-16"
       ],
-      "source_parts": 11,
+      "source_parts": 24,
       "tapered_parts": 0,
       "source_materials": [
-        "accent",
         "canvas",
         "wood"
       ],
-      "triangles": 132,
-      "glb_sha256": "fb7a13515577228dac9d96004a247f79630ce6ad44d6acd77e7b76e1f482e21e",
+      "triangles": 288,
+      "glb_sha256": "a379b7f188d8d099591808368c2d3d39ffae43e208e1b12bd04842d7334ee5c0",
       "model_bounds_xz": [
-        -1.005,
-        -0.058,
-        1.005,
-        0.15
+        -0.8675,
+        -0.0995,
+        0.7075,
+        0.0525
       ],
-      "width_m": 2.01,
-      "depth_m": 0.208,
-      "min_y_m": -0.005,
-      "max_y_m": 2.505,
+      "width_m": 1.575,
+      "depth_m": 0.152,
+      "min_y_m": 0.7425,
+      "max_y_m": 2.1925,
       "mount_hint": "wall",
       "mount_confidence": "provisional_unreviewed",
       "source_pivot_reviewed": false,
@@ -4009,7 +4036,7 @@
         "metal"
       ],
       "triangles": 192,
-      "glb_sha256": "3036d8d1f3a22149258847719e71bc3418675173202d915858aff01153b7cc5d",
+      "glb_sha256": "ff430785a75f26bbb0d6e95fab8fb61dbff97e7ad9068b6b05aa1f9c1c4bfc22",
       "model_bounds_xz": [
         -1.1,
         -0.57,
@@ -4018,15 +4045,13 @@
       ],
       "width_m": 2.2,
       "depth_m": 1.14,
-      "min_y_m": -0.11,
+      "min_y_m": 0.0,
       "max_y_m": 1.86,
       "mount_hint": "floor",
       "mount_confidence": "provisional_unreviewed",
       "source_pivot_reviewed": false,
       "renderer_orientation_reviewed": false,
-      "diagnostics": [
-        "review_floor_contact_offset"
-      ],
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
@@ -11883,6 +11908,575 @@
       "depth_m": 2.52,
       "min_y_m": 0.0,
       "max_y_m": 0.725,
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_school_cafeteria_table",
+      "label": "School cafeteria bench table",
+      "maps": [
+        "ACADEMY",
+        "COLLEGE",
+        "SCHOOL"
+      ],
+      "source_parts": 9,
+      "tapered_parts": 0,
+      "source_materials": [
+        "metal",
+        "wood"
+      ],
+      "triangles": 108,
+      "glb_sha256": "019b3d3218e8b1e740e206fb7859fe549a24ff82c92ec88ea82f94f09081d849",
+      "model_bounds_xz": [
+        -1.14,
+        -0.895,
+        1.14,
+        0.895
+      ],
+      "width_m": 2.28,
+      "depth_m": 1.79,
+      "min_y_m": 0.0,
+      "max_y_m": 0.865,
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_school_wall_coat_rack",
+      "label": "School corridor wall coat rail with hooks",
+      "maps": [
+        "ACADEMY",
+        "COLLEGE",
+        "SCHOOL"
+      ],
+      "source_parts": 13,
+      "tapered_parts": 0,
+      "source_materials": [
+        "metal",
+        "wood"
+      ],
+      "triangles": 156,
+      "glb_sha256": "55fdcee5d1763a18e9ae4543a02c565e52906abde180158eaa59015a8b378d21",
+      "model_bounds_xz": [
+        -1.32,
+        -0.335,
+        1.32,
+        0.23
+      ],
+      "width_m": 2.64,
+      "depth_m": 0.565,
+      "min_y_m": 1.1625,
+      "max_y_m": 1.59,
+      "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_attachment_anchor"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_school_auditorium_stage",
+      "label": "Assembly hall stage deck and steps",
+      "maps": [
+        "ACADEMY",
+        "COLLEGE",
+        "SCHOOL"
+      ],
+      "source_parts": 9,
+      "tapered_parts": 0,
+      "source_materials": [
+        "metal",
+        "wood"
+      ],
+      "triangles": 108,
+      "glb_sha256": "0f4055d7f495d15ef816d51b530a477c109de2b19ffcf025b3a41bcf98dc6cce",
+      "model_bounds_xz": [
+        -1.76,
+        -1.55,
+        1.76,
+        1.065
+      ],
+      "width_m": 3.52,
+      "depth_m": 2.615,
+      "min_y_m": -0.005,
+      "max_y_m": 1.395,
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_school_library_globe",
+      "label": "Faceted school globe on wooden table stand",
+      "maps": [
+        "ACADEMY",
+        "COLLEGE",
+        "SCHOOL"
+      ],
+      "source_parts": 7,
+      "tapered_parts": 3,
+      "source_materials": [
+        "accent",
+        "metal",
+        "wood"
+      ],
+      "triangles": 196,
+      "glb_sha256": "4436893bc1afaae0807abe8557446760735f788e08e40915a3f884414743dc8e",
+      "model_bounds_xz": [
+        -0.38,
+        -0.38,
+        0.38,
+        0.38
+      ],
+      "width_m": 0.76,
+      "depth_m": 0.76,
+      "min_y_m": 0.03,
+      "max_y_m": 1.22,
+      "mount_hint": "display_surface",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_mount_constraint"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_hospital_mobile_iv_stand",
+      "label": "Ward IV pole, ring hooks and four casters",
+      "maps": [
+        "ASYLUM",
+        "WLD-07-MORTUARY"
+      ],
+      "source_parts": 12,
+      "tapered_parts": 0,
+      "source_materials": [
+        "dark",
+        "metal"
+      ],
+      "triangles": 252,
+      "glb_sha256": "c1e43133471135af195bb018f2e1aeae447a9c73a8931d7fd76a99d790024f9c",
+      "model_bounds_xz": [
+        -0.86,
+        -0.86,
+        0.86,
+        0.86
+      ],
+      "width_m": 1.72,
+      "depth_m": 1.72,
+      "min_y_m": 0.0,
+      "max_y_m": 2.0975,
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_hospital_ward_screen",
+      "label": "Three-panel folding privacy screen and feet",
+      "maps": [
+        "ASYLUM",
+        "WLD-07-MORTUARY"
+      ],
+      "source_parts": 10,
+      "tapered_parts": 0,
+      "source_materials": [
+        "canvas",
+        "metal"
+      ],
+      "triangles": 120,
+      "glb_sha256": "8ecbcbd8df4b3e457fe907b7cbdfd7d71f4573e5b9194527728326259c7c1e7c",
+      "model_bounds_xz": [
+        -1.23,
+        -0.26,
+        1.23,
+        0.26
+      ],
+      "width_m": 2.46,
+      "depth_m": 0.52,
+      "min_y_m": 0.0,
+      "max_y_m": 2.335,
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_hospital_sterilizer_cabinet",
+      "label": "Medical sterilization equipment cabinet",
+      "maps": [
+        "ASYLUM",
+        "WLD-08",
+        "WLD-07-MORTUARY"
+      ],
+      "source_parts": 8,
+      "tapered_parts": 0,
+      "source_materials": [
+        "accent",
+        "dark",
+        "industrial",
+        "metal",
+        "silver"
+      ],
+      "triangles": 96,
+      "glb_sha256": "97ab37a9d1fc08804b117f7acea98619111d78a5e32ea8fc54581241e5de76d6",
+      "model_bounds_xz": [
+        -0.59,
+        -0.475,
+        0.59,
+        0.4
+      ],
+      "width_m": 1.18,
+      "depth_m": 0.875,
+      "min_y_m": 0.0,
+      "max_y_m": 1.51,
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_hospital_patient_call_panel",
+      "label": "Ward bedside call panel",
+      "maps": [
+        "ASYLUM",
+        "WLD-07-MORTUARY"
+      ],
+      "source_parts": 5,
+      "tapered_parts": 0,
+      "source_materials": [
+        "industrial",
+        "ivory",
+        "metal",
+        "redcloth"
+      ],
+      "triangles": 96,
+      "glb_sha256": "785bbbe32c5f99923012ae568bed32277cf0aff2940b97d5b815f9bf226216aa",
+      "model_bounds_xz": [
+        -0.225,
+        -0.105,
+        0.225,
+        0.09
+      ],
+      "width_m": 0.45,
+      "depth_m": 0.195,
+      "min_y_m": 0.075,
+      "max_y_m": 0.965,
+      "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_attachment_anchor"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_dam_service_catwalk",
+      "label": "Hydroelectric service catwalk grating and braces",
+      "maps": [
+        "WLD-09",
+        "WLD-17",
+        "WLD-18"
+      ],
+      "source_parts": 25,
+      "tapered_parts": 0,
+      "source_materials": [
+        "metal"
+      ],
+      "triangles": 300,
+      "glb_sha256": "dd0418e4ab6b1d0d711b7c97f3078b6374ffd96b6e9820cc1f621c0d74f0f91b",
+      "model_bounds_xz": [
+        -1.87,
+        -0.6525,
+        1.87,
+        0.6525
+      ],
+      "width_m": 3.74,
+      "depth_m": 1.305,
+      "min_y_m": 0.005,
+      "max_y_m": 1.21,
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_mount_constraint"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_dam_turbine_access_hatch",
+      "label": "Open service hatch with separate raised lid",
+      "maps": [
+        "WLD-09",
+        "WLD-18"
+      ],
+      "source_parts": 8,
+      "tapered_parts": 0,
+      "source_materials": [
+        "industrial",
+        "metal",
+        "stone"
+      ],
+      "triangles": 96,
+      "glb_sha256": "1bdc5ccc22908d47b7ad8515ff09ad25ebf9a5e184209384a12266f6a16ace9f",
+      "model_bounds_xz": [
+        -1.01,
+        -0.7,
+        1.455,
+        0.7
+      ],
+      "width_m": 2.465,
+      "depth_m": 1.4,
+      "min_y_m": 0.0,
+      "max_y_m": 1.6891,
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_mount_constraint"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_dam_spillway_guard_screen",
+      "label": "Dam coarse debris guard bars",
+      "maps": [
+        "WLD-09",
+        "WLD-11"
+      ],
+      "source_parts": 13,
+      "tapered_parts": 0,
+      "source_materials": [
+        "metal",
+        "stone"
+      ],
+      "triangles": 156,
+      "glb_sha256": "5d10814623f8c07de6bccb870816744c6d3e2423292498e154410ede6ea8fd60",
+      "model_bounds_xz": [
+        -1.31,
+        -0.225,
+        1.31,
+        0.225
+      ],
+      "width_m": 2.62,
+      "depth_m": 0.45,
+      "min_y_m": 0.0,
+      "max_y_m": 2.31,
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_mount_constraint"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_cannery_hanging_hook_rail",
+      "label": "Cannery suspended processing hook line",
+      "maps": [
+        "WLD-13",
+        "WLD-15"
+      ],
+      "source_parts": 18,
+      "tapered_parts": 0,
+      "source_materials": [
+        "industrial",
+        "metal"
+      ],
+      "triangles": 356,
+      "glb_sha256": "56e35dfc28adf7fff973d8706b33371ca55e4918ae5b3b724127dff07065fba7",
+      "model_bounds_xz": [
+        -1.43,
+        -0.07,
+        1.43,
+        0.1
+      ],
+      "width_m": 2.86,
+      "depth_m": 0.17,
+      "min_y_m": 1.7,
+      "max_y_m": 2.82,
+      "mount_hint": "ceiling",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_attachment_anchor"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_cannery_rinse_bench",
+      "label": "Industrial wash table and exposed drain",
+      "maps": [
+        "WLD-13",
+        "WLD-15"
+      ],
+      "source_parts": 10,
+      "tapered_parts": 0,
+      "source_materials": [
+        "dark",
+        "industrial",
+        "metal",
+        "silver"
+      ],
+      "triangles": 148,
+      "glb_sha256": "5cbfa2e615d7a87ba930ee787af58a3497f3fa2e7190ea13cf1e0f353513b31e",
+      "model_bounds_xz": [
+        -0.965,
+        -0.46,
+        0.965,
+        0.455
+      ],
+      "width_m": 1.93,
+      "depth_m": 0.915,
+      "min_y_m": -0.01,
+      "max_y_m": 1.395,
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_cannery_cart_dolly",
+      "label": "Four-wheel cannery crate-handling dolly",
+      "maps": [
+        "WLD-13",
+        "WLD-15"
+      ],
+      "source_parts": 9,
+      "tapered_parts": 0,
+      "source_materials": [
+        "industrial",
+        "metal",
+        "wood"
+      ],
+      "triangles": 188,
+      "glb_sha256": "b39c9238a6c56f620471bed99b6da0d159ba079eaefd8e58a25920a55d839258",
+      "model_bounds_xz": [
+        -0.64,
+        -0.455,
+        0.64,
+        0.455
+      ],
+      "width_m": 1.28,
+      "depth_m": 0.91,
+      "min_y_m": -0.01,
+      "max_y_m": 0.875,
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_prison_visitation_counter",
+      "label": "Prison visitor booth divider and seated counter",
+      "maps": [
+        "PRISON"
+      ],
+      "source_parts": 10,
+      "tapered_parts": 0,
+      "source_materials": [
+        "glass",
+        "metal",
+        "wood"
+      ],
+      "triangles": 120,
+      "glb_sha256": "d0754f75609516c6680d1ff3e0337116a0ee81f09deb96d3cf18a8c18143d8f0",
+      "model_bounds_xz": [
+        -1.255,
+        -0.385,
+        1.255,
+        0.385
+      ],
+      "width_m": 2.51,
+      "depth_m": 0.77,
+      "min_y_m": 0.005,
+      "max_y_m": 2.375,
       "mount_hint": "floor",
       "mount_confidence": "provisional_unreviewed",
       "source_pivot_reviewed": false,

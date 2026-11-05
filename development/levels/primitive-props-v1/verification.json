@@ -305,8 +305,8 @@
     {
       "id": "level_blockout_hospital_chart_station",
       "triangles": 124,
-      "bytes": 23780,
-      "sha256": "7be208071c121b490ed064c4b80e1455d2cfd3d7b9ee50fc82adb6450894a582"
+      "bytes": 23796,
+      "sha256": "0df865e987abe2ab4b74f607513f3d27cfe6bbf8bdaeb62909cc4b1ff821fb1b"
     },
     {
       "id": "level_blockout_gym_wall_bars",
@@ -430,9 +430,9 @@
     },
     {
       "id": "level_blockout_family_photo_cluster",
-      "triangles": 132,
-      "bytes": 20436,
-      "sha256": "fb7a13515577228dac9d96004a247f79630ce6ad44d6acd77e7b76e1f482e21e"
+      "triangles": 288,
+      "bytes": 34252,
+      "sha256": "a379b7f188d8d099591808368c2d3d39ffae43e208e1b12bd04842d7334ee5c0"
     },
     {
       "id": "level_blockout_toy_chest_scatter",
@@ -479,8 +479,8 @@
     {
       "id": "level_blockout_diesel_generator_skid",
       "triangles": 192,
-      "bytes": 28600,
-      "sha256": "3036d8d1f3a22149258847719e71bc3418675173202d915858aff01153b7cc5d"
+      "bytes": 28584,
+      "sha256": "ff430785a75f26bbb0d6e95fab8fb61dbff97e7ad9068b6b05aa1f9c1c4bfc22"
     },
     {
       "id": "level_blockout_site_distribution_board",
@@ -1699,6 +1699,96 @@
       "triangles": 72,
       "bytes": 10056,
       "sha256": "92aebc9a839ff140674ab565725d8ad1b4bef79b7af25ca413b74e06c0bb2b74"
+    },
+    {
+      "id": "level_blockout_school_cafeteria_table",
+      "triangles": 108,
+      "bytes": 15836,
+      "sha256": "019b3d3218e8b1e740e206fb7859fe549a24ff82c92ec88ea82f94f09081d849"
+    },
+    {
+      "id": "level_blockout_school_wall_coat_rack",
+      "triangles": 156,
+      "bytes": 20788,
+      "sha256": "55fdcee5d1763a18e9ae4543a02c565e52906abde180158eaa59015a8b378d21"
+    },
+    {
+      "id": "level_blockout_school_auditorium_stage",
+      "triangles": 108,
+      "bytes": 15884,
+      "sha256": "0f4055d7f495d15ef816d51b530a477c109de2b19ffcf025b3a41bcf98dc6cce"
+    },
+    {
+      "id": "level_blockout_school_library_globe",
+      "triangles": 196,
+      "bytes": 26892,
+      "sha256": "4436893bc1afaae0807abe8557446760735f788e08e40915a3f884414743dc8e"
+    },
+    {
+      "id": "level_blockout_hospital_mobile_iv_stand",
+      "triangles": 252,
+      "bytes": 30468,
+      "sha256": "c1e43133471135af195bb018f2e1aeae447a9c73a8931d7fd76a99d790024f9c"
+    },
+    {
+      "id": "level_blockout_hospital_ward_screen",
+      "triangles": 120,
+      "bytes": 17080,
+      "sha256": "8ecbcbd8df4b3e457fe907b7cbdfd7d71f4573e5b9194527728326259c7c1e7c"
+    },
+    {
+      "id": "level_blockout_hospital_sterilizer_cabinet",
+      "triangles": 96,
+      "bytes": 20832,
+      "sha256": "97ab37a9d1fc08804b117f7acea98619111d78a5e32ea8fc54581241e5de76d6"
+    },
+    {
+      "id": "level_blockout_hospital_patient_call_panel",
+      "triangles": 96,
+      "bytes": 18872,
+      "sha256": "785bbbe32c5f99923012ae568bed32277cf0aff2940b97d5b815f9bf226216aa"
+    },
+    {
+      "id": "level_blockout_dam_service_catwalk",
+      "triangles": 300,
+      "bytes": 33300,
+      "sha256": "dd0418e4ab6b1d0d711b7c97f3078b6374ffd96b6e9820cc1f621c0d74f0f91b"
+    },
+    {
+      "id": "level_blockout_dam_turbine_access_hatch",
+      "triangles": 96,
+      "bytes": 16832,
+      "sha256": "1bdc5ccc22908d47b7ad8515ff09ad25ebf9a5e184209384a12266f6a16ace9f"
+    },
+    {
+      "id": "level_blockout_dam_spillway_guard_screen",
+      "triangles": 156,
+      "bytes": 20740,
+      "sha256": "5d10814623f8c07de6bccb870816744c6d3e2423292498e154410ede6ea8fd60"
+    },
+    {
+      "id": "level_blockout_cannery_hanging_hook_rail",
+      "triangles": 356,
+      "bytes": 41136,
+      "sha256": "56e35dfc28adf7fff973d8706b33371ca55e4918ae5b3b724127dff07065fba7"
+    },
+    {
+      "id": "level_blockout_cannery_rinse_bench",
+      "triangles": 148,
+      "bytes": 24096,
+      "sha256": "5cbfa2e615d7a87ba930ee787af58a3497f3fa2e7190ea13cf1e0f353513b31e"
+    },
+    {
+      "id": "level_blockout_cannery_cart_dolly",
+      "triangles": 188,
+      "bytes": 26156,
+      "sha256": "b39c9238a6c56f620471bed99b6da0d159ba079eaefd8e58a25920a55d839258"
+    },
+    {
+      "id": "level_blockout_prison_visitation_counter",
+      "triangles": 120,
+      "bytes": 19196,
+      "sha256": "d0754f75609516c6680d1ff3e0337116a0ee81f09deb96d3cf18a8c18143d8f0"
     }
   ]
 }

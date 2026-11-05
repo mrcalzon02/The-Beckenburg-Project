@@ -2,7 +2,7 @@
   "schema": "beckenburg.primitive-map-kit/1",
   "status": "source-only-model-contact-rooms",
   "runtime_approved": false,
-  "model_library_count": 283,
+  "model_library_count": 298,
   "planning_packets": 29,
   "model_scale": "true-scale metres, not resized",
   "page_layout": "3 columns x 2 rows; width 7 m / depth 7 m per stand",
@@ -47,7 +47,11 @@
         "level_blockout_domestic_wall_bookcase",
         "level_blockout_school_chalkboard",
         "level_blockout_school_locker_bank",
-        "level_blockout_science_instrument_table"
+        "level_blockout_science_instrument_table",
+        "level_blockout_school_cafeteria_table",
+        "level_blockout_school_wall_coat_rack",
+        "level_blockout_school_auditorium_stage",
+        "level_blockout_school_library_globe"
       ],
       "pages": [
         {
@@ -372,9 +376,9 @@
           "page": 4,
           "name": "level_blockout_kit_academy_p04",
           "file": "level_blockout_kit_academy_p04.glb",
-          "triangles": 1096,
-          "bytes": 135800,
-          "sha256": "0afe087fc1bc69162bd5d59061132a0a984a38c8863be0978d97e7e8cdc23d7e",
+          "triangles": 1228,
+          "bytes": 149272,
+          "sha256": "bf74f2b697ab4e11d5ad3c18176b3c0473697ebb24a9f9050be09b799a9837f2",
           "display_slots": [
             {
               "slot": 1,
@@ -455,6 +459,80 @@
                 5.6
               ],
               "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_school_cafeteria_table",
+              "title": "School cafeteria bench table",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 5,
+          "name": "level_blockout_kit_academy_p05",
+          "file": "level_blockout_kit_academy_p05.glb",
+          "triangles": 532,
+          "bytes": 63336,
+          "sha256": "3cc398e4fe93431075611153e3f724a663a8d4b978e14c6c8386db71724e37fc",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_school_wall_coat_rack",
+              "title": "School corridor wall coat rail with hooks",
+              "source_ground_offset": -1.1625,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_school_auditorium_stage",
+              "title": "Assembly hall stage deck and steps",
+              "source_ground_offset": 0.005,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_school_library_globe",
+              "title": "Faceted school globe on wooden table stand",
+              "source_ground_offset": -0.03,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
             }
           ]
         }
@@ -492,7 +570,11 @@
         "level_blockout_institution_linen_cabinet",
         "level_blockout_mortuary_instrument_trolley",
         "level_blockout_mortuary_cold_drawer_wall",
-        "level_blockout_mortuary_wash_sink_station"
+        "level_blockout_mortuary_wash_sink_station",
+        "level_blockout_hospital_mobile_iv_stand",
+        "level_blockout_hospital_ward_screen",
+        "level_blockout_hospital_sterilizer_cabinet",
+        "level_blockout_hospital_patient_call_panel"
       ],
       "pages": [
         {
@@ -607,7 +689,7 @@
           "file": "level_blockout_kit_asylum_p02.glb",
           "triangles": 1024,
           "bytes": 119860,
-          "sha256": "0ea3a547912d26fc363fd4a7621c46aa0b78269278c4d9c5c30c989feac14806",
+          "sha256": "23539404891b86cc5be1a16874327f23d3e5f25c3d6c383cb1a03e24238149f1",
           "display_slots": [
             {
               "slot": 1,
@@ -629,7 +711,7 @@
               "slot": 2,
               "id": "level_blockout_hospital_chart_station",
               "title": "Records/chart board on rolling stand",
-              "source_ground_offset": 0.325,
+              "source_ground_offset": 0.01,
               "stand_center": [
                 0.0,
                 0,
@@ -817,9 +899,9 @@
           "page": 4,
           "name": "level_blockout_kit_asylum_p04",
           "file": "level_blockout_kit_asylum_p04.glb",
-          "triangles": 244,
-          "bytes": 38148,
-          "sha256": "7a94eaae8af0c786866d67fae2f88cca9bd5d3dad3e618901ecc084ff1de4bb5",
+          "triangles": 904,
+          "bytes": 114064,
+          "sha256": "10e161707ca0df4454ace7dbe77b5577fd8fea1fff270ff5411ee71d40acacdd",
           "display_slots": [
             {
               "slot": 1,
@@ -830,6 +912,70 @@
                 -7.0,
                 0,
                 -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_hospital_mobile_iv_stand",
+              "title": "Ward IV pole, ring hooks and four casters",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_hospital_ward_screen",
+              "title": "Three-panel folding privacy screen and feet",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_hospital_sterilizer_cabinet",
+              "title": "Medical sterilization equipment cabinet",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_hospital_patient_call_panel",
+              "title": "Ward bedside call panel",
+              "source_ground_offset": -0.075,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
               ],
               "stand_dimensions_m": [
                 5.65,
@@ -2487,7 +2633,11 @@
         "level_blockout_school_chalkboard",
         "level_blockout_school_locker_bank",
         "level_blockout_science_instrument_table",
-        "level_blockout_rail_station_clock"
+        "level_blockout_rail_station_clock",
+        "level_blockout_school_cafeteria_table",
+        "level_blockout_school_wall_coat_rack",
+        "level_blockout_school_auditorium_stage",
+        "level_blockout_school_library_globe"
       ],
       "pages": [
         {
@@ -2812,9 +2962,9 @@
           "page": 4,
           "name": "level_blockout_kit_college_p04",
           "file": "level_blockout_kit_college_p04.glb",
-          "triangles": 200,
-          "bytes": 33732,
-          "sha256": "f7037063bf961d180c2b1047cfe62b969d16a23cd055fc4548acc4835d9e0453",
+          "triangles": 864,
+          "bytes": 103588,
+          "sha256": "d50c44c01fae50bcef1d4ee28d89517d17c7fec49f09d2589e3f71b3010f7e9f",
           "display_slots": [
             {
               "slot": 1,
@@ -2825,6 +2975,70 @@
                 -7.0,
                 0,
                 -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_school_cafeteria_table",
+              "title": "School cafeteria bench table",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_school_wall_coat_rack",
+              "title": "School corridor wall coat rail with hooks",
+              "source_ground_offset": -1.1625,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_school_auditorium_stage",
+              "title": "Assembly hall stage deck and steps",
+              "source_ground_offset": 0.005,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_school_library_globe",
+              "title": "Faceted school globe on wooden table stand",
+              "source_ground_offset": -0.03,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
               ],
               "stand_dimensions_m": [
                 5.65,
@@ -2991,9 +3205,9 @@
           "page": 2,
           "name": "level_blockout_kit_farmhouse_p02",
           "file": "level_blockout_kit_farmhouse_p02.glb",
-          "triangles": 1020,
-          "bytes": 119484,
-          "sha256": "f1023df458bc79305756cdd6662747d7bfddaba318243314ffd39884a13d384e",
+          "triangles": 1176,
+          "bytes": 135420,
+          "sha256": "2cf0e3c300f781d7f812d5bf120086fdb238d7c3f9a207c026036154af874d03",
           "display_slots": [
             {
               "slot": 1,
@@ -3014,8 +3228,8 @@
             {
               "slot": 2,
               "id": "level_blockout_family_photo_cluster",
-              "title": "House family photographs on standing gallery panel",
-              "source_ground_offset": 0.005,
+              "title": "Four individual hanging family photo frames",
+              "source_ground_offset": -0.7425,
               "stand_center": [
                 0.0,
                 0,
@@ -3438,9 +3652,9 @@
           "page": 1,
           "name": "level_blockout_kit_house_p01",
           "file": "level_blockout_kit_house_p01.glb",
-          "triangles": 988,
-          "bytes": 116252,
-          "sha256": "909926955c95e6d07ce8c65438786d65addb76116e5e90a80354f73eea70a5f5",
+          "triangles": 1144,
+          "bytes": 132188,
+          "sha256": "4206cfcda8f882b114a83a2780ce9a83467f344b656fce301b5caadb63a0740a",
           "display_slots": [
             {
               "slot": 1,
@@ -3461,8 +3675,8 @@
             {
               "slot": 2,
               "id": "level_blockout_family_photo_cluster",
-              "title": "House family photographs on standing gallery panel",
-              "source_ground_offset": 0.005,
+              "title": "Four individual hanging family photo frames",
+              "source_ground_offset": -0.7425,
               "stand_center": [
                 0.0,
                 0,
@@ -3969,9 +4183,9 @@
           "page": 2,
           "name": "level_blockout_kit_mansion_p02",
           "file": "level_blockout_kit_mansion_p02.glb",
-          "triangles": 1120,
-          "bytes": 136128,
-          "sha256": "547a3b1f4fd5b158f77471a00b4e49df3b5e0fe59a7e1db681b62465066e702e",
+          "triangles": 1276,
+          "bytes": 152056,
+          "sha256": "ef5180f2ecafdecd049beeb601bb61d3833dfa3e85a8f9d28a505b4aeadd9829",
           "display_slots": [
             {
               "slot": 1,
@@ -3992,8 +4206,8 @@
             {
               "slot": 2,
               "id": "level_blockout_family_photo_cluster",
-              "title": "House family photographs on standing gallery panel",
-              "source_ground_offset": 0.005,
+              "title": "Four individual hanging family photo frames",
+              "source_ground_offset": -0.7425,
               "stand_center": [
                 0.0,
                 0,
@@ -4451,7 +4665,8 @@
         "level_blockout_pipe_riser_support",
         "level_blockout_school_locker_bank",
         "level_blockout_institution_linen_cabinet",
-        "level_blockout_prison_guard_station"
+        "level_blockout_prison_guard_station",
+        "level_blockout_prison_visitation_counter"
       ],
       "pages": [
         {
@@ -4565,8 +4780,8 @@
           "name": "level_blockout_kit_prison_p02",
           "file": "level_blockout_kit_prison_p02.glb",
           "triangles": 1044,
-          "bytes": 121908,
-          "sha256": "37dcfad435abe76304c3d4b7881901a6fd68f5a3388594838126a627cae09932",
+          "bytes": 121892,
+          "sha256": "235c6594e349b0ce73b2eff6a4523264877ecb9c8d40b40dd4c2e8022d969d59",
           "display_slots": [
             {
               "slot": 1,
@@ -4636,7 +4851,7 @@
               "slot": 5,
               "id": "level_blockout_hospital_chart_station",
               "title": "Records/chart board on rolling stand",
-              "source_ground_offset": 0.325,
+              "source_ground_offset": 0.01,
               "stand_center": [
                 0.0,
                 0,
@@ -4776,9 +4991,9 @@
           "page": 4,
           "name": "level_blockout_kit_prison_p04",
           "file": "level_blockout_kit_prison_p04.glb",
-          "triangles": 612,
-          "bytes": 80032,
-          "sha256": "23bad0f8f0c2d677d5e5367fb5d94cedb32c63748fdff12ef300fd5e108821e2",
+          "triangles": 756,
+          "bytes": 96792,
+          "sha256": "4b079c5fafcf9112b6efa0ed3940401e26e07dadcdbdd269801417f5a72d18d5",
           "display_slots": [
             {
               "slot": 1,
@@ -4827,6 +5042,22 @@
                 5.6
               ],
               "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_prison_visitation_counter",
+              "title": "Prison visitor booth divider and seated counter",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
             }
           ]
         }
@@ -4860,7 +5091,11 @@
         "level_blockout_school_chalkboard",
         "level_blockout_school_locker_bank",
         "level_blockout_science_instrument_table",
-        "level_blockout_institution_linen_cabinet"
+        "level_blockout_institution_linen_cabinet",
+        "level_blockout_school_cafeteria_table",
+        "level_blockout_school_wall_coat_rack",
+        "level_blockout_school_auditorium_stage",
+        "level_blockout_school_library_globe"
       ],
       "pages": [
         {
@@ -5079,9 +5314,9 @@
           "page": 3,
           "name": "level_blockout_kit_school_p03",
           "file": "level_blockout_kit_school_p03.glb",
-          "triangles": 724,
-          "bytes": 93564,
-          "sha256": "8c11943a33d3c43726c8972eee244fb0dbe7e90a998c3b122703b49fead6603b",
+          "triangles": 1168,
+          "bytes": 138888,
+          "sha256": "64aa9762a2801e5bf62f8a282dfa788dc214541cdd6d4c1a2219cb694777e9d1",
           "display_slots": [
             {
               "slot": 1,
@@ -5122,6 +5357,80 @@
               "source_ground_offset": -0.0,
               "stand_center": [
                 7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_school_cafeteria_table",
+              "title": "School cafeteria bench table",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_school_wall_coat_rack",
+              "title": "School corridor wall coat rail with hooks",
+              "source_ground_offset": -1.1625,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_school_auditorium_stage",
+              "title": "Assembly hall stage deck and steps",
+              "source_ground_offset": 0.005,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 4,
+          "name": "level_blockout_kit_school_p04",
+          "file": "level_blockout_kit_school_p04.glb",
+          "triangles": 220,
+          "bytes": 31536,
+          "sha256": "54d2765a2e4b48f5d5833bc974b4aa1d9ab9711c12cde86994ca71d222c0a676",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_school_library_globe",
+              "title": "Faceted school globe on wooden table stand",
+              "source_ground_offset": -0.03,
+              "stand_center": [
+                -7.0,
                 0,
                 -3.5
               ],
@@ -5298,7 +5607,7 @@
           "file": "level_blockout_kit_wld_01_p02.glb",
           "triangles": 1156,
           "bytes": 133316,
-          "sha256": "2480d037bc72b019a422afdb5b0623cc376f2c4870ea730858555154fa71c828",
+          "sha256": "d573da27f861559707493eafe0ad5abf3b81d869aeecddf7c1ade062e8541885",
           "display_slots": [
             {
               "slot": 1,
@@ -5352,7 +5661,7 @@
               "slot": 4,
               "id": "level_blockout_diesel_generator_skid",
               "title": "Outdoor emergency generator and service skid",
-              "source_ground_offset": 0.11,
+              "source_ground_offset": -0.0,
               "stand_center": [
                 -7.0,
                 0,
@@ -5965,8 +6274,8 @@
           "name": "level_blockout_kit_wld_02_p02",
           "file": "level_blockout_kit_wld_02_p02.glb",
           "triangles": 1056,
-          "bytes": 123132,
-          "sha256": "a79ec721321261864418a9638a2ce9e069cb10a9a3b00ab5407ea424e6817d4f",
+          "bytes": 123148,
+          "sha256": "2290bbae456bf615379d157211391d048278e80a8d05568f18e2237c43a62d90",
           "display_slots": [
             {
               "slot": 1,
@@ -5988,7 +6297,7 @@
               "slot": 2,
               "id": "level_blockout_diesel_generator_skid",
               "title": "Outdoor emergency generator and service skid",
-              "source_ground_offset": 0.11,
+              "source_ground_offset": -0.0,
               "stand_center": [
                 0.0,
                 0,
@@ -6427,8 +6736,8 @@
           "name": "level_blockout_kit_wld_03_p01",
           "file": "level_blockout_kit_wld_03_p01.glb",
           "triangles": 968,
-          "bytes": 112024,
-          "sha256": "b61a909e9513479d0d301f5dd1136b3aa840699dec7704f3aeb36d4358ef68a0",
+          "bytes": 112040,
+          "sha256": "6c9c9564b4632c29c362d29ba655fd25791c12cbe70707c2e9c17e9dfadf6170",
           "display_slots": [
             {
               "slot": 1,
@@ -6450,7 +6759,7 @@
               "slot": 2,
               "id": "level_blockout_diesel_generator_skid",
               "title": "Outdoor emergency generator and service skid",
-              "source_ground_offset": 0.11,
+              "source_ground_offset": -0.0,
               "stand_center": [
                 0.0,
                 0,
@@ -6827,8 +7136,8 @@
           "name": "level_blockout_kit_wld_04_p01",
           "file": "level_blockout_kit_wld_04_p01.glb",
           "triangles": 992,
-          "bytes": 116580,
-          "sha256": "9517119db0900f73b956bc53aaa66f0a52ec1e6d158186f7ff47698eaf70a778",
+          "bytes": 116596,
+          "sha256": "a06c4a51f7f79ff9dca5488c44bb8a0b026f2e991b05ba01a045c2572b267fd0",
           "display_slots": [
             {
               "slot": 1,
@@ -6898,7 +7207,7 @@
               "slot": 5,
               "id": "level_blockout_diesel_generator_skid",
               "title": "Outdoor emergency generator and service skid",
-              "source_ground_offset": 0.11,
+              "source_ground_offset": -0.0,
               "stand_center": [
                 0.0,
                 0,
@@ -7267,8 +7576,8 @@
           "name": "level_blockout_kit_wld_05_p01",
           "file": "level_blockout_kit_wld_05_p01.glb",
           "triangles": 1048,
-          "bytes": 120168,
-          "sha256": "749cd76e67ee8a5ffe766ff771a937e1840ac4bd4c35dd117b012c98454750d4",
+          "bytes": 120184,
+          "sha256": "5522c4b23c7176a2014188fa7fb5221ecf5f4860c5fe95e09b27c8e92cb7f86e",
           "display_slots": [
             {
               "slot": 1,
@@ -7354,7 +7663,7 @@
               "slot": 6,
               "id": "level_blockout_diesel_generator_skid",
               "title": "Outdoor emergency generator and service skid",
-              "source_ground_offset": 0.11,
+              "source_ground_offset": -0.0,
               "stand_center": [
                 7.0,
                 0,
@@ -7838,8 +8147,8 @@
           "name": "level_blockout_kit_wld_06_p01",
           "file": "level_blockout_kit_wld_06_p01.glb",
           "triangles": 1028,
-          "bytes": 120264,
-          "sha256": "3dd07c1fa771c22c9190c9cf5f18b6ec2fa99364181b8b1ecfc866f53c4555b3",
+          "bytes": 120280,
+          "sha256": "93d1ffc34268702b99ce65bd677734c0730eb1c22cc1d35f6bf1dc50be1f9b8a",
           "display_slots": [
             {
               "slot": 1,
@@ -7877,7 +8186,7 @@
               "slot": 3,
               "id": "level_blockout_diesel_generator_skid",
               "title": "Outdoor emergency generator and service skid",
-              "source_ground_offset": 0.11,
+              "source_ground_offset": -0.0,
               "stand_center": [
                 7.0,
                 0,
@@ -8289,8 +8598,8 @@
           "name": "level_blockout_kit_wld_07_p01",
           "file": "level_blockout_kit_wld_07_p01.glb",
           "triangles": 880,
-          "bytes": 103016,
-          "sha256": "34161e47ade8729f2cb68ce4b21015aa9a182301659c3c167d65723bd01b5990",
+          "bytes": 103028,
+          "sha256": "27b390f4c0829391e9655b2c0ac1adbf10f5236f63f5c4af2df2625324e72a8c",
           "display_slots": [
             {
               "slot": 1,
@@ -8360,7 +8669,7 @@
               "slot": 5,
               "id": "level_blockout_diesel_generator_skid",
               "title": "Outdoor emergency generator and service skid",
-              "source_ground_offset": 0.11,
+              "source_ground_offset": -0.0,
               "stand_center": [
                 0.0,
                 0,
@@ -8771,7 +9080,8 @@
         "level_blockout_cinder_cable_rack",
         "level_blockout_research_battery_bank",
         "level_blockout_cave_survey_tripod",
-        "level_blockout_cave_excavation_trestle"
+        "level_blockout_cave_excavation_trestle",
+        "level_blockout_hospital_sterilizer_cabinet"
       ],
       "pages": [
         {
@@ -8779,8 +9089,8 @@
           "name": "level_blockout_kit_wld_08_p01",
           "file": "level_blockout_kit_wld_08_p01.glb",
           "triangles": 1124,
-          "bytes": 130060,
-          "sha256": "d4f248ef072307ca6373eed71c72c2e56f9e77625f6bc275e1a224595892ed06",
+          "bytes": 130076,
+          "sha256": "5dd50cf18decc9ca5723d4c15bf79905344c97d6c415149c193de330ec6c97d6",
           "display_slots": [
             {
               "slot": 1,
@@ -8850,7 +9160,7 @@
               "slot": 5,
               "id": "level_blockout_diesel_generator_skid",
               "title": "Outdoor emergency generator and service skid",
-              "source_ground_offset": 0.11,
+              "source_ground_offset": -0.0,
               "stand_center": [
                 0.0,
                 0,
@@ -9096,9 +9406,9 @@
           "page": 4,
           "name": "level_blockout_kit_wld_08_p04",
           "file": "level_blockout_kit_wld_08_p04.glb",
-          "triangles": 952,
-          "bytes": 114712,
-          "sha256": "f597dffb952a56b7df9a389a20b53d029612e192280fd140ac34c783104ace37",
+          "triangles": 1072,
+          "bytes": 129004,
+          "sha256": "18efd1442684e880f42245ca438dcdcec424d98093bc0feb93ac350cf45d879d",
           "display_slots": [
             {
               "slot": 1,
@@ -9163,6 +9473,22 @@
                 5.6
               ],
               "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_hospital_sterilizer_cabinet",
+              "title": "Medical sterilization equipment cabinet",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
             }
           ]
         }
@@ -9198,7 +9524,10 @@
         "level_blockout_research_battery_bank",
         "level_blockout_dam_pressure_gauge_panel",
         "level_blockout_rail_coal_bunker",
-        "level_blockout_hydro_handwheel_valve"
+        "level_blockout_hydro_handwheel_valve",
+        "level_blockout_dam_service_catwalk",
+        "level_blockout_dam_turbine_access_hatch",
+        "level_blockout_dam_spillway_guard_screen"
       ],
       "pages": [
         {
@@ -9207,7 +9536,7 @@
           "file": "level_blockout_kit_wld_09_p01.glb",
           "triangles": 1088,
           "bytes": 122064,
-          "sha256": "33433ed0036d4002a346b13f7c3046f61b304e4554075af4f20774373f2d3547",
+          "sha256": "8cc05ee364a87a8df463a6ab61eb76ebbab7c3e4823ff49a7b360c9e86e63b8b",
           "display_slots": [
             {
               "slot": 1,
@@ -9245,7 +9574,7 @@
               "slot": 3,
               "id": "level_blockout_diesel_generator_skid",
               "title": "Outdoor emergency generator and service skid",
-              "source_ground_offset": 0.11,
+              "source_ground_offset": -0.0,
               "stand_center": [
                 7.0,
                 0,
@@ -9417,9 +9746,9 @@
           "page": 3,
           "name": "level_blockout_kit_wld_09_p03",
           "file": "level_blockout_kit_wld_09_p03.glb",
-          "triangles": 1676,
-          "bytes": 188656,
-          "sha256": "7fe1ce423b1532611b60bae7ed98835362fe9a5e929de1d478e00f4dae282984",
+          "triangles": 2000,
+          "bytes": 221716,
+          "sha256": "a2d4c6dba9fbb796685887d7ac52260ea0da1aded80291f0017479b399a682c3",
           "display_slots": [
             {
               "slot": 1,
@@ -9494,6 +9823,64 @@
                 0.0,
                 0,
                 3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_dam_service_catwalk",
+              "title": "Hydroelectric service catwalk grating and braces",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 4,
+          "name": "level_blockout_kit_wld_09_p04",
+          "file": "level_blockout_kit_wld_09_p04.glb",
+          "triangles": 300,
+          "bytes": 39644,
+          "sha256": "484cce674f4bc6e24e990cf5a0735ce490990959e5c32a2a28bf207dcc7d1b38",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_dam_turbine_access_hatch",
+              "title": "Open service hatch with separate raised lid",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_dam_spillway_guard_screen",
+              "title": "Dam coarse debris guard bars",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
               ],
               "stand_dimensions_m": [
                 5.65,
@@ -9774,8 +10161,8 @@
           "name": "level_blockout_kit_wld_10_p03",
           "file": "level_blockout_kit_wld_10_p03.glb",
           "triangles": 1124,
-          "bytes": 130080,
-          "sha256": "24f96b9e18ab5c6bdd1971f86411cf61f9dc64f178a5221de9b5337454b3e1e7",
+          "bytes": 130092,
+          "sha256": "d373e65c30324757ebf93c66b93b75334061209402454c19f70a3dff0b4186e2",
           "display_slots": [
             {
               "slot": 1,
@@ -9797,7 +10184,7 @@
               "slot": 2,
               "id": "level_blockout_diesel_generator_skid",
               "title": "Outdoor emergency generator and service skid",
-              "source_ground_offset": 0.11,
+              "source_ground_offset": -0.0,
               "stand_center": [
                 0.0,
                 0,
@@ -10230,7 +10617,8 @@
         "level_blockout_camp_water_tank",
         "level_blockout_camp_footbridge_module",
         "level_blockout_marsh_deadwood_snag",
-        "level_blockout_marsh_hunting_blind"
+        "level_blockout_marsh_hunting_blind",
+        "level_blockout_dam_spillway_guard_screen"
       ],
       "pages": [
         {
@@ -10238,8 +10626,8 @@
           "name": "level_blockout_kit_wld_11_p01",
           "file": "level_blockout_kit_wld_11_p01.glb",
           "triangles": 1100,
-          "bytes": 125440,
-          "sha256": "9d90b9db2de37eaa6e581b3f2e3233849b7adf3071a01872aa97016345aff533",
+          "bytes": 125456,
+          "sha256": "3861640338353ca28a1be0f9132673fcc1ac8da147586788c34601622551795b",
           "display_slots": [
             {
               "slot": 1,
@@ -10277,7 +10665,7 @@
               "slot": 3,
               "id": "level_blockout_diesel_generator_skid",
               "title": "Outdoor emergency generator and service skid",
-              "source_ground_offset": 0.11,
+              "source_ground_offset": -0.0,
               "stand_center": [
                 7.0,
                 0,
@@ -10555,9 +10943,9 @@
           "page": 4,
           "name": "level_blockout_kit_wld_11_p04",
           "file": "level_blockout_kit_wld_11_p04.glb",
-          "triangles": 732,
-          "bytes": 90168,
-          "sha256": "416acdbc8bba3d86d6e64e147b57720758b92e507a74339ad6a683556362cdab",
+          "triangles": 912,
+          "bytes": 108532,
+          "sha256": "3acb3d09a70be56533474e86e3855fa1704b26e3cb2982fb1508359161c65eea",
           "display_slots": [
             {
               "slot": 1,
@@ -10622,6 +11010,22 @@
                 5.6
               ],
               "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_dam_spillway_guard_screen",
+              "title": "Dam coarse debris guard bars",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
             }
           ]
         }
@@ -10671,8 +11075,8 @@
           "name": "level_blockout_kit_wld_12_p01",
           "file": "level_blockout_kit_wld_12_p01.glb",
           "triangles": 1168,
-          "bytes": 132412,
-          "sha256": "baeb0f659de7e3a844d5c484ae161337399277af9699c04ba51ebca6b2dd09a4",
+          "bytes": 132428,
+          "sha256": "d385a2619bacce8dc81e014e0c0f18fb027836df79cc1847df36986a61a88b03",
           "display_slots": [
             {
               "slot": 1,
@@ -10694,7 +11098,7 @@
               "slot": 2,
               "id": "level_blockout_diesel_generator_skid",
               "title": "Outdoor emergency generator and service skid",
-              "source_ground_offset": 0.11,
+              "source_ground_offset": -0.0,
               "stand_center": [
                 0.0,
                 0,
@@ -11110,7 +11514,10 @@
         "level_blockout_wharf_crab_pot",
         "level_blockout_cannery_overhead_chute",
         "level_blockout_hydro_handwheel_valve",
-        "level_blockout_wharf_open_fish_crates"
+        "level_blockout_wharf_open_fish_crates",
+        "level_blockout_cannery_hanging_hook_rail",
+        "level_blockout_cannery_rinse_bench",
+        "level_blockout_cannery_cart_dolly"
       ],
       "pages": [
         {
@@ -11118,8 +11525,8 @@
           "name": "level_blockout_kit_wld_13_p01",
           "file": "level_blockout_kit_wld_13_p01.glb",
           "triangles": 1196,
-          "bytes": 135220,
-          "sha256": "78f98c8a1db771ba7b78faef603fa484cca8b5c76d801e3442e584e406589aec",
+          "bytes": 135236,
+          "sha256": "dfeea7796afcef2b6ff5fa6e1bc5c7ee59b463e350f7a66f1c07ef1be2950140",
           "display_slots": [
             {
               "slot": 1,
@@ -11173,7 +11580,7 @@
               "slot": 4,
               "id": "level_blockout_diesel_generator_skid",
               "title": "Outdoor emergency generator and service skid",
-              "source_ground_offset": 0.11,
+              "source_ground_offset": -0.0,
               "stand_center": [
                 -7.0,
                 0,
@@ -11435,9 +11842,9 @@
           "page": 4,
           "name": "level_blockout_kit_wld_13_p04",
           "file": "level_blockout_kit_wld_13_p04.glb",
-          "triangles": 728,
-          "bytes": 89744,
-          "sha256": "9b74dbb56e18ad0971dfbfce6b678a4c77cfa92e71836ca702fe441ce40ec1c0",
+          "triangles": 1492,
+          "bytes": 169744,
+          "sha256": "21bdac8b4dddf12c00b1ef79f32daf26cdc63d96cab6bbec690b5b53d480da11",
           "display_slots": [
             {
               "slot": 1,
@@ -11480,6 +11887,54 @@
                 7.0,
                 0,
                 -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_cannery_hanging_hook_rail",
+              "title": "Cannery suspended processing hook line",
+              "source_ground_offset": -1.7,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_cannery_rinse_bench",
+              "title": "Industrial wash table and exposed drain",
+              "source_ground_offset": 0.01,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_cannery_cart_dolly",
+              "title": "Four-wheel cannery crate-handling dolly",
+              "source_ground_offset": 0.01,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
               ],
               "stand_dimensions_m": [
                 5.65,
@@ -11546,8 +12001,8 @@
           "name": "level_blockout_kit_wld_14_p01",
           "file": "level_blockout_kit_wld_14_p01.glb",
           "triangles": 1440,
-          "bytes": 162320,
-          "sha256": "734405929174386adacddfa3e254c66458079fc461c464fcce40fe037d42c710",
+          "bytes": 162336,
+          "sha256": "db6591e2abdf85da49856a4510a70775ad0c6d6a3029fc8d406665327e7973f5",
           "display_slots": [
             {
               "slot": 1,
@@ -11617,7 +12072,7 @@
               "slot": 5,
               "id": "level_blockout_diesel_generator_skid",
               "title": "Outdoor emergency generator and service skid",
-              "source_ground_offset": 0.11,
+              "source_ground_offset": -0.0,
               "stand_center": [
                 0.0,
                 0,
@@ -12200,7 +12655,10 @@
         "level_blockout_hydro_handwheel_valve",
         "level_blockout_ship_open_cargo_hatch",
         "level_blockout_wharf_open_fish_crates",
-        "level_blockout_rail_luggage_cart"
+        "level_blockout_rail_luggage_cart",
+        "level_blockout_cannery_hanging_hook_rail",
+        "level_blockout_cannery_rinse_bench",
+        "level_blockout_cannery_cart_dolly"
       ],
       "pages": [
         {
@@ -12208,8 +12666,8 @@
           "name": "level_blockout_kit_wld_15_p01",
           "file": "level_blockout_kit_wld_15_p01.glb",
           "triangles": 988,
-          "bytes": 116188,
-          "sha256": "169b17b3cc826f8c9ad475bedde08d12dddbce5e222a572a44dd5ef4872eff96",
+          "bytes": 116232,
+          "sha256": "5b1329e215a6397f88a18687a8afe04905c22138ea4048bcf560c98cb561f86d",
           "display_slots": [
             {
               "slot": 1,
@@ -12295,7 +12753,7 @@
               "slot": 6,
               "id": "level_blockout_diesel_generator_skid",
               "title": "Outdoor emergency generator and service skid",
-              "source_ground_offset": 0.11,
+              "source_ground_offset": -0.0,
               "stand_center": [
                 7.0,
                 0,
@@ -12843,9 +13301,9 @@
           "page": 7,
           "name": "level_blockout_kit_wld_15_p07",
           "file": "level_blockout_kit_wld_15_p07.glb",
-          "triangles": 984,
-          "bytes": 118036,
-          "sha256": "9a167b3360ea7e2b3a1cee7de7297288844753bb14e49893941fef2a43c34f64",
+          "triangles": 1536,
+          "bytes": 176420,
+          "sha256": "27e226887daad7fa0cb4979d82989b366b73434f4ce88ed7b7a9e69f5d1283d9",
           "display_slots": [
             {
               "slot": 1,
@@ -12910,6 +13368,64 @@
                 5.6
               ],
               "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_cannery_hanging_hook_rail",
+              "title": "Cannery suspended processing hook line",
+              "source_ground_offset": -1.7,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_cannery_rinse_bench",
+              "title": "Industrial wash table and exposed drain",
+              "source_ground_offset": 0.01,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 8,
+          "name": "level_blockout_kit_wld_15_p08",
+          "file": "level_blockout_kit_wld_15_p08.glb",
+          "triangles": 212,
+          "bytes": 32784,
+          "sha256": "ba4621f548d11ab873baaa8a83a45561627b316cc896d50260f9f3ee613b413a",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_cannery_cart_dolly",
+              "title": "Four-wheel cannery crate-handling dolly",
+              "source_ground_offset": 0.01,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
             }
           ]
         }
@@ -12963,9 +13479,9 @@
           "page": 1,
           "name": "level_blockout_kit_wld_16_p01",
           "file": "level_blockout_kit_wld_16_p01.glb",
-          "triangles": 824,
-          "bytes": 99448,
-          "sha256": "f4c0957b405ec42edd4d0af27bc611f24e773db59e62653cf81db041986da380",
+          "triangles": 980,
+          "bytes": 115388,
+          "sha256": "b921c7c33a2f7aa8c86840da1bab4c2df8c251ecd5c980308012717ac4e55ada",
           "display_slots": [
             {
               "slot": 1,
@@ -12986,8 +13502,8 @@
             {
               "slot": 2,
               "id": "level_blockout_family_photo_cluster",
-              "title": "House family photographs on standing gallery panel",
-              "source_ground_offset": 0.005,
+              "title": "Four individual hanging family photo frames",
+              "source_ground_offset": -0.7425,
               "stand_center": [
                 0.0,
                 0,
@@ -13071,13 +13587,13 @@
           "file": "level_blockout_kit_wld_16_p02.glb",
           "triangles": 1152,
           "bytes": 132940,
-          "sha256": "262df010d9211402c6c96b0eb8c7c901843b9a158bd0fd09c96f70f20695f526",
+          "sha256": "edc5c6dc4ea02e87488007c3dddbaa3720c9a68d4040d87210bb9768820b9b27",
           "display_slots": [
             {
               "slot": 1,
               "id": "level_blockout_diesel_generator_skid",
               "title": "Outdoor emergency generator and service skid",
-              "source_ground_offset": 0.11,
+              "source_ground_offset": -0.0,
               "stand_center": [
                 -7.0,
                 0,
@@ -13499,7 +14015,8 @@
         "level_blockout_bunker_observation_scope",
         "level_blockout_cinder_cable_rack",
         "level_blockout_bunker_support_arch",
-        "level_blockout_lighthouse_cliff_drain"
+        "level_blockout_lighthouse_cliff_drain",
+        "level_blockout_dam_service_catwalk"
       ],
       "pages": [
         {
@@ -13614,7 +14131,7 @@
           "file": "level_blockout_kit_wld_17_p02.glb",
           "triangles": 1112,
           "bytes": 126648,
-          "sha256": "8c5fe72f553f9bc652dafedb592e1f2be4c8fd75ad30f45ca9429eead3776f95",
+          "sha256": "7abb412593f3ed1aaad40bb4543a827f8cd6c5d9971856067da6e241eef9d798",
           "display_slots": [
             {
               "slot": 1,
@@ -13652,7 +14169,7 @@
               "slot": 3,
               "id": "level_blockout_diesel_generator_skid",
               "title": "Outdoor emergency generator and service skid",
-              "source_ground_offset": 0.11,
+              "source_ground_offset": -0.0,
               "stand_center": [
                 7.0,
                 0,
@@ -13930,9 +14447,9 @@
           "page": 5,
           "name": "level_blockout_kit_wld_17_p05",
           "file": "level_blockout_kit_wld_17_p05.glb",
-          "triangles": 576,
-          "bytes": 69832,
-          "sha256": "20bbaec2f95269001c491b63a8b8cccdde8835aca0184b5469c3023a6711844c",
+          "triangles": 900,
+          "bytes": 102912,
+          "sha256": "b206bbd759920fa184518124d0df92ffaf1aea470001ed7a0dcbdeb3b7f3dfc7",
           "display_slots": [
             {
               "slot": 1,
@@ -13975,6 +14492,22 @@
                 7.0,
                 0,
                 -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_dam_service_catwalk",
+              "title": "Hydroelectric service catwalk grating and braces",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
               ],
               "stand_dimensions_m": [
                 5.65,
@@ -14035,7 +14568,9 @@
         "level_blockout_dam_pressure_gauge_panel",
         "level_blockout_cave_rockfall_heap",
         "level_blockout_bunker_support_arch",
-        "level_blockout_cave_ledge_rope_guard"
+        "level_blockout_cave_ledge_rope_guard",
+        "level_blockout_dam_service_catwalk",
+        "level_blockout_dam_turbine_access_hatch"
       ],
       "pages": [
         {
@@ -14043,8 +14578,8 @@
           "name": "level_blockout_kit_wld_18_p01",
           "file": "level_blockout_kit_wld_18_p01.glb",
           "triangles": 1096,
-          "bytes": 122908,
-          "sha256": "1048086d56c967170b211e31db0fd42a7af2f8314b30486ae8309cc15df1ca3b",
+          "bytes": 122920,
+          "sha256": "12492cc9b3d1f060111417d2977a7190c7a0b95c1305b42b9b1d01f8b8e11c7e",
           "display_slots": [
             {
               "slot": 1,
@@ -14130,7 +14665,7 @@
               "slot": 6,
               "id": "level_blockout_diesel_generator_skid",
               "title": "Outdoor emergency generator and service skid",
-              "source_ground_offset": 0.11,
+              "source_ground_offset": -0.0,
               "stand_center": [
                 7.0,
                 0,
@@ -14673,6 +15208,48 @@
               "review_only": true
             }
           ]
+        },
+        {
+          "page": 7,
+          "name": "level_blockout_kit_wld_18_p07",
+          "file": "level_blockout_kit_wld_18_p07.glb",
+          "triangles": 444,
+          "bytes": 54348,
+          "sha256": "a13205f01fde56c1aab0e29f8ff3dd77db40dfd2c870594f0288f2ae9e2b9218",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_dam_service_catwalk",
+              "title": "Hydroelectric service catwalk grating and braces",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_dam_turbine_access_hatch",
+              "title": "Open service hatch with separate raised lid",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            }
+          ]
         }
       ],
       "still_source_only": true
@@ -14718,7 +15295,11 @@
         "level_blockout_mortuary_cold_drawer_wall",
         "level_blockout_mortuary_flower_wreath",
         "level_blockout_mortuary_wash_sink_station",
-        "level_blockout_mortuary_visitors_registry_desk"
+        "level_blockout_mortuary_visitors_registry_desk",
+        "level_blockout_hospital_mobile_iv_stand",
+        "level_blockout_hospital_ward_screen",
+        "level_blockout_hospital_sterilizer_cabinet",
+        "level_blockout_hospital_patient_call_panel"
       ],
       "pages": [
         {
@@ -14832,8 +15413,8 @@
           "name": "level_blockout_kit_wld_07_mortuary_p02",
           "file": "level_blockout_kit_wld_07_mortuary_p02.glb",
           "triangles": 1072,
-          "bytes": 124808,
-          "sha256": "a22981ae3e74b835a76a63106a9861ad686f6518d15a0266c5b455568627c09d",
+          "bytes": 124812,
+          "sha256": "e4b7fbccc0acc491f30dac92b791d3c1c72cd7be572b63721bcb781819d89d2f",
           "display_slots": [
             {
               "slot": 1,
@@ -14871,7 +15452,7 @@
               "slot": 3,
               "id": "level_blockout_hospital_chart_station",
               "title": "Records/chart board on rolling stand",
-              "source_ground_offset": 0.325,
+              "source_ground_offset": 0.01,
               "stand_center": [
                 7.0,
                 0,
@@ -15149,9 +15730,9 @@
           "page": 5,
           "name": "level_blockout_kit_wld_07_mortuary_p05",
           "file": "level_blockout_kit_wld_07_mortuary_p05.glb",
-          "triangles": 1188,
-          "bytes": 145140,
-          "sha256": "cffdaf17b43f34eb409f0f36ecef1eff89af69d8952c802acda1c960b10d0833",
+          "triangles": 1464,
+          "bytes": 173312,
+          "sha256": "90be558118847bff7c56002a72e2eb22c5a50bb8288b502fe9e7bbd28a40858d",
           "display_slots": [
             {
               "slot": 1,
@@ -15232,6 +15813,80 @@
                 5.6
               ],
               "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_hospital_mobile_iv_stand",
+              "title": "Ward IV pole, ring hooks and four casters",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 6,
+          "name": "level_blockout_kit_wld_07_mortuary_p06",
+          "file": "level_blockout_kit_wld_07_mortuary_p06.glb",
+          "triangles": 384,
+          "bytes": 58844,
+          "sha256": "820dbcde5d1744ed05ed4b1bea3721cac804e22c4e9af960aae96530cd470a4f",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_hospital_ward_screen",
+              "title": "Three-panel folding privacy screen and feet",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_hospital_sterilizer_cabinet",
+              "title": "Medical sterilization equipment cabinet",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_hospital_patient_call_panel",
+              "title": "Ward bedside call panel",
+              "source_ground_offset": -0.075,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
             }
           ]
         }
@@ -15239,6 +15894,6 @@
       "still_source_only": true
     }
   ],
-  "total_stands": 782,
-  "total_pages": 141
+  "total_stands": 817,
+  "total_pages": 147
 }
