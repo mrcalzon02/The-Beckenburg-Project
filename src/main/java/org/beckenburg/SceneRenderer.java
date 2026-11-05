@@ -1424,6 +1424,29 @@ public final class SceneRenderer {
     private static final int SHELL_CHUNK_SIZE=256;
     private HouseMap shellSourceMap;
     private String shellSourceRevision="";
+    /** CPU-owned loading preparation statistics; never a second scene cache. */
+    record StaticPreparation(String revision,boolean shellReused,
+            boolean sceneryReused,int shellChunks,int shellFaces,
+            int sceneryInstances,long elapsedNs){}
+    /** Stage 2: prepare existing immutable shell/material/AABB and instance
+     * indexes before the first gameplay frame. The cinematic never owns a
+     * duplicate of these faces. GPU uploads remain on the backend owner thread.
+     * Door positions are intentionally absent from the revision key: a door
+     * moving must not rebuild an entire level's immutable geometry. */
+    StaticPreparation prepareStaticScene(HouseMap map){
+        Objects.requireNonNull(map,"map");
+        long started=System.nanoTime();
+        String revision=map.level().revision()+":"+map.hidingDensity();
+        boolean sameShell=map==shellSourceMap&&revision.equals(shellSourceRevision);
+        boolean sameScenery=map==scenerySourceMap&&revision.equals(sceneryRevision);
+        if(!map.nativeSite())staticShellChunks(map);
+        // The native terrain renderer has its own owner and caches; do not
+        // manufacture a House shell for a native authored site.
+        int count=map.nativeSite()?0:scenery(map).instances().size();
+        return new StaticPreparation(revision,map.nativeSite()||sameShell,
+            map.nativeSite()||sameScenery,preparedShellChunks.size(),
+            preparedShellFaces.size(),count,System.nanoTime()-started);
+    }
     private List<Face> preparedShellFaces=List.of();
     private List<ShellChunk> preparedShellChunks=List.of();
     // Material IDs belong to authored immutable chunks; preparing them once
@@ -2963,6 +2986,7 @@ public final class SceneRenderer {
     private final java.util.Set<Face> residentSceneryFaces=java.util.Collections.newSetFromMap(new java.util.IdentityHashMap<>());
     private int residentOmittedFaces;
     private Object residentSceneOwner;
+    private String residentSceneRevision;
     private void activateResidentScene(Object owner){
         // Settings are an immutable local snapshot, never host authority.
         // Recreate lighting and its dependent geometry once per APPLY, not on
@@ -2975,7 +2999,16 @@ public final class SceneRenderer {
             stableGpuMap=null;stableGpuRevision=null;
             residentSceneOwner=null;
         }
-        if(residentSceneOwner==owner)return;
+        String revision=owner instanceof HouseMap map
+            ?map.level().revision()+":"+map.hidingDensity():null;
+        if(residentSceneOwner==owner&&Objects.equals(residentSceneRevision,revision))return;
+        if(residentSceneOwner==owner){
+            // An editor or hiding-density revision must not reuse lighting
+            // probes or OpenGL readbacks from the previous authored topology.
+            // Ordinary door/light changes do NOT change this revision.
+            houseLightingMap=null;houseLighting=null;
+            stableGpuMap=null;stableGpuRevision=null;
+        }
         for(var chunk:residentScenery.values())releaseWorldChunk(chunk);
         residentScenery.clear();
         for(var auxiliary:auxiliaryWorld.values())for(var chunk:auxiliary.chunks())releaseWorldChunk(chunk);
@@ -2983,7 +3016,9 @@ public final class SceneRenderer {
         dynamicGeometry.clear();dynamicGeometryTriangles=0;dynamicGeometryMap=null;
         for(var chunk:castleStaticChunks)releaseWorldChunk(chunk);
         for(var chunk:castleAssemblies.values())releaseWorldChunk(chunk);
-        residentSceneOwner=owner;gpuSceneId=GpuWorldRenderer.nextId();pinnedGpuFrame=null;
+        residentSceneOwner=owner;residentSceneRevision=revision;
+        gpuSceneId=GpuWorldRenderer.nextId();pinnedGpuFrame=null;
+        lastUsableGpuFrame=null;
     }
     private void releaseWorldChunk(ResidentWorldChunk chunk){
         for(var batch:chunk.batches.values())residentWorldBytes-=(long)batch.vertices().length*Float.BYTES;
