@@ -88,7 +88,7 @@ public final class LevelOpeningCinematicVisualTest {
                 "World-space van approach must show textured 3D geometry: "+filename);
             image(root,filename,witness.image());
         }
-        check(warm.passes()>0&&warm.passes()<=2&&warm.staticShellChunks()>0,
+        check(warm.passes()>0&&warm.passes()<=3&&warm.staticShellChunks()>0,
             "World prewarm must actually retain constructed shell chunks");
 
         try(var cinematic=new LevelOpeningCinematic(map,gameplay,640,360)){

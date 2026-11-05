@@ -7,7 +7,7 @@ A case starts with a genuine world-space 3D aerial view, descends over the actua
 ## Stage 1 — implemented
 
 - A dedicated low-resolution (180–300p) 3D software renderer runs off the Swing event thread, even on systems lacking OpenGL. It never competes for the active GPU context.
-- The real gameplay SceneRenderer makes up to two low-resolution camera prewarm passes before the final initial gameplay frame. Pass starts are checked against a 5-second budget, and its camera and framebuffer dimensions are then restored. This admits the existing static shell chunks and nearby scenery/light visibility into the game's own caches.
+- The real gameplay SceneRenderer makes up to three low-resolution camera prewarm passes before the final initial gameplay frame. Pass starts are checked against a 5-second budget, and its camera and framebuffer dimensions are then restored. The third pass targets the actual first authored interior when the five-second budget permits. This admits static shell chunks and nearby scenery/light visibility into the game's own caches.
 - The opening readiness window is bounded at seven seconds; a failed preview displays preparation status rather than the regressed map graphic. The transition can be skipped, and a failed cinematic cannot block mission access.
 - An automated renderer test records actual aerial/loading, van approach, rear-door crossing, interior aisle and exact player-camera handoff PNGs plus prewarm timing and geometry statistics.
 - Existing heavy scene geometry and materials are not duplicated into a separate cinematic-owned gameplay cache.
@@ -35,3 +35,9 @@ CPU work may happen in workers; GPU resource creation must happen on the actual 
 Record true loading elapsed time, additional prewarm passes, generated shell chunks, submitted GPU bytes, geometry hits, light-ray counts and initial gameplay frame time. Compare cold and warmed p50/p95/p99, maintain a 30 FPS target (33.3ms budget) and run real door-open/close profiler checks. The earlier door-toggle submission-recorder p95 of 105.8ms is a separate open runtime problem; a loading prewarm alone does not fix a door-triggered cache invalidation.
 
 Only stage 1 is implemented and committed here. Stages 2/3 are specific plans, not a claim that the entire level is already baked.
+
+## Measured runtime improvement (2026-11-04)
+
+The House door submission-recorder A/B on Windows run 41963610654 kept the same authored map and 24 open/close toggles. A bounded 150,000-entry alternate stationary ray archive, now applied to House shell material batches as well as retained props, reduced cumulative shadow rays from 163,089 to 111,503 (31.6%). Recorded toggle p50 changed from 123.6 ms to 93.1 ms and p95 from 160.3 ms to 125.4 ms, while p99 grew from 361.9 ms to 393.5 ms. These results are **not OpenGL frame times** and do not prove worst-case 30 FPS. The initial unbaked door transition and resident VBO updates remain a priority.
+
+Static shell material lists and material-face grouping are prepared with the scene rather than recreated every frame; region revisions are cached by the exact lighting generation. A true door change still revalidates affected light cells, and any unrelated portal or global edit discards the door-state archive instead of reusing stale rays. Disabled A/B operation is available with the Java property `beckenburg.lighting.doorShadowArchive.disabled=true`.

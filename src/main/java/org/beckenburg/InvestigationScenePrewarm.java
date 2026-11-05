@@ -28,9 +28,10 @@ final class InvestigationScenePrewarm {
         int passes=0;int chunks=0;long faces=0;
         try{
             // Authoring/visibility warmup, not a fake loading percentage.
-            // The initial shot samples a mid-distance view of the site, the
-            // approach samples outside van geometry, and final game render
-            // supplies the near-hunter view. Only two extra passes.
+            // The first two passes cover the site and the van approach.
+            // The third (budget-permitting) pass warms the first authored
+            // interior so the player does not pay the cold wall/ceiling
+            // cache cost the moment they leave the expedition van.
             scene.setRenderSize(Math.min(480,width),Math.min(270,height));
             for(double progress:new double[]{.60,.84}){
                 if(cancelled.getAsBoolean()||Thread.currentThread().isInterrupted()
@@ -41,6 +42,24 @@ final class InvestigationScenePrewarm {
                 var shell=scene.shellChunkStats();
                 chunks=Math.max(chunks,shell.totalChunks());
                 faces=Math.max(faces,shell.totalFaces());
+            }
+            if(!cancelled.getAsBoolean()&&!Thread.currentThread().isInterrupted()
+                    &&System.nanoTime()-start<TimeUnit.SECONDS.toNanos(5)){
+                // Warm the genuine authored room-zero spawn, never an invented
+                // generic building rectangle. No map/door/host state changes.
+                var entry=map.spawn(0);
+                if(Double.isFinite(entry.x()+entry.y()+entry.z())){
+                    scene.x=entry.x();scene.eyeHeight=entry.y()+1.62;
+                    scene.z=entry.z();
+                    scene.yaw=Math.atan2(map.van().placement().x()-entry.x(),
+                        map.van().placement().z()-entry.z());
+                    scene.pitch=-.10;
+                    scene.drawPractice(map,List.of(),0);
+                    passes++;
+                    var shell=scene.shellChunkStats();
+                    chunks=Math.max(chunks,shell.totalChunks());
+                    faces=Math.max(faces,shell.totalFaces());
+                }
             }
         }finally{
             saved.apply(scene);
