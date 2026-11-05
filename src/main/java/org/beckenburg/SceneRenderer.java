@@ -2917,16 +2917,22 @@ public final class SceneRenderer {
                 // Solid lintels are ordinary thick wall surfaces, not fake closed arches.
                 double left=wall.horizontal()?wall.x0():wall.z0();
                 double right=wall.horizontal()?wall.x1():wall.z1();
-                double y0=wall.bottom(),y1=y0+(Math.abs(wall.portalCenter()-15.5)<.01
-                    &&Math.abs(wall.z0()-34)<.01?2.95:CastleHubArchitecturalPlan.DOOR_HEIGHT);
+                double y0=wall.bottom();
+                double y1=CastleHubArchitecturalPlan.portalHead(wall,walls);
+                // Frame remains strictly INSIDE the physical opening. The
+                // previous trim was centred across its boundary and extended
+                // above the real stone lintel; both errors caused intersecting
+                // surfaces and apparent geometry bleeding into upper rooms.
+                double trim=Math.min(.15,(right-left)*.10);
+                double rise=Math.max(0,y1-y0-trim);
                 if(wall.horizontal()){
-                    box(out,left-.085,y0,wall.z0()-.16,.17,y1-y0,.32,0x786c5b);
-                    box(out,right-.085,y0,wall.z0()-.16,.17,y1-y0,.32,0x786c5b);
-                    box(out,left-.12,y1-.13,wall.z0()-.18,right-left+.24,.19,.36,0x9b8970);
+                    box(out,left,y0,wall.z0()-.16,trim,rise,.32,0x786c5b);
+                    box(out,right-trim,y0,wall.z0()-.16,trim,rise,.32,0x786c5b);
+                    box(out,left,y1-trim,wall.z0()-.18,right-left,trim,.36,0x9b8970);
                 }else{
-                    box(out,wall.x0()-.16,y0,left-.085,.32,y1-y0,.17,0x786c5b);
-                    box(out,wall.x0()-.16,y0,right-.085,.32,y1-y0,.17,0x786c5b);
-                    box(out,wall.x0()-.18,y1-.13,left-.12,.36,.19,right-left+.24,0x9b8970);
+                    box(out,wall.x0()-.16,y0,left,.32,rise,trim,0x786c5b);
+                    box(out,wall.x0()-.16,y0,right-trim,.32,rise,trim,0x786c5b);
+                    box(out,wall.x0()-.18,y1-trim,left,.36,trim,right-left,0x9b8970);
                 }
             }else architecturalWall(out,wall);
         }
