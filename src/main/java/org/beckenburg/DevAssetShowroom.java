@@ -779,11 +779,16 @@ public final class DevAssetShowroom implements AutoCloseable {
                 int[] visiblePixels=scene.pixels();
                 for(int n=0;n<baseline.length;n++)
                     if(baseline[n]!=visiblePixels[n])changed++;
-                if(changed<=20)failedBays++;
+                // Nearly every pixel changing means we are inside a huge
+                // mesh or looking at a solid backing plane, not inspecting a
+                // bay. This was observed with the cannery boiler occupying
+                // 256,000/256,000 pixels from the previous bay.
+                boolean readable=changed>20 && changed<baseline.length*0.60;
+                if(!readable)failedBays++;
                 visibility.append(wingNumber+1).append(',').append(floor+1)
                     .append(',').append(bayIndex+1).append(',')
                     .append(members.size()).append(',').append(changed)
-                    .append(',').append(changed>20).append('\n');
+                    .append(',').append(readable).append('\n');
                 // Caption below the actual unmodified render so it never
                 // conceals subtle UV seams or ground-contact problems.
                 BufferedImage sheet=new BufferedImage(640,490,BufferedImage.TYPE_INT_RGB);
