@@ -50,15 +50,23 @@ def make_page(site: dict, objects: list[dict], page_number: int) -> tuple[bytes,
         floor = max_model_floor(model["parts"])
         # The low 10 cm plinth has its top at zero; every original model is
         # moved by -minY to sit on the plane while keeping its source size.
+        # Preserve full source scale, enlarging the review plate for long
+        # assets without overlapping the fixed 7m contact-room grid.
+        bounds, _, _ = fit.footprint(model, 0, 0, 0)
+        stand_width = round(max(5.65, 2*max(abs(bounds[0]),abs(bounds[2]))+.32), 3)
+        stand_depth = round(max(5.60, 2*max(abs(bounds[1]),abs(bounds[3]))+.32), 3)
+        if stand_width > 6.6 or stand_depth > 6.6:
+            raise ValueError("Individual large-asset review needed: "+model["id"])
         pieces.append({"type": "box", "p": [x, -.06, z],
-                       "size": [5.65, .10, 5.60], "material": "stone"})
-        pieces.append({"type": "box", "p": [x, -.005, z - 2.70],
-                       "size": [5.65, .015, .18], "material": "accent"})
+                       "size": [stand_width, .10, stand_depth], "material": "stone"})
+        pieces.append({"type": "box", "p": [x, -.005, z-stand_depth/2+.10],
+                       "size": [stand_width, .015, .18], "material": "accent"})
         for part in model["parts"]:
             pieces.append(positioned_part(part, x, -floor, z))
         labels.append({"slot": i + 1, "id": model["id"], "title": model["label"],
                        "source_ground_offset": round(-floor, 6),
                        "stand_center": [x, 0, z],
+                       "stand_dimensions_m": [stand_width, stand_depth],
                        "review_only": True})
     slug = site["id"].lower().replace("-", "_")
     name = "level_blockout_kit_" + slug + "_p" + str(page_number + 1).zfill(2)

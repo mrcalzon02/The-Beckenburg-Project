@@ -56,7 +56,10 @@ def render()->bytes:
             tags.append("review_floor_contact_offset")
         if mount in ("wall","ceiling","roof"):
             tags.append("review_attachment_anchor")
-        if width>5.6 or depth>5.6:
+        # The kit builder sizes stands up to 6.6m on 7m centers.
+        plate_width=max(5.65,2*max(abs(bbox[0]),abs(bbox[2]))+.32)
+        plate_depth=max(5.60,2*max(abs(bbox[1]),abs(bbox[3]))+.32)
+        if plate_width>6.6 or plate_depth>6.6:
             tags.append("review_gallery_stand_overflow")
         if high-low>4.2:
             tags.append("review_vertical_scale")

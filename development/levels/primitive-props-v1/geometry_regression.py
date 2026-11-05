@@ -138,3 +138,12 @@ assert len(item("rail_straight_track_bay")["parts"])>=11
 assert len(item("lighthouse_rescue_lifebuoy")["parts"])>=12
 assert all(len(s["prototypes"])==len(set(s["prototypes"])) for s in catalog["sites"])
 print("PASS: 32 location-specific independent GLBs, source-only flags and measured fit")
+
+# The motel guest bed no longer floats 12cm above its source floor.
+bed=item("motel_guest_bed")
+bounds,low,high=fit.footprint(bed,0,0,0)
+assert abs(low)<1e-7 and len(bed["parts"])==10
+raw,tri=glb(bed)
+doc,committed=read_glb(ROOT/"models"/(bed["id"]+".glb"))
+assert raw==committed and tri>0 and doc["extras"]["runtimeApproved"] is False
+print("PASS: grounded motel guest bed")

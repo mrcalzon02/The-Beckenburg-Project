@@ -35657,9 +35657,65 @@
             0.17
           ],
           "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.71,
+            0.1,
+            -0.89
+          ],
+          "size": [
+            0.14,
+            0.2,
+            0.15
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.71,
+            0.1,
+            0.89
+          ],
+          "size": [
+            0.14,
+            0.2,
+            0.15
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.71,
+            0.1,
+            -0.89
+          ],
+          "size": [
+            0.14,
+            0.2,
+            0.15
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.71,
+            0.1,
+            0.89
+          ],
+          "size": [
+            0.14,
+            0.2,
+            0.15
+          ],
+          "material": "wood"
         }
       ],
-      "notes": "Separate bed frame/blanket/pillows; no sleep or spawn state.",
+      "notes": "Grounded low-poly guest bed with four timber feet touching local y=0, distinct upholstered layers and noninteractive headboard.",
       "authoring_stage": "primitive_blockout",
       "runtime_approved": false,
       "authoring_hints": {
