@@ -29,12 +29,18 @@ public final class TwinBodyVisualTest {
             // accepted merely for alpha coverage or dimensions. GrabCut previously
             // erased Twin A's side-view hair/feet and Twin B's three-quarter feet.
             // Preserve these exact source-derived silhouettes in the shipped JAR.
-            if(facing==2)
-                check(fingerprint(a)==-6517389577909631165L,
-                    "Twin A side-view head/feet crop differs from approved complete art");
-            if(facing==5)
-                check(fingerprint(b)==4819383925312170537L,
-                    "Twin B three-quarter feet crop differs from approved complete art");
+            if(facing==2){
+                long actual=fingerprint(a),approved=-6517389577909631165L;
+                check(actual==approved,
+                    "Twin A side-view head/feet crop differs from approved complete art: actual="
+                        +actual+" approved="+approved);
+            }
+            if(facing==5){
+                long actual=fingerprint(b),approved=4819383925312170537L;
+                check(actual==approved,
+                    "Twin B three-quarter feet crop differs from approved complete art: actual="
+                        +actual+" approved="+approved);
+            }
             check(DirectionalSprites.frame("ancient_twins_a",facing)==a,
                 "Ancient member A must reuse its proper parent, not a third person");
             check(DirectionalSprites.frame("ancient_twins_b",facing)==b,
