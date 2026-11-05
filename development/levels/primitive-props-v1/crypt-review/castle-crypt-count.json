@@ -4,8 +4,8 @@
   "site": "CASTLE",
   "expanded_castle_chapel_plan_sha256": "8811f7757cef5ff5238d8bae4e3f3f02bc3134516832ee9b1a3225ef35622c35",
   "source_proposal_sha256": "4aa4f13d7d6df29bc50b0d3f36996aa069445295f3125cc301d530d6f23d92ae",
-  "source_model_catalog_sha256": "aa13d9025d03c169c064121645e58781bb8b32800ca2e1d9f1c25697ad857948",
-  "model_count": 142,
+  "source_model_catalog_sha256": "806563eb8f9c74aa3ddb621d35a42a72a121d285e98f6278473fe87af7a605ca",
+  "model_count": 160,
   "total_sarcophagi_proposed": 8,
   "total_sarcophagi_installed_in_playable_castle": 0,
   "count_by_crypt_chamber": {
@@ -18,7 +18,7 @@
     "level_blockout_sarcophagus_plain": 3
   },
   "preview_triangles": 1200,
-  "preview_sha256": "8f8bcf5ad9d39434b56e8aa4315cf2aff6c9e75e51e0425f72a4754b755c8299",
+  "preview_sha256": "57742f8d2e615efbd555ab1d1b322f54a84be429bd98df70f4061a9eb5fba09e",
   "floor_elevation_m": -3,
   "central_aisle_width_m": 2,
   "checks": [
