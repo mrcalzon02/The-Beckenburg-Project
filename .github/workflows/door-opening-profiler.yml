@@ -9,6 +9,7 @@ on:
       - 'src/test/java/org/beckenburg/ShellRegionRevisionCacheTest.java'
       - 'src/test/java/org/beckenburg/HouseDoorShadowCacheParityTest.java'
       - 'src/test/java/org/beckenburg/StationaryDoorShadowRetentionTest.java'
+      - 'src/test/java/org/beckenburg/StationaryDoorShadowAlternationTest.java'
       - 'src/test/java/org/beckenburg/ResidentVertexPayloadTest.java'
       - 'src/main/java/org/beckenburg/HouseMap.java'
       - 'src/main/java/org/beckenburg/SceneRenderer.java'
@@ -68,6 +69,13 @@ jobs:
           javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\StationaryDoorShadowRetentionTest.java
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.StationaryDoorShadowRetentionTest
+          if errorlevel 1 exit /b 1
+      - name: Validate alternating door-state shadow archive versus fresh physical rays
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\StationaryDoorShadowAlternationTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.StationaryDoorShadowAlternationTest
           if errorlevel 1 exit /b 1
       - name: Capture CPU-software House door frame profile
         continue-on-error: true
