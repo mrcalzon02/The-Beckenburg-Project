@@ -8,6 +8,7 @@ on:
       - 'src/main/java/org/beckenburg/InvestigationScenePrewarm.java'
       - 'src/main/java/org/beckenburg/InvestigationGame.java'
       - 'src/test/java/org/beckenburg/LevelOpeningCinematicVisualTest.java'
+      - 'src/test/java/org/beckenburg/LevelOpeningFlyoverTest.java'
       - '.github/workflows/true-3d-opening.yml'
   workflow_dispatch:
 permissions:
