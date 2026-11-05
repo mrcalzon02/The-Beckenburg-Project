@@ -6,6 +6,7 @@ on:
     paths:
       - '.github/workflows/door-opening-profiler.yml'
       - 'src/test/java/org/beckenburg/DoorOpeningFrameProfile.java'
+      - 'src/test/java/org/beckenburg/ShellRegionRevisionCacheTest.java'
       - 'src/test/java/org/beckenburg/HouseDoorShadowCacheParityTest.java'
       - 'src/test/java/org/beckenburg/StationaryDoorShadowRetentionTest.java'
       - 'src/test/java/org/beckenburg/ResidentVertexPayloadTest.java'
@@ -47,6 +48,13 @@ jobs:
           javac --release 17 -encoding UTF-8 -cp build\\classes -d build\\test src\\test\\java\\org\\beckenburg\\PortalLightCellFilterTest.java
           if errorlevel 1 exit /b 1
           java -ea -cp "build\\classes;build\\test" org.beckenburg.PortalLightCellFilterTest
+      - name: Assert static shell materials and lighting revisions are reused between frames
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\ShellRegionRevisionCacheTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.ShellRegionRevisionCacheTest
+          if errorlevel 1 exit /b 1
       - name: Compare warmed and fresh House door shadow responses
         continue-on-error: true
         shell: cmd
