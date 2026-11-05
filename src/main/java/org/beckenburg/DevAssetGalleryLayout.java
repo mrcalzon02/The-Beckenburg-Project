@@ -50,7 +50,10 @@ public final class DevAssetGalleryLayout {
     }
     public static int bayAtZ(double z){
         if(!Double.isFinite(z))throw new IllegalArgumentException("Nonfinite gallery position");
-        return clampBay((int)Math.floor((z+.5)/BAY_DEPTH_M));
+        // Entering a bay starts five metres before its first exhibit row.
+        // The boundary at Z=10.75 lies AFTER bay 1's rear stand (10.5)
+        // and BEFORE bay 2's entrance (11.0); do not mislabel arrival.
+        return clampBay((int)Math.floor((z+5.25)/BAY_DEPTH_M));
     }
     public static double floorY(int floor){return clampFloor(floor)*FLOOR_HEIGHT_M;}
     public static double standX(int slot){
