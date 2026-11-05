@@ -88,9 +88,21 @@ def route_clear(rect,zone,layout,recipe):
         buffer=link["width"]/2+recipe["route_clearance_extra_m"]
         check=inflate(rect,buffer)
         for a,b in zip(link["points"],link["points"][1:]):
-            if max(a[1],b[1])<y-1.0 or min(a[1],b[1])>y+2.2:
-                continue
-            if line_hits_box((a[0],a[2]),(b[0],b[2]),check):
+            # Clip an inclined connector to the candidate floor's vertical
+            # band before checking its plan footprint. Its distant, lower
+            # staircase must not block furnishings at the upper landing.
+            lo,hi=y-1.0,y+2.2
+            dy=b[1]-a[1]
+            if abs(dy)<1e-10:
+                if not lo<=a[1]<=hi:continue
+                t0,t1=0.0,1.0
+            else:
+                ta=(lo-a[1])/dy;tb=(hi-a[1])/dy
+                t0=max(0.0,min(ta,tb));t1=min(1.0,max(ta,tb))
+                if t0>t1:continue
+            p=(a[0]+(b[0]-a[0])*t0,a[2]+(b[2]-a[2])*t0)
+            q=(a[0]+(b[0]-a[0])*t1,a[2]+(b[2]-a[2])*t1)
+            if line_hits_box(p,q,check):
                 return False
     return True
 
