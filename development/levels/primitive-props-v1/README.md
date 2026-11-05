@@ -370,3 +370,18 @@ No source asset is automatically imported into a level, promoted to a runtime ap
 **15 additional independent primitive GLBs** extend the school/college/academy (cafeteria table, wall coat hooks, assembly stage, display globe), hospital/mortuary (IV stand, folding screens, sterilizer, bedside call controls), dam (open deck catwalk, open service hatch, guard screen), cannery/ship (overhead hook rail, supported rinse bench, wheeled trolley) and prison (visitation counter) map kits.
 
 All models are **source-only** with provisional attachments and never modify gameplay scenes, lights, navmesh, collision or editor asset approvals. The new independent regression exercises contact geometry, missing wall backplates, source model byte identity and all new GLB files. Other inherited tall-object, aperture and attachment warnings are still diagnostics, not launch-test blockers.
+
+## Dedicated primitive geometry refinement batch (15 more source-only variants)
+
+`refine.py` defines **15 individually selectable, low-polygon refinement studies**, separate from the original **298-model** planning catalog. These are not silent replacements or playable Castle/mapping changes. Source names use the `level_blockout_refined_*` prefix, and deterministic output goes to [refinement/](refinement/) with a per-model GLB, a checked JSON manifest, and three true-scale six-slot contact-room review models.
+
+Run `python development/levels/primitive-props-v1/refine.py` to regenerate, then the same command with `--check` to check exact bytes. The existing `primitive-map-props.yml` CI also validates each output using the independent GLB/PNG decoder, checks its SHA-256, and commits the generated results with bounded, non-force retries.
+
+The new physical constructions prioritize site-specific silhouettes and corrected contact geometry:
+
+- Castle: open masonry crypt niche (no fake solid opening), sarcophagus **support bier** (not an added burial inventory item), and separate five-candle candelabrum.
+- Domestic and institutional: iron chimney stove, freestanding coat rack, castored mortuary instrument trolley, and a barred visitation counter.
+- Heavy site equipment: mechanical railway semaphore, eight-braced lighthouse optic with segmented glass bands, four-wheel open ore cart, sawmill table with visibly separate blade teeth, and freestanding cannery hook rail.
+- Outdoor and maritime: camp washstand, bolted dual-horn wharf bollard, and open-slat coastal battery vent cage.
+
+**Important limitations:** These 15 are **additive authoring candidates**, so the main 298-item site assignments, 61 route-fit proposals, and eight proposed Castle sarcophagus locations are unchanged. No model is registered in the runtime/editor production asset list, mounted into a real room, assigned interactivity, or certified for collision, navigation, lighting, multiplayer, final UV art, or in-engine appearance. The independent three-page model contact room is for dimensional review only. Follow the native four-angle inspection and map-fitness gates before promoting a refined model.
