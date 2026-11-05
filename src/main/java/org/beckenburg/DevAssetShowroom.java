@@ -200,7 +200,12 @@ public final class DevAssetShowroom implements AutoCloseable {
     }
     private void inspect(DevAssetReviewCatalog.Entry asset){
         var a=DevAssetReviewCatalog.audit(asset);
-        details.setText("REAL RUNTIME ASSET\n"+asset.key()+
+        String context=asset.id().startsWith("level_blockout_")
+            ?"SOURCE-ONLY PRIMITIVE STUDY / NOT GAMEPLAY APPROVED"
+            :asset.kind()==DevAssetReviewCatalog.Kind.SOURCE_ONLY
+                ?"SOURCE-ONLY MODEL / NOT GAMEPLAY APPROVED"
+                :"REAL RUNTIME ASSET";
+        details.setText(context+"\n"+asset.key()+
             "\nDecoder: "+a.state()+
             "\nTriangles: "+a.triangles()+"; materials: "+a.materials()+
             "\nOriginal texture samples: "+a.textureSamples()+
@@ -401,9 +406,15 @@ public final class DevAssetShowroom implements AutoCloseable {
         DevAssetReviewCatalog.Entry e=catalog.getSelectedValue();
         if(e==null&&selected>=0&&selected<bay.size())e=bay.get(selected);
         if(e==null){status.setText("Choose an asset first");return;}
+        // A deliberately unfinished graybox may be reviewed for geometry,
+        // but must never be logged as visually production-approved.
+        if(e.id().startsWith("level_blockout_")&&verdict.equals("VISUAL_APPROVED"))
+            verdict="GRAYBOX_REVIEWED";
         String comment=JOptionPane.showInputDialog(window,
             verdict.equals("NEEDS_REPAIR")?"Describe the visible issue (UV/texture/sprite/model):":
-                "Visual review note (original source fidelity verified):",
+                verdict.equals("GRAYBOX_REVIEWED")
+                    ?"Graybox proportions/placement review note (not production approval):"
+                    :"Visual review note (original source fidelity verified):",
             "DEV ROOM / "+e.key(),JOptionPane.PLAIN_MESSAGE);
         if(comment==null)return;
         try{
