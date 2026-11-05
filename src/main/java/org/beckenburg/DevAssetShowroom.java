@@ -467,8 +467,7 @@ public final class DevAssetShowroom implements AutoCloseable {
                 " / FLOOR "+(floor+1)+" / BAY "+(bayNumber+1),18,29);
             for(int i=0;i<bay.size();i++){
                 var item=bay.get(i);
-                String name=(i+1)+" "+item.id();
-                if(name.length()>53)name=name.substring(0,50)+"...";
+                String name=(i+1)+" "+compactReviewId(item.id(),50);
                 d.setColor(i==selected?new Color(255,222,138):new Color(220,226,220));
                 d.drawString(name,18,48+i*12);
             }
@@ -797,13 +796,12 @@ public final class DevAssetShowroom implements AutoCloseable {
                     g.setColor(new Color(16,18,24));g.fillRect(0,0,640,490);
                     g.drawImage(scene.image(),0,0,null);
                     g.setColor(Color.WHITE);g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,11));
-                    g.drawString("SOURCE REVIEW WING "+(wingNumber+1)+
+                    g.drawString("DEV MODEL REVIEW WING "+(wingNumber+1)+
                         " / FLOOR "+(floor+1)+" / BAY "+(bayIndex+1)+
-                        " (NOT GAMEPLAY APPROVED)",12,416);
+                        " (APPROVAL STATUS IN CSV)",12,416);
                     for(int slot=0;slot<members.size();slot++){
                         var item=members.get(slot);
-                        String label=(slot+1)+" "+item.id();
-                        if(label.length()>33)label=label.substring(0,30)+"...";
+                        String label=(slot+1)+" "+compactReviewId(item.id(),25);
                         g.drawString(label,10+(slot%3)*213,440+(slot/3)*20);
                     }
                 }finally{g.dispose();}
@@ -820,7 +818,7 @@ public final class DevAssetShowroom implements AutoCloseable {
             "mode=3 real floor decks / 4 bays each / 6 individually reviewable stands\n"+
             "wing="+(wingNumber+1)+"\nmodels="+wing.size()+
             "\nimages="+images+"\nundecodableModels="+failedModels+
-            "\ninvisibleBays="+failedBays+"\nsourceOnlyNotGameApproved=true\n"+
+            "\ninvisibleBays="+failedBays+"\npreviewDoesNotModifyApproval=true\n"+
             "Models shown on each floor are selected by world camera altitude; "+
             "captures are source-review evidence, not gameplay approval.\n";
         Files.writeString(folder.resolve("gallery-summary.txt"),status,StandardCharsets.UTF_8);
@@ -932,6 +930,18 @@ public final class DevAssetShowroom implements AutoCloseable {
             StandardCharsets.UTF_8);
         System.out.println("Captured DEV infrastructure via actual SceneRenderer: "+
             totalChanged+" changed pixels in "+folder);
+    }
+    /** Common graybox prefixes hide the one name that distinguishes a
+     * model on a six-stand screenshot. Keep the source ID unchanged in the
+     * CSV, and present its distinctive suffix beneath each real render.
+     */
+    private static String compactReviewId(String id,int maxChars){
+        String shortName=id.startsWith("level_blockout_refined_")
+            ?id.substring("level_blockout_refined_".length())
+            :id.startsWith("level_blockout_")
+                ?id.substring("level_blockout_".length()):id;
+        return shortName.length()<=maxChars?shortName:
+            shortName.substring(0,Math.max(1,maxChars-3))+"...";
     }
     private static String csv(String value){return "\""+value.replace("\"","\"\"").replace("\n"," ")+"\"";}
     public static void main(String[] args)throws Exception{
