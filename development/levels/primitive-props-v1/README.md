@@ -1,13 +1,13 @@
 # Map-specific primitive prop blockouts (v1)
 
-The authoritative planning backlog is [catalog.json](catalog.json), which maps **142 individual study models across 28 planned maps plus the Vale Mortuary expansion**. It augments the existing `development/levels/model-requirements/*.json` files rather than replacing their full room-by-room checklists.
+The authoritative planning backlog is [catalog.json](catalog.json), which maps **160 individual study models across 28 planned maps plus the Vale Mortuary expansion**. It augments the existing `development/levels/model-requirements/*.json` files rather than replacing their full room-by-room checklists.
 
 ## What this package is
 
-- Measured, ground-origin, Y-up glTF 2.0 geometry in metres: basic boxes, faceted cylinders, and an enclosed tent prism. The colors are placeholder material factors over a deliberately tiny **valid embedded 2×2 PNG swatch**, not final authored UV textures.
+- Measured, ground-origin, Y-up glTF 2.0 geometry in metres: basic boxes, faceted cylinders, and an enclosed tent prism. The model material colors are placeholder glTF factors, now complemented by **individually embedded deterministic 32×32 procedural RGB albedo studies** with nondegenerate planar UV0. These do not replace final hand-authored textures.
 - Each `level_blockout_*.glb` is an individually selectable study asset. No duplicate of any existing finished `level_*` model is overwritten.
 - The catalogue's `sites[].prototypes` field is an **assignment proposal**, not an automatic scene placement. No map availability, collision, navmesh, lighting, acoustics, interactivity or network state has been modified.
-- The collection contains **142 distinct GLB models** (98 added in the expanded-map pass, followed by three additional closed sarcophagus variants). It covers structural opening/rails, Castle service and training fixtures, academic/hospital/chapel and domestic interiors, forests/campgrounds/caverns, generator/electrical studies, maritime/industrial scenes, lightstation/lodge/bunker/shaft structures and mortuary fixtures. Each study remains independent and replaceable.
+- The collection contains **160 distinct GLB models** (98 expanded-map additions, three countable sarcophagi, and 18 additional relic/display definitions). It covers structural opening/rails, Castle service and training fixtures, academic/hospital/chapel and domestic interiors, forests/campgrounds/caverns, generator/electrical studies, maritime/industrial scenes, lightstation/lodge/bunker/shaft structures and mortuary fixtures. Each study remains independent and replaceable.
 - Existing source LOD/original model assets remain unchanged. Completed prop models require geometry refinement, proper UV/materials, origin/orientation review, scene placement, and actual editor/renderer acceptance.
 
 ## Rebuild / inspect
@@ -129,7 +129,7 @@ is a real stop condition **for that proposal only**, not a release failure.
 ## Expanded map-model library — 139 models, 29 map kits (verified)
 
 The expanded worklist has been authored as **98 additional primitive GLBs**,
-bringing the catalog to **142 independent meshes**, including three later counted crypt variants. The major construction
+bringing the catalog to **160 independent meshes**, including three closed sarcophagus variants and twelve individual Castle relic artifacts. The major construction
 groups include:
 
 - **Academy, asylum, college, parish and school:** cloister bays, administrator
@@ -234,3 +234,71 @@ before converting **proposed** counts to **installed** counts.
 python development/levels/primitive-props-v1/crypt.py
 python development/levels/primitive-props-v1/crypt.py --check
 \`\`\`
+
+
+## Relic collection and model refinement — source geometry completed
+
+The planned **captured-relic vault is a storage/exhibition area, not a
+sarcophagus crypt**. Current development now includes **12 distinct
+physical relic meshes**:
+
+Mourning locket; votive handbell; bronze astrolabe; sealed funerary urn;
+tarnished black mirror; padlocked folio; lidded reliquary box; pilgrim
+lantern; ossuary keys; closed censer; ceramic funerary mask; and ceremonial
+chalice.
+
+Each is an individual named source-only GLB in [models/](models/), not an
+invisible generic placeholder. The set also includes **six new display or
+handling fixtures** (padded tray, locking showcase, barred shelf, placard,
+repair stand and tall open-frame pedestal), and an improved existing relic
+containment plinth/cage. This creates **18 additional individual model
+definitions** beyond the previous 142; the containment plinth refinement
+does not create another model ID.
+
+The [relic-review inventory](relic-review/relic-inventory.json) counts **12
+separate relics in 12 open-frame stands**, split into two banks of six, and
+keeps a protected central approach near the planned vault stair. Both banks
+have actual 3D binary reviews:
+[west-vault-bank.glb](relic-review/west-vault-bank.glb) and
+[east-vault-bank.glb](relic-review/east-vault-bank.glb).
+
+**Important:** Twelve is a proposed artifact-display collection,
+**not 12 actual captured relics or 12 playable Castle installations**.
+Collection names are art-study labels, not lore or ghost identities.
+The in-engine evidence, ritual-tier, captured-item and multiplayer systems
+remain authoritative. This source package does NOT silently add treasure,
+lore rewards or objects to campaign inventory, and the expanded Castle plan
+uses different coordinates from the native 44×36m headquarters.
+
+The 8 sarcophagi remain a **separate, still-unbuilt below-chapel crypt
+proposal**, not mixed into the captured-relic vault.
+
+### Refinement and acceptance checks
+
+Every source GLB now has spatial planar UV0 coordinates and a separate
+tiny (32×32) material-specific procedural RGB texture for each material:
+stone/mineral mottling, wood/leather grain, cloth weave, brushed metal,
+bronze/patina and ceramic tone variation. Textures use glTF nearest
+filtering and repeat wrapping, appropriate to a low-resolution PSX-style
+study. Glass remains **opaque placeholder material**; it is not a final
+translucent PBR/glass shader. Model shapes remain intentionally low-poly
+and require visual art review, proper authored albedo/normal maps where
+appropriate, and native renderer/collision inspection.
+
+The mesh builder and independent audit decode all embedded PNGs, check
+CRC/scanlines and meaningful source UV area, and enforce exact source-only
+approval boundaries. The [relics.py](relics.py) layout generator validates
+unique identities, physical support area, fit under the roof of the
+review case, side-bank separation and reserved stair/aisle.
+
+\`\`\`bash
+python development/levels/primitive-props-v1/build.py --check
+python development/levels/primitive-props-v1/relics.py --check
+python development/levels/primitive-props-v1/audit.py
+\`\`\`
+
+The \`CastleRelicSourceDecodeTest\` runs **actual game GLB decoding and
+texture sampling**, with four-angle screenshots of representative models
+via the existing Windows developer-room workflow. The Java and screenshot
+checks are diagnostic, and the model count must not be mistaken for
+playable-scene integration.
