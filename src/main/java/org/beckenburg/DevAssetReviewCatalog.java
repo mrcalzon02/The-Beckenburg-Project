@@ -18,6 +18,9 @@ public final class DevAssetReviewCatalog {
     /** Graybox studies are reviewable in a source checkout only; never runtime-approved. */
     private static final java.nio.file.Path PRIMITIVE_PROTOTYPES =
         java.nio.file.Path.of("development","levels","primitive-props-v1","models");
+    private static final java.nio.file.Path PRIMITIVE_LAYOUT_PREVIEWS =
+        java.nio.file.Path.of("development","levels","primitive-props-v1","previews");
+    private static final String LAYOUT_REVIEW_PREFIX="level_blockout_layout_";
     public enum Kind { HUNTER, GHOST, CASTLE_NPC, EQUIPMENT, IMPORTED, WORLD_MODEL, SOURCE_ONLY }
     public record Entry(Kind kind,String id) {
         public String key(){return kind.name()+"/"+id;}
@@ -94,6 +97,25 @@ public final class DevAssetReviewCatalog {
             }catch(java.io.IOException failure){
                 System.err.println("DEV ROOM primitive source catalog: "+failure.getMessage());
             }
+        // Complete multi-prop layout studies are separate source-only review meshes.
+        // They are NOT Castle/runtime scene data, nor individually placed props.
+        if(java.nio.file.Files.isDirectory(PRIMITIVE_LAYOUT_PREVIEWS,
+                java.nio.file.LinkOption.NOFOLLOW_LINKS))
+            try(var files=java.nio.file.Files.list(PRIMITIVE_LAYOUT_PREVIEWS)){
+                Set<String> known=new java.util.HashSet<>();
+                for(var existing:out)known.add(existing.id());
+                for(var file:files.filter(p->p.getFileName().toString()
+                        .matches("[a-z0-9-]{1,40}\\.glb")).toList()){
+                    String fileName=file.getFileName().toString();
+                    String id=LAYOUT_REVIEW_PREFIX+fileName.substring(0,fileName.length()-4);
+                    if(id.length()<=90&&!known.contains(id)){
+                        out.add(new Entry(Kind.SOURCE_ONLY,id));
+                        known.add(id);
+                    }
+                }
+            }catch(java.io.IOException failure){
+                System.err.println("DEV ROOM layout preview catalog: "+failure.getMessage());
+            }
         out.sort(Comparator.comparing((Entry e)->e.kind().ordinal()).thenComparing(Entry::id));
         return List.copyOf(out);
     }
@@ -104,9 +126,11 @@ public final class DevAssetReviewCatalog {
     public static GlbProps.Model sourceModel(String id)throws java.io.IOException{
         if(id==null||!id.matches("[A-Za-z0-9_-]{1,90}"))
             throw new java.io.IOException("invalid review-only model name");
-        java.nio.file.Path file=id.startsWith("level_blockout_")
-            ? PRIMITIVE_PROTOTYPES.resolve(id+".glb")
-            : java.nio.file.Path.of("assets","runtime","models",id+".glb");
+        java.nio.file.Path file=id.startsWith(LAYOUT_REVIEW_PREFIX)
+            ? PRIMITIVE_LAYOUT_PREVIEWS.resolve(id.substring(LAYOUT_REVIEW_PREFIX.length())+".glb")
+            : id.startsWith("level_blockout_")
+                ? PRIMITIVE_PROTOTYPES.resolve(id+".glb")
+                : java.nio.file.Path.of("assets","runtime","models",id+".glb");
         if(!java.nio.file.Files.isRegularFile(file,java.nio.file.LinkOption.NOFOLLOW_LINKS)
             ||java.nio.file.Files.size(file)>4_000_000)
             throw new java.io.IOException("source-only GLB unavailable or over budget");
