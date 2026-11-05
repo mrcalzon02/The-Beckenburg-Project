@@ -53,6 +53,25 @@ public final class LevelOpeningCinematicVisualTest {
             "Loading prewarm must restore the original render target");
         check(map.van().spawn(0).equals(start),
             "Prewarming must not move the real van, spawn or collision world");
+        // Save four real 3D camera frames through the van cargo entrance.
+        var pathCamera=new LevelOpeningFlyover(map,player);
+        var witness=new SceneRenderer();
+        witness.photographicSoftwareRaster();
+        witness.setRenderSize(426,240);
+        for(double time:new double[]{.90,.965,.975,1.0}){
+            var view=pathCamera.pose(time);
+            view.apply(witness);
+            witness.drawPractice(map,List.of(),0);
+            String filename=switch((int)Math.round(time*1000)){
+                case 900->"real-3d-approach-outside-van.png";
+                case 965->"real-3d-crossing-cargo-door.png";
+                case 975->"real-3d-inside-cargo-aisle.png";
+                default->"real-3d-hunter-camera-handoff.png";
+            };
+            check(diversity(witness.image())>45,
+                "World-space van approach must show textured 3D geometry: "+filename);
+            image(root,filename,witness.image());
+        }
         check(warm.passes()>0&&warm.passes()<=2&&warm.staticShellChunks()>0,
             "World prewarm must actually retain constructed shell chunks");
 
