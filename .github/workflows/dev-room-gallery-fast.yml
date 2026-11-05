@@ -1,0 +1,114 @@
+name: DEV Room Model Gallery - Fast Inspection
+
+on:
+  workflow_dispatch:
+    inputs:
+      kind:
+        description: 'Existing DEV catalog kind (ALL, SOURCE_ONLY, WORLD_MODEL, EQUIPMENT, IMPORTED...)'
+        required: false
+        default: 'SOURCE_ONLY'
+        type: string
+      filter:
+        description: 'Optional model ID substring, e.g. level_blockout_refined_ or relic_'
+        required: false
+        default: ''
+        type: string
+      wing:
+        description: 'Zero-based 72-model wing (0 = first wing)'
+        required: false
+        default: '0'
+        type: string
+      limit:
+        description: 'Maximum filtered candidates before wing selection; 0 = unlimited'
+        required: false
+        default: '72'
+        type: string
+  workflow_run:
+    workflows: ['Build primitive map prop grayboxes']
+    branches: [main]
+    types: [completed]
+  push:
+    branches: [main]
+    paths:
+      - 'src/main/java/org/beckenburg/DevAssetShowroom.java'
+      - 'src/main/java/org/beckenburg/DevAssetGalleryLayout.java'
+      - 'src/main/java/org/beckenburg/DevAssetReviewCatalog.java'
+      - 'src/test/java/org/beckenburg/DevAssetGalleryLayoutTest.java'
+      - '.github/workflows/dev-room-gallery-fast.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dev-room-model-gallery-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  native-model-gallery:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: windows-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Build the actual Windows Java model importer and renderer
+        shell: cmd
+        run: build.cmd package
+      - name: Verify stable three-floor gallery geometry and source paging
+        shell: cmd
+        run: |
+          if not exist build\\dev-gallery\\test mkdir build\\dev-gallery\\test
+          javac --release 17 -encoding UTF-8 -cp build\\beckenburg-game.jar -d build\\dev-gallery\\test src\\test\\java\\org\\beckenburg\\DevAssetGalleryLayoutTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\\beckenburg-game.jar;build\\dev-gallery\\test org.beckenburg.DevAssetGalleryLayoutTest
+          if errorlevel 1 exit /b 1
+      - name: Inspect selectable wing using native 3D renderer
+        shell: pwsh
+        env:
+          REVIEW_KIND: ${{ github.event_name == 'workflow_dispatch' && inputs.kind || 'SOURCE_ONLY' }}
+          REVIEW_FILTER: ${{ github.event_name == 'workflow_dispatch' && inputs.filter || '' }}
+          REVIEW_WING: ${{ github.event_name == 'workflow_dispatch' && inputs.wing || '0' }}
+          REVIEW_LIMIT: ${{ github.event_name == 'workflow_dispatch' && inputs.limit || '72' }}
+        run: |
+          $kind = $env:REVIEW_KIND.ToUpperInvariant()
+          if ($kind -notmatch '^(ALL|SOURCE_ONLY|WORLD_MODEL|EQUIPMENT|IMPORTED|HUNTER|GHOST|CASTLE_NPC)$') { throw "Invalid DEV model kind: $kind" }
+          [int]$wing = 0
+          [int]$limit = 0
+          if (![int]::TryParse($env:REVIEW_WING,[ref]$wing) -or $wing -lt 0 -or $wing -gt 999) { throw 'Wing index must be 0..999' }
+          if (![int]::TryParse($env:REVIEW_LIMIT,[ref]$limit) -or $limit -lt 0 -or $limit -gt 10000) { throw 'Limit must be 0..10000' }
+          $args = @('-Djava.awt.headless=true','-cp','build/beckenburg-game.jar',
+              'org.beckenburg.DevAssetShowroom','--dev-room','--gallery-capture',
+              "--kind=$kind","--wing=$wing","--limit=$limit",
+              '--output=build/dev-gallery/model-bays')
+          if (![string]::IsNullOrWhiteSpace($env:REVIEW_FILTER)) { $args += "--filter=$($env:REVIEW_FILTER)" }
+          & java @args
+          if ($LASTEXITCODE -ne 0) { throw "Native model gallery capture failed with exit $LASTEXITCODE" }
+          $positions = @(Import-Csv 'build/dev-gallery/model-bays/gallery-placements.csv')
+          $audits = @(Import-Csv 'build/dev-gallery/model-bays/gallery-model-audits.csv')
+          $bays = @(Import-Csv 'build/dev-gallery/model-bays/gallery-visibility.csv')
+          if ($positions.Count -lt 1 -or $positions.Count -gt 72 -or $audits.Count -ne $positions.Count) {
+            throw 'Missing or mismatched 72-slot gallery model inventory'
+          }
+          if (@($audits | Where-Object { $_.state -eq 'MISSING' }).Count -gt 0) {
+            throw 'One or more models failed the native GLB/sprite decoder'
+          }
+          if ($bays.Count -ne [math]::Ceiling($positions.Count/6.0) -or
+              @($bays | Where-Object { $_.visible -ne 'true' }).Count -gt 0) {
+            throw 'A gallery bay is blank or occluded by a nearby model'
+          }
+          $shots = @(Get-ChildItem 'build/dev-gallery/model-bays' -Filter 'gallery-wing-*.png')
+          if ($shots.Count -ne $bays.Count) { throw 'Gallery PNG count differs from occupied bays' }
+          Write-Host "PASS: $($positions.Count) inspected models, $($shots.Count) real-renderer floor/bay images; approval registry unchanged"
+      - name: Upload independent model-gallery screenshots and QA receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: beckenburg-dev-model-gallery
+          path: build/dev-gallery/
+          if-no-files-found: warn
+          retention-days: 21
