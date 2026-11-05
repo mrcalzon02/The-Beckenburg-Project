@@ -737,7 +737,12 @@ public final class InvestigationGame {
                             +" passes="+prewarmed.passes()
                             +" elapsed_ms="+prewarmed.elapsedMs()
                             +" shell_chunks="+prewarmed.staticShellChunks()
-                            +" authored_faces="+prewarmed.staticFaces());
+                            +" authored_faces="+prewarmed.staticFaces()
+                            +" static_preparation_ms="+prewarmed.staticPreparationMs()
+                            +" scenery_instances="+prewarmed.stagedSceneryInstances()
+                            +" scene_revision="+prewarmed.sceneRevision()
+                            +" reused_shell="+prewarmed.shellReused()
+                            +" reused_scenery="+prewarmed.sceneryReused());
                     }catch(RuntimeException warmingFailure){
                         // Optimization is never allowed to break mission launch.
                         BeckenburgDiagnostics.fail("Optional case prewarm",warmingFailure);
@@ -746,6 +751,23 @@ public final class InvestigationGame {
                     if(isCancelled())return null;
                     scene.draw(map,session,0,
                         assistants.stream().map(CampaignAlly::sprite).toList());
+                    var first=scene.frameDiagnostics();
+                    if(first!=null){
+                        var shell=scene.shellResidentStats();
+                        var world=scene.worldResidentStats();
+                        BeckenburgDiagnostics.record("CASE INITIAL GAMEPLAY FRAME site="+map.site()
+                            +" cpu_frame_ms="+first.totalNs()/1_000_000.0
+                            +" cpu_geometry_ms="+first.geometryNs()/1_000_000.0
+                            +" cpu_scene_build_ms="+first.sceneBuildNs()/1_000_000.0
+                            +" submitted_triangles="+first.submittedTriangles()
+                            +" gpu_submission="+first.gpu()
+                            +" gpu_readback_fresh="+first.gpuReadbackFresh()
+                            +" shell_vbo_bytes="+shell.bytes()
+                            +" resident_world_bytes="+world.bytes()
+                            +" shell_cache_hits="+shell.hits()
+                            +" world_cache_hits="+world.hits()
+                            +" note=cpu_timing_not_gpu_execution");
+                    }
                     return null;
                 }
                 @Override protected void done(){
