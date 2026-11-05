@@ -47,6 +47,24 @@ public final class CharacterBillboardAnchorTest {
             check(Math.abs(front[0]*side[0]+front[1]*side[1])<1e-9,
                 "permanent crossed character planes must be orthogonal");
         }
-        System.out.println("PASS Castle character world-locked axes, alpha pivot and fixed spatial positions");
+        // Camera-selected source cutouts have wildly different transparent
+        // margins. The ACTOR plane must nevertheless be byte-for-byte fixed.
+        var fixed=DirectionalSprites.worldLockedHumanCard(1.79,.98,0);
+        check(Math.abs(fixed.left()+.49)<1e-9
+                &&Math.abs(fixed.right()-.49)<1e-9
+                &&Math.abs(fixed.bottom()+1.62)<1e-9
+                &&Math.abs(fixed.top()-.17)<1e-9,
+            "world card uses an immutable actor-space sole and centre");
+        var tall=DirectionalSprites.worldLockedHumanCard(1.79,.98,0);
+        check(fixed.equals(tall),"camera orbit cannot change world card geometry");
+        // The shoe anchor may differ among cutouts, but fitting it belongs
+        // entirely to texture coordinates: v=sole at physical world floor.
+        for(int visibleSoleRow:new int[]{182,201,205,219}){
+            double sole=(visibleSoleRow+.5)/224.0;
+            double floorV=(fixed.top()-fixed.bottom())/1.79*sole;
+            check(Math.abs(floorV-sole)<1e-12,
+                "every approved shoe pixel must map to unchanged world floor");
+        }
+        System.out.println("PASS Castle world-locked characters: fixed geometry, height, lateral pivot and alpha shoe UV");
     }
 }

@@ -470,6 +470,14 @@ public final class DirectionalSprites {
             }
         }
     }
+    /** Fixed world geometry for a character pose. Directional art must not
+     * change the pose's physical dimensions or its origin/pivot. */
+    record WorldLockedCard(double left,double right,double bottom,double top){}
+    static WorldLockedCard worldLockedHumanCard(double height,double width,double elevation){
+        if(!Double.isFinite(height+width+elevation)||height<=0||width<=0)
+            throw new IllegalArgumentException("invalid grounded human dimensions");
+        return new WorldLockedCard(-width*.5,width*.5,elevation-1.62,elevation-1.62+height);
+    }
     /**
      * Two orthogonal world planes are permanently attached to each actor.
      * We choose a plane by the approved directional view but NEVER orient
@@ -502,13 +510,16 @@ public final class DirectionalSprites {
         double planeDistance=dx*nx+dz*nz;
         if(Math.abs(planeDistance)<NEAR*.02)return;
         int sh=sprite.getHeight(),sw=sprite.getWidth();
-        double sole=(GroundedSpriteFeet.lastVisibleRow(sprite)+.5)/sh;
-        if(sole<=0)sole=1;
-        double cardTop=elevation-1.62+height*sole;
-        double cardBottom=cardTop-height;
-        double uPivot=bodyPivotX(sprite)/sw;
+        int soleRow=GroundedSpriteFeet.lastVisibleRow(sprite);
+        if(soleRow<0)return;
+        double sole=(soleRow+.5)/sh;
+        // The selected facing artwork can have different transparent margins,
+        // torsos and boot rows. NONE may resize, recenter or lift the plane
+        // when the camera changes. Only the image-to-plane UV fit varies.
+        WorldLockedCard card=worldLockedHumanCard(height,width,elevation);
+        double cardTop=card.top(),cardBottom=card.bottom();
         // Project four immutable world vertices to determine the raster bounds.
-        double left=-uPivot*width,right=(1-uPivot)*width;
+        double left=card.left(),right=card.right();
         double[] corners={left,cardTop,left,cardBottom,right,cardTop,right,cardBottom};
         double minX=Double.POSITIVE_INFINITY,maxX=Double.NEGATIVE_INFINITY;
         double minY=Double.POSITIVE_INFINITY,maxY=Double.NEGATIVE_INFINITY;
@@ -542,8 +553,10 @@ public final class DirectionalSprites {
                 if(rayDepth<NEAR||rayDepth>24)continue;
                 double atX=cameraX+rayDepth*rayX-entityX;
                 double atZ=cameraZ+rayDepth*rayZ-entityZ;
-                double u=(atX*ax+atZ*az)/width+uPivot;
-                double v=(cardTop-rayDepth*rayY)/height;
+                double u=(atX*ax+atZ*az-left)/width;
+                // Art-specific alpha margins change texture sampling, never
+                // the 3D plane: the authored last shoe row touches floor Y.
+                double v=(cardTop-rayDepth*rayY)/height*sole;
                 if(u<0||u>=1||v<0||v>=1)continue;
                 int tx=(int)(u*sw),ty=(int)(v*sh);
                 int argb=sprite.getRGB(tx,ty);
