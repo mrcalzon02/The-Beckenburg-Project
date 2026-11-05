@@ -74,3 +74,48 @@ artifact commit is **not** a new playable-map release.
 - The Castle Quartermaster model is a **single-player/co-op campaign supply
   counter** study. Warehouse shelving remains multiplayer inventory
   presentation, never a display for fixed van consoles and clipboards.
+
+## Native Castle fit check and actual renderer evidence
+
+**There are two different Castle coordinate authorities.** The proposed
+expansion in `development/levels/layouts/castle/layout.json` spans roughly
+126 × 92 metres, while `CastleHubMap` is the playable **44 × 36 metre** Castle.
+The 18 proposed expansion placements in `placements/castle.json` may not be
+blindly copied into the playable headquarters, scaled uniformly, or imported
+as a scene. They remain useful for the expansion's future scene work.
+
+`src/test/java/org/beckenburg/CastlePrimitiveRuntimeFitTest.java` is an
+independent **native-space** authoring audit. It inspects actual
+`CastleRooms` floor elevations, `CastleLevelEdits` wall/deck/prop state,
+`CastleDoorSlots`, station and player-spawn reservations, stairs and
+`CastleHubMap.traversable`. It searches only for clear positions and emits
+`REVIEW_FIT` or `BLOCKED` for each desired primitive. It never creates or
+saves gameplay scene props.
+
+The test can temporarily enable the exact source-only GLB mesh through
+`SceneRenderer.setCastlePrototypeReview(...)`. These faces are drawn using
+the actual Castle camera, depth, texture sampler and lighting, **not** an
+image-generation mockup. The overlay defaults to empty and cannot mutate
+the persistent geometry, runtime model allowlist or the live multiplayer scene.
+
+A Windows CI run under the
+`Developer Asset Room - Continuous Visual Review` workflow writes the
+native fit CSV and screenshots to the **beckenburg-dev-asset-room** artifact:
+`native-castle-graybox/native-castle-fit.csv` and
+`native-castle-graybox/screenshots/*.png`. It also captures four actual
+renderer angles for selected individual meshes and complete proposed-map
+review files. This is **advisory authoring QA**: no screenshot or
+`REVIEW_FIT` alone authorizes production placement or resolves unknown
+site navigation, lighting or network behavior.
+
+To run against a source checkout with a compiled game JAR on Windows:
+
+```cmd
+javac --release 17 -encoding UTF-8 -cp build\beckenburg-game.jar -d build\test src\test\java\org\beckenburg\CastlePrimitiveRuntimeFitTest.java
+java -Djava.awt.headless=true -ea -cp build\beckenburg-game.jar;build\test org.beckenburg.CastlePrimitiveRuntimeFitTest build\native-castle-prototype-review
+```
+
+If an ordinary player has modified their Castle via the editor, the audit
+reads the local `CastleLevelEdits.current()` scene; CI evaluates its own
+fresh default scene. Neither run edits those overrides. A blocked placement
+is a real stop condition **for that proposal only**, not a release failure.
