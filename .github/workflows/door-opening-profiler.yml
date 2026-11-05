@@ -81,6 +81,10 @@ jobs:
         continue-on-error: true
         shell: cmd
         run: java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.DoorOpeningFrameProfile cpu
+      - name: Capture same-runner unarchived door-ray baseline for A/B comparison
+        continue-on-error: true
+        shell: cmd
+        run: java -Djava.awt.headless=true -Dbeckenburg.lighting.doorShadowArchive.disabled=true -ea -cp "build\classes;build\test" org.beckenburg.DoorOpeningFrameProfile submission
       - name: Capture resident GPU-submission revision and upload profile (not real GPU timer)
         continue-on-error: true
         shell: cmd

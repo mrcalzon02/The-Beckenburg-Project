@@ -96,7 +96,9 @@ public final class DoorOpeningFrameProfile {
 
     public static void main(String[] args)throws Exception {
         boolean submission=args.length>0&&args[0].equals("submission");
-        String backend=submission?"submission-recorder":"cpu-software";
+        String backend=(submission?"submission-recorder":"cpu-software")
+            +(Boolean.getBoolean("beckenburg.lighting.doorShadowArchive.disabled")
+                ?"-door-archive-disabled":"");
         SubmissionRecorder recorder=submission?new SubmissionRecorder():null;
         if(recorder!=null)GpuWorldRenderer.install(recorder);
         Path root=Path.of("build","e2e","door-opening-profiler");
