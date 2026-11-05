@@ -504,9 +504,11 @@ public final class FixtureLighting {
      else{invalidateCastleDoor(slot);changes++;}
     }
    }
-   // First frame or unknown topology mutation still requires full recovery.
-   // A normal door swing never advances the GLOBAL occluder epoch.
-   if(changes==0)global=true;
+   // A rapid open+close before the next render increments the map's door
+   // revision twice but leaves the actual topology UNCHANGED. Do not turn
+   // this zero-net interaction into a global light/shadow cache flush.
+   // Unknown/new slots and a newly created lighting scene still recover
+   // globally via the explicit checks above.
    if(global){
     occluderEpoch=++generation;
     Arrays.fill(sourceOcclusionRevisions,occluderEpoch);

@@ -63,6 +63,16 @@ public final class CastleDoorLightingLocalityTest {
     nearSamples(warm,fresh,door,toggle);
    }
   }
-  System.out.println("PASS 20 alternating Castle door toggles: bounded light invalidation, stable global/remote revisions, fresh-cache lighting parity");
+  // Network/input batching can cancel a door action before one render.
+  // The old 'changes==0' fallback discarded every Castle shadow in this case.
+  long stableGlobal=warm.occluderRevision();
+  long stableFar=warm.regionOccluderVersion(-500,-100,-500,-490,-90,-490);
+  map.toggleDoor(door.id());
+  map.toggleDoor(door.id());
+  warm.castleFrame(true,0);
+  check(warm.occluderRevision()==stableGlobal
+      &&warm.regionOccluderVersion(-500,-100,-500,-490,-90,-490)==stableFar,
+      "Rapid cancelled Castle door interaction must not globally invalidate any lighting");
+  System.out.println("PASS 20 Castle door toggles + cancelled rapid pair: local invalidation, stable global/remote revisions, fresh-cache lighting parity");
  }
 }
