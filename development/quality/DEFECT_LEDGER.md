@@ -10,6 +10,62 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-270 — Screenshot pushes leave development gallery index stale
+
+**Status:** CI generator repaired c080e29b; gallery refresh run 41951988544 PASS · **Affected:** Development screenshot gallery, image SHA-256 index and documentation CI
+
+Committed captures were omitted from the index; gallery check failed although source PNGs existed.
+
+Cause / uncertainty: The old gallery workflow checked generated files but never regenerated them after new screenshot pushes.
+
+Fix / next action: Rebuild index against current main with serialized non-force retries and original image hashes; retain pull-request stale-index enforcement.
+
+Evidence and verification: Prior failed gallery run 41948681639; fixed run 41951988544 PASS.
+
+Older-map obligation: Every additional map capture must be indexed without implying that map was fully accepted.
+
+### DEV-269 — Shallow Windows installer tag push exceeds GitHub 2 GiB Git-pack limit
+
+**Status:** Workflow fixes 9f1e816c and d9d73a9 committed; exact-source release check pending · **Affected:** Windows installer publishing, versioning and game updater release feed
+
+Build/launch/smoke passed but remote tag push was rejected: pack exceeds maximum allowed size (2.00 GiB).
+
+Cause / uncertainty: A shallow checkout pushed a Git tag, requiring a multigigabyte history pack; version selection did not count reserved unpublished tags.
+
+Fix / next action: Create immutable lightweight tags via authenticated GitHub REST with remote SHA readback, no git pack push or retag; choose next version above releases and existing tags.
+
+Evidence and verification: Windows installer workflow 41950081484 failed at tested-SHA tag stage; newer workflow pending.
+
+Older-map obligation: No visual maps are implicated. Installed updater must read published non-draft releases including prereleases.
+
+### DEV-268 — Castle NPC screenshot audit overwrites failed angles and falsely accepts one passing view
+
+**Status:** Audit strengthened in commits 0681cc1c and ebe6a013; full visual acceptance remains pending · **Affected:** All Castle resident screenshot and grounding evidence
+
+The audit reported five of five characters grounded even as a large fraction of their real in-engine angle measurements failed.
+
+Cause / uncertainty: An early failed screenshot was overwritten by a later passing view, a single pass certified a resident, and furniture occlusion was conflated with true foot separation.
+
+Fix / next action: Keep separate full-frame and crop files for every view; require multiple unobstructed passes with zero clear-view failures, classify blocked receivers as inconclusive, and publish diagnostic failures without accepting them.
+
+Evidence and verification: Actual run 41951801477: 0/5 residents proved at all initial four views; 11/20 measured angles flagged before alpha-tail fix. Run-specific PNGs remain available.
+
+Older-map obligation: Apply similar visual acceptance to hunters and all authored investigation maps; no single shot certifies the whole site.
+
+### DEV-267 — Camera-selected directional art still moves stationary NPC world-space geometry
+
+**Status:** Fixed source in 5e355b1f and eba27410; functional test PASS 41951801477; all-view installed acceptance pending · **Affected:** Castle resident and playable grounded human character cards
+
+Character outlines wobble or hover when the camera changes even though NPC world coordinates are stationary.
+
+Cause / uncertainty: Each camera-selected image changed the actor plane pivot, vertical bounds and last-shoe alpha, with trailing source pixels allowed to render below floor height.
+
+Fix / next action: Keep world card geometry and centre pivot invariant; fit alpha within its fixed height using UVs and discard rows beneath shoe sole. Verify actual Castle and multiplayer camera orbits.
+
+Evidence and verification: World-space geometry test 41951801477 PASS; changes 5e355b1f, eba27410; follow-up all-view Castle capture pending.
+
+Older-map obligation: Audit all stances, stair elevations, 360-degree camera motions and intentionally hovering ghost types independently.
+
 ### DEV-264 — Castle light-switch source GLB gains an enormous stretched sconce backplate
 
 **Status:** source corrected in ede4bb147f1051ad646e59cf0b197ed32d979970; focused Castle CI 41947018830 PASS; physical installed screenshot acceptance pending · **Affected:** 25 authored Castle light-switch instances; wall-mount renderer shared with Castle fixtures
@@ -54,17 +110,17 @@ Older-map obligation: Audit all parented decorations on other Castle furniture a
 
 ### DEV-263 — Character boots visibly float above the Castle floor despite earlier alpha-pad correction
 
-**Status:** source fix committed; isolated Java 17 unit test PASS; exact-source CI and installed render acceptance pending · **Affected:** All grounded human sprite billboards in Castle and investigation scenes
+**Status:** OPEN: original in-engine review failed multiple angles; source correction committed, installed and full-view acceptance pending · **Affected:** All grounded human sprite billboards in Castle and investigation scenes; ghost hovering remains deliberate
 
 NPC boot soles visibly detach from the rendered floor at certain camera views, as in the user-provided Castle screenshot.
 
-Cause / uncertainty: Global last-visible-alpha row could be fooled by fringe or isolated cutout pixels; pixel-snapped floor geometry and the unsnapped billboard projected different screen positions.
+Cause / uncertainty: Camera-selected sprite artwork changed physical plane height and pivot; trailing artist matte could draw below the physical boot sole. Early visual verification masked failed views, with some captures also obstructed by scene furniture.
 
-Fix / next action: Determine the shoe row using a substantive centered alpha span; correct human billboard screen projection only when multiple depth-buffer columns confirm a consistent sloping floor crossing. Do not move world coordinates, edit source sprites, or alter ghost hover effects. Run exact-source GPU Castle capture and installed acceptance; retain previous failure evidence.
+Fix / next action: Lock world-space actor geometry, map variable directional alpha to fixed physical boot contact, reject matte below sole, classify occluded cameras separately, capture every angle. Do not certify finished until genuine visible views and installed copy pass.
 
-Evidence and verification: User screenshot (2026-11-04), local isolated Java 17 grounding unit test PASS; exact-source CI and installation remain pending.
+Evidence and verification: User Castle screenshot; run 41951801477 stored actual camera crops with 11 initially failing angles and 0/5 fully accepted; source repairs 5e355b1f, eba27410, ebe6a013, later CI still pending.
 
-Older-map obligation: Audit grounded NPCs and multiplayer hunters across Castle, House and other maps, especially on stairs, inclines, near walls and floor holes.
+Older-map obligation: Every grounded human across Castle, solo, co-op and LAN must receive independent orbit/stance/floor checks; do not adjust ghosts' intentional hover.
 
 ### DEV-260 — Castle residents remain static despite hunter walk and crouch animation
 
