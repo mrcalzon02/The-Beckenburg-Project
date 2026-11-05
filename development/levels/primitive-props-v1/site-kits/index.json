@@ -2,7 +2,7 @@
   "schema": "beckenburg.primitive-map-kit/1",
   "status": "source-only-model-contact-rooms",
   "runtime_approved": false,
-  "model_library_count": 160,
+  "model_library_count": 178,
   "planning_packets": 29,
   "model_scale": "true-scale metres, not resized",
   "page_layout": "3 columns x 2 rows; width 7 m / depth 7 m per stand",
@@ -40,7 +40,8 @@
         "level_blockout_gym_wall_bars",
         "level_blockout_greenhouse_potting_bench",
         "level_blockout_monastery_scriptorium",
-        "level_blockout_relic_repair_stand"
+        "level_blockout_relic_repair_stand",
+        "level_blockout_library_book_return_cart"
       ],
       "pages": [
         {
@@ -211,9 +212,9 @@
           "page": 3,
           "name": "level_blockout_kit_academy_p03",
           "file": "level_blockout_kit_academy_p03.glb",
-          "triangles": 756,
-          "bytes": 96844,
-          "sha256": "b8ad63923393814827a82fa2e97c78e25eb22d8cf79d7e42c121483f58081b91",
+          "triangles": 1052,
+          "bytes": 131348,
+          "sha256": "256ac96393a84c321635a6bd8346f2851f7c66cb5258634ad5ed759d9223265e",
           "display_slots": [
             {
               "slot": 1,
@@ -262,6 +263,18 @@
                 3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_library_book_return_cart",
+              "title": "Library and campus book return trolley",
+              "source_ground_offset": -0.001,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -291,7 +304,8 @@
         "level_blockout_hospital_chart_station",
         "level_blockout_prison_isolation_fixture",
         "level_blockout_mortuary_prep_table",
-        "level_blockout_mortuary_cold_storage"
+        "level_blockout_mortuary_cold_storage",
+        "level_blockout_medical_resuscitation_cart"
       ],
       "pages": [
         {
@@ -380,9 +394,9 @@
           "page": 2,
           "name": "level_blockout_kit_asylum_p02",
           "file": "level_blockout_kit_asylum_p02.glb",
-          "triangles": 764,
-          "bytes": 93324,
-          "sha256": "4179be5abb0bc5ca814b7505594b02f47a25fa0f3cf795f51cf8c3d5e0a95e86",
+          "triangles": 1024,
+          "bytes": 119860,
+          "sha256": "0ea3a547912d26fc363fd4a7621c46aa0b78269278c4d9c5c30c989feac14806",
           "display_slots": [
             {
               "slot": 1,
@@ -443,6 +457,18 @@
                 3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_medical_resuscitation_cart",
+              "title": "Ward resuscitation supply cart",
+              "source_ground_offset": 0.009,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -498,7 +524,9 @@
         "level_blockout_relic_barred_shelf",
         "level_blockout_relic_inventory_placard",
         "level_blockout_relic_repair_stand",
-        "level_blockout_relic_open_guard"
+        "level_blockout_relic_open_guard",
+        "level_blockout_castle_wall_tapestry",
+        "level_blockout_ossuary_display_rack"
       ],
       "pages": [
         {
@@ -669,9 +697,9 @@
           "page": 3,
           "name": "level_blockout_kit_castle_p03",
           "file": "level_blockout_kit_castle_p03.glb",
-          "triangles": 1676,
-          "bytes": 184256,
-          "sha256": "0977cd609423611272d853ec696ec54813d1439d5fd30617251ffdc479d12144",
+          "triangles": 1748,
+          "bytes": 191608,
+          "sha256": "838e223505e09f9c1d43c4a92a85bb3f27aa080ab48faba418ef63e65261aed2",
           "display_slots": [
             {
               "slot": 1,
@@ -751,9 +779,9 @@
           "page": 4,
           "name": "level_blockout_kit_castle_p04",
           "file": "level_blockout_kit_castle_p04.glb",
-          "triangles": 1920,
-          "bytes": 219896,
-          "sha256": "6a31ff93f0e2b1ef098429baddc9427cfdd1aa267cc1b9b96397404ebf6d854f",
+          "triangles": 1992,
+          "bytes": 227252,
+          "sha256": "664668a075aaa5c0de10ac66a77a247ebf3067c35ad557172945d0c71da909db",
           "display_slots": [
             {
               "slot": 1,
@@ -997,9 +1025,9 @@
           "page": 7,
           "name": "level_blockout_kit_castle_p07",
           "file": "level_blockout_kit_castle_p07.glb",
-          "triangles": 204,
-          "bytes": 36256,
-          "sha256": "ad80ad4fbcbaf20b30b48742f3fc4abd5b0fafe7f345ab050ad3585cc4e711b7",
+          "triangles": 696,
+          "bytes": 90768,
+          "sha256": "9772d5a18fc27f1417628e84badeed8c56eaf8dc50ad287f397329998edbc826",
           "display_slots": [
             {
               "slot": 1,
@@ -1008,6 +1036,30 @@
               "source_ground_offset": -0.0,
               "stand_center": [
                 -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_castle_wall_tapestry",
+              "title": "Medieval wall tapestry with carved hanging rod",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_ossuary_display_rack",
+              "title": "Stone ossuary niche shelves and memorial jars",
+              "source_ground_offset": -0.03,
+              "stand_center": [
+                7.0,
                 0,
                 -3.5
               ],
@@ -1045,7 +1097,9 @@
         "level_blockout_sarcophagus_plain",
         "level_blockout_sarcophagus_inscribed",
         "level_blockout_sarcophagus_effigy",
-        "level_blockout_relic_inventory_placard"
+        "level_blockout_relic_inventory_placard",
+        "level_blockout_ossuary_display_rack",
+        "level_blockout_votive_candle_stand"
       ],
       "pages": [
         {
@@ -1134,9 +1188,9 @@
           "page": 2,
           "name": "level_blockout_kit_church_p02",
           "file": "level_blockout_kit_church_p02.glb",
-          "triangles": 1108,
-          "bytes": 126284,
-          "sha256": "36f70dfa7f19638cb0a16717ed2124b0366390ad997729d4629d892fe92b052e",
+          "triangles": 1132,
+          "bytes": 128732,
+          "sha256": "4a1081ad42cf775b47af2f8357155bae47b5e9cf88118b052d1c6d9012b456d3",
           "display_slots": [
             {
               "slot": 1,
@@ -1216,9 +1270,9 @@
           "page": 3,
           "name": "level_blockout_kit_church_p03",
           "file": "level_blockout_kit_church_p03.glb",
-          "triangles": 492,
-          "bytes": 63496,
-          "sha256": "c28c0bb6dc326145843ba4ae8e526a886b7b547de24c5b4475fe57f2b760e983",
+          "triangles": 1500,
+          "bytes": 172632,
+          "sha256": "8a985b799ef6ae0574f175c3a80500a86cda8039c944f8a5db85705f6221bbef",
           "display_slots": [
             {
               "slot": 1,
@@ -1255,6 +1309,30 @@
                 -3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_ossuary_display_rack",
+              "title": "Stone ossuary niche shelves and memorial jars",
+              "source_ground_offset": -0.03,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_votive_candle_stand",
+              "title": "Three-tier wrought votive candle stand",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -1285,7 +1363,8 @@
         "level_blockout_lecture_tier_row",
         "level_blockout_college_cafe_counter",
         "level_blockout_gym_wall_bars",
-        "level_blockout_school_scoreboard"
+        "level_blockout_school_scoreboard",
+        "level_blockout_library_book_return_cart"
       ],
       "pages": [
         {
@@ -1451,6 +1530,28 @@
               "review_only": true
             }
           ]
+        },
+        {
+          "page": 3,
+          "name": "level_blockout_kit_college_p03",
+          "file": "level_blockout_kit_college_p03.glb",
+          "triangles": 296,
+          "bytes": 43508,
+          "sha256": "8572f6dc151ed10426352e4b059c56ea042c4fbdcb264dbadff3fa819598e429",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_library_book_return_cart",
+              "title": "Library and campus book return trolley",
+              "source_ground_offset": -0.001,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            }
+          ]
         }
       ],
       "still_source_only": true
@@ -1480,7 +1581,8 @@
         "level_blockout_cellar_service_manifold",
         "level_blockout_house_mailbox",
         "level_blockout_sawmill_headdrig",
-        "level_blockout_timber_offcut_pile"
+        "level_blockout_timber_offcut_pile",
+        "level_blockout_logging_sawbuck"
       ],
       "pages": [
         {
@@ -1651,9 +1753,9 @@
           "page": 3,
           "name": "level_blockout_kit_farmhouse_p03",
           "file": "level_blockout_kit_farmhouse_p03.glb",
-          "triangles": 144,
-          "bytes": 23788,
-          "sha256": "f67c0a1f74ad1f5654be6a320469a8431acf1e0cb8a2b118143d856ddfb32cab",
+          "triangles": 280,
+          "bytes": 37664,
+          "sha256": "50c7cd0b53e10134b74c7e8769301d6672f88448029f79b1113ee88f06f53d75",
           "display_slots": [
             {
               "slot": 1,
@@ -1662,6 +1764,18 @@
               "source_ground_offset": -0.0,
               "stand_center": [
                 -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_logging_sawbuck",
+              "title": "Logging sawhorse with short saw log",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
                 0,
                 -3.5
               ],
@@ -1801,7 +1915,8 @@
         "level_blockout_family_photo_cluster",
         "level_blockout_cellar_service_manifold",
         "level_blockout_house_mailbox",
-        "level_blockout_relic_locking_showcase"
+        "level_blockout_relic_locking_showcase",
+        "level_blockout_castle_wall_tapestry"
       ],
       "pages": [
         {
@@ -1890,9 +2005,9 @@
           "page": 2,
           "name": "level_blockout_kit_mansion_p02",
           "file": "level_blockout_kit_mansion_p02.glb",
-          "triangles": 928,
-          "bytes": 114372,
-          "sha256": "4251b96d248cbea4edc8a8d751068ac635f8b211fc70a8d9f7f2ebf0e4c252a1",
+          "triangles": 1120,
+          "bytes": 136128,
+          "sha256": "547a3b1f4fd5b158f77471a00b4e49df3b5e0fe59a7e1db681b62465066e702e",
           "display_slots": [
             {
               "slot": 1,
@@ -1953,6 +2068,18 @@
                 3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_castle_wall_tapestry",
+              "title": "Medieval wall tapestry with carved hanging rod",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -1986,7 +2113,8 @@
         "level_blockout_prison_sally_gate",
         "level_blockout_prison_gallery_rail",
         "level_blockout_prison_isolation_fixture",
-        "level_blockout_barracks_lockers"
+        "level_blockout_barracks_lockers",
+        "level_blockout_prison_cell_cot"
       ],
       "pages": [
         {
@@ -2157,9 +2285,9 @@
           "page": 3,
           "name": "level_blockout_kit_prison_p03",
           "file": "level_blockout_kit_prison_p03.glb",
-          "triangles": 372,
-          "bytes": 49132,
-          "sha256": "0acdbefa7232928749d8cd1d22d106b9c76eb394a2007f3a3c72f897525c9fd0",
+          "triangles": 492,
+          "bytes": 61344,
+          "sha256": "fa1d683c802896f0bfc79fbb41b24f0c350eb12b0e0c2cf04faefebe16d73fca",
           "display_slots": [
             {
               "slot": 1,
@@ -2196,6 +2324,18 @@
                 -3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_prison_cell_cot",
+              "title": "Iron prison cell cot and thin bedding",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -2222,7 +2362,8 @@
         "level_blockout_college_cafe_counter",
         "level_blockout_gym_wall_bars",
         "level_blockout_school_scoreboard",
-        "level_blockout_toy_chest_scatter"
+        "level_blockout_toy_chest_scatter",
+        "level_blockout_library_book_return_cart"
       ],
       "pages": [
         {
@@ -2311,9 +2452,9 @@
           "page": 2,
           "name": "level_blockout_kit_school_p02",
           "file": "level_blockout_kit_school_p02.glb",
-          "triangles": 264,
-          "bytes": 42312,
-          "sha256": "a708eb50634b121c344de83d6860bd1443cb99311126835f8827aa742de93eb4",
+          "triangles": 560,
+          "bytes": 74696,
+          "sha256": "1e20c67e536a347be4146a3203afe0aefc5f1553f9e39dccd5e1cbd2b021342f",
           "display_slots": [
             {
               "slot": 1,
@@ -2334,6 +2475,18 @@
               "source_ground_offset": -0.0,
               "stand_center": [
                 0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_library_book_return_cart",
+              "title": "Library and campus book return trolley",
+              "source_ground_offset": -0.001,
+              "stand_center": [
+                7.0,
                 0,
                 -3.5
               ],
@@ -2372,22 +2525,23 @@
         "level_blockout_field_first_aid",
         "level_blockout_ranger_trail_sign",
         "level_blockout_mine_hoist_winch",
-        "level_blockout_rail_trestle_bay"
+        "level_blockout_rail_trestle_bay",
+        "level_blockout_logging_sawbuck"
       ],
       "pages": [
         {
           "page": 1,
           "name": "level_blockout_kit_wld_01_p01",
           "file": "level_blockout_kit_wld_01_p01.glb",
-          "triangles": 1160,
-          "bytes": 133840,
-          "sha256": "3989f72050ba06d036152b35f7f498b956bb84f6c02ff6fa5b4dbdf98956531b",
+          "triangles": 1112,
+          "bytes": 128944,
+          "sha256": "1348266b39ffacfc74a16144923220012d580ef611ca7c47fd6981e77427eb4e",
           "display_slots": [
             {
               "slot": 1,
               "id": "level_blockout_log_stack",
               "title": "Three-layer stacked log rack",
-              "source_ground_offset": -0.0,
+              "source_ground_offset": 0.005,
               "stand_center": [
                 -7.0,
                 0,
@@ -2543,9 +2697,9 @@
           "page": 3,
           "name": "level_blockout_kit_wld_01_p03",
           "file": "level_blockout_kit_wld_01_p03.glb",
-          "triangles": 548,
-          "bytes": 71304,
-          "sha256": "43f55c26302835ebbe4d80520bfae319427b23e99894cc01610574888bea192f",
+          "triangles": 684,
+          "bytes": 85180,
+          "sha256": "d6e337305def6e227e3060ef3f26c94e036442d1c0a1714c1468ea99742bb5b5",
           "display_slots": [
             {
               "slot": 1,
@@ -2594,6 +2748,18 @@
                 3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_logging_sawbuck",
+              "title": "Logging sawhorse with short saw log",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -2627,22 +2793,23 @@
         "level_blockout_campfire_ring_grate",
         "level_blockout_ranger_trail_sign",
         "level_blockout_camp_washstand",
-        "level_blockout_abandoned_camper_shell"
+        "level_blockout_abandoned_camper_shell",
+        "level_blockout_marsh_reed_cluster"
       ],
       "pages": [
         {
           "page": 1,
           "name": "level_blockout_kit_wld_02_p01",
           "file": "level_blockout_kit_wld_02_p01.glb",
-          "triangles": 980,
-          "bytes": 113236,
-          "sha256": "424d7a75d069c791ef07cfba55014eb05e78bafb88f4e01b54bfd64b3ac9b51f",
+          "triangles": 932,
+          "bytes": 108336,
+          "sha256": "202cceff4b82344743773011f63409ef0c06cc19a67cd0b1769c3aa7d3135c52",
           "display_slots": [
             {
               "slot": 1,
               "id": "level_blockout_log_stack",
               "title": "Three-layer stacked log rack",
-              "source_ground_offset": -0.0,
+              "source_ground_offset": 0.005,
               "stand_center": [
                 -7.0,
                 0,
@@ -2798,9 +2965,9 @@
           "page": 3,
           "name": "level_blockout_kit_wld_02_p03",
           "file": "level_blockout_kit_wld_02_p03.glb",
-          "triangles": 536,
-          "bytes": 70108,
-          "sha256": "e2ddb64ba38e45a7ecfd6366f4be2935c9e2cc651d25c888f3f56d86447c3df1",
+          "triangles": 740,
+          "bytes": 90916,
+          "sha256": "cb0842a9e2fe6c2c4025737101adc625545c81ef0622c1bea057c908b0dca049",
           "display_slots": [
             {
               "slot": 1,
@@ -2837,6 +3004,18 @@
                 -3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_marsh_reed_cluster",
+              "title": "Marsh rushes and reed clump",
+              "source_ground_offset": 0.005,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -2864,7 +3043,8 @@
         "level_blockout_ranger_trail_sign",
         "level_blockout_canyon_rockfall_barrier",
         "level_blockout_survey_marker_cases",
-        "level_blockout_cave_bend_modules"
+        "level_blockout_cave_bend_modules",
+        "level_blockout_mine_pick_tool_rack"
       ],
       "pages": [
         {
@@ -2953,9 +3133,9 @@
           "page": 2,
           "name": "level_blockout_kit_wld_03_p02",
           "file": "level_blockout_kit_wld_03_p02.glb",
-          "triangles": 348,
-          "bytes": 46668,
-          "sha256": "14f7dcbc108d3915594f32f26b24a61dc871daa27191e0884500794004d92a92",
+          "triangles": 552,
+          "bytes": 67476,
+          "sha256": "5f5e122ec4fcc9332649aaba39b9c312cb8b850fdb3e0c131475f1a4e84df308",
           "display_slots": [
             {
               "slot": 1,
@@ -2990,6 +3170,18 @@
                 7.0,
                 0,
                 -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_mine_pick_tool_rack",
+              "title": "Prospector pickaxe and spade rack",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
               ],
               "review_only": true
             }
@@ -3178,7 +3370,8 @@
         "level_blockout_survey_marker_cases",
         "level_blockout_cave_bend_modules",
         "level_blockout_mine_hoist_winch",
-        "level_blockout_mine_sorting_bins"
+        "level_blockout_mine_sorting_bins",
+        "level_blockout_mine_pick_tool_rack"
       ],
       "pages": [
         {
@@ -3187,7 +3380,7 @@
           "file": "level_blockout_kit_wld_05_p01.glb",
           "triangles": 1048,
           "bytes": 120168,
-          "sha256": "302ac965e60273065573e307cd8ff10cc5e0d0eed2a436ed68b268fb54b572b8",
+          "sha256": "749cd76e67ee8a5ffe766ff771a937e1840ac4bd4c35dd117b012c98454750d4",
           "display_slots": [
             {
               "slot": 1,
@@ -3349,9 +3542,9 @@
           "page": 3,
           "name": "level_blockout_kit_wld_05_p03",
           "file": "level_blockout_kit_wld_05_p03.glb",
-          "triangles": 132,
-          "bytes": 24664,
-          "sha256": "edf0538dc5456b50141f83305cbd7253b3d053f5e51efe9448c245dda6d24346",
+          "triangles": 336,
+          "bytes": 45484,
+          "sha256": "e4f9d6b1493c1d82f28a6bca5d1dd7b63572fc7bbbe924c515b5053969ac731e",
           "display_slots": [
             {
               "slot": 1,
@@ -3360,6 +3553,18 @@
               "source_ground_offset": -0.0,
               "stand_center": [
                 -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_mine_pick_tool_rack",
+              "title": "Prospector pickaxe and spade rack",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                0.0,
                 0,
                 -3.5
               ],
@@ -3397,7 +3602,9 @@
         "level_blockout_ship_engine_block",
         "level_blockout_ship_wheelhouse_console",
         "level_blockout_ship_net_boom",
-        "level_blockout_ship_gangway_rails"
+        "level_blockout_ship_gangway_rails",
+        "level_blockout_mooring_rope_coils",
+        "level_blockout_cannery_cargo_pallet"
       ],
       "pages": [
         {
@@ -3568,9 +3775,9 @@
           "page": 3,
           "name": "level_blockout_kit_wld_06_p03",
           "file": "level_blockout_kit_wld_06_p03.glb",
-          "triangles": 508,
-          "bytes": 67224,
-          "sha256": "1bdd02551e7cc9d233eac6a2c3e291af853b2e9125f2a6eff729db7cc73b847d",
+          "triangles": 1408,
+          "bytes": 159088,
+          "sha256": "ab246a948aed3667022f71ad5572baaca5bb5f43fe51efc583706d583029bb37",
           "display_slots": [
             {
               "slot": 1,
@@ -3607,6 +3814,30 @@
                 -3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_mooring_rope_coils",
+              "title": "Loose layered harbor mooring rope coils",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_cannery_cargo_pallet",
+              "title": "Pallet of strapped canning crates",
+              "source_ground_offset": -0.03,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -3640,7 +3871,9 @@
         "level_blockout_sarcophagus_plain",
         "level_blockout_sarcophagus_inscribed",
         "level_blockout_sarcophagus_effigy",
-        "level_blockout_relic_inventory_placard"
+        "level_blockout_relic_inventory_placard",
+        "level_blockout_ossuary_display_rack",
+        "level_blockout_votive_candle_stand"
       ],
       "pages": [
         {
@@ -3729,9 +3962,9 @@
           "page": 2,
           "name": "level_blockout_kit_wld_07_p02",
           "file": "level_blockout_kit_wld_07_p02.glb",
-          "triangles": 928,
-          "bytes": 110072,
-          "sha256": "9bf41d65bac4467bcd285f93194f7a54cf7ad2d72aeb2352dd1887a51e0a3e7c",
+          "triangles": 952,
+          "bytes": 112524,
+          "sha256": "2293b9dcce368c0866ffa33a6c0afee3e906a5bd45fdefc13b8e22262637005f",
           "display_slots": [
             {
               "slot": 1,
@@ -3811,9 +4044,9 @@
           "page": 3,
           "name": "level_blockout_kit_wld_07_p03",
           "file": "level_blockout_kit_wld_07_p03.glb",
-          "triangles": 492,
-          "bytes": 63520,
-          "sha256": "838cefe586f31f6999d4413ae010eef7409c3b86c04d3a146ee3f6978e50596e",
+          "triangles": 1500,
+          "bytes": 172656,
+          "sha256": "0e31c12d9fbd29a8ed2c6bdbb0bd84cbb17b9a8ced6160e73e4b5b8f0e8d03a7",
           "display_slots": [
             {
               "slot": 1,
@@ -3850,6 +4083,30 @@
                 -3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_ossuary_display_rack",
+              "title": "Stone ossuary niche shelves and memorial jars",
+              "source_ground_offset": -0.03,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_votive_candle_stand",
+              "title": "Three-tier wrought votive candle stand",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -3882,7 +4139,9 @@
         "level_blockout_weather_instrument_array",
         "level_blockout_insulated_tunnel_collar",
         "level_blockout_lighthouse_cistern",
-        "level_blockout_cinder_escape_landing"
+        "level_blockout_cinder_escape_landing",
+        "level_blockout_research_sample_station",
+        "level_blockout_cinder_decon_frame"
       ],
       "pages": [
         {
@@ -4053,9 +4312,9 @@
           "page": 3,
           "name": "level_blockout_kit_wld_08_p03",
           "file": "level_blockout_kit_wld_08_p03.glb",
-          "triangles": 384,
-          "bytes": 48216,
-          "sha256": "b82fc60c56960e6a1bd693904e0b6ffd32eead1fd4b82e9d776fd56f9f4244e5",
+          "triangles": 772,
+          "bytes": 92032,
+          "sha256": "c197a1017695dc49d437ab74cb5a493613935ee947244ec2507d949f77dc16e2",
           "display_slots": [
             {
               "slot": 1,
@@ -4078,6 +4337,30 @@
                 0.0,
                 0,
                 -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_research_sample_station",
+              "title": "Field sample-tray research bench",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_cinder_decon_frame",
+              "title": "Research and cinder decontamination arch",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
               ],
               "review_only": true
             }
@@ -4109,7 +4392,8 @@
         "level_blockout_dam_valve_manifold",
         "level_blockout_cannery_boiler",
         "level_blockout_lighthouse_oil_storage",
-        "level_blockout_cinder_sump_pump"
+        "level_blockout_cinder_sump_pump",
+        "level_blockout_dam_service_grating"
       ],
       "pages": [
         {
@@ -4198,9 +4482,9 @@
           "page": 2,
           "name": "level_blockout_kit_wld_09_p02",
           "file": "level_blockout_kit_wld_09_p02.glb",
-          "triangles": 1456,
-          "bytes": 161880,
-          "sha256": "177e5225d4b152180fb8219d1965891d12e671ca4e6a85e88916a86ee7a2d6f5",
+          "triangles": 1732,
+          "bytes": 190024,
+          "sha256": "046be410202d18f09e1196584985c4e85d4872bb99af88c995541258485ee97a",
           "display_slots": [
             {
               "slot": 1,
@@ -4261,6 +4545,18 @@
                 3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_dam_service_grating",
+              "title": "Dam turbine-room grated walkway bay",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -4299,7 +4595,10 @@
         "level_blockout_sarcophagus_plain",
         "level_blockout_sarcophagus_inscribed",
         "level_blockout_sarcophagus_effigy",
-        "level_blockout_relic_repair_stand"
+        "level_blockout_relic_repair_stand",
+        "level_blockout_castle_wall_tapestry",
+        "level_blockout_ossuary_display_rack",
+        "level_blockout_votive_candle_stand"
       ],
       "pages": [
         {
@@ -4470,9 +4769,9 @@
           "page": 3,
           "name": "level_blockout_kit_wld_10_p03",
           "file": "level_blockout_kit_wld_10_p03.glb",
-          "triangles": 1052,
-          "bytes": 122740,
-          "sha256": "9a6dbccbcd40739578f42cb19cbd52564f3ec1d878349fac132d78fd7653c097",
+          "triangles": 1124,
+          "bytes": 130080,
+          "sha256": "24f96b9e18ab5c6bdd1971f86411cf61f9dc64f178a5221de9b5337454b3e1e7",
           "display_slots": [
             {
               "slot": 1,
@@ -4552,9 +4851,9 @@
           "page": 4,
           "name": "level_blockout_kit_wld_10_p04",
           "file": "level_blockout_kit_wld_10_p04.glb",
-          "triangles": 352,
-          "bytes": 51296,
-          "sha256": "0e6e517cec32e7fac755157032ce320550fc4c3427643c2a04b2fdfec3a613de",
+          "triangles": 1504,
+          "bytes": 179444,
+          "sha256": "8fb9c80d1cb8074ae2c950d07c6450eefec09bf0919a80a40d7ee1aa07fb84f1",
           "display_slots": [
             {
               "slot": 1,
@@ -4577,6 +4876,42 @@
                 0.0,
                 0,
                 -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_castle_wall_tapestry",
+              "title": "Medieval wall tapestry with carved hanging rod",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_ossuary_display_rack",
+              "title": "Stone ossuary niche shelves and memorial jars",
+              "source_ground_offset": -0.03,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_votive_candle_stand",
+              "title": "Three-tier wrought votive candle stand",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
               ],
               "review_only": true
             }
@@ -4611,7 +4946,8 @@
         "level_blockout_grave_caretaker_tools",
         "level_blockout_marsh_boardwalk",
         "level_blockout_marsh_ferry_stage",
-        "level_blockout_lighthouse_cistern"
+        "level_blockout_lighthouse_cistern",
+        "level_blockout_marsh_reed_cluster"
       ],
       "pages": [
         {
@@ -4782,9 +5118,9 @@
           "page": 3,
           "name": "level_blockout_kit_wld_11_p03",
           "file": "level_blockout_kit_wld_11_p03.glb",
-          "triangles": 396,
-          "bytes": 49468,
-          "sha256": "c334b1ff543cb06b85a8c1cabc4920c34272efe579f7f4592cf93a9c6f55b9f1",
+          "triangles": 600,
+          "bytes": 72432,
+          "sha256": "f5be7601ba9cdfe5bf8a4396207f77923b0bcab86253c10954bfb3f88f4e59dd",
           "display_slots": [
             {
               "slot": 1,
@@ -4805,6 +5141,18 @@
               "source_ground_offset": -0.005,
               "stand_center": [
                 0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_marsh_reed_cluster",
+              "title": "Marsh rushes and reed clump",
+              "source_ground_offset": 0.005,
+              "stand_center": [
+                7.0,
                 0,
                 -3.5
               ],
@@ -4837,7 +5185,8 @@
         "level_blockout_railway_coupler_wheelset",
         "level_blockout_rail_switch_assembly",
         "level_blockout_signal_hut_lever_bank",
-        "level_blockout_rail_trestle_bay"
+        "level_blockout_rail_trestle_bay",
+        "level_blockout_rail_buffer_stop"
       ],
       "pages": [
         {
@@ -4926,9 +5275,9 @@
           "page": 2,
           "name": "level_blockout_kit_wld_12_p02",
           "file": "level_blockout_kit_wld_12_p02.glb",
-          "triangles": 792,
-          "bytes": 94040,
-          "sha256": "9d0c016d1d36acc2fba56c054a724b8ac6b51c31c9794601442c45971df8f7dc",
+          "triangles": 968,
+          "bytes": 112012,
+          "sha256": "1c4ab32a04604979d43fee42b37c80ba5de6001689366cfe0a9adae55e85bc8b",
           "display_slots": [
             {
               "slot": 1,
@@ -4977,6 +5326,18 @@
                 3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_rail_buffer_stop",
+              "title": "Rail-end timber and steel buffer stop",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -5011,7 +5372,8 @@
         "level_blockout_cannery_boiler",
         "level_blockout_cannery_coldroom_door",
         "level_blockout_cannery_payroll_clock",
-        "level_blockout_mortuary_cold_storage"
+        "level_blockout_mortuary_cold_storage",
+        "level_blockout_cannery_cargo_pallet"
       ],
       "pages": [
         {
@@ -5182,9 +5544,9 @@
           "page": 3,
           "name": "level_blockout_kit_wld_13_p03",
           "file": "level_blockout_kit_wld_13_p03.glb",
-          "triangles": 656,
-          "bytes": 80176,
-          "sha256": "94e6b319badb7aadb28e9898dc2dcd55cab45b1919acd99bb65b9c14af93dca2",
+          "triangles": 836,
+          "bytes": 100684,
+          "sha256": "df64e6a06505d1ac241edef78caff59aff9246035c039d033bf1d81cdd19695b",
           "display_slots": [
             {
               "slot": 1,
@@ -5233,6 +5595,18 @@
                 3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_cannery_cargo_pallet",
+              "title": "Pallet of strapped canning crates",
+              "source_ground_offset": -0.03,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -5268,7 +5642,8 @@
         "level_blockout_lighthouse_cliff_guard",
         "level_blockout_ship_bilge_pump",
         "level_blockout_motel_walkway_canopy",
-        "level_blockout_coastal_security_fence"
+        "level_blockout_coastal_security_fence",
+        "level_blockout_lighthouse_foghorn"
       ],
       "pages": [
         {
@@ -5439,9 +5814,9 @@
           "page": 3,
           "name": "level_blockout_kit_wld_14_p03",
           "file": "level_blockout_kit_wld_14_p03.glb",
-          "triangles": 956,
-          "bytes": 108724,
-          "sha256": "02cc50ca63b61b33fd63dbbda6e8390c43743e1b12a5f771d9c2dec422daa8e9",
+          "triangles": 1208,
+          "bytes": 136544,
+          "sha256": "106a1f54e1433dff700cd52b921abce2fbf9efb7a2b2933498545285d5bce53c",
           "display_slots": [
             {
               "slot": 1,
@@ -5502,6 +5877,18 @@
                 3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_lighthouse_foghorn",
+              "title": "Coastal foghorn trumpet and deck mount",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -5548,7 +5935,8 @@
         "level_blockout_ship_net_boom",
         "level_blockout_ship_gangway_rails",
         "level_blockout_ship_crew_berth",
-        "level_blockout_motel_laundry_unit"
+        "level_blockout_motel_laundry_unit",
+        "level_blockout_mooring_rope_coils"
       ],
       "pages": [
         {
@@ -5883,9 +6271,9 @@
           "page": 5,
           "name": "level_blockout_kit_wld_15_p05",
           "file": "level_blockout_kit_wld_15_p05.glb",
-          "triangles": 556,
-          "bytes": 72112,
-          "sha256": "4a62d2a3941548f78cb514f5fd679d2aaaba5c96114504f9806b4ed9f2b4bde9",
+          "triangles": 1276,
+          "bytes": 145612,
+          "sha256": "6581ed1163fe829f7b772cab0c92c0a46b1edb40249ced1cb282ac5ce52b3c66",
           "display_slots": [
             {
               "slot": 1,
@@ -5934,6 +6322,18 @@
                 3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_mooring_rope_coils",
+              "title": "Loose layered harbor mooring rope coils",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -5965,7 +6365,8 @@
         "level_blockout_abandoned_camper_shell",
         "level_blockout_motel_laundry_unit",
         "level_blockout_motel_parking_stops",
-        "level_blockout_motel_walkway_canopy"
+        "level_blockout_motel_walkway_canopy",
+        "level_blockout_motel_ice_machine"
       ],
       "pages": [
         {
@@ -6136,9 +6537,9 @@
           "page": 3,
           "name": "level_blockout_kit_wld_16_p03",
           "file": "level_blockout_kit_wld_16_p03.glb",
-          "triangles": 108,
-          "bytes": 20068,
-          "sha256": "fbed9a19dfc51f3f38587f743c2c9362540562c444da528d53c28460c39f86e9",
+          "triangles": 228,
+          "bytes": 38644,
+          "sha256": "f464c8837cf71dcbc99549abec02e96ba5bf424a05282d573acd1380936c8ffd",
           "display_slots": [
             {
               "slot": 1,
@@ -6147,6 +6548,18 @@
               "source_ground_offset": -0.0,
               "stand_center": [
                 -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_motel_ice_machine",
+              "title": "Roadside motor lodge ice dispenser",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
                 0,
                 -3.5
               ],
@@ -6187,7 +6600,8 @@
         "level_blockout_casemate_empty_mount",
         "level_blockout_casemate_ventilation",
         "level_blockout_barracks_lockers",
-        "level_blockout_coastal_security_fence"
+        "level_blockout_coastal_security_fence",
+        "level_blockout_coastal_ammo_crate"
       ],
       "pages": [
         {
@@ -6435,6 +6849,28 @@
               "review_only": true
             }
           ]
+        },
+        {
+          "page": 4,
+          "name": "level_blockout_kit_wld_17_p04",
+          "file": "level_blockout_kit_wld_17_p04.glb",
+          "triangles": 132,
+          "bytes": 24676,
+          "sha256": "440a62fa5f28eef97df5e6822440808be8a1a0e6628464a0347e2f9b7ef8603b",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_coastal_ammo_crate",
+              "title": "Sealed inert coastal artillery supply crate",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            }
+          ]
         }
       ],
       "still_source_only": true
@@ -6473,16 +6909,19 @@
         "level_blockout_coastal_security_fence",
         "level_blockout_cinder_hollow_shaft_liner",
         "level_blockout_cinder_sump_pump",
-        "level_blockout_cinder_escape_landing"
+        "level_blockout_cinder_escape_landing",
+        "level_blockout_coastal_ammo_crate",
+        "level_blockout_research_sample_station",
+        "level_blockout_cinder_decon_frame"
       ],
       "pages": [
         {
           "page": 1,
           "name": "level_blockout_kit_wld_18_p01",
           "file": "level_blockout_kit_wld_18_p01.glb",
-          "triangles": 1000,
-          "bytes": 113100,
-          "sha256": "7dc360b35e050b39c1c1ba7a314b43cbf1e2dccccdc89ff5c8ac9b10569308ec",
+          "triangles": 1096,
+          "bytes": 122908,
+          "sha256": "1048086d56c967170b211e31db0fd42a7af2f8314b30486ae8309cc15df1ca3b",
           "display_slots": [
             {
               "slot": 1,
@@ -6726,9 +7165,9 @@
           "page": 4,
           "name": "level_blockout_kit_wld_18_p04",
           "file": "level_blockout_kit_wld_18_p04.glb",
-          "triangles": 1112,
-          "bytes": 124588,
-          "sha256": "2f6d0c7db74f686866772c5504059a1e3080fa8b81e63cd9f25fceb8f53c7a12",
+          "triangles": 1460,
+          "bytes": 166524,
+          "sha256": "532728cab4c7ff835ce50e8a30d6e3eca405473117491a8185c84763cc57dac0",
           "display_slots": [
             {
               "slot": 1,
@@ -6777,6 +7216,52 @@
                 3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_coastal_ammo_crate",
+              "title": "Sealed inert coastal artillery supply crate",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_research_sample_station",
+              "title": "Field sample-tray research bench",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 5,
+          "name": "level_blockout_kit_wld_18_p05",
+          "file": "level_blockout_kit_wld_18_p05.glb",
+          "triangles": 172,
+          "bytes": 26588,
+          "sha256": "fac397e17bb7fe2f1cf0759612beaa4a8a52a2f3097b90d76023b9a87ec23799",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_cinder_decon_frame",
+              "title": "Research and cinder decontamination arch",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -6814,7 +7299,8 @@
         "level_blockout_mortuary_cold_storage",
         "level_blockout_mortuary_viewing_seat",
         "level_blockout_mortuary_service_screen",
-        "level_blockout_relic_padded_tray"
+        "level_blockout_relic_padded_tray",
+        "level_blockout_medical_resuscitation_cart"
       ],
       "pages": [
         {
@@ -7067,9 +7553,9 @@
           "page": 4,
           "name": "level_blockout_kit_wld_07_mortuary_p04",
           "file": "level_blockout_kit_wld_07_mortuary_p04.glb",
-          "triangles": 120,
-          "bytes": 25460,
-          "sha256": "974e6386879371f13adbe3b38617e80d98e4b574b60101946ec31cc57a1a598e",
+          "triangles": 380,
+          "bytes": 54128,
+          "sha256": "e8ad83c5c0acf6297b924adcb8a57a6ebdca496d967cd571349cc14c88df235a",
           "display_slots": [
             {
               "slot": 1,
@@ -7082,6 +7568,18 @@
                 -3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_medical_resuscitation_cart",
+              "title": "Ward resuscitation supply cart",
+              "source_ground_offset": 0.009,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -7089,6 +7587,6 @@
       "still_source_only": true
     }
   ],
-  "total_stands": 438,
-  "total_pages": 86
+  "total_stands": 474,
+  "total_pages": 89
 }

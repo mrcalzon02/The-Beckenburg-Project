@@ -4,9 +4,9 @@
   "models": [
     {
       "id": "level_blockout_doorway",
-      "triangles": 48,
-      "bytes": 9712,
-      "sha256": "2ba1a76c6c8530959d13ad5134984eb6075fb8575648877488317f9f5882ac67"
+      "triangles": 108,
+      "bytes": 17992,
+      "sha256": "89f5c94c9d7b8f8ac0285c606bb322e9a71b04df715a75498af4cf53830ee7d2"
     },
     {
       "id": "level_blockout_stair_flight",
@@ -82,9 +82,9 @@
     },
     {
       "id": "level_blockout_log_stack",
-      "triangles": 312,
-      "bytes": 34544,
-      "sha256": "c5a9da6b6a184c8a4582a996f7a536d5389cf8098bdd05a5bcd23be5b6dca48e"
+      "triangles": 264,
+      "bytes": 29628,
+      "sha256": "d9f705a653686f48f3df538ce15a06bb0eea3c99deee8f37a6f7343c9199b112"
     },
     {
       "id": "level_blockout_camp_tent",
@@ -172,9 +172,9 @@
     },
     {
       "id": "level_blockout_shaft_ring",
-      "triangles": 192,
-      "bytes": 24428,
-      "sha256": "f8293570cb0add012ad2ee14d9d69eb2091d93c7bd83616d45504756cb8fa8cb"
+      "triangles": 288,
+      "bytes": 34248,
+      "sha256": "2cb6aa4f0423cccc8ba119c5f3face2bf98e39e091383e28b68a34eca35f7981"
     },
     {
       "id": "level_blockout_mortuary_trolley",
@@ -239,8 +239,8 @@
     {
       "id": "level_blockout_mine_ventilation",
       "triangles": 196,
-      "bytes": 29008,
-      "sha256": "ab2124f2c52dcdfabc7e970484f09896204423a8dc264ce4919c8fd2557ba829"
+      "bytes": 28984,
+      "sha256": "4d7feffbb7bed878c54c410d55cd5adfbc7d3dd4fa3a95755d65bbb997507643"
     },
     {
       "id": "level_blockout_assay_balance",
@@ -838,21 +838,21 @@
     },
     {
       "id": "level_blockout_sarcophagus_plain",
-      "triangles": 120,
-      "bytes": 19144,
-      "sha256": "38bdbb8603011f3ad44a19b6c8363345b50c87db009680af867cf699e08a968c"
+      "triangles": 144,
+      "bytes": 19444,
+      "sha256": "6c7f425488071b1563fed3fda111d8ffcd6b03d1ae792a7bc8d741d75e62c7ea"
     },
     {
       "id": "level_blockout_sarcophagus_inscribed",
-      "triangles": 168,
-      "bytes": 23992,
-      "sha256": "66668217aab8363283ecb0bd240058a3cd260e96c09da2d4cdfc0420261f83ec"
+      "triangles": 216,
+      "bytes": 28936,
+      "sha256": "5117963dd3ca0ffa417647e5e8691cdb2bff4c3e0f8a9390291aa4e2e61f5f10"
     },
     {
       "id": "level_blockout_sarcophagus_effigy",
-      "triangles": 156,
-      "bytes": 22760,
-      "sha256": "3c9cf605355d1225bf85a714e1c4303f1b8b315de408587bd39565cd138dcd3f"
+      "triangles": 228,
+      "bytes": 32252,
+      "sha256": "ded878c814730d57d9ed7fe64cff0308da30f935a9d633fe07228021f9d1c025"
     },
     {
       "id": "level_blockout_relic_mourning_locket",
@@ -961,6 +961,114 @@
       "triangles": 180,
       "bytes": 31688,
       "sha256": "74f7a3be9889542512a643cf8d6bb97af5023a258b99c5df870f0a87717c0972"
+    },
+    {
+      "id": "level_blockout_castle_wall_tapestry",
+      "triangles": 168,
+      "bytes": 24136,
+      "sha256": "925392a662cadc8d2604e3559ed100f1cc029cc47b2076231b98911b1af7cbee"
+    },
+    {
+      "id": "level_blockout_ossuary_display_rack",
+      "triangles": 276,
+      "bytes": 33068,
+      "sha256": "8075b2a708ab6fb16a60970a59316b63b963e40026fe43b5ad73185e079e264a"
+    },
+    {
+      "id": "level_blockout_votive_candle_stand",
+      "triangles": 564,
+      "bytes": 62292,
+      "sha256": "22d353835a2f2f9da013212c421a9bdf61ac3eb1c72eadc8c9d5afb5f6426a6e"
+    },
+    {
+      "id": "level_blockout_medical_resuscitation_cart",
+      "triangles": 236,
+      "bytes": 33040,
+      "sha256": "677b7db46333540497aefcc98b3d275446c4ff6d4d114c356e68878d5f15f55c"
+    },
+    {
+      "id": "level_blockout_library_book_return_cart",
+      "triangles": 272,
+      "bytes": 36912,
+      "sha256": "a1179da3414cce1eb351d4d5eba920483e27c1535eb1218bba9fc80c73d410a9"
+    },
+    {
+      "id": "level_blockout_prison_cell_cot",
+      "triangles": 96,
+      "bytes": 14544,
+      "sha256": "d5abc22925774e2046243f39a7ce838594af837e983373b498c9ae7da9ca7258"
+    },
+    {
+      "id": "level_blockout_logging_sawbuck",
+      "triangles": 112,
+      "bytes": 14132,
+      "sha256": "1cb812e3cbfe15719aaf1333401454dc9e9dfadfaaa774ebc6cd86655c65e773"
+    },
+    {
+      "id": "level_blockout_mooring_rope_coils",
+      "triangles": 696,
+      "bytes": 75904,
+      "sha256": "9637a7e8a41de8c1d02992bfb828a7602dd2d606e739e5e7da909f9d7e682be5"
+    },
+    {
+      "id": "level_blockout_marsh_reed_cluster",
+      "triangles": 180,
+      "bytes": 25404,
+      "sha256": "f1e4a4b756cfae056b0611f0f8cc7299d03ce19ba7981b9c46e1e4cb435857bd"
+    },
+    {
+      "id": "level_blockout_rail_buffer_stop",
+      "triangles": 152,
+      "bytes": 22440,
+      "sha256": "79ef227b659a450b72aa88769037af51bd437858189aec6296c8c5d99e2ed42d"
+    },
+    {
+      "id": "level_blockout_cannery_cargo_pallet",
+      "triangles": 156,
+      "bytes": 20736,
+      "sha256": "6881ba5f93c4dafedf976866835d5c543eb21a309559b48f547bd73cd5a8f6df"
+    },
+    {
+      "id": "level_blockout_lighthouse_foghorn",
+      "triangles": 228,
+      "bytes": 30192,
+      "sha256": "7edd03e4f0a9c2351bc2b59adf5f1429b631799914210002e5c789fcef64538d"
+    },
+    {
+      "id": "level_blockout_coastal_ammo_crate",
+      "triangles": 108,
+      "bytes": 18000,
+      "sha256": "1b5fede6a655da9bb34bd40206432063f436d6057524dbdb891478a31e300913"
+    },
+    {
+      "id": "level_blockout_research_sample_station",
+      "triangles": 192,
+      "bytes": 30840,
+      "sha256": "00f5f9ac73578478ad6c8c9d2292352f88fd2cb92c1ad5803ab0431b1cdb55f9"
+    },
+    {
+      "id": "level_blockout_motel_ice_machine",
+      "triangles": 96,
+      "bytes": 20792,
+      "sha256": "ab972ab1a3e40ebfcfbb4c88715114935a5d383da5dd556cb36213d8f2160011"
+    },
+    {
+      "id": "level_blockout_dam_service_grating",
+      "triangles": 252,
+      "bytes": 30512,
+      "sha256": "dc81826a6df869ebe3c0bb70fea2cb434389414b1665e5906552c216ce4391e8"
+    },
+    {
+      "id": "level_blockout_cinder_decon_frame",
+      "triangles": 148,
+      "bytes": 22028,
+      "sha256": "5a6872f76920e8c353a98cae3b20c4ef7874c90a7b4eb38dad17e864f7f41351"
+    },
+    {
+      "id": "level_blockout_mine_pick_tool_rack",
+      "triangles": 180,
+      "bytes": 23220,
+      "sha256": "d5e0de7e317c42b979f2f0a72d956ae0bcab1679fd245bb36178d04e41400484"
     }
   ]
 }
