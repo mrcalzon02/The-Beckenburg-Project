@@ -40,7 +40,8 @@
         "level_blockout_college_cafe_counter",
         "level_blockout_gym_wall_bars",
         "level_blockout_greenhouse_potting_bench",
-        "level_blockout_monastery_scriptorium"
+        "level_blockout_monastery_scriptorium",
+        "level_blockout_relic_repair_stand"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -98,7 +99,24 @@
         "level_blockout_monastery_scriptorium",
         "level_blockout_sarcophagus_plain",
         "level_blockout_sarcophagus_inscribed",
-        "level_blockout_sarcophagus_effigy"
+        "level_blockout_sarcophagus_effigy",
+        "level_blockout_relic_mourning_locket",
+        "level_blockout_relic_votive_bell",
+        "level_blockout_relic_bronze_astrolabe",
+        "level_blockout_relic_sealed_urn",
+        "level_blockout_relic_black_mirror",
+        "level_blockout_relic_bound_folio",
+        "level_blockout_relic_reliquary_box",
+        "level_blockout_relic_pilgrim_lantern",
+        "level_blockout_relic_ossuary_keys",
+        "level_blockout_relic_censer",
+        "level_blockout_relic_burial_mask",
+        "level_blockout_relic_pilgrim_chalice",
+        "level_blockout_relic_padded_tray",
+        "level_blockout_relic_locking_showcase",
+        "level_blockout_relic_barred_shelf",
+        "level_blockout_relic_inventory_placard",
+        "level_blockout_relic_repair_stand"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -126,7 +144,8 @@
         "level_blockout_mortuary_viewing_seat",
         "level_blockout_sarcophagus_plain",
         "level_blockout_sarcophagus_inscribed",
-        "level_blockout_sarcophagus_effigy"
+        "level_blockout_sarcophagus_effigy",
+        "level_blockout_relic_inventory_placard"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -223,7 +242,8 @@
         "level_blockout_root_cellar_bins",
         "level_blockout_family_photo_cluster",
         "level_blockout_cellar_service_manifold",
-        "level_blockout_house_mailbox"
+        "level_blockout_house_mailbox",
+        "level_blockout_relic_locking_showcase"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -463,7 +483,8 @@
         "level_blockout_mortuary_service_screen",
         "level_blockout_sarcophagus_plain",
         "level_blockout_sarcophagus_inscribed",
-        "level_blockout_sarcophagus_effigy"
+        "level_blockout_sarcophagus_effigy",
+        "level_blockout_relic_inventory_placard"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -549,7 +570,8 @@
         "level_blockout_supported_cable_tray",
         "level_blockout_sarcophagus_plain",
         "level_blockout_sarcophagus_inscribed",
-        "level_blockout_sarcophagus_effigy"
+        "level_blockout_sarcophagus_effigy",
+        "level_blockout_relic_repair_stand"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -831,7 +853,8 @@
         "level_blockout_mortuary_prep_table",
         "level_blockout_mortuary_cold_storage",
         "level_blockout_mortuary_viewing_seat",
-        "level_blockout_mortuary_service_screen"
+        "level_blockout_mortuary_service_screen",
+        "level_blockout_relic_padded_tray"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     }
@@ -4673,9 +4696,135 @@
             0.05
           ],
           "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.9,
+            0
+          ],
+          "size": [
+            1.12,
+            0.08,
+            1.12
+          ],
+          "material": "redcloth"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.44,
+            0.79,
+            -0.43
+          ],
+          "size": [
+            0.09,
+            0.19,
+            0.1
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.44,
+            0.79,
+            0.43
+          ],
+          "size": [
+            0.09,
+            0.19,
+            0.1
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.44,
+            0.79,
+            -0.43
+          ],
+          "size": [
+            0.09,
+            0.19,
+            0.1
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.44,
+            0.79,
+            0.43
+          ],
+          "size": [
+            0.09,
+            0.19,
+            0.1
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.16,
+            0.57
+          ],
+          "size": [
+            0.67,
+            0.075,
+            0.06
+          ],
+          "material": "gilt"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.52,
+            1.92,
+            0
+          ],
+          "size": [
+            0.05,
+            0.06,
+            1.12
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.52,
+            1.92,
+            0
+          ],
+          "size": [
+            0.05,
+            0.06,
+            1.12
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.08,
+            -0.57
+          ],
+          "size": [
+            0.38,
+            0.13,
+            0.03
+          ],
+          "material": "ivory"
         }
       ],
-      "notes": "Static empty containment silhouette. No supernatural gameplay or actual captured relic.",
+      "notes": "Physical sealed case and empty inset padded support only. Separate individual relic mesh required; no captured-item state, spectral effect, network authority or openable glass.",
       "authoring_stage": "primitive_blockout",
       "runtime_approved": false
     },
@@ -21508,6 +21657,3280 @@
         }
       ],
       "notes": "Abstract carved effigy, no real person or corpse. One sarcophagus per GLB; permanently closed. Keep separate from live relic vault and mission interactions.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_relic_mourning_locket",
+      "label": "Mourning locket in folded cloth",
+      "category": "relic",
+      "maps": [
+        "CASTLE"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.055,
+            0
+          ],
+          "size": [
+            0.68,
+            0.11,
+            0.51
+          ],
+          "material": "redcloth"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.18,
+            0
+          ],
+          "radius": 0.18,
+          "height": 0.12,
+          "material": "gilt",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.253,
+            0
+          ],
+          "radius": 0.128,
+          "height": 0.025,
+          "material": "ivory",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.292,
+            0
+          ],
+          "radius": 0.045,
+          "height": 0.02,
+          "material": "bronze",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "box",
+          "p": [
+            0.21,
+            0.17,
+            0
+          ],
+          "size": [
+            0.055,
+            0.08,
+            0.05
+          ],
+          "material": "gilt",
+          "yaw": 1.5707963267948966
+        },
+        {
+          "type": "box",
+          "p": [
+            0.16989356881873896,
+            0.17,
+            0.12343490298141935
+          ],
+          "size": [
+            0.055,
+            0.08,
+            0.05
+          ],
+          "material": "gilt",
+          "yaw": 2.199114857512855
+        },
+        {
+          "type": "box",
+          "p": [
+            0.06489356881873896,
+            0.17,
+            0.19972186842198222
+          ],
+          "size": [
+            0.055,
+            0.08,
+            0.05
+          ],
+          "material": "gilt",
+          "yaw": 2.827433388230814
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.06489356881873894,
+            0.17,
+            0.19972186842198225
+          ],
+          "size": [
+            0.055,
+            0.08,
+            0.05
+          ],
+          "material": "gilt",
+          "yaw": 3.4557519189487724
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.16989356881873893,
+            0.17,
+            0.12343490298141938
+          ],
+          "size": [
+            0.055,
+            0.08,
+            0.05
+          ],
+          "material": "gilt",
+          "yaw": 4.084070449666731
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.21,
+            0.17,
+            2.5717582782094416e-17
+          ],
+          "size": [
+            0.055,
+            0.08,
+            0.05
+          ],
+          "material": "gilt",
+          "yaw": 4.71238898038469
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.169893568818739,
+            0.17,
+            -0.12343490298141933
+          ],
+          "size": [
+            0.055,
+            0.08,
+            0.05
+          ],
+          "material": "gilt",
+          "yaw": 5.340707511102648
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.06489356881873899,
+            0.17,
+            -0.19972186842198222
+          ],
+          "size": [
+            0.055,
+            0.08,
+            0.05
+          ],
+          "material": "gilt",
+          "yaw": 5.969026041820607
+        },
+        {
+          "type": "box",
+          "p": [
+            0.06489356881873892,
+            0.17,
+            -0.19972186842198225
+          ],
+          "size": [
+            0.055,
+            0.08,
+            0.05
+          ],
+          "material": "gilt",
+          "yaw": 6.5973445725385655
+        },
+        {
+          "type": "box",
+          "p": [
+            0.16989356881873893,
+            0.17,
+            -0.1234349029814194
+          ],
+          "size": [
+            0.055,
+            0.08,
+            0.05
+          ],
+          "material": "gilt",
+          "yaw": 7.225663103256524
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.363,
+            -0.16
+          ],
+          "radius": 0.055,
+          "height": 0.09,
+          "material": "gilt",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.325,
+            -0.29
+          ],
+          "size": [
+            0.055,
+            0.06,
+            0.24
+          ],
+          "material": "bronze"
+        }
+      ],
+      "notes": "Inert historical locket. No image of a person, no charm power, not a player inventory object.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_relic_votive_bell",
+      "label": "Cracked bronze votive handbell",
+      "category": "relic",
+      "maps": [
+        "CASTLE"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.06,
+            0
+          ],
+          "size": [
+            0.58,
+            0.1,
+            0.58
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.36,
+            0
+          ],
+          "radius": 0.32,
+          "height": 0.44,
+          "material": "bronze",
+          "axis": "y",
+          "segments": 16
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.59,
+            0
+          ],
+          "radius": 0.15,
+          "height": 0.17,
+          "material": "gilt",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.75,
+            0
+          ],
+          "radius": 0.065,
+          "height": 0.24,
+          "material": "wood",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.12,
+            0
+          ],
+          "radius": 0.37,
+          "height": 0.11,
+          "material": "patina",
+          "axis": "y",
+          "segments": 16
+        },
+        {
+          "type": "box",
+          "p": [
+            0.11,
+            0.31,
+            -0.295
+          ],
+          "size": [
+            0.035,
+            0.33,
+            0.018
+          ],
+          "material": "dark",
+          "yaw": 0.33
+        },
+        {
+          "type": "box",
+          "p": [
+            0.19,
+            0.17,
+            -0.26
+          ],
+          "size": [
+            0.035,
+            0.18,
+            0.02
+          ],
+          "material": "dark",
+          "yaw": -0.31
+        }
+      ],
+      "notes": "Split modeled as static dark inset lines; no bell swing, audio, ritual interaction or curse.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_relic_bronze_astrolabe",
+      "label": "Old navigational astrolabe instrument",
+      "category": "relic",
+      "maps": [
+        "CASTLE"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.075,
+            0
+          ],
+          "size": [
+            1.05,
+            0.14,
+            0.68
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.31,
+            0
+          ],
+          "radius": 0.46,
+          "height": 0.08,
+          "material": "bronze",
+          "axis": "z",
+          "segments": 16
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.32,
+            -0.047
+          ],
+          "radius": 0.34,
+          "height": 0.075,
+          "material": "dark",
+          "axis": "z",
+          "segments": 16
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.32,
+            -0.092
+          ],
+          "radius": 0.18,
+          "height": 0.085,
+          "material": "patina",
+          "axis": "z",
+          "segments": 16
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.7,
+            -0.115
+          ],
+          "size": [
+            0.035,
+            0.095,
+            0.035
+          ],
+          "material": "gilt",
+          "yaw": 0
+        },
+        {
+          "type": "box",
+          "p": [
+            0.18999999999999997,
+            0.6490896534380868,
+            -0.115
+          ],
+          "size": [
+            0.035,
+            0.095,
+            0.035
+          ],
+          "material": "gilt",
+          "yaw": 0.5235987755982988
+        },
+        {
+          "type": "box",
+          "p": [
+            0.32908965343808666,
+            0.51,
+            -0.115
+          ],
+          "size": [
+            0.035,
+            0.095,
+            0.035
+          ],
+          "material": "gilt",
+          "yaw": 1.0471975511965976
+        },
+        {
+          "type": "box",
+          "p": [
+            0.38,
+            0.32,
+            -0.115
+          ],
+          "size": [
+            0.035,
+            0.095,
+            0.035
+          ],
+          "material": "gilt",
+          "yaw": 1.5707963267948966
+        },
+        {
+          "type": "box",
+          "p": [
+            0.3290896534380867,
+            0.1300000000000001,
+            -0.115
+          ],
+          "size": [
+            0.035,
+            0.095,
+            0.035
+          ],
+          "material": "gilt",
+          "yaw": 2.0943951023931953
+        },
+        {
+          "type": "box",
+          "p": [
+            0.18999999999999997,
+            -0.009089653438086709,
+            -0.115
+          ],
+          "size": [
+            0.035,
+            0.095,
+            0.035
+          ],
+          "material": "gilt",
+          "yaw": 2.6179938779914944
+        },
+        {
+          "type": "box",
+          "p": [
+            4.6536578367599424e-17,
+            -0.06,
+            -0.115
+          ],
+          "size": [
+            0.035,
+            0.095,
+            0.035
+          ],
+          "material": "gilt",
+          "yaw": 3.141592653589793
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.1899999999999999,
+            -0.009089653438086764,
+            -0.115
+          ],
+          "size": [
+            0.035,
+            0.095,
+            0.035
+          ],
+          "material": "gilt",
+          "yaw": 3.665191429188092
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.3290896534380866,
+            0.12999999999999984,
+            -0.115
+          ],
+          "size": [
+            0.035,
+            0.095,
+            0.035
+          ],
+          "material": "gilt",
+          "yaw": 4.1887902047863905
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.38,
+            0.31999999999999995,
+            -0.115
+          ],
+          "size": [
+            0.035,
+            0.095,
+            0.035
+          ],
+          "material": "gilt",
+          "yaw": 4.71238898038469
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.32908965343808666,
+            0.51,
+            -0.115
+          ],
+          "size": [
+            0.035,
+            0.095,
+            0.035
+          ],
+          "material": "gilt",
+          "yaw": 5.235987755982989
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.19000000000000017,
+            0.6490896534380866,
+            -0.115
+          ],
+          "size": [
+            0.035,
+            0.095,
+            0.035
+          ],
+          "material": "gilt",
+          "yaw": 5.759586531581287
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.31,
+            -0.145
+          ],
+          "size": [
+            0.71,
+            0.034,
+            0.034
+          ],
+          "material": "gilt",
+          "yaw": 0.42
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.85,
+            0
+          ],
+          "radius": 0.065,
+          "height": 0.14,
+          "material": "bronze",
+          "axis": "y",
+          "segments": 12
+        }
+      ],
+      "notes": "Static instrument silhouette, face plane vertical and dial merely suggested; not a working navigator.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_relic_sealed_urn",
+      "label": "Burial urn with sealed collar and bands",
+      "category": "relic",
+      "maps": [
+        "CASTLE"
+      ],
+      "parts": [
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.1,
+            0
+          ],
+          "radius": 0.37,
+          "height": 0.18,
+          "material": "stone",
+          "axis": "y",
+          "segments": 16
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.34,
+            0
+          ],
+          "radius": 0.36,
+          "height": 0.42,
+          "material": "ceramic",
+          "axis": "y",
+          "segments": 16
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.59,
+            0
+          ],
+          "radius": 0.45,
+          "height": 0.25,
+          "material": "ceramic",
+          "axis": "y",
+          "segments": 16
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.79,
+            0
+          ],
+          "radius": 0.25,
+          "height": 0.21,
+          "material": "patina",
+          "axis": "y",
+          "segments": 14
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.94,
+            0
+          ],
+          "radius": 0.34,
+          "height": 0.095,
+          "material": "bronze",
+          "axis": "y",
+          "segments": 14
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1,
+            0
+          ],
+          "radius": 0.2,
+          "height": 0.07,
+          "material": "stone",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "box",
+          "p": [
+            0.39,
+            0.65,
+            0
+          ],
+          "size": [
+            0.09,
+            0.08,
+            0.045
+          ],
+          "material": "gilt",
+          "yaw": 1.5707963267948966
+        },
+        {
+          "type": "box",
+          "p": [
+            0.3377499074759311,
+            0.65,
+            0.19499999999999998
+          ],
+          "size": [
+            0.09,
+            0.08,
+            0.045
+          ],
+          "material": "gilt",
+          "yaw": 2.0943951023931953
+        },
+        {
+          "type": "box",
+          "p": [
+            0.19500000000000006,
+            0.65,
+            0.3377499074759311
+          ],
+          "size": [
+            0.09,
+            0.08,
+            0.045
+          ],
+          "material": "gilt",
+          "yaw": 2.617993877991494
+        },
+        {
+          "type": "box",
+          "p": [
+            2.3880612583373387e-17,
+            0.65,
+            0.39
+          ],
+          "size": [
+            0.09,
+            0.08,
+            0.045
+          ],
+          "material": "gilt",
+          "yaw": 3.141592653589793
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.19499999999999992,
+            0.65,
+            0.3377499074759311
+          ],
+          "size": [
+            0.09,
+            0.08,
+            0.045
+          ],
+          "material": "gilt",
+          "yaw": 3.665191429188092
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.3377499074759311,
+            0.65,
+            0.19499999999999998
+          ],
+          "size": [
+            0.09,
+            0.08,
+            0.045
+          ],
+          "material": "gilt",
+          "yaw": 4.188790204786391
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.39,
+            0.65,
+            4.7761225166746774e-17
+          ],
+          "size": [
+            0.09,
+            0.08,
+            0.045
+          ],
+          "material": "gilt",
+          "yaw": 4.71238898038469
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.33774990747593114,
+            0.65,
+            -0.1949999999999999
+          ],
+          "size": [
+            0.09,
+            0.08,
+            0.045
+          ],
+          "material": "gilt",
+          "yaw": 5.235987755982988
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.19500000000000017,
+            0.65,
+            -0.337749907475931
+          ],
+          "size": [
+            0.09,
+            0.08,
+            0.045
+          ],
+          "material": "gilt",
+          "yaw": 5.759586531581287
+        },
+        {
+          "type": "box",
+          "p": [
+            -7.164183775012016e-17,
+            0.65,
+            -0.39
+          ],
+          "size": [
+            0.09,
+            0.08,
+            0.045
+          ],
+          "material": "gilt",
+          "yaw": 6.283185307179586
+        },
+        {
+          "type": "box",
+          "p": [
+            0.19500000000000006,
+            0.65,
+            -0.3377499074759311
+          ],
+          "size": [
+            0.09,
+            0.08,
+            0.045
+          ],
+          "material": "gilt",
+          "yaw": 6.806784082777885
+        },
+        {
+          "type": "box",
+          "p": [
+            0.337749907475931,
+            0.65,
+            -0.19500000000000017
+          ],
+          "size": [
+            0.09,
+            0.08,
+            0.045
+          ],
+          "material": "gilt",
+          "yaw": 7.330382858376184
+        }
+      ],
+      "notes": "Closed archaeological urn with no contents, remains or power assigned.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_relic_black_mirror",
+      "label": "Tarnished obsidian looking glass",
+      "category": "relic",
+      "maps": [
+        "CASTLE"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.06,
+            0
+          ],
+          "size": [
+            1.12,
+            0.12,
+            0.67
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.83,
+            0.1
+          ],
+          "size": [
+            0.9,
+            1.46,
+            0.1
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.83,
+            -0.01
+          ],
+          "size": [
+            0.76,
+            1.23,
+            0.045
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.39,
+            0.83,
+            -0.09
+          ],
+          "size": [
+            0.07,
+            1.42,
+            0.06
+          ],
+          "material": "gilt"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.39,
+            0.83,
+            -0.09
+          ],
+          "size": [
+            0.07,
+            1.42,
+            0.06
+          ],
+          "material": "gilt"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.56,
+            -0.09
+          ],
+          "size": [
+            0.84,
+            0.07,
+            0.06
+          ],
+          "material": "gilt"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.14,
+            -0.09
+          ],
+          "size": [
+            0.84,
+            0.07,
+            0.06
+          ],
+          "material": "gilt"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.2,
+            0.79,
+            -0.049
+          ],
+          "size": [
+            0.025,
+            0.74,
+            0.012
+          ],
+          "material": "silver",
+          "yaw": -0.17
+        },
+        {
+          "type": "box",
+          "p": [
+            0.1,
+            0.79,
+            -0.049
+          ],
+          "size": [
+            0.025,
+            0.74,
+            0.012
+          ],
+          "material": "silver",
+          "yaw": -0.17
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.33,
+            0.3
+          ],
+          "size": [
+            0.23,
+            0.56,
+            0.39
+          ],
+          "material": "bronze"
+        }
+      ],
+      "notes": "Dark non-reflecting display inset. NOT the ghost-hunting mirror and has no reflective shader.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_relic_bound_folio",
+      "label": "Padlocked occult archive folio",
+      "category": "relic",
+      "maps": [
+        "CASTLE"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.055,
+            0
+          ],
+          "size": [
+            0.66,
+            0.11,
+            0.93
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.17,
+            0
+          ],
+          "size": [
+            0.48,
+            0.17,
+            0.73
+          ],
+          "material": "ivory"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.29,
+            0
+          ],
+          "size": [
+            0.57,
+            0.11,
+            0.79
+          ],
+          "material": "leather"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.27,
+            0.24,
+            0
+          ],
+          "size": [
+            0.09,
+            0.23,
+            0.86
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.315,
+            -0.24
+          ],
+          "size": [
+            0.61,
+            0.035,
+            0.05
+          ],
+          "material": "gilt"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.315,
+            0
+          ],
+          "size": [
+            0.61,
+            0.035,
+            0.05
+          ],
+          "material": "gilt"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.315,
+            0.24
+          ],
+          "size": [
+            0.61,
+            0.035,
+            0.05
+          ],
+          "material": "gilt"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.26,
+            0.24,
+            0.02
+          ],
+          "size": [
+            0.05,
+            0.19,
+            0.18
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.29,
+            0.32,
+            0.02
+          ],
+          "radius": 0.045,
+          "height": 0.08,
+          "material": "gilt",
+          "axis": "y",
+          "segments": 10
+        }
+      ],
+      "notes": "Separate sealed folio; does not replace the live ghost-writing book, readable text or narrative clues.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_relic_reliquary_box",
+      "label": "Gilded lidded reliquary coffer",
+      "category": "relic",
+      "maps": [
+        "CASTLE"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.08,
+            0
+          ],
+          "size": [
+            0.96,
+            0.16,
+            0.73
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.36,
+            0
+          ],
+          "size": [
+            0.86,
+            0.47,
+            0.6
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.65,
+            0
+          ],
+          "size": [
+            0.97,
+            0.18,
+            0.74
+          ],
+          "material": "gilt"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.38,
+            0.4,
+            -0.315
+          ],
+          "size": [
+            0.075,
+            0.41,
+            0.055
+          ],
+          "material": "gilt"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.38,
+            0.4,
+            -0.315
+          ],
+          "size": [
+            0.075,
+            0.41,
+            0.055
+          ],
+          "material": "gilt"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.39,
+            -0.26
+          ],
+          "size": [
+            0.9,
+            0.055,
+            0.055
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.39,
+            0.26
+          ],
+          "size": [
+            0.9,
+            0.055,
+            0.055
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.36,
+            -0.32
+          ],
+          "size": [
+            0.16,
+            0.21,
+            0.036
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.45,
+            -0.35
+          ],
+          "radius": 0.065,
+          "height": 0.045,
+          "material": "gilt",
+          "axis": "z",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.39,
+            0.42,
+            -0.39
+          ],
+          "size": [
+            0.07,
+            0.61,
+            0.07
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.39,
+            0.42,
+            0.39
+          ],
+          "size": [
+            0.07,
+            0.61,
+            0.07
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.39,
+            0.42,
+            -0.39
+          ],
+          "size": [
+            0.07,
+            0.61,
+            0.07
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.39,
+            0.42,
+            0.39
+          ],
+          "size": [
+            0.07,
+            0.61,
+            0.07
+          ],
+          "material": "bronze"
+        }
+      ],
+      "notes": "Lid sealed; no relic contents, opening animation or stateful container inventory.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_relic_pilgrim_lantern",
+      "label": "Ancient pilgrim lantern with shielded glass",
+      "category": "relic",
+      "maps": [
+        "CASTLE"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.1,
+            0
+          ],
+          "size": [
+            0.62,
+            0.2,
+            0.62
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.24,
+            0.51,
+            -0.24
+          ],
+          "size": [
+            0.07,
+            0.68,
+            0.07
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.24,
+            0.51,
+            0.24
+          ],
+          "size": [
+            0.07,
+            0.68,
+            0.07
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.24,
+            0.51,
+            -0.24
+          ],
+          "size": [
+            0.07,
+            0.68,
+            0.07
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.24,
+            0.51,
+            0.24
+          ],
+          "size": [
+            0.07,
+            0.68,
+            0.07
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.88,
+            0
+          ],
+          "size": [
+            0.63,
+            0.14,
+            0.63
+          ],
+          "material": "gilt"
+        },
+        {
+          "type": "tri_prism",
+          "p": [
+            0,
+            1.04,
+            0
+          ],
+          "size": [
+            0.62,
+            0.27,
+            0.64
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.54,
+            0
+          ],
+          "size": [
+            0.42,
+            0.57,
+            0.42
+          ],
+          "material": "glass"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.54,
+            0
+          ],
+          "radius": 0.13,
+          "height": 0.39,
+          "material": "wax",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.25,
+            0
+          ],
+          "radius": 0.09,
+          "height": 0.16,
+          "material": "bronze",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.37,
+            0
+          ],
+          "size": [
+            0.34,
+            0.065,
+            0.065
+          ],
+          "material": "gilt"
+        }
+      ],
+      "notes": "Glass is opaque tinted visual proxy; no actual flame, glow, battery, heat or light emission.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_relic_ossuary_keys",
+      "label": "Rusty medieval ossuary key bundle",
+      "category": "relic",
+      "maps": [
+        "CASTLE"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.055,
+            0
+          ],
+          "size": [
+            0.87,
+            0.11,
+            0.65
+          ],
+          "material": "redcloth"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.19,
+            0.2,
+            0
+          ],
+          "radius": 0.11,
+          "height": 0.07,
+          "material": "bronze",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.02,
+            0.19,
+            -0.02
+          ],
+          "radius": 0.1,
+          "height": 0.07,
+          "material": "bronze",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.23,
+            0.19,
+            -0.01
+          ],
+          "radius": 0.105,
+          "height": 0.07,
+          "material": "patina",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.19,
+            0.2,
+            0.18
+          ],
+          "size": [
+            0.055,
+            0.07,
+            0.49
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.02,
+            0.2,
+            0.205
+          ],
+          "size": [
+            0.055,
+            0.07,
+            0.49
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.23,
+            0.2,
+            0.22999999999999998
+          ],
+          "size": [
+            0.055,
+            0.07,
+            0.49
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.267,
+            0.2,
+            0.35
+          ],
+          "size": [
+            0.11,
+            0.06,
+            0.045
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.113,
+            0.2,
+            0.35
+          ],
+          "size": [
+            0.11,
+            0.06,
+            0.045
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.056999999999999995,
+            0.2,
+            0.35
+          ],
+          "size": [
+            0.11,
+            0.06,
+            0.045
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.097,
+            0.2,
+            0.35
+          ],
+          "size": [
+            0.11,
+            0.06,
+            0.045
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.15300000000000002,
+            0.2,
+            0.35
+          ],
+          "size": [
+            0.11,
+            0.06,
+            0.045
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.307,
+            0.2,
+            0.35
+          ],
+          "size": [
+            0.11,
+            0.06,
+            0.045
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.27,
+            -0.12
+          ],
+          "radius": 0.13,
+          "height": 0.045,
+          "material": "gilt",
+          "axis": "y",
+          "segments": 12
+        }
+      ],
+      "notes": "Static antique keys: no playable locks or opening authority.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_relic_censer",
+      "label": "Closed bronze hanging incense censer",
+      "category": "relic",
+      "maps": [
+        "CASTLE"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.07,
+            0
+          ],
+          "size": [
+            0.62,
+            0.14,
+            0.65
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.27,
+            0
+          ],
+          "radius": 0.34,
+          "height": 0.31,
+          "material": "bronze",
+          "axis": "y",
+          "segments": 16
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.47,
+            0
+          ],
+          "radius": 0.43,
+          "height": 0.18,
+          "material": "patina",
+          "axis": "y",
+          "segments": 16
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.59,
+            0
+          ],
+          "radius": 0.25,
+          "height": 0.1,
+          "material": "gilt",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.23,
+            0.9,
+            0
+          ],
+          "size": [
+            0.045,
+            0.63,
+            0.05
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.23,
+            0.9,
+            0
+          ],
+          "size": [
+            0.045,
+            0.63,
+            0.05
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.2,
+            0
+          ],
+          "size": [
+            0.58,
+            0.07,
+            0.06
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.3,
+            0
+          ],
+          "radius": 0.12,
+          "height": 0.12,
+          "material": "gilt",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            0.32,
+            0.47,
+            0
+          ],
+          "size": [
+            0.05,
+            0.11,
+            0.07
+          ],
+          "material": "dark",
+          "yaw": 1.5707963267948966
+        },
+        {
+          "type": "box",
+          "p": [
+            0.25888543819998316,
+            0.47,
+            0.1880912807335914
+          ],
+          "size": [
+            0.05,
+            0.11,
+            0.07
+          ],
+          "material": "dark",
+          "yaw": 2.199114857512855
+        },
+        {
+          "type": "box",
+          "p": [
+            0.09888543819998319,
+            0.47,
+            0.30433808521444916
+          ],
+          "size": [
+            0.05,
+            0.11,
+            0.07
+          ],
+          "material": "dark",
+          "yaw": 2.827433388230814
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.09888543819998315,
+            0.47,
+            0.30433808521444916
+          ],
+          "size": [
+            0.05,
+            0.11,
+            0.07
+          ],
+          "material": "dark",
+          "yaw": 3.4557519189487724
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.25888543819998316,
+            0.47,
+            0.18809128073359144
+          ],
+          "size": [
+            0.05,
+            0.11,
+            0.07
+          ],
+          "material": "dark",
+          "yaw": 4.084070449666731
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.32,
+            0.47,
+            3.91886975727153e-17
+          ],
+          "size": [
+            0.05,
+            0.11,
+            0.07
+          ],
+          "material": "dark",
+          "yaw": 4.71238898038469
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.2588854381999832,
+            0.47,
+            -0.18809128073359138
+          ],
+          "size": [
+            0.05,
+            0.11,
+            0.07
+          ],
+          "material": "dark",
+          "yaw": 5.340707511102648
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.09888543819998322,
+            0.47,
+            -0.30433808521444916
+          ],
+          "size": [
+            0.05,
+            0.11,
+            0.07
+          ],
+          "material": "dark",
+          "yaw": 5.969026041820607
+        },
+        {
+          "type": "box",
+          "p": [
+            0.09888543819998312,
+            0.47,
+            -0.30433808521444916
+          ],
+          "size": [
+            0.05,
+            0.11,
+            0.07
+          ],
+          "material": "dark",
+          "yaw": 6.5973445725385655
+        },
+        {
+          "type": "box",
+          "p": [
+            0.25888543819998316,
+            0.47,
+            -0.1880912807335915
+          ],
+          "size": [
+            0.05,
+            0.11,
+            0.07
+          ],
+          "material": "dark",
+          "yaw": 7.225663103256524
+        }
+      ],
+      "notes": "Closed inert censer. No simulated smoke, incense item or rite effect.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_relic_burial_mask",
+      "label": "Funerary ceramic mask on storage riser",
+      "category": "relic",
+      "maps": [
+        "CASTLE"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.08,
+            0
+          ],
+          "size": [
+            0.87,
+            0.16,
+            0.68
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.36,
+            0.15
+          ],
+          "size": [
+            0.17,
+            0.56,
+            0.2
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.61,
+            -0.06
+          ],
+          "radius": 0.34,
+          "height": 0.12,
+          "material": "ivory",
+          "axis": "z",
+          "segments": 16
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.13,
+            0.69,
+            -0.14
+          ],
+          "size": [
+            0.13,
+            0.07,
+            0.026
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.13,
+            0.69,
+            -0.14
+          ],
+          "size": [
+            0.13,
+            0.07,
+            0.026
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "tri_prism",
+          "p": [
+            0,
+            0.4,
+            -0.14
+          ],
+          "size": [
+            0.23,
+            0.18,
+            0.06
+          ],
+          "material": "ivory"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.31,
+            -0.15
+          ],
+          "size": [
+            0.28,
+            0.06,
+            0.025
+          ],
+          "material": "patina"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.25,
+            0.55,
+            -0.1
+          ],
+          "size": [
+            0.09,
+            0.3,
+            0.065
+          ],
+          "material": "ivory"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.25,
+            0.55,
+            -0.1
+          ],
+          "size": [
+            0.09,
+            0.3,
+            0.065
+          ],
+          "material": "ivory"
+        }
+      ],
+      "notes": "Abstract mask on stand; not a character face, corpse or wearable equipment.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_relic_pilgrim_chalice",
+      "label": "Ceremonial silver and bronze chalice",
+      "category": "relic",
+      "maps": [
+        "CASTLE"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.07,
+            0
+          ],
+          "size": [
+            0.68,
+            0.14,
+            0.67
+          ],
+          "material": "redcloth"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.19,
+            0
+          ],
+          "radius": 0.33,
+          "height": 0.11,
+          "material": "silver",
+          "axis": "y",
+          "segments": 14
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.4,
+            0
+          ],
+          "radius": 0.09,
+          "height": 0.48,
+          "material": "silver",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.67,
+            0
+          ],
+          "radius": 0.26,
+          "height": 0.22,
+          "material": "gilt",
+          "axis": "y",
+          "segments": 14
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.82,
+            0
+          ],
+          "radius": 0.34,
+          "height": 0.095,
+          "material": "silver",
+          "axis": "y",
+          "segments": 14
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.88,
+            0
+          ],
+          "radius": 0.13,
+          "height": 0.05,
+          "material": "dark",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            0.28,
+            0.67,
+            0
+          ],
+          "size": [
+            0.07,
+            0.06,
+            0.05
+          ],
+          "material": "bronze",
+          "yaw": 1.5707963267948966
+        },
+        {
+          "type": "box",
+          "p": [
+            0.22652475842498532,
+            0.67,
+            0.1645798706418925
+          ],
+          "size": [
+            0.07,
+            0.06,
+            0.05
+          ],
+          "material": "bronze",
+          "yaw": 2.199114857512855
+        },
+        {
+          "type": "box",
+          "p": [
+            0.08652475842498529,
+            0.67,
+            0.266295824562643
+          ],
+          "size": [
+            0.07,
+            0.06,
+            0.05
+          ],
+          "material": "bronze",
+          "yaw": 2.827433388230814
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.08652475842498526,
+            0.67,
+            0.26629582456264306
+          ],
+          "size": [
+            0.07,
+            0.06,
+            0.05
+          ],
+          "material": "bronze",
+          "yaw": 3.4557519189487724
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.2265247584249853,
+            0.67,
+            0.16457987064189253
+          ],
+          "size": [
+            0.07,
+            0.06,
+            0.05
+          ],
+          "material": "bronze",
+          "yaw": 4.084070449666731
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.28,
+            0.67,
+            3.4290110376125894e-17
+          ],
+          "size": [
+            0.07,
+            0.06,
+            0.05
+          ],
+          "material": "bronze",
+          "yaw": 4.71238898038469
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.22652475842498535,
+            0.67,
+            -0.16457987064189247
+          ],
+          "size": [
+            0.07,
+            0.06,
+            0.05
+          ],
+          "material": "bronze",
+          "yaw": 5.340707511102648
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.08652475842498533,
+            0.67,
+            -0.266295824562643
+          ],
+          "size": [
+            0.07,
+            0.06,
+            0.05
+          ],
+          "material": "bronze",
+          "yaw": 5.969026041820607
+        },
+        {
+          "type": "box",
+          "p": [
+            0.08652475842498523,
+            0.67,
+            -0.26629582456264306
+          ],
+          "size": [
+            0.07,
+            0.06,
+            0.05
+          ],
+          "material": "bronze",
+          "yaw": 6.5973445725385655
+        },
+        {
+          "type": "box",
+          "p": [
+            0.2265247584249853,
+            0.67,
+            -0.16457987064189256
+          ],
+          "size": [
+            0.07,
+            0.06,
+            0.05
+          ],
+          "material": "bronze",
+          "yaw": 7.225663103256524
+        }
+      ],
+      "notes": "Dry inert cup, no holy-water, ritual or evidence behavior.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_relic_padded_tray",
+      "label": "Relic storage examination tray with raised felt",
+      "category": "relic_storage",
+      "maps": [
+        "CASTLE",
+        "WLD-07-MORTUARY"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.085,
+            0
+          ],
+          "size": [
+            1.21,
+            0.17,
+            0.85
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.18,
+            0
+          ],
+          "size": [
+            1.03,
+            0.052,
+            0.68
+          ],
+          "material": "redcloth"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.61,
+            0.18,
+            0
+          ],
+          "size": [
+            0.075,
+            0.18,
+            0.92
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.61,
+            0.18,
+            0
+          ],
+          "size": [
+            0.075,
+            0.18,
+            0.92
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.18,
+            -0.47
+          ],
+          "size": [
+            1.22,
+            0.18,
+            0.065
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.18,
+            0.47
+          ],
+          "size": [
+            1.22,
+            0.18,
+            0.065
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.5,
+            0.18,
+            -0.31
+          ],
+          "size": [
+            0.11,
+            0.1,
+            0.11
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.5,
+            0.18,
+            -0.31
+          ],
+          "size": [
+            0.11,
+            0.1,
+            0.11
+          ],
+          "material": "dark"
+        }
+      ],
+      "notes": "Empty noninteractive support prop. Separate from any individual artifact; surface support requires scene placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_relic_locking_showcase",
+      "label": "Tall sealed protective relic showcase",
+      "category": "relic_storage",
+      "maps": [
+        "CASTLE",
+        "MANSION"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.16,
+            0
+          ],
+          "size": [
+            1.55,
+            0.32,
+            1.25
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.83,
+            0
+          ],
+          "size": [
+            1.06,
+            1.03,
+            0.88
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.38,
+            0
+          ],
+          "size": [
+            1.47,
+            0.09,
+            1.17
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.64,
+            1.97,
+            -0.49
+          ],
+          "size": [
+            0.075,
+            1.14,
+            0.075
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.64,
+            1.97,
+            0.49
+          ],
+          "size": [
+            0.075,
+            1.14,
+            0.075
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.64,
+            1.97,
+            -0.49
+          ],
+          "size": [
+            0.075,
+            1.14,
+            0.075
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.64,
+            1.97,
+            0.49
+          ],
+          "size": [
+            0.075,
+            1.14,
+            0.075
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.55,
+            0
+          ],
+          "size": [
+            1.5,
+            0.14,
+            1.2
+          ],
+          "material": "gilt"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.05,
+            -0.53
+          ],
+          "size": [
+            1.25,
+            0.82,
+            0.04
+          ],
+          "material": "glass"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.05,
+            0.53
+          ],
+          "size": [
+            1.25,
+            0.82,
+            0.04
+          ],
+          "material": "glass"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.68,
+            2.05,
+            0
+          ],
+          "size": [
+            0.04,
+            0.82,
+            1.03
+          ],
+          "material": "glass"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.68,
+            2.05,
+            0
+          ],
+          "size": [
+            0.04,
+            0.82,
+            1.03
+          ],
+          "material": "glass"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.47,
+            -0.53
+          ],
+          "size": [
+            0.25,
+            0.08,
+            0.03
+          ],
+          "material": "accent"
+        }
+      ],
+      "notes": "Static tinted display panels, not alpha glass; no lock, inventory or item effects. Source-only.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_relic_barred_shelf",
+      "label": "Controlled vault evidence shelf with numbered bays",
+      "category": "relic_storage",
+      "maps": [
+        "CASTLE"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.96,
+            1.18,
+            -0.36
+          ],
+          "size": [
+            0.115,
+            2.36,
+            0.115
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.96,
+            1.18,
+            0.36
+          ],
+          "size": [
+            0.115,
+            2.36,
+            0.115
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.96,
+            1.18,
+            -0.36
+          ],
+          "size": [
+            0.115,
+            2.36,
+            0.115
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.96,
+            1.18,
+            0.36
+          ],
+          "size": [
+            0.115,
+            2.36,
+            0.115
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.21,
+            0
+          ],
+          "size": [
+            2.05,
+            0.075,
+            0.82
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.85,
+            0
+          ],
+          "size": [
+            2.05,
+            0.075,
+            0.82
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.5,
+            0
+          ],
+          "size": [
+            2.05,
+            0.075,
+            0.82
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.13,
+            0
+          ],
+          "size": [
+            2.05,
+            0.075,
+            0.82
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.39,
+            0
+          ],
+          "size": [
+            2.16,
+            0.12,
+            0.92
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.64,
+            1.13,
+            -0.42
+          ],
+          "size": [
+            0.05,
+            2.25,
+            0.045
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.13,
+            -0.42
+          ],
+          "size": [
+            0.05,
+            2.25,
+            0.045
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.64,
+            1.13,
+            -0.42
+          ],
+          "size": [
+            0.05,
+            2.25,
+            0.045
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.65,
+            0.35,
+            -0.47
+          ],
+          "size": [
+            0.36,
+            0.07,
+            0.05
+          ],
+          "material": "ivory"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.65,
+            0.99,
+            -0.47
+          ],
+          "size": [
+            0.36,
+            0.07,
+            0.05
+          ],
+          "material": "ivory"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.65,
+            1.64,
+            -0.47
+          ],
+          "size": [
+            0.36,
+            0.07,
+            0.05
+          ],
+          "material": "ivory"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.35,
+            -0.47
+          ],
+          "size": [
+            0.36,
+            0.07,
+            0.05
+          ],
+          "material": "ivory"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.99,
+            -0.47
+          ],
+          "size": [
+            0.36,
+            0.07,
+            0.05
+          ],
+          "material": "ivory"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.64,
+            -0.47
+          ],
+          "size": [
+            0.36,
+            0.07,
+            0.05
+          ],
+          "material": "ivory"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.65,
+            0.35,
+            -0.47
+          ],
+          "size": [
+            0.36,
+            0.07,
+            0.05
+          ],
+          "material": "ivory"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.65,
+            0.99,
+            -0.47
+          ],
+          "size": [
+            0.36,
+            0.07,
+            0.05
+          ],
+          "material": "ivory"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.65,
+            1.64,
+            -0.47
+          ],
+          "size": [
+            0.36,
+            0.07,
+            0.05
+          ],
+          "material": "ivory"
+        }
+      ],
+      "notes": "Nine blank bay tabs; no numbered gameplay slots, locked doors or shipment inventory.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_relic_inventory_placard",
+      "label": "Museum/vault identification placard stand",
+      "category": "relic_storage",
+      "maps": [
+        "CASTLE",
+        "CHURCH",
+        "WLD-07"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.065,
+            0
+          ],
+          "size": [
+            0.56,
+            0.13,
+            0.4
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.47,
+            0
+          ],
+          "size": [
+            0.065,
+            0.82,
+            0.07
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.86,
+            -0.06
+          ],
+          "size": [
+            0.76,
+            0.44,
+            0.08
+          ],
+          "material": "bronze",
+          "yaw": -0.14
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.86,
+            -0.105
+          ],
+          "size": [
+            0.66,
+            0.32,
+            0.025
+          ],
+          "material": "ivory",
+          "yaw": -0.14
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.64,
+            -0.126
+          ],
+          "size": [
+            0.43,
+            0.022,
+            0.012
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.8,
+            -0.126
+          ],
+          "size": [
+            0.43,
+            0.022,
+            0.012
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.9600000000000001,
+            -0.126
+          ],
+          "size": [
+            0.43,
+            0.022,
+            0.012
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.07,
+            -0.12
+          ],
+          "size": [
+            0.14,
+            0.07,
+            0.022
+          ],
+          "material": "gilt"
+        }
+      ],
+      "notes": "Decorative blank lines only; readable catalog labels require real text and authored lore, never fabricated metadata.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_relic_repair_stand",
+      "label": "Adjustable relic-restoration inspection mount",
+      "category": "relic_storage",
+      "maps": [
+        "CASTLE",
+        "ACADEMY",
+        "WLD-10"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.11,
+            0
+          ],
+          "size": [
+            1.26,
+            0.22,
+            0.94
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.72,
+            0
+          ],
+          "radius": 0.095,
+          "height": 1.11,
+          "material": "bronze",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.26,
+            0
+          ],
+          "size": [
+            0.96,
+            0.07,
+            0.09
+          ],
+          "material": "silver"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.43,
+            1.01,
+            0
+          ],
+          "size": [
+            0.07,
+            0.49,
+            0.07
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.43,
+            1.01,
+            0
+          ],
+          "size": [
+            0.07,
+            0.49,
+            0.07
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.29,
+            0.3
+          ],
+          "size": [
+            0.66,
+            0.07,
+            0.3
+          ],
+          "material": "redcloth"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.42,
+            0.84,
+            0
+          ],
+          "radius": 0.13,
+          "height": 0.07,
+          "material": "gilt",
+          "axis": "z",
+          "segments": 10
+        }
+      ],
+      "notes": "Static holding stand. No opening, adjustable joints, repair state or player interaction.",
       "authoring_stage": "primitive_blockout",
       "runtime_approved": false
     }
