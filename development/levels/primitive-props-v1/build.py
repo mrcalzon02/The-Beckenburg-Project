@@ -2,7 +2,7 @@
 """Regenerate primitive prop GLBs from catalog.json. Python stdlib only.
 
 Intentional graybox: static meshes and material-factor placeholder colors,
-with consistent dominant-plane planar UVs for subsequent texture authoring.
+with spatially mapped UV0 and 32px material-specific procedural albedo study textures.
 Not playable scene placements or replacements for finished props.
 """
 from __future__ import annotations
@@ -110,14 +110,50 @@ def triangles(parts):
         else: raise ValueError("unexpected primitive: "+kind)
     return groups
 
-def white_png():
-    """Tiny shared valid RGB PNG; material baseColorFactor supplies each proxy color."""
-    def chunk(kind, payload):
-        return (struct.pack(">I",len(payload)) + kind + payload
-                + struct.pack(">I",zlib.crc32(kind+payload)&0xffffffff))
-    ihdr=struct.pack(">IIBBBBB",2,2,8,2,0,0,0)
-    scan=b"".join(b"\x00"+b"\xff\xff\xff"*2 for _ in range(2))
-    return b"\x89PNG\r\n\x1a\n"+chunk(b"IHDR",ihdr)+chunk(b"IDAT",zlib.compress(scan,9))+chunk(b"IEND",b"")
+def material_png(name):
+    """Portable deterministic 32x32 RGB texture for authored BLOCKOUT review.
+
+    Low-frequency wear + material-specific micro-patterns use grayscale to
+    keep the source PBR baseColorFactor as the authority for actual color.
+    These are properly mapped texture studies, NOT replacement art atlases.
+    """
+    size=32
+    seed=sum((i+1)*ord(c) for i,c in enumerate(name))
+    rows=[]
+    for y in range(size):
+        row=bytearray((0,))  # PNG filter NONE, one scanline
+        for x in range(size):
+            h=(seed*151 + x*1097 + y*1543 + x*y*173)
+            h=(h ^ (h>>9) ^ (h<<5)) & 0xffffffff
+            fine=(h%17)-8
+            if name in ("wood","leather"):
+                # Long wood/leather fibers and darker end-grain streaks.
+                pattern=7*math.sin(2*math.pi*x/8 + math.sin(y*.18)) + 4*math.sin(2*math.pi*y/32)
+            elif name in ("stone","ceramic","ivory"):
+                # Mineral speckle and occasional fine mortar/porosity line.
+                pattern=5*math.sin(2*math.pi*(x+y)/16) - (14 if (x+2*y+seed)%23==0 else 0)
+            elif name in ("metal","industrial","bronze","silver","gilt","patina"):
+                # Brushed metal grain with uneven aged patches.
+                pattern=5*math.sin(2*math.pi*y/4) - (11 if (x*7+y+seed)%29==0 else 0)
+            elif name in ("canvas","redcloth"):
+                # Low-contrast weave in both warp and weft directions.
+                pattern=8*(1 if x%4==0 else 0) + 8*(1 if y%4==0 else 0) - 6
+            elif name in ("glass",):
+                # Still OPAQUE in a graybox: just pale scuffs.
+                pattern=5*math.sin(2*math.pi*(x-y)/32)
+            else:
+                pattern=4*math.sin(2*math.pi*(x+y)/16)
+            value=max(172,min(250,int(231+fine+pattern)))
+            row.extend((value,value,value))
+        rows.append(bytes(row))
+    raw=b"".join(rows)
+    def chunk(kind,data):
+        return (struct.pack(">I",len(data))+kind+data+
+                struct.pack(">I",zlib.crc32(kind+data)&0xffffffff))
+    ihdr=struct.pack(">IIBBBBB",size,size,8,2,0,0,0)
+    return (b"\x89PNG\r\n\x1a\n"+chunk(b"IHDR",ihdr)+
+            chunk(b"IDAT",zlib.compress(raw,9))+chunk(b"IEND",b""))
+
 
 def glb(model):
     groups=triangles(model["parts"])
@@ -138,7 +174,7 @@ def glb(model):
         if count>65535:raise ValueError("too many vertices: "+model["id"])
         material=len(materials)
         materials.append({"name":"blockout_"+name,
-            "pbrMetallicRoughness":{"baseColorFactor":PALETTE[name],"baseColorTexture":{"index":0},"metallicFactor":0,"roughnessFactor":1},
+            "pbrMetallicRoughness":{"baseColorFactor":PALETTE[name],"baseColorTexture":{"index":material},"metallicFactor":0,"roughnessFactor":1},
             "doubleSided":False})
         axes=[pos[i::3] for i in range(3)]
         a=accessor(struct.pack("<%sf"%len(pos),*pos),34962,5126,"VEC3",count,
@@ -149,18 +185,24 @@ def glb(model):
         c=accessor(struct.pack("<%sH"%len(inds),*inds),34963,5123,"SCALAR",len(inds))
         prims.append({"attributes":{"POSITION":a,"NORMAL":b,"TEXCOORD_0":uv},"indices":c,"material":material,"mode":4})
     if total>3500:raise ValueError("triangle budget exceeded "+model["id"])
-    while len(raw)%4:raw.append(0)
-    png=white_png()
-    png_index=len(views)
-    views.append({"buffer":0,"byteOffset":len(raw),"byteLength":len(png)})
-    raw.extend(png)
+    # Separate tiny valid PNG per material. Actual game EditorGlbReader
+    # already supports each glTF material's own embedded texture.
+    images=[];textures=[]
+    for index,name in enumerate(groups):
+        while len(raw)%4:raw.append(0)
+        png=material_png(name)
+        view_index=len(views)
+        views.append({"buffer":0,"byteOffset":len(raw),"byteLength":len(png)})
+        raw.extend(png)
+        images.append({"bufferView":view_index,"mimeType":"image/png"})
+        textures.append({"source":index,"sampler":0})
     while len(raw)%4:raw.append(0)
     doc={"asset":{"version":"2.0","generator":"Beckenburg primitive-props-v1"},
          "scene":0,"scenes":[{"nodes":[0]}],"nodes":[{"mesh":0,"name":model["id"]}],
          "meshes":[{"name":model["label"],"primitives":prims}],
          "buffers":[{"byteLength":len(raw)}],"bufferViews":views,"accessors":accessors,
-         "images":[{"bufferView":png_index,"mimeType":"image/png"}],
-         "textures":[{"source":0}],"samplers":[],
+         "images":images,
+         "textures":textures,"samplers":[{"magFilter":9728,"minFilter":9728,"wrapS":10497,"wrapT":10497}],
          "materials":materials,"extras":{"stage":"graybox_only","modelId":model["id"],"meters":True,"runtimeApproved":False}}
     js=json.dumps(doc,separators=(",",":"),ensure_ascii=True).encode("ascii")
     js+=b" "*((-len(js))%4)
