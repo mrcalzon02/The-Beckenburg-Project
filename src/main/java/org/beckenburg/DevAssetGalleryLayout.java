@@ -66,7 +66,14 @@ public final class DevAssetGalleryLayout {
         return (slot/3==0?4.5:10.5)+bay*BAY_DEPTH_M;
     }
     public static double eyeY(int floor){return floorY(floor)+1.65;}
-    public static double bayEntranceZ(int bay){return -5+clampBay(bay)*BAY_DEPTH_M;}
+    /** Stage camera starts six metres before its first exhibit row,
+     * with four metres of clear space behind the previous bay's rear row.
+     * The prior -5m origin put bay >=2 cameras only 0.5m from the
+     * preceding row, inside wide 3D machinery (full-screen model occlusion).
+     */
+    public static double bayEntranceZ(int bay){
+        return -1.5+clampBay(bay)*BAY_DEPTH_M;
+    }
     public static <T> List<T> wing(List<T> items,int index){
         if(index<0)throw new IllegalArgumentException("wing");
         long start=(long)index*SLOTS_PER_WING;
