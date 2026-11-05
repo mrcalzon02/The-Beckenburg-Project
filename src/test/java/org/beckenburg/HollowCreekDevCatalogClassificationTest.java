@@ -65,13 +65,40 @@ public final class HollowCreekDevCatalogClassificationTest {
         }catch(java.io.IOException bad){
             throw new IllegalStateException("Cannot enumerate layout preview source",bad);
         }
+        // Include additive model-refinement GLBs and their true-scale
+        // contact-room pages. They remain distinct SOURCE_ONLY entries; the
+        // source registry grows without a hardcoded total becoming stale.
+        java.nio.file.Path refined=java.nio.file.Path.of("development","levels",
+            "primitive-props-v1","refinement");
+        int expectedRefinementReviews=0;
+        check(java.nio.file.Files.isDirectory(refined),
+            "Missing committed refined map-model gallery");
+        try(var files=java.nio.file.Files.list(refined)){
+            for(var file:files.toList()){
+                String name=file.getFileName().toString();
+                if(!name.startsWith("level_blockout_")||!name.endsWith(".glb"))continue;
+                expectedRefinementReviews++;
+                String id=name.substring(0,name.length()-4);
+                check(entries.containsKey(id),"Refined study missing from DEV room: "+id);
+                check(entries.get(id).kind()==DevAssetReviewCatalog.Kind.SOURCE_ONLY,
+                    "A refined study became runtime-approved: "+id);
+                check(!GlbProps.availableModels().contains(id)&&!LevelAssets.approved(id),
+                    "A refined study leaked into the gameplay registry: "+id);
+            }
+        }catch(java.io.IOException bad){
+            throw new IllegalStateException("Cannot enumerate refinement gallery source",bad);
+        }
+        check(expectedRefinementReviews==18,
+            "Expected 15 refined models plus three contact rooms, got "+
+                expectedRefinementReviews);
         int sourceOnly=(int)entries.values().stream()
             .filter(e->e.kind()==DevAssetReviewCatalog.Kind.SOURCE_ONLY).count();
-        check(sourceOnly==1+expectedBlockouts+expectedLayoutReviews,
+        check(sourceOnly==1+expectedBlockouts+expectedLayoutReviews+expectedRefinementReviews,
             "Expected only pavilion and nonshipping DEV studies; got "+sourceOnly+
-            " vs "+(1+expectedBlockouts+expectedLayoutReviews));
+            " vs "+(1+expectedBlockouts+expectedLayoutReviews+expectedRefinementReviews));
         System.out.println("PASS native source approval catalog: Matthis and 16 terrain "
             +"meshes approved; one pavilion, "+expectedBlockouts+" primitive studies and "+
-            expectedLayoutReviews+" planning-layout previews remain SOURCE_ONLY");
+            expectedLayoutReviews+" planning-layout previews plus "+expectedRefinementReviews+
+            " refinements/contact rooms remain SOURCE_ONLY");
     }
 }
