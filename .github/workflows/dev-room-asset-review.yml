@@ -34,6 +34,10 @@ on:
       - 'water-module/src/main/java/dev/mrcalzon/water/WaterTerrainSnap.java'
       - 'src/main/java/org/beckenburg/editor/AdaptiveTerrainTopology.java'
       - 'src/main/java/org/beckenburg/SceneRenderer.java'
+      - 'src/test/java/org/beckenburg/CastlePrimitiveRuntimeFitTest.java'
+      - 'src/test/java/org/beckenburg/CastlePortalTrimTest.java'
+      - 'development/levels/primitive-props-v1/models/**'
+      - 'development/levels/primitive-props-v1/previews/**'
       - '.github/workflows/dev-room-asset-review.yml'
 
 permissions:
@@ -93,6 +97,26 @@ jobs:
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp build\\beckenburg-game.jar;build\\dev-room\\test org.beckenburg.HollowCreekDevCatalogClassificationTest
           if errorlevel 1 exit /b 1
+      - name: Native Castle prototype bounds, egress and real-renderer screenshot study (advisory)
+        continue-on-error: true
+        shell: cmd
+        run: |
+          if not exist build\\dev-room\\test mkdir build\\dev-room\\test
+          javac --release 17 -encoding UTF-8 -cp build\\beckenburg-game.jar -d build\\dev-room\\test src\\test\\java\\org\\beckenburg\\CastlePrimitiveRuntimeFitTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\\beckenburg-game.jar;build\\dev-room\\test org.beckenburg.CastlePrimitiveRuntimeFitTest build\\dev-room\\native-castle-graybox
+          if errorlevel 1 exit /b 1
+      - name: Real DEV room four-angle captures of individual primitives and complete study layouts (advisory)
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          $models = @('level_blockout_quartermaster_counter','level_blockout_privacy_screen',
+              'level_blockout_lookout_spotter','level_blockout_mine_ventilation',
+              'level_blockout_layout_castle','level_blockout_layout_wld-04')
+          foreach ($model in $models) {
+            & java '-Djava.awt.headless=true' -cp 'build/beckenburg-game.jar' 'org.beckenburg.DevAssetShowroom' '--dev-room' '--capture' "--asset=$model" "--output=build/dev-room/primitive-studies/$model"
+            if ($LASTEXITCODE -ne 0) { Write-Warning "Primitive asset four-view capture failed: $model" }
+          }
       - name: Verify water socket connection and actual DEV sample construction
         shell: cmd
         run: |
