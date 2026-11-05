@@ -155,7 +155,8 @@ public final class CastlePrimitiveRuntimeFitTest {
             "Graybox must never enter production model allowlist: "+id);
         var entry=new DevAssetReviewCatalog.Entry(DevAssetReviewCatalog.Kind.SOURCE_ONLY,id);
         var audit=DevAssetReviewCatalog.audit(entry);
-        require(audit.loaded()&&audit.triangles()>0,
+        require(audit.loaded()&&audit.state().equals("REVIEW_REGISTRATION")
+            &&audit.triangles()>0,
             "Actual source-only GLB was not decoded: "+id+" / "+audit.details());
         double modelHeight=audit.maxY()-audit.minY();
         if(!(modelHeight>0&&modelHeight<4.5))
