@@ -2915,25 +2915,11 @@ public final class SceneRenderer {
             if(wall.hasDoor()){
                 // Stone reveals span the depth between distinct inside and outside faces.
                 // Solid lintels are ordinary thick wall surfaces, not fake closed arches.
-                double left=wall.horizontal()?wall.x0():wall.z0();
-                double right=wall.horizontal()?wall.x1():wall.z1();
-                double y0=wall.bottom();
-                double y1=CastleHubArchitecturalPlan.portalHead(wall,walls);
-                // Frame remains strictly INSIDE the physical opening. The
-                // previous trim was centred across its boundary and extended
-                // above the real stone lintel; both errors caused intersecting
-                // surfaces and apparent geometry bleeding into upper rooms.
-                double trim=Math.min(.15,(right-left)*.10);
-                double rise=Math.max(0,y1-y0-trim);
-                if(wall.horizontal()){
-                    box(out,left,y0,wall.z0()-.16,trim,rise,.32,0x786c5b);
-                    box(out,right-trim,y0,wall.z0()-.16,trim,rise,.32,0x786c5b);
-                    box(out,left,y1-trim,wall.z0()-.18,right-left,trim,.36,0x9b8970);
-                }else{
-                    box(out,wall.x0()-.16,y0,left,.32,rise,trim,0x786c5b);
-                    box(out,wall.x0()-.16,y0,right-trim,.32,rise,trim,0x786c5b);
-                    box(out,wall.x0()-.18,y1-trim,left,.36,trim,right-left,0x9b8970);
-                }
+                // Authoritative portal marker and its actual header drive
+                // both geometry and collision: no duplicated guessed sizes.
+                for(var beam:CastlePortalTrim.beams(wall,walls))
+                    box(out,beam.x(),beam.y(),beam.z(),
+                        beam.width(),beam.height(),beam.depth(),beam.colour());
             }else architecturalWall(out,wall);
         }
         for(var window:CastleDoorSlots.windows()){
