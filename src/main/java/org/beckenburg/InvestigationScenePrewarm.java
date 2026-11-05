@@ -18,7 +18,8 @@ final class InvestigationScenePrewarm {
     private InvestigationScenePrewarm(){}
     record Result(int passes,long elapsedMs,int staticShellChunks,long staticFaces,
             long staticPreparationMs,int stagedSceneryInstances,String sceneRevision,
-            boolean shellReused,boolean sceneryReused){} 
+            boolean shellReused,boolean sceneryReused,
+            int gpuSubmittedPasses,int gpuConfirmedPasses,boolean gpuPrewarmTimedOut){}
     static Result prepare(HouseMap map,SceneRenderer scene,LevelOpeningFlyover flight,
             BooleanSupplier cancelled){
         Objects.requireNonNull(map);Objects.requireNonNull(scene);
@@ -28,6 +29,8 @@ final class InvestigationScenePrewarm {
         int width=scene.width(),height=scene.height();
         long start=System.nanoTime();
         int passes=0;int chunks=0;long faces=0;
+        int gpuSubmitted=0,gpuConfirmed=0;boolean gpuTimedOut=false;
+        long deadline=start+TimeUnit.SECONDS.toNanos(5);
         SceneRenderer.StaticPreparation staged=null;
         try{
             // Stage 2: build the renderer's existing revision-owned immutable
@@ -35,24 +38,35 @@ final class InvestigationScenePrewarm {
             // This never mutates a door, mission clock, ghost or authority.
             if(!cancelled.getAsBoolean()&&!Thread.currentThread().isInterrupted())
                 staged=scene.prepareStaticScene(map);
-            // Authoring/visibility warmup, not a fake loading percentage.
-            // The first two passes cover the site and the van approach.
-            // The third (budget-permitting) pass warms the first authored
-            // interior so the player does not pay the cold wall/ceiling
-            // cache cost the moment they leave the expedition van.
+            // Warm van cargo approach first, then immediate exterior, then
+            // authored interior. These are REAL perspective camera passes on
+            // the same renderer used by gameplay, not flat-map thumbnails.
+            // A GPU submit is nonblocking and can be superseded: on the
+            // loading worker only, confirm GL readback before the next pass
+            // so the GL owner actually uploads the preceding VBOs/textures.
             scene.setRenderSize(Math.min(480,width),Math.min(270,height));
-            for(double progress:new double[]{.60,.84}){
+            for(double progress:new double[]{.925,.60}){
                 if(cancelled.getAsBoolean()||Thread.currentThread().isInterrupted()
-                    ||System.nanoTime()-start>=TimeUnit.SECONDS.toNanos(5))break;
+                    ||System.nanoTime()>=deadline)break;
                 flight.pose(progress).apply(scene);
                 scene.drawPractice(map,List.of(),0);
                 passes++;
                 var shell=scene.shellChunkStats();
                 chunks=Math.max(chunks,shell.totalChunks());
                 faces=Math.max(faces,shell.totalFaces());
+                var frame=scene.frameDiagnostics();
+                if(frame!=null&&frame.gpu()){
+                    gpuSubmitted++;
+                    long waitNs=Math.min(TimeUnit.MILLISECONDS.toNanos(650),
+                        Math.max(0,deadline-System.nanoTime()));
+                    boolean confirmed=scene.awaitSubmittedGpuPrewarm(waitNs,cancelled);
+                    if(confirmed)gpuConfirmed++;
+                    else{gpuTimedOut=true;break;}
+                }
             }
-            if(!cancelled.getAsBoolean()&&!Thread.currentThread().isInterrupted()
-                    &&System.nanoTime()-start<TimeUnit.SECONDS.toNanos(5)){
+            if(!gpuTimedOut&&!cancelled.getAsBoolean()
+                    &&!Thread.currentThread().isInterrupted()
+                    &&System.nanoTime()<deadline){
                 // Warm the genuine authored room-zero spawn, never an invented
                 // generic building rectangle. No map/door/host state changes.
                 var entry=map.spawn(0);
@@ -67,6 +81,15 @@ final class InvestigationScenePrewarm {
                     var shell=scene.shellChunkStats();
                     chunks=Math.max(chunks,shell.totalChunks());
                     faces=Math.max(faces,shell.totalFaces());
+                    var frame=scene.frameDiagnostics();
+                    if(frame!=null&&frame.gpu()){
+                        gpuSubmitted++;
+                        long waitNs=Math.min(TimeUnit.MILLISECONDS.toNanos(650),
+                            Math.max(0,deadline-System.nanoTime()));
+                        if(scene.awaitSubmittedGpuPrewarm(waitNs,cancelled))
+                            gpuConfirmed++;
+                        else gpuTimedOut=true;
+                    }
                 }
             }
         }finally{
@@ -82,11 +105,15 @@ final class InvestigationScenePrewarm {
             +" scenery_instances="+staged.sceneryInstances()
             +" shell_reused="+staged.shellReused()
             +" scenery_reused="+staged.sceneryReused()
-            +" prewarm_passes="+passes+" total_ms="+elapsed);
+            +" prewarm_passes="+passes
+            +" gpu_submitted_passes="+gpuSubmitted
+            +" gpu_confirmed_passes="+gpuConfirmed
+            +" gpu_wait_timeout="+gpuTimedOut+" total_ms="+elapsed);
         return new Result(passes,elapsed,chunks,faces,
             staged==null?0:TimeUnit.NANOSECONDS.toMillis(staged.elapsedNs()),
             staged==null?0:staged.sceneryInstances(),
             staged==null?"not-prepared":staged.revision(),
-            staged!=null&&staged.shellReused(),staged!=null&&staged.sceneryReused());
+            staged!=null&&staged.shellReused(),staged!=null&&staged.sceneryReused(),
+            gpuSubmitted,gpuConfirmed,gpuTimedOut);
     }
 }
