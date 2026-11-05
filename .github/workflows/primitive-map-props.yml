@@ -5,6 +5,9 @@ on:
     paths:
       - 'development/levels/primitive-props-v1/catalog.json'
       - 'development/levels/primitive-props-v1/build.py'
+      - 'development/levels/primitive-props-v1/fit.py'
+      - 'development/levels/primitive-props-v1/fit-recipe.json'
+      - 'development/levels/layouts/**/layout.json'
       - '.github/workflows/primitive-map-props.yml'
   workflow_dispatch:
 
@@ -27,12 +30,17 @@ jobs:
           filter: blob:none
           sparse-checkout: |
             development/levels/primitive-props-v1
+            development/levels/layouts
           sparse-checkout-cone-mode: true
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - name: Generate all measured primitive GLBs
         run: python development/levels/primitive-props-v1/build.py
+      - name: Fit 61 proposed props against real map geometry reservations
+        run: python development/levels/primitive-props-v1/fit.py
+      - name: Recheck fitted placements and review GLBs
+        run: python development/levels/primitive-props-v1/fit.py --check
       - name: Verify byte-for-byte regeneration and bounded GLB integrity
         run: |
           python development/levels/primitive-props-v1/build.py --check
@@ -43,6 +51,11 @@ jobs:
           catalog=json.loads((root/"catalog.json").read_text())
           verification=json.loads((root/"verification.json").read_text())
           assert len(catalog["models"])==41==len(verification["models"])
+          fitted=json.loads((root/"fit-verification.json").read_text())
+          assert fitted["sites"]==5 and fitted["placements"]==61
+          for item in fitted["maps"]:
+              assert item["placements"]>=7
+              print(item["site"],item["placements"],"fits",item["review_triangles"],"triangles")
           assert len(catalog["sites"])==29
           for rec in verification["models"]:
               data=(root/"models"/(rec["id"]+".glb")).read_bytes()
@@ -60,7 +73,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add development/levels/primitive-props-v1/models development/levels/primitive-props-v1/verification.json
+          git add development/levels/primitive-props-v1/models development/levels/primitive-props-v1/verification.json development/levels/primitive-props-v1/placements development/levels/primitive-props-v1/previews development/levels/primitive-props-v1/fit-verification.json
           if git diff --cached --quiet; then
             echo "All generated grayboxes already match main."
             exit 0
