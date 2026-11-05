@@ -2333,6 +2333,16 @@ public final class SceneRenderer {
     /** GPU acceptance must verify the NEW scene was rendered, not merely a
      * previous resident framebuffer with coincidentally identical dimensions. */
     public long submittedGpuFrameId(){return lastSubmittedGpuFrame;}
+    /** Loader worker only. Wait until the GL context owner has processed this
+     * exact scene's latest submitted frame; never block gameplay or the EDT.
+     * A readback acknowledgement means its resident VBO/texture uploads have
+     * actually run, not merely that Swing enqueued a surface description. */
+    boolean awaitSubmittedGpuPrewarm(long timeoutNs,java.util.function.BooleanSupplier cancelled){
+        GpuWorldRenderer backend=GpuWorldRenderer.active();
+        return backend!=null&&backend.ready()
+            &&GpuWorldRenderer.awaitPreparedFrame(backend,gpuSceneId,
+                lastSubmittedGpuFrame,timeoutNs,cancelled);
+    }
     private boolean drawGpuFaces(List<Face> faces,HouseMap map){
         if(photographicSoftwareRaster)return false;
         GpuWorldRenderer backend=GpuWorldRenderer.active();
