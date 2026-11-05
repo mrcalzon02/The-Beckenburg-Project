@@ -111,7 +111,11 @@ public final class LanGhostPursuit {
         }
         // Species bias uses only filtered host observations; never private hunter positions.
         GhostBehavior.Profile bias=GhostBehavior.profile(archetype);
+        // A species-specific attack preference is NOT a target acquisition.
+        // Its STRIKE choice must pass the same host-owned spatial-victim gate
+        // as the ordinary pursuit route. Hearing alone never grants contact.
         if(action==null && bias.favored()!=GhostDomain.Action.DRIFT
+                && (bias.favored()!=GhostDomain.Action.STRIKE||hasSpatialVictim)
                 && seen.tick()%Math.max(6,bias.aiPeriod()*100/eventFrequency)==0
                 && legal.contains(bias.favored()))
             action=bias.favored();
@@ -126,6 +130,8 @@ public final class LanGhostPursuit {
             action=GhostDomain.Action.DRIFT;
             target=seen.exits().get(random.nextInt(seen.exits().size()));
         }
+        // Future preference routes must never bypass this invariant, either.
+        if(action==GhostDomain.Action.STRIKE&&!hasSpatialVictim)return null;
         return action==null?null:new GhostDomain.Command(action,target,++sequence,GhostDomain.Source.AI);
     }
     /** Move toward an old approximate sound in the current room; the host applies this using

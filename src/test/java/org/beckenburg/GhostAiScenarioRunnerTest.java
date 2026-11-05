@@ -18,7 +18,8 @@ public final class GhostAiScenarioRunnerTest {
                 "Bounded authored sound pulses");
             check(first.recent().size()<=128,"Trace memory capped");
             check(first.recent().stream().noneMatch(x->x.action().equals("STRIKE")),
-                "Synthetic audio never grants physical strike contact");
+                "No ghost can even request STRIKE without a host-verified victim: "+species
+                    +" trace="+first.recent().stream().filter(x->x.action().equals("STRIKE")).toList());
             check(first.timings().timings().get(NpcAiTelemetry.Metric.DECISION).calls()==320,
                 "Every actual real AI decision measured");
             check(first.timings().timings().get(NpcAiTelemetry.Metric.HEARING).calls()>0,
