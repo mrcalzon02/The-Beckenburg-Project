@@ -144,7 +144,9 @@ def main():
     args=parser.parse_args()
     catalog=json.loads((HERE/"catalog.json").read_text(encoding="utf-8"))
     assert catalog["schema"]=="beckenburg.primitive-props/1"
-    assert len(catalog["sites"])==29 and len(catalog["models"])==30
+    assert len(catalog["sites"])==29 and len(catalog["models"])>=41
+    ids=[model["id"] for model in catalog["models"]]
+    assert len(ids)==len(set(ids))
     outputs=HERE/"models"
     if not args.check:outputs.mkdir(exist_ok=True)
     records=[]
