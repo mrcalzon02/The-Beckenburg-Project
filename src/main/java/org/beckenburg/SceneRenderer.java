@@ -4309,6 +4309,144 @@ public final class SceneRenderer {
         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
         applyGraphicsEffects(clock);
     }
+    /**
+     * Reusable, physically stacked DEV gallery for a 72-entry review wing.
+     * The original six-stand drawDevAssetRoom remains available to old screenshots,
+     * topology probes and narrow reproducible single-model captures.
+     *
+     * Draw all three real floor decks, all four bay boundaries per floor and
+     * every inspection stand. Decode only meshes on the camera's current floor
+     * within the near-bay envelope; moving Q/E through the lift void or using
+     * floor buttons reveals the next floor without a gameplay scene transition.
+     */
+    public void drawDevAssetGallery(List<DevAssetReviewCatalog.Entry> wing,
+                                    double clock,double rotation){
+        Objects.requireNonNull(wing,"gallery wing");
+        if(wing.size()>DevAssetGalleryLayout.SLOTS_PER_WING)
+            throw new IllegalArgumentException("Gallery wing exceeds 72 exhibits");
+        paintSky(clock);
+        Arrays.fill(depths,Double.POSITIVE_INFINITY);
+        environmentLight=1.33;
+        weatherLightScale=1;
+        fogDensity=0;
+        List<Face> stage=new ArrayList<>();
+        final double height=DevAssetGalleryLayout.FLOOR_HEIGHT_M;
+        final double back=71.0;
+        // The three solid decks actually occupy different world-space Y levels.
+        // A 3x4 metre side lift void is open through both upper floors, so the
+        // existing free-flight camera can move between floors. Entry buttons
+        // additionally provide direct, reliable floor navigation.
+        for(int floor=0;floor<DevAssetGalleryLayout.FLOORS;floor++){
+            double fy=DevAssetGalleryLayout.floorY(floor);
+            int slab=floor%2==0?0xa7aab0:0x9da3aa;
+            if(floor==0){
+                box(stage,-11,fy-.37,-11,22,.34,82,slab);
+            }else{
+                box(stage,-11,fy-.37,-11,18.5,.34,82,slab);
+                box(stage,10.5,fy-.37,-11,.5,.34,82,slab);
+                box(stage,7.5,fy-.37,-11,3,.34,9,slab);
+                box(stage,7.5,fy-.37,2,3,.34,back-2,slab);
+            }
+            for(int bay=0;bay<DevAssetGalleryLayout.BAYS_PER_FLOOR;bay++){
+                for(int j=0;j<DevAssetGalleryLayout.SLOTS_PER_BAY;j++){
+                    double px=DevAssetGalleryLayout.standX(j);
+                    double pz=DevAssetGalleryLayout.standZ(bay,j);
+                    box(stage,px-1.18,fy-.03,pz-1.14,2.36,.23,2.28,
+                        j%2==0?0xb9bcc2:0xaeb4be);
+                    box(stage,px-1.22,fy-.05,pz-1.18,2.44,.055,2.36,
+                        0xb2a68e);
+                }
+                // Visible bay divisions without blocking walking routes.
+                if(bay>0)
+                    box(stage,-9.6,fy-.016,bay*DevAssetGalleryLayout.BAY_DEPTH_M-.06,
+                        17.0,.035,.12,0x9e8b65);
+            }
+            // Coloured stair/lift landing cues are real static inspection
+            // surfaces only: no collision, fake lift animation, or save format.
+            box(stage,7.4,fy-.01,-2.04,3.25,.055,.09,0xbbaa80);
+            box(stage,7.4,fy-.01,2.02,3.25,.055,.09,0xbbaa80);
+            box(stage,7.42,fy-.01,-2.0,.09,.055,4,0xbbaa80);
+            if(floor>0){
+                for(double zMarker:new double[]{-1.97,1.97}){
+                    box(stage,7.43,fy+.44,zMarker,.10,.88,.07,0x657480);
+                }
+            }
+            // Distinctly readable physical level bands at the walls.
+            box(stage,-10.98,fy+.36,-10.85,.065,.11,81.6,
+                floor==0?0x8ba6bd:floor==1?0x9bb391:0xc5a78a);
+        }
+        // Single enclosing hall, three storeys tall. Bay geometry has no
+        // per-page fake replacement wall and remains viewable by free flight.
+        box(stage,-11,-.37,-11,.28,height*DevAssetGalleryLayout.FLOORS+.32,82,0xbebfbe);
+        box(stage,10.72,-.37,-11,.28,height*DevAssetGalleryLayout.FLOORS+.32,82,0xbebfbe);
+        box(stage,-11,-.37,70.72,22,height*DevAssetGalleryLayout.FLOORS+.32,.28,0xd3d2d0);
+        box(stage,-11,height*DevAssetGalleryLayout.FLOORS-.03,-11,
+            22,.18,82,0xe5e3dd);
+        final int visibleFloor=DevAssetGalleryLayout.floorAtEye(eyeHeight);
+        // Cull by floor and bay distance before decoding a potentially large
+        // imported texture/model. All 72 contact locations remain physically
+        // present, while no more than nearby models are submitted per frame.
+        for(int i=0;i<wing.size();i++){
+            var address=DevAssetGalleryLayout.address(i);
+            if(address.floor()!=visibleFloor)continue;
+            double px=DevAssetGalleryLayout.standX(address.slot());
+            double pz=DevAssetGalleryLayout.standZ(address.bay(),address.slot());
+            if(Math.abs(pz-z)>DevAssetGalleryLayout.MODEL_RADIUS_M)continue;
+            var entry=wing.get(i);
+            if(entry.sprite())continue;
+            double fy=DevAssetGalleryLayout.floorY(address.floor());
+            try{
+                GlbProps.Model model=devReviewModel(entry);
+                double[] bounds=devAssetBounds(model);
+                double span=Math.max(bounds[3],Math.max(bounds[4],bounds[5]));
+                if(!Double.isFinite(span)||span<=0)
+                    throw new IllegalStateException("Invalid source dimensions");
+                double scale=Math.min(22,Math.min(
+                    2.0/Math.max(.0001,Math.max(bounds[3],bounds[5])),
+                    2.15/Math.max(.0001,bounds[4])));
+                double cx=bounds[0]*scale,cz=bounds[2]*scale;
+                double mx=px-(cx*Math.cos(rotation)-cz*Math.sin(rotation));
+                double mz=pz-(cx*Math.sin(rotation)+cz*Math.cos(rotation));
+                imported(stage,entry.id(),model,mx,fy+.2-bounds[1]*scale,mz,
+                    scale,scale,scale,rotation);
+            }catch(RuntimeException badMesh){
+                box(stage,px-.5,fy+.25,pz-.5,1,.12,1,0x90202b);
+            }
+        }
+        for(Face f:stage){
+            if(!faceInFrustum(f))continue;
+            var clipped=clip(new Vertex(camera(f.a),f.au,f.av),
+                new Vertex(camera(f.b),f.bu,f.bv),
+                new Vertex(camera(f.c),f.cu,f.cv));
+            for(int k=1;k+1<clipped.size();k++)
+                triangle(clipped.get(0),clipped.get(k),clipped.get(k+1),
+                    f.color,f.material,1.12);
+        }
+        for(int i=0;i<wing.size();i++){
+            var address=DevAssetGalleryLayout.address(i);
+            if(address.floor()!=visibleFloor)continue;
+            double pz=DevAssetGalleryLayout.standZ(address.bay(),address.slot());
+            if(Math.abs(pz-z)>DevAssetGalleryLayout.MODEL_RADIUS_M)continue;
+            var entry=wing.get(i);
+            if(!entry.sprite())continue;
+            double px=DevAssetGalleryLayout.standX(address.slot());
+            double ground=DevAssetGalleryLayout.floorY(address.floor());
+            try{
+                // DirectionalSprites uses a 1.62m camera origin internally;
+                // compensate for the DEV camera's actual absolute eye height.
+                double elevation=ground+.21-(eyeHeight-1.62);
+                DirectionalSprites.draw(pixels,depths,x,z,yaw,pitch,px,pz,
+                    Math.floorMod(180+(int)Math.round(Math.toDegrees(rotation)),360),
+                    entry.id(),1.82,1.00,elevation,255,true,
+                    renderWidth,renderHeight,focal);
+            }catch(RuntimeException badArt){
+                // Preserve the real missing-art warning rather than inventing a sprite.
+            }
+        }
+        PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
+        applyGraphicsEffects(clock);
+    }
+
     private static GlbProps.Model devReviewModel(DevAssetReviewCatalog.Entry entry){
         try{
             return entry.kind()==DevAssetReviewCatalog.Kind.SOURCE_ONLY
