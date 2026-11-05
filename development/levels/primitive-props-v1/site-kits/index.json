@@ -2,7 +2,7 @@
   "schema": "beckenburg.primitive-map-kit/1",
   "status": "source-only-model-contact-rooms",
   "runtime_approved": false,
-  "model_library_count": 178,
+  "model_library_count": 221,
   "planning_packets": 29,
   "model_scale": "true-scale metres, not resized",
   "page_layout": "3 columns x 2 rows; width 7 m / depth 7 m per stand",
@@ -41,7 +41,13 @@
         "level_blockout_greenhouse_potting_bench",
         "level_blockout_monastery_scriptorium",
         "level_blockout_relic_repair_stand",
-        "level_blockout_library_book_return_cart"
+        "level_blockout_library_book_return_cart",
+        "level_blockout_structural_window_frame",
+        "level_blockout_stair_landing_module",
+        "level_blockout_domestic_wall_bookcase",
+        "level_blockout_school_chalkboard",
+        "level_blockout_school_locker_bank",
+        "level_blockout_science_instrument_table"
       ],
       "pages": [
         {
@@ -212,9 +218,9 @@
           "page": 3,
           "name": "level_blockout_kit_academy_p03",
           "file": "level_blockout_kit_academy_p03.glb",
-          "triangles": 1052,
-          "bytes": 131348,
-          "sha256": "256ac96393a84c321635a6bd8346f2851f7c66cb5258634ad5ed759d9223265e",
+          "triangles": 1172,
+          "bytes": 143596,
+          "sha256": "d7bacee3e40e1250dc6a029f4ac08b266cd60c300dee6f12790089a1030a70f4",
           "display_slots": [
             {
               "slot": 1,
@@ -275,6 +281,88 @@
                 3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_structural_window_frame",
+              "title": "Timber casement frame with clear panes and sill",
+              "source_ground_offset": -0.105,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 4,
+          "name": "level_blockout_kit_academy_p04",
+          "file": "level_blockout_kit_academy_p04.glb",
+          "triangles": 1096,
+          "bytes": 135800,
+          "sha256": "cb48ab6e829a35631e7cd7fb08454cbd31fe086e3611bd883b5018a86bad7cc4",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_stair_landing_module",
+              "title": "Raised architectural landing with guard posts",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_domestic_wall_bookcase",
+              "title": "Shelved wooden bookcase with individual book spines",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_school_chalkboard",
+              "title": "Blackboard, rail and chalk marks",
+              "source_ground_offset": -0.7125,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_school_locker_bank",
+              "title": "Three separate school lockers",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_science_instrument_table",
+              "title": "School laboratory demonstration and optical bench",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -305,7 +393,11 @@
         "level_blockout_prison_isolation_fixture",
         "level_blockout_mortuary_prep_table",
         "level_blockout_mortuary_cold_storage",
-        "level_blockout_medical_resuscitation_cart"
+        "level_blockout_medical_resuscitation_cart",
+        "level_blockout_stair_landing_module",
+        "level_blockout_pipe_riser_support",
+        "level_blockout_hospital_curtain_track",
+        "level_blockout_institution_linen_cabinet"
       ],
       "pages": [
         {
@@ -471,6 +563,64 @@
               "review_only": true
             }
           ]
+        },
+        {
+          "page": 3,
+          "name": "level_blockout_kit_asylum_p03",
+          "file": "level_blockout_kit_asylum_p03.glb",
+          "triangles": 732,
+          "bytes": 87996,
+          "sha256": "c845d71d27300f7e461398cbc9a2dee2d496796f048e4e532a1bb8c04fe928ec",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_stair_landing_module",
+              "title": "Raised architectural landing with guard posts",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_pipe_riser_support",
+              "title": "Clamped three-line vertical service riser",
+              "source_ground_offset": -0.02,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_hospital_curtain_track",
+              "title": "Ward privacy curtain with overhead track",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_institution_linen_cabinet",
+              "title": "Open hospital/prison linen cabinet",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
         }
       ],
       "still_source_only": true
@@ -526,7 +676,20 @@
         "level_blockout_relic_repair_stand",
         "level_blockout_relic_open_guard",
         "level_blockout_castle_wall_tapestry",
-        "level_blockout_ossuary_display_rack"
+        "level_blockout_ossuary_display_rack",
+        "level_blockout_stair_landing_module",
+        "level_blockout_stone_arch_open",
+        "level_blockout_timber_roof_truss",
+        "level_blockout_wall_lantern_sconce",
+        "level_blockout_castle_framed_painting",
+        "level_blockout_castle_woven_rug",
+        "level_blockout_castle_statue_plinth",
+        "level_blockout_castle_long_bench",
+        "level_blockout_castle_warehouse_field_kit_crates",
+        "level_blockout_castle_iron_candelabrum",
+        "level_blockout_domestic_stone_fireplace",
+        "level_blockout_domestic_wall_bookcase",
+        "level_blockout_monastery_stained_window"
       ],
       "pages": [
         {
@@ -1025,9 +1188,9 @@
           "page": 7,
           "name": "level_blockout_kit_castle_p07",
           "file": "level_blockout_kit_castle_p07.glb",
-          "triangles": 696,
-          "bytes": 90768,
-          "sha256": "9772d5a18fc27f1417628e84badeed8c56eaf8dc50ad287f397329998edbc826",
+          "triangles": 1032,
+          "bytes": 125024,
+          "sha256": "96ddef9bb6bcdc29eeac1c73cbad0e2eb1daf53e6d1ee2a66bccdb1ddf4d1a9c",
           "display_slots": [
             {
               "slot": 1,
@@ -1062,6 +1225,182 @@
                 7.0,
                 0,
                 -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_stair_landing_module",
+              "title": "Raised architectural landing with guard posts",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_stone_arch_open",
+              "title": "Open pointed arch with stone quoins",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_timber_roof_truss",
+              "title": "King-post timber roof structure",
+              "source_ground_offset": -1.305,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 8,
+          "name": "level_blockout_kit_castle_p08",
+          "file": "level_blockout_kit_castle_p08.glb",
+          "triangles": 984,
+          "bytes": 126360,
+          "sha256": "154d8bbe5f2f763c0abae0fe9d6fc01ffc09e168c38832825f4d7c16809e005d",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_wall_lantern_sconce",
+              "title": "Wall-mounted candle lantern with metal support",
+              "source_ground_offset": -0.16,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_castle_framed_painting",
+              "title": "Gilded rectangular oil painting with separate frame",
+              "source_ground_offset": -0.275,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_castle_woven_rug",
+              "title": "Woven medieval rug with fringe and border",
+              "source_ground_offset": -0.001,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_castle_statue_plinth",
+              "title": "Stone knight statue and separate stepped pedestal",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_castle_long_bench",
+              "title": "Carved great-hall timber bench",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_castle_warehouse_field_kit_crates",
+              "title": "Multiplayer warehouse portable investigation supply crates",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 9,
+          "name": "level_blockout_kit_castle_p09",
+          "file": "level_blockout_kit_castle_p09.glb",
+          "triangles": 1112,
+          "bytes": 133040,
+          "sha256": "fa3ea60802e63096fa534d2ae451f32443a3730b8388f7d62105ff9da8acc3eb",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_castle_iron_candelabrum",
+              "title": "Seven-candle standing ironwork",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_domestic_stone_fireplace",
+              "title": "Stone firebox with jambs, lintel and hearth",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_domestic_wall_bookcase",
+              "title": "Shelved wooden bookcase with individual book spines",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_monastery_stained_window",
+              "title": "Arched monastery stained-glazing study",
+              "source_ground_offset": -0.065,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
               ],
               "review_only": true
             }
@@ -1099,7 +1438,15 @@
         "level_blockout_sarcophagus_effigy",
         "level_blockout_relic_inventory_placard",
         "level_blockout_ossuary_display_rack",
-        "level_blockout_votive_candle_stand"
+        "level_blockout_votive_candle_stand",
+        "level_blockout_stone_arch_open",
+        "level_blockout_wall_lantern_sconce",
+        "level_blockout_castle_statue_plinth",
+        "level_blockout_castle_long_bench",
+        "level_blockout_castle_iron_candelabrum",
+        "level_blockout_cemetery_headstone_row",
+        "level_blockout_cemetery_iron_lantern",
+        "level_blockout_monastery_stained_window"
       ],
       "pages": [
         {
@@ -1270,9 +1617,9 @@
           "page": 3,
           "name": "level_blockout_kit_church_p03",
           "file": "level_blockout_kit_church_p03.glb",
-          "triangles": 1500,
-          "bytes": 172632,
-          "sha256": "8a985b799ef6ae0574f175c3a80500a86cda8039c944f8a5db85705f6221bbef",
+          "triangles": 1608,
+          "bytes": 183668,
+          "sha256": "e867220fee23df5133ee0364db9b7d8f2dce8e3dd676920233c95edd20333c4e",
           "display_slots": [
             {
               "slot": 1,
@@ -1333,6 +1680,122 @@
                 3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_stone_arch_open",
+              "title": "Open pointed arch with stone quoins",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 4,
+          "name": "level_blockout_kit_church_p04",
+          "file": "level_blockout_kit_church_p04.glb",
+          "triangles": 1320,
+          "bytes": 150128,
+          "sha256": "25ef0ff4109ccc83557d71138bd7d3247d02bd0e602bbe5af6656a3fab5f5cae",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_wall_lantern_sconce",
+              "title": "Wall-mounted candle lantern with metal support",
+              "source_ground_offset": -0.16,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_castle_statue_plinth",
+              "title": "Stone knight statue and separate stepped pedestal",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_castle_long_bench",
+              "title": "Carved great-hall timber bench",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_castle_iron_candelabrum",
+              "title": "Seven-candle standing ironwork",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_cemetery_headstone_row",
+              "title": "Four freestanding cemetery headstones",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_cemetery_iron_lantern",
+              "title": "Freestanding wrought graveyard lantern",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 5,
+          "name": "level_blockout_kit_church_p05",
+          "file": "level_blockout_kit_church_p05.glb",
+          "triangles": 132,
+          "bytes": 22492,
+          "sha256": "8536bbd8d49fbd696c169855c3e43bcbf97f5faa9d5d3bfb7b19879e917ff065",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_monastery_stained_window",
+              "title": "Arched monastery stained-glazing study",
+              "source_ground_offset": -0.065,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -1364,7 +1827,12 @@
         "level_blockout_college_cafe_counter",
         "level_blockout_gym_wall_bars",
         "level_blockout_school_scoreboard",
-        "level_blockout_library_book_return_cart"
+        "level_blockout_library_book_return_cart",
+        "level_blockout_stair_landing_module",
+        "level_blockout_domestic_wall_bookcase",
+        "level_blockout_school_chalkboard",
+        "level_blockout_school_locker_bank",
+        "level_blockout_science_instrument_table"
       ],
       "pages": [
         {
@@ -1535,9 +2003,9 @@
           "page": 3,
           "name": "level_blockout_kit_college_p03",
           "file": "level_blockout_kit_college_p03.glb",
-          "triangles": 296,
-          "bytes": 43508,
-          "sha256": "8572f6dc151ed10426352e4b059c56ea042c4fbdcb264dbadff3fa819598e429",
+          "triangles": 1392,
+          "bytes": 165968,
+          "sha256": "418cb75ad02fb89ffae0d777103dd07f39a80c89efe94c27f7ab2a92d304d6b1",
           "display_slots": [
             {
               "slot": 1,
@@ -1548,6 +2016,66 @@
                 -7.0,
                 0,
                 -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_stair_landing_module",
+              "title": "Raised architectural landing with guard posts",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_domestic_wall_bookcase",
+              "title": "Shelved wooden bookcase with individual book spines",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_school_chalkboard",
+              "title": "Blackboard, rail and chalk marks",
+              "source_ground_offset": -0.7125,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_school_locker_bank",
+              "title": "Three separate school lockers",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_science_instrument_table",
+              "title": "School laboratory demonstration and optical bench",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
               ],
               "review_only": true
             }
@@ -1582,7 +2110,15 @@
         "level_blockout_house_mailbox",
         "level_blockout_sawmill_headdrig",
         "level_blockout_timber_offcut_pile",
-        "level_blockout_logging_sawbuck"
+        "level_blockout_logging_sawbuck",
+        "level_blockout_structural_window_frame",
+        "level_blockout_timber_roof_truss",
+        "level_blockout_domestic_pitched_roof_module",
+        "level_blockout_domestic_chimney_stack",
+        "level_blockout_domestic_stone_fireplace",
+        "level_blockout_domestic_porch_stair",
+        "level_blockout_domestic_kitchen_range",
+        "level_blockout_logging_winch_sled"
       ],
       "pages": [
         {
@@ -1753,9 +2289,9 @@
           "page": 3,
           "name": "level_blockout_kit_farmhouse_p03",
           "file": "level_blockout_kit_farmhouse_p03.glb",
-          "triangles": 280,
-          "bytes": 37664,
-          "sha256": "50c7cd0b53e10134b74c7e8769301d6672f88448029f79b1113ee88f06f53d75",
+          "triangles": 700,
+          "bytes": 82624,
+          "sha256": "ba839a969dc493931b9b53785be1049d2e03c340096a29e2586dc3b0bf38c29e",
           "display_slots": [
             {
               "slot": 1,
@@ -1778,6 +2314,112 @@
                 0.0,
                 0,
                 -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_structural_window_frame",
+              "title": "Timber casement frame with clear panes and sill",
+              "source_ground_offset": -0.105,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_timber_roof_truss",
+              "title": "King-post timber roof structure",
+              "source_ground_offset": -1.305,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_domestic_pitched_roof_module",
+              "title": "Open twin-pitched gable roof module",
+              "source_ground_offset": -1.83,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_domestic_chimney_stack",
+              "title": "Brick chimney with open flue mouth",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 4,
+          "name": "level_blockout_kit_farmhouse_p04",
+          "file": "level_blockout_kit_farmhouse_p04.glb",
+          "triangles": 600,
+          "bytes": 74516,
+          "sha256": "515a3d579b4b5898c0400e2b91be46527e65e9bcbf0012cf23207217405c4f9a",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_domestic_stone_fireplace",
+              "title": "Stone firebox with jambs, lintel and hearth",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_domestic_porch_stair",
+              "title": "Four-tread timber entrance stair",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_domestic_kitchen_range",
+              "title": "Freestanding stove with four hot plates and oven",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_logging_winch_sled",
+              "title": "Sled-mounted capstan and pull handle",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
               ],
               "review_only": true
             }
@@ -1804,7 +2446,16 @@
         "level_blockout_toy_chest_scatter",
         "level_blockout_cellar_service_manifold",
         "level_blockout_house_mailbox",
-        "level_blockout_motel_reception_counter"
+        "level_blockout_motel_reception_counter",
+        "level_blockout_structural_window_frame",
+        "level_blockout_castle_woven_rug",
+        "level_blockout_domestic_pitched_roof_module",
+        "level_blockout_domestic_chimney_stack",
+        "level_blockout_domestic_stone_fireplace",
+        "level_blockout_domestic_porch_stair",
+        "level_blockout_domestic_kitchen_range",
+        "level_blockout_domestic_wall_bookcase",
+        "level_blockout_motel_guest_bed"
       ],
       "pages": [
         {
@@ -1888,6 +2539,134 @@
               "review_only": true
             }
           ]
+        },
+        {
+          "page": 2,
+          "name": "level_blockout_kit_house_p02",
+          "file": "level_blockout_kit_house_p02.glb",
+          "triangles": 816,
+          "bytes": 100716,
+          "sha256": "e5eb2189993d8616e72208c7675ffceb147449051fe1d97eda1da5cf74253918",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_structural_window_frame",
+              "title": "Timber casement frame with clear panes and sill",
+              "source_ground_offset": -0.105,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_castle_woven_rug",
+              "title": "Woven medieval rug with fringe and border",
+              "source_ground_offset": -0.001,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_domestic_pitched_roof_module",
+              "title": "Open twin-pitched gable roof module",
+              "source_ground_offset": -1.83,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_domestic_chimney_stack",
+              "title": "Brick chimney with open flue mouth",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_domestic_stone_fireplace",
+              "title": "Stone firebox with jambs, lintel and hearth",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_domestic_porch_stair",
+              "title": "Four-tread timber entrance stair",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 3,
+          "name": "level_blockout_kit_house_p03",
+          "file": "level_blockout_kit_house_p03.glb",
+          "triangles": 664,
+          "bytes": 89588,
+          "sha256": "c0f6bee6ad008a9e90f645f3cb866d4f2e260c654cd7afbe7926f911827ac194",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_domestic_kitchen_range",
+              "title": "Freestanding stove with four hot plates and oven",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_domestic_wall_bookcase",
+              "title": "Shelved wooden bookcase with individual book spines",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_motel_guest_bed",
+              "title": "Double motel bed with separate bedding and pillows",
+              "source_ground_offset": -0.12,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            }
+          ]
         }
       ],
       "still_source_only": true
@@ -1916,7 +2695,20 @@
         "level_blockout_cellar_service_manifold",
         "level_blockout_house_mailbox",
         "level_blockout_relic_locking_showcase",
-        "level_blockout_castle_wall_tapestry"
+        "level_blockout_castle_wall_tapestry",
+        "level_blockout_structural_window_frame",
+        "level_blockout_timber_roof_truss",
+        "level_blockout_wall_lantern_sconce",
+        "level_blockout_castle_framed_painting",
+        "level_blockout_castle_woven_rug",
+        "level_blockout_castle_statue_plinth",
+        "level_blockout_castle_long_bench",
+        "level_blockout_castle_iron_candelabrum",
+        "level_blockout_domestic_pitched_roof_module",
+        "level_blockout_domestic_chimney_stack",
+        "level_blockout_domestic_stone_fireplace",
+        "level_blockout_domestic_kitchen_range",
+        "level_blockout_domestic_wall_bookcase"
       ],
       "pages": [
         {
@@ -2082,6 +2874,192 @@
               "review_only": true
             }
           ]
+        },
+        {
+          "page": 3,
+          "name": "level_blockout_kit_mansion_p03",
+          "file": "level_blockout_kit_mansion_p03.glb",
+          "triangles": 948,
+          "bytes": 120564,
+          "sha256": "eff2169c83dfe55863e29796b98a4aabf9c9026a317c3d50ac7ca73647e7afb5",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_structural_window_frame",
+              "title": "Timber casement frame with clear panes and sill",
+              "source_ground_offset": -0.105,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_timber_roof_truss",
+              "title": "King-post timber roof structure",
+              "source_ground_offset": -1.305,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_wall_lantern_sconce",
+              "title": "Wall-mounted candle lantern with metal support",
+              "source_ground_offset": -0.16,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_castle_framed_painting",
+              "title": "Gilded rectangular oil painting with separate frame",
+              "source_ground_offset": -0.275,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_castle_woven_rug",
+              "title": "Woven medieval rug with fringe and border",
+              "source_ground_offset": -0.001,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_castle_statue_plinth",
+              "title": "Stone knight statue and separate stepped pedestal",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 4,
+          "name": "level_blockout_kit_mansion_p04",
+          "file": "level_blockout_kit_mansion_p04.glb",
+          "triangles": 1212,
+          "bytes": 139040,
+          "sha256": "e1fd9e64602e5be756e11dd85e805d41ff6859da2812749b9f80233d913bbe48",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_castle_long_bench",
+              "title": "Carved great-hall timber bench",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_castle_iron_candelabrum",
+              "title": "Seven-candle standing ironwork",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_domestic_pitched_roof_module",
+              "title": "Open twin-pitched gable roof module",
+              "source_ground_offset": -1.83,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_domestic_chimney_stack",
+              "title": "Brick chimney with open flue mouth",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_domestic_stone_fireplace",
+              "title": "Stone firebox with jambs, lintel and hearth",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_domestic_kitchen_range",
+              "title": "Freestanding stove with four hot plates and oven",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 5,
+          "name": "level_blockout_kit_mansion_p05",
+          "file": "level_blockout_kit_mansion_p05.glb",
+          "triangles": 336,
+          "bytes": 45492,
+          "sha256": "ac358cc0488310bf0345d2aff40a69fec03adc5f9aa2b9d06e1292e4f041c064",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_domestic_wall_bookcase",
+              "title": "Shelved wooden bookcase with individual book spines",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            }
+          ]
         }
       ],
       "still_source_only": true
@@ -2114,7 +3092,12 @@
         "level_blockout_prison_gallery_rail",
         "level_blockout_prison_isolation_fixture",
         "level_blockout_barracks_lockers",
-        "level_blockout_prison_cell_cot"
+        "level_blockout_prison_cell_cot",
+        "level_blockout_stair_landing_module",
+        "level_blockout_pipe_riser_support",
+        "level_blockout_school_locker_bank",
+        "level_blockout_institution_linen_cabinet",
+        "level_blockout_prison_guard_station"
       ],
       "pages": [
         {
@@ -2285,9 +3268,9 @@
           "page": 3,
           "name": "level_blockout_kit_prison_p03",
           "file": "level_blockout_kit_prison_p03.glb",
-          "triangles": 492,
-          "bytes": 61344,
-          "sha256": "fa1d683c802896f0bfc79fbb41b24f0c350eb12b0e0c2cf04faefebe16d73fca",
+          "triangles": 876,
+          "bytes": 100496,
+          "sha256": "22300ae2ffb097a737055320270a021f1cd60f3558ee132f89b316d220e1baab",
           "display_slots": [
             {
               "slot": 1,
@@ -2336,6 +3319,76 @@
                 3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_stair_landing_module",
+              "title": "Raised architectural landing with guard posts",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_pipe_riser_support",
+              "title": "Clamped three-line vertical service riser",
+              "source_ground_offset": -0.02,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 4,
+          "name": "level_blockout_kit_prison_p04",
+          "file": "level_blockout_kit_prison_p04.glb",
+          "triangles": 612,
+          "bytes": 80032,
+          "sha256": "23bad0f8f0c2d677d5e5367fb5d94cedb32c63748fdff12ef300fd5e108821e2",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_school_locker_bank",
+              "title": "Three separate school lockers",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_institution_linen_cabinet",
+              "title": "Open hospital/prison linen cabinet",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_prison_guard_station",
+              "title": "Prison guard desk and custody rail",
+              "source_ground_offset": -0.015,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -2363,7 +3416,13 @@
         "level_blockout_gym_wall_bars",
         "level_blockout_school_scoreboard",
         "level_blockout_toy_chest_scatter",
-        "level_blockout_library_book_return_cart"
+        "level_blockout_library_book_return_cart",
+        "level_blockout_structural_window_frame",
+        "level_blockout_stair_landing_module",
+        "level_blockout_school_chalkboard",
+        "level_blockout_school_locker_bank",
+        "level_blockout_science_instrument_table",
+        "level_blockout_institution_linen_cabinet"
       ],
       "pages": [
         {
@@ -2452,9 +3511,9 @@
           "page": 2,
           "name": "level_blockout_kit_school_p02",
           "file": "level_blockout_kit_school_p02.glb",
-          "triangles": 560,
-          "bytes": 74696,
-          "sha256": "1e20c67e536a347be4146a3203afe0aefc5f1553f9e39dccd5e1cbd2b021342f",
+          "triangles": 932,
+          "bytes": 114728,
+          "sha256": "fe387842d4d5bb6ee3b0985a58b3f5b854617efb2dbcf3383044fa63bb3e2327",
           "display_slots": [
             {
               "slot": 1,
@@ -2485,6 +3544,88 @@
               "id": "level_blockout_library_book_return_cart",
               "title": "Library and campus book return trolley",
               "source_ground_offset": -0.001,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_structural_window_frame",
+              "title": "Timber casement frame with clear panes and sill",
+              "source_ground_offset": -0.105,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_stair_landing_module",
+              "title": "Raised architectural landing with guard posts",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_school_chalkboard",
+              "title": "Blackboard, rail and chalk marks",
+              "source_ground_offset": -0.7125,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 3,
+          "name": "level_blockout_kit_school_p03",
+          "file": "level_blockout_kit_school_p03.glb",
+          "triangles": 724,
+          "bytes": 93564,
+          "sha256": "8c11943a33d3c43726c8972eee244fb0dbe7e90a998c3b122703b49fead6603b",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_school_locker_bank",
+              "title": "Three separate school lockers",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_science_instrument_table",
+              "title": "School laboratory demonstration and optical bench",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_institution_linen_cabinet",
+              "title": "Open hospital/prison linen cabinet",
+              "source_ground_offset": -0.0,
               "stand_center": [
                 7.0,
                 0,
@@ -2526,7 +3667,12 @@
         "level_blockout_ranger_trail_sign",
         "level_blockout_mine_hoist_winch",
         "level_blockout_rail_trestle_bay",
-        "level_blockout_logging_sawbuck"
+        "level_blockout_logging_sawbuck",
+        "level_blockout_timber_roof_truss",
+        "level_blockout_domestic_pitched_roof_module",
+        "level_blockout_domestic_porch_stair",
+        "level_blockout_logging_winch_sled",
+        "level_blockout_camp_tarp_shelter"
       ],
       "pages": [
         {
@@ -2697,9 +3843,9 @@
           "page": 3,
           "name": "level_blockout_kit_wld_01_p03",
           "file": "level_blockout_kit_wld_01_p03.glb",
-          "triangles": 684,
-          "bytes": 85180,
-          "sha256": "d6e337305def6e227e3060ef3f26c94e036442d1c0a1714c1468ea99742bb5b5",
+          "triangles": 780,
+          "bytes": 94992,
+          "sha256": "a86e4365c22ccd03f7634f15cfc398257625b078b206ae0be4ccb573c74f7b0f",
           "display_slots": [
             {
               "slot": 1,
@@ -2760,6 +3906,76 @@
                 3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_timber_roof_truss",
+              "title": "King-post timber roof structure",
+              "source_ground_offset": -1.305,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 4,
+          "name": "level_blockout_kit_wld_01_p04",
+          "file": "level_blockout_kit_wld_01_p04.glb",
+          "triangles": 452,
+          "bytes": 59500,
+          "sha256": "34fb264ce443fe661a2994aef3dc5ded73058f24ac3a5c81c0c575586936a1d6",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_domestic_pitched_roof_module",
+              "title": "Open twin-pitched gable roof module",
+              "source_ground_offset": -1.83,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_domestic_porch_stair",
+              "title": "Four-tread timber entrance stair",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_logging_winch_sled",
+              "title": "Sled-mounted capstan and pull handle",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_camp_tarp_shelter",
+              "title": "Open tentlike tarp with four poles",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -2794,7 +4010,8 @@
         "level_blockout_ranger_trail_sign",
         "level_blockout_camp_washstand",
         "level_blockout_abandoned_camper_shell",
-        "level_blockout_marsh_reed_cluster"
+        "level_blockout_marsh_reed_cluster",
+        "level_blockout_camp_tarp_shelter"
       ],
       "pages": [
         {
@@ -2965,9 +4182,9 @@
           "page": 3,
           "name": "level_blockout_kit_wld_02_p03",
           "file": "level_blockout_kit_wld_02_p03.glb",
-          "triangles": 740,
-          "bytes": 90916,
-          "sha256": "cb0842a9e2fe6c2c4025737101adc625545c81ef0622c1bea057c908b0dca049",
+          "triangles": 848,
+          "bytes": 101912,
+          "sha256": "2d3dd4b8bf6ae656b2484a48e4f43fccd6a723bf7ee360e31a427ab95fd770f8",
           "display_slots": [
             {
               "slot": 1,
@@ -3016,6 +4233,18 @@
                 3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_camp_tarp_shelter",
+              "title": "Open tentlike tarp with four poles",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -3044,7 +4273,9 @@
         "level_blockout_canyon_rockfall_barrier",
         "level_blockout_survey_marker_cases",
         "level_blockout_cave_bend_modules",
-        "level_blockout_mine_pick_tool_rack"
+        "level_blockout_mine_pick_tool_rack",
+        "level_blockout_cavern_stalagmite_cluster",
+        "level_blockout_mine_braced_portal"
       ],
       "pages": [
         {
@@ -3133,9 +4364,9 @@
           "page": 2,
           "name": "level_blockout_kit_wld_03_p02",
           "file": "level_blockout_kit_wld_03_p02.glb",
-          "triangles": 552,
-          "bytes": 67476,
-          "sha256": "5f5e122ec4fcc9332649aaba39b9c312cb8b850fdb3e0c131475f1a4e84df308",
+          "triangles": 1056,
+          "bytes": 118940,
+          "sha256": "94f74b52fb3ed291005f0d5be9bdf046e5e77f778a2043c26cc56b5e1ff97b83",
           "display_slots": [
             {
               "slot": 1,
@@ -3184,6 +4415,30 @@
                 3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_cavern_stalagmite_cluster",
+              "title": "Four unequal faceted cavern formations",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_mine_braced_portal",
+              "title": "Clear mine entrance timber support frame",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -3211,7 +4466,13 @@
         "level_blockout_site_distribution_board",
         "level_blockout_supported_cable_tray",
         "level_blockout_field_first_aid",
-        "level_blockout_weather_instrument_array"
+        "level_blockout_weather_instrument_array",
+        "level_blockout_structural_window_frame",
+        "level_blockout_stair_landing_module",
+        "level_blockout_timber_roof_truss",
+        "level_blockout_camp_tarp_shelter",
+        "level_blockout_lighthouse_access_ladder",
+        "level_blockout_bunker_observation_scope"
       ],
       "pages": [
         {
@@ -3300,9 +4561,9 @@
           "page": 2,
           "name": "level_blockout_kit_wld_04_p02",
           "file": "level_blockout_kit_wld_04_p02.glb",
-          "triangles": 452,
-          "bytes": 61456,
-          "sha256": "21d664a97a78a28a9c70c6d0d8410aa58a460beb3eea76b339e084bcbe84d6e7",
+          "triangles": 800,
+          "bytes": 96956,
+          "sha256": "b09d26dbe8d85c0b7691951b3c196ccccb504994b01f7760435c4797e4e2bf16",
           "display_slots": [
             {
               "slot": 1,
@@ -3332,6 +4593,88 @@
               "slot": 3,
               "id": "level_blockout_weather_instrument_array",
               "title": "Northwatch/Lookout weather mast instruments",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_structural_window_frame",
+              "title": "Timber casement frame with clear panes and sill",
+              "source_ground_offset": -0.105,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_stair_landing_module",
+              "title": "Raised architectural landing with guard posts",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_timber_roof_truss",
+              "title": "King-post timber roof structure",
+              "source_ground_offset": -1.305,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 3,
+          "name": "level_blockout_kit_wld_04_p03",
+          "file": "level_blockout_kit_wld_04_p03.glb",
+          "triangles": 620,
+          "bytes": 78704,
+          "sha256": "c6b0d67c63f0a87feb2153ec1d08425ed3362a4bddb5b692f701ca5bbbec8e29",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_camp_tarp_shelter",
+              "title": "Open tentlike tarp with four poles",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_lighthouse_access_ladder",
+              "title": "Twelve-rung maintenance access ladder",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_bunker_observation_scope",
+              "title": "Coastal battery field binocular mount",
               "source_ground_offset": -0.0,
               "stand_center": [
                 7.0,
@@ -3371,7 +4714,12 @@
         "level_blockout_cave_bend_modules",
         "level_blockout_mine_hoist_winch",
         "level_blockout_mine_sorting_bins",
-        "level_blockout_mine_pick_tool_rack"
+        "level_blockout_mine_pick_tool_rack",
+        "level_blockout_stair_landing_module",
+        "level_blockout_logging_winch_sled",
+        "level_blockout_cavern_stalagmite_cluster",
+        "level_blockout_mine_braced_portal",
+        "level_blockout_rail_trackside_toolbox"
       ],
       "pages": [
         {
@@ -3542,9 +4890,9 @@
           "page": 3,
           "name": "level_blockout_kit_wld_05_p03",
           "file": "level_blockout_kit_wld_05_p03.glb",
-          "triangles": 336,
-          "bytes": 45484,
-          "sha256": "e4f9d6b1493c1d82f28a6bca5d1dd7b63572fc7bbbe924c515b5053969ac731e",
+          "triangles": 1136,
+          "bytes": 127132,
+          "sha256": "9abb1ad9fd653461d4dc74cd882447a539ddfe66ccc06a927ba383d150bf8671",
           "display_slots": [
             {
               "slot": 1,
@@ -3565,6 +4913,76 @@
               "source_ground_offset": -0.005,
               "stand_center": [
                 0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_stair_landing_module",
+              "title": "Raised architectural landing with guard posts",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_logging_winch_sled",
+              "title": "Sled-mounted capstan and pull handle",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_cavern_stalagmite_cluster",
+              "title": "Four unequal faceted cavern formations",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_mine_braced_portal",
+              "title": "Clear mine entrance timber support frame",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 4,
+          "name": "level_blockout_kit_wld_05_p04",
+          "file": "level_blockout_kit_wld_05_p04.glb",
+          "triangles": 120,
+          "bytes": 25560,
+          "sha256": "044e4c2591a69645504dd089e27fa14398db6e0bea3200d312589f10bc319dc5",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_rail_trackside_toolbox",
+              "title": "Trackside tools and metal-trimmed trunk",
+              "source_ground_offset": -0.045,
+              "stand_center": [
+                -7.0,
                 0,
                 -3.5
               ],
@@ -3604,7 +5022,9 @@
         "level_blockout_ship_net_boom",
         "level_blockout_ship_gangway_rails",
         "level_blockout_mooring_rope_coils",
-        "level_blockout_cannery_cargo_pallet"
+        "level_blockout_cannery_cargo_pallet",
+        "level_blockout_marsh_flatboat",
+        "level_blockout_wharf_crab_pot"
       ],
       "pages": [
         {
@@ -3775,9 +5195,9 @@
           "page": 3,
           "name": "level_blockout_kit_wld_06_p03",
           "file": "level_blockout_kit_wld_06_p03.glb",
-          "triangles": 1408,
-          "bytes": 159088,
-          "sha256": "ab246a948aed3667022f71ad5572baaca5bb5f43fe51efc583706d583029bb37",
+          "triangles": 1528,
+          "bytes": 171336,
+          "sha256": "66a756b3ce42cf819cb6a29dfea33834bf6603ee2f5157698759551628b75e02",
           "display_slots": [
             {
               "slot": 1,
@@ -3838,6 +5258,40 @@
                 3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_marsh_flatboat",
+              "title": "Open shallow marsh rowboat and two thwarts",
+              "source_ground_offset": -0.11,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 4,
+          "name": "level_blockout_kit_wld_06_p04",
+          "file": "level_blockout_kit_wld_06_p04.glb",
+          "triangles": 448,
+          "bytes": 54764,
+          "sha256": "fc0b04864ddc5767b8ae0d953b8933c14ef65ed4ec5388a8cb13535ab9a99e4b",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_wharf_crab_pot",
+              "title": "Wire ribbed crab pot",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -3873,7 +5327,11 @@
         "level_blockout_sarcophagus_effigy",
         "level_blockout_relic_inventory_placard",
         "level_blockout_ossuary_display_rack",
-        "level_blockout_votive_candle_stand"
+        "level_blockout_votive_candle_stand",
+        "level_blockout_stone_arch_open",
+        "level_blockout_wall_lantern_sconce",
+        "level_blockout_cemetery_headstone_row",
+        "level_blockout_cemetery_iron_lantern"
       ],
       "pages": [
         {
@@ -4044,9 +5502,9 @@
           "page": 3,
           "name": "level_blockout_kit_wld_07_p03",
           "file": "level_blockout_kit_wld_07_p03.glb",
-          "triangles": 1500,
-          "bytes": 172656,
-          "sha256": "0e31c12d9fbd29a8ed2c6bdbb0bd84cbb17b9a8ced6160e73e4b5b8f0e8d03a7",
+          "triangles": 1608,
+          "bytes": 183688,
+          "sha256": "f79bc1a9af5bf88b2af74809099a3ebffc9c8c9df94409a2eed4477a5cba4bf8",
           "display_slots": [
             {
               "slot": 1,
@@ -4107,6 +5565,64 @@
                 3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_stone_arch_open",
+              "title": "Open pointed arch with stone quoins",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 4,
+          "name": "level_blockout_kit_wld_07_p04",
+          "file": "level_blockout_kit_wld_07_p04.glb",
+          "triangles": 480,
+          "bytes": 60076,
+          "sha256": "bcb7b3b2ebd2b4203f6bc2e03810d418a570ca23c780f50442ae34a58e94fc35",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_wall_lantern_sconce",
+              "title": "Wall-mounted candle lantern with metal support",
+              "source_ground_offset": -0.16,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_cemetery_headstone_row",
+              "title": "Four freestanding cemetery headstones",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_cemetery_iron_lantern",
+              "title": "Freestanding wrought graveyard lantern",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -4141,7 +5657,11 @@
         "level_blockout_lighthouse_cistern",
         "level_blockout_cinder_escape_landing",
         "level_blockout_research_sample_station",
-        "level_blockout_cinder_decon_frame"
+        "level_blockout_cinder_decon_frame",
+        "level_blockout_science_instrument_table",
+        "level_blockout_ship_chart_cabinet",
+        "level_blockout_cinder_cable_rack",
+        "level_blockout_research_battery_bank"
       ],
       "pages": [
         {
@@ -4312,9 +5832,9 @@
           "page": 3,
           "name": "level_blockout_kit_wld_08_p03",
           "file": "level_blockout_kit_wld_08_p03.glb",
-          "triangles": 772,
-          "bytes": 92032,
-          "sha256": "c197a1017695dc49d437ab74cb5a493613935ee947244ec2507d949f77dc16e2",
+          "triangles": 1172,
+          "bytes": 139312,
+          "sha256": "1d3cc495a4911fdc5d87f34e0b6b6cbf3763a648d650d8b7670354aa9964d30f",
           "display_slots": [
             {
               "slot": 1,
@@ -4363,6 +5883,64 @@
                 3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_science_instrument_table",
+              "title": "School laboratory demonstration and optical bench",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_ship_chart_cabinet",
+              "title": "Wheelhouse chart drawer cabinet",
+              "source_ground_offset": -0.07,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 4,
+          "name": "level_blockout_kit_wld_08_p04",
+          "file": "level_blockout_kit_wld_08_p04.glb",
+          "triangles": 600,
+          "bytes": 72356,
+          "sha256": "f1e6eb754aedaa49777cc091b6089baf08b5cdf181ab2d1e82c123fe325b4821",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_cinder_cable_rack",
+              "title": "Three-tier guarded service cable rack",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_research_battery_bank",
+              "title": "Emergency three-battery rack and terminals",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -4393,7 +5971,10 @@
         "level_blockout_cannery_boiler",
         "level_blockout_lighthouse_oil_storage",
         "level_blockout_cinder_sump_pump",
-        "level_blockout_dam_service_grating"
+        "level_blockout_dam_service_grating",
+        "level_blockout_pipe_riser_support",
+        "level_blockout_research_battery_bank",
+        "level_blockout_dam_pressure_gauge_panel"
       ],
       "pages": [
         {
@@ -4559,6 +6140,52 @@
               "review_only": true
             }
           ]
+        },
+        {
+          "page": 3,
+          "name": "level_blockout_kit_wld_09_p03",
+          "file": "level_blockout_kit_wld_09_p03.glb",
+          "triangles": 1124,
+          "bytes": 127992,
+          "sha256": "a53541aae7f18c7735d5bf787dbd00360f161f704622f8662dc489407ebd2834",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_pipe_riser_support",
+              "title": "Clamped three-line vertical service riser",
+              "source_ground_offset": -0.02,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_research_battery_bank",
+              "title": "Emergency three-battery rack and terminals",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_dam_pressure_gauge_panel",
+              "title": "Four analogue dials and supported gauge risers",
+              "source_ground_offset": -0.13,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            }
+          ]
         }
       ],
       "still_source_only": true
@@ -4598,7 +6225,19 @@
         "level_blockout_relic_repair_stand",
         "level_blockout_castle_wall_tapestry",
         "level_blockout_ossuary_display_rack",
-        "level_blockout_votive_candle_stand"
+        "level_blockout_votive_candle_stand",
+        "level_blockout_stone_arch_open",
+        "level_blockout_timber_roof_truss",
+        "level_blockout_wall_lantern_sconce",
+        "level_blockout_castle_framed_painting",
+        "level_blockout_castle_woven_rug",
+        "level_blockout_castle_statue_plinth",
+        "level_blockout_castle_long_bench",
+        "level_blockout_castle_iron_candelabrum",
+        "level_blockout_domestic_stone_fireplace",
+        "level_blockout_cemetery_headstone_row",
+        "level_blockout_cemetery_iron_lantern",
+        "level_blockout_monastery_stained_window"
       ],
       "pages": [
         {
@@ -4851,9 +6490,9 @@
           "page": 4,
           "name": "level_blockout_kit_wld_10_p04",
           "file": "level_blockout_kit_wld_10_p04.glb",
-          "triangles": 1504,
-          "bytes": 179444,
-          "sha256": "8fb9c80d1cb8074ae2c950d07c6450eefec09bf0919a80a40d7ee1aa07fb84f1",
+          "triangles": 1612,
+          "bytes": 190480,
+          "sha256": "531157cfdd18bfd13867ceb77efb251e49effab6eab4bd354dfffc936669d895",
           "display_slots": [
             {
               "slot": 1,
@@ -4914,6 +6553,170 @@
                 3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_stone_arch_open",
+              "title": "Open pointed arch with stone quoins",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 5,
+          "name": "level_blockout_kit_wld_10_p05",
+          "file": "level_blockout_kit_wld_10_p05.glb",
+          "triangles": 960,
+          "bytes": 121792,
+          "sha256": "a6a200d43d36d6535edb2dfe08407fd6347eb8f3517f62b84ecb35732ad6bcde",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_timber_roof_truss",
+              "title": "King-post timber roof structure",
+              "source_ground_offset": -1.305,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_wall_lantern_sconce",
+              "title": "Wall-mounted candle lantern with metal support",
+              "source_ground_offset": -0.16,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_castle_framed_painting",
+              "title": "Gilded rectangular oil painting with separate frame",
+              "source_ground_offset": -0.275,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_castle_woven_rug",
+              "title": "Woven medieval rug with fringe and border",
+              "source_ground_offset": -0.001,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_castle_statue_plinth",
+              "title": "Stone knight statue and separate stepped pedestal",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_castle_long_bench",
+              "title": "Carved great-hall timber bench",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 6,
+          "name": "level_blockout_kit_wld_10_p06",
+          "file": "level_blockout_kit_wld_10_p06.glb",
+          "triangles": 1104,
+          "bytes": 127976,
+          "sha256": "dc49184e46bd4afea2f0fef47403c130ede46c066acad40ededa57e9614959f8",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_castle_iron_candelabrum",
+              "title": "Seven-candle standing ironwork",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_domestic_stone_fireplace",
+              "title": "Stone firebox with jambs, lintel and hearth",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_cemetery_headstone_row",
+              "title": "Four freestanding cemetery headstones",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_cemetery_iron_lantern",
+              "title": "Freestanding wrought graveyard lantern",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_monastery_stained_window",
+              "title": "Arched monastery stained-glazing study",
+              "source_ground_offset": -0.065,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -4947,7 +6750,9 @@
         "level_blockout_marsh_boardwalk",
         "level_blockout_marsh_ferry_stage",
         "level_blockout_lighthouse_cistern",
-        "level_blockout_marsh_reed_cluster"
+        "level_blockout_marsh_reed_cluster",
+        "level_blockout_camp_tarp_shelter",
+        "level_blockout_marsh_flatboat"
       ],
       "pages": [
         {
@@ -5118,9 +6923,9 @@
           "page": 3,
           "name": "level_blockout_kit_wld_11_p03",
           "file": "level_blockout_kit_wld_11_p03.glb",
-          "triangles": 600,
-          "bytes": 72432,
-          "sha256": "f5be7601ba9cdfe5bf8a4396207f77923b0bcab86253c10954bfb3f88f4e59dd",
+          "triangles": 828,
+          "bytes": 97744,
+          "sha256": "d05f4ed174c924d4f641327535ff8aaa006b71b4e414c755c366843c89e7c04d",
           "display_slots": [
             {
               "slot": 1,
@@ -5157,6 +6962,30 @@
                 -3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_camp_tarp_shelter",
+              "title": "Open tentlike tarp with four poles",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_marsh_flatboat",
+              "title": "Open shallow marsh rowboat and two thwarts",
+              "source_ground_offset": -0.11,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -5186,7 +7015,8 @@
         "level_blockout_rail_switch_assembly",
         "level_blockout_signal_hut_lever_bank",
         "level_blockout_rail_trestle_bay",
-        "level_blockout_rail_buffer_stop"
+        "level_blockout_rail_buffer_stop",
+        "level_blockout_rail_trackside_toolbox"
       ],
       "pages": [
         {
@@ -5275,9 +7105,9 @@
           "page": 2,
           "name": "level_blockout_kit_wld_12_p02",
           "file": "level_blockout_kit_wld_12_p02.glb",
-          "triangles": 968,
-          "bytes": 112012,
-          "sha256": "1c4ab32a04604979d43fee42b37c80ba5de6001689366cfe0a9adae55e85bc8b",
+          "triangles": 1088,
+          "bytes": 126404,
+          "sha256": "78e55fccb6c6d941332942ada9a76b0991ef70540dc63a733f6424a7f417a45d",
           "display_slots": [
             {
               "slot": 1,
@@ -5338,6 +7168,18 @@
                 3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_rail_trackside_toolbox",
+              "title": "Trackside tools and metal-trimmed trunk",
+              "source_ground_offset": -0.045,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -5373,7 +7215,9 @@
         "level_blockout_cannery_coldroom_door",
         "level_blockout_cannery_payroll_clock",
         "level_blockout_mortuary_cold_storage",
-        "level_blockout_cannery_cargo_pallet"
+        "level_blockout_cannery_cargo_pallet",
+        "level_blockout_wharf_crab_pot",
+        "level_blockout_cannery_overhead_chute"
       ],
       "pages": [
         {
@@ -5544,9 +7388,9 @@
           "page": 3,
           "name": "level_blockout_kit_wld_13_p03",
           "file": "level_blockout_kit_wld_13_p03.glb",
-          "triangles": 836,
-          "bytes": 100684,
-          "sha256": "df64e6a06505d1ac241edef78caff59aff9246035c039d033bf1d81cdd19695b",
+          "triangles": 1284,
+          "bytes": 146408,
+          "sha256": "b182219f8a2d6eaba11b9772b54088c892ec257d3b9bd4ad408531d3639b0392",
           "display_slots": [
             {
               "slot": 1,
@@ -5607,6 +7451,40 @@
                 3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_wharf_crab_pot",
+              "title": "Wire ribbed crab pot",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 4,
+          "name": "level_blockout_kit_wld_13_p04",
+          "file": "level_blockout_kit_wld_13_p04.glb",
+          "triangles": 120,
+          "bytes": 21304,
+          "sha256": "a16c4d82a13a219bb04d238ddf1f6921e39e5ae745db667587a4998502603ebe",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_cannery_overhead_chute",
+              "title": "Tilted cannery chute with raised side guard",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -5643,7 +7521,8 @@
         "level_blockout_ship_bilge_pump",
         "level_blockout_motel_walkway_canopy",
         "level_blockout_coastal_security_fence",
-        "level_blockout_lighthouse_foghorn"
+        "level_blockout_lighthouse_foghorn",
+        "level_blockout_lighthouse_access_ladder"
       ],
       "pages": [
         {
@@ -5891,6 +7770,28 @@
               "review_only": true
             }
           ]
+        },
+        {
+          "page": 4,
+          "name": "level_blockout_kit_wld_14_p04",
+          "file": "level_blockout_kit_wld_14_p04.glb",
+          "triangles": 264,
+          "bytes": 35964,
+          "sha256": "dc29062de22d3a7ad5e44fa0033e71aa97e5cba3467fe8f8e4d93d7ae4cfd931",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_lighthouse_access_ladder",
+              "title": "Twelve-rung maintenance access ladder",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            }
+          ]
         }
       ],
       "still_source_only": true
@@ -5936,7 +7837,13 @@
         "level_blockout_ship_gangway_rails",
         "level_blockout_ship_crew_berth",
         "level_blockout_motel_laundry_unit",
-        "level_blockout_mooring_rope_coils"
+        "level_blockout_mooring_rope_coils",
+        "level_blockout_pipe_riser_support",
+        "level_blockout_wharf_crab_pot",
+        "level_blockout_cannery_overhead_chute",
+        "level_blockout_ship_galley_range",
+        "level_blockout_ship_chart_cabinet",
+        "level_blockout_dam_pressure_gauge_panel"
       ],
       "pages": [
         {
@@ -6271,9 +8178,9 @@
           "page": 5,
           "name": "level_blockout_kit_wld_15_p05",
           "file": "level_blockout_kit_wld_15_p05.glb",
-          "triangles": 1276,
-          "bytes": 145612,
-          "sha256": "6581ed1163fe829f7b772cab0c92c0a46b1edb40249ced1cb282ac5ce52b3c66",
+          "triangles": 1528,
+          "bytes": 171296,
+          "sha256": "c200848e754f09b9b3b877276661613a80f21a0c3ccbb2ca98422caeb29039b0",
           "display_slots": [
             {
               "slot": 1,
@@ -6334,6 +8241,88 @@
                 3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_pipe_riser_support",
+              "title": "Clamped three-line vertical service riser",
+              "source_ground_offset": -0.02,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 6,
+          "name": "level_blockout_kit_wld_15_p06",
+          "file": "level_blockout_kit_wld_15_p06.glb",
+          "triangles": 1400,
+          "bytes": 162596,
+          "sha256": "c7a711651a0d2f895db3b63c1cc6d7a288c34b6d8ecb92bd8bc7ac2339eb8dcf",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_wharf_crab_pot",
+              "title": "Wire ribbed crab pot",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_cannery_overhead_chute",
+              "title": "Tilted cannery chute with raised side guard",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_ship_galley_range",
+              "title": "Ship galley stove with guarded cooking top",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_ship_chart_cabinet",
+              "title": "Wheelhouse chart drawer cabinet",
+              "source_ground_offset": -0.07,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_dam_pressure_gauge_panel",
+              "title": "Four analogue dials and supported gauge risers",
+              "source_ground_offset": -0.13,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -6366,7 +8355,14 @@
         "level_blockout_motel_laundry_unit",
         "level_blockout_motel_parking_stops",
         "level_blockout_motel_walkway_canopy",
-        "level_blockout_motel_ice_machine"
+        "level_blockout_motel_ice_machine",
+        "level_blockout_structural_window_frame",
+        "level_blockout_timber_roof_truss",
+        "level_blockout_domestic_pitched_roof_module",
+        "level_blockout_domestic_chimney_stack",
+        "level_blockout_domestic_porch_stair",
+        "level_blockout_domestic_kitchen_range",
+        "level_blockout_motel_guest_bed"
       ],
       "pages": [
         {
@@ -6537,9 +8533,9 @@
           "page": 3,
           "name": "level_blockout_kit_wld_16_p03",
           "file": "level_blockout_kit_wld_16_p03.glb",
-          "triangles": 228,
-          "bytes": 38644,
-          "sha256": "f464c8837cf71dcbc99549abec02e96ba5bf424a05282d573acd1380936c8ffd",
+          "triangles": 648,
+          "bytes": 81492,
+          "sha256": "c542e0cc511068a192175ad52891c9ce8b691560399ca6917c62925566e1f25c",
           "display_slots": [
             {
               "slot": 1,
@@ -6560,6 +8556,100 @@
               "source_ground_offset": -0.0,
               "stand_center": [
                 0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_structural_window_frame",
+              "title": "Timber casement frame with clear panes and sill",
+              "source_ground_offset": -0.105,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_timber_roof_truss",
+              "title": "King-post timber roof structure",
+              "source_ground_offset": -1.305,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_domestic_pitched_roof_module",
+              "title": "Open twin-pitched gable roof module",
+              "source_ground_offset": -1.83,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_domestic_chimney_stack",
+              "title": "Brick chimney with open flue mouth",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 4,
+          "name": "level_blockout_kit_wld_16_p04",
+          "file": "level_blockout_kit_wld_16_p04.glb",
+          "triangles": 424,
+          "bytes": 62992,
+          "sha256": "4744a77c54ee8df8abfe40d69fda13cbdfd25c2c25309f97a5defaa2d62990e8",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_domestic_porch_stair",
+              "title": "Four-tread timber entrance stair",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_domestic_kitchen_range",
+              "title": "Freestanding stove with four hot plates and oven",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_motel_guest_bed",
+              "title": "Double motel bed with separate bedding and pillows",
+              "source_ground_offset": -0.12,
+              "stand_center": [
+                7.0,
                 0,
                 -3.5
               ],
@@ -6601,7 +8691,13 @@
         "level_blockout_casemate_ventilation",
         "level_blockout_barracks_lockers",
         "level_blockout_coastal_security_fence",
-        "level_blockout_coastal_ammo_crate"
+        "level_blockout_coastal_ammo_crate",
+        "level_blockout_stair_landing_module",
+        "level_blockout_stone_arch_open",
+        "level_blockout_pipe_riser_support",
+        "level_blockout_lighthouse_access_ladder",
+        "level_blockout_bunker_observation_scope",
+        "level_blockout_cinder_cable_rack"
       ],
       "pages": [
         {
@@ -6854,15 +8950,97 @@
           "page": 4,
           "name": "level_blockout_kit_wld_17_p04",
           "file": "level_blockout_kit_wld_17_p04.glb",
-          "triangles": 132,
-          "bytes": 24676,
-          "sha256": "440a62fa5f28eef97df5e6822440808be8a1a0e6628464a0347e2f9b7ef8603b",
+          "triangles": 1136,
+          "bytes": 129192,
+          "sha256": "186e6ed08d0304dddcc6cbc36d887175d5151b0d18a871eabaebfcd012ec1f9e",
           "display_slots": [
             {
               "slot": 1,
               "id": "level_blockout_coastal_ammo_crate",
               "title": "Sealed inert coastal artillery supply crate",
               "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_stair_landing_module",
+              "title": "Raised architectural landing with guard posts",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_stone_arch_open",
+              "title": "Open pointed arch with stone quoins",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_pipe_riser_support",
+              "title": "Clamped three-line vertical service riser",
+              "source_ground_offset": -0.02,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_lighthouse_access_ladder",
+              "title": "Twelve-rung maintenance access ladder",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_bunker_observation_scope",
+              "title": "Coastal battery field binocular mount",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 5,
+          "name": "level_blockout_kit_wld_17_p05",
+          "file": "level_blockout_kit_wld_17_p05.glb",
+          "triangles": 276,
+          "bytes": 37172,
+          "sha256": "dcfd4a50b1eca90d70a9c2e65431de987b9b9989b22283526e1950b387611951",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_cinder_cable_rack",
+              "title": "Three-tier guarded service cable rack",
+              "source_ground_offset": -0.01,
               "stand_center": [
                 -7.0,
                 0,
@@ -6912,7 +9090,15 @@
         "level_blockout_cinder_escape_landing",
         "level_blockout_coastal_ammo_crate",
         "level_blockout_research_sample_station",
-        "level_blockout_cinder_decon_frame"
+        "level_blockout_cinder_decon_frame",
+        "level_blockout_stair_landing_module",
+        "level_blockout_pipe_riser_support",
+        "level_blockout_cavern_stalagmite_cluster",
+        "level_blockout_mine_braced_portal",
+        "level_blockout_lighthouse_access_ladder",
+        "level_blockout_cinder_cable_rack",
+        "level_blockout_research_battery_bank",
+        "level_blockout_dam_pressure_gauge_panel"
       ],
       "pages": [
         {
@@ -7247,9 +9433,9 @@
           "page": 5,
           "name": "level_blockout_kit_wld_18_p05",
           "file": "level_blockout_kit_wld_18_p05.glb",
-          "triangles": 172,
-          "bytes": 26588,
-          "sha256": "fac397e17bb7fe2f1cf0759612beaa4a8a52a2f3097b90d76023b9a87ec23799",
+          "triangles": 1324,
+          "bytes": 146284,
+          "sha256": "3b9d94f1f062094e5f92819e873fab1bc77a5a5fc4a209e57f0482d2a1f063eb",
           "display_slots": [
             {
               "slot": 1,
@@ -7258,6 +9444,112 @@
               "source_ground_offset": -0.0,
               "stand_center": [
                 -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_stair_landing_module",
+              "title": "Raised architectural landing with guard posts",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_pipe_riser_support",
+              "title": "Clamped three-line vertical service riser",
+              "source_ground_offset": -0.02,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_cavern_stalagmite_cluster",
+              "title": "Four unequal faceted cavern formations",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_mine_braced_portal",
+              "title": "Clear mine entrance timber support frame",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_lighthouse_access_ladder",
+              "title": "Twelve-rung maintenance access ladder",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 6,
+          "name": "level_blockout_kit_wld_18_p06",
+          "file": "level_blockout_kit_wld_18_p06.glb",
+          "triangles": 1148,
+          "bytes": 130424,
+          "sha256": "651437042b4168e0c99a1b963f3399008faa35eab6a92862bcdd62116d5c0892",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_cinder_cable_rack",
+              "title": "Three-tier guarded service cable rack",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_research_battery_bank",
+              "title": "Emergency three-battery rack and terminals",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_dam_pressure_gauge_panel",
+              "title": "Four analogue dials and supported gauge risers",
+              "source_ground_offset": -0.13,
+              "stand_center": [
+                7.0,
                 0,
                 -3.5
               ],
@@ -7300,7 +9592,10 @@
         "level_blockout_mortuary_viewing_seat",
         "level_blockout_mortuary_service_screen",
         "level_blockout_relic_padded_tray",
-        "level_blockout_medical_resuscitation_cart"
+        "level_blockout_medical_resuscitation_cart",
+        "level_blockout_pipe_riser_support",
+        "level_blockout_hospital_curtain_track",
+        "level_blockout_institution_linen_cabinet"
       ],
       "pages": [
         {
@@ -7553,9 +9848,9 @@
           "page": 4,
           "name": "level_blockout_kit_wld_07_mortuary_p04",
           "file": "level_blockout_kit_wld_07_mortuary_p04.glb",
-          "triangles": 380,
-          "bytes": 54128,
-          "sha256": "e8ad83c5c0acf6297b924adcb8a57a6ebdca496d967cd571349cc14c88df235a",
+          "triangles": 980,
+          "bytes": 119608,
+          "sha256": "a08b1c648b1bacf3cf5b698ac07e29dc12cb76ff4aefc26910e54b791628c64c",
           "display_slots": [
             {
               "slot": 1,
@@ -7580,6 +9875,42 @@
                 -3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_pipe_riser_support",
+              "title": "Clamped three-line vertical service riser",
+              "source_ground_offset": -0.02,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_hospital_curtain_track",
+              "title": "Ward privacy curtain with overhead track",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_institution_linen_cabinet",
+              "title": "Open hospital/prison linen cabinet",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -7587,6 +9918,6 @@
       "still_source_only": true
     }
   ],
-  "total_stands": 474,
-  "total_pages": 89
+  "total_stands": 631,
+  "total_pages": 118
 }
