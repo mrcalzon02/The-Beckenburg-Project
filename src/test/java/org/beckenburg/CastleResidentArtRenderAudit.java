@@ -33,8 +33,9 @@ public final class CastleResidentArtRenderAudit {
         return name.toLowerCase(Locale.ROOT).replace(' ','-');
     }
     private record FootEvidence(int opaque,int shoePixels,int bottomRow,
-            int floorRow,int gap){
-        boolean pass(){return opaque>=80&&shoePixels>=2&&gap>=-16&&gap<=16;}
+            int floorRow,int gap,boolean blockedByScene){
+        boolean pass(){return !blockedByScene&&opaque>=80&&shoePixels>=2&&gap>=-16&&gap<=16;}
+        String verdict(){return blockedByScene?"OCCLUDED":pass()?"PASS":"FAIL";}
     }
     private static FootEvidence footContact(SceneRenderer scene,
             double[] groundDepth,int[] groundPixels,CastleRelations.Resident resident){
@@ -56,8 +57,19 @@ public final class CastleResidentArtRenderAudit {
                     if(Math.abs(py-projected)<=14)shoe++;
                 }
             }
+        // A high table or another actual scene object can cover the soles.
+        // Do not mistake "no visible boot pixels" behind furniture for a
+        // character hovering, nor silently call that camera a successful test.
+        int blocked=0,receivers=0;
+        if(projected>=0&&projected<HEIGHT)for(int px=WIDTH/2-25;px<=WIDTH/2+25;px+=10){
+            double receiver=groundDepth[projected*WIDTH+px];
+            if(Double.isFinite(receiver)){
+                receivers++;
+                if(receiver<z-.10)blocked++;
+            }
+        }
         return new FootEvidence(opaque,shoe,bottom,projected,
-            bottom<0?999:projected-bottom);
+            bottom<0?999:projected-bottom,receivers==0||blocked>=3);
     }
     private static BufferedImage bootCrop(BufferedImage frame,int floorRow){
         int left=WIDTH/2-110;
@@ -84,11 +96,11 @@ public final class CastleResidentArtRenderAudit {
         scene.setPsxPreset(PsxPipeline.Preset.OFF);
         scene.photographicSoftwareRaster();
         scene.lamp=true;scene.eyeHeight=1.62;
-        int images=0,missing=0,grounded=0,failedAngles=0;
+        int images=0,missing=0,grounded=0,failedAngles=0,occludedAngles=0;
         StringBuilder manifest=new StringBuilder(
             "resident,angle,preset,camera_x,camera_z,render_width,render_height,file\n");
         StringBuilder contacts=new StringBuilder(
-            "resident,source_sha,angle,camera_x,camera_z,opaque_body_pixels,near_sole_pixels,lowest_opaque_row,projected_floor_row,gap_px,pass,boot_crop\n");
+            "resident,source_sha,angle,camera_x,camera_z,opaque_body_pixels,near_sole_pixels,lowest_opaque_row,projected_floor_row,gap_px,receiver_blocked,verdict,boot_crop\n");
         BufferedImage sheet=new BufferedImage(660*5,546,BufferedImage.TYPE_INT_RGB);
         Graphics2D contactSheet=sheet.createGraphics();
         try{
@@ -99,7 +111,7 @@ public final class CastleResidentArtRenderAudit {
             int residentIndex=0;
             for(CastleRelations.Resident resident:CastleRelations.Resident.values()){
                 var npcRoom=CastleRooms.at(resident.x,0,resident.z);
-                int views=0,residentPassed=0,residentFailed=0;
+                int views=0,clearViews=0,residentPassed=0,residentFailed=0,residentOccluded=0;
                 for(double[] delta:CAMERAS){
                     double cameraX=resident.x+delta[0],cameraZ=resident.z+delta[1];
                     var currentRoom=CastleRooms.at(cameraX,0,cameraZ);
@@ -130,10 +142,9 @@ public final class CastleResidentArtRenderAudit {
                     // The old test overwrote failing screenshots with a later
                     // passing view of the same resident. Always keep EVERY
                     // evaluated angle; choose the first failure for the sheet.
-                    if(views==0||(!metric.pass()&&residentFailed==0)){
+                    if(views==0||(!metric.pass()&&!metric.blockedByScene()&&residentFailed==0)){
                         contactSheet.drawImage(crop,residentIndex*660,36,null);
-                        contactSheet.drawString(resident.name+
-                            (metric.pass()?" | "+metric.gap()+"px":" | FAILED "+metric.gap()+"px"),
+                        contactSheet.drawString(resident.name+" | "+metric.verdict()+" "+metric.gap()+"px",
                             residentIndex*660+16,25);
                     }
                     String sha=System.getenv().getOrDefault("GITHUB_SHA","local");
@@ -145,14 +156,19 @@ public final class CastleResidentArtRenderAudit {
                         .append(metric.bottomRow()).append(',')
                         .append(metric.floorRow()).append(',')
                         .append(metric.gap()).append(',')
-                        .append(metric.pass()).append(',')
+                        .append(metric.blockedByScene()).append(',')
+                        .append(metric.verdict()).append(',')
                         .append(cropName).append('\n');
-                    if(metric.pass())residentPassed++;
-                    else{residentFailed++;failedAngles++;}
+                    if(metric.blockedByScene()){residentOccluded++;occludedAngles++;}
+                    else {
+                        clearViews++;
+                        if(metric.pass())residentPassed++;
+                        else{residentFailed++;failedAngles++;}
+                    }
                     System.out.println("CASTLE_BOOT_CONTACT "+resident.name+
                         " angle="+(views+1)+" body="+metric.opaque()+
                         " near_sole="+metric.shoePixels()+" gap="+metric.gap()+
-                        " pass="+metric.pass()+" crop="+cropName);
+                        " verdict="+metric.verdict()+" crop="+cropName);
                     for(PsxPipeline.Preset preset:new PsxPipeline.Preset[]{
                             PsxPipeline.Preset.OFF,PsxPipeline.Preset.CLASSIC}){
                         scene.setPsxPreset(preset);
@@ -169,12 +185,15 @@ public final class CastleResidentArtRenderAudit {
                         images++;System.out.println("CASTLE_ART_SCREENSHOT "+name);
                     }
                     views++;
-                    if(views==4)break;
+                    // Search additional room-safe cameras until four UNOBSTRUCTED
+                    // angles exist, instead of counting a table hiding both boots.
+                    if(clearViews>=4)break;
                 }
                 if(views==0){missing++;System.out.println("CASTLE_ART_NO_VISIBLE_CAMERA "+resident.name);}
-                if(views>=2&&residentPassed==views&&residentFailed==0)grounded++;
+                if(residentPassed>=2&&residentFailed==0)grounded++;
                 else System.out.println("CASTLE_ART_NOT_PROVEN "+resident.name+
-                    " views="+views+" passed="+residentPassed+" failed="+residentFailed);
+                    " views="+views+" clear="+clearViews+" passed="+residentPassed+
+                    " failed="+residentFailed+" occluded="+residentOccluded);
                 residentIndex++;
             }
         }finally{contactSheet.dispose();}
@@ -184,10 +203,12 @@ public final class CastleResidentArtRenderAudit {
         Files.writeString(output.resolve("boot-contact-measurements.csv"),contacts.toString(),StandardCharsets.UTF_8);
         System.out.println("CASTLE_RESIDENT_REAL_SCENE_ART_DIAGNOSTIC captures="+images+
             " missing_residents="+missing+" grounded="+grounded+
-            "/5 failed_angles="+failedAngles+"; saved ALL source-rendered frames and per-angle boot crops");
+            "/5 failed_angles="+failedAngles+" occluded_angles="+occludedAngles+
+            "; saved ALL source-rendered frames and per-angle boot crops");
         require(missing==0,"Missing Castle resident camera");
         require(grounded==5&&failedAngles==0,
-            "NPC floor contact unresolved: "+grounded+"/5 residents proved all observed angles, "
-                +failedAngles+" failed angles; inspect unaltered full-game frames and individually named boot crops");
+            "NPC floor contact unresolved: "+grounded+"/5 residents have at least two unobstructed passing views, "
+                +failedAngles+" genuine failing angles and "+occludedAngles+
+                " blocked views; inspect all original game frames and crops");
     }
 }
