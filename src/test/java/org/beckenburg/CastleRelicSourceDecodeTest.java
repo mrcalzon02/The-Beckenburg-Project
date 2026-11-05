@@ -58,7 +58,8 @@ public final class CastleRelicSourceDecodeTest {
                 check(catalog.contains(entry),"Source-only asset invisible in DEV room "+id);
                 var model=DevAssetReviewCatalog.sourceModel(id);
                 var audit=DevAssetReviewCatalog.audit(entry);
-                check(audit.loaded()&&audit.triangles()>24&&audit.materials()>=2,
+                check(audit.loaded()&&audit.state().equals("REVIEW_REGISTRATION")
+                    &&audit.triangles()>24&&audit.materials()>=2,
                     "Model failed actual native GLB/PNG decode "+id+" "+audit);
                 check(audit.textureSamples()>0,"Actual color sampler couldn't load "+id);
                 check(Double.isFinite(audit.minY())&&Double.isFinite(audit.maxY())
