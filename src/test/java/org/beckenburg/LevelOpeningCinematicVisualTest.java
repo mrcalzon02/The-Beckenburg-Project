@@ -90,6 +90,12 @@ public final class LevelOpeningCinematicVisualTest {
         }
         check(warm.passes()>0&&warm.passes()<=3&&warm.staticShellChunks()>0,
             "World prewarm must actually retain constructed shell chunks");
+        check(warm.stagedSceneryInstances()>0
+                &&warm.sceneRevision().equals(map.level().revision()+":"+map.hidingDensity()),
+            "Stage 2 preparation must stage actual source geometry and its revision");
+        var stagedAgain=gameplay.prepareStaticScene(map);
+        check(stagedAgain.shellReused()&&stagedAgain.sceneryReused(),
+            "Loading must leave immutable scene indexes warm for the player's renderer");
 
         try(var cinematic=new LevelOpeningCinematic(map,gameplay,640,360)){
             check(cinematic.uses3DWorldCamera(),
@@ -128,7 +134,12 @@ public final class LevelOpeningCinematicVisualTest {
                 +"\nunique_pixels="+diversity(raw)+"\nprewarm_passes="+warm.passes()
                 +"\nprewarm_ms="+warm.elapsedMs()
                 +"\nstatic_shell_chunks="+warm.staticShellChunks()
-                +"\nstatic_shell_faces="+warm.staticFaces()+"\n";
+                +"\\nstatic_shell_faces="+warm.staticFaces()
+                +"\\nstatic_preparation_ms="+warm.staticPreparationMs()
+                +"\\nstaged_scenery_instances="+warm.stagedSceneryInstances()
+                +"\\nscene_revision="+warm.sceneRevision()
+                +"\\nprebake_shell_reused="+warm.shellReused()
+                +"\\nprebake_scenery_reused="+warm.sceneryReused()+"\\n";
             Files.writeString(root.resolve("verification.txt"),summary,StandardCharsets.UTF_8);
             System.out.println("PASS true 3D map-to-van approach on SOFTWARE backend, "
                 +diversity(raw)+" distinct sampled colors, prewarm="+warm.passes()
