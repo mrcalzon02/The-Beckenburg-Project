@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Regenerate primitive prop GLBs from catalog.json. Python stdlib only.
 
-Intentional graybox: static meshes and placeholder colors only; not playable
-scene placements or replacements for finished texture-authored props.
+Intentional graybox: static meshes and material-factor placeholder colors,
+with consistent dominant-plane planar UVs for subsequent texture authoring.
+Not playable scene placements or replacements for finished props.
 """
 from __future__ import annotations
 import argparse
@@ -22,12 +23,23 @@ PALETTE = {
     "industrial": [0.24, 0.32, 0.34, 1.0],
     "canvas": [0.47, 0.45, 0.36, 1.0],
     "accent": [0.67, 0.45, 0.22, 1.0],
+    # New relic-study colors are material factors, not final authored textures.
+    "bronze": [0.45, 0.30, 0.15, 1.0],
+    "gilt": [0.70, 0.52, 0.20, 1.0],
+    "silver": [0.60, 0.65, 0.66, 1.0],
+    "ivory": [0.74, 0.70, 0.60, 1.0],
+    "ceramic": [0.45, 0.54, 0.52, 1.0],
+    "leather": [0.25, 0.14, 0.10, 1.0],
+    "redcloth": [0.38, 0.11, 0.15, 1.0],
+    "glass": [0.29, 0.47, 0.50, 1.0],
+    "patina": [0.21, 0.40, 0.34, 1.0],
+    "wax": [0.76, 0.70, 0.49, 1.0],
 }
 
 def triangles(parts):
     groups = {}
     def face(poly, material):
-        g = groups.setdefault(material, {"position": [], "normal": [], "indices": []})
+        g = groups.setdefault(material, {"position": [], "normal": [], "uv": [], "indices": []})
         for j in range(1, len(poly)-1):
             a,b,c = poly[0],poly[j],poly[j+1]
             u=[b[i]-a[i] for i in range(3)]
@@ -36,9 +48,16 @@ def triangles(parts):
             mag=math.sqrt(sum(t*t for t in n))
             if mag < 1e-8: raise ValueError("degenerate primitive triangle")
             n=[x/mag for x in n]
+            # Project each physical triangle to its dominant normal plane.
+            # This yields nonzero area in UV0 for box/cylinder/prism faces,
+            # unlike the old constant 0.5,0.5 UV on every vertex. Source
+            # world coordinates remain metres; sample at 1 UV per 1.25 m.
+            dominant=max(range(3),key=lambda axis:abs(n[axis]))
+            axes=((1,2),(0,2),(0,1))[dominant]
             for point in (a,b,c):
                 g["position"].extend(point)
                 g["normal"].extend(n)
+                g["uv"].extend((point[axes[0]]/1.25,point[axes[1]]/1.25))
                 g["indices"].append(len(g["indices"]))
     for part in parts:
         kind=part["type"];px,py,pz=part["p"];material=part["material"]
@@ -125,7 +144,8 @@ def glb(model):
         a=accessor(struct.pack("<%sf"%len(pos),*pos),34962,5126,"VEC3",count,
                    [min(a) for a in axes],[max(a) for a in axes])
         b=accessor(struct.pack("<%sf"%len(norm),*norm),34962,5126,"VEC3",count)
-        uv=accessor(struct.pack("<%sf"%(count*2),*([0.5,0.5]*count)),34962,5126,"VEC2",count)
+        assert len(group["uv"])==count*2
+        uv=accessor(struct.pack("<%sf"%(count*2),*group["uv"]),34962,5126,"VEC2",count)
         c=accessor(struct.pack("<%sH"%len(inds),*inds),34963,5123,"SCALAR",len(inds))
         prims.append({"attributes":{"POSITION":a,"NORMAL":b,"TEXCOORD_0":uv},"indices":c,"material":material,"mode":4})
     if total>3500:raise ValueError("triangle budget exceeded "+model["id"])
