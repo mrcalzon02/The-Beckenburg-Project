@@ -12,7 +12,7 @@ A case starts with a genuine world-space 3D aerial view, descends over the actua
 - An automated renderer test records actual aerial/loading, van approach, rear-door crossing, interior aisle and exact player-camera handoff PNGs plus prewarm timing and geometry statistics.
 - Existing heavy scene geometry and materials are not duplicated into a separate cinematic-owned gameplay cache.
 
-## Stage 2 — proposed: reusable loading preparation by revision
+## Stage 2 — in progress: reusable loading preparation by revision
 
 | Asset or calculation | Safe to prepare once | Must update during play |
 |---|---|---|
@@ -34,7 +34,15 @@ CPU work may happen in workers; GPU resource creation must happen on the actual 
 
 Record true loading elapsed time, additional prewarm passes, generated shell chunks, submitted GPU bytes, geometry hits, light-ray counts and initial gameplay frame time. Compare cold and warmed p50/p95/p99, maintain a 30 FPS target (33.3ms budget) and run real door-open/close profiler checks. The earlier door-toggle submission-recorder p95 of 105.8ms is a separate open runtime problem; a loading prewarm alone does not fix a door-triggered cache invalidation.
 
-Only stage 1 is implemented and committed here. Stages 2/3 are specific plans, not a claim that the entire level is already baked.
+### Implemented Stage 2 slice: existing game-renderer immutable geometry (2026-11-04)
+
+- `InvestigationScenePrewarm` calls `SceneRenderer.prepareStaticScene(map)` before the first low-resolution camera pass on **the same renderer instance that gameplay uses**. This constructs/reuses the authored House shell triangles, chunk bounds, material face groups, and scenery instance index. No second cinematic-owned gameplay cache or renderer is introduced.
+- Preparation keys include the authored `level().revision()` and hiding-density revision. Exact map identity is also required. A changing door state is intentionally **not** part of the immutable preparation key; door-dependent physical lighting is still checked in the existing receiver-cell lighting system at runtime.
+- The resident scene owner now detects changes to those authored revision keys even when the map object is unchanged. It rejects old lighting owners/readbacks and assigns new GPU scene identity for an editor/authoring revision, **not** for each door movement.
+- `LOADING STATIC PREBAKE` diagnostics emit actual preparation duration, scene revision, staged shell chunks/faces, staged scenery instance count, warm-cache reuse flags and low-resolution camera passes. The 3D loading proof records these in `verification.txt`; `StaticScenePrebakeTest` checks warm reuse, a real door toggle, revision changes, distinct maps, cancellation and unchanged camera/player state. The GPU acceptance workflow runs this test.
+- This is **CPU-side immutable-scene staging and reuse**, not finished GPU upload scheduling, texture residency, navmesh prebaking, or static/acoustic precomputation across every map backend. Native-site and Castle-specific preparation still follow their existing owner-specific paths. Never report a GPU upload merely because a CPU batch exists.
+
+Stage 3 remains planned. The 5-second prewarm budget limits the start of expensive camera passes, but the initial construction itself is not preemptible once begun; wall-clock and latency evidence must be reviewed before claiming a strict five-second ceiling. Resident GPU uploads remain owned by the actual OpenGL thread. The separate real door-toggle p95/p99 regression remains open.
 
 ## Measured runtime improvement (2026-11-04)
 
