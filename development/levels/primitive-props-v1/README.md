@@ -1,13 +1,13 @@
 # Map-specific primitive prop blockouts (v1)
 
-The authoritative planning backlog is [catalog.json](catalog.json), which maps **139 individual study models across 28 planned maps plus the Vale Mortuary expansion**. It augments the existing `development/levels/model-requirements/*.json` files rather than replacing their full room-by-room checklists.
+The authoritative planning backlog is [catalog.json](catalog.json), which maps **142 individual study models across 28 planned maps plus the Vale Mortuary expansion**. It augments the existing `development/levels/model-requirements/*.json` files rather than replacing their full room-by-room checklists.
 
 ## What this package is
 
 - Measured, ground-origin, Y-up glTF 2.0 geometry in metres: basic boxes, faceted cylinders, and an enclosed tent prism. The colors are placeholder material factors over a deliberately tiny **valid embedded 2×2 PNG swatch**, not final authored UV textures.
 - Each `level_blockout_*.glb` is an individually selectable study asset. No duplicate of any existing finished `level_*` model is overwritten.
 - The catalogue's `sites[].prototypes` field is an **assignment proposal**, not an automatic scene placement. No map availability, collision, navmesh, lighting, acoustics, interactivity or network state has been modified.
-- The collection contains **139 distinct GLB models made of 1,292 primitive pieces** (98 added in the expanded-map pass). It covers structural opening/rails, Castle service and training fixtures, academic/hospital/chapel and domestic interiors, forests/campgrounds/caverns, generator/electrical studies, maritime/industrial scenes, lightstation/lodge/bunker/shaft structures and mortuary fixtures. Each study remains independent and replaceable.
+- The collection contains **142 distinct GLB models** (98 added in the expanded-map pass, followed by three additional closed sarcophagus variants). It covers structural opening/rails, Castle service and training fixtures, academic/hospital/chapel and domestic interiors, forests/campgrounds/caverns, generator/electrical studies, maritime/industrial scenes, lightstation/lodge/bunker/shaft structures and mortuary fixtures. Each study remains independent and replaceable.
 - Existing source LOD/original model assets remain unchanged. Completed prop models require geometry refinement, proper UV/materials, origin/orientation review, scene placement, and actual editor/renderer acceptance.
 
 ## Rebuild / inspect
@@ -129,7 +129,7 @@ is a real stop condition **for that proposal only**, not a release failure.
 ## Expanded map-model library — 139 models, 29 map kits (verified)
 
 The expanded worklist has been authored as **98 additional primitive GLBs**,
-bringing the catalog to **139 independent meshes**. The major construction
+bringing the catalog to **142 independent meshes**, including three later counted crypt variants. The major construction
 groups include:
 
 - **Academy, asylum, college, parish and school:** cloister bays, administrator
@@ -195,3 +195,42 @@ art, or mission-playability acceptance.
 The next acceptance pass is individual four-angle in-engine source preview,
 room-shell geometry matching and replacement of simplified constructions with
 appropriately textured, properly anchored and collider-validated meshes.
+
+
+## Expanded Castle Beckenburg crypt: individually counted sarcophagi
+
+The Castle has **two different subterranean concepts** that must not be
+confused:
+
+- **Existing playable Castle:** Its \`CastleCellarLayout\` currently declares a
+  stair, cellar service hall, a *captured-relic vault*, and a plant room.
+  **0 crypt chambers / 0 placed sarcophagi**. None of those four rooms is
+  authorized as a tomb or crypt.
+- **Proposed expanded Castle:** The planned chapel has a proposed *separate*
+  two-chamber subterranean crypt below it. Source of truth:
+  [castle-crypt-proposal.json](castle-crypt-proposal.json). The *provisional
+  authoring count is 8 sarcophagi*, split **4 west / 4 east**. Three different
+  rough GLB sarcophagus models are individually enumerated: 3 plain, 3
+  inscribed, and 2 effigy. These counts are not invented runtime installs.
+
+The [crypt.py](crypt.py) generator validates each of the eight distinct
+sarcophagus IDs against room margins, source-model footprint, vertical
+clearance, nonoverlap and a reserved **2.0 m** central aisle. It writes
+\`crypt-review/castle-crypt-count.json\` with all eight world-space footprints
+and both chamber and model totals, and
+\`crypt-review/castle-crypt-preview.glb\` for an open-floor spatial review.
+A matching \`--check\` verifies all bytes deterministically; the same step
+is wired to the primitive-map-props GitHub Action. There are no built
+crypt walls or stairways in that study and no automatic game scene injection.
+
+The proposed subterranean area uses **the expanded-map chapel's own
+coordinate system**, NOT the playable 44x36 m Castle. The existing relic
+vault must never silently become a crypt. Future phase: build supported
+crypt architecture and routes, re-fit the final models and perform actual
+editor, lighting, navmesh, collision and four-angle runtime visual checks
+before converting **proposed** counts to **installed** counts.
+
+\`\`\`bash
+python development/levels/primitive-props-v1/crypt.py
+python development/levels/primitive-props-v1/crypt.py --check
+\`\`\`
