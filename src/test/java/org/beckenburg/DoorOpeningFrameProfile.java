@@ -121,6 +121,8 @@ public final class DoorOpeningFrameProfile {
         StringBuilder csv=new StringBuilder("backend,phase,toggle,frame,door_open,door_fraction,wall_ms,render_ms,build_ms,geometry_ms,effects_ms,shadow_rays,normal_rays,invalidated_cells,lighting_samples,cache_hits,world_builds,world_hits,world_bytes,scene_id,scene_changes,resource_revisions,submitted_bytes,heap_used_bytes,gc_ms,frame_resource_revisions,frame_submitted_bytes,frame_scene_changes\n");
         StringBuilder resourceCsv=new StringBuilder(
             "phase,toggle,frame,door_open,resource_id,material,revision,vertex_bytes\n");
+        StringBuilder shellRegionCsv=new StringBuilder(
+            "backend,phase,frame,region_version_spatial_checks,unchanged_generation_reuses,cached_material_regions\n");
         long baselineGc=gcMillis(),initialScene=-1;
         int frame=0;
         long maxRays=0,maxInvalidated=0;
@@ -144,6 +146,11 @@ public final class DoorOpeningFrameProfile {
             if(m==null)throw new IllegalStateException("No actual House render diagnostics");
             var light=m.lighting();
             var resident=renderer.worldResidentStats();
+            var shellRegion=renderer.shellRegionStats();
+            shellRegionCsv.append(backend).append(',').append(phase).append(',')
+                .append(frame).append(',').append(shellRegion.spatialChecks())
+                .append(',').append(shellRegion.generationReuses())
+                .append(',').append(shellRegion.cachedRegions()).append('\n');
             long sceneId=recorder==null?-1:recorder.sceneId();
             if(initialScene<0&&sceneId>0)initialScene=sceneId;
             if(recorder!=null&&initialScene>0&&sceneId!=initialScene)
@@ -183,6 +190,8 @@ public final class DoorOpeningFrameProfile {
             csv.toString(),StandardCharsets.UTF_8);
         if(recorder!=null)Files.writeString(root.resolve("door-submission-resources.csv"),
             resourceCsv.toString(),StandardCharsets.UTF_8);
+        Files.writeString(root.resolve("shell-regions-"+backend+".csv"),
+            shellRegionCsv.toString(),StandardCharsets.UTF_8);
         StringBuilder report=new StringBuilder();
         report.append("PROFILER source=actual HouseMap and SceneRenderer; mode=").append(backend)
               .append("; door_id=").append(portal.id())
@@ -200,6 +209,10 @@ public final class DoorOpeningFrameProfile {
                 +" toggle_frame_submitted_bytes_p50=%.0f p95=%.0f%n",
             percentile(revisionSamples,"toggle",.50),percentile(revisionSamples,"toggle",.95),
             percentile(byteSamples,"toggle",.50),percentile(byteSamples,"toggle",.95)));
+        var regionStats=renderer.shellRegionStats();
+        report.append("shell_region_spatial_checks=").append(regionStats.spatialChecks())
+              .append(" shell_region_generation_reuses=").append(regionStats.generationReuses())
+              .append(" shell_cached_regions=").append(regionStats.cachedRegions()).append('\n');
         report.append("peak_shadow_rays=").append(maxRays)
               .append(" peak_invalidated_cells=").append(maxInvalidated)
               .append(" gc_delta_ms=").append(gcMillis()-baselineGc)
