@@ -44,8 +44,9 @@ public final class DevRefinementReviewTest {
                 throw new AssertionError("Game GLB decoder found no triangles: "+id);
             var a=DevAssetReviewCatalog.audit(
                 new DevAssetReviewCatalog.Entry(DevAssetReviewCatalog.Kind.SOURCE_ONLY,id));
-            if(a.state().equals("MISSING")||a.state().equals("REVIEW_UV"))
-                throw new AssertionError("Game GLB source decoder problem: "+id+" "+a.details());
+            if(!a.loaded()||!a.state().equals("REVIEW_REGISTRATION"))
+                throw new AssertionError("Refined asset must decode and remain SOURCE_ONLY: "
+                    +id+" "+a.state()+" "+a.details());
             if(ids.contains(id)&&Math.abs(a.minY())>.025)
                 throw new AssertionError("Refined fixture is not ground-aligned: "+id+" "+a.minY());
         }
