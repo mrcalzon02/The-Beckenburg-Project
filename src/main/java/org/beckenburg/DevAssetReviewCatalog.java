@@ -31,7 +31,12 @@ public final class DevAssetReviewCatalog {
     public record Audit(String state,int triangles,int materials,int textureSamples,
                         double minX,double minY,double minZ,double maxX,double maxY,
                         double maxZ,String details) {
-        public boolean loaded(){return state.equals("LOADED")||state.equals("REVIEW_UV")||state.equals("REVIEW_TEXTURE");}
+        /** Decoder success is separate from production approval. SOURCE_ONLY
+         * meshes decode correctly while retaining REVIEW_REGISTRATION.
+         */
+        public boolean loaded(){return state.equals("LOADED")||
+            state.equals("REVIEW_UV")||state.equals("REVIEW_TEXTURE")||
+            state.equals("REVIEW_REGISTRATION");}
     }
     public static List<Entry> entries(){
         List<Entry> out=new ArrayList<>();
