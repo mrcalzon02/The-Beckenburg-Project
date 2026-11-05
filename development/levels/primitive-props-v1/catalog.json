@@ -95,7 +95,10 @@
         "level_blockout_ballroom_chandelier",
         "level_blockout_grand_stair_newel",
         "level_blockout_wine_rack",
-        "level_blockout_monastery_scriptorium"
+        "level_blockout_monastery_scriptorium",
+        "level_blockout_sarcophagus_plain",
+        "level_blockout_sarcophagus_inscribed",
+        "level_blockout_sarcophagus_effigy"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -120,7 +123,10 @@
         "level_blockout_crypt_niche_wall",
         "level_blockout_monastery_well",
         "level_blockout_cemetery_gate",
-        "level_blockout_mortuary_viewing_seat"
+        "level_blockout_mortuary_viewing_seat",
+        "level_blockout_sarcophagus_plain",
+        "level_blockout_sarcophagus_inscribed",
+        "level_blockout_sarcophagus_effigy"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -454,7 +460,10 @@
         "level_blockout_cemetery_gate",
         "level_blockout_grave_caretaker_tools",
         "level_blockout_mortuary_viewing_seat",
-        "level_blockout_mortuary_service_screen"
+        "level_blockout_mortuary_service_screen",
+        "level_blockout_sarcophagus_plain",
+        "level_blockout_sarcophagus_inscribed",
+        "level_blockout_sarcophagus_effigy"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -537,7 +546,10 @@
         "level_blockout_monastery_scriptorium",
         "level_blockout_diesel_generator_skid",
         "level_blockout_site_distribution_board",
-        "level_blockout_supported_cable_tray"
+        "level_blockout_supported_cable_tray",
+        "level_blockout_sarcophagus_plain",
+        "level_blockout_sarcophagus_inscribed",
+        "level_blockout_sarcophagus_effigy"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -20928,6 +20940,574 @@
         }
       ],
       "notes": "Privacy/service shelter only; no patient or cargo transfer automation.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_sarcophagus_plain",
+      "label": "Plain closed medieval stone sarcophagus",
+      "category": "crypt",
+      "maps": [
+        "CASTLE",
+        "CHURCH",
+        "WLD-07",
+        "WLD-10"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.17,
+            0
+          ],
+          "size": [
+            1.22,
+            0.34,
+            2.48
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.61,
+            0
+          ],
+          "size": [
+            1.12,
+            0.62,
+            2.35
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.95,
+            0
+          ],
+          "size": [
+            1.34,
+            0.14,
+            2.6
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.51,
+            0.6,
+            0
+          ],
+          "size": [
+            0.12,
+            0.63,
+            2.34
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.51,
+            0.6,
+            0
+          ],
+          "size": [
+            0.12,
+            0.63,
+            2.34
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.58,
+            -1.11
+          ],
+          "size": [
+            1.13,
+            0.6,
+            0.1
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.58,
+            1.11
+          ],
+          "size": [
+            1.13,
+            0.6,
+            0.1
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.43,
+            1.03,
+            -0.85
+          ],
+          "size": [
+            0.1,
+            0.035,
+            0.43
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.43,
+            1.03,
+            -0.85
+          ],
+          "size": [
+            0.1,
+            0.035,
+            0.43
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.04,
+            0
+          ],
+          "size": [
+            0.25,
+            0.035,
+            0.23
+          ],
+          "material": "dark"
+        }
+      ],
+      "notes": "A single closed empty sealed-stone study at 1:1 metres. Lid is not removable; no remains, ghosts, interactions, collision or gameplay burial state. Counts only from explicit crypt placement manifest.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_sarcophagus_inscribed",
+      "label": "Inscribed medieval sarcophagus with stone end panels",
+      "category": "crypt",
+      "maps": [
+        "CASTLE",
+        "CHURCH",
+        "WLD-07",
+        "WLD-10"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.15,
+            0
+          ],
+          "size": [
+            1.29,
+            0.3,
+            2.45
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.59,
+            0
+          ],
+          "size": [
+            1.14,
+            0.66,
+            2.32
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.98,
+            0
+          ],
+          "size": [
+            1.36,
+            0.17,
+            2.59
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.55,
+            0.61,
+            0
+          ],
+          "size": [
+            0.15,
+            0.71,
+            2.39
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.55,
+            0.61,
+            0
+          ],
+          "size": [
+            0.15,
+            0.71,
+            2.39
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.57,
+            -1.16
+          ],
+          "size": [
+            1.2,
+            0.72,
+            0.13
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.57,
+            1.16
+          ],
+          "size": [
+            1.2,
+            0.72,
+            0.13
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.41,
+            1.09,
+            -0.93
+          ],
+          "size": [
+            0.17,
+            0.035,
+            0.22
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.41,
+            1.09,
+            0.93
+          ],
+          "size": [
+            0.17,
+            0.035,
+            0.22
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.41,
+            1.09,
+            -0.93
+          ],
+          "size": [
+            0.17,
+            0.035,
+            0.22
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.41,
+            1.09,
+            0.93
+          ],
+          "size": [
+            0.17,
+            0.035,
+            0.22
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.095,
+            0
+          ],
+          "size": [
+            0.18,
+            0.035,
+            0.74
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.115,
+            0
+          ],
+          "size": [
+            0.66,
+            0.035,
+            0.12
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.74,
+            -1.235
+          ],
+          "size": [
+            0.66,
+            0.12,
+            0.035
+          ],
+          "material": "dark"
+        }
+      ],
+      "notes": "Inscription and icon are unlettered color relief, NOT readable names. One closed sarcophagus per GLB, not a six-occupant crypt niche. Counts derive only from placement records.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_sarcophagus_effigy",
+      "label": "Decorative sarcophagus with reclining carved effigy",
+      "category": "crypt",
+      "maps": [
+        "CASTLE",
+        "CHURCH",
+        "WLD-07",
+        "WLD-10"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.15,
+            0
+          ],
+          "size": [
+            1.39,
+            0.3,
+            2.61
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.55,
+            0
+          ],
+          "size": [
+            1.22,
+            0.59,
+            2.44
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.92,
+            0
+          ],
+          "size": [
+            1.46,
+            0.17,
+            2.72
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.09,
+            -0.83
+          ],
+          "size": [
+            0.33,
+            0.22,
+            0.28
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.085,
+            0.11
+          ],
+          "size": [
+            0.4,
+            0.19,
+            1.15
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.09,
+            0.88
+          ],
+          "size": [
+            0.52,
+            0.18,
+            0.4
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.36,
+            1.06,
+            -0.15
+          ],
+          "size": [
+            0.19,
+            0.17,
+            0.51
+          ],
+          "material": "stone",
+          "yaw": -0.0288
+        },
+        {
+          "type": "box",
+          "p": [
+            0.36,
+            1.06,
+            -0.15
+          ],
+          "size": [
+            0.19,
+            0.17,
+            0.51
+          ],
+          "material": "stone",
+          "yaw": 0.0288
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.66,
+            0.53,
+            0
+          ],
+          "size": [
+            0.095,
+            0.66,
+            2.42
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.66,
+            0.53,
+            0
+          ],
+          "size": [
+            0.095,
+            0.66,
+            2.42
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.53,
+            -1.2
+          ],
+          "size": [
+            1.3,
+            0.55,
+            0.085
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.53,
+            1.2
+          ],
+          "size": [
+            1.3,
+            0.55,
+            0.085
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.02,
+            0
+          ],
+          "size": [
+            1.35,
+            0.04,
+            2.43
+          ],
+          "material": "dark"
+        }
+      ],
+      "notes": "Abstract carved effigy, no real person or corpse. One sarcophagus per GLB; permanently closed. Keep separate from live relic vault and mission interactions.",
       "authoring_stage": "primitive_blockout",
       "runtime_approved": false
     }
