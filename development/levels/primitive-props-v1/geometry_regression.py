@@ -147,3 +147,18 @@ raw,tri=glb(bed)
 doc,committed=read_glb(ROOT/"models"/(bed["id"]+".glb"))
 assert raw==committed and tri>0 and doc["extras"]["runtimeApproved"] is False
 print("PASS: grounded motel guest bed")
+
+# All source models carry explicitly provisional physical mounting contracts.
+mount_types={"floor","wall","ceiling","roof","opening","structure","water","terrain","display_surface"}
+assert len(models)==253
+assert all(m.get("authoring_hints",{}).get("mount") in mount_types for m in models.values())
+assert all(m["authoring_hints"]["mount_confidence"]=="provisional_unreviewed" for m in models.values())
+assert all(m["authoring_hints"]["source_pivot_reviewed"] is False for m in models.values())
+assert all(m["authoring_hints"]["renderer_orientation_reviewed"] is False for m in models.values())
+assert all(m["authoring_hints"]["runtime_placement"] is False for m in models.values())
+assert item("ballroom_chandelier")["authoring_hints"]["mount"]=="ceiling"
+assert item("ship_hull_bow_section")["authoring_hints"]["mount"]=="structure"
+assert item("relic_ossuary_keys")["authoring_hints"]["mount"]=="display_surface"
+assert item("cannery_coldroom_door")["authoring_hints"]["mount"]=="opening"
+assert item("family_photo_cluster")["authoring_hints"]["mount"]=="wall"
+print("PASS: all 253 source models have provisional, unapproved mount contracts")

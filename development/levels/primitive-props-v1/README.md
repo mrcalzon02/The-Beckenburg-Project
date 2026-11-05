@@ -342,3 +342,9 @@ All source meshes retain the non-playable approval gate. Neither individual asse
 ## Readiness audit follow-through: bed feet and contact-gallery sizing
 
 The source-readiness audit found the motel guest bed hovering **0.12m** above its local floor. Four grounded timber feet now make source contact at exactly y=0. The existing passenger coach measured 5.825m in depth, beyond the original fixed 5.60m review plinth. Map-kit generation now gives every model a footprint-aware review stand (up to 6.6m on 7m centers), without shrinking models or clipping the coach. The readiness diagnostic uses the same 6.6m threshold. Tall lookout towers, radio masts and signal poles remain legitimately flagged for camera framing rather than being scaled down.
+
+## Explicit provisional mounts for the entire source catalogue
+
+The initial 178 primitive studies now carry explicit editor-authoring mount categories: floor, wall, ceiling, roof, opening, structure, terrain, water and display surface. Existing newer source objects retain their prior mount choices. All **253 models** now have `mount_confidence="provisional_unreviewed"`, `source_pivot_reviewed=false`, `renderer_orientation_reviewed=false` and `runtime_placement=false`.
+
+Classification is a physical placement *proposal* only, **not** a verified orientation, correct pivot, collider or actual editor import. Readiness diagnostics now distinguish wall/ceiling/doorway attachment from structural, water, terrain and relic display constraints, while preserving all legitimate height and ground-offset warnings. Nothing changes live map geometry or gameplay state.

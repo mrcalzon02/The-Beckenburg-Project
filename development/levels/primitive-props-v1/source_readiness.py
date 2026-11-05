@@ -54,8 +54,10 @@ def render()->bytes:
         tags=[]
         if mount=="floor" and abs(lo)>.08:
             tags.append("review_floor_contact_offset")
-        if mount in ("wall","ceiling","roof"):
+        if mount in ("wall","ceiling","roof","opening"):
             tags.append("review_attachment_anchor")
+        if mount in ("structure","terrain","water","display_surface"):
+            tags.append("review_mount_constraint")
         # The kit builder sizes stands up to 6.6m on 7m centers.
         plate_width=max(5.65,2*max(abs(bbox[0]),abs(bbox[2]))+.32)
         plate_depth=max(5.60,2*max(abs(bbox[1]),abs(bbox[3]))+.32)
@@ -63,8 +65,12 @@ def render()->bytes:
             tags.append("review_gallery_stand_overflow")
         if high-low>4.2:
             tags.append("review_vertical_scale")
-        if not model.get("authoring_hints"):
-            tags.append("legacy_model_missing_mount_metadata")
+        if not hints or hints.get("mount_confidence")!="provisional_unreviewed":
+            tags.append("review_mount_contract_missing")
+        if hints.get("source_pivot_reviewed") is not False or hints.get("renderer_orientation_reviewed") is not False:
+            raise ValueError("Unreviewed source pivot falsely accepted: "+name)
+        if hints.get("runtime_placement") is not False:
+            raise ValueError("Source-only model prematurely registered: "+name)
         if tags:
             warnings.append({"model":name,"diagnostics":tags})
         assigned=[s["id"] for s in catalog["sites"] if name in s["prototypes"]]
@@ -87,6 +93,9 @@ def render()->bytes:
             "min_y_m":low,
             "max_y_m":high,
             "mount_hint":mount,
+            "mount_confidence":hints.get("mount_confidence","missing"),
+            "source_pivot_reviewed":False,
+            "renderer_orientation_reviewed":False,
             "diagnostics":tags,
             "source_glb_verified":True,
             "native_renderer_accepted":False,
