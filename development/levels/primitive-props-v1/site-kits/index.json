@@ -2,7 +2,7 @@
   "schema": "beckenburg.primitive-map-kit/1",
   "status": "source-only-model-contact-rooms",
   "runtime_approved": false,
-  "model_library_count": 253,
+  "model_library_count": 283,
   "planning_packets": 29,
   "model_scale": "true-scale metres, not resized",
   "page_layout": "3 columns x 2 rows; width 7 m / depth 7 m per stand",
@@ -491,7 +491,8 @@
         "level_blockout_hospital_curtain_track",
         "level_blockout_institution_linen_cabinet",
         "level_blockout_mortuary_instrument_trolley",
-        "level_blockout_mortuary_cold_drawer_wall"
+        "level_blockout_mortuary_cold_drawer_wall",
+        "level_blockout_mortuary_wash_sink_station"
       ],
       "pages": [
         {
@@ -811,6 +812,32 @@
               "review_only": true
             }
           ]
+        },
+        {
+          "page": 4,
+          "name": "level_blockout_kit_asylum_p04",
+          "file": "level_blockout_kit_asylum_p04.glb",
+          "triangles": 244,
+          "bytes": 38148,
+          "sha256": "7a94eaae8af0c786866d67fae2f88cca9bd5d3dad3e618901ecc084ff1de4bb5",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_mortuary_wash_sink_station",
+              "title": "Mortuary rinse sink and exposed feed pipe",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            }
+          ]
         }
       ],
       "still_source_only": true
@@ -879,7 +906,10 @@
         "level_blockout_castle_iron_candelabrum",
         "level_blockout_domestic_stone_fireplace",
         "level_blockout_domestic_wall_bookcase",
-        "level_blockout_monastery_stained_window"
+        "level_blockout_monastery_stained_window",
+        "level_blockout_mortuary_visitors_registry_desk",
+        "level_blockout_castle_crypt_column",
+        "level_blockout_castle_sarcophagus_stand"
       ],
       "pages": [
         {
@@ -1734,9 +1764,9 @@
           "page": 9,
           "name": "level_blockout_kit_castle_p09",
           "file": "level_blockout_kit_castle_p09.glb",
-          "triangles": 1112,
-          "bytes": 133040,
-          "sha256": "8d910d3c212001aebcfe432bffff12e5b09c12bea69cecd3ad7cab549c14b334",
+          "triangles": 1400,
+          "bytes": 168832,
+          "sha256": "e9253b2953d8cee0ed25e563f31d3cc53506f5c6f632f3220fc90f09d142bceb",
           "display_slots": [
             {
               "slot": 1,
@@ -1801,6 +1831,64 @@
                 5.6
               ],
               "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_mortuary_visitors_registry_desk",
+              "title": "Funeral guest register and small bell desk",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_castle_crypt_column",
+              "title": "Stepped memorial crypt column",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 10,
+          "name": "level_blockout_kit_castle_p10",
+          "file": "level_blockout_kit_castle_p10.glb",
+          "triangles": 96,
+          "bytes": 14560,
+          "sha256": "a86f8cb521257ef49b7844876b80b0d297da7cd9e6a81bbc2056074192637e89",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_castle_sarcophagus_stand",
+              "title": "Standalone sarcophagus support plinth",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
             }
           ]
         }
@@ -1846,7 +1934,9 @@
         "level_blockout_cemetery_iron_lantern",
         "level_blockout_monastery_stained_window",
         "level_blockout_mortuary_casket_bier",
-        "level_blockout_mortuary_flower_wreath"
+        "level_blockout_mortuary_flower_wreath",
+        "level_blockout_castle_crypt_column",
+        "level_blockout_castle_sarcophagus_stand"
       ],
       "pages": [
         {
@@ -2277,9 +2367,9 @@
           "page": 5,
           "name": "level_blockout_kit_church_p05",
           "file": "level_blockout_kit_church_p05.glb",
-          "triangles": 684,
-          "bytes": 89468,
-          "sha256": "8f9fecdfcc80cd97b8eae50972db4b139765c0e0d1d8b9110e245d9cf4d35a57",
+          "triangles": 948,
+          "bytes": 116412,
+          "sha256": "adfd90967c53d64b134168913026c0a84d26bd655a067688091e82f9fa4b802e",
           "display_slots": [
             {
               "slot": 1,
@@ -2328,6 +2418,38 @@
                 5.6
               ],
               "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_castle_crypt_column",
+              "title": "Stepped memorial crypt column",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_castle_sarcophagus_stand",
+              "title": "Standalone sarcophagus support plinth",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
             }
           ]
         }
@@ -2364,7 +2486,8 @@
         "level_blockout_domestic_wall_bookcase",
         "level_blockout_school_chalkboard",
         "level_blockout_school_locker_bank",
-        "level_blockout_science_instrument_table"
+        "level_blockout_science_instrument_table",
+        "level_blockout_rail_station_clock"
       ],
       "pages": [
         {
@@ -2684,6 +2807,32 @@
               "review_only": true
             }
           ]
+        },
+        {
+          "page": 4,
+          "name": "level_blockout_kit_college_p04",
+          "file": "level_blockout_kit_college_p04.glb",
+          "triangles": 200,
+          "bytes": 33732,
+          "sha256": "f7037063bf961d180c2b1047cfe62b969d16a23cd055fc4548acc4835d9e0453",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_rail_station_clock",
+              "title": "Wall rail clock with two hands",
+              "source_ground_offset": -0.115,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            }
+          ]
         }
       ],
       "still_source_only": true
@@ -2722,7 +2871,14 @@
         "level_blockout_domestic_stone_fireplace",
         "level_blockout_domestic_porch_stair",
         "level_blockout_domestic_kitchen_range",
-        "level_blockout_logging_winch_sled"
+        "level_blockout_logging_winch_sled",
+        "level_blockout_domestic_exterior_shutters",
+        "level_blockout_domestic_roof_gutter",
+        "level_blockout_domestic_wall_downspout",
+        "level_blockout_domestic_picket_fence",
+        "level_blockout_domestic_garden_gate",
+        "level_blockout_domestic_cellar_steps",
+        "level_blockout_camp_woodpile_lean_to"
       ],
       "pages": [
         {
@@ -3047,9 +3203,9 @@
           "page": 4,
           "name": "level_blockout_kit_farmhouse_p04",
           "file": "level_blockout_kit_farmhouse_p04.glb",
-          "triangles": 600,
-          "bytes": 74516,
-          "sha256": "1adcdcec1be791d9d0b10f7e0873feb8e8ea4ab83e672312b8d7850208c09298",
+          "triangles": 872,
+          "bytes": 104384,
+          "sha256": "889991bd5b056d67055ba483f1722bde4231e3944b4688bcb546f1dbcd30fcf2",
           "display_slots": [
             {
               "slot": 1,
@@ -3114,6 +3270,128 @@
                 5.6
               ],
               "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_domestic_exterior_shutters",
+              "title": "Separated timber shutters and wall hinges",
+              "source_ground_offset": -0.55,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_domestic_roof_gutter",
+              "title": "Modular roof eaves gutter",
+              "source_ground_offset": -0.105,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 5,
+          "name": "level_blockout_kit_farmhouse_p05",
+          "file": "level_blockout_kit_farmhouse_p05.glb",
+          "triangles": 1116,
+          "bytes": 127228,
+          "sha256": "411cc86a6bf6e31871e3cc542c011a85147e5053d0f8ea13f2cdd1fdfff8243d",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_domestic_wall_downspout",
+              "title": "Exterior vertical drain with clamps",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_domestic_picket_fence",
+              "title": "Picket fence with two rails and posts",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_domestic_garden_gate",
+              "title": "Timber garden gate with hinge study",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_domestic_cellar_steps",
+              "title": "Six wooden cellar stair treads",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_camp_woodpile_lean_to",
+              "title": "Sheltered three-layer split log pile",
+              "source_ground_offset": 0.005,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
             }
           ]
         }
@@ -3147,7 +3425,13 @@
         "level_blockout_domestic_porch_stair",
         "level_blockout_domestic_kitchen_range",
         "level_blockout_domestic_wall_bookcase",
-        "level_blockout_motel_guest_bed"
+        "level_blockout_motel_guest_bed",
+        "level_blockout_domestic_exterior_shutters",
+        "level_blockout_domestic_roof_gutter",
+        "level_blockout_domestic_wall_downspout",
+        "level_blockout_domestic_picket_fence",
+        "level_blockout_domestic_garden_gate",
+        "level_blockout_domestic_cellar_steps"
       ],
       "pages": [
         {
@@ -3366,9 +3650,9 @@
           "page": 3,
           "name": "level_blockout_kit_house_p03",
           "file": "level_blockout_kit_house_p03.glb",
-          "triangles": 712,
-          "bytes": 94512,
-          "sha256": "0b9e73b784546976e01920ad96a65a5ece298b5ace0e7440bfdafddad2a20cdd",
+          "triangles": 1128,
+          "bytes": 139104,
+          "sha256": "c72ef9dce4503ca5b9f92f5fb13d78fb165960eff422a13e157d737ec1d07134",
           "display_slots": [
             {
               "slot": 1,
@@ -3407,6 +3691,112 @@
               "id": "level_blockout_motel_guest_bed",
               "title": "Double motel bed with separate bedding and pillows",
               "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_domestic_exterior_shutters",
+              "title": "Separated timber shutters and wall hinges",
+              "source_ground_offset": -0.55,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_domestic_roof_gutter",
+              "title": "Modular roof eaves gutter",
+              "source_ground_offset": -0.105,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_domestic_wall_downspout",
+              "title": "Exterior vertical drain with clamps",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 4,
+          "name": "level_blockout_kit_house_p04",
+          "file": "level_blockout_kit_house_p04.glb",
+          "triangles": 492,
+          "bytes": 63528,
+          "sha256": "f828d0cbd42f91e2e38613573546cab7d03a7c47a96e2a9ca1798859af684043",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_domestic_picket_fence",
+              "title": "Picket fence with two rails and posts",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_domestic_garden_gate",
+              "title": "Timber garden gate with hinge study",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_domestic_cellar_steps",
+              "title": "Six wooden cellar stair treads",
+              "source_ground_offset": -0.005,
               "stand_center": [
                 7.0,
                 0,
@@ -3460,7 +3850,13 @@
         "level_blockout_domestic_chimney_stack",
         "level_blockout_domestic_stone_fireplace",
         "level_blockout_domestic_kitchen_range",
-        "level_blockout_domestic_wall_bookcase"
+        "level_blockout_domestic_wall_bookcase",
+        "level_blockout_domestic_exterior_shutters",
+        "level_blockout_domestic_roof_gutter",
+        "level_blockout_domestic_wall_downspout",
+        "level_blockout_domestic_picket_fence",
+        "level_blockout_domestic_garden_gate",
+        "level_blockout_domestic_cellar_steps"
       ],
       "pages": [
         {
@@ -3891,15 +4287,121 @@
           "page": 5,
           "name": "level_blockout_kit_mansion_p05",
           "file": "level_blockout_kit_mansion_p05.glb",
-          "triangles": 336,
-          "bytes": 45492,
-          "sha256": "ac358cc0488310bf0345d2aff40a69fec03adc5f9aa2b9d06e1292e4f041c064",
+          "triangles": 1100,
+          "bytes": 129832,
+          "sha256": "1c02be7895962aaa87d41b3fccc0b951cef9de7ad5c6a210a13615ea6a59403d",
           "display_slots": [
             {
               "slot": 1,
               "id": "level_blockout_domestic_wall_bookcase",
               "title": "Shelved wooden bookcase with individual book spines",
               "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_domestic_exterior_shutters",
+              "title": "Separated timber shutters and wall hinges",
+              "source_ground_offset": -0.55,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_domestic_roof_gutter",
+              "title": "Modular roof eaves gutter",
+              "source_ground_offset": -0.105,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_domestic_wall_downspout",
+              "title": "Exterior vertical drain with clamps",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_domestic_picket_fence",
+              "title": "Picket fence with two rails and posts",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_domestic_garden_gate",
+              "title": "Timber garden gate with hinge study",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 6,
+          "name": "level_blockout_kit_mansion_p06",
+          "file": "level_blockout_kit_mansion_p06.glb",
+          "triangles": 144,
+          "bytes": 21636,
+          "sha256": "ef4ff0635dcb433f1b539bf43bd58570d20fc969be8e13f70953956110268923",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_domestic_cellar_steps",
+              "title": "Six wooden cellar stair treads",
+              "source_ground_offset": -0.005,
               "stand_center": [
                 -7.0,
                 0,
@@ -4676,7 +5178,12 @@
         "level_blockout_camp_footbridge_module",
         "level_blockout_lookout_reservoir_tank",
         "level_blockout_rail_straight_track_bay",
-        "level_blockout_rail_telegraph_pole"
+        "level_blockout_rail_telegraph_pole",
+        "level_blockout_camp_bathhouse_privacy_stalls",
+        "level_blockout_camp_field_cot",
+        "level_blockout_camp_tent_entry_flaps",
+        "level_blockout_camp_woodpile_lean_to",
+        "level_blockout_camp_manual_water_pump"
       ],
       "pages": [
         {
@@ -5208,6 +5715,96 @@
               "review_only": true
             }
           ]
+        },
+        {
+          "page": 6,
+          "name": "level_blockout_kit_wld_01_p06",
+          "file": "level_blockout_kit_wld_01_p06.glb",
+          "triangles": 1012,
+          "bytes": 118808,
+          "sha256": "acf940e74817c7763106c49ea62557b14f9bc2c6759f40ad19b61f5cf2c8ce64",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_camp_bathhouse_privacy_stalls",
+              "title": "Open two-stall camp bathhouse screen",
+              "source_ground_offset": -0.015,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_camp_field_cot",
+              "title": "Collapsible tent cot and pillow",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_camp_tent_entry_flaps",
+              "title": "A-frame tent open flap and end posts",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_camp_woodpile_lean_to",
+              "title": "Sheltered three-layer split log pile",
+              "source_ground_offset": 0.005,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_camp_manual_water_pump",
+              "title": "Camp iron hand pump and spout",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            }
+          ]
         }
       ],
       "still_source_only": true
@@ -5249,7 +5846,12 @@
         "level_blockout_camp_cook_shelter",
         "level_blockout_camp_footbridge_module",
         "level_blockout_marsh_deadwood_snag",
-        "level_blockout_marsh_hunting_blind"
+        "level_blockout_marsh_hunting_blind",
+        "level_blockout_camp_bathhouse_privacy_stalls",
+        "level_blockout_camp_field_cot",
+        "level_blockout_camp_tent_entry_flaps",
+        "level_blockout_camp_woodpile_lean_to",
+        "level_blockout_camp_manual_water_pump"
       ],
       "pages": [
         {
@@ -5680,9 +6282,9 @@
           "page": 5,
           "name": "level_blockout_kit_wld_02_p05",
           "file": "level_blockout_kit_wld_02_p05.glb",
-          "triangles": 132,
-          "bytes": 22536,
-          "sha256": "9ed0915b916effff6f7a951e32ddce4cd0b5fb3fdb77441baa098d26e85d7678",
+          "triangles": 1144,
+          "bytes": 132260,
+          "sha256": "fd10ec157c933b09a3092fef464e61db031aa2b1498f2e5aff19da614798223d",
           "display_slots": [
             {
               "slot": 1,
@@ -5693,6 +6295,86 @@
                 -7.0,
                 0,
                 -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_camp_bathhouse_privacy_stalls",
+              "title": "Open two-stall camp bathhouse screen",
+              "source_ground_offset": -0.015,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_camp_field_cot",
+              "title": "Collapsible tent cot and pillow",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_camp_tent_entry_flaps",
+              "title": "A-frame tent open flap and end posts",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_camp_woodpile_lean_to",
+              "title": "Sheltered three-layer split log pile",
+              "source_ground_offset": 0.005,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_camp_manual_water_pump",
+              "title": "Camp iron hand pump and spout",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
               ],
               "stand_dimensions_m": [
                 5.65,
@@ -5732,7 +6414,12 @@
         "level_blockout_mine_braced_portal",
         "level_blockout_cave_rockfall_heap",
         "level_blockout_cave_hanging_stalactites",
-        "level_blockout_cave_survey_tripod"
+        "level_blockout_cave_survey_tripod",
+        "level_blockout_cave_ledge_rope_guard",
+        "level_blockout_cave_plank_rope_bridge",
+        "level_blockout_cave_survey_cairns",
+        "level_blockout_cave_layered_sandstone",
+        "level_blockout_cave_excavation_trestle"
       ],
       "pages": [
         {
@@ -5951,9 +6638,9 @@
           "page": 3,
           "name": "level_blockout_kit_wld_03_p03",
           "file": "level_blockout_kit_wld_03_p03.glb",
-          "triangles": 424,
-          "bytes": 56612,
-          "sha256": "6f48f0b59e4dc8d4662de0257ecd1e804f1fc8277cc55e0ad0732a8ad1861ffa",
+          "triangles": 1036,
+          "bytes": 123260,
+          "sha256": "813a697c7e4d29f15eb432d9794344b6160cc188b9e70aae4fe9e9fb5189a170",
           "display_slots": [
             {
               "slot": 1,
@@ -6002,6 +6689,96 @@
                 5.6
               ],
               "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_cave_ledge_rope_guard",
+              "title": "Cave ledge path post and rope kit",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_cave_plank_rope_bridge",
+              "title": "Gapped cave rope bridge module",
+              "source_ground_offset": -0.03,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_cave_survey_cairns",
+              "title": "Three faceted survey cairns",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 4,
+          "name": "level_blockout_kit_wld_03_p04",
+          "file": "level_blockout_kit_wld_03_p04.glb",
+          "triangles": 300,
+          "bytes": 41840,
+          "sha256": "332354ede74a9e69394bf0164f98e511ff918758fc30332a764c54952654dec5",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_cave_layered_sandstone",
+              "title": "Three sediment layers and edge rock fragments",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_cave_excavation_trestle",
+              "title": "Underground sample sorting table",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
             }
           ]
         }
@@ -6040,7 +6817,9 @@
         "level_blockout_camp_ranger_kiosk",
         "level_blockout_camp_water_tank",
         "level_blockout_lookout_fire_map_table",
-        "level_blockout_lookout_reservoir_tank"
+        "level_blockout_lookout_reservoir_tank",
+        "level_blockout_camp_field_cot",
+        "level_blockout_camp_tent_entry_flaps"
       ],
       "pages": [
         {
@@ -6365,9 +7144,9 @@
           "page": 4,
           "name": "level_blockout_kit_wld_04_p04",
           "file": "level_blockout_kit_wld_04_p04.glb",
-          "triangles": 320,
-          "bytes": 48132,
-          "sha256": "1af4690e555319fb0180f14808045af9e0780da23aa3f5bb34cbf196ec0beb79",
+          "triangles": 560,
+          "bytes": 74764,
+          "sha256": "f8ec59fc46174483092ab514f178bd79ed8a4b247dd53e84ef766e1284878466",
           "display_slots": [
             {
               "slot": 1,
@@ -6394,6 +7173,38 @@
                 0.0,
                 0,
                 -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_camp_field_cot",
+              "title": "Collapsible tent cot and pillow",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_camp_tent_entry_flaps",
+              "title": "A-frame tent open flap and end posts",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
               ],
               "stand_dimensions_m": [
                 5.65,
@@ -6440,7 +7251,15 @@
         "level_blockout_rail_trackside_toolbox",
         "level_blockout_cave_rockfall_heap",
         "level_blockout_cave_hanging_stalactites",
-        "level_blockout_cave_survey_tripod"
+        "level_blockout_cave_survey_tripod",
+        "level_blockout_camp_field_cot",
+        "level_blockout_camp_manual_water_pump",
+        "level_blockout_cave_ledge_rope_guard",
+        "level_blockout_cave_plank_rope_bridge",
+        "level_blockout_cave_survey_cairns",
+        "level_blockout_cave_layered_sandstone",
+        "level_blockout_cave_excavation_trestle",
+        "level_blockout_rail_tunnel_mouth"
       ],
       "pages": [
         {
@@ -6765,9 +7584,9 @@
           "page": 4,
           "name": "level_blockout_kit_wld_05_p04",
           "file": "level_blockout_kit_wld_05_p04.glb",
-          "triangles": 544,
-          "bytes": 70948,
-          "sha256": "ec0bea8005d67f27576ec2cd777f2fe529334607b91faf47b4a109bff5a4b4a9",
+          "triangles": 836,
+          "bytes": 105004,
+          "sha256": "82c8d410f5540c68b89fbe8ba5c8243e7ef132acc37a69b51b31278c9dc74e20",
           "display_slots": [
             {
               "slot": 1,
@@ -6824,6 +7643,144 @@
               "source_ground_offset": -0.02,
               "stand_center": [
                 -7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_camp_field_cot",
+              "title": "Collapsible tent cot and pillow",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_camp_manual_water_pump",
+              "title": "Camp iron hand pump and spout",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 5,
+          "name": "level_blockout_kit_wld_05_p05",
+          "file": "level_blockout_kit_wld_05_p05.glb",
+          "triangles": 1020,
+          "bytes": 119472,
+          "sha256": "aae2856a93299d56f0250708e2e0288d9460209faea4f98f9ce3f6fa4e46d894",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_cave_ledge_rope_guard",
+              "title": "Cave ledge path post and rope kit",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_cave_plank_rope_bridge",
+              "title": "Gapped cave rope bridge module",
+              "source_ground_offset": -0.03,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_cave_survey_cairns",
+              "title": "Three faceted survey cairns",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_cave_layered_sandstone",
+              "title": "Three sediment layers and edge rock fragments",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_cave_excavation_trestle",
+              "title": "Underground sample sorting table",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_rail_tunnel_mouth",
+              "title": "Open railway tunnel masonry portal",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
                 0,
                 3.5
               ],
@@ -7322,7 +8279,9 @@
         "level_blockout_cemetery_headstone_row",
         "level_blockout_cemetery_iron_lantern",
         "level_blockout_mortuary_casket_bier",
-        "level_blockout_mortuary_flower_wreath"
+        "level_blockout_mortuary_flower_wreath",
+        "level_blockout_castle_crypt_column",
+        "level_blockout_castle_sarcophagus_stand"
       ],
       "pages": [
         {
@@ -7647,9 +8606,9 @@
           "page": 4,
           "name": "level_blockout_kit_wld_07_p04",
           "file": "level_blockout_kit_wld_07_p04.glb",
-          "triangles": 1032,
-          "bytes": 127020,
-          "sha256": "c1ba4a1590770f9a4ab083d3614ed729be71edb1aa3e773496eed7dead43ea0b",
+          "triangles": 1200,
+          "bytes": 144168,
+          "sha256": "ab94d2d9b475e8415debd965c42a25f32ade46fea3444c118cbce010bf083d6d",
           "display_slots": [
             {
               "slot": 1,
@@ -7730,6 +8689,48 @@
                 5.6
               ],
               "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_castle_crypt_column",
+              "title": "Stepped memorial crypt column",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 5,
+          "name": "level_blockout_kit_wld_07_p05",
+          "file": "level_blockout_kit_wld_07_p05.glb",
+          "triangles": 96,
+          "bytes": 14580,
+          "sha256": "3917532175262872859edd0680c0ad99b5800406f8745764bcd6db8a9d782278",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_castle_sarcophagus_stand",
+              "title": "Standalone sarcophagus support plinth",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
             }
           ]
         }
@@ -7769,7 +8770,8 @@
         "level_blockout_ship_chart_cabinet",
         "level_blockout_cinder_cable_rack",
         "level_blockout_research_battery_bank",
-        "level_blockout_cave_survey_tripod"
+        "level_blockout_cave_survey_tripod",
+        "level_blockout_cave_excavation_trestle"
       ],
       "pages": [
         {
@@ -8094,9 +9096,9 @@
           "page": 4,
           "name": "level_blockout_kit_wld_08_p04",
           "file": "level_blockout_kit_wld_08_p04.glb",
-          "triangles": 780,
-          "bytes": 95024,
-          "sha256": "477a21da82f7803a39e7c3421295814492da77bb4ec15bbfb60af3cbb47a7225",
+          "triangles": 952,
+          "bytes": 114712,
+          "sha256": "f597dffb952a56b7df9a389a20b53d029612e192280fd140ac34c783104ace37",
           "display_slots": [
             {
               "slot": 1,
@@ -8139,6 +9141,22 @@
                 7.0,
                 0,
                 -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_cave_excavation_trestle",
+              "title": "Underground sample sorting table",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
               ],
               "stand_dimensions_m": [
                 5.65,
@@ -8535,7 +9553,8 @@
         "level_blockout_domestic_stone_fireplace",
         "level_blockout_cemetery_headstone_row",
         "level_blockout_cemetery_iron_lantern",
-        "level_blockout_monastery_stained_window"
+        "level_blockout_monastery_stained_window",
+        "level_blockout_castle_crypt_column"
       ],
       "pages": [
         {
@@ -9072,9 +10091,9 @@
           "page": 6,
           "name": "level_blockout_kit_wld_10_p06",
           "file": "level_blockout_kit_wld_10_p06.glb",
-          "triangles": 1104,
-          "bytes": 127976,
-          "sha256": "797d4aecc42865a65baba92010eac9b11a4bfe7bd457fdf58d615cfcc99f9e43",
+          "triangles": 1272,
+          "bytes": 145120,
+          "sha256": "1e6fefa34c3a420685f3d0ae89cf9ff740c70de3b2fbced05dfd5aff5103d9de",
           "display_slots": [
             {
               "slot": 1,
@@ -9147,6 +10166,22 @@
               "source_ground_offset": -0.065,
               "stand_center": [
                 0.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_castle_crypt_column",
+              "title": "Stepped memorial crypt column",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
                 0,
                 3.5
               ],
@@ -9623,7 +10658,12 @@
         "level_blockout_rail_telegraph_pole",
         "level_blockout_rail_signal_relay_box",
         "level_blockout_rail_handcar",
-        "level_blockout_rail_coal_bunker"
+        "level_blockout_rail_coal_bunker",
+        "level_blockout_rail_station_canopy",
+        "level_blockout_rail_semaphore_pole",
+        "level_blockout_rail_station_clock",
+        "level_blockout_rail_luggage_cart",
+        "level_blockout_rail_tunnel_mouth"
       ],
       "pages": [
         {
@@ -9933,6 +10973,96 @@
               "source_ground_offset": -0.0,
               "stand_center": [
                 7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 4,
+          "name": "level_blockout_kit_wld_12_p04",
+          "file": "level_blockout_kit_wld_12_p04.glb",
+          "triangles": 808,
+          "bytes": 102236,
+          "sha256": "ff3a9c09243a16d14748e4639feead3e25b5825f79b29013fb33a4037dfd5d48",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_rail_station_canopy",
+              "title": "Covered railway loading platform canopy",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_rail_semaphore_pole",
+              "title": "Analog rail semaphore on post",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_rail_station_clock",
+              "title": "Wall rail clock with two hands",
+              "source_ground_offset": -0.115,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_rail_luggage_cart",
+              "title": "Wheeled rail-platform baggage cart",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_rail_tunnel_mouth",
+              "title": "Open railway tunnel masonry portal",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
                 0,
                 3.5
               ],
@@ -10398,7 +11528,17 @@
         "level_blockout_lighthouse_oil_barrel_rack",
         "level_blockout_lighthouse_weather_vane",
         "level_blockout_lighthouse_rescue_lifebuoy",
-        "level_blockout_lighthouse_landing_capstan"
+        "level_blockout_lighthouse_landing_capstan",
+        "level_blockout_domestic_exterior_shutters",
+        "level_blockout_domestic_roof_gutter",
+        "level_blockout_domestic_wall_downspout",
+        "level_blockout_domestic_picket_fence",
+        "level_blockout_domestic_garden_gate",
+        "level_blockout_lighthouse_tower_wall_course",
+        "level_blockout_lighthouse_spiral_tread_module",
+        "level_blockout_lighthouse_keeper_porch",
+        "level_blockout_lighthouse_lens_pedestal",
+        "level_blockout_lighthouse_cliff_drain"
       ],
       "pages": [
         {
@@ -10824,6 +11964,186 @@
               "review_only": true
             }
           ]
+        },
+        {
+          "page": 5,
+          "name": "level_blockout_kit_wld_14_p05",
+          "file": "level_blockout_kit_wld_14_p05.glb",
+          "triangles": 1004,
+          "bytes": 115776,
+          "sha256": "ade7781208136acf0400f25564f2a97d94688dd71bd673d131553467eb85463f",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_domestic_exterior_shutters",
+              "title": "Separated timber shutters and wall hinges",
+              "source_ground_offset": -0.55,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_domestic_roof_gutter",
+              "title": "Modular roof eaves gutter",
+              "source_ground_offset": -0.105,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_domestic_wall_downspout",
+              "title": "Exterior vertical drain with clamps",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_domestic_picket_fence",
+              "title": "Picket fence with two rails and posts",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_domestic_garden_gate",
+              "title": "Timber garden gate with hinge study",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_lighthouse_tower_wall_course",
+              "title": "Hollow curved lighthouse wall brick course",
+              "source_ground_offset": -0.02,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 6,
+          "name": "level_blockout_kit_wld_14_p06",
+          "file": "level_blockout_kit_wld_14_p06.glb",
+          "triangles": 628,
+          "bytes": 79452,
+          "sha256": "34e7f26de877d816436be8757085f60743635a79fb4d49b67d52e7fea1174d72",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_lighthouse_spiral_tread_module",
+              "title": "Single radial spiral stair tread",
+              "source_ground_offset": -0.015,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_lighthouse_keeper_porch",
+              "title": "Keeper-house porch with pitched awning",
+              "source_ground_offset": -0.04,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_lighthouse_lens_pedestal",
+              "title": "Optic mounting dais, not duplicating lens",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_lighthouse_cliff_drain",
+              "title": "Clifftop drainage trough and grating",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            }
+          ]
         }
       ],
       "still_source_only": true
@@ -10879,7 +12199,8 @@
         "level_blockout_lighthouse_rescue_lifebuoy",
         "level_blockout_hydro_handwheel_valve",
         "level_blockout_ship_open_cargo_hatch",
-        "level_blockout_wharf_open_fish_crates"
+        "level_blockout_wharf_open_fish_crates",
+        "level_blockout_rail_luggage_cart"
       ],
       "pages": [
         {
@@ -11522,9 +12843,9 @@
           "page": 7,
           "name": "level_blockout_kit_wld_15_p07",
           "file": "level_blockout_kit_wld_15_p07.glb",
-          "triangles": 728,
-          "bytes": 89776,
-          "sha256": "79ed63ad46325e14e2516c2c89d2012c931d88dfbb39377a538a603ed6541d82",
+          "triangles": 984,
+          "bytes": 118036,
+          "sha256": "9a167b3360ea7e2b3a1cee7de7297288844753bb14e49893941fef2a43c34f64",
           "display_slots": [
             {
               "slot": 1,
@@ -11573,6 +12894,22 @@
                 5.6
               ],
               "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_rail_luggage_cart",
+              "title": "Wheeled rail-platform baggage cart",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
             }
           ]
         }
@@ -11613,7 +12950,13 @@
         "level_blockout_domestic_porch_stair",
         "level_blockout_domestic_kitchen_range",
         "level_blockout_motel_guest_bed",
-        "level_blockout_camp_picnic_table"
+        "level_blockout_camp_picnic_table",
+        "level_blockout_domestic_exterior_shutters",
+        "level_blockout_domestic_roof_gutter",
+        "level_blockout_domestic_wall_downspout",
+        "level_blockout_domestic_picket_fence",
+        "level_blockout_domestic_garden_gate",
+        "level_blockout_domestic_cellar_steps"
       ],
       "pages": [
         {
@@ -11938,9 +13281,9 @@
           "page": 4,
           "name": "level_blockout_kit_wld_16_p04",
           "file": "level_blockout_kit_wld_16_p04.glb",
-          "triangles": 616,
-          "bytes": 82604,
-          "sha256": "449c6c7a5f5e7e70d52fecd5556a8ee8755c4702ef1644130bb935bde8da70f2",
+          "triangles": 888,
+          "bytes": 112508,
+          "sha256": "0bd4dfe01552b1472453162e55948190c5d8bfeaefe90c1e9ae08af10c946bb9",
           "display_slots": [
             {
               "slot": 1,
@@ -12005,6 +13348,112 @@
                 5.6
               ],
               "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_domestic_exterior_shutters",
+              "title": "Separated timber shutters and wall hinges",
+              "source_ground_offset": -0.55,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_domestic_roof_gutter",
+              "title": "Modular roof eaves gutter",
+              "source_ground_offset": -0.105,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 5,
+          "name": "level_blockout_kit_wld_16_p05",
+          "file": "level_blockout_kit_wld_16_p05.glb",
+          "triangles": 636,
+          "bytes": 78240,
+          "sha256": "9286351cf5057cbd8c02d3e7b5655dc03da9f6e7f264f49fc2e4eb5a4959ad39",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_domestic_wall_downspout",
+              "title": "Exterior vertical drain with clamps",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_domestic_picket_fence",
+              "title": "Picket fence with two rails and posts",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_domestic_garden_gate",
+              "title": "Timber garden gate with hinge study",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                7.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_domestic_cellar_steps",
+              "title": "Six wooden cellar stair treads",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
             }
           ]
         }
@@ -12049,7 +13498,8 @@
         "level_blockout_lighthouse_access_ladder",
         "level_blockout_bunker_observation_scope",
         "level_blockout_cinder_cable_rack",
-        "level_blockout_bunker_support_arch"
+        "level_blockout_bunker_support_arch",
+        "level_blockout_lighthouse_cliff_drain"
       ],
       "pages": [
         {
@@ -12480,9 +13930,9 @@
           "page": 5,
           "name": "level_blockout_kit_wld_17_p05",
           "file": "level_blockout_kit_wld_17_p05.glb",
-          "triangles": 384,
-          "bytes": 48192,
-          "sha256": "b4e2b636cb99a3fd5962e5b48d328424540ccbc097f47092808a8bc1980c6662",
+          "triangles": 576,
+          "bytes": 69832,
+          "sha256": "20bbaec2f95269001c491b63a8b8cccdde8835aca0184b5469c3023a6711844c",
           "display_slots": [
             {
               "slot": 1,
@@ -12507,6 +13957,22 @@
               "source_ground_offset": -0.0,
               "stand_center": [
                 0.0,
+                0,
+                -3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 3,
+              "id": "level_blockout_lighthouse_cliff_drain",
+              "title": "Clifftop drainage trough and grating",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
                 0,
                 -3.5
               ],
@@ -12568,7 +14034,8 @@
         "level_blockout_research_battery_bank",
         "level_blockout_dam_pressure_gauge_panel",
         "level_blockout_cave_rockfall_heap",
-        "level_blockout_bunker_support_arch"
+        "level_blockout_bunker_support_arch",
+        "level_blockout_cave_ledge_rope_guard"
       ],
       "pages": [
         {
@@ -13105,9 +14572,9 @@
           "page": 6,
           "name": "level_blockout_kit_wld_18_p06",
           "file": "level_blockout_kit_wld_18_p06.glb",
-          "triangles": 1336,
-          "bytes": 149580,
-          "sha256": "0b6802b1ba99d24fd118157d571b8f149c759562f076c12a94cbdf80589d2728",
+          "triangles": 1456,
+          "bytes": 166116,
+          "sha256": "65bffb452e92ca223e74b91f8f620ab046f2305ac3d2eaaca135e351569f37b3",
           "display_slots": [
             {
               "slot": 1,
@@ -13188,6 +14655,22 @@
                 5.6
               ],
               "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_cave_ledge_rope_guard",
+              "title": "Cave ledge path post and rope kit",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
             }
           ]
         }
@@ -13233,7 +14716,9 @@
         "level_blockout_mortuary_casket_bier",
         "level_blockout_mortuary_instrument_trolley",
         "level_blockout_mortuary_cold_drawer_wall",
-        "level_blockout_mortuary_flower_wreath"
+        "level_blockout_mortuary_flower_wreath",
+        "level_blockout_mortuary_wash_sink_station",
+        "level_blockout_mortuary_visitors_registry_desk"
       ],
       "pages": [
         {
@@ -13664,9 +15149,9 @@
           "page": 5,
           "name": "level_blockout_kit_wld_07_mortuary_p05",
           "file": "level_blockout_kit_wld_07_mortuary_p05.glb",
-          "triangles": 824,
-          "bytes": 103720,
-          "sha256": "58268df6df3ed6c13efbae589a4924f48c5196431b6f713168616b462e179320",
+          "triangles": 1188,
+          "bytes": 145140,
+          "sha256": "cffdaf17b43f34eb409f0f36ecef1eff89af69d8952c802acda1c960b10d0833",
           "display_slots": [
             {
               "slot": 1,
@@ -13715,6 +15200,38 @@
                 5.6
               ],
               "review_only": true
+            },
+            {
+              "slot": 4,
+              "id": "level_blockout_mortuary_wash_sink_station",
+              "title": "Mortuary rinse sink and exposed feed pipe",
+              "source_ground_offset": -0.005,
+              "stand_center": [
+                -7.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_mortuary_visitors_registry_desk",
+              "title": "Funeral guest register and small bell desk",
+              "source_ground_offset": -0.01,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "stand_dimensions_m": [
+                5.65,
+                5.6
+              ],
+              "review_only": true
             }
           ]
         }
@@ -13722,6 +15239,6 @@
       "still_source_only": true
     }
   ],
-  "total_stands": 701,
-  "total_pages": 127
+  "total_stands": 782,
+  "total_pages": 141
 }

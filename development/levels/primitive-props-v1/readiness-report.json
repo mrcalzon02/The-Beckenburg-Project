@@ -1,13 +1,13 @@
 {
   "schema": "beckenburg.source-mesh-readiness/1",
   "status": "SOURCE_ONLY_REVIEW_NOT_PRODUCTION_APPROVAL",
-  "catalog_sha256": "42a0f3fe5061283e017e9a53f872daf3e871d18dc46cde9023222eb5bea47306",
-  "model_count": 253,
+  "catalog_sha256": "ebec4779c7130937d4915a5d67b075001d8c903ae6e05222cf40db139c7d91e2",
+  "model_count": 283,
   "map_kit_count": 29,
-  "validated_source_glbs": 253,
+  "validated_source_glbs": 283,
   "runtime_approved_models": 0,
   "native_rendered_models_accepted_here": 0,
-  "models_with_diagnostic_flags": 103,
+  "models_with_diagnostic_flags": 123,
   "purpose": "Recorded geometry and next-stage review; never game asset approval",
   "required_before_production": [
     "Native four-view in-engine screenshots and texture/material inspection",
@@ -18,34 +18,34 @@
   ],
   "map_kit_assignments": {
     "ACADEMY": 29,
-    "ASYLUM": 24,
-    "CASTLE": 58,
-    "CHURCH": 33,
-    "COLLEGE": 24,
-    "FARMHOUSE": 28,
-    "HOUSE": 21,
-    "MANSION": 31,
+    "ASYLUM": 25,
+    "CASTLE": 61,
+    "CHURCH": 35,
+    "COLLEGE": 25,
+    "FARMHOUSE": 35,
+    "HOUSE": 27,
+    "MANSION": 37,
     "PRISON": 27,
     "SCHOOL": 21,
-    "WLD-01": 36,
-    "WLD-02": 31,
-    "WLD-03": 21,
-    "WLD-04": 26,
-    "WLD-05": 28,
+    "WLD-01": 41,
+    "WLD-02": 36,
+    "WLD-03": 26,
+    "WLD-04": 28,
+    "WLD-05": 36,
     "WLD-06": 29,
-    "WLD-07": 29,
-    "WLD-08": 27,
+    "WLD-07": 31,
+    "WLD-08": 28,
     "WLD-09": 23,
-    "WLD-10": 41,
+    "WLD-10": 42,
     "WLD-11": 28,
-    "WLD-12": 24,
+    "WLD-12": 29,
     "WLD-13": 27,
-    "WLD-14": 30,
-    "WLD-15": 45,
-    "WLD-16": 28,
-    "WLD-17": 32,
-    "WLD-18": 41,
-    "WLD-07-MORTUARY": 33
+    "WLD-14": 40,
+    "WLD-15": 46,
+    "WLD-16": 34,
+    "WLD-17": 33,
+    "WLD-18": 42,
+    "WLD-07-MORTUARY": 35
   },
   "diagnostics": [
     {
@@ -665,6 +665,126 @@
       "model": "level_blockout_lighthouse_rescue_lifebuoy",
       "diagnostics": [
         "review_attachment_anchor"
+      ]
+    },
+    {
+      "model": "level_blockout_domestic_exterior_shutters",
+      "diagnostics": [
+        "review_attachment_anchor"
+      ]
+    },
+    {
+      "model": "level_blockout_domestic_roof_gutter",
+      "diagnostics": [
+        "review_attachment_anchor"
+      ]
+    },
+    {
+      "model": "level_blockout_domestic_wall_downspout",
+      "diagnostics": [
+        "review_attachment_anchor"
+      ]
+    },
+    {
+      "model": "level_blockout_domestic_picket_fence",
+      "diagnostics": [
+        "review_mount_constraint"
+      ]
+    },
+    {
+      "model": "level_blockout_domestic_garden_gate",
+      "diagnostics": [
+        "review_attachment_anchor"
+      ]
+    },
+    {
+      "model": "level_blockout_domestic_cellar_steps",
+      "diagnostics": [
+        "review_mount_constraint"
+      ]
+    },
+    {
+      "model": "level_blockout_camp_tent_entry_flaps",
+      "diagnostics": [
+        "review_attachment_anchor"
+      ]
+    },
+    {
+      "model": "level_blockout_cave_ledge_rope_guard",
+      "diagnostics": [
+        "review_mount_constraint"
+      ]
+    },
+    {
+      "model": "level_blockout_cave_plank_rope_bridge",
+      "diagnostics": [
+        "review_mount_constraint"
+      ]
+    },
+    {
+      "model": "level_blockout_cave_survey_cairns",
+      "diagnostics": [
+        "review_mount_constraint"
+      ]
+    },
+    {
+      "model": "level_blockout_cave_layered_sandstone",
+      "diagnostics": [
+        "review_mount_constraint"
+      ]
+    },
+    {
+      "model": "level_blockout_rail_station_canopy",
+      "diagnostics": [
+        "review_mount_constraint"
+      ]
+    },
+    {
+      "model": "level_blockout_rail_semaphore_pole",
+      "diagnostics": [
+        "review_mount_constraint"
+      ]
+    },
+    {
+      "model": "level_blockout_rail_station_clock",
+      "diagnostics": [
+        "review_attachment_anchor"
+      ]
+    },
+    {
+      "model": "level_blockout_rail_tunnel_mouth",
+      "diagnostics": [
+        "review_attachment_anchor"
+      ]
+    },
+    {
+      "model": "level_blockout_lighthouse_tower_wall_course",
+      "diagnostics": [
+        "review_mount_constraint"
+      ]
+    },
+    {
+      "model": "level_blockout_lighthouse_spiral_tread_module",
+      "diagnostics": [
+        "review_mount_constraint"
+      ]
+    },
+    {
+      "model": "level_blockout_lighthouse_keeper_porch",
+      "diagnostics": [
+        "review_mount_constraint"
+      ]
+    },
+    {
+      "model": "level_blockout_lighthouse_cliff_drain",
+      "diagnostics": [
+        "review_mount_constraint"
+      ]
+    },
+    {
+      "model": "level_blockout_castle_crypt_column",
+      "diagnostics": [
+        "review_mount_constraint"
       ]
     }
   ],
@@ -10602,6 +10722,1167 @@
       "depth_m": 0.41,
       "min_y_m": 0.0,
       "max_y_m": 2.67,
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_domestic_exterior_shutters",
+      "label": "Separated timber shutters and wall hinges",
+      "maps": [
+        "FARMHOUSE",
+        "HOUSE",
+        "MANSION",
+        "WLD-14",
+        "WLD-16"
+      ],
+      "source_parts": 10,
+      "tapered_parts": 0,
+      "source_materials": [
+        "bronze",
+        "metal",
+        "wood"
+      ],
+      "triangles": 120,
+      "glb_sha256": "fbbbcb8f7a3f32392ca6d93c70c71871acd5dcddfe72757eebd8a9f40b4b16eb",
+      "model_bounds_xz": [
+        -1.025,
+        -0.19,
+        1.025,
+        0.045
+      ],
+      "width_m": 2.05,
+      "depth_m": 0.235,
+      "min_y_m": 0.55,
+      "max_y_m": 2.27,
+      "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_attachment_anchor"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_domestic_roof_gutter",
+      "label": "Modular roof eaves gutter",
+      "maps": [
+        "FARMHOUSE",
+        "HOUSE",
+        "MANSION",
+        "WLD-14",
+        "WLD-16"
+      ],
+      "source_parts": 7,
+      "tapered_parts": 0,
+      "source_materials": [
+        "industrial",
+        "metal"
+      ],
+      "triangles": 104,
+      "glb_sha256": "2cec7f4503b89b626360699844d819e854c780db17699c188054e0983f131bdc",
+      "model_bounds_xz": [
+        -1.54,
+        -0.155,
+        1.54,
+        0.4
+      ],
+      "width_m": 3.08,
+      "depth_m": 0.555,
+      "min_y_m": 0.105,
+      "max_y_m": 0.41,
+      "mount_hint": "roof",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_attachment_anchor"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_domestic_wall_downspout",
+      "label": "Exterior vertical drain with clamps",
+      "maps": [
+        "FARMHOUSE",
+        "HOUSE",
+        "MANSION",
+        "WLD-14",
+        "WLD-16"
+      ],
+      "source_parts": 6,
+      "tapered_parts": 0,
+      "source_materials": [
+        "industrial",
+        "metal",
+        "stone"
+      ],
+      "triangles": 120,
+      "glb_sha256": "b52c444d143cfefc755fd6f810ff14cb9eae1ece5fa1845d4b53597b80e7968e",
+      "model_bounds_xz": [
+        -0.21,
+        -0.605,
+        0.21,
+        0.265
+      ],
+      "width_m": 0.42,
+      "depth_m": 0.87,
+      "min_y_m": 0.0,
+      "max_y_m": 2.43,
+      "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_attachment_anchor"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_domestic_picket_fence",
+      "label": "Picket fence with two rails and posts",
+      "maps": [
+        "FARMHOUSE",
+        "HOUSE",
+        "MANSION",
+        "WLD-14",
+        "WLD-16"
+      ],
+      "source_parts": 13,
+      "tapered_parts": 0,
+      "source_materials": [
+        "industrial",
+        "wood"
+      ],
+      "triangles": 156,
+      "glb_sha256": "107c7eec8519e5b6f233693666b45be6df005f37ffeefb62666902bb64536ffe",
+      "model_bounds_xz": [
+        -1.975,
+        -0.085,
+        1.975,
+        0.145
+      ],
+      "width_m": 3.95,
+      "depth_m": 0.23,
+      "min_y_m": 0.0,
+      "max_y_m": 1.42,
+      "mount_hint": "terrain",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_mount_constraint"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_domestic_garden_gate",
+      "label": "Timber garden gate with hinge study",
+      "maps": [
+        "FARMHOUSE",
+        "HOUSE",
+        "MANSION",
+        "WLD-14",
+        "WLD-16"
+      ],
+      "source_parts": 12,
+      "tapered_parts": 0,
+      "source_materials": [
+        "bronze",
+        "metal",
+        "wood"
+      ],
+      "triangles": 144,
+      "glb_sha256": "2c6933531b51cc79b086ccbea23395ab6d2a79672d594be75535e8c83d475efa",
+      "model_bounds_xz": [
+        -0.86,
+        -0.18,
+        0.84,
+        0.075
+      ],
+      "width_m": 1.7,
+      "depth_m": 0.255,
+      "min_y_m": 0.01,
+      "max_y_m": 1.71,
+      "mount_hint": "opening",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_attachment_anchor"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_domestic_cellar_steps",
+      "label": "Six wooden cellar stair treads",
+      "maps": [
+        "FARMHOUSE",
+        "HOUSE",
+        "MANSION",
+        "WLD-16"
+      ],
+      "source_parts": 10,
+      "tapered_parts": 0,
+      "source_materials": [
+        "stone",
+        "wood"
+      ],
+      "triangles": 120,
+      "glb_sha256": "b66136f9bc26161c8efa24fa4668b04c82c9a5ba547dd650bf342952f3fe0f20",
+      "model_bounds_xz": [
+        -0.775,
+        -1.215,
+        0.775,
+        1.09
+      ],
+      "width_m": 1.55,
+      "depth_m": 2.305,
+      "min_y_m": 0.005,
+      "max_y_m": 1.555,
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_mount_constraint"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_camp_bathhouse_privacy_stalls",
+      "label": "Open two-stall camp bathhouse screen",
+      "maps": [
+        "WLD-01",
+        "WLD-02"
+      ],
+      "source_parts": 8,
+      "tapered_parts": 0,
+      "source_materials": [
+        "metal",
+        "stone",
+        "wood"
+      ],
+      "triangles": 96,
+      "glb_sha256": "c2a16d92955b4e9d17a9e5d87ea520baf5c34f0f020daaa02e298adc60f88f8a",
+      "model_bounds_xz": [
+        -0.91,
+        -0.59,
+        0.91,
+        1.045
+      ],
+      "width_m": 1.82,
+      "depth_m": 1.635,
+      "min_y_m": 0.015,
+      "max_y_m": 2.2,
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_camp_field_cot",
+      "label": "Collapsible tent cot and pillow",
+      "maps": [
+        "WLD-01",
+        "WLD-02",
+        "WLD-04",
+        "WLD-05"
+      ],
+      "source_parts": 8,
+      "tapered_parts": 0,
+      "source_materials": [
+        "canvas",
+        "ivory",
+        "metal"
+      ],
+      "triangles": 96,
+      "glb_sha256": "bed0b8ba5acec83bd08a44d865d27b658691dd7d2d2526166f1a4deebb3b308f",
+      "model_bounds_xz": [
+        -0.44,
+        -0.97,
+        0.44,
+        0.97
+      ],
+      "width_m": 0.88,
+      "depth_m": 1.94,
+      "min_y_m": 0.0,
+      "max_y_m": 0.685,
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_camp_tent_entry_flaps",
+      "label": "A-frame tent open flap and end posts",
+      "maps": [
+        "WLD-01",
+        "WLD-02",
+        "WLD-04"
+      ],
+      "source_parts": 8,
+      "tapered_parts": 0,
+      "source_materials": [
+        "canvas",
+        "stone",
+        "wood"
+      ],
+      "triangles": 96,
+      "glb_sha256": "b1e177a1c5a26a14988d3435709368c57a833bc527e9d78011dc9de14e4f475a",
+      "model_bounds_xz": [
+        -1.04,
+        -0.185,
+        1.04,
+        0.185
+      ],
+      "width_m": 2.08,
+      "depth_m": 0.37,
+      "min_y_m": 0.005,
+      "max_y_m": 1.8733,
+      "mount_hint": "opening",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_attachment_anchor"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_camp_woodpile_lean_to",
+      "label": "Sheltered three-layer split log pile",
+      "maps": [
+        "FARMHOUSE",
+        "WLD-01",
+        "WLD-02"
+      ],
+      "source_parts": 18,
+      "tapered_parts": 0,
+      "source_materials": [
+        "stone",
+        "wood"
+      ],
+      "triangles": 456,
+      "glb_sha256": "e50ba8a14df693bb10e8faf104e3ed2b2bc727e737645e0dc3be8419db9cb2d4",
+      "model_bounds_xz": [
+        -1.14,
+        -0.77,
+        1.14,
+        0.77
+      ],
+      "width_m": 2.28,
+      "depth_m": 1.54,
+      "min_y_m": -0.005,
+      "max_y_m": 2.3133,
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_camp_manual_water_pump",
+      "label": "Camp iron hand pump and spout",
+      "maps": [
+        "WLD-01",
+        "WLD-02",
+        "WLD-05"
+      ],
+      "source_parts": 6,
+      "tapered_parts": 0,
+      "source_materials": [
+        "industrial",
+        "metal",
+        "stone",
+        "wood"
+      ],
+      "triangles": 148,
+      "glb_sha256": "adca071a700f6489f792ed3ee910814ae9feaa422cc67fdee22fa2796560f57b",
+      "model_bounds_xz": [
+        -0.36,
+        -0.64,
+        0.6561,
+        0.355
+      ],
+      "width_m": 1.0161,
+      "depth_m": 0.995,
+      "min_y_m": 0.005,
+      "max_y_m": 1.6525,
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_cave_ledge_rope_guard",
+      "label": "Cave ledge path post and rope kit",
+      "maps": [
+        "WLD-03",
+        "WLD-05",
+        "WLD-18"
+      ],
+      "source_parts": 8,
+      "tapered_parts": 0,
+      "source_materials": [
+        "canvas",
+        "stone",
+        "wood"
+      ],
+      "triangles": 96,
+      "glb_sha256": "533b4b18c4f7e7fb51d2881fa7163a0c475cc12396c2809b5795d8424b5d709e",
+      "model_bounds_xz": [
+        -1.7,
+        -0.21,
+        1.7,
+        0.21
+      ],
+      "width_m": 3.4,
+      "depth_m": 0.42,
+      "min_y_m": 0.0,
+      "max_y_m": 1.28,
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_mount_constraint"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_cave_plank_rope_bridge",
+      "label": "Gapped cave rope bridge module",
+      "maps": [
+        "WLD-03",
+        "WLD-05"
+      ],
+      "source_parts": 21,
+      "tapered_parts": 0,
+      "source_materials": [
+        "canvas",
+        "metal",
+        "wood"
+      ],
+      "triangles": 252,
+      "glb_sha256": "44ec6719a64526639aa984b27b55f386f530a37e9be1718c059239d4c53b6246",
+      "model_bounds_xz": [
+        -0.675,
+        -1.765,
+        0.675,
+        1.765
+      ],
+      "width_m": 1.35,
+      "depth_m": 3.53,
+      "min_y_m": 0.03,
+      "max_y_m": 1.17,
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_mount_constraint"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_cave_survey_cairns",
+      "label": "Three faceted survey cairns",
+      "maps": [
+        "WLD-03",
+        "WLD-05"
+      ],
+      "source_parts": 10,
+      "tapered_parts": 6,
+      "source_materials": [
+        "dark",
+        "stone"
+      ],
+      "triangles": 192,
+      "glb_sha256": "697c10f8b04a1779d55d79bacbdc7e39dbe896c35db50a59063cf972cdec4fa5",
+      "model_bounds_xz": [
+        -1.27,
+        -0.26,
+        1.27,
+        0.505
+      ],
+      "width_m": 2.54,
+      "depth_m": 0.765,
+      "min_y_m": 0.0,
+      "max_y_m": 0.85,
+      "mount_hint": "terrain",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_mount_constraint"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_cave_layered_sandstone",
+      "label": "Three sediment layers and edge rock fragments",
+      "maps": [
+        "WLD-03",
+        "WLD-05"
+      ],
+      "source_parts": 6,
+      "tapered_parts": 2,
+      "source_materials": [
+        "patina",
+        "stone"
+      ],
+      "triangles": 104,
+      "glb_sha256": "9d91b8a21c8ce84ca1f967f9151b45fedb36531db388f657610c05cee6fbfd0f",
+      "model_bounds_xz": [
+        -1.35,
+        -0.395,
+        1.35,
+        0.62
+      ],
+      "width_m": 2.7,
+      "depth_m": 1.015,
+      "min_y_m": 0.0,
+      "max_y_m": 2.185,
+      "mount_hint": "terrain",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_mount_constraint"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_cave_excavation_trestle",
+      "label": "Underground sample sorting table",
+      "maps": [
+        "WLD-03",
+        "WLD-05",
+        "WLD-08"
+      ],
+      "source_parts": 9,
+      "tapered_parts": 2,
+      "source_materials": [
+        "canvas",
+        "stone",
+        "wood"
+      ],
+      "triangles": 148,
+      "glb_sha256": "d64b4afd5fa37b33904d926c906711116f6fe7f8e93daac82332500c210f0f8d",
+      "model_bounds_xz": [
+        -0.95,
+        -0.47,
+        0.95,
+        0.47
+      ],
+      "width_m": 1.9,
+      "depth_m": 0.94,
+      "min_y_m": 0.01,
+      "max_y_m": 1.12,
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_rail_station_canopy",
+      "label": "Covered railway loading platform canopy",
+      "maps": [
+        "WLD-12"
+      ],
+      "source_parts": 9,
+      "tapered_parts": 0,
+      "source_materials": [
+        "metal",
+        "stone",
+        "wood"
+      ],
+      "triangles": 108,
+      "glb_sha256": "dadaa28752f9f9472fe841e2ea9d07d98584006e8cebc748cc6d9086947a3be6",
+      "model_bounds_xz": [
+        -1.315,
+        -0.805,
+        1.315,
+        0.805
+      ],
+      "width_m": 2.63,
+      "depth_m": 1.61,
+      "min_y_m": 0.0,
+      "max_y_m": 3.031,
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_mount_constraint"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_rail_semaphore_pole",
+      "label": "Analog rail semaphore on post",
+      "maps": [
+        "WLD-12"
+      ],
+      "source_parts": 5,
+      "tapered_parts": 0,
+      "source_materials": [
+        "metal",
+        "redcloth",
+        "stone"
+      ],
+      "triangles": 88,
+      "glb_sha256": "3fb92ff71cdf0555f305bbb068d3b6ee8abe54179d8a9aa6da74f93fe684d238",
+      "model_bounds_xz": [
+        -0.455,
+        -0.36,
+        0.8723,
+        0.36
+      ],
+      "width_m": 1.3273,
+      "depth_m": 0.72,
+      "min_y_m": 0.0,
+      "max_y_m": 3.32,
+      "mount_hint": "terrain",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_mount_constraint"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_rail_station_clock",
+      "label": "Wall rail clock with two hands",
+      "maps": [
+        "COLLEGE",
+        "WLD-12"
+      ],
+      "source_parts": 6,
+      "tapered_parts": 0,
+      "source_materials": [
+        "bronze",
+        "dark",
+        "ivory",
+        "wood"
+      ],
+      "triangles": 176,
+      "glb_sha256": "4871afa70f2c585229898ae9491b7afc1aff6ee993c8243b9858e386313a7e2e",
+      "model_bounds_xz": [
+        -0.49,
+        -0.183,
+        0.49,
+        0.19
+      ],
+      "width_m": 0.98,
+      "depth_m": 0.373,
+      "min_y_m": 0.115,
+      "max_y_m": 1.91,
+      "mount_hint": "wall",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_attachment_anchor"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_rail_luggage_cart",
+      "label": "Wheeled rail-platform baggage cart",
+      "maps": [
+        "WLD-12",
+        "WLD-15"
+      ],
+      "source_parts": 10,
+      "tapered_parts": 0,
+      "source_materials": [
+        "leather",
+        "metal",
+        "wood"
+      ],
+      "triangles": 232,
+      "glb_sha256": "3b9182d1ba905e06d892f2b28816afa7427c4e31ec15dc12dc7cee0210ad36ba",
+      "model_bounds_xz": [
+        -0.53,
+        -0.8,
+        0.53,
+        0.8
+      ],
+      "width_m": 1.06,
+      "depth_m": 1.6,
+      "min_y_m": 0.01,
+      "max_y_m": 1.46,
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_rail_tunnel_mouth",
+      "label": "Open railway tunnel masonry portal",
+      "maps": [
+        "WLD-05",
+        "WLD-12"
+      ],
+      "source_parts": 7,
+      "tapered_parts": 0,
+      "source_materials": [
+        "stone"
+      ],
+      "triangles": 84,
+      "glb_sha256": "d875b0deb05209fa54d28a9e8b40866ed80e400cc56b32e20ab2940a9142300d",
+      "model_bounds_xz": [
+        -1.705,
+        -0.325,
+        1.705,
+        0.405
+      ],
+      "width_m": 3.41,
+      "depth_m": 0.73,
+      "min_y_m": 0.0,
+      "max_y_m": 3.115,
+      "mount_hint": "opening",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_attachment_anchor"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_lighthouse_tower_wall_course",
+      "label": "Hollow curved lighthouse wall brick course",
+      "maps": [
+        "WLD-14"
+      ],
+      "source_parts": 18,
+      "tapered_parts": 0,
+      "source_materials": [
+        "metal",
+        "stone"
+      ],
+      "triangles": 216,
+      "glb_sha256": "1fe6a055cd79ce62d561cd636248c2eddac43edf0af673fa68485b1e38ead78f",
+      "model_bounds_xz": [
+        -1.4438,
+        -1.4438,
+        1.4438,
+        1.4438
+      ],
+      "width_m": 2.8877,
+      "depth_m": 2.8877,
+      "min_y_m": 0.02,
+      "max_y_m": 1.285,
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_mount_constraint"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_lighthouse_spiral_tread_module",
+      "label": "Single radial spiral stair tread",
+      "maps": [
+        "WLD-14"
+      ],
+      "source_parts": 5,
+      "tapered_parts": 0,
+      "source_materials": [
+        "metal",
+        "stone"
+      ],
+      "triangles": 88,
+      "glb_sha256": "7d8b2fc94d5b05724193dd4f808a386a0fe9c167e1e87ca8f600644040087dc0",
+      "model_bounds_xz": [
+        0.03,
+        -0.295,
+        1.4,
+        0.295
+      ],
+      "width_m": 1.37,
+      "depth_m": 0.59,
+      "min_y_m": 0.015,
+      "max_y_m": 1.145,
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_mount_constraint"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_lighthouse_keeper_porch",
+      "label": "Keeper-house porch with pitched awning",
+      "maps": [
+        "WLD-14"
+      ],
+      "source_parts": 9,
+      "tapered_parts": 0,
+      "source_materials": [
+        "metal",
+        "wood"
+      ],
+      "triangles": 108,
+      "glb_sha256": "2b43887f2b7a1157e47f295a21d1359c9b0ff9706c7f7f2bdb222cfc3ca44f3e",
+      "model_bounds_xz": [
+        -1.3635,
+        -1.38,
+        1.3635,
+        0.81
+      ],
+      "width_m": 2.727,
+      "depth_m": 2.19,
+      "min_y_m": 0.04,
+      "max_y_m": 2.7795,
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_mount_constraint"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_lighthouse_lens_pedestal",
+      "label": "Optic mounting dais, not duplicating lens",
+      "maps": [
+        "WLD-14"
+      ],
+      "source_parts": 8,
+      "tapered_parts": 1,
+      "source_materials": [
+        "bronze",
+        "industrial",
+        "metal",
+        "stone"
+      ],
+      "triangles": 168,
+      "glb_sha256": "6239064c094237d1bb30ff318a999e8200088d2e41fe4c75445d5cb89513e8ff",
+      "model_bounds_xz": [
+        -0.56,
+        -0.56,
+        0.56,
+        0.56
+      ],
+      "width_m": 1.12,
+      "depth_m": 1.12,
+      "min_y_m": 0.0,
+      "max_y_m": 1.49,
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_lighthouse_cliff_drain",
+      "label": "Clifftop drainage trough and grating",
+      "maps": [
+        "WLD-14",
+        "WLD-17"
+      ],
+      "source_parts": 14,
+      "tapered_parts": 0,
+      "source_materials": [
+        "dark",
+        "metal",
+        "stone"
+      ],
+      "triangles": 168,
+      "glb_sha256": "9b7f1d654fb54cb1efbe3cdf150a599976f2ca585cb4986714611ab14a2c0352",
+      "model_bounds_xz": [
+        -1.33,
+        -0.345,
+        1.33,
+        0.345
+      ],
+      "width_m": 2.66,
+      "depth_m": 0.69,
+      "min_y_m": 0.0,
+      "max_y_m": 0.305,
+      "mount_hint": "terrain",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_mount_constraint"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_mortuary_wash_sink_station",
+      "label": "Mortuary rinse sink and exposed feed pipe",
+      "maps": [
+        "ASYLUM",
+        "WLD-07-MORTUARY"
+      ],
+      "source_parts": 9,
+      "tapered_parts": 0,
+      "source_materials": [
+        "bronze",
+        "dark",
+        "metal",
+        "silver"
+      ],
+      "triangles": 220,
+      "glb_sha256": "f2a79393ea336f57b4f95f9fd3da13aee183be0df1f21dcde9b8217b99ef62df",
+      "model_bounds_xz": [
+        -0.735,
+        -0.43,
+        0.735,
+        0.43
+      ],
+      "width_m": 1.47,
+      "depth_m": 0.86,
+      "min_y_m": 0.005,
+      "max_y_m": 1.42,
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_mortuary_visitors_registry_desk",
+      "label": "Funeral guest register and small bell desk",
+      "maps": [
+        "CASTLE",
+        "WLD-07-MORTUARY"
+      ],
+      "source_parts": 8,
+      "tapered_parts": 0,
+      "source_materials": [
+        "bronze",
+        "canvas",
+        "industrial",
+        "wood"
+      ],
+      "triangles": 96,
+      "glb_sha256": "081a2cafa6821bff9e7b8deed2b04bc31dbb6dd6fa937e893f1b504d47dab73f",
+      "model_bounds_xz": [
+        -0.77,
+        -0.35,
+        0.77,
+        0.35
+      ],
+      "width_m": 1.54,
+      "depth_m": 0.7,
+      "min_y_m": 0.01,
+      "max_y_m": 1.12,
+      "mount_hint": "floor",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_castle_crypt_column",
+      "label": "Stepped memorial crypt column",
+      "maps": [
+        "CASTLE",
+        "CHURCH",
+        "WLD-07",
+        "WLD-10"
+      ],
+      "source_parts": 5,
+      "tapered_parts": 2,
+      "source_materials": [
+        "stone"
+      ],
+      "triangles": 144,
+      "glb_sha256": "231f88c96f2ade154e53ff72eb7c783a3db11bc578b50fbe33d43db03bc913a6",
+      "model_bounds_xz": [
+        -0.43,
+        -0.42,
+        0.43,
+        0.42
+      ],
+      "width_m": 0.86,
+      "depth_m": 0.84,
+      "min_y_m": 0.0,
+      "max_y_m": 2.535,
+      "mount_hint": "structure",
+      "mount_confidence": "provisional_unreviewed",
+      "source_pivot_reviewed": false,
+      "renderer_orientation_reviewed": false,
+      "diagnostics": [
+        "review_mount_constraint"
+      ],
+      "source_glb_verified": true,
+      "native_renderer_accepted": false,
+      "collision_and_navmesh_accepted": false,
+      "runtime_editor_registered": false,
+      "production_approved": false
+    },
+    {
+      "id": "level_blockout_castle_sarcophagus_stand",
+      "label": "Standalone sarcophagus support plinth",
+      "maps": [
+        "CASTLE",
+        "CHURCH",
+        "WLD-07"
+      ],
+      "source_parts": 6,
+      "tapered_parts": 0,
+      "source_materials": [
+        "stone"
+      ],
+      "triangles": 72,
+      "glb_sha256": "92aebc9a839ff140674ab565725d8ad1b4bef79b7af25ca413b74e06c0bb2b74",
+      "model_bounds_xz": [
+        -0.695,
+        -1.26,
+        0.695,
+        1.26
+      ],
+      "width_m": 1.39,
+      "depth_m": 2.52,
+      "min_y_m": 0.0,
+      "max_y_m": 0.725,
       "mount_hint": "floor",
       "mount_confidence": "provisional_unreviewed",
       "source_pivot_reviewed": false,
