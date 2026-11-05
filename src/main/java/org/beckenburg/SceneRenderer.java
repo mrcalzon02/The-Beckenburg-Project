@@ -2329,6 +2329,32 @@ public final class SceneRenderer {
     /** Same scene and dimensions only: retain the last complete GPU image while
      * the next async readback is pending, never reveal an empty sky frame. */
     private GpuWorldRenderer.Result lastUsableGpuFrame;
+    /** The GL readback can be one or more frames behind Swing camera input.
+     * Composite character sprites against THAT readback's camera and resident
+     * poses, never the new camera against a stale color/depth buffer. */
+    record GpuCompositeFrame(double x,double eyeHeight,double z,double yaw,double pitch,
+            java.util.Map<CastleRelations.Resident,CastleResidentAnimation.Body> residents){}
+    private final java.util.LinkedHashMap<Long,GpuCompositeFrame> gpuCompositeFrames=
+        new java.util.LinkedHashMap<>(){
+            @Override protected boolean removeEldestEntry(java.util.Map.Entry<Long,GpuCompositeFrame> entry){
+                return size()>12;
+            }
+        };
+    private GpuCompositeFrame presentedGpuFrame;
+    static GpuCompositeFrame gpuCompositeForReadback(
+            java.util.Map<Long,GpuCompositeFrame> frames,GpuWorldRenderer.Result readback,
+            long sceneId,int width,int height){
+        return GpuWorldRenderer.belongsTo(readback,sceneId,width,height)
+            ?frames.get(readback.frameId()):null;
+    }
+    private Point presentedCamera(Point p,GpuCompositeFrame view){
+        if(view==null)return camera(p);
+        double dx=p.x-view.x(),dy=p.y-view.eyeHeight(),dz=p.z-view.z();
+        double cy=Math.cos(view.yaw()),sy=Math.sin(view.yaw());
+        double cp=Math.cos(view.pitch()),sp=Math.sin(view.pitch());
+        double forward=dx*sy+dz*cy;
+        return new Point(-dx*cy+dz*sy,dy*cp-forward*sp,dy*sp+forward*cp);
+    }
     public void pinCompletedGpuFrame(GpuWorldRenderer.Result result){if(!GpuWorldRenderer.belongsTo(result,gpuSceneId,renderWidth,renderHeight))throw new IllegalArgumentException("GPU result belongs to a different preview scene");pinnedGpuFrame=result;}
     /** GPU acceptance must verify the NEW scene was rendered, not merely a
      * previous resident framebuffer with coincidentally identical dimensions. */
@@ -2390,6 +2416,13 @@ public final class SceneRenderer {
         if(activeWater!=null&&!activeWater.bodies().isEmpty())waterViews.put(submitted,waterView(waterClock));
         consumedWaterView=null;
         lastSubmittedGpuFrame=submitted;
+        var crew=new java.util.EnumMap<CastleRelations.Resident,CastleResidentAnimation.Body>(
+            CastleRelations.Resident.class);
+        if(waterCastle!=null&&castleCharactersVisible&&eyeHeight<2.0)
+            for(var resident:CastleRelations.Resident.values())
+                crew.put(resident,waterCastle.residents().body(resident));
+        gpuCompositeFrames.put(submitted,new GpuCompositeFrame(x,eyeHeight,z,yaw,pitch,
+            java.util.Map.copyOf(crew)));
         backend.submit(new GpuWorldRenderer.Frame(gpuSceneId,submitted,
             renderWidth,renderHeight,(float)focal,
             (float)psxPreset.snap,(float)psxPreset.affine,surfaces,
@@ -2404,6 +2437,8 @@ public final class SceneRenderer {
             available=lastUsableGpuFrame;
         lastGpuReadbackAvailable=GpuWorldRenderer.belongsTo(available,gpuSceneId,renderWidth,renderHeight);
         lastGpuReadbackFresh=lastGpuReadbackAvailable&&available.frameId()==submitted;
+        presentedGpuFrame=gpuCompositeForReadback(gpuCompositeFrames,available,
+            gpuSceneId,renderWidth,renderHeight);
         if(lastGpuReadbackAvailable){
             consumedWaterView=waterViews.get(available.frameId());
             int[] image=available.argb();
@@ -3031,7 +3066,7 @@ public final class SceneRenderer {
         for(var chunk:castleAssemblies.values())releaseWorldChunk(chunk);
         residentSceneOwner=owner;residentSceneRevision=revision;
         gpuSceneId=GpuWorldRenderer.nextId();pinnedGpuFrame=null;
-        lastUsableGpuFrame=null;
+        lastUsableGpuFrame=null;presentedGpuFrame=null;gpuCompositeFrames.clear();
     }
     private void releaseWorldChunk(ResidentWorldChunk chunk){
         for(var batch:chunk.batches.values())residentWorldBytes-=(long)batch.vertices().length*Float.BYTES;
@@ -3263,6 +3298,7 @@ public final class SceneRenderer {
             castleAssemblies.clear();castleTopologyBuilds++;
             // A new topology generation owns fresh handles and rejects old readbacks.
             gpuSceneId=GpuWorldRenderer.nextId();pinnedGpuFrame=null;
+            presentedGpuFrame=null;gpuCompositeFrames.clear();
         }
         castleActiveAssemblies.clear();
         for(var slot:CastleDoorSlots.all()){
@@ -3291,6 +3327,10 @@ public final class SceneRenderer {
             castle.addAll(dynamic);
         }else castle=dynamic;
         if(exportFullLevel)castleExportGeometry=List.copyOf(castle);
+        // A frame ID must snapshot the same NPC pose as its Castle camera.
+        // The actual timer controls update; rasterization never advances time.
+        if(eyeHeight<2.0&&castleCharactersVisible)
+            map.residents().update(map,clock,x,z);
         long geometryReady=System.nanoTime();
         boolean gpuFrame=drawGpuFaces(castle,null);
         if(!gpuFrame)for(Face face:castle){
@@ -3299,19 +3339,36 @@ public final class SceneRenderer {
             drawLitFace(face,room,0);
         }
         sceneWater(null,gpuFrame,clock);long geometryRendered=System.nanoTime();
-        // Four real approved source-art directions, composited after castle
-        // geometry with its actual depth buffer (never through walls).
-        double playerFloor=CastleHubArchitecturalPlan.elevation(x,z,eyeHeight-1.62);
-        if(eyeHeight-playerFloor>=.9&&eyeHeight-playerFloor<=1.8)
-            EntityFootShadow.draw(pixels,depths,x,z,yaw,pitch,x,z,playerFloor-(eyeHeight-1.62),
-                .38,145,renderWidth,renderHeight,focal);
-        if(eyeHeight<2.0&&castleCharactersVisible){
-            map.residents().update(map,clock,x,z);
-            for(var resident:CastleRelations.Resident.values()){
-                var body=map.residents().body(resident);
-                DirectionalSprites.drawResident(pixels,depths,x,z,yaw,pitch,resident,body,
-                    GroundedSpriteFeet.relativeElevation(0,eyeHeight),
-                    lightsOn&&map.lightOn(body.x(),1.0,body.z()),renderWidth,renderHeight,focal);
+        // GPU output is asynchronous. A current-camera NPC over a previous
+        // camera's walls/depth makes the character skid during a quick look
+        // left/right. Use the exact readback frame's camera AND NPC snapshot.
+        // If no matching snapshot survives, do not render a false-position
+        // character over stale geometry. Software mode uses the live camera.
+        GpuCompositeFrame shown=gpuFrame?presentedGpuFrame:null;
+        double viewX=shown==null?x:shown.x();
+        double viewEye=shown==null?eyeHeight:shown.eyeHeight();
+        double viewZ=shown==null?z:shown.z();
+        double viewYaw=shown==null?yaw:shown.yaw();
+        double viewPitch=shown==null?pitch:shown.pitch();
+        boolean compatible=!gpuFrame||shown!=null;
+        if(compatible){
+            double playerFloor=CastleHubArchitecturalPlan.elevation(
+                viewX,viewZ,viewEye-1.62);
+            if(viewEye-playerFloor>=.9&&viewEye-playerFloor<=1.8)
+                EntityFootShadow.draw(pixels,depths,viewX,viewZ,viewYaw,viewPitch,
+                    viewX,viewZ,playerFloor-(viewEye-1.62),
+                    .38,145,renderWidth,renderHeight,focal);
+            if(viewEye<2.0&&castleCharactersVisible){
+                for(var resident:CastleRelations.Resident.values()){
+                    var body=shown==null?map.residents().body(resident)
+                        :shown.residents().get(resident);
+                    if(body==null)continue;
+                    DirectionalSprites.drawResident(pixels,depths,
+                        viewX,viewZ,viewYaw,viewPitch,resident,body,
+                        GroundedSpriteFeet.relativeElevation(0,viewEye),
+                        lightsOn&&map.lightOn(body.x(),1.0,body.z()),
+                        renderWidth,renderHeight,focal);
+                }
             }
         }
 
@@ -3337,13 +3394,17 @@ public final class SceneRenderer {
      */
     public Nameplate castleResidentNameplate(CastleRelations.Resident resident){
         if(resident==null||eyeHeight>2.0)return null;
-        var body=waterCastle==null?new CastleResidentAnimation.Body(resident.x,resident.z,0,HunterSpriteAnimation.Pose.IDLE)
+        var shown=lastGpuReadbackAvailable?presentedGpuFrame:null;
+        var body=shown!=null?shown.residents().get(resident)
+            :waterCastle==null?new CastleResidentAnimation.Body(resident.x,resident.z,0,HunterSpriteAnimation.Pose.IDLE)
             :waterCastle.residents().body(resident);
+        if(body==null)return null;
         double height=body.pose()==HunterSpriteAnimation.Pose.CROUCH?HunterPosture.CROUCH_HEIGHT/HunterPosture.STANDING_HEIGHT:1;
-        double distance=Math.hypot(body.x()-x,body.z()-z);
+        double viewX=shown==null?x:shown.x(),viewZ=shown==null?z:shown.z();
+        double distance=Math.hypot(body.x()-viewX,body.z()-viewZ);
         if(distance<.55||distance>3.2)return null;
-        Point torso=camera(new Point(body.x(),1.25*height,body.z()));
-        Point head=camera(new Point(body.x(),2.02*height,body.z()));
+        Point torso=presentedCamera(new Point(body.x(),1.25*height,body.z()),shown);
+        Point head=presentedCamera(new Point(body.x(),2.02*height,body.z()),shown);
         if(torso.z<NEAR||head.z<NEAR)return null;
         int px=(int)Math.round(renderWidth*.5+torso.x/torso.z*focal);
         int py=(int)Math.round(renderHeight*.5-torso.y/torso.z*focal);
