@@ -10,6 +10,20 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-272 — Castle lower wall caps z-fight upstairs floors
+
+**Status:** Renderer patch fa6cad4a is on main; exact-source geometry diagnostic and real upper-hall screenshot pending; installed GPU visual acceptance pending · **Affected:** Beckenburg Castle upper-west corridor, lodging and second-storey slabs above ground partitions
+
+Stone/gray strip appears across timber flooring in upper rooms; user's screenshot shows apparent walls emerging through floors.
+
+Cause / uncertainty: SceneRenderer.architecturalWall previously emitted upward-facing cap triangles at the same y=3.4 as the upper-floor surfaces drawn by castleSlabs, causing coplanar depth conflict.
+
+Fix / next action: Keep actual wall side faces, structure and collision; subtract only same-height floor coverage from cap triangles. Test full/partial/uncovered cases, inspect actual upper-hall capture and confirm installed build.
+
+Evidence and verification: User screenshot 2026-11-04, source commit fa6cad4a374aad2158e2ff4f72f91964ad799039; focused Castle run and 3D screenshot acceptance pending at checkpoint.
+
+Older-map obligation: Audit every Castle upper join, stairs/voids and older authored multi-storey map separately for hidden wall caps and co-planar slabs.
+
 ### DEV-271 — Castle wall lights use uncorrected editor yaw and independent on/off source pivots
 
 **Status:** source repair 0329d79 pushed and remotely read back; focused CI and installed camera-angle verification pending · **Affected:** Castle masonry wall-sconce renderer and editor-authored wall-light transforms; review other location light socket mounts separately

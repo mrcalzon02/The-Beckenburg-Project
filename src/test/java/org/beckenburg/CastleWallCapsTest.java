@@ -4,7 +4,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-/** DEV-271: real wall mesh top must never z-fight an upper-floor slab. */
+/** DEV-272: real wall mesh top must never z-fight an upper-floor slab. */
 public final class CastleWallCapsTest {
     private static void check(boolean pass,String reason){if(!pass)throw new AssertionError(reason);}
     private static double area(List<CastleWallCaps.Patch> p){return p.stream().mapToDouble(CastleWallCaps.Patch::area).sum();}
@@ -57,6 +57,21 @@ public final class CastleWallCapsTest {
         check(CastleLevelEdits.current().wallBlocks(8.5,1.5,22,.10),
             "Ground-floor partition collision was weakened");
         check(map.traversable(9,20,3.4),"Upper corridor floor no longer walkable");
-        System.out.println("PASS DEV-271: wall cap union, partially exposed edges, real triangles and unchanged castle collision");
+        if(args.length>0){
+            var dir=java.nio.file.Path.of(args[0]);
+            java.nio.file.Files.createDirectories(dir);
+            var renderer=new SceneRenderer();renderer.setRenderSize(1152,720);
+            renderer.lamp=false;renderer.x=9;renderer.z=19;renderer.eyeHeight=5.02;
+            renderer.yaw=0;renderer.pitch=-.25;
+            var project=new CastleEditorProject(CastleLevelEdits.current());
+            var service=new org.beckenburg.editor.EditorAgentService<>(
+                new CastleEditorAgent(project,map,renderer,()->{}),
+                new org.beckenburg.editor.EditorHistory<>(project,60));
+            var shot=service.capture(CastleLevelEdits.current().revision(),
+                dir.resolve("castle-upper-hall-wall-cap-repair.png"));
+            check(shot.result().renderer().equals("SceneRenderer.drawCastle"),
+                "Wall cap proof must use the real Castle renderer");
+        }
+        System.out.println("PASS DEV-272: wall cap union, partially exposed edges, real triangles and unchanged castle collision");
     }
 }
