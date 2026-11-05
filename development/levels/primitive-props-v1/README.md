@@ -1,13 +1,13 @@
 # Map-specific primitive prop blockouts (v1)
 
-The authoritative planning backlog is [catalog.json](catalog.json), which maps **178 individual study models across 28 planned maps plus the Vale Mortuary expansion**. It augments the existing `development/levels/model-requirements/*.json` files rather than replacing their full room-by-room checklists.
+The authoritative planning backlog is [catalog.json](catalog.json), which maps **221 individual study models across 28 planned maps plus the Vale Mortuary expansion**. It augments the existing `development/levels/model-requirements/*.json` files rather than replacing their full room-by-room checklists.
 
 ## What this package is
 
 - Measured, ground-origin, Y-up glTF 2.0 geometry in metres: basic boxes, faceted cylinders, and an enclosed tent prism. The model material colors are placeholder glTF factors, now complemented by **individually embedded deterministic 32×32 procedural RGB albedo studies** with nondegenerate planar UV0. These do not replace final hand-authored textures.
 - Each `level_blockout_*.glb` is an individually selectable study asset. No duplicate of any existing finished `level_*` model is overwritten.
 - The catalogue's `sites[].prototypes` field is an **assignment proposal**, not an automatic scene placement. No map availability, collision, navmesh, lighting, acoustics, interactivity or network state has been modified.
-- The collection contains **178 distinct GLB models** (116 expanded-map additions, three countable sarcophagi, and 18 additional relic/display definitions). It covers structural opening/rails, Castle service and training fixtures, academic/hospital/chapel and domestic interiors, forests/campgrounds/caverns, generator/electrical studies, maritime/industrial scenes, lightstation/lodge/bunker/shaft structures and mortuary fixtures. Each study remains independent and replaceable.
+- The collection contains **221 distinct GLB models** (116 expanded-map additions, three countable sarcophagi, and 18 additional relic/display definitions). It covers structural opening/rails, Castle service and training fixtures, academic/hospital/chapel and domestic interiors, forests/campgrounds/caverns, generator/electrical studies, maritime/industrial scenes, lightstation/lodge/bunker/shaft structures and mortuary fixtures. Each study remains independent and replaceable.
 - Existing source LOD/original model assets remain unchanged. Completed prop models require geometry refinement, proper UV/materials, origin/orientation review, scene placement, and actual editor/renderer acceptance.
 
 ## Rebuild / inspect
@@ -310,3 +310,9 @@ This pass grows the catalogue to **178 individually authored source-only GLB mod
 Geometry repairs include an **open-centre shaft ring** (the old cap incorrectly closed the shaft), **proper vertical-plane mine fan blade roll**, a **3+2+1 physically staggered log stack**, an actually clear doorframe and stone rather than wood elements on a plain sarcophagus. All three counted sarcophagus variants received additional small sculptural details, without altering their **eight proposals / zero playable installations** status.
 
 The builder accepts optional `roll` on box parts: local XY rotation precedes the existing Y-axis yaw; measured placement footprint bounds also account for roll. This does not add gameplay hinges, lit candles, active foghorns, open shafts in production geometry, door portals, navmesh/collision, pickups or burial records. The new `geometry_regression.py` independently checks critical shapes and committed GLB identities before any future promotion.
+
+## Refinement pass three — 43 source-only models, 221 total
+
+Expanded all 29 planning kits with independent object IDs and geometry for reusable architecture and site-appropriate furnishings. The individual models include open window casements, genuinely open stone/mine arches, pitched timber trusses/roofs, modular landings, supported piping, medieval wall sconces, tapestries' companion paintings/rugs/statues/seating, Castle warehouse portable-field supply crates, complete domestic stove/fireplace/chimney/bookcase/porch pieces, school and asylum furniture, prison furnishings, forestry and mine machinery, real outdoor/cemetery/harbor pieces, and landmark-specific ship, lighthouse, bunker, hydroelectric and research station fixtures.
+
+All newly defined models contain `authoring_hints` for expected mount, facing, units, collision review, and final editor approval. They are **NOT automatically inserted into playable levels**; no gameplay inventory, lighting, navigation, collision, visual acceptance, or mechanics is claimed. The eight Castle crypt sarcophagi are still only proposed, not installed. Source-only gallery generation and byte-wise GLB validation are performed by `primitive-map-props.yml` and `geometry_regression.py` after each commit.

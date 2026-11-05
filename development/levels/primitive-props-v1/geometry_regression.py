@@ -11,7 +11,7 @@ import fit
 ROOT=Path(__file__).resolve().parent
 catalog=json.loads((ROOT/"catalog.json").read_text(encoding="utf-8"))
 models={m["id"]:m for m in catalog["models"]}
-assert len(models)==len(catalog["models"])==178
+assert len(models)==len(catalog["models"])==221
 assert len(catalog["sites"])==29
 assert all(m["runtime_approved"] is False for m in models.values())
 
@@ -70,3 +70,26 @@ for name in new_suffixes:
 assert len(new_suffixes)==18
 print("PASS: 18 new native-decodable GLBs, shaft opening, rolled fan blades, "
       "staggered logging rack, clear doorframe, sarcophagus geometry and all source-only gates")
+
+# Refinement pass three: authored, decodable source assets with map assignments.
+new_studies=("structural_window_frame","stair_landing_module","stone_arch_open","timber_roof_truss","pipe_riser_support","wall_lantern_sconce","castle_framed_painting","castle_woven_rug","castle_statue_plinth","castle_long_bench","castle_warehouse_field_kit_crates","castle_iron_candelabrum","domestic_pitched_roof_module","domestic_chimney_stack","domestic_stone_fireplace","domestic_porch_stair","domestic_kitchen_range","domestic_wall_bookcase","school_chalkboard","school_locker_bank","science_instrument_table","hospital_curtain_track","institution_linen_cabinet","prison_guard_station","logging_winch_sled","camp_tarp_shelter","cavern_stalagmite_cluster","mine_braced_portal","cemetery_headstone_row","cemetery_iron_lantern","marsh_flatboat","wharf_crab_pot","cannery_overhead_chute","ship_galley_range","ship_chart_cabinet","lighthouse_access_ladder","motel_guest_bed","bunker_observation_scope","cinder_cable_rack","research_battery_bank","rail_trackside_toolbox","dam_pressure_gauge_panel","monastery_stained_window",)
+assert len(new_studies)==43
+for suffix in new_studies:
+    model=item(suffix)
+    assert model["authoring_hints"]["runtime_placement"] is False
+    assert model["runtime_approved"] is False
+    bounds,lo,hi=fit.footprint(model,0,0,0)
+    assert lo>=-.04 and hi<=4.2, (suffix,lo,hi)
+    assert bounds[2]-bounds[0]<6 and bounds[3]-bounds[1]<6, suffix
+    raw,tri=glb(model)
+    doc,stored=read_glb(ROOT/"models"/(model["id"]+".glb"))
+    assert stored==raw and 0<tri<=3500
+    assert doc["extras"]["runtimeApproved"] is False
+for suffix in ("structural_window_frame","stone_arch_open","mine_braced_portal"):
+    model=item(suffix)
+    assert not any(p["type"]=="box" and p["size"][0]>.8 and p["size"][1]>1.2 and abs(p["p"][0])<.35 and p["p"][1]<1.7 for p in model["parts"])
+for suffix in ("domestic_pitched_roof_module","timber_roof_truss","camp_tarp_shelter"):
+    assert sum(1 for p in item(suffix)["parts"] if p.get("roll",0))>=2
+assert sum(1 for p in item("lighthouse_access_ladder")["parts"] if p["type"]=="box")>=16
+assert all(len(s["prototypes"])==len(set(s["prototypes"])) for s in catalog["sites"])
+print("PASS: 43 new model studies decoded; open arches, roof slopes, per-map coverage")

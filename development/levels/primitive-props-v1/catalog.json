@@ -42,7 +42,13 @@
         "level_blockout_greenhouse_potting_bench",
         "level_blockout_monastery_scriptorium",
         "level_blockout_relic_repair_stand",
-        "level_blockout_library_book_return_cart"
+        "level_blockout_library_book_return_cart",
+        "level_blockout_structural_window_frame",
+        "level_blockout_stair_landing_module",
+        "level_blockout_domestic_wall_bookcase",
+        "level_blockout_school_chalkboard",
+        "level_blockout_school_locker_bank",
+        "level_blockout_science_instrument_table"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -68,7 +74,11 @@
         "level_blockout_prison_isolation_fixture",
         "level_blockout_mortuary_prep_table",
         "level_blockout_mortuary_cold_storage",
-        "level_blockout_medical_resuscitation_cart"
+        "level_blockout_medical_resuscitation_cart",
+        "level_blockout_stair_landing_module",
+        "level_blockout_pipe_riser_support",
+        "level_blockout_hospital_curtain_track",
+        "level_blockout_institution_linen_cabinet"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -121,7 +131,20 @@
         "level_blockout_relic_repair_stand",
         "level_blockout_relic_open_guard",
         "level_blockout_castle_wall_tapestry",
-        "level_blockout_ossuary_display_rack"
+        "level_blockout_ossuary_display_rack",
+        "level_blockout_stair_landing_module",
+        "level_blockout_stone_arch_open",
+        "level_blockout_timber_roof_truss",
+        "level_blockout_wall_lantern_sconce",
+        "level_blockout_castle_framed_painting",
+        "level_blockout_castle_woven_rug",
+        "level_blockout_castle_statue_plinth",
+        "level_blockout_castle_long_bench",
+        "level_blockout_castle_warehouse_field_kit_crates",
+        "level_blockout_castle_iron_candelabrum",
+        "level_blockout_domestic_stone_fireplace",
+        "level_blockout_domestic_wall_bookcase",
+        "level_blockout_monastery_stained_window"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -152,7 +175,15 @@
         "level_blockout_sarcophagus_effigy",
         "level_blockout_relic_inventory_placard",
         "level_blockout_ossuary_display_rack",
-        "level_blockout_votive_candle_stand"
+        "level_blockout_votive_candle_stand",
+        "level_blockout_stone_arch_open",
+        "level_blockout_wall_lantern_sconce",
+        "level_blockout_castle_statue_plinth",
+        "level_blockout_castle_long_bench",
+        "level_blockout_castle_iron_candelabrum",
+        "level_blockout_cemetery_headstone_row",
+        "level_blockout_cemetery_iron_lantern",
+        "level_blockout_monastery_stained_window"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -179,7 +210,12 @@
         "level_blockout_college_cafe_counter",
         "level_blockout_gym_wall_bars",
         "level_blockout_school_scoreboard",
-        "level_blockout_library_book_return_cart"
+        "level_blockout_library_book_return_cart",
+        "level_blockout_stair_landing_module",
+        "level_blockout_domestic_wall_bookcase",
+        "level_blockout_school_chalkboard",
+        "level_blockout_school_locker_bank",
+        "level_blockout_science_instrument_table"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -207,7 +243,15 @@
         "level_blockout_house_mailbox",
         "level_blockout_sawmill_headdrig",
         "level_blockout_timber_offcut_pile",
-        "level_blockout_logging_sawbuck"
+        "level_blockout_logging_sawbuck",
+        "level_blockout_structural_window_frame",
+        "level_blockout_timber_roof_truss",
+        "level_blockout_domestic_pitched_roof_module",
+        "level_blockout_domestic_chimney_stack",
+        "level_blockout_domestic_stone_fireplace",
+        "level_blockout_domestic_porch_stair",
+        "level_blockout_domestic_kitchen_range",
+        "level_blockout_logging_winch_sled"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -227,7 +271,16 @@
         "level_blockout_toy_chest_scatter",
         "level_blockout_cellar_service_manifold",
         "level_blockout_house_mailbox",
-        "level_blockout_motel_reception_counter"
+        "level_blockout_motel_reception_counter",
+        "level_blockout_structural_window_frame",
+        "level_blockout_castle_woven_rug",
+        "level_blockout_domestic_pitched_roof_module",
+        "level_blockout_domestic_chimney_stack",
+        "level_blockout_domestic_stone_fireplace",
+        "level_blockout_domestic_porch_stair",
+        "level_blockout_domestic_kitchen_range",
+        "level_blockout_domestic_wall_bookcase",
+        "level_blockout_motel_guest_bed"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -253,7 +306,20 @@
         "level_blockout_cellar_service_manifold",
         "level_blockout_house_mailbox",
         "level_blockout_relic_locking_showcase",
-        "level_blockout_castle_wall_tapestry"
+        "level_blockout_castle_wall_tapestry",
+        "level_blockout_structural_window_frame",
+        "level_blockout_timber_roof_truss",
+        "level_blockout_wall_lantern_sconce",
+        "level_blockout_castle_framed_painting",
+        "level_blockout_castle_woven_rug",
+        "level_blockout_castle_statue_plinth",
+        "level_blockout_castle_long_bench",
+        "level_blockout_castle_iron_candelabrum",
+        "level_blockout_domestic_pitched_roof_module",
+        "level_blockout_domestic_chimney_stack",
+        "level_blockout_domestic_stone_fireplace",
+        "level_blockout_domestic_kitchen_range",
+        "level_blockout_domestic_wall_bookcase"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -283,7 +349,12 @@
         "level_blockout_prison_gallery_rail",
         "level_blockout_prison_isolation_fixture",
         "level_blockout_barracks_lockers",
-        "level_blockout_prison_cell_cot"
+        "level_blockout_prison_cell_cot",
+        "level_blockout_stair_landing_module",
+        "level_blockout_pipe_riser_support",
+        "level_blockout_school_locker_bank",
+        "level_blockout_institution_linen_cabinet",
+        "level_blockout_prison_guard_station"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -306,7 +377,13 @@
         "level_blockout_gym_wall_bars",
         "level_blockout_school_scoreboard",
         "level_blockout_toy_chest_scatter",
-        "level_blockout_library_book_return_cart"
+        "level_blockout_library_book_return_cart",
+        "level_blockout_structural_window_frame",
+        "level_blockout_stair_landing_module",
+        "level_blockout_school_chalkboard",
+        "level_blockout_school_locker_bank",
+        "level_blockout_science_instrument_table",
+        "level_blockout_institution_linen_cabinet"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -337,7 +414,12 @@
         "level_blockout_ranger_trail_sign",
         "level_blockout_mine_hoist_winch",
         "level_blockout_rail_trestle_bay",
-        "level_blockout_logging_sawbuck"
+        "level_blockout_logging_sawbuck",
+        "level_blockout_timber_roof_truss",
+        "level_blockout_domestic_pitched_roof_module",
+        "level_blockout_domestic_porch_stair",
+        "level_blockout_logging_winch_sled",
+        "level_blockout_camp_tarp_shelter"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -367,7 +449,8 @@
         "level_blockout_ranger_trail_sign",
         "level_blockout_camp_washstand",
         "level_blockout_abandoned_camper_shell",
-        "level_blockout_marsh_reed_cluster"
+        "level_blockout_marsh_reed_cluster",
+        "level_blockout_camp_tarp_shelter"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -391,7 +474,9 @@
         "level_blockout_canyon_rockfall_barrier",
         "level_blockout_survey_marker_cases",
         "level_blockout_cave_bend_modules",
-        "level_blockout_mine_pick_tool_rack"
+        "level_blockout_mine_pick_tool_rack",
+        "level_blockout_cavern_stalagmite_cluster",
+        "level_blockout_mine_braced_portal"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -414,7 +499,13 @@
         "level_blockout_site_distribution_board",
         "level_blockout_supported_cable_tray",
         "level_blockout_field_first_aid",
-        "level_blockout_weather_instrument_array"
+        "level_blockout_weather_instrument_array",
+        "level_blockout_structural_window_frame",
+        "level_blockout_stair_landing_module",
+        "level_blockout_timber_roof_truss",
+        "level_blockout_camp_tarp_shelter",
+        "level_blockout_lighthouse_access_ladder",
+        "level_blockout_bunker_observation_scope"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -442,7 +533,12 @@
         "level_blockout_cave_bend_modules",
         "level_blockout_mine_hoist_winch",
         "level_blockout_mine_sorting_bins",
-        "level_blockout_mine_pick_tool_rack"
+        "level_blockout_mine_pick_tool_rack",
+        "level_blockout_stair_landing_module",
+        "level_blockout_logging_winch_sled",
+        "level_blockout_cavern_stalagmite_cluster",
+        "level_blockout_mine_braced_portal",
+        "level_blockout_rail_trackside_toolbox"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -473,7 +569,9 @@
         "level_blockout_ship_net_boom",
         "level_blockout_ship_gangway_rails",
         "level_blockout_mooring_rope_coils",
-        "level_blockout_cannery_cargo_pallet"
+        "level_blockout_cannery_cargo_pallet",
+        "level_blockout_marsh_flatboat",
+        "level_blockout_wharf_crab_pot"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -504,7 +602,11 @@
         "level_blockout_sarcophagus_effigy",
         "level_blockout_relic_inventory_placard",
         "level_blockout_ossuary_display_rack",
-        "level_blockout_votive_candle_stand"
+        "level_blockout_votive_candle_stand",
+        "level_blockout_stone_arch_open",
+        "level_blockout_wall_lantern_sconce",
+        "level_blockout_cemetery_headstone_row",
+        "level_blockout_cemetery_iron_lantern"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -534,7 +636,11 @@
         "level_blockout_lighthouse_cistern",
         "level_blockout_cinder_escape_landing",
         "level_blockout_research_sample_station",
-        "level_blockout_cinder_decon_frame"
+        "level_blockout_cinder_decon_frame",
+        "level_blockout_science_instrument_table",
+        "level_blockout_ship_chart_cabinet",
+        "level_blockout_cinder_cable_rack",
+        "level_blockout_research_battery_bank"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -560,7 +666,10 @@
         "level_blockout_cannery_boiler",
         "level_blockout_lighthouse_oil_storage",
         "level_blockout_cinder_sump_pump",
-        "level_blockout_dam_service_grating"
+        "level_blockout_dam_service_grating",
+        "level_blockout_pipe_riser_support",
+        "level_blockout_research_battery_bank",
+        "level_blockout_dam_pressure_gauge_panel"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -597,7 +706,19 @@
         "level_blockout_relic_repair_stand",
         "level_blockout_castle_wall_tapestry",
         "level_blockout_ossuary_display_rack",
-        "level_blockout_votive_candle_stand"
+        "level_blockout_votive_candle_stand",
+        "level_blockout_stone_arch_open",
+        "level_blockout_timber_roof_truss",
+        "level_blockout_wall_lantern_sconce",
+        "level_blockout_castle_framed_painting",
+        "level_blockout_castle_woven_rug",
+        "level_blockout_castle_statue_plinth",
+        "level_blockout_castle_long_bench",
+        "level_blockout_castle_iron_candelabrum",
+        "level_blockout_domestic_stone_fireplace",
+        "level_blockout_cemetery_headstone_row",
+        "level_blockout_cemetery_iron_lantern",
+        "level_blockout_monastery_stained_window"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -626,7 +747,9 @@
         "level_blockout_marsh_boardwalk",
         "level_blockout_marsh_ferry_stage",
         "level_blockout_lighthouse_cistern",
-        "level_blockout_marsh_reed_cluster"
+        "level_blockout_marsh_reed_cluster",
+        "level_blockout_camp_tarp_shelter",
+        "level_blockout_marsh_flatboat"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -651,7 +774,8 @@
         "level_blockout_rail_switch_assembly",
         "level_blockout_signal_hut_lever_bank",
         "level_blockout_rail_trestle_bay",
-        "level_blockout_rail_buffer_stop"
+        "level_blockout_rail_buffer_stop",
+        "level_blockout_rail_trackside_toolbox"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -682,7 +806,9 @@
         "level_blockout_cannery_coldroom_door",
         "level_blockout_cannery_payroll_clock",
         "level_blockout_mortuary_cold_storage",
-        "level_blockout_cannery_cargo_pallet"
+        "level_blockout_cannery_cargo_pallet",
+        "level_blockout_wharf_crab_pot",
+        "level_blockout_cannery_overhead_chute"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -714,7 +840,8 @@
         "level_blockout_ship_bilge_pump",
         "level_blockout_motel_walkway_canopy",
         "level_blockout_coastal_security_fence",
-        "level_blockout_lighthouse_foghorn"
+        "level_blockout_lighthouse_foghorn",
+        "level_blockout_lighthouse_access_ladder"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -757,7 +884,13 @@
         "level_blockout_ship_gangway_rails",
         "level_blockout_ship_crew_berth",
         "level_blockout_motel_laundry_unit",
-        "level_blockout_mooring_rope_coils"
+        "level_blockout_mooring_rope_coils",
+        "level_blockout_pipe_riser_support",
+        "level_blockout_wharf_crab_pot",
+        "level_blockout_cannery_overhead_chute",
+        "level_blockout_ship_galley_range",
+        "level_blockout_ship_chart_cabinet",
+        "level_blockout_dam_pressure_gauge_panel"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -785,7 +918,14 @@
         "level_blockout_motel_laundry_unit",
         "level_blockout_motel_parking_stops",
         "level_blockout_motel_walkway_canopy",
-        "level_blockout_motel_ice_machine"
+        "level_blockout_motel_ice_machine",
+        "level_blockout_structural_window_frame",
+        "level_blockout_timber_roof_truss",
+        "level_blockout_domestic_pitched_roof_module",
+        "level_blockout_domestic_chimney_stack",
+        "level_blockout_domestic_porch_stair",
+        "level_blockout_domestic_kitchen_range",
+        "level_blockout_motel_guest_bed"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -818,7 +958,13 @@
         "level_blockout_casemate_ventilation",
         "level_blockout_barracks_lockers",
         "level_blockout_coastal_security_fence",
-        "level_blockout_coastal_ammo_crate"
+        "level_blockout_coastal_ammo_crate",
+        "level_blockout_stair_landing_module",
+        "level_blockout_stone_arch_open",
+        "level_blockout_pipe_riser_support",
+        "level_blockout_lighthouse_access_ladder",
+        "level_blockout_bunker_observation_scope",
+        "level_blockout_cinder_cable_rack"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -857,7 +1003,15 @@
         "level_blockout_cinder_escape_landing",
         "level_blockout_coastal_ammo_crate",
         "level_blockout_research_sample_station",
-        "level_blockout_cinder_decon_frame"
+        "level_blockout_cinder_decon_frame",
+        "level_blockout_stair_landing_module",
+        "level_blockout_pipe_riser_support",
+        "level_blockout_cavern_stalagmite_cluster",
+        "level_blockout_mine_braced_portal",
+        "level_blockout_lighthouse_access_ladder",
+        "level_blockout_cinder_cable_rack",
+        "level_blockout_research_battery_bank",
+        "level_blockout_dam_pressure_gauge_panel"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -891,7 +1045,10 @@
         "level_blockout_mortuary_viewing_seat",
         "level_blockout_mortuary_service_screen",
         "level_blockout_relic_padded_tray",
-        "level_blockout_medical_resuscitation_cart"
+        "level_blockout_medical_resuscitation_cart",
+        "level_blockout_pipe_riser_support",
+        "level_blockout_hospital_curtain_track",
+        "level_blockout_institution_linen_cabinet"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     }
@@ -28973,6 +29130,7656 @@
       "notes": "Three separately readable hand-tool profiles with floor-anchored rack; no active mining equipment.",
       "authoring_stage": "primitive_blockout",
       "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_structural_window_frame",
+      "label": "Timber casement frame with clear panes and sill",
+      "category": "architecture",
+      "maps": [
+        "HOUSE",
+        "FARMHOUSE",
+        "MANSION",
+        "ACADEMY",
+        "SCHOOL",
+        "WLD-04",
+        "WLD-16"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.75,
+            1.18,
+            0
+          ],
+          "size": [
+            0.15,
+            2.03,
+            0.19
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.75,
+            1.18,
+            0
+          ],
+          "size": [
+            0.15,
+            2.03,
+            0.19
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.21,
+            0
+          ],
+          "size": [
+            1.65,
+            0.15,
+            0.19
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.19,
+            0
+          ],
+          "size": [
+            1.82,
+            0.17,
+            0.27
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.17,
+            -0.07
+          ],
+          "size": [
+            0.075,
+            1.94,
+            0.075
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.18,
+            -0.07
+          ],
+          "size": [
+            1.39,
+            0.075,
+            0.08
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.64,
+            1.18,
+            -0.13
+          ],
+          "size": [
+            0.05,
+            1.9,
+            0.05
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.64,
+            1.18,
+            -0.13
+          ],
+          "size": [
+            0.05,
+            1.9,
+            0.05
+          ],
+          "material": "wood"
+        }
+      ],
+      "notes": "Open wood frame and stone sill, not a solid glass sheet or wall aperture.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "wall",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_stair_landing_module",
+      "label": "Raised architectural landing with guard posts",
+      "category": "architecture",
+      "maps": [
+        "CASTLE",
+        "ACADEMY",
+        "ASYLUM",
+        "COLLEGE",
+        "PRISON",
+        "SCHOOL",
+        "WLD-04",
+        "WLD-05",
+        "WLD-17",
+        "WLD-18"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.25,
+            0
+          ],
+          "size": [
+            1.96,
+            0.15,
+            1.81
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.85,
+            0.59,
+            -0.74
+          ],
+          "size": [
+            0.14,
+            1.17,
+            0.15
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.85,
+            0.59,
+            0.74
+          ],
+          "size": [
+            0.14,
+            1.17,
+            0.15
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.85,
+            0.59,
+            -0.74
+          ],
+          "size": [
+            0.14,
+            1.17,
+            0.15
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.85,
+            0.59,
+            0.74
+          ],
+          "size": [
+            0.14,
+            1.17,
+            0.15
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.85,
+            1.79,
+            0
+          ],
+          "size": [
+            0.07,
+            1.01,
+            0.075
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.85,
+            2.2,
+            0
+          ],
+          "size": [
+            0.085,
+            0.09,
+            1.72
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.85,
+            1.79,
+            0
+          ],
+          "size": [
+            0.07,
+            1.01,
+            0.075
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.85,
+            2.2,
+            0
+          ],
+          "size": [
+            0.085,
+            0.09,
+            1.72
+          ],
+          "material": "metal"
+        }
+      ],
+      "notes": "Standalone landing proxy; no openings, stairs, walkable collision or certified railing.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_stone_arch_open",
+      "label": "Open pointed arch with stone quoins",
+      "category": "architecture",
+      "maps": [
+        "CASTLE",
+        "CHURCH",
+        "WLD-07",
+        "WLD-10",
+        "WLD-17"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.96,
+            1.1,
+            0
+          ],
+          "size": [
+            0.38,
+            2.19,
+            0.39
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.96,
+            1.1,
+            0
+          ],
+          "size": [
+            0.38,
+            2.19,
+            0.39
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.62,
+            2.4,
+            0
+          ],
+          "size": [
+            0.6,
+            0.32,
+            0.41
+          ],
+          "material": "stone",
+          "roll": 0.5235988
+        },
+        {
+          "type": "box",
+          "p": [
+            0.62,
+            2.4,
+            0
+          ],
+          "size": [
+            0.6,
+            0.32,
+            0.41
+          ],
+          "material": "stone",
+          "roll": -0.5235988
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.64,
+            0
+          ],
+          "size": [
+            0.4,
+            0.26,
+            0.41
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.96,
+            0.13,
+            -0.03
+          ],
+          "size": [
+            0.52,
+            0.25,
+            0.5
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.96,
+            0.13,
+            -0.03
+          ],
+          "size": [
+            0.52,
+            0.25,
+            0.5
+          ],
+          "material": "stone"
+        }
+      ],
+      "notes": "Distinct masonry blocks with a human-width clear center; no built wall or functioning door.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "wall",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_timber_roof_truss",
+      "label": "King-post timber roof structure",
+      "category": "architecture",
+      "maps": [
+        "CASTLE",
+        "MANSION",
+        "FARMHOUSE",
+        "WLD-01",
+        "WLD-04",
+        "WLD-10",
+        "WLD-16"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.4,
+            0
+          ],
+          "size": [
+            3.94,
+            0.19,
+            0.25
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1,
+            2.05,
+            0
+          ],
+          "size": [
+            2.35,
+            0.2,
+            0.26
+          ],
+          "material": "wood",
+          "roll": 0.5235988
+        },
+        {
+          "type": "box",
+          "p": [
+            1,
+            2.05,
+            0
+          ],
+          "size": [
+            2.35,
+            0.2,
+            0.26
+          ],
+          "material": "wood",
+          "roll": -0.5235988
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.02,
+            0
+          ],
+          "size": [
+            0.18,
+            1.37,
+            0.24
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.62,
+            1.64,
+            0
+          ],
+          "size": [
+            0.14,
+            0.52,
+            0.18
+          ],
+          "material": "wood",
+          "roll": -0.7853982
+        },
+        {
+          "type": "box",
+          "p": [
+            0.62,
+            1.64,
+            0
+          ],
+          "size": [
+            0.14,
+            0.52,
+            0.18
+          ],
+          "material": "wood",
+          "roll": 0.7853982
+        }
+      ],
+      "notes": "Real pitched members, readable open truss; roof and ceiling joinery still pending.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "ceiling",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_pipe_riser_support",
+      "label": "Clamped three-line vertical service riser",
+      "category": "utilities",
+      "maps": [
+        "ASYLUM",
+        "PRISON",
+        "WLD-09",
+        "WLD-15",
+        "WLD-17",
+        "WLD-18",
+        "WLD-07-MORTUARY"
+      ],
+      "parts": [
+        {
+          "type": "cylinder",
+          "p": [
+            -0.28,
+            1.36,
+            0
+          ],
+          "radius": 0.07,
+          "height": 2.68,
+          "material": "metal",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.36,
+            0
+          ],
+          "radius": 0.07,
+          "height": 2.68,
+          "material": "metal",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.28,
+            1.36,
+            0
+          ],
+          "radius": 0.07,
+          "height": 2.68,
+          "material": "metal",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.34,
+            0.43,
+            0.11
+          ],
+          "size": [
+            0.11,
+            0.09,
+            0.28
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.34,
+            0.43,
+            0.11
+          ],
+          "size": [
+            0.11,
+            0.09,
+            0.28
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.34,
+            1.43,
+            0.11
+          ],
+          "size": [
+            0.11,
+            0.09,
+            0.28
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.34,
+            1.43,
+            0.11
+          ],
+          "size": [
+            0.11,
+            0.09,
+            0.28
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.34,
+            2.41,
+            0.11
+          ],
+          "size": [
+            0.11,
+            0.09,
+            0.28
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.34,
+            2.41,
+            0.11
+          ],
+          "size": [
+            0.11,
+            0.09,
+            0.28
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.43,
+            0.11
+          ],
+          "size": [
+            0.82,
+            0.06,
+            0.17
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.43,
+            0.11
+          ],
+          "size": [
+            0.82,
+            0.06,
+            0.17
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.41,
+            0.11
+          ],
+          "size": [
+            0.82,
+            0.06,
+            0.17
+          ],
+          "material": "metal"
+        }
+      ],
+      "notes": "Three separate tubes and physically spaced brackets; never generates live power/fluids.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "wall",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_wall_lantern_sconce",
+      "label": "Wall-mounted candle lantern with metal support",
+      "category": "lighting",
+      "maps": [
+        "CASTLE",
+        "CHURCH",
+        "MANSION",
+        "WLD-10",
+        "WLD-07"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.66,
+            0.06
+          ],
+          "size": [
+            0.19,
+            1,
+            0.16
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1,
+            -0.2
+          ],
+          "size": [
+            0.08,
+            0.07,
+            0.64
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.98,
+            -0.48
+          ],
+          "size": [
+            0.43,
+            0.07,
+            0.34
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.17,
+            1.22,
+            -0.6
+          ],
+          "size": [
+            0.05,
+            0.46,
+            0.05
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.17,
+            1.22,
+            -0.36
+          ],
+          "size": [
+            0.05,
+            0.46,
+            0.05
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.17,
+            1.22,
+            -0.6
+          ],
+          "size": [
+            0.05,
+            0.46,
+            0.05
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.17,
+            1.22,
+            -0.36
+          ],
+          "size": [
+            0.05,
+            0.46,
+            0.05
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.47,
+            -0.48
+          ],
+          "size": [
+            0.47,
+            0.08,
+            0.38
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.15,
+            -0.48
+          ],
+          "radius": 0.05,
+          "height": 0.25,
+          "material": "wax",
+          "axis": "y",
+          "segments": 8
+        }
+      ],
+      "notes": "Unlit diegetic candle lantern; never recalculates map lighting.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "wall",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_castle_framed_painting",
+      "label": "Gilded rectangular oil painting with separate frame",
+      "category": "historic",
+      "maps": [
+        "CASTLE",
+        "MANSION",
+        "WLD-10"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.46,
+            0
+          ],
+          "size": [
+            1.52,
+            1.98,
+            0.06
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.46,
+            -0.05
+          ],
+          "size": [
+            1.35,
+            1.81,
+            0.04
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.74,
+            1.46,
+            -0.09
+          ],
+          "size": [
+            0.15,
+            2.18,
+            0.12
+          ],
+          "material": "gilt"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.74,
+            1.46,
+            -0.09
+          ],
+          "size": [
+            0.15,
+            2.18,
+            0.12
+          ],
+          "material": "gilt"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.35,
+            -0.09
+          ],
+          "size": [
+            1.67,
+            0.15,
+            0.12
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.57,
+            -0.09
+          ],
+          "size": [
+            1.67,
+            0.15,
+            0.12
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.2,
+            1.64,
+            -0.09
+          ],
+          "size": [
+            0.29,
+            0.58,
+            0.035
+          ],
+          "material": "redcloth"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.26,
+            1.15,
+            -0.09
+          ],
+          "size": [
+            0.54,
+            0.15,
+            0.035
+          ],
+          "material": "accent"
+        }
+      ],
+      "notes": "Human-scale framed painting, not a full-wall backplate.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "wall",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_castle_woven_rug",
+      "label": "Woven medieval rug with fringe and border",
+      "category": "historic",
+      "maps": [
+        "CASTLE",
+        "MANSION",
+        "WLD-10",
+        "HOUSE"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.022,
+            0
+          ],
+          "size": [
+            2.1,
+            0.042,
+            3.04
+          ],
+          "material": "redcloth"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.95,
+            0.049,
+            0
+          ],
+          "size": [
+            0.08,
+            0.018,
+            3.01
+          ],
+          "material": "gilt"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.95,
+            0.049,
+            0
+          ],
+          "size": [
+            0.08,
+            0.018,
+            3.01
+          ],
+          "material": "gilt"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.048,
+            -1.43
+          ],
+          "size": [
+            2.08,
+            0.018,
+            0.07
+          ],
+          "material": "gilt"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.048,
+            1.43
+          ],
+          "size": [
+            2.08,
+            0.018,
+            0.07
+          ],
+          "material": "gilt"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.54,
+            0.047,
+            0
+          ],
+          "size": [
+            0.1,
+            0.016,
+            1.91
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.047,
+            0
+          ],
+          "size": [
+            0.1,
+            0.016,
+            1.91
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.54,
+            0.047,
+            0
+          ],
+          "size": [
+            0.1,
+            0.016,
+            1.91
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.83,
+            0.025,
+            -1.55
+          ],
+          "size": [
+            0.075,
+            0.03,
+            0.15
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.55,
+            0.025,
+            -1.55
+          ],
+          "size": [
+            0.075,
+            0.03,
+            0.15
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.27,
+            0.025,
+            -1.55
+          ],
+          "size": [
+            0.075,
+            0.03,
+            0.15
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.025,
+            -1.55
+          ],
+          "size": [
+            0.075,
+            0.03,
+            0.15
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.27,
+            0.025,
+            -1.55
+          ],
+          "size": [
+            0.075,
+            0.03,
+            0.15
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.55,
+            0.025,
+            -1.55
+          ],
+          "size": [
+            0.075,
+            0.03,
+            0.15
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.83,
+            0.025,
+            -1.55
+          ],
+          "size": [
+            0.075,
+            0.03,
+            0.15
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.83,
+            0.025,
+            1.55
+          ],
+          "size": [
+            0.075,
+            0.03,
+            0.15
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.55,
+            0.025,
+            1.55
+          ],
+          "size": [
+            0.075,
+            0.03,
+            0.15
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.27,
+            0.025,
+            1.55
+          ],
+          "size": [
+            0.075,
+            0.03,
+            0.15
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.025,
+            1.55
+          ],
+          "size": [
+            0.075,
+            0.03,
+            0.15
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.27,
+            0.025,
+            1.55
+          ],
+          "size": [
+            0.075,
+            0.03,
+            0.15
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.55,
+            0.025,
+            1.55
+          ],
+          "size": [
+            0.075,
+            0.03,
+            0.15
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.83,
+            0.025,
+            1.55
+          ],
+          "size": [
+            0.075,
+            0.03,
+            0.15
+          ],
+          "material": "canvas"
+        }
+      ],
+      "notes": "Thin floor dressing, no raised fake collision floor.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_castle_statue_plinth",
+      "label": "Stone knight statue and separate stepped pedestal",
+      "category": "historic",
+      "maps": [
+        "CASTLE",
+        "MANSION",
+        "CHURCH",
+        "WLD-10"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.16,
+            0
+          ],
+          "size": [
+            1.09,
+            0.32,
+            0.95
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.44,
+            0
+          ],
+          "size": [
+            0.85,
+            0.26,
+            0.73
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.19,
+            0
+          ],
+          "size": [
+            0.5,
+            1.3,
+            0.4
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.99,
+            0
+          ],
+          "size": [
+            0.46,
+            0.29,
+            0.4
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            2.28,
+            0
+          ],
+          "radius": 0.19,
+          "height": 0.31,
+          "material": "ivory",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.36,
+            1.52,
+            0
+          ],
+          "size": [
+            0.18,
+            0.71,
+            0.18
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.36,
+            1.52,
+            0
+          ],
+          "size": [
+            0.18,
+            0.71,
+            0.18
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.14,
+            0.73,
+            0
+          ],
+          "size": [
+            0.16,
+            0.31,
+            0.2
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.14,
+            0.73,
+            0
+          ],
+          "size": [
+            0.16,
+            0.31,
+            0.2
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.48,
+            1.22,
+            0
+          ],
+          "size": [
+            0.07,
+            1.32,
+            0.06
+          ],
+          "material": "metal"
+        }
+      ],
+      "notes": "Knightlike silhouette in modular stone shapes, not an NPC or character billboard.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_castle_long_bench",
+      "label": "Carved great-hall timber bench",
+      "category": "historic",
+      "maps": [
+        "CASTLE",
+        "MANSION",
+        "WLD-10",
+        "CHURCH"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.58,
+            0
+          ],
+          "size": [
+            2.44,
+            0.13,
+            0.55
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.06,
+            0.29,
+            -0.2
+          ],
+          "size": [
+            0.13,
+            0.57,
+            0.15
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.06,
+            0.29,
+            0.2
+          ],
+          "size": [
+            0.13,
+            0.57,
+            0.15
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.06,
+            0.29,
+            -0.2
+          ],
+          "size": [
+            0.13,
+            0.57,
+            0.15
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.06,
+            0.29,
+            0.2
+          ],
+          "size": [
+            0.13,
+            0.57,
+            0.15
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.84,
+            0.27
+          ],
+          "size": [
+            2.28,
+            0.47,
+            0.11
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.3,
+            0.26
+          ],
+          "size": [
+            2.28,
+            0.07,
+            0.07
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.99,
+            0.86,
+            0.28
+          ],
+          "size": [
+            0.13,
+            0.5,
+            0.11
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.99,
+            0.86,
+            0.28
+          ],
+          "size": [
+            0.13,
+            0.5,
+            0.11
+          ],
+          "material": "wood"
+        }
+      ],
+      "notes": "Readable bench legs, backrest and seat; no automatic sitting animation.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_castle_warehouse_field_kit_crates",
+      "label": "Multiplayer warehouse portable investigation supply crates",
+      "category": "storage",
+      "maps": [
+        "CASTLE"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.54,
+            0.36,
+            0
+          ],
+          "size": [
+            0.91,
+            0.7,
+            0.69
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.54,
+            0.72,
+            0
+          ],
+          "size": [
+            0.96,
+            0.11,
+            0.72
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.54,
+            0.39,
+            -0.37
+          ],
+          "size": [
+            0.73,
+            0.16,
+            0.045
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.54,
+            0.36,
+            0
+          ],
+          "size": [
+            0.91,
+            0.7,
+            0.69
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.54,
+            0.72,
+            0
+          ],
+          "size": [
+            0.96,
+            0.11,
+            0.72
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.54,
+            0.39,
+            -0.37
+          ],
+          "size": [
+            0.73,
+            0.16,
+            0.045
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.55,
+            0.81,
+            0
+          ],
+          "size": [
+            0.52,
+            0.06,
+            0.35
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.55,
+            0.81,
+            0
+          ],
+          "size": [
+            0.52,
+            0.06,
+            0.35
+          ],
+          "material": "canvas"
+        }
+      ],
+      "notes": "Portable field gear ONLY. Fixed van workstations and monitors deliberately excluded.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_castle_iron_candelabrum",
+      "label": "Seven-candle standing ironwork",
+      "category": "historic",
+      "maps": [
+        "CASTLE",
+        "CHURCH",
+        "MANSION",
+        "WLD-10"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.11,
+            0
+          ],
+          "size": [
+            0.66,
+            0.21,
+            0.64
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.82,
+            0
+          ],
+          "radius": 0.075,
+          "height": 1.42,
+          "material": "metal",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.61,
+            0
+          ],
+          "size": [
+            1.52,
+            0.08,
+            0.1
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.65,
+            1.73,
+            0
+          ],
+          "radius": 0.045,
+          "height": 0.25,
+          "material": "metal",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.65,
+            1.94,
+            0
+          ],
+          "radius": 0.04,
+          "height": 0.15,
+          "material": "wax",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.43,
+            1.73,
+            0
+          ],
+          "radius": 0.045,
+          "height": 0.25,
+          "material": "metal",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.43,
+            1.94,
+            0
+          ],
+          "radius": 0.04,
+          "height": 0.15,
+          "material": "wax",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.21,
+            1.73,
+            0
+          ],
+          "radius": 0.045,
+          "height": 0.25,
+          "material": "metal",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.21,
+            1.94,
+            0
+          ],
+          "radius": 0.04,
+          "height": 0.15,
+          "material": "wax",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.73,
+            0
+          ],
+          "radius": 0.045,
+          "height": 0.25,
+          "material": "metal",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.94,
+            0
+          ],
+          "radius": 0.04,
+          "height": 0.15,
+          "material": "wax",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.21,
+            1.73,
+            0
+          ],
+          "radius": 0.045,
+          "height": 0.25,
+          "material": "metal",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.21,
+            1.94,
+            0
+          ],
+          "radius": 0.04,
+          "height": 0.15,
+          "material": "wax",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.43,
+            1.73,
+            0
+          ],
+          "radius": 0.045,
+          "height": 0.25,
+          "material": "metal",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.43,
+            1.94,
+            0
+          ],
+          "radius": 0.04,
+          "height": 0.15,
+          "material": "wax",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.65,
+            1.73,
+            0
+          ],
+          "radius": 0.045,
+          "height": 0.25,
+          "material": "metal",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.65,
+            1.94,
+            0
+          ],
+          "radius": 0.04,
+          "height": 0.15,
+          "material": "wax",
+          "axis": "y",
+          "segments": 8
+        }
+      ],
+      "notes": "Freestanding unlit candle cluster: no lamp actor or new dynamic light.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_domestic_pitched_roof_module",
+      "label": "Open twin-pitched gable roof module",
+      "category": "architecture",
+      "maps": [
+        "HOUSE",
+        "FARMHOUSE",
+        "MANSION",
+        "WLD-01",
+        "WLD-16"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.91,
+            2.44,
+            0
+          ],
+          "size": [
+            2.26,
+            0.16,
+            3.48
+          ],
+          "material": "wood",
+          "roll": 0.4886922
+        },
+        {
+          "type": "box",
+          "p": [
+            0.91,
+            2.44,
+            0
+          ],
+          "size": [
+            2.26,
+            0.16,
+            3.48
+          ],
+          "material": "wood",
+          "roll": -0.4886922
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            3.02,
+            0
+          ],
+          "size": [
+            0.26,
+            0.15,
+            3.52
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.64,
+            1.91,
+            0
+          ],
+          "size": [
+            0.18,
+            0.16,
+            3.53
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.64,
+            1.91,
+            0
+          ],
+          "size": [
+            0.18,
+            0.16,
+            3.53
+          ],
+          "material": "wood"
+        }
+      ],
+      "notes": "Two actual sloping surfaces leave volume open beneath; not another indistinct cuboid house.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "roof",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_domestic_chimney_stack",
+      "label": "Brick chimney with open flue mouth",
+      "category": "architecture",
+      "maps": [
+        "HOUSE",
+        "FARMHOUSE",
+        "MANSION",
+        "WLD-16"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.33,
+            0.94,
+            0
+          ],
+          "size": [
+            0.14,
+            1.86,
+            0.82
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.33,
+            0.94,
+            0
+          ],
+          "size": [
+            0.14,
+            1.86,
+            0.82
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.94,
+            -0.33
+          ],
+          "size": [
+            0.78,
+            1.86,
+            0.14
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.94,
+            0.33
+          ],
+          "size": [
+            0.78,
+            1.86,
+            0.14
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.39,
+            1.91,
+            0
+          ],
+          "size": [
+            0.11,
+            0.11,
+            0.9
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.39,
+            1.91,
+            0
+          ],
+          "size": [
+            0.11,
+            0.11,
+            0.9
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.91,
+            -0.39
+          ],
+          "size": [
+            0.81,
+            0.11,
+            0.12
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.91,
+            0.39
+          ],
+          "size": [
+            0.81,
+            0.11,
+            0.12
+          ],
+          "material": "stone"
+        }
+      ],
+      "notes": "Open rim of chimney, no blocking solid cap, smoke or roof-opening authority.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "roof",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_domestic_stone_fireplace",
+      "label": "Stone firebox with jambs, lintel and hearth",
+      "category": "domestic",
+      "maps": [
+        "HOUSE",
+        "FARMHOUSE",
+        "MANSION",
+        "CASTLE",
+        "WLD-10"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.8,
+            0.96,
+            0
+          ],
+          "size": [
+            0.28,
+            1.88,
+            0.65
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.8,
+            0.96,
+            0
+          ],
+          "size": [
+            0.28,
+            1.88,
+            0.65
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.91,
+            0
+          ],
+          "size": [
+            1.95,
+            0.22,
+            0.72
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.12,
+            0
+          ],
+          "size": [
+            1.79,
+            0.24,
+            0.72
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.04,
+            0.29
+          ],
+          "size": [
+            1.3,
+            1.52,
+            0.08
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.32,
+            0.23,
+            -0.09
+          ],
+          "size": [
+            0.57,
+            0.11,
+            0.2
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.32,
+            0.23,
+            -0.09
+          ],
+          "size": [
+            0.57,
+            0.11,
+            0.2
+          ],
+          "material": "wood"
+        }
+      ],
+      "notes": "Visible black hearth recess instead of a solid filled face; no fire or dynamic lighting.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "wall",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_domestic_porch_stair",
+      "label": "Four-tread timber entrance stair",
+      "category": "architecture",
+      "maps": [
+        "HOUSE",
+        "FARMHOUSE",
+        "WLD-16",
+        "WLD-01"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.135,
+            -1.05
+          ],
+          "size": [
+            1.33,
+            0.27,
+            0.38
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.405,
+            -0.71
+          ],
+          "size": [
+            1.33,
+            0.27,
+            0.38
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.675,
+            -0.37
+          ],
+          "size": [
+            1.33,
+            0.27,
+            0.38
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.9450000000000001,
+            -0.030000000000000027
+          ],
+          "size": [
+            1.33,
+            0.27,
+            0.38
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.76,
+            0.6,
+            -0.48
+          ],
+          "size": [
+            0.11,
+            1.19,
+            1.64
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.76,
+            0.6,
+            -0.48
+          ],
+          "size": [
+            0.11,
+            1.19,
+            1.64
+          ],
+          "material": "wood"
+        }
+      ],
+      "notes": "Separate treads; no assumption that navmesh or landing connections work.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_domestic_kitchen_range",
+      "label": "Freestanding stove with four hot plates and oven",
+      "category": "domestic",
+      "maps": [
+        "HOUSE",
+        "FARMHOUSE",
+        "MANSION",
+        "WLD-16"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.47,
+            0
+          ],
+          "size": [
+            0.9,
+            0.94,
+            0.69
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.98,
+            0
+          ],
+          "size": [
+            0.96,
+            0.09,
+            0.74
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.22,
+            1.05,
+            -0.18
+          ],
+          "radius": 0.13,
+          "height": 0.03,
+          "material": "dark",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.22,
+            1.05,
+            0.18
+          ],
+          "radius": 0.13,
+          "height": 0.03,
+          "material": "dark",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.22,
+            1.05,
+            -0.18
+          ],
+          "radius": 0.13,
+          "height": 0.03,
+          "material": "dark",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.22,
+            1.05,
+            0.18
+          ],
+          "radius": 0.13,
+          "height": 0.03,
+          "material": "dark",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.45,
+            -0.36
+          ],
+          "size": [
+            0.76,
+            0.53,
+            0.04
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.27,
+            0.27
+          ],
+          "size": [
+            0.96,
+            0.53,
+            0.1
+          ],
+          "material": "industrial"
+        }
+      ],
+      "notes": "Actual stove silhouette with distinct cooking surface and oven; inert.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_domestic_wall_bookcase",
+      "label": "Shelved wooden bookcase with individual book spines",
+      "category": "domestic",
+      "maps": [
+        "HOUSE",
+        "MANSION",
+        "CASTLE",
+        "ACADEMY",
+        "COLLEGE"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.73,
+            1.09,
+            0
+          ],
+          "size": [
+            0.1,
+            2.18,
+            0.49
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.73,
+            1.09,
+            0
+          ],
+          "size": [
+            0.1,
+            2.18,
+            0.49
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.17,
+            0
+          ],
+          "size": [
+            1.54,
+            0.1,
+            0.53
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.73,
+            0
+          ],
+          "size": [
+            1.54,
+            0.1,
+            0.53
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.29,
+            0
+          ],
+          "size": [
+            1.54,
+            0.1,
+            0.53
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.85,
+            0
+          ],
+          "size": [
+            1.54,
+            0.1,
+            0.53
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.18,
+            0
+          ],
+          "size": [
+            1.54,
+            0.1,
+            0.53
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.1,
+            0.24
+          ],
+          "size": [
+            1.4,
+            2.08,
+            0.06
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.53,
+            0.42,
+            -0.1
+          ],
+          "size": [
+            0.13,
+            0.37,
+            0.26
+          ],
+          "material": "leather"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.31,
+            0.42,
+            -0.1
+          ],
+          "size": [
+            0.13,
+            0.42,
+            0.26
+          ],
+          "material": "redcloth"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.09,
+            0.42,
+            -0.1
+          ],
+          "size": [
+            0.13,
+            0.37,
+            0.26
+          ],
+          "material": "redcloth"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.13,
+            0.42,
+            -0.1
+          ],
+          "size": [
+            0.13,
+            0.42,
+            0.26
+          ],
+          "material": "leather"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.35,
+            0.42,
+            -0.1
+          ],
+          "size": [
+            0.13,
+            0.37,
+            0.26
+          ],
+          "material": "redcloth"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.54,
+            0.42,
+            -0.1
+          ],
+          "size": [
+            0.13,
+            0.42,
+            0.26
+          ],
+          "material": "redcloth"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.53,
+            0.99,
+            -0.1
+          ],
+          "size": [
+            0.13,
+            0.37,
+            0.26
+          ],
+          "material": "leather"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.31,
+            0.99,
+            -0.1
+          ],
+          "size": [
+            0.13,
+            0.42,
+            0.26
+          ],
+          "material": "redcloth"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.09,
+            0.99,
+            -0.1
+          ],
+          "size": [
+            0.13,
+            0.37,
+            0.26
+          ],
+          "material": "redcloth"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.13,
+            0.99,
+            -0.1
+          ],
+          "size": [
+            0.13,
+            0.42,
+            0.26
+          ],
+          "material": "leather"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.35,
+            0.99,
+            -0.1
+          ],
+          "size": [
+            0.13,
+            0.37,
+            0.26
+          ],
+          "material": "redcloth"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.54,
+            0.99,
+            -0.1
+          ],
+          "size": [
+            0.13,
+            0.42,
+            0.26
+          ],
+          "material": "redcloth"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.53,
+            1.55,
+            -0.1
+          ],
+          "size": [
+            0.13,
+            0.37,
+            0.26
+          ],
+          "material": "leather"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.31,
+            1.55,
+            -0.1
+          ],
+          "size": [
+            0.13,
+            0.42,
+            0.26
+          ],
+          "material": "redcloth"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.09,
+            1.55,
+            -0.1
+          ],
+          "size": [
+            0.13,
+            0.37,
+            0.26
+          ],
+          "material": "redcloth"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.13,
+            1.55,
+            -0.1
+          ],
+          "size": [
+            0.13,
+            0.42,
+            0.26
+          ],
+          "material": "leather"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.35,
+            1.55,
+            -0.1
+          ],
+          "size": [
+            0.13,
+            0.37,
+            0.26
+          ],
+          "material": "redcloth"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.54,
+            1.55,
+            -0.1
+          ],
+          "size": [
+            0.13,
+            0.42,
+            0.26
+          ],
+          "material": "redcloth"
+        }
+      ],
+      "notes": "Distinct books and shelf boards, no oversized flat decorative panel.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_school_chalkboard",
+      "label": "Blackboard, rail and chalk marks",
+      "category": "institutional",
+      "maps": [
+        "ACADEMY",
+        "COLLEGE",
+        "SCHOOL"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.54,
+            0
+          ],
+          "size": [
+            2.22,
+            1.4,
+            0.06
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.11,
+            1.54,
+            -0.06
+          ],
+          "size": [
+            0.1,
+            1.49,
+            0.12
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.11,
+            1.54,
+            -0.06
+          ],
+          "size": [
+            0.1,
+            1.49,
+            0.12
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.8,
+            -0.06
+          ],
+          "size": [
+            2.35,
+            0.1,
+            0.12
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.28,
+            -0.06
+          ],
+          "size": [
+            2.35,
+            0.1,
+            0.12
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.75,
+            -0.21
+          ],
+          "size": [
+            2.32,
+            0.075,
+            0.3
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.35,
+            1.7,
+            -0.05
+          ],
+          "size": [
+            0.42,
+            0.03,
+            0.02
+          ],
+          "material": "ivory"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.3,
+            1.43,
+            -0.05
+          ],
+          "size": [
+            0.46,
+            0.03,
+            0.02
+          ],
+          "material": "ivory"
+        }
+      ],
+      "notes": "Flat classroom board within trim, correctly scaled as wall fixture.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "wall",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_school_locker_bank",
+      "label": "Three separate school lockers",
+      "category": "institutional",
+      "maps": [
+        "SCHOOL",
+        "ACADEMY",
+        "COLLEGE",
+        "PRISON"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.76,
+            1.04,
+            0
+          ],
+          "size": [
+            0.72,
+            2.08,
+            0.52
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.76,
+            1.06,
+            -0.28
+          ],
+          "size": [
+            0.65,
+            1.86,
+            0.03
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.56,
+            1.13,
+            -0.32
+          ],
+          "size": [
+            0.045,
+            0.16,
+            0.045
+          ],
+          "material": "silver"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.76,
+            1.62,
+            -0.31
+          ],
+          "size": [
+            0.32,
+            0.025,
+            0.025
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.76,
+            1.73,
+            -0.31
+          ],
+          "size": [
+            0.32,
+            0.025,
+            0.025
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.76,
+            1.84,
+            -0.31
+          ],
+          "size": [
+            0.32,
+            0.025,
+            0.025
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.04,
+            0
+          ],
+          "size": [
+            0.72,
+            2.08,
+            0.52
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.06,
+            -0.28
+          ],
+          "size": [
+            0.65,
+            1.86,
+            0.03
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.2,
+            1.13,
+            -0.32
+          ],
+          "size": [
+            0.045,
+            0.16,
+            0.045
+          ],
+          "material": "silver"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.62,
+            -0.31
+          ],
+          "size": [
+            0.32,
+            0.025,
+            0.025
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.73,
+            -0.31
+          ],
+          "size": [
+            0.32,
+            0.025,
+            0.025
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.84,
+            -0.31
+          ],
+          "size": [
+            0.32,
+            0.025,
+            0.025
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.76,
+            1.04,
+            0
+          ],
+          "size": [
+            0.72,
+            2.08,
+            0.52
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.76,
+            1.06,
+            -0.28
+          ],
+          "size": [
+            0.65,
+            1.86,
+            0.03
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.96,
+            1.13,
+            -0.32
+          ],
+          "size": [
+            0.045,
+            0.16,
+            0.045
+          ],
+          "material": "silver"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.76,
+            1.62,
+            -0.31
+          ],
+          "size": [
+            0.32,
+            0.025,
+            0.025
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.76,
+            1.73,
+            -0.31
+          ],
+          "size": [
+            0.32,
+            0.025,
+            0.025
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.76,
+            1.84,
+            -0.31
+          ],
+          "size": [
+            0.32,
+            0.025,
+            0.025
+          ],
+          "material": "dark"
+        }
+      ],
+      "notes": "Independent doors, ventilation slots and handles; not a shared room-sized box.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_science_instrument_table",
+      "label": "School laboratory demonstration and optical bench",
+      "category": "teaching",
+      "maps": [
+        "ACADEMY",
+        "COLLEGE",
+        "SCHOOL",
+        "WLD-08"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.88,
+            0
+          ],
+          "size": [
+            1.83,
+            0.12,
+            0.84
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.75,
+            0.43,
+            -0.32
+          ],
+          "size": [
+            0.12,
+            0.85,
+            0.12
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.75,
+            0.43,
+            0.32
+          ],
+          "size": [
+            0.12,
+            0.85,
+            0.12
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.75,
+            0.43,
+            -0.32
+          ],
+          "size": [
+            0.12,
+            0.85,
+            0.12
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.75,
+            0.43,
+            0.32
+          ],
+          "size": [
+            0.12,
+            0.85,
+            0.12
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.41,
+            1.08,
+            0
+          ],
+          "size": [
+            0.42,
+            0.17,
+            0.31
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.41,
+            1.29,
+            -0.09
+          ],
+          "radius": 0.07,
+          "height": 0.3,
+          "material": "metal",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.41,
+            1.48,
+            -0.17
+          ],
+          "radius": 0.13,
+          "height": 0.13,
+          "material": "industrial",
+          "axis": "z",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            0.38,
+            1.03,
+            0.1
+          ],
+          "size": [
+            0.53,
+            0.11,
+            0.34
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.17,
+            1.23,
+            0.2
+          ],
+          "radius": 0.065,
+          "height": 0.24,
+          "material": "glass",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.51,
+            1.23,
+            0.2
+          ],
+          "radius": 0.065,
+          "height": 0.24,
+          "material": "glass",
+          "axis": "y",
+          "segments": 10
+        }
+      ],
+      "notes": "Table with actual separate science gear, not an untextured desk proxy.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_hospital_curtain_track",
+      "label": "Ward privacy curtain with overhead track",
+      "category": "medical",
+      "maps": [
+        "ASYLUM",
+        "WLD-07-MORTUARY"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -1.02,
+            1.2,
+            0
+          ],
+          "size": [
+            0.08,
+            2.4,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.02,
+            1.2,
+            0
+          ],
+          "size": [
+            0.08,
+            2.4,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.4,
+            0
+          ],
+          "size": [
+            2.15,
+            0.08,
+            0.09
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.19,
+            -0.03
+          ],
+          "size": [
+            2.04,
+            2.2,
+            0.03
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.79,
+            1.21,
+            -0.05
+          ],
+          "size": [
+            0.026,
+            2.1,
+            0.026
+          ],
+          "material": "ivory"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.39,
+            1.21,
+            -0.05
+          ],
+          "size": [
+            0.026,
+            2.1,
+            0.026
+          ],
+          "material": "ivory"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.21,
+            -0.05
+          ],
+          "size": [
+            0.026,
+            2.1,
+            0.026
+          ],
+          "material": "ivory"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.39,
+            1.21,
+            -0.05
+          ],
+          "size": [
+            0.026,
+            2.1,
+            0.026
+          ],
+          "material": "ivory"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.79,
+            1.21,
+            -0.05
+          ],
+          "size": [
+            0.026,
+            2.1,
+            0.026
+          ],
+          "material": "ivory"
+        }
+      ],
+      "notes": "Thin privacy sheet and supports; no solid collision wall.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "ceiling",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_institution_linen_cabinet",
+      "label": "Open hospital/prison linen cabinet",
+      "category": "institutional",
+      "maps": [
+        "ASYLUM",
+        "PRISON",
+        "SCHOOL",
+        "WLD-07-MORTUARY"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.62,
+            1.1,
+            0
+          ],
+          "size": [
+            0.11,
+            2.2,
+            0.49
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.62,
+            1.1,
+            0
+          ],
+          "size": [
+            0.11,
+            2.2,
+            0.49
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.2,
+            0
+          ],
+          "size": [
+            1.3,
+            0.09,
+            0.55
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.72,
+            0
+          ],
+          "size": [
+            1.3,
+            0.09,
+            0.55
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.25,
+            0
+          ],
+          "size": [
+            1.3,
+            0.09,
+            0.55
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.78,
+            0
+          ],
+          "size": [
+            1.3,
+            0.09,
+            0.55
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.18,
+            0
+          ],
+          "size": [
+            1.3,
+            0.09,
+            0.55
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.36,
+            0.42,
+            -0.15
+          ],
+          "size": [
+            0.27,
+            0.18,
+            0.3
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.42,
+            -0.15
+          ],
+          "size": [
+            0.27,
+            0.18,
+            0.3
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.36,
+            0.42,
+            -0.15
+          ],
+          "size": [
+            0.27,
+            0.18,
+            0.3
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.36,
+            0.95,
+            -0.15
+          ],
+          "size": [
+            0.27,
+            0.18,
+            0.3
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.95,
+            -0.15
+          ],
+          "size": [
+            0.27,
+            0.18,
+            0.3
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.36,
+            0.95,
+            -0.15
+          ],
+          "size": [
+            0.27,
+            0.18,
+            0.3
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.36,
+            1.48,
+            -0.15
+          ],
+          "size": [
+            0.27,
+            0.18,
+            0.3
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.48,
+            -0.15
+          ],
+          "size": [
+            0.27,
+            0.18,
+            0.3
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.36,
+            1.48,
+            -0.15
+          ],
+          "size": [
+            0.27,
+            0.18,
+            0.3
+          ],
+          "material": "canvas"
+        }
+      ],
+      "notes": "Open divided shelving and folded linen items.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_prison_guard_station",
+      "label": "Prison guard desk and custody rail",
+      "category": "security",
+      "maps": [
+        "PRISON"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.78,
+            0
+          ],
+          "size": [
+            1.62,
+            0.15,
+            0.86
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.67,
+            0.39,
+            -0.31
+          ],
+          "size": [
+            0.11,
+            0.75,
+            0.11
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.67,
+            0.39,
+            0.31
+          ],
+          "size": [
+            0.11,
+            0.75,
+            0.11
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.67,
+            0.39,
+            -0.31
+          ],
+          "size": [
+            0.11,
+            0.75,
+            0.11
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.67,
+            0.39,
+            0.31
+          ],
+          "size": [
+            0.11,
+            0.75,
+            0.11
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.13,
+            0.29
+          ],
+          "size": [
+            1.53,
+            0.59,
+            0.09
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.53,
+            1.39,
+            0.26
+          ],
+          "size": [
+            0.06,
+            0.52,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.18,
+            1.39,
+            0.26
+          ],
+          "size": [
+            0.06,
+            0.52,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.18,
+            1.39,
+            0.26
+          ],
+          "size": [
+            0.06,
+            0.52,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.53,
+            1.39,
+            0.26
+          ],
+          "size": [
+            0.06,
+            0.52,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.35,
+            0.91,
+            -0.19
+          ],
+          "size": [
+            0.34,
+            0.05,
+            0.24
+          ],
+          "material": "canvas"
+        }
+      ],
+      "notes": "Furniture-only security post, no simulation or watch logic.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_logging_winch_sled",
+      "label": "Sled-mounted capstan and pull handle",
+      "category": "logging",
+      "maps": [
+        "WLD-01",
+        "FARMHOUSE",
+        "WLD-05"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.55,
+            0.14,
+            0
+          ],
+          "size": [
+            0.24,
+            0.28,
+            2.19
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.55,
+            0.14,
+            0
+          ],
+          "size": [
+            0.24,
+            0.28,
+            2.19
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.36,
+            -0.67
+          ],
+          "size": [
+            1.27,
+            0.18,
+            0.15
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.36,
+            0.67
+          ],
+          "size": [
+            1.27,
+            0.18,
+            0.15
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.73,
+            0
+          ],
+          "radius": 0.36,
+          "height": 0.57,
+          "material": "metal",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.08,
+            0
+          ],
+          "radius": 0.28,
+          "height": 0.13,
+          "material": "industrial",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            0.64,
+            1,
+            0
+          ],
+          "size": [
+            0.86,
+            0.08,
+            0.1
+          ],
+          "material": "wood"
+        }
+      ],
+      "notes": "Separately supported mechanical drum; no active cable physics.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_camp_tarp_shelter",
+      "label": "Open tentlike tarp with four poles",
+      "category": "campsite",
+      "maps": [
+        "WLD-01",
+        "WLD-02",
+        "WLD-04",
+        "WLD-11"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -1.12,
+            1.09,
+            -1.13
+          ],
+          "size": [
+            0.1,
+            2.18,
+            0.11
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.12,
+            1.09,
+            1.13
+          ],
+          "size": [
+            0.1,
+            2.18,
+            0.11
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.12,
+            1.09,
+            -1.13
+          ],
+          "size": [
+            0.1,
+            2.18,
+            0.11
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.12,
+            1.09,
+            1.13
+          ],
+          "size": [
+            0.1,
+            2.18,
+            0.11
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.59,
+            2.1,
+            0
+          ],
+          "size": [
+            1.35,
+            0.07,
+            2.5
+          ],
+          "material": "canvas",
+          "roll": 0.2792527
+        },
+        {
+          "type": "box",
+          "p": [
+            0.59,
+            2.1,
+            0
+          ],
+          "size": [
+            1.35,
+            0.07,
+            2.5
+          ],
+          "material": "canvas",
+          "roll": -0.2792527
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.39,
+            0
+          ],
+          "size": [
+            0.11,
+            0.1,
+            2.55
+          ],
+          "material": "wood"
+        }
+      ],
+      "notes": "Open-sided rain canopy with separate supports, not a sealed box.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_cavern_stalagmite_cluster",
+      "label": "Four unequal faceted cavern formations",
+      "category": "wilderness",
+      "maps": [
+        "WLD-03",
+        "WLD-05",
+        "WLD-18"
+      ],
+      "parts": [
+        {
+          "type": "cylinder",
+          "p": [
+            -0.62,
+            0.3655,
+            0.61
+          ],
+          "radius": 0.26599999999999996,
+          "height": 0.6715,
+          "material": "stone",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.62,
+            0.697,
+            0.61
+          ],
+          "radius": 0.1577,
+          "height": 0.28900000000000003,
+          "material": "stone",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.62,
+            0.816,
+            0.61
+          ],
+          "radius": 0.056999999999999995,
+          "height": 0.06375,
+          "material": "stone",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.24,
+            0.5375,
+            0.47
+          ],
+          "radius": 0.294,
+          "height": 0.9875,
+          "material": "stone",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.24,
+            1.025,
+            0.47
+          ],
+          "radius": 0.17429999999999998,
+          "height": 0.42500000000000004,
+          "material": "stone",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.24,
+            1.2,
+            0.47
+          ],
+          "radius": 0.063,
+          "height": 0.09375,
+          "material": "stone",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.64,
+            0.3096,
+            -0.35
+          ],
+          "radius": 0.22399999999999998,
+          "height": 0.5688,
+          "material": "stone",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.64,
+            0.5903999999999999,
+            -0.35
+          ],
+          "radius": 0.1328,
+          "height": 0.24480000000000002,
+          "material": "stone",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.64,
+            0.6911999999999999,
+            -0.35
+          ],
+          "radius": 0.048,
+          "height": 0.054,
+          "material": "stone",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.2,
+            0.4386,
+            -0.48
+          ],
+          "radius": 0.252,
+          "height": 0.8058000000000001,
+          "material": "stone",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.2,
+            0.8363999999999999,
+            -0.48
+          ],
+          "radius": 0.14939999999999998,
+          "height": 0.34680000000000005,
+          "material": "stone",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.2,
+            0.9792,
+            -0.48
+          ],
+          "radius": 0.054,
+          "height": 0.0765,
+          "material": "stone",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.04,
+            0
+          ],
+          "size": [
+            2.19,
+            0.08,
+            1.87
+          ],
+          "material": "stone"
+        }
+      ],
+      "notes": "Several rising mineral spires rather than pillars; source geometry only.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_mine_braced_portal",
+      "label": "Clear mine entrance timber support frame",
+      "category": "mining",
+      "maps": [
+        "WLD-03",
+        "WLD-05",
+        "WLD-18"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -1.04,
+            1.3,
+            0
+          ],
+          "size": [
+            0.24,
+            2.6,
+            0.3
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.04,
+            1.3,
+            0
+          ],
+          "size": [
+            0.24,
+            2.6,
+            0.3
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.49,
+            0
+          ],
+          "size": [
+            2.3,
+            0.24,
+            0.35
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.05,
+            1.91,
+            0
+          ],
+          "size": [
+            0.16,
+            0.63,
+            0.23
+          ],
+          "material": "wood",
+          "roll": -0.4363323
+        },
+        {
+          "type": "box",
+          "p": [
+            1.05,
+            1.91,
+            0
+          ],
+          "size": [
+            0.16,
+            0.63,
+            0.23
+          ],
+          "material": "wood",
+          "roll": 0.4363323
+        }
+      ],
+      "notes": "Human-size clear opening, no solid mesh across gallery throat.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "wall",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_cemetery_headstone_row",
+      "label": "Four freestanding cemetery headstones",
+      "category": "cemetery",
+      "maps": [
+        "WLD-07",
+        "CHURCH",
+        "WLD-10"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -1.54,
+            0.12,
+            0
+          ],
+          "size": [
+            0.71,
+            0.24,
+            0.36
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.54,
+            0.75,
+            0
+          ],
+          "size": [
+            0.56,
+            1.03,
+            0.21
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.54,
+            1.28,
+            0
+          ],
+          "size": [
+            0.62,
+            0.12,
+            0.25
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.51,
+            0.12,
+            0
+          ],
+          "size": [
+            0.71,
+            0.24,
+            0.36
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.51,
+            0.84,
+            0
+          ],
+          "size": [
+            0.56,
+            1.22,
+            0.21
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.51,
+            1.47,
+            0
+          ],
+          "size": [
+            0.62,
+            0.12,
+            0.25
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.51,
+            0.12,
+            0
+          ],
+          "size": [
+            0.71,
+            0.24,
+            0.36
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.51,
+            0.75,
+            0
+          ],
+          "size": [
+            0.56,
+            1.03,
+            0.21
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.51,
+            1.28,
+            0
+          ],
+          "size": [
+            0.62,
+            0.12,
+            0.25
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.54,
+            0.12,
+            0
+          ],
+          "size": [
+            0.71,
+            0.24,
+            0.36
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.54,
+            0.84,
+            0
+          ],
+          "size": [
+            0.56,
+            1.22,
+            0.21
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.54,
+            1.47,
+            0
+          ],
+          "size": [
+            0.62,
+            0.12,
+            0.25
+          ],
+          "material": "stone"
+        }
+      ],
+      "notes": "Four distinct stones; no fake occupants or new gameplay tomb count.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_cemetery_iron_lantern",
+      "label": "Freestanding wrought graveyard lantern",
+      "category": "cemetery",
+      "maps": [
+        "WLD-07",
+        "CHURCH",
+        "WLD-10"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.12,
+            0
+          ],
+          "size": [
+            0.62,
+            0.22,
+            0.62
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.77,
+            0
+          ],
+          "size": [
+            0.11,
+            1.1,
+            0.11
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.3,
+            0
+          ],
+          "size": [
+            0.44,
+            0.1,
+            0.43
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.18,
+            1.6,
+            -0.18
+          ],
+          "size": [
+            0.045,
+            0.59,
+            0.045
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.18,
+            1.6,
+            0.18
+          ],
+          "size": [
+            0.045,
+            0.59,
+            0.045
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.18,
+            1.6,
+            -0.18
+          ],
+          "size": [
+            0.045,
+            0.59,
+            0.045
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.18,
+            1.6,
+            0.18
+          ],
+          "size": [
+            0.045,
+            0.59,
+            0.045
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.94,
+            0
+          ],
+          "size": [
+            0.51,
+            0.1,
+            0.5
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.58,
+            0
+          ],
+          "radius": 0.043,
+          "height": 0.27,
+          "material": "wax",
+          "axis": "y",
+          "segments": 10
+        }
+      ],
+      "notes": "Unlit funeral lantern and static wax candle.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_marsh_flatboat",
+      "label": "Open shallow marsh rowboat and two thwarts",
+      "category": "maritime",
+      "maps": [
+        "WLD-11",
+        "WLD-06"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.23,
+            0
+          ],
+          "size": [
+            0.87,
+            0.15,
+            2.47
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.51,
+            0.39,
+            0
+          ],
+          "size": [
+            0.11,
+            0.42,
+            2.51
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.51,
+            0.39,
+            0
+          ],
+          "size": [
+            0.11,
+            0.42,
+            2.51
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.37,
+            -1.16
+          ],
+          "size": [
+            0.98,
+            0.35,
+            0.12
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.37,
+            1.16
+          ],
+          "size": [
+            0.98,
+            0.35,
+            0.12
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.52,
+            -0.68
+          ],
+          "size": [
+            0.93,
+            0.065,
+            0.2
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.52,
+            0.68
+          ],
+          "size": [
+            0.93,
+            0.065,
+            0.2
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.16,
+            0
+          ],
+          "size": [
+            0.65,
+            0.1,
+            2.05
+          ],
+          "material": "dark"
+        }
+      ],
+      "notes": "Boat has open central seating well; no navigation or buoyancy.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "water",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_wharf_crab_pot",
+      "label": "Wire ribbed crab pot",
+      "category": "maritime",
+      "maps": [
+        "WLD-06",
+        "WLD-15",
+        "WLD-13"
+      ],
+      "parts": [
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.04,
+            0
+          ],
+          "radius": 0.59,
+          "height": 0.08,
+          "material": "metal",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.54,
+            0
+          ],
+          "radius": 0.58,
+          "height": 0.08,
+          "material": "metal",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.56,
+            0.29,
+            0
+          ],
+          "radius": 0.027,
+          "height": 0.52,
+          "material": "metal",
+          "axis": "y",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.48497,
+            0.29,
+            0.28
+          ],
+          "radius": 0.027,
+          "height": 0.52,
+          "material": "metal",
+          "axis": "y",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.28,
+            0.29,
+            0.48497
+          ],
+          "radius": 0.027,
+          "height": 0.52,
+          "material": "metal",
+          "axis": "y",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.29,
+            0.56
+          ],
+          "radius": 0.027,
+          "height": 0.52,
+          "material": "metal",
+          "axis": "y",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.28,
+            0.29,
+            0.48497
+          ],
+          "radius": 0.027,
+          "height": 0.52,
+          "material": "metal",
+          "axis": "y",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.48497,
+            0.29,
+            0.28
+          ],
+          "radius": 0.027,
+          "height": 0.52,
+          "material": "metal",
+          "axis": "y",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.56,
+            0.29,
+            0
+          ],
+          "radius": 0.027,
+          "height": 0.52,
+          "material": "metal",
+          "axis": "y",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.48497,
+            0.29,
+            -0.28
+          ],
+          "radius": 0.027,
+          "height": 0.52,
+          "material": "metal",
+          "axis": "y",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.28,
+            0.29,
+            -0.48497
+          ],
+          "radius": 0.027,
+          "height": 0.52,
+          "material": "metal",
+          "axis": "y",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.29,
+            -0.56
+          ],
+          "radius": 0.027,
+          "height": 0.52,
+          "material": "metal",
+          "axis": "y",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.28,
+            0.29,
+            -0.48497
+          ],
+          "radius": 0.027,
+          "height": 0.52,
+          "material": "metal",
+          "axis": "y",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.48497,
+            0.29,
+            -0.28
+          ],
+          "radius": 0.027,
+          "height": 0.52,
+          "material": "metal",
+          "axis": "y",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.59,
+            0
+          ],
+          "radius": 0.26,
+          "height": 0.065,
+          "material": "industrial",
+          "axis": "y",
+          "segments": 10
+        }
+      ],
+      "notes": "Visible ribbed frame and mouth; no functional crabbing.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_cannery_overhead_chute",
+      "label": "Tilted cannery chute with raised side guard",
+      "category": "industrial",
+      "maps": [
+        "WLD-13",
+        "WLD-15"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.43,
+            0
+          ],
+          "size": [
+            2.72,
+            0.1,
+            0.76
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.6,
+            -0.33
+          ],
+          "size": [
+            2.72,
+            0.23,
+            0.07
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.6,
+            0.33
+          ],
+          "size": [
+            2.72,
+            0.23,
+            0.07
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.09,
+            0.71,
+            -0.33
+          ],
+          "size": [
+            0.12,
+            1.39,
+            0.11
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.09,
+            0.71,
+            0.33
+          ],
+          "size": [
+            0.12,
+            1.39,
+            0.11
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.09,
+            0.71,
+            -0.33
+          ],
+          "size": [
+            0.12,
+            1.39,
+            0.11
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.09,
+            0.71,
+            0.33
+          ],
+          "size": [
+            0.12,
+            1.39,
+            0.11
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.3,
+            1.78,
+            0
+          ],
+          "size": [
+            0.12,
+            0.64,
+            0.8
+          ],
+          "material": "metal"
+        }
+      ],
+      "notes": "Supported chute and side rails, item movement not simulated.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_ship_galley_range",
+      "label": "Ship galley stove with guarded cooking top",
+      "category": "maritime",
+      "maps": [
+        "WLD-15"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.5,
+            0
+          ],
+          "size": [
+            1.12,
+            1,
+            0.73
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.04,
+            0
+          ],
+          "size": [
+            1.19,
+            0.1,
+            0.8
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.29,
+            1.11,
+            -0.09
+          ],
+          "radius": 0.18,
+          "height": 0.03,
+          "material": "dark",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.29,
+            1.11,
+            -0.09
+          ],
+          "radius": 0.18,
+          "height": 0.03,
+          "material": "dark",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.5,
+            -0.39
+          ],
+          "size": [
+            0.89,
+            0.58,
+            0.05
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.31,
+            0.33
+          ],
+          "size": [
+            1.16,
+            0.52,
+            0.1
+          ],
+          "material": "industrial"
+        }
+      ],
+      "notes": "Two burners, oven and splashback, no fire/cooking state.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_ship_chart_cabinet",
+      "label": "Wheelhouse chart drawer cabinet",
+      "category": "maritime",
+      "maps": [
+        "WLD-15",
+        "WLD-08"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.82,
+            0
+          ],
+          "size": [
+            1.55,
+            1.5,
+            0.63
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.6,
+            0
+          ],
+          "size": [
+            1.66,
+            0.1,
+            0.73
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.39,
+            -0.34
+          ],
+          "size": [
+            1.38,
+            0.28,
+            0.04
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.77,
+            -0.34
+          ],
+          "size": [
+            1.38,
+            0.28,
+            0.04
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.15,
+            -0.34
+          ],
+          "size": [
+            1.38,
+            0.28,
+            0.04
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.39,
+            -0.38
+          ],
+          "size": [
+            0.18,
+            0.04,
+            0.03
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.77,
+            -0.38
+          ],
+          "size": [
+            0.18,
+            0.04,
+            0.03
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.15,
+            -0.38
+          ],
+          "size": [
+            0.18,
+            0.04,
+            0.03
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.39,
+            1.7,
+            0
+          ],
+          "size": [
+            0.6,
+            0.06,
+            0.41
+          ],
+          "material": "canvas"
+        }
+      ],
+      "notes": "Individual drawers and surface charts, no navigational logic.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_lighthouse_access_ladder",
+      "label": "Twelve-rung maintenance access ladder",
+      "category": "architecture",
+      "maps": [
+        "WLD-14",
+        "WLD-04",
+        "WLD-17",
+        "WLD-18"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.39,
+            1.6,
+            0
+          ],
+          "size": [
+            0.1,
+            3.2,
+            0.11
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.39,
+            1.6,
+            0
+          ],
+          "size": [
+            0.1,
+            3.2,
+            0.11
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.28,
+            0
+          ],
+          "size": [
+            0.79,
+            0.07,
+            0.09
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.52,
+            0
+          ],
+          "size": [
+            0.79,
+            0.07,
+            0.09
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.76,
+            0
+          ],
+          "size": [
+            0.79,
+            0.07,
+            0.09
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1,
+            0
+          ],
+          "size": [
+            0.79,
+            0.07,
+            0.09
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.24,
+            0
+          ],
+          "size": [
+            0.79,
+            0.07,
+            0.09
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.48,
+            0
+          ],
+          "size": [
+            0.79,
+            0.07,
+            0.09
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.72,
+            0
+          ],
+          "size": [
+            0.79,
+            0.07,
+            0.09
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.96,
+            0
+          ],
+          "size": [
+            0.79,
+            0.07,
+            0.09
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.2,
+            0
+          ],
+          "size": [
+            0.79,
+            0.07,
+            0.09
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.4400000000000004,
+            0
+          ],
+          "size": [
+            0.79,
+            0.07,
+            0.09
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.6799999999999997,
+            0
+          ],
+          "size": [
+            0.79,
+            0.07,
+            0.09
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.92,
+            0
+          ],
+          "size": [
+            0.79,
+            0.07,
+            0.09
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.39,
+            0.38,
+            0.19
+          ],
+          "size": [
+            0.08,
+            0.12,
+            0.38
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.39,
+            0.38,
+            0.19
+          ],
+          "size": [
+            0.08,
+            0.12,
+            0.38
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.39,
+            1.53,
+            0.19
+          ],
+          "size": [
+            0.08,
+            0.12,
+            0.38
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.39,
+            1.53,
+            0.19
+          ],
+          "size": [
+            0.08,
+            0.12,
+            0.38
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.39,
+            2.76,
+            0.19
+          ],
+          "size": [
+            0.08,
+            0.12,
+            0.38
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.39,
+            2.76,
+            0.19
+          ],
+          "size": [
+            0.08,
+            0.12,
+            0.38
+          ],
+          "material": "industrial"
+        }
+      ],
+      "notes": "Actual ladder rungs and wall clamps; no climb controls.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "wall",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_motel_guest_bed",
+      "label": "Double motel bed with separate bedding and pillows",
+      "category": "domestic",
+      "maps": [
+        "WLD-16",
+        "HOUSE"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.32,
+            0
+          ],
+          "size": [
+            1.82,
+            0.4,
+            2.37
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.58,
+            0
+          ],
+          "size": [
+            1.69,
+            0.16,
+            2.22
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.74,
+            0.24
+          ],
+          "size": [
+            1.69,
+            0.13,
+            1.77
+          ],
+          "material": "redcloth"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.42,
+            0.81,
+            -0.84
+          ],
+          "size": [
+            0.69,
+            0.13,
+            0.41
+          ],
+          "material": "ivory"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.42,
+            0.81,
+            -0.84
+          ],
+          "size": [
+            0.69,
+            0.13,
+            0.41
+          ],
+          "material": "ivory"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.08,
+            -1.12
+          ],
+          "size": [
+            1.89,
+            0.92,
+            0.17
+          ],
+          "material": "wood"
+        }
+      ],
+      "notes": "Separate bed frame/blanket/pillows; no sleep or spawn state.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_bunker_observation_scope",
+      "label": "Coastal battery field binocular mount",
+      "category": "defense",
+      "maps": [
+        "WLD-17",
+        "WLD-04"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.14,
+            0
+          ],
+          "size": [
+            0.88,
+            0.28,
+            0.82
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.87,
+            0
+          ],
+          "radius": 0.1,
+          "height": 1.25,
+          "material": "metal",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.51,
+            -0.09
+          ],
+          "size": [
+            0.47,
+            0.14,
+            0.28
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.18,
+            1.58,
+            -0.43
+          ],
+          "radius": 0.14,
+          "height": 0.64,
+          "material": "industrial",
+          "axis": "z",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.18,
+            1.58,
+            -0.43
+          ],
+          "radius": 0.14,
+          "height": 0.64,
+          "material": "industrial",
+          "axis": "z",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.18,
+            1.58,
+            -0.77
+          ],
+          "radius": 0.15,
+          "height": 0.07,
+          "material": "dark",
+          "axis": "z",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.18,
+            1.58,
+            -0.77
+          ],
+          "radius": 0.15,
+          "height": 0.07,
+          "material": "dark",
+          "axis": "z",
+          "segments": 10
+        }
+      ],
+      "notes": "Paired optical barrels and plinth, no target tracking.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_cinder_cable_rack",
+      "label": "Three-tier guarded service cable rack",
+      "category": "underground",
+      "maps": [
+        "WLD-18",
+        "WLD-08",
+        "WLD-17"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.55,
+            1.32,
+            0.22
+          ],
+          "size": [
+            0.13,
+            2.62,
+            0.18
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.55,
+            1.32,
+            0.22
+          ],
+          "size": [
+            0.13,
+            2.62,
+            0.18
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.57,
+            -0.16
+          ],
+          "size": [
+            1.44,
+            0.09,
+            0.74
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.59,
+            0.69,
+            -0.16
+          ],
+          "size": [
+            0.075,
+            0.24,
+            0.74
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.59,
+            0.69,
+            -0.16
+          ],
+          "size": [
+            0.075,
+            0.24,
+            0.74
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.25,
+            -0.16
+          ],
+          "size": [
+            1.44,
+            0.09,
+            0.74
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.59,
+            1.37,
+            -0.16
+          ],
+          "size": [
+            0.075,
+            0.24,
+            0.74
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.59,
+            1.37,
+            -0.16
+          ],
+          "size": [
+            0.075,
+            0.24,
+            0.74
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.93,
+            -0.16
+          ],
+          "size": [
+            1.44,
+            0.09,
+            0.74
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.59,
+            2.05,
+            -0.16
+          ],
+          "size": [
+            0.075,
+            0.24,
+            0.74
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.59,
+            2.05,
+            -0.16
+          ],
+          "size": [
+            0.075,
+            0.24,
+            0.74
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.35,
+            0.52,
+            -0.21
+          ],
+          "radius": 0.04,
+          "height": 0.98,
+          "material": "industrial",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.52,
+            -0.21
+          ],
+          "radius": 0.04,
+          "height": 0.98,
+          "material": "industrial",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.35,
+            0.52,
+            -0.21
+          ],
+          "radius": 0.04,
+          "height": 0.98,
+          "material": "industrial",
+          "axis": "y",
+          "segments": 10
+        }
+      ],
+      "notes": "Separate cable trays, no live data/power transfer.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "wall",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_research_battery_bank",
+      "label": "Emergency three-battery rack and terminals",
+      "category": "research",
+      "maps": [
+        "WLD-08",
+        "WLD-18",
+        "WLD-09"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.12,
+            0
+          ],
+          "size": [
+            2.36,
+            0.22,
+            0.85
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.83,
+            0.67,
+            0
+          ],
+          "size": [
+            0.69,
+            0.83,
+            0.68
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.83,
+            1.06,
+            -0.38
+          ],
+          "size": [
+            0.5,
+            0.07,
+            0.05
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -1.01,
+            1.12,
+            -0.03
+          ],
+          "radius": 0.07,
+          "height": 0.09,
+          "material": "metal",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.6499999999999999,
+            1.12,
+            -0.03
+          ],
+          "radius": 0.07,
+          "height": 0.09,
+          "material": "metal",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.67,
+            0
+          ],
+          "size": [
+            0.69,
+            0.83,
+            0.68
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.06,
+            -0.38
+          ],
+          "size": [
+            0.5,
+            0.07,
+            0.05
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.18,
+            1.12,
+            -0.03
+          ],
+          "radius": 0.07,
+          "height": 0.09,
+          "material": "metal",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.18,
+            1.12,
+            -0.03
+          ],
+          "radius": 0.07,
+          "height": 0.09,
+          "material": "metal",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "box",
+          "p": [
+            0.83,
+            0.67,
+            0
+          ],
+          "size": [
+            0.69,
+            0.83,
+            0.68
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.83,
+            1.06,
+            -0.38
+          ],
+          "size": [
+            0.5,
+            0.07,
+            0.05
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.6499999999999999,
+            1.12,
+            -0.03
+          ],
+          "radius": 0.07,
+          "height": 0.09,
+          "material": "metal",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            1.01,
+            1.12,
+            -0.03
+          ],
+          "radius": 0.07,
+          "height": 0.09,
+          "material": "metal",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.09,
+            0.68,
+            0.39
+          ],
+          "size": [
+            0.09,
+            0.94,
+            0.11
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.09,
+            0.68,
+            0.39
+          ],
+          "size": [
+            0.09,
+            0.94,
+            0.11
+          ],
+          "material": "metal"
+        }
+      ],
+      "notes": "Separate enclosed batteries with terminals; not a simulated energy source.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_rail_trackside_toolbox",
+      "label": "Trackside tools and metal-trimmed trunk",
+      "category": "rail",
+      "maps": [
+        "WLD-12",
+        "WLD-05"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.37,
+            0
+          ],
+          "size": [
+            1.24,
+            0.65,
+            0.59
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.73,
+            0
+          ],
+          "size": [
+            1.33,
+            0.11,
+            0.65
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.55,
+            0.37,
+            -0.33
+          ],
+          "size": [
+            0.06,
+            0.65,
+            0.06
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.55,
+            0.37,
+            -0.33
+          ],
+          "size": [
+            0.06,
+            0.65,
+            0.06
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.52,
+            -0.34
+          ],
+          "size": [
+            0.23,
+            0.16,
+            0.04
+          ],
+          "material": "bronze"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.29,
+            0.87,
+            -0.15
+          ],
+          "size": [
+            0.17,
+            0.035,
+            0.19
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.87,
+            -0.15
+          ],
+          "size": [
+            0.17,
+            0.035,
+            0.19
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.29,
+            0.87,
+            -0.15
+          ],
+          "size": [
+            0.17,
+            0.035,
+            0.19
+          ],
+          "material": "industrial"
+        }
+      ],
+      "notes": "Lidded tool chest; no gameplay tools granted.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_dam_pressure_gauge_panel",
+      "label": "Four analogue dials and supported gauge risers",
+      "category": "hydro",
+      "maps": [
+        "WLD-09",
+        "WLD-18",
+        "WLD-15"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.32,
+            0.13
+          ],
+          "size": [
+            1.77,
+            2.01,
+            0.2
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.45,
+            1.23,
+            -0.06
+          ],
+          "radius": 0.27,
+          "height": 0.09,
+          "material": "metal",
+          "axis": "z",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.45,
+            1.23,
+            -0.11
+          ],
+          "radius": 0.2,
+          "height": 0.04,
+          "material": "ivory",
+          "axis": "z",
+          "segments": 12
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.37,
+            1.17,
+            -0.14
+          ],
+          "size": [
+            0.19,
+            0.035,
+            0.026
+          ],
+          "material": "dark",
+          "roll": 0.6108652
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.45,
+            1.99,
+            -0.06
+          ],
+          "radius": 0.27,
+          "height": 0.09,
+          "material": "metal",
+          "axis": "z",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.45,
+            1.99,
+            -0.11
+          ],
+          "radius": 0.2,
+          "height": 0.04,
+          "material": "ivory",
+          "axis": "z",
+          "segments": 12
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.37,
+            1.93,
+            -0.14
+          ],
+          "size": [
+            0.19,
+            0.035,
+            0.026
+          ],
+          "material": "dark",
+          "roll": 0.6108652
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.45,
+            1.23,
+            -0.06
+          ],
+          "radius": 0.27,
+          "height": 0.09,
+          "material": "metal",
+          "axis": "z",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.45,
+            1.23,
+            -0.11
+          ],
+          "radius": 0.2,
+          "height": 0.04,
+          "material": "ivory",
+          "axis": "z",
+          "segments": 12
+        },
+        {
+          "type": "box",
+          "p": [
+            0.53,
+            1.17,
+            -0.14
+          ],
+          "size": [
+            0.19,
+            0.035,
+            0.026
+          ],
+          "material": "dark",
+          "roll": 0.6108652
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.45,
+            1.99,
+            -0.06
+          ],
+          "radius": 0.27,
+          "height": 0.09,
+          "material": "metal",
+          "axis": "z",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.45,
+            1.99,
+            -0.11
+          ],
+          "radius": 0.2,
+          "height": 0.04,
+          "material": "ivory",
+          "axis": "z",
+          "segments": 12
+        },
+        {
+          "type": "box",
+          "p": [
+            0.53,
+            1.93,
+            -0.14
+          ],
+          "size": [
+            0.19,
+            0.035,
+            0.026
+          ],
+          "material": "dark",
+          "roll": 0.6108652
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.53,
+            0.49,
+            0.25
+          ],
+          "radius": 0.06,
+          "height": 0.72,
+          "material": "metal",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.53,
+            0.49,
+            0.25
+          ],
+          "radius": 0.06,
+          "height": 0.72,
+          "material": "metal",
+          "axis": "y",
+          "segments": 10
+        }
+      ],
+      "notes": "Individually articulated pressure gauges, no liquid or pressure code.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "wall",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_monastery_stained_window",
+      "label": "Arched monastery stained-glazing study",
+      "category": "ecclesiastical",
+      "maps": [
+        "WLD-10",
+        "CHURCH",
+        "CASTLE"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.72,
+            1.4,
+            0
+          ],
+          "size": [
+            0.19,
+            2.51,
+            0.26
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.72,
+            1.4,
+            0
+          ],
+          "size": [
+            0.19,
+            2.51,
+            0.26
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.68,
+            0
+          ],
+          "size": [
+            1.61,
+            0.21,
+            0.32
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.17,
+            0
+          ],
+          "size": [
+            1.67,
+            0.21,
+            0.36
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.4,
+            0.01
+          ],
+          "size": [
+            1.13,
+            1.99,
+            0.05
+          ],
+          "material": "glass"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.43,
+            -0.05
+          ],
+          "size": [
+            0.075,
+            2.04,
+            0.09
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.87,
+            -0.05
+          ],
+          "size": [
+            1.32,
+            0.07,
+            0.07
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.39,
+            -0.05
+          ],
+          "size": [
+            1.32,
+            0.07,
+            0.07
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.91,
+            -0.05
+          ],
+          "size": [
+            1.32,
+            0.07,
+            0.07
+          ],
+          "material": "metal"
+        }
+      ],
+      "notes": "Unlit opaque placeholder study glass; no scene transparency or cut-through.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "wall",
+        "front": "-Z",
+        "scale": "metres",
+        "pivot": "floor-origin for freestanding / authored mount for attached",
+        "collision": "not authored",
+        "editor_status": "SOURCE_ONLY",
+        "required_checks": [
+          "four-view screenshots",
+          "ground pivot and scale",
+          "collision and navmesh",
+          "UV and material",
+          "real map room clearance",
+          "production reviewer approval"
+        ],
+        "runtime_placement": false
+      }
     }
   ]
 }
