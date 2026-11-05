@@ -28,6 +28,29 @@ public final class FixtureLighting {
  private long generation,invalidatedCells,consideredSources;
  /** Visibility changes caused by a portal are source-specific. */
  private long[] sourceOcclusionRevisions=new long[0];
+ /** Bounded journal: a chunk offscreen during several door transitions can
+  * replay exactly the ray changes it missed. If history rolls over, re-test
+  * the affected source conservatively instead of retaining stale light. */
+ private record DoorShadowChange(long revision,LevelDefinition.Portal house,
+                                CastleDoorSlots.Slot castle){}
+ private static final int DOOR_JOURNAL_LIMIT=64;
+ private final ArrayDeque<DoorShadowChange> doorJournal=new ArrayDeque<>();
+ private long discardedDoorChangesThrough=-1;
+ private void recordDoorChange(long version,LevelDefinition.Portal house,
+                               CastleDoorSlots.Slot castle){
+  doorJournal.addLast(new DoorShadowChange(version,house,castle));
+  if(doorJournal.size()>DOOR_JOURNAL_LIMIT)
+   discardedDoorChangesThrough=doorJournal.removeFirst().revision();
+ }
+ private boolean stationaryRayChanged(Object key,long seen){
+  if(seen<=discardedDoorChangesThrough)return true;
+  for(var change:doorJournal){
+   if(change.revision()<=seen)continue;
+   if(change.house()!=null&&mayCrossChangedPortal(key,change.house()))return true;
+   if(change.castle()!=null&&castleDoorMayCrossCachedRay(key,change.castle()))return true;
+  }
+  return false;
+ }
  private static <K,V> Map<K,V> bounded(int limit){
   return new LinkedHashMap<K,V>(2048,.75f,true){
    @Override protected boolean removeEldestEntry(Map.Entry<K,V> eldest){
@@ -78,6 +101,11 @@ public final class FixtureLighting {
    this.owner=owner;this.capturedSourceRevisions=new long[owner.sources.size()];
   }
   public void release(){owner.stationaryShadowEntries-=values.size();values.clear();epoch=-1;globalEpoch=-1;}
+  /** Focused diagnostic for verifying retained actual source/ray entries. */
+  int entriesForSource(int source){
+   int count=0;for(var key:values.keySet())if(shadowSourceId(key)==source)count++;
+   return count;
+  }
  }
 
  private long stationaryShadowEntries;
@@ -99,12 +127,15 @@ public final class FixtureLighting {
      // A real global structural change invalidates every visibility result.
      next.values.clear();
     }else{
-     // A single doorway only changes rays from lamps that can intersect
-     // that portal. Preserve every other source's immutable visibility.
+     // Preserve same-side stationary rays even for a lamp whose range
+     // includes the changing door. Source-wide eviction rebuilt tens of
+     // thousands of unrelated rays on real House door transitions.
      next.values.entrySet().removeIf(entry->{
       int id=shadowSourceId(entry.getKey());
-      return id<0||id>=sourceOcclusionRevisions.length
-          ||next.capturedSourceRevisions[id]!=sourceOcclusionRevisions[id];
+      if(id<0||id>=sourceOcclusionRevisions.length)return true;
+      long seen=next.capturedSourceRevisions[id];
+      return seen!=sourceOcclusionRevisions[id]
+          &&stationaryRayChanged(entry.getKey(),seen);
      });
     }
     stationaryShadowEntries-=before-next.values.size();
@@ -407,6 +438,7 @@ public final class FixtureLighting {
   * inside the cell, while leaving distant rooms' resident VBOs untouched. */
  private void invalidateCastleDoor(CastleDoorSlots.Slot slot){
   long revision=++generation;
+  recordDoorChange(revision,null,slot);
   sight.keySet().removeIf(key->castleDoorMayCrossCachedRay(key,slot));
   for(var source:sources){
    if(!castleDoorInfluences(source,slot))continue;
@@ -577,6 +609,7 @@ public final class FixtureLighting {
   * actual door, so testing just the door cell would leak light through walls. */
  private void invalidateOccludingPortal(LevelDefinition.Portal portal){
   long revision=++generation;
+  recordDoorChange(revision,portal,null);
   // House-shell probes use the shared ray cache, not the resident-chunk
   // stationary cache. Clearing ALL entries here previously caused 80k+
   // architectural rays and >1s geometry stalls on a single door toggle.

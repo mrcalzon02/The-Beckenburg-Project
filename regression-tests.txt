@@ -298,6 +298,7 @@ SoundVolumeTest
 AllMapLightingCoverageTest
 VanLightingAndCastleDoorTest
 CastleDoorLightingLocalityTest
+StationaryDoorShadowRetentionTest
 MetalMaterialRefinementTest
 FixtureJoinIntegrationTest
 AllMapArchitecturalJoinTest
