@@ -1,0 +1,603 @@
+{
+  "schema": "beckenburg.primitive-refinements/1",
+  "status": "source_only_review_not_production_approval",
+  "runtime_approved": false,
+  "model_count": 15,
+  "map_associations_only": true,
+  "review_pages": [
+    {
+      "page": 1,
+      "name": "level_blockout_kit_refined_p01",
+      "file": "level_blockout_kit_refined_p01.glb",
+      "triangles": 1736,
+      "bytes": 198864,
+      "sha256": "8315af5c4f0faa43faf4ca8c3f095e949c01de2283a8594459ad57e6eb3d0d48",
+      "display_slots": [
+        {
+          "slot": 1,
+          "id": "level_blockout_refined_castle_open_crypt_niche",
+          "title": "Open masonry crypt niche",
+          "source_ground_offset": -0.0,
+          "stand_center": [
+            -7.0,
+            0,
+            -3.5
+          ],
+          "stand_dimensions_m": [
+            5.65,
+            5.6
+          ],
+          "review_only": true
+        },
+        {
+          "slot": 2,
+          "id": "level_blockout_refined_castle_sarcophagus_bier",
+          "title": "Counted tomb support bier",
+          "source_ground_offset": -0.0,
+          "stand_center": [
+            0.0,
+            0,
+            -3.5
+          ],
+          "stand_dimensions_m": [
+            5.65,
+            5.6
+          ],
+          "review_only": true
+        },
+        {
+          "slot": 3,
+          "id": "level_blockout_refined_castle_candelabrum",
+          "title": "Five-candle iron candelabrum",
+          "source_ground_offset": -0.0,
+          "stand_center": [
+            7.0,
+            0,
+            -3.5
+          ],
+          "stand_dimensions_m": [
+            5.65,
+            5.6
+          ],
+          "review_only": true
+        },
+        {
+          "slot": 4,
+          "id": "level_blockout_refined_house_iron_stove",
+          "title": "Cast-iron house heating stove",
+          "source_ground_offset": -0.0,
+          "stand_center": [
+            -7.0,
+            0,
+            3.5
+          ],
+          "stand_dimensions_m": [
+            5.65,
+            5.6
+          ],
+          "review_only": true
+        },
+        {
+          "slot": 5,
+          "id": "level_blockout_refined_school_coat_rail",
+          "title": "Free-standing five-hook coat rack",
+          "source_ground_offset": -0.0,
+          "stand_center": [
+            0.0,
+            0,
+            3.5
+          ],
+          "stand_dimensions_m": [
+            5.65,
+            5.6
+          ],
+          "review_only": true
+        },
+        {
+          "slot": 6,
+          "id": "level_blockout_refined_mortuary_instrument_cart",
+          "title": "Castored mortuary instrument cart",
+          "source_ground_offset": -0.0,
+          "stand_center": [
+            7.0,
+            0,
+            3.5
+          ],
+          "stand_dimensions_m": [
+            5.65,
+            5.6
+          ],
+          "review_only": true
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "name": "level_blockout_kit_refined_p02",
+      "file": "level_blockout_kit_refined_p02.glb",
+      "triangles": 2884,
+      "bytes": 316108,
+      "sha256": "64b3f88b936c13225f4e277806b0002d985299308dabc5d2bf990c7d5ae561a5",
+      "display_slots": [
+        {
+          "slot": 1,
+          "id": "level_blockout_refined_rail_mechanical_semaphore",
+          "title": "Mechanical rail semaphore with counterweight",
+          "source_ground_offset": -0.0,
+          "stand_center": [
+            -7.0,
+            0,
+            -3.5
+          ],
+          "stand_dimensions_m": [
+            5.65,
+            5.6
+          ],
+          "review_only": true
+        },
+        {
+          "slot": 2,
+          "id": "level_blockout_refined_lighthouse_fresnel_cage",
+          "title": "Open-braced lighthouse optic assembly",
+          "source_ground_offset": -0.0,
+          "stand_center": [
+            0.0,
+            0,
+            -3.5
+          ],
+          "stand_dimensions_m": [
+            5.65,
+            5.6
+          ],
+          "review_only": true
+        },
+        {
+          "slot": 3,
+          "id": "level_blockout_refined_mine_open_ore_cart",
+          "title": "Four-wheel open-top ore trolley",
+          "source_ground_offset": -0.0,
+          "stand_center": [
+            7.0,
+            0,
+            -3.5
+          ],
+          "stand_dimensions_m": [
+            5.65,
+            5.6
+          ],
+          "review_only": true
+        },
+        {
+          "slot": 4,
+          "id": "level_blockout_refined_sawmill_guarded_blade_table",
+          "title": "Guarded low-poly mill saw station",
+          "source_ground_offset": -0.0,
+          "stand_center": [
+            -7.0,
+            0,
+            3.5
+          ],
+          "stand_dimensions_m": [
+            5.65,
+            5.6
+          ],
+          "review_only": true
+        },
+        {
+          "slot": 5,
+          "id": "level_blockout_refined_cannery_suspended_hooks",
+          "title": "Freestanding fish processing hook rail",
+          "source_ground_offset": -0.0,
+          "stand_center": [
+            0.0,
+            0,
+            3.5
+          ],
+          "stand_dimensions_m": [
+            5.65,
+            5.6
+          ],
+          "review_only": true
+        },
+        {
+          "slot": 6,
+          "id": "level_blockout_refined_prison_visitation_grille",
+          "title": "Visitation grille and pass-through counter",
+          "source_ground_offset": -0.005,
+          "stand_center": [
+            7.0,
+            0,
+            3.5
+          ],
+          "stand_dimensions_m": [
+            5.65,
+            5.6
+          ],
+          "review_only": true
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "name": "level_blockout_kit_refined_p03",
+      "file": "level_blockout_kit_refined_p03.glb",
+      "triangles": 836,
+      "bytes": 100784,
+      "sha256": "811d454063be78c660489c1861b40f9ae450c6228ef9898b9f0158bc1b0402e3",
+      "display_slots": [
+        {
+          "slot": 1,
+          "id": "level_blockout_refined_camp_timber_washstand",
+          "title": "Standalone campground washstand",
+          "source_ground_offset": -0.0,
+          "stand_center": [
+            -7.0,
+            0,
+            -3.5
+          ],
+          "stand_dimensions_m": [
+            5.65,
+            5.6
+          ],
+          "review_only": true
+        },
+        {
+          "slot": 2,
+          "id": "level_blockout_refined_wharf_mooring_bollard",
+          "title": "Deck-bolted dual-horn mooring bollard",
+          "source_ground_offset": -0.0,
+          "stand_center": [
+            0.0,
+            0,
+            -3.5
+          ],
+          "stand_dimensions_m": [
+            5.65,
+            5.6
+          ],
+          "review_only": true
+        },
+        {
+          "slot": 3,
+          "id": "level_blockout_refined_battery_vent_cage",
+          "title": "Open-slat concrete-bunker vent cage",
+          "source_ground_offset": -0.0,
+          "stand_center": [
+            7.0,
+            0,
+            -3.5
+          ],
+          "stand_dimensions_m": [
+            5.65,
+            5.6
+          ],
+          "review_only": true
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "id": "level_blockout_refined_castle_open_crypt_niche",
+      "label": "Open masonry crypt niche",
+      "maps": [
+        "CASTLE"
+      ],
+      "mount": "opening",
+      "source_parts": 10,
+      "source_bounds_m": [
+        -0.8888,
+        -0.37,
+        0.8888,
+        0.37,
+        0.0,
+        2.92
+      ],
+      "triangles": 120,
+      "bytes": 17120,
+      "sha256": "e5ad91c9c4d321c3574a16320f11bf9bdc3b09d44d5427552f93b94b50b4b315",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_refined_castle_sarcophagus_bier",
+      "label": "Counted tomb support bier",
+      "maps": [
+        "CASTLE"
+      ],
+      "mount": "floor",
+      "source_parts": 8,
+      "source_bounds_m": [
+        -1.08,
+        -0.51,
+        1.08,
+        0.51,
+        0.0,
+        0.55
+      ],
+      "triangles": 96,
+      "bytes": 16760,
+      "sha256": "aa81dee73c4af05b51b7063cc30714a901a86445da70fa65f8338212267679b4",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_refined_castle_candelabrum",
+      "label": "Five-candle iron candelabrum",
+      "maps": [
+        "CASTLE",
+        "CHURCH",
+        "WLD-10"
+      ],
+      "mount": "floor",
+      "source_parts": 18,
+      "source_bounds_m": [
+        -0.54,
+        -0.3,
+        0.54,
+        0.3,
+        0.0,
+        1.9175
+      ],
+      "triangles": 552,
+      "bytes": 63184,
+      "sha256": "e1899e2c22a2c1591096512a87f493d79087f2a4ae0c32157aa095559ff6d34d",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_refined_house_iron_stove",
+      "label": "Cast-iron house heating stove",
+      "maps": [
+        "HOUSE",
+        "FARMHOUSE",
+        "WLD-14"
+      ],
+      "mount": "floor",
+      "source_parts": 12,
+      "source_bounds_m": [
+        -0.48,
+        -0.52,
+        0.48,
+        0.39,
+        0.0,
+        1.765
+      ],
+      "triangles": 200,
+      "bytes": 27280,
+      "sha256": "24f139ba033da834a65ddb786cb1083a3f997cd842137d9f7bcc2366510f615b",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_refined_school_coat_rail",
+      "label": "Free-standing five-hook coat rack",
+      "maps": [
+        "SCHOOL",
+        "ACADEMY"
+      ],
+      "mount": "floor",
+      "source_parts": 16,
+      "source_bounds_m": [
+        -0.8,
+        -0.35,
+        0.8,
+        0.35,
+        0.0,
+        1.88
+      ],
+      "triangles": 332,
+      "bytes": 38768,
+      "sha256": "00b8061bf98db011b52fbd5c82625753ef8f3324e278f8fbc7f5bdad7a4563a0",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_refined_mortuary_instrument_cart",
+      "label": "Castored mortuary instrument cart",
+      "maps": [
+        "ASYLUM",
+        "WLD-07-MORTUARY"
+      ],
+      "mount": "floor",
+      "source_parts": 15,
+      "source_bounds_m": [
+        -0.575,
+        -0.395,
+        0.6075,
+        0.395,
+        0.0,
+        0.9575
+      ],
+      "triangles": 292,
+      "bytes": 36704,
+      "sha256": "1354f7f86388746267564d87a98c459443b4b663df73c3d67751638124159787",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_refined_rail_mechanical_semaphore",
+      "label": "Mechanical rail semaphore with counterweight",
+      "maps": [
+        "WLD-12"
+      ],
+      "mount": "floor",
+      "source_parts": 7,
+      "source_bounds_m": [
+        -0.985,
+        -0.245,
+        0.575,
+        0.245,
+        0.0,
+        3.375
+      ],
+      "triangles": 168,
+      "bytes": 28420,
+      "sha256": "ecd31f76ba4babc1682f0f1fad4a83252a0c346136933df4d38a51c12c4a0d7d",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_refined_lighthouse_fresnel_cage",
+      "label": "Open-braced lighthouse optic assembly",
+      "maps": [
+        "WLD-14"
+      ],
+      "mount": "floor",
+      "source_parts": 61,
+      "source_bounds_m": [
+        -0.61,
+        -0.61,
+        0.61,
+        0.61,
+        0.0,
+        1.97
+      ],
+      "triangles": 1092,
+      "bytes": 118396,
+      "sha256": "a56e0a7fa6e69a04a998e3b592d5d813de0a8e42d47ae591573ce932b3841d79",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_refined_mine_open_ore_cart",
+      "label": "Four-wheel open-top ore trolley",
+      "maps": [
+        "WLD-05"
+      ],
+      "mount": "floor",
+      "source_parts": 11,
+      "source_bounds_m": [
+        -0.89,
+        -0.49,
+        0.89,
+        0.49,
+        0.0,
+        1.21
+      ],
+      "triangles": 244,
+      "bytes": 31776,
+      "sha256": "1d8f013cbb62861016e5aad693b78eeb2ff089f535a63b37b62dd9598dd514d9",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_refined_sawmill_guarded_blade_table",
+      "label": "Guarded low-poly mill saw station",
+      "maps": [
+        "WLD-01"
+      ],
+      "mount": "floor",
+      "source_parts": 22,
+      "source_bounds_m": [
+        -1.09,
+        -0.465,
+        1.09,
+        0.465,
+        0.0,
+        1.4
+      ],
+      "triangles": 344,
+      "bytes": 46348,
+      "sha256": "ed2f4c58464ac05239539cc385388e2579471301f1c3cac057988af293d766e8",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_refined_cannery_suspended_hooks",
+      "label": "Freestanding fish processing hook rail",
+      "maps": [
+        "WLD-13"
+      ],
+      "mount": "floor",
+      "source_parts": 24,
+      "source_bounds_m": [
+        -1.17,
+        -0.16,
+        1.17,
+        0.16,
+        0.0,
+        3.02
+      ],
+      "triangles": 484,
+      "bytes": 56324,
+      "sha256": "6c2e22273f74f4c828f8a9c96a5f0605fd5d41aeb89a45d7c34172b777ce5619",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_refined_prison_visitation_grille",
+      "label": "Visitation grille and pass-through counter",
+      "maps": [
+        "PRISON"
+      ],
+      "mount": "floor",
+      "source_parts": 13,
+      "source_bounds_m": [
+        -1.18,
+        -0.57,
+        1.18,
+        0.225,
+        0.005,
+        2.55
+      ],
+      "triangles": 408,
+      "bytes": 48660,
+      "sha256": "511e2641deffbe2d107d2dd5d08a023a3d617f283393fdc1ca422059078e8fc4",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_refined_camp_timber_washstand",
+      "label": "Standalone campground washstand",
+      "maps": [
+        "WLD-02"
+      ],
+      "mount": "floor",
+      "source_parts": 9,
+      "source_bounds_m": [
+        -0.645,
+        -0.33,
+        0.645,
+        0.33,
+        0.0,
+        1.06
+      ],
+      "triangles": 164,
+      "bytes": 23760,
+      "sha256": "e3feada493f439879dd652faff5b7f80846a48f2f2b0d5f2b7624062461be831",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_refined_wharf_mooring_bollard",
+      "label": "Deck-bolted dual-horn mooring bollard",
+      "maps": [
+        "WLD-06",
+        "WLD-15"
+      ],
+      "mount": "floor",
+      "source_parts": 9,
+      "source_bounds_m": [
+        -0.36,
+        -0.32,
+        0.36,
+        0.32,
+        0.0,
+        0.68
+      ],
+      "triangles": 360,
+      "bytes": 43704,
+      "sha256": "1ba6b13a3713c22b2ee82d17333bb800ddfa08432e7238e2f5334ca5a0d2c239",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_refined_battery_vent_cage",
+      "label": "Open-slat concrete-bunker vent cage",
+      "maps": [
+        "WLD-17"
+      ],
+      "mount": "structure",
+      "source_parts": 20,
+      "source_bounds_m": [
+        -0.705,
+        -0.505,
+        0.705,
+        0.505,
+        0.0,
+        1.3
+      ],
+      "triangles": 240,
+      "bytes": 29272,
+      "sha256": "25da89e576809fa3f1af469f4d8d192de7a6fef0946355179c911f50665ab9dd",
+      "runtime_approved": false
+    }
+  ]
+}
