@@ -42,6 +42,11 @@ Record true loading elapsed time, additional prewarm passes, generated shell chu
 - `LOADING STATIC PREBAKE` diagnostics emit actual preparation duration, scene revision, staged shell chunks/faces, staged scenery instance count, warm-cache reuse flags and low-resolution camera passes. The 3D loading proof records these in `verification.txt`; `StaticScenePrebakeTest` checks warm reuse, a real door toggle, revision changes, distinct maps, cancellation and unchanged camera/player state. The GPU acceptance workflow runs this test.
 - This is **CPU-side immutable-scene staging and reuse**, not finished GPU upload scheduling, texture residency, navmesh prebaking, or static/acoustic precomputation across every map backend. Native-site and Castle-specific preparation still follow their existing owner-specific paths. Never report a GPU upload merely because a CPU batch exists.
 
+### Stage 3 instrumentation integrated (upload scheduling still pending)
+
+- `OpenGlWorldRenderer` records `GPU SCENE FIRST FRAME` from the **actual GL worker** after the first frame of a new scene ID. The line includes resident/dynamic VBO batches physically sent by `Mesh.setVertices`, uploaded bytes, reused VBO batches/bytes, newly uploaded textures/bytes, GL worker wall time and synchronous readback wall time. This distinguishes real backend upload activity from CPU-produced surface descriptions.
+- These measurements are **not hardware GPU timestamp queries** and do not claim that the staged initial frame satisfies 33.3 ms. Per-scene upload priority (van → immediate exterior → first accessible room), eviction/VRAM telemetry, and persistence by material/lighting revision still require acceptance work.
+
 Stage 3 remains planned. The 5-second prewarm budget limits the start of expensive camera passes, but the initial construction itself is not preemptible once begun; wall-clock and latency evidence must be reviewed before claiming a strict five-second ceiling. Resident GPU uploads remain owned by the actual OpenGL thread. The separate real door-toggle p95/p99 regression remains open.
 
 ## Measured runtime improvement (2026-11-04)
