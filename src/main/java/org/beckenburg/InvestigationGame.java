@@ -728,6 +728,22 @@ public final class InvestigationGame {
             firstFrameWorker=new SwingWorker<>(){
                 @Override protected Void doInBackground(){
                     GraphicsOptions.current().configure(scene,width,height,true);
+                    var original=new LevelOpeningFlyover.Pose(
+                        scene.x,scene.eyeHeight,scene.z,scene.yaw,scene.pitch);
+                    try{
+                        var prewarmed=InvestigationScenePrewarm.prepare(map,scene,
+                            new LevelOpeningFlyover(map,original),this::isCancelled);
+                        BeckenburgDiagnostics.record("CASE 3D LOADING PREWARM site="+map.site()
+                            +" passes="+prewarmed.passes()
+                            +" elapsed_ms="+prewarmed.elapsedMs()
+                            +" shell_chunks="+prewarmed.staticShellChunks()
+                            +" authored_faces="+prewarmed.staticFaces());
+                    }catch(RuntimeException warmingFailure){
+                        // Optimization is never allowed to break mission launch.
+                        BeckenburgDiagnostics.fail("Optional case prewarm",warmingFailure);
+                        original.apply(scene);
+                    }
+                    if(isCancelled())return null;
                     scene.draw(map,session,0,
                         assistants.stream().map(CampaignAlly::sprite).toList());
                     return null;

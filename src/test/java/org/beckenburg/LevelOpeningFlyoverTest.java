@@ -44,6 +44,8 @@ public final class LevelOpeningFlyoverTest {
                 var image=new java.awt.image.BufferedImage(480,300,java.awt.image.BufferedImage.TYPE_INT_RGB);
                 var graphics=image.createGraphics();try{cinematic.draw(graphics,480,300);}finally{graphics.dispose();}
                 var after=cinematic.previewStatus();
+                ok(cinematic.uses3DWorldCamera(),
+                    "All software and OpenGL paths must use the real world-space flyover");
                 ok(after.requests()>=before.requests()&&after.failures()>=0,
                     "Opening instrumentation may not fabricate or lose readiness state");
                 ok(map.van().spawn(0).equals(spawn),
