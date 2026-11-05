@@ -19,11 +19,12 @@ import java.util.Set;
 
 /**
  * Standalone, real-renderer DEV ROOM (not a normal campaign/lobby level).
- * Unlimited inventory is arranged into paged six-stand rooms. A selected prop
- * can be viewed at any angle from a free-flight camera and captured as PNG.
+ * Unlimited inventory is arranged into reusable three-storey gallery wings:
+ * four six-model bays per floor, 72 independent positions per wing.
+ * A selected model can be viewed from any angle and captured as a real PNG.
  */
 public final class DevAssetShowroom implements AutoCloseable {
-    private static final int BAY=6;
+    private static final int BAY=DevAssetGalleryLayout.SLOTS_PER_BAY;
     private final SceneRenderer renderer=new SceneRenderer();
     private final JFrame window=new JFrame("BECKENBURG | MODEL AND CHARACTER REVIEW ROOM");
     private final JPanel viewport=new View();
@@ -36,8 +37,9 @@ public final class DevAssetShowroom implements AutoCloseable {
     private final JTextArea details=new JTextArea();
     private final Set<Integer> keys=new HashSet<>();
     private final javax.swing.Timer timer;
-    private List<DevAssetReviewCatalog.Entry> all=List.of(),visible=List.of(),bay=List.of();
-    private int page,selected=-1,dragX,dragY;
+    private List<DevAssetReviewCatalog.Entry> all=List.of(),visible=List.of(),
+        wing=List.of(),bay=List.of();
+    private int page,floor,bayNumber,selected=-1,dragX,dragY;
     private boolean closed;
     private double clock,rotation;
     private DevTerrainTopologyLab topologyLab;
@@ -59,6 +61,10 @@ public final class DevAssetShowroom implements AutoCloseable {
                     teleport(e.getKeyCode()-KeyEvent.VK_1);
                 if(e.getKeyCode()==KeyEvent.VK_PAGE_DOWN)changePage(1);
                 if(e.getKeyCode()==KeyEvent.VK_PAGE_UP)changePage(-1);
+                if(e.getKeyCode()==KeyEvent.VK_F9)changeFloor(-1);
+                if(e.getKeyCode()==KeyEvent.VK_F10)changeFloor(1);
+                if(e.getKeyCode()==KeyEvent.VK_OPEN_BRACKET)changeWing(-1);
+                if(e.getKeyCode()==KeyEvent.VK_CLOSE_BRACKET)changeWing(1);
                 if(e.getKeyCode()==KeyEvent.VK_R)rotation+=Math.PI/8;
                 if(e.getKeyCode()==KeyEvent.VK_F12)saveCurrentCapture();
             }
@@ -101,8 +107,11 @@ public final class DevAssetShowroom implements AutoCloseable {
         });
         catalog.addListSelectionListener(e->{
             if(!e.getValueIsAdjusting()&&catalog.getSelectedIndex()>=0){
-                int i=catalog.getSelectedIndex();page=i/BAY;showPage();
-                selected=i%BAY;teleport(selected);inspect(visible.get(i));
+                int i=catalog.getSelectedIndex();
+                var address=DevAssetGalleryLayout.address(i);
+                page=address.wing();floor=address.floor();bayNumber=address.bay();
+                showPage();
+                selected=address.slot();teleport(selected);inspect(visible.get(i));
             }
         });
         controls.add(new JScrollPane(catalog),BorderLayout.CENTER);
@@ -113,6 +122,8 @@ public final class DevAssetShowroom implements AutoCloseable {
         controls.setPreferredSize(new Dimension(355,760));
         JPanel buttons=new JPanel(new FlowLayout(FlowLayout.LEFT,5,3));
         JButton prev=new JButton("< Previous bay"),next=new JButton("Next bay >");
+        JButton lower=new JButton("Floor -"),upper=new JButton("Floor +");
+        JButton olderWing=new JButton("Wing -"),newerWing=new JButton("Wing +");
         JButton shot=new JButton("Save actual renderer PNG");
         JButton refresh=new JButton("Rescan registry");
         JButton inspect=new JButton("Inspect selected");
@@ -126,6 +137,10 @@ public final class DevAssetShowroom implements AutoCloseable {
         JButton exportDemoWater=new JButton("Export demo water...");
         prev.addActionListener(e->changePage(-1));
         next.addActionListener(e->changePage(1));
+        lower.addActionListener(e->changeFloor(-1));
+        upper.addActionListener(e->changeFloor(1));
+        olderWing.addActionListener(e->changeWing(-1));
+        newerWing.addActionListener(e->changeWing(1));
         shot.addActionListener(e->saveCurrentCapture());
         refresh.addActionListener(e->reload());
         inspect.addActionListener(e->{
@@ -139,7 +154,7 @@ public final class DevAssetShowroom implements AutoCloseable {
         demo.addActionListener(e->toggleInfrastructureShowcase());
         demoWater.addActionListener(e->editInfrastructureWater());
         exportDemoWater.addActionListener(e->exportInfrastructureWater());
-        for(JButton b:new JButton[]{prev,next,shot,refresh,inspect,approve,needsWork,
+        for(JButton b:new JButton[]{olderWing,newerWing,lower,upper,prev,next,shot,refresh,inspect,approve,needsWork,
                                     topologyButton,topologyEdit,topologyReload,demo,demoWater,
                                     exportDemoWater})
             buttons.add(b);
@@ -173,28 +188,63 @@ public final class DevAssetShowroom implements AutoCloseable {
             .filter(e->q.isEmpty()||e.key().toLowerCase(Locale.ROOT).contains(q)).toList();
         listModel.clear();
         for(var e:visible)listModel.addElement(e);
-        page=0;selected=-1;showPage();
+        page=0;floor=0;bayNumber=0;selected=-1;showPage();
     }
+    /** Next/previous physical bay; automatically continues onto another floor/wing. */
     private void changePage(int delta){
         if(visible.isEmpty())return;
+        int capacity=DevAssetGalleryLayout.BAYS_PER_FLOOR*DevAssetGalleryLayout.FLOORS;
+        int current=page*capacity+floor*DevAssetGalleryLayout.BAYS_PER_FLOOR+bayNumber;
         int max=(visible.size()-1)/BAY;
-        page=Math.max(0,Math.min(max,page+delta));
+        int destination=Math.max(0,Math.min(max,current+delta));
+        page=destination/capacity;
+        floor=(destination%capacity)/DevAssetGalleryLayout.BAYS_PER_FLOOR;
+        bayNumber=destination%DevAssetGalleryLayout.BAYS_PER_FLOOR;
+        selected=-1;showPage();
+    }
+    private void changeFloor(int delta){
+        if(visible.isEmpty())return;
+        int destination=DevAssetGalleryLayout.clampFloor(floor+delta);
+        if(destination*DevAssetGalleryLayout.SLOTS_PER_FLOOR>=wing.size())return;
+        floor=destination;selected=-1;showPage();
+    }
+    private void changeWing(int delta){
+        if(visible.isEmpty())return;
+        int last=(visible.size()-1)/DevAssetGalleryLayout.SLOTS_PER_WING;
+        page=Math.max(0,Math.min(last,page+delta));
         selected=-1;showPage();
     }
     private void showPage(){
-        int start=Math.min(visible.size(),page*BAY);
-        bay=List.copyOf(visible.subList(start,Math.min(visible.size(),start+BAY)));
-        renderer.x=0;renderer.z=-5;renderer.yaw=0;renderer.pitch=-.06;renderer.eyeHeight=1.65;
-        status.setText("DEV ROOM • "+all.size()+" registered • bay "+
-            (visible.isEmpty()?0:page+1)+"/"+Math.max(1,(visible.size()+BAY-1)/BAY)+
-            " • PgUp/PgDn bays • 1–6 teleport • WASD/Q/E fly • drag look • R rotate • F12 capture");
+        wing=DevAssetGalleryLayout.wing(visible,page);
+        if(!wing.isEmpty()){
+            int desired=floor*DevAssetGalleryLayout.SLOTS_PER_FLOOR+bayNumber*BAY;
+            if(desired>=wing.size()){
+                int lastBay=(wing.size()-1)/BAY;
+                floor=lastBay/DevAssetGalleryLayout.BAYS_PER_FLOOR;
+                bayNumber=lastBay%DevAssetGalleryLayout.BAYS_PER_FLOOR;
+            }
+        }
+        bay=DevAssetGalleryLayout.bay(wing,floor,bayNumber);
+        renderer.x=0;renderer.z=DevAssetGalleryLayout.bayEntranceZ(bayNumber);
+        renderer.yaw=0;renderer.pitch=-.06;
+        renderer.eyeHeight=DevAssetGalleryLayout.eyeY(floor);
+        updateGalleryStatus();
+    }
+    private void updateGalleryStatus(){
+        status.setText("DEV ROOM • "+visible.size()+" filtered • wing "+(page+1)+
+            "/"+Math.max(1,(visible.size()+DevAssetGalleryLayout.SLOTS_PER_WING-1)/
+                DevAssetGalleryLayout.SLOTS_PER_WING)+
+            " • floor "+(floor+1)+"/"+DevAssetGalleryLayout.FLOORS+
+            " • bay "+(bayNumber+1)+"/"+DevAssetGalleryLayout.BAYS_PER_FLOOR+
+            " • PgUp/PgDn bays • F9/F10 floors • [ ] wings • 1–6 inspect • WASD/Q/E fly • R rotate • F12 PNG");
     }
     private void teleport(int slot){
         if(slot<0||slot>=bay.size())return;
         selected=slot;
-        renderer.x=SceneRenderer.devAssetX(slot);
-        renderer.z=SceneRenderer.devAssetZ(slot)-3.15;
-        renderer.eyeHeight=1.35;renderer.yaw=0;renderer.pitch=-.05;
+        renderer.x=DevAssetGalleryLayout.standX(slot);
+        renderer.z=DevAssetGalleryLayout.standZ(bayNumber,slot)-3.15;
+        renderer.eyeHeight=DevAssetGalleryLayout.floorY(floor)+1.35;
+        renderer.yaw=0;renderer.pitch=-.05;
         inspect(bay.get(slot));
         viewport.requestFocusInWindow();
     }
@@ -371,10 +421,28 @@ public final class DevAssetShowroom implements AutoCloseable {
         if(keys.contains(KeyEvent.VK_E))renderer.eyeHeight+=step;
         if(keys.contains(KeyEvent.VK_LEFT))renderer.yaw-=.065;
         if(keys.contains(KeyEvent.VK_RIGHT))renderer.yaw+=.065;
-        try{renderer.drawDevAssetRoom(bay,clock+=.06,rotation,
-                 topologyLab!=null?topologyLab.triangles():
-                     infrastructureShowcase!=null?infrastructureShowcase.triangles():List.of(),
-                 infrastructureShowcase==null?List.of():infrastructureShowcase.props());}
+        try{
+            clock+=.06;
+            if(topologyLab!=null||infrastructureShowcase!=null){
+                // Preserve the historical side-aisle test geometry and its
+                // existing six-stand renderer/capture semantics.
+                renderer.drawDevAssetRoom(bay,clock,rotation,
+                    topologyLab!=null?topologyLab.triangles():
+                        infrastructureShowcase.triangles(),
+                    infrastructureShowcase==null?List.of():infrastructureShowcase.props());
+            }else{
+                int cameraFloor=DevAssetGalleryLayout.floorAtEye(renderer.eyeHeight);
+                int cameraBay=DevAssetGalleryLayout.bayAtZ(renderer.z);
+                int start=cameraFloor*DevAssetGalleryLayout.SLOTS_PER_FLOOR+
+                    cameraBay*DevAssetGalleryLayout.SLOTS_PER_BAY;
+                if(start<wing.size()&&(floor!=cameraFloor||bayNumber!=cameraBay)){
+                    floor=cameraFloor;bayNumber=cameraBay;selected=-1;
+                    bay=DevAssetGalleryLayout.bay(wing,floor,bayNumber);
+                    updateGalleryStatus();
+                }
+                renderer.drawDevAssetGallery(wing,clock,rotation);
+            }
+        }
         catch(RuntimeException problem){
             details.setText("DEV ROOM RENDER FAILURE\n"+problem);
             timer.stop();BeckenburgDiagnostics.fail("Developer asset review",problem);
@@ -390,7 +458,8 @@ public final class DevAssetShowroom implements AutoCloseable {
             d.setColor(new Color(0,0,0,165));
             d.fillRect(8,8,Math.min(getWidth()-16,570),Math.min(getHeight()-16,115));
             d.setColor(Color.WHITE);d.setFont(new Font(Font.MONOSPACED,Font.BOLD,13));
-            d.drawString("ISOLATED DEV ASSET LEVEL / ORIGINAL TEXTURES",18,29);
+            d.drawString("ISOLATED 3D DEV GALLERY / WING "+(page+1)+
+                " / FLOOR "+(floor+1)+" / BAY "+(bayNumber+1),18,29);
             for(int i=0;i<bay.size();i++){
                 var item=bay.get(i);
                 String name=(i+1)+" "+item.id();
@@ -434,7 +503,9 @@ public final class DevAssetShowroom implements AutoCloseable {
     private void saveCurrentCapture(){
         try{
             Path folder=outputRoot();Files.createDirectories(folder);
-            String asset=selected>=0&&selected<bay.size()?bay.get(selected).key().replace('/','_'):"bay_"+page;
+            String asset=selected>=0&&selected<bay.size()
+                ?bay.get(selected).key().replace('/','_')
+                :"wing_"+page+"_floor_"+floor+"_bay_"+bayNumber;
             Path file=folder.resolve(asset+"-"+System.currentTimeMillis()+".png");
             ImageIO.write(renderer.image(),"png",file.toFile());
             status.setText("ACTUAL RENDERER CAPTURE SAVED: "+file);
