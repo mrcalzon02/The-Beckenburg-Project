@@ -427,23 +427,22 @@ public final class DirectionalSprites {
         double head=renderHeight/2.0-(topY*cy-ahead*sy)/nearTop*focal;
         double geometricFoot=foot;
         if(head>=foot)return;
-        // The image and its world-locked plane must use the SAME hysteresis-
-        // filtered view. A second raw facing() call can rotate the physical
-        // card 90 degrees while its art still shows the preceding direction.
+        // Choose directional art with hysteresis, but keep the physical
+        // quad continuously camera-facing. A source-view swap must never
+        // flip a flat card edge-on or shift the actor's world anchor.
         int view=selectedView>=0?selectedView:stableFacing(character,heading,
             entityX,entityZ,cameraX,cameraZ);
         BufferedImage sprite=poseImage!=null?poseImage:frame(character,view,phase,animationFrame);
-        // Living people are world objects, not camera-facing overlays. Their
-        // visible card is one of two static, intersecting planes defined by the
-        // actor's own heading (front/back or left/right). Only the ART view
-        // changes with player angle. World positions, feet and plane axes never
-        // chase the camera; this also eliminates screen-space floor corrections.
+        // A grounded human is a REAL depth-tested world object: the position
+        // and shoes remain in the 3D Castle, but the textured quad rotates
+        // smoothly toward the observer. An edge-on pair of world-locked planes
+        // was making Tomas disappear / slide as the player strafed.
         if(GroundedSpriteFeet.isGroundedHuman(character)){
             HumanRenderTrace observer=ACTIVE_HUMAN_TRACE.get();
             if(observer!=null&&(!observer.identity.equals(character)
                     ||observer.width!=renderWidth||observer.height!=renderHeight))
                 observer=null;
-            drawWorldLockedHuman(pixels,depth,cameraX,cameraZ,yaw,pitch,
+            drawCameraFacingHuman(pixels,depth,cameraX,cameraZ,yaw,pitch,
                 entityX,entityZ,heading,view,sprite,height,width,elevation,opacity,
                 lamp,renderWidth,renderHeight,focal,observer);
             return;
@@ -513,43 +512,36 @@ public final class DirectionalSprites {
             }
         }
     }
-    /** Fixed world geometry for a character pose. Directional art must not
-     * change the pose's physical dimensions or its origin/pivot. */
-    record WorldLockedCard(double left,double right,double bottom,double top){}
-    /** Source alpha below the detected substantial boot sole is stray matte
-     * or fringe, never physical geometry beneath the supporting floor. */
+    /** A moving observer rotates the quad, never the NPC's physical origin.
+     * Four camera quadrants all show the same full width instead of the
+     * edge-on collapse from picking actor-heading-aligned X/Z planes. */
+    record GroundedBillboardCard(double left,double right,double bottom,double top){}
+    /** Discard stray artist fringe below the actual last shoe row. */
     static boolean groundedUvAboveFloor(double v,double sole){
         return Double.isFinite(v+sole)&&v>=0&&v<=sole;
     }
-    static WorldLockedCard worldLockedHumanCard(double height,double width,double elevation){
+    static GroundedBillboardCard groundedBillboardCard(double height,double width,double elevation){
         if(!Double.isFinite(height+width+elevation)||height<=0||width<=0)
             throw new IllegalArgumentException("invalid grounded human dimensions");
-        return new WorldLockedCard(-width*.5,width*.5,elevation-1.62,elevation-1.62+height);
+        return new GroundedBillboardCard(-width*.5,width*.5,elevation-1.62,elevation-1.62+height);
     }
-    /**
-     * Two orthogonal world planes are permanently attached to each actor.
-     * We choose a plane by the approved directional view but NEVER orient
-     * either plane from the camera. A human's soles are at actor floor Y.
-     * Unlike a screen-facing billboard, each pixel ray intersects the actual
-     * stationary world plane and uses the intersection's own Z-buffer depth.
-     */
-    static double[] worldPlaneAxis(int heading,int view){
-        if(heading<0||heading>=360||view<0||view>=8)
-            throw new IllegalArgumentException("invalid world-locked sprite orientation");
-        double a=Math.toRadians(heading);
-        boolean side=view>=2&&view<=6&&view!=4;
-        double x=side?Math.sin(a):Math.cos(a);
-        double z=side?Math.cos(a):-Math.sin(a);
-        // Flip image facing without changing the physical plane axis.
-        if(view>=4){x=-x;z=-z;}
-        return new double[]{x,z};
+    /** World X/Z tangent to the camera-to-actor line. Camera yaw does not
+     * matter: a player orbit produces continuous axis rotation. Heading/view
+     * only choose the approved source artwork, never an edge-on plane. */
+    static double[] cameraFacingPlaneAxis(double cameraX,double cameraZ,
+            double entityX,double entityZ){
+        double dx=cameraX-entityX,dz=cameraZ-entityZ;
+        double distance=Math.hypot(dx,dz);
+        if(!Double.isFinite(distance))throw new IllegalArgumentException("Non-finite camera or actor");
+        if(distance<1e-5)return new double[]{1,0};
+        return new double[]{dz/distance,-dx/distance};
     }
-    private static void drawWorldLockedHuman(int[] pixels,double[] depth,
+    private static void drawCameraFacingHuman(int[] pixels,double[] depth,
             double cameraX,double cameraZ,double yaw,double pitch,
             double entityX,double entityZ,int heading,int view,BufferedImage sprite,
             double height,double width,double elevation,int opacity,boolean lamp,
             int renderWidth,int renderHeight,double focal,HumanRenderTrace observer){
-        double[] axis=worldPlaneAxis(heading,view);
+        double[] axis=cameraFacingPlaneAxis(cameraX,cameraZ,entityX,entityZ);
         double ax=axis[0],az=axis[1];
         double nx=-az,nz=ax,cy=Math.cos(pitch),sy=Math.sin(pitch);
         double yawCos=Math.cos(yaw),yawSin=Math.sin(yaw);
@@ -560,12 +552,11 @@ public final class DirectionalSprites {
         int soleRow=GroundedSpriteFeet.lastVisibleRow(sprite);
         if(soleRow<0)return;
         double sole=(soleRow+.5)/sh;
-        // The selected facing artwork can have different transparent margins,
-        // torsos and boot rows. NONE may resize, recenter or lift the plane
-        // when the camera changes. Only the image-to-plane UV fit varies.
-        WorldLockedCard card=worldLockedHumanCard(height,width,elevation);
+        // The art source facing may change; the quad's world anchor, height
+        // and width remain constant. Shoe UVs alone accommodate alpha padding.
+        GroundedBillboardCard card=groundedBillboardCard(height,width,elevation);
         double cardTop=card.top(),cardBottom=card.bottom();
-        // Project four immutable world vertices to determine the raster bounds.
+        // Project the four continuously facing 3D vertices to the viewport.
         double left=card.left(),right=card.right();
         double[] corners={left,cardTop,left,cardBottom,right,cardTop,right,cardBottom};
         double minX=Double.POSITIVE_INFINITY,maxX=Double.NEGATIVE_INFINITY;
