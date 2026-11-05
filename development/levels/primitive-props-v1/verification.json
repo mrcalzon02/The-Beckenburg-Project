@@ -1,0 +1,186 @@
+{
+  "status": "mesh-format-and-catalog-only",
+  "runtime_verified": false,
+  "models": [
+    {
+      "id": "level_blockout_doorway",
+      "triangles": 48,
+      "bytes": 5540,
+      "sha256": "d7bc83817d47d503a5bf80c1a4b6d7f2f88e819314b6ce831ed589496753fafb"
+    },
+    {
+      "id": "level_blockout_stair_flight",
+      "triangles": 120,
+      "bytes": 11140,
+      "sha256": "5725b434cb1cbb3c5dd7856ad409be23067b70968305bb9e7dd72206846ed8be"
+    },
+    {
+      "id": "level_blockout_guardrail",
+      "triangles": 60,
+      "bytes": 5768,
+      "sha256": "99a025f01f8a355793557c0bfee4ca4e0a96d51a6b05fc0c71337ef4ef40b7d6"
+    },
+    {
+      "id": "level_blockout_storage_shelf",
+      "triangles": 84,
+      "bytes": 8348,
+      "sha256": "c4dcb112a0f33d9d95ba1d2e3aa720c78dd165aab66053979cb400aefc9c684b"
+    },
+    {
+      "id": "level_blockout_workbench",
+      "triangles": 72,
+      "bytes": 7416,
+      "sha256": "fd8934f195bfbbb86a9948d3d5d5da7c7cd6273ed60cf96c29da84550d8a0314"
+    },
+    {
+      "id": "level_blockout_utility_panel",
+      "triangles": 72,
+      "bytes": 8088,
+      "sha256": "b6ccafca193923c176ed065ed33d19e51a287e594adfce396d49e789fa0b647b"
+    },
+    {
+      "id": "level_blockout_console",
+      "triangles": 96,
+      "bytes": 10664,
+      "sha256": "88d9349428548ad55a6cbf057e335616856e77e852651b9324568aacf0a8d894"
+    },
+    {
+      "id": "level_blockout_ward_bed",
+      "triangles": 84,
+      "bytes": 8308,
+      "sha256": "975633ef45012af8b7e718385f6c72af48c36a78bc282eec9b14159392b77619"
+    },
+    {
+      "id": "level_blockout_cell_door",
+      "triangles": 108,
+      "bytes": 10252,
+      "sha256": "f4db45a7867ed692536256963b91bbc4e5210148ad89a8811833c6d83b46119e"
+    },
+    {
+      "id": "level_blockout_pew",
+      "triangles": 48,
+      "bytes": 4832,
+      "sha256": "3f96b38321d37bf158864971689156c7818b955128b961cc76714c21a54cb3be"
+    },
+    {
+      "id": "level_blockout_student_desk",
+      "triangles": 108,
+      "bytes": 10224,
+      "sha256": "6b425dde1528ee89bc26bd7b4f381bc31c2587bf8e96cd73edade36b65fb984b"
+    },
+    {
+      "id": "level_blockout_archive_cabinet",
+      "triangles": 108,
+      "bytes": 10864,
+      "sha256": "e23e0c890ed7ea303705383d1c558f3f0453c09e45d0b53657f1266ae5f6515e"
+    },
+    {
+      "id": "level_blockout_barn_stall",
+      "triangles": 72,
+      "bytes": 6728,
+      "sha256": "ca009c5b8f680e65b211ff5f1d1f87e684481f22b418c8b0e3debc3abed05781"
+    },
+    {
+      "id": "level_blockout_log_stack",
+      "triangles": 312,
+      "bytes": 25464,
+      "sha256": "e11f5cde0ca034e250e7e322e87921f4e861fee9503736fd9a52ac03afeb44b3"
+    },
+    {
+      "id": "level_blockout_camp_tent",
+      "triangles": 44,
+      "bytes": 5840,
+      "sha256": "4c37526e169b2664e28413a69c0f05d26124a8f91f999dc43d8c37559106fc22"
+    },
+    {
+      "id": "level_blockout_lookout_platform",
+      "triangles": 108,
+      "bytes": 9544,
+      "sha256": "3f888b96b3ab5769aa97411bed896e26b46f9cd8c13d197bacf837201fd3060d"
+    },
+    {
+      "id": "level_blockout_cave_support",
+      "triangles": 60,
+      "bytes": 6448,
+      "sha256": "70cc5f4b482db6833182ad822b9d152e3ae5921e6e03115ca3e0397affd2ab55"
+    },
+    {
+      "id": "level_blockout_ore_cart",
+      "triangles": 184,
+      "bytes": 16812,
+      "sha256": "062cfcee73d20801960e71458a92e0ba7bf02da585e5f31e1ce01b90f31c1049"
+    },
+    {
+      "id": "level_blockout_dock_bay",
+      "triangles": 156,
+      "bytes": 13972,
+      "sha256": "7cfeac17298483afb19f29d765c699170f99361725ec48705232019605b83ced"
+    },
+    {
+      "id": "level_blockout_cemetery_marker",
+      "triangles": 48,
+      "bytes": 5532,
+      "sha256": "98b1de81ee0364e335900a0141628a873b494dcf50e81e96b8231af24bdf9f69"
+    },
+    {
+      "id": "level_blockout_radio_mast",
+      "triangles": 116,
+      "bytes": 11484,
+      "sha256": "256f43b837e60dff866ef7275dcabe55ed3e5bea4579818c78c94fbd9ba8bcb4"
+    },
+    {
+      "id": "level_blockout_hydro_turbine",
+      "triangles": 168,
+      "bytes": 16216,
+      "sha256": "f957a348b9e2202312864d41bdf37748faf48a9854031f9755e4e6ff4eada031"
+    },
+    {
+      "id": "level_blockout_rail_signal",
+      "triangles": 88,
+      "bytes": 9988,
+      "sha256": "874a684bb5ee0729cc85535fbc649d972e5ca883162e2b18cdf75954115981bc"
+    },
+    {
+      "id": "level_blockout_cannery_conveyor",
+      "triangles": 248,
+      "bytes": 21820,
+      "sha256": "591f2b68eba83a223be7e781db5bc21890bd5c7e31244c7b7ec14b5b79cabc4a"
+    },
+    {
+      "id": "level_blockout_lighthouse_optic",
+      "triangles": 512,
+      "bytes": 43104,
+      "sha256": "d0bdd1a669675544f7c91329f6229b973b78a5153e985ef404c2dae01cabb3c0"
+    },
+    {
+      "id": "level_blockout_mooring_bollard",
+      "triangles": 92,
+      "bytes": 8980,
+      "sha256": "2b8c08039a49edd1289b20f738812425b363befc86ed6f263dd73e2e96e3e4d2"
+    },
+    {
+      "id": "level_blockout_motel_sign",
+      "triangles": 60,
+      "bytes": 7096,
+      "sha256": "ba7df0e95252064b9eb58bfaee0edc4417dc9b2ee1a65cb96b73ae5f856eba58"
+    },
+    {
+      "id": "level_blockout_blast_door",
+      "triangles": 100,
+      "bytes": 10280,
+      "sha256": "472e389aaebaa2be8916e65b15695d57c61edc3c6b1469e15296e85b68a4bbda"
+    },
+    {
+      "id": "level_blockout_shaft_ring",
+      "triangles": 192,
+      "bytes": 16796,
+      "sha256": "5da85a46182c6df625ddcee6acf6a101b340a9de03ce7a353ebecdced650d07e"
+    },
+    {
+      "id": "level_blockout_mortuary_trolley",
+      "triangles": 200,
+      "bytes": 18088,
+      "sha256": "bee007550b8d45ef0fc03e0a9475e41e29b8b044f0208984b803807b198fb525"
+    }
+  ]
+}
