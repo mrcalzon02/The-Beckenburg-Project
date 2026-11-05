@@ -11,6 +11,7 @@ import math
 from pathlib import Path
 import struct
 import hashlib
+import zlib
 
 HERE = Path(__file__).resolve().parent
 PALETTE = {
@@ -65,7 +66,6 @@ def triangles(parts):
             for i in range(seg):
                 lo,ln,hi,hn=at(i,-h/2),at(i+1,-h/2),at(i,h/2),at(i+1,h/2)
                 face([lo,hi,hn,ln],material)
-                face([at(0,h/2) if False else [px,py,pz],hn,hi],material) if False else None
                 # End centers must be transformed in the same way as the perimeter.
                 axis=part.get("axis","y")
                 top = [px+h/2,py,pz] if axis=="x" else [px,py,pz+h/2] if axis=="z" else [px,py+h/2,pz]
@@ -80,6 +80,15 @@ def triangles(parts):
                 face(p,material)
         else: raise ValueError("unexpected primitive: "+kind)
     return groups
+
+def white_png():
+    """Tiny shared valid RGB PNG; material baseColorFactor supplies each proxy color."""
+    def chunk(kind, payload):
+        return (struct.pack(">I",len(payload)) + kind + payload
+                + struct.pack(">I",zlib.crc32(kind+payload)&0xffffffff))
+    ihdr=struct.pack(">IIBBBBB",2,2,8,2,0,0,0)
+    scan=b"".join(b"\\x00"+b"\\xff\\xff\\xff"*2 for _ in range(2))
+    return b"\\x89PNG\\r\\n\\x1a\\n"+chunk(b"IHDR",ihdr)+chunk(b"IDAT",zlib.compress(scan,9))+chunk(b"IEND",b"")
 
 def glb(model):
     groups=triangles(model["parts"])
@@ -100,20 +109,28 @@ def glb(model):
         if count>65535:raise ValueError("too many vertices: "+model["id"])
         material=len(materials)
         materials.append({"name":"blockout_"+name,
-            "pbrMetallicRoughness":{"baseColorFactor":PALETTE[name],"metallicFactor":0,"roughnessFactor":1},
+            "pbrMetallicRoughness":{"baseColorFactor":PALETTE[name],"baseColorTexture":{"index":0},"metallicFactor":0,"roughnessFactor":1},
             "doubleSided":False})
         axes=[pos[i::3] for i in range(3)]
         a=accessor(struct.pack("<%sf"%len(pos),*pos),34962,5126,"VEC3",count,
                    [min(a) for a in axes],[max(a) for a in axes])
         b=accessor(struct.pack("<%sf"%len(norm),*norm),34962,5126,"VEC3",count)
+        uv=accessor(struct.pack("<%sf"%(count*2),*([0.5,0.5]*count)),34962,5126,"VEC2",count)
         c=accessor(struct.pack("<%sH"%len(inds),*inds),34963,5123,"SCALAR",len(inds))
-        prims.append({"attributes":{"POSITION":a,"NORMAL":b},"indices":c,"material":material,"mode":4})
+        prims.append({"attributes":{"POSITION":a,"NORMAL":b,"TEXCOORD_0":uv},"indices":c,"material":material,"mode":4})
     if total>3500:raise ValueError("triangle budget exceeded "+model["id"])
+    while len(raw)%4:raw.append(0)
+    png=white_png()
+    png_index=len(views)
+    views.append({"buffer":0,"byteOffset":len(raw),"byteLength":len(png)})
+    raw.extend(png)
     while len(raw)%4:raw.append(0)
     doc={"asset":{"version":"2.0","generator":"Beckenburg primitive-props-v1"},
          "scene":0,"scenes":[{"nodes":[0]}],"nodes":[{"mesh":0,"name":model["id"]}],
          "meshes":[{"name":model["label"],"primitives":prims}],
          "buffers":[{"byteLength":len(raw)}],"bufferViews":views,"accessors":accessors,
+         "images":[{"bufferView":png_index,"mimeType":"image/png"}],
+         "textures":[{"source":0}],"samplers":[],
          "materials":materials,"extras":{"stage":"graybox_only","modelId":model["id"],"meters":True,"runtimeApproved":False}}
     js=json.dumps(doc,separators=(",",":"),ensure_ascii=True).encode("ascii")
     js+=b" "*((-len(js))%4)
