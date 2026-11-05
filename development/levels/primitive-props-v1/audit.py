@@ -93,6 +93,19 @@ def read_glb(path: Path) -> tuple[dict, bytes]:
             if (positions["count"] != uv["count"]
                 or positions["count"] <= 0 or uv["type"] != "VEC2"):
                 raise ValueError("Invalid UV accessor")
+            # A useful UV0 must cover nonzero texel area on a real triangle,
+            # rather than assigning the same coordinate to every vertex.
+            if uv["componentType"] != 5126 or uv["count"] < 3:
+                raise ValueError("UV accessor is not float32 triangle data")
+            uv_view = doc["bufferViews"][uv["bufferView"]]
+            uv_start = uv_view.get("byteOffset", 0) + uv.get("byteOffset", 0)
+            if uv_start < 0 or uv_start + uv["count"] * 8 > len(binary):
+                raise ValueError("UV source data outside binary buffer")
+            uv_first = struct.unpack_from("<6f", binary, uv_start)
+            u0, v0, u1, v1, u2, v2 = uv_first
+            area = (u1-u0)*(v2-v0) - (u2-u0)*(v1-v0)
+            if not all(math.isfinite(k) for k in uv_first) or abs(area) < 1e-8:
+                raise ValueError("Degenerate constant/invalid source UV0 triangle")
             if not all(math.isfinite(v) for vector in (positions["min"],
                                                        positions["max"]) for v in vector):
                 raise ValueError("Nonfinite mesh bounds")
