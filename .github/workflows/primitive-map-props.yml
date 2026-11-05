@@ -5,6 +5,7 @@ on:
     paths:
       - 'development/levels/primitive-props-v1/catalog.json'
       - 'development/levels/primitive-props-v1/build.py'
+      - 'development/levels/primitive-props-v1/audit.py'
       - 'development/levels/primitive-props-v1/fit.py'
       - 'development/levels/primitive-props-v1/fit-recipe.json'
       - 'development/levels/layouts/**/layout.json'
@@ -50,7 +51,8 @@ jobs:
           root=Path("development/levels/primitive-props-v1")
           catalog=json.loads((root/"catalog.json").read_text())
           verification=json.loads((root/"verification.json").read_text())
-          assert len(catalog["models"])==41==len(verification["models"])
+          assert len(catalog["models"])>=76
+          assert len(catalog["models"])==len(verification["models"])
           fitted=json.loads((root/"fit-verification.json").read_text())
           assert fitted["sites"]==5 and fitted["placements"]==61
           for item in fitted["maps"]:
@@ -69,6 +71,8 @@ jobs:
               assert rec["triangles"]<=3500 and rec["bytes"]==len(data)
           print("Validated",len(verification["models"]),"independent GLBs")
           PY
+      - name: Independently decode embedded GLB PNGs and audit map assignments
+        run: python development/levels/primitive-props-v1/audit.py
       - name: Preserve generated model assets on main (no force)
         run: |
           git config user.name "github-actions[bot]"
@@ -78,7 +82,7 @@ jobs:
             echo "All generated grayboxes already match main."
             exit 0
           fi
-          git commit -m "Generate 41 reproducible primitive-map GLB prototypes"
+          git commit -m "Regenerate source-only map GLB prototypes and validated PNG textures"
           for attempt in 1 2 3; do
             if git push origin HEAD:main; then
               echo "Generated grayboxes pushed on attempt $attempt."
