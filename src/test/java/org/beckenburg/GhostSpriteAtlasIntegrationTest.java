@@ -27,10 +27,15 @@ public final class GhostSpriteAtlasIntegrationTest {
             MessageDigest md=MessageDigest.getInstance("SHA-256");
             byte[] data=new byte[8192];int n;long size=0;
             while((n=src.read(data))>=0){md.update(data,0,n);size+=n;}
-            check(size==6868626L,"ghost resource bytes changed: "+size);
+            // Always finish the digest before asserting archive size. A ZIP
+            // repack and changed PNG payload must be distinguishable in CI.
             StringBuilder hex=new StringBuilder();
             for(byte b:md.digest())hex.append(String.format("%02x",b&255));
-            check(expected.equals(hex.toString()),"ghost archive checksum mismatch");
+            String actual=hex.toString();
+            check(size==6868626L,"ghost resource bytes changed: expected=6868626 actual="+size
+                +" actualSha256="+actual+" approvedSha256="+expected);
+            check(expected.equals(actual),"ghost archive checksum mismatch: actual="
+                +actual+" approved="+expected);
         }
         check(GhostSpriteAtlas.installed(),"actual ghost atlas not loaded");
         check(GhostSpriteAtlas.atlasCount()==23*8,"missing ghost-direction atlas");
