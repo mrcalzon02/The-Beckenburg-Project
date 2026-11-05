@@ -89,6 +89,28 @@ public interface GpuWorldRenderer {
         return result!=null&&result.sceneId()==sceneId
             &&result.width()==width&&result.height()==height;
     }
+    /**
+     * Loading-worker-only barrier for an ACTUALLY completed GPU readback.
+     * A successful submit() merely replaces the pending render; it proves
+     * nothing about Mesh.setVertices or texture uploads on the GL thread.
+     * Never call this on Swing's EDT or the OpenGL owner thread.
+     */
+    static boolean awaitPreparedFrame(GpuWorldRenderer backend,long sceneId,long frameId,
+            long timeoutNs,java.util.function.BooleanSupplier cancelled){
+        Objects.requireNonNull(backend);Objects.requireNonNull(cancelled);
+        if(sceneId<=0||frameId<=0)return false;
+        long deadline=System.nanoTime()+Math.max(0,timeoutNs);
+        while(true){
+            Result finished=backend.latest();
+            if(finished!=null&&finished.sceneId()==sceneId
+                    &&finished.frameId()>=frameId)return true;
+            if(cancelled.getAsBoolean()||Thread.currentThread().isInterrupted()
+                    ||!backend.ready())return false;
+            long remaining=deadline-System.nanoTime();
+            if(remaining<=0)return false;
+            java.util.concurrent.locks.LockSupport.parkNanos(Math.min(2_000_000L,remaining));
+        }
+    }
     AtomicReference<GpuWorldRenderer> INSTALLED=new AtomicReference<>();
     static void install(GpuWorldRenderer backend) {
         if(!INSTALLED.compareAndSet(null,Objects.requireNonNull(backend)))
