@@ -835,6 +835,24 @@
       "triangles": 84,
       "bytes": 12656,
       "sha256": "534a7bc15e61b0c64a8cf8256bbe50572819df99c75ed961b46597f00690924c"
+    },
+    {
+      "id": "level_blockout_sarcophagus_plain",
+      "triangles": 120,
+      "bytes": 15416,
+      "sha256": "88449b62e641976aa9016f151c57680f597bb6aa60961e327fbb8f3836e85f4f"
+    },
+    {
+      "id": "level_blockout_sarcophagus_inscribed",
+      "triangles": 168,
+      "bytes": 20368,
+      "sha256": "a81598495116d28ad4ea0214eecdfb483dcd57fc02ca86eab2950d061310baff"
+    },
+    {
+      "id": "level_blockout_sarcophagus_effigy",
+      "triangles": 156,
+      "bytes": 19136,
+      "sha256": "571a18561e7be8c512925918832922583bad01740369d666859a87c0ebd38bc8"
     }
   ]
 }

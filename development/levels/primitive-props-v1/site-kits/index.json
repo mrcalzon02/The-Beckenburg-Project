@@ -2,7 +2,7 @@
   "schema": "beckenburg.primitive-map-kit/1",
   "status": "source-only-model-contact-rooms",
   "runtime_approved": false,
-  "model_library_count": 139,
+  "model_library_count": 142,
   "planning_packets": 29,
   "model_scale": "true-scale metres, not resized",
   "page_layout": "3 columns x 2 rows; width 7 m / depth 7 m per stand",
@@ -464,7 +464,10 @@
         "level_blockout_ballroom_chandelier",
         "level_blockout_grand_stair_newel",
         "level_blockout_wine_rack",
-        "level_blockout_monastery_scriptorium"
+        "level_blockout_monastery_scriptorium",
+        "level_blockout_sarcophagus_plain",
+        "level_blockout_sarcophagus_inscribed",
+        "level_blockout_sarcophagus_effigy"
       ],
       "pages": [
         {
@@ -635,9 +638,9 @@
           "page": 3,
           "name": "level_blockout_kit_castle_p03",
           "file": "level_blockout_kit_castle_p03.glb",
-          "triangles": 1340,
-          "bytes": 142512,
-          "sha256": "fb6771d2d62b542cf3f70b256c45d7d2a7567d56ce5dd4f5b92e560d672cc0e4",
+          "triangles": 1676,
+          "bytes": 176776,
+          "sha256": "6d56a814aba49649d18573110692477d8c744aaa678acc06a70705696c766890",
           "display_slots": [
             {
               "slot": 1,
@@ -686,6 +689,52 @@
                 3.5
               ],
               "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_sarcophagus_plain",
+              "title": "Plain closed medieval stone sarcophagus",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_sarcophagus_inscribed",
+              "title": "Inscribed medieval sarcophagus with stone end panels",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 4,
+          "name": "level_blockout_kit_castle_p04",
+          "file": "level_blockout_kit_castle_p04.glb",
+          "triangles": 180,
+          "bytes": 21588,
+          "sha256": "4df10d02d301e624f64a30e2c0fa6535e80aa02e44001e57a25f128757e548e4",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_sarcophagus_effigy",
+              "title": "Decorative sarcophagus with reclining carved effigy",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
             }
           ]
         }
@@ -715,7 +764,10 @@
         "level_blockout_crypt_niche_wall",
         "level_blockout_monastery_well",
         "level_blockout_cemetery_gate",
-        "level_blockout_mortuary_viewing_seat"
+        "level_blockout_mortuary_viewing_seat",
+        "level_blockout_sarcophagus_plain",
+        "level_blockout_sarcophagus_inscribed",
+        "level_blockout_sarcophagus_effigy"
       ],
       "pages": [
         {
@@ -804,9 +856,9 @@
           "page": 2,
           "name": "level_blockout_kit_church_p02",
           "file": "level_blockout_kit_church_p02.glb",
-          "triangles": 964,
-          "bytes": 104104,
-          "sha256": "c6ab43dbaa370929d2ac459fe4e5a514153d25380222a11c11d7156de474ef46",
+          "triangles": 1108,
+          "bytes": 118804,
+          "sha256": "fafb21ccc3d419b957b3f7aa3b5b34b354a2b09d799fd6cabfef4d58aa8b2a02",
           "display_slots": [
             {
               "slot": 1,
@@ -865,6 +917,52 @@
                 0.0,
                 0,
                 3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_sarcophagus_plain",
+              "title": "Plain closed medieval stone sarcophagus",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 3,
+          "name": "level_blockout_kit_church_p03",
+          "file": "level_blockout_kit_church_p03.glb",
+          "triangles": 372,
+          "bytes": 41188,
+          "sha256": "7b9e1fc96933235bcff814703ccec307c40a344e1f32c3ef068e3be014af2a20",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_sarcophagus_inscribed",
+              "title": "Inscribed medieval sarcophagus with stone end panels",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_sarcophagus_effigy",
+              "title": "Decorative sarcophagus with reclining carved effigy",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
               ],
               "review_only": true
             }
@@ -3235,7 +3333,10 @@
         "level_blockout_cemetery_gate",
         "level_blockout_grave_caretaker_tools",
         "level_blockout_mortuary_viewing_seat",
-        "level_blockout_mortuary_service_screen"
+        "level_blockout_mortuary_service_screen",
+        "level_blockout_sarcophagus_plain",
+        "level_blockout_sarcophagus_inscribed",
+        "level_blockout_sarcophagus_effigy"
       ],
       "pages": [
         {
@@ -3324,9 +3425,9 @@
           "page": 2,
           "name": "level_blockout_kit_wld_07_p02",
           "file": "level_blockout_kit_wld_07_p02.glb",
-          "triangles": 784,
-          "bytes": 86628,
-          "sha256": "167f61d3f4f0126d89e794193457ca9fb7cc4b99cade919a1a781018fa4653df",
+          "triangles": 928,
+          "bytes": 101320,
+          "sha256": "df4e3df73554c334388c00ddcb7e2b3101e77e7a87e2a8dcc7bb154df92bc8a8",
           "display_slots": [
             {
               "slot": 1,
@@ -3385,6 +3486,52 @@
                 0.0,
                 0,
                 3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_sarcophagus_plain",
+              "title": "Plain closed medieval stone sarcophagus",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 3,
+          "name": "level_blockout_kit_wld_07_p03",
+          "file": "level_blockout_kit_wld_07_p03.glb",
+          "triangles": 372,
+          "bytes": 41208,
+          "sha256": "7f38c386a85137ee00094f536322b47935dc1d4c92ca09132aa921a980c1f098",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_sarcophagus_inscribed",
+              "title": "Inscribed medieval sarcophagus with stone end panels",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 2,
+              "id": "level_blockout_sarcophagus_effigy",
+              "title": "Decorative sarcophagus with reclining carved effigy",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                -3.5
               ],
               "review_only": true
             }
@@ -3832,7 +3979,10 @@
         "level_blockout_monastery_scriptorium",
         "level_blockout_diesel_generator_skid",
         "level_blockout_site_distribution_board",
-        "level_blockout_supported_cable_tray"
+        "level_blockout_supported_cable_tray",
+        "level_blockout_sarcophagus_plain",
+        "level_blockout_sarcophagus_inscribed",
+        "level_blockout_sarcophagus_effigy"
       ],
       "pages": [
         {
@@ -4003,9 +4153,9 @@
           "page": 3,
           "name": "level_blockout_kit_wld_10_p03",
           "file": "level_blockout_kit_wld_10_p03.glb",
-          "triangles": 716,
-          "bytes": 79716,
-          "sha256": "22fe8a6d2ad5e737b2a0e33f020f6ca6055961d39d99a3c8fbccf7ed2ac603ca",
+          "triangles": 1052,
+          "bytes": 113984,
+          "sha256": "6c8eebfea0acccdf564401577a7ebb6f6434faacbc2b3ea9fe019968f24f16ed",
           "display_slots": [
             {
               "slot": 1,
@@ -4052,6 +4202,52 @@
                 -7.0,
                 0,
                 3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 5,
+              "id": "level_blockout_sarcophagus_plain",
+              "title": "Plain closed medieval stone sarcophagus",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                0.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            },
+            {
+              "slot": 6,
+              "id": "level_blockout_sarcophagus_inscribed",
+              "title": "Inscribed medieval sarcophagus with stone end panels",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                7.0,
+                0,
+                3.5
+              ],
+              "review_only": true
+            }
+          ]
+        },
+        {
+          "page": 4,
+          "name": "level_blockout_kit_wld_10_p04",
+          "file": "level_blockout_kit_wld_10_p04.glb",
+          "triangles": 180,
+          "bytes": 21596,
+          "sha256": "bc7d42d264ac08d0cfa87629754e87a3ed3ce3baac5a010a8a4113420fee9a36",
+          "display_slots": [
+            {
+              "slot": 1,
+              "id": "level_blockout_sarcophagus_effigy",
+              "title": "Decorative sarcophagus with reclining carved effigy",
+              "source_ground_offset": -0.0,
+              "stand_center": [
+                -7.0,
+                0,
+                -3.5
               ],
               "review_only": true
             }
@@ -6541,6 +6737,6 @@
       "still_source_only": true
     }
   ],
-  "total_stands": 402,
-  "total_pages": 78
+  "total_stands": 414,
+  "total_pages": 82
 }
