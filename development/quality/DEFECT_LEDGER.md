@@ -26,43 +26,43 @@ Older-map obligation: Every additional map capture must be indexed without imply
 
 ### DEV-269 — Shallow Windows installer tag push exceeds GitHub 2 GiB Git-pack limit
 
-**Status:** Workflow fixes 9f1e816c and d9d73a9 committed; exact-source release check pending · **Affected:** Windows installer publishing, versioning and game updater release feed
+**Status:** FIX VERIFIED: Windows installer 0.1.213 (41953756191) and 0.1.214 (41954551988) released with immutable GitHub API tag, installer and SHA readback · **Affected:** Windows installer publishing, versioning and game updater release feed
 
 Build/launch/smoke passed but remote tag push was rejected: pack exceeds maximum allowed size (2.00 GiB).
 
 Cause / uncertainty: A shallow checkout pushed a Git tag, requiring a multigigabyte history pack; version selection did not count reserved unpublished tags.
 
-Fix / next action: Create immutable lightweight tags via authenticated GitHub REST with remote SHA readback, no git pack push or retag; choose next version above releases and existing tags.
+Fix / next action: Keep the lightweight GitHub REST reference creation and remote readback; reserve version above all existing refs to prevent accidental retags, retain shallow checkout and avoid large Git pack pushes.
 
-Evidence and verification: Windows installer workflow 41950081484 failed at tested-SHA tag stage; newer workflow pending.
+Evidence and verification: Release tag beckenburg-v0.1.213 verified at 88bc6e631 and 0.1.214 at c815ed2f2 with published installer assets. Jobs 41953756191 and 41954551988 PASS.
 
 Older-map obligation: No visual maps are implicated. Installed updater must read published non-draft releases including prereleases.
 
 ### DEV-268 — Castle NPC screenshot audit overwrites failed angles and falsely accepts one passing view
 
-**Status:** Audit strengthened in commits 0681cc1c and ebe6a013; full visual acceptance remains pending · **Affected:** All Castle resident screenshot and grounding evidence
+**Status:** Recovered: exact actor-pixel instrumentation replaces unreliable full-world subtraction; 41956167865 and 41956495409 PASS 5/5 visible grounded residents · **Affected:** All Castle resident screenshot and grounding evidence
 
 The audit reported five of five characters grounded even as a large fraction of their real in-engine angle measurements failed.
 
-Cause / uncertainty: An early failed screenshot was overwritten by a later passing view, a single pass certified a resident, and furniture occlusion was conflated with true foot separation.
+Cause / uncertainty: Comparing full scene depths with residents disabled/enabled misclassified unrelated floors, windows and props as actor pixels because rendering/readback cache state differed. Reused filenames also overwrote earlier failed views.
 
-Fix / next action: Keep separate full-frame and crop files for every view; require multiple unobstructed passes with zero clear-view failures, classify blocked receivers as inconclusive, and publish diagnostic failures without accepting them.
+Fix / next action: Use scoped, zero-production-overhead thread-local tracing of accepted actor fragments from world sprite compositor; report accepted near-sole pixels and hidden shoe pixels, mark blocked cameras inconclusive, preserve all frame/crop/mask files per run.
 
-Evidence and verification: Actual run 41951801477: 0/5 residents proved at all initial four views; 11/20 measured angles flagged before alpha-tail fix. Run-specific PNGs remain available.
+Evidence and verification: Before: 41952700012 reported 12 false-or-mixed failing angles and huge magenta floor masks. After: 41956167865 and 41956495409 PASS, 5/5 residents and 0 clear-view failures; actual magenta actor mask now excludes floors and furniture.
 
 Older-map obligation: Apply similar visual acceptance to hunters and all authored investigation maps; no single shot certifies the whole site.
 
 ### DEV-267 — Camera-selected directional art still moves stationary NPC world-space geometry
 
-**Status:** Fixed source in 5e355b1f and eba27410; functional test PASS 41951801477; all-view installed acceptance pending · **Affected:** Castle resident and playable grounded human character cards
+**Status:** Source geometry and camera-view hysteresis mismatch repaired; exact-source Castle camera orbit run 41956495409 PASS; installed GPU verification pending · **Affected:** Castle resident and playable grounded human character cards
 
 Character outlines wobble or hover when the camera changes even though NPC world coordinates are stationary.
 
-Cause / uncertainty: Each camera-selected image changed the actor plane pivot, vertical bounds and last-shoe alpha, with trailing source pixels allowed to render below floor height.
+Cause / uncertainty: Grounded NPC plane dimensions and horizontal pivot used image alpha margins. An additional bug picked the art via stableFacing() but the world plane via raw facing(), causing an abrupt 90-degree geometry switch while the previous image remained latched.
 
-Fix / next action: Keep world card geometry and centre pivot invariant; fit alpha within its fixed height using UVs and discard rows beneath shoe sole. Verify actual Castle and multiplayer camera orbits.
+Fix / next action: Keep static world card bounds, use one selected direction for both cutout frame and physical plane, and verify near-boundary reversible orbit with CharacterBillboardAnchorTest and full-scene images.
 
-Evidence and verification: World-space geometry test 41951801477 PASS; changes 5e355b1f, eba27410; follow-up all-view Castle capture pending.
+Evidence and verification: Commits 5e355b1f and 325055d, corrected regression 783f66b; focused Castle run 41956495409 PASS, 42 runtime game screenshots.
 
 Older-map obligation: Audit all stances, stair elevations, 360-degree camera motions and intentionally hovering ghost types independently.
 
@@ -110,15 +110,15 @@ Older-map obligation: Audit all parented decorations on other Castle furniture a
 
 ### DEV-263 — Character boots visibly float above the Castle floor despite earlier alpha-pad correction
 
-**Status:** OPEN: original in-engine review failed multiple angles; source correction committed, installed and full-view acceptance pending · **Affected:** All grounded human sprite billboards in Castle and investigation scenes; ghost hovering remains deliberate
+**Status:** Castle source renderer PASSED production-scene software acceptance for all 5 residents / 20 clear angles, 0 genuine contact failures and 1 obstructed angle; installed GPU acceptance pending · **Affected:** All grounded human sprite billboards in Castle and investigation scenes; ghost hovering remains deliberate
 
 NPC boot soles visibly detach from the rendered floor at certain camera views, as in the user-provided Castle screenshot.
 
-Cause / uncertainty: Camera-selected sprite artwork changed physical plane height and pivot; trailing artist matte could draw below the physical boot sole. Early visual verification masked failed views, with some captures also obstructed by scene furniture.
+Cause / uncertainty: Earlier character planes followed camera-selected image margins; the old test also misidentified unrelated cached geometry as NPC pixels, reporting fictitious -22px gaps. Directional art and world plane could use different hysteresis choices.
 
-Fix / next action: Lock world-space actor geometry, map variable directional alpha to fixed physical boot contact, reject matte below sole, classify occluded cameras separately, capture every angle. Do not certify finished until genuine visible views and installed copy pass.
+Fix / next action: Keep actor plane geometry immutable, use the SAME latched view for art and plane, UV-fit shoe soles to world support, clip source matte below floor, and test direct actor raster fragments. Audit installed OpenGL, movement and multiplayer actor stances before final closure.
 
-Evidence and verification: User Castle screenshot; run 41951801477 stored actual camera crops with 11 initially failing angles and 0/5 fully accepted; source repairs 5e355b1f, eba27410, ebe6a013, later CI still pending.
+Evidence and verification: Actual game renderer job 41956167865 PASS 5/5, 0 genuine gaps and 1 occlusion; 42 unedited game screenshots plus actor-only masks and crops under development/levels/previews/npc-ground-proof-2026-11-04/run-41956167865. Latest hysteresis source test 41956495409 PASS; commits fbdf523, 325055d, 783f66b.
 
 Older-map obligation: Every grounded human across Castle, solo, co-op and LAN must receive independent orbit/stance/floor checks; do not adjust ghosts' intentional hover.
 
