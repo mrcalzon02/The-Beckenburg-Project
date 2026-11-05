@@ -37,8 +37,8 @@ public final class CharacterBillboardAnchorTest {
         // At a hysteresis threshold the stable art can deliberately differ
         // from raw facing; using raw geometry creates an instant 90-degree
         // flicker even though the image has not yet changed.
-        check(latched==initial&&latched!=raw,
-            "hysteresis produces a deliberate held frame distinct from raw facing");
+        check(latched==deliberateOrbit&&latched!=raw,
+            "returning across the threshold must retain the stable art view even when raw facing differs");
         // The selected front/back and side card geometries are the same
         // fixed planes regardless of camera yaw, proximity or strafe.
         for(int heading:new int[]{0,45,90,180,270}){
