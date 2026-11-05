@@ -19,6 +19,9 @@ on:
       - 'src/test/java/org/beckenburg/HandheldSurfaceOcclusionTest.java'
       - 'src/main/java/org/beckenburg/LevelOpeningFlyover.java'
       - 'src/test/java/org/beckenburg/LevelOpeningFlyoverTest.java'
+      - 'src/test/java/org/beckenburg/LevelOpeningCinematicVisualTest.java'
+      - 'src/main/java/org/beckenburg/InvestigationScenePrewarm.java'
+      - 'src/main/java/org/beckenburg/InvestigationGame.java'
       - 'src/main/java/org/beckenburg/DebugPerformanceHud.java'
       - 'src/main/java/org/beckenburg/FixtureLighting.java'
       - 'src/test/java/org/beckenburg/VanHouseViewportProfileTest.java'
@@ -63,6 +66,20 @@ jobs:
       - name: Package canonical assets with Java 17
         shell: cmd
         run: call build.cmd package
+      - name: Verify REAL software 3D loading-to-van fly-in and same-renderer cache prewarm
+        shell: cmd
+        continue-on-error: true
+        run: |
+          if not exist build\test mkdir build\test
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\LevelOpeningCinematicVisualTest.java || exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.LevelOpeningCinematicVisualTest || exit /b 1
+      - name: Preserve actual 3D loading screen, scene PNG and prewarm metrics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: beckenburg-true-3d-loading-proof
+          path: build/e2e/true-3d-loading/**
+          if-no-files-found: warn
       - name: Measure actual House viewports from van to interior (CPU baseline + screenshot HUD)
         shell: cmd
         run: |
