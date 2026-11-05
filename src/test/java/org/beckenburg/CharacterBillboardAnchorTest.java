@@ -88,6 +88,31 @@ public final class CharacterBillboardAnchorTest {
             10.014+cameraX(69),10.008+cameraZ(69));
         check(tomasMoving==tomasFront,
             "walking a few millimetres cannot reset Tomas's facing hysteresis");
-        System.out.println("PASS Castle camera-facing depth-tested NPCs: smooth orbit, persistent facing hysteresis, fixed floor contact");
+        // The GPU worker publishes readbacks asynchronously. Castle NPC
+        // projection must use the camera AND resident pose belonging to that
+        // exact frame, not the Swing camera from a newer frame.
+        var body=new CastleResidentAnimation.Body(10.02,9.97,180,
+            HunterSpriteAnimation.Pose.WALK_A);
+        var composite=new SceneRenderer.GpuCompositeFrame(7.5,1.62,8.25,
+            .30,-.07,java.util.Map.of(CastleRelations.Resident.TOMAS_GREAVES,body));
+        java.util.Map<Long,SceneRenderer.GpuCompositeFrame> snapshots=
+            java.util.Map.of(41L,composite);
+        var readback=new GpuWorldRenderer.Result(12,41,640,360,
+            new int[640*360],new float[640*360]);
+        check(SceneRenderer.gpuCompositeForReadback(snapshots,readback,
+                12,640,360)==composite,
+            "GPU readback must receive the exact submitted NPC and camera pose");
+        check(composite.residents().get(CastleRelations.Resident.TOMAS_GREAVES)==body,
+            "NPC world position and pose must be snapped with its GPU camera");
+        check(SceneRenderer.gpuCompositeForReadback(snapshots,readback,
+                13,640,360)==null,
+            "another level scene may not inherit an earlier Castle NPC view");
+        check(SceneRenderer.gpuCompositeForReadback(snapshots,readback,
+                12,320,200)==null,
+            "a different render size may not inherit a mismatched NPC depth");
+        check(SceneRenderer.gpuCompositeForReadback(java.util.Map.of(),readback,
+                12,640,360)==null,
+            "evicted or unknown GPU frame must not composite unsynchronized NPCs");
+        System.out.println("PASS Castle camera-facing depth-tested NPCs: smooth orbit, persistent facing, fixed floor and async GPU pose alignment");
     }
 }
