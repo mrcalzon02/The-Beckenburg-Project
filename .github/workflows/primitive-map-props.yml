@@ -1,0 +1,75 @@
+name: Build primitive map prop grayboxes
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'development/levels/primitive-props-v1/catalog.json'
+      - 'development/levels/primitive-props-v1/build.py'
+      - '.github/workflows/primitive-map-props.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: primitive-map-props-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Generate all measured primitive GLBs
+        run: python development/levels/primitive-props-v1/build.py
+      - name: Verify byte-for-byte regeneration and bounded GLB integrity
+        run: |
+          python development/levels/primitive-props-v1/build.py --check
+          python - <<'PY'
+          import json, struct
+          from pathlib import Path
+          root=Path("development/levels/primitive-props-v1")
+          catalog=json.loads((root/"catalog.json").read_text())
+          verification=json.loads((root/"verification.json").read_text())
+          assert len(catalog["models"])==30==len(verification["models"])
+          assert len(catalog["sites"])==29
+          for rec in verification["models"]:
+              data=(root/"models"/(rec["id"]+".glb")).read_bytes()
+              sig,ver,length,jlen,jtype=struct.unpack_from("<IIIII",data,0)
+              assert sig==0x46546C67 and ver==2 and length==len(data) and jtype==0x4e4f534a
+              document=json.loads(data[20:20+jlen])
+              assert document["extras"]["runtimeApproved"] is False
+              assert document["nodes"][0]["name"]==rec["id"]
+              assert document["accessors"] and document["bufferViews"]
+              assert document["buffers"][0]["byteLength"]>0
+              assert rec["triangles"]<=3500 and rec["bytes"]==len(data)
+          print("Validated",len(verification["models"]),"independent GLBs")
+          PY
+      - name: Preserve generated model assets on main (no force)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add development/levels/primitive-props-v1/models development/levels/primitive-props-v1/verification.json
+          if git diff --cached --quiet; then
+            echo "All generated grayboxes already match main."
+            exit 0
+          fi
+          git commit -m "Generate 30 reproducible primitive-map GLB prototypes"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo "Generated grayboxes pushed on attempt $attempt."
+              exit 0
+            fi
+            git fetch origin main
+            git rebase origin/main || exit 1
+            sleep $((attempt * 2))
+          done
+          echo "Non-force push was rejected after bounded attempts" >&2
+          exit 1
