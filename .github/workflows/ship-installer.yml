@@ -231,31 +231,35 @@ jobs:
 
       - name: Establish exact immutable tested SHA as lightweight release tag
         shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           $ErrorActionPreference='Stop'
           $commit=(& git rev-parse HEAD).Trim()
           if($LASTEXITCODE -ne 0 -or $commit -ne $env:GITHUB_SHA){
             throw 'Refusing to tag a commit different from the tested source'
           }
-          # GitHub release creation with --target <historical SHA> can hit
-          # its workflow-file authorization guard when main has advanced.
-          # A pre-existing verified tag avoids rewriting the release target.
+          # The checkout is intentionally shallow. Pushing a new tag with
+          # "git push" can upload >2 GiB of missing Git history and fail on
+          # GitHub's pack limit. Create only the tiny ref via GitHub REST.
+          # Existing tags are immutable, never retargeted or force-pushed.
           $ref="refs/tags/$env:BECKENBURG_TAG"
-          $remote=& git ls-remote --tags origin $ref
-          if($LASTEXITCODE -ne 0){throw 'Cannot read current remote release tags'}
-          if(-not $remote){
-            & git tag $env:BECKENBURG_TAG $commit
-            if($LASTEXITCODE -ne 0){throw 'Cannot create verified source tag'}
-            & git push origin $ref
-            if($LASTEXITCODE -ne 0){throw 'Cannot push verified source tag'}
+          $endpoint="repos/$env:GITHUB_REPOSITORY/git/ref/tags/$env:BECKENBURG_TAG"
+          $remote=& gh api $endpoint --jq '.object.sha' 2>$null
+          $found=($LASTEXITCODE -eq 0)
+          if(-not $found){
+            & gh api --method POST "repos/$env:GITHUB_REPOSITORY/git/refs" -f "ref=$ref" -f "sha=$commit" --jq '.object.sha'
+            if($LASTEXITCODE -ne 0){
+              throw "GitHub reference creation failed for $ref; do not fall back to pushing a multi-gigabyte Git pack"
+            }
+          } elseif(([string]$remote).Trim() -ne $commit){
+            throw "Refusing to retag existing release: $ref points to $remote, not tested commit $commit"
           }
-          $remote=& git ls-remote --tags origin $ref
-          if($LASTEXITCODE -ne 0){throw 'Release tag readback failed'}
-          $parts=@($remote -split '\s+')
-          if($parts.Count -lt 2 -or $parts[0] -ne $commit -or $parts[1] -ne $ref){
-            throw "Release tag does not resolve to tested commit: $remote"
+          $verified=& gh api $endpoint --jq '.object.sha'
+          if($LASTEXITCODE -ne 0 -or ([string]$verified).Trim() -ne $commit){
+            throw "GitHub release tag readback does not match tested commit: $verified"
           }
-          Write-Host "VERIFIED remote tag $ref / $commit"
+          Write-Host "VERIFIED immutable GitHub API tag $ref / $commit"
 
       - name: Publish packaged installer on GitHub Releases
         shell: pwsh
