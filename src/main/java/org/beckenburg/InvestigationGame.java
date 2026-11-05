@@ -719,6 +719,10 @@ public final class InvestigationGame {
         private final DebugPerformanceHud perfHud=new DebugPerformanceHud();
         private LevelOpeningCinematic opening;
         private volatile boolean initialFrameReady;
+        // Observed by the real OpenGL+Swing case-dispatch smoke test.
+        // An enqueued pass must not be mislabeled as a completed GL upload.
+        private volatile int prewarmGpuSubmitted,prewarmGpuConfirmed;
+        private volatile boolean prewarmGpuTimedOut;
         private SwingWorker<Void,Void> firstFrameWorker;
         void beginRendering(){
             if(firstFrameWorker!=null)return;
@@ -733,6 +737,9 @@ public final class InvestigationGame {
                     try{
                         var prewarmed=InvestigationScenePrewarm.prepare(map,scene,
                             new LevelOpeningFlyover(map,original),this::isCancelled);
+                        prewarmGpuSubmitted=prewarmed.gpuSubmittedPasses();
+                        prewarmGpuConfirmed=prewarmed.gpuConfirmedPasses();
+                        prewarmGpuTimedOut=prewarmed.gpuPrewarmTimedOut();
                         BeckenburgDiagnostics.record("CASE 3D LOADING PREWARM site="+map.site()
                             +" passes="+prewarmed.passes()
                             +" elapsed_ms="+prewarmed.elapsedMs()
