@@ -1,0 +1,470 @@
+{
+  "schema": "beckenburg.primitive-prop-fit/1",
+  "status": "review_only_not_scene_integration",
+  "meters": true,
+  "route_clearance_extra_m": 0.65,
+  "ritual_clearance_extra_m": 0.55,
+  "wall_clearance_m": 0.35,
+  "other_prop_clearance_m": 0.35,
+  "models": "development/levels/primitive-props-v1/catalog.json",
+  "source": "development/levels/layouts/{map}/layout.json",
+  "maps": [
+    {
+      "id": "CASTLE",
+      "layout_folder": "castle",
+      "targets": [
+        {
+          "instance": "castle-01",
+          "zone": "great",
+          "model": "level_blockout_lecture_lectern",
+          "preferred_anchor": "NW",
+          "yaw": 3.14159
+        },
+        {
+          "instance": "castle-02",
+          "zone": "map",
+          "model": "level_blockout_map_pinboard",
+          "preferred_anchor": "NW",
+          "yaw": 3.14159
+        },
+        {
+          "instance": "castle-03",
+          "zone": "map",
+          "model": "level_blockout_console",
+          "preferred_anchor": "SE",
+          "yaw": 0
+        },
+        {
+          "instance": "castle-04",
+          "zone": "armory",
+          "model": "level_blockout_quartermaster_counter",
+          "preferred_anchor": "SE",
+          "yaw": 0
+        },
+        {
+          "instance": "castle-05",
+          "zone": "workshop",
+          "model": "level_blockout_workbench",
+          "preferred_anchor": "NW",
+          "yaw": 3.14159
+        },
+        {
+          "instance": "castle-06",
+          "zone": "workshop",
+          "model": "level_blockout_utility_panel",
+          "preferred_anchor": "SE",
+          "yaw": 0
+        },
+        {
+          "instance": "castle-07",
+          "zone": "infirmary",
+          "model": "level_blockout_ward_bed",
+          "preferred_anchor": "NW",
+          "yaw": 3.14159
+        },
+        {
+          "instance": "castle-08",
+          "zone": "infirmary",
+          "model": "level_blockout_privacy_screen",
+          "preferred_anchor": "SE",
+          "yaw": 0
+        },
+        {
+          "instance": "castle-09",
+          "zone": "chapel",
+          "model": "level_blockout_pew",
+          "preferred_anchor": "NW",
+          "yaw": 3.14159
+        },
+        {
+          "instance": "castle-10",
+          "zone": "archive",
+          "model": "level_blockout_archive_cabinet",
+          "preferred_anchor": "NW",
+          "yaw": 3.14159
+        },
+        {
+          "instance": "castle-11",
+          "zone": "archive",
+          "model": "level_blockout_storage_shelf",
+          "preferred_anchor": "SE",
+          "yaw": 0
+        },
+        {
+          "instance": "castle-12",
+          "zone": "radio",
+          "model": "level_blockout_console",
+          "preferred_anchor": "NE",
+          "yaw": 3.14159
+        },
+        {
+          "instance": "castle-13",
+          "zone": "research",
+          "model": "level_blockout_workbench",
+          "preferred_anchor": "SW",
+          "yaw": 0
+        },
+        {
+          "instance": "castle-14",
+          "zone": "vault",
+          "model": "level_blockout_relic_containment",
+          "preferred_anchor": "NW",
+          "yaw": 0
+        },
+        {
+          "instance": "castle-15",
+          "zone": "restoration",
+          "model": "level_blockout_restoration_scaffold",
+          "preferred_anchor": "SE",
+          "yaw": 0
+        },
+        {
+          "instance": "castle-16",
+          "zone": "train-b",
+          "model": "level_blockout_ritual_training_rig",
+          "preferred_anchor": "NW",
+          "yaw": 0
+        },
+        {
+          "instance": "castle-17",
+          "zone": "train-c",
+          "model": "level_blockout_ritual_training_rig",
+          "preferred_anchor": "NW",
+          "yaw": 0
+        },
+        {
+          "instance": "castle-18",
+          "zone": "train-a",
+          "model": "level_blockout_ritual_training_rig",
+          "preferred_anchor": "NW",
+          "yaw": 0
+        }
+      ]
+    },
+    {
+      "id": "ACADEMY",
+      "layout_folder": "academy",
+      "targets": [
+        {
+          "instance": "academy-01",
+          "zone": "library",
+          "model": "level_blockout_archive_cabinet",
+          "preferred_anchor": "NW",
+          "yaw": 3.14159
+        },
+        {
+          "instance": "academy-02",
+          "zone": "library",
+          "model": "level_blockout_storage_shelf",
+          "preferred_anchor": "SE",
+          "yaw": 0
+        },
+        {
+          "instance": "academy-03",
+          "zone": "lecture",
+          "model": "level_blockout_lecture_lectern",
+          "preferred_anchor": "NW",
+          "yaw": 3.14159
+        },
+        {
+          "instance": "academy-04",
+          "zone": "lecture",
+          "model": "level_blockout_student_desk",
+          "preferred_anchor": "NE",
+          "yaw": 0
+        },
+        {
+          "instance": "academy-05",
+          "zone": "lecture",
+          "model": "level_blockout_student_desk",
+          "preferred_anchor": "SW",
+          "yaw": 0
+        },
+        {
+          "instance": "academy-06",
+          "zone": "lecture",
+          "model": "level_blockout_student_desk",
+          "preferred_anchor": "SE",
+          "yaw": 0
+        },
+        {
+          "instance": "academy-07",
+          "zone": "lab",
+          "model": "level_blockout_workbench",
+          "preferred_anchor": "NW",
+          "yaw": 3.14159
+        },
+        {
+          "instance": "academy-08",
+          "zone": "lab",
+          "model": "level_blockout_assay_balance",
+          "preferred_anchor": "SE",
+          "yaw": 0
+        },
+        {
+          "instance": "academy-09",
+          "zone": "office",
+          "model": "level_blockout_map_pinboard",
+          "preferred_anchor": "NW",
+          "yaw": 3.14159
+        },
+        {
+          "instance": "academy-10",
+          "zone": "office",
+          "model": "level_blockout_workbench",
+          "preferred_anchor": "SE",
+          "yaw": 0
+        },
+        {
+          "instance": "academy-11",
+          "zone": "archive",
+          "model": "level_blockout_archive_cabinet",
+          "preferred_anchor": "SW",
+          "yaw": 0
+        },
+        {
+          "instance": "academy-12",
+          "zone": "dining",
+          "model": "level_blockout_pew",
+          "preferred_anchor": "NW",
+          "yaw": 3.14159
+        }
+      ]
+    },
+    {
+      "id": "PRISON",
+      "layout_folder": "prison",
+      "targets": [
+        {
+          "instance": "prison-01",
+          "zone": "guard",
+          "model": "level_blockout_console",
+          "preferred_anchor": "NW",
+          "yaw": 3.14159
+        },
+        {
+          "instance": "prison-02",
+          "zone": "guard",
+          "model": "level_blockout_guard_keyboard",
+          "preferred_anchor": "SE",
+          "yaw": 0
+        },
+        {
+          "instance": "prison-03",
+          "zone": "intake",
+          "model": "level_blockout_archive_cabinet",
+          "preferred_anchor": "NW",
+          "yaw": 3.14159
+        },
+        {
+          "instance": "prison-04",
+          "zone": "intake",
+          "model": "level_blockout_workbench",
+          "preferred_anchor": "SE",
+          "yaw": 0
+        },
+        {
+          "instance": "prison-05",
+          "zone": "block-a",
+          "model": "level_blockout_cell_door",
+          "preferred_anchor": "NW",
+          "yaw": 3.14159
+        },
+        {
+          "instance": "prison-06",
+          "zone": "block-a",
+          "model": "level_blockout_cell_door",
+          "preferred_anchor": "SW",
+          "yaw": 0
+        },
+        {
+          "instance": "prison-07",
+          "zone": "block-b",
+          "model": "level_blockout_cell_door",
+          "preferred_anchor": "NE",
+          "yaw": 3.14159
+        },
+        {
+          "instance": "prison-08",
+          "zone": "isolation",
+          "model": "level_blockout_cell_door",
+          "preferred_anchor": "SE",
+          "yaw": 0
+        },
+        {
+          "instance": "prison-09",
+          "zone": "medical",
+          "model": "level_blockout_ward_bed",
+          "preferred_anchor": "NW",
+          "yaw": 3.14159
+        },
+        {
+          "instance": "prison-10",
+          "zone": "medical",
+          "model": "level_blockout_privacy_screen",
+          "preferred_anchor": "SE",
+          "yaw": 0
+        },
+        {
+          "instance": "prison-11",
+          "zone": "plant",
+          "model": "level_blockout_utility_panel",
+          "preferred_anchor": "NW",
+          "yaw": 3.14159
+        },
+        {
+          "instance": "prison-12",
+          "zone": "plant",
+          "model": "level_blockout_workbench",
+          "preferred_anchor": "SE",
+          "yaw": 0
+        },
+        {
+          "instance": "prison-13",
+          "zone": "chapel",
+          "model": "level_blockout_pew",
+          "preferred_anchor": "NW",
+          "yaw": 3.14159
+        }
+      ]
+    },
+    {
+      "id": "WLD-04",
+      "layout_folder": "wld-04",
+      "targets": [
+        {
+          "instance": "wld-04-01",
+          "zone": "foot",
+          "model": "level_blockout_lookout_platform",
+          "preferred_anchor": "NW",
+          "yaw": 0
+        },
+        {
+          "instance": "wld-04-02",
+          "zone": "cab",
+          "model": "level_blockout_lookout_spotter",
+          "preferred_anchor": "NW",
+          "yaw": 3.14159
+        },
+        {
+          "instance": "wld-04-03",
+          "zone": "hut",
+          "model": "level_blockout_workbench",
+          "preferred_anchor": "NW",
+          "yaw": 3.14159
+        },
+        {
+          "instance": "wld-04-04",
+          "zone": "hut",
+          "model": "level_blockout_map_pinboard",
+          "preferred_anchor": "SE",
+          "yaw": 0
+        },
+        {
+          "instance": "wld-04-05",
+          "zone": "store",
+          "model": "level_blockout_storage_shelf",
+          "preferred_anchor": "NE",
+          "yaw": 0
+        },
+        {
+          "instance": "wld-04-06",
+          "zone": "ruin",
+          "model": "level_blockout_storage_shelf",
+          "preferred_anchor": "SE",
+          "yaw": 0
+        },
+        {
+          "instance": "wld-04-07",
+          "zone": "clearing",
+          "model": "level_blockout_radio_mast",
+          "preferred_anchor": "NW",
+          "yaw": 0
+        }
+      ]
+    },
+    {
+      "id": "WLD-05",
+      "layout_folder": "wld-05",
+      "targets": [
+        {
+          "instance": "wld-05-01",
+          "zone": "assay",
+          "model": "level_blockout_assay_balance",
+          "preferred_anchor": "NW",
+          "yaw": 3.14159
+        },
+        {
+          "instance": "wld-05-02",
+          "zone": "assay",
+          "model": "level_blockout_workbench",
+          "preferred_anchor": "SE",
+          "yaw": 0
+        },
+        {
+          "instance": "wld-05-03",
+          "zone": "stores",
+          "model": "level_blockout_storage_shelf",
+          "preferred_anchor": "NW",
+          "yaw": 3.14159
+        },
+        {
+          "instance": "wld-05-04",
+          "zone": "stores",
+          "model": "level_blockout_utility_panel",
+          "preferred_anchor": "SE",
+          "yaw": 0
+        },
+        {
+          "instance": "wld-05-05",
+          "zone": "haul",
+          "model": "level_blockout_cave_support",
+          "preferred_anchor": "NW",
+          "yaw": 0
+        },
+        {
+          "instance": "wld-05-06",
+          "zone": "ore-west",
+          "model": "level_blockout_ore_cart",
+          "preferred_anchor": "NW",
+          "yaw": 3.14159
+        },
+        {
+          "instance": "wld-05-07",
+          "zone": "ore-east",
+          "model": "level_blockout_ore_cart",
+          "preferred_anchor": "SE",
+          "yaw": 0
+        },
+        {
+          "instance": "wld-05-08",
+          "zone": "lower",
+          "model": "level_blockout_cave_support",
+          "preferred_anchor": "SE",
+          "yaw": 0
+        },
+        {
+          "instance": "wld-05-09",
+          "zone": "vent",
+          "model": "level_blockout_mine_ventilation",
+          "preferred_anchor": "NW",
+          "yaw": 0
+        },
+        {
+          "instance": "wld-05-10",
+          "zone": "shack",
+          "model": "level_blockout_workbench",
+          "preferred_anchor": "NW",
+          "yaw": 3.14159
+        },
+        {
+          "instance": "wld-05-11",
+          "zone": "adit",
+          "model": "level_blockout_cave_support",
+          "preferred_anchor": "SW",
+          "yaw": 0
+        }
+      ]
+    }
+  ]
+}
