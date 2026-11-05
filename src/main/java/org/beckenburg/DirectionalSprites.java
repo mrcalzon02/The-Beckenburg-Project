@@ -111,8 +111,14 @@ public final class DirectionalSprites {
             double cameraX,double cameraZ){
         int raw=facing(heading,entityX,entityZ,cameraX,cameraZ);
         if(!GroundedSpriteFeet.isGroundedHuman(identity))return raw;
-        var key=new PoseKey(identity,Math.round(entityX*1000),Math.round(entityZ*1000),heading);
-        // These are stable Castle NPC positions, not moving network actors.
+        // Castle residents have durable identities and move in small authored
+        // routines. Position-millimetre/heading keys would be new every frame,
+        // discarding the hysteresis precisely while the player strafes nearby.
+        // Keep per-pose keys for network hunters, which may share appearances.
+        boolean resident=isCastleSupport(identity)||"lore_master".equals(identity);
+        var key=resident?new PoseKey(identity,0,0,0)
+            :new PoseKey(identity,Math.round(entityX*1000),Math.round(entityZ*1000),heading);
+        // Camera rotations do not reset an NPC's chosen source orientation.
         if(LAST_FACING.size()>256)LAST_FACING.clear();
         double a=Math.toDegrees(Math.atan2(cameraX-entityX,cameraZ-entityZ))-heading;
         int selected=LAST_FACING.compute(key,(k,old)->{
