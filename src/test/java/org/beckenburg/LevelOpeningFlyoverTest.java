@@ -14,7 +14,23 @@ public final class LevelOpeningFlyoverTest {
             var start=flight.pose(0);
             var orbit=flight.pose(.39);
             var approach=flight.pose(.78);
+            var threshold=flight.pose(.93);
+            var entering=flight.pose(.965);
+            var inside=flight.pose(.975);
             var end=flight.pose(1);
+            var dock=map.van();
+            var atDoor=dock.local(threshold.x(),threshold.z());
+            var beyondDoor=dock.local(entering.x(),entering.z());
+            var atAisle=dock.local(inside.x(),inside.z());
+            ok(Math.abs(atDoor.x())<.08
+                &&atDoor.z()<VanStaging.FRONT
+                &&beyondDoor.z()>VanStaging.FRONT
+                &&atAisle.z()>VanStaging.FRONT
+                &&atAisle.z()<VanStaging.REAR,
+                "3D camera must enter the ACTUAL rear cargo aperture and aisle for "+site);
+            ok(Math.abs(threshold.y()-(dock.floorY()+1.62))<.001
+                &&Math.abs(inside.y()-(dock.floorY()+1.62))<.001,
+                "Loading flight must finish inside the van at human camera height");
             ok(end.equals(player),"Opening must hand off at the exact hunter camera for "+site);
             ok(flight.pose(-100).equals(start)&&flight.pose(500).equals(end),
                 "Opening progression clamps rather than extrapolating into walls");
