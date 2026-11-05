@@ -10,6 +10,20 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-271 — Castle wall lights use uncorrected editor yaw and independent on/off source pivots
+
+**Status:** source repair 0329d79 pushed and remotely read back; focused CI and installed camera-angle verification pending · **Affected:** Castle masonry wall-sconce renderer and editor-authored wall-light transforms; review other location light socket mounts separately
+
+Player screenshot shows an imported lit wall fixture visibly canted or poorly seated against stone masonry near an upper wall/ceiling join.
+
+Cause / uncertainty: CastleWallLampMount used saved yaw without snapping fixture geometry to the nearest authored wall plane; SceneRenderer re-centred the lit and unlit GLBs independently. Exact visible-source root cause still requires matched runtime capture.
+
+Fix / next action: Use authored wall normal for final render yaw and support offset, project real source vertices for wall clearance and use one off-state pivot for both light states; keep source GLBs and saved authoring coordinates untouched. Validate screenshot-equivalent angle and model mount on installed build.
+
+Evidence and verification: User-provided in-game screenshot (2026-11-04 local); source commit 0329d79be6acdcee55633ef11e577274c7c57410 remotely verified. Focused CI at 41986692072 was in progress at ledger entry; no visual acceptance claimed.
+
+Older-map obligation: Audit imported wall and ceiling fixtures on House, Farmhouse, School and all older sites; do not infer map-wide fixture validity from Castle source tests.
+
 ### DEV-270 — Screenshot pushes leave development gallery index stale
 
 **Status:** CI generator repaired c080e29b; gallery refresh run 41951988544 PASS · **Affected:** Development screenshot gallery, image SHA-256 index and documentation CI
