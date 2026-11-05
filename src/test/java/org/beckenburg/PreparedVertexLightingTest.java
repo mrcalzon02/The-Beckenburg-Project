@@ -23,10 +23,22 @@ public final class PreparedVertexLightingTest {
         var p=points.get(0);var probe=lighting.prepareVertex(0,MaterialAtlas.STONE,p[0],p[1],p[2],0,0,0,false);
         for(int tick:new int[]{26,31,70,120}){lighting.castleFrame(true,tick);close(lighting.sample(0,p[0],p[1],p[2]),probe.sample(),"Flicker factor remains live");}
         lighting.castleFrame(false,120);close(lighting.sample(0,p[0],p[1],p[2]),probe.sample(),"Blackout remains live");
-        long revision=lighting.regionVersion(1,0,1,4,3,4);
-        castle.toggleDoor(CastleDoorSlots.all().stream().filter(s->s.gate()).findFirst().orElseThrow().id());
+        var gate=CastleDoorSlots.all().stream().filter(CastleDoorSlots.Slot::gate).findFirst().orElseThrow();
+        // The gate is on the south wall. A fixture change must refresh
+        // receivers around THAT aperture, not a distant north-west room.
+        // The original test required the very global invalidation that caused
+        // the user-reported single-digit FPS hitch.
+        double gx=gate.centerX(),gy=gate.bottom(),gz=gate.centerZ();
+        long near=lighting.regionVersion(gx-2,gy,gz-2,gx+2,gy+gate.clearHeight(),gz+2);
+        long remote=lighting.regionVersion(1,0,1,4,3,4);
+        long global=lighting.occluderRevision();
+        castle.toggleDoor(gate.id());
         lighting.castleFrame(false,120);
-        if(revision==lighting.regionVersion(1,0,1,4,3,4))throw new AssertionError("Castle door must invalidate stationary occlusion even in blackout");
+        if(near==lighting.regionVersion(gx-2,gy,gz-2,gx+2,gy+gate.clearHeight(),gz+2))
+            throw new AssertionError("Castle gate must invalidate its LOCAL stationary occlusion even in blackout");
+        if(remote!=lighting.regionVersion(1,0,1,4,3,4)
+                ||global!=lighting.occluderRevision())
+            throw new AssertionError("Castle gate invalidated unrelated rooms/global occlusion");
         for(var site:List.of(HouseMap.Site.HOUSE,HouseMap.Site.SCHOOL)){
             var map=new HouseMap(site);var circuits=new RoomLighting();var field=new FixtureLighting(map);field.frame(circuits,0);
             for(var room:map.level().rooms())compare(field,room.id(),room.cx(),room.y()+.8,room.cz());

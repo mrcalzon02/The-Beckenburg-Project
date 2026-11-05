@@ -515,7 +515,11 @@ public final class SceneRenderer {
         // The real masonry is 42 cm thick. A 20 cm offset from its centreline
         // still lies *inside* the stone, so never centre the imported sconce
         // on that saved coordinate. Fit its furthest-back triangles instead.
-        if(fixture.mount()==CastleHubDecor.Mount.WALL&&wallPose.supported()){
+        // Source switch GLBs contain their OWN plate and lever. Sconce steel
+        // backing strips are not a universal wall fixture: adding one here
+        // produced the reported giant horizontal, stretched switch backplate.
+        if(fixture.mount()==CastleHubDecor.Mount.WALL&&wallPose.supported()
+                &&!mesh.equals("light_switch_1")){
             var plate=CastleWallLampMount.plate(fixture,wallPose);
             // Reuse the original sconce's weathered steel atlas region, not a flat color
             // or the fluorescent strip. Both power states retain the same metal finish.
@@ -3089,9 +3093,13 @@ public final class SceneRenderer {
         for(var trim:CastleHubArchitecturalPlan.trims())if(trim.mesh().contains("tower"))
             imported(castle,trim.mesh(),trim.x(),trim.y(),trim.z(),trim.sx(),trim.sy(),trim.sz(),trim.yaw());
         for(var roof:CastleLevelEdits.current().roofs())castleRoof(castle,roof);
-        for(var sw:CastleHubDecor.SWITCHES)if(CastleHubDecor.switchAvailable(sw))
-            mountedLamp(castle,new CastleHubDecor.Light("light_switch_1","light_switch_1",
-                sw.x(),sw.y(),sw.z(),.85,sw.yaw(),CastleHubDecor.Mount.WALL),true);
+        // Read actual imported bounds and actual masonry faces. A switch is a
+        // small surface plate, never a rescaled wall sconce or free-floating
+        // prop; orient each toward its supporting authored wall.
+        for(var sw:CastleHubDecor.SWITCHES)if(CastleHubDecor.switchAvailable(sw)){
+            var fitted=CastleSwitchMount.fit(sw,edits.walls());
+            if(fitted!=null)mountedLamp(castle,fitted,true);
+        }
         for(var piece:CastleServiceFixtures.all())
             castleProp(castle,piece.mesh(),piece.x(),piece.y(),piece.z(),piece.scale(),piece.yaw());
         for(var accent:CastleArchive.ACCENTS)
