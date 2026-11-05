@@ -11,7 +11,7 @@ public final class CastlePortalTrimTest {
     private static void near(double got,double expected,String issue){
         check(Math.abs(got-expected)<1e-6,issue+" got="+got+" expected="+expected);
     }
-    public static void main(String[] ignored){
+    public static void main(String[] ignored)throws java.io.IOException{
         var walls=CastleLevelEdits.current().walls();
         int checked=0,upper=0,gates=0;
         for(var marker:walls){
