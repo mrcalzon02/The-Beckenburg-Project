@@ -58,6 +58,9 @@ final class LevelOpeningCinematic implements AutoCloseable {
         preview=new SceneRenderer();
         preview.photographicSoftwareRaster();
         preview.roomLights=player.roomLights;
+        // Cinematic lens exposure makes genuinely rendered night-time stone
+        // and exterior surfaces visible. Does not affect in-game lighting.
+        preview.environmentLight=Math.max(1,Math.min(1.8,player.environmentLight*1.55));
         worker=Executors.newSingleThreadExecutor(task->{
             Thread thread=new Thread(task,"Beckenburg-Opening-World3D");
             thread.setDaemon(true);
@@ -107,7 +110,9 @@ final class LevelOpeningCinematic implements AutoCloseable {
                     h*Math.max(1,width)/(double)Math.max(1,height))));
                 preview.setRenderSize(w,h);
                 preview.setFieldOfView(GraphicsOptions.current().fieldOfView());
-                preview.setPsxPreset(PsxPipeline.selected());
+                // Keep source-material gradients visible in the aerial shot;
+                // player PSX quantization and preferences remain unchanged.
+                preview.setPsxPreset(PsxPipeline.Preset.OFF);
                 preview.drawPractice(map,List.of(),progress()*7.5);
                 if(closed)return;
                 var source=preview.image();

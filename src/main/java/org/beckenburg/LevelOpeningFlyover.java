@@ -61,11 +61,14 @@ public final class LevelOpeningFlyover {
         // beyond its visible range on some sites, producing an empty sky.
         // Survey nearby authored geometry in 3D and move across the location
         // rather than trying to frame the entire level from miles away.
-        double sweep=Math.min(9,Math.max(5,span*.35));
-        double elevation=top+Math.min(11,Math.max(8,span*.26));
-        aerial=lookAt(cx-sweep,elevation,cz-sweep*.82,cx,top*.35,cz);
-        orbit=lookAt(cx+sweep*.85,top+Math.min(9,Math.max(7,span*.22)),
-            cz-sweep*.68,cx,top*.35,cz);
+        double sweep=Math.min(12,Math.max(9,span*.50));
+        double elevation=top+Math.min(9,Math.max(6,span*.20));
+        // A wide three-quarter exterior view must show the building walls
+        // instead of putting a huge, mostly unlit roof against the lens.
+        // Keep its target inside the 24m software scene visibility range.
+        aerial=lookAt(cx-sweep,elevation,cz-sweep*.82,cx,top*.26,cz);
+        orbit=lookAt(cx+sweep*.82,top+Math.min(9,Math.max(7,span*.20)),
+            cz-sweep*.65,cx,top*.34,cz);
         // An authored cargo entrance, NOT a guessed line towards the van's
         // centre: world() rotates this flight corridor with the real truck.
         // The default loading cargo door is open, with an existing walkable
