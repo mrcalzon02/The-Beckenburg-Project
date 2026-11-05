@@ -7,6 +7,7 @@ on:
       - '.github/workflows/door-opening-profiler.yml'
       - 'src/test/java/org/beckenburg/DoorOpeningFrameProfile.java'
       - 'src/test/java/org/beckenburg/HouseDoorShadowCacheParityTest.java'
+      - 'src/test/java/org/beckenburg/StationaryDoorShadowRetentionTest.java'
       - 'src/test/java/org/beckenburg/ResidentVertexPayloadTest.java'
       - 'src/main/java/org/beckenburg/HouseMap.java'
       - 'src/main/java/org/beckenburg/SceneRenderer.java'
