@@ -361,6 +361,66 @@ public final class FixtureLighting {
   lodQueries=lodHits=lodVisibilityChecks=0;
   consideredSources=invalidatedCells=0;}
  private long castleDoorRevision=-1;
+ private final Map<String,Boolean> castleDoorStates=new HashMap<>();
+ /** Conservative swept volume: wood leaves rotate up to half the slot width
+  * off the wall; the portcullis rises by its full clear height. Lighting
+  * invalidation must cover BOTH poses, not just the doorway plane. */
+ private static double[] castleDoorBounds(CastleDoorSlots.Slot slot,double pad){
+  double along=slot.width()*.5+.4+pad;
+  double normal=(slot.gate()?.55:slot.width()*.5+.45)+pad;
+  double x=slot.horizontal()?along:normal,z=slot.horizontal()?normal:along;
+  return new double[]{slot.centerX()-x,slot.bottom()-.4-pad,slot.centerZ()-z,
+      slot.centerX()+x,slot.bottom()+(slot.gate()?2:1)*slot.clearHeight()+.4+pad,
+      slot.centerZ()+z};
+ }
+ private static boolean castleDoorRayCrosses(double ax,double ay,double az,
+      double bx,double by,double bz,CastleDoorSlots.Slot slot,double pad){
+  var box=castleDoorBounds(slot,pad);
+  return CastleDoorSlots.crossesBox(ax,ay,az,bx,by,bz,
+      box[0],box[1],box[2],box[3],box[4],box[5]);
+ }
+ private static boolean castleDoorInfluences(Source source,CastleDoorSlots.Slot slot){
+  var box=castleDoorBounds(slot,.35);
+  double dx=Math.max(box[0]-source.x,Math.max(0,source.x-box[3]));
+  double dy=Math.max(box[1]-source.y,Math.max(0,source.y-box[4]));
+  double dz=Math.max(box[2]-source.z,Math.max(0,source.z-box[5]));
+  return dx*dx+dy*dy+dz*dz<=source.radius*source.radius;
+ }
+ private boolean castleDoorMayCrossCachedRay(Object key,CastleDoorSlots.Slot slot){
+  int id=shadowSourceId(key);
+  if(id<0||id>=sources.size())return true;
+  Source source=sources.get(id);
+  if(!castleDoorInfluences(source,slot))return false;
+  double x,y,z;
+  if(key instanceof Shadow ray){
+   x=ray.x()/16.0;y=ray.y()/16.0;z=ray.z()/16.0;
+  }else if(key instanceof NormalShadow ray){
+   var p=ray.receiver();
+   x=Double.longBitsToDouble(p.x());y=Double.longBitsToDouble(p.y());
+   z=Double.longBitsToDouble(p.z());
+  }else return true;
+  // Includes receiver quantization and the normal-offset shadow sample.
+  return castleDoorRayCrosses(source.x,source.y,source.z,x,y,z,slot,.45);
+ }
+ /** The expensive source/receiver invalidation is confined to the swept leaf
+  * volume. A cell's half-diagonal margin safely covers every receiver point
+  * inside the cell, while leaving distant rooms' resident VBOs untouched. */
+ private void invalidateCastleDoor(CastleDoorSlots.Slot slot){
+  long revision=++generation;
+  sight.keySet().removeIf(key->castleDoorMayCrossCachedRay(key,slot));
+  for(var source:sources){
+   if(!castleDoorInfluences(source,slot))continue;
+   sourceOcclusionRevisions[source.id]=revision;
+   eachInfluenceCell(source,key->{
+    double px=(key.x+.5)*cellSize,py=(key.y+.5)*cellSize,pz=(key.z+.5)*cellSize;
+    if(!castleDoorRayCrosses(source.x,source.y,source.z,px,py,pz,slot,
+         cellSize*.5+.45))return;
+    changedCells.put(key,revision);
+    occluderCells.put(key,revision);
+    invalidatedCells++;
+   });
+  }
+ }
  public FixtureLighting(HouseMap map){this.map=map;this.castle=null;
   for(var s:map.level().sockets())if(s.type().equals("light")){
    int control=controller(s);
@@ -399,9 +459,28 @@ public final class FixtureLighting {
   // Dynamic gate leaves change real shadow occlusion even when the clock and
   // circuits have not advanced. Retain expensive geometry caches otherwise.
   if(castle!=null&&castle.doorRevision()!=castleDoorRevision){
-   castleDoorRevision=castle.doorRevision();occluderEpoch=++generation;
-   Arrays.fill(sourceOcclusionRevisions,occluderEpoch);
-   sight.clear();colours.clear();normalColours.clear();distant.clear();
+   boolean global=castleDoorRevision<0;
+   int changes=0;
+   for(var slot:CastleDoorSlots.all()){
+    if(!CastleDoorSlots.available(slot))continue;
+    boolean open=castle.doorOpen(slot.id());
+    Boolean old=castleDoorStates.put(slot.id(),open);
+    if(old==null){if(castleDoorRevision>=0)global=true;}
+    else if(old.booleanValue()!=open){
+     if(CastleLevelEdits.current().doorType(slot.id())==CastleDoorSlots.Type.EMPTY)
+      global=true;
+     else{invalidateCastleDoor(slot);changes++;}
+    }
+   }
+   // First frame or unknown topology mutation still requires full recovery.
+   // A normal door swing never advances the GLOBAL occluder epoch.
+   if(changes==0)global=true;
+   if(global){
+    occluderEpoch=++generation;
+    Arrays.fill(sourceOcclusionRevisions,occluderEpoch);
+    sight.clear();colours.clear();normalColours.clear();distant.clear();
+   }
+   castleDoorRevision=castle.doorRevision();
   }
   int cosmeticTick=(tick/6)*6;
   for(var source:sources){
