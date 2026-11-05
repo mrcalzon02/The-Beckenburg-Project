@@ -168,7 +168,9 @@ def sources():
     entries.append(model('cannery_suspended_hooks','Freestanding fish processing hook rail',['WLD-13'],'floor',p))
 
     p=[box(0,.48,0,2.35,.95,.45,'stone'),
-       box(0,1.70,0,2.33,1.53,.13,'metal')]
+       box(-1.13,1.70,0,.09,1.53,.13,'metal'),
+       box(1.13,1.70,0,.09,1.53,.13,'metal'),
+       box(0,1.04,0,2.33,.09,.13,'metal')]
     for x in [-1.00,-.75,-.50,-.25,0,.25,.50,.75,1.00]:
         p.append(cyl(x,1.73,-.09,.023,1.33,'metal'))
     p += [box(0,2.50,0,2.36,.10,.24,'metal'),
@@ -210,6 +212,11 @@ def produce():
     entries=sources()
     if len(entries)!=15 or len({m['id'] for m in entries})!=len(entries):
         raise ValueError('Expected 15 unique source refinement models')
+    # A barred partition must not conceal a solid full-width rear plate.
+    grille=next(m for m in entries if m['id'].endswith('prison_visitation_grille'))
+    if any(p['type']=='box' and p['size'][0]>2 and p['size'][1]>.5
+           and p['p'][1]>1 for p in grille['parts']):
+        raise ValueError('Visitation grille has an obstructing backplate')
     outputs={}
     records=[]
     for m in entries:
