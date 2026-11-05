@@ -39,45 +39,55 @@ public final class CharacterBillboardAnchorTest {
         // flicker even though the image has not yet changed.
         check(latched==deliberateOrbit&&latched!=raw,
             "returning across the threshold must retain the stable art view even when raw facing differs");
-        // The selected front/back and side card geometries are the same
-        // fixed planes regardless of camera yaw, proximity or strafe.
-        for(int heading:new int[]{0,45,90,180,270}){
-            double[] front=DirectionalSprites.worldPlaneAxis(heading,0);
-            double[] frontDiagonal=DirectionalSprites.worldPlaneAxis(heading,1);
-            double[] side=DirectionalSprites.worldPlaneAxis(heading,2);
-            double[] sideDiagonal=DirectionalSprites.worldPlaneAxis(heading,3);
-            check(Math.abs(front[0]-frontDiagonal[0])<1e-9
-                    &&Math.abs(front[1]-frontDiagonal[1])<1e-9,
-                "front quarter views cannot rotate physical card toward camera");
-            check(Math.abs(side[0]-sideDiagonal[0])<1e-9
-                    &&Math.abs(side[1]-sideDiagonal[1])<1e-9,
-                "side quarter views cannot rotate physical card toward camera");
-            check(Math.abs(front[0]*side[0]+front[1]*side[1])<1e-9,
-                "permanent crossed character planes must be orthogonal");
+        // Camera-facing is essential: stationary crossed quads become
+        // edge-on while circling an NPC and appear to jitter or disappear.
+        // The billboard is still in world space and keeps its floor anchor.
+        for(int degrees=0;degrees<360;degrees+=15){
+            double cx=cameraX(degrees),cz=cameraZ(degrees);
+            double[] axis=DirectionalSprites.cameraFacingPlaneAxis(cx,cz,0,0);
+            double dot=axis[0]*cx+axis[1]*cz;
+            check(Math.abs(dot)<1e-9,"NPC card must face camera in every quadrant");
+            check(Math.abs(Math.hypot(axis[0],axis[1])-1)<1e-9,
+                "NPC card must preserve full physical width while orbiting");
+            double[] farther=DirectionalSprites.cameraFacingPlaneAxis(cx*2,cz*2,0,0);
+            check(Math.abs(axis[0]-farther[0])<1e-9
+                    &&Math.abs(axis[1]-farther[1])<1e-9,
+                "camera distance must not change the billboard's rotation");
         }
-        // Camera-selected source cutouts have wildly different transparent
-        // margins. The ACTOR plane must nevertheless be byte-for-byte fixed.
-        var fixed=DirectionalSprites.worldLockedHumanCard(1.79,.98,0);
-        check(Math.abs(fixed.left()+.49)<1e-9
-                &&Math.abs(fixed.right()-.49)<1e-9
-                &&Math.abs(fixed.bottom()+1.62)<1e-9
-                &&Math.abs(fixed.top()-.17)<1e-9,
-            "world card uses an immutable actor-space sole and centre");
-        var tall=DirectionalSprites.worldLockedHumanCard(1.79,.98,0);
-        check(fixed.equals(tall),"camera orbit cannot change world card geometry");
-        // The shoe anchor may differ among cutouts, but fitting it belongs
-        // entirely to texture coordinates: v=sole at physical world floor.
+        var left=DirectionalSprites.cameraFacingPlaneAxis(-.03,3,0,0);
+        var right=DirectionalSprites.cameraFacingPlaneAxis(.03,3,0,0);
+        check(left[0]*right[0]+left[1]*right[1]>.999,
+            "small lateral camera movement must smoothly rotate the card, not flip it");
+        var card=DirectionalSprites.groundedBillboardCard(1.79,.98,0);
+        check(Math.abs(card.left()+.49)<1e-9
+                &&Math.abs(card.right()-.49)<1e-9
+                &&Math.abs(card.bottom()+1.62)<1e-9
+                &&Math.abs(card.top()-.17)<1e-9,
+            "camera-facing card preserves an immutable actor-space sole and centre");
+        check(card.equals(DirectionalSprites.groundedBillboardCard(1.79,.98,0)),
+            "camera orbit cannot change world-space character height/width");
+        // Camera-facing source art still has directional shoe padding; it
+        // must not be mistaken for new body geometry below the floor.
         for(int visibleSoleRow:new int[]{182,201,205,219}){
             double sole=(visibleSoleRow+.5)/224.0;
-            double floorV=(fixed.top()-fixed.bottom())/1.79*sole;
+            double floorV=(card.top()-card.bottom())/1.79*sole;
             check(Math.abs(floorV-sole)<1e-12,
-                "every approved shoe pixel must map to unchanged world floor");
+                "every approved boot pixel must map to fixed world floor");
             check(DirectionalSprites.groundedUvAboveFloor(floorV,sole),
-                "substantial boot sole must remain visible at support height");
+                "substantial boot sole must remain on the supporting floor");
             check(!DirectionalSprites.groundedUvAboveFloor(sole+1.0/224.0,sole)
                     &&!DirectionalSprites.groundedUvAboveFloor(-.01,sole),
-                "stray artist fringe or transparent matte below sole must not render beneath floor");
+                "stray alpha fringe beneath the boot must never render");
         }
-        System.out.println("PASS Castle world-locked characters: fixed geometry, height, lateral pivot and alpha shoe UV");
+        // Movement is not a change of character identity. Previously every
+        // millimetre of Tomas's routine discarded hysteresis and snapped art.
+        int tomasFront=DirectionalSprites.stableFacing("tomas_greaves",0,10,10,
+            10+cameraX(60),10+cameraZ(60));
+        check(tomasFront==1,"Tomas original angle selection");
+        int tomasMoving=DirectionalSprites.stableFacing("tomas_greaves",0,10.014,10.008,
+            10.014+cameraX(69),10.008+cameraZ(69));
+        check(tomasMoving==tomasFront,
+            "walking a few millimetres cannot reset Tomas's facing hysteresis");
+        System.out.println("PASS Castle camera-facing depth-tested NPCs: smooth orbit, persistent facing hysteresis, fixed floor contact");
     }
 }
