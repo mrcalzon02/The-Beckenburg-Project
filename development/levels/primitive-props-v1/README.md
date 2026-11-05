@@ -28,3 +28,49 @@ No external Python dependencies are required. `build.py` writes independent bina
 5. Promote only approved refinements to the actual runtime model index and authored editor scene; verify pivots, bounding extents, UVs, static-light prewarm cost and screenshot rendering.
 
 **Acceptance:** These are real geometry files, but they are not completed production models, and their visual quality is intentionally placeholder. `verification.json` is format/integrity evidence only, not playable map acceptance.
+
+## Phase 2: measured review placement (implemented)
+
+The **61 route-aware review placements** are generated from the real measured
+source layouts for the Castle (18), Academy (12), Prison (13), Widow's Peak (7)
+and Dead Man's Claim (11). [fit-recipe.json](fit-recipe.json) specifies each
+model, destination zone, facing and preferred corner. The deterministic
+[fit.py](fit.py) generator computes actual floor-elevation translations, model
+footprint bounds, a wall margin, buffer around planned walking links, separation
+from other models and exclusion of reserved 4.4 m ritual pads.
+
+Each site receives a detailed manifest in [placements/](placements/) and a
+**standalone, nonplayable 3D review GLB** in [previews/](previews/). The preview
+contains floor plates for the selected authored zones and actual graybox meshes;
+the plates are only spatial context, not replacement room shells. The original
+scene files, mission selector, game approval lists, collision, AI navigation,
+and multiplayer authority are untouched.
+
+```bash
+python development/levels/primitive-props-v1/build.py --check
+python development/levels/primitive-props-v1/fit.py
+python development/levels/primitive-props-v1/fit.py --check
+```
+
+The pipeline stores hashes of the layout source, the placement manifest and
+review GLB in [fit-verification.json](fit-verification.json). An edited plan
+automatically makes the old placement verification stale; rerun the generator.
+The scoped GitHub Actions builder uses a sparse checkout of only this asset
+package and the layout plans, performs both independent byte-for-byte checks,
+and commits the generated binaries using a bounded non-force push. Its generated
+artifact commit is **not** a new playable-map release.
+
+### Acceptance still required
+
+- Inspect each primitive's actual four-angle appearance through the DEV
+  showroom. It lists individual `level_blockout_*.glb` models as SOURCE_ONLY.
+- Compare the proposed placement GLBs to the relevant rough-shell or authored
+  production geometry; planning bounds are not the final Castle runtime walls.
+- Replace schematic stair runs, guardrails, cave supports, lighthouse optics,
+  and mine/cart proxies with physically engineered source geometry.
+- Test in-world collisions, path clearance, door animation, UV mapping, ground
+  pivots, visibility, dynamic lighting and level performance before any
+  individual model can be promoted into the game's runtime model registry.
+- The Castle Quartermaster model is a **single-player/co-op campaign supply
+  counter** study. Warehouse shelving remains multiplayer inventory
+  presentation, never a display for fixed van consoles and clipboards.
