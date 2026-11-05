@@ -19,9 +19,9 @@ on:
         default: '0'
         type: string
       limit:
-        description: 'Maximum filtered candidates before wing selection; 0 = unlimited'
+        description: 'Maximum filtered candidates before wing selection; 0 = unlimited (recommended for wing > 0)'
         required: false
-        default: '72'
+        default: '0'
         type: string
   workflow_run:
     workflows: ['Build primitive map prop grayboxes']
@@ -73,7 +73,7 @@ jobs:
           REVIEW_KIND: ${{ github.event_name == 'workflow_dispatch' && inputs.kind || 'SOURCE_ONLY' }}
           REVIEW_FILTER: ${{ github.event_name == 'workflow_dispatch' && inputs.filter || '' }}
           REVIEW_WING: ${{ github.event_name == 'workflow_dispatch' && inputs.wing || '0' }}
-          REVIEW_LIMIT: ${{ github.event_name == 'workflow_dispatch' && inputs.limit || '72' }}
+          REVIEW_LIMIT: ${{ github.event_name == 'workflow_dispatch' && inputs.limit || '0' }}
         run: |
           $kind = $env:REVIEW_KIND.ToUpperInvariant()
           if ($kind -notmatch '^(ALL|SOURCE_ONLY|WORLD_MODEL|EQUIPMENT|IMPORTED|HUNTER|GHOST|CASTLE_NPC)$') { throw "Invalid DEV model kind: $kind" }
