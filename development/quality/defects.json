@@ -3,6 +3,39 @@
   "updated": "2026-11-04",
   "issues": [
     {
+      "id": "DEV-264",
+      "title": "Castle light-switch source GLB gains an enormous stretched sconce backplate",
+      "status": "source corrected in ede4bb147f1051ad646e59cf0b197ed32d979970; focused Castle CI 41947018830 PASS; physical installed screenshot acceptance pending",
+      "affected": "25 authored Castle light-switch instances; wall-mount renderer shared with Castle fixtures",
+      "symptom": "User screenshot shows a long off-colour horizontal strip with a small switch and dark aperture placed on a Castle wall.",
+      "cause": "buildCastleStatic incorrectly rendered light_switch_1 with mountedLamp, adding the generic sconce steel-strap plate and applying lamp-sized 0.85 scale without source-dimension fitting.",
+      "action": "Skip sconce strap for switch meshes; use source GLB with original UVs/materials and uniform physical plate bounds; choose yaw from nearest supporting authored wall and avoid floating mounts after wall deletion. Include captured real-renderer switch view and wall-alignment regression.",
+      "evidence": "User Castle screenshot 2026-11-04; CastleSwitchMountTest: 25 switches PASS and build/e2e/castle-repairs/castle-switch-source-fitted.png from focused CI https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41947018830",
+      "older_maps": "Audit other mounted wall controls and imported fixtures individually; fitting this Castle path does not prove all models elsewhere are oriented correctly."
+    },
+    {
+      "id": "DEV-265",
+      "title": "Door state refresh discards unrelated stationary shadow visibility and causes frame stalls",
+      "status": "Castle regional fix committed 0d12ad3e; House and Castle same-side shadow journal committed d09e4737; exact-source performance and installed GPU acceptance pending; initial new cache test sample-quantization failure corrected in f0b6d4f9",
+      "affected": "Castle doors and House investigation portals, fixture occlusion cache and resident world chunk lighting",
+      "symptom": "Opening doors stalls game, potentially dropping frame rate to single digits; CI House submission benchmark showed toggle p50 375.616 ms and peak 80,874 shadow rays on baseline 0d12ad3e.",
+      "cause": "Castle code globally advanced occlusion epoch and discarded all cached light visibility on door changes; subsequent retained-chunk code also evicted all cached rays from an affected source even when each particular ray stayed on the source side of the portal.",
+      "action": "Invalidate only the swept-door receiver cells and crossing visibility rays; retain independent GPU geometry/material/UV revisions. Maintain bounded revisioned door event history, with conservative re-probe if events overflow. Preserve circuit, ghost effect and true occlusion changes. Compare exact-source tests and numeric before/after on real Windows GPU.",
+      "evidence": "Profiler https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41945883549 (diagnostic only); selective Castle test and House stationarity test; current exact-source profiler https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41947973193 (pending at entry)",
+      "older_maps": "Audit every investigation-map door and all Castle storeys plus installed Windows GPU frame-time p50/p95/p99; do not count packaging success as FPS acceptance."
+    },
+    {
+      "id": "DEV-266",
+      "title": "Castle tabletop decorative models ignore edited supporting furniture rotation",
+      "status": "source correction committed aacb391ddfc64ff716c146f4dca8b73e7582c955; latest full and installed acceptance pending",
+      "affected": "Castle decorative imported books/screens and parent furniture placements edited in the native Castle editor",
+      "symptom": "Moving/rotating a table leaves its decorative GLB object at the moved position but with its previous world-facing rotation.",
+      "cause": "CastleHubDecor.placedAccents recomputed the object's parent translation/height but reused original accent yaw without applying parent yaw delta.",
+      "action": "Apply editor support yaw minus original authored support yaw to decorative object's yaw; preserve original art, model size and current support-derived height; check rotation and translation together in CastleLightingPlacementRepairTest.",
+      "evidence": "Source aacb391d; expanded CastleLightingPlacementRepairTest; exact-source CI/installed review pending",
+      "older_maps": "Audit all parented decorations on other Castle furniture and later native maps for relative orientation and physical support before marking those maps complete."
+    },
+    {
       "id": "DEV-263",
       "title": "Character boots visibly float above the Castle floor despite earlier alpha-pad correction",
       "status": "source fix committed; isolated Java 17 unit test PASS; exact-source CI and installed render acceptance pending",
