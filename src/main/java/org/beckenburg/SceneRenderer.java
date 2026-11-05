@@ -3282,6 +3282,37 @@ public final class SceneRenderer {
         // overlapped the actual authored arch at Z=11.50.
         return List.copyOf(castle);
     }
+    /**
+     * Explicit opt-in, source-checkout-only prototype overlay for automated
+     * Castle screenshot QA. It never writes CastleLevelEdits, the approved GLB
+     * registry, collision/nav data or the game's persistent save files.
+     */
+    public record CastlePrototypeReviewInstance(String mesh,double x,double y,
+                                                  double z,double yaw) {
+        public CastlePrototypeReviewInstance {
+            if(mesh==null||!mesh.startsWith("level_blockout_")
+                ||mesh.startsWith("level_blockout_layout_")
+                ||!mesh.matches("[a-z0-9_-]{1,90}")
+                ||!Double.isFinite(x+y+z+yaw))
+                throw new IllegalArgumentException("Invalid Castle review-only model");
+        }
+    }
+    private List<Face> castlePrototypeReviewFaces=List.of();
+    public void setCastlePrototypeReview(List<CastlePrototypeReviewInstance> studies)
+            throws java.io.IOException {
+        Objects.requireNonNull(studies);
+        if(studies.size()>20)throw new IllegalArgumentException("Too many review models");
+        var faces=new ArrayList<Face>();
+        for(var study:studies){
+            var source=DevAssetReviewCatalog.sourceModel(study.mesh());
+            imported(faces,study.mesh(),source,study.x(),study.y(),study.z(),
+                1,1,1,study.yaw());
+        }
+        // Swap only on full success; no partial or sticky asset frames.
+        castlePrototypeReviewFaces=List.copyOf(faces);
+    }
+    public void clearCastlePrototypeReview(){castlePrototypeReviewFaces=List.of();}
+
     public void drawCastle(CastleHubMap map,double clock,boolean lightsOn){
         long frameBegin=System.nanoTime();
         activateResidentScene(map);
@@ -3324,6 +3355,9 @@ public final class SceneRenderer {
         var dynamic=new ArrayList<Face>();
         if(editorSelection!=null)box(dynamic,editorSelection[0]-.04,editorSelection[1]+.02,
             editorSelection[2]-.04,.08,1.4,.08,0xffcb54);
+        // Never pulled into the normal world chunk cache or editor snapshots.
+        // Source-only studies exist only while an explicit QA caller requests them.
+        if(!castlePrototypeReviewFaces.isEmpty())dynamic.addAll(castlePrototypeReviewFaces);
         List<Face> castle;
         if(exportFullLevel||!gpuAvailable()||!castleResidentEnabled){
             castle=new ArrayList<>(castleStaticGeometry);
