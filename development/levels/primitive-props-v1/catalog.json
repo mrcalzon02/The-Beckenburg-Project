@@ -116,7 +116,8 @@
         "level_blockout_confessional_screen",
         "level_blockout_stone_altar",
         "level_blockout_crypt_niche_wall",
-        "level_blockout_monastery_well"
+        "level_blockout_monastery_well",
+        "level_blockout_cemetery_gate"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -167,7 +168,9 @@
         "level_blockout_family_photo_cluster",
         "level_blockout_toy_chest_scatter",
         "level_blockout_cellar_service_manifold",
-        "level_blockout_house_mailbox"
+        "level_blockout_house_mailbox",
+        "level_blockout_sawmill_headdrig",
+        "level_blockout_timber_offcut_pile"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -281,7 +284,16 @@
         "level_blockout_mine_ventilation",
         "level_blockout_barn_hayloft_bales",
         "level_blockout_farm_trough_gate",
-        "level_blockout_feed_sack_stack"
+        "level_blockout_feed_sack_stack",
+        "level_blockout_sawmill_headdrig",
+        "level_blockout_sawmill_dust_hopper",
+        "level_blockout_timber_offcut_pile",
+        "level_blockout_diesel_generator_skid",
+        "level_blockout_site_distribution_board",
+        "level_blockout_supported_cable_tray",
+        "level_blockout_field_first_aid",
+        "level_blockout_ranger_trail_sign",
+        "level_blockout_mine_hoist_winch"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -301,7 +313,16 @@
         "level_blockout_dock_bay",
         "level_blockout_barn_hayloft_bales",
         "level_blockout_farm_trough_gate",
-        "level_blockout_feed_sack_stack"
+        "level_blockout_feed_sack_stack",
+        "level_blockout_timber_offcut_pile",
+        "level_blockout_diesel_generator_skid",
+        "level_blockout_site_distribution_board",
+        "level_blockout_supported_cable_tray",
+        "level_blockout_field_first_aid",
+        "level_blockout_campfire_ring_grate",
+        "level_blockout_ranger_trail_sign",
+        "level_blockout_camp_washstand",
+        "level_blockout_abandoned_camper_shell"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -316,7 +337,15 @@
         "level_blockout_storage_shelf",
         "level_blockout_workbench",
         "level_blockout_utility_panel",
-        "level_blockout_cave_support"
+        "level_blockout_cave_support",
+        "level_blockout_diesel_generator_skid",
+        "level_blockout_site_distribution_board",
+        "level_blockout_supported_cable_tray",
+        "level_blockout_campfire_ring_grate",
+        "level_blockout_ranger_trail_sign",
+        "level_blockout_canyon_rockfall_barrier",
+        "level_blockout_survey_marker_cases",
+        "level_blockout_cave_bend_modules"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -334,7 +363,12 @@
         "level_blockout_lookout_platform",
         "level_blockout_radio_mast",
         "level_blockout_map_pinboard",
-        "level_blockout_lookout_spotter"
+        "level_blockout_lookout_spotter",
+        "level_blockout_diesel_generator_skid",
+        "level_blockout_site_distribution_board",
+        "level_blockout_supported_cable_tray",
+        "level_blockout_field_first_aid",
+        "level_blockout_weather_instrument_array"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -352,7 +386,16 @@
         "level_blockout_cave_support",
         "level_blockout_ore_cart",
         "level_blockout_mine_ventilation",
-        "level_blockout_assay_balance"
+        "level_blockout_assay_balance",
+        "level_blockout_sawmill_dust_hopper",
+        "level_blockout_diesel_generator_skid",
+        "level_blockout_site_distribution_board",
+        "level_blockout_supported_cable_tray",
+        "level_blockout_canyon_rockfall_barrier",
+        "level_blockout_survey_marker_cases",
+        "level_blockout_cave_bend_modules",
+        "level_blockout_mine_hoist_winch",
+        "level_blockout_mine_sorting_bins"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -368,7 +411,14 @@
         "level_blockout_workbench",
         "level_blockout_utility_panel",
         "level_blockout_dock_bay",
-        "level_blockout_mooring_bollard"
+        "level_blockout_mooring_bollard",
+        "level_blockout_diesel_generator_skid",
+        "level_blockout_site_distribution_board",
+        "level_blockout_supported_cable_tray",
+        "level_blockout_camp_washstand",
+        "level_blockout_net_drying_frame",
+        "level_blockout_boathouse_slip_cradle",
+        "level_blockout_fish_sorting_bench"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -386,7 +436,12 @@
         "level_blockout_pew",
         "level_blockout_cemetery_marker",
         "level_blockout_stone_altar",
-        "level_blockout_crypt_niche_wall"
+        "level_blockout_crypt_niche_wall",
+        "level_blockout_diesel_generator_skid",
+        "level_blockout_site_distribution_board",
+        "level_blockout_supported_cable_tray",
+        "level_blockout_cemetery_gate",
+        "level_blockout_grave_caretaker_tools"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -404,7 +459,15 @@
         "level_blockout_console",
         "level_blockout_radio_mast",
         "level_blockout_lookout_spotter",
-        "level_blockout_greenhouse_potting_bench"
+        "level_blockout_greenhouse_potting_bench",
+        "level_blockout_diesel_generator_skid",
+        "level_blockout_site_distribution_board",
+        "level_blockout_supported_cable_tray",
+        "level_blockout_field_first_aid",
+        "level_blockout_survey_marker_cases",
+        "level_blockout_research_airlock",
+        "level_blockout_weather_instrument_array",
+        "level_blockout_insulated_tunnel_collar"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -420,7 +483,13 @@
         "level_blockout_workbench",
         "level_blockout_utility_panel",
         "level_blockout_console",
-        "level_blockout_hydro_turbine"
+        "level_blockout_hydro_turbine",
+        "level_blockout_diesel_generator_skid",
+        "level_blockout_site_distribution_board",
+        "level_blockout_supported_cable_tray",
+        "level_blockout_weather_instrument_array",
+        "level_blockout_dam_spillway_actuator",
+        "level_blockout_dam_valve_manifold"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -447,7 +516,10 @@
         "level_blockout_ballroom_chandelier",
         "level_blockout_grand_stair_newel",
         "level_blockout_monastery_well",
-        "level_blockout_monastery_scriptorium"
+        "level_blockout_monastery_scriptorium",
+        "level_blockout_diesel_generator_skid",
+        "level_blockout_site_distribution_board",
+        "level_blockout_supported_cable_tray"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -463,7 +535,16 @@
         "level_blockout_workbench",
         "level_blockout_utility_panel",
         "level_blockout_dock_bay",
-        "level_blockout_mooring_bollard"
+        "level_blockout_mooring_bollard",
+        "level_blockout_diesel_generator_skid",
+        "level_blockout_site_distribution_board",
+        "level_blockout_supported_cable_tray",
+        "level_blockout_campfire_ring_grate",
+        "level_blockout_ranger_trail_sign",
+        "level_blockout_camp_washstand",
+        "level_blockout_abandoned_camper_shell",
+        "level_blockout_net_drying_frame",
+        "level_blockout_grave_caretaker_tools"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -478,7 +559,11 @@
         "level_blockout_storage_shelf",
         "level_blockout_workbench",
         "level_blockout_utility_panel",
-        "level_blockout_rail_signal"
+        "level_blockout_rail_signal",
+        "level_blockout_diesel_generator_skid",
+        "level_blockout_site_distribution_board",
+        "level_blockout_supported_cable_tray",
+        "level_blockout_canyon_rockfall_barrier"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -494,7 +579,14 @@
         "level_blockout_workbench",
         "level_blockout_utility_panel",
         "level_blockout_dock_bay",
-        "level_blockout_cannery_conveyor"
+        "level_blockout_cannery_conveyor",
+        "level_blockout_sawmill_dust_hopper",
+        "level_blockout_diesel_generator_skid",
+        "level_blockout_site_distribution_board",
+        "level_blockout_supported_cable_tray",
+        "level_blockout_mine_sorting_bins",
+        "level_blockout_fish_sorting_bench",
+        "level_blockout_dam_valve_manifold"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -512,7 +604,13 @@
         "level_blockout_radio_mast",
         "level_blockout_lighthouse_optic",
         "level_blockout_lookout_spotter",
-        "level_blockout_bell_frame_rope"
+        "level_blockout_bell_frame_rope",
+        "level_blockout_diesel_generator_skid",
+        "level_blockout_site_distribution_board",
+        "level_blockout_supported_cable_tray",
+        "level_blockout_field_first_aid",
+        "level_blockout_weather_instrument_array",
+        "level_blockout_insulated_tunnel_collar"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -531,7 +629,15 @@
         "level_blockout_dock_bay",
         "level_blockout_cannery_conveyor",
         "level_blockout_mooring_bollard",
-        "level_blockout_motel_reception_counter"
+        "level_blockout_motel_reception_counter",
+        "level_blockout_diesel_generator_skid",
+        "level_blockout_site_distribution_board",
+        "level_blockout_supported_cable_tray",
+        "level_blockout_field_first_aid",
+        "level_blockout_net_drying_frame",
+        "level_blockout_boathouse_slip_cradle",
+        "level_blockout_fish_sorting_bench",
+        "level_blockout_dam_valve_manifold"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -551,7 +657,11 @@
         "level_blockout_toy_chest_scatter",
         "level_blockout_cellar_service_manifold",
         "level_blockout_house_mailbox",
-        "level_blockout_motel_reception_counter"
+        "level_blockout_motel_reception_counter",
+        "level_blockout_diesel_generator_skid",
+        "level_blockout_site_distribution_board",
+        "level_blockout_supported_cable_tray",
+        "level_blockout_abandoned_camper_shell"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -573,7 +683,10 @@
         "level_blockout_dorm_bunk_partition",
         "level_blockout_prison_sally_gate",
         "level_blockout_prison_gallery_rail",
-        "level_blockout_prison_isolation_fixture"
+        "level_blockout_prison_isolation_fixture",
+        "level_blockout_diesel_generator_skid",
+        "level_blockout_site_distribution_board",
+        "level_blockout_supported_cable_tray"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -592,7 +705,16 @@
         "level_blockout_cell_door",
         "level_blockout_blast_door",
         "level_blockout_shaft_ring",
-        "level_blockout_prison_sally_gate"
+        "level_blockout_prison_sally_gate",
+        "level_blockout_diesel_generator_skid",
+        "level_blockout_site_distribution_board",
+        "level_blockout_supported_cable_tray",
+        "level_blockout_survey_marker_cases",
+        "level_blockout_mine_hoist_winch",
+        "level_blockout_research_airlock",
+        "level_blockout_insulated_tunnel_collar",
+        "level_blockout_dam_spillway_actuator",
+        "level_blockout_dam_valve_manifold"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -616,7 +738,9 @@
         "level_blockout_hospital_treatment_theatre",
         "level_blockout_bedside_trolley",
         "level_blockout_hospital_chart_station",
-        "level_blockout_crypt_niche_wall"
+        "level_blockout_crypt_niche_wall",
+        "level_blockout_cemetery_gate",
+        "level_blockout_grave_caretaker_tools"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     }
@@ -10945,6 +11069,3944 @@
         }
       ],
       "notes": "Fictional lodging desk, no booking or guest records.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_sawmill_headdrig",
+      "label": "Blackpine saw headrig with stationary blade and log feed",
+      "category": "logging",
+      "maps": [
+        "WLD-01",
+        "FARMHOUSE"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.15,
+            0
+          ],
+          "size": [
+            3.16,
+            0.3,
+            1.38
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.7,
+            -0.4
+          ],
+          "size": [
+            2.6,
+            0.14,
+            0.46
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.26,
+            1.34,
+            0.28
+          ],
+          "size": [
+            0.13,
+            2.67,
+            0.16
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.26,
+            1.34,
+            0.28
+          ],
+          "size": [
+            0.13,
+            2.67,
+            0.16
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.66,
+            0.28
+          ],
+          "size": [
+            2.8,
+            0.18,
+            0.26
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.55,
+            0.16
+          ],
+          "radius": 0.79,
+          "height": 0.065,
+          "material": "metal",
+          "axis": "x",
+          "segments": 16
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.55,
+            0.16
+          ],
+          "radius": 0.13,
+          "height": 0.32,
+          "material": "industrial",
+          "axis": "x",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.96,
+            0.56,
+            -0.38
+          ],
+          "radius": 0.15,
+          "height": 0.38,
+          "material": "dark",
+          "axis": "z",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.96,
+            0.56,
+            -0.38
+          ],
+          "radius": 0.15,
+          "height": 0.38,
+          "material": "dark",
+          "axis": "z",
+          "segments": 10
+        }
+      ],
+      "notes": "Fixed circular blade and feed table; NO saw rotation, cutting damage or powered machinery.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_sawmill_dust_hopper",
+      "label": "Stopped sawdust extractor/hopper",
+      "category": "logging",
+      "maps": [
+        "WLD-01",
+        "WLD-05",
+        "WLD-13"
+      ],
+      "parts": [
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.64,
+            0
+          ],
+          "radius": 0.65,
+          "height": 1.49,
+          "material": "industrial",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "tri_prism",
+          "p": [
+            0,
+            0.62,
+            0
+          ],
+          "size": [
+            1.55,
+            1.04,
+            1.38
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.19,
+            0
+          ],
+          "size": [
+            1.05,
+            0.37,
+            1.05
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.8,
+            2.37,
+            0
+          ],
+          "radius": 0.2,
+          "height": 1.35,
+          "material": "metal",
+          "axis": "x",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.49,
+            0
+          ],
+          "size": [
+            1.45,
+            0.13,
+            1.42
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.48,
+            0.8,
+            0.6
+          ],
+          "size": [
+            0.12,
+            1.6,
+            0.13
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.48,
+            0.8,
+            0.6
+          ],
+          "size": [
+            0.12,
+            1.6,
+            0.13
+          ],
+          "material": "metal"
+        }
+      ],
+      "notes": "Stationary extractor geometry; no dust particles, sound or ventilation simulation.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_timber_offcut_pile",
+      "label": "Blackpine timber offcuts and sawdust heap",
+      "category": "logging",
+      "maps": [
+        "WLD-01",
+        "FARMHOUSE",
+        "WLD-02"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.52,
+            0.12,
+            -0.28
+          ],
+          "size": [
+            0.41,
+            0.24,
+            1.68
+          ],
+          "material": "wood",
+          "yaw": -0.0728
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.52,
+            0.12,
+            0.25
+          ],
+          "size": [
+            0.41,
+            0.24,
+            1.68
+          ],
+          "material": "wood",
+          "yaw": -0.0728
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.12,
+            -0.28
+          ],
+          "size": [
+            0.41,
+            0.24,
+            1.68
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.12,
+            0.25
+          ],
+          "size": [
+            0.41,
+            0.24,
+            1.68
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.52,
+            0.12,
+            -0.28
+          ],
+          "size": [
+            0.41,
+            0.24,
+            1.68
+          ],
+          "material": "wood",
+          "yaw": 0.0728
+        },
+        {
+          "type": "box",
+          "p": [
+            0.52,
+            0.12,
+            0.25
+          ],
+          "size": [
+            0.41,
+            0.24,
+            1.68
+          ],
+          "material": "wood",
+          "yaw": 0.0728
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.4,
+            0.45,
+            0
+          ],
+          "size": [
+            0.74,
+            0.17,
+            0.55
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.27,
+            0.42,
+            0.36
+          ],
+          "size": [
+            0.74,
+            0.17,
+            0.55
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.64,
+            0.38,
+            -0.34
+          ],
+          "size": [
+            0.74,
+            0.17,
+            0.55
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.07,
+            0
+          ],
+          "size": [
+            2.22,
+            0.12,
+            1.96
+          ],
+          "material": "wood"
+        }
+      ],
+      "notes": "Immovable timber/offcut silhouettes, no individual pickup items.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_diesel_generator_skid",
+      "label": "Outdoor emergency generator and service skid",
+      "category": "power",
+      "maps": [
+        "WLD-01",
+        "WLD-02",
+        "WLD-03",
+        "WLD-04",
+        "WLD-05",
+        "WLD-06",
+        "WLD-07",
+        "WLD-08",
+        "WLD-09",
+        "WLD-10",
+        "WLD-11",
+        "WLD-12",
+        "WLD-13",
+        "WLD-14",
+        "WLD-15",
+        "WLD-16",
+        "WLD-17",
+        "WLD-18"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.15,
+            0
+          ],
+          "size": [
+            2.2,
+            0.26,
+            1.14
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.76,
+            0
+          ],
+          "size": [
+            1.92,
+            0.99,
+            0.98
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.62,
+            1.26,
+            0
+          ],
+          "size": [
+            0.26,
+            0.11,
+            0.88
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.5,
+            1.1,
+            -0.51
+          ],
+          "size": [
+            0.68,
+            0.22,
+            0.075
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.75,
+            0.12,
+            0
+          ],
+          "radius": 0.23,
+          "height": 0.14,
+          "material": "dark",
+          "axis": "x",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.75,
+            0.12,
+            0
+          ],
+          "radius": 0.23,
+          "height": 0.14,
+          "material": "dark",
+          "axis": "x",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.66,
+            1.52,
+            0.15
+          ],
+          "radius": 0.12,
+          "height": 0.68,
+          "material": "metal",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.75,
+            0.86,
+            0.48
+          ],
+          "size": [
+            0.09,
+            0.67,
+            0.08
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.75,
+            0.86,
+            0.48
+          ],
+          "size": [
+            0.09,
+            0.67,
+            0.08
+          ],
+          "material": "industrial"
+        }
+      ],
+      "notes": "Static remote service source. No powered circuit behavior, fuel tank simulation, exhaust or load handling.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_site_distribution_board",
+      "label": "Remote breaker/distribution cabinet",
+      "category": "power",
+      "maps": [
+        "WLD-01",
+        "WLD-02",
+        "WLD-03",
+        "WLD-04",
+        "WLD-05",
+        "WLD-06",
+        "WLD-07",
+        "WLD-08",
+        "WLD-09",
+        "WLD-10",
+        "WLD-11",
+        "WLD-12",
+        "WLD-13",
+        "WLD-14",
+        "WLD-15",
+        "WLD-16",
+        "WLD-17",
+        "WLD-18"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.16,
+            0
+          ],
+          "size": [
+            1.22,
+            1.76,
+            0.44
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.25,
+            -0.25
+          ],
+          "size": [
+            1.05,
+            1.47,
+            0.06
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.33,
+            0.63,
+            -0.3
+          ],
+          "size": [
+            0.19,
+            0.09,
+            0.04
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.63,
+            -0.3
+          ],
+          "size": [
+            0.19,
+            0.09,
+            0.04
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.33,
+            0.63,
+            -0.3
+          ],
+          "size": [
+            0.19,
+            0.09,
+            0.04
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.33,
+            0.89,
+            -0.3
+          ],
+          "size": [
+            0.19,
+            0.09,
+            0.04
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.89,
+            -0.3
+          ],
+          "size": [
+            0.19,
+            0.09,
+            0.04
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.33,
+            0.89,
+            -0.3
+          ],
+          "size": [
+            0.19,
+            0.09,
+            0.04
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.33,
+            1.15,
+            -0.3
+          ],
+          "size": [
+            0.19,
+            0.09,
+            0.04
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.15,
+            -0.3
+          ],
+          "size": [
+            0.19,
+            0.09,
+            0.04
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.33,
+            1.15,
+            -0.3
+          ],
+          "size": [
+            0.19,
+            0.09,
+            0.04
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.33,
+            1.41,
+            -0.3
+          ],
+          "size": [
+            0.19,
+            0.09,
+            0.04
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.41,
+            -0.3
+          ],
+          "size": [
+            0.19,
+            0.09,
+            0.04
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.33,
+            1.41,
+            -0.3
+          ],
+          "size": [
+            0.19,
+            0.09,
+            0.04
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.05,
+            0
+          ],
+          "size": [
+            1.31,
+            0.14,
+            0.5
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.15,
+            0
+          ],
+          "size": [
+            1.31,
+            0.22,
+            0.51
+          ],
+          "material": "stone"
+        }
+      ],
+      "notes": "Breaker labels abstract; power topology comes from authored power plans, not this proxy.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_supported_cable_tray",
+      "label": "Modular overhead cable tray and brackets",
+      "category": "power",
+      "maps": [
+        "WLD-01",
+        "WLD-02",
+        "WLD-03",
+        "WLD-04",
+        "WLD-05",
+        "WLD-06",
+        "WLD-07",
+        "WLD-08",
+        "WLD-09",
+        "WLD-10",
+        "WLD-11",
+        "WLD-12",
+        "WLD-13",
+        "WLD-14",
+        "WLD-15",
+        "WLD-16",
+        "WLD-17",
+        "WLD-18"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.12,
+            0
+          ],
+          "size": [
+            2.22,
+            0.08,
+            0.58
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.24,
+            -0.26
+          ],
+          "size": [
+            2.23,
+            0.25,
+            0.07
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.24,
+            0.26
+          ],
+          "size": [
+            2.23,
+            0.25,
+            0.07
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.9,
+            2.36,
+            0
+          ],
+          "size": [
+            0.07,
+            0.07,
+            0.59
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.36,
+            0
+          ],
+          "size": [
+            0.07,
+            0.07,
+            0.59
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.9,
+            2.36,
+            0
+          ],
+          "size": [
+            0.07,
+            0.07,
+            0.59
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.85,
+            2.02,
+            0
+          ],
+          "size": [
+            0.09,
+            0.08,
+            0.24
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.35,
+            2.02,
+            0
+          ],
+          "size": [
+            0.09,
+            0.08,
+            0.24
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.35,
+            2.02,
+            0
+          ],
+          "size": [
+            0.09,
+            0.08,
+            0.24
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.85,
+            2.02,
+            0
+          ],
+          "size": [
+            0.09,
+            0.08,
+            0.24
+          ],
+          "material": "dark"
+        }
+      ],
+      "notes": "Standalone cable-rack segment; attachment and electrical connectivity remain editor obligations.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_field_first_aid",
+      "label": "Logging/campsite first-aid storage and wall cabinet",
+      "category": "medical",
+      "maps": [
+        "WLD-01",
+        "WLD-02",
+        "WLD-04",
+        "WLD-08",
+        "WLD-14",
+        "WLD-15"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.52,
+            0
+          ],
+          "size": [
+            0.87,
+            0.83,
+            0.3
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.52,
+            -0.16
+          ],
+          "size": [
+            0.74,
+            0.72,
+            0.04
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.53,
+            -0.19
+          ],
+          "size": [
+            0.1,
+            0.5,
+            0.028
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.53,
+            -0.2
+          ],
+          "size": [
+            0.46,
+            0.1,
+            0.029
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.35,
+            0.58,
+            0.13
+          ],
+          "size": [
+            0.09,
+            1.22,
+            0.1
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.35,
+            0.58,
+            0.13
+          ],
+          "size": [
+            0.09,
+            1.22,
+            0.1
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.12,
+            0.17
+          ],
+          "size": [
+            1.08,
+            0.18,
+            0.57
+          ],
+          "material": "wood"
+        }
+      ],
+      "notes": "Mounted emergency-supplies silhouette; no healing item scripting.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_campfire_ring_grate",
+      "label": "Inert campsite fire ring and cooking grate",
+      "category": "campsite",
+      "maps": [
+        "WLD-02",
+        "WLD-03",
+        "WLD-11"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0.69,
+            0.14,
+            0
+          ],
+          "size": [
+            0.42,
+            0.27,
+            0.28
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.5582217261187137,
+            0.14,
+            0.4055718240818064
+          ],
+          "size": [
+            0.42,
+            0.27,
+            0.28
+          ],
+          "material": "stone",
+          "yaw": 0.6283185307179586
+        },
+        {
+          "type": "box",
+          "p": [
+            0.21322172611871373,
+            0.14,
+            0.6562289962436559
+          ],
+          "size": [
+            0.42,
+            0.27,
+            0.28
+          ],
+          "material": "stone",
+          "yaw": 1.2566370614359172
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.21322172611871365,
+            0.14,
+            0.6562289962436559
+          ],
+          "size": [
+            0.42,
+            0.27,
+            0.28
+          ],
+          "material": "stone",
+          "yaw": 1.8849555921538759
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.5582217261187136,
+            0.14,
+            0.40557182408180653
+          ],
+          "size": [
+            0.42,
+            0.27,
+            0.28
+          ],
+          "material": "stone",
+          "yaw": 2.5132741228718345
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.69,
+            0.14,
+            8.450062914116737e-17
+          ],
+          "size": [
+            0.42,
+            0.27,
+            0.28
+          ],
+          "material": "stone",
+          "yaw": 3.141592653589793
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.5582217261187138,
+            0.14,
+            -0.40557182408180636
+          ],
+          "size": [
+            0.42,
+            0.27,
+            0.28
+          ],
+          "material": "stone",
+          "yaw": 3.7699111843077517
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.2132217261187138,
+            0.14,
+            -0.6562289962436559
+          ],
+          "size": [
+            0.42,
+            0.27,
+            0.28
+          ],
+          "material": "stone",
+          "yaw": 4.39822971502571
+        },
+        {
+          "type": "box",
+          "p": [
+            0.21322172611871357,
+            0.14,
+            -0.6562289962436559
+          ],
+          "size": [
+            0.42,
+            0.27,
+            0.28
+          ],
+          "material": "stone",
+          "yaw": 5.026548245743669
+        },
+        {
+          "type": "box",
+          "p": [
+            0.5582217261187136,
+            0.14,
+            -0.4055718240818066
+          ],
+          "size": [
+            0.42,
+            0.27,
+            0.28
+          ],
+          "material": "stone",
+          "yaw": 5.654866776461628
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.34,
+            0
+          ],
+          "size": [
+            1.36,
+            0.06,
+            1.24
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.38,
+            0.37,
+            0
+          ],
+          "size": [
+            0.035,
+            0.06,
+            1.16
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.15,
+            0.37,
+            0
+          ],
+          "size": [
+            0.035,
+            0.06,
+            1.16
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.15,
+            0.37,
+            0
+          ],
+          "size": [
+            0.035,
+            0.06,
+            1.16
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.38,
+            0.37,
+            0
+          ],
+          "size": [
+            0.035,
+            0.06,
+            1.16
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.17,
+            -0.26
+          ],
+          "size": [
+            0.98,
+            0.1,
+            0.22
+          ],
+          "material": "wood",
+          "yaw": 0.35
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.17,
+            0.26
+          ],
+          "size": [
+            0.98,
+            0.1,
+            0.22
+          ],
+          "material": "wood",
+          "yaw": 0.35
+        }
+      ],
+      "notes": "No flame or smoke. Lit campfires must use separate approved gameplay FX and heat rules.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_ranger_trail_sign",
+      "label": "Woodland trail and campsite route signpost",
+      "category": "campsite",
+      "maps": [
+        "WLD-02",
+        "WLD-01",
+        "WLD-03",
+        "WLD-11"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.29,
+            0
+          ],
+          "size": [
+            0.15,
+            2.58,
+            0.16
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.18,
+            -0.13
+          ],
+          "size": [
+            1.53,
+            0.43,
+            0.16
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.24,
+            1.57,
+            -0.14
+          ],
+          "size": [
+            1.12,
+            0.31,
+            0.16
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "tri_prism",
+          "p": [
+            0,
+            2.57,
+            0
+          ],
+          "size": [
+            0.72,
+            0.34,
+            0.38
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.08,
+            0
+          ],
+          "size": [
+            0.56,
+            0.16,
+            0.48
+          ],
+          "material": "stone"
+        }
+      ],
+      "notes": "Unlettered signage; localization, route clues and legibility are not authored.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_camp_washstand",
+      "label": "Camp bathhouse wash basin and privacy fixture",
+      "category": "campsite",
+      "maps": [
+        "WLD-02",
+        "WLD-06",
+        "WLD-11"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.76,
+            0
+          ],
+          "size": [
+            1.26,
+            0.18,
+            0.63
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.52,
+            0.37,
+            0
+          ],
+          "size": [
+            0.09,
+            0.74,
+            0.57
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.52,
+            0.37,
+            0
+          ],
+          "size": [
+            0.09,
+            0.74,
+            0.57
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.72,
+            0.34
+          ],
+          "size": [
+            1.37,
+            1.92,
+            0.05
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.9,
+            0.39
+          ],
+          "size": [
+            1.49,
+            0.07,
+            0.08
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.24,
+            1.01,
+            0
+          ],
+          "radius": 0.22,
+          "height": 0.12,
+          "material": "metal",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "box",
+          "p": [
+            0.35,
+            1.08,
+            0
+          ],
+          "size": [
+            0.1,
+            0.48,
+            0.1
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.35,
+            1.3,
+            0
+          ],
+          "size": [
+            0.3,
+            0.08,
+            0.08
+          ],
+          "material": "metal"
+        }
+      ],
+      "notes": "Dry sink and static privacy screen, no working water or hygiene logic.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_abandoned_camper_shell",
+      "label": "Hollow Creek abandoned camper exterior body",
+      "category": "campsite",
+      "maps": [
+        "WLD-02",
+        "WLD-16",
+        "WLD-11"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.27,
+            0
+          ],
+          "size": [
+            3.12,
+            2.14,
+            1.73
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.4,
+            0
+          ],
+          "size": [
+            3.34,
+            0.17,
+            1.93
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.19,
+            0
+          ],
+          "size": [
+            2.83,
+            0.3,
+            1.42
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -1.05,
+            0.3,
+            -0.66
+          ],
+          "radius": 0.31,
+          "height": 0.24,
+          "material": "dark",
+          "axis": "x",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -1.05,
+            0.3,
+            0.66
+          ],
+          "radius": 0.31,
+          "height": 0.24,
+          "material": "dark",
+          "axis": "x",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            1.05,
+            0.3,
+            -0.66
+          ],
+          "radius": 0.31,
+          "height": 0.24,
+          "material": "dark",
+          "axis": "x",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            1.05,
+            0.3,
+            0.66
+          ],
+          "radius": 0.31,
+          "height": 0.24,
+          "material": "dark",
+          "axis": "x",
+          "segments": 12
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.84,
+            1.72,
+            -0.9
+          ],
+          "size": [
+            0.89,
+            0.61,
+            0.025
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.84,
+            1.72,
+            -0.9
+          ],
+          "size": [
+            0.89,
+            0.61,
+            0.025
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.06,
+            1.23,
+            0.9
+          ],
+          "size": [
+            0.85,
+            1.45,
+            0.055
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.05,
+            1.26,
+            0.95
+          ],
+          "size": [
+            0.25,
+            0.09,
+            0.04
+          ],
+          "material": "accent"
+        }
+      ],
+      "notes": "Single sealed exterior-shell mass; actual walkable door/interior layout and source vehicle rig missing.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_canyon_rockfall_barrier",
+      "label": "Red Mesa rough rockfall timber barrier",
+      "category": "wilderness",
+      "maps": [
+        "WLD-03",
+        "WLD-05",
+        "WLD-12"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -1.14,
+            0.79,
+            0
+          ],
+          "size": [
+            0.21,
+            1.58,
+            0.3
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.39,
+            0.79,
+            0
+          ],
+          "size": [
+            0.21,
+            1.58,
+            0.3
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.39,
+            0.79,
+            0
+          ],
+          "size": [
+            0.21,
+            1.58,
+            0.3
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.14,
+            0.79,
+            0
+          ],
+          "size": [
+            0.21,
+            1.58,
+            0.3
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.29,
+            -0.08
+          ],
+          "size": [
+            2.63,
+            0.19,
+            0.22
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.77,
+            -0.08
+          ],
+          "size": [
+            2.63,
+            0.19,
+            0.22
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.23,
+            -0.08
+          ],
+          "size": [
+            2.63,
+            0.19,
+            0.22
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "tri_prism",
+          "p": [
+            -1.05,
+            0.31,
+            0.65
+          ],
+          "size": [
+            0.95,
+            0.62,
+            0.92
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "tri_prism",
+          "p": [
+            0.75,
+            0.31,
+            0.65
+          ],
+          "size": [
+            0.95,
+            0.62,
+            0.92
+          ],
+          "material": "stone"
+        }
+      ],
+      "notes": "Static warning barrier; no rockfall simulation or blocked route authority.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_survey_marker_cases",
+      "label": "Remote survey markers, sample cases and stakes",
+      "category": "wilderness",
+      "maps": [
+        "WLD-03",
+        "WLD-05",
+        "WLD-08",
+        "WLD-18"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.7,
+            0.61,
+            0.48
+          ],
+          "size": [
+            0.06,
+            1.22,
+            0.07
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.61,
+            0.48
+          ],
+          "size": [
+            0.06,
+            1.22,
+            0.07
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.7,
+            0.61,
+            0.48
+          ],
+          "size": [
+            0.06,
+            1.22,
+            0.07
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.7,
+            1.19,
+            0.48
+          ],
+          "size": [
+            0.23,
+            0.16,
+            0.065
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.19,
+            0.48
+          ],
+          "size": [
+            0.23,
+            0.16,
+            0.065
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.7,
+            1.19,
+            0.48
+          ],
+          "size": [
+            0.23,
+            0.16,
+            0.065
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.26,
+            -0.18
+          ],
+          "size": [
+            1.04,
+            0.52,
+            0.62
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.55,
+            -0.18
+          ],
+          "size": [
+            1.15,
+            0.07,
+            0.71
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.18,
+            0.8
+          ],
+          "size": [
+            0.56,
+            0.32,
+            0.43
+          ],
+          "material": "wood"
+        }
+      ],
+      "notes": "Marker labels and geological samples left abstract, not searchable evidence props.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_cave_bend_modules",
+      "label": "Red Mesa cave-bend framing arch set",
+      "category": "wilderness",
+      "maps": [
+        "WLD-03",
+        "WLD-05"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -1.32,
+            1.2,
+            0
+          ],
+          "size": [
+            0.56,
+            2.4,
+            1.62
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.32,
+            1.2,
+            0
+          ],
+          "size": [
+            0.56,
+            2.4,
+            1.62
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "tri_prism",
+          "p": [
+            0,
+            2.35,
+            0
+          ],
+          "size": [
+            2.51,
+            0.68,
+            1.68
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.25,
+            0.27,
+            0.71
+          ],
+          "size": [
+            0.48,
+            0.54,
+            0.52
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.25,
+            0.27,
+            0.71
+          ],
+          "size": [
+            0.48,
+            0.54,
+            0.52
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.07,
+            0.74
+          ],
+          "size": [
+            2,
+            0.14,
+            0.63
+          ],
+          "material": "stone"
+        }
+      ],
+      "notes": "Portal-shaped cave rock kit; NOT a verified cave mesh, tunnel void, collider or roof geometry.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_mine_hoist_winch",
+      "label": "Dead Man's Claim ore hoist and winding drum",
+      "category": "mining",
+      "maps": [
+        "WLD-05",
+        "WLD-01",
+        "WLD-18"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.13,
+            0
+          ],
+          "size": [
+            2.23,
+            0.25,
+            1.14
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.78,
+            0.75,
+            0
+          ],
+          "size": [
+            0.19,
+            1.25,
+            0.86
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.78,
+            0.75,
+            0
+          ],
+          "size": [
+            0.19,
+            1.25,
+            0.86
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.17,
+            0
+          ],
+          "radius": 0.47,
+          "height": 1.71,
+          "material": "metal",
+          "axis": "x",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.82,
+            1.17,
+            0
+          ],
+          "radius": 0.54,
+          "height": 0.14,
+          "material": "dark",
+          "axis": "x",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.82,
+            1.17,
+            0
+          ],
+          "radius": 0.54,
+          "height": 0.14,
+          "material": "dark",
+          "axis": "x",
+          "segments": 12
+        },
+        {
+          "type": "box",
+          "p": [
+            0.98,
+            0.39,
+            -0.17
+          ],
+          "size": [
+            0.44,
+            0.57,
+            0.61
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.98,
+            0.78,
+            -0.38
+          ],
+          "size": [
+            0.28,
+            0.14,
+            0.06
+          ],
+          "material": "accent"
+        }
+      ],
+      "notes": "Hoist is inert and spool does not move. Requires cable physics and lift-safe clearance.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_mine_sorting_bins",
+      "label": "Mineral assay/ore sorting bins",
+      "category": "mining",
+      "maps": [
+        "WLD-05",
+        "WLD-13"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.97,
+            0.47,
+            0
+          ],
+          "size": [
+            0.91,
+            0.89,
+            0.9
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.47,
+            0
+          ],
+          "size": [
+            0.91,
+            0.89,
+            0.9
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.97,
+            0.47,
+            0
+          ],
+          "size": [
+            0.91,
+            0.89,
+            0.9
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.97,
+            0.93,
+            0
+          ],
+          "size": [
+            0.96,
+            0.12,
+            0.97
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.93,
+            0
+          ],
+          "size": [
+            0.96,
+            0.12,
+            0.97
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.97,
+            0.93,
+            0
+          ],
+          "size": [
+            0.96,
+            0.12,
+            0.97
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "tri_prism",
+          "p": [
+            -0.97,
+            1.12,
+            -0.01
+          ],
+          "size": [
+            0.75,
+            0.34,
+            0.7
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "tri_prism",
+          "p": [
+            0,
+            1.12,
+            -0.01
+          ],
+          "size": [
+            0.75,
+            0.34,
+            0.7
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "tri_prism",
+          "p": [
+            0.97,
+            1.12,
+            -0.01
+          ],
+          "size": [
+            0.75,
+            0.34,
+            0.7
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.08,
+            0
+          ],
+          "size": [
+            3.04,
+            0.16,
+            1.09
+          ],
+          "material": "wood"
+        }
+      ],
+      "notes": "Static bins and ore mounds, no process chemistry or collectible minerals.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_net_drying_frame",
+      "label": "Fishermen's horizontal drying-net frame",
+      "category": "maritime",
+      "maps": [
+        "WLD-06",
+        "WLD-11",
+        "WLD-15"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -1.18,
+            1.11,
+            -0.58
+          ],
+          "size": [
+            0.12,
+            2.22,
+            0.13
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.18,
+            1.11,
+            0.58
+          ],
+          "size": [
+            0.12,
+            2.22,
+            0.13
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.18,
+            1.11,
+            -0.58
+          ],
+          "size": [
+            0.12,
+            2.22,
+            0.13
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.18,
+            1.11,
+            0.58
+          ],
+          "size": [
+            0.12,
+            2.22,
+            0.13
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.18,
+            0
+          ],
+          "size": [
+            2.47,
+            0.09,
+            1.28
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.88,
+            1.39,
+            0
+          ],
+          "size": [
+            0.035,
+            1.34,
+            0.02
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.44,
+            1.39,
+            0
+          ],
+          "size": [
+            0.035,
+            1.34,
+            0.02
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.39,
+            0
+          ],
+          "size": [
+            0.035,
+            1.34,
+            0.02
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.44,
+            1.39,
+            0
+          ],
+          "size": [
+            0.035,
+            1.34,
+            0.02
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.88,
+            1.39,
+            0
+          ],
+          "size": [
+            0.035,
+            1.34,
+            0.02
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.42,
+            0.3
+          ],
+          "size": [
+            2.23,
+            0.05,
+            0.035
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.42,
+            0.65
+          ],
+          "size": [
+            2.23,
+            0.05,
+            0.035
+          ],
+          "material": "canvas"
+        }
+      ],
+      "notes": "Blank stiff mesh approximation, no flexible net cloth or fish gear interaction.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_boathouse_slip_cradle",
+      "label": "Wharf haul-out slipway timber cradle",
+      "category": "maritime",
+      "maps": [
+        "WLD-06",
+        "WLD-15"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.81,
+            0.24,
+            0
+          ],
+          "size": [
+            0.21,
+            0.47,
+            3.28
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.81,
+            0.24,
+            0
+          ],
+          "size": [
+            0.21,
+            0.47,
+            3.28
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.18,
+            -1.27
+          ],
+          "size": [
+            1.93,
+            0.18,
+            0.13
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.18,
+            -0.42
+          ],
+          "size": [
+            1.93,
+            0.18,
+            0.13
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.18,
+            0.42
+          ],
+          "size": [
+            1.93,
+            0.18,
+            0.13
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.18,
+            1.27
+          ],
+          "size": [
+            1.93,
+            0.18,
+            0.13
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.64,
+            0.68,
+            0
+          ],
+          "size": [
+            0.08,
+            0.93,
+            2.24
+          ],
+          "material": "metal",
+          "yaw": -0.0768
+        },
+        {
+          "type": "box",
+          "p": [
+            0.64,
+            0.68,
+            0
+          ],
+          "size": [
+            0.08,
+            0.93,
+            2.24
+          ],
+          "material": "metal",
+          "yaw": 0.0768
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.07,
+            0
+          ],
+          "size": [
+            2.08,
+            0.13,
+            3.52
+          ],
+          "material": "stone"
+        }
+      ],
+      "notes": "Unpowered boat support cradle, no movable boats, winch or water contact model.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_fish_sorting_bench",
+      "label": "Wharf fish processing/sorting station",
+      "category": "maritime",
+      "maps": [
+        "WLD-06",
+        "WLD-13",
+        "WLD-15"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.86,
+            0
+          ],
+          "size": [
+            2.18,
+            0.16,
+            1
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.91,
+            0.43,
+            -0.39
+          ],
+          "size": [
+            0.09,
+            0.86,
+            0.09
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.91,
+            0.43,
+            0.39
+          ],
+          "size": [
+            0.09,
+            0.86,
+            0.09
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.91,
+            0.43,
+            -0.39
+          ],
+          "size": [
+            0.09,
+            0.86,
+            0.09
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.91,
+            0.43,
+            0.39
+          ],
+          "size": [
+            0.09,
+            0.86,
+            0.09
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.99,
+            -0.45
+          ],
+          "size": [
+            2.26,
+            0.17,
+            0.11
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.62,
+            1.03,
+            0.09
+          ],
+          "size": [
+            0.51,
+            0.06,
+            0.61
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.03,
+            0.09
+          ],
+          "size": [
+            0.51,
+            0.06,
+            0.61
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.62,
+            1.03,
+            0.09
+          ],
+          "size": [
+            0.51,
+            0.06,
+            0.61
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.21,
+            0
+          ],
+          "size": [
+            1.6,
+            0.11,
+            0.87
+          ],
+          "material": "wood"
+        }
+      ],
+      "notes": "Empty stainless-top static work surface, no catches, fluids or food handling.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_cemetery_gate",
+      "label": "Bartholomew cemetery iron gates and masonry posts",
+      "category": "cemetery",
+      "maps": [
+        "WLD-07",
+        "WLD-07-MORTUARY",
+        "CHURCH"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -1.46,
+            1.41,
+            0
+          ],
+          "size": [
+            0.4,
+            2.82,
+            0.45
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.46,
+            1.41,
+            0
+          ],
+          "size": [
+            0.4,
+            2.82,
+            0.45
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "tri_prism",
+          "p": [
+            -1.46,
+            2.97,
+            0
+          ],
+          "size": [
+            0.57,
+            0.33,
+            0.58
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "tri_prism",
+          "p": [
+            1.46,
+            2.97,
+            0
+          ],
+          "size": [
+            0.57,
+            0.33,
+            0.58
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.22,
+            0
+          ],
+          "size": [
+            2.53,
+            0.07,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.46,
+            0
+          ],
+          "size": [
+            2.53,
+            0.07,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.16,
+            1.28,
+            0
+          ],
+          "size": [
+            0.055,
+            1.99,
+            0.07
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.8699999999999999,
+            1.28,
+            0
+          ],
+          "size": [
+            0.055,
+            1.99,
+            0.07
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.58,
+            1.28,
+            0
+          ],
+          "size": [
+            0.055,
+            1.99,
+            0.07
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.29,
+            1.28,
+            0
+          ],
+          "size": [
+            0.055,
+            1.99,
+            0.07
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.28,
+            0
+          ],
+          "size": [
+            0.055,
+            1.99,
+            0.07
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.29,
+            1.28,
+            0
+          ],
+          "size": [
+            0.055,
+            1.99,
+            0.07
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.58,
+            1.28,
+            0
+          ],
+          "size": [
+            0.055,
+            1.99,
+            0.07
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.8699999999999999,
+            1.28,
+            0
+          ],
+          "size": [
+            0.055,
+            1.99,
+            0.07
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.16,
+            1.28,
+            0
+          ],
+          "size": [
+            0.055,
+            1.99,
+            0.07
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.07,
+            0
+          ],
+          "size": [
+            3.22,
+            0.15,
+            0.68
+          ],
+          "material": "stone"
+        }
+      ],
+      "notes": "Gate bars are fixed on preview; actual entry opening, lock/hinges and navmesh not supplied.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_grave_caretaker_tools",
+      "label": "Caretaker's shovel, rake and upkeep rack",
+      "category": "cemetery",
+      "maps": [
+        "WLD-07",
+        "WLD-07-MORTUARY",
+        "WLD-11"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.85,
+            1.12,
+            0.34
+          ],
+          "size": [
+            0.08,
+            2.23,
+            0.11
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.85,
+            1.12,
+            0.34
+          ],
+          "size": [
+            0.08,
+            2.23,
+            0.11
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.17,
+            0.35
+          ],
+          "size": [
+            1.88,
+            0.13,
+            0.18
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.5,
+            0.89,
+            0.03
+          ],
+          "size": [
+            0.065,
+            1.71,
+            0.06
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.89,
+            0.03
+          ],
+          "size": [
+            0.065,
+            1.71,
+            0.06
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.5,
+            0.89,
+            0.03
+          ],
+          "size": [
+            0.065,
+            1.71,
+            0.06
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.5,
+            0.18,
+            -0.07
+          ],
+          "size": [
+            0.24,
+            0.34,
+            0.09
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.19,
+            -0.07
+          ],
+          "size": [
+            0.54,
+            0.08,
+            0.16
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.19,
+            0.18,
+            -0.11
+          ],
+          "size": [
+            0.025,
+            0.34,
+            0.06
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.18,
+            -0.11
+          ],
+          "size": [
+            0.025,
+            0.34,
+            0.06
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.19,
+            0.18,
+            -0.11
+          ],
+          "size": [
+            0.025,
+            0.34,
+            0.06
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.08,
+            0.2
+          ],
+          "size": [
+            1.91,
+            0.16,
+            0.56
+          ],
+          "material": "stone"
+        }
+      ],
+      "notes": "Static non-operational tools, not interactable inventory/evidence.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_research_airlock",
+      "label": "Northwatch sealed prefab airlock shell",
+      "category": "research",
+      "maps": [
+        "WLD-08",
+        "WLD-18"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -1.18,
+            1.48,
+            0
+          ],
+          "size": [
+            0.24,
+            2.96,
+            1.12
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.18,
+            1.48,
+            0
+          ],
+          "size": [
+            0.24,
+            2.96,
+            1.12
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.96,
+            0
+          ],
+          "size": [
+            2.53,
+            0.22,
+            1.15
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.12,
+            0
+          ],
+          "size": [
+            2.65,
+            0.24,
+            1.18
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.49,
+            -0.5
+          ],
+          "size": [
+            1.36,
+            2.47,
+            0.17
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.91,
+            1.56,
+            -0.56
+          ],
+          "radius": 0.17,
+          "height": 0.11,
+          "material": "accent",
+          "axis": "z",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.67,
+            1.45,
+            0.53
+          ],
+          "size": [
+            0.08,
+            2.75,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.67,
+            1.45,
+            0.53
+          ],
+          "size": [
+            0.08,
+            2.75,
+            0.08
+          ],
+          "material": "metal"
+        }
+      ],
+      "notes": "Sealed mass, NOT a working multiplayer airlock or open two-door transition.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_weather_instrument_array",
+      "label": "Northwatch/Lookout weather mast instruments",
+      "category": "research",
+      "maps": [
+        "WLD-08",
+        "WLD-04",
+        "WLD-14",
+        "WLD-09"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.1,
+            0
+          ],
+          "size": [
+            0.69,
+            0.2,
+            0.69
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.52,
+            0
+          ],
+          "radius": 0.08,
+          "height": 2.83,
+          "material": "metal",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.34,
+            0
+          ],
+          "size": [
+            1.41,
+            0.08,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.6,
+            2.4,
+            0
+          ],
+          "radius": 0.2,
+          "height": 0.17,
+          "material": "accent",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.6,
+            2.42,
+            0
+          ],
+          "radius": 0.25,
+          "height": 0.1,
+          "material": "dark",
+          "axis": "z",
+          "segments": 12
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.4,
+            0
+          ],
+          "size": [
+            0.71,
+            0.46,
+            0.31
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.45,
+            0.91,
+            0
+          ],
+          "size": [
+            0.73,
+            0.11,
+            0.09
+          ],
+          "material": "metal"
+        }
+      ],
+      "notes": "Nonfunctional meteorological mass; no live sensors or storm gameplay.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_insulated_tunnel_collar",
+      "label": "Northwatch insulated passage collar",
+      "category": "research",
+      "maps": [
+        "WLD-08",
+        "WLD-18",
+        "WLD-14"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -1.14,
+            1.35,
+            0
+          ],
+          "size": [
+            0.31,
+            2.69,
+            0.71
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.14,
+            1.35,
+            0
+          ],
+          "size": [
+            0.31,
+            2.69,
+            0.71
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.66,
+            0
+          ],
+          "size": [
+            2.58,
+            0.34,
+            0.71
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.13,
+            0
+          ],
+          "size": [
+            2.58,
+            0.25,
+            0.71
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.95,
+            1.36,
+            -0.39
+          ],
+          "size": [
+            0.1,
+            2.4,
+            0.08
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.95,
+            1.36,
+            -0.39
+          ],
+          "size": [
+            0.1,
+            2.4,
+            0.08
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.5,
+            -0.4
+          ],
+          "size": [
+            2.07,
+            0.1,
+            0.07
+          ],
+          "material": "metal"
+        }
+      ],
+      "notes": "Open frame study; sealed pressure/temperature mechanics and final passage geometry are not claimed.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_dam_spillway_actuator",
+      "label": "Dam spillway hydraulic ram and gate model",
+      "category": "hydro",
+      "maps": [
+        "WLD-09",
+        "WLD-18"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.12,
+            0
+          ],
+          "size": [
+            2.74,
+            0.24,
+            0.94
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.26,
+            -0.18
+          ],
+          "size": [
+            2.54,
+            2.29,
+            0.23
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.88,
+            1.46,
+            0.32
+          ],
+          "radius": 0.23,
+          "height": 0.94,
+          "material": "metal",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.88,
+            1.46,
+            0.32
+          ],
+          "radius": 0.23,
+          "height": 0.94,
+          "material": "metal",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.88,
+            2.15,
+            0.3
+          ],
+          "size": [
+            0.15,
+            0.65,
+            0.14
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.88,
+            2.15,
+            0.3
+          ],
+          "size": [
+            0.15,
+            0.65,
+            0.14
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.34,
+            0
+          ],
+          "size": [
+            2.73,
+            0.12,
+            0.51
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.02,
+            0.72,
+            0.3
+          ],
+          "size": [
+            0.14,
+            1.34,
+            0.1
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.02,
+            0.72,
+            0.3
+          ],
+          "size": [
+            0.14,
+            1.34,
+            0.1
+          ],
+          "material": "stone"
+        }
+      ],
+      "notes": "Spillway gate assembly static; no water-control authority, hydraulic motion, or dam physics.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false
+    },
+    {
+      "id": "level_blockout_dam_valve_manifold",
+      "label": "Dam maintenance gallery valve array",
+      "category": "hydro",
+      "maps": [
+        "WLD-09",
+        "WLD-13",
+        "WLD-15",
+        "WLD-18"
+      ],
+      "parts": [
+        {
+          "type": "cylinder",
+          "p": [
+            -0.79,
+            0.76,
+            0
+          ],
+          "radius": 0.19,
+          "height": 1.56,
+          "material": "metal",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.76,
+            0
+          ],
+          "radius": 0.19,
+          "height": 1.56,
+          "material": "metal",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.79,
+            0.76,
+            0
+          ],
+          "radius": 0.19,
+          "height": 1.56,
+          "material": "metal",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.49,
+            0
+          ],
+          "size": [
+            2.42,
+            0.16,
+            0.24
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.79,
+            1.54,
+            0
+          ],
+          "radius": 0.33,
+          "height": 0.065,
+          "material": "accent",
+          "axis": "z",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.54,
+            0
+          ],
+          "radius": 0.33,
+          "height": 0.065,
+          "material": "accent",
+          "axis": "z",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.79,
+            1.54,
+            0
+          ],
+          "radius": 0.33,
+          "height": 0.065,
+          "material": "accent",
+          "axis": "z",
+          "segments": 12
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.12,
+            0.38
+          ],
+          "size": [
+            2.52,
+            0.23,
+            0.26
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.01,
+            0.77,
+            0.36
+          ],
+          "size": [
+            0.12,
+            1.49,
+            0.1
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.01,
+            0.77,
+            0.36
+          ],
+          "size": [
+            0.12,
+            1.49,
+            0.1
+          ],
+          "material": "metal"
+        }
+      ],
+      "notes": "Unpowered pipe/valve representation. No pressure, flood hazard or plumbing gameplay.",
       "authoring_stage": "primitive_blockout",
       "runtime_approved": false
     }
