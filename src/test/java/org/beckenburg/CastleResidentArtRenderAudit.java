@@ -83,6 +83,29 @@ public final class CastleResidentArtRenderAudit {
         }finally{g.dispose();}
         return crop;
     }
+    /** Diagnostic overlay of ONLY the actor's additional depth writes.
+     * Pink = an opaque resident fragment that was not present in the
+     * otherwise identical Castle/control frame. Cyan = ideal world floor
+     * contact projection. This is evidence, never a simulated picture. */
+    private static BufferedImage actorDepthMask(SceneRenderer scene,
+            double[] baselineDepth,int[] baselinePixels,int floorRow){
+        BufferedImage out=new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_RGB);
+        int[] currentPixels=scene.pixels();double[] currentDepth=scene.depths();
+        for(int y=0;y<HEIGHT;y++)for(int x=0;x<WIDTH;x++){
+            int i=y*WIDTH+x;
+            boolean actorPixel=Double.isFinite(currentDepth[i])
+                &&currentDepth[i]+.001<baselineDepth[i]
+                &&currentPixels[i]!=baselinePixels[i];
+            int c=currentPixels[i];
+            int grey=(((c>>>16)&255)+((c>>>8)&255)+(c&255))/3;
+            int dark=grey/4;
+            out.setRGB(x,y,actorPixel?0xff00ff:(dark<<16)|(dark<<8)|dark);
+        }
+        if(floorRow>=0&&floorRow<HEIGHT)
+            for(int x=WIDTH/2-85;x<=WIDTH/2+85;x++)
+                out.setRGB(x,floorRow,0x00ffff);
+        return out;
+    }
     private static void require(boolean test,String message){
         if(!test)throw new AssertionError(message);
     }
@@ -159,6 +182,12 @@ public final class CastleResidentArtRenderAudit {
                         .append(metric.blockedByScene()).append(',')
                         .append(metric.verdict()).append(',')
                         .append(cropName).append('\n');
+                    if(!metric.pass()){
+                        String maskName=slug+"-angle-"+(views+1)+"-actor-depth-mask.png";
+                        require(ImageIO.write(actorDepthMask(scene,emptyDepth,emptyPixels,metric.floorRow()),
+                            "png",output.resolve(maskName).toFile()),
+                            "actual-depth diagnostic mask not saved");
+                    }
                     if(metric.blockedByScene()){residentOccluded++;occludedAngles++;}
                     else {
                         clearViews++;
