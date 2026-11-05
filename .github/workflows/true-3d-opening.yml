@@ -1,0 +1,71 @@
+name: True 3D Map-to-Van Opening Evidence
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/main/java/org/beckenburg/LevelOpeningCinematic.java'
+      - 'src/main/java/org/beckenburg/LevelOpeningFlyover.java'
+      - 'src/main/java/org/beckenburg/InvestigationScenePrewarm.java'
+      - 'src/main/java/org/beckenburg/InvestigationGame.java'
+      - 'src/test/java/org/beckenburg/LevelOpeningCinematicVisualTest.java'
+      - '.github/workflows/true-3d-opening.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  actual-3d-opening:
+    runs-on: windows-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Compile real game and authored assets
+        shell: cmd
+        run: call build.cmd package
+      - name: Require genuine rendered aerial, cargo door, interior and handoff screenshots
+        shell: cmd
+        run: |
+          if not exist build\test mkdir build\test
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\LevelOpeningFlyoverTest.java src\test\java\org\beckenburg\LevelOpeningCinematicVisualTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.LevelOpeningFlyoverTest
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.LevelOpeningCinematicVisualTest
+          if errorlevel 1 exit /b 1
+          if not exist build\e2e\true-3d-loading\real-world-3d-loading-screen.png exit /b 1
+          if not exist build\e2e\true-3d-loading\real-3d-crossing-cargo-door.png exit /b 1
+          if not exist build\e2e\true-3d-loading\real-3d-inside-cargo-aisle.png exit /b 1
+          if not exist build\e2e\true-3d-loading\verification.txt exit /b 1
+      - name: Preserve original in-engine PNGs and prewarm metrics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: true-3d-loading-${{ github.run_id }}
+          path: build/e2e/true-3d-loading/**
+          if-no-files-found: error
+      - name: Publish original world-space screenshots
+        if: success()
+        shell: pwsh
+        run: |
+          $ErrorActionPreference='Stop'
+          $dest="development/levels/previews/true-3d-loading/run-${{ github.run_id }}"
+          New-Item -ItemType Directory -Path $dest -Force | Out-Null
+          Copy-Item "build/e2e/true-3d-loading/*" $dest -Force
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- $dest
+          git commit -m "Publish actual 3D approach screenshots and preload verification"
+          if ($LASTEXITCODE -ne 0) {throw "Could not commit screenshot evidence"}
+          for ($attempt=1; $attempt -le 4; $attempt++) {
+            git fetch origin main
+            if($LASTEXITCODE -ne 0){throw "Cannot refresh main"}
+            git rebase origin/main
+            if($LASTEXITCODE -ne 0){throw "Evidence rebase conflict"}
+            git push origin HEAD:main
+            if($LASTEXITCODE -eq 0){Write-Host "Verified remotely: $dest";exit 0}
+            Start-Sleep -Seconds $attempt
+          }
+          throw "Cannot publish screenshots without force"
