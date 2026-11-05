@@ -184,7 +184,7 @@ def main() -> None:
         for page in kit["pages"]:
             filename = page["file"]
             if filename in rendered or not re.fullmatch(
-                    r"level_blockout_kit_[a-z0-9_]+_p[0-9]{2}\\.glb", filename):
+                    r"level_blockout_kit_[a-z0-9_]+_p[0-9]{2}\.glb", filename):
                 raise ValueError("Duplicate or invalid kit page name")
             rendered.add(filename)
             doc, data = read_glb(ROOT / "site-kits" / filename)
