@@ -762,6 +762,14 @@ public final class InvestigationGame {
                     scene.draw(map,session,0,
                         assistants.stream().map(CampaignAlly::sprite).toList());
                     var first=scene.frameDiagnostics();
+                    // Stage 3 final handoff: the case must never claim the
+                    // FULL-SIZE first OpenGL framebuffer was ready just because
+                    // its scene description was queued. Wait only on this
+                    // loading SwingWorker, never on EDT or the GL owner.
+                    boolean gpuFullSizeReady=first!=null&&first.gpu()
+                        &&scene.awaitSubmittedGpuPrewarm(
+                            java.util.concurrent.TimeUnit.MILLISECONDS.toNanos(800),
+                            this::isCancelled);
                     if(first!=null){
                         var shell=scene.shellResidentStats();
                         var world=scene.worldResidentStats();
@@ -771,6 +779,7 @@ public final class InvestigationGame {
                             +" cpu_scene_build_ms="+first.sceneBuildNs()/1_000_000.0
                             +" submitted_triangles="+first.submittedTriangles()
                             +" gpu_submission="+first.gpu()
+                            +" gpu_full_size_ack="+gpuFullSizeReady
                             +" gpu_readback_fresh="+first.gpuReadbackFresh()
                             +" shell_vbo_bytes="+shell.bytes()
                             +" resident_world_bytes="+world.bytes()
