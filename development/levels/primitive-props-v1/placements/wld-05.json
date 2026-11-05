@@ -1,0 +1,277 @@
+{
+  "schema": "beckenburg.primitive-prop-placement/1",
+  "site": "WLD-05",
+  "title": "Dead Man's Claim",
+  "layout_source": "layouts/wld-05/layout.json",
+  "layout_source_sha256": "5f6d5720fa2bb8bba7a92590467578452e26c13378b53c88201acdab55b745d4",
+  "status": "review_only",
+  "world_frame": "X east/right; Y elevation up; Z source plan depth",
+  "placements": [
+    {
+      "id": "wld-05-01",
+      "zone": "assay",
+      "model": "level_blockout_assay_balance",
+      "position": [
+        41.68,
+        0.0,
+        47.92
+      ],
+      "yaw_rad": 3.14159,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        41.03,
+        47.61,
+        42.33,
+        48.23
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "wld-05-02",
+      "zone": "assay",
+      "model": "level_blockout_workbench",
+      "position": [
+        52.32,
+        -0.03,
+        60.08
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.88,
+        0.88
+      ],
+      "world_bounds_xz": [
+        51.445,
+        59.69,
+        53.195,
+        60.47
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "wld-05-03",
+      "zone": "stores",
+      "model": "level_blockout_storage_shelf",
+      "position": [
+        3.44,
+        0.0,
+        31.92
+      ],
+      "yaw_rad": 3.14159,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        2.615,
+        31.545,
+        4.265,
+        32.295
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "wld-05-04",
+      "zone": "stores",
+      "model": "level_blockout_utility_panel",
+      "position": [
+        12.56,
+        -0.36,
+        44.08
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.88,
+        0.88
+      ],
+      "world_bounds_xz": [
+        12.18,
+        43.87,
+        12.94,
+        44.22
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "wld-05-05",
+      "zone": "haul",
+      "model": "level_blockout_cave_support",
+      "position": [
+        21.92,
+        -6.0,
+        22.64
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        20.57,
+        22.455,
+        23.27,
+        23.01
+      ],
+      "floor_elevation": -6,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "wld-05-06",
+      "zone": "ore-west",
+      "model": "level_blockout_ore_cart",
+      "position": [
+        4.16,
+        -6.05,
+        22.64
+      ],
+      "yaw_rad": 3.14159,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        3.53,
+        21.77,
+        4.79,
+        23.51
+      ],
+      "floor_elevation": -6,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "wld-05-07",
+      "zone": "ore-east",
+      "model": "level_blockout_ore_cart",
+      "position": [
+        51.84,
+        -6.05,
+        39.36
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.88,
+        0.88
+      ],
+      "world_bounds_xz": [
+        51.21,
+        38.49,
+        52.47,
+        40.23
+      ],
+      "floor_elevation": -6,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "wld-05-08",
+      "zone": "lower",
+      "model": "level_blockout_cave_support",
+      "position": [
+        17.84,
+        -10.0,
+        39.36
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.88,
+        0.88
+      ],
+      "world_bounds_xz": [
+        16.49,
+        39.175,
+        19.19,
+        39.73
+      ],
+      "floor_elevation": -10,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "wld-05-09",
+      "zone": "vent",
+      "model": "level_blockout_mine_ventilation",
+      "position": [
+        4.16,
+        -6.0,
+        44.4
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        3.385,
+        43.69,
+        4.935,
+        44.95
+      ],
+      "floor_elevation": -6,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "wld-05-10",
+      "zone": "shack",
+      "model": "level_blockout_workbench",
+      "position": [
+        4.16,
+        -0.03,
+        47.92
+      ],
+      "yaw_rad": 3.14159,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        3.285,
+        47.53,
+        5.035,
+        48.31
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "wld-05-11",
+      "zone": "adit",
+      "model": "level_blockout_cave_support",
+      "position": [
+        23.0,
+        0.0,
+        59.0
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.15,
+        0.85
+      ],
+      "world_bounds_xz": [
+        21.65,
+        58.815,
+        24.35,
+        59.37
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    }
+  ],
+  "runtime_scene_changed": false,
+  "collision_verified": false
+}

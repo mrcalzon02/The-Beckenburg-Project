@@ -1,0 +1,181 @@
+{
+  "schema": "beckenburg.primitive-prop-placement/1",
+  "site": "WLD-04",
+  "title": "Widow's Peak Fire Lookout",
+  "layout_source": "layouts/wld-04/layout.json",
+  "layout_source_sha256": "eed3cddfe71a69608ce3c8e1d2cf99bf6be6be75718b4820fa952b8f80d0da7e",
+  "status": "review_only",
+  "world_frame": "X east/right; Y elevation up; Z source plan depth",
+  "placements": [
+    {
+      "id": "wld-04-01",
+      "zone": "foot",
+      "model": "level_blockout_lookout_platform",
+      "position": [
+        26.16,
+        6.0,
+        4.16
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.18,
+        0.18
+      ],
+      "world_bounds_xz": [
+        24.66,
+        2.66,
+        27.66,
+        5.66
+      ],
+      "floor_elevation": 6,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "wld-04-02",
+      "zone": "cab",
+      "model": "level_blockout_lookout_spotter",
+      "position": [
+        25.08,
+        14.985,
+        2.78
+      ],
+      "yaw_rad": 3.14159,
+      "anchor": [
+        0.18,
+        0.13
+      ],
+      "world_bounds_xz": [
+        24.505,
+        2.405,
+        25.655,
+        3.155
+      ],
+      "floor_elevation": 15,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "wld-04-03",
+      "zone": "hut",
+      "model": "level_blockout_workbench",
+      "position": [
+        5.92,
+        5.97,
+        15.44
+      ],
+      "yaw_rad": 3.14159,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        5.045,
+        15.05,
+        6.795,
+        15.83
+      ],
+      "floor_elevation": 6,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "wld-04-04",
+      "zone": "hut",
+      "model": "level_blockout_map_pinboard",
+      "position": [
+        12.0,
+        5.915,
+        24.56
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.5,
+        0.88
+      ],
+      "world_bounds_xz": [
+        10.91,
+        24.46,
+        13.09,
+        24.795
+      ],
+      "floor_elevation": 6,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "wld-04-05",
+      "zone": "store",
+      "model": "level_blockout_storage_shelf",
+      "position": [
+        48.8,
+        6.0,
+        31.2
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.88,
+        0.12
+      ],
+      "world_bounds_xz": [
+        47.975,
+        30.825,
+        49.625,
+        31.575
+      ],
+      "floor_elevation": 6,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "wld-04-06",
+      "zone": "ruin",
+      "model": "level_blockout_storage_shelf",
+      "position": [
+        52.32,
+        6.0,
+        28.08
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.88,
+        0.88
+      ],
+      "world_bounds_xz": [
+        51.495,
+        27.705,
+        53.145,
+        28.455
+      ],
+      "floor_elevation": 6,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "wld-04-07",
+      "zone": "clearing",
+      "model": "level_blockout_radio_mast",
+      "position": [
+        22.4,
+        6.0,
+        15.92
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        21.3,
+        14.87,
+        23.5,
+        16.97
+      ],
+      "floor_elevation": 6,
+      "clearance_checked": true,
+      "runtime_approved": false
+    }
+  ],
+  "runtime_scene_changed": false,
+  "collision_verified": false
+}
