@@ -84,11 +84,11 @@ public final class CastleResidentArtRenderAudit {
         scene.setPsxPreset(PsxPipeline.Preset.OFF);
         scene.photographicSoftwareRaster();
         scene.lamp=true;scene.eyeHeight=1.62;
-        int images=0,missing=0,grounded=0;
+        int images=0,missing=0,grounded=0,failedAngles=0;
         StringBuilder manifest=new StringBuilder(
             "resident,angle,preset,camera_x,camera_z,render_width,render_height,file\n");
         StringBuilder contacts=new StringBuilder(
-            "resident,source_sha,camera_x,camera_z,opaque_body_pixels,near_sole_pixels,lowest_opaque_row,projected_floor_row,gap_px,pass,boot_crop\n");
+            "resident,source_sha,angle,camera_x,camera_z,opaque_body_pixels,near_sole_pixels,lowest_opaque_row,projected_floor_row,gap_px,pass,boot_crop\n");
         BufferedImage sheet=new BufferedImage(660*5,546,BufferedImage.TYPE_INT_RGB);
         Graphics2D contactSheet=sheet.createGraphics();
         try{
@@ -99,7 +99,7 @@ public final class CastleResidentArtRenderAudit {
             int residentIndex=0;
             for(CastleRelations.Resident resident:CastleRelations.Resident.values()){
                 var npcRoom=CastleRooms.at(resident.x,0,resident.z);
-                int views=0;boolean proven=false;
+                int views=0,residentPassed=0,residentFailed=0;
                 for(double[] delta:CAMERAS){
                     double cameraX=resident.x+delta[0],cameraZ=resident.z+delta[1];
                     var currentRoom=CastleRooms.at(cameraX,0,cameraZ);
@@ -123,29 +123,36 @@ public final class CastleResidentArtRenderAudit {
                     }
                     FootEvidence metric=footContact(scene,emptyDepth,emptyPixels,resident);
                     String slug=slug(resident.name);
-                    if(!proven){
-                        BufferedImage crop=bootCrop(scene.image(),metric.floorRow());
-                        String cropName=slug+"-actual-boots-3x.png";
-                        require(ImageIO.write(crop,"png",output.resolve(cropName).toFile()),
-                            "boot crop not saved");
+                    String cropName=slug+"-angle-"+(views+1)+"-boots-3x.png";
+                    BufferedImage crop=bootCrop(scene.image(),metric.floorRow());
+                    require(ImageIO.write(crop,"png",output.resolve(cropName).toFile()),
+                        "boot crop not saved");
+                    // The old test overwrote failing screenshots with a later
+                    // passing view of the same resident. Always keep EVERY
+                    // evaluated angle; choose the first failure for the sheet.
+                    if(views==0||(!metric.pass()&&residentFailed==0)){
                         contactSheet.drawImage(crop,residentIndex*660,36,null);
-                        contactSheet.drawString(resident.name,residentIndex*660+16,25);
-                        String sha=System.getenv().getOrDefault("GITHUB_SHA","local");
-                        contacts.append(slug).append(',').append(sha)
-                            .append(',').append(cameraX).append(',').append(cameraZ)
-                            .append(',').append(metric.opaque()).append(',')
-                            .append(metric.shoePixels()).append(',')
-                            .append(metric.bottomRow()).append(',')
-                            .append(metric.floorRow()).append(',')
-                            .append(metric.gap()).append(',')
-                            .append(metric.pass()).append(',')
-                            .append(cropName).append('\n');
-                        proven=metric.pass();
-                        if(proven)grounded++;
-                        System.out.println("CASTLE_BOOT_CONTACT "+resident.name+
-                            " body="+metric.opaque()+" near_sole="+metric.shoePixels()+
-                            " gap="+metric.gap()+" pass="+metric.pass());
+                        contactSheet.drawString(resident.name+
+                            (metric.pass()?" | "+metric.gap()+"px":" | FAILED "+metric.gap()+"px"),
+                            residentIndex*660+16,25);
                     }
+                    String sha=System.getenv().getOrDefault("GITHUB_SHA","local");
+                    contacts.append(slug).append(',').append(sha)
+                        .append(',').append(views+1)
+                        .append(',').append(cameraX).append(',').append(cameraZ)
+                        .append(',').append(metric.opaque()).append(',')
+                        .append(metric.shoePixels()).append(',')
+                        .append(metric.bottomRow()).append(',')
+                        .append(metric.floorRow()).append(',')
+                        .append(metric.gap()).append(',')
+                        .append(metric.pass()).append(',')
+                        .append(cropName).append('\n');
+                    if(metric.pass())residentPassed++;
+                    else{residentFailed++;failedAngles++;}
+                    System.out.println("CASTLE_BOOT_CONTACT "+resident.name+
+                        " angle="+(views+1)+" body="+metric.opaque()+
+                        " near_sole="+metric.shoePixels()+" gap="+metric.gap()+
+                        " pass="+metric.pass()+" crop="+cropName);
                     for(PsxPipeline.Preset preset:new PsxPipeline.Preset[]{
                             PsxPipeline.Preset.OFF,PsxPipeline.Preset.CLASSIC}){
                         scene.setPsxPreset(preset);
@@ -165,6 +172,9 @@ public final class CastleResidentArtRenderAudit {
                     if(views==4)break;
                 }
                 if(views==0){missing++;System.out.println("CASTLE_ART_NO_VISIBLE_CAMERA "+resident.name);}
+                if(views>=2&&residentPassed==views&&residentFailed==0)grounded++;
+                else System.out.println("CASTLE_ART_NOT_PROVEN "+resident.name+
+                    " views="+views+" passed="+residentPassed+" failed="+residentFailed);
                 residentIndex++;
             }
         }finally{contactSheet.dispose();}
@@ -174,8 +184,10 @@ public final class CastleResidentArtRenderAudit {
         Files.writeString(output.resolve("boot-contact-measurements.csv"),contacts.toString(),StandardCharsets.UTF_8);
         System.out.println("CASTLE_RESIDENT_REAL_SCENE_ART_DIAGNOSTIC captures="+images+
             " missing_residents="+missing+" grounded="+grounded+
-            "/5; saved source-rendered frame and boot crops");
+            "/5 failed_angles="+failedAngles+"; saved ALL source-rendered frames and per-angle boot crops");
         require(missing==0,"Missing Castle resident camera");
-        require(grounded==5,"Actual Castle boot contact did not pass for every resident; inspect original frames and crops");
+        require(grounded==5&&failedAngles==0,
+            "NPC floor contact unresolved: "+grounded+"/5 residents proved all observed angles, "
+                +failedAngles+" failed angles; inspect unaltered full-game frames and individually named boot crops");
     }
 }
