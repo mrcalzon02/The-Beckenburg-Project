@@ -106,6 +106,19 @@ public final class CastleResidentArtRenderAudit {
                 out.setRGB(x,floorRow,0x00ffff);
         return out;
     }
+    /** A character-free depth buffer must settle before it can serve as the
+     * reference for actor-only pixels. Highlight transient world geometry
+     * as an audit failure, not as a phantom giant character card. */
+    private static int depthDrift(double[] previous,double[] next){
+        int changed=0;
+        for(int i=0;i<previous.length;i++){
+            double a=previous[i],b=next[i];
+            if((Double.isInfinite(a)&&Double.isInfinite(b))||
+                    (Double.isFinite(a)&&Double.isFinite(b)&&Math.abs(a-b)<.005))continue;
+            changed++;
+        }
+        return changed;
+    }
     private static void require(boolean test,String message){
         if(!test)throw new AssertionError(message);
     }
@@ -119,11 +132,11 @@ public final class CastleResidentArtRenderAudit {
         scene.setPsxPreset(PsxPipeline.Preset.OFF);
         scene.photographicSoftwareRaster();
         scene.lamp=true;scene.eyeHeight=1.62;
-        int images=0,missing=0,grounded=0,failedAngles=0,occludedAngles=0;
+        int images=0,missing=0,grounded=0,failedAngles=0,occludedAngles=0,unstableBaselines=0;
         StringBuilder manifest=new StringBuilder(
             "resident,angle,preset,camera_x,camera_z,render_width,render_height,file\n");
         StringBuilder contacts=new StringBuilder(
-            "resident,source_sha,angle,camera_x,camera_z,opaque_body_pixels,near_sole_pixels,lowest_opaque_row,projected_floor_row,gap_px,receiver_blocked,verdict,boot_crop\n");
+            "resident,source_sha,angle,camera_x,camera_z,baseline_depth_changes,opaque_body_pixels,near_sole_pixels,lowest_opaque_row,projected_floor_row,gap_px,receiver_blocked,verdict,boot_crop\n");
         BufferedImage sheet=new BufferedImage(660*5,546,BufferedImage.TYPE_INT_RGB);
         Graphics2D contactSheet=sheet.createGraphics();
         try{
@@ -144,8 +157,19 @@ public final class CastleResidentArtRenderAudit {
                     scene.yaw=Math.atan2(resident.x-cameraX,resident.z-cameraZ);
                     scene.pitch=PITCH;
                     scene.castleCharactersVisible=false;
+                    // First frame may populate Castle geometry/light caches.
+                    // A control captured before those caches settle cannot
+                    // isolate resident pixels on a later frame.
                     scene.drawCastle(map,.5,true);
-                    // Copy the actual floor depth BEFORE drawing any character.
+                    double[] coldDepth=scene.depths().clone();
+                    scene.drawCastle(map,.5,true);
+                    int baselineDrift=depthDrift(coldDepth,scene.depths());
+                    if(baselineDrift>0){
+                        unstableBaselines++;
+                        System.out.println("CASTLE_CONTROL_DEPTH_DRIFT "+resident.name+
+                            " angle="+(views+1)+" changed_pixels="+baselineDrift);
+                    }
+                    // Reference is the stable second real-world frame.
                     double[] emptyDepth=scene.depths().clone();
                     int[] emptyPixels=scene.pixels().clone();
                     scene.castleCharactersVisible=true;
@@ -174,6 +198,7 @@ public final class CastleResidentArtRenderAudit {
                     contacts.append(slug).append(',').append(sha)
                         .append(',').append(views+1)
                         .append(',').append(cameraX).append(',').append(cameraZ)
+                        .append(',').append(baselineDrift)
                         .append(',').append(metric.opaque()).append(',')
                         .append(metric.shoePixels()).append(',')
                         .append(metric.bottomRow()).append(',')
@@ -233,11 +258,12 @@ public final class CastleResidentArtRenderAudit {
         System.out.println("CASTLE_RESIDENT_REAL_SCENE_ART_DIAGNOSTIC captures="+images+
             " missing_residents="+missing+" grounded="+grounded+
             "/5 failed_angles="+failedAngles+" occluded_angles="+occludedAngles+
+            " unstable_control_views="+unstableBaselines+
             "; saved ALL source-rendered frames and per-angle boot crops");
         require(missing==0,"Missing Castle resident camera");
-        require(grounded==5&&failedAngles==0,
-            "NPC floor contact unresolved: "+grounded+"/5 residents have at least two unobstructed passing views, "
-                +failedAngles+" genuine failing angles and "+occludedAngles+
-                " blocked views; inspect all original game frames and crops");
+        require(grounded==5&&failedAngles==0&&unstableBaselines==0,
+            "NPC floor contact unresolved: "+grounded+"/5 residents with clear views, "
+                +failedAngles+" measured failures, "+occludedAngles+" occluded and "
+                +unstableBaselines+" unstable Castle baseline draws; inspect depth masks before interpreting gaps");
     }
 }
