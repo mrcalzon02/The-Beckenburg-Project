@@ -144,6 +144,12 @@ public final class DevAssetReviewCatalog {
 
     private static final java.util.Map<String,GlbProps.Model> SOURCE_REVIEW_CACHE=
         new java.util.concurrent.ConcurrentHashMap<>();
+    /** Reload original source bytes after a GLB generator produces a revision.
+     * Only the isolated DEV room has this cache, not the runtime model registry.
+     */
+    static void invalidateSourceReviewCache(){
+        synchronized(SOURCE_REVIEW_CACHE){SOURCE_REVIEW_CACHE.clear();}
+    }
     /** Development-only source loading. Does NOT alter GlbProps approvals. */
     public static GlbProps.Model sourceModel(String id)throws java.io.IOException{
         if(id==null||!id.matches("[A-Za-z0-9_-]{1,90}"))
