@@ -30,7 +30,8 @@
         "level_blockout_archive_cabinet",
         "level_blockout_map_pinboard",
         "level_blockout_lecture_lectern",
-        "level_blockout_assay_balance"
+        "level_blockout_assay_balance",
+        "level_blockout_pew"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -169,7 +170,10 @@
         "level_blockout_ward_bed",
         "level_blockout_cell_door",
         "level_blockout_privacy_screen",
-        "level_blockout_guard_keyboard"
+        "level_blockout_guard_keyboard",
+        "level_blockout_pew",
+        "level_blockout_console",
+        "level_blockout_archive_cabinet"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -1129,7 +1133,8 @@
         "WLD-08",
         "WLD-09",
         "WLD-15",
-        "WLD-18"
+        "WLD-18",
+        "PRISON"
       ],
       "parts": [
         {
@@ -1512,7 +1517,9 @@
         "CHURCH",
         "WLD-10",
         "WLD-07",
-        "CASTLE"
+        "CASTLE",
+        "ACADEMY",
+        "PRISON"
       ],
       "parts": [
         {
@@ -1727,7 +1734,8 @@
         "COLLEGE",
         "CASTLE",
         "WLD-10",
-        "WLD-07-MORTUARY"
+        "WLD-07-MORTUARY",
+        "PRISON"
       ],
       "parts": [
         {
