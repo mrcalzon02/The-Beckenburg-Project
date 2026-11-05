@@ -5,8 +5,13 @@ on:
     paths: ['development/**', 'tools/build_development_gallery.py', 'beckenburg-development-gallery.html', '.github/workflows/development-gallery.yml']
   pull_request:
     paths: ['development/**', 'tools/build_development_gallery.py', 'beckenburg-development-gallery.html', '.github/workflows/development-gallery.yml']
+# The gallery can gain images from multiple independently running capture
+# workflows. Serialize index rebuilds without cancelling older work.
+concurrency:
+  group: beckenburg-development-gallery-main
+  cancel-in-progress: false
 permissions:
-  contents: read
+  contents: write
 jobs:
   gallery:
     runs-on: ubuntu-latest
@@ -15,5 +20,35 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Verify every committed capture is indexed with original dimensions and hash
+      - name: Verify a proposed PR commits all captures and hashes
+        if: github.event_name == 'pull_request'
         run: python tools/build_development_gallery.py --check
+      - name: Rebuild and push complete gallery index for new main captures
+        if: github.event_name == 'push'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3 4; do
+            # Always rebuild against latest remote main. A prior screenshot run
+            # may have committed more evidence while this job was queued.
+            git fetch origin main
+            git checkout -B gallery-index-write origin/main
+            python tools/build_development_gallery.py --tracked-only
+            python tools/build_development_gallery.py --tracked-only --check
+            git add development/gallery/index.json beckenburg-development-gallery.html
+            if git diff --cached --quiet; then
+              echo 'PASS: published gallery already matches all tracked source captures'
+              exit 0
+            fi
+            git commit -m 'Index current Beckenburg development captures and SHA-256'
+            if git push origin HEAD:main; then
+              echo "PASS: rebuilt and published index from $(git rev-parse HEAD)"
+              exit 0
+            fi
+            echo "Concurrent main update interrupted gallery push; recomputing against latest source (attempt $attempt)"
+            sleep $((attempt*3))
+          done
+          echo 'FAIL: could not push a current index after four non-force attempts' >&2
+          exit 1
