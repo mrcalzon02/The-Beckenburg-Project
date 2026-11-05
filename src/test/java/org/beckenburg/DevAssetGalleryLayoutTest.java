@@ -45,8 +45,17 @@ public final class DevAssetGalleryLayoutTest {
                 throw new AssertionError("Eye is in the wrong floor");
         }
         for(int bay=0;bay<4;bay++){
-            if(DevAssetGalleryLayout.bayAtZ(DevAssetGalleryLayout.bayEntranceZ(bay))!=bay)
+            double entrance=DevAssetGalleryLayout.bayEntranceZ(bay);
+            if(DevAssetGalleryLayout.bayAtZ(entrance)!=bay)
                 throw new AssertionError("Bay entry camera maps incorrectly");
+            double frontRow=DevAssetGalleryLayout.standZ(bay,1);
+            if(frontRow-entrance<4.5)
+                throw new AssertionError("Camera intersects current bay's first model row: "+bay);
+            if(bay>0){
+                double previousRear=DevAssetGalleryLayout.standZ(bay-1,4);
+                if(entrance-previousRear<3.5)
+                    throw new AssertionError("Camera intersects previous bay machinery: "+bay);
+            }
         }
         if(DevAssetGalleryLayout.floorAtEye(-5)!=0||
             DevAssetGalleryLayout.floorAtEye(100)!=2||
