@@ -16,7 +16,9 @@ import java.util.function.BooleanSupplier;
  */
 final class InvestigationScenePrewarm {
     private InvestigationScenePrewarm(){}
-    record Result(int passes,long elapsedMs,int staticShellChunks,long staticFaces){}
+    record Result(int passes,long elapsedMs,int staticShellChunks,long staticFaces,
+            long staticPreparationMs,int stagedSceneryInstances,String sceneRevision,
+            boolean shellReused,boolean sceneryReused){} 
     static Result prepare(HouseMap map,SceneRenderer scene,LevelOpeningFlyover flight,
             BooleanSupplier cancelled){
         Objects.requireNonNull(map);Objects.requireNonNull(scene);
@@ -26,7 +28,13 @@ final class InvestigationScenePrewarm {
         int width=scene.width(),height=scene.height();
         long start=System.nanoTime();
         int passes=0;int chunks=0;long faces=0;
+        SceneRenderer.StaticPreparation staged=null;
         try{
+            // Stage 2: build the renderer's existing revision-owned immutable
+            // shell/material groups and scenery index BEFORE its first draw.
+            // This never mutates a door, mission clock, ghost or authority.
+            if(!cancelled.getAsBoolean()&&!Thread.currentThread().isInterrupted())
+                staged=scene.prepareStaticScene(map);
             // Authoring/visibility warmup, not a fake loading percentage.
             // The first two passes cover the site and the van approach.
             // The third (budget-permitting) pass warms the first authored
@@ -65,7 +73,20 @@ final class InvestigationScenePrewarm {
             saved.apply(scene);
             scene.setRenderSize(width,height);
         }
-        return new Result(passes,TimeUnit.NANOSECONDS.toMillis(System.nanoTime()-start),
-            chunks,faces);
+        long elapsed=TimeUnit.NANOSECONDS.toMillis(System.nanoTime()-start);
+        if(staged!=null)BeckenburgDiagnostics.record("LOADING STATIC PREBAKE site="+map.site()
+            +" revision="+staged.revision()+" elapsed_ms="
+            +TimeUnit.NANOSECONDS.toMillis(staged.elapsedNs())
+            +" shell_chunks="+staged.shellChunks()
+            +" shell_faces="+staged.shellFaces()
+            +" scenery_instances="+staged.sceneryInstances()
+            +" shell_reused="+staged.shellReused()
+            +" scenery_reused="+staged.sceneryReused()
+            +" prewarm_passes="+passes+" total_ms="+elapsed);
+        return new Result(passes,elapsed,chunks,faces,
+            staged==null?0:TimeUnit.NANOSECONDS.toMillis(staged.elapsedNs()),
+            staged==null?0:staged.sceneryInstances(),
+            staged==null?"not-prepared":staged.revision(),
+            staged!=null&&staged.shellReused(),staged!=null&&staged.sceneryReused());
     }
 }
