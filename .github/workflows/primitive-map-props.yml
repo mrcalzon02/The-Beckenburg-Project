@@ -7,6 +7,7 @@ on:
       - 'development/levels/primitive-props-v1/build.py'
       - 'development/levels/primitive-props-v1/audit.py'
       - 'development/levels/primitive-props-v1/geometry_regression.py'
+      - 'development/levels/primitive-props-v1/source_readiness.py'
       - 'development/levels/primitive-props-v1/kits.py'
       - 'development/levels/primitive-props-v1/castle-crypt-proposal.json'
       - 'development/levels/primitive-props-v1/crypt.py'
@@ -92,11 +93,15 @@ jobs:
         run: python development/levels/primitive-props-v1/geometry_regression.py
       - name: Independently decode embedded GLB PNGs and audit map assignments
         run: python development/levels/primitive-props-v1/audit.py
+      - name: Record every source model's geometry readiness and downstream review blockers
+        run: |
+          python development/levels/primitive-props-v1/source_readiness.py
+          python development/levels/primitive-props-v1/source_readiness.py --check
       - name: Preserve generated model assets on main (no force)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add development/levels/primitive-props-v1/models development/levels/primitive-props-v1/verification.json development/levels/primitive-props-v1/placements development/levels/primitive-props-v1/previews development/levels/primitive-props-v1/fit-verification.json development/levels/primitive-props-v1/site-kits development/levels/primitive-props-v1/crypt-review development/levels/primitive-props-v1/relic-review
+          git add development/levels/primitive-props-v1/readiness-report.json development/levels/primitive-props-v1/models development/levels/primitive-props-v1/verification.json development/levels/primitive-props-v1/placements development/levels/primitive-props-v1/previews development/levels/primitive-props-v1/fit-verification.json development/levels/primitive-props-v1/site-kits development/levels/primitive-props-v1/crypt-review development/levels/primitive-props-v1/relic-review
           if git diff --cached --quiet; then
             echo "All generated grayboxes already match main."
             exit 0
