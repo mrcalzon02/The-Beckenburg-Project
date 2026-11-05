@@ -742,7 +742,10 @@ public final class InvestigationGame {
                             +" scenery_instances="+prewarmed.stagedSceneryInstances()
                             +" scene_revision="+prewarmed.sceneRevision()
                             +" reused_shell="+prewarmed.shellReused()
-                            +" reused_scenery="+prewarmed.sceneryReused());
+                            +" reused_scenery="+prewarmed.sceneryReused()
+                            +" gpu_submitted_passes="+prewarmed.gpuSubmittedPasses()
+                            +" gpu_confirmed_passes="+prewarmed.gpuConfirmedPasses()
+                            +" gpu_prebake_timeout="+prewarmed.gpuPrewarmTimedOut());
                     }catch(RuntimeException warmingFailure){
                         // Optimization is never allowed to break mission launch.
                         BeckenburgDiagnostics.fail("Optional case prewarm",warmingFailure);
