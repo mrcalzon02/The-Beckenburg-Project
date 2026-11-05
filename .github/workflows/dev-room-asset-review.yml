@@ -35,6 +35,8 @@ on:
       - 'src/main/java/org/beckenburg/editor/AdaptiveTerrainTopology.java'
       - 'src/main/java/org/beckenburg/SceneRenderer.java'
       - 'src/test/java/org/beckenburg/CastlePrimitiveRuntimeFitTest.java'
+      - 'src/test/java/org/beckenburg/CastleRelicSourceDecodeTest.java'
+      - 'development/levels/primitive-props-v1/relic-review/**'
       - 'src/test/java/org/beckenburg/CastlePortalTrimTest.java'
       - 'development/levels/primitive-props-v1/models/**'
       - 'development/levels/primitive-props-v1/previews/**'
@@ -97,6 +99,15 @@ jobs:
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp build\\beckenburg-game.jar;build\\dev-room\\test org.beckenburg.HollowCreekDevCatalogClassificationTest
           if errorlevel 1 exit /b 1
+      - name: Decode and texture-sample all 22 relic/crypt GLBs using actual game importer (advisory)
+        continue-on-error: true
+        shell: cmd
+        run: |
+          if not exist build\\dev-room\\test mkdir build\\dev-room\\test
+          javac --release 17 -encoding UTF-8 -cp build\\beckenburg-game.jar -d build\\dev-room\\test src\\test\\java\\org\\beckenburg\\CastleRelicSourceDecodeTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\\beckenburg-game.jar;build\\dev-room\\test org.beckenburg.CastleRelicSourceDecodeTest
+          if errorlevel 1 exit /b 1
       - name: Native Castle prototype bounds, egress and real-renderer screenshot study (advisory)
         continue-on-error: true
         shell: cmd
@@ -112,7 +123,13 @@ jobs:
         run: |
           $models = @('level_blockout_quartermaster_counter','level_blockout_privacy_screen',
               'level_blockout_lookout_spotter','level_blockout_mine_ventilation',
-              'level_blockout_layout_castle','level_blockout_layout_wld-04')
+              'level_blockout_layout_castle','level_blockout_layout_wld-04',
+              'level_blockout_relic_mourning_locket','level_blockout_relic_votive_bell',
+              'level_blockout_relic_black_mirror','level_blockout_relic_reliquary_box',
+              'level_blockout_relic_pilgrim_lantern','level_blockout_relic_bound_folio',
+              'level_blockout_relic_open_guard','level_blockout_relic_containment',
+              'level_blockout_sarcophagus_plain','level_blockout_sarcophagus_inscribed',
+              'level_blockout_sarcophagus_effigy')
           foreach ($model in $models) {
             & java '-Djava.awt.headless=true' -cp 'build/beckenburg-game.jar' 'org.beckenburg.DevAssetShowroom' '--dev-room' '--capture' "--asset=$model" "--output=build/dev-room/primitive-studies/$model"
             if ($LASTEXITCODE -ne 0) { Write-Warning "Primitive asset four-view capture failed: $model" }
