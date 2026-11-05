@@ -115,9 +115,9 @@
       "page": 2,
       "name": "level_blockout_kit_refined_p02",
       "file": "level_blockout_kit_refined_p02.glb",
-      "triangles": 2884,
-      "bytes": 316108,
-      "sha256": "64b3f88b936c13225f4e277806b0002d985299308dabc5d2bf990c7d5ae561a5",
+      "triangles": 2908,
+      "bytes": 318556,
+      "sha256": "f28e1f04ced0d8fd87c53a202a984f8fa0680612728b0312a14a34ef8ff92a9e",
       "display_slots": [
         {
           "slot": 1,
@@ -521,7 +521,7 @@
         "PRISON"
       ],
       "mount": "floor",
-      "source_parts": 13,
+      "source_parts": 15,
       "source_bounds_m": [
         -1.18,
         -0.57,
@@ -530,9 +530,9 @@
         0.005,
         2.55
       ],
-      "triangles": 408,
-      "bytes": 48660,
-      "sha256": "511e2641deffbe2d107d2dd5d08a023a3d617f283393fdc1ca422059078e8fc4",
+      "triangles": 432,
+      "bytes": 51108,
+      "sha256": "aed9e5ddae03c08f0fe2f3b5a8f7ff6be6917b983505d1ea111aab41cb96baef",
       "runtime_approved": false
     },
     {
