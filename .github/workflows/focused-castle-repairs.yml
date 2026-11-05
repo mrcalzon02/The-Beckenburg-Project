@@ -49,6 +49,7 @@ on:
       - 'src/test/java/org/beckenburg/ImportedBookMaterialTest.java'
       - 'src/test/java/org/beckenburg/CharacterBillboardAnchorTest.java'
       - 'src/test/java/org/beckenburg/CastleLiveRepairVisualTest.java'
+      - 'src/test/java/org/beckenburg/CastleResidentArtRenderAudit.java'
       - 'src/main/java/org/beckenburg/CastleSurroundings.java'
       - 'src/main/java/org/beckenburg/VanArrivalStreet.java'
       - 'tools/ggbot_blend_export.py'
@@ -60,7 +61,7 @@ on:
       - '.github/workflows/focused-castle-repairs.yml'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   focused-castle-tests:
     runs-on: windows-latest
@@ -203,6 +204,46 @@ jobs:
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.CastleLiveRepairVisualTest
           if errorlevel 1 exit /b 1
+      - name: Real Castle NPC directional screenshots from production renderer
+        shell: cmd
+        run: |
+          if not exist build\test mkdir build\test
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\CastleResidentArtRenderAudit.java src\test\java\org\beckenburg\GroundedSpriteFeetTest.java src\test\java\org\beckenburg\SpriteFloorContactTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.GroundedSpriteFeetTest
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.SpriteFloorContactTest
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.CastleResidentArtRenderAudit build/e2e/npc-grounding
+          if errorlevel 1 exit /b 1
+      - name: Archive exact in-game NPC captures, every resident and four directions
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: castle-npc-grounding-actual-game
+          path: build/e2e/npc-grounding/*
+          if-no-files-found: warn
+      - name: Publish accepted in-engine screenshots for direct visual review
+        if: success()
+        shell: pwsh
+        run: |
+          $dest = "development/levels/previews/npc-ground-proof-2026-11-04"
+          New-Item -ItemType Directory -Force -Path $dest | Out-Null
+          Copy-Item "build/e2e/npc-grounding/*" $dest -Force
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- $dest
+          if (-not (git status --porcelain)) { Write-Host "Already published"; exit 0 }
+          git commit -m "Preserve exact renderer NPC view and foot grounding screenshots"
+          if ($LASTEXITCODE -ne 0) { throw "Cannot commit NPC screenshots" }
+          for ($attempt=1; $attempt -le 4; $attempt++) {
+            git pull --rebase origin main
+            if ($LASTEXITCODE -ne 0) { throw "Evidence rebase conflict" }
+            git push origin HEAD:main
+            if ($LASTEXITCODE -eq 0) { Write-Host "Actual PNGs published"; exit 0 }
+            Start-Sleep -Seconds $attempt
+          }
+          throw "Could not publish screenshot evidence without force"
       - name: Preserve castle inspection images
         if: always()
         uses: actions/upload-artifact@v4
