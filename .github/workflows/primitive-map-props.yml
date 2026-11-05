@@ -7,6 +7,8 @@ on:
       - 'development/levels/primitive-props-v1/build.py'
       - 'development/levels/primitive-props-v1/audit.py'
       - 'development/levels/primitive-props-v1/kits.py'
+      - 'development/levels/primitive-props-v1/castle-crypt-proposal.json'
+      - 'development/levels/primitive-props-v1/crypt.py'
       - 'development/levels/primitive-props-v1/fit.py'
       - 'development/levels/primitive-props-v1/fit-recipe.json'
       - 'development/levels/layouts/**/layout.json'
@@ -52,7 +54,7 @@ jobs:
           root=Path("development/levels/primitive-props-v1")
           catalog=json.loads((root/"catalog.json").read_text())
           verification=json.loads((root/"verification.json").read_text())
-          assert len(catalog["models"])==139
+          assert len(catalog["models"])==142
           assert len(catalog["models"])==len(verification["models"])
           fitted=json.loads((root/"fit-verification.json").read_text())
           assert fitted["sites"]==5 and fitted["placements"]==61
@@ -76,13 +78,17 @@ jobs:
         run: python development/levels/primitive-props-v1/kits.py
       - name: Verify kit pages are byte-for-byte reproducible
         run: python development/levels/primitive-props-v1/kits.py --check
+      - name: Count eight proposed Castle sarcophagi with crypt chamber clearances
+        run: python development/levels/primitive-props-v1/crypt.py
+      - name: Verify sarcophagus inventory and separate nonshipping 3D crypt preview
+        run: python development/levels/primitive-props-v1/crypt.py --check
       - name: Independently decode embedded GLB PNGs and audit map assignments
         run: python development/levels/primitive-props-v1/audit.py
       - name: Preserve generated model assets on main (no force)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add development/levels/primitive-props-v1/models development/levels/primitive-props-v1/verification.json development/levels/primitive-props-v1/placements development/levels/primitive-props-v1/previews development/levels/primitive-props-v1/fit-verification.json development/levels/primitive-props-v1/site-kits
+          git add development/levels/primitive-props-v1/models development/levels/primitive-props-v1/verification.json development/levels/primitive-props-v1/placements development/levels/primitive-props-v1/previews development/levels/primitive-props-v1/fit-verification.json development/levels/primitive-props-v1/site-kits development/levels/primitive-props-v1/crypt-review
           if git diff --cached --quiet; then
             echo "All generated grayboxes already match main."
             exit 0
