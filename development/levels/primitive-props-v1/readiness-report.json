@@ -1,13 +1,13 @@
 {
   "schema": "beckenburg.source-mesh-readiness/1",
   "status": "SOURCE_ONLY_REVIEW_NOT_PRODUCTION_APPROVAL",
-  "catalog_sha256": "475dee1a95ddfe308a40a137e2d514586a2ab620295b6f61cfc7ba97d0854398",
+  "catalog_sha256": "abfc2980bd08f35703b8d78241c62535fcdd3f2827a9c687ac43753259a2e719",
   "model_count": 253,
   "map_kit_count": 29,
   "validated_source_glbs": 253,
   "runtime_approved_models": 0,
   "native_rendered_models_accepted_here": 0,
-  "models_with_diagnostic_flags": 197,
+  "models_with_diagnostic_flags": 196,
   "purpose": "Recorded geometry and next-stage review; never game asset approval",
   "required_before_production": [
     "Native four-view in-engine screenshots and texture/material inspection",
@@ -678,7 +678,6 @@
     {
       "model": "level_blockout_railway_passenger_coach",
       "diagnostics": [
-        "review_gallery_stand_overflow",
         "legacy_model_missing_mount_metadata"
       ]
     },
@@ -1196,12 +1195,6 @@
       "model": "level_blockout_lighthouse_access_ladder",
       "diagnostics": [
         "review_attachment_anchor"
-      ]
-    },
-    {
-      "model": "level_blockout_motel_guest_bed",
-      "diagnostics": [
-        "review_floor_contact_offset"
       ]
     },
     {
@@ -5293,7 +5286,6 @@
       "max_y_m": 2.785,
       "mount_hint": "unclassified",
       "diagnostics": [
-        "review_gallery_stand_overflow",
         "legacy_model_missing_mount_metadata"
       ],
       "source_glb_verified": true,
@@ -9275,7 +9267,7 @@
         "HOUSE",
         "WLD-16"
       ],
-      "source_parts": 6,
+      "source_parts": 10,
       "tapered_parts": 0,
       "source_materials": [
         "canvas",
@@ -9283,8 +9275,8 @@
         "redcloth",
         "wood"
       ],
-      "triangles": 72,
-      "glb_sha256": "4b1029e97bcafc876a507afac6982b8080197d0c75cab04c27a83a7393e99b84",
+      "triangles": 120,
+      "glb_sha256": "0fce06210c86ee53490e58cbea525e26aeb2efdfc5bc86221ed9b1567bc7d210",
       "model_bounds_xz": [
         -0.945,
         -1.205,
@@ -9293,12 +9285,10 @@
       ],
       "width_m": 1.89,
       "depth_m": 2.39,
-      "min_y_m": 0.12,
+      "min_y_m": 0.0,
       "max_y_m": 1.54,
       "mount_hint": "floor",
-      "diagnostics": [
-        "review_floor_contact_offset"
-      ],
+      "diagnostics": [],
       "source_glb_verified": true,
       "native_renderer_accepted": false,
       "collision_and_navmesh_accepted": false,
