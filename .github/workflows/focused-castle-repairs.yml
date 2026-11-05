@@ -20,6 +20,9 @@ on:
       - 'src/main/java/org/beckenburg/LanHost.java'
       - 'src/test/java/org/beckenburg/GhostAiNavigationAuditTest.java'
       - 'src/main/java/org/beckenburg/GhostAiScenarioRunner.java'
+      - 'src/main/java/org/beckenburg/LanGhostPursuit.java'
+      - 'src/test/java/org/beckenburg/GhostAiScenarioRunnerTest.java'
+      - 'src/test/java/org/beckenburg/LanGhostPursuitTest.java'
       - 'src/test/java/org/beckenburg/GhostAiScenarioRunnerTest.java'
       - 'src/main/java/org/beckenburg/AssetImportDialog.java'
       - 'src/main/java/org/beckenburg/ImportedAssetLibrary.java'
@@ -170,13 +173,14 @@ jobs:
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.GhostAiNavigationAuditTest
           if errorlevel 1 exit /b 1
-      - name: Diagnostic — deterministic multi-species ghost action scenarios
-        continue-on-error: true
+      - name: Enforce physical-victim gate against synthetic sound and STRIKE-biased AI
         shell: cmd
         run: |
-          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\GhostAiScenarioRunnerTest.java
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\GhostAiScenarioRunnerTest.java src\test\java\org\beckenburg\LanGhostPursuitTest.java
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.GhostAiScenarioRunnerTest
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.LanGhostPursuitTest
           if errorlevel 1 exit /b 1
       - name: Book source-atlas and NPC world-pivot diagnostics
         continue-on-error: true

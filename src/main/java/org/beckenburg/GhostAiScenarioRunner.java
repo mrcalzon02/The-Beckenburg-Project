@@ -34,11 +34,10 @@ public final class GhostAiScenarioRunner {
         int applied=0,rejected=0,drift=0,delivered=0;
         long sequence=0;
         for(int tick=1;tick<=duration;tick++){
-            // A controlled, coarse 100ms host tick. The synthetic listener occupies
-            // authored room 4 only; there is NO actual investigator body or contact.
-            int occupants=syntheticSound&&ghost.room()==4?1:0;
-            int listener=syntheticSound?4:-1;
-            ghost.advance(tick,listener,occupants);
+            // 100ms host tick. An audible event does not create a hunter body,
+            // room occupant, target, or eligible harm event. Only the separate
+            // pursuit.heard() below is synthetic; physical occupancy remains zero.
+            ghost.advance(tick,-1,0);
             if(syntheticSound&&tick%40==0){
                 // Test source is a fixed authoring marker, not an actual player feed.
                 pursuit.heard(ghost.room(),4,map.centerX(4),map.centerZ(4),
