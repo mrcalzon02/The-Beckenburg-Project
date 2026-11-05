@@ -86,11 +86,28 @@ jobs:
           $positions = @(Import-Csv 'build/dev-room/multi-floor-source-gallery/gallery-placements.csv')
           if ($positions.Count -ne 72) { throw "Expected 72 stable inspection slots, got $($positions.Count)" }
           if (@($positions | Where-Object { $_.floor -eq '3' }).Count -ne 24) { throw 'Third floor models were not indexed' }
+          $views = @(Import-Csv 'build/dev-room/multi-floor-source-gallery/gallery-visibility.csv')
+          if ($views.Count -ne 12) { throw "Expected 12 visibility-audited physical bays; got $($views.Count)" }
+          if (@($views | Where-Object { $_.visible -ne 'true' -or [int]$_.changedPixels -le 20 }).Count -gt 0) {
+            throw 'One or more gallery bays contains no distinguishable model geometry'
+          }
+          $decoded = @(Import-Csv 'build/dev-room/multi-floor-source-gallery/gallery-model-audits.csv')
+          if ($decoded.Count -ne 72 -or @($decoded | Where-Object { $_.state -eq 'MISSING' }).Count -gt 0) {
+            throw 'Source gallery includes a missing or undecodable model'
+          }
           & java '-Djava.awt.headless=true' -cp 'build/beckenburg-game.jar' 'org.beckenburg.DevAssetShowroom' '--dev-room' '--gallery-capture' '--filter=level_blockout_refined_' '--limit=72' '--output=build/dev-room/multi-floor-refinements'
           if ($LASTEXITCODE -ne 0) { throw 'Refinement gallery renderer capture failed' }
           $refined = @(Import-Csv 'build/dev-room/multi-floor-refinements/gallery-placements.csv')
           if ($refined.Count -ne 15) { throw "Expected 15 source-only refinements, got $($refined.Count)" }
-          Write-Host 'PASS: twelve multi-floor source-bay captures and fifteen refinement placements'
+          $refinedAudit = @(Import-Csv 'build/dev-room/multi-floor-refinements/gallery-model-audits.csv')
+          if ($refinedAudit.Count -ne 15 -or @($refinedAudit | Where-Object { $_.state -ne 'REVIEW_REGISTRATION' }).Count -gt 0) {
+            throw 'Source-only refinement model decode/registration regression'
+          }
+          $refinedViews = @(Import-Csv 'build/dev-room/multi-floor-refinements/gallery-visibility.csv')
+          if ($refinedViews.Count -ne 3 -or @($refinedViews | Where-Object { $_.visible -ne 'true' }).Count -gt 0) {
+            throw 'Refinement gallery has a missing or invisible bay'
+          }
+          Write-Host 'PASS: 12 model-visible gallery bays and 15 audited source-only refinements'
       - name: Check actual Twins source alpha strips with game decoder (advisory)
         continue-on-error: true
         shell: cmd
