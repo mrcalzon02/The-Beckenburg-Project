@@ -1,13 +1,13 @@
 # Map-specific primitive prop blockouts (v1)
 
-The authoritative planning backlog is [catalog.json](catalog.json), which maps **221 individual study models across 28 planned maps plus the Vale Mortuary expansion**. It augments the existing `development/levels/model-requirements/*.json` files rather than replacing their full room-by-room checklists.
+The authoritative planning backlog is [catalog.json](catalog.json), which maps **253 individual study models across 28 planned maps plus the Vale Mortuary expansion**. It augments the existing `development/levels/model-requirements/*.json` files rather than replacing their full room-by-room checklists.
 
 ## What this package is
 
 - Measured, ground-origin, Y-up glTF 2.0 geometry in metres: basic boxes, faceted cylinders, and an enclosed tent prism. The model material colors are placeholder glTF factors, now complemented by **individually embedded deterministic 32×32 procedural RGB albedo studies** with nondegenerate planar UV0. These do not replace final hand-authored textures.
 - Each `level_blockout_*.glb` is an individually selectable study asset. No duplicate of any existing finished `level_*` model is overwritten.
 - The catalogue's `sites[].prototypes` field is an **assignment proposal**, not an automatic scene placement. No map availability, collision, navmesh, lighting, acoustics, interactivity or network state has been modified.
-- The collection contains **221 distinct GLB models** (116 expanded-map additions, three countable sarcophagi, and 18 additional relic/display definitions). It covers structural opening/rails, Castle service and training fixtures, academic/hospital/chapel and domestic interiors, forests/campgrounds/caverns, generator/electrical studies, maritime/industrial scenes, lightstation/lodge/bunker/shaft structures and mortuary fixtures. Each study remains independent and replaceable.
+- The collection contains **253 distinct GLB models** (116 expanded-map additions, three countable sarcophagi, and 18 additional relic/display definitions). It covers structural opening/rails, Castle service and training fixtures, academic/hospital/chapel and domestic interiors, forests/campgrounds/caverns, generator/electrical studies, maritime/industrial scenes, lightstation/lodge/bunker/shaft structures and mortuary fixtures. Each study remains independent and replaceable.
 - Existing source LOD/original model assets remain unchanged. Completed prop models require geometry refinement, proper UV/materials, origin/orientation review, scene placement, and actual editor/renderer acceptance.
 
 ## Rebuild / inspect
@@ -326,3 +326,9 @@ The cannery chute source model now rotates its deck and both guard rails togethe
 The deterministic builder now accepts source parts of `type: frustum` with `bottom_radius`, `top_radius`, `height`, and optional `segments` / `axis` / `yaw`. A zero upper radius creates a real point with nondegenerate triangles, enabling tapered stone spires, trees and funnels without cylinder-stacking. The footprint fitter and independent binary integrity validator both recognize the new primitive. The existing cavern stalagmite cluster now has actual tapered facets instead of flat cylinder tops.
 
 This is a source-model enhancement only. Existing gameplay geometry, collision, navmesh and lighting are not modified.
+
+## Location-specific modeling: 32 additional independent studies, 253 total
+
+Following the validated tapered primitive, the library adds 32 separately selectable GLBs for the maps with the thinnest distinctive prop coverage. Camp Hollow Creek and the wilderness receive clustered conifers, tables, notice kiosk, water tank, open cooking shelter, timber footbridge, deadwood snag and raised blind. Red Mesa and Dead Man's Claim gain pointed rockfall, ceiling stalactites and a survey instrument. Widow's Peak receives a map table and reservoir. Gallows Pass gets a straight rail/tie section, loading platform, telegraph mast, signal relay box, handcar and coal bunker. Morrow Point gets maintenance steps, oil rack, weather vane, ring rescue float and landing capstan. The mortuary gets a closed bier, cart, three drawers and wreath. Site-appropriate supporting assets include an industrial handwheel, open ship hatch, fishing crates and an open bunker frame.
+
+All source meshes retain the non-playable approval gate. Neither individual asset authorship nor the site kit galleries imply working props, world placement, finished textures, collisions, navmesh, lighting, waterproofing, hanging/tower access or captured relic/burial state. Preview geometry is for refinement and verification before selective editor import.

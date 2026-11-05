@@ -78,7 +78,9 @@
         "level_blockout_stair_landing_module",
         "level_blockout_pipe_riser_support",
         "level_blockout_hospital_curtain_track",
-        "level_blockout_institution_linen_cabinet"
+        "level_blockout_institution_linen_cabinet",
+        "level_blockout_mortuary_instrument_trolley",
+        "level_blockout_mortuary_cold_drawer_wall"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -183,7 +185,9 @@
         "level_blockout_castle_iron_candelabrum",
         "level_blockout_cemetery_headstone_row",
         "level_blockout_cemetery_iron_lantern",
-        "level_blockout_monastery_stained_window"
+        "level_blockout_monastery_stained_window",
+        "level_blockout_mortuary_casket_bier",
+        "level_blockout_mortuary_flower_wreath"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -419,7 +423,15 @@
         "level_blockout_domestic_pitched_roof_module",
         "level_blockout_domestic_porch_stair",
         "level_blockout_logging_winch_sled",
-        "level_blockout_camp_tarp_shelter"
+        "level_blockout_camp_tarp_shelter",
+        "level_blockout_camp_pine_cluster",
+        "level_blockout_camp_picnic_table",
+        "level_blockout_camp_ranger_kiosk",
+        "level_blockout_camp_cook_shelter",
+        "level_blockout_camp_footbridge_module",
+        "level_blockout_lookout_reservoir_tank",
+        "level_blockout_rail_straight_track_bay",
+        "level_blockout_rail_telegraph_pole"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -450,7 +462,15 @@
         "level_blockout_camp_washstand",
         "level_blockout_abandoned_camper_shell",
         "level_blockout_marsh_reed_cluster",
-        "level_blockout_camp_tarp_shelter"
+        "level_blockout_camp_tarp_shelter",
+        "level_blockout_camp_pine_cluster",
+        "level_blockout_camp_picnic_table",
+        "level_blockout_camp_ranger_kiosk",
+        "level_blockout_camp_water_tank",
+        "level_blockout_camp_cook_shelter",
+        "level_blockout_camp_footbridge_module",
+        "level_blockout_marsh_deadwood_snag",
+        "level_blockout_marsh_hunting_blind"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -476,7 +496,10 @@
         "level_blockout_cave_bend_modules",
         "level_blockout_mine_pick_tool_rack",
         "level_blockout_cavern_stalagmite_cluster",
-        "level_blockout_mine_braced_portal"
+        "level_blockout_mine_braced_portal",
+        "level_blockout_cave_rockfall_heap",
+        "level_blockout_cave_hanging_stalactites",
+        "level_blockout_cave_survey_tripod"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -505,7 +528,12 @@
         "level_blockout_timber_roof_truss",
         "level_blockout_camp_tarp_shelter",
         "level_blockout_lighthouse_access_ladder",
-        "level_blockout_bunker_observation_scope"
+        "level_blockout_bunker_observation_scope",
+        "level_blockout_camp_pine_cluster",
+        "level_blockout_camp_ranger_kiosk",
+        "level_blockout_camp_water_tank",
+        "level_blockout_lookout_fire_map_table",
+        "level_blockout_lookout_reservoir_tank"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -538,7 +566,10 @@
         "level_blockout_logging_winch_sled",
         "level_blockout_cavern_stalagmite_cluster",
         "level_blockout_mine_braced_portal",
-        "level_blockout_rail_trackside_toolbox"
+        "level_blockout_rail_trackside_toolbox",
+        "level_blockout_cave_rockfall_heap",
+        "level_blockout_cave_hanging_stalactites",
+        "level_blockout_cave_survey_tripod"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -571,7 +602,11 @@
         "level_blockout_mooring_rope_coils",
         "level_blockout_cannery_cargo_pallet",
         "level_blockout_marsh_flatboat",
-        "level_blockout_wharf_crab_pot"
+        "level_blockout_wharf_crab_pot",
+        "level_blockout_lighthouse_oil_barrel_rack",
+        "level_blockout_lighthouse_rescue_lifebuoy",
+        "level_blockout_lighthouse_landing_capstan",
+        "level_blockout_wharf_open_fish_crates"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -606,7 +641,9 @@
         "level_blockout_stone_arch_open",
         "level_blockout_wall_lantern_sconce",
         "level_blockout_cemetery_headstone_row",
-        "level_blockout_cemetery_iron_lantern"
+        "level_blockout_cemetery_iron_lantern",
+        "level_blockout_mortuary_casket_bier",
+        "level_blockout_mortuary_flower_wreath"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -640,7 +677,8 @@
         "level_blockout_science_instrument_table",
         "level_blockout_ship_chart_cabinet",
         "level_blockout_cinder_cable_rack",
-        "level_blockout_research_battery_bank"
+        "level_blockout_research_battery_bank",
+        "level_blockout_cave_survey_tripod"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -669,7 +707,9 @@
         "level_blockout_dam_service_grating",
         "level_blockout_pipe_riser_support",
         "level_blockout_research_battery_bank",
-        "level_blockout_dam_pressure_gauge_panel"
+        "level_blockout_dam_pressure_gauge_panel",
+        "level_blockout_rail_coal_bunker",
+        "level_blockout_hydro_handwheel_valve"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -749,7 +789,12 @@
         "level_blockout_lighthouse_cistern",
         "level_blockout_marsh_reed_cluster",
         "level_blockout_camp_tarp_shelter",
-        "level_blockout_marsh_flatboat"
+        "level_blockout_marsh_flatboat",
+        "level_blockout_camp_pine_cluster",
+        "level_blockout_camp_water_tank",
+        "level_blockout_camp_footbridge_module",
+        "level_blockout_marsh_deadwood_snag",
+        "level_blockout_marsh_hunting_blind"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -775,7 +820,13 @@
         "level_blockout_signal_hut_lever_bank",
         "level_blockout_rail_trestle_bay",
         "level_blockout_rail_buffer_stop",
-        "level_blockout_rail_trackside_toolbox"
+        "level_blockout_rail_trackside_toolbox",
+        "level_blockout_rail_straight_track_bay",
+        "level_blockout_rail_cargo_platform",
+        "level_blockout_rail_telegraph_pole",
+        "level_blockout_rail_signal_relay_box",
+        "level_blockout_rail_handcar",
+        "level_blockout_rail_coal_bunker"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -808,7 +859,9 @@
         "level_blockout_mortuary_cold_storage",
         "level_blockout_cannery_cargo_pallet",
         "level_blockout_wharf_crab_pot",
-        "level_blockout_cannery_overhead_chute"
+        "level_blockout_cannery_overhead_chute",
+        "level_blockout_hydro_handwheel_valve",
+        "level_blockout_wharf_open_fish_crates"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -841,7 +894,12 @@
         "level_blockout_motel_walkway_canopy",
         "level_blockout_coastal_security_fence",
         "level_blockout_lighthouse_foghorn",
-        "level_blockout_lighthouse_access_ladder"
+        "level_blockout_lighthouse_access_ladder",
+        "level_blockout_lighthouse_service_step",
+        "level_blockout_lighthouse_oil_barrel_rack",
+        "level_blockout_lighthouse_weather_vane",
+        "level_blockout_lighthouse_rescue_lifebuoy",
+        "level_blockout_lighthouse_landing_capstan"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -890,7 +948,11 @@
         "level_blockout_cannery_overhead_chute",
         "level_blockout_ship_galley_range",
         "level_blockout_ship_chart_cabinet",
-        "level_blockout_dam_pressure_gauge_panel"
+        "level_blockout_dam_pressure_gauge_panel",
+        "level_blockout_lighthouse_rescue_lifebuoy",
+        "level_blockout_hydro_handwheel_valve",
+        "level_blockout_ship_open_cargo_hatch",
+        "level_blockout_wharf_open_fish_crates"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -925,7 +987,8 @@
         "level_blockout_domestic_chimney_stack",
         "level_blockout_domestic_porch_stair",
         "level_blockout_domestic_kitchen_range",
-        "level_blockout_motel_guest_bed"
+        "level_blockout_motel_guest_bed",
+        "level_blockout_camp_picnic_table"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -964,7 +1027,8 @@
         "level_blockout_pipe_riser_support",
         "level_blockout_lighthouse_access_ladder",
         "level_blockout_bunker_observation_scope",
-        "level_blockout_cinder_cable_rack"
+        "level_blockout_cinder_cable_rack",
+        "level_blockout_bunker_support_arch"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -1011,7 +1075,9 @@
         "level_blockout_lighthouse_access_ladder",
         "level_blockout_cinder_cable_rack",
         "level_blockout_research_battery_bank",
-        "level_blockout_dam_pressure_gauge_panel"
+        "level_blockout_dam_pressure_gauge_panel",
+        "level_blockout_cave_rockfall_heap",
+        "level_blockout_bunker_support_arch"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     },
@@ -1048,7 +1114,11 @@
         "level_blockout_medical_resuscitation_cart",
         "level_blockout_pipe_riser_support",
         "level_blockout_hospital_curtain_track",
-        "level_blockout_institution_linen_cabinet"
+        "level_blockout_institution_linen_cabinet",
+        "level_blockout_mortuary_casket_bier",
+        "level_blockout_mortuary_instrument_trolley",
+        "level_blockout_mortuary_cold_drawer_wall",
+        "level_blockout_mortuary_flower_wreath"
       ],
       "selection_status": "planning assignment only; not placed in a runtime scene"
     }
@@ -36730,6 +36800,5024 @@
           "production reviewer approval"
         ],
         "runtime_placement": false
+      }
+    },
+    {
+      "id": "level_blockout_camp_pine_cluster",
+      "label": "Three distinct tapered conifers",
+      "category": "site_specific",
+      "maps": [
+        "WLD-01",
+        "WLD-02",
+        "WLD-04",
+        "WLD-11"
+      ],
+      "parts": [
+        {
+          "type": "cylinder",
+          "p": [
+            -0.86,
+            0.36,
+            -0.4
+          ],
+          "radius": 0.115,
+          "height": 0.72,
+          "material": "wood",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "frustum",
+          "p": [
+            -0.86,
+            0.91,
+            -0.4
+          ],
+          "bottom_radius": 0.75,
+          "top_radius": 0.23,
+          "height": 1.27,
+          "material": "patina",
+          "segments": 8,
+          "axis": "y"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            -0.86,
+            1.63,
+            -0.4
+          ],
+          "bottom_radius": 0.59,
+          "top_radius": 0.08,
+          "height": 1.29,
+          "material": "patina",
+          "segments": 8,
+          "axis": "y"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            -0.86,
+            2.35,
+            -0.4
+          ],
+          "bottom_radius": 0.33,
+          "top_radius": 0,
+          "height": 0.5,
+          "material": "patina",
+          "segments": 8,
+          "axis": "y"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.86,
+            0.36,
+            0.39
+          ],
+          "radius": 0.115,
+          "height": 0.72,
+          "material": "wood",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "frustum",
+          "p": [
+            0.86,
+            0.91,
+            0.39
+          ],
+          "bottom_radius": 0.75,
+          "top_radius": 0.23,
+          "height": 1.27,
+          "material": "patina",
+          "segments": 8,
+          "axis": "y"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            0.86,
+            1.63,
+            0.39
+          ],
+          "bottom_radius": 0.59,
+          "top_radius": 0.08,
+          "height": 1.29,
+          "material": "patina",
+          "segments": 8,
+          "axis": "y"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            0.86,
+            2.77,
+            0.39
+          ],
+          "bottom_radius": 0.33,
+          "top_radius": 0,
+          "height": 0.5,
+          "material": "patina",
+          "segments": 8,
+          "axis": "y"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.03,
+            0.36,
+            0.86
+          ],
+          "radius": 0.115,
+          "height": 0.72,
+          "material": "wood",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "frustum",
+          "p": [
+            0.03,
+            0.91,
+            0.86
+          ],
+          "bottom_radius": 0.75,
+          "top_radius": 0.23,
+          "height": 1.27,
+          "material": "patina",
+          "segments": 8,
+          "axis": "y"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            0.03,
+            1.63,
+            0.86
+          ],
+          "bottom_radius": 0.59,
+          "top_radius": 0.08,
+          "height": 1.29,
+          "material": "patina",
+          "segments": 8,
+          "axis": "y"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            0.03,
+            2.05,
+            0.86
+          ],
+          "bottom_radius": 0.33,
+          "top_radius": 0,
+          "height": 0.5,
+          "material": "patina",
+          "segments": 8,
+          "axis": "y"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_camp_picnic_table",
+      "label": "Park picnic table with individual benches",
+      "category": "site_specific",
+      "maps": [
+        "WLD-02",
+        "WLD-01",
+        "WLD-16"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.81,
+            -0.29
+          ],
+          "size": [
+            2.16,
+            0.085,
+            0.24
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.81,
+            0
+          ],
+          "size": [
+            2.16,
+            0.085,
+            0.24
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.81,
+            0.29
+          ],
+          "size": [
+            2.16,
+            0.085,
+            0.24
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.49,
+            -0.86
+          ],
+          "size": [
+            2.17,
+            0.11,
+            0.38
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.49,
+            0.86
+          ],
+          "size": [
+            2.17,
+            0.11,
+            0.38
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.7,
+            0.38,
+            -0.4
+          ],
+          "size": [
+            0.13,
+            0.76,
+            0.16
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.7,
+            0.38,
+            0.4
+          ],
+          "size": [
+            0.13,
+            0.76,
+            0.16
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.7,
+            0.38,
+            -0.4
+          ],
+          "size": [
+            0.13,
+            0.76,
+            0.16
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.7,
+            0.38,
+            0.4
+          ],
+          "size": [
+            0.13,
+            0.76,
+            0.16
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.36,
+            0
+          ],
+          "size": [
+            1.69,
+            0.09,
+            0.1
+          ],
+          "material": "wood"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_camp_ranger_kiosk",
+      "label": "Two-post trail notice kiosk",
+      "category": "site_specific",
+      "maps": [
+        "WLD-02",
+        "WLD-04",
+        "WLD-01"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.85,
+            1.17,
+            0
+          ],
+          "size": [
+            0.15,
+            2.34,
+            0.15
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.85,
+            1.17,
+            0
+          ],
+          "size": [
+            0.15,
+            2.34,
+            0.15
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.62,
+            -0.06
+          ],
+          "size": [
+            1.61,
+            0.9,
+            0.11
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.62,
+            -0.13
+          ],
+          "size": [
+            1.43,
+            0.72,
+            0.035
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.51,
+            2.54,
+            0
+          ],
+          "size": [
+            1.11,
+            0.13,
+            0.77
+          ],
+          "material": "wood",
+          "roll": 0.3665191
+        },
+        {
+          "type": "box",
+          "p": [
+            0.51,
+            2.54,
+            0
+          ],
+          "size": [
+            1.11,
+            0.13,
+            0.77
+          ],
+          "material": "wood",
+          "roll": -0.3665191
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.87,
+            0.13,
+            0
+          ],
+          "size": [
+            0.43,
+            0.25,
+            0.4
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.87,
+            0.13,
+            0
+          ],
+          "size": [
+            0.43,
+            0.25,
+            0.4
+          ],
+          "material": "stone"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_camp_water_tank",
+      "label": "Raised potable camp water tank and tap",
+      "category": "site_specific",
+      "maps": [
+        "WLD-02",
+        "WLD-04",
+        "WLD-11"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.41,
+            0.29,
+            -0.41
+          ],
+          "size": [
+            0.14,
+            0.58,
+            0.13
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.41,
+            0.29,
+            0.41
+          ],
+          "size": [
+            0.14,
+            0.58,
+            0.13
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.41,
+            0.29,
+            -0.41
+          ],
+          "size": [
+            0.14,
+            0.58,
+            0.13
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.41,
+            0.29,
+            0.41
+          ],
+          "size": [
+            0.14,
+            0.58,
+            0.13
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.09,
+            0
+          ],
+          "radius": 0.54,
+          "height": 1.04,
+          "material": "industrial",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.62,
+            0
+          ],
+          "radius": 0.56,
+          "height": 0.1,
+          "material": "metal",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.73,
+            -0.53
+          ],
+          "radius": 0.06,
+          "height": 0.18,
+          "material": "bronze",
+          "axis": "z",
+          "segments": 8
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.7,
+            -0.64
+          ],
+          "size": [
+            0.27,
+            0.065,
+            0.07
+          ],
+          "material": "metal"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_camp_cook_shelter",
+      "label": "Open canvas cook shelter",
+      "category": "site_specific",
+      "maps": [
+        "WLD-02",
+        "WLD-01"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -1.06,
+            1.11,
+            -0.86
+          ],
+          "size": [
+            0.11,
+            2.2,
+            0.11
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.06,
+            1.11,
+            0.86
+          ],
+          "size": [
+            0.11,
+            2.2,
+            0.11
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.06,
+            1.11,
+            -0.86
+          ],
+          "size": [
+            0.11,
+            2.2,
+            0.11
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.06,
+            1.11,
+            0.86
+          ],
+          "size": [
+            0.11,
+            2.2,
+            0.11
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.53,
+            2.11,
+            0
+          ],
+          "size": [
+            1.26,
+            0.07,
+            2.08
+          ],
+          "material": "canvas",
+          "roll": 0.3316126
+        },
+        {
+          "type": "box",
+          "p": [
+            0.53,
+            2.11,
+            0
+          ],
+          "size": [
+            1.26,
+            0.07,
+            2.08
+          ],
+          "material": "canvas",
+          "roll": -0.3316126
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.81,
+            0
+          ],
+          "size": [
+            1.61,
+            0.12,
+            0.79
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.68,
+            0.41,
+            0
+          ],
+          "size": [
+            0.1,
+            0.8,
+            0.11
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.68,
+            0.41,
+            0
+          ],
+          "size": [
+            0.1,
+            0.8,
+            0.11
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.38,
+            0.96,
+            -0.12
+          ],
+          "radius": 0.17,
+          "height": 0.13,
+          "material": "metal",
+          "axis": "y",
+          "segments": 10
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_camp_footbridge_module",
+      "label": "Woodland timber trail footbridge bay",
+      "category": "site_specific",
+      "maps": [
+        "WLD-02",
+        "WLD-11",
+        "WLD-01"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -1.62,
+            0.27,
+            0
+          ],
+          "size": [
+            0.31,
+            0.09,
+            1.22
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.2200000000000002,
+            0.27,
+            0
+          ],
+          "size": [
+            0.31,
+            0.09,
+            1.22
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.8200000000000001,
+            0.27,
+            0
+          ],
+          "size": [
+            0.31,
+            0.09,
+            1.22
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.41999999999999993,
+            0.27,
+            0
+          ],
+          "size": [
+            0.31,
+            0.09,
+            1.22
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.020000000000000018,
+            0.27,
+            0
+          ],
+          "size": [
+            0.31,
+            0.09,
+            1.22
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.3799999999999999,
+            0.27,
+            0
+          ],
+          "size": [
+            0.31,
+            0.09,
+            1.22
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.7800000000000002,
+            0.27,
+            0
+          ],
+          "size": [
+            0.31,
+            0.09,
+            1.22
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.1800000000000002,
+            0.27,
+            0
+          ],
+          "size": [
+            0.31,
+            0.09,
+            1.22
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.58,
+            0.27,
+            0
+          ],
+          "size": [
+            0.31,
+            0.09,
+            1.22
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.13,
+            -0.62
+          ],
+          "size": [
+            3.99,
+            0.21,
+            0.12
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.13,
+            0.62
+          ],
+          "size": [
+            3.99,
+            0.21,
+            0.12
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.55,
+            0.72,
+            -0.63
+          ],
+          "size": [
+            0.1,
+            0.87,
+            0.1
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.55,
+            0.72,
+            0.63
+          ],
+          "size": [
+            0.1,
+            0.87,
+            0.1
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.52,
+            0.72,
+            -0.63
+          ],
+          "size": [
+            0.1,
+            0.87,
+            0.1
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.52,
+            0.72,
+            0.63
+          ],
+          "size": [
+            0.1,
+            0.87,
+            0.1
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.52,
+            0.72,
+            -0.63
+          ],
+          "size": [
+            0.1,
+            0.87,
+            0.1
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.52,
+            0.72,
+            0.63
+          ],
+          "size": [
+            0.1,
+            0.87,
+            0.1
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.55,
+            0.72,
+            -0.63
+          ],
+          "size": [
+            0.1,
+            0.87,
+            0.1
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.55,
+            0.72,
+            0.63
+          ],
+          "size": [
+            0.1,
+            0.87,
+            0.1
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.1,
+            -0.63
+          ],
+          "size": [
+            3.38,
+            0.08,
+            0.08
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.1,
+            0.63
+          ],
+          "size": [
+            3.38,
+            0.08,
+            0.08
+          ],
+          "material": "wood"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_cave_rockfall_heap",
+      "label": "Angular cave rockfall obstacle scatter",
+      "category": "site_specific",
+      "maps": [
+        "WLD-03",
+        "WLD-05",
+        "WLD-18"
+      ],
+      "parts": [
+        {
+          "type": "frustum",
+          "p": [
+            -0.75,
+            0.18,
+            0.15
+          ],
+          "bottom_radius": 0.43,
+          "top_radius": 0,
+          "height": 0.36,
+          "material": "stone",
+          "segments": 7,
+          "axis": "y"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            0,
+            0.27,
+            0.36
+          ],
+          "bottom_radius": 0.57,
+          "top_radius": 0,
+          "height": 0.54,
+          "material": "stone",
+          "segments": 7,
+          "axis": "y"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            0.76,
+            0.155,
+            -0.25
+          ],
+          "bottom_radius": 0.39,
+          "top_radius": 0,
+          "height": 0.31,
+          "material": "stone",
+          "segments": 7,
+          "axis": "y"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            -0.17,
+            0.195,
+            -0.48
+          ],
+          "bottom_radius": 0.35,
+          "top_radius": 0,
+          "height": 0.39,
+          "material": "stone",
+          "segments": 7,
+          "axis": "y"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_cave_hanging_stalactites",
+      "label": "Ceiling-anchored downward cave teeth",
+      "category": "site_specific",
+      "maps": [
+        "WLD-03",
+        "WLD-05"
+      ],
+      "parts": [
+        {
+          "type": "frustum",
+          "p": [
+            -0.73,
+            0.78,
+            0.08
+          ],
+          "bottom_radius": 0.009,
+          "top_radius": 0.3,
+          "height": 1.08,
+          "material": "stone",
+          "segments": 8,
+          "axis": "y"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            -0.31,
+            0.9500000000000001,
+            -0.2
+          ],
+          "bottom_radius": 0.009,
+          "top_radius": 0.22,
+          "height": 0.74,
+          "material": "stone",
+          "segments": 8,
+          "axis": "y"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            0.18,
+            0.865,
+            0.1
+          ],
+          "bottom_radius": 0.009,
+          "top_radius": 0.26,
+          "height": 0.91,
+          "material": "stone",
+          "segments": 8,
+          "axis": "y"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            0.64,
+            0.7200000000000001,
+            0.21
+          ],
+          "bottom_radius": 0.009,
+          "top_radius": 0.33,
+          "height": 1.2,
+          "material": "stone",
+          "segments": 8,
+          "axis": "y"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.38,
+            0
+          ],
+          "size": [
+            2.04,
+            0.12,
+            0.83
+          ],
+          "material": "stone"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "ceiling",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_cave_survey_tripod",
+      "label": "Cave expedition survey tripod",
+      "category": "site_specific",
+      "maps": [
+        "WLD-03",
+        "WLD-05",
+        "WLD-08"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0.44,
+            0.61,
+            0
+          ],
+          "size": [
+            0.09,
+            1.18,
+            0.12
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.2183231215906395,
+            0.61,
+            0.38201441671606956
+          ],
+          "size": [
+            0.09,
+            1.18,
+            0.12
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.21953884522510175,
+            0.61,
+            -0.3813170536931555
+          ],
+          "size": [
+            0.09,
+            1.18,
+            0.12
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.23,
+            0
+          ],
+          "radius": 0.17,
+          "height": 0.15,
+          "material": "metal",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.45,
+            0
+          ],
+          "radius": 0.14,
+          "height": 0.31,
+          "material": "industrial",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.53,
+            -0.2
+          ],
+          "radius": 0.13,
+          "height": 0.38,
+          "material": "glass",
+          "axis": "z",
+          "segments": 10
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_lookout_fire_map_table",
+      "label": "Fire lookout survey chart table",
+      "category": "site_specific",
+      "maps": [
+        "WLD-04"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.88,
+            0
+          ],
+          "size": [
+            2.2,
+            0.12,
+            1.12
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.93,
+            0.43,
+            -0.45
+          ],
+          "size": [
+            0.12,
+            0.84,
+            0.12
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.93,
+            0.43,
+            0.45
+          ],
+          "size": [
+            0.12,
+            0.84,
+            0.12
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.93,
+            0.43,
+            -0.45
+          ],
+          "size": [
+            0.12,
+            0.84,
+            0.12
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.93,
+            0.43,
+            0.45
+          ],
+          "size": [
+            0.12,
+            0.84,
+            0.12
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.97,
+            0
+          ],
+          "size": [
+            1.91,
+            0.038,
+            0.94
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.52,
+            1.01,
+            0
+          ],
+          "size": [
+            0.045,
+            0.024,
+            0.68
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.52,
+            1.01,
+            0
+          ],
+          "size": [
+            0.045,
+            0.024,
+            0.68
+          ],
+          "material": "accent"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_lookout_reservoir_tank",
+      "label": "Watch tower reserve water cistern",
+      "category": "site_specific",
+      "maps": [
+        "WLD-04",
+        "WLD-01"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.55,
+            0.28,
+            -0.55
+          ],
+          "size": [
+            0.12,
+            0.55,
+            0.13
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.55,
+            0.28,
+            0.55
+          ],
+          "size": [
+            0.12,
+            0.55,
+            0.13
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.55,
+            0.28,
+            -0.55
+          ],
+          "size": [
+            0.12,
+            0.55,
+            0.13
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.55,
+            0.28,
+            0.55
+          ],
+          "size": [
+            0.12,
+            0.55,
+            0.13
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.09,
+            0
+          ],
+          "radius": 0.66,
+          "height": 0.93,
+          "material": "industrial",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.6,
+            0
+          ],
+          "radius": 0.67,
+          "height": 0.1,
+          "material": "metal",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.69,
+            -0.7
+          ],
+          "radius": 0.07,
+          "height": 0.2,
+          "material": "bronze",
+          "axis": "z",
+          "segments": 8
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_rail_straight_track_bay",
+      "label": "Straight railway rail-and-tie module",
+      "category": "site_specific",
+      "maps": [
+        "WLD-12",
+        "WLD-01"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.24,
+            -1.56
+          ],
+          "size": [
+            1.91,
+            0.14,
+            0.18
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.24,
+            -1.12
+          ],
+          "size": [
+            1.91,
+            0.14,
+            0.18
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.24,
+            -0.68
+          ],
+          "size": [
+            1.91,
+            0.14,
+            0.18
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.24,
+            -0.24
+          ],
+          "size": [
+            1.91,
+            0.14,
+            0.18
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.24,
+            0.19999999999999996
+          ],
+          "size": [
+            1.91,
+            0.14,
+            0.18
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.24,
+            0.6400000000000001
+          ],
+          "size": [
+            1.91,
+            0.14,
+            0.18
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.24,
+            1.08
+          ],
+          "size": [
+            1.91,
+            0.14,
+            0.18
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.24,
+            1.52
+          ],
+          "size": [
+            1.91,
+            0.14,
+            0.18
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.72,
+            0.36,
+            0
+          ],
+          "size": [
+            0.13,
+            0.15,
+            3.48
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.72,
+            0.36,
+            0
+          ],
+          "size": [
+            0.13,
+            0.15,
+            3.48
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.08,
+            0
+          ],
+          "size": [
+            2.14,
+            0.14,
+            3.67
+          ],
+          "material": "stone"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_rail_cargo_platform",
+      "label": "Railway timber goods loading platform",
+      "category": "site_specific",
+      "maps": [
+        "WLD-12"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.84,
+            0
+          ],
+          "size": [
+            3.57,
+            0.19,
+            1.63
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.4,
+            0.38,
+            -0.61
+          ],
+          "size": [
+            0.13,
+            0.72,
+            0.14
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.4,
+            0.38,
+            0.61
+          ],
+          "size": [
+            0.13,
+            0.72,
+            0.14
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.4,
+            0.38,
+            -0.61
+          ],
+          "size": [
+            0.13,
+            0.72,
+            0.14
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.4,
+            0.38,
+            0.61
+          ],
+          "size": [
+            0.13,
+            0.72,
+            0.14
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.92,
+            0.44,
+            0
+          ],
+          "size": [
+            1.21,
+            0.12,
+            1.29
+          ],
+          "material": "wood",
+          "roll": -0.1570796
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1,
+            -0.7
+          ],
+          "size": [
+            3.62,
+            0.09,
+            0.09
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1,
+            0.7
+          ],
+          "size": [
+            3.62,
+            0.09,
+            0.09
+          ],
+          "material": "metal"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_rail_telegraph_pole",
+      "label": "Railway telegraph pole and insulators",
+      "category": "site_specific",
+      "maps": [
+        "WLD-12",
+        "WLD-01"
+      ],
+      "parts": [
+        {
+          "type": "frustum",
+          "p": [
+            0,
+            1.88,
+            0
+          ],
+          "bottom_radius": 0.18,
+          "top_radius": 0.09,
+          "height": 3.76,
+          "material": "wood",
+          "segments": 10,
+          "axis": "y"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            3.2,
+            0
+          ],
+          "size": [
+            2.34,
+            0.14,
+            0.15
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.95,
+            3.3,
+            0
+          ],
+          "radius": 0.075,
+          "height": 0.2,
+          "material": "ceramic",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.49,
+            3.3,
+            0
+          ],
+          "radius": 0.075,
+          "height": 0.2,
+          "material": "ceramic",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.49,
+            3.3,
+            0
+          ],
+          "radius": 0.075,
+          "height": 0.2,
+          "material": "ceramic",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.95,
+            3.3,
+            0
+          ],
+          "radius": 0.075,
+          "height": 0.2,
+          "material": "ceramic",
+          "axis": "y",
+          "segments": 8
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.12,
+            0
+          ],
+          "size": [
+            0.53,
+            0.24,
+            0.53
+          ],
+          "material": "stone"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_rail_signal_relay_box",
+      "label": "Railway signal relay switch cabinet",
+      "category": "site_specific",
+      "maps": [
+        "WLD-12"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.73,
+            0
+          ],
+          "size": [
+            1.14,
+            1.46,
+            0.73
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.82,
+            -0.39
+          ],
+          "size": [
+            1.01,
+            1.12,
+            0.035
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.25,
+            0.48,
+            -0.42
+          ],
+          "size": [
+            0.21,
+            0.16,
+            0.04
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.25,
+            0.82,
+            -0.42
+          ],
+          "size": [
+            0.21,
+            0.16,
+            0.04
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.25,
+            1.15,
+            -0.42
+          ],
+          "size": [
+            0.21,
+            0.16,
+            0.04
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.25,
+            0.48,
+            -0.42
+          ],
+          "size": [
+            0.21,
+            0.16,
+            0.04
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.25,
+            0.82,
+            -0.42
+          ],
+          "size": [
+            0.21,
+            0.16,
+            0.04
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.25,
+            1.15,
+            -0.42
+          ],
+          "size": [
+            0.21,
+            0.16,
+            0.04
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.43,
+            0.84,
+            -0.44
+          ],
+          "size": [
+            0.05,
+            0.18,
+            0.06
+          ],
+          "material": "silver"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.09,
+            0
+          ],
+          "size": [
+            1.27,
+            0.18,
+            0.82
+          ],
+          "material": "stone"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_rail_handcar",
+      "label": "Inert manually operated railway handcar",
+      "category": "site_specific",
+      "maps": [
+        "WLD-12"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.58,
+            0
+          ],
+          "size": [
+            1.5,
+            0.16,
+            2.38
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.79,
+            0.35,
+            -0.79
+          ],
+          "radius": 0.28,
+          "height": 0.13,
+          "material": "metal",
+          "axis": "x",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.79,
+            0.35,
+            0.79
+          ],
+          "radius": 0.28,
+          "height": 0.13,
+          "material": "metal",
+          "axis": "x",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.79,
+            0.35,
+            -0.79
+          ],
+          "radius": 0.28,
+          "height": 0.13,
+          "material": "metal",
+          "axis": "x",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.79,
+            0.35,
+            0.79
+          ],
+          "radius": 0.28,
+          "height": 0.13,
+          "material": "metal",
+          "axis": "x",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.14,
+            0
+          ],
+          "size": [
+            0.09,
+            1.03,
+            0.1
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.65,
+            0
+          ],
+          "size": [
+            1.24,
+            0.1,
+            0.11
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.55,
+            1.24,
+            0
+          ],
+          "size": [
+            0.12,
+            0.81,
+            0.13
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.55,
+            1.24,
+            0
+          ],
+          "size": [
+            0.12,
+            0.81,
+            0.13
+          ],
+          "material": "wood"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_rail_coal_bunker",
+      "label": "Open timber coal storage bunker",
+      "category": "site_specific",
+      "maps": [
+        "WLD-12",
+        "WLD-09"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.73,
+            0.65,
+            0
+          ],
+          "size": [
+            0.14,
+            1.25,
+            1.57
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.73,
+            0.65,
+            0
+          ],
+          "size": [
+            0.14,
+            1.25,
+            1.57
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.65,
+            -0.7
+          ],
+          "size": [
+            1.46,
+            1.25,
+            0.13
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.65,
+            0.7
+          ],
+          "size": [
+            1.46,
+            1.25,
+            0.13
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.1,
+            0
+          ],
+          "size": [
+            1.52,
+            0.2,
+            1.56
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            -0.32,
+            1.14,
+            -0.26
+          ],
+          "bottom_radius": 0.34,
+          "top_radius": 0,
+          "height": 0.53,
+          "material": "dark",
+          "segments": 7,
+          "axis": "y"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            0.32,
+            1.19,
+            0.22
+          ],
+          "bottom_radius": 0.38,
+          "top_radius": 0,
+          "height": 0.61,
+          "material": "dark",
+          "segments": 7,
+          "axis": "y"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_lighthouse_service_step",
+      "label": "Lighthouse maintenance staircase study",
+      "category": "site_specific",
+      "maps": [
+        "WLD-14"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.13,
+            -1.13
+          ],
+          "size": [
+            1.58,
+            0.26,
+            0.47
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.35,
+            -0.7399999999999999
+          ],
+          "size": [
+            1.58,
+            0.26,
+            0.47
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.5700000000000001,
+            -0.34999999999999987
+          ],
+          "size": [
+            1.58,
+            0.26,
+            0.47
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.79,
+            0.040000000000000036
+          ],
+          "size": [
+            1.58,
+            0.26,
+            0.47
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.01,
+            0.43000000000000016
+          ],
+          "size": [
+            1.58,
+            0.26,
+            0.47
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.23,
+            0.8200000000000003
+          ],
+          "size": [
+            1.58,
+            0.26,
+            0.47
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.9,
+            0.72,
+            0
+          ],
+          "size": [
+            0.085,
+            1.4,
+            2.44
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.9,
+            0.72,
+            0
+          ],
+          "size": [
+            0.085,
+            1.4,
+            2.44
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.9,
+            1.41,
+            0
+          ],
+          "size": [
+            0.065,
+            0.07,
+            2.42
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.9,
+            1.41,
+            0
+          ],
+          "size": [
+            0.065,
+            0.07,
+            2.42
+          ],
+          "material": "metal"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_lighthouse_oil_barrel_rack",
+      "label": "Three lightstation supply oil drums",
+      "category": "site_specific",
+      "maps": [
+        "WLD-14",
+        "WLD-06"
+      ],
+      "parts": [
+        {
+          "type": "cylinder",
+          "p": [
+            -0.64,
+            0.62,
+            0
+          ],
+          "radius": 0.28,
+          "height": 1.12,
+          "material": "industrial",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.62,
+            0
+          ],
+          "radius": 0.28,
+          "height": 1.12,
+          "material": "industrial",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.64,
+            0.62,
+            0
+          ],
+          "radius": 0.28,
+          "height": 1.12,
+          "material": "industrial",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.64,
+            1.21,
+            0
+          ],
+          "radius": 0.3,
+          "height": 0.07,
+          "material": "metal",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.21,
+            0
+          ],
+          "radius": 0.3,
+          "height": 0.07,
+          "material": "metal",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.64,
+            1.21,
+            0
+          ],
+          "radius": 0.3,
+          "height": 0.07,
+          "material": "metal",
+          "axis": "y",
+          "segments": 12
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.14,
+            0
+          ],
+          "size": [
+            2.18,
+            0.25,
+            0.91
+          ],
+          "material": "wood"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_lighthouse_weather_vane",
+      "label": "Morrow Point rooftop weather vane",
+      "category": "site_specific",
+      "maps": [
+        "WLD-14"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.12,
+            0
+          ],
+          "size": [
+            0.63,
+            0.24,
+            0.62
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.28,
+            0
+          ],
+          "radius": 0.07,
+          "height": 2.3,
+          "material": "metal",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.2,
+            0
+          ],
+          "size": [
+            1.16,
+            0.08,
+            0.09
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.39,
+            2.2,
+            0
+          ],
+          "size": [
+            0.3,
+            0.22,
+            0.11
+          ],
+          "material": "accent"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            -0.46,
+            2.2,
+            0
+          ],
+          "bottom_radius": 0.22,
+          "top_radius": 0,
+          "height": 0.44,
+          "material": "metal",
+          "segments": 8,
+          "axis": "x"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_lighthouse_rescue_lifebuoy",
+      "label": "Open-ring maritime rescue float and hanger",
+      "category": "architecture",
+      "maps": [
+        "WLD-14",
+        "WLD-06",
+        "WLD-15"
+      ],
+      "parts": [
+        {
+          "type": "cylinder",
+          "p": [
+            0.42,
+            1.14,
+            -0.22
+          ],
+          "radius": 0.108,
+          "height": 0.21,
+          "material": "redcloth",
+          "axis": "z",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.36373,
+            1.3499999999999999,
+            -0.22
+          ],
+          "radius": 0.108,
+          "height": 0.21,
+          "material": "ivory",
+          "axis": "z",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.21,
+            1.503730669589464,
+            -0.22
+          ],
+          "radius": 0.108,
+          "height": 0.21,
+          "material": "ivory",
+          "axis": "z",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.5599999999999998,
+            -0.22
+          ],
+          "radius": 0.108,
+          "height": 0.21,
+          "material": "redcloth",
+          "axis": "z",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.21,
+            1.503730669589464,
+            -0.22
+          ],
+          "radius": 0.108,
+          "height": 0.21,
+          "material": "ivory",
+          "axis": "z",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.36373,
+            1.3499999999999999,
+            -0.22
+          ],
+          "radius": 0.108,
+          "height": 0.21,
+          "material": "ivory",
+          "axis": "z",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.42,
+            1.14,
+            -0.22
+          ],
+          "radius": 0.108,
+          "height": 0.21,
+          "material": "redcloth",
+          "axis": "z",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.36373,
+            0.93,
+            -0.22
+          ],
+          "radius": 0.108,
+          "height": 0.21,
+          "material": "ivory",
+          "axis": "z",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.21,
+            0.7762693304105358,
+            -0.22
+          ],
+          "radius": 0.108,
+          "height": 0.21,
+          "material": "ivory",
+          "axis": "z",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.72,
+            -0.22
+          ],
+          "radius": 0.108,
+          "height": 0.21,
+          "material": "redcloth",
+          "axis": "z",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.21,
+            0.7762693304105357,
+            -0.22
+          ],
+          "radius": 0.108,
+          "height": 0.21,
+          "material": "ivory",
+          "axis": "z",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.36373,
+            0.9299999999999997,
+            -0.22
+          ],
+          "radius": 0.108,
+          "height": 0.21,
+          "material": "ivory",
+          "axis": "z",
+          "segments": 6
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.15,
+            0.1
+          ],
+          "size": [
+            0.81,
+            0.14,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.43,
+            0.68,
+            0
+          ],
+          "size": [
+            0.09,
+            1.17,
+            0.18
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.43,
+            0.68,
+            0
+          ],
+          "size": [
+            0.09,
+            1.17,
+            0.18
+          ],
+          "material": "wood"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "wall",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_lighthouse_landing_capstan",
+      "label": "Static coastal service capstan",
+      "category": "site_specific",
+      "maps": [
+        "WLD-14",
+        "WLD-06"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.13,
+            0
+          ],
+          "size": [
+            1.09,
+            0.24,
+            1.08
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            0,
+            0.67,
+            0
+          ],
+          "bottom_radius": 0.43,
+          "top_radius": 0.27,
+          "height": 0.91,
+          "material": "metal",
+          "segments": 12,
+          "axis": "y"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.14,
+            0
+          ],
+          "radius": 0.31,
+          "height": 0.11,
+          "material": "industrial",
+          "axis": "y",
+          "segments": 10
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.24,
+            0
+          ],
+          "size": [
+            1.85,
+            0.075,
+            0.09
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.24,
+            0
+          ],
+          "size": [
+            0.09,
+            0.075,
+            1.85
+          ],
+          "material": "wood"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_mortuary_casket_bier",
+      "label": "Closed coffin on ceremonial bier",
+      "category": "site_specific",
+      "maps": [
+        "WLD-07-MORTUARY",
+        "WLD-07",
+        "CHURCH"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.52,
+            0.34,
+            0
+          ],
+          "size": [
+            0.12,
+            0.68,
+            1.88
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.52,
+            0.34,
+            0
+          ],
+          "size": [
+            0.12,
+            0.68,
+            1.88
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.78,
+            0
+          ],
+          "size": [
+            1.02,
+            0.15,
+            2.16
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.06,
+            0
+          ],
+          "size": [
+            0.89,
+            0.42,
+            2.04
+          ],
+          "material": "dark"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.33,
+            0
+          ],
+          "size": [
+            1.08,
+            0.11,
+            2.23
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.49,
+            1.09,
+            0
+          ],
+          "size": [
+            0.08,
+            0.41,
+            1.88
+          ],
+          "material": "gilt"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.49,
+            1.09,
+            0
+          ],
+          "size": [
+            0.08,
+            0.41,
+            1.88
+          ],
+          "material": "gilt"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_mortuary_instrument_trolley",
+      "label": "Mortuary stainless tray and castor cart",
+      "category": "site_specific",
+      "maps": [
+        "WLD-07-MORTUARY",
+        "ASYLUM"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.86,
+            0
+          ],
+          "size": [
+            1.09,
+            0.1,
+            0.65
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.42,
+            0.42,
+            -0.27
+          ],
+          "size": [
+            0.08,
+            0.78,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.42,
+            0.42,
+            0.27
+          ],
+          "size": [
+            0.08,
+            0.78,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.42,
+            0.42,
+            -0.27
+          ],
+          "size": [
+            0.08,
+            0.78,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.42,
+            0.42,
+            0.27
+          ],
+          "size": [
+            0.08,
+            0.78,
+            0.08
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.42,
+            0.08,
+            -0.27
+          ],
+          "radius": 0.075,
+          "height": 0.1,
+          "material": "dark",
+          "axis": "x",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.42,
+            0.08,
+            0.27
+          ],
+          "radius": 0.075,
+          "height": 0.1,
+          "material": "dark",
+          "axis": "x",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.42,
+            0.08,
+            -0.27
+          ],
+          "radius": 0.075,
+          "height": 0.1,
+          "material": "dark",
+          "axis": "x",
+          "segments": 8
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.42,
+            0.08,
+            0.27
+          ],
+          "radius": 0.075,
+          "height": 0.1,
+          "material": "dark",
+          "axis": "x",
+          "segments": 8
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.98,
+            0
+          ],
+          "size": [
+            0.69,
+            0.04,
+            0.36
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.12,
+            1.04,
+            0
+          ],
+          "size": [
+            0.22,
+            0.035,
+            0.07
+          ],
+          "material": "silver"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_mortuary_cold_drawer_wall",
+      "label": "Three-drawer mortuary cold storage bank",
+      "category": "site_specific",
+      "maps": [
+        "WLD-07-MORTUARY",
+        "ASYLUM"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.71,
+            0.94,
+            0
+          ],
+          "size": [
+            0.66,
+            1.82,
+            0.82
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.94,
+            0
+          ],
+          "size": [
+            0.66,
+            1.82,
+            0.82
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.71,
+            0.94,
+            0
+          ],
+          "size": [
+            0.66,
+            1.82,
+            0.82
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.71,
+            0.92,
+            -0.43
+          ],
+          "size": [
+            0.55,
+            1.57,
+            0.028
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.92,
+            -0.43
+          ],
+          "size": [
+            0.55,
+            1.57,
+            0.028
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.71,
+            0.92,
+            -0.43
+          ],
+          "size": [
+            0.55,
+            1.57,
+            0.028
+          ],
+          "material": "industrial"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.71,
+            0.77,
+            -0.48
+          ],
+          "size": [
+            0.25,
+            0.075,
+            0.075
+          ],
+          "material": "silver"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.77,
+            -0.48
+          ],
+          "size": [
+            0.25,
+            0.075,
+            0.075
+          ],
+          "material": "silver"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.71,
+            0.77,
+            -0.48
+          ],
+          "size": [
+            0.25,
+            0.075,
+            0.075
+          ],
+          "material": "silver"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.1,
+            0
+          ],
+          "size": [
+            2.19,
+            0.19,
+            0.91
+          ],
+          "material": "stone"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_mortuary_flower_wreath",
+      "label": "Freestanding funeral flower wreath",
+      "category": "site_specific",
+      "maps": [
+        "WLD-07-MORTUARY",
+        "WLD-07",
+        "CHURCH"
+      ],
+      "parts": [
+        {
+          "type": "frustum",
+          "p": [
+            0.42,
+            1.2,
+            0
+          ],
+          "bottom_radius": 0.16,
+          "top_radius": 0.06,
+          "height": 0.23,
+          "material": "redcloth",
+          "segments": 8,
+          "axis": "y"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            0.36373,
+            1.41,
+            0
+          ],
+          "bottom_radius": 0.16,
+          "top_radius": 0.06,
+          "height": 0.23,
+          "material": "patina",
+          "segments": 8,
+          "axis": "y"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            0.21,
+            1.5637306695894642,
+            0
+          ],
+          "bottom_radius": 0.16,
+          "top_radius": 0.06,
+          "height": 0.23,
+          "material": "patina",
+          "segments": 8,
+          "axis": "y"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            0,
+            1.6199999999999999,
+            0
+          ],
+          "bottom_radius": 0.16,
+          "top_radius": 0.06,
+          "height": 0.23,
+          "material": "redcloth",
+          "segments": 8,
+          "axis": "y"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            -0.21,
+            1.5637306695894642,
+            0
+          ],
+          "bottom_radius": 0.16,
+          "top_radius": 0.06,
+          "height": 0.23,
+          "material": "patina",
+          "segments": 8,
+          "axis": "y"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            -0.36373,
+            1.41,
+            0
+          ],
+          "bottom_radius": 0.16,
+          "top_radius": 0.06,
+          "height": 0.23,
+          "material": "patina",
+          "segments": 8,
+          "axis": "y"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            -0.42,
+            1.2,
+            0
+          ],
+          "bottom_radius": 0.16,
+          "top_radius": 0.06,
+          "height": 0.23,
+          "material": "redcloth",
+          "segments": 8,
+          "axis": "y"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            -0.36373,
+            0.9900000000000001,
+            0
+          ],
+          "bottom_radius": 0.16,
+          "top_radius": 0.06,
+          "height": 0.23,
+          "material": "patina",
+          "segments": 8,
+          "axis": "y"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            -0.21,
+            0.8362693304105359,
+            0
+          ],
+          "bottom_radius": 0.16,
+          "top_radius": 0.06,
+          "height": 0.23,
+          "material": "patina",
+          "segments": 8,
+          "axis": "y"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            0,
+            0.78,
+            0
+          ],
+          "bottom_radius": 0.16,
+          "top_radius": 0.06,
+          "height": 0.23,
+          "material": "redcloth",
+          "segments": 8,
+          "axis": "y"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            0.21,
+            0.8362693304105357,
+            0
+          ],
+          "bottom_radius": 0.16,
+          "top_radius": 0.06,
+          "height": 0.23,
+          "material": "patina",
+          "segments": 8,
+          "axis": "y"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            0.36373,
+            0.9899999999999998,
+            0
+          ],
+          "bottom_radius": 0.16,
+          "top_radius": 0.06,
+          "height": 0.23,
+          "material": "patina",
+          "segments": 8,
+          "axis": "y"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.55,
+            0.1
+          ],
+          "size": [
+            0.1,
+            1.09,
+            0.12
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.12,
+            0.19
+          ],
+          "size": [
+            0.6,
+            0.24,
+            0.58
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.19,
+            0.19
+          ],
+          "size": [
+            0.23,
+            0.12,
+            0.17
+          ],
+          "material": "redcloth"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_hydro_handwheel_valve",
+      "label": "Manual industrial service handwheel",
+      "category": "site_specific",
+      "maps": [
+        "WLD-09",
+        "WLD-13",
+        "WLD-15"
+      ],
+      "parts": [
+        {
+          "type": "cylinder",
+          "p": [
+            0.39,
+            1.16,
+            -0.21
+          ],
+          "radius": 0.05,
+          "height": 0.21,
+          "material": "metal",
+          "axis": "z",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.33775,
+            1.355,
+            -0.21
+          ],
+          "radius": 0.05,
+          "height": 0.21,
+          "material": "metal",
+          "axis": "z",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.195,
+            1.497749907475931,
+            -0.21
+          ],
+          "radius": 0.05,
+          "height": 0.21,
+          "material": "metal",
+          "axis": "z",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.5499999999999998,
+            -0.21
+          ],
+          "radius": 0.05,
+          "height": 0.21,
+          "material": "metal",
+          "axis": "z",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.195,
+            1.497749907475931,
+            -0.21
+          ],
+          "radius": 0.05,
+          "height": 0.21,
+          "material": "metal",
+          "axis": "z",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.33775,
+            1.355,
+            -0.21
+          ],
+          "radius": 0.05,
+          "height": 0.21,
+          "material": "metal",
+          "axis": "z",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.39,
+            1.16,
+            -0.21
+          ],
+          "radius": 0.05,
+          "height": 0.21,
+          "material": "metal",
+          "axis": "z",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.33775,
+            0.9650000000000001,
+            -0.21
+          ],
+          "radius": 0.05,
+          "height": 0.21,
+          "material": "metal",
+          "axis": "z",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            -0.195,
+            0.822250092524069,
+            -0.21
+          ],
+          "radius": 0.05,
+          "height": 0.21,
+          "material": "metal",
+          "axis": "z",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.7699999999999999,
+            -0.21
+          ],
+          "radius": 0.05,
+          "height": 0.21,
+          "material": "metal",
+          "axis": "z",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.195,
+            0.8222500925240688,
+            -0.21
+          ],
+          "radius": 0.05,
+          "height": 0.21,
+          "material": "metal",
+          "axis": "z",
+          "segments": 6
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0.33775,
+            0.9649999999999997,
+            -0.21
+          ],
+          "radius": 0.05,
+          "height": 0.21,
+          "material": "metal",
+          "axis": "z",
+          "segments": 6
+        },
+        {
+          "type": "box",
+          "p": [
+            0.2,
+            1.16,
+            -0.23
+          ],
+          "size": [
+            0.07,
+            0.37,
+            0.06
+          ],
+          "material": "metal",
+          "roll": 0
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.3599999999999999,
+            -0.23
+          ],
+          "size": [
+            0.07,
+            0.37,
+            0.06
+          ],
+          "material": "metal",
+          "roll": 1.5707963
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.2,
+            1.16,
+            -0.23
+          ],
+          "size": [
+            0.07,
+            0.37,
+            0.06
+          ],
+          "material": "metal",
+          "roll": 3.1415927
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.96,
+            -0.23
+          ],
+          "size": [
+            0.07,
+            0.37,
+            0.06
+          ],
+          "material": "metal",
+          "roll": 4.712389
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            1.16,
+            -0.2
+          ],
+          "radius": 0.13,
+          "height": 0.12,
+          "material": "bronze",
+          "axis": "z",
+          "segments": 10
+        },
+        {
+          "type": "cylinder",
+          "p": [
+            0,
+            0.56,
+            0
+          ],
+          "radius": 0.14,
+          "height": 1.01,
+          "material": "industrial",
+          "axis": "y",
+          "segments": 10
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_marsh_deadwood_snag",
+      "label": "Tapered flooded broken tree and limb",
+      "category": "site_specific",
+      "maps": [
+        "WLD-11",
+        "WLD-02"
+      ],
+      "parts": [
+        {
+          "type": "frustum",
+          "p": [
+            0,
+            1.12,
+            0
+          ],
+          "bottom_radius": 0.36,
+          "top_radius": 0.12,
+          "height": 2.24,
+          "material": "wood",
+          "segments": 9,
+          "axis": "y"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            0.17,
+            1.85,
+            0
+          ],
+          "bottom_radius": 0.15,
+          "top_radius": 0,
+          "height": 0.85,
+          "material": "wood",
+          "segments": 8,
+          "axis": "y"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.38,
+            1.32,
+            0
+          ],
+          "size": [
+            0.88,
+            0.13,
+            0.15
+          ],
+          "material": "wood",
+          "roll": 0.6632251
+        },
+        {
+          "type": "box",
+          "p": [
+            0.4,
+            0.91,
+            0
+          ],
+          "size": [
+            0.81,
+            0.13,
+            0.15
+          ],
+          "material": "wood",
+          "roll": -0.5410521
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.08,
+            0
+          ],
+          "size": [
+            1.21,
+            0.16,
+            0.93
+          ],
+          "material": "stone"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_marsh_hunting_blind",
+      "label": "Raised timber marsh observation blind",
+      "category": "site_specific",
+      "maps": [
+        "WLD-11",
+        "WLD-02"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.65,
+            0.69,
+            -0.54
+          ],
+          "size": [
+            0.13,
+            1.38,
+            0.14
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.65,
+            0.69,
+            0.54
+          ],
+          "size": [
+            0.13,
+            1.38,
+            0.14
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.65,
+            0.69,
+            -0.54
+          ],
+          "size": [
+            0.13,
+            1.38,
+            0.14
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.65,
+            0.69,
+            0.54
+          ],
+          "size": [
+            0.13,
+            1.38,
+            0.14
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            1.48,
+            0
+          ],
+          "size": [
+            1.55,
+            0.14,
+            1.29
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.63,
+            2.11,
+            0.48
+          ],
+          "size": [
+            0.12,
+            1.22,
+            0.11
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.63,
+            2.11,
+            0.48
+          ],
+          "size": [
+            0.12,
+            1.22,
+            0.11
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.69,
+            0.28
+          ],
+          "size": [
+            1.6,
+            0.12,
+            1.15
+          ],
+          "material": "canvas"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.31,
+            -0.53
+          ],
+          "size": [
+            1.45,
+            0.72,
+            0.11
+          ],
+          "material": "wood"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_ship_open_cargo_hatch",
+      "label": "Uncapped ship deck hatch coaming",
+      "category": "site_specific",
+      "maps": [
+        "WLD-15"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.92,
+            0.38,
+            0
+          ],
+          "size": [
+            0.17,
+            0.76,
+            1.52
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.92,
+            0.38,
+            0
+          ],
+          "size": [
+            0.17,
+            0.76,
+            1.52
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.38,
+            -0.66
+          ],
+          "size": [
+            2.03,
+            0.76,
+            0.15
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.38,
+            0.66
+          ],
+          "size": [
+            2.03,
+            0.76,
+            0.15
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.94,
+            0.08,
+            0
+          ],
+          "size": [
+            0.18,
+            0.16,
+            1.76
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.94,
+            0.08,
+            0
+          ],
+          "size": [
+            0.18,
+            0.16,
+            1.76
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.8,
+            -0.7
+          ],
+          "size": [
+            2.29,
+            0.09,
+            0.12
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            0.8,
+            0.7
+          ],
+          "size": [
+            2.29,
+            0.09,
+            0.12
+          ],
+          "material": "wood"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_wharf_open_fish_crates",
+      "label": "Two wharf storage fish bins",
+      "category": "site_specific",
+      "maps": [
+        "WLD-06",
+        "WLD-13",
+        "WLD-15"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -0.6,
+            0.11,
+            0
+          ],
+          "size": [
+            0.98,
+            0.17,
+            0.7
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.04,
+            0.39,
+            0
+          ],
+          "size": [
+            0.07,
+            0.56,
+            0.72
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.15999999999999998,
+            0.39,
+            0
+          ],
+          "size": [
+            0.07,
+            0.56,
+            0.72
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.6,
+            0.39,
+            -0.32
+          ],
+          "size": [
+            0.93,
+            0.56,
+            0.075
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            -0.6,
+            0.39,
+            0.32
+          ],
+          "size": [
+            0.93,
+            0.56,
+            0.075
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            -0.6,
+            0.72,
+            0
+          ],
+          "bottom_radius": 0.24,
+          "top_radius": 0,
+          "height": 0.21,
+          "material": "silver",
+          "segments": 6,
+          "axis": "y"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.6,
+            0.11,
+            0
+          ],
+          "size": [
+            0.98,
+            0.17,
+            0.7
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.15999999999999998,
+            0.39,
+            0
+          ],
+          "size": [
+            0.07,
+            0.56,
+            0.72
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.04,
+            0.39,
+            0
+          ],
+          "size": [
+            0.07,
+            0.56,
+            0.72
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.6,
+            0.39,
+            -0.32
+          ],
+          "size": [
+            0.93,
+            0.56,
+            0.075
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "box",
+          "p": [
+            0.6,
+            0.39,
+            0.32
+          ],
+          "size": [
+            0.93,
+            0.56,
+            0.075
+          ],
+          "material": "wood"
+        },
+        {
+          "type": "frustum",
+          "p": [
+            0.6,
+            0.72,
+            0
+          ],
+          "bottom_radius": 0.24,
+          "top_radius": 0,
+          "height": 0.21,
+          "material": "silver",
+          "segments": 6,
+          "axis": "y"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
+      }
+    },
+    {
+      "id": "level_blockout_bunker_support_arch",
+      "label": "Braced steel bunker passage frame",
+      "category": "site_specific",
+      "maps": [
+        "WLD-17",
+        "WLD-18"
+      ],
+      "parts": [
+        {
+          "type": "box",
+          "p": [
+            -1.27,
+            1.26,
+            0
+          ],
+          "size": [
+            0.22,
+            2.52,
+            0.29
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.27,
+            1.26,
+            0
+          ],
+          "size": [
+            0.22,
+            2.52,
+            0.29
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            0,
+            2.57,
+            0
+          ],
+          "size": [
+            2.72,
+            0.2,
+            0.33
+          ],
+          "material": "metal"
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.01,
+            2.11,
+            0
+          ],
+          "size": [
+            0.45,
+            0.13,
+            0.28
+          ],
+          "material": "metal",
+          "roll": 0.5235988
+        },
+        {
+          "type": "box",
+          "p": [
+            1.01,
+            2.11,
+            0
+          ],
+          "size": [
+            0.45,
+            0.13,
+            0.28
+          ],
+          "material": "metal",
+          "roll": -0.5235988
+        },
+        {
+          "type": "box",
+          "p": [
+            -1.3,
+            0.12,
+            0
+          ],
+          "size": [
+            0.38,
+            0.24,
+            0.41
+          ],
+          "material": "stone"
+        },
+        {
+          "type": "box",
+          "p": [
+            1.3,
+            0.12,
+            0
+          ],
+          "size": [
+            0.38,
+            0.24,
+            0.41
+          ],
+          "material": "stone"
+        }
+      ],
+      "notes": "Independent source-only location-specific blockout; no collision, navigation, lighting, simulation, pickups or runtime placement.",
+      "authoring_stage": "primitive_blockout",
+      "runtime_approved": false,
+      "authoring_hints": {
+        "mount": "floor",
+        "front": "-Z",
+        "units": "metres",
+        "pivot": "authoring-local origin: floor contact for freestanding fixtures",
+        "runtime_placement": false,
+        "review_required": [
+          "four-view native render",
+          "origin and room fit",
+          "material UV",
+          "collision and navmesh",
+          "functional mounting",
+          "world performance"
+        ]
       }
     }
   ]

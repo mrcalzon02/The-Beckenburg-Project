@@ -11,7 +11,7 @@ import fit
 ROOT=Path(__file__).resolve().parent
 catalog=json.loads((ROOT/"catalog.json").read_text(encoding="utf-8"))
 models={m["id"]:m for m in catalog["models"]}
-assert len(models)==len(catalog["models"])==221
+assert len(models)==len(catalog["models"])==253
 assert len(catalog["sites"])==29
 assert all(m["runtime_approved"] is False for m in models.values())
 
@@ -119,3 +119,22 @@ doc,stored=read_glb(ROOT/"models"/(rocks["id"]+".glb"))
 assert raw==stored and 0<triangle_count<=3500
 assert doc["extras"]["runtimeApproved"] is False
 print("PASS tapered cavern spires and deterministic source GLB")
+
+# Additional location-specific source-only models and open-shape review.
+new_map_models=("camp_pine_cluster","camp_picnic_table","camp_ranger_kiosk","camp_water_tank","camp_cook_shelter","camp_footbridge_module","cave_rockfall_heap","cave_hanging_stalactites","cave_survey_tripod","lookout_fire_map_table","lookout_reservoir_tank","rail_straight_track_bay","rail_cargo_platform","rail_telegraph_pole","rail_signal_relay_box","rail_handcar","rail_coal_bunker","lighthouse_service_step","lighthouse_oil_barrel_rack","lighthouse_weather_vane","lighthouse_rescue_lifebuoy","lighthouse_landing_capstan","mortuary_casket_bier","mortuary_instrument_trolley","mortuary_cold_drawer_wall","mortuary_flower_wreath","hydro_handwheel_valve","marsh_deadwood_snag","marsh_hunting_blind","ship_open_cargo_hatch","wharf_open_fish_crates","bunker_support_arch",)
+assert len(new_map_models)==32
+for suffix in new_map_models:
+    model=item(suffix)
+    assert model["runtime_approved"] is False
+    assert model["authoring_hints"]["runtime_placement"] is False
+    bounds,lo,hi=fit.footprint(model,0,0,0)
+    assert lo>=-.08 and hi<=4.1, (suffix,lo,hi)
+    assert bounds[2]-bounds[0]<6 and bounds[3]-bounds[1]<6, suffix
+    raw,count=glb(model)
+    doc,stored=read_glb(ROOT/"models"/(model["id"]+".glb"))
+    assert stored==raw and 0<count<=3500 and doc["extras"]["runtimeApproved"] is False
+assert sum(p["type"]=="frustum" for m in catalog["models"] for p in m["parts"])>=30
+assert len(item("rail_straight_track_bay")["parts"])>=11
+assert len(item("lighthouse_rescue_lifebuoy")["parts"])>=12
+assert all(len(s["prototypes"])==len(set(s["prototypes"])) for s in catalog["sites"])
+print("PASS: 32 location-specific independent GLBs, source-only flags and measured fit")
