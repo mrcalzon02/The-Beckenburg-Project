@@ -78,6 +78,11 @@ Each output includes:
   floor/bay/stand coordinates for every displayed model.
 - `gallery-wing-NNN-floor-NN-bay-NN.png`: **actual renderer** scene images
   with captions placed below, not on top of the inspected materials.
+- `gallery-model-audits.csv`: native GLB/sprite decoding, source-only classification,
+  triangle/material/sample counts, and explicit missing-model findings.
+- `gallery-visibility.csv`: each rendered bay's changed pixels against the
+  *same camera with no model meshes*. A bay is rejected if it is blank or over
+  60% of the frame is replaced by a nearby mesh/backing plate.
 - `gallery-summary.txt`: actual captured counts and review-only status.
 
 The original `--capture --asset=...` four-angle workflow and other
@@ -98,3 +103,44 @@ correctness, collision accuracy, rendered texture artistry, editor save/import,
 site power, lighting prewarm, or multiplayer authority. Each model still needs
 normal map fitness, fit/origin/attachment, and actual scene acceptance before
 shipping.
+
+## Fast reusable native model-gallery workflow
+
+The independent `.github/workflows/dev-room-gallery-fast.yml` is intentionally
+smaller than the full DEV asset-room audit. It runs the *same* game decoder and
+3D gallery renderer, validates unique stand positions, audits model visibility,
+and uploads the PNG/CSV package as `beckenburg-dev-model-gallery`.
+It does not run every ghost sprite, character, editor, UV A/B, topology and
+infrastructure capture.
+
+Open **Actions → DEV Room Model Gallery - Fast Inspection → Run workflow**.
+Inputs are `kind` (default SOURCE_ONLY), `filter` (case-insensitive ID
+substring), `wing` (zero-based, default 0), and `limit` (default 72; set
+0 to consider all filtered models before selecting the wing). The workflow also
+re-runs when the primitive-model builder finishes successfully on main, and
+when the gallery implementation itself changes.
+
+For example, use `kind=SOURCE_ONLY`, `filter=relic_`, `wing=0` to
+inspect Castle relic studies; use `filter=level_blockout_refined_` for
+the 15 independently modeled refinement fixtures. A full library can be
+reviewed in successive wings without changing model origins or runtime
+registration.
+
+### Actual Windows evidence, November 5, 2026
+
+The complete [native DEV Room run 42130219315](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/42130219315)
+**PASSED** Java source compilation, 22 Castle relic/crypt source decodes,
+native Castle fit studies, the 12 gallery-bay model visibility checks, the
+15 refined-model GLBs and the existing per-model four-angle captures.
+
+The preceding [run 42128827427](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/42128827427)
+correctly **FAILED** after the gallery capture, revealing an off-ground
+bronze astrolabe and preserving the image of floor-2/bay-2 completely occluded
+by the previous bay's cannery machine (256,000 of 256,000 pixels changed).
+Its repaired screenshot in the passing run shows six readable cannery models
+instead; all 12 gallery-bay visibility rows are now below the obstruction
+threshold. Unique model-name suffixes replace ambiguous shared prefixes on
+the screenshot captions. Original source names remain in CSV.
+
+These are real screenshots and decoder checks, **not final production texture
+approval, in-world collision, player egress or runtime map placement approval**.
