@@ -20,6 +20,7 @@ on:
       - 'src/main/java/org/beckenburg/LevelOpeningFlyover.java'
       - 'src/test/java/org/beckenburg/LevelOpeningFlyoverTest.java'
       - 'src/test/java/org/beckenburg/LevelOpeningCinematicVisualTest.java'
+      - 'src/test/java/org/beckenburg/StaticScenePrebakeTest.java'
       - 'src/main/java/org/beckenburg/InvestigationScenePrewarm.java'
       - 'src/main/java/org/beckenburg/InvestigationGame.java'
       - 'src/main/java/org/beckenburg/DebugPerformanceHud.java'
@@ -92,6 +93,12 @@ jobs:
           if not exist build\\test mkdir build\\test
           javac --release 17 -encoding UTF-8 -cp build\\classes -d build\\test src\\test\\java\\org\\beckenburg\\PreparedSceneryRetentionTest.java || exit /b 1
           java -Djava.awt.headless=true -ea -cp build\\classes;build\\test org.beckenburg.PreparedSceneryRetentionTest || exit /b 1
+      - name: Verify Stage 2 revision-owned static geometry staging and door locality
+        shell: cmd
+        run: |
+          if not exist build\\test mkdir build\\test
+          javac --release 17 -encoding UTF-8 -cp build\\classes -d build\\test src\\test\\java\\org\\beckenburg\\StaticScenePrebakeTest.java || exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\\classes;build\\test org.beckenburg.StaticScenePrebakeTest || exit /b 1
       - name: Verify conservative static shell chunks preserve functional world geometry
         shell: cmd
         run: |
