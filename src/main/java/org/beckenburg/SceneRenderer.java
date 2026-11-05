@@ -1429,6 +1429,9 @@ public final class SceneRenderer {
     // Material IDs belong to authored immutable chunks; preparing them once
     // eliminates a LinkedHashSet scan/boxing every visible GPU frame.
     private List<int[]> preparedShellMaterials=List.of();
+    // Prepared during level loading: no per-toggle source scans to find
+    // material faces across the same static shell chunk.
+    private List<java.util.Map<Integer,List<Face>>> preparedShellMaterialFaces=List.of();
     private boolean shellChunkCulling=true;
     /** Functional reference only; no player-facing option is introduced. */
     public void setShellChunkCulling(boolean enabled){shellChunkCulling=enabled;}
@@ -1978,6 +1981,11 @@ public final class SceneRenderer {
     // shadow touching plaster must not retessellate distant timber merely
     // because both materials share one 256-face shell chunk.
     private final java.util.Map<ShellGpuKey,ShellChunk> residentShellMaterialBounds=new java.util.HashMap<>();
+    // Same camera-independent stationary rays as retained scenery, but now
+    // owned per House shell material. Door A->B->A restores only the exact
+    // receiver-side rays for that material and no other portal combination.
+    private final java.util.Map<ShellGpuKey,FixtureLighting.StationaryShadows>
+        residentShellShadows=new java.util.HashMap<>();
     /** A lighting generation only changes when factors or occlusion actually
      * change; a camera movement does NOT. Cache each chunk/material's spatial
      * regionVersion until that generation changes, but keep the original
@@ -2038,6 +2046,8 @@ public final class SceneRenderer {
         stableGpuBytes=0;
         residentShell.clear();
         residentShellMaterialBounds.clear();
+        for(var shadows:residentShellShadows.values())shadows.release();
+        residentShellShadows.clear();
         shellRegionStamps.clear();
         shellRegionLighting=null;
         shellResidentBytes=0;
@@ -2160,10 +2170,22 @@ public final class SceneRenderer {
                 int previousLod=preparingStableGpuLod;
                 preparingStableGpuFace=true;preparingStableGpuLod=lod;
                 try{
-                    for(int i=chunk.start;i<chunk.end;i++){
-                        Face face=preparedShellFaces.get(i);
-                        if(stale.contains(face.material))
-                            appendGpuFace(face,chunk.room,0,batches);
+                    for(int material:materials){
+                        if(!stale.contains(material))continue;
+                        ShellGpuKey key=new ShellGpuKey(chunkIndex,material);
+                        ShellChunk bound=residentShellMaterialBounds.get(key);
+                        var shadows=residentShellShadows.computeIfAbsent(key,
+                            ignored->fixtureLighting.newStationaryShadows());
+                        long visibilityRevision=fixtureLighting.regionOccluderVersion(
+                            bound.minX-.09,bound.minY-.09,bound.minZ-.09,
+                            bound.maxX+.09,bound.maxY+.09,bound.maxZ+.09);
+                        var prior=fixtureLighting.useStationaryShadows(shadows,visibilityRevision);
+                        try{
+                            for(Face face:preparedShellMaterialFaces.get(chunkIndex).get(material))
+                                appendGpuFace(face,chunk.room,0,batches);
+                        }finally{
+                            fixtureLighting.restoreStationaryShadows(prior);
+                        }
                     }
                 }finally{
                     preparingStableGpuFace=previousMode;
@@ -2370,6 +2392,7 @@ public final class SceneRenderer {
         preparedShellFaces=buildLevelShell(map);
         var chunks=new ArrayList<ShellChunk>();
         var materialLists=new ArrayList<int[]>();
+        var materialFaceGroups=new ArrayList<java.util.Map<Integer,List<Face>>>();
         var roomIds=new java.util.HashSet<Integer>();
         for(int from=0;from<preparedShellFaces.size();){
             int room=preparedShellFaces.get(from).room;
@@ -2383,9 +2406,11 @@ public final class SceneRenderer {
             double minX=Double.POSITIVE_INFINITY,minY=minX,minZ=minX;
             double maxX=Double.NEGATIVE_INFINITY,maxY=maxX,maxZ=maxX;
             var materialIds=new java.util.LinkedHashSet<Integer>();
+            var grouped=new java.util.LinkedHashMap<Integer,java.util.ArrayList<Face>>();
             for(int i=from;i<end;i++){
                 var face=preparedShellFaces.get(i);
                 materialIds.add(face.material);
+                grouped.computeIfAbsent(face.material,ignored->new java.util.ArrayList<>()).add(face);
                 for(Point point:new Point[]{face.a,face.b,face.c}){
                     minX=Math.min(minX,point.x);maxX=Math.max(maxX,point.x);
                     minY=Math.min(minY,point.y);maxY=Math.max(maxY,point.y);
@@ -2394,11 +2419,16 @@ public final class SceneRenderer {
             }
             chunks.add(new ShellChunk(room,from,end,minX,minY,minZ,maxX,maxY,maxZ));
             materialLists.add(materialIds.stream().mapToInt(Integer::intValue).toArray());
+            var immutableGroups=new java.util.LinkedHashMap<Integer,List<Face>>();
+            for(var entry:grouped.entrySet())
+                immutableGroups.put(entry.getKey(),List.copyOf(entry.getValue()));
+            materialFaceGroups.add(java.util.Collections.unmodifiableMap(immutableGroups));
             from=end;
         }
         shellPreparedRoomCount=roomIds.size();
         preparedShellChunks=List.copyOf(chunks);
         preparedShellMaterials=List.copyOf(materialLists);
+        preparedShellMaterialFaces=List.copyOf(materialFaceGroups);
         return preparedShellChunks;
     }
     /** Convex-box rejection: only a shared outside plane for every corner
