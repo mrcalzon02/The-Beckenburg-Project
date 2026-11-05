@@ -224,3 +224,22 @@ for short in new_round:
     doc,stored=read_glb(ROOT/"models"/(m["id"]+".glb"))
     assert stored==raw and 0<tri<=3500 and doc["extras"]["runtimeApproved"] is False
 print("PASS: 15 location-specific models, grounded rolling supports, separate hanging photo frames")
+
+
+# Castle relic source QA: the upright astrolabe must sit on its timber
+# plinth, not pierce the display shelf. A dial on the XY face uses roll
+# around local Z, never yaw around the world's vertical axis.
+astrolabe=item("relic_bronze_astrolabe")
+dial=[p for p in astrolabe["parts"] if p["material"]=="gilt"]
+assert len(dial)==13 and all("roll" in p and "yaw" not in p for p in dial)
+supports=[p for p in astrolabe["parts"]
+          if p["type"]=="cylinder" and p.get("axis","y")=="y"
+          and p["material"]=="bronze"]
+assert len(supports)>=2, "Astrolabe dial must have a load-bearing upright"
+_,low,high=fit.footprint(astrolabe,0,0,0)
+assert -.001<=low<=.02 and high>1, (low,high)
+assert astrolabe["runtime_approved"] is False
+raw,tri=glb(astrolabe)
+doc,stored=read_glb(ROOT/"models"/(astrolabe["id"]+".glb"))
+assert raw==stored and tri<=3500 and doc["extras"]["runtimeApproved"] is False
+print("PASS: astrolabe bronze dial grounded, true-face roll, support and GLB source identity")
