@@ -2869,6 +2869,9 @@ public final class SceneRenderer {
     }
     public void drawCastle(CastleHubMap map,double clock){drawCastle(map,clock,true);}
     private final boolean castleResidentEnabled=worldResidentEnabled&&!Boolean.getBoolean("beckenburg.castle.resident.disabled");
+    // Exact in-game visual acceptance compares the same world depth with and
+    // without resident sprites; gameplay defaults to actors visible.
+    boolean castleCharactersVisible=true;
     private CastleHubMap castleGeometryMap,castleLightingMap;
     private long castleGeometryRevision=-1,castleTopologyBuilds;
     private List<Face> castleStaticGeometry=List.of();
@@ -3186,7 +3189,7 @@ public final class SceneRenderer {
         if(eyeHeight-playerFloor>=.9&&eyeHeight-playerFloor<=1.8)
             EntityFootShadow.draw(pixels,depths,x,z,yaw,pitch,x,z,playerFloor-(eyeHeight-1.62),
                 .38,145,renderWidth,renderHeight,focal);
-        if(eyeHeight<2.0){
+        if(eyeHeight<2.0&&castleCharactersVisible){
             map.residents().update(map,clock,x,z);
             for(var resident:CastleRelations.Resident.values()){
                 var body=map.residents().body(resident);

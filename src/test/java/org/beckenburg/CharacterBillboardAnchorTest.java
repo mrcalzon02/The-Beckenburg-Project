@@ -31,6 +31,22 @@ public final class CharacterBillboardAnchorTest {
         check(deliberateOrbit==2,"meaningful camera orbit still changes perspective");
         check(DirectionalSprites.stableFacing("lore_master",0,0,0,
             cameraX(80),cameraZ(80))>=0,"Matthis uses the same stable pivots");
-        System.out.println("PASS castle billboards: alpha-pivot and stable view transitions");
+        // The selected front/back and side card geometries are the same
+        // fixed planes regardless of camera yaw, proximity or strafe.
+        for(int heading:new int[]{0,45,90,180,270}){
+            double[] front=DirectionalSprites.worldPlaneAxis(heading,0);
+            double[] frontDiagonal=DirectionalSprites.worldPlaneAxis(heading,1);
+            double[] side=DirectionalSprites.worldPlaneAxis(heading,2);
+            double[] sideDiagonal=DirectionalSprites.worldPlaneAxis(heading,3);
+            check(Math.abs(front[0]-frontDiagonal[0])<1e-9
+                    &&Math.abs(front[1]-frontDiagonal[1])<1e-9,
+                "front quarter views cannot rotate physical card toward camera");
+            check(Math.abs(side[0]-sideDiagonal[0])<1e-9
+                    &&Math.abs(side[1]-sideDiagonal[1])<1e-9,
+                "side quarter views cannot rotate physical card toward camera");
+            check(Math.abs(front[0]*side[0]+front[1]*side[1])<1e-9,
+                "permanent crossed character planes must be orthogonal");
+        }
+        System.out.println("PASS Castle character world-locked axes, alpha pivot and fixed spatial positions");
     }
 }

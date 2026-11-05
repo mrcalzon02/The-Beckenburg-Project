@@ -394,6 +394,17 @@ public final class DirectionalSprites {
         if(head>=foot)return;
         BufferedImage sprite=poseImage!=null?poseImage:frame(character,stableFacing(character,heading,
             entityX,entityZ,cameraX,cameraZ),phase,animationFrame);
+        // Living people are world objects, not camera-facing overlays. Their
+        // visible card is one of two static, intersecting planes defined by the
+        // actor's own heading (front/back or left/right). Only the ART view
+        // changes with player angle. World positions, feet and plane axes never
+        // chase the camera; this also eliminates screen-space floor corrections.
+        if(GroundedSpriteFeet.isGroundedHuman(character)){
+            drawWorldLockedHuman(pixels,depth,cameraX,cameraZ,yaw,pitch,
+                entityX,entityZ,heading,sprite,height,width,elevation,opacity,
+                lamp,renderWidth,renderHeight,focal);
+            return;
+        }
         // Grounded people have direction-dependent transparent bottom padding.
         // Move the image sampling rectangle (not its source pixels) so the last
         // visible shoe row stays at the actual world-floor contact projection.
@@ -459,4 +470,108 @@ public final class DirectionalSprites {
             }
         }
     }
+    /**
+     * Two orthogonal world planes are permanently attached to each actor.
+     * We choose a plane by the approved directional view but NEVER orient
+     * either plane from the camera. A human's soles are at actor floor Y.
+     * Unlike a screen-facing billboard, each pixel ray intersects the actual
+     * stationary world plane and uses the intersection's own Z-buffer depth.
+     */
+    static double[] worldPlaneAxis(int heading,int view){
+        if(heading<0||heading>=360||view<0||view>=8)
+            throw new IllegalArgumentException("invalid world-locked sprite orientation");
+        double a=Math.toRadians(heading);
+        boolean side=view>=2&&view<=6&&view!=4;
+        double x=side?Math.sin(a):Math.cos(a);
+        double z=side?Math.cos(a):-Math.sin(a);
+        // Flip image facing without changing the physical plane axis.
+        if(view>=4){x=-x;z=-z;}
+        return new double[]{x,z};
+    }
+    private static void drawWorldLockedHuman(int[] pixels,double[] depth,
+            double cameraX,double cameraZ,double yaw,double pitch,
+            double entityX,double entityZ,int heading,BufferedImage sprite,
+            double height,double width,double elevation,int opacity,boolean lamp,
+            int renderWidth,int renderHeight,double focal){
+        int view=stableFacingForWorldPlane(heading,entityX,entityZ,cameraX,cameraZ);
+        double[] axis=worldPlaneAxis(heading,view);
+        double ax=axis[0],az=axis[1];
+        double nx=-az,nz=ax,cy=Math.cos(pitch),sy=Math.sin(pitch);
+        double yawCos=Math.cos(yaw),yawSin=Math.sin(yaw);
+        double dx=entityX-cameraX,dz=entityZ-cameraZ;
+        double planeDistance=dx*nx+dz*nz;
+        if(Math.abs(planeDistance)<NEAR*.02)return;
+        int sh=sprite.getHeight(),sw=sprite.getWidth();
+        double sole=(GroundedSpriteFeet.lastVisibleRow(sprite)+.5)/sh;
+        if(sole<=0)sole=1;
+        double cardTop=elevation-1.62+height*sole;
+        double cardBottom=cardTop-height;
+        double uPivot=bodyPivotX(sprite)/sw;
+        // Project four immutable world vertices to determine the raster bounds.
+        double left=-uPivot*width,right=(1-uPivot)*width;
+        double[] corners={left,cardTop,left,cardBottom,right,cardTop,right,cardBottom};
+        double minX=Double.POSITIVE_INFINITY,maxX=Double.NEGATIVE_INFINITY;
+        double minY=Double.POSITIVE_INFINITY,maxY=Double.NEGATIVE_INFINITY;
+        for(int i=0;i<corners.length;i+=2){
+            double wx=dx+axis[0]*corners[i],wz=dz+axis[1]*corners[i];
+            double projectedRight=-wx*yawCos+wz*yawSin,forward=wx*yawSin+wz*yawCos;
+            double ry=corners[i+1]*cy-forward*sy,rz=corners[i+1]*sy+forward*cy;
+            if(rz<NEAR)return; // Never draw through the near camera plane.
+            double sx=renderWidth*.5+projectedRight/rz*focal;
+            double py=renderHeight*.5-ry/rz*focal;
+            minX=Math.min(minX,sx);maxX=Math.max(maxX,sx);
+            minY=Math.min(minY,py);maxY=Math.max(maxY,py);
+        }
+        int x0=Math.max(0,(int)Math.floor(minX)-1),x1=Math.min(renderWidth-1,(int)Math.ceil(maxX)+1);
+        int y0=Math.max(0,(int)Math.floor(minY)-1),y1=Math.min(renderHeight-1,(int)Math.ceil(maxY)+1);
+        if(x0>x1||y0>y1)return;
+        double fogDistance=Math.hypot(dx,dz);
+        double fog=Math.min(.75,Math.max(0,(fogDistance-5)/15));
+        double illumination=(lamp?1.22:.55)*Math.max(.22,1-fogDistance/26.0);
+        for(int py=y0;py<=y1;py++){
+            double cameraUp=(renderHeight*.5-py-.5)/focal;
+            double rayY=cameraUp*cy+sy;
+            double rayForward=cy-cameraUp*sy;
+            for(int px=x0;px<=x1;px++){
+                double cameraRight=(px+.5-renderWidth*.5)/focal;
+                double rayX=-cameraRight*yawCos+rayForward*yawSin;
+                double rayZ=cameraRight*yawSin+rayForward*yawCos;
+                double denominator=rayX*nx+rayZ*nz;
+                if(Math.abs(denominator)<1e-8)continue;
+                double rayDepth=planeDistance/denominator;
+                if(rayDepth<NEAR||rayDepth>24)continue;
+                double atX=cameraX+rayDepth*rayX-entityX;
+                double atZ=cameraZ+rayDepth*rayZ-entityZ;
+                double u=(atX*ax+atZ*az)/width+uPivot;
+                double v=(cardTop-rayDepth*rayY)/height;
+                if(u<0||u>=1||v<0||v>=1)continue;
+                int tx=(int)(u*sw),ty=(int)(v*sh);
+                int argb=sprite.getRGB(tx,ty);
+                int alpha=(argb>>>24)*Math.min(255,opacity)/255;
+                if(alpha<24)continue;
+                int pixel=py*renderWidth+px;
+                if(rayDepth>=depth[pixel])continue;
+                int red=(int)Math.min(255,((argb>>>16)&255)*illumination);
+                int green=(int)Math.min(255,((argb>>>8)&255)*illumination);
+                int blue=(int)Math.min(255,(argb&255)*illumination);
+                red=(int)(red*(1-fog)+18*fog);
+                green=(int)(green*(1-fog)+21*fog);
+                blue=(int)(blue*(1-fog)+30*fog);
+                if(alpha<255){
+                    int bg=pixels[pixel];
+                    red=(red*alpha+((bg>>>16)&255)*(255-alpha))/255;
+                    green=(green*alpha+((bg>>>8)&255)*(255-alpha))/255;
+                    blue=(blue*alpha+(bg&255)*(255-alpha))/255;
+                }
+                pixels[pixel]=(red<<16)|(green<<8)|blue;
+                if(alpha>=220)depth[pixel]=rayDepth;
+            }
+        }
+    }
+    private static int stableFacingForWorldPlane(int heading,double entityX,double entityZ,
+            double cameraX,double cameraZ){
+        // Stable discrete view selection changes the approved *texture only*.
+        return facing(heading,entityX,entityZ,cameraX,cameraZ);
+    }
+
 }
