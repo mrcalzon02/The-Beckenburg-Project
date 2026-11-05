@@ -1380,9 +1380,9 @@
           "page": 4,
           "name": "level_blockout_kit_castle_p04",
           "file": "level_blockout_kit_castle_p04.glb",
-          "triangles": 1992,
-          "bytes": 227252,
-          "sha256": "e964baf3c78fae78ac06c32a3c203b55ef5c7992a4dda74ed618029b55c3c0ea",
+          "triangles": 2032,
+          "bytes": 231340,
+          "sha256": "eab1a8eeb1962576e9b0943ba84bc814da99b1973e49cba681c73235d520931a",
           "display_slots": [
             {
               "slot": 1,
@@ -1436,7 +1436,7 @@
               "slot": 4,
               "id": "level_blockout_relic_bronze_astrolabe",
               "title": "Old navigational astrolabe instrument",
-              "source_ground_offset": 0.15,
+              "source_ground_offset": -0.005,
               "stand_center": [
                 -7.0,
                 0,

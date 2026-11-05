@@ -4,7 +4,7 @@
   "site": "CASTLE",
   "source_layout": "development/levels/layouts/castle/layout.json",
   "source_layout_sha256": "8811f7757cef5ff5238d8bae4e3f3f02bc3134516832ee9b1a3225ef35622c35",
-  "source_model_catalog_sha256": "26789546f9b4e2be98e39c55087cba427eb062a865e1c5f5a9c0802534acea6f",
+  "source_model_catalog_sha256": "0db537fa84276166236d290249581a6940e7952d5126dcbe1b2c68d637b8bc6c",
   "proposed_vault_relics": 12,
   "counts_by_bank": {
     "west": 6,
@@ -109,7 +109,7 @@
       ],
       "relic_position": [
         6.3,
-        -2.205,
+        -2.36,
         39.55
       ],
       "yaw_rad": 0,
@@ -119,7 +119,7 @@
         7.24,
         40.41
       ],
-      "relic_world_height_m": 1.07,
+      "relic_world_height_m": 1.075,
       "source_only": true,
       "captured_in_campaign": false,
       "installed_in_playable_castle": false,
@@ -400,9 +400,9 @@
   "pages": [
     {
       "name": "west-vault-bank.glb",
-      "bytes": 316824,
-      "sha256": "acb1adf9cc9bce31b4f891605254f38f21c962389ad8bb97e07e72fc26ba1c1f",
-      "triangles": 2848,
+      "bytes": 320904,
+      "sha256": "9ef1c238d99e5e7fccaa5e6c9e63a06ee57f96454beb089ee47381d58d332dca",
+      "triangles": 2888,
       "relic_count": 6
     },
     {

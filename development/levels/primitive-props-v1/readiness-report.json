@@ -1,7 +1,7 @@
 {
   "schema": "beckenburg.source-mesh-readiness/1",
   "status": "SOURCE_ONLY_REVIEW_NOT_PRODUCTION_APPROVAL",
-  "catalog_sha256": "26789546f9b4e2be98e39c55087cba427eb062a865e1c5f5a9c0802534acea6f",
+  "catalog_sha256": "0db537fa84276166236d290249581a6940e7952d5126dcbe1b2c68d637b8bc6c",
   "model_count": 298,
   "map_kit_count": 29,
   "validated_source_glbs": 298,
@@ -6587,7 +6587,7 @@
       "maps": [
         "CASTLE"
       ],
-      "source_parts": 18,
+      "source_parts": 19,
       "tapered_parts": 0,
       "source_materials": [
         "bronze",
@@ -6596,8 +6596,8 @@
         "patina",
         "wood"
       ],
-      "triangles": 408,
-      "glb_sha256": "d885bcfea17102d057acc68cb8568d496ba47a3471e9a1c3f3d4b63e6abd1cd6",
+      "triangles": 448,
+      "glb_sha256": "0e84582b07d58bf492fe364dbc52fe82da95927d622b1c33eae0762c38e6b26c",
       "model_bounds_xz": [
         -0.525,
         -0.34,
@@ -6606,8 +6606,8 @@
       ],
       "width_m": 1.05,
       "depth_m": 0.68,
-      "min_y_m": -0.15,
-      "max_y_m": 0.92,
+      "min_y_m": 0.005,
+      "max_y_m": 1.08,
       "mount_hint": "display_surface",
       "mount_confidence": "provisional_unreviewed",
       "source_pivot_reviewed": false,
