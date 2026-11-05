@@ -208,8 +208,7 @@ jobs:
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.CastleLiveRepairVisualTest
           if errorlevel 1 exit /b 1
-      - name: Advisory visual diagnostic — real Castle NPCs, EVERY angle must meet floor
-        continue-on-error: true
+      - name: Verify actual Castle NPC foot pixels at every unobstructed angle (diagnostic)
         shell: cmd
         run: |
           if not exist build\test mkdir build\test
