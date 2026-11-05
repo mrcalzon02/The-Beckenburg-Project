@@ -52,8 +52,10 @@ public final class StaticScenePrebakeTest {
             cancelled.z,cancelled.yaw,cancelled.pitch);
         var result=InvestigationScenePrewarm.prepare(separate,cancelled,
             new LevelOpeningFlyover(separate,camera),()->true);
-        check(result.passes()==0&&result.sceneRevision().equals("not-prepared"),
-            "Cancelled loading may not perform scene preparation or raster passes");
+        check(result.passes()==0&&result.sceneRevision().equals("not-prepared")
+            &&result.gpuSubmittedPasses()==0&&result.gpuConfirmedPasses()==0
+            &&!result.gpuPrewarmTimedOut(),
+            "Cancelled loading may not prepare geometry, submit/ack GPU frames or rasterize");
         check(cancelled.x==camera.x()&&cancelled.eyeHeight==camera.y()
             &&cancelled.z==camera.z()&&cancelled.yaw==camera.yaw()
             &&cancelled.pitch==camera.pitch(),
