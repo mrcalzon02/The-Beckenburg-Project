@@ -10,6 +10,7 @@ import org.beckenburg.SceneRenderer;
 import org.beckenburg.LevelOpeningFlyover;
 import org.beckenburg.CastleHubMap;
 import org.beckenburg.BeckenburgDiagnostics;
+import org.beckenburg.DesktopShutdown;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.List;
@@ -552,8 +553,17 @@ public final class GpuDesktop {
    InvestigationGame.main(args);
    return;
   }
+  // The interactive Swing client must close this non-daemon worker on exit.
+  // Smoke/review modes retain their existing synchronous native teardown.
+  DesktopShutdown.installRendererCleanup(()->{
+   try{stopReviewGpu();}
+   catch(InterruptedException interrupted){
+    Thread.currentThread().interrupt();
+    throw new IllegalStateException("Interrupted waiting for OpenGL shutdown",interrupted);
+   }
+  });
   if(options.contains("--water-module-editor")){
-   javax.swing.SwingUtilities.invokeLater(()->{var window=org.beckenburg.EnvironmentModuleEditor.open(null,System.getProperty("beckenburg.water.editor.map","hollow-creek"));window.addWindowListener(new java.awt.event.WindowAdapter(){public void windowClosed(java.awt.event.WindowEvent e){if(com.badlogic.gdx.Gdx.app!=null)com.badlogic.gdx.Gdx.app.exit();}});});return;
+   javax.swing.SwingUtilities.invokeLater(()->{var window=org.beckenburg.EnvironmentModuleEditor.open(null,System.getProperty("beckenburg.water.editor.map","hollow-creek"));window.addWindowListener(new java.awt.event.WindowAdapter(){public void windowClosed(java.awt.event.WindowEvent e){DesktopShutdown.requestExit();}});});return;
   }
   if(options.contains("--castle-survey-review")){try{org.beckenburg.CastleSurveyReview.execute();}finally{stopReviewGpu();}return;}
   if(options.contains("--performance-review")){try{org.beckenburg.CastlePerformanceReview.execute();}finally{stopReviewGpu();}return;}

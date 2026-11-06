@@ -10,6 +10,20 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-276 — Closing Beckenburg leaves hidden GPU worker and Java process alive
+
+**Status:** SOURCE FIX COMMITTED; Java child-process regression and installed Windows GPU exit acceptance pending · **Affected:** Normal desktop Exit, main window X, Castle gate, solo pause Exit, GPU launcher and auxiliary water editor
+
+After the visible Project Beckenburg window closes, the game process can remain active indefinitely in the background; multiple user reproductions.
+
+Cause / uncertainty: GpuDesktop starts an explicitly non-daemon beckenburg-opengl LWJGL3 worker. Main-menu exit only disposed Swing; Castle shutdown disposed panels; neither signaled Gdx.app.exit and awaited native worker. Main window close used EXIT_ON_CLOSE but bypassed orderly renderer disposal.
+
+Fix / next action: Unify normal exit routes through guarded scene/network/audio cleanup, request GPU worker exit on the owning GLFW thread, join with a 15s bound off the Swing EDT, and terminate the JVM even if a native service refuses cleanup. Keep headless dedicated server independent.
+
+Evidence and verification: User report 2026-11-05; source inspection of InvestigationGame.java shutdown/start.exit/GamePanel.pause, GpuDesktop.java startGpu/stopReviewGpu, and InGamePauseMenu.java. DesktopShutdownTest adds a child-JVM regression using an intentionally lingering non-daemon service; exact-source Windows CI and installed gameplay exit tests remain pending.
+
+Older-map obligation: No map geometry changed. Verify normal game/window/quit/pause exit after House, Castle, campaign and LAN sessions; confirm no Java or helper process survives and that diagnostics record clean GL shutdown.
+
 ### DEV-275 — DEV Room reports green despite failed source-only decoder and catalog diagnostics
 
 **Status:** VERIFIED DEV-QA repair: Windows native review 42130219315 PASS with strict Hollow Creek roster, 22 Castle relics, source-only models and Castle fit; no release or full gameplay acceptance inferred · **Affected:** Developer Asset Room diagnostic workflow, Castle source relic decoder, native Castle graybox fit, Hollow Creek asset registry
