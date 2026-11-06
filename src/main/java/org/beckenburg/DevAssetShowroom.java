@@ -172,7 +172,12 @@ public final class DevAssetShowroom implements AutoCloseable {
             public void changedUpdate(DocumentEvent e){filter();}
         });
         window.addWindowListener(new WindowAdapter(){
-            @Override public void windowClosed(WindowEvent e){close();}
+            @Override public void windowClosed(WindowEvent e){
+                close();
+                // Standalone DEV room is another real game window, not a
+                // reason to leave the hidden GPU worker running forever.
+                DesktopShutdown.requestExit();
+            }
         });
         reload();
         timer=new javax.swing.Timer(135,e->frame());

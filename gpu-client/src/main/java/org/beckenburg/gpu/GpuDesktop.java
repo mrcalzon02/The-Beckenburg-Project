@@ -592,6 +592,15 @@ public final class GpuDesktop {
    System.exit(status);
    return;
   }
+  // Headless/command-line DEV room captures return without a Swing window;
+  // unlike the interactive DEV room, they must stop the GPU here.
+  if(options.contains("--dev-room")&&(options.contains("--capture")
+      ||options.contains("--gallery-capture")
+      ||options.contains("--terrain-qa-capture")
+      ||options.contains("--infrastructure-demo-capture"))){
+   try{InvestigationGame.main(args);}finally{stopReviewGpu();}
+   return;
+  }
   // Simulation and all Swing menus continue on their tested engine path.
   InvestigationGame.main(args);
  }
