@@ -1,0 +1,16 @@
+{
+  "implemented_source": "0fb085290b1106e212d04d380e9629644a6a31f0",
+  "reconciled_head": "d31733298e80aa1a71f0ce97a82c23815dbd8c76",
+  "main_preserved": "57c795fbe13396baf4b99e8567beafdcbf9fabd0",
+  "critical_input_trees": {
+    "src": "bd9a83b05f620df7d2c139d04c35fe19e2f3e485",
+    "assets": "9d2dc7153a98b4a5cad1d74f90868033a31cf373",
+    "tools": "57f214422beff1bf4bd97e043bd275b1a746d58c",
+    "modules": null,
+    ".github": "915c05247ce807cb3d900c94fea63cace3781bb7",
+    "build.cmd": "9f245be7e872891bc7f6cb348dcb12689b1922e5",
+    "build.sh": "a7a95d160c5b9d2961dc88402c07206f84d1d7d6",
+    "regression-tests.txt": "dff2f16692be30a60ffaf4b5cc9f105c04a49758"
+  },
+  "concurrent_change": "85 actual NPC PNGs and2CSV records retained; no changed runtime/build/workflow inputs"
+}
