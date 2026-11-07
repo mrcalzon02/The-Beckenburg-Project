@@ -1070,12 +1070,16 @@ public final class SceneRenderer {
         int ground=LevelEnclosure.setting(level.id())==LevelEnclosure.Setting.URBAN?LevelMaterials.CONCRETE:MaterialAtlas.FOLIAGE;
         var terrain=SiteTerrain.of(level);
         var worldSurface=WorldTerrainSurface.of(level);
+        boolean houseLandscape=level.id().equals("briar-rebuild")&&WorldTerrainSurface.walking(level);
+        if(houseLandscape)ground=HouseRebuildLandscape.material();
         if(worldSurface!=null){
             for(int i=0;i<worldSurface.triangleCount();i++){
                 var t=worldSurface.triangle(i);var a=t.a();var b=t.b();var c=t.c();
                 faces.add(new Face(new Point(a.x(),a.y(),a.z()),new Point(b.x(),b.y(),b.z()),
                     new Point(c.x(),c.y(),c.z()),0x9a9e89,ground,
-                    a.x()*.25,a.z()*.25,b.x()*.25,b.z()*.25,c.x()*.25,c.z()*.25));
+                    houseLandscape?HouseRebuildLandscape.u(a.x()):a.x()*.25,houseLandscape?HouseRebuildLandscape.v(a.z()):a.z()*.25,
+                    houseLandscape?HouseRebuildLandscape.u(b.x()):b.x()*.25,houseLandscape?HouseRebuildLandscape.v(b.z()):b.z()*.25,
+                    houseLandscape?HouseRebuildLandscape.u(c.x()):c.x()*.25,houseLandscape?HouseRebuildLandscape.v(c.z()):c.z()*.25));
             }
         }else if(level.id().equals("blackpine")){
             ground=GlbProps.model("level_woodland_floor").triangles().get(0).material();
@@ -1723,6 +1727,7 @@ public final class SceneRenderer {
         quad(out,new Point(x0+ex,y0+.90,z0+ez),new Point(x1+ex,y1+.90,z1+ez),new Point(x1+ex,y1+.96,z1+ez),new Point(x0+ex,y0+.96,z0+ez),0x685035);
     }
     private static void levelDeck(List<Face> out,LevelDefinition level,LevelDefinition.Room r,boolean ceiling){
+        if(!ceiling&&r.outside()&&r.id()!=14&&WorldTerrainSurface.walking(level))return;
         var terrain=SiteTerrain.of(level);
         if(!ceiling&&terrain!=null&&r.outside()&&r.id()!=14){terrainDeck(out,terrain,r);return;}
         double deck=ceiling?r.y()+r.height():r.y(),surface=ceiling?deck-.04:deck;

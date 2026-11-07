@@ -619,3 +619,25 @@ Published implementation26be171c, then reconciled concurrentmain 49d801bd222c67f
 
 
 Final Castle contact closure: DEV-298 reproduces upper-tread support2.125m versus rendered2.21m and light passing through the closed mass. One immutable20step solid definition now drives unchanged rendering, true body support and optical contact; smooth player movement remains unchanged. Fresh final package and7targeted body/portal/upper/cellar/physical/handheld/dense-sparse lighting checks pass, plus real native F5/]/F12. Earlier49focused checks retained. Implementation is frozen for online345/native/GPU acceptance; advance House pilot and remaining site blockouts while those jobs run, per owner acceleration request. No new Castle feature expansion.
+
+
+## House measured fixture-fit progress — 6 November
+
+Castle implementation frozen at f4e5eb7c282e847a944313976778ffac4faadf77 in PR72. Native42348184824, GPU42348189467 and gallery42348182532 pass; full42348182575 remains live and its actual345body summary must be read before acceptance/merge. Main inspected49d801bd222c67fb65452939368c833ae9c43b5b. No new Castle features.
+
+House fitted construction candidate adds5existing full-size fixtures with real source-mesh bounds/pivots and matching collision, plus the kitchen doorway adjustment. All15zones/required sockets swept reachable at60964positions; prior pilot physics/shell/services and persisted editor terrain-hole checks pass. Four actual runtime views inspected; DEV-299 orientation corrected. Empty graybox and dispatched House unchanged. Evidence/next action: rebuild/house/fixture-fit.md and verification/house-fit-2026-11-06. Continue House terrain/boundary/functional assembly, then institutional blockout batch; no whole-map or29packet acceptance.
+
+
+House fixture checkpoint published798396ae0846b8c36f00641bcb4b2bcf1f35cdf7 in PR73, with independent raw source/gallery/fourPNG byte readback. Editable native continuation reopens43455runtime triangles/UVs and122packed images; all original sockets/15spawns match. Exact definition/runtime export and unchanged-native hash accompany it. Castle PR72 full42348182575 remains running its advisory full-regression step, while native/GPU/gallery passed. Continue terrain/boundary gate next; do not treat either open PR as merged or full-map acceptance.
+
+
+## Castle merged and House real terrain/arrival construction — 6 November
+
+Castle sourcef4e5eb7c282e847a944313976778ffac4faadf77 actual full42348182575 reports345passed/0failed/0skipped; native42348184824, GPU42348189467 and gallery42348182532 pass. Expected-head PR72 merged3edcbb1ea7c4cbb668342b6db9edf551fa02aa6d. Entire repository tree89f0421344c2f2bf38c6b59b35e573f0e30fd8c9 is identical to tested source; automatic merged workflows/deployment remain independently monitored. PR73 retargetedmain. No Castle feature expansion.
+
+House landscape candidate persists6072editor triangles with actual cellar holes; feet and visible ground now share authority instead of phantom flat outdoor decks. Native-surface1364samples,0.226m garden relief,560standing/crouched/body fence seam checks and all15zone/socket traversal at50229positions pass. Canonical neighbourhood private parcels/building solids are retained; approach anchor and garden transition are clear of actual residences. Existing five fitted GLBs and canonical van remain unchanged. All11 packaged construction/old-reference/cache/lighting/Castle checks pass; current package includes new native resource manifest. Exact native89569triangles/UVs,124packed images, sockets/15spawns reopen unchanged. Source materials compose worn paths independently of terrain cells.
+
+DEV-300/301 corrected in this candidate. DEV-302 remains open for coherent dwelling roof/exterior construction. Four useful actual runtime views and daylight native overview inspected; two inside-neighbour viewpoints and dark high runtime overview explicitly rejected/preserved. This advances S04, not final terrain/architecture/mission acceptance. Evidence/next action: rebuild/house/landscape-construction.md, verification/house-landscape-2026-11-06. Finish landscape visual refinement and one coherent House roof/envelope, then functional assembly/story and institutional stage batch. Full29packet goal active; no round-duration tests.
+
+
+House implementation0fb08529 reconciled concurrentmain57c795fb (85NPC PNGs/2CSVs) with identical runtime/build/workflow inputs; published7008c50bdc69fbf29241447c4c7584ade7861848 on PR73. Union gallery6773PNGs. Independent raw source/editor terrain/native blend/export/index/all8capture byte readback verified. Full42351165202, native42351243649, GPU42351247341 and gallery42351165205 confirmed live at7008; preserve these handles and inspect real body summaries before merge. Castle merged Pages42350529857 source57c795fb succeeds; deployed HTML/index and actual held-mug/window-off PNGs exactly match. House merged/deployed acceptance remains separate. Next House roof/exterior DEV-302 and landscape visual refinement; remaining28packets active.

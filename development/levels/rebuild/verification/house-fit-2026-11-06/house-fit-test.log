@@ -1,0 +1,7 @@
+level_kitchen_counter source-size 2.4000000953674316 x 1.1959999799728394 x 0.6969999969005585 floor=0.0
+level_bathtub source-size 1.600000023841858 x 0.8609999874606729 x 0.75 floor=2.8
+toilet_mp_1 source-size 0.5624032318592072 x 1.0063565969467163 x 0.8967615962028503 floor=2.8
+level_bath_basin source-size 0.6600000262260437 x 1.1360000371932983 x 0.5 floor=2.8
+level_laundry_washer source-size 0.6299999952316284 x 0.8725000619888306 x 0.8034999966621399 floor=-2.4
+2026-11-07T06:54:03.611974Z [main] RENDER SLOW stage=idle faces=27942 visible_faces=11866 culled_faces=16076 target=1000x625 build_ms=119 lighting_raster_ms=573
+PASS5 full-scale native fixtures; preserved pivots/terrain/stairs/services/van; swept all15zones and functional sockets: 60964 positions. Construction candidate only.

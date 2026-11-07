@@ -1,0 +1,5 @@
+REPRO original pilot outdoor walking=0.0 rendered terrain=-0.6499999761581421
+2026-11-07T07:16:42.567850500Z [main] RENDER SLOW stage=idle faces=64259 visible_faces=8706 culled_faces=55553 target=1000x625 build_ms=2006 lighting_raster_ms=1208
+2026-11-07T07:16:45.960582400Z [main] RENDER SLOW stage=idle faces=87740 visible_faces=33914 culled_faces=53826 target=1000x625 build_ms=24 lighting_raster_ms=3298
+2026-11-07T07:16:50.064228600Z [main] RENDER SLOW stage=idle faces=92072 visible_faces=44497 culled_faces=47575 target=1000x625 build_ms=5 lighting_raster_ms=2261
+PASS House landscape 6072 source triangles; 1364 shared foot/mesh samples, relief=0.2262502791960873; 560 standing/crouched/body fence seam checks; all15zones/required sockets swept at 50229 positions; real cellar aperture and unchanged canonical van/fittings.

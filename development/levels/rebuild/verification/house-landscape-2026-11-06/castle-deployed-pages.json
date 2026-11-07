@@ -1,0 +1,12 @@
+{
+  "deployment_run": 42350529857,
+  "source_sha": "57c795fbe13396baf4b99e8567beafdcbf9fabd0",
+  "merged_castle": "3edcbb1ea7c4cbb668342b6db9edf551fa02aa6d",
+  "byte_readback": {
+    "beckenburg-development-gallery.html": "1cf26fd852407c8b2b60adfd84414247d59264a38456149fd36483fc3f1e397b",
+    "development/gallery/index.json": "cbb73c3751d9e18fc6ea881ae9c3e582eca2806510de64dc2562935cc78ba7c2",
+    "development/captures/castle-loose-ui/common-mug-held-runtime.png": "c17183835bcdab0f2e746e652e0f5446ff367a9ff40d3aab2758ff499221d91d",
+    "development/captures/castle-window-frame/native-window-lights-off-runtime.png": "8be8f65f78b725e6768d8c1321e4838844884ebb56f1a72de8db00ae3dd104a5"
+  },
+  "scope": "Merged Castle gallery/html and selected actual native interaction/window PNGs; new House landscape deployment remains pending"
+}

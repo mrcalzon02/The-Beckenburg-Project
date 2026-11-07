@@ -1,0 +1,12 @@
+{
+  "source_sha": "f4e5eb7c282e847a944313976778ffac4faadf77",
+  "merged_main": "3edcbb1ea7c4cbb668342b6db9edf551fa02aa6d",
+  "identical_entire_tree": "89f0421344c2f2bf38c6b59b35e573f0e30fd8c9",
+  "full_run": 42348182575,
+  "actual_summary": "REGRESSION SUMMARY passed=345 failed=0 skipped=0 manifest=345",
+  "native_run": 42348184824,
+  "gpu_run": 42348189467,
+  "gallery_run": 42348182532,
+  "pr": 72,
+  "scope": "Castle frozen implementation accepted by these checks; merged deployment still requires own readback; all29map goal active"
+}

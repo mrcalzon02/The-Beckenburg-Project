@@ -1091,7 +1091,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": null,
+          "source_sha": "0fb085290b1106e212d04d380e9629644a6a31f0",
           "evidence": [
             "src/main/java/org/beckenburg/HouseRebuild.java",
             "development/levels/rebuild/house/graybox-definition.json",
@@ -1099,19 +1099,35 @@
             "development/levels/rebuild/house/native-graybox-verification.json",
             "src/test/java/org/beckenburg/HouseRebuildTerrainTest.java",
             "development/levels/rebuild/house/terrain-world/scene-package/scene.bin",
-            "development/levels/rebuild/house/terrain-verification.md"
+            "development/levels/rebuild/house/terrain-verification.md",
+            "development/levels/rebuild/house/fixture-fit.md",
+            "development/levels/rebuild/house/landscape-construction.md",
+            "development/levels/rebuild/house/landscape-native-verification.json",
+            "development/levels/rebuild/verification/house-landscape-2026-11-06/results.json"
           ],
           "defects": [
-            "DEV-174"
+            "DEV-174",
+            "DEV-300",
+            "DEV-301",
+            "DEV-302"
           ],
-          "next_action": "Editor-punched world floor now passes isolated House movement/object/optical and exact-render tests. Complete rough layout batch and remaining House terrain, parcel, structural/facility and full mission/LAN/GPU gates before promotion."
+          "next_action": "Five actual source-size fixtures,6072editor terrain triangles/persisted cellar cutouts, physical parcel/arrival solids and all15zone swept circulation verified. Finish visual landscape/terrain acceptance and coherent dwelling roof/exterior (DEV-302), then complete facilities/story/mission/LAN/GPU gates; no dispatched-map promotion yet."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "0fb085290b1106e212d04d380e9629644a6a31f0",
+          "evidence": [
+            "development/levels/rebuild/house/fixture-fit.md",
+            "development/levels/rebuild/house/landscape-construction.md",
+            "development/levels/rebuild/house/landscape-native-verification.json",
+            "development/levels/rebuild/verification/house-landscape-2026-11-06/results.json"
+          ],
+          "defects": [
+            "DEV-300",
+            "DEV-301",
+            "DEV-302"
+          ],
+          "next_action": "Five actual source-size fixtures,6072editor terrain triangles/persisted cellar cutouts, physical parcel/arrival solids and all15zone swept circulation verified. Finish visual landscape/terrain acceptance and coherent dwelling roof/exterior (DEV-302), then complete facilities/story/mission/LAN/GPU gates; no dispatched-map promotion yet."
         },
         "S05": {
           "status": "NOT_AUDITED",

@@ -1,0 +1,46 @@
+{
+  "HouseRebuildPhysicsTest": {
+    "exit": 0,
+    "seconds": 29.656
+  },
+  "AuthoredLevelPhysicsTest": {
+    "exit": 0,
+    "seconds": 0.469
+  },
+  "AuthoredLevelReachabilityTest": {
+    "exit": 0,
+    "seconds": 12.5
+  },
+  "AuthoredUtilitiesTest": {
+    "exit": 0,
+    "seconds": 1.235
+  },
+  "LevelSurfaceIntegrityTest": {
+    "exit": 0,
+    "seconds": 0.875
+  },
+  "DynamicGeometryRetentionTest": {
+    "exit": 0,
+    "seconds": 1.296
+  },
+  "PhysicalLightingTest": {
+    "exit": 0,
+    "seconds": 2.219
+  },
+  "HandheldSurfaceOcclusionTest": {
+    "exit": 0,
+    "seconds": 0.469
+  },
+  "PreparedLightBatchParityTest": {
+    "exit": 0,
+    "seconds": 68.25
+  },
+  "CastleLooseClutterTest": {
+    "exit": 0,
+    "seconds": 9.156
+  },
+  "CastlePortalSlotTest": {
+    "exit": 0,
+    "seconds": 1.563
+  }
+}
