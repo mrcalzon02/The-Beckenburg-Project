@@ -1,0 +1,35 @@
+{
+  "source_head": "f5291c41c6934f878722b41fef7018aa1d82de0a",
+  "status": "PASS",
+  "verified_remote_bytes": {
+    "src/main/java/org/beckenburg/CastleFinish.java": {
+      "bytes": 3554,
+      "sha256": "cadb781ca53cc81e5a1a465ccdcd18c2309c3eae679af0d823e0510ebeb5aa0d"
+    },
+    "assets/runtime/models/level_castle_keeper_statue.glb": {
+      "bytes": 555372,
+      "sha256": "923ef5e9f924d0b4578d9094edfe0063e3c6b9934da609fa597c3d03f27e598a"
+    },
+    "development/assets/castle-museum/previews/keeper-finish/quarter.png": {
+      "bytes": 688895,
+      "sha256": "274f81b9fc23591a6d3289e0df2dc0e11d928bd84c819233e421f3b8fb6ea56c"
+    },
+    "development/levels/rebuild/captures/castle-construction/finish-keeper-runtime.png": {
+      "bytes": 466582,
+      "sha256": "6089ccd649e45980f3fc72b6326a0ccca5a91bb2fd142cf21ca9308a665fd256"
+    },
+    "development/levels/rebuild/captures/castle-construction/finish-dining-runtime.png": {
+      "bytes": 834442,
+      "sha256": "eee5effb12079cb9e8f4e81ae01cef56194a374ad2f1fdc789dda17980823875"
+    },
+    "development/captures/castle-training-ui/lesson-train-c-ui.png": {
+      "bytes": 24078,
+      "sha256": "8b61efbfa46333749e49a671621db8c0d14a75e0f453a780719e487aa070dd43"
+    },
+    "beckenburg-development-gallery.html": {
+      "bytes": 2526595,
+      "sha256": "14a8f1d2b98b4695d2b6842949003a9cdf378de551988a6543de82fa7d08a6c2"
+    }
+  },
+  "pages": "Fresh finishing branch not yet merged/deployed; previous workbench/plant deployment independently verified"
+}
