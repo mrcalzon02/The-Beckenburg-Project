@@ -9,3 +9,7 @@ docs/network/receipts/* -text -whitespace
 development/levels/rebuild/**/terrain-world/** -text
 # Derived rough studies also carry exact source/render hashes and stale checks.
 development/levels/rebuild/**/rough-* -text
+
+# Frozen native rebuild baselines are fingerprinted byte-for-byte at runtime.
+assets/runtime/sites/castle-baseline-*.properties -text
+development/levels/rebuild/native-upgrade-baselines/*.properties -text

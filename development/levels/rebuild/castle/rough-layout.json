@@ -2367,7 +2367,7 @@
     },
     {
       "path": "src/main/java/org/beckenburg/CastleLevelEdits.java",
-      "sha256": "d3cebd39e2c1f8671a55096888309ec9fbaf6b53e2bc4f7d3c2c8d721b01cb88"
+      "sha256": "c52ca62700d622bc9ba1c31e47e22b7314ca1f74f4d1bbb09f06ab7ec59b12f6"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleAnnex.java",
@@ -2428,6 +2428,14 @@
     {
       "path": "src/main/java/org/beckenburg/CastleWorldBounds.java",
       "sha256": "5fb76c35d516b201905741df6b3a8423c4de5dd9180bff9bebe129e1c396a9f5"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/CastleRebuildUpgrade.java",
+      "sha256": "aa4ddadd99a048468614c9d5b1d2f530d5d939518b9fffcfa34e72c457ed5c04"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/CastleRebuildValidation.java",
+      "sha256": "4118723e04d900701e07d0890298476b8116366651227d654639f1847e9b25cb"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleWarehouse.java",

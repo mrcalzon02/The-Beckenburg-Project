@@ -26,9 +26,13 @@ public final class CastleEditorAgent implements EditorAgentService.Host<CastleLe
     public java.util.Set<EditorAgentService.Capability> capabilities(){
         return java.util.EnumSet.allOf(EditorAgentService.Capability.class);
     }
-    public List<String> operations(){return List.of("set-spawn","put-surface","remove-surface");}
+    public List<String> operations(){return List.of("set-spawn","put-surface","remove-surface","rebuild-castle");}
     public void apply(String operation, Map<String,String> args){
         switch(operation){
+            case "rebuild-castle" -> {
+                exact(args,"baseline");
+                CastleRebuildUpgrade.apply(scene,CastleRebuildUpgrade.Baseline.valueOf(args.get("baseline")));
+            }
             case "set-spawn" -> {
                 exact(args,"x","z","yaw");
                 scene.setSpawn(number(args,"x"),number(args,"z"),number(args,"yaw"));

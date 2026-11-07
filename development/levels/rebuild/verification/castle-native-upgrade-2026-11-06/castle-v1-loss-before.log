@@ -1,0 +1,3 @@
+Actual loaded authored chair x=15.9; expected16.0
+Exception in thread "main" java.lang.AssertionError: Structure-v1 canonical reset discarded authored chair edit
+	at org.beckenburg.LegacySceneLossControl.main(LegacySceneLossControl.java:14)

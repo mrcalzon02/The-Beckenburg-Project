@@ -56,4 +56,10 @@ if errorlevel 1 exit /b 1
 java -Djava.util.prefs.PreferencesFactory=org.beckenburg.VerificationPreferencesFactory -Xmx256m -ea -cp "%BECK_EDITOR_AGENT_CP%;build\test" org.beckenburg.AssetImportBevelGuiTest
 if errorlevel 1 exit /b 1
 
+rem Reopen actual historical Castle documents in the packaged Windows host.
+javac --release 17 -encoding UTF-8 -cp "%BECK_EDITOR_AGENT_CP%" -d build\test src\test\java\org\beckenburg\CastleRebuildUpgradeTest.java
+if errorlevel 1 exit /b 1
+java -Djava.awt.headless=true -ea -cp "%BECK_EDITOR_AGENT_CP%;build\test" org.beckenburg.CastleRebuildUpgradeTest
+if errorlevel 1 exit /b 1
+
 echo PASS native editor service, real human model/material UV editors, recovery and headless protocol

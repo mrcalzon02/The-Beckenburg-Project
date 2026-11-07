@@ -1,0 +1,47 @@
+{
+  "source_head": "bd871af9b83b8b3c5a41c797e26d691b10ab0a9c",
+  "status": "PASS exact remote source/resources/captures/gallery bytes",
+  "verified": {
+    "src/main/java/org/beckenburg/CastleRebuildUpgrade.java": {
+      "bytes": 6557,
+      "sha256": "aa4ddadd99a048468614c9d5b1d2f530d5d939518b9fffcfa34e72c457ed5c04"
+    },
+    "src/main/java/org/beckenburg/CastleLevelEdits.java": {
+      "bytes": 52258,
+      "sha256": "c52ca62700d622bc9ba1c31e47e22b7314ca1f74f4d1bbb09f06ab7ec59b12f6"
+    },
+    "assets/runtime/sites/castle-baseline-original.properties": {
+      "bytes": 35626,
+      "sha256": "22ab766b1102ceaa93d9085b3e50044f66551c9627ebfbc061a4332b88607016"
+    },
+    "development/levels/rebuild/captures/castle-native-upgrade/upgraded-custom-museum-runtime.png": {
+      "bytes": 466582,
+      "sha256": "6089ccd649e45980f3fc72b6326a0ccca5a91bb2fd142cf21ca9308a665fd256"
+    },
+    "development/levels/rebuild/captures/castle-native-upgrade/upgraded-custom-contract-runtime.png": {
+      "bytes": 543981,
+      "sha256": "93c13da257469847f1f7b85142803fa3f041ee05ab3ee1ca5319523bfb7c97bf"
+    },
+    "development/levels/rebuild/captures/castle-native-upgrade/upgraded-custom-annex-runtime.png": {
+      "bytes": 499337,
+      "sha256": "61af0516fc6fe1354ac495dbde26e1dbc21ce13b3147c721a77d53d7cc8403bb"
+    },
+    "development/levels/rebuild/captures/castle-native-upgrade/upgraded-custom-cellar-runtime.png": {
+      "bytes": 480809,
+      "sha256": "e53a7236967e2b7493f222afcafbd096ef9e230b132356eac8feecd437feb8be"
+    },
+    "development/levels/rebuild/verification/castle-native-upgrade-2026-11-06/checkpoint.json": {
+      "bytes": 8025,
+      "sha256": "90a271c8b82b14a700a1c6a23c04514a600fb4295e8072a4256e2e69180ff3fc"
+    },
+    "beckenburg-development-gallery.html": {
+      "bytes": 2630409,
+      "sha256": "1c0baa75d02fbbcf65bbfee6d1c393d939d4b85b115a9c5cfa366bec066b5a21"
+    },
+    "development/gallery/index.json": {
+      "bytes": 3002637,
+      "sha256": "ef4fae7761e41e36a83f54109bb1909022162cf66d197b3f7d1348ddb4e2098a"
+    }
+  },
+  "pages": "Separate deployed-page gate remains open DEV-293"
+}

@@ -179,8 +179,15 @@ public final class CastleLevelEdits {
         Map<String,double[]> stations,Map<Integer,Integer> floorPaint,
         Map<Integer,Integer> wallPaint,Set<Integer> navBlocked,
         Map<String,CastleDoorSlots.Type> doors,
-        double spawnX,double spawnZ,double spawnYaw){
+        double spawnX,double spawnZ,double spawnYaw,int rebuildLayout){
+        public Snapshot(List<Prop> props,List<Lamp> lamps,List<Surface> surfaces,
+            Map<String,double[]> stations,Map<Integer,Integer> floorPaint,Map<Integer,Integer> wallPaint,
+            Set<Integer> navBlocked,Map<String,CastleDoorSlots.Type> doors,double spawnX,double spawnZ,double spawnYaw){
+            this(props,lamps,surfaces,stations,floorPaint,wallPaint,navBlocked,doors,spawnX,spawnZ,spawnYaw,CastleRebuildUpgrade.VERSION);
+        }
+        public Snapshot withRebuildLayout(int version){return new Snapshot(props,lamps,surfaces,stations,floorPaint,wallPaint,navBlocked,doors,spawnX,spawnZ,spawnYaw,version);}
         public Snapshot {
+            if(rebuildLayout<0||rebuildLayout>CastleRebuildUpgrade.VERSION)throw new IllegalArgumentException("Unsupported Castle rebuild layout");
             props=List.copyOf(props);lamps=List.copyOf(lamps);surfaces=List.copyOf(surfaces);
             stations=copyStations(stations);floorPaint=Map.copyOf(floorPaint);wallPaint=Map.copyOf(wallPaint);
             navBlocked=Set.copyOf(navBlocked);doors=Map.copyOf(doors);
@@ -215,13 +222,13 @@ public final class CastleLevelEdits {
             if(!props.equals(other.props)||!lamps.equals(other.lamps)||!surfaces.equals(other.surfaces)
                 ||!floorPaint.equals(other.floorPaint)||!wallPaint.equals(other.wallPaint)||!navBlocked.equals(other.navBlocked)
                 ||!doors.equals(other.doors)||Double.compare(spawnX,other.spawnX)!=0||Double.compare(spawnZ,other.spawnZ)!=0
-                ||Double.compare(spawnYaw,other.spawnYaw)!=0||!stations.keySet().equals(other.stations.keySet()))return false;
+                ||Double.compare(spawnYaw,other.spawnYaw)!=0||rebuildLayout!=other.rebuildLayout||!stations.keySet().equals(other.stations.keySet()))return false;
             for(var entry:stations.entrySet())if(!java.util.Arrays.equals(entry.getValue(),other.stations.get(entry.getKey())))return false;
             return true;
         }
         @Override public int hashCode(){
             int coordinates=0;for(var entry:stations.entrySet())coordinates+=entry.getKey().hashCode()^java.util.Arrays.hashCode(entry.getValue());
-            return Objects.hash(props,lamps,surfaces,coordinates,floorPaint,wallPaint,navBlocked,doors,spawnX,spawnZ,spawnYaw);
+            return Objects.hash(props,lamps,surfaces,coordinates,floorPaint,wallPaint,navBlocked,doors,spawnX,spawnZ,spawnYaw,rebuildLayout);
         }
     }
     public synchronized Snapshot snapshot(){
@@ -230,7 +237,7 @@ public final class CastleLevelEdits {
         return new Snapshot(List.copyOf(props.values()),List.copyOf(lamps.values()),
             List.copyOf(surfaces.values()),coords,Map.copyOf(floorPaint),
             Map.copyOf(wallPaint),Set.copyOf(navBlocked),
-            Map.copyOf(doorAssignments),spawnX,spawnZ,spawnYaw);
+            Map.copyOf(doorAssignments),spawnX,spawnZ,spawnYaw,rebuildLayout);
     }
     public synchronized void restore(Snapshot snapshot){
         Objects.requireNonNull(snapshot);
@@ -244,6 +251,7 @@ public final class CastleLevelEdits {
         navBlocked.clear();navBlocked.addAll(snapshot.navBlocked());
         doorAssignments.clear();doorAssignments.putAll(snapshot.doors());
         spawnX=snapshot.spawnX();spawnZ=snapshot.spawnZ();spawnYaw=snapshot.spawnYaw();
+        rebuildLayout=snapshot.rebuildLayout();
         revision++;
     }
     private static final class DefaultScene {private static final CastleLevelEdits INSTANCE=new CastleLevelEdits(defaultPath());}
@@ -257,6 +265,7 @@ public final class CastleLevelEdits {
     private final Set<Integer> navBlocked=new java.util.HashSet<>();
     private double spawnX=13.5,spawnZ=19.3,spawnYaw=Math.PI;
     private long revision=1;
+    private int rebuildLayout=CastleRebuildUpgrade.VERSION;
     private String diskFingerprint;
     public static CastleLevelEdits current(){return DefaultScene.INSTANCE;}
     private static Path defaultPath(){
@@ -275,6 +284,7 @@ public final class CastleLevelEdits {
         return mesh!=null&&(GlbProps.availableModels().contains(mesh)||ImportedAssetLibrary.approved(mesh));
     }
     private void defaults(){
+        rebuildLayout=CastleRebuildUpgrade.VERSION;
         surfaces.clear();doorAssignments.clear();
         for(var slot:CastleDoorSlots.all())
             if(CastleDoorSlots.initial(slot)!=CastleDoorSlots.Type.EMPTY)
@@ -447,11 +457,24 @@ public final class CastleLevelEdits {
         var decoded=new CastleLevelEdits(file,false);
         decoded.decode(readProperties(file));return decoded;
     }
+    static Snapshot readBuiltinBaseline(byte[] bytes)throws IOException{
+        var scene=new CastleLevelEdits(Path.of("builtin-castle-baseline.properties"),false);
+        scene.decode(readProperties(bytes));return scene.snapshot();
+    }
+    static Snapshot rebuiltDefaults(){return new CastleLevelEdits(Path.of("builtin-castle-rebuilt.properties"),false).snapshot();}
     private void load()throws IOException{
         EditorDocumentStore.recoverPending(path,CastleLevelEdits::decode);
         byte[] bytes=EditorDocumentStore.readDocument(path);Properties p=readProperties(bytes);
         var decoded=new CastleLevelEdits(path,false);decoded.decode(p);
         diskFingerprint=EditorDocumentStore.fingerprint(bytes);
+        if(decoded.snapshot().rebuildLayout()<CastleRebuildUpgrade.VERSION){
+            var replacement=CastleRebuildUpgrade.uneditedReplacement(decoded.snapshot());
+            if(replacement!=null){
+                Path backup=path.resolveSibling(path.getFileName()+".before-first-principles.properties");
+                if(!Files.exists(backup))Files.write(backup,bytes,java.nio.file.StandardOpenOption.CREATE_NEW,java.nio.file.StandardOpenOption.WRITE);
+                restore(replacement);save();return;
+            }
+        }
         if(Integer.parseInt(p.getProperty("structure.layout","1"))<2){
             Path backup=path.resolveSibling(path.getFileName()+".before-structure-v2.properties");
             if(!Files.exists(backup))Files.write(backup,bytes,java.nio.file.StandardOpenOption.CREATE_NEW,java.nio.file.StandardOpenOption.WRITE);
@@ -466,6 +489,8 @@ public final class CastleLevelEdits {
         if(!"1".equals(p.getProperty("format")))
             throw new IOException("Unsupported castle editor document version");
         try{
+            int generation=Integer.parseInt(p.getProperty("rebuild.layout","0"));
+            if(generation<0||generation>CastleRebuildUpgrade.VERSION)throw new IllegalArgumentException("Unsupported Castle rebuild layout version");
             for(String layout:List.of("structure","lighting","fortification","gate","windows","furniture")){
                 int version=Integer.parseInt(p.getProperty(layout+".layout","1"));
                 if(version<0||version>2)throw new IllegalArgumentException("Unsupported Castle "+layout+" layout version "+version);
@@ -476,7 +501,8 @@ public final class CastleLevelEdits {
             if(cellarVersion<0||cellarVersion>1)throw new IllegalArgumentException("Unsupported Castle cellar layout version");
             int upperVersion=Integer.parseInt(p.getProperty("upper.layout","0"));
             if(upperVersion<0||upperVersion>1)throw new IllegalArgumentException("Unsupported Castle upper layout version");
-            if(Integer.parseInt(p.getProperty("structure.layout","1"))<2){defaults();return;}
+            boolean authored=p.stringPropertyNames().stream().anyMatch(k->k.startsWith("props.")||k.startsWith("lamps.")||k.startsWith("surfaces.")||k.startsWith("station.")||k.startsWith("floor.")||k.startsWith("wall.")||k.startsWith("nav.")||k.startsWith("spawn.")||k.startsWith("doors."));
+            if(Integer.parseInt(p.getProperty("structure.layout","1"))<2&&!authored){defaults();return;}
         }catch(RuntimeException invalid){throw new IOException("Invalid/unsupported Castle layout version",invalid);}
         try{
             Map<String,Prop> incomingProps=new LinkedHashMap<>();
@@ -551,7 +577,9 @@ public final class CastleLevelEdits {
                         throw new IllegalArgumentException("Duplicate surface "+face.id());
                 }
             }else{
-                parsed.putAll(surfaces);
+                if(Integer.parseInt(p.getProperty("rebuild.layout","0"))==0){
+                    for(var s:CastleRebuildUpgrade.baseline(CastleRebuildUpgrade.Baseline.ORIGINAL).surfaces())parsed.put(s.id(),s);
+                }else parsed.putAll(surfaces);
                 for(var paint:newWalls.entrySet()){
                     String id="wall"+paint.getKey();
                     var old=parsed.get(id);
@@ -727,12 +755,20 @@ public final class CastleLevelEdits {
             stations.clear();stations.putAll(newStations);
             floorPaint.clear();floorPaint.putAll(newFloor);wallPaint.clear();wallPaint.putAll(newWalls);
             navBlocked.clear();navBlocked.addAll(newNav);
-            spawnX=sx;spawnZ=sz;spawnYaw=syaw;snapshot();revision++;
+            spawnX=sx;spawnZ=sz;spawnYaw=syaw;rebuildLayout=Integer.parseInt(p.getProperty("rebuild.layout","0"));snapshot();revision++;
         }catch(RuntimeException e){throw new IOException("Invalid castle editor document: "+path,e);}
     }
     /** Journaled atomic save, with one prior valid distinct document for explicit recovery. */
     public synchronized void save()throws IOException{
+        if(rebuildLayout>=CastleRebuildUpgrade.VERSION&&diskFingerprint!=null&&Files.exists(path)){
+            byte[] old=EditorDocumentStore.readDocument(path);
+            if(diskFingerprint.equals(EditorDocumentStore.fingerprint(old))&&Integer.parseInt(readProperties(old).getProperty("rebuild.layout","0"))<CastleRebuildUpgrade.VERSION){
+                Path backup=path.resolveSibling(path.getFileName()+".before-first-principles.properties");
+                if(!Files.exists(backup))Files.write(backup,old,java.nio.file.StandardOpenOption.CREATE_NEW,java.nio.file.StandardOpenOption.WRITE);
+            }
+        }
         Properties p=new Properties();p.setProperty("format","1");
+        p.setProperty("rebuild.layout",Integer.toString(rebuildLayout));
         p.setProperty("structure.layout","2");
         p.setProperty("lighting.layout","2");
         p.setProperty("annex.layout","1");

@@ -1,0 +1,17 @@
+{
+  "original": {
+    "source": "ad9bb45c20c3754931637bdfa50968a35defeaf9",
+    "path": "development/levels/rebuild/native-upgrade-baselines/original.properties",
+    "sha256": "22ab766b1102ceaa93d9085b3e50044f66551c9627ebfbc061a4332b88607016"
+  },
+  "before-finish": {
+    "source": "753e637b942fef3b2b7a5cd00b6bac9dc528274d",
+    "path": "development/levels/rebuild/native-upgrade-baselines/before-finish.properties",
+    "sha256": "6951abb11004f2c94cd0b5e2cc3947cf2e5550a5f27734d45ed94611ddeb1d30"
+  },
+  "rebuilt-v1": {
+    "source": "5ba51a1e5074ae2129cf485fbfc5bd219d01314c",
+    "path": "development/levels/rebuild/native-upgrade-baselines/rebuilt-v1.properties",
+    "sha256": "7b6b68f9267841513a49e039c23a0302b6658722d7ed0e52c85614ebfc732d66"
+  }
+}
