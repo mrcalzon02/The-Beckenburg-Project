@@ -805,3 +805,12 @@ PR81 sourcec1fe6f53 full42420139114 actual362/0/0/362 and editor42420157493/GPU4
 Next: publish/read back this final verified source, run exact365/full/native/GPU and later verify deployed migration images. Finish fresh default House promotion, conservative saved custom attachment resolutions, authored encounter and final matched door/circuit/light/material/whole-location/client acceptance. Continue all29packets and remaining unfinished maps. No round-duration testing or physical FPS acceptance.
 
 Verified migration/memory implementation60a239ddf6cd183cd4676cef241ae70a88d5107e; stage/source hashes bind actual365manifest and local256MB/TCP/material evidence. Publish and obtain exact-source full/native/GPU; new captures require merged Pages readback.
+
+
+## Isolated native House bootstrap recovery correction — 7 November2026
+
+PR82 native42424140546 fails its actual corrupt-start CLI check: House source selection attempts to parse the corrupt primary before restoring valid previous data. All earlier native/256MB GUI checks and GPU42424143713 passed; full42424140271 remains observed live. Keep that source frozen while correcting independently.
+
+On fix/house-source-recovery, recoverSavedDocument now uses a fixed House fallback for parsing, then validates architecture/props/attachments from the candidate backup. Exact versionless/rebuilt backup bytes and gameplay source restore at256MB. Foreign/future/detached-service candidates preserve corrupt primary bytes. The exact formerly failing verify_editor_agent_cli.py now passes actual process bootstrap, recovery/save/stale/JSON/capture/native checks. Renderer/assets/construction and protocol2 are unchanged. New native/full corrected-source CI remains pending. Actual main1fe0e249 full42422292792 raw362/0/0/362 is recorded independently.
+
+Encounter WIP d8e6da1c is preserved and remotely verified on map/house-encounter, including two inspected train poses and original synthesized cue; actual solo/TCP/photo/protocol3 acceptance remains pending. Resolve recovery gate first, then resume House encounter/default promotion/final map acceptance and all29packets/later maps. No round-duration tests or physical FPS claims.

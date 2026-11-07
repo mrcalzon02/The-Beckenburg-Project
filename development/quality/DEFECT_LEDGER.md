@@ -4714,6 +4714,20 @@ Evidence and verification: house-migration-rejected-live-surface-name.log; Sourc
 
 Older-map obligation: No source/live-screen runtime failure inferred from the rejected test fixture.
 
+### DEV-345 — House CLI recovery reads corrupt primary architecture before restoring valid backup
+
+**Status:** SCOPED CORRECTION PASS; actual failing CLI script and expanded backup matrix pass locally; corrected-source native CI pending · **Affected:** PR82 native42424140546; explicit editor-agent --recover bootstrap after primary corruption
+
+Windows native migration/GUI checks pass, but corrupt-start CLI recovery fails because LevelPlans.buildSource selects architecture by decoding the corrupt primary before the previous document is restored.
+
+Cause / uncertainty: New source selection preceded existing primary-corruption recovery.
+
+Fix / next action: Use a fixed legacy parse fallback for House bootstrap and select/validate architectural authority from the backup being restored. Preserve previous identity/future metadata checks and validate required rebuilt attachments before replacement. Added actual versionless/rebuilt byte-exact bootstrap plus foreign/future/detached-service refusal tests. Rerun the exact previously failing CLI script.
+
+Evidence and verification: development/levels/rebuild/verification/house-native-recovery-2026-11-07/; native-42424140546-failed.log; LevelAuthoringRecoveryTest; actual verify_editor_agent_cli.py PASS
+
+Older-map obligation: Audit pre-recovery source/version selection independently for every other native adapter. This correction does not accept unaudited maps.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

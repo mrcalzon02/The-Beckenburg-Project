@@ -1,0 +1,21 @@
+{
+  "status": "LOCAL CORRECTION PASS; native/full corrected-source acceptance pending",
+  "base": "a613df3004cc483858dab3483e68236d9da9c266",
+  "failure_run": 42424140546,
+  "failure": "CLI corrupt-primary bootstrap tried to select architecture from corrupt primary before recovery",
+  "correction": "Resolve architectural authority from validated backup; never decode corrupt primary to choose recovery source",
+  "checks": [
+    "Fresh isolated packaged build, no encounter/protocol3 changes",
+    "Expanded native recovery at256MB: exact versionless original and rebuilt backup bytes/default gameplay authority restored",
+    "Foreign, future-version and detached-service backup refusals preserve primary bytes",
+    "Actual previously failing tools/verify_editor_agent_cli.py passes process bootstrap/recovery, JSON/stale/save/capture/native parity",
+    "Existing raw main1fe0e249 full42422292792 actual362/0/0/362 retained; parent365full42424140271 still observed live",
+    "Actual legacy editor-recovery control capture inspected and7399PNG union gallery regenerated/checked; no geometry or protocol change"
+  ],
+  "scope": "Two source/test files only; renderer/assets/native construction unchanged from protected PR82; no level/encounter completion",
+  "files": {
+    "src/main/java/org/beckenburg/LevelAuthoringSession.java": "b52339925ec359436dce8942aca5a172d33b88c81e84265ddc5acbcc47e53cf3",
+    "src/test/java/org/beckenburg/LevelAuthoringRecoveryTest.java": "478af86c7cba63deaa17b43815593b92e2467b9958afcd283bf0c44a7cf577c0",
+    "development/captures/house-native-recovery/legacy-house-cli-recovery-control-runtime.png": "b364e01fc8b0dac26a0a6188f6035c76e7641f7be9a9913a0ecfc2af3480528c"
+  }
+}
