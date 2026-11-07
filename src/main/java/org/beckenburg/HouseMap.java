@@ -18,7 +18,8 @@ public final class HouseMap {
     private final List<List<Portal>> wallPortals;
     private final AuthoredSitePhysics worldSurface;
     private final boolean editorTerrainWalking;
-    private final HouseRebuildEnvelope.Geometry envelope;
+    private final HouseRebuildEnvelope.Geometry envelope,services;
+    HouseRebuildEnvelope.Geometry services(){return services;}
     HouseRebuildEnvelope.Geometry envelope(){return envelope;}
     AuthoredSitePhysics worldSurface(){return worldSurface;}
     public boolean nativeSite(){return nativeSite!=null;}
@@ -86,6 +87,7 @@ public final class HouseMap {
         this.worldSurface=worldSurface;
         editorTerrainWalking=worldSurface!=null&&WorldTerrainSurface.walking(level);
         envelope=HouseRebuildEnvelope.geometry(level);
+        services=HouseServiceNetwork.geometry(level);
         terrain=SiteTerrain.of(level);
         nativeSite=HollowCreekLevel.is(level)?HollowCreekLevel.physics():null;
         Dock d=level.dock();van=new VanStaging(new VanStaging.Placement(d.x(),d.y(),d.z(),d.yaw()));
@@ -266,6 +268,7 @@ public final class HouseMap {
         if(!finite(x,y,z,bodyHeight)||bodyHeight<.9||bodyHeight>2.0)return false;double radius=.22;
         if(worldSurface!=null&&worldSurface.bodyBlocked(new Vec(x,y,z),bodyHeight,radius))return false;
         if(envelope!=null&&envelope.physics().bodyBlocked(new Vec(x,y,z),bodyHeight,radius))return false;
+        if(services!=null&&services.physics().bodyBlocked(new Vec(x,y,z),bodyHeight,radius))return false;
         if(nativeSite!=null){Double sy=van.supportHeight(x,z);boolean blocked=van.collides(x,z,radius)&&y+bodyHeight>van.placement().y()&&y<van.placement().y()+VanStaging.ROOF_Y;
             if(sy!=null)return Math.abs(y-sy)<.08&&!blocked&&!nativeSite.bodyBlocked(new Vec(x,y,z),bodyHeight,radius);
             if(WorldWater.module(level.water()).bodies().stream().anyMatch(w->y<w.y()-.01&&w.wet(x,z)))return false;
@@ -340,6 +343,8 @@ public final class HouseMap {
             if(!worldSurface.clearSight(new Vec(ax+d[0],ay+d[1],az+d[2]),new Vec(bx+d[0],by+d[1],bz+d[2])))return false;
         if(envelope!=null)for(double[] d:new double[][]{{0,0,0},{radius,0,0},{-radius,0,0},{0,half,0},{0,-half,0},{0,0,radius},{0,0,-radius}})
             if(!envelope.physics().clearSight(new Vec(ax+d[0],ay+d[1],az+d[2]),new Vec(bx+d[0],by+d[1],bz+d[2])))return false;
+        if(services!=null)for(double[] d:new double[][]{{0,0,0},{radius,0,0},{-radius,0,0},{0,half,0},{0,-half,0},{0,0,radius},{0,0,-radius}})
+            if(!services.physics().clearSight(new Vec(ax+d[0],ay+d[1],az+d[2]),new Vec(bx+d[0],by+d[1],bz+d[2])))return false;
         if(nativeSite!=null){for(double[] d:new double[][]{{0,0,0},{radius,0,0},{-radius,0,0},{0,half,0},{0,-half,0},{0,0,radius},{0,0,-radius}})if(!nativeSite.clearSight(new Vec(ax+d[0],ay+d[1],az+d[2]),new Vec(bx+d[0],by+d[1],bz+d[2])))return false;return true;}
         int steps=Math.max(1,(int)Math.ceil(Math.sqrt((bx-ax)*(bx-ax)+(by-ay)*(by-ay)+(bz-az)*(bz-az))/.025));
         for(int n=1;n<=steps;n++){
@@ -365,6 +370,7 @@ public final class HouseMap {
         if(!finite(ax,ay,az,bx,by,bz))return false;
         if(worldSurface!=null&&!worldSurface.clearSight(new Vec(ax,ay,az),new Vec(bx,by,bz)))return false;
         if(envelope!=null&&!envelope.physics().clearSight(new Vec(ax,ay,az),new Vec(bx,by,bz)))return false;
+        if(services!=null&&!services.physics().clearSight(new Vec(ax,ay,az),new Vec(bx,by,bz)))return false;
         if(nativeSite!=null)return nativeSite.clearSight(new Vec(ax,ay,az),new Vec(bx,by,bz))&&van.clearSight(ax,ay,az,bx,by,bz);
         double distance=Math.sqrt((bx-ax)*(bx-ax)+(by-ay)*(by-ay)+(bz-az)*(bz-az));if(distance>40)return false;if(distance<.01)return true;
         int steps=(int)Math.ceil(distance/.075);

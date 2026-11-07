@@ -29,19 +29,20 @@ public final class LevelSceneSource {
     public static void main(String[] args)throws Exception{
         if(args.length>0&&args[0].equals("CASTLE_REBUILD")){castle();return;}
         if(args.length>0&&(args[0].equals("ARRIVAL")||args[0].equals("CASTLE_SURROUNDINGS")||args[0].startsWith("ENCLOSURE_"))){module(args[0]);return;}
+        boolean fitout=args.length>0&&args[0].equals("HOUSE_REBUILD_FITOUT");
         boolean functions=args.length>0&&args[0].equals("HOUSE_REBUILD_FUNCTIONS");
         boolean fitted=args.length>0&&args[0].equals("HOUSE_REBUILD_FIT");
         boolean landscape=args.length>0&&args[0].equals("HOUSE_REBUILD_LANDSCAPE");
         boolean envelope=args.length>0&&args[0].equals("HOUSE_REBUILD_ENVELOPE");
-        HouseMap map=functions?HouseRebuildFunctions.map():envelope?HouseRebuildEnvelope.map():landscape?HouseRebuildLandscape.map():fitted?HouseRebuildFittings.map():args.length>0&&args[0].equals("HOUSE_REBUILD")?HouseRebuild.graybox():args.length>0&&args[0].equals("BLACKPINE")?BlackpineLevel.map():new HouseMap(args.length>0?HouseMap.Site.valueOf(args[0]):HouseMap.Site.HOUSE);
+        HouseMap map=fitout?HouseRebuildFitout.map():functions?HouseRebuildFunctions.map():envelope?HouseRebuildEnvelope.map():landscape?HouseRebuildLandscape.map():fitted?HouseRebuildFittings.map():args.length>0&&args[0].equals("HOUSE_REBUILD")?HouseRebuild.graybox():args.length>0&&args[0].equals("BLACKPINE")?BlackpineLevel.map():new HouseMap(args.length>0?HouseMap.Site.valueOf(args[0]):HouseMap.Site.HOUSE);
         map.configureHiding(100); // Editable authoring source includes every potential cupboard.
-        Path out=args.length==3&&args[1].equals("--output")?Path.of(args[2]):Path.of("build/level-verification/scenes",map.level().id()+(functions?"-functions":envelope?"-envelope":landscape?"-landscape":fitted?"-fit":""));Files.createDirectories(out.resolve("textures"));
+        Path out=args.length==3&&args[1].equals("--output")?Path.of(args[2]):Path.of("build/level-verification/scenes",map.level().id()+(fitout?"-fitout":functions?"-functions":envelope?"-envelope":landscape?"-landscape":fitted?"-fit":""));Files.createDirectories(out.resolve("textures"));
         SceneRenderer scene=new SceneRenderer();scene.x=21;scene.z=22;
         Field all=SceneRenderer.class.getDeclaredField("exportFullLevel");all.setAccessible(true);all.setBoolean(scene,true);
         Method assemble=SceneRenderer.class.getDeclaredMethod("levelArchitecture",List.class,HouseMap.class);assemble.setAccessible(true);
         List<Object> faces=new ArrayList<>();assemble.invoke(scene,faces,map);
         Files.writeString(out.resolve("definition.json"),json(map.level()));
-        if(envelope||functions)Files.writeString(out.resolve("structure-envelope.json"),json(map.envelope().parts()));
+        if(envelope||functions||fitout)Files.writeString(out.resolve("structure-envelope.json"),json(map.envelope().parts()));
         Files.writeString(out.resolve("loose-objects.json"),json(map.clutter().states().stream().map(s->new LooseSource(s,s.kind().half,s.kind().radius,s.kind().mass)).toList()));
         Files.writeString(out.resolve("event-fixtures.json"),json(map.fixtures().states()));
         Files.writeString(out.resolve("lighting-sources.json"),json(new FixtureLighting(map).sources()));

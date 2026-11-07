@@ -4266,6 +4266,62 @@ Evidence and verification: REMOTE_SITE_POWER.md; LanHost accepted ghost-action d
 
 Older-map obligation: Audit all remote and older maps individually; no blanket acceptance from House source-stop or packaging. Preserve ghost-specific exceptions and independent fire/oil/battery loads.
 
+### DEV-312 — Guessed service endpoints leave12mm above actual switch plates
+
+**Status:** corrected source-bound endpoints; attachment check and actual runtime view pass · **Affected:** House fit-out conduit ends
+
+Endpoint uses socketY+.08 despite actual decoded plate top+.056;24mm conduit leaves12mm air.
+
+Cause / uncertainty: Endpoint uses socketY+.08 despite actual decoded plate top+.056;24mm conduit leaves12mm air.
+
+Fix / next action: Use decoded light_switch_1 plate bounds and actual wall/soffit planes; retain physical/optical source geometry.
+
+Evidence and verification: development/levels/rebuild/verification/house-fitout-2026-11-07/rejected-switch-endpoint.log; HouseRebuildPhysicsTest.log; distribution-runtime.png
+
+Older-map obligation: Audit each existing map/model/cover installation individually; shared source correction and House evidence do not accept unaudited layouts or rendering.
+
+### DEV-313 — House power acceptance waits local milliseconds instead of authoritative host ticks
+
+**Status:** corrected test-only52188e75 published; fresh full42360138343 live; old06full347/1 not accepted · **Affected:** House power TCP harness and online servicesPR76
+
+A250ms sleep can precede the real3tick interaction cooldown. Actual Windows third toggle rejects,so SOURCE1is absent; local compound run also misses ACCEPT.
+
+Cause / uncertainty: A250ms sleep can precede the real3tick interaction cooldown. Actual Windows third toggle rejects,so SOURCE1is absent; local compound run also misses ACCEPT.
+
+Fix / next action: Wait4actual host ticks under simulation mutex before fixture placement; preserve host cooldown and all interaction validation.
+
+Evidence and verification: development/levels/rebuild/verification/house-fitout-2026-11-07/rejected-local-clock-cooldown.log; services-clock rejected-full-42357637604.log and corrected-tcp.log
+
+Older-map obligation: Audit each existing map/model/cover installation individually; shared source correction and House evidence do not accept unaudited layouts or rendering.
+
+### DEV-314 — Separate authored circuit paths duplicate physical shared conduit lengths
+
+**Status:** corrected65shared closed sections; overlap regression,physics and native parity pass · **Affected:** House fit-out source/distribution and common ceiling trunks
+
+Logical paths each emit a full mesh over the same shared trunk; source input and distribution output also overlap.
+
+Cause / uncertainty: Logical paths each emit a full mesh over the same shared trunk; source input and distribution output also overlap.
+
+Fix / next action: Consolidate collinear same-finish spans; separate actual incoming/outgoing board leads and reuse original textures.
+
+Evidence and verification: development/levels/rebuild/verification/house-fitout-2026-11-07/rejected-overlapping-conduits.log; fitout-services.json; native/runtime captures
+
+Older-map obligation: Audit each existing map/model/cover installation individually; shared source correction and House evidence do not accept unaudited layouts or rendering.
+
+### DEV-315 — Usable hiding places lack requested energy cue while disabled pockets still exclude ghosts
+
+**Status:** shared material implemented and locally verified; exact-source online/older-map visual acceptance remains open · **Affected:** Available indoor/outdoor hiding locations across investigations
+
+User asks for the same energy material on safe hiding locations. Prior renderer has no cue; ghost helper treats all placeholders/outdoor100percent as excluded even when disabled.
+
+Cause / uncertainty: User asks for the same energy material on safe hiding locations. Prior renderer has no cue; ghost helper treats all placeholders/outdoor100percent as excluded even when disabled.
+
+Fix / next action: Reuse exact sanctuary shader for available hiding locations; derive cupboard veil/associated refuge marker from authored data and shared budget. Align ghost exclusion with actual eligibility. Preserve existing hide/crouch activation and network privacy.
+
+Evidence and verification: development/levels/rebuild/verification/house-fitout-2026-11-07/HidingAreaHazeTest.log; rejected-unbudgeted-ghost-boundary-test.log; corrected LanGhostHidingBoundaryTest.log; hiding-energy runtime captures
+
+Older-map obligation: Audit each existing map/model/cover installation individually; shared source correction and House evidence do not accept unaudited layouts or rendering.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

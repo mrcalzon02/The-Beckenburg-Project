@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 7008,
+  "count": 7020,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -3184,6 +3184,46 @@
       "sha256": "bb36aace8bbf55d4da6403c64c502320ca592153b8fcd6bd7b0b93b99e413816"
     },
     {
+      "path": "development/captures/hiding-energy/cellar-refuge-energy-runtime.png",
+      "url": "development/captures/hiding-energy/cellar-refuge-energy-runtime.png",
+      "title": "Cellar refuge energy runtime",
+      "kind": "Runtime hiding-location energy material",
+      "width": 1000,
+      "height": 625,
+      "bytes": 598257,
+      "sha256": "22eeb5029dd99cca9a9baa26d5065e0cd84739974b048bf98e6e9bca73b566f8"
+    },
+    {
+      "path": "development/captures/hiding-energy/child-refuge-energy-runtime.png",
+      "url": "development/captures/hiding-energy/child-refuge-energy-runtime.png",
+      "title": "Child refuge energy runtime",
+      "kind": "Runtime hiding-location energy material",
+      "width": 1000,
+      "height": 625,
+      "bytes": 365482,
+      "sha256": "7b61ad539aff0cd0b190f3e7bb9a2e8c53968c1ad67c756d5e9734dce1c97a3e"
+    },
+    {
+      "path": "development/captures/hiding-energy/outdoor-refuge-energy-runtime.png",
+      "url": "development/captures/hiding-energy/outdoor-refuge-energy-runtime.png",
+      "title": "Outdoor refuge energy runtime",
+      "kind": "Runtime hiding-location energy material",
+      "width": 1000,
+      "height": 625,
+      "bytes": 232577,
+      "sha256": "d7efe7dc477faec68797a14e655f621d9fc60c2530e55da4ccb53c5e9ab613f8"
+    },
+    {
+      "path": "development/captures/hiding-energy/parents-refuge-energy-runtime.png",
+      "url": "development/captures/hiding-energy/parents-refuge-energy-runtime.png",
+      "title": "Parents refuge energy runtime",
+      "kind": "Runtime hiding-location energy material",
+      "width": 1000,
+      "height": 625,
+      "bytes": 326533,
+      "sha256": "2a40d55b749fb2627b67650cc385a9ebb535b01005edb66d006df8c2826ef78f"
+    },
+    {
       "path": "development/captures/house-envelope/canonical-van-runtime.png",
       "url": "development/captures/house-envelope/canonical-van-runtime.png",
       "title": "Canonical van runtime",
@@ -3272,6 +3312,86 @@
       "height": 625,
       "bytes": 431445,
       "sha256": "ae0274bfd69a0f8881cdbc03408afa26f383838b99b165c2b691cbc9fd5d2dba"
+    },
+    {
+      "path": "development/captures/house-fitout/cellar-refuge-runtime.png",
+      "url": "development/captures/house-fitout/cellar-refuge-runtime.png",
+      "title": "Cellar refuge runtime",
+      "kind": "Runtime household service fit-out",
+      "width": 1000,
+      "height": 625,
+      "bytes": 805048,
+      "sha256": "f7472ca3e9e8d9899fce4f6a95c0d8beeb943a1f920354ef7499e855e195d004"
+    },
+    {
+      "path": "development/captures/house-fitout/child-bedding-runtime.png",
+      "url": "development/captures/house-fitout/child-bedding-runtime.png",
+      "title": "Child bedding runtime",
+      "kind": "Runtime household service fit-out",
+      "width": 1000,
+      "height": 625,
+      "bytes": 632245,
+      "sha256": "c2c20f0e9faaea21d5ec58bb781098b6d7c85967856412db06c52f84bbab98cf"
+    },
+    {
+      "path": "development/captures/house-fitout/child-refuge-runtime.png",
+      "url": "development/captures/house-fitout/child-refuge-runtime.png",
+      "title": "Child refuge runtime",
+      "kind": "Runtime household service fit-out",
+      "width": 1000,
+      "height": 625,
+      "bytes": 417835,
+      "sha256": "3dca59ee6bb65f727756b2dfec681ee222a8a1529fcbe1a94a212c83e60aaaeb"
+    },
+    {
+      "path": "development/captures/house-fitout/distribution-runtime.png",
+      "url": "development/captures/house-fitout/distribution-runtime.png",
+      "title": "Distribution runtime",
+      "kind": "Runtime household service fit-out",
+      "width": 1000,
+      "height": 625,
+      "bytes": 256182,
+      "sha256": "302362df2e22a675147e5c4917a9b2d30c55a9991fb2f108b3a3af1b597b060b"
+    },
+    {
+      "path": "development/captures/house-fitout/native-parcel-overview.png",
+      "url": "development/captures/house-fitout/native-parcel-overview.png",
+      "title": "Native parcel overview",
+      "kind": "Native geometry overview",
+      "width": 1200,
+      "height": 900,
+      "bytes": 1418056,
+      "sha256": "5f4a60bda2f3503c8f5d7e906f6d763d3cd5951ef6c746de088019e59292a840"
+    },
+    {
+      "path": "development/captures/house-fitout/parents-bedding-runtime.png",
+      "url": "development/captures/house-fitout/parents-bedding-runtime.png",
+      "title": "Parents bedding runtime",
+      "kind": "Runtime household service fit-out",
+      "width": 1000,
+      "height": 625,
+      "bytes": 528216,
+      "sha256": "b4ad580fb9a325eabdfa70527348bb75b17aa6d843ce6aae7fe27fcbb6cbe5d3"
+    },
+    {
+      "path": "development/captures/house-fitout/parents-refuge-runtime.png",
+      "url": "development/captures/house-fitout/parents-refuge-runtime.png",
+      "title": "Parents refuge runtime",
+      "kind": "Runtime household service fit-out",
+      "width": 1000,
+      "height": 625,
+      "bytes": 352863,
+      "sha256": "ff9b3c6a895f9acc61f6ea7f906a3bb84bc01349bc97aecefdb9490a6e16f638"
+    },
+    {
+      "path": "development/captures/house-fitout/rejected-switch-gap-distribution-runtime.png",
+      "url": "development/captures/house-fitout/rejected-switch-gap-distribution-runtime.png",
+      "title": "Rejected switch gap distribution runtime",
+      "kind": "Rejected runtime inspection",
+      "width": 1000,
+      "height": 625,
+      "bytes": 256644,
+      "sha256": "f9f8b83e69ba65bfef20772888c696cd6dc9337ad913bd62e0b3e6f1e366395b"
     },
     {
       "path": "development/captures/house-fixture-fit/bath-fixture-fit-runtime.png",

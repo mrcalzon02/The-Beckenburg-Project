@@ -2542,6 +2542,16 @@ public final class SceneRenderer {
     private void levelArchitecture(List<Face> out,HouseMap map){
         if(map.nativeSite()){nativeArchitecture(out,map);return;}
         generatorControls(out,map);
+        if(map.services()!=null){
+            var geometry=authoredFixtureGeometry.computeIfAbsent(map.services(),key->{
+                var faces=new ArrayList<Face>();
+                for(var part:map.services().parts())for(var f:part.triangles()){
+                    var a=f.a();var b=f.b();var c=f.c();int room=map.roomAt((a.p().x()+b.p().x()+c.p().x())/3,(a.p().y()+b.p().y()+c.p().y())/3,(a.p().z()+b.p().z()+c.p().z())/3);
+                    faces.add(new Face(new Point(a.p().x(),a.p().y(),a.p().z()),new Point(b.p().x(),b.p().y(),b.p().z()),new Point(c.p().x(),c.p().y(),c.p().z()),0xffffff,f.material(),a.u(),a.v(),b.u(),b.v(),c.u(),c.v(),room<0?13:room));
+                }return List.copyOf(faces);
+            });
+            appendRetainedWorld(out,geometry,map.services(),map);
+        }
         scenery(map);
         var enclosure=enclosureFaces.computeIfAbsent(map.level().revision(),
             key->{var owned=new ArrayList<Face>();for(var face:enclosureScenery(map.level()))owned.add(face.owned(13));return List.copyOf(owned);});
@@ -3554,6 +3564,7 @@ public final class SceneRenderer {
         if(!spiritualWarSanctuaryConfigured||spiritualWarVanSanctuary)areas.add(SafeAreaBarrier.van(map.van()));
         areas.addAll(map.temporarySafeAreas());areas.addAll(SafeAreaBarrier.visibleWards(map,markers));
         safeAreaPixels=SafeAreaHaze.draw(pixels,depths,renderWidth,renderHeight,focal,x,eyeHeight,z,yaw,pitch,clock,List.copyOf(areas));
+        safeAreaPixels+=SafeAreaHaze.drawHiding(pixels,depths,renderWidth,renderHeight,focal,x,eyeHeight,z,yaw,pitch,clock,map);
     }
     private void render(HouseMap map,int ghostRoom,boolean visibleGhost,int wardRoom,int hunterRoom,
             double clock,List<RemoteBody> others,Apparition apparition,List<WorldMark> markers){
