@@ -1,5 +1,7 @@
 # Shared controls and solo runtime audit — 2026-11-06
 
+Validated implementation commit: `723b462857be8be223c7b4268d06eb322c9ba991`. Publication requires explicit user approval after automatic review rejected the push to the existing GitHub branch.
+
 Baseline: a59665bff3e11bd0348500384182a2a6c43b619f. Concurrent van departure commit ccb20204c3cb9265667ed95114ef4d5ed9761e9b retained. Unrelated pending safe-area, map and renderer changes were excluded from the staged-source compilation and acceptance.
 
 Removed the duplicate 1,100+ line solo GamePanel. Both free play and campaign solo now use a private loopback LanHost/LanClient, FieldEquipment and LanWorldPanel, matching co-op interaction, placement, gear, physical checks and authority. Saved Castle inventory feeds local free play; campaign settlements and hired hunters retain their existing shared-host code. Local launch runs off the EDT and can be cancelled; returning home closes the private host.
