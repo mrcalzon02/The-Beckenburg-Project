@@ -1,0 +1,28 @@
+{
+  "source": "dd70440fe5ecb55186bf0f453d2fe04e95b954ea",
+  "deployment_run": 42344777413,
+  "status": "PASS actual deployed HTML/index and native/sky PNG bytes",
+  "files": {
+    "beckenburg-development-gallery.html": {
+      "bytes": 2630409,
+      "sha256": "1c0baa75d02fbbcf65bbfee6d1c393d939d4b85b115a9c5cfa366bec066b5a21"
+    },
+    "development/gallery/index.json": {
+      "bytes": 3002637,
+      "sha256": "ef4fae7761e41e36a83f54109bb1909022162cf66d197b3f7d1348ddb4e2098a"
+    },
+    "development/levels/rebuild/captures/castle-native-upgrade/upgraded-custom-museum-runtime.png": {
+      "bytes": 466582,
+      "sha256": "6089ccd649e45980f3fc72b6326a0ccca5a91bb2fd142cf21ca9308a665fd256"
+    },
+    "development/levels/rebuild/captures/castle-native-upgrade/upgraded-custom-cellar-runtime.png": {
+      "bytes": 480809,
+      "sha256": "e53a7236967e2b7493f222afcafbd096ef9e230b132356eac8feecd437feb8be"
+    },
+    "development/levels/rebuild/captures/castle-closeout/sky-fixed/sky-east-bridge-runtime.png": {
+      "bytes": 22499,
+      "sha256": "dacf612b1555f021d85178dbf32664d1dab60ee2c4ad55fa49af38373d590d78"
+    }
+  },
+  "limits": "Source DD includes newly added NPC captures not yet union-indexed. Story/new loose-object publication and later Pages are distinct."
+}

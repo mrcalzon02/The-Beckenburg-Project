@@ -1,0 +1,275 @@
+{
+  "base": "fb481f4c656d4c3b3a1fd6c1d04b681358feeca4",
+  "actual_packaged_bodies": {
+    "BeckenburgRegressionManifestTest": {
+      "exit": 0,
+      "seconds": 1.25
+    },
+    "CastleGroundConstructionTest": {
+      "exit": 0,
+      "seconds": 4.234
+    },
+    "CastleRebuildTest": {
+      "exit": 0,
+      "seconds": 3.657
+    },
+    "CastleHeadquartersRevisionTest": {
+      "exit": 0,
+      "seconds": 5.234
+    },
+    "CastleCellarConstructionTest": {
+      "exit": 0,
+      "seconds": 2.594
+    },
+    "CastleTrainingAnnexTest": {
+      "exit": 0,
+      "seconds": 3.265
+    },
+    "CastleWorldTerrainTest": {
+      "exit": 0,
+      "seconds": 1.578
+    },
+    "CastleLightingPlacementRepairTest": {
+      "exit": 0,
+      "seconds": 1.922
+    },
+    "CastleSnapshotContractTest": {
+      "exit": 0,
+      "seconds": 2.782
+    },
+    "CastleDocumentRecoveryTest": {
+      "exit": 0,
+      "seconds": 2.031
+    },
+    "CastleEditorGeometryTest": {
+      "exit": 0,
+      "seconds": 1.453
+    },
+    "CastlePortalSlotTest": {
+      "exit": 0,
+      "seconds": 1.469
+    },
+    "CastleHubIntegrationTest": {
+      "exit": 0,
+      "seconds": 4.078
+    },
+    "CastleSignedConstructionTest": {
+      "exit": 0,
+      "seconds": 1.265
+    },
+    "CastleHomeInteractionTest": {
+      "exit": 0,
+      "seconds": 6.375
+    },
+    "CastleInventoryWorkstationTest": {
+      "exit": 0,
+      "seconds": 6.766
+    },
+    "CastleOrientationTest": {
+      "exit": 0,
+      "seconds": 0.047
+    },
+    "CastleContainedMenuTest": {
+      "exit": 0,
+      "seconds": 6.703
+    },
+    "CastleRelationsTest": {
+      "exit": 0,
+      "seconds": 1.609
+    },
+    "CastleShelfLabelsTest": {
+      "exit": 0,
+      "seconds": 2.391
+    },
+    "CastleEditorAuditTest": {
+      "exit": 0,
+      "seconds": 1.219
+    },
+    "CastleFurnitureWallAuditTest": {
+      "exit": 0,
+      "seconds": 1.203
+    },
+    "VanLightingAndCastleDoorTest": {
+      "exit": 0,
+      "seconds": 1.109
+    },
+    "HouseRebuildTerrainTest": {
+      "exit": 0,
+      "seconds": 1.469
+    },
+    "EditorAgentServiceTest": {
+      "exit": 0,
+      "seconds": 3.547
+    },
+    "CastleUpperConstructionTest": {
+      "exit": 0,
+      "seconds": 2.609
+    },
+    "WallLampSourceUvTest": {
+      "exit": 0,
+      "seconds": 0.219
+    },
+    "WallLampMountPlateTest": {
+      "exit": 0,
+      "seconds": 1.031
+    },
+    "CastleMuseumConstructionTest": {
+      "exit": 0,
+      "seconds": 1.25
+    },
+    "CastleTesterBedTest": {
+      "exit": 0,
+      "seconds": 1.25
+    },
+    "CastleFireplaceTest": {
+      "exit": 0,
+      "seconds": 1.188
+    },
+    "PreparedLightBatchParityTest": {
+      "exit": 0,
+      "seconds": 35.531
+    },
+    "CastleTapestryTest": {
+      "exit": 0,
+      "seconds": 1.234
+    },
+    "CastleHeritageSurfacesTest": {
+      "exit": 0,
+      "seconds": 1.25
+    },
+    "CastleHeraldicDisplayTest": {
+      "exit": 0,
+      "seconds": 1.297
+    },
+    "CastlePlantFitTest": {
+      "exit": 0,
+      "seconds": 1.282
+    },
+    "WorkbenchMaterialTest": {
+      "exit": 0,
+      "seconds": 1.234
+    },
+    "CastleTrainingLessonTest": {
+      "exit": 0,
+      "seconds": 7.812
+    },
+    "LanRiteNetworkTest": {
+      "exit": 0,
+      "seconds": 6.063
+    },
+    "CastleFinishPlacementTest": {
+      "exit": 0,
+      "seconds": 1.328
+    },
+    "CastleRebuildUpgradeTest": {
+      "exit": 0,
+      "seconds": 4.438
+    },
+    "EditorDiskRevisionTest": {
+      "exit": 0,
+      "seconds": 2.531
+    },
+    "CastleStoryTest": {
+      "exit": 0,
+      "seconds": 9.328
+    }
+  },
+  "manifest_preflight": 344,
+  "final_headless_story": "PASS real native masonry/nearer mesh/deletion/contained UI controls",
+  "final_native_story": "PASS actual E-key input in6real windows;12actual captures viewed",
+  "files": {
+    "src/main/java/org/beckenburg/CastleObjectRay.java": {
+      "bytes": 2467,
+      "sha256": "b2bbdc4632a237c97f1244f6a6c6fec2db7d4fced5dd1e9cabb65c2f78114bc4"
+    },
+    "src/main/java/org/beckenburg/CastleStory.java": {
+      "bytes": 3927,
+      "sha256": "2c24661a0f60d90ee5119a7efa2ffe8386f6bbf58fc223333b4f7eb557d0985c"
+    },
+    "src/main/java/org/beckenburg/CastleStoryPanel.java": {
+      "bytes": 1321,
+      "sha256": "bd2aaf87e3fe6ec89284468d234a2a3af0f620ca2fdd5765d94210499fecb43b"
+    },
+    "src/main/java/org/beckenburg/CastleHubPanel.java": {
+      "bytes": 28388,
+      "sha256": "c4b71b9c22bc46180ccde7d94c1b05100f4fdbd8d6fd91f7a33e0a5c6d521ad8"
+    },
+    "src/main/java/org/beckenburg/BeckenburgRegressionSuite.java": {
+      "bytes": 5990,
+      "sha256": "a9b621d8a26f271932ded029db81dc329df279d0b9033371e186a7ccab5ee431"
+    },
+    "src/test/java/org/beckenburg/CastleStoryTest.java": {
+      "bytes": 8276,
+      "sha256": "da95336ac4d3fcc7b65c040be525440c3e79bc29e9c605c870fd3bca24ca5bb0"
+    },
+    "tools/verify_castle_story.py": {
+      "bytes": 1440,
+      "sha256": "8034f4727d01c205369b9f17f7cb752c98f6487f227b753ea13699a6af6f4099"
+    },
+    "tools/verify_editor_agent_host.cmd": {
+      "bytes": 7426,
+      "sha256": "5c8ddb6cef3b2d62316ade9001f4cbaa1efb9c2413468ae375e329d4b148843b"
+    },
+    "tools/build_map_rebuild_roughs.py": {
+      "bytes": 133799,
+      "sha256": "935fbd90f5230664c84e1d3aa702abae248b4e3c3453f857116576851099e2fc"
+    },
+    "tools/build_development_gallery.py": {
+      "bytes": 5678,
+      "sha256": "87cc4547bad3d3fc2cbb113d211966bd01250626df2d438209bc5c3ca2474f38"
+    },
+    "regression-tests.txt": {
+      "bytes": 8347,
+      "sha256": "cfae30913968a24e9b1c68b6aae486760809f5401cbce615dbe5aaae3616658d"
+    },
+    "development/captures/castle-story-ui/finish-keeper-statue-record-ui.png": {
+      "bytes": 33458,
+      "sha256": "ef5fc5de4d7e6b7554dacb59d585f29ed8293457ce6dbf06183807b7c2379aaa"
+    },
+    "development/captures/castle-story-ui/finish-keeper-statue-record-world.png": {
+      "bytes": 175915,
+      "sha256": "c220094ce17e6fd0fb88eef694c31c532d1904d122eb9e96608d4cec701a2de2"
+    },
+    "development/captures/castle-story-ui/heritage-archive-arms-record-ui.png": {
+      "bytes": 29285,
+      "sha256": "83b8c8391ed41e73825ae1a907810944dd8168393961bc6bd4c08da628c3c21d"
+    },
+    "development/captures/castle-story-ui/heritage-archive-arms-record-world.png": {
+      "bytes": 143333,
+      "sha256": "b00d29c758c5fbb4650963ed8235bc0372b960fb0904f2d1ab72728424970c5d"
+    },
+    "development/captures/castle-story-ui/heritage-archive-tapestry-record-ui.png": {
+      "bytes": 32643,
+      "sha256": "34b968240953267d5c4d0ddd0c989f22222d26c37536de22af3d615950054675"
+    },
+    "development/captures/castle-story-ui/heritage-archive-tapestry-record-world.png": {
+      "bytes": 167746,
+      "sha256": "0f3aa9f2ef80a06a490e3eb5671d0bb82b823824fd26842a2999da24f78b7da0"
+    },
+    "development/captures/castle-story-ui/heritage-common-fireplace-record-ui.png": {
+      "bytes": 29835,
+      "sha256": "ac0073c3fc7048ff12bfc5547762410e879d40437e871e3db0844ebf352d1d2e"
+    },
+    "development/captures/castle-story-ui/heritage-common-fireplace-record-world.png": {
+      "bytes": 165364,
+      "sha256": "a12dc287852edb2bf674ebba78e0e9e8541a58873119d91da4ce632e590a3a2d"
+    },
+    "development/captures/castle-story-ui/heritage-restoration-painting-record-ui.png": {
+      "bytes": 30070,
+      "sha256": "05a7446290c411344b13f9c4dcd44fc570755805bddfd40913ff5a1921c76633"
+    },
+    "development/captures/castle-story-ui/heritage-restoration-painting-record-world.png": {
+      "bytes": 137776,
+      "sha256": "aefb486a70476986301bc7baceaa32b5d09e6a3348fbc82a0b0ecbac5f0b151b"
+    },
+    "development/captures/castle-story-ui/museum-armour-caption-record-ui.png": {
+      "bytes": 30860,
+      "sha256": "dc08a685c668d6d087c42f8b5cfa29e265b9c01df564b87b56643aba9276ef67"
+    },
+    "development/captures/castle-story-ui/museum-armour-caption-record-world.png": {
+      "bytes": 153810,
+      "sha256": "137dbe5d5f08b6b0aa2d9d48be55e1c307c91ee957f2b0102cc93dcbf5491f8b"
+    }
+  },
+  "limits": "Fresh story exact-source remote acceptance, pending recovery merges, deployed gallery and remaining Castle/all29 gates remain open"
+}
