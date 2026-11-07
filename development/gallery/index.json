@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 7398,
+  "count": 7400,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -3222,6 +3222,26 @@
       "height": 625,
       "bytes": 326533,
       "sha256": "2a40d55b749fb2627b67650cc385a9ebb535b01005edb66d006df8c2826ef78f"
+    },
+    {
+      "path": "development/captures/house-encounter/train-after-runtime.png",
+      "url": "development/captures/house-encounter/train-after-runtime.png",
+      "title": "Train after runtime",
+      "kind": "Runtime authored House encounter study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 604553,
+      "sha256": "627874a9c96b39810d91cc7d012e37d0f9db285b2eb3d9ebf589cd6fceab3b79"
+    },
+    {
+      "path": "development/captures/house-encounter/train-before-runtime.png",
+      "url": "development/captures/house-encounter/train-before-runtime.png",
+      "title": "Train before runtime",
+      "kind": "Runtime authored House encounter study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 604228,
+      "sha256": "ca516035a4b3092bb322c089404b9f1a5dea5b2bc74c8099bd54f6b31776f604"
     },
     {
       "path": "development/captures/house-envelope/canonical-van-runtime.png",

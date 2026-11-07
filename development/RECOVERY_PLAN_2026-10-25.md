@@ -805,3 +805,10 @@ PR81 sourcec1fe6f53 full42420139114 actual362/0/0/362 and editor42420157493/GPU4
 Next: publish/read back this final verified source, run exact365/full/native/GPU and later verify deployed migration images. Finish fresh default House promotion, conservative saved custom attachment resolutions, authored encounter and final matched door/circuit/light/material/whole-location/client acceptance. Continue all29packets and remaining unfinished maps. No round-duration testing or physical FPS acceptance.
 
 Verified migration/memory implementation60a239ddf6cd183cd4676cef241ae70a88d5107e; stage/source hashes bind actual365manifest and local256MB/TCP/material evidence. Publish and obtain exact-source full/native/GPU; new captures require merged Pages readback.
+
+
+## House encounter WIP / native recovery priority — 7 November2026
+
+Protocol checkpoint698163b1 explicitly separates LAN3 authored cue compatibility from runtime integration. Core House train controller is now wired into actual solo/host paths; source test passes empty-room/full-object doorway/deck occlusion, one-shot/stale/reset, possession/death/disconnect/timeout and independent model-foot support, unchanged routes/cover. Two actual before/after renders were inspected and an original windup WAV generated. Real solo/TCP/photo/old-version/audio/GPU acceptance remains pending; no encounter completion or fresh default promotion.
+
+Protected PR82 sourcea613df30 GPU42424143713 PASS; full42424140271 remains observed live. Native42424140546 FAILS at CLI corrupt-primary bootstrap, despite actual256MB GUI and prior native checks passing: recoverSavedDocument loads the corrupt primary through source selection before restoring previous data (DEV-345). Preserve that raw failure. Next action is isolated native recovery correction and actual CLI regression before promoting either checkpoint. All29packets/later maps remain active; no round-duration or physical FPS claims.

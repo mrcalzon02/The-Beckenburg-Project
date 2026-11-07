@@ -3697,6 +3697,28 @@
       "action": "Use actual named live-screen contract and rerun; preserve rejected fixture log.",
       "evidence": "house-migration-rejected-live-surface-name.log; SourceImageSharingTest.log",
       "older_maps": "No source/live-screen runtime failure inferred from the rejected test fixture."
+    },
+    {
+      "id": "DEV-344",
+      "title": "House authored train encounter has no runtime implementation",
+      "status": "CORE IMPLEMENTED; source/occlusion/ownership/reset/support/render checks pass; actual solo/TCP/photo/audio acceptance pending",
+      "affected": "House first-principles story/atmosphere stage",
+      "symptom": "Supported records and loose belongings existed, but the required individually authored optional location encounter remained plan-only.",
+      "cause": "No location-specific host/solo controller was connected to runtime.",
+      "action": "Add an original once-per-round supported wooden-train turn while room is empty and investigators lack full-object sight. Reuse real loose-state replication and source support, add original ambient audio, protect possession/death/disconnect/timeout and evidence negatives. Protocol3 is a separate explicit compatibility checkpoint.",
+      "evidence": "HouseEncounterTest; actual before/after runtime captures and original windup WAV; remaining integration tests pending",
+      "older_maps": "Each location needs its own authored encounter, predicates, host/privacy/evidence/reset and actual visual/audio review."
+    },
+    {
+      "id": "DEV-345",
+      "title": "House CLI recovery reads corrupt primary architecture before restoring valid backup",
+      "status": "REMOTE NATIVE FAILURE CONFIRMED; isolated recovery correction is next priority",
+      "affected": "PR82 native42424140546; explicit editor-agent --recover House bootstrap after primary corruption",
+      "symptom": "Actual Windows native tests and migration pass, but verify_editor_agent_cli.py recover bootstrap fails. LevelAuthoringSession.recoverSavedDocument calls LevelPlans.buildSource, which selects architecture by reading the corrupt primary BSCN before the valid previous document can be restored.",
+      "cause": "New native source selection was inserted before existing primary-corruption recovery.",
+      "action": "Resolve the recovery candidate architecture from the backup being validated, without loading the corrupt primary. Preserve source-version/identity/attachment checks and add a corrupted-primary recovery regression. Keep PR82 unmerged; do not infer native acceptance from passing GUI or GPU.",
+      "evidence": "build/native-42424140546-failed.log; actual CI traceback at verify_editor_agent_cli.py line60",
+      "older_maps": "Audit version selection before corruption recovery independently for every native source adapter."
     }
   ],
   "audit_categories": [

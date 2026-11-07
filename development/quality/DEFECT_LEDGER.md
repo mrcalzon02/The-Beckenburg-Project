@@ -4714,6 +4714,34 @@ Evidence and verification: house-migration-rejected-live-surface-name.log; Sourc
 
 Older-map obligation: No source/live-screen runtime failure inferred from the rejected test fixture.
 
+### DEV-344 — House authored train encounter has no runtime implementation
+
+**Status:** CORE IMPLEMENTED; source/occlusion/ownership/reset/support/render checks pass; actual solo/TCP/photo/audio acceptance pending · **Affected:** House first-principles story/atmosphere stage
+
+Supported records and loose belongings existed, but the required individually authored optional location encounter remained plan-only.
+
+Cause / uncertainty: No location-specific host/solo controller was connected to runtime.
+
+Fix / next action: Add an original once-per-round supported wooden-train turn while room is empty and investigators lack full-object sight. Reuse real loose-state replication and source support, add original ambient audio, protect possession/death/disconnect/timeout and evidence negatives. Protocol3 is a separate explicit compatibility checkpoint.
+
+Evidence and verification: HouseEncounterTest; actual before/after runtime captures and original windup WAV; remaining integration tests pending
+
+Older-map obligation: Each location needs its own authored encounter, predicates, host/privacy/evidence/reset and actual visual/audio review.
+
+### DEV-345 — House CLI recovery reads corrupt primary architecture before restoring valid backup
+
+**Status:** REMOTE NATIVE FAILURE CONFIRMED; isolated recovery correction is next priority · **Affected:** PR82 native42424140546; explicit editor-agent --recover House bootstrap after primary corruption
+
+Actual Windows native tests and migration pass, but verify_editor_agent_cli.py recover bootstrap fails. LevelAuthoringSession.recoverSavedDocument calls LevelPlans.buildSource, which selects architecture by reading the corrupt primary BSCN before the valid previous document can be restored.
+
+Cause / uncertainty: New native source selection was inserted before existing primary-corruption recovery.
+
+Fix / next action: Resolve the recovery candidate architecture from the backup being validated, without loading the corrupt primary. Preserve source-version/identity/attachment checks and add a corrupted-primary recovery regression. Keep PR82 unmerged; do not infer native acceptance from passing GUI or GPU.
+
+Evidence and verification: build/native-42424140546-failed.log; actual CI traceback at verify_editor_agent_cli.py line60
+
+Older-map obligation: Audit version selection before corruption recovery independently for every native source adapter.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
