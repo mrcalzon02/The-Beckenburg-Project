@@ -28,6 +28,8 @@ for path in sorted(set(paths)):
     elif '/rebuild/previews/' in path and p.stem.endswith('terrain-inspection'):kind='Native terrain inspection'
     elif '/rebuild/previews/' in path and p.stem.endswith('cutaway'):kind='Native inspection cutaway'
     elif '/rebuild/captures/' in path and p.stem.startswith('rejected-'):kind='Rejected runtime study'
+    elif any('/castle-closeout/castle/'+r+'/' in path for r in ['pantry','linen','eave-store']):kind='Sealed context inspection'
+    elif '/castle-closeout/castle/' in path:kind='Runtime room review baseline'
     elif '/rebuild/captures/house-graybox/' in path:kind='Runtime graybox capture'
     elif '/rebuild/captures/baseline/' in path:kind='Runtime baseline capture'
     elif '/rebuild/captures/' in path:kind='Runtime capture'

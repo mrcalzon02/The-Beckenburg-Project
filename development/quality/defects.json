@@ -2854,13 +2854,13 @@
     {
       "id": "DEV-248",
       "title": "South rampart capture contains flat polygon patches in the night sky",
-      "status": "open; visual source classification required",
+      "status": "fixed-scoped clear-night painter; six actual matched Castle exterior views verified",
       "affected": "Castle southern upper exterior view",
       "symptom": "Actual upper-south-walk-runtime capture shows isolated flat dark polygon patches above the distant horizon.",
-      "cause": "Unclassified: sky/environment rendering requires source and matched camera review.",
-      "action": "Retain actual capture and inspect sky/cloud/environment geometry during Castle exterior/story refinement; do not claim visual completion.",
-      "evidence": "development/levels/rebuild/captures/castle-construction/upper-south-walk-runtime.png",
-      "older_maps": "Other sky profiles and exterior maps remain independently unaudited; no global fix or acceptance is inferred."
+      "cause": "WeatherSky always drew at least4 hexagonal cloud polygons, including at actual cloudCover0; minimum alpha35 made hard floating patches in the clear night sky.",
+      "action": "Draw no bands at zero cloud cover and fade in very thin coverage. Retain existing storm/overcast band density/opacity, world-fixed heading/pitch, sky-only composition and actual world depths. Fresh full-source renderer/platform CI remains required.",
+      "evidence": "verification/castle-closeout-2026-11-06: original zero-cover test fails, corrected packaged weather checks pass; six exact native before/after PNG pairs,1220 sky pixels corrected, byte-identical world depths and zero changed solid-interior pixels. Earlier upper-south-walk-runtime.png retained.",
+      "older_maps": "Shared zero-cover painter corrected, but each older map/sky profile and all other weather states still require individual visual acceptance. Do not infer a global map fix from this Castle review."
     },
     {
       "id": "DEV-249",
@@ -3081,6 +3081,17 @@
       "action": "Offset the north seat55cm along its table edge, retaining source scale, four seats, no model overlap and an actual clear table approach. Retain the existing integration check unchanged.",
       "evidence": "castle-finish-rejected-table-approach.log; final CastleHubIntegrationTest, CastleFinishPlacementTest and dining capture.",
       "older_maps": "No unaudited older map or model is accepted. Preserve original source assets; review reused models/placements individually."
+    },
+    {
+      "id": "DEV-290",
+      "title": "Castle compass audit omits signed annex/cellar and conflates local cameras with search access",
+      "status": "fixed-scoped complete42-space source audit; all168 cardinal PNGs actually viewed",
+      "affected": "SiteRoomCompassAudit Castle branch and gallery labels",
+      "symptom": "Auditor used only CastleRooms.ALL, omitting all8 annex/cellar spaces; clear teleport cameras inside3 sealed rooms could be mistaken for accessible rooms.",
+      "cause": "Original core/upper ownership list was treated as the complete HQ roster; camera clearance was not distinguished from search access.",
+      "action": "Append actual saved annex floors and active cellar programme, reject duplicate room IDs, retain stable room IDs and explicit OPEN_PROGRAMME/SEALED_CONTEXT_INSPECTION labels. Preserve body-radius camera checks, source poses, existing navigation/seal tests and all raw images.",
+      "evidence": "castle-closeout/castle/castle-rooms.csv:42 rows,39 open programme/3sealed; review.json binds all168 visually reviewed cardinal PNGs and source hashes.",
+      "older_maps": "Review each other location separately. These new captures replace neither its visual audit nor full native/runtime acceptance."
     }
   ],
   "audit_categories": [

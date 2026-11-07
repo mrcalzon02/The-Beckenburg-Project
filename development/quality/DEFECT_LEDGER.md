@@ -3638,17 +3638,17 @@ Older-map obligation: These are inspection-probe corrections, not removal of cle
 
 ### DEV-248 — South rampart capture contains flat polygon patches in the night sky
 
-**Status:** open; visual source classification required · **Affected:** Castle southern upper exterior view
+**Status:** fixed-scoped clear-night painter; six actual matched Castle exterior views verified · **Affected:** Castle southern upper exterior view
 
 Actual upper-south-walk-runtime capture shows isolated flat dark polygon patches above the distant horizon.
 
-Cause / uncertainty: Unclassified: sky/environment rendering requires source and matched camera review.
+Cause / uncertainty: WeatherSky always drew at least4 hexagonal cloud polygons, including at actual cloudCover0; minimum alpha35 made hard floating patches in the clear night sky.
 
-Fix / next action: Retain actual capture and inspect sky/cloud/environment geometry during Castle exterior/story refinement; do not claim visual completion.
+Fix / next action: Draw no bands at zero cloud cover and fade in very thin coverage. Retain existing storm/overcast band density/opacity, world-fixed heading/pitch, sky-only composition and actual world depths. Fresh full-source renderer/platform CI remains required.
 
-Evidence and verification: development/levels/rebuild/captures/castle-construction/upper-south-walk-runtime.png
+Evidence and verification: verification/castle-closeout-2026-11-06: original zero-cover test fails, corrected packaged weather checks pass; six exact native before/after PNG pairs,1220 sky pixels corrected, byte-identical world depths and zero changed solid-interior pixels. Earlier upper-south-walk-runtime.png retained.
 
-Older-map obligation: Other sky profiles and exterior maps remain independently unaudited; no global fix or acceptance is inferred.
+Older-map obligation: Shared zero-cover painter corrected, but each older map/sky profile and all other weather states still require individual visual acceptance. Do not infer a global map fix from this Castle review.
 
 ### DEV-249 — Owner rejects primitive Castle museum studies, especially disconnected armour slabs
 
@@ -3929,6 +3929,20 @@ Fix / next action: Offset the north seat55cm along its table edge, retaining sou
 Evidence and verification: castle-finish-rejected-table-approach.log; final CastleHubIntegrationTest, CastleFinishPlacementTest and dining capture.
 
 Older-map obligation: No unaudited older map or model is accepted. Preserve original source assets; review reused models/placements individually.
+
+### DEV-290 — Castle compass audit omits signed annex/cellar and conflates local cameras with search access
+
+**Status:** fixed-scoped complete42-space source audit; all168 cardinal PNGs actually viewed · **Affected:** SiteRoomCompassAudit Castle branch and gallery labels
+
+Auditor used only CastleRooms.ALL, omitting all8 annex/cellar spaces; clear teleport cameras inside3 sealed rooms could be mistaken for accessible rooms.
+
+Cause / uncertainty: Original core/upper ownership list was treated as the complete HQ roster; camera clearance was not distinguished from search access.
+
+Fix / next action: Append actual saved annex floors and active cellar programme, reject duplicate room IDs, retain stable room IDs and explicit OPEN_PROGRAMME/SEALED_CONTEXT_INSPECTION labels. Preserve body-radius camera checks, source poses, existing navigation/seal tests and all raw images.
+
+Evidence and verification: castle-closeout/castle/castle-rooms.csv:42 rows,39 open programme/3sealed; review.json binds all168 visually reviewed cardinal PNGs and source hashes.
+
+Older-map obligation: Review each other location separately. These new captures replace neither its visual audit nor full native/runtime acceptance.
 
 ## Required audit categories
 
