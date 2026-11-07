@@ -1,10 +1,14 @@
 {
-  "source_head": "48858a32688bd245498dcf85253ab089b1afd624",
+  "source_head": "ccd2525d0b4c07a0de0393778093887afca8f181",
   "status": "PASS independently fetched native physics/contact/cache source, sockets, actual PNG and union-gallery bytes",
   "files": {
+    "src/main/java/org/beckenburg/CastleHubArchitecturalPlan.java": {
+      "bytes": 16705,
+      "sha256": "f62750d6b7698e90d72bd2a2c78c37d48bb8830088d3563c042950ca15745c25"
+    },
     "src/main/java/org/beckenburg/CastleClutterWorld.java": {
-      "bytes": 4762,
-      "sha256": "2cebcb61e801745989b359c335e1f980be0ac921a5e41abeb9ee8e1b2f87984e"
+      "bytes": 4857,
+      "sha256": "6b358b7b9e37a009dbf5c2fa614f8cccba15ccf120771f01273ec03eaf3a99f8"
     },
     "src/main/java/org/beckenburg/LooseClutter.java": {
       "bytes": 19130,
@@ -15,12 +19,12 @@
       "sha256": "cd61709318b7e78e6cb05ab5109bd60e4e52df8429c7bc86a39252a106f47500"
     },
     "src/main/java/org/beckenburg/SceneRenderer.java": {
-      "bytes": 288066,
-      "sha256": "1a1b727d8d9a5b3b8ff7dc92ca1e0caba3bd3cf2923e12faa7a15063b49b9e21"
+      "bytes": 288005,
+      "sha256": "f70b181605f13f4dcfd900db67c3692f9a04362c5a9ed3ca03c9ec10ad00c2b4"
     },
     "src/main/java/org/beckenburg/FixtureLighting.java": {
-      "bytes": 48645,
-      "sha256": "55b3246ebf0752735947d217251d1cf0bc98ef7e3200cd341b16aef925bc903c"
+      "bytes": 48826,
+      "sha256": "80fe09323534634fd9dfd3f471ca2b99adba36fb65e28440bbdf7e33564f8224"
     },
     "development/levels/rebuild/castle/loose-object-sockets.json": {
       "bytes": 2979,
@@ -43,8 +47,8 @@
       "sha256": "8be8f65f78b725e6768d8c1321e4838844884ebb56f1a72de8db00ae3dd104a5"
     },
     "development/levels/rebuild/verification/castle-loose-2026-11-06/checkpoint.json": {
-      "bytes": 10404,
-      "sha256": "8ded2c5d2c18f1d9a3740c83769d28367029ead2e8920f4bf25d285823a9e603"
+      "bytes": 11565,
+      "sha256": "1b7a208a731f514a86cb0b27eff4ee1d8e39970a4289dbca20135f3c109519eb"
     },
     "beckenburg-development-gallery.html": {
       "bytes": 2712517,
