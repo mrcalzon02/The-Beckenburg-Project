@@ -4464,15 +4464,15 @@ Older-map obligation: No older-map layouts, pipe supports, source surfaces, UVs 
 
 ### DEV-326 — House review finds unfilled daily-use storage and garden functions
 
-**Status:** OPEN; next functional furnishing pass before House promotion · **Affected:** Rebuilt House room/function audit; older site camera coverage remains individually unaudited
+**Status:** SCOPED IMPLEMENTATION AND RUNTIME REVIEW PASS; exact-source full361 and full House gates pending · **Affected:** Rebuilt House room/function audit; older site camera coverage remains individually unaudited
 
 Actual four-direction review and current39source props show the coat vestibule without coat/boot storage, kitchen without cold-food storage and garden/patio still an empty reservation.
 
 Cause / uncertainty: Incomplete functional furnishing or legal-but-unrepresentative centre fallback in an advisory visual audit
 
-Fix / next action: Fit original source-quality coat/boot/cold-storage and location-specific garden facilities with actual supports, circulation, source physics and runtime/native review. Do not replace these with a room-name or random clutter.
+Fix / next action: Fit original full-size boot/towel rack, source-preserving supported coat, original180triangle generated-enamel fridge and grounded source bench/planters. Preserve all routes, door poses, cupboard budget, source coordinates and original assets.
 
-Evidence and verification: development/levels/rebuild/verification/house-room-review-2026-11-07/reviewed-rooms.csv; verification.json; actual house-room-review compass and authored-spawn PNGs
+Evidence and verification: development/levels/rebuild/verification/house-room-review-2026-11-07/reviewed-rooms.csv; verification.json; actual house-room-review compass and authored-spawn PNGs; HouseRebuildFurnishingsTest.log; furnishings-native-verification.json; house-functional-fill runtime captures
 
 Older-map obligation: Audit each older site independently. Legal cameras, graph connectivity and room names alone do not prove physical, functional, visual or gameplay completion.
 
@@ -4489,6 +4489,48 @@ Fix / next action: Keep actual centre/fallback views and add the source-authored
 Evidence and verification: development/levels/rebuild/verification/house-room-review-2026-11-07/reviewed-rooms.csv; verification.json; actual house-room-review compass and authored-spawn PNGs
 
 Older-map obligation: Audit each older site independently. Legal cameras, graph connectivity and room names alone do not prove physical, functional, visual or gameplay completion.
+
+### DEV-328 — Fridge generation report accesses a freed Blender image after reset
+
+**Status:** SCOPED CORRECTION; actual source/export/runtime checks pass; exact-source CI pending · **Affected:** New House furnishing/asset-generation diagnostic; older source/audits remain individually unaudited
+
+Export/reimport/renders succeeded, but final report used image.size after factory reset removed its RNA; Blender initially exited0 despite the traceback.
+
+Cause / uncertainty: Source attachment gap, Blender lifetime/failure-propagation or incorrect stacked-floor review metadata
+
+Fix / next action: Cache dimensions before reset; use --python-exit-code1 and require actual verification report. Final source/export/render report passes.
+
+Evidence and verification: development/levels/model-production/house-fridge/; development/levels/rebuild/verification/house-functional-fill-2026-11-07/; development/captures/house-functional-fill/: rejected-report-lifetime.log; house-fridge-build.log
+
+Older-map obligation: Audit older model attachments, camera ownership/elevation and strict generation status individually; no blanket older-map or hardware acceptance.
+
+### DEV-329 — Original coat floats below its source hook
+
+**Status:** SCOPED CORRECTION; actual source/export/runtime checks pass; exact-source CI pending · **Affected:** New House furnishing/asset-generation diagnostic; older source/audits remain individually unaudited
+
+Existing level_trace_coat front/side source review shows a shoulder-to-hook gap.
+
+Cause / uncertainty: Source attachment gap, Blender lifetime/failure-propagation or incorrect stacked-floor review metadata
+
+Fix / next action: Create additive188triangle sibling: preserve original152triangle surfaces/UV/material/pivot and bridge shoulder to hook with36triangle wooden hanger. Original file remains untouched; source subset and runtime attachment checks pass.
+
+Evidence and verification: development/levels/model-production/house-fridge/; development/levels/rebuild/verification/house-functional-fill-2026-11-07/; development/captures/house-functional-fill/: coat-verification.json; coat-front/coat-side previews; HouseRebuildFurnishingsTest.log
+
+Older-map obligation: Audit older model attachments, camera ownership/elevation and strict generation status individually; no blanket older-map or hardware acceptance.
+
+### DEV-330 — Cold-storage diagnostic camera captures cellar instead of kitchen
+
+**Status:** SCOPED CORRECTION; actual source/export/runtime checks pass; exact-source CI pending · **Affected:** New House furnishing/asset-generation diagnostic; older source/audits remain individually unaudited
+
+Camera row used foyer room hint0 at kitchenXZ; ground fallback found the lower cellar, so the fridge-labeled view showed the washer while position was legally traversable.
+
+Cause / uncertainty: Source attachment gap, Blender lifetime/failure-propagation or incorrect stacked-floor review metadata
+
+Fix / next action: Use actual kitchen room hint2 and require same room ownership as well as traversability; preserve wrong-floor capture. Correct kitchen and function views were actually inspected.
+
+Evidence and verification: development/levels/model-production/house-fridge/; development/levels/rebuild/verification/house-functional-fill-2026-11-07/; development/captures/house-functional-fill/: rejected-cold-storage-camera-floor-runtime.png; corrected kitchen-cold-storage-runtime.png
+
+Older-map obligation: Audit older model attachments, camera ownership/elevation and strict generation status individually; no blanket older-map or hardware acceptance.
 
 ## Required audit categories
 

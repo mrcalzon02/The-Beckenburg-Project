@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 7379,
+  "count": 7390,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -3434,6 +3434,66 @@
       "sha256": "022dad3d1f86ad7b14d18ecd39f6d3b59c651c440ea3b439830b3d8702266dee"
     },
     {
+      "path": "development/captures/house-functional-fill/garden-sitting-and-pots-runtime.png",
+      "url": "development/captures/house-functional-fill/garden-sitting-and-pots-runtime.png",
+      "title": "Garden sitting and pots runtime",
+      "kind": "Runtime daily household and garden functions",
+      "width": 1000,
+      "height": 625,
+      "bytes": 366832,
+      "sha256": "99074b29fc855e3e95b18762b785e0150827803e1bb05aaa3fcaca5aed38f66b"
+    },
+    {
+      "path": "development/captures/house-functional-fill/kitchen-cold-storage-runtime.png",
+      "url": "development/captures/house-functional-fill/kitchen-cold-storage-runtime.png",
+      "title": "Kitchen cold storage runtime",
+      "kind": "Runtime daily household and garden functions",
+      "width": 1000,
+      "height": 625,
+      "bytes": 793110,
+      "sha256": "bf44c7ef1458be21af8c4267302d067f494f3e2482ee9339d8c5e9cb65ab2f39"
+    },
+    {
+      "path": "development/captures/house-functional-fill/native-parcel-overview.png",
+      "url": "development/captures/house-functional-fill/native-parcel-overview.png",
+      "title": "Native parcel overview",
+      "kind": "Native geometry overview",
+      "width": 1200,
+      "height": 900,
+      "bytes": 1418936,
+      "sha256": "e1f812953bacff84f6c087565411edcba590179aa7216365b9cfd626f7052a08"
+    },
+    {
+      "path": "development/captures/house-functional-fill/rejected-cold-storage-camera-floor-runtime.png",
+      "url": "development/captures/house-functional-fill/rejected-cold-storage-camera-floor-runtime.png",
+      "title": "Rejected cold storage camera floor runtime",
+      "kind": "Rejected runtime inspection",
+      "width": 1000,
+      "height": 625,
+      "bytes": 684740,
+      "sha256": "f425cc1a303e5b8473a9756071886c5bc4cd5de0410b98f747aac5e4eea84315"
+    },
+    {
+      "path": "development/captures/house-functional-fill/supported-coat-hooks-runtime.png",
+      "url": "development/captures/house-functional-fill/supported-coat-hooks-runtime.png",
+      "title": "Supported coat hooks runtime",
+      "kind": "Runtime daily household and garden functions",
+      "width": 1000,
+      "height": 625,
+      "bytes": 688286,
+      "sha256": "0b7a1f80d52eba030a5922499afb48f5d663962b39a4e3ce0c98ea154e80c07e"
+    },
+    {
+      "path": "development/captures/house-functional-fill/vestibule-boot-storage-runtime.png",
+      "url": "development/captures/house-functional-fill/vestibule-boot-storage-runtime.png",
+      "title": "Vestibule boot storage runtime",
+      "kind": "Runtime daily household and garden functions",
+      "width": 1000,
+      "height": 625,
+      "bytes": 772866,
+      "sha256": "0e66e54eb420f8a0bec2e43c4be94d8fad4e6396391e0cf169ca9fb1b8724a06"
+    },
+    {
       "path": "development/captures/house-functions/cellar-store-runtime.png",
       "url": "development/captures/house-functions/cellar-store-runtime.png",
       "title": "Cellar store runtime",
@@ -5342,6 +5402,56 @@
       "height": 720,
       "bytes": 613973,
       "sha256": "12c2a5b617739c3595e6df6b910a103b8068f45a4e91668bc45552b3119359bc"
+    },
+    {
+      "path": "development/levels/model-production/house-fridge/previews/coat-front.png",
+      "url": "development/levels/model-production/house-fridge/previews/coat-front.png",
+      "title": "Coat front",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 848487,
+      "sha256": "8e7375ef07eef7bbdeb7af2407cf7604340bcdd833ee0d914fe3eb7bea064b44"
+    },
+    {
+      "path": "development/levels/model-production/house-fridge/previews/coat-side.png",
+      "url": "development/levels/model-production/house-fridge/previews/coat-side.png",
+      "title": "Coat side",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 795673,
+      "sha256": "f9b57ebf4ad9af2f7f2d81fa49ccaca4589d5098e5d91969def9eb500b279aed"
+    },
+    {
+      "path": "development/levels/model-production/house-fridge/previews/front-straight.png",
+      "url": "development/levels/model-production/house-fridge/previews/front-straight.png",
+      "title": "Front straight",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 901355,
+      "sha256": "f15f3bbba6c7ecd4628b942fdd112fdc4ae96fbf799e4cc526bccbb140bd0b13"
+    },
+    {
+      "path": "development/levels/model-production/house-fridge/previews/front.png",
+      "url": "development/levels/model-production/house-fridge/previews/front.png",
+      "title": "Front",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 912415,
+      "sha256": "b6511dbf75d2267a0b509334feba29d764ed66bf16c8c0034e87fe9ba02cd73e"
+    },
+    {
+      "path": "development/levels/model-production/house-fridge/previews/rear.png",
+      "url": "development/levels/model-production/house-fridge/previews/rear.png",
+      "title": "Rear",
+      "kind": "Model inspection",
+      "width": 1536,
+      "height": 640,
+      "bytes": 903215,
+      "sha256": "09036c0bbeeb7113a499cff9ea18657b4cc289fcdca41ac109ceaa49725a534b"
     },
     {
       "path": "development/levels/previews/arrival-road-blender-exterior.png",
