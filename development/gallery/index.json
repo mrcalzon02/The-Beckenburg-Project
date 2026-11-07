@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 6089,
+  "count": 6107,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -1932,6 +1932,166 @@
       "height": 650,
       "bytes": 70912,
       "sha256": "f5798cc516e0798438502e5aa4e1d5ab332dffc91f04e24ff5fe7e8dd8186d3d"
+    },
+    {
+      "path": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-front.png",
+      "url": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-front.png",
+      "title": "Level castle preparation bench front",
+      "kind": "Model inspection",
+      "width": 1100,
+      "height": 800,
+      "bytes": 848789,
+      "sha256": "abf06bce7671a240d46d076a4649cd6a0130ec32dce1e140b00c9ccee62442ce"
+    },
+    {
+      "path": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-quarter.png",
+      "url": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-quarter.png",
+      "title": "Level castle preparation bench quarter",
+      "kind": "Model inspection",
+      "width": 1100,
+      "height": 800,
+      "bytes": 993336,
+      "sha256": "05f9b64eb3b1e0466b412374bb2a7b56441fe7e456286df20e0f4287134d9e94"
+    },
+    {
+      "path": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-rear.png",
+      "url": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-rear.png",
+      "title": "Level castle preparation bench rear",
+      "kind": "Model inspection",
+      "width": 1100,
+      "height": 800,
+      "bytes": 797525,
+      "sha256": "a8a26599406a9b035dd40b12391878add64c94470f6c62a8954acc4ddd0360d0"
+    },
+    {
+      "path": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-side.png",
+      "url": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-side.png",
+      "title": "Level castle preparation bench side",
+      "kind": "Model inspection",
+      "width": 1100,
+      "height": 800,
+      "bytes": 827963,
+      "sha256": "aa7958dd80d2de2afde0fffb458f95c59e07a73705d64d2bacde06f39fe87055"
+    },
+    {
+      "path": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-top.png",
+      "url": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-top.png",
+      "title": "Level castle preparation bench top",
+      "kind": "Model inspection",
+      "width": 1100,
+      "height": 800,
+      "bytes": 868781,
+      "sha256": "3302adade43d8166e4a3e95d134c032c99b667ff81b912dff7cc1fd2b1dae4bd"
+    },
+    {
+      "path": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-front.png",
+      "url": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-front.png",
+      "title": "Level castle preparation bench worn front",
+      "kind": "Model inspection",
+      "width": 1100,
+      "height": 800,
+      "bytes": 824153,
+      "sha256": "8fb4192c6cea080b3bf320edc4a0359b283d9008ebdf9a4455dadaae137fdcf3"
+    },
+    {
+      "path": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-quarter.png",
+      "url": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-quarter.png",
+      "title": "Level castle preparation bench worn quarter",
+      "kind": "Model inspection",
+      "width": 1100,
+      "height": 800,
+      "bytes": 951979,
+      "sha256": "cc6da1be2d52d5d864b79af3be80e0e7e4e4dd997c246a3efaf34f8b2d57b2ab"
+    },
+    {
+      "path": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-rear.png",
+      "url": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-rear.png",
+      "title": "Level castle preparation bench worn rear",
+      "kind": "Model inspection",
+      "width": 1100,
+      "height": 800,
+      "bytes": 780599,
+      "sha256": "2c9ed0ec085304bf79d44c26fccc66cbec76164d301c8169a863299c6338f684"
+    },
+    {
+      "path": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-side.png",
+      "url": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-side.png",
+      "title": "Level castle preparation bench worn side",
+      "kind": "Model inspection",
+      "width": 1100,
+      "height": 800,
+      "bytes": 801852,
+      "sha256": "13f2a1ef10ed4a6a1bd3442efc5308c018613ada0c138c853d6fe4e48b1f6d00"
+    },
+    {
+      "path": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-top.png",
+      "url": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-top.png",
+      "title": "Level castle preparation bench worn top",
+      "kind": "Model inspection",
+      "width": 1100,
+      "height": 800,
+      "bytes": 839964,
+      "sha256": "fde471afa4b774c7ec13c6920dfbab21cd97a10eca9b1be471081cc578f234f8"
+    },
+    {
+      "path": "development/assets/castle-training/previews/generated-bench-materials/level_workbench-clay.png",
+      "url": "development/assets/castle-training/previews/generated-bench-materials/level_workbench-clay.png",
+      "title": "Level workbench clay",
+      "kind": "Model inspection",
+      "width": 1100,
+      "height": 800,
+      "bytes": 756113,
+      "sha256": "77a377cccaa0153e746783ca4d803f193a653f7caa39ec4c9ba73d5a7b4f03e6"
+    },
+    {
+      "path": "development/assets/castle-training/previews/generated-bench-materials/level_workbench_worn-clay.png",
+      "url": "development/assets/castle-training/previews/generated-bench-materials/level_workbench_worn-clay.png",
+      "title": "Level workbench worn clay",
+      "kind": "Model inspection",
+      "width": 1100,
+      "height": 800,
+      "bytes": 756113,
+      "sha256": "2633d08842f02927fb677c740518d47f9716640a0d51aa49c0f7ae8f61f29670"
+    },
+    {
+      "path": "development/assets/castle-training/previews/rejected-generic-bench-materials/workbench-0.png",
+      "url": "development/assets/castle-training/previews/rejected-generic-bench-materials/workbench-0.png",
+      "title": "Workbench 0",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 650,
+      "bytes": 78427,
+      "sha256": "0ce862f9a48978e942be6f5f0c7e54f235abc1b2529303014721d2eb2b7ba281"
+    },
+    {
+      "path": "development/assets/castle-training/previews/rejected-generic-bench-materials/workbench-1.png",
+      "url": "development/assets/castle-training/previews/rejected-generic-bench-materials/workbench-1.png",
+      "title": "Workbench 1",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 650,
+      "bytes": 79711,
+      "sha256": "94433ae0808254e025d7cb2ce9f7fee1953404be954ad9b4d6b46af080a29966"
+    },
+    {
+      "path": "development/assets/castle-training/previews/rejected-generic-bench-materials/workbench-2.png",
+      "url": "development/assets/castle-training/previews/rejected-generic-bench-materials/workbench-2.png",
+      "title": "Workbench 2",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 650,
+      "bytes": 79385,
+      "sha256": "a8b1eee1341076da0366802e135def2e41575066e1c19c4cc4ee0eb674c9d758"
+    },
+    {
+      "path": "development/assets/castle-training/previews/rejected-generic-bench-materials/workbench-3.png",
+      "url": "development/assets/castle-training/previews/rejected-generic-bench-materials/workbench-3.png",
+      "title": "Workbench 3",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 650,
+      "bytes": 77340,
+      "sha256": "3a462ee35a122652f4aae8fb90892b89bf82996d146b0155db2b84b9c7d0e7c5"
     },
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -57394,6 +57554,26 @@
       "height": 625,
       "bytes": 399966,
       "sha256": "9257ac275e14ae0b1b2485f1bf27551d311bb38987034c5999b3b1aa80bad38b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/workbench-material-0-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/workbench-material-0-runtime.png",
+      "title": "Workbench material 0 runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 472044,
+      "sha256": "55002b85470d7cd20cfdb04f7b22cdf79040a12cc65798335b840fa2c56888d8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/workbench-material-1-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/workbench-material-1-runtime.png",
+      "title": "Workbench material 1 runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 522764,
+      "sha256": "a71c7b323efa9d95b9172009343e397fbed63307a6c81ae832bf2e387a0b5130"
     },
     {
       "path": "development/levels/rebuild/captures/church-upper-openings/door-7-8.png",

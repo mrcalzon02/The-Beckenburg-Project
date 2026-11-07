@@ -2982,6 +2982,39 @@
       "action": "Use the existing approved MODELS set for both new assets, preserving original UV sampling. Require both IDs in actual editor catalog and instantiate/save/reopen/capture the real native scene. Keep original failed log.",
       "evidence": "verification/castle-plant-2026-11-06/plant-rejected-model-registration.log; final CastlePlantFitTest and native plant captures.",
       "older_maps": "No allowance or validation threshold relaxed; audit other approved-only model additions individually when integrating them into native scenes."
+    },
+    {
+      "id": "DEV-281",
+      "title": "Shared workbench tool layer floats above the actual tabletop",
+      "status": "fixed-scoped shared clean/worn model repair; all older placements still require individual audit",
+      "affected": "level_workbench and level_workbench_worn, including both Castle repair-room native instances",
+      "symptom": "Actual exported triangle-contact audit finds5 unsupported tabletop groups: three sockets and their connected accessory layer.",
+      "cause": "Cluster minimumZ0.95 did not meet actual tabletopZ0.945; original layered placement used an assumed top plane.",
+      "action": "Translate the five-group cluster downward0.0059998164m onto actual source-triangle support with1mm intersection. Preserve original library masters, model IDs, outer bounds and688tri. Audit actual final shared exports and reject a real socket raised15cm.",
+      "evidence": "development/assets/castle-training/*-rejected-source.json, bench-material-independent-review.json, level_workbench*-independent-export.json and raised-tool-negative reports; WorkbenchMaterialTest; actual native workbench captures.",
+      "older_maps": "Corrected resource reaches shared IDs in saved scenes, but each older map/placement/circulation remains individually unaudited; no all-map acceptance."
+    },
+    {
+      "id": "DEV-282",
+      "title": "Generic workbench materials and face UVs make useful equipment read as toy-like stacked primitives",
+      "status": "fixed-scoped generated surfaces and component UVs;37 targeted checks pass; full-site polish open",
+      "affected": "Shared clean/worn workbench textures and all instances using those runtime model IDs",
+      "symptom": "Owner rejects flat colored material layers; paper storage reads as tan blocks, vice as bright blue slabs, timber as generic stripes.",
+      "cause": "Generic per-material images and repeated face mapping do not describe actual timber, end grain, worn casting, steel, grips or cartons.",
+      "action": "Built-in image generation creates separate512px clean/worn component atlases. Map horizontal timber grain at physical scale, end grain on cuts, muted cast paint, bare steel, grips and corrugated cartons to their actual regions; correct shared glTF top-left sampling. Preserve repaired688tri geometry through surface pass.",
+      "evidence": "development/assets/castle-training/textures/*imagegen*; rejected-generic-bench-materials; generated-bench-materials; actual WorkbenchMaterialTest editor captures and geometry/image hashes.",
+      "older_maps": "Shared resource/material origin updates every same-ID instance; verify each older site actual placement and lighting separately, without treating resource repair as map acceptance."
+    },
+    {
+      "id": "DEV-283",
+      "title": "Signed training annex remains excluded from native saved-spawn validation",
+      "status": "open; reproduced; candidate training changes preserved separately during owner-priority material repair",
+      "affected": "CastleLevelEdits.setSpawn and saved-document spawn validation for negative-X annex",
+      "symptom": "setSpawn(-14,18.4,PI) rejects Invalid playable spawn although the annex exists in signed authoring bounds.",
+      "cause": "Legacy minimumX1 remains in setter/decoder while native CastleWorldBounds.MIN_X is-18.",
+      "action": "Resume preserved training work, use consistent signed native spawn bounds, test real annex support plus save/reopen and invalid-bound controls. Not part of the published workbench model correction.",
+      "evidence": "verification/workbench-materials-2026-11-06/annex-spawn-control.log; CastleLevelEdits source guards; local build/training-inflight preserves candidate source changes.",
+      "older_maps": "Positive existing spawns must remain unchanged; this is a Castle-annex persistence obligation, not proof that other signed maps are audited."
     }
   ],
   "audit_categories": [

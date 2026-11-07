@@ -3804,6 +3804,48 @@ Evidence and verification: verification/castle-plant-2026-11-06/plant-rejected-m
 
 Older-map obligation: No allowance or validation threshold relaxed; audit other approved-only model additions individually when integrating them into native scenes.
 
+### DEV-281 — Shared workbench tool layer floats above the actual tabletop
+
+**Status:** fixed-scoped shared clean/worn model repair; all older placements still require individual audit · **Affected:** level_workbench and level_workbench_worn, including both Castle repair-room native instances
+
+Actual exported triangle-contact audit finds5 unsupported tabletop groups: three sockets and their connected accessory layer.
+
+Cause / uncertainty: Cluster minimumZ0.95 did not meet actual tabletopZ0.945; original layered placement used an assumed top plane.
+
+Fix / next action: Translate the five-group cluster downward0.0059998164m onto actual source-triangle support with1mm intersection. Preserve original library masters, model IDs, outer bounds and688tri. Audit actual final shared exports and reject a real socket raised15cm.
+
+Evidence and verification: development/assets/castle-training/*-rejected-source.json, bench-material-independent-review.json, level_workbench*-independent-export.json and raised-tool-negative reports; WorkbenchMaterialTest; actual native workbench captures.
+
+Older-map obligation: Corrected resource reaches shared IDs in saved scenes, but each older map/placement/circulation remains individually unaudited; no all-map acceptance.
+
+### DEV-282 — Generic workbench materials and face UVs make useful equipment read as toy-like stacked primitives
+
+**Status:** fixed-scoped generated surfaces and component UVs;37 targeted checks pass; full-site polish open · **Affected:** Shared clean/worn workbench textures and all instances using those runtime model IDs
+
+Owner rejects flat colored material layers; paper storage reads as tan blocks, vice as bright blue slabs, timber as generic stripes.
+
+Cause / uncertainty: Generic per-material images and repeated face mapping do not describe actual timber, end grain, worn casting, steel, grips or cartons.
+
+Fix / next action: Built-in image generation creates separate512px clean/worn component atlases. Map horizontal timber grain at physical scale, end grain on cuts, muted cast paint, bare steel, grips and corrugated cartons to their actual regions; correct shared glTF top-left sampling. Preserve repaired688tri geometry through surface pass.
+
+Evidence and verification: development/assets/castle-training/textures/*imagegen*; rejected-generic-bench-materials; generated-bench-materials; actual WorkbenchMaterialTest editor captures and geometry/image hashes.
+
+Older-map obligation: Shared resource/material origin updates every same-ID instance; verify each older site actual placement and lighting separately, without treating resource repair as map acceptance.
+
+### DEV-283 — Signed training annex remains excluded from native saved-spawn validation
+
+**Status:** open; reproduced; candidate training changes preserved separately during owner-priority material repair · **Affected:** CastleLevelEdits.setSpawn and saved-document spawn validation for negative-X annex
+
+setSpawn(-14,18.4,PI) rejects Invalid playable spawn although the annex exists in signed authoring bounds.
+
+Cause / uncertainty: Legacy minimumX1 remains in setter/decoder while native CastleWorldBounds.MIN_X is-18.
+
+Fix / next action: Resume preserved training work, use consistent signed native spawn bounds, test real annex support plus save/reopen and invalid-bound controls. Not part of the published workbench model correction.
+
+Evidence and verification: verification/workbench-materials-2026-11-06/annex-spawn-control.log; CastleLevelEdits source guards; local build/training-inflight preserves candidate source changes.
+
+Older-map obligation: Positive existing spawns must remain unchanged; this is a Castle-annex persistence obligation, not proof that other signed maps are audited.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

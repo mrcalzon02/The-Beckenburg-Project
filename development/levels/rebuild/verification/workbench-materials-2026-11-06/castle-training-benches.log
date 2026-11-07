@@ -1,0 +1,30 @@
+17:21:09 | INFO: Data are loaded, start creating Blender stuff
+17:21:09 | INFO: Blender create Mesh node Cube
+17:21:09 | INFO: glTF import finished in 0.01s
+Info: Saved as "level_castle_preparation_bench.blend"
+INFO Draco mesh compression is available, use library at C:\Program Files\Blender Foundation\Blender 5.0\5.0\scripts\addons_core\io_scene_gltf2\extern_draco.dll
+17:21:10 | INFO: Starting glTF 2.0 export
+17:21:10 | INFO: Extracting primitive: Cube
+17:21:10 | INFO: Primitives created: 8
+17:21:10 | INFO: Finished glTF 2.0 export in 0.02506542205810547 s
+
+17:21:10 | INFO: Data are loaded, start creating Blender stuff
+17:21:10 | INFO: Blender create Mesh node Cube
+17:21:10 | INFO: glTF import finished in 0.00s
+PASS level_castle_preparation_bench 688 triangles; original source failed5 groups; repair shift -0.005999816417694093 actual support 0.945000171661377
+17:21:10 | INFO: Data are loaded, start creating Blender stuff
+17:21:10 | INFO: Blender create Mesh node Cube
+17:21:10 | INFO: glTF import finished in 0.00s
+Info: Saved as "level_castle_preparation_bench_worn.blend"
+17:21:10 | INFO: Starting glTF 2.0 export
+17:21:10 | INFO: Extracting primitive: Cube
+17:21:10 | INFO: Primitives created: 8
+17:21:10 | INFO: Finished glTF 2.0 export in 0.01408529281616211 s
+
+17:21:10 | INFO: Data are loaded, start creating Blender stuff
+17:21:10 | INFO: Blender create Mesh node Cube
+17:21:10 | INFO: glTF import finished in 0.00s
+PASS level_castle_preparation_bench_worn 688 triangles; original source failed5 groups; repair shift -0.005999816417694093 actual support 0.945000171661377
+Blender 5.0.0 (hash a37564c4df7a built 2025-11-18 11:06:54)
+
+Blender quit
