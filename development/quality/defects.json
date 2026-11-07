@@ -3169,6 +3169,17 @@
       "action": "Retain the original HouseMap overload and delegate to the same shared Object cache implementation. Keep the original differential test unchanged; preserve source-face parity and changed-object-only rebuild behavior.",
       "evidence": "Actual failure retained in castle-dynamic-house-entrypoint-before.log; source bridge restored before publication. Fresh differential/physical/light checks and final native captures remain required.",
       "older_maps": "The bridge preserves House-derived callers and diagnostics. It does not accept unaudited location visuals or physical-hardware performance."
+    },
+    {
+      "id": "DEV-298",
+      "title": "Upper stair mesh, loose-body support and optical mass disagreed",
+      "status": "fixed; complete package,7final contact/lighting checks and actual native inputs pass; exact-source online gates pending",
+      "affected": "Castle existing upper stairs; local loose objects and analytic lighting",
+      "symptom": "At17.5/25.75 the visible tread is2.21m while the new loose-body adapter used the2.125m smooth navigation incline; a ray wholly inside the rendered closed mass also passed.",
+      "cause": "Renderer built20closed step boxes independently; physics reused the intentionally smooth player movement height, and optical solids omitted the staircase mass.",
+      "action": "Share immutable existing step boxes through CastleHubArchitecturalPlan for rendering, physical tread support and optical contact. Preserve exact existing geometry/UVs and smooth player navigation.",
+      "evidence": "Actual packaged pre-fix support and closed-stair ray negatives fail. Corrected classes pass both controls and the six-object interaction test. Logs retained under castle-loose-2026-11-06.",
+      "older_maps": "Castle upper steps only. Other location stair support and light-bleed obligations remain individually unaudited."
     }
   ],
   "audit_categories": [

@@ -207,3 +207,6 @@ Next: publish/verify this exact checkpoint and obtain full345/native/GPU accepta
 
 
 Published implementation26be171c, then reconciled concurrentmain 49d801bd222c67fb65452939368c833ae9c43b5b resident85PNG/2CSV capture-only publication. All source/assets/tools/modules/workflow/build/manifest tree IDs equal implemented26be171c; union gallery6676original images. Existing body/native checks are preserved; fresh exact-head full345/native/GPU acceptance and later merged Pages remain next.
+
+
+Final Castle contact closure: DEV-298 reproduces upper-tread support2.125m versus rendered2.21m and light passing through the closed mass. One immutable20step solid definition now drives unchanged rendering, true body support and optical contact; smooth player movement remains unchanged. Fresh final package and7targeted body/portal/upper/cellar/physical/handheld/dense-sparse lighting checks pass, plus real native F5/]/F12. Earlier49focused checks retained. Implementation is frozen for online345/native/GPU acceptance; advance House pilot and remaining site blockouts while those jobs run, per owner acceleration request. No new Castle feature expansion.

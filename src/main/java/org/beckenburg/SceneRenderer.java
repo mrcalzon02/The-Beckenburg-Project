@@ -2928,11 +2928,8 @@ public final class SceneRenderer {
             texturedBox(out,frame.x(),frame.y(),frame.z(),frame.width(),frame.height(),frame.depth(),MaterialAtlas.AGED_WOOD);
         castleSlabs(out,map);
         // Closed stone stair mass: the riser is on each tread's SOUTH edge.
-        for(int step=0;step<20;step++){
-            double south=32-step*.5,north=south-.5;
-            double top=(step+1)*CastleHubArchitecturalPlan.GROUND_CEILING/20.0;
-            texturedBox(out,16,0,north,3,top,.5,MaterialAtlas.STONE);
-        }
+        for(var step:CastleHubArchitecturalPlan.upperStairSolids())
+            texturedBox(out,step.x0(),0,step.z0(),step.x1()-step.x0(),step.top(),step.z1()-step.z0(),MaterialAtlas.STONE);
         for(double side:new double[]{16,19})for(int step=0;step<10;step++){
             double za=32-step,zb=za-1,ha=step*.34+.1,hb=(step+1)*.34+.1;
             for(double xx:new double[]{side-.05,side+.05})

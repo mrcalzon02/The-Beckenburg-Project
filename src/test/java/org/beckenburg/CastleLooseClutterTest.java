@@ -27,6 +27,7 @@ public final class CastleLooseClutterTest {
     public static void main(String[] args)throws Exception{
         System.setProperty("user.home",Files.createTempDirectory("castle-loose-").toString());var scene=CastleLevelEdits.current();var original=scene.snapshot();var map=new CastleHubMap();var objects=map.clutter();var world=new CastleClutterWorld(map);
         check(objects.states().size()==6,"Missing authored native loose-body sockets: "+objects.states());var initial=objects.states();
+        check(Math.abs(world.support(17.5,25.75,2.4,2.0)-2.21)<.002,"Small object uses the smooth navigation incline instead of the rendered upper stair tread");
         for(int tick=0;tick<100;tick++)check(objects.advance(List.of()).isEmpty(),"Protected hub clutter damages a player");
         for(var s:objects.states()){
             var before=initial.stream().filter(p->p.id()==s.id()).findFirst().orElseThrow();check(Math.hypot(s.x()-before.x(),s.z()-before.z())<.002&&Math.abs(s.y()-before.y())<.01,"Resting native object drifts/falls through its table "+s.id());

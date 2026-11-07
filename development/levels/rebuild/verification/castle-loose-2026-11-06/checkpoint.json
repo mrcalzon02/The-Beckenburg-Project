@@ -226,8 +226,8 @@
   },
   "files": {
     "src/main/java/org/beckenburg/CastleClutterWorld.java": {
-      "bytes": 4762,
-      "sha256": "2cebcb61e801745989b359c335e1f980be0ac921a5e41abeb9ee8e1b2f87984e"
+      "bytes": 4857,
+      "sha256": "6b358b7b9e37a009dbf5c2fa614f8cccba15ccf120771f01273ec03eaf3a99f8"
     },
     "src/main/java/org/beckenburg/CastleDoorSlots.java": {
       "bytes": 8347,
@@ -250,28 +250,28 @@
       "sha256": "dd678656ab20064bd0ea60e509186b929f4c0a3a938e5180884f887e61a676ae"
     },
     "src/main/java/org/beckenburg/FixtureLighting.java": {
-      "bytes": 48645,
-      "sha256": "55b3246ebf0752735947d217251d1cf0bc98ef7e3200cd341b16aef925bc903c"
+      "bytes": 48826,
+      "sha256": "80fe09323534634fd9dfd3f471ca2b99adba36fb65e28440bbdf7e33564f8224"
     },
     "src/main/java/org/beckenburg/LooseClutter.java": {
       "bytes": 19130,
       "sha256": "8550f79c627c668d7082c224b696bdc56c2531e15dbcd0fc2add1e522c48fb04"
     },
     "src/main/java/org/beckenburg/SceneRenderer.java": {
-      "bytes": 288066,
-      "sha256": "1a1b727d8d9a5b3b8ff7dc92ca1e0caba3bd3cf2923e12faa7a15063b49b9e21"
+      "bytes": 288005,
+      "sha256": "f70b181605f13f4dcfd900db67c3692f9a04362c5a9ed3ca03c9ec10ad00c2b4"
     },
     "src/main/java/org/beckenburg/BeckenburgRegressionSuite.java": {
       "bytes": 6015,
       "sha256": "f8dfbdad1968e50e98adf932b4ab07cde6c6ae63dddbd951a62b45ddac4fc675"
     },
     "src/test/java/org/beckenburg/CastleLooseClutterTest.java": {
-      "bytes": 13644,
-      "sha256": "04c3e3dc797ff047bfed27d5c6a6075889522f850e27d414d65275a8bcaa4752"
+      "bytes": 13806,
+      "sha256": "c22f1d83436273cbebdea204eb221bd43b31ef86b8e065ab5f0cdac153bbebcb"
     },
     "src/test/java/org/beckenburg/CastlePortalSlotTest.java": {
-      "bytes": 5091,
-      "sha256": "d9fd746d483d62eeb1200f250db9b4c901200e8534dc05c58090e3892acbd230"
+      "bytes": 5218,
+      "sha256": "7c8ba1b0f1fafcb78ece8078b4df9869a89c6d75fd599b149bf8dd11bd877d80"
     },
     "src/test/java/org/beckenburg/CastleUpperConstructionTest.java": {
       "bytes": 9394,
@@ -336,7 +336,44 @@
     "development/captures/castle-window-frame/native-window-lights-on-runtime.png": {
       "bytes": 295946,
       "sha256": "bb36aace8bbf55d4da6403c64c502320ca592153b8fcd6bd7b0b93b99e413816"
+    },
+    "src/main/java/org/beckenburg/CastleHubArchitecturalPlan.java": {
+      "bytes": 16705,
+      "sha256": "f62750d6b7698e90d72bd2a2c78c37d48bb8830088d3563c042950ca15745c25"
     }
   },
-  "limits": "Exact-source online/full/native/GPU, merged/deployed gallery and remaining Castle/all29 gates are open"
+  "limits": "Exact-source online/full/native/GPU, merged/deployed gallery and remaining Castle/all29 gates are open",
+  "final_stair_checks": {
+    "CastleLooseClutterTest": {
+      "exit": 0,
+      "seconds": 8.734
+    },
+    "CastlePortalSlotTest": {
+      "exit": 0,
+      "seconds": 1.656
+    },
+    "CastleUpperConstructionTest": {
+      "exit": 0,
+      "seconds": 2.75
+    },
+    "CastleCellarConstructionTest": {
+      "exit": 0,
+      "seconds": 2.875
+    },
+    "PhysicalLightingTest": {
+      "exit": 0,
+      "seconds": 2.422
+    },
+    "HandheldSurfaceOcclusionTest": {
+      "exit": 0,
+      "seconds": 0.485
+    },
+    "PreparedLightBatchParityTest": {
+      "exit": 0,
+      "seconds": 41.0
+    }
+  },
+  "final_stair_scope": "Exact existing20step solids shared by rendering/optical contact/loose-body support; smooth player navigation unchanged. Actual old support and opacity negatives retained (DEV-298).",
+  "changed_capture_bytes_after_stair_fix": [],
+  "next_action": "Freeze Castle implementation checkpoint; run full345/native/GPU while advancing the remaining map batch."
 }

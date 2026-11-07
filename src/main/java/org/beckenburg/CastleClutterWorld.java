@@ -35,8 +35,9 @@ final class CastleClutterWorld {
         if(terrain!=null&&terrain.y()<=before+.01&&terrain.y()>=after-.02)best=terrain.y();
         if(CastleRooms.ground(x,z)&&!scene.floorOpening(x,z,0)&&0<=before+.01&&0>=after-.02)best=Math.max(best,0);
         for(var s:scene.surfaces())if(s.kind()==CastleLevelEdits.Kind.FLOOR&&x>=s.x0()&&x<=s.x1()&&z>=s.z0()&&z<=s.z1()&&!scene.floorOpening(x,z,s.base())&&s.base()<=before+.01&&s.base()>=after-.02)best=Math.max(best,s.base());
-        double stair=CastleCellar.onFlight(x,z)?CastleCellar.stairHeight(z):CastleHubArchitecturalPlan.onStairs(x,z)?CastleHubArchitecturalPlan.stairHeight(x,z):Double.NaN;
+        double stair=CastleCellar.onFlight(x,z)?CastleCellar.stairHeight(z):Double.NaN;
         if(Double.isFinite(stair)&&stair<=before+.01&&stair>=after-.02)best=Math.max(best,stair);
+        for(var s:CastleHubArchitecturalPlan.upperStairSolids())if(x>=s.x0()&&x<=s.x1()&&z>=s.z0()&&z<=s.z1()&&s.top()<=before+.01&&s.top()>=after-.02)best=Math.max(best,s.top());
         for(var p:scene.props())best=Math.max(best,CastleObjectRay.support(p,x,z,before,after));
         return best;
     }

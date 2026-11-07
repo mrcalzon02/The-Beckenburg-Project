@@ -4042,6 +4042,20 @@ Evidence and verification: Actual failure retained in castle-dynamic-house-entry
 
 Older-map obligation: The bridge preserves House-derived callers and diagnostics. It does not accept unaudited location visuals or physical-hardware performance.
 
+### DEV-298 — Upper stair mesh, loose-body support and optical mass disagreed
+
+**Status:** fixed; complete package,7final contact/lighting checks and actual native inputs pass; exact-source online gates pending · **Affected:** Castle existing upper stairs; local loose objects and analytic lighting
+
+At17.5/25.75 the visible tread is2.21m while the new loose-body adapter used the2.125m smooth navigation incline; a ray wholly inside the rendered closed mass also passed.
+
+Cause / uncertainty: Renderer built20closed step boxes independently; physics reused the intentionally smooth player movement height, and optical solids omitted the staircase mass.
+
+Fix / next action: Share immutable existing step boxes through CastleHubArchitecturalPlan for rendering, physical tread support and optical contact. Preserve exact existing geometry/UVs and smooth player navigation.
+
+Evidence and verification: Actual packaged pre-fix support and closed-stair ray negatives fail. Corrected classes pass both controls and the six-object interaction test. Logs retained under castle-loose-2026-11-06.
+
+Older-map obligation: Castle upper steps only. Other location stair support and light-bleed obligations remain individually unaudited.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
