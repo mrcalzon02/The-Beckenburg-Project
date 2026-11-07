@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 7394,
+  "count": 7437,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -8884,6 +8884,436 @@
       "height": 800,
       "bytes": 1130241,
       "sha256": "9b2d55e68d19844ccc33c57dd6862e18ffde9b151a8e0a32e6e39e356ca5a97a"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/model-production/hunter-reactions-asset-review.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/model-production/hunter-reactions-asset-review.png",
+      "title": "Hunter reactions asset review",
+      "kind": "Model inspection",
+      "width": 640,
+      "height": 1344,
+      "bytes": 686376,
+      "sha256": "ef2f98932ee8423bac4c72e9ec73c6c7f44db70d9c1cfb024c414c62d6134efd"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/raster-oval/cleric-body-0-raster.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/raster-oval/cleric-body-0-raster.png",
+      "title": "Cleric body 0 raster",
+      "kind": "Synthetic rounded-volume control",
+      "width": 640,
+      "height": 400,
+      "bytes": 8026,
+      "sha256": "dd46bb2397ae43932ee733a795ecf4b98f399624daff4279514c95b3ea68784b"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/raster-oval/cleric-body-180-raster.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/raster-oval/cleric-body-180-raster.png",
+      "title": "Cleric body 180 raster",
+      "kind": "Synthetic rounded-volume control",
+      "width": 640,
+      "height": 400,
+      "bytes": 8187,
+      "sha256": "374ed0728c1fde7a6da69912cd6b08f7b0075d556ddc39c83649708d8c838d47"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/raster-oval/cleric-body-270-raster.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/raster-oval/cleric-body-270-raster.png",
+      "title": "Cleric body 270 raster",
+      "kind": "Synthetic rounded-volume control",
+      "width": 640,
+      "height": 400,
+      "bytes": 8352,
+      "sha256": "7047a070cdecc7077b8909ddd8835e9755239f8c82f8cc760d1b769266a009ec"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/raster-oval/cleric-body-90-raster.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/raster-oval/cleric-body-90-raster.png",
+      "title": "Cleric body 90 raster",
+      "kind": "Synthetic rounded-volume control",
+      "width": 640,
+      "height": 400,
+      "bytes": 7956,
+      "sha256": "2adfdc7e3a9483f029fed139e382a712030d8b659ac80d363fe2a82d2b8c1603"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/raster-oval/demonologist-body-0-raster.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/raster-oval/demonologist-body-0-raster.png",
+      "title": "Demonologist body 0 raster",
+      "kind": "Synthetic rounded-volume control",
+      "width": 640,
+      "height": 400,
+      "bytes": 8064,
+      "sha256": "1e2586e8bb4d7879611e74c7a1546250a551b5222d45d6fdf70faab00e08b910"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/raster-oval/demonologist-body-180-raster.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/raster-oval/demonologist-body-180-raster.png",
+      "title": "Demonologist body 180 raster",
+      "kind": "Synthetic rounded-volume control",
+      "width": 640,
+      "height": 400,
+      "bytes": 8222,
+      "sha256": "637dcda52d72262fe1468403b3017e6bf7c49e62bd2ed94f9fbf1d6c2a75ef51"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/raster-oval/demonologist-body-270-raster.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/raster-oval/demonologist-body-270-raster.png",
+      "title": "Demonologist body 270 raster",
+      "kind": "Synthetic rounded-volume control",
+      "width": 640,
+      "height": 400,
+      "bytes": 8328,
+      "sha256": "ed5906aa78dcbeab1930076848b8558c678ac61f303c0b98874627ab20bb9623"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/raster-oval/demonologist-body-90-raster.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/raster-oval/demonologist-body-90-raster.png",
+      "title": "Demonologist body 90 raster",
+      "kind": "Synthetic rounded-volume control",
+      "width": 640,
+      "height": 400,
+      "bytes": 8082,
+      "sha256": "7611b2b6ac72ff01420f5ffc2e6781eba60edc0abd850b9af4c960370ccf1e8a"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/raster-oval/observer-body-0-raster.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/raster-oval/observer-body-0-raster.png",
+      "title": "Observer body 0 raster",
+      "kind": "Synthetic rounded-volume control",
+      "width": 640,
+      "height": 400,
+      "bytes": 7520,
+      "sha256": "685ec0d7d6686fe88011acedf4be4f5a93c211f792cafd1dcb8f8df45d186ea2"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/raster-oval/observer-body-180-raster.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/raster-oval/observer-body-180-raster.png",
+      "title": "Observer body 180 raster",
+      "kind": "Synthetic rounded-volume control",
+      "width": 640,
+      "height": 400,
+      "bytes": 7723,
+      "sha256": "57c2325a10a943186c288f29b8fb801abe9e301cc1198f7b32e31924e23d5c87"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/raster-oval/observer-body-270-raster.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/raster-oval/observer-body-270-raster.png",
+      "title": "Observer body 270 raster",
+      "kind": "Synthetic rounded-volume control",
+      "width": 640,
+      "height": 400,
+      "bytes": 7399,
+      "sha256": "e806f89ca916a34200a175f44ff8ad038e967c7e86b088e073cc0aa1679e20b8"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/raster-oval/observer-body-90-raster.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/raster-oval/observer-body-90-raster.png",
+      "title": "Observer body 90 raster",
+      "kind": "Synthetic rounded-volume control",
+      "width": 640,
+      "height": 400,
+      "bytes": 7467,
+      "sha256": "42adc585e88b54b604721e7c594aa3c21c4a152be54681413106aab99d2a4044"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/raster/cleric-body-0-raster.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/raster/cleric-body-0-raster.png",
+      "title": "Cleric body 0 raster",
+      "kind": "Baseline flat-body control",
+      "width": 640,
+      "height": 400,
+      "bytes": 7774,
+      "sha256": "a670ad6f1036598565785bcd1f69bc641232871e724295d3f4991e9652011fcc"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/raster/cleric-body-180-raster.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/raster/cleric-body-180-raster.png",
+      "title": "Cleric body 180 raster",
+      "kind": "Baseline flat-body control",
+      "width": 640,
+      "height": 400,
+      "bytes": 7864,
+      "sha256": "3c00c94704fcb25f96204cfec9ed992fae8c2f75d2aa3ce593a355f1f77b4e0c"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/raster/cleric-body-270-raster.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/raster/cleric-body-270-raster.png",
+      "title": "Cleric body 270 raster",
+      "kind": "Baseline flat-body control",
+      "width": 640,
+      "height": 400,
+      "bytes": 7626,
+      "sha256": "d670314cd81cd376a213b8fdaa484b4c4c84056d3b58287131abe8fcef9ab149"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/raster/cleric-body-90-raster.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/raster/cleric-body-90-raster.png",
+      "title": "Cleric body 90 raster",
+      "kind": "Baseline flat-body control",
+      "width": 640,
+      "height": 400,
+      "bytes": 7584,
+      "sha256": "d7f225faa152e3aeab6d7d4884f854c997037bc71ca359ff8c38dba6140d1c33"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/raster/demonologist-body-0-raster.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/raster/demonologist-body-0-raster.png",
+      "title": "Demonologist body 0 raster",
+      "kind": "Baseline flat-body control",
+      "width": 640,
+      "height": 400,
+      "bytes": 7766,
+      "sha256": "814b918e152ddb5c7d8b666cfcaa22811aeff6dfcf49ab826a9c161098c5b584"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/raster/demonologist-body-180-raster.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/raster/demonologist-body-180-raster.png",
+      "title": "Demonologist body 180 raster",
+      "kind": "Baseline flat-body control",
+      "width": 640,
+      "height": 400,
+      "bytes": 7815,
+      "sha256": "b5819233dd1ec5333de346c213947f4fbfa226ea81846b5e549b431a90942161"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/raster/demonologist-body-270-raster.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/raster/demonologist-body-270-raster.png",
+      "title": "Demonologist body 270 raster",
+      "kind": "Baseline flat-body control",
+      "width": 640,
+      "height": 400,
+      "bytes": 7662,
+      "sha256": "598ca36574f7e98a89bad6dec26fa9b3ccd40847c7746ebd248fa37bdfe94382"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/raster/demonologist-body-90-raster.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/raster/demonologist-body-90-raster.png",
+      "title": "Demonologist body 90 raster",
+      "kind": "Baseline flat-body control",
+      "width": 640,
+      "height": 400,
+      "bytes": 7595,
+      "sha256": "e88393f953d6000bcc43d0795729ccb7cccab45da2f103de1a22a513e4f01736"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/raster/observer-body-0-raster.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/raster/observer-body-0-raster.png",
+      "title": "Observer body 0 raster",
+      "kind": "Baseline flat-body control",
+      "width": 640,
+      "height": 400,
+      "bytes": 7354,
+      "sha256": "5ac8216a63861fb7cd67a6c111d58269d0dc8737c2476d73c87e58f4f3447833"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/raster/observer-body-180-raster.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/raster/observer-body-180-raster.png",
+      "title": "Observer body 180 raster",
+      "kind": "Baseline flat-body control",
+      "width": 640,
+      "height": 400,
+      "bytes": 7496,
+      "sha256": "a5fcdd35c9901e712c3383713a9548a72c7c3f127dec1531f0772bd5085e123d"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/raster/observer-body-270-raster.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/raster/observer-body-270-raster.png",
+      "title": "Observer body 270 raster",
+      "kind": "Baseline flat-body control",
+      "width": 640,
+      "height": 400,
+      "bytes": 7276,
+      "sha256": "ec323d117ba043e50da3975aaec8685077b52d4f4d397019cecfc9b991a4277e"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/raster/observer-body-90-raster.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/raster/observer-body-90-raster.png",
+      "title": "Observer body 90 raster",
+      "kind": "Baseline flat-body control",
+      "width": 640,
+      "height": 400,
+      "bytes": 7270,
+      "sha256": "9d602ce00cf9433c6911c57e12a27d7873068661a6b9b1277e4fc4d9056eda7d"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/runtime-gpu/cleric-body-runtime.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/runtime-gpu/cleric-body-runtime.png",
+      "title": "Cleric body runtime",
+      "kind": "Runtime GPU capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 354929,
+      "sha256": "12a4d2b16b4b3d8aad1ed942103daa3bfd4b962066f1336b88fbb3c92d591ee7"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/runtime-gpu/cleric-pain-runtime.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/runtime-gpu/cleric-pain-runtime.png",
+      "title": "Cleric pain runtime",
+      "kind": "Runtime GPU capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 355577,
+      "sha256": "2ace518fe106cf8998f7b710fcdb12d5a78d9c7d2dc50cc653550d2e7bca1fb5"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/runtime-gpu/demonologist-body-runtime.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/runtime-gpu/demonologist-body-runtime.png",
+      "title": "Demonologist body runtime",
+      "kind": "Runtime GPU capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 2711,
+      "sha256": "af8e998fc759b0bcd4780b091bc5d7e699d7185be6c2785380f616d62a83e9ac"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/runtime-gpu/demonologist-pain-runtime.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/runtime-gpu/demonologist-pain-runtime.png",
+      "title": "Demonologist pain runtime",
+      "kind": "Runtime GPU capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 45573,
+      "sha256": "72d0efab2b91ecf0be133978c61dd505e2d50dd3e431635f92211d1ae5a4de7e"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/runtime-gpu/observer-body-runtime.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/runtime-gpu/observer-body-runtime.png",
+      "title": "Observer body runtime",
+      "kind": "Runtime GPU capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 352393,
+      "sha256": "d98131d5d003e6ab2eebd4bf70c95479ffcbae2dfc7761aefd3fb2c97d9e36a7"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/runtime-gpu/observer-pain-runtime.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/runtime-gpu/observer-pain-runtime.png",
+      "title": "Observer pain runtime",
+      "kind": "Runtime GPU capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 352725,
+      "sha256": "a681d53d62da02114a6dc0c627cd6fdf21d044cf45882efa40ba1a2332c6e60f"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/runtime-oval-gpu/cleric-body-runtime.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/runtime-oval-gpu/cleric-body-runtime.png",
+      "title": "Cleric body runtime",
+      "kind": "Runtime GPU capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 354895,
+      "sha256": "4b28fddad565d3efc0888a6b7a8eafb733f8fcf7f83509a46f05035dc05e65ac"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/runtime-oval-gpu/cleric-pain-runtime.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/runtime-oval-gpu/cleric-pain-runtime.png",
+      "title": "Cleric pain runtime",
+      "kind": "Runtime GPU capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 357510,
+      "sha256": "6ffb4c616cdb8e3ac8ab12e518775b870ad3f1323aabebaa107f2aad18566147"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/runtime-oval-gpu/demonologist-body-runtime.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/runtime-oval-gpu/demonologist-body-runtime.png",
+      "title": "Demonologist body runtime",
+      "kind": "Runtime GPU capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 354756,
+      "sha256": "492ae79ec7536d3285bf0d1654cbd334a9a9ea5f5c0f9a67e2f55fc309012206"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/runtime-oval-gpu/demonologist-pain-runtime.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/runtime-oval-gpu/demonologist-pain-runtime.png",
+      "title": "Demonologist pain runtime",
+      "kind": "Runtime GPU capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 356746,
+      "sha256": "327f8f9f5aa556d5d2db7311498fe0f7a3d8c6af1cfaa3a08e2353ccbb1e74d1"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/runtime-oval-gpu/observer-body-runtime.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/runtime-oval-gpu/observer-body-runtime.png",
+      "title": "Observer body runtime",
+      "kind": "Runtime GPU capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 353178,
+      "sha256": "17924518d882d449eeb87d2f3306f15f15dd7897d1f2cbad3137fee74e620032"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/runtime-oval-gpu/observer-pain-runtime.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/runtime-oval-gpu/observer-pain-runtime.png",
+      "title": "Observer pain runtime",
+      "kind": "Runtime GPU capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 354302,
+      "sha256": "5319e3429da7b7f3f0789f7ced45844cdf0dd3e936d65d5c5a1aa49192285738"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/runtime/cleric-body-runtime.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/runtime/cleric-body-runtime.png",
+      "title": "Cleric body runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 471813,
+      "sha256": "43973e60e6e7abcd33435b279bd44b925013b3b4364950b4819c4792b97f7b1d"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/runtime/cleric-pain-runtime.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/runtime/cleric-pain-runtime.png",
+      "title": "Cleric pain runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 476180,
+      "sha256": "39763a81d0916e6bfc93366412b23cf0d48ec93472850d69ca70ce420ba451b8"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/runtime/demonologist-body-runtime.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/runtime/demonologist-body-runtime.png",
+      "title": "Demonologist body runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 471566,
+      "sha256": "f8511b47b6111fec49d0c91c0337963860d78912e4b604e5d8b73b481e538842"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/runtime/demonologist-pain-runtime.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/runtime/demonologist-pain-runtime.png",
+      "title": "Demonologist pain runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 475661,
+      "sha256": "1f47294a9f782b2d51b05202828b05dc4c87a9bbbb9c6099fdbea6ce5084e3d1"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/runtime/observer-body-runtime.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/runtime/observer-body-runtime.png",
+      "title": "Observer body runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 469957,
+      "sha256": "cf0307de320e1c61d4bd6bf6d0da3a8edc2626076e94c74d7e887cd1966727e3"
+    },
+    {
+      "path": "development/levels/previews/hunter-reactions-2026-11-07/runtime/observer-pain-runtime.png",
+      "url": "development/levels/previews/hunter-reactions-2026-11-07/runtime/observer-pain-runtime.png",
+      "title": "Observer pain runtime",
+      "kind": "Runtime capture",
+      "width": 854,
+      "height": 480,
+      "bytes": 473910,
+      "sha256": "11346a31f6fbbeb400605e907269741525925e58343c3f169cc7a04ddc8f4017"
     },
     {
       "path": "development/levels/previews/level_basketball_hoop.png",

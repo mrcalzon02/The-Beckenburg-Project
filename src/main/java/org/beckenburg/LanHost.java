@@ -2256,6 +2256,7 @@ public final class LanHost implements AutoCloseable {
         // Count ONLY actual health removed by an authorized resolved ghost effect.
         for(int i=0;i<HUNTERS;i++)if(wasAlive[i]&&beforeHealth[i]>mission.health(i)){
             int damage=beforeHealth[i]-mission.health(i);
+            notifyHunters("HUNTER|HIT|"+i+"|"+tick);
             devCombatEvents.addLast(new DevAdminSnapshot.CombatEvent(tick,"H"+(i+1),
                 result.action().name(),damage,!mission.alive(i)));
             if(devCombatEvents.size()>256)devCombatEvents.removeFirst();
@@ -3085,8 +3086,11 @@ public final class LanHost implements AutoCloseable {
         notifyHunters("VANDOOR|"+(map.van().cargoDoorClosed()?1:0));
         // A disconnected hunter remains physically present and vulnerable for the
         // entire reservation window, not invisible until the UI reconnects.
-        for(int i=0;i<HUNTERS;i++)if((seats[i]!=null||reserved[i]!=null)&&mission.alive(i))
-            {notifyHunters(world.bodyFrame(i,tick));notifyHunters(world.postureFrame(i,tick));if(seats[i]!=null)reply(seats[i],"HIDING|"+(world.hidden(i)?1:0));}
+        for(int i=0;i<HUNTERS;i++)if(seats[i]!=null||reserved[i]!=null){
+            notifyHunters(world.bodyFrame(i,tick));notifyHunters(world.postureFrame(i,tick));
+            if(!mission.alive(i))notifyHunters("HUNTER|DOWN|"+i);
+            if(seats[i]!=null)reply(seats[i],"HIDING|"+(world.hidden(i)?1:0));
+        }
     }
     private void broadcastState(){
         GhostDomain.Observation o=ghost.observe();

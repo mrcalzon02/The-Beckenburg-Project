@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: body must have visible rounded volume above floor, not a flat card: demonologist 0
+	at org.beckenburg.HunterReactionSpritesTest.check(HunterReactionSpritesTest.java:7)
+	at org.beckenburg.HunterReactionSpritesTest.main(HunterReactionSpritesTest.java:30)

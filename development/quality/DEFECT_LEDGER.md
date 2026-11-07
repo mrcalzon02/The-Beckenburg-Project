@@ -10,6 +10,34 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-336 — Hunter review can save unfinished native scenery
+
+**Status:** fixed-scoped; exact completed-frame native captures pass · **Affected:** HunterReactionsRenderReview native screenshot harness
+
+A native body screenshot contains only the fallback background because GPU mode was checked before its asynchronous scene readback completed.
+
+Cause / uncertainty: The review saved immediately after submitting the frame; GPU diagnostics do not certify completion.
+
+Fix / next action: Wait for the exact submitted frame ID, reject empty native color, pin the completed readback and composite the matching hunter state before saving.
+
+Evidence and verification: rounded-OpenGL-review.log and six runtime-oval-gpu images in hunter-reactions-2026-11-07; all three body images inspected with completed House scenery.
+
+Older-map obligation: Review-harness correction; no map or gameplay renderer change. Other asynchronous native capture tools need their own completed-frame checks.
+
+### DEV-335 — Hunters stay upright after damage and incapacitation
+
+**Status:** fixed-scoped; reaction assets, real TCP and native OpenGL review pass; installed acceptance pending · **Affected:** Cleric, Observer and Demonologist world sprites, all six hunter seats and hunter camera lenses
+
+No pain pose is selected for real damage and a downed teammate retains their last standing/walking cutout.
+
+Cause / uncertainty: Only locomotion poses exist; the host stops publishing dead bodies, and the hunter-down view accepts only three seat IDs.
+
+Fix / next action: Add four directional pain cutouts and one overhead body texture per class. Broadcast timed pain only after actual host health loss, retain downed BODY/posture snapshots to hunters, render bodies as rounded textured ellipsoid bodies, and share state with video/photo views. Make duplicate down snapshots idempotent; preserve ghost privacy and reset on site/departure.
+
+Evidence and verification: development/quality/evidence/hunter-reactions-2026-11-07/; fifteen validated sprites, seven focused regressions, packaged resource check, flat-body negative control, twelve rounded depth views and six completed-frame native RTX 5070 captures. Initial Demonologist backdrop rejected; repaired alpha-v2 packaged.
+
+Older-map obligation: Shared hunter rendering covers investigation maps. Captures cover House; the oval body shell is visual geometry, not a physical ragdoll.
+
 ### DEV-276 — Closing Beckenburg leaves hidden GPU worker and Java process alive
 
 **Status:** SOURCE FIX COMMITTED; Java child-process regression and installed Windows GPU exit acceptance pending · **Affected:** Normal desktop Exit, main window X, Castle gate, solo pause Exit, GPU launcher and auxiliary water editor, interactive DEV asset showroom and headless DEV room captures
