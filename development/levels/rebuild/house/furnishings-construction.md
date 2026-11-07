@@ -8,8 +8,10 @@ static props are recorded in `asset-use.csv` with real source hashes and placeme
 
 The rack leaves the entrance, sitting-room and stair doors clear. The coat peg rail
 touches the actual finished east wall; its added hanger closes the source gap.
-The fridge has rear ventilation clearance and sits by the northern kitchen wall,
-clear of the source counter and sampled door swings. It introduces no unrelated
+The fridge occupies dedicated south-wall storage, facing north into the kitchen.
+Its authored centre is X14.9/Z14.1925 with yawPI and a6cm rear ventilation gap.
+The short wall between garden and dining doors stays clear; both doorway centres
+are more than2m away. The counter, cellar stair and sampled door swings stay clear. It introduces no unrelated
 food/thermal simulation. Existing source/breaker and lighting behavior stays intact.
 
 The bench uses a measured nearly level patch of the unchanged editor-authored
@@ -20,7 +22,7 @@ socket. The garden's construction label still says reservation; production label
 are cleaned during promotion, without treating a bench as a paved patio.
 
 Packaged checks retain all eight authored loose belongings, hiding candidates,
-stairs/voids/van/portal coordinates and50179required route positions. Door leaves
+stairs/voids/van/portal coordinates and50164required route positions. Door leaves
 are checked at21sampled poses against added furnishing bounds. The actual furnished
 candidate passes real4peer source/breaker control and solo/human ghost trip/reset/
 resync. The original coat geometry/UV/material subset is retained; fridge atlas
@@ -34,3 +36,14 @@ camera-room hint that selected the cellar; current cameras require actual room
 ownership as well as physical support. Full361/native/GPU remote acceptance,
 matched closed-door/circuit and final wear review, authored encounter, saved-native
 migration, live promotion and complete House/client/mission/hardware gates remain.
+
+
+Owner correction DEV-334: the old north-east position between doors is rejected,
+even though its sampled collision checks passed. Retain that actual rejected
+image. Current south-wall source/native revision is
+first-principles-functional-furnishings-v1-981935462ed806a0.
+The131793triangle/230image native file independently reopens with every source
+vertex/UV and socket; original180triangle fridge model/atlas are unchanged.
+Doorway-clear, new-location and native-editor runtime views are separate from
+the historical whole-room diagnostic. Full362/editor/GPU and whole-map gates
+remain pending for the current combined source.

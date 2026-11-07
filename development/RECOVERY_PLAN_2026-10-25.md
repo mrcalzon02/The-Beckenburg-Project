@@ -770,3 +770,12 @@ Actual rebuilt USER loading exposed DEV-333: native composition replaced authore
 Evidence: verification/house-template-compatibility-2026-11-07/. Next: explicit saved built-in House migration, functional attachment safety, default promotion, authored encounter and final light/material/whole-location/client acceptance. Continue all29 packets and remaining unfinished maps. No round-duration tests.
 
 Owner immediately rejects fridge between kitchen doors (DEV-334). Compatibility/source-physics checks remain valid, but the diagnostic image is retained as rejected layout. Relocate before any further appearance/promotion acceptance.
+
+
+## Owner fridge relocation checkpoint — 7 November 2026
+
+DEV-334 replaces rejected fridge placement between the kitchen garden/dining doors. Actual source centreX14.9/Z14.1925/yawPI now uses dedicated south-wall storage facing north, with6cm rear ventilation. Both doorway centres are more than2m away. The source counter, cellar opening/stairs and other44props remain unchanged. Original180triangle model/atlas retained.
+
+Current source revision first-principles-functional-furnishings-v1-981935462ed806a0:21sampled door poses and50164required route positions pass; actual4TCP source/breaker/ghost trip/reset/resync and solo checks pass. Native131793triangles/UVs,230packed images,45props/15spawns/all sockets independently reopen. Texture140materials/13733203texels exactly match runtime. Saved legacy and rebuilt USER editing and source collision checks also pass. Actual new fridge and cleared original doorway views, native-editor capture and native overview inspected. Preserve rejected between-doors screenshot as rejected evidence.
+
+Source definition/supports/exportZIP/native/asset-use and captures regenerated from actual source. Existing parent361 acceptance remains historical at its former coordinates. Current combined362/full/editor/GPU and merged new-capture gallery remain pending. House saved built-in migration/functional attachment safety/default promotion, authored encounter and complete final location/client/hardware acceptance remain open. All29packets and remaining unfinished maps continue. No round-duration tests.

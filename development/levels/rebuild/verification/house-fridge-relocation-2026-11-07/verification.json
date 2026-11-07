@@ -1,0 +1,41 @@
+{
+  "status": "LOCAL SOURCE/NATIVE/USER EDITOR/ROUTE/NETWORK PASS; current full362/native/GPU pending",
+  "revision": "first-principles-functional-furnishings-v1-981935462ed806a0",
+  "native": {
+    "level": "briar-rebuild",
+    "revision": "first-principles-functional-furnishings-v1-981935462ed806a0",
+    "triangles": 131793,
+    "packed_images": 230,
+    "props": 45,
+    "spawns": 15,
+    "native_sha256": "d5fa1bf5eac695fbfe125ce913cccd98e5cf8b81990b55961db16faa3f7fe5cd",
+    "definition_sha256": "fd740e5945f5b3d5d5bd0e746b26a777df67c98cc22bb0ed425378ab939aab47",
+    "geometry_sha256": "d5a11a1783f9547086cce995c3f5fbabda67fdd5c07f84d43fdda16a6d35c2bb",
+    "result": "PASS every source vertex/UV; packed images; original sockets; native file unchanged",
+    "acceptance": "construction candidate only; terrain/boundary and complete map gates open"
+  },
+  "owner_correction": "DEV-334: remove fridge from short wall between garden/dining doors; dedicated south-wall kitchen storage, facing north",
+  "placement": {
+    "centre_x": 14.9,
+    "bottom_y": 0,
+    "centre_z": 14.1925,
+    "yaw": "PI",
+    "rear_ventilation_m": 0.06
+  },
+  "checks": [
+    "180triangle original model/atlas preserved",
+    "21sampled door poses; source counter and cellar stairs retained",
+    "50164required route positions pass",
+    "Actual4TCP source/breaker/ghost trip/reset/resync and solo event checks pass",
+    "Native131793triangles/UVs,230packed images,45props,15spawns and all source sockets independently reopened",
+    "140materials/13733203texels exact runtime sampler parity",
+    "Native legacy/rebuilt USER edits, identity and gameplay physics pass at corrected source",
+    "Actual corrected fridge, cleared original doorways, edited custom-map kitchen and native overview inspected"
+  ],
+  "scope": "Construction checkpoint only; original full361 accepted at prior coordinates, current full362/editor/GPU must run; no final House/older-map/hardware acceptance",
+  "source_files": {
+    "src/main/java/org/beckenburg/HouseRebuildFurnishings.java": "6ce1daf2ec52a38d769d3dca22b13bedab83cca205069182be29a94c40e7de0a",
+    "src/test/java/org/beckenburg/HouseRebuildFurnishingsTest.java": "bbe582e03a2bbe0c20fa6108989e4f1d32af859372e70d627799fbb9caf98ec8",
+    "src/test/java/org/beckenburg/HouseTemplateCompatibilityTest.java": "f7ad6d5521f6e47f51f50970f4d040d0eff5b5fa6b12675801cf4e5836911570"
+  }
+}

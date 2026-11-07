@@ -25,7 +25,7 @@ public final class HouseTemplateCompatibilityTest {
         System.setProperty("user.home",home.toString());
         try{
             var legacy=LevelPlans.legacyHouseSource();var rebuilt=HouseRebuildFurnishings.source();
-            check(rebuilt.revision().equals("first-principles-functional-furnishings-v1-5c8da94b90d34afd"),"Accepted construction source must remain byte-equivalent in authored coordinates");
+            check(HouseRebuildServices.source().revision().equals("first-principles-heating-v1-1d5d95258b105737"),"Fridge relocation must preserve accepted underlying construction coordinates");
             check(legacy.rooms().get(5).y()==3&&rebuilt.rooms().get(5).y()==2.8,"Independent old/new floor reference");
             check(legacy.rooms().get(9).y()==-3&&rebuilt.rooms().get(9).y()==-2.4,"Independent old/new cellar reference");
             UserLevelLibrary.create("BeforeRebuild",HouseMap.Site.HOUSE);
@@ -61,7 +61,7 @@ public final class HouseTemplateCompatibilityTest {
             service.transact(fresh.revision(),"move-prop",Map.of("id",fresh.nodeId(fridge),"x",Double.toString(originalFridge.x()-.125),
                 "y",Double.toString(originalFridge.y()),"z",Double.toString(originalFridge.z())));
             var beforeBodies=new ArrayList<>(rebuilt.colliders());
-            var fridgeBody=beforeBodies.stream().filter(body->Math.abs(body.x()-17.5)<1e-8&&Math.abs(body.z()-10.5075)<1e-8&&Math.abs(body.y())<1e-8).findFirst().orElseThrow();
+            var fridgeBody=beforeBodies.stream().filter(body->Math.abs(body.x()-14.9)<1e-8&&Math.abs(body.z()-14.1925)<1e-8&&Math.abs(body.y())<1e-8).findFirst().orElseThrow();
             beforeBodies.remove(fridgeBody);var afterBodies=new ArrayList<>(fresh.level().colliders());
             for(var body:beforeBodies)check(afterBodies.remove(body),"Editing fridge must retain every other exact authored body, including generator parts");
             check(afterBodies.size()==1,"Move must replace exactly one body without duplicate generic boxes");
@@ -78,7 +78,7 @@ public final class HouseTemplateCompatibilityTest {
                 check(editedMap.traversable(16,floor,12.4)&&editedMap.roomAt(16,floor,12.4)==2,"Actual custom-map review camera remains in kitchen");
                 renderer.setRenderSize(1000,625);renderer.lamp=true;renderer.roomLights=new RoomLighting();
                 renderer.x=16;renderer.z=12.4;renderer.eyeHeight=floor+1.62;
-                renderer.yaw=Math.atan2(17.375-16,10.5075-12.4);renderer.pitch=Math.atan2(.85-1.62,Math.hypot(17.375-16,10.5075-12.4));
+                renderer.yaw=Math.atan2(14.775-16,14.1925-12.4);renderer.pitch=Math.atan2(.85-1.62,Math.hypot(14.775-16,14.1925-12.4));
                 check(service.capture(fresh.revision(),out.resolve("edited-custom-house-kitchen-runtime.png")).result().renderer().equals("SceneRenderer.drawPractice"),"Capture uses actual Editor Agent Services native viewport");
             }
             byte[] newScene=Files.readAllBytes(fresh.documentPath());

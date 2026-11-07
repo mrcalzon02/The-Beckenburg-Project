@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 7392,
+  "count": 7394,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -3450,8 +3450,18 @@
       "kind": "Runtime daily household and garden functions",
       "width": 1000,
       "height": 625,
-      "bytes": 793110,
-      "sha256": "bf44c7ef1458be21af8c4267302d067f494f3e2482ee9339d8c5e9cb65ab2f39"
+      "bytes": 636479,
+      "sha256": "ed18075df34a153f652187211d1a05f5d8a579eca22e354613ee48eef7edef3c"
+    },
+    {
+      "path": "development/captures/house-functional-fill/kitchen-doorways-clear-runtime.png",
+      "url": "development/captures/house-functional-fill/kitchen-doorways-clear-runtime.png",
+      "title": "Kitchen doorways clear runtime",
+      "kind": "Runtime daily household and garden functions",
+      "width": 1000,
+      "height": 625,
+      "bytes": 705498,
+      "sha256": "aa4a358d498e56c53baf74e392557bcf8f7a4f0af007cde7753a6723a7bd4649"
     },
     {
       "path": "development/captures/house-functional-fill/native-parcel-overview.png",
@@ -3460,8 +3470,8 @@
       "kind": "Native geometry overview",
       "width": 1200,
       "height": 900,
-      "bytes": 1418936,
-      "sha256": "eec0aea45b1fa8fa1297e2667bb2c613f2490c52f4540787f65e0b870909df87"
+      "bytes": 1419460,
+      "sha256": "ecb09260ed2767eacd5da0131c190dc933447afe779b0a37fecfcf07ede3b848"
     },
     {
       "path": "development/captures/house-functional-fill/rejected-cold-storage-camera-floor-runtime.png",
@@ -4872,6 +4882,16 @@
       "height": 625,
       "bytes": 334077,
       "sha256": "9ccb2fa6157a50c3a11d6bc4fcc1b87e1bc6e51ecdc1b3118d2433f183acb44f"
+    },
+    {
+      "path": "development/captures/house-template-compatibility/edited-custom-house-kitchen-runtime.png",
+      "url": "development/captures/house-template-compatibility/edited-custom-house-kitchen-runtime.png",
+      "title": "Edited custom house kitchen runtime",
+      "kind": "Runtime native editor custom House compatibility",
+      "width": 1000,
+      "height": 625,
+      "bytes": 638696,
+      "sha256": "a8a4f7ed9211a31054933208f535fce3c51c364950c8c6cf88f88e515322af68"
     },
     {
       "path": "development/captures/house-template-compatibility/rejected-fridge-between-doors-runtime.png",

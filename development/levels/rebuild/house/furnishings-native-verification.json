@@ -1,13 +1,13 @@
 {
   "level": "briar-rebuild",
-  "revision": "first-principles-functional-furnishings-v1-5c8da94b90d34afd",
+  "revision": "first-principles-functional-furnishings-v1-981935462ed806a0",
   "triangles": 131793,
   "packed_images": 230,
   "props": 45,
   "spawns": 15,
-  "native_sha256": "2f9c930792762afeff2ebe6921fb118d90ae57e6559b17c44f561855f429ef42",
-  "definition_sha256": "3ba77071404f68d3396360a3b00798a31700ec07cd5ddc54e5c7ce32aabf6804",
-  "geometry_sha256": "d6d320a28e32d91812e23891139502d7bd2df75b7b6634745bc96cce135c9e21",
+  "native_sha256": "d5fa1bf5eac695fbfe125ce913cccd98e5cf8b81990b55961db16faa3f7fe5cd",
+  "definition_sha256": "fd740e5945f5b3d5d5bd0e746b26a777df67c98cc22bb0ed425378ab939aab47",
+  "geometry_sha256": "d5a11a1783f9547086cce995c3f5fbabda67fdd5c07f84d43fdda16a6d35c2bb",
   "result": "PASS every source vertex/UV; packed images; original sockets; native file unchanged",
   "acceptance": "construction candidate only; terrain/boundary and complete map gates open"
 }

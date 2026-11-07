@@ -4576,15 +4576,15 @@ Older-map obligation: Audit each future rebuilt source collision policy and func
 
 ### DEV-334 — Kitchen fridge wedged between back and dining doors
 
-**Status:** OWNER REJECTED; relocation is immediate next implementation · **Affected:** House furnishing source and derived custom-map kitchen
+**Status:** SCOPED RELOCATION PASS; source/native/runtime views inspected; current exact-source CI pending · **Affected:** House furnishing source and derived custom-map kitchen
 
 Owner rejects actual kitchen capture: fridge crowds the short wall section between two doors despite sampled collision and route checks passing.
 
 Cause / uncertainty: Placement prioritized numerical clearances over coherent kitchen work/storage arrangement.
 
-Fix / next action: Move fridge to a dedicated kitchen wall away from both doorways. Preserve actual rejected capture; recheck source door swings, counter and cellar-stair circulation, native/export/source coordinates and actual runtime views.
+Fix / next action: Move fridge to X14.9/Z14.1925 against finished south wall, yawPI facing north,6cm rear ventilation. Both garden/dining door centres remain more than2m away. Source door poses and50164route positions, cellar access/counter, original atlas, actual power/TCP and USER editor checks pass. Rebuild native/export/asset coordinates from actual source.
 
-Evidence and verification: User rejection; development/captures/house-template-compatibility/rejected-fridge-between-doors-runtime.png
+Evidence and verification: User rejection; development/captures/house-template-compatibility/rejected-fridge-between-doors-runtime.png; development/captures/house-functional-fill/kitchen-doorways-clear-runtime.png; kitchen-cold-storage-runtime.png; development/levels/rebuild/verification/house-fridge-relocation-2026-11-07/
 
 Older-map obligation: Review appliance placement as a functional room arrangement individually; passing collision alone never accepts an older layout.
 

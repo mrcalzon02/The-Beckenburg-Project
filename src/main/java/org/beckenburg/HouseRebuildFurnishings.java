@@ -10,7 +10,9 @@ public final class HouseRebuildFurnishings {
         fit.floor("vestibule-boot-storage","level_work_boot_rack",0,20.65,19.125,0);
         // Original peg rail back touches the east wall; additive hanger closes the source gap.
         fit.place("vestibule-coat-hooks","level_house_coat_hung",0,21.42875,.715,19.9,Math.PI/2,"east-finished-wall");
-        fit.floor("kitchen-cold-storage","level_house_fridge_worn",2,17.5,10.5075,0);
+        // Dedicated south-wall storage, facing into the kitchen work area.
+        // Keep the short wall between garden/dining doors empty.
+        fit.floor("kitchen-cold-storage","level_house_fridge_worn",2,14.9,14.1925,Math.PI);
         var terrain=WorldTerrainSurface.of(fit.base);double benchY=Double.NEGATIVE_INFINITY;
         for(double dx:new double[]{-.685,-.595,.595,.685})for(double dz:new double[]{-.235,-.145,.145,.235})benchY=Math.max(benchY,HouseRebuildLandscape.height(terrain,13.25+dx,8.5+dz));
         fit.place("garden-sitting-bench","level_camp_bench",12,13.25,benchY,8.5,0,"actual-editor-terrain");

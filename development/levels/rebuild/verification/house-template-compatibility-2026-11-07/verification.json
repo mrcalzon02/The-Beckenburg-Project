@@ -37,5 +37,7 @@
     "src/main/java/org/beckenburg/HouseRebuildFunctions.java": "b7661ed8c1f736afb3f342536830e8f02e5db65e5f47af87b172f7ffc4bebd40",
     "src/test/java/org/beckenburg/HouseTemplateCompatibilityTest.java": "1eb7986e5072c6b84b22cccdcdce886d7d046003ed6fa57c2e21982220043e05",
     "development/captures/house-template-compatibility/rejected-fridge-between-doors-runtime.png": "0b5af25693c11ef2ff0946dbb0b3f8b7d0d265257f0b4059a0b9cf72f077f199"
-  }
+  },
+  "source_commit": "40485a838b32a90dbaa125b0dc5e6a3c45451246",
+  "hash_scope": "Committed UTF-8/LF source bytes at40485a83; LF normalization preserves the tested Java source semantics."
 }
