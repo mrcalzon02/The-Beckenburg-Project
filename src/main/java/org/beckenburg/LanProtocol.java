@@ -5,9 +5,11 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Bounded version-2 XYZ LAN frames, intentionally not Java object deserialization. */
+/** Bounded version-3 XYZ LAN frames, intentionally not Java object deserialization.
+ * Version3 adds authored location audio vocabulary; reject older clients before
+ * sending cues they cannot decode. Existing XYZ/object frames retain their shape. */
 public final class LanProtocol {
-    public static final int VERSION=2, DEFAULT_PORT=27717, MAX_FRAME=512, MAX_FIELDS=11;
+    public static final int VERSION=3, DEFAULT_PORT=27717, MAX_FRAME=512, MAX_FIELDS=11;
     private LanProtocol() { }
     public static List<String> parts(String frame) {
         if (frame==null || frame.length()>MAX_FRAME || frame.indexOf('\r')>=0 || frame.indexOf('\n')>=0)
