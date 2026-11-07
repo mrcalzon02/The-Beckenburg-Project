@@ -1,0 +1,23 @@
+{
+  "tested_source": "d0af6896dca52bffcfd06ae749606744d36a7097",
+  "actual_summary": "REGRESSION SUMMARY passed=342 failed=0 skipped=0 manifest=342",
+  "full_run": 42336731624,
+  "gpu_run": 42336734318,
+  "gpu_result": "success",
+  "gallery_run": 42336731717,
+  "gallery_result": "success",
+  "reconciled_main": "b7ad694ee21aa98c7458a7295ff3b6a860464bec",
+  "runtime_equivalent_merge": "20ffe8027c4767205d116b7df8bd96868c336e0b",
+  "identical_tree_or_blob_ids": {
+    "src": "2867dd69c9701e98371ca0a7b154b711620bf5ea",
+    "assets": "d3b23f169e9c594489ac0f5230e5b7430c6317b5",
+    "development/assets": "6f5a8a702f2b7780f6e7d9863aa8b3da0f279641",
+    "tools": "a7899dde1e97925d0e66b130269563939ae5ac96",
+    "build.cmd": "9f245be7e872891bc7f6cb348dcb12689b1922e5",
+    "build.sh": "a7a95d160c5b9d2961dc88402c07206f84d1d7d6",
+    "regression-tests.txt": "09c5d501fb08031b68cbbee63a61e3bd5d306a1a",
+    ".github": "915c05247ce807cb3d900c94fea63cace3781bb7"
+  },
+  "full_log_sha256": "d0ad355f8642f817e2ce25114bd17afffde6c2830d9b6682048e011ca60a7214",
+  "fresh_receipt_runs": "May run automatically; no fresh-head success inferred from this receipt"
+}
