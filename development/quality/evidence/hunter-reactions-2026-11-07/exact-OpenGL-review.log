@@ -1,0 +1,5 @@
+Beckenburg GPU initialized: OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64
+2026-11-07T22:30:17.207236400Z [main] ACTIVE_RENDERER GPU OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64 / scene triangles OpenGL, UI Swing
+2026-11-07T22:30:19.488066300Z [main] RENDER SLOW stage=idle faces=120671 visible_faces=63364 culled_faces=57307 target=854x480 build_ms=1357 lighting_raster_ms=700
+2026-11-07T22:30:19.780286400Z [beckenburg-opengl] GPU FRAME SLOW id=214 surfaces=234 target=854x480 raster_ms=280 readback_ms=9 uploaded_batches=234 reused_batches=0 uploaded_bytes=7277568 reuse_saved_bytes=0 superseded=0
+PASS 6 real OpenGL hunter pain/body scene captures at actual floor 0.0
