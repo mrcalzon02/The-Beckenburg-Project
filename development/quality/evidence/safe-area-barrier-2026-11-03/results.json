@@ -1,0 +1,102 @@
+[
+  {
+    "test": "SafeAreaBarrierTest",
+    "exit": 0,
+    "seconds": 1.093
+  },
+  {
+    "test": "SafeAreaHazeTest",
+    "exit": 0,
+    "seconds": 0.094
+  },
+  {
+    "test": "LanSafeAreaBarrierTest",
+    "exit": 0,
+    "seconds": 0.781
+  },
+  {
+    "test": "HunterCountersTest",
+    "exit": 0,
+    "seconds": 0.313
+  },
+  {
+    "test": "LanGhostSpatialTest",
+    "exit": 0,
+    "seconds": 0.297
+  },
+  {
+    "test": "LanGhostHidingBoundaryTest",
+    "exit": 0,
+    "seconds": 0.297
+  },
+  {
+    "test": "LanSpatialCombatTest",
+    "exit": 0,
+    "seconds": 0.375
+  },
+  {
+    "test": "LanTelegraphedStrikeTest",
+    "exit": 0,
+    "seconds": 0.312
+  },
+  {
+    "test": "LanGhostPursuitTest",
+    "exit": 0,
+    "seconds": 0.313
+  },
+  {
+    "test": "GhostDomainTest",
+    "exit": 0,
+    "seconds": 0.453
+  },
+  {
+    "test": "GhostAiNavigationAuditTest",
+    "exit": 0,
+    "seconds": 0.312
+  },
+  {
+    "test": "TwinCompanionAiTest",
+    "exit": 0,
+    "seconds": 0.375
+  },
+  {
+    "test": "TwinCompanionSharedActionTest",
+    "exit": 0,
+    "seconds": 0.297
+  },
+  {
+    "test": "LanTwinPlayerCompanionTest",
+    "exit": 0,
+    "seconds": 9.906
+  },
+  {
+    "test": "SpiritualWarTest",
+    "exit": 0,
+    "seconds": 0.141
+  },
+  {
+    "test": "VanModuleIntegrationTest",
+    "exit": 0,
+    "seconds": 1.562
+  },
+  {
+    "test": "VanCargoDoorTest",
+    "exit": 0,
+    "seconds": 2.579
+  },
+  {
+    "test": "LanSixHunterVanTest",
+    "exit": 0,
+    "seconds": 1.609
+  },
+  {
+    "test": "LanCaseIntegrationTest",
+    "exit": 0,
+    "seconds": 5.016
+  },
+  {
+    "test": "BeckenburgFullRoundE2ETest",
+    "exit": 0,
+    "seconds": 10.953
+  }
+]

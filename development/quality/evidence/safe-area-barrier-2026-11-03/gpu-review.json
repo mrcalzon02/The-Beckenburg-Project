@@ -1,0 +1,9 @@
+{
+  "gpu": "NVIDIA GeForce RTX 5070/PCIe/SSE2",
+  "opengl": "3.3.0 NVIDIA 616.64",
+  "frames": 3,
+  "status": "PASS actual completed OpenGL frames, production depth-occluded blue barrier and animated transparent material",
+  "test": "SafeAreaBarrierGpuReview",
+  "images": "development/levels/previews/safe-area-barrier/gpu-van-0.png through gpu-van-2.png",
+  "scope": "Completed real OpenGL frame/depth composition, not a hardware FPS benchmark or installer acceptance"
+}

@@ -283,6 +283,7 @@ public final class InvestigationSession {
         // Every supernatural action, including AI behavior, follows the same host-style dispatcher.
         // Ghost observation has only room-local presence, never the hunter's global position or notebook.
         int playerRoom=map.roomAt(playerX,playerY,playerZ);
+        boolean sheltered=SafeAreaBarrier.protectedAt(map,playerX,playerY,playerZ);
         var fixtureSounds=map.fixtures().advance(ticks);
         for(var f:map.fixtures().states())GameSfx.fixtureState(f);
         for(var sound:fixtureSounds){
@@ -293,7 +294,7 @@ public final class InvestigationSession {
         for(var hit:map.clutter().advance(List.of(clutterObserver))){health=Math.max(0,health-hit.damage());log("Struck by a flying object! -"+hit.damage()+" health.");if(health==0){finish(Outcome.LOST);return;}}
         if(hidden&&(hidingAt==null||Math.hypot(playerX-hidingAt.x(),playerZ-hidingAt.z())>.02
                 ||Math.abs(playerY-hidingAt.y())>.1||(shrubHidden?(!crouched||OutdoorHiding.containing(map.level(),playerX,playerY,playerZ,map.hidingDensity())==null||ghost.room()==playerRoom&&Math.hypot(playerX-map.centerX(playerRoom),playerZ-map.centerZ(playerRoom))<2.4):!LevelClosets.available(map.level(),playerRoom,map.hidingDensity()))))leaveHiding();
-        ghost.advance(ticks,playerRoom,playerRoom==ghost.room()&&!hidden?1:0);
+        ghost.advance(ticks,sheltered?-1:playerRoom,playerRoom==ghost.room()&&!hidden&&!sheltered?1:0);
         boolean indoor=playerRoom>=0&&playerRoom<HouseMap.INDOOR_ROOMS;
         boolean light=carriedLight||(indoor&&(roomLights==null
             ||roomLights.brightness(playerRoom,ticks)>.32));
@@ -321,6 +322,7 @@ public final class InvestigationSession {
             new LanGhostSpatial.Pose(ghost.room(),map.centerX(ghost.room()),standingY(map.centerX(ghost.room()),map.centerZ(ghost.room())),map.centerZ(ghost.room()),0),ticks);
         if(counter.saltTrack())log("Salt tracks: the grounded ghost is visible and slowed.");
         if(counter.repelled())log("Cross struck the manifestation: attack interrupted.");
+        sheltered=SafeAreaBarrier.protectedAt(map,playerX,playerY,playerZ);
         GhostDomain.Command command=ghostAi.decide(ghost.observe());
         if(command!=null) {
             GhostDomain.Resolution result=ghost.dispatch(command);
@@ -366,11 +368,11 @@ public final class InvestigationSession {
                     };
                     if(effect!=null)roomLights.pulse(result.room(),effect,ticks);
                 }
-                if(result.fear()>0) stress=Math.min(100,stress+classSkills.fear(0,discipline(),ticks,result.fear()+partySize-1));
+                if(result.fear()>0&&!sheltered) stress=Math.min(100,stress+classSkills.fear(0,discipline(),ticks,result.fear()+partySize-1));
                 // Whisper/disturbance cues remain physical sounds, light disruptions
                 // and object movement. Never narrate ambient evidence on the HUD.
                 map.clutter().haunt(ghost.type(),result,List.of(clutterObserver),ticks);
-                if(result.harm()>0&&!hidden) {
+                if(result.harm()>0&&!hidden&&!sheltered) {
                     int wound=classSkills.harm(0,discipline(),ticks,prepared?Math.min(result.harm(),4):result.harm()+CampaignPartyRules.additionalHarm(partySize));
                     health=Math.max(0,health-wound);
                     log("A spectral strike! -"+wound+" health. Retreat, or use protective wards.");

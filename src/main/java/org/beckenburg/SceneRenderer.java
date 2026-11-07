@@ -1401,11 +1401,13 @@ public final class SceneRenderer {
                 }
                 case WARD -> {
                     // Ground seal remains visible even when the projectile has landed.
-                    box(out,mx-.75,.038,mz-.75,1.50,.06,.095,0x7fc6bf);
-                    box(out,mx-.75,.038,mz+.655,1.50,.06,.095,0x7fc6bf);
-                    box(out,mx-.75,.038,mz-.65,.095,.06,1.30,0x7fc6bf);
-                    box(out,mx+.655,.038,mz-.65,.095,.06,1.30,0x7fc6bf);
-                    if(yy>.10)box(out,mx-.09,yy,mz-.09,.18,.20,.18,0x9bede0);
+                    var area=SafeAreaBarrier.settledWard(map,mark);
+                    if(area!=null){double base=area.y()+.038;
+                        box(out,mx-.75,base,mz-.75,1.50,.06,.095,0x7fc6bf);
+                        box(out,mx-.75,base,mz+.655,1.50,.06,.095,0x7fc6bf);
+                        box(out,mx-.75,base,mz-.65,.095,.06,1.30,0x7fc6bf);
+                        box(out,mx+.655,base,mz-.65,.095,.06,1.30,0x7fc6bf);
+                    }else box(out,mx-.09,yy,mz-.09,.18,.20,.18,0x9bede0);
                 }
                 case SALT -> {
                     // A purchased and actually deployed salt pouch receives its
@@ -3192,6 +3194,8 @@ public final class SceneRenderer {
         }
 
         renderWeatherMeshes();
+        safeAreaPixels=SafeAreaHaze.draw(pixels,depths,renderWidth,renderHeight,focal,x,eyeHeight,z,yaw,pitch,clock,
+            List.of(SafeAreaBarrier.castle()));
         long psxStart=System.nanoTime();
         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
         long psxDone=System.nanoTime();
@@ -3306,52 +3310,23 @@ public final class SceneRenderer {
     private void render(HouseMap map,int ghostRoom,boolean visibleGhost,int wardRoom,int hunterRoom,double clock,List<RemoteBody> others,Apparition apparition){
         render(map,ghostRoom,visibleGhost,wardRoom,hunterRoom,clock,others,apparition,List.of());
     }
-    /** Arena-only sanctuary presentation; normal investigations never enable it. */
-    private boolean spiritualWarVanSanctuary;
+    private boolean spiritualWarVanSanctuary,spiritualWarSanctuaryConfigured;
     public void setSpiritualWarVanSanctuary(boolean active) {
-        spiritualWarVanSanctuary = active;
+        spiritualWarSanctuaryConfigured=true;spiritualWarVanSanctuary=active;
     }
     /** Consume the authoritative arena clock, never a local countdown guess. */
     public void syncSpiritualWarSanctuary(SpiritualWar.Match match) {
         setSpiritualWarVanSanctuary(java.util.Objects.requireNonNull(match).vanProtected()
             && match.result() == SpiritualWar.Result.ACTIVE);
     }
-    public boolean spiritualWarVanSanctuaryVisible() { return spiritualWarVanSanctuary; }
-    /**
-     * Animated world-space blue motes outlining the van's protected footprint.
-     * The wall has no physical collision and never replaces host-side protection.
-     */
-    private void renderVanSanctuary(HouseMap map, double clock) {
-        if (!spiritualWarVanSanctuary) return;
-        VanStaging van = map.van();
-        double halfWidth = VanStaging.HALF_WIDTH + 0.55;
-        double front = VanStaging.FRONT - 0.65;
-        double rear = VanStaging.REAR + VanStaging.CAB_LENGTH + 0.55;
-        double perimeter = 4 * halfWidth + 2 * (rear - front);
-        for (int i = 0; i < 240; i++) {
-            double distance = i * perimeter / 240;
-            double lx, lz;
-            if (distance < 2 * halfWidth) {
-                lx = -halfWidth + distance; lz = front;
-            } else if ((distance -= 2 * halfWidth) < rear - front) {
-                lx = halfWidth; lz = front + distance;
-            } else if ((distance -= rear - front) < 2 * halfWidth) {
-                lx = halfWidth - distance; lz = rear;
-            } else {
-                distance -= 2 * halfWidth; lx = -halfWidth; lz = rear - distance;
-            }
-            double phase = clock * 1.6 + i * 0.61803398875;
-            double height = 0.14 + 2.85 * ((phase / 3.0) - Math.floor(phase / 3.0));
-            double shimmer = Math.sin(clock * 4 + i * 2.13) * 0.04;
-            var p = van.world(lx + shimmer, lz);
-            double size = 0.025 + (i % 5) * 0.005;
-            int blue = (i % 3 == 0) ? 0x37b9ff : (i % 3 == 1 ? 0x237ff0 : 0x70dcff);
-            Face mote = new Face(new Point(p.x() - size, height, p.z()),
-                new Point(p.x() + size, height, p.z()),
-                new Point(p.x(), height + size * 2.2, p.z()),
-                blue, -1, 0, 0, 1, 0, .5, 1);
-            drawLitFace(mote, HouseMap.EXTRACTION_ROOM, 0);
-        }
+    public boolean spiritualWarVanSanctuaryVisible(){return spiritualWarVanSanctuary;}
+    private int safeAreaPixels;
+    int safeAreaPixels(){return safeAreaPixels;}
+    private void renderSafeAreas(HouseMap map,List<WorldMark> markers,double clock){
+        var areas=new java.util.LinkedHashSet<SafeAreaBarrier.Volume>();
+        if(!spiritualWarSanctuaryConfigured||spiritualWarVanSanctuary)areas.add(SafeAreaBarrier.van(map.van()));
+        areas.addAll(map.temporarySafeAreas());areas.addAll(SafeAreaBarrier.visibleWards(map,markers));
+        safeAreaPixels=SafeAreaHaze.draw(pixels,depths,renderWidth,renderHeight,focal,x,eyeHeight,z,yaw,pitch,clock,List.copyOf(areas));
     }
     private void render(HouseMap map,int ghostRoom,boolean visibleGhost,int wardRoom,int hunterRoom,
             double clock,List<RemoteBody> others,Apparition apparition,List<WorldMark> markers){
@@ -3389,10 +3364,10 @@ public final class SceneRenderer {
             BeckenburgDeveloperTrace.renderSlow(
                 geometry.size()+residentOmittedFaces,visibleFaces,renderWidth,renderHeight,
                 geometryReady-geometryStart,geometryRendered-geometryReady);
-        renderVanSanctuary(map,clock);
         renderCharacterSprites(map,ghostRoom,visibleGhost,hunterRoom,clock,others,apparition);
         if(map.nativeSite())DistanceDetail.apply(pixels,depths,renderWidth,renderHeight,hazeBackground);
         renderWeatherMeshes();
+        renderSafeAreas(map,markers,clock);
         long psxStart=System.nanoTime();
         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
         long psxDone=System.nanoTime();
@@ -3680,10 +3655,10 @@ public final class SceneRenderer {
         if(eyeHeight-playerFloor>=.9&&eyeHeight-playerFloor<=1.8)
             EntityFootShadow.draw(pixels,depths,x,z,yaw,pitch,x,z,playerFloor-(eyeHeight-1.62),
                 .38,145,renderWidth,renderHeight,focal);
-
-        if(visibleGhost){
-            double gx=apparition==null?map.centerX(ghostRoom):apparition.x();
-            double gz=apparition==null?map.centerZ(ghostRoom):apparition.z();
+        var soloGhost=visibleGhost&&apparition==null?SafeAreaBarrier.ghostSpawn(map,ghostRoom):null;
+        if(visibleGhost&&(apparition!=null||soloGhost!=null)){
+            double gx=apparition==null?soloGhost.x():apparition.x();
+            double gz=apparition==null?soloGhost.z():apparition.z();
             LanGhostAnimation.Phase phase=apparition==null?LanGhostAnimation.Phase.LURK:apparition.phase();
             int progress=apparition==null?0:apparition.progress();
             double stature=phase==LanGhostAnimation.Phase.MATERIALIZE
@@ -3716,7 +3691,6 @@ public final class SceneRenderer {
         for(Apparition companion:additionalGhostBodies){
             EntityFootShadow.draw(pixels,depths,x,z,yaw,pitch,companion.x(),companion.z(),
                 companion.y()-(eyeHeight-1.62),.42,145,renderWidth,renderHeight,focal);
-
 
             if(companion.orb()){
                 renderSpiritOrb(companion.x(),companion.z(),companion.y()+.98,clock,companion.greenTint());
