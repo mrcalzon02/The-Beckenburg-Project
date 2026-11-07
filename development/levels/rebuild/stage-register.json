@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "date": "2026-10-31",
+  "date": "2026-11-07",
   "timezone": "America/Anchorage",
   "status": "EXECUTION_IN_PROGRESS",
   "source_baseline": "ad9bb45c20c3754931637bdfa50968a35defeaf9",
@@ -1149,12 +1149,19 @@
         },
         "S05": {
           "status": "IN_PROGRESS",
-          "source_sha": "a34d3b174f41e4ea53cfbfbe8ec13fe2de892cab",
+          "source_sha": "67abf5b5e8c374aa7dc843b69993900ec2a9335a",
           "evidence": [
             "development/levels/rebuild/house/envelope-construction.md",
             "development/levels/rebuild/house/envelope-native-verification.json",
             "development/levels/rebuild/verification/house-envelope-2026-11-06/results.json",
-            "development/levels/rebuild/verification/house-envelope-2026-11-06/house-envelope-enhanced-physics.log"
+            "development/levels/rebuild/verification/house-envelope-2026-11-06/house-envelope-enhanced-physics.log",
+            "development/levels/rebuild/house/fitout-construction.md",
+            "development/levels/rebuild/house/fitout-services.json",
+            "development/levels/rebuild/house/fitout-native-verification.json",
+            "development/levels/rebuild/verification/house-fitout-2026-11-07/verification.json",
+            "src/main/java/org/beckenburg/HouseRebuildFitout.java",
+            "src/main/java/org/beckenburg/HouseServiceNetwork.java",
+            "src/test/java/org/beckenburg/HidingAreaHazeTest.java"
           ],
           "defects": [
             "DEV-302",
@@ -1162,9 +1169,14 @@
             "DEV-304",
             "DEV-305",
             "DEV-306",
-            "DEV-307"
+            "DEV-307",
+            "DEV-311",
+            "DEV-312",
+            "DEV-313",
+            "DEV-314",
+            "DEV-315"
           ],
-          "next_action": "One closed dwelling roof/exterior, supported porch, separated openings and owner-directed clear context verified;12packaged checks, enhanced House body and all66material sampler parity pass. Complete remaining terrain/architectural-light review and functional services/furniture/story, then mission/LAN/hardware and dispatch promotion. Other maps retain individual gates."
+          "next_action": "Obtain exact-source349/full/native/GPU and gallery-deployment acceptance; finish ghost-specific breaker-trip gate,story/loose-physics/encounters,final appearance,live promotion/migration and complete House mission/client/network/hardware gates. Continue all29packets and then remaining unfinished maps."
         },
         "S06": {
           "status": "NOT_AUDITED",
@@ -3686,5 +3698,6 @@
     "site": "CASTLE",
     "owner_direction_date": "2026-11-03",
     "rule": "Complete the full Castle revision and actual hub verification before continuing remaining maps. Other28 packets remain in scope; no round-duration testing."
-  }
+  },
+  "follow_on_scope_note": "After the28base locations and cemetery/mortuary annex,continue every remaining unfinished location in the current catalog/backlog,with regular checkpoints and synchronization; owner7November2026."
 }

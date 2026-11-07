@@ -9,9 +9,54 @@ public final class SafeAreaHaze {
     private SafeAreaHaze(){}
     public static int draw(int[] pixels,double[] depths,int width,int height,double focal,
             double x,double eye,double z,double yaw,double pitch,double clock,List<SafeAreaBarrier.Volume> areas){
+        return drawShells(pixels,depths,width,height,focal,x,eye,z,yaw,pitch,clock,
+            areas.stream().map(a->(Shell)new Dome(a)).toList());
+    }
+    /** Usable authored cover reuses the sanctuary material at its authored cover location. */
+    public static int drawHiding(int[] pixels,double[] depths,int width,int height,double focal,
+            double x,double eye,double z,double yaw,double pitch,double clock,HouseMap map){
+        var shells=new java.util.ArrayList<Shell>();
+        for(var socket:HidingBudget.candidates(map.level()))if(HidingBudget.available(map.level(),socket,map.hidingDensity())){
+            if(socket.type().equals("hide")&&LevelClosets.available(map.level(),socket.room(),map.hidingDensity()))
+                shells.add(new Pocket(new SafeAreaBarrier.Volume(socket.x(),socket.y(),socket.z(),Math.hypot(.35,.31),1.65,2.02),socket.yaw(),.35,.31));
+            else if(socket.type().equals("outdoor-hide")&&OutdoorHiding.available(map.level(),socket,map.hidingDensity())){
+                // Mark the actual refuge asset so opaque leaves cannot hide the cue.
+                // Eligibility and concealment still use the authored standing/crouch pocket.
+                double radius=.36,coverHeight=1.15,shoulder=.70;
+                for(var prop:map.level().props())if(prop.mesh().equals("level_shrub_refuge")&&Math.hypot(prop.x()-socket.x(),prop.z()-socket.z())<.2){
+                    var b=SceneRenderer.castleBounds(prop.mesh());radius=Math.hypot(b[3]/2,b[5]/2)*prop.scale()+.04;
+                    coverHeight=Math.max(1.15,prop.y()+b[1]+b[4]*prop.scale()-socket.y()+.12);shoulder=coverHeight*.90;
+                }
+                shells.add(new Dome(new SafeAreaBarrier.Volume(socket.x(),socket.y(),socket.z(),radius,shoulder,coverHeight)));
+            }
+        }
+        return drawShells(pixels,depths,width,height,focal,x,eye,z,yaw,pitch,clock,shells);
+    }
+    private interface Shell {
+        SafeAreaBarrier.Volume material();
+        double hit(double ox,double oy,double oz,double dx,double dy,double dz);
+    }
+    private record Dome(SafeAreaBarrier.Volume material) implements Shell {
+        public double hit(double ox,double oy,double oz,double dx,double dy,double dz){return surface(material,ox,oy,oz,dx,dy,dz);}
+    }
+    private record Pocket(SafeAreaBarrier.Volume material,double cosine,double sine,double halfX,double halfZ) implements Shell {
+        Pocket(SafeAreaBarrier.Volume material,double yaw,double halfX,double halfZ){this(material,Math.cos(yaw),Math.sin(yaw),halfX,halfZ);}
+        public double hit(double ox,double oy,double oz,double dx,double dy,double dz){
+            double lx=ox*cosine+oz*sine,lz=-ox*sine+oz*cosine,ldx=dx*cosine+dz*sine,ldz=-dx*sine+dz*cosine;
+            double near=Double.NEGATIVE_INFINITY,far=Double.POSITIVE_INFINITY;
+            for(int i=0;i<3;i++){
+                double origin=i==0?lx:i==1?oy:lz,direction=i==0?ldx:i==1?dy:ldz,low=i==0?-halfX:i==1?0:-halfZ,high=i==0?halfX:i==1?material.height():halfZ;
+                if(Math.abs(direction)<1e-12){if(origin<low||origin>high)return Double.POSITIVE_INFINITY;}
+                else{double a=(low-origin)/direction,b=(high-origin)/direction;near=Math.max(near,Math.min(a,b));far=Math.min(far,Math.max(a,b));if(far<near)return Double.POSITIVE_INFINITY;}
+            }
+            return near>.035?near:far>.035?far:Double.POSITIVE_INFINITY;
+        }
+    }
+    private static int drawShells(int[] pixels,double[] depths,int width,int height,double focal,
+            double x,double eye,double z,double yaw,double pitch,double clock,List<? extends Shell> shells){
         if(!Double.isFinite(clock))throw new IllegalArgumentException("finite barrier animation clock required");
         int changed=0;double cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
-        for(var a:areas){
+        for(var shell:shells){var a=shell.material();
             if(Math.hypot(x-a.x(),z-a.z())>70+a.radius())continue;
             double ox=x-a.x(),oz=z-a.z();
             // Perspective bounds keep distant/small wards from shading the whole screen.
@@ -32,7 +77,7 @@ public final class SafeAreaHaze {
                 double v=(height*.5-row-.5)/focal,dy=v*cp+sp,forward=cp-v*sp;
                 for(int col=x0;col<=x1;col++){
                     double u=(col+.5-width*.5)/focal,dx=-u*cy+forward*sy,dz=u*sy+forward*cy;
-                    double hit=surface(a,ox,eye-a.y(),oz,dx,dy,dz);
+                    double hit=shell.hit(ox,eye-a.y(),oz,dx,dy,dz);
                     int at=row*width+col;
                     if(hit<.035||hit>=depths[at]-.008)continue;
                     double wx=x+dx*hit,wy=eye+dy*hit-a.y(),wz=z+dz*hit;

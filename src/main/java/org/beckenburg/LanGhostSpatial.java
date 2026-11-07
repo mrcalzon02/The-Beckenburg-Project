@@ -58,8 +58,8 @@ public final class LanGhostSpatial {
     static boolean hidingPocketAt(HouseMap map,int room,double x,double y,double z){
         if(room<0||room>=HouseMap.EXTRACTION_ROOM)return false;
         var closet=map.level().socket("hide",room);
-        return LevelClosets.inside(closet,x,y,z)
-            ||OutdoorHiding.containing(map.level(),x,y,z,100)!=null;
+        return LevelClosets.available(map.level(),room,map.hidingDensity())&&LevelClosets.inside(closet,x,y,z)
+            ||OutdoorHiding.containing(map.level(),x,y,z,map.hidingDensity())!=null;
     }
     public void syncRoom(int newRoom){
         if(newRoom<0||newRoom>=HouseMap.EXTRACTION_ROOM)throw new IllegalArgumentException("ghost cannot occupy safe van");

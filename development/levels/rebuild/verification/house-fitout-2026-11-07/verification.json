@@ -1,0 +1,78 @@
+{
+  "status": "pass-focused-local-package; online349acceptance remains pending",
+  "checks": [
+    {
+      "test": "HouseRebuildPhysicsTest",
+      "log": "HouseRebuildPhysicsTest.log",
+      "exit_code": 0
+    },
+    {
+      "test": "HidingAreaHazeTest",
+      "log": "HidingAreaHazeTest.log",
+      "exit_code": 0
+    },
+    {
+      "test": "SafeAreaHazeTest",
+      "log": "SafeAreaHazeTest.log",
+      "exit_code": 0
+    },
+    {
+      "test": "SafeAreaBarrierTest",
+      "log": "SafeAreaBarrierTest.log",
+      "exit_code": 0
+    },
+    {
+      "test": "LanGhostHidingBoundaryTest",
+      "log": "LanGhostHidingBoundaryTest.log",
+      "exit_code": 0
+    },
+    {
+      "test": "HidingBudgetTest",
+      "log": "HidingBudgetTest.log",
+      "exit_code": 0
+    },
+    {
+      "test": "DynamicGeometryRetentionTest",
+      "log": "DynamicGeometryRetentionTest.log",
+      "exit_code": 0
+    },
+    {
+      "test": "PhysicalLightingTest",
+      "log": "PhysicalLightingTest.log",
+      "exit_code": 0
+    },
+    {
+      "test": "CastleRebuildUpgradeTest",
+      "log": "CastleRebuildUpgradeTest.log",
+      "exit_code": 0
+    },
+    {
+      "test": "LanCaseIntegrationTest",
+      "log": "LanCaseIntegrationTest.log",
+      "exit_code": 0
+    }
+  ],
+  "native": {
+    "level": "briar-rebuild",
+    "revision": "first-principles-fitout-v1-ef9b5996f4772ece",
+    "triangles": 112145,
+    "packed_images": 193,
+    "props": 29,
+    "spawns": 15,
+    "native_sha256": "858bec2e62c0fc95fc76f0630c1b2e02578ca118f4e73cde73599c587174bd3a",
+    "definition_sha256": "ee95a52beafd18bc021fe5c7f5c514c04efa98c0247046a607a4979799ab19c1",
+    "geometry_sha256": "c171a66577ff692734f61b9a7414bb777789fcd7f7471de1eeb71bedb8194b81",
+    "result": "PASS every source vertex/UV; packed images; original sockets; native file unchanged",
+    "acceptance": "construction candidate only; terrain/boundary and complete map gates open"
+  },
+  "house_positions": 50674,
+  "closed_service_sections": 65,
+  "conduit_triangles": 780,
+  "bed_dressings": 2,
+  "hiding_maximum": 3,
+  "difficulty_percentages": 101,
+  "notes": [
+    "Preserved failed switch gap,overlapping conduits,local-clock cooldown and obsolete unbudgeted-boundary assumptions separately.",
+    "An initial nonexistent-class dispatch was corrected to the actual HidingBudgetTest body; it is not included as a passed body."
+  ]
+}

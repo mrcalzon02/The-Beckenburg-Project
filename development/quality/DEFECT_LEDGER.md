@@ -4224,6 +4224,104 @@ Evidence and verification: development/levels/rebuild/verification/sanctuary-rec
 
 Older-map obligation: Shared runtime van contract applies to all sites; individual map arrival/ghost-route visual acceptance remains required. Analytic animated postprocess haze is not an opaque GLB part and is absent from geometry-only Blender exports. Castle uses whole-headquarters sanctuary.
 
+### DEV-309 — Authored grid-map generator omitted from renderer and LAN source authority
+
+**Status:** corrected candidate; packaged4peerTCP control/state test passes; exact-source online acceptance pending · **Affected:** House functional construction; any authored non-native site with a generator socket
+
+InteractionFocus finds generator sockets but only native-terrain renderer draws starters and LanHost rejects non-native sources or omits state resync.
+
+Cause / uncertainty: Electrical capability is incorrectly inferred from native terrain implementation.
+
+Fix / next action: Use actual authored generator sockets as capability. Share starter geometry across both renderer paths and gate host source interaction/view snapshots on hasGenerator. Existing room-light source/breaker state remains authoritative.
+
+Evidence and verification: house-services-2026-11-07/HouseRebuildPhysicsTest.log includes actual supported starter/panel, connected energy4.8to0.187,4TCP source/breaker,view-resync,ghost/distance rejections; actual runtime controls and lighting captures.
+
+Older-map obligation: Audit each authored generator installation independently. Maps without generator sockets retain prior supply contract; native Hollow Creek control behavior must remain compatible.
+
+### DEV-310 — Full-height generator bounding box makes visible recessed starter unreachable
+
+**Status:** source-derived connected-part collision correction passes actual mesh/host aim and House traversal; final full-map acceptance pending · **Affected:** House functional generator placement
+
+Actual button mesh ray hits61supported camera rays but clearInteractionSight rejects all because base-plinth bounds incorrectly extend to the handle top.
+
+Cause / uncertainty: One overall model AABB is used as solid/optical occupancy over the narrower engine body.
+
+Fix / next action: Preserve overall source bounds for placement reservations. Replace actual generator collider with deterministically derived connected-component source bounds; preserve source mesh/UV/pivot and all interaction reach/occlusion validators.
+
+Evidence and verification: house-services-2026-11-07/rejected-control-approach.log and rejected-control-probe.log; corrected actual4TCP test,50831-position House sweep and generator-control-runtime.png.
+
+Older-map obligation: Audit recessed controls and conservative source collider envelopes individually; this repair does not globally ignore furnishing collision or accept all older installations.
+
+### DEV-311 — Remote-site ghost breaker-trip acceptance remains unproven
+
+**Status:** OPEN AUDIT; no new ghost-specific mechanics invented in this checkpoint · **Affected:** Remote-site power gate and rebuilt House; older locations require individual audit
+
+Source-stop and ordinary hunter breaker interaction pass, but inspected host ghost-action lighting path emits temporary pulses; persistent ghost-specific trip/reset behavior has no proven runtime acceptance.
+
+Cause / uncertainty: Existing power tests explicitly defer ghost-host breaker-trip audit. Neither generator presence nor hunter switching proves the required ghost behavior.
+
+Fix / next action: Trace approved ghost-specific electrical rules, implement missing host behavior through existing RoomLighting breaker if necessary, and execute real accepted-ghost-event, permitted reset, camera/evidence and source-independence acceptance before closing remote power gate.
+
+Evidence and verification: REMOTE_SITE_POWER.md; LanHost accepted ghost-action disruption path; HollowCreekPowerTest and HouseRebuildPowerTest explicitly retain this open gate. This is source/audit evidence, not proof that every ghost should trip a breaker.
+
+Older-map obligation: Audit all remote and older maps individually; no blanket acceptance from House source-stop or packaging. Preserve ghost-specific exceptions and independent fire/oil/battery loads.
+
+### DEV-312 — Guessed service endpoints leave12mm above actual switch plates
+
+**Status:** corrected source-bound endpoints; attachment check and actual runtime view pass · **Affected:** House fit-out conduit ends
+
+Endpoint uses socketY+.08 despite actual decoded plate top+.056;24mm conduit leaves12mm air.
+
+Cause / uncertainty: Endpoint uses socketY+.08 despite actual decoded plate top+.056;24mm conduit leaves12mm air.
+
+Fix / next action: Use decoded light_switch_1 plate bounds and actual wall/soffit planes; retain physical/optical source geometry.
+
+Evidence and verification: development/levels/rebuild/verification/house-fitout-2026-11-07/rejected-switch-endpoint.log; HouseRebuildPhysicsTest.log; distribution-runtime.png
+
+Older-map obligation: Audit each existing map/model/cover installation individually; shared source correction and House evidence do not accept unaudited layouts or rendering.
+
+### DEV-313 — House power acceptance waits local milliseconds instead of authoritative host ticks
+
+**Status:** corrected test-only52188e75 published; fresh full42360138343 live; old06full347/1 not accepted · **Affected:** House power TCP harness and online servicesPR76
+
+A250ms sleep can precede the real3tick interaction cooldown. Actual Windows third toggle rejects,so SOURCE1is absent; local compound run also misses ACCEPT.
+
+Cause / uncertainty: A250ms sleep can precede the real3tick interaction cooldown. Actual Windows third toggle rejects,so SOURCE1is absent; local compound run also misses ACCEPT.
+
+Fix / next action: Wait4actual host ticks under simulation mutex before fixture placement; preserve host cooldown and all interaction validation.
+
+Evidence and verification: development/levels/rebuild/verification/house-fitout-2026-11-07/rejected-local-clock-cooldown.log; services-clock rejected-full-42357637604.log and corrected-tcp.log
+
+Older-map obligation: Audit each existing map/model/cover installation individually; shared source correction and House evidence do not accept unaudited layouts or rendering.
+
+### DEV-314 — Separate authored circuit paths duplicate physical shared conduit lengths
+
+**Status:** corrected65shared closed sections; overlap regression,physics and native parity pass · **Affected:** House fit-out source/distribution and common ceiling trunks
+
+Logical paths each emit a full mesh over the same shared trunk; source input and distribution output also overlap.
+
+Cause / uncertainty: Logical paths each emit a full mesh over the same shared trunk; source input and distribution output also overlap.
+
+Fix / next action: Consolidate collinear same-finish spans; separate actual incoming/outgoing board leads and reuse original textures.
+
+Evidence and verification: development/levels/rebuild/verification/house-fitout-2026-11-07/rejected-overlapping-conduits.log; fitout-services.json; native/runtime captures
+
+Older-map obligation: Audit each existing map/model/cover installation individually; shared source correction and House evidence do not accept unaudited layouts or rendering.
+
+### DEV-315 — Usable hiding places lack requested energy cue while disabled pockets still exclude ghosts
+
+**Status:** shared material implemented and locally verified; exact-source online/older-map visual acceptance remains open · **Affected:** Available indoor/outdoor hiding locations across investigations
+
+User asks for the same energy material on safe hiding locations. Prior renderer has no cue; ghost helper treats all placeholders/outdoor100percent as excluded even when disabled.
+
+Cause / uncertainty: User asks for the same energy material on safe hiding locations. Prior renderer has no cue; ghost helper treats all placeholders/outdoor100percent as excluded even when disabled.
+
+Fix / next action: Reuse exact sanctuary shader for available hiding locations; derive cupboard veil/associated refuge marker from authored data and shared budget. Align ghost exclusion with actual eligibility. Preserve existing hide/crouch activation and network privacy.
+
+Evidence and verification: development/levels/rebuild/verification/house-fitout-2026-11-07/HidingAreaHazeTest.log; rejected-unbudgeted-ghost-boundary-test.log; corrected LanGhostHidingBoundaryTest.log; hiding-energy runtime captures
+
+Older-map obligation: Audit each existing map/model/cover installation individually; shared source correction and House evidence do not accept unaudited layouts or rendering.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

@@ -37,6 +37,7 @@ public final class HouseRebuildFunctions {
         b.floor("seasonal-shelf-b","shelf_mp_6",11,20.6,16.2,Math.PI/2);
         b.floor("heating-plant","level_boiler_modern_worn",10,20.94,12.8,Math.PI/2);
         var generator=b.floor("site-generator","level_trace_generator",13,25.6,29.3,0);
+        b.generatorCollision(generator);
         b.generatorControl(generator);
         return b.finish();
     }
@@ -63,6 +64,24 @@ public final class HouseRebuildFunctions {
                 if(Math.abs(upward(parent.prop(),cx+x*c-z*s,cz+x*s+z*c)-top)>.003)throw new IllegalArgumentException("Uneven/incomplete native support "+key);
             return place(key,mesh,parent.prop().room(),cx,top,cz,yaw,parent.key());
         }
+        /** Retain source connected-part bounds: the base plinth must not make the
+         * narrower engine's visible starter sit behind a full-height invisible box. */
+        void generatorCollision(Placement parent){
+            var triangles=GlbProps.model(parent.prop().mesh()).triangles();
+            var ids=new HashMap<String,Integer>();var points=new ArrayList<GlbProps.Vertex>();var roots=new ArrayList<Integer>();
+            for(var t:triangles){int first=-1;for(var v:List.of(t.a(),t.b(),t.c())){
+                String key=Math.round(v.x()*1e6)+":"+Math.round(v.y()*1e6)+":"+Math.round(v.z()*1e6);
+                Integer id=ids.get(key);if(id==null){id=points.size();ids.put(key,id);points.add(v);roots.add(id);}
+                if(first<0)first=id;else{int a=root(roots,first),b=root(roots,id);roots.set(b,a);}
+            }}
+            var bounds=new TreeMap<Integer,double[]>();
+            for(int i=0;i<points.size();i++){var v=points.get(i);var b=bounds.computeIfAbsent(root(roots,i),k->new double[]{Double.POSITIVE_INFINITY,Double.POSITIVE_INFINITY,Double.POSITIVE_INFINITY,Double.NEGATIVE_INFINITY,Double.NEGATIVE_INFINITY,Double.NEGATIVE_INFINITY});
+                b[0]=Math.min(b[0],v.x());b[1]=Math.min(b[1],v.y());b[2]=Math.min(b[2],v.z());b[3]=Math.max(b[3],v.x());b[4]=Math.max(b[4],v.y());b[5]=Math.max(b[5],v.z());}
+            solids.remove(parent.solid());var p=parent.prop();double c=Math.cos(p.yaw()),s=Math.sin(p.yaw());
+            for(var b:bounds.values()){double x=(b[0]+b[3])/2,z=(b[2]+b[5])/2;
+                solids.add(new Collider(p.x()+x*c-z*s,p.y()+b[1],p.z()+x*s+z*c,(b[3]-b[0])/2,(b[5]-b[2])/2,b[4]-b[1],p.yaw()));}
+        }
+        static int root(ArrayList<Integer> roots,int id){int next=id;while(roots.get(next)!=next)next=roots.get(next);while(roots.get(id)!=id){int old=roots.get(id);roots.set(id,next);id=old;}return next;}
         void generatorControl(Placement parent){
             var p=parent.prop();double x=parent.solid().x()+.25,y=parent.solid().y()+.7,z=Double.NEGATIVE_INFINITY;
             for(var t:GlbProps.model(p.mesh()).triangles()){
