@@ -1,0 +1,216 @@
+{
+  "status": "SCOPED_CASTLE_HERITAGE_BATCH_VERIFIED_FULL_SITE_OPEN",
+  "base_commit": "107e6721d45ac373462b15b01bdea261a97a210b",
+  "models": {
+    "level_castle_tapestry": "ff4c8ecfd2965759b7c9b56fff0a6d35cbb655b988a8fcd697ccc1dc588c839c",
+    "level_castle_restoration_painting": "8b9268373618bb49c249811a2e163abbbb2ac21edf5208f162a7b312bab7ce6c",
+    "level_castle_library_rug": "98c858877a9f7329de8c3f983fd487ad683942ffbc88c7ce9eada6dd5a71d253"
+  },
+  "sources": {
+    "development/assets/build_castle_tapestry.py": "c30a0692b94da6e14f594ba612caddc3aefc0482a1f4f0de8abf15f84c2cf6b0",
+    "development/assets/inspect_castle_tapestry.py": "6533c50267553e7f2bcb3c150ef0ce427d5fb21a866e8dfd265a33327dcdb952",
+    "development/assets/build_castle_reused_surfaces.py": "4e2710222a14639e3a75a8770e5d97c1e7213d9ff0d96140c947c30b75f40b44",
+    "development/assets/verify_castle_heritage_sources.py": "b82eeb167f2e6b9f56c9e6090ade9cdae19508241f0a2e0306ced478cffc98a5",
+    "src/main/java/org/beckenburg/CastleMuseum.java": "f4f7c289609912674d80dc35e309a54040bc0761aa67cab27f795d37d362b86a",
+    "src/main/java/org/beckenburg/LevelAssets.java": "b0bd7d169357582f4225a1eaeb6a47051c26d33d43af0577917c72c8584a2926",
+    "src/main/java/org/beckenburg/BeckenburgRegressionSuite.java": "ca5d18f9ec3f74357efc3dcba8b98c3be8dbaa9bc45e37c5c953fa47205b57c2",
+    "src/test/java/org/beckenburg/CastleTapestryTest.java": "23bbb513aaf37d48b8b20de05f301a9c848775faba1a0cfa9006e871cb784adb",
+    "src/test/java/org/beckenburg/CastleHeritageSurfacesTest.java": "b1875096780117342e0bb83acef717879d2b2660f2611e5d0cdbb194bebad104",
+    "regression-tests.txt": "832d4bb227abf111062733fc7167420543f8dfbfa3de0c4a868d29da02f75fca"
+  },
+  "tests": {
+    "BeckenburgRegressionManifestTest": {
+      "exit": 0,
+      "seconds": 1.312,
+      "log_sha256": "47dc5a6476e4a1fdd3e1c103a0eee0a1bd8c1da9715da6730e388cf1b8a37a3a"
+    },
+    "CastleGroundConstructionTest": {
+      "exit": 0,
+      "seconds": 4.219,
+      "log_sha256": "77923afd0473e076890e436de5cbe797d78facaaa1640fb5bb890f2fabf5d39e"
+    },
+    "CastleRebuildTest": {
+      "exit": 0,
+      "seconds": 3.063,
+      "log_sha256": "787a4cff5996703fc450171a229972849eb88e716e602afe3ae7f7eeec59368c"
+    },
+    "CastleHeadquartersRevisionTest": {
+      "exit": 0,
+      "seconds": 5.421,
+      "log_sha256": "98b1c10b5ea0088ea01132e92111d8d258e4ecbf6738b81423815d7abd04bac0"
+    },
+    "CastleCellarConstructionTest": {
+      "exit": 0,
+      "seconds": 2.485,
+      "log_sha256": "07b2045b68f72e741d06a3da137d5f0284d8315d926ee59db27f13664464aa9c"
+    },
+    "CastleTrainingAnnexTest": {
+      "exit": 0,
+      "seconds": 3.062,
+      "log_sha256": "2e5b320997183cfa9ca99ab4c799b4078a294f0226338c984906c02fde40d10e"
+    },
+    "CastleWorldTerrainTest": {
+      "exit": 0,
+      "seconds": 1.391,
+      "log_sha256": "6242110dded78948d82d210f3f485ce85448fcf300256175d440dae2712c0aaf"
+    },
+    "CastleLightingPlacementRepairTest": {
+      "exit": 0,
+      "seconds": 1.687,
+      "log_sha256": "3e7e9fb1278c9e76df96d8a4105a812a6b0fbf42ec7f551b249370fce50e4cb1"
+    },
+    "CastleSnapshotContractTest": {
+      "exit": 0,
+      "seconds": 2.469,
+      "log_sha256": "11c5a80c58c4dd77dccdd707b4e32f5cf75c424c4f0c402776a014ccd9a78a70"
+    },
+    "CastleDocumentRecoveryTest": {
+      "exit": 0,
+      "seconds": 1.797,
+      "log_sha256": "90cd0cbf6339db63a6433d272beee7325aa55f76570438d114ff612d28a489d5"
+    },
+    "CastleEditorGeometryTest": {
+      "exit": 0,
+      "seconds": 1.125,
+      "log_sha256": "bbd32c3108aa5cb1bee720390a1d686de41daa2131ab041182159254e276eb96"
+    },
+    "CastlePortalSlotTest": {
+      "exit": 0,
+      "seconds": 1.265,
+      "log_sha256": "8679f37379f314a8b00ff8ff1150e3bdb680a7b583a7167f18faba86f43ac81e"
+    },
+    "CastleHubIntegrationTest": {
+      "exit": 0,
+      "seconds": 3.75,
+      "log_sha256": "637def90a0df7516a0ce86b440d3fd10300660270290b0ca71f40c1c65212144"
+    },
+    "CastleSignedConstructionTest": {
+      "exit": 0,
+      "seconds": 1.156,
+      "log_sha256": "ea486b0b5bd37db6027ebe7aaf1ce0786be023a3fd6642e7e09f672afbc243fb"
+    },
+    "CastleHomeInteractionTest": {
+      "exit": 0,
+      "seconds": 6.5,
+      "log_sha256": "1f441c5d1162591cc31db27e160949ab9a30d895feb7f9e5d174438f1cb8c8f3"
+    },
+    "CastleInventoryWorkstationTest": {
+      "exit": 0,
+      "seconds": 6.828,
+      "log_sha256": "99883161026c9d51200bbe5af3ea93c6d5132910bfdcdd541153cd7d324d2b7a"
+    },
+    "CastleOrientationTest": {
+      "exit": 0,
+      "seconds": 0.063,
+      "log_sha256": "86b31007c35bba35a08868dc2df2b8d1db37af1ea3629c091605ac581856a4e3"
+    },
+    "CastleContainedMenuTest": {
+      "exit": 0,
+      "seconds": 7.0,
+      "log_sha256": "e62ec3aec1f8c104e43886a64db38b5605a448069d435f7f6e17b4ab89dcf83e"
+    },
+    "CastleRelationsTest": {
+      "exit": 0,
+      "seconds": 1.594,
+      "log_sha256": "13dfb2033c48260b9a50fa09672b966c85a75fcbc95c5b28dcb0505d8ff0e6e4"
+    },
+    "CastleShelfLabelsTest": {
+      "exit": 0,
+      "seconds": 2.265,
+      "log_sha256": "fd82906959ff9c5ccd817cb1a360fb86a2de3c9abbed27b67d3af3f52427fa9a"
+    },
+    "CastleEditorAuditTest": {
+      "exit": 0,
+      "seconds": 0.86,
+      "log_sha256": "fcd4126ec731599503ad65f80ea86b218788c3e2f7428ddfc7704a3225a0f9d1"
+    },
+    "CastleFurnitureWallAuditTest": {
+      "exit": 0,
+      "seconds": 1.39,
+      "log_sha256": "4a3f5065c0d4a487c912b3fd61a73f9ee644447f392285d16644beb78f92c2ac"
+    },
+    "VanLightingAndCastleDoorTest": {
+      "exit": 0,
+      "seconds": 1.141,
+      "log_sha256": "e70dccc2307c6874d47e60190a1fc719d9f33921773d0c6b853f1093d03589e7"
+    },
+    "HouseRebuildTerrainTest": {
+      "exit": 0,
+      "seconds": 1.531,
+      "log_sha256": "ba55b67d5822620aed0ee5b4eff7cb7ab63fe59dbabc3b9607bfd5cf9f75551f"
+    },
+    "EditorAgentServiceTest": {
+      "exit": 0,
+      "seconds": 3.5,
+      "log_sha256": "7fdbc4124740946ff0fd1b91ebd9fdc5baed0ff6848901365212971856ea5fa1"
+    },
+    "CastleUpperConstructionTest": {
+      "exit": 0,
+      "seconds": 2.344,
+      "log_sha256": "ea2a0414a060bd4b5b1ee3518d88b9232c14d14496d14305defd23e601e69502"
+    },
+    "WallLampSourceUvTest": {
+      "exit": 0,
+      "seconds": 0.234,
+      "log_sha256": "47cf6222699c321886c3bd28b9443d7d5e30eb47b8007b1b6662c54804bb000f"
+    },
+    "WallLampMountPlateTest": {
+      "exit": 0,
+      "seconds": 0.86,
+      "log_sha256": "df67d4484afbf614d77324c3a9fffca302e8b10e8741918116ac54d7561d9f38"
+    },
+    "CastleMuseumConstructionTest": {
+      "exit": 0,
+      "seconds": 1.343,
+      "log_sha256": "fbec34f336c9c866c7b30454cb5071ac1a1873a60b26dd04919842331ee73def"
+    },
+    "CastleTesterBedTest": {
+      "exit": 0,
+      "seconds": 1.125,
+      "log_sha256": "2824bbcb9180c116aa0333e7c321289aee4d8e1940b06280a2afdab07649ef9f"
+    },
+    "CastleFireplaceTest": {
+      "exit": 0,
+      "seconds": 1.094,
+      "log_sha256": "ad7b90675dd9a09a538d0ecf02920d6c3f2239bcd5904160f483c25e0f6f4f03"
+    },
+    "PreparedLightBatchParityTest": {
+      "exit": 0,
+      "seconds": 37.938,
+      "log_sha256": "b96685f47fd0c99d59f0663a653456e00b9ae3a252e355e2bdee96a009b6d62d"
+    },
+    "CastleTapestryTest": {
+      "exit": 0,
+      "seconds": 1.187,
+      "log_sha256": "702550aa2d43bf7cecd72da8fbf127a85298c8507c5b47ae78d24b8c5170cba6"
+    },
+    "CastleHeritageSurfacesTest": {
+      "exit": 0,
+      "seconds": 1.156,
+      "log_sha256": "4af17385e611200b24144d9a3e4769053dc638f3bab4de3d04e3237a4eff143b"
+    }
+  },
+  "captures": {
+    "development/assets/castle-museum/previews/tapestry-rebuild/front.png": "e5bd0ce8cf1ca41b83877a9d931d5df43a1fc90de93f8fb1e46734b48de57464",
+    "development/assets/castle-museum/previews/tapestry-rebuild/quarter.png": "164d159e413a9dd8e8dcf1e5da7f846d30b9918b5d82023bc24aa5e674134f9c",
+    "development/assets/castle-museum/previews/tapestry-rebuild/rear.png": "13a95ba623557065c214526b9f201b8bedbadaba608747ffc853fbfa2425dc4f",
+    "development/assets/castle-museum/previews/tapestry-rebuild/side.png": "44eb8cfd6885e6720eb94f43acf0e3f36644641eaae6b1b98e655751294bec74",
+    "development/assets/castle-museum/previews/tapestry-rebuild/tapestry-0-source-material.png": "e0416bf5f1cf39c035b07163ff17e5d52a9b15991f9dbdb341f5762e3c42bc09",
+    "development/assets/castle-museum/previews/tapestry-rebuild/tapestry-1-source-material.png": "470a72fa848f1ad52ba0d58c904288418805f025b668a973d95fd5d43075e9cd",
+    "development/assets/castle-museum/previews/tapestry-rebuild/tapestry-2-source-material.png": "aeff3100e33521b0be0f2c4e52e83a26b0f9cfb2d46e318fd24be8b500ccf5e1",
+    "development/assets/castle-museum/previews/tapestry-rebuild/tapestry-3-source-material.png": "f73fb5cda136929e12a26ef26856e41615e74b8084ccf926682b958cb53c579b",
+    "development/assets/castle-museum/previews/reused-surfaces/library_rug-edge.png": "4d807fb7207e6f2cff5bfc2957267b3fffcc53bf4fe388bd4a304a51604d8642",
+    "development/assets/castle-museum/previews/reused-surfaces/library_rug-quarter.png": "6733011858d4e764a08a3d72eba97b7d2f41d80d962fe1b071b73399d89d9a79",
+    "development/assets/castle-museum/previews/reused-surfaces/library_rug-top.png": "fd4595c29fd686ab298e9b74f634015b489d154622c03290bf8bd78e7f986c65",
+    "development/assets/castle-museum/previews/reused-surfaces/restoration_painting-front.png": "80dbc1fc8ee4b4ffe4de331b11305853e9ecc311b4aefeacd451e8938118f2b4",
+    "development/assets/castle-museum/previews/reused-surfaces/restoration_painting-quarter.png": "07dba546ea22c6da0961f9363579c08ae4c3d837325c2c482ffc99eb9527daeb",
+    "development/assets/castle-museum/previews/reused-surfaces/restoration_painting-rear.png": "8459cf0f0e86885d1c25b2fca628c97bbd557efcbe990f15929ceb88a63f1723",
+    "development/levels/rebuild/captures/castle-construction/archive-tapestry-0-runtime.png": "694765ebf188c3ab8932a90ad653016067faa06193efdffe9a7da99dbdacd936",
+    "development/levels/rebuild/captures/castle-construction/archive-tapestry-1-runtime.png": "b4677d1c06d75667b56bba439b7549f0553769ec04fdca6a1466f8bfe4b251ea",
+    "development/levels/rebuild/captures/castle-construction/archive-restoration-painting-runtime.png": "2694c47add790b9da2e7b05057103171ee7e203e16bd1224cda46967d8274592",
+    "development/levels/rebuild/captures/castle-construction/library-rug-runtime.png": "11590bb67da57aae144788f409b1d193c79807378c9b0ffbcc5c203712e4f503"
+  },
+  "jar_sha256": "fa844ee334f2923ce314b7cb621c5ca5ad76ff0cb237918f2decc9d999d7758c",
+  "manifest_entries": 337,
+  "limits": "34 targeted tests; manifest preflight is not all bodies. Previous exact-main full335/0 is baseline evidence. New branch CI/platform/full Castle acceptance still required. No round-duration tests."
+}

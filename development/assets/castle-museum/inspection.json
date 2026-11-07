@@ -38,14 +38,14 @@
   {
     "id": "level_castle_tapestry",
     "dimensions_blender": [
-      1.8700000047683716,
-      0.09200000017881393,
-      2.4200000017881393
+      1.64,
+      0.105,
+      2.21
     ],
-    "meshes": 9,
-    "triangles": 1312,
-    "sha256": "9e67da386ec813ac3f1ba99cc33e021ae5a9dcc62babb138e9cd727309bf964e",
-    "status": "OWNER_REJECTED_STUDY_REQUIRES_REFERENCE_REWORK"
+    "meshes": 1,
+    "triangles": 160,
+    "sha256": "ff4c8ecfd2965759b7c9b56fff0a6d35cbb655b988a8fcd697ccc1dc588c839c",
+    "status": "SCOPED_NATIVE_HERITAGE_PILOT_VERIFIED"
   },
   {
     "id": "level_castle_four_poster_bed",
@@ -100,5 +100,43 @@
     "triangles": 86,
     "sha256": "374e1f1005cc6ba52f4ec989c1f094dde34e20bb0a0fab42ff0244c51fb43d1e",
     "status": "NATIVE_ARCHIVE_RUNTIME_PILOT_VERIFIED"
+  },
+  {
+    "id": "level_castle_restoration_painting",
+    "source_id": "painting_1",
+    "source_sha256": "98b2bb08b77934d8e243bbe6568f48919572998cf831c4790e75b6ea8b4506b3",
+    "sha256": "8b9268373618bb49c249811a2e163abbbb2ac21edf5208f162a7b312bab7ce6c",
+    "unchanged_geometry_UV_normal_indices_sha256": "158ddf688e365734ff4f64233e1f6d99f19809e4194b9fff2aff45af5c1fd101",
+    "triangles": 92,
+    "dimensions_metres": [
+      0.6104859709739685,
+      0.06156036782945762,
+      0.6840000152587891
+    ],
+    "runtime_png_sha256": "ef1ba700bd85b883979f0733319b88f8707aabb663e3a10027862254114c3ccb",
+    "texture_dimensions": [
+      512,
+      287
+    ],
+    "status": "SCOPED_NATIVE_HERITAGE_PILOT_VERIFIED"
+  },
+  {
+    "id": "level_castle_library_rug",
+    "source_id": "carpet_mp_1",
+    "source_sha256": "4b64e70d6b68ad34adb65e85a6766a6729eaeabd06e1b7ba1fad461363f90f28",
+    "sha256": "98c858877a9f7329de8c3f983fd487ad683942ffbc88c7ce9eada6dd5a71d253",
+    "unchanged_geometry_UV_normal_indices_sha256": "6e6aef213b4415f10e851b22c2fbe1464f8748f212c7cf1aff24a8ad7036f492",
+    "triangles": 18,
+    "dimensions_metres": [
+      3.2278482913970947,
+      2.0400002002716064,
+      0.010200000368058681
+    ],
+    "runtime_png_sha256": "edf5b58b068e2bc25a693ffedc6d9da4c6c8cee85684c790fa6396014fd5ca0f",
+    "texture_dimensions": [
+      512,
+      324
+    ],
+    "status": "SCOPED_NATIVE_HERITAGE_PILOT_VERIFIED"
   }
 ]

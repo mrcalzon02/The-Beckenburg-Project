@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "criterion": "Fresh Blender reopen; every mesh-connected image packed, loaded and nonempty; source bytes unchanged",
+  "sources": [
+    {
+      "source": "tapestry.blend",
+      "sha256": "bd7ac39274bdacfb8d009415fcc9965f1a26f7ab73f84d0f898b830ee63bbd7c",
+      "images": [
+        {
+          "name": "Original Castle and key / woven wall hanging",
+          "size": [
+            512,
+            768
+          ],
+          "packed": true
+        },
+        {
+          "name": "armour-runtime-atlas.png",
+          "size": [
+            512,
+            512
+          ],
+          "packed": true
+        }
+      ]
+    },
+    {
+      "source": "restoration_painting.blend",
+      "sha256": "0e7b233641838d3902304d05920fa95c90e804457dbd31a12894a26815e52292",
+      "images": [
+        {
+          "name": "painting_1",
+          "size": [
+            512,
+            287
+          ],
+          "packed": true
+        }
+      ]
+    },
+    {
+      "source": "library_rug.blend",
+      "sha256": "0da2ef7a5fe11d1d27b44497c3264cf7c47dfe374ce1455fab0b00d2f06a7c6d",
+      "images": [
+        {
+          "name": "carpet_mp_1",
+          "size": [
+            512,
+            324
+          ],
+          "packed": true
+        }
+      ]
+    }
+  ]
+}

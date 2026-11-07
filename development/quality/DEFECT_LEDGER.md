@@ -3688,7 +3688,7 @@ Cause / uncertainty: Inspection probes are used beyond their spatial/authoring A
 
 Fix / next action: Use actual closed-torso image region and depth ownership, shared structural slabs over the full footprint, physical/optical slab probes outside step tolerance. Remove the ineffective epsilon rasterizer experiment completely.
 
-Evidence and verification: development/levels/rebuild/verification/castle-museum-2026-11-03/ProbeDomainControl.java and museum-probe-control.log:48 intentional-gap pixels,0 uncovered true torso; native-only false/shared floor true. Actual native display checks pass.
+Evidence and verification: development/levels/rebuild/verification/castle-museum-2026-11-03/ProbeDomainControl.java and museum-probe-control.log:48 intentional-gap pixels,0 uncovered true torso; native-only false/shared floor true. Actual native display checks pass. Tapestry room query uses floor0 rather than hangingY=.55; rejected library camera floor=true/wall=true/guard=false, so move camera to a clear supported position without altering structure.
 
 Older-map obligation: Keep existing floor/body/ray requirements. This correction does not certify unaudited older assets or justify loosening production geometry checks.
 
@@ -3708,15 +3708,15 @@ Older-map obligation: Existing scenery remains individually unaudited. These thr
 
 ### DEV-253 — Merged full-suite lighting parity times out despite isolated all-site correctness passing
 
-**Status:** OPEN CI deadline/performance investigation; isolated local parity passes · **Affected:** PreparedLightBatchParityTest on merged Castle checkpoint6fcb9791, full workflow41775037193
+**Status:** resolved-scoped; exact checkpoint CI parity passes and current-main full suite335/0 · **Affected:** PreparedLightBatchParityTest on merged Castle checkpoint6fcb9791, full workflow41775037193
 
 Actual325-entry suite records322 passes and3 failures: two prior sprite-art defects plus PreparedLightBatchParityTest exceeding90seconds. Workflow green is advisory and not complete regression acceptance.
 
 Cause / uncertainty: Unknown runner/workload sensitivity; isolated current packaged all-site parity passes locally. No functional float mismatch has been observed. Timing evidence must distinguish Castle cost from the other map types.
 
-Fix / next action: Retain exact CI raw summary and isolated pass. Keep all-site geometry/float/immutability coverage and90-second deadline unchanged. Profile by site and reproduce in exact-source CI before closure; do not accept complete Castle performance from native/GPU success.
+Fix / next action: Keep90-second deadline and all float/geometry/immutability coverage unchanged. Exact0f718640 full41804015121 completes325/2 of327 with lighting parity passing; later current-main74612d1d full42135141033 completes335/0. Prior timeout retained as historical evidence.
 
-Evidence and verification: development/levels/rebuild/verification/castle-museum-2026-11-03/merged-full-6fcb.log, merged-ci-summary.json and merged-parity-isolated.log
+Evidence and verification: development/levels/rebuild/verification/castle-museum-2026-11-03/merged-full-6fcb.log, merged-ci-summary.json and merged-parity-isolated.log See development/levels/rebuild/verification/castle-textiles-2026-11-06/prior-full-0f718640.log and build-main-full-74612.log. This does not certify new branch CI or hardware performance.
 
 Older-map obligation: Test covers Castle and all authored site types. New map dressing does not certify older-map performance or waive sprite-art failures.
 
@@ -3747,6 +3747,20 @@ Fix / next action: Use consistent physical wood grain scale, reserve carved atla
 Evidence and verification: development/assets/castle-museum/previews/rejected-bed-uv and rejected-bed-canopy-joints; final four-poster-rebuild studio/software views; CastleTesterBedTest and source/export contact reports. Final evidence: development/levels/rebuild/verification/castle-imagegen-2026-11-03/verification.json.
 
 Older-map obligation: These corrected UVs/joints apply to the new bed only. Audit other older furniture and remaining museum studies individually.
+
+### DEV-277 — Repacking already embedded imported GLB images clears the editable source texture payload
+
+**Status:** fixed-scoped in new reused-frame/rug authoring builder; fresh packed-source reopen passes · **Affected:** Blender5 heritage source creation and studio inspection; runtime GLB texture bytes were valid
+
+Independent source renders show magenta frame and rug even though production GLB/PNG decoding succeeds.
+
+Cause / uncertainty: Calling Image.pack() a second time on an already packed imported image clears its packed_file while filepath remains empty in this workflow.
+
+Fix / next action: Pack only file images that do not already have packed_file; assert every material-connected image remains packed, then independently reopen all3 delivered scenes and require loaded nonempty packed images. Preserve original mesh/UV/index bytes in the texture-container patcher.
+
+Evidence and verification: development/assets/castle-museum/previews/rejected-reused-source-pack, packed-heritage-sources.json; verification/castle-textiles-2026-11-06/debug-reused-images.log reproduces True->False packed state before fix; final source/studio/native views are separate.
+
+Older-map obligation: Do not assume older Blender sources are packed or visually accepted. This correction is scoped to the new authoring path; original reusable source GLBs remain unchanged.
 
 ## Required audit categories
 

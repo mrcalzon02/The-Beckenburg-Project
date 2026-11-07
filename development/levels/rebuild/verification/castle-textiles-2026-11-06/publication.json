@@ -1,0 +1,19 @@
+{
+  "commit": "f0dd46de38ec857b208cdc4d9f99a731acc845a9",
+  "pr": "https://github.com/mrcalzon02/The-Beckenburg-Project/pull/63",
+  "raw_readback": {
+    "development/levels/rebuild/captures/castle-construction/archive-tapestry-0-runtime.png": {
+      "sha256": "694765ebf188c3ab8932a90ad653016067faa06193efdffe9a7da99dbdacd936",
+      "bytes": 468703
+    },
+    "development/levels/rebuild/captures/castle-construction/library-rug-runtime.png": {
+      "sha256": "11590bb67da57aae144788f409b1d193c79807378c9b0ffbcc5c203712e4f503",
+      "bytes": 731976
+    },
+    "beckenburg-development-gallery.html": {
+      "sha256": "db84a727f46a5f3cde4bc2369118a02ccb9a2238fcca90e998b2d15ebf6bc6d4",
+      "bytes": 2464860
+    }
+  },
+  "pages": "Main deployment pending; branch raw HTML and PNGs verified"
+}

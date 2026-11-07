@@ -47,7 +47,7 @@ public final class BeckenburgRegressionSuite {
         if(tests.size()<145 || !tests.containsAll(List.of("BeckenburgDiagnosticsTest",
             "CastleHubIntegrationTest","BeckenburgUpdatesTest","GameplaySmokeTest","LanWorldIntegrationTest",
             "CastleTrainingAnnexTest","CastleWorldTerrainTest","CastleCellarConstructionTest",
-            "CastleGroundConstructionTest","CastleUpperConstructionTest","CastleMuseumConstructionTest","CastleTesterBedTest","CastleFireplaceTest","BeckenburgRegressionManifestTest")))
+            "CastleGroundConstructionTest","CastleUpperConstructionTest","CastleMuseumConstructionTest","CastleTesterBedTest","CastleFireplaceTest","CastleTapestryTest","CastleHeritageSurfacesTest","BeckenburgRegressionManifestTest")))
             throw new IllegalStateException("Regression manifest incomplete");
         if(args.length==1&&args[0].equals("--validate")){
             System.out.println("PASS regression manifest preflight: "+tests.size()+" unique short names and available entrypoints; no tests executed");return;
