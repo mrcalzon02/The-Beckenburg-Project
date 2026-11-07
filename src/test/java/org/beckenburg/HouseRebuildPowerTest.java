@@ -17,8 +17,13 @@ public final class HouseRebuildPowerTest {
             if(target!=null&&target.kind()==kind&&target.id().equals(socket.id()))return observer;
         }throw new AssertionError("No supported visible control approach: "+kind);
     }
-    static void interact(HouseMap map,LanWorld world,AuthoredLevelNetworkTest.Peer peer,LooseClutter.Observer observer)throws Exception{
-        Thread.sleep(250);AuthoredTestSupport.place(map,world,0,new Vec(observer.x(),observer.y(),observer.z()));
+    static void interact(LanHost host,HouseMap map,LanWorld world,AuthoredLevelNetworkTest.Peer peer,LooseClutter.Observer observer)throws Exception{
+        Object mutex=LanSafeAreaBarrierTest.field(host,"mutex");int ready;
+        synchronized(mutex){ready=(int)LanSafeAreaBarrierTest.field(host,"tick")+4;}
+        long deadline=System.nanoTime()+java.util.concurrent.TimeUnit.SECONDS.toNanos(5);
+        for(;;){synchronized(mutex){if((int)LanSafeAreaBarrierTest.field(host,"tick")>=ready){AuthoredTestSupport.place(map,world,0,new Vec(observer.x(),observer.y(),observer.z()));break;}}
+            if(System.nanoTime()>deadline)throw new AssertionError("Host clock did not advance to interaction cooldown");Thread.sleep(10);}
+
         var target=InteractionFocus.pick(map,observer,List.of());check(target!=null,"Control disappeared");
         peer.client.interact(target,observer.yaw(),observer.pitch());
     }
@@ -40,10 +45,10 @@ public final class HouseRebuildPowerTest {
             for(int next:AuthoredLevelNetworkTest.path(map,14,13)){a.client.move(next);a.await("ACCEPT|MOVE|"+next);}
             a.client.view3D();a.await("ACCEPT|VIEW3D");a.await("SOURCE|1");
             var world=(LanWorld)LanSafeAreaBarrierTest.field(host,"world");var authority=(RoomLighting)LanSafeAreaBarrierTest.field(host,"lights");
-            interact(map,world,a,starter);b.await("SOURCE|0");a.await("ACCEPT|INTERACT|");check(!authority.sourceRunning()&&authority.breaker(),"Physical host source stop");
-            interact(map,world,a,breaker);a.await("ACCEPT|INTERACT|");check(!authority.breaker(),"Ordinary breaker trips independently");
-            interact(map,world,a,starter);b.await("SOURCE|1");a.await("ACCEPT|INTERACT|");check(authority.sourceRunning()&&!authority.breaker()&&!authority.supplied(),"Network restart preserves tripped breaker");
-            interact(map,world,a,breaker);a.await("ACCEPT|INTERACT|");check(authority.supplied(),"Physical network breaker reset");
+            interact(host,map,world,a,starter);b.await("SOURCE|0");a.await("ACCEPT|INTERACT|");check(!authority.sourceRunning()&&authority.breaker(),"Physical host source stop");
+            interact(host,map,world,a,breaker);a.await("ACCEPT|INTERACT|");check(!authority.breaker(),"Ordinary breaker trips independently");
+            interact(host,map,world,a,starter);b.await("SOURCE|1");a.await("ACCEPT|INTERACT|");check(authority.sourceRunning()&&!authority.breaker()&&!authority.supplied(),"Network restart preserves tripped breaker");
+            interact(host,map,world,a,breaker);a.await("ACCEPT|INTERACT|");check(authority.supplied(),"Physical network breaker reset");
             a.client.view3D();a.await("ACCEPT|VIEW3D");a.await("SOURCE|1");check(authority.supplied(),"Re-entering view preserves authoritative source");
             var target=InteractionFocus.pick(map,starter,List.of());ghost.client.interact(target,starter.yaw(),starter.pitch());ghost.await("REJECT|");check(authority.supplied(),"Ghost cannot submit hunter generator control");
             AuthoredTestSupport.place(map,world,0,map.spawn(13));Thread.sleep(250);a.client.interact(target,starter.yaw(),starter.pitch());a.await("REJECT|");check(authority.supplied(),"Distant forged generator interaction rejected");
