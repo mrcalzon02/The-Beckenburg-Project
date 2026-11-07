@@ -1,0 +1,15 @@
+Exception in thread "main" java.io.IOException: Invalid castle editor document: C:\Users\Admin\AppData\Local\Temp\castle-lessons-3608609719556753183\.beckenburg\editor\.castle.properties.editor-write-9232424148161179367.tmp
+	at org.beckenburg.CastleLevelEdits.decode(CastleLevelEdits.java:730)
+	at org.beckenburg.CastleLevelEdits.decode(CastleLevelEdits.java:447)
+	at org.beckenburg.CastleLevelEdits.lambda$save$4(CastleLevelEdits.java:803)
+	at org.beckenburg.editor.EditorDocumentStore.saveLocked(EditorDocumentStore.java:143)
+	at org.beckenburg.editor.EditorDocumentStore.lambda$saveIfUnchanged$3(EditorDocumentStore.java:131)
+	at org.beckenburg.editor.EditorDocumentStore.locked(EditorDocumentStore.java:54)
+	at org.beckenburg.editor.EditorDocumentStore.saveIfUnchanged(EditorDocumentStore.java:131)
+	at org.beckenburg.CastleLevelEdits.save(CastleLevelEdits.java:791)
+	at org.beckenburg.CastleTrainingLessonTest.main(CastleTrainingLessonTest.java:58)
+Caused by: java.lang.IllegalArgumentException: Invalid snapshot spawn
+	at org.beckenburg.CastleLevelEdits$Snapshot.<init>(CastleLevelEdits.java:200)
+	at org.beckenburg.CastleLevelEdits.snapshot(CastleLevelEdits.java:233)
+	at org.beckenburg.CastleLevelEdits.decode(CastleLevelEdits.java:729)
+	... 8 more

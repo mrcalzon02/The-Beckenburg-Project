@@ -1,0 +1,8 @@
+18:31:34 | INFO: Data are loaded, start creating Blender stuff
+18:31:34 | INFO: Blender create Mesh node Cylinder
+18:31:34 | INFO: glTF import finished in 0.00s
+00:01.156  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\assets\castle-museum\keeper_finished.blend"
+PASS {'status': 'PASS', 'runtime_sha256': '923ef5e9f924d0b4578d9094edfe0063e3c6b9934da609fa597c3d03f27e598a', 'positive': {'connected_components': 1, 'triangles': 1080, 'nonmanifold_edges': 0}, 'actual_raised_15cm_negative': 'REJECTED', 'fresh_packed_images': ['keeper-imagegen-master.png'], 'one_authored_uv_layer': True}
+Blender 5.0.0 (hash a37564c4df7a built 2025-11-18 11:06:54)
+
+Blender quit

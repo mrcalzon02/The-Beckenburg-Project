@@ -1,0 +1,24 @@
+00:00.687  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\assets\castle-museum\founder_statue.blend"
+C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\assets\finish_castle_keeper.py:31: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat=bpy.data.materials.new('Keeper / original generated limestone face and codex');mat.use_nodes=True
+Info: Deleted 69 data-block(s)
+Info: Saved as "keeper_finished.blend"
+INFO Draco mesh compression is available, use library at C:\Program Files\Blender Foundation\Blender 5.0\5.0\scripts\addons_core\io_scene_gltf2\extern_draco.dll
+18:24:30 | INFO: Starting glTF 2.0 export
+18:24:30 | INFO: Extracting primitive: Cylinder
+18:24:30 | INFO: Primitives created: 1
+18:24:30 | INFO: Finished glTF 2.0 export in 0.004011392593383789 s
+
+18:24:30 | INFO: Data are loaded, start creating Blender stuff
+18:24:30 | INFO: Blender create Mesh node Cylinder
+18:24:30 | INFO: glTF import finished in 0.00s
+00:03.687  render           | Saved: 'C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\assets\castle-museum\previews\keeper-finish\front.png'
+00:06.718  render           | Saved: 'C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\assets\castle-museum\previews\keeper-finish\quarter.png'
+00:09.671  render           | Saved: 'C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\assets\castle-museum\previews\keeper-finish\side.png'
+00:12.593  render           | Saved: 'C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\assets\castle-museum\previews\keeper-finish\rear.png'
+00:15.562  render           | Saved: 'C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\assets\castle-museum\previews\keeper-finish\clay.png'
+00:15.562  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\assets\castle-museum\keeper_finished.blend"
+PASS keeper {'status': 'PASS', 'triangles': 1080, 'connected_components': 1, 'nonmanifold_edges': 0, 'source_sha256': 'dfe382206fc336dc5cea05c1724c0b9d428ddadab93f958d168b490d9cd7e221', 'export_sha256': '923ef5e9f924d0b4578d9094edfe0063e3c6b9934da609fa597c3d03f27e598a', 'original_study': 'founder_statue.blend retained unchanged; carved inscription geometry omitted', 'reference': 'https://www.metmuseum.org/art/collection/search/471046', 'support': 'Single continuous watertight carved solid; native plinth sits on floor. No detached hands, face, robe, codex or floating ornament.'}
+Blender 5.0.0 (hash a37564c4df7a built 2025-11-18 11:06:54)
+
+Blender quit
