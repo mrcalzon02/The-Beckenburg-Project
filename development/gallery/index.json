@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 6065,
+  "count": 6078,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -162,6 +162,46 @@
       "height": 625,
       "bytes": 201488,
       "sha256": "1c5fcee4d911ff4e8181503babdbad269185c3c6e8daa0b772dc341f9cafa14a"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/heraldic-rebuild/front.png",
+      "url": "development/assets/castle-museum/previews/heraldic-rebuild/front.png",
+      "title": "Front",
+      "kind": "Model inspection",
+      "width": 850,
+      "height": 1000,
+      "bytes": 832839,
+      "sha256": "80346cf895d2578edc32ded3bb830b788bfe8fde7a303fae674f3f2a4ee67429"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/heraldic-rebuild/quarter.png",
+      "url": "development/assets/castle-museum/previews/heraldic-rebuild/quarter.png",
+      "title": "Quarter",
+      "kind": "Model inspection",
+      "width": 850,
+      "height": 1000,
+      "bytes": 819429,
+      "sha256": "f025e1fe388650ea8eea78071fb0b650e126a65e3a0a788df165c69a33a30f89"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/heraldic-rebuild/rear.png",
+      "url": "development/assets/castle-museum/previews/heraldic-rebuild/rear.png",
+      "title": "Rear",
+      "kind": "Model inspection",
+      "width": 850,
+      "height": 1000,
+      "bytes": 735047,
+      "sha256": "20be7f5b92f0ba6515caaaca4d79ed4949b505d15615d1be1f47db14faadf707"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/heraldic-rebuild/side.png",
+      "url": "development/assets/castle-museum/previews/heraldic-rebuild/side.png",
+      "title": "Side",
+      "kind": "Model inspection",
+      "width": 850,
+      "height": 1000,
+      "bytes": 650860,
+      "sha256": "04fe72c6bde905818895aa34d5c88f93dcaa58d17105d80f15a99fddc88a26c3"
     },
     {
       "path": "development/assets/castle-museum/previews/level_castle_armour_display-clay-feet-front.png",
@@ -984,6 +1024,46 @@
       "sha256": "3b3cba3039af84fa4a1c3179f6c63b2a82ed940b3802940a4099e1d211a71a2a"
     },
     {
+      "path": "development/assets/castle-museum/previews/rejected-heraldic-exposed-spine/front.png",
+      "url": "development/assets/castle-museum/previews/rejected-heraldic-exposed-spine/front.png",
+      "title": "Front",
+      "kind": "Rejected model study",
+      "width": 850,
+      "height": 1000,
+      "bytes": 848072,
+      "sha256": "5181a2fef39ef1f7d2ec8740ccdcf857c9369ea05fdb6c44c676a18dc66acbc2"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-heraldic-exposed-spine/quarter.png",
+      "url": "development/assets/castle-museum/previews/rejected-heraldic-exposed-spine/quarter.png",
+      "title": "Quarter",
+      "kind": "Rejected model study",
+      "width": 850,
+      "height": 1000,
+      "bytes": 833356,
+      "sha256": "f2db8b06ba3d2c018459b70714b0e7d07d47c7ed8ac258611fbcdeddf17f4e8b"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-heraldic-exposed-spine/rear.png",
+      "url": "development/assets/castle-museum/previews/rejected-heraldic-exposed-spine/rear.png",
+      "title": "Rear",
+      "kind": "Rejected model study",
+      "width": 850,
+      "height": 1000,
+      "bytes": 740940,
+      "sha256": "8263240e5ffafdc7f9cf1e0a0569658ee5a5a4115de1a24181e5451a69c5a0cb"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-heraldic-exposed-spine/side.png",
+      "url": "development/assets/castle-museum/previews/rejected-heraldic-exposed-spine/side.png",
+      "title": "Side",
+      "kind": "Rejected model study",
+      "width": 850,
+      "height": 1000,
+      "bytes": 653013,
+      "sha256": "fd5329d33901ad8cd2d002e3815b627b42560b5c0184e7f3a6ba0387b97a280b"
+    },
+    {
       "path": "development/assets/castle-museum/previews/rejected-open-spandrels/level_castle_great_fireplace-front.png",
       "url": "development/assets/castle-museum/previews/rejected-open-spandrels/level_castle_great_fireplace-front.png",
       "title": "Level castle great fireplace front",
@@ -1102,6 +1182,36 @@
       "height": 800,
       "bytes": 644688,
       "sha256": "86d37bd97f96d806a95b99c54328aae2043182d6c0f1b3b013d87cf2857fe1e6"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-primitive-heraldic/level_castle_heraldic_arms-front.png",
+      "url": "development/assets/castle-museum/previews/rejected-primitive-heraldic/level_castle_heraldic_arms-front.png",
+      "title": "Level castle heraldic arms front",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 554626,
+      "sha256": "e2ce0deafe68928320b55100f3f0de61de8008c51b7f466138f96a0249448263"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-primitive-heraldic/level_castle_heraldic_arms-quarter.png",
+      "url": "development/assets/castle-museum/previews/rejected-primitive-heraldic/level_castle_heraldic_arms-quarter.png",
+      "title": "Level castle heraldic arms quarter",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 562812,
+      "sha256": "bc331d761b5b22502099f80ced62fe00bc9e5938d72a3f32c2f0a6dfe2854ebe"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-primitive-heraldic/level_castle_heraldic_arms-rear.png",
+      "url": "development/assets/castle-museum/previews/rejected-primitive-heraldic/level_castle_heraldic_arms-rear.png",
+      "title": "Level castle heraldic arms rear",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 800,
+      "bytes": 559457,
+      "sha256": "4aa794a4b21eefc3219ee0cf63077b93f76834f25b1a0b74dfb74f9d4df8a303"
     },
     {
       "path": "development/assets/castle-museum/previews/rejected-primitive-tapestry/level_castle_tapestry-front.png",
@@ -56894,6 +57004,26 @@
       "height": 200,
       "bytes": 31021,
       "sha256": "f63348a4ce71e7f5fc85e17f92d8e133e8f5f335c803839641d59e2e9f41aa37"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/archive-heraldic-0-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/archive-heraldic-0-runtime.png",
+      "title": "Archive heraldic 0 runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 352507,
+      "sha256": "927a93d2b12a8959e89c3b506595c9fb7ce3b1a7aaa931b2fc931c7f6a756ec6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/archive-heraldic-1-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/archive-heraldic-1-runtime.png",
+      "title": "Archive heraldic 1 runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 577827,
+      "sha256": "973793056349910b86ee5b830110e8225cab012a444ecdb53211159940f72628"
     },
     {
       "path": "development/levels/rebuild/captures/castle-construction/archive-restoration-painting-runtime.png",

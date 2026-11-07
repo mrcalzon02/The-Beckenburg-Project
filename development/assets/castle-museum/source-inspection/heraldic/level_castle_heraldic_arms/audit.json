@@ -1,0 +1,33 @@
+{
+  "source": "assets\\runtime\\models\\level_castle_heraldic_arms.glb",
+  "sha256": "64477704b70c9434870c8379770d348e48f77f16a7183e481e1c6edf8fdb5135",
+  "materials": [
+    {
+      "mesh": 0,
+      "primitive": 0,
+      "material": "Original conserved heraldry / oak / steel / wrapped leather",
+      "image": 0,
+      "triangles": 316,
+      "uv_u": [
+        0.00800000037997961,
+        0.9919999837875366
+      ],
+      "uv_v": [
+        0.008000016212463379,
+        0.9919999837875366
+      ],
+      "source_sampler": "glTF normalized UV0, SVG V-origin top-left"
+    }
+  ],
+  "warnings": [],
+  "images": [
+    {
+      "id": 0,
+      "name": "heraldic-arms-imagegen-master",
+      "width": 512,
+      "height": 512,
+      "png_sha256": "41a12d35ca63b2849e3315caba8a84494ec96c923e29b6a3598d13021612986e",
+      "overlay_triangles": 316
+    }
+  ]
+}

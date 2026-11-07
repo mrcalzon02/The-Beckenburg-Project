@@ -1,0 +1,77 @@
+Traceback (most recent call last):
+  File "C:\Program Files\Blender Foundation\Blender 5.0\5.0\scripts\modules\addon_utils.py", line 432, in enable
+    mod = importlib.import_module(module_name)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Blender Foundation\Blender 5.0\5.0\python\Lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\5.0\extensions\blender_org\BAM\__init__.py", line 2, in <module>
+    from . import BAM_MaterialManager_M
+  File "C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\5.0\extensions\blender_org\BAM\BAM_MaterialManager_M.py", line 41, in <module>
+    from .BAM_MatOverlay_M import bmoverlay
+  File "C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\5.0\extensions\blender_org\BAM\BAM_MatOverlay_M.py", line 223, in <module>
+    bmoverlay = BAMMaterialOverlay()
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\5.0\extensions\blender_org\BAM\BAM_MatOverlay_M.py", line 63, in __init__
+    self.shader = gpu.shader.from_builtin('UNIFORM_COLOR')
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SystemError: GPU functions for drawing are not available in background mode
+Traceback (most recent call last):
+  File "C:\Program Files\Blender Foundation\Blender 5.0\5.0\scripts\modules\addon_utils.py", line 432, in enable
+    mod = importlib.import_module(module_name)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Blender Foundation\Blender 5.0\5.0\python\Lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\5.0\extensions\blender_org\wheel_o_matic\__init__.py", line 24, in <module>
+    from . import wom_render
+  File "C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\5.0\extensions\blender_org\wheel_o_matic\wom_render.py", line 99, in <module>
+    class OBJECT_OT_wom_draw_locators(bpy.types.Operator):
+  File "C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\5.0\extensions\blender_org\wheel_o_matic\wom_render.py", line 135, in OBJECT_OT_wom_draw_locators
+    shader = gpu.shader.from_builtin('UNIFORM_COLOR')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SystemError: GPU functions for drawing are not available in background mode
+C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\assets\build_castle_heraldic.py:10: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat=bpy.data.materials.new('Original conserved heraldry / oak / steel / wrapped leather');mat.use_nodes=True
+INFO:glTFImporter:Starting glTF 2.0 export
+Reloading external rigs...
+Reloading external metarigs...
+[BAM] MaterialManager Module Loaded
+Batch Material Helper: Properties registered successfully
+Batch Material Helper: Properties unregistered successfully
+Info: Saved as "heraldic_arms.blend"
+INFO Draco mesh compression is available, use library at C:\Program Files\Blender Foundation\Blender 5.0\5.0\scripts\addons_core\io_scene_gltf2\extern_draco.dll
+16:37:20 | INFO: Starting glTF 2.0 export
+16:37:20 | INFO: Extracting primitive: Wall bearing steel spine
+INFO:glTFImporter:Extracting primitive: Wall bearing steel spine
+INFO:glTFImporter:Primitives created: 1
+16:37:20 | INFO: Primitives created: 1
+16:37:20 | INFO: Finished glTF 2.0 export in 0.004010200500488281 s
+INFO:glTFImporter:Finished glTF 2.0 export in 0.004010200500488281 s
+INFO:glTFImporter:Data are loaded, start creating Blender stuff
+
+16:37:20 | INFO: Data are loaded, start creating Blender stuff
+16:37:20 | INFO: Blender create Mesh node Wall bearing steel spine
+INFO:glTFImporter:Blender create Mesh node Wall bearing steel spine
+16:37:20 | INFO: glTF import finished in 0.00s
+INFO:glTFImporter:glTF import finished in 0.00s
+00:03.141  render           | Saved: 'C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\assets\castle-museum\previews\heraldic-rebuild\front.png'
+00:04.563  render           | Saved: 'C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\assets\castle-museum\previews\heraldic-rebuild\quarter.png'
+00:05.860  render           | Saved: 'C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\assets\castle-museum\previews\heraldic-rebuild\side.png'
+00:07.297  render           | Saved: 'C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\assets\castle-museum\previews\heraldic-rebuild\rear.png'
+PASS source/export heraldic support 316 triangles; actual exported renders await visual inspection
+Blender 5.0.0 (hash a37564c4df7a built 2025-11-18 11:06:54)
+
+Blender quit
