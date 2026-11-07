@@ -1,0 +1,492 @@
+{
+  "page_run": 42418635199,
+  "source_merge": "e1b49eb780a3061ef47ea67dfd9747d7ff378497",
+  "result": "PASS actual deployed HTML/index and every House room/furnishing/asset-preview PNG byte",
+  "entries": [
+    {
+      "path": "beckenburg-development-gallery.html",
+      "sha256": "ba2e91a2a105a87d086508fcf094e7c37daacc71442effa28427bb3f143221df",
+      "bytes": 3011590
+    },
+    {
+      "path": "development/gallery/index.json",
+      "sha256": "28606d02a818be797ee4170af965c19310d5b3359f7cd6f3d273b7c5ad424b1c",
+      "bytes": 3436424
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/00-entrance-and-coat-vestibule/east.png",
+      "sha256": "2b7275d830174a0a6ec361da8a8232bcecba966daee03e99480e57ea02c5e6d8",
+      "bytes": 40126
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/00-entrance-and-coat-vestibule/four-way.png",
+      "sha256": "47755f9f6517f700c0de8d4c4ce187a3f4cd908929ef4cf8b04bf15bb6933171",
+      "bytes": 195089
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/00-entrance-and-coat-vestibule/north.png",
+      "sha256": "8f5e40efcdd3612df3fa9338f0121054e5c51f507f3cf9c155b9051ba71042c8",
+      "bytes": 56031
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/00-entrance-and-coat-vestibule/south.png",
+      "sha256": "282b064e44e113067e6d1ece10257f9fb89e704b0e1d4fdba119943acd6687f6",
+      "bytes": 41697
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/00-entrance-and-coat-vestibule/west.png",
+      "sha256": "c04c7b9723375f6e560252340f4ff9f03adb419fe42f244499370f4d1c3ab50d",
+      "bytes": 50867
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/01-family-sitting-room/east.png",
+      "sha256": "4ce21d7517a4c9ed9e244428cf60e0dd86a0169789493e1f492a36809abaa9a9",
+      "bytes": 39372
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/01-family-sitting-room/four-way.png",
+      "sha256": "01f892da072d0fda3efc7caac4d4146c174d1aadc402aac9dfc1567c440eaac3",
+      "bytes": 121693
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/01-family-sitting-room/north.png",
+      "sha256": "7c5b319861b678d3b23a3f93c3cff69f2ad4ec4412ea609c4bb6aa6eaf53c13d",
+      "bytes": 28492
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/01-family-sitting-room/south.png",
+      "sha256": "83db3515fcc444c4862745ec3394860f835ccdee556efeefcd166e0f64bf8c4b",
+      "bytes": 27554
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/01-family-sitting-room/west.png",
+      "sha256": "c7b7376773b323a2f1a245404e3a9f47761382ef707d2bbe858cfc411deba469",
+      "bytes": 24523
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/02-kitchen-and-cellar-access/east.png",
+      "sha256": "eb907efa5a2a9380e68972863be5df3e310d7b91d2cc0c6929789ae375935267",
+      "bytes": 42107
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/02-kitchen-and-cellar-access/four-way.png",
+      "sha256": "c6496d6544e8c185681e8ae36f372f030cc30238443168f39398c53a421eabb0",
+      "bytes": 136031
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/02-kitchen-and-cellar-access/north.png",
+      "sha256": "f5fcd4ad32968c571882e4d5f92bfd7d3c26eb8c6ff5ea47eb4495d443c1bffc",
+      "bytes": 30638
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/02-kitchen-and-cellar-access/south.png",
+      "sha256": "e8b0119bbdc12af0637fc77a7047bb8f314fd358b7ee4f98aff62132ce407247",
+      "bytes": 35851
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/02-kitchen-and-cellar-access/west.png",
+      "sha256": "c278cd37f885f7cbeafdc9c82858cc7b4e10892de6e6a59c24a54b43d4f14e94",
+      "bytes": 23632
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/03-family-dining-room/east.png",
+      "sha256": "be852d0c4232f82d763ecd8d8edafa064b49ff167bb86afddd283d500c5f3559",
+      "bytes": 37277
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/03-family-dining-room/four-way.png",
+      "sha256": "d21f9c8e379aa84a9e4680621fd4b8fb5e99fc0f0a9f1360d014001666898a0d",
+      "bytes": 163056
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/03-family-dining-room/north.png",
+      "sha256": "45cb23527b7324f4d92f6524dc50eec23247ede07ef7578a375cf878f07a2cbd",
+      "bytes": 40052
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/03-family-dining-room/south.png",
+      "sha256": "dadc7ae53ead587c47351449eb7d8edd3116c412383580682d7375a60514856a",
+      "bytes": 43380
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/03-family-dining-room/west.png",
+      "sha256": "4376e866fb0af73d995a28ef4f37a0952d130e05b79fd8756d34818cf6f0c37e",
+      "bytes": 38403
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/04-stair-and-service-passage/east.png",
+      "sha256": "e65ffef69a0025628a8b65b2aeb7c2f9196547d4b9236334372716142b9ec4c5",
+      "bytes": 42137
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/04-stair-and-service-passage/four-way.png",
+      "sha256": "745e504ca3d097dfd1dbdd531a4269f1bc44a8e2aa0528470f90b10d13aa9873",
+      "bytes": 182057
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/04-stair-and-service-passage/north.png",
+      "sha256": "d11d208dd532d1bfd0e03045c9faddfa543480999e6fcca81cf381bf691b267b",
+      "bytes": 39061
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/04-stair-and-service-passage/south.png",
+      "sha256": "c92bc595720106597629cc2bc5ca4d665ae24ac266aef8630e9723c087d8b72a",
+      "bytes": 46750
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/04-stair-and-service-passage/west.png",
+      "sha256": "78a8bcd2580a4a3200617ef926067c9c41d17ea24cf23631c834c616f8270fee",
+      "bytes": 49671
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/05-upper-landing-and-linen-storage/east.png",
+      "sha256": "94369862ce7bbb020e28d6c829aad1f009dcdc8a1d95114513ab16669584b4ba",
+      "bytes": 22471
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/05-upper-landing-and-linen-storage/four-way.png",
+      "sha256": "7071d72812ac1aa63fccc9077fe873d2ac7d3753cf93a4ccce42af8d29dd2c3b",
+      "bytes": 125832
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/05-upper-landing-and-linen-storage/north.png",
+      "sha256": "4dc51c5ceb27fd0c1ac126cf35e47da604d8bfb221271a3d5aef18ea5c5fd0b3",
+      "bytes": 20069
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/05-upper-landing-and-linen-storage/south.png",
+      "sha256": "b5acd5f785c6306a85b91950b589fe503406931f13ab3e5b1697d14931281fa0",
+      "bytes": 42636
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/05-upper-landing-and-linen-storage/west.png",
+      "sha256": "b9d7f623bd7fd15cb564f1c6aa489f67d7fc6f7af3586c547eeeff675f7bc6a7",
+      "bytes": 38447
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/06-parents-bedroom-and-dressing/east.png",
+      "sha256": "48a54102df4d1e7750d0d795bf41c68d073f421f9e1171756f2dc1328456838b",
+      "bytes": 33157
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/06-parents-bedroom-and-dressing/four-way.png",
+      "sha256": "c676c3cfb3dc0fd78071e39ce52a49e9178422be7183ca925c3ac32cfb13ab87",
+      "bytes": 101030
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/06-parents-bedroom-and-dressing/north.png",
+      "sha256": "8347185d299e9ad0043ac299d96a995ea7bb7aee18873e30fbda450d3a24a989",
+      "bytes": 26958
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/06-parents-bedroom-and-dressing/south.png",
+      "sha256": "a90063f0eb8777d46d37a1cc7a1a4dafcfe621852795089b1b362cea6090d193",
+      "bytes": 23449
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/06-parents-bedroom-and-dressing/west.png",
+      "sha256": "f2f9091dba06c9a335f5b31e2b7a49d2a5360a38bf50de90f2650ac6563a4746",
+      "bytes": 16184
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/07-child-bedroom-and-study/east.png",
+      "sha256": "ed146a80bc755cd578517454fc04f6ccef863329a60fc132165b975de1ce076d",
+      "bytes": 30338
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/07-child-bedroom-and-study/four-way.png",
+      "sha256": "3487f476bb0099fd8d2098c7584364325d3e52ff42b75066c16f238284062a60",
+      "bytes": 107112
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/07-child-bedroom-and-study/north.png",
+      "sha256": "3c0c2505a7391f62269904227b1fc8b016d13c3aa3c543ab7b6f31cd910c25b8",
+      "bytes": 26236
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/07-child-bedroom-and-study/south.png",
+      "sha256": "811a9fbb0aaea6b9ebbc5ed43196a7933f541b6b0507e26003f6efcdf1a57d30",
+      "bytes": 27763
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/07-child-bedroom-and-study/west.png",
+      "sha256": "5161cea4e0feeda3ad851a30be02986843f3abd141a26d06ebb7579588831191",
+      "bytes": 21512
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/08-family-bathroom/east.png",
+      "sha256": "e83895efac49f1496934fd759b0a4cb1caa44ed7ce15595458d42ee6940f3dbe",
+      "bytes": 38339
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/08-family-bathroom/four-way.png",
+      "sha256": "4fcc00ced30ec242da124e345d0b28ade4eb1ee3274e1272e798e12f59e08510",
+      "bytes": 163719
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/08-family-bathroom/north.png",
+      "sha256": "50d2d35fa9412b07ff69060cd53923eb9680efa7faa50696a3269626515b98a4",
+      "bytes": 38981
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/08-family-bathroom/south.png",
+      "sha256": "12f354712214ac66b145d506a7f9233d7dc4fb1aeaf0b28d458f8a3188cb9ca6",
+      "bytes": 39462
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/08-family-bathroom/west.png",
+      "sha256": "abceb4d0ca7701fbb3dcd70a1ea9ab55f9851b0b31147382ab86755100deb0d5",
+      "bytes": 40837
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/09-cellar-work-passage/east.png",
+      "sha256": "470a7f96ef4320bcb893c3060f2280260a52db01e36a22d0e640f8d09b63bb7a",
+      "bytes": 14738
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/09-cellar-work-passage/four-way.png",
+      "sha256": "5dd5209aa6ed06c5a3fe8baeca000ae4a4419d1d0932a0414e10a711c1beb6c6",
+      "bytes": 89708
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/09-cellar-work-passage/north.png",
+      "sha256": "e739111e59e2cbdf7070fc2c3683d196b4e6214c0032a80c880ddd3679b03eff",
+      "bytes": 19411
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/09-cellar-work-passage/south.png",
+      "sha256": "8f7e49ff1ff351f15efac5a94e33aeeab034099c38f3f1d4686788403d025997",
+      "bytes": 35364
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/09-cellar-work-passage/west.png",
+      "sha256": "d4678cc64b97bbe603d53e25e74f25a559f81503fc18b9177f593f15c29743c0",
+      "bytes": 18069
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/10-heating-hot-water-and-laundry/east.png",
+      "sha256": "1eeb1e2967a161e095ac9968f8e9a1b66779109a63804d3ed0cb616f1d71ebc0",
+      "bytes": 21989
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/10-heating-hot-water-and-laundry/four-way.png",
+      "sha256": "39a09eae8614b775ec9054c0a3633710118a6deb9027fded664a2ae52d3d15ad",
+      "bytes": 94772
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/10-heating-hot-water-and-laundry/north.png",
+      "sha256": "f97b064c162e9a77db07a3b626101944041f0b3df90afbf25566674e1e05d1f3",
+      "bytes": 24904
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/10-heating-hot-water-and-laundry/south.png",
+      "sha256": "1d1cacbebdad796c2c020895b2d44a70212f88149bf242ced021598f577c819a",
+      "bytes": 26148
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/10-heating-hot-water-and-laundry/west.png",
+      "sha256": "5f42f38120c324f56dea568f1a7047f623fe43d4cf39185d5cd0169c590deedd",
+      "bytes": 20283
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/11-household-and-seasonal-store/east.png",
+      "sha256": "70acc79a37052f141e5e3cb17f5ddfe8128115f7b4c39c872444f2b4fa10099f",
+      "bytes": 18484
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/11-household-and-seasonal-store/four-way.png",
+      "sha256": "d101aa38d4356f9c834dd5152d118eccc5080872436cd86f59efdb20e16b3124",
+      "bytes": 89244
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/11-household-and-seasonal-store/north.png",
+      "sha256": "63d33112fcf64e9029c16802482f07f47ef529d8a7d6138f7e418e45698f2a18",
+      "bytes": 22877
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/11-household-and-seasonal-store/south.png",
+      "sha256": "05e8ea01ba250c3580269e66967d71ae5aba66922e2adad24a2e3944670a2fa9",
+      "bytes": 21732
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/11-household-and-seasonal-store/west.png",
+      "sha256": "a976da1334ae33c2f4466fbe03ce6f6d608b490e04431ce858b9948dc79ffaf5",
+      "bytes": 25680
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/12-rear-garden-and-patio-reservation/east.png",
+      "sha256": "8ba1e7dbeadc90968987aad65de9ca45960b75cddd9cc0e5cbb5b4a2c29b98c4",
+      "bytes": 21023
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/12-rear-garden-and-patio-reservation/four-way.png",
+      "sha256": "d6c51355298c8cd27ac0e52b09776e6ef1ba644aae1409f8dd7ceabb4c5d826d",
+      "bytes": 99672
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/12-rear-garden-and-patio-reservation/north.png",
+      "sha256": "8da724f5571191f91ac10c0eae07d91165f2145d821cabed45eb7e0c478483eb",
+      "bytes": 13278
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/12-rear-garden-and-patio-reservation/south.png",
+      "sha256": "c11069e705016c5107eea6cdc399ece377e5f284abb60102b701276beea77f11",
+      "bytes": 41163
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/12-rear-garden-and-patio-reservation/west.png",
+      "sha256": "4278569d9bc2f5696b98dfcc7938c73958e019f88e5c1a9de161a5f15473b501",
+      "bytes": 21164
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/13-street-and-entrance-approach/east.png",
+      "sha256": "eacdde7f7bb0020ad6445009cf8ce02c9db39989ef19f65453805a1a6dd8bda1",
+      "bytes": 21283
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/13-street-and-entrance-approach/four-way.png",
+      "sha256": "43aa7d7d3a51b53cef0aa0f2fba836d8b90593abe72a677d411623efb526aca3",
+      "bytes": 88639
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/13-street-and-entrance-approach/north.png",
+      "sha256": "05e4c78162532d060b8e60b03f79a180939901829666d95b17a5b82c99ca5fc5",
+      "bytes": 22664
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/13-street-and-entrance-approach/south.png",
+      "sha256": "da0d6a93d902de561d6e112bbd86dd61997881492be0d8127a61a750f27b6596",
+      "bytes": 21488
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/13-street-and-entrance-approach/west.png",
+      "sha256": "76aa10f65c29233c3726c3ad6ce4b676c8d3375db3ccebfe3a55fa18799c268e",
+      "bytes": 23081
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/14-van-cargo-interior/east.png",
+      "sha256": "74592176d0f5f07f95660ba6769915c625f36b650043b6494c982768173c285c",
+      "bytes": 34763
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/14-van-cargo-interior/four-way.png",
+      "sha256": "87263c720ab90854614634761a5bdd9d620528c1c8abe440e6e5673b9c591032",
+      "bytes": 119430
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/14-van-cargo-interior/north.png",
+      "sha256": "868f2f141b883d19bd40ce734b92dc96092432a69551659092b8f1224b85b37c",
+      "bytes": 24316
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/14-van-cargo-interior/south.png",
+      "sha256": "2907729bbec067fc922aaf9c810cdfbbf1ab28105734a611ccadb4ba8a0f9ec9",
+      "bytes": 25157
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/14-van-cargo-interior/west.png",
+      "sha256": "507cfed3c581e5fc0a77e01690edf4f41688bba9632f9f91cb2dd2daeff0cb9c",
+      "bytes": 31441
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/author-spawn-room-05/east.png",
+      "sha256": "073797af945cce5a6bb271efd85a57edb23af9faa612a8574a3941e6124aa92d",
+      "bytes": 107264
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/author-spawn-room-05/north.png",
+      "sha256": "a6e15be1d6d276d0dc75a3bc29ee1275c7c02c00f2c2788c6d2b6f435d93eaa6",
+      "bytes": 135287
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/author-spawn-room-05/south.png",
+      "sha256": "2cecb0aeb0a2f89f6c079a5d2f91554b086aa68b304feea584e3e03d15ac1508",
+      "bytes": 120092
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/author-spawn-room-05/west.png",
+      "sha256": "bc305ccf73cb23ff99b60fe52f52f11e3ac609b17d16f0ff738d75ea42bf67ed",
+      "bytes": 147054
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/author-spawn-room-12/east.png",
+      "sha256": "9aab766552f297240214130bc0a3a8cd9a62cf2faca1fed87227518978be1de2",
+      "bytes": 75672
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/author-spawn-room-12/north.png",
+      "sha256": "f507a97bfd9bb91685848a1c59dc20df28d28a913c61ce853d89e5a47bd90006",
+      "bytes": 78572
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/author-spawn-room-12/south.png",
+      "sha256": "4a9fdc2fa3c6ab140c0a47646ab10ba5066e437519986ccc5d7a91249e7a8cc1",
+      "bytes": 78082
+    },
+    {
+      "path": "development/captures/house-room-review/house_rebuild_services/author-spawn-room-12/west.png",
+      "sha256": "84e07416549576532a729f456ef2288779ea8ed0ac6629d87f65166f143afe92",
+      "bytes": 74863
+    },
+    {
+      "path": "development/captures/house-functional-fill/garden-sitting-and-pots-runtime.png",
+      "sha256": "99074b29fc855e3e95b18762b785e0150827803e1bb05aaa3fcaca5aed38f66b",
+      "bytes": 366832
+    },
+    {
+      "path": "development/captures/house-functional-fill/kitchen-cold-storage-runtime.png",
+      "sha256": "bf44c7ef1458be21af8c4267302d067f494f3e2482ee9339d8c5e9cb65ab2f39",
+      "bytes": 793110
+    },
+    {
+      "path": "development/captures/house-functional-fill/native-parcel-overview.png",
+      "sha256": "eec0aea45b1fa8fa1297e2667bb2c613f2490c52f4540787f65e0b870909df87",
+      "bytes": 1418936
+    },
+    {
+      "path": "development/captures/house-functional-fill/rejected-cold-storage-camera-floor-runtime.png",
+      "sha256": "f425cc1a303e5b8473a9756071886c5bc4cd5de0410b98f747aac5e4eea84315",
+      "bytes": 684740
+    },
+    {
+      "path": "development/captures/house-functional-fill/supported-coat-hooks-runtime.png",
+      "sha256": "be4dbd1712fc9bf03c4f8d2de72a6269abb4f5d84d4c48379bba75c2f9d42bee",
+      "bytes": 688344
+    },
+    {
+      "path": "development/captures/house-functional-fill/vestibule-boot-storage-runtime.png",
+      "sha256": "df635f0cb636fb1e6a72d061074d06aa19f3e0fb5d53be58bff40ca874b40486",
+      "bytes": 772900
+    },
+    {
+      "path": "development/levels/model-production/house-fridge/previews/coat-front.png",
+      "sha256": "050d0df95b0fae80d4bca643f082b5c679b7c6b57bdee5414c32b1ce677c2e3e",
+      "bytes": 848609
+    },
+    {
+      "path": "development/levels/model-production/house-fridge/previews/coat-side.png",
+      "sha256": "359b6cee801faea2a9ffea4e9bab9a69b0c2e65f8bf44e81a5d2f92fd90dd2de",
+      "bytes": 795631
+    },
+    {
+      "path": "development/levels/model-production/house-fridge/previews/front-straight.png",
+      "sha256": "f15f3bbba6c7ecd4628b942fdd112fdc4ae96fbf799e4cc526bccbb140bd0b13",
+      "bytes": 901355
+    },
+    {
+      "path": "development/levels/model-production/house-fridge/previews/front.png",
+      "sha256": "b6511dbf75d2267a0b509334feba29d764ed66bf16c8c0034e87fe9ba02cd73e",
+      "bytes": 912415
+    },
+    {
+      "path": "development/levels/model-production/house-fridge/previews/rear.png",
+      "sha256": "09036c0bbeeb7113a499cff9ea18657b4cc289fcdca41ac109ceaa49725a534b",
+      "bytes": 903215
+    },
+    {
+      "path": "development/levels/model-production/house-fridge/previews/rejected-coat-pocket-gap-side.png",
+      "sha256": "f9b57ebf4ad9af2f7f2d81fa49ccaca4589d5098e5d91969def9eb500b279aed",
+      "bytes": 795673
+    }
+  ]
+}

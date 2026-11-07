@@ -1,0 +1,41 @@
+{
+  "status": "LOCAL PACKAGED COMPATIBILITY AND EXISTING FURNISHING CHECKS PASS; full362/native/GPU pending",
+  "parent_pr": 80,
+  "parent_head": "3a44a6634149bc8e22e1470c348854725896e687",
+  "parent_merge": "e1b49eb780a3061ef47ea67dfd9747d7ff378497",
+  "parent_runs": {
+    "full": 42395009707,
+    "raw_summary": "passed=361 failed=0 skipped=0 manifest=361",
+    "editor": 42395017153,
+    "gpu": 42395022669
+  },
+  "accepted_construction_revision": "first-principles-functional-furnishings-v1-5c8da94b90d34afd",
+  "checks": [
+    "Successful fresh packaged JAR before test compilation",
+    "Versionless legacy House source, stable node IDs, authored move/deletion and exact original scene/metadata bytes retained",
+    "Explicit rebuilt House source opens real USER editor and gameplay with same rooms/stairs/voids/sockets and every collision body/multiplicity",
+    "Unchanged source returns exact original collision list and revision",
+    "Real Editor Agent Services move-prop followed by source-correct collider replacement, native save/reopen and playable USER load",
+    "Retain all other exact source collision bodies, including source-part generator and noncolliding bedding",
+    "Unknown/future or cross-site generations rejected without modifying saved files or creating partial projects",
+    "Existing editor identity/recovery/change/disk suites and furnished House physical/power/ghost TCP suites pass",
+    "Actual native editor custom kitchen capture inspected"
+  ],
+  "limitations": [
+    "Built-in House dispatch still legacy; promotion and explicit saved built-in migration remain open",
+    "Other shipped-v1 templates are not frozen architectural snapshots; audit upgrades individually",
+    "Functional socket/service/support attachments after arbitrary prop edits remain part of migration/authoring acceptance",
+    "No new hardware FPS or full-location acceptance",
+    "Parent deployed gallery is verified separately; new checkpoint capture is not deployed until merged",
+    "Owner rejects fridge placement between back and dining doors; capture retained as rejected layout, not approved appearance. Relocation is the immediate next implementation."
+  ],
+  "files": {
+    "src/main/java/org/beckenburg/LevelPlans.java": "2710bc426664c34ae921d7ba2f727494ca21ee0294b8e9c505a74d062f871725",
+    "src/main/java/org/beckenburg/UserLevelLibrary.java": "8ccf5de117c65cba6afa91c983845c53799a90eab7656b42ffda5e7861229f8c",
+    "src/main/java/org/beckenburg/LevelAuthoringSession.java": "5c118a76ffedfa0861a72b00b959a826f4089793f48796b2d5cc313d9c2ea092",
+    "src/main/java/org/beckenburg/LevelEditorAgent.java": "c84ef9fe926206671dd23f36f629147142017bbd5efe1a2e3b930365716cbfc8",
+    "src/main/java/org/beckenburg/HouseRebuildFunctions.java": "b7661ed8c1f736afb3f342536830e8f02e5db65e5f47af87b172f7ffc4bebd40",
+    "src/test/java/org/beckenburg/HouseTemplateCompatibilityTest.java": "1eb7986e5072c6b84b22cccdcdce886d7d046003ed6fa57c2e21982220043e05",
+    "development/captures/house-template-compatibility/rejected-fridge-between-doors-runtime.png": "0b5af25693c11ef2ff0946dbb0b3f8b7d0d265257f0b4059a0b9cf72f077f199"
+  }
+}

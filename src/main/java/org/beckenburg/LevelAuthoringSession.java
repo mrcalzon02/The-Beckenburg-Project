@@ -224,11 +224,19 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
      * helper used by LevelPlans during initial map construction.
      */
     static LevelDefinition compose(LevelDefinition source,List<Prop> edited){
+        if(source.props().equals(edited))return source;
         ArrayList<Collider> collision=new ArrayList<>(source.colliders());
-        for(Prop p:source.props())if(p.halfX()>0&&p.halfZ()>0)
-            collision.remove(LevelPlans.propCollider(p));
-        for(Prop p:edited)if(p.halfX()>0&&p.halfZ()>0)
-            collision.add(LevelPlans.propCollider(p));
+        var added=new ArrayList<>(edited);
+        for(Prop p:source.props()){
+            // Preserve exact source bodies for unchanged objects, including duplicates.
+            if(added.remove(p))continue;
+            for(var body:LevelPlans.propColliders(source,p)){
+                for(int i=0;i<collision.size();i++)if(LevelPlans.sameBody(collision.get(i),body)){
+                    collision.remove(i);break;
+                }
+            }
+        }
+        for(Prop p:added)collision.addAll(LevelPlans.propColliders(source,p));
         return new LevelDefinition(source.id(),source.revision(),source.title(),
             source.rooms(),source.portals(),source.stairs(),source.voids(),
             List.copyOf(edited),source.sockets(),collision,source.dock(),

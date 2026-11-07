@@ -55,8 +55,7 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
                 a==null?null:EditorChange.fingerprint("mission-prop/v1:"+a),b==null?null:EditorChange.fingerprint("mission-prop/v1:"+b)));
             for(Prop prop:new Prop[]{a,b})if(prop!=null){
                 assets.add("assets://models/"+prop.mesh());
-                if(prop.halfX()>0&&prop.halfZ()>0){
-                    var collider=LevelPlans.propCollider(prop);
+                for(var collider:LevelPlans.propColliders(session.sourceLevel(),prop)){
                     double c=Math.abs(Math.cos(collider.yaw())),s=Math.abs(Math.sin(collider.yaw()));
                     double rx=c*collider.halfX()+s*collider.halfZ(),rz=s*collider.halfX()+c*collider.halfZ();
                     var region=new EditorChange.Bounds(collider.x()-rx,collider.y(),collider.z()-rz,
@@ -93,8 +92,11 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
         if(!id.equals("mission-runtime-parity"))throw new IllegalArgumentException("Unsupported test: "+id);
         var level=map.get().level();
         boolean props=level.props().equals(session.props());
-        boolean collision=session.props().stream().filter(p->p.halfX()>0&&p.halfZ()>0&&p.height()>0)
-            .allMatch(p->level.colliders().contains(LevelPlans.propCollider(p)));
+        var available=new java.util.ArrayList<>(level.colliders());boolean collision=true;
+        for(var prop:session.props())for(var expected:LevelPlans.propColliders(session.sourceLevel(),prop)){
+            int found=-1;for(int i=0;i<available.size();i++)if(LevelPlans.sameBody(available.get(i),expected)){found=i;break;}
+            if(found<0)collision=false;else available.remove(found);
+        }
         return List.of(new EditorAgentService.Check("NATIVE_PROP_PARITY",props,"HouseMap props equal current unsaved authoring props"),
             new EditorAgentService.Check("NATIVE_COLLIDER_PARITY",collision,"Native collider list contains each colliding authored prop"));
     }

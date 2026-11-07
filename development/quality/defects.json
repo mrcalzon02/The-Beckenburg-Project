@@ -3554,6 +3554,50 @@
       "action": "Use actual kitchen room hint2 and require same room ownership as well as traversability; preserve wrong-floor capture. Correct kitchen and function views were actually inspected.",
       "evidence": "development/levels/model-production/house-fridge/; development/levels/rebuild/verification/house-functional-fill-2026-11-07/; development/captures/house-functional-fill/: rejected-cold-storage-camera-floor-runtime.png; corrected kitchen-cold-storage-runtime.png",
       "older_maps": "Audit older model attachments, camera ownership/elevation and strict generation status individually; no blanket older-map or hardware acceptance."
+    },
+    {
+      "id": "DEV-331",
+      "title": "Saved custom House architecture follows changing shipped template",
+      "status": "SCOPED IMPLEMENTATION PASS; native legacy/rebuilt USER compatibility checks pass; source-bound full362/native/GPU pending",
+      "affected": "House-derived USER projects and upcoming House default promotion; other template upgrades need individual migration review",
+      "symptom": "UserLevelLibrary.source rebuilds the template through current LevelPlans.buildSource on every load, then applies existing scene props at their historical coordinates. Replacing the House default would silently change floor elevations, walls and openings below those edits.",
+      "cause": "Saved template metadata identifies site but no architectural generation.",
+      "action": "Pin explicit House architectural generations; interpret historical versionless House projects as original architecture without rewriting their files. Resolve the rebuilt generation separately for actual USER-map verification. Keep built-in promotion and explicit author-driven migration pending.",
+      "evidence": "HouseTemplateCompatibilityTest; src/main/java/org/beckenburg/UserLevelLibrary.java; house-template-compatibility checkpoint evidence",
+      "older_maps": "Audit every changed template independently; shipped-v1 for other sites is not a promise of frozen architecture or complete migration."
+    },
+    {
+      "id": "DEV-332",
+      "title": "Compatibility test attempted against stale JAR before package completion",
+      "status": "SCOPED CORRECTION; successful fresh package precedes passing compile/runtime checks",
+      "affected": "Local saved-map verification process, not shipped gameplay",
+      "symptom": "Test compilation cannot resolve newly added template methods/constants because an earlier JAR was read while packaging was still live. The package then failed sandbox JAR replacement with AccessDeniedException.",
+      "cause": "Dependent test compilation was started before authoritative terminal package success.",
+      "action": "Preserve failed logs; rerun authorized packaging outside the failed sandbox boundary and await success before compiling/running tests. No stale JAR test result accepted.",
+      "evidence": "development/levels/rebuild/verification/house-template-compatibility-2026-11-07/rejected-stale-jar-test-compile.log; successful package/test logs; original AccessDeniedException was observed in tool output before package log reuse",
+      "older_maps": "No older-map acceptance from stale binaries; every source-bound verification must follow successful packaging."
+    },
+    {
+      "id": "DEV-333",
+      "title": "Native mission composition replaces rebuilt pivots and generator bodies with generic collision",
+      "status": "SCOPED CORRECTION; exact-source identity, every retained body/multiplicity and actual Agent Services/native/runtime tests pass locally; remote acceptance pending",
+      "affected": "Rebuilt House used through USER native authoring; older sites require individual collider authority review",
+      "symptom": "Actual custom rebuilt House collider multiset differs from source even without prop edits. Editing uses native GLB origins as generic collision centres and can add a full generator box or false bedding bodies.",
+      "cause": "LevelAuthoringSession.compose discarded/re-added all props using legacy LevelPlans.propCollider rather than authored collision policy. Initial list-order suspicion was disproved by a multiplicity-aware comparison.",
+      "action": "Return exact source for unchanged props; preserve exact bodies for unchanged objects during edits; derive rebuilt pivot-aware and multipart collision through shared helpers. Retain bedding overlays as non-colliding. Update Editor Agent Services parity/dirty bounds to consume the same bodies, checking multiplicity.",
+      "evidence": "HouseTemplateCompatibilityTest exact source revision5c8da94b90d34afd; retained exact source bodies after real agent fridge edit; rejected-authored-collision-drift.log; edited-custom-house-kitchen-runtime.png; focused existing editor/recovery/furnishing tests",
+      "older_maps": "Audit each future rebuilt source collision policy and functional attachment behavior before default promotion; no blanket older-map acceptance."
+    },
+    {
+      "id": "DEV-334",
+      "title": "Kitchen fridge wedged between back and dining doors",
+      "status": "OWNER REJECTED; relocation is immediate next implementation",
+      "affected": "House furnishing source and derived custom-map kitchen",
+      "symptom": "Owner rejects actual kitchen capture: fridge crowds the short wall section between two doors despite sampled collision and route checks passing.",
+      "cause": "Placement prioritized numerical clearances over coherent kitchen work/storage arrangement.",
+      "action": "Move fridge to a dedicated kitchen wall away from both doorways. Preserve actual rejected capture; recheck source door swings, counter and cellar-stair circulation, native/export/source coordinates and actual runtime views.",
+      "evidence": "User rejection; development/captures/house-template-compatibility/rejected-fridge-between-doors-runtime.png",
+      "older_maps": "Review appliance placement as a functional room arrangement individually; passing collision alone never accepts an older layout."
     }
   ],
   "audit_categories": [

@@ -27,3 +27,14 @@ remain active, with regular source/assets/evidence synchronization checkpoints.
 
 
 Current furnishing layer:45props,131793native triangles/UVs,230packed images and50179required route positions pass locally. Original180triangle generated-enamel fridge, additive200triangle coat and actual rack/bench/planter functions address DEV-326. Six texture variants pass, including140materials/13733203texels on this layer. Real4peer source/breaker and solo/human ghost-trip checks pass against the furnished source. Current361/full/native/GPU remote acceptance and the remaining whole-location gates stay open. Parent PR79 actual360/0 full42388613635 and native42388620846/GPU42388625541 passed; merged98f0faf0b1a0df3173914f145b94b27b2fd6c808.
+
+
+## Saved House template and authored collision checkpoint — 7 November 2026
+
+PR80 head3a44a663 passed actual361/0/0/361 in full42395009707; Editor42395017153 andGPU42395022669 passed. Expected-head mergee1b49eb780a3061ef47ea67dfd9747d7ff378497 is reconciled into this branch. New main full42418636058 and installer42418635872 were observed live; do not infer their final results. Parent Pages42418635199 passed; actual deployed gallery/image readback is recorded separately.
+
+Saved USER maps now identify explicit original/rebuilt House architectural generations. Historical versionless House projects retain the original rooms and their exact scene/metadata bytes. Unknown generations fail without substitution or writes. Built-in House remains legacy pending complete promotion/migration acceptance; other site template generations require individual review.
+
+Actual rebuilt USER loading exposed DEV-333: native composition replaced authored source pivots/multipart generator bodies with generic boxes. Composition now retains every unchanged exact body, derives changed rebuilt bodies through shared source geometry, preserves noncolliding bedding and updates actual Editor Agent Services bounds/parity. The accepted construction revision5c8da94b90d34afd is unchanged. Real agent fridge edit, save/reopen/game load, every retained physical body/multiplicity and actual kitchen viewport capture pass. Legacy identity/recovery/change/disk tests and furnished House routes/power/ghost TCP checks pass. Failed stale-JAR compilation and collider comparisons are retained. New manifest362 requires exact remote acceptance; no full-location or physical FPS acceptance.
+
+Evidence: verification/house-template-compatibility-2026-11-07/. Next: explicit saved built-in House migration, functional attachment safety, default promotion, authored encounter and final light/material/whole-location/client acceptance. Continue all29 packets and remaining unfinished maps. No round-duration tests.
