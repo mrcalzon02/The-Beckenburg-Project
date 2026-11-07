@@ -1,0 +1,119 @@
+{
+  "status": "PASS",
+  "phase": "level_castle_training_absolution-floor-export",
+  "source_sha256": "e38988cc2a45e67df723eda92429d17c9eb23ed1672a96800dc24d4624d9d9cf",
+  "triangle_count": 220,
+  "tolerance_metres": 0.001,
+  "criterion": "Every actual floor-inlay component bears directly on floorZ=0 within1mm; raised actual ring must fail",
+  "components": [
+    {
+      "id": 0,
+      "vertices": 80,
+      "bounds": [
+        [
+          -0.7200000286102295,
+          -0.7200000286102295,
+          0.0
+        ],
+        [
+          0.7200000286102295,
+          0.7200000286102295,
+          0.00800000037997961
+        ]
+      ],
+      "contacts": [],
+      "supported": true
+    },
+    {
+      "id": 1,
+      "vertices": 8,
+      "bounds": [
+        [
+          0.3595500886440277,
+          0.0,
+          0.0
+        ],
+        [
+          0.6100000143051147,
+          0.030487293377518654,
+          0.00800000037997961
+        ]
+      ],
+      "contacts": [],
+      "supported": true
+    },
+    {
+      "id": 2,
+      "vertices": 8,
+      "bounds": [
+        [
+          0.09399520605802536,
+          0.3423803448677063,
+          0.0
+        ],
+        [
+          0.18850035965442657,
+          0.5888405442237854,
+          0.00800000037997961
+        ]
+      ],
+      "contacts": [],
+      "supported": true
+    },
+    {
+      "id": 3,
+      "vertices": 8,
+      "bounds": [
+        [
+          -0.5108035802841187,
+          0.19678200781345367,
+          0.0
+        ],
+        [
+          -0.29124611616134644,
+          0.35854899883270264,
+          0.00800000037997961
+        ]
+      ],
+      "contacts": [],
+      "supported": true
+    },
+    {
+      "id": 4,
+      "vertices": 8,
+      "bounds": [
+        [
+          -0.49350035190582275,
+          -0.38276565074920654,
+          0.0
+        ],
+        [
+          -0.2803063988685608,
+          -0.21160268783569336,
+          0.00800000037997961
+        ]
+      ],
+      "contacts": [],
+      "supported": true
+    },
+    {
+      "id": 5,
+      "vertices": 8,
+      "bounds": [
+        [
+          0.11124611645936966,
+          -0.580144464969635,
+          0.0
+        ],
+        [
+          0.21725992858409882,
+          -0.33639246225357056,
+          0.00800000037997961
+        ]
+      ],
+      "contacts": [],
+      "supported": true
+    }
+  ],
+  "expected": "PASS"
+}

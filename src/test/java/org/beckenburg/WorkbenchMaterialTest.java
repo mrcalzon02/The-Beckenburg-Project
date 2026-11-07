@@ -25,10 +25,13 @@ public final class WorkbenchMaterialTest {
             }
         }
         var scene=CastleLevelEdits.current();var map=new CastleHubMap();
-        var benches=scene.props().stream().filter(p->p.mesh().equals("level_workbench")||p.mesh().equals("level_workbench_worn")).toList();
+        var benches=scene.props().stream().filter(p->p.id().equals("ground-repair-bench")||p.id().equals("ground-repair-preparation")).toList();
         check(benches.size()==2,"Existing Castle bench IDs/placements replaced or duplicated");
         for(var p:benches){
             check(p.scale()==1&&p.y()==0,"Workbench floated or rescaled for new materials");
+            boolean worn=p.id().equals("ground-repair-bench");
+            check(p.mesh().equals(worn?"level_workbench_worn":"level_workbench"),"Existing repair bench source ID replaced");
+            check(p.x()==(worn?38.1:41.7)&&p.z()==(worn?18.7:25)&&p.yaw()==(worn?Math.PI/2:0),"Existing repair bench pose changed");
             var room=CastleRooms.at(p.x(),0,p.z());check(room!=null&&room.id().equals("repair"),"Workbench left its real repair room");
         }
         var snapshot=scene.snapshot();scene.save();scene.reopen();check(snapshot.equals(scene.snapshot()),"Shared old-ID bench does not survive native save/reopen");

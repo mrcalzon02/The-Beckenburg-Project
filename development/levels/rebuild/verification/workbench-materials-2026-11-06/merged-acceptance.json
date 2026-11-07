@@ -1,0 +1,18 @@
+{
+  "source_head": "41d150e0398c7d59c88405d9f5f521b7303611eb",
+  "pull_request": "https://github.com/mrcalzon02/The-Beckenburg-Project/pull/66",
+  "merge_sha": "753e637b942fef3b2b7a5cd00b6bac9dc528274d",
+  "merge_result": "GitHub merge_pull_request returned merged=true with expected_head_sha matching source_head",
+  "full_run": 42331228401,
+  "full_job": 128277959035,
+  "actual_regression_summary": "REGRESSION SUMMARY passed=340 failed=0 skipped=0 manifest=340",
+  "full_job_status": "completed/success; decoded job log independently inspected",
+  "native_run": 42331234630,
+  "native_result": "success",
+  "gpu_run": 42331240114,
+  "gpu_result": "all three jobs completed/success",
+  "branch_readback": "Source preview PNG, native editor PNG and gallery HTML read back byte-identical before merge; local build/workbench-publication-readback.json records exact hashes",
+  "pages_status": "NOT YET VERIFIED: subsequent Git fetch, CLI, public web and connector reads lost connectivity after successful merge",
+  "next_action": "Fetch/reconcile merged main without losing pending training changes; verify actual deployed gallery HTML, clean/worn model PNGs and native captures against committed bytes",
+  "scope": "Shared workbench model correction only. No full Castle, older-map placement, hardware or all-map acceptance. No round-duration testing."
+}

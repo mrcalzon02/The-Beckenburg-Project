@@ -1,0 +1,4 @@
+Exception in thread "main" java.lang.AssertionError: Blocked dining circulation at 0.0
+	at org.beckenburg.CastleFinishPlacementTest.check(CastleFinishPlacementTest.java:7)
+	at org.beckenburg.CastleFinishPlacementTest.line(CastleFinishPlacementTest.java:18)
+	at org.beckenburg.CastleFinishPlacementTest.main(CastleFinishPlacementTest.java:35)
