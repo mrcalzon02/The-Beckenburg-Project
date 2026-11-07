@@ -3,6 +3,17 @@
   "updated": "2026-11-06",
   "issues": [
     {
+      "id": "DEV-266",
+      "title": "Default player lacks jumping and portable airborne crouch capability",
+      "status": "fixed-scoped; focused physics/TCP acceptance; installed acceptance pending",
+      "affected": "Shared solo/co-op investigation controller and portable editor-kit default player motion",
+      "symptom": "The player can only move along continuous support; crouch lowers the body and cannot produce a tucked running jump.",
+      "cause": "No independent airborne collision/gravity state or jump intent exists in the shared player package.",
+      "action": "Add portable default jump controller, airborne capsule clearance and raised solid support; wire host clock, client intent and Space controls; reuse crouch art at raised feet and auto-stand after landing when headroom permits.",
+      "evidence": "development/quality/evidence/player-jump-2026-11-07/; PlayerJumpTest and PlayerJumpNetworkTest plus focused movement/crouch regressions.",
+      "older_maps": "Audit stair openings, ledges, low ceilings and prop tops individually on older maps. Castle and downstream runtimes require their own jump adapter adoption; installed GPU acceptance remains open."
+    },
+    {
       "id": "DEV-265",
       "title": "Routine controls require function keys and solo uses a different equipment/runtime path",
       "status": "fixed-scoped; Java compilation and focused real localhost acceptance; installed acceptance pending",

@@ -1879,7 +1879,8 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 }
             }
             case KeyEvent.VK_U -> sendAction("UV",client::scanUv);
-            case GameControls.CROUCH,KeyEvent.VK_CONTROL -> {if(health>0)sendAction("crouch",()->client.crouch(!crouched));}
+            case GameControls.JUMP -> {if(health>0)sendAction("jump",client::jump);}
+            case GameControls.CROUCH -> {if(health>0)sendAction("crouch",()->client.crouch(!crouched));}
             case KeyEvent.VK_L -> sendAction("hide",()->client.hide());
             // M opens the full-size van map before ordinary world hotkeys.
             case KeyEvent.VK_K -> showFieldActions();

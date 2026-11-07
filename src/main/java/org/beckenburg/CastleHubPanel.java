@@ -354,7 +354,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
             }else use(CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw)!=null?
                 null:map.aimed(renderer.x,renderer.z,renderer.yaw));
         }
-        if((key==GameControls.CROUCH||key==KeyEvent.VK_CONTROL)&&!down.contains(key)){crouched=!crouched;notice=crouched?"Crouched / Shift to stand":"Standing";noticeTicks=60;}
+        if((key==GameControls.CROUCH)&&!down.contains(key)){crouched=!crouched;notice=crouched?"Crouched / Ctrl to stand":"Standing";noticeTicks=60;}
         if(key==GameControls.LIGHT)renderer.lamp=!renderer.lamp;
         if(key==KeyEvent.VK_L){
             if(CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw)!=null)use(null);

@@ -6,11 +6,11 @@ import java.awt.event.KeyEvent;
 /** Default field layout shared by Castle, solo and LAN. No routine function keys. */
 public final class GameControls {
     private GameControls(){}
-    public static final int RUN=KeyEvent.VK_SPACE, CROUCH=KeyEvent.VK_SHIFT,
+    public static final int RUN=KeyEvent.VK_SHIFT, CROUCH=KeyEvent.VK_CONTROL, JUMP=KeyEvent.VK_SPACE,
         USE=KeyEvent.VK_F, DROP=KeyEvent.VK_R, LIGHT=KeyEvent.VK_T,
         SWAP=KeyEvent.VK_Q, HELP=KeyEvent.VK_H;
     public static final String[] HINTS={
-        "WASD move / SPACE run / SHIFT crouch (CTRL also works)",
+        "WASD move / SHIFT run / CTRL crouch / SPACE jump",
         "E interact / Q cycle / 1-4 slots / F use or raise camera",
         "LMB use or shutter / RMB power / T light / G place",
         "R drop / LMB throw held prop / wheel turn held prop",

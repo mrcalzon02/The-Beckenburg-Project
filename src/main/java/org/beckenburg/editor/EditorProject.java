@@ -22,6 +22,8 @@ public interface EditorProject<S> {
                 throw new IllegalArgumentException("Invalid palette asset");
         }
     }
+    /** Included in the standalone editor kit for every project adapter. */
+    default DefaultPlayerMotion createPlayerMotion(){return new DefaultPlayerMotion();}
     String id();
     String title();
     Path documentPath();

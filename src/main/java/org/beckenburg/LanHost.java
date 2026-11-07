@@ -832,15 +832,16 @@ public final class LanHost implements AutoCloseable {
                     acceptHunterSequence(peer,LanProtocol.sequence(p.get(p.size()-1)));
                     ensureActiveHunter(peer);
                     boolean runningFast=p.size()==5&&LanProtocol.integer(p.get(3),0,1)==1;
+                    boolean stepped;
                     try{
-                        world.move(peer.slot,dx,dz,tick,runningFast);
+                        stepped=world.move(peer.slot,dx,dz,tick,runningFast);
                     }catch(IllegalArgumentException movementBlocked){
                         if("frenzy sealed the van extraction threshold".equals(movementBlocked.getMessage()))
                             sealedDoorRattle(peer);
                         throw movementBlocked;
                     }
                     hunterRooms[peer.slot]=world.body(peer.slot).room();
-                    recordSound(peer.slot,LanGhostPursuit.Sound.FOOTSTEP);
+                    if(stepped)recordSound(peer.slot,LanGhostPursuit.Sound.FOOTSTEP);
                     reply(peer,"ACCEPT|STEP");broadcastWorld();broadcastState();
                 }
                 case "TURN" -> {
@@ -1010,6 +1011,12 @@ public final class LanHost implements AutoCloseable {
                     }
                     // Room-level topology proof only; physical door and body collision still need synced transform validation.
                     hunterRooms[peer.slot]=target;world.setRoom(peer.slot,target);recordSound(peer.slot,LanGhostPursuit.Sound.FOOTSTEP);reply(peer,"ACCEPT|MOVE|"+target);broadcastState();broadcastWorld();
+                }
+                case "JUMP" -> {
+                    if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||p.size()!=2)
+                        throw new IllegalArgumentException("hunter jump requires world view");
+                    acceptHunterSequence(peer,LanProtocol.sequence(p.get(1)));ensureActiveHunter(peer);
+                    world.jump(peer.slot,tick);reply(peer,"ACCEPT|JUMP");broadcastWorld();
                 }
                 case "CROUCH" -> {
                     if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||p.size()!=3)throw new IllegalArgumentException("hunter posture requires world view");
@@ -2653,6 +2660,10 @@ public final class LanHost implements AutoCloseable {
             }
             expireDisconnectedSeats();
             if(!running)return;
+            if(world.advanceMotion(tick)){
+                for(int i=0;i<HUNTERS;i++)hunterRooms[i]=world.body(i).room();
+                broadcastWorld();
+            }
             world.advanceStamina(tick);
             var coverSearch=ghostPose.pose();world.revealOutdoorNear(coverSearch.x(),coverSearch.y(),coverSearch.z());
             var fixtureSounds=map.fixtures().advance(tick);broadcastFixtures();

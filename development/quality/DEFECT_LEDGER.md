@@ -3605,3 +3605,9 @@ At every map/model checkpoint: update open issues; check for related defects in 
 ## DEV-264 - Van departure from the front desk (2026-11-06)
 
 Rear cargo control now accepts an exact visible button hit from aboard the cargo deck, including the desk aisle. Normal equipment reach stays unchanged. Legacy solo closure also settles extraction; concurrent shared-host solo work is preserved. Four-site targeting, actual TCP walk/aim/close/result, cargo collision, and van circulation checks pass on isolated repair source and the working checkout. Evidence: `development/quality/evidence/van-departure-2026-11-06/`. Installed acceptance remains pending.
+
+### DEV-266 — Default player jump capability
+
+Shared solo/co-op investigations lacked a host-authoritative jump; the editor kit had no portable airborne player controller. Added raised crouch takeoff, carried running velocity, swept gravity/collision and landing-to-standing, with the portable default exposed by EditorProject.
+
+Focused physics/TCP and existing movement/crouch checks pass. Evidence: `development/quality/evidence/player-jump-2026-11-07/`. Installed GPU acceptance and individual older-map stair/ledge/prop audits remain open; Castle and other runtime adapters need separate adoption.

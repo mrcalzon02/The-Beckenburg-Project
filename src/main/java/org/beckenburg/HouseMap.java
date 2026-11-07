@@ -199,7 +199,16 @@ public final class HouseMap {
         if(!LevelClosets.available(level,room,density))return null;
         Socket s=level.socket("hide",room);return s==null?null:new VanStaging.Position(s.x(),s.z());
     }
+    private static boolean onTop(Collider c,double x,double z,double radius){
+        double dx=x-c.x(),dz=z-c.z(),cs=Math.cos(c.yaw()),sn=Math.sin(c.yaw());
+        return Math.abs(dx*cs+dz*sn)<=c.halfX()-radius&&Math.abs(-dx*sn+dz*cs)<=c.halfZ()-radius;
+    }
+    private boolean colliderSupport(double x,double y,double z){
+        for(Collider c:level.colliders())if(Math.abs(y-c.y()-c.height())<.02&&onTop(c,x,z,-.22))return true;
+        return false;
+    }
     private boolean supported(double x,double y,double z,double radius){
+        if(colliderSupport(x,y,z))return true;
         Double vanY=van.supportHeight(x,z);if(vanY!=null)return Math.abs(y-vanY)<.10;
         for(Stair s:level.stairs())if(s.contains(x,z,radius)&&Math.abs(y-s.yAt(x,z))<.24)return true;
         for(Room r:level.rooms())if(Math.abs(y-surface(r,x,z))<.08&&x>=r.x0()&&x<=r.x1()&&z>=r.z0()&&z<=r.z1()&&!level.floorVoid(x,r.y(),z))return true;
@@ -252,14 +261,22 @@ public final class HouseMap {
     }
     public boolean traversable(double x,double y,double z){return traversable(x,y,z,HunterPosture.STANDING_HEIGHT);}
     public boolean traversable(double x,double y,double z,double bodyHeight){
+        return capsuleClear(x,y,z,bodyHeight,true);
+    }
+    /** Collision volume without requiring grounded feet, for swept jump physics. */
+    public boolean airborneClear(double x,double y,double z,double bodyHeight){
+        return capsuleClear(x,y,z,bodyHeight,false);
+    }
+    private boolean capsuleClear(double x,double y,double z,double bodyHeight,boolean grounded){
+        if(!grounded&&(x<.22||z<.22||x>width()-.22||z>height()-.22))return false;
         if(!finite(x,y,z,bodyHeight)||bodyHeight<.9||bodyHeight>2.0)return false;double radius=.22;
         if(worldSurface!=null&&worldSurface.bodyBlocked(new Vec(x,y,z),bodyHeight,radius))return false;
         if(nativeSite!=null){Double sy=van.supportHeight(x,z);boolean blocked=van.collides(x,z,radius)&&y+bodyHeight>van.placement().y()&&y<van.placement().y()+VanStaging.ROOF_Y;
-            if(sy!=null)return Math.abs(y-sy)<.08&&!blocked&&!nativeSite.bodyBlocked(new Vec(x,y,z),bodyHeight,radius);
+            if(sy!=null)return (!grounded||Math.abs(y-sy)<.08)&&!blocked&&!nativeSite.bodyBlocked(new Vec(x,y,z),bodyHeight,radius);
             if(WorldWater.module(level.water()).bodies().stream().anyMatch(w->y<w.y()-.01&&w.wet(x,z)))return false;
-            return !blocked&&nativeSite.traversable(new Vec(x,y,z),bodyHeight);}
-        if(!supported(x,y,z,radius)||wallBlocked(x,y,z,radius,false,-1,bodyHeight))return false;
-        for(double[] d:new double[][]{{-radius,0},{radius,0},{0,-radius},{0,radius}})
+            return !blocked&&(grounded?nativeSite.traversable(new Vec(x,y,z),bodyHeight):!nativeSite.bodyBlocked(new Vec(x,y,z),bodyHeight,radius));}
+        if((grounded&&!supported(x,y,z,radius))||wallBlocked(x,y,z,radius,false,-1,bodyHeight))return false;
+        if(grounded&&!colliderSupport(x,y,z))for(double[] d:new double[][]{{-radius,0},{radius,0},{0,-radius},{0,radius}})
             if(!supported(x+d[0],y,z+d[1],0)&&!(terrain!=null&&terrain.playable(x+d[0],z+d[1])&&!terrain.indoors(x+d[0],z+d[1])&&Math.abs(y-terrain.height(x+d[0],z+d[1]))<.20))return false;
         for(Portal p:level.portals())if(p.door()&&!doorOpen(p.id())&&boxHit(x,y,z,radius,p.x(),p.y(),p.z(),p.alongX()?p.width()/2:.10,p.alongX()?.10:p.width()/2,2.4,0,bodyHeight))return false;
         for(Collider p:level.colliders())if(boxHit(x,y,z,radius,p.x(),p.y(),p.z(),p.halfX(),p.halfZ(),p.height(),p.yaw(),bodyHeight)&&!DeckSlabs.landingContact(level,p,x,y,z))return false;
@@ -301,7 +318,16 @@ public final class HouseMap {
         if(best!=null)return best;
         for(Room r:level.rooms())if(x>=r.x0()&&x<=r.x1()&&z>=r.z0()&&z<=r.z1()&&!level.floorVoid(x,r.y(),z)){double sy=surface(r,x,z),d=Math.abs(sy-previousY);if(d<delta){best=sy;delta=d;}}
         for(Portal p:level.portals())if(!p.kind().equals("stair")&&!p.kind().equals("window")&&inPortal(p,x,z,.22)){double d=Math.abs(p.y()-previousY);if(d<delta){best=p.y();delta=d;}}
+        for(Collider c:level.colliders()){
+            double top=c.y()+c.height(),d=Math.abs(top-previousY);
+            if(d<delta&&onTop(c,x,z,-.22)){best=top;delta=d;}
+        }
         return best;
+    }
+    double jumpLanding(double x,double z,double fromY,double toY){
+        Double floor=supportNear(x,z,(fromY+toY)/2);
+        return floor!=null&&floor<=fromY+.0001&&floor>=toY-.0001
+            &&traversable(x,floor,z,HunterPosture.CROUCH_HEIGHT)?floor:Double.NaN;
     }
     /** Swept horizontal input; elevation comes solely from contiguous authored support. */
     public Vec resolveMove(Vec from,double x,double z){return resolveMove(from,x,z,HunterPosture.STANDING_HEIGHT);}
