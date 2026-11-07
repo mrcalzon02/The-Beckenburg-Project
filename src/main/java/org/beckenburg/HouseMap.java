@@ -14,6 +14,7 @@ public final class HouseMap {
     private final AuthoredSitePhysics nativeSite;
     private final List<List<Portal>> wallPortals;
     private final AuthoredSitePhysics worldSurface;
+    private final boolean editorTerrainWalking;
     AuthoredSitePhysics worldSurface(){return worldSurface;}
     public boolean nativeSite(){return nativeSite!=null;}
     public SiteTerrain terrain(){return terrain;}
@@ -76,6 +77,7 @@ public final class HouseMap {
         this.site=Objects.requireNonNull(site);level=Objects.requireNonNull(definition);guards=level.guards();
         wallPortals=level.rooms().stream().map(r->level.wallPortals(r.id())).toList();
         this.worldSurface=worldSurface;
+        editorTerrainWalking=worldSurface!=null&&WorldTerrainSurface.walking(level);
         terrain=SiteTerrain.of(level);
         nativeSite=HollowCreekLevel.is(level)?HollowCreekLevel.physics():null;
         Dock d=level.dock();van=new VanStaging(new VanStaging.Placement(d.x(),d.y(),d.z(),d.yaw()));
@@ -117,7 +119,7 @@ public final class HouseMap {
     public int roomAt(double x,double z){
         var cargo=van.local(x,z);if(Math.abs(cargo.x())<VanStaging.INTERIOR_HALF_WIDTH&&cargo.z()>=VanStaging.FRONT&&cargo.z()<VanStaging.REAR)return 14;
         if(nativeSite!=null){var support=nativeSite.support(x,z,0,4);return support==null?-1:HollowCreekLevel.owner(x,z);}
-        if(terrain!=null){int graded=roomAt(x,groundHeight(x,z,12),z);if(graded>=0)return graded;}
+        if(terrain!=null||editorTerrainWalking){int graded=roomAt(x,groundHeight(x,z,12),z);if(graded>=0)return graded;}
         int room=roomAt(x,0,z);if(room>=0)return room;
         for(Room r:level.rooms())if(r.contains(x,r.y(),z))return r.id();return -1;
     }
@@ -273,7 +275,10 @@ public final class HouseMap {
         return true;
     }
     public boolean traversable(double x,double z){if(nativeSite!=null){double y=groundHeight(x,z,roomAt(x,z));return traversable(x,y,z);}Double deck=van.supportHeight(x,z);int r=roomAt(x,z);return r>=0&&traversable(x,deck==null?surface(level.room(r),x,z):deck,z);}
-    private double surface(Room r,double x,double z){return terrain!=null&&r.outside()&&r.id()!=14?terrain.height(x,z):r.y();}
+    private double surface(Room r,double x,double z){
+        if(editorTerrainWalking&&r.outside()&&r.id()!=14){var s=worldSurface.support(x,z,r.y(),1);return s==null?Double.NaN:s.y();}
+        return terrain!=null&&r.outside()&&r.id()!=14?terrain.height(x,z):r.y();
+    }
     /** Physical support for entities: preserve a room's lower storey underneath an overlapping loft. */
     public double groundHeight(double x,double z,int roomHint){
         if(nativeSite!=null){Double deck=van.supportHeight(x,z);if(deck!=null)return deck;var support=nativeSite.support(x,z,roomHint>=0&&roomHint<15?level.floorY(roomHint):0,4);return support==null?Double.NaN:support.y();}
@@ -288,6 +293,7 @@ public final class HouseMap {
         }}
         Room lowest=null;for(var r:level.rooms())if(!r.outside()&&x>=r.x0()&&x<=r.x1()&&z>=r.z0()&&z<=r.z1()&&(lowest==null||r.y()<lowest.y()))lowest=r;
         if(lowest!=null)return lowest.y();
+        if(editorTerrainWalking){var s=worldSurface.support(x,z,0,1);return s==null?Double.NaN:s.y();}
         return terrain!=null?terrain.height(x,z):roomHint>=0&&roomHint<15?level.room(roomHint).y():0;
     }
     /** Position-relative support shared by movement and ground recovery. A

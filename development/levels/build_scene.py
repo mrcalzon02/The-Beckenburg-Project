@@ -114,6 +114,7 @@ camera_poses={'castle-rebuild':((59,-65,38),(22,-18,2)),'blackpine':((79,-85,46)
               'house':((28,-34,3.8),(19,-19,3.0)),
               'briar-rebuild':((36,-39,22),(17,-16,1.4)),
               'briar-rebuild-fit':((36,-39,22),(17,-16,1.4)),
+              'briar-rebuild-landscape':((38,-47,29),(15,-19,0)),
               'farmhouse':((55,-48,15),(27,-20,2.8)),
               'school':((58,-57,17),(28,-24,3.5)),
               'arrival-road':((12,-14,9),(0,5,1.0)),
@@ -134,6 +135,9 @@ sys.path.insert(0,str(ROOT/'development/levels'));import scene_metadata;scene_me
 if name=='briar-rebuild-fit':
     scene['source_of_truth']='HouseRebuildFittings.java / HouseRebuild.java / LevelDefinition.java; regenerate after layout edits'
     scene['production_status']='construction fixture-fit candidate; terrain/boundary and complete map acceptance pending'
+if name=='briar-rebuild-landscape':
+    scene['source_of_truth']='HouseRebuildLandscape.java / HouseRebuildFittings.java / editor landscape-world; regenerate after layout edits'
+    scene['production_status']='landscape construction candidate; visual landscape gate and complete map acceptance pending'
 scene['hiding_density']=json.loads((SRC/'scene-settings.json').read_text()).get('hidingDensity',100);scene['hiding_note']='All potential cupboards shown for authoring; runtime geometry/collision follow the contract density'
 out=ROOT/'development/levels/blender';out.mkdir(parents=True,exist_ok=True)
 suffix='-dressed' if name=='blackpine' else ''

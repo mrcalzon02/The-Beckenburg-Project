@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 6680,
+  "count": 6688,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -3222,6 +3222,86 @@
       "height": 625,
       "bytes": 608363,
       "sha256": "022dad3d1f86ad7b14d18ecd39f6d3b59c651c440ea3b439830b3d8702266dee"
+    },
+    {
+      "path": "development/captures/house-landscape/canonical-van-arrival-runtime.png",
+      "url": "development/captures/house-landscape/canonical-van-arrival-runtime.png",
+      "title": "Canonical van arrival runtime",
+      "kind": "Runtime terrain construction",
+      "width": 1000,
+      "height": 625,
+      "bytes": 221421,
+      "sha256": "a9862df6afeb285d69f7fec39330858dc104c03a3b6d57cca0360e12ec595f6a"
+    },
+    {
+      "path": "development/captures/house-landscape/garden-crouched-runtime.png",
+      "url": "development/captures/house-landscape/garden-crouched-runtime.png",
+      "title": "Garden crouched runtime",
+      "kind": "Runtime terrain construction",
+      "width": 1000,
+      "height": 625,
+      "bytes": 273192,
+      "sha256": "579758b3d8b6de692cc1d5956031db2b99a921a7022fb4ad89e0502ee86a9250"
+    },
+    {
+      "path": "development/captures/house-landscape/garden-side-passage-runtime.png",
+      "url": "development/captures/house-landscape/garden-side-passage-runtime.png",
+      "title": "Garden side passage runtime",
+      "kind": "Runtime terrain construction",
+      "width": 1000,
+      "height": 625,
+      "bytes": 423383,
+      "sha256": "d08916c52b40b7c8b491776f08945f9b7c56d93ea82ece8b9c88654b38df6933"
+    },
+    {
+      "path": "development/captures/house-landscape/house-approach-runtime.png",
+      "url": "development/captures/house-landscape/house-approach-runtime.png",
+      "title": "House approach runtime",
+      "kind": "Runtime terrain construction",
+      "width": 1000,
+      "height": 625,
+      "bytes": 414764,
+      "sha256": "5ba6b11c2a10e98af7244cb2f4d5a5347f0bbbf431c0a3226a5887e3d1c8f3fc"
+    },
+    {
+      "path": "development/captures/house-landscape/native-parcel-overview.png",
+      "url": "development/captures/house-landscape/native-parcel-overview.png",
+      "title": "Native parcel overview",
+      "kind": "Native geometry overview",
+      "width": 1200,
+      "height": 900,
+      "bytes": 1414404,
+      "sha256": "b79cde90daa1a116bc509520f215ea02f0e9f984378dd23fbdcabe643b7ad25f"
+    },
+    {
+      "path": "development/captures/house-landscape/rejected-approach-inside-neighbour-runtime.png",
+      "url": "development/captures/house-landscape/rejected-approach-inside-neighbour-runtime.png",
+      "title": "Rejected approach inside neighbour runtime",
+      "kind": "Rejected runtime inspection",
+      "width": 1000,
+      "height": 625,
+      "bytes": 234012,
+      "sha256": "fde63032e0497d494e39393830e85264ce78d2646c1a7b532c530a7eeb658d50"
+    },
+    {
+      "path": "development/captures/house-landscape/rejected-camera-inside-neighbour-runtime.png",
+      "url": "development/captures/house-landscape/rejected-camera-inside-neighbour-runtime.png",
+      "title": "Rejected camera inside neighbour runtime",
+      "kind": "Rejected runtime inspection",
+      "width": 1000,
+      "height": 625,
+      "bytes": 181153,
+      "sha256": "025019ba54bf4c41d20a40feaa87f296d3ad01f7e55258fe0dc89c0fcee88e23"
+    },
+    {
+      "path": "development/captures/house-landscape/rejected-high-overview-runtime.png",
+      "url": "development/captures/house-landscape/rejected-high-overview-runtime.png",
+      "title": "Rejected high overview runtime",
+      "kind": "Rejected runtime inspection",
+      "width": 1000,
+      "height": 625,
+      "bytes": 102668,
+      "sha256": "4dd4c4ad349a670528bc48ba4ef6c67a192cb096f0bca9b86ef2da9a2b048b4f"
     },
     {
       "path": "development/captures/wall-lamp-runtime/after/wall-lamp-0-off.png",

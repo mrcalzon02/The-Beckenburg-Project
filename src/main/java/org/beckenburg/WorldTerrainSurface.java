@@ -8,6 +8,7 @@ import java.util.concurrent.ConcurrentHashMap;
 final class WorldTerrainSurface {
     private WorldTerrainSurface(){}
     private static final Map<String,AuthoredSitePhysics> CACHE=new ConcurrentHashMap<>();
+    static boolean walking(LevelDefinition level){return level.sockets().stream().anyMatch(s->s.type().equals("world-terrain-walk"));}
     static AuthoredSitePhysics of(LevelDefinition level){
         var bindings=level.sockets().stream().filter(s->s.type().equals("world-terrain")).toList();
         if(bindings.isEmpty())return null;

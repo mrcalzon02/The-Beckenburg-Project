@@ -4070,6 +4070,48 @@ Evidence and verification: development/captures/house-fixture-fit/bathroom-fixtu
 
 Older-map obligation: Only this candidate was corrected. Other maps retain individual fixture orientation, support, circulation and light-separation audits.
 
+### DEV-300 — House construction pilot used phantom flat outdoor support above its editor terrain
+
+**Status:** verified in landscape construction candidate;11 packaged checks pass; full mission/visual gates remain open · **Affected:** briar-rebuild original graybox and fitted construction pilot outdoor surfaces; not dispatched House
+
+At8/5, rendered native terrain is-0.649999976m but the pilot accepts feet at0m. Rectangular room decks still cap outdoor ground.
+
+Cause / uncertainty: Supplemental world-terrain integration supplied optical/body obstacles but retained nominal room floors for exterior walking and rendering.
+
+Fix / next action: Explicit world-terrain-walk authority in the landscape candidate consumes actual native triangle support for outdoor movement/ground recovery. Suppress its duplicate room ground decks. Preserve indoor floors, stair openings, canonical van and previous frozen pilot.
+
+Evidence and verification: HouseRebuildLandscapeTest reproduces exact original0/-.65 mismatch, checks1364native foot/mesh samples and real cellar void; landscape-source heights/punched topology/native triangles persisted separately.
+
+Older-map obligation: Only new House landscape candidate uses this opt-in. Existing graybox remains a frozen reproduction. Audit older maps separately for visible versus physical ground, pads, ceilings, stairs and basement caps.
+
+### DEV-301 — House pilot arrival anchor and review cameras could occupy visible neighbour buildings
+
+**Status:** verified in landscape construction candidate;11 packaged checks pass; full mission/visual gates remain open · **Affected:** House construction pilot approach zone and canonical suburban background parcels
+
+Original approach spawn16.5/23.25 and initial review viewpoints lie inside rendered neighbouring residences; old construction body checks did not include their solids.
+
+Cause / uncertainty: The pilot retained canonical rendered arrival surroundings but did not consume LevelEnclosure private-parcel fences and residence colliders.
+
+Fix / next action: Reuse exact canonical arrival parcel fences/building colliders, move the approach anchor to clear19.8/24, place garden approach at24/20.5 and route around the actual private parcels. Validate ordinary review cameras against actual standing/crouched collision.
+
+Evidence and verification: Two rejected runtime camera PNGs retained under house-landscape. Corrected five views include the actual canonical van; updated swept audit reaches all15zones/required sockets at50229positions. Explicit neighbouring-solid negative added.
+
+Older-map obligation: Canonical arrival contract unchanged. Audit every older isolated/native map builder for omission of rendered neighbour colliders, private-parcel containment and standing anchor fit. No global map acceptance.
+
+### DEV-302 — House pilot exterior inherits room finishes and repeated room gables
+
+**Status:** OPEN construction-envelope refinement · **Affected:** House first-principles construction pilot exterior; other generic room-shell maps require separate audit
+
+Native landscape overview exposes several parallel small room gables and exterior wall patches using interior tile/room finishes, rather than one deliberately constructed dwelling envelope.
+
+Cause / uncertainty: Generic renderer builds roof and double-sided wall finish from each gameplay room independently.
+
+Fix / next action: Next House construction pass must author one coherent external roof/wall envelope with real bearing/join logic, preserving internal rooms, openings, source furniture, terrain and canonical arrival. Revalidate optical separation and geometry after repair.
+
+Evidence and verification: development/captures/house-landscape/native-parcel-overview.png; all source vertices/UVs independently match native runtime export. Construction view is not final architecture acceptance.
+
+Older-map obligation: Audit individual older House/Farmhouse/institution room-derived envelopes; current bounds or navigation checks do not prove roof joins, external finish or structural coherence.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
