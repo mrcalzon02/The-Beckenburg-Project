@@ -1,0 +1,9 @@
+16:07:34 | INFO: Data are loaded, start creating Blender stuff
+16:07:34 | INFO: Blender create Mesh node painting_1
+16:07:34 | INFO: glTF import finished in 0.00s
+IMAGE BEFORE painting_1 (512, 287)  True True
+IMAGE AFTER painting_1 (512, 287)  False True
+MATERIAL painting_1 [('BSDF_PRINCIPLED', ''), ('OUTPUT_MATERIAL', ''), ('TEX_IMAGE', 'painting_1')]
+Blender 5.0.0 (hash a37564c4df7a built 2025-11-18 11:06:54)
+
+Blender quit
