@@ -1,0 +1,9 @@
+{
+  "source": "assets/runtime/models/level_trace_coat.glb",
+  "source_sha256": "db0da7035f9e2f4a9d9b9f28167fff533b76fcca7788e9f340501313b8e939a7",
+  "runtime_sha256": "6e65b711d4d9feef0686f25b5ebd5fbb5c727152fe3e8dcd4ee10a2fd77d14cf",
+  "triangles": 188,
+  "original_vertices": 274,
+  "policy": "Original surfaces/UV/materials/metre pivot retained; additive shoulder hanger intersects coat and actual hook",
+  "visual_review": "Inspect actual reimported front/side before promotion"
+}

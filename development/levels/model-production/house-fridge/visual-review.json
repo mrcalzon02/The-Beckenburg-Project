@@ -1,0 +1,34 @@
+{
+  "status": "APPROVED FOR SCOPED HOUSE CONSTRUCTION; complete location acceptance remains separate",
+  "reviewer": "Codex actual reimported/front/rear/side and actual runtime inspection",
+  "sources": {
+    "fridge": "180072c4b2a6422d6c570e99cb1781196dc315c6c0d22aa781742460adadaf89",
+    "coat": "6e65b711d4d9feef0686f25b5ebd5fbb5c727152fe3e8dcd4ee10a2fd77d14cf",
+    "atlas": "5554e74300898ae6f67ad41748c865e4c40c870e9f5a3177dea3a5b97ae7334d"
+  },
+  "scores": {
+    "silhouette": 8,
+    "model_specific_surface": 8,
+    "uv_readability": 8,
+    "physical_attachments": 9,
+    "in_room_fit": 8
+  },
+  "reason": "Recognizable two-compartment domestic refrigerator at180triangles with generated enamel detail and attached handles/feet. Explicit UVs follow measured actual atlas boundaries; rear coil panel preserves texture aspect. Coat derivative retains all152original source triangles/UV/materials and adds only36hanger triangles bridging the original gap. Actual source palette and metre-scale room fit are preserved.",
+  "render_hashes": {
+    "coat-front.png": "8e7375ef07eef7bbdeb7af2407cf7604340bcdd833ee0d914fe3eb7bea064b44",
+    "coat-side.png": "f9b57ebf4ad9af2f7f2d81fa49ccaca4589d5098e5d91969def9eb500b279aed",
+    "front-straight.png": "f15f3bbba6c7ecd4628b942fdd112fdc4ae96fbf799e4cc526bccbb140bd0b13",
+    "front.png": "b6511dbf75d2267a0b509334feba29d764ed66bf16c8c0034e87fe9ba02cd73e",
+    "rear.png": "09036c0bbeeb7113a499cff9ea18657b4cc289fcdca41ac109ceaa49725a534b"
+  },
+  "runtime_review": [
+    "kitchen-cold-storage-runtime.png",
+    "supported-coat-hooks-runtime.png",
+    "vestibule-boot-storage-runtime.png",
+    "garden-sitting-and-pots-runtime.png"
+  ],
+  "limits": [
+    "Static closed appliance/coat; no invented thermal/food inventory mechanics",
+    "Door sweep is checked at21sampled poses; full client/hardware and saved editing gates remain"
+  ]
+}
