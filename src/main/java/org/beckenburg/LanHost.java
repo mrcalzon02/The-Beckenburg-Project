@@ -249,10 +249,22 @@ public final class LanHost implements AutoCloseable {
     private LanHost(String ip,int port,GhostIdentity.Type type,boolean identityMode,
             CustomContract config,boolean hostAsGhost,boolean secureLocalOwner,
             HouseMap.Site site,hbnet.Hbnet.Server transport,boolean consoleOnly)throws IOException {
+        this(ip,port,type,identityMode,config,hostAsGhost,secureLocalOwner,site,transport,consoleOnly,
+            new HouseMap(Objects.requireNonNull(site)));
+    }
+    /** Host an immutable authored construction source through the ordinary case validator.
+     * Package scope keeps editor/test previews out of the public lobby selection. */
+    LanHost(String ip,int port,GhostIdentity.Type type,CustomContract config,HouseMap authored)throws IOException{
+        this(ip,port,type,true,config,false,false,authored.site(),null,false,authored);
+    }
+    private LanHost(String ip,int port,GhostIdentity.Type type,boolean identityMode,
+            CustomContract config,boolean hostAsGhost,boolean secureLocalOwner,
+            HouseMap.Site site,hbnet.Hbnet.Server transport,boolean consoleOnly,HouseMap authored)throws IOException {
         consoleAuthorityOnly=consoleOnly;
         secureTransport=transport;
         if(port<0||port>65535)throw new IllegalArgumentException("invalid port");
-        map=new HouseMap(Objects.requireNonNull(site));
+        map=Objects.requireNonNull(authored);
+        if(map.site()!=site)throw new IllegalArgumentException("Authored site mismatch");
         world=new LanWorld(map);
         ghostPose=new LanGhostSpatial(map,4);
         if(!map.valid()||!RitualSites.valid(map))
@@ -757,7 +769,7 @@ public final class LanHost implements AutoCloseable {
                     reply(peer,frenzyFrame());
                     reply(peer,"HIDECONFIG|"+contract.hidingSpots());
                     reply(peer,"LIGHTS|"+lights.snapshot()+"|"+(lights.breaker()?1:0));
-                    if(map.nativeSite())reply(peer,"SOURCE|"+(lights.sourceRunning()?1:0));
+                    if(map.hasGenerator())reply(peer,"SOURCE|"+(lights.sourceRunning()?1:0));
                     // Recover only this investigator's current hiding and imminent threat.
                     // Never reset the pending strike's original authoritative impact tick.
                     reply(peer,"HIDING|"+(world.hidden(peer.slot)?1:0));
@@ -783,7 +795,7 @@ public final class LanHost implements AutoCloseable {
                     reply(peer,"SITE|"+map.site().name()+"|"+map.level().revision());
                     reply(peer,"HIDECONFIG|"+contract.hidingSpots());
                     reply(peer,"LIGHTS|"+lights.snapshot()+"|"+(lights.breaker()?1:0));
-                    if(map.nativeSite())reply(peer,"SOURCE|"+(lights.sourceRunning()?1:0));
+                    if(map.hasGenerator())reply(peer,"SOURCE|"+(lights.sourceRunning()?1:0));
                     reply(peer,"DOORS|"+map.doorSnapshot());
                     reply(peer,"WINDOWS|"+map.windowSnapshot());
                     reply(peer,ghostPose.staminaFrame(tick));
@@ -871,7 +883,7 @@ public final class LanHost implements AutoCloseable {
                         }
                         case INTERFACE -> reply(peer,"INTERACTED|INTERFACE|"+target.id());
                         case SWITCH -> {lights.toggle(Integer.parseInt(target.id()));notifyAllPeers("LIGHTS|"+lights.snapshot()+"|"+(lights.breaker()?1:0));}
-                        case GENERATOR -> {if(!map.nativeSite())throw new IllegalArgumentException("No remote generator");lights.setSourceRunning(!lights.sourceRunning());map.fixtures().power(lights.supplied());notifyAllPeers("SOURCE|"+(lights.sourceRunning()?1:0));}
+                        case GENERATOR -> {if(!map.hasGenerator())throw new IllegalArgumentException("No remote generator");lights.setSourceRunning(!lights.sourceRunning());map.fixtures().power(lights.supplied());notifyAllPeers("SOURCE|"+(lights.sourceRunning()?1:0));}
                         case BREAKER -> {lights.setBreaker(!lights.breaker());map.fixtures().power(lights.supplied());notifyAllPeers("LIGHTS|"+lights.snapshot()+"|"+(lights.breaker()?1:0));}
                         case WINDOW -> map.toggleWindow(Integer.parseInt(target.id()));
                         case DOOR -> {

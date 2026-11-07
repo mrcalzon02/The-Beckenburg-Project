@@ -5,8 +5,10 @@ import javax.imageio.ImageIO;
 /** Native exports must use the exact runtime sampler, including glTF atlas origin and diffuse factor. */
 public final class LevelSceneTextureParityTest {
     public static void main(String[] args)throws Exception{
-        LevelSceneSource.main(new String[]{"HOUSE_REBUILD_ENVELOPE","--output","build/native-texture-parity"});
-        var source=Path.of("build/native-texture-parity/textures");
+        boolean functions=args.length>0&&args[0].equals("HOUSE_REBUILD_FUNCTIONS");
+        String output=functions?"build/native-texture-parity-functions":"build/native-texture-parity";
+        LevelSceneSource.main(new String[]{functions?"HOUSE_REBUILD_FUNCTIONS":"HOUSE_REBUILD_ENVELOPE","--output",output});
+        var source=Path.of(output,"textures");
         int van=GlbProps.model("ggbot_car08_van_shell").triangles().get(0).material(),images=0;long texels=0;
         var matcher=java.util.regex.Pattern.compile("\"id\":(-?[0-9]+)").matcher(Files.readString(source.getParent().resolve("material-metadata.json")));
         while(matcher.find()){

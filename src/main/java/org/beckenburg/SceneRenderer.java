@@ -2541,6 +2541,7 @@ public final class SceneRenderer {
 
     private void levelArchitecture(List<Face> out,HouseMap map){
         if(map.nativeSite()){nativeArchitecture(out,map);return;}
+        generatorControls(out,map);
         scenery(map);
         var enclosure=enclosureFaces.computeIfAbsent(map.level().revision(),
             key->{var owned=new ArrayList<Face>();for(var face:enclosureScenery(map.level()))owned.add(face.owned(13));return List.copyOf(owned);});
@@ -2655,9 +2656,12 @@ public final class SceneRenderer {
         }
         appendRetainedWorld(out,nativeBed,"native-water-bed",map);
     }
+    private void generatorControls(List<Face> out,HouseMap map){
+        for(var socket:map.level().sockets())if(socket.type().equals("generator")){List<Face> control=new ArrayList<>();imported(control,"button_12",socket.x(),socket.y(),socket.z(),.30,socket.yaw());own(out,control,socket.room());}
+    }
     private void nativeArchitecture(List<Face> out,HouseMap map){
         nativeWaterBed(out,map);
-        for(var socket:map.level().sockets())if(socket.type().equals("generator")){List<Face> control=new ArrayList<>();imported(control,"button_12",socket.x(),socket.y(),socket.z(),.30,socket.yaw());own(out,control,socket.room());}
+        generatorControls(out,map);
         for(var instance:HollowCreekScene.instances()){
             if(!objectInView(instance.x(),instance.z(),instance.radius(),100))continue;
             var retained=auxiliaryWorld.get(instance);

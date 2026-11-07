@@ -116,6 +116,7 @@ camera_poses={'castle-rebuild':((59,-65,38),(22,-18,2)),'blackpine':((79,-85,46)
               'briar-rebuild-fit':((36,-39,22),(17,-16,1.4)),
               'briar-rebuild-landscape':((38,-47,29),(15,-19,0)),
               'briar-rebuild-envelope':((38,-47,29),(15,-19,0)),
+              'briar-rebuild-functions':((38,-47,29),(15,-19,0)),
               'farmhouse':((55,-48,15),(27,-20,2.8)),
               'school':((58,-57,17),(28,-24,3.5)),
               'arrival-road':((12,-14,9),(0,5,1.0)),
@@ -142,6 +143,9 @@ if name=='briar-rebuild-landscape':
 if name=='briar-rebuild-envelope':
     scene['source_of_truth']='HouseRebuildEnvelope.java / HouseRebuildLandscape.java / editor landscape-world; regenerate after layout edits'
     scene['production_status']='dwelling envelope construction candidate; complete furnishing/utility/story and mission acceptance pending'
+if name=='briar-rebuild-functions':
+    scene['source_of_truth']='HouseRebuildFunctions.java / HouseRebuildEnvelope.java / editor landscape-world; regenerate after layout edits'
+    scene['production_status']='functional construction candidate; full services/detail/mission acceptance pending; analytic sanctuary haze is runtime postprocessing'
 scene['hiding_density']=json.loads((SRC/'scene-settings.json').read_text()).get('hidingDensity',100);scene['hiding_note']='All potential cupboards shown for authoring; runtime geometry/collision follow the contract density'
 out=ROOT/'development/levels/blender';out.mkdir(parents=True,exist_ok=True)
 suffix='-dressed' if name=='blackpine' else ''

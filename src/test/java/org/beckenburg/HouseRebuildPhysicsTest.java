@@ -14,7 +14,9 @@ public final class HouseRebuildPhysicsTest {
         HouseRebuildLandscapeTest.main(new String[0]);
         HouseRebuildEnvelopeTest.main(new String[0]);
         HouseRebuildFunctionsTest.main(new String[0]);
+        HouseRebuildPowerTest.main(new String[0]);
         LevelSceneTextureParityTest.main(new String[0]);
+        LevelSceneTextureParityTest.main(new String[]{"HOUSE_REBUILD_FUNCTIONS"});
         System.out.println("PASS House construction pilot including editor-punched world terrain; remaining map gates stay open");
     }
 }

@@ -1,0 +1,624 @@
+{
+  "status": "authored source, breaker and controlled loads implemented; physical cable distribution remains unfinished",
+  "source": {
+    "id": "briar-generator-starter",
+    "type": "generator",
+    "room": 13,
+    "x": 25.850201988220217,
+    "y": 0.5635521075922951,
+    "z": 29.442487113166862,
+    "yaw": 0.0,
+    "style": "BHR-MAIN-01"
+  },
+  "breaker": {
+    "id": "briar-rebuild-breaker-10-51",
+    "type": "breaker",
+    "room": 10,
+    "x": 15.085,
+    "y": -1.05,
+    "z": 10.9,
+    "yaw": 1.5707963267948966,
+    "style": "electrical-panel"
+  },
+  "supply_rule": "existing RoomLighting.sourceRunning && RoomLighting.breaker; restart never resets breaker",
+  "circuits": [
+    {
+      "id": "BHR-L01",
+      "room": 0,
+      "name": "Entrance and coat vestibule",
+      "switch": {
+        "id": "briar-rebuild-switch-0-3",
+        "type": "switch",
+        "room": 0,
+        "x": 18.7,
+        "y": 1.2,
+        "z": 20.415,
+        "yaw": 3.141592653589793,
+        "style": "wall-rocker"
+      },
+      "loads": [
+        {
+          "id": "briar-rebuild-light-0-1",
+          "type": "light",
+          "room": 0,
+          "x": 19.0,
+          "y": 2.775,
+          "z": 19.4,
+          "yaw": 0.0,
+          "style": "utility"
+        }
+      ]
+    },
+    {
+      "id": "BHR-L02",
+      "room": 1,
+      "name": "Family sitting room",
+      "switch": {
+        "id": "briar-rebuild-switch-1-7",
+        "type": "switch",
+        "room": 1,
+        "x": 15.2,
+        "y": 1.2,
+        "z": 14.785,
+        "yaw": 0.0,
+        "style": "wall-rocker"
+      },
+      "loads": [
+        {
+          "id": "briar-rebuild-light-1-5",
+          "type": "light",
+          "room": 1,
+          "x": 15.0,
+          "y": 2.775,
+          "z": 17.6,
+          "yaw": 0.0,
+          "style": "utility"
+        }
+      ]
+    },
+    {
+      "id": "BHR-L03",
+      "room": 2,
+      "name": "Kitchen and cellar access",
+      "switch": {
+        "id": "briar-rebuild-switch-2-11",
+        "type": "switch",
+        "room": 2,
+        "x": 17.915,
+        "y": 1.2,
+        "z": 12.7,
+        "yaw": -1.5707963267948966,
+        "style": "wall-rocker"
+      },
+      "loads": [
+        {
+          "id": "briar-rebuild-light-2-9",
+          "type": "light",
+          "room": 2,
+          "x": 16.0,
+          "y": 2.775,
+          "z": 12.4,
+          "yaw": 0.0,
+          "style": "utility"
+        }
+      ]
+    },
+    {
+      "id": "BHR-L04",
+      "room": 3,
+      "name": "Family dining room",
+      "switch": {
+        "id": "briar-rebuild-switch-3-15",
+        "type": "switch",
+        "room": 3,
+        "x": 19.7,
+        "y": 1.2,
+        "z": 13.514999999999999,
+        "yaw": 3.141592653589793,
+        "style": "wall-rocker"
+      },
+      "loads": [
+        {
+          "id": "briar-rebuild-light-3-13",
+          "type": "light",
+          "room": 3,
+          "x": 19.8,
+          "y": 2.775,
+          "z": 11.8,
+          "yaw": 0.0,
+          "style": "utility"
+        }
+      ]
+    },
+    {
+      "id": "BHR-L05",
+      "room": 4,
+      "name": "Stair and service passage",
+      "switch": {
+        "id": "briar-rebuild-switch-4-19",
+        "type": "switch",
+        "room": 4,
+        "x": 18.085,
+        "y": 1.2,
+        "z": 15.8,
+        "yaw": 1.5707963267948966,
+        "style": "wall-rocker"
+      },
+      "loads": [
+        {
+          "id": "briar-rebuild-light-4-17",
+          "type": "light",
+          "room": 4,
+          "x": 18.8,
+          "y": 2.775,
+          "z": 16.5,
+          "yaw": 0.0,
+          "style": "utility"
+        }
+      ]
+    },
+    {
+      "id": "BHR-L06",
+      "room": 5,
+      "name": "Upper landing and linen storage",
+      "switch": {
+        "id": "briar-rebuild-switch-5-23",
+        "type": "switch",
+        "room": 5,
+        "x": 18.7,
+        "y": 4.0,
+        "z": 20.415,
+        "yaw": 3.141592653589793,
+        "style": "wall-rocker"
+      },
+      "loads": [
+        {
+          "id": "briar-rebuild-light-5-21",
+          "type": "light",
+          "room": 5,
+          "x": 18.8,
+          "y": 5.574999999999999,
+          "z": 19.2,
+          "yaw": 0.0,
+          "style": "utility"
+        }
+      ]
+    },
+    {
+      "id": "BHR-L07",
+      "room": 6,
+      "name": "Parents bedroom and dressing",
+      "switch": {
+        "id": "briar-rebuild-switch-6-27",
+        "type": "switch",
+        "room": 6,
+        "x": 15.2,
+        "y": 4.0,
+        "z": 14.785,
+        "yaw": 0.0,
+        "style": "wall-rocker"
+      },
+      "loads": [
+        {
+          "id": "briar-rebuild-light-6-25",
+          "type": "light",
+          "room": 6,
+          "x": 15.0,
+          "y": 5.574999999999999,
+          "z": 17.6,
+          "yaw": 0.0,
+          "style": "utility"
+        }
+      ]
+    },
+    {
+      "id": "BHR-L08",
+      "room": 7,
+      "name": "Child bedroom and study",
+      "switch": {
+        "id": "briar-rebuild-switch-7-31",
+        "type": "switch",
+        "room": 7,
+        "x": 15.2,
+        "y": 4.0,
+        "z": 14.614999999999998,
+        "yaw": 3.141592653589793,
+        "style": "wall-rocker"
+      },
+      "loads": [
+        {
+          "id": "briar-rebuild-light-7-29",
+          "type": "light",
+          "room": 7,
+          "x": 15.0,
+          "y": 5.574999999999999,
+          "z": 12.4,
+          "yaw": 0.0,
+          "style": "utility"
+        }
+      ]
+    },
+    {
+      "id": "BHR-L09",
+      "room": 8,
+      "name": "Family bathroom",
+      "switch": {
+        "id": "briar-rebuild-switch-8-35",
+        "type": "switch",
+        "room": 8,
+        "x": 19.7,
+        "y": 4.0,
+        "z": 13.114999999999998,
+        "yaw": 3.141592653589793,
+        "style": "wall-rocker"
+      },
+      "loads": [
+        {
+          "id": "briar-rebuild-light-8-33",
+          "type": "light",
+          "room": 8,
+          "x": 19.8,
+          "y": 5.574999999999999,
+          "z": 11.6,
+          "yaw": 0.0,
+          "style": "utility"
+        }
+      ]
+    },
+    {
+      "id": "BHR-L10",
+      "room": 9,
+      "name": "Cellar work passage",
+      "switch": {
+        "id": "briar-rebuild-switch-9-39",
+        "type": "switch",
+        "room": 9,
+        "x": 12.085,
+        "y": -1.2,
+        "z": 18.7,
+        "yaw": 1.5707963267948966,
+        "style": "wall-rocker"
+      },
+      "loads": [
+        {
+          "id": "briar-rebuild-light-9-37",
+          "type": "light",
+          "room": 9,
+          "x": 13.5,
+          "y": -0.025,
+          "z": 18.5,
+          "yaw": 0.0,
+          "style": "utility"
+        }
+      ]
+    },
+    {
+      "id": "BHR-L11",
+      "room": 10,
+      "name": "Heating hot-water and laundry",
+      "switch": {
+        "id": "briar-rebuild-switch-10-43",
+        "type": "switch",
+        "room": 10,
+        "x": 18.2,
+        "y": -1.2,
+        "z": 10.085,
+        "yaw": 0.0,
+        "style": "wall-rocker"
+      },
+      "loads": [
+        {
+          "id": "briar-rebuild-light-10-41",
+          "type": "light",
+          "room": 10,
+          "x": 18.3,
+          "y": -0.025,
+          "z": 12.4,
+          "yaw": 0.0,
+          "style": "utility"
+        }
+      ]
+    },
+    {
+      "id": "BHR-L12",
+      "room": 11,
+      "name": "Household and seasonal store",
+      "switch": {
+        "id": "briar-rebuild-switch-11-47",
+        "type": "switch",
+        "room": 11,
+        "x": 18.2,
+        "y": -1.2,
+        "z": 20.415,
+        "yaw": 3.141592653589793,
+        "style": "wall-rocker"
+      },
+      "loads": [
+        {
+          "id": "briar-rebuild-light-11-45",
+          "type": "light",
+          "room": 11,
+          "x": 18.3,
+          "y": -0.025,
+          "z": 17.6,
+          "yaw": 0.0,
+          "style": "utility"
+        }
+      ]
+    }
+  ],
+  "fixture_loads": [
+    {
+      "id": 1,
+      "kind": "SINK_KITCHEN",
+      "room": 2,
+      "x": 17.58850001037121,
+      "y": 0.92,
+      "z": 12.340000009536743,
+      "yaw": 1.5707963267948966,
+      "scale": 1.0,
+      "active": false,
+      "water": 0,
+      "until": 0,
+      "revision": 0
+    },
+    {
+      "id": 2,
+      "kind": "SINK_BATH",
+      "room": 8,
+      "x": 19.85,
+      "y": 3.6599999999999997,
+      "z": 10.34,
+      "yaw": 0.0,
+      "scale": 1.0,
+      "active": false,
+      "water": 0,
+      "until": 0,
+      "revision": 0
+    },
+    {
+      "id": 3,
+      "kind": "WASHING_MACHINE",
+      "room": 10,
+      "x": 19.0,
+      "y": -1.64,
+      "z": 10.52125,
+      "yaw": 0.0,
+      "scale": 1.0,
+      "active": false,
+      "water": 0,
+      "until": 0,
+      "revision": 0
+    },
+    {
+      "id": 4,
+      "kind": "TELEVISION",
+      "room": 1,
+      "x": 17.69083536013961,
+      "y": 0.7400000061048724,
+      "z": 18.000002592802048,
+      "yaw": 1.5707963267948966,
+      "scale": 1.0,
+      "active": false,
+      "water": 0,
+      "until": 0,
+      "revision": 0
+    },
+    {
+      "id": 5,
+      "kind": "ALARM_CLOCK",
+      "room": 1,
+      "x": 14.620001698732377,
+      "y": 0.6439997843838742,
+      "z": 19.890852987393735,
+      "yaw": 0.0,
+      "scale": 1.0,
+      "active": false,
+      "water": 0,
+      "until": 0,
+      "revision": 0
+    },
+    {
+      "id": 6,
+      "kind": "ALARM_CLOCK",
+      "room": 6,
+      "x": 12.870001698732377,
+      "y": 3.443999784383874,
+      "z": 17.190852987393736,
+      "yaw": 0.0,
+      "scale": 1.0,
+      "active": false,
+      "water": 0,
+      "until": 0,
+      "revision": 0
+    },
+    {
+      "id": 7,
+      "kind": "ALARM_CLOCK",
+      "room": 7,
+      "x": 12.870001698732377,
+      "y": 3.443999784383874,
+      "z": 12.690852987393736,
+      "yaw": 0.0,
+      "scale": 1.0,
+      "active": false,
+      "water": 0,
+      "until": 0,
+      "revision": 0
+    },
+    {
+      "id": 8,
+      "kind": "FIRE_ALARM",
+      "room": 0,
+      "x": 18.5,
+      "y": 2.0,
+      "z": 20.392,
+      "yaw": 3.141592653589793,
+      "scale": 1.0,
+      "active": false,
+      "water": 0,
+      "until": 0,
+      "revision": 0
+    },
+    {
+      "id": 9,
+      "kind": "FIRE_ALARM",
+      "room": 1,
+      "x": 17.3,
+      "y": 2.0,
+      "z": 14.808,
+      "yaw": 0.0,
+      "scale": 1.0,
+      "active": false,
+      "water": 0,
+      "until": 0,
+      "revision": 0
+    },
+    {
+      "id": 10,
+      "kind": "FIRE_ALARM",
+      "room": 2,
+      "x": 17.3,
+      "y": 2.0,
+      "z": 10.108,
+      "yaw": 0.0,
+      "scale": 1.0,
+      "active": false,
+      "water": 0,
+      "until": 0,
+      "revision": 0
+    },
+    {
+      "id": 11,
+      "kind": "FIRE_ALARM",
+      "room": 3,
+      "x": 18.108,
+      "y": 2.0,
+      "z": 12.9,
+      "yaw": -1.5707963267948966,
+      "scale": 1.0,
+      "active": false,
+      "water": 0,
+      "until": 0,
+      "revision": 0
+    },
+    {
+      "id": 12,
+      "kind": "FIRE_ALARM",
+      "room": 4,
+      "x": 18.108,
+      "y": 2.0,
+      "z": 15.7,
+      "yaw": -1.5707963267948966,
+      "scale": 1.0,
+      "active": false,
+      "water": 0,
+      "until": 0,
+      "revision": 0
+    },
+    {
+      "id": 13,
+      "kind": "FIRE_ALARM",
+      "room": 5,
+      "x": 18.5,
+      "y": 4.8,
+      "z": 20.392,
+      "yaw": 3.141592653589793,
+      "scale": 1.0,
+      "active": false,
+      "water": 0,
+      "until": 0,
+      "revision": 0
+    },
+    {
+      "id": 14,
+      "kind": "FIRE_ALARM",
+      "room": 6,
+      "x": 15.3,
+      "y": 4.8,
+      "z": 14.808,
+      "yaw": 0.0,
+      "scale": 1.0,
+      "active": false,
+      "water": 0,
+      "until": 0,
+      "revision": 0
+    },
+    {
+      "id": 15,
+      "kind": "FIRE_ALARM",
+      "room": 7,
+      "x": 15.3,
+      "y": 4.8,
+      "z": 14.591999999999999,
+      "yaw": 3.141592653589793,
+      "scale": 1.0,
+      "active": false,
+      "water": 0,
+      "until": 0,
+      "revision": 0
+    },
+    {
+      "id": 16,
+      "kind": "FIRE_ALARM",
+      "room": 8,
+      "x": 20.1,
+      "y": 4.8,
+      "z": 13.091999999999999,
+      "yaw": 3.141592653589793,
+      "scale": 1.0,
+      "active": false,
+      "water": 0,
+      "until": 0,
+      "revision": 0
+    },
+    {
+      "id": 17,
+      "kind": "FIRE_ALARM",
+      "room": 9,
+      "x": 12.108,
+      "y": -0.3999999999999999,
+      "z": 18.500000000000004,
+      "yaw": -1.5707963267948966,
+      "scale": 1.0,
+      "active": false,
+      "water": 0,
+      "until": 0,
+      "revision": 0
+    },
+    {
+      "id": 18,
+      "kind": "FIRE_ALARM",
+      "room": 10,
+      "x": 18.3,
+      "y": -0.3999999999999999,
+      "z": 10.108,
+      "yaw": 0.0,
+      "scale": 1.0,
+      "active": false,
+      "water": 0,
+      "until": 0,
+      "revision": 0
+    },
+    {
+      "id": 19,
+      "kind": "FIRE_ALARM",
+      "room": 11,
+      "x": 18.3,
+      "y": -0.3999999999999999,
+      "z": 20.392,
+      "yaw": 3.141592653589793,
+      "scale": 1.0,
+      "active": false,
+      "water": 0,
+      "until": 0,
+      "revision": 0
+    }
+  ],
+  "open": [
+    "Visible source/distribution wiring with real wall supports",
+    "Ghost-specific authoritative breaker-trip events: current accepted action path pulses RoomLighting, but no ghost-specific persistent breaker-trip path established in this audit",
+    "Full client authored-source presentation and reconnect acceptance after live House promotion",
+    "Physical hardware lighting/performance acceptance"
+  ]
+}

@@ -4224,6 +4224,48 @@ Evidence and verification: development/levels/rebuild/verification/sanctuary-rec
 
 Older-map obligation: Shared runtime van contract applies to all sites; individual map arrival/ghost-route visual acceptance remains required. Analytic animated postprocess haze is not an opaque GLB part and is absent from geometry-only Blender exports. Castle uses whole-headquarters sanctuary.
 
+### DEV-309 — Authored grid-map generator omitted from renderer and LAN source authority
+
+**Status:** corrected candidate; packaged4peerTCP control/state test passes; exact-source online acceptance pending · **Affected:** House functional construction; any authored non-native site with a generator socket
+
+InteractionFocus finds generator sockets but only native-terrain renderer draws starters and LanHost rejects non-native sources or omits state resync.
+
+Cause / uncertainty: Electrical capability is incorrectly inferred from native terrain implementation.
+
+Fix / next action: Use actual authored generator sockets as capability. Share starter geometry across both renderer paths and gate host source interaction/view snapshots on hasGenerator. Existing room-light source/breaker state remains authoritative.
+
+Evidence and verification: house-services-2026-11-07/HouseRebuildPhysicsTest.log includes actual supported starter/panel, connected energy4.8to0.187,4TCP source/breaker,view-resync,ghost/distance rejections; actual runtime controls and lighting captures.
+
+Older-map obligation: Audit each authored generator installation independently. Maps without generator sockets retain prior supply contract; native Hollow Creek control behavior must remain compatible.
+
+### DEV-310 — Full-height generator bounding box makes visible recessed starter unreachable
+
+**Status:** source-derived connected-part collision correction passes actual mesh/host aim and House traversal; final full-map acceptance pending · **Affected:** House functional generator placement
+
+Actual button mesh ray hits61supported camera rays but clearInteractionSight rejects all because base-plinth bounds incorrectly extend to the handle top.
+
+Cause / uncertainty: One overall model AABB is used as solid/optical occupancy over the narrower engine body.
+
+Fix / next action: Preserve overall source bounds for placement reservations. Replace actual generator collider with deterministically derived connected-component source bounds; preserve source mesh/UV/pivot and all interaction reach/occlusion validators.
+
+Evidence and verification: house-services-2026-11-07/rejected-control-approach.log and rejected-control-probe.log; corrected actual4TCP test,50831-position House sweep and generator-control-runtime.png.
+
+Older-map obligation: Audit recessed controls and conservative source collider envelopes individually; this repair does not globally ignore furnishing collision or accept all older installations.
+
+### DEV-311 — Remote-site ghost breaker-trip acceptance remains unproven
+
+**Status:** OPEN AUDIT; no new ghost-specific mechanics invented in this checkpoint · **Affected:** Remote-site power gate and rebuilt House; older locations require individual audit
+
+Source-stop and ordinary hunter breaker interaction pass, but inspected host ghost-action lighting path emits temporary pulses; persistent ghost-specific trip/reset behavior has no proven runtime acceptance.
+
+Cause / uncertainty: Existing power tests explicitly defer ghost-host breaker-trip audit. Neither generator presence nor hunter switching proves the required ghost behavior.
+
+Fix / next action: Trace approved ghost-specific electrical rules, implement missing host behavior through existing RoomLighting breaker if necessary, and execute real accepted-ghost-event, permitted reset, camera/evidence and source-independence acceptance before closing remote power gate.
+
+Evidence and verification: REMOTE_SITE_POWER.md; LanHost accepted ghost-action disruption path; HollowCreekPowerTest and HouseRebuildPowerTest explicitly retain this open gate. This is source/audit evidence, not proof that every ghost should trip a breaker.
+
+Older-map obligation: Audit all remote and older maps individually; no blanket acceptance from House source-stop or packaging. Preserve ghost-specific exceptions and independent fire/oil/battery loads.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

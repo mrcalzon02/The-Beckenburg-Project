@@ -22,6 +22,8 @@ public final class HouseMap {
     HouseRebuildEnvelope.Geometry envelope(){return envelope;}
     AuthoredSitePhysics worldSurface(){return worldSurface;}
     public boolean nativeSite(){return nativeSite!=null;}
+    /** Electrical source capability follows authored controls, independent of terrain format. */
+    public boolean hasGenerator(){return level.sockets().stream().anyMatch(s->s.type().equals("generator"));}
     public SiteTerrain terrain(){return terrain;}
     private LooseClutter clutter;
     private HauntedFixtures fixtures;

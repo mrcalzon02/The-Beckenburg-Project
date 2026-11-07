@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 6917,
+  "count": 6923,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -3364,6 +3364,16 @@
       "sha256": "75e157c0a3806799ba1d57b6be8263ca9d314697b153aa03b627a25b4a190c10"
     },
     {
+      "path": "development/captures/house-functions/native-parcel-overview.png",
+      "url": "development/captures/house-functions/native-parcel-overview.png",
+      "title": "Native parcel overview",
+      "kind": "Native geometry overview",
+      "width": 1200,
+      "height": 900,
+      "bytes": 1418049,
+      "sha256": "249ba698b741420abd18522db6397c31a7b213a4f9844da2ca8c0103e36dcf63"
+    },
+    {
       "path": "development/captures/house-functions/parents-runtime.png",
       "url": "development/captures/house-functions/parents-runtime.png",
       "title": "Parents runtime",
@@ -3592,6 +3602,56 @@
       "height": 400,
       "bytes": 122245,
       "sha256": "18b6245dc7b9f20b209fcb954618927b7c621646d3a696c54c1e4f903fc969ee"
+    },
+    {
+      "path": "development/captures/house-services/breaker-control-runtime.png",
+      "url": "development/captures/house-services/breaker-control-runtime.png",
+      "title": "Breaker control runtime",
+      "kind": "Runtime electrical control and lighting verification",
+      "width": 1000,
+      "height": 625,
+      "bytes": 226154,
+      "sha256": "19cd2b95104393ed53189a9359fd9a8ff024626d7861b832dfa562322f2f2c7c"
+    },
+    {
+      "path": "development/captures/house-services/dining-breaker-tripped-runtime.png",
+      "url": "development/captures/house-services/dining-breaker-tripped-runtime.png",
+      "title": "Dining breaker tripped runtime",
+      "kind": "Runtime electrical control and lighting verification",
+      "width": 1000,
+      "height": 625,
+      "bytes": 248204,
+      "sha256": "0ecb39d695d449eeafcfbe5a37f3e8f27ccb322373bbab7372e278c6d3392f3e"
+    },
+    {
+      "path": "development/captures/house-services/dining-source-stopped-runtime.png",
+      "url": "development/captures/house-services/dining-source-stopped-runtime.png",
+      "title": "Dining source stopped runtime",
+      "kind": "Runtime electrical control and lighting verification",
+      "width": 1000,
+      "height": 625,
+      "bytes": 248204,
+      "sha256": "0ecb39d695d449eeafcfbe5a37f3e8f27ccb322373bbab7372e278c6d3392f3e"
+    },
+    {
+      "path": "development/captures/house-services/dining-supplied-runtime.png",
+      "url": "development/captures/house-services/dining-supplied-runtime.png",
+      "title": "Dining supplied runtime",
+      "kind": "Runtime electrical control and lighting verification",
+      "width": 1000,
+      "height": 625,
+      "bytes": 737011,
+      "sha256": "51bb9f23048ef59c46eddfdb9f0099120c3cdf373f8bdc528a39f013bde9fd19"
+    },
+    {
+      "path": "development/captures/house-services/generator-control-runtime.png",
+      "url": "development/captures/house-services/generator-control-runtime.png",
+      "title": "Generator control runtime",
+      "kind": "Runtime electrical control and lighting verification",
+      "width": 1000,
+      "height": 625,
+      "bytes": 282153,
+      "sha256": "ed2b11e9ebe5aea097892b8593aa2ba1088bb531b35cc644127251a1a292ef8d"
     },
     {
       "path": "development/captures/wall-lamp-runtime/after/wall-lamp-0-off.png",
