@@ -1,0 +1,4 @@
+PASS actual production GPU planner: HOUSE real van floor/body collision at all360 camera headings
+PASS actual production GPU planner: FARMHOUSE real van floor/body collision at all360 camera headings
+PASS actual production GPU planner: SCHOOL real van floor/body collision at all360 camera headings
+PASS 1080 routes; 444 require real two-key WASD input; original .6m sweep and >.5m candidate retained

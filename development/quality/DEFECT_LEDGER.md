@@ -3986,6 +3986,20 @@ Evidence and verification: gh run view42339395744 --log-failed: artifact size wa
 
 Older-map obligation: Shared publication issue affects all locations; no loss or acceptance of their runtime content is inferred.
 
+### DEV-294 — GPU UI smoke rejects valid van exits needing diagonal WASD input
+
+**Status:** diagnostic correction verified locally; actual corrected OpenGL run pending · **Affected:** GPU live UI van movement planning, House/Farmhouse/School
+
+Exact source2293b75f GPU42341030548 passed Castle/11-map renderer checks but failed Briar House live movement with no short collision-valid WASD route.
+
+Cause / uncertainty: Smoke planner tries only W/S/A/D individually. At the actual House spawn148/360 camera headings have no straight .6m single-key route despite valid two-key diagonal movement in the narrow van aisle.
+
+Fix / next action: Plan all8 actual normalized WASD combinations and press/release both real keys for outward and return movement. Preserve .6m swept native-body candidate, >.5m route threshold, >.30m actual forward movement, <.22m return and real X extraction. Include site/coordinates/elevation/yaw in genuine no-route failures.
+
+Evidence and verification: Actual old single-key reproduction148/360; actual corrected production GPU planner passes1080 real House/Farmhouse/School headings,444 needing two keys. Sources/logs in verification/van-input-recovery-2026-11-06. Fresh corrected GPU acceptance required; no geometry/physics threshold was changed.
+
+Older-map obligation: This corrects the GPU diagnostic, not map geometry. Other location van routes and physical-hardware performance remain independently required. Preserve existing van implementation.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

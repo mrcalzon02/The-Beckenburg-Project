@@ -108,33 +108,41 @@ public final class GpuUiSmoke {
   },15,"UI capture blocked: "+name);
   ImageIO.write(image,"png",OUTPUT.resolve(name+".png").toFile());
  }
- private record Walk(int key,int reverse,double x,double z){}
+ private record Walk(int key,int reverse,int second,int secondReverse,double x,double z){}
  private static Walk walk(JPanel panel)throws Exception{
   SceneRenderer scene=(SceneRenderer)field(panel,"scene");
   HouseMap map=(HouseMap)field(panel,"map");
+  return planWalk(map,scene);
+ }
+ private static Walk planWalk(HouseMap map,SceneRenderer scene){
   double feet=scene.eyeHeight-HunterPosture.eye(false);
-  int[] keys={KeyEvent.VK_W,KeyEvent.VK_S,KeyEvent.VK_A,KeyEvent.VK_D};
-  int[] reverse={KeyEvent.VK_S,KeyEvent.VK_W,KeyEvent.VK_D,KeyEvent.VK_A};
-  double[] dx={Math.sin(scene.yaw),-Math.sin(scene.yaw),Math.cos(scene.yaw),-Math.cos(scene.yaw)};
-  double[] dz={Math.cos(scene.yaw),-Math.cos(scene.yaw),-Math.sin(scene.yaw),Math.sin(scene.yaw)};
+  int[] keys={KeyEvent.VK_W,KeyEvent.VK_S,KeyEvent.VK_A,KeyEvent.VK_D,KeyEvent.VK_W,KeyEvent.VK_W,KeyEvent.VK_S,KeyEvent.VK_S};
+  int[] reverse={KeyEvent.VK_S,KeyEvent.VK_W,KeyEvent.VK_D,KeyEvent.VK_A,KeyEvent.VK_S,KeyEvent.VK_S,KeyEvent.VK_W,KeyEvent.VK_W};
+  int[] second={0,0,0,0,KeyEvent.VK_A,KeyEvent.VK_D,KeyEvent.VK_A,KeyEvent.VK_D};
+  int[] secondReverse={0,0,0,0,KeyEvent.VK_D,KeyEvent.VK_A,KeyEvent.VK_D,KeyEvent.VK_A};
+  int[] forward={1,-1,0,0,1,1,-1,-1},strafe={0,0,-1,1,-1,1,-1,1};
   for(int i=0;i<keys.length;i++){
+   double length=Math.hypot(forward[i],strafe[i]);
+   double dx=(Math.sin(scene.yaw)*forward[i]-Math.cos(scene.yaw)*strafe[i])/length;
+   double dz=(Math.cos(scene.yaw)*forward[i]+Math.sin(scene.yaw)*strafe[i])/length;
    var target=map.resolveMove(new LevelDefinition.Vec(scene.x,feet,scene.z),
-       scene.x+dx[i]*.6,scene.z+dz[i]*.6,HunterPosture.STANDING_HEIGHT);
+       scene.x+dx*.6,scene.z+dz*.6,HunterPosture.STANDING_HEIGHT);
    if(target!=null&&Math.hypot(target.x()-scene.x,target.z()-scene.z)>.5)
-    return new Walk(keys[i],reverse[i],scene.x,scene.z);
+    return new Walk(keys[i],reverse[i],second[i],secondReverse[i],scene.x,scene.z);
   }
-  throw new AssertionError("No short collision-valid WASD route from van spawn");
+  throw new AssertionError("No short collision-valid WASD route from van spawn: site="+map.site()+" x="+scene.x+" y="+feet+" z="+scene.z+" yaw="+scene.yaw);
  }
  private static double distance(JPanel panel,Walk route)throws Exception{
   SceneRenderer scene=(SceneRenderer)field(panel,"scene");return Math.hypot(scene.x-route.x(),scene.z-route.z());
  }
  private static void move(JPanel panel,Walk route,boolean returning)throws Exception{
   int code=returning?route.reverse():route.key();
+  int second=returning?route.secondReverse():route.second();
   try{
-   require(()->{key(panel,code,true);return Boolean.TRUE;},10,"Movement input blocked");
+   require(()->{key(panel,code,true);if(second!=0)key(panel,second,true);return Boolean.TRUE;},10,"Movement input blocked");
    require(()->(returning?distance(panel,route)<.22:distance(panel,route)>.30)?Boolean.TRUE:null,
        12,"Live WASD movement did not "+(returning?"return toward van spawn":"advance the hunter"));
-  }finally{SwingUtilities.invokeLater(()->key(panel,code,false));}
+  }finally{SwingUtilities.invokeLater(()->{key(panel,code,false);if(second!=0)key(panel,second,false);});}
  }
  private static JFrame launcher(){
   for(Window w:Window.getWindows())
