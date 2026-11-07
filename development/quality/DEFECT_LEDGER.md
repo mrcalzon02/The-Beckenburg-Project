@@ -4000,6 +4000,20 @@ Evidence and verification: Actual old single-key reproduction148/360; actual cor
 
 Older-map obligation: This corrects the GPU diagnostic, not map geometry. Other location van routes and physical-hardware performance remain independently required. Preserve existing van implementation.
 
+### DEV-295 — Windows Git checkout corrupts frozen native Castle baseline digests
+
+**Status:** exact Windows-style checkout correction verified locally; fresh Windows/native/full acceptance pending · **Affected:** Castle saved-native rebuild resource loading on core.autocrlf=true installations/CI
+
+Full42341031882 actual transcript is342passed/1failed despite overall workflow success: CastleRebuildUpgradeTest cannot load original baseline because its immutable SHA changed.
+
+Cause / uncertainty: Frozen properties were treated as normal text; Windows checkout converts LF to CRLF before packaging. The runtime byte-integrity guard correctly refuses the corrupted baseline.
+
+Fix / next action: Mark only the frozen runtime/source baseline property paths -text in.gitattributes, preserving exact authored bytes and unchanged SHA guards. Add actual historical saved-document upgrade test to required native editor host command, where failure is not advisory.
+
+Evidence and verification: Actual git core.autocrlf=true checkout before pin reproduces all3bad CRLF digests; after pin all3match original immutable hashes and all3source copies. Verification sources/raw failing full transcript in verification/castle-baseline-checkout-2026-11-06. Original43local packaged bodies pass with canonical bytes, but this does not establish fresh remote Windows acceptance.
+
+Older-map obligation: Castle frozen resources only. Individually audit other fingerprinted text assets; do not normalize arbitrary user scenes or infer old map codecs/other packaging fixed.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
