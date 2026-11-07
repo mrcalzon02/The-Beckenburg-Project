@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 7397,
+  "count": 7398,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -3822,6 +3822,16 @@
       "height": 625,
       "bytes": 583115,
       "sha256": "bc7026b916da563ed25da548f8fc8ac20e96eee83e72914ff36b0180e701aecc"
+    },
+    {
+      "path": "development/captures/house-native-migration/windows-editor-rebuilt-kitchen-runtime.png",
+      "url": "development/captures/house-native-migration/windows-editor-rebuilt-kitchen-runtime.png",
+      "title": "Windows editor rebuilt kitchen runtime",
+      "kind": "Runtime saved native House migration",
+      "width": 560,
+      "height": 350,
+      "bytes": 106586,
+      "sha256": "999793bb4266accd57cbe5d56601cddba0da52077cae8f963e2496f6c8310750"
     },
     {
       "path": "development/captures/house-room-review/house_rebuild_services/00-entrance-and-coat-vestibule/east.png",

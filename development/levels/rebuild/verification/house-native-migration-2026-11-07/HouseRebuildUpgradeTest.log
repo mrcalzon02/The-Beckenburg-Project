@@ -1,5 +1,5 @@
 PASS actual supported source/panel aim; connected light energy 4.800000000000001 -> 0.187;4TCP peers source/breaker independence,view-resync,ghost/distance rejection. Ghost-specific trip-event audit remains open.
 PASS 52species/controller accepted electrical arcs; ordinary source/breaker independence,non-electrical/off/stale/rejected negatives;4TCP ghost trip,view-resync and physical reset
-2026-11-07T22:41:13.610514600Z [main] RENDER SLOW stage=idle faces=90393 visible_faces=43749 culled_faces=46644 target=1000x625 build_ms=873 lighting_raster_ms=1525
-2026-11-07T22:41:16.071022800Z [main] RENDER SLOW stage=idle faces=106883 visible_faces=35793 culled_faces=71090 target=1000x625 build_ms=37 lighting_raster_ms=1529
+2026-11-07T23:02:42.794376800Z [main] RENDER SLOW stage=idle faces=90393 visible_faces=43749 culled_faces=46644 target=1000x625 build_ms=851 lighting_raster_ms=1476
+2026-11-07T23:02:45.292612Z [main] RENDER SLOW stage=idle faces=106883 visible_faces=35793 culled_faces=71090 target=1000x625 build_ms=37 lighting_raster_ms=1559
 PASS House native three-way upgrade, actual saved default dispatch, source/ID undo-redo, exact original backup, personal cellar support, authored deltas, conflict rollback and future-version rejection

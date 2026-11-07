@@ -22,6 +22,13 @@ public final class EditorSceneRetentionTest {
         check(((List<?>)field(scene,"castleStaticGeometry")).isEmpty()&&((Map<?,?>)field(scene,"castleAssemblies")).isEmpty()
             &&((List<?>)field(scene,"castleActiveAssemblies")).isEmpty()&&field(scene,"castleGeometryMap")==null
             &&field(scene,"castleEnvironment")==null,"House must not retain inactive Castle CPU faces/owners/environment");
+        if(args.length>0&&args[0].equals("--profile-retirement")){
+            var activate=SceneRenderer.class.getDeclaredMethod("activateResidentScene",Object.class);activate.setAccessible(true);activate.invoke(scene,castle);
+            for(var name:List.of("castleStaticGeometry","castleEnvironment","preparedShellFaces","preparedScenery","residentSceneryFaces","stableGpuFaces","shellGpuFaces","cachedVanFaces","cachedRoadFaces")){
+                var value=field(scene,name);System.out.println(name+"="+(value instanceof Collection<?> c?c.size():value instanceof Map<?,?> m?m.size():value));
+            }
+            System.out.println("RETIRED_PROFILE_PID="+ProcessHandle.current().pid());System.out.flush();Thread.sleep(15000);
+        }
         scene.drawCastle(castle,0,false);
         check(((List<?>)field(scene,"preparedShellFaces")).isEmpty()&&field(scene,"sceneryInstances")==null
             &&((Map<?,?>)field(scene,"preparedScenery")).isEmpty(),"Castle must not retain inactive House CPU geometry");

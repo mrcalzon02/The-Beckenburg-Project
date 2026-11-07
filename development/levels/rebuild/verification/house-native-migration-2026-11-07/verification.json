@@ -1,0 +1,73 @@
+{
+  "status": "LOCAL PACKAGED SOURCE/NATIVE WINDOWS256MB/REAL TCP/PIXEL AND MATERIAL PARITY PASS; exact-source365/full/editor/GPU pending",
+  "parent_pr": 81,
+  "parent_head": "c1fe6f534b2fe33f5fc577417ec0f59bb9e00088",
+  "parent_merge": "1fe0e2490a93c5f148f9f16c686ff7794aa7617e",
+  "parent_runs": {
+    "full": 42420139114,
+    "raw_summary": "passed=362 failed=0 skipped=0 manifest=362",
+    "editor": 42420157493,
+    "gpu": 42420161347,
+    "pages": 42422291152
+  },
+  "construction_revision": "first-principles-functional-furnishings-v1-981935462ed806a0",
+  "native_source": {
+    "room_count": 15,
+    "static_props": 45,
+    "native_triangles": 131793,
+    "packed_images": 230,
+    "native_geometry_unchanged": true
+  },
+  "checks": [
+    "Original versionless native file retained byte-exact; same-document architecture metadata; real saved built-in House dispatch",
+    "Actual human and Agent Services rebuild/undo/redo/save/reopen, persistent node identity and network revision parity",
+    "Retain authored canonical-fixture deltas, original deletion and custom cellar item with correct changed-floor support; refuse room/model/support conflicts before mutating disk",
+    "Required services/story/bed/loose-parent assemblies cannot be moved/deleted as standalone props",
+    "Full source triangle crossing/duplicate/closed-volume containment checks reuse unchanged Castle geometry validation kernel",
+    "Actual saved-House physical source/board approaches;52species-controller electrical cases; soloAI and4TCP source/breaker/trip/resync/reset",
+    "Final365manifest preflight and fresh native43source compile",
+    "Final migration from fresh native classpath at256MB passes in41.494seconds including actual captures/TCP; existing per-entry90second deadline unchanged",
+    "Clean actual Windows editor at256MB; scoped uncaught-thread failure detector rejects earlier false-PASS OOM logs",
+    "Real Castle/House/Castle retirement and exact return pixels; preloaded destination face identity retained",
+    "DynamicGeometryRetention,StaticScenePrebake,PreparedSceneryRetention,ResidentVertexPayload,WorkbenchMaterial,MergedMaterialMetadata checks pass",
+    "Immutable PNG sharing retains separate tint/wrap/alpha/mask/material IDs; all original1254x1254fridge RGBA texels checked and live screens remain independent",
+    "Current140materials/13733203texels match runtime sampler; geometry/UV unchanged",
+    "Actual saved-native kitchen/cellar/landing and560x350Windows editor viewport captures inspected",
+    "Parent actual deployed HTML/index/all98parent House PNGs read back byte-exact (100files total)"
+  ],
+  "heap_diagnostic": {
+    "scope": "Retired-scene jcmd GC.class_histogram class counts; diagnostic, not FPS or total working set",
+    "before_byte_arrays": 90471264,
+    "after_byte_arrays": 56703712,
+    "source_vertex_instances_both": 382323,
+    "inactive_inspected_cpu_caches_empty": true,
+    "renderer_and_image_ownership_fixes_both_required": true
+  },
+  "limitations": [
+    "Fresh unsaved default House remains legacy until final promotion/whole-location acceptance; explicit saved native rebuild is playable",
+    "Dependent complete-assembly authoring and conservative custom wall/unsupported edits need explicit resolution; never discarded silently",
+    "No authored House encounter yet; full matched closed/open door/circuit/light/material/wear and complete client/mission/hardware acceptance remain",
+    "All29packets and later unfinished maps remain active; no round-duration tests",
+    "New migration captures await merged actual Pages delivery; branch publication alone is not deployment"
+  ],
+  "source_files": {
+    "src/main/java/org/beckenburg/HouseSourceVersions.java": "aae4ee7d9b5ee358a30b20566ec8d1df48421dfa635765cf7f6887d592b36dc8",
+    "src/main/java/org/beckenburg/HouseRebuildUpgrade.java": "ee6e9d3cbe85922776af04c830d52492ee453c86334dc350e697cee39e859db7",
+    "src/main/java/org/beckenburg/HouseAuthoringAttachments.java": "4423efec149658f8041b5858b34c263c007d5118d40276e8db9410bf64854cc5",
+    "src/main/java/org/beckenburg/LevelAuthoringSession.java": "df6aa6eae83a99e830c3b7b5754e8fe45cfd33132f40ec8b76879b7f7c3e0985",
+    "src/main/java/org/beckenburg/LevelEditorAgent.java": "c2b8a0f7075de9909d0b0b7e4370c402faf039d0a312f5095fa121999bf060ed",
+    "src/main/java/org/beckenburg/LevelPlans.java": "aa82d06f7e07403abd7a173caffd8fde6075467c52238e79d8855b978b04e9e2",
+    "src/main/java/org/beckenburg/SceneRenderer.java": "c13b5b32bf495cc096d026183d051c44edad8dca76a5aa21965b66334f188ace",
+    "src/main/java/org/beckenburg/GlbProps.java": "c67f8211558d529589e6292e5ef48f2d07935c9f2e598c16f57622402cdcc4d9",
+    "src/main/java/org/beckenburg/CastleRebuildValidation.java": "c6c898027d759564d8ff18ce27f4a36b8ceb4a191da042a42479425a22e46d01",
+    "src/main/java/org/beckenburg/DeveloperLevelEditor.java": "990710a5d6e2182ec28060f71b77608cc18eae261d8d5482596c934b04b5b665",
+    "src/test/java/org/beckenburg/HouseRebuildUpgradeTest.java": "c1c23a9038ad97b6675ff585dbf05be7e4b0d0b2310255b8a5370354ab6b2471",
+    "src/test/java/org/beckenburg/EditorSceneRetentionTest.java": "e10283e3c10cb2316e9c390957c647b752c93dd0410e7fd699b4f4e58c99b9ac",
+    "src/test/java/org/beckenburg/SourceImageSharingTest.java": "abddab8d3c8a947b829d5e61b969bb6a1475bc14cb65d05d133b4dbf6c558896",
+    "src/test/java/org/beckenburg/EditorAgentGuiTest.java": "18e69c275f52f228d50efdd6ff660a6cb25141563058eced8b81bd030a0b5270",
+    "src/test/java/org/beckenburg/GhostElectricalTest.java": "6d982dd0d700f5bd1cd5e352c843fa8ee0b839219e826f2cd7e1b0a4453a6408",
+    "src/test/java/org/beckenburg/HouseRebuildPowerTest.java": "c67647186127a3d073d6713edb66ca1445da1d852f597eb0eac8643c4a8fc967"
+  },
+  "local_package_sha256": "0d3df7f1d6ebf825ffdc2e96c34e28c45ad1f1ca14fe86685b62ecdc6eb6b35f",
+  "hash_scope": "Committed UTF8/LF source semantics; no source asset/model/UV edits in native migration or memory correction."
+}

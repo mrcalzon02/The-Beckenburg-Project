@@ -4632,7 +4632,7 @@ Older-map obligation: Audit fixture/parent relationships individually on each ol
 
 ### DEV-338 — Retained House object validation needs full source-model containment checks
 
-**Status:** SHARED SOURCE-TRIANGLE CHECK IMPLEMENTED; final nested-model regression pending · **Affected:** New native House three-way migration custom-object conflict validation
+**Status:** SCOPED SOURCE/CONFIGURED256MB NATIVE PASS; source-bound365/full/editor/GPU pending; no physical FPS or older-map acceptance · **Affected:** New native House three-way migration custom-object conflict validation
 
 A vertex-inside-body check alone cannot prove that a large retained model does not contain a smaller default fitting or duplicate/cross an open source surface.
 
@@ -4646,7 +4646,7 @@ Older-map obligation: Audit retained custom models and full source supports indi
 
 ### DEV-339 — Windows editor retains inactive Castle geometry while loading rebuilt House and exhausts256MB heap
 
-**Status:** RECOVERY SOURCE PATCHED; configured256MB editor and return-scene retries pending; previous512MB and background-PASS do not accept memory safety · **Affected:** Actual Windows editor switching Castle and House, including native House migration; retained-renderer scene families
+**Status:** SCOPED SOURCE/CONFIGURED256MB NATIVE PASS; source-bound365/full/editor/GPU pending; no physical FPS or older-map acceptance · **Affected:** Actual Windows editor switching Castle and House, including native House migration; retained-renderer scene families
 
 New256MB human-editor migrated kitchen capture produces OutOfMemoryError in D3D Screen Updater, TimerQueue and AWT EventQueue. Histogram retains529264Face objects/50.8MB and881030Point objects/35.2MB plus model/image memory.512MB earlier GUI path passed but does not accept configured256MB.
 
@@ -4660,7 +4660,7 @@ Older-map obligation: Audit scene changes including native locations and GPU own
 
 ### DEV-340 — Scene retirement regression initially calls nonexistent preparation API
 
-**Status:** TEST SOURCE CORRECTED; final package/retention execution pending · **Affected:** New EditorSceneRetentionTest compilation only
+**Status:** SCOPED SOURCE/CONFIGURED256MB NATIVE PASS; source-bound365/full/editor/GPU pending; no physical FPS or older-map acceptance · **Affected:** New EditorSceneRetentionTest compilation only
 
 Compiler rejects prepareStaticLevel(HouseMap).
 
@@ -4674,7 +4674,7 @@ Older-map obligation: No acceptance from a test that failed compilation.
 
 ### DEV-341 — Native GUI test can report PASS after background AWT OutOfMemoryError
 
-**Status:** SOURCE CORRECTED; fatal asynchronous failures now fail native verification; final clean retry pending · **Affected:** EditorAgentGuiTest and reported Windows native acceptance
+**Status:** SCOPED SOURCE/CONFIGURED256MB NATIVE PASS; source-bound365/full/editor/GPU pending; no physical FPS or older-map acceptance · **Affected:** EditorAgentGuiTest and reported Windows native acceptance
 
 256MB retry logs AWT OutOfMemoryError while rebuilding Castle, then prints PASS and exits0 because assertions later succeed.
 
@@ -4685,6 +4685,34 @@ Fix / next action: Install a scoped uncaught-exception handler, retain the first
 Evidence and verification: house-migration-rejected-gui-background-oom.log; native GUI uncaught failure assertion
 
 Older-map obligation: Older green GUI results are scoped evidence; inspect raw logs and do not infer absence of background errors.
+
+### DEV-342 — Identical immutable PNGs decode separately for every imported material
+
+**Status:** SCOPED CORRECTION PASS; actual256MB scene return and clean Windows editor pass · **Affected:** Shared runtime GLB material loading, House/Castle/native editor source collection
+
+After complete inactive-scene retirement, the256MB Castle return still fails. Retired-cache histogram shows90.47MB byte arrays,31.37MB int arrays and30.59MB source vertices; all inspected inactive CPU cache fields are empty.
+
+Cause / uncertainty: GlbProps.decode invokes ImageIO.read for each material, retaining independent identical PNG bitmaps even when materials or models reference the same source image.
+
+Fix / next action: Share immutable decoded PNGs by SHA256 plus readable-cover treatment; keep all material IDs/UV/sampler/factor/alpha metadata separate. Use a bounded512-entry weak-reference lookup so transient native reviews are not retained. No image resizing, artwork changes or raised heap. After sharing the matching retired checkpoint shows56.70MB byte arrays; exact RGBA/material tests, return pixels and real256MB GUI pass.
+
+Evidence and verification: SourceImageSharingTest; house-scene-retired-histogram.log and house-scene-retired-shared-images-histogram.log; clean house-migration-gui-256.log;365manifest/native checks
+
+Older-map obligation: Source PNG sharing covers loader identity only. Preserve per-location material/UV and hardware acceptance; raw heap-class differences are not FPS or total process-memory benchmarks.
+
+### DEV-343 — Image-sharing test uses a live-screen name outside the existing contract
+
+**Status:** TEST FIXTURE CORRECTED; actual independent live-screen/source-image check passes · **Affected:** New source-image-sharing regression fixture only
+
+liveSurfaceMaterial refuses sharing-test-live despite the prior PNG/material assertions passing.
+
+Cause / uncertainty: Fixture omitted required van live screen prefix.
+
+Fix / next action: Use actual named live-screen contract and rerun; preserve rejected fixture log.
+
+Evidence and verification: house-migration-rejected-live-surface-name.log; SourceImageSharingTest.log
+
+Older-map obligation: No source/live-screen runtime failure inferred from the rejected test fixture.
 
 ## Required audit categories
 

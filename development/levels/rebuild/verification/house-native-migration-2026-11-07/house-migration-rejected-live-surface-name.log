@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.IllegalArgumentException: invalid live monitor surface
+	at org.beckenburg.GlbProps.liveSurfaceMaterial(GlbProps.java:229)
+	at org.beckenburg.SourceImageSharingTest.main(SourceImageSharingTest.java:38)
