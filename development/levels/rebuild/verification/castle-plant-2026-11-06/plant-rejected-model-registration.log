@@ -1,0 +1,12 @@
+Exception in thread "main" java.lang.ExceptionInInitializerError
+	at org.beckenburg.CastleLevelEdits.current(CastleLevelEdits.java:261)
+	at org.beckenburg.CastlePlantFitTest.main(CastlePlantFitTest.java:16)
+Caused by: java.lang.IllegalArgumentException: Invalid editable prop plant-boiler-connections
+	at org.beckenburg.CastleLevelEdits$Prop.<init>(CastleLevelEdits.java:32)
+	at org.beckenburg.CastlePlant.prop(CastlePlant.java:11)
+	at org.beckenburg.CastlePlant.installDefaults(CastlePlant.java:16)
+	at org.beckenburg.CastleLevelEdits.defaults(CastleLevelEdits.java:328)
+	at org.beckenburg.CastleLevelEdits.<init>(CastleLevelEdits.java:269)
+	at org.beckenburg.CastleLevelEdits.<init>(CastleLevelEdits.java:265)
+	at org.beckenburg.CastleLevelEdits$DefaultScene.<clinit>(CastleLevelEdits.java:249)
+	... 2 more

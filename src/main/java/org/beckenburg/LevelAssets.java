@@ -25,6 +25,7 @@ public final class LevelAssets {
         "level_camp_bedroll_rolled_authored","level_trace_generator_authored","level_camp_pavilion_authored",
         "level_camp_picnic_table_authored","level_camp_fire_ring_authored");
     public static final Set<String> MODELS=Set.of(
+        "level_castle_plant_connections","level_castle_plant_boiler",
         "level_castle_retail_shelf",
         "bed_4","bed_5","bed_1","bed_2","bedside_table_1","toilet_mp_1","carpet_mp_1",
         "photo_frame_mp_1","painting_1","clock_1","wooden_crate_1","pipe_1","book_mp_2","plate_mp_1",

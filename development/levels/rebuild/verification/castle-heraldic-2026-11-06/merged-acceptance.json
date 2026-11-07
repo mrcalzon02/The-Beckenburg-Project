@@ -1,0 +1,20 @@
+{
+  "full_run": 42325939905,
+  "tested_head": "3c13726963a395f398c5b1a1ae0784994153f0e7",
+  "summary": "passed338 failed0 skipped0 manifest338",
+  "native": 42325944999,
+  "gpu": 42325949533,
+  "merge": "5151b16413b0f8ed6464328f10146719c6506c7b",
+  "pages_run": 42327603009,
+  "pages": "SUCCESS with actual deployed byte readback",
+  "deployed_bytes": {
+    "beckenburg-development-gallery.html": {
+      "bytes": 2469745,
+      "sha256": "278e3d7f851c4f3116b230da93f06355bad614720d67e689572cf6ab364517bd"
+    },
+    "development/levels/rebuild/captures/castle-construction/archive-heraldic-0-runtime.png": {
+      "bytes": 352507,
+      "sha256": "927a93d2b12a8959e89c3b506595c9fb7ce3b1a7aaa931b2fc931c7f6a756ec6"
+    }
+  }
+}

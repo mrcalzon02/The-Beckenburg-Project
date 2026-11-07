@@ -1,0 +1,5 @@
+ROUTE [5.5, 22.0] before=true with=true
+ROUTE [5.5, 24.5] before=false with=false
+ROUTE [1.0, 25.0] before=true with=true
+ROUTE [5.5, 25.0] before=false with=false
+PASS native26-face/56-triangle fireplace, real hearth/wall bearing, backed cold firebox, preserved circulation, collision and exact save/reopen
