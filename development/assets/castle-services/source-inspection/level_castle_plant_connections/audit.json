@@ -1,0 +1,81 @@
+{
+  "source": "assets\\runtime\\models\\level_castle_plant_connections.glb",
+  "sha256": "46bf97856f2a040598a262a4f6cb59953009aae300e6aa05b113d2aa0a6961e8",
+  "materials": [
+    {
+      "mesh": 0,
+      "primitive": 0,
+      "material": "Rebuild Original red",
+      "image": 0,
+      "triangles": 28,
+      "uv_u": [
+        0.10000000149011612,
+        0.8999999761581421
+      ],
+      "uv_v": [
+        0.10000002384185791,
+        0.8999999761581421
+      ],
+      "source_sampler": "glTF normalized UV0, SVG V-origin top-left"
+    },
+    {
+      "mesh": 0,
+      "primitive": 1,
+      "material": "Rebuild Original blue",
+      "image": 1,
+      "triangles": 28,
+      "uv_u": [
+        0.10000000149011612,
+        0.8999999761581421
+      ],
+      "uv_v": [
+        0.10000002384185791,
+        0.8999999761581421
+      ],
+      "source_sampler": "glTF normalized UV0, SVG V-origin top-left"
+    },
+    {
+      "mesh": 0,
+      "primitive": 2,
+      "material": "Rebuild Original steel",
+      "image": 2,
+      "triangles": 28,
+      "uv_u": [
+        0.10000000149011612,
+        0.8999999761581421
+      ],
+      "uv_v": [
+        0.10000002384185791,
+        0.8999999761581421
+      ],
+      "source_sampler": "glTF normalized UV0, SVG V-origin top-left"
+    }
+  ],
+  "warnings": [],
+  "images": [
+    {
+      "id": 0,
+      "name": "Original red diffuse",
+      "width": 64,
+      "height": 64,
+      "png_sha256": "85f12d591c3a01768ff30535d591720f2d588ae6298fcfd73527fb717d969e35",
+      "overlay_triangles": 28
+    },
+    {
+      "id": 1,
+      "name": "Original blue diffuse",
+      "width": 64,
+      "height": 64,
+      "png_sha256": "086c2c71c36b9ac48c23cfe058e3576b69ad083d3f149e68459d8e6746ee98ac",
+      "overlay_triangles": 28
+    },
+    {
+      "id": 2,
+      "name": "Original steel diffuse",
+      "width": 64,
+      "height": 64,
+      "png_sha256": "1262f70c629e60740824c47ce0fb20fb5b52cf15edb25c7e30ce39981f228254",
+      "overlay_triangles": 28
+    }
+  ]
+}

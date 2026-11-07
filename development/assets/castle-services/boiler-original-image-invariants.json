@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "criterion": "Every original embedded PNG remains byte-identical in repaired Castle variant",
+  "images": {
+    "Original iron diffuse": "32ff5a3e887ec1ef8b4b19c6cfb2bd3fefdc6632f1f73822b14f95354cfc507a",
+    "Original enamel diffuse": "bf75d2d042c357a9da1de438ab81456044243faf4c29ac51b0471f8471398fb6",
+    "Original steel diffuse": "1262f70c629e60740824c47ce0fb20fb5b52cf15edb25c7e30ce39981f228254",
+    "Original green diffuse": "78b5c5290a892caca8656c42d44ef2f4f7c76a3ee7ab160ef7a255df261e4330",
+    "Original ivory diffuse": "e23a394efa8ee1df306f9968601592c6c4b61ce4dcf7295057af8d01173cb7e0",
+    "Original red diffuse": "85f12d591c3a01768ff30535d591720f2d588ae6298fcfd73527fb717d969e35",
+    "Original brass diffuse": "4ec9f0df1c428b807398b10a3ed9f754cfc69541c18cdbe59434924e80750ba2",
+    "Original blue diffuse": "086c2c71c36b9ac48c23cfe058e3576b69ad083d3f149e68459d8e6746ee98ac"
+  }
+}

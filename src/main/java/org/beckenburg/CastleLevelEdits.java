@@ -325,6 +325,7 @@ public final class CastleLevelEdits {
         CastleGround.installDefaults(props);
         CastleUpper.installDefaults(surfaces,props,lamps);
         CastleMuseum.installDefaults(props);
+        CastlePlant.installDefaults(props);
         for(var station:CastleHubMap.Station.values())
             stations.put(station,new double[]{station.x,station.z});
         spawnX=13.5;spawnZ=19.3;spawnYaw=Math.PI;

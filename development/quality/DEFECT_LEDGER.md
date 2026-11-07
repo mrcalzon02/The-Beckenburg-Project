@@ -3776,6 +3776,34 @@ Evidence and verification: development/assets/castle-museum/previews/rejected-he
 
 Older-map obligation: Audit other mounting boards/statue/heraldic studies independently; no retrospective older-map acceptance.
 
+### DEV-279 — Reusable modern boiler has fourteen detached detail components and32 zero-area faces
+
+**Status:** fixed-scoped Castle variant; original library retained with older-map audit obligation · **Affected:** Original level_boiler_modern library model and new Castle plant pilot
+
+Actual triangle contact graph rejects9 grille strips,2 vertical trims and3 control buttons as unsupported. Source has32 degenerate triangles.
+
+Cause / uncertainty: Details are offset from actual body/panel surfaces; bevelled body depth was treated as flat. Duplicate coincident source seam vertices leave32 zero-area faces.
+
+Fix / next action: Keep original GLB untouched. Refit14 detail groups by depth-only translations to real source triangle supports plus1mm intersection. Weld duplicate vertices in variant,1452->1420 triangles, identical13.359344312758171m2 surface area. Require actual combined source/connector support, broken-feed negative, fresh source reopen and native fit tests.
+
+Evidence and verification: development/assets/castle-services/rejected-original-boiler-contact.json, boiler-attachment-repairs.json, plant-connected-export.json, plant-broken-feed-negative.json; CastlePlantFitTest; four actual exported material views/clay and native plant captures.
+
+Older-map obligation: Audit every older map using level_boiler_modern or its worn/other boiler variants individually; original source remains unmodified. No global fix/acceptance claim.
+
+### DEV-280 — New plant connector approval omitted the actual selectable editor model catalog
+
+**Status:** fixed-scoped through LevelAssets.MODELS and actual native constructor/catalog regression · **Affected:** New Castle plant boiler/connector integration before promotion
+
+Actual CastleLevelEdits construction rejected plant-boiler-connections as Invalid editable prop despite boolean approval.
+
+Cause / uncertainty: Adding only LevelAssets.approved did not include new IDs in GlbProps.availableModels, which the real native document validates.
+
+Fix / next action: Use the existing approved MODELS set for both new assets, preserving original UV sampling. Require both IDs in actual editor catalog and instantiate/save/reopen/capture the real native scene. Keep original failed log.
+
+Evidence and verification: verification/castle-plant-2026-11-06/plant-rejected-model-registration.log; final CastlePlantFitTest and native plant captures.
+
+Older-map obligation: No allowance or validation threshold relaxed; audit other approved-only model additions individually when integrating them into native scenes.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

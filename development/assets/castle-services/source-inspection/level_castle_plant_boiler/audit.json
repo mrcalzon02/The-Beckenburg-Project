@@ -1,0 +1,201 @@
+{
+  "source": "assets\\runtime\\models\\level_castle_plant_boiler.glb",
+  "sha256": "40d61907f6412f56104067e01b5bd24984ad879bcce7f5c1faddd85934750ff3",
+  "materials": [
+    {
+      "mesh": 0,
+      "primitive": 0,
+      "material": "Rebuild Original iron",
+      "image": 0,
+      "triangles": 180,
+      "uv_u": [
+        0.02500000037252903,
+        0.9750000238418579
+      ],
+      "uv_v": [
+        0.02499997615814209,
+        0.9750000238418579
+      ],
+      "source_sampler": "glTF normalized UV0, SVG V-origin top-left"
+    },
+    {
+      "mesh": 0,
+      "primitive": 1,
+      "material": "Rebuild Original enamel",
+      "image": 1,
+      "triangles": 44,
+      "uv_u": [
+        0.02500000037252903,
+        0.9750000238418579
+      ],
+      "uv_v": [
+        0.02499997615814209,
+        0.9750000238418579
+      ],
+      "source_sampler": "glTF normalized UV0, SVG V-origin top-left"
+    },
+    {
+      "mesh": 0,
+      "primitive": 2,
+      "material": "Rebuild Original steel",
+      "image": 2,
+      "triangles": 84,
+      "uv_u": [
+        0.02500000037252903,
+        0.9750000238418579
+      ],
+      "uv_v": [
+        0.02499997615814209,
+        0.9750000238418579
+      ],
+      "source_sampler": "glTF normalized UV0, SVG V-origin top-left"
+    },
+    {
+      "mesh": 0,
+      "primitive": 3,
+      "material": "Rebuild Original green",
+      "image": 3,
+      "triangles": 28,
+      "uv_u": [
+        0.02500000037252903,
+        0.9750000238418579
+      ],
+      "uv_v": [
+        0.02499997615814209,
+        0.9750000238418579
+      ],
+      "source_sampler": "glTF normalized UV0, SVG V-origin top-left"
+    },
+    {
+      "mesh": 0,
+      "primitive": 4,
+      "material": "Rebuild Original ivory",
+      "image": 4,
+      "triangles": 84,
+      "uv_u": [
+        0.02500000037252903,
+        0.9750000238418579
+      ],
+      "uv_v": [
+        0.02499997615814209,
+        0.9750000238418579
+      ],
+      "source_sampler": "glTF normalized UV0, SVG V-origin top-left"
+    },
+    {
+      "mesh": 0,
+      "primitive": 5,
+      "material": "Rebuild Original red",
+      "image": 5,
+      "triangles": 872,
+      "uv_u": [
+        0.02500000037252903,
+        0.9750000238418579
+      ],
+      "uv_v": [
+        0.02499997615814209,
+        0.9750000238418579
+      ],
+      "source_sampler": "glTF normalized UV0, SVG V-origin top-left"
+    },
+    {
+      "mesh": 0,
+      "primitive": 6,
+      "material": "Rebuild Original brass",
+      "image": 6,
+      "triangles": 56,
+      "uv_u": [
+        0.02500000037252903,
+        0.9750000238418579
+      ],
+      "uv_v": [
+        0.02499997615814209,
+        0.9750000238418579
+      ],
+      "source_sampler": "glTF normalized UV0, SVG V-origin top-left"
+    },
+    {
+      "mesh": 0,
+      "primitive": 7,
+      "material": "Rebuild Original blue",
+      "image": 7,
+      "triangles": 72,
+      "uv_u": [
+        0.02500000037252903,
+        0.9750000238418579
+      ],
+      "uv_v": [
+        0.02499997615814209,
+        0.9750000238418579
+      ],
+      "source_sampler": "glTF normalized UV0, SVG V-origin top-left"
+    }
+  ],
+  "warnings": [],
+  "images": [
+    {
+      "id": 0,
+      "name": "Original iron diffuse",
+      "width": 64,
+      "height": 64,
+      "png_sha256": "32ff5a3e887ec1ef8b4b19c6cfb2bd3fefdc6632f1f73822b14f95354cfc507a",
+      "overlay_triangles": 180
+    },
+    {
+      "id": 1,
+      "name": "Original enamel diffuse",
+      "width": 64,
+      "height": 64,
+      "png_sha256": "bf75d2d042c357a9da1de438ab81456044243faf4c29ac51b0471f8471398fb6",
+      "overlay_triangles": 44
+    },
+    {
+      "id": 2,
+      "name": "Original steel diffuse",
+      "width": 64,
+      "height": 64,
+      "png_sha256": "1262f70c629e60740824c47ce0fb20fb5b52cf15edb25c7e30ce39981f228254",
+      "overlay_triangles": 84
+    },
+    {
+      "id": 3,
+      "name": "Original green diffuse",
+      "width": 64,
+      "height": 64,
+      "png_sha256": "78b5c5290a892caca8656c42d44ef2f4f7c76a3ee7ab160ef7a255df261e4330",
+      "overlay_triangles": 28
+    },
+    {
+      "id": 4,
+      "name": "Original ivory diffuse",
+      "width": 64,
+      "height": 64,
+      "png_sha256": "e23a394efa8ee1df306f9968601592c6c4b61ce4dcf7295057af8d01173cb7e0",
+      "overlay_triangles": 84
+    },
+    {
+      "id": 5,
+      "name": "Original red diffuse",
+      "width": 64,
+      "height": 64,
+      "png_sha256": "85f12d591c3a01768ff30535d591720f2d588ae6298fcfd73527fb717d969e35",
+      "overlay_triangles": 872
+    },
+    {
+      "id": 6,
+      "name": "Original brass diffuse",
+      "width": 64,
+      "height": 64,
+      "png_sha256": "4ec9f0df1c428b807398b10a3ed9f754cfc69541c18cdbe59434924e80750ba2",
+      "overlay_triangles": 56
+    },
+    {
+      "id": 7,
+      "name": "Original blue diffuse",
+      "width": 64,
+      "height": 64,
+      "png_sha256": "086c2c71c36b9ac48c23cfe058e3576b69ad083d3f149e68459d8e6746ee98ac",
+      "overlay_triangles": 72
+    }
+  ]
+}

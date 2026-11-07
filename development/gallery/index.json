@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 6078,
+  "count": 6089,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -1862,6 +1862,76 @@
       "height": 625,
       "bytes": 72407,
       "sha256": "f73fb5cda136929e12a26ef26856e41615e74b8084ccf926682b958cb53c579b"
+    },
+    {
+      "path": "development/assets/castle-services/previews/plant-assembly/front.png",
+      "url": "development/assets/castle-services/previews/plant-assembly/front.png",
+      "title": "Front",
+      "kind": "Model inspection",
+      "width": 800,
+      "height": 1000,
+      "bytes": 699502,
+      "sha256": "b798a6b0ada97604914e062ddcb2fc9d93dcc916a3195f47275072b10616c9bf"
+    },
+    {
+      "path": "development/assets/castle-services/previews/plant-assembly/quarter-clay.png",
+      "url": "development/assets/castle-services/previews/plant-assembly/quarter-clay.png",
+      "title": "Quarter clay",
+      "kind": "Model inspection",
+      "width": 800,
+      "height": 1000,
+      "bytes": 663003,
+      "sha256": "0f5bccff78105f27e0ea1f3706f1f1855e305a7571abb9ecf6e2d63e0a73b3b4"
+    },
+    {
+      "path": "development/assets/castle-services/previews/plant-assembly/quarter.png",
+      "url": "development/assets/castle-services/previews/plant-assembly/quarter.png",
+      "title": "Quarter",
+      "kind": "Model inspection",
+      "width": 800,
+      "height": 1000,
+      "bytes": 761001,
+      "sha256": "f04f933c9cf86bc45188896603114a245a387fd75ce5f71b25b5a19d84ffdfba"
+    },
+    {
+      "path": "development/assets/castle-services/previews/plant-assembly/rear.png",
+      "url": "development/assets/castle-services/previews/plant-assembly/rear.png",
+      "title": "Rear",
+      "kind": "Model inspection",
+      "width": 800,
+      "height": 1000,
+      "bytes": 655531,
+      "sha256": "322f4b8a13847bd950bdcabe568931126114c13036ca46f17ce5bcf086ecc598"
+    },
+    {
+      "path": "development/assets/castle-services/previews/plant-assembly/side.png",
+      "url": "development/assets/castle-services/previews/plant-assembly/side.png",
+      "title": "Side",
+      "kind": "Model inspection",
+      "width": 800,
+      "height": 1000,
+      "bytes": 672568,
+      "sha256": "632fc96658a98598700b0185d25aae9afa01a918f8e9a0f18e19d0e6e8f34e92"
+    },
+    {
+      "path": "development/assets/castle-services/previews/rejected-original-boiler/source-2.png",
+      "url": "development/assets/castle-services/previews/rejected-original-boiler/source-2.png",
+      "title": "Source 2",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 650,
+      "bytes": 75800,
+      "sha256": "8af7754b2006030d90c2fae30e98abea21f54231a194ec704138cecc517e2047"
+    },
+    {
+      "path": "development/assets/castle-services/previews/rejected-original-boiler/source-3.png",
+      "url": "development/assets/castle-services/previews/rejected-original-boiler/source-3.png",
+      "title": "Source 3",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 650,
+      "bytes": 70912,
+      "sha256": "f5798cc516e0798438502e5aa4e1d5ab332dffc91f04e24ff5fe7e8dd8186d3d"
     },
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -57176,6 +57246,36 @@
       "sha256": "7c5ef69f10057891b9bd2442cd407c967890281c222dd8c829d66afec19159f2"
     },
     {
+      "path": "development/levels/rebuild/captures/castle-construction/plant-services-0-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/plant-services-0-runtime.png",
+      "title": "Plant services 0 runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 392762,
+      "sha256": "c8cb408b89befaf495cc8e69a93c28ced4eceed97bbe300bdb15133449f05a96"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/plant-services-1-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/plant-services-1-runtime.png",
+      "title": "Plant services 1 runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 370293,
+      "sha256": "a4cdb0c89a75f5008b498d79aca967d5f27a9516ce3d94da4e3ad7c8d5415344"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/plant-services-2-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/plant-services-2-runtime.png",
+      "title": "Plant services 2 runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 269879,
+      "sha256": "fbf8ebc4a32134e6022b64ce56eaf17070fd295fa1728bf5f46988c540399a09"
+    },
+    {
       "path": "development/levels/rebuild/captures/castle-construction/pre-lighting-cellar-stair-runtime.png",
       "url": "development/levels/rebuild/captures/castle-construction/pre-lighting-cellar-stair-runtime.png",
       "title": "Pre lighting cellar stair runtime",
@@ -57184,6 +57284,16 @@
       "height": 625,
       "bytes": 629248,
       "sha256": "513f96e90957af88f9eba34c9f1ebaee636f92d2c5e432e5516fad4433e90598"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/rejected-plant-overview-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/rejected-plant-overview-runtime.png",
+      "title": "Rejected plant overview runtime",
+      "kind": "Rejected runtime study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 278368,
+      "sha256": "feab588bfecefb60efb8d5e5f112176a8b7847ad1033b0befcac6811d078d868"
     },
     {
       "path": "development/levels/rebuild/captures/castle-construction/rejected-training-annex-tree.png",
