@@ -3946,7 +3946,7 @@ Older-map obligation: Review each other location separately. These new captures 
 
 ### DEV-291 — Saved Castle layouts miss rebuild content and structure-v1 reset discards authored edits
 
-**Status:** implemented and verified by42 packaged Castle/editor/rite checks; exact-source remote acceptance pending · **Affected:** Castle native document loading, saved layout generation and explicit editor rebuild
+**Status:** verified and merged through PR69/70; actual343/0 plus required native Windows/GPU acceptance atfb481f4c · **Affected:** Castle native document loading, saved layout generation and explicit editor rebuild
 
 Unchanged old defaults do not receive newer rooms/fittings; actual old structure-v1 loader changes an authored chair x16.0 back to default15.9.
 
@@ -3960,7 +3960,7 @@ Older-map obligation: Castle-specific native document migration only. Other map 
 
 ### DEV-292 — Native rebuild conflict validation missed fully contained retained objects
 
-**Status:** implemented and verified by42 packaged Castle/editor/rite checks; exact-source remote acceptance pending · **Affected:** Castle explicit saved-scene upgrade validation
+**Status:** verified and merged through PR69/70; actual343/0 plus required native Windows/GPU acceptance atfb481f4c · **Affected:** Castle explicit saved-scene upgrade validation
 
 A retained book on its supported 8cm plinth could be swallowed by the newly placed keeper base without any triangle edge crossing.
 
@@ -3974,21 +3974,21 @@ Older-map obligation: Castle saved-scene upgrade only; other map/model intersect
 
 ### DEV-293 — Development gallery deployment times out while syncing oversized whole-repository artifact
 
-**Status:** open; exact failed deployment diagnosed; source captures remain committed · **Affected:** Shared GitHub Pages development gallery at main25578d283ec4a77971229172098f267da4c66ad3
+**Status:** deployment recovered; actual main Pages HTML/index/native/sky PNG bytes verified atdd70440f; future checkpoints require their own deployment readback · **Affected:** Shared GitHub Pages development gallery at main25578d283ec4a77971229172098f267da4c66ad3
 
 Pages42339395744 builds successfully then exceeds deployment deadline syncing files. Artifact3883804673 bytes exceeds advertised1GB allowance.
 
-Cause / uncertainty: Legacy root Pages publishes the entire source repository including binary production assets and all historical review artifacts.
+Cause / uncertainty: Observed deployment timeout while syncing a3.88GB legacy root artifact. Size warning was diagnostic, not proof of a hard failure threshold; a later same-scale deployment succeeded without a pipeline change.
 
-Fix / next action: Preserve all original evidence and diagnose a bounded gallery publication artifact; independently read back actual deployed HTML/index/images before accepting deployment. Do not infer deployment from source upload or gallery-index success.
+Fix / next action: Retain original captures and verify actual deployed bytes after each checkpoint. Successful42344777413 atdd70440f is independently read back; union-index newly captured resident evidence before the next merge.
 
-Evidence and verification: gh run view42339395744 --log-failed: artifact size warning, syncing_files and timeout; main installer42339396543/gallery42339396635 pass. Full42339396539 still live when observed.
+Evidence and verification: Source verification: verification/castle-story-2026-11-06/main-pages-recovered.json; actual deployed gallery HTML/index plus native museum/cellar and fixed-sky PNGs matchdd70440f bytes. Later story/loose captures remain distinct deployment gates.
 
 Older-map obligation: Shared publication issue affects all locations; no loss or acceptance of their runtime content is inferred.
 
 ### DEV-294 — GPU UI smoke rejects valid van exits needing diagonal WASD input
 
-**Status:** diagnostic correction verified locally; actual corrected OpenGL run pending · **Affected:** GPU live UI van movement planning, House/Farmhouse/School
+**Status:** verified and merged through PR69/70; actual343/0 plus required native Windows/GPU acceptance atfb481f4c · **Affected:** GPU live UI van movement planning, House/Farmhouse/School
 
 Exact source2293b75f GPU42341030548 passed Castle/11-map renderer checks but failed Briar House live movement with no short collision-valid WASD route.
 
@@ -4002,7 +4002,7 @@ Older-map obligation: This corrects the GPU diagnostic, not map geometry. Other 
 
 ### DEV-295 — Windows Git checkout corrupts frozen native Castle baseline digests
 
-**Status:** exact Windows-style checkout correction verified locally; fresh Windows/native/full acceptance pending · **Affected:** Castle saved-native rebuild resource loading on core.autocrlf=true installations/CI
+**Status:** verified and merged through PR69/70; actual343/0 plus required native Windows/GPU acceptance atfb481f4c · **Affected:** Castle saved-native rebuild resource loading on core.autocrlf=true installations/CI
 
 Full42341031882 actual transcript is342passed/1failed despite overall workflow success: CastleRebuildUpgradeTest cannot load original baseline because its immutable SHA changed.
 
