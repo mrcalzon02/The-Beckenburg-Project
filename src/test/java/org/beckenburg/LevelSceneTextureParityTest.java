@@ -5,11 +5,12 @@ import javax.imageio.ImageIO;
 /** Native exports must use the exact runtime sampler, including glTF atlas origin and diffuse factor. */
 public final class LevelSceneTextureParityTest {
     public static void main(String[] args)throws Exception{
+        boolean services=args.length>0&&args[0].equals("HOUSE_REBUILD_SERVICES");
         boolean story=args.length>0&&args[0].equals("HOUSE_REBUILD_STORY");
         boolean fitout=args.length>0&&args[0].equals("HOUSE_REBUILD_FITOUT");
         boolean functions=args.length>0&&args[0].equals("HOUSE_REBUILD_FUNCTIONS");
-        String output=story?"build/native-texture-parity-story":fitout?"build/native-texture-parity-fitout":functions?"build/native-texture-parity-functions":"build/native-texture-parity";
-        LevelSceneSource.main(new String[]{story?"HOUSE_REBUILD_STORY":fitout?"HOUSE_REBUILD_FITOUT":functions?"HOUSE_REBUILD_FUNCTIONS":"HOUSE_REBUILD_ENVELOPE","--output",output});
+        String output=services?"build/native-texture-parity-services":story?"build/native-texture-parity-story":fitout?"build/native-texture-parity-fitout":functions?"build/native-texture-parity-functions":"build/native-texture-parity";
+        LevelSceneSource.main(new String[]{services?"HOUSE_REBUILD_SERVICES":story?"HOUSE_REBUILD_STORY":fitout?"HOUSE_REBUILD_FITOUT":functions?"HOUSE_REBUILD_FUNCTIONS":"HOUSE_REBUILD_ENVELOPE","--output",output});
         var source=Path.of(output,"textures");
         int van=GlbProps.model("ggbot_car08_van_shell").triangles().get(0).material(),images=0;long texels=0;
         var matcher=java.util.regex.Pattern.compile("\"id\":(-?[0-9]+)").matcher(Files.readString(source.getParent().resolve("material-metadata.json")));

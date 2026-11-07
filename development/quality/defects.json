@@ -3437,12 +3437,12 @@
     {
       "id": "DEV-320",
       "title": "Rebuilt House lacks radiators and visible water distribution",
-      "status": "OPEN; next construction pass before promotion",
+      "status": "SOURCE IMPLEMENTED; scoped packaged/real TCP and native geometry checks pass; complete fixture refinement and full House gates remain",
       "affected": "Rebuilt House construction candidate; shared behavior where explicitly noted",
       "symptom": "Boiler exists but the candidate has no authored radiators or visible domestic water distribution, despite the location heat/plumbing history.",
       "cause": "First-principles support/service audit of actual source and runtime behavior",
-      "action": "Place original supported radiators and connected pipes with maintenance clearance; verify physical and optical supports, routes, native parity and runtime views.",
-      "evidence": "development/levels/rebuild/verification/house-story-power-2026-11-07/ and development/captures/house-story/: HouseRebuildFunctions.java and HouseRebuildStory.java source audit",
+      "action": "Retain seven original full-size radiator assets; source-contact flow/return and water/waste nodes share actual closed renderer/physics geometry. Rear boiler service ports preserve its grille. Under-deck distribution avoids pedestrian routes and both stair openings.",
+      "evidence": "development/levels/rebuild/verification/house-heating-water-2026-11-07/HouseRebuildServicesTest.log; services-native-verification.json; services-contacts.json; asset-use.csv;10runtime views and native overview",
       "older_maps": "Audit each older map individually. These House controls do not accept older layouts, plumbing, object supports, lighting or saved native edits."
     },
     {
@@ -3477,6 +3477,28 @@
       "action": "Register every existing stage check as a mandatory isolated manifest entry, including both physical power variants and all four texture variants. Preserve90second per-entry deadline; remove no assertions.",
       "evidence": "development/levels/rebuild/verification/house-story-power-2026-11-07/main-059ca123-full-42363868962.log; LanHunterAnimationGameplayTest.log; scoped-results.json",
       "older_maps": "No map or physical hardware acceptance inferred from test repair. Preserve per-location audit and exact-source full suite gate."
+    },
+    {
+      "id": "DEV-324",
+      "title": "Heating assembly initially treated a placement Assembly as a level",
+      "status": "SCOPED CORRECTION; packaged source/contact and runtime review pass; exact-source CI pending",
+      "affected": "New isolated House heating/water construction candidate",
+      "symptom": "Initial compile of HouseRebuildServices used Fit.finish() without its .level() component.",
+      "cause": "New service integration or visual-review failure discovered during construction",
+      "action": "Consume actual Assembly.level(); final packaged compilation and complete service test pass.",
+      "evidence": "development/levels/rebuild/verification/house-heating-water-2026-11-07/ and development/captures/house-heating-water/: HouseRebuildServices.java; final packaged HouseRebuildServicesTest.log",
+      "older_maps": "No older-map layouts, pipe supports, source surfaces, UVs or electrical behavior are accepted by this House correction. Audit individually."
+    },
+    {
+      "id": "DEV-325",
+      "title": "Initial boiler routing obscures grille and soil pipe has a box silhouette",
+      "status": "SCOPED CORRECTION; packaged source/contact and runtime review pass; exact-source CI pending",
+      "affected": "New isolated House heating/water construction candidate",
+      "symptom": "Actual runtime review showed front-connected boiler pipework covering its ventilation grille and a thick square soil service head.",
+      "cause": "New service integration or visual-review failure discovered during construction",
+      "action": "Use independently verified actual rear service surfaces; preserve source grille. Forty/100mm sanitary runs use closed8sided28triangle sections and a supported service cap. Preserve source electrical24mm geometry.",
+      "evidence": "development/levels/rebuild/verification/house-heating-water-2026-11-07/ and development/captures/house-heating-water/: rejected-boiler-front-pipes-runtime.png; rejected-square-soil-head-runtime.png; corrected boiler-pipework/bathroom-water runtime views",
+      "older_maps": "No older-map layouts, pipe supports, source surfaces, UVs or electrical behavior are accepted by this House correction. Audit individually."
     }
   ],
   "audit_categories": [

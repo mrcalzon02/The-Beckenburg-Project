@@ -1149,7 +1149,7 @@
         },
         "S05": {
           "status": "IN_PROGRESS",
-          "source_sha": "97d79c0196d546caa1defb56937b8defe343031f",
+          "source_sha": "75f1571b7ff70df95f9669ab31323630fb64d055",
           "evidence": [
             "development/levels/rebuild/house/envelope-construction.md",
             "development/levels/rebuild/house/envelope-native-verification.json",
@@ -1165,7 +1165,12 @@
             "development/levels/rebuild/house/story-construction.md",
             "development/levels/rebuild/house/story-native-verification.json",
             "development/levels/rebuild/house/story-belongings.json",
-            "development/levels/rebuild/verification/house-story-power-2026-11-07/verification.json"
+            "development/levels/rebuild/verification/house-story-power-2026-11-07/verification.json",
+            "development/levels/rebuild/house/heating-water-construction.md",
+            "development/levels/rebuild/house/services-native-verification.json",
+            "development/levels/rebuild/house/services-contacts.json",
+            "development/levels/rebuild/house/asset-use.csv",
+            "development/levels/rebuild/verification/house-heating-water-2026-11-07/verification.json"
           ],
           "defects": [
             "DEV-302",
@@ -1186,18 +1191,25 @@
             "DEV-320",
             "DEV-321",
             "DEV-322",
-            "DEV-323"
+            "DEV-323",
+            "DEV-324",
+            "DEV-325"
           ],
-          "next_action": "Verify exact-source359/full/native/GPU and merged gallery; finish House radiator/water distribution and location encounter, final appearance, saved-native/live promotion and full House client/network/mission/hardware acceptance; continue all29 packets and remaining unfinished maps."
+          "next_action": "Verify current360/full/native/GPU and merged Pages; refine valve/vent detail, complete material/light/wear review and authored House encounter, saved editing/live promotion and complete House/client/network/mission/hardware gates; continue all29packets and then remaining unfinished maps."
         },
         "S06": {
           "status": "IN_PROGRESS",
-          "source_sha": "97d79c0196d546caa1defb56937b8defe343031f",
+          "source_sha": "75f1571b7ff70df95f9669ab31323630fb64d055",
           "evidence": [
             "development/levels/rebuild/house/story-construction.md",
             "development/levels/rebuild/house/story-native-verification.json",
             "development/levels/rebuild/house/story-belongings.json",
-            "development/levels/rebuild/verification/house-story-power-2026-11-07/verification.json"
+            "development/levels/rebuild/verification/house-story-power-2026-11-07/verification.json",
+            "development/levels/rebuild/house/heating-water-construction.md",
+            "development/levels/rebuild/house/services-native-verification.json",
+            "development/levels/rebuild/house/services-contacts.json",
+            "development/levels/rebuild/house/asset-use.csv",
+            "development/levels/rebuild/verification/house-heating-water-2026-11-07/verification.json"
           ],
           "defects": [
             "DEV-311",
@@ -1208,18 +1220,25 @@
             "DEV-320",
             "DEV-321",
             "DEV-322",
-            "DEV-323"
+            "DEV-323",
+            "DEV-324",
+            "DEV-325"
           ],
-          "next_action": "Verify exact-source359/full/native/GPU and merged gallery; finish House radiator/water distribution and location encounter, final appearance, saved-native/live promotion and full House client/network/mission/hardware acceptance; continue all29 packets and remaining unfinished maps."
+          "next_action": "Verify current360/full/native/GPU and merged Pages; refine valve/vent detail, complete material/light/wear review and authored House encounter, saved editing/live promotion and complete House/client/network/mission/hardware gates; continue all29packets and then remaining unfinished maps."
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "97d79c0196d546caa1defb56937b8defe343031f",
+          "source_sha": "75f1571b7ff70df95f9669ab31323630fb64d055",
           "evidence": [
             "development/levels/rebuild/house/story-construction.md",
             "development/levels/rebuild/house/story-native-verification.json",
             "development/levels/rebuild/house/story-belongings.json",
-            "development/levels/rebuild/verification/house-story-power-2026-11-07/verification.json"
+            "development/levels/rebuild/verification/house-story-power-2026-11-07/verification.json",
+            "development/levels/rebuild/house/heating-water-construction.md",
+            "development/levels/rebuild/house/services-native-verification.json",
+            "development/levels/rebuild/house/services-contacts.json",
+            "development/levels/rebuild/house/asset-use.csv",
+            "development/levels/rebuild/verification/house-heating-water-2026-11-07/verification.json"
           ],
           "defects": [
             "DEV-311",
@@ -1230,9 +1249,11 @@
             "DEV-320",
             "DEV-321",
             "DEV-322",
-            "DEV-323"
+            "DEV-323",
+            "DEV-324",
+            "DEV-325"
           ],
-          "next_action": "Verify exact-source359/full/native/GPU and merged gallery; finish House radiator/water distribution and location encounter, final appearance, saved-native/live promotion and full House client/network/mission/hardware acceptance; continue all29 packets and remaining unfinished maps."
+          "next_action": "Verify current360/full/native/GPU and merged Pages; refine valve/vent detail, complete material/light/wear review and authored House encounter, saved editing/live promotion and complete House/client/network/mission/hardware gates; continue all29packets and then remaining unfinished maps."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -1243,12 +1264,17 @@
         },
         "S09": {
           "status": "IN_PROGRESS",
-          "source_sha": "97d79c0196d546caa1defb56937b8defe343031f",
+          "source_sha": "75f1571b7ff70df95f9669ab31323630fb64d055",
           "evidence": [
             "development/levels/rebuild/house/story-construction.md",
             "development/levels/rebuild/house/story-native-verification.json",
             "development/levels/rebuild/house/story-belongings.json",
-            "development/levels/rebuild/verification/house-story-power-2026-11-07/verification.json"
+            "development/levels/rebuild/verification/house-story-power-2026-11-07/verification.json",
+            "development/levels/rebuild/house/heating-water-construction.md",
+            "development/levels/rebuild/house/services-native-verification.json",
+            "development/levels/rebuild/house/services-contacts.json",
+            "development/levels/rebuild/house/asset-use.csv",
+            "development/levels/rebuild/verification/house-heating-water-2026-11-07/verification.json"
           ],
           "defects": [
             "DEV-311",
@@ -1259,9 +1285,11 @@
             "DEV-320",
             "DEV-321",
             "DEV-322",
-            "DEV-323"
+            "DEV-323",
+            "DEV-324",
+            "DEV-325"
           ],
-          "next_action": "Verify exact-source359/full/native/GPU and merged gallery; finish House radiator/water distribution and location encounter, final appearance, saved-native/live promotion and full House client/network/mission/hardware acceptance; continue all29 packets and remaining unfinished maps."
+          "next_action": "Verify current360/full/native/GPU and merged Pages; refine valve/vent detail, complete material/light/wear review and authored House encounter, saved editing/live promotion and complete House/client/network/mission/hardware gates; continue all29packets and then remaining unfinished maps."
         },
         "S10": {
           "status": "NOT_AUDITED",

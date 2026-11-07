@@ -1,0 +1,102 @@
+{
+  "head": "75f1571b7ff70df95f9669ab31323630fb64d055",
+  "pr": 78,
+  "files": [
+    {
+      "path": "src/main/java/org/beckenburg/HouseGeneratorFeed.java",
+      "bytes": 2846,
+      "sha256": "27172c487e225d1f260631bd4620d4c8340462bb9d7b98dede1261b4affea66f",
+      "exact": true
+    },
+    {
+      "path": "src/main/java/org/beckenburg/HouseRebuildStory.java",
+      "bytes": 5565,
+      "sha256": "083844ba5cf6fe0eefc8aee828346db1e82203510513e634b15c35e15b342a12",
+      "exact": true
+    },
+    {
+      "path": "src/main/java/org/beckenburg/GhostElectrical.java",
+      "bytes": 1054,
+      "sha256": "3e5cde8c45c91a75ca6480993c7eebc9c9803eca04ba80a47358b13787da4bf3",
+      "exact": true
+    },
+    {
+      "path": "src/test/java/org/beckenburg/HouseRebuildStoryTest.java",
+      "bytes": 12143,
+      "sha256": "be320fc35f433353b33c9a9da75e1539cdf19bd5e3ed3bed8afd8dde91e70fd8",
+      "exact": true
+    },
+    {
+      "path": "regression-tests.txt",
+      "bytes": 8690,
+      "sha256": "d3d072a13b5cd45470c56a6d8c456c04e3a6deb67e195a69cdb5444e15cc123a",
+      "exact": true
+    },
+    {
+      "path": "development/levels/blender/briar-rebuild-story-construction.blend",
+      "bytes": 11861380,
+      "sha256": "eeb03df760b3bd3476f8e39cae48b8f433e1c4758ad1f96fc2069a987d5117f3",
+      "exact": true
+    },
+    {
+      "path": "development/levels/rebuild/house/story-runtime-export.zip",
+      "bytes": 12991111,
+      "sha256": "ddc1432bd08505b593ec9a145e6d33c15657abbd7d7a2cd79e4b8671b76bfe62",
+      "exact": true
+    },
+    {
+      "path": "development/gallery/index.json",
+      "bytes": 3344824,
+      "sha256": "fea9bc6f41ae168b56e227c07c563752207d3618460c9acb7854783449046b42",
+      "exact": true
+    },
+    {
+      "path": "development/captures/house-story/generator-service-outlet-runtime.png",
+      "bytes": 418878,
+      "sha256": "a5a4ff9169d7389f26336d97fcdd628f1ecfe62d357ca4d37704e82e31d6ef1f",
+      "exact": true
+    },
+    {
+      "path": "development/captures/house-story/house-service-inlet-runtime.png",
+      "bytes": 533545,
+      "sha256": "fbfc6a2589dfdeaaaba808624f4cf23208c0d8db67475f7d6c53fc222971641e",
+      "exact": true
+    },
+    {
+      "path": "development/captures/house-story/household-records-runtime.png",
+      "bytes": 833451,
+      "sha256": "8145e3e36f7005d3cb630df504e064dd56b59eb0c6b4a9a34e2947ab07fb4102",
+      "exact": true
+    },
+    {
+      "path": "development/captures/house-story/inherited-mending-runtime.png",
+      "bytes": 475423,
+      "sha256": "7ebe20278cd482ec194caa35bfbd55e3858f3ebba0e5f9af015b15bbf601c85e",
+      "exact": true
+    },
+    {
+      "path": "development/captures/house-story/native-parcel-overview.png",
+      "bytes": 1418959,
+      "sha256": "c6f8ecbf6dcae96597b2a8da653b196a1676b861ae8546786a962390814063e0",
+      "exact": true
+    },
+    {
+      "path": "development/captures/house-story/saved-frame-runtime.png",
+      "bytes": 660623,
+      "sha256": "1be42e40701c8792cf8464fe1e01d33443cca551e9e533a430c7ee16cc03b8d5",
+      "exact": true
+    },
+    {
+      "path": "development/captures/house-story/unfinished-homework-runtime.png",
+      "bytes": 672217,
+      "sha256": "c8c73f3645740def0c0359cc3e9ffeaff201e3fcc165efd3607aa1a00e663472",
+      "exact": true
+    },
+    {
+      "path": "development/captures/house-story/visible-perimeter-feed-runtime.png",
+      "bytes": 334077,
+      "sha256": "9ccb2fa6157a50c3a11d6bc4fcc1b87e1bc6e51ecdc1b3118d2433f183acb44f",
+      "exact": true
+    }
+  ]
+}
