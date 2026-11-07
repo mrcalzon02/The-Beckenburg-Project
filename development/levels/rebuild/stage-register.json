@@ -1091,7 +1091,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "0fb085290b1106e212d04d380e9629644a6a31f0",
+          "source_sha": "a34d3b174f41e4ea53cfbfbe8ec13fe2de892cab",
           "evidence": [
             "src/main/java/org/beckenburg/HouseRebuild.java",
             "development/levels/rebuild/house/graybox-definition.json",
@@ -1103,38 +1103,68 @@
             "development/levels/rebuild/house/fixture-fit.md",
             "development/levels/rebuild/house/landscape-construction.md",
             "development/levels/rebuild/house/landscape-native-verification.json",
-            "development/levels/rebuild/verification/house-landscape-2026-11-06/results.json"
+            "development/levels/rebuild/verification/house-landscape-2026-11-06/results.json",
+            "development/levels/rebuild/house/envelope-construction.md",
+            "development/levels/rebuild/house/envelope-native-verification.json",
+            "development/levels/rebuild/verification/house-envelope-2026-11-06/results.json",
+            "development/levels/rebuild/verification/house-envelope-2026-11-06/house-envelope-enhanced-physics.log"
           ],
           "defects": [
             "DEV-174",
             "DEV-300",
             "DEV-301",
-            "DEV-302"
+            "DEV-302",
+            "DEV-303",
+            "DEV-304",
+            "DEV-305",
+            "DEV-306",
+            "DEV-307"
           ],
-          "next_action": "Five actual source-size fixtures,6072editor terrain triangles/persisted cellar cutouts, physical parcel/arrival solids and all15zone swept circulation verified. Finish visual landscape/terrain acceptance and coherent dwelling roof/exterior (DEV-302), then complete facilities/story/mission/LAN/GPU gates; no dispatched-map promotion yet."
+          "next_action": "One closed dwelling roof/exterior, supported porch, separated openings and owner-directed clear context verified;12packaged checks, enhanced House body and all66material sampler parity pass. Complete remaining terrain/architectural-light review and functional services/furniture/story, then mission/LAN/hardware and dispatch promotion. Other maps retain individual gates."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "0fb085290b1106e212d04d380e9629644a6a31f0",
+          "source_sha": "a34d3b174f41e4ea53cfbfbe8ec13fe2de892cab",
           "evidence": [
             "development/levels/rebuild/house/fixture-fit.md",
             "development/levels/rebuild/house/landscape-construction.md",
             "development/levels/rebuild/house/landscape-native-verification.json",
-            "development/levels/rebuild/verification/house-landscape-2026-11-06/results.json"
+            "development/levels/rebuild/verification/house-landscape-2026-11-06/results.json",
+            "development/levels/rebuild/house/envelope-construction.md",
+            "development/levels/rebuild/house/envelope-native-verification.json",
+            "development/levels/rebuild/verification/house-envelope-2026-11-06/results.json",
+            "development/levels/rebuild/verification/house-envelope-2026-11-06/house-envelope-enhanced-physics.log"
           ],
           "defects": [
             "DEV-300",
             "DEV-301",
-            "DEV-302"
+            "DEV-302",
+            "DEV-303",
+            "DEV-304",
+            "DEV-305",
+            "DEV-306",
+            "DEV-307"
           ],
-          "next_action": "Five actual source-size fixtures,6072editor terrain triangles/persisted cellar cutouts, physical parcel/arrival solids and all15zone swept circulation verified. Finish visual landscape/terrain acceptance and coherent dwelling roof/exterior (DEV-302), then complete facilities/story/mission/LAN/GPU gates; no dispatched-map promotion yet."
+          "next_action": "One closed dwelling roof/exterior, supported porch, separated openings and owner-directed clear context verified;12packaged checks, enhanced House body and all66material sampler parity pass. Complete remaining terrain/architectural-light review and functional services/furniture/story, then mission/LAN/hardware and dispatch promotion. Other maps retain individual gates."
         },
         "S05": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "a34d3b174f41e4ea53cfbfbe8ec13fe2de892cab",
+          "evidence": [
+            "development/levels/rebuild/house/envelope-construction.md",
+            "development/levels/rebuild/house/envelope-native-verification.json",
+            "development/levels/rebuild/verification/house-envelope-2026-11-06/results.json",
+            "development/levels/rebuild/verification/house-envelope-2026-11-06/house-envelope-enhanced-physics.log"
+          ],
+          "defects": [
+            "DEV-302",
+            "DEV-303",
+            "DEV-304",
+            "DEV-305",
+            "DEV-306",
+            "DEV-307"
+          ],
+          "next_action": "One closed dwelling roof/exterior, supported porch, separated openings and owner-directed clear context verified;12packaged checks, enhanced House body and all66material sampler parity pass. Complete remaining terrain/architectural-light review and functional services/furniture/story, then mission/LAN/hardware and dispatch promotion. Other maps retain individual gates."
         },
         "S06": {
           "status": "NOT_AUDITED",
