@@ -38,5 +38,6 @@
     "Water/heating are authored physical scene services, not invented fluid or thermal simulation",
     "Valve/vent refinement and final material/light-bleed audit remain",
     "Authored location encounter, saved native migration, full mission/client/network/hardware acceptance remain"
-  ]
+  ],
+  "implementation_sha": "e91d7e73d5da22d9e52bdad3776a666a4dc17f2d"
 }
