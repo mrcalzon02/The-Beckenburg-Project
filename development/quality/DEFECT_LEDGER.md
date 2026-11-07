@@ -3944,6 +3944,48 @@ Evidence and verification: castle-closeout/castle/castle-rooms.csv:42 rows,39 op
 
 Older-map obligation: Review each other location separately. These new captures replace neither its visual audit nor full native/runtime acceptance.
 
+### DEV-291 — Saved Castle layouts miss rebuild content and structure-v1 reset discards authored edits
+
+**Status:** implemented and verified by42 packaged Castle/editor/rite checks; exact-source remote acceptance pending · **Affected:** Castle native document loading, saved layout generation and explicit editor rebuild
+
+Unchanged old defaults do not receive newer rooms/fittings; actual old structure-v1 loader changes an authored chair x16.0 back to default15.9.
+
+Cause / uncertainty: No built-in content lineage was stored; new defaults are replaced by incoming records. Structure-v1 loading unconditionally selected defaults, discarding valid authored payloads.
+
+Fix / next action: Freeze three actual source-generated baselines; automatically migrate only exact known built-ins with original-byte backups. Keep changed scenes untouched unless explicitly rebuilt by a three-way native editor transaction. Retain edits/deletions, metadata, shared undo and explicit save; reject new masonry/model/support/nav conflicts without modifying source data. Store rebuild generation so current deletions are never resurrected.
+
+Evidence and verification: LegacySceneLossControl old packaged native loader fails with x15.9; corrected native loader retains16.0. CastleRebuildUpgradeTest covers original/pre-furnishing defaults, modified/deleted props, source additions, light/geometry/paint/nav/station/spawn, shared undo/redo/save, actual wall/new-statue/support negatives, current deletions, authored-v1/partial/future source preservation.
+
+Older-map obligation: Castle-specific native document migration only. Other map codecs and arbitrary custom scene visual fitness remain individually unaudited; no global migration or map acceptance.
+
+### DEV-292 — Native rebuild conflict validation missed fully contained retained objects
+
+**Status:** implemented and verified by42 packaged Castle/editor/rite checks; exact-source remote acceptance pending · **Affected:** Castle explicit saved-scene upgrade validation
+
+A retained book on its supported 8cm plinth could be swallowed by the newly placed keeper base without any triangle edge crossing.
+
+Cause / uncertainty: Triangle-edge intersections alone do not detect volume containment or coincident geometry.
+
+Fix / next action: Validate welded closed components using solid-angle winding in both directions; reject identical transformed triangle geometry. Preserve surface contact tolerance. Roll back the complete native transaction on conflict.
+
+Evidence and verification: Actual retained supported book negative failed before correction (castle-upgrade-rejected-containment.log). Corrected native test rejects containment; additional exact-crate duplicate control included.
+
+Older-map obligation: Castle saved-scene upgrade only; other map/model intersections remain individually unaudited.
+
+### DEV-293 — Development gallery deployment times out while syncing oversized whole-repository artifact
+
+**Status:** open; exact failed deployment diagnosed; source captures remain committed · **Affected:** Shared GitHub Pages development gallery at main25578d283ec4a77971229172098f267da4c66ad3
+
+Pages42339395744 builds successfully then exceeds deployment deadline syncing files. Artifact3883804673 bytes exceeds advertised1GB allowance.
+
+Cause / uncertainty: Legacy root Pages publishes the entire source repository including binary production assets and all historical review artifacts.
+
+Fix / next action: Preserve all original evidence and diagnose a bounded gallery publication artifact; independently read back actual deployed HTML/index/images before accepting deployment. Do not infer deployment from source upload or gallery-index success.
+
+Evidence and verification: gh run view42339395744 --log-failed: artifact size warning, syncing_files and timeout; main installer42339396543/gallery42339396635 pass. Full42339396539 still live when observed.
+
+Older-map obligation: Shared publication issue affects all locations; no loss or acceptance of their runtime content is inferred.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

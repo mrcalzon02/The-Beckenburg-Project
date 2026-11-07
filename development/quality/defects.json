@@ -3092,6 +3092,39 @@
       "action": "Append actual saved annex floors and active cellar programme, reject duplicate room IDs, retain stable room IDs and explicit OPEN_PROGRAMME/SEALED_CONTEXT_INSPECTION labels. Preserve body-radius camera checks, source poses, existing navigation/seal tests and all raw images.",
       "evidence": "castle-closeout/castle/castle-rooms.csv:42 rows,39 open programme/3sealed; review.json binds all168 visually reviewed cardinal PNGs and source hashes.",
       "older_maps": "Review each other location separately. These new captures replace neither its visual audit nor full native/runtime acceptance."
+    },
+    {
+      "id": "DEV-291",
+      "title": "Saved Castle layouts miss rebuild content and structure-v1 reset discards authored edits",
+      "status": "implemented and verified by42 packaged Castle/editor/rite checks; exact-source remote acceptance pending",
+      "affected": "Castle native document loading, saved layout generation and explicit editor rebuild",
+      "symptom": "Unchanged old defaults do not receive newer rooms/fittings; actual old structure-v1 loader changes an authored chair x16.0 back to default15.9.",
+      "cause": "No built-in content lineage was stored; new defaults are replaced by incoming records. Structure-v1 loading unconditionally selected defaults, discarding valid authored payloads.",
+      "action": "Freeze three actual source-generated baselines; automatically migrate only exact known built-ins with original-byte backups. Keep changed scenes untouched unless explicitly rebuilt by a three-way native editor transaction. Retain edits/deletions, metadata, shared undo and explicit save; reject new masonry/model/support/nav conflicts without modifying source data. Store rebuild generation so current deletions are never resurrected.",
+      "evidence": "LegacySceneLossControl old packaged native loader fails with x15.9; corrected native loader retains16.0. CastleRebuildUpgradeTest covers original/pre-furnishing defaults, modified/deleted props, source additions, light/geometry/paint/nav/station/spawn, shared undo/redo/save, actual wall/new-statue/support negatives, current deletions, authored-v1/partial/future source preservation.",
+      "older_maps": "Castle-specific native document migration only. Other map codecs and arbitrary custom scene visual fitness remain individually unaudited; no global migration or map acceptance."
+    },
+    {
+      "id": "DEV-292",
+      "title": "Native rebuild conflict validation missed fully contained retained objects",
+      "status": "implemented and verified by42 packaged Castle/editor/rite checks; exact-source remote acceptance pending",
+      "affected": "Castle explicit saved-scene upgrade validation",
+      "symptom": "A retained book on its supported 8cm plinth could be swallowed by the newly placed keeper base without any triangle edge crossing.",
+      "cause": "Triangle-edge intersections alone do not detect volume containment or coincident geometry.",
+      "action": "Validate welded closed components using solid-angle winding in both directions; reject identical transformed triangle geometry. Preserve surface contact tolerance. Roll back the complete native transaction on conflict.",
+      "evidence": "Actual retained supported book negative failed before correction (castle-upgrade-rejected-containment.log). Corrected native test rejects containment; additional exact-crate duplicate control included.",
+      "older_maps": "Castle saved-scene upgrade only; other map/model intersections remain individually unaudited."
+    },
+    {
+      "id": "DEV-293",
+      "title": "Development gallery deployment times out while syncing oversized whole-repository artifact",
+      "status": "open; exact failed deployment diagnosed; source captures remain committed",
+      "affected": "Shared GitHub Pages development gallery at main25578d283ec4a77971229172098f267da4c66ad3",
+      "symptom": "Pages42339395744 builds successfully then exceeds deployment deadline syncing files. Artifact3883804673 bytes exceeds advertised1GB allowance.",
+      "cause": "Legacy root Pages publishes the entire source repository including binary production assets and all historical review artifacts.",
+      "action": "Preserve all original evidence and diagnose a bounded gallery publication artifact; independently read back actual deployed HTML/index/images before accepting deployment. Do not infer deployment from source upload or gallery-index success.",
+      "evidence": "gh run view42339395744 --log-failed: artifact size warning, syncing_files and timeout; main installer42339396543/gallery42339396635 pass. Full42339396539 still live when observed.",
+      "older_maps": "Shared publication issue affects all locations; no loss or acceptance of their runtime content is inferred."
     }
   ],
   "audit_categories": [
