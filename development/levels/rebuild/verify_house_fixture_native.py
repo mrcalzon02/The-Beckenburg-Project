@@ -3,7 +3,8 @@ import bpy,collections,json,hashlib,sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[3]
 landscape='--landscape' in sys.argv
-variant='landscape' if landscape else 'fit'
+envelope='--envelope' in sys.argv
+variant='envelope' if envelope else 'landscape' if landscape else 'fit'
 source=ROOT/('build/level-verification/scenes/briar-rebuild-'+variant)
 native=ROOT/('development/levels/blender/briar-rebuild-'+variant+'-construction.blend')
 digest=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
@@ -13,7 +14,7 @@ scene=bpy.context.scene
 definition=json.loads((source/'definition.json').read_text(encoding='utf-8'))
 faces=json.loads((source/'geometry.json').read_text(encoding='utf-8'))
 assert scene['revision']==definition['revision']
-assert ('HouseRebuildLandscape.java' if landscape else 'HouseRebuildFittings.java') in scene['source_of_truth']
+assert ('HouseRebuildEnvelope.java' if envelope else 'HouseRebuildLandscape.java' if landscape else 'HouseRebuildFittings.java') in scene['source_of_truth']
 assert 'candidate' in scene['production_status']
 assert scene.unit_settings.system=='METRIC' and scene.unit_settings.scale_length==1
 groups=collections.defaultdict(list)
@@ -44,9 +45,9 @@ assert digest(native)==before
 report=dict(level=definition['id'],revision=definition['revision'],triangles=count,packed_images=len(images),props=5,spawns=15,
  native_sha256=before,definition_sha256=digest(source/'definition.json'),geometry_sha256=digest(source/'geometry.json'),
  result='PASS every source vertex/UV; packed images; original sockets; native file unchanged',acceptance='construction candidate only; terrain/boundary and complete map gates open')
-(ROOT/('development/levels/rebuild/house/'+('landscape' if landscape else 'fixture-fit')+'-native-verification.json')).write_bytes((json.dumps(report,indent=2)+'\n').encode('utf-8'))
+(ROOT/('development/levels/rebuild/house/'+('envelope' if envelope else 'landscape' if landscape else 'fixture-fit')+'-native-verification.json')).write_bytes((json.dumps(report,indent=2)+'\n').encode('utf-8'))
 print('PASS House fitted native parity',count,'triangles',len(images),'packed images; no native resave')
-if landscape:
+if landscape or envelope:
  from mathutils import Vector
  scene.world.node_tree.nodes.get('Background').inputs['Strength'].default_value=.8
  for o in scene.objects:
@@ -56,6 +57,11 @@ if landscape:
  scene.camera.location=(37,-46,34)
  scene.camera.rotation_euler=(Vector((14,-19,0))-scene.camera.location).to_track_quat('-Z','Y').to_euler()
  scene.camera.data.lens=30
- scene.render.filepath=str(ROOT/'development/captures/house-landscape/native-parcel-overview.png')
+ scene.render.filepath=str(ROOT/('development/captures/house-'+('envelope' if envelope else 'landscape')+'/native-parcel-overview.png'))
  bpy.ops.render.render(write_still=True)
+ if envelope:
+  scene.camera.location=(27,-27,11);scene.camera.rotation_euler=(Vector((16.8,-16,3))-scene.camera.location).to_track_quat('-Z','Y').to_euler()
+  scene.camera.data.lens=36;scene.render.filepath=str(ROOT/'development/captures/house-envelope/native-front-envelope.png');bpy.ops.render.render(write_still=True)
+  scene.camera.location=(31,-40,7.5);scene.camera.rotation_euler=(Vector((22,-32,1.2))-scene.camera.location).to_track_quat('-Z','Y').to_euler()
+  scene.camera.data.lens=50;scene.render.filepath=str(ROOT/'development/captures/house-envelope/native-van-texture-corrected.png');bpy.ops.render.render(write_still=True)
  assert digest(native)==before

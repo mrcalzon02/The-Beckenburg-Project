@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 6773,
+  "count": 6782,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -3182,6 +3182,96 @@
       "height": 625,
       "bytes": 295946,
       "sha256": "bb36aace8bbf55d4da6403c64c502320ca592153b8fcd6bd7b0b93b99e413816"
+    },
+    {
+      "path": "development/captures/house-envelope/canonical-van-runtime.png",
+      "url": "development/captures/house-envelope/canonical-van-runtime.png",
+      "title": "Canonical van runtime",
+      "kind": "Runtime dwelling construction",
+      "width": 1000,
+      "height": 625,
+      "bytes": 221426,
+      "sha256": "165d9209f3d519f93c12b66570ccd7ac6e00212663fd70e11d0862774e20dd0c"
+    },
+    {
+      "path": "development/captures/house-envelope/covered-entrance-runtime.png",
+      "url": "development/captures/house-envelope/covered-entrance-runtime.png",
+      "title": "Covered entrance runtime",
+      "kind": "Runtime dwelling construction",
+      "width": 1000,
+      "height": 625,
+      "bytes": 424925,
+      "sha256": "fbe4404bbe36ebe40718c0882f27456aaa9ad83b9830e8d0ebbc1200a9e6115a"
+    },
+    {
+      "path": "development/captures/house-envelope/east-envelope-runtime.png",
+      "url": "development/captures/house-envelope/east-envelope-runtime.png",
+      "title": "East envelope runtime",
+      "kind": "Runtime dwelling construction",
+      "width": 1000,
+      "height": 625,
+      "bytes": 542702,
+      "sha256": "5a01629fee185ef59b331747909531500ddb4117aa99a81a0960bd1c9a0bb385"
+    },
+    {
+      "path": "development/captures/house-envelope/front-architecture-runtime.png",
+      "url": "development/captures/house-envelope/front-architecture-runtime.png",
+      "title": "Front architecture runtime",
+      "kind": "Runtime dwelling construction",
+      "width": 1000,
+      "height": 625,
+      "bytes": 370538,
+      "sha256": "77a136fdf490fea4dccb2b3ee47a908e167457341b0330ae01f5f9d3f0b579d2"
+    },
+    {
+      "path": "development/captures/house-envelope/native-front-envelope.png",
+      "url": "development/captures/house-envelope/native-front-envelope.png",
+      "title": "Native front envelope",
+      "kind": "Native geometry overview",
+      "width": 1200,
+      "height": 900,
+      "bytes": 1227145,
+      "sha256": "18f65df9127990a20e180fd21d25622180df7180fa7ee9233dea86afa2ea2690"
+    },
+    {
+      "path": "development/captures/house-envelope/native-parcel-overview.png",
+      "url": "development/captures/house-envelope/native-parcel-overview.png",
+      "title": "Native parcel overview",
+      "kind": "Native geometry overview",
+      "width": 1200,
+      "height": 900,
+      "bytes": 1417223,
+      "sha256": "6f85bd08f06108c92948eefca617891258cdcdaf5b13b0ec8d476fbb7430e61e"
+    },
+    {
+      "path": "development/captures/house-envelope/native-van-texture-corrected.png",
+      "url": "development/captures/house-envelope/native-van-texture-corrected.png",
+      "title": "Native van texture corrected",
+      "kind": "Native texture diagnostic",
+      "width": 1200,
+      "height": 900,
+      "bytes": 1302527,
+      "sha256": "30f787b7eb253dfc59279246246a1037d57cc3bda0f684e24f7138e7d9a2febf"
+    },
+    {
+      "path": "development/captures/house-envelope/rear-service-runtime.png",
+      "url": "development/captures/house-envelope/rear-service-runtime.png",
+      "title": "Rear service runtime",
+      "kind": "Runtime dwelling construction",
+      "width": 1000,
+      "height": 625,
+      "bytes": 425791,
+      "sha256": "30c13d54caa6e0f4c36bd55f35cbd89ad80d18af3be60f13ac1ec55c61be38bb"
+    },
+    {
+      "path": "development/captures/house-envelope/rejected-rear-overlapping-openings-runtime.png",
+      "url": "development/captures/house-envelope/rejected-rear-overlapping-openings-runtime.png",
+      "title": "Rejected rear overlapping openings runtime",
+      "kind": "Rejected runtime inspection",
+      "width": 1000,
+      "height": 625,
+      "bytes": 431445,
+      "sha256": "ae0274bfd69a0f8881cdbc03408afa26f383838b99b165c2b691cbc9fd5d2dba"
     },
     {
       "path": "development/captures/house-fixture-fit/bath-fixture-fit-runtime.png",

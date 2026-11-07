@@ -1,0 +1,3 @@
+Exact runtime source briar-rebuild-envelope: 91227 textured triangles, 67 materials
+Exception in thread "main" java.lang.AssertionError: Van native export atlas differs from actual runtime: 14474/16384 texels; 12006 exceed12combined channel levels
+	at org.beckenburg.LevelSceneTextureParityTest.main(LevelSceneTextureParityTest.java:18)

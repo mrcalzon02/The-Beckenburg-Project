@@ -1,0 +1,18 @@
+HOUSE XYZ geometry checked
+briar-rebuild reached elevations -2.4..2.8
+PASS briar-rebuild: swept van route reaches all 15 zones and all functional sockets, 61328 positions
+PASS HOUSE: disjoint wall finishes, exact deck apertures, distinct floor materials and physical/rendered guards
+PASS authored utilities: 12 reachable wall switches, 14 door acoustic links, 2 vertical stair links, source elevation and ambience
+PASS rebuilt House shell follows authored coordinates: 20817 elevated vertices
+PASS persisted editor holes: source unchanged, rollback/idempotence, 3430 shared render/collision faces, basement player/object/sight passage and filled-ground negatives
+level_kitchen_counter source-size 2.4000000953674316 x 1.1959999799728394 x 0.6969999969005585 floor=0.0
+level_bathtub source-size 1.600000023841858 x 0.8609999874606729 x 0.75 floor=2.8
+toilet_mp_1 source-size 0.5624032318592072 x 1.0063565969467163 x 0.8967615962028503 floor=2.8
+level_bath_basin source-size 0.6600000262260437 x 1.1360000371932983 x 0.5 floor=2.8
+level_laundry_washer source-size 0.6299999952316284 x 0.8725000619888306 x 0.8034999966621399 floor=-2.4
+PASS5 full-scale native fixtures; preserved pivots/terrain/stairs/services/van; swept all15zones and functional sockets: 60964 positions. Construction candidate only.
+REPRO original pilot outdoor walking=0.0 rendered terrain=-0.6499999761581421
+PASS House landscape 6072 source triangles; 1364 shared foot/mesh samples, relief=0.2262502791960873; 560 standing/crouched/body fence seam checks; all15zones/required sockets swept at 50229 positions; real cellar aperture and unchanged canonical van/fittings.
+PASS3 background residences/fences/solids moved12m down street; actual rendered clearance=6.295m; models, road and van retained
+PASS dwelling envelope: 161 closed outward parts, 1948 physical/1664 visible triangles; one20triangle main roof; 11 real openings, source edit/material independence, porch contact and all15zone/socket traversal at 53324 positions; digest=64b6f07f31b2eb6d22d8a812b5fd507bfc0de1e21e55ff6218610a7c140dbb13
+PASS House construction pilot including editor-punched world terrain; remaining map gates stay open
