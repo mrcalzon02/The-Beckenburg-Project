@@ -5,6 +5,7 @@
   "geometry": "Original180triangle closed-box refrigerator with physically overlapping connected hardware; source native Blender and staged/reimported GLB retained",
   "coat_source": "assets/runtime/models/level_trace_coat.glb",
   "coat_source_sha256": "db0da7035f9e2f4a9d9b9f28167fff533b76fcca7788e9f340501313b8e939a7",
-  "coat_policy": "Original surfaces/UV/materials/metre pivot retained; additive shoulder hanger intersects coat and actual hook",
-  "uv_policy": "Actual generated boundaries front40.4percent/side75percent measured and explicitly mapped; standard glTF top-left sampling approved for fridge; original coat UVs/materials unchanged"
+  "coat_policy": "Original surfaces/UV/materials/metre pivot retained; additive shoulder hanger intersects actual hook; cloth gusset joins original detached pocket to actual garment",
+  "uv_policy": "Actual generated boundaries front40.4percent/side75percent measured and explicitly mapped; standard glTF top-left sampling approved for fridge; original coat UVs/materials unchanged",
+  "coat_runtime_sha256": "6aa5250b7a9376fb1b57490bbd6511e5f58891c51589bf9a0948e87915bb540a"
 }

@@ -27,7 +27,7 @@ resync. The original coat geometry/UV/material subset is retained; fridge atlas
 sampling is exact. All six native texture variants pass; current140materials/
 13733203texels match actual runtime sampling.
 
-Native131781triangles/UVs,230packed images,45props,15spawns and original socket
+Native131793triangles/UVs,230packed images,45props,15spawns and original socket
 transforms reopen unchanged. Four purpose-specific runtime views and the native
 overview were inspected. The rejected fridge capture preserves an incorrect
 camera-room hint that selected the cellar; current cameras require actual room

@@ -3538,9 +3538,9 @@
       "title": "Original coat floats below its source hook",
       "status": "SCOPED CORRECTION; actual source/export/runtime checks pass; exact-source CI pending",
       "affected": "New House furnishing/asset-generation diagnostic; older source/audits remain individually unaudited",
-      "symptom": "Existing level_trace_coat front/side source review shows a shoulder-to-hook gap.",
+      "symptom": "Existing level_trace_coat front/side source review shows a shoulder-to-hook gap. Subsequent component audit also found the original pocket back12mm off the cloth card; the188triangle hanger-only approval was incomplete.",
       "cause": "Source attachment gap, Blender lifetime/failure-propagation or incorrect stacked-floor review metadata",
-      "action": "Create additive188triangle sibling: preserve original152triangle surfaces/UV/material/pivot and bridge shoulder to hook with36triangle wooden hanger. Original file remains untouched; source subset and runtime attachment checks pass.",
+      "action": "Deliver200triangle additive sibling: retain all152original geometry/UV/material triangles, add36triangle hanger and12triangle closed cloth gusset. Independent decoded-component test proves garment/pocket bridge. Supersede prior approval and retain188GLB/side view as rejected evidence.",
       "evidence": "development/levels/model-production/house-fridge/; development/levels/rebuild/verification/house-functional-fill-2026-11-07/; development/captures/house-functional-fill/: coat-verification.json; coat-front/coat-side previews; HouseRebuildFurnishingsTest.log",
       "older_maps": "Audit older model attachments, camera ownership/elevation and strict generation status individually; no blanket older-map or hardware acceptance."
     },

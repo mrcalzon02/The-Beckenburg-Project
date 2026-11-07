@@ -8,14 +8,29 @@ public final class HouseRebuildFurnishingsTest {
     static void check(boolean ok,String message){if(!ok)throw new AssertionError(message);}
     static String corner(GlbProps.Vertex v){return Math.round(v.x()*1e5)+":"+Math.round(v.y()*1e5)+":"+Math.round(v.z()*1e5)+":"+Math.round(v.u()*1e5)+":"+Math.round(v.v()*1e5);}
     static String face(GlbProps.Triangle t){var keys=new ArrayList<>(List.of(corner(t.a()),corner(t.b()),corner(t.c())));Collections.sort(keys);return GlbProps.materialName(t.material())+keys;}
+    static String point(GlbProps.Vertex v){return Math.round(v.x()*1e5)+":"+Math.round(v.y()*1e5)+":"+Math.round(v.z()*1e5);}
+    static List<double[]> sourceBoxes(String model){
+        var triangles=GlbProps.model(model).triangles();var ids=new HashMap<String,Integer>();var roots=new ArrayList<Integer>();
+        for(var t:triangles){int first=-1;for(var v:List.of(t.a(),t.b(),t.c())){String key=point(v);Integer id=ids.get(key);if(id==null){id=roots.size();ids.put(key,id);roots.add(id);}if(first<0)first=id;else roots.set(HouseRebuildFunctions.Fit.root(roots,id),HouseRebuildFunctions.Fit.root(roots,first));}}
+        var groups=new HashMap<Integer,List<GlbProps.Vertex>>();var counts=new HashMap<Integer,Integer>();
+        for(var t:triangles){int root=HouseRebuildFunctions.Fit.root(roots,ids.get(point(t.a())));groups.computeIfAbsent(root,k->new ArrayList<>()).addAll(List.of(t.a(),t.b(),t.c()));counts.merge(root,1,Integer::sum);}
+        var boxes=new ArrayList<double[]>();
+        for(var entry:groups.entrySet())if(counts.get(entry.getKey())==12){var b=new double[]{9,9,9,-9,-9,-9};var unique=new HashSet<String>();
+            for(var v:entry.getValue()){unique.add(point(v));double[] p={v.x(),v.y(),v.z()};for(int i=0;i<3;i++){b[i]=Math.min(b[i],p[i]);b[i+3]=Math.max(b[i+3],p[i]);}}
+            boolean box=unique.size()==8;for(var v:entry.getValue()){double[] p={v.x(),v.y(),v.z()};for(int i=0;i<3;i++)box&=Math.abs(p[i]-b[i])<1e-5||Math.abs(p[i]-b[i+3])<1e-5;}if(box)boxes.add(b);
+        }return boxes;
+    }
     static boolean inside(Collider c,double x,double y,double z){double dx=x-c.x(),dz=z-c.z(),co=Math.cos(c.yaw()),si=Math.sin(c.yaw());return Math.abs(dx*co+dz*si)<c.halfX()-.003&&Math.abs(-dx*si+dz*co)<c.halfZ()-.003&&y>c.y()+.003&&y<c.y()+c.height()-.003;}
     public static void main(String[] args)throws Exception{
         var map=HouseRebuildFurnishings.map();var base=HouseRebuildServices.source();
         check(map.level().props().size()==45,"Missing daily-use/garden functions");check(map.level().stairs().equals(base.stairs())&&map.level().voids().equals(base.voids())&&map.level().dock().equals(base.dock())&&map.level().portals().equals(base.portals()),"Furnishing changed authored structure/arrival");
         check(GlbProps.model("level_house_fridge_worn").triangles().size()==180,"Fridge must keep inspected180triangle asset");
-        check(GlbProps.model("level_house_coat_hung").triangles().size()==188,"Coat must keep additive supported hanger");
+        check(GlbProps.model("level_house_coat_hung").triangles().size()==200,"Coat must keep supported hanger and original pocket gusset");
         var retained=new HashSet<String>();for(var t:GlbProps.model("level_house_coat_hung").triangles())retained.add(face(t));
         for(var t:GlbProps.model("level_trace_coat").triangles())check(retained.contains(face(t)),"Coat source geometry/UV/material was replaced");
+        double garment=HouseRebuildServices.face(new Prop("level_trace_coat",0,0,0,0,1,0,1,1,2,"source"),2,-.24,.83,false).z();
+        var pocket=sourceBoxes("level_trace_coat").stream().filter(b->b[0]<-.24&&b[3]>-.24&&b[1]<.83&&b[4]>.83&&b[2]>garment+.002).findFirst().orElseThrow();
+        check(sourceBoxes("level_house_coat_hung").stream().anyMatch(b->b[0]<-.24&&b[3]>-.24&&b[1]<.83&&b[4]>.83&&b[2]<garment&&b[5]>pocket[2]),"Original pocket still floats off garment without a real closed gusset");
         int mat=GlbProps.model("level_house_fridge_worn").triangles().get(0).material();var atlas=ImageIO.read(Path.of("development/levels/model-production/house-fridge/atlas-v1.png").toFile());
         for(int y=0;y<16;y++)for(int x=0;x<16;x++){double u=(x+.5)/16,v=(y+.5)/16;int expected=atlas.getRGB((int)(u*atlas.getWidth()),(int)(v*atlas.getHeight()))&0xffffff;check(GlbProps.sample(mat,u,v)==expected,"Fridge source atlas origin/factor differs at "+x+","+y);}
         var terrain=WorldTerrainSurface.of(map.level());var bench=map.level().props().stream().filter(p->p.mesh().equals("level_camp_bench")).findFirst().orElseThrow();

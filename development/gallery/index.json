@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 7390,
+  "count": 7391,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -3461,7 +3461,7 @@
       "width": 1200,
       "height": 900,
       "bytes": 1418936,
-      "sha256": "e1f812953bacff84f6c087565411edcba590179aa7216365b9cfd626f7052a08"
+      "sha256": "eec0aea45b1fa8fa1297e2667bb2c613f2490c52f4540787f65e0b870909df87"
     },
     {
       "path": "development/captures/house-functional-fill/rejected-cold-storage-camera-floor-runtime.png",
@@ -3480,8 +3480,8 @@
       "kind": "Runtime daily household and garden functions",
       "width": 1000,
       "height": 625,
-      "bytes": 688286,
-      "sha256": "0b7a1f80d52eba030a5922499afb48f5d663962b39a4e3ce0c98ea154e80c07e"
+      "bytes": 688344,
+      "sha256": "be4dbd1712fc9bf03c4f8d2de72a6269abb4f5d84d4c48379bba75c2f9d42bee"
     },
     {
       "path": "development/captures/house-functional-fill/vestibule-boot-storage-runtime.png",
@@ -3490,8 +3490,8 @@
       "kind": "Runtime daily household and garden functions",
       "width": 1000,
       "height": 625,
-      "bytes": 772866,
-      "sha256": "0e66e54eb420f8a0bec2e43c4be94d8fad4e6396391e0cf169ca9fb1b8724a06"
+      "bytes": 772900,
+      "sha256": "df635f0cb636fb1e6a72d061074d06aa19f3e0fb5d53be58bff40ca874b40486"
     },
     {
       "path": "development/captures/house-functions/cellar-store-runtime.png",
@@ -5410,8 +5410,8 @@
       "kind": "Model inspection",
       "width": 1536,
       "height": 640,
-      "bytes": 848487,
-      "sha256": "8e7375ef07eef7bbdeb7af2407cf7604340bcdd833ee0d914fe3eb7bea064b44"
+      "bytes": 848609,
+      "sha256": "050d0df95b0fae80d4bca643f082b5c679b7c6b57bdee5414c32b1ce677c2e3e"
     },
     {
       "path": "development/levels/model-production/house-fridge/previews/coat-side.png",
@@ -5420,8 +5420,8 @@
       "kind": "Model inspection",
       "width": 1536,
       "height": 640,
-      "bytes": 795673,
-      "sha256": "f9b57ebf4ad9af2f7f2d81fa49ccaca4589d5098e5d91969def9eb500b279aed"
+      "bytes": 795631,
+      "sha256": "359b6cee801faea2a9ffea4e9bab9a69b0c2e65f8bf44e81a5d2f92fd90dd2de"
     },
     {
       "path": "development/levels/model-production/house-fridge/previews/front-straight.png",
@@ -5452,6 +5452,16 @@
       "height": 640,
       "bytes": 903215,
       "sha256": "09036c0bbeeb7113a499cff9ea18657b4cc289fcdca41ac109ceaa49725a534b"
+    },
+    {
+      "path": "development/levels/model-production/house-fridge/previews/rejected-coat-pocket-gap-side.png",
+      "url": "development/levels/model-production/house-fridge/previews/rejected-coat-pocket-gap-side.png",
+      "title": "Rejected coat pocket gap side",
+      "kind": "Rejected model study",
+      "width": 1536,
+      "height": 640,
+      "bytes": 795673,
+      "sha256": "f9b57ebf4ad9af2f7f2d81fa49ccaca4589d5098e5d91969def9eb500b279aed"
     },
     {
       "path": "development/levels/previews/arrival-road-blender-exterior.png",

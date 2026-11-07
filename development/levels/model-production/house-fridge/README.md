@@ -9,9 +9,9 @@ than assumed from the prompt. Source Blender, staged GLB, reimported front/rear
 renders, hashes and reasoned visual review are retained. Runtime source sampling
 checks the actual atlas origin and diffuse factor at256points.
 
-The188triangle supported coat is an additive sibling of the original152triangle
+The200triangle supported coat is an additive sibling of the original152triangle
 `level_trace_coat`. Its mesh coordinates, UVs, materials and native pivot remain;
-36hanger triangles connect its shoulder to the actual existing hook. The original
+36hanger and12pocket-gusset triangles connect its shoulder to the actual existing hook. The original
 source file is untouched, and every original source triangle is checked as a
 retained subset. Reimported front/side and actual in-room views were inspected.
 
