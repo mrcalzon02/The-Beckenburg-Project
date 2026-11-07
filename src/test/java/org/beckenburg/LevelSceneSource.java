@@ -31,14 +31,16 @@ public final class LevelSceneSource {
         if(args.length>0&&(args[0].equals("ARRIVAL")||args[0].equals("CASTLE_SURROUNDINGS")||args[0].startsWith("ENCLOSURE_"))){module(args[0]);return;}
         boolean fitted=args.length>0&&args[0].equals("HOUSE_REBUILD_FIT");
         boolean landscape=args.length>0&&args[0].equals("HOUSE_REBUILD_LANDSCAPE");
-        HouseMap map=landscape?HouseRebuildLandscape.map():fitted?HouseRebuildFittings.map():args.length>0&&args[0].equals("HOUSE_REBUILD")?HouseRebuild.graybox():args.length>0&&args[0].equals("BLACKPINE")?BlackpineLevel.map():new HouseMap(args.length>0?HouseMap.Site.valueOf(args[0]):HouseMap.Site.HOUSE);
+        boolean envelope=args.length>0&&args[0].equals("HOUSE_REBUILD_ENVELOPE");
+        HouseMap map=envelope?HouseRebuildEnvelope.map():landscape?HouseRebuildLandscape.map():fitted?HouseRebuildFittings.map():args.length>0&&args[0].equals("HOUSE_REBUILD")?HouseRebuild.graybox():args.length>0&&args[0].equals("BLACKPINE")?BlackpineLevel.map():new HouseMap(args.length>0?HouseMap.Site.valueOf(args[0]):HouseMap.Site.HOUSE);
         map.configureHiding(100); // Editable authoring source includes every potential cupboard.
-        Path out=Path.of("build/level-verification/scenes",map.level().id()+(landscape?"-landscape":fitted?"-fit":""));Files.createDirectories(out.resolve("textures"));
+        Path out=args.length==3&&args[1].equals("--output")?Path.of(args[2]):Path.of("build/level-verification/scenes",map.level().id()+(envelope?"-envelope":landscape?"-landscape":fitted?"-fit":""));Files.createDirectories(out.resolve("textures"));
         SceneRenderer scene=new SceneRenderer();scene.x=21;scene.z=22;
         Field all=SceneRenderer.class.getDeclaredField("exportFullLevel");all.setAccessible(true);all.setBoolean(scene,true);
         Method assemble=SceneRenderer.class.getDeclaredMethod("levelArchitecture",List.class,HouseMap.class);assemble.setAccessible(true);
         List<Object> faces=new ArrayList<>();assemble.invoke(scene,faces,map);
         Files.writeString(out.resolve("definition.json"),json(map.level()));
+        if(envelope)Files.writeString(out.resolve("structure-envelope.json"),json(map.envelope().parts()));
         Files.writeString(out.resolve("loose-objects.json"),json(map.clutter().states().stream().map(s->new LooseSource(s,s.kind().half,s.kind().radius,s.kind().mass)).toList()));
         Files.writeString(out.resolve("event-fixtures.json"),json(map.fixtures().states()));
         Files.writeString(out.resolve("lighting-sources.json"),json(new FixtureLighting(map).sources()));
@@ -73,22 +75,20 @@ public final class LevelSceneSource {
         Files.createDirectories(out.resolve("textures"));Files.writeString(out.resolve("geometry.json"),json(faces));
         Set<Integer> mats=new TreeSet<>();for(Object f:faces)mats.add((Integer)read(f,"material"));
         Files.writeString(out.resolve("material-metadata.json"),json(mats.stream().map(id->new MaterialInfo(id,id>=256?GlbProps.materialName(id):id==LevelMaterials.ROCK?"Original CC0 rock":"Environment surface")).toList()));
-        Field tex=GlbProps.class.getDeclaredField("textures");tex.setAccessible(true);
-        Field factors=GlbProps.class.getDeclaredField("diffuseFactors");factors.setAccessible(true);
-        List<BufferedImage> images=(List<BufferedImage>)tex.get(null);List<double[]> colors=(List<double[]>)factors.get(null);
         for(int mat:mats)if(mat>=0){
             BufferedImage im;
             if(mat==GlbProps.VAN_MAP_MATERIAL){
                 im=new BufferedImage(256,256,BufferedImage.TYPE_INT_RGB);for(int y=0;y<256;y++)for(int x=0;x<256;x++)im.setRGB(x,y,GlbProps.sample(mat,(x+.5)/256.0,1-(y+.5)/256.0));
             }else if(mat>=256){
-                BufferedImage original=images.get(mat-256);im=new BufferedImage(original.getWidth(),original.getHeight(),BufferedImage.TYPE_INT_RGB);
-                double[] c=colors.get(mat-256);
+                im=new BufferedImage(GlbProps.textureWidth(mat),GlbProps.textureHeight(mat),BufferedImage.TYPE_INT_RGB);
                 for(int y=0;y<im.getHeight();y++)for(int x=0;x<im.getWidth();x++){
-                    int rgb=original.getRGB(x,y);im.setRGB(x,y,(Math.min(255,(int)(((rgb>>16)&255)*c[0]))<<16)|(Math.min(255,(int)(((rgb>>8)&255)*c[1]))<<8)|Math.min(255,(int)((rgb&255)*c[2])));
+                    // Blender uses bottom-left UVs. The runtime sampler also
+                    // applies per-material glTF origin, wrap and diffuse factor.
+                    im.setRGB(x,y,GlbProps.sample(mat,(x+.5)/im.getWidth(),1-(y+.5)/im.getHeight()));
                 }
             }else{
                 int size=mat>=32?512:32;im=new BufferedImage(size,size,BufferedImage.TYPE_INT_RGB);
-                for(int y=0;y<size;y++)for(int x=0;x<size;x++)im.setRGB(x,y,mat>=32?LevelMaterials.sample(mat,x/(double)size,1-(y+.5)/size):MaterialAtlas.sample(mat,x/(double)size,y/(double)size));
+                for(int y=0;y<size;y++)for(int x=0;x<size;x++)im.setRGB(x,y,mat>=32?LevelMaterials.sample(mat,(x+.5)/size,1-(y+.5)/size):MaterialAtlas.sample(mat,(x+.5)/size,1-(y+.5)/size));
             }
             ImageIO.write(im,"PNG",out.resolve("textures/"+mat+".png").toFile());
         }

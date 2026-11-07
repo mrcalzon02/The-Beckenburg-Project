@@ -1,0 +1,25 @@
+# Coherent House envelope and clear arrival context
+
+`HouseRebuildEnvelope` replaces the construction pilot's repeated room roofs with one closed20triangle gabled roof. Exterior cladding, plinth, gables and timber bands use original library surfaces independently of interior room finishes. The3m×1.9m covered porch has a40mm raised slab, real corner posts, feet, wall ledger, front beam and closed sloping roof. Its actual triangles supply rendering, optical/body contact and porch walking support. Seven assembly junctions are checked by actual closed-solid containment in both supporting parts, not bounding-box overlap.
+
+The source rooms, stairs, deck openings, fitted furniture and canonical van/road placement are retained. The inherited kitchen garden door/window overlap is corrected by moving that window fromX15.7 to14.9 while retaining its portal ID/width/owners/elevation. Exterior skin cuts all11existing openings from the real portal coordinates; editing/removing a portal changes the skin. Interior bathroom finish changes do not repaint the outside. The actual encoded structural-geometry digest participates in the level revision; original unflagged level revisions remain unchanged.
+
+Owner-directed background spacing: the three residences beside the House and their private parcel fences move12m down the street. Their existing shapes, materials and detail are retained. Renderer and collision use the same `arrival-context` reservation. Actual rendered geometry has6.295m clearance from the dwelling roof. The opposite street frontage, vehicle, road and functioning loading ramp retain their placement contract. This is a spacing correction, not a background-art rebuild. All15zones/required sockets remain reachable at53,324swept positions; no extra search or hiding spaces are added.
+
+## Verification
+
+The new envelope has161closed outward components,1,948physical and1,664visible triangles. All physical vertices agree with rendering coordinates within the native float encoding precision. Tests check manifold edges/winding, finite UVs, actual roof/gable/porch optical mass, clear sky, supported posts/roof/belt/boards, the porch feet height, opening separation and source edit behavior. Twelve focused packaged construction/physics/cache/lighting/Castle checks pass. The enhanced House construction body and exact texture regression also pass separately. Native source reopening verifies all91,227scene triangles/UVs,126packed images, portals,15spawns and source sockets without resaving the delivered file.
+
+Actual runtime views cover entrance, rear service, east wall, whole front and canonical van. The original overlapping-opening view is retained as rejected. Daylight native overview/front views show the coherent roof and increased context clearance. The native van texture diagnostic is separately labeled. Native lighting is inspection lighting; these images do not establish full runtime light separation or hardware performance.
+
+## Van preview artifact correction
+
+The owner's cropped van image exposed a native-export atlas error, not a modified van mesh. The export ignored per-material UV origin and copied diffuse images without matching runtime sampling. The128×128van atlas mismatched14,474/16,384texels;12,006had substantial channel differences. `LevelSceneSource` now samples each original-resolution image through the exact runtime sampler, including UV origin, wrap, diffuse factor and current dynamic texture. Procedural atlas orientation is handled consistently too. All66used textured materials and8,962,879texels match exactly. Source GLBs/UVs and gameplay van geometry are unchanged.
+
+The regression writes to isolated `build/native-texture-parity`, preserving native authoring staging. The delivered native scene and captures were regenerated through the corrected exporter. Older complete-scene native exports need individual texture refresh/review; runtime screenshots and standalone model reimports do not automatically inherit this defect.
+
+## Reproduction and next work
+
+Package with `build.cmd package`, compile test sources, then run `tools/verify_house_rebuild.py --java <Java17 executable>`. `HouseRebuildEnvelopeTest development/captures/house-envelope` creates actual runtime views. `LevelSceneTextureParityTest` independently checks exact exported sampling. Export with `LevelSceneSource HOUSE_REBUILD_ENVELOPE`, run the shared Blender builder for `briar-rebuild-envelope --output-suffix -construction --no-render`, then `verify_house_fixture_native.py -- --envelope`.
+
+PR73's prior terrain/fixture slice merged at38d4323f94d516fcc16ca4b73ff7e2a10a6b79e8 after actual345/0full42351339132, native42351243649 and GPU42351247341. This envelope/context/export correction is a separate checkpoint. Complete remaining landscape/architectural light review and the House's functional services, furniture, supported story/physics and mission/network/hardware gates before promotion, then propagate the construction method through the remaining site batches. No round-duration tests or complete29map acceptance are claimed.

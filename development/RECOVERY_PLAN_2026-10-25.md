@@ -641,3 +641,17 @@ DEV-300/301 corrected in this candidate. DEV-302 remains open for coherent dwell
 
 
 House implementation0fb08529 reconciled concurrentmain57c795fb (85NPC PNGs/2CSVs) with identical runtime/build/workflow inputs; published7008c50bdc69fbf29241447c4c7584ade7861848 on PR73. Union gallery6773PNGs. Independent raw source/editor terrain/native blend/export/index/all8capture byte readback verified. Full42351165202, native42351243649, GPU42351247341 and gallery42351165205 confirmed live at7008; preserve these handles and inspect real body summaries before merge. Castle merged Pages42350529857 source57c795fb succeeds; deployed HTML/index and actual held-mug/window-off PNGs exactly match. House merged/deployed acceptance remains separate. Next House roof/exterior DEV-302 and landscape visual refinement; remaining28packets active.
+
+
+## Coherent House envelope, clear context and corrected native atlas — 6 November
+
+PR73 sourcef2da14af actual full42351339132 reports345/0 including HouseRebuildPhysicsTest; native42351243649 and GPU42351247341 pass at7008 with exact identical runtime inputs. Expected-head merge38d4323f94d516fcc16ca4b73ff7e2a10a6b79e8 has identical entire tree27cf1c9898068ac02175aa7815f0a4a79d6821ab to testedf2da. Prior Castle remains merged3edcbb1e with actual345/0 and deployed gallery byte readback.
+
+New dwelling candidate: one20triangle roof, coherent exterior/closed gables, supported covered porch and40mm slab;161closed outward parts/1948physical/1664visible triangles. Actual geometry digest participates in level revision; frozen unflagged House landscape revision unchanged. Seven real closed-solid assembly contacts pass. Source kitchen opening overlap corrected; terrain/stairs/furniture/van retained. Owner-directed background context/fences move12m downstreet with matching solids and6.295m actual rendered clearance; no background-art rebuild. All15zones/required sockets swept at53324positions.
+
+Twelve packaged construction/physics/lighting/cache/Castle bodies pass; enhanced House body additionally passes the exact66material/8962879texel texture comparison and unchanged native authoring staging check. Native91227triangles/UVs,126packed images and original metadata reopen unchanged. The owner van crop exposed preview-export origin/factor errors, not a changed van mesh: actual14474/16384texels mismatched before; corrected source sampler export matches exactly. DEV-302/303/304/305/306/307 recorded with actual rejected/failed evidence. New runtime/native/corrected-van views inspected; original vehicle files unchanged. Evidence: verification/house-envelope-2026-11-06 and house/envelope-construction.md.
+
+Next acceptance: full/native/GPU online checks for this exact envelope/context/export checkpoint, remaining House terrain/architectural-light refinement and functional services/furniture/story/mission/network/hardware gates, then remaining site batches. No round-duration tests. Full29packet goal remains active.
+
+
+Envelope implementationa34d3b174f41e4ea53cfbfbe8ec13fe2de892cab reconciled concurrentmain b367ecf93226efbe23d3f70863c89243e559a3b9 actual NPC captures/CSV. Tested source/assets/tools/modules/build/workflow trees are identical after reconciliation. Stage records link the exact implementation and raw12check/enhanced construction/texture/native proofs. New online acceptance and final merged/deployed House publication remain next; keep prior accepted terrain PR73 sourcef2da/merge38d4323f distinct.

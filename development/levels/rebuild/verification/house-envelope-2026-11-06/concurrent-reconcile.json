@@ -1,0 +1,19 @@
+{
+  "implemented_source": "a34d3b174f41e4ea53cfbfbe8ec13fe2de892cab",
+  "reconciled_head": "d61a48bf98b2849d966cbece1559742ea02fb75e",
+  "main_preserved": "b367ecf93226efbe23d3f70863c89243e559a3b9",
+  "critical_input_trees": {
+    "src": "d10720bb11a015917dfb376b4256592b056b261a",
+    "assets": "9d2dc7153a98b4a5cad1d74f90868033a31cf373",
+    "tools": "163f41691f8adf36cfabd0c008556a10d7b4309e",
+    "modules": null,
+    "water-module": "b50ab284316a87ef636b25e7b71b6707e599b592",
+    "lighting-module": "be257b217359a1c4ca9eb8deea6b4127fd6e8e77",
+    ".github": "915c05247ce807cb3d900c94fea63cace3781bb7",
+    ".gitattributes": "ab625727265468800b13a6951ebbbf71f57dcb85",
+    "build.cmd": "9f245be7e872891bc7f6cb348dcb12689b1922e5",
+    "build.sh": "a7a95d160c5b9d2961dc88402c07206f84d1d7d6",
+    "regression-tests.txt": "dff2f16692be30a60ffaf4b5cc9f105c04a49758"
+  },
+  "concurrent_scope": "Actual focused NPC captures/CSV preserved; no changed tested source/assets/build/workflow inputs"
+}

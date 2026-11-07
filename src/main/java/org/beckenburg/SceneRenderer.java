@@ -979,18 +979,21 @@ public final class SceneRenderer {
         }
         List<Face> road=new ArrayList<>();
         arrivalRoadGeometry(road,van);
-        arrivalSurroundings(road,van,LevelEnclosure.setting(map.level().id()));
+        arrivalSurroundings(road,van,LevelEnclosure.setting(map.level().id()),VanStreetHouses.homes(map.level()));
         cachedRoadSite=van;
         cachedRoadFaces=List.copyOf(road);
         appendRetainedWorld(out,cachedRoadFaces,"arrival-road",map);
     }
 
     private static void arrivalSurroundings(List<Face> road,VanStaging van,LevelEnclosure.Setting setting){
+        arrivalSurroundings(road,van,setting,VanStreetHouses.HOMES);
+    }
+    private static void arrivalSurroundings(List<Face> road,VanStaging van,LevelEnclosure.Setting setting,List<VanStreetHouses.House> homes){
         if(setting==LevelEnclosure.Setting.SUBURBAN){
-            for(var home:VanStreetHouses.HOMES)streetResidence(road,van,home);
+            for(var home:homes)streetResidence(road,van,home);
             streetTerminus(road,van);
         }else if(setting==LevelEnclosure.Setting.URBAN){
-            for(var home:VanStreetHouses.HOMES)urbanStreetBlock(road,van,home);
+            for(var home:homes)urbanStreetBlock(road,van,home);
             streetTerminus(road,van);
         }else{
             // The blocked playable road continues visually into the woods/mountains.
@@ -1840,7 +1843,12 @@ public final class SceneRenderer {
         // This skin contains the original House's measured facade/porch.
         // A revised House definition must not inherit that unrelated envelope
         // merely because it uses the same gameplay site slot.
-        if(map.site()==HouseMap.Site.HOUSE&&level.id().equals("house"))houseExterior(out,level);
+        if(map.envelope()!=null){
+            for(var part:map.envelope().parts())for(var f:part.triangles())if(f.visible()){
+                var a=f.a();var b=f.b();var c=f.c();
+                out.add(new Face(new Point(a.p().x(),a.p().y(),a.p().z()),new Point(b.p().x(),b.p().y(),b.p().z()),new Point(c.p().x(),c.p().y(),c.p().z()),0xffffff,f.material(),a.u(),a.v(),b.u(),b.v(),c.u(),c.v(),13));
+            }
+        }else if(map.site()==HouseMap.Site.HOUSE&&level.id().equals("house"))houseExterior(out,level);
         else {
         // Roofs follow the actual upper footprint; pitched planes meet at a ridge.
         for(var r:level.rooms())if(!r.outside()&&r.y()>=0&&level.rooms().stream().noneMatch(up->!up.outside()&&up.y()>r.y()

@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: Porch slab does not clear rendered terrain: deck=0.0 soil=6.313420587209892E-4
+	at org.beckenburg.HouseRebuildEnvelopeTest.check(HouseRebuildEnvelopeTest.java:10)
+	at org.beckenburg.HouseRebuildEnvelopeTest.main(HouseRebuildEnvelopeTest.java:18)

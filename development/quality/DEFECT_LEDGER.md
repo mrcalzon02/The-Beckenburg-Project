@@ -4100,7 +4100,7 @@ Older-map obligation: Canonical arrival contract unchanged. Audit every older is
 
 ### DEV-302 — House pilot exterior inherits room finishes and repeated room gables
 
-**Status:** OPEN construction-envelope refinement · **Affected:** House first-principles construction pilot exterior; other generic room-shell maps require separate audit
+**Status:** verified in dwelling construction candidate; one closed roof/exterior independent of interior finishes; whole-map gates remain open · **Affected:** House first-principles construction pilot exterior; other generic room-shell maps require separate audit
 
 Native landscape overview exposes several parallel small room gables and exterior wall patches using interior tile/room finishes, rather than one deliberately constructed dwelling envelope.
 
@@ -4111,6 +4111,76 @@ Fix / next action: Next House construction pass must author one coherent externa
 Evidence and verification: development/captures/house-landscape/native-parcel-overview.png; all source vertices/UVs independently match native runtime export. Construction view is not final architecture acceptance.
 
 Older-map obligation: Audit individual older House/Farmhouse/institution room-derived envelopes; current bounds or navigation checks do not prove roof joins, external finish or structural coherence.
+
+### DEV-303 — House pilot kitchen window and garden door overlap
+
+**Status:** verified in current construction/export checkpoint; complete map acceptance remains open · **Affected:** House graybox/fitted/landscape inherited kitchen north-wall opening pair
+
+Door16.5/width1.05 and window15.7/width1.25 overlap0.35m; actual rear runtime view shows conflicting frames.
+
+Cause / uncertainty: Inherited portal reservations were not checked for simultaneous collinear frame clearance.
+
+Fix / next action: Move candidate window to14.9, retaining ID/width/owners/elevation; use source portals for skin, frames, optical/body and navigation.
+
+Evidence and verification: Rejected rear runtime PNG and updated opening/frame reservation checks; corrected actual rear view reviewed.
+
+Older-map obligation: Audit other maps individually. For DEV-306 refresh/review older complete-scene LevelSceneSource exports; runtime captures and standalone GLB reimports do not automatically inherit this defect. No global model, light-bleed, terrain or hardware acceptance.
+
+### DEV-304 — New porch slab initially lies below visible editor terrain
+
+**Status:** verified in current construction/export checkpoint; complete map acceptance remains open · **Affected:** New House envelope construction candidate only
+
+Actual failing clearance check: deck0m, soil0.0006313420587m; terrain could paint across a flush slab.
+
+Cause / uncertainty: Initial porch reused nominal0m instead of providing positive constructed slab clearance.
+
+Fix / next action: Raise deck/support to40mm; posts/feet stand on that same surface; preserve continuous navigation into0m entry.
+
+Evidence and verification: Actual before assertion and corrected body/support/route checks retained; no prior rejected porch PNG is claimed.
+
+Older-map obligation: Audit other maps individually. For DEV-306 refresh/review older complete-scene LevelSceneSource exports; runtime captures and standalone GLB reimports do not automatically inherit this defect. No global model, light-bleed, terrain or hardware acceptance.
+
+### DEV-305 — Arrival background buildings and fences crowd the House
+
+**Status:** verified in current construction/export checkpoint; complete map acceptance remains open · **Affected:** House-side suburban context in the construction pilot; owner-directed correction
+
+Nearby context visually pressed against the dwelling/porch in native and runtime views.
+
+Cause / uncertainty: Canonical street house placements were used without a site-specific clear forecourt reservation.
+
+Fix / next action: Move the three near residences and private fences12m down street through one renderer/collider contract. Retain their models, opposite frontage, road and canonical van.
+
+Evidence and verification: Actual rendered mesh clearance6.295m, corresponding source collider checks and current whole-front/native overview; all15zone/socket traversal53324positions.
+
+Older-map obligation: Audit other maps individually. For DEV-306 refresh/review older complete-scene LevelSceneSource exports; runtime captures and standalone GLB reimports do not automatically inherit this defect. No global model, light-bleed, terrain or hardware acceptance.
+
+### DEV-306 — Native scene texture export scrambles the van atlas and other material origins
+
+**Status:** verified in current construction/export checkpoint; complete map acceptance remains open · **Affected:** Complete scenes exported by LevelSceneSource; original runtime mesh/UVs remain intact
+
+Van atlas mismatches14474/16384runtime texels;12006have substantial channel differences, producing the mangled-looking preview reported by the owner.
+
+Cause / uncertainty: Exporter copied original PNG rows/factors without each material runtime UV origin and exact diffuse sampling; procedural atlas orientation also differed.
+
+Fix / next action: Export original-resolution texels through exact GlbProps/LevelMaterials/MaterialAtlas sampling, retaining source UVs. Regenerate delivered envelope native source and captures.
+
+Evidence and verification: Actual before/after logs: all66used textured materials and8962879texels exactly match runtime. Corrected native van close view reviewed. Source GLB/VanStaging/VanBodyGeometry/GlbProps unchanged.
+
+Older-map obligation: Audit other maps individually. For DEV-306 refresh/review older complete-scene LevelSceneSource exports; runtime captures and standalone GLB reimports do not automatically inherit this defect. No global model, light-bleed, terrain or hardware acceptance.
+
+### DEV-307 — Texture regression overwrites canonical native authoring staging
+
+**Status:** verified in current construction/export checkpoint; complete map acceptance remains open · **Affected:** New native texture diagnostic harness only
+
+Running the regression after other construction checks changed process-local material IDs in the canonical export; the native parity guard correctly rejected old group counts.
+
+Cause / uncertainty: Diagnostic exported into the same staging folder used by native authoring.
+
+Fix / next action: Add explicit output path and isolate regression under build/native-texture-parity; preserve canonical authoring export and rebuild native source through the standard path.
+
+Evidence and verification: Actual failed parity transcript preserved. Enhanced full House construction body now passes and verifies canonical geometry SHA remains unchanged.
+
+Older-map obligation: Audit other maps individually. For DEV-306 refresh/review older complete-scene LevelSceneSource exports; runtime captures and standalone GLB reimports do not automatically inherit this defect. No global model, light-bleed, terrain or hardware acceptance.
 
 ## Required audit categories
 
