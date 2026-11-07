@@ -1,0 +1,20 @@
+{
+  "observed_utc": "2026-11-07T01:46:58.499025+00:00",
+  "source": "2199e6bc4bd44629c699f9169c54af0af46e2a2f",
+  "branch": "map/castle-heraldic",
+  "readback": {
+    "development/levels/rebuild/captures/castle-construction/archive-heraldic-0-runtime.png": {
+      "bytes": 352507,
+      "sha256": "927a93d2b12a8959e89c3b506595c9fb7ce3b1a7aaa931b2fc931c7f6a756ec6"
+    },
+    "development/assets/castle-museum/previews/heraldic-rebuild/quarter.png": {
+      "bytes": 819429,
+      "sha256": "f025e1fe388650ea8eea78071fb0b650e126a65e3a0a788df165c69a33a30f89"
+    },
+    "beckenburg-development-gallery.html": {
+      "bytes": 2469745,
+      "sha256": "278e3d7f851c4f3116b230da93f06355bad614720d67e689572cf6ab364517bd"
+    }
+  },
+  "pages": "Not yet deployed; exact-source branch HTML/PNG readback only"
+}
