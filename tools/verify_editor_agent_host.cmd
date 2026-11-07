@@ -63,3 +63,9 @@ java -Djava.awt.headless=true -ea -cp "%BECK_EDITOR_AGENT_CP%;build\test" org.be
 if errorlevel 1 exit /b 1
 
 echo PASS native editor service, real human model/material UV editors, recovery and headless protocol
+
+rem Museum records use the real Castle E-key handler in visible native windows.
+javac --release 17 -encoding UTF-8 -cp "%BECK_EDITOR_AGENT_CP%" -d build\test src\test\java\org\beckenburg\CastleStoryTest.java
+if errorlevel 1 exit /b 1
+java -Djava.awt.headless=false -ea -cp "%BECK_EDITOR_AGENT_CP%;build\test" org.beckenburg.CastleStoryTest build\editor-agent-evidence\castle-story
+if errorlevel 1 exit /b 1

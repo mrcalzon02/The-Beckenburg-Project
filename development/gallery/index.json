@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 6484,
+  "count": 6496,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -2932,6 +2932,126 @@
       "height": 512,
       "bytes": 296278,
       "sha256": "621f975fdaf5087a67f865c294583f7d803794d070e79565a940bf60d86c7aca"
+    },
+    {
+      "path": "development/captures/castle-story-ui/finish-keeper-statue-record-ui.png",
+      "url": "development/captures/castle-story-ui/finish-keeper-statue-record-ui.png",
+      "title": "Finish keeper statue record ui",
+      "kind": "Game UI verification",
+      "width": 1000,
+      "height": 700,
+      "bytes": 33458,
+      "sha256": "ef5fc5de4d7e6b7554dacb59d585f29ed8293457ce6dbf06183807b7c2379aaa"
+    },
+    {
+      "path": "development/captures/castle-story-ui/finish-keeper-statue-record-world.png",
+      "url": "development/captures/castle-story-ui/finish-keeper-statue-record-world.png",
+      "title": "Finish keeper statue record world",
+      "kind": "Game UI verification",
+      "width": 1000,
+      "height": 700,
+      "bytes": 175915,
+      "sha256": "c220094ce17e6fd0fb88eef694c31c532d1904d122eb9e96608d4cec701a2de2"
+    },
+    {
+      "path": "development/captures/castle-story-ui/heritage-archive-arms-record-ui.png",
+      "url": "development/captures/castle-story-ui/heritage-archive-arms-record-ui.png",
+      "title": "Heritage archive arms record ui",
+      "kind": "Game UI verification",
+      "width": 1000,
+      "height": 700,
+      "bytes": 29285,
+      "sha256": "83b8c8391ed41e73825ae1a907810944dd8168393961bc6bd4c08da628c3c21d"
+    },
+    {
+      "path": "development/captures/castle-story-ui/heritage-archive-arms-record-world.png",
+      "url": "development/captures/castle-story-ui/heritage-archive-arms-record-world.png",
+      "title": "Heritage archive arms record world",
+      "kind": "Game UI verification",
+      "width": 1000,
+      "height": 700,
+      "bytes": 143333,
+      "sha256": "b00d29c758c5fbb4650963ed8235bc0372b960fb0904f2d1ab72728424970c5d"
+    },
+    {
+      "path": "development/captures/castle-story-ui/heritage-archive-tapestry-record-ui.png",
+      "url": "development/captures/castle-story-ui/heritage-archive-tapestry-record-ui.png",
+      "title": "Heritage archive tapestry record ui",
+      "kind": "Game UI verification",
+      "width": 1000,
+      "height": 700,
+      "bytes": 32643,
+      "sha256": "34b968240953267d5c4d0ddd0c989f22222d26c37536de22af3d615950054675"
+    },
+    {
+      "path": "development/captures/castle-story-ui/heritage-archive-tapestry-record-world.png",
+      "url": "development/captures/castle-story-ui/heritage-archive-tapestry-record-world.png",
+      "title": "Heritage archive tapestry record world",
+      "kind": "Game UI verification",
+      "width": 1000,
+      "height": 700,
+      "bytes": 167746,
+      "sha256": "0f3aa9f2ef80a06a490e3eb5671d0bb82b823824fd26842a2999da24f78b7da0"
+    },
+    {
+      "path": "development/captures/castle-story-ui/heritage-common-fireplace-record-ui.png",
+      "url": "development/captures/castle-story-ui/heritage-common-fireplace-record-ui.png",
+      "title": "Heritage common fireplace record ui",
+      "kind": "Game UI verification",
+      "width": 1000,
+      "height": 700,
+      "bytes": 29835,
+      "sha256": "ac0073c3fc7048ff12bfc5547762410e879d40437e871e3db0844ebf352d1d2e"
+    },
+    {
+      "path": "development/captures/castle-story-ui/heritage-common-fireplace-record-world.png",
+      "url": "development/captures/castle-story-ui/heritage-common-fireplace-record-world.png",
+      "title": "Heritage common fireplace record world",
+      "kind": "Game UI verification",
+      "width": 1000,
+      "height": 700,
+      "bytes": 165364,
+      "sha256": "a12dc287852edb2bf674ebba78e0e9e8541a58873119d91da4ce632e590a3a2d"
+    },
+    {
+      "path": "development/captures/castle-story-ui/heritage-restoration-painting-record-ui.png",
+      "url": "development/captures/castle-story-ui/heritage-restoration-painting-record-ui.png",
+      "title": "Heritage restoration painting record ui",
+      "kind": "Game UI verification",
+      "width": 1000,
+      "height": 700,
+      "bytes": 30070,
+      "sha256": "05a7446290c411344b13f9c4dcd44fc570755805bddfd40913ff5a1921c76633"
+    },
+    {
+      "path": "development/captures/castle-story-ui/heritage-restoration-painting-record-world.png",
+      "url": "development/captures/castle-story-ui/heritage-restoration-painting-record-world.png",
+      "title": "Heritage restoration painting record world",
+      "kind": "Game UI verification",
+      "width": 1000,
+      "height": 700,
+      "bytes": 137776,
+      "sha256": "aefb486a70476986301bc7baceaa32b5d09e6a3348fbc82a0b0ecbac5f0b151b"
+    },
+    {
+      "path": "development/captures/castle-story-ui/museum-armour-caption-record-ui.png",
+      "url": "development/captures/castle-story-ui/museum-armour-caption-record-ui.png",
+      "title": "Museum armour caption record ui",
+      "kind": "Game UI verification",
+      "width": 1000,
+      "height": 700,
+      "bytes": 30860,
+      "sha256": "dc08a685c668d6d087c42f8b5cfa29e265b9c01df564b87b56643aba9276ef67"
+    },
+    {
+      "path": "development/captures/castle-story-ui/museum-armour-caption-record-world.png",
+      "url": "development/captures/castle-story-ui/museum-armour-caption-record-world.png",
+      "title": "Museum armour caption record world",
+      "kind": "Game UI verification",
+      "width": 1000,
+      "height": 700,
+      "bytes": 153810,
+      "sha256": "137dbe5d5f08b6b0aa2d9d48be55e1c307c91ee957f2b0102cc93dcbf5491f8b"
     },
     {
       "path": "development/captures/castle-training-ui/lesson-train-a-ui.png",

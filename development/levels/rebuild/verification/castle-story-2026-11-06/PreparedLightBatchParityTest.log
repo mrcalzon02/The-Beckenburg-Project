@@ -1,0 +1,31 @@
+PARITY BEGIN site=CASTLE
+PARITY END site=CASTLE elapsed_ms=21061
+PARITY BEGIN site=HOUSE
+2026-11-07T05:25:31.376436100Z [main] RENDER SLOW stage=idle faces=87193 visible_faces=22805 culled_faces=64388 target=320x200 build_ms=892 lighting_raster_ms=384
+PARITY END site=HOUSE elapsed_ms=1683
+PARITY BEGIN site=FARMHOUSE
+PARITY END site=FARMHOUSE elapsed_ms=1050
+PARITY BEGIN site=SCHOOL
+2026-11-07T05:25:33.629685700Z [main] RENDER SLOW stage=idle faces=204024 visible_faces=63909 culled_faces=140115 target=320x200 build_ms=218 lighting_raster_ms=578
+PARITY END site=SCHOOL elapsed_ms=1381
+PARITY BEGIN site=MANSION
+PARITY END site=MANSION elapsed_ms=1162
+PARITY BEGIN site=PRISON
+2026-11-07T05:25:35.835768Z [main] RENDER SLOW stage=idle faces=153462 visible_faces=33984 culled_faces=119478 target=320x200 build_ms=23 lighting_raster_ms=487
+PARITY END site=PRISON elapsed_ms=1114
+PARITY BEGIN site=ASYLUM
+PARITY END site=ASYLUM elapsed_ms=1110
+PARITY BEGIN site=ACADEMY
+2026-11-07T05:25:38.129230300Z [main] RENDER SLOW stage=idle faces=155658 visible_faces=33547 culled_faces=122111 target=320x200 build_ms=21 lighting_raster_ms=560
+PARITY END site=ACADEMY elapsed_ms=1226
+PARITY BEGIN site=COLLEGE
+PARITY END site=COLLEGE elapsed_ms=1096
+PARITY BEGIN site=CHURCH
+2026-11-07T05:25:40.355062800Z [main] RENDER SLOW stage=idle faces=148138 visible_faces=31886 culled_faces=116252 target=320x200 build_ms=21 lighting_raster_ms=464
+PARITY END site=CHURCH elapsed_ms=994
+PARITY BEGIN site=HOLLOW_CREEK
+2026-11-07T05:25:42.843533200Z [main] RENDER SLOW stage=idle faces=229971 visible_faces=154958 culled_faces=75013 target=320x200 build_ms=1545 lighting_raster_ms=123
+PARITY END site=HOLLOW_CREEK elapsed_ms=2698
+PARITY BEGIN site=USER
+PARITY END site=USER elapsed_ms=556
+PASS complete dependency/sparse/dense vertex-batch parity across Castle and all map types, real flicker/blackout/doors, scene changes and immutable published arrays (recording backend)
