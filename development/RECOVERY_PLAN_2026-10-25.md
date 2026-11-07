@@ -748,3 +748,36 @@ Finish actual House encounter, matched door/circuit/light and final wear review,
 Final source-component review revises DEV-329: the188triangle hanger-only coat still had its original12mm pocket gap. Preserve that GLB/side view and supersede approval. Final200triangle derivative adds a closed12triangle cloth gusset; independent decoded box/source-ray test passes. Final native131793triangles,230packed images,45props reverified; actual furnished runtime/TCP checks and140material/13733203texel exact sampling pass. Prior five variant inputs are unchanged. Current361remote acceptance remains pending.
 
 Final functional-fill implementation1d137984ba0b08dde73a91472537332f45c3d972; model/native/runtime proof binds this source. Parent services Pages42390598203 actual deployed HTML/index/all13PNGs verified. Main1c86ab3d and all concurrent captures are preserved. New361/full/native/GPU and later merged-gallery readback remain pending. Continue full House promotion/encounter/acceptance and all29packets.
+
+
+## Owner pause checkpoint — 7 November 2026
+
+Owner requested sync and commit only; resume tomorrow. No implementation changes were made on map/house-integration. Starting HEAD is 3a44a6634149bc8e22e1470c348854725896e687; fetched main 1c86ab3d131b3d6fdf10e5a7e633d0d22a0e8323 is already an ancestor. The working tree was clean before this checkpoint.
+
+PR80 map/house-room-review remains frozen at 3a44a6634149bc8e22e1470c348854725896e687. Editor Agent run42395017153 and gallery-index run42395009741 passed. Full run42395009707 and GPU run42395022669 were still in progress at pause; no acceptance or merge is inferred. Latest observed main installer42390486790 and full42390486757 report success at98f0faf0; the wrapper result alone does not establish raw-manifest acceptance. Parent exact-source full42388613635 remains recorded360/0/0/360. Parent Pages42390598203 passed at1c86ab3d; its deployed service captures were already read back.
+
+Next session: inspect those same PR80 runs and the raw361-entry summary, reconcile and merge only after required acceptance, then resume House saved-map compatibility/live promotion, authored encounter and final visual/functional acceptance. No integration code has been written yet. All29 packets and subsequent unfinished maps remain in scope. No round-duration tests or new physical hardware acceptance. This documentation-only checkpoint runs no build, render or new gallery generation because it changes no source or captures.
+
+
+## Saved House template and authored collision checkpoint — 7 November 2026
+
+PR80 head3a44a663 passed actual361/0/0/361 in full42395009707; Editor42395017153 andGPU42395022669 passed. Expected-head mergee1b49eb780a3061ef47ea67dfd9747d7ff378497 is reconciled into this branch. New main full42418636058 and installer42418635872 were observed live; do not infer their final results. Parent Pages42418635199 passed; actual deployed gallery/image readback is recorded separately.
+
+Saved USER maps now identify explicit original/rebuilt House architectural generations. Historical versionless House projects retain the original rooms and their exact scene/metadata bytes. Unknown generations fail without substitution or writes. Built-in House remains legacy pending complete promotion/migration acceptance; other site template generations require individual review.
+
+Actual rebuilt USER loading exposed DEV-333: native composition replaced authored source pivots/multipart generator bodies with generic boxes. Composition now retains every unchanged exact body, derives changed rebuilt bodies through shared source geometry, preserves noncolliding bedding and updates actual Editor Agent Services bounds/parity. The accepted construction revision5c8da94b90d34afd is unchanged. Real agent fridge edit, save/reopen/game load, every retained physical body/multiplicity and actual kitchen viewport capture pass. Legacy identity/recovery/change/disk tests and furnished House routes/power/ghost TCP checks pass. Failed stale-JAR compilation and collider comparisons are retained. New manifest362 requires exact remote acceptance; no full-location or physical FPS acceptance.
+
+Evidence: verification/house-template-compatibility-2026-11-07/. Next: explicit saved built-in House migration, functional attachment safety, default promotion, authored encounter and final light/material/whole-location/client acceptance. Continue all29 packets and remaining unfinished maps. No round-duration tests.
+
+Owner immediately rejects fridge between kitchen doors (DEV-334). Compatibility/source-physics checks remain valid, but the diagnostic image is retained as rejected layout. Relocate before any further appearance/promotion acceptance.
+
+
+## Owner fridge relocation checkpoint — 7 November 2026
+
+DEV-334 replaces rejected fridge placement between the kitchen garden/dining doors. Actual source centreX14.9/Z14.1925/yawPI now uses dedicated south-wall storage facing north, with6cm rear ventilation. Both doorway centres are more than2m away. The source counter, cellar opening/stairs and other44props remain unchanged. Original180triangle model/atlas retained.
+
+Current source revision first-principles-functional-furnishings-v1-981935462ed806a0:21sampled door poses and50164required route positions pass; actual4TCP source/breaker/ghost trip/reset/resync and solo checks pass. Native131793triangles/UVs,230packed images,45props/15spawns/all sockets independently reopen. Texture140materials/13733203texels exactly match runtime. Saved legacy and rebuilt USER editing and source collision checks also pass. Actual new fridge and cleared original doorway views, native-editor capture and native overview inspected. Preserve rejected between-doors screenshot as rejected evidence.
+
+Source definition/supports/exportZIP/native/asset-use and captures regenerated from actual source. Existing parent361 acceptance remains historical at its former coordinates. Current combined362/full/editor/GPU and merged new-capture gallery remain pending. House saved built-in migration/functional attachment safety/default promotion, authored encounter and complete final location/client/hardware acceptance remain open. All29packets and remaining unfinished maps continue. No round-duration tests.
+
+Owner-directed fridge relocation implementation2eb8a9ead32eef7ef9ff73c4af9e6f7f8eb04ae8; native/export/captures and current stage evidence bind this source. Compatibility checkpoint40485a83 was pushed and remotely verified. Current362 acceptance next.

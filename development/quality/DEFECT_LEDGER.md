@@ -4532,6 +4532,62 @@ Evidence and verification: development/levels/model-production/house-fridge/; de
 
 Older-map obligation: Audit older model attachments, camera ownership/elevation and strict generation status individually; no blanket older-map or hardware acceptance.
 
+### DEV-331 — Saved custom House architecture follows changing shipped template
+
+**Status:** SCOPED IMPLEMENTATION PASS; native legacy/rebuilt USER compatibility checks pass; source-bound full362/native/GPU pending · **Affected:** House-derived USER projects and upcoming House default promotion; other template upgrades need individual migration review
+
+UserLevelLibrary.source rebuilds the template through current LevelPlans.buildSource on every load, then applies existing scene props at their historical coordinates. Replacing the House default would silently change floor elevations, walls and openings below those edits.
+
+Cause / uncertainty: Saved template metadata identifies site but no architectural generation.
+
+Fix / next action: Pin explicit House architectural generations; interpret historical versionless House projects as original architecture without rewriting their files. Resolve the rebuilt generation separately for actual USER-map verification. Keep built-in promotion and explicit author-driven migration pending.
+
+Evidence and verification: HouseTemplateCompatibilityTest; src/main/java/org/beckenburg/UserLevelLibrary.java; house-template-compatibility checkpoint evidence
+
+Older-map obligation: Audit every changed template independently; shipped-v1 for other sites is not a promise of frozen architecture or complete migration.
+
+### DEV-332 — Compatibility test attempted against stale JAR before package completion
+
+**Status:** SCOPED CORRECTION; successful fresh package precedes passing compile/runtime checks · **Affected:** Local saved-map verification process, not shipped gameplay
+
+Test compilation cannot resolve newly added template methods/constants because an earlier JAR was read while packaging was still live. The package then failed sandbox JAR replacement with AccessDeniedException.
+
+Cause / uncertainty: Dependent test compilation was started before authoritative terminal package success.
+
+Fix / next action: Preserve failed logs; rerun authorized packaging outside the failed sandbox boundary and await success before compiling/running tests. No stale JAR test result accepted.
+
+Evidence and verification: development/levels/rebuild/verification/house-template-compatibility-2026-11-07/rejected-stale-jar-test-compile.log; successful package/test logs; original AccessDeniedException was observed in tool output before package log reuse
+
+Older-map obligation: No older-map acceptance from stale binaries; every source-bound verification must follow successful packaging.
+
+### DEV-333 — Native mission composition replaces rebuilt pivots and generator bodies with generic collision
+
+**Status:** SCOPED CORRECTION; exact-source identity, every retained body/multiplicity and actual Agent Services/native/runtime tests pass locally; remote acceptance pending · **Affected:** Rebuilt House used through USER native authoring; older sites require individual collider authority review
+
+Actual custom rebuilt House collider multiset differs from source even without prop edits. Editing uses native GLB origins as generic collision centres and can add a full generator box or false bedding bodies.
+
+Cause / uncertainty: LevelAuthoringSession.compose discarded/re-added all props using legacy LevelPlans.propCollider rather than authored collision policy. Initial list-order suspicion was disproved by a multiplicity-aware comparison.
+
+Fix / next action: Return exact source for unchanged props; preserve exact bodies for unchanged objects during edits; derive rebuilt pivot-aware and multipart collision through shared helpers. Retain bedding overlays as non-colliding. Update Editor Agent Services parity/dirty bounds to consume the same bodies, checking multiplicity.
+
+Evidence and verification: HouseTemplateCompatibilityTest exact source revision5c8da94b90d34afd; retained exact source bodies after real agent fridge edit; rejected-authored-collision-drift.log; edited-custom-house-kitchen-runtime.png; focused existing editor/recovery/furnishing tests
+
+Older-map obligation: Audit each future rebuilt source collision policy and functional attachment behavior before default promotion; no blanket older-map acceptance.
+
+### DEV-334 — Kitchen fridge wedged between back and dining doors
+
+**Status:** SCOPED RELOCATION PASS; source/native/runtime views inspected; current exact-source CI pending · **Affected:** House furnishing source and derived custom-map kitchen
+
+Owner rejects actual kitchen capture: fridge crowds the short wall section between two doors despite sampled collision and route checks passing.
+
+Cause / uncertainty: Placement prioritized numerical clearances over coherent kitchen work/storage arrangement.
+
+Fix / next action: Move fridge to X14.9/Z14.1925 against finished south wall, yawPI facing north,6cm rear ventilation. Both garden/dining door centres remain more than2m away. Source door poses and50164route positions, cellar access/counter, original atlas, actual power/TCP and USER editor checks pass. Rebuild native/export/asset coordinates from actual source.
+
+Evidence and verification: User rejection; development/captures/house-template-compatibility/rejected-fridge-between-doors-runtime.png; development/captures/house-functional-fill/kitchen-doorways-clear-runtime.png; kitchen-cold-storage-runtime.png; development/levels/rebuild/verification/house-fridge-relocation-2026-11-07/
+
+Older-map obligation: Review appliance placement as a functional room arrangement individually; passing collision alone never accepts an older layout.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

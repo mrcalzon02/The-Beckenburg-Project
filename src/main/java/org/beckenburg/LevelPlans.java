@@ -24,6 +24,21 @@ public final class LevelPlans {
             p.z()+Math.cos(p.yaw())*off,p.halfX(),p.halfZ(),
             LivedAssets.base(p.mesh()).equals("level_lived_sideboard")?.85:p.height(),p.yaw());
     }
+    /** Rebuilt source pivots and multipart bodies are also authoritative in native editing. */
+    static List<Collider> propColliders(LevelDefinition source,Prop p){
+        if(p.halfX()<=0||p.halfZ()<=0)return List.of();
+        if(!source.id().equals("briar-rebuild"))return List.of(propCollider(p));
+        if(p.support().startsWith("source-bed-origin:"))return List.of();
+        if(p.mesh().equals("level_trace_generator"))return HouseRebuildFunctions.generatorBodies(p);
+        var b=SceneRenderer.castleBounds(p.mesh());double c=Math.cos(p.yaw()),s=Math.sin(p.yaw());
+        return List.of(new Collider(p.x()+(b[0]*c-b[2]*s)*p.scale(),p.y()+b[1]*p.scale(),
+            p.z()+(b[0]*s+b[2]*c)*p.scale(),p.halfX(),p.halfZ(),p.height(),p.yaw()));
+    }
+    static boolean sameBody(Collider a,Collider b){
+        return Math.abs(a.x()-b.x())<1e-8&&Math.abs(a.y()-b.y())<1e-8&&Math.abs(a.z()-b.z())<1e-8
+            &&Math.abs(a.halfX()-b.halfX())<1e-8&&Math.abs(a.halfZ()-b.halfZ())<1e-8
+            &&Math.abs(a.height()-b.height())<1e-8&&Math.abs(a.yaw()-b.yaw())<1e-8;
+    }
     public static LevelDefinition build(HouseMap.Site site) {
         return LevelAuthoringSession.apply(site,buildSource(site));
     }
@@ -49,6 +64,9 @@ public final class LevelPlans {
             default -> throw new IllegalArgumentException("No authored site "+site);
         };
     }
+
+    /** Retained architectural authority for pre-rebuild authored House projects. */
+    static LevelDefinition legacyHouseSource() { return house(); }
 
     private static LevelDefinition house() {
         B b=new B("house","The Briar House","residential");

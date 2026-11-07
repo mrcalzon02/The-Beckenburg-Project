@@ -1,0 +1,29 @@
+src\test\java\org\beckenburg\HouseTemplateCompatibilityTest.java:23: error: cannot find symbol
+            var legacy=LevelPlans.legacyHouseSource();var rebuilt=HouseRebuildFurnishings.source();
+                                 ^
+  symbol:   method legacyHouseSource()
+  location: class LevelPlans
+src\test\java\org\beckenburg\HouseTemplateCompatibilityTest.java:27: error: cannot find symbol
+            check(UserLevelLibrary.HOUSE_ORIGINAL.equals(metadata("BeforeRebuild").getProperty("architecture")),"New legacy project pins architectural generation");
+                                  ^
+  symbol:   variable HOUSE_ORIGINAL
+  location: class UserLevelLibrary
+src\test\java\org\beckenburg\HouseTemplateCompatibilityTest.java:37: error: cannot find symbol
+            UserLevelLibrary.create("RebuiltHouse",HouseMap.Site.HOUSE,UserLevelLibrary.HOUSE_REBUILD);
+                                                                                       ^
+  symbol:   variable HOUSE_REBUILD
+  location: class UserLevelLibrary
+src\test\java\org\beckenburg\HouseTemplateCompatibilityTest.java:61: error: method create in class UserLevelLibrary cannot be applied to given types;
+            try{UserLevelLibrary.create("InvalidVersion",HouseMap.Site.HOUSE,"future");throw new AssertionError("Invalid new source accepted");}catch(IllegalArgumentException expected){}
+                                ^
+  required: String,Site
+  found:    String,Site,String
+  reason: actual and formal argument lists differ in length
+src\test\java\org\beckenburg\HouseTemplateCompatibilityTest.java:63: error: cannot find symbol
+            try{UserLevelLibrary.templateSource(HouseMap.Site.SCHOOL,UserLevelLibrary.HOUSE_REBUILD);throw new AssertionError("Cross-site source accepted");}catch(IllegalArgumentException expected){}
+                                                                                     ^
+  symbol:   variable HOUSE_REBUILD
+  location: class UserLevelLibrary
+Note: src\test\java\org\beckenburg\PsxHorrorUiTest.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+5 errors

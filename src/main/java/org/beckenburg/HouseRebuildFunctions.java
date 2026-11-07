@@ -67,19 +67,7 @@ public final class HouseRebuildFunctions {
         /** Retain source connected-part bounds: the base plinth must not make the
          * narrower engine's visible starter sit behind a full-height invisible box. */
         void generatorCollision(Placement parent){
-            var triangles=GlbProps.model(parent.prop().mesh()).triangles();
-            var ids=new HashMap<String,Integer>();var points=new ArrayList<GlbProps.Vertex>();var roots=new ArrayList<Integer>();
-            for(var t:triangles){int first=-1;for(var v:List.of(t.a(),t.b(),t.c())){
-                String key=Math.round(v.x()*1e6)+":"+Math.round(v.y()*1e6)+":"+Math.round(v.z()*1e6);
-                Integer id=ids.get(key);if(id==null){id=points.size();ids.put(key,id);points.add(v);roots.add(id);}
-                if(first<0)first=id;else{int a=root(roots,first),b=root(roots,id);roots.set(b,a);}
-            }}
-            var bounds=new TreeMap<Integer,double[]>();
-            for(int i=0;i<points.size();i++){var v=points.get(i);var b=bounds.computeIfAbsent(root(roots,i),k->new double[]{Double.POSITIVE_INFINITY,Double.POSITIVE_INFINITY,Double.POSITIVE_INFINITY,Double.NEGATIVE_INFINITY,Double.NEGATIVE_INFINITY,Double.NEGATIVE_INFINITY});
-                b[0]=Math.min(b[0],v.x());b[1]=Math.min(b[1],v.y());b[2]=Math.min(b[2],v.z());b[3]=Math.max(b[3],v.x());b[4]=Math.max(b[4],v.y());b[5]=Math.max(b[5],v.z());}
-            solids.remove(parent.solid());var p=parent.prop();double c=Math.cos(p.yaw()),s=Math.sin(p.yaw());
-            for(var b:bounds.values()){double x=(b[0]+b[3])/2,z=(b[2]+b[5])/2;
-                solids.add(new Collider(p.x()+x*c-z*s,p.y()+b[1],p.z()+x*s+z*c,(b[3]-b[0])/2,(b[5]-b[2])/2,b[4]-b[1],p.yaw()));}
+            solids.remove(parent.solid());solids.addAll(generatorBodies(parent.prop()));
         }
         static int root(ArrayList<Integer> roots,int id){int next=id;while(roots.get(next)!=next)next=roots.get(next);while(roots.get(id)!=id){int old=roots.get(id);roots.set(id,next);id=old;}return next;}
         void generatorControl(Placement parent){
@@ -95,6 +83,22 @@ public final class HouseRebuildFunctions {
             sockets.add(new Socket("briar-source-plan","electrical-plan",p.room(),p.x(),p.y(),p.z(),0,"BHR-MAIN-01;existing-main-breaker-room10;room-switches0-11;source-independent-of-breaker"));
         }
         Assembly finish(){return new Assembly(new LevelDefinition(base.id(),"first-principles-house-functions-v1",base.title().replace("dwelling construction","functional construction"),rooms,base.portals(),base.stairs(),base.voids(),props,sockets,solids,base.dock(),base.ambience(),base.water(),base.sounds()),placements);}
+    }
+    static List<Collider> generatorBodies(Prop p){
+            var triangles=GlbProps.model(p.mesh()).triangles();
+            var ids=new HashMap<String,Integer>();var points=new ArrayList<GlbProps.Vertex>();var roots=new ArrayList<Integer>();
+            for(var t:triangles){int first=-1;for(var v:List.of(t.a(),t.b(),t.c())){
+                String key=Math.round(v.x()*1e6)+":"+Math.round(v.y()*1e6)+":"+Math.round(v.z()*1e6);
+                Integer id=ids.get(key);if(id==null){id=points.size();ids.put(key,id);points.add(v);roots.add(id);}
+                if(first<0)first=id;else{int a=Fit.root(roots,first),b=Fit.root(roots,id);roots.set(b,a);}
+            }}
+            var bounds=new TreeMap<Integer,double[]>();
+            for(int i=0;i<points.size();i++){var v=points.get(i);var b=bounds.computeIfAbsent(Fit.root(roots,i),k->new double[]{Double.POSITIVE_INFINITY,Double.POSITIVE_INFINITY,Double.POSITIVE_INFINITY,Double.NEGATIVE_INFINITY,Double.NEGATIVE_INFINITY,Double.NEGATIVE_INFINITY});
+                b[0]=Math.min(b[0],v.x());b[1]=Math.min(b[1],v.y());b[2]=Math.min(b[2],v.z());b[3]=Math.max(b[3],v.x());b[4]=Math.max(b[4],v.y());b[5]=Math.max(b[5],v.z());}
+            var solids=new ArrayList<Collider>();double c=Math.cos(p.yaw()),s=Math.sin(p.yaw());
+            for(var b:bounds.values()){double x=(b[0]+b[3])/2,z=(b[2]+b[5])/2;
+                solids.add(new Collider(p.x()+(x*c-z*s)*p.scale(),p.y()+b[1]*p.scale(),p.z()+(x*s+z*c)*p.scale(),(b[3]-b[0])/2*p.scale(),(b[5]-b[2])/2*p.scale(),(b[4]-b[1])*p.scale(),p.yaw()));}
+            return List.copyOf(solids);
     }
     static double upward(Prop p,double x,double z){
         double c=Math.cos(p.yaw()),s=Math.sin(p.yaw()),lx=(x-p.x())*c+(z-p.z())*s,lz=-(x-p.x())*s+(z-p.z())*c,best=Double.NEGATIVE_INFINITY;
