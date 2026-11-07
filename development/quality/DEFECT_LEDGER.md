@@ -10,6 +10,23 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-265 — Routine controls require function keys and solo uses a different equipment/runtime path
+
+**status:** fixed-scoped; Java compilation and focused real localhost acceptance; installed acceptance pending
+
+**affected:** Castle movement, solo free play, solo campaign, LAN hunter and ghost controls
+
+**symptom:** Voice, books, props and equipment require F keys; solo uses a separate six-item GamePanel with different interactions and no shared gear drops.
+
+**cause:** Duplicated solo and multiplayer view/controller implementations and scattered input prompts.
+
+**action:** Remove GamePanel; launch private local LanHost/LanClient with LanWorldPanel for solo and campaign. Share the conventional keyboard layout and field-action menu, preserve host validation, expand physical drops to carried device types, and update live prompts and docs.
+
+**evidence:** development/quality/evidence/controls-audit-2026-11-06/; LocalInvestigationTest and focused network/control/equipment/campaign regressions. Exact scoped source and installed limitations recorded there.
+
+**older_maps:** Shared controls apply to all selected runtime sites; this does not certify unaudited map geometry or installed release behavior.
+
+
 ### DEV-263 — Crouch and stand snap the local camera between eye heights
 
 **Status:** fixed-scoped; camera math and actual TCP posture tests pass; installed acceptance pending · **Affected:** Castle, solo investigation and LAN hunter camera

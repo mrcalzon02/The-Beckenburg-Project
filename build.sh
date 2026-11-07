@@ -257,6 +257,7 @@ java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.La
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanGhostIntegrationTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.MouseLookTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanWorldControlsTest
+java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LocalInvestigationTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.EquipmentSelectionTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.SiteSelectionTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.InvestigationSitesTest

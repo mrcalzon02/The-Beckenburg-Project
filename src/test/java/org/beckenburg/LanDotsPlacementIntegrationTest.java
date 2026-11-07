@@ -34,9 +34,7 @@ public final class LanDotsPlacementIntegrationTest {
         @Override public void close(){client.close();}
     }
     private static void press(LanWorldPanel panel,int key)throws Exception {
-        SwingUtilities.invokeAndWait(()->panel.keyPressed(
-            new KeyEvent(panel,KeyEvent.KEY_PRESSED,System.currentTimeMillis(),
-                0,key,KeyEvent.CHAR_UNDEFINED)));
+        LanWorldControlsTest.tap(panel,key);
     }
     private static void click(LanWorldPanel panel)throws Exception {
         SwingUtilities.invokeAndWait(()->{

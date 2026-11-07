@@ -262,13 +262,13 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
     @Override public void keyPressed(KeyEvent e){
         if(DebugPerformanceHud.hotkey(e)){repaint();return;}
         switch(e.getKeyCode()){
-            case KeyEvent.VK_F5 -> {
+            case KeyEvent.VK_E -> {
                 var device=map.fixtures().aimed(camera.x,camera.eyeHeight-1.62,camera.z,camera.yaw,camera.pitch);
                 if(device!=null)try{client.ghostFixture(device.id());feedback="Requesting fixture haunting: "+device.kind();}catch(java.io.IOException failure){feedback="Fixture request failed: "+failure.getMessage();}
             }
             case KeyEvent.VK_ESCAPE -> {keys.clear();mouseLook.release();InGamePauseMenu.execute(this);}
-            case KeyEvent.VK_OPEN_BRACKET -> choice--;
-            case KeyEvent.VK_CLOSE_BRACKET -> choice++;
+            case KeyEvent.VK_Z -> choice--;
+            case KeyEvent.VK_Q -> choice++;
             case KeyEvent.VK_SPACE,KeyEvent.VK_ENTER -> ability(GhostDomain.Action.DRIFT);
             case KeyEvent.VK_1 -> chosen(0);
             case KeyEvent.VK_2 -> chosen(1);
@@ -323,7 +323,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
             List<Integer> exits=exits();
             int width=Math.min(w-24,620),panelY=h-117;
             g.setColor(new Color(23,14,32,225));g.fillRoundRect(12,panelY,width,105,8,8);
-            g.setColor(new Color(235,206,244));g.drawString("SPECTRAL ACTIONS / F5 ACTIVATE AIMED FIXTURE",24,panelY+22);
+            g.setColor(new Color(235,206,244));g.drawString("SPECTRAL ACTIONS / E ACTIVATE AIMED FIXTURE",24,panelY+22);
             g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,12));
             StringBuilder actions=new StringBuilder();
             for(int i=0;i<offered.size();i++)actions.append(i+1).append(": ").append(offered.get(i)).append("   ");
@@ -331,7 +331,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
             String abilities=actions.toString();
             if(abilities.length()>66)abilities=abilities.substring(0,63)+"...";
             g.drawString(abilities,24,panelY+42);
-            g.drawString("[ / ] EXIT: "+(exits.isEmpty()?"NONE":map.roomName(exits.get(Math.floorMod(choice,exits.size()))))+
+            g.drawString("Z / Q EXIT: "+(exits.isEmpty()?"NONE":map.roomName(exits.get(Math.floorMod(choice,exits.size()))))+
                 "   SPACE DRIFT",24,panelY+62);
             int remaining=actionDueTick<0?-1:Math.max(0,(actionDueTick-tick+9)/10);
             g.setColor(remaining>=0&&remaining<=3?new Color(255,174,166):new Color(194,207,217));

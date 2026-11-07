@@ -73,8 +73,8 @@ public final class GhostPracticePanel extends JPanel implements KeyListener,Focu
     @Override public void keyPressed(KeyEvent e){
         switch(e.getKeyCode()){
             case KeyEvent.VK_ESCAPE -> { close();exit.run(); }
-            case KeyEvent.VK_OPEN_BRACKET -> cycle(-1);
-            case KeyEvent.VK_CLOSE_BRACKET -> cycle(1);
+            case KeyEvent.VK_Z -> cycle(-1);
+            case KeyEvent.VK_Q -> cycle(1);
             case KeyEvent.VK_SPACE,KeyEvent.VK_ENTER -> invoke(GhostDomain.Action.DRIFT);
             case KeyEvent.VK_1 -> invoke(GhostDomain.Action.WHISPER);
             case KeyEvent.VK_2 -> invoke(GhostDomain.Action.DISTURB);
@@ -136,7 +136,7 @@ public final class GhostPracticePanel extends JPanel implements KeyListener,Focu
             g.setColor(new Color(225,211,236));
             List<Integer> paths=obs.exits();
             String target=paths.isEmpty()?"NONE":map.roomName(paths.get(Math.floorMod(choice,paths.size())));
-            g.drawString("[ / ] SELECT ROOM    SPACE DRIFT → "+target,14,stageH+24);
+            g.drawString("Z / Q SELECT ROOM    SPACE DRIFT → "+target,14,stageH+24);
             g.drawString("1 WHISPER  2 DISTURB  3 MANIFEST  4 STRIKE  ESC CASTLE",14,stageH+46);
             g.setColor(new Color(152,206,180));
             g.drawString("READY: "+obs.legalActions()+"   HITS: "+practice.strikes()+"/2",14,stageH+68);

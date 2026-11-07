@@ -10,6 +10,17 @@ import java.util.concurrent.*;
  */
 public final class LanHost implements AutoCloseable {
     private ProfileStore campaignProfile;
+    private ProfileStore freePlayProfile;
+    private ProfileStore inventoryProfile(){return campaignProfile!=null?campaignProfile:freePlayProfile;}
+    public void configureFreePlay(ProfileStore profile){
+        synchronized(mutex){
+            if(everStarted||connected()>0)throw new IllegalStateException("Fresh host required");
+            freePlayProfile=Objects.requireNonNull(profile);
+            equipment[0].configureCampaign(profile);
+            for(var kind:FieldSupplies.Kind.values())for(var tier:FieldSupplies.Tier.values())
+                supplies[0].setStock(kind,tier,profile.supplyCount(kind,tier));
+        }
+    }
     private CampaignStory.Chapter campaignChapter;
     private int deployedMembers;
     private final java.util.List<CampaignGuestBot> campaignBots=new ArrayList<>();
@@ -866,7 +877,7 @@ public final class LanHost implements AutoCloseable {
                                 var medicine=FieldSupplies.Tier.values()[tier.ordinal()];
                                 if(supplies[peer.slot].stock(kind,medicine)==0)throw new IllegalArgumentException("medicine belongs to another investigator");
                                 useMedicine(peer,kind,medicine);reply(peer,supplies[peer.slot].frame());broadcastProgress();
-                            }else throw new IllegalArgumentException("salt is deployed with H");
+                            }else throw new IllegalArgumentException("deploy salt from K field actions or the held salt pouch");
                         }
                         case INTERFACE -> reply(peer,"INTERACTED|INTERFACE|"+target.id());
                         case SWITCH -> {lights.toggle(Integer.parseInt(target.id()));notifyAllPeers("LIGHTS|"+lights.snapshot()+"|"+(lights.breaker()?1:0));}
@@ -889,6 +900,21 @@ public final class LanHost implements AutoCloseable {
                         AudioActionRouting.interaction(target.kind(),rackMedicine));
                     broadcastWorld();
                     if(target.kind()==InteractionFocus.Kind.VAN_DOOR)finishIfComplete();
+                }
+                case "TORCH" -> {
+                    if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||p.size()!=2)
+                        throw new IllegalArgumentException("physical hunter required");
+                    acceptHunterSequence(peer,LanProtocol.sequence(p.get(1)));ensureActiveHunter(peer);
+                    if(portableLights.at(peer.slot,"FLASHLIGHT")!=null)
+                        throw new IllegalArgumentException("retrieve the placed flashlight first");
+                    FieldEquipment torchKit=equipment[peer.slot];
+                    if(torchKit.owned("FLASHLIGHT")==null||droppedGear.heldInWorld(peer.slot,"FLASHLIGHT"))
+                        throw new IllegalArgumentException("flashlight not carried");
+                    boolean enabled=!torchKit.powered("FLASHLIGHT");
+                    torchKit.setPower("FLASHLIGHT",enabled);
+                    notifyHunters("GEARFX|"+peer.slot+"|FLASHLIGHT|"+(enabled?1:0));
+                    reply(peer,"ACCEPT|TORCH|"+(enabled?1:0));
+                    actorCue(peer.slot,enabled?LanSound.Cue.DEVICE_ON:LanSound.Cue.DEVICE_OFF);
                 }
                 case "LIGHT" -> {
                     if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||p.size()!=2)
@@ -1051,7 +1077,7 @@ public final class LanHost implements AutoCloseable {
                         throw new IllegalArgumentException("purchase upgrades at the equipment rack");
                     if(id.equals("SOUND_RECORDER")&&recorders[peer.slot].recording())
                         throw new IllegalArgumentException("stop recording before upgrading hardware");
-                    if(campaignProfile!=null)throw new IllegalArgumentException("Campaign gear is issued; buy supplies at the host campaign depot");
+                    if(inventoryProfile()!=null)throw new IllegalArgumentException("Saved gear is issued; buy supplies at the host campaign depot");
                     if(droppedGear.heldInWorld(peer.slot,id))
                         throw new IllegalArgumentException("retrieve dropped instrument before upgrading");
                     int cost=equipment[peer.slot].upgradePrice(id,tier);
@@ -1094,14 +1120,26 @@ public final class LanHost implements AutoCloseable {
                     if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||p.size()!=2)
                         throw new IllegalArgumentException("physical hunter required to drop equipment");
                     acceptHunterSequence(peer,LanProtocol.sequence(p.get(1)));ensureActiveHunter(peer);
+                    FieldEquipment kit=equipment[peer.slot];String tool=kit.active();
+                    if(portableLights.at(peer.slot,tool)!=null
+                            ||tool.equals("DOTS_PROJECTOR")&&dots.at(peer.slot)!=null
+                            ||tool.equals("VIDEO_CAMERA")&&cameras.at(peer.slot)!=null
+                            ||tool.equals("TRIPOD")&&tripods.at(peer.slot)!=null
+                            ||tool.equals("GHOST_WRITING_BOOK")&&writingBook.placed()
+                            ||vanSensors.count(peer.slot,tool)>0
+                            ||tool.equals("SOUND_RECORDER")&&recorders[peer.slot].recording())
+                        throw new IllegalArgumentException("retrieve or stop deployed equipment before dropping it");
                     var item=droppedGear.drop(equipment[peer.slot],peer.slot,world.body(peer.slot),map);
+                    if(kit.powered(tool)){
+                        kit.setPower(tool,false);notifyHunters("GEARFX|"+peer.slot+"|"+tool+"|0");
+                    }
                     notifyHunters(item.frame());reply(peer,"ACCEPT|GEARDROP|"+item.id());
                     sendEquipmentState(peer);broadcastRack();actorCue(peer.slot,LanSound.Cue.DROP);
                 }
                 case "GEARPICK" -> {
                     if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||p.size()!=3)
                         throw new IllegalArgumentException("physical hunter required to pick up equipment");
-                    long id=LanProtocol.integer(p.get(1),1,HUNTERS);
+                    long id=LanProtocol.integer(p.get(1),1,LanDroppedGear.MAX_ID);
                     acceptHunterSequence(peer,LanProtocol.sequence(p.get(2)));ensureActiveHunter(peer);
                     var item=droppedGear.pickup(equipment[peer.slot],peer.slot,id,world.body(peer.slot),map);
                     notifyHunters("GEARDROP|TAKE|"+item.id());reply(peer,"ACCEPT|GEARPICK|"+item.id());
@@ -1544,7 +1582,7 @@ public final class LanHost implements AutoCloseable {
                     if(running&&map.van().stationAt(world.body(peer.slot).x(),world.body(peer.slot).z())
                         !=VanStaging.Station.EQUIPMENT)
                         throw new IllegalArgumentException("purchase supplies at the van equipment rack");
-                    if(campaignProfile!=null)throw new IllegalArgumentException("Buy campaign supplies at the host depot before dispatch");
+                    if(inventoryProfile()!=null)throw new IllegalArgumentException("Buy expedition supplies at the host depot before dispatch");
                     if(!supplies[peer.slot].purchase(kind,tier))
                         throw new IllegalArgumentException("insufficient credits or full stock");
                     reply(peer,"ACCEPT|BUY|"+kind+"|"+tier);
@@ -1907,7 +1945,7 @@ public final class LanHost implements AutoCloseable {
                 ||(kind==FieldSupplies.Kind.SANITY&&mission.stress(peer.slot)==0))
             throw new IllegalArgumentException("no treatment necessary");
         // Persist consumption before changing health: a disk failure cannot grant free healing.
-        if(campaignProfile!=null&&peer.slot==0&&!campaignProfile.consume(kind,tier))
+        if(inventoryProfile()!=null&&peer.slot==0&&!inventoryProfile().consume(kind,tier))
             throw new IllegalArgumentException("Campaign stock unavailable");
         if(kind==FieldSupplies.Kind.HEALTH)mission.heal(peer.slot,tier.restore(kind));
         else mission.calm(peer.slot,tier.restore(kind));

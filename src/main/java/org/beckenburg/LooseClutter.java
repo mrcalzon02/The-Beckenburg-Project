@@ -223,5 +223,5 @@ public final class LooseClutter {
         if(items.size()>=120)throw new IllegalArgumentException("too many objects");items.add(incoming);
     }
     public synchronized String hint(Observer o){int id=held(o.seat);State s=id>=0?item(id).state():aimed(o);
-        return s==null?"F5 pick up clutter / F12 throw":s.kind.description+"  [F5 "+(id>=0?"drop / ] rotate / F12 throw":"pick up")+"]";}
+        return s==null?"E pick up / R drop / LMB throw":s.kind.description+"  [E "+(id>=0?"pick up; R drop / wheel turn / LMB throw":"pick up")+"]";}
 }
