@@ -1,0 +1,35 @@
+{
+  "observed_utc": "2026-11-07T01:31:33.216664+00:00",
+  "source": "f0dd46de38ec857b208cdc4d9f99a731acc845a9",
+  "runs": [
+    {
+      "conclusion": "",
+      "databaseId": 42324389550,
+      "headSha": "f0dd46de38ec857b208cdc4d9f99a731acc845a9",
+      "status": "in_progress",
+      "workflowName": "Beckenburg GPU Renderer Acceptance"
+    },
+    {
+      "conclusion": "",
+      "databaseId": 42324381933,
+      "headSha": "f0dd46de38ec857b208cdc4d9f99a731acc845a9",
+      "status": "in_progress",
+      "workflowName": "Editor Agent Service Acceptance"
+    },
+    {
+      "conclusion": "",
+      "databaseId": 42324351097,
+      "headSha": "f0dd46de38ec857b208cdc4d9f99a731acc845a9",
+      "status": "in_progress",
+      "workflowName": "Beckenburg Full Multiplayer Acceptance"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 42324351071,
+      "headSha": "f0dd46de38ec857b208cdc4d9f99a731acc845a9",
+      "status": "completed",
+      "workflowName": "Development gallery index"
+    }
+  ],
+  "next": "Poll these exact handles; inspect actual full regression summary when terminal. Do not dispatch competing runs. Merge/deployed Pages still pending."
+}
