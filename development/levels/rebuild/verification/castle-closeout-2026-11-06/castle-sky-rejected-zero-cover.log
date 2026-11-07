@@ -1,0 +1,2 @@
+Exception in thread "main" java.lang.AssertionError: Zero cloud cover still paints phantom cloud polygons
+	at org.beckenburg.WeatherSkyWorldAnchorTest.main(WeatherSkyWorldAnchorTest.java:38)

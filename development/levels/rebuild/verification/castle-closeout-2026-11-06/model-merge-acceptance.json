@@ -1,0 +1,16 @@
+{
+  "source": "5ba51a1e5074ae2129cf485fbfc5bd219d01314c",
+  "pr": 67,
+  "merge": "a889e91c2cdc6c8b325e391693b963e5ec125292",
+  "merge_verification": "GitHub expected-head merge succeeded; fetched origin/main contains merge",
+  "full_run": 42335160239,
+  "actual_summary": "REGRESSION SUMMARY passed=342 failed=0 skipped=0 manifest=342",
+  "native_run": 42335160272,
+  "native_result": "success",
+  "gpu_run": 42335163660,
+  "gpu_result": "success",
+  "gallery_run": 42335160256,
+  "gallery_result": "success",
+  "full_log_sha256": "7e118359ace9b4cf9ad28be87cdcb6ad7b9692784265e049850384543685871d",
+  "new_sky_fix": "Separate source c0330d7d: local weather and matched-render checks pass; fresh source CI/deployment required"
+}

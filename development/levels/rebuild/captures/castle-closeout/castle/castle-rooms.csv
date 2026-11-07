@@ -1,0 +1,43 @@
+room_id,room_name,access_class,floor,camera_x,camera_z,center_traversable,usable_camera,north,east,south,west
+armory,Existing quartermaster issue and equipment stock,OPEN_PROGRAMME,0.00,5.75,6.25,true,true,armory/north.png,armory/east.png,armory/south.png,armory/west.png
+contracts,Existing briefing and campaign contracts,OPEN_PROGRAMME,0.00,15.00,6.25,true,true,contracts/north.png,contracts/east.png,contracts/south.png,contracts/west.png
+wardrobe,Role wardrobe and lounge,OPEN_PROGRAMME,0.00,24.00,8.25,true,true,wardrobe/north.png,wardrobe/east.png,wardrobe/south.png,wardrobe/west.png
+ground-wc,Discreet ground sanitary room,OPEN_PROGRAMME,0.00,21.50,3.00,true,true,ground-wc/north.png,ground-wc/east.png,ground-wc/south.png,ground-wc/west.png
+ground-wash,Ground washing and handwashing,OPEN_PROGRAMME,0.00,26.00,3.00,true,true,ground-wash/north.png,ground-wash/east.png,ground-wash/south.png,ground-wash/west.png
+practice,Existing spectral practice and ritual scholar,OPEN_PROGRAMME,0.00,5.75,16.75,true,true,practice/north.png,practice/east.png,practice/south.png,practice/west.png
+common,Headquarters common dining and training approach,OPEN_PROGRAMME,0.00,6.00,25.50,false,true,common/north.png,common/east.png,common/south.png,common/west.png
+kitchen,Household food preparation and cooking,OPEN_PROGRAMME,0.00,3.75,31.00,true,true,kitchen/north.png,kitchen/east.png,kitchen/south.png,kitchen/west.png
+washup,Dirty dish washing,OPEN_PROGRAMME,0.00,8.50,29.50,true,true,washup/north.png,washup/east.png,washup/south.png,washup/west.png
+pantry,Household dry food storage,SEALED_CONTEXT_INSPECTION,0.00,8.50,32.50,true,true,pantry/north.png,pantry/east.png,pantry/south.png,pantry/west.png
+network,Existing communications and network desk,OPEN_PROGRAMME,0.00,24.50,16.25,true,true,network/north.png,network/east.png,network/south.png,network/west.png
+operations,Existing settings counter and operations work,OPEN_PROGRAMME,0.00,24.50,27.50,true,true,operations/north.png,operations/east.png,operations/south.png,operations/west.png
+archive,Existing Common Archive and Lore Master,OPEN_PROGRAMME,0.00,35.50,11.00,false,true,archive/north.png,archive/east.png,archive/south.png,archive/west.png
+store,Quartermaster physical stock and retrieval aisles,OPEN_PROGRAMME,0.00,32.75,25.75,true,true,store/north.png,store/east.png,store/south.png,store/west.png
+repair,Repair and separated chemistry task work,OPEN_PROGRAMME,0.00,38.50,21.50,false,true,repair/north.png,repair/east.png,repair/south.png,repair/west.png
+infirmary,Private first aid recovery and handwashing,OPEN_PROGRAMME,0.00,40.00,31.00,false,true,infirmary/north.png,infirmary/east.png,infirmary/south.png,infirmary/west.png
+court,Arrival courtyard,OPEN_PROGRAMME,0.00,15.50,22.75,true,true,court/north.png,court/east.png,court/south.png,court/west.png
+gate,Gate threshold,OPEN_PROGRAMME,0.00,15.50,35.00,true,true,gate/north.png,gate/east.png,gate/south.png,gate/west.png
+library,Existing upper library,OPEN_PROGRAMME,3.40,15.00,6.50,false,true,library/north.png,library/east.png,library/south.png,library/west.png
+gallery,Existing main stair upper gallery,OPEN_PROGRAMME,3.40,17.50,16.75,true,true,gallery/north.png,gallery/east.png,gallery/south.png,gallery/west.png
+res-hall,Upper west residence circulation,OPEN_PROGRAMME,3.40,9.00,17.50,true,true,res-hall/north.png,res-hall/east.png,res-hall/south.png,res-hall/west.png
+lodging-1,Two-place investigator lodging 1,OPEN_PROGRAMME,3.40,4.25,15.00,true,true,lodging-1/north.png,lodging-1/east.png,lodging-1/south.png,lodging-1/west.png
+lodging-2,Two-place investigator lodging 2,OPEN_PROGRAMME,3.40,4.25,22.00,true,true,lodging-2/north.png,lodging-2/east.png,lodging-2/south.png,lodging-2/west.png
+lodging-3,Two-place investigator lodging 3,OPEN_PROGRAMME,3.40,4.25,29.00,true,true,lodging-3/north.png,lodging-3/east.png,lodging-3/south.png,lodging-3/west.png
+upper-wash,Resident washing and private shower bays,OPEN_PROGRAMME,3.40,4.25,4.00,true,true,upper-wash/north.png,upper-wash/east.png,upper-wash/south.png,upper-wash/west.png
+upper-wc,Resident WC bays,OPEN_PROGRAMME,3.40,2.50,9.25,true,true,upper-wc/north.png,upper-wc/east.png,upper-wc/south.png,upper-wc/west.png
+linen,Clean resident linen,SEALED_CONTEXT_INSPECTION,3.40,5.75,9.25,true,true,linen/north.png,linen/east.png,linen/south.png,linen/west.png
+eave-store,Sealed shallow eave storage,SEALED_CONTEXT_INSPECTION,3.40,4.25,33.25,true,true,eave-store/north.png,eave-store/east.png,eave-store/south.png,eave-store/west.png
+east-bridge,Retained upper east bridge,OPEN_PROGRAMME,3.40,20.10,21.00,true,true,east-bridge/north.png,east-bridge/east.png,east-bridge/south.png,east-bridge/west.png
+east-north-walk,Retained upper north-east wall walk,OPEN_PROGRAMME,3.40,20.20,16.00,true,true,east-north-walk/north.png,east-north-walk/east.png,east-north-walk/south.png,east-north-walk/west.png
+east-south-walk,Retained upper south-east wall walk,OPEN_PROGRAMME,3.40,20.20,26.50,true,true,east-south-walk/north.png,east-south-walk/east.png,east-south-walk/south.png,east-south-walk/west.png
+south-walk,Retained southern battlement return,OPEN_PROGRAMME,3.40,15.85,32.00,true,true,south-walk/north.png,south-walk/east.png,south-walk/south.png,south-walk/west.png
+west-walk,Retained western battlement return,OPEN_PROGRAMME,3.40,11.50,21.50,true,true,west-walk/north.png,west-walk/east.png,west-walk/south.png,west-walk/west.png
+north-west-link,Continuous library to west return infill,OPEN_PROGRAMME,3.40,11.50,11.75,true,true,north-west-link/north.png,north-west-link/east.png,north-west-link/south.png,north-west-link/west.png
+training-entry,Protected three-rite training distribution,OPEN_PROGRAMME,0.00,-8.00,27.00,true,true,training-entry/north.png,training-entry/east.png,training-entry/south.png,training-entry/west.png
+train-b,Protected Banishment training bay,OPEN_PROGRAMME,0.00,-14.00,19.00,true,true,train-b/north.png,train-b/east.png,train-b/south.png,train-b/west.png
+train-c,Protected Cleansing training bay,OPEN_PROGRAMME,0.00,-8.00,19.00,true,true,train-c/north.png,train-c/east.png,train-c/south.png,train-c/west.png
+train-a,Protected Absolution training bay,OPEN_PROGRAMME,0.00,-2.00,19.00,true,true,train-a/north.png,train-a/east.png,train-a/south.png,train-a/west.png
+cellar-stair,Relic and plant cellar stair,OPEN_PROGRAMME,-3.00,38.50,21.50,false,true,cellar-stair/north.png,cellar-stair/east.png,cellar-stair/south.png,cellar-stair/west.png
+cellar-hall,Separated relic and plant service approach,OPEN_PROGRAMME,-3.00,32.75,21.75,true,true,cellar-hall/north.png,cellar-hall/east.png,cellar-hall/south.png,cellar-hall/west.png
+vault,Controlled captured relic vault,OPEN_PROGRAMME,-3.00,32.50,29.00,false,true,vault/north.png,vault/east.png,vault/south.png,vault/west.png
+plant,Heating water and electrical plant,OPEN_PROGRAMME,-3.00,40.00,30.00,true,true,plant/north.png,plant/east.png,plant/south.png,plant/west.png

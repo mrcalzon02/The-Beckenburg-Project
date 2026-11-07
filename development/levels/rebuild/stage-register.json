@@ -368,10 +368,14 @@
           "evidence": [
             "development/levels/rebuild/castle/baseline.md",
             "development/levels/rebuild/source-baseline.json",
-            "development/levels/rebuild/captures/baseline/castle/castle-rooms.csv"
+            "development/levels/rebuild/captures/baseline/castle/castle-rooms.csv",
+            "development/levels/rebuild/verification/castle-closeout-2026-11-06/review.json"
           ],
-          "defects": [],
-          "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
+          "defects": [
+            "DEV-248",
+            "DEV-290"
+          ],
+          "next_action": "All42 actual native spaces now have four-direction visual review,39open/3sealed; clear-night phantom cloud fix verified in matched native views. Complete saved-native rebuild preservation/upgrade, remaining supported story/loose-object/encounter and full hub/platform acceptance. Keep all29 packets active; no round-duration testing."
         },
         "S01": {
           "status": "IN_PROGRESS",
@@ -633,7 +637,8 @@
           "status": "IN_PROGRESS",
           "source_sha": null,
           "evidence": [
-            "development/levels/rebuild/verification/castle-finish-2026-11-06/verification.json"
+            "development/levels/rebuild/verification/castle-finish-2026-11-06/verification.json",
+            "development/levels/rebuild/verification/castle-closeout-2026-11-06/review.json"
           ],
           "defects": [
             "DEV-283",
@@ -642,9 +647,11 @@
             "DEV-286",
             "DEV-287",
             "DEV-288",
-            "DEV-289"
+            "DEV-289",
+            "DEV-248",
+            "DEV-290"
           ],
-          "next_action": "Finish Castle story/weathering and supported loose-object/encounter details, explicit saved-native rebuild preservation/upgrade and complete hub/platform acceptance; then remaining28 packets.17 final fittings and3 protected lessons now native;40 focused checks pass.39 open/3sealed; no round-duration test."
+          "next_action": "All42 actual native spaces now have four-direction visual review,39open/3sealed; clear-night phantom cloud fix verified in matched native views. Complete saved-native rebuild preservation/upgrade, remaining supported story/loose-object/encounter and full hub/platform acceptance. Keep all29 packets active; no round-duration testing."
         },
         "S09": {
           "status": "NOT_AUDITED",
