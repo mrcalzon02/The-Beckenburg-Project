@@ -11,3 +11,7 @@ Validation was repeated on an isolated snapshot of the staged source, excluding 
 Recovery inspection: remote main observed at ea6dbee005bf5b5f97d7241251c8daca375eccf5; newer full-round run 42358684986 and renderer 42358685109 at 2bbc771f26fa22605a6e666947f0f812f5777173 were running. Latest inspected installer run 42356499806 at c675ed0f5afebb78da814478db892f83c8efa054 passed. None validates this feature source.
 
 Remaining acceptance: exact-source CI, installed GPU/first-person gameplay review, older-map jump and stair/ledge/prop audits, and downstream runtime adoption. No installed or release acceptance is claimed.
+
+Implementation commit: `234664343edd7d9088853ed23dbb51e48f4e0662`. Standalone LevelEditorKit JAR built locally and verified to contain DefaultPlayerMotion, its collision adapter and EditorProject.
+
+Publication: automatic approval review rejected the push to `mrcalzon02/The-Beckenburg-Project`, branch `map/first-principles-rebuild-plan`, because explicit user authorization for exporting this source payload was missing and the repository was not verified as trusted. No workaround attempted. Next: obtain explicit approval, push the scoped checkpoint and verify the remote SHA.
