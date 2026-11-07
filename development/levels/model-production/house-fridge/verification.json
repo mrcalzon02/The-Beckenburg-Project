@@ -1,0 +1,254 @@
+{
+  "name": "level_house_fridge_worn",
+  "source_glb_sha256": "180072c4b2a6422d6c570e99cb1781196dc315c6c0d22aa781742460adadaf89",
+  "atlas_sha256": "5554e74300898ae6f67ad41748c865e4c40c870e9f5a3177dea3a5b97ae7334d",
+  "atlas_size": [
+    1254,
+    1254
+  ],
+  "triangles": 180,
+  "budget": 200,
+  "connected_box_components": 15,
+  "source_components": [
+    {
+      "name": "Insulated enamel body",
+      "low": [
+        -0.335,
+        -0.31,
+        0.04
+      ],
+      "high": [
+        0.335,
+        0.31,
+        1.68
+      ]
+    },
+    {
+      "name": "Recessed connected plinth",
+      "low": [
+        -0.325,
+        -0.32,
+        0.025
+      ],
+      "high": [
+        0.325,
+        0.3,
+        0.1
+      ]
+    },
+    {
+      "name": "Upper freezer door",
+      "low": [
+        -0.327,
+        -0.355,
+        1.225
+      ],
+      "high": [
+        0.327,
+        -0.3,
+        1.67
+      ]
+    },
+    {
+      "name": "Lower refrigerator door",
+      "low": [
+        -0.327,
+        -0.355,
+        0.105
+      ],
+      "high": [
+        0.327,
+        -0.3,
+        1.21
+      ]
+    },
+    {
+      "name": "Attached rubber foot",
+      "low": [
+        -0.275,
+        -0.255,
+        0
+      ],
+      "high": [
+        -0.225,
+        -0.20500000000000002,
+        0.055
+      ]
+    },
+    {
+      "name": "Attached rubber foot",
+      "low": [
+        -0.275,
+        0.20500000000000002,
+        0
+      ],
+      "high": [
+        -0.225,
+        0.255,
+        0.055
+      ]
+    },
+    {
+      "name": "Attached rubber foot",
+      "low": [
+        0.225,
+        -0.255,
+        0
+      ],
+      "high": [
+        0.275,
+        -0.20500000000000002,
+        0.055
+      ]
+    },
+    {
+      "name": "Attached rubber foot",
+      "low": [
+        0.225,
+        0.20500000000000002,
+        0
+      ],
+      "high": [
+        0.275,
+        0.255,
+        0.055
+      ]
+    },
+    {
+      "name": "Freezer pull grip",
+      "low": [
+        -0.266,
+        -0.419,
+        1.4
+      ],
+      "high": [
+        -0.234,
+        -0.395,
+        1.51
+      ]
+    },
+    {
+      "name": "Freezer attached handle mount",
+      "low": [
+        -0.264,
+        -0.411,
+        1.4015
+      ],
+      "high": [
+        -0.236,
+        -0.349,
+        1.4264999999999999
+      ]
+    },
+    {
+      "name": "Freezer attached handle mount",
+      "low": [
+        -0.264,
+        -0.411,
+        1.4835
+      ],
+      "high": [
+        -0.236,
+        -0.349,
+        1.5085
+      ]
+    },
+    {
+      "name": "Fridge pull grip",
+      "low": [
+        -0.266,
+        -0.419,
+        0.79
+      ],
+      "high": [
+        -0.234,
+        -0.395,
+        1.0
+      ]
+    },
+    {
+      "name": "Fridge attached handle mount",
+      "low": [
+        -0.264,
+        -0.411,
+        0.7915000000000001
+      ],
+      "high": [
+        -0.236,
+        -0.349,
+        0.8165
+      ]
+    },
+    {
+      "name": "Fridge attached handle mount",
+      "low": [
+        -0.264,
+        -0.411,
+        0.9735
+      ],
+      "high": [
+        -0.236,
+        -0.349,
+        0.9984999999999999
+      ]
+    },
+    {
+      "name": "Attached condenser service panel",
+      "low": [
+        -0.31,
+        0.304,
+        0.29
+      ],
+      "high": [
+        0.31,
+        0.316,
+        1.41
+      ]
+    }
+  ],
+  "result": "PASS exported triangle/UV/attachment contract; actual reimported render visual review required before promotion",
+  "uv_regions": {
+    "side": [
+      0.408,
+      0.006,
+      0.746,
+      0.994
+    ],
+    "top": [
+      0.755,
+      0.695,
+      0.995,
+      0.994
+    ],
+    "hardware": [
+      0.762,
+      0.015,
+      0.99,
+      0.235
+    ],
+    "upper_door": [
+      0.003,
+      0.739,
+      0.401,
+      0.995
+    ],
+    "lower_door": [
+      0.003,
+      0.047,
+      0.401,
+      0.727
+    ],
+    "condenser": [
+      0.755,
+      0.253,
+      0.995,
+      0.684
+    ],
+    "kick": [
+      0.003,
+      0.003,
+      0.401,
+      0.045
+    ]
+  }
+}

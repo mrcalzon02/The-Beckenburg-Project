@@ -1,0 +1,11 @@
+2026-11-07T15:58:02.525187400Z [main] RENDER SLOW stage=idle faces=117690 visible_faces=54560 culled_faces=63130 target=320x200 build_ms=1078 lighting_raster_ms=1328
+2026-11-07T15:58:04.921945900Z [main] RENDER SLOW stage=idle faces=111910 visible_faces=44428 culled_faces=67482 target=320x200 build_ms=3 lighting_raster_ms=895
+2026-11-07T15:58:07.397690100Z [main] RENDER SLOW stage=idle faces=93960 visible_faces=31032 culled_faces=62928 target=320x200 build_ms=1 lighting_raster_ms=722
+2026-11-07T15:58:09.967740700Z [main] RENDER SLOW stage=idle faces=99303 visible_faces=48324 culled_faces=50979 target=320x200 build_ms=2 lighting_raster_ms=1082
+2026-11-07T15:58:12.114754600Z [main] RENDER SLOW stage=idle faces=107066 visible_faces=37687 culled_faces=69379 target=320x200 build_ms=1 lighting_raster_ms=342
+2026-11-07T15:58:14.310999300Z [main] RENDER SLOW stage=idle faces=79594 visible_faces=33038 culled_faces=46556 target=320x200 build_ms=0 lighting_raster_ms=344
+2026-11-07T15:58:16.889737400Z [main] RENDER SLOW stage=idle faces=106083 visible_faces=35087 culled_faces=70996 target=320x200 build_ms=1 lighting_raster_ms=378
+2026-11-07T15:58:18.907827300Z [main] RENDER SLOW stage=idle faces=93516 visible_faces=38395 culled_faces=55121 target=320x200 build_ms=1 lighting_raster_ms=217
+2026-11-07T15:58:21.107666100Z [main] RENDER SLOW stage=idle faces=134541 visible_faces=89499 culled_faces=45042 target=320x200 build_ms=2 lighting_raster_ms=426
+SITE_AUDIT HOUSE_REBUILD_SERVICES captures=60 missing=0 blocked_centre=5 topology_reached=15
+HOUSE_ROOM_REVIEW_CAPTURED: inspect every room and record actual findings; captures are not automatic acceptance

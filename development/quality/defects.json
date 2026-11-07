@@ -3499,6 +3499,61 @@
       "action": "Use independently verified actual rear service surfaces; preserve source grille. Forty/100mm sanitary runs use closed8sided28triangle sections and a supported service cap. Preserve source electrical24mm geometry.",
       "evidence": "development/levels/rebuild/verification/house-heating-water-2026-11-07/ and development/captures/house-heating-water/: rejected-boiler-front-pipes-runtime.png; rejected-square-soil-head-runtime.png; corrected boiler-pipework/bathroom-water runtime views",
       "older_maps": "No older-map layouts, pipe supports, source surfaces, UVs or electrical behavior are accepted by this House correction. Audit individually."
+    },
+    {
+      "id": "DEV-326",
+      "title": "House review finds unfilled daily-use storage and garden functions",
+      "status": "SCOPED IMPLEMENTATION AND RUNTIME REVIEW PASS; exact-source full361 and full House gates pending",
+      "affected": "Rebuilt House room/function audit; older site camera coverage remains individually unaudited",
+      "symptom": "Actual four-direction review and current39source props show the coat vestibule without coat/boot storage, kitchen without cold-food storage and garden/patio still an empty reservation.",
+      "cause": "Incomplete functional furnishing or legal-but-unrepresentative centre fallback in an advisory visual audit",
+      "action": "Fit original full-size boot/towel rack, source-preserving supported coat, original180triangle generated-enamel fridge and grounded source bench/planters. Preserve all routes, door poses, cupboard budget, source coordinates and original assets.",
+      "evidence": "development/levels/rebuild/verification/house-room-review-2026-11-07/reviewed-rooms.csv; verification.json; actual house-room-review compass and authored-spawn PNGs; HouseRebuildFurnishingsTest.log; furnishings-native-verification.json; house-functional-fill runtime captures",
+      "older_maps": "Audit each older site independently. Legal cameras, graph connectivity and room names alone do not prove physical, functional, visual or gameplay completion."
+    },
+    {
+      "id": "DEV-327",
+      "title": "Nearest-centre audit cameras miss important landing and garden coverage",
+      "status": "SCOPED CORRECTION;8actual supported authored-anchor views inspected",
+      "affected": "Rebuilt House room/function audit; older site camera coverage remains individually unaudited",
+      "symptom": "Legal nearest-centre camera for upper landing lies on the stair, while garden fallback hugs the back door and sees through it. Those four-way views alone give incomplete functional context.",
+      "cause": "Incomplete functional furnishing or legal-but-unrepresentative centre fallback in an advisory visual audit",
+      "action": "Keep actual centre/fallback views and add the source-authored landing/garden spawn cameras; require traversability and same room ownership. Record source coordinates and inspect every supplementary view.",
+      "evidence": "development/levels/rebuild/verification/house-room-review-2026-11-07/reviewed-rooms.csv; verification.json; actual house-room-review compass and authored-spawn PNGs",
+      "older_maps": "Audit each older site independently. Legal cameras, graph connectivity and room names alone do not prove physical, functional, visual or gameplay completion."
+    },
+    {
+      "id": "DEV-328",
+      "title": "Fridge generation report accesses a freed Blender image after reset",
+      "status": "SCOPED CORRECTION; actual source/export/runtime checks pass; exact-source CI pending",
+      "affected": "New House furnishing/asset-generation diagnostic; older source/audits remain individually unaudited",
+      "symptom": "Export/reimport/renders succeeded, but final report used image.size after factory reset removed its RNA; Blender initially exited0 despite the traceback.",
+      "cause": "Source attachment gap, Blender lifetime/failure-propagation or incorrect stacked-floor review metadata",
+      "action": "Cache dimensions before reset; use --python-exit-code1 and require actual verification report. Final source/export/render report passes.",
+      "evidence": "development/levels/model-production/house-fridge/; development/levels/rebuild/verification/house-functional-fill-2026-11-07/; development/captures/house-functional-fill/: rejected-report-lifetime.log; house-fridge-build.log",
+      "older_maps": "Audit older model attachments, camera ownership/elevation and strict generation status individually; no blanket older-map or hardware acceptance."
+    },
+    {
+      "id": "DEV-329",
+      "title": "Original coat floats below its source hook",
+      "status": "SCOPED CORRECTION; actual source/export/runtime checks pass; exact-source CI pending",
+      "affected": "New House furnishing/asset-generation diagnostic; older source/audits remain individually unaudited",
+      "symptom": "Existing level_trace_coat front/side source review shows a shoulder-to-hook gap. Subsequent component audit also found the original pocket back12mm off the cloth card; the188triangle hanger-only approval was incomplete.",
+      "cause": "Source attachment gap, Blender lifetime/failure-propagation or incorrect stacked-floor review metadata",
+      "action": "Deliver200triangle additive sibling: retain all152original geometry/UV/material triangles, add36triangle hanger and12triangle closed cloth gusset. Independent decoded-component test proves garment/pocket bridge. Supersede prior approval and retain188GLB/side view as rejected evidence.",
+      "evidence": "development/levels/model-production/house-fridge/; development/levels/rebuild/verification/house-functional-fill-2026-11-07/; development/captures/house-functional-fill/: coat-verification.json; coat-front/coat-side previews; HouseRebuildFurnishingsTest.log",
+      "older_maps": "Audit older model attachments, camera ownership/elevation and strict generation status individually; no blanket older-map or hardware acceptance."
+    },
+    {
+      "id": "DEV-330",
+      "title": "Cold-storage diagnostic camera captures cellar instead of kitchen",
+      "status": "SCOPED CORRECTION; actual source/export/runtime checks pass; exact-source CI pending",
+      "affected": "New House furnishing/asset-generation diagnostic; older source/audits remain individually unaudited",
+      "symptom": "Camera row used foyer room hint0 at kitchenXZ; ground fallback found the lower cellar, so the fridge-labeled view showed the washer while position was legally traversable.",
+      "cause": "Source attachment gap, Blender lifetime/failure-propagation or incorrect stacked-floor review metadata",
+      "action": "Use actual kitchen room hint2 and require same room ownership as well as traversability; preserve wrong-floor capture. Correct kitchen and function views were actually inspected.",
+      "evidence": "development/levels/model-production/house-fridge/; development/levels/rebuild/verification/house-functional-fill-2026-11-07/; development/captures/house-functional-fill/: rejected-cold-storage-camera-floor-runtime.png; corrected kitchen-cold-storage-runtime.png",
+      "older_maps": "Audit older model attachments, camera ownership/elevation and strict generation status individually; no blanket older-map or hardware acceptance."
     }
   ],
   "audit_categories": [

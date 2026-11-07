@@ -1,0 +1,23 @@
+C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\model-production\house-fridge\build_fridge.py:15: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  material=bpy.data.materials.new('House refrigerator original generated enamel atlas');material.use_nodes=True
+INFO Draco mesh compression is available, use library at C:\Program Files\Blender Foundation\Blender 5.0\5.0\scripts\addons_core\io_scene_gltf2\extern_draco.dll
+07:22:47 | INFO: Starting glTF 2.0 export
+07:22:47 | INFO: Extracting primitive: Insulated enamel body
+07:22:47 | INFO: Primitives created: 1
+07:22:47 | INFO: Finished glTF 2.0 export in 0.031616926193237305 s
+
+Info: Saved as "level_house_fridge_worn.blend"
+07:22:47 | INFO: Data are loaded, start creating Blender stuff
+07:22:47 | INFO: Blender create Mesh node Insulated enamel body
+07:22:47 | INFO: glTF import finished in 0.00s
+00:04.250  render           | Saved: 'C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\model-production\house-fridge\previews\front.png'
+00:05.735  render           | Saved: 'C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\model-production\house-fridge\previews\rear.png'
+00:07.204  render           | Saved: 'C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\model-production\house-fridge\previews\front-straight.png'
+Blender 5.0.0 (hash a37564c4df7a built 2025-11-18 11:06:54)
+Traceback (most recent call last):
+  File "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\model-production\house-fridge\build_fridge.py", line 71, in <module>
+    report=dict(name=NAME,source_glb_sha256=sha,atlas_sha256=hashlib.sha256((HERE/'atlas-v1.png').read_bytes()).hexdigest(),atlas_size=list(image.size),triangles=count,budget=200,connected_box_components=len(bounds),source_components=bounds,result='PASS exported triangle/UV/attachment contract; actual reimported render visual review required before promotion',uv_regions=dict(side=SIDE,top=TOP,hardware=BLACK,upper_door=FRONT_UPPER,lower_door=FRONT_LOWER,condenser=BACK,kick=KICK))
+                                                                                                                                            ^^^^^^^^^^
+ReferenceError: StructRNA of type Image has been removed
+
+Blender quit

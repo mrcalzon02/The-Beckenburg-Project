@@ -1,0 +1,19 @@
+08:00:20 | INFO: Data are loaded, start creating Blender stuff
+08:00:20 | INFO: Blender create Mesh node Cube
+08:00:20 | INFO: glTF import finished in 0.00s
+INFO Draco mesh compression is available, use library at C:\Program Files\Blender Foundation\Blender 5.0\5.0\scripts\addons_core\io_scene_gltf2\extern_draco.dll
+08:00:20 | INFO: Starting glTF 2.0 export
+08:00:20 | INFO: Extracting primitive: Cube
+08:00:20 | INFO: Primitives created: 4
+08:00:20 | INFO: Finished glTF 2.0 export in 0.018573760986328125 s
+
+Info: Saved as "level_house_coat_hung.blend"
+08:00:20 | INFO: Data are loaded, start creating Blender stuff
+08:00:20 | INFO: Blender create Mesh node Cube
+08:00:20 | INFO: glTF import finished in 0.00s
+00:02.703  render           | Saved: 'C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\model-production\house-fridge\previews\coat-front.png'
+00:04.078  render           | Saved: 'C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\model-production\house-fridge\previews\coat-side.png'
+PASS supported source coat 200 triangles; original pivot/surfaces retained; inspect actual front/side
+Blender 5.0.0 (hash a37564c4df7a built 2025-11-18 11:06:54)
+
+Blender quit

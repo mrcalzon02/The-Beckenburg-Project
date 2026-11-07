@@ -24,3 +24,6 @@ live House promotion retaining identity/network/save contracts; full solo/client
 LAN/mission return and actual hardware acceptance. No round-duration tests or new
 physical FPS acceptance are claimed. All29 packets plus later unfinished maps
 remain active, with regular source/assets/evidence synchronization checkpoints.
+
+
+Current furnishing layer:45props,131793native triangles/UVs,230packed images and50179required route positions pass locally. Original180triangle generated-enamel fridge, additive200triangle coat and actual rack/bench/planter functions address DEV-326. Six texture variants pass, including140materials/13733203texels on this layer. Real4peer source/breaker and solo/human ghost-trip checks pass against the furnished source. Current361/full/native/GPU remote acceptance and the remaining whole-location gates stay open. Parent PR79 actual360/0 full42388613635 and native42388620846/GPU42388625541 passed; merged98f0faf0b1a0df3173914f145b94b27b2fd6c808.
