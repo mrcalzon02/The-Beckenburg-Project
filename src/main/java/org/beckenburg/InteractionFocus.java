@@ -19,8 +19,9 @@ public final class InteractionFocus {
         if(key.equals("monitoring_screen_mp_1"))triangles=triangles.stream().map(t->new GlbProps.Triangle(VanInteriorLayout.vertex(key,t.a()),VanInteriorLayout.vertex(key,t.b()),VanInteriorLayout.vertex(key,t.c()),t.material())).toList();
         return new Mesh(triangles,VanInteriorLayout.bounds(key));});}
     private static double[] ray(LooseClutter.Observer o){return new double[]{o.x(),o.eyeY(),o.z(),Math.sin(o.yaw())*Math.cos(o.pitch()),Math.sin(o.pitch()),Math.cos(o.yaw())*Math.cos(o.pitch())};}
-    private static double box(double[] r,VanInteriorLayout.Bounds b){
-        double near=0,far=2.05;double[] lo={b.x0(),b.y0(),b.z0()},hi={b.x1(),b.y1(),b.z1()};
+    private static double box(double[] r,VanInteriorLayout.Bounds b){return box(r,b,2.05);}
+    private static double box(double[] r,VanInteriorLayout.Bounds b,double reach){
+        double near=0,far=reach;double[] lo={b.x0(),b.y0(),b.z0()},hi={b.x1(),b.y1(),b.z1()};
         for(int n=0;n<3;n++){if(Math.abs(r[n+3])<1e-10){if(r[n]<lo[n]||r[n]>hi[n])return Double.POSITIVE_INFINITY;}
             else {double a=(lo[n]-r[n])/r[n+3],c=(hi[n]-r[n])/r[n+3];near=Math.max(near,Math.min(a,c));far=Math.min(far,Math.max(a,c));if(far<near)return Double.POSITIVE_INFINITY;}}
         return near;
@@ -40,9 +41,12 @@ public final class InteractionFocus {
         return q;
     }
     private static double hit(String id,double[] r,double x,double y,double z,double yaw,double sx,double sy,double sz,double roll,double half){
+        return hit(id,r,x,y,z,yaw,sx,sy,sz,roll,half,2.05);
+    }
+    private static double hit(String id,double[] r,double x,double y,double z,double yaw,double sx,double sy,double sz,double roll,double half,double reach){
         if(Math.hypot(r[0]-x,r[2]-z)>5)return Double.POSITIVE_INFINITY;
         Mesh m=mesh(id);double[] q=local(r,x,y,z,yaw,sx,sy,sz,roll,half);
-        if(!Double.isFinite(box(q,m.bounds)))return Double.POSITIVE_INFINITY;double distance=Double.POSITIVE_INFINITY;
+        if(!Double.isFinite(box(q,m.bounds,reach)))return Double.POSITIVE_INFINITY;double distance=Double.POSITIVE_INFINITY;
         for(var t:m.triangles)distance=Math.min(distance,triangle(q,t.a(),t.b(),t.c()));return distance;
     }
     private static double hit(String id,double[] r,double x,double y,double z,double yaw,double scale){return hit(id,r,x,y,z,yaw,scale,scale,scale,0,0);}
@@ -81,7 +85,15 @@ public final class InteractionFocus {
             for(double bar:new double[]{0,.655,1.31})t=Math.min(t,box(q,new VanInteriorLayout.Bounds(0,bar-.018,-.018,p.width(),bar+.018,.018)));
             candidate(targets,Kind.WINDOW,""+p.id(),map.windowOpen(p.id())?"Close window":"Open window",t);
         }
-        var van=map.van();var button=van.doorButton();candidate(targets,Kind.VAN_DOOR,"cargo",van.cargoDoorClosed()?"Open van doors":"Close van doors",hit("button_12",r,button.x(),van.floorY()+1.2,button.z(),van.placement().yaw()+Math.PI/2,.30));
+        var van=map.van();var button=van.doorButton();
+        // The departure control works across the cabin, but still requires an
+        // exact visible mesh hit from aboard the van at its actual deck height.
+        if(van.nearDoorButton(observer.x(),observer.z())
+                &&Math.abs(observer.y()-van.floorY())<=.25){
+            double distance=hit("button_12",r,button.x(),van.floorY()+1.2,button.z(),van.placement().yaw()+Math.PI/2,.30,.30,.30,0,0,Double.POSITIVE_INFINITY);
+            if(distance<=5)targets.add(new Target(Kind.VAN_DOOR,"cargo",
+                    van.cargoDoorClosed()?"Open van doors":"Close doors and end mission",distance));
+        }
         for(var f:VanInteriorLayout.FIXTURES){
             var p=van.world(f.localX(),f.localZ());
             double t;

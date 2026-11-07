@@ -3583,3 +3583,8 @@ House, Farmhouse, School, Church, Castle and all other previously authored areas
 ## Continuity
 
 At every map/model checkpoint: update open issues; check for related defects in reused assets; record new checks and remaining limitations; refresh the shared gallery; commit and push actual evidence. Before a fix is marked complete, rerun the checks it can affect (especially stairs after changing floor depth).
+
+
+## DEV-264 - Van departure from the front desk (2026-11-06)
+
+Rear cargo control now accepts an exact visible button hit from aboard the cargo deck, including the desk aisle. Normal equipment reach stays unchanged. Legacy solo closure also settles extraction; concurrent shared-host solo work is preserved. Four-site targeting, actual TCP walk/aim/close/result, cargo collision, and van circulation checks pass on isolated repair source and the working checkout. Evidence: `development/quality/evidence/van-departure-2026-11-06/`. Installed acceptance remains pending.

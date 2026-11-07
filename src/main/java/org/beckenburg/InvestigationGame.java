@@ -1496,7 +1496,20 @@ public final class InvestigationGame {
                 case BREAKER -> {powerOn=!powerOn;map.fixtures().power(lights.supplied());syncEnvironment();}
                 case DOOR -> {int id=Integer.parseInt(target.id());map.toggleDoor(id);if(!map.traversable(scene.x,feetY(),scene.z)){map.toggleDoor(id);throw new IllegalArgumentException("Doorway occupied.");}}
                 case WINDOW -> map.toggleWindow(Integer.parseInt(target.id()));
-                case VAN_DOOR -> {if(map.van().toggleCargoDoor()&&!map.traversable(scene.x,feetY(),scene.z)){map.van().toggleCargoDoor();throw new IllegalArgumentException("Van doorway occupied.");}}
+                case VAN_DOOR -> {
+                    if(map.van().toggleCargoDoor()){
+                        if(!map.traversable(scene.x,feetY(),scene.z)){
+                            map.van().setCargoDoorClosed(false);
+                            throw new IllegalArgumentException("Van doorway occupied.");
+                        }
+                        if(!session.extract(scene.x,feetY(),scene.z)){
+                            map.van().setCargoDoorClosed(false);
+                            throw new IllegalArgumentException("Return inside the van to depart.");
+                        }
+                        GameSfx.play(LanSound.Cue.VAN_DOOR);
+                        timer.stop();endCase("Van extraction confirmed.");return;
+                    }
+                }
             }
             GameSfx.play(AudioActionRouting.interaction(target.kind(),medicineFromRack));
             showVanNotice(target.kind()==InteractionFocus.Kind.GENERATOR?(lights.sourceRunning()?"Generator running":"Generator stopped"):target.name());

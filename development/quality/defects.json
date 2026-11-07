@@ -3,6 +3,17 @@
   "updated": "2026-11-04",
   "issues": [
     {
+          "id": "DEV-264",
+          "title": "Rear van departure button cannot be used from front desk",
+          "status": "fixed-scoped; Java 17 compilation, exact mesh and TCP extraction checks pass; installed acceptance pending",
+          "affected": "Shared expedition van; House, Farmhouse, School and Hollow Creek targeting; solo and LAN departure",
+          "symptom": "Rear wall control loses its prompt when standing at the front desk; legacy solo button toggles cargo doors without ending the mission.",
+          "cause": "Two metre world targeting cap and 2.05 model-unit broad phase truncate the scaled button ray; legacy solo handler only toggles the shutter.",
+          "action": "Allow exact visible button hits across the interior at cargo-deck height, preserve normal interaction reach, and settle legacy solo extraction after collision-safe closure. Retain the concurrent shared-host solo refactor.",
+          "evidence": "development/quality/evidence/van-departure-2026-11-06/: isolated and working-source compilation; VanCargoDoorTest, LanVanExtractionIntegrationTest, VanModuleIntegrationTest, VanHumanScaleTest. TCP test walks to front desk, sends aimed INTERACT, checks closed shutter and one RETREATED result.",
+          "older_maps": "Shared van module covers all placements; physical installed gameplay remains unverified. Four-site targeting and three-site circulation checked; no broader map audit claimed."
+    },
+    {
       "id": "DEV-263",
       "title": "Crouch and stand snap the local camera between eye heights",
       "status": "fixed-scoped; camera math and actual TCP posture tests pass; installed acceptance pending",
