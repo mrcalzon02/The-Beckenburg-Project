@@ -5,7 +5,7 @@ public final class GhostElectricalTest {
     static void check(boolean b,String s){if(!b)throw new AssertionError(s);}
     static GhostHauntingFolio.Occurrence event(String id,int room,int tick){return new GhostHauntingFolio.Occurrence(GhostHauntingFolio.entry(id),room,tick);}
     public static void main(String[] args)throws Exception{
-        var map=HouseRebuildFitout.map();int combinations=0;
+        boolean services=args.length>0&&args[0].equals("SERVICES");var map=services?HouseRebuildServices.map():HouseRebuildFitout.map();int combinations=0;
         for(var type:GhostIdentity.Type.values())for(var source:GhostDomain.Source.values()){
             var ghost=new GhostDomain(map,4,type);ghost.advance(1,4);var accepted=ghost.dispatch(new GhostDomain.Command(GhostDomain.Action.DISTURB,4,1,source));
             check(accepted.applied(),"Ordinary disturb rejected "+type+" / "+source);var lights=new RoomLighting();
@@ -29,7 +29,7 @@ public final class GhostElectricalTest {
                 var occurrence=folio.choose(result.action(),GhostIdentity.Type.SPIRIT,result.room(),tick);
                 if(occurrence!=null&&occurrence.entry().id().equals("lightning_static")&&result.room()<12){soloSeed=seed;break;}}
         }
-        check(soloSeed>=0,"Deterministic actual AI electrical-event fixture");var soloMap=HouseRebuildFitout.map();var soloLights=new RoomLighting();
+        check(soloSeed>=0,"Deterministic actual AI electrical-event fixture");var soloMap=services?HouseRebuildServices.map():HouseRebuildFitout.map();var soloLights=new RoomLighting();
         var solo=new InvestigationSession(soloMap,InvestigationSession.Role.OBSERVER,soloSeed,1,GhostIdentity.Type.SPIRIT);solo.connectLighting(soloLights);
         var station=soloMap.van().world(0,0);for(int tick=1;tick<=41;tick++)solo.tick(station.x(),soloMap.van().floorY(),station.z(),false);
         check(solo.hauntings().stream().anyMatch(e->e.entry().id().equals("lightning_static")),"Actual solo AI emitted approved electrical event");

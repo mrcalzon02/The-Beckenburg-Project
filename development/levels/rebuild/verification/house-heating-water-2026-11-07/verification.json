@@ -1,0 +1,67 @@
+{
+  "status": "LOCAL PACKAGED AND NATIVE PASS; exact-source360 remote full/native/GPU pending",
+  "parent": "75f1571b7ff70df95f9669ab31323630fb64d055",
+  "parent_pr": 78,
+  "parent_runs": {
+    "full": 42386300461,
+    "full_state": "SUCCESS; actual359passed/0failed/0skipped/359",
+    "native": 42386318384,
+    "native_state": "SUCCESS",
+    "gpu": 42386325291,
+    "gpu_state": "SUCCESS"
+  },
+  "candidate_revision": "first-principles-heating-v1-1d5d95258b105737",
+  "native": {
+    "level": "briar-rebuild",
+    "revision": "first-principles-heating-v1-1d5d95258b105737",
+    "triangles": 129529,
+    "packed_images": 213,
+    "props": 39,
+    "spawns": 15,
+    "native_sha256": "49416d21d323b0eaabecee04cee95239dda0a2373efae90e3f49051a624a5f0e",
+    "definition_sha256": "93b54cd383a2e63cbd29e4423df4aba0f1abfa57ff602b4726cdba31077a4200",
+    "geometry_sha256": "fe0ab3176654072bee7622d2ffa31db1f1619e0937425c33ca0281845c6a89bf",
+    "result": "PASS every source vertex/UV; packed images; original sockets; native file unchanged",
+    "acceptance": "construction candidate only; terrain/boundary and complete map gates open"
+  },
+  "checks": [
+    "HouseRebuildServicesTest:7original radiators/31independently checked source-triangle contacts/50361required route positions/retained cover and belongings/real4peer source and ghost trip/reset",
+    "HouseRebuildTextureTest:all5variants; services123materials/12033711texels exactly",
+    "HouseRebuildFitoutTest:unchanged65sections and50674routes",
+    "DynamicGeometryRetentionTest",
+    "PhysicalLightingTest",
+    "BeckenburgRegressionManifestTest:360entrypoints"
+  ],
+  "review": "10actual runtime construction views plus native overview inspected; two rejected front-pipe/square-drain studies preserved",
+  "limits": [
+    "Isolated construction source; House live dispatch not yet promoted",
+    "Water/heating are authored physical scene services, not invented fluid or thermal simulation",
+    "Valve/vent refinement and final material/light-bleed audit remain",
+    "Authored location encounter, saved native migration, full mission/client/network/hardware acceptance remain"
+  ],
+  "implementation_sha": "e91d7e73d5da22d9e52bdad3776a666a4dc17f2d",
+  "parent_merge": "d7b60acfe83a156fbc810a764a32be82b8ff6d02",
+  "reconciled_main": "d7b60acfe83a156fbc810a764a32be82b8ff6d02",
+  "reconciled_tree_proof": {
+    "src/main": {
+      "implementation_tree": "9e9e115a1ea6f9802179c40cfb7e6e66f3e0addd",
+      "reconciled_tree": "9e9e115a1ea6f9802179c40cfb7e6e66f3e0addd",
+      "identical": true
+    },
+    "src/test": {
+      "implementation_tree": "d1bd6939108f2c7f672fd9f159d5656231a3d72e",
+      "reconciled_tree": "d1bd6939108f2c7f672fd9f159d5656231a3d72e",
+      "identical": true
+    },
+    "assets/runtime": {
+      "implementation_tree": "e05028944b150bde73866db4defa8f8eb887d9cc",
+      "reconciled_tree": "e05028944b150bde73866db4defa8f8eb887d9cc",
+      "identical": true
+    },
+    ".github/workflows": {
+      "implementation_tree": "ceef962d7f0b2d7797a235627685066f38f56ec3",
+      "reconciled_tree": "ceef962d7f0b2d7797a235627685066f38f56ec3",
+      "identical": true
+    }
+  }
+}

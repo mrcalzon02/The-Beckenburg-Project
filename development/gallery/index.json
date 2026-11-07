@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 7198,
+  "count": 7211,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -3512,6 +3512,136 @@
       "height": 625,
       "bytes": 617986,
       "sha256": "71aa241a1107158b25bce9f48f1ca283695011ef04959d7d82e7adb51069a575"
+    },
+    {
+      "path": "development/captures/house-heating-water/bath-radiator-runtime.png",
+      "url": "development/captures/house-heating-water/bath-radiator-runtime.png",
+      "title": "Bath radiator runtime",
+      "kind": "Runtime household heating and water construction",
+      "width": 1000,
+      "height": 625,
+      "bytes": 710506,
+      "sha256": "2a76a651f13b840e075e34ba157a51e6fbf8ef6cab8c60c62defaaec2f7a47b5"
+    },
+    {
+      "path": "development/captures/house-heating-water/bathroom-water-runtime.png",
+      "url": "development/captures/house-heating-water/bathroom-water-runtime.png",
+      "title": "Bathroom water runtime",
+      "kind": "Runtime household heating and water construction",
+      "width": 1000,
+      "height": 625,
+      "bytes": 687279,
+      "sha256": "1b72ef00c6d1d96a77e27f0a04e9b436b4ad97fd05ca93dd878fd99840310d00"
+    },
+    {
+      "path": "development/captures/house-heating-water/boiler-pipework-runtime.png",
+      "url": "development/captures/house-heating-water/boiler-pipework-runtime.png",
+      "title": "Boiler pipework runtime",
+      "kind": "Runtime household heating and water construction",
+      "width": 1000,
+      "height": 625,
+      "bytes": 620595,
+      "sha256": "301d0685a349479b35f89dcdecd00440b1c93597a468cf3473e3d5f3ce508762"
+    },
+    {
+      "path": "development/captures/house-heating-water/child-radiator-runtime.png",
+      "url": "development/captures/house-heating-water/child-radiator-runtime.png",
+      "title": "Child radiator runtime",
+      "kind": "Runtime household heating and water construction",
+      "width": 1000,
+      "height": 625,
+      "bytes": 564127,
+      "sha256": "2da6ace2602cd976e2ebbe49ba5e897dd073877dc3f163b470cbde9380156a75"
+    },
+    {
+      "path": "development/captures/house-heating-water/dining-radiator-runtime.png",
+      "url": "development/captures/house-heating-water/dining-radiator-runtime.png",
+      "title": "Dining radiator runtime",
+      "kind": "Runtime household heating and water construction",
+      "width": 1000,
+      "height": 625,
+      "bytes": 777773,
+      "sha256": "8414c3d6448f132865c07043b38aedc3d13eeeea3197c9997279c4131322688e"
+    },
+    {
+      "path": "development/captures/house-heating-water/kitchen-radiator-runtime.png",
+      "url": "development/captures/house-heating-water/kitchen-radiator-runtime.png",
+      "title": "Kitchen radiator runtime",
+      "kind": "Runtime household heating and water construction",
+      "width": 1000,
+      "height": 625,
+      "bytes": 667627,
+      "sha256": "fd0fe5de4af3e337773b3fcf52213ef14a2fc4233069a8181634188d7eed003d"
+    },
+    {
+      "path": "development/captures/house-heating-water/landing-radiator-runtime.png",
+      "url": "development/captures/house-heating-water/landing-radiator-runtime.png",
+      "title": "Landing radiator runtime",
+      "kind": "Runtime household heating and water construction",
+      "width": 1000,
+      "height": 625,
+      "bytes": 899986,
+      "sha256": "cd6c1ec1e88336ac478af99b196aef170b3f211c0883b7c2a2f853168e23da74"
+    },
+    {
+      "path": "development/captures/house-heating-water/laundry-water-runtime.png",
+      "url": "development/captures/house-heating-water/laundry-water-runtime.png",
+      "title": "Laundry water runtime",
+      "kind": "Runtime household heating and water construction",
+      "width": 1000,
+      "height": 625,
+      "bytes": 667774,
+      "sha256": "686fa3df723a45a48a6b5dc7cff6d3d82356214befa94fe1571229c36a585d3f"
+    },
+    {
+      "path": "development/captures/house-heating-water/native-parcel-overview.png",
+      "url": "development/captures/house-heating-water/native-parcel-overview.png",
+      "title": "Native parcel overview",
+      "kind": "Native geometry overview",
+      "width": 1200,
+      "height": 900,
+      "bytes": 1419142,
+      "sha256": "243648be267959d98c81b5ab211a6b70d2e9e0041588049b3095543f0bfbca0c"
+    },
+    {
+      "path": "development/captures/house-heating-water/parents-radiator-runtime.png",
+      "url": "development/captures/house-heating-water/parents-radiator-runtime.png",
+      "title": "Parents radiator runtime",
+      "kind": "Runtime household heating and water construction",
+      "width": 1000,
+      "height": 625,
+      "bytes": 614386,
+      "sha256": "0585b960043152c02d7842a7af598112b6504be8970dbce361f8e961a7227f21"
+    },
+    {
+      "path": "development/captures/house-heating-water/rejected-boiler-front-pipes-runtime.png",
+      "url": "development/captures/house-heating-water/rejected-boiler-front-pipes-runtime.png",
+      "title": "Rejected boiler front pipes runtime",
+      "kind": "Rejected runtime inspection",
+      "width": 1000,
+      "height": 625,
+      "bytes": 622419,
+      "sha256": "f55c6f42bb399380f78eeaed08e06697828423bea66c9d632ab4268b3c7451bf"
+    },
+    {
+      "path": "development/captures/house-heating-water/rejected-square-soil-head-runtime.png",
+      "url": "development/captures/house-heating-water/rejected-square-soil-head-runtime.png",
+      "title": "Rejected square soil head runtime",
+      "kind": "Rejected runtime inspection",
+      "width": 1000,
+      "height": 625,
+      "bytes": 685802,
+      "sha256": "03ce154d4f71aa35240078f839c8d068501315706a954fa766d6c69fb4213662"
+    },
+    {
+      "path": "development/captures/house-heating-water/sitting-radiator-runtime.png",
+      "url": "development/captures/house-heating-water/sitting-radiator-runtime.png",
+      "title": "Sitting radiator runtime",
+      "kind": "Runtime household heating and water construction",
+      "width": 1000,
+      "height": 625,
+      "bytes": 638707,
+      "sha256": "32101a2efe3516a5af70afa264d614f1b7579d02917db1202d70a0e0c93c5346"
     },
     {
       "path": "development/captures/house-landscape/canonical-van-arrival-runtime.png",

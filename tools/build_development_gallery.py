@@ -19,6 +19,7 @@ for path in sorted(set(paths)):
     kind='Development review'
     if '/synthetic-controls/' in path:kind='Synthetic GPU depth control'
     elif '/hiding-energy/' in path:kind='Runtime hiding-location energy material'
+    elif '/house-heating-water/' in path:kind='Rejected runtime inspection' if p.stem.startswith('rejected-') else 'Native geometry overview' if p.stem.startswith('native-') else 'Runtime household heating and water construction'
     elif '/house-story/' in path:kind='Rejected runtime inspection' if p.stem.startswith('rejected-') else 'Native geometry overview' if p.stem.startswith('native-') else 'Runtime household story and source wiring'
     elif '/house-fitout/' in path:kind='Rejected runtime inspection' if p.stem.startswith('rejected-') else 'Native geometry overview' if p.stem.startswith('native-') else 'Runtime household service fit-out'
     elif '/house-services/' in path:kind='Runtime electrical control and lighting verification'
