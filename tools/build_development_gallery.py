@@ -18,6 +18,7 @@ for path in sorted(set(paths)):
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
     if '/synthetic-controls/' in path:kind='Synthetic GPU depth control'
+    elif '/house-fixture-fit/' in path:kind='Runtime construction fixture fit'
     elif '/castle-loose-placements/' in path:kind='Runtime capture'
     elif '/castle-loose-ui/' in path:kind='Game UI verification'
     elif '/castle-window-frame/' in path:kind='Runtime lighting diagnostic'

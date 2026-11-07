@@ -619,3 +619,10 @@ Published implementation26be171c, then reconciled concurrentmain 49d801bd222c67f
 
 
 Final Castle contact closure: DEV-298 reproduces upper-tread support2.125m versus rendered2.21m and light passing through the closed mass. One immutable20step solid definition now drives unchanged rendering, true body support and optical contact; smooth player movement remains unchanged. Fresh final package and7targeted body/portal/upper/cellar/physical/handheld/dense-sparse lighting checks pass, plus real native F5/]/F12. Earlier49focused checks retained. Implementation is frozen for online345/native/GPU acceptance; advance House pilot and remaining site blockouts while those jobs run, per owner acceleration request. No new Castle feature expansion.
+
+
+## House measured fixture-fit progress — 6 November
+
+Castle implementation frozen at f4e5eb7c282e847a944313976778ffac4faadf77 in PR72. Native42348184824, GPU42348189467 and gallery42348182532 pass; full42348182575 remains live and its actual345body summary must be read before acceptance/merge. Main inspected49d801bd222c67fb65452939368c833ae9c43b5b. No new Castle features.
+
+House fitted construction candidate adds5existing full-size fixtures with real source-mesh bounds/pivots and matching collision, plus the kitchen doorway adjustment. All15zones/required sockets swept reachable at60964positions; prior pilot physics/shell/services and persisted editor terrain-hole checks pass. Four actual runtime views inspected; DEV-299 orientation corrected. Empty graybox and dispatched House unchanged. Evidence/next action: rebuild/house/fixture-fit.md and verification/house-fit-2026-11-06. Continue House terrain/boundary/functional assembly, then institutional blockout batch; no whole-map or29packet acceptance.

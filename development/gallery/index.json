@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 6676,
+  "count": 6680,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -3182,6 +3182,46 @@
       "height": 625,
       "bytes": 295946,
       "sha256": "bb36aace8bbf55d4da6403c64c502320ca592153b8fcd6bd7b0b93b99e413816"
+    },
+    {
+      "path": "development/captures/house-fixture-fit/bath-fixture-fit-runtime.png",
+      "url": "development/captures/house-fixture-fit/bath-fixture-fit-runtime.png",
+      "title": "Bath fixture fit runtime",
+      "kind": "Runtime construction fixture fit",
+      "width": 1000,
+      "height": 625,
+      "bytes": 738167,
+      "sha256": "de46beefaf602d3451254465a22b7fbc960c9611a4654c22fac3bc07a101572f"
+    },
+    {
+      "path": "development/captures/house-fixture-fit/bathroom-fixture-fit-runtime.png",
+      "url": "development/captures/house-fixture-fit/bathroom-fixture-fit-runtime.png",
+      "title": "Bathroom fixture fit runtime",
+      "kind": "Runtime construction fixture fit",
+      "width": 1000,
+      "height": 625,
+      "bytes": 682718,
+      "sha256": "359b4025b9d0aa3b28e6014cde6af9525b2f40db7693cea3a80a1c270991caab"
+    },
+    {
+      "path": "development/captures/house-fixture-fit/kitchen-fixture-fit-runtime.png",
+      "url": "development/captures/house-fixture-fit/kitchen-fixture-fit-runtime.png",
+      "title": "Kitchen fixture fit runtime",
+      "kind": "Runtime construction fixture fit",
+      "width": 1000,
+      "height": 625,
+      "bytes": 626190,
+      "sha256": "87617694612da28fbad83283f86aa72664dcefe020c566d4c197a97c2d1a2d5a"
+    },
+    {
+      "path": "development/captures/house-fixture-fit/laundry-fixture-fit-runtime.png",
+      "url": "development/captures/house-fixture-fit/laundry-fixture-fit-runtime.png",
+      "title": "Laundry fixture fit runtime",
+      "kind": "Runtime construction fixture fit",
+      "width": 1000,
+      "height": 625,
+      "bytes": 608363,
+      "sha256": "022dad3d1f86ad7b14d18ecd39f6d3b59c651c440ea3b439830b3d8702266dee"
     },
     {
       "path": "development/captures/wall-lamp-runtime/after/wall-lamp-0-off.png",

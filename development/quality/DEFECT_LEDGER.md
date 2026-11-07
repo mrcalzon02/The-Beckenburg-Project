@@ -4056,6 +4056,20 @@ Evidence and verification: Actual packaged pre-fix support and closed-stair ray 
 
 Older-map obligation: Castle upper steps only. Other location stair support and light-bleed obligations remain individually unaudited.
 
+### DEV-299 — House fitted-candidate toilet initially faced the wall
+
+**Status:** corrected in construction candidate; actual runtime capture reviewed · **Affected:** HouseRebuildFittings pilot bathroom only; dispatched House unchanged
+
+Initial runtime candidate showed the rear cistern from the room; bowl faced the north wall.
+
+Cause / uncertainty: Assumed source front direction without examining the actual placed model.
+
+Fix / next action: Rotate the source model to face into the bathroom, preserving its original pivot, UVs and measured floor/collider contract.
+
+Evidence and verification: development/captures/house-fixture-fit/bathroom-fixture-fit-runtime.png; source bounds, clearances and all15zone swept traversal pass. The initial candidate image was superseded before publication; no retained before-image is claimed.
+
+Older-map obligation: Only this candidate was corrected. Other maps retain individual fixture orientation, support, circulation and light-separation audits.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
