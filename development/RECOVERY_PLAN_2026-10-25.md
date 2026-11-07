@@ -812,3 +812,16 @@ Verified migration/memory implementation60a239ddf6cd183cd4676cef241ae70a88d5107e
 Protocol checkpoint698163b1 explicitly separates LAN3 authored cue compatibility from runtime integration. Core House train controller is now wired into actual solo/host paths; source test passes empty-room/full-object doorway/deck occlusion, one-shot/stale/reset, possession/death/disconnect/timeout and independent model-foot support, unchanged routes/cover. Two actual before/after renders were inspected and an original windup WAV generated. Real solo/TCP/photo/old-version/audio/GPU acceptance remains pending; no encounter completion or fresh default promotion.
 
 Protected PR82 sourcea613df30 GPU42424143713 PASS; full42424140271 remains observed live. Native42424140546 FAILS at CLI corrupt-primary bootstrap, despite actual256MB GUI and prior native checks passing: recoverSavedDocument loads the corrupt primary through source selection before restoring previous data (DEV-345). Preserve that raw failure. Next action is isolated native recovery correction and actual CLI regression before promoting either checkpoint. All29packets/later maps remain active; no round-duration or physical FPS claims.
+
+
+## Isolated native House bootstrap recovery correction — 7 November2026
+
+PR82 native42424140546 fails its actual corrupt-start CLI check: House source selection attempts to parse the corrupt primary before restoring valid previous data. All earlier native/256MB GUI checks and GPU42424143713 passed; full42424140271 remains observed live. Keep that source frozen while correcting independently.
+
+On fix/house-source-recovery, recoverSavedDocument now uses a fixed House fallback for parsing, then validates architecture/props/attachments from the candidate backup. Exact versionless/rebuilt backup bytes and gameplay source restore at256MB. Foreign/future/detached-service candidates preserve corrupt primary bytes. The exact formerly failing verify_editor_agent_cli.py now passes actual process bootstrap, recovery/save/stale/JSON/capture/native checks. Renderer/assets/construction and protocol2 are unchanged. New native/full corrected-source CI remains pending. Actual main1fe0e249 full42422292792 raw362/0/0/362 is recorded independently.
+
+Encounter WIP d8e6da1c is preserved and remotely verified on map/house-encounter, including two inspected train poses and original synthesized cue; actual solo/TCP/photo/protocol3 acceptance remains pending. Resolve recovery gate first, then resume House encounter/default promotion/final map acceptance and all29packets/later maps. No round-duration tests or physical FPS claims.
+
+Isolated corrupt-primary recovery implementationf3e215fc6c7c9c39464edd405645835a48cfb9ad; exact expanded native/CLI tests and control capture are committed. Publish isolated checkpoint and rerun failed native acceptance; keep live parent365 handle42424140271 unchanged until terminal.
+
+Reconciled isolated recovery sourcec93d141d into encounter work; parent PR82 remains on the same corrected source under its own acceptance runs.

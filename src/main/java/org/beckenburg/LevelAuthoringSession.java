@@ -92,12 +92,19 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         var loaded=loadRevision(document,documentId,source);restore(loaded.state());diskFingerprint=loaded.fingerprint();
     }
     public static void recoverSavedDocument(HouseMap.Site site)throws IOException{
-        recoverPreviousDocument(path(site),sceneId(site),LevelPlans.buildSource(site));
+        // A corrupt primary cannot select its architecture. The validated
+        // recovery candidate carries that authority, including rebuilt House.
+        var fallback=site==HouseMap.Site.HOUSE?LevelPlans.legacyHouseSource():LevelPlans.buildSource(site);
+        recoverPreviousDocument(path(site),sceneId(site),fallback);
     }
     private static void recoverPreviousDocument(Path document,String documentId,LevelDefinition source)throws IOException{
         RuntimeSceneDocument.restorePrevious(document,path->{
             var candidate=loadState(path,documentId,source);
-            for(var prop:candidate.props())checkProp(prop,source);
+            var authority=documentId.equals("beckenburg/house")?HouseSourceVersions.source(candidate.architecture()):source;
+            try{
+                for(var prop:candidate.props())checkProp(prop,authority);
+                HouseAuthoringAttachments.validate(authority,candidate.props());
+            }catch(IllegalArgumentException invalid){throw new IOException("Invalid recovered native source",invalid);}
         });
     }
     public synchronized void recoverPrevious()throws IOException{recoverPreviousDocument(document,documentId,source);reopen();}

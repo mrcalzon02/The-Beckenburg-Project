@@ -3712,13 +3712,13 @@
     {
       "id": "DEV-345",
       "title": "House CLI recovery reads corrupt primary architecture before restoring valid backup",
-      "status": "REMOTE NATIVE FAILURE CONFIRMED; isolated recovery correction is next priority",
-      "affected": "PR82 native42424140546; explicit editor-agent --recover House bootstrap after primary corruption",
-      "symptom": "Actual Windows native tests and migration pass, but verify_editor_agent_cli.py recover bootstrap fails. LevelAuthoringSession.recoverSavedDocument calls LevelPlans.buildSource, which selects architecture by reading the corrupt primary BSCN before the valid previous document can be restored.",
-      "cause": "New native source selection was inserted before existing primary-corruption recovery.",
-      "action": "Resolve the recovery candidate architecture from the backup being validated, without loading the corrupt primary. Preserve source-version/identity/attachment checks and add a corrupted-primary recovery regression. Keep PR82 unmerged; do not infer native acceptance from passing GUI or GPU.",
-      "evidence": "build/native-42424140546-failed.log; actual CI traceback at verify_editor_agent_cli.py line60",
-      "older_maps": "Audit version selection before corruption recovery independently for every native source adapter."
+      "status": "SCOPED CORRECTION PASS; actual failing CLI script and expanded backup matrix pass locally; corrected-source native CI pending",
+      "affected": "PR82 native42424140546; explicit editor-agent --recover bootstrap after primary corruption",
+      "symptom": "Windows native migration/GUI checks pass, but corrupt-start CLI recovery fails because LevelPlans.buildSource selects architecture by decoding the corrupt primary before the previous document is restored.",
+      "cause": "New source selection preceded existing primary-corruption recovery.",
+      "action": "Use a fixed legacy parse fallback for House bootstrap and select/validate architectural authority from the backup being restored. Preserve previous identity/future metadata checks and validate required rebuilt attachments before replacement. Added actual versionless/rebuilt byte-exact bootstrap plus foreign/future/detached-service refusal tests. Rerun the exact previously failing CLI script.",
+      "evidence": "development/levels/rebuild/verification/house-native-recovery-2026-11-07/; native-42424140546-failed.log; LevelAuthoringRecoveryTest; actual verify_editor_agent_cli.py PASS",
+      "older_maps": "Audit pre-recovery source/version selection independently for every other native adapter. This correction does not accept unaudited maps."
     }
   ],
   "audit_categories": [
