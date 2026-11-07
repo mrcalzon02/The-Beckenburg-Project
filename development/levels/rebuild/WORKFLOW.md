@@ -318,3 +318,12 @@ All6texture variants pass: current140materials/13733203texels exact. Native13178
 Finish actual House encounter, matched door/circuit/light and final wear review, production labels, saved-native editing/migration and live default promotion with complete client/network/mission/hardware acceptance. Then continue remaining29packet stages and subsequent unfinished maps. No round-duration tests or new physical FPS acceptance.
 
 Final source-component review revises DEV-329: the188triangle hanger-only coat still had its original12mm pocket gap. Preserve that GLB/side view and supersede approval. Final200triangle derivative adds a closed12triangle cloth gusset; independent decoded box/source-ray test passes. Final native131793triangles,230packed images,45props reverified; actual furnished runtime/TCP checks and140material/13733203texel exact sampling pass. Prior five variant inputs are unchanged. Current361remote acceptance remains pending.
+
+
+## Owner pause checkpoint — 7 November 2026
+
+Owner requested sync and commit only; resume tomorrow. No implementation changes were made on map/house-integration. Starting HEAD is 3a44a6634149bc8e22e1470c348854725896e687; fetched main 1c86ab3d131b3d6fdf10e5a7e633d0d22a0e8323 is already an ancestor. The working tree was clean before this checkpoint.
+
+PR80 map/house-room-review remains frozen at 3a44a6634149bc8e22e1470c348854725896e687. Editor Agent run42395017153 and gallery-index run42395009741 passed. Full run42395009707 and GPU run42395022669 were still in progress at pause; no acceptance or merge is inferred. Latest observed main installer42390486790 and full42390486757 report success at98f0faf0; the wrapper result alone does not establish raw-manifest acceptance. Parent exact-source full42388613635 remains recorded360/0/0/360. Parent Pages42390598203 passed at1c86ab3d; its deployed service captures were already read back.
+
+Next session: inspect those same PR80 runs and the raw361-entry summary, reconcile and merge only after required acceptance, then resume House saved-map compatibility/live promotion, authored encounter and final visual/functional acceptance. No integration code has been written yet. All29 packets and subsequent unfinished maps remain in scope. No round-duration tests or new physical hardware acceptance. This documentation-only checkpoint runs no build, render or new gallery generation because it changes no source or captures.
