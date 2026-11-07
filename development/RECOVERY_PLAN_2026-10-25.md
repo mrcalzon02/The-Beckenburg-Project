@@ -521,3 +521,10 @@ Plant PR65 merged ece487e12b72d8eae69911325082d8da2725cb27 after exact db254 ful
 
 
 Local bench source checkpoint 44b827a597dec3637b8c2ddd829c86a7c574b7a9 is committed with37 passing targeted checks and340 preflight, after actual generic rejection/generated source/native review. Reconciled capture-only main5124b982 without changing tested runtime source and refreshed complete gallery6192 captures. Actual shared IDs and library masters remain preserved. Original source/code/PNG/report/log hashes revalidated against committed bytes. Unfinished training remains safely excluded under local build/training-inflight. Fresh workbench CI/deployment still required.
+
+
+## Shared workbench merge receipt — 6 November
+
+PR66 source41d150e0398c7d59c88405d9f5f521b7303611eb merged753e637b942fef3b2b7a5cd00b6bac9dc528274d through expected-head GitHub merge. Full42331228401 job128277959035 completed successfully; independently decoded transcript truly reports REGRESSION SUMMARY passed=340 failed=0 skipped=0 manifest=340. Native42331234630 and all three GPU42331240114 jobs succeeded. Shared clean/worn models keep688tri, original bounds and existing IDs; original library masters preserved. Actual published source/native PNG and gallery HTML bytes were independently verified before merge.
+
+Network access failed after successful merge (Git DNS, CLI API, public web and connector transport), so merged-main fetch and actual Pages HTML/PNG readback remain pending, not accepted. Preserve exact handles; do not rerun passing tests merely to recover connectivity. Next: reconcile main, verify deployed shared workbench gallery/captures, then resume pending protected-training checkpoint and remaining Castle finish. Pending training source/captures are separate uncommitted work, preserved intact. Full Castle/all29 maps remain active. No round-duration tests.
