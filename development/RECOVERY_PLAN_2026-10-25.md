@@ -724,3 +724,12 @@ The service assembly compile mismatch and rejected visual routing are recorded D
 House heating/water implementation checkpointe91d7e73d5da22d9e52bdad3776a666a4dc17f2d; current360manifest/native/export/PNGs are committed. Stage records bind this actual implementation; exact remote acceptance remains next. Latest fetched main889d7b7e is retained in its ancestry.
 
 Parent House story/feed75f1571b exact full42386300461 actual359/0/0/359, native42386318384 andGPU42386325291 SUCCESS. Expected-head PR78 merge d7b60acfe83a156fbc810a764a32be82b8ff6d02 confirmed. New heating/water branch reconciles this main; actual source/test/runtime/workflow trees remain identical to e91d7e73 implementation. Current360acceptance and merged Pages remain pending.
+
+
+## Complete House room diagnostic — 7 November2026
+
+Underlying runtime source a2c88012/PR79 remains protected: full42388613635 is confirmed active; native42388620846/GPU42388625541 SUCCESS. Published22source/native/export/contact/asset/index/PNG files read back exactly. Separate map/house-room-review adds no runtime change.
+
+Actual SiteRoomCompassAudit captured all60directions across15zones with0missing views;5blocked centres used legal fallbacks. All15four-way contact sheets were manually inspected. Additional8actual views at source-authored landing/garden spawn points cover the otherwise stair/back-door-biased cameras. Those8images were inspected directly.83total PNGs include68actual views and15derived contact sheets. Standing/all-doors-open/lamps-on diagnostic only; no closed-door/circuit or installed hardware acceptance inferred.
+
+DEV-326 records the actual remaining vestibule coat/boot storage, kitchen cold-food storage and bare garden/patio function gaps. DEV-327 records corrected House-specific supplementary camera coverage. No gross new structural failure was confirmed by this limited visual pass, which does not accept hidden joins, complete wear, encounters, saved editing, live promotion or full location gameplay. Parent PR78 merged d7b60acf after359/0; superseded Pages42388509735 was cancelled by the later main252eecf0 capture update. Replacement42388873044 SUCCESS; actual deployed HTML/index and all3visible-feed PNG bytes match reviewed source. Continue function-specific furnishing and House acceptance, then all29packets and remaining unfinished maps.

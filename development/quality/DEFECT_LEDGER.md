@@ -4462,6 +4462,34 @@ Evidence and verification: development/levels/rebuild/verification/house-heating
 
 Older-map obligation: No older-map layouts, pipe supports, source surfaces, UVs or electrical behavior are accepted by this House correction. Audit individually.
 
+### DEV-326 — House review finds unfilled daily-use storage and garden functions
+
+**Status:** OPEN; next functional furnishing pass before House promotion · **Affected:** Rebuilt House room/function audit; older site camera coverage remains individually unaudited
+
+Actual four-direction review and current39source props show the coat vestibule without coat/boot storage, kitchen without cold-food storage and garden/patio still an empty reservation.
+
+Cause / uncertainty: Incomplete functional furnishing or legal-but-unrepresentative centre fallback in an advisory visual audit
+
+Fix / next action: Fit original source-quality coat/boot/cold-storage and location-specific garden facilities with actual supports, circulation, source physics and runtime/native review. Do not replace these with a room-name or random clutter.
+
+Evidence and verification: development/levels/rebuild/verification/house-room-review-2026-11-07/reviewed-rooms.csv; verification.json; actual house-room-review compass and authored-spawn PNGs
+
+Older-map obligation: Audit each older site independently. Legal cameras, graph connectivity and room names alone do not prove physical, functional, visual or gameplay completion.
+
+### DEV-327 — Nearest-centre audit cameras miss important landing and garden coverage
+
+**Status:** SCOPED CORRECTION;8actual supported authored-anchor views inspected · **Affected:** Rebuilt House room/function audit; older site camera coverage remains individually unaudited
+
+Legal nearest-centre camera for upper landing lies on the stair, while garden fallback hugs the back door and sees through it. Those four-way views alone give incomplete functional context.
+
+Cause / uncertainty: Incomplete functional furnishing or legal-but-unrepresentative centre fallback in an advisory visual audit
+
+Fix / next action: Keep actual centre/fallback views and add the source-authored landing/garden spawn cameras; require traversability and same room ownership. Record source coordinates and inspect every supplementary view.
+
+Evidence and verification: development/levels/rebuild/verification/house-room-review-2026-11-07/reviewed-rooms.csv; verification.json; actual house-room-review compass and authored-spawn PNGs
+
+Older-map obligation: Audit each older site independently. Legal cameras, graph connectivity and room names alone do not prove physical, functional, visual or gameplay completion.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

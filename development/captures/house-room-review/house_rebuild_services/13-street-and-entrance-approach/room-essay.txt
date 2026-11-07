@@ -1,0 +1,12 @@
+Room 13: Street and entrance approach
+Site: The Briar House — rebuild heating construction / first-principles-heating-v1-1d5d95258b105737
+Bounds (X,Z): 0.00,20.50 -> 27.00,39.40; floor 0.00m; clear height 12.00m
+Geometric centre: 13.50,29.95; traversable: true
+Actual 4-view camera: 13.50,0.00,29.95; displacement 0.00m
+Portal access / windows / stairs: P0 open -> 12 Rear garden and patio reservation 2.50m @(24.00,0.00,20.50); P1 open -> 14 Van cargo interior 1.48m @(19.87,0.00,32.00); P14 door -> 0 Entrance and coat vestibule 1.10m @(19.80,0.00,20.50); P19 window -> 1 Family sitting room 1.25m @(15.00,0.00,20.50); P23 window -> 6 Parents bedroom and dressing 1.25m @(15.00,2.80,20.50); P26 window -> 5 Upper landing and linen storage 1.25m @(19.80,2.80,20.50)
+Connected in authored portal graph to van: true
+Props: 1; sockets: 129
+AUDIT QUESTIONS (manual): Can you recognize the room's purpose from its
+shape, props, sightlines and doors? Are entrances, circulation and privacy believable?
+Do camera views show missing wall segments, misplaced toilets, clutter, dead ends?
+Does the actual door and stair network make physical sense?

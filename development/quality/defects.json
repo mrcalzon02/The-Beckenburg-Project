@@ -3499,6 +3499,28 @@
       "action": "Use independently verified actual rear service surfaces; preserve source grille. Forty/100mm sanitary runs use closed8sided28triangle sections and a supported service cap. Preserve source electrical24mm geometry.",
       "evidence": "development/levels/rebuild/verification/house-heating-water-2026-11-07/ and development/captures/house-heating-water/: rejected-boiler-front-pipes-runtime.png; rejected-square-soil-head-runtime.png; corrected boiler-pipework/bathroom-water runtime views",
       "older_maps": "No older-map layouts, pipe supports, source surfaces, UVs or electrical behavior are accepted by this House correction. Audit individually."
+    },
+    {
+      "id": "DEV-326",
+      "title": "House review finds unfilled daily-use storage and garden functions",
+      "status": "OPEN; next functional furnishing pass before House promotion",
+      "affected": "Rebuilt House room/function audit; older site camera coverage remains individually unaudited",
+      "symptom": "Actual four-direction review and current39source props show the coat vestibule without coat/boot storage, kitchen without cold-food storage and garden/patio still an empty reservation.",
+      "cause": "Incomplete functional furnishing or legal-but-unrepresentative centre fallback in an advisory visual audit",
+      "action": "Fit original source-quality coat/boot/cold-storage and location-specific garden facilities with actual supports, circulation, source physics and runtime/native review. Do not replace these with a room-name or random clutter.",
+      "evidence": "development/levels/rebuild/verification/house-room-review-2026-11-07/reviewed-rooms.csv; verification.json; actual house-room-review compass and authored-spawn PNGs",
+      "older_maps": "Audit each older site independently. Legal cameras, graph connectivity and room names alone do not prove physical, functional, visual or gameplay completion."
+    },
+    {
+      "id": "DEV-327",
+      "title": "Nearest-centre audit cameras miss important landing and garden coverage",
+      "status": "SCOPED CORRECTION;8actual supported authored-anchor views inspected",
+      "affected": "Rebuilt House room/function audit; older site camera coverage remains individually unaudited",
+      "symptom": "Legal nearest-centre camera for upper landing lies on the stair, while garden fallback hugs the back door and sees through it. Those four-way views alone give incomplete functional context.",
+      "cause": "Incomplete functional furnishing or legal-but-unrepresentative centre fallback in an advisory visual audit",
+      "action": "Keep actual centre/fallback views and add the source-authored landing/garden spawn cameras; require traversability and same room ownership. Record source coordinates and inspect every supplementary view.",
+      "evidence": "development/levels/rebuild/verification/house-room-review-2026-11-07/reviewed-rooms.csv; verification.json; actual house-room-review compass and authored-spawn PNGs",
+      "older_maps": "Audit each older site independently. Legal cameras, graph connectivity and room names alone do not prove physical, functional, visual or gameplay completion."
     }
   ],
   "audit_categories": [
