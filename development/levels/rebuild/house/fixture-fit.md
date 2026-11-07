@@ -11,3 +11,8 @@ Actual packaged checks: five mesh floor contacts, native pivot/collider correspo
 Four actual SceneRenderer runtime images (kitchen, toilet/basin, bath, laundry) were viewed. Models remain at source-library quality; no art regeneration or new asset family is required. Evidence is under `verification/house-fit-2026-11-06`; captures are under `development/captures/house-fixture-fit`.
 
 Next: complete the House terrain/boundary gate before promoting this fitted candidate, then measured heating/storage/private/shared room furniture and authored utility distribution. Reuse the fixture-fit method in the institutional blockout batch after the pilot is inspected. The remaining maps retain their individual acceptance gates and the 40 accessible-space ceiling.
+
+
+## Editable source continuation
+
+`LevelSceneSource HOUSE_REBUILD_FIT` exports into its own `briar-rebuild-fit` folder, preserving the original graybox export. Run `blender --background --factory-startup --python development/levels/build_scene.py -- briar-rebuild-fit --output-suffix -construction --no-render`, then `blender --background --factory-startup --python development/levels/rebuild/verify_house_fixture_native.py`. The delivered `briar-rebuild-fit-construction.blend` independently reopens with all43,455 runtime triangles/UVs,122 packed images,27portals,15spawns and unchanged service sockets. Complete runtime export ZIP and definition accompany the native file. This does not promote the dispatched House or close terrain/boundary gates.
