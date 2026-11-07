@@ -1,0 +1,10 @@
+Baseline LanGhostSpatial source: 02bf804a525d11077146b83228e6262376a4868d
+Expected failure against real spectral sync before barrier integration:
+java.lang.AssertionError: actual spectral sync uses unprotected support
+	at org.beckenburg.SafeAreaBarrierTest.check(SafeAreaBarrierTest.java:7)
+	at org.beckenburg.SafeAreaBarrierTest.main(SafeAreaBarrierTest.java:34)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.beckenburg.VerificationMain.main(VerificationMain.java:6)

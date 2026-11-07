@@ -790,6 +790,7 @@ public final class LanHost implements AutoCloseable {
                     reply(peer,weather.state().packet());
                     if(voice!=null)reply(peer,"VOICEKEY|"+voice.port()+"|"+voice.register(peer.slot,peer.socket.getInetAddress()));else reply(peer,"INFO|Voice disabled on secure transport (NET-VOICE)");
                     reply(peer,"GTYPE|"+ghostType+"|"+ghostType.behavior());
+                    for(String safeFrame:SafeAreaBarrier.wardFrames(map,tick))reply(peer,safeFrame);
                     reply(peer,ghostPose.frame(tick));reply(peer,frenzyFrame());
                     if(twinCompanion!=null)reply(peer,twinCompanion.playerFrame(ghostType.ancient(),tick));
                     broadcastState();sendGhostPrompt();
@@ -2136,6 +2137,8 @@ public final class LanHost implements AutoCloseable {
     private void broadcastCounters(){
         notifyHunters("COUNTER|RESET");
         for(HunterCounters.Marker marker:counters.snapshot(tick))notifyHunters(marker.frame());
+        // Public visible barriers only: no hunter bodies, inventory, or private notes.
+        if(seats[GHOST_SEAT]!=null)for(String frame:SafeAreaBarrier.wardFrames(map,tick))reply(seats[GHOST_SEAT],frame);
     }
     /** Every successful room transition uses an actual door or produces a wall-phase trace. */
     private void onGhostTravel(int from,int to){
@@ -2231,7 +2234,13 @@ public final class LanHost implements AutoCloseable {
             wasAlive[i]=(seats[i]!=null||reserved[i]!=null)&&mission.alive(i);
             beforeHealth[i]=mission.health(i);
         }
-        mission.applyGhostEffect(result.room(),hunterRooms,result,affected);
+        boolean[] unprotected=affected.clone();
+        for(int i=0;i<HUNTERS;i++){
+            var body=world.body(i);
+            boolean physical=seats[i]!=null&&seats[i].worldMode||reserved[i]!=null&&reserved[i].worldMode;
+            if(physical&&SafeAreaBarrier.protectedAt(map,body.x(),body.y(),body.z()))unprotected[i]=false;
+        }
+        mission.applyGhostEffect(result.room(),hunterRooms,result,unprotected);
         // Count ONLY actual health removed by an authorized resolved ghost effect.
         for(int i=0;i<HUNTERS;i++)if(wasAlive[i]&&beforeHealth[i]>mission.health(i)){
             int damage=beforeHealth[i]-mission.health(i);
@@ -2524,7 +2533,7 @@ public final class LanHost implements AutoCloseable {
             boolean spatial=seats[i]!=null?seats[i].worldMode:reserved[i].worldMode;
             if(!spatial)continue;
             LanWorld.Body body=world.body(i);
-            if(counters.wardsAt(body.x(),body.y(),body.z(),tick))continue;
+            if(counters.wardsAt(body.x(),body.y(),body.z(),tick)||SafeAreaBarrier.protectedAt(map,body.x(),body.y(),body.z()))continue;
             double distance=Math.hypot(body.x()-pose.x(),body.z()-pose.z());
             if(distance>range||distance>=best)continue;
             boolean reachable=attack==GhostFrenzy.Attack.CLAW

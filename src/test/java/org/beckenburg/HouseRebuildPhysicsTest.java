@@ -13,6 +13,7 @@ public final class HouseRebuildPhysicsTest {
         HouseRebuildFittingsTest.main(new String[0]);
         HouseRebuildLandscapeTest.main(new String[0]);
         HouseRebuildEnvelopeTest.main(new String[0]);
+        HouseRebuildFunctionsTest.main(new String[0]);
         LevelSceneTextureParityTest.main(new String[0]);
         System.out.println("PASS House construction pilot including editor-punched world terrain; remaining map gates stay open");
     }
