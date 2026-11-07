@@ -18,7 +18,7 @@ public final class LevelAssets {
         "level_camp_tent_fitted_pitch_04","level_camp_tent_fitted_pitch_05","level_camp_tent_fitted_pitch_06");
     public static final Set<String> TAILORED_FABRIC=Set.of("level_camp_tent_ridge_tailored","level_camp_tent_dome_tailored","level_camp_bedroll_rolled_tailored");
     public static final Set<String> AUTHORED_SURFACES=Set.of(
-        "level_castle_armour_display","level_castle_armour_label","level_castle_museum_rope","level_castle_four_poster_bed","level_castle_great_fireplace","level_castle_tapestry","level_castle_restoration_painting","level_castle_library_rug",
+        "level_castle_armour_display","level_castle_armour_label","level_castle_museum_rope","level_castle_four_poster_bed","level_castle_great_fireplace","level_castle_tapestry","level_castle_restoration_painting","level_castle_library_rug","level_castle_heraldic_arms",
         "level_camp_dock_shed_authored","level_camp_rowboat_authored","level_camp_folding_chair_authored",
         "level_camp_cooler_authored","level_camp_portable_toilet_open_authored","level_camp_portable_toilet_closed_authored",
         "level_camp_refuse_bin_authored","level_camp_heron_memorial_authored","level_camp_pavilion_fireplace_authored",

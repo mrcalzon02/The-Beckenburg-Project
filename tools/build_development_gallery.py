@@ -42,7 +42,7 @@ for path in sorted(set(paths)):
     elif '-blender-' in path or 'native-fitout' in p.stem or 'native-circuit' in p.stem:kind='Native scene overview'
     elif 'studio' in p.stem:kind='Model inspection'
     elif any(t in path for t in ['/runtime/','-runtime/','/blackpine/','/mill-lighting/','/mill-expansion/','/van/','/optical-evidence/']):kind='Runtime capture'
-    elif '/castle-museum/previews/tapestry-rebuild/' in path or '/castle-museum/previews/reused-surfaces/' in path:kind='Model inspection'
+    elif '/castle-museum/previews/tapestry-rebuild/' in path or '/castle-museum/previews/reused-surfaces/' in path or '/castle-museum/previews/heraldic-rebuild/' in path:kind='Model inspection'
     elif '/castle-museum/previews/' in path:kind='Unaccepted model study'
     elif p.stem.startswith('level_') or '/model-production/' in path or '/equipment-catalog/' in path:kind='Model inspection'
     title=p.stem.replace('_',' ').replace('-',' ').strip().capitalize()

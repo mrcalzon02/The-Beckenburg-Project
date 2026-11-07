@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-05",
+  "updated": "2026-11-06",
   "issues": [
     {
       "id": "DEV-276",
@@ -2949,6 +2949,17 @@
       "action": "Pack only file images that do not already have packed_file; assert every material-connected image remains packed, then independently reopen all3 delivered scenes and require loaded nonempty packed images. Preserve original mesh/UV/index bytes in the texture-container patcher.",
       "evidence": "development/assets/castle-museum/previews/rejected-reused-source-pack, packed-heritage-sources.json; verification/castle-textiles-2026-11-06/debug-reused-images.log reproduces True->False packed state before fix; final source/studio/native views are separate.",
       "older_maps": "Do not assume older Blender sources are packed or visually accepted. This correction is scoped to the new authoring path; original reusable source GLBs remain unchanged."
+    },
+    {
+      "id": "DEV-278",
+      "title": "Heraldic mounting spine projects beyond the shield silhouette",
+      "status": "fixed-scoped source/export/native pilot; final checks pending",
+      "affected": "New Castle heraldic candidate only",
+      "symptom": "First front/quarter exported views expose a broad steel board above/below the shield.",
+      "cause": "1.14m spine exceeded the shield outline; physical support alone did not establish visual fit.",
+      "action": "Refit to0.70m while keeping real wall/saddle contacts and316tri. Assert actual wall-bearing source vertices remain Y0.49..1.19. Preserve rejected exposed-spine views.",
+      "evidence": "development/assets/castle-museum/previews/rejected-heraldic-exposed-spine; heraldic-rebuild, actual archive-heraldic runtime captures, CastleHeraldicDisplayTest, heraldic-independent-wall-export and actual detached-blade negative.",
+      "older_maps": "Audit other mounting boards/statue/heraldic studies independently; no retrospective older-map acceptance."
     }
   ],
   "audit_categories": [

@@ -20,6 +20,8 @@ public final class CastleMuseum {
             "Collection hanging conserved with modern support sleeve; original heraldic weave retained above archive circulation"),
         new Exhibit("heritage-restoration-painting","level_castle_restoration_painting",42.75922,1.2,11,Math.PI/2,
             "Retained picture of the western tower before reroofing; worn original frame reused by the archive"),
+        new Exhibit("heritage-archive-arms","level_castle_heraldic_arms",28.805,.8,12.5,-Math.PI/2,
+            "Conserved painted collection shield and crossed swords retained on modern steel saddles after restoration"),
         new Exhibit("heritage-library-rug","level_castle_library_rug",14.6,3.4,9.2,0,
             "Conserved household carpet returned to the upper reading room as a working furnishing"));
     public static void installDefaults(Map<String,CastleLevelEdits.Prop> props){

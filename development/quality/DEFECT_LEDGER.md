@@ -3762,6 +3762,20 @@ Evidence and verification: development/assets/castle-museum/previews/rejected-re
 
 Older-map obligation: Do not assume older Blender sources are packed or visually accepted. This correction is scoped to the new authoring path; original reusable source GLBs remain unchanged.
 
+### DEV-278 — Heraldic mounting spine projects beyond the shield silhouette
+
+**Status:** fixed-scoped source/export/native pilot; final checks pending · **Affected:** New Castle heraldic candidate only
+
+First front/quarter exported views expose a broad steel board above/below the shield.
+
+Cause / uncertainty: 1.14m spine exceeded the shield outline; physical support alone did not establish visual fit.
+
+Fix / next action: Refit to0.70m while keeping real wall/saddle contacts and316tri. Assert actual wall-bearing source vertices remain Y0.49..1.19. Preserve rejected exposed-spine views.
+
+Evidence and verification: development/assets/castle-museum/previews/rejected-heraldic-exposed-spine; heraldic-rebuild, actual archive-heraldic runtime captures, CastleHeraldicDisplayTest, heraldic-independent-wall-export and actual detached-blade negative.
+
+Older-map obligation: Audit other mounting boards/statue/heraldic studies independently; no retrospective older-map acceptance.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
