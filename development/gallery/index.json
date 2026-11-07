@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 6089,
+  "count": 6192,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -1932,6 +1932,166 @@
       "height": 650,
       "bytes": 70912,
       "sha256": "f5798cc516e0798438502e5aa4e1d5ab332dffc91f04e24ff5fe7e8dd8186d3d"
+    },
+    {
+      "path": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-front.png",
+      "url": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-front.png",
+      "title": "Level castle preparation bench front",
+      "kind": "Model inspection",
+      "width": 1100,
+      "height": 800,
+      "bytes": 848789,
+      "sha256": "abf06bce7671a240d46d076a4649cd6a0130ec32dce1e140b00c9ccee62442ce"
+    },
+    {
+      "path": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-quarter.png",
+      "url": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-quarter.png",
+      "title": "Level castle preparation bench quarter",
+      "kind": "Model inspection",
+      "width": 1100,
+      "height": 800,
+      "bytes": 993336,
+      "sha256": "05f9b64eb3b1e0466b412374bb2a7b56441fe7e456286df20e0f4287134d9e94"
+    },
+    {
+      "path": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-rear.png",
+      "url": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-rear.png",
+      "title": "Level castle preparation bench rear",
+      "kind": "Model inspection",
+      "width": 1100,
+      "height": 800,
+      "bytes": 797525,
+      "sha256": "a8a26599406a9b035dd40b12391878add64c94470f6c62a8954acc4ddd0360d0"
+    },
+    {
+      "path": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-side.png",
+      "url": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-side.png",
+      "title": "Level castle preparation bench side",
+      "kind": "Model inspection",
+      "width": 1100,
+      "height": 800,
+      "bytes": 827963,
+      "sha256": "aa7958dd80d2de2afde0fffb458f95c59e07a73705d64d2bacde06f39fe87055"
+    },
+    {
+      "path": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-top.png",
+      "url": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-top.png",
+      "title": "Level castle preparation bench top",
+      "kind": "Model inspection",
+      "width": 1100,
+      "height": 800,
+      "bytes": 868781,
+      "sha256": "3302adade43d8166e4a3e95d134c032c99b667ff81b912dff7cc1fd2b1dae4bd"
+    },
+    {
+      "path": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-front.png",
+      "url": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-front.png",
+      "title": "Level castle preparation bench worn front",
+      "kind": "Model inspection",
+      "width": 1100,
+      "height": 800,
+      "bytes": 824153,
+      "sha256": "8fb4192c6cea080b3bf320edc4a0359b283d9008ebdf9a4455dadaae137fdcf3"
+    },
+    {
+      "path": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-quarter.png",
+      "url": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-quarter.png",
+      "title": "Level castle preparation bench worn quarter",
+      "kind": "Model inspection",
+      "width": 1100,
+      "height": 800,
+      "bytes": 951979,
+      "sha256": "cc6da1be2d52d5d864b79af3be80e0e7e4e4dd997c246a3efaf34f8b2d57b2ab"
+    },
+    {
+      "path": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-rear.png",
+      "url": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-rear.png",
+      "title": "Level castle preparation bench worn rear",
+      "kind": "Model inspection",
+      "width": 1100,
+      "height": 800,
+      "bytes": 780599,
+      "sha256": "2c9ed0ec085304bf79d44c26fccc66cbec76164d301c8169a863299c6338f684"
+    },
+    {
+      "path": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-side.png",
+      "url": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-side.png",
+      "title": "Level castle preparation bench worn side",
+      "kind": "Model inspection",
+      "width": 1100,
+      "height": 800,
+      "bytes": 801852,
+      "sha256": "13f2a1ef10ed4a6a1bd3442efc5308c018613ada0c138c853d6fe4e48b1f6d00"
+    },
+    {
+      "path": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-top.png",
+      "url": "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-top.png",
+      "title": "Level castle preparation bench worn top",
+      "kind": "Model inspection",
+      "width": 1100,
+      "height": 800,
+      "bytes": 839964,
+      "sha256": "fde471afa4b774c7ec13c6920dfbab21cd97a10eca9b1be471081cc578f234f8"
+    },
+    {
+      "path": "development/assets/castle-training/previews/generated-bench-materials/level_workbench-clay.png",
+      "url": "development/assets/castle-training/previews/generated-bench-materials/level_workbench-clay.png",
+      "title": "Level workbench clay",
+      "kind": "Model inspection",
+      "width": 1100,
+      "height": 800,
+      "bytes": 756113,
+      "sha256": "77a377cccaa0153e746783ca4d803f193a653f7caa39ec4c9ba73d5a7b4f03e6"
+    },
+    {
+      "path": "development/assets/castle-training/previews/generated-bench-materials/level_workbench_worn-clay.png",
+      "url": "development/assets/castle-training/previews/generated-bench-materials/level_workbench_worn-clay.png",
+      "title": "Level workbench worn clay",
+      "kind": "Model inspection",
+      "width": 1100,
+      "height": 800,
+      "bytes": 756113,
+      "sha256": "2633d08842f02927fb677c740518d47f9716640a0d51aa49c0f7ae8f61f29670"
+    },
+    {
+      "path": "development/assets/castle-training/previews/rejected-generic-bench-materials/workbench-0.png",
+      "url": "development/assets/castle-training/previews/rejected-generic-bench-materials/workbench-0.png",
+      "title": "Workbench 0",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 650,
+      "bytes": 78427,
+      "sha256": "0ce862f9a48978e942be6f5f0c7e54f235abc1b2529303014721d2eb2b7ba281"
+    },
+    {
+      "path": "development/assets/castle-training/previews/rejected-generic-bench-materials/workbench-1.png",
+      "url": "development/assets/castle-training/previews/rejected-generic-bench-materials/workbench-1.png",
+      "title": "Workbench 1",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 650,
+      "bytes": 79711,
+      "sha256": "94433ae0808254e025d7cb2ce9f7fee1953404be954ad9b4d6b46af080a29966"
+    },
+    {
+      "path": "development/assets/castle-training/previews/rejected-generic-bench-materials/workbench-2.png",
+      "url": "development/assets/castle-training/previews/rejected-generic-bench-materials/workbench-2.png",
+      "title": "Workbench 2",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 650,
+      "bytes": 79385,
+      "sha256": "a8b1eee1341076da0366802e135def2e41575066e1c19c4cc4ee0eb674c9d758"
+    },
+    {
+      "path": "development/assets/castle-training/previews/rejected-generic-bench-materials/workbench-3.png",
+      "url": "development/assets/castle-training/previews/rejected-generic-bench-materials/workbench-3.png",
+      "title": "Workbench 3",
+      "kind": "Rejected model study",
+      "width": 900,
+      "height": 650,
+      "bytes": 77340,
+      "sha256": "3a462ee35a122652f4aae8fb90892b89bf82996d146b0155db2b84b9c7d0e7c5"
     },
     {
       "path": "development/assets/equipment-catalog/previews/anchor_triangulator.png",
@@ -43826,6 +43986,856 @@
       "sha256": "e83f55413016b9af38543d45b6dd36bcbe7bb952ddf04dab2ef2a52869d594ba"
     },
     {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/actual-game-five-residents-boots-contact-sheet.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/actual-game-five-residents-boots-contact-sheet.png",
+      "title": "Actual game five residents boots contact sheet",
+      "kind": "Development review",
+      "width": 3300,
+      "height": 546,
+      "bytes": 435011,
+      "sha256": "0f6175763597ed493ed84c14291dc53c2a0649e464aad21d584ba7e238cee6ae"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-1-actor-only-mask.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-1-actor-only-mask.png",
+      "title": "Elsbeth vale angle 1 actor only mask",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 202917,
+      "sha256": "3345251b0a5f0b2d7caabe7ca0ac68c9ce14868f6bf29d1e99db81d629f0aee6"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-1-boots-3x.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-1-boots-3x.png",
+      "title": "Elsbeth vale angle 1 boots 3x",
+      "kind": "Development review",
+      "width": 660,
+      "height": 510,
+      "bytes": 78298,
+      "sha256": "9962a5d32bb1304c672d76ea6f784b0eb3801854e12e6e38f38b358f8a3c94d8"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-1-classic.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-1-classic.png",
+      "title": "Elsbeth vale angle 1 classic",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 347810,
+      "sha256": "532bba719c8a3e73b42a305a2e17f6ecf93604e571ab902db9fd631928d85a62"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-1-off.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-1-off.png",
+      "title": "Elsbeth vale angle 1 off",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 516936,
+      "sha256": "e11f73c080672a172478de673983fb2a50f53023fe777d982907b7d0472d391e"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-2-actor-only-mask.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-2-actor-only-mask.png",
+      "title": "Elsbeth vale angle 2 actor only mask",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 209389,
+      "sha256": "445250466503d500df83860a239fb08a646fcde5baed9879cd4b04fe5576f6ee"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-2-boots-3x.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-2-boots-3x.png",
+      "title": "Elsbeth vale angle 2 boots 3x",
+      "kind": "Development review",
+      "width": 660,
+      "height": 510,
+      "bytes": 64820,
+      "sha256": "e9be28e74e6c27bea3ed6eb3598911823f3dd256b3601b6b929befc68f54488a"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-2-classic.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-2-classic.png",
+      "title": "Elsbeth vale angle 2 classic",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 347676,
+      "sha256": "80e7d94462e4b8004ea1ea834aafc1d90eb155bf2a59891e26c88e3e71d7be6a"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-2-off.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-2-off.png",
+      "title": "Elsbeth vale angle 2 off",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 523839,
+      "sha256": "c6954f276db1f19269a2b0cccff5d8e28a346c5bbfe4dd35230c8fe28e299838"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-3-actor-only-mask.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-3-actor-only-mask.png",
+      "title": "Elsbeth vale angle 3 actor only mask",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 209412,
+      "sha256": "25fdd32bdcdca59de8fe38256aaa3f79a2317a4c1da28d481e170f454cff78fc"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-3-boots-3x.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-3-boots-3x.png",
+      "title": "Elsbeth vale angle 3 boots 3x",
+      "kind": "Development review",
+      "width": 660,
+      "height": 510,
+      "bytes": 76398,
+      "sha256": "ddd62b67988fb42a48bef36bd62259b2e0c779fb7191f9c3327ef5c4e952aee3"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-3-classic.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-3-classic.png",
+      "title": "Elsbeth vale angle 3 classic",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 342457,
+      "sha256": "1d2a155b969a3cdfcbf4fb0d8d94b4b0e69e281bced5b86ffad7f4f1f4d19ffe"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-3-off.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-3-off.png",
+      "title": "Elsbeth vale angle 3 off",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 530376,
+      "sha256": "dd77b8bd44c0144118aad3b30d0869de5c970a034d1e219f2d55533eed77c007"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-4-actor-only-mask.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-4-actor-only-mask.png",
+      "title": "Elsbeth vale angle 4 actor only mask",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 214273,
+      "sha256": "90543675b5f8edb540e0b3737dd228ac864383646de31d1e8b486f48b6e435e5"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-4-boots-3x.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-4-boots-3x.png",
+      "title": "Elsbeth vale angle 4 boots 3x",
+      "kind": "Development review",
+      "width": 660,
+      "height": 510,
+      "bytes": 77436,
+      "sha256": "2f0f15f06ff0d81c00ae867c9fdc6fb64a2a9df764252a1de303161bf99bfd86"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-4-classic.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-4-classic.png",
+      "title": "Elsbeth vale angle 4 classic",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 338195,
+      "sha256": "f3e0676fa03b5511c8725aeaca24dca7c1ba3f13351f2550687e5c53348450d4"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-4-off.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/elsbeth-vale-angle-4-off.png",
+      "title": "Elsbeth vale angle 4 off",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 539494,
+      "sha256": "7828f99823649bd4cd323e177767742255897afe6eca9049ec2052c8471552c8"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-1-actor-only-mask.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-1-actor-only-mask.png",
+      "title": "Matthis rook angle 1 actor only mask",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 210489,
+      "sha256": "9e93d3a54ce5d4b8d5362500de53674eb4d62964f016068e684807d83f1212fb"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-1-boots-3x.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-1-boots-3x.png",
+      "title": "Matthis rook angle 1 boots 3x",
+      "kind": "Development review",
+      "width": 660,
+      "height": 510,
+      "bytes": 73387,
+      "sha256": "8de63839c471c0e05e8efcd0a3962255db62aade76539d4d33b6c85c6434919a"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-1-classic.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-1-classic.png",
+      "title": "Matthis rook angle 1 classic",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 353787,
+      "sha256": "663e0f2eb7ffed6f4090af108b3578c251cc068346956a6dacaa8e624f7c2c32"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-1-off.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-1-off.png",
+      "title": "Matthis rook angle 1 off",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 556897,
+      "sha256": "d36453b6e39f34846e04222e91d7354022ea6725d0a71f35e33962a13abc3628"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-2-actor-only-mask.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-2-actor-only-mask.png",
+      "title": "Matthis rook angle 2 actor only mask",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 186665,
+      "sha256": "8c997d85b9049d75fef10f2cbb34c1bf6725af225d48186da2f5676bd39e6feb"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-2-boots-3x.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-2-boots-3x.png",
+      "title": "Matthis rook angle 2 boots 3x",
+      "kind": "Development review",
+      "width": 660,
+      "height": 510,
+      "bytes": 67906,
+      "sha256": "e3abfa12aee6c281714b5bd1e2ea18152539c27f2532afd2ac6a238c88fb51e8"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-2-classic.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-2-classic.png",
+      "title": "Matthis rook angle 2 classic",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 319003,
+      "sha256": "7cb27355d5c6481e3b1ae933f91a9bc2da0a185ed5aa30e959eb87b5b056be65"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-2-off.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-2-off.png",
+      "title": "Matthis rook angle 2 off",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 507558,
+      "sha256": "f612a8f505fc5fd3274428410e90b1c19ae61903d3893eba2e6547ceff98c3fa"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-3-actor-only-mask.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-3-actor-only-mask.png",
+      "title": "Matthis rook angle 3 actor only mask",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 212798,
+      "sha256": "31d69215c9d81074b3f3dcf00579b54bdd689479f96cdac5467f3b392c518a03"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-3-boots-3x.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-3-boots-3x.png",
+      "title": "Matthis rook angle 3 boots 3x",
+      "kind": "Development review",
+      "width": 660,
+      "height": 510,
+      "bytes": 68419,
+      "sha256": "87801086cfc9002c68b7762c685a4158fbadcc0754e4cfd92be5f6474212a181"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-3-classic.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-3-classic.png",
+      "title": "Matthis rook angle 3 classic",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 341412,
+      "sha256": "7b16830e4926f198b994b0e1709a7af80b26bb5d9cfb74b0127d2f0fbfd28ddf"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-3-off.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-3-off.png",
+      "title": "Matthis rook angle 3 off",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 551673,
+      "sha256": "e0d967d24d948bbc4adb6eb66ae14545741bed9cf02368b65d6d78747410c71b"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-4-actor-only-mask.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-4-actor-only-mask.png",
+      "title": "Matthis rook angle 4 actor only mask",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 199045,
+      "sha256": "e9c0ad6225e4dc88c82c948317711d9eb027e239aebb7a03849e5a20b1d5d375"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-4-boots-3x.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-4-boots-3x.png",
+      "title": "Matthis rook angle 4 boots 3x",
+      "kind": "Development review",
+      "width": 660,
+      "height": 510,
+      "bytes": 70390,
+      "sha256": "012dd7e4faba77f30dcddd2b0397e3a7f7d962a07e3e7c294d48098f63899176"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-4-classic.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-4-classic.png",
+      "title": "Matthis rook angle 4 classic",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 343197,
+      "sha256": "f3f89080b9903b0c3d7345044daf941e8e57d486bc42a513f5dacb0241f05a6b"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-4-off.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-4-off.png",
+      "title": "Matthis rook angle 4 off",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 521463,
+      "sha256": "fb725e70463542604a964449aa0a177f24f4d75f5b6fb83ca07b5e0c9ba16e08"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-5-actor-only-mask.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-5-actor-only-mask.png",
+      "title": "Matthis rook angle 5 actor only mask",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 241506,
+      "sha256": "447cc4a517167ead50841982d7532926c16e97a8c8b3cb3173facdfddc03f809"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-5-boots-3x.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-5-boots-3x.png",
+      "title": "Matthis rook angle 5 boots 3x",
+      "kind": "Development review",
+      "width": 660,
+      "height": 510,
+      "bytes": 78364,
+      "sha256": "f90c88458867f822d1346f4e8be5475c0db2c503bf097ffe42b8087407ed2c60"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-5-classic.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-5-classic.png",
+      "title": "Matthis rook angle 5 classic",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 367970,
+      "sha256": "d75120b36444a90d14252506f2833ce4d718b521c30352ee3d4c686c2ade0881"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-5-off.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/matthis-rook-angle-5-off.png",
+      "title": "Matthis rook angle 5 off",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 593058,
+      "sha256": "8db3d3a957e81c3e01067c3b9c08852bbae35c1c6e7a97fd210f00f926d9d033"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-1-actor-only-mask.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-1-actor-only-mask.png",
+      "title": "Rowan pike angle 1 actor only mask",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 235283,
+      "sha256": "cf410a0b9f1808c1bd821a18a7fa169f3686005365912acec40cd5f0d3df4ac3"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-1-boots-3x.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-1-boots-3x.png",
+      "title": "Rowan pike angle 1 boots 3x",
+      "kind": "Development review",
+      "width": 660,
+      "height": 510,
+      "bytes": 83444,
+      "sha256": "fc02683d327d535a2c08854e56d284b6bad44cb39a127407b943da60901a0755"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-1-classic.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-1-classic.png",
+      "title": "Rowan pike angle 1 classic",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 380569,
+      "sha256": "407b9d026d1add1e6d948faf20b7a97c6833a1a27b0e25471af33566e87deb6d"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-1-off.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-1-off.png",
+      "title": "Rowan pike angle 1 off",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 613023,
+      "sha256": "7c3e4d1e792e67e777bf4f7d33bbd0a4f8d3e0f3f3343808900cd1a79452068d"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-2-actor-only-mask.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-2-actor-only-mask.png",
+      "title": "Rowan pike angle 2 actor only mask",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 210601,
+      "sha256": "b292218fb27a40835b81986b18b6aaa45bd2957eaf62048399eb15ba8965f7f9"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-2-boots-3x.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-2-boots-3x.png",
+      "title": "Rowan pike angle 2 boots 3x",
+      "kind": "Development review",
+      "width": 660,
+      "height": 510,
+      "bytes": 77836,
+      "sha256": "8bbda89987f1ce0224a02b4f00a0510bad36dc46ac20debdd7301c586c7c67c6"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-2-classic.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-2-classic.png",
+      "title": "Rowan pike angle 2 classic",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 344911,
+      "sha256": "1aa872f4a71bdff39baf7cdeae1f02027e420c1fafacbac852821a2ef11867fc"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-2-off.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-2-off.png",
+      "title": "Rowan pike angle 2 off",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 554873,
+      "sha256": "52fc2edde62bb664eb8ba58a818a76535ddd54c760d4674e0e9bafc44b9ef8ea"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-3-actor-only-mask.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-3-actor-only-mask.png",
+      "title": "Rowan pike angle 3 actor only mask",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 201870,
+      "sha256": "f19e205aa0926c3d8266c968654b9767050f1a7920a0d300f7c56960a4018cdd"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-3-boots-3x.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-3-boots-3x.png",
+      "title": "Rowan pike angle 3 boots 3x",
+      "kind": "Development review",
+      "width": 660,
+      "height": 510,
+      "bytes": 81969,
+      "sha256": "65f93d6fabd3480e61d512b599316bbc31a7032dd390aa063440df4501b4ffc1"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-3-classic.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-3-classic.png",
+      "title": "Rowan pike angle 3 classic",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 364626,
+      "sha256": "19bb5b9efbe06112a93afc5d32bcc06c2a8bdcf002e26d79a251790c3e0b7dac"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-3-off.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-3-off.png",
+      "title": "Rowan pike angle 3 off",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 492516,
+      "sha256": "17850c844cd91bcbe0fe1ac1fa542939675b1bf493652db0393d82d21f4fb086"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-4-actor-only-mask.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-4-actor-only-mask.png",
+      "title": "Rowan pike angle 4 actor only mask",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 219595,
+      "sha256": "eab02e9f887b226c62b6828ddacb7b6096e52bef4d75256b02869db5ae4ec2ff"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-4-boots-3x.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-4-boots-3x.png",
+      "title": "Rowan pike angle 4 boots 3x",
+      "kind": "Development review",
+      "width": 660,
+      "height": 510,
+      "bytes": 86007,
+      "sha256": "4527a7e62771881939d71fbd0307b0f85133efa712481f492b65b605d8f1d2b6"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-4-classic.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-4-classic.png",
+      "title": "Rowan pike angle 4 classic",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 365767,
+      "sha256": "b4e43bbc54889c6a3edcf153fc286381f4c45deaa41b26ca9aaa46874461e47e"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-4-off.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/rowan-pike-angle-4-off.png",
+      "title": "Rowan pike angle 4 off",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 573849,
+      "sha256": "8eb7a47cba4b4de3bb9287253beb88c668a8c1755194cd0868ab7f9a450eb8a0"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-1-actor-only-mask.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-1-actor-only-mask.png",
+      "title": "Sister mirelle ash angle 1 actor only mask",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 232893,
+      "sha256": "e2cce7c01389b8a09a45a8e7959da4e11eeb8c33562d2f377fd1b19552b678b8"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-1-boots-3x.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-1-boots-3x.png",
+      "title": "Sister mirelle ash angle 1 boots 3x",
+      "kind": "Development review",
+      "width": 660,
+      "height": 510,
+      "bytes": 86275,
+      "sha256": "dc9dc997212ec959a32617594c3a11c13f8c0acc53398ec2107c4688a9545678"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-1-classic.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-1-classic.png",
+      "title": "Sister mirelle ash angle 1 classic",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 386487,
+      "sha256": "97f4e7131e6c6d5dd0485bb809fd5d3006b8ea497c3db6f03e93874db4a00d53"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-1-off.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-1-off.png",
+      "title": "Sister mirelle ash angle 1 off",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 611667,
+      "sha256": "24b55194098646386818060ca706d02420f45b093d03e524a598f53bc38ac73d"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-2-actor-only-mask.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-2-actor-only-mask.png",
+      "title": "Sister mirelle ash angle 2 actor only mask",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 219500,
+      "sha256": "6308ca044f910905c3dc6f6c24329ed77e6c0e0bd9265a9117a12c5a69ba7699"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-2-boots-3x.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-2-boots-3x.png",
+      "title": "Sister mirelle ash angle 2 boots 3x",
+      "kind": "Development review",
+      "width": 660,
+      "height": 510,
+      "bytes": 80385,
+      "sha256": "12d9a47b75949f1be6065505974a895e43c8fe2b455c462252cff1b527852aad"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-2-classic.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-2-classic.png",
+      "title": "Sister mirelle ash angle 2 classic",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 369881,
+      "sha256": "8c97bd6b9ed67dd10264a1d9b088ab072ef6e5cfa27d9723568451ebaaab016e"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-2-off.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-2-off.png",
+      "title": "Sister mirelle ash angle 2 off",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 559815,
+      "sha256": "c1baf81d831868d984d99c4481759291db1bcd6ba1d71855447a3b710d5de824"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-3-actor-only-mask.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-3-actor-only-mask.png",
+      "title": "Sister mirelle ash angle 3 actor only mask",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 222224,
+      "sha256": "9d4e9fb85eeff712e049b8b055b078848cc5afa5d8402718c49c5ed1697a5c9b"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-3-boots-3x.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-3-boots-3x.png",
+      "title": "Sister mirelle ash angle 3 boots 3x",
+      "kind": "Development review",
+      "width": 660,
+      "height": 510,
+      "bytes": 81533,
+      "sha256": "916f82c7447fe8d6f04785357adbdd69a216c8a38adc6262bea3b4c32eb56bf1"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-3-classic.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-3-classic.png",
+      "title": "Sister mirelle ash angle 3 classic",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 387545,
+      "sha256": "c9b8d487d7738ce5c0d4f9fac61cb0dc335b940feab7481ed2aa12f5b732712d"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-3-off.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-3-off.png",
+      "title": "Sister mirelle ash angle 3 off",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 563006,
+      "sha256": "6227165ed03af290a884aabab5d96d41ec80d930d1a79b25a6f57b3fa279e774"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-4-actor-only-mask.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-4-actor-only-mask.png",
+      "title": "Sister mirelle ash angle 4 actor only mask",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 223426,
+      "sha256": "ff6edb9c272c6da866d86cb0fc219fa6e5189047ab3b2fe7cd2af7c2c6cc336f"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-4-boots-3x.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-4-boots-3x.png",
+      "title": "Sister mirelle ash angle 4 boots 3x",
+      "kind": "Development review",
+      "width": 660,
+      "height": 510,
+      "bytes": 78416,
+      "sha256": "9ce57cb97d503c7489189b95f2afbf890b17319de59cdeb197cf9ee335753e20"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-4-classic.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-4-classic.png",
+      "title": "Sister mirelle ash angle 4 classic",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 364448,
+      "sha256": "4727e72155b68341c1938d4db6961c3e58435207f7aab132c414a67004f5448d"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-4-off.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/sister-mirelle-ash-angle-4-off.png",
+      "title": "Sister mirelle ash angle 4 off",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 569587,
+      "sha256": "d480c51915187922f57f7893abff9597596250bde9e31feb3e5d4a52fbae51c9"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-1-actor-only-mask.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-1-actor-only-mask.png",
+      "title": "Tomas greaves angle 1 actor only mask",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 222795,
+      "sha256": "83461dbb39703988e02128298c1e5142e95565382aca69b06a05d804bfbb07b8"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-1-boots-3x.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-1-boots-3x.png",
+      "title": "Tomas greaves angle 1 boots 3x",
+      "kind": "Development review",
+      "width": 660,
+      "height": 510,
+      "bytes": 85073,
+      "sha256": "4f78b8388e5f6ce89399ac81eefd634e4cf9f299458ab265662df87368ae1ad1"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-1-classic.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-1-classic.png",
+      "title": "Tomas greaves angle 1 classic",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 361220,
+      "sha256": "11fca6521eacf4152e4cdb6dc4f34099e9229201efe4bf20ee2c388dbc8ace78"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-1-off.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-1-off.png",
+      "title": "Tomas greaves angle 1 off",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 577171,
+      "sha256": "f863970887a836964d9599ebbdf1ea9563c1c683489aea76319896675af8116c"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-2-actor-only-mask.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-2-actor-only-mask.png",
+      "title": "Tomas greaves angle 2 actor only mask",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 220371,
+      "sha256": "ff9e272559017e7482fe73523a9c5e2dd40abe756d3f5c8ff225923a76011215"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-2-boots-3x.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-2-boots-3x.png",
+      "title": "Tomas greaves angle 2 boots 3x",
+      "kind": "Development review",
+      "width": 660,
+      "height": 510,
+      "bytes": 86693,
+      "sha256": "45ed96731998a64208cb789cd64f7ee9469d843a0db50f424606eedb898afa70"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-2-classic.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-2-classic.png",
+      "title": "Tomas greaves angle 2 classic",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 350607,
+      "sha256": "711b9d0ab55db05439b5f3d69ed048837536018b17885188b4136f356c2c3f24"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-2-off.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-2-off.png",
+      "title": "Tomas greaves angle 2 off",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 537824,
+      "sha256": "f6d99e405714d9840b52bdd37cdeba780805c016d84d74e2ea0904b86a91b885"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-3-actor-only-mask.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-3-actor-only-mask.png",
+      "title": "Tomas greaves angle 3 actor only mask",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 208306,
+      "sha256": "2948d62648f8702604a41add6e9de41a18e2b02fcb33072341c3876a65884347"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-3-boots-3x.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-3-boots-3x.png",
+      "title": "Tomas greaves angle 3 boots 3x",
+      "kind": "Development review",
+      "width": 660,
+      "height": 510,
+      "bytes": 78424,
+      "sha256": "bb99d00ecf977c2cf15f4b6c163481956a5dbf6d55042c76d25369fa09e2343f"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-3-classic.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-3-classic.png",
+      "title": "Tomas greaves angle 3 classic",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 349163,
+      "sha256": "96fa6865d15d647712e5a9581aa20b4e8982c8e25c639384702ff39e219a61c1"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-3-off.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-3-off.png",
+      "title": "Tomas greaves angle 3 off",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 521924,
+      "sha256": "01229a6a47b6182bb34784a24339e2f91bcd54301c7a49344344f630ff74aa15"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-4-actor-only-mask.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-4-actor-only-mask.png",
+      "title": "Tomas greaves angle 4 actor only mask",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 232412,
+      "sha256": "4023ebae6239de4be8606077ea351691d43bb04e2f2599fddaade1d41c5035cd"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-4-boots-3x.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-4-boots-3x.png",
+      "title": "Tomas greaves angle 4 boots 3x",
+      "kind": "Development review",
+      "width": 660,
+      "height": 510,
+      "bytes": 84751,
+      "sha256": "4c1ae84163c6ab2837065606668491a055fc7da79e80b69ae49f7a239e1b5af2"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-4-classic.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-4-classic.png",
+      "title": "Tomas greaves angle 4 classic",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 353539,
+      "sha256": "5b9ed5446c5cdda1af1d5225589f2e42b2fb73d0104fa14566b3fe3d965a2935"
+    },
+    {
+      "path": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-4-off.png",
+      "url": "development/levels/previews/npc-ground-proof-2026-11-04/run-42330476506/tomas-greaves-angle-4-off.png",
+      "title": "Tomas greaves angle 4 off",
+      "kind": "Development review",
+      "width": 854,
+      "height": 480,
+      "bytes": 588158,
+      "sha256": "e83f55413016b9af38543d45b6dd36bcbe7bb952ddf04dab2ef2a52869d594ba"
+    },
+    {
       "path": "development/levels/previews/npc-ground-proof-2026-11-04/sister-mirelle-ash-actual-boots-3x.png",
       "url": "development/levels/previews/npc-ground-proof-2026-11-04/sister-mirelle-ash-actual-boots-3x.png",
       "title": "Sister mirelle ash actual boots 3x",
@@ -57394,6 +58404,26 @@
       "height": 625,
       "bytes": 399966,
       "sha256": "9257ac275e14ae0b1b2485f1bf27551d311bb38987034c5999b3b1aa80bad38b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/workbench-material-0-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/workbench-material-0-runtime.png",
+      "title": "Workbench material 0 runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 472044,
+      "sha256": "55002b85470d7cd20cfdb04f7b22cdf79040a12cc65798335b840fa2c56888d8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/workbench-material-1-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/workbench-material-1-runtime.png",
+      "title": "Workbench material 1 runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 522764,
+      "sha256": "a71c7b323efa9d95b9172009343e397fbed63307a6c81ae832bf2e387a0b5130"
     },
     {
       "path": "development/levels/rebuild/captures/church-upper-openings/door-7-8.png",

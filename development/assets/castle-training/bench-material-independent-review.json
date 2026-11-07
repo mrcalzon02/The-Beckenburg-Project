@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "models": [
+    {
+      "id": "level_workbench",
+      "runtime_sha256": "d3fba3eae841e297c03570d92c357e83fee29e63efd2619c2541a525415b36ec",
+      "triangles": 688,
+      "supported_components": 18,
+      "source_sha256": "f86686135145171f2acc7076053118acda55161033ee71d0d98eb3b3e916ef1e",
+      "packed_images": [
+        "preparation-bench-imagegen-master.png"
+      ]
+    },
+    {
+      "id": "level_workbench_worn",
+      "runtime_sha256": "e72efab71e900744ad7f8f67dc459f01c486a501ccf0ce523f6d7605a9a98b31",
+      "triangles": 688,
+      "supported_components": 18,
+      "source_sha256": "7be21d93669114e007313a3e1db2cfbdff6698173ebceb265a0148aec4aaf529",
+      "packed_images": [
+        "preparation-bench-worn-imagegen-master.png"
+      ]
+    }
+  ],
+  "scope": "Actual export/source checks only; visual/native/all-map acceptance separate"
+}

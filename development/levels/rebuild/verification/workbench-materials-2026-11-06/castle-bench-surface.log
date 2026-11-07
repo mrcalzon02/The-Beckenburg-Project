@@ -1,0 +1,42 @@
+17:35:33 | INFO: Data are loaded, start creating Blender stuff
+17:35:33 | INFO: Blender create Mesh node Cube
+17:35:33 | INFO: glTF import finished in 0.01s
+C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\assets\surface_castle_preparation_benches.py:21: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  material=bpy.data.materials.new('Generated bench timber / worn cast steel / bare steel / grips / cartons');material.use_nodes=True
+Info: Saved as "level_castle_preparation_bench.blend"
+INFO Draco mesh compression is available, use library at C:\Program Files\Blender Foundation\Blender 5.0\5.0\scripts\addons_core\io_scene_gltf2\extern_draco.dll
+17:35:34 | INFO: Starting glTF 2.0 export
+17:35:34 | INFO: Extracting primitive: Cube
+17:35:34 | INFO: Primitives created: 1
+17:35:34 | INFO: Finished glTF 2.0 export in 0.004044771194458008 s
+
+17:35:34 | INFO: Data are loaded, start creating Blender stuff
+17:35:34 | INFO: Blender create Mesh node Cube
+17:35:34 | INFO: glTF import finished in 0.00s
+00:03.031  render           | Saved: 'C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\assets\castle-training\previews\generated-bench-materials\level_castle_preparation_bench-front.png'
+00:04.765  render           | Saved: 'C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\assets\castle-training\previews\generated-bench-materials\level_castle_preparation_bench-quarter.png'
+00:06.359  render           | Saved: 'C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\assets\castle-training\previews\generated-bench-materials\level_castle_preparation_bench-rear.png'
+00:07.890  render           | Saved: 'C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\assets\castle-training\previews\generated-bench-materials\level_castle_preparation_bench-side.png'
+00:09.547  render           | Saved: 'C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\assets\castle-training\previews\generated-bench-materials\level_castle_preparation_bench-top.png'
+PASS level_castle_preparation_bench 688tri unchanged repaired geometry, generated512px atlas, component material/wood grain UVs, actual exported support; five rendered views await review
+17:35:42 | INFO: Data are loaded, start creating Blender stuff
+17:35:42 | INFO: Blender create Mesh node Cube
+17:35:42 | INFO: glTF import finished in 0.00s
+Info: Saved as "level_castle_preparation_bench_worn.blend"
+17:35:42 | INFO: Starting glTF 2.0 export
+17:35:42 | INFO: Extracting primitive: Cube
+17:35:42 | INFO: Primitives created: 1
+17:35:42 | INFO: Finished glTF 2.0 export in 0.004019021987915039 s
+
+17:35:42 | INFO: Data are loaded, start creating Blender stuff
+17:35:42 | INFO: Blender create Mesh node Cube
+17:35:42 | INFO: glTF import finished in 0.00s
+00:11.390  render           | Saved: 'C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\assets\castle-training\previews\generated-bench-materials\level_castle_preparation_bench_worn-front.png'
+00:13.125  render           | Saved: 'C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\assets\castle-training\previews\generated-bench-materials\level_castle_preparation_bench_worn-quarter.png'
+00:14.750  render           | Saved: 'C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\assets\castle-training\previews\generated-bench-materials\level_castle_preparation_bench_worn-rear.png'
+00:16.281  render           | Saved: 'C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\assets\castle-training\previews\generated-bench-materials\level_castle_preparation_bench_worn-side.png'
+00:17.937  render           | Saved: 'C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\assets\castle-training\previews\generated-bench-materials\level_castle_preparation_bench_worn-top.png'
+PASS level_castle_preparation_bench_worn 688tri unchanged repaired geometry, generated512px atlas, component material/wood grain UVs, actual exported support; five rendered views await review
+Blender 5.0.0 (hash a37564c4df7a built 2025-11-18 11:06:54)
+
+Blender quit

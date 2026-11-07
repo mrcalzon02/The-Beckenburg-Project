@@ -1,0 +1,13 @@
+Prop[id=ground-repair-bench, mesh=level_workbench_worn, x=38.1, y=0.0, z=18.7, scale=1.0, yaw=1.5707963267948966, halfX=0.352500006556511, halfZ=0.8999999761581421, upper=false]
+Prop[id=ground-repair-preparation, mesh=level_workbench, x=41.7, y=0.0, z=25.0, scale=1.0, yaw=0.0, halfX=0.8999999761581421, halfZ=0.3525000065565109, upper=false]
+40.1,22.8 support=false room=Room[id=repair, name=Repair and separated chemistry task work, x0=37.0, z0=17.5, x1=43.0, z1=26.0, floor=0.0, ceiling=3.4, outside=false, material=0] traversable=false
+39.8,20.8 support=false room=Room[id=repair, name=Repair and separated chemistry task work, x0=37.0, z0=17.5, x1=43.0, z1=26.0, floor=0.0, ceiling=3.4, outside=false, material=0] traversable=false
+40.0,21.0 support=false room=Room[id=repair, name=Repair and separated chemistry task work, x0=37.0, z0=17.5, x1=43.0, z1=26.0, floor=0.0, ceiling=3.4, outside=false, material=0] traversable=false
+40.0,23.0 support=false room=Room[id=repair, name=Repair and separated chemistry task work, x0=37.0, z0=17.5, x1=43.0, z1=26.0, floor=0.0, ceiling=3.4, outside=false, material=0] traversable=false
+39.0,23.0 support=false room=Room[id=repair, name=Repair and separated chemistry task work, x0=37.0, z0=17.5, x1=43.0, z1=26.0, floor=0.0, ceiling=3.4, outside=false, material=0] traversable=false
+39.0,22.0 support=false room=Room[id=repair, name=Repair and separated chemistry task work, x0=37.0, z0=17.5, x1=43.0, z1=26.0, floor=0.0, ceiling=3.4, outside=false, material=0] traversable=false
+40.0,20.0 support=false room=Room[id=repair, name=Repair and separated chemistry task work, x0=37.0, z0=17.5, x1=43.0, z1=26.0, floor=0.0, ceiling=3.4, outside=false, material=0] traversable=false
+41.0,22.0 support=false room=Room[id=repair, name=Repair and separated chemistry task work, x0=37.0, z0=17.5, x1=43.0, z1=26.0, floor=0.0, ceiling=3.4, outside=false, material=0] traversable=false
+40.0,19.0 support=false room=Room[id=repair, name=Repair and separated chemistry task work, x0=37.0, z0=17.5, x1=43.0, z1=26.0, floor=0.0, ceiling=3.4, outside=false, material=0] traversable=false
+39.5,21.0 support=false room=Room[id=repair, name=Repair and separated chemistry task work, x0=37.0, z0=17.5, x1=43.0, z1=26.0, floor=0.0, ceiling=3.4, outside=false, material=0] traversable=false
+38.8,20.3 support=false room=Room[id=repair, name=Repair and separated chemistry task work, x0=37.0, z0=17.5, x1=43.0, z1=26.0, floor=0.0, ceiling=3.4, outside=false, material=0] traversable=false

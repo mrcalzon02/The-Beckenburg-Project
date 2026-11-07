@@ -1,0 +1,187 @@
+{
+  "BeckenburgRegressionManifestTest": {
+    "exit": 0,
+    "seconds": 1.172,
+    "log_sha256": "55662c58382344329fee6cd6790a1ad331b524839600e4a684aa3378fb2ccc93"
+  },
+  "CastleGroundConstructionTest": {
+    "exit": 0,
+    "seconds": 4.25,
+    "log_sha256": "a099c7c8db2e6437791d5f8e53108e525236a2b3fab0fbb6fcee8e0ea04f98ca"
+  },
+  "CastleRebuildTest": {
+    "exit": 0,
+    "seconds": 3.594,
+    "log_sha256": "787a4cff5996703fc450171a229972849eb88e716e602afe3ae7f7eeec59368c"
+  },
+  "CastleHeadquartersRevisionTest": {
+    "exit": 0,
+    "seconds": 5.328,
+    "log_sha256": "98b1c10b5ea0088ea01132e92111d8d258e4ecbf6738b81423815d7abd04bac0"
+  },
+  "CastleCellarConstructionTest": {
+    "exit": 0,
+    "seconds": 2.469,
+    "log_sha256": "28e3a24014081a35b84c7a8efdb88869686c07364aed52f6bc66b490c765926e"
+  },
+  "CastleTrainingAnnexTest": {
+    "exit": 0,
+    "seconds": 3.031,
+    "log_sha256": "ce94d3d8989a261eabecc08ed0fdf0f5716407194a728bc9ee7083ec1681209a"
+  },
+  "CastleWorldTerrainTest": {
+    "exit": 0,
+    "seconds": 1.437,
+    "log_sha256": "6242110dded78948d82d210f3f485ce85448fcf300256175d440dae2712c0aaf"
+  },
+  "CastleLightingPlacementRepairTest": {
+    "exit": 0,
+    "seconds": 1.735,
+    "log_sha256": "3e7e9fb1278c9e76df96d8a4105a812a6b0fbf42ec7f551b249370fce50e4cb1"
+  },
+  "CastleSnapshotContractTest": {
+    "exit": 0,
+    "seconds": 2.672,
+    "log_sha256": "11c5a80c58c4dd77dccdd707b4e32f5cf75c424c4f0c402776a014ccd9a78a70"
+  },
+  "CastleDocumentRecoveryTest": {
+    "exit": 0,
+    "seconds": 1.937,
+    "log_sha256": "90cd0cbf6339db63a6433d272beee7325aa55f76570438d114ff612d28a489d5"
+  },
+  "CastleEditorGeometryTest": {
+    "exit": 0,
+    "seconds": 1.156,
+    "log_sha256": "bbd32c3108aa5cb1bee720390a1d686de41daa2131ab041182159254e276eb96"
+  },
+  "CastlePortalSlotTest": {
+    "exit": 0,
+    "seconds": 1.407,
+    "log_sha256": "8679f37379f314a8b00ff8ff1150e3bdb680a7b583a7167f18faba86f43ac81e"
+  },
+  "CastleHubIntegrationTest": {
+    "exit": 0,
+    "seconds": 3.859,
+    "log_sha256": "637def90a0df7516a0ce86b440d3fd10300660270290b0ca71f40c1c65212144"
+  },
+  "CastleSignedConstructionTest": {
+    "exit": 0,
+    "seconds": 1.297,
+    "log_sha256": "ea486b0b5bd37db6027ebe7aaf1ce0786be023a3fd6642e7e09f672afbc243fb"
+  },
+  "CastleHomeInteractionTest": {
+    "exit": 0,
+    "seconds": 6.219,
+    "log_sha256": "1f441c5d1162591cc31db27e160949ab9a30d895feb7f9e5d174438f1cb8c8f3"
+  },
+  "CastleInventoryWorkstationTest": {
+    "exit": 0,
+    "seconds": 6.468,
+    "log_sha256": "99883161026c9d51200bbe5af3ea93c6d5132910bfdcdd541153cd7d324d2b7a"
+  },
+  "CastleOrientationTest": {
+    "exit": 0,
+    "seconds": 0.063,
+    "log_sha256": "86b31007c35bba35a08868dc2df2b8d1db37af1ea3629c091605ac581856a4e3"
+  },
+  "CastleContainedMenuTest": {
+    "exit": 0,
+    "seconds": 6.969,
+    "log_sha256": "e62ec3aec1f8c104e43886a64db38b5605a448069d435f7f6e17b4ab89dcf83e"
+  },
+  "CastleRelationsTest": {
+    "exit": 0,
+    "seconds": 1.578,
+    "log_sha256": "13dfb2033c48260b9a50fa09672b966c85a75fcbc95c5b28dcb0505d8ff0e6e4"
+  },
+  "CastleShelfLabelsTest": {
+    "exit": 0,
+    "seconds": 2.687,
+    "log_sha256": "fd82906959ff9c5ccd817cb1a360fb86a2de3c9abbed27b67d3af3f52427fa9a"
+  },
+  "CastleEditorAuditTest": {
+    "exit": 0,
+    "seconds": 0.891,
+    "log_sha256": "fcd4126ec731599503ad65f80ea86b218788c3e2f7428ddfc7704a3225a0f9d1"
+  },
+  "CastleFurnitureWallAuditTest": {
+    "exit": 0,
+    "seconds": 1.094,
+    "log_sha256": "4a3f5065c0d4a487c912b3fd61a73f9ee644447f392285d16644beb78f92c2ac"
+  },
+  "VanLightingAndCastleDoorTest": {
+    "exit": 0,
+    "seconds": 1.171,
+    "log_sha256": "e70dccc2307c6874d47e60190a1fc719d9f33921773d0c6b853f1093d03589e7"
+  },
+  "HouseRebuildTerrainTest": {
+    "exit": 0,
+    "seconds": 1.563,
+    "log_sha256": "ba55b67d5822620aed0ee5b4eff7cb7ab63fe59dbabc3b9607bfd5cf9f75551f"
+  },
+  "EditorAgentServiceTest": {
+    "exit": 0,
+    "seconds": 3.437,
+    "log_sha256": "32d7555b8f6ebf470d5cb025a7a366773d15e4cb9e3d7227a3065c045abb63af"
+  },
+  "CastleUpperConstructionTest": {
+    "exit": 0,
+    "seconds": 2.485,
+    "log_sha256": "2f224a069d7bbef68ba16d97003be1e11054c387b8c1d3c92a048d966e88d58a"
+  },
+  "WallLampSourceUvTest": {
+    "exit": 0,
+    "seconds": 0.219,
+    "log_sha256": "47cf6222699c321886c3bd28b9443d7d5e30eb47b8007b1b6662c54804bb000f"
+  },
+  "WallLampMountPlateTest": {
+    "exit": 0,
+    "seconds": 0.859,
+    "log_sha256": "df67d4484afbf614d77324c3a9fffca302e8b10e8741918116ac54d7561d9f38"
+  },
+  "CastleMuseumConstructionTest": {
+    "exit": 0,
+    "seconds": 1.172,
+    "log_sha256": "fbec34f336c9c866c7b30454cb5071ac1a1873a60b26dd04919842331ee73def"
+  },
+  "CastleTesterBedTest": {
+    "exit": 0,
+    "seconds": 1.14,
+    "log_sha256": "2824bbcb9180c116aa0333e7c321289aee4d8e1940b06280a2afdab07649ef9f"
+  },
+  "CastleFireplaceTest": {
+    "exit": 0,
+    "seconds": 1.25,
+    "log_sha256": "ad7b90675dd9a09a538d0ecf02920d6c3f2239bcd5904160f483c25e0f6f4f03"
+  },
+  "PreparedLightBatchParityTest": {
+    "exit": 0,
+    "seconds": 35.922,
+    "log_sha256": "99fdf1f7ad9d6432f6619d8822fd1244940b06928cd19939c346c0d66e6abbcd"
+  },
+  "CastleTapestryTest": {
+    "exit": 0,
+    "seconds": 1.125,
+    "log_sha256": "702550aa2d43bf7cecd72da8fbf127a85298c8507c5b47ae78d24b8c5170cba6"
+  },
+  "CastleHeritageSurfacesTest": {
+    "exit": 0,
+    "seconds": 1.157,
+    "log_sha256": "4af17385e611200b24144d9a3e4769053dc638f3bab4de3d04e3237a4eff143b"
+  },
+  "CastleHeraldicDisplayTest": {
+    "exit": 0,
+    "seconds": 1.125,
+    "log_sha256": "7615f9e0e4065346b06cf937fb7f7355e18682f7152a7fc066e766da9d78b6c6"
+  },
+  "CastlePlantFitTest": {
+    "exit": 0,
+    "seconds": 1.343,
+    "log_sha256": "2f62566d1f248c1787b18cea59bf1cc5cb896c39cedd1b5eeb81672d4ef909f4"
+  },
+  "WorkbenchMaterialTest": {
+    "exit": 0,
+    "seconds": 1.047,
+    "log_sha256": "a349006c0de48a68b0f5a1d44a5ecc6bed39733e8f7a824208f2809b20f10100"
+  }
+}
