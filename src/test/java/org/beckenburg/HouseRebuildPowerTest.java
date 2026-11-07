@@ -28,7 +28,7 @@ public final class HouseRebuildPowerTest {
         peer.client.interact(target,observer.yaw(),observer.pitch());
     }
     public static void main(String[] args)throws Exception{
-        var map=args.length>0&&args[0].equals("SERVICES")?HouseRebuildServices.map():args.length>0&&args[0].equals("FITOUT")?HouseRebuildFitout.map():HouseRebuildFunctions.map();check(map.hasGenerator()&&!map.nativeSite(),"Authored source capability cannot depend on native terrain");
+        var map=args.length>0&&args[0].equals("FURNISHINGS")?HouseRebuildFurnishings.map():args.length>0&&args[0].equals("SERVICES")?HouseRebuildServices.map():args.length>0&&args[0].equals("FITOUT")?HouseRebuildFitout.map():HouseRebuildFunctions.map();check(map.hasGenerator()&&!map.nativeSite(),"Authored source capability cannot depend on native terrain");
         check(!new HouseMap().hasGenerator(),"Legacy grid House does not advertise an invented generator");
         var starter=approach(map,InteractionFocus.Kind.GENERATOR);var breaker=approach(map,InteractionFocus.Kind.BREAKER);
         var lights=new RoomLighting();var field=new FixtureLighting(map);var room=map.level().room(1);double x=room.spawn().x(),z=room.spawn().z();

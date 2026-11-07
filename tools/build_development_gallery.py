@@ -19,6 +19,8 @@ for path in sorted(set(paths)):
     kind='Development review'
     if '/synthetic-controls/' in path:kind='Synthetic GPU depth control'
     elif '/hiding-energy/' in path:kind='Runtime hiding-location energy material'
+    elif '/house-functional-fill/' in path:kind='Rejected runtime inspection' if p.stem.startswith('rejected-') else 'Native geometry overview' if p.stem.startswith('native-') else 'Runtime daily household and garden functions'
+    elif '/house-room-review/' in path:kind='Runtime four-direction contact sheet' if p.stem=='four-way' else 'Runtime whole-House visual review'
     elif '/house-heating-water/' in path:kind='Rejected runtime inspection' if p.stem.startswith('rejected-') else 'Native geometry overview' if p.stem.startswith('native-') else 'Runtime household heating and water construction'
     elif '/house-story/' in path:kind='Rejected runtime inspection' if p.stem.startswith('rejected-') else 'Native geometry overview' if p.stem.startswith('native-') else 'Runtime household story and source wiring'
     elif '/house-fitout/' in path:kind='Rejected runtime inspection' if p.stem.startswith('rejected-') else 'Native geometry overview' if p.stem.startswith('native-') else 'Runtime household service fit-out'

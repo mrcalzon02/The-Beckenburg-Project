@@ -120,6 +120,7 @@ camera_poses={'castle-rebuild':((59,-65,38),(22,-18,2)),'blackpine':((79,-85,46)
               'briar-rebuild-fitout':((38,-47,29),(15,-19,0)),
               'briar-rebuild-story':((38,-47,29),(15,-19,0)),
               'briar-rebuild-services':((38,-47,29),(15,-19,0)),
+              'briar-rebuild-furnishings':((38,-47,29),(15,-19,0)),
               'farmhouse':((55,-48,15),(27,-20,2.8)),
               'school':((58,-57,17),(28,-24,3.5)),
               'arrival-road':((12,-14,9),(0,5,1.0)),
@@ -146,6 +147,9 @@ if name=='briar-rebuild-landscape':
 if name=='briar-rebuild-envelope':
     scene['source_of_truth']='HouseRebuildEnvelope.java / HouseRebuildLandscape.java / editor landscape-world; regenerate after layout edits'
     scene['production_status']='dwelling envelope construction candidate; complete furnishing/utility/story and mission acceptance pending'
+if name=='briar-rebuild-furnishings':
+    scene['source_of_truth']='HouseRebuildFurnishings.java -> actual45props, generated180triangle fridge, retained supported coat and terrain-contact garden functions'
+    scene['production_status']='Isolated furnished construction candidate; encounters, saved migration, live promotion and complete location gates remain open'
 if name=='briar-rebuild-services':
     scene['source_of_truth']='HouseRebuildServices.java -> exact runtime geometry, original radiators, source-contact heating/water/waste and preserved visible generator feed'
     scene['production_status']='Isolated household services construction candidate; live promotion, fixture refinement, encounters and complete map gates remain open'

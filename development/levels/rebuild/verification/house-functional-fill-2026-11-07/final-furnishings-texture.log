@@ -1,0 +1,2 @@
+Exact runtime source native-texture-parity-furnishings: 131793 textured triangles, 141 materials
+PASS 140 native materials / 13733203 texels exactly match actual runtime sampling, including original van atlas; UVs/mesh untouched

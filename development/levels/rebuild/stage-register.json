@@ -1228,7 +1228,7 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "e91d7e73d5da22d9e52bdad3776a666a4dc17f2d",
+          "source_sha": "1d137984ba0b08dde73a91472537332f45c3d972",
           "evidence": [
             "development/levels/rebuild/house/story-construction.md",
             "development/levels/rebuild/house/story-native-verification.json",
@@ -1238,7 +1238,14 @@
             "development/levels/rebuild/house/services-native-verification.json",
             "development/levels/rebuild/house/services-contacts.json",
             "development/levels/rebuild/house/asset-use.csv",
-            "development/levels/rebuild/verification/house-heating-water-2026-11-07/verification.json"
+            "development/levels/rebuild/verification/house-heating-water-2026-11-07/verification.json",
+            "development/levels/rebuild/verification/house-room-review-2026-11-07/verification.json",
+            "development/levels/rebuild/verification/house-room-review-2026-11-07/reviewed-rooms.csv",
+            "development/levels/rebuild/house/furnishings-construction.md",
+            "development/levels/rebuild/house/furnishings-native-verification.json",
+            "development/levels/rebuild/house/furnishings-supports.json",
+            "development/levels/model-production/house-fridge/visual-review.json",
+            "development/levels/rebuild/verification/house-functional-fill-2026-11-07/verification.json"
           ],
           "defects": [
             "DEV-311",
@@ -1251,20 +1258,39 @@
             "DEV-322",
             "DEV-323",
             "DEV-324",
-            "DEV-325"
+            "DEV-325",
+            "DEV-326",
+            "DEV-327",
+            "DEV-328",
+            "DEV-329",
+            "DEV-330"
           ],
-          "next_action": "Verify current360/full/native/GPU and merged Pages; refine valve/vent detail, complete material/light/wear review and authored House encounter, saved editing/live promotion and complete House/client/network/mission/hardware gates; continue all29packets and then remaining unfinished maps."
+          "next_action": "Verify current361/full/native/GPU and merged gallery; finish authored House encounter, matched door/circuit/light/material review, production labels, saved-native editing/migration, live default promotion and complete House/client/network/mission/hardware gates; continue all29packets and remaining unfinished maps."
         },
         "S08": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "1d137984ba0b08dde73a91472537332f45c3d972",
+          "evidence": [
+            "development/levels/rebuild/verification/house-room-review-2026-11-07/verification.json",
+            "development/levels/rebuild/verification/house-room-review-2026-11-07/reviewed-rooms.csv",
+            "development/levels/rebuild/house/furnishings-construction.md",
+            "development/levels/rebuild/house/furnishings-native-verification.json",
+            "development/levels/rebuild/house/furnishings-supports.json",
+            "development/levels/model-production/house-fridge/visual-review.json",
+            "development/levels/rebuild/verification/house-functional-fill-2026-11-07/verification.json"
+          ],
+          "defects": [
+            "DEV-326",
+            "DEV-327",
+            "DEV-328",
+            "DEV-329",
+            "DEV-330"
+          ],
+          "next_action": "Verify current361/full/native/GPU and merged gallery; finish authored House encounter, matched door/circuit/light/material review, production labels, saved-native editing/migration, live default promotion and complete House/client/network/mission/hardware gates; continue all29packets and remaining unfinished maps."
         },
         "S09": {
           "status": "IN_PROGRESS",
-          "source_sha": "e91d7e73d5da22d9e52bdad3776a666a4dc17f2d",
+          "source_sha": "1d137984ba0b08dde73a91472537332f45c3d972",
           "evidence": [
             "development/levels/rebuild/house/story-construction.md",
             "development/levels/rebuild/house/story-native-verification.json",
@@ -1274,7 +1300,12 @@
             "development/levels/rebuild/house/services-native-verification.json",
             "development/levels/rebuild/house/services-contacts.json",
             "development/levels/rebuild/house/asset-use.csv",
-            "development/levels/rebuild/verification/house-heating-water-2026-11-07/verification.json"
+            "development/levels/rebuild/verification/house-heating-water-2026-11-07/verification.json",
+            "development/levels/rebuild/house/furnishings-construction.md",
+            "development/levels/rebuild/house/furnishings-native-verification.json",
+            "development/levels/rebuild/house/furnishings-supports.json",
+            "development/levels/model-production/house-fridge/visual-review.json",
+            "development/levels/rebuild/verification/house-functional-fill-2026-11-07/verification.json"
           ],
           "defects": [
             "DEV-311",
@@ -1287,9 +1318,13 @@
             "DEV-322",
             "DEV-323",
             "DEV-324",
-            "DEV-325"
+            "DEV-325",
+            "DEV-326",
+            "DEV-328",
+            "DEV-329",
+            "DEV-330"
           ],
-          "next_action": "Verify current360/full/native/GPU and merged Pages; refine valve/vent detail, complete material/light/wear review and authored House encounter, saved editing/live promotion and complete House/client/network/mission/hardware gates; continue all29packets and then remaining unfinished maps."
+          "next_action": "Verify current361/full/native/GPU and merged gallery; finish authored House encounter, matched door/circuit/light/material review, production labels, saved-native editing/migration, live default promotion and complete House/client/network/mission/hardware gates; continue all29packets and remaining unfinished maps."
         },
         "S10": {
           "status": "NOT_AUDITED",

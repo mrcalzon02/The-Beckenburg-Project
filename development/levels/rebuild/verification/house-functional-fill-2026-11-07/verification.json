@@ -1,0 +1,49 @@
+{
+  "status": "LOCAL PACKAGED SOURCE/NATIVE/REVIEW PASS; exact-source361/full/native/GPU pending",
+  "parent_pr": 79,
+  "parent_head": "a2c880128c1165e2bfb8c33dfff1db966c9e1f95",
+  "parent_merge": "98f0faf0b1a0df3173914f145b94b27b2fd6c808",
+  "parent_runs": {
+    "full": 42388613635,
+    "full_result": "actual360passed/0failed/0skipped/360",
+    "native": 42388620846,
+    "gpu": 42388625541
+  },
+  "revision": "first-principles-functional-furnishings-v1-5c8da94b90d34afd",
+  "native": {
+    "level": "briar-rebuild",
+    "revision": "first-principles-functional-furnishings-v1-5c8da94b90d34afd",
+    "triangles": 131793,
+    "packed_images": 230,
+    "props": 45,
+    "spawns": 15,
+    "native_sha256": "2f9c930792762afeff2ebe6921fb118d90ae57e6559b17c44f561855f429ef42",
+    "definition_sha256": "3ba77071404f68d3396360a3b00798a31700ec07cd5ddc54e5c7ce32aabf6804",
+    "geometry_sha256": "d6d320a28e32d91812e23891139502d7bd2df75b7b6634745bc96cce135c9e21",
+    "result": "PASS every source vertex/UV; packed images; original sockets; native file unchanged",
+    "acceptance": "construction candidate only; terrain/boundary and complete map gates open"
+  },
+  "checks": [
+    "180triangle original fridge;256source atlas samples correct",
+    "200triangle supported coat; all152original geometry/UV/material triangles retained",
+    "Actual wall rail support;16benchfoot and32pot terrain probes",
+    "21sampled door poses against new furnishing bounds",
+    "Required whole-House50179route positions;unchanged stairs/voids/van/eightloose bodies/hiding candidates",
+    "Real4TCP source/breaker/reset/resync and actualsoloAI/4TCP ghost trip on furnished candidate",
+    "All6construction texture samplers;140materials/13733203texels exact",
+    "DynamicGeometryRetentionTest;BeckenburgRegressionManifestTest361;CastleRebuildUpgradeTest",
+    "Decoded source-component box proves actual garment/pocket join; superseded188study retained"
+  ],
+  "review": "4actual purpose-specific runtime views and native overview inspected; source fridge front/rear and coat front/side reimported views inspected. Wrong-floor camera study retained as rejected.",
+  "remaining": [
+    "Authored location encounter",
+    "Complete circuit/closed-door light separation and final wear/detail review",
+    "Production labels, saved native editing/migration and live House promotion",
+    "Full map/client/network/mission and physical hardware acceptance",
+    "All29packets then remaining unfinished maps"
+  ],
+  "final_coat_correction": "Added12triangle cloth gusset after original pocket gap found; final furnished variant and native geometry regenerated; exact sampler still140materials/13733203texels",
+  "implementation_sha": "1d137984ba0b08dde73a91472537332f45c3d972",
+  "reconciled_main": "1c86ab3d131b3d6fdf10e5a7e633d0d22a0e8323",
+  "verified_parent_pages": "42390598203: actual deployed HTML/index/all13service PNGs match"
+}
