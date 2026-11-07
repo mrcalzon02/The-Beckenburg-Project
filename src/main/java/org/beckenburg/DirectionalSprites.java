@@ -345,8 +345,14 @@ public final class DirectionalSprites {
     public static void drawHunter(int[] pixels,double[] depth,double cameraX,double cameraZ,
             double yaw,double pitch,SceneRenderer.RemoteBody body,HunterSpriteAnimation.Pose pose,
             double elevation,boolean lamp,int renderWidth,int renderHeight,double focal){
-        BufferedImage image=HunterSpriteAnimation.frame(body.appearance(),
-            stableFacing(body.appearance(),body.heading(),body.x(),body.z(),cameraX,cameraZ),pose);
+        drawHunter(pixels,depth,cameraX,cameraZ,yaw,pitch,body,pose,elevation,lamp,renderWidth,renderHeight,focal,false);
+    }
+    public static void drawHunter(int[] pixels,double[] depth,double cameraX,double cameraZ,
+            double yaw,double pitch,SceneRenderer.RemoteBody body,HunterSpriteAnimation.Pose pose,
+            double elevation,boolean lamp,int renderWidth,int renderHeight,double focal,boolean pain){
+        int facing=stableFacing(body.appearance(),body.heading(),body.x(),body.z(),cameraX,cameraZ);
+        BufferedImage image=pain&&!body.crouched()?HunterReactionSprites.pain(body.appearance(),facing)
+            :HunterSpriteAnimation.frame(body.appearance(),facing,pose);
         var shape=CharacterVisuals.shape(body.appearance());
         double height=shape.height()*(body.crouched()?HunterPosture.CROUCH_HEIGHT/HunterPosture.STANDING_HEIGHT:1);
         drawPose(pixels,depth,cameraX,cameraZ,yaw,pitch,body.x(),body.z(),body.heading(),

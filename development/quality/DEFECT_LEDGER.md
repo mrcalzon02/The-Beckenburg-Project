@@ -10,22 +10,75 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-267 — Hunters stay upright after damage and incapacitation
+
+**Status:** fixed-scoped; reaction assets, real TCP and native OpenGL review pass; installed acceptance pending · **Affected:** Cleric, Observer and Demonologist world sprites, all six hunter seats and hunter camera lenses
+
+No pain pose is selected for real damage and a downed teammate retains their last standing/walking cutout.
+
+Cause / uncertainty: Only locomotion poses exist; the host stops publishing dead bodies, and the hunter-down view accepts only three seat IDs.
+
+Fix / next action: Add four directional pain cutouts and one overhead body texture per class. Broadcast timed pain only after actual host health loss, retain downed BODY/posture snapshots to hunters, render bodies as horizontal floor cards, and share state with video/photo views. Make duplicate down snapshots idempotent; preserve ghost privacy and reset on site/departure.
+
+Evidence and verification: development/quality/evidence/hunter-reactions-2026-11-07/; fifteen validated transparent sprites, real TCP damage/down/privacy checks, seven focused regressions and six real native RTX 5070 pain/body captures. Initial Demonologist backdrop rejected and repaired as a separate alpha-v2 source.
+
+Older-map obligation: Shared hunter rendering applies across maps. Review captures cover the actual House; floor cards use local horizontal support and are not ragdolls or a sloped-terrain corpse mesh.
+
+### DEV-268 — Committed Markdown development logs contain non-UTF8 Windows punctuation bytes
+
+**Status:** fixed-scoped; UTF-8 ledger decode verified · **Affected:** development/quality/DEFECT_LEDGER.md and development/RECOVERY_PLAN_2026-10-25.md
+
+Reading committed Markdown development logs as UTF-8 fails on standalone Windows-1252 dash bytes.
+
+Cause / uncertainty: A prior documentation writer emitted legacy punctuation outside the UTF-8 encoding used by quality tools.
+
+Fix / next action: Normalize invalid legacy bytes to their equivalent Unicode punctuation while preserving all valid Unicode and every issue entry. Keep registry and generated ledger writes explicitly UTF-8.
+
+Evidence and verification: Baseline 62c6a66f contains invalid UTF-8 byte 0x97 in both Markdown files; scoped normalization now decodes as UTF-8. The JSON registry was already valid UTF-8.
+
+Older-map obligation: Documentation encoding repair does not certify map fitness or close existing issues.
+
+### DEV-266 — Default player lacks jumping and portable airborne crouch capability
+
+**Status:** fixed-scoped; focused physics/TCP acceptance; installed acceptance pending · **Affected:** Shared solo/co-op investigation controller and portable editor-kit default player motion
+
+The player can only move along continuous support; crouch lowers the body and cannot produce a tucked running jump.
+
+Cause / uncertainty: No independent airborne collision/gravity state or jump intent exists in the shared player package.
+
+Fix / next action: Add portable default jump controller, airborne capsule clearance and raised solid support; wire host clock, client intent and Space controls; reuse crouch art at raised feet and auto-stand after landing when headroom permits.
+
+Evidence and verification: development/quality/evidence/player-jump-2026-11-07/; PlayerJumpTest and PlayerJumpNetworkTest plus focused movement/crouch regressions.
+
+Older-map obligation: Audit stair openings, ledges, low ceilings and prop tops individually on older maps. Castle and downstream runtimes require their own jump adapter adoption; installed GPU acceptance remains open.
+
 ### DEV-265 — Routine controls require function keys and solo uses a different equipment/runtime path
 
-**status:** fixed-scoped; Java compilation and focused real localhost acceptance; installed acceptance pending
+**Status:** fixed-scoped; Java compilation and focused real localhost acceptance; installed acceptance pending · **Affected:** Castle movement, solo free play, solo campaign, LAN hunter and ghost controls
 
-**affected:** Castle movement, solo free play, solo campaign, LAN hunter and ghost controls
+Voice, books, props and equipment require F keys; solo uses a separate six-item GamePanel with different interactions and no shared gear drops.
 
-**symptom:** Voice, books, props and equipment require F keys; solo uses a separate six-item GamePanel with different interactions and no shared gear drops.
+Cause / uncertainty: Duplicated solo and multiplayer view/controller implementations and scattered input prompts.
 
-**cause:** Duplicated solo and multiplayer view/controller implementations and scattered input prompts.
+Fix / next action: Remove GamePanel; launch private local LanHost/LanClient with LanWorldPanel for solo and campaign. Share the conventional keyboard layout and field-action menu, preserve host validation, expand physical drops to carried device types, and update live prompts and docs.
 
-**action:** Remove GamePanel; launch private local LanHost/LanClient with LanWorldPanel for solo and campaign. Share the conventional keyboard layout and field-action menu, preserve host validation, expand physical drops to carried device types, and update live prompts and docs.
+Evidence and verification: development/quality/evidence/controls-audit-2026-11-06/; LocalInvestigationTest and focused network/control/equipment/campaign regressions. Exact scoped source and installed limitations recorded there.
 
-**evidence:** development/quality/evidence/controls-audit-2026-11-06/; LocalInvestigationTest and focused network/control/equipment/campaign regressions. Exact scoped source and installed limitations recorded there.
+Older-map obligation: Shared controls apply to all selected runtime sites; this does not certify unaudited map geometry or installed release behavior.
 
-**older_maps:** Shared controls apply to all selected runtime sites; this does not certify unaudited map geometry or installed release behavior.
+### DEV-264 — Rear van departure button cannot be used from front desk
 
+**Status:** fixed-scoped; Java 17 compilation, exact mesh and TCP extraction checks pass; installed acceptance pending · **Affected:** Shared expedition van; House, Farmhouse, School and Hollow Creek targeting; solo and LAN departure
+
+Rear wall control loses its prompt when standing at the front desk; legacy solo button toggles cargo doors without ending the mission.
+
+Cause / uncertainty: Two metre world targeting cap and 2.05 model-unit broad phase truncate the scaled button ray; legacy solo handler only toggles the shutter.
+
+Fix / next action: Allow exact visible button hits across the interior at cargo-deck height, preserve normal interaction reach, and settle legacy solo extraction after collision-safe closure. Retain the concurrent shared-host solo refactor.
+
+Evidence and verification: development/quality/evidence/van-departure-2026-11-06/: isolated and working-source compilation; VanCargoDoorTest, LanVanExtractionIntegrationTest, VanModuleIntegrationTest, VanHumanScaleTest. TCP test walks to front desk, sends aimed INTERACT, checks closed shutter and one RETREATED result.
+
+Older-map obligation: Shared van module covers all placements; physical installed gameplay remains unverified. Four-site targeting and three-site circulation checked; no broader map audit claimed.
 
 ### DEV-263 — Crouch and stand snap the local camera between eye heights
 
@@ -3600,14 +3653,3 @@ House, Farmhouse, School, Church, Castle and all other previously authored areas
 ## Continuity
 
 At every map/model checkpoint: update open issues; check for related defects in reused assets; record new checks and remaining limitations; refresh the shared gallery; commit and push actual evidence. Before a fix is marked complete, rerun the checks it can affect (especially stairs after changing floor depth).
-
-
-## DEV-264 - Van departure from the front desk (2026-11-06)
-
-Rear cargo control now accepts an exact visible button hit from aboard the cargo deck, including the desk aisle. Normal equipment reach stays unchanged. Legacy solo closure also settles extraction; concurrent shared-host solo work is preserved. Four-site targeting, actual TCP walk/aim/close/result, cargo collision, and van circulation checks pass on isolated repair source and the working checkout. Evidence: `development/quality/evidence/van-departure-2026-11-06/`. Installed acceptance remains pending.
-
-### DEV-266 � Default player jump capability
-
-Shared solo/co-op investigations lacked a host-authoritative jump; the editor kit had no portable airborne player controller. Added raised crouch takeoff, carried running velocity, swept gravity/collision and landing-to-standing, with the portable default exposed by EditorProject.
-
-Focused physics/TCP and existing movement/crouch checks pass. Evidence: `development/quality/evidence/player-jump-2026-11-07/`. Installed GPU acceptance and individual older-map stair/ledge/prop audits remain open; Castle and other runtime adapters need separate adoption.

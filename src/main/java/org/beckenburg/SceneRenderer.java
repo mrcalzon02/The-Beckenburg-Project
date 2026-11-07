@@ -248,6 +248,7 @@ public final class SceneRenderer {
         x+=Math.sin(yaw)*.12;z+=Math.cos(yaw)*.12;
         eyeHeight=source.eyeHeight-.04;
         playerFeetElevation=source.playerFeetElevation;
+        setHunterReactions(source.downedHunters,source.hunterPain);
         lamp=source.lamp;lampReach=source.lampReach;
         lampIntensity=source.lampIntensity;lampWidth=source.lampWidth;
         flameLamp=source.flameLamp;
@@ -2637,6 +2638,17 @@ public final class SceneRenderer {
     }
     /** First-person network rendering with low-poly teammate models and host-managed doors. */
     private final HunterSpriteAnimation.Tracker hunterAnimation=new HunterSpriteAnimation.Tracker();
+    private java.util.Set<Integer> downedHunters=java.util.Set.of();
+    private java.util.Map<Integer,Double> hunterPain=java.util.Map.of();
+    public void setHunterReactions(java.util.Set<Integer> downed,java.util.Map<Integer,Double> pain){
+        if(downed.stream().anyMatch(i->i<0||i>=6)||pain.entrySet().stream().anyMatch(e->e.getKey()<0||e.getKey()>=6||!Double.isFinite(e.getValue())))
+            throw new IllegalArgumentException("Invalid hunter reactions");
+        downedHunters=java.util.Set.copyOf(downed);hunterPain=java.util.Map.copyOf(pain);
+    }
+    boolean hunterPainVisible(int slot,double clock){
+        double hit=hunterPain.getOrDefault(slot,Double.NEGATIVE_INFINITY);
+        return !downedHunters.contains(slot)&&clock>=hit&&clock-hit<HunterReactionSprites.PAIN_SECONDS;
+    }
     private HouseMap hunterAnimationMap;
     HunterSpriteAnimation.Pose hunterPose(int slot){return hunterAnimation.current(slot);}
     void forgetHunter(int slot){hunterAnimation.forget(slot);}
@@ -2654,7 +2666,7 @@ public final class SceneRenderer {
     /** Screen position above a visible investigator. No ghost or text type is accepted. */
     public record Nameplate(int x,int y){ }
     public Nameplate teammateNameplate(HouseMap map,RemoteBody teammate){
-        if(map==null||teammate==null)return null;
+        if(map==null||teammate==null||downedHunters.contains(teammate.slot()))return null;
         double distance=Math.hypot(teammate.x()-x,teammate.z()-z);
         if(distance<1.35||distance>14.0)return null;
         // Closed doors and solid walls suppress labels even before the raster check.
@@ -3744,11 +3756,17 @@ public final class SceneRenderer {
                 0,"observer",1.75,1.04,map.groundHeight(map.centerX(hunterRoom)-1.25,map.centerZ(hunterRoom)+2,hunterRoom)-(eyeHeight-1.62),255,lamp,renderWidth,renderHeight,focal);
         }
         for(RemoteBody person:others){
+            if(downedHunters.contains(person.slot())){
+                double ground=map.groundHeight(person.x(),person.z(),map.roomAt(person.x(),person.y(),person.z()));
+                HunterReactionSprites.drawBody(pixels,depths,x,z,yaw,pitch,person,
+                    GroundedSpriteFeet.relativeElevation(ground,eyeHeight),lamp,renderWidth,renderHeight,focal);
+                continue;
+            }
             var pose=hunterAnimation.sample(person,clock);
             double distance=Math.hypot(person.x()-x,person.z()-z);
             if(distance>14||distance<1.35)continue;
             DirectionalSprites.drawHunter(pixels,depths,x,z,yaw,pitch,person,pose,
-                person.y()-(eyeHeight-1.62),lamp,renderWidth,renderHeight,focal);
+                person.y()-(eyeHeight-1.62),lamp,renderWidth,renderHeight,focal,hunterPainVisible(person.slot(),clock));
         }
     }
     /** Render the actual v1 glTF meshes with perspective UVs and alpha. The

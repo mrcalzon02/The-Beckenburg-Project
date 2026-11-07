@@ -46,6 +46,8 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private final java.util.ArrayDeque<Integer> activityHistory=new java.util.ArrayDeque<>();
     private boolean vanDisplay,concealed,crouched;
     private final Map<Integer,Boolean> hunterPostures=new HashMap<>();
+    private final Set<Integer> downedHunters=new HashSet<>();
+    private final Map<Integer,Double> hunterPain=new HashMap<>();
     private double eyeOffset(){return crouchCamera.eye();}
     private int vanMapScroll;
     private final Map<Integer,VanSensorStations.Station> sensorNodes=new HashMap<>();
@@ -322,6 +324,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             List<String> p=LanProtocol.parts(frame);
             if(p.size()==3&&p.get(0).equals("SITE")){
                 clearPlacementSelection();
+                downedHunters.clear();hunterPain.clear();applyHunterReactions();
                 map=new HouseMap(HouseMap.Site.valueOf(p.get(1)));lights.setSourceRunning(true);
                 map.configureHiding(renderer.hidingDensity);
                 if(!map.level().revision().equals(p.get(2)))throw new IllegalArgumentException("incompatible level revision");
@@ -416,6 +419,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     hunterVisuals.getOrDefault(who,"observer"),hunterPostures.getOrDefault(who,false)));
             }else if(p.size()==3&&p.get(0).equals("PEER")&&p.get(1).equals("LEFT")){
                 int gone=LanProtocol.integer(p.get(2),0,5);
+                downedHunters.remove(gone);hunterPain.remove(gone);applyHunterReactions();
                 renderer.forgetHunter(gone);videoRenderer.forgetHunter(gone);photoRenderer.forgetHunter(gone);
                 if(gone!=seat){peers.remove(gone);hunterNames.remove(gone);hunterVisuals.remove(gone);}
                 feedback="INVESTIGATOR "+(gone+1)+" DISCONNECTED - CASE CONTINUES";
@@ -514,8 +518,13 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 evidence=LanProtocol.integer(p.get(4),0,3);
                 sanity=100-LanProtocol.integer(p.get(2),0,100);
                 if(health==0){keys.clear();feedback="INCAPACITATED - YOU CAN OBSERVE BUT NOT ACT";}
+            }else if(p.size()==4&&p.get(0).equals("HUNTER")&&p.get(1).equals("HIT")){
+                int who=LanProtocol.integer(p.get(2),0,5);
+                hunterPain.put(who,LanProtocol.integer(p.get(3),0,99999999)*.1);applyHunterReactions();
             }else if(p.size()==3&&p.get(0).equals("HUNTER")&&p.get(1).equals("DOWN")){
-                int down=LanProtocol.integer(p.get(2),0,2);
+                int down=LanProtocol.integer(p.get(2),0,5);
+                if(!downedHunters.add(down))return;
+                hunterPain.remove(down);applyHunterReactions();
                 if(down==seat){
                     keys.clear();feedback="INCAPACITATED - YOU CAN OBSERVE BUT NOT ACT";
                 }else feedback="INVESTIGATOR "+(down+1)+" IS DOWN";
@@ -1101,6 +1110,11 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     void advanceCrouchCamera(double dt){
         double feet=renderer.eyeHeight-eyeOffset();
         renderer.eyeHeight=feet+crouchCamera.advance(crouched,dt);
+    }
+    private void applyHunterReactions(){
+        renderer.setHunterReactions(downedHunters,hunterPain);
+        videoRenderer.setHunterReactions(downedHunters,hunterPain);
+        photoRenderer.setHunterReactions(downedHunters,hunterPain);
     }
     /** Shared by the live viewport and packaged host/client gameplay acceptance. */
     private int frameCount;

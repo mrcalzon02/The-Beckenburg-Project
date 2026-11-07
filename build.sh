@@ -26,6 +26,7 @@ test -s assets/runtime/character-directions.zip
 cp assets/runtime/character-directions.zip build/classes/org/beckenburg/character-directions.zip
 test -s assets/runtime/hunter-animation.zip
 cp assets/runtime/hunter-animation.zip build/classes/org/beckenburg/hunter-animation.zip
+cp assets/runtime/hunter-reactions.zip build/classes/org/beckenburg/hunter-reactions.zip
 cp assets/runtime/castle-resident-animation.zip build/classes/org/beckenburg/castle-resident-animation.zip
 test -s assets/runtime/twins-directions.zip
 cp assets/runtime/twins-directions.zip build/classes/org/beckenburg/twins-directions.zip

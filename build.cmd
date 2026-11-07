@@ -52,6 +52,7 @@ if not exist assets\runtime\character-directions.zip (echo ERROR: required appro
 copy /Y assets\runtime\character-directions.zip build\classes\org\beckenburg\character-directions.zip >nul || exit /b 1
 if not exist assets\runtime\hunter-animation.zip (echo ERROR: hunter animation sprites missing & exit /b 1)
 copy /Y assets\runtime\hunter-animation.zip build\classes\org\beckenburg\hunter-animation.zip >nul || exit /b 1
+copy /Y assets\runtime\hunter-reactions.zip build\classes\org\beckenburg\hunter-reactions.zip >nul || exit /b 1
 copy /Y assets\runtime\castle-resident-animation.zip build\classes\org\beckenburg\castle-resident-animation.zip >nul || exit /b 1
 if not exist assets\runtime\twins-directions.zip (echo ERROR: independent Twins PNGs missing & exit /b 1)
 copy /Y assets\runtime\twins-directions.zip build\classes\org\beckenburg\twins-directions.zip >nul || exit /b 1

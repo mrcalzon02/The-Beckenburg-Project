@@ -1,7 +1,29 @@
 {
   "version": 1,
-  "updated": "2026-11-06",
+  "updated": "2026-11-07",
   "issues": [
+    {
+      "id": "DEV-267",
+      "title": "Hunters stay upright after damage and incapacitation",
+      "status": "fixed-scoped; reaction assets, real TCP and native OpenGL review pass; installed acceptance pending",
+      "affected": "Cleric, Observer and Demonologist world sprites, all six hunter seats and hunter camera lenses",
+      "symptom": "No pain pose is selected for real damage and a downed teammate retains their last standing/walking cutout.",
+      "cause": "Only locomotion poses exist; the host stops publishing dead bodies, and the hunter-down view accepts only three seat IDs.",
+      "action": "Add four directional pain cutouts and one overhead body texture per class. Broadcast timed pain only after actual host health loss, retain downed BODY/posture snapshots to hunters, render bodies as horizontal floor cards, and share state with video/photo views. Make duplicate down snapshots idempotent; preserve ghost privacy and reset on site/departure.",
+      "evidence": "development/quality/evidence/hunter-reactions-2026-11-07/; fifteen validated transparent sprites, real TCP damage/down/privacy checks, seven focused regressions and six real native RTX 5070 pain/body captures. Initial Demonologist backdrop rejected and repaired as a separate alpha-v2 source.",
+      "older_maps": "Shared hunter rendering applies across maps. Review captures cover the actual House; floor cards use local horizontal support and are not ragdolls or a sloped-terrain corpse mesh."
+    },
+    {
+      "id": "DEV-268",
+      "title": "Committed Markdown development logs contain non-UTF8 Windows punctuation bytes",
+      "status": "fixed-scoped; UTF-8 ledger decode verified",
+      "affected": "development/quality/DEFECT_LEDGER.md and development/RECOVERY_PLAN_2026-10-25.md",
+      "symptom": "Reading committed Markdown development logs as UTF-8 fails on standalone Windows-1252 dash bytes.",
+      "cause": "A prior documentation writer emitted legacy punctuation outside the UTF-8 encoding used by quality tools.",
+      "action": "Normalize invalid legacy bytes to their equivalent Unicode punctuation while preserving all valid Unicode and every issue entry. Keep registry and generated ledger writes explicitly UTF-8.",
+      "evidence": "Baseline 62c6a66f contains invalid UTF-8 byte 0x97 in both Markdown files; scoped normalization now decodes as UTF-8. The JSON registry was already valid UTF-8.",
+      "older_maps": "Documentation encoding repair does not certify map fitness or close existing issues."
+    },
     {
       "id": "DEV-266",
       "title": "Default player lacks jumping and portable airborne crouch capability",
@@ -768,7 +790,7 @@
       "affected": "Hollow Creek fireplace, picnic-table fixings and cold fire ring",
       "symptom": "Detailed review found split firewood below rather than resting on fireplace grate, new tabletop bolt heads away from bearing rails, and a small ash/log contact gap.",
       "cause": "Overall model silhouette and bounding boxes did not establish support by the intended subcomponent.",
-      "action": "Place split wood on actual grate bars, align table fixings to measured rails at X\u00c3\u201a\u00c2\u00b1.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.",
+      "action": "Place split wood on actual grate bars, align table fixings to measured rails at XÃ‚Â±.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.",
       "evidence": "development/levels/previews/defects/DEV-054-before-firewood-grate-support.png; verification/hollow-creek-refined.json; hollow-creek-refinement-parts.json",
       "older_maps": "Audit actual support parts on every older source/placement; this refined-only correction does not establish unaudited other-map acceptance."
     },
@@ -1096,7 +1118,7 @@
       "title": "Reshaped bank left old crest dressing unsupported",
       "status": "fixed-native-rigid-crest-refit",
       "affected": "Camp Hollow Creek bank/crest refinement",
-      "symptom": "Actual original log bearings sit53\u00e2\u20ac\u201c63mm into the original soil, but unrefitted original bearings reach655mm above the new bank. A first metadata-based contact check had reported about0.20m.",
+      "symptom": "Actual original log bearings sit53â€“63mm into the original soil, but unrefitted original bearings reach655mm above the new bank. A first metadata-based contact check had reported about0.20m.",
       "cause": "Changing terrain without refitting supported log and rooted scrub assemblies invalidated their old contacts. Metadata and axis/cap rays alone were insufficient support evidence.",
       "action": "Rigidly refit all28 complete logs and their branches using actual end-bearing vertices, and translate24 complete rooted shrub assemblies. Independent source-coordinate checks show no stretching/disconnected branches; actual both-end bearings now sit40mm into soil.",
       "evidence": "quality/evidence/DEV-084-actual-crest-bearing-before-after.json; verification/hollow-creek-berm.json; hollow-creek/grounded-berm.json",
@@ -1238,7 +1260,7 @@
       "id": "DEV-097",
       "title": "Native exterior zones treated as indoor by numeric room ID",
       "status": "fixed-scoped",
-      "affected": "Hollow Creek outdoor zones 0\u201311",
+      "affected": "Hollow Creek outdoor zones 0–11",
       "symptom": "Outdoor investigation ownership reused indoor numeric IDs and received indoor ambient/shelter assumptions.",
       "cause": "Recorded during native-runtime/water review; see reproducible source and capture evidence.",
       "action": "Use actual Room.outside/native roof queries; source shelter geometry remains authoritative.",
@@ -1341,7 +1363,7 @@
       "symptom": "A review-camera probe found traversable native creek floor at (49,23), feet about -2.64m, below the -1.95m water surface.",
       "cause": "The edge blockers constrain crossings, but terrain support alone still allowed a direct underwater spawn query.",
       "action": "Reject below-water native support when the actual water body is wet; retain canonical van and dry-hull rules. Move river review cameras to supported dry bank positions.",
-      "evidence": "HollowCreekRuntimeTest directly rejects the submerged query while all969 existing route supports and939 sweeps still pass. River cameras now expose47\u201355k water pixels per frame instead of3\u20136k.",
+      "evidence": "HollowCreekRuntimeTest directly rejects the submerged query while all969 existing route supports and939 sweeps still pass. River cameras now expose47–55k water pixels per frame instead of3–6k.",
       "older_maps": "Audit both edge-crossing barriers and direct submerged spawn/support eligibility for every water map."
     },
     {
@@ -1539,7 +1561,7 @@
       "symptom": "Van metal textures show banding",
       "cause": "Generated IRON tile darkened every eighth X pixel by17levels; repeated UVs stamp grooves across broad painted panels.",
       "action": "Replace forced directional grooves with periodic 2D weathering, restrained grain and sparse pits. Preserve all15other tiles, atlas layout, UVs, source geometry, lighting and exposure. Roof/interpolation and native model metal families remain separate audits.",
-      "evidence": "MetalMaterialRefinementTest: groove phase contrast16.652\u21920.057. Twelve matched actual GPU van images; renderer/fixture/van bytecode identical before/after. metal-refinement-2026-10-27.json.",
+      "evidence": "MetalMaterialRefinementTest: groove phase contrast16.652→0.057. Twelve matched actual GPU van images; renderer/fixture/van bytecode identical before/after. metal-refinement-2026-10-27.json.",
       "older_maps": "Procedural IRON users receive this tile correction; original GLB textures, roof shading bands, all-map in-room visual acceptance and hardware frame timing remain unaccepted."
     },
     {
@@ -1734,7 +1756,7 @@
       "title": "Rebuilt Castle bypassed retained GPU geometry",
       "status": "fixed-scoped-rtx-and-ci-verified",
       "affected": "Castle headquarters",
-      "symptom": "Rebuilt Castle measured 35\u201373 ms median frames versus 18 ms before the rebuild, allocating 63\u2013201 MiB per frame at 640x400 on RTX5070.",
+      "symptom": "Rebuilt Castle measured 35–73 ms median frames versus 18 ms before the rebuild, allocating 63–201 MiB per frame at 640x400 on RTX5070.",
       "cause": "Castle calls drawGpuFaces with no investigation map, excluding it from the map-gated residency path; 220671 source triangles were reprocessed each frame.",
       "action": "Retain authored Castle topology, state-keyed fixture/door assemblies, conservative spatial chunks and explicitly revisioned GPU buffers.",
       "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open.",
@@ -1745,7 +1767,7 @@
       "title": "PSX framebuffer quantization repeated costly floating-point rounding",
       "status": "fixed-scoped-rtx-and-ci-verified",
       "affected": "All rendered maps and Castle",
-      "symptom": "JFR identified PSX finishFrame as a major CPU cost, 6\u201313 ms per frame in the baseline.",
+      "symptom": "JFR identified PSX finishFrame as a major CPU cost, 6–13 ms per frame in the baseline.",
       "cause": "Six floating-point rounding operations per pixel repeated an invariant 256-channel/16-phase transform.",
       "action": "Use precomputed channel lookup tables with exhaustive numerical and full-image pixel parity.",
       "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open.",
@@ -1767,7 +1789,7 @@
       "title": "Cosmetic light flicker invalidated retained shadow work",
       "status": "fixed-scoped-rtx-and-ci-verified",
       "affected": "Castle and shared stationary fixture lighting",
-      "symptom": "First residency candidate produced 300\u2013400 ms flicker stalls; retaining geometry alone was insufficient.",
+      "symptom": "First residency candidate produced 300–400 ms flicker stalls; retaining geometry alone was insufficient.",
       "cause": "Brightness revisions repeated tessellation, ray visibility and source attenuation; bounded global shadow caches thrashed.",
       "action": "Separate immutable receiver attenuation/occlusion probes from live brightness factors; retain regional revisions and invalidate on actual occluder changes.",
       "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open.",
@@ -1881,7 +1903,7 @@
       "cause": "Lighting tessellation depended on camera distance even for retained static resources; movement across bands rebuilt vertices/probes.",
       "action": "Prepare fixed full close-range lighting topology for resident interior chunks; preserve exterior/native rules, original normals and UVs, and dynamic reference paths.",
       "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open. Translation identity/revision contract passes. Staged 33-pose CPU p95 improved about 268ms to 40ms; completed-frame cold/waypoint p95 remains 76ms.",
-      "older_maps": "Warm representative paths require repeated final timing and actual installed navigation. No claim that first visits or complete A\u2013G acceptance are finished."
+      "older_maps": "Warm representative paths require repeated final timing and actual installed navigation. No claim that first visits or complete A–G acceptance are finished."
     },
     {
       "id": "DEV-161",
@@ -1957,7 +1979,7 @@
       "symptom": "Owner flags suspected misaligned exterior textures and severe graphical defects across imported and 3D-authored asset families; supplied list has 26 distinct numeric asset IDs and an additional screenshot.",
       "cause": "Imported source glTF atlas V-orientation mismatches, six authored bedroll seam UV mistakes, clipped Hunter hair/boots from board segmentation, blue Twin side-head matte defect, and detached source alpha strips in Possessive/Twins packaged ghost atlases. Corrected with original source artwork/materials only.",
       "action": "Targeted corrective work complete for all 26 original flags. Original textures/meshes preserved except approved six bedroll UV restorations; source-aligned imported 3D V sampling, actor alpha segmentation and indexed ghost strip removals shipped. Continue independent review of map placement/collision, detailed texture aesthetic quality, character motions and the other 85 non-targeted diagnostic review flags. Do not treat completion of these specific repairs as acceptance of unrelated defects; visual checks remain non-release-blocking.",
-      "evidence": "Original UV and art review JSON: development/assets/texture-revision-review-2026-11-01.json. 25 earlier assets accepted in actual four-angle run 41405326985 (artifact 13122898542), source atlases/GLBs audited with zero UV warnings and direct source-V vs legacy-V screenshots. Final Twins ghost source fix in runtime archive commit 828659674770cdc00a6c0b07be9f4b7521588b88; original 181 other ghost sprites byte-identical and 15666 stray alpha pixels cleared. Latest Windows developer-room run 41408571829 (artifact 13125290269) PASS actual game build + TwinsAtlasRuntimeTest (all 8 facing sheets/256 cells) + PossessiveAtlasRuntimeTest + original scene screenshots. Pixel-identical Twins at 0/180\u00b0, only 642 pixels changed each at 90/270\u00b0 inside x274-282 y206-321 around removed strand; both figures intact.",
+      "evidence": "Original UV and art review JSON: development/assets/texture-revision-review-2026-11-01.json. 25 earlier assets accepted in actual four-angle run 41405326985 (artifact 13122898542), source atlases/GLBs audited with zero UV warnings and direct source-V vs legacy-V screenshots. Final Twins ghost source fix in runtime archive commit 828659674770cdc00a6c0b07be9f4b7521588b88; original 181 other ghost sprites byte-identical and 15666 stray alpha pixels cleared. Latest Windows developer-room run 41408571829 (artifact 13125290269) PASS actual game build + TwinsAtlasRuntimeTest (all 8 facing sheets/256 cells) + PossessiveAtlasRuntimeTest + original scene screenshots. Pixel-identical Twins at 0/180°, only 642 pixels changed each at 90/270° inside x274-282 y206-321 around removed strand; both figures intact.",
       "older_maps": "Audit any level using these assets after mapping; House, Castle, Farmhouse, School and every shared fixture use require independent placement/orientation and material captures. Visual defects are diagnostic and not release blockers."
     },
     {
