@@ -1,0 +1,73 @@
+{
+  "tested_source": "fb481f4c656d4c3b3a1fd6c1d04b681358feeca4",
+  "actual_full": "REGRESSION SUMMARY passed=343 failed=0 skipped=0 manifest=343",
+  "runs": {
+    "full": {
+      "run": 42342860629,
+      "source": "fb481f4c656d4c3b3a1fd6c1d04b681358feeca4",
+      "jobs": [
+        {
+          "id": 128314186721,
+          "name": "packaged-multiplayer-round",
+          "conclusion": "success"
+        }
+      ]
+    },
+    "native": {
+      "run": 42342856995,
+      "source": "fb481f4c656d4c3b3a1fd6c1d04b681358feeca4",
+      "jobs": [
+        {
+          "id": 128314175465,
+          "name": "native-editor-service",
+          "conclusion": "success"
+        }
+      ]
+    },
+    "gpu": {
+      "run": 42343212183,
+      "source": "fb481f4c656d4c3b3a1fd6c1d04b681358feeca4",
+      "jobs": [
+        {
+          "id": 128315249363,
+          "name": "compile-gpu-java17",
+          "conclusion": "success"
+        },
+        {
+          "id": 128315249525,
+          "name": "windows-build",
+          "conclusion": "success"
+        },
+        {
+          "id": 128316358966,
+          "name": "opengl-mesa-smoke",
+          "conclusion": "success"
+        }
+      ]
+    },
+    "gallery": {
+      "run": 42342855262,
+      "source": "fb481f4c656d4c3b3a1fd6c1d04b681358feeca4",
+      "jobs": [
+        {
+          "id": 128314167337,
+          "name": "gallery",
+          "conclusion": "success"
+        }
+      ]
+    }
+  },
+  "pr70": {
+    "sha": "bc2079c671d7cc7ba816f3003dcf6ce8f867e7a3",
+    "merged": true,
+    "message": "Pull Request successfully merged"
+  },
+  "pr69": {
+    "sha": "fcc394f2e3ac06d7523fb7897c87da58f2ace34a",
+    "merged": true,
+    "message": "Pull Request successfully merged"
+  },
+  "verified_main": "fcc394f2e3ac06d7523fb7897c87da58f2ace34a",
+  "identical_entire_tree": "30d643ba9ee0bc4ff76f62cedc31fcb01e18a897",
+  "limits": "New automatic main runs/deployed Pages, pending museum story and remaining Castle/all29 gates are distinct"
+}
