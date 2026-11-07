@@ -4014,6 +4014,34 @@ Evidence and verification: Actual git core.autocrlf=true checkout before pin rep
 
 Older-map obligation: Castle frozen resources only. Individually audit other fingerprinted text assets; do not normalize arbitrary user scenes or infer old map codecs/other packaging fixed.
 
+### DEV-296 — Visible Castle window mullions have no shared optical or small-body solids
+
+**Status:** fixed;49 focused packaged checks after targeted repairs/resumption, final native input/placement reviews pass; exact-source online acceptance pending · **Affected:** Castle window wooden crossbars and surrounds; new local loose-body contact
+
+An actual light ray passes through the centre of the visibly solid wooden crossbar. Existing CastlePortalSlotTest incorrectly expected that exact ray to pass.
+
+Cause / uncertainty: Window timber boxes were authored only inside SceneRenderer; optical/physical queries knew the aperture and masonry but not its visible wood.
+
+Fix / next action: Publish immutable authored frame boxes from CastleDoorSlots. Render the same unchanged boxes/UVs and consume their exact bounds in Castle optical and small-body sweeps. Move the window-gap positive to the actual lower aperture and add the opaque-crossbar negative.
+
+Evidence and verification: Actual old implementation fails enhanced CastlePortalSlotTest at west-casement-north; corrected source passes. Original no-frame failure and corrected logs retained. Final native on/off window views and full focused gates remain required.
+
+Older-map obligation: Only Castle frames were audited. Other map windows, corners, floors, roof joins and furnishings retain individual optical/body audit obligations; no global light-bleed or collision acceptance.
+
+### DEV-297 — Castle dynamic-cache generalization removed the House diagnostic entrypoint
+
+**Status:** fixed;49 focused packaged checks after targeted repairs/resumption, final native input/placement reviews pass; exact-source online acceptance pending · **Affected:** Shared SceneRenderer dynamic-geometry diagnostics during Castle loose-object integration
+
+Actual DynamicGeometryRetentionTest fails NoSuchMethodException for beginDynamicGeometry(HouseMap) after its private parameter was generalized to Object.
+
+Cause / uncertainty: Existing differential diagnostic reflects the original House-specific method signature. The generic Castle cache path removed that contract.
+
+Fix / next action: Retain the original HouseMap overload and delegate to the same shared Object cache implementation. Keep the original differential test unchanged; preserve source-face parity and changed-object-only rebuild behavior.
+
+Evidence and verification: Actual failure retained in castle-dynamic-house-entrypoint-before.log; source bridge restored before publication. Fresh differential/physical/light checks and final native captures remain required.
+
+Older-map obligation: The bridge preserves House-derived callers and diagnostics. It does not accept unaudited location visuals or physical-hardware performance.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

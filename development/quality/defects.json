@@ -3147,6 +3147,28 @@
       "action": "Mark only the frozen runtime/source baseline property paths -text in.gitattributes, preserving exact authored bytes and unchanged SHA guards. Add actual historical saved-document upgrade test to required native editor host command, where failure is not advisory.",
       "evidence": "Actual git core.autocrlf=true checkout before pin reproduces all3bad CRLF digests; after pin all3match original immutable hashes and all3source copies. Verification sources/raw failing full transcript in verification/castle-baseline-checkout-2026-11-06. Original43local packaged bodies pass with canonical bytes, but this does not establish fresh remote Windows acceptance.",
       "older_maps": "Castle frozen resources only. Individually audit other fingerprinted text assets; do not normalize arbitrary user scenes or infer old map codecs/other packaging fixed."
+    },
+    {
+      "id": "DEV-296",
+      "title": "Visible Castle window mullions have no shared optical or small-body solids",
+      "status": "fixed;49 focused packaged checks after targeted repairs/resumption, final native input/placement reviews pass; exact-source online acceptance pending",
+      "affected": "Castle window wooden crossbars and surrounds; new local loose-body contact",
+      "symptom": "An actual light ray passes through the centre of the visibly solid wooden crossbar. Existing CastlePortalSlotTest incorrectly expected that exact ray to pass.",
+      "cause": "Window timber boxes were authored only inside SceneRenderer; optical/physical queries knew the aperture and masonry but not its visible wood.",
+      "action": "Publish immutable authored frame boxes from CastleDoorSlots. Render the same unchanged boxes/UVs and consume their exact bounds in Castle optical and small-body sweeps. Move the window-gap positive to the actual lower aperture and add the opaque-crossbar negative.",
+      "evidence": "Actual old implementation fails enhanced CastlePortalSlotTest at west-casement-north; corrected source passes. Original no-frame failure and corrected logs retained. Final native on/off window views and full focused gates remain required.",
+      "older_maps": "Only Castle frames were audited. Other map windows, corners, floors, roof joins and furnishings retain individual optical/body audit obligations; no global light-bleed or collision acceptance."
+    },
+    {
+      "id": "DEV-297",
+      "title": "Castle dynamic-cache generalization removed the House diagnostic entrypoint",
+      "status": "fixed;49 focused packaged checks after targeted repairs/resumption, final native input/placement reviews pass; exact-source online acceptance pending",
+      "affected": "Shared SceneRenderer dynamic-geometry diagnostics during Castle loose-object integration",
+      "symptom": "Actual DynamicGeometryRetentionTest fails NoSuchMethodException for beginDynamicGeometry(HouseMap) after its private parameter was generalized to Object.",
+      "cause": "Existing differential diagnostic reflects the original House-specific method signature. The generic Castle cache path removed that contract.",
+      "action": "Retain the original HouseMap overload and delegate to the same shared Object cache implementation. Keep the original differential test unchanged; preserve source-face parity and changed-object-only rebuild behavior.",
+      "evidence": "Actual failure retained in castle-dynamic-house-entrypoint-before.log; source bridge restored before publication. Fresh differential/physical/light checks and final native captures remain required.",
+      "older_maps": "The bridge preserves House-derived callers and diagnostics. It does not accept unaudited location visuals or physical-hardware performance."
     }
   ],
   "audit_categories": [

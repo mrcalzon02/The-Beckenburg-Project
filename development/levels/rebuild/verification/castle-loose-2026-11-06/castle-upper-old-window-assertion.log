@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: Casement is a painted solid wall upper-wash-west
+	at org.beckenburg.CastleUpperConstructionTest.check(CastleUpperConstructionTest.java:9)
+	at org.beckenburg.CastleUpperConstructionTest.main(CastleUpperConstructionTest.java:67)

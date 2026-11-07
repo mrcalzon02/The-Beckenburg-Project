@@ -2355,7 +2355,7 @@
     },
     {
       "path": "src/main/java/org/beckenburg/CastleHubMap.java",
-      "sha256": "180975061c56ad2703593721e9e85cc50933707ca951ea266496d9f72c6e0d94"
+      "sha256": "b5a4b09b2b943f8b8fb0f1c9e614feb66de0be8e45faee9256ed235234fb3e6e"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleRelations.java",
@@ -2391,7 +2391,7 @@
     },
     {
       "path": "src/main/java/org/beckenburg/CastleDoorSlots.java",
-      "sha256": "ffa81a232e3e6507fd3c72f1e248bf3603a4d29a3d58fe1454a9561356198c2a"
+      "sha256": "cd61709318b7e78e6cb05ab5109bd60e4e52df8429c7bc86a39252a106f47500"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleGround.java",
@@ -2439,15 +2439,19 @@
     },
     {
       "path": "src/main/java/org/beckenburg/CastleObjectRay.java",
-      "sha256": "b2bbdc4632a237c97f1244f6a6c6fec2db7d4fced5dd1e9cabb65c2f78114bc4"
+      "sha256": "0ebe3246532fab4b926a3916d5e404efa12bbb7934fd0544cc46bd4d46d2152a"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleStory.java",
-      "sha256": "2c24661a0f60d90ee5119a7efa2ffe8386f6bbf58fc223333b4f7eb557d0985c"
+      "sha256": "dd678656ab20064bd0ea60e509186b929f4c0a3a938e5180884f887e61a676ae"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleStoryPanel.java",
       "sha256": "bd2aaf87e3fe6ec89284468d234a2a3af0f620ca2fdd5765d94210499fecb43b"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/CastleClutterWorld.java",
+      "sha256": "2cebcb61e801745989b359c335e1f980be0ac921a5e41abeb9ee8e1b2f87984e"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleWarehouse.java",

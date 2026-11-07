@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 6581,
+  "count": 6591,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -2934,6 +2934,86 @@
       "sha256": "621f975fdaf5087a67f865c294583f7d803794d070e79565a940bf60d86c7aca"
     },
     {
+      "path": "development/captures/castle-loose-placements/loose-1-mug-runtime.png",
+      "url": "development/captures/castle-loose-placements/loose-1-mug-runtime.png",
+      "title": "Loose 1 mug runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 615562,
+      "sha256": "1d36b9840293f557c7f8e266bd78047612bcfa07b34945356a7026459aeaf319"
+    },
+    {
+      "path": "development/captures/castle-loose-placements/loose-2-tin-runtime.png",
+      "url": "development/captures/castle-loose-placements/loose-2-tin-runtime.png",
+      "title": "Loose 2 tin runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 698930,
+      "sha256": "c5bff330b364b3228ba2bbb32f336648435f5576f20e5f818568d19175139bab"
+    },
+    {
+      "path": "development/captures/castle-loose-placements/loose-3-book-runtime.png",
+      "url": "development/captures/castle-loose-placements/loose-3-book-runtime.png",
+      "title": "Loose 3 book runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 551637,
+      "sha256": "117762de6f0e7c520057996c7ca213e041f998243fad2e1369a20ea35ccb6625"
+    },
+    {
+      "path": "development/captures/castle-loose-placements/loose-4-mug-runtime.png",
+      "url": "development/captures/castle-loose-placements/loose-4-mug-runtime.png",
+      "title": "Loose 4 mug runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 405153,
+      "sha256": "12d05a809b2830f513a8165b5fb53f0bab5c71f12a1372000f3e6682255e5852"
+    },
+    {
+      "path": "development/captures/castle-loose-placements/loose-5-book-runtime.png",
+      "url": "development/captures/castle-loose-placements/loose-5-book-runtime.png",
+      "title": "Loose 5 book runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 431621,
+      "sha256": "c094c1dac7eb4ad47c9c1d6a2a9507547347806cc61ce139dc87d4b6c891a69b"
+    },
+    {
+      "path": "development/captures/castle-loose-placements/loose-6-candlestick-runtime.png",
+      "url": "development/captures/castle-loose-placements/loose-6-candlestick-runtime.png",
+      "title": "Loose 6 candlestick runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 452015,
+      "sha256": "9c54dcdc550674baa2fb079e279615a7c97bdc006ae2ec6617fffefdd9ab5dd7"
+    },
+    {
+      "path": "development/captures/castle-loose-ui/common-mug-before-pickup-runtime.png",
+      "url": "development/captures/castle-loose-ui/common-mug-before-pickup-runtime.png",
+      "title": "Common mug before pickup runtime",
+      "kind": "Game UI verification",
+      "width": 1000,
+      "height": 700,
+      "bytes": 161369,
+      "sha256": "b0bd64016516182b49b3c7de6a7029c73da656607f15e80ab4a43003e64ae5c3"
+    },
+    {
+      "path": "development/captures/castle-loose-ui/common-mug-held-runtime.png",
+      "url": "development/captures/castle-loose-ui/common-mug-held-runtime.png",
+      "title": "Common mug held runtime",
+      "kind": "Game UI verification",
+      "width": 1000,
+      "height": 700,
+      "bytes": 161904,
+      "sha256": "c17183835bcdab0f2e746e652e0f5446ff367a9ff40d3aab2758ff499221d91d"
+    },
+    {
       "path": "development/captures/castle-story-ui/finish-keeper-statue-record-ui.png",
       "url": "development/captures/castle-story-ui/finish-keeper-statue-record-ui.png",
       "title": "Finish keeper statue record ui",
@@ -3082,6 +3162,26 @@
       "height": 700,
       "bytes": 24078,
       "sha256": "8b61efbfa46333749e49a671621db8c0d14a75e0f453a780719e487aa070dd43"
+    },
+    {
+      "path": "development/captures/castle-window-frame/native-window-lights-off-runtime.png",
+      "url": "development/captures/castle-window-frame/native-window-lights-off-runtime.png",
+      "title": "Native window lights off runtime",
+      "kind": "Runtime lighting diagnostic",
+      "width": 1000,
+      "height": 625,
+      "bytes": 146658,
+      "sha256": "8be8f65f78b725e6768d8c1321e4838844884ebb56f1a72de8db00ae3dd104a5"
+    },
+    {
+      "path": "development/captures/castle-window-frame/native-window-lights-on-runtime.png",
+      "url": "development/captures/castle-window-frame/native-window-lights-on-runtime.png",
+      "title": "Native window lights on runtime",
+      "kind": "Runtime lighting diagnostic",
+      "width": 1000,
+      "height": 625,
+      "bytes": 295946,
+      "sha256": "bb36aace8bbf55d4da6403c64c502320ca592153b8fcd6bd7b0b93b99e413816"
     },
     {
       "path": "development/captures/wall-lamp-runtime/after/wall-lamp-0-off.png",

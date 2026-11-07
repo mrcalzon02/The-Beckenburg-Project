@@ -38,9 +38,12 @@ public final class CastlePortalSlotTest {
   // do not allow a hunter through their solid stone sill.
   for(var window:CastleDoorSlots.windows()){
    double z=(window.z0()+window.z1())*.5,feet=window.sill()>3.4?3.4:0;
-   double y=(window.sill()+window.head())/2;
+   double y=window.sill()+(window.head()-window.sill())*.25;
    check(FixtureLighting.castleRayClear(map,window.x()-.75,y,z,window.x()+.75,y,z),
      "window admits light through the full wall thickness "+window.id());
+   double mullion=(window.sill()+window.head())/2;
+   check(!FixtureLighting.castleRayClear(map,window.x()-.75,mullion,z,window.x()+.75,mullion,z),
+     "visible wooden mullion occludes light "+window.id());
    check(!FixtureLighting.castleRayClear(map,window.x()-.75,feet+.55,z,window.x()+.75,feet+.55,z),
      "stone sill remains an occluding physical core "+window.id());
    check(!FixtureLighting.castleRayClear(map,window.x()-.75,window.head()+.2,z,window.x()+.75,window.head()+.2,z),

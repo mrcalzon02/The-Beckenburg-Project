@@ -88,6 +88,8 @@ public final class CastleHubMap {
     public CastleHubMap(){this(CastleWorldTerrain.surface());}
     CastleHubMap(AuthoredSitePhysics worldSurface){this.worldSurface=java.util.Objects.requireNonNull(worldSurface);refreshGround();}
     public AuthoredSitePhysics worldSurface(){return worldSurface;}
+    private LooseClutter clutter;
+    public synchronized LooseClutter clutter(){if(clutter==null)clutter=new LooseClutter(this);return clutter;}
     /** Native editor floor changes refresh the same runtime support index. */
     private void refreshGround(){
         var scene=CastleLevelEdits.current();long revision=scene.revision();
