@@ -1,5 +1,7 @@
 # Hunter pain and fallen-body acceptance
 
+Implementation: `6f2e0d769958333aa8003b457ddc7da5a97a1ddb`.
+
 Baseline: `62c6a66f` on the existing development branch. The isolated 428-file Java 17 main-source export excludes independent pending sanctuary/ghost changes. Its staged runtime source matches the tested export.
 
 Seven exact-source checks pass: HunterReactionSpritesTest, HunterReactionsNetworkTest, HunterSpriteAnimationTest, LanHunterAnimationGameplayTest, LanIncapacitationTest, CrouchNetworkTest and CameraSnapshotTest. See `exact-*.log`.

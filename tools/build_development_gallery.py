@@ -18,6 +18,8 @@ for path in sorted(set(paths)):
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
     if '/synthetic-controls/' in path:kind='Synthetic GPU depth control'
+    elif '/runtime-gpu/' in path:kind='Runtime GPU capture'
+    elif '/hunter-reactions-' in path and '/raster/' in path:kind='Synthetic floor control'
     elif '/ci-ui/' in path:kind='Game UI verification'
     elif '/performance/hardware/' in path:kind='Runtime GPU diagnostic'
     elif '/fixture-join-diagnostic/' in path:kind='Runtime lighting diagnostic'
