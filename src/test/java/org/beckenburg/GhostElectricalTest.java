@@ -5,7 +5,7 @@ public final class GhostElectricalTest {
     static void check(boolean b,String s){if(!b)throw new AssertionError(s);}
     static GhostHauntingFolio.Occurrence event(String id,int room,int tick){return new GhostHauntingFolio.Occurrence(GhostHauntingFolio.entry(id),room,tick);}
     public static void main(String[] args)throws Exception{
-        boolean furnishings=args.length>0&&args[0].equals("FURNISHINGS");boolean services=args.length>0&&args[0].equals("SERVICES");var map=furnishings?HouseRebuildFurnishings.map():services?HouseRebuildServices.map():HouseRebuildFitout.map();int combinations=0;
+        boolean furnishings=args.length>0&&args[0].equals("FURNISHINGS");boolean services=args.length>0&&args[0].equals("SERVICES");var map=args.length>0&&args[0].equals("SAVED_HOUSE")?new HouseMap():furnishings?HouseRebuildFurnishings.map():services?HouseRebuildServices.map():HouseRebuildFitout.map();int combinations=0;
         for(var type:GhostIdentity.Type.values())for(var source:GhostDomain.Source.values()){
             var ghost=new GhostDomain(map,4,type);ghost.advance(1,4);var accepted=ghost.dispatch(new GhostDomain.Command(GhostDomain.Action.DISTURB,4,1,source));
             check(accepted.applied(),"Ordinary disturb rejected "+type+" / "+source);var lights=new RoomLighting();

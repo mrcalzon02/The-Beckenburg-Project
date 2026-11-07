@@ -52,6 +52,8 @@ public final class EditorAgentGuiTest {
         check(failure.get()==null&&stage.get()==3,"Actual human recovery menu completed: "+failure.get());
     }
     public static void main(String[] args)throws Exception{
+        var backgroundFailure=new AtomicReference<Throwable>();var priorHandler=Thread.getDefaultUncaughtExceptionHandler();
+        Thread.setDefaultUncaughtExceptionHandler((thread,failure)->{backgroundFailure.compareAndSet(null,failure);failure.printStackTrace();});
         Path output=Path.of(args.length==0?"build/editor-agent-evidence":args[0]).toAbsolutePath();Files.createDirectories(output);
         Path home=Files.createTempDirectory("editor-agent-gui-");
         System.setProperty("user.home",home.toString());
@@ -106,6 +108,22 @@ public final class EditorAgentGuiTest {
                     check(service.inspect().hierarchy().get(0).x()==node.x(),"Human recovery restores previous real saved prop");
                     undo.doClick();
                     check(service.inspect().hierarchy().get(0).x()==node.x()+.125,"Human undo restores pre-recovery unsaved edit");
+                    service.transact(service.inspect().revision(),"move-prop",Map.of("id",node.id(),"x",Double.toString(node.x()),
+                        "y",Double.toString(node.y()),"z",Double.toString(node.z())));
+                    check(service.inspect().operations().contains("rebuild-house"),"Actual human House service exposes native rebuild");
+                    service.transact(service.inspect().revision(),"rebuild-house",Map.of("baseline","ORIGINAL"));
+                    check(((HouseMap)currentMap.invoke(e)).level().room(5).y()==2.8,"Human viewport consumes rebuilt authoritative upper storey");
+                    undo.doClick();check(((HouseMap)currentMap.invoke(e)).level().room(5).y()==3,"Human Undo restores original architecture");
+                    redo.doClick();check(((HouseMap)currentMap.invoke(e)).level().room(5).y()==2.8,"Human Redo restores rebuilt architecture");
+                    service.save(service.inspect().revision());service.reopen(service.inspect().revision());
+                    check(new HouseMap(HouseMap.Site.HOUSE).level().room(9).y()==-2.4,"Saved human editor rebuild becomes actual built-in House source");
+                    check(service.test(service.inspect().revision(),"mission-runtime-parity").result().stream().allMatch(c->c.passed()),"Human rebuilt native source retains actual multipart physics");
+                    var rendererField=DeveloperLevelEditor.class.getDeclaredField("renderer");rendererField.setAccessible(true);
+                    var nativeRenderer=(SceneRenderer)rendererField.get(e);nativeRenderer.lamp=true;
+                    nativeRenderer.x=16;nativeRenderer.z=12.4;nativeRenderer.eyeHeight=1.62;
+                    nativeRenderer.yaw=Math.atan2(14.9-16,14.1925-12.4);nativeRenderer.pitch=Math.atan2(.85-1.62,Math.hypot(14.9-16,14.1925-12.4));
+                    service.capture(service.inspect().revision(),output.resolve("windows-editor-rebuilt-kitchen-runtime.png"));
+                    Files.writeString(output.resolve("house-rebuilt-inspection.json"),EditorAgentCli.json(service.inspect()));
                     try{castle.inspect();throw new AssertionError("Old Castle service remains active");}
                     catch(IllegalStateException expected){}
                 }catch(Exception failure){throw new RuntimeException(failure);}
@@ -117,7 +135,9 @@ public final class EditorAgentGuiTest {
                 catch(IllegalStateException expected){}}
             });
             try(var files=Files.walk(home)){files.sorted(java.util.Comparator.reverseOrder()).forEach(p->{try{Files.deleteIfExists(p);}catch(Exception ignored){}});}
+            Thread.setDefaultUncaughtExceptionHandler(priorHandler);
         }
-        System.out.println("PASS real Windows editor: mission/Castle service and recovery, human undo/redo, save/reopen, actual recovery menu, runtime parity, Castle/House PNGs and stale/closed scene rejection");
+        if(backgroundFailure.get()!=null)throw new AssertionError("Native editor background thread failed",backgroundFailure.get());
+        System.out.println("PASS real Windows editor: mission/Castle service and recovery, human House architecture rebuild/undo/redo/save/reopen, actual recovery menu, runtime parity, native rebuilt capture and stale/closed scene rejection");
     }
 }

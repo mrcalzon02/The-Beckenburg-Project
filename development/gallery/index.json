@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 7394,
+  "count": 7397,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -3792,6 +3792,36 @@
       "height": 625,
       "bytes": 102668,
       "sha256": "4dd4c4ad349a670528bc48ba4ef6c67a192cb096f0bca9b86ef2da9a2b048b4f"
+    },
+    {
+      "path": "development/captures/house-native-migration/saved-built-in-house-cellar-runtime.png",
+      "url": "development/captures/house-native-migration/saved-built-in-house-cellar-runtime.png",
+      "title": "Saved built in house cellar runtime",
+      "kind": "Runtime saved native House migration",
+      "width": 1000,
+      "height": 625,
+      "bytes": 594544,
+      "sha256": "953f906ff1aa17419850b9ec104cd8ef89f5e1c1464122e4c0eee93a06665d20"
+    },
+    {
+      "path": "development/captures/house-native-migration/saved-built-in-house-kitchen-runtime.png",
+      "url": "development/captures/house-native-migration/saved-built-in-house-kitchen-runtime.png",
+      "title": "Saved built in house kitchen runtime",
+      "kind": "Runtime saved native House migration",
+      "width": 1000,
+      "height": 625,
+      "bytes": 636479,
+      "sha256": "ed18075df34a153f652187211d1a05f5d8a579eca22e354613ee48eef7edef3c"
+    },
+    {
+      "path": "development/captures/house-native-migration/saved-built-in-house-landing-runtime.png",
+      "url": "development/captures/house-native-migration/saved-built-in-house-landing-runtime.png",
+      "title": "Saved built in house landing runtime",
+      "kind": "Runtime saved native House migration",
+      "width": 1000,
+      "height": 625,
+      "bytes": 583115,
+      "sha256": "bc7026b916da563ed25da548f8fc8ac20e96eee83e72914ff36b0180e701aecc"
     },
     {
       "path": "development/captures/house-room-review/house_rebuild_services/00-entrance-and-coat-vestibule/east.png",
