@@ -39,6 +39,7 @@ public final class TwinGhostPair {
             double xx=primary.x()+offset[0],zz=primary.z()+offset[1];
             int room=map.roomAt(xx,primary.y(),zz);
             if(room<0||room>=HouseMap.EXTRACTION_ROOM||!map.traversable(xx,primary.y(),zz))continue;
+            if(SafeAreaBarrier.protectedAt(map,xx,primary.y(),zz))continue;
             if(!map.clearLineOfSight(primary.x(),primary.y()+1.1,primary.z(),
                     xx,primary.y()+1.1,zz))continue;
             echo=new LanGhostSpatial.Pose(room,xx,primary.y(),zz,

@@ -40,7 +40,10 @@ public final class LanGhostSpatial {
         slowedUntil=Math.max(slowedUntil,currentTick+duration);
     }
     private double x,y,z;
-    public void recoverBelowGround(){var p=GroundRecovery.recover(map,new LevelDefinition.Vec(x,y,z),room,HunterPosture.STANDING_HEIGHT);x=p.x();y=p.y();z=p.z();}
+    public void recoverBelowGround(){var p=GroundRecovery.recover(map,new LevelDefinition.Vec(x,y,z),room,HunterPosture.STANDING_HEIGHT);x=p.x();y=p.y();z=p.z();
+        if(SafeAreaBarrier.protectedAt(map,x,y,z)){var outside=SafeAreaBarrier.ghostSpawn(map,room);
+            if(outside!=null){x=outside.x();y=outside.y();z=outside.z();}}
+    }
 
     public LanGhostSpatial(HouseMap map,int startingRoom){
         this.map=Objects.requireNonNull(map);
@@ -60,7 +63,9 @@ public final class LanGhostSpatial {
     }
     public void syncRoom(int newRoom){
         if(newRoom<0||newRoom>=HouseMap.EXTRACTION_ROOM)throw new IllegalArgumentException("ghost cannot occupy safe van");
-        if(newRoom!=room||x==0&&z==0){room=newRoom;var spawn=map.spawn(room);x=spawn.x();y=spawn.y();z=spawn.z();}
+        if(newRoom!=room||x==0&&z==0){var spawn=SafeAreaBarrier.ghostSpawn(map,newRoom);
+            if(spawn==null)throw new IllegalArgumentException("ghost destination is protected");
+            room=newRoom;x=spawn.x();y=spawn.y();z=spawn.z();}
     }
     public boolean step(int dx,int dz,int tick){return step(dx,dz,tick,false);}
     public boolean step(int dx,int dz,int tick,boolean wantsBurst){
@@ -87,6 +92,8 @@ public final class LanGhostSpatial {
             if(hidingPocketAt(map,room,px,py,pz))
                 throw new IllegalArgumentException("spectral hiding pocket is inaccessible");
         }
+        if(SafeAreaBarrier.blocks(map,new LevelDefinition.Vec(x,y,z),destination))
+            throw new IllegalArgumentException("anti-ghost safe-area barrier");
         x=destination.x();y=destination.y();z=destination.z();
         if(burst){burstStamina--;lastBurstTick=tick;}
         return true;

@@ -60,6 +60,10 @@ public final class TwinCompanionAi {
         moved=false;
         if(tick<=lastStepTick)return;
         lastStepTick=tick;
+        if(SafeAreaBarrier.protectedAt(map,pose.x(),pose.y(),pose.z())){
+            var safe=SafeAreaBarrier.ghostSpawn(map,pose.room());
+            if(safe!=null)pose=new LanGhostSpatial.Pose(pose.room(),safe.x(),safe.y(),safe.z(),pose.heading());
+        }
         if(tick>=nextGoalTick||tick>=goalUntil||stuck()){
             chooseGoal(tick,sister);
         }
@@ -105,6 +109,8 @@ public final class TwinCompanionAi {
         if(room>=0&&room<HouseMap.EXTRACTION_ROOM
                 &&(room==pose.room()||map.ghostExits(pose.room()).contains(room))
                 &&map.traversable(nx,pose.y(),nz)
+                &&!SafeAreaBarrier.blocks(map,new org.beckenburg.LevelDefinition.Vec(pose.x(),pose.y(),pose.z()),
+                    new org.beckenburg.LevelDefinition.Vec(nx,pose.y(),nz))
                 &&map.clearLineOfSight(pose.x(),pose.y()+.8,pose.z(),
                     nx,pose.y()+.8,nz)){
             pose=new LanGhostSpatial.Pose(room,nx,map.floorY(room),nz,heading);

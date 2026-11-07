@@ -4182,6 +4182,48 @@ Evidence and verification: Actual failed parity transcript preserved. Enhanced f
 
 Older-map obligation: Audit other maps individually. For DEV-306 refresh/review older complete-scene LevelSceneSource exports; runtime captures and standalone GLB reimports do not automatically inherit this defect. No global model, light-bleed, terrain or hardware acceptance.
 
+### DEV-254 — Safe areas lack a shared animated energy boundary matching ghost exclusion
+
+**Status:** fixed-scoped; focused CPU/TCP and actual OpenGL evidence; installer acceptance pending · **Affected:** Shared van at investigation sites, entire Castle HQ, and settled active protective wards
+
+The investigation van has no recognizable sanctuary haze; the old optional arena cue uses rectangular motes rather than a circular fading dome.
+
+Cause / uncertainty: Protection and visualization use separate room/rectangle rules; normal investigations do not enable the prior arena-only presentation.
+
+Fix / next action: Add a shared circular van dome and whole-Castle sanctuary, animated blue cloud/wisp material with continuous wall-to-crown fading, settled-ward reuse, swept host exclusion, protected spawning/combat, Twins handling and public ghost-view snapshots.
+
+Evidence and verification: development/levels/previews/safe-area-barrier/: actual runtime frames and two 12-frame animations. SafeAreaBarrierTest, SafeAreaHazeTest, LanSafeAreaBarrierTest, existing ghost/counter/Twins/van checks and complete TCP round pass. Actual RTX 5070 OpenGL frames pass. Logs: development/quality/evidence/safe-area-barrier-2026-11-03/.
+
+Older-map obligation: All built-in/custom-map ghost spawns tested. Visual captures cover the dispatched House and Castle; older-map terrain/lighting and installed full-game acceptance remain individual obligations. House rebuild remains a separate graybox and is not claimed dispatched.
+
+### DEV-255 — Ward ground seals remain at world Y zero and appear before landing
+
+**Status:** fixed-scoped; focused CPU/TCP and actual OpenGL evidence; installer acceptance pending · **Affected:** Shared van at investigation sites, entire Castle HQ, and settled active protective wards
+
+A thrown or upstairs ward can show its seal at ground-floor height rather than at its actual settled support.
+
+Cause / uncertainty: The renderer hardcodes Y .038 and does not distinguish a landed ward from a flying projectile when drawing ground bars.
+
+Fix / next action: Resolve the settled support once for both seal and haze; keep airborne projectiles visible without advertising sanctuary; place upstairs seals at the authoritative floor height.
+
+Evidence and verification: development/levels/previews/safe-area-barrier/: actual runtime frames and two 12-frame animations. SafeAreaBarrierTest, SafeAreaHazeTest, LanSafeAreaBarrierTest, existing ghost/counter/Twins/van checks and complete TCP round pass. Actual RTX 5070 OpenGL frames pass. Logs: development/quality/evidence/safe-area-barrier-2026-11-03/.
+
+Older-map obligation: All built-in/custom-map ghost spawns tested. Visual captures cover the dispatched House and Castle; older-map terrain/lighting and installed full-game acceptance remain individual obligations. House rebuild remains a separate graybox and is not claimed dispatched.
+
+### DEV-308 — Completed shared sanctuary implementation omitted from rebuild publication
+
+**Status:** reconciled locally; focused11checks pass; checkpoint publication and new full integration acceptance tracked separately · **Affected:** All investigation vans, settled wards and Castle headquarters; House rebuild review images
+
+Owner observes no protective dome in rebuilt location captures despite completed prior implementation.
+
+Cause / uncertainty: Sanctuary source and evidence survived only on local feat/shared-safe-area-haze-20261103; active rebuild and origin/main did not contain it. Original checkout retained related dirty working files.
+
+Fix / next action: Publish original source branch, preserve original dirty checkout through separate-index recovery commit, merge existing sanctuary and ghost-exclusion changes while retaining newer foot shadows, generate fresh rebuilt-House runtime views and audit every registered worktree/local branch/stash.
+
+Evidence and verification: development/levels/rebuild/verification/sanctuary-reconcile-2026-11-07; development/captures/house-sanctuary; sourcefd8c1984 and recovery8bc1e48c; actual four-peer TCP test passes after reconciliation.
+
+Older-map obligation: Shared runtime van contract applies to all sites; individual map arrival/ghost-route visual acceptance remains required. Analytic animated postprocess haze is not an opaque GLB part and is absent from geometry-only Blender exports. Castle uses whole-headquarters sanctuary.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

@@ -1,0 +1,1 @@
+Actual rebuilt-House runtime sanctuary after source-branch reconciliation: twelve exterior animation frames at0.18second intervals and one inside view. Source van/pivots retained. Analytic animated transparent haze reads actual scene depth; geometry-only native exports cannot show this runtime compositing effect.

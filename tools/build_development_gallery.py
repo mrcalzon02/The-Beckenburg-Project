@@ -18,6 +18,8 @@ for path in sorted(set(paths)):
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
     if '/synthetic-controls/' in path:kind='Synthetic GPU depth control'
+    elif '/house-functions/' in path:kind='Runtime household construction checkpoint'
+    elif '/house-sanctuary/' in path:kind='Runtime rebuilt-House sanctuary'
     elif '/house-envelope/' in path:kind='Rejected runtime inspection' if p.stem.startswith('rejected-') else 'Native texture diagnostic' if 'van-texture' in p.stem else 'Native geometry overview' if p.stem.startswith('native-') else 'Runtime dwelling construction'
     elif '/house-landscape/' in path:kind='Rejected runtime inspection' if p.stem.startswith('rejected-') else 'Native geometry overview' if p.stem.startswith('native-') else 'Runtime terrain construction'
     elif '/house-fixture-fit/' in path:kind='Runtime construction fixture fit'
@@ -41,7 +43,7 @@ for path in sorted(set(paths)):
     elif '/rebuild/captures/baseline/' in path:kind='Runtime baseline capture'
     elif '/rebuild/captures/' in path:kind='Runtime capture'
     elif '/castle-survey/' in path:kind='Runtime GPU capture'
-    elif '/lighting-camera-audit/' in path or '/van-castle-repair/' in path or '/metal-refinement/' in path or '/van-unification/' in path:kind='Runtime capture'
+    elif '/lighting-camera-audit/' in path or '/van-castle-repair/' in path or '/metal-refinement/' in path or '/van-unification/' in path or '/safe-area-barrier/' in path:kind='Runtime capture'
     elif '/water-editor/' in path:kind='Editor UI verification'
     elif '/equipment-menu/' in path:kind='Model inspection'
     elif '/menu-workflow/' in path:kind='Game UI verification'

@@ -37,6 +37,7 @@ public final class LanSpatialCombat {
     /** Host-only recheck for a LOCKED seat; never retarget to a different hunter at impact. */
     public static boolean canStrike(HouseMap map,LanWorld world,LanGhostSpatial.Pose ghost,int seat){
         LanWorld.Body body=world.body(seat);
+        if(SafeAreaBarrier.protectedAt(map,body.x(),body.y(),body.z()))return false;
         if(world.hidden(seat)||body.room()!=ghost.room())return false;
         double dx=body.x()-ghost.x(), dz=body.z()-ghost.z();
         double dy=body.y()-ghost.y();

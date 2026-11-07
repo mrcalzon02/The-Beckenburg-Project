@@ -1,0 +1,470 @@
+{
+  "worktrees": [
+    {
+      "path": "C:/Users/Admin/Documents/ChatGPT/Phasmaphobia alike/The-Beckenburg-Project",
+      "status": " M beckenburg-development-gallery.html\n M development/gallery/index.json\n M development/quality/DEFECT_LEDGER.md\n M development/quality/defects.json\n M regression-tests.txt\n M src/main/java/org/beckenburg/HouseMap.java\n M src/main/java/org/beckenburg/HunterCounters.java\n M src/main/java/org/beckenburg/InvestigationSession.java\n M src/main/java/org/beckenburg/LanGhostPanel.java\n M src/main/java/org/beckenburg/LanGhostSpatial.java\n M src/main/java/org/beckenburg/LanHost.java\n M src/main/java/org/beckenburg/LanSpatialCombat.java\n M src/main/java/org/beckenburg/SceneRenderer.java\n M src/main/java/org/beckenburg/TwinCompanionAi.java\n M src/main/java/org/beckenburg/TwinGhostPair.java\n M tools/build_development_gallery.py\n?? development/levels/previews/safe-area-barrier/README.md\n?? development/levels/previews/safe-area-barrier/castle-courtyard-00.png\n?? development/levels/previews/safe-area-barrier/castle-sanctuary-00.png\n?? development/levels/previews/safe-area-barrier/gpu-van-0.png\n?? development/levels/previews/safe-area-barrier/gpu-van-1.png\n?? development/levels/previews/safe-area-barrier/gpu-van-2.png\n?? development/levels/previews/safe-area-barrier/van-exterior-00.png\n?? development/levels/previews/safe-area-barrier/van-exterior-01.png\n?? development/levels/previews/safe-area-barrier/van-exterior-02.png\n?? development/levels/previews/safe-area-barrier/van-exterior-03.png\n?? development/levels/previews/safe-area-barrier/van-exterior-04.png\n?? development/levels/previews/safe-area-barrier/van-exterior-05.png\n?? development/levels/previews/safe-area-barrier/van-exterior-06.png\n?? development/levels/previews/safe-area-barrier/van-exterior-07.png\n?? development/levels/previews/safe-area-barrier/van-exterior-08.png\n?? development/levels/previews/safe-area-barrier/van-exterior-09.png\n?? development/levels/previews/safe-area-barrier/van-exterior-10.png\n?? development/levels/previews/safe-area-barrier/van-exterior-11.png\n?? development/levels/previews/safe-area-barrier/van-exterior.gif\n?? development/levels/previews/safe-area-barrier/van-inside-00.png\n?? development/levels/previews/safe-area-barrier/van-ward-00.png\n?? development/levels/previews/safe-area-barrier/van-ward-01.png\n?? development/levels/previews/safe-area-barrier/van-ward-02.png\n?? development/levels/previews/safe-area-barrier/van-ward-03.png\n?? development/levels/previews/safe-area-barrier/van-ward-04.png\n?? development/levels/previews/safe-area-barrier/van-ward-05.png\n?? development/levels/previews/safe-area-barrier/van-ward-06.png\n?? development/levels/previews/safe-area-barrier/van-ward-07.png\n?? development/levels/previews/safe-area-barrier/van-ward-08.png\n?? development/levels/previews/safe-area-barrier/van-ward-09.png\n?? development/levels/previews/safe-area-barrier/van-ward-10.png\n?? development/levels/previews/safe-area-barrier/van-ward-11.png\n?? development/levels/previews/safe-area-barrier/van-ward.gif\n?? development/quality/evidence/safe-area-barrier-2026-11-03/VERIFICATION.md\n?? development/quality/evidence/safe-area-barrier-2026-11-03/gpu-review.json\n?? development/quality/evidence/safe-area-barrier-2026-11-03/results.json\n?? src/main/java/org/beckenburg/SafeAreaBarrier.java\n?? src/main/java/org/beckenburg/SafeAreaHaze.java\n?? src/test/java/org/beckenburg/LanSafeAreaBarrierTest.java\n?? src/test/java/org/beckenburg/SafeAreaBarrierCapture.java\n?? src/test/java/org/beckenburg/SafeAreaBarrierGpuReview.java\n?? src/test/java/org/beckenburg/SafeAreaBarrierTest.java\n?? src/test/java/org/beckenburg/SafeAreaHazeTest.java\n",
+      "error": ""
+    },
+    {
+      "path": "C:/Users/Admin/.codex/worktrees/castle-textiles/The-Beckenburg-Project",
+      "status": "UU beckenburg-development-gallery.html\nUU development/RECOVERY_PLAN_2026-10-25.md\nUU development/gallery/index.json\nA  development/levels/previews/safe-area-barrier/README.md\nA  development/levels/previews/safe-area-barrier/castle-courtyard-00.png\nA  development/levels/previews/safe-area-barrier/castle-sanctuary-00.png\nA  development/levels/previews/safe-area-barrier/gpu-van-0.png\nA  development/levels/previews/safe-area-barrier/gpu-van-1.png\nA  development/levels/previews/safe-area-barrier/gpu-van-2.png\nA  development/levels/previews/safe-area-barrier/van-exterior-00.png\nA  development/levels/previews/safe-area-barrier/van-exterior-01.png\nA  development/levels/previews/safe-area-barrier/van-exterior-02.png\nA  development/levels/previews/safe-area-barrier/van-exterior-03.png\nA  development/levels/previews/safe-area-barrier/van-exterior-04.png\nA  development/levels/previews/safe-area-barrier/van-exterior-05.png\nA  development/levels/previews/safe-area-barrier/van-exterior-06.png\nA  development/levels/previews/safe-area-barrier/van-exterior-07.png\nA  development/levels/previews/safe-area-barrier/van-exterior-08.png\nA  development/levels/previews/safe-area-barrier/van-exterior-09.png\nA  development/levels/previews/safe-area-barrier/van-exterior-10.png\nA  development/levels/previews/safe-area-barrier/van-exterior-11.png\nA  development/levels/previews/safe-area-barrier/van-exterior.gif\nA  development/levels/previews/safe-area-barrier/van-inside-00.png\nA  development/levels/previews/safe-area-barrier/van-ward-00.png\nA  development/levels/previews/safe-area-barrier/van-ward-01.png\nA  development/levels/previews/safe-area-barrier/van-ward-02.png\nA  development/levels/previews/safe-area-barrier/van-ward-03.png\nA  development/levels/previews/safe-area-barrier/van-ward-04.png\nA  development/levels/previews/safe-area-barrier/van-ward-05.png\nA  development/levels/previews/safe-area-barrier/van-ward-06.png\nA  development/levels/previews/safe-area-barrier/van-ward-07.png\nA  development/levels/previews/safe-area-barrier/van-ward-08.png\nA  development/levels/previews/safe-area-barrier/van-ward-09.png\nA  development/levels/previews/safe-area-barrier/van-ward-10.png\nA  development/levels/previews/safe-area-barrier/van-ward-11.png\nA  development/levels/previews/safe-area-barrier/van-ward.gif\nUU development/quality/DEFECT_LEDGER.md\nUU development/quality/defects.json\nA  development/quality/evidence/safe-area-barrier-2026-11-03/BeckenburgFullRoundE2ETest.log\nA  development/quality/evidence/safe-area-barrier-2026-11-03/GhostAiNavigationAuditTest.log\nA  development/quality/evidence/safe-area-barrier-2026-11-03/GhostDomainTest.log\nA  development/quality/evidence/safe-area-barrier-2026-11-03/HunterCountersTest.log\nA  development/quality/evidence/safe-area-barrier-2026-11-03/LanCaseIntegrationTest.log\nA  development/quality/evidence/safe-area-barrier-2026-11-03/LanGhostHidingBoundaryTest.log\nA  development/quality/evidence/safe-area-barrier-2026-11-03/LanGhostPursuitTest.log\nA  development/quality/evidence/safe-area-barrier-2026-11-03/LanGhostSpatialTest.log\nA  development/quality/evidence/safe-area-barrier-2026-11-03/LanSafeAreaBarrierTest.log\nA  development/quality/evidence/safe-area-barrier-2026-11-03/LanSixHunterVanTest.log\nA  development/quality/evidence/safe-area-barrier-2026-11-03/LanSpatialCombatTest.log\nA  development/quality/evidence/safe-area-barrier-2026-11-03/LanTelegraphedStrikeTest.log\nA  development/quality/evidence/safe-area-barrier-2026-11-03/LanTwinPlayerCompanionTest.log\nA  development/quality/evidence/safe-area-barrier-2026-11-03/SafeAreaBarrierTest.log\nA  development/quality/evidence/safe-area-barrier-2026-11-03/SafeAreaHazeTest.log\nA  development/quality/evidence/safe-area-barrier-2026-11-03/SpiritualWarTest.log\nA  development/quality/evidence/safe-area-barrier-2026-11-03/TwinCompanionAiTest.log\nA  development/quality/evidence/safe-area-barrier-2026-11-03/TwinCompanionSharedActionTest.log\nA  development/quality/evidence/safe-area-barrier-2026-11-03/VERIFICATION.md\nA  development/quality/evidence/safe-area-barrier-2026-11-03/VanCargoDoorTest.log\nA  development/quality/evidence/safe-area-barrier-2026-11-03/VanModuleIntegrationTest.log\nA  development/quality/evidence/safe-area-barrier-2026-11-03/baseline-negative-control.log\nA  development/quality/evidence/safe-area-barrier-2026-11-03/gpu-review.json\nA  development/quality/evidence/safe-area-barrier-2026-11-03/results.json\nM  regression-tests.txt\nM  src/main/java/org/beckenburg/HouseMap.java\nM  src/main/java/org/beckenburg/HunterCounters.java\nM  src/main/java/org/beckenburg/InvestigationSession.java\nM  src/main/java/org/beckenburg/LanGhostPanel.java\nM  src/main/java/org/beckenburg/LanGhostSpatial.java\nM  src/main/java/org/beckenburg/LanHost.java\nM  src/main/java/org/beckenburg/LanSpatialCombat.java\nA  src/main/java/org/beckenburg/SafeAreaBarrier.java\nA  src/main/java/org/beckenburg/SafeAreaHaze.java\nUU src/main/java/org/beckenburg/SceneRenderer.java\nM  src/main/java/org/beckenburg/TwinCompanionAi.java\nM  src/main/java/org/beckenburg/TwinGhostPair.java\nA  src/test/java/org/beckenburg/LanSafeAreaBarrierTest.java\nA  src/test/java/org/beckenburg/SafeAreaBarrierCapture.java\nA  src/test/java/org/beckenburg/SafeAreaBarrierGpuReview.java\nA  src/test/java/org/beckenburg/SafeAreaBarrierTest.java\nA  src/test/java/org/beckenburg/SafeAreaHazeTest.java\nM  tools/build_development_gallery.py\n?? development/captures/house-functions/cellar-store-runtime.png\n?? development/captures/house-functions/child-study-runtime.png\n?? development/captures/house-functions/dining-runtime.png\n?? development/captures/house-functions/generator-runtime.png\n?? development/captures/house-functions/heating-laundry-runtime.png\n?? development/captures/house-functions/parents-runtime.png\n?? development/captures/house-functions/sitting-runtime.png\n?? src/main/java/org/beckenburg/HouseRebuildFunctions.java\n?? src/test/java/org/beckenburg/HouseRebuildFunctionsTest.java\n",
+      "error": ""
+    },
+    {
+      "path": "C:/Users/Admin/Documents/ChatGPT/Phasmaphobia alike/The-Beckenburg-Map-Materials",
+      "status": "",
+      "error": ""
+    },
+    {
+      "path": "C:/Users/Admin/Documents/ChatGPT/Phasmaphobia alike/The-Beckenburg-Mission-Board",
+      "status": "",
+      "error": ""
+    },
+    {
+      "path": "C:/Users/Admin/Documents/ChatGPT/Phasmaphobia alike/The-Beckenburg-Unified",
+      "status": "",
+      "error": ""
+    },
+    {
+      "path": "C:/Users/Admin/Documents/Codex/beckenburg-performance-followup",
+      "status": "",
+      "error": ""
+    }
+  ],
+  "branches": [
+    {
+      "branch": "codex/perf-dynamic-geometry-20261029",
+      "sha": "90c555a1b32211a5c589366211795f51aa93e5a3",
+      "commits_not_on_any_remote": []
+    },
+    {
+      "branch": "codex/perf-light-dependencies-20261029",
+      "sha": "94972cb6ec5ee54428dc297a8c8f4865cdc209af",
+      "commits_not_on_any_remote": []
+    },
+    {
+      "branch": "codex/perf-map-followup-20261029",
+      "sha": "e0b93b66d1cf0530612bed02d34db4e479117660",
+      "commits_not_on_any_remote": []
+    },
+    {
+      "branch": "codex/perf-native-case-acceptance-20261029",
+      "sha": "1bffc8d94a266797bba700045f0e338c574adb8e",
+      "commits_not_on_any_remote": []
+    },
+    {
+      "branch": "codex/perf-readback-conversion-20261029",
+      "sha": "c32cd4f2fd44ccbc1d6255cbc85ed177fcbc5b57",
+      "commits_not_on_any_remote": []
+    },
+    {
+      "branch": "codex/perf-vertex-light-write-20261029",
+      "sha": "01cf3ce2bd9dbb067a2135b5dc2ec6b82b01b30c",
+      "commits_not_on_any_remote": []
+    },
+    {
+      "branch": "feat/shared-safe-area-haze-20261103",
+      "sha": "fd8c1984c68395e6081fc0374848823e15f0ee3d",
+      "commits_not_on_any_remote": [
+        "fd8c1984c68395e6081fc0374848823e15f0ee3d",
+        "29953f7f3194cc48680db539d44e0fab86409544"
+      ]
+    },
+    {
+      "branch": "fix/castle-ci-preservation",
+      "sha": "fb481f4c656d4c3b3a1fd6c1d04b681358feeca4",
+      "commits_not_on_any_remote": []
+    },
+    {
+      "branch": "fix/gpu-van-diagonal-input",
+      "sha": "0bf51cc0c8493731fc0712ff8b17b614bcae9e33",
+      "commits_not_on_any_remote": []
+    },
+    {
+      "branch": "fix/unified-van-fit-20261102",
+      "sha": "bd971988d1517f0f4ddf0bda929eac9f5fa4f977",
+      "commits_not_on_any_remote": [
+        "bd971988d1517f0f4ddf0bda929eac9f5fa4f977"
+      ]
+    },
+    {
+      "branch": "integration/unified-map-engine",
+      "sha": "17a8594fd1c172d77436c637ef5b62aff36246e0",
+      "commits_not_on_any_remote": []
+    },
+    {
+      "branch": "main",
+      "sha": "127bead2e3a519f2c985701d5a37fcd86d8fc2ee",
+      "commits_not_on_any_remote": []
+    },
+    {
+      "branch": "map/blackpine-mill-refinement",
+      "sha": "b2ce1cba83d468e1f6d2bc8f4f75eefa00220ebe",
+      "commits_not_on_any_remote": []
+    },
+    {
+      "branch": "map/castle-closeout-review",
+      "sha": "f5b4ecc1d93b4934ad13c248eae0b751c012e090",
+      "commits_not_on_any_remote": []
+    },
+    {
+      "branch": "map/castle-heraldic",
+      "sha": "83cc6ba0c4d531800824d2a877c72acf00545676",
+      "commits_not_on_any_remote": []
+    },
+    {
+      "branch": "map/castle-loose-props",
+      "sha": "f4e5eb7c282e847a944313976778ffac4faadf77",
+      "commits_not_on_any_remote": []
+    },
+    {
+      "branch": "map/castle-native-upgrade",
+      "sha": "2293b75f91d6ea2ceefa8af5492e6f7a20eef427",
+      "commits_not_on_any_remote": []
+    },
+    {
+      "branch": "map/castle-plant",
+      "sha": "ece487e12b72d8eae69911325082d8da2725cb27",
+      "commits_not_on_any_remote": []
+    },
+    {
+      "branch": "map/castle-production-audit",
+      "sha": "f886afbf52ea643912bafe90c8dd59f428dbcfd4",
+      "commits_not_on_any_remote": []
+    },
+    {
+      "branch": "map/castle-story-runtime",
+      "sha": "9643af076a059b9ea033f9cf4f316a53dc9abfcf",
+      "commits_not_on_any_remote": []
+    },
+    {
+      "branch": "map/castle-textiles",
+      "sha": "1170e909b71852cd4b9c8a2f9044538355d8e93e",
+      "commits_not_on_any_remote": []
+    },
+    {
+      "branch": "map/castle-training",
+      "sha": "5ba51a1e5074ae2129cf485fbfc5bd219d01314c",
+      "commits_not_on_any_remote": []
+    },
+    {
+      "branch": "map/first-principles-rebuild-plan",
+      "sha": "516bc2d0310c03909192b787a46b795fa1ac64b5",
+      "commits_not_on_any_remote": [
+        "516bc2d0310c03909192b787a46b795fa1ac64b5",
+        "723b462857be8be223c7b4268d06eb322c9ba991",
+        "ccb20204c3cb9265667ed95114ef4d5ed9761e9b",
+        "a59665bff3e11bd0348500384182a2a6c43b619f"
+      ]
+    },
+    {
+      "branch": "map/house-envelope",
+      "sha": "601e4955ab48a149e77528cba803f34214e4e97f",
+      "commits_not_on_any_remote": [
+        "601e4955ab48a149e77528cba803f34214e4e97f",
+        "d61a48bf98b2849d966cbece1559742ea02fb75e",
+        "a34d3b174f41e4ea53cfbfbe8ec13fe2de892cab"
+      ]
+    },
+    {
+      "branch": "map/house-functional",
+      "sha": "601e4955ab48a149e77528cba803f34214e4e97f",
+      "commits_not_on_any_remote": [
+        "601e4955ab48a149e77528cba803f34214e4e97f",
+        "d61a48bf98b2849d966cbece1559742ea02fb75e",
+        "a34d3b174f41e4ea53cfbfbe8ec13fe2de892cab"
+      ]
+    },
+    {
+      "branch": "map/house-rebuild-fit",
+      "sha": "f2da14af1abbe34f5155289786fb5ca2824ee3e0",
+      "commits_not_on_any_remote": []
+    },
+    {
+      "branch": "map/remaining-level-rough-blockouts",
+      "sha": "d07d7450fb232ae233f72b386a9c6f33d53ea8ac",
+      "commits_not_on_any_remote": []
+    },
+    {
+      "branch": "map/workbench-materials",
+      "sha": "41d150e0398c7d59c88405d9f5f521b7303611eb",
+      "commits_not_on_any_remote": []
+    },
+    {
+      "branch": "performance/live-house-residency",
+      "sha": "669bd8436afe1dc81ca0a3e0da5882838c43bce2",
+      "commits_not_on_any_remote": [
+        "669bd8436afe1dc81ca0a3e0da5882838c43bce2",
+        "2e85049f54a4a0a8900169c551909f68eee55a1d",
+        "75868f791c4c628e4b3f1ca72b7e3de01cfe53bc",
+        "fe217a091e8bd31a4ba19ff5eb8db66fcf47ce19",
+        "8594d1a5b5428c68befe183ee18e61ceb0bd9581",
+        "e783fdf73f9fcd95d014fd8e6e3955404cefefde",
+        "9b1b3e95de27d67370024b7472f3db5938de1dc2",
+        "a2bcde7fb6f1717918ecd7cfb310b38ffbda3602",
+        "bcdb6ab92823deb2df3e86bebcea2ae41d103ed0",
+        "fe0df50a8a545c98434da606518b0f97849f10b3",
+        "8b93e93ba6ced5bcb9a6f70ff8103bf893bcb64f",
+        "600c04565cfeda3bc907689a2b0e6408993cbc2e",
+        "b88f4405c0863bb33769abdfedcff2277721bd3f",
+        "3b4da4faa3e61bf599ae9e446563b2b21184d15c",
+        "6e0c698599e66553adf54f2de4d26750e6c81d9d",
+        "9015acf12e0ba398264807e59a3c721dcf31bfa1",
+        "9c729dbc204cff135b443104fc09edbf2860199f",
+        "8d529f59f9bd07ec64b792789103d203adb80d54",
+        "077740418bc022c239feda2a10de0da2b9d6dec6"
+      ]
+    },
+    {
+      "branch": "ui/equipment-menu-workflow",
+      "sha": "d70262db8ba49c49ef7e07b2fcce32be3cafe747",
+      "commits_not_on_any_remote": []
+    },
+    {
+      "branch": "ui/lore-mission-board",
+      "sha": "b7b193f486eff33d1a122fdaf8e62b43e349d0c2",
+      "commits_not_on_any_remote": []
+    }
+  ],
+  "remote_heads": "1f5d745d9120cbcc3040223659982f6a7c6d9d0e\trefs/heads/beckenburg-auto-release-and-verified-updates\nd07d7450fb232ae233f72b386a9c6f33d53ea8ac\trefs/heads/checkpoint/local-map-2026-10-26\nb7b193f486eff33d1a122fdaf8e62b43e349d0c2\trefs/heads/checkpoint/local-mission-board-2026-10-26\n06341f8448038dbbdfe3dc499ca6baa3199c9eaa\trefs/heads/checkpoint/local-verification-2026-10-26\nd1f9e985451c0497fc5c6c96f54c6a0aadbfb4ea\trefs/heads/ci/preserve-windows-jvm-crash-reports\n864c2359bd7bb937fed33f81c6c2925fb147271c\trefs/heads/codex/perf-dynamic-geometry-20261029\n94972cb6ec5ee54428dc297a8c8f4865cdc209af\trefs/heads/codex/perf-light-dependencies-20261029\n7306c1b59594f8a59a0a3b580a70422b899cc73d\trefs/heads/codex/perf-map-followup-20261029\nbf74a048e2f63465be465b4eeaff4119b649a3dd\trefs/heads/codex/perf-native-case-acceptance-20261029\n3da462460bb4de42d9322e7bca8b3af0427809d2\trefs/heads/codex/perf-readback-conversion-20261029\ndcaf1e441b380c6997423799f5d637cfb4c30658\trefs/heads/codex/perf-vertex-light-write-20261029\ndcc5db7969520f2295c190e16b6fc8a9913c624f\trefs/heads/docs/codex-a-g-finish-handoff\nae83cbee2f8873a88d2338b59108893727e273da\trefs/heads/docs/milestone-c2-d2-evidence\nf54a9948591921687f00149c4a796958c201f075\trefs/heads/docs/portable-renderer-milestones\nd9908a7b102e728cf053195c23244ef041c41fa5\trefs/heads/feature/quartermaster-model-icons-desktop-branding\nfb481f4c656d4c3b3a1fd6c1d04b681358feeca4\trefs/heads/fix/gpu-van-diagonal-input\n443031a232765c031bf3714c185fee295acb6a75\trefs/heads/hunter-disciplines-and-companion-skills\n17a8594fd1c172d77436c637ef5b62aff36246e0\trefs/heads/integration/unified-map-engine\nb367ecf93226efbe23d3f70863c89243e559a3b9\trefs/heads/main\nb2ce1cba83d468e1f6d2bc8f4f75eefa00220ebe\trefs/heads/map/blackpine-mill-refinement\nf5b4ecc1d93b4934ad13c248eae0b751c012e090\trefs/heads/map/castle-closeout-review\n3c13726963a395f398c5b1a1ae0784994153f0e7\trefs/heads/map/castle-heraldic\nf4e5eb7c282e847a944313976778ffac4faadf77\trefs/heads/map/castle-loose-props\nbc2079c671d7cc7ba816f3003dcf6ce8f867e7a3\trefs/heads/map/castle-native-upgrade\ndb25427348d1c859fae9ec45c7aa7247b31b2cc2\trefs/heads/map/castle-plant\nf886afbf52ea643912bafe90c8dd59f428dbcfd4\trefs/heads/map/castle-production-audit\n9643af076a059b9ea033f9cf4f316a53dc9abfcf\trefs/heads/map/castle-story-runtime\n1170e909b71852cd4b9c8a2f9044538355d8e93e\trefs/heads/map/castle-textiles\n5ba51a1e5074ae2129cf485fbfc5bd219d01314c\trefs/heads/map/castle-training\n516bc2d0310c03909192b787a46b795fa1ac64b5\trefs/heads/map/first-principles-rebuild-plan\n601e4955ab48a149e77528cba803f34214e4e97f\trefs/heads/map/house-envelope\nf2da14af1abbe34f5155289786fb5ca2824ee3e0\trefs/heads/map/house-rebuild-fit\n6ac421492e5eb5a6784966848131c30f502f5fba\trefs/heads/map/remaining-level-rough-blockouts\n41d150e0398c7d59c88405d9f5f521b7303611eb\trefs/heads/map/workbench-materials\na26fc3f82dbf7744049211471659ad0182b0e66b\trefs/heads/performance/castle-regression\ne2ad831f9ba3dd63de79017e2e1d0766d8201678\trefs/heads/performance/ci-blender-provisioning-retry\n669bd8436afe1dc81ca0a3e0da5882838c43bce2\trefs/heads/performance/live-house-residency\neb5bcc2121bae0026b4e8ff3f60b0c2cced8ab1f\trefs/heads/performance/milestone-b-scenery-residency\n97eba4cdd934bcfe85d4d84089910f74da1739f9\trefs/heads/performance/milestone-b2-resident-gpu-contract\n1249aeead14ad0f6ea257e381b72e852942da846\trefs/heads/performance/milestone-b2b-shell-chunks\nee31e5c5fff140e2157c9fcbbac6fa16eae48a71\trefs/heads/performance/milestone-b2c-room-chunk-ownership\n60303b3400cff804ac47bd7f43b1167a3d78ff9f\trefs/heads/performance/milestone-b2d-real-house-vbo\ndf8829dbf0dc4be9660e59a41b553b87a302b1c0\trefs/heads/performance/milestone-b2e-camera-invariant-probes\n42e2a03060a4be5ba3599521b8ac726af30b85b6\trefs/heads/performance/milestone-c1-portal-candidates\n1918b289ec056618385c95ac1175b92a9bf8db3d\trefs/heads/performance/milestone-c2-visibility-audit\n36f1dab4b668b5218af7bc57bb72ab8a2ca9f684\trefs/heads/performance/milestone-c3-occluder-ray-audit\ndf70a9796022c9e4657f30f8880eb33614e0f8d9\trefs/heads/performance/milestone-d0-fixture-revision\na87dcd3e556793311753c34a6db99db5497a40fb\trefs/heads/performance/milestone-d1-local-light-revisions\ndd403ca40239272496f049d9ecfca6000ac9350e\trefs/heads/performance/milestone-d2-fixture-probe-cache\nf4a1b3c271d26dd10956de7e2886d2ad0b1f122a\trefs/heads/performance/milestone-d3-resident-light-probes\n2fe3400ae597d7765f1d6883eaea99fa2f67a91c\trefs/heads/performance/milestone-d4-live-scene-ownership\nbff0f48708346ea031916dd4e27acc599c0656a0\trefs/heads/performance/milestone-e0-readback-phases\n19bab1e1b54c3d05345e9431d52a11223dae5cfa\trefs/heads/performance/milestone-f0-opening-stage-diagnostics\n3b405fffc9c3be56293bb448febfd35370567cb2\trefs/heads/performance/milestone-f1-first-frame-gate\nd70262db8ba49c49ef7e07b2fcce32be3cafe747\trefs/heads/ui/equipment-menu-workflow\n0796cf12f2655f13a97412bb145fc3f28d0124a3\trefs/heads/weather-module-v1-integration\ncbfdba9d216e99b3cc08fe2874f7a8755e4c1439\trefs/heads/weather-v1-asset-and-runtime-completion\n",
+  "original_worktree_unmatched": [
+    "beckenburg-development-gallery.html",
+    "development/gallery/index.json",
+    "development/quality/DEFECT_LEDGER.md",
+    "development/quality/defects.json",
+    "regression-tests.txt",
+    "src/main/java/org/beckenburg/LanGhostPanel.java",
+    "src/main/java/org/beckenburg/LanHost.java",
+    "src/main/java/org/beckenburg/SceneRenderer.java"
+  ],
+  "original_checkpoint": {
+    "sha": "8bc1e48c4296a0b3aa947c3422cdda526746b8ed",
+    "ref": "refs/heads/recovery/unattended-original-20261107",
+    "parent": "516bc2d0310c03909192b787a46b795fa1ac64b5",
+    "tree": "a3fd15ed4ac263deab5d988852e2ffe5dded317a",
+    "files": [
+      "beckenburg-development-gallery.html",
+      "development/gallery/index.json",
+      "development/quality/DEFECT_LEDGER.md",
+      "development/quality/defects.json",
+      "regression-tests.txt",
+      "src/main/java/org/beckenburg/HouseMap.java",
+      "src/main/java/org/beckenburg/HunterCounters.java",
+      "src/main/java/org/beckenburg/InvestigationSession.java",
+      "src/main/java/org/beckenburg/LanGhostPanel.java",
+      "src/main/java/org/beckenburg/LanGhostSpatial.java",
+      "src/main/java/org/beckenburg/LanHost.java",
+      "src/main/java/org/beckenburg/LanSpatialCombat.java",
+      "src/main/java/org/beckenburg/SceneRenderer.java",
+      "src/main/java/org/beckenburg/TwinCompanionAi.java",
+      "src/main/java/org/beckenburg/TwinGhostPair.java",
+      "tools/build_development_gallery.py",
+      "development/levels/previews/safe-area-barrier/README.md",
+      "development/levels/previews/safe-area-barrier/castle-courtyard-00.png",
+      "development/levels/previews/safe-area-barrier/castle-sanctuary-00.png",
+      "development/levels/previews/safe-area-barrier/gpu-van-0.png",
+      "development/levels/previews/safe-area-barrier/gpu-van-1.png",
+      "development/levels/previews/safe-area-barrier/gpu-van-2.png",
+      "development/levels/previews/safe-area-barrier/van-exterior-00.png",
+      "development/levels/previews/safe-area-barrier/van-exterior-01.png",
+      "development/levels/previews/safe-area-barrier/van-exterior-02.png",
+      "development/levels/previews/safe-area-barrier/van-exterior-03.png",
+      "development/levels/previews/safe-area-barrier/van-exterior-04.png",
+      "development/levels/previews/safe-area-barrier/van-exterior-05.png",
+      "development/levels/previews/safe-area-barrier/van-exterior-06.png",
+      "development/levels/previews/safe-area-barrier/van-exterior-07.png",
+      "development/levels/previews/safe-area-barrier/van-exterior-08.png",
+      "development/levels/previews/safe-area-barrier/van-exterior-09.png",
+      "development/levels/previews/safe-area-barrier/van-exterior-10.png",
+      "development/levels/previews/safe-area-barrier/van-exterior-11.png",
+      "development/levels/previews/safe-area-barrier/van-exterior.gif",
+      "development/levels/previews/safe-area-barrier/van-inside-00.png",
+      "development/levels/previews/safe-area-barrier/van-ward-00.png",
+      "development/levels/previews/safe-area-barrier/van-ward-01.png",
+      "development/levels/previews/safe-area-barrier/van-ward-02.png",
+      "development/levels/previews/safe-area-barrier/van-ward-03.png",
+      "development/levels/previews/safe-area-barrier/van-ward-04.png",
+      "development/levels/previews/safe-area-barrier/van-ward-05.png",
+      "development/levels/previews/safe-area-barrier/van-ward-06.png",
+      "development/levels/previews/safe-area-barrier/van-ward-07.png",
+      "development/levels/previews/safe-area-barrier/van-ward-08.png",
+      "development/levels/previews/safe-area-barrier/van-ward-09.png",
+      "development/levels/previews/safe-area-barrier/van-ward-10.png",
+      "development/levels/previews/safe-area-barrier/van-ward-11.png",
+      "development/levels/previews/safe-area-barrier/van-ward.gif",
+      "development/quality/evidence/safe-area-barrier-2026-11-03/VERIFICATION.md",
+      "development/quality/evidence/safe-area-barrier-2026-11-03/gpu-review.json",
+      "development/quality/evidence/safe-area-barrier-2026-11-03/results.json",
+      "src/main/java/org/beckenburg/SafeAreaBarrier.java",
+      "src/main/java/org/beckenburg/SafeAreaHaze.java",
+      "src/test/java/org/beckenburg/LanSafeAreaBarrierTest.java",
+      "src/test/java/org/beckenburg/SafeAreaBarrierCapture.java",
+      "src/test/java/org/beckenburg/SafeAreaBarrierGpuReview.java",
+      "src/test/java/org/beckenburg/SafeAreaBarrierTest.java",
+      "src/test/java/org/beckenburg/SafeAreaHazeTest.java"
+    ]
+  },
+  "final_branch_audit": [
+    {
+      "branch": "codex/perf-dynamic-geometry-20261029",
+      "sha": "90c555a1b32211a5c589366211795f51aa93e5a3",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "codex/perf-light-dependencies-20261029",
+      "sha": "94972cb6ec5ee54428dc297a8c8f4865cdc209af",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "codex/perf-map-followup-20261029",
+      "sha": "e0b93b66d1cf0530612bed02d34db4e479117660",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "codex/perf-native-case-acceptance-20261029",
+      "sha": "1bffc8d94a266797bba700045f0e338c574adb8e",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "codex/perf-readback-conversion-20261029",
+      "sha": "c32cd4f2fd44ccbc1d6255cbc85ed177fcbc5b57",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "codex/perf-vertex-light-write-20261029",
+      "sha": "01cf3ce2bd9dbb067a2135b5dc2ec6b82b01b30c",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "feat/shared-safe-area-haze-20261103",
+      "sha": "fd8c1984c68395e6081fc0374848823e15f0ee3d",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "fix/castle-ci-preservation",
+      "sha": "fb481f4c656d4c3b3a1fd6c1d04b681358feeca4",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "fix/gpu-van-diagonal-input",
+      "sha": "0bf51cc0c8493731fc0712ff8b17b614bcae9e33",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "fix/unified-van-fit-20261102",
+      "sha": "bd971988d1517f0f4ddf0bda929eac9f5fa4f977",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "integration/unified-map-engine",
+      "sha": "17a8594fd1c172d77436c637ef5b62aff36246e0",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "main",
+      "sha": "127bead2e3a519f2c985701d5a37fcd86d8fc2ee",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "map/blackpine-mill-refinement",
+      "sha": "b2ce1cba83d468e1f6d2bc8f4f75eefa00220ebe",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "map/castle-closeout-review",
+      "sha": "f5b4ecc1d93b4934ad13c248eae0b751c012e090",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "map/castle-heraldic",
+      "sha": "83cc6ba0c4d531800824d2a877c72acf00545676",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "map/castle-loose-props",
+      "sha": "f4e5eb7c282e847a944313976778ffac4faadf77",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "map/castle-native-upgrade",
+      "sha": "2293b75f91d6ea2ceefa8af5492e6f7a20eef427",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "map/castle-plant",
+      "sha": "ece487e12b72d8eae69911325082d8da2725cb27",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "map/castle-production-audit",
+      "sha": "f886afbf52ea643912bafe90c8dd59f428dbcfd4",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "map/castle-story-runtime",
+      "sha": "9643af076a059b9ea033f9cf4f316a53dc9abfcf",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "map/castle-textiles",
+      "sha": "1170e909b71852cd4b9c8a2f9044538355d8e93e",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "map/castle-training",
+      "sha": "5ba51a1e5074ae2129cf485fbfc5bd219d01314c",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "map/first-principles-rebuild-plan",
+      "sha": "516bc2d0310c03909192b787a46b795fa1ac64b5",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "map/house-envelope",
+      "sha": "601e4955ab48a149e77528cba803f34214e4e97f",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "map/house-functional",
+      "sha": "601e4955ab48a149e77528cba803f34214e4e97f",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "map/house-rebuild-fit",
+      "sha": "f2da14af1abbe34f5155289786fb5ca2824ee3e0",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "map/remaining-level-rough-blockouts",
+      "sha": "d07d7450fb232ae233f72b386a9c6f33d53ea8ac",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "map/workbench-materials",
+      "sha": "41d150e0398c7d59c88405d9f5f521b7303611eb",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "performance/live-house-residency",
+      "sha": "669bd8436afe1dc81ca0a3e0da5882838c43bce2",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "recovery/unattended-original-20261107",
+      "sha": "8bc1e48c4296a0b3aa947c3422cdda526746b8ed",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "ui/equipment-menu-workflow",
+      "sha": "d70262db8ba49c49ef7e07b2fcce32be3cafe747",
+      "unique_local_commits": []
+    },
+    {
+      "branch": "ui/lore-mission-board",
+      "sha": "b7b193f486eff33d1a122fdaf8e62b43e349d0c2",
+      "unique_local_commits": []
+    }
+  ],
+  "detached_performance_unique_commits": []
+}

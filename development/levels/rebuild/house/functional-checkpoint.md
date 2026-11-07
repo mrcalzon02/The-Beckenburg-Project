@@ -1,0 +1,5 @@
+# House functional construction checkpoint — 7 November
+
+24 additional full-source-scale fixtures join the five accepted fittings. Existing bed, wardrobe, sofa, television, seating, desk, shelves, repair bench, boiler and296-triangle generator retain source pivots and textures. Real decoded bounds drive colliders; television support uses actual upward source triangles. Dining/parents standing and evidence anchors move together. The same15zones, stairs, holes, envelope, terrain and van remain. Actual50831-position swept audit passes. HouseRebuildPhysicsTest now requires this body in CI.
+
+This is a recoverable construction checkpoint, not finished House acceptance. Seven original actual torch views are retained; parents/child/generator views inspected in this session. Remaining views and native source still require inspection; bed dressings and final room-detail review remain. The generator's authored starter and circuit metadata still require generic runtime wiring and visible service distribution. Hiding-budget audit, loose story objects, final lighting, live dispatch promotion and mission/network/hardware acceptance remain open. No round-duration tests.
