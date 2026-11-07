@@ -3125,6 +3125,28 @@
       "action": "Preserve all original evidence and diagnose a bounded gallery publication artifact; independently read back actual deployed HTML/index/images before accepting deployment. Do not infer deployment from source upload or gallery-index success.",
       "evidence": "gh run view42339395744 --log-failed: artifact size warning, syncing_files and timeout; main installer42339396543/gallery42339396635 pass. Full42339396539 still live when observed.",
       "older_maps": "Shared publication issue affects all locations; no loss or acceptance of their runtime content is inferred."
+    },
+    {
+      "id": "DEV-294",
+      "title": "GPU UI smoke rejects valid van exits needing diagonal WASD input",
+      "status": "diagnostic correction verified locally; actual corrected OpenGL run pending",
+      "affected": "GPU live UI van movement planning, House/Farmhouse/School",
+      "symptom": "Exact source2293b75f GPU42341030548 passed Castle/11-map renderer checks but failed Briar House live movement with no short collision-valid WASD route.",
+      "cause": "Smoke planner tries only W/S/A/D individually. At the actual House spawn148/360 camera headings have no straight .6m single-key route despite valid two-key diagonal movement in the narrow van aisle.",
+      "action": "Plan all8 actual normalized WASD combinations and press/release both real keys for outward and return movement. Preserve .6m swept native-body candidate, >.5m route threshold, >.30m actual forward movement, <.22m return and real X extraction. Include site/coordinates/elevation/yaw in genuine no-route failures.",
+      "evidence": "Actual old single-key reproduction148/360; actual corrected production GPU planner passes1080 real House/Farmhouse/School headings,444 needing two keys. Sources/logs in verification/van-input-recovery-2026-11-06. Fresh corrected GPU acceptance required; no geometry/physics threshold was changed.",
+      "older_maps": "This corrects the GPU diagnostic, not map geometry. Other location van routes and physical-hardware performance remain independently required. Preserve existing van implementation."
+    },
+    {
+      "id": "DEV-295",
+      "title": "Windows Git checkout corrupts frozen native Castle baseline digests",
+      "status": "exact Windows-style checkout correction verified locally; fresh Windows/native/full acceptance pending",
+      "affected": "Castle saved-native rebuild resource loading on core.autocrlf=true installations/CI",
+      "symptom": "Full42341031882 actual transcript is342passed/1failed despite overall workflow success: CastleRebuildUpgradeTest cannot load original baseline because its immutable SHA changed.",
+      "cause": "Frozen properties were treated as normal text; Windows checkout converts LF to CRLF before packaging. The runtime byte-integrity guard correctly refuses the corrupted baseline.",
+      "action": "Mark only the frozen runtime/source baseline property paths -text in.gitattributes, preserving exact authored bytes and unchanged SHA guards. Add actual historical saved-document upgrade test to required native editor host command, where failure is not advisory.",
+      "evidence": "Actual git core.autocrlf=true checkout before pin reproduces all3bad CRLF digests; after pin all3match original immutable hashes and all3source copies. Verification sources/raw failing full transcript in verification/castle-baseline-checkout-2026-11-06. Original43local packaged bodies pass with canonical bytes, but this does not establish fresh remote Windows acceptance.",
+      "older_maps": "Castle frozen resources only. Individually audit other fingerprinted text assets; do not normalize arbitrary user scenes or infer old map codecs/other packaging fixed."
     }
   ],
   "audit_categories": [

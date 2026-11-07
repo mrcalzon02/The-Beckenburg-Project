@@ -1,0 +1,9 @@
+{
+  "source_base": "2293b75f91d6ea2ceefa8af5492e6f7a20eef427",
+  "failed_gpu_run": 42341030548,
+  "diagnostic_source_sha256": "ff9aeab788cad7da8f3483d168076f2d97e5b7f8ade106fdf3efe0fe7ae367ee",
+  "actual_routes": 1080,
+  "diagonal_routes": 444,
+  "old_house_single_key_failures": 148,
+  "status": "local correction passes; exact corrected GPU run pending"
+}

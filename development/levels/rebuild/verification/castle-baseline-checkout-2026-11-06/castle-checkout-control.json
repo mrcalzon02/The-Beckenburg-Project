@@ -1,0 +1,26 @@
+{
+  "status": "PASS actual core.autocrlf=true index checkouts before/after byte preservation",
+  "baselines": {
+    "original": {
+      "before_sha256": "59bad064e524bd0443f013b49b3b49cb0bd838f1aa0bb45085a2e26a4fb916ac",
+      "expected_sha256": "22ab766b1102ceaa93d9085b3e50044f66551c9627ebfbc061a4332b88607016",
+      "after_sha256": "22ab766b1102ceaa93d9085b3e50044f66551c9627ebfbc061a4332b88607016",
+      "before_crlf": 1686,
+      "after_crlf": 0
+    },
+    "before-finish": {
+      "before_sha256": "b0b65f61b1606e0489da6f13784ea5e176b5ee47ea6b78979b7194fb44144213",
+      "expected_sha256": "6951abb11004f2c94cd0b5e2cc3947cf2e5550a5f27734d45ed94611ddeb1d30",
+      "after_sha256": "6951abb11004f2c94cd0b5e2cc3947cf2e5550a5f27734d45ed94611ddeb1d30",
+      "before_crlf": 4160,
+      "after_crlf": 0
+    },
+    "rebuilt-v1": {
+      "before_sha256": "96ecac9330b648f5630f72dd032f7de90cc557217729cc1b141bfa764fb6702f",
+      "expected_sha256": "7b6b68f9267841513a49e039c23a0302b6658722d7ed0e52c85614ebfc732d66",
+      "after_sha256": "7b6b68f9267841513a49e039c23a0302b6658722d7ed0e52c85614ebfc732d66",
+      "before_crlf": 4390,
+      "after_crlf": 0
+    }
+  }
+}
