@@ -69,3 +69,9 @@ javac --release 17 -encoding UTF-8 -cp "%BECK_EDITOR_AGENT_CP%" -d build\test sr
 if errorlevel 1 exit /b 1
 java -Djava.awt.headless=false -ea -cp "%BECK_EDITOR_AGENT_CP%;build\test" org.beckenburg.CastleStoryTest build\editor-agent-evidence\castle-story
 if errorlevel 1 exit /b 1
+
+rem Shared loose objects through actual Castle native pickup/rotate/throw keys.
+javac --release 17 -encoding UTF-8 -cp "%BECK_EDITOR_AGENT_CP%" -d build\test src\test\java\org\beckenburg\CastleLooseClutterTest.java
+if errorlevel 1 exit /b 1
+java -Djava.awt.headless=false -ea -cp "%BECK_EDITOR_AGENT_CP%;build\test" org.beckenburg.CastleLooseClutterTest build\editor-agent-evidence\castle-loose-ui
+if errorlevel 1 exit /b 1

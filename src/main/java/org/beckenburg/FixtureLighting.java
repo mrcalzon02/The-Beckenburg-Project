@@ -601,6 +601,8 @@ public final class FixtureLighting {
  static boolean castleRayClear(CastleHubMap map,double ax,double ay,double az,double bx,double by,double bz){
   if(map==null||!Double.isFinite(ax+ay+az+bx+by+bz))return false;
   if(!map.worldSurface().clearSight(new LevelDefinition.Vec(ax,ay,az),new LevelDefinition.Vec(bx,by,bz)))return false;
+  for(var frame:CastleDoorSlots.windowFrames())
+   if(CastleDoorSlots.crossesBox(ax,ay,az,bx,by,bz,frame.x(),frame.y(),frame.z(),frame.x()+frame.width(),frame.y()+frame.height(),frame.z()+frame.depth()))return false;
   final double EPS=0.0001;
   for(var slot:CastleDoorSlots.all()){
    if(!CastleDoorSlots.available(slot))continue;

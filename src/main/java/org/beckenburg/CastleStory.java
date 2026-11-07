@@ -35,6 +35,7 @@ public final class CastleStory {
         var hit=CastleObjectRay.nearest(x,y,z,dx,dy,dz,3.2);if(hit==null)return null;
         var record=RECORDS.get(hit.prop().id());if(record==null||!record.mesh().equals(hit.prop().mesh()))return null;
         double d=Math.max(0,hit.distance()-.01);
+        if(map.clutter().occludesRay(x,y,z,dx,dy,dz,d))return null;
         return FixtureLighting.castleRayClear(map,x,y,z,x+dx*d,y+dy*d,z+dz*d)?record:null;
     }
 }

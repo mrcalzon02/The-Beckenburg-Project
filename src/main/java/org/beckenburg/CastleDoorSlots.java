@@ -19,6 +19,18 @@ public final class CastleDoorSlots {
     new WindowSlot("west-casement-south",1,26,27.8,1.05,2.45));
  private static final List<WindowSlot> UPPER_WINDOWS=java.util.stream.Stream.concat(WINDOWS.stream(),CastleUpperLayout.WINDOWS.stream()).toList();
  public static List<WindowSlot> windows(){return CastleUpper.active()?UPPER_WINDOWS:WINDOWS;}
+ public record WindowFrameBox(double x,double y,double z,double width,double height,double depth){}
+ private static final List<WindowFrameBox> WINDOW_FRAMES=frames(WINDOWS),UPPER_WINDOW_FRAMES=frames(UPPER_WINDOWS);
+ private static List<WindowFrameBox> frames(List<WindowSlot> windows){
+  var result=new ArrayList<WindowFrameBox>();double hw=MASONRY_THICKNESS*.5;
+  for(var w:windows){
+   double breadth=w.z1()-w.z0();
+   for(double side:new double[]{w.z0()-.065,w.z1()-.025})result.add(new WindowFrameBox(w.x()-hw-.025,w.sill(),side,MASONRY_THICKNESS+.05,w.head()-w.sill(),.09));
+   for(double y:new double[]{w.sill(),w.head()-.08})result.add(new WindowFrameBox(w.x()-hw-.025,y,w.z0(),MASONRY_THICKNESS+.05,.09,breadth));
+   result.add(new WindowFrameBox(w.x()-.045,(w.sill()+w.head())*.5-.05,w.z0(),.09,.10,breadth));
+  }return List.copyOf(result);
+ }
+ public static List<WindowFrameBox> windowFrames(){return CastleUpper.active()?UPPER_WINDOW_FRAMES:WINDOW_FRAMES;}
  public record Slot(String id,double x0,double z0,double x1,double z1,
                     double bottom,double clearHeight,boolean gate) {
   public boolean horizontal(){return z0==z1;}

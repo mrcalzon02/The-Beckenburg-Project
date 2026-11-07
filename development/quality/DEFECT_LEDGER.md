@@ -4014,6 +4014,20 @@ Evidence and verification: Actual git core.autocrlf=true checkout before pin rep
 
 Older-map obligation: Castle frozen resources only. Individually audit other fingerprinted text assets; do not normalize arbitrary user scenes or infer old map codecs/other packaging fixed.
 
+### DEV-296 — Visible Castle window mullions have no shared optical or small-body solids
+
+**Status:** implemented; corrected native ray control passes; packaged/native/render checks pending · **Affected:** Castle window wooden crossbars and surrounds; new local loose-body contact
+
+An actual light ray passes through the centre of the visibly solid wooden crossbar. Existing CastlePortalSlotTest incorrectly expected that exact ray to pass.
+
+Cause / uncertainty: Window timber boxes were authored only inside SceneRenderer; optical/physical queries knew the aperture and masonry but not its visible wood.
+
+Fix / next action: Publish immutable authored frame boxes from CastleDoorSlots. Render the same unchanged boxes/UVs and consume their exact bounds in Castle optical and small-body sweeps. Move the window-gap positive to the actual lower aperture and add the opaque-crossbar negative.
+
+Evidence and verification: Actual old implementation fails enhanced CastlePortalSlotTest at west-casement-north; corrected source passes. Original no-frame failure and corrected logs retained. Final native on/off window views and full focused gates remain required.
+
+Older-map obligation: Only Castle frames were audited. Other map windows, corners, floors, roof joins and furnishings retain individual optical/body audit obligations; no global light-bleed or collision acceptance.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

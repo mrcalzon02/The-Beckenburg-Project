@@ -63,8 +63,10 @@ public final class CastleUpperConstructionTest {
         check(!map.traversable(10.5,6.5,3.4)&&!FixtureLighting.castleRayClear(map,10,4.8,6.5,11,4.8,6.5),"Closed upper leaf lacks body/optical collision");map.toggleDoor(upperDoor.id());
         check(map.traversable(10.5,6.5,3.4),"Open upper library connection blocked");
         for(var w:CastleUpperLayout.WINDOWS){
-            double z=(w.z0()+w.z1())/2,y=(w.sill()+w.head())/2;
+            double z=(w.z0()+w.z1())/2,y=w.sill()+(w.head()-w.sill())*.25;
             check(FixtureLighting.castleRayClear(map,w.x()-.5,y,z,w.x()+.5,y,z),"Casement is a painted solid wall "+w.id());
+            double mullion=(w.sill()+w.head())/2;
+            check(!FixtureLighting.castleRayClear(map,w.x()-.5,mullion,z,w.x()+.5,mullion,z),"Upper wooden mullion fails to occlude "+w.id());
             check(!map.traversable(w.x(),z,3.4),"Casement sill permits body exit "+w.id());
         }
         var snapshot=scene.snapshot();
