@@ -4254,15 +4254,15 @@ Older-map obligation: Audit recessed controls and conservative source collider e
 
 ### DEV-311 — Remote-site ghost breaker-trip acceptance remains unproven
 
-**Status:** OPEN AUDIT; no new ghost-specific mechanics invented in this checkpoint · **Affected:** Remote-site power gate and rebuilt House; older locations require individual audit
+**Status:** IMPLEMENTED; packaged domain, actual solo AI and four-peer TCP checks pass; exact-source CI and per-location acceptance pending · **Affected:** Remote-site power gate and rebuilt House; older locations require individual audit
 
 Source-stop and ordinary hunter breaker interaction pass, but inspected host ghost-action lighting path emits temporary pulses; persistent ghost-specific trip/reset behavior has no proven runtime acceptance.
 
 Cause / uncertainty: Existing power tests explicitly defer ghost-host breaker-trip audit. Neither generator presence nor hunter switching proves the required ghost behavior.
 
-Fix / next action: Trace approved ghost-specific electrical rules, implement missing host behavior through existing RoomLighting breaker if necessary, and execute real accepted-ghost-event, permitted reset, camera/evidence and source-independence acceptance before closing remote power gate.
+Fix / next action: Accepted lightning_static DISTURB arcs trip the normal persistent breaker in solo and host paths; preserve source-running, batteries and independent candles. Host sends existing LIGHTS state; physical reset remains authoritative.
 
-Evidence and verification: REMOTE_SITE_POWER.md; LanHost accepted ghost-action disruption path; HollowCreekPowerTest and HouseRebuildPowerTest explicitly retain this open gate. This is source/audit evidence, not proof that every ghost should trip a breaker.
+Evidence and verification: development/levels/rebuild/verification/house-story-power-2026-11-07/GhostElectricalTest.log: 52 species/controller combinations, actual solo AI, four TCP peers, resync and physical breaker reset. Other haunt variants and rejected/stale/unpowered commands retain behavior.
 
 Older-map obligation: Audit all remote and older maps individually; no blanket acceptance from House source-stop or packaging. Preserve ghost-specific exceptions and independent fire/oil/battery loads.
 
@@ -4321,6 +4321,118 @@ Fix / next action: Reuse exact sanctuary shader for available hiding locations; 
 Evidence and verification: development/levels/rebuild/verification/house-fitout-2026-11-07/HidingAreaHazeTest.log; rejected-unbudgeted-ghost-boundary-test.log; corrected LanGhostHidingBoundaryTest.log; hiding-energy runtime captures
 
 Older-map obligation: Audit each existing map/model/cover installation individually; shared source correction and House evidence do not accept unaudited layouts or rendering.
+
+### DEV-316 — Mending record overhangs its actual bedside support
+
+**Status:** SCOPED CORRECTION; source-footprint check and actual runtime view pass · **Affected:** Rebuilt House construction candidate; shared behavior where explicitly noted
+
+Initial mending-tin placement at12.5/16.9 overhung the real bedside tabletop.
+
+Cause / uncertainty: First-principles support/service audit of actual source and runtime behavior
+
+Fix / next action: Original source triangles reject unsupported corners; recenter at12.6/17.0 without scaling the source.
+
+Evidence and verification: development/levels/rebuild/verification/house-story-power-2026-11-07/ and development/captures/house-story/: rejected-mending-support.log; HouseRebuildPhysicsTest.log; inherited-mending-runtime.png
+
+Older-map obligation: Audit each older map individually. These House controls do not accept older layouts, plumbing, object supports, lighting or saved native edits.
+
+### DEV-317 — Loose bodies sink into sculpted terrain and rendered stair treads
+
+**Status:** SCOPED CORRECTION; actual ground and renderer-triangle contact checks pass · **Affected:** Rebuilt House construction candidate; shared behavior where explicitly noted
+
+Actual loose mug contacted terrain about5cm low and rendered tread about122mm low.
+
+Cause / uncertainty: First-principles support/service audit of actual source and runtime behavior
+
+Fix / next action: World-walking maps use authored terrain ground. Authored clutter uses actual discretized visible treads; player continuous ramps and legacy unflagged behavior remain.
+
+Evidence and verification: development/levels/rebuild/verification/house-story-power-2026-11-07/ and development/captures/house-story/: rejected-exact-terrain-contact.log; rejected-rendered-tread-contact.log; HouseRebuildPhysicsTest.log
+
+Older-map obligation: Audit each older map individually. These House controls do not accept older layouts, plumbing, object supports, lighting or saved native edits.
+
+### DEV-318 — Electrical outdoor fixtures bypass source and breaker blackout
+
+**Status:** SCOPED CORRECTION; packaged independent-source controls pass · **Affected:** Rebuilt House construction candidate; shared behavior where explicitly noted
+
+Outdoor room brightness stays1 and allowed electrical fixture emission despite lost supply.
+
+Cause / uncertainty: First-principles support/service audit of actual source and runtime behavior
+
+Fix / next action: Check real supplied state before mains intensity; preserve candle and van battery branches.
+
+Evidence and verification: development/levels/rebuild/verification/house-story-power-2026-11-07/ and development/captures/house-story/: rejected-outdoor-supply.log; GhostElectricalTest.log
+
+Older-map obligation: Audit each older map individually. These House controls do not accept older layouts, plumbing, object supports, lighting or saved native edits.
+
+### DEV-319 — Rebuilt Briar location loses canonical House case history
+
+**Status:** SCOPED CORRECTION; canonical address and readable interaction pass · **Affected:** Rebuilt House construction candidate; shared behavior where explicitly noted
+
+Isolated briar-rebuild identity was not aliased to house for public history and records.
+
+Cause / uncertainty: First-principles support/service audit of actual source and runtime behavior
+
+Fix / next action: Canonicalize rebuild identity through SiteStories and SiteCaseFiles, retaining existing address/history without revealing ghost identity.
+
+Evidence and verification: development/levels/rebuild/verification/house-story-power-2026-11-07/ and development/captures/house-story/: HouseRebuildPhysicsTest.log; household-records-runtime.png
+
+Older-map obligation: Audit each older map individually. These House controls do not accept older layouts, plumbing, object supports, lighting or saved native edits.
+
+### DEV-320 — Rebuilt House lacks radiators and visible water distribution
+
+**Status:** OPEN; next construction pass before promotion · **Affected:** Rebuilt House construction candidate; shared behavior where explicitly noted
+
+Boiler exists but the candidate has no authored radiators or visible domestic water distribution, despite the location heat/plumbing history.
+
+Cause / uncertainty: First-principles support/service audit of actual source and runtime behavior
+
+Fix / next action: Place original supported radiators and connected pipes with maintenance clearance; verify physical and optical supports, routes, native parity and runtime views.
+
+Evidence and verification: development/levels/rebuild/verification/house-story-power-2026-11-07/ and development/captures/house-story/: HouseRebuildFunctions.java and HouseRebuildStory.java source audit
+
+Older-map obligation: Audit each older map individually. These House controls do not accept older layouts, plumbing, object supports, lighting or saved native edits.
+
+### DEV-321 — Visible generator feed review camera harness does not compile
+
+**Status:** SCOPED CORRECTION; current test compiles and actual cable review captures pass; exact-source CI pending · **Affected:** HouseRebuildStoryTest visible feed camera review; isolated House construction candidate
+
+First feed capture camera is blocked; attempted fallback calls nonexistent HouseMap.clearSight(Vec,Vec), causing javac cannot-find-symbol.
+
+Cause / uncertainty: Review camera API mismatch introduced while selecting an actual supported unobstructed viewpoint.
+
+Fix / next action: Use actual House clearLineOfSight doubles; select supported positions and test the visible surface rather than the occluded cable center. Native scene/export regenerated at visible-feed revision4ae1c4bb4b9f1e3f.
+
+Evidence and verification: development/levels/rebuild/verification/house-story-power-2026-11-07/rejected-feed-camera.log; checkpoint-notes.txt; latest HouseRebuildStoryTest.java source; HouseRebuildStoryTest.log and generator-service-outlet/visible-perimeter-feed/house-service-inlet runtime captures
+
+Older-map obligation: No older-map acceptance inferred. House remains isolated and unpromoted.
+
+### DEV-322 — Multiplayer animation acceptance races on copy-on-write packet sublist
+
+**Status:** SCOPED CORRECTION; exact-source remote full suite pending · **Affected:** Mandatory packaged regression acceptance; House construction and actual hunter animation
+
+Main059ca123 full42363868962 fails LanHunterAnimationGameplayTest with ConcurrentModificationException in Peer.feed after observer animation pass.
+
+Cause / uncertainty: Observed CI concurrency or accumulated stage execution, not a packaging failure
+
+Fix / next action: Take immutable packet-array snapshots before slicing; retain all live TCP movement, posture and scene reset assertions. Actual packaged animation check passes.
+
+Evidence and verification: development/levels/rebuild/verification/house-story-power-2026-11-07/main-059ca123-full-42363868962.log; LanHunterAnimationGameplayTest.log; scoped-results.json
+
+Older-map obligation: No map or physical hardware acceptance inferred from test repair. Preserve per-location audit and exact-source full suite gate.
+
+### DEV-323 — Accumulated House acceptance bundle exceeds per-test process deadline
+
+**Status:** SCOPED CORRECTION; exact-source remote full suite pending · **Affected:** Mandatory packaged regression acceptance; House construction and actual hunter animation
+
+Main059ca123 full42363868962 kills HouseRebuildPhysicsTest after90seconds; actual suite totals347/2 despite green wrapper.
+
+Cause / uncertainty: Observed CI concurrency or accumulated stage execution, not a packaging failure
+
+Fix / next action: Register every existing stage check as a mandatory isolated manifest entry, including both physical power variants and all four texture variants. Preserve90second per-entry deadline; remove no assertions.
+
+Evidence and verification: development/levels/rebuild/verification/house-story-power-2026-11-07/main-059ca123-full-42363868962.log; LanHunterAnimationGameplayTest.log; scoped-results.json
+
+Older-map obligation: No map or physical hardware acceptance inferred from test repair. Preserve per-location audit and exact-source full suite gate.
 
 ## Required audit categories
 

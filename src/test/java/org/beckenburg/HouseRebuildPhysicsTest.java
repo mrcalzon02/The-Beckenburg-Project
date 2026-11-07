@@ -10,16 +10,8 @@ public final class HouseRebuildPhysicsTest {
         AuthoredUtilitiesTest.main(pilot);
         HouseRebuildShellTest.main(new String[0]);
         HouseRebuildTerrainTest.main(new String[0]);
-        HouseRebuildFittingsTest.main(new String[0]);
-        HouseRebuildLandscapeTest.main(new String[0]);
-        HouseRebuildEnvelopeTest.main(new String[0]);
-        HouseRebuildFunctionsTest.main(new String[0]);
-        HouseRebuildPowerTest.main(new String[0]);
-        HouseRebuildFitoutTest.main(new String[0]);
-        HouseRebuildPowerTest.main(new String[]{"FITOUT"});
-        LevelSceneTextureParityTest.main(new String[0]);
-        LevelSceneTextureParityTest.main(new String[]{"HOUSE_REBUILD_FUNCTIONS"});
-        LevelSceneTextureParityTest.main(new String[]{"HOUSE_REBUILD_FITOUT"});
+        // Later construction stages have their own manifest entries and process deadlines.
+        // Keep every stage mandatory without accumulating all work into one 90-second process.
         System.out.println("PASS House construction pilot including editor-punched world terrain; remaining map gates stay open");
     }
 }

@@ -10,7 +10,8 @@ import java.util.List;
 public final class SiteCaseFiles {
     private SiteCaseFiles(){}
     public record File(String reference,String name,String address,List<String> history,List<String> conditions){}
-    public static File forSite(String id){
+    public static File forSite(String id){return canonicalFile(SiteStories.canonical(id));}
+    private static File canonicalFile(String id){
         var identity=SiteStories.identity(id);
         return switch(id){
             case "house" -> new File("BB / RES-017",identity.title(),identity.address(),List.of(

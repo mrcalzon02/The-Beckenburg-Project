@@ -1,0 +1,25 @@
+FIT family-sofa sofa_1 native=2.5999995470046997x1.1595666442975125x1.0048426194116473 support=floor
+FIT reading-chair armchair_1 native=1.4949047565460205x1.0665233097210862x0.9900396266179996 support=floor
+FIT television-stand tv_table_1_4 native=1.6400009989738464x0.740000009536744x0.5400000363588333 support=floor
+FIT family-television tv_mp_1 native=0.5100000500679016x0.7892655099882333x0.41831517964601517 support=television-stand
+FIT sitting-end-table bedside_table_1 native=0.5600010752677917x0.6399999488926937x0.5182906277477741 support=floor
+FIT family-dining-table dinner_table_1 native=1.700001060962677x0.8599999957732507x1.1000000834465027 support=floor
+FIT dining-chair-nw chair_mp_5 native=0.5145455896854401x1.0082636993378413x0.5254067927598953 support=floor
+FIT dining-chair-ne chair_mp_5 native=0.5145455896854401x1.0082636993378413x0.5254067927598953 support=floor
+FIT dining-chair-sw chair_mp_5 native=0.5145455896854401x1.0082636993378413x0.5254067927598953 support=floor
+FIT dining-chair-se chair_mp_5 native=0.5145455896854401x1.0082636993378413x0.5254067927598953 support=floor
+FIT parents-double-bed bed_4 native=2.740672469139099x0.9621343931708921x2.2906718254089355 support=floor
+FIT parents-bedside bedside_table_1 native=0.5600010752677917x0.6399999488926937x0.5182906277477741 support=floor
+FIT parents-wardrobe wardrobe_mp_1 native=1.3400089740753174x2.1000005891724953x0.6400001645088196 support=floor
+FIT child-single-bed bed_5 native=2.740672469139099x0.9621343931708921x1.4906718134880066 support=floor
+FIT child-bedside bedside_table_1 native=0.5600010752677917x0.6399999488926937x0.5182906277477741 support=floor
+FIT child-wardrobe wardrobe_mp_1 native=1.3400089740753174x2.1000005891724953x0.6400001645088196 support=floor
+FIT homework-desk level_student_desk native=1.100000023841858x0.7400000095367432x0.6499999761581421 support=floor
+FIT homework-chair chair_mp_5 native=0.5145455896854401x1.0082636993378413x0.5254067927598953 support=floor
+FIT landing-linen shelf_mp_6 native=0.8200029134750366x1.290000250696874x0.22000008821487427 support=floor
+FIT cellar-repair-bench level_workbench_worn native=1.7999999523162842x1.2200000286102295x0.7050000131130219 support=floor
+FIT seasonal-shelf-a shelf_mp_6 native=0.8200029134750366x1.290000250696874x0.22000008821487427 support=floor
+FIT seasonal-shelf-b shelf_mp_6 native=0.8200029134750366x1.290000250696874x0.22000008821487427 support=floor
+FIT heating-plant level_boiler_modern_worn native=1.100000023841858x2.3446996212005615x1.0499999523162842 support=floor
+FIT site-generator level_trace_generator native=1.5499999523162842x1.1549999713897705x0.8799999952316284 support=floor
+PASS 24 authored full-scale household fixtures; real tabletop support; all15anchors/zones/required sockets swept at 50831 positions

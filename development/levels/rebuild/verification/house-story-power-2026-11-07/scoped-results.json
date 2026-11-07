@@ -1,0 +1,68 @@
+[
+  {
+    "test": "HouseRebuildPhysicsTest",
+    "exit_code": 0,
+    "seconds": 4.312,
+    "deadline": 90
+  },
+  {
+    "test": "HouseRebuildFittingsTest",
+    "exit_code": 0,
+    "seconds": 2.735,
+    "deadline": 90
+  },
+  {
+    "test": "HouseRebuildLandscapeTest",
+    "exit_code": 0,
+    "seconds": 7.89,
+    "deadline": 90
+  },
+  {
+    "test": "HouseRebuildEnvelopeTest",
+    "exit_code": 0,
+    "seconds": 10.329,
+    "deadline": 90
+  },
+  {
+    "test": "HouseRebuildFunctionsTest",
+    "exit_code": 0,
+    "seconds": 14.687,
+    "deadline": 90
+  },
+  {
+    "test": "HouseRebuildPowerTest",
+    "exit_code": 0,
+    "seconds": 3.172,
+    "deadline": 90
+  },
+  {
+    "test": "HouseRebuildFitoutTest",
+    "exit_code": 0,
+    "seconds": 10.578,
+    "deadline": 90
+  },
+  {
+    "test": "HouseRebuildStoryTest",
+    "exit_code": 0,
+    "seconds": 12.031,
+    "deadline": 90
+  },
+  {
+    "test": "HouseRebuildFitoutPowerTest",
+    "exit_code": 0,
+    "seconds": 3.313,
+    "deadline": 90
+  },
+  {
+    "test": "HouseRebuildTextureTest",
+    "exit_code": 0,
+    "seconds": 14.14,
+    "deadline": 90
+  },
+  {
+    "test": "BeckenburgRegressionManifestTest",
+    "exit_code": 0,
+    "seconds": 1.235,
+    "deadline": 90
+  }
+]

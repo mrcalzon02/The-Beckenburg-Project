@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: Connected outdoor light must lose electrical supply
+	at org.beckenburg.GhostElectricalTest.check(GhostElectricalTest.java:5)
+	at org.beckenburg.GhostElectricalTest.main(GhostElectricalTest.java:32)

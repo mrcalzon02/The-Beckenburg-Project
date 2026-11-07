@@ -1,5 +1,5 @@
 {
-  "status": "authored source, breaker and controlled loads implemented; physical cable distribution remains unfinished",
+  "status": "Authored source, physical breaker, visible perimeter feed, crossing sleeve and twelve-circuit distribution implemented in isolated House story candidate; full map and exact-source CI pending",
   "source": {
     "id": "briar-generator-starter",
     "type": "generator",
@@ -620,5 +620,1558 @@
     "Ghost-specific authoritative breaker-trip events: current accepted action path pulses RoomLighting, but no ghost-specific persistent breaker-trip path established in this audit",
     "Full client authored-source presentation and reconnect acceptance after live House promotion",
     "Physical hardware lighting/performance acceptance"
-  ]
+  ],
+  "service_nodes": [
+    {
+      "id": "BHR-RISER-0",
+      "type": "service-node",
+      "room": 10,
+      "x": 15.092,
+      "y": -0.66,
+      "z": 11.04,
+      "yaw": 0.0,
+      "style": "BHR-RISER|0|ivory|wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-RISER-1",
+      "type": "service-node",
+      "room": 10,
+      "x": 15.092,
+      "y": -0.052,
+      "z": 11.04,
+      "yaw": 0.0,
+      "style": "BHR-RISER|1|ivory|wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-RISER-2",
+      "type": "service-node",
+      "room": 10,
+      "x": 15.092,
+      "y": -0.052,
+      "z": 10.092,
+      "yaw": 0.0,
+      "style": "BHR-RISER|2|ivory|wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-RISER-3",
+      "type": "service-node",
+      "room": 10,
+      "x": 18.092,
+      "y": -0.052,
+      "z": 10.092,
+      "yaw": 0.0,
+      "style": "BHR-RISER|3|ivory|wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-RISER-4",
+      "type": "service-node",
+      "room": 10,
+      "x": 18.092,
+      "y": 5.548,
+      "z": 10.092,
+      "yaw": 0.0,
+      "style": "BHR-RISER|4|ivory|wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L01-0",
+      "type": "service-node",
+      "room": 0,
+      "x": 18.092,
+      "y": 2.7479999999999998,
+      "z": 10.092,
+      "yaw": 0.0,
+      "style": "BHR-L01|0|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L01-1",
+      "type": "service-node",
+      "room": 0,
+      "x": 18.092,
+      "y": 2.7479999999999998,
+      "z": 20.415,
+      "yaw": 0.0,
+      "style": "BHR-L01|1|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L01-2",
+      "type": "service-node",
+      "room": 0,
+      "x": 18.7,
+      "y": 2.7479999999999998,
+      "z": 20.415,
+      "yaw": 0.0,
+      "style": "BHR-L01|2|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L01-3",
+      "type": "service-node",
+      "room": 0,
+      "x": 18.7,
+      "y": 1.255999994277954,
+      "z": 20.415,
+      "yaw": 0.0,
+      "style": "BHR-L01|3|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L01-LOAD-0",
+      "type": "service-node",
+      "room": 0,
+      "x": 18.7,
+      "y": 2.7479999999999998,
+      "z": 20.415,
+      "yaw": 0.0,
+      "style": "BHR-L01-LOAD|0|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L01-LOAD-1",
+      "type": "service-node",
+      "room": 0,
+      "x": 19.0,
+      "y": 2.7479999999999998,
+      "z": 20.415,
+      "yaw": 0.0,
+      "style": "BHR-L01-LOAD|1|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L01-LOAD-2",
+      "type": "service-node",
+      "room": 0,
+      "x": 19.0,
+      "y": 2.7479999999999998,
+      "z": 19.4,
+      "yaw": 0.0,
+      "style": "BHR-L01-LOAD|2|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L01-LOAD-3",
+      "type": "service-node",
+      "room": 0,
+      "x": 19.0,
+      "y": 2.775,
+      "z": 19.4,
+      "yaw": 0.0,
+      "style": "BHR-L01-LOAD|3|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L02-0",
+      "type": "service-node",
+      "room": 1,
+      "x": 18.092,
+      "y": 2.7479999999999998,
+      "z": 10.092,
+      "yaw": 0.0,
+      "style": "BHR-L02|0|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L02-1",
+      "type": "service-node",
+      "room": 1,
+      "x": 18.092,
+      "y": 2.7479999999999998,
+      "z": 14.785,
+      "yaw": 0.0,
+      "style": "BHR-L02|1|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L02-2",
+      "type": "service-node",
+      "room": 1,
+      "x": 15.2,
+      "y": 2.7479999999999998,
+      "z": 14.785,
+      "yaw": 0.0,
+      "style": "BHR-L02|2|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L02-3",
+      "type": "service-node",
+      "room": 1,
+      "x": 15.2,
+      "y": 1.255999994277954,
+      "z": 14.785,
+      "yaw": 0.0,
+      "style": "BHR-L02|3|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L02-LOAD-0",
+      "type": "service-node",
+      "room": 1,
+      "x": 15.2,
+      "y": 2.7479999999999998,
+      "z": 14.785,
+      "yaw": 0.0,
+      "style": "BHR-L02-LOAD|0|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L02-LOAD-1",
+      "type": "service-node",
+      "room": 1,
+      "x": 15.0,
+      "y": 2.7479999999999998,
+      "z": 14.785,
+      "yaw": 0.0,
+      "style": "BHR-L02-LOAD|1|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L02-LOAD-2",
+      "type": "service-node",
+      "room": 1,
+      "x": 15.0,
+      "y": 2.7479999999999998,
+      "z": 17.6,
+      "yaw": 0.0,
+      "style": "BHR-L02-LOAD|2|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L02-LOAD-3",
+      "type": "service-node",
+      "room": 1,
+      "x": 15.0,
+      "y": 2.775,
+      "z": 17.6,
+      "yaw": 0.0,
+      "style": "BHR-L02-LOAD|3|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L03-0",
+      "type": "service-node",
+      "room": 2,
+      "x": 18.092,
+      "y": 2.7479999999999998,
+      "z": 10.092,
+      "yaw": 0.0,
+      "style": "BHR-L03|0|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L03-1",
+      "type": "service-node",
+      "room": 2,
+      "x": 18.092,
+      "y": 2.7479999999999998,
+      "z": 12.7,
+      "yaw": 0.0,
+      "style": "BHR-L03|1|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L03-2",
+      "type": "service-node",
+      "room": 2,
+      "x": 17.915,
+      "y": 2.7479999999999998,
+      "z": 12.7,
+      "yaw": 0.0,
+      "style": "BHR-L03|2|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L03-3",
+      "type": "service-node",
+      "room": 2,
+      "x": 17.915,
+      "y": 1.255999994277954,
+      "z": 12.7,
+      "yaw": 0.0,
+      "style": "BHR-L03|3|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L03-LOAD-0",
+      "type": "service-node",
+      "room": 2,
+      "x": 17.915,
+      "y": 2.7479999999999998,
+      "z": 12.7,
+      "yaw": 0.0,
+      "style": "BHR-L03-LOAD|0|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L03-LOAD-1",
+      "type": "service-node",
+      "room": 2,
+      "x": 16.0,
+      "y": 2.7479999999999998,
+      "z": 12.7,
+      "yaw": 0.0,
+      "style": "BHR-L03-LOAD|1|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L03-LOAD-2",
+      "type": "service-node",
+      "room": 2,
+      "x": 16.0,
+      "y": 2.7479999999999998,
+      "z": 12.4,
+      "yaw": 0.0,
+      "style": "BHR-L03-LOAD|2|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L03-LOAD-3",
+      "type": "service-node",
+      "room": 2,
+      "x": 16.0,
+      "y": 2.775,
+      "z": 12.4,
+      "yaw": 0.0,
+      "style": "BHR-L03-LOAD|3|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L04-0",
+      "type": "service-node",
+      "room": 3,
+      "x": 18.092,
+      "y": 2.7479999999999998,
+      "z": 10.092,
+      "yaw": 0.0,
+      "style": "BHR-L04|0|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L04-1",
+      "type": "service-node",
+      "room": 3,
+      "x": 18.092,
+      "y": 2.7479999999999998,
+      "z": 13.514999999999999,
+      "yaw": 0.0,
+      "style": "BHR-L04|1|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L04-2",
+      "type": "service-node",
+      "room": 3,
+      "x": 19.7,
+      "y": 2.7479999999999998,
+      "z": 13.514999999999999,
+      "yaw": 0.0,
+      "style": "BHR-L04|2|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L04-3",
+      "type": "service-node",
+      "room": 3,
+      "x": 19.7,
+      "y": 1.255999994277954,
+      "z": 13.514999999999999,
+      "yaw": 0.0,
+      "style": "BHR-L04|3|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L04-LOAD-0",
+      "type": "service-node",
+      "room": 3,
+      "x": 19.7,
+      "y": 2.7479999999999998,
+      "z": 13.514999999999999,
+      "yaw": 0.0,
+      "style": "BHR-L04-LOAD|0|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L04-LOAD-1",
+      "type": "service-node",
+      "room": 3,
+      "x": 19.8,
+      "y": 2.7479999999999998,
+      "z": 13.514999999999999,
+      "yaw": 0.0,
+      "style": "BHR-L04-LOAD|1|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L04-LOAD-2",
+      "type": "service-node",
+      "room": 3,
+      "x": 19.8,
+      "y": 2.7479999999999998,
+      "z": 11.8,
+      "yaw": 0.0,
+      "style": "BHR-L04-LOAD|2|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L04-LOAD-3",
+      "type": "service-node",
+      "room": 3,
+      "x": 19.8,
+      "y": 2.775,
+      "z": 11.8,
+      "yaw": 0.0,
+      "style": "BHR-L04-LOAD|3|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L05-0",
+      "type": "service-node",
+      "room": 4,
+      "x": 18.092,
+      "y": 2.7479999999999998,
+      "z": 10.092,
+      "yaw": 0.0,
+      "style": "BHR-L05|0|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L05-1",
+      "type": "service-node",
+      "room": 4,
+      "x": 18.092,
+      "y": 2.7479999999999998,
+      "z": 15.8,
+      "yaw": 0.0,
+      "style": "BHR-L05|1|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L05-2",
+      "type": "service-node",
+      "room": 4,
+      "x": 18.085,
+      "y": 2.7479999999999998,
+      "z": 15.8,
+      "yaw": 0.0,
+      "style": "BHR-L05|2|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L05-3",
+      "type": "service-node",
+      "room": 4,
+      "x": 18.085,
+      "y": 1.255999994277954,
+      "z": 15.8,
+      "yaw": 0.0,
+      "style": "BHR-L05|3|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L05-LOAD-0",
+      "type": "service-node",
+      "room": 4,
+      "x": 18.085,
+      "y": 2.7479999999999998,
+      "z": 15.8,
+      "yaw": 0.0,
+      "style": "BHR-L05-LOAD|0|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L05-LOAD-1",
+      "type": "service-node",
+      "room": 4,
+      "x": 18.8,
+      "y": 2.7479999999999998,
+      "z": 15.8,
+      "yaw": 0.0,
+      "style": "BHR-L05-LOAD|1|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L05-LOAD-2",
+      "type": "service-node",
+      "room": 4,
+      "x": 18.8,
+      "y": 2.7479999999999998,
+      "z": 16.5,
+      "yaw": 0.0,
+      "style": "BHR-L05-LOAD|2|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L05-LOAD-3",
+      "type": "service-node",
+      "room": 4,
+      "x": 18.8,
+      "y": 2.775,
+      "z": 16.5,
+      "yaw": 0.0,
+      "style": "BHR-L05-LOAD|3|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L06-0",
+      "type": "service-node",
+      "room": 5,
+      "x": 18.092,
+      "y": 5.548,
+      "z": 10.092,
+      "yaw": 0.0,
+      "style": "BHR-L06|0|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L06-1",
+      "type": "service-node",
+      "room": 5,
+      "x": 18.092,
+      "y": 5.548,
+      "z": 20.415,
+      "yaw": 0.0,
+      "style": "BHR-L06|1|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L06-2",
+      "type": "service-node",
+      "room": 5,
+      "x": 18.7,
+      "y": 5.548,
+      "z": 20.415,
+      "yaw": 0.0,
+      "style": "BHR-L06|2|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L06-3",
+      "type": "service-node",
+      "room": 5,
+      "x": 18.7,
+      "y": 4.055999994277954,
+      "z": 20.415,
+      "yaw": 0.0,
+      "style": "BHR-L06|3|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L06-LOAD-0",
+      "type": "service-node",
+      "room": 5,
+      "x": 18.7,
+      "y": 5.548,
+      "z": 20.415,
+      "yaw": 0.0,
+      "style": "BHR-L06-LOAD|0|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L06-LOAD-1",
+      "type": "service-node",
+      "room": 5,
+      "x": 18.8,
+      "y": 5.548,
+      "z": 20.415,
+      "yaw": 0.0,
+      "style": "BHR-L06-LOAD|1|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L06-LOAD-2",
+      "type": "service-node",
+      "room": 5,
+      "x": 18.8,
+      "y": 5.548,
+      "z": 19.2,
+      "yaw": 0.0,
+      "style": "BHR-L06-LOAD|2|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L06-LOAD-3",
+      "type": "service-node",
+      "room": 5,
+      "x": 18.8,
+      "y": 5.574999999999999,
+      "z": 19.2,
+      "yaw": 0.0,
+      "style": "BHR-L06-LOAD|3|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L07-0",
+      "type": "service-node",
+      "room": 6,
+      "x": 18.092,
+      "y": 5.548,
+      "z": 10.092,
+      "yaw": 0.0,
+      "style": "BHR-L07|0|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L07-1",
+      "type": "service-node",
+      "room": 6,
+      "x": 18.092,
+      "y": 5.548,
+      "z": 14.785,
+      "yaw": 0.0,
+      "style": "BHR-L07|1|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L07-2",
+      "type": "service-node",
+      "room": 6,
+      "x": 15.2,
+      "y": 5.548,
+      "z": 14.785,
+      "yaw": 0.0,
+      "style": "BHR-L07|2|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L07-3",
+      "type": "service-node",
+      "room": 6,
+      "x": 15.2,
+      "y": 4.055999994277954,
+      "z": 14.785,
+      "yaw": 0.0,
+      "style": "BHR-L07|3|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L07-LOAD-0",
+      "type": "service-node",
+      "room": 6,
+      "x": 15.2,
+      "y": 5.548,
+      "z": 14.785,
+      "yaw": 0.0,
+      "style": "BHR-L07-LOAD|0|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L07-LOAD-1",
+      "type": "service-node",
+      "room": 6,
+      "x": 15.0,
+      "y": 5.548,
+      "z": 14.785,
+      "yaw": 0.0,
+      "style": "BHR-L07-LOAD|1|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L07-LOAD-2",
+      "type": "service-node",
+      "room": 6,
+      "x": 15.0,
+      "y": 5.548,
+      "z": 17.6,
+      "yaw": 0.0,
+      "style": "BHR-L07-LOAD|2|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L07-LOAD-3",
+      "type": "service-node",
+      "room": 6,
+      "x": 15.0,
+      "y": 5.574999999999999,
+      "z": 17.6,
+      "yaw": 0.0,
+      "style": "BHR-L07-LOAD|3|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L08-0",
+      "type": "service-node",
+      "room": 7,
+      "x": 18.092,
+      "y": 5.548,
+      "z": 10.092,
+      "yaw": 0.0,
+      "style": "BHR-L08|0|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L08-1",
+      "type": "service-node",
+      "room": 7,
+      "x": 18.092,
+      "y": 5.548,
+      "z": 14.614999999999998,
+      "yaw": 0.0,
+      "style": "BHR-L08|1|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L08-2",
+      "type": "service-node",
+      "room": 7,
+      "x": 15.2,
+      "y": 5.548,
+      "z": 14.614999999999998,
+      "yaw": 0.0,
+      "style": "BHR-L08|2|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L08-3",
+      "type": "service-node",
+      "room": 7,
+      "x": 15.2,
+      "y": 4.055999994277954,
+      "z": 14.614999999999998,
+      "yaw": 0.0,
+      "style": "BHR-L08|3|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L08-LOAD-0",
+      "type": "service-node",
+      "room": 7,
+      "x": 15.2,
+      "y": 5.548,
+      "z": 14.614999999999998,
+      "yaw": 0.0,
+      "style": "BHR-L08-LOAD|0|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L08-LOAD-1",
+      "type": "service-node",
+      "room": 7,
+      "x": 15.0,
+      "y": 5.548,
+      "z": 14.614999999999998,
+      "yaw": 0.0,
+      "style": "BHR-L08-LOAD|1|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L08-LOAD-2",
+      "type": "service-node",
+      "room": 7,
+      "x": 15.0,
+      "y": 5.548,
+      "z": 12.4,
+      "yaw": 0.0,
+      "style": "BHR-L08-LOAD|2|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L08-LOAD-3",
+      "type": "service-node",
+      "room": 7,
+      "x": 15.0,
+      "y": 5.574999999999999,
+      "z": 12.4,
+      "yaw": 0.0,
+      "style": "BHR-L08-LOAD|3|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L09-0",
+      "type": "service-node",
+      "room": 8,
+      "x": 18.092,
+      "y": 5.548,
+      "z": 10.092,
+      "yaw": 0.0,
+      "style": "BHR-L09|0|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L09-1",
+      "type": "service-node",
+      "room": 8,
+      "x": 18.092,
+      "y": 5.548,
+      "z": 13.114999999999998,
+      "yaw": 0.0,
+      "style": "BHR-L09|1|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L09-2",
+      "type": "service-node",
+      "room": 8,
+      "x": 19.7,
+      "y": 5.548,
+      "z": 13.114999999999998,
+      "yaw": 0.0,
+      "style": "BHR-L09|2|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L09-3",
+      "type": "service-node",
+      "room": 8,
+      "x": 19.7,
+      "y": 4.055999994277954,
+      "z": 13.114999999999998,
+      "yaw": 0.0,
+      "style": "BHR-L09|3|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L09-LOAD-0",
+      "type": "service-node",
+      "room": 8,
+      "x": 19.7,
+      "y": 5.548,
+      "z": 13.114999999999998,
+      "yaw": 0.0,
+      "style": "BHR-L09-LOAD|0|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L09-LOAD-1",
+      "type": "service-node",
+      "room": 8,
+      "x": 19.8,
+      "y": 5.548,
+      "z": 13.114999999999998,
+      "yaw": 0.0,
+      "style": "BHR-L09-LOAD|1|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L09-LOAD-2",
+      "type": "service-node",
+      "room": 8,
+      "x": 19.8,
+      "y": 5.548,
+      "z": 11.6,
+      "yaw": 0.0,
+      "style": "BHR-L09-LOAD|2|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L09-LOAD-3",
+      "type": "service-node",
+      "room": 8,
+      "x": 19.8,
+      "y": 5.574999999999999,
+      "z": 11.6,
+      "yaw": 0.0,
+      "style": "BHR-L09-LOAD|3|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L10-0",
+      "type": "service-node",
+      "room": 9,
+      "x": 18.092,
+      "y": -0.052,
+      "z": 10.092,
+      "yaw": 0.0,
+      "style": "BHR-L10|0|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L10-1",
+      "type": "service-node",
+      "room": 9,
+      "x": 18.092,
+      "y": -0.052,
+      "z": 18.7,
+      "yaw": 0.0,
+      "style": "BHR-L10|1|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L10-2",
+      "type": "service-node",
+      "room": 9,
+      "x": 12.085,
+      "y": -0.052,
+      "z": 18.7,
+      "yaw": 0.0,
+      "style": "BHR-L10|2|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L10-3",
+      "type": "service-node",
+      "room": 9,
+      "x": 12.085,
+      "y": -1.1440000057220459,
+      "z": 18.7,
+      "yaw": 0.0,
+      "style": "BHR-L10|3|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L10-LOAD-0",
+      "type": "service-node",
+      "room": 9,
+      "x": 12.085,
+      "y": -0.052,
+      "z": 18.7,
+      "yaw": 0.0,
+      "style": "BHR-L10-LOAD|0|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L10-LOAD-1",
+      "type": "service-node",
+      "room": 9,
+      "x": 13.5,
+      "y": -0.052,
+      "z": 18.7,
+      "yaw": 0.0,
+      "style": "BHR-L10-LOAD|1|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L10-LOAD-2",
+      "type": "service-node",
+      "room": 9,
+      "x": 13.5,
+      "y": -0.052,
+      "z": 18.5,
+      "yaw": 0.0,
+      "style": "BHR-L10-LOAD|2|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L10-LOAD-3",
+      "type": "service-node",
+      "room": 9,
+      "x": 13.5,
+      "y": -0.025,
+      "z": 18.5,
+      "yaw": 0.0,
+      "style": "BHR-L10-LOAD|3|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L11-0",
+      "type": "service-node",
+      "room": 10,
+      "x": 18.092,
+      "y": -0.052,
+      "z": 10.092,
+      "yaw": 0.0,
+      "style": "BHR-L11|0|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L11-1",
+      "type": "service-node",
+      "room": 10,
+      "x": 18.092,
+      "y": -0.052,
+      "z": 10.085,
+      "yaw": 0.0,
+      "style": "BHR-L11|1|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L11-2",
+      "type": "service-node",
+      "room": 10,
+      "x": 18.2,
+      "y": -0.052,
+      "z": 10.085,
+      "yaw": 0.0,
+      "style": "BHR-L11|2|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L11-3",
+      "type": "service-node",
+      "room": 10,
+      "x": 18.2,
+      "y": -1.1440000057220459,
+      "z": 10.085,
+      "yaw": 0.0,
+      "style": "BHR-L11|3|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L11-LOAD-0",
+      "type": "service-node",
+      "room": 10,
+      "x": 18.2,
+      "y": -0.052,
+      "z": 10.085,
+      "yaw": 0.0,
+      "style": "BHR-L11-LOAD|0|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L11-LOAD-1",
+      "type": "service-node",
+      "room": 10,
+      "x": 18.3,
+      "y": -0.052,
+      "z": 10.085,
+      "yaw": 0.0,
+      "style": "BHR-L11-LOAD|1|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L11-LOAD-2",
+      "type": "service-node",
+      "room": 10,
+      "x": 18.3,
+      "y": -0.052,
+      "z": 12.4,
+      "yaw": 0.0,
+      "style": "BHR-L11-LOAD|2|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L11-LOAD-3",
+      "type": "service-node",
+      "room": 10,
+      "x": 18.3,
+      "y": -0.025,
+      "z": 12.4,
+      "yaw": 0.0,
+      "style": "BHR-L11-LOAD|3|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L12-0",
+      "type": "service-node",
+      "room": 11,
+      "x": 18.092,
+      "y": -0.052,
+      "z": 10.092,
+      "yaw": 0.0,
+      "style": "BHR-L12|0|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L12-1",
+      "type": "service-node",
+      "room": 11,
+      "x": 18.092,
+      "y": -0.052,
+      "z": 20.415,
+      "yaw": 0.0,
+      "style": "BHR-L12|1|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L12-2",
+      "type": "service-node",
+      "room": 11,
+      "x": 18.2,
+      "y": -0.052,
+      "z": 20.415,
+      "yaw": 0.0,
+      "style": "BHR-L12|2|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L12-3",
+      "type": "service-node",
+      "room": 11,
+      "x": 18.2,
+      "y": -1.1440000057220459,
+      "z": 20.415,
+      "yaw": 0.0,
+      "style": "BHR-L12|3|ivory|ceiling-and-wall|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L12-LOAD-0",
+      "type": "service-node",
+      "room": 11,
+      "x": 18.2,
+      "y": -0.052,
+      "z": 20.415,
+      "yaw": 0.0,
+      "style": "BHR-L12-LOAD|0|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L12-LOAD-1",
+      "type": "service-node",
+      "room": 11,
+      "x": 18.3,
+      "y": -0.052,
+      "z": 20.415,
+      "yaw": 0.0,
+      "style": "BHR-L12-LOAD|1|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L12-LOAD-2",
+      "type": "service-node",
+      "room": 11,
+      "x": 18.3,
+      "y": -0.052,
+      "z": 17.6,
+      "yaw": 0.0,
+      "style": "BHR-L12-LOAD|2|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-L12-LOAD-3",
+      "type": "service-node",
+      "room": 11,
+      "x": 18.3,
+      "y": -0.025,
+      "z": 17.6,
+      "yaw": 0.0,
+      "style": "BHR-L12-LOAD|3|ivory|ceiling|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-OUTLET-0",
+      "type": "service-node",
+      "room": 13,
+      "x": 26.150000000000002,
+      "y": 0.5500038150001274,
+      "z": 29.555884571382755,
+      "yaw": 0.0,
+      "style": "BHR-OUTLET|0|black|source-terminal|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-OUTLET-1",
+      "type": "service-node",
+      "room": 13,
+      "x": 26.150000000000002,
+      "y": 0.5500038150001274,
+      "z": 29.595884571382754,
+      "yaw": 0.0,
+      "style": "BHR-OUTLET|1|black|source-terminal|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-OUTLET-2",
+      "type": "service-node",
+      "room": 13,
+      "x": 26.150000000000002,
+      "y": 0.012003815000127361,
+      "z": 29.595884571382754,
+      "yaw": 0.0,
+      "style": "BHR-OUTLET|2|black|source-terminal|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-EDGE-0",
+      "type": "service-node",
+      "room": 13,
+      "x": 26.150000000000002,
+      "y": 0.012003815000127361,
+      "z": 29.595884571382754,
+      "yaw": 0.0,
+      "style": "BHR-FEED-EDGE|0|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-EDGE-1",
+      "type": "service-node",
+      "room": 13,
+      "x": 26.150000000000002,
+      "y": 0.012049791367083455,
+      "z": 29.04614178567133,
+      "yaw": 0.0,
+      "style": "BHR-FEED-EDGE|1|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-EDGE-2",
+      "type": "service-node",
+      "room": 13,
+      "x": 26.150000000000002,
+      "y": 0.01253851297779733,
+      "z": 28.496398999959908,
+      "yaw": 0.0,
+      "style": "BHR-FEED-EDGE|2|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-EDGE-3",
+      "type": "service-node",
+      "room": 13,
+      "x": 26.150000000000002,
+      "y": 0.013096000758530195,
+      "z": 27.946656214248485,
+      "yaw": 0.0,
+      "style": "BHR-FEED-EDGE|3|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-EDGE-4",
+      "type": "service-node",
+      "room": 13,
+      "x": 26.150000000000002,
+      "y": 0.013653488674688822,
+      "z": 27.396913428537065,
+      "yaw": 0.0,
+      "style": "BHR-FEED-EDGE|4|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-EDGE-5",
+      "type": "service-node",
+      "room": 13,
+      "x": 26.150000000000002,
+      "y": 0.014210976495013895,
+      "z": 26.847170642825645,
+      "yaw": 0.0,
+      "style": "BHR-FEED-EDGE|5|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-EDGE-6",
+      "type": "service-node",
+      "room": 13,
+      "x": 26.150000000000002,
+      "y": 0.014768465586866415,
+      "z": 26.297427857114222,
+      "yaw": 0.0,
+      "style": "BHR-FEED-EDGE|6|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-EDGE-7",
+      "type": "service-node",
+      "room": 13,
+      "x": 26.150000000000002,
+      "y": 0.015325954164817338,
+      "z": 25.7476850714028,
+      "yaw": 0.0,
+      "style": "BHR-FEED-EDGE|7|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-EDGE-8",
+      "type": "service-node",
+      "room": 13,
+      "x": 26.150000000000002,
+      "y": 0.015883442026201528,
+      "z": 25.197942285691376,
+      "yaw": 0.0,
+      "style": "BHR-FEED-EDGE|8|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-EDGE-9",
+      "type": "service-node",
+      "room": 13,
+      "x": 26.150000000000002,
+      "y": 0.016440929793062775,
+      "z": 24.648199499979953,
+      "yaw": 0.0,
+      "style": "BHR-FEED-EDGE|9|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-EDGE-10",
+      "type": "service-node",
+      "room": 13,
+      "x": 26.150000000000002,
+      "y": 0.016697881867397422,
+      "z": 24.098456714268533,
+      "yaw": 0.0,
+      "style": "BHR-FEED-EDGE|10|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-EDGE-11",
+      "type": "service-node",
+      "room": 13,
+      "x": 26.150000000000002,
+      "y": 0.017550717083010967,
+      "z": 23.548713928557113,
+      "yaw": 0.0,
+      "style": "BHR-FEED-EDGE|11|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-EDGE-12",
+      "type": "service-node",
+      "room": 13,
+      "x": 26.150000000000002,
+      "y": 0.018403552579238106,
+      "z": 22.99897114284569,
+      "yaw": 0.0,
+      "style": "BHR-FEED-EDGE|12|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-EDGE-13",
+      "type": "service-node",
+      "room": 13,
+      "x": 26.150000000000002,
+      "y": 0.01925638705614387,
+      "z": 22.449228357134267,
+      "yaw": 0.0,
+      "style": "BHR-FEED-EDGE|13|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-EDGE-14",
+      "type": "service-node",
+      "room": 13,
+      "x": 26.150000000000002,
+      "y": 0.02010922053929877,
+      "z": 21.899485571422844,
+      "yaw": 0.0,
+      "style": "BHR-FEED-EDGE|14|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-EDGE-15",
+      "type": "service-node",
+      "room": 13,
+      "x": 26.150000000000002,
+      "y": 0.020962055435570007,
+      "z": 21.34974278571142,
+      "yaw": 0.0,
+      "style": "BHR-FEED-EDGE|15|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-EDGE-16",
+      "type": "service-node",
+      "room": 13,
+      "x": 26.150000000000002,
+      "y": 0.021814888702892263,
+      "z": 20.8,
+      "yaw": 0.0,
+      "style": "BHR-FEED-EDGE|16|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-APPROACH-0",
+      "type": "service-node",
+      "room": 13,
+      "x": 26.150000000000002,
+      "y": 0.021814888702892263,
+      "z": 20.8,
+      "yaw": 0.0,
+      "style": "BHR-FEED-APPROACH|0|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-APPROACH-1",
+      "type": "service-node",
+      "room": 13,
+      "x": 25.525,
+      "y": 0.020211497491065343,
+      "z": 20.8,
+      "yaw": 0.0,
+      "style": "BHR-FEED-APPROACH|1|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-APPROACH-2",
+      "type": "service-node",
+      "room": 13,
+      "x": 24.9,
+      "y": 0.018608107502528656,
+      "z": 20.8,
+      "yaw": 0.0,
+      "style": "BHR-FEED-APPROACH|2|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-CROSSING-SLEEVE-0",
+      "type": "service-node",
+      "room": 13,
+      "x": 24.9,
+      "y": 0.018608107502528656,
+      "z": 20.8,
+      "yaw": 0.0,
+      "style": "BHR-CROSSING-SLEEVE|0|black|buried-path-sleeve|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-CROSSING-SLEEVE-1",
+      "type": "service-node",
+      "room": 13,
+      "x": 24.9,
+      "y": -0.35,
+      "z": 20.8,
+      "yaw": 0.0,
+      "style": "BHR-CROSSING-SLEEVE|1|black|buried-path-sleeve|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-CROSSING-SLEEVE-2",
+      "type": "service-node",
+      "room": 13,
+      "x": 22.6,
+      "y": -0.35,
+      "z": 20.8,
+      "yaw": 0.0,
+      "style": "BHR-CROSSING-SLEEVE|2|black|buried-path-sleeve|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-CROSSING-SLEEVE-3",
+      "type": "service-node",
+      "room": 13,
+      "x": 22.6,
+      "y": 0.013077669291295009,
+      "z": 20.8,
+      "yaw": 0.0,
+      "style": "BHR-CROSSING-SLEEVE|3|black|buried-path-sleeve|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-HOUSE-0",
+      "type": "service-node",
+      "room": 13,
+      "x": 22.6,
+      "y": 0.013077669291295009,
+      "z": 20.8,
+      "yaw": 0.0,
+      "style": "BHR-FEED-HOUSE|0|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-HOUSE-1",
+      "type": "service-node",
+      "room": 13,
+      "x": 21.692,
+      "y": 0.012428206552592148,
+      "z": 20.8,
+      "yaw": 0.0,
+      "style": "BHR-FEED-HOUSE|1|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-WALL-0",
+      "type": "service-node",
+      "room": 13,
+      "x": 21.692,
+      "y": 0.012428206552592148,
+      "z": 20.8,
+      "yaw": 0.0,
+      "style": "BHR-FEED-WALL|0|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-WALL-1",
+      "type": "service-node",
+      "room": 13,
+      "x": 21.692,
+      "y": 0.012243309087316702,
+      "z": 20.18125,
+      "yaw": 0.0,
+      "style": "BHR-FEED-WALL|1|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-WALL-2",
+      "type": "service-node",
+      "room": 13,
+      "x": 21.692,
+      "y": 0.0122398329945344,
+      "z": 19.5625,
+      "yaw": 0.0,
+      "style": "BHR-FEED-WALL|2|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-WALL-3",
+      "type": "service-node",
+      "room": 13,
+      "x": 21.692,
+      "y": 0.012239832821997303,
+      "z": 18.94375,
+      "yaw": 0.0,
+      "style": "BHR-FEED-WALL|3|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-WALL-4",
+      "type": "service-node",
+      "room": 13,
+      "x": 21.692,
+      "y": 0.012239832875816967,
+      "z": 18.325000000000003,
+      "yaw": 0.0,
+      "style": "BHR-FEED-WALL|4|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-WALL-5",
+      "type": "service-node",
+      "room": 13,
+      "x": 21.692,
+      "y": 0.012239832821997303,
+      "z": 17.706250000000004,
+      "yaw": 0.0,
+      "style": "BHR-FEED-WALL|5|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-WALL-6",
+      "type": "service-node",
+      "room": 13,
+      "x": 21.692,
+      "y": 0.012239832821997303,
+      "z": 17.087500000000002,
+      "yaw": 0.0,
+      "style": "BHR-FEED-WALL|6|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-WALL-7",
+      "type": "service-node",
+      "room": 13,
+      "x": 21.692,
+      "y": 0.012239832821997303,
+      "z": 16.46875,
+      "yaw": 0.0,
+      "style": "BHR-FEED-WALL|7|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-WALL-8",
+      "type": "service-node",
+      "room": 13,
+      "x": 21.692,
+      "y": 0.012239832821997303,
+      "z": 15.850000000000001,
+      "yaw": 0.0,
+      "style": "BHR-FEED-WALL|8|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-WALL-9",
+      "type": "service-node",
+      "room": 13,
+      "x": 21.692,
+      "y": 0.012239832821997303,
+      "z": 15.231250000000001,
+      "yaw": 0.0,
+      "style": "BHR-FEED-WALL|9|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-WALL-10",
+      "type": "service-node",
+      "room": 13,
+      "x": 21.692,
+      "y": 0.01311429765493639,
+      "z": 14.6125,
+      "yaw": 0.0,
+      "style": "BHR-FEED-WALL|10|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-WALL-11",
+      "type": "service-node",
+      "room": 13,
+      "x": 21.692,
+      "y": 0.013114297654936392,
+      "z": 13.99375,
+      "yaw": 0.0,
+      "style": "BHR-FEED-WALL|11|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-WALL-12",
+      "type": "service-node",
+      "room": 13,
+      "x": 21.692,
+      "y": 0.013114297654936394,
+      "z": 13.375,
+      "yaw": 0.0,
+      "style": "BHR-FEED-WALL|12|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-WALL-13",
+      "type": "service-node",
+      "room": 13,
+      "x": 21.692,
+      "y": 0.013114297654936394,
+      "z": 12.75625,
+      "yaw": 0.0,
+      "style": "BHR-FEED-WALL|13|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-WALL-14",
+      "type": "service-node",
+      "room": 13,
+      "x": 21.692,
+      "y": 0.013114297654936394,
+      "z": 12.1375,
+      "yaw": 0.0,
+      "style": "BHR-FEED-WALL|14|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-WALL-15",
+      "type": "service-node",
+      "room": 13,
+      "x": 21.692,
+      "y": 0.013114297654936392,
+      "z": 11.51875,
+      "yaw": 0.0,
+      "style": "BHR-FEED-WALL|15|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-FEED-WALL-16",
+      "type": "service-node",
+      "room": 13,
+      "x": 21.692,
+      "y": 0.013114297654936392,
+      "z": 10.9,
+      "yaw": 0.0,
+      "style": "BHR-FEED-WALL|16|black|ground-cable|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-INLET-0",
+      "type": "service-node",
+      "room": 12,
+      "x": 21.692,
+      "y": 0.013114297654936392,
+      "z": 10.9,
+      "yaw": 0.0,
+      "style": "BHR-INLET|0|black|wall-entry|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-INLET-1",
+      "type": "service-node",
+      "room": 12,
+      "x": 21.692,
+      "y": 0.45,
+      "z": 10.9,
+      "yaw": 0.0,
+      "style": "BHR-INLET|1|black|wall-entry|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-INLET-2",
+      "type": "service-node",
+      "room": 12,
+      "x": 21.508,
+      "y": 0.45,
+      "z": 10.9,
+      "yaw": 0.0,
+      "style": "BHR-INLET|2|black|wall-entry|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-INLET-3",
+      "type": "service-node",
+      "room": 12,
+      "x": 21.508,
+      "y": -0.14,
+      "z": 10.9,
+      "yaw": 0.0,
+      "style": "BHR-INLET|3|black|wall-entry|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-INLET-4",
+      "type": "service-node",
+      "room": 12,
+      "x": 21.508,
+      "y": -0.14,
+      "z": 10.092,
+      "yaw": 0.0,
+      "style": "BHR-INLET|4|black|wall-entry|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-INLET-5",
+      "type": "service-node",
+      "room": 12,
+      "x": 15.092,
+      "y": -0.14,
+      "z": 10.092,
+      "yaw": 0.0,
+      "style": "BHR-INLET|5|black|wall-entry|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-INLET-6",
+      "type": "service-node",
+      "room": 12,
+      "x": 15.092,
+      "y": -0.14,
+      "z": 10.76,
+      "yaw": 0.0,
+      "style": "BHR-INLET|6|black|wall-entry|conduit-24mm-v1"
+    },
+    {
+      "id": "BHR-INLET-7",
+      "type": "service-node",
+      "room": 12,
+      "x": 15.092,
+      "y": -0.66,
+      "z": 10.76,
+      "yaw": 0.0,
+      "style": "BHR-INLET|7|black|wall-entry|conduit-24mm-v1"
+    }
+  ],
+  "source_authority": "HouseRebuildStory -> HouseGeneratorFeed -> HouseRebuildFitout; actual serialized nodes"
 }
