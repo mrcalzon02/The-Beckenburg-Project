@@ -1,9 +1,5 @@
-# House story construction review
+# House story and source wiring review
 
-`*-runtime.png` are actual shared renderer captures of supported household records,
-loose belongings and the visible generator feed. Native parcel overview is an
-editable scene geometry render; analytic sanctuary/hiding energy is runtime-only.
-Original model materials and pivots remain. These construction views do not prove
-complete mission, native editing, installed client or physical hardware acceptance.
+Seven actual runtime views show supported household records, original loose belongings, generator outlet, ground-supported perimeter cable and house inlet. The pedestrian crossing uses a short buried sleeve. Native overview is a geometry-only editable-source render, regenerated at first-principles-story-v1-4ae1c4bb4b9f1e3f with114189triangles/209packed images/32props. Analytic energy is runtime-only.
 
-Paused checkpoint: images are intermediate dressing/pre-visible-feed evidence. Cable review captures remain unfinished; native overview/export are the pre-feed revision. See story-construction.md and verification receipt.
+Current source and native vertices/UVs/sockets match. Runtime camera views and actual terrain support/crossing were inspected. Exact-source full regression/native/GPU and merged Pages acceptance remain pending; this is an isolated construction candidate, not the promoted live House. Earlier paused pre-feed evidence is retained in checkpoint history.

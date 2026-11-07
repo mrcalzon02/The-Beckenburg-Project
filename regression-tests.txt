@@ -226,6 +226,15 @@ SmokeTest
 AuthoredLevelPhysicsTest
 GroundRecoverySupportParityTest
 HouseRebuildPhysicsTest
+HouseRebuildFittingsTest
+HouseRebuildLandscapeTest
+HouseRebuildEnvelopeTest
+HouseRebuildFunctionsTest
+HouseRebuildPowerTest
+HouseRebuildFitoutTest
+HouseRebuildStoryTest
+HouseRebuildFitoutPowerTest
+HouseRebuildTextureTest
 AuthoredLevelReachabilityTest
 ChurchUpperDoorTest
 AuthoredLevelStateTest

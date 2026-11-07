@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 7195,
+  "count": 7198,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -3774,6 +3774,26 @@
       "sha256": "ed2b11e9ebe5aea097892b8593aa2ba1088bb531b35cc644127251a1a292ef8d"
     },
     {
+      "path": "development/captures/house-story/generator-service-outlet-runtime.png",
+      "url": "development/captures/house-story/generator-service-outlet-runtime.png",
+      "title": "Generator service outlet runtime",
+      "kind": "Runtime household story and source wiring",
+      "width": 1000,
+      "height": 625,
+      "bytes": 418878,
+      "sha256": "a5a4ff9169d7389f26336d97fcdd628f1ecfe62d357ca4d37704e82e31d6ef1f"
+    },
+    {
+      "path": "development/captures/house-story/house-service-inlet-runtime.png",
+      "url": "development/captures/house-story/house-service-inlet-runtime.png",
+      "title": "House service inlet runtime",
+      "kind": "Runtime household story and source wiring",
+      "width": 1000,
+      "height": 625,
+      "bytes": 533545,
+      "sha256": "fbfc6a2589dfdeaaaba808624f4cf23208c0d8db67475f7d6c53fc222971641e"
+    },
+    {
       "path": "development/captures/house-story/household-records-runtime.png",
       "url": "development/captures/house-story/household-records-runtime.png",
       "title": "Household records runtime",
@@ -3800,8 +3820,8 @@
       "kind": "Native geometry overview",
       "width": 1200,
       "height": 900,
-      "bytes": 1417956,
-      "sha256": "6872be0452ee2069b607bf9508f0666b52c383124355eff91015a7c511439d21"
+      "bytes": 1418959,
+      "sha256": "c6f8ecbf6dcae96597b2a8da653b196a1676b861ae8546786a962390814063e0"
     },
     {
       "path": "development/captures/house-story/saved-frame-runtime.png",
@@ -3822,6 +3842,16 @@
       "height": 625,
       "bytes": 672217,
       "sha256": "c8c73f3645740def0c0359cc3e9ffeaff201e3fcc165efd3607aa1a00e663472"
+    },
+    {
+      "path": "development/captures/house-story/visible-perimeter-feed-runtime.png",
+      "url": "development/captures/house-story/visible-perimeter-feed-runtime.png",
+      "title": "Visible perimeter feed runtime",
+      "kind": "Runtime household story and source wiring",
+      "width": 1000,
+      "height": 625,
+      "bytes": 334077,
+      "sha256": "9ccb2fa6157a50c3a11d6bc4fcc1b87e1bc6e51ecdc1b3118d2433f183acb44f"
     },
     {
       "path": "development/captures/wall-lamp-runtime/after/wall-lamp-0-off.png",

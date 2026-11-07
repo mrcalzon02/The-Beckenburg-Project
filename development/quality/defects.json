@@ -3448,13 +3448,35 @@
     {
       "id": "DEV-321",
       "title": "Visible generator feed review camera harness does not compile",
-      "status": "OPEN; paused WIP checkpoint at owner request",
+      "status": "SCOPED CORRECTION; current test compiles and actual cable review captures pass; exact-source CI pending",
       "affected": "HouseRebuildStoryTest visible feed camera review; isolated House construction candidate",
       "symptom": "First feed capture camera is blocked; attempted fallback calls nonexistent HouseMap.clearSight(Vec,Vec), causing javac cannot-find-symbol.",
       "cause": "Review camera API mismatch introduced while selecting an actual supported unobstructed viewpoint.",
-      "action": "Resume by using the actual existing optical API, compile fresh tests and run actual supported outlet/perimeter/inlet captures. Regenerate native/export artifacts for visible-feed source and obtain exact-source acceptance.",
-      "evidence": "development/levels/rebuild/verification/house-story-power-2026-11-07/rejected-feed-camera.log; checkpoint-notes.txt; latest HouseRebuildStoryTest.java source",
+      "action": "Use actual House clearLineOfSight doubles; select supported positions and test the visible surface rather than the occluded cable center. Native scene/export regenerated at visible-feed revision4ae1c4bb4b9f1e3f.",
+      "evidence": "development/levels/rebuild/verification/house-story-power-2026-11-07/rejected-feed-camera.log; checkpoint-notes.txt; latest HouseRebuildStoryTest.java source; HouseRebuildStoryTest.log and generator-service-outlet/visible-perimeter-feed/house-service-inlet runtime captures",
       "older_maps": "No older-map acceptance inferred. House remains isolated and unpromoted."
+    },
+    {
+      "id": "DEV-322",
+      "title": "Multiplayer animation acceptance races on copy-on-write packet sublist",
+      "status": "SCOPED CORRECTION; exact-source remote full suite pending",
+      "affected": "Mandatory packaged regression acceptance; House construction and actual hunter animation",
+      "symptom": "Main059ca123 full42363868962 fails LanHunterAnimationGameplayTest with ConcurrentModificationException in Peer.feed after observer animation pass.",
+      "cause": "Observed CI concurrency or accumulated stage execution, not a packaging failure",
+      "action": "Take immutable packet-array snapshots before slicing; retain all live TCP movement, posture and scene reset assertions. Actual packaged animation check passes.",
+      "evidence": "development/levels/rebuild/verification/house-story-power-2026-11-07/main-059ca123-full-42363868962.log; LanHunterAnimationGameplayTest.log; scoped-results.json",
+      "older_maps": "No map or physical hardware acceptance inferred from test repair. Preserve per-location audit and exact-source full suite gate."
+    },
+    {
+      "id": "DEV-323",
+      "title": "Accumulated House acceptance bundle exceeds per-test process deadline",
+      "status": "SCOPED CORRECTION; exact-source remote full suite pending",
+      "affected": "Mandatory packaged regression acceptance; House construction and actual hunter animation",
+      "symptom": "Main059ca123 full42363868962 kills HouseRebuildPhysicsTest after90seconds; actual suite totals347/2 despite green wrapper.",
+      "cause": "Observed CI concurrency or accumulated stage execution, not a packaging failure",
+      "action": "Register every existing stage check as a mandatory isolated manifest entry, including both physical power variants and all four texture variants. Preserve90second per-entry deadline; remove no assertions.",
+      "evidence": "development/levels/rebuild/verification/house-story-power-2026-11-07/main-059ca123-full-42363868962.log; LanHunterAnimationGameplayTest.log; scoped-results.json",
+      "older_maps": "No map or physical hardware acceptance inferred from test repair. Preserve per-location audit and exact-source full suite gate."
     }
   ],
   "audit_categories": [

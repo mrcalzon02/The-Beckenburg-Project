@@ -1,5 +1,5 @@
 {
-  "status": "PAUSED WIP CHECKPOINT; NOT ACCEPTED",
+  "status": "LOCAL PACKAGED AND NATIVE PASS; exact-source remote359/full/native/GPU acceptance pending",
   "parent_head": "d7d6ccdebe13b047eedb72f5643dd80c2c5eeae4",
   "parent_merge": "059ca12384bfbf3201ead1fe3358396848ccab57",
   "main_inspected": "889d7b7e7fc7f1403f3c13a1e2049b26d13c914c",
@@ -15,7 +15,7 @@
     "run": 42364121655,
     "result": "SUCCESS; actual hiding-energy PNG bytes match deployed Pages"
   },
-  "current_manifest": 350,
+  "current_manifest": 359,
   "checks": [
     "GhostElectricalTest",
     "HouseRebuildPhysicsTest",
@@ -30,14 +30,14 @@
   ],
   "native": {
     "level": "briar-rebuild",
-    "revision": "first-principles-story-v1-6a53a71747de0b20",
-    "triangles": 113745,
+    "revision": "first-principles-story-v1-4ae1c4bb4b9f1e3f",
+    "triangles": 114189,
     "packed_images": 209,
     "props": 32,
     "spawns": 15,
-    "native_sha256": "b613691ce999a182a6d9763b8e0ba256423aae1c5c9582357dd80aca74421c84",
-    "definition_sha256": "ef26672352ea8549689fc863657e6c2164b1a641b92dc2e479b9336359ccb5bc",
-    "geometry_sha256": "521066b1acba3f3e0f86e9e9893184e8d1d22f423d0393c2eb0a1d8da1250071",
+    "native_sha256": "eeb03df760b3bd3476f8e39cae48b8f433e1c4758ad1f96fc2069a987d5117f3",
+    "definition_sha256": "ad13a8c2d235ef7c32e99824691640471916c4b6615a12c02c0e04e341ff60a4",
+    "geometry_sha256": "1bdd2ed4764af237396b8171f7ac8fa34fa6e027e4a302a1ccf312b895f1dd90",
     "result": "PASS every source vertex/UV; packed images; original sockets; native file unchanged",
     "acceptance": "construction candidate only; terrain/boundary and complete map gates open"
   },
@@ -49,9 +49,91 @@
     "All29 packets and subsequent unfinished maps remain active"
   ],
   "current_limitations": [
-    "Latest camera-review edit does not compile: HouseMap.clearSight(Vec,Vec) does not exist. No implementation repair requested at pause.",
-    "Visible-feed packaged source compiled; ground/contact and crossing assertions passed before runtime capture failed at blocked generator-service-outlet camera.",
-    "Native blend, export ZIP, source definition, belongings report and native verification describe the PRE-visible-feed source revision first-principles-story-v1-6a53a71747de0b20. Regenerate after camera repair and final verification; do not promote these as final-source parity.",
-    "Earlier focused gameplay, electrical, loose-body and House physics results predate the visible-feed change. Exact-source full350/native/GPU acceptance pending."
+    "House remains isolated and live dispatch legacy",
+    "Radiators/plumbing and authored location encounter unfinished",
+    "Exact-source359 remote full/native/GPU and merged Pages pending",
+    "No new physical hardware acceptance"
+  ],
+  "main_full_observed": {
+    "run": 42363868962,
+    "sha": "059ca12384bfbf3201ead1fe3358396848ccab57",
+    "passed": 347,
+    "failed": 2,
+    "skipped": 0,
+    "manifest": 349,
+    "wrapper": "SUCCESS despite actual failures"
+  },
+  "repairs": [
+    "Copy-on-write packet snapshot race; actual gameplay animation passes",
+    "All former compound House checks individually mandatory with unchanged90second process deadline",
+    "Camera API/surface visibility fixed; seven actual runtime captures reviewed"
+  ],
+  "scoped_results": [
+    {
+      "test": "HouseRebuildPhysicsTest",
+      "exit_code": 0,
+      "seconds": 4.312,
+      "deadline": 90
+    },
+    {
+      "test": "HouseRebuildFittingsTest",
+      "exit_code": 0,
+      "seconds": 2.735,
+      "deadline": 90
+    },
+    {
+      "test": "HouseRebuildLandscapeTest",
+      "exit_code": 0,
+      "seconds": 7.89,
+      "deadline": 90
+    },
+    {
+      "test": "HouseRebuildEnvelopeTest",
+      "exit_code": 0,
+      "seconds": 10.329,
+      "deadline": 90
+    },
+    {
+      "test": "HouseRebuildFunctionsTest",
+      "exit_code": 0,
+      "seconds": 14.687,
+      "deadline": 90
+    },
+    {
+      "test": "HouseRebuildPowerTest",
+      "exit_code": 0,
+      "seconds": 3.172,
+      "deadline": 90
+    },
+    {
+      "test": "HouseRebuildFitoutTest",
+      "exit_code": 0,
+      "seconds": 10.578,
+      "deadline": 90
+    },
+    {
+      "test": "HouseRebuildStoryTest",
+      "exit_code": 0,
+      "seconds": 12.031,
+      "deadline": 90
+    },
+    {
+      "test": "HouseRebuildFitoutPowerTest",
+      "exit_code": 0,
+      "seconds": 3.313,
+      "deadline": 90
+    },
+    {
+      "test": "HouseRebuildTextureTest",
+      "exit_code": 0,
+      "seconds": 14.14,
+      "deadline": 90
+    },
+    {
+      "test": "BeckenburgRegressionManifestTest",
+      "exit_code": 0,
+      "seconds": 1.235,
+      "deadline": 90
+    }
   ]
 }

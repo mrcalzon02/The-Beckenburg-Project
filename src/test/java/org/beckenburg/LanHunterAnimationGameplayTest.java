@@ -3,7 +3,6 @@ package org.beckenburg;
 import java.awt.event.KeyEvent;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -32,10 +31,10 @@ public final class LanHunterAnimationGameplayTest {
                 for(int i=start;i<frames.size();i++)if(frames.get(i).startsWith(prefix))return frames.get(i);
                 Thread.sleep(10);
             }
-            throw new AssertionError("Missing "+prefix+"; tail="+frames.subList(Math.max(0,frames.size()-15),frames.size()));
+            var snapshot=List.copyOf(frames);throw new AssertionError("Missing "+prefix+"; tail="+snapshot.subList(Math.max(0,snapshot.size()-15),snapshot.size()));
         }
         void feed()throws Exception{
-            int end=frames.size();List<String> pending=new ArrayList<>(frames.subList(cursor,end));cursor=end;
+            var snapshot=List.copyOf(frames);List<String> pending=snapshot.subList(cursor,snapshot.size());cursor=snapshot.size();
             SwingUtilities.invokeAndWait(()->{for(String packet:pending)panel.onEvent(packet);});
         }
         SceneRenderer renderer()throws Exception{return (SceneRenderer)field(panel,"renderer");}

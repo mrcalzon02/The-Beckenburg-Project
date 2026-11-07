@@ -3,7 +3,7 @@ C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\developme
 C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\build_scene.py:98: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
   scene=bpy.context.scene;scene.world=bpy.data.worlds.new('Night environment');scene.world.use_nodes=True
 Info: Saved as "briar-rebuild-story-construction.blend"
-EDITABLE_LEVEL_COMPLETE briar-rebuild-story 113745 runtime triangles
+EDITABLE_LEVEL_COMPLETE briar-rebuild-story 114189 runtime triangles
 Blender 5.0.0 (hash a37564c4df7a built 2025-11-18 11:06:54)
 
 Blender quit

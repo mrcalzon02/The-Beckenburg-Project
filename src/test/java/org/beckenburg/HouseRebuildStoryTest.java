@@ -66,7 +66,9 @@ public final class HouseRebuildStoryTest {
             for(int i=0;i<v.length;i++){var p=v[i];check(captureMap.traversable(p[0],p[2]-1.62,p[1]),"Review camera blocked "+names[i]);r.x=p[0];r.z=p[1];r.eyeHeight=p[2];r.yaw=p[3];r.pitch=p[4];r.drawNetwork(captureMap,List.of(),-1,.4);ImageIO.write(r.image(),"png",out.resolve(names[i]+"-runtime.png").toFile());}
             double[][] feed={{26.0,31.1,26.15,29.6},{25.1,26.4,26.15,24.5},{23.4,12.4,21.692,10.9}};String[] feedNames={"generator-service-outlet","visible-perimeter-feed","house-service-inlet"};
             for(int i=0;i<feed.length;i++){var p=feed[i];double x=p[0],z=p[1],y=captureMap.groundHeight(x,z,13);
-                if(!captureMap.traversable(x,y,z)){boolean found=false;for(double radius:new double[]{1.2,1.6,2.0})for(int n=0;n<64&&!found;n++){double a=n*Math.PI/32,tx=p[2]+Math.sin(a)*radius,tz=p[3]+Math.cos(a)*radius,ty=captureMap.groundHeight(tx,tz,13);if(captureMap.traversable(tx,ty,tz)&&captureMap.clearSight(new Vec(tx,ty+1.62,tz),new Vec(p[2],.55,p[3]))){x=tx;y=ty;z=tz;found=true;}}check(found,"No actual feed review approach "+feedNames[i]);}
+                if(!captureMap.traversable(x,y,z)){boolean found=false;for(double radius:new double[]{.65,.85,1.05,1.3,1.6,2.0})for(int n=0;n<64&&!found;n++){double a=n*Math.PI/32,tx=p[2]+Math.sin(a)*radius,tz=p[3]+Math.cos(a)*radius,ty=captureMap.groundHeight(tx,tz,13);
+                    double length=Math.sqrt(radius*radius+Math.pow(ty+1.62-.55,2)),t=1-.04/length;
+                    if(captureMap.traversable(tx,ty,tz)&&captureMap.clearLineOfSight(tx,ty+1.62,tz,tx+(p[2]-tx)*t,ty+1.62+(.55-ty-1.62)*t,tz+(p[3]-tz)*t)){x=tx;y=ty;z=tz;found=true;}}check(found,"No actual feed review approach "+feedNames[i]);}
                 r.x=x;r.z=z;r.eyeHeight=y+1.62;r.yaw=Math.atan2(p[2]-x,p[3]-z);r.pitch=-.55;r.drawNetwork(captureMap,List.of(),-1,.4);ImageIO.write(r.image(),"png",out.resolve(feedNames[i]+"-runtime.png").toFile());}
         }
         System.out.println("PASS8individually authored source-supported loose bodies,20physical steps,no deleted-parent floaters,3actual readable canonical records and required routes="+audit.positions());
