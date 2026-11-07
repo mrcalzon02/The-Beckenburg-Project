@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 6192,
+  "count": 6215,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -202,6 +202,56 @@
       "height": 1000,
       "bytes": 650860,
       "sha256": "04fe72c6bde905818895aa34d5c88f93dcaa58d17105d80f15a99fddc88a26c3"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/keeper-finish/clay.png",
+      "url": "development/assets/castle-museum/previews/keeper-finish/clay.png",
+      "title": "Clay",
+      "kind": "Model inspection",
+      "width": 800,
+      "height": 900,
+      "bytes": 580181,
+      "sha256": "26dc687bd86fbc43fa352c06d8b15675eb6a2191d7d0bd1254ef1e12c189ba1c"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/keeper-finish/front.png",
+      "url": "development/assets/castle-museum/previews/keeper-finish/front.png",
+      "title": "Front",
+      "kind": "Model inspection",
+      "width": 800,
+      "height": 900,
+      "bytes": 668935,
+      "sha256": "9dad0c9409584b96a1c2ab2021fc348f8c7e01f48297bcf6b863910fcfe2fcc6"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/keeper-finish/quarter.png",
+      "url": "development/assets/castle-museum/previews/keeper-finish/quarter.png",
+      "title": "Quarter",
+      "kind": "Model inspection",
+      "width": 800,
+      "height": 900,
+      "bytes": 688895,
+      "sha256": "274f81b9fc23591a6d3289e0df2dc0e11d928bd84c819233e421f3b8fb6ea56c"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/keeper-finish/rear.png",
+      "url": "development/assets/castle-museum/previews/keeper-finish/rear.png",
+      "title": "Rear",
+      "kind": "Model inspection",
+      "width": 800,
+      "height": 900,
+      "bytes": 645423,
+      "sha256": "f883f10d4f79686a2769acf9bbe3b1b07b48eb2a06e0c87f504342aede831e0e"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/keeper-finish/side.png",
+      "url": "development/assets/castle-museum/previews/keeper-finish/side.png",
+      "title": "Side",
+      "kind": "Model inspection",
+      "width": 800,
+      "height": 900,
+      "bytes": 660681,
+      "sha256": "a74f2299170d5eb52ac4f3e56211474bfe51397502087f040c0dafdf0a4101cc"
     },
     {
       "path": "development/assets/castle-museum/previews/level_castle_armour_display-clay-feet-front.png",
@@ -1062,6 +1112,56 @@
       "height": 1000,
       "bytes": 653013,
       "sha256": "fd5329d33901ad8cd2d002e3815b627b42560b5c0184e7f3a6ba0387b97a280b"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-keeper-inherited-uv/clay.png",
+      "url": "development/assets/castle-museum/previews/rejected-keeper-inherited-uv/clay.png",
+      "title": "Clay",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 900,
+      "bytes": 580181,
+      "sha256": "eda46a811fa1cd29f604f90156eb75bb82943d7a65e9d6e0803737f085bc7ac0"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-keeper-inherited-uv/front.png",
+      "url": "development/assets/castle-museum/previews/rejected-keeper-inherited-uv/front.png",
+      "title": "Front",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 900,
+      "bytes": 644516,
+      "sha256": "c1d50549e0459615928d70b0b75a1fbe5cf184a8db6a51eecbc47f7e423b2dad"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-keeper-inherited-uv/quarter.png",
+      "url": "development/assets/castle-museum/previews/rejected-keeper-inherited-uv/quarter.png",
+      "title": "Quarter",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 900,
+      "bytes": 666053,
+      "sha256": "0859002b49039f32ae63814c9dc99bc647fc045fded1cde2b39e6f861f074279"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-keeper-inherited-uv/rear.png",
+      "url": "development/assets/castle-museum/previews/rejected-keeper-inherited-uv/rear.png",
+      "title": "Rear",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 900,
+      "bytes": 622091,
+      "sha256": "331c588a2d74cbb0f80b15f71cd8addb539720986d8de45ba4e2a91901226c93"
+    },
+    {
+      "path": "development/assets/castle-museum/previews/rejected-keeper-inherited-uv/side.png",
+      "url": "development/assets/castle-museum/previews/rejected-keeper-inherited-uv/side.png",
+      "title": "Side",
+      "kind": "Rejected model study",
+      "width": 800,
+      "height": 900,
+      "bytes": 639697,
+      "sha256": "61a3aecf9817917f65208ebd1988b721a88af8a6f2444ab8b2121c6842cc2913"
     },
     {
       "path": "development/assets/castle-museum/previews/rejected-open-spandrels/level_castle_great_fireplace-front.png",
@@ -2832,6 +2932,36 @@
       "height": 512,
       "bytes": 296278,
       "sha256": "621f975fdaf5087a67f865c294583f7d803794d070e79565a940bf60d86c7aca"
+    },
+    {
+      "path": "development/captures/castle-training-ui/lesson-train-a-ui.png",
+      "url": "development/captures/castle-training-ui/lesson-train-a-ui.png",
+      "title": "Lesson train a ui",
+      "kind": "Game UI verification",
+      "width": 1000,
+      "height": 700,
+      "bytes": 24429,
+      "sha256": "90c3be8021917f169e72fd6a53d4f21143ec3835a0a5d2a455db0f9f92269f38"
+    },
+    {
+      "path": "development/captures/castle-training-ui/lesson-train-b-ui.png",
+      "url": "development/captures/castle-training-ui/lesson-train-b-ui.png",
+      "title": "Lesson train b ui",
+      "kind": "Game UI verification",
+      "width": 1000,
+      "height": 700,
+      "bytes": 24020,
+      "sha256": "835b3db4e6b1676d2fbb32dd6588bc3a033beecac186ae44afee21585518ecec"
+    },
+    {
+      "path": "development/captures/castle-training-ui/lesson-train-c-ui.png",
+      "url": "development/captures/castle-training-ui/lesson-train-c-ui.png",
+      "title": "Lesson train c ui",
+      "kind": "Game UI verification",
+      "width": 1000,
+      "height": 700,
+      "bytes": 24078,
+      "sha256": "8b61efbfa46333749e49a671621db8c0d14a75e0f453a780719e487aa070dd43"
     },
     {
       "path": "development/captures/wall-lamp-runtime/after/wall-lamp-0-off.png",
@@ -58156,6 +58286,56 @@
       "sha256": "6e3a0be5bb4b88d4d2a26bd5788b56977db6cd7d4c363ac3f2f53c89ed8a3298"
     },
     {
+      "path": "development/levels/rebuild/captures/castle-construction/finish-dining-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/finish-dining-runtime.png",
+      "title": "Finish dining runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 834442,
+      "sha256": "eee5effb12079cb9e8f4e81ae01cef56194a374ad2f1fdc789dda17980823875"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/finish-keeper-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/finish-keeper-runtime.png",
+      "title": "Finish keeper runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 466582,
+      "sha256": "6089ccd649e45980f3fc72b6326a0ccca5a91bb2fd142cf21ca9308a665fd256"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/finish-kitchen-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/finish-kitchen-runtime.png",
+      "title": "Finish kitchen runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 548606,
+      "sha256": "f8b690dbfe68e48de7bf88b53cd51312e9fe83efaa04418f8359073efb3029fe"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/finish-lodging-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/finish-lodging-runtime.png",
+      "title": "Finish lodging runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 265517,
+      "sha256": "5d1c925b17ca4acad80435467ac3ae7a225384467e9e4616a0c8c3304a20c9b8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/finish-vault-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/finish-vault-runtime.png",
+      "title": "Finish vault runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 481209,
+      "sha256": "04ffc688317ec7c7b06c1966a83ecc9adc6a2f789ca0bbead92138a77c46e456"
+    },
+    {
       "path": "development/levels/rebuild/captures/castle-construction/fireplace-0-runtime.png",
       "url": "development/levels/rebuild/captures/castle-construction/fireplace-0-runtime.png",
       "title": "Fireplace 0 runtime",
@@ -58296,6 +58476,26 @@
       "sha256": "513f96e90957af88f9eba34c9f1ebaee636f92d2c5e432e5516fad4433e90598"
     },
     {
+      "path": "development/levels/rebuild/captures/castle-construction/rejected-finish-keeper-facing.png",
+      "url": "development/levels/rebuild/captures/castle-construction/rejected-finish-keeper-facing.png",
+      "title": "Rejected finish keeper facing",
+      "kind": "Rejected runtime study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 466419,
+      "sha256": "515c9fcb9d5ae0b9559747538988a3b9ab4ec19bd69f521570fe416024ff97ce"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/rejected-finish-vault-facing.png",
+      "url": "development/levels/rebuild/captures/castle-construction/rejected-finish-vault-facing.png",
+      "title": "Rejected finish vault facing",
+      "kind": "Rejected runtime study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 479468,
+      "sha256": "97ca44a23b2e9c7f61387ce77cf6ed9591c249ac4bb00d90bf6abbe50461e4da"
+    },
+    {
       "path": "development/levels/rebuild/captures/castle-construction/rejected-plant-overview-runtime.png",
       "url": "development/levels/rebuild/captures/castle-construction/rejected-plant-overview-runtime.png",
       "title": "Rejected plant overview runtime",
@@ -58354,6 +58554,36 @@
       "height": 625,
       "bytes": 373598,
       "sha256": "4959e70a9bd153a033eeb078b911df01f003be137c9822f86730dc11998d85e6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/training-train-a-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/training-train-a-runtime.png",
+      "title": "Training train a runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 499320,
+      "sha256": "7b99bfbe1b103fa9fbec56d611d32220743fc4919e4a89be562d0456f9d462ef"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/training-train-b-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/training-train-b-runtime.png",
+      "title": "Training train b runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 488182,
+      "sha256": "bfadc3cd8c279d98848242171ced87a1909e86e684626a3939ece456c6ff43f5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/castle-construction/training-train-c-runtime.png",
+      "url": "development/levels/rebuild/captures/castle-construction/training-train-c-runtime.png",
+      "title": "Training train c runtime",
+      "kind": "Runtime capture",
+      "width": 1000,
+      "height": 625,
+      "bytes": 490317,
+      "sha256": "22527868b565685eebb69cb47c6dae57fe6117add0a544f2a5fde8995c82d090"
     },
     {
       "path": "development/levels/rebuild/captures/castle-construction/upper-hall-runtime.png",

@@ -3834,17 +3834,101 @@ Older-map obligation: Shared resource/material origin updates every same-ID inst
 
 ### DEV-283 — Signed training annex remains excluded from native saved-spawn validation
 
-**Status:** open; reproduced; candidate training changes preserved separately during owner-priority material repair · **Affected:** CastleLevelEdits.setSpawn and saved-document spawn validation for negative-X annex
+**Status:** fixed-scoped; all three native spawn validators share signed bounds; actual negative-X save/reopen passes · **Affected:** CastleLevelEdits.setSpawn and saved-document spawn validation for negative-X annex
 
 setSpawn(-14,18.4,PI) rejects Invalid playable spawn although the annex exists in signed authoring bounds.
 
-Cause / uncertainty: Legacy minimumX1 remains in setter/decoder while native CastleWorldBounds.MIN_X is-18.
+Cause / uncertainty: Legacy minimumX1 remained independently in setter, decoder and Snapshot constructor. Fixing only setter/decoder still failed actual saved snapshot construction.
 
-Fix / next action: Resume preserved training work, use consistent signed native spawn bounds, test real annex support plus save/reopen and invalid-bound controls. Not part of the published workbench model correction.
+Fix / next action: Use CastleWorldBounds.spawn for setter/decoder/Snapshot. Preserve courtyard default; invalid signed bound refuses without mutation. New training remains attached to actual saved desks/inlays and does not overwrite custom documents.
 
-Evidence and verification: verification/workbench-materials-2026-11-06/annex-spawn-control.log; CastleLevelEdits source guards; local build/training-inflight preserves candidate source changes.
+Evidence and verification: verification/castle-finish-2026-11-06/training-rejected-snapshot-spawn.log; CastleTrainingLessonTest valid bay spawns/native save/reopen and invalid bound controls.
 
 Older-map obligation: Positive existing spawns must remain unchanged; this is a Castle-annex persistence obligation, not proof that other signed maps are audited.
+
+### DEV-284 — Retained keeper study is an assembly rather than continuous carved stone
+
+**Status:** fixed-scoped in final Castle fit-out checkpoint · **Affected:** Castle finishing candidates and their inspection tooling only
+
+Robe, face, mantle and hands retain primitive boundaries; robe-to-plinth gap undermines a carved figure.
+
+Cause / uncertainty: Separate primitive sculpture study was never finished or approved.
+
+Fix / next action: Preserve original study; bridge robe/plinth in real stone, voxel-union and decimate to1080tri. Independent shipped export is one connected watertight solid on its plinth; actual15cm lift fails.
+
+Evidence and verification: keeper-finish-review.json, keeper-independent-review.json, actual native keeper capture; original founder_statue.blend remains preserved.
+
+Older-map obligation: No unaudited older map or model is accepted. Preserve original source assets; review reused models/placements individually.
+
+### DEV-285 — Inherited UV layer hides new keeper surfacing
+
+**Status:** fixed-scoped in final Castle fit-out checkpoint · **Affected:** Castle finishing candidates and their inspection tooling only
+
+First exported limestone renders show stretched streaks rather than generated stone and face/codex regions.
+
+Cause / uncertainty: New authored UV layer was added after an inherited remeshed source UV layer; export used the first map.
+
+Fix / next action: Remove inherited UVs, assign exactly one authored region map and one actual material; inspect final reimported export and assert one UV layer.
+
+Evidence and verification: previews/rejected-keeper-inherited-uv; final keeper-finish previews and independent report.
+
+Older-map obligation: No unaudited older map or model is accepted. Preserve original source assets; review reused models/placements individually.
+
+### DEV-286 — First native collection fittings face their backs into the room
+
+**Status:** fixed-scoped in final Castle fit-out checkpoint · **Affected:** Castle finishing candidates and their inspection tooling only
+
+Actual Castle view shows rear of keeper and vault cabinet doors facing the wall.
+
+Cause / uncertainty: Blender -Y front exports to glTF +Z; native yaw0 faces south.
+
+Fix / next action: Rotate keeper and south-wall cabinets PI; west-wall shelf -PI/2. Preserve exact source dimensions and recheck whole-footprint overlap/support.
+
+Evidence and verification: Rejected native PNGs and final finish-keeper/finish-vault-runtime.png; CastleFinishPlacementTest.
+
+Older-map obligation: No unaudited older map or model is accepted. Preserve original source assets; review reused models/placements individually.
+
+### DEV-287 — Candidate inspection confuses diagnostic domains and lazy packed images
+
+**Status:** fixed-scoped in final Castle fit-out checkpoint · **Affected:** Castle finishing candidates and their inspection tooling only
+
+Initial checks flag supported kitchen furniture and valid packed source images; attempted cameras also occupy existing hearth/wardrobe/masonry clearance.
+
+Cause / uncertainty: Ground floor authority includes CastleRooms.ground, not only explicit upper/cellar floor surfaces or exterior terrain. Blender packed pixels load lazily; unused old material images are not the delivered sculpture.
+
+Fix / next action: Use actual native ground support plus real cellar opening exclusion; inspect only material-connected packed images and force pixel decoding. Move review cameras to supported clear points; preserve existing collision.
+
+Evidence and verification: keeper-rejected-packing-check.log, keeper-pack-debug.log, FinishSupport.java, castle-finish-rejected-camera-route.log; final actual native captures; no support/collision threshold relaxed.
+
+Older-map obligation: No unaudited older map or model is accepted. Preserve original source assets; review reused models/placements individually.
+
+### DEV-288 — Kitchen provisions chest obstructs entry light switch approach
+
+**Status:** fixed-scoped in final Castle fit-out checkpoint · **Affected:** Castle finishing candidates and their inspection tooling only
+
+Existing actual CastleGroundConstructionTest fails Switch inaccessible after room refit at6.27/29.4.
+
+Cause / uncertainty: New kitchen chest was placed in the established switch operating envelope.
+
+Fix / next action: Move chest to supported rear service corner5.6/33.1. Preserve switch coordinates, full model size, clear kitchen aisle and rerun actual whole-Castle access/lighting checks.
+
+Evidence and verification: castle-finish-rejected-switch.log; final CastleGroundConstructionTest and CastleFinishPlacementTest.
+
+Older-map obligation: No unaudited older map or model is accepted. Preserve original source assets; review reused models/placements individually.
+
+### DEV-289 — Symmetric dining seats crowd every direct table approach
+
+**Status:** fixed-scoped in final Castle fit-out checkpoint · **Affected:** Castle finishing candidates and their inspection tooling only
+
+Existing CastleHubIntegrationTest cannot reach any of the four table approach points.
+
+Cause / uncertainty: Four chairs centered on the four table sides occupy all four existing approach envelopes.
+
+Fix / next action: Offset the north seat55cm along its table edge, retaining source scale, four seats, no model overlap and an actual clear table approach. Retain the existing integration check unchanged.
+
+Evidence and verification: castle-finish-rejected-table-approach.log; final CastleHubIntegrationTest, CastleFinishPlacementTest and dining capture.
+
+Older-map obligation: No unaudited older map or model is accepted. Preserve original source assets; review reused models/placements individually.
 
 ## Required audit categories
 

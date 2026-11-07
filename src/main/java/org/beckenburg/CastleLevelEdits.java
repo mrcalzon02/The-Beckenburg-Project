@@ -197,7 +197,7 @@ public final class CastleLevelEdits {
                 var slot=CastleDoorSlots.require(door.getKey());
                 if(door.getValue()==CastleDoorSlots.Type.EMPTY||slot.gate()!=(door.getValue()==CastleDoorSlots.Type.PORTCULLIS))throw new IllegalArgumentException("Invalid snapshot door");
             }
-            if(!Double.isFinite(spawnX+spawnZ+spawnYaw)||spawnX<1||spawnX>42||spawnZ<1||spawnZ>34)throw new IllegalArgumentException("Invalid snapshot spawn");
+            if(!CastleWorldBounds.spawn(spawnX,spawnZ,spawnYaw))throw new IllegalArgumentException("Invalid snapshot spawn");
         }
         private static Map<String,double[]> copyStations(Map<String,double[]> source){
             var copy=new LinkedHashMap<String,double[]>();
@@ -326,6 +326,8 @@ public final class CastleLevelEdits {
         CastleUpper.installDefaults(surfaces,props,lamps);
         CastleMuseum.installDefaults(props);
         CastlePlant.installDefaults(props);
+        CastleTraining.installDefaults(props);
+        CastleFinish.installDefaults(props);
         for(var station:CastleHubMap.Station.values())
             stations.put(station,new double[]{station.x,station.z});
         spawnX=13.5;spawnZ=19.3;spawnYaw=Math.PI;
@@ -368,7 +370,7 @@ public final class CastleLevelEdits {
         stations.put(Objects.requireNonNull(station),new double[]{x,z});revision++;
     }
     public synchronized void setSpawn(double x,double z,double yaw){
-        if(!Double.isFinite(x+z+yaw)||x<1||x>42||z<1||z>34)
+        if(!CastleWorldBounds.spawn(x,z,yaw))
             throw new IllegalArgumentException("Invalid playable spawn");
         spawnX=x;spawnZ=z;spawnYaw=yaw;revision++;
     }
@@ -529,7 +531,7 @@ public final class CastleLevelEdits {
                 }
             }
             double sx=number(p,"spawn.x"),sz=number(p,"spawn.z"),syaw=number(p,"spawn.yaw");
-            if(!Double.isFinite(sx+sz+syaw)||sx<1||sx>42||sz<1||sz>34)
+            if(!CastleWorldBounds.spawn(sx,sz,syaw))
                 throw new IllegalArgumentException("Bad player spawn");
             // Version-1 user saves have no authored geometry list. Keep their
             // original architecture and transfer the old wall-paint overrides.

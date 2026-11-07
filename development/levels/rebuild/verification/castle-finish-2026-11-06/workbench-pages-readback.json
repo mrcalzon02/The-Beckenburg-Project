@@ -1,0 +1,35 @@
+{
+  "pages_run": 42333032712,
+  "merged_source": "753e637b942fef3b2b7a5cd00b6bac9dc528274d",
+  "status": "PASS",
+  "verified": {
+    "beckenburg-development-gallery.html": {
+      "bytes": 2518363,
+      "sha256": "de7163c1fa6a827700dfb9f0de33c3d73f5a0525d6ba18045c075458abb79d8e"
+    },
+    "development/gallery/index.json": {
+      "bytes": 2873655,
+      "sha256": "e348d72f2c366871119fb5e094d7e44cda490a6cbeffd21774d6a7a16becb644"
+    },
+    "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-quarter.png": {
+      "bytes": 993336,
+      "sha256": "05f9b64eb3b1e0466b412374bb2a7b56441fe7e456286df20e0f4287134d9e94"
+    },
+    "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-quarter.png": {
+      "bytes": 951979,
+      "sha256": "cc6da1be2d52d5d864b79af3be80e0e7e4e4dd997c246a3efaf34f8b2d57b2ab"
+    },
+    "development/levels/rebuild/captures/castle-construction/workbench-material-0-runtime.png": {
+      "bytes": 472044,
+      "sha256": "55002b85470d7cd20cfdb04f7b22cdf79040a12cc65798335b840fa2c56888d8"
+    },
+    "development/levels/rebuild/captures/castle-construction/workbench-material-1-runtime.png": {
+      "bytes": 522764,
+      "sha256": "a71c7b323efa9d95b9172009343e397fbed63307a6c81ae832bf2e387a0b5130"
+    },
+    "development/levels/rebuild/captures/castle-construction/plant-services-0-runtime.png": {
+      "bytes": 392762,
+      "sha256": "c8cb408b89befaf495cc8e69a93c28ced4eceed97bbe300bdb15133449f05a96"
+    }
+  }
+}

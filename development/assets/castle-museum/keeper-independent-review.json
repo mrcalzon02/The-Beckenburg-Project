@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "runtime_sha256": "923ef5e9f924d0b4578d9094edfe0063e3c6b9934da609fa597c3d03f27e598a",
+  "positive": {
+    "connected_components": 1,
+    "triangles": 1080,
+    "nonmanifold_edges": 0
+  },
+  "actual_raised_15cm_negative": "REJECTED",
+  "fresh_packed_images": [
+    "keeper-imagegen-master.png"
+  ],
+  "one_authored_uv_layer": true
+}
