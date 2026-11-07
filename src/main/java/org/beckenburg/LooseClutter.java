@@ -34,9 +34,12 @@ public final class LooseClutter {
         State state(){return new State(id,kind,x,y,z,yaw,roll,holder);}
         double extent(){return Math.abs(Math.cos(roll))*kind.half+Math.abs(Math.sin(roll))*kind.radius;}
     }
-    private final HouseMap map;private final List<Item> items=new ArrayList<>();
+    private final HouseMap map;private final CastleClutterWorld castle;private final List<Item> items=new ArrayList<>();
     private final int[] last={-1000,-1000,-1000,-1000,-1000,-1000};
-    public LooseClutter(HouseMap map){this.map=Objects.requireNonNull(map);seed();}
+    public LooseClutter(HouseMap map){this.map=Objects.requireNonNull(map);castle=null;seed();}
+    LooseClutter(CastleHubMap map){this.map=null;castle=new CastleClutterWorld(map);for(var s:castle.seeds())items.add(new Item(s.id(),s.kind(),s.x(),s.bottom(),s.z(),s.yaw()));}
+    private boolean clearSight(double ax,double ay,double az,double bx,double by,double bz){return castle==null?map.clearLineOfSight(ax,ay,az,bx,by,bz):castle.clearSight(ax,ay,az,bx,by,bz);}
+    private boolean clearPath(double ax,double ay,double az,double bx,double by,double bz,double radius,double half){return castle==null?map.clearObjectPath(ax,ay,az,bx,by,bz,radius,half):castle.clearPath(ax,ay,az,bx,by,bz,radius,half);}
     private void seed(){
         if(map.site()!=HouseMap.Site.HOUSE&&map.site()!=HouseMap.Site.FARMHOUSE&&map.site()!=HouseMap.Site.SCHOOL)return;
         int n=0;
@@ -76,21 +79,31 @@ public final class LooseClutter {
     private Item item(int id){return items.stream().filter(i->i.id==id).findFirst().orElseThrow(()->new IllegalArgumentException("unknown clutter object"));}
     public synchronized int held(int seat){return items.stream().filter(i->i.holder==seat).mapToInt(i->i.id).findFirst().orElse(-1);}
     public synchronized State aimed(Observer o){
+        if(castle!=null){
+            double best=2;State result=null,blocked=null;
+            double dx=Math.sin(o.yaw)*Math.cos(o.pitch),dy=Math.sin(o.pitch),dz=Math.cos(o.yaw)*Math.cos(o.pitch);
+            for(var i:items)if(i.holder==-1){double d=CastleObjectRay.looseHit(i.state(),o.x,o.eyeY(),o.z,dx,dy,dz,best);
+                if(Double.isFinite(d)){best=d;blocked=i.state();}}
+            if(blocked!=null&&clearSight(o.x,o.eyeY(),o.z,o.x+dx*(best-.001),o.eyeY()+dy*(best-.001),o.z+dz*(best-.001)))result=blocked;
+            return result;
+        }
         double best=2.0;State result=null;
         for(Item i:items)if(i.holder==-1){
             double dx=i.x-o.x,dy=i.y-o.eyeY(),dz=i.z-o.z,d=Math.sqrt(dx*dx+dy*dy+dz*dz);
             double dot=dx*(Math.sin(o.yaw)*Math.cos(o.pitch))+dy*Math.sin(o.pitch)+dz*Math.cos(o.yaw)*Math.cos(o.pitch);
-            if(d<best&&dot>0&&dot/d>.91&&map.clearLineOfSight(o.x,o.eyeY(),o.z,i.x,i.y,i.z)){best=d;result=i.state();}
+            if(d<best&&dot>0&&dot/d>.91&&clearSight(o.x,o.eyeY(),o.z,i.x,i.y,i.z)){best=d;result=i.state();}
         }return result;
     }
     /** E pickup uses the same exact visible mesh as its prompt, including an object's edge. */
     public synchronized void takeFocused(int id,Observer o,int tick){
+        if(castle!=null){action("TAKE",id,o,tick);return;}
         if(o.seat<0||o.seat>=6||!o.exposed||!Double.isFinite(o.pitch)||Math.abs(o.pitch)>1.4||tick<=last[o.seat])throw new IllegalArgumentException("cannot handle clutter now");
         var target=InteractionFocus.pick(map,o,List.of());
         if(held(o.seat)>=0||target==null||target.kind()!=InteractionFocus.Kind.CLUTTER||!target.id().equals(""+id))throw new IllegalArgumentException("look directly at an unheld object");
         Item i=item(id);i.holder=o.seat;i.armed=false;i.vx=i.vy=i.vz=i.spin=0;carry(i,o);last[o.seat]=tick;
     }
     public synchronized void action(String action,int id,Observer o,int tick){
+        if(castle!=null&&!castle.valid(o))throw new IllegalArgumentException("Castle objects require the local player on a supported clear route");
         if(o.seat<0||o.seat>=6||!o.exposed||!Double.isFinite(o.pitch)||Math.abs(o.pitch)>1.4)throw new IllegalArgumentException("cannot handle clutter now");
         if(tick<=last[o.seat])throw new IllegalArgumentException("object action cooling down");
         Item i=item(id);
@@ -110,12 +123,13 @@ public final class LooseClutter {
     }
     private void carry(Item i,Observer o){
         double x=o.x+Math.sin(o.yaw)*.62,z=o.z+Math.cos(o.yaw)*.62,y=o.eyeY()-.27;
-        if(map.clearLineOfSight(o.x,o.eyeY()-.27,o.z,x,y,z)){i.x=x;i.y=y;i.z=z;}
+        if(clearSight(o.x,o.eyeY()-.27,o.z,x,y,z)){i.x=x;i.y=y;i.z=z;}
         else{i.x=o.x;i.y=y;i.z=o.z;}
     }
     /** Shared solo/host rule: sanity events fling props; only a poltergeist DISTURB aims armed throws. */
     public synchronized int haunt(GhostIdentity.Type type,GhostDomain.Resolution event,List<Observer> observers,int tick){
         Objects.requireNonNull(type);Objects.requireNonNull(event);
+        if(castle!=null)return 0;
         if(!event.applied())return 0;
         return switch(event.action()){
             case DISTURB -> type.baseType()==GhostIdentity.Type.POLTERGEIST
@@ -126,6 +140,7 @@ public final class LooseClutter {
     }
     /** Environmental sanity flings never acquire a player or arm collision damage, including DREAD. */
     public synchronized int sanityScatter(int room,int tick){
+        if(castle!=null)return 0;
         Random random=new Random(0x53414e495459L+31L*tick+997L*room);int count=0;
         for(Item i:items)if(i.holder==-1&&!i.armed&&map.roomAt(i.x,i.y-i.extent(),i.z)==room){
             double angle=random.nextDouble()*Math.PI*2,speed=2.8+random.nextDouble()*2;
@@ -150,6 +165,7 @@ public final class LooseClutter {
         }return count;
     }
     private double support(Item i,double before,double after){
+        if(castle!=null)return castle.support(i.x,i.z,before,after);
         double best=-100;
         for(Room r:map.level().rooms())if(i.x>=r.x0()&&i.x<=r.x1()&&i.z>=r.z0()&&i.z<=r.z1()&&!map.level().floorVoid(i.x,r.y(),i.z)){
             double floor=map.terrain()!=null&&r.outside()&&r.id()!=14?map.terrain().height(i.x,i.z):r.y();
@@ -164,22 +180,23 @@ public final class LooseClutter {
     public synchronized List<Hit> advance(List<Observer> observers){
         List<Hit> hits=new ArrayList<>();
         for(Item i:items){
-            double ground=map.groundHeight(i.x,i.z,map.roomAt(i.x,i.y-i.extent(),i.z));
-            if(i.y-i.extent()<ground-.05){
+            double ground=castle==null?map.groundHeight(i.x,i.z,map.roomAt(i.x,i.y-i.extent(),i.z)):-100;
+            if(castle==null&&i.y-i.extent()<ground-.05){
                 var recovered=GroundRecovery.recover(map,new Vec(i.x,i.y-i.extent(),i.z),map.roomAt(i.x,i.z),HunterPosture.CROUCH_HEIGHT);
                 i.x=recovered.x();i.y=recovered.y()+i.extent()+.002;i.z=recovered.z();i.holder=-1;i.vx=i.vy=i.vz=0;i.armed=false;
             }
             if(i.holder>=0){Observer o=observers.stream().filter(p->p.seat==i.holder&&p.exposed).findFirst().orElse(null);
                 if(o==null){i.holder=-1;i.vy=0;}else{carry(i,o);continue;}}
             if(i.immunity>0)i.immunity--;
+            if(castle!=null&&Math.abs(i.vx)+Math.abs(i.vy)+Math.abs(i.vz)+Math.abs(i.spin)<1e-8&&Math.abs(support(i,i.y-i.extent(),i.y-i.extent()-.005)-(i.y-i.extent()))<.003)continue;
             for(int step=0;step<20;step++){
                 double dt=.005,extent=i.extent(),ox=i.x,oy=i.y,oz=i.z;
                 i.vy-=9.8*dt;double nx=ox+i.vx*dt,ny=oy+i.vy*dt,nz=oz+i.vz*dt;
                 double floor=support(i,oy-extent,ny-extent);
                 if(i.vy<0&&floor>-99){noise(i,Math.abs(i.vy));ny=floor+extent+.001;i.vy=Math.abs(i.vy)<.8?0:-i.vy*.24;i.vx*=.78;i.vz*=.78;i.spin*=.75;}
-                if(!map.clearObjectPath(ox,oy,oz,nx,oy,oz,i.kind.radius,extent)){noise(i,Math.abs(i.vx));i.vx*=-.3;nx=ox;}
-                if(!map.clearObjectPath(nx,oy,oz,nx,oy,nz,i.kind.radius,extent)){noise(i,Math.abs(i.vz));i.vz*=-.3;nz=oz;}
-                if(ny>oy&&!map.clearObjectPath(ox,oy,oz,nx,ny,nz,i.kind.radius,extent)){noise(i,Math.abs(i.vy));i.vy*=-.25;ny=oy;}
+                if(!clearPath(ox,oy,oz,nx,oy,oz,i.kind.radius,extent)){noise(i,Math.abs(i.vx));i.vx*=-.3;nx=ox;}
+                if(!clearPath(nx,oy,oz,nx,oy,nz,i.kind.radius,extent)){noise(i,Math.abs(i.vz));i.vz*=-.3;nz=oz;}
+                if(ny>oy&&!clearPath(ox,oy,oz,nx,ny,nz,i.kind.radius,extent)){noise(i,Math.abs(i.vy));i.vy*=-.25;ny=oy;}
                 i.x=nx;i.y=ny;i.z=nz;
                 double speed=Math.sqrt(i.vx*i.vx+i.vy*i.vy+i.vz*i.vz);
                 if(speed>2)for(Observer o:observers)if(o.exposed&&!(i.immunity>0&&o.seat==i.thrower)&&i.y>o.y+.15&&i.y<o.eyeY()+.16
@@ -196,8 +213,8 @@ public final class LooseClutter {
             Item i=items.get(a),j=items.get(b);if(i.holder!=-1||j.holder!=-1||Math.abs(i.y-j.y)>i.extent()+j.extent())continue;
             double dx=i.x-j.x,dz=i.z-j.z,d=Math.hypot(dx,dz),r=i.kind.radius+j.kind.radius;
             if(d>.001&&d<r){double push=Math.min(.015,(r-d)*.25),ux=dx/d,uz=dz/d;
-                if(map.clearObjectPath(i.x,i.y,i.z,i.x+ux*push,i.y,i.z+uz*push,i.kind.radius,i.extent())){i.x+=ux*push;i.z+=uz*push;}
-                if(map.clearObjectPath(j.x,j.y,j.z,j.x-ux*push,j.y,j.z-uz*push,j.kind.radius,j.extent())){j.x-=ux*push;j.z-=uz*push;}
+                if(clearPath(i.x,i.y,i.z,i.x+ux*push,i.y,i.z+uz*push,i.kind.radius,i.extent())){i.x+=ux*push;i.z+=uz*push;}
+                if(clearPath(j.x,j.y,j.z,j.x-ux*push,j.y,j.z-uz*push,j.kind.radius,j.extent())){j.x-=ux*push;j.z-=uz*push;}
                 double impulse=((i.vx-j.vx)*dx+(i.vz-j.vz)*dz)/d;
                 if(impulse<0){double q=-(1.25)*impulse/(1/i.kind.mass+1/j.kind.mass);i.vx+=q*dx/d/i.kind.mass;i.vz+=q*dz/d/i.kind.mass;j.vx-=q*dx/d/j.kind.mass;j.vz-=q*dz/d/j.kind.mass;}}
         }return hits;
@@ -206,6 +223,10 @@ public final class LooseClutter {
         StringJoiner rows=new StringJoiner(";");for(Item i:items){boolean hide=ghostView&&i.holder>=0;
             rows.add(i.id+","+i.kind+","+Math.round((hide?0:i.x)*1000)+","+Math.round((hide?0:i.y)*1000)+","+Math.round((hide?0:i.z)*1000)+","+Math.round(i.yaw*1000)+","+Math.round(i.roll*1000)+","+(hide?-2:i.holder));}
         return "CLUTTER|"+rows;
+    }
+    synchronized boolean occludesRay(double x,double y,double z,double dx,double dy,double dz,double distance){
+        for(var i:items)if(i.holder!=-2&&Double.isFinite(CastleObjectRay.looseHit(i.state(),x,y,z,dx,dy,dz,distance)))return true;
+        return false;
     }
     public synchronized void accept(String encoded){
         if(encoded.length()>48000)throw new IllegalArgumentException("clutter snapshot too large");

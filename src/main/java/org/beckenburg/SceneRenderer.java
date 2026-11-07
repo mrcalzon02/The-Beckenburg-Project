@@ -321,17 +321,19 @@ public final class SceneRenderer {
     private record FixtureMeshPose(String mesh,double x,double y,double z,double scale,double yaw){}
     private record DynamicGeometryEntry(Object pose,List<Face> faces,long frame){}
     private final java.util.Map<DynamicGeometryKey,DynamicGeometryEntry> dynamicGeometry=new java.util.HashMap<>();
-    private HouseMap dynamicGeometryMap;
+    private Object dynamicGeometryMap;
     private long dynamicGeometryFrame,dynamicGeometryTriangles,dynamicGeometryBuilds,dynamicGeometryHits;
     public record DynamicGeometryStats(long builds,long hits,long triangles,long limit,int entries){}
     public DynamicGeometryStats dynamicGeometryStats(){
         return new DynamicGeometryStats(dynamicGeometryBuilds,dynamicGeometryHits,
             dynamicGeometryTriangles,DYNAMIC_GEOMETRY_LIMIT,dynamicGeometry.size());
     }
-    private void beginDynamicGeometry(HouseMap map){
+    private void beginDynamicGeometry(Object map){
         if(dynamicGeometryMap!=map){dynamicGeometry.clear();dynamicGeometryTriangles=0;dynamicGeometryMap=map;}
         dynamicGeometryFrame++;
     }
+    // Preserve the House diagnostic entrypoint while Castle shares the same cache.
+    private void beginDynamicGeometry(HouseMap map){beginDynamicGeometry((Object)map);}
     private List<Face> dynamicGeometry(DynamicGeometryKey key,Object pose,
             java.util.function.Supplier<List<Face>> build){
         var old=dynamicGeometry.get(key);
@@ -2922,30 +2924,12 @@ public final class SceneRenderer {
                         beam.width(),beam.height(),beam.depth(),beam.colour());
             }else architecturalWall(out,wall);
         }
-        for(var window:CastleDoorSlots.windows()){
-            // The wall was cut into a solid lower sill, upper lintel and
-            // side shoulders above. Wood mullions are recessed INTO the
-            // 42cm masonry depth, not pasted against its outer texture.
-            double hw=CastleDoorSlots.MASONRY_THICKNESS*.5;
-            double breadth=window.z1()-window.z0();
-            for(double side: new double[]{window.z0()-.065,window.z1()-.025})
-                texturedBox(out,window.x()-hw-.025,window.sill(),side,
-                    CastleDoorSlots.MASONRY_THICKNESS+.05,
-                    window.head()-window.sill(),.09,MaterialAtlas.AGED_WOOD);
-            for(double y:new double[]{window.sill(),window.head()-.08})
-                texturedBox(out,window.x()-hw-.025,y,window.z0(),
-                    CastleDoorSlots.MASONRY_THICKNESS+.05,.09,breadth,
-                    MaterialAtlas.AGED_WOOD);
-            texturedBox(out,window.x()-.045,(window.sill()+window.head())*.5-.05,
-                window.z0(),.09,.10,breadth,MaterialAtlas.AGED_WOOD);
-        }
+        for(var frame:CastleDoorSlots.windowFrames())
+            texturedBox(out,frame.x(),frame.y(),frame.z(),frame.width(),frame.height(),frame.depth(),MaterialAtlas.AGED_WOOD);
         castleSlabs(out,map);
         // Closed stone stair mass: the riser is on each tread's SOUTH edge.
-        for(int step=0;step<20;step++){
-            double south=32-step*.5,north=south-.5;
-            double top=(step+1)*CastleHubArchitecturalPlan.GROUND_CEILING/20.0;
-            texturedBox(out,16,0,north,3,top,.5,MaterialAtlas.STONE);
-        }
+        for(var step:CastleHubArchitecturalPlan.upperStairSolids())
+            texturedBox(out,step.x0(),0,step.z0(),step.x1()-step.x0(),step.top(),step.z1()-step.z0(),MaterialAtlas.STONE);
         for(double side:new double[]{16,19})for(int step=0;step<10;step++){
             double za=32-step,zb=za-1,ha=step*.34+.1,hb=(step+1)*.34+.1;
             for(double xx:new double[]{side-.05,side+.05})
@@ -3353,6 +3337,10 @@ public final class SceneRenderer {
             }));
         }
         var dynamic=new ArrayList<Face>();
+        beginDynamicGeometry(map);
+        for(var item:map.clutter().states())if(item.holder()!=-2)
+            dynamic.addAll(dynamicGeometry(new DynamicGeometryKey(false,item.id()),item,()->buildClutterGeometry(item)));
+        finishDynamicGeometry();
         if(editorSelection!=null)box(dynamic,editorSelection[0]-.04,editorSelection[1]+.02,
             editorSelection[2]-.04,.08,1.4,.08,0xffcb54);
         // Never pulled into the normal world chunk cache or editor snapshots.

@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: Small object uses the smooth navigation incline instead of the rendered upper stair tread
+	at org.beckenburg.CastleLooseClutterTest.check(CastleLooseClutterTest.java:14)
+	at org.beckenburg.CastleLooseClutterTest.main(CastleLooseClutterTest.java:30)

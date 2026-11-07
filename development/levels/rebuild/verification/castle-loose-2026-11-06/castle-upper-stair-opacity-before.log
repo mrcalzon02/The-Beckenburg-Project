@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: Rendered closed upper stair mass transmits light
+	at org.beckenburg.CastlePortalSlotTest.check(CastlePortalSlotTest.java:7)
+	at org.beckenburg.CastlePortalSlotTest.main(CastlePortalSlotTest.java:38)

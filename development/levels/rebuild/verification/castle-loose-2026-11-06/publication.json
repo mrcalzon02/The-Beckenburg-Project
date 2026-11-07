@@ -1,0 +1,63 @@
+{
+  "source_head": "ccd2525d0b4c07a0de0393778093887afca8f181",
+  "status": "PASS independently fetched native physics/contact/cache source, sockets, actual PNG and union-gallery bytes",
+  "files": {
+    "src/main/java/org/beckenburg/CastleHubArchitecturalPlan.java": {
+      "bytes": 16705,
+      "sha256": "f62750d6b7698e90d72bd2a2c78c37d48bb8830088d3563c042950ca15745c25"
+    },
+    "src/main/java/org/beckenburg/CastleClutterWorld.java": {
+      "bytes": 4857,
+      "sha256": "6b358b7b9e37a009dbf5c2fa614f8cccba15ccf120771f01273ec03eaf3a99f8"
+    },
+    "src/main/java/org/beckenburg/LooseClutter.java": {
+      "bytes": 19130,
+      "sha256": "8550f79c627c668d7082c224b696bdc56c2531e15dbcd0fc2add1e522c48fb04"
+    },
+    "src/main/java/org/beckenburg/CastleDoorSlots.java": {
+      "bytes": 8347,
+      "sha256": "cd61709318b7e78e6cb05ab5109bd60e4e52df8429c7bc86a39252a106f47500"
+    },
+    "src/main/java/org/beckenburg/SceneRenderer.java": {
+      "bytes": 288005,
+      "sha256": "f70b181605f13f4dcfd900db67c3692f9a04362c5a9ed3ca03c9ec10ad00c2b4"
+    },
+    "src/main/java/org/beckenburg/FixtureLighting.java": {
+      "bytes": 48826,
+      "sha256": "80fe09323534634fd9dfd3f471ca2b99adba36fb65e28440bbdf7e33564f8224"
+    },
+    "development/levels/rebuild/castle/loose-object-sockets.json": {
+      "bytes": 2979,
+      "sha256": "e9707b7f0870f78bd2be48e14ec3a4da0c1f2f68df5996e05393f45ce63e5046"
+    },
+    "development/captures/castle-loose-ui/common-mug-held-runtime.png": {
+      "bytes": 161904,
+      "sha256": "c17183835bcdab0f2e746e652e0f5446ff367a9ff40d3aab2758ff499221d91d"
+    },
+    "development/captures/castle-loose-placements/loose-5-book-runtime.png": {
+      "bytes": 431621,
+      "sha256": "c094c1dac7eb4ad47c9c1d6a2a9507547347806cc61ce139dc87d4b6c891a69b"
+    },
+    "development/captures/castle-window-frame/native-window-lights-on-runtime.png": {
+      "bytes": 295946,
+      "sha256": "bb36aace8bbf55d4da6403c64c502320ca592153b8fcd6bd7b0b93b99e413816"
+    },
+    "development/captures/castle-window-frame/native-window-lights-off-runtime.png": {
+      "bytes": 146658,
+      "sha256": "8be8f65f78b725e6768d8c1321e4838844884ebb56f1a72de8db00ae3dd104a5"
+    },
+    "development/levels/rebuild/verification/castle-loose-2026-11-06/checkpoint.json": {
+      "bytes": 11565,
+      "sha256": "1b7a208a731f514a86cb0b27eff4ee1d8e39970a4289dbca20135f3c109519eb"
+    },
+    "beckenburg-development-gallery.html": {
+      "bytes": 2712517,
+      "sha256": "1cf26fd852407c8b2b60adfd84414247d59264a38456149fd36483fc3f1e397b"
+    },
+    "development/gallery/index.json": {
+      "bytes": 3095881,
+      "sha256": "cbb73c3751d9e18fc6ea881ae9c3e582eca2806510de64dc2562935cc78ba7c2"
+    }
+  },
+  "pages": "New source is not yet merged/deployed; exact-source online full345/native/GPU gates remain next"
+}

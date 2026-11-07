@@ -245,6 +245,14 @@ public final class CastleHubArchitecturalPlan {
     public static boolean onStairs(double x,double z){
         return x>=16&&x<=19&&z>=22&&z<=32;
     }
+    public record StairSolid(double x0,double z0,double x1,double z1,double top){}
+    private static final List<StairSolid> STAIR_SOLIDS=stairSolids();
+    private static List<StairSolid> stairSolids(){
+        var result=new ArrayList<StairSolid>();
+        for(int step=0;step<20;step++){double south=32-step*.5;result.add(new StairSolid(16,south-.5,19,south,(step+1)*GROUND_CEILING/20));}
+        return List.copyOf(result);
+    }
+    public static List<StairSolid> upperStairSolids(){return STAIR_SOLIDS;}
     public static double stairHeight(double x,double z){
         if(!onStairs(x,z))return 0;
         return Math.max(0,Math.min(GROUND_CEILING,(32-z)*GROUND_CEILING/10));
