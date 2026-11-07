@@ -329,6 +329,7 @@ public final class InvestigationSession {
             if(result.applied()) {
                 GhostHauntingFolio.Occurrence haunt=hauntingFolio.choose(
                     result.action(),ghost.type(),result.room(),ticks);
+                GhostElectrical.apply(map,roomLights,result,haunt,ticks);
                 if(haunt!=null){
                     hauntings.addLast(haunt);
                     while(hauntings.size()>8)hauntings.removeFirst();

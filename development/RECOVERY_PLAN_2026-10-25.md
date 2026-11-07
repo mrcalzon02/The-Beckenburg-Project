@@ -687,3 +687,12 @@ Ten focused packaged checks pass after targeted corrections. Exact108material/11
 Fit-out implementation67abf5b5e8c374aa7dc843b69993900ec2a9335a reconciles accepted main and independently published clock repair52188e75 without changing any tested runtime/build/workflow tree. HouseS05 remains IN_PROGRESS and links actual source/evidence. New exact-head349/native/GPU acceptance and later merged Pages readback remain next; no paused or completed full-map goal.
 
 Concurrent main14c8d97bda268e805ec93e08ae3e9e9c36cd469a adds another85NPC PNGs/2CSVs. Regenerated union gallery7105images and compared the actual resolved index critical trees to implementation67abf5b: all runtime/build inputs identical. Clock replacement42360138343 remains independently live.
+
+
+## Paused WIP checkpoint — 7 November 2026
+
+Owner requested sync and commit only; resume tomorrow. Current branch: map/house-story-power. Parent accepted hiding-energy checkpoint d7d6ccde merged into main059ca123; fetched main889d7b7e. Parent exact full42360807488 reports349/0/0, native42360810938 and GPU42360814636 pass. Pages42364121655 succeeded and actual hiding-energy PNG bytes match deployment.
+
+Current source includes supported House records/eight loose belongings, ghost electrical trips and an owner-requested visible source cable with a buried pedestrian-crossing sleeve. Earlier focused packaged gameplay/electrical/physics checks passed. Visible-feed source package compiled; source-ground and pedestrian crossing assertions passed before a blocked capture camera failed. Latest attempted camera correction has a TEST COMPILE ERROR: HouseMap.clearSight(Vec,Vec) is not an available API. This is a saved work-in-progress checkpoint, not accepted source. No further implementation at owner pause.
+
+The native blend/ZIP/definition/belongings/native-verification and native overview remain PRE-visible-feed revision first-principles-story-v1-6a53a71747de0b20. Earlier four runtime story views are pre-feed; latest attempted capture refreshed them, but no final cable views exist. Preserve them as labeled intermediate evidence. Resume by repairing the camera API call, compiling tests, reviewing actual outlet/perimeter/inlet views, regenerating native/export artifacts, then running final focused/full350/native/GPU checks. Complete radiators/plumbing DEV-320, encounters, final appearance, saved/native promotion and full House acceptance afterward. All29 packets and remaining unfinished maps stay in scope. No round-duration tests or new hardware acceptance.

@@ -118,6 +118,7 @@ camera_poses={'castle-rebuild':((59,-65,38),(22,-18,2)),'blackpine':((79,-85,46)
               'briar-rebuild-envelope':((38,-47,29),(15,-19,0)),
               'briar-rebuild-functions':((38,-47,29),(15,-19,0)),
               'briar-rebuild-fitout':((38,-47,29),(15,-19,0)),
+              'briar-rebuild-story':((38,-47,29),(15,-19,0)),
               'farmhouse':((55,-48,15),(27,-20,2.8)),
               'school':((58,-57,17),(28,-24,3.5)),
               'arrival-road':((12,-14,9),(0,5,1.0)),
@@ -144,6 +145,9 @@ if name=='briar-rebuild-landscape':
 if name=='briar-rebuild-envelope':
     scene['source_of_truth']='HouseRebuildEnvelope.java / HouseRebuildLandscape.java / editor landscape-world; regenerate after layout edits'
     scene['production_status']='dwelling envelope construction candidate; complete furnishing/utility/story and mission acceptance pending'
+if name=='briar-rebuild-story':
+    scene['source_of_truth']='HouseRebuildStory.java / HouseRebuildFitout.java / LooseClutter.java / SiteStories.java; regenerate after edits'
+    scene['production_status']='supported household-story construction candidate; encounter/promotion/migration/hardware acceptance pending; energy haze is runtime postprocessing'
 if name=='briar-rebuild-fitout':
     scene['source_of_truth']='HouseRebuildFitout.java / HouseServiceNetwork.java / HouseRebuildFunctions.java; regenerate after edits'
     scene['production_status']='fit-out construction candidate; story/promotion/mission/hardware gates open; sanctuary is analytic runtime postprocessing'

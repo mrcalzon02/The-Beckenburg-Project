@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 7105,
+  "count": 7110,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -3772,6 +3772,56 @@
       "height": 625,
       "bytes": 282153,
       "sha256": "ed2b11e9ebe5aea097892b8593aa2ba1088bb531b35cc644127251a1a292ef8d"
+    },
+    {
+      "path": "development/captures/house-story/household-records-runtime.png",
+      "url": "development/captures/house-story/household-records-runtime.png",
+      "title": "Household records runtime",
+      "kind": "Runtime household story and source wiring",
+      "width": 1000,
+      "height": 625,
+      "bytes": 833451,
+      "sha256": "8145e3e36f7005d3cb630df504e064dd56b59eb0c6b4a9a34e2947ab07fb4102"
+    },
+    {
+      "path": "development/captures/house-story/inherited-mending-runtime.png",
+      "url": "development/captures/house-story/inherited-mending-runtime.png",
+      "title": "Inherited mending runtime",
+      "kind": "Runtime household story and source wiring",
+      "width": 1000,
+      "height": 625,
+      "bytes": 475423,
+      "sha256": "7ebe20278cd482ec194caa35bfbd55e3858f3ebba0e5f9af015b15bbf601c85e"
+    },
+    {
+      "path": "development/captures/house-story/native-parcel-overview.png",
+      "url": "development/captures/house-story/native-parcel-overview.png",
+      "title": "Native parcel overview",
+      "kind": "Native geometry overview",
+      "width": 1200,
+      "height": 900,
+      "bytes": 1417956,
+      "sha256": "6872be0452ee2069b607bf9508f0666b52c383124355eff91015a7c511439d21"
+    },
+    {
+      "path": "development/captures/house-story/saved-frame-runtime.png",
+      "url": "development/captures/house-story/saved-frame-runtime.png",
+      "title": "Saved frame runtime",
+      "kind": "Runtime household story and source wiring",
+      "width": 1000,
+      "height": 625,
+      "bytes": 660623,
+      "sha256": "1be42e40701c8792cf8464fe1e01d33443cca551e9e533a430c7ee16cc03b8d5"
+    },
+    {
+      "path": "development/captures/house-story/unfinished-homework-runtime.png",
+      "url": "development/captures/house-story/unfinished-homework-runtime.png",
+      "title": "Unfinished homework runtime",
+      "kind": "Runtime household story and source wiring",
+      "width": 1000,
+      "height": 625,
+      "bytes": 672217,
+      "sha256": "c8c73f3645740def0c0359cc3e9ffeaff201e3fcc165efd3607aa1a00e663472"
     },
     {
       "path": "development/captures/wall-lamp-runtime/after/wall-lamp-0-off.png",

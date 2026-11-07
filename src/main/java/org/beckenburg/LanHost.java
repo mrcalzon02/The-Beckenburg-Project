@@ -2343,6 +2343,8 @@ public final class LanHost implements AutoCloseable {
         }
         GhostHauntingFolio.Occurrence haunt=hauntingFolio.choose(
             result.action(),ghostType,result.room(),tick);
+        if(GhostElectrical.apply(map,lights,result,haunt,tick))
+            notifyAllPeers("LIGHTS|"+lights.snapshot()+"|0");
         if(haunt!=null)for(int i=0;i<HUNTERS;i++){
             Peer hunter=seats[i];
             if(hunter==null||!hunter.worldMode)continue;

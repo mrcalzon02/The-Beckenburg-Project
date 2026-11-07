@@ -1,0 +1,166 @@
+{
+  "status": "ISOLATED CONSTRUCTION CANDIDATE",
+  "revision": "first-principles-story-v1-6a53a71747de0b20",
+  "authority": "HouseRebuildStory.java; original source surfaces and serialized parent-local bindings",
+  "loose_objects": [
+    {
+      "state": {
+        "id": 1,
+        "kind": "MUG",
+        "x": 19.6,
+        "y": 0.9199999957732508,
+        "z": 12.0,
+        "yaw": 0.12,
+        "roll": 0.0,
+        "holder": -1
+      },
+      "half": 0.056,
+      "radius": 0.1,
+      "mass": 0.35
+    },
+    {
+      "state": {
+        "id": 2,
+        "kind": "BOTTLE",
+        "x": 20.55,
+        "y": 1.0039999957732508,
+        "z": 11.5,
+        "yaw": -0.08,
+        "roll": 0.0,
+        "holder": -1
+      },
+      "half": 0.14,
+      "radius": 0.052,
+      "mass": 0.75
+    },
+    {
+      "state": {
+        "id": 3,
+        "kind": "TIN",
+        "x": 20.55,
+        "y": 0.9489999957732507,
+        "z": 12.15,
+        "yaw": 0.0,
+        "roll": 0.0,
+        "holder": -1
+      },
+      "half": 0.085,
+      "radius": 0.065,
+      "mass": 0.3
+    },
+    {
+      "state": {
+        "id": 4,
+        "kind": "BOOK",
+        "x": 12.75,
+        "y": 3.566000009536743,
+        "z": 14.18,
+        "yaw": 3.061592653589793,
+        "roll": 0.0,
+        "holder": -1
+      },
+      "half": 0.022,
+      "radius": 0.14,
+      "mass": 0.55
+    },
+    {
+      "state": {
+        "id": 5,
+        "kind": "TOY",
+        "x": 13.12,
+        "y": 3.624000009536743,
+        "z": 14.18,
+        "yaw": 3.241592653589793,
+        "roll": 0.0,
+        "holder": -1
+      },
+      "half": 0.08,
+      "radius": 0.105,
+      "mass": 0.18
+    },
+    {
+      "state": {
+        "id": 6,
+        "kind": "FRAME",
+        "x": 14.25,
+        "y": 0.7549999488926937,
+        "z": 19.8,
+        "yaw": -0.1,
+        "roll": 0.0,
+        "holder": -1
+      },
+      "half": 0.111,
+      "radius": 0.11,
+      "mass": 0.4
+    },
+    {
+      "state": {
+        "id": 7,
+        "kind": "MUG",
+        "x": 14.55,
+        "y": 0.6999999488926938,
+        "z": 19.6,
+        "yaw": 0.08,
+        "roll": 0.0,
+        "holder": -1
+      },
+      "half": 0.056,
+      "radius": 0.1,
+      "mass": 0.35
+    },
+    {
+      "state": {
+        "id": 8,
+        "kind": "MUG",
+        "x": 12.5,
+        "y": 3.4999999488926936,
+        "z": 12.4,
+        "yaw": -0.12,
+        "roll": 0.0,
+        "holder": -1
+      },
+      "half": 0.056,
+      "radius": 0.1,
+      "mass": 0.35
+    }
+  ],
+  "records": [
+    {
+      "id": "family-correspondence",
+      "type": "story",
+      "room": 3,
+      "x": 19.543918001651765,
+      "y": 0.8796059472947964,
+      "z": 11.500250168144703,
+      "yaw": 0.0,
+      "style": "LETTERS"
+    },
+    {
+      "id": "cellar-shelter-card",
+      "type": "story",
+      "room": 3,
+      "x": 20.05,
+      "y": 0.8817499948195764,
+      "z": 11.9,
+      "yaw": 0.0,
+      "style": "EMERGENCE"
+    },
+    {
+      "id": "inherited-mending-tin",
+      "type": "story",
+      "room": 6,
+      "x": 12.505000001192093,
+      "y": 3.525975472602944,
+      "z": 17.012499999254942,
+      "yaw": 0.0,
+      "style": "MENDING"
+    }
+  ],
+  "ownership": "Existing host-owned LooseClutter, seat-validated pickup/drop/throw; no campaign inventory or evidence credit",
+  "remaining": [
+    "Individually authored location encounter",
+    "Radiators and visible water distribution",
+    "Native edit/migration and live House promotion",
+    "Complete client/network/mission and physical hardware acceptance"
+  ]
+}

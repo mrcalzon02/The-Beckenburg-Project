@@ -26,6 +26,7 @@ public final class LooseClutter {
     public record Hit(int seat,int damage,int object){}
     public record Noise(double x,double y,double z,double speed){}
     private final List<Noise> noises=new ArrayList<>();
+    private final Map<Integer,String> authoredDescriptions=new HashMap<>();
     public synchronized List<Noise> drainNoises(){var result=List.copyOf(noises);noises.clear();return result;}
     private void noise(Item i,double speed){if(speed>1.2&&noises.size()<8)noises.add(new Noise(i.x,i.y,i.z,speed));}
     private static final class Item {
@@ -34,13 +35,23 @@ public final class LooseClutter {
         State state(){return new State(id,kind,x,y,z,yaw,roll,holder);}
         double extent(){return Math.abs(Math.cos(roll))*kind.half+Math.abs(Math.sin(roll))*kind.radius;}
     }
-    private final HouseMap map;private final CastleClutterWorld castle;private final List<Item> items=new ArrayList<>();
+    private final HouseMap map;private final CastleClutterWorld castle;
+    private final boolean authoredContacts,worldGroundContacts;private final List<Item> items=new ArrayList<>();
     private final int[] last={-1000,-1000,-1000,-1000,-1000,-1000};
-    public LooseClutter(HouseMap map){this.map=Objects.requireNonNull(map);castle=null;seed();}
-    LooseClutter(CastleHubMap map){this.map=null;castle=new CastleClutterWorld(map);for(var s:castle.seeds())items.add(new Item(s.id(),s.kind(),s.x(),s.bottom(),s.z(),s.yaw()));}
+    public LooseClutter(HouseMap map){this.map=Objects.requireNonNull(map);castle=null;authoredContacts=map.level().sockets().stream().anyMatch(s->s.type().equals("authored-clutter"));worldGroundContacts=WorldTerrainSurface.walking(map.level());seed();}
+    LooseClutter(CastleHubMap map){this.map=null;authoredContacts=false;worldGroundContacts=false;castle=new CastleClutterWorld(map);for(var s:castle.seeds())items.add(new Item(s.id(),s.kind(),s.x(),s.bottom(),s.z(),s.yaw()));}
     private boolean clearSight(double ax,double ay,double az,double bx,double by,double bz){return castle==null?map.clearLineOfSight(ax,ay,az,bx,by,bz):castle.clearSight(ax,ay,az,bx,by,bz);}
     private boolean clearPath(double ax,double ay,double az,double bx,double by,double bz,double radius,double half){return castle==null?map.clearObjectPath(ax,ay,az,bx,by,bz,radius,half):castle.clearPath(ax,ay,az,bx,by,bz,radius,half);}
     private void seed(){
+        if(authoredContacts){
+            for(var socket:map.level().sockets())if(socket.type().equals("loose-object")){
+                var binding=socket.style().split("\\|");if(binding.length!=6)throw new IllegalArgumentException("Invalid authored clutter binding "+socket.id());
+                var kind=Kind.valueOf(binding[0]);var parent=map.level().props().stream().filter(p->p.room()==socket.room()&&p.mesh().equals(binding[1])).findFirst().orElse(null);if(parent==null)continue;
+                double lx=Double.parseDouble(binding[2])*parent.scale(),lz=Double.parseDouble(binding[3])*parent.scale(),c=Math.cos(parent.yaw()),sn=Math.sin(parent.yaw());
+                double x=parent.x()+lx*c-lz*sn,z=parent.z()+lx*sn+lz*c,top=HouseRebuildStory.supported(parent,kind,x,z);if(!Double.isFinite(top))continue;
+                var item=new Item(items.size()+1,kind,x,top+.004,z,parent.yaw()+Double.parseDouble(binding[4]));items.add(item);authoredDescriptions.put(item.id,HouseRebuildStory.description(binding[5]));
+            }return;
+        }
         if(map.site()!=HouseMap.Site.HOUSE&&map.site()!=HouseMap.Site.FARMHOUSE&&map.site()!=HouseMap.Site.SCHOOL)return;
         int n=0;
         for(Prop p:map.level().props()){
@@ -168,10 +179,14 @@ public final class LooseClutter {
         if(castle!=null)return castle.support(i.x,i.z,before,after);
         double best=-100;
         for(Room r:map.level().rooms())if(i.x>=r.x0()&&i.x<=r.x1()&&i.z>=r.z0()&&i.z<=r.z1()&&!map.level().floorVoid(i.x,r.y(),i.z)){
-            double floor=map.terrain()!=null&&r.outside()&&r.id()!=14?map.terrain().height(i.x,i.z):r.y();
+            double floor=worldGroundContacts&&r.outside()&&r.id()!=14?map.groundHeight(i.x,i.z,r.id()):map.terrain()!=null&&r.outside()&&r.id()!=14?map.terrain().height(i.x,i.z):r.y();
             if(floor<=before+.01&&floor>=after-.02)best=Math.max(best,floor);
         }
-        for(Stair s:map.level().stairs())if(s.contains(i.x,i.z,0)){double y=s.yAt(i.x,i.z);if(y<=before+.01&&y>=after-.02)best=Math.max(best,y);}
+        for(Stair s:map.level().stairs())if(s.contains(i.x,i.z,0)){
+            double t=s.t(i.x,i.z);if(authoredContacts&&(t<0||t>1))continue;
+            double y=authoredContacts?s.y0()+(Math.min(s.steps()-1,(int)Math.floor(Math.max(0,t)*s.steps()))+1)*(s.y1()-s.y0())/s.steps():s.yAt(i.x,i.z);
+            if(y<=before+.01&&y>=after-.02)best=Math.max(best,y);
+        }
         for(Collider c:map.level().colliders()){
             double dx=i.x-c.x(),dz=i.z-c.z(),x=dx*Math.cos(c.yaw())+dz*Math.sin(c.yaw()),z=-dx*Math.sin(c.yaw())+dz*Math.cos(c.yaw());
             double y=c.y()+c.height();if(Math.abs(x)<c.halfX()&&Math.abs(z)<c.halfZ()&&y<=before+.01&&y>=after-.02)best=Math.max(best,y);
@@ -244,5 +259,5 @@ public final class LooseClutter {
         if(items.size()>=120)throw new IllegalArgumentException("too many objects");items.add(incoming);
     }
     public synchronized String hint(Observer o){int id=held(o.seat);State s=id>=0?item(id).state():aimed(o);
-        return s==null?"F5 pick up clutter / F12 throw":s.kind.description+"  [F5 "+(id>=0?"drop / ] rotate / F12 throw":"pick up")+"]";}
+        return s==null?"F5 pick up clutter / F12 throw":authoredDescriptions.getOrDefault(s.id,s.kind.description)+"  [F5 "+(id>=0?"drop / ] rotate / F12 throw":"pick up")+"]";}
 }

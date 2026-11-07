@@ -1,0 +1,57 @@
+{
+  "status": "PAUSED WIP CHECKPOINT; NOT ACCEPTED",
+  "parent_head": "d7d6ccdebe13b047eedb72f5643dd80c2c5eeae4",
+  "parent_merge": "059ca12384bfbf3201ead1fe3358396848ccab57",
+  "main_inspected": "889d7b7e7fc7f1403f3c13a1e2049b26d13c914c",
+  "parent_full": {
+    "run": 42360807488,
+    "passed": 349,
+    "failed": 0,
+    "skipped": 0
+  },
+  "parent_native": 42360810938,
+  "parent_gpu": 42360814636,
+  "parent_pages": {
+    "run": 42364121655,
+    "result": "SUCCESS; actual hiding-energy PNG bytes match deployed Pages"
+  },
+  "current_manifest": 350,
+  "checks": [
+    "GhostElectricalTest",
+    "HouseRebuildPhysicsTest",
+    "LooseClutterTest",
+    "LooseClutterNetworkTest",
+    "CastleLooseClutterTest",
+    "GhostDomainTest",
+    "PhysicalLightingTest",
+    "DynamicGeometryRetentionTest",
+    "LanCaseIntegrationTest",
+    "BeckenburgFullRoundE2ETest"
+  ],
+  "native": {
+    "level": "briar-rebuild",
+    "revision": "first-principles-story-v1-6a53a71747de0b20",
+    "triangles": 113745,
+    "packed_images": 209,
+    "props": 32,
+    "spawns": 15,
+    "native_sha256": "b613691ce999a182a6d9763b8e0ba256423aae1c5c9582357dd80aca74421c84",
+    "definition_sha256": "ef26672352ea8549689fc863657e6c2164b1a641b92dc2e479b9336359ccb5bc",
+    "geometry_sha256": "521066b1acba3f3e0f86e9e9893184e8d1d22f423d0393c2eb0a1d8da1250071",
+    "result": "PASS every source vertex/UV; packed images; original sockets; native file unchanged",
+    "acceptance": "construction candidate only; terrain/boundary and complete map gates open"
+  },
+  "review": "Four runtime dressing images and native parcel overview inspected; actual source support and original UVs retained",
+  "limits": [
+    "House live dispatch still legacy",
+    "Location encounter and radiators/plumbing open",
+    "No new physical hardware/FPS claim",
+    "All29 packets and subsequent unfinished maps remain active"
+  ],
+  "current_limitations": [
+    "Latest camera-review edit does not compile: HouseMap.clearSight(Vec,Vec) does not exist. No implementation repair requested at pause.",
+    "Visible-feed packaged source compiled; ground/contact and crossing assertions passed before runtime capture failed at blocked generator-service-outlet camera.",
+    "Native blend, export ZIP, source definition, belongings report and native verification describe the PRE-visible-feed source revision first-principles-story-v1-6a53a71747de0b20. Regenerate after camera repair and final verification; do not promote these as final-source parity.",
+    "Earlier focused gameplay, electrical, loose-body and House physics results predate the visible-feed change. Exact-source full350/native/GPU acceptance pending."
+  ]
+}

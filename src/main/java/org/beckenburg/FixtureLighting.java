@@ -736,7 +736,7 @@ public final class FixtureLighting {
    else if(source.kind==Kind.CANDLE_CHANDELIER)f=LightModel.flicker(cosmeticTick*.37+source.id*2.1,options.flickerScale());
    else if(source.kind==Kind.TABLE_LAMP)f=map.fixtures().state(source.fixture).active()&&(circuits==null||circuits.supplied())?1:0;
    else if(source.kind==Kind.TELEVISION)f=map.fixtures().state(source.fixture).active()&&(circuits==null||circuits.supplied())?LightModel.flicker(cosmeticTick*1.7,options.flickerScale()):0;
-   else f=circuits==null?1:Math.max(0,Math.min(1,(circuits.brightness(source.room,tick)-.085)/.865));
+   else f=circuits==null?1:!circuits.supplied()?0:Math.max(0,Math.min(1,(circuits.brightness(source.room,tick)-.085)/.865));
    if(source.fixture>0&&source.kind!=Kind.TELEVISION&&source.kind!=Kind.TABLE_LAMP&&!map.fixtures().state(source.fixture).active())f=0;
    // True circuit, fixture and blackout changes are immediate. Subtle TV
    // and candle intensity variation updates every six simulation ticks.
