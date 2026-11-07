@@ -4,7 +4,7 @@
   "parent_pr": 78,
   "parent_runs": {
     "full": 42386300461,
-    "full_state": "confirmed live at last observation",
+    "full_state": "SUCCESS; actual359passed/0failed/0skipped/359",
     "native": 42386318384,
     "native_state": "SUCCESS",
     "gpu": 42386325291,
@@ -39,5 +39,29 @@
     "Valve/vent refinement and final material/light-bleed audit remain",
     "Authored location encounter, saved native migration, full mission/client/network/hardware acceptance remain"
   ],
-  "implementation_sha": "e91d7e73d5da22d9e52bdad3776a666a4dc17f2d"
+  "implementation_sha": "e91d7e73d5da22d9e52bdad3776a666a4dc17f2d",
+  "parent_merge": "d7b60acfe83a156fbc810a764a32be82b8ff6d02",
+  "reconciled_main": "d7b60acfe83a156fbc810a764a32be82b8ff6d02",
+  "reconciled_tree_proof": {
+    "src/main": {
+      "implementation_tree": "9e9e115a1ea6f9802179c40cfb7e6e66f3e0addd",
+      "reconciled_tree": "9e9e115a1ea6f9802179c40cfb7e6e66f3e0addd",
+      "identical": true
+    },
+    "src/test": {
+      "implementation_tree": "d1bd6939108f2c7f672fd9f159d5656231a3d72e",
+      "reconciled_tree": "d1bd6939108f2c7f672fd9f159d5656231a3d72e",
+      "identical": true
+    },
+    "assets/runtime": {
+      "implementation_tree": "e05028944b150bde73866db4defa8f8eb887d9cc",
+      "reconciled_tree": "e05028944b150bde73866db4defa8f8eb887d9cc",
+      "identical": true
+    },
+    ".github/workflows": {
+      "implementation_tree": "ceef962d7f0b2d7797a235627685066f38f56ec3",
+      "reconciled_tree": "ceef962d7f0b2d7797a235627685066f38f56ec3",
+      "identical": true
+    }
+  }
 }

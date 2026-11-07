@@ -12,7 +12,7 @@ views and a native overview were inspected; two failed studies remain labeled.
 See `verification/house-heating-water-2026-11-07/verification.json` one folder above.
 
 Parent PR78 source75f1571b has native42386318384 and GPU42386325291 SUCCESS; full
-42386300461 remains confirmed active at this checkpoint. Earlier main059ca123
+42386300461 completed with actual359passed/0failed/0skipped/359; expected-head merged d7b60acfe83a156fbc810a764a32be82b8ff6d02. Earlier main059ca123
 full42363868962 actually reported347/2 despite green workflow status. Its failures
 are preserved and repaired: immutable TCP packet snapshots, and every House stage
 registered separately without removing assertions or raising its90second limit.
