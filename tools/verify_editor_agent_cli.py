@@ -9,7 +9,12 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--java', default='java')
 parser.add_argument('--classpath', default='build/classes;build/test')
 parser.add_argument('--output', default='build/editor-agent-evidence')
+parser.add_argument('--measure-tokens', action='store_true', help='Also count response text with tiktoken o200k_base')
 args = parser.parse_args()
+tokenizer = None
+if args.measure_tokens:
+    import tiktoken
+    tokenizer = tiktoken.get_encoding('o200k_base')
 output = Path(args.output).resolve()
 output.mkdir(parents=True, exist_ok=True)
 
@@ -17,12 +22,14 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
     command = [args.java, '-Dfile.encoding=windows-1252', '-Djava.util.prefs.PreferencesFactory=org.beckenburg.VerificationPreferencesFactory',
                '-cp', args.classpath, 'org.beckenburg.EditorAgentCli', 'HOUSE', home]
 
-    def run(lines, expected=0, recover=False, sizes=None):
+    def run(lines, expected=0, recover=False, sizes=None, token_counts=None):
         result = subprocess.run(command + (['--recover-previous'] if recover else []), input='\n'.join(lines) + '\n', text=True,
                                 encoding='utf-8', capture_output=True, timeout=120)
         assert result.returncode == expected, (result.returncode, result.stderr[-4000:], result.stdout[-1000:])
         if sizes is not None:
             sizes.extend(len(line.encode('utf-8')) for line in result.stdout.splitlines())
+        if token_counts is not None and tokenizer is not None:
+            token_counts.extend(len(tokenizer.encode_ordinary(line)) for line in result.stdout.splitlines())
         rows = [json.loads(line) for line in result.stdout.splitlines()]
         assert len(rows) == len(lines), (len(rows), len(lines))
         return rows
@@ -103,7 +110,9 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
     after_revision = accepted['result']['revision']
     # Compare the bytes an agent receives for the same edit and resulting native state.
     sizes = []
-    edit_reply, full_reply, proof_reply, current = run([edits, 'inspect', verify_prop(after_revision, moved_x), 'revision'], sizes=sizes)
+    counts = []
+    edit_reply, full_reply, proof_reply, current = run([edits, 'inspect', verify_prop(after_revision, moved_x), 'revision'],
+                                                      sizes=sizes, token_counts=counts)
     assert current['result'] == {'sceneId': first['sceneId'], 'revision': after_revision}
     proof = proof_reply['result']
     assert edit_reply == accepted and full_reply['result']['state'] == inspected['result']['state']
@@ -112,6 +121,9 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
     assert sizes[2] < sizes[1]
     response_bytes = {'scene': first['sceneId'], 'revision': after_revision, 'unit': 'UTF-8 response bytes',
                       'editReceipt': sizes[0], 'fullInspection': sizes[1], 'positionProof': sizes[2], 'revisionRead': sizes[3]}
+    if counts:
+        response_bytes['o200k_base'] = dict(zip(('editReceipt', 'fullInspection', 'positionProof', 'revisionRead'), counts))
+        print(f'House response text (o200k_base): localized edit + proof {counts[0]+counts[2]}, edit + inspection {counts[0]+counts[1]}')
     (output / 'localized-edit-response.json').write_text(json.dumps(response_bytes, indent=2) + '\n', encoding='utf-8')
     print(f'House edit plus position proof: {sizes[0]+sizes[2]} bytes; same edit plus full inspection: {sizes[0]+sizes[1]} bytes')
     pages = run([edits, f'changes\t{after_revision}\t0\t1', f'changes\t{after_revision}\t1\t1',
