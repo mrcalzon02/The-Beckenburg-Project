@@ -6083,7 +6083,7 @@
     "baseline_clear_metres": 6,
     "baseline_opaque_metres": 24,
     "full_map_acceptance": false,
-    "mechanism": "Shared6Ã¢â‚¬â€œ24m radial policy before alpha blending at actual surface depth; weather sky horizon; no depth writes",
+    "mechanism": "Shared6ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“24m radial policy before alpha blending at actual surface depth; weather sky horizon; no depth writes",
     "focused_checks": 10,
     "actual_runtime_frames": 52
   },
@@ -6156,6 +6156,7 @@
       "recovered_flat_poses": 3,
       "new_flat_blocks": 0,
       "new_flat_sweep_failures": 0
-    }
+    },
+    "source_sha": "2e8459870892efc2900182206b204183fbd5cdf9"
   }
 }
