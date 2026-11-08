@@ -3,10 +3,10 @@ from pathlib import Path
 import argparse,collections,hashlib,json,sys
 import bpy
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'development/levels/rebuild/terrain-overall-pass'
-def inspect(path):
+def inspect(path,skip_construction=True):
     bpy.ops.wm.read_factory_settings(use_empty=True);bpy.ops.import_scene.gltf(filepath=str(path));result={}
     for obj in bpy.context.scene.objects:
-        if obj.type!='MESH' or obj.name.startswith(('Saved editor macroterrain','Bearing skirt ','Bearing pile ','Pile bearing beam ')):continue
+        if obj.type!='MESH' or skip_construction and obj.name.startswith(('Saved editor macroterrain','Bearing skirt ','Bearing pile ','Pile bearing beam ')):continue
         obj.data.calc_loop_triangles();parts=[]
         for tri in obj.data.loop_triangles:
             corners=[]

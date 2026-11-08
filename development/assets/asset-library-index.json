@@ -1,8 +1,8 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 1736,
-  "unique_local_file_hashes": 1603,
+  "local_files": 1741,
+  "unique_local_file_hashes": 1608,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
@@ -12,7 +12,7 @@
     "additional_custom_model_sources": 22,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 28,
-    "native_map_exports": 116
+    "native_map_exports": 121
   },
   "archive_index": {
     "path": "development/assets/local-library-manifest.json",
@@ -26042,6 +26042,66 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "a13205f01fde56c1aab0e29f8ff3dd77db40dfd2c870594f0288f2ae9e2b9218",
       "bytes": 54348
+    },
+    {
+      "id": "deck-terrain",
+      "label": "deck-terrain",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/deck-fit-pass/wld-06/deck-terrain.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "bc09795ec372a7ce1f4c67d08e2dc4249445a158d1d3d78dd6871eb03b3ac0e1",
+      "bytes": 1547768
+    },
+    {
+      "id": "deck-terrain",
+      "label": "deck-terrain",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/deck-fit-pass/wld-11/deck-terrain.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "dee9d5acce1a8c391cca55aa2cbc21d54dbcc82862ee43b863bff5fb124bbb82",
+      "bytes": 1743928
+    },
+    {
+      "id": "deck-terrain",
+      "label": "deck-terrain",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/deck-fit-pass/wld-14/deck-terrain.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "c0e3bade34567c01a69c809ccf6e0e6d0857946a23d9084c8935fc37e5fcd12e",
+      "bytes": 2542620
+    },
+    {
+      "id": "deck-terrain",
+      "label": "deck-terrain",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/deck-fit-pass/wld-15/deck-terrain.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "362a6829df41f7877cc91563cca078c39f66f61a54743a614d503c2c07c07381",
+      "bytes": 637508
+    },
+    {
+      "id": "deck-terrain",
+      "label": "deck-terrain",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/deck-fit-pass/wld-16/deck-terrain.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "921f6a57d8c681bd14f9f59deb8ebe9b7891a17e4f0f1d96302b674d1aaab365",
+      "bytes": 591624
     },
     {
       "id": "furnished",

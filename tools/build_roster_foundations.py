@@ -38,7 +38,7 @@ def route_void(rect,bottom,top,data):
             if overlap(rect,box):return link['id']
     return None
 
-def construct(data,terrain,policy):
+def construct(data,terrain,policy,include_route_piles=True):
     points=[];faces=[]
     for obj in terrain:
         offset=len(points);points.extend(obj.matrix_world@v.co for v in obj.data.vertices);faces.extend(tuple(offset+i for i in p.vertices) for p in obj.data.polygons)
@@ -110,7 +110,7 @@ def construct(data,terrain,policy):
             pile_requests.append((zone,x,z))
     pile_ids={z['id'] for z in pile_zones}
     for link in data['links']:
-        if link.get('player_access')=='SEALED_NO_ROUTE' or not pile_ids.intersection([link['a'],link['b']]):continue
+        if not include_route_piles or link.get('player_access')=='SEALED_NO_ROUTE' or not pile_ids.intersection([link['a'],link['b']]):continue
         for p,q in zip(link['points'],link['points'][1:]):
             if abs(p[1]-q[1])>.01 or p[1]<0:continue
             n=max(1,math.ceil(math.dist(p,q)/4))

@@ -1,0 +1,45 @@
+{
+  "status": "AUTHORED_CONSTRUCTED_SURFACES_ONLY_NOT_TERRAIN_PADS",
+  "sites": {
+    "WLD-06": {
+      "zones": [
+        "quay",
+        "pier-w",
+        "pier-e",
+        "crossdock"
+      ],
+      "material": "timber"
+    },
+    "WLD-11": {
+      "zones": [
+        "main",
+        "service",
+        "south-deck",
+        "north-deck",
+        "ferry"
+      ],
+      "material": "timber"
+    },
+    "WLD-14": {
+      "zones": [
+        "porch"
+      ],
+      "material": "stone"
+    },
+    "WLD-15": {
+      "zones": [
+        "quay",
+        "portpier"
+      ],
+      "material": "timber"
+    },
+    "WLD-16": {
+      "zones": [
+        "westwalk",
+        "eastwalk",
+        "northwalk"
+      ],
+      "material": "stone"
+    }
+  }
+}

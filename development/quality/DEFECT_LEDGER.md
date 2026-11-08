@@ -46,7 +46,7 @@ Native relic decoder refused the astrolabe as below-floor bounds; source ring ex
 
 Cause / uncertainty: The bronze vertical disc was centered at y=.31 with .46 m radial extent; its decorative ring rotated ticks with Y-axis yaw despite the dial occupying XY face plane. It also lacked a supporting upright.
 
-Fix / next action: Raise dial assembly .16 m, rotate its ticks and needle in face-plane roll, add a bronze load-bearing support and keep the wood base at y≈.005 m. Preserve source-only/never-runtime-approved status and require exact regenerated GLB/grounded source checks.
+Fix / next action: Raise dial assembly .16 m, rotate its ticks and needle in face-plane roll, add a bronze load-bearing support and keep the wood base at yâ‰ˆ.005 m. Preserve source-only/never-runtime-approved status and require exact regenerated GLB/grounded source checks.
 
 Evidence and verification: Real DEV Room 42128827427 error 'Off-ground/reversed model bounds level_blockout_relic_bronze_astrolabe'; source commit aa33e7b4, generator and geometry regression run 42129321468 PASS, native follow-up pending. Native full run 42130219315 PASS; independent fast gallery 42131185143 PASS after fixes.
 
@@ -1124,7 +1124,7 @@ Detailed review found split firewood below rather than resting on fireplace grat
 
 Cause / uncertainty: Overall model silhouette and bounding boxes did not establish support by the intended subcomponent.
 
-Fix / next action: Place split wood on actual grate bars, align table fixings to measured rails at XÃ‚Â±.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.
+Fix / next action: Place split wood on actual grate bars, align table fixings to measured rails at XÃƒâ€šÃ‚Â±.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.
 
 Evidence and verification: development/levels/previews/defects/DEV-054-before-firewood-grate-support.png; verification/hollow-creek-refined.json; hollow-creek-refinement-parts.json
 
@@ -1540,7 +1540,7 @@ Older-map obligation: Audit corresponding old-map boundary profiles, palette con
 
 **Status:** fixed-native-rigid-crest-refit · **Affected:** Camp Hollow Creek bank/crest refinement
 
-Actual original log bearings sit53â€“63mm into the original soil, but unrefitted original bearings reach655mm above the new bank. A first metadata-based contact check had reported about0.20m.
+Actual original log bearings sit53Ã¢â‚¬â€œ63mm into the original soil, but unrefitted original bearings reach655mm above the new bank. A first metadata-based contact check had reported about0.20m.
 
 Cause / uncertainty: Changing terrain without refitting supported log and rooted scrub assemblies invalidated their old contacts. Metadata and axis/cap rays alone were insufficient support evidence.
 
@@ -1720,7 +1720,7 @@ Older-map obligation: Audit any map with nonzero van elevation; legacy placement
 
 ### DEV-097 — Native exterior zones treated as indoor by numeric room ID
 
-**Status:** fixed-scoped · **Affected:** Hollow Creek outdoor zones 0–11
+**Status:** fixed-scoped · **Affected:** Hollow Creek outdoor zones 0â€“11
 
 Outdoor investigation ownership reused indoor numeric IDs and received indoor ambient/shelter assumptions.
 
@@ -1854,7 +1854,7 @@ Cause / uncertainty: The edge blockers constrain crossings, but terrain support 
 
 Fix / next action: Reject below-water native support when the actual water body is wet; retain canonical van and dry-hull rules. Move river review cameras to supported dry bank positions.
 
-Evidence and verification: HollowCreekRuntimeTest directly rejects the submerged query while all969 existing route supports and939 sweeps still pass. River cameras now expose47–55k water pixels per frame instead of3–6k.
+Evidence and verification: HollowCreekRuntimeTest directly rejects the submerged query while all969 existing route supports and939 sweeps still pass. River cameras now expose47â€“55k water pixels per frame instead of3â€“6k.
 
 Older-map obligation: Audit both edge-crossing barriers and direct submerged spawn/support eligibility for every water map.
 
@@ -2106,7 +2106,7 @@ Cause / uncertainty: Generated IRON tile darkened every eighth X pixel by17level
 
 Fix / next action: Replace forced directional grooves with periodic 2D weathering, restrained grain and sparse pits. Preserve all15other tiles, atlas layout, UVs, source geometry, lighting and exposure. Roof/interpolation and native model metal families remain separate audits.
 
-Evidence and verification: MetalMaterialRefinementTest: groove phase contrast16.652→0.057. Twelve matched actual GPU van images; renderer/fixture/van bytecode identical before/after. metal-refinement-2026-10-27.json.
+Evidence and verification: MetalMaterialRefinementTest: groove phase contrast16.652â†’0.057. Twelve matched actual GPU van images; renderer/fixture/van bytecode identical before/after. metal-refinement-2026-10-27.json.
 
 Older-map obligation: Procedural IRON users receive this tile correction; original GLB textures, roof shading bands, all-map in-room visual acceptance and hardware frame timing remain unaccepted.
 
@@ -2352,7 +2352,7 @@ Older-map obligation: All Windows installations/upgrades, no map modifications; 
 
 **Status:** fixed-scoped-rtx-and-ci-verified · **Affected:** Castle headquarters
 
-Rebuilt Castle measured 35–73 ms median frames versus 18 ms before the rebuild, allocating 63–201 MiB per frame at 640x400 on RTX5070.
+Rebuilt Castle measured 35â€“73 ms median frames versus 18 ms before the rebuild, allocating 63â€“201 MiB per frame at 640x400 on RTX5070.
 
 Cause / uncertainty: Castle calls drawGpuFaces with no investigation map, excluding it from the map-gated residency path; 220671 source triangles were reprocessed each frame.
 
@@ -2366,7 +2366,7 @@ Older-map obligation: Shared-path change requires per-map verification. No insta
 
 **Status:** fixed-scoped-rtx-and-ci-verified · **Affected:** All rendered maps and Castle
 
-JFR identified PSX finishFrame as a major CPU cost, 6–13 ms per frame in the baseline.
+JFR identified PSX finishFrame as a major CPU cost, 6â€“13 ms per frame in the baseline.
 
 Cause / uncertainty: Six floating-point rounding operations per pixel repeated an invariant 256-channel/16-phase transform.
 
@@ -2394,7 +2394,7 @@ Older-map obligation: Shared-path change requires per-map verification. No insta
 
 **Status:** fixed-scoped-rtx-and-ci-verified · **Affected:** Castle and shared stationary fixture lighting
 
-First residency candidate produced 300–400 ms flicker stalls; retaining geometry alone was insufficient.
+First residency candidate produced 300â€“400 ms flicker stalls; retaining geometry alone was insufficient.
 
 Cause / uncertainty: Brightness revisions repeated tessellation, ray visibility and source attenuation; bounded global shadow caches thrashed.
 
@@ -2542,7 +2542,7 @@ Fix / next action: Prepare fixed full close-range lighting topology for resident
 
 Evidence and verification: Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open. Translation identity/revision contract passes. Staged 33-pose CPU p95 improved about 268ms to 40ms; completed-frame cold/waypoint p95 remains 76ms.
 
-Older-map obligation: Warm representative paths require repeated final timing and actual installed navigation. No claim that first visits or complete A–G acceptance are finished.
+Older-map obligation: Warm representative paths require repeated final timing and actual installed navigation. No claim that first visits or complete Aâ€“G acceptance are finished.
 
 ### DEV-161 — GPU UI acceptance could pass during the opening without reaching playable control
 
@@ -2638,7 +2638,7 @@ Cause / uncertainty: Imported source glTF atlas V-orientation mismatches, six au
 
 Fix / next action: Targeted corrective work complete for all 26 original flags. Original textures/meshes preserved except approved six bedroll UV restorations; source-aligned imported 3D V sampling, actor alpha segmentation and indexed ghost strip removals shipped. Continue independent review of map placement/collision, detailed texture aesthetic quality, character motions and the other 85 non-targeted diagnostic review flags. Do not treat completion of these specific repairs as acceptance of unrelated defects; visual checks remain non-release-blocking.
 
-Evidence and verification: Original UV and art review JSON: development/assets/texture-revision-review-2026-11-01.json. 25 earlier assets accepted in actual four-angle run 41405326985 (artifact 13122898542), source atlases/GLBs audited with zero UV warnings and direct source-V vs legacy-V screenshots. Final Twins ghost source fix in runtime archive commit 828659674770cdc00a6c0b07be9f4b7521588b88; original 181 other ghost sprites byte-identical and 15666 stray alpha pixels cleared. Latest Windows developer-room run 41408571829 (artifact 13125290269) PASS actual game build + TwinsAtlasRuntimeTest (all 8 facing sheets/256 cells) + PossessiveAtlasRuntimeTest + original scene screenshots. Pixel-identical Twins at 0/180°, only 642 pixels changed each at 90/270° inside x274-282 y206-321 around removed strand; both figures intact.
+Evidence and verification: Original UV and art review JSON: development/assets/texture-revision-review-2026-11-01.json. 25 earlier assets accepted in actual four-angle run 41405326985 (artifact 13122898542), source atlases/GLBs audited with zero UV warnings and direct source-V vs legacy-V screenshots. Final Twins ghost source fix in runtime archive commit 828659674770cdc00a6c0b07be9f4b7521588b88; original 181 other ghost sprites byte-identical and 15666 stray alpha pixels cleared. Latest Windows developer-room run 41408571829 (artifact 13125290269) PASS actual game build + TwinsAtlasRuntimeTest (all 8 facing sheets/256 cells) + PossessiveAtlasRuntimeTest + original scene screenshots. Pixel-identical Twins at 0/180Â°, only 642 pixels changed each at 90/270Â° inside x274-282 y206-321 around removed strand; both figures intact.
 
 Older-map obligation: Audit any level using these assets after mapping; House, Castle, Farmhouse, School and every shared fixture use require independent placement/orientation and material captures. Visual defects are diagnostic and not release blockers.
 
@@ -4946,7 +4946,7 @@ Six-site headless native query found 45 obstructed tread-centre spine rays despi
 
 Cause / uncertainty: Separate level connector strips were exported across the voids already reserved in floor slabs. Monastery L21 also crossed under the north catacomb stair.
 
-Fix / next action: Apply shared stair apertures to horizontal connector supports; move monastery west stair into its own shaft with source-authored level approach. All506 actual tread centres now have support and clear 0.3–1.8m spine rays. Retain rejected probe rows and GLB hashes. Full capsule traversal is not established.
+Fix / next action: Apply shared stair apertures to horizontal connector supports; move monastery west stair into its own shaft with source-authored level approach. All506 actual tread centres now have support and clear 0.3â€“1.8m spine rays. Retain rejected probe rows and GLB hashes. Full capsule traversal is not established.
 
 Evidence and verification: development/levels/rebuild/verification/roster-routes-2026-11-07/; six revised rough-layout.json; structures/<site>/physics-contract.json and structure-physics.hcs2; tools/audit_roster_routes.py
 
@@ -5539,6 +5539,62 @@ Fix / next action: Replace image post-fog with scoped shared per-surface policy.
 Evidence and verification: src/main/java/org/beckenburg/LevelAtmosphere.java; DirectionalSprites.java; GpuWorldRenderer.java; gpu-client/src/main/java/org/beckenburg/gpu/OpenGlWorldRenderer.java; verification/atmosphere-all-levels/
 
 Older-map obligation: All runtime maps share the same fix; source-only maps inherit on integration. Full map, physical terrain/boundary, installed multiplayer and performance acceptance remain open.
+
+### DEV-403 — Sequential coplanar deck Boolean leaves open or zero-thickness pieces
+
+**Status:** FIX VERIFIED: projected convex clipping and independently closed native export · **Affected:** Five physical deck candidates WLD06/11/14/15/16; shared offline authoring/audit tools
+
+The first marsh deck pilot failed strict solid checks at intersecting deck/route boundaries.
+
+Cause / uncertainty: Blender Boolean on exact/near-coplanar imported route solids left flat/sliver surfaces.
+
+Fix / next action: Use deterministic convex polygon difference on actual source top triangles, retain original sources, remove only recorded sub0.1mm boundary residues; independent closed/outward/native coverage checks pass. Preserve rejected pilot log.
+
+Evidence and verification: development/levels/rebuild/deck-fit-pass/verification/; tools/build_roster_decks.py; tools/check_roster_decks.py
+
+Older-map obligation: All29roster decisions explicit; other24 sources retained individually, no unaudited older-map acceptance. Preserve true basement holes,40-space envelope, shared authored coordinates and canonical van contract.
+
+### DEV-404 — Collinear projected deck seam vertices export degenerate native triangles
+
+**Status:** FIX VERIFIED: authored polygon cleanup; unchanged production parser threshold · **Affected:** Five physical deck candidates WLD06/11/14/15/16; shared offline authoring/audit tools
+
+First deck native movement invocation rejected a zero-area face.
+
+Cause / uncertainty: Projected seam vertices remained collinear through prism fan triangulation and float export.
+
+Fix / next action: Clean projected collinear construction vertices before creating/exporting plates. Exact native parser/nondegenerate checker and current production capsule/flight audits pass; production physics tolerance unchanged. Preserve rejection log.
+
+Evidence and verification: development/levels/rebuild/deck-fit-pass/verification/; tools/build_roster_decks.py; tools/check_roster_decks.py
+
+Older-map obligation: All29roster decisions explicit; other24 sources retained individually, no unaudited older-map acceptance. Preserve true basement holes,40-space envelope, shared authored coordinates and canonical van contract.
+
+### DEV-405 — Deck support receipts lose part names when original bearing names already exist
+
+**Status:** FIX VERIFIED: map each generated object directly to its proof row · **Affected:** Five physical deck candidates WLD06/11/14/15/16; shared offline authoring/audit tools
+
+Independent checker found missing support proofs despite real exported supports.
+
+Cause / uncertainty: Blender appends .001 to reused names but foundation generator proof used requested logical names.
+
+Fix / next action: Pair generated parts and proof rows before assigning unique Deck bearing identities. Independent expected new-mesh set equals every proof and every named upper/lower bearing contact passes.
+
+Evidence and verification: development/levels/rebuild/deck-fit-pass/verification/; tools/build_roster_decks.py; tools/check_roster_decks.py
+
+Older-map obligation: All29roster decisions explicit; other24 sources retained individually, no unaudited older-map acceptance. Preserve true basement holes,40-space envelope, shared authored coordinates and canonical van contract.
+
+### DEV-406 — Exterior deck framing, edge guards and terrain transitions remain incomplete
+
+**Status:** OPEN: closed walking plates added across five sites, final structure/terrain refinement required · **Affected:** Five physical deck candidates WLD06/11/14/15/16; shared offline authoring/audit tools
+
+WLD06/11/14/15/16 had large authored pier/boardwalk/porch/walk envelopes with only narrow route strips; new plates still lack complete intermediate framing/guards.
+
+Cause / uncertainty: Exterior slab generation was omitted for outside zones; prior bearing generation correctly withheld supports without actual deck undersides.
+
+Fix / next action: Fifteen authored envelopes now have physical0.16m closed slabs, exact stair cutouts and84new native-grounded bearing parts. Quarter-metre coverage independently proves24796newly supported samples,11564retained source top samples; full terrain/guard/frame and gameplay acceptance remain open.
+
+Evidence and verification: development/levels/rebuild/deck-fit-pass/verification/; tools/build_roster_decks.py; tools/check_roster_decks.py
+
+Older-map obligation: All29roster decisions explicit; other24 sources retained individually, no unaudited older-map acceptance. Preserve true basement holes,40-space envelope, shared authored coordinates and canonical van contract.
 
 ## Required audit categories
 

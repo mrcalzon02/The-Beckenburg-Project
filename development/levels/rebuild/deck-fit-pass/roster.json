@@ -1,0 +1,293 @@
+{
+  "scope": 29,
+  "status": "BREADTH_BY_STAGE_PHYSICAL_DECK_BATCH",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "status": "RETAINED_NO_NEW_EXTERIOR_DECK_IN_THIS_BATCH",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/academy/construction.json",
+      "reason": "Source geometry and prior individual obligations retained; no inferred map acceptance."
+    },
+    {
+      "id": "ASYLUM",
+      "status": "RETAINED_NO_NEW_EXTERIOR_DECK_IN_THIS_BATCH",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/asylum/construction.json",
+      "reason": "Source geometry and prior individual obligations retained; no inferred map acceptance."
+    },
+    {
+      "id": "CASTLE",
+      "status": "RETAINED_NO_NEW_EXTERIOR_DECK_IN_THIS_BATCH",
+      "evidence": null,
+      "reason": "Source geometry and prior individual obligations retained; no inferred map acceptance."
+    },
+    {
+      "id": "CHURCH",
+      "status": "RETAINED_NO_NEW_EXTERIOR_DECK_IN_THIS_BATCH",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/church/construction.json",
+      "reason": "Source geometry and prior individual obligations retained; no inferred map acceptance."
+    },
+    {
+      "id": "COLLEGE",
+      "status": "RETAINED_NO_NEW_EXTERIOR_DECK_IN_THIS_BATCH",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/college/construction.json",
+      "reason": "Source geometry and prior individual obligations retained; no inferred map acceptance."
+    },
+    {
+      "id": "FARMHOUSE",
+      "status": "RETAINED_NO_NEW_EXTERIOR_DECK_IN_THIS_BATCH",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/farmhouse/construction.json",
+      "reason": "Source geometry and prior individual obligations retained; no inferred map acceptance."
+    },
+    {
+      "id": "HOUSE",
+      "status": "RETAINED_NO_NEW_EXTERIOR_DECK_IN_THIS_BATCH",
+      "evidence": null,
+      "reason": "Source geometry and prior individual obligations retained; no inferred map acceptance."
+    },
+    {
+      "id": "MANSION",
+      "status": "RETAINED_NO_NEW_EXTERIOR_DECK_IN_THIS_BATCH",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/mansion/construction.json",
+      "reason": "Source geometry and prior individual obligations retained; no inferred map acceptance."
+    },
+    {
+      "id": "PRISON",
+      "status": "RETAINED_NO_NEW_EXTERIOR_DECK_IN_THIS_BATCH",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/prison/construction.json",
+      "reason": "Source geometry and prior individual obligations retained; no inferred map acceptance."
+    },
+    {
+      "id": "SCHOOL",
+      "status": "RETAINED_NO_NEW_EXTERIOR_DECK_IN_THIS_BATCH",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/school/construction.json",
+      "reason": "Source geometry and prior individual obligations retained; no inferred map acceptance."
+    },
+    {
+      "id": "WLD-01",
+      "status": "RETAINED_NO_NEW_EXTERIOR_DECK_IN_THIS_BATCH",
+      "evidence": null,
+      "reason": "Source geometry and prior individual obligations retained; no inferred map acceptance."
+    },
+    {
+      "id": "WLD-02",
+      "status": "RETAINED_NO_NEW_EXTERIOR_DECK_IN_THIS_BATCH",
+      "evidence": null,
+      "reason": "Source geometry and prior individual obligations retained; no inferred map acceptance."
+    },
+    {
+      "id": "WLD-03",
+      "status": "RETAINED_NO_NEW_EXTERIOR_DECK_IN_THIS_BATCH",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-03/construction.json",
+      "reason": "Source geometry and prior individual obligations retained; no inferred map acceptance."
+    },
+    {
+      "id": "WLD-04",
+      "status": "RETAINED_NO_NEW_EXTERIOR_DECK_IN_THIS_BATCH",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-04/construction.json",
+      "reason": "Existing construction/terrain needs its own next pass; no inferred deck or map acceptance. WLD04 tower footing is a terrain/foundation base, not an instruction to stamp an elevated12x12m room pad."
+    },
+    {
+      "id": "WLD-05",
+      "status": "RETAINED_NO_NEW_EXTERIOR_DECK_IN_THIS_BATCH",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-05/construction.json",
+      "reason": "Source geometry and prior individual obligations retained; no inferred map acceptance."
+    },
+    {
+      "id": "WLD-06",
+      "status": "ACTUAL_EXTERIOR_DECK_CONSTRUCTION_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+      "evidence": "development/levels/rebuild/deck-fit-pass/wld-06/construction.json",
+      "zones": [
+        "quay",
+        "pier-w",
+        "pier-e",
+        "crossdock"
+      ],
+      "new_parts": 160,
+      "new_triangles": 1872,
+      "coverage": {
+        "preserved_source_top_samples": 4258,
+        "new_closed_deck_samples": 6878,
+        "shared_edge_samples": 2,
+        "clear_aperture_samples": 640
+      },
+      "open_contacts": {
+        "NO_STRUCTURAL_FLOOR_BEARING": 13,
+        "NO_NATIVE_GROUND": 16,
+        "REQUIRES_DEEP_RETAINING_OR_ROCK_VOLUME": 4,
+        "NO_ACTUAL_DECK_UNDERSIDE": 7
+      },
+      "flat_route_comparison": {
+        "samples": 3744,
+        "baseline_valid": 3537,
+        "new_block": 0,
+        "baseline_sweep": 3365,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-07",
+      "status": "RETAINED_NO_NEW_EXTERIOR_DECK_IN_THIS_BATCH",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-07/construction.json",
+      "reason": "Source geometry and prior individual obligations retained; no inferred map acceptance."
+    },
+    {
+      "id": "WLD-08",
+      "status": "RETAINED_NO_NEW_EXTERIOR_DECK_IN_THIS_BATCH",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-08/construction.json",
+      "reason": "Source geometry and prior individual obligations retained; no inferred map acceptance."
+    },
+    {
+      "id": "WLD-09",
+      "status": "RETAINED_NO_NEW_EXTERIOR_DECK_IN_THIS_BATCH",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-09/construction.json",
+      "reason": "Source geometry and prior individual obligations retained; no inferred map acceptance."
+    },
+    {
+      "id": "WLD-10",
+      "status": "RETAINED_NO_NEW_EXTERIOR_DECK_IN_THIS_BATCH",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-10/construction.json",
+      "reason": "Source geometry and prior individual obligations retained; no inferred map acceptance."
+    },
+    {
+      "id": "WLD-11",
+      "status": "ACTUAL_EXTERIOR_DECK_CONSTRUCTION_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+      "evidence": "development/levels/rebuild/deck-fit-pass/wld-11/construction.json",
+      "zones": [
+        "main",
+        "service",
+        "south-deck",
+        "north-deck",
+        "ferry"
+      ],
+      "new_parts": 171,
+      "new_triangles": 2000,
+      "coverage": {
+        "new_closed_deck_samples": 6823,
+        "preserved_source_top_samples": 5249,
+        "clear_aperture_samples": 600
+      },
+      "open_contacts": {
+        "NO_ACTUAL_DECK_UNDERSIDE": 2
+      },
+      "flat_route_comparison": {
+        "samples": 3663,
+        "baseline_valid": 3447,
+        "new_block": 0,
+        "baseline_sweep": 3260,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-12",
+      "status": "RETAINED_NO_NEW_EXTERIOR_DECK_IN_THIS_BATCH",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-12/construction.json",
+      "reason": "Source geometry and prior individual obligations retained; no inferred map acceptance."
+    },
+    {
+      "id": "WLD-13",
+      "status": "RETAINED_NO_NEW_EXTERIOR_DECK_IN_THIS_BATCH",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-13/construction.json",
+      "reason": "Source geometry and prior individual obligations retained; no inferred map acceptance."
+    },
+    {
+      "id": "WLD-14",
+      "status": "ACTUAL_EXTERIOR_DECK_CONSTRUCTION_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+      "evidence": "development/levels/rebuild/deck-fit-pass/wld-14/construction.json",
+      "zones": [
+        "porch"
+      ],
+      "new_parts": 25,
+      "new_triangles": 300,
+      "coverage": {
+        "new_closed_deck_samples": 2777,
+        "preserved_source_top_samples": 295,
+        "shared_edge_samples": 1
+      },
+      "open_contacts": {
+        "NO_NATIVE_GROUND": 10
+      },
+      "flat_route_comparison": {
+        "samples": 2583,
+        "baseline_valid": 2441,
+        "new_block": 0,
+        "baseline_sweep": 2349,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-15",
+      "status": "ACTUAL_EXTERIOR_DECK_CONSTRUCTION_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+      "evidence": "development/levels/rebuild/deck-fit-pass/wld-15/construction.json",
+      "zones": [
+        "quay",
+        "portpier"
+      ],
+      "new_parts": 38,
+      "new_triangles": 452,
+      "coverage": {
+        "new_closed_deck_samples": 5664,
+        "preserved_source_top_samples": 480
+      },
+      "open_contacts": {
+        "PILE_NATIVE_GROUND_MISSING_OR_OVERTOPPED": 2
+      },
+      "flat_route_comparison": {
+        "samples": 2940,
+        "baseline_valid": 2835,
+        "new_block": 0,
+        "baseline_sweep": 2725,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-16",
+      "status": "ACTUAL_EXTERIOR_DECK_CONSTRUCTION_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+      "evidence": "development/levels/rebuild/deck-fit-pass/wld-16/construction.json",
+      "zones": [
+        "westwalk",
+        "eastwalk",
+        "northwalk"
+      ],
+      "new_parts": 97,
+      "new_triangles": 1132,
+      "coverage": {
+        "new_closed_deck_samples": 2654,
+        "preserved_source_top_samples": 1282
+      },
+      "open_contacts": {
+        "EARTH_OVERTOPS_WALKING_FLOOR": 13,
+        "NO_STRUCTURAL_FLOOR_BEARING": 18
+      },
+      "flat_route_comparison": {
+        "samples": 3243,
+        "baseline_valid": 2980,
+        "new_block": 0,
+        "baseline_sweep": 2847,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-17",
+      "status": "RETAINED_NO_NEW_EXTERIOR_DECK_IN_THIS_BATCH",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-17/construction.json",
+      "reason": "Source geometry and prior individual obligations retained; no inferred map acceptance."
+    },
+    {
+      "id": "WLD-18",
+      "status": "RETAINED_NO_NEW_EXTERIOR_DECK_IN_THIS_BATCH",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-18/construction.json",
+      "reason": "Source geometry and prior individual obligations retained; no inferred map acceptance."
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "status": "RETAINED_NO_NEW_EXTERIOR_DECK_IN_THIS_BATCH",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-07-mortuary/construction.json",
+      "reason": "Source geometry and prior individual obligations retained; no inferred map acceptance."
+    }
+  ]
+}

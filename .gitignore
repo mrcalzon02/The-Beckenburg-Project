@@ -28,3 +28,6 @@ development/levels/rebuild/**/terrain-world/**/*.editor.lock
 development/levels/rebuild/terrain-fit-pass/**/*.blend[0-9]
 # Recreated native-loader cache from hidden OpenGL verification.
 /.lwjgl/
+
+# Scoped Blender deck construction backups.
+development/levels/rebuild/deck-fit-pass/**/*.blend[0-9]

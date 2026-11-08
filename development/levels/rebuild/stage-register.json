@@ -3187,7 +3187,11 @@
             "development/levels/rebuild/terrain-fit-pass/wld-06/construction.json",
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
-            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/deck-fit-pass/wld-06/construction.json",
+            "development/levels/rebuild/deck-fit-pass/README.md",
+            "development/levels/rebuild/deck-fit-pass/verification/export-contact-coverage.json",
+            "development/levels/rebuild/deck-fit-pass/verification/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
@@ -3202,9 +3206,13 @@
             "DEV-387",
             "DEV-395",
             "DEV-396",
-            "DEV-398"
+            "DEV-398",
+            "DEV-403",
+            "DEV-404",
+            "DEV-405",
+            "DEV-406"
           ],
-          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
+          "next_action": "Physical exterior plates now exist and retain baseline movement. Complete intermediate framing/guards and whole-site terrain/building/stair fit, real retaining/cliff/cave/water/physical boundaries and canonical van arrival before native runtime/gameplay/network/performance acceptance. Existing failures and source-only locks remain;40-space envelope/punches/source props preserved."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -3221,7 +3229,11 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md",
+            "development/levels/rebuild/deck-fit-pass/wld-06/construction.json",
+            "development/levels/rebuild/deck-fit-pass/README.md",
+            "development/levels/rebuild/deck-fit-pass/verification/export-contact-coverage.json",
+            "development/levels/rebuild/deck-fit-pass/verification/stair-movement.json"
           ],
           "defects": [
             "DEV-390",
@@ -3231,9 +3243,13 @@
             "DEV-394",
             "DEV-395",
             "DEV-396",
-            "DEV-398"
+            "DEV-398",
+            "DEV-403",
+            "DEV-404",
+            "DEV-405",
+            "DEV-406"
           ],
-          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
+          "next_action": "Physical exterior plates now exist and retain baseline movement. Complete intermediate framing/guards and whole-site terrain/building/stair fit, real retaining/cliff/cave/water/physical boundaries and canonical van arrival before native runtime/gameplay/network/performance acceptance. Existing failures and source-only locks remain;40-space envelope/punches/source props preserved."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -4096,7 +4112,11 @@
             "development/levels/rebuild/terrain-fit-pass/wld-11/construction.json",
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
-            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/deck-fit-pass/wld-11/construction.json",
+            "development/levels/rebuild/deck-fit-pass/README.md",
+            "development/levels/rebuild/deck-fit-pass/verification/export-contact-coverage.json",
+            "development/levels/rebuild/deck-fit-pass/verification/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
@@ -4111,9 +4131,13 @@
             "DEV-387",
             "DEV-395",
             "DEV-396",
-            "DEV-398"
+            "DEV-398",
+            "DEV-403",
+            "DEV-404",
+            "DEV-405",
+            "DEV-406"
           ],
-          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
+          "next_action": "Physical exterior plates now exist and retain baseline movement. Complete intermediate framing/guards and whole-site terrain/building/stair fit, real retaining/cliff/cave/water/physical boundaries and canonical van arrival before native runtime/gameplay/network/performance acceptance. Existing failures and source-only locks remain;40-space envelope/punches/source props preserved."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -4130,7 +4154,11 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md",
+            "development/levels/rebuild/deck-fit-pass/wld-11/construction.json",
+            "development/levels/rebuild/deck-fit-pass/README.md",
+            "development/levels/rebuild/deck-fit-pass/verification/export-contact-coverage.json",
+            "development/levels/rebuild/deck-fit-pass/verification/stair-movement.json"
           ],
           "defects": [
             "DEV-390",
@@ -4140,9 +4168,13 @@
             "DEV-394",
             "DEV-395",
             "DEV-396",
-            "DEV-398"
+            "DEV-398",
+            "DEV-403",
+            "DEV-404",
+            "DEV-405",
+            "DEV-406"
           ],
-          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
+          "next_action": "Physical exterior plates now exist and retain baseline movement. Complete intermediate framing/guards and whole-site terrain/building/stair fit, real retaining/cliff/cave/water/physical boundaries and canonical van arrival before native runtime/gameplay/network/performance acceptance. Existing failures and source-only locks remain;40-space envelope/punches/source props preserved."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -4644,7 +4676,11 @@
             "development/levels/rebuild/terrain-fit-pass/wld-14/construction.json",
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
-            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/deck-fit-pass/wld-14/construction.json",
+            "development/levels/rebuild/deck-fit-pass/README.md",
+            "development/levels/rebuild/deck-fit-pass/verification/export-contact-coverage.json",
+            "development/levels/rebuild/deck-fit-pass/verification/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
@@ -4663,9 +4699,13 @@
             "DEV-387",
             "DEV-395",
             "DEV-396",
-            "DEV-398"
+            "DEV-398",
+            "DEV-403",
+            "DEV-404",
+            "DEV-405",
+            "DEV-406"
           ],
-          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
+          "next_action": "Physical exterior plates now exist and retain baseline movement. Complete intermediate framing/guards and whole-site terrain/building/stair fit, real retaining/cliff/cave/water/physical boundaries and canonical van arrival before native runtime/gameplay/network/performance acceptance. Existing failures and source-only locks remain;40-space envelope/punches/source props preserved."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -4681,16 +4721,24 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md",
+            "development/levels/rebuild/deck-fit-pass/wld-14/construction.json",
+            "development/levels/rebuild/deck-fit-pass/README.md",
+            "development/levels/rebuild/deck-fit-pass/verification/export-contact-coverage.json",
+            "development/levels/rebuild/deck-fit-pass/verification/stair-movement.json"
           ],
           "defects": [
             "DEV-363",
             "DEV-366",
             "DEV-395",
             "DEV-396",
-            "DEV-398"
+            "DEV-398",
+            "DEV-403",
+            "DEV-404",
+            "DEV-405",
+            "DEV-406"
           ],
-          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
+          "next_action": "Physical exterior plates now exist and retain baseline movement. Complete intermediate framing/guards and whole-site terrain/building/stair fit, real retaining/cliff/cave/water/physical boundaries and canonical van arrival before native runtime/gameplay/network/performance acceptance. Existing failures and source-only locks remain;40-space envelope/punches/source props preserved."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -4828,7 +4876,11 @@
             "development/levels/rebuild/terrain-fit-pass/wld-15/construction.json",
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
-            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/deck-fit-pass/wld-15/construction.json",
+            "development/levels/rebuild/deck-fit-pass/README.md",
+            "development/levels/rebuild/deck-fit-pass/verification/export-contact-coverage.json",
+            "development/levels/rebuild/deck-fit-pass/verification/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
@@ -4845,9 +4897,13 @@
             "DEV-387",
             "DEV-395",
             "DEV-396",
-            "DEV-398"
+            "DEV-398",
+            "DEV-403",
+            "DEV-404",
+            "DEV-405",
+            "DEV-406"
           ],
-          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
+          "next_action": "Physical exterior plates now exist and retain baseline movement. Complete intermediate framing/guards and whole-site terrain/building/stair fit, real retaining/cliff/cave/water/physical boundaries and canonical van arrival before native runtime/gameplay/network/performance acceptance. Existing failures and source-only locks remain;40-space envelope/punches/source props preserved."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -4861,14 +4917,22 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md",
+            "development/levels/rebuild/deck-fit-pass/wld-15/construction.json",
+            "development/levels/rebuild/deck-fit-pass/README.md",
+            "development/levels/rebuild/deck-fit-pass/verification/export-contact-coverage.json",
+            "development/levels/rebuild/deck-fit-pass/verification/stair-movement.json"
           ],
           "defects": [
             "DEV-395",
             "DEV-396",
-            "DEV-398"
+            "DEV-398",
+            "DEV-403",
+            "DEV-404",
+            "DEV-405",
+            "DEV-406"
           ],
-          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
+          "next_action": "Physical exterior plates now exist and retain baseline movement. Complete intermediate framing/guards and whole-site terrain/building/stair fit, real retaining/cliff/cave/water/physical boundaries and canonical van arrival before native runtime/gameplay/network/performance acceptance. Existing failures and source-only locks remain;40-space envelope/punches/source props preserved."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -5001,7 +5065,11 @@
             "development/levels/rebuild/terrain-fit-pass/wld-16/construction.json",
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
-            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/deck-fit-pass/wld-16/construction.json",
+            "development/levels/rebuild/deck-fit-pass/README.md",
+            "development/levels/rebuild/deck-fit-pass/verification/export-contact-coverage.json",
+            "development/levels/rebuild/deck-fit-pass/verification/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
@@ -5016,9 +5084,13 @@
             "DEV-387",
             "DEV-395",
             "DEV-396",
-            "DEV-398"
+            "DEV-398",
+            "DEV-403",
+            "DEV-404",
+            "DEV-405",
+            "DEV-406"
           ],
-          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
+          "next_action": "Physical exterior plates now exist and retain baseline movement. Complete intermediate framing/guards and whole-site terrain/building/stair fit, real retaining/cliff/cave/water/physical boundaries and canonical van arrival before native runtime/gameplay/network/performance acceptance. Existing failures and source-only locks remain;40-space envelope/punches/source props preserved."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -5032,14 +5104,22 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md",
+            "development/levels/rebuild/deck-fit-pass/wld-16/construction.json",
+            "development/levels/rebuild/deck-fit-pass/README.md",
+            "development/levels/rebuild/deck-fit-pass/verification/export-contact-coverage.json",
+            "development/levels/rebuild/deck-fit-pass/verification/stair-movement.json"
           ],
           "defects": [
             "DEV-395",
             "DEV-396",
-            "DEV-398"
+            "DEV-398",
+            "DEV-403",
+            "DEV-404",
+            "DEV-405",
+            "DEV-406"
           ],
-          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
+          "next_action": "Physical exterior plates now exist and retain baseline movement. Complete intermediate framing/guards and whole-site terrain/building/stair fit, real retaining/cliff/cave/water/physical boundaries and canonical van arrival before native runtime/gameplay/network/performance acceptance. Existing failures and source-only locks remain;40-space envelope/punches/source props preserved."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -5701,5 +5781,17 @@
     "mechanism": "Shared6\u201324m radial policy before alpha blending at actual surface depth; weather sky horizon; no depth writes",
     "focused_checks": 10,
     "actual_runtime_frames": 52
+  },
+  "physical_exterior_decks": {
+    "status": "ACTUAL_NATIVE_CONSTRUCTION_CANDIDATES_VERIFIED_RUNTIME_GATES_OPEN",
+    "sites": [
+      "WLD-06",
+      "WLD-11",
+      "WLD-14",
+      "WLD-15",
+      "WLD-16"
+    ],
+    "evidence": "development/levels/rebuild/deck-fit-pass/roster.json",
+    "source_sha": null
   }
 }

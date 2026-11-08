@@ -17,3 +17,6 @@ development/levels/rebuild/**/rough-* -text
 # Frozen native rebuild baselines are fingerprinted byte-for-byte at runtime.
 assets/runtime/sites/castle-baseline-*.properties -text
 development/levels/rebuild/native-upgrade-baselines/*.properties -text
+
+# Physical deck candidates bind exact source/evidence bytes.
+development/levels/rebuild/deck-fit-pass/** -text

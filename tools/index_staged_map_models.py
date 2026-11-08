@@ -48,7 +48,7 @@ def main():
         if name.startswith('assets/libraries/'):collection='source_library_masters'
         elif any(s in name for s in ['/site-kits/','/previews/','/relic-review/','/crypt-review/','_kit_refined_']):collection='review_assemblies'
         elif '/terrain-fit-pass/rejected/' in name:collection='reference_and_rejected_studies'
-        elif any(s in name for s in ['/rebuild/structures/','/blockouts/','/rebuild/furnishings/','/terrain-overall-pass/assemblies/','/rebuild/terrain-fit-pass/']):collection='native_map_exports'
+        elif any(s in name for s in ['/rebuild/structures/','/blockouts/','/rebuild/furnishings/','/terrain-overall-pass/assemblies/','/rebuild/terrain-fit-pass/','/rebuild/deck-fit-pass/']):collection='native_map_exports'
         elif any(s in name for s in ['/rejected/','/references/','/evidence/']):collection='reference_and_rejected_studies'
         else:collection='additional_custom_model_sources'
         aliases.append(dict(id=path.stem,label=path.stem,maps=[],category=collection,path=name,collection=collection,

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 8109,
+  "count": 8122,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -74254,6 +74254,136 @@
       "height": 600,
       "bytes": 1031813,
       "sha256": "032e7003e0aa392de680abafd2340fd5a3dc668665a8cfd9a110f91224c2ccd4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/deck-sheet-01.png",
+      "url": "development/levels/rebuild/captures/deck-fit-batch/deck-sheet-01.png",
+      "title": "Deck sheet 01",
+      "kind": "Native physical exterior deck construction review; runtime acceptance pending",
+      "width": 1200,
+      "height": 960,
+      "bytes": 214398,
+      "sha256": "8255b8e90f2cfd33559ae7cfd4dc0137e8840de94671c126820f885962db6d43"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/deck-sheet-02.png",
+      "url": "development/levels/rebuild/captures/deck-fit-batch/deck-sheet-02.png",
+      "title": "Deck sheet 02",
+      "kind": "Native physical exterior deck construction review; runtime acceptance pending",
+      "width": 1200,
+      "height": 960,
+      "bytes": 260803,
+      "sha256": "8dcddce4145cfae416fcb4638d7f064878eaf2f252e1430a8dd376b615de5e02"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/deck-sheet-03.png",
+      "url": "development/levels/rebuild/captures/deck-fit-batch/deck-sheet-03.png",
+      "title": "Deck sheet 03",
+      "kind": "Native physical exterior deck construction review; runtime acceptance pending",
+      "width": 1200,
+      "height": 480,
+      "bytes": 129930,
+      "sha256": "17af33d7e6e0d1068d637c2637a68bbf76ed15f9d0a2fe1f8ca610ff84e8866a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-06-deck-side.png",
+      "url": "development/levels/rebuild/captures/deck-fit-batch/wld-06-deck-side.png",
+      "title": "Wld 06 deck side",
+      "kind": "Native physical exterior deck construction review; runtime acceptance pending",
+      "width": 1200,
+      "height": 900,
+      "bytes": 631431,
+      "sha256": "3427f6259501bd9a69c58940fd4ca2b2d399ef1c6e060c26593afbe425afaf95"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-06-overview.png",
+      "url": "development/levels/rebuild/captures/deck-fit-batch/wld-06-overview.png",
+      "title": "Wld 06 overview",
+      "kind": "Native physical exterior deck construction review; runtime acceptance pending",
+      "width": 1200,
+      "height": 900,
+      "bytes": 744250,
+      "sha256": "a24e64480ab6760263853dfac4206360e270b7468d3388b602a71180149e4c04"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-11-deck-side.png",
+      "url": "development/levels/rebuild/captures/deck-fit-batch/wld-11-deck-side.png",
+      "title": "Wld 11 deck side",
+      "kind": "Native physical exterior deck construction review; runtime acceptance pending",
+      "width": 1200,
+      "height": 900,
+      "bytes": 622079,
+      "sha256": "e3b1723a4c7f2016223b2f4bbe73d9e41dd13037b35f29c170ecfebe63be045b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-11-overview.png",
+      "url": "development/levels/rebuild/captures/deck-fit-batch/wld-11-overview.png",
+      "title": "Wld 11 overview",
+      "kind": "Native physical exterior deck construction review; runtime acceptance pending",
+      "width": 1200,
+      "height": 900,
+      "bytes": 709182,
+      "sha256": "c6672b8040344e676d2d8415ec08a7fd3887ba3c8d224abc512d76db1663ec0a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-14-deck-side.png",
+      "url": "development/levels/rebuild/captures/deck-fit-batch/wld-14-deck-side.png",
+      "title": "Wld 14 deck side",
+      "kind": "Native physical exterior deck construction review; runtime acceptance pending",
+      "width": 1200,
+      "height": 900,
+      "bytes": 685012,
+      "sha256": "1f9422cfa01e0a8f71281d33b9769f91daab06f828a5a457ea9c7638c7a598b7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-14-overview.png",
+      "url": "development/levels/rebuild/captures/deck-fit-batch/wld-14-overview.png",
+      "title": "Wld 14 overview",
+      "kind": "Native physical exterior deck construction review; runtime acceptance pending",
+      "width": 1200,
+      "height": 900,
+      "bytes": 857332,
+      "sha256": "14442eaf20610f8645981ccfe2240281a4ac5dc7d8f8955efca5145223cec23c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-15-deck-side.png",
+      "url": "development/levels/rebuild/captures/deck-fit-batch/wld-15-deck-side.png",
+      "title": "Wld 15 deck side",
+      "kind": "Native physical exterior deck construction review; runtime acceptance pending",
+      "width": 1200,
+      "height": 900,
+      "bytes": 621395,
+      "sha256": "7e4be7cd63b8aa1deaa0e5dc5a45e3104bb91878f5092b8add0e6042adf8d86a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-15-overview.png",
+      "url": "development/levels/rebuild/captures/deck-fit-batch/wld-15-overview.png",
+      "title": "Wld 15 overview",
+      "kind": "Native physical exterior deck construction review; runtime acceptance pending",
+      "width": 1200,
+      "height": 900,
+      "bytes": 744461,
+      "sha256": "a9c82ec29fb15954b6b44fe0d8803ec801efbdabc40a9b2bfb3837e887e63ca8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-16-deck-side.png",
+      "url": "development/levels/rebuild/captures/deck-fit-batch/wld-16-deck-side.png",
+      "title": "Wld 16 deck side",
+      "kind": "Native physical exterior deck construction review; runtime acceptance pending",
+      "width": 1200,
+      "height": 900,
+      "bytes": 635368,
+      "sha256": "87f88f7142951d16dd849d3e20738c9eab9ce9b6efe0a182b23a748e05e1bec3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-16-overview.png",
+      "url": "development/levels/rebuild/captures/deck-fit-batch/wld-16-overview.png",
+      "title": "Wld 16 overview",
+      "kind": "Native physical exterior deck construction review; runtime acceptance pending",
+      "width": 1200,
+      "height": 900,
+      "bytes": 792661,
+      "sha256": "4c2625a1df1a6932aa85eb381caa56080532a289e18f336958297e69f2d58c41"
     },
     {
       "path": "development/levels/rebuild/captures/editor-service/church-nave-before.png",
