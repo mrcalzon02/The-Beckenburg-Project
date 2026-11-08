@@ -165,7 +165,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/structures/academy/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -180,7 +180,11 @@
             "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-354",
@@ -190,16 +194,21 @@
             "DEV-361",
             "DEV-362",
             "DEV-363",
-            "DEV-377"
+            "DEV-377",
+            "DEV-385",
+            "DEV-387"
           ],
-          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "evidence": [
+            "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+            "development/levels/rebuild/terrain-overall-pass/README.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -217,17 +226,21 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/furnishings/academy/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
-            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -317,7 +330,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/structures/asylum/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -332,7 +345,11 @@
             "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-354",
@@ -342,16 +359,21 @@
             "DEV-361",
             "DEV-362",
             "DEV-363",
-            "DEV-377"
+            "DEV-377",
+            "DEV-385",
+            "DEV-387"
           ],
-          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "evidence": [
+            "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+            "development/levels/rebuild/terrain-overall-pass/README.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -369,17 +391,21 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/furnishings/asylum/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
-            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -794,7 +820,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/structures/church/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -809,7 +835,11 @@
             "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-354",
@@ -819,16 +849,21 @@
             "DEV-361",
             "DEV-362",
             "DEV-363",
-            "DEV-377"
+            "DEV-377",
+            "DEV-385",
+            "DEV-387"
           ],
-          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "evidence": [
+            "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+            "development/levels/rebuild/terrain-overall-pass/README.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -846,17 +881,21 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/furnishings/church/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
-            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -928,7 +967,7 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "tools/build_map_rebuild_roughs.py",
             "development/levels/rebuild/college/rough-layout.json",
@@ -948,7 +987,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/structures/college/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -964,7 +1003,11 @@
             "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-354",
@@ -976,16 +1019,21 @@
             "DEV-363",
             "DEV-377",
             "DEV-375",
-            "DEV-378"
+            "DEV-378",
+            "DEV-385",
+            "DEV-387"
           ],
-          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "evidence": [
+            "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+            "development/levels/rebuild/terrain-overall-pass/README.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -1003,19 +1051,23 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/furnishings/college/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
             "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/preservation.json",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -1103,7 +1155,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/structures/farmhouse/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -1118,7 +1170,11 @@
             "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-354",
@@ -1128,16 +1184,21 @@
             "DEV-361",
             "DEV-362",
             "DEV-363",
-            "DEV-377"
+            "DEV-377",
+            "DEV-385",
+            "DEV-387"
           ],
-          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "evidence": [
+            "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+            "development/levels/rebuild/terrain-overall-pass/README.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -1155,17 +1216,21 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/furnishings/farmhouse/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
-            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -1599,7 +1664,7 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "tools/build_map_rebuild_roughs.py",
             "development/levels/rebuild/mansion/rough-layout.json",
@@ -1619,7 +1684,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/structures/mansion/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -1635,7 +1700,11 @@
             "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-354",
@@ -1647,16 +1716,21 @@
             "DEV-363",
             "DEV-377",
             "DEV-375",
-            "DEV-378"
+            "DEV-378",
+            "DEV-385",
+            "DEV-387"
           ],
-          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "evidence": [
+            "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+            "development/levels/rebuild/terrain-overall-pass/README.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -1674,19 +1748,23 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/furnishings/mansion/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
             "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/preservation.json",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -1775,7 +1853,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/structures/prison/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -1790,7 +1868,11 @@
             "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-354",
@@ -1800,16 +1882,22 @@
             "DEV-361",
             "DEV-362",
             "DEV-363",
-            "DEV-377"
+            "DEV-377",
+            "DEV-385",
+            "DEV-387",
+            "DEV-388"
           ],
-          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "evidence": [
+            "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+            "development/levels/rebuild/terrain-overall-pass/README.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -1827,17 +1915,21 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/furnishings/prison/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
-            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -1924,7 +2016,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/structures/school/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -1939,7 +2031,11 @@
             "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-354",
@@ -1949,16 +2045,21 @@
             "DEV-361",
             "DEV-362",
             "DEV-363",
-            "DEV-377"
+            "DEV-377",
+            "DEV-385",
+            "DEV-387"
           ],
-          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "evidence": [
+            "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+            "development/levels/rebuild/terrain-overall-pass/README.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -1976,17 +2077,21 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/furnishings/school/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
-            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -2287,7 +2392,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/structures/wld-03/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -2302,7 +2407,11 @@
             "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-354",
@@ -2314,16 +2423,21 @@
             "DEV-363",
             "DEV-359",
             "DEV-360",
-            "DEV-377"
+            "DEV-377",
+            "DEV-385",
+            "DEV-387"
           ],
-          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "evidence": [
+            "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+            "development/levels/rebuild/terrain-overall-pass/README.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -2341,17 +2455,21 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/furnishings/wld-03/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
-            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -2432,7 +2550,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/structures/wld-04/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -2447,7 +2565,11 @@
             "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-354",
@@ -2459,16 +2581,21 @@
             "DEV-363",
             "DEV-359",
             "DEV-360",
-            "DEV-377"
+            "DEV-377",
+            "DEV-385",
+            "DEV-387"
           ],
-          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "evidence": [
+            "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+            "development/levels/rebuild/terrain-overall-pass/README.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -2486,17 +2613,21 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/furnishings/wld-04/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
-            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -2577,7 +2708,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/structures/wld-05/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -2592,7 +2723,11 @@
             "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-354",
@@ -2604,16 +2739,21 @@
             "DEV-363",
             "DEV-359",
             "DEV-360",
-            "DEV-377"
+            "DEV-377",
+            "DEV-385",
+            "DEV-387"
           ],
-          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "evidence": [
+            "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+            "development/levels/rebuild/terrain-overall-pass/README.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -2631,17 +2771,21 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/furnishings/wld-05/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
-            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -2720,7 +2864,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/structures/wld-06/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -2735,7 +2879,11 @@
             "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-354",
@@ -2745,16 +2893,21 @@
             "DEV-361",
             "DEV-362",
             "DEV-363",
-            "DEV-377"
+            "DEV-377",
+            "DEV-385",
+            "DEV-387"
           ],
-          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "evidence": [
+            "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+            "development/levels/rebuild/terrain-overall-pass/README.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -2772,17 +2925,21 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/furnishings/wld-06/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
-            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -2854,14 +3011,14 @@
         },
         "S02": {
           "status": "NOT_AUDITED",
-          "source_sha": null,
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [],
           "defects": [],
           "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/structures/wld-07/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -2876,7 +3033,11 @@
             "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-354",
@@ -2886,16 +3047,30 @@
             "DEV-361",
             "DEV-362",
             "DEV-363",
-            "DEV-377"
+            "DEV-377",
+            "DEV-385",
+            "DEV-387",
+            "DEV-380",
+            "DEV-381",
+            "DEV-382",
+            "DEV-384",
+            "DEV-386",
+            "DEV-389"
           ],
-          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "evidence": [
+            "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+            "development/levels/rebuild/terrain-overall-pass/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/saved-terrain-proof.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/graded-idempotence.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/visual-review.json"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -2913,17 +3088,21 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/furnishings/wld-07/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
-            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -3002,7 +3181,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/structures/wld-08/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3017,7 +3196,11 @@
             "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-354",
@@ -3027,16 +3210,21 @@
             "DEV-361",
             "DEV-362",
             "DEV-363",
-            "DEV-377"
+            "DEV-377",
+            "DEV-385",
+            "DEV-387"
           ],
-          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "evidence": [
+            "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+            "development/levels/rebuild/terrain-overall-pass/README.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -3054,17 +3242,21 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/furnishings/wld-08/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
-            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -3145,7 +3337,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/structures/wld-09/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3161,7 +3353,11 @@
             "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-354",
@@ -3172,16 +3368,21 @@
             "DEV-362",
             "DEV-363",
             "DEV-364",
-            "DEV-377"
+            "DEV-377",
+            "DEV-385",
+            "DEV-387"
           ],
-          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "evidence": [
+            "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+            "development/levels/rebuild/terrain-overall-pass/README.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -3199,17 +3400,21 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/furnishings/wld-09/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
-            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -3290,7 +3495,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/structures/wld-10/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3305,7 +3510,11 @@
             "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-354",
@@ -3317,16 +3526,21 @@
             "DEV-363",
             "DEV-359",
             "DEV-360",
-            "DEV-377"
+            "DEV-377",
+            "DEV-385",
+            "DEV-387"
           ],
-          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "evidence": [
+            "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+            "development/levels/rebuild/terrain-overall-pass/README.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -3344,17 +3558,21 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/furnishings/wld-10/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
-            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -3433,7 +3651,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/structures/wld-11/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3448,7 +3666,11 @@
             "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-354",
@@ -3458,16 +3680,21 @@
             "DEV-361",
             "DEV-362",
             "DEV-363",
-            "DEV-377"
+            "DEV-377",
+            "DEV-385",
+            "DEV-387"
           ],
-          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "evidence": [
+            "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+            "development/levels/rebuild/terrain-overall-pass/README.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -3485,17 +3712,21 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/furnishings/wld-11/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
-            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -3576,7 +3807,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/structures/wld-12/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3591,7 +3822,11 @@
             "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-354",
@@ -3603,16 +3838,21 @@
             "DEV-363",
             "DEV-359",
             "DEV-360",
-            "DEV-377"
+            "DEV-377",
+            "DEV-385",
+            "DEV-387"
           ],
-          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "evidence": [
+            "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+            "development/levels/rebuild/terrain-overall-pass/README.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -3630,17 +3870,21 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/furnishings/wld-12/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
-            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -3719,7 +3963,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/structures/wld-13/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3734,7 +3978,11 @@
             "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-354",
@@ -3744,16 +3992,21 @@
             "DEV-361",
             "DEV-362",
             "DEV-363",
-            "DEV-377"
+            "DEV-377",
+            "DEV-385",
+            "DEV-387"
           ],
-          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "evidence": [
+            "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+            "development/levels/rebuild/terrain-overall-pass/README.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -3771,17 +4024,21 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/furnishings/wld-13/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
-            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -3863,7 +4120,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/structures/wld-14/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3879,7 +4136,11 @@
             "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-354",
@@ -3893,22 +4154,26 @@
             "DEV-374",
             "DEV-377",
             "DEV-376",
-            "DEV-378"
+            "DEV-378",
+            "DEV-385",
+            "DEV-387"
           ],
-          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/wld-14/terrain-world/verification.json",
-            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/README.md"
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/README.md",
+            "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+            "development/levels/rebuild/terrain-overall-pass/README.md"
           ],
           "defects": [
             "DEV-363",
             "DEV-366"
           ],
-          "next_action": "Preserve actual saved editor holes; finish geographic footprint/desquareify, cliff fringe, engineered rims/retaining walls, foundations, guards and canonical-van arrival. Full actor sweeps/visual/containment acceptance remains open."
+          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -3926,20 +4191,24 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/furnishings/wld-14/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
             "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/preservation.json",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -4019,7 +4288,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/structures/wld-15/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4034,7 +4303,11 @@
             "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-354",
@@ -4046,16 +4319,21 @@
             "DEV-363",
             "DEV-359",
             "DEV-360",
-            "DEV-377"
+            "DEV-377",
+            "DEV-385",
+            "DEV-387"
           ],
-          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "evidence": [
+            "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+            "development/levels/rebuild/terrain-overall-pass/README.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -4073,17 +4351,21 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/furnishings/wld-15/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
-            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -4161,7 +4443,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/structures/wld-16/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4176,7 +4458,11 @@
             "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-354",
@@ -4186,16 +4472,21 @@
             "DEV-361",
             "DEV-362",
             "DEV-363",
-            "DEV-377"
+            "DEV-377",
+            "DEV-385",
+            "DEV-387"
           ],
-          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "evidence": [
+            "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+            "development/levels/rebuild/terrain-overall-pass/README.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -4213,17 +4504,21 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/furnishings/wld-16/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
-            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -4301,7 +4596,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/structures/wld-17/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4316,7 +4611,11 @@
             "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-354",
@@ -4326,16 +4625,21 @@
             "DEV-361",
             "DEV-362",
             "DEV-363",
-            "DEV-377"
+            "DEV-377",
+            "DEV-385",
+            "DEV-387"
           ],
-          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "evidence": [
+            "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+            "development/levels/rebuild/terrain-overall-pass/README.md"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -4353,17 +4657,21 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/furnishings/wld-17/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
-            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -4443,7 +4751,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/structures/wld-18/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4459,7 +4767,11 @@
             "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-354",
@@ -4469,22 +4781,26 @@
             "DEV-361",
             "DEV-362",
             "DEV-363",
-            "DEV-377"
+            "DEV-377",
+            "DEV-385",
+            "DEV-387"
           ],
-          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/wld-18/terrain-world/verification.json",
-            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/README.md"
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/README.md",
+            "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+            "development/levels/rebuild/terrain-overall-pass/README.md"
           ],
           "defects": [
             "DEV-363",
             "DEV-366"
           ],
-          "next_action": "Preserve actual saved editor holes; finish geographic footprint/desquareify, cliff fringe, engineered rims/retaining walls, foundations, guards and canonical-van arrival. Full actor sweeps/visual/containment acceptance remains open."
+          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -4502,17 +4818,21 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/furnishings/wld-18/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
-            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -4584,14 +4904,14 @@
         },
         "S02": {
           "status": "NOT_AUDITED",
-          "source_sha": null,
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [],
           "defects": [],
           "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/structures/wld-07-mortuary/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4606,7 +4926,11 @@
             "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-354",
@@ -4616,22 +4940,35 @@
             "DEV-361",
             "DEV-362",
             "DEV-363",
-            "DEV-377"
+            "DEV-377",
+            "DEV-385",
+            "DEV-387",
+            "DEV-380",
+            "DEV-381",
+            "DEV-382",
+            "DEV-384",
+            "DEV-386",
+            "DEV-389"
           ],
-          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/wld-07-mortuary/terrain-world/verification.json",
-            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/README.md"
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/README.md",
+            "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+            "development/levels/rebuild/terrain-overall-pass/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/saved-terrain-proof.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/graded-idempotence.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/visual-review.json"
           ],
           "defects": [
             "DEV-363",
             "DEV-366"
           ],
-          "next_action": "Preserve actual saved editor holes; finish geographic footprint/desquareify, cliff fringe, engineered rims/retaining walls, foundations, guards and canonical-van arrival. Full actor sweeps/visual/containment acceptance remains open."
+          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -4649,17 +4986,21 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/furnishings/wld-07-mortuary/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
-            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
+          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -4735,5 +5076,12 @@
     ],
     "scope": "All29packets plus existing follow-on unfinished-map scope; no acceptance grants"
   },
-  "follow_on_scope_note": "After the28base locations and cemetery/mortuary annex,continue every remaining unfinished location in the current catalog/backlog,with regular checkpoints and synchronization; owner7November2026."
+  "follow_on_scope_note": "After the28base locations and cemetery/mortuary annex,continue every remaining unfinished location in the current catalog/backlog,with regular checkpoints and synchronization; owner7November2026.",
+  "terrain_priority_amendment": {
+    "date": "2026-11-07",
+    "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+    "owner_direction": "Overall terrain layers and elevations first; reshuffle blockouts as needed so coherent site terrain, structures and then routes agree.",
+    "evidence": "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+    "scope": "All29packets;25remaining candidates and4retained mature sources with individual audits; full follow-on goal preserved"
+  }
 }
