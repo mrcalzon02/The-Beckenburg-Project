@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.net.URI;
+import java.net.http.*;
+import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -50,6 +53,87 @@ public final class EditorAgentGuiTest {
         });
         driver.start();try{button(editor,"VERIFY SCENE").doClick();}finally{driver.stop();}
         check(failure.get()==null&&stage.get()==3,"Actual human recovery menu completed: "+failure.get());
+    }
+    private record Access(String url,String bearer){}
+    private static final HttpClient CLIENT=HttpClient.newHttpClient();
+    private static Access openAccess(DeveloperLevelEditor editor)throws Exception{
+        var access=new AtomicReference<Access>();
+        SwingUtilities.invokeAndWait(()->{
+            Timer driver=new Timer(50,event->{
+                for(Window window:Window.getWindows())if(window instanceof JDialog dialog && dialog.isShowing()){
+                    var pane=component(dialog,JOptionPane.class);if(pane==null)continue;
+                    if(dialog.getTitle().equals("Scene verification")){
+                        var choices=component(dialog,JComboBox.class);
+                        choices.setSelectedItem("START LOCAL OBSERVATION");
+                        pane.setInputValue("START LOCAL OBSERVATION");pane.setValue(JOptionPane.OK_OPTION);
+                    }else if(dialog.getTitle().equals("Read-only access to this editor scene")){
+                        var lines=component(dialog,JTextArea.class).getText().split("\n");
+                        access.set(new Access(lines[0].substring("Address  ".length()),lines[1].substring("Authorization: ".length())));
+                        pane.setValue(JOptionPane.OK_OPTION);
+                    }
+                }
+            });
+            driver.start();try{button(editor,"VERIFY SCENE").doClick();}finally{driver.stop();}
+        });
+        check(access.get()!=null,"Actual editor displayed local session credentials");return access.get();
+    }
+    private static HttpResponse<byte[]> request(Access access,String path,String method,String auth)throws Exception{
+        var request=HttpRequest.newBuilder(URI.create(access.url()+path)).timeout(java.time.Duration.ofSeconds(30))
+            .method(method,HttpRequest.BodyPublishers.noBody());
+        if(auth!=null)request.header("Authorization",auth);
+        return CLIENT.send(request.build(),HttpResponse.BodyHandlers.ofByteArray());
+    }
+    private static long revision(Access access)throws Exception{
+        var reply=request(access,"/summary","GET",access.bearer());
+        check(reply.statusCode()==200,"Observe active editor summary");
+        return reply.headers().firstValueAsLong("X-Editor-Revision").orElseThrow();
+    }
+    private static void verifyObservation(DeveloperLevelEditor editor,Path output,Access access)throws Exception{
+        long rev=revision(access);String node="/node?id=prop-0&revision=";
+        check(request(access,"/summary","GET",null).statusCode()==401,"Anonymous observation denied");
+        check(request(access,"/summary","GET","Bearer invalid").statusCode()==401,"Incorrect token denied");
+        check(request(access,"/edit","POST",access.bearer()).statusCode()==405,"Mutation method denied");
+        var browser=HttpRequest.newBuilder(URI.create(access.url()+"/summary")).header("Origin","https://example.invalid")
+            .header("Authorization",access.bearer()).GET().build();
+        check(CLIENT.send(browser,HttpResponse.BodyHandlers.discarding()).statusCode()==403,"Browser origin denied");
+        var before=request(access,node+rev,"GET",access.bearer());
+        check(before.statusCode()==200,"Read native unsaved prop");
+        var expected=new AtomicReference<String>();
+        var movedX=new AtomicReference<Double>();
+        SwingUtilities.invokeAndWait(()->{
+            try{expected.set(EditorAgentCli.json(editor.agentService().node(rev,"prop-0")));
+                var hierarchy=DeveloperLevelEditor.class.getDeclaredField("hierarchy");hierarchy.setAccessible(true);
+                ((JList<?>)hierarchy.get(editor)).setSelectedIndex(0);
+                var xField=DeveloperLevelEditor.class.getDeclaredField("x");xField.setAccessible(true);
+                var x=(JSpinner)xField.get(editor);
+                movedX.set(editor.agentService().node(rev,"prop-0").result().x()+.25);
+                x.setValue(movedX.get());
+            }catch(Exception failure){throw new RuntimeException(failure);}
+        });
+        check(expected.get().equals(new String(before.body(),StandardCharsets.UTF_8)),"Read exact unsaved native row");
+        check(request(access,node+rev,"GET",access.bearer()).statusCode()==409,"Human inspector move invalidates revision");
+        long changed=revision(access);
+        var after=request(access,node+changed,"GET",access.bearer());
+        SwingUtilities.invokeAndWait(()->{
+            try{var observed=editor.agentService().node(changed,"prop-0");
+                check(observed.result().x()==movedX.get(),"Manual X move reached native state");
+                expected.set(EditorAgentCli.json(observed));}
+            catch(Exception failure){throw new RuntimeException(failure);}
+        });
+        check(after.statusCode()==200 && expected.get().equals(new String(after.body(),StandardCharsets.UTF_8)),"Read native row after human move");
+        var batch=request(access,"/nodes?revision="+changed+"&id=prop-1&id=prop-0","GET",access.bearer());
+        SwingUtilities.invokeAndWait(()->{
+            try{expected.set(EditorAgentCli.json(editor.agentService().nodes(changed,java.util.List.of("prop-1","prop-0"))));}
+            catch(Exception failure){throw new RuntimeException(failure);}
+        });
+        check(batch.statusCode()==200 && expected.get().equals(new String(batch.body(),StandardCharsets.UTF_8)),"Ordered sparse observation");
+        var changes=request(access,"/changes?revision="+changed+"&offset=0&limit=1","GET",access.bearer());
+        check(changes.statusCode()==200 && new String(changes.body(),StandardCharsets.UTF_8).contains("\"prop-0\""),"Expose human move metadata");
+        check(request(access,"/test?revision="+changed+"&id=mission-runtime-parity","GET",access.bearer()).statusCode()==200,"Read focused diagnostic");
+        var capture=request(access,"/capture?revision="+changed,"GET",access.bearer());
+        var image=javax.imageio.ImageIO.read(new java.io.ByteArrayInputStream(capture.body()));
+        check(capture.statusCode()==200 && image!=null && image.getWidth()==560 && image.getHeight()==350,"Real renderer capture");
+        Files.write(output.resolve("local-observation-house.png"),capture.body());
     }
     public static void main(String[] args)throws Exception{
         Path output=Path.of(args.length==0?"build/editor-agent-evidence":args[0]).toAbsolutePath();Files.createDirectories(output);
@@ -110,6 +194,22 @@ public final class EditorAgentGuiTest {
                     catch(IllegalStateException expected){}
                 }catch(Exception failure){throw new RuntimeException(failure);}
             });
+            var access=openAccess(editor.get());
+            verifyObservation(editor.get(),output,access);
+            SwingUtilities.invokeAndWait(()->{
+                try{
+                    var open=DeveloperLevelEditor.class.getDeclaredMethod("openMission",HouseMap.Site.class);
+                    open.setAccessible(true);open.invoke(editor.get(),HouseMap.Site.HOUSE);
+                }catch(Exception failure){throw new RuntimeException(failure);}
+            });
+            try{request(access,"/summary","GET",access.bearer());throw new AssertionError("Old scene session is reachable");}
+            catch(java.io.IOException expected){}
+            var next=openAccess(editor.get());
+            check(request(next,"/summary","GET",access.bearer()).statusCode()==401,"Old scene token refused on new session");
+            SwingUtilities.invokeAndWait(()->window.get().dispose());
+            SwingUtilities.invokeAndWait(()->{});
+            try{request(next,"/summary","GET",next.bearer());throw new AssertionError("Closed editor is reachable");}
+            catch(java.io.IOException expected){}
         }finally{
             SwingUtilities.invokeAndWait(()->{if(window.get()!=null)window.get().dispose();});
             SwingUtilities.invokeAndWait(()->{
@@ -118,6 +218,6 @@ public final class EditorAgentGuiTest {
             });
             try(var files=Files.walk(home)){files.sorted(java.util.Comparator.reverseOrder()).forEach(p->{try{Files.deleteIfExists(p);}catch(Exception ignored){}});}
         }
-        System.out.println("PASS real Windows editor: mission/Castle service and recovery, human undo/redo, save/reopen, actual recovery menu, runtime parity, Castle/House PNGs and stale/closed scene rejection");
+        System.out.println("PASS real Windows editor: mission/Castle recovery and history, authenticated loopback observation of an unsaved inspector move, PNG capture, scene replacement and listener shutdown");
     }
 }

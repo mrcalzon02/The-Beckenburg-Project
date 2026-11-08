@@ -6,6 +6,25 @@ Owner priority, 2026-11-01: finish a small service over proven human editor oper
 
 ## Current working scope
 
+### Observe the running desktop editor
+
+Open **Verify Scene → Start Local Observation** in the level editor. The dialog displays a loopback address and the session's Authorization header. Use that header on each GET request. The listener starts only when selected. Stop it from Verify Scene. Switching levels or closing the window also stops the listener. Starting another session issues a fresh token.
+
+Read `/summary` for the active scene ID, revision, supported observation routes and targeted tests. Every other route requires the revision from that summary. A human edit invalidates the previous revision and returns HTTP 409.
+
+| GET path | Query parameters | Response |
+|---|---|---|
+| `/hierarchy` | revision, offset, limit | Up to 64 human hierarchy rows |
+| `/node` | revision, id | One native row |
+| `/nodes` | revision, repeated id | Up to 64 native rows in request order |
+| `/changes` | revision, offset, limit | Latest committed change page |
+| `/test` | revision, id | Named host test with individual structured checks |
+| `/capture` | revision | PNG from the active host renderer |
+
+The response carries `X-Editor-Revision`. URL-encode parameter values. The bridge limits request URIs to 4,096 characters and responses to 4 MiB. It accepts requests only on 127.0.0.1, requires the session bearer token, rejects browser-origin requests and exposes read operations only. The headless CLI and this running-editor bridge both call the same service.
+
+### Native service capabilities
+
 - Inspection returns the actual unsaved authoring snapshot, hierarchy, document path, revision and explicit capabilities/operation/test lists.
 - Every exposed write requires the last observed revision. A transaction contains 1–64 allowlisted commands and creates one shared undo entry. Invalid commands restore the entire before-state. Human edits, Undo, Redo and Save use this same service/history.
 - Save uses existing host serialization. Reopen replaces state in the existing authoring object, is undoable, and rolls back malformed input.

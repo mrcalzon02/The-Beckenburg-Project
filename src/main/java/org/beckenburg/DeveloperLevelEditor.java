@@ -35,6 +35,7 @@ public final class DeveloperLevelEditor extends JPanel {
     private LevelAuthoringSession mission;
     private EditorHistory<LevelAuthoringSession.Snapshot> missionHistory;
     private EditorAgentService<LevelAuthoringSession.Snapshot> missionAgent;
+    private EditorObservationBridge observation;
     private HouseMap missionMap;
     private long missionMapRevision=-1;
     private HouseMap.Site missionSite;
@@ -68,7 +69,7 @@ public final class DeveloperLevelEditor extends JPanel {
         var loaded=new LevelAuthoringSession(site);
         // Use the playable HouseMap itself, not a second scene interpretation.
         var playable=new HouseMap(site,loaded.level());
-        mission=loaded;missionSite=site;
+        stopObservation();mission=loaded;missionSite=site;
         missionHistory=new EditorHistory<>(loaded,60);missionMap=playable;missionMapRevision=loaded.revision();
         missionAgent=new EditorAgentService<>(new LevelEditorAgent(loaded,this::currentMissionMap,renderer,()->{
             requireEditorThread();
@@ -113,7 +114,7 @@ public final class DeveloperLevelEditor extends JPanel {
         String previousUser=UserLevelLibrary.activeId();
         try{
             if(choice.equals("CASTLE BECKENBURG")){
-                mission=null;missionSite=null;missionHistory=null;missionMap=null;
+                stopObservation();mission=null;missionSite=null;missionHistory=null;missionMap=null;
                 double[] spawn=data.spawn();
                 renderer.x=spawn[0];renderer.z=spawn[1];renderer.eyeHeight=1.62;
                 renderer.yaw=spawn[2];renderer.pitch=-.12;
@@ -303,6 +304,7 @@ public final class DeveloperLevelEditor extends JPanel {
             }
             @Override public void windowClosed(WindowEvent e){
                 editor.editorClosed=true;
+                editor.stopObservation();
                 editor.timer.stop();
                 editor.lightPreviewWorker.shutdownNow();
             }
@@ -1312,16 +1314,33 @@ public final class DeveloperLevelEditor extends JPanel {
         status.setText("Redo • scene modified, SAVE to persist");
     }
     private void save(){saveCurrent();}
+    private void stopObservation(){
+        if(observation!=null){observation.close();observation=null;}
+    }
+    private void startObservation()throws IOException{
+        requireEditorThread();
+        if(observation!=null)throw new IllegalStateException("Observation session already open");
+        observation=new EditorObservationBridge(agentService());
+    }
     private void showAgentEvidence(){
         var service=agentService();
         var choices=new ArrayList<>(List.of("INSPECT","TEST","CAPTURE PNG","REOPEN SAVED"));
-        if(service.inspect().capabilities().contains(EditorAgentService.Capability.RECOVER_PREVIOUS))choices.add("RECOVER PREVIOUS SAVE");
+        if(service.summary().capabilities().contains(EditorAgentService.Capability.RECOVER_PREVIOUS))choices.add("RECOVER PREVIOUS SAVE");
+        choices.add(observation==null?"START LOCAL OBSERVATION":"STOP LOCAL OBSERVATION");
         String choice=(String)JOptionPane.showInputDialog(window,"Inspect, test or capture the active game scene.",
             "Scene verification",JOptionPane.PLAIN_MESSAGE,null,
             choices.toArray(),"INSPECT");
         if(choice==null)return;
         try{
-            var state=service.inspect();Object result;
+            if(choice.equals("STOP LOCAL OBSERVATION")){stopObservation();status.setText("Local observation stopped");return;}
+            if(choice.equals("START LOCAL OBSERVATION")){
+                startObservation();
+                var access=new JTextArea("Address  "+observation.url()+"\nAuthorization: Bearer "+observation.token(),3,68);
+                access.setEditable(false);
+                JOptionPane.showMessageDialog(window,access,"Read-only access to this editor scene",JOptionPane.INFORMATION_MESSAGE);
+                status.setText("Local observation enabled • Verify Scene to stop");return;
+            }
+            var state=service.summary();Object result;
             switch(choice){
                 case "TEST" -> result=service.test(state.revision(),state.tests().get(0));
                 case "CAPTURE PNG" -> {
@@ -1339,7 +1358,7 @@ public final class DeveloperLevelEditor extends JPanel {
                         "Recover saved scene",JOptionPane.OK_CANCEL_OPTION)!=JOptionPane.OK_OPTION)return;
                     result=service.recoverPrevious(state.revision());
                 }
-                default -> result=state;
+                default -> result=service.inspect();
             }
             JTextArea report=new JTextArea(result.toString(),24,90);report.setEditable(false);report.setLineWrap(true);
             JOptionPane.showMessageDialog(window,new JScrollPane(report),"Scene evidence",JOptionPane.INFORMATION_MESSAGE);
