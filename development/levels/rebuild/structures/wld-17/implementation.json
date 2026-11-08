@@ -461,7 +461,7 @@
     "Roof cover over lower rooms requires full sealed slabs and stair voids; grade reservations are not accepted routes."
   ],
   "native_reopened": true,
-  "blend_sha256": "f524ea1dd2eff76a29d73661a70a231ba3e3af776d87848a2caa6f8ba3bd7066",
+  "blend_sha256": "4f1ee958701cd78c3b7cae88356a4df35070d3ea16896ba56161d068c9c2e134",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
@@ -497,8 +497,8 @@
   },
   "generator_sha256": {
     "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
-    "development/levels/blockouts/build_blockouts.py": "7934ef0d9d2a007aa9ddf0815c08ddd4c78b46a72b5bfb955ee48aa08926550e",
-    "development/levels/blockouts/structural_pass.py": "e761baefa707d59db4d197c203641f1657fdf951c533979fc9d563856010dc14",
+    "development/levels/blockouts/build_blockouts.py": "270e256c16ef0a2028a932227b04c45ea63efbdd44d5fff8f240e59e2d60ad42",
+    "development/levels/blockouts/structural_pass.py": "2682a49d3383d468a3208b63dadc14efbb3669906a403dfd0cee27aa8e8b290d",
     "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
   }
 }

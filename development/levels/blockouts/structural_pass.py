@@ -8,6 +8,27 @@ from mathutils import Vector
 from collections import Counter
 from mathutils.bvhtree import BVHTree
 
+
+def saved_editor_terrain(data,collection,material):
+    """Import the exact mesh published from persistent editor punched leaves."""
+    from pathlib import Path
+    root=Path(__file__).resolve().parents[3]
+    contract=data['saved_editor_terrain']
+    for name,digest in contract['files_sha256'].items():
+        assert hashlib.sha256((root/name).read_bytes()).hexdigest()==digest,('Stale saved editor terrain',name)
+    points=[];faces=[]
+    for row in (root/contract['mesh']).read_text(encoding='utf-8').splitlines():
+        values=row.split()
+        if not values:continue
+        if values[0]=='v':
+            x,y,z=map(float,values[1:4]);points.append((x,-z,y))
+        elif values[0]=='f':faces.append(tuple(int(v.split('/')[0])-1 for v in values[1:]))
+    assert points and faces and all(len(face)==3 for face in faces),'Editor terrain must publish actual triangles'
+    mesh=bpy.data.meshes.new('Saved editor terrain');mesh.from_pydata(points,[],faces);mesh.update()
+    obj=bpy.data.objects.new('Saved editor terrain '+data['id'],mesh);collection.objects.link(obj);mesh.materials.append(material)
+    obj['role']='saved editor terrain / actual punched leaves';obj['source_obj_sha256']=contract['files_sha256'][contract['mesh']]
+    obj['terrain_contract']=json.dumps(contract);return obj
+
 def shaped_deck(zone,holes,collection,material,role):
     a,b,c,d=zone['bounds']
     if any(h[0]<=a+.001 and h[1]<=b+.001 and h[2]>=c-.001 and h[3]>=d-.001 for h in holes):return None

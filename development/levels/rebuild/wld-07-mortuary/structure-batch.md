@@ -23,3 +23,14 @@ accessible search spaces. No round-duration tests or local editor UI automation.
 
 Next: repair map-specific movement failures and continue the reusable-model
 placement batch with individually supported, functional room arrangements.
+
+
+## Saved editor terrain revision
+
+Actual persisted punched topology now supplies the native terrain OBJ and HCS2;
+the GLB terrain float triangles/flags match that saved native physical source.
+Source height PNGs are unchanged by punching, disk reopen and non-hole physical
+negatives pass. Current evidence: ../verification/roster-editor-terrain-2026-11-07/.
+All1720roster tread centres now have support and clear spine rays; full body
+sweeps still fail. Terrain remains unaccepted: finish actual boundaries, rims,
+retaining structures, guards and canonical-van arrival. DEV-361/364/366 remain.

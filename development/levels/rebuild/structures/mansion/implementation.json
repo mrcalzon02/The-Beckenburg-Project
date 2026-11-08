@@ -1848,7 +1848,7 @@
   ],
   "source_refinement": [],
   "native_reopened": true,
-  "blend_sha256": "91d8a1938b74d814f7dc205ff883d3763730f3652a47eed612c65010c53c964e",
+  "blend_sha256": "2c8ad62018377cb39f8c614bd3e335caffacd8f1f95c06f8bba4e1b60cf5bd8e",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
@@ -1897,8 +1897,8 @@
   },
   "generator_sha256": {
     "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
-    "development/levels/blockouts/build_blockouts.py": "7934ef0d9d2a007aa9ddf0815c08ddd4c78b46a72b5bfb955ee48aa08926550e",
-    "development/levels/blockouts/structural_pass.py": "e761baefa707d59db4d197c203641f1657fdf951c533979fc9d563856010dc14",
+    "development/levels/blockouts/build_blockouts.py": "270e256c16ef0a2028a932227b04c45ea63efbdd44d5fff8f240e59e2d60ad42",
+    "development/levels/blockouts/structural_pass.py": "2682a49d3383d468a3208b63dadc14efbb3669906a403dfd0cee27aa8e8b290d",
     "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
   }
 }

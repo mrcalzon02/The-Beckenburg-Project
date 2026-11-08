@@ -117,6 +117,13 @@ def build(path,output_root=None,structural=False):
     if 'terrain' in data:
         from proposal_landforms import build_landform
         build_landform(data)
+        if structural and data.get('saved_editor_terrain'):
+            from structural_pass import saved_editor_terrain
+            old=[o for o in scene.objects if o.type=='MESH' and o.name.startswith('Authored ') and 'terrain' in o.name]
+            assert len(old)==1,'Expected one predecessor proposal terrain'
+            terrain_material=old[0].data.materials[0];terrain_collection=old[0].users_collection[0]
+            bpy.data.objects.remove(old[0],do_unlink=True)
+            saved_editor_terrain(data,terrain_collection,terrain_material)
     notes=[];openings=[];byid={z['id']:z for z in data['zones']}
     for zone in data['zones']:
         c=collection(zone['id']+' | '+zone['name']+' | Y'+str(zone['y']))

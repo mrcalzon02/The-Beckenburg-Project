@@ -4982,13 +4982,13 @@ Older-map obligation: Check every slab family after aperture changes. No unaudit
 
 ### DEV-363 — Roster collision probe exposes crossing stairs and terrain covering authored flights
 
-**Status:** NATIVE CROSSING/THRESHOLD REPAIRS VERIFIED;42terrain overhead obstructions and capsule acceptance remain OPEN · **Affected:** College L84; Mansion L59/L60; WLD-09 L14/L18; WLD-14 route14/20; WLD-18 route07/08/13/18; mortuary L14/L15
+**Status:** NATIVE HEAD-OBSTRUCTION REPAIRS VERIFIED across1720treads; full capsule/location acceptance OPEN · **Affected:** College L84; Mansion L59/L60; WLD-09 L14/L18; WLD-14 route14/20; WLD-18 route07/08/13/18; mortuary L14/L15
 
 All25 native collision exports load and1720tread centres have support, but90 head-height spine rays are obstructed across these6sites.
 
 Cause / uncertainty: Actual exported triangles identify crossing stair flights, a folded-back landing, gallery/exhibit walls and uncut proposal terrain over underground approaches. Native closed-solid checks cannot establish route clearance.
 
-Fix / next action: Retain exact per-pose overhead component names and hashes. Next separate crossing stair lanes/landings, repair wall passage coordinates and implement actual persisted terrain holes before physical terrain acceptance. Recheck full capsule routes, neighbouring routes and optical/solid negatives. Do not delete terrain visually or weaken collision to pass. Separated five-source revision removes48of90spine hits; College/Mansion/Hydroelectric386/386supported with clear spine rays. Remaining42hits all identify terrain triangles in Lighthouse/Silo/Mortuary. Evidence: verification/roster-separated-2026-11-07/.
+Fix / next action: Retain exact per-pose overhead component names and hashes. Next separate crossing stair lanes/landings, repair wall passage coordinates and implement actual persisted terrain holes before physical terrain acceptance. Recheck full capsule routes, neighbouring routes and optical/solid negatives. Do not delete terrain visually or weaken collision to pass. Separated five-source revision removes48of90spine hits; College/Mansion/Hydroelectric386/386supported with clear spine rays. Remaining42hits all identify terrain triangles in Lighthouse/Silo/Mortuary. Evidence: verification/roster-separated-2026-11-07/. Real saved editor hole-punching in Lighthouse/Silo/Mortuary removes the last42terrain hits. All1720tread centres now supported and spine-clear. Actual GLB terrain matches saved native terrain triangles/flags; terrain finish and full actor movement remain open. Evidence: verification/roster-editor-terrain-2026-11-07/.
 
 Evidence and verification: development/levels/rebuild/verification/roster-routes-2026-11-07/all25/tread-probes.tsv and route-probes.json; structures/<site>/physics-contract.json
 
@@ -5007,6 +5007,34 @@ Fix / next action: Preserve revised clear circulation coordinates, author the sh
 Evidence and verification: development/levels/rebuild/structures/wld-09/; captures/structure-batch/roster-structure-sheet-04.png; verification/roster-separated-2026-11-07/
 
 Older-map obligation: Audit full stair load paths and room/shaft volume parity individually across remote and retained maps; solid tread boxes are not final structural engineering or terrain support acceptance.
+
+### DEV-365 — Offline terrain sampler resolves seed inputs using newly created working paths and can swallow Blender errors
+
+**Status:** FIXED IN AUTHORING TOOL; failed-sampling atomicity verified · **Affected:** Saved editor terrain reproduction for WLD-07-MORTUARY and shared offline terrain wrapper
+
+After creating a rebuilt annex source, sampling an earlier seed ref chooses that new path although it did not exist in the seed commit. Blender exits zero on an uncaught Python exception without --python-exit-code.
+
+Cause / uncertainty: Path selection consulted current filesystem rather than immutable seed tree, and the wrapper relied on Blender default exit semantics.
+
+Fix / next action: Resolve authoritative layout candidates inside the seed tree with git cat-file; pass --python-exit-code1 before sampling. Successful reproduction binds all three saved worlds. Invalid-site control exits nonzero and leaves27authoritative world files unchanged.
+
+Evidence and verification: verification/roster-editor-terrain-2026-11-07/terrain-rejected-seed-layout.log, failure-atomicity.json and fixed reproduction log; tools/sample_roster_terrain.py and build_roster_editor_terrain.py
+
+Older-map obligation: Use explicit immutable source refs and nonzero Python failure exits in other Blender authoring pipelines. Do not infer a sampler pass from a process returning normally.
+
+### DEV-366 — Saved terrain seeds retain rough proposal perimeters and unfinished aperture rims
+
+**Status:** OPEN DESQUAREIFY/CONSTRUCTION FINISH GATE · **Affected:** Lighthouse, Silo and Mortuary saved native terrain candidates; individual audits remain for all other maps
+
+Native inspection retains broadly rectangular extents; lighthouse cliff/water fringe shows raw slivers. Newly punched building/stair/shaft cuts need rims, retaining walls, guards and foundation finish.
+
+Cause / uncertainty: The saved-world bridge deliberately starts from existing rough terrain sources; correct persistent hole topology is not final geographic/architectural design.
+
+Fix / next action: Author physical edges, banks/coves/approach necks, engineered soil cuts and supported foundation/rim pieces, then verify standing/crouched arrival with canonical van, full movement and render/light separation. Preserve genuine native holes and all access routes. Keep S04 unaccepted.
+
+Evidence and verification: verification/roster-editor-terrain-2026-11-07/visual-review.json; previews/*-saved-terrain.png; structures/wld-14/wld-18/wld-07-mortuary actual GLB cutaways; quality/DESQUAREIFY_GATE.md
+
+Older-map obligation: Audit every terrain footprint individually. Native hole success does not certify prior ground shapes, source padding, model support or boundary containment.
 
 ## Required audit categories
 

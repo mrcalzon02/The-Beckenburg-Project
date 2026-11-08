@@ -2,7 +2,7 @@
   "id": "WLD-14",
   "title": "Morrow Point Lightstation",
   "source": "rebuild\\wld-14\\rough-layout.json",
-  "source_sha256": "f6a06a44c824f2e8c47fd293e12a6625d95796a02061e08bf0de5615a3895901",
+  "source_sha256": "83ca4db1f39fb9a14f2a082d59e4e788f7024b389477ef85aadd61f919741007",
   "zones": 23,
   "routes": 24,
   "shell_openings": [
@@ -1322,14 +1322,14 @@
     "Tower spiral currently has sloped route mass only; treads, central void, headroom, door apertures and fall guards need engineering."
   ],
   "native_reopened": true,
-  "blend_sha256": "c9554f55f1775016106ce67cc8955c6eefe3615938d321cf01d0083b28f5e166",
+  "blend_sha256": "edb35471dc64506cc7c55dcb7adf4d50ed49b8cf8c612530e1722dc3f52e895d",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
-    "glb_sha256": "907e6482f80f6272f22557966ad8036c7b5c9eb88e8c04c53bf2ae1be06d0f04",
+    "glb_sha256": "ed654f2fe1b8774a80be1d22ad04f56a8a38ff3bc3f25f0a4ac912329125a62e",
     "independently_reimported": true,
     "meshes": 329,
-    "triangles": 22204,
+    "triangles": 28678,
     "floor_parts": 33,
     "ceiling_cap_parts": 12,
     "stair_treads": 176,
@@ -1352,14 +1352,14 @@
   "authoritative_input": "development/levels/rebuild/wld-14/rough-layout.json",
   "original_scene_preserved": true,
   "preserved_sources": {
-    "development/levels/rebuild/wld-14/rough-layout.json": "f6a06a44c824f2e8c47fd293e12a6625d95796a02061e08bf0de5615a3895901",
+    "development/levels/rebuild/wld-14/rough-layout.json": "83ca4db1f39fb9a14f2a082d59e4e788f7024b389477ef85aadd61f919741007",
     "development/levels/blockouts/wld-14/rough-shell.blend": "6b8d0496c954c075010f6fe6c53264cf6880168668c432b43b72dc886284a27b",
     "development/levels/blockouts/wld-14/rough-shell.glb": "81dbb0d76ea5e0e6259c35915e9ed6e0bd6fd6930f04e7c5b4531b05e5334c00"
   },
   "generator_sha256": {
     "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
-    "development/levels/blockouts/build_blockouts.py": "7934ef0d9d2a007aa9ddf0815c08ddd4c78b46a72b5bfb955ee48aa08926550e",
-    "development/levels/blockouts/structural_pass.py": "e761baefa707d59db4d197c203641f1657fdf951c533979fc9d563856010dc14",
+    "development/levels/blockouts/build_blockouts.py": "270e256c16ef0a2028a932227b04c45ea63efbdd44d5fff8f240e59e2d60ad42",
+    "development/levels/blockouts/structural_pass.py": "2682a49d3383d468a3208b63dadc14efbb3669906a403dfd0cee27aa8e8b290d",
     "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
   }
 }

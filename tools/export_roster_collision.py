@@ -8,10 +8,26 @@ import bpy
 
 ROOT=Path(__file__).resolve().parents[1]
 
+
+def native_faces(path):
+    raw=path.read_bytes();magic,parts,count=struct.unpack_from('>III',raw);assert magic==0x48435332
+    cursor=12;records=[]
+    for _ in range(parts):
+        length=struct.unpack_from('>H',raw,cursor)[0];cursor+=2+length
+        closed,size=struct.unpack_from('>BI',raw,cursor);cursor+=5
+        for _ in range(size):
+            *xyz,flags=struct.unpack_from('>9fB',raw,cursor);cursor+=37;records.append((xyz,flags))
+    assert cursor==len(raw) and len(records)==count
+    return records
+
+
+def face_keys(records):
+    return collections.Counter((tuple(sorted(tuple(xyz[n:n+3]) for n in [0,3,6])),flags) for xyz,flags in records)
+
 def export(folder):
     source=folder/'rough-shell.glb';before=hashlib.sha256(source.read_bytes()).hexdigest()
     bpy.ops.wm.read_factory_settings(use_empty=True);bpy.ops.import_scene.gltf(filepath=str(source))
-    parts=[];poses=[];stairs=[];dropped=0
+    parts=[];poses=[];stairs=[];dropped=0;terrain_faces=[]
     for number,obj in enumerate(obj for obj in bpy.context.scene.objects if obj.type=='MESH'):
         obj.data.calc_loop_triangles();role=obj.get('role','');name=f'{number}:{obj.name}'
         stair=role in ['structural-stair-step','structural-stair-landing']
@@ -29,6 +45,7 @@ def export(folder):
             keys=[tuple(round(c,5) for c in point) for point in points]
             for a,b in zip(keys,keys[1:]+keys[:1]):edges[tuple(sorted((a,b)))]+=1
         if not records:continue
+        if role.startswith('saved editor terrain'):terrain_faces.extend(records)
         closed=all(n==2 for n in edges.values()) and all(flags&4 for xyz,flags in records)
         parts.append((name,closed,records))
         if role=='structural-stair-step':
@@ -45,6 +62,14 @@ def export(folder):
     contract=dict(source_glb_sha256=before,physics_sha256=hashlib.sha256(target.read_bytes()).hexdigest(),
         exporter_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),stair_components=stairs,
         tread_centres=poses,dropped_degenerate_triangles=dropped,scope='Candidate native collision; gameplay/ownership/terrain/network gates remain open')
+    layout=ROOT/f'development/levels/rebuild/{folder.name}/rough-layout.json'
+    if layout.exists():
+        authority=json.loads(layout.read_text(encoding='utf-8')).get('saved_editor_terrain')
+        if authority:
+            source_terrain=ROOT/authority['native_physics'];expected=native_faces(source_terrain)
+            assert face_keys(expected)==face_keys(terrain_faces),('GLB terrain differs from saved editor physical triangles/flags',folder.name)
+            contract['saved_editor_terrain_fidelity']=dict(exact_float_triangle_and_flag_match=True,triangles=len(expected),
+                native_physics_sha256=hashlib.sha256(source_terrain.read_bytes()).hexdigest())
     (folder/'physics-contract.json').write_bytes((json.dumps(contract,indent=2)+'\n').encode('utf-8'))
     print('EXPORTED_HCS2',folder.name,len(parts),len(poses),'actual tread poses',flush=True)
 

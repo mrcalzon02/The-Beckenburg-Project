@@ -28,3 +28,14 @@ placement batch with individually supported, functional room arrangements.
 ## Separated-flight revision
 
 Updated native result: 22204triangles, 303closed solids, 45measured deck parts, 12cap rays and 176treads. Current exact candidate collision and pose results: `../verification/roster-separated-2026-11-07/`. Distinct flight lanes/approaches replace the old crossing layout. All remaining roster spine obstructions are terrain; actual punched editor holes remain required. Full capsule movement and support/enclosure/roof/model refinements remain open.
+
+
+## Saved editor terrain revision
+
+Actual persisted punched topology now supplies the native terrain OBJ and HCS2;
+the GLB terrain float triangles/flags match that saved native physical source.
+Source height PNGs are unchanged by punching, disk reopen and non-hole physical
+negatives pass. Current evidence: ../verification/roster-editor-terrain-2026-11-07/.
+All1720roster tread centres now have support and clear spine rays; full body
+sweeps still fail. Terrain remains unaccepted: finish actual boundaries, rims,
+retaining structures, guards and canonical-van arrival. DEV-361/364/366 remain.

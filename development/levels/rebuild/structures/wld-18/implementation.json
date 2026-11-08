@@ -2,7 +2,7 @@
   "id": "WLD-18",
   "title": "Site Cinder-6",
   "source": "rebuild\\wld-18\\rough-layout.json",
-  "source_sha256": "97fd6d132333aab6a709f2965af8e1188e7f3ec3967f940eafabc61973491932",
+  "source_sha256": "14c93d8b8b1f04d84d9c0c830662ec23ff1e08b0eb2969310179eee59a5e414d",
   "zones": 16,
   "routes": 19,
   "shell_openings": [
@@ -479,14 +479,14 @@
     "Keep every mandatory route off the shaft void. Real ring guards, falling protection and stair headroom require engineering."
   ],
   "native_reopened": true,
-  "blend_sha256": "fa5c091861e70415bf954044ea53dfcddf498fd30041ffafb129a6a80816f8e5",
+  "blend_sha256": "07af82b293348bdc029d23db0c85972757e214586d3c58153bdd76e4c659fd77",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
-    "glb_sha256": "40024f8f70a71703be421f17b2d8e46ca92683c7c4ba8b76bc78fd63c70cad22",
+    "glb_sha256": "1b8c5a495dea8db9bbd23bd3818e26a4667532544996e389b07f9f00d900c897",
     "independently_reimported": true,
     "meshes": 303,
-    "triangles": 7042,
+    "triangles": 13227,
     "floor_parts": 48,
     "ceiling_cap_parts": 40,
     "stair_treads": 116,
@@ -509,14 +509,14 @@
   "authoritative_input": "development/levels/rebuild/wld-18/rough-layout.json",
   "original_scene_preserved": true,
   "preserved_sources": {
-    "development/levels/rebuild/wld-18/rough-layout.json": "97fd6d132333aab6a709f2965af8e1188e7f3ec3967f940eafabc61973491932",
+    "development/levels/rebuild/wld-18/rough-layout.json": "14c93d8b8b1f04d84d9c0c830662ec23ff1e08b0eb2969310179eee59a5e414d",
     "development/levels/blockouts/wld-18/rough-shell.blend": "8d50374a1daef03110ea79263aa7f2858fd2ee47d907b1fadd13cf2ca698ea46",
     "development/levels/blockouts/wld-18/rough-shell.glb": "810d80b78e7465c322bc4eb48c13a9e529959545bf953429750fe388b1cff97f"
   },
   "generator_sha256": {
     "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
-    "development/levels/blockouts/build_blockouts.py": "7934ef0d9d2a007aa9ddf0815c08ddd4c78b46a72b5bfb955ee48aa08926550e",
-    "development/levels/blockouts/structural_pass.py": "e761baefa707d59db4d197c203641f1657fdf951c533979fc9d563856010dc14",
+    "development/levels/blockouts/build_blockouts.py": "270e256c16ef0a2028a932227b04c45ea63efbdd44d5fff8f240e59e2d60ad42",
+    "development/levels/blockouts/structural_pass.py": "2682a49d3383d468a3208b63dadc14efbb3669906a403dfd0cee27aa8e8b290d",
     "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
   }
 }

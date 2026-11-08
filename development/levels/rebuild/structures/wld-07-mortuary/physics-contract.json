@@ -1,7 +1,7 @@
 {
-  "source_glb_sha256": "a4943c387d7120757e3c8d2be3011e3d9dd8c0ce7986cec29b2ce749413fe099",
-  "physics_sha256": "0d4300d9da1e2f0ef897c6542ff3c417c095ad727fc5dd53edfdbf7008704635",
-  "exporter_sha256": "8e815e8064c426fab78c70c368d6e2a2beed2126e92d9b4e10affe93903ecaa5",
+  "source_glb_sha256": "7b51fce063c08b13e35777459dab31afb977f56c55464fd02acfcab98f84f32c",
+  "physics_sha256": "29b0f6f1a6a97f010f5a2466cf7e0e13362df16c212fea7d10964dbd8a9b5ebb",
+  "exporter_sha256": "0f6106aff8e414895b01b4f62c94ec872f4d5e72af77f7df9fe04f2f6e941782",
   "stair_components": [
     "153:L14 flight0 step1",
     "154:L14 flight0 step2",
@@ -279,5 +279,10 @@
     }
   ],
   "dropped_degenerate_triangles": 0,
-  "scope": "Candidate native collision; gameplay/ownership/terrain/network gates remain open"
+  "scope": "Candidate native collision; gameplay/ownership/terrain/network gates remain open",
+  "saved_editor_terrain_fidelity": {
+    "exact_float_triangle_and_flag_match": true,
+    "triangles": 9014,
+    "native_physics_sha256": "9987c251c6bc87728f8c47ce05d4daad974473b6fc906a1e558aff200c7c547f"
+  }
 }

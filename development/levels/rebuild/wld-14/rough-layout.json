@@ -1716,5 +1716,26 @@
       }
     },
     "reason": "Separate intersecting flights and remove folded-back landing obstructions; preserve functions and search envelope. Terrain holes and complete capsule sweeps remain required."
+  },
+  "saved_editor_terrain": {
+    "status": "PERSISTED_EDITOR_PUNCH_CANDIDATE_NOT_TERRAIN_ACCEPTED",
+    "world": "development/levels/rebuild/wld-14/terrain-world",
+    "mesh": "development/levels/rebuild/wld-14/terrain-world/scene-package/meshes/site.obj",
+    "native_physics": "development/levels/rebuild/wld-14/terrain-world/terrain-physics.hcs2",
+    "files_sha256": {
+      "development/levels/rebuild/wld-14/terrain-world/adaptive-topology.bin": "32ac39aa3f3748b4c139c32ca19db0d7f18e4470d42e0035243f93e6b2a66d79",
+      "development/levels/rebuild/wld-14/terrain-world/authored-cuts.tsv": "34b6cd08f7c845fe43e2dbee8b5a8ae0f6fc10be15e0e0ae084cc20ee0d0f6c0",
+      "development/levels/rebuild/wld-14/terrain-world/source-provenance.json": "a7f3c26b747301a06465ecef15865ce6a1f9f9e33b3a2e58e4eacffe0764861e",
+      "development/levels/rebuild/wld-14/terrain-world/terrain-physics.hcs2": "a775357a9e410201f13339e2b96eaa61338ef5f894bb16e76b419b9eec2bb279",
+      "development/levels/rebuild/wld-14/terrain-world/tile_0_0.png": "8099d45bfb8351aad146d87bf77654f925f260170fd11b5d0b2ce377ef85d7e2",
+      "development/levels/rebuild/wld-14/terrain-world/verification.json": "191a797cba05c3728638204851a9c020d8eff34aabba8ef2defd6616aeba94a9",
+      "development/levels/rebuild/wld-14/terrain-world/world.properties": "98454c988372034ae608d76197025b4a659da7cbecbc5ba553cb38c887d54e3b",
+      "development/levels/rebuild/wld-14/terrain-world/scene-package/scene.bin": "94ab8792935c941a7c5a689db2cb5b92767117b632f0f2cbc3ad797ac3657b8f",
+      "development/levels/rebuild/wld-14/terrain-world/scene-package/meshes/site.obj": "188226af78c91d9f4e46539669554a0754d0d358d1177d9d2e3ef7f94f1ca729"
+    },
+    "source_seed_commit": "de4edf80de20b86f9ac42f6a616913e109505894",
+    "builder_sha256": "dc477b61263d90a69996a7d54d212edc61996582e26387fe8145a3456e8b54de",
+    "kernel_jar_sha256": "8694a06b9483bea77f2af9130c14a4191e868f2389671b4460572f93a75edbe2",
+    "remaining": "Retaining/foundation rims, guards, arrival/canonical van, source-specific terrain finish and complete movement/visual acceptance"
   }
 }

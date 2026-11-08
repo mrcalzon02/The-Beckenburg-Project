@@ -26,16 +26,17 @@ the exported boundary is ray-checked. Terrain support, enclosure returns and
 around/under/over bypasses remain actual runtime audit obligations. A threshold
 ray alone is not proof of a completely bounded forty-space playable envelope.
 
-Current native verification covers **129,435 triangles**, **6,537 closed solids**,
+Current native verification covers **147,060 triangles**, **6,537 closed solids**,
 **1,488 measured floor/deck parts**, **517 cap rays**, **1,720 treads** and
-**192 fixed-link boundary checks**. All25 GLBs independently reimport;
-generators and preserved sources match their hashes. The eight formerly
-unbuildable links have revised flights. Five further packets separate crossing
-stairs and repair folded approaches/thresholds. Native collision now reports
-1720/1720treads supported and1678clear spine rays; remaining42overhead hits are
-terrain triangles in Lighthouse/Silo/Mortuary. Full body/traversability and swept
-route acceptance remain open. See `../verification/roster-separated-2026-11-07/`
-for current per-map/per-tread results; previous checkpoints remain historical.
+**192 fixed-link boundary checks**. All25 GLBs independently reimport; generator
+and preserved-source hashes match. Eight unbuildable links and the later crossing
+flights have authored revisions. Lighthouse, Silo and Mortuary now use real saved
+editor punched terrain, with exactly matching GLB/native physical triangles.
+All1720tread centres have support and clear head-height spine rays. Literal body
+and traversability queries pass938/880poses respectively; full swept routes remain
+unaccepted. Current evidence: `../verification/roster-editor-terrain-2026-11-07/`.
+Terrain perimeters, aperture rims/supports, canonical arrival and final model/
+service/roof/detail work remain open. Earlier checkpoint counts are historical.
 
 ## Bounded visual review
 

@@ -17,7 +17,8 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/synthetic-controls/' in path:kind='Synthetic GPU depth control'
+    if p.name.endswith('-saved-terrain.png'):kind='Native saved editor terrain inspection; punched physical geometry'
+    elif '/synthetic-controls/' in path:kind='Synthetic GPU depth control'
     elif '/structure-batch/' in path:kind='Native structural blocking review; runtime integration pending'
     elif '/rebuild/structures/' in path:kind='Native planning-scene preview' if p.name=='preview.png' else 'Reimported native structure export review'
     elif '/hunter-gait-recovery-software/' in path:kind='Runtime software hunter gait diagnostic'
