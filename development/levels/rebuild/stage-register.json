@@ -165,7 +165,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/structures/academy/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -184,7 +184,11 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/terrain-fit-pass/academy/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
@@ -196,13 +200,16 @@
             "DEV-363",
             "DEV-377",
             "DEV-385",
-            "DEV-387"
+            "DEV-387",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -210,16 +217,24 @@
             "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
             "development/levels/rebuild/terrain-overall-pass/assemblies/academy/review.json",
             "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
-            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json",
+            "development/levels/rebuild/terrain-fit-pass/academy/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
           "defects": [
             "DEV-390",
             "DEV-391",
             "DEV-392",
             "DEV-393",
-            "DEV-394"
+            "DEV-394",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Keep one cloister foundation datum; replace raised reservation pads with a continuous lawn and a real perimeter drain. Review east service court against the shoulder. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -341,7 +356,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/structures/asylum/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -360,7 +375,11 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/terrain-fit-pass/asylum/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
@@ -372,13 +391,16 @@
             "DEV-363",
             "DEV-377",
             "DEV-385",
-            "DEV-387"
+            "DEV-387",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -386,16 +408,24 @@
             "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
             "development/levels/rebuild/terrain-overall-pass/assemblies/asylum/review.json",
             "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
-            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json",
+            "development/levels/rebuild/terrain-fit-pass/asylum/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
           "defects": [
             "DEV-390",
             "DEV-391",
             "DEV-392",
             "DEV-393",
-            "DEV-394"
+            "DEV-394",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Retain staggered pavilion datums. Inspect service spine drainage and move isolated outbuildings rather than spreading a site-wide raised slab. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -580,7 +610,8 @@
             "development/levels/rebuild/verification/castle-upper-2026-11-03/README.md",
             "development/levels/rebuild/verification/castle-upper-2026-11-03/verification.json",
             "development/levels/rebuild/terrain-overall-pass/BATCH.md",
-            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json"
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
           "defects": [
             "DEV-236",
@@ -844,7 +875,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/structures/church/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -863,7 +894,11 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/terrain-fit-pass/church/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
@@ -875,13 +910,16 @@
             "DEV-363",
             "DEV-377",
             "DEV-385",
-            "DEV-387"
+            "DEV-387",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -889,16 +927,24 @@
             "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
             "development/levels/rebuild/terrain-overall-pass/assemblies/church/review.json",
             "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
-            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json",
+            "development/levels/rebuild/terrain-fit-pass/church/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
           "defects": [
             "DEV-390",
             "DEV-391",
             "DEV-392",
             "DEV-393",
-            "DEV-394"
+            "DEV-394",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Nave and parish wings share a shallow masonry plinth; crypt entrances require retained light wells, not sunken orange room pads. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -1022,7 +1068,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/structures/college/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -1042,7 +1088,11 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/terrain-fit-pass/college/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
@@ -1052,17 +1102,20 @@
             "DEV-361",
             "DEV-362",
             "DEV-363",
-            "DEV-377",
             "DEV-375",
+            "DEV-377",
             "DEV-378",
             "DEV-385",
-            "DEV-387"
+            "DEV-387",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -1070,16 +1123,24 @@
             "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
             "development/levels/rebuild/terrain-overall-pass/assemblies/college/review.json",
             "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
-            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json",
+            "development/levels/rebuild/terrain-fit-pass/college/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
           "defects": [
             "DEV-390",
             "DEV-391",
             "DEV-392",
             "DEV-393",
-            "DEV-394"
+            "DEV-394",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Keep distinct three-building footprints and bridge supports. Evaluate bridge and service-tunnel levels against this shared valley; no whole-campus rectangular lawn plate. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -1201,7 +1262,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/structures/farmhouse/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -1220,7 +1281,11 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/terrain-fit-pass/farmhouse/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
@@ -1232,13 +1297,16 @@
             "DEV-363",
             "DEV-377",
             "DEV-385",
-            "DEV-387"
+            "DEV-387",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -1246,16 +1314,24 @@
             "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
             "development/levels/rebuild/terrain-overall-pass/assemblies/farmhouse/review.json",
             "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
-            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json",
+            "development/levels/rebuild/terrain-fit-pass/farmhouse/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
           "defects": [
             "DEV-390",
             "DEV-391",
             "DEV-392",
             "DEV-393",
-            "DEV-394"
+            "DEV-394",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Separate barn and farmhouse foundation runs; yard remains graded earth. Add supported barn apron only at delivery doors, retain room/model IDs. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -1419,7 +1495,8 @@
             "development/levels/rebuild/verification/house-envelope-2026-11-06/results.json",
             "development/levels/rebuild/verification/house-envelope-2026-11-06/house-envelope-enhanced-physics.log",
             "development/levels/rebuild/terrain-overall-pass/BATCH.md",
-            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json"
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
           "defects": [
             "DEV-300",
@@ -1743,7 +1820,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/structures/mansion/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -1763,7 +1840,11 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/terrain-fit-pass/mansion/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
@@ -1773,17 +1854,20 @@
             "DEV-361",
             "DEV-362",
             "DEV-363",
-            "DEV-377",
             "DEV-375",
+            "DEV-377",
             "DEV-378",
             "DEV-385",
-            "DEV-387"
+            "DEV-387",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -1791,16 +1875,24 @@
             "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
             "development/levels/rebuild/terrain-overall-pass/assemblies/mansion/review.json",
             "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
-            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json",
+            "development/levels/rebuild/terrain-fit-pass/mansion/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
           "defects": [
             "DEV-390",
             "DEV-391",
             "DEV-392",
             "DEV-393",
-            "DEV-394"
+            "DEV-394",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Masonry foundations support the household wings. Service yard should fit the eastern shoulder; review its stair bay before refining cellar path strips. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -1923,7 +2015,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/structures/prison/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -1942,7 +2034,11 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/terrain-fit-pass/prison/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
@@ -1955,13 +2051,16 @@
             "DEV-377",
             "DEV-385",
             "DEV-387",
-            "DEV-388"
+            "DEV-388",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -1969,16 +2068,24 @@
             "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
             "development/levels/rebuild/terrain-overall-pass/assemblies/prison/review.json",
             "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
-            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json",
+            "development/levels/rebuild/terrain-fit-pass/prison/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
           "defects": [
             "DEV-390",
             "DEV-391",
             "DEV-392",
             "DEV-393",
-            "DEV-394"
+            "DEV-394",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Wall panels need continuous concrete foundations, including the known unsupported perimeter pieces. Shape compound corners and arrival sally port around real construction, not the grounds rectangle. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -2097,7 +2204,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/structures/school/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -2116,7 +2223,11 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/terrain-fit-pass/school/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
@@ -2128,13 +2239,16 @@
             "DEV-363",
             "DEV-377",
             "DEV-385",
-            "DEV-387"
+            "DEV-387",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -2142,16 +2256,24 @@
             "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
             "development/levels/rebuild/terrain-overall-pass/assemblies/school/review.json",
             "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
-            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json",
+            "development/levels/rebuild/terrain-fit-pass/school/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
           "defects": [
             "DEV-390",
             "DEV-391",
             "DEV-392",
             "DEV-393",
-            "DEV-394"
+            "DEV-394",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Continuous teaching-block datum with distinct gym/service foundations. Recheck actual school bounds and entrance apron before promotion. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -2271,7 +2393,8 @@
           "source_sha": null,
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/BATCH.md",
-            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json"
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
           "defects": [],
           "next_action": "Complete prerequisite stage"
@@ -2385,7 +2508,8 @@
           "source_sha": null,
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/BATCH.md",
-            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json"
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
           "defects": [],
           "next_action": "Complete prerequisite stage"
@@ -2490,7 +2614,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/structures/wld-03/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -2509,27 +2633,34 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-03/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
             "DEV-357",
+            "DEV-359",
+            "DEV-360",
             "DEV-361",
             "DEV-362",
             "DEV-363",
-            "DEV-359",
-            "DEV-360",
             "DEV-377",
             "DEV-385",
-            "DEV-387"
+            "DEV-387",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -2537,16 +2668,24 @@
             "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
             "development/levels/rebuild/terrain-overall-pass/assemblies/wld-03/review.json",
             "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
-            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-03/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
           "defects": [
             "DEV-390",
             "DEV-391",
             "DEV-392",
             "DEV-393",
-            "DEV-394"
+            "DEV-394",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Rock mass and cave roof/sidewalls must be authored as volumes. Reposition crossing cave/terrace routes to the shelf rather than grading down every historical orange strip. This heightfield is the exterior skin only. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -2659,7 +2798,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/structures/wld-04/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -2678,27 +2817,34 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-04/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
             "DEV-357",
+            "DEV-359",
+            "DEV-360",
             "DEV-361",
             "DEV-362",
             "DEV-363",
-            "DEV-359",
-            "DEV-360",
             "DEV-377",
             "DEV-385",
-            "DEV-387"
+            "DEV-387",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -2706,16 +2852,24 @@
             "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
             "development/levels/rebuild/terrain-overall-pass/assemblies/wld-04/review.json",
             "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
-            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-04/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
           "defects": [
             "DEV-390",
             "DEV-391",
             "DEV-392",
             "DEV-393",
-            "DEV-394"
+            "DEV-394",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Retain real tower footings at the ridge bench. Rework the three-metre switchback terrace and hut entry after whole-site sections; tower decks remain elevated structures. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -2828,7 +2982,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/structures/wld-05/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -2847,27 +3001,34 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-05/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
             "DEV-357",
+            "DEV-359",
+            "DEV-360",
             "DEV-361",
             "DEV-362",
             "DEV-363",
-            "DEV-359",
-            "DEV-360",
             "DEV-377",
             "DEV-385",
-            "DEV-387"
+            "DEV-387",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -2875,16 +3036,24 @@
             "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
             "development/levels/rebuild/terrain-overall-pass/assemblies/wld-05/review.json",
             "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
-            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-05/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
           "defects": [
             "DEV-390",
             "DEV-391",
             "DEV-392",
             "DEV-393",
-            "DEV-394"
+            "DEV-394",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Adit portal requires a rock face and buried tunnel roof. The minus-six/minus-ten workings stay underground, not giant open pits punched through all surface ground. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -2995,7 +3164,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/structures/wld-06/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3014,7 +3183,11 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-06/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
@@ -3026,13 +3199,16 @@
             "DEV-363",
             "DEV-377",
             "DEV-385",
-            "DEV-387"
+            "DEV-387",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -3040,16 +3216,24 @@
             "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
             "development/levels/rebuild/terrain-overall-pass/assemblies/wld-06/review.json",
             "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
-            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-06/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
           "defects": [
             "DEV-390",
             "DEV-391",
             "DEV-392",
             "DEV-393",
-            "DEV-394"
+            "DEV-394",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Piers/fish house/boathouse need piles and deck skirts over the basin, not filled square ground pads. Verify actual undercroft and stair walls against waterline before promotion. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -3160,7 +3344,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/structures/wld-07/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3179,7 +3363,11 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-07/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
@@ -3190,20 +3378,23 @@
             "DEV-362",
             "DEV-363",
             "DEV-377",
-            "DEV-385",
-            "DEV-387",
             "DEV-380",
             "DEV-381",
             "DEV-382",
             "DEV-384",
+            "DEV-385",
             "DEV-386",
-            "DEV-389"
+            "DEV-387",
+            "DEV-389",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -3211,10 +3402,19 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/graded-idempotence.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/visual-review.json",
             "development/levels/rebuild/terrain-overall-pass/BATCH.md",
-            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json"
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-07/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
-          "defects": [],
-          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
+          "defects": [
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
+          ],
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -3325,7 +3525,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/structures/wld-08/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3344,7 +3544,11 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-08/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
@@ -3356,13 +3560,16 @@
             "DEV-363",
             "DEV-377",
             "DEV-385",
-            "DEV-387"
+            "DEV-387",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -3370,16 +3577,24 @@
             "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
             "development/levels/rebuild/terrain-overall-pass/assemblies/wld-08/review.json",
             "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
-            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-08/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
           "defects": [
             "DEV-390",
             "DEV-391",
             "DEV-392",
             "DEV-393",
-            "DEV-394"
+            "DEV-394",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Keep station on short supported plinths; service tunnel remains a buried structure. Move shelter or antenna service route if berms obstruct their real clearances. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -3492,7 +3707,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/structures/wld-09/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3512,7 +3727,11 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-09/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
@@ -3525,13 +3744,16 @@
             "DEV-364",
             "DEV-377",
             "DEV-385",
-            "DEV-387"
+            "DEV-387",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -3539,16 +3761,24 @@
             "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
             "development/levels/rebuild/terrain-overall-pass/assemblies/wld-09/review.json",
             "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
-            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-09/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
           "defects": [
             "DEV-390",
             "DEV-391",
             "DEV-392",
             "DEV-393",
-            "DEV-394"
+            "DEV-394",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Construct an actual dam/retaining section and turbine foundations. Current ground-level crest may require blockout re-alignment; do not flatten the whole valley to keep it unchanged. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -3661,7 +3891,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/structures/wld-10/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3680,27 +3910,34 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-10/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
             "DEV-357",
+            "DEV-359",
+            "DEV-360",
             "DEV-361",
             "DEV-362",
             "DEV-363",
-            "DEV-359",
-            "DEV-360",
             "DEV-377",
             "DEV-385",
-            "DEV-387"
+            "DEV-387",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -3708,16 +3945,24 @@
             "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
             "development/levels/rebuild/terrain-overall-pass/assemblies/wld-10/review.json",
             "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
-            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-10/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
           "defects": [
             "DEV-390",
             "DEV-391",
             "DEV-392",
             "DEV-393",
-            "DEV-394"
+            "DEV-394",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Retain cloister identity and garden, construct bearing terrace and downhill retaining faces. Review the detached dormitory edge against the natural bench rather than a wide square pad. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -3828,7 +4073,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/structures/wld-11/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3847,7 +4092,11 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-11/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
@@ -3859,13 +4108,16 @@
             "DEV-363",
             "DEV-377",
             "DEV-385",
-            "DEV-387"
+            "DEV-387",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -3873,16 +4125,24 @@
             "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
             "development/levels/rebuild/terrain-overall-pass/assemblies/wld-11/review.json",
             "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
-            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-11/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
           "defects": [
             "DEV-390",
             "DEV-391",
             "DEV-392",
             "DEV-393",
-            "DEV-394"
+            "DEV-394",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Raised houses and boardwalks remain 1.2m structures with actual piles. No dry land pad per building; engineer supported arrival-to-boardwalk rise and a real water/bank boundary. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -3995,7 +4255,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/structures/wld-12/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4014,27 +4274,34 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-12/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
             "DEV-357",
+            "DEV-359",
+            "DEV-360",
             "DEV-361",
             "DEV-362",
             "DEV-363",
-            "DEV-359",
-            "DEV-360",
             "DEV-377",
             "DEV-385",
-            "DEV-387"
+            "DEV-387",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -4042,16 +4309,24 @@
             "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
             "development/levels/rebuild/terrain-overall-pass/assemblies/wld-12/review.json",
             "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
-            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-12/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
           "defects": [
             "DEV-390",
             "DEV-391",
             "DEV-392",
             "DEV-393",
-            "DEV-394"
+            "DEV-394",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Track bed requires explicit supported embankment and bridge. Tunnel needs a solid hillside roof; lower ravine route must meet the banks. Reposition trestle approaches if their current angles fight this section. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -4162,7 +4437,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/structures/wld-13/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4181,7 +4456,11 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-13/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
@@ -4193,13 +4472,16 @@
             "DEV-363",
             "DEV-377",
             "DEV-385",
-            "DEV-387"
+            "DEV-387",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -4207,16 +4489,24 @@
             "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
             "development/levels/rebuild/terrain-overall-pass/assemblies/wld-13/review.json",
             "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
-            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-13/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
           "defects": [
             "DEV-390",
             "DEV-391",
             "DEV-392",
             "DEV-393",
-            "DEV-394"
+            "DEV-394",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Industrial foundations follow the shore terrace. Dock/pile construction spans real water; bunk/mess block may need moving off the west rock shoulder. No continuous rectangular processing-yard stamp. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -4330,7 +4620,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/structures/wld-14/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4350,7 +4640,11 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-14/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
@@ -4362,30 +4656,41 @@
             "DEV-363",
             "DEV-373",
             "DEV-374",
-            "DEV-377",
             "DEV-376",
+            "DEV-377",
             "DEV-378",
             "DEV-385",
-            "DEV-387"
+            "DEV-387",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/wld-14/terrain-world/verification.json",
             "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/README.md",
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
             "development/levels/rebuild/terrain-overall-pass/BATCH.md",
-            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json"
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-14/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
           "defects": [
             "DEV-363",
-            "DEV-366"
+            "DEV-366",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -4500,7 +4805,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/structures/wld-15/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4519,35 +4824,51 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-15/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
             "DEV-357",
+            "DEV-359",
+            "DEV-360",
             "DEV-361",
             "DEV-362",
             "DEV-363",
-            "DEV-359",
-            "DEV-360",
             "DEV-377",
             "DEV-385",
-            "DEV-387"
+            "DEV-387",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
             "development/levels/rebuild/terrain-overall-pass/BATCH.md",
-            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json"
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-15/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
-          "defects": [],
-          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
+          "defects": [
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
+          ],
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -4657,7 +4978,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/structures/wld-16/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4676,7 +4997,11 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-16/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
@@ -4688,21 +5013,33 @@
             "DEV-363",
             "DEV-377",
             "DEV-385",
-            "DEV-387"
+            "DEV-387",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
             "development/levels/rebuild/terrain-overall-pass/BATCH.md",
-            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json"
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-16/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
-          "defects": [],
-          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
+          "defects": [
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
+          ],
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -4812,7 +5149,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/structures/wld-17/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4831,7 +5168,11 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-17/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
@@ -4843,21 +5184,33 @@
             "DEV-363",
             "DEV-377",
             "DEV-385",
-            "DEV-387"
+            "DEV-387",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
             "development/levels/rebuild/terrain-overall-pass/BATCH.md",
-            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json"
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-17/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
-          "defects": [],
-          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
+          "defects": [
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
+          ],
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -4969,7 +5322,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/structures/wld-18/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4989,7 +5342,11 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-18/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
@@ -5001,26 +5358,37 @@
             "DEV-363",
             "DEV-377",
             "DEV-385",
-            "DEV-387"
+            "DEV-387",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/wld-18/terrain-world/verification.json",
             "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/README.md",
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
             "development/levels/rebuild/terrain-overall-pass/BATCH.md",
-            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json"
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-18/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
           "defects": [
             "DEV-363",
-            "DEV-366"
+            "DEV-366",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -5131,7 +5499,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/structures/wld-07-mortuary/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -5150,7 +5518,11 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-07-mortuary/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json"
           ],
           "defects": [
             "DEV-354",
@@ -5161,20 +5533,23 @@
             "DEV-362",
             "DEV-363",
             "DEV-377",
-            "DEV-385",
-            "DEV-387",
             "DEV-380",
             "DEV-381",
             "DEV-382",
             "DEV-384",
+            "DEV-385",
             "DEV-386",
-            "DEV-389"
+            "DEV-387",
+            "DEV-389",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
           "evidence": [
             "development/levels/rebuild/wld-07-mortuary/terrain-world/verification.json",
             "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/README.md",
@@ -5184,13 +5559,21 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/graded-idempotence.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/visual-review.json",
             "development/levels/rebuild/terrain-overall-pass/BATCH.md",
-            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json"
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/terrain-fit-pass/wld-07-mortuary/construction.json",
+            "development/levels/rebuild/terrain-fit-pass/README.md",
+            "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
+            "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
           ],
           "defects": [
             "DEV-363",
-            "DEV-366"
+            "DEV-366",
+            "DEV-395",
+            "DEV-396",
+            "DEV-398"
           ],
-          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
+          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -5306,5 +5689,14 @@
     "evidence": "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
     "scope": "All29packets;25remaining candidates and4retained mature sources with individual audits; full follow-on goal preserved",
     "latest_execution": "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json"
+  },
+  "world_atmosphere": {
+    "source_sha": "862b65c2af88381035d364a0cd848d1e28f913b6",
+    "status": "SHARED_RUNTIME_IMPLEMENTED_LOCAL_RENDERER_VERIFIED",
+    "scope": "Every Castle/investigation/custom world frame in software and OpenGL; twelve current sources captured, seventeen source-only packets inherit on integration, no unlock.",
+    "evidence": "development/levels/rebuild/verification/atmosphere-all-levels/capture-manifest.json",
+    "baseline_clear_metres": 6,
+    "baseline_opaque_metres": 24,
+    "full_map_acceptance": false
   }
 }
