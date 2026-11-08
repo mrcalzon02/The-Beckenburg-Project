@@ -32,7 +32,7 @@ $install = Start-Process 'dist/installer/Beckenburg-0.0.0-Windows-x64.exe' -Argu
 if ($install.ExitCode -ne 0) { throw "Installation failed: $($install.ExitCode)" }
 
 # Only the external test probe goes on the instrumentation path. The editor loads from its installed JAR.
-& javac --release 17 -encoding UTF-8 -cp build/beckenburg-game.jar -d $probeClasses src/test/java/org/beckenburg/EditorAgentGuiTest.java src/test/java/org/beckenburg/InstalledEditorMcpTest.java
+& javac --release 17 -encoding UTF-8 -cp build/beckenburg-game.jar -d $probeClasses src/test/java/org/beckenburg/EditorAgentGuiTest.java src/test/java/org/beckenburg/ModelEditorGuiTestSupport.java src/test/java/org/beckenburg/G2TexturedModelGuiTest.java src/test/java/org/beckenburg/InstalledEditorMcpTest.java
 if ($LASTEXITCODE -ne 0) { throw 'Probe compilation failed' }
 $manifest = Join-Path $scratch 'probe.mf'
 "Premain-Class: org.beckenburg.InstalledEditorMcpTest`n" | Set-Content -Encoding ascii $manifest

@@ -9,6 +9,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import org.beckenburg.editor.*;
+import org.beckenburg.editor.EditorObservationBridge;
 
 /** One asset through both human workspaces, native history, interchange and the game registry. */
 public final class G2TexturedModelGuiTest {
@@ -953,8 +954,7 @@ public final class G2TexturedModelGuiTest {
         reviewPixels();
         var opaque=(MaterialReviewFrame)field(ui,"projectedFrame");
         var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");
-        var session=new AtomicReference<EditorObservationBridge>();edt(()->session.set(ui.startMaterialAccess(EditorObservationBridge.Scope.OBSERVE)));
-        var access=session.get();
+        var access=openMaterialAccess(EditorObservationBridge.Scope.OBSERVE);
         edt(()->{
             ((JSpinner)field(workspace,"projectionPadding")).setValue(1);
             var view=(JLabel)field(ui,"materialRuntime");
@@ -1000,6 +1000,34 @@ public final class G2TexturedModelGuiTest {
     }
     private static java.net.http.HttpResponse<byte[]> materialRequest(EditorObservationBridge access,String route)throws Exception{
         return materialRequest(access,route,false);
+    }
+    private static JDialog prompt(String title){
+        for(var window:java.awt.Window.getWindows())
+            if(window instanceof JDialog dialog&&dialog.isShowing()&&dialog.getTitle().equals(title))return dialog;
+        return null;
+    }
+    private EditorObservationBridge openMaterialAccess(EditorObservationBridge.Scope scope)throws Exception{
+        boolean edit=scope!=EditorObservationBridge.Scope.OBSERVE;
+        var item=(JMenuItem)field(ui,edit?"materialEditAccess":"materialAccess");
+        SwingUtilities.invokeLater(item::doClick);
+        if(edit){
+            await(()->prompt("Local material editing")!=null);
+            edt(()->{
+                var dialog=prompt("Local material editing");
+                EditorAgentGuiTest.component(dialog,JCheckBox.class).setSelected(scope==EditorObservationBridge.Scope.EDIT_AND_SAVE);
+                EditorAgentGuiTest.component(dialog,JOptionPane.class).setValue(JOptionPane.OK_OPTION);
+            });
+        }
+        String title=edit?"Local material editing and shared undo/redo":"Read-only material observation";
+        await(()->prompt(title)!=null);
+        var result=new AtomicReference<EditorObservationBridge>();
+        edt(()->{
+            var dialog=prompt(title);var access=(EditorObservationBridge)field(ui,"materialObservation");
+            String displayed=EditorAgentGuiTest.component(dialog,JTextArea.class).getText();
+            check(displayed.equals("Address  "+access.url()+"\nAuthorization: Bearer "+access.token()),"Human material access dialog differs from the live session");
+            result.set(access);EditorAgentGuiTest.component(dialog,JOptionPane.class).setValue(JOptionPane.OK_OPTION);
+        });
+        return result.get();
     }
     private static java.net.http.HttpResponse<byte[]> materialRequest(EditorObservationBridge access,String route,boolean post)throws Exception{
         var request=java.net.http.HttpRequest.newBuilder(java.net.URI.create(access.url()+route))
@@ -1047,12 +1075,12 @@ public final class G2TexturedModelGuiTest {
     }
     private EditorObservationBridge verifyMaterialEditing(EditorObservationBridge old)throws Exception{
         var before=project.snapshot();int[] colors=reviewPixels();
-        var next=new AtomicReference<EditorObservationBridge>();
-        edt(()->{((JMenuItem)field(ui,"materialAccess")).doClick();next.set(ui.startMaterialAccess(EditorObservationBridge.Scope.EDIT));});
+        edt(()->((JMenuItem)field(ui,"materialAccess")).doClick());
+        var editOnly=openMaterialAccess(EditorObservationBridge.Scope.EDIT);
         for(String route:List.of("save","reopen"))
-            check(materialRequest(next.get(),"/"+route+"?revision="+project.revision(),true).statusCode()==403,"Edit-only access allowed "+route);
-        edt(()->{((JMenuItem)field(ui,"materialAccess")).doClick();next.set(ui.startMaterialAccess(EditorObservationBridge.Scope.EDIT_AND_SAVE));});
-        var access=next.get();
+            check(materialRequest(editOnly,"/"+route+"?revision="+project.revision(),true).statusCode()==403,"Edit-only access allowed "+route);
+        edt(()->((JMenuItem)field(ui,"materialAccess")).doClick());
+        var access=openMaterialAccess(EditorObservationBridge.Scope.EDIT_AND_SAVE);
         check(!old.token().equals(access.token()),"Editing requires a new session token");
         long rev=project.revision();
         materialClient(access,"material-save",project.hierarchyPage(0,1).nodes().get(0).id(),materialRequest(access,"/capture?revision="+rev).body());
@@ -1126,12 +1154,27 @@ public final class G2TexturedModelGuiTest {
         int r=(pixel>>>16&255)-(ink>>>16&255),g=(pixel>>>8&255)-(ink>>>8&255),b=(pixel&255)-(ink&255);
         return r*r+g*g+b*b;
     }
+    static void verifyMaterialModule(JFrame parent,Path output)throws Exception{
+        var test=new G2TexturedModelGuiTest(Files.createDirectories(output));
+        try{
+            edt(()->{
+                test.ui=new AssetImportDialog(parent,test.published::set);
+                ((JDialog)field(test.ui,"dialog")).setVisible(true);
+            });
+            test.verifyProjectedStroke();
+        }finally{
+            edt(()->{if(test.ui!=null)((JDialog)field(test.ui,"dialog")).dispose();});
+        }
+    }
     public static void main(String[] args) throws Exception {
         Path home=Files.createTempDirectory("g2-textured-");
         var oldHome=System.getProperty("user.home");
         var test=new G2TexturedModelGuiTest(Files.createDirectories(Path.of("build/editor-agent-evidence/g2-textured-roundtrip").toAbsolutePath()));
         System.setProperty("user.home",home.toString());
-        try { test.run(); }
+        try {
+            if(Arrays.asList(args).contains("--material-mcp"))verifyMaterialModule(null,test.output);
+            else test.run();
+        }
         finally {
             edt(() -> { if (test.ui!=null) ((JDialog)field(test.ui,"dialog")).dispose(); });
             System.setProperty("user.home",oldHome);

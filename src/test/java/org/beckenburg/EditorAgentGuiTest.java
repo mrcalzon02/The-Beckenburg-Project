@@ -24,7 +24,7 @@ public final class EditorAgentGuiTest {
         return null;
     }
     private static void check(boolean ok,String why){if(!ok)throw new AssertionError(why);}
-    private static <T> T component(Container parent,Class<T> type){
+    static <T> T component(Container parent,Class<T> type){
         for(var child:parent.getComponents()){
             if(type.isInstance(child))return type.cast(child);
             if(child instanceof Container nested){T found=component(nested,type);if(found!=null)return found;}

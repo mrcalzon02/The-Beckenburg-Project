@@ -697,7 +697,7 @@ public final class AssetImportDialog {
                 "Read-only material observation":"Local material editing and shared undo/redo",JOptionPane.INFORMATION_MESSAGE);
         }catch(IOException|RuntimeException failure){materialWorkspace.previewIssue(rootMessage(failure));}
     }
-    EditorObservationBridge startMaterialAccess(EditorObservationBridge.Scope scope)throws IOException{
+    private EditorObservationBridge startMaterialAccess(EditorObservationBridge.Scope scope)throws IOException{
         if(materialObservation!=null)throw new IllegalStateException("Material observation is already active");
         java.util.Objects.requireNonNull(scope);
         var document=topologyProject;

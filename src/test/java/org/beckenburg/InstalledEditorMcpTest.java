@@ -27,9 +27,12 @@ public final class InstalledEditorMcpTest {
                 if(editor.get()==null)throw new AssertionError("Installed editor never opened");
                 if(System.getenv("EDITOR_MCP_PYTHON")==null)throw new AssertionError("MCP client required");
                 EditorAgentGuiTest.verifyCastleMcpRepair(editor.get());
+                var parent=new AtomicReference<JFrame>();
+                SwingUtilities.invokeAndWait(()->parent.set((JFrame)SwingUtilities.getWindowAncestor(editor.get())));
+                G2TexturedModelGuiTest.verifyMaterialModule(parent.get(),Path.of("build/editor-agent-evidence/installed-material"));
                 SwingUtilities.invokeAndWait(()->SwingUtilities.getWindowAncestor(editor.get()).dispose());
                 Files.writeString(Path.of("build/editor-agent-evidence/installed-mcp.txt"),
-                    "PASS " + exe + "\nRuntime " + jar + "\nAdapter " + System.getenv("EDITOR_MCP_SCRIPT") + "\nSource " + System.getenv("GITHUB_SHA"));
+                    "PASS Castle repair and native material layer edit, save/reopen, renderer capture and game readback\nExecutable " + exe + "\nRuntime " + jar + "\nAdapter " + System.getenv("EDITOR_MCP_SCRIPT") + "\nSource " + System.getenv("GITHUB_SHA"));
                 System.exit(0);
             }catch(Throwable failure){failure.printStackTrace();System.exit(1);}
         },"installed-editor-mcp-test").start();
