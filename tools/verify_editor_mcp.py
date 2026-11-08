@@ -19,6 +19,7 @@ async def verify(scope):
         tools = {tool.name: tool for tool in (await client.list_tools()).tools}
         assert ("edit" in tools) == (scope != "observe")
         assert ("save" in tools) == (scope == "save")
+        assert ("reopen" in tools) == (scope == "save")
         assert set(tools["verify_position"].inputSchema["required"]) == {"revision", "id", "x", "y", "z"}
 
         async def call(name, **args):
@@ -53,6 +54,12 @@ async def verify(scope):
             arguments = {"x": xyz["x"], "z": xyz["z"]}
             arguments.update({"yaw": 0.125} if castle else {"id": key, "y": xyz["y"]})
             commands = [{"operation": operation, "arguments": arguments}]
+            invalid = ({"operation": "remove-surface", "arguments": {"id": "absent-mcp-fixture"}} if castle else
+                       {"operation": "move-prop", "arguments": dict(arguments, id="absent-mcp-fixture")})
+            rejected = await client.call_tool("edit", {"revision": revision, "commands": [*commands, invalid]})
+            assert rejected.isError
+            revision = (await call("inspect_scene"))["revision"]
+            assert (await call("inspect_nodes", revision=revision, ids=[key]))["result"] == [node]
             edit = await call("edit", revision=revision, commands=commands)
             stale = await client.call_tool("edit", {"revision": revision, "commands": commands})
             assert stale.isError
@@ -79,6 +86,18 @@ async def verify(scope):
                      "beforeAudit": diagnostics["result"], "removed": delta, "audit": audit}, indent=2), encoding="utf-8")
                 await call("save", revision=revision)
                 assert (await call("verify_position", revision=revision, id=key, **xyz))["result"]["diskState"] == "MATCHES"
+                # Undo the removal, reopen its saved repair, then undo that reopen.
+                reverted = await call("undo", revision=revision)
+                dirty = await call("verify_position", revision=reverted["revision"], id=key, **xyz)
+                assert dirty["result"]["diskState"] == "DIFFERS"
+                reopened = await call("reopen", revision=reverted["revision"])
+                saved = await call("verify_position", revision=reopened["revision"], id=key, **xyz)
+                assert saved["result"]["diskState"] == "MATCHES"
+                again = await call("undo", revision=reopened["revision"])
+                again_audit = (await call("run_test", revision=again["revision"], id="castle-scene-audit"))["result"]
+                assert any(check["code"] == "SPAWN_WALL_INTERSECTION" for check in again_audit)
+                # Restore the repaired state so the next actual human Undo restores the wall.
+                await call("redo", revision=again["revision"])
         print(f"PASS MCP {scope} {state['sceneId']}: authenticated typed discovery, live readback, resource, diagnostic and PNG")
 
 

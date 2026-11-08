@@ -28,7 +28,7 @@ The response carries `X-Editor-Revision`. URL-encode parameter values. The bridg
 ### Connect an MCP client
 
 1. In a Python 3.12 virtual environment, run `python -m pip install -r tools/editor_mcp_requirements.txt`.
-2. In **Verify Scene**, choose **Start Local Observation** for reads or **Start Local Editing** for validated transactions and shared undo/redo. Editing sessions can save only when the user selects **Also allow saving this document**.
+2. In **Verify Scene**, choose **Start Local Observation** for reads or **Start Local Editing** for validated transactions and shared undo/redo. Select **Also allow saving and reopening this document** to grant those two operations. Reopening reads the host's existing document and adds one undo step.
 3. Configure the client's stdio server command as that environment's Python executable. Pass the absolute path to `tools/editor_mcp.py` as its only argument. Set `EDITOR_AGENT_URL` to the displayed loopback address and `EDITOR_AGENT_TOKEN` to the token following `Bearer` in the access dialog. Supply the token through the client's private environment settings.
 4. Call `inspect_scene` for the scene ID and revision, or read `editor://active/summary`. Use `inspect_nodes` to read selected objects, `run_test` for the named native checks, and `capture_viewport` for an actual PNG. Tool discovery reflects the selected access scope. The edit tool's batch schema lists the active host's operations and their required fields.
 

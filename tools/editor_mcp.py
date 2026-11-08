@@ -145,6 +145,11 @@ def server(editor: LiveEditor):
         def save(revision: int) -> str:
             """Save the active document to its existing native path."""
             return editor.call("/save", {"revision": revision}, b"")
+    if "/reopen" in summary["writeRoutes"]:
+        @native_tool
+        def reopen(revision: int) -> str:
+            """Reopen this scene's saved document through shared undo history."""
+            return editor.call("/reopen", {"revision": revision}, b"")
     return mcp
 
 

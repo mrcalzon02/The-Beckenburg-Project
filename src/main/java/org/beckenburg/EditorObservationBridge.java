@@ -104,7 +104,7 @@ final class EditorObservationBridge implements AutoCloseable {
         return switch(scope){
             case OBSERVE -> List.of();
             case EDIT -> List.of("/edit","/undo","/redo");
-            case EDIT_AND_SAVE -> List.of("/edit","/undo","/redo","/save");
+            case EDIT_AND_SAVE -> List.of("/edit","/undo","/redo","/save","/reopen");
         };
     }
     private Reply mutate(String path,Map<String,String> args,byte[] body)throws Exception{
@@ -120,6 +120,7 @@ final class EditorObservationBridge implements AutoCloseable {
             case "/undo" -> result=service.undo(revision);
             case "/redo" -> result=service.redo(revision);
             case "/save" -> result=service.save(revision);
+            case "/reopen" -> result=service.reopen(revision);
             default -> throw new IllegalArgumentException();
         }
         return json(result,result.revision());

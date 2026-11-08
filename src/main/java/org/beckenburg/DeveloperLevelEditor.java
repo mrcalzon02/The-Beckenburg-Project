@@ -1356,7 +1356,7 @@ public final class DeveloperLevelEditor extends JPanel {
             if(choice.equals("START LOCAL OBSERVATION") || choice.equals("START LOCAL EDITING")){
                 var scope=EditorObservationBridge.Scope.OBSERVE;
                 if(choice.equals("START LOCAL EDITING")){
-                    var allowSave=new JCheckBox("Also allow saving this document");
+                    var allowSave=new JCheckBox("Also allow saving and reopening this document");
                     if(JOptionPane.showConfirmDialog(window,new Object[]{"Allow local clients with this token to edit this scene and use undo/redo?",allowSave},
                         "Local editing access",JOptionPane.OK_CANCEL_OPTION)!=JOptionPane.OK_OPTION)return;
                     scope=allowSave.isSelected()?EditorObservationBridge.Scope.EDIT_AND_SAVE:EditorObservationBridge.Scope.EDIT;

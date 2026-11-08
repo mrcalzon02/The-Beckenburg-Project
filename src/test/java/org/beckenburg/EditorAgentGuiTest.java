@@ -372,6 +372,7 @@ public final class EditorAgentGuiTest {
             catch(java.io.IOException expected){}
             var next=openAccess(editor.get(),"edit");
             check(request(next,"/save?revision="+revision(next),"POST",next.bearer()).statusCode()==403,"Edit access does not grant native save");
+            check(request(next,"/reopen?revision="+revision(next),"POST",next.bearer()).statusCode()==403,"Edit access does not grant native reopen");
             verifyMcp(next,"edit");
             check(request(next,"/summary","GET",access.bearer()).statusCode()==401,"Old scene token refused on new session");
             SwingUtilities.invokeAndWait(()->window.get().dispose());
