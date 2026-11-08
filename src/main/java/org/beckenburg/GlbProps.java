@@ -406,8 +406,21 @@ public final class GlbProps {
     }
     /** Render a captured native candidate using real runtime materials, then release all transient registrations. */
     static synchronized BufferedImage renderNativeMaterialReview(byte[] bytes,SceneRenderer renderer,double rotation)throws IOException{
+        return renderNativeMaterialReview(bytes,renderer,rotation,List.of(),null);
+    }
+    static synchronized BufferedImage renderNativeMaterialReview(byte[] bytes,SceneRenderer renderer,double rotation,
+            List<Long> faceIds,java.util.function.LongPredicate visibleFace)throws IOException{
         List<List<?>> tables=List.of(textures,vehicleUvMaterials,samplerWrapS,samplerWrapT,materialNames,diffuseFactors);int[] lengths=tables.stream().mapToInt(List::size).toArray();int first=TEXTURE_BASE+textures.size();
-        try{renderer.drawNativeMaterialReview(decode(bytes,null),rotation);return renderer.image();}
+        try{
+            var model=decode(bytes,null);
+            if(visibleFace!=null){
+                if(model.triangles().size()!=faceIds.size())throw new IOException("Native face order unavailable");
+                var faces=new ArrayList<Triangle>();
+                for(int i=0;i<faceIds.size();i++)if(visibleFace.test(faceIds.get(i)))faces.add(model.triangles().get(i));
+                model=new Model(List.copyOf(faces));
+            }
+            renderer.drawNativeMaterialReview(model,rotation);return renderer.image();
+        }
         finally{for(int i=0;i<tables.size();i++)tables.get(i).subList(lengths[i],tables.get(i).size()).clear();gltfBlendMaterials.removeIf(id->id>=first);gltfMaskCutoffs.keySet().removeIf(id->id>=first);}
     }
     /** Developer asset room only: preserve the actual named asset's UV origin

@@ -163,6 +163,7 @@ public final class AssetImportDialog {
     private final JButton previewUv=new JButton("PREVIEW UV TRANSFORM");
     private JTabbedPane materialTools;
     private EditorTopologyProject.State materialRenderState;
+    private EditorMaterialWorkspace.Visibility materialRenderedVisibility;
     private double materialRenderedRotation=Double.NaN;
     private boolean materialRendering;
     private EditorTopologyProject.State listedMaterials;
@@ -506,6 +507,11 @@ public final class AssetImportDialog {
                 if(busy||modelingPreview!=null||topologyProject==null)return;
                 var face=topologyProject.snapshot().faces().stream().filter(f->f.id()==id).findFirst().orElse(null);if(face==null)return;
                 normalAnchor=face.id();selectedHit=new EditorMeshPicking.Hit(face.id(),face.a().vertex(),face.a().vertex(),face.b().vertex(),0,0,0);selectionLabel.setText("Face "+id);refreshMeshControls();preview.repaint();
+            },()->{
+                if(selectedHit!=null && !materialWorkspace.visibility().includes(selectedHit.faceId())){
+                    selectedHit=null;normalAnchor=null;selectionLabel.setText("Select a visible face");
+                }
+                refreshMeshControls();preview.repaint();
             });
             materialDialog.setContentPane(materialWorkspace);materialDialog.setSize(1160,760);materialDialog.setMinimumSize(new Dimension(900,600));materialDialog.setLocationRelativeTo(dialog);
         }
@@ -518,13 +524,17 @@ public final class AssetImportDialog {
         if(material==null&&materialList.getSelectedItem() instanceof EditorMeshMaterial m)material=m;
         materialWorkspace.observe(state,face,material,modelingPreview!=null);
         double rotation=((Number)materialRotation.getValue()).doubleValue();
-        if(state==null||state.faces().isEmpty()||materialRendering||state==materialRenderState&&rotation==materialRenderedRotation)return;
-        materialRenderState=state;materialRenderedRotation=rotation;materialRendering=true;materialRuntime.setIcon(null);materialRuntime.setText("Rendering captured native state...");
+        var visibility=materialWorkspace.visibility();
+        if(materialWorkspace.visibleFaces()==0){
+            materialRenderState=null;materialRuntime.setIcon(null);materialRuntime.setText("No visible faces");return;
+        }
+        if(materialRendering||state==materialRenderState&&rotation==materialRenderedRotation&&visibility.equals(materialRenderedVisibility))return;
+        materialRenderState=state;materialRenderedRotation=rotation;materialRenderedVisibility=visibility;materialRendering=true;materialRuntime.setIcon(null);materialRuntime.setText("Rendering captured native state...");
         var captured=state;var mesh=modelingPreview!=null?modelingPreview.mesh():topologyProject.mesh();
         new SwingWorker<java.awt.image.BufferedImage,Void>(){
-            protected java.awt.image.BufferedImage doInBackground()throws Exception{var renderer=new SceneRenderer();renderer.setRenderSize(280,190);return GlbProps.renderNativeMaterialReview(EditorGlbWriter.encode(mesh),renderer,Math.toRadians(rotation));}
+            protected java.awt.image.BufferedImage doInBackground()throws Exception{var renderer=new SceneRenderer();renderer.setRenderSize(280,190);return GlbProps.renderNativeMaterialReview(EditorGlbWriter.encode(mesh),renderer,Math.toRadians(rotation),mesh.faceIds(),visibility.filtered()?visibility::includes:null);}
             protected void done(){materialRendering=false;var current=modelingPreview!=null?modelingPreview.snapshot():topologyProject==null?null:topologyProject.snapshot();
-                if(current==captured&&rotation==((Number)materialRotation.getValue()).doubleValue()){try{materialRuntime.setIcon(new ImageIcon(get()));materialRuntime.setText("");}catch(Exception failure){materialRuntime.setIcon(null);materialRuntime.setText("Preview unavailable: "+rootMessage(failure));}}
+                if(current==captured&&visibility.equals(materialWorkspace.visibility())&&rotation==((Number)materialRotation.getValue()).doubleValue()){try{materialRuntime.setIcon(new ImageIcon(get()));materialRuntime.setText("");}catch(Exception failure){materialRuntime.setIcon(null);materialRuntime.setText("Preview unavailable: "+rootMessage(failure));}}
                 refreshMaterialWindow();
             }
         }.execute();
@@ -569,9 +579,10 @@ public final class AssetImportDialog {
         reverseSlide.setText(loopSlide?"Use opposite quad side":"Reverse edge direction");
         previewSlide.setEnabled(editable && (!hasEdgeSelection() || loopSlide) && selectionMode.getSelectedIndex()==1 && selectedHit!=null);
         previewBevel.setEnabled(editable&&!hasEdgeSelection()&&selectionMode.getSelectedIndex()!=2&&selectedHit!=null);
-        chooseMaterial.setEnabled(editable&&selectionMode.getSelectedIndex()==2&&selectedHit!=null);previewMaterial.setEnabled(chooseMaterial.isEnabled()&&materialList.getSelectedItem()!=null);
+        boolean visibleMaterialFace=selectedHit!=null && (materialWorkspace==null || !materialDialog.isVisible() || materialWorkspace.visibility().includes(selectedHit.faceId()));
+        chooseMaterial.setEnabled(editable&&selectionMode.getSelectedIndex()==2&&visibleMaterialFace);previewMaterial.setEnabled(chooseMaterial.isEnabled()&&materialList.getSelectedItem()!=null);
         for(var c:List.of(materialList,materialWrap,materialAlpha,materialOrigin,uvOperation,uvScope,uvPivot,uvFirst,uvSecond))c.setEnabled(editable);
-        previewUv.setEnabled(editable&&selectionMode.getSelectedIndex()==2&&selectedHit!=null);
+        previewUv.setEnabled(editable&&selectionMode.getSelectedIndex()==2&&visibleMaterialFace);
         if(topologyProject!=null)sourceTextureBytes=topologyProject.snapshot().materials().stream().mapToLong(m->(long)m.width()*m.height()*4).sum();
         previewWeld.setEnabled(editable&&selectionMode.getSelectedIndex()==0&&selectedVertices.size()>1);previewDegenerates.setEnabled(editable);previewUnused.setEnabled(editable);
         previewTransform.setEnabled(editable&&!selectedIds().isEmpty()&&(transformSpace.getSelectedIndex()!=1||activeSurfaceFace()!=null));

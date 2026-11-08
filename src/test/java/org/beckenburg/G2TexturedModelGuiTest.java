@@ -132,6 +132,7 @@ public final class G2TexturedModelGuiTest {
             try { return !(boolean)field(ui,"materialRendering") && ((JLabel)field(ui,"materialRuntime")).getIcon()!=null; }
             catch (Exception e) { throw new RuntimeException(e); }
         });
+        verifyVisibility();
         edt(() -> {
             var window = (JDialog)field(ui,"materialDialog");
             var pane = window.getContentPane();
@@ -146,6 +147,45 @@ public final class G2TexturedModelGuiTest {
             "Captured original PNG bytes");
         check(state.faces().stream().allMatch(f -> f.material().equals(state.materials().get(0).key())),
             "All native faces must use the selected material");
+    }
+    private void verifyVisibility() throws Exception {
+        var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");
+        var original=project.snapshot();
+        long revision=project.revision();
+        var full=new AtomicReference<java.awt.Image>();
+        edt(()->{
+            full.set(((ImageIcon)((JLabel)field(ui,"materialRuntime")).getIcon()).getImage());
+            ((JList<?>)field(workspace,"faceList")).setSelectedIndex(10);
+            button(workspace,"isolate");
+            check(workspace.visibleFaces()==1 && workspace.visibility().includes(original.faces().get(10).id()),
+                "Isolate only the selected native face");
+        });
+        await(()->{try{return !(boolean)field(ui,"materialRendering") && ((JLabel)field(ui,"materialRuntime")).getIcon()!=null;}
+            catch(Exception e){throw new RuntimeException(e);}});
+        edt(()->{
+            var isolated=(BufferedImage)((ImageIcon)((JLabel)field(ui,"materialRuntime")).getIcon()).getImage();
+            var all=(BufferedImage)full.get();
+            var pixels=isolated.getRGB(0,0,280,190,null,0,280);
+            check(Arrays.stream(pixels).distinct().count()>2 && !Arrays.equals(pixels,all.getRGB(0,0,280,190,null,0,280)),
+                "Isolated face must remain visible in the actual runtime image");
+            ImageIO.write(isolated,"png",output.resolve("isolated-runtime.png").toFile());
+            button(workspace,"hide");
+            check(workspace.visibleFaces()==0 && field(ui,"selectedHit")==null &&
+                ((JLabel)field(ui,"materialRuntime")).getIcon()==null,"Hide removes the last visible face");
+            var rect=workspace.getClass().getDeclaredMethod("imageRect");
+            rect.setAccessible(true);
+            double[] bounds=(double[])rect.invoke(workspace);
+            var canvas=(JPanel)field(workspace,"canvas");
+            canvas.dispatchEvent(new java.awt.event.MouseEvent(canvas,java.awt.event.MouseEvent.MOUSE_PRESSED,
+                System.currentTimeMillis(),0,(int)(bounds[0]+.65*bounds[2]),(int)(bounds[1]+.3*bounds[3]),
+                1,false,java.awt.event.MouseEvent.BUTTON1));
+            check(field(ui,"selectedHit")==null,"Hidden overlapping UVs cannot be picked");
+            button(workspace,"showAll");
+            check(workspace.visibleFaces()==original.faces().size(),"Show all restores the native face list");
+            check(original==project.snapshot() && project.revision()==revision,"Visibility changed native state or history");
+        });
+        await(()->{try{return !(boolean)field(ui,"materialRendering") && ((JLabel)field(ui,"materialRuntime")).getIcon()!=null;}
+            catch(Exception e){throw new RuntimeException(e);}});
     }
     private static void near(double actual,double expected) {
         check(Math.abs(actual-expected)<1e-5,"Expected "+expected+", got "+actual);
