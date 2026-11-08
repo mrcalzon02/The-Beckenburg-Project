@@ -229,7 +229,8 @@ public final class G2TexturedModelGuiTest {
         var multi=output.resolve("multi-buffer.gltf");
         Files.write(multi,EditorGltfFileTest.splitBuffers(Files.readAllBytes(gltf)));
         EditorGlbWriter.validate(project.mesh(),EditorGltfFile.toGlb(Files.readAllBytes(multi)));
-        for (Path source : List.of(bundle,glb,gltf,multi,output.resolve("edited.btop"))) {
+        var external=EditorGltfFileTest.externalFiles(output.resolve("external"),reviewedJson,Files.readAllBytes(png));
+        for (Path source : List.of(bundle,glb,gltf,multi,external,output.resolve("edited.btop"))) {
             edt(() -> ui.loadSource(source));
             await(() -> ready(ui));
             edt(() -> {
@@ -238,13 +239,46 @@ public final class G2TexturedModelGuiTest {
                     imported.snapshot().quads().size()==6,"Editor import of "+source);
                 if (source.toString().endsWith(".btop")) check(imported.snapshot().equals(edited),"Native reopen");
             });
-            if (source.equals(gltf) || source.equals(multi)) {
+            if (source.equals(gltf) || source.equals(multi) || source.equals(external)) {
                 published.set(null);
+                if (source.equals(external)) {
+                    var sidecar=source.resolveSibling("box data.bin");
+                    byte[] saved=Files.readAllBytes(sidecar);
+                    try {
+                        Files.write(sidecar,new byte[]{1});
+                        edt(() -> button(ui,"apply"));
+                        await(() -> ready(ui));
+                        edt(() -> check(((JTextArea)field(ui,"details")).getText().contains("sidecar changed") &&
+                            published.get()==null,"Refuse changed glTF dependency"));
+                    } finally { Files.write(sidecar,saved); }
+                }
                 edt(() -> button(ui,"apply"));
                 await(() -> published.get()!=null);
                 verifyRuntime(textured);
                 check(Arrays.equals(Files.readAllBytes(source),Files.readAllBytes(
                     ImportedAssetLibrary.root().resolve(published.get()+".source.gltf"))),"Original JSON source archive");
+                if (source.equals(external)) {
+                    Path zip=ImportedAssetLibrary.root().resolve(published.get()+".source.zip");
+                    Path restored=Files.createTempDirectory(Path.of(System.getProperty("user.home")),"restore-");
+                    try (var packageZip=new java.util.zip.ZipFile(zip.toFile())) {
+                        check(packageZip.size()==3,"Expected JSON, binary and texture in source archive");
+                        for (String name:List.of("box.gltf","box data.bin","textures/checker.png")) {
+                            try (var stream=packageZip.getInputStream(packageZip.getEntry(name))) {
+                                byte[] bytes=stream.readAllBytes();
+                                check(Arrays.equals(bytes,Files.readAllBytes(external.resolveSibling(name))),
+                                    "Source package changed "+name);
+                                Files.createDirectories(restored.resolve(name).getParent());
+                                Files.write(restored.resolve(name),bytes);
+                            }
+                        }
+                    }
+                    Path restoredSource=restored.resolve("box.gltf");
+                    var capture=new EditorGltfSource(restoredSource,Files.readAllBytes(restoredSource));
+                    EditorGlbWriter.validate(project.mesh(),capture.glb());
+                    check(Arrays.equals(Files.readAllBytes(zip),capture.reviewedArchive(Files.readAllBytes(restoredSource))),
+                        "Restored source package must reproduce the reviewed archive");
+                    Files.copy(zip,output.resolve("external-source.zip"),StandardCopyOption.REPLACE_EXISTING);
+                }
             }
         }
         System.out.println("PASS G2 textured box: two workspaces, 8 vertices, 6 quads, 12 triangles, "

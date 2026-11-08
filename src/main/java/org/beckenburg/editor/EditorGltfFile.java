@@ -34,6 +34,10 @@ public final class EditorGltfFile {
     }
 
     public static byte[] toGlb(byte[] json) throws IOException {
+        return toGlb(json,uri->{throw new IOException("External glTF resource requires its source directory");});
+    }
+    interface ResourceReader { byte[] read(String uri) throws IOException; }
+    static byte[] toGlb(byte[] json,ResourceReader resources) throws IOException {
         if (json.length > MAX_BYTES) throw new IOException("JSON glTF exceeds interchange budget");
         var value = EditorGlbJson.read(StandardCharsets.UTF_8.newDecoder().decode(ByteBuffer.wrap(json)).toString());
         if (!(value instanceof Map<?,?>)) throw new IOException("Expected glTF document object");
@@ -48,8 +52,7 @@ public final class EditorGltfFile {
             if (buffers.size()>1 && !Set.of("uri","byteLength","name").containsAll(buffer.keySet()))
                 throw new IOException("Cannot merge glTF buffers with custom buffer metadata");
             String prefix = uri.startsWith(URI) ? URI : GLTF_URI;
-            if (!uri.startsWith(prefix)) throw new IOException("Expected an embedded base64 glTF buffer");
-            byte[] bytes = decode(uri,prefix);
+            byte[] bytes = uri.startsWith(prefix) ? decode(uri,prefix) : resources.read(uri);
             int declared = size(buffer.get("byteLength"));
             if (declared < 1 || declared > bytes.length) throw new IOException("Truncated glTF buffer");
             align(binary);
@@ -76,12 +79,14 @@ public final class EditorGltfFile {
                 if (!(item instanceof Map<?,?>)) throw new IOException("Invalid glTF image object");
                 var image = EditorGlbReader.obj(item);
                 if (!image.containsKey("uri")) continue;
-                if (image.containsKey("bufferView") || !(image.remove("uri") instanceof String imageUri) ||
-                    !imageUri.startsWith("data:image/png;base64,"))
-                    throw new IOException("Expected an embedded PNG image URI or buffer view");
+                if (image.containsKey("bufferView") || !(image.remove("uri") instanceof String imageUri))
+                    throw new IOException("Expected a PNG image URI or buffer view");
                 if (image.containsKey("mimeType") && !"image/png".equals(image.get("mimeType")))
                     throw new IOException("Image MIME type differs from PNG URI");
-                var png = decode(imageUri,"data:image/png;base64,");
+                var png = imageUri.startsWith("data:image/png;base64,")
+                    ? decode(imageUri,"data:image/png;base64,") : resources.read(imageUri);
+                if (png.length<8 || ByteBuffer.wrap(png).getLong()!=0x89504e470d0a1a0aL)
+                    throw new IOException("glTF image resource must contain PNG bytes");
                 align(binary);
                 if ((long)binary.size()+png.length>4_000_000) throw new IOException("glTF exceeds runtime buffer budget");
                 var imageViews = EditorGlbReader.arr(root.get("bufferViews"));

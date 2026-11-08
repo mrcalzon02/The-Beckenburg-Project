@@ -6,6 +6,7 @@ import java.util.Base64;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
+import java.nio.file.*;
 
 /** Exercise alternate JSON encodings of the actual textured Model Editor export. */
 public final class EditorGltfFileTest {
@@ -44,6 +45,36 @@ public final class EditorGltfFileTest {
         first.put("byteOffset",6);
         refused(json(root));
         return valid;
+    }
+    public static Path externalFiles(Path dir,byte[] exported,byte[] png) throws IOException {
+        Files.createDirectories(dir);
+        var root=EditorGlbReader.obj(EditorGlbJson.read(new String(exported,StandardCharsets.UTF_8)));
+        var buffer=EditorGlbReader.obj(EditorGlbReader.arr(root.get("buffers")).get(0));
+        Files.write(dir.resolve("box data.bin"),EditorGlbReader.read(EditorGltfFile.toGlb(exported)).binary());
+        buffer.put("uri","box%20data.bin");
+        var document=EditorGlbReader.read(EditorGltfFile.toGlb(exported));
+        int i=document.materials().stream().filter(m->java.util.Arrays.equals(m.png(),png)).findFirst().orElseThrow().index();
+        var material=EditorGlbReader.obj(EditorGlbReader.arr(root.get("materials")).get(i));
+        var texture=EditorGlbReader.obj(EditorGlbReader.obj(material.get("pbrMetallicRoughness")).get("baseColorTexture"));
+        int index=((Number)texture.get("index")).intValue();
+        var binding=EditorGlbReader.obj(EditorGlbReader.arr(root.get("textures")).get(index));
+        var image=EditorGlbReader.obj(EditorGlbReader.arr(root.get("images")).get(((Number)binding.get("source")).intValue()));
+        image.remove("bufferView");
+        image.put("uri","textures/checker.png");
+        Files.createDirectories(dir.resolve("textures"));
+        Files.write(dir.resolve("textures/checker.png"),png);
+        Path source=Files.write(dir.resolve("box.gltf"),json(root));
+        for (String disallowed : java.util.List.of("%2e%2e/outside.bin","https://example.invalid/file.bin",
+                "file:///outside.bin")) {
+            buffer.put("uri",disallowed);
+            try {
+                new EditorGltfSource(source,json(root));
+                throw new AssertionError("Followed invalid resource "+disallowed);
+            } catch (IOException expected) {
+                if (!expected.getMessage().contains("local relative")) throw expected;
+            }
+        }
+        return source;
     }
     public static void verify(EditorMeshPipeline.Mesh expected,byte[] exported,byte[] png) throws IOException {
         var root=EditorGlbReader.obj(EditorGlbJson.read(new String(exported,StandardCharsets.UTF_8)));

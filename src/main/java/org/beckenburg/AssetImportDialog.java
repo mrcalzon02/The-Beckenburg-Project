@@ -2,6 +2,7 @@ package org.beckenburg;
 
 import org.beckenburg.editor.EditorGlbWriter;
 import org.beckenburg.editor.EditorGltfFile;
+import org.beckenburg.editor.EditorGltfSource;
 import org.beckenburg.editor.EditorDocumentStore;
 import org.beckenburg.editor.EditorTopologyWorkspace;
 import org.beckenburg.editor.EditorMaterialWorkspace;
@@ -166,6 +167,7 @@ public final class AssetImportDialog {
     private boolean materialRendering;
     private EditorTopologyProject.State listedMaterials;
     private EditorObjMaterials.Capture sourceCapture;
+    private EditorGltfSource gltfSource;
     private EditorTopologyWorkspace workspace;
     private record MeshPart(String name,int vertices,int faces,String label){@Override public String toString(){return label+" / "+faces+" triangles";}}
     private final JTextField partSearch=new JTextField();
@@ -641,7 +643,7 @@ public final class AssetImportDialog {
             var mesh=new EditorMeshPipeline.Mesh("New mesh",List.of(),0);
             var project=EditorTopologyProject.fromMesh(mesh,EditorMeshPipeline.sourceFingerprint("native-mesh-v1".getBytes(java.nio.charset.StandardCharsets.UTF_8)),document);
             project.save();clearPrimitivePreview();selectedHit=null;normalAnchor=null;selectionLabel.setText("Click a triangle in the working mesh");topologyProject=project;meshHistory=new EditorHistory<>(project,60);workingObservation=project.observe();source=workingObservation.mesh();result=null;
-            path=document;sourceCapture=null;reviewedSourceFingerprint=project.diskFingerprint();authoringNote="Native primitive authoring; generated fallback atlas.";sourceTextureBytes=0;
+            path=document;sourceCapture=null;gltfSource=null;reviewedSourceFingerprint=project.diskFingerprint();authoringNote="Native primitive authoring; generated fallback atlas.";sourceTextureBytes=0;
             vertexId.setValue(0L);selectVertex();refreshMeshControls();pathLabel.setText(document.getFileName()+" | native authoring");
             if(slider.getValue()!=0)slider.setValue(0);else recalculate();
         }catch(IOException|RuntimeException failure){details.append("\nNEW MESH FAILED: "+rootMessage(failure));}
@@ -673,14 +675,15 @@ public final class AssetImportDialog {
         var normal=v.nx()==0&&v.ny()==0&&v.nz()==0?null:new EditorMeshPipeline.Normal(v.nx(),v.ny(),v.nz());
         return new EditorMeshPipeline.Vertex(v.x(),v.y(),v.z(),v.u(),v.v(),normal);
     }
-    private record Loaded(EditorMeshPipeline.Mesh mesh,EditorTopologyProject project,String note,String reviewedFingerprint,EditorObjMaterials.Capture capture){
+    private record Loaded(EditorMeshPipeline.Mesh mesh,EditorTopologyProject project,String note,String reviewedFingerprint,EditorObjMaterials.Capture capture,EditorGltfSource gltf){
+        Loaded(EditorMeshPipeline.Mesh mesh,EditorTopologyProject project,String note,String fingerprint,EditorObjMaterials.Capture capture){this(mesh,project,note,fingerprint,capture,null);}
         Loaded(EditorMeshPipeline.Mesh mesh,EditorTopologyProject project,String note,String reviewedFingerprint){this(mesh,project,note,reviewedFingerprint,null);}
     }
     private void openSource(){
         if(hasUnsavedMeshChanges()&&JOptionPane.showConfirmDialog(dialog,"Discard unsaved mesh edits before opening another source?",
             "Unsaved mesh",JOptionPane.YES_NO_OPTION)!=JOptionPane.YES_OPTION)return;
         JFileChooser file=new JFileChooser();
-        file.setDialogTitle("Import a mesh source (OBJ, STL, GLB)");
+        file.setDialogTitle("Import a mesh source (OBJ, STL, glTF, GLB, BTOP)");
         file.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter(
             "Mesh files (*.obj, *.obj.zip, *.stl, *.gltf, *.glb, *.btop)","obj","zip","stl","gltf","glb","btop"));
         if(file.showOpenDialog(dialog)!=JFileChooser.APPROVE_OPTION)return;
@@ -709,9 +712,10 @@ public final class AssetImportDialog {
                     boolean json=extension.endsWith(".gltf");
                     byte[] original=EditorMeshPipeline.readSource(candidate,json?EditorGltfFile.MAX_BYTES:4_000_000);
                     String fingerprint=EditorMeshPipeline.sourceFingerprint(original);
-                    byte[] bytes=json?EditorGltfFile.toGlb(original):original;
+                    var gltf=json?new EditorGltfSource(candidate,original):null;
+                    byte[] bytes=json?gltf.glb():original;
                     String unsupported;
-                    try{Path document=Path.of(System.getProperty("user.home"),".beckenburg","editor","topology",java.util.UUID.randomUUID()+".btop");var project=EditorTopologyProject.fromGlb(candidate.getFileName().toString(),bytes,document);return new Loaded(project.mesh(),project,"Original GLB hierarchy/pivots/material metadata retained; native edits own the selected node instance.",fingerprint);}catch(IOException notEditable){unsupported=notEditable.getMessage();}
+                    try{Path document=Path.of(System.getProperty("user.home"),".beckenburg","editor","topology",java.util.UUID.randomUUID()+".btop");var project=EditorTopologyProject.fromGlb(candidate.getFileName().toString(),bytes,document);return new Loaded(project.mesh(),project,"Original GLB hierarchy/pivots/material metadata retained; native edits own the selected node instance.",fingerprint,null,gltf);}catch(IOException notEditable){unsupported=notEditable.getMessage();}
                     var decoded=GlbProps.decode(bytes);
                     java.util.Set<Integer> mats=new java.util.HashSet<>();
                     long texBytes=0;
@@ -728,7 +732,7 @@ public final class AssetImportDialog {
                             glbCorner(c)));
                     }
                     return new Loaded(new EditorMeshPipeline.Mesh(candidate.getFileName().toString(),all,bytes.length),null,
-                        "GLB retained read-only: "+unsupported,fingerprint);
+                        "GLB retained read-only: "+unsupported,fingerprint,null,gltf);
                 }
                 sourceTextureBytes=0;
                 byte[] bytes=EditorMeshPipeline.readSource(candidate,(int)EditorMeshPipeline.MAX_SOURCE_BYTES);
@@ -741,14 +745,14 @@ public final class AssetImportDialog {
             @Override protected void done(){
                 choose.setEnabled(true);busy=false;
                 try{
-                    var loaded=get();sourceCapture=loaded.capture();source=loaded.mesh();topologyProject=loaded.project();workingObservation=topologyProject==null?null:topologyProject.observe();if(workingObservation!=null)source=workingObservation.mesh();authoringNote=loaded.note();reviewedSourceFingerprint=loaded.reviewedFingerprint();
+                    var loaded=get();sourceCapture=loaded.capture();gltfSource=loaded.gltf();source=loaded.mesh();topologyProject=loaded.project();workingObservation=topologyProject==null?null:topologyProject.observe();if(workingObservation!=null)source=workingObservation.mesh();authoringNote=loaded.note();reviewedSourceFingerprint=loaded.reviewedFingerprint();
                     meshHistory=topologyProject==null?null:new EditorHistory<>(topologyProject,60);
                     path=candidate;vertexId.setValue(topologyProject==null||topologyProject.snapshot().vertices().isEmpty()?0L:topologyProject.snapshot().vertices().get(0).id());
                     selectVertex();refreshMeshControls();slider.setValue(0);
                     pathLabel.setText(candidate.getFileName()+" | "+source.triangles().size()+" source triangles");
                     if(topologyProject!=null && topologyProject.savedWorkspace()!=null)restoreWorkspace(topologyProject.savedWorkspace());else recalculate();
                 }catch(Exception e){
-                    source=null;result=null;path=null;topologyProject=null;workingObservation=null;meshHistory=null;refreshMeshControls();apply.setEnabled(false);
+                    source=null;result=null;path=null;sourceCapture=null;gltfSource=null;topologyProject=null;workingObservation=null;meshHistory=null;refreshMeshControls();apply.setEnabled(false);
                     details.setText("IMPORT ERROR: "+rootMessage(e));
                     pathLabel.setText("Unable to read "+candidate.getFileName());
                     preview.repaint();
@@ -856,6 +860,7 @@ public final class AssetImportDialog {
         }
         final Path original=path;final EditorMeshPipeline.Result chosen=result;
         final EditorObjMaterials.Capture capturedDependencies=sourceCapture;
+        final EditorGltfSource reviewedGltf=gltfSource;
         final String reviewed=reviewedSourceFingerprint;final EditorTopologyProject authoringProject=topologyProject;
         final EditorTopologyProject.Observation authoringObservation=workingObservation;
         final EditorModelWorkspace authoringView=authoringProject==null?null:captureWorkspace();
@@ -868,6 +873,7 @@ public final class AssetImportDialog {
                 byte[] sourceBytes=EditorMeshPipeline.readSource(original,(int)EditorMeshPipeline.MAX_SOURCE_BYTES);
                 if(!EditorMeshPipeline.sourceFingerprint(sourceBytes).equals(reviewed))throw new IOException("Model source changed after review; reopen it before publishing");
                 if(capturedDependencies!=null)capturedDependencies.validateDependencies();
+                byte[] sourceArchive=reviewedGltf==null?null:reviewedGltf.reviewedArchive(sourceBytes);
                 byte[] nativeBytes=null;String expectedSource=reviewed;
                 if(authoringProject!=null){
                     var saved=authoringProject.saveReviewed(authoringObservation,authoringView);savedAuthoring.set(true);nativeBytes=saved.bytes();
@@ -878,7 +884,7 @@ public final class AssetImportDialog {
                 byte[] output;
                 String filename=original.getFileName().toString().toLowerCase(Locale.ROOT);
                 if (authoringProject==null && chosen.level()==0 && gltfModel(filename)) {
-                    output=filename.endsWith(".gltf") ? EditorGltfFile.toGlb(sourceBytes) : sourceBytes;
+                    output=reviewedGltf==null ? sourceBytes : reviewedGltf.glb();
                 } else {
                     output=EditorGlbWriter.encode(chosen.optimized());
                 }
@@ -887,7 +893,7 @@ public final class AssetImportDialog {
                 GlbProps.decode(output);
                 int after=chosen.parts().stream().mapToInt(EditorMeshPipeline.PartStats::after).sum();
                 return ImportedAssetLibrary.publishReviewed(original,output,chosen.level(),
-                    chosen.source().triangles().size(),after,String.join(" | ",chosen.warnings()),expectedSource,nativeBytes);
+                    chosen.source().triangles().size(),after,String.join(" | ",chosen.warnings()),expectedSource,nativeBytes,sourceArchive);
             }
             @Override protected void done(){
                 choose.setEnabled(true);busy=false;refreshMeshControls();

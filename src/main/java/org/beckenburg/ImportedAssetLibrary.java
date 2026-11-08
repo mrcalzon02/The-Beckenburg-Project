@@ -61,6 +61,10 @@ public final class ImportedAssetLibrary {
      */
     public static synchronized String publishReviewed(Path original,byte[] output,int level,int before,int after,
                                                        String warnings,String expectedSourceSha,byte[] authoring)throws IOException{
+        return publishReviewed(original,output,level,before,after,warnings,expectedSourceSha,authoring,null);
+    }
+    static synchronized String publishReviewed(Path original,byte[] output,int level,int before,int after,
+            String warnings,String expectedSourceSha,byte[] authoring,byte[] sourceArchive)throws IOException{
         byte[] source=org.beckenburg.editor.EditorMeshPipeline.readSource(original,32*1024*1024);
         if(expectedSourceSha!=null&&!expectedSourceSha.equals(hex(sha256(source))))
             throw new IOException("Model source changed after review; reopen it before publishing");
@@ -75,6 +79,7 @@ public final class ImportedAssetLibrary {
         java.security.MessageDigest identity;
         try{identity=java.security.MessageDigest.getInstance("SHA-256");}catch(java.security.NoSuchAlgorithmException impossible){throw new IOException(impossible);}
         identity.update(source);identity.update(output);if(authoring!=null)identity.update(authoring);
+        if(sourceArchive!=null)identity.update(sha256(sourceArchive));
         String id="import_"+hex(identity.digest()).substring(0,16);
         Files.createDirectories(root());
         Path mesh=root().resolve(id+".glb");
@@ -91,6 +96,12 @@ public final class ImportedAssetLibrary {
             else if(!Arrays.equals(authoring,Files.readAllBytes(nativePath)))throw new IOException("Native authoring archive collision");
         }
         Properties p=new Properties();
+        if(sourceArchive!=null){
+            Path bundle=root().resolve(id+".source.zip");
+            if(!Files.exists(bundle,LinkOption.NOFOLLOW_LINKS))atomic(bundle,sourceArchive);
+            else if(!Arrays.equals(sourceArchive,Files.readAllBytes(bundle)))throw new IOException("Source package collision");
+            p.setProperty("sourceArchiveSha256",hex(sha256(sourceArchive)));
+        }
         if(authoring!=null){p.setProperty("authoringSha256",hex(sha256(authoring)));p.setProperty("authoringBytes",Integer.toString(authoring.length));}
         p.setProperty("version","1");p.setProperty("id",id);
         p.setProperty("sourceName",original.getFileName().toString());
