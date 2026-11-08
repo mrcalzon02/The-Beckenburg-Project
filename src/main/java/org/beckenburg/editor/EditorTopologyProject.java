@@ -89,6 +89,12 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         private final State state;
         private final long revision;
         private Observation(EditorTopologyProject owner,State state,long revision){this.owner=owner;this.state=state;this.revision=revision;}
+        private Map<Long,Vertex> vertexIndex;
+        /** Lookup in this immutable native observation. Built once per gesture when needed. */
+        public synchronized Vertex vertex(long id) {
+            if (vertexIndex==null) vertexIndex=indexVertices(state.vertices());
+            return vertexIndex.get(id);
+        }
         public State snapshot(){return state;}
         public long revision(){return revision;}
         public EditorMeshPipeline.Mesh mesh(){return EditorTopologyProject.mesh(state);}
@@ -368,6 +374,39 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         replaceVertices(old,next,Set.of(id),EditorMeshFrame.translation(x-old.get(id).x(),y-old.get(id).y(),z-old.get(id).z()));
     }
     /** Atomic global-axis translation of native IDs; no coordinate-based welding or partial edit. */
+    /** Align a selected anchor to a stationary native vertex without welding their identities. */
+    public synchronized EditPreview previewVertexSnap(Observation observation,Collection<Long> ids,long anchorId,long targetId) {
+        if (!isCurrent(observation)) throw new IllegalArgumentException("Pick the snap target again after a native revision change");
+        if (ids.isEmpty() || ids.size()>MAX_VERTICES) throw new IllegalArgumentException("Select native vertices to snap");
+        var selected=Set.copyOf(ids);
+        if (!selected.contains(anchorId) || selected.contains(targetId)) throw new IllegalArgumentException("Pick an anchor in the selection and a target outside it");
+        var old=indexVertices(state.vertices());
+        if (!old.keySet().containsAll(selected) || !old.containsKey(targetId)) throw new IllegalArgumentException("Unknown native snap vertex");
+        var anchor=old.get(anchorId);var target=old.get(targetId);
+        double dx=target.x()-anchor.x(),dy=target.y()-anchor.y(),dz=target.z()-anchor.z();
+        if (!Double.isFinite(dx) || !Double.isFinite(dy) || !Double.isFinite(dz)) throw new IllegalArgumentException("Snap translation exceeds native coordinate range");
+        if (dx==0 && dy==0 && dz==0) throw new IllegalArgumentException("Anchor and target are already aligned");
+        var next=new HashMap<>(old);
+        for (long id:selected) {
+            var v=old.get(id);
+            next.put(id,id==anchorId?new Vertex(id,v.part(),target.x(),target.y(),target.z())
+                    :new Vertex(id,v.part(),snapCoordinate(v.x(),anchor.x(),target.x()),
+                            snapCoordinate(v.y(),anchor.y(),target.y()),snapCoordinate(v.z(),anchor.z(),target.z())));
+        }
+        var after=replacementState(old,next,selected);
+        for (var face:state.faces()) {
+            int count=(selected.contains(face.a().vertex())?1:0)+(selected.contains(face.b().vertex())?1:0)+(selected.contains(face.c().vertex())?1:0);
+            if (count==0 || count==3 || area(face,old)==0) continue;
+            if (!(dot(EditorMeshNormals.face(triangle(face,old)),EditorMeshNormals.face(triangle(face,next)))>0))
+                throw new IllegalArgumentException("Snapping would reverse a native face");
+        }
+        var translation=EditorMeshFrame.translation(dx,dy,dz);
+        after=transformFrames(state,after,selected,part->translation);
+        return new EditPreview(this,state,after,revision,"Snap v"+anchorId+" to v"+targetId+" / "+selected.size()+" selected");
+    }
+    private static double snapCoordinate(double value,double anchor,double target) {
+        return target==anchor ? value : target+(value-anchor);
+    }
     public synchronized void translateVertices(Collection<Long> ids,double dx,double dy,double dz){
         Objects.requireNonNull(ids);
         if(ids.isEmpty()||ids.size()>MAX_VERTICES||!Double.isFinite(dx)||!Double.isFinite(dy)||!Double.isFinite(dz))
