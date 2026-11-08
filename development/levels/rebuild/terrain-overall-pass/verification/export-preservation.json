@@ -1,0 +1,118 @@
+{
+  "status": "PASS_SCOPED_EXPORT_PRESERVATION",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "meshes": 542,
+      "source_glb_sha256": "8216e8d3c110c1dbf801f81a82e755808a6bff1add13f5f3cefc855c0af940ee",
+      "candidate_glb_sha256": "40041785cb3d50011787453ead42e886aa67fc8773532c1060951f2a4f865103"
+    },
+    {
+      "id": "ASYLUM",
+      "meshes": 574,
+      "source_glb_sha256": "95daca6096a01765c0c1be6b8fe0c5bc86a8e36a1650dc75d3a380ae0e8ce0f5",
+      "candidate_glb_sha256": "9c7d86f9c7466ca8e70554546f69f68413e7c95286705437c0879dee7e4bfa4d"
+    },
+    {
+      "id": "CHURCH",
+      "meshes": 362,
+      "source_glb_sha256": "8a373afc79aa1bedfa331f6fa1609818f6425323c2647c2eebe27944774d2a5a",
+      "candidate_glb_sha256": "6db2a8158974f0d856a1a51533cfde05318b0b872e53e1089e6462c763ac6a6d"
+    },
+    {
+      "id": "COLLEGE",
+      "meshes": 696,
+      "source_glb_sha256": "9afcf1b48b0261f249d4c4659bb1e39a2158482ea393305de0f9cb08de617fce",
+      "candidate_glb_sha256": "cbb3837d134466951d6d429afc61bf029fca0cc3e5cb5f78627df3120a2146d5"
+    },
+    {
+      "id": "FARMHOUSE",
+      "meshes": 379,
+      "source_glb_sha256": "1badb2ec0dcd257154607221785bf5afae2f333610ce50f727799bfb308d8bc6",
+      "candidate_glb_sha256": "e35dcb0244f096e90f8749a279f14dd5bf271c876b1d4efda074ab56644d54b5"
+    },
+    {
+      "id": "MANSION",
+      "meshes": 554,
+      "source_glb_sha256": "40e15fb5b8c00232901a67afb96c6032da5072cd33abe49ae367e57b7486f8ce",
+      "candidate_glb_sha256": "e4bdfb90f0f70dc2be0569c576470a4e9bcefc5662ce12d819ed37d3f0614d29"
+    },
+    {
+      "id": "PRISON",
+      "meshes": 744,
+      "source_glb_sha256": "5959bd48b3912d4b75b9a07bab076e90ec4ac6c616fdd428d4dd6e88ee241a0b",
+      "candidate_glb_sha256": "ea1c37bdc0e67d9ee381fe20117761f35da76c9423e82884ccb5043415d0b93e"
+    },
+    {
+      "id": "SCHOOL",
+      "meshes": 425,
+      "source_glb_sha256": "a47981703f2d94c102d3f231ccca3b91a4f00145f62976153d3124a1c7a4c1e0",
+      "candidate_glb_sha256": "5beec408f46e42f698748206cbca5d472e22c9ce98e0dd0c8bf356866664e371"
+    },
+    {
+      "id": "WLD-03",
+      "meshes": 163,
+      "source_glb_sha256": "90c023afab9d9bab9a3d113ba0752a43b5c667d1d1af9f9ac174c34130296ee6",
+      "candidate_glb_sha256": "4af4b8197782f9871642b13878d4ceeccbbac4d409374c322e500648c3ff06af"
+    },
+    {
+      "id": "WLD-04",
+      "meshes": 213,
+      "source_glb_sha256": "f9430d28dab5fed8459be1082a0ba0525786e059d8d12471c8a55988ca27cf3f",
+      "candidate_glb_sha256": "728538d07da9bf2b16f01fb4d8cf20ce6c02d93bdffb931ed79b438e8977bccc"
+    },
+    {
+      "id": "WLD-05",
+      "meshes": 252,
+      "source_glb_sha256": "881f5de0ff5028b262cd9586776e8b8ef09c4fa8b60d438dd251f6957e5c6cb4",
+      "candidate_glb_sha256": "1f77a64bd75756ebca7e9a5eeb1fd50c1f8f26c4706ebe18fbd0d016ad150da5"
+    },
+    {
+      "id": "WLD-06",
+      "meshes": 119,
+      "source_glb_sha256": "c062fec987ceba2c2e634023a500ed10b700ae28100d5f5bf522cb4bbf6b1ad6",
+      "candidate_glb_sha256": "7f0be1ab2356925548cc124bf8c151cceb176cfe2a95e1b5f7e1f3e24fdb2418"
+    },
+    {
+      "id": "WLD-08",
+      "meshes": 189,
+      "source_glb_sha256": "382520c14bcac309421045ed23fea4e45fa9fd37a2c907ec469e6453da331528",
+      "candidate_glb_sha256": "dd97cd1e3a45b4a073c88841828c6fc898357a8f16c1141826dc6e2393613d1d"
+    },
+    {
+      "id": "WLD-09",
+      "meshes": 354,
+      "source_glb_sha256": "393eba93b055778a7e8332a12d15d5af6822c6022d0700f3055ca8c1acb7d67d",
+      "candidate_glb_sha256": "380f960d639f0ae2261015ccba9ad1b01d880fbe5c0c6727ff972a5d0dae6525"
+    },
+    {
+      "id": "WLD-10",
+      "meshes": 240,
+      "source_glb_sha256": "dc3308df180e244b2db488c32dea528118d7f93aabb8643e4001ee178d822b6e",
+      "candidate_glb_sha256": "bca00f7ebbcd384177ec6968c5280c9c126af7f632a662322f9b8c3b10c3ed0e"
+    },
+    {
+      "id": "WLD-11",
+      "meshes": 87,
+      "source_glb_sha256": "e57f2dddd89709047f4b607a9bf566d2b5ff936306a3c443f1b14facb2834e4f",
+      "candidate_glb_sha256": "f511a97254d8ba745ed10fb05093d5c7d55555f8cd11425e8afe6c2ccd2619c5"
+    },
+    {
+      "id": "WLD-12",
+      "meshes": 133,
+      "source_glb_sha256": "c4e0b1d6c702d756d059ad6aea9f2f143b60e5f0e3b8fb6b4d96e8b041c523fa",
+      "candidate_glb_sha256": "7ce85d815d17716b4e5fc39584b55f8b9c37fc382c89b936f03b1d066724af90"
+    },
+    {
+      "id": "WLD-13",
+      "meshes": 149,
+      "source_glb_sha256": "b3f160d9fdebbd04f8480a9879911c5886ea115d0468afd4af981e8b52887c15",
+      "candidate_glb_sha256": "c3805de98cd57925b572caa6479d2860f79ef5016c63dcf37385a0199038b388"
+    }
+  ],
+  "position_quantization_metres": 0.0001,
+  "uv_quantization": 1e-05,
+  "pose_tolerance": 1e-05,
+  "checker_sha256": "5d1ba5819cb0f41795c9f5575d1a38050e734cac7e123ee4411a0b901c6b1f30",
+  "scope": "Every original mesh, transformed triangle corner and UV layer, image name/dimensions and world transform in all18actual candidate GLBs; no visual or gameplay acceptance inferred."
+}

@@ -7,6 +7,8 @@ docs/network/receipts/* -text -whitespace
 # Editor scene packages fingerprint exact source/OBJ bytes. CRLF conversion
 # would invalidate the persisted source and mesh SHA on Windows checkout.
 development/levels/rebuild/**/terrain-world/** -text
+# Authored sample programs are byte-compared to their persisted world receipts.
+development/levels/rebuild/terrain-overall-pass/samples/** -text
 # Derived rough studies also carry exact source/render hashes and stale checks.
 development/levels/rebuild/**/rough-* -text
 

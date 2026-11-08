@@ -1,0 +1,24 @@
+{
+  "id": "WLD-09",
+  "status": "MACROTERRAIN_CANDIDATE_FIT_REVIEW_OPEN",
+  "foundation_datums": [
+    -10,
+    -6,
+    0
+  ],
+  "perimeter_fit_failures": [],
+  "excavation_rim_requirements": [],
+  "drainage": "Dam crest divides the high west abutment from the six-metre lower tailrace; spill discharge follows the east rock channel.",
+  "construction_response": "Construct an actual dam/retaining section and turbine foundations. Current ground-level crest may require blockout re-alignment; do not flatten the whole valley to keep it unchanged.",
+  "source_layout": "development/levels/rebuild/wld-09/rough-layout.json",
+  "source_layout_sha256": "8d0eda0c66da33cf9b75c0d54a9efd12634bb6d2b9646ff1e9274506fb04b3c4",
+  "spec_sha256": "a7b1866fc1898124bc33824134b86de6ea6a11aad6ca57f16536b48ab3ce9385",
+  "author_sha256": "ea0e833ddbcaeb6322b9e2cd533f5ca928655a2de4d7183d888fab76676c85c1",
+  "height_range": [
+    -7.800000000000001,
+    2.6
+  ],
+  "pad_snapping": false,
+  "path_snapping": false,
+  "remaining": "Inspect native full-site/sections; reshape blockouts, construct real retaining/foundation transitions and canonical arrival. Source grids are newly authored designs, not measured surveys or terrain acceptance."
+}

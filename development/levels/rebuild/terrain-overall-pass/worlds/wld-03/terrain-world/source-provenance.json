@@ -1,0 +1,24 @@
+{
+  "id": "WLD-03",
+  "status": "MACROTERRAIN_CANDIDATE_FIT_REVIEW_OPEN",
+  "foundation_datums": [
+    0,
+    4,
+    8
+  ],
+  "perimeter_fit_failures": [],
+  "excavation_rim_requirements": [],
+  "drainage": "Mesa terraces shed runoff through the western gully; upper occupied rock shelf is eight metres over the wash.",
+  "construction_response": "Rock mass and cave roof/sidewalls must be authored as volumes. Reposition crossing cave/terrace routes to the shelf rather than grading down every historical orange strip. This heightfield is the exterior skin only.",
+  "source_layout": "development/levels/rebuild/wld-03/rough-layout.json",
+  "source_layout_sha256": "c47d8e1884c077d768b9cfe321d0d606937fad5c63e519b84e1cd731ec51a102",
+  "spec_sha256": "70f480eadb99aeb99d67cca4ec35545e8e198a71220ae3411659f692fca338ca",
+  "author_sha256": "ea0e833ddbcaeb6322b9e2cd533f5ca928655a2de4d7183d888fab76676c85c1",
+  "height_range": [
+    -1.509849522826492,
+    10.45
+  ],
+  "pad_snapping": false,
+  "path_snapping": false,
+  "remaining": "Inspect native full-site/sections; reshape blockouts, construct real retaining/foundation transitions and canonical arrival. Source grids are newly authored designs, not measured surveys or terrain acceptance."
+}

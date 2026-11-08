@@ -1,0 +1,7 @@
+Exception in thread "main" java.lang.IllegalArgumentException: Too many source terrain cells; select smaller region
+	at org.beckenburg.editor.TerrainEntranceMesh.generate(TerrainEntranceMesh.java:137)
+	at org.beckenburg.editor.TerrainEntranceMesh.build(TerrainEntranceMesh.java:79)
+	at org.beckenburg.editor.TerrainEntranceMesh.build(TerrainEntranceMesh.java:68)
+	at org.beckenburg.editor.TerrainScenePackage.publish(TerrainScenePackage.java:87)
+	at org.beckenburg.RosterTerrainBuild.build(RosterTerrainBuild.java:108)
+	at org.beckenburg.RosterTerrainBuild.main(RosterTerrainBuild.java:31)

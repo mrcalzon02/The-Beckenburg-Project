@@ -9,6 +9,9 @@ import java.security.MessageDigest;
 
 /** Offline authoring through the editor's actual persistent punched topology. */
 public final class RosterTerrainBuild {
+    private static Path inputRoot=Path.of("build/terrain-samples");
+    private static Path outputRoot=Path.of("development/levels/rebuild");
+    private static Path previewRoot=Path.of("development/levels/rebuild/previews");
     private static String hash(Path file)throws Exception {
         return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(file)));
     }
@@ -16,11 +19,20 @@ public final class RosterTerrainBuild {
         return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(value.getBytes(java.nio.charset.StandardCharsets.UTF_8)));
     }
     public static void main(String[] args)throws Exception {
-        for(String site:args) build(site.toLowerCase(Locale.ROOT));
+        var sites=new ArrayList<String>();
+        for(int i=0;i<args.length;i++)switch(args[i]) {
+            case "--input-root" -> inputRoot=Path.of(args[++i]);
+            case "--output-root" -> outputRoot=Path.of(args[++i]);
+            case "--preview-root" -> previewRoot=Path.of(args[++i]);
+            default -> sites.add(args[i]);
+        }
+        if(sites.isEmpty())throw new IllegalArgumentException("Select explicit terrain sites");
+        Files.createDirectories(previewRoot);
+        for(String site:sites) build(site.toLowerCase(Locale.ROOT));
     }
     private static void build(String site)throws Exception {
-        Path input=Path.of("build/terrain-samples",site);
-        Path root=Path.of("development/levels/rebuild",site,"terrain-world");
+        Path input=inputRoot.resolve(site);
+        Path root=outputRoot.resolve(site).resolve("terrain-world");
         String[] p=Files.readString(input.resolve("settings.tsv")).strip().split("\t");
         double x0=Double.parseDouble(p[0]),z0=Double.parseDouble(p[1]),x1=Double.parseDouble(p[2]),z1=Double.parseDouble(p[3]);
         var bounds=new TerrainEntranceMesh.Bounds(x0,z0,x1,z1);
@@ -93,7 +105,19 @@ public final class RosterTerrainBuild {
         if(!diskTopology.snapshot().equals(topology.snapshot())||topology.cutoutCount()==0)
             throw new IllegalStateException("Punched topology did not survive disk reopen");
         var scene=new TerrainScenePackage(reopened).openScene();
-        var published=TerrainScenePackage.publish(reopened,scene,"site",bounds);
+        var publishedFiles=new ArrayList<Path>();
+        if(Math.ceil((x1-x0)/2)*Math.ceil((z1-z0)/2)<=TerrainEntranceMesh.MAX_SOURCE_CELLS) {
+            publishedFiles.add(TerrainScenePackage.publish(reopened,scene,"site",bounds).geometryFile());
+        } else {
+            // Real editor chunk publication, not a raised global export cap.
+            // Chunk edges align to source cells; the saved topology controls
+            // all shared-edge vertices in every chunk.
+            for(double z=z0;z<z1;z+=64)for(double x=x0;x<x1;x+=64) {
+                String chunk="site-"+(int)((x-x0)/64)+"-"+(int)((z-z0)/64);
+                var cb=new TerrainEntranceMesh.Bounds(x,z,Math.min(x+64,x1),Math.min(z+64,z1));
+                publishedFiles.add(TerrainScenePackage.publish(reopened,scene,chunk,cb).geometryFile());
+            }
+        }
         // Reopen both documents and inspect the actual published scene/OBJ.
         var diskWorld=StitchedHeightmapWorld.open(root);
         var diskScene=new TerrainScenePackage(diskWorld).openScene();
@@ -128,8 +152,11 @@ public final class RosterTerrainBuild {
         g.setFont(new java.awt.Font("SansSerif",1,18));g.setColor(java.awt.Color.WHITE);g.drawString(site.toUpperCase(Locale.ROOT)+" / SAVED EDITOR TERRAIN / PUNCHED GEOMETRY",30,32);
         g.setFont(new java.awt.Font("SansSerif",0,15));g.drawString(topology.cutoutCount()+" saved punched leaves; "+loaded.triangles()+" actual shared triangles; "+clear+" clear hole probes",30,60);
         g.drawString("Native terrain inspection. Retaining walls, rims, guards and runtime location acceptance remain open.",30,965);g.dispose();
-        Path preview=Path.of("development/levels/rebuild/previews",site+"-saved-terrain.png");ImageIO.write(image,"png",preview.toFile());
-        String report=String.format(Locale.ROOT,"{\n  \"site\":\"%s\",\n  \"cutout_leaves\":%d,\n  \"new_cutouts\":%d,\n  \"clear_hole_probes\":%d,\n  \"triangles\":%d,\n  \"source_height_sha256\":\"%s\",\n  \"physics_sha256\":\"%s\",\n  \"obj_sha256\":\"%s\",\n  \"source_heights_unchanged_by_punch\":true,\n  \"disk_reopen_verified\":true,\n  \"unpunched_optical_negative_verified\":true,\n  \"status\":\"SAVED_EDITOR_TERRAIN_CANDIDATE_NOT_LOCATION_ACCEPTED\"\n}\n",site,topology.cutoutCount(),topology.cutoutCount()-before,clear,loaded.triangles(),heightBefore,hash(root.resolve("terrain-physics.hcs2")),hash(published.geometryFile()));
+        Path preview=previewRoot.resolve(site+"-saved-terrain.png");ImageIO.write(image,"png",preview.toFile());
+        StringBuilder objHashes=new StringBuilder();for(Path file:publishedFiles)objHashes.append(hash(file)).append('\n');
+        String geometryHash=publishedFiles.size()==1?hash(publishedFiles.get(0)):hashText(objHashes.toString());
+        String report=String.format(Locale.ROOT,"{\n  \"site\":\"%s\",\n  \"cutout_leaves\":%d,\n  \"new_cutouts\":%d,\n  \"clear_hole_probes\":%d,\n  \"triangles\":%d,\n  \"source_height_sha256\":\"%s\",\n  \"physics_sha256\":\"%s\",\n  \"obj_sha256\":\"%s\",\n  \"source_heights_unchanged_by_punch\":true,\n  \"disk_reopen_verified\":true,\n  \"unpunched_optical_negative_verified\":true,\n  \"status\":\"SAVED_EDITOR_TERRAIN_CANDIDATE_NOT_LOCATION_ACCEPTED\"\n}\n",site,topology.cutoutCount(),topology.cutoutCount()-before,clear,loaded.triangles(),heightBefore,hash(root.resolve("terrain-physics.hcs2")),geometryHash);
+        if(publishedFiles.size()>1)report=report.replace("\"obj_sha256\":", "\"obj_chunks\":"+publishedFiles.size()+",\n  \"obj_sha256_semantics\":\"SHA256 of ordered chunk SHA256 values with LF\",\n  \"obj_sha256\":");
         report=report.replace("\"unpunched_optical_negative_verified\":true,", "\"unpunched_optical_negative_verified\":true,\n  \"punched_body_clear_and_unpunched_body_blocked\":true,");
         Files.writeString(root.resolve("verification.json"),report);
         Files.copy(input.resolve("provenance.json"),root.resolve("source-provenance.json"),StandardCopyOption.REPLACE_EXISTING);

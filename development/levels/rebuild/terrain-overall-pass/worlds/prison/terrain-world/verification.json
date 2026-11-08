@@ -1,0 +1,17 @@
+{
+  "site":"prison",
+  "cutout_leaves":2328,
+  "new_cutouts":0,
+  "clear_hole_probes":1384,
+  "triangles":8286,
+  "source_height_sha256":"fadf21858d548b61dafba6cf3675b97a9f61e933d798f712f6a1ced97dfcbed0",
+  "physics_sha256":"6587d01d051a33e56cd40661b6db6c6cd5593bd1a7d143ff11cdbb7d4f7493e1",
+  "obj_chunks":4,
+  "obj_sha256_semantics":"SHA256 of ordered chunk SHA256 values with LF",
+  "obj_sha256":"2d8f9e2301ee5e98eae46840c1760681867cbe121af4c6f08cc168185581be4d",
+  "source_heights_unchanged_by_punch":true,
+  "disk_reopen_verified":true,
+  "unpunched_optical_negative_verified":true,
+  "punched_body_clear_and_unpunched_body_blocked":true,
+  "status":"SAVED_EDITOR_TERRAIN_CANDIDATE_NOT_LOCATION_ACCEPTED"
+}

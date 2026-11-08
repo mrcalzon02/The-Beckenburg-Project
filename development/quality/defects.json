@@ -4203,6 +4203,61 @@
       "action": "Retain actual support while removing overlapping reservation geometry where real floors or accepted terrain already supply the surface. Review native/runtime images and normal/collision parity. Do not conceal the problem with lighting, alpha, a global collision change or a claimed visual pass.",
       "evidence": "development/levels/rebuild/verification/roster-basements-2026-11-07/; captures/structure-batch/roster-structure-sheet-02.png; captures/basement-batch/",
       "older_maps": "Audit other maps individually. Neither physical path probes nor a native overview proves finished terrain, model support, lighting, services, networking or complete map acceptance."
+    },
+    {
+      "id": "DEV-390",
+      "title": "Thin outside-cut strips exhaust editor topology budget without adding footprint fidelity",
+      "status": "AUTHORING DECOMPOSITION FIXED; independent2,013,824cell mask parity PASS",
+      "affected": "18new macroterrain candidates across remaining roster; exact affected sites/segments in terrain-overall-pass reports",
+      "symptom": "Asylum new terrain generation exceeds20,000cut leaves after the Academy pilot consumed19,595leaves.",
+      "cause": "Sequential quarter-metre row strips unnecessarily subdivide fully absent source cells into64tiny leaves.",
+      "action": "Use source-cell aligned dyadic cut rectangles. Exact quarter-metre mask is unchanged; all18worlds fit existing20,000cut limit. No core editor limit raised. Rejected pilot/log retained.",
+      "evidence": "terrain-overall-pass/rejected-row-stripes/; verification/source-integrity.json",
+      "older_maps": "No previous map receives terrain acceptance. Audit each existing terrain and mature map individually. Preserve original source/model IDs, UVs and transforms; re-run actual native and visual checks after each terrain/blockout/foundation revision."
+    },
+    {
+      "id": "DEV-391",
+      "title": "Prison construction footprint does not align with editable terrain leaves",
+      "status": "OPEN PHYSICAL RIMS; explicit excavation envelope authored",
+      "affected": "18new macroterrain candidates across remaining roster; exact affected sites/segments in terrain-overall-pass reports",
+      "symptom": "Prison foundation edge46.8m cannot be represented by the quarter-metre editable grid; editor correctly rejects it.",
+      "cause": "Existing construction reservations include off-grid dimensions.",
+      "action": "Preserve building dimensions; new macroterrain source explicitly records aligned excavation bounds and every excess in samples/prison/provenance.json. Construct physical foundation rims before promotion; no claim that authoring an enlarged aperture fills the gap.",
+      "evidence": "terrain-overall-pass/rejected-row-stripes/unaligned-prison-foundation.log; samples/prison/provenance.json",
+      "older_maps": "No previous map receives terrain acceptance. Audit each existing terrain and mature map individually. Preserve original source/model IDs, UVs and transforms; re-run actual native and visual checks after each terrain/blockout/foundation revision."
+    },
+    {
+      "id": "DEV-392",
+      "title": "New site terrain exposes old flat-route and blockout elevation conflicts",
+      "status": "OPEN; actual native failures retained, master maps preserved",
+      "affected": "18new macroterrain candidates across remaining roster; exact affected sites/segments in terrain-overall-pass reports",
+      "symptom": "87,060flat-route samples retain79,235baseline-valid poses, but2,453poses and2,355qualified sweeps become blocked in new macroterrain composites. Ten sites have new findings; eight have none in this scoped check.",
+      "cause": "Historical routes and building groups were authored without coherent whole-site landform. Broad slopes/rock shoulders now physically meet or overtop those coordinates.",
+      "action": "Revise terrain/blockout relationships in stage batches, moving structures/stair bays/links with shared coordinate bindings where needed. Do not force terrain around every orange pad or weaken physics. Newly authored composite candidates are not promoted to existing masters or unlocked.",
+      "evidence": "terrain-overall-pass/verification/native-route-fit.json and native-route-probes.tsv; captures/macroterrain-batch/",
+      "older_maps": "No previous map receives terrain acceptance. Audit each existing terrain and mature map individually. Preserve original source/model IDs, UVs and transforms; re-run actual native and visual checks after each terrain/blockout/foundation revision."
+    },
+    {
+      "id": "DEV-393",
+      "title": "Larger macroterrain sites exceed the single editor mesh export area",
+      "status": "CHUNKED AUTHORING VERIFIED; runtime location integration OPEN",
+      "affected": "18new macroterrain candidates across remaining roster; exact affected sites/segments in terrain-overall-pass reports",
+      "symptom": "Prison terrain rectangle exceeds2,048source cells when published as one terrain mesh.",
+      "cause": "The single-mesh editor API intentionally bounds source area; roster terrain needs multiple owned chunks.",
+      "action": "Publish real64m source-aligned chunks through TerrainScenePackage, inspect reopened ownership/fingerprints and encode all nodes through actual TerrainSceneNativePhysics. No global export limit raised; composite GLB and native triangles match exactly.",
+      "evidence": "terrain-overall-pass/rejected-row-stripes/single-chunk-prison-limit.log; verification/source-integrity.json; worlds/prison/terrain-world/scene-package/",
+      "older_maps": "No previous map receives terrain acceptance. Audit each existing terrain and mature map individually. Preserve original source/model IDs, UVs and transforms; re-run actual native and visual checks after each terrain/blockout/foundation revision."
+    },
+    {
+      "id": "DEV-394",
+      "title": "Macroterrain composites expose unfinished supports, rock enclosure and angular boundaries",
+      "status": "OPEN; construction and landscape fitness not accepted",
+      "affected": "18new macroterrain candidates across remaining roster; exact affected sites/segments in terrain-overall-pass reports",
+      "symptom": "Native full-site views show unsupported marsh/harbour decks, cave shelves and canopy-like cave room slabs; boundaries and drainage cross-sections remain coarse and angular, canonical van missing.",
+      "cause": "First broad ground surfaces have been composed with earlier rough structural exports; piles, foundations, cave mass, water/banks and location-specific enclosure were not yet built.",
+      "action": "Build actual load-bearing/pile/retaining/cave volumes and supported van arrival. Revise broad landform silhouettes and contour cross-sections, not just edge colours. Current six sheets were viewed; construction2/5, landscape2/5, finish1/5, no visual acceptance.",
+      "evidence": "captures/macroterrain-batch/macroterrain-sheet-01.png through06.png; terrain-overall-pass/verification/visual-review.json",
+      "older_maps": "No previous map receives terrain acceptance. Audit each existing terrain and mature map individually. Preserve original source/model IDs, UVs and transforms; re-run actual native and visual checks after each terrain/blockout/foundation revision."
     }
   ],
   "audit_categories": [

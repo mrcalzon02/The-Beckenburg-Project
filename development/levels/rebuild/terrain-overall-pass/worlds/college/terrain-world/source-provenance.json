@@ -1,0 +1,24 @@
+{
+  "id": "COLLEGE",
+  "status": "MACROTERRAIN_CANDIDATE_FIT_REVIEW_OPEN",
+  "foundation_datums": [
+    -3,
+    0,
+    3.6
+  ],
+  "perimeter_fit_failures": [],
+  "excavation_rim_requirements": [],
+  "drainage": "One shallow landscaped drainage corridor separates the teaching and residence groups, bending toward the east arrival verge.",
+  "construction_response": "Keep distinct three-building footprints and bridge supports. Evaluate bridge and service-tunnel levels against this shared valley; no whole-campus rectangular lawn plate.",
+  "source_layout": "development/levels/rebuild/college/rough-layout.json",
+  "source_layout_sha256": "6b50a48a38f2bcd7b2036749fda15ec92aed6a4dfe9e7762fc953c20ffbc0b2d",
+  "spec_sha256": "5976225847322e60183aff9f7ba73ed5d8bf269fbb804c72f03b1982f580ac8f",
+  "author_sha256": "ea0e833ddbcaeb6322b9e2cd533f5ca928655a2de4d7183d888fab76676c85c1",
+  "height_range": [
+    -1.023823729743893,
+    0.7391505004882849
+  ],
+  "pad_snapping": false,
+  "path_snapping": false,
+  "remaining": "Inspect native full-site/sections; reshape blockouts, construct real retaining/foundation transitions and canonical arrival. Source grids are newly authored designs, not measured surveys or terrain acceptance."
+}

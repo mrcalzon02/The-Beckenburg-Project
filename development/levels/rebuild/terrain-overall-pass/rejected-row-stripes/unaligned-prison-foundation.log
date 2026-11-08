@@ -1,0 +1,15 @@
+SAVED_EDITOR_TERRAIN academy 1757 cuts; 901 clear probes; 5678 shared faces
+SAVED_EDITOR_TERRAIN asylum 2073 cuts; 1381 clear probes; 7193 shared faces
+SAVED_EDITOR_TERRAIN church 712 cuts; 528 clear probes; 2831 shared faces
+SAVED_EDITOR_TERRAIN college 2230 cuts; 1603 clear probes; 8601 shared faces
+SAVED_EDITOR_TERRAIN farmhouse 891 cuts; 665 clear probes; 3796 shared faces
+SAVED_EDITOR_TERRAIN mansion 1344 cuts; 980 clear probes; 5411 shared faces
+Exception in thread "main" java.lang.IllegalArgumentException: Footprint boundary does not conform to the editable terrain grid: Bounds[x0=42.0, z0=64.0, x1=46.8, z1=68.0] near 46.75,64.0; align the foundation or author its rim explicitly
+	at org.beckenburg.editor.TerrainFootprintCutout.cut(TerrainFootprintCutout.java:53)
+	at org.beckenburg.editor.TerrainFootprintCutout.cut(TerrainFootprintCutout.java:57)
+	at org.beckenburg.editor.TerrainFootprintCutout.cut(TerrainFootprintCutout.java:57)
+	at org.beckenburg.editor.TerrainFootprintCutout.cut(TerrainFootprintCutout.java:57)
+	at org.beckenburg.editor.TerrainFootprintCutout.cut(TerrainFootprintCutout.java:57)
+	at org.beckenburg.editor.TerrainFootprintCutout.punch(TerrainFootprintCutout.java:28)
+	at org.beckenburg.RosterTerrainBuild.build(RosterTerrainBuild.java:99)
+	at org.beckenburg.RosterTerrainBuild.main(RosterTerrainBuild.java:31)

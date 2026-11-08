@@ -1,0 +1,105 @@
+{
+  "id": "SCHOOL",
+  "status": "MACROTERRAIN_CANDIDATE_FIT_REVIEW_OPEN",
+  "foundation_datums": [
+    -3,
+    0,
+    3.6
+  ],
+  "perimeter_fit_failures": [],
+  "excavation_rim_requirements": [
+    {
+      "zone": "staff",
+      "building_bounds": [
+        23,
+        15,
+        27.2,
+        20
+      ],
+      "authored_excavation_bounds": [
+        23.0,
+        15.0,
+        27.25,
+        20.0
+      ],
+      "status": "EXPLICIT_FOUNDATION_RIM_REQUIRED_NOT_YET_BUILT"
+    },
+    {
+      "zone": "staff-wc",
+      "building_bounds": [
+        25,
+        12,
+        27.2,
+        15
+      ],
+      "authored_excavation_bounds": [
+        25.0,
+        12.0,
+        27.25,
+        15.0
+      ],
+      "status": "EXPLICIT_FOUNDATION_RIM_REQUIRED_NOT_YET_BUILT"
+    },
+    {
+      "zone": "service-stair",
+      "building_bounds": [
+        27.2,
+        12,
+        30,
+        20
+      ],
+      "authored_excavation_bounds": [
+        27.0,
+        12.0,
+        30.0,
+        20.0
+      ],
+      "status": "EXPLICIT_FOUNDATION_RIM_REQUIRED_NOT_YET_BUILT"
+    },
+    {
+      "zone": "lower-stair",
+      "building_bounds": [
+        27.2,
+        12,
+        30,
+        20
+      ],
+      "authored_excavation_bounds": [
+        27.0,
+        12.0,
+        30.0,
+        20.0
+      ],
+      "status": "EXPLICIT_FOUNDATION_RIM_REQUIRED_NOT_YET_BUILT"
+    },
+    {
+      "zone": "plant",
+      "building_bounds": [
+        23,
+        12,
+        27.2,
+        20
+      ],
+      "authored_excavation_bounds": [
+        23.0,
+        12.0,
+        27.25,
+        20.0
+      ],
+      "status": "EXPLICIT_FOUNDATION_RIM_REQUIRED_NOT_YET_BUILT"
+    }
+  ],
+  "drainage": "West playing-ground swale carries roof/yard drainage clear of the pupil arrival route.",
+  "construction_response": "Continuous teaching-block datum with distinct gym/service foundations. Recheck actual school bounds and entrance apron before promotion.",
+  "source_layout": "development/levels/rebuild/school/rough-layout.json",
+  "source_layout_sha256": "f63f0a5606fe1cb18fec602d096400af399bb0e314f4cd8ff238e5c26927c79e",
+  "spec_sha256": "c58f3dd904a7b3e2fa8359dc5dff1027e899540da1f2060c22732efc31d73792",
+  "author_sha256": "ea0e833ddbcaeb6322b9e2cd533f5ca928655a2de4d7183d888fab76676c85c1",
+  "height_range": [
+    -1.0289588989512533,
+    0.43999999999999995
+  ],
+  "pad_snapping": false,
+  "path_snapping": false,
+  "remaining": "Inspect native full-site/sections; reshape blockouts, construct real retaining/foundation transitions and canonical arrival. Source grids are newly authored designs, not measured surveys or terrain acceptance."
+}

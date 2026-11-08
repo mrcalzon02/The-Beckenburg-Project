@@ -1,0 +1,23 @@
+{
+  "id": "WLD-11",
+  "status": "MACROTERRAIN_CANDIDATE_FIT_REVIEW_OPEN",
+  "foundation_datums": [
+    0,
+    1.2
+  ],
+  "perimeter_fit_failures": [],
+  "excavation_rim_requirements": [],
+  "drainage": "Reed basin and main tidal channel sit below the stilt settlement; south roadhead rises gently above the water meadow.",
+  "construction_response": "Raised houses and boardwalks remain 1.2m structures with actual piles. No dry land pad per building; engineer supported arrival-to-boardwalk rise and a real water/bank boundary.",
+  "source_layout": "development/levels/layouts/wld-11/layout.json",
+  "source_layout_sha256": "a16ce066da5d6eb9bc7a008c07f1ba9713f49573f85f86647dd3d38d327ab5bf",
+  "spec_sha256": "7ae28b32cfe2956adfb340ef7121faaefd47788cd59babc336fd269c7368081c",
+  "author_sha256": "ea0e833ddbcaeb6322b9e2cd533f5ca928655a2de4d7183d888fab76676c85c1",
+  "height_range": [
+    -2.899999961061826,
+    -1.2290427435720697
+  ],
+  "pad_snapping": false,
+  "path_snapping": false,
+  "remaining": "Inspect native full-site/sections; reshape blockouts, construct real retaining/foundation transitions and canonical arrival. Source grids are newly authored designs, not measured surveys or terrain acceptance."
+}

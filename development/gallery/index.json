@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 7932,
+  "count": 7992,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -75204,6 +75204,606 @@
       "height": 900,
       "bytes": 593115,
       "sha256": "3419a1736d40806b50ba01c8734b042039c6b81070102e2916a3031dda33f9a0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/academy-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/academy-saved-terrain.png",
+      "title": "Academy saved terrain",
+      "kind": "Native saved editor terrain topology; candidate, not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 45415,
+      "sha256": "fa6cd2f29d925c41bb2921847c07cb6c0df4815b0861667410c7e4b0efc95952"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/academy-terrain-plan.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/academy-terrain-plan.png",
+      "title": "Academy terrain plan",
+      "kind": "Native macroterrain-only inspection; candidate, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 628361,
+      "sha256": "0040ea79db9e59bed995a5d0f951349e898d58e86b44ab0c88646dced912c30e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/academy-whole-site.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/academy-whole-site.png",
+      "title": "Academy whole site",
+      "kind": "Native macroterrain and preserved structure composite; fit review open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 686270,
+      "sha256": "cd68ddb36c9816e7ac0b22f6e53c756e0ba37769b3f1181c4915e13290e1a6f5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/asylum-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/asylum-saved-terrain.png",
+      "title": "Asylum saved terrain",
+      "kind": "Native saved editor terrain topology; candidate, not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 41806,
+      "sha256": "e6cbfc41da1ff76922227ba8cade2d4177a3d9d1b4719b5455a9c3638f33528d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/asylum-terrain-plan.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/asylum-terrain-plan.png",
+      "title": "Asylum terrain plan",
+      "kind": "Native macroterrain-only inspection; candidate, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 633717,
+      "sha256": "46771e70800b1f40b0e4839c2a03258acf46c54a248f0290911cce07b5c3698f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/asylum-whole-site.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/asylum-whole-site.png",
+      "title": "Asylum whole site",
+      "kind": "Native macroterrain and preserved structure composite; fit review open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 689964,
+      "sha256": "3ac346c447374d92c5c0a6e6513f6527254bdb059c7de8a46c44aeb16a836ee2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/church-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/church-saved-terrain.png",
+      "title": "Church saved terrain",
+      "kind": "Native saved editor terrain topology; candidate, not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 39131,
+      "sha256": "4a2959d3ff3c01be0f325dcb645be96aa1ad21e4a5aeb52ca4a4c274caf1e71e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/church-terrain-plan.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/church-terrain-plan.png",
+      "title": "Church terrain plan",
+      "kind": "Native macroterrain-only inspection; candidate, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 622027,
+      "sha256": "749e8da012fc3a5946e4c55a97c1d6c6312cae9f60df1f1dff4ef37119b42ffa"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/church-whole-site.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/church-whole-site.png",
+      "title": "Church whole site",
+      "kind": "Native macroterrain and preserved structure composite; fit review open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 652991,
+      "sha256": "efdfcd195d656ab0cf102792b9244fb7e923a13d8657f19d90b72bdb565735c3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/college-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/college-saved-terrain.png",
+      "title": "College saved terrain",
+      "kind": "Native saved editor terrain topology; candidate, not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 40484,
+      "sha256": "979ddf110845f779217c7ed0e272ee1eed4cb3f9bb3c6b7ec627575cb6527de4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/college-terrain-plan.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/college-terrain-plan.png",
+      "title": "College terrain plan",
+      "kind": "Native macroterrain-only inspection; candidate, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 624537,
+      "sha256": "f07b0f70cb2eedd559be5e8c3fb1bf1fad2c1341c422b275be00bea7a1752f4c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/college-whole-site.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/college-whole-site.png",
+      "title": "College whole site",
+      "kind": "Native macroterrain and preserved structure composite; fit review open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 661857,
+      "sha256": "6fcf674d316aa9f168e1da0245dd568ff7bb96e6d9234e3b93b13f051d03a50c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/farmhouse-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/farmhouse-saved-terrain.png",
+      "title": "Farmhouse saved terrain",
+      "kind": "Native saved editor terrain topology; candidate, not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 61570,
+      "sha256": "ee6b48a89df6b663f1f2a2410c9be1bef2375529b024b138cb4f50683e92aa58"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/farmhouse-terrain-plan.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/farmhouse-terrain-plan.png",
+      "title": "Farmhouse terrain plan",
+      "kind": "Native macroterrain-only inspection; candidate, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 653845,
+      "sha256": "c3b7935e4744bbb9ba13b5d9e56751ad87d34be09b14bbf6b192b7ce2c1a5510"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/farmhouse-whole-site.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/farmhouse-whole-site.png",
+      "title": "Farmhouse whole site",
+      "kind": "Native macroterrain and preserved structure composite; fit review open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 687499,
+      "sha256": "1709a6538555174cb7f913251c3cd72c65c184087e1f430344fdd59fd4c522ed"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/macroterrain-sheet-01.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/macroterrain-sheet-01.png",
+      "title": "Macroterrain sheet 01",
+      "kind": "Native macroterrain and preserved structure composite; fit review open",
+      "width": 1800,
+      "height": 948,
+      "bytes": 385627,
+      "sha256": "a6feef11748f38180010679b85d9b7686cf05480ac4af49164d7b90624cb1e00"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/macroterrain-sheet-02.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/macroterrain-sheet-02.png",
+      "title": "Macroterrain sheet 02",
+      "kind": "Native macroterrain and preserved structure composite; fit review open",
+      "width": 1800,
+      "height": 948,
+      "bytes": 395278,
+      "sha256": "e162311bcb204398c3afa8b56a0d7e2542747235abb968c8065feb480d92206a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/macroterrain-sheet-03.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/macroterrain-sheet-03.png",
+      "title": "Macroterrain sheet 03",
+      "kind": "Native macroterrain and preserved structure composite; fit review open",
+      "width": 1800,
+      "height": 948,
+      "bytes": 534889,
+      "sha256": "50be0e5178161bbc6105df26f381f6c44076dd512f1a7534b07a08b7f47bd7ee"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/macroterrain-sheet-04.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/macroterrain-sheet-04.png",
+      "title": "Macroterrain sheet 04",
+      "kind": "Native macroterrain and preserved structure composite; fit review open",
+      "width": 1800,
+      "height": 948,
+      "bytes": 431621,
+      "sha256": "5991656e69eacaa35ddf22bf6ef0d87de71d87c16d0524457b3d6bfaba2ac6c6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/macroterrain-sheet-05.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/macroterrain-sheet-05.png",
+      "title": "Macroterrain sheet 05",
+      "kind": "Native macroterrain and preserved structure composite; fit review open",
+      "width": 1800,
+      "height": 948,
+      "bytes": 465684,
+      "sha256": "a0b3444192b332a2dbd95d42490992c4aaa349f46bea08a2cec1a40b0b9f7337"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/macroterrain-sheet-06.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/macroterrain-sheet-06.png",
+      "title": "Macroterrain sheet 06",
+      "kind": "Native macroterrain and preserved structure composite; fit review open",
+      "width": 1800,
+      "height": 948,
+      "bytes": 420650,
+      "sha256": "e151c6e9fc14c2bc777d3a69f28a52b507722c409e8609812d1a6e649a1d78a2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/mansion-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/mansion-saved-terrain.png",
+      "title": "Mansion saved terrain",
+      "kind": "Native saved editor terrain topology; candidate, not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 48494,
+      "sha256": "3e3d41049c84356110d9808d467c07a245fbf80383870b423afc3df5987b8819"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/mansion-terrain-plan.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/mansion-terrain-plan.png",
+      "title": "Mansion terrain plan",
+      "kind": "Native macroterrain-only inspection; candidate, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 634059,
+      "sha256": "dbd9b2fee3cca7d986efb6d06ae3350fd64ccce03346c8738ce81130ad21b5e2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/mansion-whole-site.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/mansion-whole-site.png",
+      "title": "Mansion whole site",
+      "kind": "Native macroterrain and preserved structure composite; fit review open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 668708,
+      "sha256": "c24bb8946d26690a94dcf11de0584ec3d64101637bee3479290fd6c4a0f2c3a6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/prison-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/prison-saved-terrain.png",
+      "title": "Prison saved terrain",
+      "kind": "Native saved editor terrain topology; candidate, not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 46301,
+      "sha256": "24c3eeb22a57b82b00dba5150339de5d0eaf3333cc7808b33e4d15d5d5e0edc2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/prison-terrain-plan.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/prison-terrain-plan.png",
+      "title": "Prison terrain plan",
+      "kind": "Native macroterrain-only inspection; candidate, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 657391,
+      "sha256": "23a1ec6d9bbd005b8f2d71429d811d505ecc4f70b64757bd96430f2d33a368c1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/prison-whole-site.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/prison-whole-site.png",
+      "title": "Prison whole site",
+      "kind": "Native macroterrain and preserved structure composite; fit review open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 728009,
+      "sha256": "8e3d381cf5d9c43077b03e7af7fd0f9f75b34f0aa4783fd15975413bd2c2adbc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/school-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/school-saved-terrain.png",
+      "title": "School saved terrain",
+      "kind": "Native saved editor terrain topology; candidate, not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 43287,
+      "sha256": "e89803eec0c434a766162e708145e4184980a1d543f6070197ce7094e68966bb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/school-terrain-plan.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/school-terrain-plan.png",
+      "title": "School terrain plan",
+      "kind": "Native macroterrain-only inspection; candidate, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 786334,
+      "sha256": "94effe2dd84df30b92251bfbbfca1e48153ba03e2b94a6a4b4fb0a6bad3130fe"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/school-whole-site.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/school-whole-site.png",
+      "title": "School whole site",
+      "kind": "Native macroterrain and preserved structure composite; fit review open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 889965,
+      "sha256": "8be452a9fad0235ca84ce7f5c62979bdd5d15ce7f6a8a77212bce9543bc7b162"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-03-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-03-saved-terrain.png",
+      "title": "Wld 03 saved terrain",
+      "kind": "Native saved editor terrain topology; candidate, not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 74333,
+      "sha256": "63aa4b606736c264dda1b702ae8da78c5d55ece6d7712b4d8361bea4ae0ffcd6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-03-terrain-plan.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-03-terrain-plan.png",
+      "title": "Wld 03 terrain plan",
+      "kind": "Native macroterrain-only inspection; candidate, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 721339,
+      "sha256": "42e4e942a1a5edcb931d34d6bc6ce8425e3000bd4d1fb8c08de06004e3df0e7a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-03-whole-site.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-03-whole-site.png",
+      "title": "Wld 03 whole site",
+      "kind": "Native macroterrain and preserved structure composite; fit review open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 724338,
+      "sha256": "60dc832c1e49828a053470abc4baf8b2b5288383a39d73ceaa8a04c24d207761"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-04-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-04-saved-terrain.png",
+      "title": "Wld 04 saved terrain",
+      "kind": "Native saved editor terrain topology; candidate, not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 41868,
+      "sha256": "9a169d215ee6bb1be7c466d0e70beea5104ed8dc4e466e00229da957617f5a4a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-04-terrain-plan.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-04-terrain-plan.png",
+      "title": "Wld 04 terrain plan",
+      "kind": "Native macroterrain-only inspection; candidate, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 678734,
+      "sha256": "d5114c22b447bec6345474053a683e6d1e53c1ab98e4f399e7b8d9e94d476a04"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-04-whole-site.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-04-whole-site.png",
+      "title": "Wld 04 whole site",
+      "kind": "Native macroterrain and preserved structure composite; fit review open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 674082,
+      "sha256": "633766ee37bf5be4eaa451a3a04ba2d468c082556812dcebc5cc89268766571e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-05-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-05-saved-terrain.png",
+      "title": "Wld 05 saved terrain",
+      "kind": "Native saved editor terrain topology; candidate, not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 58940,
+      "sha256": "ee9fa36488d976797c2f55c635807b4bc23de31a61d5bb3c531b92a6b2eb19d1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-05-terrain-plan.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-05-terrain-plan.png",
+      "title": "Wld 05 terrain plan",
+      "kind": "Native macroterrain-only inspection; candidate, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 679903,
+      "sha256": "414651b2e9e4ed6a41a64bec644ef6c4dcecaed3292451056f0e2943c536f46e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-05-whole-site.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-05-whole-site.png",
+      "title": "Wld 05 whole site",
+      "kind": "Native macroterrain and preserved structure composite; fit review open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 698089,
+      "sha256": "35504da27abed0f9cdcbdf567fad179c43626ee06fc3c1de71fbad2b28fa8f2a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-06-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-06-saved-terrain.png",
+      "title": "Wld 06 saved terrain",
+      "kind": "Native saved editor terrain topology; candidate, not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 46986,
+      "sha256": "205aa06c716b52ae68f9854646c27a025ad5aa97d83477194fa844c9fc919228"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-06-terrain-plan.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-06-terrain-plan.png",
+      "title": "Wld 06 terrain plan",
+      "kind": "Native macroterrain-only inspection; candidate, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 681898,
+      "sha256": "52226cfbe81d6cfe8eb033cd2e0ac7827d5ce69484e4ba46d1ac82dee2eec81e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-06-whole-site.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-06-whole-site.png",
+      "title": "Wld 06 whole site",
+      "kind": "Native macroterrain and preserved structure composite; fit review open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 699673,
+      "sha256": "f3c03d6b8df7dc7b8e13fa4f6ef7633596b0ef9a131b651f11968a97bbcd17aa"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-08-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-08-saved-terrain.png",
+      "title": "Wld 08 saved terrain",
+      "kind": "Native saved editor terrain topology; candidate, not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 44821,
+      "sha256": "3f671d9c8f91e0ea6cbb45281956206ff116ba4f245e9f27a3b865681a045dd4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-08-terrain-plan.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-08-terrain-plan.png",
+      "title": "Wld 08 terrain plan",
+      "kind": "Native macroterrain-only inspection; candidate, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 681396,
+      "sha256": "57ced0fc8ddc2f0f6848550f001d5306dec9e61a97d70f190ac077a6bb82cb7a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-08-whole-site.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-08-whole-site.png",
+      "title": "Wld 08 whole site",
+      "kind": "Native macroterrain and preserved structure composite; fit review open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 721343,
+      "sha256": "a52429c2cfe9328fa12bec8fd2696eef46cac7b98b4c94178c28305ddfb00781"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-09-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-09-saved-terrain.png",
+      "title": "Wld 09 saved terrain",
+      "kind": "Native saved editor terrain topology; candidate, not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 46253,
+      "sha256": "01c00d5611160af958358251b8082bb551a012bca3142015e5be7ca9a686bb73"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-09-terrain-plan.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-09-terrain-plan.png",
+      "title": "Wld 09 terrain plan",
+      "kind": "Native macroterrain-only inspection; candidate, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 707266,
+      "sha256": "6916d07b4ce4e625edf5f0aa858eff4dbc31e9ab3497002b17ed0b6b80910b36"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-09-whole-site.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-09-whole-site.png",
+      "title": "Wld 09 whole site",
+      "kind": "Native macroterrain and preserved structure composite; fit review open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 728367,
+      "sha256": "1ea53e4232a4e229faa28d92bd5c98feac292b8bb97e1853dee997abec53e03b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-10-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-10-saved-terrain.png",
+      "title": "Wld 10 saved terrain",
+      "kind": "Native saved editor terrain topology; candidate, not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 62515,
+      "sha256": "59ce2ea797b629e068045bb1343f4002ccbaba6684f43614decdced007870cc1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-10-terrain-plan.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-10-terrain-plan.png",
+      "title": "Wld 10 terrain plan",
+      "kind": "Native macroterrain-only inspection; candidate, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 684763,
+      "sha256": "a1465287c1728650f6212dc11dac2a5af7ac7b6a992d66d901817f86219cef08"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-10-whole-site.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-10-whole-site.png",
+      "title": "Wld 10 whole site",
+      "kind": "Native macroterrain and preserved structure composite; fit review open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 736015,
+      "sha256": "c8edc2bb67ec1a0887e5cd3761a414295a39b2dbc0aa13ff5c6cbd12cbaf8117"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-11-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-11-saved-terrain.png",
+      "title": "Wld 11 saved terrain",
+      "kind": "Native saved editor terrain topology; candidate, not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 40932,
+      "sha256": "b4af28aeaedec95a08c5916f8bd1fa11618207fba01df6c566c449733fed3b6c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-11-terrain-plan.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-11-terrain-plan.png",
+      "title": "Wld 11 terrain plan",
+      "kind": "Native macroterrain-only inspection; candidate, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 675066,
+      "sha256": "ee1c9d077cdd9845d8707c7b87f30081c9dd639f1093a4f3eb3fb246e4bbe999"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-11-whole-site.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-11-whole-site.png",
+      "title": "Wld 11 whole site",
+      "kind": "Native macroterrain and preserved structure composite; fit review open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 647786,
+      "sha256": "99ee10ce95b9206de8397802fb144182f9d6d5c81108a5fa21263ef31020dd01"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-12-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-12-saved-terrain.png",
+      "title": "Wld 12 saved terrain",
+      "kind": "Native saved editor terrain topology; candidate, not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 54538,
+      "sha256": "177b212b46f437883a2f8dcf6854390653c23d5c769e9f0d0d45cce651cc1174"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-12-terrain-plan.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-12-terrain-plan.png",
+      "title": "Wld 12 terrain plan",
+      "kind": "Native macroterrain-only inspection; candidate, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 652826,
+      "sha256": "3abbfd41d598ca467c6ecff1bbe0510660b632039b688c61d143ee940c60247b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-12-whole-site.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-12-whole-site.png",
+      "title": "Wld 12 whole site",
+      "kind": "Native macroterrain and preserved structure composite; fit review open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 644667,
+      "sha256": "1d49ce877e666243abc1addd5565f1280adbbf102719a868a323ee295485db5e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-13-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-13-saved-terrain.png",
+      "title": "Wld 13 saved terrain",
+      "kind": "Native saved editor terrain topology; candidate, not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 47748,
+      "sha256": "a8fe342dd70af7b2acf32a099e3e6a95f10a7266d6c6a08165cd0eb64514ea2c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-13-terrain-plan.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-13-terrain-plan.png",
+      "title": "Wld 13 terrain plan",
+      "kind": "Native macroterrain-only inspection; candidate, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 674952,
+      "sha256": "8efb3197d4928f16f718a8f080636c6db3c1c7c6b269f06459c99b187932d36f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-13-whole-site.png",
+      "url": "development/levels/rebuild/captures/macroterrain-batch/wld-13-whole-site.png",
+      "title": "Wld 13 whole site",
+      "kind": "Native macroterrain and preserved structure composite; fit review open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 703263,
+      "sha256": "8aee32108482f1a6fe4f0d71e472544b7b41f8bbd431892afadc404bdc9aa469"
     },
     {
       "path": "development/levels/rebuild/captures/stair-movement-batch/wld-14-mitered-candidate-construction.png",
