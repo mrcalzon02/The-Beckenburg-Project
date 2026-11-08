@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 8631,
+  "count": 8687,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -75413,7 +75413,7 @@
       "width": 900,
       "height": 650,
       "bytes": 457317,
-      "sha256": "68a53355d4c25041c810f25e0dc6b6cf5e917fae53014c2067c2d95d18f63e52"
+      "sha256": "bc5da316499878facb3e72b5ad72b10473a88c74a1aa89a7805742deeefcc9ca"
     },
     {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-body-contact-before.png",
@@ -75423,7 +75423,7 @@
       "width": 900,
       "height": 650,
       "bytes": 443847,
-      "sha256": "34ff0c19394dbe69039e2f220437563c3bf361612de3db286147edbee1df2f81"
+      "sha256": "896cff79a288d2d6f4b3679cc00eca9967cf5a271c8a2b324b59ae8c4809275c"
     },
     {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-saved-terrain.png",
@@ -75436,6 +75436,16 @@
       "sha256": "fa6cd2f29d925c41bb2921847c07cb6c0df4815b0861667410c7e4b0efc95952"
     },
     {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-terrain-final-sheet.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/academy-terrain-final-sheet.png",
+      "title": "Academy terrain final sheet",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 1000,
+      "height": 1170,
+      "bytes": 213776,
+      "sha256": "9717074f20523ce2f2943f8cb6fd1361ab95cb02304818e7797608d221b3ab8b"
+    },
+    {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-terrain-only-after.png",
       "url": "development/levels/rebuild/captures/flat-terrain-batch/academy-terrain-only-after.png",
       "title": "Academy terrain only after",
@@ -75443,7 +75453,7 @@
       "width": 900,
       "height": 650,
       "bytes": 229416,
-      "sha256": "dc382b1e59b814d5e4cd91e4bf03afdfbdd239418b896b60df05c28d18e8a5d1"
+      "sha256": "e67317c138b5908362b94c08af6aef73c6fc0867f86d174a60160a77b04f0535"
     },
     {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-terrain-only-before.png",
@@ -75453,7 +75463,7 @@
       "width": 900,
       "height": 650,
       "bytes": 229243,
-      "sha256": "cad59c40d0cb1381ed3108ca98c4000206bf9d07e51ff2f6973e6e54f576fd73"
+      "sha256": "ecff69ae35575f0688664552238dd66362032f6b8b9a86f2e8777a0c76b2e47e"
     },
     {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-terrain-pilot-sheet.png",
@@ -75473,7 +75483,7 @@
       "width": 900,
       "height": 650,
       "bytes": 310957,
-      "sha256": "c74187d5ef8c0d34bd095dc31ad9adb526849396dcdefbaf9ce3aabda974eacd"
+      "sha256": "f55f44b52e2aaf3e18423259c55b1fca39e3ae8380ba3a15657d3d1c213d9c21"
     },
     {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-whole-site-before.png",
@@ -75483,7 +75493,27 @@
       "width": 900,
       "height": 650,
       "bytes": 307011,
-      "sha256": "2f13d1aabd936577cbf5bf0c4d36a77c1f7073a37844b88a8f11619e460cb111"
+      "sha256": "d4eeedd95cc12a5df4b8cec011b6a7b6654fcf0eae9ec2ce400b9dbc616cfb7a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/farmhouse-body-contact-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/farmhouse-body-contact-after.png",
+      "title": "Farmhouse body contact after",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 597297,
+      "sha256": "49f7173dd3496e607b1486536cf116bcb84cadbdc27eeb6eea4d41314c4c5995"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/farmhouse-body-contact-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/farmhouse-body-contact-before.png",
+      "title": "Farmhouse body contact before",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 597297,
+      "sha256": "fe9c8dc49d715c57dedda50fd498df0b30566609a7aac6db41843520ce951326"
     },
     {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/farmhouse-saved-terrain.png",
@@ -75494,6 +75524,236 @@
       "height": 1000,
       "bytes": 61570,
       "sha256": "ee6b48a89df6b663f1f2a2410c9be1bef2375529b024b138cb4f50683e92aa58"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/farmhouse-terrain-final-sheet.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/farmhouse-terrain-final-sheet.png",
+      "title": "Farmhouse terrain final sheet",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 1000,
+      "height": 1170,
+      "bytes": 232954,
+      "sha256": "75a52e07db15a98d893fe6560b1832725b8c8ada64a729e2a5ebc99912571d93"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/farmhouse-terrain-only-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/farmhouse-terrain-only-after.png",
+      "title": "Farmhouse terrain only after",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 248304,
+      "sha256": "0875cac769b1866c5dcfaf523967666e1a2b3a7641885edd13f5f36243549b50"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/farmhouse-terrain-only-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/farmhouse-terrain-only-before.png",
+      "title": "Farmhouse terrain only before",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 249378,
+      "sha256": "4904393f79eaa730a5d8bb5872c6f307fed8c09591b4b2e2bbffeeb6e5dca8e3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/farmhouse-whole-site-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/farmhouse-whole-site-after.png",
+      "title": "Farmhouse whole site after",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 308185,
+      "sha256": "d488dc1a9ce6802f43292c6855be45be8bee731ae94453ab0b08beb7943aeca0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/farmhouse-whole-site-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/farmhouse-whole-site-before.png",
+      "title": "Farmhouse whole site before",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 308436,
+      "sha256": "acc6fe91130be730bafad4f30195f317f98535333ad7e2c1fa159499e3ead42e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/academy-body-contact-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/academy-body-contact-after.png",
+      "title": "Academy body contact after",
+      "kind": "Native frozen three-site terrain pilot; not runtime",
+      "width": 900,
+      "height": 650,
+      "bytes": 457317,
+      "sha256": "68a53355d4c25041c810f25e0dc6b6cf5e917fae53014c2067c2d95d18f63e52"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/academy-body-contact-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/academy-body-contact-before.png",
+      "title": "Academy body contact before",
+      "kind": "Native frozen three-site terrain pilot; not runtime",
+      "width": 900,
+      "height": 650,
+      "bytes": 443847,
+      "sha256": "34ff0c19394dbe69039e2f220437563c3bf361612de3db286147edbee1df2f81"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/academy-terrain-only-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/academy-terrain-only-after.png",
+      "title": "Academy terrain only after",
+      "kind": "Native frozen three-site terrain pilot; not runtime",
+      "width": 900,
+      "height": 650,
+      "bytes": 229416,
+      "sha256": "dc382b1e59b814d5e4cd91e4bf03afdfbdd239418b896b60df05c28d18e8a5d1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/academy-terrain-only-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/academy-terrain-only-before.png",
+      "title": "Academy terrain only before",
+      "kind": "Native frozen three-site terrain pilot; not runtime",
+      "width": 900,
+      "height": 650,
+      "bytes": 229243,
+      "sha256": "cad59c40d0cb1381ed3108ca98c4000206bf9d07e51ff2f6973e6e54f576fd73"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/academy-whole-site-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/academy-whole-site-after.png",
+      "title": "Academy whole site after",
+      "kind": "Native frozen three-site terrain pilot; not runtime",
+      "width": 900,
+      "height": 650,
+      "bytes": 310957,
+      "sha256": "c74187d5ef8c0d34bd095dc31ad9adb526849396dcdefbaf9ce3aabda974eacd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/academy-whole-site-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/academy-whole-site-before.png",
+      "title": "Academy whole site before",
+      "kind": "Native frozen three-site terrain pilot; not runtime",
+      "width": 900,
+      "height": 650,
+      "bytes": 307011,
+      "sha256": "2f13d1aabd936577cbf5bf0c4d36a77c1f7073a37844b88a8f11619e460cb111"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-09-body-contact-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-09-body-contact-after.png",
+      "title": "Wld 09 body contact after",
+      "kind": "Native frozen three-site terrain pilot; not runtime",
+      "width": 900,
+      "height": 650,
+      "bytes": 409019,
+      "sha256": "742b7fd7457883ffb41fcf0273a88f47c92f1ab3424b086258794d4deb8484b7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-09-body-contact-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-09-body-contact-before.png",
+      "title": "Wld 09 body contact before",
+      "kind": "Native frozen three-site terrain pilot; not runtime",
+      "width": 900,
+      "height": 650,
+      "bytes": 395407,
+      "sha256": "6e2b023895cb769a48118e4fdfca7044f7920d8c8066556a9d7af2ae3ff44061"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-09-terrain-only-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-09-terrain-only-after.png",
+      "title": "Wld 09 terrain only after",
+      "kind": "Native frozen three-site terrain pilot; not runtime",
+      "width": 900,
+      "height": 650,
+      "bytes": 260230,
+      "sha256": "c9e2b0305281a6c81b9bfb9fc5eb6d6a0e71aa52b8029e828084e8654b68f655"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-09-terrain-only-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-09-terrain-only-before.png",
+      "title": "Wld 09 terrain only before",
+      "kind": "Native frozen three-site terrain pilot; not runtime",
+      "width": 900,
+      "height": 650,
+      "bytes": 259150,
+      "sha256": "48950000a35e73d565af26fa28f1a35faebbe3a99728cab2dfeb3879616a3838"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-09-whole-site-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-09-whole-site-after.png",
+      "title": "Wld 09 whole site after",
+      "kind": "Native frozen three-site terrain pilot; not runtime",
+      "width": 900,
+      "height": 650,
+      "bytes": 326633,
+      "sha256": "c3797d95aba817dd01c3aea94d440ca26886373914e3be61391613df618be616"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-09-whole-site-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-09-whole-site-before.png",
+      "title": "Wld 09 whole site before",
+      "kind": "Native frozen three-site terrain pilot; not runtime",
+      "width": 900,
+      "height": 650,
+      "bytes": 324006,
+      "sha256": "1c461f79677f05bef0fd99e3141ae3bf355acfa7eeed9821e239d8990a3a4eca"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-18-body-contact-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-18-body-contact-after.png",
+      "title": "Wld 18 body contact after",
+      "kind": "Native frozen three-site terrain pilot; not runtime",
+      "width": 900,
+      "height": 650,
+      "bytes": 433369,
+      "sha256": "790394a0406a9c8f6229b01b27b1eed3ec74747ca667ad3875250187c5391943"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-18-body-contact-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-18-body-contact-before.png",
+      "title": "Wld 18 body contact before",
+      "kind": "Native frozen three-site terrain pilot; not runtime",
+      "width": 900,
+      "height": 650,
+      "bytes": 430905,
+      "sha256": "012f0e0b1a20d50693adc31dfeca791ec8c02a60c17d72bfeda92c72ac8121bf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-18-terrain-only-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-18-terrain-only-after.png",
+      "title": "Wld 18 terrain only after",
+      "kind": "Native frozen three-site terrain pilot; not runtime",
+      "width": 900,
+      "height": 650,
+      "bytes": 268333,
+      "sha256": "7d3d2d484b96d62f250dcf1e7f30a80bd079fc59740fb1c8b30d8ee47aa7a518"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-18-terrain-only-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-18-terrain-only-before.png",
+      "title": "Wld 18 terrain only before",
+      "kind": "Native frozen three-site terrain pilot; not runtime",
+      "width": 900,
+      "height": 650,
+      "bytes": 268223,
+      "sha256": "8051bfec3f5ca6d24cd692119e96c5cf050edd906df945c46146ead220d6e355"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-18-whole-site-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-18-whole-site-after.png",
+      "title": "Wld 18 whole site after",
+      "kind": "Native frozen three-site terrain pilot; not runtime",
+      "width": 900,
+      "height": 650,
+      "bytes": 293041,
+      "sha256": "652a9d04000dd4d89001cfe7046ab7dc01379481008ab860a00af114f27b2a1e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-18-whole-site-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-18-whole-site-before.png",
+      "title": "Wld 18 whole site before",
+      "kind": "Native frozen three-site terrain pilot; not runtime",
+      "width": 900,
+      "height": 650,
+      "bytes": 292854,
+      "sha256": "88e23b28228f6412b6f79fd91bdf0e0e95aba8debda0d6ab6eb363f5ee2ea4b2"
     },
     {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/academy-body-contact-after.png",
@@ -76066,6 +76326,26 @@
       "sha256": "efc13e937f0d400ab7256b50a837b39dd78f86a63cffcb93af410585eb0d2748"
     },
     {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-05-body-contact-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-05-body-contact-after.png",
+      "title": "Wld 05 body contact after",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 423400,
+      "sha256": "b69988d97cdb3aefc10c3b919d73468d9a04b168f2bb8f46c4bd49ceb0d32743"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-05-body-contact-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-05-body-contact-before.png",
+      "title": "Wld 05 body contact before",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 399702,
+      "sha256": "ba2606104cb70e9b52444fe1b894a5be142a72ebce88164a9b195d195b85b26f"
+    },
+    {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-05-saved-terrain.png",
       "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-05-saved-terrain.png",
       "title": "Wld 05 saved terrain",
@@ -76074,6 +76354,76 @@
       "height": 1000,
       "bytes": 58940,
       "sha256": "ee9fa36488d976797c2f55c635807b4bc23de31a61d5bb3c531b92a6b2eb19d1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-05-terrain-final-sheet.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-05-terrain-final-sheet.png",
+      "title": "Wld 05 terrain final sheet",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 1000,
+      "height": 1170,
+      "bytes": 229902,
+      "sha256": "d6884bb4538e8a41bccf71924a84330a33cf5cfd467abe7d0b3b13cee953e80f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-05-terrain-only-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-05-terrain-only-after.png",
+      "title": "Wld 05 terrain only after",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 279351,
+      "sha256": "2fa8080fe385d6313f58f8bec840c40a2b3f75aca34dc2662f8f668332a978d3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-05-terrain-only-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-05-terrain-only-before.png",
+      "title": "Wld 05 terrain only before",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 275128,
+      "sha256": "343de70f31614ff94ce4696b2b9d70b84a37cebd57110ee458a18ea51860c342"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-05-whole-site-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-05-whole-site-after.png",
+      "title": "Wld 05 whole site after",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 315362,
+      "sha256": "cdf1bfc06789147d5703f52e2a7d1f5717b598c3a9d7ae569e9c17e761b5e831"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-05-whole-site-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-05-whole-site-before.png",
+      "title": "Wld 05 whole site before",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 311129,
+      "sha256": "42bd050531288194fbbb0bf303a7cd1584ec4302e0458b208506de68c06a22b8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-08-body-contact-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-08-body-contact-after.png",
+      "title": "Wld 08 body contact after",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 574796,
+      "sha256": "b5a1cbeef0aa2787d929e8767e6f767a0d33bffb81badf7baf7dc98edcd26663"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-08-body-contact-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-08-body-contact-before.png",
+      "title": "Wld 08 body contact before",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 578195,
+      "sha256": "0dcda88f8f382d3511f6678728f75e7fd089d365b4caefbfce4fe7c715212f68"
     },
     {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-08-saved-terrain.png",
@@ -76086,6 +76436,56 @@
       "sha256": "3f671d9c8f91e0ea6cbb45281956206ff116ba4f245e9f27a3b865681a045dd4"
     },
     {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-08-terrain-final-sheet.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-08-terrain-final-sheet.png",
+      "title": "Wld 08 terrain final sheet",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 1000,
+      "height": 1170,
+      "bytes": 256340,
+      "sha256": "a022617f3b10239e2544fbc5d37287b4526860c5280fc8d642d5fdac31eca503"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-08-terrain-only-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-08-terrain-only-after.png",
+      "title": "Wld 08 terrain only after",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 257671,
+      "sha256": "7f17b1912eb1141ad6bab77bcb8f9d8e8c201aa97a70e1123a073a8ea1be88cf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-08-terrain-only-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-08-terrain-only-before.png",
+      "title": "Wld 08 terrain only before",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 258385,
+      "sha256": "cd4c21f8f6bd09eeab784196b414943a94a26bb96c1b2e1e69887a10d1e1557a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-08-whole-site-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-08-whole-site-after.png",
+      "title": "Wld 08 whole site after",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 316831,
+      "sha256": "0f2904891bc308f3675c62a09fd1b2c7698cc27c9a9c3fc1602a3595a2afaac0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-08-whole-site-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-08-whole-site-before.png",
+      "title": "Wld 08 whole site before",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 318061,
+      "sha256": "cdd8080d85f1280088ab9588a22e95c6a5cfd35900d49de0eceaecb18130f32e"
+    },
+    {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-body-contact-after.png",
       "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-body-contact-after.png",
       "title": "Wld 09 body contact after",
@@ -76093,7 +76493,7 @@
       "width": 900,
       "height": 650,
       "bytes": 409019,
-      "sha256": "742b7fd7457883ffb41fcf0273a88f47c92f1ab3424b086258794d4deb8484b7"
+      "sha256": "d41afa9d8e5e4aa32e0d2c420f01e30c26941f2bc28bedbc44083a6e5c337554"
     },
     {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-body-contact-before.png",
@@ -76103,7 +76503,7 @@
       "width": 900,
       "height": 650,
       "bytes": 395407,
-      "sha256": "6e2b023895cb769a48118e4fdfca7044f7920d8c8066556a9d7af2ae3ff44061"
+      "sha256": "d46ba48c6a1d684d65e7f780e97a0724b6048fcfb242f48e42454f764480422d"
     },
     {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-saved-terrain.png",
@@ -76116,6 +76516,16 @@
       "sha256": "292f5c4d49456c3dcbee62d514af69afe4a3c683619e13b29d49849dfed5c287"
     },
     {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-terrain-final-sheet.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-terrain-final-sheet.png",
+      "title": "Wld 09 terrain final sheet",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 1000,
+      "height": 1170,
+      "bytes": 238638,
+      "sha256": "060f07038e4f899437bd13c6fc7165801b74b17044c5c29630ef5d1aa9d03bb8"
+    },
+    {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-terrain-only-after.png",
       "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-terrain-only-after.png",
       "title": "Wld 09 terrain only after",
@@ -76123,7 +76533,7 @@
       "width": 900,
       "height": 650,
       "bytes": 260230,
-      "sha256": "c9e2b0305281a6c81b9bfb9fc5eb6d6a0e71aa52b8029e828084e8654b68f655"
+      "sha256": "28d4d21093ec74887216607ede32cff8fda5114876c71005701a4250a133155f"
     },
     {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-terrain-only-before.png",
@@ -76133,7 +76543,7 @@
       "width": 900,
       "height": 650,
       "bytes": 259150,
-      "sha256": "48950000a35e73d565af26fa28f1a35faebbe3a99728cab2dfeb3879616a3838"
+      "sha256": "4b0da9dc72d77319ece6796f2f80f1cf1e9effa1504b47bdce855ac73ac5fc75"
     },
     {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-terrain-pilot-sheet.png",
@@ -76153,7 +76563,7 @@
       "width": 900,
       "height": 650,
       "bytes": 326633,
-      "sha256": "c3797d95aba817dd01c3aea94d440ca26886373914e3be61391613df618be616"
+      "sha256": "4388aa6b94db02587899eff3b27d0e899970cd1ee5c93888a146be5992968707"
     },
     {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-whole-site-before.png",
@@ -76163,7 +76573,27 @@
       "width": 900,
       "height": 650,
       "bytes": 324006,
-      "sha256": "1c461f79677f05bef0fd99e3141ae3bf355acfa7eeed9821e239d8990a3a4eca"
+      "sha256": "baa7a29567ba428b980f5e008cba6ce55c74667217871ccaa4fef42d930b08f7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-10-body-contact-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-10-body-contact-after.png",
+      "title": "Wld 10 body contact after",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 576327,
+      "sha256": "49a87c0f136446c06dbf385a98b2e6b07d21bbe2503697bf914e3a9f03c41192"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-10-body-contact-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-10-body-contact-before.png",
+      "title": "Wld 10 body contact before",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 577227,
+      "sha256": "1aa842c3fb25545b2c6a1e934c55706ed1a1cac6496b6c300c99de870492690e"
     },
     {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-10-saved-terrain.png",
@@ -76176,6 +76606,76 @@
       "sha256": "59ce2ea797b629e068045bb1343f4002ccbaba6684f43614decdced007870cc1"
     },
     {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-10-terrain-final-sheet.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-10-terrain-final-sheet.png",
+      "title": "Wld 10 terrain final sheet",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 1000,
+      "height": 1170,
+      "bytes": 240993,
+      "sha256": "16d8bf880d45750d78b0d549c6b3c28446f1f26db190785cb98922a00bf7b3f2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-10-terrain-only-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-10-terrain-only-after.png",
+      "title": "Wld 10 terrain only after",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 266143,
+      "sha256": "0261309a4a31e1454001496445a216cb32ae9386b003abd19517e1ff245963c6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-10-terrain-only-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-10-terrain-only-before.png",
+      "title": "Wld 10 terrain only before",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 266197,
+      "sha256": "87572c3708e407c9a4d99c9fa32ffb7b9df192ce906d1d66de7be55554b46941"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-10-whole-site-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-10-whole-site-after.png",
+      "title": "Wld 10 whole site after",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 329853,
+      "sha256": "453aa5e66733436606bb96b92f52068943f77fa3d9196e77c91a665db65af14a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-10-whole-site-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-10-whole-site-before.png",
+      "title": "Wld 10 whole site before",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 329471,
+      "sha256": "bc74991088c4ea1135d7ba3249e3eec3b94f6b749ab7d3a5926bd10bde98ebd4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-13-body-contact-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-13-body-contact-after.png",
+      "title": "Wld 13 body contact after",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 412084,
+      "sha256": "0d8d8854ad77ec80692522af634f6745e56ed5cc65ae794c7a94d113445f980f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-13-body-contact-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-13-body-contact-before.png",
+      "title": "Wld 13 body contact before",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 396006,
+      "sha256": "0521b4da5035d813ef0d288e455cab7e2e88650f81c2ba4ff3346e9bfcf2802b"
+    },
+    {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-13-saved-terrain.png",
       "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-13-saved-terrain.png",
       "title": "Wld 13 saved terrain",
@@ -76186,6 +76686,56 @@
       "sha256": "a8fe342dd70af7b2acf32a099e3e6a95f10a7266d6c6a08165cd0eb64514ea2c"
     },
     {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-13-terrain-final-sheet.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-13-terrain-final-sheet.png",
+      "title": "Wld 13 terrain final sheet",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 1000,
+      "height": 1170,
+      "bytes": 237205,
+      "sha256": "48be28bc81438d872283960d89348b431182212008e667b58397d9730610861c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-13-terrain-only-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-13-terrain-only-after.png",
+      "title": "Wld 13 terrain only after",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 258791,
+      "sha256": "449528a2e6ffde4046ba617a59cd25ee2fc508e34405adb9ada8c465ad7b39b3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-13-terrain-only-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-13-terrain-only-before.png",
+      "title": "Wld 13 terrain only before",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 255650,
+      "sha256": "379c22e36d1a1aa9e13719cc83368d7a9b71ef69d3a32b96ed404f5cb56b4a45"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-13-whole-site-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-13-whole-site-after.png",
+      "title": "Wld 13 whole site after",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 314005,
+      "sha256": "30a06140df679104912f870c7ae7e1b0109bf5998272879bfaae68319cd9548c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-13-whole-site-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-13-whole-site-before.png",
+      "title": "Wld 13 whole site before",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 310814,
+      "sha256": "4ea3fc165215f20872f31488561532e66314739e21206f40e2130ed554a07aa9"
+    },
+    {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-body-contact-after.png",
       "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-body-contact-after.png",
       "title": "Wld 18 body contact after",
@@ -76193,7 +76743,7 @@
       "width": 900,
       "height": 650,
       "bytes": 433369,
-      "sha256": "790394a0406a9c8f6229b01b27b1eed3ec74747ca667ad3875250187c5391943"
+      "sha256": "2d16132c1c612eeb0561e26d5b4b79f1056fbfa99224077a3ba7a7e61e553575"
     },
     {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-body-contact-before.png",
@@ -76203,7 +76753,7 @@
       "width": 900,
       "height": 650,
       "bytes": 430905,
-      "sha256": "012f0e0b1a20d50693adc31dfeca791ec8c02a60c17d72bfeda92c72ac8121bf"
+      "sha256": "57700ca60f5ace6b85a2139cd4699ac6ad36b7978c691438fe4cb21086b574fc"
     },
     {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-saved-terrain.png",
@@ -76216,6 +76766,16 @@
       "sha256": "e5b0b1c52592b54ebc51ac3e556f092797eed6b7b1b1ae4a04e992f461ba773f"
     },
     {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-terrain-final-sheet.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-terrain-final-sheet.png",
+      "title": "Wld 18 terrain final sheet",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 1000,
+      "height": 1170,
+      "bytes": 240844,
+      "sha256": "730528da741bd23989ffc1d48211dfc2f56e5d6be37eb58b34d13db473065312"
+    },
+    {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-terrain-only-after.png",
       "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-terrain-only-after.png",
       "title": "Wld 18 terrain only after",
@@ -76223,7 +76783,7 @@
       "width": 900,
       "height": 650,
       "bytes": 268333,
-      "sha256": "7d3d2d484b96d62f250dcf1e7f30a80bd079fc59740fb1c8b30d8ee47aa7a518"
+      "sha256": "a116ac2d0728ec00d4d561d0f2b1e5ac895c0d1cd40a297a9551098a392d034c"
     },
     {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-terrain-only-before.png",
@@ -76233,7 +76793,7 @@
       "width": 900,
       "height": 650,
       "bytes": 268223,
-      "sha256": "8051bfec3f5ca6d24cd692119e96c5cf050edd906df945c46146ead220d6e355"
+      "sha256": "df2e377f20292c4e370fc38c75c38d0c0d9fa12b6245be92032b63827fbdf3e1"
     },
     {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-terrain-pilot-sheet.png",
@@ -76253,7 +76813,7 @@
       "width": 900,
       "height": 650,
       "bytes": 293041,
-      "sha256": "652a9d04000dd4d89001cfe7046ab7dc01379481008ab860a00af114f27b2a1e"
+      "sha256": "a9b0ef02b286d13f882e44a18bbe11b311f7690b2a73e52a6465aa1a8d0cb056"
     },
     {
       "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-whole-site-before.png",
@@ -76263,7 +76823,7 @@
       "width": 900,
       "height": 650,
       "bytes": 292854,
-      "sha256": "88e23b28228f6412b6f79fd91bdf0e0e95aba8debda0d6ab6eb363f5ee2ea4b2"
+      "sha256": "2cf3f13a7c5d7c1b28074f64766934489006f64bfb881bebe5b288f3676386ec"
     },
     {
       "path": "development/levels/rebuild/captures/floor-closure-batch/academy-repaired-plates.png",

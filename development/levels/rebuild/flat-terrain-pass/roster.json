@@ -67,16 +67,16 @@
     },
     {
       "id": "FARMHOUSE",
-      "decision": "SAVED_WORLD_AUTHORED_MAP_COMPOSITE_PENDING",
+      "decision": "SAVED_TERRAIN_AND_ROOTED_CIRCULATION_SOURCE_REVISED",
       "active_source": {
         "id": "FARMHOUSE",
-        "construction": "development/levels/rebuild/arrival-bearing-pass/farmhouse/construction.json",
-        "layout": "development/levels/rebuild/arrival-bearing-pass/farmhouse/authored-layout.json",
-        "glb": "development/levels/rebuild/arrival-bearing-pass/farmhouse/supported-arrival.glb",
-        "native": "development/levels/rebuild/arrival-bearing-pass/farmhouse/supported-arrival.hcs2",
-        "blend": "development/levels/rebuild/arrival-bearing-pass/farmhouse/supported-arrival.blend",
-        "native_sha256": "f668b6cbb16efdb3958f5fb23ae227442bdf33a04051e6bb5868e1e53292013d",
-        "glb_sha256": "388ac64c2d6dfb1438d877c072d35b187d11a27eff2087b3ee1d87f6df4874fe"
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.blend",
+        "glb_sha256": "00348bdebcfff6d04db5e4115ef19183d3b46141a200f8c273038a04e9a6d77c",
+        "native_sha256": "ca57b306d4b767eea4b0fab3089c2f0d076af70edabcaa006cd874c4b0e1148e"
       },
       "original_terrain_body_contacts": 8,
       "remaining": "Individual complete routes, coherent site edges/structure/power/hiding/story/van/runtime/art/network/hardware gates remain open"
@@ -163,16 +163,16 @@
     },
     {
       "id": "WLD-05",
-      "decision": "SAVED_WORLD_AUTHORED_MAP_COMPOSITE_PENDING",
+      "decision": "SAVED_TERRAIN_AND_ROOTED_CIRCULATION_SOURCE_REVISED",
       "active_source": {
         "id": "WLD-05",
-        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-05/construction.json",
-        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-05/authored-layout.json",
-        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-05/supported-arrival.glb",
-        "native": "development/levels/rebuild/arrival-bearing-pass/wld-05/supported-arrival.hcs2",
-        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-05/supported-arrival.blend",
-        "native_sha256": "9d82c6c1a087a9074e57dffef7bc034f5d3386aa960914327760f41ce434c1e2",
-        "glb_sha256": "f7ffd6d8cef1cfe3b114b33ceeb5308946690c1992288af0e3dca6e1c2c2ca5c"
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.blend",
+        "glb_sha256": "94e5c028db8d7f4a9aca1cf4da0ff8935d8cecb58b2167fa72fd20bc6b0f68c1",
+        "native_sha256": "59669276d2e33866e3442b5b6863320e6ad134c6e5e5b07d081d1efef113fdfe"
       },
       "original_terrain_body_contacts": 167,
       "remaining": "Individual complete routes, coherent site edges/structure/power/hiding/story/van/runtime/art/network/hardware gates remain open"
@@ -227,16 +227,16 @@
     },
     {
       "id": "WLD-08",
-      "decision": "SAVED_WORLD_AUTHORED_MAP_COMPOSITE_PENDING",
+      "decision": "SAVED_TERRAIN_AND_ROOTED_CIRCULATION_SOURCE_REVISED",
       "active_source": {
         "id": "WLD-08",
-        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-08/construction.json",
-        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-08/authored-layout.json",
-        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-08/supported-arrival.glb",
-        "native": "development/levels/rebuild/arrival-bearing-pass/wld-08/supported-arrival.hcs2",
-        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-08/supported-arrival.blend",
-        "native_sha256": "705681e346e1447d24dff4ea01a9130945d4a230934aa770f99ee7efe051b25e",
-        "glb_sha256": "8d8ed465a39e9310a2c5908377338efa62d55ac9a026842910cd446a2576d45f"
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/cut-terrain.blend",
+        "glb_sha256": "e85f127c0b172025d64eeee0c96d84cda65c0c9cc4ff3c088596f8d77f4a68b1",
+        "native_sha256": "8331f6aa356abcbb32563cdc7c5160e1e945d892ce1aac765f039980c98fa0d2"
       },
       "original_terrain_body_contacts": 25,
       "remaining": "Individual complete routes, coherent site edges/structure/power/hiding/story/van/runtime/art/network/hardware gates remain open"
@@ -259,16 +259,16 @@
     },
     {
       "id": "WLD-10",
-      "decision": "SAVED_WORLD_AUTHORED_MAP_COMPOSITE_PENDING",
+      "decision": "SAVED_TERRAIN_AND_ROOTED_CIRCULATION_SOURCE_REVISED",
       "active_source": {
         "id": "WLD-10",
-        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-10/construction.json",
-        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-10/authored-layout.json",
-        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-10/supported-arrival.glb",
-        "native": "development/levels/rebuild/arrival-bearing-pass/wld-10/supported-arrival.hcs2",
-        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-10/supported-arrival.blend",
-        "native_sha256": "4993026e84e4b9d1aca2f15dcec72e7e0ca7ad9a594e3bff5ec8cb466f393dc0",
-        "glb_sha256": "ac976befb5199a73d530e329b32d61a103f84d47c6629faaab9c6d80f3dc7e36"
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+        "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
       },
       "original_terrain_body_contacts": 142,
       "remaining": "Individual complete routes, coherent site edges/structure/power/hiding/story/van/runtime/art/network/hardware gates remain open"
@@ -307,16 +307,16 @@
     },
     {
       "id": "WLD-13",
-      "decision": "SAVED_WORLD_AUTHORED_MAP_COMPOSITE_PENDING",
+      "decision": "SAVED_TERRAIN_AND_ROOTED_CIRCULATION_SOURCE_REVISED",
       "active_source": {
         "id": "WLD-13",
-        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-13/construction.json",
-        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-13/authored-layout.json",
-        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-13/supported-arrival.glb",
-        "native": "development/levels/rebuild/arrival-bearing-pass/wld-13/supported-arrival.hcs2",
-        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-13/supported-arrival.blend",
-        "native_sha256": "89e9da35994a7d6aa371d09f4ab40591090c6ff5efb56c338d124d5674daf457",
-        "glb_sha256": "710ccc729436a7522495bfd0092db38ec2c52c9dddb091da1fde0ad4a412539a"
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.blend",
+        "glb_sha256": "1610ec9d3b5184ef2405a7e2c5f169903fa0281dbf39df1c4fa314a98be1d317",
+        "native_sha256": "903de99c2d50479170a03b65df9b803998e9b02f62a378a2b7c45bdaea840a31"
       },
       "original_terrain_body_contacts": 64,
       "remaining": "Individual complete routes, coherent site edges/structure/power/hiding/story/van/runtime/art/network/hardware gates remain open"
@@ -461,13 +461,13 @@
     },
     {
       "id": "FARMHOUSE",
-      "construction": "development/levels/rebuild/arrival-bearing-pass/farmhouse/construction.json",
-      "layout": "development/levels/rebuild/arrival-bearing-pass/farmhouse/authored-layout.json",
-      "glb": "development/levels/rebuild/arrival-bearing-pass/farmhouse/supported-arrival.glb",
-      "native": "development/levels/rebuild/arrival-bearing-pass/farmhouse/supported-arrival.hcs2",
-      "blend": "development/levels/rebuild/arrival-bearing-pass/farmhouse/supported-arrival.blend",
-      "native_sha256": "f668b6cbb16efdb3958f5fb23ae227442bdf33a04051e6bb5868e1e53292013d",
-      "glb_sha256": "388ac64c2d6dfb1438d877c072d35b187d11a27eff2087b3ee1d87f6df4874fe"
+      "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/construction.json",
+      "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/authored-layout.json",
+      "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.glb",
+      "native": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.hcs2",
+      "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.blend",
+      "glb_sha256": "00348bdebcfff6d04db5e4115ef19183d3b46141a200f8c273038a04e9a6d77c",
+      "native_sha256": "ca57b306d4b767eea4b0fab3089c2f0d076af70edabcaa006cd874c4b0e1148e"
     },
     {
       "id": "MANSION",
@@ -521,13 +521,13 @@
     },
     {
       "id": "WLD-05",
-      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-05/construction.json",
-      "layout": "development/levels/rebuild/arrival-bearing-pass/wld-05/authored-layout.json",
-      "glb": "development/levels/rebuild/arrival-bearing-pass/wld-05/supported-arrival.glb",
-      "native": "development/levels/rebuild/arrival-bearing-pass/wld-05/supported-arrival.hcs2",
-      "blend": "development/levels/rebuild/arrival-bearing-pass/wld-05/supported-arrival.blend",
-      "native_sha256": "9d82c6c1a087a9074e57dffef7bc034f5d3386aa960914327760f41ce434c1e2",
-      "glb_sha256": "f7ffd6d8cef1cfe3b114b33ceeb5308946690c1992288af0e3dca6e1c2c2ca5c"
+      "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/construction.json",
+      "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/authored-layout.json",
+      "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.glb",
+      "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.hcs2",
+      "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.blend",
+      "glb_sha256": "94e5c028db8d7f4a9aca1cf4da0ff8935d8cecb58b2167fa72fd20bc6b0f68c1",
+      "native_sha256": "59669276d2e33866e3442b5b6863320e6ad134c6e5e5b07d081d1efef113fdfe"
     },
     {
       "id": "WLD-06",
@@ -561,13 +561,13 @@
     },
     {
       "id": "WLD-08",
-      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-08/construction.json",
-      "layout": "development/levels/rebuild/arrival-bearing-pass/wld-08/authored-layout.json",
-      "glb": "development/levels/rebuild/arrival-bearing-pass/wld-08/supported-arrival.glb",
-      "native": "development/levels/rebuild/arrival-bearing-pass/wld-08/supported-arrival.hcs2",
-      "blend": "development/levels/rebuild/arrival-bearing-pass/wld-08/supported-arrival.blend",
-      "native_sha256": "705681e346e1447d24dff4ea01a9130945d4a230934aa770f99ee7efe051b25e",
-      "glb_sha256": "8d8ed465a39e9310a2c5908377338efa62d55ac9a026842910cd446a2576d45f"
+      "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/construction.json",
+      "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/authored-layout.json",
+      "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/cut-terrain.glb",
+      "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/cut-terrain.hcs2",
+      "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/cut-terrain.blend",
+      "glb_sha256": "e85f127c0b172025d64eeee0c96d84cda65c0c9cc4ff3c088596f8d77f4a68b1",
+      "native_sha256": "8331f6aa356abcbb32563cdc7c5160e1e945d892ce1aac765f039980c98fa0d2"
     },
     {
       "id": "WLD-09",
@@ -581,13 +581,13 @@
     },
     {
       "id": "WLD-10",
-      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-10/construction.json",
-      "layout": "development/levels/rebuild/arrival-bearing-pass/wld-10/authored-layout.json",
-      "glb": "development/levels/rebuild/arrival-bearing-pass/wld-10/supported-arrival.glb",
-      "native": "development/levels/rebuild/arrival-bearing-pass/wld-10/supported-arrival.hcs2",
-      "blend": "development/levels/rebuild/arrival-bearing-pass/wld-10/supported-arrival.blend",
-      "native_sha256": "4993026e84e4b9d1aca2f15dcec72e7e0ca7ad9a594e3bff5ec8cb466f393dc0",
-      "glb_sha256": "ac976befb5199a73d530e329b32d61a103f84d47c6629faaab9c6d80f3dc7e36"
+      "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/construction.json",
+      "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/authored-layout.json",
+      "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+      "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.hcs2",
+      "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.blend",
+      "glb_sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+      "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
     },
     {
       "id": "WLD-11",
@@ -611,13 +611,13 @@
     },
     {
       "id": "WLD-13",
-      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-13/construction.json",
-      "layout": "development/levels/rebuild/arrival-bearing-pass/wld-13/authored-layout.json",
-      "glb": "development/levels/rebuild/arrival-bearing-pass/wld-13/supported-arrival.glb",
-      "native": "development/levels/rebuild/arrival-bearing-pass/wld-13/supported-arrival.hcs2",
-      "blend": "development/levels/rebuild/arrival-bearing-pass/wld-13/supported-arrival.blend",
-      "native_sha256": "89e9da35994a7d6aa371d09f4ab40591090c6ff5efb56c338d124d5674daf457",
-      "glb_sha256": "710ccc729436a7522495bfd0092db38ec2c52c9dddb091da1fde0ad4a412539a"
+      "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/construction.json",
+      "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/authored-layout.json",
+      "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.glb",
+      "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.hcs2",
+      "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.blend",
+      "glb_sha256": "1610ec9d3b5184ef2405a7e2c5f169903fa0281dbf39df1c4fa314a98be1d317",
+      "native_sha256": "903de99c2d50479170a03b65df9b803998e9b02f62a378a2b7c45bdaea840a31"
     },
     {
       "id": "WLD-14",
@@ -670,45 +670,67 @@
       "native_sha256": "8a7c9515c86a7c7eb4baf342b2e6ac81d3a40c9002638fe4e950530de3f2703c"
     }
   ],
-  "evidence": "development/levels/rebuild/flat-terrain-pass/pilot-verification",
+  "evidence": "development/levels/rebuild/flat-terrain-pass/verification",
   "aggregate": {
-    "revised_native_sources": 3,
+    "revised_native_sources": 8,
     "saved_editor_worlds": 8,
     "tested_sites": [
       "ACADEMY",
+      "ASYLUM",
+      "CHURCH",
+      "COLLEGE",
+      "FARMHOUSE",
+      "MANSION",
+      "PRISON",
+      "SCHOOL",
+      "WLD-03",
+      "WLD-04",
+      "WLD-05",
+      "WLD-06",
+      "WLD-07",
+      "WLD-08",
       "WLD-09",
-      "WLD-18"
+      "WLD-10",
+      "WLD-11",
+      "WLD-12",
+      "WLD-13",
+      "WLD-14",
+      "WLD-15",
+      "WLD-16",
+      "WLD-17",
+      "WLD-18",
+      "WLD-07-MORTUARY"
     ],
-    "standing_samples": 16104,
-    "standing_recovered": 999,
+    "standing_samples": 119775,
+    "standing_recovered": 1831,
     "new_standing_failures": 0,
-    "current_invalid": 1265,
-    "complete_flat_links_before": 48,
-    "complete_flat_links_after": 49,
-    "complete_flat_links_total": 65,
-    "flights": 16,
-    "flights_up": 16,
-    "flights_down": 16,
+    "current_invalid": 11589,
+    "complete_flat_links_before": 389,
+    "complete_flat_links_after": 393,
+    "complete_flat_links_total": 566,
+    "flights": 221,
+    "flights_up": 221,
+    "flights_down": 221,
     "complete_vertical_links": {
-      "routes": 14,
+      "routes": 84,
       "legacy_forward": 0,
       "legacy_reverse": 0,
-      "authored_forward": 14,
-      "authored_reverse": 14
+      "authored_forward": 84,
+      "authored_reverse": 84
     },
     "historical_body": {
-      "samples": 14064,
-      "baseline_valid": 12399,
-      "after_valid": 12803,
+      "samples": 110409,
+      "baseline_valid": 102726,
+      "after_valid": 103831,
       "new_block": 0,
       "new_sweep_block": 0,
-      "recovered_pose": 404
+      "recovered_pose": 1105
     },
-    "lowered_native_vertices": 645,
-    "native_vertex_total": 14809,
-    "saved_hole_probes": 3458,
-    "new_closed_parts": 553,
-    "rooted_walkway_probes": 4460,
+    "lowered_native_vertices": 1816,
+    "native_vertex_total": 38557,
+    "saved_hole_probes": 10397,
+    "new_closed_parts": 766,
+    "rooted_walkway_probes": 6091,
     "scope": "Counts cover tested_sites only. Immutable earlier controls and unchanged sources are not silently counted as rerun. No map/runtime/landscape acceptance."
   }
 }

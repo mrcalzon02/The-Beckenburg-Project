@@ -4900,29 +4900,29 @@
     {
       "id": "DEV-453",
       "title": "WLD-09 saved terrain intersects the original arrival body; slab-only repair is buried",
-      "status": "OPEN; SLAB-ONLY STUDY REJECTED",
+      "status": "SOURCE TERRAIN/ARRIVAL FIX VERIFIED; FULL WLD09/RUNTIME GATES OPEN",
       "affected": "WLD-09 arrival L01 original anchor [36,0,82]",
       "symptom": "After filling the missing rear footprint, production traversal still fails against terrain-site-0-1:surface. Actual exported closeup shows terrain covering the proposed slab.",
       "cause": "Existing terrain/arrival datum conflict was masked by earlier missing-foot support diagnostics. Adding floor support cannot remove soil from the body volume.",
-      "action": "Preserve rejected GLB/native/Blender/layout and paired PNGs with exact relocation hashes. Keep flat-circulation-pass/wld-09 as the active source. Next coordinated terrain/arrival revision must remove actual soil intrusion while preserving saved basement holes, intended landform, stable coordinates and passing vertical routes. Do not hide it with fog or move a spawn independently.",
+      "action": "Preserve rejected GLB/native/Blender/layout and paired PNGs with exact relocation hashes. Keep flat-circulation-pass/wld-09 as the active source. Next coordinated terrain/arrival revision must remove actual soil intrusion while preserving saved basement holes, intended landform, stable coordinates and passing vertical routes. Do not hide it with fog or move a spawn independently. Later saved circulation cuts remove all241measured WLD09soil contacts, including the arrival anchor. Reuse the exact end-slab only in that verified terrain context; the earlier buried study stays rejected.",
       "evidence": "development/levels/rebuild/arrival-bearing-pass/rejected/terrain-blocked-wld09; development/levels/rebuild/captures/arrival-bearing-batch/rejected-terrain-wld09; verification/current-flat-failure-contacts.tsv",
       "older_maps": "Audit arrival/van bodies against actual saved terrain across all locations; individually verify support and body/head clearance. Other unsupported anchors may mask additional terrain/wall collisions."
     },
     {
       "id": "DEV-454",
       "title": "Lower-only terrain cuts expose missing pavement beneath previously valid standing poses",
-      "status": "SOURCE PILOT FIX VERIFIED; BROAD NATIVE BATCH PENDING",
+      "status": "SOURCE FIX VERIFIED ACROSS FULL25CANDIDATE REPLAY; COMPLETE MAP GATES OPEN",
       "affected": "Academy circulation L02 during saved circulation terrain pilot; all remaining sites need the same actual standing regression check",
       "symptom": "Soil-only pilot gains313strict poses but loses20previously valid Academy full-foot positions; complete links and body-only checks do not detect this regression.",
       "cause": "Rough path prisms do not cover revised circulation coordinates. Old soil supplied walking support before the cut.",
-      "action": "Retain exact failing sources/probes/captures. Build actual closed terrain-rooted walkway beds outside real stair openings and closed context. Final three-site pilot recovers999positions at16104unchanged samples, zero new failures. Native and exported beds share exact coordinates; no physics threshold change.",
+      "action": "Retain exact failing sources/probes/captures. Build actual closed terrain-rooted walkway beds outside real stair openings and closed context. Final three-site pilot recovers999positions at16104unchanged samples, zero new failures. Native and exported beds share exact coordinates; no physics threshold change. Full batch: eight sources,1831recovered full-foot poses at119775unchanged samples,0newfailures;221flights/84vertical links and both cemetery loops remain passing.",
       "evidence": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot; pilot-verification/strict-standing-regression.json; tools/build_cut_walkway_beds.py",
       "older_maps": "Run identical-coordinate full-foot comparisons after every terrain cut; a net improvement or passing centre/body/stair check never excuses newly unsupported poses."
     },
     {
       "id": "DEV-455",
       "title": "Whole-strip and boundary-ray bed tests reject valid ground beside a punched landform edge",
-      "status": "SOURCE PILOT FIX VERIFIED; FULL TERRAIN/LAYOUT GATE OPEN",
+      "status": "SOURCE FIX VERIFIED IN EIGHT-MAP BATCH; COMPLETE TERRAIN/LAYOUT GATE OPEN",
       "affected": "Academy L02 near [50.75,0,61.88]; other soil-edge and punched-hole receivers",
       "symptom": "Whole2mstrip receiver rejection leaves7new failures; clipping to terrain still leaves3because BVH rays miss exact source-triangle edge vertices.",
       "cause": "A section crosses a real landform void; refusing the whole section drops valid near-side ground. Exact boundary ray misses are not evidence that its backing native triangle is absent.",
@@ -4948,9 +4948,31 @@
       "affected": "tools/review_flat_terrain.py camera; tools/audit_roster_stairs.py --sites pilot mode",
       "symptom": "Contact camera uses the first flat segment instead of the actual diagnosed segment; selected three-site stair check incorrectly requires cemetery chains outside its scope.",
       "cause": "New batch tooling did not carry contact segment identity and selected-site declaration scope through its assertions.",
-      "action": "Use actual diagnosed segment index for the paired camera. Require exactly all declared chains belonging to selected sites; full-roster mode still requires both cemetery loops. Final three-site source/standing/body/stair checks pass; the final25site batch must rerun full loop controls. Retain original failed check logs and rejected camera captures.",
+      "action": "Use actual diagnosed segment index for the paired camera. Require exactly all declared chains belonging to selected sites; full-roster mode still requires both cemetery loops. Final three-site source/standing/body/stair checks pass; the final25site batch must rerun full loop controls. Retain original failed check logs and rejected camera captures. Full25site batch independently passes both cemetery14segmentloops after the scope correction.",
       "evidence": "development/levels/rebuild/flat-terrain-pass/verification/logs; pilot-verification/stair-movement.json; pilot-verification/captures.json",
       "older_maps": "Label capture type and actual tested sites. Do not infer whole-roster route coverage from a selected pilot or treat an empty selected declaration set as whole-roster verification."
+    },
+    {
+      "id": "DEV-458",
+      "title": "Circulation excavations expose coarse cut banks and unfinished physical edge interfaces",
+      "status": "OPEN; NATIVE SOURCE CLEARANCE DOES NOT ACCEPT LANDSCAPE",
+      "affected": "Eight revised terrain sources, especially WLD05/WLD09/WLD13cut banks and Academy perimeter",
+      "symptom": "Paired native sheets expose sawtooth excavation faces, rough pavement/rim junctions and unfinished protective edges after soil/body conflicts are removed.",
+      "cause": "Two-metre persistent sculpt grids and rough circulation reservations establish coarse clearance before measured retaining/edge/landscape refinement.",
+      "action": "Preserve landform and saved punches. Author supported retaining/rim/guard interfaces, refine grades/materials and inspect standing/crouched/photo and highest views with the canonical van. Consolidate bed components without changing support. Current2/5construction,1/5finish is not production terrain.",
+      "evidence": "development/levels/rebuild/flat-terrain-pass/verification/visual-review.json; captures/flat-terrain-batch/*-terrain-final-sheet.png; development/quality/DESQUAREIFY_GATE.md",
+      "older_maps": "Every older map needs individual landform, physical edge and full-width route audits. Native contact samples do not establish containment, light separation, visual fitness or runtime readiness."
+    },
+    {
+      "id": "DEV-459",
+      "title": "Pilot and final native renders reuse filenames and invalidate older PNG hash bindings",
+      "status": "FIX VERIFIED BEFORE FINAL BATCH PUBLICATION",
+      "affected": "Three-site saved-terrain pilot capture paths after full eight-site regeneration",
+      "symptom": "Exact staged preflight detects pilot captures.json SHA mismatch after final renders overwrite shared PNG filenames.",
+      "cause": "Original review tool names frames by site/view/phase without a unique generation namespace.",
+      "action": "Recover every exact pilot PNG blob from published8f759bd9, verify its original SHA and archive18PNGs under pilot-archive. Rebind only pilot report paths, retaining original hashes/models/cameras and full-batch frames. Save the exact v1checker executed for both model reviews; future renders use unique UTCmicrosecond run directories. No model, native geometry or test result changes.",
+      "evidence": "development/levels/rebuild/flat-terrain-pass/pilot-verification/capture-rebinding.json; verification/generators/review_flat_terrain-v1.py; tools/review_flat_terrain.py",
+      "older_maps": "Keep immutable capture namespaces for every iteration; compare actual PNG bytes to reports before upload. An unchanged model or similar pixels does not prove an older image hash still matches."
     }
   ],
   "audit_categories": [

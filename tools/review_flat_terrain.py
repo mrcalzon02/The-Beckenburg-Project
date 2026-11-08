@@ -1,6 +1,6 @@
 """Independent saved-world/mesh/native/footing checks and actual paired renders."""
 from pathlib import Path
-import argparse,collections,json,math,struct,sys
+import argparse,collections,datetime,json,math,struct,sys
 import bpy,bmesh
 from mathutils import Vector
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'tools'))
@@ -17,7 +17,7 @@ from build_roster_decks import area
 BASE=ROOT/'development/levels/rebuild';OUT=BASE/'flat-terrain-pass';CAP=BASE/'captures/flat-terrain-batch'
 def point(p):return Vector((p[0],-p[2],p[1]))
 def main():
- parser=argparse.ArgumentParser();parser.add_argument('--sites',nargs='+');parser.add_argument('--render',action='store_true');args=parser.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else []);results=[];captures=[];CAP.mkdir(parents=True,exist_ok=True);plan=json.loads((OUT/'terrain-repair-plan.json').read_text())
+ parser=argparse.ArgumentParser();parser.add_argument('--sites',nargs='+');parser.add_argument('--render',action='store_true');args=parser.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else []);capture_run=CAP/'runs'/datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ');capture_run.mkdir(parents=True,exist_ok=True);results=[];captures=[];CAP.mkdir(parents=True,exist_ok=True);plan=json.loads((OUT/'terrain-repair-plan.json').read_text())
  for path in sorted((OUT/'assemblies').glob('*/construction.json')):
   r=json.loads(path.read_text());site=r['id']
   if args.sites and site not in args.sites:continue
@@ -59,7 +59,7 @@ def main():
      for obj in bpy.context.scene.objects:
       if obj.type=='MESH':obj.hide_render=False
      cam.data.type='PERSP';cam.data.lens=24;cam.location=point(eye);cam.rotation_euler=(point(target)-cam.location).to_track_quat('-Z','Y').to_euler()
-    out=CAP/(site.lower()+'-'+view+'-'+phase+'.png');scene.render.filepath=str(out);bpy.ops.render.render(write_still=True);captures.append(dict(site=site,phase=phase,view=view,path=out.relative_to(ROOT).as_posix(),sha256=sha(out),source_glb_sha256=sha(model),eye=eye if view=='body-contact' else None,type='Native saved terrain/circulation construction review; before contact camera may be buried, no canonical van or runtime/landscape acceptance'))
+    out=capture_run/(site.lower()+'-'+view+'-'+phase+'.png');scene.render.filepath=str(out);bpy.ops.render.render(write_still=True);captures.append(dict(site=site,phase=phase,view=view,path=out.relative_to(ROOT).as_posix(),sha256=sha(out),source_glb_sha256=sha(model),eye=eye if view=='body-contact' else None,type='Native saved terrain/circulation construction review; before contact camera may be buried, no canonical van or runtime/landscape acceptance'))
  destination=OUT/('pilot-verification' if args.sites else 'verification');write(destination/'independent-sources.json',dict(status='PASS_SCOPED_TERRAIN_NATIVE_SOURCE_NOT_MAP_ACCEPTANCE',sites=results,checker_sha256=sha(Path(__file__))))
  if captures:write(destination/'captures.json',captures)
 if __name__=='__main__':main()

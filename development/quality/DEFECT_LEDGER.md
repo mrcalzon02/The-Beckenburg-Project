@@ -6244,3 +6244,7 @@ Actual checks, raw outputs, independent model inspection and preserved rejection
 - DEV-455: clip beds to exact soil coverage and use actual native receiver planes at punched edges; three failed construction studies are retained. Real off-landform routes still need redesign.
 - DEV-456: WLD-16 authored roadside terrain has no exact persistent-world owner; preserve it and migrate deliberately. Its211terrain contacts remain open.
 - DEV-457: corrected contact camera segment selection and selected-site declaration scope in new batch tools; full-roster chains remain required for full-batch acceptance.
+
+Full saved-terrain batch: DEV-454/455 pass the complete 25-candidate replay with 1,831 recovered full-foot poses and zero new failures. DEV-453 has a verified source terrain/arrival fix; the original buried WLD-09 study stays rejected. DEV-458 records visible coarse banks and unfinished retaining/rim/guard interfaces. Landscape and runtime acceptance remains open.
+
+DEV-459: staged preflight caught overwritten pilot PNG bindings. Exact18published pilot blobs are restored under an immutable archive, with original hashes/model/camera bindings. The executed checker is archived; future captures use unique run folders. Geometry/native evidence is unchanged.

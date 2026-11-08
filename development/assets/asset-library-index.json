@@ -1,8 +1,8 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 1917,
-  "unique_local_file_hashes": 1760,
+  "local_files": 1922,
+  "unique_local_file_hashes": 1765,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
@@ -12,7 +12,7 @@
     "additional_custom_model_sources": 22,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 94,
-    "native_map_exports": 231
+    "native_map_exports": 236
   },
   "archive_index": {
     "path": "development/assets/local-library-manifest.json",
@@ -27224,12 +27224,72 @@
       "label": "cut-terrain",
       "maps": [],
       "category": "native_map_exports",
+      "path": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "00348bdebcfff6d04db5e4115ef19183d3b46141a200f8c273038a04e9a6d77c",
+      "bytes": 1821116
+    },
+    {
+      "id": "cut-terrain",
+      "label": "cut-terrain",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-05/cut-terrain.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "94e5c028db8d7f4a9aca1cf4da0ff8935d8cecb58b2167fa72fd20bc6b0f68c1",
+      "bytes": 2925396
+    },
+    {
+      "id": "cut-terrain",
+      "label": "cut-terrain",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/cut-terrain.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "e85f127c0b172025d64eeee0c96d84cda65c0c9cc4ff3c088596f8d77f4a68b1",
+      "bytes": 2431208
+    },
+    {
+      "id": "cut-terrain",
+      "label": "cut-terrain",
+      "maps": [],
+      "category": "native_map_exports",
       "path": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/cut-terrain.glb",
       "collection": "native_map_exports",
       "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "733984ac7a0db26a954d02ca4e737354f446bf2e5a42abbad9b4b4c4a1d198c6",
       "bytes": 4270208
+    },
+    {
+      "id": "cut-terrain",
+      "label": "cut-terrain",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+      "bytes": 2692208
+    },
+    {
+      "id": "cut-terrain",
+      "label": "cut-terrain",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/cut-terrain.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "1610ec9d3b5184ef2405a7e2c5f169903fa0281dbf39df1c4fa314a98be1d317",
+      "bytes": 2805824
     },
     {
       "id": "cut-terrain",

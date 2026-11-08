@@ -1,0 +1,1808 @@
+{
+  "observed_utc": "2026-11-08T14:38:22.428522+00:00",
+  "source_checkpoint": "8f759bd986b9c3aa71d2fadc73f942c10fbdf758",
+  "remote_head_verified": "8f759bd986b9c3aa71d2fadc73f942c10fbdf758",
+  "remote_tree_sha": "c24adbc446c311df8a56f0dc71c9462ec2804c85",
+  "method": "Complete non-truncated GitHub recursive tree compared to exact local Git tree for all changed eight saved-world sources, three-map verified pilot, nine rejected composite files, actual captures, exact raw evidence and source tooling in the pilot milestone",
+  "checkpoints": [
+    {
+      "commit": "8f759bd986b9c3aa71d2fadc73f942c10fbdf758",
+      "changed_files": 445
+    }
+  ],
+  "verified_file_count": 445,
+  "verified_blobs": [
+    {
+      "path": ".gitattributes",
+      "sha": "8cb11a07456abe1ab91a593e73a825b524715577"
+    },
+    {
+      "path": ".gitignore",
+      "sha": "09ad22dccc1e86c881c6081a8bfd079e592555df"
+    },
+    {
+      "path": "ASSET_LIBRARY.md",
+      "sha": "fbd3f58fc6b2cfbc6d00710cec696dd235877925"
+    },
+    {
+      "path": "beckenburg-development-gallery.html",
+      "sha": "f4d9e2d1771cd8372336e9b07933efc2c6748200"
+    },
+    {
+      "path": "development/RECOVERY_PLAN_2026-10-25.md",
+      "sha": "a4c9813eb5a90c90b8476f19ac50b4fd22c5751a"
+    },
+    {
+      "path": "development/assets/asset-library-index.json",
+      "sha": "8b14f8ecaa84b0d7f13acaccc273dc811d102eb8"
+    },
+    {
+      "path": "development/gallery/index.json",
+      "sha": "df0cc3c41d024340cb6deee5d4e6d5c3556aa12a"
+    },
+    {
+      "path": "development/levels/rebuild/WORKFLOW.md",
+      "sha": "e1b42858c511d0b784711c0be4f1adae34bd6838"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-body-contact-after.png",
+      "sha": "4acad05524f63648c1587f6814571d0af19be811"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-body-contact-before.png",
+      "sha": "bedceec55bedc3151155994a54cd0607d2d37ff5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-saved-terrain.png",
+      "sha": "fb37642f33fa612fee8a2b2e5fc989c1e2aa9be4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-terrain-only-after.png",
+      "sha": "c1d918d57b233e2d48e07929ee3301baaf7b8772"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-terrain-only-before.png",
+      "sha": "655f0e1b088ede594022dcd3e290fff137e1475b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-terrain-pilot-sheet.png",
+      "sha": "a1689ea4f3e067deed23be4b6040767224e586ad"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-whole-site-after.png",
+      "sha": "d94dc212831f2cb5428a4bb486829ad74a5aa11e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-whole-site-before.png",
+      "sha": "c52983c3feda9110115cfc12b9fe59c6618b5e83"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/farmhouse-saved-terrain.png",
+      "sha": "6d3392bd502defa926b6ceb8736aa61a64cd0a56"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/academy-body-contact-after.png",
+      "sha": "6d172b278b400c05f1f4e108c686dc528f4a1a31"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/academy-body-contact-before.png",
+      "sha": "3fc75e20dc64f4f60379e17a66aee56e8f635621"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/academy-terrain-only-after.png",
+      "sha": "335323c33cf8674df18a9b2c10854a7b818f20f5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/academy-terrain-only-before.png",
+      "sha": "70df29fb9dd04c39b05bb60688b5c3e9a6031d64"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/academy-whole-site-after.png",
+      "sha": "a4f3d05e0253fa773e02d749b04759f8efeebfe5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/academy-whole-site-before.png",
+      "sha": "4d9fac6acfe0dcc835895e04c114f2eacf192e27"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-09-body-contact-after.png",
+      "sha": "a81eebdb44939a1009607ad078aa6fdc0572581b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-09-body-contact-before.png",
+      "sha": "42c842254fdb26ea980448604e53e3152b31c36f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-09-terrain-only-after.png",
+      "sha": "f57533969ce66d5b9aeffdd6e526ddb81e3bce5d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-09-terrain-only-before.png",
+      "sha": "10db405a3ede73f196fd337802085bfce5bd61c3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-09-whole-site-after.png",
+      "sha": "03a055a7cc82fc54a4b78af1bf44d867bb9a3ea9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-09-whole-site-before.png",
+      "sha": "f6534d8cafc8b376454a1e1721ffc6b3555bb395"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-18-body-contact-after.png",
+      "sha": "9300a20786320e6aeec670bbf8182ffb0e80380d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-18-body-contact-before.png",
+      "sha": "ac9d4f225e4824496306ff9ed183f9089e47ee18"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-18-terrain-only-after.png",
+      "sha": "e64ac31af2175f5f5373057df4c3c5c737c15322"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-18-terrain-only-before.png",
+      "sha": "30a12d3240d099beba32dc7f2c0d6cbf36e33485"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-18-whole-site-after.png",
+      "sha": "4223f3e323dcb503295b2c1eb5dd062067ef2562"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-18-whole-site-before.png",
+      "sha": "2c2281736162991ebfa5f8386a731c909429376e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/academy-body-contact-after.png",
+      "sha": "51d13d60871f6a6334d55f7e3bb98f0d46207457"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/academy-body-contact-before.png",
+      "sha": "c067da733682c94c40c1563275c2fc6215aac2d2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/academy-terrain-only-after.png",
+      "sha": "91f75531fb9d39974c99801f5cad6a8a4fbd6435"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/academy-terrain-only-before.png",
+      "sha": "268a5e99e112e5c1269651825bd50219ac4ecdc1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/academy-terrain-pilot-sheet.png",
+      "sha": "ca174334ab58ae4d5e1b7ddb2e1e31ea4000b64b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/academy-whole-site-after.png",
+      "sha": "40d096938a08a490814168d74971266e06db008d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/academy-whole-site-before.png",
+      "sha": "4a05ece2fb1f5ad7a6e2de9285b5a5db6c04363d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-09-body-contact-after.png",
+      "sha": "afbb666e058f1b4634458f6d28deae9bc58c39f3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-09-body-contact-before.png",
+      "sha": "cc5f3c09aa6b0ddd8faab4f5ba53b795a0f2a0d3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-09-terrain-only-after.png",
+      "sha": "bc400b45efb2584b3f3cd46535861975e1048322"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-09-terrain-only-before.png",
+      "sha": "a0d63ca90a85059770919c6ee7307dc92349b9e4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-09-terrain-pilot-sheet.png",
+      "sha": "a490986f992183f787a57359ff7d845cda888088"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-09-whole-site-after.png",
+      "sha": "aaeed1eac30c15b1d0aad7cdc14640384b504c96"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-09-whole-site-before.png",
+      "sha": "908e35677e2928d16ada357a10f42711c26da90c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-18-body-contact-after.png",
+      "sha": "6692b037344e3e8fa6eb2d0e82b251c513ee3924"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-18-body-contact-before.png",
+      "sha": "261af9ca4a371788034fe4374c3405d88946b3f0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-18-terrain-only-after.png",
+      "sha": "76c750600120b6418cb3a8360f37c810b0a27068"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-18-terrain-only-before.png",
+      "sha": "3a2508783e539592a5c79c6941e5bc56d89a2760"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-18-terrain-pilot-sheet.png",
+      "sha": "aeb602337803d831aca043d8d4717aec17c54b85"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-18-whole-site-after.png",
+      "sha": "0ce668a39c50a256c7fbeb8133338e48367cefd8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-18-whole-site-before.png",
+      "sha": "2d17ca3bdadbe83481df0f63c405e16bc0a17e4c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/academy-body-contact-after.png",
+      "sha": "183e3e65a958fbc3f30e43f450957ae55b8db21c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/academy-body-contact-before.png",
+      "sha": "85d500f69078bddb058a55b72c8e0220cb972491"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/academy-terrain-only-after.png",
+      "sha": "7978c4dfc2148f09fb0c75b69966871719933486"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/academy-terrain-only-before.png",
+      "sha": "b2f598b2931e3e2bd27032459c1874be9ad8981c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/academy-whole-site-after.png",
+      "sha": "ec4e30692ce2f3a252d00b25530f72512ac5fbff"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/academy-whole-site-before.png",
+      "sha": "3ba3e7e49385859071e1d622be91eefda789667e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-09-body-contact-after.png",
+      "sha": "805132b0be3020c081ab9c5c7960bb6d1a56b69c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-09-body-contact-before.png",
+      "sha": "7503e1c7adf32e5be81acab42661baaedd0e7ade"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-09-terrain-only-after.png",
+      "sha": "15e2403f0f8272a325aaf60ca480362ec53732ba"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-09-terrain-only-before.png",
+      "sha": "7dedab1263bea827fac4befa3ec005aa578539c5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-09-whole-site-after.png",
+      "sha": "6d5e95c44ca35a181066725aae5210d4cad105b6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-09-whole-site-before.png",
+      "sha": "c96eeaf070fffd9d0feaeb9f9c462dc6fab06472"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-18-body-contact-after.png",
+      "sha": "509bdbb9baca3a84581089b30503b0d25fe023f2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-18-body-contact-before.png",
+      "sha": "465a32ed9c6c6fb3151ac7bf9b3624454dbbd401"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-18-terrain-only-after.png",
+      "sha": "d6a9a9afe7b6fad6da7139aefdc1fc6b214380af"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-18-terrain-only-before.png",
+      "sha": "f7a87fbf025e76b741d53114315adfa9a9603574"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-18-whole-site-after.png",
+      "sha": "6a840fb725bbd63584ab8de5f5923ae950c52f4f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-18-whole-site-before.png",
+      "sha": "c3347eb0991daed8d7eaa8521608d541cd9c0d72"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-05-saved-terrain.png",
+      "sha": "c55d868a56c8fa209d9cafc5807d248226e0a197"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-08-saved-terrain.png",
+      "sha": "7a53c8ed6d8a58c3eecb6242c7a340dd94f98b46"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-body-contact-after.png",
+      "sha": "8ab6abd473955a344d0ac657275dd5f5ac5eefe1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-body-contact-before.png",
+      "sha": "bf85cfefe92ecf1e545627680099360da9d948c1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-saved-terrain.png",
+      "sha": "6ff95614d8e152c9ffd5d030365b9150c5648e2f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-terrain-only-after.png",
+      "sha": "b11c461e8872a6ac0a17a9e8dacafb20e88de290"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-terrain-only-before.png",
+      "sha": "538d6164f4bf81d88bb5c878105cc9666d4819fc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-terrain-pilot-sheet.png",
+      "sha": "a490986f992183f787a57359ff7d845cda888088"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-whole-site-after.png",
+      "sha": "03f7c7b33197afe7d983296461641f358f02024c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-whole-site-before.png",
+      "sha": "21851cbaa17b1a1a3fc0ba64b38c7713f4405907"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-10-saved-terrain.png",
+      "sha": "de0dca2ba23e0eb8881ca4adb5f92df72f994bc1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-13-saved-terrain.png",
+      "sha": "8462fd4901149d1ee74de6097d581cc27623e3d4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-body-contact-after.png",
+      "sha": "3951b02038648d8c8b614ad403c0a2159da9fb41"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-body-contact-before.png",
+      "sha": "bfe3b77598cea68067d1fece69acae1788b6ca5e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-saved-terrain.png",
+      "sha": "5702ca7850fc867743f7e8c4ae637665566e8efe"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-terrain-only-after.png",
+      "sha": "d247dd1ddcdf15a3c06ace274475ad51988c74ee"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-terrain-only-before.png",
+      "sha": "2b9b9499d7497b130c26a2465a5ef305f0faed1c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-terrain-pilot-sheet.png",
+      "sha": "9612fcad1bf64563e241405c5841466237503b8e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-whole-site-after.png",
+      "sha": "00cf3bed2d3d9a54d163ce2f275313a5d3483f64"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-whole-site-before.png",
+      "sha": "4ab8f153c5f15fc565b6381f09745c2a959ea9d5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/NEXT.md",
+      "sha": "71ce94c47622c0dadd4dba60f44f568ca7a54083"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/README.md",
+      "sha": "4c7f7db4fdc11ea5107ee1c93b866f15ba163a6e"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/academy-world.json",
+      "sha": "de049eb8385e259d5223f65e9b299ae6a227929f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/authored-layout.json",
+      "sha": "8d60e2eca254a56951af368ececeea40fe6b5ab0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/construction.json",
+      "sha": "7a0f5c264a028f2f31f18f10e10934c68f2968b3"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/cut-terrain.blend",
+      "sha": "74cb153e00bdbc71b8d7fac8eea32b3822e570f8"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/cut-terrain.glb",
+      "sha": "aa8f5f9890a92710749c1fec898ee4e33e0df270"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/cut-terrain.hcs2",
+      "sha": "a6831f826a9100a414c399abb4c048aa432bbb9c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/authored-layout.json",
+      "sha": "7f4d6315d35e4b257695cc431f182967b65fd6a7"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/construction.json",
+      "sha": "fee06ae217a660073760a9e69bfa2ae6c44609ef"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/cut-terrain.blend",
+      "sha": "5bdf0bf745464cf3108148e521ced71985e02bf0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/cut-terrain.glb",
+      "sha": "588f227a33f8a6645f2a22e18319ad6d51154ab7"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/cut-terrain.hcs2",
+      "sha": "8b81f68b6c4c99df5f5b28a8c5168a69e75c91f3"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-18/authored-layout.json",
+      "sha": "ac88d0c3e0d859b3575f3add3e26de1206333784"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-18/construction.json",
+      "sha": "645202f755e1e4321fe2df72539822d4af3b8453"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-18/cut-terrain.blend",
+      "sha": "ca9a6398e9f0a3e31d20c5b6322152233000f5d9"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-18/cut-terrain.glb",
+      "sha": "4f9ddfe47c8dad0dcaa11d8d9e0d74601e26d809"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-18/cut-terrain.hcs2",
+      "sha": "1492c726733bbf1c51c27307ce7c4c662721281f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/farmhouse-world.json",
+      "sha": "c48431153b8216b6ffe0507f205d9270f2379c7c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/pilot-verification/aggregate.json",
+      "sha": "4ef05f9d546feb987b04e246ddea48ef93a369ca"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/pilot-verification/captures.json",
+      "sha": "b53703bae4cc14887a9f2045f89d9939bb43289e"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/pilot-verification/complete-route-sweeps.tsv",
+      "sha": "315b279aff8b194ebc67f3641f82dffc7442871c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/pilot-verification/contact-sheets.json",
+      "sha": "86ce0d31db31b01a39d10e33071848e3ceef02fb"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/pilot-verification/current-flat-failure-contacts.tsv",
+      "sha": "8158ffa967b641b0d3c859e3150e00042fbc9c2b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/pilot-verification/current-flat-failure-input.tsv",
+      "sha": "82d611952db5d42e190eda8eb1fcf60919eafc71"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/pilot-verification/current-flat-lane-input.tsv.gz",
+      "sha": "11ce8b597fdf49e968129bedb010bfea337e5d25"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/pilot-verification/current-flat-lane-names.tsv",
+      "sha": "834f0472c207184da0051d9646e7d787a4a73889"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/pilot-verification/current-flat-lanes.tsv",
+      "sha": "9119d4d621bbc9a787802cd9519b15a2e777f273"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/pilot-verification/current-flat-links.tsv",
+      "sha": "50e5eb6f99251c7b4c578d1eedd70c673c470367"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/pilot-verification/current-flat-movement.json",
+      "sha": "8c0273842c26b9e8366b9d44f6017bca74131c85"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/pilot-verification/current-flat-names.tsv",
+      "sha": "834f0472c207184da0051d9646e7d787a4a73889"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/pilot-verification/current-flat-paths.tsv",
+      "sha": "c5bdccc3b1573362edc858088d46a293980a99a9"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/pilot-verification/failure-contacts.tsv",
+      "sha": "1d6361ed1d13282f592100dad34a1ebb95c186dd"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/pilot-verification/flight-sweeps.tsv",
+      "sha": "c1ada4ff63da4f60c33954d1004a0c30a79ebede"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/pilot-verification/independent-sources.json",
+      "sha": "93a5e4eb02f9efc75a25064d0483d3e0f24ffde4"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/pilot-verification/native-route-fit.json",
+      "sha": "8cf741598dbe0082b1d8db5046d5188b29cdc8d0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/pilot-verification/native-route-probes.tsv",
+      "sha": "8d6a6344baae6fdf154957dbe855b857995fb71a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/pilot-verification/stair-movement.json",
+      "sha": "7668f3a464fcfe75da224d42ff73970664899f26"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/pilot-verification/strict-standing-regression.json",
+      "sha": "fa42ff42ec98fb3a6a2f99a4d264dbafb86e7672"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/pilot-verification/visual-review.json",
+      "sha": "840243c959b122faf895f6427fa8d97ea76db320"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/README.md",
+      "sha": "4d5952e88880251465c8191c88a7454840a48d25"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/academy/authored-layout.json",
+      "sha": "373662b05aeaf7765600ef8a1dd9ddc06161cc83"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/academy/construction.json",
+      "sha": "ea59b40b006930e51a724c2eac39f13c389172fa"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/academy/cut-terrain.blend",
+      "sha": "4d143d370be04dc9c561120879d8ddde12e6aa85"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/academy/cut-terrain.glb",
+      "sha": "a98d062564bbadbe817f5287089bdc93bdb894d5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/academy/cut-terrain.hcs2",
+      "sha": "9ad8263401c68044141578e82124fa57c1bf7f1d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/build_cut_walkway_beds.py",
+      "sha": "875c89752067d302dc21f64819b96ff4591b979d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/compose_flat_terrain.py",
+      "sha": "a15b26788487162f0aecb4cdb967b54f7b7e700b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/relocations.json",
+      "sha": "1c5079082519caddc9ca97ce9953dfa9c620456c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/review_flat_terrain.py",
+      "sha": "462c556e1a7ea05177dc052a345492b35b51445d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/verification/captures.json",
+      "sha": "16a13418ded4d57be00a67222be8a8b21436ff30"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/verification/complete-route-sweeps.tsv",
+      "sha": "ce5fccea5474325f641e8b006f602f21d28169e6"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/verification/current-flat-failure-contacts.tsv",
+      "sha": "f255720a304a6bdb4989af02067d8d8cfb9ed83f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/verification/current-flat-failure-input.tsv.gz",
+      "sha": "f6af6629005748977fe9cb727fd031e75617c741"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/verification/current-flat-lane-input.tsv.gz",
+      "sha": "ce4744881a3b2a5ec7db647ccf33a6d855cb6f0c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/verification/current-flat-lane-names.tsv",
+      "sha": "b98584c63a8b67d8b5c46b4de1d9e236093e18bf"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/verification/current-flat-lanes.tsv.gz",
+      "sha": "bbcfe76499e750b11bf93993b00f8ccbca53cbfb"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/verification/current-flat-links.tsv",
+      "sha": "82ef56e0bde034620021994443c7748b65353d50"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/verification/current-flat-movement.json",
+      "sha": "9c45255d4334113ad057d2a86e9a5b0881338730"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/verification/current-flat-names.tsv",
+      "sha": "b98584c63a8b67d8b5c46b4de1d9e236093e18bf"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/verification/current-flat-paths.tsv",
+      "sha": "785679a726ab21245f45253a51906168a09d5415"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/verification/failure-contacts.tsv",
+      "sha": "1d6361ed1d13282f592100dad34a1ebb95c186dd"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/verification/flight-sweeps.tsv",
+      "sha": "35ac4e0d16412b9b769c55d17bdd006d5e596f22"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/verification/independent-sources.json",
+      "sha": "2ec574423f7c28f0e3968a23af8ce46e80799bd1"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/verification/native-route-fit.json",
+      "sha": "2b9914cfdfc3fda22715e7bb634cb9ce6acbb1dc"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/verification/native-route-probes.tsv.gz",
+      "sha": "b988921c18d1e527e8704a63f145bfeb1f268661"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/verification/stair-movement.json",
+      "sha": "3ea78b318ef5f87b59a94a574d806fade5dc88e6"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/verification/strict-standing-regression.json",
+      "sha": "48a92110bc73cdcc6972ada5aaf5befc5fd2fef0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/wld-09/authored-layout.json",
+      "sha": "7f4d6315d35e4b257695cc431f182967b65fd6a7"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/wld-09/construction.json",
+      "sha": "1f84fa4a0be5a7c1bad62d2f898a55fbc266805f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/wld-09/cut-terrain.blend",
+      "sha": "5b73fe8c67ae15bd0bf91a5f33495933c6494cd5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/wld-09/cut-terrain.glb",
+      "sha": "588f227a33f8a6645f2a22e18319ad6d51154ab7"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/wld-09/cut-terrain.hcs2",
+      "sha": "8b81f68b6c4c99df5f5b28a8c5168a69e75c91f3"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/wld-18/authored-layout.json",
+      "sha": "0fb408b20dda69eff8571403a1e3421b03505ebe"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/wld-18/construction.json",
+      "sha": "c8576eac62411ddb044bccab8b5d1933f40f1568"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/wld-18/cut-terrain.blend",
+      "sha": "3d9024e5ddb20681a2095b571f6d865620de9f5a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/wld-18/cut-terrain.glb",
+      "sha": "6831146a735ae58af97a69caf99fd441fff8a352"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/wld-18/cut-terrain.hcs2",
+      "sha": "4f22507472a606d5bd34f7f5efc18230b49671d2"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/README.md",
+      "sha": "73b6a6d0561fde26d8ecbb4fecbce3d9702ab8e2"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/academy/authored-layout.json",
+      "sha": "702a1e00f31b7b34c7377775e81dc4728087ce46"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/academy/construction.json",
+      "sha": "8bf089fc9eeba72ecd774648fe542f4b189855dc"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/academy/cut-terrain.blend",
+      "sha": "79f50de7e78619e1a5f5d82ef776f4dcf1933485"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/academy/cut-terrain.glb",
+      "sha": "95fd2f57f53df9a13cc70fbbf16ecc1c2455ab14"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/academy/cut-terrain.hcs2",
+      "sha": "38492e5ada1e6a058e109f893f7ae2ba3a687294"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/compose_flat_terrain-soil-only.py",
+      "sha": "50f9e78e3828a415129298f2100f0cfd05d014c5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/relocations.json",
+      "sha": "810e4828b4360601e2e9d4144719a2c610ae4809"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/standing-regression.json",
+      "sha": "3a2516b573ded9a2be8ea957919eac80ec1eaa85"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/verification/captures.json",
+      "sha": "ad0ae2bca861fa169617cfe8a0ebeb782b8f76cb"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/verification/complete-route-sweeps.tsv",
+      "sha": "ce5fccea5474325f641e8b006f602f21d28169e6"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/verification/contact-sheets.json",
+      "sha": "7abec6a0d4ca4b4c5e9296576f3f36c1638db0fc"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/verification/current-flat-failure-contacts.tsv",
+      "sha": "e8602300ca0afff01243b4c1999e78a87e7463d1"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/verification/current-flat-failure-input.tsv.gz",
+      "sha": "a25538943d882635eeddb9010407e10f106407ee"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/verification/current-flat-lane-input.tsv.gz",
+      "sha": "0a4ff31be9f64bd7a64ceb7d13e0fc9871e22130"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/verification/current-flat-lane-names.tsv",
+      "sha": "b98584c63a8b67d8b5c46b4de1d9e236093e18bf"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/verification/current-flat-lanes.tsv.gz",
+      "sha": "0db5fa5335a40d2335f4f7efc455ec32e7b833d6"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/verification/current-flat-links.tsv",
+      "sha": "6d3a8f149c52f925085a9d170483bff32a9e9f11"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/verification/current-flat-movement.json",
+      "sha": "426d7e32cd22e314aab6ef79b55e1305a5701f06"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/verification/current-flat-names.tsv",
+      "sha": "b98584c63a8b67d8b5c46b4de1d9e236093e18bf"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/verification/current-flat-paths.tsv",
+      "sha": "f58691250e9c7d918246e966e91b661c344774a0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/verification/failure-contacts.tsv",
+      "sha": "1d6361ed1d13282f592100dad34a1ebb95c186dd"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/verification/flight-sweeps.tsv",
+      "sha": "35ac4e0d16412b9b769c55d17bdd006d5e596f22"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/verification/independent-sources.json",
+      "sha": "36768cc03d40d4ed3431f0d4070de29d0f4231ad"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/verification/native-route-fit.json",
+      "sha": "7ec0146654515fee42f72a71df7c844f65fd912f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/verification/native-route-probes.tsv.gz",
+      "sha": "b988921c18d1e527e8704a63f145bfeb1f268661"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/verification/stair-movement.json",
+      "sha": "35b8dd04a98516c50f1283109b973453d88614f0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/wld-09/authored-layout.json",
+      "sha": "1a75836d80e54eb81dd6dcfccdebd786623a7158"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/wld-09/construction.json",
+      "sha": "2c1ae2e77086357745e337a7dd964dc9220c72e0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/wld-09/cut-terrain.blend",
+      "sha": "2d188e55d7fc21b3ee6e5e9e5cbe26a757702fcd"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/wld-09/cut-terrain.glb",
+      "sha": "588f227a33f8a6645f2a22e18319ad6d51154ab7"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/wld-09/cut-terrain.hcs2",
+      "sha": "8b81f68b6c4c99df5f5b28a8c5168a69e75c91f3"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/wld-18/authored-layout.json",
+      "sha": "32153b78368f187af8c8d2b2bf123433fbcee72b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/wld-18/construction.json",
+      "sha": "4fcd2802dd8ea7e98e54c34f96180c9bacbeb7ba"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/wld-18/cut-terrain.blend",
+      "sha": "7febb1bdf88365881dffe73e21a006fe7a8f1cf9"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/wld-18/cut-terrain.glb",
+      "sha": "18e5ec550a0229d0140030d98c1ddc1a739f5a89"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/wld-18/cut-terrain.hcs2",
+      "sha": "6f70625451566a7e39b8a375eb98ed02faf96945"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/README.md",
+      "sha": "97ad2eb87aa34793ab60f54c279f92e936c19b65"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/academy/authored-layout.json",
+      "sha": "76157207c2d6703676bdfafb665f627f08350bec"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/academy/construction.json",
+      "sha": "13904ada797f220986a747c0a1f41e6b14564dc5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/academy/cut-terrain.blend",
+      "sha": "2012edcdab0eefc188c7481e970cab047a4ee514"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/academy/cut-terrain.glb",
+      "sha": "04ee3fdf456ff47b3bf7b77b9da37985daf1fc06"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/academy/cut-terrain.hcs2",
+      "sha": "524770523331c633c7d288ad7e56b60761ed8197"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/build_cut_walkway_beds.py",
+      "sha": "f8f097f8c680be676a9b6a34352d579d1da934cb"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/compose_flat_terrain.py",
+      "sha": "49c65603b4ab8f3a5400ca1b5ff95c0c02dba761"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/relocations.json",
+      "sha": "55f0985f62a61369b981fdf3be69c50c84e9fbfc"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/review_flat_terrain.py",
+      "sha": "462c556e1a7ea05177dc052a345492b35b51445d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/verification/captures.json",
+      "sha": "23af329a22aea10bcd78dbaae7514b3e1def3987"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/verification/complete-route-sweeps.tsv",
+      "sha": "ce5fccea5474325f641e8b006f602f21d28169e6"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/verification/current-flat-failure-contacts.tsv",
+      "sha": "25b085bf72b7b42fe7ac96605aaadf2a0cd64dbe"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/verification/current-flat-failure-input.tsv.gz",
+      "sha": "aef990fc684d5afc8bacc5306e30470520033ac2"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/verification/current-flat-lane-input.tsv.gz",
+      "sha": "092ce5a2c4ad356f6ff1204f19c2b02dbf8972ca"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/verification/current-flat-lane-names.tsv",
+      "sha": "b98584c63a8b67d8b5c46b4de1d9e236093e18bf"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/verification/current-flat-lanes.tsv.gz",
+      "sha": "01efe2bb6f4571ba34411a91b822f39eaec3ccd7"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/verification/current-flat-links.tsv",
+      "sha": "8cb0bfb2990fbd512a1967bc2a1db6cbcb51d310"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/verification/current-flat-movement.json",
+      "sha": "f5b8acebed724b004f283c04a05cbca890d87a49"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/verification/current-flat-names.tsv",
+      "sha": "b98584c63a8b67d8b5c46b4de1d9e236093e18bf"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/verification/current-flat-paths.tsv",
+      "sha": "dd9e8ca1882d559669949a012b649991ebecea16"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/verification/failure-contacts.tsv",
+      "sha": "1d6361ed1d13282f592100dad34a1ebb95c186dd"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/verification/flight-sweeps.tsv",
+      "sha": "35ac4e0d16412b9b769c55d17bdd006d5e596f22"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/verification/independent-sources.json",
+      "sha": "57e9313c90b5c1f584eb976ee550188894cc0dd8"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/verification/native-route-fit.json",
+      "sha": "cff7a4f79eb63d183df3ed002125c60e6be52565"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/verification/native-route-probes.tsv.gz",
+      "sha": "b988921c18d1e527e8704a63f145bfeb1f268661"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/verification/stair-movement.json",
+      "sha": "756f76adc288796e7fb7717f942607c3576fd365"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/verification/strict-standing-regression.json",
+      "sha": "d3352da21b714cf490e17adf7a1743927be93f0b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/wld-09/authored-layout.json",
+      "sha": "7f4d6315d35e4b257695cc431f182967b65fd6a7"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/wld-09/construction.json",
+      "sha": "8400b8df7986d9c8193d0eee532cfea6e758b866"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/wld-09/cut-terrain.blend",
+      "sha": "1b61edeb9a3b0a21cb3b13608d6f3650d3e8c0dc"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/wld-09/cut-terrain.glb",
+      "sha": "588f227a33f8a6645f2a22e18319ad6d51154ab7"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/wld-09/cut-terrain.hcs2",
+      "sha": "8b81f68b6c4c99df5f5b28a8c5168a69e75c91f3"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/wld-18/authored-layout.json",
+      "sha": "676dffce7b84ab972f4f1f9a726fc15b18f6c8a4"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/wld-18/construction.json",
+      "sha": "ce4dcfdfc9592f1c8360528fece743d2b8182413"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/wld-18/cut-terrain.blend",
+      "sha": "e797860c75789db0d28d702dc2e12fbaa6a71d60"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/wld-18/cut-terrain.glb",
+      "sha": "c465678fd23b98c58ce314c5624c0c9f5a033d35"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/wld-18/cut-terrain.hcs2",
+      "sha": "d430b4ac0be13d5356f4cba2543b28b99d904633"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/roster.json",
+      "sha": "f228e6bb17ef813013573694c9cd94fc5edd4460"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/academy/cuts.tsv",
+      "sha": "bdbc0e76954516b5cfbdbafff7b767f1c846a720"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/academy/grades.tsv",
+      "sha": "f9bc14709b1e32845b7f622541d33d2ab55f9c9e"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/academy/heights.txt",
+      "sha": "8bb7ce2f81b72ca9f1d02874d8e5e31ccf2addf0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/academy/provenance.json",
+      "sha": "64689764527984500e505676a97e2f5adbc2c8c9"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/academy/settings.tsv",
+      "sha": "6a3d4eb55cd06a5a191e4b56a301f3006ee69bdb"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/farmhouse/cuts.tsv",
+      "sha": "116165c82056dea2151e410e8e0d1484fc7043d4"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/farmhouse/grades.tsv",
+      "sha": "69a8940fce9c27f5713fdf3c4d616a9edafeacaa"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/farmhouse/heights.txt",
+      "sha": "28aedeea5ad0be58ccd583af11bc553146e06642"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/farmhouse/provenance.json",
+      "sha": "484be19cec1c08f23d3d9c468c4e45f95cb73fc9"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/farmhouse/settings.tsv",
+      "sha": "dc0d61b28d1cc09cee483323db37388d04a0bead"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-05/cuts.tsv",
+      "sha": "8c102c1873d79182fe493b056eedc9bbafcde6ba"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-05/grades.tsv",
+      "sha": "aa6862c35624c1ec2ccbc9b3eddb8b9f8b127bdd"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-05/heights.txt",
+      "sha": "0dfae1244cb468350418c1ff30507e0df25d2a84"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-05/provenance.json",
+      "sha": "92518d095c380230260bc0c76e6352ce99612f76"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-05/settings.tsv",
+      "sha": "9420c1291f7702c00f7e6bfd6cf48d2cf4902d11"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-08/cuts.tsv",
+      "sha": "51094408a06ff479d0c9e0b232c02c068c96bd4d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-08/grades.tsv",
+      "sha": "bf066889aeb48f95c21a4090697d9491054f862e"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-08/heights.txt",
+      "sha": "be61d0ce78b48120d4ecdb86842e969bcf088aad"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-08/provenance.json",
+      "sha": "90908c00e9494d9dc7aa48c2006f9ff7576eebd5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-08/settings.tsv",
+      "sha": "a57878d90788dfb7313ec7089c6024561f2d5ec7"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-09/cuts.tsv",
+      "sha": "1617ffd073e52908911c7f78b9e47e6d91a3dcdf"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-09/grades.tsv",
+      "sha": "2af36b4a39226dfb90efc151b8a3ad574528da51"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-09/heights.txt",
+      "sha": "5b76a3ac997de8a2306fe3127f240b547ab156af"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-09/provenance.json",
+      "sha": "d32a66a7ab13fd7e7ae9231a8f052ea4723ac770"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-09/settings.tsv",
+      "sha": "8a324bf8755e149686c74283a25ca691bd5c215d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-10/cuts.tsv",
+      "sha": "c86967ae35ffe015ffa3c02fea3bf474a5c79905"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-10/grades.tsv",
+      "sha": "c40b72064b2ca15e6a363002e43d7b4c5c250905"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-10/heights.txt",
+      "sha": "06e1d1773b9c8c921fb6a6bf62827ad78a98eea5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-10/provenance.json",
+      "sha": "73eaacc259003d0afff314f8fb104441ef38461d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-10/settings.tsv",
+      "sha": "137543e664310c5e5cc32ec1ccadc749db096e9c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-13/cuts.tsv",
+      "sha": "6370f1cf594b2ec7b49c026fa2fea9ad1a567400"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-13/grades.tsv",
+      "sha": "936d0ca0bf07b025b3d6e5da31ad7952a75d0363"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-13/heights.txt",
+      "sha": "4b307429a6deeec0feeebf451b8b26d97d071b97"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-13/provenance.json",
+      "sha": "2b56b85f341d5102ded2a3fd1f9b9ac27482e69a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-13/settings.tsv",
+      "sha": "586a8f9837fa00f84c1fac8df22a2bccb5ea0ddb"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-18/cuts.tsv",
+      "sha": "586e5290500f8a70f048855c17e210ee1fc988df"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-18/grades.tsv",
+      "sha": "578b7cb75df456e16cb4bddddd3be7a809fa52f2"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-18/heights.txt",
+      "sha": "e5ed37587e910c30e463c13ba7737cdb5cd9c2f9"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-18/provenance.json",
+      "sha": "78eecdfe69ffc5c69e7071e9d124b23ce83e0dfe"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/samples/wld-18/settings.tsv",
+      "sha": "abd3b1c2eed40b45ea3547c9e904f806fed1a6f8"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/terrain-repair-plan.json",
+      "sha": "a7720264918f735c6c7652e33bf6f976b9b7c5d2"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/archive-index.json",
+      "sha": "7e9c24b37bd21fbddeb3f529e88a7c29f9ba3883"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/logs/flat-terrain-clipped-pilot-compose.log",
+      "sha": "3203863ab85ee082383676c1706fc1e74ec58498"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/logs/flat-terrain-clipped-pilot-current.log",
+      "sha": "55cd3a8a2a02b67dff9ab5de615dbd95f36dcec2"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/logs/flat-terrain-clipped-pilot-historical.log",
+      "sha": "1b89971adf289fcdd6752288c2b96eb5aa650905"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/logs/flat-terrain-clipped-pilot-review.log",
+      "sha": "c1de91d1d12af315eb028807f125e6248343f1b0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/logs/flat-terrain-clipped-pilot-stairs.log",
+      "sha": "cd07ed78c47f36c1e39cb5c1891db880374b74db"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/logs/flat-terrain-pilot-author.log",
+      "sha": "229b331fd1a4e053d12778e32539e6819fdc955f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/logs/flat-terrain-pilot-compose.log",
+      "sha": "952da1a7509ab4fcd88cddda86c6143b6ff3aabc"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/logs/flat-terrain-pilot-current.log",
+      "sha": "f54ca04eddda0e02e4f6e5237b1b5463bb777da3"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/logs/flat-terrain-pilot-historical.log",
+      "sha": "1b89971adf289fcdd6752288c2b96eb5aa650905"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/logs/flat-terrain-pilot-review.log",
+      "sha": "c6a14986133c7165398f032d68a3b1ac1f143eaf"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/logs/flat-terrain-pilot-stairs.log",
+      "sha": "cd07ed78c47f36c1e39cb5c1891db880374b74db"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/logs/flat-terrain-plane-pilot-compose.log",
+      "sha": "37d6b6f11b2c938068f3043b6c01798b7babd060"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/logs/flat-terrain-plane-pilot-current.log",
+      "sha": "dc754dc1879da6f5b6245c5248b62bd5e56016d0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/logs/flat-terrain-plane-pilot-historical.log",
+      "sha": "dd62f82e244d588bec5dd700168680345842643e"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/logs/flat-terrain-plane-pilot-review.log",
+      "sha": "2cd0e2901ae36efddecdec90aad3e84a81243659"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/logs/flat-terrain-plane-pilot-stairs-final.log",
+      "sha": "66e9ef4f7823b40e1447fc6a0c28c364cafacd61"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/logs/flat-terrain-plane-pilot-stairs.log",
+      "sha": "43015d9cb23d10e6bfe6134212d8bbc3badd1e9d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/logs/flat-terrain-rejected-standing.log",
+      "sha": "115a5a747df35a8f5be684d90f0b49c5966cb1ec"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/logs/flat-terrain-rest-author.log",
+      "sha": "b55dfc02880b3cd1539d478af662fc86d4a40ccf"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/logs/flat-terrain-rooted-pilot-compose.log",
+      "sha": "a0f8c5f9d4d8cd5bd545df2a9f640170f80d216d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/logs/flat-terrain-rooted-pilot-current.log",
+      "sha": "bd60c13fbeb734b7630edebfb30e8dd410c6e21e"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/logs/flat-terrain-rooted-pilot-historical.log",
+      "sha": "1b89971adf289fcdd6752288c2b96eb5aa650905"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/logs/flat-terrain-rooted-pilot-review-final.log",
+      "sha": "fc2dfe24cd0a158aa96c9b516a8f839b0f823964"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/logs/flat-terrain-rooted-pilot-review.log",
+      "sha": "b11a9917fbc28cab8041d676710c4ab20b33c7b1"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/verification/logs/flat-terrain-rooted-pilot-stairs.log",
+      "sha": "cd07ed78c47f36c1e39cb5c1891db880374b74db"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/wld-05-world.json",
+      "sha": "d2d38e13d19f4330a23e488011046547905b12c8"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/wld-08-world.json",
+      "sha": "88e09b5a7c7798427dc32daa09ba998e45824eac"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/wld-09-world.json",
+      "sha": "cee187444d9f46e23cdc0ece63501d5f2156fb90"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/wld-10-world.json",
+      "sha": "c9211c7a2de262fcecad1b7572408acdc5d057b1"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/wld-13-world.json",
+      "sha": "0fe6a88ce95580577814e3688e2b7eeb86d6f939"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/wld-18-world.json",
+      "sha": "48483ed5b472b538e72daad1848a1a8ffb0a84a5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/adaptive-topology.bin",
+      "sha": "b418566f1bff53382db74eddaa391870e1ba4e43"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/authored-cuts.tsv",
+      "sha": "bdbc0e76954516b5cfbdbafff7b767f1c846a720"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/authored-path-grading.sha256",
+      "sha": "06028dd738b8f17693f32910a7708f69fdfa3970"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "0932546f3b523c486ad9d70bc9667081a76b1b25"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/scene-package/meshes/site.obj",
+      "sha": "8d0159b6405ad93a39c255aec19b65cfe247615a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/scene-package/scene.bin",
+      "sha": "9e880d2d346deb42138dc8ae20ee91a57a7cc590"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/source-provenance.json",
+      "sha": "64689764527984500e505676a97e2f5adbc2c8c9"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/terrain-layers/tile_0_0.bin",
+      "sha": "687dd1eabaf008bfabfd336c52b18142709e33b9"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/terrain-physics.hcs2",
+      "sha": "6fb445574fd9a3e39b4326ac5ba15cd367ec0a93"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/tile_0_0.png",
+      "sha": "935f58d891d23ab80314fa05f3a57066cd52c39b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/verification.json",
+      "sha": "b82d64c49a0d4bbc4d869793d77ca44a4b1a48d0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/world.properties",
+      "sha": "03338babd55ef055cafec1fc61c59e4ae76c9aaa"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/adaptive-topology.bin",
+      "sha": "9dd93244d2c69b56b3c892c7de127125988a2e32"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/authored-cuts.tsv",
+      "sha": "116165c82056dea2151e410e8e0d1484fc7043d4"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/authored-path-grading.sha256",
+      "sha": "50b7a98b54518f743369c47079422210addc8cf3"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "1e0fd37241b32255a96c18af0fc3b111a296c26a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/scene-package/meshes/site.obj",
+      "sha": "6ebd82c4a8c290783722cd3ecc55f1d0824c7db5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/scene-package/scene.bin",
+      "sha": "abfd8639549e15e2bdeb50821c04ddb6534ae123"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/source-provenance.json",
+      "sha": "484be19cec1c08f23d3d9c468c4e45f95cb73fc9"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/terrain-layers/tile_0_0.bin",
+      "sha": "4f58f76b3cd4c49bf8211234783a927a3759aaf0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/terrain-physics.hcs2",
+      "sha": "3ffe33d11560179ccade285cc71c031ef1eb2154"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/tile_0_0.png",
+      "sha": "53315be0dfb05552c75218208a3db7bd609ef5a9"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/verification.json",
+      "sha": "34b0fdfa6d144af2fa4bb61bb413e0124d8752a8"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/world.properties",
+      "sha": "00bdcbb51524592bf8f2e96ef8be2d5b7509ca45"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world/adaptive-topology.bin",
+      "sha": "23c165d6cd95e5615f75eb6a7acd62aab1ab7870"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world/authored-cuts.tsv",
+      "sha": "8c102c1873d79182fe493b056eedc9bbafcde6ba"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world/authored-path-grading.sha256",
+      "sha": "bff1904a5dff92b19c984513e06f34272b2f6742"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "401e5f8e2a86fd46fd1ee315376e410c3b193a1f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world/scene-package/meshes/site.obj",
+      "sha": "bb227531f6a391ef11548f6af668b7a3a80bf02e"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world/scene-package/scene.bin",
+      "sha": "eabfafac396a396e5356f1a1bda188899b1923c3"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world/source-provenance.json",
+      "sha": "92518d095c380230260bc0c76e6352ce99612f76"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world/terrain-layers/tile_0_0.bin",
+      "sha": "5c3d5380b9d67e364acf2812e514a3b2a42fe744"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world/terrain-physics.hcs2",
+      "sha": "7a024cae6d44dc9bad5ec0c62ed4b99ea9a86d9b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world/tile_0_0.png",
+      "sha": "80f6d802c8b26bc2f50fef9b27a5a53353404eb7"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world/verification.json",
+      "sha": "f127e251228d55eef222dc409c07f45e4c6afabb"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world/world.properties",
+      "sha": "7b325231f0648bff63a6bc94f20dfaeb920f1486"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/adaptive-topology.bin",
+      "sha": "56930ad659e274cf709796aeae875b7266f12f7d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/authored-cuts.tsv",
+      "sha": "51094408a06ff479d0c9e0b232c02c068c96bd4d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/authored-path-grading.sha256",
+      "sha": "e5ff4666b6462ca10ef5286213b86b0abf4fb28b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "47d7d0eccc7646fe2447c82c1c1b799543c2ac78"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/scene-package/meshes/site-0-0.obj",
+      "sha": "42a790902370d1b8743f30b9e7fda196906f51b3"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/scene-package/meshes/site-0-1.obj",
+      "sha": "d054da4ba6893c47ee43eb570e651c7dbaafab07"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/scene-package/meshes/site-1-0.obj",
+      "sha": "bb7869a7a338ca32f2f8d38c1ed021f634c901f4"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/scene-package/meshes/site-1-1.obj",
+      "sha": "6b6c0c473fbaeb3843cd1e44ba5316870f5cc576"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/scene-package/scene.bin",
+      "sha": "9c69d266580e313438e7f72cb7fd18b91641eb13"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/source-provenance.json",
+      "sha": "90908c00e9494d9dc7aa48c2006f9ff7576eebd5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/terrain-layers/tile_0_0.bin",
+      "sha": "a1831c1cafc91d9e3f6059a19a3b7f1281d43139"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/terrain-physics.hcs2",
+      "sha": "0e642854e7ab76a1bae8f15fcfb37fb54284f3c5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/tile_0_0.png",
+      "sha": "f659c84805e2465b64a94a6c78d738acc46e9d7c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/verification.json",
+      "sha": "74e78d43c4df0d5f627354f4fc0985b29f6b290c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/world.properties",
+      "sha": "03e7b7f12491f237a68072be82ba110b96228a3e"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-09/terrain-world/adaptive-topology.bin",
+      "sha": "d4a9a29619e186c990ce23ded01824acbbcac9c8"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-09/terrain-world/authored-cuts.tsv",
+      "sha": "1617ffd073e52908911c7f78b9e47e6d91a3dcdf"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-09/terrain-world/authored-path-grading.sha256",
+      "sha": "a7ce5aa80671a551565e9dd19cd44e0a56787c17"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-09/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "fa10cb34b85b2e22807e0fad739c4eedc9f3bcbb"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-09/terrain-world/scene-package/meshes/site-0-0.obj",
+      "sha": "4ff83942de318621cf27c477b122adf17abd19ca"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-09/terrain-world/scene-package/meshes/site-0-1.obj",
+      "sha": "999585e9c83baf32bcc98377953876683fb2e257"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-09/terrain-world/scene-package/meshes/site-1-0.obj",
+      "sha": "a5c415747da2762cf554e5e801efdbdd3f6784e7"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-09/terrain-world/scene-package/meshes/site-1-1.obj",
+      "sha": "ec3937c35aace56f597911ede8547e55c352ed68"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-09/terrain-world/scene-package/scene.bin",
+      "sha": "b4e9bc34421f9313df78d0d7e0009a3825cdd010"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-09/terrain-world/source-provenance.json",
+      "sha": "d32a66a7ab13fd7e7ae9231a8f052ea4723ac770"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-09/terrain-world/terrain-layers/tile_0_0.bin",
+      "sha": "fbafe5baa65bdd64c81f16436267cb217ab33b0c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-09/terrain-world/terrain-physics.hcs2",
+      "sha": "f760673599c128fcc7e94fe5bee3d2c2d79c339b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-09/terrain-world/tile_0_0.png",
+      "sha": "17529f679f581d6c22b9c93ada0088e9381e261f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-09/terrain-world/verification.json",
+      "sha": "91165204cad9a1cfbed8b93be9cad258be4a278c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-09/terrain-world/world.properties",
+      "sha": "acf4a1a5a06aaa0e1d4a9a42fc7fb6dee1fb5726"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/adaptive-topology.bin",
+      "sha": "0399ceda71ec71b4c59905913e7f9bd7a7f2e874"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/authored-cuts.tsv",
+      "sha": "c86967ae35ffe015ffa3c02fea3bf474a5c79905"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/authored-path-grading.sha256",
+      "sha": "0a3b5609bc0823ccb0e16bd5172337775c2103ec"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "fb53dcb8aa3c82775da673ff233bc6360bf2af65"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-0-0.obj",
+      "sha": "36be2a53e15332ea8ec60a2bd57b12f24ac74d32"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-0-1.obj",
+      "sha": "86112bffbff9796fe0046f8fe8562a3161d00bd5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-1-0.obj",
+      "sha": "ff6869acb559e217fe36a4591e72285a505f928a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-1-1.obj",
+      "sha": "f9d30eeb85bb03ecec1d8461a001496b7a47a3fd"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/scene-package/scene.bin",
+      "sha": "655bb12e2d1c381c4cc6dd348c136e61b19e0337"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/source-provenance.json",
+      "sha": "73eaacc259003d0afff314f8fb104441ef38461d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/terrain-layers/tile_0_0.bin",
+      "sha": "da0b3c8750d63461d21c2b7867d709e1ab62986b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/terrain-physics.hcs2",
+      "sha": "7c99b46124a936520365eb3f90bf7ff4c21a7645"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/tile_0_0.png",
+      "sha": "6d1dace87be68df542b7f22b68049fc9c16c26cc"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/verification.json",
+      "sha": "37c173af8bd9baaa26e53956f35e3a33d724f129"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-10/terrain-world/world.properties",
+      "sha": "f621a47ac51967f570ba473c86e7377cfa0ec146"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-13/terrain-world/adaptive-topology.bin",
+      "sha": "3b7f3d0dd9e93248a003622724883cb243b92560"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-13/terrain-world/authored-cuts.tsv",
+      "sha": "6370f1cf594b2ec7b49c026fa2fea9ad1a567400"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-13/terrain-world/authored-path-grading.sha256",
+      "sha": "724ce6cb595b926c7312fddb92a591219e43840e"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-13/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "49193462d85e63f475465e788a9f8372c4a27eca"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-13/terrain-world/scene-package/meshes/site-0-0.obj",
+      "sha": "c5c0ee5d3e4ed3bc449e8b1db12c917219868159"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-13/terrain-world/scene-package/meshes/site-0-1.obj",
+      "sha": "e17a9d647a333543cf1fb1ba794c018082363406"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-13/terrain-world/scene-package/meshes/site-1-0.obj",
+      "sha": "e8987214f30d0aed8b103e48d0312edcd009abe7"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-13/terrain-world/scene-package/meshes/site-1-1.obj",
+      "sha": "75ae299a83793b05c8dba5fcb7af9116a265c677"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-13/terrain-world/scene-package/scene.bin",
+      "sha": "4976d09fb187736063221dd69e8a65dee95c6d16"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-13/terrain-world/source-provenance.json",
+      "sha": "2b56b85f341d5102ded2a3fd1f9b9ac27482e69a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-13/terrain-world/terrain-layers/tile_0_0.bin",
+      "sha": "822620c976954392bae1e30db95b715f4c78f08a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-13/terrain-world/terrain-physics.hcs2",
+      "sha": "eb62b56d0a5367d315b9dbec28c3a25e34882fcf"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-13/terrain-world/tile_0_0.png",
+      "sha": "316a580a8a8d1ccf7efce382927994b3f9523780"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-13/terrain-world/verification.json",
+      "sha": "801e1af61e0dad4c2b7383ad4a6f577a71b910b9"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-13/terrain-world/world.properties",
+      "sha": "20a43911bc49ef21b5b68cfa4e24c9fc9432d551"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world/adaptive-topology.bin",
+      "sha": "9eeec3931f7ef2925511bd1fe28cd10d8046f530"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world/authored-cuts.tsv",
+      "sha": "586e5290500f8a70f048855c17e210ee1fc988df"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world/authored-path-grading.sha256",
+      "sha": "a620b178991904a1da164f07eec3b95519cf0bd9"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "06669f17b3be4809883cc3b98cbe48d603aedf9c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world/scene-package/meshes/site.obj",
+      "sha": "aa5705329e70da495833990656610849e81ed9b2"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world/scene-package/scene.bin",
+      "sha": "633612c5dc9e3e5b0c4935c5344200cf45ae2702"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world/source-provenance.json",
+      "sha": "78eecdfe69ffc5c69e7071e9d124b23ce83e0dfe"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world/terrain-layers/tile_0_0.bin",
+      "sha": "cd5b21c5bac524763ae78bb2fcf00e812bb26ad3"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world/terrain-physics.hcs2",
+      "sha": "710f66e95714284da0741cfb01a7b470f3f8afb5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world/tile_0_0.png",
+      "sha": "2002c340260f60902cc7a11db5cc744c64bb56b6"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world/verification.json",
+      "sha": "b051c17b1eb02b9c264437a2f8e2d9155f4d60e9"
+    },
+    {
+      "path": "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world/world.properties",
+      "sha": "85df1d00c258e4b6bd2f478cd04c0e0a4f03bcd0"
+    },
+    {
+      "path": "development/levels/rebuild/stage-register.json",
+      "sha": "c4340caaaa0eb6bc768e825d197c2011e38b70ee"
+    },
+    {
+      "path": "development/quality/DEFECT_LEDGER.md",
+      "sha": "0237090c75d9cf80360af40416b82028f0b8b7ef"
+    },
+    {
+      "path": "development/quality/defects.json",
+      "sha": "3723980e99c3a93250f586defbacb945cf209678"
+    },
+    {
+      "path": "tools/audit_current_flat_routes.py",
+      "sha": "c16e2d80c228c2c7e439bb8fe97e81136ede66a8"
+    },
+    {
+      "path": "tools/audit_macroterrain_fit.py",
+      "sha": "f95fb5940cbc985513e127f38c23adb2ed5069f6"
+    },
+    {
+      "path": "tools/audit_roster_stairs.py",
+      "sha": "37abfd82b5997a444d33a84d003bc131c2879c17"
+    },
+    {
+      "path": "tools/author_flat_terrain.py",
+      "sha": "20a3c392ee28be2c249187e454f26f7d6cc56e68"
+    },
+    {
+      "path": "tools/build_cut_walkway_beds.py",
+      "sha": "96062a8dac67c4b58ddf1ac994d8d6a958d1254f"
+    },
+    {
+      "path": "tools/build_development_gallery.py",
+      "sha": "a1c458df28c2e5e2f80687a82c049f46547c5741"
+    },
+    {
+      "path": "tools/compare_native_standing.py",
+      "sha": "5a33266ab112b250db03190c004023e696462e7f"
+    },
+    {
+      "path": "tools/compose_flat_terrain.py",
+      "sha": "a15b26788487162f0aecb4cdb967b54f7b7e700b"
+    },
+    {
+      "path": "tools/index_staged_map_models.py",
+      "sha": "2be263992c32f4c6bce93dc7d05c1e3100b770cd"
+    },
+    {
+      "path": "tools/plan_flat_terrain_repairs.py",
+      "sha": "3bb42262f0c05c8e09511356f99b9c3ee6faab58"
+    },
+    {
+      "path": "tools/review_flat_terrain.py",
+      "sha": "35af2f2285ae401fb7d68c5d5f4b0e34505222c9"
+    },
+    {
+      "path": "tools/roster_candidate_sources.py",
+      "sha": "c9ad1af25d3e2f52e22ccbd07a161dfcb2b97a47"
+    },
+    {
+      "path": "tools/update_flat_terrain_checkpoint.py",
+      "sha": "c004ec06e38e036f08eb5f498966ac7f929547e9"
+    }
+  ],
+  "gallery_observations": [
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
+      "status": 200,
+      "sha256": "f3113929a9810b2793fd9dc20ef25d8744fb54eb6734eb885cf6cc55f2d3fd39"
+    },
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/development/levels/rebuild/captures/flat-terrain-batch/academy-terrain-pilot-sheet.png",
+      "status": 404
+    }
+  ],
+  "limitation": "Remote source delivery only; new gallery image deployment pending accepted integration. No gameplay or hardware acceptance inferred."
+}

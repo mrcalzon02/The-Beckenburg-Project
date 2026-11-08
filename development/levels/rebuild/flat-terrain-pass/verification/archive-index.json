@@ -117,6 +117,42 @@
       "archive_bytes": 133264,
       "archive_sha256": "5d86c6aa3b61aac94c2e06fea025eb7cab554ca2f0f83b8da3f29f2b745f4256",
       "encoding": "gzip, exact original raw bytes including Java CRLF"
+    },
+    {
+      "original_path": "development/levels/rebuild/flat-terrain-pass/verification/current-flat-failure-input.tsv",
+      "archive_path": "development/levels/rebuild/flat-terrain-pass/verification/current-flat-failure-input.tsv.gz",
+      "original_bytes": 3231700,
+      "original_sha256": "f94b27dd385439817a3104a5191ffe50d7baead7588d5634bde7023f627f1840",
+      "archive_bytes": 111061,
+      "archive_sha256": "fa71711aa73441cb5101a30577cdfa7813f73ad2220cdde15f04200371f44409",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    },
+    {
+      "original_path": "development/levels/rebuild/flat-terrain-pass/verification/current-flat-lane-input.tsv",
+      "archive_path": "development/levels/rebuild/flat-terrain-pass/verification/current-flat-lane-input.tsv.gz",
+      "original_bytes": 56540751,
+      "original_sha256": "98361e70d5568866c7aeb5a448bd1159fafd29bd0c619025bdd4a32233ba6b0c",
+      "archive_bytes": 1152248,
+      "archive_sha256": "51c0f0e0e5f00126771ff3ecb5fffd9cd23a181e57497bca2642bbf6d5b731ba",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    },
+    {
+      "original_path": "development/levels/rebuild/flat-terrain-pass/verification/current-flat-lanes.tsv",
+      "archive_path": "development/levels/rebuild/flat-terrain-pass/verification/current-flat-lanes.tsv.gz",
+      "original_bytes": 10449380,
+      "original_sha256": "67c7ccaaaeda3df6989c941c13f9d125c51e7e68a8df70113932b2818e7814fb",
+      "archive_bytes": 789222,
+      "archive_sha256": "1d0a527c68e415f5f127c4a54c399f4f4a1eb7a4148c82507715fce6f2f4c26a",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    },
+    {
+      "original_path": "development/levels/rebuild/flat-terrain-pass/verification/native-route-probes.tsv",
+      "archive_path": "development/levels/rebuild/flat-terrain-pass/verification/native-route-probes.tsv.gz",
+      "original_bytes": 10240458,
+      "original_sha256": "f458c6aaa3d09662152ae837af614b89f73f48fb6688e004f0229eea85b5eaaa",
+      "archive_bytes": 1046282,
+      "archive_sha256": "5471be5907b6b93dd2810957d82eeb5c738b54f0b94a46ef067e921d427ff096",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
     }
   ],
   "scope": "Large raw TSVs archived after terminal verification. JSON evidence hashes still identify exact decoded original bytes; reconstruct with --restore-to build/flat-evidence-replay. Original absolute payload references remain historical and SHA-bound."

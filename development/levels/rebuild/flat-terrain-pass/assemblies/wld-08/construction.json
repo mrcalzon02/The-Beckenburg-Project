@@ -1,0 +1,3008 @@
+{
+  "id": "WLD-08",
+  "stair_components": [
+    "141:L17 flight0 step1",
+    "142:L17 flight0 step2",
+    "143:L17 flight0 step3",
+    "144:L17 flight0 step4",
+    "145:L17 flight0 step5",
+    "146:L17 flight0 step6",
+    "147:L17 flight0 step7",
+    "148:L17 flight0 step8",
+    "149:L17 flight0 step9",
+    "150:L17 flight0 step10",
+    "151:L17 flight0 step11",
+    "152:L17 flight0 step12",
+    "153:L17 flight0 step13",
+    "154:L17 flight0 step14",
+    "155:L18 flight0 step1",
+    "156:L18 flight0 step2",
+    "157:L18 flight0 step3",
+    "158:L18 flight0 step4",
+    "159:L18 flight0 step5",
+    "160:L18 flight0 step6",
+    "161:L18 flight0 step7",
+    "162:L18 flight0 step8",
+    "163:L18 flight0 step9",
+    "164:L18 flight0 step10",
+    "165:L18 flight0 step11",
+    "166:L18 flight0 step12",
+    "167:L18 flight0 step13",
+    "168:L18 flight0 step14",
+    "170:L20 flight0 step1",
+    "171:L20 flight0 step2",
+    "172:L20 flight0 step3",
+    "173:L20 flight0 step4",
+    "174:L20 flight0 step5",
+    "175:L20 flight0 step6",
+    "176:L20 flight0 step7",
+    "177:L20 flight0 step8",
+    "178:L20 flight0 step9",
+    "179:L20 flight0 step10",
+    "180:L20 flight0 step11",
+    "181:L20 flight0 step12",
+    "182:L20 flight0 step13",
+    "183:L20 flight0 step14"
+  ],
+  "source_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {},
+    "L17": {
+      "0": 0
+    },
+    "L18": {
+      "0": 0
+    },
+    "L19": {},
+    "L20": {
+      "0": 0
+    }
+  },
+  "status": "SAVED_EDITOR_CIRCULATION_TERRAIN_SOURCE_CANDIDATE_NOT_MAP_ACCEPTANCE",
+  "source_contract": "development/levels/rebuild/arrival-bearing-pass/wld-08/construction.json",
+  "source_contract_sha256": "e0fda60ff9c1a4ccab3bc219a13de475ab91f2aab8dc44b6731d28cac40eec87",
+  "source_glb": "development/levels/rebuild/arrival-bearing-pass/wld-08/supported-arrival.glb",
+  "source_glb_sha256": "8d8ed465a39e9310a2c5908377338efa62d55ac9a026842910cd446a2576d45f",
+  "source_physics": "development/levels/rebuild/arrival-bearing-pass/wld-08/supported-arrival.hcs2",
+  "source_physics_sha256": "705681e346e1447d24dff4ea01a9130945d4a230934aa770f99ee7efe051b25e",
+  "before_layout": "development/levels/rebuild/arrival-bearing-pass/wld-08/authored-layout.json",
+  "before_layout_sha256": "d2d564a1ebfc3c28645256bd056a8387badcf491c8482e1492760b280525360f",
+  "before_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {},
+    "L17": {
+      "0": 0
+    },
+    "L18": {
+      "0": 0
+    },
+    "L19": {},
+    "L20": {
+      "0": 0
+    }
+  },
+  "before_stair_components": [
+    "141:L17 flight0 step1",
+    "142:L17 flight0 step2",
+    "143:L17 flight0 step3",
+    "144:L17 flight0 step4",
+    "145:L17 flight0 step5",
+    "146:L17 flight0 step6",
+    "147:L17 flight0 step7",
+    "148:L17 flight0 step8",
+    "149:L17 flight0 step9",
+    "150:L17 flight0 step10",
+    "151:L17 flight0 step11",
+    "152:L17 flight0 step12",
+    "153:L17 flight0 step13",
+    "154:L17 flight0 step14",
+    "155:L18 flight0 step1",
+    "156:L18 flight0 step2",
+    "157:L18 flight0 step3",
+    "158:L18 flight0 step4",
+    "159:L18 flight0 step5",
+    "160:L18 flight0 step6",
+    "161:L18 flight0 step7",
+    "162:L18 flight0 step8",
+    "163:L18 flight0 step9",
+    "164:L18 flight0 step10",
+    "165:L18 flight0 step11",
+    "166:L18 flight0 step12",
+    "167:L18 flight0 step13",
+    "168:L18 flight0 step14",
+    "170:L20 flight0 step1",
+    "171:L20 flight0 step2",
+    "172:L20 flight0 step3",
+    "173:L20 flight0 step4",
+    "174:L20 flight0 step5",
+    "175:L20 flight0 step6",
+    "176:L20 flight0 step7",
+    "177:L20 flight0 step8",
+    "178:L20 flight0 step9",
+    "179:L20 flight0 step10",
+    "180:L20 flight0 step11",
+    "181:L20 flight0 step12",
+    "182:L20 flight0 step13",
+    "183:L20 flight0 step14"
+  ],
+  "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/authored-layout.json",
+  "layout_sha256": "6de892b4bbd059d683eb2bf1e55f38e5e5729c2ec7f22a0ace2452c905ed59bf",
+  "glb_sha256": "e85f127c0b172025d64eeee0c96d84cda65c0c9cc4ff3c088596f8d77f4a68b1",
+  "physics_sha256": "8331f6aa356abcbb32563cdc7c5160e1e945d892ce1aac765f039980c98fa0d2",
+  "removed_source_meshes": [
+    "Saved editor macroterrain WLD-08"
+  ],
+  "removed_native_parts": [
+    "terrain-site-0-0:surface",
+    "terrain-site-0-1:surface",
+    "terrain-site-1-0:surface",
+    "terrain-site-1-1:surface"
+  ],
+  "new_terrain_mesh": "Saved editor circulation terrain WLD-08",
+  "native_terrain_parts": [
+    "terrain-site-0-0:surface",
+    "terrain-site-1-0:surface",
+    "terrain-site-0-1:surface",
+    "terrain-site-1-1:surface"
+  ],
+  "new_closed_parts": [
+    "Rooted cut walkway WLD-08 0",
+    "Rooted cut walkway WLD-08 1",
+    "Rooted cut walkway WLD-08 2",
+    "Rooted cut walkway WLD-08 3",
+    "Rooted cut walkway WLD-08 4",
+    "Rooted cut walkway WLD-08 5",
+    "Rooted cut walkway WLD-08 6",
+    "Rooted cut walkway WLD-08 7",
+    "Rooted cut walkway WLD-08 8",
+    "Rooted cut walkway WLD-08 9",
+    "Rooted cut walkway WLD-08 10",
+    "Rooted cut walkway WLD-08 11",
+    "Rooted cut walkway WLD-08 12",
+    "Rooted cut walkway WLD-08 13",
+    "Rooted cut walkway WLD-08 14",
+    "Rooted cut walkway WLD-08 15",
+    "Rooted cut walkway WLD-08 16",
+    "Rooted cut walkway WLD-08 17",
+    "Rooted cut walkway WLD-08 18",
+    "Rooted cut walkway WLD-08 19",
+    "Rooted cut walkway WLD-08 20",
+    "Rooted cut walkway WLD-08 21",
+    "Rooted cut walkway WLD-08 22",
+    "Rooted cut walkway WLD-08 23",
+    "Rooted cut walkway WLD-08 24",
+    "Rooted cut walkway WLD-08 25",
+    "Rooted cut walkway WLD-08 26",
+    "Rooted cut walkway WLD-08 27",
+    "Rooted cut walkway WLD-08 28",
+    "Rooted cut walkway WLD-08 29",
+    "Rooted cut walkway WLD-08 30",
+    "Rooted cut walkway WLD-08 31",
+    "Rooted cut walkway WLD-08 32",
+    "Rooted cut walkway WLD-08 33"
+  ],
+  "new_closed_triangles": 344,
+  "world": "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world",
+  "world_files_sha256": {
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/adaptive-topology.bin": "bd109d05ae6c1414e690c9c44ec31923dcfa728cc291d519e6476ed54d0b8723",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/authored-cuts.tsv": "7b17b4e01fac94acf7388ecebb347f2b750a6b391f66d615c33cbffc8e2846fd",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/authored-path-grading.sha256": "d20bd54680f93b907f5d71a7686e023ea9454b6f76ce9f16026f445efb59b8f1",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/source-provenance.json": "952460910bd0f5e3a7eb0c17734389ab57fb77c21cd7bb205d9c7d4b5b158ae5",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/terrain-physics.hcs2": "80affa5b80eadec91498217ade0ce34656f21355a158bb77ebe8d663a0b6b1ec",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/tile_0_0.png": "52520d8fc7a747f2e846e536faad13fb232175b73087ecb15ab23facdbf6ae21",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/verification.json": "8777c8266eb7529abcb096d6addaedb2cb7bea325ccc95c270efc1817f216cc5",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/world.properties": "061685389ee0cafd56f51b8af8571f0f84d49ab32d7806ba8c2c3df0a6639c64",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/scene-package/.scene.bin.editor.previous": "7f7b12bc3a24fd448599a6d21a9a7bb794fde07e9e68c8360a3a60c7c17a83f9",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/scene-package/scene.bin": "95d32ab67d5c766f1e57b05c9eb5bd936ba9b88d8b7cd59a32f0213651c78b54",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/terrain-layers/tile_0_0.bin": "779a6e6d8c774bc964b3b14421d09cfb7cb0af94791f5819eb6071cd2a1ee716",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/scene-package/meshes/site-0-0.obj": "4c7c8e77defdc55c00f6416f54e51d707fb3f6a04a7eee1b14e27aad12d1df53",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/scene-package/meshes/site-0-1.obj": "41d530a1df283ba61656215ea1f3b9f652ef45fb50f9d9baf36125353222ff95",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/scene-package/meshes/site-1-0.obj": "2276e2d4bf74419e2fdd81bb04c1fc5b8a86858a624181ba9f253645fe9ebd2a",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world/scene-package/meshes/site-1-1.obj": "d8d0c28efa93230b3a1a22432744f3bc96978abb04a8df18fdb5c8e1f1bac45c"
+  },
+  "footing_extensions": [],
+  "unresolved_footings": [],
+  "rooted_walkway_beds": [
+    {
+      "name": "Rooted cut walkway WLD-08 0",
+      "link": "L16",
+      "footprint": [
+        [
+          54.8,
+          14.0
+        ],
+        [
+          54.8,
+          13.200000000000003
+        ],
+        [
+          54.0,
+          14.0
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          54.8,
+          14.0
+        ],
+        [
+          54.8,
+          13.200000000000003
+        ],
+        [
+          54.0,
+          14.0
+        ],
+        [
+          54.8,
+          13.600000000000001
+        ],
+        [
+          54.4,
+          13.600000000000001
+        ],
+        [
+          54.4,
+          14.0
+        ],
+        [
+          54.53333333333333,
+          13.733333333333334
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 2389,
+      "receiver_native_triangle_xyz": [
+        55.0,
+        -0.20000000298023224,
+        13.0,
+        54.0,
+        -0.20000000298023224,
+        14.0,
+        56.0,
+        -0.20000000298023224,
+        14.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 1",
+      "link": "L16",
+      "footprint": [
+        [
+          54.8,
+          13.200000000000003
+        ],
+        [
+          54.8,
+          13.0
+        ],
+        [
+          54.0,
+          13.0
+        ],
+        [
+          54.0,
+          14.0
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          54.8,
+          13.200000000000003
+        ],
+        [
+          54.8,
+          13.0
+        ],
+        [
+          54.0,
+          13.0
+        ],
+        [
+          54.0,
+          14.0
+        ],
+        [
+          54.8,
+          13.100000000000001
+        ],
+        [
+          54.4,
+          13.0
+        ],
+        [
+          54.0,
+          13.5
+        ],
+        [
+          54.4,
+          13.600000000000001
+        ],
+        [
+          54.4,
+          13.3
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 2390,
+      "receiver_native_triangle_xyz": [
+        55.0,
+        -0.20000000298023224,
+        13.0,
+        54.0,
+        -0.20000000298023224,
+        12.0,
+        54.0,
+        -0.20000000298023224,
+        14.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 2",
+      "link": "L16",
+      "footprint": [
+        [
+          54.8,
+          14.799999999999997
+        ],
+        [
+          54.8,
+          14.0
+        ],
+        [
+          54.0,
+          14.0
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          54.8,
+          14.799999999999997
+        ],
+        [
+          54.8,
+          14.0
+        ],
+        [
+          54.0,
+          14.0
+        ],
+        [
+          54.8,
+          14.399999999999999
+        ],
+        [
+          54.4,
+          14.0
+        ],
+        [
+          54.4,
+          14.399999999999999
+        ],
+        [
+          54.53333333333333,
+          14.266666666666666
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 2453,
+      "receiver_native_triangle_xyz": [
+        55.0,
+        -0.20000000298023224,
+        15.0,
+        56.0,
+        -0.20000000298023224,
+        14.0,
+        54.0,
+        -0.20000000298023224,
+        14.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 3",
+      "link": "L16",
+      "footprint": [
+        [
+          54.0,
+          15.0
+        ],
+        [
+          54.8,
+          15.0
+        ],
+        [
+          54.8,
+          14.799999999999997
+        ],
+        [
+          54.0,
+          14.0
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          54.0,
+          15.0
+        ],
+        [
+          54.8,
+          15.0
+        ],
+        [
+          54.8,
+          14.799999999999997
+        ],
+        [
+          54.0,
+          14.0
+        ],
+        [
+          54.4,
+          15.0
+        ],
+        [
+          54.8,
+          14.899999999999999
+        ],
+        [
+          54.4,
+          14.399999999999999
+        ],
+        [
+          54.0,
+          14.5
+        ],
+        [
+          54.4,
+          14.7
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 2456,
+      "receiver_native_triangle_xyz": [
+        55.0,
+        -0.20000000298023224,
+        15.0,
+        54.0,
+        -0.20000000298023224,
+        14.0,
+        54.0,
+        -0.20000000298023224,
+        16.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 4",
+      "link": "L16",
+      "footprint": [
+        [
+          56.0,
+          14.0
+        ],
+        [
+          56.0,
+          13.0
+        ],
+        [
+          55.0,
+          13.0
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          56.0,
+          14.0
+        ],
+        [
+          56.0,
+          13.0
+        ],
+        [
+          55.0,
+          13.0
+        ],
+        [
+          56.0,
+          13.5
+        ],
+        [
+          55.5,
+          13.0
+        ],
+        [
+          55.5,
+          13.5
+        ],
+        [
+          55.666666666666664,
+          13.333333333333334
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 2388,
+      "receiver_native_triangle_xyz": [
+        55.0,
+        -0.20000000298023224,
+        13.0,
+        56.0,
+        -0.20000000298023224,
+        14.0,
+        56.0,
+        -0.20000000298023224,
+        12.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 5",
+      "link": "L16",
+      "footprint": [
+        [
+          55.0,
+          13.0
+        ],
+        [
+          54.8,
+          13.200000000000003
+        ],
+        [
+          54.8,
+          14.0
+        ],
+        [
+          56.0,
+          14.0
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          55.0,
+          13.0
+        ],
+        [
+          54.8,
+          13.200000000000003
+        ],
+        [
+          54.8,
+          14.0
+        ],
+        [
+          56.0,
+          14.0
+        ],
+        [
+          54.9,
+          13.100000000000001
+        ],
+        [
+          54.8,
+          13.600000000000001
+        ],
+        [
+          55.4,
+          14.0
+        ],
+        [
+          55.5,
+          13.5
+        ],
+        [
+          55.15,
+          13.55
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 2389,
+      "receiver_native_triangle_xyz": [
+        55.0,
+        -0.20000000298023224,
+        13.0,
+        54.0,
+        -0.20000000298023224,
+        14.0,
+        56.0,
+        -0.20000000298023224,
+        14.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 6",
+      "link": "L16",
+      "footprint": [
+        [
+          55.0,
+          13.0
+        ],
+        [
+          54.8,
+          13.0
+        ],
+        [
+          54.8,
+          13.200000000000003
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          55.0,
+          13.0
+        ],
+        [
+          54.8,
+          13.0
+        ],
+        [
+          54.8,
+          13.200000000000003
+        ],
+        [
+          54.9,
+          13.0
+        ],
+        [
+          54.8,
+          13.100000000000001
+        ],
+        [
+          54.9,
+          13.100000000000001
+        ],
+        [
+          54.86666666666667,
+          13.066666666666668
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 2390,
+      "receiver_native_triangle_xyz": [
+        55.0,
+        -0.20000000298023224,
+        13.0,
+        54.0,
+        -0.20000000298023224,
+        12.0,
+        54.0,
+        -0.20000000298023224,
+        14.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 7",
+      "link": "L16",
+      "footprint": [
+        [
+          56.6,
+          14.0
+        ],
+        [
+          56.6,
+          13.399999999999999
+        ],
+        [
+          56.0,
+          14.0
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          56.6,
+          14.0
+        ],
+        [
+          56.6,
+          13.399999999999999
+        ],
+        [
+          56.0,
+          14.0
+        ],
+        [
+          56.6,
+          13.7
+        ],
+        [
+          56.3,
+          13.7
+        ],
+        [
+          56.3,
+          14.0
+        ],
+        [
+          56.4,
+          13.799999999999999
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 2393,
+      "receiver_native_triangle_xyz": [
+        57.0,
+        -0.20000000298023224,
+        13.0,
+        56.0,
+        -0.20000000298023224,
+        14.0,
+        58.0,
+        -0.20000000298023224,
+        14.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 8",
+      "link": "L16",
+      "footprint": [
+        [
+          56.6,
+          13.399999999999999
+        ],
+        [
+          56.6,
+          13.0
+        ],
+        [
+          56.0,
+          13.0
+        ],
+        [
+          56.0,
+          14.0
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          56.6,
+          13.399999999999999
+        ],
+        [
+          56.6,
+          13.0
+        ],
+        [
+          56.0,
+          13.0
+        ],
+        [
+          56.0,
+          14.0
+        ],
+        [
+          56.6,
+          13.2
+        ],
+        [
+          56.3,
+          13.0
+        ],
+        [
+          56.0,
+          13.5
+        ],
+        [
+          56.3,
+          13.7
+        ],
+        [
+          56.3,
+          13.35
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 2394,
+      "receiver_native_triangle_xyz": [
+        57.0,
+        -0.20000000298023224,
+        13.0,
+        56.0,
+        -0.20000000298023224,
+        12.0,
+        56.0,
+        -0.20000000298023224,
+        14.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 9",
+      "link": "L16",
+      "footprint": [
+        [
+          55.0,
+          15.0
+        ],
+        [
+          56.0,
+          14.0
+        ],
+        [
+          54.8,
+          14.0
+        ],
+        [
+          54.8,
+          14.799999999999997
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          55.0,
+          15.0
+        ],
+        [
+          56.0,
+          14.0
+        ],
+        [
+          54.8,
+          14.0
+        ],
+        [
+          54.8,
+          14.799999999999997
+        ],
+        [
+          55.5,
+          14.5
+        ],
+        [
+          55.4,
+          14.0
+        ],
+        [
+          54.8,
+          14.399999999999999
+        ],
+        [
+          54.9,
+          14.899999999999999
+        ],
+        [
+          55.150000000000006,
+          14.45
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 2453,
+      "receiver_native_triangle_xyz": [
+        55.0,
+        -0.20000000298023224,
+        15.0,
+        56.0,
+        -0.20000000298023224,
+        14.0,
+        54.0,
+        -0.20000000298023224,
+        14.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 10",
+      "link": "L16",
+      "footprint": [
+        [
+          55.0,
+          15.0
+        ],
+        [
+          56.0,
+          15.0
+        ],
+        [
+          56.0,
+          14.0
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          55.0,
+          15.0
+        ],
+        [
+          56.0,
+          15.0
+        ],
+        [
+          56.0,
+          14.0
+        ],
+        [
+          55.5,
+          15.0
+        ],
+        [
+          56.0,
+          14.5
+        ],
+        [
+          55.5,
+          14.5
+        ],
+        [
+          55.666666666666664,
+          14.666666666666666
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 2454,
+      "receiver_native_triangle_xyz": [
+        55.0,
+        -0.20000000298023224,
+        15.0,
+        56.0,
+        -0.20000000298023224,
+        16.0,
+        56.0,
+        -0.20000000298023224,
+        14.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 11",
+      "link": "L16",
+      "footprint": [
+        [
+          54.8,
+          15.0
+        ],
+        [
+          55.0,
+          15.0
+        ],
+        [
+          54.8,
+          14.799999999999997
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          54.8,
+          15.0
+        ],
+        [
+          55.0,
+          15.0
+        ],
+        [
+          54.8,
+          14.799999999999997
+        ],
+        [
+          54.9,
+          15.0
+        ],
+        [
+          54.9,
+          14.899999999999999
+        ],
+        [
+          54.8,
+          14.899999999999999
+        ],
+        [
+          54.86666666666667,
+          14.933333333333332
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 2456,
+      "receiver_native_triangle_xyz": [
+        55.0,
+        -0.20000000298023224,
+        15.0,
+        54.0,
+        -0.20000000298023224,
+        14.0,
+        54.0,
+        -0.20000000298023224,
+        16.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 12",
+      "link": "L16",
+      "footprint": [
+        [
+          56.6,
+          14.600000000000001
+        ],
+        [
+          56.6,
+          14.0
+        ],
+        [
+          56.0,
+          14.0
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          56.6,
+          14.600000000000001
+        ],
+        [
+          56.6,
+          14.0
+        ],
+        [
+          56.0,
+          14.0
+        ],
+        [
+          56.6,
+          14.3
+        ],
+        [
+          56.3,
+          14.0
+        ],
+        [
+          56.3,
+          14.3
+        ],
+        [
+          56.4,
+          14.200000000000001
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 2457,
+      "receiver_native_triangle_xyz": [
+        57.0,
+        -0.20000000298023224,
+        15.0,
+        58.0,
+        -0.20000000298023224,
+        14.0,
+        56.0,
+        -0.20000000298023224,
+        14.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 13",
+      "link": "L16",
+      "footprint": [
+        [
+          56.0,
+          15.0
+        ],
+        [
+          56.6,
+          15.0
+        ],
+        [
+          56.6,
+          14.600000000000001
+        ],
+        [
+          56.0,
+          14.0
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          56.0,
+          15.0
+        ],
+        [
+          56.6,
+          15.0
+        ],
+        [
+          56.6,
+          14.600000000000001
+        ],
+        [
+          56.0,
+          14.0
+        ],
+        [
+          56.3,
+          15.0
+        ],
+        [
+          56.6,
+          14.8
+        ],
+        [
+          56.3,
+          14.3
+        ],
+        [
+          56.0,
+          14.5
+        ],
+        [
+          56.3,
+          14.65
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 2460,
+      "receiver_native_triangle_xyz": [
+        57.0,
+        -0.20000000298023224,
+        15.0,
+        56.0,
+        -0.20000000298023224,
+        14.0,
+        56.0,
+        -0.20000000298023224,
+        16.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 14",
+      "link": "L16",
+      "footprint": [
+        [
+          58.0,
+          14.0
+        ],
+        [
+          58.0,
+          13.316540294223362
+        ],
+        [
+          57.28778433799744,
+          13.0
+        ],
+        [
+          57.0,
+          13.0
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          58.0,
+          14.0
+        ],
+        [
+          58.0,
+          13.316540294223362
+        ],
+        [
+          57.28778433799744,
+          13.0
+        ],
+        [
+          57.0,
+          13.0
+        ],
+        [
+          58.0,
+          13.658270147111681
+        ],
+        [
+          57.64389216899872,
+          13.158270147111681
+        ],
+        [
+          57.14389216899872,
+          13.0
+        ],
+        [
+          57.5,
+          13.5
+        ],
+        [
+          57.57194608449936,
+          13.32913507355584
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 2392,
+      "receiver_native_triangle_xyz": [
+        57.0,
+        -0.20000000298023224,
+        13.0,
+        58.0,
+        -0.20000000298023224,
+        14.0,
+        58.0,
+        -0.20000000298023224,
+        12.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 15",
+      "link": "L16",
+      "footprint": [
+        [
+          57.0,
+          13.0
+        ],
+        [
+          56.6,
+          13.399999999999999
+        ],
+        [
+          56.6,
+          14.0
+        ],
+        [
+          58.0,
+          14.0
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          57.0,
+          13.0
+        ],
+        [
+          56.6,
+          13.399999999999999
+        ],
+        [
+          56.6,
+          14.0
+        ],
+        [
+          58.0,
+          14.0
+        ],
+        [
+          56.8,
+          13.2
+        ],
+        [
+          56.6,
+          13.7
+        ],
+        [
+          57.3,
+          14.0
+        ],
+        [
+          57.5,
+          13.5
+        ],
+        [
+          57.05,
+          13.6
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 2393,
+      "receiver_native_triangle_xyz": [
+        57.0,
+        -0.20000000298023224,
+        13.0,
+        56.0,
+        -0.20000000298023224,
+        14.0,
+        58.0,
+        -0.20000000298023224,
+        14.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 16",
+      "link": "L16",
+      "footprint": [
+        [
+          57.0,
+          13.0
+        ],
+        [
+          56.6,
+          13.0
+        ],
+        [
+          56.6,
+          13.399999999999999
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          57.0,
+          13.0
+        ],
+        [
+          56.6,
+          13.0
+        ],
+        [
+          56.6,
+          13.399999999999999
+        ],
+        [
+          56.8,
+          13.0
+        ],
+        [
+          56.6,
+          13.2
+        ],
+        [
+          56.8,
+          13.2
+        ],
+        [
+          56.73333333333333,
+          13.133333333333333
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 2394,
+      "receiver_native_triangle_xyz": [
+        57.0,
+        -0.20000000298023224,
+        13.0,
+        56.0,
+        -0.20000000298023224,
+        12.0,
+        56.0,
+        -0.20000000298023224,
+        14.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 17",
+      "link": "L16",
+      "footprint": [
+        [
+          57.0,
+          15.0
+        ],
+        [
+          58.0,
+          14.0
+        ],
+        [
+          56.6,
+          14.0
+        ],
+        [
+          56.6,
+          14.600000000000001
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          57.0,
+          15.0
+        ],
+        [
+          58.0,
+          14.0
+        ],
+        [
+          56.6,
+          14.0
+        ],
+        [
+          56.6,
+          14.600000000000001
+        ],
+        [
+          57.5,
+          14.5
+        ],
+        [
+          57.3,
+          14.0
+        ],
+        [
+          56.6,
+          14.3
+        ],
+        [
+          56.8,
+          14.8
+        ],
+        [
+          57.05,
+          14.4
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 2457,
+      "receiver_native_triangle_xyz": [
+        57.0,
+        -0.20000000298023224,
+        15.0,
+        58.0,
+        -0.20000000298023224,
+        14.0,
+        56.0,
+        -0.20000000298023224,
+        14.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 18",
+      "link": "L16",
+      "footprint": [
+        [
+          57.0,
+          15.0
+        ],
+        [
+          58.0,
+          15.0
+        ],
+        [
+          58.0,
+          14.0
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          57.0,
+          15.0
+        ],
+        [
+          58.0,
+          15.0
+        ],
+        [
+          58.0,
+          14.0
+        ],
+        [
+          57.5,
+          15.0
+        ],
+        [
+          58.0,
+          14.5
+        ],
+        [
+          57.5,
+          14.5
+        ],
+        [
+          57.666666666666664,
+          14.666666666666666
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 2458,
+      "receiver_native_triangle_xyz": [
+        57.0,
+        -0.20000000298023224,
+        15.0,
+        58.0,
+        -0.20000000298023224,
+        16.0,
+        58.0,
+        -0.20000000298023224,
+        14.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 19",
+      "link": "L16",
+      "footprint": [
+        [
+          56.6,
+          15.0
+        ],
+        [
+          57.0,
+          15.0
+        ],
+        [
+          56.6,
+          14.600000000000001
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          56.6,
+          15.0
+        ],
+        [
+          57.0,
+          15.0
+        ],
+        [
+          56.6,
+          14.600000000000001
+        ],
+        [
+          56.8,
+          15.0
+        ],
+        [
+          56.8,
+          14.8
+        ],
+        [
+          56.6,
+          14.8
+        ],
+        [
+          56.73333333333333,
+          14.866666666666667
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 2460,
+      "receiver_native_triangle_xyz": [
+        57.0,
+        -0.20000000298023224,
+        15.0,
+        56.0,
+        -0.20000000298023224,
+        14.0,
+        56.0,
+        -0.20000000298023224,
+        16.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 20",
+      "link": "L16",
+      "footprint": [
+        [
+          58.4,
+          14.0
+        ],
+        [
+          58.4,
+          13.600000000000001
+        ],
+        [
+          58.0,
+          14.0
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          58.4,
+          14.0
+        ],
+        [
+          58.4,
+          13.600000000000001
+        ],
+        [
+          58.0,
+          14.0
+        ],
+        [
+          58.4,
+          13.8
+        ],
+        [
+          58.2,
+          13.8
+        ],
+        [
+          58.2,
+          14.0
+        ],
+        [
+          58.26666666666667,
+          13.866666666666667
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 4253,
+      "receiver_native_triangle_xyz": [
+        59.0,
+        -0.20000000298023224,
+        13.0,
+        58.0,
+        -0.20000000298023224,
+        14.0,
+        60.0,
+        -0.20000000298023224,
+        14.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 21",
+      "link": "L16",
+      "footprint": [
+        [
+          58.4,
+          13.600000000000001
+        ],
+        [
+          58.4,
+          13.494318072001139
+        ],
+        [
+          58.0,
+          13.316540294223362
+        ],
+        [
+          58.0,
+          14.0
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          58.4,
+          13.600000000000001
+        ],
+        [
+          58.4,
+          13.494318072001139
+        ],
+        [
+          58.0,
+          13.316540294223362
+        ],
+        [
+          58.0,
+          14.0
+        ],
+        [
+          58.4,
+          13.54715903600057
+        ],
+        [
+          58.2,
+          13.40542918311225
+        ],
+        [
+          58.0,
+          13.658270147111681
+        ],
+        [
+          58.2,
+          13.8
+        ],
+        [
+          58.2,
+          13.602714591556126
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 4254,
+      "receiver_native_triangle_xyz": [
+        59.0,
+        -0.20000000298023224,
+        13.0,
+        58.0,
+        -0.20000000298023224,
+        12.0,
+        58.0,
+        -0.20000000298023224,
+        14.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 22",
+      "link": "L16",
+      "footprint": [
+        [
+          58.4,
+          14.399999999999999
+        ],
+        [
+          58.4,
+          14.0
+        ],
+        [
+          58.0,
+          14.0
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          58.4,
+          14.399999999999999
+        ],
+        [
+          58.4,
+          14.0
+        ],
+        [
+          58.0,
+          14.0
+        ],
+        [
+          58.4,
+          14.2
+        ],
+        [
+          58.2,
+          14.0
+        ],
+        [
+          58.2,
+          14.2
+        ],
+        [
+          58.26666666666667,
+          14.133333333333333
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 4310,
+      "receiver_native_triangle_xyz": [
+        59.0,
+        -0.20000000298023224,
+        15.0,
+        60.0,
+        -0.20000000298023224,
+        14.0,
+        58.0,
+        -0.20000000298023224,
+        14.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 23",
+      "link": "L16",
+      "footprint": [
+        [
+          58.0,
+          15.0
+        ],
+        [
+          58.4,
+          15.0
+        ],
+        [
+          58.4,
+          14.399999999999999
+        ],
+        [
+          58.0,
+          14.0
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          58.0,
+          15.0
+        ],
+        [
+          58.4,
+          15.0
+        ],
+        [
+          58.4,
+          14.399999999999999
+        ],
+        [
+          58.0,
+          14.0
+        ],
+        [
+          58.2,
+          15.0
+        ],
+        [
+          58.4,
+          14.7
+        ],
+        [
+          58.2,
+          14.2
+        ],
+        [
+          58.0,
+          14.5
+        ],
+        [
+          58.2,
+          14.6
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 4313,
+      "receiver_native_triangle_xyz": [
+        59.0,
+        -0.20000000298023224,
+        15.0,
+        58.0,
+        -0.20000000298023224,
+        14.0,
+        58.0,
+        -0.20000000298023224,
+        16.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 24",
+      "link": "L16",
+      "footprint": [
+        [
+          59.53778433799744,
+          14.0
+        ],
+        [
+          58.47316441169152,
+          13.526835588308481
+        ],
+        [
+          58.4,
+          13.600000000000001
+        ],
+        [
+          58.4,
+          14.0
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          59.53778433799744,
+          14.0
+        ],
+        [
+          58.47316441169152,
+          13.526835588308481
+        ],
+        [
+          58.4,
+          13.600000000000001
+        ],
+        [
+          58.4,
+          14.0
+        ],
+        [
+          59.00547437484448,
+          13.76341779415424
+        ],
+        [
+          58.43658220584576,
+          13.56341779415424
+        ],
+        [
+          58.4,
+          13.8
+        ],
+        [
+          58.96889216899872,
+          14.0
+        ],
+        [
+          58.702737187422244,
+          13.78170889707712
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 4253,
+      "receiver_native_triangle_xyz": [
+        59.0,
+        -0.20000000298023224,
+        13.0,
+        58.0,
+        -0.20000000298023224,
+        14.0,
+        60.0,
+        -0.20000000298023224,
+        14.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 25",
+      "link": "L16",
+      "footprint": [
+        [
+          58.47316441169152,
+          13.526835588308481
+        ],
+        [
+          58.4,
+          13.494318072001139
+        ],
+        [
+          58.4,
+          13.600000000000001
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          58.47316441169152,
+          13.526835588308481
+        ],
+        [
+          58.4,
+          13.494318072001139
+        ],
+        [
+          58.4,
+          13.600000000000001
+        ],
+        [
+          58.43658220584576,
+          13.510576830154811
+        ],
+        [
+          58.4,
+          13.54715903600057
+        ],
+        [
+          58.43658220584576,
+          13.56341779415424
+        ],
+        [
+          58.4243881372305,
+          13.54038455343654
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 4254,
+      "receiver_native_triangle_xyz": [
+        59.0,
+        -0.20000000298023224,
+        13.0,
+        58.0,
+        -0.20000000298023224,
+        12.0,
+        58.0,
+        -0.20000000298023224,
+        14.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 26",
+      "link": "L16",
+      "footprint": [
+        [
+          59.0,
+          15.0
+        ],
+        [
+          59.8577797963069,
+          14.142220203693096
+        ],
+        [
+          59.53778433799744,
+          14.0
+        ],
+        [
+          58.4,
+          14.0
+        ],
+        [
+          58.4,
+          14.399999999999999
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          59.0,
+          15.0
+        ],
+        [
+          59.8577797963069,
+          14.142220203693096
+        ],
+        [
+          59.53778433799744,
+          14.0
+        ],
+        [
+          58.4,
+          14.0
+        ],
+        [
+          58.4,
+          14.399999999999999
+        ],
+        [
+          59.42888989815345,
+          14.571110101846548
+        ],
+        [
+          59.69778206715217,
+          14.071110101846548
+        ],
+        [
+          58.96889216899872,
+          14.0
+        ],
+        [
+          58.4,
+          14.2
+        ],
+        [
+          58.7,
+          14.7
+        ],
+        [
+          59.039112826860865,
+          14.308444040738618
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 4310,
+      "receiver_native_triangle_xyz": [
+        59.0,
+        -0.20000000298023224,
+        15.0,
+        60.0,
+        -0.20000000298023224,
+        14.0,
+        58.0,
+        -0.20000000298023224,
+        14.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 27",
+      "link": "L16",
+      "footprint": [
+        [
+          59.0,
+          15.0
+        ],
+        [
+          60.0,
+          15.0
+        ],
+        [
+          60.0,
+          14.20542918311225
+        ],
+        [
+          59.85777979630691,
+          14.142220203693096
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          59.0,
+          15.0
+        ],
+        [
+          60.0,
+          15.0
+        ],
+        [
+          60.0,
+          14.20542918311225
+        ],
+        [
+          59.85777979630691,
+          14.142220203693096
+        ],
+        [
+          59.5,
+          15.0
+        ],
+        [
+          60.0,
+          14.602714591556126
+        ],
+        [
+          59.92888989815346,
+          14.173824693402672
+        ],
+        [
+          59.42888989815346,
+          14.571110101846548
+        ],
+        [
+          59.71444494907673,
+          14.586912346701336
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 4311,
+      "receiver_native_triangle_xyz": [
+        59.0,
+        -0.20000000298023224,
+        15.0,
+        60.0,
+        -0.20000000298023224,
+        16.0,
+        60.0,
+        -0.20000000298023224,
+        14.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 28",
+      "link": "L16",
+      "footprint": [
+        [
+          58.4,
+          15.0
+        ],
+        [
+          59.0,
+          15.0
+        ],
+        [
+          58.4,
+          14.399999999999999
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          58.4,
+          15.0
+        ],
+        [
+          59.0,
+          15.0
+        ],
+        [
+          58.4,
+          14.399999999999999
+        ],
+        [
+          58.7,
+          15.0
+        ],
+        [
+          58.7,
+          14.7
+        ],
+        [
+          58.4,
+          14.7
+        ],
+        [
+          58.6,
+          14.799999999999999
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 4313,
+      "receiver_native_triangle_xyz": [
+        59.0,
+        -0.20000000298023224,
+        15.0,
+        58.0,
+        -0.20000000298023224,
+        14.0,
+        58.0,
+        -0.20000000298023224,
+        16.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 29",
+      "link": "L16",
+      "footprint": [
+        [
+          60.0,
+          15.0
+        ],
+        [
+          60.2,
+          15.0
+        ],
+        [
+          60.2,
+          14.29431807200114
+        ],
+        [
+          60.0,
+          14.20542918311225
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000596046443,
+      "terrain_probe_points": [
+        [
+          60.0,
+          15.0
+        ],
+        [
+          60.2,
+          15.0
+        ],
+        [
+          60.2,
+          14.29431807200114
+        ],
+        [
+          60.0,
+          14.20542918311225
+        ],
+        [
+          60.1,
+          15.0
+        ],
+        [
+          60.2,
+          14.64715903600057
+        ],
+        [
+          60.1,
+          14.249873627556696
+        ],
+        [
+          60.0,
+          14.602714591556126
+        ],
+        [
+          60.1,
+          14.624936813778348
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000596046447,
+        -0.20000000596046447,
+        -0.20000000298023224,
+        -0.20000000447034838,
+        -0.20000000596046447,
+        -0.20000000447034835,
+        -0.20000000298023224,
+        -0.20000000447034835
+      ],
+      "receiver_native_triangle_index": 4317,
+      "receiver_native_triangle_xyz": [
+        61.0,
+        -0.20000001788139343,
+        15.0,
+        60.0,
+        -0.20000000298023224,
+        14.0,
+        60.0,
+        -0.20000000298023224,
+        16.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 30",
+      "link": "L16",
+      "footprint": [
+        [
+          61.555554627891226,
+          15.0
+        ],
+        [
+          62.0,
+          15.0
+        ],
+        [
+          62.0,
+          14.0
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.3500000137421889,
+      "terrain_probe_points": [
+        [
+          61.555554627891226,
+          15.0
+        ],
+        [
+          62.0,
+          15.0
+        ],
+        [
+          62.0,
+          14.0
+        ],
+        [
+          61.77777731394561,
+          15.0
+        ],
+        [
+          62.0,
+          14.5
+        ],
+        [
+          61.77777731394561,
+          14.5
+        ],
+        [
+          61.85185154263041,
+          14.666666666666666
+        ]
+      ],
+      "terrain_y": [
+        -0.2000000137421889,
+        -0.20000001043081284,
+        -0.20000000298023224,
+        -0.20000001208650087,
+        -0.20000000670552254,
+        -0.20000000836121057,
+        -0.20000000905107798
+      ],
+      "receiver_native_triangle_index": 4315,
+      "receiver_native_triangle_xyz": [
+        61.0,
+        -0.20000001788139343,
+        15.0,
+        62.0,
+        -0.20000001788139343,
+        16.0,
+        62.0,
+        -0.20000000298023224,
+        14.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 31",
+      "link": "L16",
+      "footprint": [
+        [
+          61.0,
+          15.0
+        ],
+        [
+          61.24239518092229,
+          14.757604819077711
+        ],
+        [
+          60.36977252960205,
+          14.369772529602049
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000001788139345,
+      "terrain_probe_points": [
+        [
+          61.0,
+          15.0
+        ],
+        [
+          61.24239518092229,
+          14.757604819077711
+        ],
+        [
+          60.36977252960205,
+          14.369772529602049
+        ],
+        [
+          61.12119759046114,
+          14.878802409538856
+        ],
+        [
+          60.80608385526217,
+          14.563688674339879
+        ],
+        [
+          60.68488626480102,
+          14.684886264801024
+        ],
+        [
+          60.870722570174784,
+          14.709125782893253
+        ]
+      ],
+      "terrain_y": [
+        -0.20000001788139343,
+        -0.20000001426942376,
+        -0.2000000084902723,
+        -0.2000000160754086,
+        -0.20000001137984805,
+        -0.20000001318583288,
+        -0.20000001354702984
+      ],
+      "receiver_native_triangle_index": 4314,
+      "receiver_native_triangle_xyz": [
+        61.0,
+        -0.20000001788139343,
+        15.0,
+        62.0,
+        -0.20000000298023224,
+        14.0,
+        60.0,
+        -0.20000000298023224,
+        14.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 32",
+      "link": "L16",
+      "footprint": [
+        [
+          61.0,
+          15.0
+        ],
+        [
+          61.555554627891226,
+          15.0
+        ],
+        [
+          61.5938606262207,
+          14.913811683654785
+        ],
+        [
+          61.24239518092229,
+          14.757604819077711
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000001788139345,
+      "terrain_probe_points": [
+        [
+          61.0,
+          15.0
+        ],
+        [
+          61.555554627891226,
+          15.0
+        ],
+        [
+          61.5938606262207,
+          14.913811683654785
+        ],
+        [
+          61.24239518092229,
+          14.757604819077711
+        ],
+        [
+          61.27777731394561,
+          15.0
+        ],
+        [
+          61.574707627055965,
+          14.956905841827393
+        ],
+        [
+          61.418127903571495,
+          14.835708251366249
+        ],
+        [
+          61.12119759046114,
+          14.878802409538856
+        ],
+        [
+          61.34795260875856,
+          14.917854125683125
+        ]
+      ],
+      "terrain_y": [
+        -0.20000001788139343,
+        -0.2000000137421889,
+        -0.20000001281463398,
+        -0.20000001426942376,
+        -0.20000001581179117,
+        -0.20000001327841144,
+        -0.20000001354202887,
+        -0.2000000160754086,
+        -0.20000001467691003
+      ],
+      "receiver_native_triangle_index": 4315,
+      "receiver_native_triangle_xyz": [
+        61.0,
+        -0.20000001788139343,
+        15.0,
+        62.0,
+        -0.20000001788139343,
+        16.0,
+        62.0,
+        -0.20000000298023224,
+        14.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-08 33",
+      "link": "L16",
+      "footprint": [
+        [
+          60.2,
+          15.0
+        ],
+        [
+          61.0,
+          15.0
+        ],
+        [
+          60.36977252960205,
+          14.369772529602049
+        ],
+        [
+          60.2,
+          14.29431807200114
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000001788139345,
+      "terrain_probe_points": [
+        [
+          60.2,
+          15.0
+        ],
+        [
+          61.0,
+          15.0
+        ],
+        [
+          60.36977252960205,
+          14.369772529602049
+        ],
+        [
+          60.2,
+          14.29431807200114
+        ],
+        [
+          60.6,
+          15.0
+        ],
+        [
+          60.68488626480102,
+          14.684886264801024
+        ],
+        [
+          60.28488626480103,
+          14.332045300801594
+        ],
+        [
+          60.2,
+          14.64715903600057
+        ],
+        [
+          60.44244313240051,
+          14.666022650400796
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000596046447,
+        -0.20000001788139343,
+        -0.2000000084902723,
+        -0.20000000596046447,
+        -0.20000001192092898,
+        -0.20000001318583288,
+        -0.2000000072253684,
+        -0.20000000596046447,
+        -0.20000000957314867
+      ],
+      "receiver_native_triangle_index": 4317,
+      "receiver_native_triangle_xyz": [
+        61.0,
+        -0.20000001788139343,
+        15.0,
+        60.0,
+        -0.20000000298023224,
+        14.0,
+        60.0,
+        -0.20000000298023224,
+        16.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    }
+  ],
+  "deferred_walkway_beds": [],
+  "walkway_builder_sha256": "8821a2bb2fe8077e2aace17d1538676ebe95cc72d8197fe83cd470ae6566b454",
+  "reused_rejected_arrival_cap": [],
+  "composer_sha256": "3711886e11c108841bf2326646417e4ac79c7e7a9ef638b9e4f981d880796f41",
+  "remaining": "Actual native/current-route/standing/vertical regression, physical footing probes, exported/editable/visual checks and all per-map terrain/edge/runtime/services/art/network/hardware gates; no unlock or production-ready claim."
+}
