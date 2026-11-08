@@ -210,6 +210,27 @@ public final class EditorUvRelaxTest {
         crossed.applyPreview(crossed.previewUvPins(crossedId,-1,true));var inverted=crossed.snapshot();
         try{crossed.previewUnwrap(crossedId);throw new AssertionError("Folded fixed layout accepted");}
         catch(IllegalArgumentException expected){check(expected.getMessage().contains("folds") && crossed.snapshot()==inverted,"Pinned fold refusal");}
+        var adjacent=imported(dir,"neighbor","""
+            v 0 0 0
+            v 1 0 0
+            v 0 1 0
+            v 1 1 0
+            vt 0 0
+            vt 1 0
+            vt .25 .5
+            vt 0 2
+            vt 1 2
+            f 1/1 2/2 3/3
+            f 3/4 2/2 4/5
+            """);
+        long firstId=adjacent.snapshot().faces().get(0).id();
+        adjacent.applyPreview(adjacent.previewUvPins(firstId,0,true));adjacent.applyPreview(adjacent.previewUvPins(firstId,1,true));
+        var split=adjacent.snapshot();
+        try{adjacent.previewUnwrap(firstId);throw new AssertionError("Unwrap silently joined a UV discontinuity");}
+        catch(IllegalArgumentException expected){check(expected.getMessage().contains("retain the cut") && adjacent.snapshot()==split,"Seam preservation refusal");}
+        adjacent.applyPreview(adjacent.previewSeam(firstId,1,true));
+        var neighbor=adjacent.snapshot().faces().get(1);
+        check(adjacent.previewUnwrap(firstId).snapshot().faces().get(1)==neighbor,"Explicit seam allows coincident UVs without joining the neighbor");
         var cone=imported(dir,"cone","""
             v 0 0 0
             v 1 0 0

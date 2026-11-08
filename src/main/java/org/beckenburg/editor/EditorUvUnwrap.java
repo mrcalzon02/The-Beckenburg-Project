@@ -232,6 +232,19 @@ final class EditorUvUnwrap {
         }
         return String.format(Locale.ROOT,"%.2f°",Math.toDegrees(Math.sqrt(sum/(3*island.length))));
     }
+    private void preserveCuts(List<Face> faces){
+        for(int i=0;i<chart.cut.length;i++)if(chart.cut[i]){
+            int edgeIndex=island[i/3]*3+i%3;
+            var edge=graph.edges().get(edgeIndex);int twin=edge.twin();
+            if(twin<0 || !edge.uvSeam())continue;
+            var face=faces.get(island[i/3]);var adjacent=faces.get(twin/3);
+            if(face.marked(i%3)||adjacent.marked(twin%3)||!face.material().equals(adjacent.material()))continue;
+            var a=corner(face,i%3);var b=corner(face,(i+1)%3);
+            var otherA=corner(adjacent,(twin+1)%3);var otherB=corner(adjacent,twin%3);
+            if(a.u()==otherA.u() && a.v()==otherA.v() && b.u()==otherB.u() && b.v()==otherB.v())
+                throw new IllegalArgumentException("Unwrap would join an existing UV seam; mark that edge to retain the cut");
+        }
+    }
     Result solve(){
         optimize();
         for(int i=0;i<uv.length;i++){
@@ -256,6 +269,7 @@ final class EditorUvUnwrap {
             if(moved){faces.set(island[i],f.withCorners(corners[0],corners[1],corners[2]));changed=true;}
         }
         if(!changed)throw new IllegalArgumentException("Chart already has the fitted UV coordinates");
+        preserveCuts(faces);
         return new Result(faces,"RMS angle error "+angleError(state.faces())+" → "+angleError(faces));
     }
 }
