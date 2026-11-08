@@ -732,5 +732,6 @@
     "new_closed_parts": 766,
     "rooted_walkway_probes": 6091,
     "scope": "Counts cover tested_sites only. Immutable earlier controls and unchanged sources are not silently counted as rerun. No map/runtime/landscape acceptance."
-  }
+  },
+  "implementation_source_sha": "8d21dcae430bb232c8f9b4c397ca6101275b1974"
 }

@@ -18,3 +18,5 @@ Actual results:
 Three failed studies retain nine exact model/native/editable sources, generation drivers, raw probe archives and actual PNGs: soil-only support loss (20 new standing failures), whole-strip receiver rejection (7), and boundary-ray misses (3). Final roots use their exact backing triangle planes, independently verified against actual native bytes. Failed controls are never substituted with later passing output.
 
 Read roster.json active_sources for the exact next 25 construction sources and all 29 explicit packet decisions. Verification and raw archive bindings are in verification/. Run python tools/archive_flat_verification.py --root development/levels/rebuild/flat-terrain-pass --check to validate decoded raw bytes. No local editor UI, timed round test, runtime unlock or installed hardware claim. Gallery source publication and actual live deployment are observed separately.
+
+Published full-batch implementation: 8d21dcae430bb232c8f9b4c397ca6101275b1974. verification/publication-readback.json verifies the complete pilot/final source union and records actual pending gallery deployment.
