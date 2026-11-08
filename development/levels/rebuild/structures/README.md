@@ -26,18 +26,16 @@ the exported boundary is ray-checked. Terrain support, enclosure returns and
 around/under/over bypasses remain actual runtime audit obligations. A threshold
 ray alone is not proof of a completely bounded forty-space playable envelope.
 
-Final native verification covers **131,219 triangles**, **6,932 closed solids**,
-**2,077 measured floor/deck parts**, **739 cap rays**, **1,538 stair treads** and
-**192 fixed-link boundary checks** across the25exports. Every GLB was independently
-reimported and every native source reopened. Original source scenes and inputs
-were independently hash-checked unchanged. `verification.json` supplies per-site
-counts, basements and unresolved routes.
-
-Eight distinct links still require authored longer flights/switchbacks or a
-different elevation solution: WLD03/L13; WLD04/L13,L14; WLD05/L15;
-WLD10/L16,L19; WLD12/L16; WLD15/route14. They remain rough support masses, not
-accepted stairs. The source has16 diagnostic records for these8links. Treads
-elsewhere still need actual capsule, landing, guard and headroom verification.
+Final native verification covers **129,747 triangles**, **6,562 closed solids**,
+**1,528 measured floor/deck parts**, **559 cap rays**, **1,720 stair treads** and
+**192 fixed-link boundary checks** across25 independently reimported exports.
+Source scenes and original inputs are hash-preserved. The eight formerly
+unbuildable links now have revised source flights; the monastery west stair was
+also separated from the north shaft. See the route checkpoint for actual HCS2
+probes. All506 revised-site tread centres have support and clear spine rays,
+but capsule/traversability failures remain open (DEV-361). These are not playable
+acceptance results. Rectangular and circular aperture sliver defects were repaired
+without relaxing the exported closed-solid gate (DEV-362).
 
 ## Bounded visual review
 
@@ -51,13 +49,13 @@ surface quality, circulation, light separation or support against finished earth
 
 Visible remaining work includes neutral unfinished caps instead of final exterior
 roof forms; omitted or proposal-only terrain; unsupported diagram route strips;
-Prison infill awaiting full enclosure/earth returns; and the8unresolved links.
+Prison infill awaiting full enclosure/earth returns; and the remaining runtime movement failures.
 No source library assets are discarded or replaced by these neutral blocks.
 
 ## Next breadth passes
 
 1. Bridge each authored coordinate source into native/runtime geometry, room
-   ownership and collision; resolve the8links and sweep all required routes.
+   ownership and collision; repair measured capsule failures and sweep all required routes.
 2. Author actual terrain and persisted editor holes for the listed basements;
    fit foundations, drainage, world boundaries and canonical van placement.
 3. Audit the unified reusable model library against each site's functional

@@ -1,0 +1,46 @@
+{
+  "scope": "Native structural blocking only; seven sheets with both exported views of25sites actually viewed",
+  "views": [
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-01.png",
+      "sha256": "43f32a775f03f99ba88fea2f44de084f7f2ebcd4fa0266e869cfa97214ce543b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-02.png",
+      "sha256": "25cac546a886c7aec921d3b836df5f2bd4343c6aa8926f9a7dbb96747c339e32"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-03.png",
+      "sha256": "9ca5728ef33258ddae98285648bd35df3f9a1178779bd52289b729f1c65e315b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-04.png",
+      "sha256": "245f61b972d40be8314bb02b04a2d7338b26432730d4d5b85d7965570e64809e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-05.png",
+      "sha256": "8142f17a70bca997670f6c4167b1800b21835b93a4fd64d47921dfd7886ff91a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-06.png",
+      "sha256": "1f7546a12fe2fefaa6fffab58a80f29058b7799a67de97f8710a20333e0d1cd3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-07.png",
+      "sha256": "05f34eef999d25226a2a92b4260aad6047fb840ba823881e5ea3db34a63f1ce5"
+    }
+  ],
+  "ratings_out_of_5": {
+    "rough_program_legibility": 3,
+    "structural_closure": 4,
+    "finished_architecture": 1
+  },
+  "rationale": "Closed/cutaway pairs show courtyard/wings, domestic/outbuilding groups, lighthouse and ship. Neutral cap boxes and unsupported route reservations remain visibly unfinished. Scores are stage-specific, not runtime/visual acceptance.",
+  "observations": [
+    "Lookout separated stair lanes and platforms visible; guards/load-bearing tower remain",
+    "Lighthouse cap is closed, circular deck openings retained; proposal terrain and exact stair clearance unresolved",
+    "All sites need supported source-library furnishings, characteristic roofs and terrain/enclosure finish"
+  ],
+  "runtime": "Candidate collision probe reports failures; no playable unlock",
+  "hash_binding": "Each implementation.json separately binds exact model/source/generator hashes"
+}

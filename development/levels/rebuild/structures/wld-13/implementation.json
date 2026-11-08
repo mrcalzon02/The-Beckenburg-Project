@@ -343,16 +343,16 @@
       "height": 2.45
     }
   ],
-  "meshes": 158,
+  "meshes": 148,
   "issues": [
     {
       "zone": "gallery",
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
+          27.0,
           40.1,
-          36.9,
+          36.0,
           41.9
         ]
       ]
@@ -369,20 +369,20 @@
     "Cold-store doors must always have an interior escape; no powered lock may create a permanent hunt trap."
   ],
   "native_reopened": true,
-  "blend_sha256": "8deba70b4c322605b7aefc0333a2630d3b1a07bafaeef234c594f7c4c6674b7c",
+  "blend_sha256": "7af8475d992f54ff63348034669222fe594ca7d0009a547995d58d18c270a1e2",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
-    "glb_sha256": "259c4b004ca4609808772d7c4446b2a2bb63f866a2ff5563e42c51f7e42d5bda",
+    "glb_sha256": "f5de2ba5de7744c35fa9eb3c9a0ba3f87b1bd7572e095b35d4ee162def89fb29",
     "independently_reimported": true,
-    "meshes": 154,
-    "triangles": 1848,
+    "meshes": 144,
+    "triangles": 1728,
     "floor_parts": 13,
-    "ceiling_cap_parts": 19,
+    "ceiling_cap_parts": 9,
     "stair_treads": 17,
-    "checked_closed_solids": 121,
-    "measured_depth_parts": 32,
-    "exported_cap_rays": 19,
+    "checked_closed_solids": 111,
+    "measured_depth_parts": 22,
+    "exported_cap_rays": 9,
     "fixed_infill_routes": 0,
     "exported_fixed_boundary_checks": [],
     "wall_depth_m": 0.16,
@@ -405,8 +405,8 @@
   },
   "generator_sha256": {
     "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
-    "development/levels/blockouts/build_blockouts.py": "988507821406b3680ea7c27058ee6d39ba86897f5a8321a1c7df9c5b381f18e5",
-    "development/levels/blockouts/structural_pass.py": "0df964bb27e8a3fb2a7cd1cc72abe50f57006338cc6cb4f0025d6a6e9eaaa721",
+    "development/levels/blockouts/build_blockouts.py": "7934ef0d9d2a007aa9ddf0815c08ddd4c78b46a72b5bfb955ee48aa08926550e",
+    "development/levels/blockouts/structural_pass.py": "e761baefa707d59db4d197c203641f1657fdf951c533979fc9d563856010dc14",
     "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
   }
 }

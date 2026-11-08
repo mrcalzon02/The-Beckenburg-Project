@@ -1,8 +1,8 @@
 {
   "id": "WLD-12",
   "title": "Gallows Pass Railway",
-  "source": "layouts\\wld-12\\layout.json",
-  "source_sha256": "a873a8669fdec20b35cdcfdb0c8b97e39b9ef18b26aa545423b61961918b155d",
+  "source": "rebuild\\wld-12\\rough-layout.json",
+  "source_sha256": "fa046a161697963df497145ab559be4608d837140c9e9c375aeb5c5c28c086b8",
   "zones": 14,
   "routes": 18,
   "shell_openings": [
@@ -154,7 +154,7 @@
       "height": 2.45
     }
   ],
-  "meshes": 110,
+  "meshes": 133,
   "issues": [
     {
       "zone": "stage",
@@ -162,15 +162,15 @@
       "openings": [
         [
           29.85,
-          30.85,
-          35.15,
-          33.15
+          28.0,
+          32.15,
+          33.4
         ],
         [
-          9.85,
-          30.85,
-          32.15,
-          43.15
+          10.485704365175048,
+          30.971408730350095,
+          31.51429563482495,
+          43.0285912696499
         ]
       ]
     },
@@ -180,15 +180,15 @@
       "openings": [
         [
           29.85,
-          30.85,
-          35.15,
-          33.15
+          28.0,
+          32.15,
+          33.4
         ],
         [
-          9.85,
-          30.85,
-          32.15,
-          43.15
+          10.485704365175048,
+          30.971408730350095,
+          31.51429563482495,
+          43.0285912696499
         ]
       ]
     },
@@ -198,15 +198,15 @@
       "openings": [
         [
           29.85,
-          30.85,
-          35.15,
-          33.15
+          28.0,
+          32.15,
+          33.4
         ],
         [
-          9.85,
-          30.85,
-          32.15,
-          43.15
+          10.485704365175048,
+          30.971408730350095,
+          31.51429563482495,
+          43.0285912696499
         ]
       ]
     },
@@ -216,15 +216,15 @@
       "openings": [
         [
           29.85,
-          30.85,
-          35.15,
-          33.15
+          28.0,
+          32.15,
+          33.4
         ],
         [
-          9.85,
-          30.85,
-          32.15,
-          43.15
+          10.485704365175048,
+          30.971408730350095,
+          31.51429563482495,
+          43.0285912696499
         ]
       ]
     },
@@ -234,15 +234,15 @@
       "openings": [
         [
           29.85,
-          30.85,
-          35.15,
-          33.15
+          28.0,
+          32.15,
+          33.4
         ],
         [
-          9.85,
-          30.85,
-          32.15,
-          43.15
+          10.485704365175048,
+          30.971408730350095,
+          31.51429563482495,
+          43.0285912696499
         ]
       ]
     },
@@ -252,15 +252,15 @@
       "openings": [
         [
           29.85,
-          30.85,
-          35.15,
-          33.15
+          28.0,
+          32.15,
+          33.4
         ],
         [
-          9.85,
-          30.85,
-          32.15,
-          43.15
+          10.485704365175048,
+          30.971408730350095,
+          31.51429563482495,
+          43.0285912696499
         ]
       ]
     },
@@ -270,15 +270,15 @@
       "openings": [
         [
           29.85,
-          30.85,
-          35.15,
-          33.15
+          28.0,
+          32.15,
+          33.4
         ],
         [
-          9.85,
-          30.85,
-          32.15,
-          43.15
+          10.485704365175048,
+          30.971408730350095,
+          31.51429563482495,
+          43.0285912696499
         ]
       ]
     },
@@ -288,15 +288,15 @@
       "openings": [
         [
           29.85,
-          30.85,
-          35.15,
-          33.15
+          28.0,
+          32.15,
+          33.4
         ],
         [
-          9.85,
-          30.85,
-          32.15,
-          43.15
+          10.485704365175048,
+          30.971408730350095,
+          31.51429563482495,
+          43.0285912696499
         ]
       ]
     },
@@ -306,15 +306,15 @@
       "openings": [
         [
           29.85,
-          30.85,
-          35.15,
-          33.15
+          28.0,
+          32.15,
+          33.4
         ],
         [
-          9.85,
-          30.85,
-          32.15,
-          43.15
+          10.485704365175048,
+          30.971408730350095,
+          31.51429563482495,
+          43.0285912696499
         ]
       ]
     },
@@ -324,15 +324,15 @@
       "openings": [
         [
           29.85,
-          30.85,
-          35.15,
-          33.15
+          28.0,
+          32.15,
+          33.4
         ],
         [
-          9.85,
-          30.85,
-          32.15,
-          43.15
+          10.485704365175048,
+          30.971408730350095,
+          31.51429563482495,
+          43.0285912696499
         ]
       ]
     },
@@ -342,15 +342,15 @@
       "openings": [
         [
           29.85,
-          30.85,
-          35.15,
-          33.15
+          28.0,
+          32.15,
+          33.4
         ],
         [
-          9.85,
-          30.85,
-          32.15,
-          43.15
+          10.485704365175048,
+          30.971408730350095,
+          31.51429563482495,
+          43.0285912696499
         ]
       ]
     },
@@ -360,15 +360,15 @@
       "openings": [
         [
           29.85,
-          30.85,
-          35.15,
-          33.15
+          28.0,
+          32.15,
+          33.4
         ],
         [
-          9.85,
-          30.85,
-          32.15,
-          43.15
+          10.485704365175048,
+          30.971408730350095,
+          31.51429563482495,
+          43.0285912696499
         ]
       ]
     },
@@ -378,32 +378,22 @@
       "openings": [
         [
           29.85,
-          30.85,
-          35.15,
-          33.15
+          28.0,
+          32.15,
+          33.4
         ],
         [
-          9.85,
-          30.85,
-          32.15,
-          43.15
+          10.485704365175048,
+          30.971408730350095,
+          31.51429563482495,
+          43.0285912696499
         ]
       ]
     },
     {
       "link": "L16",
-      "issue": "Stair needs an authored longer flight/switchback; no fake vertical steps",
-      "rise": 3,
-      "run": 3.0,
-      "minimum_run": 4.08
-    },
-    {
-      "link": "L16",
-      "issue": "Elevation support is a rough mass, not an accepted stair or path",
-      "rise": 3,
-      "plan_run": 3.0,
-      "requires_switchbacks": true,
-      "source_note": "Reserve at least 4.8 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
     },
     {
       "link": "L17",
@@ -417,19 +407,19 @@
     "Limit mission to the authored tunnel segment; a locked maintenance end is a visible world boundary, not an infinite railway."
   ],
   "native_reopened": true,
-  "blend_sha256": "a7f83a734ebf31ef86fd4882f98f13303e7072a236f25ef329da25e999f680ea",
+  "blend_sha256": "a5ff45648bc10fc1d595ec908c9181f79d7d3dfcaf8016621730116ccd56beb0",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
-    "glb_sha256": "381552e849cf7ad20e9252f374d69f3634ab0301e34c381d5b8dc5ca5fb11328",
+    "glb_sha256": "499314c22dbae36db7188213a5fc78693d1b6011ed951b094b862e52659e9932",
     "independently_reimported": true,
-    "meshes": 106,
-    "triangles": 1272,
-    "floor_parts": 9,
+    "meshes": 129,
+    "triangles": 1564,
+    "floor_parts": 16,
     "ceiling_cap_parts": 6,
-    "stair_treads": 17,
-    "checked_closed_solids": 79,
-    "measured_depth_parts": 15,
+    "stair_treads": 34,
+    "checked_closed_solids": 103,
+    "measured_depth_parts": 22,
     "exported_cap_rays": 6,
     "fixed_infill_routes": 0,
     "exported_fixed_boundary_checks": [],
@@ -444,17 +434,17 @@
       "Source-matched terrain holes, services, van and LAN integration"
     ]
   },
-  "authoritative_input": "development/levels/layouts/wld-12/layout.json",
+  "authoritative_input": "development/levels/rebuild/wld-12/rough-layout.json",
   "original_scene_preserved": true,
   "preserved_sources": {
-    "development/levels/layouts/wld-12/layout.json": "a873a8669fdec20b35cdcfdb0c8b97e39b9ef18b26aa545423b61961918b155d",
+    "development/levels/rebuild/wld-12/rough-layout.json": "fa046a161697963df497145ab559be4608d837140c9e9c375aeb5c5c28c086b8",
     "development/levels/blockouts/wld-12/rough-shell.blend": "4a91504c0dcfaccd3e515599182494e7918c5c0c6b64f26affbd9b83156bc773",
     "development/levels/blockouts/wld-12/rough-shell.glb": "b1d0d8929cdc63cc5561a5de773fb17e7a5d9aadd4cd16003860837f8aa51f98"
   },
   "generator_sha256": {
     "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
-    "development/levels/blockouts/build_blockouts.py": "988507821406b3680ea7c27058ee6d39ba86897f5a8321a1c7df9c5b381f18e5",
-    "development/levels/blockouts/structural_pass.py": "0df964bb27e8a3fb2a7cd1cc72abe50f57006338cc6cb4f0025d6a6e9eaaa721",
+    "development/levels/blockouts/build_blockouts.py": "7934ef0d9d2a007aa9ddf0815c08ddd4c78b46a72b5bfb955ee48aa08926550e",
+    "development/levels/blockouts/structural_pass.py": "e761baefa707d59db4d197c203641f1657fdf951c533979fc9d563856010dc14",
     "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
   }
 }

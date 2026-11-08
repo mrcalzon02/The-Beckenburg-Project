@@ -1,0 +1,76 @@
+{
+  "status": "MEASURED_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "kernel": "AuthoredSitePhysics from build/beckenburg-game.jar",
+  "kernel_jar_sha256": "8694a06b9483bea77f2af9130c14a4191e868f2389671b4460572f93a75edbe2",
+  "sources": {
+    "WLD-03": {
+      "source_glb_sha256": "a9bd89a1436b456bdd25d96a234b9d65a5c07d65afe9ffdce58a11a938366825",
+      "physics_sha256": "0722c611348fdbd280dded3b2df10b26012a3c6d814fa814aef696883c949240"
+    },
+    "WLD-04": {
+      "source_glb_sha256": "e867c065c029b4f706395e2cf143b80de6db38a2fb6051f4d068079c2856a3b8",
+      "physics_sha256": "6e8e6be4b44db1ee2968d479115a12f8b45e5c3f9acc0c3218d2469b6607d683"
+    },
+    "WLD-05": {
+      "source_glb_sha256": "7f26c7cd8ef9cc1c27756bb195f5f5f567c44917ef135b8649a42fb0998d6ac0",
+      "physics_sha256": "2e1a12095d3b4ccdc7ab330448b8bc5fc2f03782024a0af21603b930bce14347"
+    },
+    "WLD-10": {
+      "source_glb_sha256": "fce4e043a3413ba2ad0c8f5242666b1afd17d13f10d963247b71ff64d566cdbf",
+      "physics_sha256": "b3c7308b7b6eddb70a545df14851697f1ced0fb1fdb3d1559e19279017c0c9ea"
+    },
+    "WLD-12": {
+      "source_glb_sha256": "499314c22dbae36db7188213a5fc78693d1b6011ed951b094b862e52659e9932",
+      "physics_sha256": "1eb1b537a99d857cd8e96f93defad49ba8959a051c691107376a3feec2a0bddd"
+    },
+    "WLD-15": {
+      "source_glb_sha256": "179472b89562a025a6460250e8a570fb53ccab298443313292968273d3f2f1c3",
+      "physics_sha256": "449dc9e3d454d6a9152d60895cf959ea261790b699379f308a24b1d21ee2444a"
+    }
+  },
+  "sites": {
+    "WLD-03": {
+      "treads": 69,
+      "supported": 69,
+      "spine_clear": 69,
+      "body_clear": 46,
+      "traversable": 45
+    },
+    "WLD-04": {
+      "treads": 153,
+      "supported": 153,
+      "spine_clear": 153,
+      "body_clear": 99,
+      "traversable": 96
+    },
+    "WLD-05": {
+      "treads": 114,
+      "supported": 114,
+      "spine_clear": 114,
+      "body_clear": 85,
+      "traversable": 84
+    },
+    "WLD-10": {
+      "treads": 68,
+      "supported": 68,
+      "spine_clear": 68,
+      "body_clear": 3,
+      "traversable": 0
+    },
+    "WLD-12": {
+      "treads": 34,
+      "supported": 34,
+      "spine_clear": 34,
+      "body_clear": 17,
+      "traversable": 16
+    },
+    "WLD-15": {
+      "treads": 68,
+      "supported": 68,
+      "spine_clear": 68,
+      "body_clear": 49,
+      "traversable": 48
+    }
+  },
+  "limitation": "Tread-centre support and spine rays do not prove swept movement. Full body/traversable failures remain blockers; no editor UI or playable unlock."
+}

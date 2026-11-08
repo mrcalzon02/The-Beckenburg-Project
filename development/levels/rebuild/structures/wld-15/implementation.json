@@ -1,8 +1,8 @@
 {
   "id": "WLD-15",
   "title": "MV Saint Elara",
-  "source": "layouts\\wld-15\\layout.json",
-  "source_sha256": "7e73e778acdf196caf28e4be5a9bf264035eb9ffa6f8bdaff413aadf280c10c3",
+  "source": "rebuild\\wld-15\\rough-layout.json",
+  "source_sha256": "61b30866a5835365252340c1c5b13ccebc5119386dd3f11a6e05a6d99ce5c64f",
   "zones": 16,
   "routes": 19,
   "shell_openings": [
@@ -98,13 +98,6 @@
       "height": 2.45
     },
     {
-      "zone": "pump",
-      "side": "W",
-      "link": "route-14",
-      "width": 1.5,
-      "height": 2.45
-    },
-    {
       "zone": "crew",
       "side": "N",
       "link": "route-18",
@@ -140,7 +133,7 @@
       "height": 2.45
     }
   ],
-  "meshes": 172,
+  "meshes": 178,
   "issues": [
     {
       "zone": "stage",
@@ -148,15 +141,15 @@
       "openings": [
         [
           22.1,
-          23.1,
+          24.0,
           23.9,
-          34.9
+          34.0
         ],
         [
-          22.1,
-          -0.9,
-          23.9,
-          3.9
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
         ]
       ]
     },
@@ -166,15 +159,15 @@
       "openings": [
         [
           22.1,
-          23.1,
+          24.0,
           23.9,
-          34.9
+          34.0
         ],
         [
-          22.1,
-          -0.9,
-          23.9,
-          3.9
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
         ]
       ]
     },
@@ -184,15 +177,15 @@
       "openings": [
         [
           22.1,
-          23.1,
+          24.0,
           23.9,
-          34.9
+          34.0
         ],
         [
-          22.1,
-          -0.9,
-          23.9,
-          3.9
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
         ]
       ]
     },
@@ -202,15 +195,15 @@
       "openings": [
         [
           22.1,
-          23.1,
+          24.0,
           23.9,
-          34.9
+          34.0
         ],
         [
-          22.1,
-          -0.9,
-          23.9,
-          3.9
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
         ]
       ]
     },
@@ -220,15 +213,15 @@
       "openings": [
         [
           22.1,
-          23.1,
+          24.0,
           23.9,
-          34.9
+          34.0
         ],
         [
-          22.1,
-          -0.9,
-          23.9,
-          3.9
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
         ]
       ]
     },
@@ -238,15 +231,15 @@
       "openings": [
         [
           22.1,
-          23.1,
+          24.0,
           23.9,
-          34.9
+          34.0
         ],
         [
-          22.1,
-          -0.9,
-          23.9,
-          3.9
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
         ]
       ]
     },
@@ -256,15 +249,15 @@
       "openings": [
         [
           22.1,
-          23.1,
+          24.0,
           23.9,
-          34.9
+          34.0
         ],
         [
-          22.1,
-          -0.9,
-          23.9,
-          3.9
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
         ]
       ]
     },
@@ -274,15 +267,15 @@
       "openings": [
         [
           22.1,
-          23.1,
+          24.0,
           23.9,
-          34.9
+          34.0
         ],
         [
-          22.1,
-          -0.9,
-          23.9,
-          3.9
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
         ]
       ]
     },
@@ -292,15 +285,15 @@
       "openings": [
         [
           22.1,
-          23.1,
+          24.0,
           23.9,
-          34.9
+          34.0
         ],
         [
-          22.1,
-          -0.9,
-          23.9,
-          3.9
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
         ]
       ]
     },
@@ -310,15 +303,15 @@
       "openings": [
         [
           22.1,
-          23.1,
+          24.0,
           23.9,
-          34.9
+          34.0
         ],
         [
-          22.1,
-          -0.9,
-          23.9,
-          3.9
+          28.6,
+          0.09999999999999998,
+          34.6,
+          1.9
         ]
       ]
     },
@@ -328,9 +321,9 @@
       "openings": [
         [
           22.1,
-          35.1,
+          36.0,
           23.9,
-          46.9
+          46.0
         ]
       ]
     },
@@ -340,9 +333,9 @@
       "openings": [
         [
           22.1,
-          13.1,
+          14.0,
           23.9,
-          24.9
+          24.0
         ]
       ]
     },
@@ -352,9 +345,9 @@
       "openings": [
         [
           22.1,
-          35.1,
+          36.0,
           23.9,
-          46.9
+          46.0
         ]
       ]
     },
@@ -365,18 +358,8 @@
     },
     {
       "link": "route-14",
-      "issue": "Stair needs an authored longer flight/switchback; no fake vertical steps",
-      "rise": 3,
-      "run": 3.0,
-      "minimum_run": 4.08
-    },
-    {
-      "link": "route-14",
-      "issue": "Elevation support is a rough mass, not an accepted stair or path",
-      "rise": 3,
-      "plan_run": 9.0,
-      "requires_switchbacks": false,
-      "source_note": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs."
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
     },
     {
       "link": "route-17",
@@ -398,20 +381,20 @@
     "Low-deck cutaway and both independent gangway clearances need review; sea must never fill the hold."
   ],
   "native_reopened": true,
-  "blend_sha256": "ba3b8f2de7d202d51e3aa11a4a4f7458dc334a11cfdef4fb06dd84f79504e1a2",
+  "blend_sha256": "2e401d412a53487ac438ee07b5716c209ac91194143d7c2a56e41c807ac3c31a",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
-    "glb_sha256": "67aa0b212b6cf7fe2627fea022ba0a2518d27a8d91067dc74735fe5b542dd068",
+    "glb_sha256": "179472b89562a025a6460250e8a570fb53ccab298443313292968273d3f2f1c3",
     "independently_reimported": true,
-    "meshes": 168,
-    "triangles": 8757,
-    "floor_parts": 14,
-    "ceiling_cap_parts": 13,
-    "stair_treads": 51,
-    "checked_closed_solids": 147,
-    "measured_depth_parts": 27,
-    "exported_cap_rays": 13,
+    "meshes": 174,
+    "triangles": 8829,
+    "floor_parts": 17,
+    "ceiling_cap_parts": 4,
+    "stair_treads": 68,
+    "checked_closed_solids": 156,
+    "measured_depth_parts": 21,
+    "exported_cap_rays": 4,
     "fixed_infill_routes": 0,
     "exported_fixed_boundary_checks": [],
     "wall_depth_m": 0.16,
@@ -425,17 +408,17 @@
       "Source-matched terrain holes, services, van and LAN integration"
     ]
   },
-  "authoritative_input": "development/levels/layouts/wld-15/layout.json",
+  "authoritative_input": "development/levels/rebuild/wld-15/rough-layout.json",
   "original_scene_preserved": true,
   "preserved_sources": {
-    "development/levels/layouts/wld-15/layout.json": "7e73e778acdf196caf28e4be5a9bf264035eb9ffa6f8bdaff413aadf280c10c3",
+    "development/levels/rebuild/wld-15/rough-layout.json": "61b30866a5835365252340c1c5b13ccebc5119386dd3f11a6e05a6d99ce5c64f",
     "development/levels/blockouts/wld-15/rough-shell.blend": "87b775383b64882aff41699b1638649951f69f4e75f97909b31e2815a6266f24",
     "development/levels/blockouts/wld-15/rough-shell.glb": "b5eb478c1f1e876f453452ca978c361520df47f588568e8bd931c3849da792d5"
   },
   "generator_sha256": {
     "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
-    "development/levels/blockouts/build_blockouts.py": "988507821406b3680ea7c27058ee6d39ba86897f5a8321a1c7df9c5b381f18e5",
-    "development/levels/blockouts/structural_pass.py": "0df964bb27e8a3fb2a7cd1cc72abe50f57006338cc6cb4f0025d6a6e9eaaa721",
+    "development/levels/blockouts/build_blockouts.py": "7934ef0d9d2a007aa9ddf0815c08ddd4c78b46a72b5bfb955ee48aa08926550e",
+    "development/levels/blockouts/structural_pass.py": "e761baefa707d59db4d197c203641f1657fdf951c533979fc9d563856010dc14",
     "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
   }
 }

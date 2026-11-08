@@ -1,8 +1,8 @@
 {
   "id": "WLD-03",
   "title": "Red Mesa Ancestral Caves",
-  "source": "layouts\\wld-03\\layout.json",
-  "source_sha256": "c93985a00ace4efc8391f75d848527dea27d46325c6a029456c39f900b194374",
+  "source": "rebuild\\wld-03\\rough-layout.json",
+  "source_sha256": "c47d8e1884c077d768b9cfe321d0d606937fad5c63e519b84e1cd731ec51a102",
   "zones": 14,
   "routes": 16,
   "shell_openings": [
@@ -168,7 +168,7 @@
       "height": 2.45
     }
   ],
-  "meshes": 149,
+  "meshes": 164,
   "issues": [
     {
       "zone": "lower-path",
@@ -176,9 +176,9 @@
       "openings": [
         [
           10.85,
-          32.85,
+          34.0,
           13.15,
-          53.15
+          52.0
         ]
       ]
     },
@@ -187,16 +187,16 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          10.85,
-          14.85,
-          35.15,
-          35.15
+          11.271776541204147,
+          15.109949105916181,
+          34.72822345879585,
+          34.89005089408382
         ],
         [
           56.1,
-          30.1,
+          26.5,
           57.9,
-          31.9
+          33.5
         ]
       ]
     },
@@ -205,16 +205,16 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          10.85,
-          14.85,
-          35.15,
-          35.15
+          11.271776541204147,
+          15.109949105916181,
+          34.72822345879585,
+          34.89005089408382
         ],
         [
           56.1,
-          30.1,
+          26.5,
           57.9,
-          31.9
+          33.5
         ]
       ]
     },
@@ -223,16 +223,16 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          10.85,
-          14.85,
-          35.15,
-          35.15
+          11.271776541204147,
+          15.109949105916181,
+          34.72822345879585,
+          34.89005089408382
         ],
         [
           56.1,
-          30.1,
+          26.5,
           57.9,
-          31.9
+          33.5
         ]
       ]
     },
@@ -241,16 +241,16 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          10.85,
-          14.85,
-          35.15,
-          35.15
+          11.271776541204147,
+          15.109949105916181,
+          34.72822345879585,
+          34.89005089408382
         ],
         [
           56.1,
-          30.1,
+          26.5,
           57.9,
-          31.9
+          33.5
         ]
       ]
     },
@@ -259,16 +259,16 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          10.85,
-          14.85,
-          35.15,
-          35.15
+          11.271776541204147,
+          15.109949105916181,
+          34.72822345879585,
+          34.89005089408382
         ],
         [
           56.1,
-          30.1,
+          26.5,
           57.9,
-          31.9
+          33.5
         ]
       ]
     },
@@ -278,9 +278,9 @@
       "openings": [
         [
           10.85,
-          32.85,
+          34.0,
           13.15,
-          53.15
+          52.0
         ]
       ]
     },
@@ -290,9 +290,9 @@
       "openings": [
         [
           10.85,
-          32.85,
+          34.0,
           13.15,
-          53.15
+          52.0
         ]
       ]
     },
@@ -301,16 +301,16 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          10.85,
-          14.85,
-          35.15,
-          35.15
+          11.271776541204147,
+          15.109949105916181,
+          34.72822345879585,
+          34.89005089408382
         ],
         [
           56.1,
-          30.1,
+          26.5,
           57.9,
-          31.9
+          33.5
         ]
       ]
     },
@@ -326,18 +326,8 @@
     },
     {
       "link": "L13",
-      "issue": "Stair needs an authored longer flight/switchback; no fake vertical steps",
-      "rise": 4,
-      "run": 0.0,
-      "minimum_run": 5.52
-    },
-    {
-      "link": "L13",
-      "issue": "Elevation support is a rough mass, not an accepted stair or path",
-      "rise": 4,
-      "plan_run": 0.0,
-      "requires_switchbacks": true,
-      "source_note": "Reserve at least 6.4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
     }
   ],
   "source_refinement": [
@@ -346,20 +336,20 @@
     "Modern rite installations must leave the fictional ancient fabric intact; validate all three against ghost interference."
   ],
   "native_reopened": true,
-  "blend_sha256": "92451685530ca4495bc4ac92f9d95e07230f23e6e216e010dcf2281644caeac7",
+  "blend_sha256": "3f88c401d952396c49f350ac9a21b4b8fecf1b0e8114762cdd110f8c6b242030",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
-    "glb_sha256": "ffd691bb6be0d6d24cc4af84ed5e1ecf1a7a1688da53b8091a65b92d46710791",
+    "glb_sha256": "a9bd89a1436b456bdd25d96a234b9d65a5c07d65afe9ffdce58a11a938366825",
     "independently_reimported": true,
-    "meshes": 145,
-    "triangles": 1740,
-    "floor_parts": 24,
-    "ceiling_cap_parts": 7,
-    "stair_treads": 46,
-    "checked_closed_solids": 120,
-    "measured_depth_parts": 31,
-    "exported_cap_rays": 7,
+    "meshes": 160,
+    "triangles": 1940,
+    "floor_parts": 14,
+    "ceiling_cap_parts": 10,
+    "stair_treads": 69,
+    "checked_closed_solids": 136,
+    "measured_depth_parts": 24,
+    "exported_cap_rays": 10,
     "fixed_infill_routes": 0,
     "exported_fixed_boundary_checks": [],
     "wall_depth_m": 0.16,
@@ -373,17 +363,17 @@
       "Source-matched terrain holes, services, van and LAN integration"
     ]
   },
-  "authoritative_input": "development/levels/layouts/wld-03/layout.json",
+  "authoritative_input": "development/levels/rebuild/wld-03/rough-layout.json",
   "original_scene_preserved": true,
   "preserved_sources": {
-    "development/levels/layouts/wld-03/layout.json": "c93985a00ace4efc8391f75d848527dea27d46325c6a029456c39f900b194374",
+    "development/levels/rebuild/wld-03/rough-layout.json": "c47d8e1884c077d768b9cfe321d0d606937fad5c63e519b84e1cd731ec51a102",
     "development/levels/blockouts/wld-03/rough-shell.blend": "b807b01d85fc00fe33f79e1b6aec0ff5df570184e252d376f38500ba60f7d28c",
     "development/levels/blockouts/wld-03/rough-shell.glb": "ee55b508ff0f1e90aab3d4cc30c5ef911c0b5026a990f74a3d2d3a47b67a1719"
   },
   "generator_sha256": {
     "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
-    "development/levels/blockouts/build_blockouts.py": "988507821406b3680ea7c27058ee6d39ba86897f5a8321a1c7df9c5b381f18e5",
-    "development/levels/blockouts/structural_pass.py": "0df964bb27e8a3fb2a7cd1cc72abe50f57006338cc6cb4f0025d6a6e9eaaa721",
+    "development/levels/blockouts/build_blockouts.py": "7934ef0d9d2a007aa9ddf0815c08ddd4c78b46a72b5bfb955ee48aa08926550e",
+    "development/levels/blockouts/structural_pass.py": "e761baefa707d59db4d197c203641f1657fdf951c533979fc9d563856010dc14",
     "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
   }
 }

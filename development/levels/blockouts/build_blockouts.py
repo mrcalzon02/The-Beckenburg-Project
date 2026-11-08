@@ -60,15 +60,28 @@ def slab(zone,holes,c,mat,role='floor',structural=False):
         obj=shaped_slab(zone,c,mat)
         if role!='floor':obj['role']=role;obj.name='Ceiling cap '+zone['id']
         return obj
-    a,b,d,e=zone['bounds'];xs={a,d};zs={b,e}
+    a,b,d,e=zone['bounds']
+    if structural:
+        holes=[h for h in holes if h[2]>a+.0001 and h[0]<d-.0001 and h[3]>b+.0001 and h[1]<e-.0001]
+    xs={a,d};zs={b,e}
     for x0,z0,x1,z1 in holes:
         xs.update([max(a,min(d,x0)),max(a,min(d,x1))]);zs.update([max(b,min(e,z0)),max(b,min(e,z1))])
     xs=sorted(xs);zs=sorted(zs)
+    if structural:
+        # Nearly coincident flight/cap boundaries can create sub-millimetre
+        # cells which collapse in the exported float mesh. Merge construction
+        # planes within 0.1mm, preserving the exact outer slab boundaries.
+        def planes(values,lo,hi):
+            merged=[lo]
+            for value in values:
+                if value-lo>.0001 and hi-value>.0001 and value-merged[-1]>.0001:merged.append(value)
+            return merged+[hi]
+        xs=planes(xs,a,d);zs=planes(zs,b,e)
     for x0,x1 in zip(xs,xs[1:]):
         for z0,z1 in zip(zs,zs[1:]):
             if any(h[0]<(x0+x1)/2<h[2] and h[1]<(z0+z1)/2<h[3] for h in holes):continue
             box(('Floor ' if role=='floor' else 'Ceiling cap ')+zone['id'],(x0+x1)/2,zone['y']-.16,(z0+z1)/2,x1-x0,.16,z1-z0,mat,c,zone=zone['id'],role=role)
-def route_mesh(link,c,mat):
+def route_mesh(link,c,mat,structural_data=None):
     for i,(p,q) in enumerate(zip(link['points'],link['points'][1:])):
         dx=q[0]-p[0];dz=q[2]-p[2];run=math.hypot(dx,dz);width=link['width']
         if run<.01:
@@ -79,6 +92,19 @@ def route_mesh(link,c,mat):
         mesh=bpy.data.meshes.new(link['id']);mesh.from_pydata(vv,[],[(0,3,2,1),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)]);mesh.update()
         o=bpy.data.objects.new(link['id']+' support '+str(i),mesh);c.objects.link(o);mesh.materials.append(mat)
         o['role']='rough route support; stair/ramp engineering unverified';o['clear_width']=width
+        if structural_data and abs(p[1]-q[1])<.01:
+            # Reservation strips must not refill the floor openings already
+            # cut for an actual stair. They share the same authored aperture.
+            from structural_pass import deck_holes
+            for index,(x0,z0,x1,z1) in enumerate(deck_holes(p[1],structural_data)):
+                if x1<=min(p[0],q[0])-width or x0>=max(p[0],q[0])+width or z1<=min(p[2],q[2])-width or z0>=max(p[2],q[2])+width:continue
+                bpy.ops.mesh.primitive_cube_add(size=1,location=((x0+x1)/2,-(z0+z1)/2,p[1]-.06))
+                cutter=bpy.context.object;cutter.dimensions=(x1-x0,z1-z0,.6)
+                bpy.ops.object.transform_apply(location=False,rotation=False,scale=True)
+                bpy.context.view_layer.objects.active=o
+                modifier=o.modifiers.new('Shared stair shaft '+str(index),'BOOLEAN');modifier.operation='DIFFERENCE';modifier.object=cutter
+                bpy.ops.object.modifier_apply(modifier=modifier.name);bpy.data.objects.remove(cutter,do_unlink=True)
+            if not o.data.polygons:bpy.data.objects.remove(o,do_unlink=True)
 def build(path,output_root=None,structural=False):
     data=json.loads(path.read_text(encoding='utf-8'));folder=(output_root or ROOT)/path.parent.name;folder.mkdir(parents=True,exist_ok=True)
     sealed_links=[]
@@ -106,13 +132,13 @@ def build(path,output_root=None,structural=False):
             holes=deck_holes(zone['y'],data)
         from proposal_landforms import keep_slab, shaped_wall
         exterior=zone['kind'] in ['outside','staging']
-        if not(structural and exterior) and ('terrain' not in data or keep_slab(zone,data)):
+        if (not(structural and exterior) or zone.get('constructed_surface')) and ('terrain' not in data or keep_slab(zone,data) or zone.get('constructed_surface')):
             slab(zone,holes,c,outside if zone['kind'] in ['outside','staging'] else floor,structural=structural)
         if structural and not exterior:
             # A real upper floor supplies its underside. Only cap the remainder;
             # never place a second coplanar ceiling over the same upper deck.
             top=zone['y']+zone['height']
-            above=[other['bounds'] for other in data['zones'] if other['kind'] not in ['outside','staging'] and abs(other['y']-top)<.01]
+            above=[other['bounds'] for other in data['zones'] if (other['kind'] not in ['outside','staging'] or other.get('constructed_surface')) and abs(other['y']-top)<.01]
             slab(dict(zone,y=top),deck_holes(top,data)+above,c,floor,role='ceiling-cap',structural=True)
         a,b,d,e=zone['bounds'];h=zone['height']
         if zone.get('shape')=='circle':
@@ -137,7 +163,7 @@ def build(path,output_root=None,structural=False):
         if structural and link['kind']=='stairs':
             from structural_pass import stair_flights
             if stair_flights(link,routes,vertical,box,notes):continue
-        route_mesh(link,routes,route if link['kind']=='level' else vertical)
+        route_mesh(link,routes,route if link['kind']=='level' else vertical,data if structural else None)
         if link['kind']!='level':
             run=sum(math.hypot(q[0]-p[0],q[2]-p[2]) for p,q in zip(link['points'],link['points'][1:]));rise=max(p[1] for p in link['points'])-min(p[1] for p in link['points'])
             notes.append(dict(link=link['id'],issue='Elevation support is a rough mass, not an accepted stair or path',rise=rise,plan_run=run,requires_switchbacks=run<rise*1.6,source_note=link.get('construction',link.get('note',''))))

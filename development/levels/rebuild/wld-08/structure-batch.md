@@ -1,27 +1,25 @@
-# WLD-08: roster structural checkpoint
+# WLD-08: native structural route checkpoint
 
-Source implementation: `c34e4f9f133e220f98348850e961ff268ab84fb7`. S03 remains IN_PROGRESS.
+S03 remains IN_PROGRESS. Source/native/export/generator hashes are bound in
+`../structures/wld-08/implementation.json`. Commit binding is in the
+stage register. Original scenes/layouts are retained.
 
-The actual editable Blender source, GLB and independently reimported views are in
-`../structures/wld-08/`. Its implementation record binds the authored
-input, unchanged original scenes and generator hashes.
+Verified native scope: 2280 triangles; 154 closed
+solids; 44 measured160mm floor/deck parts; 19 cap
+rays; 42 treads; 0 fixed-boundary checks.
 
-Verified native scope: 2292 triangles; 161 checked
-closed solids; 51 measured160mm floor/deck parts;
-10 exported cap rays; 42 stair treads;
-0 authored fixed-link boundary checks.
+Candidate collision is exported from the same GLB triangles into HCS2. Per-map
+headless probe results and exact rejected rows are in
+`../verification/roster-routes-2026-11-07/`. Body/traversability failures remain
+blockers; no map registry unlock or production movement change was made.
 
-Elevation work still needing redesign: No too-short flight flagged by this native pass; actual capsule/headroom/landing/guard tests still required.
+Basements requiring actual persisted editor terrain holes: tunnel, tunnel-n.
 
-Basement zones requiring actual saved editor terrain-hole integration:
-tunnel, tunnel-n
+Native overview/cutaway review is separate from runtime acceptance. Final roof
+forms, guarded landings, complete capsule sweeps, terrain/support/enclosure
+returns, canonical van, source-library furnishings, circuits, hiding budgets,
+light separation and authored story/physics remain open. Preserve at most40
+accessible search spaces. No round-duration tests or local editor UI automation.
 
-Both exported views were inspected in the roster contact sheets. These are
-neutral structural candidates, not finished roof forms or unlocked missions.
-Runtime coordinate parity, continuous capsule routes, headroom/guards, terrain
-support, light separation, complete enclosure returns, canonical van, authored
-power, hiding budgets, supported source-library models and network/hardware
-acceptance remain open. Existing mature maps are not certified by this pass.
-
-Next: continue across the roster with runtime/route and supported model placement
-passes. Preserve the at-most40accessible-space policy. No round-duration tests.
+Next: repair map-specific movement failures and continue the reusable-model
+placement batch with individually supported, functional room arrangements.

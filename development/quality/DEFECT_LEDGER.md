@@ -4924,6 +4924,76 @@ Evidence and verification: development/levels/rebuild/structures/; development/l
 
 Older-map obligation: Castle/House/Blackpine/Hollow Creek are retained and individually unaudited for this new batch; never infer runtime or older-map fixes from native structure checks.
 
+### DEV-359 — Eight remote elevation links have zero or insufficient physical stair run
+
+**Status:** NATIVE ROUTE REDESIGN CHECKPOINT; capsule movement and runtime integration remain open · **Affected:** WLD-03 L13; WLD-04 L13/L14 plus new upper landing link L14B; WLD-05 L15; WLD-10 L16/L19; WLD-12 L16; WLD-15 route14
+
+Eight reservations cannot form 180mm risers / 240mm treads, including zero-run basement/tower links.
+
+Cause / uncertainty: Schematic centre lines were retained without a buildable flight or complete supporting storey.
+
+Fix / next action: Author six revised coordinate sources with measurable flights, separated lookout lanes/landings, continuous cave/tower volumes and explicit constructed railway/ship decks. Preserve original layouts and scenes. Verify actual reimported solids and tread poses. Do not unlock from native results.
+
+Evidence and verification: development/levels/rebuild/verification/roster-routes-2026-11-07/; six revised rough-layout.json; structures/<site>/physics-contract.json and structure-physics.hcs2; tools/audit_roster_routes.py
+
+Older-map obligation: Audit every older map independently for physical stair run, landings, headroom, deck openings, body/edge clearance and supported arrivals. No inherited acceptance.
+
+### DEV-360 — Level route reservation strips refill stair openings and obstruct heads
+
+**Status:** NATIVE SPINE OBSTRUCTIONS CORRECTED; swept capsule acceptance OPEN · **Affected:** Shared structural generator; reproduced WLD-03, WLD-04, WLD-05 and WLD-10; all other packets require individual audits
+
+Six-site headless native query found 45 obstructed tread-centre spine rays despite earlier floor-hole construction.
+
+Cause / uncertainty: Separate level connector strips were exported across the voids already reserved in floor slabs. Monastery L21 also crossed under the north catacomb stair.
+
+Fix / next action: Apply shared stair apertures to horizontal connector supports; move monastery west stair into its own shaft with source-authored level approach. All506 actual tread centres now have support and clear 0.3–1.8m spine rays. Retain rejected probe rows and GLB hashes. Full capsule traversal is not established.
+
+Evidence and verification: development/levels/rebuild/verification/roster-routes-2026-11-07/; six revised rough-layout.json; structures/<site>/physics-contract.json and structure-physics.hcs2; tools/audit_roster_routes.py
+
+Older-map obligation: Audit every older map independently for physical stair run, landings, headroom, deck openings, body/edge clearance and supported arrivals. No inherited acceptance.
+
+### DEV-361 — Native stepped candidates fail current body and traversability queries
+
+**Status:** OPEN; candidate maps remain locked · **Affected:** Six revised remote candidates and potentially other new tread-based sites; existing mature maps not certified
+
+506 supported tread centres with clear spine rays still include capsule/body and four-footprint support failures; monastery has zero traversable tread centres in the current kernel.
+
+Cause / uncertainty: Authored treads, body clearance, edges and the kernel narrow neighbour-height allowance need component-specific diagnosis. Clear centre rays cannot establish a full body sweep.
+
+Fix / next action: Preserve exact per-tread results and hashed HCS2/GLB. Next diagnose per-component capsule contacts and real ascent/descent/edge/wall negatives, then repair measured routes and explicit stair movement integration. Do not weaken global collision or claim playable acceptance.
+
+Evidence and verification: development/levels/rebuild/verification/roster-routes-2026-11-07/; six revised rough-layout.json; structures/<site>/physics-contract.json and structure-physics.hcs2; tools/audit_roster_routes.py
+
+Older-map obligation: Audit every older map independently for physical stair run, landings, headroom, deck openings, body/edge clearance and supported arrivals. No inherited acceptance.
+
+### DEV-362 — Expanded stair apertures create collapsed ceiling sliver cells
+
+**Status:** NATIVE REPAIR VERIFIED across25exports; runtime acceptance remains open · **Affected:** WLD-14 keeper foyer ceiling; shared rectangular slab partitioner
+
+All-roster rebuild rejects reimported Ceiling cap foyer.010 as not closed after expanded shaft openings.
+
+Cause / uncertainty: Nearly coincident partition planes from different stair reservations form tiny cells that collapse under exported float/weld precision. Distant nonintersecting holes also unnecessarily subdivide slabs.
+
+Fix / next action: Preserve failed GLB and failure record. Filter cuts that do not intersect the slab and merge construction planes within0.1mm while retaining exact outer boundaries. Re-export lighthouse pilot, then regenerate coherent25-packet batch and retain closed-solid assertions. Circular aperture cleanup also welds/dissolves only sub0.1mm Boolean noise and recalculates normals. Final25 independent reimports pass6562closed solids and1528measured depth parts.
+
+Evidence and verification: development/levels/rebuild/rejected/route-shaft-sliver-wld14/; development/levels/blockouts/build_blockouts.py slab; roster-routes-2026-11-07 evidence
+
+Older-map obligation: Check every slab family after aperture changes. No unaudited source or circular Boolean mesh inherits acceptance from this rectangular-cell repair.
+
+### DEV-363 — Roster collision probe exposes crossing stairs and terrain covering authored flights
+
+**Status:** OPEN; per-site geometry/terrain repairs required · **Affected:** College L84; Mansion L59/L60; WLD-09 L14/L18; WLD-14 route14/20; WLD-18 route07/08/13/18; mortuary L14/L15
+
+All25 native collision exports load and1720tread centres have support, but90 head-height spine rays are obstructed across these6sites.
+
+Cause / uncertainty: Actual exported triangles identify crossing stair flights, a folded-back landing, gallery/exhibit walls and uncut proposal terrain over underground approaches. Native closed-solid checks cannot establish route clearance.
+
+Fix / next action: Retain exact per-pose overhead component names and hashes. Next separate crossing stair lanes/landings, repair wall passage coordinates and implement actual persisted terrain holes before physical terrain acceptance. Recheck full capsule routes, neighbouring routes and optical/solid negatives. Do not delete terrain visually or weaken collision to pass.
+
+Evidence and verification: development/levels/rebuild/verification/roster-routes-2026-11-07/all25/tread-probes.tsv and route-probes.json; structures/<site>/physics-contract.json
+
+Older-map obligation: Audit retained Castle/House/Blackpine/Hollow Creek separately. Zero-tread WLD-16 is not a route pass. No map is unlocked by this source-wide read-only probe.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

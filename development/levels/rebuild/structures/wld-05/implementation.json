@@ -1,8 +1,8 @@
 {
   "id": "WLD-05",
   "title": "Dead Man's Claim",
-  "source": "layouts\\wld-05\\layout.json",
-  "source_sha256": "5b0ca78e4e8992bd4ae01226f7c745b73fe9881a20a0f0693fd6cff1d15a4970",
+  "source": "rebuild\\wld-05\\rough-layout.json",
+  "source_sha256": "17b6cfd01a82cb37b3ff4e351cd8078f4b60d274752c9a6bf96097a705d8a467",
   "zones": 14,
   "routes": 18,
   "shell_openings": [
@@ -266,22 +266,22 @@
       "height": 2.45
     }
   ],
-  "meshes": 229,
+  "meshes": 251,
   "issues": [
     {
       "zone": "stage",
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.85,
-          29.85,
-          31.15,
-          53.15
+          26.855180206516955,
+          30.890969543477805,
+          31.144819793483045,
+          52.10903045652219
         ],
         [
-          9.85,
+          11.0,
           50.85,
-          31.15,
+          30.0,
           53.15
         ]
       ]
@@ -291,15 +291,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.85,
-          29.85,
-          31.15,
-          53.15
+          26.855180206516955,
+          30.890969543477805,
+          31.144819793483045,
+          52.10903045652219
         ],
         [
-          9.85,
+          11.0,
           50.85,
-          31.15,
+          30.0,
           53.15
         ]
       ]
@@ -309,15 +309,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.85,
-          29.85,
-          31.15,
-          53.15
+          26.855180206516955,
+          30.890969543477805,
+          31.144819793483045,
+          52.10903045652219
         ],
         [
-          9.85,
+          11.0,
           50.85,
-          31.15,
+          30.0,
           53.15
         ]
       ]
@@ -327,15 +327,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.85,
-          29.85,
-          31.15,
-          53.15
+          26.855180206516955,
+          30.890969543477805,
+          31.144819793483045,
+          52.10903045652219
         ],
         [
-          9.85,
+          11.0,
           50.85,
-          31.15,
+          30.0,
           53.15
         ]
       ]
@@ -345,15 +345,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.85,
-          29.85,
-          31.15,
-          53.15
+          26.855180206516955,
+          30.890969543477805,
+          31.144819793483045,
+          52.10903045652219
         ],
         [
-          9.85,
+          11.0,
           50.85,
-          31.15,
+          30.0,
           53.15
         ]
       ]
@@ -363,15 +363,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.85,
-          29.85,
-          31.15,
-          53.15
+          26.855180206516955,
+          30.890969543477805,
+          31.144819793483045,
+          52.10903045652219
         ],
         [
-          9.85,
+          11.0,
           50.85,
-          31.15,
+          30.0,
           53.15
         ]
       ]
@@ -382,15 +382,15 @@
       "openings": [
         [
           10.1,
-          30.1,
+          27.5,
           11.9,
-          31.9
+          34.5
         ],
         [
           10.1,
-          30.1,
+          31.0,
           11.9,
-          52.9
+          52.0
         ]
       ]
     },
@@ -400,15 +400,15 @@
       "openings": [
         [
           10.1,
-          30.1,
+          27.5,
           11.9,
-          31.9
+          34.5
         ],
         [
           10.1,
-          30.1,
+          31.0,
           11.9,
-          52.9
+          52.0
         ]
       ]
     },
@@ -418,15 +418,15 @@
       "openings": [
         [
           10.1,
-          30.1,
+          27.5,
           11.9,
-          31.9
+          34.5
         ],
         [
           10.1,
-          30.1,
+          31.0,
           11.9,
-          52.9
+          52.0
         ]
       ]
     },
@@ -436,15 +436,15 @@
       "openings": [
         [
           10.1,
-          30.1,
+          27.5,
           11.9,
-          31.9
+          34.5
         ],
         [
           10.1,
-          30.1,
+          31.0,
           11.9,
-          52.9
+          52.0
         ]
       ]
     },
@@ -454,15 +454,15 @@
       "openings": [
         [
           10.1,
-          30.1,
+          27.5,
           11.9,
-          31.9
+          34.5
         ],
         [
           10.1,
-          30.1,
+          31.0,
           11.9,
-          52.9
+          52.0
         ]
       ]
     },
@@ -472,15 +472,15 @@
       "openings": [
         [
           10.1,
-          30.1,
+          27.5,
           11.9,
-          31.9
+          34.5
         ],
         [
           10.1,
-          30.1,
+          31.0,
           11.9,
-          52.9
+          52.0
         ]
       ]
     },
@@ -489,15 +489,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.85,
-          29.85,
-          31.15,
-          53.15
+          26.855180206516955,
+          30.890969543477805,
+          31.144819793483045,
+          52.10903045652219
         ],
         [
-          9.85,
+          11.0,
           50.85,
-          31.15,
+          30.0,
           53.15
         ]
       ]
@@ -509,18 +509,8 @@
     },
     {
       "link": "L15",
-      "issue": "Stair needs an authored longer flight/switchback; no fake vertical steps",
-      "rise": 4,
-      "run": 0.0,
-      "minimum_run": 5.52
-    },
-    {
-      "link": "L15",
-      "issue": "Elevation support is a rough mass, not an accepted stair or path",
-      "rise": 4,
-      "plan_run": 0.0,
-      "requires_switchbacks": true,
-      "source_note": "Reserve at least 6.4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
     },
     {
       "link": "L16",
@@ -539,20 +529,20 @@
     "Inspect mine engineering references before detailed supports or ventilation routing."
   ],
   "native_reopened": true,
-  "blend_sha256": "37ed8e9f328b46fe7e982702ad6c220e711492efcedbb50a09726849e284e519",
+  "blend_sha256": "cc03800657c69eb6ff54e2966d340d0813c8cb7940437aeb76de2348423eee81",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
-    "glb_sha256": "75695745b8cb02fcce6fb2990e96f644f8aaabeaa40f3cd0243618de79d99460",
+    "glb_sha256": "7f26c7cd8ef9cc1c27756bb195f5f5f567c44917ef135b8649a42fb0998d6ac0",
     "independently_reimported": true,
-    "meshes": 225,
-    "triangles": 2700,
-    "floor_parts": 32,
-    "ceiling_cap_parts": 11,
-    "stair_treads": 91,
-    "checked_closed_solids": 199,
-    "measured_depth_parts": 43,
-    "exported_cap_rays": 11,
+    "meshes": 247,
+    "triangles": 3004,
+    "floor_parts": 27,
+    "ceiling_cap_parts": 18,
+    "stair_treads": 114,
+    "checked_closed_solids": 224,
+    "measured_depth_parts": 45,
+    "exported_cap_rays": 18,
     "fixed_infill_routes": 0,
     "exported_fixed_boundary_checks": [],
     "wall_depth_m": 0.16,
@@ -566,17 +556,17 @@
       "Source-matched terrain holes, services, van and LAN integration"
     ]
   },
-  "authoritative_input": "development/levels/layouts/wld-05/layout.json",
+  "authoritative_input": "development/levels/rebuild/wld-05/rough-layout.json",
   "original_scene_preserved": true,
   "preserved_sources": {
-    "development/levels/layouts/wld-05/layout.json": "5b0ca78e4e8992bd4ae01226f7c745b73fe9881a20a0f0693fd6cff1d15a4970",
+    "development/levels/rebuild/wld-05/rough-layout.json": "17b6cfd01a82cb37b3ff4e351cd8078f4b60d274752c9a6bf96097a705d8a467",
     "development/levels/blockouts/wld-05/rough-shell.blend": "77212b2da77eb6c75415f39fee5eda3457c8790e79124c68324e0faf4969817f",
     "development/levels/blockouts/wld-05/rough-shell.glb": "14e9ecfd815f57e60a89103a120138f0b430872bf84ba3d73d9ba27f3e8fedc2"
   },
   "generator_sha256": {
     "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
-    "development/levels/blockouts/build_blockouts.py": "988507821406b3680ea7c27058ee6d39ba86897f5a8321a1c7df9c5b381f18e5",
-    "development/levels/blockouts/structural_pass.py": "0df964bb27e8a3fb2a7cd1cc72abe50f57006338cc6cb4f0025d6a6e9eaaa721",
+    "development/levels/blockouts/build_blockouts.py": "7934ef0d9d2a007aa9ddf0815c08ddd4c78b46a72b5bfb955ee48aa08926550e",
+    "development/levels/blockouts/structural_pass.py": "e761baefa707d59db4d197c203641f1657fdf951c533979fc9d563856010dc14",
     "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
   }
 }

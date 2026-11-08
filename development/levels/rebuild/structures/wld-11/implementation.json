@@ -105,17 +105,17 @@
       "height": 2.45
     }
   ],
-  "meshes": 89,
+  "meshes": 87,
   "issues": [
     {
       "zone": "main",
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          30.85,
-          57.85,
-          41.15,
-          70.15
+          31.102000869140515,
+          58.28160069531241,
+          40.89799913085948,
+          69.7183993046876
         ]
       ]
     },
@@ -124,10 +124,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          30.85,
-          57.85,
-          41.15,
-          70.15
+          31.102000869140515,
+          58.28160069531241,
+          40.89799913085948,
+          69.7183993046876
         ]
       ]
     },
@@ -136,10 +136,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          30.85,
-          57.85,
-          41.15,
-          70.15
+          31.102000869140515,
+          58.28160069531241,
+          40.89799913085948,
+          69.7183993046876
         ]
       ]
     },
@@ -148,10 +148,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          30.85,
-          57.85,
-          41.15,
-          70.15
+          31.102000869140515,
+          58.28160069531241,
+          40.89799913085948,
+          69.7183993046876
         ]
       ]
     },
@@ -160,10 +160,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          30.85,
-          57.85,
-          41.15,
-          70.15
+          31.102000869140515,
+          58.28160069531241,
+          40.89799913085948,
+          69.7183993046876
         ]
       ]
     },
@@ -172,10 +172,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          30.85,
-          57.85,
-          41.15,
-          70.15
+          31.102000869140515,
+          58.28160069531241,
+          40.89799913085948,
+          69.7183993046876
         ]
       ]
     },
@@ -184,10 +184,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          30.85,
-          57.85,
-          41.15,
-          70.15
+          31.102000869140515,
+          58.28160069531241,
+          40.89799913085948,
+          69.7183993046876
         ]
       ]
     },
@@ -196,10 +196,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          30.85,
-          57.85,
-          41.15,
-          70.15
+          31.102000869140515,
+          58.28160069531241,
+          40.89799913085948,
+          69.7183993046876
         ]
       ]
     },
@@ -208,10 +208,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          30.85,
-          57.85,
-          41.15,
-          70.15
+          31.102000869140515,
+          58.28160069531241,
+          40.89799913085948,
+          69.7183993046876
         ]
       ]
     },
@@ -220,10 +220,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          30.85,
-          57.85,
-          41.15,
-          70.15
+          31.102000869140515,
+          58.28160069531241,
+          40.89799913085948,
+          69.7183993046876
         ]
       ]
     },
@@ -232,10 +232,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          30.85,
-          57.85,
-          41.15,
-          70.15
+          31.102000869140515,
+          58.28160069531241,
+          40.89799913085948,
+          69.7183993046876
         ]
       ]
     },
@@ -251,19 +251,19 @@
     "The entrance rise needs a real supported ramp and level intermediate landings."
   ],
   "native_reopened": true,
-  "blend_sha256": "d94ad447cc9882b345108faaeef610733b6159e07df31fad1ed5fd8d966e73d8",
+  "blend_sha256": "a477b956bf8af4016a160332d08f349a7c454621cc09ae297a1d62ab0536c9c0",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
-    "glb_sha256": "e1f26b200ced8d0e7d26ebf6f7bb01633f68e8b2d85567da121be6c9149e97ca",
+    "glb_sha256": "1a519c772329f646dd7d5945464a52d36ea1de10f66e0030c634df9e4f0029dc",
     "independently_reimported": true,
-    "meshes": 85,
-    "triangles": 1020,
-    "floor_parts": 8,
+    "meshes": 83,
+    "triangles": 1012,
+    "floor_parts": 6,
     "ceiling_cap_parts": 6,
     "stair_treads": 7,
-    "checked_closed_solids": 59,
-    "measured_depth_parts": 14,
+    "checked_closed_solids": 57,
+    "measured_depth_parts": 12,
     "exported_cap_rays": 6,
     "fixed_infill_routes": 0,
     "exported_fixed_boundary_checks": [],
@@ -287,8 +287,8 @@
   },
   "generator_sha256": {
     "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
-    "development/levels/blockouts/build_blockouts.py": "988507821406b3680ea7c27058ee6d39ba86897f5a8321a1c7df9c5b381f18e5",
-    "development/levels/blockouts/structural_pass.py": "0df964bb27e8a3fb2a7cd1cc72abe50f57006338cc6cb4f0025d6a6e9eaaa721",
+    "development/levels/blockouts/build_blockouts.py": "7934ef0d9d2a007aa9ddf0815c08ddd4c78b46a72b5bfb955ee48aa08926550e",
+    "development/levels/blockouts/structural_pass.py": "e761baefa707d59db4d197c203641f1657fdf951c533979fc9d563856010dc14",
     "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
   }
 }

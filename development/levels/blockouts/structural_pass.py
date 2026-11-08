@@ -3,7 +3,7 @@
 All coordinates retain source X/Z and Y elevation. Historical scenes are kept.
 """
 import math,json,hashlib
-import bpy
+import bpy,bmesh
 from mathutils import Vector
 from collections import Counter
 from mathutils.bvhtree import BVHTree
@@ -31,16 +31,32 @@ def shaped_deck(zone,holes,collection,material,role):
         bpy.context.view_layer.objects.active=obj
         modifier=obj.modifiers.new('Actual deck opening '+str(index),'BOOLEAN');modifier.operation='DIFFERENCE';modifier.object=cutter
         bpy.ops.object.modifier_apply(modifier=modifier.name);bpy.data.objects.remove(cutter,do_unlink=True)
+    # Overlapping projected spiral apertures can leave Boolean sliver edges
+    # below export precision. Weld only sub-0.1mm construction noise, then
+    # remove collapsed faces; the independent closed-solid check still gates.
+    bm=bmesh.new();bm.from_mesh(obj.data)
+    bmesh.ops.remove_doubles(bm,verts=list(bm.verts),dist=.0001)
+    bmesh.ops.dissolve_degenerate(bm,edges=list(bm.edges),dist=.0001)
+    bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces))
+    bm.to_mesh(obj.data);bm.free();obj.data.update()
     return obj
 
 def deck_holes(elevation,data):
     holes=[]
     for link in data['links']:
         for p,q in zip(link['points'],link['points'][1:]):
-            if abs(p[1]-q[1])<.01 or abs(max(p[1],q[1])-elevation)>.01:continue
+            if link['kind']!='stairs' and abs(p[1]-q[1])<.01:continue
+            # A person's head reaches an intermediate ceiling before their feet
+            # reach the next floor. Reserve the complete authored stair shaft.
+            if elevation<=min(p[1],q[1])+.001 or elevation>max(p[1],q[1])+2.2:continue
             half=link['width']/2+.15
-            # Preserve the whole flight opening, not a tiny hole at its top end.
-            holes.append((min(p[0],q[0])-half,min(p[2],q[2])-half,max(p[0],q[0])+half,max(p[2],q[2])+half))
+            run=math.hypot(q[0]-p[0],q[2]-p[2])
+            if run<.01:continue
+            nx=-(q[2]-p[2])/run*half;nz=(q[0]-p[0])/run*half
+            corners=[(point[0]+sign*nx,point[2]+sign*nz) for point in [p,q] for sign in [-1,1]]
+            # Lateral clearance only: extending past a flight end would cut
+            # through the landing that must meet the final tread edge.
+            holes.append((min(v[0] for v in corners),min(v[1] for v in corners),max(v[0] for v in corners),max(v[1] for v in corners)))
     return holes
 
 def stair_flights(link,collection,material,box,notes):
@@ -55,6 +71,7 @@ def stair_flights(link,collection,material,box,notes):
         flights.append((p,q,rise,run,count,tread))
     if not flights:return False
     for index,(p,q) in enumerate(zip(link['points'],link['points'][1:])):
+        if link.get('landings_authored_in_zones'):continue
         run=math.hypot(q[0]-p[0],q[2]-p[2])
         if abs(q[1]-p[1])>=.01 or run<.01:continue
         landing=box(f"{link['id']} landing{index}",(p[0]+q[0])/2,p[1]-.16,(p[2]+q[2])/2,link['width'],.16,run,material,collection,

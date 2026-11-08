@@ -1,0 +1,714 @@
+{
+  "source_glb_sha256": "11861eed129b37d19595d09ce48ec50ef62be90e91568a6c6c963367fca57a7b",
+  "physics_sha256": "f7a07ab4a892957cfc596e14f179aaff6ea6374a5d27b39820389fa5b2de5f17",
+  "exporter_sha256": "8e815e8064c426fab78c70c368d6e2a2beed2126e92d9b4e10affe93903ecaa5",
+  "stair_components": [
+    "129:route-02 landing0",
+    "130:route-02 flight0 step1",
+    "131:route-02 flight0 step2",
+    "132:route-02 flight0 step3",
+    "133:route-02 flight0 step4",
+    "134:route-02 flight0 step5",
+    "135:route-02 flight0 step6",
+    "136:route-02 flight0 step7",
+    "137:route-02 flight0 step8",
+    "138:route-02 flight0 step9",
+    "139:route-02 flight0 step10",
+    "140:route-02 flight0 step11",
+    "141:route-02 flight0 step12",
+    "142:route-03 landing0",
+    "143:route-03 flight0 step1",
+    "144:route-03 flight0 step2",
+    "145:route-03 flight0 step3",
+    "146:route-03 flight0 step4",
+    "147:route-03 flight0 step5",
+    "148:route-03 flight0 step6",
+    "149:route-03 flight0 step7",
+    "150:route-03 flight0 step8",
+    "151:route-03 flight0 step9",
+    "152:route-03 flight0 step10",
+    "153:route-03 flight0 step11",
+    "154:route-03 flight0 step12",
+    "161:route-10 landing0",
+    "162:route-10 flight0 step1",
+    "163:route-10 flight0 step2",
+    "164:route-10 flight0 step3",
+    "165:route-10 flight0 step4",
+    "166:route-10 flight0 step5",
+    "167:route-10 flight0 step6",
+    "168:route-10 flight0 step7",
+    "169:route-10 flight0 step8",
+    "170:route-10 flight0 step9",
+    "171:route-10 flight0 step10",
+    "172:route-10 flight0 step11",
+    "173:route-10 flight0 step12",
+    "174:route-10 flight0 step13",
+    "175:route-10 flight0 step14",
+    "176:route-10 flight0 step15",
+    "177:route-10 flight0 step16",
+    "178:route-10 flight0 step17",
+    "179:route-11 landing0",
+    "180:route-11 landing2",
+    "181:route-11 flight0 step1",
+    "182:route-11 flight0 step2",
+    "183:route-11 flight0 step3",
+    "184:route-11 flight0 step4",
+    "185:route-11 flight0 step5",
+    "186:route-11 flight0 step6",
+    "187:route-11 flight0 step7",
+    "188:route-11 flight0 step8",
+    "189:route-11 flight0 step9",
+    "190:route-11 flight0 step10",
+    "191:route-11 flight0 step11",
+    "192:route-11 flight0 step12",
+    "193:route-11 flight0 step13",
+    "194:route-11 flight0 step14",
+    "195:route-11 flight0 step15",
+    "196:route-11 flight0 step16",
+    "197:route-11 flight0 step17",
+    "198:route-11 flight0 step18",
+    "199:route-11 flight0 step19",
+    "200:route-11 flight0 step20",
+    "201:route-11 flight0 step21",
+    "202:route-11 flight0 step22",
+    "203:route-11 flight0 step23",
+    "204:route-12 landing0",
+    "205:route-12 landing2",
+    "206:route-12 flight0 step1",
+    "207:route-12 flight0 step2",
+    "208:route-12 flight0 step3",
+    "209:route-12 flight0 step4",
+    "210:route-12 flight0 step5",
+    "211:route-12 flight0 step6",
+    "212:route-12 flight0 step7",
+    "213:route-12 flight0 step8",
+    "214:route-12 flight0 step9",
+    "215:route-12 flight0 step10",
+    "216:route-12 flight0 step11",
+    "217:route-12 flight0 step12",
+    "218:route-12 flight0 step13",
+    "219:route-12 flight0 step14",
+    "220:route-12 flight0 step15",
+    "221:route-12 flight0 step16",
+    "222:route-12 flight0 step17",
+    "223:route-12 flight0 step18",
+    "224:route-12 flight0 step19",
+    "225:route-12 flight0 step20",
+    "226:route-12 flight0 step21",
+    "227:route-12 flight0 step22",
+    "228:route-12 flight0 step23"
+  ],
+  "tread_centres": [
+    {
+      "link": "route-02",
+      "component": "130:route-02 flight0 step1",
+      "x": 32.0,
+      "y": 0.1666666567325592,
+      "z": 67.58333587646484
+    },
+    {
+      "link": "route-02",
+      "component": "131:route-02 flight0 step2",
+      "x": 32.0,
+      "y": 0.3333333432674408,
+      "z": 66.75
+    },
+    {
+      "link": "route-02",
+      "component": "132:route-02 flight0 step3",
+      "x": 32.0,
+      "y": 0.5,
+      "z": 65.91666412353516
+    },
+    {
+      "link": "route-02",
+      "component": "133:route-02 flight0 step4",
+      "x": 32.0,
+      "y": 0.6666666269302368,
+      "z": 65.08333587646484
+    },
+    {
+      "link": "route-02",
+      "component": "134:route-02 flight0 step5",
+      "x": 32.0,
+      "y": 0.8333333730697632,
+      "z": 64.24999809265137
+    },
+    {
+      "link": "route-02",
+      "component": "135:route-02 flight0 step6",
+      "x": 32.0,
+      "y": 1.0,
+      "z": 63.41666793823242
+    },
+    {
+      "link": "route-02",
+      "component": "136:route-02 flight0 step7",
+      "x": 32.0,
+      "y": 1.1666667461395264,
+      "z": 62.58333206176758
+    },
+    {
+      "link": "route-02",
+      "component": "137:route-02 flight0 step8",
+      "x": 32.0,
+      "y": 1.3333332538604736,
+      "z": 61.75
+    },
+    {
+      "link": "route-02",
+      "component": "138:route-02 flight0 step9",
+      "x": 32.0,
+      "y": 1.5,
+      "z": 60.91666793823242
+    },
+    {
+      "link": "route-02",
+      "component": "139:route-02 flight0 step10",
+      "x": 32.0,
+      "y": 1.6666667461395264,
+      "z": 60.08333206176758
+    },
+    {
+      "link": "route-02",
+      "component": "140:route-02 flight0 step11",
+      "x": 32.0,
+      "y": 1.8333332538604736,
+      "z": 59.25
+    },
+    {
+      "link": "route-02",
+      "component": "141:route-02 flight0 step12",
+      "x": 32.0,
+      "y": 2.0,
+      "z": 58.41666793823242
+    },
+    {
+      "link": "route-03",
+      "component": "143:route-03 flight0 step1",
+      "x": 40.0,
+      "y": 2.1666667461395264,
+      "z": 55.66666793823242
+    },
+    {
+      "link": "route-03",
+      "component": "144:route-03 flight0 step2",
+      "x": 40.0,
+      "y": 2.3333332538604736,
+      "z": 55.0
+    },
+    {
+      "link": "route-03",
+      "component": "145:route-03 flight0 step3",
+      "x": 40.0,
+      "y": 2.5,
+      "z": 54.33333206176758
+    },
+    {
+      "link": "route-03",
+      "component": "146:route-03 flight0 step4",
+      "x": 40.0,
+      "y": 2.6666667461395264,
+      "z": 53.66666793823242
+    },
+    {
+      "link": "route-03",
+      "component": "147:route-03 flight0 step5",
+      "x": 40.0,
+      "y": 2.8333332538604736,
+      "z": 53.0
+    },
+    {
+      "link": "route-03",
+      "component": "148:route-03 flight0 step6",
+      "x": 40.0,
+      "y": 3.0,
+      "z": 52.33333206176758
+    },
+    {
+      "link": "route-03",
+      "component": "149:route-03 flight0 step7",
+      "x": 40.0,
+      "y": 3.1666667461395264,
+      "z": 51.66666793823242
+    },
+    {
+      "link": "route-03",
+      "component": "150:route-03 flight0 step8",
+      "x": 40.0,
+      "y": 3.3333332538604736,
+      "z": 51.0
+    },
+    {
+      "link": "route-03",
+      "component": "151:route-03 flight0 step9",
+      "x": 40.0,
+      "y": 3.5,
+      "z": 50.33333206176758
+    },
+    {
+      "link": "route-03",
+      "component": "152:route-03 flight0 step10",
+      "x": 40.0,
+      "y": 3.6666667461395264,
+      "z": 49.66666793823242
+    },
+    {
+      "link": "route-03",
+      "component": "153:route-03 flight0 step11",
+      "x": 40.0,
+      "y": 3.8333332538604736,
+      "z": 49.0
+    },
+    {
+      "link": "route-03",
+      "component": "154:route-03 flight0 step12",
+      "x": 40.0,
+      "y": 4.0,
+      "z": 48.33333206176758
+    },
+    {
+      "link": "route-10",
+      "component": "162:route-10 flight0 step1",
+      "x": 30.235294342041016,
+      "y": 4.176470756530762,
+      "z": 22.0
+    },
+    {
+      "link": "route-10",
+      "component": "163:route-10 flight0 step2",
+      "x": 30.705883026123047,
+      "y": 4.352941036224365,
+      "z": 22.0
+    },
+    {
+      "link": "route-10",
+      "component": "164:route-10 flight0 step3",
+      "x": 31.176469802856445,
+      "y": 4.529411792755127,
+      "z": 22.0
+    },
+    {
+      "link": "route-10",
+      "component": "165:route-10 flight0 step4",
+      "x": 31.647058486938477,
+      "y": 4.7058820724487305,
+      "z": 22.0
+    },
+    {
+      "link": "route-10",
+      "component": "166:route-10 flight0 step5",
+      "x": 32.117645263671875,
+      "y": 4.882352828979492,
+      "z": 22.0
+    },
+    {
+      "link": "route-10",
+      "component": "167:route-10 flight0 step6",
+      "x": 32.588233947753906,
+      "y": 5.058823585510254,
+      "z": 22.0
+    },
+    {
+      "link": "route-10",
+      "component": "168:route-10 flight0 step7",
+      "x": 33.05882263183594,
+      "y": 5.235294342041016,
+      "z": 22.0
+    },
+    {
+      "link": "route-10",
+      "component": "169:route-10 flight0 step8",
+      "x": 33.52941131591797,
+      "y": 5.411764621734619,
+      "z": 22.0
+    },
+    {
+      "link": "route-10",
+      "component": "170:route-10 flight0 step9",
+      "x": 34.0,
+      "y": 5.588235378265381,
+      "z": 22.0
+    },
+    {
+      "link": "route-10",
+      "component": "171:route-10 flight0 step10",
+      "x": 34.47058868408203,
+      "y": 5.764705657958984,
+      "z": 22.0
+    },
+    {
+      "link": "route-10",
+      "component": "172:route-10 flight0 step11",
+      "x": 34.94117736816406,
+      "y": 5.941176414489746,
+      "z": 22.0
+    },
+    {
+      "link": "route-10",
+      "component": "173:route-10 flight0 step12",
+      "x": 35.411766052246094,
+      "y": 6.117647171020508,
+      "z": 22.0
+    },
+    {
+      "link": "route-10",
+      "component": "174:route-10 flight0 step13",
+      "x": 35.882354736328125,
+      "y": 6.2941179275512695,
+      "z": 22.0
+    },
+    {
+      "link": "route-10",
+      "component": "175:route-10 flight0 step14",
+      "x": 36.35293960571289,
+      "y": 6.470588207244873,
+      "z": 22.0
+    },
+    {
+      "link": "route-10",
+      "component": "176:route-10 flight0 step15",
+      "x": 36.82352828979492,
+      "y": 6.647058486938477,
+      "z": 22.0
+    },
+    {
+      "link": "route-10",
+      "component": "177:route-10 flight0 step16",
+      "x": 37.29411697387695,
+      "y": 6.823529243469238,
+      "z": 22.0
+    },
+    {
+      "link": "route-10",
+      "component": "178:route-10 flight0 step17",
+      "x": 37.764705657958984,
+      "y": 7.0,
+      "z": 22.0
+    },
+    {
+      "link": "route-11",
+      "component": "181:route-11 flight0 step1",
+      "x": 19.826086044311523,
+      "y": 0.17391304671764374,
+      "z": 16.0
+    },
+    {
+      "link": "route-11",
+      "component": "182:route-11 flight0 step2",
+      "x": 19.478260040283203,
+      "y": 0.3478260934352875,
+      "z": 16.0
+    },
+    {
+      "link": "route-11",
+      "component": "183:route-11 flight0 step3",
+      "x": 19.130434036254883,
+      "y": 0.52173912525177,
+      "z": 16.0
+    },
+    {
+      "link": "route-11",
+      "component": "184:route-11 flight0 step4",
+      "x": 18.782608032226562,
+      "y": 0.6956521272659302,
+      "z": 16.0
+    },
+    {
+      "link": "route-11",
+      "component": "185:route-11 flight0 step5",
+      "x": 18.434782028198242,
+      "y": 0.8695652484893799,
+      "z": 16.0
+    },
+    {
+      "link": "route-11",
+      "component": "186:route-11 flight0 step6",
+      "x": 18.086956024169922,
+      "y": 1.04347825050354,
+      "z": 16.0
+    },
+    {
+      "link": "route-11",
+      "component": "187:route-11 flight0 step7",
+      "x": 17.7391300201416,
+      "y": 1.2173912525177002,
+      "z": 16.0
+    },
+    {
+      "link": "route-11",
+      "component": "188:route-11 flight0 step8",
+      "x": 17.39130401611328,
+      "y": 1.39130437374115,
+      "z": 16.0
+    },
+    {
+      "link": "route-11",
+      "component": "189:route-11 flight0 step9",
+      "x": 17.04347801208496,
+      "y": 1.56521737575531,
+      "z": 16.0
+    },
+    {
+      "link": "route-11",
+      "component": "190:route-11 flight0 step10",
+      "x": 16.69565200805664,
+      "y": 1.7391304969787598,
+      "z": 16.0
+    },
+    {
+      "link": "route-11",
+      "component": "191:route-11 flight0 step11",
+      "x": 16.34782600402832,
+      "y": 1.91304349899292,
+      "z": 16.0
+    },
+    {
+      "link": "route-11",
+      "component": "192:route-11 flight0 step12",
+      "x": 16.0,
+      "y": 2.08695650100708,
+      "z": 16.0
+    },
+    {
+      "link": "route-11",
+      "component": "193:route-11 flight0 step13",
+      "x": 15.65217399597168,
+      "y": 2.2608695030212402,
+      "z": 16.0
+    },
+    {
+      "link": "route-11",
+      "component": "194:route-11 flight0 step14",
+      "x": 15.30434799194336,
+      "y": 2.4347825050354004,
+      "z": 16.0
+    },
+    {
+      "link": "route-11",
+      "component": "195:route-11 flight0 step15",
+      "x": 14.956521987915039,
+      "y": 2.6086955070495605,
+      "z": 16.0
+    },
+    {
+      "link": "route-11",
+      "component": "196:route-11 flight0 step16",
+      "x": 14.608695983886719,
+      "y": 2.7826085090637207,
+      "z": 16.0
+    },
+    {
+      "link": "route-11",
+      "component": "197:route-11 flight0 step17",
+      "x": 14.260869979858398,
+      "y": 2.95652174949646,
+      "z": 16.0
+    },
+    {
+      "link": "route-11",
+      "component": "198:route-11 flight0 step18",
+      "x": 13.913043022155762,
+      "y": 3.13043475151062,
+      "z": 16.0
+    },
+    {
+      "link": "route-11",
+      "component": "199:route-11 flight0 step19",
+      "x": 13.565217018127441,
+      "y": 3.3043479919433594,
+      "z": 16.0
+    },
+    {
+      "link": "route-11",
+      "component": "200:route-11 flight0 step20",
+      "x": 13.217391014099121,
+      "y": 3.4782609939575195,
+      "z": 16.0
+    },
+    {
+      "link": "route-11",
+      "component": "201:route-11 flight0 step21",
+      "x": 12.8695650100708,
+      "y": 3.6521739959716797,
+      "z": 16.0
+    },
+    {
+      "link": "route-11",
+      "component": "202:route-11 flight0 step22",
+      "x": 12.52173900604248,
+      "y": 3.82608699798584,
+      "z": 16.0
+    },
+    {
+      "link": "route-11",
+      "component": "203:route-11 flight0 step23",
+      "x": 12.17391300201416,
+      "y": 4.0,
+      "z": 16.0
+    },
+    {
+      "link": "route-12",
+      "component": "206:route-12 flight0 step1",
+      "x": 55.826087951660156,
+      "y": 0.17391304671764374,
+      "z": 16.0
+    },
+    {
+      "link": "route-12",
+      "component": "207:route-12 flight0 step2",
+      "x": 55.4782600402832,
+      "y": 0.3478260934352875,
+      "z": 16.0
+    },
+    {
+      "link": "route-12",
+      "component": "208:route-12 flight0 step3",
+      "x": 55.130435943603516,
+      "y": 0.52173912525177,
+      "z": 16.0
+    },
+    {
+      "link": "route-12",
+      "component": "209:route-12 flight0 step4",
+      "x": 54.78260803222656,
+      "y": 0.6956521272659302,
+      "z": 16.0
+    },
+    {
+      "link": "route-12",
+      "component": "210:route-12 flight0 step5",
+      "x": 54.434783935546875,
+      "y": 0.8695652484893799,
+      "z": 16.0
+    },
+    {
+      "link": "route-12",
+      "component": "211:route-12 flight0 step6",
+      "x": 54.08695602416992,
+      "y": 1.04347825050354,
+      "z": 16.0
+    },
+    {
+      "link": "route-12",
+      "component": "212:route-12 flight0 step7",
+      "x": 53.739131927490234,
+      "y": 1.2173912525177002,
+      "z": 16.0
+    },
+    {
+      "link": "route-12",
+      "component": "213:route-12 flight0 step8",
+      "x": 53.39130401611328,
+      "y": 1.39130437374115,
+      "z": 16.0
+    },
+    {
+      "link": "route-12",
+      "component": "214:route-12 flight0 step9",
+      "x": 53.043479919433594,
+      "y": 1.56521737575531,
+      "z": 16.0
+    },
+    {
+      "link": "route-12",
+      "component": "215:route-12 flight0 step10",
+      "x": 52.69565200805664,
+      "y": 1.7391304969787598,
+      "z": 16.0
+    },
+    {
+      "link": "route-12",
+      "component": "216:route-12 flight0 step11",
+      "x": 52.34782791137695,
+      "y": 1.91304349899292,
+      "z": 16.0
+    },
+    {
+      "link": "route-12",
+      "component": "217:route-12 flight0 step12",
+      "x": 52.0,
+      "y": 2.08695650100708,
+      "z": 16.0
+    },
+    {
+      "link": "route-12",
+      "component": "218:route-12 flight0 step13",
+      "x": 51.65217208862305,
+      "y": 2.2608695030212402,
+      "z": 16.0
+    },
+    {
+      "link": "route-12",
+      "component": "219:route-12 flight0 step14",
+      "x": 51.30434799194336,
+      "y": 2.4347825050354004,
+      "z": 16.0
+    },
+    {
+      "link": "route-12",
+      "component": "220:route-12 flight0 step15",
+      "x": 50.956520080566406,
+      "y": 2.6086955070495605,
+      "z": 16.0
+    },
+    {
+      "link": "route-12",
+      "component": "221:route-12 flight0 step16",
+      "x": 50.60869598388672,
+      "y": 2.7826085090637207,
+      "z": 16.0
+    },
+    {
+      "link": "route-12",
+      "component": "222:route-12 flight0 step17",
+      "x": 50.260868072509766,
+      "y": 2.95652174949646,
+      "z": 16.0
+    },
+    {
+      "link": "route-12",
+      "component": "223:route-12 flight0 step18",
+      "x": 49.91304397583008,
+      "y": 3.13043475151062,
+      "z": 16.0
+    },
+    {
+      "link": "route-12",
+      "component": "224:route-12 flight0 step19",
+      "x": 49.565216064453125,
+      "y": 3.3043479919433594,
+      "z": 16.0
+    },
+    {
+      "link": "route-12",
+      "component": "225:route-12 flight0 step20",
+      "x": 49.21739196777344,
+      "y": 3.4782609939575195,
+      "z": 16.0
+    },
+    {
+      "link": "route-12",
+      "component": "226:route-12 flight0 step21",
+      "x": 48.869564056396484,
+      "y": 3.6521739959716797,
+      "z": 16.0
+    },
+    {
+      "link": "route-12",
+      "component": "227:route-12 flight0 step22",
+      "x": 48.5217399597168,
+      "y": 3.82608699798584,
+      "z": 16.0
+    },
+    {
+      "link": "route-12",
+      "component": "228:route-12 flight0 step23",
+      "x": 48.173912048339844,
+      "y": 4.0,
+      "z": 16.0
+    }
+  ],
+  "dropped_degenerate_triangles": 0,
+  "scope": "Candidate native collision; gameplay/ownership/terrain/network gates remain open"
+}
