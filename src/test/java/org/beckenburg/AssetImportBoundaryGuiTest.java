@@ -45,7 +45,7 @@ public final class AssetImportBoundaryGuiTest {
         try {
             edt(()->{var dock=new AssetImportDialog(null,published::set);ui.set(dock);((JDialog)field(dock,"dialog")).setVisible(true);dock.loadSource(source);});
             var dock=ui.get(); await(()->ready(dock)); var project=(EditorTopologyProject)field(dock,"topologyProject");
-            var before=project.snapshot();long epoch=project.revision();var inner=new HashSet<Long>();
+            var before=project.snapshot();long epoch=project.revision();check(before.quads().size()==4,"Four source OBJ quads retained in native editor");var inner=new HashSet<Long>();
             for(var v:before.vertices())if(Math.abs(v.x())==1 && Math.abs(v.y())==1)inner.add(v.id());
             var outer=before.vertices().stream().filter(v->v.x()==-2 && v.y()==-2).findFirst().orElseThrow();
             var innerAtCorner=before.vertices().stream().filter(v->v.x()==-1 && v.y()==-1).findFirst().orElseThrow();
@@ -83,6 +83,11 @@ public final class AssetImportBoundaryGuiTest {
             await(()->ready(dock));edt(()->button(dock,"apply"));await(()->published.get()!=null);
             var game=GlbProps.model(published.get()).triangles();var nativeMesh=project.mesh().triangles();check(game.size()==nativeMesh.size(),"Game triangle count");
             for(int i=0;i<game.size();i++){var a=game.get(i);var b=nativeMesh.get(i);var got=List.of(a.a(),a.b(),a.c());var want=List.of(b.a(),b.b(),b.c());for(int j=0;j<3;j++)check(got.get(j).x()==want.get(j).x()&&got.get(j).y()==want.get(j).y()&&got.get(j).z()==want.get(j).z(),"Every published game corner matches native ring");}
+            byte[] outputGlb=ImportedAssetLibrary.read(published.get());
+            check(EditorGlbReader.read(outputGlb).mesh("publication.glb").quads().equals(before.quads()),"Published source quad boundaries match the edited native project");
+            Files.write(output.resolve("human-authored-quads.glb"),outputGlb);
+            Files.write(output.resolve("human-authored-quads.btop"),project.snapshotBytes());
+            Files.writeString(output.resolve("human-authored-quads.obj"),RING);
             System.out.println("PASS boundary loop: directed native hole rim, independent outer/part boundaries, read-only selection, shared transform/undo/save/reopen and actual game corners");
         } finally {
             edt(()->{if(ui.get()!=null)((JDialog)field(ui.get(),"dialog")).dispose();});System.setProperty("user.home",previous);
