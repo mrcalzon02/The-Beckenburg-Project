@@ -82,6 +82,31 @@ public final class EditorAgentGuiTest {
     private static Object member(Object instance,String name)throws Exception{
         var field=instance.getClass().getDeclaredField(name);field.setAccessible(true);return field.get(instance);
     }
+    private static void verifyWalkabilityMenu(DeveloperLevelEditor editor,CastleLevelEdits.Prop prop){
+        var report=new AtomicReference<String>();
+        Timer driver=new Timer(50,event->{
+            for(Window window:Window.getWindows())if(window instanceof JDialog dialog&&dialog.isShowing()){
+                var pane=component(dialog,JOptionPane.class);if(pane==null)continue;
+                switch(dialog.getTitle()){
+                    case "Scene verification" -> {
+                        component(dialog,JComboBox.class).setSelectedItem("CHECK WALKABILITY");
+                        pane.setInputValue("CHECK WALKABILITY");pane.setValue(JOptionPane.OK_OPTION);
+                    }
+                    case "Check walkability" -> {
+                        Object[] fields=(Object[])pane.getMessage();
+                        ((JTextField)fields[2]).setText(Double.toString(prop.x()));
+                        ((JTextField)fields[4]).setText(Double.toString(prop.y()));
+                        ((JTextField)fields[6]).setText(Double.toString(prop.z()));
+                        pane.setValue(JOptionPane.OK_OPTION);
+                    }
+                    case "Scene evidence" -> {report.set(component(dialog,JTextArea.class).getText());pane.setValue(JOptionPane.OK_OPTION);}
+                    case "Scene verification failed" -> pane.setValue(JOptionPane.OK_OPTION);
+                }
+            }
+        });
+        driver.start();try{button(editor,"VERIFY SCENE").doClick();}finally{driver.stop();}
+        check(report.get()!=null&&report.get().contains("Blocked or unsupported"),"Human collision query missed the upper furnishing");
+    }
     private static void verifyPlaytest(DeveloperLevelEditor editor,HouseMap missionMap,Path output)throws Exception{
         var service=editor.agentService();var before=service.inspect();
         var hierarchy=(JList<?>)member(editor,"hierarchy");hierarchy.setSelectedIndex(0);
@@ -206,7 +231,13 @@ public final class EditorAgentGuiTest {
         });
         var writable=openAccess(editor,"save");verifyMcp(writable,"save");
         SwingUtilities.invokeAndWait(()->{
+            var prop=CastleLevelEdits.current().propById("mcp-upper-lodging-chair");
+            check(prop!=null&&prop.upper()&&prop.y()==CastleHubArchitecturalPlan.GROUND_CEILING,"Agent furnishing is on the actual upper floor");
+            var map=new CastleHubMap();
+            check(!map.traversable(prop.x(),prop.z(),prop.y())&&map.traversable(prop.x(),prop.z()+.85,prop.y()),"Game collision and nearby aisle");
+            verifyWalkabilityMenu(editor,prop);
             var undo=button(editor,"UNDO");undo.doClick();
+            check(CastleLevelEdits.current().propById(prop.id())==null&&map.traversable(prop.x(),prop.z(),prop.y()),"One human undo removed native furnishing and collider");
             check(CastleLevelEdits.current().surfaceById("mcp-test-divider")!=null,"Human undo restored the agent-removed wall");
             undo.doClick();undo.doClick();
             check(CastleLevelEdits.current().surfaceById("mcp-test-divider")==null,"Fixture edits reversed through shared history");

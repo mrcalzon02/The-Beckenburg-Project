@@ -396,6 +396,13 @@ public final class CastleLevelEdits {
             throw new IllegalStateException("Castle prop count exceeded");
         props.put(prop.id(),prop);revision++;
     }
+    /** Place a new model with the Castle palette's scale, orientation and collision footprint. */
+    synchronized void placePaletteProp(String id,String mesh,double x,double y,double z){
+        if(props.containsKey(id)||surfaces.containsKey(id)||lamps.containsKey(id)||"start".equals(id)||
+            stations.keySet().stream().anyMatch(station->station.name().equals(id)))
+            throw new IllegalArgumentException("Castle hierarchy ID already in use: "+id);
+        put(new Prop(id,mesh,x,y,z,.8,0,.4,.4,y>2));
+    }
     public synchronized void removeProp(String id){if(props.remove(id)!=null)revision++;}
     public synchronized void put(Lamp light){
         Objects.requireNonNull(light);if(lamps.size()>=192&&!lamps.containsKey(light.id()))

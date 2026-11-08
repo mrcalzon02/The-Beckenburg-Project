@@ -43,6 +43,12 @@ For example, Castle's `set-spawn` operation takes numeric x, z and yaw fields. U
 
 When the scene's capabilities are already known, call `inspect_scene(revision_only=True)` over MCP or send `revision` over the headless protocol. Both read the live owner thread. The House fixture returned a 64-byte headless response, including the protocol envelope. After a stale edit, read the affected nodes at the new revision before deciding whether to retry.
 
+### Furnish and inspect a Castle room
+
+Use `check_walkability(revision, x, y, z)` for a standing player's foot position. Castle and mission levels call their respective game map. The human tool is **Verify Scene → Check walkability**.
+
+In a Castle editing session, `place-prop` takes a new hierarchy ID, an approved palette mesh name, and world coordinates `x`, `y`, `z`. It uses the human palette's scale, orientation and collision footprint. `focus_node` selects that native row and positions the actual editor camera without changing the document revision. **Verify Scene → Focus object** uses the same view. Capture the viewport there, then check the prop's center and the neighboring passage. In the tested upper lodging the chair blocked standing at (5.75, 3.4, 13.5) and the aisle at (5.75, 3.4, 14.35) remained walkable. The trusted stdio equivalents are `focus<TAB>revision<TAB>id` and `walkability<TAB>revision<TAB>x<TAB>y<TAB>z`.
+
 ### Embed the same transports in another editor
 
 The standalone Java 17 kit includes `EditorAgentProtocol.run(service, reader, writer)` for trusted headless processes and `EditorObservationBridge(service, scope, ownerExecutor)` for interactive editors. Construct the bridge on the project's owner thread. The executor must dispatch future requests to that thread. Display the session address and token to the user who enabled access, and close the bridge when the scene changes or the window closes.

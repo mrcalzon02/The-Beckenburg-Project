@@ -107,6 +107,12 @@ def server(editor: LiveEditor):
             """Read the current human selection and its host-specific properties."""
             return editor.call("/selection", {"revision": revision})
 
+    if "/walkability" in summary["routes"]:
+        @native_tool
+        def check_walkability(revision: int, x: float, y: float, z: float) -> str:
+            """Check standing foot coordinates with the active game's walking collision."""
+            return editor.call("/walkability", dict(revision=revision, x=x, y=y, z=z))
+
     @native_tool
     def hierarchy(revision: int, offset: int = 0, limit: int = 32) -> str:
         """Read up to 64 hierarchy rows in editor order."""
@@ -144,6 +150,12 @@ def server(editor: LiveEditor):
         def playtest(revision: int) -> Image:
             """Run the human Playtest action until gameplay advances, capture its frame and return to the editor."""
             return editor.call("/playtest", {"revision": revision}, b"")
+
+    if "/focus" in summary["writeRoutes"]:
+        @native_tool
+        def focus_node(revision: int, id: str) -> str:
+            """Select a native node and move the human editor camera to its inspection view."""
+            return editor.call("/focus", {"revision": revision, "id": id}, b"")
 
     if "/edit" in summary["writeRoutes"] and summary["operations"]:
         command_type = edit_type(summary["operations"])

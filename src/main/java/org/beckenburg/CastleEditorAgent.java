@@ -2,6 +2,7 @@ package org.beckenburg;
 
 import org.beckenburg.editor.EditorAgentService;
 import org.beckenburg.editor.EditorChange;
+import org.beckenburg.editor.EditorProject;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
@@ -9,17 +10,23 @@ import java.util.Map;
 import javax.imageio.ImageIO;
 
 /** Adapter for the same singleton consumed by CastleHubMap and SceneRenderer. */
-public final class CastleEditorAgent implements EditorAgentService.Host<CastleLevelEdits.Snapshot> {
+public final class CastleEditorAgent implements EditorAgentService.Host<CastleLevelEdits.Snapshot>,EditorAgentService.WalkingCollision,EditorAgentService.NodeFocus {
     private final CastleLevelEdits scene=CastleLevelEdits.current();
     private final CastleEditorProject project;
     private final CastleHubMap map;
     private final SceneRenderer renderer;
     private final Runnable access;
+    private final java.util.function.Consumer<EditorProject.Node> select;
     public CastleEditorAgent(CastleEditorProject project, CastleHubMap map,
                              SceneRenderer renderer, Runnable access) {
+        this(project,map,renderer,access,node->{});
+    }
+    CastleEditorAgent(CastleEditorProject project,CastleHubMap map,SceneRenderer renderer,Runnable access,
+                      java.util.function.Consumer<EditorProject.Node> select){
         if(project.scene()!=scene)throw new IllegalArgumentException("Castle runtime requires its authoritative singleton");
         this.project=project;this.map=java.util.Objects.requireNonNull(map);
         this.renderer=java.util.Objects.requireNonNull(renderer);this.access=java.util.Objects.requireNonNull(access);
+        this.select=java.util.Objects.requireNonNull(select);
     }
     public CastleEditorProject project(){return project;}
     public long revision(){return scene.revision();}
@@ -86,17 +93,49 @@ public final class CastleEditorAgent implements EditorAgentService.Host<CastleLe
     public java.util.Set<EditorAgentService.Capability> capabilities(){
         return java.util.EnumSet.allOf(EditorAgentService.Capability.class);
     }
-    public List<String> operations(){return List.of("set-spawn","put-surface","remove-surface");}
+    public boolean walkable(double x,double y,double z){return map.traversable(x,z,y);}
+    public void focus(EditorProject.Node node){
+        select.accept(node);
+        if(node.kind().equals("PROP")&&positionPropCamera(renderer,map,scene.propById(node.id())))return;
+        positionCamera(renderer,node.x(),node.y(),node.z());
+    }
+    static boolean positionPropCamera(SceneRenderer renderer,CastleHubMap map,CastleLevelEdits.Prop prop){
+        if(prop==null)return false;
+        double[] bounds=SceneRenderer.castleBounds(prop.mesh());
+        double targetY=prop.y()+bounds[4]*prop.scale()*.5;
+        double range=Math.max(2,Math.max(bounds[3],Math.max(bounds[4],bounds[5]))*prop.scale()*1.4);
+        double eye=prop.y()+1.4;
+        for(int i=0;i<8;i++){
+            double angle=prop.yaw()+Math.PI*(1+i)/4;
+            double x=prop.x()+range*Math.sin(angle),z=prop.z()+range*Math.cos(angle);
+            if(!map.traversable(x,z,prop.y())||!FixtureLighting.castleRayClear(map,x,eye,z,prop.x(),targetY,prop.z()))continue;
+            renderer.x=x;renderer.z=z;renderer.eyeHeight=eye;
+            renderer.yaw=Math.atan2(prop.x()-x,prop.z()-z);
+            renderer.pitch=Math.atan2(targetY-eye,range);renderer.setEditorSelection(prop.x(),prop.y(),prop.z());
+            return true;
+        }
+        return false;
+    }
+    static void positionCamera(SceneRenderer renderer,double x,double y,double z){
+        renderer.x=Math.max(CastleWorldBounds.MIN_X+.5,Math.min(CastleHubMap.WIDTH-.5,x-1.8));
+        renderer.z=Math.max(.5,Math.min(CastleHubMap.HEIGHT-.5,z-1.8));
+        renderer.eyeHeight=Math.max(CastleWorldBounds.MIN_Y+.7,Math.min(10.5,y+1.4));
+        renderer.yaw=Math.atan2(x-renderer.x,z-renderer.z);renderer.pitch=-.12;
+        renderer.setEditorSelection(x,y,z);
+    }
+    public List<String> operations(){return List.of("set-spawn","put-surface","remove-surface","place-prop");}
     private static final Map<String,Map<String,String>> PARAMETERS=Map.of(
         "set-spawn",Map.of("x","number","z","number","yaw","number"),
         "put-surface",Map.of("id","string","kind",String.join("|",java.util.Arrays.stream(CastleLevelEdits.Kind.values()).map(Enum::name).toList()),
             "x0","number","z0","number","x1","number","z1","number","base","number","height","number","material","integer"),
-        "remove-surface",Map.of("id","string"));
+        "remove-surface",Map.of("id","string"),
+        "place-prop",Map.of("id","string","mesh","string","x","number","y","number","z","number"));
     public Map<String,Map<String,String>> operationParameters(){return PARAMETERS;}
     public void apply(String operation, Map<String,String> args){
         var fields=PARAMETERS.get(operation);
         if(fields==null || !args.keySet().equals(fields.keySet()))throw new IllegalArgumentException("Incorrect fields for "+operation);
         switch(operation){
+            case "place-prop" -> scene.placePaletteProp(args.get("id"),args.get("mesh"),number(args,"x"),number(args,"y"),number(args,"z"));
             case "set-spawn" -> {
                 scene.setSpawn(number(args,"x"),number(args,"z"),number(args,"yaw"));
             }

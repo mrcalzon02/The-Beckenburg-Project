@@ -22,6 +22,7 @@ async def verify(scope):
         assert ("save" in tools) == (scope in ("save", "material-save"))
         assert ("reopen" in tools) == (scope in ("save", "material-save"))
         assert ("playtest" in tools) == (scope in ("edit", "save"))
+        assert ("check_walkability" in tools) == (scope in ("observe", "edit", "save"))
         assert set(tools["verify_position"].inputSchema["required"]) == {"revision", "id", "x", "y", "z"}
 
         async def call(name, **args):
@@ -99,6 +100,8 @@ async def verify(scope):
         assert proof["result"]["verified"]
         if scope == "observe":
             assert proof["result"]["committed"] and proof["result"]["diskState"] == "DIFFERS"
+        footprint = (await call("check_walkability", revision=revision, **xyz))["result"]
+        assert {axis: footprint[axis] for axis in "xyz"} == xyz and isinstance(footprint["walkable"], bool)
         captured = await client.call_tool("capture_viewport", {"revision": revision})
         assert not captured.isError and captured.content[0].type == "image" and captured.content[0].mimeType == "image/png"
         diagnostics = await call("run_test", revision=revision, id=state["tests"][0])
@@ -147,13 +150,46 @@ async def verify(scope):
             assert (await call("inspect_nodes", revision=undone["revision"], ids=[key]))["result"] == [node]
             revision = (await call("redo", revision=undone["revision"]))["revision"]
             if scope == "save":
+                bed = (await call("inspect_nodes", revision=revision, ids=["upper-bed-0"]))["result"][0]
+                assert bed["kind"] == "PROP" and bed["y"] > 2
+                assert (await call("focus_node", revision=revision, id=bed["id"]))["result"] == bed
+                async def walk(rev, position):
+                    return (await call("check_walkability", revision=rev, **position))["result"]["walkable"]
+                spot = None
+                for dx, dz in ((1.5, 0), (1.5, 1), (2, 0), (-1.5, 0)):
+                    candidate = dict(x=bed["x"] + dx, y=bed["y"], z=bed["z"] + dz)
+                    aisle = dict(candidate, z=candidate["z"] + .85)
+                    if await walk(revision, candidate) and await walk(revision, aisle):
+                        spot = candidate
+                        break
+                assert spot is not None, "No walkable upper lodging position and adjacent aisle"
+                chair = "armchair_1"
+                offset = 0
+                while True:
+                    page = (await call("assets", revision=revision, offset=offset, limit=64))["result"]
+                    if any(a["uri"] == "assets://models/" + chair for a in page["assets"]):
+                        break
+                    offset += len(page["assets"])
+                    assert offset < page["total"], "Required furnishing absent from native palette"
+                prop_id = "mcp-upper-lodging-chair"
+                place = {"operation": "place-prop", "arguments": dict(id=prop_id, mesh=chair, **spot)}
+                duplicate = dict(operation="place-prop", arguments=dict(place["arguments"], id=bed["id"]))
+                refused = await client.call_tool("edit", {"revision": revision, "commands": [place, duplicate]})
+                assert refused.isError
+                revision = (await call("inspect_scene", revision_only=True))["revision"]
+                assert await walk(revision, spot)
                 result = await call("edit", revision=revision, commands=[
-                    {"operation": "remove-surface", "arguments": {"id": "mcp-test-divider"}}])
+                    {"operation": "remove-surface", "arguments": {"id": "mcp-test-divider"}}, place])
                 revision = result["revision"]
                 audit = (await call("run_test", revision=revision, id="castle-scene-audit"))["result"]
                 assert not any(check["code"] == "SPAWN_WALL_INTERSECTION" for check in audit)
                 delta = (await call("changes", revision=revision))["result"]
                 assert any(row["id"] == "mcp-test-divider" and row["kind"] == "REMOVED" for row in delta["nodes"])
+                assert any(row["id"] == prop_id and row["kind"] == "ADDED" for row in delta["nodes"])
+                placed = (await call("verify_position", revision=revision, id=prop_id, **spot))["result"]
+                assert placed["verified"] and placed["committed"]
+                assert not await walk(revision, spot) and await walk(revision, aisle)
+                assert (await call("focus_node", revision=revision, id=prop_id))["result"] == placed["actual"]
                 await playtest(revision)
                 capture = await client.call_tool("capture_viewport", {"revision": revision})
                 assert not capture.isError
@@ -161,16 +197,24 @@ async def verify(scope):
                 (output / "mcp-castle-repair.png").write_bytes(base64.b64decode(capture.content[0].data, validate=True))
                 (output / "mcp-castle-repair.json").write_text(json.dumps(
                     {"sceneId": state["sceneId"], "revision": revision, "sourceCommit": os.environ.get("GITHUB_SHA"),
-                     "beforeAudit": diagnostics["result"], "removed": delta, "audit": audit}, indent=2), encoding="utf-8")
+                     "beforeAudit": diagnostics["result"], "change": delta, "audit": audit,
+                     "furnished": placed, "clearAisle": aisle}, indent=2), encoding="utf-8")
                 await call("save", revision=revision)
                 assert (await call("verify_position", revision=revision, id=key, **xyz))["result"]["diskState"] == "MATCHES"
                 # Undo the removal, reopen its saved repair, then undo that reopen.
                 reverted = await call("undo", revision=revision)
+                assert await walk(reverted["revision"], spot)
+                empty = await client.call_tool("capture_viewport", {"revision": reverted["revision"]})
+                assert not empty.isError and empty.content[0].data != capture.content[0].data
+                (output / "mcp-upper-room-before.png").write_bytes(base64.b64decode(empty.content[0].data, validate=True))
                 dirty = await call("verify_position", revision=reverted["revision"], id=key, **xyz)
                 assert dirty["result"]["diskState"] == "DIFFERS"
                 reopened = await call("reopen", revision=reverted["revision"])
                 saved = await call("verify_position", revision=reopened["revision"], id=key, **xyz)
                 assert saved["result"]["diskState"] == "MATCHES"
+                reopened_prop = (await call("verify_position", revision=reopened["revision"], id=prop_id, **spot))["result"]
+                assert reopened_prop["verified"] and reopened_prop["diskState"] == "MATCHES"
+                assert not await walk(reopened["revision"], spot) and await walk(reopened["revision"], aisle)
                 again = await call("undo", revision=reopened["revision"])
                 again_audit = (await call("run_test", revision=again["revision"], id="castle-scene-audit"))["result"]
                 assert any(check["code"] == "SPAWN_WALL_INTERSECTION" for check in again_audit)

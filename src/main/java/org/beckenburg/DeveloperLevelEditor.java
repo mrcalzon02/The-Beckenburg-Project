@@ -210,7 +210,7 @@ public final class DeveloperLevelEditor extends JPanel {
         new CastleEditorAgent(project,map,renderer,()->{
             requireEditorThread();
             if(mission!=null)throw new IllegalStateException("Castle is not the active scene");
-        }),history,event->{castleDirty=true;refresh();},()->castleDirty=false,this::runPlaytest);
+        },this::selectForFocus),history,event->{castleDirty=true;refresh();},()->castleDirty=false,this::runPlaytest);
     private void requireEditorThread(){
         if(!SwingUtilities.isEventDispatchThread()||editorClosed)
             throw new IllegalStateException("Editor must be open and called on its event thread");
@@ -624,12 +624,8 @@ public final class DeveloperLevelEditor extends JPanel {
             // Clear hierarchy filtering so an affected scene object is selectable.
             filter.setText("");
             selectId(f.kind(),f.id());
-            renderer.x=Math.max(.5,Math.min(42.5,f.x()-1.8));
-            renderer.z=Math.max(.5,Math.min(35.5,f.z()-1.8));
-            renderer.eyeHeight=Math.max(.7,Math.min(10.5,f.y()+1.4));
-            renderer.yaw=Math.atan2(f.x()-renderer.x,f.z()-renderer.z);
-            renderer.pitch=-.12;
-            renderer.setEditorSelection(f.x(),f.y(),f.z());
+            if(!f.kind().equals("PROP")||!CastleEditorAgent.positionPropCamera(renderer,map,data.propById(f.id())))
+                CastleEditorAgent.positionCamera(renderer,f.x(),f.y(),f.z());
             status.setText("AUDIT: "+f.code()+" — "+f.id()+" (advisory)");
             dialog.dispose();
             viewport.requestFocusInWindow();
@@ -785,9 +781,7 @@ public final class DeveloperLevelEditor extends JPanel {
             status.setText("Move inside the level before placing an asset");return;
         }
         String id="custom"+System.nanoTime();
-        operate(()->data.put(new CastleLevelEdits.Prop(id,mesh,aheadX,
-            renderer.eyeHeight>3?CastleHubArchitecturalPlan.GROUND_CEILING:0,
-            aheadZ,.8,0,.4,.4,renderer.eyeHeight>3)));
+        operate(()->data.placePaletteProp(id,mesh,aheadX,renderer.eyeHeight>3?CastleHubArchitecturalPlan.GROUND_CEILING:0,aheadZ));
         refresh();selectId("PROP",id);
     }
     private void addLamp(){
@@ -1261,8 +1255,7 @@ public final class DeveloperLevelEditor extends JPanel {
         if(mission!=null){addMissionAsset(target.x,target.z);return;}
         String mesh=(String)library.getSelectedItem();if(mesh==null)return;
         String id="asset"+System.nanoTime();
-        operate(()->data.put(new CastleLevelEdits.Prop(id,mesh,target.x,
-            value(workPlane),target.z,.8,0,.4,.4,value(workPlane)>2)));
+        operate(()->data.placePaletteProp(id,mesh,target.x,value(workPlane),target.z));
         refresh();selectId("PROP",id);
     }
     private void addLamp(Point target){
@@ -1344,10 +1337,17 @@ public final class DeveloperLevelEditor extends JPanel {
         if(observation!=null)throw new IllegalStateException("Observation session already open");
         observation=new EditorObservationBridge(agentService(),scope,SwingUtilities::invokeLater);
     }
+    private void selectForFocus(org.beckenburg.editor.EditorProject.Node node){
+        filter.setText("");
+        selectId(data.surfaceById(node.id())!=null?"SURFACE":node.kind(),node.id());
+        viewport.requestFocusInWindow();
+    }
     private void showAgentEvidence(){
         var service=agentService();
         var choices=new ArrayList<>(List.of("INSPECT","TEST","CAPTURE PNG","REOPEN SAVED"));
         if(chosen!=null)choices.add("VERIFY POSITION");
+        if(chosen!=null&&service.supportsFocus())choices.add("FOCUS OBJECT");
+        if(service.supportsWalkability())choices.add("CHECK WALKABILITY");
         if(service.summary().capabilities().contains(EditorAgentService.Capability.RECOVER_PREVIOUS))choices.add("RECOVER PREVIOUS SAVE");
         choices.add(observation==null?"START LOCAL OBSERVATION":"STOP LOCAL ACCESS");
         if(observation==null)choices.add("START LOCAL EDITING");
@@ -1374,6 +1374,22 @@ public final class DeveloperLevelEditor extends JPanel {
             }
             var state=service.summary();Object result;
             switch(choice){
+                case "CHECK WALKABILITY" -> {
+                    var px=new JTextField(Double.toString(renderer.x),12);
+                    var py=new JTextField(Double.toString(value(workPlane)),12);
+                    var pz=new JTextField(Double.toString(renderer.z),12);
+                    Object[] fields={"Player standing position","X",px,"Foot elevation",py,"Z",pz};
+                    if(JOptionPane.showConfirmDialog(window,fields,"Check walkability",JOptionPane.OK_CANCEL_OPTION)!=JOptionPane.OK_OPTION)return;
+                    var proof=service.walkability(state.revision(),Double.parseDouble(px.getText()),Double.parseDouble(py.getText()),Double.parseDouble(pz.getText())).result();
+                    result="Revision "+state.revision()+"\nFoot position "+proof.x()+", "+proof.y()+", "+proof.z()+
+                        "\n"+(proof.walkable()?"Walkable":"Blocked or unsupported");
+                }
+                case "FOCUS OBJECT" -> {
+                    var node=service.node(state.revision(),chosen.id).result();
+                    String kind="SURFACE".equals(chosen.kind)?data.surfaceById(chosen.id).kind().name():chosen.kind;
+                    if(!kind.equals(node.kind()))throw new IllegalArgumentException("Another hierarchy object takes precedence for this ID");
+                    service.focus(state.revision(),chosen.id);return;
+                }
                 case "VERIFY POSITION" -> {
                     String id=mission==null?chosen.id:mission.nodeId(selectedProp());
                     var node=service.node(state.revision(),id).result();

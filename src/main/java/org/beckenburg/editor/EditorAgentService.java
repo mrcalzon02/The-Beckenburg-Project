@@ -21,6 +21,9 @@ public final class EditorAgentService<S> {
     }
     /** Implement only in a host that can read the active human selection on its owner thread. */
     public interface SelectionSource { Selection selection(); }
+    public interface WalkingCollision { boolean walkable(double x,double y,double z); }
+    public interface NodeFocus { void focus(EditorProject.Node node); }
+    public record Walkability(double x,double y,double z,boolean walkable){}
     public record Inspection<S>(String sceneId, long revision, Path document,
                                 S state, List<EditorProject.Node> hierarchy,
                                 Set<Capability> capabilities, List<String> operations, List<String> tests) {}
@@ -101,6 +104,19 @@ public final class EditorAgentService<S> {
         return new SceneRevision(host.project().id(),host.revision());
     }
     public boolean supportsSelection(){capable(Capability.INSPECT);return host instanceof SelectionSource;}
+    public boolean supportsWalkability(){capable(Capability.INSPECT);return host instanceof WalkingCollision;}
+    public boolean supportsFocus(){capable(Capability.INSPECT);return host instanceof NodeFocus;}
+    public Evidence<EditorProject.Node> focus(long expected,String id){
+        var node=node(expected,id);
+        if(!(host instanceof NodeFocus view))throw new UnsupportedOperationException("Host cannot focus hierarchy nodes");
+        view.focus(node.result());require(expected);return node;
+    }
+    public Evidence<Walkability> walkability(long expected,double x,double y,double z){
+        capable(Capability.INSPECT);require(expected);
+        if(!Double.isFinite(x)||!Double.isFinite(y)||!Double.isFinite(z))throw new IllegalArgumentException("Expected finite foot coordinates");
+        if(host instanceof WalkingCollision runtime)return evidence(new Walkability(x,y,z,runtime.walkable(x,y,z)));
+        throw new UnsupportedOperationException("Host does not provide walking collision");
+    }
     public Evidence<Selection> selection(long expected){
         capable(Capability.INSPECT);require(expected);
         if(host instanceof SelectionSource source)return evidence(source.selection());

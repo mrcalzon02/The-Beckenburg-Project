@@ -13,7 +13,7 @@ import javax.imageio.ImageIO;
 /** Mission adapter: reads/writes the active authoring session; the supplied
  * HouseMap is the same native game map used by the human editor viewport.
  */
-public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuthoringSession.Snapshot> {
+public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuthoringSession.Snapshot>,EditorAgentService.WalkingCollision {
     private final LevelAuthoringSession session;
     private final Supplier<HouseMap> map;
     private final SceneRenderer renderer;
@@ -27,6 +27,7 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
     }
     public LevelAuthoringSession project(){return session;}
     public long revision(){return session.revision();}
+    public boolean walkable(double x,double y,double z){return map.get().traversable(x,y,z);}
     public EditorAgentService.DiskState compareSaved(LevelAuthoringSession.Snapshot live)throws IOException{
         return session.matchesSaved(live)?EditorAgentService.DiskState.MATCHES:EditorAgentService.DiskState.DIFFERS;
     }

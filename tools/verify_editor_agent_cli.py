@@ -197,6 +197,15 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
     assert 'RECOVER_PREVIOUS' in first_castle['capabilities']
     assert '\u2022' in json.dumps(first_castle, ensure_ascii=False), 'Native Unicode labels survive UTF-8 transport'
     revision = first_castle['revision']
+    bed = next(node for node in first_castle['hierarchy'] if node['id'] == 'upper-bed-0')
+    x, y, z = bed['x'] + 1.5, bed['y'], bed['z']
+    chair = f'edit\t{revision}\tplace-prop\tid=cli-upper-chair\tmesh=armchair_1\tx={x}\ty={y}\tz={z}'
+    placed_revision = run([chair])[0]['result']['revision']
+    walk = f'walkability\t{{}}\t{x}\t{y}\t{z}'
+    queries = run([walk.format(revision), chair, f'focus\t{placed_revision}\tcli-upper-chair',
+                   walk.format(placed_revision), f'walkability\t{placed_revision}\t{x}\t{y}\t{z + .85}'])
+    assert [queries[i]['result']['result']['walkable'] for i in (0, 3, 4)] == [True, False, True]
+    assert queries[2]['result']['result']['label'].endswith('armchair_1')
     rows_castle = run([f'save\t{revision}',
                        f'edit\t{revision}\tset-spawn\tx=13.5\tz=19\tyaw=1.125',
                        f'save\t{revision + 1}', 'inspect'])

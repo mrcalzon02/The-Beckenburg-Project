@@ -18,6 +18,8 @@ public final class EditorObservationBridge implements AutoCloseable {
     private final Executor owner;
     private final Set<EditorAgentService.Capability> capabilities;
     private final boolean selection;
+    private final boolean walkingCollision;
+    private final boolean focus;
     private static final int MAX_BYTES=4*1024*1024;
     private final HttpServer server;
     private final ExecutorService worker;
@@ -30,6 +32,8 @@ public final class EditorObservationBridge implements AutoCloseable {
         this.service=Objects.requireNonNull(service);this.scope=Objects.requireNonNull(scope);this.owner=Objects.requireNonNull(owner);
         capabilities=Set.copyOf(service.summary().capabilities());
         selection=service.supportsSelection();
+        walkingCollision=service.supportsWalkability();
+        focus=service.supportsFocus();
         var secret=new byte[32];new SecureRandom().nextBytes(secret);
         token=Base64.getUrlEncoder().withoutPadding().encodeToString(secret);
         server=HttpServer.create(new InetSocketAddress(InetAddress.getByName("127.0.0.1"),0),8);
@@ -108,6 +112,7 @@ public final class EditorObservationBridge implements AutoCloseable {
         if(scope==Scope.OBSERVE)return List.of();
         var routes=new ArrayList<String>();
         if(service.supportsPlaytest())routes.add("/playtest");
+        if(focus)routes.add("/focus");
         if(capabilities.contains(EditorAgentService.Capability.TRANSACT))routes.add("/edit");
         if(capabilities.contains(EditorAgentService.Capability.UNDO))routes.add("/undo");
         if(capabilities.contains(EditorAgentService.Capability.REDO))routes.add("/redo");
@@ -120,16 +125,19 @@ public final class EditorObservationBridge implements AutoCloseable {
     private List<String> readRoutes(){
         var routes=new ArrayList<>(List.of("/summary","/revision","/hierarchy","/node","/nodes","/changes","/assets","/verify-position"));
         if(selection)routes.add("/selection");
+        if(walkingCollision)routes.add("/walkability");
         if(capabilities.contains(EditorAgentService.Capability.TEST))routes.add("/test");
         if(capabilities.contains(EditorAgentService.Capability.CAPTURE))routes.add("/capture");
         return routes;
     }
     private Reply mutate(String path,Map<String,String> args,byte[] body)throws Exception{
-        requireKeys(args,"revision");long revision=Long.parseLong(args.get("revision"));
+        if(path.equals("/focus"))requireKeys(args,"revision","id");else requireKeys(args,"revision");
+        long revision=Long.parseLong(args.get("revision"));
         if(!path.equals("/edit") && body.length!=0)throw new IllegalArgumentException();
         EditorAgentService.Evidence<?> result;
         switch(path){
             case "/playtest" -> {return image(revision,true);}
+            case "/focus" -> result=service.focus(revision,args.get("id"));
             case "/edit" -> {
                 String batch=StandardCharsets.UTF_8.newDecoder().decode(java.nio.ByteBuffer.wrap(body)).toString();
                 if(batch.contains("\r")||batch.contains("\n"))throw new IllegalArgumentException();
@@ -162,6 +170,10 @@ public final class EditorObservationBridge implements AutoCloseable {
         Object value;
         switch(path){
             case "/selection" -> {requireKeys(args);if(!selection)throw new IllegalArgumentException();value=service.selection(revision);}
+            case "/walkability" -> {
+                requireKeys(args,"x","y","z");if(!walkingCollision)throw new IllegalArgumentException();
+                value=service.walkability(revision,Double.parseDouble(args.get("x")),Double.parseDouble(args.get("y")),Double.parseDouble(args.get("z")));
+            }
             case "/node" -> {requireKeys(args,"id");value=service.node(revision,args.get("id"));}
             case "/verify-position" -> {
                 requireKeys(args,"id","x","y","z");
