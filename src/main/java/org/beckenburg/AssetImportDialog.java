@@ -182,6 +182,7 @@ public final class AssetImportDialog {
     private int renderedChecker;
     private final JLabel uvDensity=new JLabel("Select a bound face to measure UVs");
     private final JButton fixUvStretch=new JButton("Fix selected face stretch");
+    private final JButton relaxUvInterior=new JButton("Relax island interior");
     private double materialRenderedRotation=Double.NaN;
     private boolean materialRendering;
     private EditorTopologyProject.State listedMaterials;
@@ -528,12 +529,17 @@ public final class AssetImportDialog {
             var runtime=new JPanel(new BorderLayout(4,4));runtime.add(new JLabel("ACTUAL RUNTIME PREVIEW"),BorderLayout.NORTH);runtime.add(materialRuntime,BorderLayout.CENTER);runtime.add(EditorTopologyWorkspace.column(uvDensity,EditorTopologyWorkspace.form("Preview",materialReviewMode,"Model rotation",materialRotation)),BorderLayout.SOUTH);materialReviewMode.addActionListener(e->refreshMaterialWindow());materialRotation.addChangeListener(e->refreshMaterialWindow());
             var bindings=EditorTopologyWorkspace.column(new JLabel("MATERIAL PROPERTIES"),EditorTopologyWorkspace.form("Material",materialList),materialSwatch,previewMaterial,new JSeparator(),EditorTopologyWorkspace.form("New PNG wrap",materialWrap,"Alpha",materialAlpha,"UV origin",materialOrigin),chooseMaterial,new JLabel("<html>PNG changes are captured in a native preview.<br>Apply commits one face assignment.</html>"));
             var values=new JPanel(new GridLayout(0,2,5,5));values.add(uvFirstLabel);values.add(uvFirst);values.add(uvSecondLabel);values.add(uvSecond);
-            var uvSettings=EditorTopologyWorkspace.column(new JLabel("NATIVE CORNER UVS"),EditorTopologyWorkspace.form("Operation",uvOperation,"Scope",uvScope,"Pivot",uvPivot),values,previewUv,fixUvStretch,new JLabel("<html>Island traversal stops at UV seams<br>and material boundaries.<br>Negative scale mirrors UVs.<br>Zero scale is refused.<br>Apply / Cancel uses native history.</html>"));
+            var uvSettings=EditorTopologyWorkspace.column(new JLabel("NATIVE CORNER UVS"),EditorTopologyWorkspace.form("Operation",uvOperation,"Scope",uvScope,"Pivot",uvPivot),values,previewUv,fixUvStretch,relaxUvInterior,new JLabel("<html>Island traversal stops at UV seams<br>and material boundaries.<br>Negative scale mirrors UVs.<br>Zero scale is refused.<br>Apply / Cancel uses native history.</html>"));
             fixUvStretch.setToolTipText("Preview uniform texel scale on this face while preserving its UV area and center");
             fixUvStretch.addActionListener(e->{
                 if(selectedHit==null)return;
                 long id=selectedHit.faceId();boolean island=uvScope.getSelectedIndex()==1;
                 beginMaterialPreview(p->island?p.previewBalanceIsland(id):p.previewFixFaceStretch(id));
+            });
+            relaxUvInterior.setToolTipText("Preview a relaxed UV interior with seam and boundary coordinates fixed");
+            relaxUvInterior.addActionListener(e->{
+                if(selectedHit==null)return;
+                long id=selectedHit.faceId();beginMaterialPreview(p->p.previewRelaxInterior(id));
             });
             materialTools=new JTabbedPane();materialTools.addTab("Materials",bindings);materialTools.addTab("UV transform",uvSettings);
             var layerButtons=new JPanel(new GridLayout(1,4,2,0));
@@ -640,6 +646,7 @@ public final class AssetImportDialog {
         var visibility=materialWorkspace.visibility();
         fixUvStretch.setEnabled(false);
         boolean island=uvScope.getSelectedIndex()==1;
+        relaxUvInterior.setVisible(island);relaxUvInterior.setEnabled(island && layerEditable);
         fixUvStretch.setText(island?"Balance island stretch":"Fix selected face stretch");
         fixUvStretch.setToolTipText(island?"Balance directional stretch across the connected UV island while preserving signed areas":
             "Preview uniform texel scale on this face while preserving its UV area and center");
@@ -754,6 +761,7 @@ public final class AssetImportDialog {
         beginModelingPreview(p->p.previewFaceEdit(face,operation,amount));
     }
     private void beginMaterialPreview(java.util.function.Function<EditorTopologyProject,EditorTopologyProject.EditPreview> operation){
+        if(materialWorkspace!=null)materialWorkspace.previewIssue(null);
         if(selectedHit!=null && (materialWorkspace==null || !materialDialog.isVisible() || materialWorkspace.visibility().includes(selectedHit.faceId())))
             beginModelingPreview(operation,true);
     }
@@ -778,7 +786,8 @@ public final class AssetImportDialog {
                     if(project!=topologyProject||project.revision()!=nativeRevision||project.snapshot()!=state)throw new IOException("Mesh changed during modeling preview");
                     modelingPreview=review.edit();materialEditPreview=keepMaterialFace;modelingMesh=review.mesh();modelingBounds=review.bounds();selectionLabel.setText(review.edit().description());selectionLabel.setToolTipText(review.edit().description());details.append("\nNATIVE PREVIEW: "+review.edit().description()+". Apply to commit.");
                 }catch(java.util.concurrent.CancellationException canceled){details.append("\nModel preview canceled.");}
-                catch(Exception failure){String message="MODEL EDIT REFUSED: "+rootMessage(failure);details.append("\n"+message);selectionLabel.setText(message);selectionLabel.setToolTipText(message);}
+                catch(Exception failure){String message="MODEL EDIT REFUSED: "+rootMessage(failure);details.append("\n"+message);selectionLabel.setText(message);selectionLabel.setToolTipText(message);
+                    if(keepMaterialFace && materialWorkspace!=null)materialWorkspace.previewIssue("Preview refused · "+rootMessage(failure));}
                 if(modelingPreview==null)snapGuide=null;
                 refreshMeshControls();preview.repaint();
             }

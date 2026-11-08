@@ -730,8 +730,44 @@ public final class G2TexturedModelGuiTest {
                 }
             }
         }
+        verifyRelaxedFan();
         System.out.println("PASS G2 textured box: two workspaces, 8 vertices, 6 quads, 12 triangles, "
             +"36 runtime corners with transformed hard normals and UVs, undo/redo, OBJ bundle/GLB/glTF/native reopen");
+    }
+    private void verifyRelaxedFan()throws Exception{
+        var obj=EditorUvRelaxTest.source(Path.of(System.getProperty("user.home"),"fan"));
+        edt(()->ui.loadSource(obj));await(()->ready(ui));
+        edt(()->{
+            project=(EditorTopologyProject)field(ui,"topologyProject");
+            ui.openMaterials();
+            var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");
+            ((JList<?>)field(workspace,"faceList")).setSelectedIndex(0);
+            ((JTabbedPane)field(ui,"materialTools")).setSelectedIndex(1);
+            select("uvScope",1);
+            button(ui,"relaxUvInterior");
+        });
+        var original=project.snapshot();
+        await(()->reviewed(ui));check(project.snapshot()==original,"Interior preview changed native document");
+        applyReview();EditorUvRelaxTest.verify(original,project.snapshot());
+        edt(()->select("materialReviewMode",1));reviewPixels();
+        published.set(null);
+        edt(()->{captureMaterial("uv-interior.png");button(ui,"apply");});
+        await(()->published.get()!=null);
+        var game=GlbProps.model(published.get());
+        for(int i=0;i<4;i++){near(game.triangles().get(i).c().u(),.5);near(game.triangles().get(i).c().v(),.5);}
+        var committed=project.snapshot();
+        edt(()->{
+            var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");
+            ((JList<?>)field(workspace,"faceList")).setSelectedIndex(4);
+            button(ui,"relaxUvInterior");
+        });
+        await(()->ready(ui));
+        edt(()->{
+            var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");
+            check(project.snapshot()==committed && ((JLabel)field(workspace,"status")).getText().contains("no interior vertices"),
+                "Boundary-only refusal stays visible in the Material Editor and preserves native state");
+        });
+        edt(()->button(ui,"undoMesh"));await(()->ready(ui));check(project.snapshot().equals(original),"Undo UV relaxation exactly");
     }
     public static void main(String[] args) throws Exception {
         Path home=Files.createTempDirectory("g2-textured-");

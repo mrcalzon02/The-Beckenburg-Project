@@ -561,6 +561,9 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         return key;
     }
     private EditorMeshMaterial boundPaintMaterial(long faceId){
+        return boundPaintMaterial(state,faceId);
+    }
+    private static EditorMeshMaterial boundPaintMaterial(State state,long faceId){
         var face=state.faces().stream().filter(f->f.id()==faceId).findFirst().orElseThrow();
         return state.materials().stream().filter(m->m.key().equals(face.material())).findFirst()
             .orElseThrow(()->new IllegalArgumentException("Select a bound face"));
@@ -584,11 +587,13 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
     }
     /** UV islands follow actual half-edge twins, authored seams and material boundaries. */
     private int[] uvFaces(long faceId,boolean island){
+        return uvFaces(state,faceId,island?topology(state):null);
+    }
+    private static int[] uvFaces(State state,long faceId,EditorMeshTopology graph){
         int start=-1;
         for(int i=0;i<state.faces().size();i++)if(state.faces().get(i).id()==faceId){start=i;break;}
         if(start<0)throw new IllegalArgumentException("Unknown native UV face");
-        if(!island)return new int[]{start};
-        var graph=topology(state);
+        if(graph==null)return new int[]{start};
         int[] queue=new int[state.faces().size()];int count=1;queue[0]=start;
         var selected=new BitSet(queue.length);selected.set(start);
         for(int head=0;head<count;head++){
@@ -612,6 +617,17 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),state.vertices(),faces,state.materials(),
             state.glbSource(),state.frames(),state.quads());
         return new EditPreview(this,state,after,revision,"BALANCE UV ISLAND / "+island.length+" faces");
+    }
+    public EditPreview previewRelaxInterior(long faceId){
+        var observed=observe();
+        var before=observed.snapshot();
+        var material=boundPaintMaterial(before,faceId);
+        var graph=observed.topology();
+        int[] island=uvFaces(before,faceId,graph);
+        var faces=new EditorUvRelax(before,graph,island,material.width(),material.height()).solve();
+        var after=new State(id,sourceFingerprint,before.name(),before.sourceBytes(),before.vertices(),faces,before.materials(),
+            before.glbSource(),before.frames(),before.quads());
+        return new EditPreview(this,before,after,observed.revision(),"RELAX UV INTERIOR / "+island.length+" faces");
     }
     public synchronized EditPreview previewUvTransform(long faceId,boolean island,UvTransform operation,double first,double second,boolean origin){
         Objects.requireNonNull(operation);

@@ -57,6 +57,8 @@ public final class EditorMaterialWorkspace extends JPanel {
     private final JList<EditorTopologyProject.Face> faceList=new JList<>(faces);
     private boolean updating;
     private final JLabel status=new JLabel("Open a native model to inspect its material UVs");
+    private String previewIssue;
+    public void previewIssue(String message){previewIssue=message;if(message!=null)status.setText(message);}
     private double zoom=1,panX,panY;private Point panStart;
     private final JPanel canvas=new JPanel(){protected void paintComponent(Graphics graphics){super.paintComponent(graphics);paintTexture((Graphics2D)graphics);}};
     public EditorMaterialWorkspace(JComponent settings,JComponent runtime,JComponent commands,LongConsumer selection){
@@ -173,6 +175,7 @@ public final class EditorMaterialWorkspace extends JPanel {
         visibilityChanged.run();
     }
     public void observe(EditorTopologyProject.State value,Long face,EditorMeshMaterial displayed,boolean pending){
+        if(state!=value || !java.util.Objects.equals(selectedFace,face) || pending)previewIssue=null;
         if(state!=value || !java.util.Objects.equals(selectedFace,face) || pending){stroke=null;lastPixel=null;}
         if(state==null || value==null || !state.sceneId().equals(value.sceneId()) ||
             !state.sourceFingerprint().equals(value.sourceFingerprint())){
@@ -192,7 +195,7 @@ public final class EditorMaterialWorkspace extends JPanel {
         tileU.setEnabled(!pending && (material==null || material.wrapS()!=33071));
         tileV.setEnabled(!pending && (material==null || material.wrapT()!=33071));
         faceTile.setEnabled(!pending && selectedFace!=null);
-        status.setText((pending?"PREVIEW / Apply or Cancel":"NATIVE DOCUMENT")+" | "+(selectedFace==null?"Select a face":"Face "+selectedFace)+" | "+(displayed==null?"Unbound material":displayed.name()+" / "+displayed.width()+" x "+displayed.height()+" / "+displayed.origin())+" | Wheel zoom / middle-drag pan");canvas.repaint();
+        status.setText(previewIssue!=null?previewIssue:(pending?"PREVIEW / Apply or Cancel":"NATIVE DOCUMENT")+" | "+(selectedFace==null?"Select a face":"Face "+selectedFace)+" | "+(displayed==null?"Unbound material":displayed.name()+" / "+displayed.width()+" x "+displayed.height()+" / "+displayed.origin())+" | Wheel zoom / middle-drag pan");canvas.repaint();
     }
     private double[] imageRect(){double size=Math.max(20,Math.min(canvas.getWidth()-40,canvas.getHeight()-40))*zoom;double w=texture==null?size:size*texture.getWidth()/Math.max(texture.getWidth(),texture.getHeight()),h=texture==null?size:size*texture.getHeight()/Math.max(texture.getWidth(),texture.getHeight());return new double[]{(canvas.getWidth()-w)/2+panX,(canvas.getHeight()-h)/2+panY,w,h};}
     private int x(double u,double[] r){return (int)Math.rint(r[0]+tile.imageU(u,material)*r[2]);}
