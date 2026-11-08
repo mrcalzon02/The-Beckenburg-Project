@@ -31,3 +31,6 @@ development/levels/rebuild/terrain-fit-pass/**/*.blend[0-9]
 
 # Scoped Blender deck construction backups.
 development/levels/rebuild/deck-fit-pass/**/*.blend[0-9]
+
+# Scoped occupied-room terrain Blender backups.
+development/levels/rebuild/terrain-occupancy-pass/**/*.blend[0-9]

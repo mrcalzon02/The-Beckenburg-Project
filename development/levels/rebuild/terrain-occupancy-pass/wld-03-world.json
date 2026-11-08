@@ -1,0 +1,254 @@
+{
+  "id": "WLD-03",
+  "source": {
+    "id": "WLD-03",
+    "source_glb": "development/levels/rebuild/terrain-fit-pass/wld-03/supported-terrain.glb",
+    "source_glb_sha256": "91e60eb11422e0016149a41f8c65de7d87773d1151dded050d0066a278ac9fec",
+    "layout": "development/levels/rebuild/wld-03/rough-layout.json",
+    "layout_sha256": "c47d8e1884c077d768b9cfe321d0d606937fad5c63e519b84e1cd731ec51a102",
+    "intrusions": [
+      {
+        "id": "gallery",
+        "bounds": [
+          48,
+          22,
+          66,
+          40
+        ],
+        "floor_y": 8,
+        "height": 3,
+        "samples": 1296,
+        "occupied_terrain_samples": 63,
+        "height_range": [
+          8.010986328125,
+          8.274173736572266
+        ],
+        "examples": [
+          [
+            62.25,
+            8.019775390625,
+            22.25
+          ],
+          [
+            62.75,
+            8.052978515625,
+            22.25
+          ],
+          [
+            62.75,
+            8.03662109375,
+            22.75
+          ],
+          [
+            62.75,
+            8.024658203125,
+            23.25
+          ],
+          [
+            62.75,
+            8.0126953125,
+            23.75
+          ]
+        ]
+      },
+      {
+        "id": "fork",
+        "bounds": [
+          66,
+          22,
+          76,
+          40
+        ],
+        "floor_y": 8,
+        "height": 3,
+        "samples": 720,
+        "occupied_terrain_samples": 342,
+        "height_range": [
+          8.0120849609375,
+          9.225971221923828
+        ],
+        "examples": [
+          [
+            66.25,
+            8.314334869384766,
+            22.25
+          ],
+          [
+            66.25,
+            8.292362213134766,
+            22.75
+          ],
+          [
+            66.25,
+            8.270389556884766,
+            23.25
+          ],
+          [
+            66.25,
+            8.248416900634766,
+            23.75
+          ],
+          [
+            66.25,
+            8.223636627197266,
+            24.25
+          ]
+        ]
+      },
+      {
+        "id": "chamber",
+        "bounds": [
+          66,
+          4,
+          82,
+          22
+        ],
+        "floor_y": 8,
+        "height": 3,
+        "samples": 1152,
+        "occupied_terrain_samples": 1152,
+        "height_range": [
+          8.338750839233398,
+          10.440345764160156
+        ],
+        "examples": [
+          [
+            66.25,
+            8.569831848144531,
+            4.25
+          ],
+          [
+            66.25,
+            8.582284927368164,
+            4.75
+          ],
+          [
+            66.25,
+            8.594734191894531,
+            5.25
+          ],
+          [
+            66.25,
+            8.607185363769531,
+            5.75
+          ],
+          [
+            66.25,
+            8.618415832519531,
+            6.25
+          ]
+        ]
+      },
+      {
+        "id": "lower-cave",
+        "bounds": [
+          48,
+          22,
+          66,
+          40
+        ],
+        "floor_y": 4,
+        "height": 4,
+        "samples": 1296,
+        "occupied_terrain_samples": 1194,
+        "height_range": [
+          4.05718994140625,
+          7.99853515625
+        ],
+        "examples": [
+          [
+            48.25,
+            7.666622161865234,
+            22.25
+          ],
+          [
+            48.25,
+            7.666133880615234,
+            22.75
+          ],
+          [
+            48.25,
+            7.665645599365234,
+            23.25
+          ],
+          [
+            48.25,
+            7.665157318115234,
+            23.75
+          ],
+          [
+            48.25,
+            7.664546966552734,
+            24.25
+          ]
+        ]
+      }
+    ]
+  },
+  "source_world_preserved": {
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/adaptive-topology.bin": "19b89a1ddd412660e290dd8ca92315d62e4312bb89d529c2eefc9da4b3450426",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/authored-cuts.tsv": "1cb74b531f033f696034b0f3b17c482b09c8be5bfce4a6eb8103d9ed10994d55",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/source-provenance.json": "a8d4b5cf95bc9d69adee6595bd670713f41d3959562af08f063aa17c5ce4afc6",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/terrain-physics.hcs2": "f1a0d1f45b4ea6a65bfbfa85ffdf85dee97e8d3161ccc19b475ffdde49e8b287",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/tile_0_0.png": "4a55dfe0924a92660897220f5525a7c27d63adee7849af6cdc1253b986150c42",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/verification.json": "aceda8c32f2beb1a61143430b19c38bdd0fecd57efe0bf7b70a1d53a1764974a",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/world.properties": "6b147c274f7f0fad8e5e20ad2f49d2e4743824c85318ad89b65616174f691654",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/scene-package/.scene.bin.editor.previous": "d5af30eff251aeb53a6747849ce18f6804289db881457c863b2d1cf7f787d998",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/scene-package/scene.bin": "83a8d7df37a926ea8bf72bd44dab02ece5909b93450d77e8ac4c25daf20f9870",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-0-0.obj": "771c5c7556095c86c9645c2029012824ef19efa51dfd8d0e27a474e5ff229c05",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-0-1.obj": "c5b1fa70f3fd3787de23b2a9e10899fe2eb0335630ebb3f927f716e56531deff",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-1-0.obj": "80bd8b0c8bb3e7d8cf7c305a5709f3b842e050fcfcb1d4c67bb8d4c90ef13700",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-1-1.obj": "b17102bced21039fbd89c6b283657773f555af875e4e4171ed6bd016a2246618"
+  },
+  "new_cuts": [
+    [
+      48.0,
+      22.0,
+      66.0,
+      40.0,
+      "occupied-room-gallery"
+    ],
+    [
+      66.0,
+      22.0,
+      76.0,
+      40.0,
+      "occupied-room-fork"
+    ],
+    [
+      66.0,
+      4.0,
+      82.0,
+      22.0,
+      "occupied-room-chamber"
+    ],
+    [
+      48.0,
+      22.0,
+      66.0,
+      40.0,
+      "occupied-room-lower-cave"
+    ]
+  ],
+  "world": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world",
+  "saved_world_files": {
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/adaptive-topology.bin": "938923743ba10cacb029404add7e2d9eed377ec0dde9c5c77ff4bf2cb6e29b16",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/authored-cuts.tsv": "c8f831622e7c93a737f3360f32c3efd95fbf29bce921796cc2af4fb11817b862",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/source-provenance.json": "0e77c25320bac0bf09eba9ab756fb96f174d924b53e3abe5a4adf50f969d9505",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/terrain-physics.hcs2": "5a4622414250f2e72922e6eba4dbbb6ba20b52270aaaccaef96fbf5a5c3c7240",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/tile_0_0.png": "4a55dfe0924a92660897220f5525a7c27d63adee7849af6cdc1253b986150c42",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/verification.json": "70a393b79b41cce04671153c47087bc58937359ba69f56c138fdefacdf3565b7",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/world.properties": "6b147c274f7f0fad8e5e20ad2f49d2e4743824c85318ad89b65616174f691654",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/scene-package/.scene.bin.editor.previous": "dca695119e6f8ca42b064117fa278042f3e5c9d0e2f7035f8c5a1207e5961cda",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/scene-package/scene.bin": "b775f32932e646646fdda3cfeba2112b29277c4041b259e4a5f0362af40bfc3e",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-0-0.obj": "8be071fbd7ed7ebcfff0fd4b40db5faa67b52a64b8af2c411a392a6309be1e67",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-0-1.obj": "c5b1fa70f3fd3787de23b2a9e10899fe2eb0335630ebb3f927f716e56531deff",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-1-0.obj": "73a3dff0047ba11727281937b0c015ae9edda8ceeb60b32cf356a5782d902090",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-1-1.obj": "b17102bced21039fbd89c6b283657773f555af875e4e4171ed6bd016a2246618"
+  },
+  "author_sha256": "e62ecb637915437e8b64c6d4e135d6bfa56e0f3b90fe50a57d20823c92e1b431",
+  "builder_sha256": "db4dd450ad3cca03c56f69c0dfff55f1ec348a80db2fe1166b717285451e1082",
+  "dependency_jar_sha256": "e8421aea395d23fc48b13a73de227a19332f1068a927e8dfd8aca4e2e461ecec",
+  "status": "ACTUAL_SAVED_OCCUPIED_ROOM_EXCAVATION_CANDIDATE_NOT_MAP_ACCEPTANCE",
+  "remaining": "Independent terrain/native/room coverage and route regression checks; foundation/rock/retaining/collar edges, remaining outdoor conflicts and runtime integration."
+}

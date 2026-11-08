@@ -1,8 +1,8 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 1741,
-  "unique_local_file_hashes": 1608,
+  "local_files": 1746,
+  "unique_local_file_hashes": 1613,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
@@ -12,7 +12,7 @@
     "additional_custom_model_sources": 22,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 28,
-    "native_map_exports": 121
+    "native_map_exports": 126
   },
   "archive_index": {
     "path": "development/assets/local-library-manifest.json",
@@ -27050,6 +27050,66 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "31170fe77b5f4eb67752d66af9de3a136cc7553b806cac2d8f2fedd00b9b9ed3",
       "bytes": 1559716
+    },
+    {
+      "id": "occupied-terrain",
+      "label": "occupied-terrain",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-03/occupied-terrain.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "f701f6f728c5b70c8f9d436076d1d798051ab756ebfb02c5e23c46531de1a804",
+      "bytes": 2391248
+    },
+    {
+      "id": "occupied-terrain",
+      "label": "occupied-terrain",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-04/occupied-terrain.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "b2a7f7098eeec354036c86c826b8d6a67448546db3ce34840b78e35e252c379a",
+      "bytes": 2189108
+    },
+    {
+      "id": "occupied-terrain",
+      "label": "occupied-terrain",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-09/occupied-terrain.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "f49b69c3ec1bd68accef5c71c6c4d3725874cedd32e08f0e90e40c6396e1a1be",
+      "bytes": 2953284
+    },
+    {
+      "id": "occupied-terrain",
+      "label": "occupied-terrain",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-14/occupied-terrain.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "52103b4b63a0044459a5071cd77ea2a5f3cf4c2df44917e1ae5f54c9329e2f88",
+      "bytes": 3658656
+    },
+    {
+      "id": "occupied-terrain",
+      "label": "occupied-terrain",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-17/occupied-terrain.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "16e14a7dc6105b52c7a5c8c3ea7032b0ed32486211922302ccae4568ca971b75",
+      "bytes": 1744652
     },
     {
       "id": "terrain-assembly",

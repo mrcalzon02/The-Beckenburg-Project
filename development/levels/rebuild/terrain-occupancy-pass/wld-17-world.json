@@ -1,0 +1,287 @@
+{
+  "id": "WLD-17",
+  "source": {
+    "id": "WLD-17",
+    "source_glb": "development/levels/rebuild/terrain-fit-pass/wld-17/supported-terrain.glb",
+    "source_glb_sha256": "97100a0687858160d30629dcae1cc942de3871ace38e52af5602f56158cab5c7",
+    "layout": "development/levels/layouts/wld-17/layout.json",
+    "layout_sha256": "392474ba8bbdd4c03ac96283355bc4f08023fc72d745fe0643c608f5f75e9e37",
+    "intrusions": [
+      {
+        "id": "barracks",
+        "bounds": [
+          8,
+          14,
+          24,
+          26
+        ],
+        "floor_y": 0,
+        "height": 3,
+        "samples": 768,
+        "occupied_terrain_samples": 217,
+        "height_range": [
+          0.02500152587890625,
+          2.9959640502929688
+        ],
+        "examples": [
+          [
+            14.25,
+            2.886322021484375,
+            15.75
+          ],
+          [
+            14.75,
+            2.8589706420898438,
+            15.25
+          ],
+          [
+            14.75,
+            2.6363258361816406,
+            15.75
+          ],
+          [
+            14.75,
+            2.76531982421875,
+            16.25
+          ],
+          [
+            15.25,
+            2.608966827392578,
+            15.25
+          ]
+        ]
+      },
+      {
+        "id": "lowgallery",
+        "bounds": [
+          24,
+          26,
+          44,
+          34
+        ],
+        "floor_y": 0,
+        "height": 3,
+        "samples": 640,
+        "occupied_terrain_samples": 201,
+        "height_range": [
+          0.211639404296875,
+          2.948455810546875
+        ],
+        "examples": [
+          [
+            24.25,
+            1.7752227783203125,
+            26.25
+          ],
+          [
+            24.25,
+            2.359405517578125,
+            26.75
+          ],
+          [
+            24.25,
+            2.943592071533203,
+            27.25
+          ],
+          [
+            24.75,
+            1.3794097900390625,
+            26.25
+          ],
+          [
+            24.75,
+            2.3591461181640625,
+            26.75
+          ]
+        ]
+      },
+      {
+        "id": "plant",
+        "bounds": [
+          44,
+          14,
+          60,
+          26
+        ],
+        "floor_y": 0,
+        "height": 3,
+        "samples": 768,
+        "occupied_terrain_samples": 300,
+        "height_range": [
+          0.02500152587890625,
+          2.9959640502929688
+        ],
+        "examples": [
+          [
+            44.25,
+            2.271648406982422,
+            18.75
+          ],
+          [
+            44.25,
+            1.3229904174804688,
+            19.25
+          ],
+          [
+            44.25,
+            0.3743324279785156,
+            19.75
+          ],
+          [
+            44.25,
+            0.9525413513183594,
+            20.75
+          ],
+          [
+            44.25,
+            1.9012031555175781,
+            21.25
+          ]
+        ]
+      },
+      {
+        "id": "records",
+        "bounds": [
+          24,
+          14,
+          34,
+          26
+        ],
+        "floor_y": 0,
+        "height": 3,
+        "samples": 480,
+        "occupied_terrain_samples": 138,
+        "height_range": [
+          0.12487411499023438,
+          2.9625015258789062
+        ],
+        "examples": [
+          [
+            24.25,
+            2.574230194091797,
+            22.75
+          ],
+          [
+            24.25,
+            1.5944862365722656,
+            23.25
+          ],
+          [
+            24.25,
+            0.61474609375,
+            23.75
+          ],
+          [
+            24.25,
+            0.29581451416015625,
+            24.75
+          ],
+          [
+            24.25,
+            0.6916275024414062,
+            25.25
+          ]
+        ]
+      },
+      {
+        "id": "pump",
+        "bounds": [
+          34,
+          14,
+          44,
+          26
+        ],
+        "floor_y": 0,
+        "height": 3,
+        "samples": 480,
+        "occupied_terrain_samples": 139,
+        "height_range": [
+          0.3168487548828125,
+          2.940948486328125
+        ],
+        "examples": [
+          [
+            34.25,
+            2.4120140075683594,
+            19.25
+          ],
+          [
+            34.25,
+            0.7373390197753906,
+            19.75
+          ],
+          [
+            34.25,
+            0.6812515258789062,
+            20.25
+          ],
+          [
+            34.25,
+            2.0562477111816406,
+            20.75
+          ],
+          [
+            34.75,
+            2.4120140075683594,
+            19.25
+          ]
+        ]
+      }
+    ]
+  },
+  "source_world_preserved": {},
+  "new_cuts": [
+    [
+      8.0,
+      14.0,
+      24.0,
+      26.0,
+      "occupied-room-barracks"
+    ],
+    [
+      24.0,
+      26.0,
+      44.0,
+      34.0,
+      "occupied-room-lowgallery"
+    ],
+    [
+      44.0,
+      14.0,
+      60.0,
+      26.0,
+      "occupied-room-plant"
+    ],
+    [
+      24.0,
+      14.0,
+      34.0,
+      26.0,
+      "occupied-room-records"
+    ],
+    [
+      34.0,
+      14.0,
+      44.0,
+      26.0,
+      "occupied-room-pump"
+    ]
+  ],
+  "world": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-17/terrain-world",
+  "saved_world_files": {
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-17/terrain-world/adaptive-topology.bin": "8a24836fec365dd6e1a10134bf7f93ca4f7df420b0b633cd34b06d5b7d6d11bd",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-17/terrain-world/authored-cuts.tsv": "29749bc830d554469634611ea2883031fde9c505cf9d104e9eb03dd11bcb54a8",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-17/terrain-world/source-provenance.json": "3d19e67680422813118185f2a0554e7f8ee429e5ec1ab9798d2187c95b48eb8a",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-17/terrain-world/terrain-physics.hcs2": "87be6644fc8ab7176c7e8fb4cd839f5ec6ff51c76612e4f080fab5773cafa408",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-17/terrain-world/tile_0_0.png": "cb28c513dbbf1578cfa556616fcec8a17771405ba8bd45ad28314556797cf0e0",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-17/terrain-world/verification.json": "36c0f21a2be520edcc97bd38ca795c7041ca14b02612926e95a50efd2edf054b",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-17/terrain-world/world.properties": "484945a0e995f5d9c50434269cede7fb3cf3532f5941d23826c58650a234579a",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-17/terrain-world/scene-package/scene.bin": "47e10322a5e08c0f6a45c8af4bc4c0191610802e27df94f5986ab62c34e5d0af",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-17/terrain-world/scene-package/meshes/site.obj": "8765421f1008d70d11c705a11e0cce5a172ebb1481a9b96a30362fdaa8a5e403"
+  },
+  "author_sha256": "e62ecb637915437e8b64c6d4e135d6bfa56e0f3b90fe50a57d20823c92e1b431",
+  "builder_sha256": "db4dd450ad3cca03c56f69c0dfff55f1ec348a80db2fe1166b717285451e1082",
+  "dependency_jar_sha256": "e8421aea395d23fc48b13a73de227a19332f1068a927e8dfd8aca4e2e461ecec",
+  "status": "ACTUAL_SAVED_OCCUPIED_ROOM_EXCAVATION_CANDIDATE_NOT_MAP_ACCEPTANCE",
+  "remaining": "Independent terrain/native/room coverage and route regression checks; foundation/rock/retaining/collar edges, remaining outdoor conflicts and runtime integration."
+}

@@ -4401,6 +4401,72 @@
       "action": "Translate all tetrahedra to a local vertex and accumulate in Python double precision; retain the closed edge count and positive-volume requirement. For a shared top hit, probe both interiors at0.2mm offsets and reject actual overlapping interiors. Actual five-site export/contact/coverage checks pass; production body/support/depth tolerances untouched.",
       "evidence": "tools/check_roster_decks.py; development/levels/rebuild/deck-fit-pass/verification/export-contact-coverage.json; independent-export.log",
       "older_maps": "Retain prior independent map audit obligations. This is an audit numerical fix, not automatic terrain or map acceptance; rerun actual artifacts per site."
+    },
+    {
+      "id": "DEV-408",
+      "title": "Terrain excavation omits elevated and deeper occupied room volumes",
+      "status": "FIX VERIFIED IN FIVE CANDIDATES; overall terrain/cave/runtime gates open",
+      "affected": "Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline",
+      "symptom": "4749half-metre occupied-height terrain samples across13rooms in five actual native scenes.",
+      "cause": "The cut programs only excavated rooms spanning world Y=0; the dam rooms lie below0 and cave/lookout rooms above0.",
+      "action": "Measure actual terrain triangles inside room envelopes at every elevation and author real persistent room excavations. Four original saved height PNGs/worlds retained, one explicitly seeded battery world added. After audit clear across25candidates;1237flat poses recovered, zero new movement regressions, stair/link gains verified.",
+      "evidence": "development/levels/rebuild/terrain-occupancy-pass/; development/levels/rebuild/captures/room-terrain-batch/; tools/append_static_glb.py; tools/check_room_terrain.py",
+      "older_maps": "All29packets retained; other20candidate geometry unchanged and four mature maps retain individual retrofit obligations. No runtime unlock or complete map acceptance; preserve40space envelope, canonical van, power/hiding/story, original props/UVs/pivots and real basement punches."
+    },
+    {
+      "id": "DEV-409",
+      "title": "Conservative circular tower punch leaves earth inside the wall",
+      "status": "FIX VERIFIED: actual stepped editor cut and physical retaining collar",
+      "affected": "Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline",
+      "symptom": "Morrow tower retained12sampled interior earth contacts; first contained-cell revision left6.",
+      "cause": "The circular cut used an artificial inset and only fully contained quarter-metre cells.",
+      "action": "Punch cells intersecting the actual circular footing; add50closed curved retaining collar parts at real source soil, reserve circulation and existing unsupported joins. Actual room samples clear and exported/native solids pass. Final collar texture/edge and whole landscape acceptance remain open.",
+      "evidence": "development/levels/rebuild/terrain-occupancy-pass/; development/levels/rebuild/captures/room-terrain-batch/; tools/append_static_glb.py; tools/check_room_terrain.py",
+      "older_maps": "All29packets retained; other20candidate geometry unchanged and four mature maps retain individual retrofit obligations. No runtime unlock or complete map acceptance; preserve40space envelope, canonical van, power/hiding/story, original props/UVs/pivots and real basement punches."
+    },
+    {
+      "id": "DEV-410",
+      "title": "Diagonal stair AABBs remove unrelated room-floor and cap regions",
+      "status": "PARTIAL FIX: lookout ruin12floor pieces verified; cross-roster audit and central correction OPEN",
+      "affected": "Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline",
+      "symptom": "Excavation exposed4new blocked poses and2failed sweeps where the lookout ruin floor had been removed by an unrelated diagonal flight bounding box.",
+      "cause": "Shared structural_pass.deck_holes reserves each entire axis-aligned flight rectangle instead of its actual shaft footprint.",
+      "action": "Restore the ruin gap only outside exact diagonal flight polygons and source walking tops with12closed0.16m plates. Final all25comparison has zero new blocks and no passing stairs/links/chains regress. Preserve rejected raw probes. Next broad batch must correct exact floor/cap shaft reservations across all25candidates and individually audit older mature maps.",
+      "evidence": "development/levels/rebuild/terrain-occupancy-pass/; development/levels/rebuild/captures/room-terrain-batch/; tools/append_static_glb.py; tools/check_room_terrain.py",
+      "older_maps": "All29packets retained; other20candidate geometry unchanged and four mature maps retain individual retrofit obligations. No runtime unlock or complete map acceptance; preserve40space envelope, canonical van, power/hiding/story, original props/UVs/pivots and real basement punches."
+    },
+    {
+      "id": "DEV-411",
+      "title": "Re-exporting retained GLB can shift an existing stair vertex",
+      "status": "FIX VERIFIED: append new static resources without re-exporting retained geometry",
+      "affected": "Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline",
+      "symptom": "Independent source preservation rejected L11flight0step12 at the lookout: a tiny position shift crossed the0.1mm rounding bin.",
+      "cause": "Another Blender glTF import/export decomposes and recomposes the retained mesh transform.",
+      "action": "Append selected new terrain/repair geometry to the original binary/resource arrays, preserving original meshes/accessors/UV/image/material data. Only explicit old terrain node mesh references are disabled. Actual source mesh/UV/image/transform and exact retained resource checks pass; no tolerance widened.",
+      "evidence": "development/levels/rebuild/terrain-occupancy-pass/; development/levels/rebuild/captures/room-terrain-batch/; tools/append_static_glb.py; tools/check_room_terrain.py",
+      "older_maps": "All29packets retained; other20candidate geometry unchanged and four mature maps retain individual retrofit obligations. No runtime unlock or complete map acceptance; preserve40space envelope, canonical van, power/hiding/story, original props/UVs/pivots and real basement punches."
+    },
+    {
+      "id": "DEV-412",
+      "title": "Disconnected retained GLB terrain node can still import as geometry",
+      "status": "FIX VERIFIED: remove mesh binding on explicitly replaced terrain nodes",
+      "affected": "Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline",
+      "symptom": "Independent export checker found the old terrain mesh present after first static append, despite removal from scene root lists.",
+      "cause": "The importer can enumerate orphaned glTF nodes independently of default-scene reachability.",
+      "action": "Remove the mesh reference from explicitly replaced terrain nodes while preserving other source nodes and all immutable original binary resources. Repeated actual-export room audit now clears all recorded volumes, and exactly one original terrain mesh is replaced per site.",
+      "evidence": "development/levels/rebuild/terrain-occupancy-pass/; development/levels/rebuild/captures/room-terrain-batch/; tools/append_static_glb.py; tools/check_room_terrain.py",
+      "older_maps": "All29packets retained; other20candidate geometry unchanged and four mature maps retain individual retrofit obligations. No runtime unlock or complete map acceptance; preserve40space envelope, canonical van, power/hiding/story, original props/UVs/pivots and real basement punches."
+    },
+    {
+      "id": "DEV-413",
+      "title": "Battery native room view has unresolved black floor regions",
+      "status": "OPEN: inspect actual floor/shaft geometry and material/normal state",
+      "affected": "Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline",
+      "symptom": "The after native battery first-person frame exposes black rectangular and polygonal floor regions after earth is removed.",
+      "cause": "Not yet established; could include authored stair openings or malformed/unrelated floor reservations/surfaces.",
+      "action": "Retain paired intact PNG and actual source hashes. Inspect the exact exported floors, openings, normals/materials and native body/light behavior in the next roster-wide floor/shaft pass; do not infer that this image is accepted or that all black areas share one cause.",
+      "evidence": "development/levels/rebuild/terrain-occupancy-pass/; development/levels/rebuild/captures/room-terrain-batch/; tools/append_static_glb.py; tools/check_room_terrain.py",
+      "older_maps": "All29packets retained; other20candidate geometry unchanged and four mature maps retain individual retrofit obligations. No runtime unlock or complete map acceptance; preserve40space envelope, canonical van, power/hiding/story, original props/UVs/pivots and real basement punches."
     }
   ],
   "audit_categories": [

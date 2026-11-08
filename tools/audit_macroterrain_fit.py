@@ -11,15 +11,19 @@ OUT=BASE/'verification';OUT.mkdir(exist_ok=True)
 BUILD=ROOT/'build/macroterrain-fit';BUILD.mkdir(exist_ok=True)
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--bearing-pass',action='store_true');parser.add_argument('--deck-pass',action='store_true');args=parser.parse_args();assert not(args.bearing_pass and args.deck_pass)
-    output=ROOT/'development/levels/rebuild/deck-fit-pass/verification' if args.deck_pass else ROOT/'development/levels/rebuild/terrain-fit-pass/verification' if args.bearing_pass else OUT;output.mkdir(exist_ok=True)
+    parser=argparse.ArgumentParser();parser.add_argument('--bearing-pass',action='store_true');parser.add_argument('--deck-pass',action='store_true');parser.add_argument('--occupancy-pass',action='store_true');args=parser.parse_args();assert sum([args.bearing_pass,args.deck_pass,args.occupancy_pass])<=1
+    output=ROOT/'development/levels/rebuild/terrain-occupancy-pass/verification' if args.occupancy_pass else ROOT/'development/levels/rebuild/deck-fit-pass/verification' if args.deck_pass else ROOT/'development/levels/rebuild/terrain-fit-pass/verification' if args.bearing_pass else OUT;output.mkdir(exist_ok=True)
     rows=[];names=[];bindings={}
     roster={r['id']:r for r in json.loads((BASE/'terrain-envelopes.json').read_text())['sites']}
-    catalogue=json.loads(((ROOT/'development/levels/rebuild/terrain-fit-pass/support-policies.json') if args.bearing_pass or args.deck_pass else (BASE/'macroterrain-specs.json')).read_text())
+    catalogue=json.loads(((ROOT/'development/levels/rebuild/terrain-fit-pass/support-policies.json') if args.bearing_pass or args.deck_pass or args.occupancy_pass else (BASE/'macroterrain-specs.json')).read_text())
     for site in catalogue['sites']:
         old=ROOT/f'development/levels/rebuild/furnishings/{site.lower()}';new=BASE/'assemblies'/site.lower();contract=json.loads((old/'physics-contract.json').read_text())
         layout=ROOT/roster[site]['layout'];data=json.loads(layout.read_text())
-        if args.deck_pass:
+        if args.occupancy_pass:
+            before=ROOT/f'development/levels/rebuild/deck-fit-pass/{site.lower()}/deck-terrain.hcs2'
+            if not before.exists():before=ROOT/f'development/levels/rebuild/terrain-fit-pass/{site.lower()}/supported-terrain.hcs2'
+            candidate=ROOT/f'development/levels/rebuild/terrain-occupancy-pass/assemblies/{site.lower()}/occupied-terrain.hcs2';after=candidate if candidate.exists() else before
+        elif args.deck_pass:
             before=ROOT/f'development/levels/rebuild/terrain-fit-pass/{site.lower()}/supported-terrain.hcs2';candidate=ROOT/f'development/levels/rebuild/deck-fit-pass/{site.lower()}/deck-terrain.hcs2';after=candidate if candidate.exists() else before
         elif args.bearing_pass:
             new=ROOT/f'development/levels/rebuild/terrain-fit-pass/{site.lower()}';review=json.loads((new/'construction.json').read_text());before=ROOT/review['source_physics'];after=new/'supported-terrain.hcs2';assert sha(before)==review['source_physics_sha256'] and sha(after)==review['physics_sha256']
@@ -49,8 +53,8 @@ def main():
     probes=list(csv.DictReader(raw.decode().splitlines(),delimiter='\t'));summary={}
     for site in catalogue['sites']:
         selected=[r for r in probes if r['site']==site];failed=collections.Counter(r['link'] for r in selected if r['new_block']=='true' or r['new_sweep_block']=='true')
-        summary[site]=dict(samples=len(selected),**{key:sum(r[key]=='true' for r in selected) for key in ['baseline_valid','new_block','baseline_sweep','new_sweep_block']},affected_segments=dict(failed))
-    report=dict(status='MEASURED_FIT_FINDINGS_NOT_TERRAIN_ACCEPTANCE',sites=summary,source_bindings=bindings,kernel_sha256=sha(kernel),probe_sha256=sha(probe),auditor_sha256=sha(Path(__file__)),scope=f'All{len(summary)} '+('physical deck candidates compared to previous bearing construction, unchanged sites retained' if args.deck_pass else 'bearing construction candidates compared to exact previous terrain composite/furnished scene' if args.bearing_pass else 'new macroterrain composites')+'; unchanged authored flat centre/side routes with production capsules and qualified sweeps. Vertical routes, moved blockouts, terrain edges and runtime remain open.',next_action='Revise blockout/terrain relationships at actual failed contacts. Original route coordinates are review inputs, not fixed constraints. Do not bury failures by increasing tolerances or flattening land around reservation pads.')
+        summary[site]=dict(samples=len(selected),**{key:sum(r[key]=='true' for r in selected) for key in ['baseline_valid','new_block','baseline_sweep','new_sweep_block','after_valid','recovered_pose']},affected_segments=dict(failed))
+    report=dict(status='MEASURED_FIT_FINDINGS_NOT_TERRAIN_ACCEPTANCE',sites=summary,source_bindings=bindings,kernel_sha256=sha(kernel),probe_sha256=sha(probe),auditor_sha256=sha(Path(__file__)),scope=f'All{len(summary)} '+('occupied-room terrain excavations compared to latest bearing/deck sources; unchanged sites retained' if args.occupancy_pass else 'physical deck candidates compared to previous bearing construction, unchanged sites retained' if args.deck_pass else 'bearing construction candidates compared to exact previous terrain composite/furnished scene' if args.bearing_pass else 'new macroterrain composites')+'; unchanged authored flat centre/side routes with production capsules and qualified sweeps. Vertical routes, moved blockouts, terrain edges and runtime remain open.',next_action='Revise blockout/terrain relationships at actual failed contacts. Original route coordinates are review inputs, not fixed constraints. Do not bury failures by increasing tolerances or flattening land around reservation pads.')
     (output/'native-route-fit.json').write_bytes((json.dumps(report,indent=2)+'\n').encode())
     print(json.dumps({site:{key:v for key,v in row.items() if key!='affected_segments'} for site,row in summary.items()},indent=2))
 if __name__=='__main__':main()

@@ -20,3 +20,6 @@ development/levels/rebuild/native-upgrade-baselines/*.properties -text
 
 # Physical deck candidates bind exact source/evidence bytes.
 development/levels/rebuild/deck-fit-pass/** -text
+
+# Occupancy excavation sources and receipts bind exact bytes.
+development/levels/rebuild/terrain-occupancy-pass/** -text

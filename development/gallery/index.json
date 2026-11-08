@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 8122,
+  "count": 8153,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -76504,6 +76504,316 @@
       "height": 900,
       "bytes": 703263,
       "sha256": "8aee32108482f1a6fe4f0d71e472544b7b41f8bbd431892afadc404bdc9aa469"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/paired-room-sheet-01.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/paired-room-sheet-01.png",
+      "title": "Paired room sheet 01",
+      "kind": "Native first-person paired occupied-terrain review; neutral150W fill, not runtime",
+      "width": 1200,
+      "height": 1440,
+      "bytes": 949680,
+      "sha256": "245041f0f431fdeefebe00787f96792cfc50a37e16f41dcb273b5dfe9ac4ab15"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/paired-room-sheet-02.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/paired-room-sheet-02.png",
+      "title": "Paired room sheet 02",
+      "kind": "Native first-person paired occupied-terrain review; neutral150W fill, not runtime",
+      "width": 1200,
+      "height": 960,
+      "bytes": 544822,
+      "sha256": "917131623e3447ffb50e17a4d33d833c3e27ae028e18f640d5b0c34a6bf2d83b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/room-terrain-sheet-01.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/room-terrain-sheet-01.png",
+      "title": "Room terrain sheet 01",
+      "kind": "Native saved editor occupied-room excavation review; construction candidate",
+      "width": 1200,
+      "height": 960,
+      "bytes": 326038,
+      "sha256": "4bd43047a8d78f720a8754b620f7e2210ac713425168483875c7dd326771bd31"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/room-terrain-sheet-02.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/room-terrain-sheet-02.png",
+      "title": "Room terrain sheet 02",
+      "kind": "Native saved editor occupied-room excavation review; construction candidate",
+      "width": 1200,
+      "height": 960,
+      "bytes": 353438,
+      "sha256": "2ad650ad8824805bc2ad14ebdb2998a6420f88c29bc81c4aff4e9a60ef3b92de"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/room-terrain-sheet-03.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/room-terrain-sheet-03.png",
+      "title": "Room terrain sheet 03",
+      "kind": "Native saved editor occupied-room excavation review; construction candidate",
+      "width": 1200,
+      "height": 960,
+      "bytes": 322471,
+      "sha256": "4a4451bc6446eb6adc1ace5a618ff4b2ab8fa2732c1abe5734968ec70cc11eb2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/room-terrain-sheet-04.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/room-terrain-sheet-04.png",
+      "title": "Room terrain sheet 04",
+      "kind": "Native saved editor occupied-room excavation review; construction candidate",
+      "width": 1200,
+      "height": 960,
+      "bytes": 246503,
+      "sha256": "7520ada42b36f6887bcc3b358082d3366dfdeaac652b71fa9d3fb65939118335"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-03-overview.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/wld-03-overview.png",
+      "title": "Wld 03 overview",
+      "kind": "Native saved editor occupied-room excavation review; construction candidate",
+      "width": 1200,
+      "height": 900,
+      "bytes": 779041,
+      "sha256": "6fdb682d089d7d666936efd96a89ac3cc09565c933ac60f551991b6ca39d3ef0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-03-room-after.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/wld-03-room-after.png",
+      "title": "Wld 03 room after",
+      "kind": "Native first-person paired occupied-terrain review; neutral150W fill, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 708268,
+      "sha256": "c1df1c112bb4614721f0fbe3df049e61459774f32a70baa716bf6c2b973b02a1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-03-room-before.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/wld-03-room-before.png",
+      "title": "Wld 03 room before",
+      "kind": "Native first-person paired occupied-terrain review; neutral150W fill, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 667752,
+      "sha256": "cad8ffb24179cd4eea7ddedcefea8ec0615ec8185d9f9d26c5dbbcf1888c94fa"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-03-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/wld-03-saved-terrain.png",
+      "title": "Wld 03 saved terrain",
+      "kind": "Native saved editor occupied-room excavation review; construction candidate",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 70048,
+      "sha256": "5b8303523201cc5aad809965de6e990af8d97b456b52006ce73b8046fe65722c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-03-terrain-only.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/wld-03-terrain-only.png",
+      "title": "Wld 03 terrain only",
+      "kind": "Native saved editor occupied-room excavation review; construction candidate",
+      "width": 1200,
+      "height": 900,
+      "bytes": 727070,
+      "sha256": "29276da888885575fc4355d108f29641b28cd610ef2aad70cb2728eb5303a554"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-04-overview.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/wld-04-overview.png",
+      "title": "Wld 04 overview",
+      "kind": "Native saved editor occupied-room excavation review; construction candidate",
+      "width": 1200,
+      "height": 900,
+      "bytes": 732054,
+      "sha256": "2c18130940cfab4db690b18accabe895a92a0ff441236be6f0017c87db2693fc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-04-room-after.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/wld-04-room-after.png",
+      "title": "Wld 04 room after",
+      "kind": "Native first-person paired occupied-terrain review; neutral150W fill, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 710956,
+      "sha256": "beca8bda24bf2f96062134cd216866dbc006508dbb7d13864d8336c8a53a0e57"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-04-room-before.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/wld-04-room-before.png",
+      "title": "Wld 04 room before",
+      "kind": "Native first-person paired occupied-terrain review; neutral150W fill, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 706496,
+      "sha256": "334ee4e3adf79cb1998a3fc6fea4ef49150821e545160883b1e71250d4cc7c46"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-04-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/wld-04-saved-terrain.png",
+      "title": "Wld 04 saved terrain",
+      "kind": "Native saved editor occupied-room excavation review; construction candidate",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 42221,
+      "sha256": "821f7b7a28d835a8835b943e1fc6ca6d78434934f0407346515232db8907bf05"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-04-terrain-only.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/wld-04-terrain-only.png",
+      "title": "Wld 04 terrain only",
+      "kind": "Native saved editor occupied-room excavation review; construction candidate",
+      "width": 1200,
+      "height": 900,
+      "bytes": 699168,
+      "sha256": "a84e78f28314dd94ac6e3973b4b8afb518bf2230c5cb7255b03f2ee4abb92ba6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-09-overview.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/wld-09-overview.png",
+      "title": "Wld 09 overview",
+      "kind": "Native saved editor occupied-room excavation review; construction candidate",
+      "width": 1200,
+      "height": 900,
+      "bytes": 770090,
+      "sha256": "4c855cd9d1828b53d4deae9b3bf4062f4c910d0b2fb5a86f4203c57c6c62cd7d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-09-room-after.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/wld-09-room-after.png",
+      "title": "Wld 09 room after",
+      "kind": "Native first-person paired occupied-terrain review; neutral150W fill, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 714960,
+      "sha256": "bb1fbf94f3c6b78b2472f5e4f35862fec8439614ae9c854b7d3e5166c59fe293"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-09-room-before.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/wld-09-room-before.png",
+      "title": "Wld 09 room before",
+      "kind": "Native first-person paired occupied-terrain review; neutral150W fill, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 715218,
+      "sha256": "cbb3ef5b78f2976edc6f252c974eb645ed07f4afa70a66d97e682ad19e0ce2aa"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-09-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/wld-09-saved-terrain.png",
+      "title": "Wld 09 saved terrain",
+      "kind": "Native saved editor occupied-room excavation review; construction candidate",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 45997,
+      "sha256": "292f5c4d49456c3dcbee62d514af69afe4a3c683619e13b29d49849dfed5c287"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-09-terrain-only.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/wld-09-terrain-only.png",
+      "title": "Wld 09 terrain only",
+      "kind": "Native saved editor occupied-room excavation review; construction candidate",
+      "width": 1200,
+      "height": 900,
+      "bytes": 665632,
+      "sha256": "2c307e66df5e8c20ca4d5d689e0b183826c5b23c2158393a4dafe1128fb04378"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-14-overview.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/wld-14-overview.png",
+      "title": "Wld 14 overview",
+      "kind": "Native saved editor occupied-room excavation review; construction candidate",
+      "width": 1200,
+      "height": 900,
+      "bytes": 857560,
+      "sha256": "41a9b116dc27e0c1d2393c7c3b1ee03b48c7a1d93556b2368f13f6446568ae3f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-14-room-after.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/wld-14-room-after.png",
+      "title": "Wld 14 room after",
+      "kind": "Native first-person paired occupied-terrain review; neutral150W fill, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 742916,
+      "sha256": "e269dcbf4c5c683df65bf66a71e9a37ee9eab8832177959b3b480ed4ccadf73c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-14-room-before.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/wld-14-room-before.png",
+      "title": "Wld 14 room before",
+      "kind": "Native first-person paired occupied-terrain review; neutral150W fill, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 748060,
+      "sha256": "2ac137851c0491544f6e9dfb3f144ad34e252dd5270c0e1430b1299a7318449b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-14-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/wld-14-saved-terrain.png",
+      "title": "Wld 14 saved terrain",
+      "kind": "Native saved editor occupied-room excavation review; construction candidate",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 62949,
+      "sha256": "6e8c0cc1a9fbbcbb0229c72db26a978316f27aace97c3d31735eb5d7550ea44f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-14-terrain-only.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/wld-14-terrain-only.png",
+      "title": "Wld 14 terrain only",
+      "kind": "Native saved editor occupied-room excavation review; construction candidate",
+      "width": 1200,
+      "height": 900,
+      "bytes": 720539,
+      "sha256": "707acca0fa70255e79022f71d1d662eddfb7a01639365555486235053f21843b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-17-overview.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/wld-17-overview.png",
+      "title": "Wld 17 overview",
+      "kind": "Native saved editor occupied-room excavation review; construction candidate",
+      "width": 1200,
+      "height": 900,
+      "bytes": 734938,
+      "sha256": "46b1597ace23d3c61941db5666465c92779c3c19f8d1cc37f31a192a8dd734f7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-17-room-after.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/wld-17-room-after.png",
+      "title": "Wld 17 room after",
+      "kind": "Native first-person paired occupied-terrain review; neutral150W fill, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 631980,
+      "sha256": "f016ed820f6ce609791103ba1d23fe18e9b74483df8e4a337cfc23ad898eb9ab"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-17-room-before.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/wld-17-room-before.png",
+      "title": "Wld 17 room before",
+      "kind": "Native first-person paired occupied-terrain review; neutral150W fill, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 50685,
+      "sha256": "d1bc15e1b2c865463a58b35beb982ec7ca13d4764ded31c5f020e227eca47da4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-17-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/wld-17-saved-terrain.png",
+      "title": "Wld 17 saved terrain",
+      "kind": "Native saved editor occupied-room excavation review; construction candidate",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 70953,
+      "sha256": "c4bc2edf8c7c71f66d7e60c581d8ce16cff3183fa939f125ba0a0680c8da74a5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-17-terrain-only.png",
+      "url": "development/levels/rebuild/captures/room-terrain-batch/wld-17-terrain-only.png",
+      "title": "Wld 17 terrain only",
+      "kind": "Native saved editor occupied-room excavation review; construction candidate",
+      "width": 1200,
+      "height": 900,
+      "bytes": 705867,
+      "sha256": "4043605eeff18632513436992693e7db7903e8d617e22af9f97155d36db20711"
     },
     {
       "path": "development/levels/rebuild/captures/stair-movement-batch/wld-14-mitered-candidate-construction.png",
