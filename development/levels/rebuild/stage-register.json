@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "date": "2026-11-07",
+  "date": "2026-11-08",
   "timezone": "America/Anchorage",
   "status": "EXECUTION_IN_PROGRESS",
   "source_baseline": "ad9bb45c20c3754931637bdfa50968a35defeaf9",
@@ -6672,5 +6672,31 @@
       "scope": "Counts cover tested_sites only. Immutable earlier controls and unchanged sources are not silently counted as rerun. No map/runtime/landscape acceptance."
     },
     "source_sha": "8d21dcae430bb232c8f9b4c397ca6101275b1974"
+  },
+  "access_route_checkpoint": {
+    "status": "AUTHORED_SOURCE_NATIVE_PASS_NOT_RUNTIME_ACCEPTANCE",
+    "roster": "development/levels/rebuild/access-route-pass/roster.json",
+    "source_baseline": "0614227c8a4051dccded7cb1b14d698e0d5e69a1",
+    "evidence": "development/levels/rebuild/access-route-pass/verification",
+    "counts": {
+      "complete_flat_before": 393,
+      "complete_flat_after": 444,
+      "complete_flat_total": 566,
+      "current_full_foot_samples": 119511,
+      "current_invalid_full_foot": 10309,
+      "flights": 221,
+      "complete_vertical_links": {
+        "routes": 84,
+        "legacy_forward": 0,
+        "legacy_reverse": 0,
+        "authored_forward": 84,
+        "authored_reverse": 84
+      },
+      "changed_links": 51,
+      "changed_sites": 14,
+      "capture_frames": 104,
+      "review_sheets": 26
+    },
+    "next_action": "122incompleteflatlinks; seveninvalid/29unproven-directroomsocketgroups; broad physical terrain/structure and runtime services/acceptance remain open."
   }
 }

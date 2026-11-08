@@ -2,7 +2,7 @@
 
 Every discovered error, regression, placement problem or unresolved issue belongs here. `defects.json` is authoritative; regenerate this view with `python tools/build_defect_ledger.py`. A scoped fix never certifies unaudited maps.
 
-[Required fitness checks](MAP_FITNESS_CHECKLIST.md) Â· [Screenshot gallery](../../beckenburg-development-gallery.html)
+[Required fitness checks](MAP_FITNESS_CHECKLIST.md) · [Screenshot gallery](../../beckenburg-development-gallery.html)
 
 ## Required issue record
 
@@ -10,9 +10,9 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
-### DEV-276 â€” Closing Beckenburg leaves hidden GPU worker and Java process alive
+### DEV-276 — Closing Beckenburg leaves hidden GPU worker and Java process alive
 
-**Status:** SOURCE FIX COMMITTED; Java child-process regression and installed Windows GPU exit acceptance pending Â· **Affected:** Normal desktop Exit, main window X, Castle gate, solo pause Exit, GPU launcher and auxiliary water editor, interactive DEV asset showroom and headless DEV room captures
+**Status:** SOURCE FIX COMMITTED; Java child-process regression and installed Windows GPU exit acceptance pending · **Affected:** Normal desktop Exit, main window X, Castle gate, solo pause Exit, GPU launcher and auxiliary water editor, interactive DEV asset showroom and headless DEV room captures
 
 After the visible Project Beckenburg window closes, the game process can remain active indefinitely in the background; multiple user reproductions.
 
@@ -24,9 +24,9 @@ Evidence and verification: User report 2026-11-05; source inspection of Investig
 
 Older-map obligation: No map geometry changed. Verify normal game/window/quit/pause exit after House, Castle, campaign and LAN sessions; confirm no Java or helper process survives and that diagnostics record clean GL shutdown.
 
-### DEV-275 â€” DEV Room reports green despite failed source-only decoder and catalog diagnostics
+### DEV-275 — DEV Room reports green despite failed source-only decoder and catalog diagnostics
 
-**Status:** VERIFIED DEV-QA repair: Windows native review 42130219315 PASS with strict Hollow Creek roster, 22 Castle relics, source-only models and Castle fit; no release or full gameplay acceptance inferred Â· **Affected:** Developer Asset Room diagnostic workflow, Castle source relic decoder, native Castle graybox fit, Hollow Creek asset registry
+**Status:** VERIFIED DEV-QA repair: Windows native review 42130219315 PASS with strict Hollow Creek roster, 22 Castle relics, source-only models and Castle fit; no release or full gameplay acceptance inferred · **Affected:** Developer Asset Room diagnostic workflow, Castle source relic decoder, native Castle graybox fit, Hollow Creek asset registry
 
 Green workflow 42126655787 uploaded captures even though three advisory assertions failed; test marked REVIEW_REGISTRATION source meshes as undecodable and omitted 18 new source refinement models.
 
@@ -38,23 +38,23 @@ Evidence and verification: Workflow 42126655787 passed superficially with three 
 
 Older-map obligation: All future location/model catalogs and source-only inspection rosters must compare actual registry membership and decoded GLB status without changing runtime approval.
 
-### DEV-274 â€” Castle bronze astrolabe dial penetrates floor and rotates radial markers around wrong axis
+### DEV-274 — Castle bronze astrolabe dial penetrates floor and rotates radial markers around wrong axis
 
-**Status:** VERIFIED SOURCE-ONLY repair: deterministic GLB/geometry generator 42129321468 PASS; native 22-relic/crypt decode, Castle fit and screenshot workflow 42130219315 PASS; final texture/in-world placement remains unapproved Â· **Affected:** Castle relic source-only astrolabe model and all proposed vault/museum display banks using the shared GLB
+**Status:** VERIFIED SOURCE-ONLY repair: deterministic GLB/geometry generator 42129321468 PASS; native 22-relic/crypt decode, Castle fit and screenshot workflow 42130219315 PASS; final texture/in-world placement remains unapproved · **Affected:** Castle relic source-only astrolabe model and all proposed vault/museum display banks using the shared GLB
 
 Native relic decoder refused the astrolabe as below-floor bounds; source ring extended down to -0.15 m and ornaments below ground.
 
 Cause / uncertainty: The bronze vertical disc was centered at y=.31 with .46 m radial extent; its decorative ring rotated ticks with Y-axis yaw despite the dial occupying XY face plane. It also lacked a supporting upright.
 
-Fix / next action: Raise dial assembly .16 m, rotate its ticks and needle in face-plane roll, add a bronze load-bearing support and keep the wood base at yÃ¢â€°Ë†.005 m. Preserve source-only/never-runtime-approved status and require exact regenerated GLB/grounded source checks.
+Fix / next action: Raise dial assembly .16 m, rotate its ticks and needle in face-plane roll, add a bronze load-bearing support and keep the wood base at yâ‰ˆ.005 m. Preserve source-only/never-runtime-approved status and require exact regenerated GLB/grounded source checks.
 
 Evidence and verification: Real DEV Room 42128827427 error 'Off-ground/reversed model bounds level_blockout_relic_bronze_astrolabe'; source commit aa33e7b4, generator and geometry regression run 42129321468 PASS, native follow-up pending. Native full run 42130219315 PASS; independent fast gallery 42131185143 PASS after fixes.
 
 Older-map obligation: Audit other relic mounts and display plinths independently when fitting them into Castle/Church/Mortuary; source-only ground contact is not actual scene fit.
 
-### DEV-273 â€” DEV Room multi-floor camera starts inside previous bay cannery machine
+### DEV-273 — DEV Room multi-floor camera starts inside previous bay cannery machine
 
-**Status:** VERIFIED DEV ROOM repair: 42130219315 full native renderer and 42131185143 fast gallery PASS; screenshot floor2/bay2 visibly readable and 23911/256000 delta rather than previous 256000/256000 camera-occlusion; gameplay placement remains unapproved Â· **Affected:** All 3-storey developer asset-room wings, especially floor 2 bay 2 with cannery boiler behind the camera
+**Status:** VERIFIED DEV ROOM repair: 42130219315 full native renderer and 42131185143 fast gallery PASS; screenshot floor2/bay2 visibly readable and 23911/256000 delta rather than previous 256000/256000 camera-occlusion; gameplay placement remains unapproved · **Affected:** All 3-storey developer asset-room wings, especially floor 2 bay 2 with cannery boiler behind the camera
 
 Native floor-2/bay-2 screenshot was almost entirely an opaque teal machine texture rather than six readable asset stands; delta-based visibility reported 256000 changed pixels and falsely passed.
 
@@ -66,9 +66,9 @@ Evidence and verification: Directly inspected 12 native gallery PNGs and gallery
 
 Older-map obligation: The DEV Room is isolated from playable scenes; apply adjacent-prop camera/view obstruction checks when authoring actual multi-floor maps and their editor inspection viewpoints.
 
-### DEV-272 â€” Castle lower wall caps z-fight upstairs floors
+### DEV-272 — Castle lower wall caps z-fight upstairs floors
 
-**Status:** Renderer patch fa6cad4a is on main; exact-source geometry diagnostic and real upper-hall screenshot pending; installed GPU visual acceptance pending Â· **Affected:** Beckenburg Castle upper-west corridor, lodging and second-storey slabs above ground partitions
+**Status:** Renderer patch fa6cad4a is on main; exact-source geometry diagnostic and real upper-hall screenshot pending; installed GPU visual acceptance pending · **Affected:** Beckenburg Castle upper-west corridor, lodging and second-storey slabs above ground partitions
 
 Stone/gray strip appears across timber flooring in upper rooms; user's screenshot shows apparent walls emerging through floors.
 
@@ -80,9 +80,9 @@ Evidence and verification: User screenshot 2026-11-04, source commit fa6cad4a374
 
 Older-map obligation: Audit every Castle upper join, stairs/voids and older authored multi-storey map separately for hidden wall caps and co-planar slabs.
 
-### DEV-271 â€” Castle wall lights use uncorrected editor yaw and independent on/off source pivots
+### DEV-271 — Castle wall lights use uncorrected editor yaw and independent on/off source pivots
 
-**Status:** source repair 0329d79 pushed and remotely read back; focused CI and installed camera-angle verification pending Â· **Affected:** Castle masonry wall-sconce renderer and editor-authored wall-light transforms; review other location light socket mounts separately
+**Status:** source repair 0329d79 pushed and remotely read back; focused CI and installed camera-angle verification pending · **Affected:** Castle masonry wall-sconce renderer and editor-authored wall-light transforms; review other location light socket mounts separately
 
 Player screenshot shows an imported lit wall fixture visibly canted or poorly seated against stone masonry near an upper wall/ceiling join.
 
@@ -94,9 +94,9 @@ Evidence and verification: User-provided in-game screenshot (2026-11-04 local); 
 
 Older-map obligation: Audit imported wall and ceiling fixtures on House, Farmhouse, School and all older sites; do not infer map-wide fixture validity from Castle source tests.
 
-### DEV-270 â€” Screenshot pushes leave development gallery index stale
+### DEV-270 — Screenshot pushes leave development gallery index stale
 
-**Status:** CI generator repaired c080e29b; gallery refresh run 41951988544 PASS Â· **Affected:** Development screenshot gallery, image SHA-256 index and documentation CI
+**Status:** CI generator repaired c080e29b; gallery refresh run 41951988544 PASS · **Affected:** Development screenshot gallery, image SHA-256 index and documentation CI
 
 Committed captures were omitted from the index; gallery check failed although source PNGs existed.
 
@@ -108,9 +108,9 @@ Evidence and verification: Prior failed gallery run 41948681639; fixed run 41951
 
 Older-map obligation: Every additional map capture must be indexed without implying that map was fully accepted.
 
-### DEV-269 â€” Shallow Windows installer tag push exceeds GitHub 2 GiB Git-pack limit
+### DEV-269 — Shallow Windows installer tag push exceeds GitHub 2 GiB Git-pack limit
 
-**Status:** FIX VERIFIED: Windows installer 0.1.213 (41953756191) and 0.1.214 (41954551988) released with immutable GitHub API tag, installer and SHA readback Â· **Affected:** Windows installer publishing, versioning and game updater release feed
+**Status:** FIX VERIFIED: Windows installer 0.1.213 (41953756191) and 0.1.214 (41954551988) released with immutable GitHub API tag, installer and SHA readback · **Affected:** Windows installer publishing, versioning and game updater release feed
 
 Build/launch/smoke passed but remote tag push was rejected: pack exceeds maximum allowed size (2.00 GiB).
 
@@ -122,9 +122,9 @@ Evidence and verification: Release tag beckenburg-v0.1.213 verified at 88bc6e631
 
 Older-map obligation: No visual maps are implicated. Installed updater must read published non-draft releases including prereleases.
 
-### DEV-268 â€” Castle NPC screenshot audit overwrites failed angles and falsely accepts one passing view
+### DEV-268 — Castle NPC screenshot audit overwrites failed angles and falsely accepts one passing view
 
-**Status:** Recovered: exact actor-pixel instrumentation replaces unreliable full-world subtraction; 41956167865 and 41956495409 PASS 5/5 visible grounded residents Â· **Affected:** All Castle resident screenshot and grounding evidence
+**Status:** Recovered: exact actor-pixel instrumentation replaces unreliable full-world subtraction; 41956167865 and 41956495409 PASS 5/5 visible grounded residents · **Affected:** All Castle resident screenshot and grounding evidence
 
 The audit reported five of five characters grounded even as a large fraction of their real in-engine angle measurements failed.
 
@@ -136,9 +136,9 @@ Evidence and verification: Before: 41952700012 reported 12 false-or-mixed failin
 
 Older-map obligation: Apply similar visual acceptance to hunters and all authored investigation maps; no single shot certifies the whole site.
 
-### DEV-267 â€” Camera-selected directional art still moves stationary NPC world-space geometry
+### DEV-267 — Camera-selected directional art still moves stationary NPC world-space geometry
 
-**Status:** Source geometry and camera-view hysteresis mismatch repaired; exact-source Castle camera orbit run 41956495409 PASS; installed GPU verification pending Â· **Affected:** Castle resident and playable grounded human character cards
+**Status:** Source geometry and camera-view hysteresis mismatch repaired; exact-source Castle camera orbit run 41956495409 PASS; installed GPU verification pending · **Affected:** Castle resident and playable grounded human character cards
 
 Character outlines wobble or hover when the camera changes even though NPC world coordinates are stationary.
 
@@ -150,9 +150,9 @@ Evidence and verification: Commits 5e355b1f and 325055d, corrected regression 78
 
 Older-map obligation: Audit all stances, stair elevations, 360-degree camera motions and intentionally hovering ghost types independently.
 
-### DEV-264 â€” Castle light-switch source GLB gains an enormous stretched sconce backplate
+### DEV-264 — Castle light-switch source GLB gains an enormous stretched sconce backplate
 
-**Status:** source corrected in ede4bb147f1051ad646e59cf0b197ed32d979970; focused Castle CI 41947018830 PASS; physical installed screenshot acceptance pending Â· **Affected:** 25 authored Castle light-switch instances; wall-mount renderer shared with Castle fixtures
+**Status:** source corrected in ede4bb147f1051ad646e59cf0b197ed32d979970; focused Castle CI 41947018830 PASS; physical installed screenshot acceptance pending · **Affected:** 25 authored Castle light-switch instances; wall-mount renderer shared with Castle fixtures
 
 User screenshot shows a long off-colour horizontal strip with a small switch and dark aperture placed on a Castle wall.
 
@@ -164,9 +164,9 @@ Evidence and verification: User Castle screenshot 2026-11-04; CastleSwitchMountT
 
 Older-map obligation: Audit other mounted wall controls and imported fixtures individually; fitting this Castle path does not prove all models elsewhere are oriented correctly.
 
-### DEV-265 â€” Door state refresh discards unrelated stationary shadow visibility and causes frame stalls
+### DEV-265 — Door state refresh discards unrelated stationary shadow visibility and causes frame stalls
 
-**Status:** Castle regional fix committed 0d12ad3e; House and Castle same-side shadow journal committed d09e4737; exact-source performance and installed GPU acceptance pending; initial new cache test sample-quantization failure corrected in f0b6d4f9 Â· **Affected:** Castle doors and House investigation portals, fixture occlusion cache and resident world chunk lighting
+**Status:** Castle regional fix committed 0d12ad3e; House and Castle same-side shadow journal committed d09e4737; exact-source performance and installed GPU acceptance pending; initial new cache test sample-quantization failure corrected in f0b6d4f9 · **Affected:** Castle doors and House investigation portals, fixture occlusion cache and resident world chunk lighting
 
 Opening doors stalls game, potentially dropping frame rate to single digits; CI House submission benchmark showed toggle p50 375.616 ms and peak 80,874 shadow rays on baseline 0d12ad3e.
 
@@ -178,9 +178,9 @@ Evidence and verification: Profiler https://github.com/mrcalzon02/The-Beckenburg
 
 Older-map obligation: Audit every investigation-map door and all Castle storeys plus installed Windows GPU frame-time p50/p95/p99; do not count packaging success as FPS acceptance.
 
-### DEV-266 â€” Castle tabletop decorative models ignore edited supporting furniture rotation
+### DEV-266 — Castle tabletop decorative models ignore edited supporting furniture rotation
 
-**Status:** source correction committed aacb391ddfc64ff716c146f4dca8b73e7582c955; latest full and installed acceptance pending Â· **Affected:** Castle decorative imported books/screens and parent furniture placements edited in the native Castle editor
+**Status:** source correction committed aacb391ddfc64ff716c146f4dca8b73e7582c955; latest full and installed acceptance pending · **Affected:** Castle decorative imported books/screens and parent furniture placements edited in the native Castle editor
 
 Moving/rotating a table leaves its decorative GLB object at the moved position but with its previous world-facing rotation.
 
@@ -192,9 +192,9 @@ Evidence and verification: Source aacb391d; expanded CastleLightingPlacementRepa
 
 Older-map obligation: Audit all parented decorations on other Castle furniture and later native maps for relative orientation and physical support before marking those maps complete.
 
-### DEV-263 â€” Character boots visibly float above the Castle floor despite earlier alpha-pad correction
+### DEV-263 — Character boots visibly float above the Castle floor despite earlier alpha-pad correction
 
-**Status:** Castle source renderer PASSED production-scene software acceptance for all 5 residents / 20 clear angles, 0 genuine contact failures and 1 obstructed angle; installed GPU acceptance pending Â· **Affected:** All grounded human sprite billboards in Castle and investigation scenes; ghost hovering remains deliberate
+**Status:** Castle source renderer PASSED production-scene software acceptance for all 5 residents / 20 clear angles, 0 genuine contact failures and 1 obstructed angle; installed GPU acceptance pending · **Affected:** All grounded human sprite billboards in Castle and investigation scenes; ghost hovering remains deliberate
 
 NPC boot soles visibly detach from the rendered floor at certain camera views, as in the user-provided Castle screenshot.
 
@@ -206,9 +206,9 @@ Evidence and verification: Actual game renderer job 41956167865 PASS 5/5, 0 genu
 
 Older-map obligation: Every grounded human across Castle, solo, co-op and LAN must receive independent orbit/stance/floor checks; do not adjust ghosts' intentional hover.
 
-### DEV-260 â€” Castle residents remain static despite hunter walk and crouch animation
+### DEV-260 — Castle residents remain static despite hunter walk and crouch animation
 
-**Status:** fixed-scoped; focused local acceptance; installed release acceptance pending Â· **Affected:** All five Castle residents
+**Status:** fixed-scoped; focused local acceptance; installed release acceptance pending · **Affected:** All five Castle residents
 
 Residents only display standing turnarounds.
 
@@ -220,9 +220,9 @@ Evidence and verification: development/quality/evidence/resident-animation-2026-
 
 Older-map obligation: Shared rendering changes cover visible actors across maps; individual terrain and installed-copy visual acceptance remain separate.
 
-### DEV-261 â€” Visible entities lack circular ground contact shadows
+### DEV-261 — Visible entities lack circular ground contact shadows
 
-**Status:** fixed-scoped; focused local acceptance; installed release acceptance pending Â· **Affected:** Players, Castle residents, ghosts and both Twins bodies
+**Status:** fixed-scoped; focused local acceptance; installed release acceptance pending · **Affected:** Players, Castle residents, ghosts and both Twins bodies
 
 Actors appear visually disconnected from their support surface.
 
@@ -234,9 +234,9 @@ Evidence and verification: development/quality/evidence/resident-animation-2026-
 
 Older-map obligation: Shared rendering changes cover visible actors across maps; individual terrain and installed-copy visual acceptance remain separate.
 
-### DEV-262 â€” Standing resident crops lose boots and pitched projection clips shoe rows
+### DEV-262 — Standing resident crops lose boots and pitched projection clips shoe rows
 
-**Status:** fixed-scoped; focused local acceptance; installed release acceptance pending Â· **Affected:** Five Castle resident standing turnarounds and shared human sprite floor projection
+**Status:** fixed-scoped; focused local acceptance; installed release acceptance pending · **Affected:** Five Castle resident standing turnarounds and shared human sprite floor projection
 
 Standing Elsbeth boots end at a straight cutoff and look buried.
 
@@ -248,9 +248,9 @@ Evidence and verification: development/quality/evidence/resident-animation-2026-
 
 Older-map obligation: Shared rendering changes cover visible actors across maps; individual terrain and installed-copy visual acceptance remain separate.
 
-### DEV-234 â€” Castle native bounds reject coherent west annex and cellar construction
+### DEV-234 — Castle native bounds reject coherent west annex and cellar construction
 
-**Status:** fixed-scoped authoring/runtime foundation; full Castle geometry and terrain remain unfinished Â· **Affected:** Castle native geometry, human editor tools, shared agent service, ground support and cell persistence
+**Status:** fixed-scoped authoring/runtime foundation; full Castle geometry and terrain remain unfinished · **Affected:** Castle native geometry, human editor tools, shared agent service, ground support and cell persistence
 
 Actual pre-fix Castle rejects annex-floor at negative X; surfaces/props below -0.5 are forbidden and naive negative cells would alias legacy paint/nav IDs.
 
@@ -262,9 +262,9 @@ Evidence and verification: development/levels/rebuild/verification/castle-constr
 
 Older-map obligation: Castle-only authoring expansion. Preserve all1584 original cell keys and saved custom native scenes. Below-ground source support does not punch terrain or prove new cellar traversal; those remain required next.
 
-### DEV-233 â€” Viewport controls regression expects retired physical extraction shortcut
+### DEV-233 — Viewport controls regression expects retired physical extraction shortcut
 
-**Status:** fixed-scoped; actual packaged TCP viewport controls pass locally Â· **Affected:** LanWorldControlsTest assertion after VIEW3D
+**Status:** fixed-scoped; actual packaged TCP viewport controls pass locally · **Affected:** LanWorldControlsTest assertion after VIEW3D
 
 The test waits for ACCEPT|EXTRACT although the host correctly rejects EXTRACT from physical hunters.
 
@@ -276,9 +276,9 @@ Evidence and verification: development/levels/rebuild/verification/physical-cont
 
 Older-map obligation: Shared control regression; no map unlock or release acceptance. Existing full van extraction integration remains authoritative for occupancy and abandonment policy.
 
-### DEV-232 â€” Contained Church choir loft doors are sealed by the tall nave wall and stair guard
+### DEV-232 — Contained Church choir loft doors are sealed by the tall nave wall and stair guard
 
-**Status:** fixed-scoped; packaged upper-door and editor-service traversal checks pass locally Â· **Affected:** Church upper choir loft to tower/archive; shared contained-upper-wall opening authority
+**Status:** fixed-scoped; packaged upper-door and editor-service traversal checks pass locally · **Affected:** Church upper choir loft to tower/archive; shared contained-upper-wall opening authority
 
 Actual swept movement cannot reach tower stair, organ archive or belfry and six functional sockets; nine failed goals, 159429 states.
 
@@ -290,9 +290,9 @@ Evidence and verification: development/levels/rebuild/verification/church-openin
 
 Older-map obligation: Run shared traversal against every selectable map; preserve saved terrain surface in audit clones. Open-route success does not accept closed-door interaction, hunts, complete map quality or hardware performance.
 
-### DEV-231 â€” Hunter pose history survives level replacement and departed seats
+### DEV-231 — Hunter pose history survives level replacement and departed seats
 
-**Status:** fixed-scoped; actual TCP gameplay and RTX OpenGL acceptance pass Â· **Affected:** Shared hunter animation tracker and LanWorldPanel peer lifecycle
+**Status:** fixed-scoped; actual TCP gameplay and RTX OpenGL acceptance pass · **Affected:** Shared hunter animation tracker and LanWorldPanel peer lifecycle
 
 Reusing a seat near its prior coordinates in another scene can animate a newly stationary hunter; departing seats retain their last sampled pose.
 
@@ -304,9 +304,9 @@ Evidence and verification: LanHunterAnimationGameplayTest passes real STEP and C
 
 Older-map obligation: Shared lifecycle applies to every map; acceptance captures use House fixtures. No all-map or multi-PC animation acceptance is inferred.
 
-### DEV-230 â€” Rear cargo liner, roof and hinges sit behind the donor body and generic doors discard its atlas
+### DEV-230 — Rear cargo liner, roof and hinges sit behind the donor body and generic doors discard its atlas
 
-**Status:** fixed-scoped; 13 focused checks pass; installed GPU review pending Â· **Affected:** Shared Castle and every investigation-arrival van
+**Status:** fixed-scoped; 13 focused checks pass; installed GPU review pending · **Affected:** Shared Castle and every investigation-arrival van
 
 Rear liner/roof/floor project behind the outer shell; doors pivot from unsupported points and use plain panels with invented windows.
 
@@ -318,9 +318,9 @@ Evidence and verification: VanRearFitTest checks actual rear datum, rendered UV 
 
 Older-map obligation: Shared-module code and all-site station regression verified; individual image review covers Castle, House and Hollow Creek. No complete older-map or installed GPU acceptance inferred.
 
-### DEV-229 â€” Full-width cargo deck slices through the exterior rear wheel barrels
+### DEV-229 — Full-width cargo deck slices through the exterior rear wheel barrels
 
-**Status:** fixed-scoped; 13 focused checks pass; installed GPU review pending Â· **Affected:** Shared Castle and every investigation-arrival van
+**Status:** fixed-scoped; 13 focused checks pass; installed GPU review pending · **Affected:** Shared Castle and every investigation-arrival van
 
 From outside, the raised cargo floor forms a horizontal sheet across each rear tyre.
 
@@ -332,9 +332,9 @@ Evidence and verification: VanWheelWellTest rejects actual deck triangles overla
 
 Older-map obligation: Shared-module code and all-site station regression verified; individual image review covers Castle, House and Hollow Creek. No complete older-map or installed GPU acceptance inferred.
 
-### DEV-227 â€” Imported rear tyres protrude through the unified van cargo floor
+### DEV-227 — Imported rear tyres protrude through the unified van cargo floor
 
-**Status:** fixed-scoped; 13 focused local checks pass; installed GPU review pending Â· **Affected:** Shared Castle and investigation-arrival van module; runtime captures at Castle, House and Hollow Creek
+**Status:** fixed-scoped; 13 focused local checks pass; installed GPU review pending · **Affected:** Shared Castle and investigation-arrival van module; runtime captures at Castle, House and Hollow Creek
 
 Rear tread and hub remain exposed above the cargo floor and beyond the small legacy wheel cover.
 
@@ -346,9 +346,9 @@ Evidence and verification: development/levels/previews/van-unification/: 42 matc
 
 Older-map obligation: Shared assembly repair reaches every VanStaging consumer. All-site station access includes a persisted custom map. Individual visual evidence covers Castle, House and Hollow Creek only; this does not certify every older map, installed gameplay or GPU performance.
 
-### DEV-228 â€” All-site van integration test depends on a selected developer custom level
+### DEV-228 — All-site van integration test depends on a selected developer custom level
 
-**Status:** fixed-scoped; isolated all-site check passes Â· **Affected:** VanModuleIntegrationTest, USER site
+**Status:** fixed-scoped; isolated all-site check passes · **Affected:** VanModuleIntegrationTest, USER site
 
 The all-site test throws No authored user level selected on a clean profile.
 
@@ -360,9 +360,9 @@ Evidence and verification: VanModuleIntegrationTest.log in development/quality/e
 
 Older-map obligation: Test-fixture correction only; no runtime level selection behavior changes.
 
-### DEV-226 â€” Playable hunters remain static while walking and crouch by squashing idle art
+### DEV-226 — Playable hunters remain static while walking and crouch by squashing idle art
 
-**Status:** fixed-scoped; real TCP gameplay and local native RTX OpenGL build verified; multi-PC review pending Â· **Affected:** All three playable hunter appearances in the shared teammate billboard renderer
+**Status:** fixed-scoped; real TCP gameplay and local native RTX OpenGL build verified; multi-PC review pending · **Affected:** All three playable hunter appearances in the shared teammate billboard renderer
 
 Received teammate movement uses one standing turnaround; crouch scales that standing image vertically instead of bending knees.
 
@@ -374,9 +374,9 @@ Evidence and verification: HunterSpriteAnimationTest covers actual atlas frames,
 
 Older-map obligation: Shared renderer applies across maps; this is not installed Windows multiplayer or per-map visual acceptance. Alternate concept-only appearances are not selectable and are not claimed implemented.
 
-### DEV-001 â€” Paper-thin loft floor and apparent upstairs light bleed
+### DEV-001 — Paper-thin loft floor and apparent upstairs light bleed
 
-**Status:** fixed-scoped Â· **Affected:** Blackpine inspection loft
+**Status:** fixed-scoped · **Affected:** Blackpine inspection loft
 
 User observed apparent light from above on the under-loft ceiling.
 
@@ -388,9 +388,9 @@ Evidence and verification: BlackpineDeckDepthTest fails against pre-fix compiled
 
 Older-map obligation: Audit floor depth and cross-storey lighting in House, Farmhouse, School, Church and Castle; depth is opt-in and has only been applied/verified at Blackpine.
 
-### DEV-002 â€” Corner, floor/wall and wall/roof light bleed
+### DEV-002 — Corner, floor/wall and wall/roof light bleed
 
-**Status:** open-audit Â· **Affected:** Previously reported joins; broader map set unverified
+**Status:** open-audit · **Affected:** Previously reported joins; broader map set unverified
 
 User reports light bleed through floor/wall joins and requests corner and roof intersection coverage.
 
@@ -402,9 +402,9 @@ Evidence and verification: BlackpineLightingTest covers selected wall/floor rays
 
 Older-map obligation: All prior maps require a documented join/corner/roof sweep and matched light-state captures.
 
-### DEV-003 â€” Black and gray striped procedural metal
+### DEV-003 — Black and gray striped procedural metal
 
-**Status:** fixed-scoped Â· **Affected:** Twelve original working-place models plus mill suspension
+**Status:** fixed-scoped · **Affected:** Twelve original working-place models plus mill suspension
 
 Metal developed regular dark/light bandage-like stripes.
 
@@ -416,9 +416,9 @@ Evidence and verification: development/levels/MILL_REFINEMENT.md; validate_mill_
 
 Older-map obligation: Other historical model families require regeneration, source/hash updates and in-room inspection before being called corrected.
 
-### DEV-004 â€” Workshop bandsaw used as primary sawmill machine
+### DEV-004 — Workshop bandsaw used as primary sawmill machine
 
-**Status:** fixed-scoped Â· **Affected:** Blackpine mill and repair shed
+**Status:** fixed-scoped · **Affected:** Blackpine mill and repair shed
 
 Small workshop saw did not fit the logway or sawmill purpose in the supplied reference.
 
@@ -430,9 +430,9 @@ Evidence and verification: BlackpineMillExpansionTest; native blade/log/arbor an
 
 Older-map obligation: Check purpose and human/material scale whenever industrial models are reused.
 
-### DEV-005 â€” Timber rack intersects ledger table
+### DEV-005 — Timber rack intersects ledger table
 
-**Status:** fixed-scoped Â· **Affected:** Blackpine timber store
+**Status:** fixed-scoped · **Affected:** Blackpine timber store
 
 Initial rack placement overlapped an existing furnishing.
 
@@ -444,9 +444,9 @@ Evidence and verification: BlackpineMillExpansionTest independently checks solid
 
 Older-map obligation: Run furniture/furniture and furniture/wall checks for all old room kits; tabletop items need actual support-part checks.
 
-### DEV-006 â€” High mill worklights lack appropriate physical supports
+### DEV-006 — High mill worklights lack appropriate physical supports
 
-**Status:** fixed-scoped Â· **Affected:** Blackpine mill
+**Status:** fixed-scoped · **Affected:** Blackpine mill
 
 Worklight arrangement needed real roof attachment and a below-deck fixture.
 
@@ -458,9 +458,9 @@ Evidence and verification: BlackpineLightingTest; validate_mill_lighting.py nati
 
 Older-map obligation: Inspect brackets, fixture backs and circuit access at every older site.
 
-### DEV-007 â€” Added slab blocks final stair approach
+### DEV-007 — Added slab blocks final stair approach
 
-**Status:** fixed-scoped Â· **Affected:** Blackpine mill stair; introduced during DEV-001 fix
+**Status:** fixed-scoped · **Affected:** Blackpine mill stair; introduced during DEV-001 fix
 
 BlackpineGrayboxTest failed at ascent step 113 immediately after adding slab collision.
 
@@ -472,9 +472,9 @@ Evidence and verification: BlackpineGrayboxTest failed before transition correct
 
 Older-map obligation: Every structural-depth retrofit must recheck both stair directions and landing transitions.
 
-### DEV-008 â€” Castle sky variation assertion fails on existing main
+### DEV-008 — Castle sky variation assertion fails on existing main
 
-**Status:** open Â· **Affected:** Castle headless integration check
+**Status:** open · **Affected:** Castle headless integration check
 
 CastleHubIntegrationTest fails its sky color-variation assertion.
 
@@ -486,9 +486,9 @@ Evidence and verification: development/verification/branch-unification.json and 
 
 Older-map obligation: Recheck when the responsible renderer change lands; do not silently drop this known failure.
 
-### DEV-009 â€” Slow software-renderer capture frames
+### DEV-009 — Slow software-renderer capture frames
 
-**Status:** open-measurement Â· **Affected:** Headless Blackpine capture process
+**Status:** open-measurement · **Affected:** Headless Blackpine capture process
 
 Capture logs report slow scene assembly/raster frames.
 
@@ -500,9 +500,9 @@ Evidence and verification: development/levels/verification/blackpine-worklights.
 
 Older-map obligation: Measure each site on target hardware; do not copy a performance claim from another map.
 
-### DEV-010 â€” Purchased Tier I flashlight weaker than default
+### DEV-010 — Purchased Tier I flashlight weaker than default
 
-**Status:** fixed-scoped Â· **Affected:** Shared flashlight optics
+**Status:** fixed-scoped · **Affected:** Shared flashlight optics
 
 Tier I was 6m / .58 while the default was 7.5m / .72.
 
@@ -514,9 +514,9 @@ Evidence and verification: OpticalEvidenceTest and TieredMediaAndPowerTest; unch
 
 Older-map obligation: Inspect actual handheld illumination in older sites, not just numeric stats.
 
-### DEV-011 â€” GPU handheld flashlight omitted from submitted light
+### DEV-011 — GPU handheld flashlight omitted from submitted light
 
-**Status:** fixed-scoped Â· **Affected:** Shared GPU scene submission
+**Status:** fixed-scoped · **Affected:** Shared GPU scene submission
 
 CPU raster added the held torch per pixel but GPU vertex submission only included room/portable light.
 
@@ -528,9 +528,9 @@ Evidence and verification: OpticalEvidenceCapture independently compares actual 
 
 Older-map obligation: Native OpenGL hardware and per-map performance still need acceptance.
 
-### DEV-012 â€” UV only reports room traces; no purple light or surface splats
+### DEV-012 — UV only reports room traces; no purple light or surface splats
 
-**Status:** fixed-scoped Â· **Affected:** UV tool, local solo and LAN
+**Status:** fixed-scoped · **Affected:** UV tool, local solo and LAN
 
 The UV action produced text from room recency without visible inspection light or positioned decals.
 
@@ -542,9 +542,9 @@ Evidence and verification: OpticalEvidenceTest covers genuine/absent/expired tra
 
 Older-map obligation: Current producer leaves supported floor residue. Six-axis cube support does not mean wall/ceiling contact producers or teammate UV spill have been implemented; those remain separate refinements.
 
-### DEV-013 â€” D.O.T.S. generated a body-wide pattern instead of intersecting projector rays
+### DEV-013 — D.O.T.S. generated a body-wide pattern instead of intersecting projector rays
 
-**Status:** fixed-scoped Â· **Affected:** D.O.T.S. projector
+**Status:** fixed-scoped · **Affected:** D.O.T.S. projector
 
 The first correction sampled the entire rounded capsule, producing dots unrelated to the real stationary/panning projector rays.
 
@@ -556,9 +556,9 @@ Evidence and verification: DotsRayFieldTest checks transferred wall hit, front s
 
 Older-map obligation: Standing capsule approximates collision volume only. Actual native moving-ghost, multi-PC camera and per-site performance acceptance remain pending; do not promote based on headless captures.
 
-### DEV-014 â€” Laser evidence has text but no visible physical distortion
+### DEV-014 — Laser evidence has text but no visible physical distortion
 
-**Status:** fixed-scoped Â· **Affected:** LASER_GRID
+**Status:** fixed-scoped · **Affected:** LASER_GRID
 
 Device returned generic readings without a rendered beam/ghost intersection effect.
 
@@ -570,9 +570,9 @@ Evidence and verification: OpticalEvidenceTest rejects non-intersections and che
 
 Older-map obligation: Per-site and native hardware performance still require review; species/quota/event rules remain authoritative.
 
-### DEV-015 â€” New laser station falls through to thermometer readout
+### DEV-015 — New laser station falls through to thermometer readout
 
-**Status:** fixed-scoped Â· **Affected:** Laser station integration, discovered during this pass
+**Status:** fixed-scoped · **Affected:** Laser station integration, discovered during this pass
 
 After enabling laser station placement, the general station reader would treat it as a thermometer.
 
@@ -584,9 +584,9 @@ Evidence and verification: LanOpticalEvidenceNetworkTest now waits for the real 
 
 Older-map obligation: Audit device-specific dispatch when adding a new shared station type.
 
-### DEV-016 â€” UTF-8 UI labels corrupted by editing script
+### DEV-016 — UTF-8 UI labels corrupted by editing script
 
-**Status:** fixed-scoped Â· **Affected:** Two local Java edits during this pass
+**Status:** fixed-scoped · **Affected:** Two local Java edits during this pass
 
 The regression test detected a corrupted pound sign and other non-ASCII labels before publication.
 
@@ -598,9 +598,9 @@ Evidence and verification: EquipmentStoreDescriptionsTest reproduced the failure
 
 Older-map obligation: Do not rewrite historical Unicode text via platform-default encoding.
 
-### DEV-017 â€” Pavilion native inspection was too dark to review joins
+### DEV-017 — Pavilion native inspection was too dark to review joins
 
-**Status:** fixed-scoped Â· **Affected:** Camp Hollow Creek authoring captures
+**Status:** fixed-scoped · **Affected:** Camp Hollow Creek authoring captures
 
 Sun-only inspection left roof underside and timber bearing faces nearly black.
 
@@ -612,9 +612,9 @@ Evidence and verification: previews/defects/DEV-017-before-pavilion-join.png and
 
 Older-map obligation: Native review images must make the inspected details readable; perform separate real circuit/portable-light runtime reviews.
 
-### DEV-018 â€” Blender scene reload invalidated an old material handle
+### DEV-018 — Blender scene reload invalidated an old material handle
 
-**Status:** fixed-scoped Â· **Affected:** New pavilion builder, before first scene save
+**Status:** fixed-scoped · **Affected:** New pavilion builder, before first scene save
 
 Builder raised StructRNA material removed while creating apron strips after opening the prior native file.
 
@@ -626,9 +626,9 @@ Evidence and verification: build_hollow_creek_pavilion.py completes and validate
 
 Older-map obligation: Never carry Blender object/material references across a file reload; preserve originals on generation failure.
 
-### DEV-019 â€” Hollow Creek structures advanced before continuous site terrain
+### DEV-019 — Hollow Creek structures advanced before continuous site terrain
 
-**Status:** fixed-native-only Â· **Affected:** Camp Hollow Creek authoring order and all future map gates
+**Status:** fixed-native-only · **Affected:** Camp Hollow Creek authoring order and all future map gates
 
 Tables and pavilion were refined on isolated rough pads and schematic paths before the terrain, shoreline, creek and approach were validated.
 
@@ -640,9 +640,9 @@ Evidence and verification: hollow-creek-terrain.json: 10,377 full-width native r
 
 Older-map obligation: Audit terrain/site support first at every older location; never infer route support from graph connectivity or a planning line.
 
-### DEV-020 â€” First terrain pass left a dry sill across the creek mouth
+### DEV-020 — First terrain pass left a dry sill across the creek mouth
 
-**Status:** fixed-native-only Â· **Affected:** Hollow Creek new terrain draft
+**Status:** fixed-native-only · **Affected:** Hollow Creek new terrain draft
 
 Review of the water-crossings view exposed an isolated creek strip instead of a connected lake outlet.
 
@@ -654,9 +654,9 @@ Evidence and verification: DEV-020-before-creek-mouth.png, corrected terrain-wat
 
 Older-map obligation: Check drainage continuity at every channel-to-waterbody junction; a blue surface is not proof of a connected carved bed.
 
-### DEV-021 â€” Terrain draft exceeded the runtime GLB primitive budget
+### DEV-021 — Terrain draft exceeded the runtime GLB primitive budget
 
-**Status:** fixed-export-scoped Â· **Affected:** New Hollow Creek terrain export
+**Status:** fixed-export-scoped · **Affected:** New Hollow Creek terrain export
 
 Actual game loader rejected the first terrain GLB with Triangle buffer budget, despite native mesh checks passing.
 
@@ -668,9 +668,9 @@ Evidence and verification: HollowCreekTerrainAssetTest now passes on the final e
 
 Older-map obligation: Always load new terrain exports through the actual runtime loader; native Blender validity does not prove runtime compatibility.
 
-### DEV-022 â€” First terrain draft flattened all outdoor pads and trails to Y0
+### DEV-022 — First terrain draft flattened all outdoor pads and trails to Y0
 
-**Status:** fixed-native-only Â· **Affected:** Hollow Creek terrain draft, user-caught
+**Status:** fixed-native-only · **Affected:** Hollow Creek terrain draft, user-caught
 
 Initial terrain left the usable site too flat and showed square outdoor reservations as if they were finished areas.
 
@@ -682,9 +682,9 @@ Evidence and verification: Native site/close-trail captures; measured bed range,
 
 Older-map obligation: Audit terrain-led foundation heights and organic outdoor edges before further buildings or detail. Boundary barriers and runtime integration remain separate unfinished gates.
 
-### DEV-023 â€” New trail grading introduced steep junction and crossing-edge transitions
+### DEV-023 — New trail grading introduced steep junction and crossing-edge transitions
 
-**Status:** fixed-native-only Â· **Affected:** Hollow Creek variable-grade terrain iterations
+**Status:** fixed-native-only · **Affected:** Hollow Creek variable-grade terrain iterations
 
 Actual native triangle normals found steep full-width path edges near a foundation corner and crossing abutments.
 
@@ -696,9 +696,9 @@ Evidence and verification: Independent native ray checks now pass all 10,377 ful
 
 Older-map obligation: Check full-width terrain normals and transitions, not graph connectivity or centre lines alone. Preserve failures when adding erosion or changing foundation heights.
 
-### DEV-024 â€” Rough diagram connectors obscured new terrain review views
+### DEV-024 — Rough diagram connectors obscured new terrain review views
 
-**Status:** fixed-native-review-only Â· **Affected:** Breadth-first terrain previews
+**Status:** fixed-native-review-only · **Affected:** Breadth-first terrain previews
 
 Inherited colored route/ritual markers and floating upper floor plates made the terrain overview look like unfinished structure geometry.
 
@@ -710,9 +710,9 @@ Evidence and verification: DEV-024-before-terrain-review.png and corrected per-s
 
 Older-map obligation: Keep terrain reviews readable and distinguish planning markers, foundation plates and actual completed structures.
 
-### DEV-025 â€” Terrain review missed split floor pieces with numbered names
+### DEV-025 — Terrain review missed split floor pieces with numbered names
 
-**Status:** fixed-native-review-only Â· **Affected:** New terrain-foundation scene filtering
+**Status:** fixed-native-review-only · **Affected:** New terrain-foundation scene filtering
 
 A refresh failed on Floor west.001; inherited floor chunks around openings were not all assigned to their source zone by filename.
 
@@ -724,9 +724,9 @@ Evidence and verification: refresh_terrain_foundation_views.py and the per-site 
 
 Older-map obligation: Floor openings often split a slab into several objects. Ownership must follow authored metadata, never an assumed unique mesh name.
 
-### DEV-026 â€” Broad terrain pass exposes unresolved grade and crossing support locations
+### DEV-026 — Broad terrain pass exposes unresolved grade and crossing support locations
 
-**Status:** open-terrain-refinement Â· **Affected:** Sixteen remaining rough development sites; six new-location proposal diagnostics tracked separately
+**Status:** open-terrain-refinement · **Affected:** Sixteen remaining rough development sites; six new-location proposal diagnostics tracked separately
 
 Actual native level-link probes flagged 937 sampled support/grade locations; canyon and railway account for the largest groups.
 
@@ -738,9 +738,9 @@ Evidence and verification: development/levels/verification/terrain-foundations.j
 
 Older-map obligation: Apply actual full-width/swept traversal review before detail work; graph connectivity and native floor plates are not proof of a usable route.
 
-### DEV-027 â€” New lighthouse wall rings stopped short of the next storey
+### DEV-027 — New lighthouse wall rings stopped short of the next storey
 
-**Status:** fixed-native-rough-only Â· **Affected:** Morrow Point first rough blockout
+**Status:** fixed-native-rough-only · **Affected:** Morrow Point first rough blockout
 
 Visible horizontal gaps remained between circular wall rings.
 
@@ -752,9 +752,9 @@ Evidence and verification: development/levels/previews/defects/DEV-027-before-to
 
 Older-map obligation: Audit storey spacing against actual wall top/roof/underside coordinates. A continuous rough ring is not a passed runtime lighting test.
 
-### DEV-028 â€” New rough connector meshes had no UV layer
+### DEV-028 — New rough connector meshes had no UV layer
 
-**Status:** fixed-native-export-only Â· **Affected:** Six new-location rough proposal exports
+**Status:** fixed-native-export-only · **Affected:** Six new-location rough proposal exports
 
 Independent GLB reload failed the all-mesh UV presence check.
 
@@ -766,9 +766,9 @@ Evidence and verification: development/quality/evidence/DEV-028-native-uv-before
 
 Older-map obligation: Audit legacy route-strip UVs before applying textured finishes. Presence of UVs alone does not establish correct material scale or finish quality.
 
-### DEV-029 â€” Shared procedural hill silhouette conflicts with site-specific open horizons
+### DEV-029 — Shared procedural hill silhouette conflicts with site-specific open horizons
 
-**Status:** open-runtime-integration Â· **Affected:** All-map background silhouette; coastal/wetland/new high-view sites require individual review
+**Status:** open-runtime-integration · **Affected:** All-map background silhouette; coastal/wetland/new high-view sites require individual review
 
 SceneRenderer.paintSky unconditionally paints a trigonometric hill silhouette for all map backgrounds, including proposed open-water views.
 
@@ -780,9 +780,9 @@ Evidence and verification: src/main/java/org/beckenburg/SceneRenderer.java paint
 
 Older-map obligation: Audit 360-degree ground and highest-window/tower views, CPU/GPU depth behavior, sky leaks and weather parity before claiming a finished skyline.
 
-### DEV-030 â€” Legacy model-worklist generator assumed the original fixed roster
+### DEV-030 — Legacy model-worklist generator assumed the original fixed roster
 
-**Status:** fixed-authoring-tool Â· **Affected:** Model requirements catalog maintenance after adding WLD-14 through WLD-18
+**Status:** fixed-authoring-tool · **Affected:** Model requirements catalog maintenance after adding WLD-14 through WLD-18
 
 Source inspection found unconditional global regeneration, a SPECIAL lookup limited to the original maps and a final 23-map assertion; rerunning would overwrite curated packets or fail on new IDs.
 
@@ -794,9 +794,9 @@ Evidence and verification: development/levels/model-requirements/refresh_catalog
 
 Older-map obligation: Do not globally regenerate curated worklists to append a map. Refresh catalogs from actual packets; retain source references and existing map geometry.
 
-### DEV-031 â€” First land boundary read as a uniform wall in an underlit review
+### DEV-031 — First land boundary read as a uniform wall in an underlit review
 
-**Status:** fixed-native-geometry-art-review-open Â· **Affected:** Hollow Creek first boundary draft
+**Status:** fixed-native-geometry-art-review-open · **Affected:** Hollow Creek first boundary draft
 
 Continuous steep core, block stones and dark inspection framing hid natural edge fitness.
 
@@ -808,9 +808,9 @@ Evidence and verification: development/levels/previews/defects/DEV-031-before-un
 
 Older-map obligation: Audit this category on each older map; a corrected Hollow Creek derivative or passing source check does not establish other-map acceptance.
 
-### DEV-032 â€” Lowered service-bank transition left uncovered land-boundary samples
+### DEV-032 — Lowered service-bank transition left uncovered land-boundary samples
 
-**Status:** fixed-native-land-only Â· **Affected:** Hollow Creek boundary authoring
+**Status:** fixed-native-land-only · **Affected:** Hollow Creek boundary authoring
 
 Initial native check flagged 69 ray locations. Fence selection skipped a segment when only part of it crossed the lower-bank threshold.
 
@@ -822,9 +822,9 @@ Evidence and verification: development/quality/evidence/DEV-032-boundary-native-
 
 Older-map obligation: Audit this category on each older map; a corrected Hollow Creek derivative or passing source check does not establish other-map acceptance.
 
-### DEV-033 â€” Organic clearing/deck changes produced five steep native route samples
+### DEV-033 — Organic clearing/deck changes produced five steep native route samples
 
-**Status:** fixed-native-only Â· **Affected:** Hollow Creek desquareification iteration
+**Status:** fixed-native-only · **Affected:** Hollow Creek desquareification iteration
 
 Ellipse plateau incision and soil above a creek deck produced five sampled grades above 0.20, peaking at 0.27609.
 
@@ -836,9 +836,9 @@ Evidence and verification: development/quality/evidence/DEV-033-organic-grade-be
 
 Older-map obligation: Audit this category on each older map; a corrected Hollow Creek derivative or passing source check does not establish other-map acceptance.
 
-### DEV-034 â€” Planning rectangles survived in landscape pads and loose perimeter
+### DEV-034 — Planning rectangles survived in landscape pads and loose perimeter
 
-**Status:** fixed-native-derived-scene-only Â· **Affected:** User-caught Hollow Creek terrain/blockout carryover
+**Status:** fixed-native-derived-scene-only · **Affected:** User-caught Hollow Creek terrain/blockout carryover
 
 Unbuilt building-zone pads and oversized square aprons remained visible; the boundary still broadly wrapped a rectangle.
 
@@ -850,9 +850,9 @@ Evidence and verification: development/quality/DESQUAREIFY_GATE.md; hollow-creek
 
 Older-map obligation: Audit this category on each older map; a corrected Hollow Creek derivative or passing source check does not establish other-map acceptance.
 
-### DEV-035 â€” Canonical van was omitted from native campground arrival review
+### DEV-035 — Canonical van was omitted from native campground arrival review
 
-**Status:** fixed-native-review-only Â· **Affected:** User-caught Hollow Creek native scene
+**Status:** fixed-native-review-only · **Affected:** User-caught Hollow Creek native scene
 
 Arrival point was recorded in coordinates but the actual vehicle was absent from the scene.
 
@@ -864,9 +864,9 @@ Evidence and verification: src/test/java/org/beckenburg/HollowCreekVanSource.jav
 
 Older-map obligation: Audit this category on each older map; a corrected Hollow Creek derivative or passing source check does not establish other-map acceptance.
 
-### DEV-036 â€” New authoring tools had failed initial smoke-check assumptions
+### DEV-036 — New authoring tools had failed initial smoke-check assumptions
 
-**Status:** fixed-authoring-tools Â· **Affected:** Boundary/organic model pipeline
+**Status:** fixed-authoring-tools · **Affected:** Boundary/organic model pipeline
 
 A missing random import, reused loop-count/normal variable, and a whole-site bound assertion incorrectly applied to a short fence interrupted initial authoring checks.
 
@@ -878,9 +878,9 @@ Evidence and verification: build_hollow_creek_boundaries.py; validate_hollow_cre
 
 Older-map obligation: Audit this category on each older map; a corrected Hollow Creek derivative or passing source check does not establish other-map acceptance.
 
-### DEV-037 â€” Coarse tree crowns and surface breakup did not meet requested art quality
+### DEV-037 — Coarse tree crowns and surface breakup did not meet requested art quality
 
-**Status:** open-art-refinement Â· **Affected:** User-caught campground models/textures
+**Status:** open-art-refinement · **Affected:** User-caught campground models/textures
 
 Stacked cones, rounded replacement canopy lumps and coarse material breakup were visibly unsuitable as finished foliage.
 
@@ -892,9 +892,9 @@ Evidence and verification: development/levels/previews/defects/DEV-037-before-ro
 
 Older-map obligation: Audit this category on each older map; a corrected Hollow Creek derivative or passing source check does not establish other-map acceptance.
 
-### DEV-038 â€” Initial tent entries and bedding were not fit for the authored crouch body
+### DEV-038 — Initial tent entries and bedding were not fit for the authored crouch body
 
-**Status:** fixed-native-campsite-only Â· **Affected:** First Hollow Creek tent/bedding draft
+**Status:** fixed-native-campsite-only · **Affected:** First Hollow Creek tent/bedding draft
 
 Initial ridge door matched the 1.05m crouch height without head margin; one dome pole crossed the entrance; a bedding corner extended past the actual inset floor.
 
@@ -906,9 +906,9 @@ Evidence and verification: development/levels/previews/defects/DEV-038-before-do
 
 Older-map obligation: Measure real body/door and support-part clearance. Do not infer usable entrances from an open-looking model or use an overall bounding box as its floor.
 
-### DEV-039 â€” Unused canopy vertices overstated the native source bounds
+### DEV-039 — Unused canopy vertices overstated the native source bounds
 
-**Status:** fixed-authoring-export Â· **Affected:** New dome tent source mesh and metadata
+**Status:** fixed-authoring-export · **Affected:** New dome tent source mesh and metadata
 
 Source bounds included unreferenced vertices in the cut doorway that were correctly absent from actual GLB triangles. An initial origin assertion also assumed symmetric guys despite intentionally omitting the doorway guy.
 
@@ -920,9 +920,9 @@ Evidence and verification: build_hollow_creek_tents.py source_geometry_cleanup; 
 
 Older-map obligation: Clean orphan geometry and verify bounds against actual exported faces. Functional floor pivots may differ from the centre of asymmetric anchors or accessories.
 
-### DEV-040 â€” Shortest tent approaches crossed steep shoulders and guyline clearance
+### DEV-040 — Shortest tent approaches crossed steep shoulders and guyline clearance
 
-**Status:** fixed-native-contour-approaches-only Â· **Affected:** Hollow Creek west/east campsite placement iteration
+**Status:** fixed-native-contour-approaches-only · **Affected:** Hollow Creek west/east campsite placement iteration
 
 Full-width native probes found 15 approach grade samples above 0.20 (maximum 0.31169); a later contour draft exposed five lateral body/guyline contacts.
 
@@ -934,9 +934,9 @@ Evidence and verification: development/quality/evidence/DEV-040-approach-grades-
 
 Older-map obligation: Check full tread width and body envelope around guy ropes, pegs, terrain transitions and entries. Actual runtime movement, AI fairness and wear/approach artwork remain separate gates.
 
-### DEV-041 â€” Gallery readback aborted on a transient Pages 503
+### DEV-041 — Gallery readback aborted on a transient Pages 503
 
-**Status:** fixed-verification-tool; final live rerun passed Â· **Affected:** Nightly public gallery verification
+**Status:** fixed-verification-tool; final live rerun passed · **Affected:** Nightly public gallery verification
 
 The first 602-image live readback failed with HTTP 503 during an image request even though Pages was built and all seven published model/native source hashes matched.
 
@@ -948,9 +948,9 @@ Evidence and verification: tools/verify_development_gallery.py; development/veri
 
 Older-map obligation: A transient service error does not invalidate local implementation or prove remote publication failed. Preserve checkpoints and separately verify source bytes and final public image delivery.
 
-### DEV-042 â€” Shore crop and scenery returns left a jagged lake-facing seam
+### DEV-042 — Shore crop and scenery returns left a jagged lake-facing seam
 
-**Status:** fixed-native-only Â· **Affected:** Hollow Creek coast and forest apron
+**Status:** fixed-native-only · **Affected:** Hollow Creek coast and forest apron
 
 User-caught jagged shoreline; an intermediate linear shore return created a triangular projecting ledge.
 
@@ -962,9 +962,9 @@ Evidence and verification: development/levels/previews/defects/DEV-042-before-in
 
 Older-map obligation: Audit each older location individually for this category; scoped native fixes or shared-policy tests do not establish full other-map gameplay/art acceptance.
 
-### DEV-043 â€” Boat ends were open and corner posts pierced shed roof
+### DEV-043 — Boat ends were open and corner posts pierced shed roof
 
-**Status:** fixed-native-assets-only Â· **Affected:** Original dock shed and rowboat first draft
+**Status:** fixed-native-assets-only · **Affected:** Original dock shed and rowboat first draft
 
 Uncapped bow/stern and visible timber post tips on roof top.
 
@@ -976,9 +976,9 @@ Evidence and verification: development/levels/previews/defects/DEV-043-before-op
 
 Older-map obligation: Audit each older location individually for this category; scoped native fixes or shared-policy tests do not establish full other-map gameplay/art acceptance.
 
-### DEV-044 â€” Camp furnishings encroached on protected walking routes
+### DEV-044 — Camp furnishings encroached on protected walking routes
 
-**Status:** fixed-native-placement-only Â· **Affected:** First folding-chair/cooler arrangement
+**Status:** fixed-native-placement-only · **Affected:** First folding-chair/cooler arrangement
 
 Nineteen body samples touched furniture on L09/L10.
 
@@ -990,9 +990,9 @@ Evidence and verification: development/quality/evidence/DEV-044-first-dock-detai
 
 Older-map obligation: Audit each older location individually for this category; scoped native fixes or shared-policy tests do not establish full other-map gameplay/art acceptance.
 
-### DEV-045 â€” Additional campsite floors and entries needed actual terrain fit
+### DEV-045 — Additional campsite floors and entries needed actual terrain fit
 
-**Status:** fixed-native-tests; complete approach grading pending Â· **Affected:** Expanded Hollow Creek tents/toilet ramps
+**Status:** fixed-native-tests; complete approach grading pending · **Affected:** Expanded Hollow Creek tents/toilet ramps
 
 First expansion exposed path/guy collisions, nonplanar dome-floor gaps, bedding support errors and one steep entry.
 
@@ -1004,9 +1004,9 @@ Evidence and verification: development/quality/evidence/DEV-045-first-amenities-
 
 Older-map obligation: Audit each older location individually for this category; scoped native fixes or shared-policy tests do not establish full other-map gameplay/art acceptance.
 
-### DEV-046 â€” Creek rendered as a black slot despite material changes
+### DEV-046 — Creek rendered as a black slot despite material changes
 
-**Status:** fixed-native-water-overlap-only Â· **Affected:** Hollow Creek lake/creek preview water
+**Status:** fixed-native-water-overlap-only · **Affected:** Hollow Creek lake/creek preview water
 
 Changing color left an almost black rectangular water strip with narrow colored edges.
 
@@ -1018,9 +1018,9 @@ Evidence and verification: development/levels/previews/defects/DEV-046-before-cu
 
 Older-map obligation: Audit each older location individually for this category; scoped native fixes or shared-policy tests do not establish full other-map gameplay/art acceptance.
 
-### DEV-047 â€” Culvert outlet was recessed and obscured by terrain
+### DEV-047 — Culvert outlet was recessed and obscured by terrain
 
-**Status:** fixed-native-bore-only Â· **Affected:** First culvert headwall and excavated terrain
+**Status:** fixed-native-bore-only · **Affected:** First culvert headwall and excavated terrain
 
 User correctly observed the outlet too far uphill and a green terrain plug obstructing its bore.
 
@@ -1032,9 +1032,9 @@ Evidence and verification: development/levels/previews/defects/DEV-047-before-re
 
 Older-map obligation: Audit each older location individually for this category; scoped native fixes or shared-policy tests do not establish full other-map gameplay/art acceptance.
 
-### DEV-048 â€” Hiding availability differed by map and combined indoor/outdoor pools
+### DEV-048 — Hiding availability differed by map and combined indoor/outdoor pools
 
-**Status:** fixed-runtime-built-definitions; remaining authoring audits open Â· **Affected:** Ten built investigation definitions and future maps
+**Status:** fixed-runtime-built-definitions; remaining authoring audits open · **Affected:** Ten built investigation definitions and future maps
 
 House/farm/school cupboard pools and three Blackpine refuges had independent density hashes; other built templates retained inert recess placeholders.
 
@@ -1046,9 +1046,9 @@ Evidence and verification: HidingBudgetTest.java; VanHidingTest; CrouchAndOutdoo
 
 Older-map obligation: Audit each older location individually for this category; scoped native fixes or shared-policy tests do not establish full other-map gameplay/art acceptance.
 
-### DEV-049 â€” Ordinary planting reused the special refuge shrub model
+### DEV-049 — Ordinary planting reused the special refuge shrub model
 
-**Status:** fixed-native-decorative-separation Â· **Affected:** First approach shrub expansion
+**Status:** fixed-native-decorative-separation · **Affected:** First approach shrub expansion
 
 User rejected many visual refuge shrubs even where a decorative flag disabled hiding.
 
@@ -1060,9 +1060,9 @@ Evidence and verification: level_camp_shrub_decorative_a/b sources and studio ca
 
 Older-map obligation: Audit each older location individually for this category; scoped native fixes or shared-policy tests do not establish full other-map gameplay/art acceptance.
 
-### DEV-050 â€” Waterfront and dock blockers are not yet runtime movement constraints
+### DEV-050 — Waterfront and dock blockers are not yet runtime movement constraints
 
-**Status:** open-runtime-integration Â· **Affected:** Hollow Creek lake, creek, culvert, bridge and dock
+**Status:** open-runtime-integration · **Affected:** Hollow Creek lake, creek, culvert, bridge and dock
 
 User asked whether players are actually prevented from entering water or stepping off dock; current native scene cannot guarantee this.
 
@@ -1074,9 +1074,9 @@ Evidence and verification: amenities.json blockers; verification/hollow-creek-am
 
 Older-map obligation: Audit each older location individually for this category; scoped native fixes or shared-policy tests do not establish full other-map gameplay/art acceptance.
 
-### DEV-051 â€” Global bevel exceeded the unchanged rowboat mesh budget
+### DEV-051 — Global bevel exceeded the unchanged rowboat mesh budget
 
-**Status:** fixed-refinement-export Â· **Affected:** Second Hollow Creek model pass
+**Status:** fixed-refinement-export · **Affected:** Second Hollow Creek model pass
 
 First global three-segment bevel produced77037 rowboat triangles; authoring assertion stopped export.
 
@@ -1088,9 +1088,9 @@ Evidence and verification: refine_hollow_creek_models.py assertion; HollowCreekR
 
 Older-map obligation: Audit this failure category on each older model/site; refined source/geometry checks are not full runtime/human acceptance.
 
-### DEV-052 â€” Smoothing exposed flat-panel shading smear and overlapping boat end caps
+### DEV-052 — Smoothing exposed flat-panel shading smear and overlapping boat end caps
 
-**Status:** fixed-refined-assets-only Â· **Affected:** Refined masonry/metal panels and rowboat ends
+**Status:** fixed-refined-assets-only · **Affected:** Refined masonry/metal panels and rowboat ends
 
 Broad panels looked warped; boat cap faces rendered black in actual studio captures.
 
@@ -1102,9 +1102,9 @@ Evidence and verification: development/levels/previews/defects/DEV-052-before-re
 
 Older-map obligation: Audit this failure category on each older model/site; refined source/geometry checks are not full runtime/human acceptance.
 
-### DEV-053 â€” Refined instance assignment duplicated empty support-group definitions
+### DEV-053 — Refined instance assignment duplicated empty support-group definitions
 
-**Status:** fixed-native-authoring-metadata Â· **Affected:** Second-pass scene and chair support verifier
+**Status:** fixed-native-authoring-metadata · **Affected:** Second-pass scene and chair support verifier
 
 A legacy point comparison tested zero chair-foot vertices; component review then found empty duplicate group names, causing30 strict contact-check findings.
 
@@ -1116,23 +1116,23 @@ Evidence and verification: development/quality/evidence/DEV-053-empty-group-refi
 
 Older-map obligation: Audit this failure category on each older model/site; refined source/geometry checks are not full runtime/human acceptance.
 
-### DEV-054 â€” Detail parts needed actual support rather than plausible overall bounds
+### DEV-054 — Detail parts needed actual support rather than plausible overall bounds
 
-**Status:** fixed-refined-parts-only Â· **Affected:** Hollow Creek fireplace, picnic-table fixings and cold fire ring
+**Status:** fixed-refined-parts-only · **Affected:** Hollow Creek fireplace, picnic-table fixings and cold fire ring
 
 Detailed review found split firewood below rather than resting on fireplace grate, new tabletop bolt heads away from bearing rails, and a small ash/log contact gap.
 
 Cause / uncertainty: Overall model silhouette and bounding boxes did not establish support by the intended subcomponent.
 
-Fix / next action: Place split wood on actual grate bars, align table fixings to measured rails at XÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â±.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.
+Fix / next action: Place split wood on actual grate bars, align table fixings to measured rails at XÃƒâ€šÃ‚Â±.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.
 
 Evidence and verification: development/levels/previews/defects/DEV-054-before-firewood-grate-support.png; verification/hollow-creek-refined.json; hollow-creek-refinement-parts.json
 
 Older-map obligation: Audit actual support parts on every older source/placement; this refined-only correction does not establish unaudited other-map acceptance.
 
-### DEV-055 â€” Delivery verifier compared Git-normalized text to Windows worktree bytes
+### DEV-055 — Delivery verifier compared Git-normalized text to Windows worktree bytes
 
-**Status:** fixed-verification-comparison Â· **Affected:** Refined source publication verification
+**Status:** fixed-verification-comparison · **Affected:** Refined source publication verification
 
 Binary source/model downloads passed, but refined-models.json failed an exact raw hash comparison.
 
@@ -1144,9 +1144,9 @@ Evidence and verification: verification/hollow-creek-refined-delivery.json; fina
 
 Older-map obligation: Use committed bytes for remote delivery checks when text normalization applies. Preserve raw binary equality checks; do not waive real source/export mismatch.
 
-### DEV-056 â€” Uniform surface wear and oversized timber grain survive construction refinement
+### DEV-056 — Uniform surface wear and oversized timber grain survive construction refinement
 
-**Status:** improved-authored-family-only Â· **Affected:** Hollow Creek refined model family
+**Status:** improved-authored-family-only · **Affected:** Hollow Creek refined model family
 
 Current model review still reads as crude: repetitive timber stripes and uniform plastic/stone/metal surfaces.
 
@@ -1158,9 +1158,9 @@ Evidence and verification: previews/defects/DEV-056-before-uniform-surfaces-nati
 
 Older-map obligation: Audit this failure category independently on older maps/assets. This scoped native/atlas pass does not certify their geometry, lighting, performance or gameplay.
 
-### DEV-057 â€” New weather atlas initially used unsupported UV channel and legacy vertical origin
+### DEV-057 — New weather atlas initially used unsupported UV channel and legacy vertical origin
 
-**Status:** fixed-new-authored-family-only Â· **Affected:** 14 new Hollow Creek authored runtime exports
+**Status:** fixed-new-authored-family-only · **Affected:** 14 new Hollow Creek authored runtime exports
 
 First exported shed GLB selects texCoord1 while the reader consumes TEXCOORD_0. Inspection also found that the legacy non-vehicle image-row convention would invert a spatially authored glTF atlas.
 
@@ -1172,9 +1172,9 @@ Evidence and verification: tools/hollow_creek_authored_pixel_reference.py; Hollo
 
 Older-map obligation: Audit this failure category independently on older maps/assets. This scoped native/atlas pass does not certify their geometry, lighting, performance or gameplay.
 
-### DEV-058 â€” Blender RNA handles invalidated by attribute and UV-layer allocation
+### DEV-058 — Blender RNA handles invalidated by attribute and UV-layer allocation
 
-**Status:** fixed-authoring-pipeline Â· **Affected:** New surface authoring script
+**Status:** fixed-authoring-pipeline · **Affected:** New surface authoring script
 
 Initial authoring attempt caused EXCEPTION_ACCESS_VIOLATION; deleting UV layers through stored RNA handles later reported UV map .uv_select_vert not found.
 
@@ -1186,9 +1186,9 @@ Evidence and verification: author_hollow_creek_surfaces.py; review_hollow_creek_
 
 Older-map obligation: Audit this failure category independently on older maps/assets. This scoped native/atlas pass does not certify their geometry, lighting, performance or gameplay.
 
-### DEV-059 â€” Pending native physics Java generator emitted extra closing parentheses
+### DEV-059 — Pending native physics Java generator emitted extra closing parentheses
 
-**Status:** corrected-local-pending-integration Â· **Affected:** Uncommitted Hollow Creek physics-export work
+**Status:** corrected-local-pending-integration · **Affected:** Uncommitted Hollow Creek physics-export work
 
 Compiling all current main sources found three semicolon-expected syntax errors at final Zone, Collider and Link entries.
 
@@ -1200,9 +1200,9 @@ Evidence and verification: development/levels/export_hollow_creek_physics.py; pe
 
 Older-map obligation: Audit this failure category independently on older maps/assets. This scoped native/atlas pass does not certify their geometry, lighting, performance or gameplay.
 
-### DEV-060 â€” Existing GGBot vehicle color-count assertion fails on baseline loader
+### DEV-060 — Existing GGBot vehicle color-count assertion fails on baseline loader
 
-**Status:** open-baseline-regression Â· **Affected:** GgBotBlenderSourceUvTest with current ggbot_car01 source
+**Status:** open-baseline-regression · **Affected:** GgBotBlenderSourceUvTest with current ggbot_car01 source
 
 Vehicle source regression test fails its original128px textured color atlas assertion.
 
@@ -1214,9 +1214,9 @@ Evidence and verification: quality/evidence/DEV-060-baseline-vehicle-uv.txt; ver
 
 Older-map obligation: Audit this failure category independently on older maps/assets. This scoped native/atlas pass does not certify their geometry, lighting, performance or gameplay.
 
-### DEV-061 â€” Diffuse bake double-applied the source palette transfer function
+### DEV-061 — Diffuse bake double-applied the source palette transfer function
 
-**Status:** fixed-authored-bake-color-space Â· **Affected:** First third-pass surface bake
+**Status:** fixed-authored-bake-color-space · **Affected:** First third-pass surface bake
 
 Matched fireplace/pavilion native capture became pale, clean-looking and washed out despite the intended aging pass.
 
@@ -1228,9 +1228,9 @@ Evidence and verification: previews/defects/DEV-061-before-bake-palette-washout.
 
 Older-map obligation: Audit this failure category independently on older maps/assets. This scoped native/atlas pass does not certify their geometry, lighting, performance or gameplay.
 
-### DEV-062 â€” Dome canopy opening retains whole-cell staircase
+### DEV-062 — Dome canopy opening retains whole-cell staircase
 
-**Status:** fixed-tailored-source-and-eight-tent-native-pass Â· **Affected:** Hollow Creek dome tent
+**Status:** fixed-tailored-source-and-eight-tent-native-pass · **Affected:** Hollow Creek dome tent
 
 Close-up shows a stepped/angular cutout instead of a continuous sewn entrance.
 
@@ -1242,9 +1242,9 @@ Evidence and verification: previews/defects/DEV-062-before-stepped-dome-aperture
 
 Older-map obligation: Audit the same topology, transform, actual support and positive-presence category on each older map/model independently. This native source correction is not full gameplay, lighting, LAN or performance acceptance.
 
-### DEV-063 â€” Projected hemisphere seam produced overlapping shell rim faces
+### DEV-063 — Projected hemisphere seam produced overlapping shell rim faces
 
-**Status:** fixed-tailored-dome-topology Â· **Affected:** Intermediate tailored dome canopy
+**Status:** fixed-tailored-dome-topology · **Affected:** Intermediate tailored dome canopy
 
 Actual shell audit found16 edges with four adjacent faces at the joined hemisphere seam.
 
@@ -1256,9 +1256,9 @@ Evidence and verification: verification/hollow-creek-tailored-shape.json; review
 
 Older-map obligation: Audit the same topology, transform, actual support and positive-presence category on each older map/model independently. This native source correction is not full gameplay, lighting, LAN or performance acceptance.
 
-### DEV-064 â€” Independent floor verifier rebuilt the same vertex set inside its loop
+### DEV-064 — Independent floor verifier rebuilt the same vertex set inside its loop
 
-**Status:** fixed-verifier-complexity Â· **Affected:** Fabric scene review script
+**Status:** fixed-verifier-complexity · **Affected:** Fabric scene review script
 
 Initial floor comparison spent unbounded useful time recalculating membership per vertex instead of reaching visual review.
 
@@ -1270,9 +1270,9 @@ Evidence and verification: review_hollow_creek_fabric.py; verification/hollow-cr
 
 Older-map obligation: Audit the same topology, transform, actual support and positive-presence category on each older map/model independently. This native source correction is not full gameplay, lighting, LAN or performance acceptance.
 
-### DEV-065 â€” Matrix decomposition perturbed an exact fitted tent rotation
+### DEV-065 — Matrix decomposition perturbed an exact fitted tent rotation
 
-**Status:** fixed-preserving-original-transform-components Â· **Affected:** Additional pitched tent3 and equivalent pi rotations
+**Status:** fixed-preserving-original-transform-components · **Affected:** Additional pitched tent3 and equivalent pi rotations
 
 Independent world-space floor comparison failed even though all2648 local floor vertices matched exactly.
 
@@ -1284,9 +1284,9 @@ Evidence and verification: quality/evidence/DEV-065-before-transform-decompositi
 
 Older-map obligation: Audit the same topology, transform, actual support and positive-presence category on each older map/model independently. This native source correction is not full gameplay, lighting, LAN or performance acceptance.
 
-### DEV-066 â€” Replacement canopies buried by a stale dependency transform
+### DEV-066 — Replacement canopies buried by a stale dependency transform
 
-**Status:** fixed-with-positive-native-roof-presence-gate Â· **Affected:** Initial tailored native assembly
+**Status:** fixed-with-positive-native-roof-presence-gate · **Affected:** Initial tailored native assembly
 
 Native capture shows a groundsheet and bedding with the whole canopy below ground; floor/route/door clearance negatives had passed.
 
@@ -1298,9 +1298,9 @@ Evidence and verification: previews/defects/DEV-066-before-buried-canopy-native-
 
 Older-map obligation: Audit the same topology, transform, actual support and positive-presence category on each older map/model independently. This native source correction is not full gameplay, lighting, LAN or performance acceptance.
 
-### DEV-067 â€” Retained native tent floors carry excessive authoring tessellation
+### DEV-067 — Retained native tent floors carry excessive authoring tessellation
 
-**Status:** fixed-native-floor-topology-runtime-performance-open Â· **Affected:** Hollow Creek eight terrain-conformed tent floors
+**Status:** fixed-native-floor-topology-runtime-performance-open · **Affected:** Hollow Creek eight terrain-conformed tent floors
 
 Native inventory measures465696 retained floor triangles out of1500410 render-visible native triangles, despite small tent footprints.
 
@@ -1312,9 +1312,9 @@ Evidence and verification: verification/hollow-creek-tailored-geometry-cost.json
 
 Older-map obligation: Profile older terrain-conformed meshes independently. Count native geometry separately from actual renderer culling/LOD/FPS evidence.
 
-### DEV-068 â€” Original west rolled bedding intersects sloping tent canvas
+### DEV-068 — Original west rolled bedding intersects sloping tent canvas
 
-**Status:** fixed-native-placement-and-all-seven-bag-audit Â· **Affected:** West pitched ridge bedding and fabric inspection camera
+**Status:** fixed-native-placement-and-all-seven-bag-audit · **Affected:** West pitched ridge bedding and fabric inspection camera
 
 The close-up shows part of the rolled bag protruding through the sloping canvas; the camera outside that wall also obscures the intended inspection.
 
@@ -1326,9 +1326,9 @@ Evidence and verification: previews/defects/DEV-068-before-bedding-through-canva
 
 Older-map obligation: Audit supported props against sloping walls/roofs and full usable volume as well as their supporting floor/table. Keep inspection cameras outside opaque obstructions.
 
-### DEV-069 â€” Full multiplayer CI stops at stale equipment manifest coverage totals
+### DEV-069 — Full multiplayer CI stops at stale equipment manifest coverage totals
 
-**Status:** open-existing-baseline-test-mismatch Â· **Affected:** EquipmentAssetAssignmentsTest and full multiplayer CI run40119993589
+**Status:** open-existing-baseline-test-mismatch · **Affected:** EquipmentAssetAssignmentsTest and full multiplayer CI run40119993589
 
 CI and local replay fail manifest family/alias coverage changed before completing full multiplayer/regression acceptance. Manifest has43 families,129 stages,53 state aliases and162 unique resources; the assertion expects44 state aliases and153 resources.
 
@@ -1340,9 +1340,9 @@ Evidence and verification: quality/evidence/DEV-069-full-multiplayer-baseline.tx
 
 Older-map obligation: Shared CI failure predates these map asset changes and affects broad release acceptance; retain it as an open prerequisite across all map acceptance audits.
 
-### DEV-070 â€” Tolerance-classified clipping intersections extrapolated outside short edges
+### DEV-070 — Tolerance-classified clipping intersections extrapolated outside short edges
 
-**Status:** fixed-terrain-floor-clipping Â· **Affected:** Intermediate floor retopology
+**Status:** fixed-terrain-floor-clipping · **Affected:** Intermediate floor retopology
 
 A clipped floor produced reversed/duplicate top triangles and an edge with four adjacent faces.
 
@@ -1354,9 +1354,9 @@ Evidence and verification: quality/evidence/DEV-070-clipped-floor-degenerates.js
 
 Older-map obligation: Audit equivalent fitted floors and nonplanar source/export surfaces independently. Native triangle counts and source equality do not establish gameplay, optical, host/LAN or runtime performance acceptance.
 
-### DEV-071 â€” Nearest-face verification misreported thin-face export disagreement
+### DEV-071 — Nearest-face verification misreported thin-face export disagreement
 
-**Status:** fixed-with-exact-oriented-raw-triangle-audit Â· **Affected:** Fitted tent source/export verification
+**Status:** fixed-with-exact-oriented-raw-triangle-audit · **Affected:** Fitted tent source/export verification
 
 Blender nearest-face queries reported up to1.3mm apparent source/GLB separation, including after explicit triangulation, despite matching bounds.
 
@@ -1368,9 +1368,9 @@ Evidence and verification: quality/evidence/DEV-071-implicit-quad-export-drift.t
 
 Older-map obligation: Audit equivalent fitted floors and nonplanar source/export surfaces independently. Native triangle counts and source equality do not establish gameplay, optical, host/LAN or runtime performance acceptance.
 
-### DEV-072 â€” Primitive memorial silhouette and blank plaque
+### DEV-072 — Primitive memorial silhouette and blank plaque
 
-**Status:** fixed-native-sculpture-and-inscription Â· **Affected:** Camp Hollow Creek memorial
+**Status:** fixed-native-sculpture-and-inscription · **Affected:** Camp Hollow Creek memorial
 
 User observed disconnected primitive body/neck/wings and an empty plaque.
 
@@ -1382,9 +1382,9 @@ Evidence and verification: verification/hollow-creek-siteart.json; hollow-creek/
 
 Older-map obligation: Audit analogous older-map models/material UV layers, actual support and authored placements individually; source/native checks do not establish runtime, ghost, host/LAN or performance acceptance.
 
-### DEV-073 â€” Native ground renderer retained the old stretched UV layer
+### DEV-073 — Native ground renderer retained the old stretched UV layer
 
-**Status:** fixed-native-and-portable-UV-selection Â· **Affected:** New Hollow Creek grass/dirt/shore pass
+**Status:** fixed-native-and-portable-UV-selection · **Affected:** New Hollow Creek grass/dirt/shore pass
 
 First native close-up stretched one tile across the entire site while the temporary export used new UVs.
 
@@ -1396,9 +1396,9 @@ Evidence and verification: verification/hollow-creek-siteart.json; verification/
 
 Older-map obligation: Audit analogous older-map models/material UV layers, actual support and authored placements individually; source/native checks do not establish runtime, ghost, host/LAN or performance acceptance.
 
-### DEV-074 â€” Scattered boulder intersected a sanitary cubicle
+### DEV-074 — Scattered boulder intersected a sanitary cubicle
 
-**Status:** fixed-native-scatter-facility-clearance Â· **Affected:** Initial Hollow Creek rock-scatter candidate
+**Status:** fixed-native-scatter-facility-clearance · **Affected:** Initial Hollow Creek rock-scatter candidate
 
 Native close-up showed a rock intruding into the open toilet.
 
@@ -1410,9 +1410,9 @@ Evidence and verification: verification/hollow-creek-siteart.json
 
 Older-map obligation: Audit analogous older-map models/material UV layers, actual support and authored placements individually; source/native checks do not establish runtime, ghost, host/LAN or performance acceptance.
 
-### DEV-075 â€” Clearing instance groups erased newly assigned mesh weights
+### DEV-075 — Clearing instance groups erased newly assigned mesh weights
 
-**Status:** fixed-memorial-instance-transfer Â· **Affected:** Organic memorial source-to-site installation
+**Status:** fixed-memorial-instance-transfer · **Affected:** Organic memorial source-to-site installation
 
 Independent native casting audit found zero vertices in the expected group although the source sculpture was connected.
 
@@ -1424,9 +1424,9 @@ Evidence and verification: verification/hollow-creek-siteart.json
 
 Older-map obligation: Audit analogous older-map models/material UV layers, actual support and authored placements individually; source/native checks do not establish runtime, ghost, host/LAN or performance acceptance.
 
-### DEV-076 â€” Environmental surface second-pass audit remains incomplete
+### DEV-076 — Environmental surface second-pass audit remains incomplete
 
-**Status:** open-environmental-material-refinement Â· **Affected:** Hollow Creek and older map audits
+**Status:** open-environmental-material-refinement · **Affected:** Hollow Creek and older map audits
 
 User identified poor grass/dirt and generally crude environmental materials.
 
@@ -1438,9 +1438,9 @@ Evidence and verification: hollow-creek/SITE_ART_REVIEW.html; textures/hollow-cr
 
 Older-map obligation: Audit analogous older-map models/material UV layers, actual support and authored placements individually; source/native checks do not establish runtime, ghost, host/LAN or performance acceptance.
 
-### DEV-077 â€” All campground tents shared north-south headings
+### DEV-077 — All campground tents shared north-south headings
 
-**Status:** fixed-native-refitted-varied-headings Â· **Affected:** Eight Hollow Creek tents and associated bedding
+**Status:** fixed-native-refitted-varied-headings · **Affected:** Eight Hollow Creek tents and associated bedding
 
 User noticed identical N-S tent orientation.
 
@@ -1452,9 +1452,9 @@ Evidence and verification: hollow-creek/siteart-headings.json; verification/holl
 
 Older-map obligation: Audit analogous older-map models/material UV layers, actual support and authored placements individually; source/native checks do not establish runtime, ghost, host/LAN or performance acceptance.
 
-### DEV-078 â€” Invisible UV carrier material failed strict game asset loading
+### DEV-078 — Invisible UV carrier material failed strict game asset loading
 
-**Status:** fixed-portable-alpha-carrier-export Â· **Affected:** Five cosmetic memorial UV footprint cubes
+**Status:** fixed-portable-alpha-carrier-export · **Affected:** Five cosmetic memorial UV footprint cubes
 
 Actual game reader rejected the carrier with Material has no original texture.
 
@@ -1466,9 +1466,9 @@ Evidence and verification: verification/hollow-creek-siteart-runtime.json
 
 Older-map obligation: Audit analogous older-map models/material UV layers, actual support and authored placements individually; source/native checks do not establish runtime, ghost, host/LAN or performance acceptance.
 
-### DEV-079 â€” Boundary berm retained an obsolete material palette
+### DEV-079 — Boundary berm retained an obsolete material palette
 
-**Status:** fixed-native-earth-bank-material-family Â· **Affected:** Camp Hollow Creek bank/crest refinement
+**Status:** fixed-native-earth-bank-material-family · **Affected:** Camp Hollow Creek bank/crest refinement
 
 The berm visibly differed from the revised grass/dirt ground.
 
@@ -1480,9 +1480,9 @@ Evidence and verification: hollow-creek/EARTHEN_BANK_REVIEW.html; verification/h
 
 Older-map obligation: Audit corresponding old-map boundary profiles, palette continuity, rock purpose and actual supported assemblies individually. Native source proofs are not gameplay, optical, host/LAN or performance acceptance.
 
-### DEV-080 â€” Height-displaced UVs compressed texture at bank bends
+### DEV-080 — Height-displaced UVs compressed texture at bank bends
 
-**Status:** superseded-unpublished-prototype-not-shipped Â· **Affected:** Camp Hollow Creek bank/crest refinement
+**Status:** superseded-unpublished-prototype-not-shipped · **Affected:** Camp Hollow Creek bank/crest refinement
 
 An independent slope-density test found a0.628 singular value at triangle777 in the material-only candidate.
 
@@ -1494,9 +1494,9 @@ Evidence and verification: quality/evidence/DEV-080-berm-slope-uv-stretch.txt
 
 Older-map obligation: Audit corresponding old-map boundary profiles, palette continuity, rock purpose and actual supported assemblies individually. Native source proofs are not gameplay, optical, host/LAN or performance acceptance.
 
-### DEV-081 â€” Copying source normals across quad splits changed their smooth fans
+### DEV-081 — Copying source normals across quad splits changed their smooth fans
 
-**Status:** superseded-unpublished-prototype-normal-audit-required Â· **Affected:** Camp Hollow Creek bank/crest refinement
+**Status:** superseded-unpublished-prototype-normal-audit-required · **Affected:** Camp Hollow Creek bank/crest refinement
 
 An unpublished material-only prototype changed source corner-normal vectors by up to0.01453 while exposing rendered diagonals.
 
@@ -1508,9 +1508,9 @@ Evidence and verification: quality/evidence/DEV-081-berm-normal-fan-drift.txt
 
 Older-map obligation: Audit corresponding old-map boundary profiles, palette continuity, rock purpose and actual supported assemblies individually. Native source proofs are not gameplay, optical, host/LAN or performance acceptance.
 
-### DEV-082 â€” Uniform flat-topped berm read as a dirt-coloured wall
+### DEV-082 — Uniform flat-topped berm read as a dirt-coloured wall
 
-**Status:** fixed-native-authored-earth-profile Â· **Affected:** Camp Hollow Creek bank/crest refinement
+**Status:** fixed-native-authored-earth-profile · **Affected:** Camp Hollow Creek bank/crest refinement
 
 User identified repetitive straight sides and flat crest despite the texture update.
 
@@ -1522,9 +1522,9 @@ Evidence and verification: verification/hollow-creek-berm.json; hollow-creek/gro
 
 Older-map obligation: Audit corresponding old-map boundary profiles, palette continuity, rock purpose and actual supported assemblies individually. Native source proofs are not gameplay, optical, host/LAN or performance acceptance.
 
-### DEV-083 â€” Embedded stones read as gravel dollops and then cut blocks
+### DEV-083 — Embedded stones read as gravel dollops and then cut blocks
 
-**Status:** fixed-native-fractured-bedrock-outcrops Â· **Affected:** Camp Hollow Creek bank/crest refinement
+**Status:** fixed-native-fractured-bedrock-outcrops · **Affected:** Camp Hollow Creek bank/crest refinement
 
 User rejected pebbly rounded blobs; close review also rejected a rectangular wedge candidate.
 
@@ -1536,11 +1536,11 @@ Evidence and verification: hollow-creek/EARTHEN_BANK_REVIEW.html; textures/hollo
 
 Older-map obligation: Audit corresponding old-map boundary profiles, palette continuity, rock purpose and actual supported assemblies individually. Native source proofs are not gameplay, optical, host/LAN or performance acceptance.
 
-### DEV-084 â€” Reshaped bank left old crest dressing unsupported
+### DEV-084 — Reshaped bank left old crest dressing unsupported
 
-**Status:** fixed-native-rigid-crest-refit Â· **Affected:** Camp Hollow Creek bank/crest refinement
+**Status:** fixed-native-rigid-crest-refit · **Affected:** Camp Hollow Creek bank/crest refinement
 
-Actual original log bearings sit53ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“63mm into the original soil, but unrefitted original bearings reach655mm above the new bank. A first metadata-based contact check had reported about0.20m.
+Actual original log bearings sit53Ã¢â‚¬â€œ63mm into the original soil, but unrefitted original bearings reach655mm above the new bank. A first metadata-based contact check had reported about0.20m.
 
 Cause / uncertainty: Changing terrain without refitting supported log and rooted scrub assemblies invalidated their old contacts. Metadata and axis/cap rays alone were insufficient support evidence.
 
@@ -1550,9 +1550,9 @@ Evidence and verification: quality/evidence/DEV-084-actual-crest-bearing-before-
 
 Older-map obligation: Audit corresponding old-map boundary profiles, palette continuity, rock purpose and actual supported assemblies individually. Native source proofs are not gameplay, optical, host/LAN or performance acceptance.
 
-### DEV-085 â€” Cylinder-axis end ray misclassified log bearing support
+### DEV-085 — Cylinder-axis end ray misclassified log bearing support
 
-**Status:** fixed-with-actual-bearing-geometry Â· **Affected:** Camp Hollow Creek bank/crest refinement
+**Status:** fixed-with-actual-bearing-geometry · **Affected:** Camp Hollow Creek bank/crest refinement
 
 An axis ray near a slanted log end reported a gap while sampling its cap rather than its lowest support rim.
 
@@ -1564,9 +1564,9 @@ Evidence and verification: verification/hollow-creek-berm.json
 
 Older-map obligation: Audit corresponding old-map boundary profiles, palette continuity, rock purpose and actual supported assemblies individually. Native source proofs are not gameplay, optical, host/LAN or performance acceptance.
 
-### DEV-086 â€” Editable asset was saved only as a dependency library
+### DEV-086 — Editable asset was saved only as a dependency library
 
-**Status:** fixed-isolated-packed-model-scenes Â· **Affected:** Camp Hollow Creek bank/crest refinement
+**Status:** fixed-isolated-packed-model-scenes · **Affected:** Camp Hollow Creek bank/crest refinement
 
 Dependency-only blend snapshots contained the model but no directly openable model scene.
 
@@ -1578,9 +1578,9 @@ Evidence and verification: verification/hollow-creek-berm.json; finalize_earthen
 
 Older-map obligation: Audit corresponding old-map boundary profiles, palette continuity, rock purpose and actual supported assemblies individually. Native source proofs are not gameplay, optical, host/LAN or performance acceptance.
 
-### DEV-087 â€” Pending physics export referenced an obsolete native scene
+### DEV-087 — Pending physics export referenced an obsolete native scene
 
-**Status:** fixed-current-source-hash-guard Â· **Affected:** Camp Hollow Creek native-to-runtime geometry component
+**Status:** fixed-current-source-hash-guard · **Affected:** Camp Hollow Creek native-to-runtime geometry component
 
 A pending HCS1 export predated fitted art and rounded earth banks.
 
@@ -1592,9 +1592,9 @@ Evidence and verification: verification/hollow-creek-native-source.json
 
 Older-map obligation: Audit source/export identity, real capsule footprints and sweeps, opaque versus movement-only blockers, closed-solid occupancy and supported spawn anchors individually on older maps. Component tests do not establish world renderer, ghost, player, host/LAN or complete map acceptance.
 
-### DEV-088 â€” Native sight query overran a mixed-direction grid endpoint
+### DEV-088 — Native sight query overran a mixed-direction grid endpoint
 
-**Status:** fixed-bounded-grid-endpoint Â· **Affected:** Camp Hollow Creek native-to-runtime geometry component
+**Status:** fixed-bounded-grid-endpoint · **Affected:** Camp Hollow Creek native-to-runtime geometry component
 
 Independent Blender rays exposed a nonterminating cell traversal when a ray ended on a grid plane.
 
@@ -1606,9 +1606,9 @@ Evidence and verification: src/test/java/org/beckenburg/AuthoredSitePhysicsTest.
 
 Older-map obligation: Audit source/export identity, real capsule footprints and sweeps, opaque versus movement-only blockers, closed-solid occupancy and supported spawn anchors individually on older maps. Component tests do not establish world renderer, ghost, player, host/LAN or complete map acceptance.
 
-### DEV-089 â€” L14 centerline passed while the standing foot radius hit steep terrain
+### DEV-089 — L14 centerline passed while the standing foot radius hit steep terrain
 
-**Status:** fixed-local-native-grading Â· **Affected:** Camp Hollow Creek native-to-runtime geometry component
+**Status:** fixed-local-native-grading · **Affected:** Camp Hollow Creek native-to-runtime geometry component
 
 Four capsule/sweep findings occurred at the east footbridge approach despite valid route-center support.
 
@@ -1620,9 +1620,9 @@ Evidence and verification: quality/evidence/DEV-089-L14-steep-foot-radius-strip.
 
 Older-map obligation: Audit source/export identity, real capsule footprints and sweeps, opaque versus movement-only blockers, closed-solid occupancy and supported spawn anchors individually on older maps. Component tests do not establish world renderer, ghost, player, host/LAN or complete map acceptance.
 
-### DEV-090 â€” Draft native zone anchor targeted the memorial plinth
+### DEV-090 — Draft native zone anchor targeted the memorial plinth
 
-**Status:** fixed-native-anchor-contract Â· **Affected:** Camp Hollow Creek native-to-runtime geometry component
+**Status:** fixed-native-anchor-contract · **Affected:** Camp Hollow Creek native-to-runtime geometry component
 
 The draft memorial anchor used the center of the statue rather than its approach. Other draft elevations were rough layout hints.
 
@@ -1634,9 +1634,9 @@ Evidence and verification: src/test/java/org/beckenburg/HollowCreekNativePhysics
 
 Older-map obligation: Audit source/export identity, real capsule footprints and sweeps, opaque versus movement-only blockers, closed-solid occupancy and supported spawn anchors individually on older maps. Component tests do not establish world renderer, ghost, player, host/LAN or complete map acceptance.
 
-### DEV-091 â€” Windows default text encoding broke the deployed handoff
+### DEV-091 — Windows default text encoding broke the deployed handoff
 
-**Status:** fixed-explicit-utf8-writers Â· **Affected:** Hollow Creek native physics publication
+**Status:** fixed-explicit-utf8-writers · **Affected:** Hollow Creek native physics publication
 
 Pages run40201935399 rejected the new dated handoff as invalid UTF-8; the generated review also used the wrong declared encoding.
 
@@ -1648,9 +1648,9 @@ Evidence and verification: quality/evidence/DEV-091-pages-encoding.txt
 
 Older-map obligation: Check text-writing producers and strictly decode future authored publication text; do not infer that successful local file opening proves Jekyll-compatible encoding.
 
-### DEV-092 â€” New grass export family initially used the wrong texture V convention
+### DEV-092 — New grass export family initially used the wrong texture V convention
 
-**Status:** fixed-runtime-atlas-orientation Â· **Affected:** Hollow Creek green grass material variant
+**Status:** fixed-runtime-atlas-orientation · **Affected:** Hollow Creek green grass material variant
 
 Caught during local export/actual loader validation; failing candidate was not published.
 
@@ -1662,9 +1662,9 @@ Evidence and verification: verification/hollow-creek-green.json; verification/ho
 
 Older-map obligation: Apply actual UV/pixel checks to each new export family and avoid live Blender collection references during deletion; older material families are not automatically accepted.
 
-### DEV-093 â€” Removing Blender UV layers via live RNA wrappers invalidated later names
+### DEV-093 — Removing Blender UV layers via live RNA wrappers invalidated later names
 
-**Status:** fixed-exporter-uv-name-snapshot Â· **Affected:** Hollow Creek green grass material variant
+**Status:** fixed-exporter-uv-name-snapshot · **Affected:** Hollow Creek green grass material variant
 
 Caught during local export/actual loader validation; failing candidate was not published.
 
@@ -1676,9 +1676,9 @@ Evidence and verification: verification/hollow-creek-green.json; verification/ho
 
 Older-map obligation: Apply actual UV/pixel checks to each new export family and avoid live Blender collection references during deletion; older material families are not automatically accepted.
 
-### DEV-094 â€” Grass green failed to match the distant woodland palette
+### DEV-094 — Grass green failed to match the distant woodland palette
 
-**Status:** revised-native-palette-user-review-pending Â· **Affected:** Hollow Creek ground, bank and shore-return material
+**Status:** revised-native-palette-user-review-pending · **Affected:** Hollow Creek ground, bank and shore-return material
 
 User rejected the first greener v3 texture because its yellow-green hue still differed from the distant wood.
 
@@ -1690,9 +1690,9 @@ Evidence and verification: hollow-creek/GREEN_GRASS_REVIEW.html; textures/hollow
 
 Older-map obligation: Compare near/far material colours together under the same scene lighting; a generic request for greener grass does not establish palette continuity.
 
-### DEV-095 â€” Native runtime discarded authored site geometry
+### DEV-095 — Native runtime discarded authored site geometry
 
-**Status:** fixed-scoped Â· **Affected:** Hollow Creek
+**Status:** fixed-scoped · **Affected:** Hollow Creek
 
 Earlier game level construction did not consume the native mesh/pose/physics contract.
 
@@ -1704,9 +1704,9 @@ Evidence and verification: HollowCreekRuntimeTest: 969 route points / 939 sweeps
 
 Older-map obligation: Audit every older map runtime against its actual source, independently.
 
-### DEV-096 â€” Van vertical placement lost across runtime systems
+### DEV-096 — Van vertical placement lost across runtime systems
 
-**Status:** fixed-scoped Â· **Affected:** Elevated canonical van
+**Status:** fixed-scoped · **Affected:** Elevated canonical van
 
 Dock Y was ignored by support, rendering, fixture lights and interaction targets.
 
@@ -1718,9 +1718,9 @@ Evidence and verification: ElevatedVanTest: three heights and rotated placements
 
 Older-map obligation: Audit any map with nonzero van elevation; legacy placements remain compatible.
 
-### DEV-097 â€” Native exterior zones treated as indoor by numeric room ID
+### DEV-097 — Native exterior zones treated as indoor by numeric room ID
 
-**Status:** fixed-scoped Â· **Affected:** Hollow Creek outdoor zones 0Ã¢â‚¬â€œ11
+**Status:** fixed-scoped · **Affected:** Hollow Creek outdoor zones 0â€“11
 
 Outdoor investigation ownership reused indoor numeric IDs and received indoor ambient/shelter assumptions.
 
@@ -1732,9 +1732,9 @@ Evidence and verification: Runtime pavilion/van shelter and route tests; actual 
 
 Older-map obligation: Audit room ownership separately from indoor/outdoor classification.
 
-### DEV-098 â€” GPU texture upload flipped V twice and destroyed packed atlas resolution
+### DEV-098 — GPU texture upload flipped V twice and destroyed packed atlas resolution
 
-**Status:** fixed-scoped Â· **Affected:** GPU material upload; exposed by Hollow Creek boat
+**Status:** fixed-scoped · **Affected:** GPU material upload; exposed by Hollow Creek boat
 
 Boat looked intact in native reviews but acquired black bands and unrelated plank colours in actual GPU capture.
 
@@ -1746,9 +1746,9 @@ Evidence and verification: flat-baseline vs atlas-corrected dock PNGs; final run
 
 Older-map obligation: All GPU-rendered older assets require individual visual review after this shared sampler correction.
 
-### DEV-099 â€” Boat seats and oar blades penetrated the narrowing hull
+### DEV-099 — Boat seats and oar blades penetrated the narrowing hull
 
-**Status:** fixed-scoped Â· **Affected:** Hollow Creek west moored rowing boat
+**Status:** fixed-scoped · **Affected:** Hollow Creek west moored rowing boat
 
 Seat ends protruded through curved sides; stowed blades crossed the bow.
 
@@ -1760,9 +1760,9 @@ Evidence and verification: rowboat-refinement.json: 228 moved detail vertices; m
 
 Older-map obligation: Check complete accessory extents against curved support geometry, not centerline width.
 
-### DEV-100 â€” Boat painted atlas and lighting read as flat artificial surfaces
+### DEV-100 — Boat painted atlas and lighting read as flat artificial surfaces
 
-**Status:** revised-runtime-art-human-review-pending Â· **Affected:** Hollow Creek rowing boat
+**Status:** revised-runtime-art-human-review-pending · **Affected:** Hollow Creek rowing boat
 
 Restored upload still exposed crude flat paint, repetitive grain and missing surface-normal response.
 
@@ -1774,9 +1774,9 @@ Evidence and verification: 20,484 loaded boat normal samples are unit length; re
 
 Older-map obligation: Other assets and software-path directional shading remain unaudited; do not infer all-map shading acceptance.
 
-### DEV-101 â€” Water rendered through boat cockpit
+### DEV-101 — Water rendered through boat cockpit
 
-**Status:** fixed-scoped Â· **Affected:** Hollow Creek water and rowboat
+**Status:** fixed-scoped · **Affected:** Hollow Creek water and rowboat
 
 Flat surface occupied the boat interior; a single waterline cut would leak after adding waves.
 
@@ -1788,9 +1788,9 @@ Evidence and verification: WaterEffectsTest full-wave center/exterior exclusion 
 
 Older-map obligation: Every future boat requires its own actual hull profile; rectangular cutouts are not acceptable.
 
-### DEV-102 â€” Underwater surface had no optical basin depth
+### DEV-102 — Underwater surface had no optical basin depth
 
-**Status:** fixed-scoped Â· **Affected:** Hollow Creek water
+**Status:** fixed-scoped · **Affected:** Hollow Creek water
 
 Nominal constant depth could not reveal shallows or refract a visible bed.
 
@@ -1802,9 +1802,9 @@ Evidence and verification: GridBed diagonal/footprint tests; water-bed.json and 
 
 Older-map obligation: Per-map authored bathymetry required; current basin is an initial authored profile, not a survey.
 
-### DEV-103 â€” Distant water exposed a harsh clipping horizon
+### DEV-103 — Distant water exposed a harsh clipping horizon
 
-**Status:** revised-runtime-review-pending Â· **Affected:** Hollow Creek water and scenery
+**Status:** revised-runtime-review-pending · **Affected:** Hollow Creek water and scenery
 
 User observed a hard distance line and excessive distant texture sharpness in live views.
 
@@ -1816,9 +1816,9 @@ Evidence and verification: WaterReviewRegressionTest near sharpness, foreground 
 
 Older-map obligation: Audit each map horizon and sky frame; no blanket completion inferred.
 
-### DEV-104 â€” Shoreline lacked slow advancing and receding waves
+### DEV-104 — Shoreline lacked slow advancing and receding waves
 
-**Status:** revised-runtime-review-pending Â· **Affected:** Hollow Creek beach and creek margins
+**Status:** revised-runtime-review-pending · **Affected:** Hollow Creek beach and creek margins
 
 Scrolling flat texture did not provide visible shore wave action or animated edge foam.
 
@@ -1830,9 +1830,9 @@ Evidence and verification: Independent nearest-wave rays and hull envelope tests
 
 Older-map obligation: Tune wave scale, shore textures and currents individually; creek-specific flow and interaction ripples remain open.
 
-### DEV-105 â€” Generic signature breaker rule would ignore ghost-specific restrictions
+### DEV-105 — Generic signature breaker rule would ignore ghost-specific restrictions
 
-**Status:** open-host-rule-audit Â· **Affected:** Host/solo remote-site electrical events
+**Status:** open-host-rule-audit · **Affected:** Host/solo remote-site electrical events
 
 Integration review found no verified existing ghost-specific trip path; a draft generic SIGNATURE trip would force every ghost to trip a breaker.
 
@@ -1844,9 +1844,9 @@ Evidence and verification: HollowCreekPowerTest proves supported controls and so
 
 Older-map obligation: Audit eligible ghost rules and authority on all generator maps before unlock.
 
-### DEV-106 â€” Submerged creek bed remained an eligible native standing surface
+### DEV-106 — Submerged creek bed remained an eligible native standing surface
 
-**Status:** fixed-scoped Â· **Affected:** Hollow Creek physical terrain below water
+**Status:** fixed-scoped · **Affected:** Hollow Creek physical terrain below water
 
 A review-camera probe found traversable native creek floor at (49,23), feet about -2.64m, below the -1.95m water surface.
 
@@ -1854,13 +1854,13 @@ Cause / uncertainty: The edge blockers constrain crossings, but terrain support 
 
 Fix / next action: Reject below-water native support when the actual water body is wet; retain canonical van and dry-hull rules. Move river review cameras to supported dry bank positions.
 
-Evidence and verification: HollowCreekRuntimeTest directly rejects the submerged query while all969 existing route supports and939 sweeps still pass. River cameras now expose47Ã¢â‚¬â€œ55k water pixels per frame instead of3Ã¢â‚¬â€œ6k.
+Evidence and verification: HollowCreekRuntimeTest directly rejects the submerged query while all969 existing route supports and939 sweeps still pass. River cameras now expose47â€“55k water pixels per frame instead of3â€“6k.
 
 Older-map obligation: Audit both edge-crossing barriers and direct submerged spawn/support eligibility for every water map.
 
-### DEV-107 â€” Review launcher crashed during abrupt native GPU shutdown
+### DEV-107 — Review launcher crashed during abrupt native GPU shutdown
 
-**Status:** fixed-scoped Â· **Affected:** Hollow Creek GPU review command
+**Status:** fixed-scoped · **Affected:** Hollow Creek GPU review command
 
 All frames and reports were written, then the process exited with Windows native status -1073740791 (0xC0000409).
 
@@ -1872,9 +1872,9 @@ Evidence and verification: Same real dock render writes fresh world/depth/water 
 
 Older-map obligation: Audit other GPU smoke/shutdown entry points separately; only the new review lifecycle was corrected.
 
-### DEV-108 â€” Visible regular modulation in the water review
+### DEV-108 — Visible regular modulation in the water review
 
-**Status:** open-art-quality-review Â· **Affected:** Hollow Creek lit water
+**Status:** open-art-quality-review · **Affected:** Hollow Creek lit water
 
 Increasing opacity exposed repeating surface/bed lighting bands in the beach beam.
 
@@ -1886,9 +1886,9 @@ Evidence and verification: DEV-108-before-regular-water-ripple-grid.png and late
 
 Older-map obligation: Audit water repetition and bed-light tessellation under the actual beam, not only flat texture inspection.
 
-### DEV-109 â€” Local review video showed a poster without reliable playback
+### DEV-109 — Local review video showed a poster without reliable playback
 
-**Status:** mitigated-published-HTTPS-verified-local-preview-unverified Â· **Affected:** Water review HTML and archived animations
+**Status:** mitigated-published-HTTPS-verified-local-preview-unverified · **Affected:** Water review HTML and archived animations
 
 User could see stills but could not play the local review video.
 
@@ -1900,9 +1900,9 @@ Evidence and verification: Browser DOM and screenshot confirmed actual playing s
 
 Older-map obligation: Verify browser playback rather than inferring it from ffprobe frame counts.
 
-### DEV-110 â€” Reused shore-grit bed read poorly through overly clear water
+### DEV-110 — Reused shore-grit bed read poorly through overly clear water
 
-**Status:** revised-runtime-art-human-review-pending Â· **Affected:** Hollow Creek underwater bed and water style
+**Status:** revised-runtime-art-human-review-pending · **Affected:** Hollow Creek underwater bed and water style
 
 User requested a different creek-bed texture and less transparent water.
 
@@ -1914,9 +1914,9 @@ Evidence and verification: creek-bed-silt-stone-v1-prompt.json; new water-murkie
 
 Older-map obligation: Author and review dedicated optical beds and turbidity for each map rather than copying ground materials.
 
-### DEV-111 â€” Equipment assignment CI retained pre-existing stale variant counts
+### DEV-111 — Equipment assignment CI retained pre-existing stale variant counts
 
-**Status:** fixed-scoped Â· **Affected:** EquipmentAssetAssignmentsTest / full multiplayer build preflight
+**Status:** fixed-scoped · **Affected:** EquipmentAssetAssignmentsTest / full multiplayer build preflight
 
 Published water checkpoint full multiplayer workflow stopped before the round at manifest family/alias coverage changed.
 
@@ -1928,9 +1928,9 @@ Evidence and verification: Verified no diff in manifest/catalog/test against15b9
 
 Older-map obligation: Keep source catalog, independent manifest and explicit coverage assertions synchronized when adding equipment states; do not weaken mapping checks.
 
-### DEV-112 â€” 3D water motion too subtle; wet objects lacked contact foam and spray
+### DEV-112 — 3D water motion too subtle; wet objects lacked contact foam and spray
 
-**Status:** revised-runtime-human-review-pending Â· **Affected:** Hollow Creek water / recorded development checks
+**Status:** revised-runtime-human-review-pending · **Affected:** Hollow Creek water / recorded development checks
 
 User approved texture motion but requested stronger geometric waves and foamy collision edges/spray at banks and water objects.
 
@@ -1942,9 +1942,9 @@ Evidence and verification: WaterContactTest: >200mm actual vertical travel, no f
 
 Older-map obligation: Per-map wet solid contacts and hull/freeboard must be reviewed in actual animated game views; visible-depth pass does not imply offscreen physics coverage.
 
-### DEV-113 â€” Prototype contact foam mistook shallow bed for impact edges
+### DEV-113 — Prototype contact foam mistook shallow bed for impact edges
 
-**Status:** fixed-scoped Â· **Affected:** Hollow Creek water / recorded development checks
+**Status:** fixed-scoped · **Affected:** Hollow Creek water / recorded development checks
 
 Initial contact pass frosted most of the shallow creek, rather than just its collision edges.
 
@@ -1956,9 +1956,9 @@ Evidence and verification: DEV-113-before-shallow-bed-contact-foam.png; WaterCon
 
 Older-map obligation: Test open shallow beds and lifted props as negative foam cases, not only successful wet-contact examples.
 
-### DEV-114 â€” Dressing CI expected every hiding candidate to appear at maximum density
+### DEV-114 — Dressing CI expected every hiding candidate to appear at maximum density
 
-**Status:** fixed-scoped Â· **Affected:** Hollow Creek water / recorded development checks
+**Status:** fixed-scoped · **Affected:** Hollow Creek water / recorded development checks
 
 Full multiplayer preflight passed equipment mapping, then failed HOUSE geometry delta10824 vs actual4608.
 
@@ -1970,9 +1970,9 @@ Evidence and verification: LivedLevelDressingTest passes HOUSE/FARMHOUSE/SCHOOL:
 
 Older-map obligation: Test candidate supply separately from the equal shared active hiding budget; never restore unlimited hiding to satisfy a stale assertion.
 
-### DEV-115 â€” Water lacked visible editor handles and saved map ownership
+### DEV-115 — Water lacked visible editor handles and saved map ownership
 
-**Status:** fixed-scoped Â· **Affected:** Map environment authoring
+**Status:** fixed-scoped · **Affected:** Map environment authoring
 
 Water lacked visible editor handles and saved map ownership
 
@@ -1984,9 +1984,9 @@ Evidence and verification: Source audit25October2026; water editor live-handles.
 
 Older-map obligation: Review basin, boat exclusions and player blockers separately on every map.
 
-### DEV-116 â€” GPU weather ground coatings and inspector incomplete
+### DEV-116 — GPU weather ground coatings and inspector incomplete
 
-**Status:** partially-fixed-audit-open Â· **Affected:** Map environment authoring
+**Status:** partially-fixed-audit-open · **Affected:** Map environment authoring
 
 GPU weather ground coatings and inspector incomplete
 
@@ -1998,9 +1998,9 @@ Evidence and verification: Source audit25October2026; water editor live-handles.
 
 Older-map obligation: Do not infer GPU weather parity from software checks.
 
-### DEV-117 â€” No visible ambient/environmental sound editor volumes
+### DEV-117 — No visible ambient/environmental sound editor volumes
 
-**Status:** implementation-in-progress Â· **Affected:** Map environment authoring
+**Status:** implementation-in-progress · **Affected:** Map environment authoring
 
 No visible ambient/environmental sound editor volumes
 
@@ -2012,9 +2012,9 @@ Evidence and verification: Source audit25October2026; water editor live-handles.
 
 Older-map obligation: Audit existing beds to avoid duplicate loops; authored ambience must remain separate from ghost/evidence events.
 
-### DEV-118 â€” Opening pan rejected fully outdoor native maps
+### DEV-118 — Opening pan rejected fully outdoor native maps
 
-**Status:** fixed-scoped Â· **Affected:** Existing-map lighting/camera compatibility
+**Status:** fixed-scoped · **Affected:** Existing-map lighting/camera compatibility
 
 LevelOpeningFlyover required indoor bounds; Hollow Creek has outdoor ownership zones only. Expanded all-ten-map regression reproduced IllegalStateException before repair.
 
@@ -2026,9 +2026,9 @@ Evidence and verification: LevelOpeningFlyoverTest now covers all10maps, finite 
 
 Older-map obligation: Audit each future map camera path, framing, support and final view; no full path collision or human acceptance inferred.
 
-### DEV-119 â€” Long prototype halls had no effective entrance lighting
+### DEV-119 — Long prototype halls had no effective entrance lighting
 
-**Status:** fixed-scoped Â· **Affected:** Existing-map lighting/camera compatibility
+**Status:** fixed-scoped · **Affected:** Existing-map lighting/camera compatibility
 
 Actual GPU lit and blackout images were identical in Mansion, Prison, Asylum, Academy and College; Church entry was nearly black. A single central fixture was beyond range of the actual entry.
 
@@ -2040,9 +2040,9 @@ Evidence and verification: AllMapLightingCoverageTest passes nine indoor entries
 
 Older-map obligation: Review every room, ceiling attachment, stairs/openings, switch circuit and all joins. Entry samples are not whole-map leak acceptance.
 
-### DEV-120 â€” Native outdoor aerial review has excessive water cost and obscuring fog
+### DEV-120 — Native outdoor aerial review has excessive water cost and obscuring fog
 
-**Status:** open-profile-and-art-review Â· **Affected:** Existing-map lighting/camera compatibility
+**Status:** open-profile-and-art-review · **Affected:** Existing-map lighting/camera compatibility
 
 Hollow Creek aerial/water captures take minutes; aerial site detail is heavily obscured by fog.
 
@@ -2054,9 +2054,9 @@ Evidence and verification: 480x300 first capture and320x200 isolated rerun; no h
 
 Older-map obligation: Profile water, lighting, geometry and camera effects separately for every future outdoor/water map before mission unlock.
 
-### DEV-121 â€” Capture JAR was rebuilt while an earlier worker still used it
+### DEV-121 — Capture JAR was rebuilt while an earlier worker still used it
 
-**Status:** fixed-tooling-workflow Â· **Affected:** Existing-map lighting/camera compatibility
+**Status:** fixed-tooling-workflow · **Affected:** Existing-map lighting/camera compatibility
 
 An overlapping Maven build replaced a running capture JAR, causing a lazy LWJGL class load error at shutdown. Captured frames alone did not prove a clean run.
 
@@ -2068,9 +2068,9 @@ Evidence and verification: build/map-audit-captures.log retains failure; map-aud
 
 Older-map obligation: Never overwrite a running validation executable; record process completion separately from valid captured frame hashes.
 
-### DEV-122 â€” Van upper racks dark under narrow ceiling beams
+### DEV-122 — Van upper racks dark under narrow ceiling beams
 
-**Status:** fixed-scoped Â· **Affected:** Shared van / Castle
+**Status:** fixed-scoped · **Affected:** Shared van / Castle
 
 Van upper racks dark under narrow ceiling beams
 
@@ -2082,9 +2082,9 @@ Evidence and verification: VanLightingAndCastleDoorTest,8actualGPUframes: van-ca
 
 Older-map obligation: Inspect every van placement and installed Castle doorway; full fitness and human acceptance remain open.
 
-### DEV-123 â€” Castle leaves vanish when open and ignore floor elevation
+### DEV-123 — Castle leaves vanish when open and ignore floor elevation
 
-**Status:** fixed-scoped-human-review-pending Â· **Affected:** Shared van / Castle
+**Status:** fixed-scoped-human-review-pending · **Affected:** Shared van / Castle
 
 Castle leaves vanish when open and ignore floor elevation
 
@@ -2096,9 +2096,9 @@ Evidence and verification: VanLightingAndCastleDoorTest,8actualGPUframes: van-ca
 
 Older-map obligation: Inspect every van placement and installed Castle doorway; full fitness and human acceptance remain open.
 
-### DEV-124 â€” Van metal textures show banding
+### DEV-124 — Van metal textures show banding
 
-**Status:** partial-runtime-refinement-human-review-pending Â· **Affected:** Shared van / Castle
+**Status:** partial-runtime-refinement-human-review-pending · **Affected:** Shared van / Castle
 
 Van metal textures show banding
 
@@ -2106,13 +2106,13 @@ Cause / uncertainty: Generated IRON tile darkened every eighth X pixel by17level
 
 Fix / next action: Replace forced directional grooves with periodic 2D weathering, restrained grain and sparse pits. Preserve all15other tiles, atlas layout, UVs, source geometry, lighting and exposure. Roof/interpolation and native model metal families remain separate audits.
 
-Evidence and verification: MetalMaterialRefinementTest: groove phase contrast16.652Ã¢â€ â€™0.057. Twelve matched actual GPU van images; renderer/fixture/van bytecode identical before/after. metal-refinement-2026-10-27.json.
+Evidence and verification: MetalMaterialRefinementTest: groove phase contrast16.652â†’0.057. Twelve matched actual GPU van images; renderer/fixture/van bytecode identical before/after. metal-refinement-2026-10-27.json.
 
 Older-map obligation: Procedural IRON users receive this tile correction; original GLB textures, roof shading bands, all-map in-room visual acceptance and hardware frame timing remain unaccepted.
 
-### DEV-125 â€” Recorder CI assumed every WHISPER action uses the WHISPER audio cue
+### DEV-125 — Recorder CI assumed every WHISPER action uses the WHISPER audio cue
 
-**Status:** fixed-scoped-full-CI-pending Â· **Affected:** LanSoundRecorderIntegrationTest / recovery gate
+**Status:** fixed-scoped-full-CI-pending · **Affected:** LanSoundRecorderIntegrationTest / recovery gate
 
 a635d0c8 full multiplayer run40296444087 failed246/247 with missing SOUND|WHISPER, although same-SHA installer passed.
 
@@ -2124,9 +2124,9 @@ Evidence and verification: Focused four-socket rack/paid tiers/capture/private p
 
 Older-map obligation: Keep test expectations bound to real authored actions and cue identities on all maps. Full exact-SHA acceptance remains required.
 
-### DEV-126 â€” Saved mission-board browser would reorder persistent campaign chapters
+### DEV-126 — Saved mission-board browser would reorder persistent campaign chapters
 
-**Status:** fixed-local-full-CI-pending Â· **Affected:** Mission board / campaign / LAN lobby integration
+**Status:** fixed-local-full-CI-pending · **Affected:** Mission board / campaign / LAN lobby integration
 
 Saved mission-board browser would reorder persistent campaign chapters
 
@@ -2138,9 +2138,9 @@ Evidence and verification: MissionBoardIntegrationTest and CampaignStoryProgress
 
 Older-map obligation: Preserve every saved chapter ordinal and prototype availability when adding or renaming locations.
 
-### DEV-127 â€” Saved mission-board labels omitted the newer Hollow Creek authoring enum
+### DEV-127 — Saved mission-board labels omitted the newer Hollow Creek authoring enum
 
-**Status:** fixed-local-full-CI-pending Â· **Affected:** Mission board / campaign / LAN lobby integration
+**Status:** fixed-local-full-CI-pending · **Affected:** Mission board / campaign / LAN lobby integration
 
 Saved mission-board labels omitted the newer Hollow Creek authoring enum
 
@@ -2152,9 +2152,9 @@ Evidence and verification: MissionBoardIntegrationTest iterates every authoring 
 
 Older-map obligation: Preserve every saved chapter ordinal and prototype availability when adding or renaming locations.
 
-### DEV-128 â€” GPU diagnostics crashed after successful captures during abrupt JVM shutdown
+### DEV-128 — GPU diagnostics crashed after successful captures during abrupt JVM shutdown
 
-**Status:** fixed-local-exact-CI-pending Â· **Affected:** Unified recovery / native GPU diagnostics / hunter feature integration
+**Status:** fixed-local-exact-CI-pending · **Affected:** Unified recovery / native GPU diagnostics / hunter feature integration
 
 Native RTX run from main f6793bda completed all assertions but exited 0xC0000409.
 
@@ -2166,9 +2166,9 @@ Evidence and verification: Source 417980e6: three RTX 5070 diagnostic runs exite
 
 Older-map obligation: Verify native shutdown and same-seat/privacy behavior on every supported map and installed hardware; no project-wide acceptance inferred.
 
-### DEV-129 â€” Hunter unit fixture mixed active Hallow into independent Focus-expiry comparison
+### DEV-129 — Hunter unit fixture mixed active Hallow into independent Focus-expiry comparison
 
-**Status:** fixed-local-exact-CI-pending Â· **Affected:** Unified recovery / native GPU diagnostics / hunter feature integration
+**Status:** fixed-local-exact-CI-pending · **Affected:** Unified recovery / native GPU diagnostics / hunter feature integration
 
 HunterDisciplineTest failed at its Focus-expiry assertion during integration.
 
@@ -2180,9 +2180,9 @@ Evidence and verification: HunterDisciplineTest, HunterClassIntegrationTest and 
 
 Older-map obligation: Verify native shutdown and same-seat/privacy behavior on every supported map and installed hardware; no project-wide acceptance inferred.
 
-### DEV-130 â€” Hunter feature branch rejected ghost reconnect by assigning a hunter discipline
+### DEV-130 — Hunter feature branch rejected ghost reconnect by assigning a hunter discipline
 
-**Status:** fixed-local-exact-CI-pending Â· **Affected:** Unified recovery / native GPU diagnostics / hunter feature integration
+**Status:** fixed-local-exact-CI-pending · **Affected:** Unified recovery / native GPU diagnostics / hunter feature integration
 
 Unchanged LanSessionResumeIntegrationTest failed in ghostRejoin with invalid join response at source 417980e6.
 
@@ -2194,9 +2194,9 @@ Evidence and verification: LanSessionResumeIntegrationTest and LanHostOwnerRecov
 
 Older-map obligation: Verify native shutdown and same-seat/privacy behavior on every supported map and installed hardware; no project-wide acceptance inferred.
 
-### DEV-136 â€” Production light sampler bypassed receiving-side architectural join guard
+### DEV-136 — Production light sampler bypassed receiving-side architectural join guard
 
-**Status:** fixed-scoped-runtime-diagnostic-verified Â· **Affected:** FixtureLighting on generated indoor maps; Blackpine grazing-view reproducer
+**Status:** fixed-scoped-runtime-diagnostic-verified · **Affected:** FixtureLighting on generated indoor maps; Blackpine grazing-view reproducer
 
 Actual scalar sampler added4.613energy through a solid wall endpoint. Grazing GPU view showed2260bright pixels from an exterior diagnostic source despite closed geometry.
 
@@ -2208,9 +2208,9 @@ Evidence and verification: FixtureJoinIntegrationTest fails on7f1515d0 at4.8vs0.
 
 Older-map obligation: All generated-map joins still need moving-camera/human review. Native physical meshes, roof joins and every portal state require independent evidence. No full map, LAN or30FPS acceptance inferred.
 
-### DEV-137 â€” Castle construction disagrees with its collision raster
+### DEV-137 — Castle construction disagrees with its collision raster
 
-**Status:** fixed-scoped-local-native-and-GPU-verified Â· **Affected:** Castle floor, doorway shoulders and upper circulation
+**Status:** fixed-scoped-local-native-and-GPU-verified · **Affected:** Castle floor, doorway shoulders and upper circulation
 
 Current main uses separately maintained raster collision, a large rectangular foundation and single-face overlapping decks. Overflight also omits entire roofs at a 27m center distance.
 
@@ -2222,9 +2222,9 @@ Evidence and verification: CastleRebuildTest and focused Castle regressions;26 a
 
 Older-map obligation: Castle-only rebuild; other maps retain individual geometry, lighting, support and route audit obligations.
 
-### DEV-138 â€” Castle warehouse omits tiers and suspends items above shallow shelves
+### DEV-138 — Castle warehouse omits tiers and suspends items above shallow shelves
 
-**Status:** fixed-scoped-local-native-and-GPU-verified Â· **Affected:** Castle quartermaster
+**Status:** fixed-scoped-local-native-and-GPU-verified · **Affected:** Castle quartermaster
 
 Eight .22m-deep bookshelves face one direction. Only 43 tier-I displays are authored at .40/1.00/1.60m despite source shelf tops .09/.39/.69/.99/1.29m at scale1.05. Top displays float; higher tiers are absent.
 
@@ -2236,9 +2236,9 @@ Evidence and verification: CastleRebuildTest and focused Castle regressions;26 a
 
 Older-map obligation: Castle-only rebuild; other maps retain individual geometry, lighting, support and route audit obligations.
 
-### DEV-139 â€” Castle courtyard and circulation lack usable local lighting
+### DEV-139 — Castle courtyard and circulation lack usable local lighting
 
-**Status:** fixed-scoped-local-native-and-GPU-verified Â· **Affected:** Castle rooms, courtyard, stairs and store
+**Status:** fixed-scoped-local-native-and-GPU-verified · **Affected:** Castle rooms, courtyard, stairs and store
 
 Twenty-one actual RTX frames show very dark exterior circulation and uneven interior coverage. All three existing switches toggle every lamp; new slab soffits require refitted ceiling mounts.
 
@@ -2250,9 +2250,9 @@ Evidence and verification: CastleRebuildTest and focused Castle regressions;26 a
 
 Older-map obligation: Castle-only rebuild; other maps retain individual geometry, lighting, support and route audit obligations.
 
-### DEV-140 â€” Castle service fixtures are visible but lack collision and supported props
+### DEV-140 — Castle service fixtures are visible but lack collision and supported props
 
-**Status:** fixed-scoped-local-native-and-GPU-verified Â· **Affected:** Castle stations and wall bookshelves
+**Status:** fixed-scoped-local-native-and-GPU-verified · **Affected:** Castle stations and wall bookshelves
 
 Service desks/cabinets are rendered independently of collision. Some source library shelves face walls; several display items use guessed heights.
 
@@ -2264,9 +2264,9 @@ Evidence and verification: CastleRebuildTest and focused Castle regressions;26 a
 
 Older-map obligation: Castle-only rebuild; other maps retain individual geometry, lighting, support and route audit obligations.
 
-### DEV-141 â€” GPU packaging can overwrite fresh code with stale resource bytecode
+### DEV-141 — GPU packaging can overwrite fresh code with stale resource bytecode
 
-**Status:** fixed-local-exact-CI-pending Â· **Affected:** gpu-client packaged builds from a previously compiled build/classes directory
+**Status:** fixed-local-exact-CI-pending · **Affected:** gpu-client packaged builds from a previously compiled build/classes directory
 
 A second incremental GPU build restored old CastleHubMap collision while retaining newer store code; the solid-service-fixture regression failed despite the source repair.
 
@@ -2278,9 +2278,9 @@ Evidence and verification: build/castle-rebuild-compile.log and CastleRebuildTes
 
 Older-map obligation: Any GPU build using mixed resource bytecode needs a fresh source rebuild; this does not certify installed gameplay or performance.
 
-### DEV-142 â€” Campaign and multiplayer equipment were split across incompatible store and reference pages
+### DEV-142 — Campaign and multiplayer equipment were split across incompatible store and reference pages
 
-**Status:** fixed-scoped-local-verification Â· **Affected:** Campaign and multiplayer menus
+**Status:** fixed-scoped-local-verification · **Affected:** Campaign and multiplayer menus
 
 The live shop exposed a small subset while the model library was a separate non-purchasing tab; three-tier overview pictures were reused as item icons.
 
@@ -2292,9 +2292,9 @@ Evidence and verification: EquipmentTierIconTest, CampaignMenuWorkflowTest, Camp
 
 Older-map obligation: Menus and shared field inventory affect all maps. No map geometry, release, GPU or physical two-machine acceptance is implied.
 
-### DEV-143 â€” Campaign team booking supported one permanent assistant instead of five mission hires
+### DEV-143 — Campaign team booking supported one permanent assistant instead of five mission hires
 
-**Status:** fixed-scoped-local-verification Â· **Affected:** Campaign lobby and host dispatch
+**Status:** fixed-scoped-local-verification · **Affected:** Campaign lobby and host dispatch
 
 Only one assistant could be purchased; guests had no campaign host flow or shared six-slot hiring rule.
 
@@ -2306,9 +2306,9 @@ Evidence and verification: CampaignCoopLobbyTest and CampaignEmbeddedDesktopTest
 
 Older-map obligation: Menus and shared field inventory affect all maps. No map geometry, release, GPU or physical two-machine acceptance is implied.
 
-### DEV-144 â€” PSX text-field artwork painted over entered connection details
+### DEV-144 — PSX text-field artwork painted over entered connection details
 
-**Status:** fixed-scoped-local-verification Â· **Affected:** All PSX-styled address, nickname, chat and password fields
+**Status:** fixed-scoped-local-verification · **Affected:** All PSX-styled address, nickname, chat and password fields
 
 The border painted its opaque centre after Swing rendered the text, concealing the real field content.
 
@@ -2320,9 +2320,9 @@ Evidence and verification: Minimum-window multiplayer-lobby captures and real de
 
 Older-map obligation: Menus and shared field inventory affect all maps. No map geometry, release, GPU or physical two-machine acceptance is implied.
 
-### DEV-145 â€” Medicine client sent decorated tier labels instead of protocol enum identifiers
+### DEV-145 — Medicine client sent decorated tier labels instead of protocol enum identifiers
 
-**Status:** fixed-scoped-local-verification Â· **Affected:** LAN purchasing and medicine use
+**Status:** fixed-scoped-local-verification · **Affected:** LAN purchasing and medicine use
 
 A request encoded BASIC / price / restoration text where the host requires BASIC, rejecting legitimate purchases.
 
@@ -2334,9 +2334,9 @@ Evidence and verification: CampaignCoopLobbyTest confirms actual pre-mission med
 
 Older-map obligation: Menus and shared field inventory affect all maps. No map geometry, release, GPU or physical two-machine acceptance is implied.
 
-### DEV-146 â€” In-game updater launched installer before game released its installation files
+### DEV-146 — In-game updater launched installer before game released its installation files
 
-**Status:** source-repaired-windows-install-acceptance-pending Â· **Affected:** Installed Windows client, UPDATES UI and EXE installer
+**Status:** source-repaired-windows-install-acceptance-pending · **Affected:** Installed Windows client, UPDATES UI and EXE installer
 
 Update requested from an open game could not complete setup and had no independent setup log.
 
@@ -2348,11 +2348,11 @@ Evidence and verification: User report 2026-10-28, code regression and workflow;
 
 Older-map obligation: All Windows installations/upgrades, no map modifications; preserve saved profiles.
 
-### DEV-147 â€” Rebuilt Castle bypassed retained GPU geometry
+### DEV-147 — Rebuilt Castle bypassed retained GPU geometry
 
-**Status:** fixed-scoped-rtx-and-ci-verified Â· **Affected:** Castle headquarters
+**Status:** fixed-scoped-rtx-and-ci-verified · **Affected:** Castle headquarters
 
-Rebuilt Castle measured 35Ã¢â‚¬â€œ73 ms median frames versus 18 ms before the rebuild, allocating 63Ã¢â‚¬â€œ201 MiB per frame at 640x400 on RTX5070.
+Rebuilt Castle measured 35â€“73 ms median frames versus 18 ms before the rebuild, allocating 63â€“201 MiB per frame at 640x400 on RTX5070.
 
 Cause / uncertainty: Castle calls drawGpuFaces with no investigation map, excluding it from the map-gated residency path; 220671 source triangles were reprocessed each frame.
 
@@ -2362,11 +2362,11 @@ Evidence and verification: Corrected runtime source 06b76cce: renderer CI 408442
 
 Older-map obligation: Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred.
 
-### DEV-148 â€” PSX framebuffer quantization repeated costly floating-point rounding
+### DEV-148 — PSX framebuffer quantization repeated costly floating-point rounding
 
-**Status:** fixed-scoped-rtx-and-ci-verified Â· **Affected:** All rendered maps and Castle
+**Status:** fixed-scoped-rtx-and-ci-verified · **Affected:** All rendered maps and Castle
 
-JFR identified PSX finishFrame as a major CPU cost, 6Ã¢â‚¬â€œ13 ms per frame in the baseline.
+JFR identified PSX finishFrame as a major CPU cost, 6â€“13 ms per frame in the baseline.
 
 Cause / uncertainty: Six floating-point rounding operations per pixel repeated an invariant 256-channel/16-phase transform.
 
@@ -2376,9 +2376,9 @@ Evidence and verification: Corrected runtime source 06b76cce: renderer CI 408442
 
 Older-map obligation: Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred.
 
-### DEV-149 â€” Per-vertex emissive classification allocated lowercase material names
+### DEV-149 — Per-vertex emissive classification allocated lowercase material names
 
-**Status:** fixed-scoped-rtx-and-ci-verified Â· **Affected:** All renderer paths
+**Status:** fixed-scoped-rtx-and-ci-verified · **Affected:** All renderer paths
 
 Castle JFR recorded StringLatin1.toLowerCase and material-name classification on every lit vertex.
 
@@ -2390,11 +2390,11 @@ Evidence and verification: Corrected runtime source 06b76cce: renderer CI 408442
 
 Older-map obligation: Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred.
 
-### DEV-150 â€” Cosmetic light flicker invalidated retained shadow work
+### DEV-150 — Cosmetic light flicker invalidated retained shadow work
 
-**Status:** fixed-scoped-rtx-and-ci-verified Â· **Affected:** Castle and shared stationary fixture lighting
+**Status:** fixed-scoped-rtx-and-ci-verified · **Affected:** Castle and shared stationary fixture lighting
 
-First residency candidate produced 300Ã¢â‚¬â€œ400 ms flicker stalls; retaining geometry alone was insufficient.
+First residency candidate produced 300â€“400 ms flicker stalls; retaining geometry alone was insufficient.
 
 Cause / uncertainty: Brightness revisions repeated tessellation, ray visibility and source attenuation; bounded global shadow caches thrashed.
 
@@ -2404,9 +2404,9 @@ Evidence and verification: Corrected runtime source 06b76cce: renderer CI 408442
 
 Older-map obligation: Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred.
 
-### DEV-151 â€” Cached van and map fixtures were still lit and repacked every frame
+### DEV-151 — Cached van and map fixtures were still lit and repacked every frame
 
-**Status:** fixed-scoped-rtx-and-ci-verified Â· **Affected:** House, School and authored investigation maps
+**Status:** fixed-scoped-rtx-and-ci-verified · **Affected:** House, School and authored investigation maps
 
 Warm School approach cost about 52 ms CPU per baseline frame.
 
@@ -2418,9 +2418,9 @@ Evidence and verification: Corrected runtime source 06b76cce: renderer CI 408442
 
 Older-map obligation: Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred.
 
-### DEV-152 â€” Castle shelf labels were too small and consumed 129 materials
+### DEV-152 — Castle shelf labels were too small and consumed 129 materials
 
-**Status:** fixed-scoped-rtx-and-ci-verified Â· **Affected:** Castle quartermaster store
+**Status:** fixed-scoped-rtx-and-ci-verified · **Affected:** Castle quartermaster store
 
 A 105 mm label compressed family names to a few native pixels and created one material per family/tier.
 
@@ -2432,9 +2432,9 @@ Evidence and verification: Corrected runtime source 06b76cce: renderer CI 408442
 
 Older-map obligation: Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred.
 
-### DEV-153 â€” Native Hollow Creek geometry lacked GPU residency
+### DEV-153 — Native Hollow Creek geometry lacked GPU residency
 
-**Status:** fixed-scoped-rtx-and-ci-verified Â· **Affected:** Native investigation map
+**Status:** fixed-scoped-rtx-and-ci-verified · **Affected:** Native investigation map
 
 Measured native interior view at about 337 ms median completed frame before the native retention fix.
 
@@ -2446,9 +2446,9 @@ Evidence and verification: Corrected runtime source 06b76cce: renderer CI 408442
 
 Older-map obligation: Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred.
 
-### DEV-154 â€” Hidden GPU worker added a second frame pacing delay
+### DEV-154 — Hidden GPU worker added a second frame pacing delay
 
-**Status:** fixed-scoped-rtx-and-ci-verified Â· **Affected:** All OpenGL scenes
+**Status:** fixed-scoped-rtx-and-ci-verified · **Affected:** All OpenGL scenes
 
 Completed-frame timing included roughly a second 16 ms scheduling interval even after CPU work dropped.
 
@@ -2460,9 +2460,9 @@ Evidence and verification: Corrected runtime source 06b76cce: renderer CI 408442
 
 Older-map obligation: Shared-path change requires per-map verification. No installed full-round, all-map acceptance or release is inferred.
 
-### DEV-155 â€” Focused Castle workflow asserted obsolete pre-redesign editor menu source
+### DEV-155 — Focused Castle workflow asserted obsolete pre-redesign editor menu source
 
-**Status:** fixed-scoped-rtx-and-ci-verified Â· **Affected:** Focused Castle acceptance workflow
+**Status:** fixed-scoped-rtx-and-ci-verified · **Affected:** Focused Castle acceptance workflow
 
 Main ba3d8885 focused workflow 40826909984 failed DeveloperEditorLaunchTest at the obsolete Main menu button assertion.
 
@@ -2474,9 +2474,9 @@ Evidence and verification: Corrected runtime source 06b76cce: renderer CI 408442
 
 Older-map obligation: Acceptance-route repair only; no production menu change or map acceptance is implied.
 
-### DEV-156 â€” Local AVG TLS interception prevents pinned encrypted regression connections
+### DEV-156 — Local AVG TLS interception prevents pinned encrypted regression connections
 
-**Status:** external-environment-limitation Â· **Affected:** Local CommonNetworkTest and SecureLanIntegrationTest acceptance
+**Status:** external-environment-limitation · **Affected:** Local CommonNetworkTest and SecureLanIntegrationTest acceptance
 
 Both local encrypted tests fail NET-04 / underlying NET-03 certificate substitution; 272 other manifest checks passed.
 
@@ -2488,9 +2488,9 @@ Evidence and verification: Local full regression 272/274 and bounded TLS issuer/
 
 Older-map obligation: No networking production change; affects local verification, not a performance-root-cause claim.
 
-### DEV-157 â€” Empty socket retention replaced a rendered hiding cupboard and churned GPU generations
+### DEV-157 — Empty socket retention replaced a rendered hiding cupboard and churned GPU generations
 
-**Status:** fixed-scoped-rtx-and-ci-verified Â· **Affected:** Retention candidate Church interior and authored sockets with overlapping rendering passes
+**Status:** fixed-scoped-rtx-and-ci-verified · **Affected:** Retention candidate Church interior and authored sockets with overlapping rendering passes
 
 The all-map experiment found Church interior still at about33ms, with1630 shadow rays and about4.9MB of mesh uploads every unchanged frame.
 
@@ -2502,9 +2502,9 @@ Evidence and verification: Corrected runtime source 06b76cce: renderer CI 408442
 
 Older-map obligation: This is a regression discovered during this optimization. Audit every shared socket pass; do not infer correction from only House/School/native acceptance.
 
-### DEV-158 â€” Emission classification used the sparse live-map sentinel as a dense BitSet index
+### DEV-158 — Emission classification used the sparse live-map sentinel as a dense BitSet index
 
-**Status:** fixed-scoped-rtx-and-ci-verified Â· **Affected:** Retention candidate light-material classification and van views
+**Status:** fixed-scoped-rtx-and-ci-verified · **Affected:** Retention candidate light-material classification and van views
 
 Memory audit found VAN_MAP_MATERIAL is Integer.MAX_VALUE-2, which could expand the new emission cache by about256MiB per lighting instance.
 
@@ -2516,9 +2516,9 @@ Evidence and verification: Corrected runtime source 06b76cce: renderer CI 408442
 
 Older-map obligation: Regression caused by the performance optimization. Validate van views and all map types; never claim the GPU-byte bound alone bounds Java probe/cache memory.
 
-### DEV-159 â€” GPU TV/telemetry pixels froze while unchanged map pixels were repeatedly uploaded
+### DEV-159 — GPU TV/telemetry pixels froze while unchanged map pixels were repeatedly uploaded
 
-**Status:** fixed-scoped-rtx-and-ci-verified Â· **Affected:** Shared GPU TV and van CRT/map texture lifecycle
+**Status:** fixed-scoped-rtx-and-ci-verified · **Affected:** Shared GPU TV and van CRT/map texture lifecycle
 
 Backend refreshed only VAN_MAP_MATERIAL, on every draw; ordinary TV and telemetry textures could remain at their first upload.
 
@@ -2530,9 +2530,9 @@ Evidence and verification: Corrected runtime source 06b76cce: renderer CI 408442
 
 Older-map obligation: Shared source fix requires real GPU controls and unchanged native model UVs. No claim of installed whole-game acceptance.
 
-### DEV-160 â€” Walking across lighting-detail bands retessellated resident source geometry
+### DEV-160 — Walking across lighting-detail bands retessellated resident source geometry
 
-**Status:** fixed-scoped-rtx-and-ci-verified Â· **Affected:** New shared world chunks and existing resident House shell
+**Status:** fixed-scoped-rtx-and-ci-verified · **Affected:** New shared world chunks and existing resident House shell
 
 The33-pose diagnostic still exhibited recurring source-preparation spikes after head-turn retention passed.
 
@@ -2542,11 +2542,11 @@ Fix / next action: Prepare fixed full close-range lighting topology for resident
 
 Evidence and verification: Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open. Translation identity/revision contract passes. Staged 33-pose CPU p95 improved about 268ms to 40ms; completed-frame cold/waypoint p95 remains 76ms.
 
-Older-map obligation: Warm representative paths require repeated final timing and actual installed navigation. No claim that first visits or complete AÃ¢â‚¬â€œG acceptance are finished.
+Older-map obligation: Warm representative paths require repeated final timing and actual installed navigation. No claim that first visits or complete Aâ€“G acceptance are finished.
 
-### DEV-161 â€” GPU UI acceptance could pass during the opening without reaching playable control
+### DEV-161 — GPU UI acceptance could pass during the opening without reaching playable control
 
-**Status:** fixed-scoped-ci-verified Â· **Affected:** GPU UI acceptance diagnostic; House, Farmhouse and School case lifecycle
+**Status:** fixed-scoped-ci-verified · **Affected:** GPU UI acceptance diagnostic; House, Farmhouse and School case lifecycle
 
 The smoke accepted any new opaque GPU frame after GamePanel appeared, including an opening frame. It did not require hunter handoff, movement, extraction or another case, and invokeAndWait could exceed its advertised timeout indefinitely.
 
@@ -2558,9 +2558,9 @@ Evidence and verification: Source10e2f4e: GPU40923212823 and full40923217003 SUC
 
 Older-map obligation: Three publicly playable contract locations only. Short van movement and retreat do not certify interior routes, a successful investigation, installed multiplayer, physical player acceptance or A-G completion.
 
-### DEV-162 â€” Spatial light invalidation relit batches whose actual contributors stayed unchanged
+### DEV-162 — Spatial light invalidation relit batches whose actual contributors stayed unchanged
 
-**Status:** fixed-scoped-rtx-and-ci-verified Â· **Affected:** Retained world material batches across Castle and map types
+**Status:** fixed-scoped-rtx-and-ci-verified · **Affected:** Retained world material batches across Castle and map types
 
 Castle still showed recurring preparation tails despite unchanged-color upload suppression; conservative light spheres overlapped batches with unrelated or occluded contributions.
 
@@ -2572,9 +2572,9 @@ Evidence and verification: Source99baa799: GPU40927250498 and full40927255222 SU
 
 Older-map obligation: Shared implementation requires all-map controls and final CI. Scripted warm camera timings do not certify physical routes, cold starts, installed full rounds or release.
 
-### DEV-163 â€” Castle wall sconce meshes embedded in 42 cm masonry
+### DEV-163 — Castle wall sconce meshes embedded in 42 cm masonry
 
-**Status:** code-fix-pushed-awaiting-visual-and-ci-verification Â· **Affected:** Castle Beckenburg wall-mounted imported GLB lamps and light-switch mounting plates
+**Status:** code-fix-pushed-awaiting-visual-and-ci-verification · **Affected:** Castle Beckenburg wall-mounted imported GLB lamps and light-switch mounting plates
 
 2026-10-29 user screenshot shows illuminated wall fitting partially swallowed by the corridor stonework.
 
@@ -2586,9 +2586,9 @@ Evidence and verification: User-supplied screenshot 2026-10-29; CastleLightingPl
 
 Older-map obligation: Inspect all wall-mounted model families in other investigation sites individually for physical wall thickness, mesh-pivot placement, wall-face support, and clipping. A Castle-only repair does not certify other maps.
 
-### DEV-164 â€” Castle equipment shelf lettering unreadable at retro framebuffer resolutions
+### DEV-164 — Castle equipment shelf lettering unreadable at retro framebuffer resolutions
 
-**Status:** code-change-pushed-awaiting-gpu-capture-and-installed-review Â· **Affected:** Castle Beckenburg retail room, all 129 tiered equipment plaques; desktop first-person UI
+**Status:** code-change-pushed-awaiting-gpu-capture-and-installed-review · **Affected:** Castle Beckenburg retail room, all 129 tiered equipment plaques; desktop first-person UI
 
 2026-10-29 user screenshot shows shelf lettering degraded into scattered white pixels/strokes, despite a modern wide display, and HUD type extremely small.
 
@@ -2600,9 +2600,9 @@ Evidence and verification: Screenshot supplied 2026-10-29 (2048x574). GraphicsOp
 
 Older-map obligation: Review readable authoring/UI text on van control consoles, map screens, evidence boards, journals and other playable sites independently. Castle font correction alone is not cross-map certification.
 
-### DEV-165 â€” Castle warehouse incorrectly opens campaign Quartermaster inventory
+### DEV-165 — Castle warehouse incorrectly opens campaign Quartermaster inventory
 
-**Status:** source-fix-pushed-exact-CI-pending Â· **Affected:** Beckenburg Castle warehouse display/counter; rear Quartermaster supply wardrobe; multiplayer lobby
+**Status:** source-fix-pushed-exact-CI-pending · **Affected:** Beckenburg Castle warehouse display/counter; rear Quartermaster supply wardrobe; multiplayer lobby
 
 The warehouse stock counter previously called openQuartermaster() and exposed the campaign wallet and owned equipment instead of multiplayer contract inventory, making the Castle appear to contain two competing stores.
 
@@ -2614,9 +2614,9 @@ Evidence and verification: Source push and remote readback confirmed. New Castle
 
 Older-map obligation: Audit actual inventory/store routing in campaign preparation, multiplayer van rack, campaign co-op host/guest screens and existing menu back navigation individually. One Castle routing fix is not cross-mode persistence acceptance.
 
-### DEV-166 â€” Investigation doors snap between poses rather than physically swinging
+### DEV-166 — Investigation doors snap between poses rather than physically swinging
 
-**Status:** animation-source-pushed-CI-and-installed-review-pending Â· **Affected:** House, Farmhouse, School and shared HouseMap investigation portals (solo/LAN, including host door snapshots)
+**Status:** animation-source-pushed-CI-and-installed-review-pending · **Affected:** House, Farmhouse, School and shared HouseMap investigation portals (solo/LAN, including host door snapshots)
 
 Pressing E instantly swaps closed/open geometry; no visible motion, and the old portal-key cache path also resets the complete OpenGL scene while repainting.
 
@@ -2628,9 +2628,9 @@ Evidence and verification: Live user report 2026-10-29 (House door snaps, hitche
 
 Older-map obligation: Audit all authored site door meshes, hinge pivots, double doors/gates, Castle doorway and van cargo doors independently; shared HouseMap source alone does not certify older maps.
 
-### DEV-167 â€” 26 numbered model assets require source/UV/material and rendered visual repair
+### DEV-167 — 26 numbered model assets require source/UV/material and rendered visual repair
 
-**Status:** 26-of-26-targeted-source-asset-repairs-four-angle-render-verified Â· **Affected:** All 26 original owner-flagged asset identities now have documented scoped repairs and exact four-angle in-game visual acceptance. Separate full-scene placement, silhouette design, material quality and gameplay fit remain independently auditable.
+**Status:** 26-of-26-targeted-source-asset-repairs-four-angle-render-verified · **Affected:** All 26 original owner-flagged asset identities now have documented scoped repairs and exact four-angle in-game visual acceptance. Separate full-scene placement, silhouette design, material quality and gameplay fit remain independently auditable.
 
 Owner flags suspected misaligned exterior textures and severe graphical defects across imported and 3D-authored asset families; supplied list has 26 distinct numeric asset IDs and an additional screenshot.
 
@@ -2638,13 +2638,13 @@ Cause / uncertainty: Imported source glTF atlas V-orientation mismatches, six au
 
 Fix / next action: Targeted corrective work complete for all 26 original flags. Original textures/meshes preserved except approved six bedroll UV restorations; source-aligned imported 3D V sampling, actor alpha segmentation and indexed ghost strip removals shipped. Continue independent review of map placement/collision, detailed texture aesthetic quality, character motions and the other 85 non-targeted diagnostic review flags. Do not treat completion of these specific repairs as acceptance of unrelated defects; visual checks remain non-release-blocking.
 
-Evidence and verification: Original UV and art review JSON: development/assets/texture-revision-review-2026-11-01.json. 25 earlier assets accepted in actual four-angle run 41405326985 (artifact 13122898542), source atlases/GLBs audited with zero UV warnings and direct source-V vs legacy-V screenshots. Final Twins ghost source fix in runtime archive commit 828659674770cdc00a6c0b07be9f4b7521588b88; original 181 other ghost sprites byte-identical and 15666 stray alpha pixels cleared. Latest Windows developer-room run 41408571829 (artifact 13125290269) PASS actual game build + TwinsAtlasRuntimeTest (all 8 facing sheets/256 cells) + PossessiveAtlasRuntimeTest + original scene screenshots. Pixel-identical Twins at 0/180Ã‚Â°, only 642 pixels changed each at 90/270Ã‚Â° inside x274-282 y206-321 around removed strand; both figures intact.
+Evidence and verification: Original UV and art review JSON: development/assets/texture-revision-review-2026-11-01.json. 25 earlier assets accepted in actual four-angle run 41405326985 (artifact 13122898542), source atlases/GLBs audited with zero UV warnings and direct source-V vs legacy-V screenshots. Final Twins ghost source fix in runtime archive commit 828659674770cdc00a6c0b07be9f4b7521588b88; original 181 other ghost sprites byte-identical and 15666 stray alpha pixels cleared. Latest Windows developer-room run 41408571829 (artifact 13125290269) PASS actual game build + TwinsAtlasRuntimeTest (all 8 facing sheets/256 cells) + PossessiveAtlasRuntimeTest + original scene screenshots. Pixel-identical Twins at 0/180Â°, only 642 pixels changed each at 90/270Â° inside x274-282 y206-321 around removed strand; both figures intact.
 
 Older-map obligation: Audit any level using these assets after mapping; House, Castle, Farmhouse, School and every shared fixture use require independent placement/orientation and material captures. Visual defects are diagnostic and not release blockers.
 
-### DEV-168 â€” Editor GLB reduction silently substitutes checkerboard for imported material/UV artwork
+### DEV-168 — Editor GLB reduction silently substitutes checkerboard for imported material/UV artwork
 
-**Status:** source-guard-and-Windows-CI-verified-existing-derivatives-unaudited Â· **Affected:** AssetImportDialog, ImportedAssetLibrary and any GLB optimization imported via the developer editor
+**Status:** source-guard-and-Windows-CI-verified-existing-derivatives-unaudited · **Affected:** AssetImportDialog, ImportedAssetLibrary and any GLB optimization imported via the developer editor
 
 Previously nonzero GLB regression could be published with a single fallback checkerboard texture replacing original named material bindings and per-part source UV/material identity after dialog warning.
 
@@ -2656,9 +2656,9 @@ Evidence and verification: Editor guard commits 2a3271b and 0af5f9f read back, t
 
 Older-map obligation: Identify previously imported GLB derivatives that used nonzero regression; compare source/runtime SHA and visual texture mapping, replace only after authoring a real corrected derivative. Do not infer existing models have been repaired by the new guard.
 
-### DEV-208 â€” Castle resident placement assertion treated its own body as an obstruction
+### DEV-208 — Castle resident placement assertion treated its own body as an obstruction
 
-**Status:** corrected-locally; wider resident approach review pending Â· **Affected:** CastleSupportArtTest / Matthis Rook placement inspection
+**Status:** corrected-locally; wider resident approach review pending · **Affected:** CastleSupportArtTest / Matthis Rook placement inspection
 
 The advisory CI and local test failed at Matthis Rook although CastleHubIntegrationTest intentionally requires that players cannot walk through his body.
 
@@ -2670,9 +2670,9 @@ Evidence and verification: CastleSupportArtTest now passes with negative control
 
 Older-map obligation: Separate support/placement from self-collision in actor placement checks; never relax actual furniture or wall collision to satisfy a test.
 
-### DEV-170 â€” Labeling the USER authoring slot throws Unknown site USER
+### DEV-170 — Labeling the USER authoring slot throws Unknown site USER
 
-**Status:** corrected-locally; remote acceptance pending Â· **Affected:** MissionSites.title / campaign-board and lobby authoring labels
+**Status:** corrected-locally; remote acceptance pending · **Affected:** MissionSites.title / campaign-board and lobby authoring labels
 
 Full-round advisory run 41273695792 and local MissionBoardIntegrationTest reach IllegalArgumentException Unknown site USER while enumerating authoring enums.
 
@@ -2684,9 +2684,9 @@ Evidence and verification: Actual MissionBoardIntegrationTest passes locally, co
 
 Older-map obligation: Keep custom authoring slots separate from fixed built-in/campaign roster and saved ordinals; do not silently substitute a built-in map.
 
-### DEV-171 â€” House graybox top stair intersects the foyer partition
+### DEV-171 — House graybox top stair intersects the foyer partition
 
-**Status:** corrected-locally; pilot only Â· **Affected:** Isolated Briar House rebuild graybox
+**Status:** corrected-locally; pilot only · **Affected:** Isolated Briar House rebuild graybox
 
 The first actual physics run failed the last ascent steps, top landing and descent; swept navigation could not reach four upper rooms.
 
@@ -2698,9 +2698,9 @@ Evidence and verification: house-rebuild-physics-first.log and house-rebuild-rea
 
 Older-map obligation: Recheck both ends of every flight after changing room proportions; graph or midpoint checks do not certify landings.
 
-### DEV-172 â€” House graybox service panel placed inside its doorway aperture
+### DEV-172 — House graybox service panel placed inside its doorway aperture
 
-**Status:** corrected-locally; pilot only Â· **Affected:** House rebuild heating/laundry service room
+**Status:** corrected-locally; pilot only · **Affected:** House rebuild heating/laundry service room
 
 AuthoredUtilitiesTest HOUSE_REBUILD failed service-panel has clear operating position.
 
@@ -2712,9 +2712,9 @@ Evidence and verification: house-rebuild-utilities-first.log fails; current util
 
 Older-map obligation: Review fixtures against every actual aperture and clear aim/operating point after layout edits.
 
-### DEV-173 â€” Legacy House envelope overlaid on a smaller rebuilt interior
+### DEV-173 — Legacy House envelope overlaid on a smaller rebuilt interior
 
-**Status:** corrected-locally; shared renderer source binding Â· **Affected:** House rebuild graybox; future revised sources using House gameplay slot
+**Status:** corrected-locally; shared renderer source binding · **Affected:** House rebuild graybox; future revised sources using House gameplay slot
 
 Native export showed blank outer walls and a legacy roof hiding actual revised windows and entrances.
 
@@ -2726,9 +2726,9 @@ Evidence and verification: HouseRebuildShellTest failed at x24 beyond the revise
 
 Older-map obligation: Audit every hardcoded facade/roof/enclosure against its source coordinates before reusing a gameplay slot.
 
-### DEV-174 â€” Basement architectural opening does not remove the broad world-ground sheet
+### DEV-174 — Basement architectural opening does not remove the broad world-ground sheet
 
-**Status:** fixed in isolated House pilot; other cellar/cavity sites remain open Â· **Affected:** Rebuilt House pilot and older cellar/cavity maps requiring independent audit
+**Status:** fixed in isolated House pilot; other cellar/cavity sites remain open · **Affected:** Rebuilt House pilot and older cellar/cavity maps requiring independent audit
 
 Architectural stair/deck openings can pass movement while a separate broad world-ground/backdrop sheet still spans the basement elevation. Owner explicitly requires genuine world-floor holes.
 
@@ -2740,9 +2740,9 @@ Evidence and verification: HouseRebuildTerrainTest passes: 30 saved subdivisions
 
 Older-map obligation: Individually audit House, Farmhouse, School, Church, institutional service basements, crypts, mines, tunnels and all stacked remote cavities.
 
-### DEV-175 â€” Selection and campaign regressions still assume three built-in maps
+### DEV-175 — Selection and campaign regressions still assume three built-in maps
 
-**Status:** fixed in regression coverage; no map art or promotion acceptance implied Â· **Affected:** SiteSelectionTest and CampaignStoryProgressionTest on current nine-built-in catalog plus USER authoring slot
+**Status:** fixed in regression coverage; no map art or promotion acceptance implied · **Affected:** SiteSelectionTest and CampaignStoryProgressionTest on current nine-built-in catalog plus USER authoring slot
 
 Selection fails its nine-total-enum assumption before rendering; campaign fails after third victory because it assumes chapter four must be unavailable.
 
@@ -2754,9 +2754,9 @@ Evidence and verification: Before: SiteSelectionTest fails all-planned-families 
 
 Older-map obligation: Current dispatch availability does not accept any generic institution layout; rebuilt geometry still requires all per-map gates.
 
-### DEV-176 â€” All-map reviews construct USER without a persisted project
+### DEV-176 — All-map reviews construct USER without a persisted project
 
-**Status:** fixed-scoped; raw310/310 regression plus actual all11-map GPU and three UI cycles accepted Â· **Affected:** WorldResidencyGpuReview and LevelOpeningFlyoverTest; RoomAcousticPresetsTest, HidingBudgetTest, AllMapLightingCoverageTest, VanLightingAndCastleDoorTest; AllMapArchitecturalJoinTest
+**Status:** fixed-scoped; raw310/310 regression plus actual all11-map GPU and three UI cycles accepted · **Affected:** WorldResidencyGpuReview and LevelOpeningFlyoverTest; RoomAcousticPresetsTest, HidingBudgetTest, AllMapLightingCoverageTest, VanLightingAndCastleDoorTest; AllMapArchitecturalJoinTest
 
 Mesa workflow 41320075324 passes the core smoke, then world-residency exits after HOLLOW_CREEK; the retained frame CSV has every built-in/prototype but no USER row. Flyover regression similarly instantiates every enum without its authoring prerequisite.
 
@@ -2768,9 +2768,9 @@ Evidence and verification: Downloaded exact-SHA Mesa artifact ends after HOLLOW_
 
 Older-map obligation: Every enum-driven review must handle USER prerequisites explicitly rather than assuming a built-in source or selecting a developer project.
 
-### DEV-177 â€” Windows checkout rewrites hash-bound editor terrain source bytes
+### DEV-177 — Windows checkout rewrites hash-bound editor terrain source bytes
 
-**Status:** local attribute fix and Git checkout-filter proof; exact-source CI pending Â· **Affected:** Saved House editor terrain world.properties and published world.obj; HouseRebuildTerrainTest in Windows CI
+**Status:** local attribute fix and Git checkout-filter proof; exact-source CI pending · **Affected:** Saved House editor terrain world.properties and published world.obj; HouseRebuildTerrainTest in Windows CI
 
 Full-round 41320069837 at ddcef3be passes 61,328 pilot positions and utilities but fails Editor scene integrity. Raw full-manifest transcript contradicts advisory step success labels.
 
@@ -2782,9 +2782,9 @@ Evidence and verification: Git-filter verifier proves all five saved world files
 
 Older-map obligation: Preserve exact authoring source and published geometry bytes for every future saved terrain world; line-ending portability is not permission to bypass source staleness or tamper checks.
 
-### DEV-178 â€” Editor agent CLI recursively encodes Path as Iterable
+### DEV-178 — Editor agent CLI recursively encodes Path as Iterable
 
-**Status:** fixed-scoped; local Java 17 native and public-process tests pass Â· **Affected:** New EditorAgentCli inspect/capture/save JSON output
+**Status:** fixed-scoped; local Java 17 native and public-process tests pass · **Affected:** New EditorAgentCli inspect/capture/save JSON output
 
 Initial native service acceptance raised StackOverflowError while encoding an inspection document path.
 
@@ -2796,9 +2796,9 @@ Evidence and verification: EditorAgentServiceTest, EditorAgentGuiTest and tools/
 
 Older-map obligation: Protocol correction applies to every supported host; no map geometry changed or broader map fitness asserted.
 
-### DEV-179 â€” Mission deletion renumbers surviving authored object IDs
+### DEV-179 — Mission deletion renumbers surviving authored object IDs
 
-**Status:** fixed-scoped; local native, GUI and headless regressions pass; exact-source CI pending Â· **Affected:** LevelAuthoringSession hierarchy, saved BSCN nodes, undo and agent ID lookup
+**Status:** fixed-scoped; local native, GUI and headless regressions pass; exact-source CI pending · **Affected:** LevelAuthoringSession hierarchy, saved BSCN nodes, undo and agent ID lookup
 
 Removing prop index zero changed every later prop-N identity; saving recreated IDs from indices.
 
@@ -2810,9 +2810,9 @@ Evidence and verification: LevelAuthoringIdentityTest passes deletion, stable-ID
 
 Older-map obligation: Existing BSCN v1 IDs remain valid; no map geometry or broad fitness acceptance implied.
 
-### DEV-180 â€” Existing USER authoring session follows another active custom document
+### DEV-180 — Existing USER authoring session follows another active custom document
 
-**Status:** fixed-scoped; local two-project ownership regression passes; exact-source CI pending Â· **Affected:** LevelAuthoringSession USER id, documentPath, save and reopen
+**Status:** fixed-scoped; local two-project ownership regression passes; exact-source CI pending · **Affected:** LevelAuthoringSession USER id, documentPath, save and reopen
 
 After opening one USER session then selecting a second project, the older session resolved the second project ID/path dynamically and could save its props there.
 
@@ -2824,9 +2824,9 @@ Evidence and verification: LevelAuthoringIdentityTest creates two projects with 
 
 Older-map obligation: Ownership protection covers all new USER sessions; no corrupted prior project is automatically reconstructed.
 
-### DEV-181 â€” Mission BSCN load silently flattens unsupported portable transforms
+### DEV-181 — Mission BSCN load silently flattens unsupported portable transforms
 
-**Status:** fixed-scoped; local native rejection and state-preservation regression passes; exact-source CI pending Â· **Affected:** LevelAuthoringSession native loader and LevelPlans authored mission load
+**Status:** fixed-scoped; local native rejection and state-preservation regression passes; exact-source CI pending · **Affected:** LevelAuthoringSession native loader and LevelPlans authored mission load
 
 Portable nodes can express parenting, pitch/roll and nonuniform scale, but mission loading discarded those fields and built different native geometry.
 
@@ -2838,9 +2838,9 @@ Evidence and verification: LevelAuthoringIdentityTest saves an actual valid port
 
 Older-map obligation: Existing supported yaw/uniform-scale documents are preserved. Unsupported externally authored documents require explicit conversion rather than silent geometry loss.
 
-### DEV-182 â€” BSCN output budget checked only after full serialization
+### DEV-182 — BSCN output budget checked only after full serialization
 
-**Status:** fixed-scoped; local portable crash/storage and native persistence tests pass; exact-source CI pending Â· **Affected:** RuntimeSceneDocument save output, including mission and terrain/rail documents
+**Status:** fixed-scoped; local portable crash/storage and native persistence tests pass; exact-source CI pending · **Affected:** RuntimeSceneDocument save output, including mission and terrain/rail documents
 
 Valid node/component count limits still allow more than 8 MiB of serialized properties; the previous implementation checked file size only after writing the complete temporary file.
 
@@ -2852,9 +2852,9 @@ Evidence and verification: EditorDocumentStoreTest rejects both a writer exceedi
 
 Older-map obligation: The bound applies to all BSCN producers without changing format v1 or existing source files. It does not certify other serializers or physical power-loss durability.
 
-### DEV-183 â€” LAN HUD receives but does not paint sound captions and strike warnings
+### DEV-183 — LAN HUD receives but does not paint sound captions and strike warnings
 
-**Status:** fixed-scoped; exact-source full regression 41330858899 passed 303/303 Â· **Affected:** LanWorldPanel accessibility, muted/no-device sound cues and telegraphed strike feedback
+**Status:** fixed-scoped; exact-source full regression 41330858899 passed 303/303 · **Affected:** LanWorldPanel accessibility, muted/no-device sound cues and telegraphed strike feedback
 
 Unchanged LanSoundHudTest and LanTelegraphedHudTest fail with absent lavender caption pixels and warning pixel counts 0/0 despite valid received state.
 
@@ -2866,9 +2866,9 @@ Evidence and verification: Original pixel assertions now pass; added simultaneou
 
 Older-map obligation: The shared LAN HUD fix applies across maps. Installed-game, muted-device and arrival-case acceptance remain separate.
 
-### DEV-184 â€” Ground recovery snaps an accepted lower-floor move onto overlapping stairs
+### DEV-184 — Ground recovery snaps an accepted lower-floor move onto overlapping stairs
 
-**Status:** fixed-scoped; exact-source full regression 41330858899 passed 303/303 Â· **Affected:** GroundRecovery, HouseMap position-relative support, LanWorld host ticks and LanSpatialEvidenceIntegrationTest
+**Status:** fixed-scoped; exact-source full regression 41330858899 passed 303/303 · **Affected:** GroundRecovery, HouseMap position-relative support, LanWorld host ticks and LanSpatialEvidenceIntegrationTest
 
 Accepted House movement at x21.93/y0/z18 is changed on the next tick to x22.18/y1.5/z18 in room5, then subsequent real TCP motion is collision-rejected.
 
@@ -2880,9 +2880,9 @@ Evidence and verification: GroundRecoverySupportParityTest fails against the pre
 
 Older-map obligation: No geometry or body-clearance rule changed. Broader underside/stair visual clearance and each map fitness gate remain unaccepted; valid supported poses must not be reinterpreted by a second height authority.
 
-### DEV-185 â€” Legacy regression contracts reject approved voice/sprite packs and neutral Spirit Box readings
+### DEV-185 — Legacy regression contracts reject approved voice/sprite packs and neutral Spirit Box readings
 
-**Status:** fixed-scoped; exact-source full regression 41330858899 passed 303/303 Â· **Affected:** GhostVoicePackRoutingTest, DirectionalSpritesIntegrationTest and HandheldSpiritBoxEvidenceTest
+**Status:** fixed-scoped; exact-source full regression 41330858899 passed 303/303 · **Affected:** GhostVoicePackRoutingTest, DirectionalSpritesIntegrationTest and HandheldSpiritBoxEvidenceTest
 
 Tests expect exactly 20 strike routes, 45 total frames, and automatic voice detection from generic event strength; actual approved runtime has 24 strike routes, 61 frames and host-attested spoken responses.
 
@@ -2894,9 +2894,9 @@ Evidence and verification: Updated exact-set/count and native depth/manifestatio
 
 Older-map obligation: These are compatibility assertions for current approved source contracts, not art-quality, subjective audio or full gameplay acceptance.
 
-### DEV-186 â€” Acoustic direction fixtures cross native stairs while claiming one room/floor
+### DEV-186 — Acoustic direction fixtures cross native stairs while claiming one room/floor
 
-**Status:** fixed-scoped; exact-source full regression 41330858899 passed 303/303 Â· **Affected:** LanGhostHearingTest, LanSoundTest and spatial evidence integration diagnostics
+**Status:** fixed-scoped; exact-source full regression 41330858899 passed 303/303 · **Affected:** LanGhostHearingTest, LanSoundTest and spatial evidence integration diagnostics
 
 House hall spawn plus X offsets resolves to staircase support at +1.5m/room5 or -1.5m/room9, so forged same-room source assertions receive null instead of a bearing.
 
@@ -2908,9 +2908,9 @@ Evidence and verification: All original direction, door attenuation, privacy, st
 
 Older-map obligation: Fixture selection never changes geometry, substitutes a preview map, drops a bearing or skips a native collision check. Cross-floor audio-model acceptance remains a separate gate.
 
-### DEV-187 â€” Castle editor properties saves lack journal recovery and distinct previous versions
+### DEV-187 — Castle editor properties saves lack journal recovery and distinct previous versions
 
-**Status:** fixed-scoped; exact-source native CI and full 306/306 regression accepted Â· **Affected:** CastleLevelEdits native properties persistence and Castle human/headless editor service
+**Status:** fixed-scoped; exact-source native CI and full 306/306 regression accepted · **Affected:** CastleLevelEdits native properties persistence and Castle human/headless editor service
 
 Mission documents support interrupted-save replay and explicit previous-save recovery, while Castle properties writes have no journal or previous version and timestamps change identical saves.
 
@@ -2922,9 +2922,9 @@ Evidence and verification: CastleDocumentRecoveryTest passes native full-state r
 
 Older-map obligation: Castle properties only. Mission/BSCN format unchanged. Decoding uses private native codec state with no renderer/editor/agent binding. Generic store process-crash tests remain applicable; physical power-loss and installed-game acceptance remain separate.
 
-### DEV-188 â€” Headless editor JSON uses Windows system encoding instead of UTF-8
+### DEV-188 — Headless editor JSON uses Windows system encoding instead of UTF-8
 
-**Status:** fixed-scoped; exact-source native CI and full 306/306 regression accepted Â· **Affected:** EditorAgentCli main response stream and Castle hierarchy labels
+**Status:** fixed-scoped; exact-source native CI and full 306/306 regression accepted · **Affected:** EditorAgentCli main response stream and Castle hierarchy labels
 
 The public Castle inspect response contains bullet characters encoded as Windows-1252 byte 0x95, causing the UTF-8 Python client to fail decoding JSON.
 
@@ -2936,9 +2936,9 @@ Evidence and verification: Expanded verify_editor_agent_cli.py reproduces Unicod
 
 Older-map obligation: Applies to the shared local CLI for every host. Does not add a listener, authentication or arbitrary script execution.
 
-### DEV-189 â€” Human mesh import report prints literal newline escapes
+### DEV-189 — Human mesh import report prints literal newline escapes
 
-**Status:** fixed-scoped; native41358289381 and standalone41358301989 CI accepted Â· **Affected:** AssetImportDialog style/texture warnings and source report
+**Status:** fixed-scoped; native41358289381 and standalone41358301989 CI accepted · **Affected:** AssetImportDialog style/texture warnings and source report
 
 The actual import dock displays a literal backslash-n between style commentary and source metadata, producing an unnecessarily long horizontally clipped report line.
 
@@ -2950,9 +2950,9 @@ Evidence and verification: Actual before capture development/quality/evidence/me
 
 Older-map obligation: Human import report only; no model geometry/material or game-world edits.
 
-### DEV-190 â€” Human asset publication can reread a source changed after review
+### DEV-190 — Human asset publication can reread a source changed after review
 
-**Status:** fixed-scoped; exact-source native/standalone and full307/307 at0fb70ac2 accepted Â· **Affected:** AssetImportDialog source observation/publication and ImportedAssetLibrary provenance
+**Status:** fixed-scoped; exact-source native/standalone and full307/307 at0fb70ac2 accepted · **Affected:** AssetImportDialog source observation/publication and ImportedAssetLibrary provenance
 
 A reviewed OBJ can be published with stale geometry but newly changed source archive; GLB regression0 rereads and directly publishes externally replaced geometry that the user never reviewed.
 
@@ -2964,9 +2964,9 @@ Evidence and verification: AssetImportTopologyGuiTest modifies actual OBJ geomet
 
 Older-map obligation: Human import path only. Existing programmatic publish remains source-compatible; the human workflow uses the checked entry point. No existing art or map geometry changed.
 
-### DEV-191 â€” Native topology prototype used a backup validator as a save precondition
+### DEV-191 — Native topology prototype used a backup validator as a save precondition
 
-**Status:** fixed-scoped; exact-source native/standalone and full307/307 at0fb70ac2 accepted Â· **Affected:** New EditorTopologyProject competing-editor saves and portable EditorDocumentStore API
+**Status:** fixed-scoped; exact-source native/standalone and full307/307 at0fb70ac2 accepted · **Affected:** New EditorTopologyProject competing-editor saves and portable EditorDocumentStore API
 
 The new two-editor regression initially failed because a stale native topology editor overwrote a newer save despite its validator throwing IOException.
 
@@ -2978,9 +2978,9 @@ Evidence and verification: EditorTopologyProjectTest reproduces two live project
 
 Older-map obligation: Caught in the new indexed-topology prototype before delivery. Legacy mission/Castle callers retain their prior semantics until explicit resource-fingerprint adoption; do not infer that all existing serializers now enforce this new precondition.
 
-### DEV-192 â€” Castle snapshots expose mutable station arrays and compare array identity
+### DEV-192 — Castle snapshots expose mutable station arrays and compare array identity
 
-**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted Â· **Affected:** CastleLevelEdits.Snapshot and shared history observations
+**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted · **Affected:** CastleLevelEdits.Snapshot and shared history observations
 
 Caller-owned station arrays/maps can mutate a retained snapshot; two snapshots of equal native state compare unequal because arrays use identity.
 
@@ -2992,9 +2992,9 @@ Evidence and verification: CastleSnapshotContractTest mutates constructor inputs
 
 Older-map obligation: Native snapshot values only; no map/model geometry changes.
 
-### DEV-193 â€” Castle decoder accepts station states rejected by the human editor
+### DEV-193 — Castle decoder accepts station states rejected by the human editor
 
-**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted Â· **Affected:** Castle properties load and previous-save recovery
+**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted · **Affected:** Castle properties load and previous-save recovery
 
 Nonfinite/out-of-world station coordinates can pass the old native decoder; backup validation can install data the live editor cannot represent.
 
@@ -3006,9 +3006,9 @@ Evidence and verification: NaN station backup and x999 current-file controls pre
 
 Older-map obligation: Invalid external/backup data is refused; existing valid native saves and legacy geometry/lighting migrations retain their acceptance.
 
-### DEV-194 â€” Mission native loading silently discards unsupported metadata and contradictory yaw
+### DEV-194 — Mission native loading silently discards unsupported metadata and contradictory yaw
 
-**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted Â· **Affected:** LevelAuthoringSession BSCN adapter
+**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted · **Affected:** LevelAuthoringSession BSCN adapter
 
 Unknown component properties, custom node labels/layers and yaw fields inconsistent with portable transforms are ignored then lost or misinterpreted on native save.
 
@@ -3020,9 +3020,9 @@ Evidence and verification: EditorSchemaCompatibilityTest preserves exact source 
 
 Older-map obligation: No claim that arbitrary generic BSCN data is supported by native mission runtime; unsupported schemas fail explicitly.
 
-### DEV-195 â€” Castle future layout versions can be rewritten as current version2
+### DEV-195 — Castle future layout versions can be rewritten as current version2
 
-**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted Â· **Affected:** Castle properties schema migrations
+**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted · **Affected:** Castle properties schema migrations
 
 A format1 file with layout3 is interpreted with current fields and a later save stamps layout2, risking loss of future data.
 
@@ -3034,9 +3034,9 @@ Evidence and verification: EditorSchemaCompatibilityTest protects exact bytes an
 
 Older-map obligation: Older supported migrations remain tested separately; this does not admit unknown future schemas.
 
-### DEV-196 â€” Explicit Castle codecs eagerly initialize an unrelated default profile
+### DEV-196 — Explicit Castle codecs eagerly initialize an unrelated default profile
 
-**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted Â· **Affected:** CastleLevelEdits default singleton initialization
+**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted · **Affected:** CastleLevelEdits default singleton initialization
 
 Constructing a codec for an explicit path can fail on, read or migrate the default user Castle instead of only touching the selected resource.
 
@@ -3048,9 +3048,9 @@ Evidence and verification: A fresh child with a corrupt unrelated default profil
 
 Older-map obligation: Agent adapters continue to require the actual singleton; no independent codec instance is admitted as game runtime.
 
-### DEV-197 â€” Value-equivalent Castle door order changes rotate prior-save history
+### DEV-197 — Value-equivalent Castle door order changes rotate prior-save history
 
-**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted Â· **Affected:** Castle Properties serializer and distinct backups
+**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted · **Affected:** Castle Properties serializer and distinct backups
 
 Removing/reinstalling the same fixed door changes map insertion order and serialized numeric indices despite identical native authoring value.
 
@@ -3062,9 +3062,9 @@ Evidence and verification: CastleSnapshotContractTest proves equal native values
 
 Older-map obligation: Canonical writer ordering is compatible with existing ID-based readers; no door geometry or behavior changes.
 
-### DEV-198 â€” Headless request cap is checked after unbounded readLine buffering
+### DEV-198 — Headless request cap is checked after unbounded readLine buffering
 
-**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted Â· **Affected:** EditorAgentCli input protocol
+**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted · **Affected:** EditorAgentCli input protocol
 
 A delimiter-free oversized request can grow the entire line in memory before the advertised request limit is checked.
 
@@ -3076,9 +3076,9 @@ Evidence and verification: The native service test supplies a guarded unending r
 
 Older-map obligation: Trusted local protocol only; no remote listener/security sandbox is claimed.
 
-### DEV-199 â€” Failed undo/redo consumes history before the native restore succeeds
+### DEV-199 — Failed undo/redo consumes history before the native restore succeeds
 
-**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted Â· **Affected:** Portable EditorHistory and all project adapters
+**Status:** fixed-scoped; native/standalone CI and raw310/310 full regression accepted · **Affected:** Portable EditorHistory and all project adapters
 
 A host restore failure can leave partial state and pop/move undo/redo entries, preventing a safe retry; rollback failure can hide the original command cause.
 
@@ -3090,9 +3090,9 @@ Evidence and verification: EditorHistoryFailureTest proves retained stacks/state
 
 Older-map obligation: Native adapters and standalone projects share this boundary; arbitrary persistently broken host restores cannot be claimed successful.
 
-### DEV-200 â€” Room audit omitted real exterior views beyond its search radius
+### DEV-200 — Room audit omitted real exterior views beyond its search radius
 
-**Status:** corrected-locally; complete-roster baseline review pending Â· **Affected:** School and generic institution exterior zones; other large exterior ownership volumes
+**Status:** corrected-locally; complete-roster baseline review pending · **Affected:** School and generic institution exterior zones; other large exterior ownership volumes
 
 The first baseline recorded 56 views and four missing views for School and several institutions despite existing outdoor support.
 
@@ -3104,9 +3104,9 @@ Evidence and verification: Corrected School/Prison/College and other targeted au
 
 Older-map obligation: Inspect displaced cameras and coverage individually; camera availability never proves route or architecture acceptance.
 
-### DEV-201 â€” Rowan Pike intersects the Castle network-desk chair
+### DEV-201 — Rowan Pike intersects the Castle network-desk chair
 
-**Status:** corrected-locally; publication and visual closeout pending Â· **Affected:** Castle Beckenburg operations / Rowan Pike
+**Status:** corrected-locally; publication and visual closeout pending · **Affected:** Castle Beckenburg operations / Rowan Pike
 
 After excluding the keeper self-collision from placement inspection, CastleSupportArtTest reproducibly failed for Rowan Pike.
 
@@ -3118,9 +3118,9 @@ Evidence and verification: Measured collision inspection identified the exact ch
 
 Older-map obligation: Audit every resident and supporting furniture independently; do not generalize to investigation props or moved editor fixtures.
 
-### DEV-202 â€” OBJ import implicitly welds distinct authored position indices
+### DEV-202 — OBJ import implicitly welds distinct authored position indices
 
-**Status:** fixed-scoped; exact-source native/standalone and raw310/310 regression accepted Â· **Affected:** EditorMeshPipeline OBJ reader, EditorMeshTopology derivation and actual human native mesh import
+**Status:** fixed-scoped; exact-source native/standalone and raw310/310 regression accepted · **Affected:** EditorMeshPipeline OBJ reader, EditorMeshTopology derivation and actual human native mesh import
 
 Six referenced source positions containing a distinct coincident pair become five native vertices, creating an unintended shared edit and disconnected fan. Moving one authored source vertex can drag another piece.
 
@@ -3132,9 +3132,9 @@ Evidence and verification: Exact1e505d5e parser/topology classes reproduce the s
 
 Older-map obligation: Existing saved BTOP IDs remain authoritative and are never silently split/rebuilt. Previously welded native projects require explicit source-based reimport and edit review. Unindexed STL/render buffers retain their documented per-part geometric connectivity policy; full normal/material interchange remains open.
 
-### DEV-203 â€” Inline OBJ face comments are parsed as vertex references
+### DEV-203 — Inline OBJ face comments are parsed as vertex references
 
-**Status:** fixed-scoped; exact-source native/standalone and raw310/310 regression accepted Â· **Affected:** Portable OBJ source reader and human importer
+**Status:** fixed-scoped; exact-source native/standalone and raw310/310 regression accepted · **Affected:** Portable OBJ source reader and human importer
 
 An otherwise readable authored face followed by an inline comment fails with an invalid OBJ/# position-index exception.
 
@@ -3146,9 +3146,9 @@ Evidence and verification: Exact1e505d5e parser fails the targeted comment check
 
 Older-map obligation: No authored source file is rewritten. Existing native formats and previously readable OBJ geometry retain their version and native state.
 
-### DEV-204 â€” Model publication can pair an old reviewed runtime mesh with newer native authoring state
+### DEV-204 — Model publication can pair an old reviewed runtime mesh with newer native authoring state
 
-**Status:** fixed-scoped; exact-source native/standalone and raw310/310 regression accepted Â· **Affected:** Actual AssetImportDialog, EditorTopologyProject native observations/reviewed saves and runtime publication
+**Status:** fixed-scoped; exact-source native/standalone and raw310/310 regression accepted · **Affected:** Actual AssetImportDialog, EditorTopologyProject native observations/reviewed saves and runtime publication
 
 A real native edit after review can save/archive native X=-0.25 while publishing cached runtime X=0.0; independent UI dirty flags may miss native changes.
 
@@ -3160,9 +3160,9 @@ Evidence and verification: AssetImportPublicationRevisionGuiTest against exact4b
 
 Older-map obligation: Existing mismatched published derivatives are not silently rewritten; compare their original/native/runtime provenance individually. No new agent/MCP mesh operations are enabled.
 
-### DEV-205 â€” Topological editor exposes every tool row and crowds out the working viewport
+### DEV-205 — Topological editor exposes every tool row and crowds out the working viewport
 
-**Status:** fixed-scoped; local actual GUI/native tests passed, remote acceptance pending Â· **Affected:** AssetImportDialog / topological model workspace only
+**Status:** fixed-scoped; local actual GUI/native tests passed, remote acceptance pending · **Affected:** AssetImportDialog / topological model workspace only
 
 Owner reports a horrifically messy modeling UI: all primitive, vertex, selection, transform, face, repair and reduction controls compete with a shallow viewport; ordinary editing shows a redundant comparison.
 
@@ -3174,9 +3174,9 @@ Evidence and verification: EditorTopologyWorkspaceGuiTest plus actual human pick
 
 Older-map obligation: No map/model art modified. Other modules require their own workflow-specific workspace audit; do not inherit this model layout or claim complete gold-standard acceptance.
 
-### DEV-206 â€” Authored corner normals are discarded by model import, native state and export
+### DEV-206 — Authored corner normals are discarded by model import, native state and export
 
-**Status:** fixed-scoped; exact pre-fix negative control and local native/portable/human tests passed; remote acceptance pending Â· **Affected:** OBJ/STL importer, native indexed corner schema, transform/modeling paths, OBJ/GLB export and read-only GLB normal inspection
+**Status:** fixed-scoped; exact pre-fix negative control and local native/portable/human tests passed; remote acceptance pending · **Affected:** OBJ/STL importer, native indexed corner schema, transform/modeling paths, OBJ/GLB export and read-only GLB normal inspection
 
 A real OBJ normal(0,0,2) becomes zero direction in the actual game decoder after editor publication. Hard-edge/smooth corner attributes cannot survive native save or transforms.
 
@@ -3188,9 +3188,9 @@ Evidence and verification: Exact3cd88128 old importer/writer fails NormalLossCon
 
 Older-map obligation: No source art rewritten. Existing normal-less native files retain v1 encoding. Audit each previously published derivative against its own authored source; do not silently replace registered imports or claim all materials preserved.
 
-### DEV-207 â€” Imported model normals do not reach software lighting and are dropped during subdivision
+### DEV-207 — Imported model normals do not reach software lighting and are dropped during subdivision
 
-**Status:** fixed-scoped; local production placement/subdivision/native-light parity tests passed; GPU/full regression pending Â· **Affected:** SceneRenderer imported mesh placement, software drawLitFace and directional-light preparation
+**Status:** fixed-scoped; local production placement/subdivision/native-light parity tests passed; GPU/full regression pending · **Affected:** SceneRenderer imported mesh placement, software drawLitFace and directional-light preparation
 
 Even decoded authored normal metadata is omitted from imported Face attributes; software drawLitFace samples without normals and its subdivided children lose normal/owner attributes. GPU has a directional path that software does not match.
 
@@ -3202,9 +3202,9 @@ Evidence and verification: AssetImportNormalsGuiTest inspects actual production 
 
 Older-map obligation: No broad visual signoff: inspect existing authored-normal props/van and renderer behavior individually. Required actual GPU/full-round checks remain source-pinned and pending until observed.
 
-### DEV-169 â€” Hollow Creek 67 original alpha tree billboards rendered as opaque black rectangles
+### DEV-169 — Hollow Creek 67 original alpha tree billboards rendered as opaque black rectangles
 
-**Status:** 67-tree-alpha-software-render-verified-catalog-repaired-GPU-and-live-site-visuals-pending Â· **Affected:** 67 approved Hollow Creek original glTF BLEND tree billboards with black-background card defect (software renderer), plus 17 additional production-approved models (16 terrain source meshes and Matthis proxy) previously miscataloged as SOURCE_ONLY. One pavilion-services model remains genuinely review-only.
+**Status:** 67-tree-alpha-software-render-verified-catalog-repaired-GPU-and-live-site-visuals-pending · **Affected:** 67 approved Hollow Creek original glTF BLEND tree billboards with black-background card defect (software renderer), plus 17 additional production-approved models (16 terrain source meshes and Matthis proxy) previously miscataloged as SOURCE_ONLY. One pavilion-services model remains genuinely review-only.
 
 The original developer-room gallery rendered 67 alpha tree crowns as opaque black rectangular cards. The source registry incorrectly called 16 already-approved terrain mesh exports and the approved Matthis proxy unapproved. Separate maps containing terrain source assets are NOT automatically completed or approved for gameplay.
 
@@ -3216,9 +3216,9 @@ Evidence and verification: Source glTF audit 41409865926 artifact 13124519834: 6
 
 Older-map obligation: Verify Hollow Creek tree billboard compositing in playable camera view, under weather/lighting and hardware GPU backend (if active). Inspect 16 approved terrain GLBs independently before any integration of unfinished maps. Pavilion services remains unapproved until separately justified; never auto-promote it.
 
-### DEV-209 â€” Normal-aware OBJ export can bypass degenerate refusal or leak an unchecked error
+### DEV-209 — Normal-aware OBJ export can bypass degenerate refusal or leak an unchecked error
 
-**Status:** fixed-scoped; exact intermediate negative control and current native I/O refusal tests passed; remote acceptance pending Â· **Affected:** EditorObjWriter normal-bearing and missing-normal degenerate face export
+**Status:** fixed-scoped; exact intermediate negative control and current native I/O refusal tests passed; remote acceptance pending · **Affected:** EditorObjWriter normal-bearing and missing-normal degenerate face export
 
 Intermediate47f563b exports a degenerate triangle when its corners have explicit normals; missing-normal degenerate faces can escape as unchecked normal-math errors rather than the existing checked export refusal.
 
@@ -3230,9 +3230,9 @@ Evidence and verification: Exact47f563b EditorObjWriter compiled from its Git bl
 
 Older-map obligation: Regression was found and corrected in this local implementation before remote publication. Keep normal metadata validation distinct from geometry validity; no silent repair or broad map acceptance.
 
-### DEV-210 â€” Identity model transforms can alter raw normal values or introduce floating-point drift
+### DEV-210 — Identity model transforms can alter raw normal values or introduce floating-point drift
 
-**Status:** fixed-scoped; exact intermediate negative control and current native epoch/history checks passed; remote acceptance pending Â· **Affected:** EditorTopologyProject previewTransform with unit scale or whole-turn rotation
+**Status:** fixed-scoped; exact intermediate negative control and current native epoch/history checks passed; remote acceptance pending · **Affected:** EditorTopologyProject previewTransform with unit scale or whole-turn rotation
 
 Intermediate47f563b accepts axis scale1 on authored normal(0,0,2) because normal normalization changes its stored magnitude. Whole-turn rotations can also produce tiny coordinate differences instead of a no-op.
 
@@ -3244,9 +3244,9 @@ Evidence and verification: Exact47f563b native project compiled from its Git blo
 
 Older-map obligation: No source art rewritten. Intermediate regression was corrected before remote publication; identity actions must not manufacture dirty state, new asset hashes or metadata normalization.
 
-### DEV-211 â€” Merged atlas checkpoint has two failing full-regression art assertions despite green advisory workflow
+### DEV-211 — Merged atlas checkpoint has two failing full-regression art assertions despite green advisory workflow
 
-**Status:** open; exact terminal raw 308/310 recorded; source-art review required before any golden update Â· **Affected:** GhostSpriteAtlasIntegrationTest, TwinBodyVisualTest at merged source bcd7469828f8736a5dfb5c6266a48543573fb294
+**Status:** open; exact terminal raw 308/310 recorded; source-art review required before any golden update · **Affected:** GhostSpriteAtlasIntegrationTest, TwinBodyVisualTest at merged source bcd7469828f8736a5dfb5c6266a48543573fb294
 
 Full run41486307374 completed with green workflow status but raw regression job125417465992 reports passed308 failed2 skipped0 manifest310. Ghost archive bytes6883065 differ from expected6868626; Twin A side-frame fingerprint differs from previous approved silhouette.
 
@@ -3258,9 +3258,9 @@ Evidence and verification: development/quality/evidence/editor-full-round-bcd746
 
 Older-map obligation: No blanket old-map/art acceptance. Preserve original owner art, all source repairs, and existing visual-golden tests until reviewed.
 
-### DEV-212 â€” OBJ material declarations are silently discarded by geometry-only native import and GLB fallback
+### DEV-212 — OBJ material declarations are silently discarded by geometry-only native import and GLB fallback
 
-**Status:** fixed-scoped; actual human material window/native/bundle/runtime tests pass locally; exact-source CI pending Â· **Affected:** EditorMeshPipeline OBJ mtllib/usemtl, EditorTopologyProject native schema and EditorGlbWriter
+**Status:** fixed-scoped; actual human material window/native/bundle/runtime tests pass locally; exact-source CI pending · **Affected:** EditorMeshPipeline OBJ mtllib/usemtl, EditorTopologyProject native schema and EditorGlbWriter
 
 Actual previous3ca731b5 pipeline imports a material-bearing OBJ but exposes no native material table and emits generated checkerboard instead of original map_Kd PNG/material assignment.
 
@@ -3272,9 +3272,9 @@ Evidence and verification: Exact3ca731b5 Git blobs compiled in build/material-ne
 
 Older-map obligation: Do not bulk-reimport existing assets, overwrite source textures or flatten GLB node/pivot/material provenance. Existing geometry-only v1 and normal v2 paths remain compatible. Full painting/PBR/editable source GLB remains open.
 
-### DEV-213 â€” OBJ material dependency containment compares lexical aliases with canonical asset root
+### DEV-213 — OBJ material dependency containment compares lexical aliases with canonical asset root
 
-**Status:** fixed-scoped; exact318 standalone41508789243 and native41508797528 SUCCESS, including real material/UV regressions Â· **Affected:** EditorObjMaterials.Reader.resolve; standalone Windows material import41506322166/job125486457313
+**Status:** fixed-scoped; exact318 standalone41508789243 and native41508797528 SUCCESS, including real material/UV regressions · **Affected:** EditorObjMaterials.Reader.resolve; standalone Windows material import41506322166/job125486457313
 
 A dependency inside the selected asset root is rejected with Material dependency escapes the asset root. Native suite passes while Windows standalone material test fails; an in-root directory junction reproduces the same exception against exact644 editor JAR.
 
@@ -3286,9 +3286,9 @@ Evidence and verification: Exact644 standalone raw excerpt under evidence/materi
 
 Older-map obligation: No bulk source migration or bypass of containment. Keep absolute/outside-root, unsupported options and changed-dependency guards. Await exact new-source standalone acceptance.
 
-### DEV-214 â€” Material UV inspector can grow wider than its viewport and clip numeric input
+### DEV-214 — Material UV inspector can grow wider than its viewport and clip numeric input
 
-**Status:** fixed before UV publication; actual window capture and input-bounds assertion passed Â· **Affected:** EditorMaterialWorkspace material/UV properties scroll pane
+**Status:** fixed before UV publication; actual window capture and input-bounds assertion passed · **Affected:** EditorMaterialWorkspace material/UV properties scroll pane
 
 UV transform explanatory label expanded the inspector preferred width, showing a horizontal scrollbar and clipping the angle spinner at the right side.
 
@@ -3300,9 +3300,9 @@ Evidence and verification: AssetImportUvGuiTest captures the actual independent 
 
 Older-map obligation: This changes only the independent material workspace composition. Main level and topology tool layouts remain unchanged; it does not implement painting/unwrap.
 
-### DEV-215 â€” Runtime GLB decoder ignores original node matrix and changes source pivots
+### DEV-215 — Runtime GLB decoder ignores original node matrix and changes source pivots
 
-**Status:** fixed-scoped; exact prior game negative controls and current actual runtime/human tests pass locally; exact-source CI pending Â· **Affected:** GlbProps actual runtime decode and source-backed native GLB authoring
+**Status:** fixed-scoped; exact prior game negative controls and current actual runtime/human tests pass locally; exact-source CI pending · **Affected:** GlbProps actual runtime decode and source-backed native GLB authoring
 
 The exact previous18001e8a game decoder places the source fixture first vertex at (3,0,2), although its actual matrix plus parent hierarchy places it at (3,0,1).
 
@@ -3314,9 +3314,9 @@ Evidence and verification: GlbSourceAuthorityTest matrix fails against exact1800
 
 Older-map obligation: Do not rewrite source art or infer complete old-map visual acceptance. Retain asset-specific origin rules; inspect actual changed sources individually. Full source-backed GLB rigs/additional attributes and G2-G12 remain open.
 
-### DEV-216 â€” Generic external GLB textures use inverted legacy PNG origin
+### DEV-216 — Generic external GLB textures use inverted legacy PNG origin
 
-**Status:** fixed-scoped; exact prior game negative controls and current actual runtime/human tests pass locally; exact-source CI pending Â· **Affected:** GlbProps actual runtime decode and source-backed native GLB authoring
+**Status:** fixed-scoped; exact prior game negative controls and current actual runtime/human tests pass locally; exact-source CI pending · **Affected:** GlbProps actual runtime decode and source-backed native GLB authoring
 
 The exact previous18001e8a game decoder samples blue ff0000ff at source (.25,.25), where the original external glTF PNG is red ffff0000.
 
@@ -3328,9 +3328,9 @@ Evidence and verification: GlbSourceAuthorityTest uv reproduces old actual runti
 
 Older-map obligation: Do not rewrite source art or infer complete old-map visual acceptance. Retain asset-specific origin rules; inspect actual changed sources individually. Full source-backed GLB rigs/additional attributes and G2-G12 remain open.
 
-### DEV-217 â€” Packaged full-round test compilation omits shared portable GLB fixture sources
+### DEV-217 — Packaged full-round test compilation omits shared portable GLB fixture sources
 
-**Status:** fixed-scoped; corrected full41547165572 build and actual TCP stage passed; raw307/310 has separate DEV211/221 failures Â· **Affected:** build.cmd and build.sh test source lists
+**Status:** fixed-scoped; corrected full41547165572 build and actual TCP stage passed; raw307/310 has separate DEV211/221 failures · **Affected:** build.cmd and build.sh test source lists
 
 Source57337f4f full41546195876/job125622271926 fails before TCP acceptance: EditorGlbAuthoringTest is absent while compiling AssetImportGlbGuiTest and GlbSourceAuthorityTest. Standalone41546137572 and native41546191383 pass because their explicit fixture dependencies are present.
 
@@ -3342,9 +3342,9 @@ Evidence and verification: Exact failed remote compiler diagnostics retained in 
 
 Older-map obligation: Build integration only; no source art/goldens changed. Existing DEV211 advisory art assertions remain open, and failed pre-TCP run does not prove gameplay.
 
-### DEV-218 â€” Camera picker generalization drops existing enum-typed binary API signatures
+### DEV-218 — Camera picker generalization drops existing enum-typed binary API signatures
 
-**Status:** fixed before perspective publication; actual prior-compiled client fails intermediate and passes final independent JAR Â· **Affected:** EditorMeshPicking public pick(State,Projection,double,double) and prepare(State,Projection)
+**Status:** fixed before perspective publication; actual prior-compiled client fails intermediate and passes final independent JAR · **Affected:** EditorMeshPicking public pick(State,Projection,double,double) and prepare(State,Projection)
 
 A client compiled against the published da2b21da picker throws NoSuchMethodError when the intermediate camera generalization replaces enum parameter signatures with Projector parameters.
 
@@ -3356,9 +3356,9 @@ Evidence and verification: perspective-workspace evidence contains real intermed
 
 Older-map obligation: Unpublished intermediate integration defect, corrected before publication. No scene or source asset changes. Portable public signatures remain stable; this does not prove all other G1/G2 APIs or gate completion.
 
-### DEV-219 â€” Unanchored surface mode unboxes a null native face anchor
+### DEV-219 — Unanchored surface mode unboxes a null native face anchor
 
-**Status:** fixed before surface publication; actual human unanchored-mode refusal and complete workflow pass Â· **Affected:** AssetImportDialog activeSurfaceFace/normal mode and gizmo painting
+**Status:** fixed before surface publication; actual human unanchored-mode refusal and complete workflow pass · **Affected:** AssetImportDialog activeSurfaceFace/normal mode and gizmo painting
 
 Selecting surface-normal mode before a face has been picked throws NullPointerException in controls and painting.
 
@@ -3370,9 +3370,9 @@ Evidence and verification: surface-unanchored-negative.txt retains actual interm
 
 Older-map obligation: Unpublished UI integration defect, corrected before publication. No source assets or other module layouts changed.
 
-### DEV-220 â€” Nearby projected gizmo handles can capture a precise click on the wrong axis
+### DEV-220 — Nearby projected gizmo handles can capture a precise click on the wrong axis
 
-**Status:** fixed-scoped; exact published d620857e world-space negative control and corrected world/surface GUI checks pass Â· **Affected:** AssetImportDialog beginAxisDrag; world and surface-normal projected handles
+**Status:** fixed-scoped; exact published d620857e world-space negative control and corrected world/surface GUI checks pass · **Affected:** AssetImportDialog beginAxisDrag; world and surface-normal projected handles
 
 An exact click on later axis2 selects earlier axis1 in published d620857e UI when projected handle hit regions overlap. Intermediate surface mode also reproduces axis2 incorrectly captured as axis0.
 
@@ -3384,9 +3384,9 @@ Evidence and verification: gizmo-d620-negative.txt comes from exact Git d620857e
 
 Older-map obligation: Editor input correction only; no map or source geometry is migrated. Identical projected handles remain deterministically tied and can be separated by orbiting the actual camera.
 
-### DEV-221 â€” Equipment assignment regression still reflects into the removed private GLB JSON reader
+### DEV-221 — Equipment assignment regression still reflects into the removed private GLB JSON reader
 
-**Status:** fixed-scoped; exact5bdd full41551592599 passes equipment assignments; raw308/310 retains only DEV211 art assertions Â· **Affected:** EquipmentAssetAssignmentsTest after shared GLB decoder extraction
+**Status:** fixed-scoped; exact5bdd full41551592599 passes equipment assignments; raw308/310 retains only DEV211 art assertions · **Affected:** EquipmentAssetAssignmentsTest after shared GLB decoder extraction
 
 Corrected full41547165572/job125625469653 is green advisory but raw307/310: alongside two DEV211 art assertions, equipment test throws ClassNotFoundException for GlbProps$Json.
 
@@ -3398,9 +3398,9 @@ Evidence and verification: equipment-da2b21da.txt records exact remote failure. 
 
 Older-map obligation: Test integration repair only. Actual packaged TCP stage passed in41547165572, but raw full regression remains unaccepted until corrected-source rerun. DEV211 source-art assertions remain open.
 
-### DEV-222 â€” Per-part framed GLB grouping changes canonical order of interleaved native faces
+### DEV-222 — Per-part framed GLB grouping changes canonical order of interleaved native faces
 
-**Status:** fixed before local-frame publication; actual game interleaved-order control and source/native tests pass Â· **Affected:** EditorMaterialGlbWriter, source-backed writer, shared GLB reader and actual GlbProps adapter
+**Status:** fixed before local-frame publication; actual game interleaved-order control and source/native tests pass · **Affected:** EditorMaterialGlbWriter, source-backed writer, shared GLB reader and actual GlbProps adapter
 
 Intermediate framed export of A/B/A faces produces actual game order A/A/B: second first-corner X7.7274065 instead of native3.8637033 after rotation.
 
@@ -3412,9 +3412,9 @@ Evidence and verification: order-negative.txt records real game mismatch. AssetI
 
 Older-map obligation: Unpublished integration defect fixed before publication. Existing ordinary assets without order descriptors keep original decoder traversal. No artwork or goldens changed.
 
-### DEV-223 â€” GLB readback rejects valid sparse native face IDs
+### DEV-223 — GLB readback rejects valid sparse native face IDs
 
-**Status:** fixed-scoped; exact published5bdd writer negative and corrected public encoder/readback control passed Â· **Affected:** EditorGlbWriter generic native face identity mapping
+**Status:** fixed-scoped; exact published5bdd writer negative and corrected public encoder/readback control passed · **Affected:** EditorGlbWriter generic native face identity mapping
 
 A valid single triangle retaining native face7 fails GLB readback with lost/duplicated native face identity, despite unchanged geometry.
 
@@ -3426,9 +3426,9 @@ Evidence and verification: sparse-negative-5bdd.txt uses exact5bdd5491 writer Gi
 
 Older-map obligation: Editor export correction only. Existing saved native IDs remain stable; no mass reimport or renumbering. Confirm new exact-source CI separately.
 
-### DEV-224 â€” Signed-zero local frame values fail cross-format equality after JSON decoding
+### DEV-224 — Signed-zero local frame values fail cross-format equality after JSON decoding
 
-**Status:** fixed before local-frame publication; actual negative/positive GLB readback controls and native guard passed Â· **Affected:** New EditorMeshFrame component canonical numeric representation
+**Status:** fixed before local-frame publication; actual negative/positive GLB readback controls and native guard passed · **Affected:** New EditorMeshFrame component canonical numeric representation
 
 Valid native frame entries containing -0.0 fail exact GLB frame readback because decimal JSON decoding yields positive zero.
 
@@ -3440,9 +3440,9 @@ Evidence and verification: zero-negative.txt/zero-positive.txt run the same Fram
 
 Older-map obligation: New unpublished component normalization, not an artwork or vertex-normal rewrite. Older native1-4 data stays compatible; native5 explicitly carries the new frame fields.
 
-### DEV-225 â€” Concurrent main installer and full acceptance fail host campaign persistence assertion
+### DEV-225 — Concurrent main installer and full acceptance fail host campaign persistence assertion
 
-**Status:** fixed in integrated editor branch; packaged desktop/TCP and complete native suite pass locally; exact remote acceptance pending Â· **Affected:** main ce146a69 packaged startup/multiplayer acceptance
+**Status:** fixed in integrated editor branch; packaged desktop/TCP and complete native suite pass locally; exact remote acceptance pending · **Affected:** main ce146a69 packaged startup/multiplayer acceptance
 
 Both workflows stop at AssertionError: Host campaign result saved.
 
@@ -3454,9 +3454,9 @@ Evidence and verification: main ce146a69 full41566564774 and installer4156656477
 
 Older-map obligation: Campaign/host behavior requires actual packaged regression; no map or release acceptance inferred.
 
-### DEV-235 â€” Legacy Castle tree belt intersects new training annex
+### DEV-235 — Legacy Castle tree belt intersects new training annex
 
-**Status:** fixed-scoped; actual packaged render and physical annex regression pass Â· **Affected:** Castle west training annex / CastleSurroundings
+**Status:** fixed-scoped; actual packaged render and physical annex regression pass · **Affected:** Castle west training annex / CastleSurroundings
 
 First runtime capture shows an original exterior tree occupying the new interior corridor.
 
@@ -3468,9 +3468,9 @@ Evidence and verification: rebuild/captures/castle-construction/rejected-trainin
 
 Older-map obligation: Castle-specific environment conflict. Other sites require individual building/tree/fixture audits; no complete Castle or roster acceptance inferred.
 
-### DEV-236 â€” Castle cellar flight cannot join the ground landing across the player radius
+### DEV-236 — Castle cellar flight cannot join the ground landing across the player radius
 
-**Status:** fixed-scoped; final packaged104609-position native spawn flood and native/filled-floor negative controls pass Â· **Affected:** New Castle cellar stair / native floor support, slab depth and shared editable opening
+**Status:** fixed-scoped; final packaged104609-position native spawn flood and native/filled-floor negative controls pass · **Affected:** New Castle cellar stair / native floor support, slab depth and shared editable opening
 
 Initial packaged flood reaches the annex but no cellar room. Successive stair probes show the upper landing and first descending tread individually supported but their radius-spanning transition blocked. A subsequent explicit ascent sweep also exposes an incorrect top-landing handoff atZ24.
 
@@ -3482,9 +3482,9 @@ Evidence and verification: build/castle-cellar-rejected-landing.log and first-ro
 
 Older-map obligation: New Castle construction defect repaired before its checkpoint. Other multi-level locations retain separate route/headroom/furniture/terrain audits; no complete Castle or roster acceptance inferred.
 
-### DEV-237 â€” New Castle stair guard blocks the eastern warehouse browsing aisle
+### DEV-237 — New Castle stair guard blocks the eastern warehouse browsing aisle
 
-**Status:** fixed-scoped; real browsing positions and transformed rack/exhibit mesh containment pass Â· **Affected:** Castle ground warehouse / eastern rack bank and north rack
+**Status:** fixed-scoped; real browsing positions and transformed rack/exhibit mesh containment pass · **Affected:** Castle ground warehouse / eastern rack bank and north rack
 
 Packaged CastleRebuildTest rejects the LASER_GRID browsing position at40.5/18.74 after constructing the cellar guard.
 
@@ -3496,9 +3496,9 @@ Evidence and verification: rebuild/verification/castle-cellar-2026-11-03: reject
 
 Older-map obligation: Castle construction regression repaired before publication. Other site furniture layouts and saved custom edits need individual mesh, circulation and stair/guard audits; no blanket acceptance.
 
-### DEV-238 â€” New enclosed Castle cellar flight has no direct fixed lighting
+### DEV-238 — New enclosed Castle cellar flight has no direct fixed lighting
 
-**Status:** fixed-scoped; two supported native stair sconces, actual illumination checks and viewed runtime capture Â· **Affected:** Castle cellar stair fit-out
+**Status:** fixed-scoped; two supported native stair sconces, actual illumination checks and viewed runtime capture · **Affected:** Castle cellar stair fit-out
 
 Initial structural runtime view leaves the lower flight dark despite the side-bypass room ceiling fitting.
 
@@ -3510,9 +3510,9 @@ Evidence and verification: pre-lighting-cellar-stair-runtime.png and final cella
 
 Older-map obligation: New Castle structural-to-fit-out issue. Other enclosed stairs need individual support/occlusion/brightness and body-clearance reviews; no inferred older-map repair.
 
-### DEV-239 â€” Bounded Castle stock layout blocks the original store light switch approach
+### DEV-239 — Bounded Castle stock layout blocks the original store light switch approach
 
-**Status:** fixed-scoped; actual ground routes, all stock browsing stands and all room switches pass Â· **Affected:** Castle stock room / existing switch at28.73,26
+**Status:** fixed-scoped; actual ground routes, all stock browsing stands and all room switches pass · **Affected:** Castle stock room / existing switch at28.73,26
 
 First ground construction test cannot stand at the legacy stock switch after fitting all15 racks into the bounded stock room.
 
@@ -3524,9 +3524,9 @@ Evidence and verification: development/levels/rebuild/verification/castle-ground
 
 Older-map obligation: Audit every location fixture approach after new walls or relocated stock; no general older-map repair inferred.
 
-### DEV-240 â€” Ground-room authoring helper loses the existing native annex ceiling query
+### DEV-240 — Ground-room authoring helper loses the existing native annex ceiling query
 
-**Status:** fixed-scoped; packaged annex fixture, brightness, physical routes and exact save/reopen pass Â· **Affected:** CastleRooms.mountHeight / existing west annex
+**Status:** fixed-scoped; packaged annex fixture, brightness, physical routes and exact save/reopen pass · **Affected:** CastleRooms.mountHeight / existing west annex
 
 Targeted CastleTrainingAnnexTest throws No ceiling at -8,27 after separating default fixture authoring from live singleton initialization.
 
@@ -3538,9 +3538,9 @@ Evidence and verification: development/levels/rebuild/verification/castle-ground
 
 Older-map obligation: Castle helper regression repaired before ground publication; custom/legacy native geometry still needs actual support, not a guessed mount plane.
 
-### DEV-241 â€” Full regression manifest aborts on qualified new test names after running prior tests
+### DEV-241 — Full regression manifest aborts on qualified new test names after running prior tests
 
-**Status:** local repair verified; fresh exact-source full CI still required Â· **Affected:** regression-tests.txt / actual BeckenburgRegressionSuite runner
+**Status:** local repair verified; fresh exact-source full CI still required · **Affected:** regression-tests.txt / actual BeckenburgRegressionSuite runner
 
 Prior b5e full41726781593 is green at workflow level but raw job aborts on org.beckenburg.CastleWorldTerrainTest without a final regression summary. Terrain check is not executed.
 
@@ -3552,9 +3552,9 @@ Evidence and verification: development/levels/rebuild/verification/castle-ground
 
 Older-map obligation: Keep GhostSpriteAtlasIntegrationTest and TwinBodyVisualTest artwork/goldens unchanged. No omission, duplicate inflation or advisory-green badge substitutes for complete raw-suite execution.
 
-### DEV-242 â€” GPU source compile job exhausts its limit before compilation during canonical checkout
+### DEV-242 — GPU source compile job exhausts its limit before compilation during canonical checkout
 
-**Status:** fixed-scoped; fresh actual Linux compile, Windows build and Mesa smoke succeed Â· **Affected:** Existing GPU workflow Linux compile-gpu-java17 job
+**Status:** fixed-scoped; fresh actual Linux compile, Windows build and Mesa smoke succeed · **Affected:** Existing GPU workflow Linux compile-gpu-java17 job
 
 GPU run41731832476/job126250898962 is cancelled while git fetch is running; source compilation never starts. Windows build and actual Mesa smoke succeed at91e8f47b.
 
@@ -3566,9 +3566,9 @@ Evidence and verification: development/levels/rebuild/verification/castle-ground
 
 Older-map obligation: CI preparation correction only; physical GPU/platform acceptance remains independent and cannot be inferred from source compilation or software Mesa.
 
-### DEV-243 â€” New ground room owners and controls must not appear in older native geometry
+### DEV-243 — New ground room owners and controls must not appear in older native geometry
 
-**Status:** fixed-scoped; native-structure-removal negative controls pass Â· **Affected:** Castle legacy/custom saved scenes / ground child-room metadata, switches and portal availability
+**Status:** fixed-scoped; native-structure-removal negative controls pass · **Affected:** Castle legacy/custom saved scenes / ground child-room metadata, switches and portal availability
 
 Source audit of the first ground refit finds that unconditional child room owners, new static switches and door sockets can describe rooms absent from an older native document.
 
@@ -3580,9 +3580,9 @@ Evidence and verification: development/levels/rebuild/verification/castle-ground
 
 Older-map obligation: Custom native documents and their objects are preserved. This is a source/negative-control repair, not a claim that every older edited Castle scene has been visually audited.
 
-### DEV-244 â€” Wall-sconce atlas inverted across both power states
+### DEV-244 — Wall-sconce atlas inverted across both power states
 
-**Status:** fixed-scoped; actual source-pixel and three-angle castle comparisons pass Â· **Affected:** lamp_3_on / lamp_3_off at every runtime site using these shared models
+**Status:** fixed-scoped; actual source-pixel and three-angle castle comparisons pass · **Affected:** lamp_3_on / lamp_3_off at every runtime site using these shared models
 
 Gray casing paints the fluorescent tubes while yellow/white strips wrap the housing edges.
 
@@ -3594,9 +3594,9 @@ Evidence and verification: development/quality/evidence/wall-lamp-uv-2026-11-03;
 
 Older-map obligation: Shared model repair applies to old sites using these identities. Other models retain their existing origin; no claim that unrelated legacy assets are UV-audited.
 
-### DEV-245 â€” Wall-light backing plate is oversized and untextured
+### DEV-245 — Wall-light backing plate is oversized and untextured
 
-**Status:** fixed-scoped; actual textured renderer faces, source-geometry contact and captures verified Â· **Affected:** Castle wall-light mounting plates, including edited scenes and lower/upper fixtures
+**Status:** fixed-scoped; actual textured renderer faces, source-geometry contact and captures verified · **Affected:** Castle wall-light mounting plates, including edited scenes and lower/upper fixtures
 
 A large flat brown rectangle extends above and below the textured light housing.
 
@@ -3608,9 +3608,9 @@ Evidence and verification: development/quality/evidence/wall-lamp-bracket-2026-1
 
 Older-map obligation: Shared Castle renderer correction applies to legacy edited scenes; unrelated map mounting assemblies retain individual audit obligations.
 
-### DEV-246 â€” Regression preflight cannot load test classes with the real CI command
+### DEV-246 — Regression preflight cannot load test classes with the real CI command
 
-**Status:** fixed-scoped; actual full324-entry run now completes with322 unique passes and2 pre-existing art failures Â· **Affected:** Full regression manifest runner / workflow41738088189 at50829e61
+**Status:** fixed-scoped; actual full324-entry run now completes with322 unique passes and2 pre-existing art failures · **Affected:** Full regression manifest runner / workflow41738088189 at50829e61
 
 Overall workflow is green, but raw advisory step aborts before executing any regression: ClassNotFoundException BeckenburgDiagnosticsTest.
 
@@ -3622,9 +3622,9 @@ Evidence and verification: development/levels/rebuild/verification/castle-upper-
 
 Older-map obligation: CI verification repair only. Prior overall success does not certify skipped regression bodies. Fresh exact-source full run must reach its actual summary.
 
-### DEV-247 â€” Old geometry probes assume every Castle aperture and fitting is on the ground storey
+### DEV-247 — Old geometry probes assume every Castle aperture and fitting is on the ground storey
 
-**Status:** corrected-probes; actual fixture vertices and all authored casement coordinates pass Â· **Affected:** CastleGroundConstructionTest ceiling clearance and CastlePortalSlotTest casement sampling
+**Status:** corrected-probes; actual fixture vertices and all authored casement coordinates pass · **Affected:** CastleGroundConstructionTest ceiling clearance and CastlePortalSlotTest casement sampling
 
 New upper walls are falsely intersected by standing-body volume around a ground ceiling lamp; added upper casements are probed at ground window coordinates.
 
@@ -3636,9 +3636,9 @@ Evidence and verification: development/levels/rebuild/verification/castle-upper-
 
 Older-map obligation: These are inspection-probe corrections, not removal of clearance/optical requirements. Original ground windows and fittings remain checked.
 
-### DEV-248 â€” South rampart capture contains flat polygon patches in the night sky
+### DEV-248 — South rampart capture contains flat polygon patches in the night sky
 
-**Status:** fixed-scoped clear-night painter; six actual matched Castle exterior views verified Â· **Affected:** Castle southern upper exterior view
+**Status:** fixed-scoped clear-night painter; six actual matched Castle exterior views verified · **Affected:** Castle southern upper exterior view
 
 Actual upper-south-walk-runtime capture shows isolated flat dark polygon patches above the distant horizon.
 
@@ -3650,9 +3650,9 @@ Evidence and verification: verification/castle-closeout-2026-11-06: original zer
 
 Older-map obligation: Shared zero-cover painter corrected, but each older map/sky profile and all other weather states still require individual visual acceptance. Do not infer a global map fix from this Castle review.
 
-### DEV-249 â€” Owner rejects primitive Castle museum studies, especially disconnected armour slabs
+### DEV-249 — Owner rejects primitive Castle museum studies, especially disconnected armour slabs
 
-**Status:** rejected; reference-led armour reconstruction and whole-kit reference review in progress Â· **Affected:** Candidate Castle museum kit, not integrated into runtime
+**Status:** rejected; reference-led armour reconstruction and whole-kit reference review in progress · **Affected:** Candidate Castle museum kit, not integrated into runtime
 
 Armour reads as generic primitive shapes; three tasset slabs float in front of the torso. Other museum studies lack adequate reference examination and finish.
 
@@ -3664,9 +3664,9 @@ Evidence and verification: development/assets/castle-museum/reference-brief.md; 
 
 Older-map obligation: Existing legacy decorations are not assumed correct. This rejection blocks promotion of the new museum kit; older-map source/art audits remain separate.
 
-### DEV-250 â€” Dense museum armour uses the wrong triangle budget and disconnected-looking foot strips
+### DEV-250 — Dense museum armour uses the wrong triangle budget and disconnected-looking foot strips
 
-**Status:** candidate corrected; exported1036-triangle geometry/contact checks pass; full art/runtime acceptance remains open Â· **Affected:** Castle museum armour study, quarantined outside runtime
+**Status:** candidate corrected; exported1036-triangle geometry/contact checks pass; full art/runtime acceptance remains open · **Affected:** Castle museum armour study, quarantined outside runtime
 
 Reference rebuild grows to40,796 triangles using geometric rivets/trim; sabaton strips look detached. Owner requires car/character-scale budgets, sharp lower-count shapes, texture-authored detail and no floating pieces.
 
@@ -3678,9 +3678,9 @@ Evidence and verification: development/assets/castle-museum/armour-review.json, 
 
 Older-map obligation: Apply owner budget/attachment direction to future model work and audit existing assets individually. Other museum kit members remain unaccepted and outside runtime.
 
-### DEV-251 â€” Asset/floor diagnostics use an over-broad anatomical region or native-only support domain
+### DEV-251 — Asset/floor diagnostics use an over-broad anatomical region or native-only support domain
 
-**Status:** corrected diagnostic domains; actual control reproduces misleading results; no renderer change Â· **Affected:** Castle museum development probes, not a production floor/rasterizer defect
+**Status:** corrected diagnostic domains; actual control reproduces misleading results; no renderer change · **Affected:** Castle museum development probes, not a production floor/rasterizer defect
 
 A pixel rectangle below the torso counts the intentional gap between thigh guards as uncovered chest; native-only floor query misses the shared authored archive deck. A tiny body probe also falls inside deliberate step-clearance tolerance.
 
@@ -3692,9 +3692,9 @@ Evidence and verification: development/levels/rebuild/verification/castle-museum
 
 Older-map obligation: Keep existing floor/body/ray requirements. This correction does not certify unaudited older assets or justify loosening production geometry checks.
 
-### DEV-252 â€” Candidate museum textures and fine-detail geometry do not read correctly in the real diffuse renderer
+### DEV-252 — Candidate museum textures and fine-detail geometry do not read correctly in the real diffuse renderer
 
-**Status:** fixed for scoped armour/caption/barrier pilot; remaining kit requires independent review Â· **Affected:** Castle museum candidate armour atlas, label geometry and brass post finish
+**Status:** fixed for scoped armour/caption/barrier pilot; remaining kit requires independent review · **Affected:** Castle museum candidate armour atlas, label geometry and brass post finish
 
 Initial source texture uses dark speckling and a broad unintended back seam; first plaque uses9128 triangles of text geometry; post finish reads flat under diffuse-only lighting.
 
@@ -3706,9 +3706,9 @@ Evidence and verification: development/assets/castle-museum/previews/rejected-so
 
 Older-map obligation: Existing scenery remains individually unaudited. These three reviewed models do not accept the other rejected museum studies or unrelated legacy UV/material work.
 
-### DEV-253 â€” Merged full-suite lighting parity times out despite isolated all-site correctness passing
+### DEV-253 — Merged full-suite lighting parity times out despite isolated all-site correctness passing
 
-**Status:** resolved-scoped; exact checkpoint CI parity passes and current-main full suite335/0 Â· **Affected:** PreparedLightBatchParityTest on merged Castle checkpoint6fcb9791, full workflow41775037193
+**Status:** resolved-scoped; exact checkpoint CI parity passes and current-main full suite335/0 · **Affected:** PreparedLightBatchParityTest on merged Castle checkpoint6fcb9791, full workflow41775037193
 
 Actual325-entry suite records322 passes and3 failures: two prior sprite-art defects plus PreparedLightBatchParityTest exceeding90seconds. Workflow green is advisory and not complete regression acceptance.
 
@@ -3720,9 +3720,9 @@ Evidence and verification: development/levels/rebuild/verification/castle-museum
 
 Older-map obligation: Test covers Castle and all authored site types. New map dressing does not certify older-map performance or waive sprite-art failures.
 
-### DEV-256 â€” Castle candidate surfaces lack credible authored materials and fireplace obstructs light-switch approach
+### DEV-256 — Castle candidate surfaces lack credible authored materials and fireplace obstructs light-switch approach
 
-**Status:** fixed-scoped source/export/native pilot; final32 checks pass; full Castle/platform acceptance open Â· **Affected:** Castle tester beds, archive armour and new cold common-room fireplace
+**Status:** fixed-scoped source/export/native pilot; final32 checks pass; full Castle/platform acceptance open · **Affected:** Castle tester beds, archive armour and new cold common-room fireplace
 
 Owner rejects flat/striped procedural wood, cloth, steel and stone. First fireplace location obstructs the common-room east-wall light-switch standing point.
 
@@ -3734,9 +3734,9 @@ Evidence and verification: development/assets/castle-museum/imagegen-geometry-in
 
 Older-map obligation: No automatic visual acceptance for old maps or remaining museum studies. Apply owner low-count and texture-detail direction individually, keeping physical support and fixture approaches.
 
-### DEV-257 â€” Tester bed stretches decorative atlas onto thin edges and overlaps canopy beam end-caps
+### DEV-257 — Tester bed stretches decorative atlas onto thin edges and overlaps canopy beam end-caps
 
-**Status:** fixed-scoped source/export/native pilot; final32 checks pass; full Castle/platform acceptance open Â· **Affected:** New Castle tester-bed source, exported GLB and six native lodging placements
+**Status:** fixed-scoped source/export/native pilot; final32 checks pass; full Castle/platform acceptance open · **Affected:** New Castle tester-bed source, exported GLB and six native lodging placements
 
 Owner identifies poor UV mapping and dark rectangular patches at canopy/post corners.
 
@@ -3748,9 +3748,9 @@ Evidence and verification: development/assets/castle-museum/previews/rejected-be
 
 Older-map obligation: These corrected UVs/joints apply to the new bed only. Audit other older furniture and remaining museum studies individually.
 
-### DEV-277 â€” Repacking already embedded imported GLB images clears the editable source texture payload
+### DEV-277 — Repacking already embedded imported GLB images clears the editable source texture payload
 
-**Status:** fixed-scoped in new reused-frame/rug authoring builder; fresh packed-source reopen passes Â· **Affected:** Blender5 heritage source creation and studio inspection; runtime GLB texture bytes were valid
+**Status:** fixed-scoped in new reused-frame/rug authoring builder; fresh packed-source reopen passes · **Affected:** Blender5 heritage source creation and studio inspection; runtime GLB texture bytes were valid
 
 Independent source renders show magenta frame and rug even though production GLB/PNG decoding succeeds.
 
@@ -3762,9 +3762,9 @@ Evidence and verification: development/assets/castle-museum/previews/rejected-re
 
 Older-map obligation: Do not assume older Blender sources are packed or visually accepted. This correction is scoped to the new authoring path; original reusable source GLBs remain unchanged.
 
-### DEV-278 â€” Heraldic mounting spine projects beyond the shield silhouette
+### DEV-278 — Heraldic mounting spine projects beyond the shield silhouette
 
-**Status:** fixed-scoped source/export/native pilot; final checks pending Â· **Affected:** New Castle heraldic candidate only
+**Status:** fixed-scoped source/export/native pilot; final checks pending · **Affected:** New Castle heraldic candidate only
 
 First front/quarter exported views expose a broad steel board above/below the shield.
 
@@ -3776,9 +3776,9 @@ Evidence and verification: development/assets/castle-museum/previews/rejected-he
 
 Older-map obligation: Audit other mounting boards/statue/heraldic studies independently; no retrospective older-map acceptance.
 
-### DEV-279 â€” Reusable modern boiler has fourteen detached detail components and32 zero-area faces
+### DEV-279 — Reusable modern boiler has fourteen detached detail components and32 zero-area faces
 
-**Status:** fixed-scoped Castle variant; original library retained with older-map audit obligation Â· **Affected:** Original level_boiler_modern library model and new Castle plant pilot
+**Status:** fixed-scoped Castle variant; original library retained with older-map audit obligation · **Affected:** Original level_boiler_modern library model and new Castle plant pilot
 
 Actual triangle contact graph rejects9 grille strips,2 vertical trims and3 control buttons as unsupported. Source has32 degenerate triangles.
 
@@ -3790,9 +3790,9 @@ Evidence and verification: development/assets/castle-services/rejected-original-
 
 Older-map obligation: Audit every older map using level_boiler_modern or its worn/other boiler variants individually; original source remains unmodified. No global fix/acceptance claim.
 
-### DEV-280 â€” New plant connector approval omitted the actual selectable editor model catalog
+### DEV-280 — New plant connector approval omitted the actual selectable editor model catalog
 
-**Status:** fixed-scoped through LevelAssets.MODELS and actual native constructor/catalog regression Â· **Affected:** New Castle plant boiler/connector integration before promotion
+**Status:** fixed-scoped through LevelAssets.MODELS and actual native constructor/catalog regression · **Affected:** New Castle plant boiler/connector integration before promotion
 
 Actual CastleLevelEdits construction rejected plant-boiler-connections as Invalid editable prop despite boolean approval.
 
@@ -3804,9 +3804,9 @@ Evidence and verification: verification/castle-plant-2026-11-06/plant-rejected-m
 
 Older-map obligation: No allowance or validation threshold relaxed; audit other approved-only model additions individually when integrating them into native scenes.
 
-### DEV-281 â€” Shared workbench tool layer floats above the actual tabletop
+### DEV-281 — Shared workbench tool layer floats above the actual tabletop
 
-**Status:** fixed-scoped shared clean/worn model repair; all older placements still require individual audit Â· **Affected:** level_workbench and level_workbench_worn, including both Castle repair-room native instances
+**Status:** fixed-scoped shared clean/worn model repair; all older placements still require individual audit · **Affected:** level_workbench and level_workbench_worn, including both Castle repair-room native instances
 
 Actual exported triangle-contact audit finds5 unsupported tabletop groups: three sockets and their connected accessory layer.
 
@@ -3818,9 +3818,9 @@ Evidence and verification: development/assets/castle-training/*-rejected-source.
 
 Older-map obligation: Corrected resource reaches shared IDs in saved scenes, but each older map/placement/circulation remains individually unaudited; no all-map acceptance.
 
-### DEV-282 â€” Generic workbench materials and face UVs make useful equipment read as toy-like stacked primitives
+### DEV-282 — Generic workbench materials and face UVs make useful equipment read as toy-like stacked primitives
 
-**Status:** fixed-scoped generated surfaces and component UVs;37 targeted checks pass; full-site polish open Â· **Affected:** Shared clean/worn workbench textures and all instances using those runtime model IDs
+**Status:** fixed-scoped generated surfaces and component UVs;37 targeted checks pass; full-site polish open · **Affected:** Shared clean/worn workbench textures and all instances using those runtime model IDs
 
 Owner rejects flat colored material layers; paper storage reads as tan blocks, vice as bright blue slabs, timber as generic stripes.
 
@@ -3832,9 +3832,9 @@ Evidence and verification: development/assets/castle-training/textures/*imagegen
 
 Older-map obligation: Shared resource/material origin updates every same-ID instance; verify each older site actual placement and lighting separately, without treating resource repair as map acceptance.
 
-### DEV-283 â€” Signed training annex remains excluded from native saved-spawn validation
+### DEV-283 — Signed training annex remains excluded from native saved-spawn validation
 
-**Status:** fixed-scoped; all three native spawn validators share signed bounds; actual negative-X save/reopen passes Â· **Affected:** CastleLevelEdits.setSpawn and saved-document spawn validation for negative-X annex
+**Status:** fixed-scoped; all three native spawn validators share signed bounds; actual negative-X save/reopen passes · **Affected:** CastleLevelEdits.setSpawn and saved-document spawn validation for negative-X annex
 
 setSpawn(-14,18.4,PI) rejects Invalid playable spawn although the annex exists in signed authoring bounds.
 
@@ -3846,9 +3846,9 @@ Evidence and verification: verification/castle-finish-2026-11-06/training-reject
 
 Older-map obligation: Positive existing spawns must remain unchanged; this is a Castle-annex persistence obligation, not proof that other signed maps are audited.
 
-### DEV-284 â€” Retained keeper study is an assembly rather than continuous carved stone
+### DEV-284 — Retained keeper study is an assembly rather than continuous carved stone
 
-**Status:** fixed-scoped in final Castle fit-out checkpoint Â· **Affected:** Castle finishing candidates and their inspection tooling only
+**Status:** fixed-scoped in final Castle fit-out checkpoint · **Affected:** Castle finishing candidates and their inspection tooling only
 
 Robe, face, mantle and hands retain primitive boundaries; robe-to-plinth gap undermines a carved figure.
 
@@ -3860,9 +3860,9 @@ Evidence and verification: keeper-finish-review.json, keeper-independent-review.
 
 Older-map obligation: No unaudited older map or model is accepted. Preserve original source assets; review reused models/placements individually.
 
-### DEV-285 â€” Inherited UV layer hides new keeper surfacing
+### DEV-285 — Inherited UV layer hides new keeper surfacing
 
-**Status:** fixed-scoped in final Castle fit-out checkpoint Â· **Affected:** Castle finishing candidates and their inspection tooling only
+**Status:** fixed-scoped in final Castle fit-out checkpoint · **Affected:** Castle finishing candidates and their inspection tooling only
 
 First exported limestone renders show stretched streaks rather than generated stone and face/codex regions.
 
@@ -3874,9 +3874,9 @@ Evidence and verification: previews/rejected-keeper-inherited-uv; final keeper-f
 
 Older-map obligation: No unaudited older map or model is accepted. Preserve original source assets; review reused models/placements individually.
 
-### DEV-286 â€” First native collection fittings face their backs into the room
+### DEV-286 — First native collection fittings face their backs into the room
 
-**Status:** fixed-scoped in final Castle fit-out checkpoint Â· **Affected:** Castle finishing candidates and their inspection tooling only
+**Status:** fixed-scoped in final Castle fit-out checkpoint · **Affected:** Castle finishing candidates and their inspection tooling only
 
 Actual Castle view shows rear of keeper and vault cabinet doors facing the wall.
 
@@ -3888,9 +3888,9 @@ Evidence and verification: Rejected native PNGs and final finish-keeper/finish-v
 
 Older-map obligation: No unaudited older map or model is accepted. Preserve original source assets; review reused models/placements individually.
 
-### DEV-287 â€” Candidate inspection confuses diagnostic domains and lazy packed images
+### DEV-287 — Candidate inspection confuses diagnostic domains and lazy packed images
 
-**Status:** fixed-scoped in final Castle fit-out checkpoint Â· **Affected:** Castle finishing candidates and their inspection tooling only
+**Status:** fixed-scoped in final Castle fit-out checkpoint · **Affected:** Castle finishing candidates and their inspection tooling only
 
 Initial checks flag supported kitchen furniture and valid packed source images; attempted cameras also occupy existing hearth/wardrobe/masonry clearance.
 
@@ -3902,9 +3902,9 @@ Evidence and verification: keeper-rejected-packing-check.log, keeper-pack-debug.
 
 Older-map obligation: No unaudited older map or model is accepted. Preserve original source assets; review reused models/placements individually.
 
-### DEV-288 â€” Kitchen provisions chest obstructs entry light switch approach
+### DEV-288 — Kitchen provisions chest obstructs entry light switch approach
 
-**Status:** fixed-scoped in final Castle fit-out checkpoint Â· **Affected:** Castle finishing candidates and their inspection tooling only
+**Status:** fixed-scoped in final Castle fit-out checkpoint · **Affected:** Castle finishing candidates and their inspection tooling only
 
 Existing actual CastleGroundConstructionTest fails Switch inaccessible after room refit at6.27/29.4.
 
@@ -3916,9 +3916,9 @@ Evidence and verification: castle-finish-rejected-switch.log; final CastleGround
 
 Older-map obligation: No unaudited older map or model is accepted. Preserve original source assets; review reused models/placements individually.
 
-### DEV-289 â€” Symmetric dining seats crowd every direct table approach
+### DEV-289 — Symmetric dining seats crowd every direct table approach
 
-**Status:** fixed-scoped in final Castle fit-out checkpoint Â· **Affected:** Castle finishing candidates and their inspection tooling only
+**Status:** fixed-scoped in final Castle fit-out checkpoint · **Affected:** Castle finishing candidates and their inspection tooling only
 
 Existing CastleHubIntegrationTest cannot reach any of the four table approach points.
 
@@ -3930,9 +3930,9 @@ Evidence and verification: castle-finish-rejected-table-approach.log; final Cast
 
 Older-map obligation: No unaudited older map or model is accepted. Preserve original source assets; review reused models/placements individually.
 
-### DEV-290 â€” Castle compass audit omits signed annex/cellar and conflates local cameras with search access
+### DEV-290 — Castle compass audit omits signed annex/cellar and conflates local cameras with search access
 
-**Status:** fixed-scoped complete42-space source audit; all168 cardinal PNGs actually viewed Â· **Affected:** SiteRoomCompassAudit Castle branch and gallery labels
+**Status:** fixed-scoped complete42-space source audit; all168 cardinal PNGs actually viewed · **Affected:** SiteRoomCompassAudit Castle branch and gallery labels
 
 Auditor used only CastleRooms.ALL, omitting all8 annex/cellar spaces; clear teleport cameras inside3 sealed rooms could be mistaken for accessible rooms.
 
@@ -3944,9 +3944,9 @@ Evidence and verification: castle-closeout/castle/castle-rooms.csv:42 rows,39 op
 
 Older-map obligation: Review each other location separately. These new captures replace neither its visual audit nor full native/runtime acceptance.
 
-### DEV-291 â€” Saved Castle layouts miss rebuild content and structure-v1 reset discards authored edits
+### DEV-291 — Saved Castle layouts miss rebuild content and structure-v1 reset discards authored edits
 
-**Status:** verified and merged through PR69/70; actual343/0 plus required native Windows/GPU acceptance atfb481f4c Â· **Affected:** Castle native document loading, saved layout generation and explicit editor rebuild
+**Status:** verified and merged through PR69/70; actual343/0 plus required native Windows/GPU acceptance atfb481f4c · **Affected:** Castle native document loading, saved layout generation and explicit editor rebuild
 
 Unchanged old defaults do not receive newer rooms/fittings; actual old structure-v1 loader changes an authored chair x16.0 back to default15.9.
 
@@ -3958,9 +3958,9 @@ Evidence and verification: LegacySceneLossControl old packaged native loader fai
 
 Older-map obligation: Castle-specific native document migration only. Other map codecs and arbitrary custom scene visual fitness remain individually unaudited; no global migration or map acceptance.
 
-### DEV-292 â€” Native rebuild conflict validation missed fully contained retained objects
+### DEV-292 — Native rebuild conflict validation missed fully contained retained objects
 
-**Status:** verified and merged through PR69/70; actual343/0 plus required native Windows/GPU acceptance atfb481f4c Â· **Affected:** Castle explicit saved-scene upgrade validation
+**Status:** verified and merged through PR69/70; actual343/0 plus required native Windows/GPU acceptance atfb481f4c · **Affected:** Castle explicit saved-scene upgrade validation
 
 A retained book on its supported 8cm plinth could be swallowed by the newly placed keeper base without any triangle edge crossing.
 
@@ -3972,9 +3972,9 @@ Evidence and verification: Actual retained supported book negative failed before
 
 Older-map obligation: Castle saved-scene upgrade only; other map/model intersections remain individually unaudited.
 
-### DEV-293 â€” Development gallery deployment times out while syncing oversized whole-repository artifact
+### DEV-293 — Development gallery deployment times out while syncing oversized whole-repository artifact
 
-**Status:** deployment recovered; actual main Pages HTML/index/native/sky PNG bytes verified atdd70440f; future checkpoints require their own deployment readback Â· **Affected:** Shared GitHub Pages development gallery at main25578d283ec4a77971229172098f267da4c66ad3
+**Status:** deployment recovered; actual main Pages HTML/index/native/sky PNG bytes verified atdd70440f; future checkpoints require their own deployment readback · **Affected:** Shared GitHub Pages development gallery at main25578d283ec4a77971229172098f267da4c66ad3
 
 Pages42339395744 builds successfully then exceeds deployment deadline syncing files. Artifact3883804673 bytes exceeds advertised1GB allowance.
 
@@ -3986,9 +3986,9 @@ Evidence and verification: Source verification: verification/castle-story-2026-1
 
 Older-map obligation: Shared publication issue affects all locations; no loss or acceptance of their runtime content is inferred.
 
-### DEV-294 â€” GPU UI smoke rejects valid van exits needing diagonal WASD input
+### DEV-294 — GPU UI smoke rejects valid van exits needing diagonal WASD input
 
-**Status:** verified and merged through PR69/70; actual343/0 plus required native Windows/GPU acceptance atfb481f4c Â· **Affected:** GPU live UI van movement planning, House/Farmhouse/School
+**Status:** verified and merged through PR69/70; actual343/0 plus required native Windows/GPU acceptance atfb481f4c · **Affected:** GPU live UI van movement planning, House/Farmhouse/School
 
 Exact source2293b75f GPU42341030548 passed Castle/11-map renderer checks but failed Briar House live movement with no short collision-valid WASD route.
 
@@ -4000,9 +4000,9 @@ Evidence and verification: Actual old single-key reproduction148/360; actual cor
 
 Older-map obligation: This corrects the GPU diagnostic, not map geometry. Other location van routes and physical-hardware performance remain independently required. Preserve existing van implementation.
 
-### DEV-295 â€” Windows Git checkout corrupts frozen native Castle baseline digests
+### DEV-295 — Windows Git checkout corrupts frozen native Castle baseline digests
 
-**Status:** verified and merged through PR69/70; actual343/0 plus required native Windows/GPU acceptance atfb481f4c Â· **Affected:** Castle saved-native rebuild resource loading on core.autocrlf=true installations/CI
+**Status:** verified and merged through PR69/70; actual343/0 plus required native Windows/GPU acceptance atfb481f4c · **Affected:** Castle saved-native rebuild resource loading on core.autocrlf=true installations/CI
 
 Full42341031882 actual transcript is342passed/1failed despite overall workflow success: CastleRebuildUpgradeTest cannot load original baseline because its immutable SHA changed.
 
@@ -4014,9 +4014,9 @@ Evidence and verification: Actual git core.autocrlf=true checkout before pin rep
 
 Older-map obligation: Castle frozen resources only. Individually audit other fingerprinted text assets; do not normalize arbitrary user scenes or infer old map codecs/other packaging fixed.
 
-### DEV-296 â€” Visible Castle window mullions have no shared optical or small-body solids
+### DEV-296 — Visible Castle window mullions have no shared optical or small-body solids
 
-**Status:** fixed;49 focused packaged checks after targeted repairs/resumption, final native input/placement reviews pass; exact-source online acceptance pending Â· **Affected:** Castle window wooden crossbars and surrounds; new local loose-body contact
+**Status:** fixed;49 focused packaged checks after targeted repairs/resumption, final native input/placement reviews pass; exact-source online acceptance pending · **Affected:** Castle window wooden crossbars and surrounds; new local loose-body contact
 
 An actual light ray passes through the centre of the visibly solid wooden crossbar. Existing CastlePortalSlotTest incorrectly expected that exact ray to pass.
 
@@ -4028,9 +4028,9 @@ Evidence and verification: Actual old implementation fails enhanced CastlePortal
 
 Older-map obligation: Only Castle frames were audited. Other map windows, corners, floors, roof joins and furnishings retain individual optical/body audit obligations; no global light-bleed or collision acceptance.
 
-### DEV-297 â€” Castle dynamic-cache generalization removed the House diagnostic entrypoint
+### DEV-297 — Castle dynamic-cache generalization removed the House diagnostic entrypoint
 
-**Status:** fixed;49 focused packaged checks after targeted repairs/resumption, final native input/placement reviews pass; exact-source online acceptance pending Â· **Affected:** Shared SceneRenderer dynamic-geometry diagnostics during Castle loose-object integration
+**Status:** fixed;49 focused packaged checks after targeted repairs/resumption, final native input/placement reviews pass; exact-source online acceptance pending · **Affected:** Shared SceneRenderer dynamic-geometry diagnostics during Castle loose-object integration
 
 Actual DynamicGeometryRetentionTest fails NoSuchMethodException for beginDynamicGeometry(HouseMap) after its private parameter was generalized to Object.
 
@@ -4042,9 +4042,9 @@ Evidence and verification: Actual failure retained in castle-dynamic-house-entry
 
 Older-map obligation: The bridge preserves House-derived callers and diagnostics. It does not accept unaudited location visuals or physical-hardware performance.
 
-### DEV-298 â€” Upper stair mesh, loose-body support and optical mass disagreed
+### DEV-298 — Upper stair mesh, loose-body support and optical mass disagreed
 
-**Status:** fixed; complete package,7final contact/lighting checks and actual native inputs pass; exact-source online gates pending Â· **Affected:** Castle existing upper stairs; local loose objects and analytic lighting
+**Status:** fixed; complete package,7final contact/lighting checks and actual native inputs pass; exact-source online gates pending · **Affected:** Castle existing upper stairs; local loose objects and analytic lighting
 
 At17.5/25.75 the visible tread is2.21m while the new loose-body adapter used the2.125m smooth navigation incline; a ray wholly inside the rendered closed mass also passed.
 
@@ -4056,9 +4056,9 @@ Evidence and verification: Actual packaged pre-fix support and closed-stair ray 
 
 Older-map obligation: Castle upper steps only. Other location stair support and light-bleed obligations remain individually unaudited.
 
-### DEV-299 â€” House fitted-candidate toilet initially faced the wall
+### DEV-299 — House fitted-candidate toilet initially faced the wall
 
-**Status:** corrected in construction candidate; actual runtime capture reviewed Â· **Affected:** HouseRebuildFittings pilot bathroom only; dispatched House unchanged
+**Status:** corrected in construction candidate; actual runtime capture reviewed · **Affected:** HouseRebuildFittings pilot bathroom only; dispatched House unchanged
 
 Initial runtime candidate showed the rear cistern from the room; bowl faced the north wall.
 
@@ -4070,9 +4070,9 @@ Evidence and verification: development/captures/house-fixture-fit/bathroom-fixtu
 
 Older-map obligation: Only this candidate was corrected. Other maps retain individual fixture orientation, support, circulation and light-separation audits.
 
-### DEV-300 â€” House construction pilot used phantom flat outdoor support above its editor terrain
+### DEV-300 — House construction pilot used phantom flat outdoor support above its editor terrain
 
-**Status:** verified in landscape construction candidate;11 packaged checks pass; full mission/visual gates remain open Â· **Affected:** briar-rebuild original graybox and fitted construction pilot outdoor surfaces; not dispatched House
+**Status:** verified in landscape construction candidate;11 packaged checks pass; full mission/visual gates remain open · **Affected:** briar-rebuild original graybox and fitted construction pilot outdoor surfaces; not dispatched House
 
 At8/5, rendered native terrain is-0.649999976m but the pilot accepts feet at0m. Rectangular room decks still cap outdoor ground.
 
@@ -4084,9 +4084,9 @@ Evidence and verification: HouseRebuildLandscapeTest reproduces exact original0/
 
 Older-map obligation: Only new House landscape candidate uses this opt-in. Existing graybox remains a frozen reproduction. Audit older maps separately for visible versus physical ground, pads, ceilings, stairs and basement caps.
 
-### DEV-301 â€” House pilot arrival anchor and review cameras could occupy visible neighbour buildings
+### DEV-301 — House pilot arrival anchor and review cameras could occupy visible neighbour buildings
 
-**Status:** verified in landscape construction candidate;11 packaged checks pass; full mission/visual gates remain open Â· **Affected:** House construction pilot approach zone and canonical suburban background parcels
+**Status:** verified in landscape construction candidate;11 packaged checks pass; full mission/visual gates remain open · **Affected:** House construction pilot approach zone and canonical suburban background parcels
 
 Original approach spawn16.5/23.25 and initial review viewpoints lie inside rendered neighbouring residences; old construction body checks did not include their solids.
 
@@ -4098,9 +4098,9 @@ Evidence and verification: Two rejected runtime camera PNGs retained under house
 
 Older-map obligation: Canonical arrival contract unchanged. Audit every older isolated/native map builder for omission of rendered neighbour colliders, private-parcel containment and standing anchor fit. No global map acceptance.
 
-### DEV-302 â€” House pilot exterior inherits room finishes and repeated room gables
+### DEV-302 — House pilot exterior inherits room finishes and repeated room gables
 
-**Status:** verified in dwelling construction candidate; one closed roof/exterior independent of interior finishes; whole-map gates remain open Â· **Affected:** House first-principles construction pilot exterior; other generic room-shell maps require separate audit
+**Status:** verified in dwelling construction candidate; one closed roof/exterior independent of interior finishes; whole-map gates remain open · **Affected:** House first-principles construction pilot exterior; other generic room-shell maps require separate audit
 
 Native landscape overview exposes several parallel small room gables and exterior wall patches using interior tile/room finishes, rather than one deliberately constructed dwelling envelope.
 
@@ -4112,9 +4112,9 @@ Evidence and verification: development/captures/house-landscape/native-parcel-ov
 
 Older-map obligation: Audit individual older House/Farmhouse/institution room-derived envelopes; current bounds or navigation checks do not prove roof joins, external finish or structural coherence.
 
-### DEV-303 â€” House pilot kitchen window and garden door overlap
+### DEV-303 — House pilot kitchen window and garden door overlap
 
-**Status:** verified in current construction/export checkpoint; complete map acceptance remains open Â· **Affected:** House graybox/fitted/landscape inherited kitchen north-wall opening pair
+**Status:** verified in current construction/export checkpoint; complete map acceptance remains open · **Affected:** House graybox/fitted/landscape inherited kitchen north-wall opening pair
 
 Door16.5/width1.05 and window15.7/width1.25 overlap0.35m; actual rear runtime view shows conflicting frames.
 
@@ -4126,9 +4126,9 @@ Evidence and verification: Rejected rear runtime PNG and updated opening/frame r
 
 Older-map obligation: Audit other maps individually. For DEV-306 refresh/review older complete-scene LevelSceneSource exports; runtime captures and standalone GLB reimports do not automatically inherit this defect. No global model, light-bleed, terrain or hardware acceptance.
 
-### DEV-304 â€” New porch slab initially lies below visible editor terrain
+### DEV-304 — New porch slab initially lies below visible editor terrain
 
-**Status:** verified in current construction/export checkpoint; complete map acceptance remains open Â· **Affected:** New House envelope construction candidate only
+**Status:** verified in current construction/export checkpoint; complete map acceptance remains open · **Affected:** New House envelope construction candidate only
 
 Actual failing clearance check: deck0m, soil0.0006313420587m; terrain could paint across a flush slab.
 
@@ -4140,9 +4140,9 @@ Evidence and verification: Actual before assertion and corrected body/support/ro
 
 Older-map obligation: Audit other maps individually. For DEV-306 refresh/review older complete-scene LevelSceneSource exports; runtime captures and standalone GLB reimports do not automatically inherit this defect. No global model, light-bleed, terrain or hardware acceptance.
 
-### DEV-305 â€” Arrival background buildings and fences crowd the House
+### DEV-305 — Arrival background buildings and fences crowd the House
 
-**Status:** verified in current construction/export checkpoint; complete map acceptance remains open Â· **Affected:** House-side suburban context in the construction pilot; owner-directed correction
+**Status:** verified in current construction/export checkpoint; complete map acceptance remains open · **Affected:** House-side suburban context in the construction pilot; owner-directed correction
 
 Nearby context visually pressed against the dwelling/porch in native and runtime views.
 
@@ -4154,9 +4154,9 @@ Evidence and verification: Actual rendered mesh clearance6.295m, corresponding s
 
 Older-map obligation: Audit other maps individually. For DEV-306 refresh/review older complete-scene LevelSceneSource exports; runtime captures and standalone GLB reimports do not automatically inherit this defect. No global model, light-bleed, terrain or hardware acceptance.
 
-### DEV-306 â€” Native scene texture export scrambles the van atlas and other material origins
+### DEV-306 — Native scene texture export scrambles the van atlas and other material origins
 
-**Status:** verified in current construction/export checkpoint; complete map acceptance remains open Â· **Affected:** Complete scenes exported by LevelSceneSource; original runtime mesh/UVs remain intact
+**Status:** verified in current construction/export checkpoint; complete map acceptance remains open · **Affected:** Complete scenes exported by LevelSceneSource; original runtime mesh/UVs remain intact
 
 Van atlas mismatches14474/16384runtime texels;12006have substantial channel differences, producing the mangled-looking preview reported by the owner.
 
@@ -4168,9 +4168,9 @@ Evidence and verification: Actual before/after logs: all66used textured material
 
 Older-map obligation: Audit other maps individually. For DEV-306 refresh/review older complete-scene LevelSceneSource exports; runtime captures and standalone GLB reimports do not automatically inherit this defect. No global model, light-bleed, terrain or hardware acceptance.
 
-### DEV-307 â€” Texture regression overwrites canonical native authoring staging
+### DEV-307 — Texture regression overwrites canonical native authoring staging
 
-**Status:** verified in current construction/export checkpoint; complete map acceptance remains open Â· **Affected:** New native texture diagnostic harness only
+**Status:** verified in current construction/export checkpoint; complete map acceptance remains open · **Affected:** New native texture diagnostic harness only
 
 Running the regression after other construction checks changed process-local material IDs in the canonical export; the native parity guard correctly rejected old group counts.
 
@@ -4182,9 +4182,9 @@ Evidence and verification: Actual failed parity transcript preserved. Enhanced f
 
 Older-map obligation: Audit other maps individually. For DEV-306 refresh/review older complete-scene LevelSceneSource exports; runtime captures and standalone GLB reimports do not automatically inherit this defect. No global model, light-bleed, terrain or hardware acceptance.
 
-### DEV-254 â€” Safe areas lack a shared animated energy boundary matching ghost exclusion
+### DEV-254 — Safe areas lack a shared animated energy boundary matching ghost exclusion
 
-**Status:** fixed-scoped; focused CPU/TCP and actual OpenGL evidence; installer acceptance pending Â· **Affected:** Shared van at investigation sites, entire Castle HQ, and settled active protective wards
+**Status:** fixed-scoped; focused CPU/TCP and actual OpenGL evidence; installer acceptance pending · **Affected:** Shared van at investigation sites, entire Castle HQ, and settled active protective wards
 
 The investigation van has no recognizable sanctuary haze; the old optional arena cue uses rectangular motes rather than a circular fading dome.
 
@@ -4196,9 +4196,9 @@ Evidence and verification: development/levels/previews/safe-area-barrier/: actua
 
 Older-map obligation: All built-in/custom-map ghost spawns tested. Visual captures cover the dispatched House and Castle; older-map terrain/lighting and installed full-game acceptance remain individual obligations. House rebuild remains a separate graybox and is not claimed dispatched.
 
-### DEV-255 â€” Ward ground seals remain at world Y zero and appear before landing
+### DEV-255 — Ward ground seals remain at world Y zero and appear before landing
 
-**Status:** fixed-scoped; focused CPU/TCP and actual OpenGL evidence; installer acceptance pending Â· **Affected:** Shared van at investigation sites, entire Castle HQ, and settled active protective wards
+**Status:** fixed-scoped; focused CPU/TCP and actual OpenGL evidence; installer acceptance pending · **Affected:** Shared van at investigation sites, entire Castle HQ, and settled active protective wards
 
 A thrown or upstairs ward can show its seal at ground-floor height rather than at its actual settled support.
 
@@ -4210,9 +4210,9 @@ Evidence and verification: development/levels/previews/safe-area-barrier/: actua
 
 Older-map obligation: All built-in/custom-map ghost spawns tested. Visual captures cover the dispatched House and Castle; older-map terrain/lighting and installed full-game acceptance remain individual obligations. House rebuild remains a separate graybox and is not claimed dispatched.
 
-### DEV-308 â€” Completed shared sanctuary implementation omitted from rebuild publication
+### DEV-308 — Completed shared sanctuary implementation omitted from rebuild publication
 
-**Status:** reconciled locally; focused11checks pass; checkpoint publication and new full integration acceptance tracked separately Â· **Affected:** All investigation vans, settled wards and Castle headquarters; House rebuild review images
+**Status:** reconciled locally; focused11checks pass; checkpoint publication and new full integration acceptance tracked separately · **Affected:** All investigation vans, settled wards and Castle headquarters; House rebuild review images
 
 Owner observes no protective dome in rebuilt location captures despite completed prior implementation.
 
@@ -4224,9 +4224,9 @@ Evidence and verification: development/levels/rebuild/verification/sanctuary-rec
 
 Older-map obligation: Shared runtime van contract applies to all sites; individual map arrival/ghost-route visual acceptance remains required. Analytic animated postprocess haze is not an opaque GLB part and is absent from geometry-only Blender exports. Castle uses whole-headquarters sanctuary.
 
-### DEV-309 â€” Authored grid-map generator omitted from renderer and LAN source authority
+### DEV-309 — Authored grid-map generator omitted from renderer and LAN source authority
 
-**Status:** corrected candidate; packaged4peerTCP control/state test passes; exact-source online acceptance pending Â· **Affected:** House functional construction; any authored non-native site with a generator socket
+**Status:** corrected candidate; packaged4peerTCP control/state test passes; exact-source online acceptance pending · **Affected:** House functional construction; any authored non-native site with a generator socket
 
 InteractionFocus finds generator sockets but only native-terrain renderer draws starters and LanHost rejects non-native sources or omits state resync.
 
@@ -4238,9 +4238,9 @@ Evidence and verification: house-services-2026-11-07/HouseRebuildPhysicsTest.log
 
 Older-map obligation: Audit each authored generator installation independently. Maps without generator sockets retain prior supply contract; native Hollow Creek control behavior must remain compatible.
 
-### DEV-310 â€” Full-height generator bounding box makes visible recessed starter unreachable
+### DEV-310 — Full-height generator bounding box makes visible recessed starter unreachable
 
-**Status:** source-derived connected-part collision correction passes actual mesh/host aim and House traversal; final full-map acceptance pending Â· **Affected:** House functional generator placement
+**Status:** source-derived connected-part collision correction passes actual mesh/host aim and House traversal; final full-map acceptance pending · **Affected:** House functional generator placement
 
 Actual button mesh ray hits61supported camera rays but clearInteractionSight rejects all because base-plinth bounds incorrectly extend to the handle top.
 
@@ -4252,9 +4252,9 @@ Evidence and verification: house-services-2026-11-07/rejected-control-approach.l
 
 Older-map obligation: Audit recessed controls and conservative source collider envelopes individually; this repair does not globally ignore furnishing collision or accept all older installations.
 
-### DEV-311 â€” Remote-site ghost breaker-trip acceptance remains unproven
+### DEV-311 — Remote-site ghost breaker-trip acceptance remains unproven
 
-**Status:** IMPLEMENTED; packaged domain, actual solo AI and four-peer TCP checks pass; exact-source CI and per-location acceptance pending Â· **Affected:** Remote-site power gate and rebuilt House; older locations require individual audit
+**Status:** IMPLEMENTED; packaged domain, actual solo AI and four-peer TCP checks pass; exact-source CI and per-location acceptance pending · **Affected:** Remote-site power gate and rebuilt House; older locations require individual audit
 
 Source-stop and ordinary hunter breaker interaction pass, but inspected host ghost-action lighting path emits temporary pulses; persistent ghost-specific trip/reset behavior has no proven runtime acceptance.
 
@@ -4266,9 +4266,9 @@ Evidence and verification: development/levels/rebuild/verification/house-story-p
 
 Older-map obligation: Audit all remote and older maps individually; no blanket acceptance from House source-stop or packaging. Preserve ghost-specific exceptions and independent fire/oil/battery loads.
 
-### DEV-312 â€” Guessed service endpoints leave12mm above actual switch plates
+### DEV-312 — Guessed service endpoints leave12mm above actual switch plates
 
-**Status:** corrected source-bound endpoints; attachment check and actual runtime view pass Â· **Affected:** House fit-out conduit ends
+**Status:** corrected source-bound endpoints; attachment check and actual runtime view pass · **Affected:** House fit-out conduit ends
 
 Endpoint uses socketY+.08 despite actual decoded plate top+.056;24mm conduit leaves12mm air.
 
@@ -4280,9 +4280,9 @@ Evidence and verification: development/levels/rebuild/verification/house-fitout-
 
 Older-map obligation: Audit each existing map/model/cover installation individually; shared source correction and House evidence do not accept unaudited layouts or rendering.
 
-### DEV-313 â€” House power acceptance waits local milliseconds instead of authoritative host ticks
+### DEV-313 — House power acceptance waits local milliseconds instead of authoritative host ticks
 
-**Status:** corrected test-only52188e75 published; fresh full42360138343 live; old06full347/1 not accepted Â· **Affected:** House power TCP harness and online servicesPR76
+**Status:** corrected test-only52188e75 published; fresh full42360138343 live; old06full347/1 not accepted · **Affected:** House power TCP harness and online servicesPR76
 
 A250ms sleep can precede the real3tick interaction cooldown. Actual Windows third toggle rejects,so SOURCE1is absent; local compound run also misses ACCEPT.
 
@@ -4294,9 +4294,9 @@ Evidence and verification: development/levels/rebuild/verification/house-fitout-
 
 Older-map obligation: Audit each existing map/model/cover installation individually; shared source correction and House evidence do not accept unaudited layouts or rendering.
 
-### DEV-314 â€” Separate authored circuit paths duplicate physical shared conduit lengths
+### DEV-314 — Separate authored circuit paths duplicate physical shared conduit lengths
 
-**Status:** corrected65shared closed sections; overlap regression,physics and native parity pass Â· **Affected:** House fit-out source/distribution and common ceiling trunks
+**Status:** corrected65shared closed sections; overlap regression,physics and native parity pass · **Affected:** House fit-out source/distribution and common ceiling trunks
 
 Logical paths each emit a full mesh over the same shared trunk; source input and distribution output also overlap.
 
@@ -4308,9 +4308,9 @@ Evidence and verification: development/levels/rebuild/verification/house-fitout-
 
 Older-map obligation: Audit each existing map/model/cover installation individually; shared source correction and House evidence do not accept unaudited layouts or rendering.
 
-### DEV-315 â€” Usable hiding places lack requested energy cue while disabled pockets still exclude ghosts
+### DEV-315 — Usable hiding places lack requested energy cue while disabled pockets still exclude ghosts
 
-**Status:** shared material implemented and locally verified; exact-source online/older-map visual acceptance remains open Â· **Affected:** Available indoor/outdoor hiding locations across investigations
+**Status:** shared material implemented and locally verified; exact-source online/older-map visual acceptance remains open · **Affected:** Available indoor/outdoor hiding locations across investigations
 
 User asks for the same energy material on safe hiding locations. Prior renderer has no cue; ghost helper treats all placeholders/outdoor100percent as excluded even when disabled.
 
@@ -4322,9 +4322,9 @@ Evidence and verification: development/levels/rebuild/verification/house-fitout-
 
 Older-map obligation: Audit each existing map/model/cover installation individually; shared source correction and House evidence do not accept unaudited layouts or rendering.
 
-### DEV-316 â€” Mending record overhangs its actual bedside support
+### DEV-316 — Mending record overhangs its actual bedside support
 
-**Status:** SCOPED CORRECTION; source-footprint check and actual runtime view pass Â· **Affected:** Rebuilt House construction candidate; shared behavior where explicitly noted
+**Status:** SCOPED CORRECTION; source-footprint check and actual runtime view pass · **Affected:** Rebuilt House construction candidate; shared behavior where explicitly noted
 
 Initial mending-tin placement at12.5/16.9 overhung the real bedside tabletop.
 
@@ -4336,9 +4336,9 @@ Evidence and verification: development/levels/rebuild/verification/house-story-p
 
 Older-map obligation: Audit each older map individually. These House controls do not accept older layouts, plumbing, object supports, lighting or saved native edits.
 
-### DEV-317 â€” Loose bodies sink into sculpted terrain and rendered stair treads
+### DEV-317 — Loose bodies sink into sculpted terrain and rendered stair treads
 
-**Status:** SCOPED CORRECTION; actual ground and renderer-triangle contact checks pass Â· **Affected:** Rebuilt House construction candidate; shared behavior where explicitly noted
+**Status:** SCOPED CORRECTION; actual ground and renderer-triangle contact checks pass · **Affected:** Rebuilt House construction candidate; shared behavior where explicitly noted
 
 Actual loose mug contacted terrain about5cm low and rendered tread about122mm low.
 
@@ -4350,9 +4350,9 @@ Evidence and verification: development/levels/rebuild/verification/house-story-p
 
 Older-map obligation: Audit each older map individually. These House controls do not accept older layouts, plumbing, object supports, lighting or saved native edits.
 
-### DEV-318 â€” Electrical outdoor fixtures bypass source and breaker blackout
+### DEV-318 — Electrical outdoor fixtures bypass source and breaker blackout
 
-**Status:** SCOPED CORRECTION; packaged independent-source controls pass Â· **Affected:** Rebuilt House construction candidate; shared behavior where explicitly noted
+**Status:** SCOPED CORRECTION; packaged independent-source controls pass · **Affected:** Rebuilt House construction candidate; shared behavior where explicitly noted
 
 Outdoor room brightness stays1 and allowed electrical fixture emission despite lost supply.
 
@@ -4364,9 +4364,9 @@ Evidence and verification: development/levels/rebuild/verification/house-story-p
 
 Older-map obligation: Audit each older map individually. These House controls do not accept older layouts, plumbing, object supports, lighting or saved native edits.
 
-### DEV-319 â€” Rebuilt Briar location loses canonical House case history
+### DEV-319 — Rebuilt Briar location loses canonical House case history
 
-**Status:** SCOPED CORRECTION; canonical address and readable interaction pass Â· **Affected:** Rebuilt House construction candidate; shared behavior where explicitly noted
+**Status:** SCOPED CORRECTION; canonical address and readable interaction pass · **Affected:** Rebuilt House construction candidate; shared behavior where explicitly noted
 
 Isolated briar-rebuild identity was not aliased to house for public history and records.
 
@@ -4378,9 +4378,9 @@ Evidence and verification: development/levels/rebuild/verification/house-story-p
 
 Older-map obligation: Audit each older map individually. These House controls do not accept older layouts, plumbing, object supports, lighting or saved native edits.
 
-### DEV-320 â€” Rebuilt House lacks radiators and visible water distribution
+### DEV-320 — Rebuilt House lacks radiators and visible water distribution
 
-**Status:** SOURCE IMPLEMENTED; scoped packaged/real TCP and native geometry checks pass; complete fixture refinement and full House gates remain Â· **Affected:** Rebuilt House construction candidate; shared behavior where explicitly noted
+**Status:** SOURCE IMPLEMENTED; scoped packaged/real TCP and native geometry checks pass; complete fixture refinement and full House gates remain · **Affected:** Rebuilt House construction candidate; shared behavior where explicitly noted
 
 Boiler exists but the candidate has no authored radiators or visible domestic water distribution, despite the location heat/plumbing history.
 
@@ -4392,9 +4392,9 @@ Evidence and verification: development/levels/rebuild/verification/house-heating
 
 Older-map obligation: Audit each older map individually. These House controls do not accept older layouts, plumbing, object supports, lighting or saved native edits.
 
-### DEV-321 â€” Visible generator feed review camera harness does not compile
+### DEV-321 — Visible generator feed review camera harness does not compile
 
-**Status:** SCOPED CORRECTION; current test compiles and actual cable review captures pass; exact-source CI pending Â· **Affected:** HouseRebuildStoryTest visible feed camera review; isolated House construction candidate
+**Status:** SCOPED CORRECTION; current test compiles and actual cable review captures pass; exact-source CI pending · **Affected:** HouseRebuildStoryTest visible feed camera review; isolated House construction candidate
 
 First feed capture camera is blocked; attempted fallback calls nonexistent HouseMap.clearSight(Vec,Vec), causing javac cannot-find-symbol.
 
@@ -4406,9 +4406,9 @@ Evidence and verification: development/levels/rebuild/verification/house-story-p
 
 Older-map obligation: No older-map acceptance inferred. House remains isolated and unpromoted.
 
-### DEV-322 â€” Multiplayer animation acceptance races on copy-on-write packet sublist
+### DEV-322 — Multiplayer animation acceptance races on copy-on-write packet sublist
 
-**Status:** SCOPED CORRECTION; exact-source remote full suite pending Â· **Affected:** Mandatory packaged regression acceptance; House construction and actual hunter animation
+**Status:** SCOPED CORRECTION; exact-source remote full suite pending · **Affected:** Mandatory packaged regression acceptance; House construction and actual hunter animation
 
 Main059ca123 full42363868962 fails LanHunterAnimationGameplayTest with ConcurrentModificationException in Peer.feed after observer animation pass.
 
@@ -4420,9 +4420,9 @@ Evidence and verification: development/levels/rebuild/verification/house-story-p
 
 Older-map obligation: No map or physical hardware acceptance inferred from test repair. Preserve per-location audit and exact-source full suite gate.
 
-### DEV-323 â€” Accumulated House acceptance bundle exceeds per-test process deadline
+### DEV-323 — Accumulated House acceptance bundle exceeds per-test process deadline
 
-**Status:** SCOPED CORRECTION; exact-source remote full suite pending Â· **Affected:** Mandatory packaged regression acceptance; House construction and actual hunter animation
+**Status:** SCOPED CORRECTION; exact-source remote full suite pending · **Affected:** Mandatory packaged regression acceptance; House construction and actual hunter animation
 
 Main059ca123 full42363868962 kills HouseRebuildPhysicsTest after90seconds; actual suite totals347/2 despite green wrapper.
 
@@ -4434,9 +4434,9 @@ Evidence and verification: development/levels/rebuild/verification/house-story-p
 
 Older-map obligation: No map or physical hardware acceptance inferred from test repair. Preserve per-location audit and exact-source full suite gate.
 
-### DEV-324 â€” Heating assembly initially treated a placement Assembly as a level
+### DEV-324 — Heating assembly initially treated a placement Assembly as a level
 
-**Status:** SCOPED CORRECTION; packaged source/contact and runtime review pass; exact-source CI pending Â· **Affected:** New isolated House heating/water construction candidate
+**Status:** SCOPED CORRECTION; packaged source/contact and runtime review pass; exact-source CI pending · **Affected:** New isolated House heating/water construction candidate
 
 Initial compile of HouseRebuildServices used Fit.finish() without its .level() component.
 
@@ -4448,9 +4448,9 @@ Evidence and verification: development/levels/rebuild/verification/house-heating
 
 Older-map obligation: No older-map layouts, pipe supports, source surfaces, UVs or electrical behavior are accepted by this House correction. Audit individually.
 
-### DEV-325 â€” Initial boiler routing obscures grille and soil pipe has a box silhouette
+### DEV-325 — Initial boiler routing obscures grille and soil pipe has a box silhouette
 
-**Status:** SCOPED CORRECTION; packaged source/contact and runtime review pass; exact-source CI pending Â· **Affected:** New isolated House heating/water construction candidate
+**Status:** SCOPED CORRECTION; packaged source/contact and runtime review pass; exact-source CI pending · **Affected:** New isolated House heating/water construction candidate
 
 Actual runtime review showed front-connected boiler pipework covering its ventilation grille and a thick square soil service head.
 
@@ -4462,9 +4462,9 @@ Evidence and verification: development/levels/rebuild/verification/house-heating
 
 Older-map obligation: No older-map layouts, pipe supports, source surfaces, UVs or electrical behavior are accepted by this House correction. Audit individually.
 
-### DEV-326 â€” House review finds unfilled daily-use storage and garden functions
+### DEV-326 — House review finds unfilled daily-use storage and garden functions
 
-**Status:** SCOPED IMPLEMENTATION AND RUNTIME REVIEW PASS; exact-source full361 and full House gates pending Â· **Affected:** Rebuilt House room/function audit; older site camera coverage remains individually unaudited
+**Status:** SCOPED IMPLEMENTATION AND RUNTIME REVIEW PASS; exact-source full361 and full House gates pending · **Affected:** Rebuilt House room/function audit; older site camera coverage remains individually unaudited
 
 Actual four-direction review and current39source props show the coat vestibule without coat/boot storage, kitchen without cold-food storage and garden/patio still an empty reservation.
 
@@ -4476,9 +4476,9 @@ Evidence and verification: development/levels/rebuild/verification/house-room-re
 
 Older-map obligation: Audit each older site independently. Legal cameras, graph connectivity and room names alone do not prove physical, functional, visual or gameplay completion.
 
-### DEV-327 â€” Nearest-centre audit cameras miss important landing and garden coverage
+### DEV-327 — Nearest-centre audit cameras miss important landing and garden coverage
 
-**Status:** SCOPED CORRECTION;8actual supported authored-anchor views inspected Â· **Affected:** Rebuilt House room/function audit; older site camera coverage remains individually unaudited
+**Status:** SCOPED CORRECTION;8actual supported authored-anchor views inspected · **Affected:** Rebuilt House room/function audit; older site camera coverage remains individually unaudited
 
 Legal nearest-centre camera for upper landing lies on the stair, while garden fallback hugs the back door and sees through it. Those four-way views alone give incomplete functional context.
 
@@ -4490,9 +4490,9 @@ Evidence and verification: development/levels/rebuild/verification/house-room-re
 
 Older-map obligation: Audit each older site independently. Legal cameras, graph connectivity and room names alone do not prove physical, functional, visual or gameplay completion.
 
-### DEV-328 â€” Fridge generation report accesses a freed Blender image after reset
+### DEV-328 — Fridge generation report accesses a freed Blender image after reset
 
-**Status:** SCOPED CORRECTION; actual source/export/runtime checks pass; exact-source CI pending Â· **Affected:** New House furnishing/asset-generation diagnostic; older source/audits remain individually unaudited
+**Status:** SCOPED CORRECTION; actual source/export/runtime checks pass; exact-source CI pending · **Affected:** New House furnishing/asset-generation diagnostic; older source/audits remain individually unaudited
 
 Export/reimport/renders succeeded, but final report used image.size after factory reset removed its RNA; Blender initially exited0 despite the traceback.
 
@@ -4504,9 +4504,9 @@ Evidence and verification: development/levels/model-production/house-fridge/; de
 
 Older-map obligation: Audit older model attachments, camera ownership/elevation and strict generation status individually; no blanket older-map or hardware acceptance.
 
-### DEV-329 â€” Original coat floats below its source hook
+### DEV-329 — Original coat floats below its source hook
 
-**Status:** SCOPED CORRECTION; actual source/export/runtime checks pass; exact-source CI pending Â· **Affected:** New House furnishing/asset-generation diagnostic; older source/audits remain individually unaudited
+**Status:** SCOPED CORRECTION; actual source/export/runtime checks pass; exact-source CI pending · **Affected:** New House furnishing/asset-generation diagnostic; older source/audits remain individually unaudited
 
 Existing level_trace_coat front/side source review shows a shoulder-to-hook gap. Subsequent component audit also found the original pocket back12mm off the cloth card; the188triangle hanger-only approval was incomplete.
 
@@ -4518,9 +4518,9 @@ Evidence and verification: development/levels/model-production/house-fridge/; de
 
 Older-map obligation: Audit older model attachments, camera ownership/elevation and strict generation status individually; no blanket older-map or hardware acceptance.
 
-### DEV-330 â€” Cold-storage diagnostic camera captures cellar instead of kitchen
+### DEV-330 — Cold-storage diagnostic camera captures cellar instead of kitchen
 
-**Status:** SCOPED CORRECTION; actual source/export/runtime checks pass; exact-source CI pending Â· **Affected:** New House furnishing/asset-generation diagnostic; older source/audits remain individually unaudited
+**Status:** SCOPED CORRECTION; actual source/export/runtime checks pass; exact-source CI pending · **Affected:** New House furnishing/asset-generation diagnostic; older source/audits remain individually unaudited
 
 Camera row used foyer room hint0 at kitchenXZ; ground fallback found the lower cellar, so the fridge-labeled view showed the washer while position was legally traversable.
 
@@ -4532,9 +4532,9 @@ Evidence and verification: development/levels/model-production/house-fridge/; de
 
 Older-map obligation: Audit older model attachments, camera ownership/elevation and strict generation status individually; no blanket older-map or hardware acceptance.
 
-### DEV-331 â€” Saved custom House architecture follows changing shipped template
+### DEV-331 — Saved custom House architecture follows changing shipped template
 
-**Status:** SCOPED IMPLEMENTATION PASS; native legacy/rebuilt USER compatibility checks pass; source-bound full362/native/GPU pending Â· **Affected:** House-derived USER projects and upcoming House default promotion; other template upgrades need individual migration review
+**Status:** SCOPED IMPLEMENTATION PASS; native legacy/rebuilt USER compatibility checks pass; source-bound full362/native/GPU pending · **Affected:** House-derived USER projects and upcoming House default promotion; other template upgrades need individual migration review
 
 UserLevelLibrary.source rebuilds the template through current LevelPlans.buildSource on every load, then applies existing scene props at their historical coordinates. Replacing the House default would silently change floor elevations, walls and openings below those edits.
 
@@ -4546,9 +4546,9 @@ Evidence and verification: HouseTemplateCompatibilityTest; src/main/java/org/bec
 
 Older-map obligation: Audit every changed template independently; shipped-v1 for other sites is not a promise of frozen architecture or complete migration.
 
-### DEV-332 â€” Compatibility test attempted against stale JAR before package completion
+### DEV-332 — Compatibility test attempted against stale JAR before package completion
 
-**Status:** SCOPED CORRECTION; successful fresh package precedes passing compile/runtime checks Â· **Affected:** Local saved-map verification process, not shipped gameplay
+**Status:** SCOPED CORRECTION; successful fresh package precedes passing compile/runtime checks · **Affected:** Local saved-map verification process, not shipped gameplay
 
 Test compilation cannot resolve newly added template methods/constants because an earlier JAR was read while packaging was still live. The package then failed sandbox JAR replacement with AccessDeniedException.
 
@@ -4560,9 +4560,9 @@ Evidence and verification: development/levels/rebuild/verification/house-templat
 
 Older-map obligation: No older-map acceptance from stale binaries; every source-bound verification must follow successful packaging.
 
-### DEV-333 â€” Native mission composition replaces rebuilt pivots and generator bodies with generic collision
+### DEV-333 — Native mission composition replaces rebuilt pivots and generator bodies with generic collision
 
-**Status:** SCOPED CORRECTION; exact-source identity, every retained body/multiplicity and actual Agent Services/native/runtime tests pass locally; remote acceptance pending Â· **Affected:** Rebuilt House used through USER native authoring; older sites require individual collider authority review
+**Status:** SCOPED CORRECTION; exact-source identity, every retained body/multiplicity and actual Agent Services/native/runtime tests pass locally; remote acceptance pending · **Affected:** Rebuilt House used through USER native authoring; older sites require individual collider authority review
 
 Actual custom rebuilt House collider multiset differs from source even without prop edits. Editing uses native GLB origins as generic collision centres and can add a full generator box or false bedding bodies.
 
@@ -4574,9 +4574,9 @@ Evidence and verification: HouseTemplateCompatibilityTest exact source revision5
 
 Older-map obligation: Audit each future rebuilt source collision policy and functional attachment behavior before default promotion; no blanket older-map acceptance.
 
-### DEV-334 â€” Kitchen fridge wedged between back and dining doors
+### DEV-334 — Kitchen fridge wedged between back and dining doors
 
-**Status:** SCOPED RELOCATION PASS; source/native/runtime views inspected; current exact-source CI pending Â· **Affected:** House furnishing source and derived custom-map kitchen
+**Status:** SCOPED RELOCATION PASS; source/native/runtime views inspected; current exact-source CI pending · **Affected:** House furnishing source and derived custom-map kitchen
 
 Owner rejects actual kitchen capture: fridge crowds the short wall section between two doors despite sampled collision and route checks passing.
 
@@ -4588,9 +4588,9 @@ Evidence and verification: User rejection; development/captures/house-template-c
 
 Older-map obligation: Review appliance placement as a functional room arrangement individually; passing collision alone never accepts an older layout.
 
-### DEV-335 â€” Saved built-in House has no architectural version or safe rebuild operation
+### DEV-335 — Saved built-in House has no architectural version or safe rebuild operation
 
-**Status:** SCOPED NATIVE/GAMEPLAY SOURCE PASS; final363/native/GPU acceptance pending Â· **Affected:** House native editor document and upcoming live default promotion
+**Status:** SCOPED NATIVE/GAMEPLAY SOURCE PASS; final363/native/GPU acceptance pending · **Affected:** House native editor document and upcoming live default promotion
 
 Saved built-in House props contain stable native IDs but no indication of which building owns their coordinates. Replacing default architecture would reinterpret them; resetting would discard custom edits.
 
@@ -4602,9 +4602,9 @@ Evidence and verification: HouseSourceVersions.java; HouseRebuildUpgrade.java; H
 
 Older-map obligation: Every existing saved architecture needs its own baseline/version/conflict tests. No automatic migration or older-map acceptance.
 
-### DEV-336 â€” House rebuild editor command initially fails compilation on Map reference
+### DEV-336 — House rebuild editor command initially fails compilation on Map reference
 
-**Status:** SOURCE CORRECTED; successful package and native migration checks pass Â· **Affected:** New DeveloperLevelEditor House rebuild command only
+**Status:** SOURCE CORRECTED; successful package and native migration checks pass · **Affected:** New DeveloperLevelEditor House rebuild command only
 
 Package compiler reports cannot find symbol Map at new House rebuild command.
 
@@ -4616,9 +4616,9 @@ Evidence and verification: build/house-migration-rejected-missing-map-import.log
 
 Older-map obligation: No older-map or runtime claim from a failed package.
 
-### DEV-337 â€” Standalone native edits can detach rebuilt functional assemblies
+### DEV-337 — Standalone native edits can detach rebuilt functional assemblies
 
-**Status:** SCOPED GUARD PASS; actual native generator move/remove refused without state loss; whole-assembly authoring remains separate Â· **Affected:** Rebuilt House built-in and USER authoring; source controls, pipes, supported story objects and bedding
+**Status:** SCOPED GUARD PASS; actual native generator move/remove refused without state loss; whole-assembly authoring remains separate · **Affected:** Rebuilt House built-in and USER authoring; source controls, pipes, supported story objects and bedding
 
 The previous generic put/remove path accepts moving or deleting the generator alone while its authored starter/feed sockets remain at their source coordinates; moving a table or bed similarly leaves supported authored children behind.
 
@@ -4630,9 +4630,9 @@ Evidence and verification: HouseAuthoringAttachments.java; HouseRebuildUpgradeTe
 
 Older-map obligation: Audit fixture/parent relationships individually on each old map; these guards cover rebuilt House source only.
 
-### DEV-338 â€” Retained House object validation needs full source-model containment checks
+### DEV-338 — Retained House object validation needs full source-model containment checks
 
-**Status:** SCOPED SOURCE/CONFIGURED256MB NATIVE PASS; source-bound365/full/editor/GPU pending; no physical FPS or older-map acceptance Â· **Affected:** New native House three-way migration custom-object conflict validation
+**Status:** SCOPED SOURCE/CONFIGURED256MB NATIVE PASS; source-bound365/full/editor/GPU pending; no physical FPS or older-map acceptance · **Affected:** New native House three-way migration custom-object conflict validation
 
 A vertex-inside-body check alone cannot prove that a large retained model does not contain a smaller default fitting or duplicate/cross an open source surface.
 
@@ -4644,9 +4644,9 @@ Evidence and verification: HouseRebuildUpgradeTest nested native crate geometry;
 
 Older-map obligation: Audit retained custom models and full source supports individually; broad boxes and vertex-only checks cannot certify older maps.
 
-### DEV-339 â€” Windows editor retains inactive Castle geometry while loading rebuilt House and exhausts256MB heap
+### DEV-339 — Windows editor retains inactive Castle geometry while loading rebuilt House and exhausts256MB heap
 
-**Status:** SCOPED SOURCE/CONFIGURED256MB NATIVE PASS; source-bound365/full/editor/GPU pending; no physical FPS or older-map acceptance Â· **Affected:** Actual Windows editor switching Castle and House, including native House migration; retained-renderer scene families
+**Status:** SCOPED SOURCE/CONFIGURED256MB NATIVE PASS; source-bound365/full/editor/GPU pending; no physical FPS or older-map acceptance · **Affected:** Actual Windows editor switching Castle and House, including native House migration; retained-renderer scene families
 
 New256MB human-editor migrated kitchen capture produces OutOfMemoryError in D3D Screen Updater, TimerQueue and AWT EventQueue. Histogram retains529264Face objects/50.8MB and881030Point objects/35.2MB plus model/image memory.512MB earlier GUI path passed but does not accept configured256MB.
 
@@ -4658,9 +4658,9 @@ Evidence and verification: house-migration-rejected-gui-256-oom.log; house-migra
 
 Older-map obligation: Audit scene changes including native locations and GPU ownership; this fix is not physical FPS or other-map visual acceptance.
 
-### DEV-340 â€” Scene retirement regression initially calls nonexistent preparation API
+### DEV-340 — Scene retirement regression initially calls nonexistent preparation API
 
-**Status:** SCOPED SOURCE/CONFIGURED256MB NATIVE PASS; source-bound365/full/editor/GPU pending; no physical FPS or older-map acceptance Â· **Affected:** New EditorSceneRetentionTest compilation only
+**Status:** SCOPED SOURCE/CONFIGURED256MB NATIVE PASS; source-bound365/full/editor/GPU pending; no physical FPS or older-map acceptance · **Affected:** New EditorSceneRetentionTest compilation only
 
 Compiler rejects prepareStaticLevel(HouseMap).
 
@@ -4672,9 +4672,9 @@ Evidence and verification: house-migration-rejected-preparation-api.log; EditorS
 
 Older-map obligation: No acceptance from a test that failed compilation.
 
-### DEV-341 â€” Native GUI test can report PASS after background AWT OutOfMemoryError
+### DEV-341 — Native GUI test can report PASS after background AWT OutOfMemoryError
 
-**Status:** SCOPED SOURCE/CONFIGURED256MB NATIVE PASS; source-bound365/full/editor/GPU pending; no physical FPS or older-map acceptance Â· **Affected:** EditorAgentGuiTest and reported Windows native acceptance
+**Status:** SCOPED SOURCE/CONFIGURED256MB NATIVE PASS; source-bound365/full/editor/GPU pending; no physical FPS or older-map acceptance · **Affected:** EditorAgentGuiTest and reported Windows native acceptance
 
 256MB retry logs AWT OutOfMemoryError while rebuilding Castle, then prints PASS and exits0 because assertions later succeed.
 
@@ -4686,9 +4686,9 @@ Evidence and verification: house-migration-rejected-gui-background-oom.log; nati
 
 Older-map obligation: Older green GUI results are scoped evidence; inspect raw logs and do not infer absence of background errors.
 
-### DEV-342 â€” Identical immutable PNGs decode separately for every imported material
+### DEV-342 — Identical immutable PNGs decode separately for every imported material
 
-**Status:** SCOPED CORRECTION PASS; actual256MB scene return and clean Windows editor pass Â· **Affected:** Shared runtime GLB material loading, House/Castle/native editor source collection
+**Status:** SCOPED CORRECTION PASS; actual256MB scene return and clean Windows editor pass · **Affected:** Shared runtime GLB material loading, House/Castle/native editor source collection
 
 After complete inactive-scene retirement, the256MB Castle return still fails. Retired-cache histogram shows90.47MB byte arrays,31.37MB int arrays and30.59MB source vertices; all inspected inactive CPU cache fields are empty.
 
@@ -4700,9 +4700,9 @@ Evidence and verification: SourceImageSharingTest; house-scene-retired-histogram
 
 Older-map obligation: Source PNG sharing covers loader identity only. Preserve per-location material/UV and hardware acceptance; raw heap-class differences are not FPS or total process-memory benchmarks.
 
-### DEV-343 â€” Image-sharing test uses a live-screen name outside the existing contract
+### DEV-343 — Image-sharing test uses a live-screen name outside the existing contract
 
-**Status:** TEST FIXTURE CORRECTED; actual independent live-screen/source-image check passes Â· **Affected:** New source-image-sharing regression fixture only
+**Status:** TEST FIXTURE CORRECTED; actual independent live-screen/source-image check passes · **Affected:** New source-image-sharing regression fixture only
 
 liveSurfaceMaterial refuses sharing-test-live despite the prior PNG/material assertions passing.
 
@@ -4714,9 +4714,9 @@ Evidence and verification: house-migration-rejected-live-surface-name.log; Sourc
 
 Older-map obligation: No source/live-screen runtime failure inferred from the rejected test fixture.
 
-### DEV-344 â€” House authored train encounter has no runtime implementation
+### DEV-344 — House authored train encounter has no runtime implementation
 
-**Status:** CORE/SOLO/REAL4TCP PASS LOCALLY; remote encounter and subjective audio/whole-location acceptance pending Â· **Affected:** House first-principles story/atmosphere stage
+**Status:** CORE/SOLO/REAL4TCP PASS LOCALLY; remote encounter and subjective audio/whole-location acceptance pending · **Affected:** House first-principles story/atmosphere stage
 
 Supported records and loose belongings existed, but the required individually authored optional location encounter remained plan-only.
 
@@ -4728,9 +4728,9 @@ Evidence and verification: HouseEncounterTest; HouseEncounterSessionTest; HouseE
 
 Older-map obligation: Each location needs its own authored encounter, predicates, host/privacy/evidence/reset and actual visual/audio review.
 
-### DEV-345 â€” House CLI recovery reads corrupt primary architecture before restoring valid backup
+### DEV-345 — House CLI recovery reads corrupt primary architecture before restoring valid backup
 
-**Status:** CORRECTED SOURCE NATIVE CI PASS 42426323930 at c93d141d; full365 run42426485514 still observed in progress Â· **Affected:** PR82 native42424140546; explicit editor-agent --recover bootstrap after primary corruption
+**Status:** CORRECTED SOURCE NATIVE CI PASS 42426323930 at c93d141d; full365 run42426485514 still observed in progress · **Affected:** PR82 native42424140546; explicit editor-agent --recover bootstrap after primary corruption
 
 Windows native migration/GUI checks pass, but corrupt-start CLI recovery fails because LevelPlans.buildSource selects architecture by decoding the corrupt primary before the previous document is restored.
 
@@ -4742,9 +4742,9 @@ Evidence and verification: development/levels/rebuild/verification/house-native-
 
 Older-map obligation: Audit pre-recovery source/version selection independently for every other native adapter. This correction does not accept unaudited maps.
 
-### DEV-346 â€” Encounter test compile omitted existing helper classes and used nonexistent resume API
+### DEV-346 — Encounter test compile omitted existing helper classes and used nonexistent resume API
 
-**Status:** TEST FIXTURE CORRECTED; final actual solo and four-TCP checks PASS Â· **Affected:** New House encounter integration test fixture
+**Status:** TEST FIXTURE CORRECTED; final actual solo and four-TCP checks PASS · **Affected:** New House encounter integration test fixture
 
 Initial verification attempt failed; rejected evidence preserved.
 
@@ -4756,9 +4756,9 @@ Evidence and verification: development/levels/rebuild/verification/house-encount
 
 Older-map obligation: No older-map runtime defect or acceptance inferred from this fixture correction.
 
-### DEV-347 â€” Reconnect test acknowledged a fresh nonrotated token
+### DEV-347 — Reconnect test acknowledged a fresh nonrotated token
 
-**Status:** TEST FIXTURE CORRECTED; final actual solo and four-TCP checks PASS Â· **Affected:** New House encounter integration test fixture
+**Status:** TEST FIXTURE CORRECTED; final actual solo and four-TCP checks PASS · **Affected:** New House encounter integration test fixture
 
 Initial verification attempt failed; rejected evidence preserved.
 
@@ -4770,9 +4770,9 @@ Evidence and verification: development/levels/rebuild/verification/house-encount
 
 Older-map obligation: No older-map runtime defect or acceptance inferred from this fixture correction.
 
-### DEV-348 â€” Encounter fixture jumped host clock past ghost authority
+### DEV-348 — Encounter fixture jumped host clock past ghost authority
 
-**Status:** TEST FIXTURE CORRECTED; final actual solo and four-TCP checks PASS Â· **Affected:** New House encounter integration test fixture
+**Status:** TEST FIXTURE CORRECTED; final actual solo and four-TCP checks PASS · **Affected:** New House encounter integration test fixture
 
 Initial verification attempt failed; rejected evidence preserved.
 
@@ -4784,9 +4784,9 @@ Evidence and verification: development/levels/rebuild/verification/house-encount
 
 Older-map obligation: No older-map runtime defect or acceptance inferred from this fixture correction.
 
-### DEV-349 â€” Encounter fixture discarded sound while waiting for later pose
+### DEV-349 — Encounter fixture discarded sound while waiting for later pose
 
-**Status:** TEST FIXTURE CORRECTED; final actual solo and four-TCP checks PASS Â· **Affected:** New House encounter integration test fixture
+**Status:** TEST FIXTURE CORRECTED; final actual solo and four-TCP checks PASS · **Affected:** New House encounter integration test fixture
 
 Initial verification attempt failed; rejected evidence preserved.
 
@@ -4798,9 +4798,9 @@ Evidence and verification: development/levels/rebuild/verification/house-encount
 
 Older-map obligation: No older-map runtime defect or acceptance inferred from this fixture correction.
 
-### DEV-350 â€” Live-clock gait acceptance skips stride under cold render delays
+### DEV-350 — Live-clock gait acceptance skips stride under cold render delays
 
-**Status:** SCOPED FIXTURE CORRECTION PASS LOCALLY; new remote full365 pending Â· **Affected:** LanHunterAnimationGameplayTest and parent recovery acceptance
+**Status:** SCOPED FIXTURE CORRECTION PASS LOCALLY; new remote full365 pending · **Affected:** LanHunterAnimationGameplayTest and parent recovery acceptance
 
 Full42426485514 reports364/1/0/365; cleric renders IDLE/WALK_A but no WALK_B.
 
@@ -4812,9 +4812,9 @@ Evidence and verification: development/levels/rebuild/verification/hunter-gait-r
 
 Older-map obligation: No production gait, other-map art, GPU gait or physical FPS acceptance inferred. Existing stale-observation reset remains unchanged.
 
-### DEV-351 â€” Gait fixture mistakes invalid zero-vector STEP for a stop command
+### DEV-351 — Gait fixture mistakes invalid zero-vector STEP for a stop command
 
-**Status:** SCOPED FIXTURE CORRECTION PASS LOCALLY; new remote full365 pending Â· **Affected:** LanHunterAnimationGameplayTest and parent recovery acceptance
+**Status:** SCOPED FIXTURE CORRECTION PASS LOCALLY; new remote full365 pending · **Affected:** LanHunterAnimationGameplayTest and parent recovery acceptance
 
 Controlled-clock fixture waits forever for a posture update after STEP(0,0).
 
@@ -4826,9 +4826,9 @@ Evidence and verification: development/levels/rebuild/verification/hunter-gait-r
 
 Older-map obligation: No production gait, other-map art, GPU gait or physical FPS acceptance inferred. Existing stale-observation reset remains unchanged.
 
-### DEV-352 â€” Controlled gait fixture reads STATE before completed body snapshot
+### DEV-352 — Controlled gait fixture reads STATE before completed body snapshot
 
-**Status:** SCOPED FIXTURE CORRECTION PASS LOCALLY; new remote full365 pending Â· **Affected:** LanHunterAnimationGameplayTest and parent recovery acceptance
+**Status:** SCOPED FIXTURE CORRECTION PASS LOCALLY; new remote full365 pending · **Affected:** LanHunterAnimationGameplayTest and parent recovery acceptance
 
 First controlled-clock stationary retry still renders an older moving body.
 
@@ -4840,9 +4840,9 @@ Evidence and verification: development/levels/rebuild/verification/hunter-gait-r
 
 Older-map obligation: No production gait, other-map art, GPU gait or physical FPS acceptance inferred. Existing stale-observation reset remains unchanged.
 
-### DEV-353 â€” Fresh House promotion exposes editor fixtures that mutate the first attached assembly
+### DEV-353 — Fresh House promotion exposes editor fixtures that mutate the first attached assembly
 
-**Status:** SCOPED FIXTURE CORRECTION PASS; seven focused checks and actual256MB GUI/CLI PASS; remote candidate acceptance pending Â· **Affected:** Fresh-default candidate authoring identity/recovery/session/service and native CLI/GUI fixtures
+**Status:** SCOPED FIXTURE CORRECTION PASS; seven focused checks and actual256MB GUI/CLI PASS; remote candidate acceptance pending · **Affected:** Fresh-default candidate authoring identity/recovery/session/service and native CLI/GUI fixtures
 
 Four actual local tests reject moving/removing prop-0 because it is now an attached kitchen counter. Historical fixtures also assume that a fresh new template is the old House.
 
@@ -4854,9 +4854,9 @@ Evidence and verification: development/levels/rebuild/verification/house-default
 
 Older-map obligation: No older-map authoring, whole-location or hardware acceptance inferred; audit explicit architecture/attachment fixtures individually.
 
-### DEV-354 â€” Remaining native rough shells omit enclosed ceilings and reserve only top-end stair holes
+### DEV-354 — Remaining native rough shells omit enclosed ceilings and reserve only top-end stair holes
 
-**Status:** SCOPED NATIVE BATCH CHECKPOINT; actual runtime/location acceptance remains open Â· **Affected:** Remaining25structural candidates and shared rough/native export workflow
+**Status:** SCOPED NATIVE BATCH CHECKPOINT; actual runtime/location acceptance remains open · **Affected:** Remaining25structural candidates and shared rough/native export workflow
 
 Earlier shell recipe adds walls/floors but no top enclosure; elevated links reserve a small endpoint hole rather than the full flight.
 
@@ -4868,9 +4868,9 @@ Evidence and verification: development/levels/rebuild/structures/; development/l
 
 Older-map obligation: Castle/House/Blackpine/Hollow Creek are retained and individually unaudited for this new batch; never infer runtime or older-map fixes from native structure checks.
 
-### DEV-355 â€” Planning text and diagram stand-ins enter structural GLB exports
+### DEV-355 — Planning text and diagram stand-ins enter structural GLB exports
 
-**Status:** SCOPED NATIVE BATCH CHECKPOINT; actual runtime/location acceptance remains open Â· **Affected:** Remaining25structural candidates and shared rough/native export workflow
+**Status:** SCOPED NATIVE BATCH CHECKPOINT; actual runtime/location acceptance remains open · **Affected:** Remaining25structural candidates and shared rough/native export workflow
 
 Native labels can become large tessellated meshes; placeholder van and ritual diagram solids also enter a full-scene export.
 
@@ -4882,9 +4882,9 @@ Evidence and verification: development/levels/rebuild/structures/; development/l
 
 Older-map obligation: Castle/House/Blackpine/Hollow Creek are retained and individually unaudited for this new batch; never infer runtime or older-map fixes from native structure checks.
 
-### DEV-356 â€” Search-envelope annotations leave context doors and exterior service mouths open
+### DEV-356 — Search-envelope annotations leave context doors and exterior service mouths open
 
-**Status:** SCOPED NATIVE BATCH CHECKPOINT; actual runtime/location acceptance remains open Â· **Affected:** Remaining25structural candidates and shared rough/native export workflow
+**Status:** SCOPED NATIVE BATCH CHECKPOINT; actual runtime/location acceptance remains open · **Affected:** Remaining25structural candidates and shared rough/native export workflow
 
 Native rough recipe opens SEALED_NO_ROUTE links. First repaired Prison still fails exported boundary L107 between entry and east-service.
 
@@ -4896,9 +4896,9 @@ Evidence and verification: development/levels/rebuild/structures/; development/l
 
 Older-map obligation: Castle/House/Blackpine/Hollow Creek are retained and individually unaudited for this new batch; never infer runtime or older-map fixes from native structure checks.
 
-### DEV-357 â€” Reusing an intermediate circular deck core can leave a top cap open
+### DEV-357 — Reusing an intermediate circular deck core can leave a top cap open
 
-**Status:** SCOPED NATIVE BATCH CHECKPOINT; actual runtime/location acceptance remains open Â· **Affected:** Remaining25structural candidates and shared rough/native export workflow
+**Status:** SCOPED NATIVE BATCH CHECKPOINT; actual runtime/location acceptance remains open · **Affected:** Remaining25structural candidates and shared rough/native export workflow
 
 Source review found shaped floor core fallback applied to ceiling copies, also duplicating intermediate upper-floor surfaces.
 
@@ -4910,9 +4910,9 @@ Evidence and verification: development/levels/rebuild/structures/; development/l
 
 Older-map obligation: Castle/House/Blackpine/Hollow Creek are retained and individually unaudited for this new batch; never infer runtime or older-map fixes from native structure checks.
 
-### DEV-358 â€” Native batch review assumes Pillow is installed in the active Python
+### DEV-358 — Native batch review assumes Pillow is installed in the active Python
 
-**Status:** SCOPED NATIVE BATCH CHECKPOINT; actual runtime/location acceptance remains open Â· **Affected:** Remaining25structural candidates and shared rough/native export workflow
+**Status:** SCOPED NATIVE BATCH CHECKPOINT; actual runtime/location acceptance remains open · **Affected:** Remaining25structural candidates and shared rough/native export workflow
 
 Review command exits with ModuleNotFoundError before producing contact sheets.
 
@@ -4924,9 +4924,9 @@ Evidence and verification: development/levels/rebuild/structures/; development/l
 
 Older-map obligation: Castle/House/Blackpine/Hollow Creek are retained and individually unaudited for this new batch; never infer runtime or older-map fixes from native structure checks.
 
-### DEV-359 â€” Eight remote elevation links have zero or insufficient physical stair run
+### DEV-359 — Eight remote elevation links have zero or insufficient physical stair run
 
-**Status:** NATIVE ROUTE REDESIGN CHECKPOINT; capsule movement and runtime integration remain open Â· **Affected:** WLD-03 L13; WLD-04 L13/L14 plus new upper landing link L14B; WLD-05 L15; WLD-10 L16/L19; WLD-12 L16; WLD-15 route14
+**Status:** NATIVE ROUTE REDESIGN CHECKPOINT; capsule movement and runtime integration remain open · **Affected:** WLD-03 L13; WLD-04 L13/L14 plus new upper landing link L14B; WLD-05 L15; WLD-10 L16/L19; WLD-12 L16; WLD-15 route14
 
 Eight reservations cannot form 180mm risers / 240mm treads, including zero-run basement/tower links.
 
@@ -4938,23 +4938,23 @@ Evidence and verification: development/levels/rebuild/verification/roster-routes
 
 Older-map obligation: Audit every older map independently for physical stair run, landings, headroom, deck openings, body/edge clearance and supported arrivals. No inherited acceptance.
 
-### DEV-360 â€” Level route reservation strips refill stair openings and obstruct heads
+### DEV-360 — Level route reservation strips refill stair openings and obstruct heads
 
-**Status:** NATIVE SPINE OBSTRUCTIONS CORRECTED; swept capsule acceptance OPEN Â· **Affected:** Shared structural generator; reproduced WLD-03, WLD-04, WLD-05 and WLD-10; all other packets require individual audits
+**Status:** NATIVE SPINE OBSTRUCTIONS CORRECTED; swept capsule acceptance OPEN · **Affected:** Shared structural generator; reproduced WLD-03, WLD-04, WLD-05 and WLD-10; all other packets require individual audits
 
 Six-site headless native query found 45 obstructed tread-centre spine rays despite earlier floor-hole construction.
 
 Cause / uncertainty: Separate level connector strips were exported across the voids already reserved in floor slabs. Monastery L21 also crossed under the north catacomb stair.
 
-Fix / next action: Apply shared stair apertures to horizontal connector supports; move monastery west stair into its own shaft with source-authored level approach. All506 actual tread centres now have support and clear 0.3Ã¢â‚¬â€œ1.8m spine rays. Retain rejected probe rows and GLB hashes. Full capsule traversal is not established.
+Fix / next action: Apply shared stair apertures to horizontal connector supports; move monastery west stair into its own shaft with source-authored level approach. All506 actual tread centres now have support and clear 0.3â€“1.8m spine rays. Retain rejected probe rows and GLB hashes. Full capsule traversal is not established.
 
 Evidence and verification: development/levels/rebuild/verification/roster-routes-2026-11-07/; six revised rough-layout.json; structures/<site>/physics-contract.json and structure-physics.hcs2; tools/audit_roster_routes.py
 
 Older-map obligation: Audit every older map independently for physical stair run, landings, headroom, deck openings, body/edge clearance and supported arrivals. No inherited acceptance.
 
-### DEV-361 â€” Native stepped candidates fail current body and traversability queries
+### DEV-361 — Native stepped candidates fail current body and traversability queries
 
-**Status:** PARTIAL: explicit stair movement implemented; source landings and runtime integration OPEN Â· **Affected:** Six revised remote candidates and potentially other new tread-based sites; existing mature maps not certified
+**Status:** PARTIAL: explicit stair movement implemented; source landings and runtime integration OPEN · **Affected:** Six revised remote candidates and potentially other new tread-based sites; existing mature maps not certified
 
 506 supported tread centres with clear spine rays still include capsule/body and four-footprint support failures; monastery has zero traversable tread centres in the current kernel.
 
@@ -4966,9 +4966,9 @@ Evidence and verification: development/levels/rebuild/verification/roster-landin
 
 Older-map obligation: Audit every older map independently for physical stair run, landings, headroom, deck openings, body/edge clearance and supported arrivals. No inherited acceptance.
 
-### DEV-362 â€” Expanded stair apertures create collapsed ceiling sliver cells
+### DEV-362 — Expanded stair apertures create collapsed ceiling sliver cells
 
-**Status:** NATIVE REPAIR VERIFIED across25exports; runtime acceptance remains open Â· **Affected:** WLD-14 keeper foyer ceiling; shared rectangular slab partitioner
+**Status:** NATIVE REPAIR VERIFIED across25exports; runtime acceptance remains open · **Affected:** WLD-14 keeper foyer ceiling; shared rectangular slab partitioner
 
 All-roster rebuild rejects reimported Ceiling cap foyer.010 as not closed after expanded shaft openings.
 
@@ -4980,9 +4980,9 @@ Evidence and verification: development/levels/rebuild/rejected/route-shaft-slive
 
 Older-map obligation: Check every slab family after aperture changes. No unaudited source or circular Boolean mesh inherits acceptance from this rectangular-cell repair.
 
-### DEV-363 â€” Roster collision probe exposes crossing stairs and terrain covering authored flights
+### DEV-363 — Roster collision probe exposes crossing stairs and terrain covering authored flights
 
-**Status:** NATIVE HEAD-OBSTRUCTION REPAIRS VERIFIED across1720treads; full capsule/location acceptance OPEN Â· **Affected:** College L84; Mansion L59/L60; WLD-09 L14/L18; WLD-14 route14/20; WLD-18 route07/08/13/18; mortuary L14/L15
+**Status:** NATIVE HEAD-OBSTRUCTION REPAIRS VERIFIED across1720treads; full capsule/location acceptance OPEN · **Affected:** College L84; Mansion L59/L60; WLD-09 L14/L18; WLD-14 route14/20; WLD-18 route07/08/13/18; mortuary L14/L15
 
 All25 native collision exports load and1720tread centres have support, but90 head-height spine rays are obstructed across these6sites.
 
@@ -4994,9 +4994,9 @@ Evidence and verification: development/levels/rebuild/verification/roster-routes
 
 Older-map obligation: Audit retained Castle/House/Blackpine/Hollow Creek separately. Zero-tread WLD-16 is not a route pass. No map is unlocked by this source-wide read-only probe.
 
-### DEV-364 â€” Hydroelectric return stair still needs authored shaft enclosure and foundations
+### DEV-364 — Hydroelectric return stair still needs authored shaft enclosure and foundations
 
-**Status:** OPEN CONSTRUCTION DETAIL; native candidate only Â· **Affected:** WLD-09 east return stair L18 and its connection to the east-stair volume
+**Status:** OPEN CONSTRUCTION DETAIL; native candidate only · **Affected:** WLD-09 east return stair L18 and its connection to the east-stair volume
 
 Revised return clears other flights but the native overview shows the intermediate/upper stairs beyond the original east-stair shell; final supporting foundations/enclosure are absent.
 
@@ -5008,9 +5008,9 @@ Evidence and verification: development/levels/rebuild/structures/wld-09/; captur
 
 Older-map obligation: Audit full stair load paths and room/shaft volume parity individually across remote and retained maps; solid tread boxes are not final structural engineering or terrain support acceptance.
 
-### DEV-365 â€” Offline terrain sampler resolves seed inputs using newly created working paths and can swallow Blender errors
+### DEV-365 — Offline terrain sampler resolves seed inputs using newly created working paths and can swallow Blender errors
 
-**Status:** FIXED IN AUTHORING TOOL; failed-sampling atomicity verified Â· **Affected:** Saved editor terrain reproduction for WLD-07-MORTUARY and shared offline terrain wrapper
+**Status:** FIXED IN AUTHORING TOOL; failed-sampling atomicity verified · **Affected:** Saved editor terrain reproduction for WLD-07-MORTUARY and shared offline terrain wrapper
 
 After creating a rebuilt annex source, sampling an earlier seed ref chooses that new path although it did not exist in the seed commit. Blender exits zero on an uncaught Python exception without --python-exit-code.
 
@@ -5022,9 +5022,9 @@ Evidence and verification: verification/roster-editor-terrain-2026-11-07/terrain
 
 Older-map obligation: Use explicit immutable source refs and nonzero Python failure exits in other Blender authoring pipelines. Do not infer a sampler pass from a process returning normally.
 
-### DEV-366 â€” Saved terrain seeds retain rough proposal perimeters and unfinished aperture rims
+### DEV-366 — Saved terrain seeds retain rough proposal perimeters and unfinished aperture rims
 
-**Status:** OPEN DESQUAREIFY/CONSTRUCTION FINISH GATE Â· **Affected:** Lighthouse, Silo and Mortuary saved native terrain candidates; individual audits remain for all other maps
+**Status:** OPEN DESQUAREIFY/CONSTRUCTION FINISH GATE · **Affected:** Lighthouse, Silo and Mortuary saved native terrain candidates; individual audits remain for all other maps
 
 Native inspection retains broadly rectangular extents; lighthouse cliff/water fringe shows raw slivers. Newly punched building/stair/shaft cuts need rims, retaining walls, guards and foundation finish.
 
@@ -5036,9 +5036,9 @@ Evidence and verification: development/levels/rebuild/terrain-overall-pass/; ver
 
 Older-map obligation: Audit every terrain footprint individually. Native hole success does not certify prior ground shapes, source padding, model support or boundary containment.
 
-### DEV-367 â€” Asset discovery overlooks staged site kits and treats a small runtime sample as the working library
+### DEV-367 — Asset discovery overlooks staged site kits and treats a small runtime sample as the working library
 
-**Status:** CANONICAL DISCOVERY POINTER AND INDEX IMPLEMENTED; named chat pack imports remain pending Â· **Affected:** Map rebuild model selection, staged roughs/refinements, source-library masters and source-chat artifact discovery
+**Status:** CANONICAL DISCOVERY POINTER AND INDEX IMPLEMENTED; named chat pack imports remain pending · **Affected:** Map rebuild model selection, staged roughs/refinements, source-library masters and source-chat artifact discovery
 
 Initial furnishing preparation inspected24runtime furniture models without consulting the298map-specific roughs,15refinements, source-library masters or the owner-identified model conversations.
 
@@ -5050,9 +5050,9 @@ Evidence and verification: ASSET_LIBRARY.md; development/assets/asset-library-in
 
 Older-map obligation: Reconcile every requested missing/new prop against this index and its site kits before creating a replacement. Imported chat packs must preserve provenance and update this pointer; no automatic quality or map acceptance from indexing.
 
-### DEV-368 â€” Furnishing export guard reads deleted Blender objects after independent reset
+### DEV-368 — Furnishing export guard reads deleted Blender objects after independent reset
 
-**Status:** FIXED; all25final exports independently reimported Â· **Affected:** Shared staged-model furnishing generator
+**Status:** FIXED; all25final exports independently reimported · **Affected:** Shared staged-model furnishing generator
 
 First pilot aborts in the hidden-cache export guard with StructRNA Object has been removed.
 
@@ -5064,9 +5064,9 @@ Evidence and verification: development/levels/rebuild/verification/roster-prop-a
 
 Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/model/route audits. First spatial allocation does not certify complete model quality, capacity, services, native collision/navigation or map availability.
 
-### DEV-369 â€” Furnishing fit double-counts route buffers and overextends endpoint clearance
+### DEV-369 — Furnishing fit double-counts route buffers and overextends endpoint clearance
 
-**Status:** FIXED IN ROUGH ALLOCATION; source widths preserved Â· **Affected:** School office/changing rooms and shared allocation reservation geometry
+**Status:** FIXED IN ROUGH ALLOCATION; source widths preserved · **Affected:** School office/changing rooms and shared allocation reservation geometry
 
 Valid small-room furniture allocations are rejected despite preserving the authored clear pedestrian width.
 
@@ -5078,9 +5078,9 @@ Evidence and verification: development/levels/rebuild/verification/roster-prop-a
 
 Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/model/route audits. First spatial allocation does not certify complete model quality, capacity, services, native collision/navigation or map availability.
 
-### DEV-370 â€” Props can obstruct physical routes that cross rooms without naming those rooms
+### DEV-370 — Props can obstruct physical routes that cross rooms without naming those rooms
 
-**Status:** FIXED IN ROUGH ALLOCATION; zero new qualified route blocks Â· **Affected:** Asylum treatment, Church records, College cafe, Farmhouse stall and shared route reservation workflow
+**Status:** FIXED IN ROUGH ALLOCATION; zero new qualified route blocks · **Affected:** Asylum treatment, Church records, College cafe, Farmhouse stall and shared route reservation workflow
 
 Actual composite native physics finds46new body/support blocks and53new failed baseline-qualified sweeps in the first124-instance batch.
 
@@ -5092,9 +5092,9 @@ Evidence and verification: development/levels/rebuild/verification/roster-prop-a
 
 Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/model/route audits. First spatial allocation does not certify complete model quality, capacity, services, native collision/navigation or map availability.
 
-### DEV-371 â€” Many authored flat route samples fail baseline native support or body checks
+### DEV-371 — Many authored flat route samples fail baseline native support or body checks
 
-**Status:** PARTIAL; path winding corrected,9511current baseline-invalid poses remain Â· **Affected:** 25remaining native map candidates; per-site baseline-invalid counts in route-regressions.json
+**Status:** PARTIAL; path winding corrected,9511current baseline-invalid poses remain · **Affected:** 25remaining native map candidates; per-site baseline-invalid counts in route-regressions.json
 
 Of109506flat-route centre/side samples,36448are already unsupported or body-blocked before furnishing. These are not valid walkable samples.
 
@@ -5106,9 +5106,9 @@ Evidence and verification: development/levels/rebuild/verification/roster-baseme
 
 Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/model/route audits. First spatial allocation does not certify complete model quality, capacity, services, native collision/navigation or map availability.
 
-### DEV-372 â€” Asset index regeneration encounters Windows invalid-argument error on direct overwrite
+### DEV-372 — Asset index regeneration encounters Windows invalid-argument error on direct overwrite
 
-**Status:** ATOMIC PUBLICATION IMPLEMENTED; regeneration and stale check PASS, exact OS cause unconfirmed Â· **Affected:** Canonical development/assets/asset-library-index.json and generated root pointer
+**Status:** ATOMIC PUBLICATION IMPLEMENTED; regeneration and stale check PASS, exact OS cause unconfirmed · **Affected:** Canonical development/assets/asset-library-index.json and generated root pointer
 
 One direct Path.write_bytes overwrite returned OSError errno22; the prior readable index remained stale until successful regeneration.
 
@@ -5120,9 +5120,9 @@ Evidence and verification: tools/index_staged_map_models.py write_atomic; curren
 
 Older-map obligation: Publish generated source indexes atomically and retain authoritative prior bytes on failure. This changes no asset or runtime geometry.
 
-### DEV-373 â€” Rectangular stair treads overlap inside curved lighthouse flights and leave outside gaps
+### DEV-373 — Rectangular stair treads overlap inside curved lighthouse flights and leave outside gaps
 
-**Status:** CURVED JOINS AND FULL TOWER CHAIN FIXED IN NATIVE CANDIDATE; guards/runtime OPEN Â· **Affected:** WLD-14 native stair candidate and shared opt-in native movement contract
+**Status:** CURVED JOINS AND FULL TOWER CHAIN FIXED IN NATIVE CANDIDATE; guards/runtime OPEN · **Affected:** WLD-14 native stair candidate and shared opt-in native movement contract
 
 140 curved lighthouse tread solids have overlapping inner corners and visible outer gaps; whole-flight movement fails.
 
@@ -5134,9 +5134,9 @@ Evidence and verification: development/levels/rebuild/verification/roster-landin
 
 Older-map obligation: All other locations and retained Castle/House/Blackpine/Hollow Creek require individual route and join audits. No inferred fix or playable unlock.
 
-### DEV-374 â€” Float32 shared stair joins can report unsupported micrometre seams
+### DEV-374 — Float32 shared stair joins can report unsupported micrometre seams
 
-**Status:** BOUNDED OPT-IN JOIN QUERY FIXED; analytic negative controls PASS Â· **Affected:** WLD-14 native stair candidate and shared opt-in native movement contract
+**Status:** BOUNDED OPT-IN JOIN QUERY FIXED; analytic negative controls PASS · **Affected:** WLD-14 native stair candidate and shared opt-in native movement contract
 
 Mitered treads can disagree by several micrometres after separate GLB object transforms; exact shared path endpoints report START_UNSUPPORTED.
 
@@ -5148,9 +5148,9 @@ Evidence and verification: development/levels/rebuild/verification/roster-stair-
 
 Older-map obligation: All other locations and retained Castle/House/Blackpine/Hollow Creek require individual route and join audits. No inferred fix or playable unlock.
 
-### DEV-375 â€” Turn landings overhang the incoming stair flight and block standing movement
+### DEV-375 — Turn landings overhang the incoming stair flight and block standing movement
 
-**Status:** SCOPED NATIVE REPAIR VERIFIED; full map/runtime acceptance remains open Â· **Affected:** COLLEGE, MANSION, WLD-14 and shared full-source route audit
+**Status:** SCOPED NATIVE REPAIR VERIFIED; full map/runtime acceptance remains open · **Affected:** COLLEGE, MANSION, WLD-14 and shared full-source route audit
 
 CollegeL84 and MansionL59/L60 fail ascent against the landing slab, and descent lacks foot support.
 
@@ -5162,9 +5162,9 @@ Evidence and verification: development/levels/rebuild/verification/roster-landin
 
 Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek and every remaining site require individual physical route/landing/guard/owner audits. These checks do not certify unevaluated maps, services, networking or finished art.
 
-### DEV-376 â€” Cyclic stair end boundaries and missing final landing interrupt lighthouse ascent
+### DEV-376 — Cyclic stair end boundaries and missing final landing interrupt lighthouse ascent
 
-**Status:** SCOPED NATIVE REPAIR VERIFIED; full map/runtime acceptance remains open Â· **Affected:** COLLEGE, MANSION, WLD-14 and shared full-source route audit
+**Status:** SCOPED NATIVE REPAIR VERIFIED; full map/runtime acceptance remains open · **Affected:** COLLEGE, MANSION, WLD-14 and shared full-source route audit
 
 Nine individual lighthouse endpoint segments and allfive full spiral links remain blocked after the first mitered-tread revision.
 
@@ -5176,9 +5176,9 @@ Evidence and verification: development/levels/rebuild/verification/roster-landin
 
 Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek and every remaining site require individual physical route/landing/guard/owner audits. These checks do not certify unevaluated maps, services, networking or finished art.
 
-### DEV-377 â€” Flight-only chain audit omits flat landing segments and resets at link boundaries
+### DEV-377 — Flight-only chain audit omits flat landing segments and resets at link boundaries
 
-**Status:** SCOPED NATIVE REPAIR VERIFIED; full map/runtime acceptance remains open Â· **Affected:** All25candidate route manifests and connected stair checks
+**Status:** SCOPED NATIVE REPAIR VERIFIED; full map/runtime acceptance remains open · **Affected:** All25candidate route manifests and connected stair checks
 
 Previous82contiguous vertical chains do not prove intermediate flat landings or travel across an entire multi-link stair.
 
@@ -5190,9 +5190,9 @@ Evidence and verification: development/levels/rebuild/verification/roster-landin
 
 Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek and every remaining site require individual physical route/landing/guard/owner audits. These checks do not certify unevaluated maps, services, networking or finished art.
 
-### DEV-378 â€” Regenerated native scaffold next-step notes retain superseded sloped-mass instructions
+### DEV-378 — Regenerated native scaffold next-step notes retain superseded sloped-mass instructions
 
-**Status:** CURRENT25HANDOFFS UPDATED; generator carry-forward remains OPEN Â· **Affected:** COLLEGE, MANSION, WLD-14 structure NEXT.md and future scaffold regenerations
+**Status:** CURRENT25HANDOFFS UPDATED; generator carry-forward remains OPEN · **Affected:** COLLEGE, MANSION, WLD-14 structure NEXT.md and future scaffold regenerations
 
 Generated notes can still say that tower stairs are only sloped masses after actual140treads and connected native sweeps have been delivered.
 
@@ -5204,9 +5204,9 @@ Evidence and verification: development/levels/rebuild/verification/roster-landin
 
 Older-map obligation: Inspect each older map handoff against its actual current source and evidence; a regenerated planning note is not proof of a remaining runtime defect or of completed work.
 
-### DEV-379 â€” Legacy advisory stair run/riser fields lag the actual authored coordinate revision
+### DEV-379 — Legacy advisory stair run/riser fields lag the actual authored coordinate revision
 
-**Status:** KNOWN3DIMENSION HINTS CORRECTED; rest-of-roster metadata audit OPEN Â· **Affected:** COLLEGE L84, MANSION L59/L60 and retrospective roster stair dimension metadata
+**Status:** KNOWN3DIMENSION HINTS CORRECTED; rest-of-roster metadata audit OPEN · **Affected:** COLLEGE L84, MANSION L59/L60 and retrospective roster stair dimension metadata
 
 Changed turn-landing paths retain inherited run_m/risers values; CollegeL84 advertises4.8m/18risers while its current flight coordinates span4.65m and actual native treads number17.
 
@@ -5218,9 +5218,9 @@ Evidence and verification: development/levels/rebuild/{college,mansion}/rough-la
 
 Older-map obligation: Compare each older source metadata row to its actual built geometry before consuming it for runtime/AI/service authoring. No global metadata correctness inferred from tested native paths.
 
-### DEV-380 â€” Terrain sampling uses immutable seed-layout cuts instead of current authored basement entries
+### DEV-380 — Terrain sampling uses immutable seed-layout cuts instead of current authored basement entries
 
-**Status:** CURRENT CUT DATA IMPLEMENTED; selected worlds verified Â· **Affected:** WLD-07/WLD-07-MORTUARY and shared terrain/export/route authoring; explicit per-site results in evidence
+**Status:** CURRENT CUT DATA IMPLEMENTED; selected worlds verified · **Affected:** WLD-07/WLD-07-MORTUARY and shared terrain/export/route authoring; explicit per-site results in evidence
 
 Saved terrain could retain requests from an earlier layout after stair/foundation revisions.
 
@@ -5232,9 +5232,9 @@ Evidence and verification: development/levels/rebuild/verification/roster-baseme
 
 Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/terrain/route audits. No playable availability, services, guards, final terrain, visuals or complete mission acceptance is inferred for unaudited maps.
 
-### DEV-381 â€” Base cemetery lacks a terrain source and profile for saved-world integration
+### DEV-381 — Base cemetery lacks a terrain source and profile for saved-world integration
 
-**Status:** SHARED CEMETERY SOURCE AUTHORED; final terrain acceptance OPEN Â· **Affected:** WLD-07/WLD-07-MORTUARY and shared terrain/export/route authoring; explicit per-site results in evidence
+**Status:** SHARED CEMETERY SOURCE AUTHORED; final terrain acceptance OPEN · **Affected:** WLD-07/WLD-07-MORTUARY and shared terrain/export/route authoring; explicit per-site results in evidence
 
 Base cemetery terrain sampling fails with no ground mesh; an attached saved world alone is not imported by the scaffold without a terrain contract.
 
@@ -5246,9 +5246,9 @@ Evidence and verification: development/levels/rebuild/verification/roster-baseme
 
 Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/terrain/route audits. No playable availability, services, guards, final terrain, visuals or complete mission acceptance is inferred for unaudited maps.
 
-### DEV-382 â€” Cemetery ossuary stairs cross vestibule walls before reaching the basement floor
+### DEV-382 — Cemetery ossuary stairs cross vestibule walls before reaching the basement floor
 
-**Status:** NATIVE BASEMENT LINKS AND DECLARED CIRCULATION LOOPS VERIFIED; runtime OPEN Â· **Affected:** WLD-07/WLD-07-MORTUARY and shared terrain/export/route authoring; explicit per-site results in evidence
+**Status:** NATIVE BASEMENT LINKS AND DECLARED CIRCULATION LOOPS VERIFIED; runtime OPEN · **Affected:** WLD-07/WLD-07-MORTUARY and shared terrain/export/route authoring; explicit per-site results in evidence
 
 Both cemetery/annex routes hit west/east vestibule walls aroundY-0.9, while destination floor isY-3.
 
@@ -5260,9 +5260,9 @@ Evidence and verification: development/levels/rebuild/verification/roster-baseme
 
 Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/terrain/route audits. No playable availability, services, guards, final terrain, visuals or complete mission acceptance is inferred for unaudited maps.
 
-### DEV-383 â€” Native collision exporter overwrites its previous payload before terrain validation rejects a candidate
+### DEV-383 — Native collision exporter overwrites its previous payload before terrain validation rejects a candidate
 
-**Status:** PREVALIDATE AND STAGED FILE REPLACEMENT IMPLEMENTED; negative controls PASS Â· **Affected:** WLD-07/WLD-07-MORTUARY and shared terrain/export/route authoring; explicit per-site results in evidence
+**Status:** PREVALIDATE AND STAGED FILE REPLACEMENT IMPLEMENTED; negative controls PASS · **Affected:** WLD-07/WLD-07-MORTUARY and shared terrain/export/route authoring; explicit per-site results in evidence
 
 Rejected missing-terrain candidate changes the old HCS2 while leaving its old contract behind.
 
@@ -5274,9 +5274,9 @@ Evidence and verification: development/levels/rebuild/verification/roster-baseme
 
 Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/terrain/route audits. No playable availability, services, guards, final terrain, visuals or complete mission acceptance is inferred for unaudited maps.
 
-### DEV-384 â€” Moving cemetery stair openings invalidates old approach endpoints and room-centre anchors
+### DEV-384 — Moving cemetery stair openings invalidates old approach endpoints and room-centre anchors
 
-**Status:** APPROACHES AND AUTHORITATIVE STANDING RESERVATIONS VERIFIED; runtime mapping OPEN Â· **Affected:** WLD-07/WLD-07-MORTUARY and shared terrain/export/route authoring; explicit per-site results in evidence
+**Status:** APPROACHES AND AUTHORITATIVE STANDING RESERVATIONS VERIFIED; runtime mapping OPEN · **Affected:** WLD-07/WLD-07-MORTUARY and shared terrain/export/route authoring; explicit per-site results in evidence
 
 Initial revision preserves vertical routes but creates67qualified flat-route blocks,48on the old entrance approaches.
 
@@ -5288,9 +5288,9 @@ Evidence and verification: development/levels/rebuild/verification/roster-baseme
 
 Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/terrain/route audits. No playable availability, services, guards, final terrain, visuals or complete mission acceptance is inferred for unaudited maps.
 
-### DEV-385 â€” Uncut route slabs expose inward top faces and mark undersides as walking supports
+### DEV-385 — Uncut route slabs expose inward top faces and mark undersides as walking supports
 
-**Status:** ALL25CANDIDATE ROUTE SOLIDS FIXED;1015flat tops independently PASS Â· **Affected:** WLD-07/WLD-07-MORTUARY and shared terrain/export/route authoring; explicit per-site results in evidence
+**Status:** ALL25CANDIDATE ROUTE SOLIDS FIXED;1015flat tops independently PASS · **Affected:** WLD-07/WLD-07-MORTUARY and shared terrain/export/route authoring; explicit per-site results in evidence
 
 Independent prior HCS2 inspection finds876of1011flat route solids with inward or nonwalking top faces. Some Boolean-trimmed strips happen to be correct.
 
@@ -5302,9 +5302,9 @@ Evidence and verification: development/levels/rebuild/verification/roster-baseme
 
 Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/terrain/route audits. No playable availability, services, guards, final terrain, visuals or complete mission acceptance is inferred for unaudited maps.
 
-### DEV-386 â€” Local path grading can disturb adjoining route shoulders when overall terrain is unsettled
+### DEV-386 — Local path grading can disturb adjoining route shoulders when overall terrain is unsettled
 
-**Status:** SOURCE NETWORK GRADING VERIFIED; overall terrain acceptance OPEN Â· **Affected:** Cemetery/annex and shared native map authoring; PRISON specifically for DEV-388
+**Status:** SOURCE NETWORK GRADING VERIFIED; overall terrain acceptance OPEN · **Affected:** Cemetery/annex and shared native map authoring; PRISON specifically for DEV-388
 
 A new terrain shoulder blocks a prior qualified crypt path, and isolated approach grading alters adjacent source routes.
 
@@ -5316,9 +5316,9 @@ Evidence and verification: development/levels/rebuild/verification/roster-baseme
 
 Older-map obligation: Audit other maps individually. Neither physical path probes nor a native overview proves finished terrain, model support, lighting, services, networking or complete map acceptance.
 
-### DEV-387 â€” Before/after route comparator reuses old feet Y after valid terrain support changes
+### DEV-387 — Before/after route comparator reuses old feet Y after valid terrain support changes
 
-**Status:** SCENE-SPECIFIC GROUNDING FIXED; independent negative controls PASS Â· **Affected:** Cemetery/annex and shared native map authoring; PRISON specifically for DEV-388
+**Status:** SCENE-SPECIFIC GROUNDING FIXED; independent negative controls PASS · **Affected:** Cemetery/annex and shared native map authoring; PRISON specifically for DEV-388
 
 A supported millimetre-scale terrain change can be reported as a body/sweep obstruction because the after scene is queried at the old ground height.
 
@@ -5330,9 +5330,9 @@ Evidence and verification: development/levels/rebuild/verification/roster-baseme
 
 Older-map obligation: Audit other maps individually. Neither physical path probes nor a native overview proves finished terrain, model support, lighting, services, networking or complete map acceptance.
 
-### DEV-388 â€” Prison blocking overview shows isolated unsupported boundary panels
+### DEV-388 — Prison blocking overview shows isolated unsupported boundary panels
 
-**Status:** OPEN; terrain/foundation and enclosure assembly required Â· **Affected:** Cemetery/annex and shared native map authoring; PRISON specifically for DEV-388
+**Status:** OPEN; terrain/foundation and enclosure assembly required · **Affected:** Cemetery/annex and shared native map authoring; PRISON specifically for DEV-388
 
 Several exterior wall/barrier panels appear detached from the main prison structure with no visible ground or footing in the native overview.
 
@@ -5344,9 +5344,9 @@ Evidence and verification: development/levels/rebuild/verification/roster-baseme
 
 Older-map obligation: Audit other maps individually. Neither physical path probes nor a native overview proves finished terrain, model support, lighting, services, networking or complete map acceptance.
 
-### DEV-389 â€” Route reservation surfaces overlap real floor planes in rough native assemblies
+### DEV-389 — Route reservation surfaces overlap real floor planes in rough native assemblies
 
-**Status:** OPEN; remove coplanar source overlaps during terrain/structure refinement Â· **Affected:** Cemetery/annex and shared native map authoring; PRISON specifically for DEV-388
+**Status:** OPEN; remove coplanar source overlaps during terrain/structure refinement · **Affected:** Cemetery/annex and shared native map authoring; PRISON specifically for DEV-388
 
 Native basement-entry views show a black foreground band; source route/floor surfaces share the same authored walking plane.
 
@@ -5358,9 +5358,9 @@ Evidence and verification: development/levels/rebuild/verification/roster-baseme
 
 Older-map obligation: Audit other maps individually. Neither physical path probes nor a native overview proves finished terrain, model support, lighting, services, networking or complete map acceptance.
 
-### DEV-390 â€” Thin outside-cut strips exhaust editor topology budget without adding footprint fidelity
+### DEV-390 — Thin outside-cut strips exhaust editor topology budget without adding footprint fidelity
 
-**Status:** AUTHORING DECOMPOSITION FIXED; independent2,013,824cell mask parity PASS Â· **Affected:** 18new macroterrain candidates across remaining roster; exact affected sites/segments in terrain-overall-pass reports
+**Status:** AUTHORING DECOMPOSITION FIXED; independent2,013,824cell mask parity PASS · **Affected:** 18new macroterrain candidates across remaining roster; exact affected sites/segments in terrain-overall-pass reports
 
 Asylum new terrain generation exceeds20,000cut leaves after the Academy pilot consumed19,595leaves.
 
@@ -5372,9 +5372,9 @@ Evidence and verification: terrain-overall-pass/rejected-row-stripes/; verificat
 
 Older-map obligation: No previous map receives terrain acceptance. Audit each existing terrain and mature map individually. Preserve original source/model IDs, UVs and transforms; re-run actual native and visual checks after each terrain/blockout/foundation revision.
 
-### DEV-391 â€” Prison construction footprint does not align with editable terrain leaves
+### DEV-391 — Prison construction footprint does not align with editable terrain leaves
 
-**Status:** OPEN PHYSICAL RIMS; explicit excavation envelope authored Â· **Affected:** 18new macroterrain candidates across remaining roster; exact affected sites/segments in terrain-overall-pass reports
+**Status:** OPEN PHYSICAL RIMS; explicit excavation envelope authored · **Affected:** 18new macroterrain candidates across remaining roster; exact affected sites/segments in terrain-overall-pass reports
 
 Prison foundation edge46.8m cannot be represented by the quarter-metre editable grid; editor correctly rejects it.
 
@@ -5386,9 +5386,9 @@ Evidence and verification: terrain-overall-pass/rejected-row-stripes/unaligned-p
 
 Older-map obligation: No previous map receives terrain acceptance. Audit each existing terrain and mature map individually. Preserve original source/model IDs, UVs and transforms; re-run actual native and visual checks after each terrain/blockout/foundation revision.
 
-### DEV-392 â€” New site terrain exposes old flat-route and blockout elevation conflicts
+### DEV-392 — New site terrain exposes old flat-route and blockout elevation conflicts
 
-**Status:** OPEN; actual native failures retained, master maps preserved Â· **Affected:** 18new macroterrain candidates across remaining roster; exact affected sites/segments in terrain-overall-pass reports
+**Status:** OPEN; actual native failures retained, master maps preserved · **Affected:** 18new macroterrain candidates across remaining roster; exact affected sites/segments in terrain-overall-pass reports
 
 87,060flat-route samples retain79,235baseline-valid poses, but2,453poses and2,355qualified sweeps become blocked in new macroterrain composites. Ten sites have new findings; eight have none in this scoped check.
 
@@ -5400,9 +5400,9 @@ Evidence and verification: terrain-overall-pass/verification/native-route-fit.js
 
 Older-map obligation: No previous map receives terrain acceptance. Audit each existing terrain and mature map individually. Preserve original source/model IDs, UVs and transforms; re-run actual native and visual checks after each terrain/blockout/foundation revision.
 
-### DEV-393 â€” Larger macroterrain sites exceed the single editor mesh export area
+### DEV-393 — Larger macroterrain sites exceed the single editor mesh export area
 
-**Status:** CHUNKED AUTHORING VERIFIED; runtime location integration OPEN Â· **Affected:** 18new macroterrain candidates across remaining roster; exact affected sites/segments in terrain-overall-pass reports
+**Status:** CHUNKED AUTHORING VERIFIED; runtime location integration OPEN · **Affected:** 18new macroterrain candidates across remaining roster; exact affected sites/segments in terrain-overall-pass reports
 
 Prison terrain rectangle exceeds2,048source cells when published as one terrain mesh.
 
@@ -5414,9 +5414,9 @@ Evidence and verification: terrain-overall-pass/rejected-row-stripes/single-chun
 
 Older-map obligation: No previous map receives terrain acceptance. Audit each existing terrain and mature map individually. Preserve original source/model IDs, UVs and transforms; re-run actual native and visual checks after each terrain/blockout/foundation revision.
 
-### DEV-394 â€” Macroterrain composites expose unfinished supports, rock enclosure and angular boundaries
+### DEV-394 — Macroterrain composites expose unfinished supports, rock enclosure and angular boundaries
 
-**Status:** OPEN; construction and landscape fitness not accepted Â· **Affected:** 18new macroterrain candidates across remaining roster; exact affected sites/segments in terrain-overall-pass reports
+**Status:** OPEN; construction and landscape fitness not accepted · **Affected:** 18new macroterrain candidates across remaining roster; exact affected sites/segments in terrain-overall-pass reports
 
 Native full-site views show unsupported marsh/harbour decks, cave shelves and canopy-like cave room slabs; boundaries and drainage cross-sections remain coarse and angular, canonical van missing.
 
@@ -5428,9 +5428,9 @@ Evidence and verification: captures/macroterrain-batch/macroterrain-sheet-01.png
 
 Older-map obligation: No previous map receives terrain acceptance. Audit each existing terrain and mature map individually. Preserve original source/model IDs, UVs and transforms; re-run actual native and visual checks after each terrain/blockout/foundation revision.
 
-### DEV-395 â€” Support placement under a deck reservation can leave detached posts without a real deck mesh
+### DEV-395 — Support placement under a deck reservation can leave detached posts without a real deck mesh
 
-**Status:** SOURCE RULE FIXED;17actual missing-receiver negatives reproduced Â· **Affected:** Remaining25native rebuild candidates; exact affected contacts in terrain-fit-pass/*/construction.json
+**Status:** SOURCE RULE FIXED;17actual missing-receiver negatives reproduced · **Affected:** Remaining25native rebuild candidates; exact affected contacts in terrain-fit-pass/*/construction.json
 
 Initial marsh pilot puts posts at corners of reserved boardwalk rectangles where no constructed deck exists.
 
@@ -5442,9 +5442,9 @@ Evidence and verification: terrain-fit-pass/rejected/marsh-reservation-posts.jso
 
 Older-map obligation: Four mature maps retain individual audit obligations. No source master, saved terrain punch or reusable model was overwritten. Passing contact/native regression checks do not establish complete terrain, structures, visual, runtime/network or hardware acceptance.
 
-### DEV-396 â€” Masonry skirt can attach incidentally to a crossing route rather than its planned structural floor
+### DEV-396 — Masonry skirt can attach incidentally to a crossing route rather than its planned structural floor
 
-**Status:** SOURCE CLASSIFICATION FIXED; real deck construction still OPEN Â· **Affected:** Remaining25native rebuild candidates; exact affected contacts in terrain-fit-pass/*/construction.json
+**Status:** SOURCE CLASSIFICATION FIXED; real deck construction still OPEN · **Affected:** Remaining25native rebuild candidates; exact affected contacts in terrain-fit-pass/*/construction.json
 
 Wharf quay reservation produced a masonry strip whose declared receiver was L02support rather than a constructed quay floor.
 
@@ -5456,9 +5456,9 @@ Evidence and verification: terrain-fit-pass/rejected/wharf-skirt-on-route.glb an
 
 Older-map obligation: Four mature maps retain individual audit obligations. No source master, saved terrain punch or reusable model was overwritten. Passing contact/native regression checks do not establish complete terrain, structures, visual, runtime/network or hardware acceptance.
 
-### DEV-397 â€” Failure-contact diagnostic silently excludes new before/after variant names
+### DEV-397 — Failure-contact diagnostic silently excludes new before/after variant names
 
-**Status:** SOURCE FIX VERIFIED; missing-phase negative rejects and preserves prior output Â· **Affected:** Remaining25native rebuild candidates; exact affected contacts in terrain-fit-pass/*/construction.json
+**Status:** SOURCE FIX VERIFIED; missing-phase negative rejects and preserves prior output · **Affected:** Remaining25native rebuild candidates; exact affected contacts in terrain-fit-pass/*/construction.json
 
 First bearing comparison reports zero diagnosed failures despite36failed vertical segments in the actual movement result.
 
@@ -5470,9 +5470,9 @@ Evidence and verification: terrain-fit-pass/verification/stairs/failure-contacts
 
 Older-map obligation: Four mature maps retain individual audit obligations. No source master, saved terrain punch or reusable model was overwritten. Passing contact/native regression checks do not establish complete terrain, structures, visual, runtime/network or hardware acceptance.
 
-### DEV-398 â€” Exterior deck and walkway reservations lack continuous constructed mesh
+### DEV-398 — Exterior deck and walkway reservations lack continuous constructed mesh
 
-**Status:** OPEN; individually recorded across25support candidates Â· **Affected:** Remaining25native rebuild candidates; exact affected contacts in terrain-fit-pass/*/construction.json
+**Status:** OPEN; individually recorded across25support candidates · **Affected:** Remaining25native rebuild candidates; exact affected contacts in terrain-fit-pass/*/construction.json
 
 Native inspections show missing portions of wharf/quay/pier, motor-lodge walkways, keeper porch and marsh boardwalk reservations; existing cyan strips supply only narrower crossing routes.
 
@@ -5484,9 +5484,9 @@ Evidence and verification: terrain-fit-pass/existing-terrain-review.json; */cons
 
 Older-map obligation: Four mature maps retain individual audit obligations. No source master, saved terrain punch or reusable model was overwritten. Passing contact/native regression checks do not establish complete terrain, structures, visual, runtime/network or hardware acceptance.
 
-### DEV-399 â€” Distance fog bypassed by OpenGL and native-only far-haze selection
+### DEV-399 — Distance fog bypassed by OpenGL and native-only far-haze selection
 
-**Status:** SHARED COMPOSITOR FIX VERIFIED LOCALLY; exact-source CI/release acceptance separate Â· **Affected:** Shared Castle/investigation rendering, including custom levels and future integrated native packets
+**Status:** SHARED COMPOSITOR FIX VERIFIED LOCALLY; exact-source CI/release acceptance separate · **Affected:** Shared Castle/investigation rendering, including custom levels and future integrated native packets
 
 Software triangles fade independently while OpenGL geometry bypasses the fog; only native-site render calls apply additional far haze.
 
@@ -5498,9 +5498,9 @@ Evidence and verification: src/main/java/org/beckenburg/LevelAtmosphere.java; Sc
 
 Older-map obligation: All12currently loadable runtime sources captured in software and real OpenGL. Remaining17rebuild packets inherit the common rendering path when integrated; this does not unlock them or establish complete terrain, physical boundary, gameplay/network or performance acceptance.
 
-### DEV-400 â€” Hard-painted lower horizon differs from distant world fog colour
+### DEV-400 — Hard-painted lower horizon differs from distant world fog colour
 
-**Status:** SHARED SKY HORIZON FIX VERIFIED LOCALLY; physical edge work remains OPEN Â· **Affected:** Shared Castle/investigation rendering, including custom levels and future integrated native packets
+**Status:** SHARED SKY HORIZON FIX VERIFIED LOCALLY; physical edge work remains OPEN · **Affected:** Shared Castle/investigation rendering, including custom levels and future integrated native packets
 
 Visible empty space beyond map geometry exposes artificial dark hill bands and a different colour from the fogged far surfaces.
 
@@ -5512,9 +5512,9 @@ Evidence and verification: LevelAtmosphere.skyboxHaze; SceneRenderer.paintSky; v
 
 Older-map obligation: All12currently loadable runtime sources captured in software and real OpenGL. Remaining17rebuild packets inherit the common rendering path when integrated; this does not unlock them or establish complete terrain, physical boundary, gameplay/network or performance acceptance.
 
-### DEV-401 â€” Relative JAR packaging target can fail final move from restricted system temp
+### DEV-401 — Relative JAR packaging target can fail final move from restricted system temp
 
-**Status:** WORKSPACE-LOCAL PACKAGE TARGET FIX; final package check recorded separately Â· **Affected:** Shared Castle/investigation rendering, including custom levels and future integrated native packets
+**Status:** WORKSPACE-LOCAL PACKAGE TARGET FIX; final package check recorded separately · **Affected:** Shared Castle/investigation rendering, including custom levels and future integrated native packets
 
 build.cmd package compiles/resources successfully but jartool final rename from sandbox system Temp to relative build/beckenburg-game.jar is denied, removing the previous output.
 
@@ -5526,9 +5526,9 @@ Evidence and verification: build.cmd package_jar_only; verification/atmosphere-a
 
 Older-map obligation: All12currently loadable runtime sources captured in software and real OpenGL. Remaining17rebuild packets inherit the common rendering path when integrated; this does not unlock them or establish complete terrain, physical boundary, gameplay/network or performance acceptance.
 
-### DEV-402 â€” Final-frame fog can erase nearby translucent objects against a distant background
+### DEV-402 — Final-frame fog can erase nearby translucent objects against a distant background
 
-**Status:** FIX VERIFIED: surface-depth fog before alpha in both renderers and world layers Â· **Affected:** Initial atmosphere checkpoint862b65c2; shared world rendering and translucent ghost/material effects
+**Status:** FIX VERIFIED: surface-depth fog before alpha in both renderers and world layers · **Affected:** Initial atmosphere checkpoint862b65c2; shared world rendering and translucent ghost/material effects
 
 A nearby materializing ghost below220alpha retains background opaque depth; a final-depth fog pass can erase it using the distant wall depth.
 
@@ -5540,9 +5540,9 @@ Evidence and verification: src/main/java/org/beckenburg/LevelAtmosphere.java; Di
 
 Older-map obligation: All runtime maps share the same fix; source-only maps inherit on integration. Full map, physical terrain/boundary, installed multiplayer and performance acceptance remain open.
 
-### DEV-403 â€” Sequential coplanar deck Boolean leaves open or zero-thickness pieces
+### DEV-403 — Sequential coplanar deck Boolean leaves open or zero-thickness pieces
 
-**Status:** FIX VERIFIED: projected convex clipping and independently closed native export Â· **Affected:** Five physical deck candidates WLD06/11/14/15/16; shared offline authoring/audit tools
+**Status:** FIX VERIFIED: projected convex clipping and independently closed native export · **Affected:** Five physical deck candidates WLD06/11/14/15/16; shared offline authoring/audit tools
 
 The first marsh deck pilot failed strict solid checks at intersecting deck/route boundaries.
 
@@ -5554,9 +5554,9 @@ Evidence and verification: development/levels/rebuild/deck-fit-pass/verification
 
 Older-map obligation: All29roster decisions explicit; other24 sources retained individually, no unaudited older-map acceptance. Preserve true basement holes,40-space envelope, shared authored coordinates and canonical van contract.
 
-### DEV-404 â€” Collinear projected deck seam vertices export degenerate native triangles
+### DEV-404 — Collinear projected deck seam vertices export degenerate native triangles
 
-**Status:** FIX VERIFIED: authored polygon cleanup; unchanged production parser threshold Â· **Affected:** Five physical deck candidates WLD06/11/14/15/16; shared offline authoring/audit tools
+**Status:** FIX VERIFIED: authored polygon cleanup; unchanged production parser threshold · **Affected:** Five physical deck candidates WLD06/11/14/15/16; shared offline authoring/audit tools
 
 First deck native movement invocation rejected a zero-area face.
 
@@ -5568,9 +5568,9 @@ Evidence and verification: development/levels/rebuild/deck-fit-pass/verification
 
 Older-map obligation: All29roster decisions explicit; other24 sources retained individually, no unaudited older-map acceptance. Preserve true basement holes,40-space envelope, shared authored coordinates and canonical van contract.
 
-### DEV-405 â€” Deck support receipts lose part names when original bearing names already exist
+### DEV-405 — Deck support receipts lose part names when original bearing names already exist
 
-**Status:** FIX VERIFIED: map each generated object directly to its proof row Â· **Affected:** Five physical deck candidates WLD06/11/14/15/16; shared offline authoring/audit tools
+**Status:** FIX VERIFIED: map each generated object directly to its proof row · **Affected:** Five physical deck candidates WLD06/11/14/15/16; shared offline authoring/audit tools
 
 Independent checker found missing support proofs despite real exported supports.
 
@@ -5582,9 +5582,9 @@ Evidence and verification: development/levels/rebuild/deck-fit-pass/verification
 
 Older-map obligation: All29roster decisions explicit; other24 sources retained individually, no unaudited older-map acceptance. Preserve true basement holes,40-space envelope, shared authored coordinates and canonical van contract.
 
-### DEV-406 â€” Exterior deck framing, edge guards and terrain transitions remain incomplete
+### DEV-406 — Exterior deck framing, edge guards and terrain transitions remain incomplete
 
-**Status:** OPEN: closed walking plates added across five sites, final structure/terrain refinement required Â· **Affected:** Five physical deck candidates WLD06/11/14/15/16; shared offline authoring/audit tools
+**Status:** OPEN: closed walking plates added across five sites, final structure/terrain refinement required · **Affected:** Five physical deck candidates WLD06/11/14/15/16; shared offline authoring/audit tools
 
 WLD06/11/14/15/16 had large authored pier/boardwalk/porch/walk envelopes with only narrow route strips; new plates still lack complete intermediate framing/guards.
 
@@ -5596,9 +5596,9 @@ Evidence and verification: development/levels/rebuild/deck-fit-pass/verification
 
 Older-map obligation: All29roster decisions explicit; other24 sources retained individually, no unaudited older-map acceptance. Preserve true basement holes,40-space envelope, shared authored coordinates and canonical van contract.
 
-### DEV-407 â€” Independent deck audit misclassifies tiny closed plates and shared top boundaries
+### DEV-407 — Independent deck audit misclassifies tiny closed plates and shared top boundaries
 
-**Status:** CHECKER FIX VERIFIED: translated double-precision volume and paired interior edge probes Â· **Affected:** Offline physical exterior deck verification; no production collision tolerance change
+**Status:** CHECKER FIX VERIFIED: translated double-precision volume and paired interior edge probes · **Affected:** Offline physical exterior deck verification; no production collision tolerance change
 
 World-origin float32 tetrahedra gave a false negative volume of -2.1484990914661523e-05 for closed WLD11 exterior service plate81; quarter-metre grid rays on an exact diagonal seam hit both disjoint tops.
 
@@ -5610,9 +5610,9 @@ Evidence and verification: tools/check_roster_decks.py; development/levels/rebui
 
 Older-map obligation: Retain prior independent map audit obligations. This is an audit numerical fix, not automatic terrain or map acceptance; rerun actual artifacts per site.
 
-### DEV-408 â€” Terrain excavation omits elevated and deeper occupied room volumes
+### DEV-408 — Terrain excavation omits elevated and deeper occupied room volumes
 
-**Status:** FIX VERIFIED IN FIVE CANDIDATES; overall terrain/cave/runtime gates open Â· **Affected:** Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline
+**Status:** FIX VERIFIED IN FIVE CANDIDATES; overall terrain/cave/runtime gates open · **Affected:** Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline
 
 4749half-metre occupied-height terrain samples across13rooms in five actual native scenes.
 
@@ -5624,9 +5624,9 @@ Evidence and verification: development/levels/rebuild/terrain-occupancy-pass/; d
 
 Older-map obligation: All29packets retained; other20candidate geometry unchanged and four mature maps retain individual retrofit obligations. No runtime unlock or complete map acceptance; preserve40space envelope, canonical van, power/hiding/story, original props/UVs/pivots and real basement punches.
 
-### DEV-409 â€” Conservative circular tower punch leaves earth inside the wall
+### DEV-409 — Conservative circular tower punch leaves earth inside the wall
 
-**Status:** FIX VERIFIED: actual stepped editor cut and physical retaining collar Â· **Affected:** Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline
+**Status:** FIX VERIFIED: actual stepped editor cut and physical retaining collar · **Affected:** Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline
 
 Morrow tower retained12sampled interior earth contacts; first contained-cell revision left6.
 
@@ -5638,23 +5638,23 @@ Evidence and verification: development/levels/rebuild/terrain-occupancy-pass/; d
 
 Older-map obligation: All29packets retained; other20candidate geometry unchanged and four mature maps retain individual retrofit obligations. No runtime unlock or complete map acceptance; preserve40space envelope, canonical van, power/hiding/story, original props/UVs/pivots and real basement punches.
 
-### DEV-410 â€” Diagonal stair AABBs remove unrelated room-floor and cap regions
+### DEV-410 — Diagonal stair AABBs remove unrelated room-floor and cap regions
 
-**Status:** BATCH REPAIR VERIFIED: six candidate sites; legacy producer migration and older-map audit OPEN Â· **Affected:** Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline
+**Status:** BATCH REPAIR VERIFIED: six candidate sites; legacy producer migration and older-map audit OPEN · **Affected:** Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline
 
 Excavation exposed4new blocked poses and2failed sweeps where the lookout ruin floor had been removed by an unrelated diagonal flight bounding box.
 
 Cause / uncertainty: Shared structural_pass.deck_holes reserves each entire axis-aligned flight rectangle instead of its actual shaft footprint.
 
-Fix / next action: Restore the ruin gap only outside exact diagonal flight polygons and source walking tops with12closed0.16m plates. Final all25comparison has zero new blocks and no passing stairs/links/chains regress. Preserve rejected raw probes. Next broad batch must correct exact floor/cap shaft reservations across all25candidates and individually audit older mature maps. Subsequent floor/cap pass audits25current candidates and adds296closed parts/9816triangles restoring580.964mÂ² across6sites, retaining old source geometry. Joined exact polygons preserve all baseline passing stairs/links/chains/loops and recover248flat poses. The legacy broad-bounds helper remains for frozen producers; its migration and mature-source audits are not claimed complete.
+Fix / next action: Restore the ruin gap only outside exact diagonal flight polygons and source walking tops with12closed0.16m plates. Final all25comparison has zero new blocks and no passing stairs/links/chains regress. Preserve rejected raw probes. Next broad batch must correct exact floor/cap shaft reservations across all25candidates and individually audit older mature maps. Subsequent floor/cap pass audits25current candidates and adds296closed parts/9816triangles restoring580.964m² across6sites, retaining old source geometry. Joined exact polygons preserve all baseline passing stairs/links/chains/loops and recover248flat poses. The legacy broad-bounds helper remains for frozen producers; its migration and mature-source audits are not claimed complete.
 
 Evidence and verification: development/levels/rebuild/terrain-occupancy-pass/; development/levels/rebuild/captures/room-terrain-batch/; tools/append_static_glb.py; tools/check_room_terrain.py
 
 Older-map obligation: All29packets retained; other20candidate geometry unchanged and four mature maps retain individual retrofit obligations. No runtime unlock or complete map acceptance; preserve40space envelope, canonical van, power/hiding/story, original props/UVs/pivots and real basement punches.
 
-### DEV-411 â€” Re-exporting retained GLB can shift an existing stair vertex
+### DEV-411 — Re-exporting retained GLB can shift an existing stair vertex
 
-**Status:** FIX VERIFIED: append new static resources without re-exporting retained geometry Â· **Affected:** Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline
+**Status:** FIX VERIFIED: append new static resources without re-exporting retained geometry · **Affected:** Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline
 
 Independent source preservation rejected L11flight0step12 at the lookout: a tiny position shift crossed the0.1mm rounding bin.
 
@@ -5666,9 +5666,9 @@ Evidence and verification: development/levels/rebuild/terrain-occupancy-pass/; d
 
 Older-map obligation: All29packets retained; other20candidate geometry unchanged and four mature maps retain individual retrofit obligations. No runtime unlock or complete map acceptance; preserve40space envelope, canonical van, power/hiding/story, original props/UVs/pivots and real basement punches.
 
-### DEV-412 â€” Disconnected retained GLB terrain node can still import as geometry
+### DEV-412 — Disconnected retained GLB terrain node can still import as geometry
 
-**Status:** FIX VERIFIED: remove mesh binding on explicitly replaced terrain nodes Â· **Affected:** Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline
+**Status:** FIX VERIFIED: remove mesh binding on explicitly replaced terrain nodes · **Affected:** Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline
 
 Independent export checker found the old terrain mesh present after first static append, despite removal from scene root lists.
 
@@ -5680,9 +5680,9 @@ Evidence and verification: development/levels/rebuild/terrain-occupancy-pass/; d
 
 Older-map obligation: All29packets retained; other20candidate geometry unchanged and four mature maps retain individual retrofit obligations. No runtime unlock or complete map acceptance; preserve40space envelope, canonical van, power/hiding/story, original props/UVs/pivots and real basement punches.
 
-### DEV-413 â€” Battery native room view has unresolved black floor regions
+### DEV-413 — Battery native room view has unresolved black floor regions
 
-**Status:** OPEN: inspect actual floor/shaft geometry and material/normal state Â· **Affected:** Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline; WLD04ruin dark interior floor region in paired threshold native inspection (cause unverified)
+**Status:** OPEN: inspect actual floor/shaft geometry and material/normal state · **Affected:** Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline; WLD04ruin dark interior floor region in paired threshold native inspection (cause unverified)
 
 The after native battery first-person frame exposes black rectangular and polygonal floor regions after earth is removed.
 
@@ -5694,11 +5694,11 @@ Evidence and verification: development/levels/rebuild/terrain-occupancy-pass/; d
 
 Older-map obligation: All29packets retained; other20candidate geometry unchanged and four mature maps retain individual retrofit obligations. No runtime unlock or complete map acceptance; preserve40space envelope, canonical van, power/hiding/story, original props/UVs/pivots and real basement punches.
 
-### DEV-414 â€” Convex clipping creates excessive structural fragments around circular floors
+### DEV-414 — Convex clipping creates excessive structural fragments around circular floors
 
-**Status:** REJECTED FIRST STUDY; compact planar restoration verified Â· **Affected:** Source-only structural floor/cap construction across25remaining candidates, with six actual repair sites and four mature sources retained
+**Status:** REJECTED FIRST STUDY; compact planar restoration verified · **Affected:** Source-only structural floor/cap construction across25remaining candidates, with six actual repair sites and four mature sources retained
 
-The initial lighthouse floor restoration emitted9905parts/116128triangles for22.55mÂ² before joined-turn correction.
+The initial lighthouse floor restoration emitted9905parts/116128triangles for22.55m² before joined-turn correction.
 
 Cause / uncertainty: Subtracting disjoint triangles still split polygons along infinite edge lines; independent prisms retained every fragment.
 
@@ -5708,9 +5708,9 @@ Evidence and verification: development/levels/rebuild/floor-closure-pass/verific
 
 Older-map obligation: All29roster decisions explicit. Nineteenzero-addition results do not establish complete map fitness. Preserve source assets, exact native earth punches,40space envelope and canonical van/power/hiding/story; remaining35stairsegments/35links, legacy producer migration, mature-source and actual runtime/network/hardware gates remain.
 
-### DEV-415 â€” Merged planar floor patches can have pinched solids and degenerate triangulation
+### DEV-415 — Merged planar floor patches can have pinched solids and degenerate triangulation
 
-**Status:** FIX VERIFIED: closed edge-connected regions and zero-area cleanup Â· **Affected:** Source-only structural floor/cap construction across25remaining candidates, with six actual repair sites and four mature sources retained
+**Status:** FIX VERIFIED: closed edge-connected regions and zero-area cleanup · **Affected:** Source-only structural floor/cap construction across25remaining candidates, with six actual repair sites and four mature sources retained
 
 A merged circular plate had25nonmanifold vertical edges at point contacts; the native reader also rejected repeated-vertex triangles in a merged lookout floor.
 
@@ -5722,9 +5722,9 @@ Evidence and verification: development/levels/rebuild/floor-closure-pass/verific
 
 Older-map obligation: All29roster decisions explicit. Nineteenzero-addition results do not establish complete map fitness. Preserve source assets, exact native earth punches,40space envelope and canonical van/power/hiding/story; remaining35stairsegments/35links, legacy producer migration, mature-source and actual runtime/network/hardware gates remain.
 
-### DEV-416 â€” Independent flight rectangles leave spiral-turn headroom wedges
+### DEV-416 — Independent flight rectangles leave spiral-turn headroom wedges
 
-**Status:** FIX VERIFIED: joined authored intermediate corridor corners Â· **Affected:** Source-only structural floor/cap construction across25remaining candidates, with six actual repair sites and four mature sources retained
+**Status:** FIX VERIFIED: joined authored intermediate corridor corners · **Affected:** Source-only structural floor/cap construction across25remaining candidates, with six actual repair sites and four mature sources retained
 
 First closure draft regressed80previously passing lighthouse stair segments in both directions, fivecomplete links and their automatic chain; the independent standing-body sample also failed.
 
@@ -5736,37 +5736,37 @@ Evidence and verification: development/levels/rebuild/floor-closure-pass/verific
 
 Older-map obligation: All29roster decisions explicit. Nineteenzero-addition results do not establish complete map fitness. Preserve source assets, exact native earth punches,40space envelope and canonical van/power/hiding/story; remaining35stairsegments/35links, legacy producer migration, mature-source and actual runtime/network/hardware gates remain.
 
-### DEV-417 â€” High stair landing overhangs descending treads; narrowing it removes walkway support
+### DEV-417 — High stair landing overhangs descending treads; narrowing it removes walkway support
 
-**Status:** FIX VERIFIED IN NATIVE CANDIDATES: full25movement/source regression; runtime integration open Â· **Affected:** Battery WLD-17 routes11/12 and analogous high landing corners WLD-09/WLD-18
+**Status:** FIX VERIFIED IN NATIVE CANDIDATES: full25movement/source regression; runtime integration open · **Affected:** Battery WLD-17 routes11/12 and analogous high landing corners WLD-09/WLD-18
 
 Original high landing blocks standing headroom on descending treads. Rejected narrow-platform pilot passed stair centres but regressed six side-lane standing samples and sweeps.
 
 Cause / uncertainty: Treating the stair centre independently of the full-width adjoining flat walkway.
 
-Fix / next action: Retain original full landing and all flat route coordinates; inset the descending flight beyond the overhang, add a visible closed bridge and revise the shared authored route points. Never change support/body tolerances or remove blockers to manufacture passes. Final all25 native checks:110409flat samples,99937baseline valid,94879qualified sweeps,47recovered standing poses; zero new blocks/sweepfailures.221flight segments186â†’196passing both ways,84full links49â†’56; zero passing-direction regressions. Both battery links pass, original walkway full width retained. Independent exported/native solids and all11editable packed sources pass. Bay revision also retains existing terminal platform meshes and shallow upper tread standing surfaces when full tread columns move, preserving the adjoining full-width flat approaches.
+Fix / next action: Retain original full landing and all flat route coordinates; inset the descending flight beyond the overhang, add a visible closed bridge and revise the shared authored route points. Never change support/body tolerances or remove blockers to manufacture passes. Final all25 native checks:110409flat samples,99937baseline valid,94879qualified sweeps,47recovered standing poses; zero new blocks/sweepfailures.221flight segments186→196passing both ways,84full links49→56; zero passing-direction regressions. Both battery links pass, original walkway full width retained. Independent exported/native solids and all11editable packed sources pass. Bay revision also retains existing terminal platform meshes and shallow upper tread standing surfaces when full tread columns move, preserving the adjoining full-width flat approaches.
 
 Evidence and verification: development/levels/rebuild/stair-landing-pass/rejected/battery-narrowed-turn-*; final verification and native captures under stair-landing-pass/
 
 Older-map obligation: Individually audit all29packets and older maps for stair/landing joins, guards, full-width circulation, depth and surface support; source candidate passes are not runtime integration.
 
-### DEV-418 â€” Unupdated tread rotation cuts an unsupported wedge from a new stair landing
+### DEV-418 — Unupdated tread rotation cuts an unsupported wedge from a new stair landing
 
-**Status:** FIX VERIFIED IN NATIVE CANDIDATES: full25movement/source regression; runtime integration open Â· **Affected:** Stair landing construction candidate WLD-17 route12; rebuilt high corners across WLD-09/WLD-18 also regenerated
+**Status:** FIX VERIFIED IN NATIVE CANDIDATES: full25movement/source regression; runtime integration open · **Affected:** Stair landing construction candidate WLD-17 route12; rebuilt high corners across WLD-09/WLD-18 also regenerated
 
 First full-width candidate retained all standing poses but introduced one side-lane sweep failure and lost support at the route12 stair-to-bridge transition.
 
 Cause / uncertainty: Blender matrix_world had not updated after rotating newly created tread boxes; planar subtraction used an unrotated top footprint. Splitting coplanar triangles and float slivers made the missing wedge harder to diagnose.
 
-Fix / next action: Update the dependency graph before reading final world top coordinates; subtract a complete convex top only when its area equals the actual triangle union. Snap authored cutters to10micrometres, bake only new transforms and triangulate before exact export/native comparison. Preserve rejected native results; do not modify production tolerances. Final all25 native checks:110409flat samples,99937baseline valid,94879qualified sweeps,47recovered standing poses; zero new blocks/sweepfailures.221flight segments186â†’196passing both ways,84full links49â†’56; zero passing-direction regressions. Both battery links pass, original walkway full width retained. Independent exported/native solids and all11editable packed sources pass.
+Fix / next action: Update the dependency graph before reading final world top coordinates; subtract a complete convex top only when its area equals the actual triangle union. Snap authored cutters to10micrometres, bake only new transforms and triangulate before exact export/native comparison. Preserve rejected native results; do not modify production tolerances. Final all25 native checks:110409flat samples,99937baseline valid,94879qualified sweeps,47recovered standing poses; zero new blocks/sweepfailures.221flight segments186→196passing both ways,84full links49→56; zero passing-direction regressions. Both battery links pass, original walkway full width retained. Independent exported/native solids and all11editable packed sources pass.
 
 Evidence and verification: development/levels/rebuild/stair-landing-pass/rejected/stale-rotation-*; tools/build_stair_landings.py; tools/check_stair_landings.py
 
 Older-map obligation: Audit actual rotated object footprints after transform/geometry changes; preserve original props, UVs, pivots and saved terrain holes. All25candidate movement and source checks required; complete runtime/network/hardware acceptance remains open.
 
-### DEV-419 â€” New transformed tread boxes differ from their exported native triangle records
+### DEV-419 — New transformed tread boxes differ from their exported native triangle records
 
-**Status:** FIX VERIFIED: bake new transforms and triangulation; all11sources pass exact parity Â· **Affected:** Stair end/corner generator initial WLD-17 pilot; new transformed tread boxes
+**Status:** FIX VERIFIED: bake new transforms and triangulation; all11sources pass exact parity · **Affected:** Stair end/corner generator initial WLD-17 pilot; new transformed tread boxes
 
 Independent reimport stopped with export/native mismatch for Rebuilt stair WLD-17 route-11 flight0 part0.
 
@@ -5778,9 +5778,9 @@ Evidence and verification: Observed interrupted build/stair-end-pilot.log traceb
 
 Older-map obligation: Individually check render/native coordinates after transformed geometry generation; never globally reset original imported asset pivots or UV materials.
 
-### DEV-420 â€” Several native stair review cameras are occluded or too distant for join acceptance
+### DEV-420 — Several native stair review cameras are occluded or too distant for join acceptance
 
-**Status:** OPEN: diagnostic framing/structural join review required Â· **Affected:** WLD04terrain closeup; WLD13/WLD18roof/wall closeups; isolated whole-site landing additions
+**Status:** OPEN: diagnostic framing/structural join review required · **Affected:** WLD04terrain closeup; WLD13/WLD18roof/wall closeups; isolated whole-site landing additions
 
 WLD04closeup is filled by terrain; several WLD13/WLD18joins remain behind walls/caps. Isolated additions in whole-site overviews are too small for detailed seam inspection.
 
@@ -5792,23 +5792,23 @@ Evidence and verification: development/levels/rebuild/captures/stair-landing-fit
 
 Older-map obligation: Audit actual visible joins at standing/crouched height across all29packets. Whole-site and isolated exports do not replace in-room/native/runtime visual review.
 
-### DEV-421 â€” Authored stair routes intersect continuous structural walls and floor caps
+### DEV-421 — Authored stair routes intersect continuous structural walls and floor caps
 
-**Status:** PARTIAL NATIVE REPAIR VERIFIED: eight candidates; remaining terrain/crossed-flight blockers open Â· **Affected:** WLD03/04/05/06/08/09/13/18source stair corridors
+**Status:** PARTIAL NATIVE REPAIR VERIFIED: eight candidates; remaining terrain/crossed-flight blockers open · **Affected:** WLD03/04/05/06/08/09/13/18source stair corridors
 
 Production native sweeps stop at room/undercroft/lab/dorm/gallery walls and internal floor/cap cells along authored vertical routes.
 
 Cause / uncertainty: Original structural shell openings did not follow the full authored stair body volume, despite stair/route coordinates being present.
 
-Fix / next action: Replace29individually named shell parts with closed physical apertures; retain all unrelated meshes/resources/UVs/pivots/native records and fixed context.5049independent body samples and actual native sweep comparisons pass:221flights196â†’208and84links56â†’68bothways, zero previous passing-direction regression.13flights/16links remain failing; no runtime or whole-map completion inferred.
+Fix / next action: Replace29individually named shell parts with closed physical apertures; retain all unrelated meshes/resources/UVs/pivots/native records and fixed context.5049independent body samples and actual native sweep comparisons pass:221flights196→208and84links56→68bothways, zero previous passing-direction regression.13flights/16links remain failing; no runtime or whole-map completion inferred.
 
 Evidence and verification: development/levels/rebuild/stair-opening-pass/; tools/build_stair_openings.py; tools/check_stair_openings.py; tools/audit_macroterrain_fit.py; verification/failure-contacts.tsv; captures/stair-opening-batch/
 
 Older-map obligation: Audit all29packets and older sources individually for real render/body/optical openings,160mmdeck depth, wall thickness, supports and roof/light isolation; keep native runtime integration/power/hiding/story/hardware gates open.
 
-### DEV-422 â€” Flight-only headroom cuts leave blocked landing caps and tread-level wall thresholds
+### DEV-422 — Flight-only headroom cuts leave blocked landing caps and tread-level wall thresholds
 
-**Status:** FIX VERIFIED IN EIGHT NATIVE CANDIDATES; broader map acceptance open Â· **Affected:** WLD08L20, WLD09wall crossings, WLD18route14landing/floor-cap cells
+**Status:** FIX VERIFIED IN EIGHT NATIVE CANDIDATES; broader map acceptance open · **Affected:** WLD08L20, WLD09wall crossings, WLD18route14landing/floor-cap cells
 
 First aperture draft cleared central wall areas but stopped at the terminal plane or remaining cap over the intermediate flat landing. Opened wall lower edge also struck the actual foot capsule between treads.
 
@@ -5820,9 +5820,9 @@ Evidence and verification: development/levels/rebuild/stair-opening-pass/; tools
 
 Older-map obligation: Audit every stair/body footprint and all intermediate/terminal landings; one centreline ray or disconnected flight pass does not prove complete circulation.
 
-### DEV-423 â€” Crossed mine stair shaft removes support from an upper walkway
+### DEV-423 — Crossed mine stair shaft removes support from an upper walkway
 
-**Status:** OPEN GEOMETRIC CONFLICT; rejected shaft deletion withheld and six regressions restored Â· **Affected:** WLD05L16stair and L18flat walkway atX11,Y-6,Z42
+**Status:** OPEN GEOMETRIC CONFLICT; rejected shaft deletion withheld and six regressions restored · **Affected:** WLD05L16stair and L18flat walkway atX11,Y-6,Z42
 
 Uncoupled shaft draft caused six previously valid flat samples to lose support at the centre and both side lanes, across two adjoining walkway segments.
 
@@ -5834,9 +5834,9 @@ Evidence and verification: development/levels/rebuild/stair-opening-pass/rejecte
 
 Older-map obligation: Individually audit grade-separated crossings and all upper routes before removing floors for stair shafts. Preserve40space limits, geometry/native shared coordinates and actual saved terrain holes.
 
-### DEV-424 â€” Structural fit reporter could return success while recording new flat-route regressions
+### DEV-424 — Structural fit reporter could return success while recording new flat-route regressions
 
-**Status:** FIX VERIFIED: opening-pass now asserts no new blocks or sweep failures after preserving raw report Â· **Affected:** New structural opening batch using tools/audit_macroterrain_fit.py
+**Status:** FIX VERIFIED: opening-pass now asserts no new blocks or sweep failures after preserving raw report · **Affected:** New structural opening batch using tools/audit_macroterrain_fit.py
 
 Initial draft produced6new_block findings while the general measurement script still exited0; manual raw-probe inspection caught and rejected it.
 
@@ -5848,23 +5848,23 @@ Evidence and verification: development/levels/rebuild/stair-opening-pass/; tools
 
 Older-map obligation: Do not infer geometry acceptance from reporter exit codes alone. Retain before/after production-pose evidence, all failed cases and per-map obligations; existing general terrain finding mode remains a measurement tool.
 
-### DEV-425 â€” Converging solid stair columns occupy room anchors and intersect independent routes
+### DEV-425 — Converging solid stair columns occupy room anchors and intersect independent routes
 
-**Status:** PARTIAL NATIVE BAY REPAIR VERIFIED: three sites; remaining mine/terrain conflicts open Â· **Affected:** WLD05ore-west/lower/vent, WLD09east/turbine/spillway/return, WLD12trestle/lower/return
+**Status:** PARTIAL NATIVE BAY REPAIR VERIFIED: three sites; remaining mine/terrain conflicts open · **Affected:** WLD05ore-west/lower/vent, WLD09east/turbine/spillway/return, WLD12trestle/lower/return
 
 Multiple flights share a high anchor but their full solid columns overlap. Lower mine room centre lies inside a previous stair, and railway return crosses the descending column. First bay draft moved a mine flight into upper haul supportL10 and regressed a passing route.
 
 Cause / uncertainty: Rough links became separate full-height solid flights instead of a coherent shared stair hall or separated bays; moving one centreline did not account for all upper routes.
 
-Fix / next action: Mine: move shaft to west bay and share its actual flight with the lower return, retaining original link endpoints and rebuilding vacated floor shafts. Powerhouse: reuse existing main stair and add coherent lower bypass/landing; remove duplicate columns. Railway: separate descent and return with straight lead-ins. Preserve terminal pads and exact native component identities. Final25candidate checks:221flight segments208â†’214and84links68â†’73bothways,292recovered flat poses, zero previous passing-direction or flat regressions.7flights/11links remain, including mineL17and actual saved-terrain work.
+Fix / next action: Mine: move shaft to west bay and share its actual flight with the lower return, retaining original link endpoints and rebuilding vacated floor shafts. Powerhouse: reuse existing main stair and add coherent lower bypass/landing; remove duplicate columns. Railway: separate descent and return with straight lead-ins. Preserve terminal pads and exact native component identities. Final25candidate checks:221flight segments208→214and84links68→73bothways,292recovered flat poses, zero previous passing-direction or flat regressions.7flights/11links remain, including mineL17and actual saved-terrain work.
 
 Evidence and verification: development/levels/rebuild/stair-bay-pass/; tools/build_stair_bays.py; verification/; rejected/first-bay-*; verification/remaining-links.json; source design and authored-layout.json
 
 Older-map obligation: Individually audit room/spawn anchors, upper paths, shared stair bays, full footprints and physical earth openings across29packets. Source candidates do not establish runtime ownership, global walkability, guard/framing or hardware acceptance.
 
-### DEV-426 â€” Stair exit clips diagonal tread corners when no physical toe landing is authored
+### DEV-426 — Stair exit clips diagonal tread corners when no physical toe landing is authored
 
-**Status:** FIX VERIFIED: actual closed toe landing and aligned lower approach; no kernel tolerance change Â· **Affected:** WLD09main east stair L09with new L11/L12routes; existing west stair L07lower approach
+**Status:** FIX VERIFIED: actual closed toe landing and aligned lower approach; no kernel tolerance change · **Affected:** WLD09main east stair L09with new L11/L12routes; existing west stair L07lower approach
 
 Native complete paths stopped on first tread side/corner while standing poses remained valid; direct contacts identify L09flight0step1 and L07flight0step2.
 
@@ -5876,9 +5876,9 @@ Evidence and verification: development/levels/rebuild/stair-bay-pass/; tools/bui
 
 Older-map obligation: Audit actual foot/capsule corner clearance, complete flat-to-stair chains and landing dimensions. Centreline steps alone do not prove approach or exit circulation.
 
-### DEV-427 â€” Repeated cuts through already-authored shared passages create nonmanifold shell slivers
+### DEV-427 — Repeated cuts through already-authored shared passages create nonmanifold shell slivers
 
-**Status:** FIX VERIFIED: exact retained segment reuse and deduplicated physical cuts Â· **Affected:** Stair bay constructor WLD09workshop north wall existing physical aperture
+**Status:** FIX VERIFIED: exact retained segment reuse and deduplicated physical cuts · **Affected:** Stair bay constructor WLD09workshop north wall existing physical aperture
 
 Generator rejected Bayed shell Opened stair shell Wall workshop N.001 as a new open solid.
 
@@ -5890,9 +5890,9 @@ Evidence and verification: development/levels/rebuild/stair-bay-pass/; tools/bui
 
 Older-map obligation: Repeat independent geometric closure and exact native parity checks after every shared passage edit; never accept a Boolean merely because export succeeds.
 
-### DEV-428 â€” Bay floor restoration treats shaft-opening records as raw polygons
+### DEV-428 — Bay floor restoration treats shaft-opening records as raw polygons
 
-**Status:** FIX VERIFIED: explicit polygon adapter; actual restored shaft solids checked Â· **Affected:** Initial tools/build_stair_bays.py old/new deck_openings integration
+**Status:** FIX VERIFIED: explicit polygon adapter; actual restored shaft solids checked · **Affected:** Initial tools/build_stair_bays.py old/new deck_openings integration
 
 Background authoring stopped with TypeError unhashable type slice while clipping a vacated shaft.
 
@@ -5904,9 +5904,9 @@ Evidence and verification: development/levels/rebuild/stair-bay-pass/; tools/bui
 
 Older-map obligation: Preserve source helper contracts and exact saved-world fingerprints when migrating frozen map producers; no unverified old map fix inferred.
 
-### DEV-429 â€” Current saved-terrain layout points to a nonexistent scene descriptor
+### DEV-429 — Current saved-terrain layout points to a nonexistent scene descriptor
 
-**Status:** FIX VERIFIED: actual scene.bin bound and independently checked Â· **Affected:** Initial stair-terrain composite current_saved_editor_terrain contract
+**Status:** FIX VERIFIED: actual scene.bin bound and independently checked · **Affected:** Initial stair-terrain composite current_saved_editor_terrain contract
 
 New contract initially named scene-package/scene.properties although the persistent editor uses scene.bin.
 
@@ -5918,9 +5918,9 @@ Evidence and verification: development/levels/rebuild/stair-terrain-pass/verific
 
 Older-map obligation: Inspect real package filenames and saved topology, never infer editor/runtime integration from plausible metadata. Individual older-map contracts remain audit obligations.
 
-### DEV-430 â€” Unchanged terrain-pass fallback reuses stale prior-bay stair identities
+### DEV-430 — Unchanged terrain-pass fallback reuses stale prior-bay stair identities
 
-**Status:** FIX VERIFIED: unchanged cases normalize before state to their current source Â· **Affected:** tools/audit_roster_stairs.py --bench-pass unchanged WLD05/WLD09bay candidates
+**Status:** FIX VERIFIED: unchanged cases normalize before state to their current source · **Affected:** tools/audit_roster_stairs.py --bench-pass unchanged WLD05/WLD09bay candidates
 
 Native reader correctly rejected unknown old L15/L16tread IDs because the fallback loaded a current bay payload with its prior-bay component set.
 
@@ -5932,9 +5932,9 @@ Evidence and verification: development/levels/rebuild/stair-terrain-pass/verific
 
 Older-map obligation: Audit every before/after source coordinate/layout/component binding when combining stage snapshots. Do not weaken physics or silently discard unknown stair identities.
 
-### DEV-431 â€” Isolated upper stair grading obstructs lower circulation through the same hillside
+### DEV-431 — Isolated upper stair grading obstructs lower circulation through the same hillside
 
-**Status:** FIX VERIFIED FOR THREE NATIVE CANDIDATES; landscape/retaining acceptance open Â· **Affected:** WLD03L15lower path, WLD12L06/L07west return, coupled hillside/railway terrain levels
+**Status:** FIX VERIFIED FOR THREE NATIVE CANDIDATES; landscape/retaining acceptance open · **Affected:** WLD03L15lower path, WLD12L06/L07west return, coupled hillside/railway terrain levels
 
 First absolute grading draft introduced145standing and151sweep regressions. An upper-only lower-only draft still lowered previously high soil into lower paths headroom rather than below their circulation plane.
 
@@ -5946,9 +5946,9 @@ Evidence and verification: development/levels/rebuild/stair-terrain-pass/rejecte
 
 Older-map obligation: Audit the complete terrain/floor hierarchy and buried or stacked circulation, not isolated connector ribbons. Retaining/cave/water/physical edges and canonical van arrival remain individual gates across29packets.
 
-### DEV-432 â€” Ruin threshold uses incidental soil instead of a complete structural walking surface
+### DEV-432 — Ruin threshold uses incidental soil instead of a complete structural walking surface
 
-**Status:** FIX VERIFIED: real closed160mmthreshold restores swept support Â· **Affected:** WLD04L07ruin west threshold X40,Y6,Z22; centre and left approach lanes
+**Status:** FIX VERIFIED: real closed160mmthreshold restores swept support · **Affected:** WLD04L07ruin west threshold X40,Y6,Z22; centre and left approach lanes
 
 Excavation left all standing samples valid but two previously passing sweeps lost foot support immediately west of the room floor.
 
@@ -5960,9 +5960,9 @@ Evidence and verification: development/levels/rebuild/stair-terrain-pass/rejecte
 
 Older-map obligation: Audit complete threshold foot footprints at door/floor/route joins, including under changed terrain. Centre support alone is insufficient.
 
-### DEV-433 â€” Terrain excavation exposes previously embedded railway foundation feet
+### DEV-433 — Terrain excavation exposes previously embedded railway foundation feet
 
-**Status:** FIX VERIFIED: five physical extensions restore seven newly exposed footing samples Â· **Affected:** WLD12Bearing skirts0016/0017/0018/0022/0042after lower circulation excavation
+**Status:** FIX VERIFIED: five physical extensions restore seven newly exposed footing samples · **Affected:** WLD12Bearing skirts0016/0017/0018/0022/0042after lower circulation excavation
 
 Before/after actual terrain rays found7previously embedded external footing samples above the revised soil.
 
@@ -5974,9 +5974,9 @@ Evidence and verification: development/levels/rebuild/stair-terrain-pass/rejecte
 
 Older-map obligation: Recheck foundations, piles, roots and ground-mounted facilities individually whenever terrain moves. This scoped footing repair does not establish all retaining/framing/guard or whole-map support acceptance.
 
-### DEV-434 â€” Excavated terrain banks remain coarse and serrated in native whole-site views
+### DEV-434 — Excavated terrain banks remain coarse and serrated in native whole-site views
 
-**Status:** OPEN: authored slope/retaining/erosion and landscape visual refinement required Â· **Affected:** WLD03hillside and WLD04forestry terrace cuts; WLD12trench context
+**Status:** OPEN: authored slope/retaining/erosion and landscape visual refinement required · **Affected:** WLD03hillside and WLD04forestry terrace cuts; WLD12trench context
 
 Full-site native renders expose faceted deep banks around newly cleared routes, with rough structure/support geometry and incomplete edge treatment.
 
@@ -5988,9 +5988,9 @@ Evidence and verification: development/levels/rebuild/stair-terrain-pass/verific
 
 Older-map obligation: Individually audit all29packets, including older landforms; no blockout rectangle/material stamp or perturbed outer box counts as accepted terrain.
 
-### DEV-435 â€” Shared map producers ignore current saved terrain and chunked editor publications
+### DEV-435 — Shared map producers ignore current saved terrain and chunked editor publications
 
-**Status:** FIX VERIFIED IN SHARED SOURCE CONSUMERS; runtime integration open Â· **Affected:** structural_pass.saved_editor_terrain, structural build caller, collision/furnishing terrain fidelity checks and envelope classification
+**Status:** FIX VERIFIED IN SHARED SOURCE CONSUMERS; runtime integration open · **Affected:** structural_pass.saved_editor_terrain, structural build caller, collision/furnishing terrain fidelity checks and envelope classification
 
 New composite layouts contain current_saved_editor_terrain with actual chunked publications; older consumers only recognized the single legacy saved_editor_terrain mesh field.
 
@@ -6002,9 +6002,9 @@ Evidence and verification: development/levels/rebuild/stair-terrain-pass/verific
 
 Older-map obligation: Migrate actual native/runtime ownership only through verified coordinate/layout/terrain contracts; metadata or export existence is not gameplay acceptance. Preserve frozen sources and legacy controls.
 
-### DEV-436 â€” New connection builder assumes every retained floor-stage contract already declares stair identities
+### DEV-436 — New connection builder assumes every retained floor-stage contract already declares stair identities
 
-**Status:** FIX VERIFIED: explicit before/after identities pass native movement and export/source checks Â· **Affected:** WLD15retained floor-closure source during connection batch
+**Status:** FIX VERIFIED: explicit before/after identities pass native movement and export/source checks · **Affected:** WLD15retained floor-closure source during connection batch
 
 First source build stopped with KeyError stair_components after WLD04/05 exported.
 
@@ -6016,9 +6016,9 @@ Evidence and verification: development/levels/rebuild/stair-connection-pass/veri
 
 Older-map obligation: Individually consume each source-stage contract; never infer a whole scene is stairs or relax unknown component checks.
 
-### DEV-437 â€” Saved-terrain continuation reads tile settings from the wrong source stage
+### DEV-437 — Saved-terrain continuation reads tile settings from the wrong source stage
 
-**Status:** FIXED AND ACTUAL BATTERY WORLD REOPENED Â· **Affected:** WLD17saved occupancy-world terrain continuation
+**Status:** FIXED AND ACTUAL BATTERY WORLD REOPENED · **Affected:** WLD17saved occupancy-world terrain continuation
 
 First authoring attempt failed because terrain-overall-pass/samples/wld-17/settings.tsv does not exist.
 
@@ -6030,9 +6030,9 @@ Evidence and verification: development/levels/rebuild/stair-connection-pass/veri
 
 Older-map obligation: Saved-world/settings/height/layer/topology provenance must all refer to the same actual source; audit older worlds individually.
 
-### DEV-438 â€” Revised stair hubs and excavated entry joins expose incomplete full-footprint structural support
+### DEV-438 — Revised stair hubs and excavated entry joins expose incomplete full-footprint structural support
 
-**Status:** FIX VERIFIED FOR FIVE CANDIDATES; remaining flat/map acceptance open Â· **Affected:** WLD05L05/L08near adit high hub; WLD17route01/02lower entrance and route03approach
+**Status:** FIX VERIFIED FOR FIVE CANDIDATES; remaining flat/map acceptance open · **Affected:** WLD05L05/L08near adit high hub; WLD17route01/02lower entrance and route03approach
 
 First connection pilot passed all221flights but mine flat sweeps regressed twice; battery flat approach still hit terrain. Lowering actual soil then exposed two lower entry sweeps and a previously passing complete route02.
 
@@ -6044,9 +6044,9 @@ Evidence and verification: development/levels/rebuild/stair-connection-pass/reje
 
 Older-map obligation: Reaudit physical threshold/endpoint/turn footprints after terrain and stair revision. All29packets retain individual native/runtime/visual acceptance obligations.
 
-### DEV-439 â€” Native connection inspection shows black triangular landing regions and unfinished stair surfaces
+### DEV-439 — Native connection inspection shows black triangular landing regions and unfinished stair surfaces
 
-**Status:** OPEN: actual coverage/material/light attribution and final architecture review required Â· **Affected:** WLD04clearing/hut level landing; WLD05adit shared hub; audit other source landings individually; WLD18exhibit threshold black rectangular region in paired native views
+**Status:** OPEN: actual coverage/material/light attribution and final architecture review required · **Affected:** WLD04clearing/hut level landing; WLD05adit shared hub; audit other source landings individually; WLD18exhibit threshold black rectangular region in paired native views
 
 Paired neutral150Wnative captures show large black regions bounded by structural/old surface edges. New routes may pass while the visible joins remain unaccepted.
 
@@ -6058,9 +6058,9 @@ Evidence and verification: development/levels/rebuild/captures/stair-connection-
 
 Older-map obligation: Complete individual MAP_FITNESS_CHECKLIST floor/light/material audits across all29packets and follow-on locations; isolated neutral construction views are not runtime acceptance.
 
-### DEV-440 â€” Complete vertical circulation does not close the remaining invalid flat route network
+### DEV-440 — Complete vertical circulation does not close the remaining invalid flat route network
 
-**Status:** OPEN: actual native flat samples diagnosed, physical revisions required across all25candidates Â· **Affected:** All25rebuild candidates;9129of110409sampled flat positions still invalid after connection batch
+**Status:** OPEN: actual native flat samples diagnosed, physical revisions required across all25candidates · **Affected:** All25rebuild candidates;9129of110409sampled flat positions still invalid after connection batch
 
 All221vertical flights and84complete vertical links pass, but101280of110409flat centre/side samples are valid.6714remaining pose diagnoses identify actual physical components,2079lack centre support,252closed-solid/interior or invalid poses; remaining84involve footprint/height spread.
 
@@ -6072,9 +6072,9 @@ Evidence and verification: development/levels/rebuild/stair-connection-pass/veri
 
 Older-map obligation: Each of29packets and follow-on maps needs actual native and runtime route/support audit; four mature sources are not covered by the25candidate table. No acceptance inferred from vertical routes alone.
 
-### DEV-441 â€” Diagonal threshold approaches graze walls and create oversized longitudinal aperture slots
+### DEV-441 — Diagonal threshold approaches graze walls and create oversized longitudinal aperture slots
 
-**Status:** FIX VERIFIED FOR SOURCE APPROACHES; remaining route design is open Â· **Affected:** ACADEMYeast cloister L41 and other explicit shared-wall threshold approaches in25candidate layouts
+**Status:** FIX VERIFIED FOR SOURCE APPROACHES; remaining route design is open · **Affected:** ACADEMYeast cloister L41 and other explicit shared-wall threshold approaches in25candidate layouts
 
 Initial flat aperture pilot followed schematic diagonal approaches close to a wall, carving a long slot instead of a normal doorway.
 
@@ -6086,9 +6086,9 @@ Evidence and verification: development/levels/rebuild/flat-circulation-pass/reje
 
 Older-map obligation: Audit doorway angle, usable jamb/approach space and wall continuity individually; native recovery counts cannot justify incoherent wall slots.
 
-### DEV-442 â€” Raised tunnel ceiling overlaps the occupied shed floor above it
+### DEV-442 — Raised tunnel ceiling overlaps the occupied shed floor above it
 
-**Status:** FIX VERIFIED: five shared ceiling ownership cases /1,072actual top/underside probes; fixture/runtime acceptance open Â· **Affected:** WLD08generator tunnel-n ceiling topY0.5 beneath generator floorY0; audit other fully stacked source zones
+**Status:** FIX VERIFIED: five shared ceiling ownership cases /1,072actual top/underside probes; fixture/runtime acceptance open · **Affected:** WLD08generator tunnel-n ceiling topY0.5 beneath generator floorY0; audit other fully stacked source zones
 
 Actual cap96:Ceiling cap tunnel-n.003 occupiesY0.34..0.5 above the generator walking floor. Path-only cutting creates a partial roof trench through the upper room.
 
@@ -6100,9 +6100,9 @@ Evidence and verification: development/levels/rebuild/flat-circulation-pass/reje
 
 Older-map obligation: Audit stacked floor/ceiling/volume ownership at authoritative elevations; fixture remounting, ceiling rays, service heights and whole room visual acceptance remain individual obligations.
 
-### DEV-443 â€” Body-only flat standing counters omit unsupported capsule-foot footprints
+### DEV-443 — Body-only flat standing counters omit unsupported capsule-foot footprints
 
-**Status:** AUDIT VERIFIED FOR25CURRENTSOURCES;13483strictinvalidsamples/186incompleteflatlinks remain OPEN Â· **Affected:** All25source candidates and original flat-route comparison interpretation
+**Status:** AUDIT VERIFIED FOR25CURRENTSOURCES;13483strictinvalidsamples/186incompleteflatlinks remain OPEN · **Affected:** All25source candidates and original flat-route comparison interpretation
 
 Original flat after_valid counter checked centre support and capsule body only; full movement/traversable can still reject neighbouring feet. Threshold rerouting also changes which samples represent current design.
 
@@ -6114,9 +6114,9 @@ Evidence and verification: tools/audit_current_flat_routes.py; tools/java/Furnis
 
 Older-map obligation: Verify physical full-footprint support and complete current routes individually, including four mature sources outside25candidate scope. No runtime/full-map acceptance from body-only samples or green vertical routes.
 
-### DEV-444 â€” Independent stacked-ceiling checker imports blockout geometry before installing its module path
+### DEV-444 — Independent stacked-ceiling checker imports blockout geometry before installing its module path
 
-**Status:** FIX VERIFIED: all25independent source checks execute Â· **Affected:** tools/check_flat_circulation.py added stacked ceiling audit
+**Status:** FIX VERIFIED: all25independent source checks execute · **Affected:** tools/check_flat_circulation.py added stacked ceiling audit
 
 First ceiling ownership check stopped at ModuleNotFoundError structural_pass before running native/source checks.
 
@@ -6128,9 +6128,9 @@ Evidence and verification: development/levels/rebuild/flat-circulation-pass/veri
 
 Older-map obligation: A stopped checker and Blender zero process exit are not a validation pass. Require actual current per-site reports and assertions.
 
-### DEV-445 â€” Redundant rough route prisms share coplanar room-floor faces and produce black native surface patches
+### DEV-445 — Redundant rough route prisms share coplanar room-floor faces and produce black native surface patches
 
-**Status:** FIX VERIFIED FOR673FULLYOWNEDROUGHPRISMS; partial overlays/other dark regions remain open Â· **Affected:** WLD08L12support1 and other original fully covered rough flat-route supports across25candidates
+**Status:** FIX VERIFIED FOR673FULLYOWNEDROUGHPRISMS; partial overlays/other dark regions remain open · **Affected:** WLD08L12support1 and other original fully covered rough flat-route supports across25candidates
 
 Actual exported pixel rays hit Floor generator.006 and L12support1 at identical distances. Native image contains a black triangular floor region despite544floor/underside coverage probes passing.
 
@@ -6142,9 +6142,9 @@ Evidence and verification: development/levels/rebuild/flat-circulation-pass/veri
 
 Older-map obligation: Audit actual floor ownership and render overlaps independently acrossall29packets; this scoped removal does not resolve all dark regions, partial overlays, stair overlaps, optical/runtime or complete map acceptance.
 
-### DEV-446 â€” Powerhouse Boolean wall slivers collapse after native float coordinate transforms
+### DEV-446 — Powerhouse Boolean wall slivers collapse after native float coordinate transforms
 
-**Status:** FIX VERIFIED: all25current native files parse; exact rejected states retained Â· **Affected:** WLD09Flat route shell Bayed shell Wall turbine S and generated shell family; final established-route build also exposes4WLD03generated-shell zero-area float triangles
+**Status:** FIX VERIFIED: all25current native files parse; exact rejected states retained · **Affected:** WLD09Flat route shell Bayed shell Wall turbine S and generated shell family; final established-route build also exposes4WLD03generated-shell zero-area float triangles
 
 Actual native parser rejects26zero-area triangles. Independent source check also refuses the payload; Blender process exit alone had not shown the failure.
 
@@ -6156,9 +6156,9 @@ Evidence and verification: development/levels/rebuild/flat-circulation-pass/reje
 
 Older-map obligation: Require actual native parser and closed/export/UV/native checks for every new source. Never remove triangles only from collision, suppress degeneracy rejection or call a stopped checker successful.
 
-### DEV-447 â€” Blanket flat-route slab cuts and unnecessary normalization regress working upper floors and approaches
+### DEV-447 — Blanket flat-route slab cuts and unnecessary normalization regress working upper floors and approaches
 
-**Status:** FIX VERIFIED:0newold-coordinate standing/sweep failures and0complete-path regressions; current invalid footprints remain open Â· **Affected:** ChurchL18/MansionL28/SchoolL36old-coordinate probes; establishedMansion/School/WLD03/WLD07/WLD09/mortuaryflat links and cemetery loops
+**Status:** FIX VERIFIED:0newold-coordinate standing/sweep failures and0complete-path regressions; current invalid footprints remain open · **Affected:** ChurchL18/MansionL28/SchoolL36old-coordinate probes; establishedMansion/School/WLD03/WLD07/WLD09/mortuaryflat links and cemetery loops
 
 Initial complete batch recovered1739body poses but introduced1standing/2sweep failures and regressed already-passing complete paths, including both cemetery loops.
 
@@ -6170,9 +6170,9 @@ Evidence and verification: development/levels/rebuild/flat-circulation-pass/reje
 
 Older-map obligation: Existing complete movement is protected but does not accept a whole map. Low headroom, flat/stair crossings, terrain, full widths and final architectural elevation design remain individual obligations across29packets.
 
-### DEV-448 â€” Active flat wall apertures reopen permanently sealed context boundaries
+### DEV-448 — Active flat wall apertures reopen permanently sealed context boundaries
 
-**Status:** FIX VERIFIED AT192LINKS/750BOUNDARYCENTRE RAYS; full envelope/runtime acceptance open Â· **Affected:** ACADEMYL39and retrospective192fixed links across25source candidates
+**Status:** FIX VERIFIED AT192LINKS/750BOUNDARYCENTRE RAYS; full envelope/runtime acceptance open · **Affected:** ACADEMYL39and retrospective192fixed links across25source candidates
 
 Fresh reimported boundary audit finds AcademyL39open after flat cuts. Actual preceding source independently passes all26Academysealed link boundaries.
 
@@ -6184,9 +6184,9 @@ Evidence and verification: development/levels/rebuild/flat-circulation-pass/reje
 
 Older-map obligation: Actual full width/body/around/under/ghost/object and runtime40space envelope audits remain required; centre rays do not accept whole boundaries.
 
-### DEV-449 â€” Boolean union of clipped protected wall fragments creates a nonmanifold reception shell
+### DEV-449 — Boolean union of clipped protected wall fragments creates a nonmanifold reception shell
 
-**Status:** FIX VERIFIED: no fragment unions; source solids/volume/native/retained-resource checks pass Â· **Affected:** ACADEMYFlat route shell Wall reception E.001during sealed-context guard pilot
+**Status:** FIX VERIFIED: no fragment unions; source solids/volume/native/retained-resource checks pass · **Affected:** ACADEMYFlat route shell Wall reception E.001during sealed-context guard pilot
 
 Closed-solid assertion stops the source build before export; Blender still returns process exit0.
 
@@ -6198,9 +6198,9 @@ Evidence and verification: development/levels/rebuild/flat-circulation-pass/reje
 
 Older-map obligation: Require fresh actual reports and per-part assertions; a Blender process exit or unexecuted construction design is not successful source generation.
 
-### DEV-450 â€” Inherited layout hashes bind working CRLF bytes instead of published repository LF bytes
+### DEV-450 — Inherited layout hashes bind working CRLF bytes instead of published repository LF bytes
 
-**Status:** FIX VERIFIED: exact frozen inputs and alias-aware movement/source checks pass Â· **Affected:** Five inherited WLD06/08/11/13/17JSONinputs; current candidate before-layout references and historic route controls
+**Status:** FIX VERIFIED: exact frozen inputs and alias-aware movement/source checks pass · **Affected:** Five inherited WLD06/08/11/13/17JSONinputs; current candidate before-layout references and historic route controls
 
 Staged-byte preflight finds existing layout working bytes differ from repository bytes despite identical JSON coordinates.
 
@@ -6211,6 +6211,188 @@ Fix / next action: Freeze exact consumed input bytes inside the new hash-bound s
 Evidence and verification: development/levels/rebuild/flat-circulation-pass/verification/source-layout-aliases.json; source-layouts; tools/audit_current_flat_routes.py; tools/audit_roster_stairs.py; tools/audit_macroterrain_fit.py
 
 Older-map obligation: Audit legacy byte-bound inputs individually across platforms; do not rewrite unrelated original layouts or infer all prior contracts fixed.
+
+### DEV-451 — Finite arrival path prisms end under standing anchors without full footprint support
+
+**Status:** FIX VERIFIED FOR21SOURCE ANCHORS; OTHER ARRIVAL AND RUNTIME GATES OPEN · **Affected:** 21 revised roster construction sources; WLD-09 explicitly rejected; three already-supported source arrivals and four mature maps retained individually
+
+Standing anchor is supported at its centre but the rear .22m footprint falls beyond the authored finite route slab.
+
+Cause / uncertainty: Rough route prisms terminate exactly at the spawn/staging point, with no standing setback.
+
+Fix / next action: Append a .35m closed terminal slab at the actual path end, using its full route width, measured12cm depth and original source material. Preserve all existing GLB/node/resource/native/world records and source IDs. Verify21anchors with production full-foot traversal and inspect actual paired exported construction captures. Entire arrival routes, canonical van relationship and overall foundations remain separate.
+
+Evidence and verification: development/levels/rebuild/arrival-bearing-pass/roster.json; verification/current-flat-movement.json; verification/independent-sources.json; captures/arrival-bearing-batch
+
+Older-map obligation: Audit every other arrival/spawn/hiding/ritual anchor with actual full footprints, including mature Castle/House/Blackpine/Hollow Creek. This source repair does not accept runtime arrival/van/terrain or allmap circulation.
+
+### DEV-452 — New arrival source inspector mistakes exported UV seams and lazy image data for broken assets
+
+**Status:** FIX VERIFIED ON21FINAL SOURCES · **Affected:** tools/review_arrival_bearings.py; first local pilot checks only
+
+First checker reports open edges on a closed UV-split box; next checker rejects lazily loaded packed images after reopening Blender.
+
+Cause / uncertainty: GLB UV boundaries intentionally split vertices; Blender defers packed pixel decoding until used. Object-level topology and has_data alone are insufficient.
+
+Fix / next action: Inspect coordinate-coincident topology in a temporary bmesh at1micrometre, preserve actual source/export bytes, require packed referenced images with real dimensions and decoded pixel storage. Independently compare actual exported/native triangle flags and unchanged original binary/resource/node prefixes. Correct new construction metadata to report only newly appended parts, linking inherited work through its exact source contract.
+
+Evidence and verification: development/levels/rebuild/arrival-bearing-pass/verification/logs/arrival-pilot-review.log; arrival-pilot-review-final.log; independent-sources.json; tools/review_arrival_bearings.py
+
+Older-map obligation: Do not rewrite actual model UVs or weld production geometry merely to satisfy an inspector. Continue individual exported/editable/native checks for each source.
+
+### DEV-453 — WLD-09 saved terrain intersects the original arrival body; slab-only repair is buried
+
+**Status:** SOURCE TERRAIN/ARRIVAL FIX VERIFIED; FULL WLD09/RUNTIME GATES OPEN · **Affected:** WLD-09 arrival L01 original anchor [36,0,82]
+
+After filling the missing rear footprint, production traversal still fails against terrain-site-0-1:surface. Actual exported closeup shows terrain covering the proposed slab.
+
+Cause / uncertainty: Existing terrain/arrival datum conflict was masked by earlier missing-foot support diagnostics. Adding floor support cannot remove soil from the body volume.
+
+Fix / next action: Preserve rejected GLB/native/Blender/layout and paired PNGs with exact relocation hashes. Keep flat-circulation-pass/wld-09 as the active source. Next coordinated terrain/arrival revision must remove actual soil intrusion while preserving saved basement holes, intended landform, stable coordinates and passing vertical routes. Do not hide it with fog or move a spawn independently. Later saved circulation cuts remove all241measured WLD09soil contacts, including the arrival anchor. Reuse the exact end-slab only in that verified terrain context; the earlier buried study stays rejected.
+
+Evidence and verification: development/levels/rebuild/arrival-bearing-pass/rejected/terrain-blocked-wld09; development/levels/rebuild/captures/arrival-bearing-batch/rejected-terrain-wld09; verification/current-flat-failure-contacts.tsv
+
+Older-map obligation: Audit arrival/van bodies against actual saved terrain across all locations; individually verify support and body/head clearance. Other unsupported anchors may mask additional terrain/wall collisions.
+
+### DEV-454 — Lower-only terrain cuts expose missing pavement beneath previously valid standing poses
+
+**Status:** SOURCE FIX VERIFIED ACROSS FULL25CANDIDATE REPLAY; COMPLETE MAP GATES OPEN · **Affected:** Academy circulation L02 during saved circulation terrain pilot; all remaining sites need the same actual standing regression check
+
+Soil-only pilot gains313strict poses but loses20previously valid Academy full-foot positions; complete links and body-only checks do not detect this regression.
+
+Cause / uncertainty: Rough path prisms do not cover revised circulation coordinates. Old soil supplied walking support before the cut.
+
+Fix / next action: Retain exact failing sources/probes/captures. Build actual closed terrain-rooted walkway beds outside real stair openings and closed context. Final three-site pilot recovers999positions at16104unchanged samples, zero new failures. Native and exported beds share exact coordinates; no physics threshold change. Full batch: eight sources,1831recovered full-foot poses at119775unchanged samples,0newfailures;221flights/84vertical links and both cemetery loops remain passing.
+
+Evidence and verification: development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot; pilot-verification/strict-standing-regression.json; tools/build_cut_walkway_beds.py
+
+Older-map obligation: Run identical-coordinate full-foot comparisons after every terrain cut; a net improvement or passing centre/body/stair check never excuses newly unsupported poses.
+
+### DEV-455 — Whole-strip and boundary-ray bed tests reject valid ground beside a punched landform edge
+
+**Status:** SOURCE FIX VERIFIED IN EIGHT-MAP BATCH; COMPLETE TERRAIN/LAYOUT GATE OPEN · **Affected:** Academy L02 near [50.75,0,61.88]; other soil-edge and punched-hole receivers
+
+Whole2mstrip receiver rejection leaves7new failures; clipping to terrain still leaves3because BVH rays miss exact source-triangle edge vertices.
+
+Cause / uncertainty: A section crosses a real landform void; refusing the whole section drops valid near-side ground. Exact boundary ray misses are not evidence that its backing native triangle is absent.
+
+Fix / next action: Clip each new pavement footprint to exact saved soil triangle coverage, carry its native triangle identity, and compute root heights on that actual plane. Independent checks verify footprint coverage, triangle bytes, native/export match and15cmembedding. Do not extend terrain, fill holes or relax production support. Preserve both failed whole-strip and boundary-ray studies. Three-site unchanged-position regression now passes with0newinvalid positions.
+
+Evidence and verification: development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot; rejected/boundary-ray-rooting-pilot; pilot-verification/independent-sources.json; tools/review_flat_terrain.py
+
+Older-map obligation: Individually audit punched boundaries, genuine stair shafts and road/terrain ownership. Route portions that actually leave the landform still require coherent rerouting; this bed repair does not accept them.
+
+### DEV-456 — WLD-16 terrain body collisions have no exact persistent editor-world owner in current sources
+
+**Status:** OPEN; ORIGINAL AUTHORED TERRAIN PRESERVED · **Affected:** WLD-16 route-12/13/14,211current terrain body contacts
+
+Actual native terrain geometry does not match any existing saved terrain world for this site.
+
+Cause / uncertainty: The current source retains its original authored roadside terrain rather than the later saved macroterrain candidate.
+
+Fix / next action: Keep the exact original mesh and native coordinates. Record the missing owner; require a deliberate geometry-preserving editor/native migration or coordinated terrain redesign. Never swap in a merely similar world. Independent matched worlds can continue in this batch.
+
+Evidence and verification: development/levels/rebuild/flat-terrain-pass/terrain-repair-plan.json; tools/plan_flat_terrain_repairs.py
+
+Older-map obligation: Resolve every terrain replacement through exact transformed native geometry and saved-world provenance. No other location is accepted because eight saved sources match.
+
+### DEV-457 — New terrain review camera and scoped-chain check use unscoped source assumptions
+
+**Status:** FIX VERIFIED IN THREE-SITE PILOT · **Affected:** tools/review_flat_terrain.py camera; tools/audit_roster_stairs.py --sites pilot mode
+
+Contact camera uses the first flat segment instead of the actual diagnosed segment; selected three-site stair check incorrectly requires cemetery chains outside its scope.
+
+Cause / uncertainty: New batch tooling did not carry contact segment identity and selected-site declaration scope through its assertions.
+
+Fix / next action: Use actual diagnosed segment index for the paired camera. Require exactly all declared chains belonging to selected sites; full-roster mode still requires both cemetery loops. Final three-site source/standing/body/stair checks pass; the final25site batch must rerun full loop controls. Retain original failed check logs and rejected camera captures. Full25site batch independently passes both cemetery14segmentloops after the scope correction.
+
+Evidence and verification: development/levels/rebuild/flat-terrain-pass/verification/logs; pilot-verification/stair-movement.json; pilot-verification/captures.json
+
+Older-map obligation: Label capture type and actual tested sites. Do not infer whole-roster route coverage from a selected pilot or treat an empty selected declaration set as whole-roster verification.
+
+### DEV-458 — Circulation excavations expose coarse cut banks and unfinished physical edge interfaces
+
+**Status:** OPEN; NATIVE SOURCE CLEARANCE DOES NOT ACCEPT LANDSCAPE · **Affected:** Eight revised terrain sources, especially WLD05/WLD09/WLD13cut banks and Academy perimeter
+
+Paired native sheets expose sawtooth excavation faces, rough pavement/rim junctions and unfinished protective edges after soil/body conflicts are removed.
+
+Cause / uncertainty: Two-metre persistent sculpt grids and rough circulation reservations establish coarse clearance before measured retaining/edge/landscape refinement.
+
+Fix / next action: Preserve landform and saved punches. Author supported retaining/rim/guard interfaces, refine grades/materials and inspect standing/crouched/photo and highest views with the canonical van. Consolidate bed components without changing support. Current2/5construction,1/5finish is not production terrain.
+
+Evidence and verification: development/levels/rebuild/flat-terrain-pass/verification/visual-review.json; captures/flat-terrain-batch/*-terrain-final-sheet.png; development/quality/DESQUAREIFY_GATE.md
+
+Older-map obligation: Every older map needs individual landform, physical edge and full-width route audits. Native contact samples do not establish containment, light separation, visual fitness or runtime readiness.
+
+### DEV-459 — Pilot and final native renders reuse filenames and invalidate older PNG hash bindings
+
+**Status:** FIX VERIFIED BEFORE FINAL BATCH PUBLICATION · **Affected:** Three-site saved-terrain pilot capture paths after full eight-site regeneration
+
+Exact staged preflight detects pilot captures.json SHA mismatch after final renders overwrite shared PNG filenames.
+
+Cause / uncertainty: Original review tool names frames by site/view/phase without a unique generation namespace.
+
+Fix / next action: Recover every exact pilot PNG blob from published8f759bd9, verify its original SHA and archive18PNGs under pilot-archive. Rebind only pilot report paths, retaining original hashes/models/cameras and full-batch frames. Save the exact v1checker executed for both model reviews; future renders use unique UTCmicrosecond run directories. No model, native geometry or test result changes.
+
+Evidence and verification: development/levels/rebuild/flat-terrain-pass/pilot-verification/capture-rebinding.json; verification/generators/review_flat_terrain-v1.py; tools/review_flat_terrain.py
+
+Older-map obligation: Keep immutable capture namespaces for every iteration; compare actual PNG bytes to reports before upload. An unchanged model or similar pixels does not prove an older image hash still matches.
+
+### DEV-460 — Route endpoints in a shared room do not establish physical room connectivity
+
+**Status:** OPEN; EXACT NATIVE ROOM SOCKET AUDIT RECORDED · **Affected:** Rooms touched by access-route-pass across14source maps; seven groups retain invalid original sockets,29groups have unproven direct joins
+
+Individual link paths can pass while other incident room sockets remain inside props or on opposite sides of physical obstacles.
+
+Cause / uncertainty: Original layout links reused room centres or independent door access points without proving intra-room movement.
+
+Fix / next action: Retain valid route changes, audit actual unique incident endpoints and bidirectional5cm production sweeps, then author physical room connections or refit interfering geometry. Do not claim map-wide connected navigation from matching room IDs.
+
+Evidence and verification: development/levels/rebuild/access-route-pass/verification/room-socket-connectivity.json; tools/audit_room_socket_connectivity.py; invalid and multi-component groups explicitly retained. Complete flat and stair regression checks remain separate.
+
+Older-map obligation: Audit actual endpoints and within-room connections separately for every location, including mature maps; direct-join failure does not prove that an indirect path is impossible.
+
+### DEV-461 — Native route search can find a physical path through unintended room domains
+
+**Status:** REJECTED BEFORE AUTHORITATIVE SOURCE ADOPTION · **Affected:** WLD-08 L15; WLD-15 route-03; WLD-16 route-03
+
+Three full-width proposals leave the union of their intended endpoint-room bounds.
+
+Cause / uncertainty: Physics and sealed-context checks alone do not enforce authored room relationships.
+
+Fix / next action: Preserve proposals as unadopted evidence; exclude them from access-route-pass. Redesign actual intended circulation/room arrangement instead of accepting a convenient physical shortcut.
+
+Evidence and verification: development/levels/rebuild/access-route-pass/verification/authoring.json rejected records; <=0.1m path-domain sampling with0.3m wall/door tolerance.51other proposals remain pending independent route/source review.
+
+Older-map obligation: Apply physical and intended-domain review to each older authored path. Ground support alone does not establish a coherent door/room connection.
+
+### DEV-462 — Headless route review assumes an imported GLB supplies a Blender world
+
+**Status:** FIXED;104REAL FINAL FRAMES AND26SHEETS HASH-VERIFIED · **Affected:** New tools/review_access_routes.py initial attempt; zero captures produced
+
+Blender exits0 but logs AttributeError on scene.world.color after factory reset and GLB import.
+
+Cause / uncertainty: Factory empty scenes have no world and GLB need not supply one; process exit alone is not a valid render acceptance check.
+
+Fix / next action: Create an explicit neutral review world; rerun in a fresh unique capture directory, inspect logs and require actual image hashes/counts.
+
+Evidence and verification: build/access-route-render.log initial terminal error; tools/review_access_routes.py corrected world creation; final captures.json will bind all actual PNGs and checker.
+
+Older-map obligation: Check actual render reports and PNGs; never infer render success from Blender exit0 alone.
+
+### DEV-463 — Generic route-change metadata confuses current and inherited map stages
+
+**Status:** FIXED; EXPLICIT14SITE SCOPE AND EXACT MODEL/ALL-FLOOR CAPTURE IDENTITY VERIFIED · **Affected:** New access route review selector at unchanged WLD-05 source; initial partial32frame render study
+
+Initial review followed an inherited route_changes field and then correctly failed its byte-identical GLB assertion on a map outside the new14site batch.
+
+Cause / uncertainty: Several authoring stages use route_changes; its presence does not identify the newest source revision.
+
+Fix / next action: Use an explicit access_route_changes field, preserve older metadata, scope review/audit to that new field, rerun movement/source bindings and keep partial captures under rejected-metadata-selector. Review all affected floors, not only the most common floor.
+
+Evidence and verification: development/levels/rebuild/access-route-pass/verification/rejected-capture-study.json; exact failed log retained; primary-floor-captures.json and supplemental captures retain separate exact checker hashes.
+
+Older-map obligation: Select stages from exact manifest and explicit revision fields; inherited construction metadata cannot prove that a map was revised by a later pass.
 
 ## Required audit categories
 
@@ -6229,22 +6411,3 @@ House, Farmhouse, School, Church, Castle and all other previously authored areas
 ## Continuity
 
 At every map/model checkpoint: update open issues; check for related defects in reused assets; record new checks and remaining limitations; refresh the shared gallery; commit and push actual evidence. Before a fix is marked complete, rerun the checks it can affect (especially stairs after changing floor depth).
-
-## 2026-11-08 arrival bearing batch
-
-- DEV-451: repaired21 finite source path ends so original arrival anchors have full footprint support; full arrival/van/terrain/runtime acceptance remains open.
-- DEV-452: corrected new checker handling of GLB UV vertex splits and lazy packed-image loading; temporary topology checks do not alter production assets.
-- DEV-453: WLD-09 [36,0,82] intersects saved terrain; slab-only model/captures retained as rejected. The next terrain revision must repair the actual landform/body conflict.
-
-Actual checks, raw outputs, independent model inspection and preserved rejections are in development/levels/rebuild/arrival-bearing-pass. All older maps retain individual checklist obligations.
-
-## 2026-11-08 saved circulation terrain pilot
-
-- DEV-454: soil cuts exposed missing pavement support; actual rooted walkway beds now pass the three-site unchanged-position control. Broad rollout remains pending.
-- DEV-455: clip beds to exact soil coverage and use actual native receiver planes at punched edges; three failed construction studies are retained. Real off-landform routes still need redesign.
-- DEV-456: WLD-16 authored roadside terrain has no exact persistent-world owner; preserve it and migrate deliberately. Its211terrain contacts remain open.
-- DEV-457: corrected contact camera segment selection and selected-site declaration scope in new batch tools; full-roster chains remain required for full-batch acceptance.
-
-Full saved-terrain batch: DEV-454/455 pass the complete 25-candidate replay with 1,831 recovered full-foot poses and zero new failures. DEV-453 has a verified source terrain/arrival fix; the original buried WLD-09 study stays rejected. DEV-458 records visible coarse banks and unfinished retaining/rim/guard interfaces. Landscape and runtime acceptance remains open.
-
-DEV-459: staged preflight caught overwritten pilot PNG bindings. Exact18published pilot blobs are restored under an immutable archive, with original hashes/model/camera bindings. The executed checker is archived; future captures use unique run folders. Geometry/native evidence is unchanged.

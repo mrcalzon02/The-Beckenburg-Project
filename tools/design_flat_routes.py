@@ -9,12 +9,15 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def write(p,data):p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes((json.dumps(data,indent=2)+'\n').encode())
 def serial(ps):return ';'.join(','.join(map(str,p)) for p in ps)
 def main():
- p=argparse.ArgumentParser();p.add_argument('--sites',nargs='+');args=p.parse_args();BUILD.mkdir(parents=True,exist_ok=True);v=OUT/'verification';v.mkdir(parents=True,exist_ok=True)
- work=json.loads((BASE/'flat-circulation-pass/verification/remaining-routes.json').read_text());inputs=[];names=[];source={}
+ global OUT,BUILD
+ p=argparse.ArgumentParser();p.add_argument('--sites',nargs='+');p.add_argument('--source-manifest',type=Path);p.add_argument('--worklist',type=Path);p.add_argument('--output',type=Path);args=p.parse_args()
+ if args.output:OUT=ROOT/args.output;BUILD=ROOT/'build'/('route-design-'+OUT.name)
+ BUILD.mkdir(parents=True,exist_ok=True);v=OUT/'verification';v.mkdir(parents=True,exist_ok=True)
+ work=json.loads((ROOT/args.worklist if args.worklist else BASE/'flat-circulation-pass/verification/remaining-routes.json').read_text(encoding='utf-8'));manifest={r['id']:r for r in json.loads((ROOT/args.source_manifest).read_text(encoding='utf-8'))['active_sources']} if args.source_manifest else {};inputs=[];names=[];source={}
  for item in work['links']:
   site=item['site']
   if args.sites and site not in args.sites:continue
-  c=ROOT/item['consume_source'];meta=json.loads(c.read_text());layout=ROOT/meta['layout'];data=json.loads(layout.read_text());link=next(l for l in data['links'] if l['id']==item['link']);native=c.parent/'open-circulation.hcs2';glb=c.parent/'open-circulation.glb';assert sha(native)==meta['physics_sha256'];assert sha(layout)==meta['layout_sha256'];assert sha(glb)==meta['glb_sha256']
+  c=ROOT/(manifest[site]['construction'] if manifest else item['consume_source']);meta=json.loads(c.read_text());layout=ROOT/meta['layout'];data=json.loads(layout.read_text());link=next(l for l in data['links'] if l['id']==item['link']);native=ROOT/manifest[site]['native'] if manifest else c.parent/'open-circulation.hcs2';glb=ROOT/manifest[site]['glb'] if manifest else c.parent/'open-circulation.glb';assert sha(native)==meta['physics_sha256'];assert sha(layout)==meta['layout_sha256'];assert sha(glb)==meta['glb_sha256']
   source[site]=dict(contract=c.relative_to(ROOT).as_posix(),contract_sha256=sha(c),layout=meta['layout'],layout_sha256=sha(layout),native=native.relative_to(ROOT).as_posix(),native_sha256=sha(native),glb=glb.relative_to(ROOT).as_posix(),glb_sha256=sha(glb))
   names.extend(site+'\t'+n for n in meta['stair_components'])
   anchors=[link['points'][0]]

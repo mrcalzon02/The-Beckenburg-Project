@@ -1,0 +1,780 @@
+{
+  "id": "COLLEGE",
+  "status": "AUTHORED_NATIVE_ROOM_ACCESS_ROUTES_NOT_RUNTIME_ACCEPTANCE",
+  "source_contract": "development/levels/rebuild/arrival-bearing-pass/college/construction.json",
+  "source_contract_sha256": "d914a477948e5959b0aee32985ecb9c803338813151feb8cbf02a58b655e9793",
+  "source_glb": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.glb",
+  "source_glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce",
+  "source_physics": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.hcs2",
+  "source_physics_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+  "before_layout": "development/levels/rebuild/arrival-bearing-pass/college/authored-layout.json",
+  "before_layout_sha256": "bb9a2378fe7655354b9a64e656ab5551e196e3ca78ea139333522f2928ed1efc",
+  "layout": "development/levels/rebuild/access-route-pass/assemblies/college/authored-layout.json",
+  "layout_sha256": "4c0b5d9c1813f55763daa617f716ce442d7f34cb01888b7baf6dac24d74fd752",
+  "before_segment_map": {},
+  "source_segment_map": {},
+  "before_stair_components": [
+    "589:L80 flight0 step1",
+    "590:L80 flight0 step2",
+    "591:L80 flight0 step3",
+    "592:L80 flight0 step4",
+    "593:L80 flight0 step5",
+    "594:L80 flight0 step6",
+    "595:L80 flight0 step7",
+    "596:L80 flight0 step8",
+    "597:L80 flight0 step9",
+    "598:L80 flight0 step10",
+    "599:L80 flight0 step11",
+    "600:L80 flight0 step12",
+    "601:L80 flight0 step13",
+    "602:L80 flight0 step14",
+    "603:L80 flight0 step15",
+    "604:L80 flight0 step16",
+    "605:L80 flight0 step17",
+    "606:L80 flight0 step18",
+    "607:L80 flight0 step19",
+    "608:L80 flight0 step20",
+    "609:L81 flight0 step1",
+    "610:L81 flight0 step2",
+    "611:L81 flight0 step3",
+    "612:L81 flight0 step4",
+    "613:L81 flight0 step5",
+    "614:L81 flight0 step6",
+    "615:L81 flight0 step7",
+    "616:L81 flight0 step8",
+    "617:L81 flight0 step9",
+    "618:L81 flight0 step10",
+    "619:L81 flight0 step11",
+    "620:L81 flight0 step12",
+    "621:L81 flight0 step13",
+    "622:L81 flight0 step14",
+    "623:L81 flight0 step15",
+    "624:L81 flight0 step16",
+    "625:L81 flight0 step17",
+    "626:L81 flight0 step18",
+    "627:L81 flight0 step19",
+    "628:L81 flight0 step20",
+    "629:L82 flight0 step1",
+    "630:L82 flight0 step2",
+    "631:L82 flight0 step3",
+    "632:L82 flight0 step4",
+    "633:L82 flight0 step5",
+    "634:L82 flight0 step6",
+    "635:L82 flight0 step7",
+    "636:L82 flight0 step8",
+    "637:L82 flight0 step9",
+    "638:L82 flight0 step10",
+    "639:L82 flight0 step11",
+    "640:L82 flight0 step12",
+    "641:L82 flight0 step13",
+    "642:L82 flight0 step14",
+    "643:L82 flight0 step15",
+    "644:L82 flight0 step16",
+    "645:L82 flight0 step17",
+    "646:L82 flight0 step18",
+    "647:L82 flight0 step19",
+    "648:L82 flight0 step20",
+    "649:L84 landing1",
+    "650:L84 landing2",
+    "651:L84 flight0 step1",
+    "652:L84 flight0 step2",
+    "653:L84 flight0 step3",
+    "654:L84 flight0 step4",
+    "655:L84 flight0 step5",
+    "656:L84 flight0 step6",
+    "657:L84 flight0 step7",
+    "658:L84 flight0 step8",
+    "659:L84 flight0 step9",
+    "660:L84 flight0 step10",
+    "661:L84 flight0 step11",
+    "662:L84 flight0 step12",
+    "663:L84 flight0 step13",
+    "664:L84 flight0 step14",
+    "665:L84 flight0 step15",
+    "666:L84 flight0 step16",
+    "667:L84 flight0 step17",
+    "668:L85 flight0 step1",
+    "669:L85 flight0 step2",
+    "670:L85 flight0 step3",
+    "671:L85 flight0 step4",
+    "672:L85 flight0 step5",
+    "673:L85 flight0 step6",
+    "674:L85 flight0 step7",
+    "675:L85 flight0 step8",
+    "676:L85 flight0 step9",
+    "677:L85 flight0 step10",
+    "678:L85 flight0 step11",
+    "679:L85 flight0 step12",
+    "680:L85 flight0 step13",
+    "681:L85 flight0 step14",
+    "682:L85 flight0 step15",
+    "683:L85 flight0 step16",
+    "684:L85 flight0 step17"
+  ],
+  "stair_components": [
+    "589:L80 flight0 step1",
+    "590:L80 flight0 step2",
+    "591:L80 flight0 step3",
+    "592:L80 flight0 step4",
+    "593:L80 flight0 step5",
+    "594:L80 flight0 step6",
+    "595:L80 flight0 step7",
+    "596:L80 flight0 step8",
+    "597:L80 flight0 step9",
+    "598:L80 flight0 step10",
+    "599:L80 flight0 step11",
+    "600:L80 flight0 step12",
+    "601:L80 flight0 step13",
+    "602:L80 flight0 step14",
+    "603:L80 flight0 step15",
+    "604:L80 flight0 step16",
+    "605:L80 flight0 step17",
+    "606:L80 flight0 step18",
+    "607:L80 flight0 step19",
+    "608:L80 flight0 step20",
+    "609:L81 flight0 step1",
+    "610:L81 flight0 step2",
+    "611:L81 flight0 step3",
+    "612:L81 flight0 step4",
+    "613:L81 flight0 step5",
+    "614:L81 flight0 step6",
+    "615:L81 flight0 step7",
+    "616:L81 flight0 step8",
+    "617:L81 flight0 step9",
+    "618:L81 flight0 step10",
+    "619:L81 flight0 step11",
+    "620:L81 flight0 step12",
+    "621:L81 flight0 step13",
+    "622:L81 flight0 step14",
+    "623:L81 flight0 step15",
+    "624:L81 flight0 step16",
+    "625:L81 flight0 step17",
+    "626:L81 flight0 step18",
+    "627:L81 flight0 step19",
+    "628:L81 flight0 step20",
+    "629:L82 flight0 step1",
+    "630:L82 flight0 step2",
+    "631:L82 flight0 step3",
+    "632:L82 flight0 step4",
+    "633:L82 flight0 step5",
+    "634:L82 flight0 step6",
+    "635:L82 flight0 step7",
+    "636:L82 flight0 step8",
+    "637:L82 flight0 step9",
+    "638:L82 flight0 step10",
+    "639:L82 flight0 step11",
+    "640:L82 flight0 step12",
+    "641:L82 flight0 step13",
+    "642:L82 flight0 step14",
+    "643:L82 flight0 step15",
+    "644:L82 flight0 step16",
+    "645:L82 flight0 step17",
+    "646:L82 flight0 step18",
+    "647:L82 flight0 step19",
+    "648:L82 flight0 step20",
+    "649:L84 landing1",
+    "650:L84 landing2",
+    "651:L84 flight0 step1",
+    "652:L84 flight0 step2",
+    "653:L84 flight0 step3",
+    "654:L84 flight0 step4",
+    "655:L84 flight0 step5",
+    "656:L84 flight0 step6",
+    "657:L84 flight0 step7",
+    "658:L84 flight0 step8",
+    "659:L84 flight0 step9",
+    "660:L84 flight0 step10",
+    "661:L84 flight0 step11",
+    "662:L84 flight0 step12",
+    "663:L84 flight0 step13",
+    "664:L84 flight0 step14",
+    "665:L84 flight0 step15",
+    "666:L84 flight0 step16",
+    "667:L84 flight0 step17",
+    "668:L85 flight0 step1",
+    "669:L85 flight0 step2",
+    "670:L85 flight0 step3",
+    "671:L85 flight0 step4",
+    "672:L85 flight0 step5",
+    "673:L85 flight0 step6",
+    "674:L85 flight0 step7",
+    "675:L85 flight0 step8",
+    "676:L85 flight0 step9",
+    "677:L85 flight0 step10",
+    "678:L85 flight0 step11",
+    "679:L85 flight0 step12",
+    "680:L85 flight0 step13",
+    "681:L85 flight0 step14",
+    "682:L85 flight0 step15",
+    "683:L85 flight0 step16",
+    "684:L85 flight0 step17"
+  ],
+  "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce",
+  "physics_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+  "arrival_bearing": {
+    "link": "L01",
+    "anchor": [
+      32.0,
+      0,
+      96.5
+    ],
+    "route_width": 1.4,
+    "extension_metres": 0.35,
+    "contact_owner": "L01 support 0",
+    "source_bottom_y": -0.11999999731779099,
+    "top_y": 0,
+    "original_polygon": [
+      [
+        31.3,
+        96.85
+      ],
+      [
+        31.3,
+        96.5
+      ],
+      [
+        32.7,
+        96.5
+      ],
+      [
+        32.7,
+        96.85
+      ]
+    ],
+    "actual_polygons": [
+      [
+        [
+          31.3,
+          96.85
+        ],
+        [
+          31.3,
+          96.5
+        ],
+        [
+          32.7,
+          96.5
+        ],
+        [
+          32.7,
+          96.85
+        ]
+      ]
+    ],
+    "coplanar_receivers": [],
+    "new_parts": [
+      "Arrival end bearing COLLEGE 0"
+    ],
+    "triangles": 12,
+    "terrain_and_basement_holes": "EXACT_RETAINED_NATIVE_RECORDS_NO_WORLD_EDITS",
+    "limitation": "Small path-end cantilever attached along original full-depth end plane; overall terrain/foundation/art/canonical-van/runtime acceptance remains separate"
+  },
+  "new_parts": [
+    "Arrival end bearing COLLEGE 0"
+  ],
+  "new_triangles": 12,
+  "removed_source_meshes": [],
+  "removed_native_parts": [],
+  "generator_sha256": "7f4a5b7532532d27ca0a1ad9c9548f50469d5e278d5836dff25c4239ba79265f",
+  "blend_sha256": "213456ca837a54a3ec51db37aa6408e0825f0774cabaa1aba64e19554c1595b7",
+  "access_route_changes": [
+    {
+      "site": "COLLEGE",
+      "link": "L19",
+      "rooms": [
+        "issue",
+        "library-stair"
+      ],
+      "before": [
+        [
+          31.0,
+          0,
+          18.0
+        ],
+        [
+          31,
+          0,
+          16
+        ],
+        [
+          31.0,
+          0,
+          10.0
+        ]
+      ],
+      "after": [
+        [
+          31.0,
+          0.0,
+          18.0
+        ],
+        [
+          31.0,
+          0.0,
+          16.0
+        ],
+        [
+          30.5,
+          0.0,
+          12.5
+        ],
+        [
+          30.0,
+          0.0,
+          12.5
+        ],
+        [
+          29.5,
+          0.0,
+          12.0
+        ],
+        [
+          29.5,
+          0.0,
+          10.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        31,
+        0,
+        16
+      ],
+      "source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/college/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/college/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.blend",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L34",
+      "rooms": [
+        "north-cross",
+        "north-stair"
+      ],
+      "before": [
+        [
+          58.0,
+          0,
+          40.0
+        ],
+        [
+          58.0,
+          0,
+          40.5
+        ],
+        [
+          62,
+          0,
+          40.5
+        ],
+        [
+          65.0,
+          0,
+          40.5
+        ],
+        [
+          65.0,
+          0,
+          36.0
+        ]
+      ],
+      "after": [
+        [
+          58.0,
+          0.0,
+          40.0
+        ],
+        [
+          62.0,
+          0.0,
+          40.5
+        ],
+        [
+          62.5,
+          0.0,
+          40.5
+        ],
+        [
+          63.0,
+          0.0,
+          39.5
+        ],
+        [
+          63.5,
+          0.0,
+          36.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        62,
+        0,
+        40.5
+      ],
+      "source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/college/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/college/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.blend",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L43",
+      "rooms": [
+        "rear-hall",
+        "res-cellar-stair"
+      ],
+      "before": [
+        [
+          52.0,
+          0,
+          74.0
+        ],
+        [
+          52.0,
+          0,
+          75
+        ],
+        [
+          50,
+          0,
+          75
+        ],
+        [
+          46.0,
+          0,
+          75
+        ],
+        [
+          46.0,
+          0,
+          72.0
+        ]
+      ],
+      "after": [
+        [
+          52.0,
+          0.0,
+          74.0
+        ],
+        [
+          50.0,
+          0.0,
+          75.0
+        ],
+        [
+          47.0,
+          0.0,
+          74.0
+        ],
+        [
+          46.0,
+          0.0,
+          73.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        50,
+        0,
+        75
+      ],
+      "source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/college/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/college/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.blend",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L51",
+      "rooms": [
+        "upper-library-stair",
+        "upper-library-landing"
+      ],
+      "before": [
+        [
+          31.0,
+          3.6,
+          10.0
+        ],
+        [
+          31,
+          3.6,
+          16
+        ],
+        [
+          31.0,
+          3.6,
+          18.0
+        ]
+      ],
+      "after": [
+        [
+          31.0,
+          3.6,
+          12.0
+        ],
+        [
+          31.0,
+          3.6,
+          16.0
+        ],
+        [
+          31.0,
+          3.6,
+          18.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        31,
+        3.6,
+        16
+      ],
+      "source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/college/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/college/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.blend",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L63",
+      "rooms": [
+        "upper-north-cross",
+        "upper-north-stair"
+      ],
+      "before": [
+        [
+          58.0,
+          3.6,
+          40.0
+        ],
+        [
+          58.0,
+          3.6,
+          40.5
+        ],
+        [
+          62,
+          3.6,
+          40.5
+        ],
+        [
+          65.0,
+          3.6,
+          40.5
+        ],
+        [
+          65.0,
+          3.6,
+          36.0
+        ]
+      ],
+      "after": [
+        [
+          58.0,
+          3.6,
+          40.0
+        ],
+        [
+          62.0,
+          3.6,
+          40.5
+        ],
+        [
+          62.5,
+          3.6,
+          40.5
+        ],
+        [
+          63.0,
+          3.6,
+          39.5
+        ],
+        [
+          63.0,
+          3.6,
+          36.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        62,
+        3.6,
+        40.5
+      ],
+      "source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/college/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/college/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.blend",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L71",
+      "rooms": [
+        "east-tunnel",
+        "east-cellar-stair"
+      ],
+      "before": [
+        [
+          44.0,
+          -3,
+          54.0
+        ],
+        [
+          44,
+          -3,
+          66
+        ],
+        [
+          44,
+          -3,
+          72.0
+        ],
+        [
+          46.0,
+          -3,
+          72.0
+        ]
+      ],
+      "after": [
+        [
+          44.0,
+          -3.0,
+          54.0
+        ],
+        [
+          44.0,
+          -3.0,
+          66.0
+        ],
+        [
+          44.5,
+          -3.0,
+          72.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        44,
+        -3,
+        66
+      ],
+      "source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/college/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/college/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.blend",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L87",
+      "rooms": [
+        "teaching-library-link",
+        "upper-library-stair"
+      ],
+      "before": [
+        [
+          26.0,
+          3.6,
+          14.0
+        ],
+        [
+          28,
+          3.6,
+          14
+        ],
+        [
+          31.0,
+          3.6,
+          14
+        ],
+        [
+          31.0,
+          3.6,
+          10.0
+        ]
+      ],
+      "after": [
+        [
+          26.0,
+          3.6,
+          14.0
+        ],
+        [
+          28.0,
+          3.6,
+          14.0
+        ],
+        [
+          28.5,
+          3.6,
+          14.0
+        ],
+        [
+          29.0,
+          3.6,
+          13.0
+        ],
+        [
+          29.0,
+          3.6,
+          10.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        28,
+        3.6,
+        14
+      ],
+      "source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/college/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/college/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.blend",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce"
+      }
+    }
+  ],
+  "geometry_unchanged": true,
+  "scope": "Existing exact exported mesh, native collision, editable scene, terrain holes, UVs, pivots and all non-link source fields retained. Doorways, widths and staging retained. Room access endpoints may move inside their own room. Independent complete routes and room connection checks remain separate; no runtime unlock."
+}

@@ -1,7 +1,7 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 1922,
+  "local_files": 1936,
   "unique_local_file_hashes": 1765,
   "collections": {
     "existing_map_specific_roughs": 298,
@@ -12,7 +12,7 @@
     "additional_custom_model_sources": 22,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 94,
-    "native_map_exports": 236
+    "native_map_exports": 250
   },
   "archive_index": {
     "path": "development/assets/local-library-manifest.json",
@@ -26044,6 +26044,174 @@
       "bytes": 54348
     },
     {
+      "id": "access-routes",
+      "label": "access-routes",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc",
+      "bytes": 2261036
+    },
+    {
+      "id": "access-routes",
+      "label": "access-routes",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce",
+      "bytes": 2584120
+    },
+    {
+      "id": "access-routes",
+      "label": "access-routes",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "00348bdebcfff6d04db5e4115ef19183d3b46141a200f8c273038a04e9a6d77c",
+      "bytes": 1821116
+    },
+    {
+      "id": "access-routes",
+      "label": "access-routes",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "8cc08dcd125fc1300b07fdbfd7d4e295ed9af4f6a8c17fd2fad845c082c4d9cd",
+      "bytes": 2012664
+    },
+    {
+      "id": "access-routes",
+      "label": "access-routes",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665",
+      "bytes": 2637456
+    },
+    {
+      "id": "access-routes",
+      "label": "access-routes",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "d711e5effcaa0d46935d7478965b84e26741cbd456668ccc0fef7d144a71ca81",
+      "bytes": 2067536
+    },
+    {
+      "id": "access-routes",
+      "label": "access-routes",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-03/access-routes.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "02364175c5e663eebbba54f1badcbaeff2d4740e2d33a66b03a1e7aa58879827",
+      "bytes": 3422188
+    },
+    {
+      "id": "access-routes",
+      "label": "access-routes",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "04bb6cba8e8f472dc6affaac3cf0e8c35b7b80d12971f7b248dcf8e126fe4ab4",
+      "bytes": 3223240
+    },
+    {
+      "id": "access-routes",
+      "label": "access-routes",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "e85f127c0b172025d64eeee0c96d84cda65c0c9cc4ff3c088596f8d77f4a68b1",
+      "bytes": 2431208
+    },
+    {
+      "id": "access-routes",
+      "label": "access-routes",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-10/access-routes.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+      "bytes": 2692208
+    },
+    {
+      "id": "access-routes",
+      "label": "access-routes",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "8f2d47e899bad5871e8cd08893ca0c966ed08bc0a2b372621684e328fcee56fb",
+      "bytes": 4476500
+    },
+    {
+      "id": "access-routes",
+      "label": "access-routes",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-15/access-routes.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "0ff9378ee4178e923048299a562dd86b9fdab5ba462f814d18fa5d883829717b",
+      "bytes": 720912
+    },
+    {
+      "id": "access-routes",
+      "label": "access-routes",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-17/access-routes.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "ba8c6a04d0ac39459d8dcc0edd536af70e3ce7133e4eb446eb1675a799abce97",
+      "bytes": 2868296
+    },
+    {
+      "id": "access-routes",
+      "label": "access-routes",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "0116d3fee17e9aa2d56c47cb2a20c273c4cae11a7d0545c6e6b2d3571188630e",
+      "bytes": 2750448
+    },
+    {
       "id": "supported-arrival",
       "label": "supported-arrival",
       "maps": [],
@@ -30606,6 +30774,104 @@
       "paths": [
         "assets/runtime/models/painting_1.glb",
         "development/assets/castle-museum/references/reused-models/painting_1.glb"
+      ]
+    },
+    {
+      "sha256": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc",
+      "paths": [
+        "development/levels/rebuild/access-route-pass/assemblies/asylum/access-routes.glb",
+        "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.glb"
+      ]
+    },
+    {
+      "sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce",
+      "paths": [
+        "development/levels/rebuild/access-route-pass/assemblies/college/access-routes.glb",
+        "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.glb"
+      ]
+    },
+    {
+      "sha256": "00348bdebcfff6d04db5e4115ef19183d3b46141a200f8c273038a04e9a6d77c",
+      "paths": [
+        "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.glb",
+        "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.glb"
+      ]
+    },
+    {
+      "sha256": "8cc08dcd125fc1300b07fdbfd7d4e295ed9af4f6a8c17fd2fad845c082c4d9cd",
+      "paths": [
+        "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.glb",
+        "development/levels/rebuild/arrival-bearing-pass/mansion/supported-arrival.glb"
+      ]
+    },
+    {
+      "sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665",
+      "paths": [
+        "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.glb",
+        "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.glb"
+      ]
+    },
+    {
+      "sha256": "d711e5effcaa0d46935d7478965b84e26741cbd456668ccc0fef7d144a71ca81",
+      "paths": [
+        "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.glb",
+        "development/levels/rebuild/arrival-bearing-pass/school/supported-arrival.glb"
+      ]
+    },
+    {
+      "sha256": "02364175c5e663eebbba54f1badcbaeff2d4740e2d33a66b03a1e7aa58879827",
+      "paths": [
+        "development/levels/rebuild/access-route-pass/assemblies/wld-03/access-routes.glb",
+        "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.glb"
+      ]
+    },
+    {
+      "sha256": "04bb6cba8e8f472dc6affaac3cf0e8c35b7b80d12971f7b248dcf8e126fe4ab4",
+      "paths": [
+        "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.glb",
+        "development/levels/rebuild/arrival-bearing-pass/wld-04/supported-arrival.glb"
+      ]
+    },
+    {
+      "sha256": "e85f127c0b172025d64eeee0c96d84cda65c0c9cc4ff3c088596f8d77f4a68b1",
+      "paths": [
+        "development/levels/rebuild/access-route-pass/assemblies/wld-08/access-routes.glb",
+        "development/levels/rebuild/flat-terrain-pass/assemblies/wld-08/cut-terrain.glb"
+      ]
+    },
+    {
+      "sha256": "9e93cb0de5e0af2b47cfa05f9cd2bed7263523230058c8d2d5f84650007288ae",
+      "paths": [
+        "development/levels/rebuild/access-route-pass/assemblies/wld-10/access-routes.glb",
+        "development/levels/rebuild/flat-terrain-pass/assemblies/wld-10/cut-terrain.glb"
+      ]
+    },
+    {
+      "sha256": "8f2d47e899bad5871e8cd08893ca0c966ed08bc0a2b372621684e328fcee56fb",
+      "paths": [
+        "development/levels/rebuild/access-route-pass/assemblies/wld-14/access-routes.glb",
+        "development/levels/rebuild/arrival-bearing-pass/wld-14/supported-arrival.glb"
+      ]
+    },
+    {
+      "sha256": "0ff9378ee4178e923048299a562dd86b9fdab5ba462f814d18fa5d883829717b",
+      "paths": [
+        "development/levels/rebuild/access-route-pass/assemblies/wld-15/access-routes.glb",
+        "development/levels/rebuild/flat-circulation-pass/wld-15/open-circulation.glb"
+      ]
+    },
+    {
+      "sha256": "ba8c6a04d0ac39459d8dcc0edd536af70e3ce7133e4eb446eb1675a799abce97",
+      "paths": [
+        "development/levels/rebuild/access-route-pass/assemblies/wld-17/access-routes.glb",
+        "development/levels/rebuild/arrival-bearing-pass/wld-17/supported-arrival.glb"
+      ]
+    },
+    {
+      "sha256": "0116d3fee17e9aa2d56c47cb2a20c273c4cae11a7d0545c6e6b2d3571188630e",
+      "paths": [
+        "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.glb",
+        "development/levels/rebuild/flat-terrain-pass/assemblies/wld-18/cut-terrain.glb"
       ]
     },
     {

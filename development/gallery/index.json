@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 8687,
+  "count": 8849,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -61794,6 +61794,1626 @@
       "height": 933,
       "bytes": 695401,
       "sha256": "f9f55b46a957e4ab59055859cbee35a1ed0c46a2445cadfc384de5ef9bd879e6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/asylum-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/asylum-floor-plan-after.png",
+      "title": "Asylum floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 719413,
+      "sha256": "c101ac5d54fff559f390a769b310e7b6f1f43ee2fc6066770b4acb3cede30696"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/asylum-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/asylum-floor-plan-before.png",
+      "title": "Asylum floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 718419,
+      "sha256": "14fd5cccc4b7928e6954eb48e2831d354da94798133976e002ad2d4d450bbf6a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/asylum-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/asylum-route-detail-after.png",
+      "title": "Asylum route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 827009,
+      "sha256": "497b357c565bdb068209e8d5c85f5a8b5306536f54658947ec56b5f4dfb09b0b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/asylum-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/asylum-route-detail-before.png",
+      "title": "Asylum route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 823077,
+      "sha256": "9d1876ae5859eaae3db7ed63b9689516d411941a2cbd08808b1a5d95ee43788c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/asylum-y0p0-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/asylum-y0p0-route-sheet.png",
+      "title": "Asylum y0p0 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 462919,
+      "sha256": "1533116ec4c4da858f222bdaccb2bed5241bc62eb7d22453aeb7e8d69cf8f583"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/college-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/college-floor-plan-after.png",
+      "title": "College floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 698258,
+      "sha256": "9e27b9086589d66ce3ee44301811f0b5db322dd122bac9c6630babdb81d99531"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/college-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/college-floor-plan-before.png",
+      "title": "College floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 697111,
+      "sha256": "c2bc465b42bba65f91c2538063707550f57f6a5c6ecc7880f5cda65c805fa97c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/college-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/college-route-detail-after.png",
+      "title": "College route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 931029,
+      "sha256": "99c78dffa61e5672f30e7de63a85a5bbfe434e01cb22d6127a9305e48d28b344"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/college-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/college-route-detail-before.png",
+      "title": "College route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 913111,
+      "sha256": "20e73d6e103e3e3390acae6bceac5461db441fb6c110b626bd9bbdf6caae1063"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/college-y0p0-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/college-y0p0-route-sheet.png",
+      "title": "College y0p0 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 494449,
+      "sha256": "06141f9a1935f2f9099c6cb11a129190363703c9ac7ca10b80e80c69fce19b01"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/farmhouse-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/farmhouse-floor-plan-after.png",
+      "title": "Farmhouse floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 528222,
+      "sha256": "d66245066943bb49d59168de1cf720fcd5d1047d65fd0da321583a836c587515"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/farmhouse-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/farmhouse-floor-plan-before.png",
+      "title": "Farmhouse floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 527432,
+      "sha256": "3ed9c2100f4d92e06250aeb5252c65f0473f792a4bd3fce3a4c40f4c7925e2f5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/farmhouse-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/farmhouse-route-detail-after.png",
+      "title": "Farmhouse route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 811935,
+      "sha256": "b698bc02575c44bb476b03e22bc624fee2b2b9c824169abbdaab67014f23172e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/farmhouse-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/farmhouse-route-detail-before.png",
+      "title": "Farmhouse route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 797375,
+      "sha256": "6f5e5907b4bde7dd2012dcbad0bce8d40efa100ba6af3b24ac1ae64656731e29"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/farmhouse-y3p0-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/farmhouse-y3p0-route-sheet.png",
+      "title": "Farmhouse y3p0 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 417047,
+      "sha256": "20b57c0b6abb36e4409f480db3c2be6089a0a63760bde1f2382034402584436c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/mansion-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/mansion-floor-plan-after.png",
+      "title": "Mansion floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 700896,
+      "sha256": "ed8f342880aad18ea47f7bbac32aef16de6f0d22aaeff5326f9ab9aacc7ccb2b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/mansion-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/mansion-floor-plan-before.png",
+      "title": "Mansion floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 700238,
+      "sha256": "81cfa8013cdcad3146d7f758abe49a3f13e2d6fa37d3a5b618de33e739eec5fe"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/mansion-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/mansion-route-detail-after.png",
+      "title": "Mansion route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 920205,
+      "sha256": "d5687d81bfb1035a21c0231b850a8225f7a2a27279c6190b05a3a907aea65dfe"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/mansion-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/mansion-route-detail-before.png",
+      "title": "Mansion route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 918093,
+      "sha256": "77c0a200e6eca3229d89e9a80ff52f2da9ac68d0660549a328edc78106b3f9ea"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/mansion-y0p0-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/mansion-y0p0-route-sheet.png",
+      "title": "Mansion y0p0 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 480747,
+      "sha256": "e077eda8816cc70089a9e2789427a84c2a38c09b6c32ff951c349cec7d9f89df"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/prison-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/prison-floor-plan-after.png",
+      "title": "Prison floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 740772,
+      "sha256": "ac1aac1730e5774e7db4a5003dd5eb7304318c2a5dfb22daa94e9ae790fab47a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/prison-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/prison-floor-plan-before.png",
+      "title": "Prison floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 740584,
+      "sha256": "b5479f8c229821319705c99849d25ad4f26c4382d7613b4d27a1a13a5bd3fab4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/prison-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/prison-route-detail-after.png",
+      "title": "Prison route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 920209,
+      "sha256": "a79e501bba1ccf13211c41c7e947dd9056401c972cfb21be79522a37d1095c65"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/prison-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/prison-route-detail-before.png",
+      "title": "Prison route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 915631,
+      "sha256": "11c96e1a2708ebb8c07c9f45adde1ce01e2f40185704cd1c934207d47372ae59"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/prison-y0p0-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/prison-y0p0-route-sheet.png",
+      "title": "Prison y0p0 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 492813,
+      "sha256": "5d48c6d841eb7264bedb0fd38e7a72f048fa79713f89bd19d8eddfae1b338846"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/school-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/school-floor-plan-after.png",
+      "title": "School floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 860117,
+      "sha256": "a816d0a6cb2badc277cc0cd21fc08aea20107f8f0c974e241948beb5b1d8c09b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/school-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/school-floor-plan-before.png",
+      "title": "School floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 859714,
+      "sha256": "8aa4d223ca0b89f0f6c0ee111b44373797a051c7ae921caa389bca8cc7413bb7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/school-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/school-route-detail-after.png",
+      "title": "School route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 929925,
+      "sha256": "6dd70983a2610d9795546873243c664cbc203c9c532c32047cae530134353086"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/school-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/school-route-detail-before.png",
+      "title": "School route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 925363,
+      "sha256": "4ab6394912ad8c744e2d746a2eee23a3c46f603155197b0e12213717612631c6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/school-y0p0-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/school-y0p0-route-sheet.png",
+      "title": "School y0p0 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 534825,
+      "sha256": "2f57e02c7a03690c3acae0d94ba667acbb05ff561aacc115573546c293f4aef5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-03-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-03-floor-plan-after.png",
+      "title": "Wld 03 floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 730514,
+      "sha256": "b2eca55cb6d7de100113160892f8cde01b232efeaf137aab4dbab42abacb3ad6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-03-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-03-floor-plan-before.png",
+      "title": "Wld 03 floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 729281,
+      "sha256": "e6abe713f3b69c71c9babc546621b16666b83068b766878fd8ffbd66831a88c7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-03-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-03-route-detail-after.png",
+      "title": "Wld 03 route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 965061,
+      "sha256": "d7f441c90aee332e4644a9900f1885a229333b343fe2668d7a4e0502c567042d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-03-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-03-route-detail-before.png",
+      "title": "Wld 03 route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 957469,
+      "sha256": "1d5af31f844df0bae70645110d96de6fa92b003ed49c37e400e1ac203612c0d4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-03-y8p0-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-03-y8p0-route-sheet.png",
+      "title": "Wld 03 y8p0 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 502396,
+      "sha256": "4fed2cdc82159e56f6e464c714b3c49302708e6b09b591b559f04ff9dfa46ab5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-04-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-04-floor-plan-after.png",
+      "title": "Wld 04 floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 683999,
+      "sha256": "872768fd915bdce3dadbc927f46fd282b4c0df94450b1822db1312cfb2116af8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-04-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-04-floor-plan-before.png",
+      "title": "Wld 04 floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 684137,
+      "sha256": "4c3845b6919e351dc239de05297c419072fd32ca5ac6dda6a5487b456e14e6c1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-04-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-04-route-detail-after.png",
+      "title": "Wld 04 route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 924269,
+      "sha256": "5027ebbb6db262c1f1da19ce554793d9d68e85563e3239a3f44bdd951aac70c0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-04-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-04-route-detail-before.png",
+      "title": "Wld 04 route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 924667,
+      "sha256": "79c23edb9ea7610a6783ed11ac00003f0552d61385f3357fa7462f22c0c66783"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-04-y6p0-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-04-y6p0-route-sheet.png",
+      "title": "Wld 04 y6p0 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 466965,
+      "sha256": "c4a6fb46a4f324a8fc62561a2beb9f81e9593d3cfc1b434767b704b20c5a075f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-08-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-08-floor-plan-after.png",
+      "title": "Wld 08 floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 743503,
+      "sha256": "d4ecc5e604a967590e5b7501b81db08c8a1d1d423fb05ed19ecd24dd19c6b604"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-08-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-08-floor-plan-before.png",
+      "title": "Wld 08 floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 741725,
+      "sha256": "eb3259a6a2cba885812f3d95f23ea07d00db6cf5b2de72f8241219d173277f1a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-08-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-08-route-detail-after.png",
+      "title": "Wld 08 route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 881875,
+      "sha256": "5d149a6e86cd914459b581ca9d309a2c67b277835d6d61c00fdf18b4e92d6f1a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-08-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-08-route-detail-before.png",
+      "title": "Wld 08 route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 868304,
+      "sha256": "d8cb875b700b5f27b44891b912d2810fa2cb9df1cd9520b1fb0b38c683809735"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-08-y0p0-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-08-y0p0-route-sheet.png",
+      "title": "Wld 08 y0p0 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 488718,
+      "sha256": "34e03d10dbfb826d7dd950886bb11cb3406ed5ad97801504de0b923271714fb9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-10-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-10-floor-plan-after.png",
+      "title": "Wld 10 floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 752918,
+      "sha256": "f62e3e91adf2d3646c619d79f7b857c2b2554dfcb896149a2a40b92dabfa7eb1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-10-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-10-floor-plan-before.png",
+      "title": "Wld 10 floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 749729,
+      "sha256": "767746ff1d773a59089bb1d252d4f057daa3dc43a9bbed7a505052b142ca6b3b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-10-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-10-route-detail-after.png",
+      "title": "Wld 10 route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 889011,
+      "sha256": "7743b1a88eb58307ac2dec9ece953c8ba791f8de81d15526fbdd72511b111787"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-10-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-10-route-detail-before.png",
+      "title": "Wld 10 route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 880436,
+      "sha256": "398407a1069709ecbaf75ea667ba13b30326ec5bad8c46dae9d0c5e4da54863b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-10-y0p0-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-10-y0p0-route-sheet.png",
+      "title": "Wld 10 y0p0 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 498294,
+      "sha256": "72575223ff6b2916efb44ab84ffe566e50e2f97bd8c4a6a51bdf9f3d6cfd7ccf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-14-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-14-floor-plan-after.png",
+      "title": "Wld 14 floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 763534,
+      "sha256": "afa59ee0428474370c913445b900b33e79342f42cb54cad7a485178cf3007adb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-14-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-14-floor-plan-before.png",
+      "title": "Wld 14 floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 763822,
+      "sha256": "562da827a1ce43973bb6ea25c953314771d85e1bc45bae3813896034eb3d7588"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-14-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-14-route-detail-after.png",
+      "title": "Wld 14 route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 895757,
+      "sha256": "d9bf166f4f033f903207458eace3c5e6f6310a07b3122604547450a613222c40"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-14-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-14-route-detail-before.png",
+      "title": "Wld 14 route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 896529,
+      "sha256": "1618a79c97d7ef0ab29faa29e92d1fde7c12b999239de37000fe7192f042abbe"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-14-y0p0-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-14-y0p0-route-sheet.png",
+      "title": "Wld 14 y0p0 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 503281,
+      "sha256": "f74972d989dac66536d89b86b6b96112d9130f8541cd1d23854e7c3dd5ecdafd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-15-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-15-floor-plan-after.png",
+      "title": "Wld 15 floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 671524,
+      "sha256": "da221eec39ad0a13de25c61f4d2af05394692a4e1c3ced3f97ce7bb760f7efd7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-15-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-15-floor-plan-before.png",
+      "title": "Wld 15 floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 671814,
+      "sha256": "8ced8fc30184f1add24b3ec71043ecbd19652b398c7f70826ee420a5d1746199"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-15-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-15-route-detail-after.png",
+      "title": "Wld 15 route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 947743,
+      "sha256": "3f49eded8f275fa19cdd129486cf8e4234c094d68647e920f46ba417d1ea27fd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-15-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-15-route-detail-before.png",
+      "title": "Wld 15 route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 954724,
+      "sha256": "0186febd494fb2b87e6cf97c4e946d2e57cd5953e01d9a03e08f11bc75562445"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-15-y0p0-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-15-y0p0-route-sheet.png",
+      "title": "Wld 15 y0p0 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 491771,
+      "sha256": "62adea5af97d35895dd9bc6d881b1e181a8a70b7fc80d1ba1f5c22d67abaf418"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-17-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-17-floor-plan-after.png",
+      "title": "Wld 17 floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 727507,
+      "sha256": "f4efe37bcddd2ead2625b31f99f2e8f24e3747f2f3309cebe36af343074d99f8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-17-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-17-floor-plan-before.png",
+      "title": "Wld 17 floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 728248,
+      "sha256": "a6f5f6b13dc93eadd85c3ea6ae5fc6a420ba95d2c64930e65ec62895396c11ea"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-17-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-17-route-detail-after.png",
+      "title": "Wld 17 route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 908313,
+      "sha256": "b6d05201bd13d5e3f412f98defc778b8e212382a179c3754e50e2d94bd5f5ddc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-17-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-17-route-detail-before.png",
+      "title": "Wld 17 route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 916586,
+      "sha256": "5eec3066324c51d30f5b448798d807af122de138df79416122f1e26175eb5d0f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-17-y4p0-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-17-y4p0-route-sheet.png",
+      "title": "Wld 17 y4p0 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 509271,
+      "sha256": "580408a67cfee87f3c9e9beb58a25f92994c23b78bb847739524cd023a812848"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-18-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-18-floor-plan-after.png",
+      "title": "Wld 18 floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 487189,
+      "sha256": "4bea572c0821d37e31e64d217c52c26a923ee209ba2891e0c0184c6d674ed53d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-18-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-18-floor-plan-before.png",
+      "title": "Wld 18 floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 486599,
+      "sha256": "71f382d64e9e0348105a161e5244b069d5a4c6790660879e65965ce1784c87e6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-18-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-18-route-detail-after.png",
+      "title": "Wld 18 route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 788969,
+      "sha256": "21bc3d1318152a63638a45421f60e61d520c564dfa9743e3d76ca7a675804c2a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-18-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-18-route-detail-before.png",
+      "title": "Wld 18 route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 779616,
+      "sha256": "1b0d7da759ecaf92896ed89a4c9079e997c76ac4d750b417b9e89d06409b1492"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-18-yminus8p0-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/wld-18-yminus8p0-route-sheet.png",
+      "title": "Wld 18 yminus8p0 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 385757,
+      "sha256": "5f0459aa8860756c512ae5d1d64155317bb2abc2b84d0263bfbb4d18a1eb421d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-y3p4-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-y3p4-floor-plan-after.png",
+      "title": "Asylum y3p4 floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 552762,
+      "sha256": "417bf31cc31c636b56d80754ade44eb4213e2c556feff57f8b18704daabd146f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-y3p4-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-y3p4-floor-plan-before.png",
+      "title": "Asylum y3p4 floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 552477,
+      "sha256": "007dfba22925c1b1c5b87c46201b7bfca005f678f05bef148195fc20c96dc942"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-y3p4-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-y3p4-route-detail-after.png",
+      "title": "Asylum y3p4 route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 876595,
+      "sha256": "80f9738cc0ef7c12a84dd2c1f34311fe044ad3b91d3d64ff5210f4463938fa99"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-y3p4-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-y3p4-route-detail-before.png",
+      "title": "Asylum y3p4 route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 867750,
+      "sha256": "9c93d653b2ff44077e4ef1268b3e9836cb2e997ea2aafea9d479a068d6281310"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-y3p4-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-y3p4-route-sheet.png",
+      "title": "Asylum y3p4 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 435164,
+      "sha256": "6b57242175caf2467e40eb7dddc0146525520c7287e64f4e1f51dfc9c76a2281"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-yminus3p0-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-yminus3p0-floor-plan-after.png",
+      "title": "Asylum yminus3p0 floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 484669,
+      "sha256": "d91cc18cff0317908e2eb80f799299397f1eb6d535fd8c1a9c204b0a3885a468"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-yminus3p0-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-yminus3p0-floor-plan-before.png",
+      "title": "Asylum yminus3p0 floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 484577,
+      "sha256": "bb43e284f5efb2eb0000303e59b9e1a945b24ced33bdeb9434dac52c11ae6dd8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-yminus3p0-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-yminus3p0-route-detail-after.png",
+      "title": "Asylum yminus3p0 route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 682400,
+      "sha256": "f024fd7b9db687ca47d904395caa40c829744fb119ce374d90eacb1c1c165455"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-yminus3p0-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-yminus3p0-route-detail-before.png",
+      "title": "Asylum yminus3p0 route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 681897,
+      "sha256": "99e6c23d37a4b0d287d7d2140e83447f55ae8bb4dde58c7dcf5098c5998a0532"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-yminus3p0-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/asylum-yminus3p0-route-sheet.png",
+      "title": "Asylum yminus3p0 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 341138,
+      "sha256": "746a8b781b4d758244549f1f14e349b50d1d323a8ed471bf306f9ffc2da7bb9f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-y3p6-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-y3p6-floor-plan-after.png",
+      "title": "College y3p6 floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 551643,
+      "sha256": "7785c53f60942e375eea17c2e2312f519797151e8c7583d1f28a40b8f1b138db"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-y3p6-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-y3p6-floor-plan-before.png",
+      "title": "College y3p6 floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 551236,
+      "sha256": "54546aa727dcabf735a8e71080384fbf878483c04f0be8e3d93453763b131619"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-y3p6-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-y3p6-route-detail-after.png",
+      "title": "College y3p6 route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 869779,
+      "sha256": "62d5943c2d6591fa7bb9dd0b08a837e034d58f3d8dc033138e9d1dc31452e724"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-y3p6-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-y3p6-route-detail-before.png",
+      "title": "College y3p6 route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 860752,
+      "sha256": "ef41cd6f134084071a9799d855aa7fd1c28e28b19865da19cfa750ea803d5211"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-y3p6-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-y3p6-route-sheet.png",
+      "title": "College y3p6 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 433157,
+      "sha256": "bb48850025f842d600db90407ba90f942aa8cb76b4a8106df1cd8583d75b0002"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-yminus3p0-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-yminus3p0-floor-plan-after.png",
+      "title": "College yminus3p0 floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 492434,
+      "sha256": "73e0d0644989d1b5f43c22b9edfa3114f7a506eded20c41a9884cd26686b7c99"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-yminus3p0-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-yminus3p0-floor-plan-before.png",
+      "title": "College yminus3p0 floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 492022,
+      "sha256": "b7cf4c774b1bfb3a131e5dd19d0a1dcb8e8b0f61d8a2863ce23027c5ce6a0047"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-yminus3p0-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-yminus3p0-route-detail-after.png",
+      "title": "College yminus3p0 route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 603972,
+      "sha256": "be923c49adb47c550bb63da2197987f5b8e6f5f90bf801032d66f74ac66abb0b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-yminus3p0-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-yminus3p0-route-detail-before.png",
+      "title": "College yminus3p0 route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 601590,
+      "sha256": "03d76ed35071ac6c8a0d03395cc783f3f9b2e9c960140bb5d056ae21efe08f70"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-yminus3p0-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/college-yminus3p0-route-sheet.png",
+      "title": "College yminus3p0 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 318802,
+      "sha256": "da2e4499c93b5b0e3d62a5c553a3e6a914d8dab73af0bb26be96e4b0b1ab4d53"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/farmhouse-y0p0-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/farmhouse-y0p0-floor-plan-after.png",
+      "title": "Farmhouse y0p0 floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 714913,
+      "sha256": "d64a765736740179fd4758512363f5ce7f3ef13121ec6cb2a206528dc5169672"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/farmhouse-y0p0-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/farmhouse-y0p0-floor-plan-before.png",
+      "title": "Farmhouse y0p0 floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 714599,
+      "sha256": "d626a169dbe5e112b53e83fcf6596dcc20b157f4a46a3c114cd23f9420389dc4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/farmhouse-y0p0-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/farmhouse-y0p0-route-detail-after.png",
+      "title": "Farmhouse y0p0 route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 935819,
+      "sha256": "cd8b35059eb70ab50c233b7c980f9223098d359387adb670a8b2515f454e9916"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/farmhouse-y0p0-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/farmhouse-y0p0-route-detail-before.png",
+      "title": "Farmhouse y0p0 route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 929828,
+      "sha256": "9fdd395f731651d23304bb2ed904ffbb0185731264da98bf6c60a746dcb45bae"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/farmhouse-y0p0-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/farmhouse-y0p0-route-sheet.png",
+      "title": "Farmhouse y0p0 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 491643,
+      "sha256": "ac4c7978476e2dc26354223fc30161ea1e07d6a63597e7c71cbf4ceafe86d876"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y3p6-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y3p6-floor-plan-after.png",
+      "title": "Mansion y3p6 floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 531141,
+      "sha256": "c99c90ec5865c16d8736e604d0ebf57db8702cf141d8603836b143841dd9fe30"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y3p6-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y3p6-floor-plan-before.png",
+      "title": "Mansion y3p6 floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 530256,
+      "sha256": "6836eca1ca5bda5360c4a2c72ced48bb32c1475f6e072b12647987ce60afe905"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y3p6-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y3p6-route-detail-after.png",
+      "title": "Mansion y3p6 route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 730178,
+      "sha256": "fce4abf6c04bbd737d5f4ee8d7420f75c2a7172ec350cdb6545ae45d6c8d8704"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y3p6-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y3p6-route-detail-before.png",
+      "title": "Mansion y3p6 route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 728133,
+      "sha256": "dc8d3b1ee721d56ddff636666158305320ebbafd6da9632bdc5ec1185a88ee5b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y3p6-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y3p6-route-sheet.png",
+      "title": "Mansion y3p6 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 373152,
+      "sha256": "d5b1b5c86fe1bebef8dd862e7e1075a57822c179edb9b3db8169e234612e0394"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y7p2-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y7p2-floor-plan-after.png",
+      "title": "Mansion y7p2 floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 520110,
+      "sha256": "a3ca73564c3ef13c74a7b2367fe1c38a395082bec866db92a509915d51b6fa5f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y7p2-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y7p2-floor-plan-before.png",
+      "title": "Mansion y7p2 floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 520203,
+      "sha256": "f48c35ea91c32d16d552ba0be4babf0f84faf76836fd29c192350d616770d492"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y7p2-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y7p2-route-detail-after.png",
+      "title": "Mansion y7p2 route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 679118,
+      "sha256": "eeccb0cd17bd108b1a19ce2ad7edd2c2fb132b2947a4099c9fd2c6cf73ab11e1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y7p2-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y7p2-route-detail-before.png",
+      "title": "Mansion y7p2 route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 678320,
+      "sha256": "92d0cbeab1da31ea45cd396d449a5728fe2a2a0322c13f9a98e7771160909420"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y7p2-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/mansion-y7p2-route-sheet.png",
+      "title": "Mansion y7p2 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 351763,
+      "sha256": "0ae5019ff7f7fc99f5e489c9b0d06c9663869fbcc84ff08984a54635943040f8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-y3p4-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-y3p4-floor-plan-after.png",
+      "title": "Prison y3p4 floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 480992,
+      "sha256": "6169e69b0c5761554bb5b67619c687c9ef9af3cc899a90be0eea0828be2f3359"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-y3p4-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-y3p4-floor-plan-before.png",
+      "title": "Prison y3p4 floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 480562,
+      "sha256": "72ff61b126e840b703f1f8854bcb277d71185a2040ab7cc974f732f629f6e51c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-y3p4-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-y3p4-route-detail-after.png",
+      "title": "Prison y3p4 route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 641187,
+      "sha256": "4af9ee18db535e2e0e6d9c3ad1eb3dd00e56e8b477d633ed80b8fe8bef1fd4c7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-y3p4-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-y3p4-route-detail-before.png",
+      "title": "Prison y3p4 route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 638885,
+      "sha256": "7a6e0ce4f12ee7e6eced87456356eac53b36ed154685fab2bf33f667fd489066"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-y3p4-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-y3p4-route-sheet.png",
+      "title": "Prison y3p4 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 336493,
+      "sha256": "af37b604bc252d96863eeec3fd7117475cff0827d92636366c0d68080a66c0be"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-yminus3p0-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-yminus3p0-floor-plan-after.png",
+      "title": "Prison yminus3p0 floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 450130,
+      "sha256": "16f399d665ee31c017da513ab31538c0aa7790ca4c1d875df6fa98586d00e2f5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-yminus3p0-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-yminus3p0-floor-plan-before.png",
+      "title": "Prison yminus3p0 floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 449452,
+      "sha256": "f2879ca4543054341b123e9eb1f1acf752f38dd77c789109bd68beb07a0dd19b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-yminus3p0-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-yminus3p0-route-detail-after.png",
+      "title": "Prison yminus3p0 route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 910715,
+      "sha256": "0afcd2b714f2aa69503eb7d5a5f556dadcce61512772e336c474ae55bac77b4b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-yminus3p0-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-yminus3p0-route-detail-before.png",
+      "title": "Prison yminus3p0 route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 888724,
+      "sha256": "737525fe300e4723c77e1de690b9cdaa28bc94e28157273f3bdbbb61388f5ca4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-yminus3p0-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/prison-yminus3p0-route-sheet.png",
+      "title": "Prison yminus3p0 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 411896,
+      "sha256": "b4ba18a4ecaee2c6ef62ee2781f6cd59fa2eeb718906347be5608ce5afcb8a24"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-03-y4p0-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-03-y4p0-floor-plan-after.png",
+      "title": "Wld 03 y4p0 floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 729285,
+      "sha256": "57b965e5315e55b563051d14dde6e4d13380dec5d0aa995832df2d3b29b702b2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-03-y4p0-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-03-y4p0-floor-plan-before.png",
+      "title": "Wld 03 y4p0 floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 728809,
+      "sha256": "aec31068c39211c5ae167c2893f5b28bd59615519ed048cb3a017af48b50b4eb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-03-y4p0-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-03-y4p0-route-detail-after.png",
+      "title": "Wld 03 y4p0 route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 945571,
+      "sha256": "a22c7cdd4e7f1d435f1eb2e0407589ba8c459b079d0f847b1a2e2fe2730a093b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-03-y4p0-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-03-y4p0-route-detail-before.png",
+      "title": "Wld 03 y4p0 route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 940639,
+      "sha256": "bff7a41ebfb93d4138b218dd77fcf52df4301d20c1e6c82ca2a876cb94013ef0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-03-y4p0-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-03-y4p0-route-sheet.png",
+      "title": "Wld 03 y4p0 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 493266,
+      "sha256": "cca32824e4faba571e392682c072edf591b016f8d85e479f5b5292a7233351c4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-10-yminus3p0-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-10-yminus3p0-floor-plan-after.png",
+      "title": "Wld 10 yminus3p0 floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 461436,
+      "sha256": "f8e1b2349ae6988c4db5a14019fe70a130fb0b664fcc7e5543474068e4ae760e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-10-yminus3p0-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-10-yminus3p0-floor-plan-before.png",
+      "title": "Wld 10 yminus3p0 floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 460818,
+      "sha256": "098b390fff87b4d8f98db6e04ce972d115d538b2e90fc3c1a65d35471dc0aa3e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-10-yminus3p0-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-10-yminus3p0-route-detail-after.png",
+      "title": "Wld 10 yminus3p0 route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 839662,
+      "sha256": "7e7661e9bdfe62f58bfe84ef77090a9135fb301367e668d88a58f7df3539bb22"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-10-yminus3p0-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-10-yminus3p0-route-detail-before.png",
+      "title": "Wld 10 yminus3p0 route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 839774,
+      "sha256": "fec88903ff52b6b9aa2d35834fcd4cf0af783ed902867777eebf61d244d0e4bf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-10-yminus3p0-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-10-yminus3p0-route-sheet.png",
+      "title": "Wld 10 yminus3p0 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 393929,
+      "sha256": "18e35afb4623ea52febf76b8d04d2f537f970da011147c1cd166f5a043699dc3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-15-yminus3p0-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-15-yminus3p0-floor-plan-after.png",
+      "title": "Wld 15 yminus3p0 floor plan after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 667277,
+      "sha256": "d02812c3b6d15add92db758008ea12c694f9d20b227cef769c20e637170fd235"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-15-yminus3p0-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-15-yminus3p0-floor-plan-before.png",
+      "title": "Wld 15 yminus3p0 floor plan before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 666796,
+      "sha256": "322a425e3820d73f7943b9b5e5129e92fac0c5624b564d1f747535531352f194"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-15-yminus3p0-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-15-yminus3p0-route-detail-after.png",
+      "title": "Wld 15 yminus3p0 route detail after",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 882264,
+      "sha256": "490924b4c21b95ec8c9458f909ef5490f415201bf7fa9c02149f8afaa9e0c3a4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-15-yminus3p0-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-15-yminus3p0-route-detail-before.png",
+      "title": "Wld 15 yminus3p0 route detail before",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 875873,
+      "sha256": "89b12c1fb80aa36c894b9820fe21028bced951a019b35ed4250fe4a957a953db"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-15-yminus3p0-route-sheet.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/20261108T154541135327Z/wld-15-yminus3p0-route-sheet.png",
+      "title": "Wld 15 yminus3p0 route sheet",
+      "kind": "Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance",
+      "width": 1400,
+      "height": 1140,
+      "bytes": 451607,
+      "sha256": "4abbb7f008e0afaf4556328a3c563964730c993d34a9cbd080c15b14cbb1a976"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/asylum-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/asylum-floor-plan-after.png",
+      "title": "Asylum floor plan after",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 719413,
+      "sha256": "4249de27e0ac5c14a711060d723d8c7a448acaa94d4641eb50e14c55d2381704"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/asylum-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/asylum-floor-plan-before.png",
+      "title": "Asylum floor plan before",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 718419,
+      "sha256": "b1c57eb598020030baf40dcb1e98fb283b73bb240ed14f54e8c3101cba728db5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/asylum-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/asylum-route-detail-after.png",
+      "title": "Asylum route detail after",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 827009,
+      "sha256": "aff6a992c4e8987dd721ac3ce494f70efa949757a2e686d8b207e1d7eb8e6bb0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/asylum-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/asylum-route-detail-before.png",
+      "title": "Asylum route detail before",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 823077,
+      "sha256": "4891460062f5b4aba72a4971c0a55d9d077589fc36925090a2a352a01ec5b0d3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/college-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/college-floor-plan-after.png",
+      "title": "College floor plan after",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 698258,
+      "sha256": "7e8087aa32d48ca8348731ddaa1b5aa210e953e6c9c92f9011395ecd3709dfda"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/college-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/college-floor-plan-before.png",
+      "title": "College floor plan before",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 697111,
+      "sha256": "13b4ff14ed6871dd1b00270592a923ca4222c791c5299ca2e1803cf9c7764c5a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/college-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/college-route-detail-after.png",
+      "title": "College route detail after",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 931029,
+      "sha256": "ad8a797d970fc50a621247b4475013a741b0121d04ffc14c8569bde0e627f267"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/college-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/college-route-detail-before.png",
+      "title": "College route detail before",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 913111,
+      "sha256": "4324ee4374966bc8f24373ea53cccc8345caca8d990c1301c98907780d032362"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/farmhouse-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/farmhouse-floor-plan-after.png",
+      "title": "Farmhouse floor plan after",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 528222,
+      "sha256": "5e0d82ebe3c42a074770505eca5668b4e7a106796a1660d14d455998babcfe86"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/farmhouse-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/farmhouse-floor-plan-before.png",
+      "title": "Farmhouse floor plan before",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 527432,
+      "sha256": "4067ba2f209f254765a200280f41cb94a9da77e34c9abc6e81bc84336bb2272f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/farmhouse-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/farmhouse-route-detail-after.png",
+      "title": "Farmhouse route detail after",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 811935,
+      "sha256": "1132dccde6bca6d43de2712493e3c80ffeef5434fa86cb43bc597c0e671adea4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/farmhouse-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/farmhouse-route-detail-before.png",
+      "title": "Farmhouse route detail before",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 797375,
+      "sha256": "93208a9eaab25854248563d1ff64ac69fb7fa33c3af5e2bbddcfb5c250384861"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/mansion-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/mansion-floor-plan-after.png",
+      "title": "Mansion floor plan after",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 700896,
+      "sha256": "6e065aea967b639655edec698d7258a776b39703a3e40a26188483906e88b771"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/mansion-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/mansion-floor-plan-before.png",
+      "title": "Mansion floor plan before",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 700238,
+      "sha256": "5b39d204c09445c574b283b4b02ea023e1be84890cdfa42da778dc8aae8321a6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/mansion-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/mansion-route-detail-after.png",
+      "title": "Mansion route detail after",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 920205,
+      "sha256": "d6e17e08425f17dbc6f8876418067f3ae92e28708ca484484a3f695871728bbf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/mansion-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/mansion-route-detail-before.png",
+      "title": "Mansion route detail before",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 918093,
+      "sha256": "328643a44895beb9b49dc59100aa27260ace464d736429797dc31c3100dd0bcb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/prison-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/prison-floor-plan-after.png",
+      "title": "Prison floor plan after",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 740772,
+      "sha256": "53d108853ad714eae5c7e86bf9d76cf1921beb2bf693766ff26394b91dd1bb64"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/prison-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/prison-floor-plan-before.png",
+      "title": "Prison floor plan before",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 740584,
+      "sha256": "8b3a108e9fcaf8c091c20b5d68962a20ff35c892a2cfd520aa181d963df72863"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/prison-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/prison-route-detail-after.png",
+      "title": "Prison route detail after",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 920209,
+      "sha256": "90288dd1cb810864c280c3cf64d609454d8d6425a0c3653375432668e66528de"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/prison-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/prison-route-detail-before.png",
+      "title": "Prison route detail before",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 915631,
+      "sha256": "e92eb6e3dea127e1c567043630e7f3d9f4dfe10240718d2bf7a09521a73efc08"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/school-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/school-floor-plan-after.png",
+      "title": "School floor plan after",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 860117,
+      "sha256": "e7529d0d1b68237ac8292d7ad6cdb262947e91d1b0c536584b2478f83bf41610"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/school-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/school-floor-plan-before.png",
+      "title": "School floor plan before",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 859714,
+      "sha256": "e8e582cfb90a02852c194f28c86133c41e072ed908f1b00a5ae93332662c3b0a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/school-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/school-route-detail-after.png",
+      "title": "School route detail after",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 929925,
+      "sha256": "6030d8b6787d330f6ee05651c49e839e510f87ada289e603bf88e4a888af26c5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/school-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/school-route-detail-before.png",
+      "title": "School route detail before",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 925363,
+      "sha256": "ca726061dfb8d35f2d1b943ab98a399fae99d9b443311d8fef60d22c66c1e389"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/wld-03-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/wld-03-floor-plan-after.png",
+      "title": "Wld 03 floor plan after",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 730514,
+      "sha256": "eb938f4edc8a74a36e87ae01e7d238998035dcaddeab544105dfcec51102ff8b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/wld-03-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/wld-03-floor-plan-before.png",
+      "title": "Wld 03 floor plan before",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 729281,
+      "sha256": "78dc584a68493dbe89e0ba37b14c022057a88d9fc4e1c5db663159c325307a8f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/wld-03-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/wld-03-route-detail-after.png",
+      "title": "Wld 03 route detail after",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 965061,
+      "sha256": "9ba1e5c11f85ad1c46bfa3ba9e7865d0e7f73e5746a02716ef08efff60547a46"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/wld-03-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/wld-03-route-detail-before.png",
+      "title": "Wld 03 route detail before",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 957469,
+      "sha256": "3d95e99423b7114ab6ea4967c4c7bbb80fbd52eeab7e221bf1a68125938eb958"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/wld-04-floor-plan-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/wld-04-floor-plan-after.png",
+      "title": "Wld 04 floor plan after",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 683999,
+      "sha256": "18edb9d9a49e85db196dfc6e1677012b5d5114749503592da29f4a1d34932a86"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/wld-04-floor-plan-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/wld-04-floor-plan-before.png",
+      "title": "Wld 04 floor plan before",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 684137,
+      "sha256": "615d99a6f199bfda85e6733030d000d8abce61bd3f90cdf06ac0a6d67c5dc5d1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/wld-04-route-detail-after.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/wld-04-route-detail-after.png",
+      "title": "Wld 04 route detail after",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 924269,
+      "sha256": "1dd44736dce69e959c69ae499f70d8e00965696db46db7fd8874383a9a9dd304"
+    },
+    {
+      "path": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/wld-04-route-detail-before.png",
+      "url": "development/levels/rebuild/captures/access-route-batch/rejected-metadata-selector/20261108T154255173825Z/wld-04-route-detail-before.png",
+      "title": "Wld 04 route detail before",
+      "kind": "Rejected partial native route-review selector study; not final review",
+      "width": 1100,
+      "height": 850,
+      "bytes": 924667,
+      "sha256": "aa7b602f24fa0a25fd8a772de797e84b5195d1b0050d691b0a6bb358b4cd3cb2"
     },
     {
       "path": "development/levels/rebuild/captures/after-resident-fix/castle/archive/east.png",

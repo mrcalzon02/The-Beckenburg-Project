@@ -132,3 +132,25 @@ tools/review_flat_terrain.py text eol=lf
 tools/roster_candidate_sources.py text eol=lf
 tools/compare_native_standing.py text eol=lf
 tools/update_flat_terrain_checkpoint.py text eol=lf
+
+# Exact route authoring, diagnostic inputs and capture provenance.
+development/levels/rebuild/access-route-pass/** -text
+development/levels/rebuild/room-access-pass/** -text
+development/levels/rebuild/circulation-layout-pass/** -text
+development/levels/rebuild/access-route-pass/**/*.tsv whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+development/levels/rebuild/access-route-pass/**/*.log -diff
+tools/author_access_routes.py text eol=lf
+tools/audit_room_socket_connectivity.py text eol=lf
+tools/review_access_routes.py text eol=lf
+tools/verify_access_route_sources.py text eol=lf
+tools/design_room_access.py text eol=lf
+tools/design_flat_routes.py text eol=lf
+tools/build_development_gallery.py text eol=lf
+tools/index_staged_map_models.py text eol=lf
+tools/java/RoomAccessRouteDesigner.java text eol=lf
+tools/java/RoomSocketConnectivityProbe.java text eol=lf
+
+# Raw TSV terminal tabs encode intentionally empty columns; keep exact evidence bytes.
+development/levels/rebuild/access-route-pass/**/*.tsv whitespace=-blank-at-eol,cr-at-eol
+development/levels/rebuild/room-access-pass/**/*.tsv whitespace=-blank-at-eol,cr-at-eol
+development/levels/rebuild/circulation-layout-pass/**/*.tsv whitespace=-blank-at-eol,cr-at-eol

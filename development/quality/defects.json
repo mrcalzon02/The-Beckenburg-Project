@@ -4973,6 +4973,50 @@
       "action": "Recover every exact pilot PNG blob from published8f759bd9, verify its original SHA and archive18PNGs under pilot-archive. Rebind only pilot report paths, retaining original hashes/models/cameras and full-batch frames. Save the exact v1checker executed for both model reviews; future renders use unique UTCmicrosecond run directories. No model, native geometry or test result changes.",
       "evidence": "development/levels/rebuild/flat-terrain-pass/pilot-verification/capture-rebinding.json; verification/generators/review_flat_terrain-v1.py; tools/review_flat_terrain.py",
       "older_maps": "Keep immutable capture namespaces for every iteration; compare actual PNG bytes to reports before upload. An unchanged model or similar pixels does not prove an older image hash still matches."
+    },
+    {
+      "id": "DEV-460",
+      "title": "Route endpoints in a shared room do not establish physical room connectivity",
+      "status": "OPEN; EXACT NATIVE ROOM SOCKET AUDIT RECORDED",
+      "affected": "Rooms touched by access-route-pass across14source maps; seven groups retain invalid original sockets,29groups have unproven direct joins",
+      "symptom": "Individual link paths can pass while other incident room sockets remain inside props or on opposite sides of physical obstacles.",
+      "cause": "Original layout links reused room centres or independent door access points without proving intra-room movement.",
+      "action": "Retain valid route changes, audit actual unique incident endpoints and bidirectional5cm production sweeps, then author physical room connections or refit interfering geometry. Do not claim map-wide connected navigation from matching room IDs.",
+      "evidence": "development/levels/rebuild/access-route-pass/verification/room-socket-connectivity.json; tools/audit_room_socket_connectivity.py; invalid and multi-component groups explicitly retained. Complete flat and stair regression checks remain separate.",
+      "older_maps": "Audit actual endpoints and within-room connections separately for every location, including mature maps; direct-join failure does not prove that an indirect path is impossible."
+    },
+    {
+      "id": "DEV-461",
+      "title": "Native route search can find a physical path through unintended room domains",
+      "status": "REJECTED BEFORE AUTHORITATIVE SOURCE ADOPTION",
+      "affected": "WLD-08 L15; WLD-15 route-03; WLD-16 route-03",
+      "symptom": "Three full-width proposals leave the union of their intended endpoint-room bounds.",
+      "cause": "Physics and sealed-context checks alone do not enforce authored room relationships.",
+      "action": "Preserve proposals as unadopted evidence; exclude them from access-route-pass. Redesign actual intended circulation/room arrangement instead of accepting a convenient physical shortcut.",
+      "evidence": "development/levels/rebuild/access-route-pass/verification/authoring.json rejected records; <=0.1m path-domain sampling with0.3m wall/door tolerance.51other proposals remain pending independent route/source review.",
+      "older_maps": "Apply physical and intended-domain review to each older authored path. Ground support alone does not establish a coherent door/room connection."
+    },
+    {
+      "id": "DEV-462",
+      "title": "Headless route review assumes an imported GLB supplies a Blender world",
+      "status": "FIXED;104REAL FINAL FRAMES AND26SHEETS HASH-VERIFIED",
+      "affected": "New tools/review_access_routes.py initial attempt; zero captures produced",
+      "symptom": "Blender exits0 but logs AttributeError on scene.world.color after factory reset and GLB import.",
+      "cause": "Factory empty scenes have no world and GLB need not supply one; process exit alone is not a valid render acceptance check.",
+      "action": "Create an explicit neutral review world; rerun in a fresh unique capture directory, inspect logs and require actual image hashes/counts.",
+      "evidence": "build/access-route-render.log initial terminal error; tools/review_access_routes.py corrected world creation; final captures.json will bind all actual PNGs and checker.",
+      "older_maps": "Check actual render reports and PNGs; never infer render success from Blender exit0 alone."
+    },
+    {
+      "id": "DEV-463",
+      "title": "Generic route-change metadata confuses current and inherited map stages",
+      "status": "FIXED; EXPLICIT14SITE SCOPE AND EXACT MODEL/ALL-FLOOR CAPTURE IDENTITY VERIFIED",
+      "affected": "New access route review selector at unchanged WLD-05 source; initial partial32frame render study",
+      "symptom": "Initial review followed an inherited route_changes field and then correctly failed its byte-identical GLB assertion on a map outside the new14site batch.",
+      "cause": "Several authoring stages use route_changes; its presence does not identify the newest source revision.",
+      "action": "Use an explicit access_route_changes field, preserve older metadata, scope review/audit to that new field, rerun movement/source bindings and keep partial captures under rejected-metadata-selector. Review all affected floors, not only the most common floor.",
+      "evidence": "development/levels/rebuild/access-route-pass/verification/rejected-capture-study.json; exact failed log retained; primary-floor-captures.json and supplemental captures retain separate exact checker hashes.",
+      "older_maps": "Select stages from exact manifest and explicit revision fields; inherited construction metadata cannot prove that a map was revised by a later pass."
     }
   ],
   "audit_categories": [
