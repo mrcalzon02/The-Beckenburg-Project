@@ -1,0 +1,10 @@
+{
+  "status": "PASS_LOCAL_GAME_PACKAGE_AND_ATMOSPHERE_PAYLOAD",
+  "jar_sha256": "dc56c27b538140a07fc6a34ba9e7765d73b4c5e0affe4f3467a3782691c1ef8f",
+  "exact_tested_production_classes": {
+    "org/beckenburg/LevelAtmosphere.class": "688bcf60cb22f60625d49670679f83720006b37938b3ebac575b82828f087571",
+    "org/beckenburg/SceneRenderer.class": "46c297a640e78e07303f9e5c49895d5eb6ded4c0d7465f09b5a2b2523b9d67bf"
+  },
+  "packaged_test_output": "PASS heavy baseline fog, radial depth, near preservation, sky/depth isolation; synthetic GPU composite control\n",
+  "scope": "Local root game JAR rebuilt through build.cmd package; exact tested production renderer/fog class bytes. Isolated synthetic GPU composite control against packaged production code. Not installed release, full multiplayer or sustained FPS acceptance."
+}

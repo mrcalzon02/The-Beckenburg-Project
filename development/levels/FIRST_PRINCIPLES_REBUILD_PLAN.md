@@ -18,6 +18,8 @@ The owner directs completing Castle's full revision as the central hub and prima
 
 ## 1. Outcome and governing decisions
 
+Owner urgent atmosphere amendment, 7 November2026: every level must use heavy distance fog and a skybox beyond visible geometry. Implement this through the shared Castle/investigation renderer across software and OpenGL, preserving close detail and depth/collision authority. Source-only packets inherit the same runtime policy on integration; fog does not replace terrain shaping, real physical edges or their acceptance gates. Actual implementation/evidence: `rebuild/verification/atmosphere-all-levels/`.
+
 Owner terrain-priority amendment, 7 November 2026: settle each remaining site's
 overall terrain layers, landform and elevations before further isolated path or
 orange connector repairs. Review the whole site: slopes, terraces, drainage,

@@ -161,7 +161,7 @@ if defined BECKENBURG_RELEASE_VERSION (
 rem Ship the independently compiled WATER module as well as the weather/game classes.
 rem Without this directory, building an authored House from the packaged JAR
 rem fails with NoClassDefFoundError: dev/mrcalzon/water/WaterDocument.
-jar --create --file build\beckenburg-game.jar --main-class org.beckenburg.InvestigationGame -C build\classes hbnet -C build\classes org\beckenburg -C build\classes dev\mrcalzon\weather -C build\classes dev\mrcalzon\water -C build\classes dev\mrcalzon\lighting || exit /b 1
+jar "-J-Djava.io.tmpdir=%CD%\build" --create --file "%CD%\build\beckenburg-game.jar" --main-class org.beckenburg.InvestigationGame -C build\classes hbnet -C build\classes org\beckenburg -C build\classes dev\mrcalzon\weather -C build\classes dev\mrcalzon\water -C build\classes dev\mrcalzon\lighting || exit /b 1
 rem Fail before any packaged game smoke if runtime module classes are missing.
 jar --list --file build\beckenburg-game.jar | findstr /C:"dev/mrcalzon/lighting/LightingModule.class" >nul || (echo ERROR: lighting module missing from game JAR & exit /b 1)
 jar --list --file build\beckenburg-game.jar | findstr /C:"dev/mrcalzon/water/WaterDocument.class" >nul || (echo ERROR: packaged water document missing from game JAR & exit /b 1)

@@ -5484,6 +5484,48 @@ Evidence and verification: terrain-fit-pass/existing-terrain-review.json; */cons
 
 Older-map obligation: Four mature maps retain individual audit obligations. No source master, saved terrain punch or reusable model was overwritten. Passing contact/native regression checks do not establish complete terrain, structures, visual, runtime/network or hardware acceptance.
 
+### DEV-399 — Distance fog bypassed by OpenGL and native-only far-haze selection
+
+**Status:** SHARED COMPOSITOR FIX VERIFIED LOCALLY; exact-source CI/release acceptance separate · **Affected:** Shared Castle/investigation rendering, including custom levels and future integrated native packets
+
+Software triangles fade independently while OpenGL geometry bypasses the fog; only native-site render calls apply additional far haze.
+
+Cause / uncertainty: Atmosphere was embedded in one raster path and one map classification instead of the completed world-depth composition shared by Castle and investigation levels.
+
+Fix / next action: Use one post-composition radial depth fog for both paths, including character/water world composition. Heavy baseline clear6m/fullyopaque24m, weather/mission fog can thicken it. Preserve depth and near colours; no per-map opt-in. Remove duplicate software triangle fog and native-only haze allocation.9focused checks, synthetic composite control and52actual runtime frames pass across12sources including supported exterior Castle courtyard.
+
+Evidence and verification: src/main/java/org/beckenburg/LevelAtmosphere.java; SceneRenderer.java; development/levels/rebuild/verification/atmosphere-all-levels/; captures/atmosphere-all-levels/
+
+Older-map obligation: All12currently loadable runtime sources captured in software and real OpenGL. Remaining17rebuild packets inherit the common rendering path when integrated; this does not unlock them or establish complete terrain, physical boundary, gameplay/network or performance acceptance.
+
+### DEV-400 — Hard-painted lower horizon differs from distant world fog colour
+
+**Status:** SHARED SKY HORIZON FIX VERIFIED LOCALLY; physical edge work remains OPEN · **Affected:** Shared Castle/investigation rendering, including custom levels and future integrated native packets
+
+Visible empty space beyond map geometry exposes artificial dark hill bands and a different colour from the fogged far surfaces.
+
+Cause / uncertainty: The lower sky painted independent opaque sinusoidal hills, while software geometry blended toward another fixed colour.
+
+Fix / next action: Keep the existing world-anchored weather skybox/clouds and smoothly blend its horizon/lower hemisphere to the same weather-aware fog colour. Actual geometry occludes the background; sky/fog never write depth. Viewed all52software/OpenGLframes and5comparison sheets; weather sky anchoring and all tested sky/water/depth controls pass.
+
+Evidence and verification: LevelAtmosphere.skyboxHaze; SceneRenderer.paintSky; verification/atmosphere-all-levels/capture-manifest.json
+
+Older-map obligation: All12currently loadable runtime sources captured in software and real OpenGL. Remaining17rebuild packets inherit the common rendering path when integrated; this does not unlock them or establish complete terrain, physical boundary, gameplay/network or performance acceptance.
+
+### DEV-401 — Relative JAR packaging target can fail final move from restricted system temp
+
+**Status:** WORKSPACE-LOCAL PACKAGE TARGET FIX; final package check recorded separately · **Affected:** Shared Castle/investigation rendering, including custom levels and future integrated native packets
+
+build.cmd package compiles/resources successfully but jartool final rename from sandbox system Temp to relative build/beckenburg-game.jar is denied, removing the previous output.
+
+Cause / uncertainty: Relative JAR target and default temporary directory select a protected/cross-sandbox temp location during replacement.
+
+Fix / next action: Preserve the previous terrain-authoring dependency JAR under ignored build, use an absolute workspace JAR target and explicit workspace-local JVM temp in the packaging command. Recover completed package with those arguments and verify packaged audio/classes. This is a local packaging reliability fix, not installer acceptance.
+
+Evidence and verification: build.cmd package_jar_only; verification/atmosphere-all-levels/packaging logs/receipt
+
+Older-map obligation: All12currently loadable runtime sources captured in software and real OpenGL. Remaining17rebuild packets inherit the common rendering path when integrated; this does not unlock them or establish complete terrain, physical boundary, gameplay/network or performance acceptance.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

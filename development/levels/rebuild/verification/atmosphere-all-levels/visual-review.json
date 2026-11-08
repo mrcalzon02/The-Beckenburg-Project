@@ -1,0 +1,39 @@
+{
+  "status": "SCOPED_ATMOSPHERE_REVIEW_PASS_NOT_FULL_MAP_ACCEPTANCE",
+  "sheets": [
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/atmosphere-courtyard-sheet.png",
+      "sha256": "6257c8c2e40942bdadc0934b73af4692572a6c8b29c3fe3590333fddf010aab2",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/atmosphere-sheet-01.png",
+      "sha256": "161da06faecbeb774c8a860bb1d4ea4f2f54501bba4c614a09e797c644dfa1eb",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/atmosphere-sheet-02.png",
+      "sha256": "76ee2c3106833efba42ad204352dc3deaab27ee5dcad50a63b3ef0cb170a80a6",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/atmosphere-sheet-03.png",
+      "sha256": "cc4d8d5c3150f0fc7e30a556276596c72e023aa2ed84e8a4d59367e17dbb87ff",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/atmosphere-all-levels/atmosphere-sheet-04.png",
+      "sha256": "4ae603f1f112189062a2c9fdf4261f3d9fb003ab0ec236ce2d03de729865aa2b",
+      "observed": true
+    }
+  ],
+  "frames": 52,
+  "scope": "Night atmosphere in software and actual RTX5070 OpenGL, identical authored capture views; supported courtyard supplement; no editor UI.",
+  "findings": [
+    "Near van/masonry/room surfaces remain readable; far world converges toward the sky horizon.",
+    "Upper world-anchored weather sky remains visible beyond physical level geometry; lower empty space receives horizon haze.",
+    "Software/OpenGL atmosphere agrees visually across the captured current runtime sources.",
+    "Existing van views, crude terrain boundaries, source building/art issues and complete map acceptance remain separate.",
+    "No steady-state FPS, installed multiplayer, new map unlock or full roster gameplay claim."
+  ]
+}

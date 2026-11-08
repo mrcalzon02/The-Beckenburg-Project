@@ -1,0 +1,38 @@
+ACTUAL_OPENGL OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64
+2026-11-08T06:13:35.833398600Z [main] RENDER SLOW stage=idle faces=135145 visible_faces=120024 culled_faces=15121 target=640x400 build_ms=1371 lighting_raster_ms=7074
+2026-11-08T06:13:36.651254300Z [atmosphere-review-opengl] GPU SCENE FIRST FRAME scene=2 frame=723 surface_batches=749 vbo_uploaded_batches=749 vbo_uploaded_bytes=13961664 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=166 texture_uploaded_bytes=45872460 gl_worker_ms=820.8432 readback_ms=10.4058 measurement=gl_worker_not_gpu_timestamp
+2026-11-08T06:13:36.654274700Z [atmosphere-review-opengl] GPU FRAME SLOW id=723 surfaces=749 target=640x400 raster_ms=810 readback_ms=10 uploaded_batches=749 reused_batches=0 uploaded_bytes=13961664 reuse_saved_bytes=0 superseded=0
+ATMOSPHERE_RUNTIME HOUSE / actual OpenGL
+2026-11-08T06:13:39.536950700Z [main] RENDER SLOW stage=idle faces=217948 visible_faces=206052 culled_faces=11896 target=640x400 build_ms=825 lighting_raster_ms=1787
+2026-11-08T06:13:39.729493400Z [atmosphere-review-opengl] GPU SCENE FIRST FRAME scene=863 frame=1659 surface_batches=845 vbo_uploaded_batches=845 vbo_uploaded_bytes=24610752 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=220 texture_uploaded_bytes=10776680 gl_worker_ms=190.9124 readback_ms=1.2222 measurement=gl_worker_not_gpu_timestamp
+ATMOSPHERE_RUNTIME FARMHOUSE / actual OpenGL
+2026-11-08T06:13:42.632603700Z [main] RENDER SLOW stage=idle faces=369576 visible_faces=325376 culled_faces=44200 target=640x400 build_ms=352 lighting_raster_ms=2342
+2026-11-08T06:13:42.752166700Z [atmosphere-review-opengl] GPU SCENE FIRST FRAME scene=1682 frame=2761 surface_batches=1126 vbo_uploaded_batches=1126 vbo_uploaded_bytes=39312480 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=66 texture_uploaded_bytes=4947968 gl_worker_ms=118.7605 readback_ms=1.2713 measurement=gl_worker_not_gpu_timestamp
+ATMOSPHERE_RUNTIME SCHOOL / actual OpenGL
+2026-11-08T06:13:44.622974200Z [atmosphere-review-opengl] GPU SCENE FIRST FRAME scene=2784 frame=3241 surface_batches=458 vbo_uploaded_batches=458 vbo_uploaded_bytes=15970656 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=10 texture_uploaded_bytes=1736704 gl_worker_ms=41.9101 readback_ms=1.2116 measurement=gl_worker_not_gpu_timestamp
+ATMOSPHERE_RUNTIME MANSION / actual OpenGL
+2026-11-08T06:13:45.992930600Z [main] RENDER SLOW stage=idle faces=173461 visible_faces=133751 culled_faces=39710 target=640x400 build_ms=35 lighting_raster_ms=1226
+2026-11-08T06:13:46.040728300Z [atmosphere-review-opengl] GPU SCENE FIRST FRAME scene=3273 frame=3843 surface_batches=569 vbo_uploaded_batches=569 vbo_uploaded_bytes=18677280 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=1 texture_uploaded_bytes=1572864 gl_worker_ms=44.7617 readback_ms=1.4188 measurement=gl_worker_not_gpu_timestamp
+ATMOSPHERE_RUNTIME PRISON / actual OpenGL
+2026-11-08T06:13:48.324006600Z [main] RENDER SLOW stage=idle faces=192685 visible_faces=153337 culled_faces=39348 target=640x400 build_ms=43 lighting_raster_ms=2123
+2026-11-08T06:13:48.386050Z [atmosphere-review-opengl] GPU SCENE FIRST FRAME scene=3865 frame=4471 surface_batches=607 vbo_uploaded_batches=607 vbo_uploaded_bytes=20559264 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=2 texture_uploaded_bytes=1605632 gl_worker_ms=60.4853 readback_ms=1.3693 measurement=gl_worker_not_gpu_timestamp
+ATMOSPHERE_RUNTIME ASYLUM / actual OpenGL
+2026-11-08T06:13:50.095664600Z [atmosphere-review-opengl] GPU SCENE FIRST FRAME scene=4492 frame=5000 surface_batches=507 vbo_uploaded_batches=507 vbo_uploaded_bytes=19381152 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=1 texture_uploaded_bytes=1572864 gl_worker_ms=41.396 readback_ms=1.29 measurement=gl_worker_not_gpu_timestamp
+ATMOSPHERE_RUNTIME ACADEMY / actual OpenGL
+2026-11-08T06:13:51.813631900Z [main] RENDER SLOW stage=idle faces=180435 visible_faces=140100 culled_faces=40335 target=640x400 build_ms=26 lighting_raster_ms=1586
+2026-11-08T06:13:51.855994100Z [atmosphere-review-opengl] GPU SCENE FIRST FRAME scene=5021 frame=5592 surface_batches=570 vbo_uploaded_batches=570 vbo_uploaded_bytes=21307392 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=1 texture_uploaded_bytes=1572864 gl_worker_ms=39.4107 readback_ms=1.3745 measurement=gl_worker_not_gpu_timestamp
+ATMOSPHERE_RUNTIME COLLEGE / actual OpenGL
+2026-11-08T06:13:53.680458500Z [atmosphere-review-opengl] GPU SCENE FIRST FRAME scene=5615 frame=6144 surface_batches=528 vbo_uploaded_batches=528 vbo_uploaded_bytes=18255264 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=1 texture_uploaded_bytes=1572864 gl_worker_ms=44.3978 readback_ms=1.2762 measurement=gl_worker_not_gpu_timestamp
+ATMOSPHERE_RUNTIME CHURCH / actual OpenGL
+2026-11-08T06:14:01.115438300Z [main] RENDER SLOW stage=idle faces=864960 visible_faces=820171 culled_faces=44789 target=640x400 build_ms=6106 lighting_raster_ms=829
+2026-11-08T06:14:05.018220900Z [atmosphere-review-opengl] GPU SCENE FIRST FRAME scene=6177 frame=8616 surface_batches=2457 vbo_uploaded_batches=2457 vbo_uploaded_bytes=78736416 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=386 texture_uploaded_bytes=267500176 gl_worker_ms=3901.7522 readback_ms=1.0433 measurement=gl_worker_not_gpu_timestamp
+2026-11-08T06:14:05.018902200Z [atmosphere-review-opengl] GPU FRAME SLOW id=8616 surfaces=2457 target=640x400 raster_ms=3900 readback_ms=1 uploaded_batches=2457 reused_batches=0 uploaded_bytes=78736416 reuse_saved_bytes=0 superseded=0
+2026-11-08T06:14:05.502699100Z [main] RENDER SLOW stage=idle faces=114989 visible_faces=33188 culled_faces=81801 target=640x400 build_ms=262 lighting_raster_ms=28
+ATMOSPHERE_RUNTIME HOLLOW_CREEK / actual OpenGL
+2026-11-08T06:14:10.031053400Z [main] RENDER SLOW stage=idle faces=216939 visible_faces=197460 culled_faces=19479 target=640x400 build_ms=1300 lighting_raster_ms=2761
+2026-11-08T06:14:10.215490100Z [atmosphere-review-opengl] GPU SCENE FIRST FRAME scene=8845 frame=10772 surface_batches=1950 vbo_uploaded_batches=1950 vbo_uploaded_bytes=22396608 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=264 texture_uploaded_bytes=10059776 gl_worker_ms=184.2331 readback_ms=1.609 measurement=gl_worker_not_gpu_timestamp
+ATMOSPHERE_RUNTIME WLD-01 / actual OpenGL
+2026-11-08T06:14:19.928254Z [atmosphere-review-opengl] GPU SCENE FIRST FRAME scene=10940 frame=12423 surface_batches=1486 vbo_uploaded_batches=1486 vbo_uploaded_bytes=24661344 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=242 texture_uploaded_bytes=37340108 gl_worker_ms=542.1712 readback_ms=0.9462 measurement=gl_worker_not_gpu_timestamp
+2026-11-08T06:14:19.928254Z [atmosphere-review-opengl] GPU FRAME SLOW id=12423 surfaces=1486 target=640x400 raster_ms=541 readback_ms=0 uploaded_batches=1486 reused_batches=0 uploaded_bytes=24661344 reuse_saved_bytes=0 superseded=0
+ATMOSPHERE_RUNTIME CASTLE / actual OpenGL
+PASS12runtime sources /24actual frames; unintegrated packets inherit shared policy, not claimed as runtime maps

@@ -154,6 +154,14 @@ public final class SceneRenderer {
     public double lampBeam(double depth,double aim){return lamp&&depth>0?lampIntensity*Math.max(0,1-depth/lampReach)*(flameLamp?1:Math.max(0,1-aim/lampWidth)):0;}
     /** Solo environment presets; default multipliers retain legacy LAN lighting. */
     public double environmentLight=1.0,fogDensity=1.0;
+    private final LevelAtmosphere levelAtmosphere=new LevelAtmosphere();
+    private LevelAtmosphere.Frame atmosphereFrame=new LevelAtmosphere.Frame(0,0,0,6,24);
+    public LevelAtmosphere.Frame atmosphereFrame(){return atmosphereFrame;}
+    private void finishWorldAtmosphere(){
+        atmosphereFrame=levelAtmosphere.apply(pixels,depths,renderWidth,renderHeight,
+            focal,Math.max(1,fogDensity)*weatherFogScale,
+            LevelAtmosphere.fogColour(weatherFx.sky()));
+    }
     private EvidenceSignals.Weather weatherKind=EvidenceSignals.Weather.CLEAR;
     private int weatherIntensity=1;
     private final dev.mrcalzon.weather.WeatherModule weatherFx=
@@ -3462,6 +3470,7 @@ public final class SceneRenderer {
         renderWeatherMeshes();
         safeAreaPixels=SafeAreaHaze.draw(pixels,depths,renderWidth,renderHeight,focal,x,eyeHeight,z,yaw,pitch,clock,
             List.of(SafeAreaBarrier.castle()));
+        finishWorldAtmosphere();
         long psxStart=System.nanoTime();
         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
         long psxDone=System.nanoTime();
@@ -3605,7 +3614,6 @@ public final class SceneRenderer {
         activateResidentScene(map);
         waterCastle=null;activeWater=waterOverride==null?WorldWater.module(map.level().water()):waterOverride;
         paintSky(map,clock);
-        int[] hazeBackground=map.nativeSite()?pixels.clone():null;
         Arrays.fill(depths,Double.POSITIVE_INFINITY);
         if(houseLightingMap!=map){houseLightingMap=map;houseLighting=new FixtureLighting(map);}
         lightingMap=map;fixtureLighting=houseLighting;fixtureLighting.frame(roomLights,roomLightTick);
@@ -3635,9 +3643,9 @@ public final class SceneRenderer {
                 geometry.size()+residentOmittedFaces,visibleFaces,renderWidth,renderHeight,
                 geometryReady-geometryStart,geometryRendered-geometryReady);
         renderCharacterSprites(map,ghostRoom,visibleGhost,hunterRoom,clock,others,apparition);
-        if(map.nativeSite())DistanceDetail.apply(pixels,depths,renderWidth,renderHeight,hazeBackground);
         renderWeatherMeshes();
         renderSafeAreas(map,markers,clock);
+        finishWorldAtmosphere();
         long psxStart=System.nanoTime();
         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
         long psxDone=System.nanoTime();
@@ -3902,13 +3910,8 @@ public final class SceneRenderer {
             weatherFx.renderSky(g,renderWidth,renderHeight,pitch,focal);
         }finally{g.dispose();}
 
-        final int horizon=(int)Math.round(renderHeight*.56+Math.tan(pitch)*focal);
-        for(int sx=0;sx<renderWidth;sx++){
-            double bearing=yaw-Math.atan2(sx-renderWidth*.5,focal);
-            int hills=horizon+(int)(13*Math.sin(bearing*2.1)+8*Math.sin(bearing*5.7)
-                    +5*Math.sin(bearing*13.2));
-            for(int sy=Math.max(0,hills);sy<renderHeight;sy++)pixels[sy*renderWidth+sx]=0x18202a;
-        }
+        LevelAtmosphere.skyboxHaze(pixels,renderWidth,renderHeight,focal,pitch,
+            LevelAtmosphere.fogColour(weatherFx.sky()));
         // Weather particles must be in front of hills but behind opaque walls.
         java.awt.Graphics2D precipitation=frame.createGraphics();
         try{precipitation.setComposite(java.awt.AlphaComposite.SrcOver);
@@ -4175,8 +4178,6 @@ public final class SceneRenderer {
                 (BAYER[(px&3)+((py&3)<<2)]-7.5)/140.0;
             light=Math.max(.1,Math.min(1.45,light+lightingDither));
             int red=(int)(((color>>16)&255)*Math.max(.025,Math.min(1.6,lr+lightingDither))),green=(int)(((color>>8)&255)*Math.max(.025,Math.min(1.6,lg+lightingDither))),blue=(int)((color&255)*Math.max(.025,Math.min(1.6,lb+lightingDither)));
-            double fog=Math.min(.96,Math.max(0,(d-5)/15)*fogDensity*weatherFogScale);
-            red=(int)(red*(1-fog)+18*fog);green=(int)(green*(1-fog)+21*fog);blue=(int)(blue*(1-fog)+30*fog);
             red=Math.min(255,red);green=Math.min(255,green);blue=Math.min(255,blue);
             if(gltfBlend&&sampledAlpha<255){
                 int background=pixels[k],ia=255-sampledAlpha;

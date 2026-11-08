@@ -17,7 +17,8 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/terrain-fit-batch/' in path:kind='Rejected native support placement study' if p.name.startswith('rejected-') else 'Native terrain and bearing construction review; runtime acceptance pending'
+    if '/atmosphere-all-levels/' in path:kind='Runtime shared fog and skybox comparison' if 'sheet' in p.name else 'Runtime OpenGL atmosphere capture' if '/opengl/' in path else 'Runtime software atmosphere capture'
+    elif '/terrain-fit-batch/' in path:kind='Rejected native support placement study' if p.name.startswith('rejected-') else 'Native terrain and bearing construction review; runtime acceptance pending'
     elif '/macroterrain-batch/' in path:kind='Native saved editor terrain topology; candidate, not runtime' if p.name.endswith('-saved-terrain.png') else 'Native macroterrain-only inspection; candidate, not runtime' if '-terrain-plan' in p.name else 'Native macroterrain and preserved structure composite; fit review open'
     elif p.name.endswith('-saved-terrain.png'):kind='Native saved editor terrain inspection; punched physical geometry'
     elif '/basement-batch/' in path:kind='Native first-person export inspection; neutral review illumination, not runtime'

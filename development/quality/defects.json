@@ -4302,6 +4302,39 @@
       "action": "Author actual measured constructed decks and their load-bearing connections with continuous clearances/openings. Use rectangles only for real deck objects; do not stamp a whole outdoor reservation into terrain. Revalidate all footprints, floor/underface depths, piles, actual native movement and canonical arrival.989withheld source contacts remain explicit in this pass, including missing ground and terrain-overfloor cases.",
       "evidence": "terrain-fit-pass/existing-terrain-review.json; */construction.json; captures/terrain-fit-batch/; README.md",
       "older_maps": "Four mature maps retain individual audit obligations. No source master, saved terrain punch or reusable model was overwritten. Passing contact/native regression checks do not establish complete terrain, structures, visual, runtime/network or hardware acceptance."
+    },
+    {
+      "id": "DEV-399",
+      "title": "Distance fog bypassed by OpenGL and native-only far-haze selection",
+      "status": "SHARED COMPOSITOR FIX VERIFIED LOCALLY; exact-source CI/release acceptance separate",
+      "affected": "Shared Castle/investigation rendering, including custom levels and future integrated native packets",
+      "symptom": "Software triangles fade independently while OpenGL geometry bypasses the fog; only native-site render calls apply additional far haze.",
+      "cause": "Atmosphere was embedded in one raster path and one map classification instead of the completed world-depth composition shared by Castle and investigation levels.",
+      "action": "Use one post-composition radial depth fog for both paths, including character/water world composition. Heavy baseline clear6m/fullyopaque24m, weather/mission fog can thicken it. Preserve depth and near colours; no per-map opt-in. Remove duplicate software triangle fog and native-only haze allocation.9focused checks, synthetic composite control and52actual runtime frames pass across12sources including supported exterior Castle courtyard.",
+      "evidence": "src/main/java/org/beckenburg/LevelAtmosphere.java; SceneRenderer.java; development/levels/rebuild/verification/atmosphere-all-levels/; captures/atmosphere-all-levels/",
+      "older_maps": "All12currently loadable runtime sources captured in software and real OpenGL. Remaining17rebuild packets inherit the common rendering path when integrated; this does not unlock them or establish complete terrain, physical boundary, gameplay/network or performance acceptance."
+    },
+    {
+      "id": "DEV-400",
+      "title": "Hard-painted lower horizon differs from distant world fog colour",
+      "status": "SHARED SKY HORIZON FIX VERIFIED LOCALLY; physical edge work remains OPEN",
+      "affected": "Shared Castle/investigation rendering, including custom levels and future integrated native packets",
+      "symptom": "Visible empty space beyond map geometry exposes artificial dark hill bands and a different colour from the fogged far surfaces.",
+      "cause": "The lower sky painted independent opaque sinusoidal hills, while software geometry blended toward another fixed colour.",
+      "action": "Keep the existing world-anchored weather skybox/clouds and smoothly blend its horizon/lower hemisphere to the same weather-aware fog colour. Actual geometry occludes the background; sky/fog never write depth. Viewed all52software/OpenGLframes and5comparison sheets; weather sky anchoring and all tested sky/water/depth controls pass.",
+      "evidence": "LevelAtmosphere.skyboxHaze; SceneRenderer.paintSky; verification/atmosphere-all-levels/capture-manifest.json",
+      "older_maps": "All12currently loadable runtime sources captured in software and real OpenGL. Remaining17rebuild packets inherit the common rendering path when integrated; this does not unlock them or establish complete terrain, physical boundary, gameplay/network or performance acceptance."
+    },
+    {
+      "id": "DEV-401",
+      "title": "Relative JAR packaging target can fail final move from restricted system temp",
+      "status": "WORKSPACE-LOCAL PACKAGE TARGET FIX; final package check recorded separately",
+      "affected": "Shared Castle/investigation rendering, including custom levels and future integrated native packets",
+      "symptom": "build.cmd package compiles/resources successfully but jartool final rename from sandbox system Temp to relative build/beckenburg-game.jar is denied, removing the previous output.",
+      "cause": "Relative JAR target and default temporary directory select a protected/cross-sandbox temp location during replacement.",
+      "action": "Preserve the previous terrain-authoring dependency JAR under ignored build, use an absolute workspace JAR target and explicit workspace-local JVM temp in the packaging command. Recover completed package with those arguments and verify packaged audio/classes. This is a local packaging reliability fix, not installer acceptance.",
+      "evidence": "build.cmd package_jar_only; verification/atmosphere-all-levels/packaging logs/receipt",
+      "older_maps": "All12currently loadable runtime sources captured in software and real OpenGL. Remaining17rebuild packets inherit the common rendering path when integrated; this does not unlock them or establish complete terrain, physical boundary, gameplay/network or performance acceptance."
     }
   ],
   "audit_categories": [

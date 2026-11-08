@@ -26,3 +26,5 @@ development/levels/rebuild/**/terrain-world/**/*.editor.lock
 # Blender's automatic backups are not new candidate deliverables. Rejected
 # studies are retained explicitly with their manifests and inspection captures.
 development/levels/rebuild/terrain-fit-pass/**/*.blend[0-9]
+# Recreated native-loader cache from hidden OpenGL verification.
+/.lwjgl/
