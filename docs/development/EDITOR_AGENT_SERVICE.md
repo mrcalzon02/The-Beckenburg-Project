@@ -10,10 +10,11 @@ The reusable service exposes proven human editor operations over the trusted hea
 
 Open **Verify Scene → Start Local Observation** in the level editor. The dialog displays a loopback address and the session's Authorization header. Use that header on each GET request. The listener starts only when selected. Stop it from Verify Scene. Switching levels or closing the window also stops the listener. Starting another session issues a fresh token.
 
-Read `/summary` for the active scene ID, revision, supported observation routes and targeted tests. Every other route requires the revision from that summary. A human edit invalidates the previous revision and returns HTTP 409.
+Read `/summary` for the active scene ID, revision, supported observation routes and targeted tests. Use `/revision` for just the current scene ID and revision. Other observation routes require a revision. A request carrying a revision superseded by a human edit returns HTTP 409.
 
 | GET path | Query parameters | Response |
 |---|---|---|
+| `/revision` | none | Active scene ID and revision |
 | `/hierarchy` | revision, offset, limit | Up to 64 human hierarchy rows |
 | `/node` | revision, id | One native row |
 | `/nodes` | revision, repeated id | Up to 64 native rows in request order |
@@ -33,6 +34,8 @@ The response carries `X-Editor-Revision`. URL-encode parameter values. The bridg
 4. Call `inspect_scene` for the scene ID and revision, or read `editor://active/summary`. Use `inspect_nodes` to read selected objects, `run_test` for the named native checks, and `capture_viewport` for an actual PNG. Tool discovery reflects the selected access scope. The edit tool's batch schema lists the active host's operations and their required fields.
 
 For example, Castle's `set-spawn` operation takes numeric x, z and yaw fields. Use the revision returned from a successful edit for `verify_position`, undo or save. If the revision is stale, inspect the scene again before retrying. After stopping access, switching scenes or closing the editor, start a fresh session and reconnect with its new address and token.
+
+When the scene's capabilities are already known, call `inspect_scene(revision_only=True)` over MCP or send `revision` over the headless protocol. Both read the live owner thread. The House fixture returned a 64-byte headless response, including the protocol envelope. After a stale edit, read the affected nodes at the new revision before deciding whether to retry.
 
 ### Embed the same transports in another editor
 

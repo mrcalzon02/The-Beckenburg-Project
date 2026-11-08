@@ -81,6 +81,11 @@ public final class EditorAgentService<S> {
     }
     public record Summary(String sceneId, long revision, Set<Capability> capabilities,
                           List<String> operations, List<String> tests) {}
+    public record SceneRevision(String sceneId,long revision){}
+    public SceneRevision sceneRevision(){
+        capable(Capability.INSPECT);
+        return new SceneRevision(host.project().id(),host.revision());
+    }
     public record NodePage(int total, int offset, List<EditorProject.Node> nodes) {}
     public record AssetPage(int total,int offset,String catalogFingerprint,List<EditorProject.Asset> assets){}
     public record ChangePage(long beforeRevision, boolean fullScene, int total, int offset,

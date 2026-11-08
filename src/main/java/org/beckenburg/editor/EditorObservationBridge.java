@@ -115,7 +115,7 @@ public final class EditorObservationBridge implements AutoCloseable {
         return routes;
     }
     private List<String> readRoutes(){
-        var routes=new ArrayList<>(List.of("/summary","/hierarchy","/node","/nodes","/changes","/assets","/verify-position"));
+        var routes=new ArrayList<>(List.of("/summary","/revision","/hierarchy","/node","/nodes","/changes","/assets","/verify-position"));
         if(capabilities.contains(EditorAgentService.Capability.TEST))routes.add("/test");
         if(capabilities.contains(EditorAgentService.Capability.CAPTURE))routes.add("/capture");
         return routes;
@@ -139,15 +139,21 @@ public final class EditorObservationBridge implements AutoCloseable {
         return json(result,result.revision());
     }
     private Reply observe(String path,Query query)throws Exception{
-        var summary=service.summary();
         var args=query.fields;
-        if(path.equals("/summary") && args.isEmpty())
+        if(path.equals("/summary") && args.isEmpty()){
+            var summary=service.summary();
             return json(Map.of("sceneId",summary.sceneId(),"revision",summary.revision(),
                 "tests",capabilities.contains(EditorAgentService.Capability.TEST)?summary.tests():List.of(),
                 "routes",readRoutes(),
                 "writeRoutes",writeRoutes(),"operations",writeRoutes().contains("/edit")?service.operationParameters():Map.of()),summary.revision());
+        }
+        var current=service.sceneRevision();
+        if(path.equals("/revision")){
+            requireKeys(args);
+            return json(current,current.revision());
+        }
         long revision=Long.parseLong(args.remove("revision"));
-        if(revision!=summary.revision())throw new IllegalStateException("Stale revision");
+        if(revision!=current.revision())throw new IllegalStateException("Stale revision");
         Object value;
         switch(path){
             case "/node" -> {requireKeys(args,"id");value=service.node(revision,args.get("id"));}

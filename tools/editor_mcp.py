@@ -83,7 +83,15 @@ def server(editor: LiveEditor):
         """Current scene, revision, tests, edit operations and authorized routes."""
         return editor.call("/summary")
 
-    mcp.tool(name="inspect_scene", structured_output=False)(active_scene)
+    @native_tool
+    def inspect_scene(revision_only: bool = False) -> str:
+        """Inspect the active scene. Use revision_only for its current ID and revision."""
+        if not revision_only:
+            return active_scene()
+        if "/revision" in summary["routes"]:
+            return editor.call("/revision")
+        current = json.loads(active_scene())
+        return json.dumps({key: current[key] for key in ("sceneId", "revision")}, separators=(",", ":"))
 
     @native_tool
     def inspect_nodes(revision: int, ids: Annotated[list[str], Field(min_length=1, max_length=64)]) -> str:

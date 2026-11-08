@@ -55,7 +55,10 @@ public final class EditorAgentProtocol {
             if(line==null)break;
             try{
                 String[] parts=line.split("\t",-1);String command=parts[0];Object result;
-                if(command.equals("summary")){
+                if(command.equals("revision")){
+                    if(parts.length!=1)throw new IllegalArgumentException("revision takes no arguments");
+                    result=service.sceneRevision();
+                }else if(command.equals("summary")){
                     if(parts.length!=1)throw new IllegalArgumentException("summary takes no arguments");
                     result=service.summary();
                 }else if(command.equals("inspect")){

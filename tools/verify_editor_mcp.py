@@ -30,6 +30,7 @@ async def verify(scope):
 
         state = await call("inspect_scene")
         revision = state["revision"]
+        assert await call("inspect_scene", revision_only=True) == {"sceneId": state["sceneId"], "revision": revision}
         resource = await client.read_resource("editor://active/summary")
         assert json.loads(resource.contents[0].text) == state
         if scope == "portable":
@@ -70,12 +71,13 @@ async def verify(scope):
                        {"operation": "move-prop", "arguments": dict(arguments, id="absent-mcp-fixture")})
             rejected = await client.call_tool("edit", {"revision": revision, "commands": [*commands, invalid]})
             assert rejected.isError
-            revision = (await call("inspect_scene"))["revision"]
+            revision = (await call("inspect_scene", revision_only=True))["revision"]
             assert (await call("inspect_nodes", revision=revision, ids=[key]))["result"] == [node]
             edit = await call("edit", revision=revision, commands=commands)
             stale = await client.call_tool("edit", {"revision": revision, "commands": commands})
             assert stale.isError
             revision = edit["revision"]
+            assert await call("inspect_scene", revision_only=True) == {"sceneId": state["sceneId"], "revision": revision}
             matched = (await call("verify_position", revision=revision, id=key, **xyz))["result"]
             assert matched["verified"] and matched["committed"]
             undone = await call("undo", revision=revision)
