@@ -59,8 +59,9 @@ public final class RosterFailureContacts {
         var names=new HashMap<String,Set<String>>();
         for(String row:Files.readAllLines(Path.of(args[0]))){String[] p=row.split("\t");names.computeIfAbsent(p[0],k->new HashSet<>()).add(p[1]);}
         var out=new ArrayList<String>();out.add("site\tlink\tsegment\tdirection\tx\ty\tz\treason\tcomponent");String key="";Context ctx=null;
+        String selectedVariant=args.length>4?args[4]:"structure";int selectedRows=0;
         for(String row:Files.readAllLines(Path.of(args[1]))){
-            String[] p=row.split("\t");if(!p[1].equals("structure"))continue;String next=p[0]+":"+p[1];
+            String[] p=row.split("\t");if(!p[1].equals(selectedVariant))continue;selectedRows++;String next=p[0]+":"+p[1];
             if(!next.equals(key)){
                 key=next;Set<String> steps=names.getOrDefault(key,Set.of());AuthoredSitePhysics map;
                 try(var in=Files.newInputStream(Path.of(p[2]))){map=AuthoredSitePhysics.read(in,p[3],List.of(),steps);}
@@ -77,6 +78,7 @@ public final class RosterFailureContacts {
                 out.add(String.join("\t",p[0],p[4],p[5],direction,""+f.feet.x(),""+f.feet.y(),""+f.feet.z(),f.reason,f.component));
             }
         }
-        Files.write(Path.of(args[2]),out);System.out.println("Diagnosed "+(out.size()-1)+" failed directional flights without altering physics");
+        if(selectedRows==0)throw new IllegalArgumentException("No flight inputs for selected variant: "+selectedVariant);
+        Files.write(Path.of(args[2]),out);System.out.println("Diagnosed "+(out.size()-1)+" failed directional flights in "+selectedVariant+" without altering physics");
     }
 }

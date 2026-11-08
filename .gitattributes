@@ -9,6 +9,8 @@ docs/network/receipts/* -text -whitespace
 development/levels/rebuild/**/terrain-world/** -text
 # Authored sample programs are byte-compared to their persisted world receipts.
 development/levels/rebuild/terrain-overall-pass/samples/** -text
+# Bearing construction contracts and evidence bind exact source/scene hashes.
+development/levels/rebuild/terrain-fit-pass/** -text
 # Derived rough studies also carry exact source/render hashes and stale checks.
 development/levels/rebuild/**/rough-* -text
 

@@ -5394,7 +5394,7 @@ Older-map obligation: No previous map receives terrain acceptance. Audit each ex
 
 Cause / uncertainty: Historical routes and building groups were authored without coherent whole-site landform. Broad slopes/rock shoulders now physically meet or overtop those coordinates.
 
-Fix / next action: Revise terrain/blockout relationships in stage batches, moving structures/stair bays/links with shared coordinate bindings where needed. Do not force terrain around every orange pad or weaken physics. Newly authored composite candidates are not promoted to existing masters or unlocked.
+Fix / next action: Revise terrain/blockout relationships in stage batches, moving structures/stair bays/links with shared coordinate bindings where needed. Do not force terrain around every orange pad or weaken physics. Newly authored composite candidates are not promoted to existing masters or unlocked. Current independent vertical comparison also exposes WLD-03/L13/segment0: the older furnished source passed but both terrain-before-bearing and terrain-after-bearing fail, leaving185/221vertical segments and47/84complete links passing. No new bearing regression; exact72failed directional poses retained.
 
 Evidence and verification: terrain-overall-pass/verification/native-route-fit.json and native-route-probes.tsv; captures/macroterrain-batch/
 
@@ -5422,11 +5422,67 @@ Native full-site views show unsupported marsh/harbour decks, cave shelves and ca
 
 Cause / uncertainty: First broad ground surfaces have been composed with earlier rough structural exports; piles, foundations, cave mass, water/banks and location-specific enclosure were not yet built.
 
-Fix / next action: Build actual load-bearing/pile/retaining/cave volumes and supported van arrival. Revise broad landform silhouettes and contour cross-sections, not just edge colours. Current six sheets were viewed; construction2/5, landscape2/5, finish1/5, no visual acceptance.
+Fix / next action: Build actual load-bearing/pile/retaining/cave volumes and supported van arrival. Revise broad landform silhouettes and contour cross-sections, not just edge colours. Current six sheets were viewed; construction2/5, landscape2/5, finish1/5, no visual acceptance. Bearing batch now adds1811closed parts (1646masonry skirts,152piles,13connected beams) across25candidates; exact contact/export/native checks pass with zero new flat or vertical regressions. Seven pre-existing terrain candidates now individually reviewed and all remain REVISE; full landscape/construction acceptance remains open.
 
 Evidence and verification: captures/macroterrain-batch/macroterrain-sheet-01.png through06.png; terrain-overall-pass/verification/visual-review.json
 
 Older-map obligation: No previous map receives terrain acceptance. Audit each existing terrain and mature map individually. Preserve original source/model IDs, UVs and transforms; re-run actual native and visual checks after each terrain/blockout/foundation revision.
+
+### DEV-395 — Support placement under a deck reservation can leave detached posts without a real deck mesh
+
+**Status:** SOURCE RULE FIXED;17actual missing-receiver negatives reproduced · **Affected:** Remaining25native rebuild candidates; exact affected contacts in terrain-fit-pass/*/construction.json
+
+Initial marsh pilot puts posts at corners of reserved boardwalk rectangles where no constructed deck exists.
+
+Cause / uncertainty: Source zone footprint was treated as a receiving structure instead of tracing actual exported underside geometry.
+
+Fix / next action: Require an actual downward-facing source underside for every support. Use real route/deck positions for piles and explicit connected bearing beams for displaced piles; verify native terrain contact and closed outward geometry independently.25finalexports pass; unsupported reservations remain withheld, not accepted.
+
+Evidence and verification: terrain-fit-pass/rejected/marsh-reservation-posts.json; captures/terrain-fit-batch/rejected-marsh-reservation-posts.png; verification/bearing-contact.json
+
+Older-map obligation: Four mature maps retain individual audit obligations. No source master, saved terrain punch or reusable model was overwritten. Passing contact/native regression checks do not establish complete terrain, structures, visual, runtime/network or hardware acceptance.
+
+### DEV-396 — Masonry skirt can attach incidentally to a crossing route rather than its planned structural floor
+
+**Status:** SOURCE CLASSIFICATION FIXED; real deck construction still OPEN · **Affected:** Remaining25native rebuild candidates; exact affected contacts in terrain-fit-pass/*/construction.json
+
+Wharf quay reservation produced a masonry strip whose declared receiver was L02support rather than a constructed quay floor.
+
+Cause / uncertainty: Source reservation perimeter overlapped a narrow old route strip; a single underside ray did not establish that the intended floor existed.
+
+Fix / next action: Masonry now requires an actual Floor component receiver; piles may explicitly support real deck/path meshes. Exact declared mesh is queried independently to resolve coplanar BVH tie order without pretending duplicates are removed. Rejected wharf GLB/manifest retained.
+
+Evidence and verification: terrain-fit-pass/rejected/wharf-skirt-on-route.glb and .json; verification/bearing-contact.json; DEV-389
+
+Older-map obligation: Four mature maps retain individual audit obligations. No source master, saved terrain punch or reusable model was overwritten. Passing contact/native regression checks do not establish complete terrain, structures, visual, runtime/network or hardware acceptance.
+
+### DEV-397 — Failure-contact diagnostic silently excludes new before/after variant names
+
+**Status:** SOURCE FIX VERIFIED; missing-phase negative rejects and preserves prior output · **Affected:** Remaining25native rebuild candidates; exact affected contacts in terrain-fit-pass/*/construction.json
+
+First bearing comparison reports zero diagnosed failures despite36failed vertical segments in the actual movement result.
+
+Cause / uncertainty: Diagnostic filter was hardcoded to structure; new before_bearing/after_bearing rows were all skipped.
+
+Fix / next action: Accept an explicit selected variant, require at least one selected input row and pass after_bearing from the driver. Actual final72failed directional poses diagnosed. Missing-variant control rejects and leaves prior output byte-identical. Native movement assertions were never changed.
+
+Evidence and verification: terrain-fit-pass/verification/stairs/failure-contacts.tsv; verification/empty-variant-negative.json; tools/java/RosterFailureContacts.java
+
+Older-map obligation: Four mature maps retain individual audit obligations. No source master, saved terrain punch or reusable model was overwritten. Passing contact/native regression checks do not establish complete terrain, structures, visual, runtime/network or hardware acceptance.
+
+### DEV-398 — Exterior deck and walkway reservations lack continuous constructed mesh
+
+**Status:** OPEN; individually recorded across25support candidates · **Affected:** Remaining25native rebuild candidates; exact affected contacts in terrain-fit-pass/*/construction.json
+
+Native inspections show missing portions of wharf/quay/pier, motor-lodge walkways, keeper porch and marsh boardwalk reservations; existing cyan strips supply only narrower crossing routes.
+
+Cause / uncertainty: Structural rough generation omitted exterior floors unless explicitly constructed; zone rectangles and old route plates do not define complete physical decks.
+
+Fix / next action: Author actual measured constructed decks and their load-bearing connections with continuous clearances/openings. Use rectangles only for real deck objects; do not stamp a whole outdoor reservation into terrain. Revalidate all footprints, floor/underface depths, piles, actual native movement and canonical arrival.989withheld source contacts remain explicit in this pass, including missing ground and terrain-overfloor cases.
+
+Evidence and verification: terrain-fit-pass/existing-terrain-review.json; */construction.json; captures/terrain-fit-batch/; README.md
+
+Older-map obligation: Four mature maps retain individual audit obligations. No source master, saved terrain punch or reusable model was overwritten. Passing contact/native regression checks do not establish complete terrain, structures, visual, runtime/network or hardware acceptance.
 
 ## Required audit categories
 

@@ -1,0 +1,61 @@
+{
+  "status": "REVISE_CONSTRUCTION_AND_TERRAIN_NOT_ACCEPTED",
+  "views": [
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/bearing-sheet-01.png",
+      "sha256": "4720b680ec05f68ee6109f9e33598f049c557384cf127e00dbd752b7fa8ec740",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/bearing-sheet-02.png",
+      "sha256": "c719ee7bad933f5ff6d1747c6fc192fd0b3866e6d88091d0c1e3c79333d21c2c",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/bearing-sheet-03.png",
+      "sha256": "37c23b5e44ac6537aa5df20cce5194f47eb170b3634a373124c1a66928a5edcb",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/bearing-sheet-04.png",
+      "sha256": "cc031778ab08cd2b563e85eeddc96db994d49be40fcb7452ea682bad322d4abd",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/bearing-sheet-05.png",
+      "sha256": "7f45020b852222f5e89cd7d2194049d7b979550205cbc688ddef345567a1e2d8",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/bearing-sheet-06.png",
+      "sha256": "50acac4945e837ad54dde172f70cf693ee0fb147f480ec95885e995a226d238b",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/bearing-sheet-07.png",
+      "sha256": "0a3a85bc65f577eac3bb9025db5bc262a75b1c1760f3851cbd69564ed77133ee",
+      "observed": true
+    }
+  ],
+  "actual_export_views": 50,
+  "also_viewed": [
+    "existing-terrain-sheet-01.png",
+    "existing-terrain-sheet-02.png",
+    "farmhouse-support-side.png",
+    "wld-11-support-side.png"
+  ],
+  "scores": {
+    "construction": 2,
+    "landscape": 2,
+    "finish": 1
+  },
+  "scale": 5,
+  "findings": [
+    "Masonry now meets actual low floor undersides and native soil; piles visibly support marsh buildings/routes.",
+    "Rejected floating reservation posts removed; missing decks remain withheld contacts, not invisible support.",
+    "Existing rectangular extents in cemetery/lightstation/vessel/motel/battery/silo remain unacceptable as final terrain.",
+    "Mountain/cave/tailrace crossings and terrain-overfloor relationships remain unresolved; foundation skirts cannot replace rock/cliff/retaining volumes.",
+    "Rough straight swales, source black/coplanar bands, incomplete pile/beam coverage and unsupported perimeter blockers remain open.",
+    "Canonical van absent, source roofs/rooms remain rough massing; no runtime or finished visual acceptance."
+  ]
+}

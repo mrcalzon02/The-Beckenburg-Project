@@ -1,0 +1,7 @@
+{
+  "status": "PASS_EXPECTED_REJECTION",
+  "exit_code": 1,
+  "prior_output_preserved": true,
+  "diagnostic": "Exception in thread \"main\" java.lang.IllegalArgumentException: No flight inputs for selected variant: absent_variant\n\tat RosterFailureContacts.main(RosterFailureContacts.java:81)\n",
+  "source_sha256": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376"
+}

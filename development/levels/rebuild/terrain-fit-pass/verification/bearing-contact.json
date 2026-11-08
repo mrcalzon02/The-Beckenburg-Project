@@ -1,0 +1,329 @@
+{
+  "status": "PASS_SCOPED_CONTACT_AND_EXPORT_CHECKS",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "closed_new_parts": 147,
+      "triangles": 1764,
+      "actual_lower_upper_contact": true,
+      "old_collision_bytes_preserved": true,
+      "terrain_preserved": true
+    },
+    {
+      "id": "ASYLUM",
+      "closed_new_parts": 180,
+      "triangles": 2160,
+      "actual_lower_upper_contact": true,
+      "old_collision_bytes_preserved": true,
+      "terrain_preserved": true
+    },
+    {
+      "id": "CHURCH",
+      "closed_new_parts": 45,
+      "triangles": 540,
+      "actual_lower_upper_contact": true,
+      "old_collision_bytes_preserved": true,
+      "terrain_preserved": true
+    },
+    {
+      "id": "COLLEGE",
+      "closed_new_parts": 201,
+      "triangles": 2412,
+      "actual_lower_upper_contact": true,
+      "old_collision_bytes_preserved": true,
+      "terrain_preserved": true
+    },
+    {
+      "id": "FARMHOUSE",
+      "closed_new_parts": 85,
+      "triangles": 1020,
+      "actual_lower_upper_contact": true,
+      "old_collision_bytes_preserved": true,
+      "terrain_preserved": true
+    },
+    {
+      "id": "MANSION",
+      "closed_new_parts": 111,
+      "triangles": 1332,
+      "actual_lower_upper_contact": true,
+      "old_collision_bytes_preserved": true,
+      "terrain_preserved": true
+    },
+    {
+      "id": "PRISON",
+      "closed_new_parts": 216,
+      "triangles": 2592,
+      "actual_lower_upper_contact": true,
+      "old_collision_bytes_preserved": true,
+      "terrain_preserved": true
+    },
+    {
+      "id": "SCHOOL",
+      "closed_new_parts": 82,
+      "triangles": 984,
+      "actual_lower_upper_contact": true,
+      "old_collision_bytes_preserved": true,
+      "terrain_preserved": true
+    },
+    {
+      "id": "WLD-03",
+      "closed_new_parts": 40,
+      "triangles": 480,
+      "actual_lower_upper_contact": true,
+      "old_collision_bytes_preserved": true,
+      "terrain_preserved": true
+    },
+    {
+      "id": "WLD-04",
+      "closed_new_parts": 28,
+      "triangles": 336,
+      "actual_lower_upper_contact": true,
+      "old_collision_bytes_preserved": true,
+      "terrain_preserved": true
+    },
+    {
+      "id": "WLD-05",
+      "closed_new_parts": 36,
+      "triangles": 432,
+      "actual_lower_upper_contact": true,
+      "old_collision_bytes_preserved": true,
+      "terrain_preserved": true
+    },
+    {
+      "id": "WLD-06",
+      "closed_new_parts": 99,
+      "triangles": 1188,
+      "actual_lower_upper_contact": true,
+      "old_collision_bytes_preserved": true,
+      "terrain_preserved": true
+    },
+    {
+      "id": "WLD-07",
+      "closed_new_parts": 2,
+      "triangles": 24,
+      "actual_lower_upper_contact": true,
+      "old_collision_bytes_preserved": true,
+      "terrain_preserved": true
+    },
+    {
+      "id": "WLD-08",
+      "closed_new_parts": 75,
+      "triangles": 900,
+      "actual_lower_upper_contact": true,
+      "old_collision_bytes_preserved": true,
+      "terrain_preserved": true
+    },
+    {
+      "id": "WLD-09",
+      "closed_new_parts": 12,
+      "triangles": 144,
+      "actual_lower_upper_contact": true,
+      "old_collision_bytes_preserved": true,
+      "terrain_preserved": true
+    },
+    {
+      "id": "WLD-10",
+      "closed_new_parts": 134,
+      "triangles": 1608,
+      "actual_lower_upper_contact": true,
+      "old_collision_bytes_preserved": true,
+      "terrain_preserved": true
+    },
+    {
+      "id": "WLD-11",
+      "closed_new_parts": 105,
+      "triangles": 1260,
+      "actual_lower_upper_contact": true,
+      "old_collision_bytes_preserved": true,
+      "terrain_preserved": true
+    },
+    {
+      "id": "WLD-12",
+      "closed_new_parts": 43,
+      "triangles": 516,
+      "actual_lower_upper_contact": true,
+      "old_collision_bytes_preserved": true,
+      "terrain_preserved": true
+    },
+    {
+      "id": "WLD-13",
+      "closed_new_parts": 83,
+      "triangles": 996,
+      "actual_lower_upper_contact": true,
+      "old_collision_bytes_preserved": true,
+      "terrain_preserved": true
+    },
+    {
+      "id": "WLD-14",
+      "closed_new_parts": 27,
+      "triangles": 324,
+      "actual_lower_upper_contact": true,
+      "old_collision_bytes_preserved": true,
+      "terrain_preserved": true
+    },
+    {
+      "id": "WLD-15",
+      "closed_new_parts": 2,
+      "triangles": 24,
+      "actual_lower_upper_contact": true,
+      "old_collision_bytes_preserved": true,
+      "terrain_preserved": true
+    },
+    {
+      "id": "WLD-16",
+      "closed_new_parts": 7,
+      "triangles": 84,
+      "actual_lower_upper_contact": true,
+      "old_collision_bytes_preserved": true,
+      "terrain_preserved": true
+    },
+    {
+      "id": "WLD-17",
+      "closed_new_parts": 20,
+      "triangles": 240,
+      "actual_lower_upper_contact": true,
+      "old_collision_bytes_preserved": true,
+      "terrain_preserved": true
+    },
+    {
+      "id": "WLD-18",
+      "closed_new_parts": 18,
+      "triangles": 216,
+      "actual_lower_upper_contact": true,
+      "old_collision_bytes_preserved": true,
+      "terrain_preserved": true
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "closed_new_parts": 13,
+      "triangles": 156,
+      "actual_lower_upper_contact": true,
+      "old_collision_bytes_preserved": true,
+      "terrain_preserved": true
+    }
+  ],
+  "rejected_floating_posts_detected": 17,
+  "coplanar_receiver_ties": [
+    {
+      "site": "WLD-06",
+      "part": "Bearing pile 0069",
+      "declared": "L10 support 1",
+      "coplanar": "L18 support 1",
+      "actual_y": -0.12000000476837158
+    },
+    {
+      "site": "WLD-06",
+      "part": "Bearing pile 0070",
+      "declared": "L07 support 0",
+      "coplanar": "L15 support 1",
+      "actual_y": -0.12000000476837158
+    },
+    {
+      "site": "WLD-06",
+      "part": "Bearing pile 0071",
+      "declared": "L07 support 0",
+      "coplanar": "L15 support 1",
+      "actual_y": -0.12000000476837158
+    },
+    {
+      "site": "WLD-06",
+      "part": "Bearing pile 0072",
+      "declared": "L07 support 0",
+      "coplanar": "L15 support 1",
+      "actual_y": -0.12000000476837158
+    },
+    {
+      "site": "WLD-06",
+      "part": "Bearing pile 0091",
+      "declared": "L10 support 1",
+      "coplanar": "L10 support 0",
+      "actual_y": -0.11999999731779099
+    },
+    {
+      "site": "WLD-06",
+      "part": "Bearing pile 0092",
+      "declared": "L10 support 1",
+      "coplanar": "L18 support 1",
+      "actual_y": -0.12000000476837158
+    },
+    {
+      "site": "WLD-06",
+      "part": "Bearing pile 0093",
+      "declared": "L10 support 1",
+      "coplanar": "L18 support 1",
+      "actual_y": -0.12000000476837158
+    },
+    {
+      "site": "WLD-06",
+      "part": "Bearing pile 0094",
+      "declared": "L10 support 1",
+      "coplanar": "L18 support 1",
+      "actual_y": -0.12000000476837158
+    },
+    {
+      "site": "WLD-06",
+      "part": "Bearing pile 0095",
+      "declared": "L11 support 0",
+      "coplanar": "L08 support 0",
+      "actual_y": -0.11999999731779099
+    },
+    {
+      "site": "WLD-11",
+      "part": "Bearing pile 0040",
+      "declared": "L14 support 0",
+      "coplanar": "L04 support 1",
+      "actual_y": 1.0800000429153442
+    },
+    {
+      "site": "WLD-11",
+      "part": "Bearing pile 0042",
+      "declared": "L14 support 0",
+      "coplanar": "L06 support 1",
+      "actual_y": 1.0800000429153442
+    },
+    {
+      "site": "WLD-11",
+      "part": "Bearing pile 0059",
+      "declared": "L12 support 0",
+      "coplanar": "L06 support 1",
+      "actual_y": 1.0800000429153442
+    },
+    {
+      "site": "WLD-11",
+      "part": "Bearing pile 0070",
+      "declared": "L10 support 0",
+      "coplanar": "L05 support 0",
+      "actual_y": 1.0800000429153442
+    },
+    {
+      "site": "WLD-11",
+      "part": "Bearing pile 0076",
+      "declared": "L09 support 0",
+      "coplanar": "L05 support 0",
+      "actual_y": 1.0800000429153442
+    },
+    {
+      "site": "WLD-11",
+      "part": "Bearing pile 0086",
+      "declared": "L12 support 0",
+      "coplanar": "L06 support 1",
+      "actual_y": 1.0800000429153442
+    },
+    {
+      "site": "WLD-11",
+      "part": "Bearing pile 0087",
+      "declared": "L11 support 1",
+      "coplanar": "L06 support 1",
+      "actual_y": 1.0800000429153442
+    },
+    {
+      "site": "WLD-11",
+      "part": "Bearing pile 0094",
+      "declared": "L13 support 0",
+      "coplanar": "L13 support 1",
+      "actual_y": 1.0800000429153442
+    }
+  ],
+  "checker_sha256": "ab4af0bef2950701e957aa8b06b3c198d1885a418a3b04c759f0a5eb7ccdebec",
+  "scope": "Actual native terrain rays, independently queried owning source mesh underside contact, embedded bottoms, explicit beam connections, closed outward new geometry, exact exported/native union and retained terrain. Existing coplanar route duplicates remain DEV-389. No engineering load simulation, full terrain or runtime acceptance."
+}
