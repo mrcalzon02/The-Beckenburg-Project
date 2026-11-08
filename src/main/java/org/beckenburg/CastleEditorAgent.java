@@ -123,18 +123,27 @@ public final class CastleEditorAgent implements EditorAgentService.Host<CastleLe
         renderer.yaw=Math.atan2(x-renderer.x,z-renderer.z);renderer.pitch=-.12;
         renderer.setEditorSelection(x,y,z);
     }
-    public List<String> operations(){return List.of("set-spawn","put-surface","remove-surface","place-prop");}
+    public List<String> operations(){return List.of("set-spawn","put-surface","remove-surface","place-prop","set-door","set-nav-cell");}
     private static final Map<String,Map<String,String>> PARAMETERS=Map.of(
         "set-spawn",Map.of("x","number","z","number","yaw","number"),
         "put-surface",Map.of("id","string","kind",String.join("|",java.util.Arrays.stream(CastleLevelEdits.Kind.values()).map(Enum::name).toList()),
             "x0","number","z0","number","x1","number","z1","number","base","number","height","number","material","integer"),
         "remove-surface",Map.of("id","string"),
-        "place-prop",Map.of("id","string","mesh","string","x","number","y","number","z","number"));
+        "place-prop",Map.of("id","string","mesh","string","x","number","y","number","z","number"),
+        "set-door",Map.of("slot","string","leaf","EMPTY|WOOD|PORTCULLIS"),
+        "set-nav-cell",Map.of("x","integer","z","integer","state","BLOCKED|CLEAR"));
     public Map<String,Map<String,String>> operationParameters(){return PARAMETERS;}
     public void apply(String operation, Map<String,String> args){
         var fields=PARAMETERS.get(operation);
         if(fields==null || !args.keySet().equals(fields.keySet()))throw new IllegalArgumentException("Incorrect fields for "+operation);
         switch(operation){
+            case "set-door" -> scene.setSocketLeaf(args.get("slot"),CastleDoorSlots.Type.valueOf(args.get("leaf")));
+            case "set-nav-cell" -> {
+                boolean blocked=switch(args.get("state")){
+                    case "BLOCKED"->true;case "CLEAR"->false;default->throw new IllegalArgumentException("Expected BLOCKED or CLEAR");
+                };
+                scene.setNavBlocked(Integer.parseInt(args.get("x")),Integer.parseInt(args.get("z")),blocked);
+            }
             case "place-prop" -> scene.placePaletteProp(args.get("id"),args.get("mesh"),number(args,"x"),number(args,"y"),number(args,"z"));
             case "set-spawn" -> {
                 scene.setSpawn(number(args,"x"),number(args,"z"),number(args,"yaw"));
@@ -168,8 +177,14 @@ public final class CastleEditorAgent implements EditorAgentService.Host<CastleLe
         if(!ImageIO.write(image,"png",file.toFile()))throw new IOException("PNG writer unavailable");
         return new EditorAgentService.Capture(file,image.getWidth(),image.getHeight(),"SceneRenderer.drawCastle");
     }
-    public List<String> tests(){return List.of("castle-scene-audit","castle-world-terrain");}
+    public List<String> tests(){return List.of("castle-scene-audit","castle-world-terrain","castle-cellar-passage","castle-door-sockets");}
     public List<EditorAgentService.Check> test(String id){
+        if(id.equals("castle-cellar-passage"))return List.of(cellarSweep(true),cellarSweep(false));
+        if(id.equals("castle-door-sockets"))return CastleDoorSlots.all().stream().filter(CastleDoorSlots::available).map(slot->{
+            var leaf=scene.doorType(slot.id());
+            return new EditorAgentService.Check("DOOR_SOCKET",leaf==CastleDoorSlots.Type.EMPTY||CastleDoorSlots.canInstall(slot.id(),leaf),
+                slot.id()+" at "+slot.centerX()+", "+slot.bottom()+", "+slot.centerZ()+"; mounted "+leaf);
+        }).toList();
         if(id.equals("castle-world-terrain")){
             var terrain=map.worldSurface();
             boolean hole=true;
@@ -190,5 +205,22 @@ public final class CastleEditorAgent implements EditorAgentService.Host<CastleLe
         if(findings.isEmpty())return List.of(new EditorAgentService.Check("CASTLE_SCENE_AUDIT",true,"No advisory findings"));
         return findings.stream().map(f->new EditorAgentService.Check(f.code(),false,
             f.kind()+"/"+f.id()+": "+f.message())).toList();
+    }
+    private EditorAgentService.Check cellarSweep(boolean descending){
+        double north=CastleCellarLayout.LOW_Z-.8,south=CastleCellarLayout.HIGH_Z+.8,x=CastleCellarLayout.FLIGHT_X;
+        double feet=descending?0:CastleCellar.FLOOR;
+        String code=descending?"CELLAR_DESCENT":"CELLAR_ASCENT";
+        if(!CastleCellar.active())return new EditorAgentService.Check(code,false,"Native cellar floor is missing");
+        int steps=(int)Math.ceil((south-north)/.025);
+        for(int i=0;i<=steps;i++){
+            double distance=(south-north)*i/steps,z=descending?south-distance:north+distance;
+            double next=CastleHubArchitecturalPlan.elevation(x,z,feet);
+            if(!CastleHubPanel.safeElevationTransition(feet,next,x,z)||!map.traversable(x,z,next))
+                return new EditorAgentService.Check(code,false,"Blocked at X "+x+", Y "+next+", Z "+z);
+            feet=next;
+        }
+        double target=descending?CastleCellar.FLOOR:0;
+        return new EditorAgentService.Check(code,Math.abs(feet-target)<1e-7,
+            (steps+1)+" runtime foot positions; landing elevation "+feet+", expected "+target);
     }
 }

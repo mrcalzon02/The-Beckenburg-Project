@@ -49,6 +49,12 @@ Use `check_walkability(revision, x, y, z)` for a standing player's foot position
 
 In a Castle editing session, `place-prop` takes a new hierarchy ID, an approved palette mesh name, and world coordinates `x`, `y`, `z`. It uses the human palette's scale, orientation and collision footprint. `focus_node` selects that native row and positions the actual editor camera without changing the document revision. **Verify Scene → Focus object** uses the same view. Capture the viewport there, then check the prop's center and the neighboring passage. In the tested upper lodging the chair blocked standing at (5.75, 3.4, 13.5) and the aisle at (5.75, 3.4, 14.35) remained walkable. The trusted stdio equivalents are `focus<TAB>revision<TAB>id` and `walkability<TAB>revision<TAB>x<TAB>y<TAB>z`.
 
+### Inspect a Castle door or stair
+
+In **Paint & nav → Door sockets**, choose a physical aperture and its mounted leaf. The dropdown shows only leaves compatible with the socket. The corresponding `set-door` command takes `slot` and `leaf` (`EMPTY`, `WOOD` or `PORTCULLIS`). `castle-door-sockets` checks the available native sockets and reports their IDs, positions and assignments. `set-nav-cell` takes integer cell coordinates and a state of `BLOCKED` or `CLEAR`. These are the same navigation edits as **Set nav**.
+
+Use **Verify Scene → Test → castle-cellar-passage**, or call `run_test` with that ID. It follows the native player elevation and standing collision down the cellar flight and back up. A failed check reports the first blocked foot position. The baseline reached the −3 and 0 landings. Blocking the upper landing or removing the native stair opening made both directions fail. Undo restored passage.
+
 ### Retry a write after a lost response
 
 For a live authenticated session that advertises `requestSequences: ["v1"]`, pass an optional positive integer `sequence` to an MCP action. If the response is lost, send the same action, original revision, arguments and sequence. The editor returns the original receipt, failure or gameplay PNG even if later edits have changed the scene. A replay does not create an undo entry or run gameplay again. Read the current revision before issuing a new action.

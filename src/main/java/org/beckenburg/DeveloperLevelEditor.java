@@ -268,6 +268,7 @@ public final class DeveloperLevelEditor extends JPanel {
     private String lightVolumeKey="";
     private volatile boolean editorClosed;
     private final JCheckBox navBlocked=new JCheckBox("Block player navigation here");
+    private final JButton doorSockets=button("DOOR SOCKETS…");
     private final JLabel status=new JLabel("WASD fly  •  Q/E altitude  •  Mouse drag look  •  Wheel forward/back  •  Ctrl+S save");
     private final JTextArea navInfo=new JTextArea(6,25);
     private final Set<Integer> keys=new HashSet<>();
@@ -740,6 +741,7 @@ public final class DeveloperLevelEditor extends JPanel {
         block.addActionListener(e->castleOnly(()->data.setNavBlocked(integer(tileX),
             integer(tileZ),navBlocked.isSelected())));
         tools.add(block);
+        doorSockets.addActionListener(e->editDoorSocket());tools.add(doorSockets);
         tools.add(navBlocked);tools.add(navOverlay);
         JButton spawn=button("SPAWN HERE");spawn.addActionListener(e->castleOnly(()->{
             data.setSpawn(renderer.x,renderer.z,renderer.yaw);
@@ -753,6 +755,24 @@ public final class DeveloperLevelEditor extends JPanel {
         return panel;
     }
     private static int integer(JSpinner s){return ((Number)s.getValue()).intValue();}
+    private void editDoorSocket(){
+        if(mission!=null){status.setText("Door sockets belong to the Castle");return;}
+        var sockets=new JComboBox<String>();for(var slot:CastleDoorSlots.all())if(CastleDoorSlots.available(slot))sockets.addItem(slot.id());
+        if(sockets.getItemCount()==0){status.setText("No physical Castle door sockets available");return;}
+        var location=new JLabel();var leaf=new JComboBox<CastleDoorSlots.Type>();
+        Runnable show=()->{
+            var slot=CastleDoorSlots.require((String)sockets.getSelectedItem());
+            location.setText("X "+slot.centerX()+"   Foot elevation "+slot.bottom()+"   Z "+slot.centerZ());
+            leaf.removeAllItems();leaf.addItem(CastleDoorSlots.Type.EMPTY);
+            leaf.addItem(slot.gate()?CastleDoorSlots.Type.PORTCULLIS:CastleDoorSlots.Type.WOOD);
+            leaf.setSelectedItem(data.doorType(slot.id()));
+        };
+        sockets.addActionListener(e->show.run());show.run();
+        if(JOptionPane.showConfirmDialog(window,new Object[]{"Physical socket",sockets,location,"Mounted leaf",leaf},
+            "Castle door sockets",JOptionPane.OK_CANCEL_OPTION)!=JOptionPane.OK_OPTION)return;
+        String id=(String)sockets.getSelectedItem();var target=(CastleDoorSlots.Type)leaf.getSelectedItem();
+        if(data.doorType(id)!=target)castleOnly(()->data.setSocketLeaf(id,target));
+    }
     private static double value(JSpinner s){return ((Number)s.getValue()).doubleValue();}
     private void castleOnly(Runnable action){
         if(mission!=null){
@@ -936,6 +956,7 @@ public final class DeveloperLevelEditor extends JPanel {
         selectId(kind,id);updateNav();
     }
     private void updateNav(){
+        doorSockets.setEnabled(mission==null);
         if(mission!=null){
             navInfo.setText("LEVEL  "+mission.title()
                 +"\nAuthoritative game scene: "+mission.documentPath()
@@ -1405,7 +1426,12 @@ public final class DeveloperLevelEditor extends JPanel {
                         proof.actual().x()+", "+proof.actual().y()+", "+proof.actual().z()+
                         "\nLatest commit includes this object: "+proof.committed()+"\nSaved document: "+proof.diskState();
                 }
-                case "TEST" -> result=service.test(state.revision(),state.tests().get(0));
+                case "TEST" -> {
+                    String test=(String)JOptionPane.showInputDialog(window,"Run a check against the active game scene.",
+                        "Scene diagnostics",JOptionPane.PLAIN_MESSAGE,null,state.tests().toArray(),state.tests().get(0));
+                    if(test==null)return;
+                    result=service.test(state.revision(),test);
+                }
                 case "CAPTURE PNG" -> {
                     JFileChooser chooser=new JFileChooser();chooser.setSelectedFile(new java.io.File("editor-scene.png"));
                     if(chooser.showSaveDialog(window)!=JFileChooser.APPROVE_OPTION)return;

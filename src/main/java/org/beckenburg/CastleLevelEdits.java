@@ -103,6 +103,12 @@ public final class CastleLevelEdits {
         CastleDoorSlots.require(slotId);
         if(doorAssignments.remove(slotId)!=null)revision++;
     }
+    synchronized void setSocketLeaf(String slotId,CastleDoorSlots.Type type){
+        var slot=CastleDoorSlots.require(slotId);
+        if(!CastleDoorSlots.available(slot))throw new IllegalArgumentException("Door socket is absent from the active layout");
+        if(type==doorType(slotId))throw new IllegalArgumentException("Socket already has that assignment");
+        if(type==CastleDoorSlots.Type.EMPTY)removeDoor(slotId);else installDoor(slotId,type);
+    }
     private long geometryCacheVersion=-1;
     private List<CastleHubArchitecturalPlan.Wall> cachedWalls=List.of();
     private List<CastleHubArchitecturalPlan.Deck> cachedDecks=List.of();

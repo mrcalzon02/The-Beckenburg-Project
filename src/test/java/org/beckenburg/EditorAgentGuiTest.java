@@ -221,8 +221,31 @@ public final class EditorAgentGuiTest {
             check(child.waitFor(90,java.util.concurrent.TimeUnit.SECONDS) && child.exitValue()==0,"MCP client acceptance: "+scope);
         }finally{if(child.isAlive())child.destroyForcibly();}
     }
+    private static void verifyHumanCellarDoor(DeveloperLevelEditor editor){
+        String slot="portal-v-3700-2200";
+        var map=new CastleHubMap();
+        check(map.traversable(37,22,-3),"Empty lower aperture must be passable");
+        var tabs=component(editor,JTabbedPane.class);
+        int old=tabs.getSelectedIndex();tabs.setSelectedIndex(tabs.indexOfTab("Paint & nav"));
+        Timer driver=new Timer(50,e->{
+            for(Window window:Window.getWindows())if(window instanceof JDialog dialog&&dialog.isShowing()&&dialog.getTitle().equals("Castle door sockets")){
+                var pane=component(dialog,JOptionPane.class);var fields=(Object[])pane.getMessage();
+                ((JComboBox<?>)fields[1]).setSelectedItem(slot);
+                ((JComboBox<?>)fields[4]).setSelectedItem(CastleDoorSlots.Type.WOOD);
+                pane.setValue(JOptionPane.OK_OPTION);
+            }
+        });
+        driver.start();try{button(editor,"DOOR SOCKETS…").doClick();}finally{driver.stop();tabs.setSelectedIndex(old);}
+        check(CastleLevelEdits.current().doorType(slot)==CastleDoorSlots.Type.WOOD&&!map.traversable(37,22,-3),"Human door installation must block the game body");
+        check(!FixtureLighting.castleRayClear(map,36,-1.6,22,38,-1.6,22),"Closed lower door must occlude the game ray");
+        map.toggleDoor(slot);
+        check(map.traversable(37,22,-3)&&FixtureLighting.castleRayClear(map,36,-1.6,22,38,-1.6,22),"Opened leaf must clear body and ray");
+        button(editor,"UNDO").doClick();
+        check(CastleLevelEdits.current().doorType(slot)==CastleDoorSlots.Type.EMPTY,"Human undo must remove the mounted leaf");
+    }
     static void verifyCastleMcpRepair(DeveloperLevelEditor editor)throws Exception{
         SwingUtilities.invokeAndWait(()->{
+            verifyHumanCellarDoor(editor);
             var service=editor.agentService();var rev=service.summary().revision();
             var spawn=service.node(rev,"start").result();
             service.transact(rev,"put-surface",Map.of("id","mcp-test-divider","kind","WALL",

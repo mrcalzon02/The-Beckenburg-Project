@@ -248,7 +248,46 @@ async def verify(scope):
                 again_audit = (await call("run_test", revision=again["revision"], id="castle-scene-audit"))["result"]
                 assert any(check["code"] == "SPAWN_WALL_INTERSECTION" for check in again_audit)
                 # Restore the repaired state so the next actual human Undo restores the wall.
-                await call("redo", revision=again["revision"])
+                restored = (await call("redo", revision=again["revision"]))["revision"]
+                async def cellar(rev):
+                    return (await call("run_test", revision=rev, id="castle-cellar-passage"))["result"]
+                baseline = await cellar(restored)
+                assert {c["code"] for c in baseline} == {"CELLAR_DESCENT", "CELLAR_ASCENT"} and all(c["passed"] for c in baseline)
+                sockets = (await call("run_test", revision=restored, id="castle-door-sockets"))["result"]
+                slot = "portal-v-3700-2200"
+                assert any(c["passed"] and c["detail"].startswith(slot+" ") and c["detail"].endswith("mounted EMPTY") for c in sockets)
+                portal = dict(x=37, y=-3, z=22)
+                landing = dict(x=40, y=0, z=24.8)
+                assert await walk(restored, portal) and await walk(restored, landing)
+                nav = dict(operation="set-nav-cell", arguments=dict(x=40, z=24, state="BLOCKED"))
+                door = dict(operation="set-door", arguments=dict(slot=slot, leaf="WOOD"))
+                bad = dict(operation="set-door", arguments=dict(slot=slot, leaf="PORTCULLIS"))
+                invalid = await client.call_tool("edit", dict(revision=restored, commands=[nav, bad]))
+                assert invalid.isError
+                rev = (await call("inspect_scene", revision_only=True))["revision"]
+                assert await walk(rev, landing)
+                trial = (await call("edit", revision=rev, commands=[door, nav], sequence=40))["revision"]
+                blocked = await cellar(trial)
+                assert not any(c["passed"] for c in blocked)
+                assert not await walk(trial, portal) and not await walk(trial, landing)
+                await call("save", revision=trial)
+                undo = (await call("undo", revision=trial))["revision"]
+                assert await walk(undo, portal) and await walk(undo, landing)
+                reopening = (await call("reopen", revision=undo))["revision"]
+                assert not await walk(reopening, portal) and not await walk(reopening, landing)
+                final = (await call("undo", revision=reopening))["revision"]
+                assert await walk(final, portal) and all(c["passed"] for c in await cellar(final))
+                await call("save", revision=final)
+                # Leave the furnishing transaction on top of undo history after the two reversible checks.
+                hole = dict(operation="remove-surface", arguments=dict(id="cellar-stair-opening"))
+                missing = (await call("edit", revision=final, commands=[hole]))["revision"]
+                capped = await cellar(missing)
+                assert not any(c["passed"] for c in capped)
+                final = (await call("undo", revision=missing))["revision"]
+                assert all(c["passed"] for c in await cellar(final))
+                (output / "mcp-cellar-passage.json").write_text(json.dumps(
+                    {"source": os.environ.get("GITHUB_SHA"), "baseline": baseline, "blockedLanding": blocked,
+                     "missingOpening": capped, "restoredRevision": final}, indent=2), encoding="utf-8")
         print(f"PASS MCP {scope} {state['sceneId']}: authenticated typed discovery, live readback, resource, diagnostic and PNG")
 
 
