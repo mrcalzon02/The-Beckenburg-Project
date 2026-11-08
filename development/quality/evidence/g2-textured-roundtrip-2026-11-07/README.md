@@ -12,3 +12,9 @@ The registered game asset matched the independently computed positions, inverse-
 | game.png | SceneRenderer drawing the asset from the game's import registry |
 
 The sample meets the textured roundtrip exit check. G1 remains partial in the current-state audit. G2 still has standalone JSON glTF interchange and incremental updates beyond the wireframe projection to verify. Native undo history is session-local. The fixture measures correctness and heap bounds for this asset. It does not measure agent token consumption or establish hardware acceptance.
+
+## JSON glTF interchange
+
+The Model Editor also exports and imports the self-contained `edited.gltf` fixture. A second publication from that JSON source passed the same 36-corner game checks. The import registry retained the exact JSON source bytes alongside the native authoring document and runtime GLB. Additional readback covered an embedded PNG data URI. Tests refused malformed base64, external resource URIs and a buffer length incompatible with its views.
+
+This implementation supports one embedded buffer and the static PNG asset subset of the game decoder. External .bin and image sidecars and multi-buffer imports remain open. An original GLB with opaque trailing chunks must use GLB export to retain those chunks.

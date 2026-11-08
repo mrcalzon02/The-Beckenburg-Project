@@ -158,6 +158,14 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
     public synchronized void exportGlb(Observation observation,Path target,String expectedTargetSha)throws IOException{
         if(!isCurrent(observation))throw new IOException("Native mesh changed since GLB export review");if(target.toAbsolutePath().normalize().equals(path))throw new IOException("GLB copy cannot replace the native authoring document");
         var mesh=mesh(state);byte[] bytes=EditorGlbWriter.encode(mesh);EditorGlbWriter.validate(mesh,bytes);
+        if (target.getFileName().toString().toLowerCase(Locale.ROOT).endsWith(".gltf")) {
+            byte[] json=EditorGltfFile.fromGlb(bytes);
+            EditorDocumentStore.saveIfUnchanged(target,out->out.write(json),
+                file->EditorGlbReader.read(EditorGltfFile.toGlb(EditorMeshPipeline.readSource(file,EditorGltfFile.MAX_BYTES))),
+                file->EditorGlbWriter.validate(mesh,EditorGltfFile.toGlb(EditorMeshPipeline.readSource(file,EditorGltfFile.MAX_BYTES))),
+                expectedTargetSha);
+            return;
+        }
         EditorDocumentStore.saveIfUnchanged(target,out->out.write(bytes),file->EditorGlbReader.read(EditorMeshPipeline.readSource(file,4_000_000)),file->EditorGlbWriter.validate(mesh,EditorMeshPipeline.readSource(file,4_000_000)),expectedTargetSha);
     }
     public synchronized void restore(State value){

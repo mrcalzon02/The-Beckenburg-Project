@@ -214,3 +214,7 @@ The actual desktop test aligns two originally separate OBJ parts, verifies visib
 BTOP version7 stores the bounded workspace section. Files without workspace metadata continue to use versions1–6 according to their geometry and attributes. Older readers refuse version7. A stale save cannot overwrite another editor's workspace. Recovery restores the geometry and view from the same file. Editor preferences do not change the geometry revision. Native publication archives the current workspace, so its content-based archive ID can differ when the view changes. The compiled game mesh for unchanged geometry is byte-identical. Material editing retains its own window and layout.
 
 The portable and actual desktop acceptance cases are `EditorModelWorkspaceTest` and `AssetImportWorkspaceGuiTest`. Fresh-window capture, native sample, prior-reader control and final native suite output are in `development/quality/evidence/model-workspace-2026-11-07`.
+
+### JSON glTF interchange
+
+Use **File → EXPORT glTF / GLB**, then give the copy a `.gltf` filename to export one self-contained JSON file. The source chooser reopens it for native editing. The writer embeds one buffer and validates the exported file through the same decoder used in the game. PNG images can use buffer views or embedded data URIs on import. The game registry retains the original JSON when publishing from the imported file. Files requiring external sidecars or multiple buffers are outside the current import scope. GLB copies retain opaque trailing chunks that cannot be represented in JSON.

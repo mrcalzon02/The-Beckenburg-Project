@@ -1,6 +1,7 @@
 package org.beckenburg;
 
 import org.beckenburg.editor.EditorGlbWriter;
+import org.beckenburg.editor.EditorGltfFile;
 import org.beckenburg.editor.EditorDocumentStore;
 import org.beckenburg.editor.EditorTopologyWorkspace;
 import org.beckenburg.editor.EditorMaterialWorkspace;
@@ -71,7 +72,7 @@ public final class AssetImportDialog {
     private final JSpinner vertexY=new JSpinner(new SpinnerNumberModel(0d,-1e9,1e9,.05));
     private final JSpinner vertexZ=new JSpinner(new SpinnerNumberModel(0d,-1e9,1e9,.05));
     private final JButton moveVertex=new JButton("MOVE VERTEX"),undoMesh=new JButton("UNDO MESH"),redoMesh=new JButton("REDO MESH");
-    private final JButton saveMesh=new JButton("SAVE MESH"),reopenMesh=new JButton("REOPEN MESH"),exportMesh=new JButton("EXPORT OBJ"),exportGlb=new JButton("EXPORT GLB");
+    private final JButton saveMesh=new JButton("SAVE MESH"),reopenMesh=new JButton("REOPEN MESH"),exportMesh=new JButton("EXPORT OBJ"),exportGlb=new JButton("EXPORT glTF / GLB");
     private final JComboBox<EditorMeshPrimitives.Kind> primitiveKind=new JComboBox<>(EditorMeshPrimitives.Kind.values());
     private final JSpinner primitiveWidth=new JSpinner(new SpinnerNumberModel(1d,.0001,10000d,.1));
     private final JSpinner primitiveHeight=new JSpinner(new SpinnerNumberModel(1d,.0001,10000d,.1));
@@ -234,7 +235,7 @@ public final class AssetImportDialog {
         redoMesh.addActionListener(e->{if(!busy&&meshHistory!=null&&meshHistory.redo())meshChanged();});
         saveMesh.addActionListener(e->saveAuthoring());
         exportMesh.addActionListener(e->chooseObjExport());
-        exportGlb.addActionListener(e->{if(topologyProject==null||busy||modelingPreview!=null)return;var chooser=new JFileChooser();chooser.setDialogTitle("Export source-preserving GLB copy");chooser.setSelectedFile(topologyProject.documentPath().resolveSibling("mesh-export.glb").toFile());if(chooser.showSaveDialog(dialog)==JFileChooser.APPROVE_OPTION)exportGlb(chooser.getSelectedFile().toPath());});
+        exportGlb.addActionListener(e->{if(topologyProject==null||busy||modelingPreview!=null)return;var chooser=new JFileChooser();chooser.setDialogTitle("Export a .gltf or .glb copy");chooser.setSelectedFile(topologyProject.documentPath().resolveSibling("mesh-export.glb").toFile());if(chooser.showSaveDialog(dialog)==JFileChooser.APPROVE_OPTION)exportGlb(chooser.getSelectedFile().toPath());});
         reopenMesh.addActionListener(e->{boolean opened=meshEdit(()->{try{
             topologyProject.reopen();
             if(path!=null&&path.toAbsolutePath().normalize().equals(topologyProject.documentPath()))reviewedSourceFingerprint=topologyProject.diskFingerprint();
@@ -445,9 +446,13 @@ public final class AssetImportDialog {
             details.append("\nEXPORTED OBJ COPY "+target);return true;
         }catch(IOException failure){details.append("\nEXPORT REFUSED: "+failure.getMessage());workspace.setBrowsersVisible(true);return false;}
     }
+    private static boolean gltfModel(String name) {
+        String lower=name.toLowerCase(Locale.ROOT);
+        return lower.endsWith(".glb") || lower.endsWith(".gltf");
+    }
     boolean exportGlb(Path destination){
         if(topologyProject==null||busy||modelingPreview!=null)return false;
-        try{Path target=destination.toAbsolutePath().normalize();if(!target.getFileName().toString().toLowerCase(Locale.ROOT).endsWith(".glb"))throw new IOException("Choose a .glb destination");if(path!=null&&target.equals(path.toAbsolutePath().normalize()))throw new IOException("Export cannot replace original source");String previous=Files.exists(target)?EditorDocumentStore.fingerprint(EditorMeshPipeline.readSource(target,4_000_000)):null;topologyProject.exportGlb(workingObservation,target,previous);details.append("\nEXPORTED GLB COPY "+target);return true;}catch(IOException failure){details.append("\nGLB EXPORT REFUSED: "+failure.getMessage());workspace.setBrowsersVisible(true);return false;}
+        try{Path target=destination.toAbsolutePath().normalize();if(!gltfModel(target.getFileName().toString()))throw new IOException("Choose a .glb or .gltf destination");if(path!=null&&target.equals(path.toAbsolutePath().normalize()))throw new IOException("Export cannot replace original source");String previous=Files.exists(target)?EditorDocumentStore.fingerprint(EditorMeshPipeline.readSource(target,EditorGltfFile.MAX_BYTES)):null;topologyProject.exportGlb(workingObservation,target,previous);details.append("\nEXPORTED MODEL COPY "+target);return true;}catch(IOException failure){details.append("\nGLB EXPORT REFUSED: "+failure.getMessage());workspace.setBrowsersVisible(true);return false;}
     }
     private void requestClose(){
         if(busy)return;
@@ -576,7 +581,7 @@ public final class AssetImportDialog {
     private void updatePublishAvailability(){
         apply.setEnabled(!busy&&modelingPreview==null&&source!=null&&result!=null&&result.source()==source
             &&(topologyProject==null||topologyProject.isCurrent(workingObservation))&&!result.optimized().triangles().isEmpty()
-            &&(!source.name().toLowerCase(Locale.ROOT).endsWith(".glb")||result.level()==0));
+            &&(!gltfModel(source.name())||result.level()==0));
     }
     private boolean comparisonVisible(){return compareView.isSelected()||modelingMesh!=null||primitivePreview!=null||(result!=null&&result.level()>0);}
     int workingViewportWidth(){return comparisonVisible()?preview.getWidth()/2:preview.getWidth();}
@@ -677,7 +682,7 @@ public final class AssetImportDialog {
         JFileChooser file=new JFileChooser();
         file.setDialogTitle("Import a mesh source (OBJ, STL, GLB)");
         file.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter(
-            "Mesh files (*.obj, *.obj.zip, *.stl, *.glb, *.btop)","obj","zip","stl","glb","btop"));
+            "Mesh files (*.obj, *.obj.zip, *.stl, *.gltf, *.glb, *.btop)","obj","zip","stl","gltf","glb","btop"));
         if(file.showOpenDialog(dialog)!=JFileChooser.APPROVE_OPTION)return;
         loadSource(file.getSelectedFile().toPath());
     }
@@ -700,11 +705,13 @@ public final class AssetImportDialog {
                     sourceTextureBytes=0;
                     var project=EditorTopologyProject.open(candidate);return new Loaded(project.mesh(),project,"",project.diskFingerprint());
                 }
-                if(extension.endsWith(".glb")){
-                    if(Files.size(candidate)>4_000_000)throw new IOException("Current game GLB decoder limit is 4 MiB");
-                    byte[] bytes=EditorMeshPipeline.readSource(candidate,4_000_000);
+                if(gltfModel(extension)){
+                    boolean json=extension.endsWith(".gltf");
+                    byte[] original=EditorMeshPipeline.readSource(candidate,json?EditorGltfFile.MAX_BYTES:4_000_000);
+                    String fingerprint=EditorMeshPipeline.sourceFingerprint(original);
+                    byte[] bytes=json?EditorGltfFile.toGlb(original):original;
                     String unsupported;
-                    try{Path document=Path.of(System.getProperty("user.home"),".beckenburg","editor","topology",java.util.UUID.randomUUID()+".btop");var project=EditorTopologyProject.fromGlb(candidate.getFileName().toString(),bytes,document);return new Loaded(project.mesh(),project,"Original GLB hierarchy/pivots/material metadata retained; native edits own the selected node instance.",EditorMeshPipeline.sourceFingerprint(bytes));}catch(IOException notEditable){unsupported=notEditable.getMessage();}
+                    try{Path document=Path.of(System.getProperty("user.home"),".beckenburg","editor","topology",java.util.UUID.randomUUID()+".btop");var project=EditorTopologyProject.fromGlb(candidate.getFileName().toString(),bytes,document);return new Loaded(project.mesh(),project,"Original GLB hierarchy/pivots/material metadata retained; native edits own the selected node instance.",fingerprint);}catch(IOException notEditable){unsupported=notEditable.getMessage();}
                     var decoded=GlbProps.decode(bytes);
                     java.util.Set<Integer> mats=new java.util.HashSet<>();
                     long texBytes=0;
@@ -721,7 +728,7 @@ public final class AssetImportDialog {
                             glbCorner(c)));
                     }
                     return new Loaded(new EditorMeshPipeline.Mesh(candidate.getFileName().toString(),all,bytes.length),null,
-                        "GLB retained read-only: "+unsupported,EditorMeshPipeline.sourceFingerprint(bytes));
+                        "GLB retained read-only: "+unsupported,fingerprint);
                 }
                 sourceTextureBytes=0;
                 byte[] bytes=EditorMeshPipeline.readSource(candidate,(int)EditorMeshPipeline.MAX_SOURCE_BYTES);
@@ -800,13 +807,13 @@ public final class AssetImportDialog {
                         .append(part.after()).append(" triangles, ").append(part.verticesBefore())
                         .append(" -> ").append(part.verticesAfter()).append(" unique positions\n");
                     for(String warning:result.warnings())report.append("WARNING: ").append(warning).append("\n");
-                    if(mesh.name().toLowerCase(Locale.ROOT).endsWith(".glb")&&level>0)
+                    if(gltfModel(mesh.name())&&level>0)
                         report.append("WARNING: GLB material and named-node identities are not carried into regenerated fallback textures.\n");
                     if(mesh.name().toLowerCase(Locale.ROOT).endsWith(".obj")&&mesh.materials().isEmpty())
                         report.append("NOTE: OBJ source MTL/texture links are not yet converted; uses a generated low-res fallback atlas.\n");
                     if(mesh.name().toLowerCase(Locale.ROOT).endsWith(".stl"))
                         report.append("NOTE: STL contains no UV/material atlas; uses a generated low-res fallback atlas.\n");
-                    boolean texturedGlb=mesh.name().toLowerCase(Locale.ROOT).endsWith(".glb");
+                    boolean texturedGlb=gltfModel(mesh.name());
                     if(texturedGlb&&level>0)report.append(
                         "PUBLISH DISABLED: this regression exporter would replace original GLB materials with a checkerboard. Use level 0 or a UV/material-preserving optimizer.\n");
                     details.setText(report.toString());details.setCaretPosition(0);
@@ -833,7 +840,7 @@ public final class AssetImportDialog {
         if(remaining==0)return;
         // This path is not a material-preserving GLB optimizer. Reject it,
         // including programmatic invocations that bypass the disabled button.
-        if(source.name().toLowerCase(Locale.ROOT).endsWith(".glb")&&result.level()>0){
+        if(gltfModel(source.name())&&result.level()>0){
             JOptionPane.showMessageDialog(dialog,
                 "Textured GLB reduction would discard source UV/material bindings. "+
                 "Use level 0 or repair/optimize the model with a material-preserving tool.",
@@ -868,8 +875,13 @@ public final class AssetImportDialog {
                         expectedSource=saved.diskFingerprint();savedSourceFingerprint.set(expectedSource);
                     }
                 }
-                byte[] output=authoringProject==null&&chosen.level()==0&&original.getFileName().toString().toLowerCase(Locale.ROOT).endsWith(".glb")
-                    ?sourceBytes:EditorGlbWriter.encode(chosen.optimized());
+                byte[] output;
+                String filename=original.getFileName().toString().toLowerCase(Locale.ROOT);
+                if (authoringProject==null && chosen.level()==0 && gltfModel(filename)) {
+                    output=filename.endsWith(".gltf") ? EditorGltfFile.toGlb(sourceBytes) : sourceBytes;
+                } else {
+                    output=EditorGlbWriter.encode(chosen.optimized());
+                }
                 // Use the exact decoder that live gameplay will use. No mock preview-only mesh.
                 if(authoringProject!=null)EditorGlbWriter.validate(chosen.optimized(),output);
                 GlbProps.decode(output);

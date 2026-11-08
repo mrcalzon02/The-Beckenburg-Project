@@ -193,15 +193,24 @@ public final class G2TexturedModelGuiTest {
         check(project.snapshot().equals(edited),"Redo restores the complete scaled mesh");
         var bundle=output.resolve("edited.obj.zip");
         var glb=output.resolve("edited.glb");
+        var gltf=output.resolve("edited.gltf");
         edt(() -> {
             button(ui,"saveMesh");
-            check(ui.exportObj(bundle) && ui.exportGlb(glb),"Human interchange export");
+            check(ui.exportObj(bundle) && ui.exportGlb(glb) && ui.exportGlb(gltf),"Human interchange export");
             capture(ui,output.resolve("model.png"));
             button(ui,"apply");
         });
         await(() -> published.get()!=null);
         EditorObjBundle.validate(edited,Files.readAllBytes(bundle));
         EditorGlbWriter.validate(project.mesh(),Files.readAllBytes(glb));
+        EditorGltfFileTest.verify(project.mesh(),Files.readAllBytes(gltf),Files.readAllBytes(png));
+        byte[] reviewedJson=Files.readAllBytes(gltf);
+        try {
+            project.exportGlb(project.observe(),gltf,"0".repeat(64));
+            throw new AssertionError("Stale writer replaced JSON glTF");
+        } catch (java.io.IOException expected) {
+            check(Arrays.equals(reviewedJson,Files.readAllBytes(gltf)),"Failed export changed reviewed JSON");
+        }
         verifyRuntime(textured);
         var archive=ImportedAssetLibrary.root().resolve(published.get()+".authoring.btop");
         check(EditorTopologyProject.open(archive).snapshot().equals(edited),"Published native archive");
@@ -217,7 +226,7 @@ public final class G2TexturedModelGuiTest {
         renderer.lamp=false;
         renderer.drawDevAssetRoom(List.of(new DevAssetReviewCatalog.Entry(DevAssetReviewCatalog.Kind.IMPORTED,published.get())),0,.4);
         ImageIO.write(renderer.image(),"png",output.resolve("game.png").toFile());
-        for (Path source : List.of(bundle,glb,output.resolve("edited.btop"))) {
+        for (Path source : List.of(bundle,glb,gltf,output.resolve("edited.btop"))) {
             edt(() -> ui.loadSource(source));
             await(() -> ready(ui));
             edt(() -> {
@@ -226,9 +235,17 @@ public final class G2TexturedModelGuiTest {
                     imported.snapshot().quads().size()==6,"Editor import of "+source);
                 if (source.toString().endsWith(".btop")) check(imported.snapshot().equals(edited),"Native reopen");
             });
+            if (source.equals(gltf)) {
+                published.set(null);
+                edt(() -> button(ui,"apply"));
+                await(() -> published.get()!=null);
+                verifyRuntime(textured);
+                check(Arrays.equals(Files.readAllBytes(gltf),Files.readAllBytes(
+                    ImportedAssetLibrary.root().resolve(published.get()+".source.gltf"))),"Original JSON source archive");
+            }
         }
         System.out.println("PASS G2 textured box: two workspaces, 8 vertices, 6 quads, 12 triangles, "
-            +"36 runtime corners with transformed hard normals and UVs, undo/redo, OBJ bundle/GLB/native reopen");
+            +"36 runtime corners with transformed hard normals and UVs, undo/redo, OBJ bundle/GLB/glTF/native reopen");
     }
     public static void main(String[] args) throws Exception {
         Path home=Files.createTempDirectory("g2-textured-");
