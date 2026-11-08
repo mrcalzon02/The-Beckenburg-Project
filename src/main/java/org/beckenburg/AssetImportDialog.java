@@ -184,6 +184,8 @@ public final class AssetImportDialog {
     private final JButton fixUvStretch=new JButton("Fix selected face stretch");
     private final JButton relaxUvInterior=new JButton("Relax island interior");
     private final JButton packMaterialUvs=new JButton("Preview material packing");
+    private final JComboBox<String> pinScope=new JComboBox<>(new String[]{"Corner A","Corner B","Corner C","Entire island"});
+    private final JButton pinUvs=new JButton("Pin"),unpinUvs=new JButton("Unpin");
     private final JSpinner packPadding=new JSpinner(new SpinnerNumberModel(1,0,1024,1));
     private final JCheckBox keepPackDensity=new JCheckBox("Keep current texel density");
     private double materialRenderedRotation=Double.NaN;
@@ -561,7 +563,12 @@ public final class AssetImportDialog {
                 new JScrollPane(paintLayer),layerButtons,
                 EditorTopologyWorkspace.form("Name",paintLayerName,"Blend",paintBlend,"Opacity (%)",paintOpacity),previewPaintStyle));
             materialTools.addTab("Pack",EditorTopologyWorkspace.column(new JLabel("SELECTED MATERIAL ISLANDS"),
-                EditorTopologyWorkspace.form("Gutter (texels)",packPadding),keepPackDensity,packMaterialUvs));
+                EditorTopologyWorkspace.form("Gutter (texels)",packPadding),keepPackDensity,packMaterialUvs,
+                EditorTopologyWorkspace.form("Pin selection",pinScope),pinUvs,unpinUvs));
+            pinScope.setToolTipText("Packing holds any island with a pinned UV in place.");
+            pinUvs.addActionListener(e->previewPin(true));
+            unpinUvs.addActionListener(e->previewPin(false));
+            materialTools.addChangeListener(e->{if(materialWorkspace!=null)materialWorkspace.showPins(materialTools.getSelectedComponent()==materialTools.getComponentAt(materialTools.indexOfTab("Pack")));});
             packMaterialUvs.setToolTipText("Place all islands of the selected material in tile zero. The source image stays fixed.");
             packMaterialUvs.addActionListener(e->{
                 if(selectedHit==null)return;
@@ -650,6 +657,7 @@ public final class AssetImportDialog {
             bound;
         previewPaintStyle.setEnabled(layerEditable);paintBlend.setEnabled(layerEditable);paintOpacity.setEnabled(layerEditable);
         packMaterialUvs.setEnabled(layerEditable);packPadding.setEnabled(layerEditable);keepPackDensity.setEnabled(layerEditable);
+        pinScope.setEnabled(layerEditable);pinUvs.setEnabled(layerEditable);unpinUvs.setEnabled(layerEditable);
         paintLayer.setEnabled(layerEditable);paintLayerName.setEnabled(layerEditable);
         addPaintLayer.setEnabled(layerEditable && paintLayers.size()<16);removePaintLayer.setEnabled(layerEditable && paintLayers.size()>1);
         raisePaintLayer.setEnabled(layerEditable && paintLayer.getSelectedIndex()>0);
@@ -771,6 +779,11 @@ public final class AssetImportDialog {
         if(busy||topologyProject==null||selectedHit==null||selectionMode.getSelectedIndex()!=2)return;
         long face=selectedHit.faceId();var operation=(EditorTopologyProject.FaceEdit)faceOperation.getSelectedItem();double amount=((Number)faceAmount.getValue()).doubleValue();
         beginModelingPreview(p->p.previewFaceEdit(face,operation,amount));
+    }
+    private void previewPin(boolean pin){
+        if(selectedHit==null)return;
+        long face=selectedHit.faceId();int index=pinScope.getSelectedIndex();
+        beginMaterialPreview(p->p.previewUvPins(face,index==3?-1:index,pin));
     }
     private void beginMaterialPreview(java.util.function.Function<EditorTopologyProject,EditorTopologyProject.EditPreview> operation){
         if(materialWorkspace!=null)materialWorkspace.previewIssue(null);

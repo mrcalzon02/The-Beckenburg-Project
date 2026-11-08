@@ -27,6 +27,11 @@ final class EditorUvRelax {
             join(i,next(t));join(next(i),t);
         }
         for(int i=0;i<count;i++)root[i]=find(i);
+        for(int i=0;i<count;i++){
+            var face=faces.get(island[i/3]);
+            var c=switch(i%3){case 0->face.a();case 1->face.b();default->face.c();};
+            if(c.pinned())fixed[root[i]]=true;
+        }
         for(int i=0;i<count;i++)if(fixed[i])fixed[root[i]]=true;
         boolean interior=false;
         for(int i=0;i<count;i++)if(!fixed[root[i]]){interior=true;break;}

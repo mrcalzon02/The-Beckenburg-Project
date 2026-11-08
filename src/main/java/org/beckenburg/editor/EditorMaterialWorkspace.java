@@ -23,6 +23,8 @@ public final class EditorMaterialWorkspace extends JPanel {
     private EditorMeshMaterial material;
     private BufferedImage texture;
     private Long selectedFace;
+    private boolean pinsVisible;
+    public void showPins(boolean visible){pinsVisible=visible;canvas.repaint();}
     private final JButton isolate=new JButton("Isolate"), hide=new JButton("Hide"), showAll=new JButton("Show all");
     public record Visibility(Long isolated,java.util.Set<Long> hidden) {
         public Visibility { hidden=java.util.Set.copyOf(hidden); }
@@ -223,6 +225,19 @@ public final class EditorMaterialWorkspace extends JPanel {
         if(state==null)return;for(int row=0;row<faces.size();row++){var face=faces.get(row);
             if(material==null?!face.material().isEmpty():!face.material().equals(material.key()))continue;
             boolean chosen=selectedFace!=null&&face.id()==selectedFace;g.setColor(chosen?new Color(255,219,80):new Color(220,235,248,140));g.setStroke(new BasicStroke(chosen?3:1));var corners=List.of(face.a(),face.b(),face.c());for(int i=0;i<3;i++){var a=corners.get(i);var b=corners.get((i+1)%3);g.drawLine(x(a.u(),r),y(a.v(),r),x(b.u(),r),y(b.v(),r));}
+        }
+        if(pinsVisible && material!=null){
+            g.clipRect((int)r[0],(int)r[1],(int)Math.ceil(r[2])+1,(int)Math.ceil(r[3])+1);
+            for(int row=0;row<faces.size();row++){
+                var f=faces.get(row);if(!f.material().equals(material.key()))continue;
+                int index=0;
+                for(var c:List.of(f.a(),f.b(),f.c())){
+                    int px=x(c.u(),r),py=y(c.v(),r);
+                    if(c.pinned()){g.setColor(Color.BLACK);g.fillOval(px-5,py-5,10,10);g.setColor(Color.CYAN);g.fillOval(px-3,py-3,6,6);}
+                    if(f==selected){String label=String.valueOf((char)('A'+index));g.setColor(Color.BLACK);g.fillRect(px+4,py-14,12,15);g.setColor(Color.WHITE);g.drawString(label,px+5,py-2);}
+                    index++;
+                }
+            }
         }
     }finally{g.dispose();}}
     private void pick(Point point){if(state==null)return;double[] r=imageRect();

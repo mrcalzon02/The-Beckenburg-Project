@@ -8,13 +8,14 @@ import java.util.*;
  * derived from stable indexed vertices/corner UVs. No game scene is duplicated.
  */
 public final class EditorTopologyProject implements EditorProject<EditorTopologyProject.State> {
-    private static final int MAGIC=0x42544f50,VERSION=10,MAX_VERTICES=EditorMeshPipeline.MAX_TRIANGLES*3;
+    private static final int MAGIC=0x42544f50,VERSION=11,MAX_VERTICES=EditorMeshPipeline.MAX_TRIANGLES*3;
     public record Vertex(long id,String part,double x,double y,double z){
         public Vertex {
             text(part);if(id<0||!Double.isFinite(x)||!Double.isFinite(y)||!Double.isFinite(z))throw new IllegalArgumentException("Invalid topology vertex");
         }
     }
-    public record Corner(long vertex,double u,double v,EditorMeshPipeline.Normal normal){
+    public record Corner(long vertex,double u,double v,EditorMeshPipeline.Normal normal,boolean pinned){
+        public Corner(long vertex,double u,double v,EditorMeshPipeline.Normal normal){this(vertex,u,v,normal,false);}
         public Corner(long vertex,double u,double v){this(vertex,u,v,null);}
         public Corner {if(vertex<0||!Double.isFinite(u)||!Double.isFinite(v))throw new IllegalArgumentException("Invalid corner");}
     }
@@ -242,7 +243,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         return new EditorMeshPipeline.Vertex(v.x(),v.y(),v.z(),c.u(),c.v(),c.normal());
     }
     private static EditorMeshPipeline.Triangle triangle(Face f,Map<Long,Vertex> values){return new EditorMeshPipeline.Triangle(f.part(),corner(f.a(),values),corner(f.b(),values),corner(f.c(),values),f.material());}
-    private static Corner normalCorner(Corner c,EditorMeshPipeline.Normal n){return new Corner(c.vertex(),c.u(),c.v(),n);}
+    private static Corner normalCorner(Corner c,EditorMeshPipeline.Normal n){return new Corner(c.vertex(),c.u(),c.v(),n,c.pinned());}
     private static Face normalFace(Face f,EditorMeshPipeline.Triangle t){return new Face(f.id(),f.part(),normalCorner(f.a(),t.a().normal()),normalCorner(f.b(),t.b().normal()),normalCorner(f.c(),t.c().normal()),f.material());}
     public synchronized EditorMeshPipeline.Mesh mesh(){return mesh(state);}
     public synchronized EditorMeshTopology topology(){return topology(state);}
@@ -277,6 +278,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
             ||operation==FaceEdit.EXTRUDE&&(amount==0||Math.abs(amount)>10000))
             throw new IllegalArgumentException("Extrude needs a nonzero distance up to10000; inset needs a fraction between0 and1");
         var face=state.faces().stream().filter(f->f.id()==faceId).findFirst().orElseThrow(()->new IllegalArgumentException("Unknown native face ID"));
+        if(face.a().pinned()||face.b().pinned()||face.c().pinned())throw new IllegalArgumentException("Unpin this face before changing its topology");
         if(state.vertices().size()>MAX_VERTICES-3||state.faces().size()>EditorMeshPipeline.MAX_TRIANGLES-6)
             throw new IllegalArgumentException("Model edit exceeds topology budget");
         long vertexMax=state.vertices().stream().mapToLong(Vertex::id).max().orElse(-1),faceMax=state.faces().stream().mapToLong(Face::id).max().orElse(-1);
@@ -415,7 +417,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         if(!topology(after).manifold())throw new IllegalArgumentException("Weld would leave invalid topology; select complete seams or repair degenerate faces first");
         return new EditPreview(this,state,after,revision,"WELD COINCIDENT / -"+replacements.size()+" vertices, -"+removed+" collapsed triangles");
     }
-    private static Corner weldCorner(Corner value,Map<Long,Long> replacements){return new Corner(replacements.getOrDefault(value.vertex(),value.vertex()),value.u(),value.v(),value.normal());}
+    private static Corner weldCorner(Corner value,Map<Long,Long> replacements){return new Corner(replacements.getOrDefault(value.vertex(),value.vertex()),value.u(),value.v(),value.normal(),value.pinned());}
     /** Remove invalid zero/non-finite-area triangles explicitly, retaining every surviving stable ID/UV. */
     public synchronized EditPreview previewRemoveDegenerates(){
         var positions=vertices(state);var remaining=new ArrayList<Face>();
@@ -613,6 +615,41 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         int other=graph.edges().get(edge.twin()).face();
         return state.faces().get(index).material().equals(state.faces().get(other).material())?other:-1;
     }
+    /** Corner scope follows the seam-connected UV vertex; scope -1 pins every corner of the island. */
+    public EditPreview previewUvPins(long faceId,int scope,boolean pinned){
+        var observed=observe();var before=observed.snapshot();var graph=observed.topology();
+        int[] island=uvFaces(before,faceId,graph);
+        var selected=new BitSet(before.faces().size()*3);
+        if(scope==-1){
+            for(int index:island)selected.set(index*3,index*3+3);
+        }else{
+            if(scope<0||scope>2)throw new IllegalArgumentException("Unknown UV corner scope");
+            int[] queue=new int[3*island.length];
+            int first=island[0]*3+scope,count=1;queue[0]=first;selected.set(first);
+            for(int head=0;head<count;head++){
+                int c=queue[head],previous=graph.edges().get(c).previous();
+                for(int edge:new int[]{c,previous}){
+                    if(uvNeighbor(before,graph,edge/3,edge%3)<0)continue;
+                    int twin=graph.edges().get(edge).twin();
+                    int other=edge==c?graph.edges().get(twin).next():twin;
+                    if(!selected.get(other)){selected.set(other);queue[count++]=other;}
+                }
+            }
+        }
+        var faces=new ArrayList<>(before.faces());int changed=0;
+        for(int index:island){
+            var f=faces.get(index);var corners=new Corner[]{f.a(),f.b(),f.c()};
+            boolean touched=false;
+            for(int i=0;i<3;i++)if(selected.get(index*3+i) && corners[i].pinned()!=pinned){
+                var c=corners[i];corners[i]=new Corner(c.vertex(),c.u(),c.v(),c.normal(),pinned);changed++;touched=true;
+            }
+            if(touched)faces.set(index,new Face(f.id(),f.part(),corners[0],corners[1],corners[2],f.material()));
+        }
+        if(changed==0)throw new IllegalArgumentException(pinned?"Selected UVs are already pinned":"Selected UVs are not pinned");
+        var after=new State(id,sourceFingerprint,before.name(),before.sourceBytes(),before.vertices(),faces,before.materials(),
+            before.glbSource(),before.frames(),before.quads());
+        return new EditPreview(this,before,after,observed.revision(),(pinned?"PIN UV":"UNPIN UV")+" / "+changed+" corners");
+    }
     public EditPreview previewPackMaterial(long faceId,int padding,boolean keepDensity){
         var observation=observe();
         var before=observation.snapshot();
@@ -662,7 +699,8 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
                 if(operation==UvTransform.MOVE){u=c.u()+first;v=c.v()+second;}
                 else if(operation==UvTransform.ROTATE){double nextU=cos*u-sin*v;v=sin*u+cos*v+pv;u=nextU+pu;}
                 else{u=u*first+pu;v=v*second+pv;}
-                if(!Double.isFinite(u)||!Double.isFinite(v)||Math.abs(u)>1e9||Math.abs(v)>1e9)throw new IllegalArgumentException("UV transform exceeds native coordinate budget");corners.add(new Corner(c.vertex(),u,v,c.normal()));
+                if(!Double.isFinite(u)||!Double.isFinite(v)||Math.abs(u)>1e9||Math.abs(v)>1e9)throw new IllegalArgumentException("UV transform exceeds native coordinate budget");if(c.pinned() && (u!=c.u()||v!=c.v()))throw new IllegalArgumentException("Unpin the UV before transforming it");
+                corners.add(c.pinned()?c:new Corner(c.vertex(),u,v,c.normal()));
             }
             faces.set(i,new Face(f.id(),f.part(),corners.get(0),corners.get(1),corners.get(2),f.material()));
         }
@@ -780,17 +818,18 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         boolean normals=state.faces().stream().anyMatch(f->f.a().normal()!=null||f.b().normal()!=null||f.c().normal()!=null);
         int paintEncoding=EditorMeshMaterial.paintEncoding(state.materials());
         int version=paintEncoding>1?6+paintEncoding:workspace!=null?7:!state.quads().isEmpty()?6:!state.frames().isEmpty()?5:state.glbSource()!=null?4:state.materials().isEmpty()?(normals?2:1):3;
+        if(state.faces().stream().anyMatch(f->f.a().pinned()||f.b().pinned()||f.c().pinned()))version=11;
         var data=new DataOutputStream(out);data.writeInt(MAGIC);data.writeInt(version);
         data.writeUTF(state.sceneId());data.writeUTF(state.sourceFingerprint());data.writeUTF(state.name());data.writeLong(state.sourceBytes());
         data.writeInt(state.vertices().size());for(var v:state.vertices()){
             data.writeLong(v.id());data.writeUTF(v.part());data.writeDouble(v.x());data.writeDouble(v.y());data.writeDouble(v.z());
         }
         data.writeInt(state.faces().size());for(var f:state.faces()){
-            data.writeLong(f.id());data.writeUTF(f.part());for(var c:List.of(f.a(),f.b(),f.c())){data.writeLong(c.vertex());data.writeDouble(c.u());data.writeDouble(c.v());if(version>=2){data.writeBoolean(c.normal()!=null);if(c.normal()!=null){data.writeDouble(c.normal().x());data.writeDouble(c.normal().y());data.writeDouble(c.normal().z());}}}if(version>=3)data.writeUTF(f.material());
+            data.writeLong(f.id());data.writeUTF(f.part());for(var c:List.of(f.a(),f.b(),f.c())){data.writeLong(c.vertex());data.writeDouble(c.u());data.writeDouble(c.v());if(version>=2){data.writeBoolean(c.normal()!=null);if(c.normal()!=null){data.writeDouble(c.normal().x());data.writeDouble(c.normal().y());data.writeDouble(c.normal().z());}}if(version>=11)data.writeBoolean(c.pinned());}if(version>=3)data.writeUTF(f.material());
         }
         if(version>=3)EditorMeshMaterial.writeTable(data,state.materials());
         if(version>=4){byte[] glb=state.glbSource()==null?new byte[0]:state.glbSource().original();data.writeInt(glb.length);data.write(glb);}if(version>=5)EditorMeshFrame.write(data,state.frames());if(version>=6){data.writeInt(state.quads().size());for(var pair:state.quads()){data.writeLong(pair.first());data.writeLong(pair.second());}}
-        if(version>=8){EditorMeshMaterial.writePaintEdits(data,state.materials(),paintEncoding);data.writeBoolean(workspace!=null);}
+        if(version>=8){EditorMeshMaterial.writePaintEdits(data,state.materials(),version==11?4:paintEncoding);data.writeBoolean(workspace!=null);}
         if(version>=7&&workspace!=null)workspace.write(data);
         data.flush();
     }
@@ -812,7 +851,9 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
                 for(int j=0;j<3;j++){
                     long vertex=data.readLong();double u=data.readDouble(),v=data.readDouble();EditorMeshPipeline.Normal normal=null;
                     if(version>=2){int present=data.readUnsignedByte();if(present>1)throw new IOException("Invalid native corner-normal flag");if(present==1)normal=new EditorMeshPipeline.Normal(data.readDouble(),data.readDouble(),data.readDouble());}
-                    corners.add(new Corner(vertex,u,v,normal));
+                    int pinned=version>=11?data.readUnsignedByte():0;
+                    if(pinned>1)throw new IOException("Invalid native UV pin flag");
+                    corners.add(new Corner(vertex,u,v,normal,pinned==1));
                 }
                 faces.add(new Face(face,part,corners.get(0),corners.get(1),corners.get(2),version>=3?data.readUTF():""));
             }
@@ -820,7 +861,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
             EditorGlbReader.Document glb=null;if(version>=4){int length=data.readInt();if((length<28&&!(version>=5&&length==0))||length>4_000_000)throw new IOException("Native GLB source byte budget exceeded");if(length>0){byte[] original=data.readNBytes(length);if(original.length!=length)throw new EOFException("Truncated GLB source");glb=EditorGlbReader.read(original);glb.requireEditable();}}
             var frames=version>=5?EditorMeshFrame.read(data):Map.<String,EditorMeshFrame>of();
             var quads=new ArrayList<EditorMeshQuad>();if(version>=6){int pairs=count(data,faces.size()/2);for(int i=0;i<pairs;i++)quads.add(new EditorMeshQuad(data.readLong(),data.readLong()));}
-            if(version>=8)materials=EditorMeshMaterial.readPaintEdits(data,materials,version-6);
+            if(version>=8)materials=EditorMeshMaterial.readPaintEdits(data,materials,version==11?4:version-6);
             var state=new State(id,source,name,size,vertices,faces,materials,glb,frames,quads);
             var workspace=version>=7&&(version==7||data.readBoolean())?EditorModelWorkspace.read(data,vertices.size()):null;
             if(workspace!=null && workspace.forState(state)!=workspace)throw new IOException("Workspace references missing native components");

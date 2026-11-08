@@ -785,6 +785,16 @@ public final class G2TexturedModelGuiTest {
             var f=packed.faces().get(i);var t=packedGame.triangles().get(i);
             near(t.a().u(),f.a().u());near(t.a().v(),f.a().v());near(t.b().u(),f.b().u());near(t.b().v(),f.b().v());near(t.c().u(),f.c().u());near(t.c().v(),f.c().v());
         }
+        edt(()->{select("pinScope",2);button(ui,"pinUvs");});applyReview();
+        var pinned=project.snapshot();
+        for(int i=0;i<4;i++)check(pinned.faces().get(i).c().pinned(),"Material Editor missed a shared pin");
+        edt(()->{select("pinScope",3);button(ui,"pinUvs");});applyReview();
+        edt(()->{captureMaterial("uv-pins.png");button(ui,"saveMesh");});await(()->ready(ui));
+        check(EditorTopologyProject.open(project.documentPath()).snapshot().equals(project.snapshot()),"Material Editor save lost frozen island");
+        edt(()->button(ui,"unpinUvs"));applyReview();
+        check(project.snapshot().equals(packed),"Unpin entire island did not restore packed corners");
+        for(int step=0;step<3;step++){edt(()->button(ui,"undoMesh"));await(()->ready(ui));}
+        check(project.snapshot().equals(packed),"Undo pin history exactly");
         edt(()->button(ui,"undoMesh"));await(()->ready(ui));check(project.snapshot().equals(original),"Undo material packing exactly");
     }
     public static void main(String[] args) throws Exception {

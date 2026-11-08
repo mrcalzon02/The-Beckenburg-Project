@@ -96,14 +96,28 @@ public final class EditorUvRelaxTest {
         check(Math.max(Math.max(b[0]-a[2],a[0]-b[2]),Math.max(b[1]-a[3],a[1]-b[3]))>=1-1e-10,"One texel gutter between islands");
         check(before.vertices()==after.vertices() && before.materials()==after.materials(),"Packing modified source geometry or texture");
     }
-    private static void packing(EditorTopologyProject p){
+    private static void packing(EditorTopologyProject p)throws Exception{
         var before=p.snapshot();
         long id=before.faces().get(0).id();
         try{p.previewPackMaterial(id,1,true);throw new AssertionError("Packed oversized islands at original density");}
         catch(IllegalArgumentException expected){check(p.snapshot()==before,"Rejected packing mutated the document");}
         var preview=p.previewPackMaterial(id,1,false);verifyPack(before,preview.snapshot());
         check(p.previewPackMaterial(before.faces().get(4).id(),1,false).snapshot().equals(preview.snapshot()),"Packing depends on selected seed");
-        p.applyPreview(preview);p.restore(before);
+        p.applyPreview(preview);
+        p.applyPreview(p.previewUvPins(id,2,true));
+        var pinned=p.snapshot();
+        for(int i=0;i<4;i++)check(pinned.faces().get(i).c().pinned(),"UV fan pin missed a shared corner");
+        check(pinned.faces().get(4)==preview.snapshot().faces().get(4),"Pin crossed a seam");
+        try{p.previewUvTransform(id,true,EditorTopologyProject.UvTransform.MOVE,1,0,true);throw new AssertionError("Moved a pinned UV");}
+        catch(IllegalArgumentException expected){check(p.snapshot()==pinned,"Rejected move changed document");}
+        p.applyPreview(p.previewUvPins(id,-1,true));
+        var frozen=p.snapshot();p.save();
+        check(EditorTopologyProject.open(p.documentPath()).snapshot().equals(frozen),"Native reopen lost pins");
+        p.applyPreview(p.previewUvTransform(before.faces().get(4).id(),true,EditorTopologyProject.UvTransform.MOVE,2,0,true));
+        var repacked=p.previewPackMaterial(id,1,false).snapshot();
+        for(int i=0;i<4;i++)check(repacked.faces().get(i)==frozen.faces().get(i),"Packing moved a frozen island");
+        check(repacked.faces().get(4).a().u()<1,"Packing did not recover free island");
+        p.restore(before);
         for(int index:List.of(0,4))p.applyPreview(p.previewUvTransform(before.faces().get(index).id(),true,
             EditorTopologyProject.UvTransform.SCALE,.125,.125,true));
         var small=p.snapshot();var kept=p.previewPackMaterial(id,1,true).snapshot();

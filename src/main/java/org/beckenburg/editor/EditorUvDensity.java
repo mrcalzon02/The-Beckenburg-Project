@@ -37,6 +37,7 @@ public record EditorUvDensity(double texelsPerUnit,double stretch) {
         return map(face,width,height).map(Map2D::density);
     }
     static EditorTopologyProject.Face correct(EditorTopologyProject.Face face,EditorMeshPipeline.Triangle geometry,int width,int height){
+        requireUnpinned(face);
         var m=map(geometry,width,height).orElseThrow(()->new IllegalArgumentException("Degenerate geometry cannot be relaxed"));
         var density=m.density();
         if(density.texelsPerUnit()==0)throw new IllegalArgumentException("Collapsed UVs require an initial mapping");
@@ -74,6 +75,7 @@ public record EditorUvDensity(double texelsPerUnit,double stretch) {
         double xx=0,xy=0,yy=0,area=0,centerU=0,centerV=0;
         for(int index:island){
             var face=faces.get(index);
+            requireUnpinned(face);
             var m=map(geometry.apply(face),width,height).orElseThrow(()->new IllegalArgumentException("Island has degenerate geometry"));
             double det=Math.abs(m.determinant());
             if(det==0)throw new IllegalArgumentException("Island contains collapsed UVs");
@@ -117,5 +119,9 @@ public record EditorUvDensity(double texelsPerUnit,double stretch) {
     }
     private static double signedUvArea(EditorTopologyProject.Face f){
         return (f.b().u()-f.a().u())*(f.c().v()-f.a().v())-(f.b().v()-f.a().v())*(f.c().u()-f.a().u());
+    }
+    private static void requireUnpinned(EditorTopologyProject.Face f){
+        if(f.a().pinned()||f.b().pinned()||f.c().pinned())
+            throw new IllegalArgumentException("Unpin the UVs before changing the island transform");
     }
 }

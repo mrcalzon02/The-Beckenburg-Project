@@ -9,7 +9,9 @@ final class EditorUvPack {
     private static final class Island {
         double minU=Double.POSITIVE_INFINITY,minV=minU,maxU=-minU,maxV=-minU,x,y;
         long first=Long.MAX_VALUE;
+        boolean fixed;
         void include(Corner c){
+            fixed|=c.pinned();
             minU=Math.min(minU,c.u());minV=Math.min(minV,c.v());maxU=Math.max(maxU,c.u());maxV=Math.max(maxV,c.v());
         }
     }
@@ -36,25 +38,30 @@ final class EditorUvPack {
         }
         islands.sort(Comparator.<Island>comparingDouble(i->i.maxV-i.minV).reversed()
             .thenComparing(Comparator.<Island>comparingDouble(i->i.maxU-i.minU).reversed()).thenComparingLong(i->i.first));
+        var budget=new Budget();
+        var fixed=islands.stream().filter(i->i.fixed).toList();
+        var moving=islands.stream().filter(i->!i.fixed).toList();
+        var bins=available(fixed,width,height,padding,budget);
+        if(moving.isEmpty())throw new IllegalArgumentException("All material islands are pinned");
         double scale=1;
         if(!keepDensity){
             double hi=Double.POSITIVE_INFINITY;
-            for(var i:islands)hi=Math.min(hi,Math.min((width-2d*padding)/((i.maxU-i.minU)*width),
+            for(var i:moving)hi=Math.min(hi,Math.min((width-2d*padding)/((i.maxU-i.minU)*width),
                 (height-2d*padding)/((i.maxV-i.minV)*height)));
             if(!Double.isFinite(hi) || hi<=0)throw new IllegalArgumentException("UV extent exceeds packing range");
             double lo=0;
             for(int step=0;step<52;step++){
                 double mid=lo+(hi-lo)*.5;
-                if(layout(islands,width,height,padding,mid))lo=mid;else hi=mid;
+                if(layout(moving,bins,width,height,padding,mid,budget))lo=mid;else hi=mid;
             }
             scale=lo;
-            if(Math.abs(scale-1)<1e-12 && layout(islands,width,height,padding,1))scale=1;
+            if(Math.abs(scale-1)<1e-12 && layout(moving,bins,width,height,padding,1,budget))scale=1;
         }
-        if(!(scale>0) || !layout(islands,width,height,padding,scale))
+        if(!(scale>0) || !layout(moving,bins,width,height,padding,scale,budget))
             throw new IllegalArgumentException("Islands do not fit with this padding and density");
         var faces=new ArrayList<>(state.faces());
         for(int i=0;i<chart.length;i++){
-            var island=chart[i];if(island==null)continue;
+            var island=chart[i];if(island==null || island.fixed)continue;
             var f=faces.get(i);
             var next=new Face(f.id(),f.part(),place(f.a(),island,scale,width,height),place(f.b(),island,scale,width,height),
                 place(f.c(),island,scale,width,height),f.material());
@@ -75,14 +82,55 @@ final class EditorUvPack {
     }
     private static Corner corner(Face f,int i){return i==0?f.a():i==1?f.b():f.c();}
     private static boolean sameUv(Corner a,Corner b){return a.u()==b.u() && a.v()==b.v();}
-    private static boolean layout(List<Island> islands,int width,int height,int padding,double scale){
-        double x=padding,y=padding,row=0;
+    private record Rect(double x0,double y0,double x1,double y1) {}
+    private static final class Budget {
+        private int remaining=16_000_000;
+        void use(){if(--remaining<0)throw new IllegalArgumentException("Pinned atlas exceeds packing work budget");}
+    }
+    private static List<Rect> available(List<Island> fixed,int width,int height,int p,Budget budget){
+        List<Rect> bins=List.of(new Rect(p,p,width-p,height-p));
+        var occupied=new ArrayList<Rect>();
+        for(var f:fixed){
+            var r=new Rect(f.minU*width,f.minV*height,f.maxU*width,f.maxV*height);
+            if(r.x0<p || r.y0<p || r.x1>width-p || r.y1>height-p)
+                throw new IllegalArgumentException("Pinned island lies outside the requested atlas border");
+            for(var old:occupied){
+                budget.use();
+                if(r.x0<old.x1+p && old.x0<r.x1+p && r.y0<old.y1+p && old.y0<r.y1+p)
+                    throw new IllegalArgumentException("Pinned islands overlap or violate the requested gutter");
+            }
+            occupied.add(r);
+            var remaining=new ArrayList<Rect>();
+            for(var b:bins){
+                budget.use();
+                double x0=Math.max(r.x0-p,b.x0),x1=Math.min(r.x1+p,b.x1);
+                double y0=Math.max(r.y0-p,b.y0),y1=Math.min(r.y1+p,b.y1);
+                if(x0>=x1 || y0>=y1){remaining.add(b);continue;}
+                if(b.y0<y0)remaining.add(new Rect(b.x0,b.y0,b.x1,y0));
+                if(b.y1>y1)remaining.add(new Rect(b.x0,y1,b.x1,b.y1));
+                double mid0=y0+(b.y0<y0?p:0),mid1=y1-(b.y1>y1?p:0);
+                if(mid0<mid1 && b.x0<x0)remaining.add(new Rect(b.x0,mid0,x0,mid1));
+                if(mid0<mid1 && b.x1>x1)remaining.add(new Rect(x1,mid0,b.x1,mid1));
+            }
+            bins=remaining;
+        }
+        return bins;
+    }
+    private static boolean layout(List<Island> islands,List<Rect> bins,int width,int height,int padding,double scale,Budget budget){
+        var x=new double[bins.size()];var y=new double[bins.size()];var row=new double[bins.size()];
+        for(int k=0;k<bins.size();k++){x[k]=bins.get(k).x0;y[k]=bins.get(k).y0;}
         for(var i:islands){
             double w=(i.maxU-i.minU)*width*scale,h=(i.maxV-i.minV)*height*scale;
-            if(w>width-2d*padding)return false;
-            if(x+w>width-padding){x=padding;y+=row+padding;row=0;}
-            if(y+h>height-padding)return false;
-            i.x=x;i.y=y;x+=w+padding;row=Math.max(row,h);
+            boolean placed=false;
+            for(int k=0;k<bins.size();k++){
+                budget.use();
+                var bin=bins.get(k);if(w>bin.x1-bin.x0)continue;
+                double px=x[k],py=y[k],shelf=row[k];
+                if(px+w>bin.x1){px=bin.x0;py+=shelf+padding;shelf=0;}
+                if(py+h>bin.y1)continue;
+                i.x=px;i.y=py;x[k]=px+w+padding;y[k]=py;row[k]=Math.max(shelf,h);placed=true;break;
+            }
+            if(!placed)return false;
         }
         return true;
     }
