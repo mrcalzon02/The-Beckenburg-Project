@@ -3950,6 +3950,17 @@
       "action": "Author physical edges, banks/coves/approach necks, engineered soil cuts and supported foundation/rim pieces, then verify standing/crouched arrival with canonical van, full movement and render/light separation. Preserve genuine native holes and all access routes. Keep S04 unaccepted.",
       "evidence": "verification/roster-editor-terrain-2026-11-07/visual-review.json; previews/*-saved-terrain.png; structures/wld-14/wld-18/wld-07-mortuary actual GLB cutaways; quality/DESQUAREIFY_GATE.md",
       "older_maps": "Audit every terrain footprint individually. Native hole success does not certify prior ground shapes, source padding, model support or boundary containment."
+    },
+    {
+      "id": "DEV-367",
+      "title": "Asset discovery overlooks staged site kits and treats a small runtime sample as the working library",
+      "status": "CANONICAL DISCOVERY POINTER AND INDEX IMPLEMENTED; named chat pack imports remain pending",
+      "affected": "Map rebuild model selection, staged roughs/refinements, source-library masters and source-chat artifact discovery",
+      "symptom": "Initial furnishing preparation inspected24runtime furniture models without consulting the298map-specific roughs,15refinements, source-library masters or the owner-identified model conversations.",
+      "cause": "No mandatory root-level inventory pointer connected the separate staged catalogs, masters, runtime set and conversation sources.",
+      "action": "Add ASSET_LIBRARY.md and AGENTS/README lookup rule. Canonical index scans every tracked/unignored GLB, records paths/stages/map assignments/hashes and distinguishes aliases/map/review assemblies. Add query/site lookup, regeneration/staleness gate and313staged-model bounds. Rough assets are permitted for blocking/budget/placement now, refinement later; do not invent duplicate replacements. Three exact named chat references remain recorded, with history rate-limited and artifact import pending.",
+      "evidence": "ASSET_LIBRARY.md; development/assets/asset-library-index.json; tools/index_staged_map_models.py; development/levels/rebuild/furnishings/; native staged-source inspection and runtime sample images",
+      "older_maps": "Reconcile every requested missing/new prop against this index and its site kits before creating a replacement. Imported chat packs must preserve provenance and update this pointer; no automatic quality or map acceptance from indexing."
     }
   ],
   "audit_categories": [

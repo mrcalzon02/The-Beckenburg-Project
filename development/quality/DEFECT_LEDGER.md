@@ -5036,6 +5036,20 @@ Evidence and verification: verification/roster-editor-terrain-2026-11-07/visual-
 
 Older-map obligation: Audit every terrain footprint individually. Native hole success does not certify prior ground shapes, source padding, model support or boundary containment.
 
+### DEV-367 — Asset discovery overlooks staged site kits and treats a small runtime sample as the working library
+
+**Status:** CANONICAL DISCOVERY POINTER AND INDEX IMPLEMENTED; named chat pack imports remain pending · **Affected:** Map rebuild model selection, staged roughs/refinements, source-library masters and source-chat artifact discovery
+
+Initial furnishing preparation inspected24runtime furniture models without consulting the298map-specific roughs,15refinements, source-library masters or the owner-identified model conversations.
+
+Cause / uncertainty: No mandatory root-level inventory pointer connected the separate staged catalogs, masters, runtime set and conversation sources.
+
+Fix / next action: Add ASSET_LIBRARY.md and AGENTS/README lookup rule. Canonical index scans every tracked/unignored GLB, records paths/stages/map assignments/hashes and distinguishes aliases/map/review assemblies. Add query/site lookup, regeneration/staleness gate and313staged-model bounds. Rough assets are permitted for blocking/budget/placement now, refinement later; do not invent duplicate replacements. Three exact named chat references remain recorded, with history rate-limited and artifact import pending.
+
+Evidence and verification: ASSET_LIBRARY.md; development/assets/asset-library-index.json; tools/index_staged_map_models.py; development/levels/rebuild/furnishings/; native staged-source inspection and runtime sample images
+
+Older-map obligation: Reconcile every requested missing/new prop against this index and its site kits before creating a replacement. Imported chat packs must preserve provenance and update this pointer; no automatic quality or map acceptance from indexing.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

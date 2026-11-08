@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "canonical_index": "development/assets/asset-library-index.json",
+  "index_sha256": "fa27d3328703a2ac7f48849d99455e521e349a8639708cf9bc40f788accbb6de",
+  "local_glb_files": 1667,
+  "distinct_file_hashes": 1534,
+  "all_current_file_hashes_verified": true,
+  "unindexed_new_glb_rejected": true,
+  "check_preserves_index_and_pointer": true,
+  "source_model_mutations": false,
+  "staged_models_measured": 313,
+  "named_chat_artifact_import": "Pending history rate limit; exact source references retained"
+}

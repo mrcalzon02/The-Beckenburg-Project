@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 7845,
+  "count": 7847,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -73634,6 +73634,26 @@
       "height": 350,
       "bytes": 319657,
       "sha256": "c1cd9bb200f25f4070c6f8996a50778da9d0dd33b805bdb45d87becdab549769"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/library-pilot.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/library-pilot.png",
+      "title": "Library pilot",
+      "kind": "Native model-library sample inspection",
+      "width": 2400,
+      "height": 1700,
+      "bytes": 2526801,
+      "sha256": "20fabd40640cbf22fd4e650cfe0330f882ae84134f5e0619fb520219bb583ccb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/staged-source-inspection.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/staged-source-inspection.png",
+      "title": "Staged source inspection",
+      "kind": "Native staged rough-model inspection",
+      "width": 2400,
+      "height": 1700,
+      "bytes": 2638558,
+      "sha256": "47c1a8940d78373de097b0b3b0a14e08b84abb2f37960e7d227d1a7305830a99"
     },
     {
       "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/00-entrance-and-coat-vestibule/east.png",
