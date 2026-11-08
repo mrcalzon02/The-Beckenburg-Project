@@ -1,0 +1,695 @@
+{
+  "id": "WLD-17",
+  "status": "ACTUAL_STAIR_END_SUPPORT_CANDIDATE_FULL_ROUTE_GATES_OPEN",
+  "source_glb": "development/levels/rebuild/floor-closure-pass/wld-17/closed-floors.glb",
+  "source_glb_sha256": "16e14a7dc6105b52c7a5c8c3ea7032b0ed32486211922302ccae4568ca971b75",
+  "source_physics": "development/levels/rebuild/floor-closure-pass/wld-17/closed-floors.hcs2",
+  "source_physics_sha256": "f48d004caddf529a36b5fcb49528328dd7bd72c09b9b0f90ca0f595a0f870bfd",
+  "layout": "development/levels/rebuild/stair-landing-pass/wld-17/authored-layout.json",
+  "layout_sha256": "856eb535f56f95ee026929de0883018595833506728de43aeab81b6183ed2b99",
+  "targeted_segments": [
+    {
+      "link": "route-11",
+      "segment": 1
+    },
+    {
+      "link": "route-12",
+      "segment": 1
+    }
+  ],
+  "new_parts": 48,
+  "new_triangles": 600,
+  "platforms": [
+    {
+      "name": "Authored stair end WLD-17 route-11 1 corner-bridge region0",
+      "link": "route-11",
+      "segment": 1,
+      "end": "corner-bridge",
+      "top_y": 4,
+      "bottom_y": 3.84,
+      "pad_polygon": [
+        [
+          12.0,
+          16.75
+        ],
+        [
+          12.8,
+          16.75
+        ],
+        [
+          12.8,
+          15.25
+        ],
+        [
+          12.0,
+          15.25
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-17 route-12 1 corner-bridge region0",
+      "link": "route-12",
+      "segment": 1,
+      "end": "corner-bridge",
+      "top_y": 4,
+      "bottom_y": 3.84,
+      "pad_polygon": [
+        [
+          48.0,
+          16.75
+        ],
+        [
+          48.8,
+          16.75
+        ],
+        [
+          48.8,
+          15.25
+        ],
+        [
+          48.0,
+          15.25
+        ]
+      ]
+    }
+  ],
+  "landing_trims": [],
+  "removed_source_meshes": [
+    "route-11 flight0 step1",
+    "route-11 flight0 step2",
+    "route-11 flight0 step3",
+    "route-11 flight0 step4",
+    "route-11 flight0 step5",
+    "route-11 flight0 step6",
+    "route-11 flight0 step7",
+    "route-11 flight0 step8",
+    "route-11 flight0 step9",
+    "route-11 flight0 step10",
+    "route-11 flight0 step11",
+    "route-11 flight0 step12",
+    "route-11 flight0 step13",
+    "route-11 flight0 step14",
+    "route-11 flight0 step15",
+    "route-11 flight0 step16",
+    "route-11 flight0 step17",
+    "route-11 flight0 step18",
+    "route-11 flight0 step19",
+    "route-11 flight0 step20",
+    "route-11 flight0 step21",
+    "route-11 flight0 step22",
+    "route-11 flight0 step23",
+    "route-12 flight0 step1",
+    "route-12 flight0 step2",
+    "route-12 flight0 step3",
+    "route-12 flight0 step4",
+    "route-12 flight0 step5",
+    "route-12 flight0 step6",
+    "route-12 flight0 step7",
+    "route-12 flight0 step8",
+    "route-12 flight0 step9",
+    "route-12 flight0 step10",
+    "route-12 flight0 step11",
+    "route-12 flight0 step12",
+    "route-12 flight0 step13",
+    "route-12 flight0 step14",
+    "route-12 flight0 step15",
+    "route-12 flight0 step16",
+    "route-12 flight0 step17",
+    "route-12 flight0 step18",
+    "route-12 flight0 step19",
+    "route-12 flight0 step20",
+    "route-12 flight0 step21",
+    "route-12 flight0 step22",
+    "route-12 flight0 step23"
+  ],
+  "removed_native_parts": [
+    "181:route-11 flight0 step1",
+    "182:route-11 flight0 step2",
+    "183:route-11 flight0 step3",
+    "184:route-11 flight0 step4",
+    "185:route-11 flight0 step5",
+    "186:route-11 flight0 step6",
+    "187:route-11 flight0 step7",
+    "188:route-11 flight0 step8",
+    "189:route-11 flight0 step9",
+    "190:route-11 flight0 step10",
+    "191:route-11 flight0 step11",
+    "192:route-11 flight0 step12",
+    "193:route-11 flight0 step13",
+    "194:route-11 flight0 step14",
+    "195:route-11 flight0 step15",
+    "196:route-11 flight0 step16",
+    "197:route-11 flight0 step17",
+    "198:route-11 flight0 step18",
+    "199:route-11 flight0 step19",
+    "200:route-11 flight0 step20",
+    "201:route-11 flight0 step21",
+    "202:route-11 flight0 step22",
+    "203:route-11 flight0 step23",
+    "206:route-12 flight0 step1",
+    "207:route-12 flight0 step2",
+    "208:route-12 flight0 step3",
+    "209:route-12 flight0 step4",
+    "210:route-12 flight0 step5",
+    "211:route-12 flight0 step6",
+    "212:route-12 flight0 step7",
+    "213:route-12 flight0 step8",
+    "214:route-12 flight0 step9",
+    "215:route-12 flight0 step10",
+    "216:route-12 flight0 step11",
+    "217:route-12 flight0 step12",
+    "218:route-12 flight0 step13",
+    "219:route-12 flight0 step14",
+    "220:route-12 flight0 step15",
+    "221:route-12 flight0 step16",
+    "222:route-12 flight0 step17",
+    "223:route-12 flight0 step18",
+    "224:route-12 flight0 step19",
+    "225:route-12 flight0 step20",
+    "226:route-12 flight0 step21",
+    "227:route-12 flight0 step22",
+    "228:route-12 flight0 step23"
+  ],
+  "decisions": [
+    {
+      "link": "route-11",
+      "segment": 1,
+      "end": "corner-bridge",
+      "authored_point": [
+        12,
+        4,
+        16
+      ],
+      "actual_existing_top_receivers": [
+        "route-11 landing0"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            12.8,
+            16.0
+          ],
+          [
+            12.8,
+            15.25
+          ],
+          [
+            12.0,
+            15.25
+          ],
+          [
+            12.0,
+            16.0
+          ]
+        ],
+        [
+          [
+            12.75,
+            16.75
+          ],
+          [
+            12.8,
+            16.75
+          ],
+          [
+            12.8,
+            16.0
+          ],
+          [
+            12.75,
+            16.0
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-17 route-11 1 corner-bridge region0"
+      ]
+    },
+    {
+      "link": "route-11",
+      "segment": 1,
+      "end": "low",
+      "authored_point": [
+        20,
+        0,
+        16
+      ],
+      "actual_existing_top_receivers": [
+        "Floor barracks"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "route-11",
+      "segment": 1,
+      "end": "high",
+      "authored_point": [
+        12.8,
+        4,
+        16.0
+      ],
+      "actual_existing_top_receivers": [
+        "Authored stair end WLD-17 route-11 1 corner-bridge region0",
+        "route-11 landing0"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "route-12",
+      "segment": 1,
+      "end": "corner-bridge",
+      "authored_point": [
+        48,
+        4,
+        16
+      ],
+      "actual_existing_top_receivers": [
+        "route-12 landing0"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            48.8,
+            16.0
+          ],
+          [
+            48.8,
+            15.25
+          ],
+          [
+            48.0,
+            15.25
+          ],
+          [
+            48.0,
+            16.0
+          ]
+        ],
+        [
+          [
+            48.75,
+            16.75
+          ],
+          [
+            48.8,
+            16.75
+          ],
+          [
+            48.8,
+            16.0
+          ],
+          [
+            48.75,
+            16.0
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-17 route-12 1 corner-bridge region0"
+      ]
+    },
+    {
+      "link": "route-12",
+      "segment": 1,
+      "end": "low",
+      "authored_point": [
+        56,
+        0,
+        16
+      ],
+      "actual_existing_top_receivers": [
+        "Floor plant"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "route-12",
+      "segment": 1,
+      "end": "high",
+      "authored_point": [
+        48.8,
+        4,
+        16.0
+      ],
+      "actual_existing_top_receivers": [
+        "Authored stair end WLD-17 route-12 1 corner-bridge region0",
+        "route-12 landing0"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    }
+  ],
+  "stair_components": [
+    "129:route-02 landing0",
+    "130:route-02 flight0 step1",
+    "131:route-02 flight0 step2",
+    "132:route-02 flight0 step3",
+    "133:route-02 flight0 step4",
+    "134:route-02 flight0 step5",
+    "135:route-02 flight0 step6",
+    "136:route-02 flight0 step7",
+    "137:route-02 flight0 step8",
+    "138:route-02 flight0 step9",
+    "139:route-02 flight0 step10",
+    "140:route-02 flight0 step11",
+    "141:route-02 flight0 step12",
+    "142:route-03 landing0",
+    "143:route-03 flight0 step1",
+    "144:route-03 flight0 step2",
+    "145:route-03 flight0 step3",
+    "146:route-03 flight0 step4",
+    "147:route-03 flight0 step5",
+    "148:route-03 flight0 step6",
+    "149:route-03 flight0 step7",
+    "150:route-03 flight0 step8",
+    "151:route-03 flight0 step9",
+    "152:route-03 flight0 step10",
+    "153:route-03 flight0 step11",
+    "154:route-03 flight0 step12",
+    "161:route-10 landing0",
+    "162:route-10 flight0 step1",
+    "163:route-10 flight0 step2",
+    "164:route-10 flight0 step3",
+    "165:route-10 flight0 step4",
+    "166:route-10 flight0 step5",
+    "167:route-10 flight0 step6",
+    "168:route-10 flight0 step7",
+    "169:route-10 flight0 step8",
+    "170:route-10 flight0 step9",
+    "171:route-10 flight0 step10",
+    "172:route-10 flight0 step11",
+    "173:route-10 flight0 step12",
+    "174:route-10 flight0 step13",
+    "175:route-10 flight0 step14",
+    "176:route-10 flight0 step15",
+    "177:route-10 flight0 step16",
+    "178:route-10 flight0 step17",
+    "179:route-11 landing0",
+    "180:route-11 landing2",
+    "204:route-12 landing0",
+    "205:route-12 landing2",
+    "Rebuilt stair WLD-17 route-11 flight0 part0",
+    "Rebuilt stair WLD-17 route-11 flight0 part1",
+    "Rebuilt stair WLD-17 route-11 flight0 part2",
+    "Rebuilt stair WLD-17 route-11 flight0 part3",
+    "Rebuilt stair WLD-17 route-11 flight0 part4",
+    "Rebuilt stair WLD-17 route-11 flight0 part5",
+    "Rebuilt stair WLD-17 route-11 flight0 part6",
+    "Rebuilt stair WLD-17 route-11 flight0 part7",
+    "Rebuilt stair WLD-17 route-11 flight0 part8",
+    "Rebuilt stair WLD-17 route-11 flight0 part9",
+    "Rebuilt stair WLD-17 route-11 flight0 part10",
+    "Rebuilt stair WLD-17 route-11 flight0 part11",
+    "Rebuilt stair WLD-17 route-11 flight0 part12",
+    "Rebuilt stair WLD-17 route-11 flight0 part13",
+    "Rebuilt stair WLD-17 route-11 flight0 part14",
+    "Rebuilt stair WLD-17 route-11 flight0 part15",
+    "Rebuilt stair WLD-17 route-11 flight0 part16",
+    "Rebuilt stair WLD-17 route-11 flight0 part17",
+    "Rebuilt stair WLD-17 route-11 flight0 part18",
+    "Rebuilt stair WLD-17 route-11 flight0 part19",
+    "Rebuilt stair WLD-17 route-11 flight0 part20",
+    "Rebuilt stair WLD-17 route-11 flight0 part21",
+    "Rebuilt stair WLD-17 route-11 flight0 part22",
+    "Rebuilt stair WLD-17 route-12 flight0 part0",
+    "Rebuilt stair WLD-17 route-12 flight0 part1",
+    "Rebuilt stair WLD-17 route-12 flight0 part2",
+    "Rebuilt stair WLD-17 route-12 flight0 part3",
+    "Rebuilt stair WLD-17 route-12 flight0 part4",
+    "Rebuilt stair WLD-17 route-12 flight0 part5",
+    "Rebuilt stair WLD-17 route-12 flight0 part6",
+    "Rebuilt stair WLD-17 route-12 flight0 part7",
+    "Rebuilt stair WLD-17 route-12 flight0 part8",
+    "Rebuilt stair WLD-17 route-12 flight0 part9",
+    "Rebuilt stair WLD-17 route-12 flight0 part10",
+    "Rebuilt stair WLD-17 route-12 flight0 part11",
+    "Rebuilt stair WLD-17 route-12 flight0 part12",
+    "Rebuilt stair WLD-17 route-12 flight0 part13",
+    "Rebuilt stair WLD-17 route-12 flight0 part14",
+    "Rebuilt stair WLD-17 route-12 flight0 part15",
+    "Rebuilt stair WLD-17 route-12 flight0 part16",
+    "Rebuilt stair WLD-17 route-12 flight0 part17",
+    "Rebuilt stair WLD-17 route-12 flight0 part18",
+    "Rebuilt stair WLD-17 route-12 flight0 part19",
+    "Rebuilt stair WLD-17 route-12 flight0 part20",
+    "Rebuilt stair WLD-17 route-12 flight0 part21",
+    "Rebuilt stair WLD-17 route-12 flight0 part22",
+    "Authored stair end WLD-17 route-11 1 corner-bridge region0",
+    "Authored stair end WLD-17 route-12 1 corner-bridge region0"
+  ],
+  "retained_glb_resources": {
+    "original_binary_bytes_preserved": 1523764,
+    "original_static_resources_preserved": true,
+    "replaced_scene_nodes": [
+      181,
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      188,
+      189,
+      190,
+      191,
+      192,
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199,
+      200,
+      201,
+      202,
+      203,
+      206,
+      207,
+      208,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215,
+      216,
+      217,
+      218,
+      219,
+      220,
+      221,
+      222,
+      223,
+      224,
+      225,
+      226,
+      227,
+      228
+    ]
+  },
+  "glb_sha256": "8c578940984816d3109521f293431527874d9b1c2c9c97d461c8aa45acc5fbf1",
+  "physics_sha256": "79f897cb0258ec71ae0da5afbed78cc01f5e28099515c2b25ee382da19f0aac0",
+  "generator_sha256": "38c042e4dfd641a017597a9f399273da313a7d655fe66ee9492578fb1fa77838",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-17-whole-site.png",
+      "sha256": "0f8b2bde1630ed60f042cc43c3d15e2b2a7de35360689a300f27579d8d78efb3",
+      "type": "native full scene"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-17-new-landings.png",
+      "sha256": "7cde61296e17d3e1ee1b43bd3ee4785bd14e51226b4212512a7672ca457a6a52",
+      "type": "native isolated actual landing changes; context hidden"
+    }
+  ],
+  "source_layout": "development/levels/layouts/wld-17/layout.json",
+  "source_layout_sha256": "392474ba8bbdd4c03ac96283355bc4f08023fc72d745fe0643c608f5f75e9e37",
+  "flight_replacements": [
+    {
+      "link": "route-11",
+      "source_segment": 1,
+      "old_points": [
+        [
+          12,
+          4,
+          16
+        ],
+        [
+          20,
+          0,
+          16
+        ]
+      ],
+      "new_points": [
+        [
+          12.8,
+          4,
+          16.0
+        ],
+        [
+          20,
+          0,
+          16
+        ]
+      ],
+      "shift_metres": 0.8,
+      "original_landings_retained": [
+        "route-11 landing0"
+      ],
+      "new_stair_parts": [
+        "Rebuilt stair WLD-17 route-11 flight0 part0",
+        "Rebuilt stair WLD-17 route-11 flight0 part1",
+        "Rebuilt stair WLD-17 route-11 flight0 part2",
+        "Rebuilt stair WLD-17 route-11 flight0 part3",
+        "Rebuilt stair WLD-17 route-11 flight0 part4",
+        "Rebuilt stair WLD-17 route-11 flight0 part5",
+        "Rebuilt stair WLD-17 route-11 flight0 part6",
+        "Rebuilt stair WLD-17 route-11 flight0 part7",
+        "Rebuilt stair WLD-17 route-11 flight0 part8",
+        "Rebuilt stair WLD-17 route-11 flight0 part9",
+        "Rebuilt stair WLD-17 route-11 flight0 part10",
+        "Rebuilt stair WLD-17 route-11 flight0 part11",
+        "Rebuilt stair WLD-17 route-11 flight0 part12",
+        "Rebuilt stair WLD-17 route-11 flight0 part13",
+        "Rebuilt stair WLD-17 route-11 flight0 part14",
+        "Rebuilt stair WLD-17 route-11 flight0 part15",
+        "Rebuilt stair WLD-17 route-11 flight0 part16",
+        "Rebuilt stair WLD-17 route-11 flight0 part17",
+        "Rebuilt stair WLD-17 route-11 flight0 part18",
+        "Rebuilt stair WLD-17 route-11 flight0 part19",
+        "Rebuilt stair WLD-17 route-11 flight0 part20",
+        "Rebuilt stair WLD-17 route-11 flight0 part21",
+        "Rebuilt stair WLD-17 route-11 flight0 part22"
+      ]
+    },
+    {
+      "link": "route-12",
+      "source_segment": 1,
+      "old_points": [
+        [
+          48,
+          4,
+          16
+        ],
+        [
+          56,
+          0,
+          16
+        ]
+      ],
+      "new_points": [
+        [
+          48.8,
+          4,
+          16.0
+        ],
+        [
+          56,
+          0,
+          16
+        ]
+      ],
+      "shift_metres": 0.8,
+      "original_landings_retained": [
+        "route-12 landing0"
+      ],
+      "new_stair_parts": [
+        "Rebuilt stair WLD-17 route-12 flight0 part0",
+        "Rebuilt stair WLD-17 route-12 flight0 part1",
+        "Rebuilt stair WLD-17 route-12 flight0 part2",
+        "Rebuilt stair WLD-17 route-12 flight0 part3",
+        "Rebuilt stair WLD-17 route-12 flight0 part4",
+        "Rebuilt stair WLD-17 route-12 flight0 part5",
+        "Rebuilt stair WLD-17 route-12 flight0 part6",
+        "Rebuilt stair WLD-17 route-12 flight0 part7",
+        "Rebuilt stair WLD-17 route-12 flight0 part8",
+        "Rebuilt stair WLD-17 route-12 flight0 part9",
+        "Rebuilt stair WLD-17 route-12 flight0 part10",
+        "Rebuilt stair WLD-17 route-12 flight0 part11",
+        "Rebuilt stair WLD-17 route-12 flight0 part12",
+        "Rebuilt stair WLD-17 route-12 flight0 part13",
+        "Rebuilt stair WLD-17 route-12 flight0 part14",
+        "Rebuilt stair WLD-17 route-12 flight0 part15",
+        "Rebuilt stair WLD-17 route-12 flight0 part16",
+        "Rebuilt stair WLD-17 route-12 flight0 part17",
+        "Rebuilt stair WLD-17 route-12 flight0 part18",
+        "Rebuilt stair WLD-17 route-12 flight0 part19",
+        "Rebuilt stair WLD-17 route-12 flight0 part20",
+        "Rebuilt stair WLD-17 route-12 flight0 part21",
+        "Rebuilt stair WLD-17 route-12 flight0 part22"
+      ]
+    }
+  ],
+  "corner_bridges": [
+    {
+      "link": "route-11",
+      "source_segment": 1,
+      "points": [
+        [
+          12,
+          4,
+          16
+        ],
+        [
+          12.8,
+          4,
+          16.0
+        ]
+      ],
+      "width": 1.5
+    },
+    {
+      "link": "route-12",
+      "source_segment": 1,
+      "points": [
+        [
+          48,
+          4,
+          16
+        ],
+        [
+          48.8,
+          4,
+          16.0
+        ]
+      ],
+      "width": 1.5
+    }
+  ],
+  "source_segment_map": {
+    "route-01": {},
+    "route-02": {
+      "1": 1
+    },
+    "route-03": {
+      "1": 1
+    },
+    "route-04": {},
+    "route-05": {},
+    "route-06": {},
+    "route-07": {},
+    "route-08": {},
+    "route-09": {},
+    "route-10": {
+      "1": 1
+    },
+    "route-11": {
+      "2": 1
+    },
+    "route-12": {
+      "2": 1
+    },
+    "route-13": {},
+    "route-14": {},
+    "route-15": {},
+    "route-16": {},
+    "route-17": {}
+  },
+  "open_findings": [],
+  "remaining": "Independent solids/material/pivot/native checks and all25flat/continuous stair regressions. Wall/terrain penetrations, crossed flights, circulation, supports/guards and actual runtime/network/hardware gates remain open."
+}

@@ -1,0 +1,503 @@
+{
+  "status": "BREADTH_BY_STAGE_STAIR_END_AND_CORNER_CONSTRUCTION",
+  "scope": 29,
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "status": "RETAINED_PREVIOUS_FLOOR_CLOSURE_SOURCE_NO_ENDPOINT_REPAIR_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/academy/construction.json",
+      "remaining": "Individually audit complete map terrain, stairs/guards/supports, power/hiding/story and runtime integration; no acceptance inferred."
+    },
+    {
+      "id": "ASYLUM",
+      "status": "RETAINED_PREVIOUS_FLOOR_CLOSURE_SOURCE_NO_ENDPOINT_REPAIR_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/asylum/construction.json",
+      "remaining": "Individually audit complete map terrain, stairs/guards/supports, power/hiding/story and runtime integration; no acceptance inferred."
+    },
+    {
+      "id": "CASTLE",
+      "status": "RETAINED_MATURE_SOURCE_REQUIRES_INDIVIDUAL_ACCEPTANCE",
+      "previous_evidence": null,
+      "remaining": "Individually audit complete map terrain, stairs/guards/supports, power/hiding/story and runtime integration; no acceptance inferred."
+    },
+    {
+      "id": "CHURCH",
+      "status": "RETAINED_PREVIOUS_FLOOR_CLOSURE_SOURCE_NO_ENDPOINT_REPAIR_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/church/construction.json",
+      "remaining": "Individually audit complete map terrain, stairs/guards/supports, power/hiding/story and runtime integration; no acceptance inferred."
+    },
+    {
+      "id": "COLLEGE",
+      "status": "RETAINED_PREVIOUS_FLOOR_CLOSURE_SOURCE_NO_ENDPOINT_REPAIR_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/college/construction.json",
+      "remaining": "Individually audit complete map terrain, stairs/guards/supports, power/hiding/story and runtime integration; no acceptance inferred."
+    },
+    {
+      "id": "FARMHOUSE",
+      "status": "RETAINED_PREVIOUS_FLOOR_CLOSURE_SOURCE_NO_ENDPOINT_REPAIR_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/farmhouse/construction.json",
+      "remaining": "Individually audit complete map terrain, stairs/guards/supports, power/hiding/story and runtime integration; no acceptance inferred."
+    },
+    {
+      "id": "HOUSE",
+      "status": "RETAINED_MATURE_SOURCE_REQUIRES_INDIVIDUAL_ACCEPTANCE",
+      "previous_evidence": null,
+      "remaining": "Individually audit complete map terrain, stairs/guards/supports, power/hiding/story and runtime integration; no acceptance inferred."
+    },
+    {
+      "id": "MANSION",
+      "status": "RETAINED_PREVIOUS_FLOOR_CLOSURE_SOURCE_NO_ENDPOINT_REPAIR_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/mansion/construction.json",
+      "remaining": "Individually audit complete map terrain, stairs/guards/supports, power/hiding/story and runtime integration; no acceptance inferred."
+    },
+    {
+      "id": "PRISON",
+      "status": "RETAINED_PREVIOUS_FLOOR_CLOSURE_SOURCE_NO_ENDPOINT_REPAIR_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/prison/construction.json",
+      "remaining": "Individually audit complete map terrain, stairs/guards/supports, power/hiding/story and runtime integration; no acceptance inferred."
+    },
+    {
+      "id": "SCHOOL",
+      "status": "RETAINED_PREVIOUS_FLOOR_CLOSURE_SOURCE_NO_ENDPOINT_REPAIR_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/school/construction.json",
+      "remaining": "Individually audit complete map terrain, stairs/guards/supports, power/hiding/story and runtime integration; no acceptance inferred."
+    },
+    {
+      "id": "WLD-01",
+      "status": "RETAINED_MATURE_SOURCE_REQUIRES_INDIVIDUAL_ACCEPTANCE",
+      "previous_evidence": null,
+      "remaining": "Individually audit complete map terrain, stairs/guards/supports, power/hiding/story and runtime integration; no acceptance inferred."
+    },
+    {
+      "id": "WLD-02",
+      "status": "RETAINED_MATURE_SOURCE_REQUIRES_INDIVIDUAL_ACCEPTANCE",
+      "previous_evidence": null,
+      "remaining": "Individually audit complete map terrain, stairs/guards/supports, power/hiding/story and runtime integration; no acceptance inferred."
+    },
+    {
+      "id": "WLD-03",
+      "status": "AUTHORED_STAIR_END_AND_CORNER_CANDIDATE_RUNTIME_GATES_OPEN",
+      "construction": "development/levels/rebuild/stair-landing-pass/wld-03/construction.json",
+      "new_parts": 5,
+      "new_triangles": 88,
+      "revised_flights": 0,
+      "passing_flight_gains": [],
+      "remaining_failed_flights": [
+        {
+          "link": "L04",
+          "source_segment": "0"
+        },
+        {
+          "link": "L07",
+          "source_segment": "0"
+        }
+      ],
+      "flat_route_comparison": {
+        "samples": 3549,
+        "baseline_valid": 3171,
+        "new_block": 0,
+        "baseline_sweep": 3001,
+        "new_sweep_block": 0,
+        "after_valid": 3175,
+        "recovered_pose": 4,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-04",
+      "status": "AUTHORED_STAIR_END_AND_CORNER_CANDIDATE_RUNTIME_GATES_OPEN",
+      "construction": "development/levels/rebuild/stair-landing-pass/wld-04/construction.json",
+      "new_parts": 16,
+      "new_triangles": 204,
+      "revised_flights": 0,
+      "passing_flight_gains": [
+        {
+          "link": "L10",
+          "source_segment": "0"
+        },
+        {
+          "link": "L13",
+          "source_segment": "0"
+        }
+      ],
+      "remaining_failed_flights": [
+        {
+          "link": "L03",
+          "source_segment": "0"
+        },
+        {
+          "link": "L04",
+          "source_segment": "0"
+        },
+        {
+          "link": "L06",
+          "source_segment": "0"
+        },
+        {
+          "link": "L09",
+          "source_segment": "0"
+        },
+        {
+          "link": "L11",
+          "source_segment": "0"
+        }
+      ],
+      "flat_route_comparison": {
+        "samples": 1413,
+        "baseline_valid": 1086,
+        "new_block": 0,
+        "baseline_sweep": 975,
+        "new_sweep_block": 0,
+        "after_valid": 1092,
+        "recovered_pose": 6,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-05",
+      "status": "AUTHORED_STAIR_END_AND_CORNER_CANDIDATE_RUNTIME_GATES_OPEN",
+      "construction": "development/levels/rebuild/stair-landing-pass/wld-05/construction.json",
+      "new_parts": 6,
+      "new_triangles": 92,
+      "revised_flights": 0,
+      "passing_flight_gains": [
+        {
+          "link": "L09",
+          "source_segment": "0"
+        },
+        {
+          "link": "L15",
+          "source_segment": "0"
+        }
+      ],
+      "remaining_failed_flights": [
+        {
+          "link": "L16",
+          "source_segment": "0"
+        },
+        {
+          "link": "L17",
+          "source_segment": "0"
+        }
+      ],
+      "flat_route_comparison": {
+        "samples": 3510,
+        "baseline_valid": 2832,
+        "new_block": 0,
+        "baseline_sweep": 2705,
+        "new_sweep_block": 0,
+        "after_valid": 2849,
+        "recovered_pose": 17,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-06",
+      "status": "AUTHORED_STAIR_END_AND_CORNER_CANDIDATE_RUNTIME_GATES_OPEN",
+      "construction": "development/levels/rebuild/stair-landing-pass/wld-06/construction.json",
+      "new_parts": 6,
+      "new_triangles": 80,
+      "revised_flights": 0,
+      "passing_flight_gains": [],
+      "remaining_failed_flights": [
+        {
+          "link": "L16",
+          "source_segment": "0"
+        },
+        {
+          "link": "L17",
+          "source_segment": "0"
+        }
+      ],
+      "flat_route_comparison": {
+        "samples": 3744,
+        "baseline_valid": 3539,
+        "new_block": 0,
+        "baseline_sweep": 3392,
+        "new_sweep_block": 0,
+        "after_valid": 3543,
+        "recovered_pose": 4,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-07",
+      "status": "RETAINED_PREVIOUS_FLOOR_CLOSURE_SOURCE_NO_ENDPOINT_REPAIR_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-07/construction.json",
+      "remaining": "Individually audit complete map terrain, stairs/guards/supports, power/hiding/story and runtime integration; no acceptance inferred."
+    },
+    {
+      "id": "WLD-08",
+      "status": "AUTHORED_STAIR_END_AND_CORNER_CANDIDATE_RUNTIME_GATES_OPEN",
+      "construction": "development/levels/rebuild/stair-landing-pass/wld-08/construction.json",
+      "new_parts": 0,
+      "new_triangles": 0,
+      "revised_flights": 0,
+      "passing_flight_gains": [],
+      "remaining_failed_flights": [
+        {
+          "link": "L17",
+          "source_segment": "0"
+        },
+        {
+          "link": "L18",
+          "source_segment": "0"
+        },
+        {
+          "link": "L20",
+          "source_segment": "0"
+        }
+      ],
+      "flat_route_comparison": {
+        "samples": 4062,
+        "baseline_valid": 3275,
+        "new_block": 0,
+        "baseline_sweep": 3110,
+        "new_sweep_block": 0,
+        "after_valid": 3275,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-09",
+      "status": "AUTHORED_STAIR_END_AND_CORNER_CANDIDATE_RUNTIME_GATES_OPEN",
+      "construction": "development/levels/rebuild/stair-landing-pass/wld-09/construction.json",
+      "new_parts": 39,
+      "new_triangles": 476,
+      "revised_flights": 1,
+      "passing_flight_gains": [
+        {
+          "link": "L18",
+          "source_segment": "2"
+        }
+      ],
+      "remaining_failed_flights": [
+        {
+          "link": "L07",
+          "source_segment": "0"
+        },
+        {
+          "link": "L09",
+          "source_segment": "0"
+        },
+        {
+          "link": "L11",
+          "source_segment": "0"
+        },
+        {
+          "link": "L12",
+          "source_segment": "0"
+        },
+        {
+          "link": "L18",
+          "source_segment": "0"
+        }
+      ],
+      "flat_route_comparison": {
+        "samples": 3123,
+        "baseline_valid": 2320,
+        "new_block": 0,
+        "baseline_sweep": 2219,
+        "new_sweep_block": 0,
+        "after_valid": 2322,
+        "recovered_pose": 2,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-10",
+      "status": "RETAINED_PREVIOUS_FLOOR_CLOSURE_SOURCE_NO_ENDPOINT_REPAIR_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-10/construction.json",
+      "remaining": "Individually audit complete map terrain, stairs/guards/supports, power/hiding/story and runtime integration; no acceptance inferred."
+    },
+    {
+      "id": "WLD-11",
+      "status": "AUTHORED_STAIR_END_AND_CORNER_CANDIDATE_RUNTIME_GATES_OPEN",
+      "construction": "development/levels/rebuild/stair-landing-pass/wld-11/construction.json",
+      "new_parts": 2,
+      "new_triangles": 44,
+      "revised_flights": 0,
+      "passing_flight_gains": [
+        {
+          "link": "L02",
+          "source_segment": "0"
+        }
+      ],
+      "remaining_failed_flights": [],
+      "flat_route_comparison": {
+        "samples": 3663,
+        "baseline_valid": 3448,
+        "new_block": 0,
+        "baseline_sweep": 3297,
+        "new_sweep_block": 0,
+        "after_valid": 3451,
+        "recovered_pose": 3,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-12",
+      "status": "AUTHORED_STAIR_END_AND_CORNER_CANDIDATE_RUNTIME_GATES_OPEN",
+      "construction": "development/levels/rebuild/stair-landing-pass/wld-12/construction.json",
+      "new_parts": 2,
+      "new_triangles": 52,
+      "revised_flights": 0,
+      "passing_flight_gains": [],
+      "remaining_failed_flights": [
+        {
+          "link": "L16",
+          "source_segment": "0"
+        },
+        {
+          "link": "L17",
+          "source_segment": "0"
+        }
+      ],
+      "flat_route_comparison": {
+        "samples": 4173,
+        "baseline_valid": 3377,
+        "new_block": 0,
+        "baseline_sweep": 3254,
+        "new_sweep_block": 0,
+        "after_valid": 3388,
+        "recovered_pose": 11,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-13",
+      "status": "AUTHORED_STAIR_END_AND_CORNER_CANDIDATE_RUNTIME_GATES_OPEN",
+      "construction": "development/levels/rebuild/stair-landing-pass/wld-13/construction.json",
+      "new_parts": 0,
+      "new_triangles": 0,
+      "revised_flights": 0,
+      "passing_flight_gains": [],
+      "remaining_failed_flights": [
+        {
+          "link": "L19",
+          "source_segment": "0"
+        }
+      ],
+      "flat_route_comparison": {
+        "samples": 4239,
+        "baseline_valid": 3920,
+        "new_block": 0,
+        "baseline_sweep": 3795,
+        "new_sweep_block": 0,
+        "after_valid": 3920,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-14",
+      "status": "RETAINED_PREVIOUS_FLOOR_CLOSURE_SOURCE_NO_ENDPOINT_REPAIR_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-14/construction.json",
+      "remaining": "Individually audit complete map terrain, stairs/guards/supports, power/hiding/story and runtime integration; no acceptance inferred."
+    },
+    {
+      "id": "WLD-15",
+      "status": "RETAINED_PREVIOUS_FLOOR_CLOSURE_SOURCE_NO_ENDPOINT_REPAIR_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-15/construction.json",
+      "remaining": "Individually audit complete map terrain, stairs/guards/supports, power/hiding/story and runtime integration; no acceptance inferred."
+    },
+    {
+      "id": "WLD-16",
+      "status": "RETAINED_PREVIOUS_FLOOR_CLOSURE_SOURCE_NO_ENDPOINT_REPAIR_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-16/construction.json",
+      "remaining": "Individually audit complete map terrain, stairs/guards/supports, power/hiding/story and runtime integration; no acceptance inferred."
+    },
+    {
+      "id": "WLD-17",
+      "status": "AUTHORED_STAIR_END_AND_CORNER_CANDIDATE_RUNTIME_GATES_OPEN",
+      "construction": "development/levels/rebuild/stair-landing-pass/wld-17/construction.json",
+      "new_parts": 48,
+      "new_triangles": 600,
+      "revised_flights": 2,
+      "passing_flight_gains": [
+        {
+          "link": "route-11",
+          "source_segment": "1"
+        },
+        {
+          "link": "route-12",
+          "source_segment": "1"
+        }
+      ],
+      "remaining_failed_flights": [],
+      "flat_route_comparison": {
+        "samples": 2913,
+        "baseline_valid": 2717,
+        "new_block": 0,
+        "baseline_sweep": 2629,
+        "new_sweep_block": 0,
+        "after_valid": 2717,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-18",
+      "status": "AUTHORED_STAIR_END_AND_CORNER_CANDIDATE_RUNTIME_GATES_OPEN",
+      "construction": "development/levels/rebuild/stair-landing-pass/wld-18/construction.json",
+      "new_parts": 76,
+      "new_triangles": 984,
+      "revised_flights": 4,
+      "passing_flight_gains": [
+        {
+          "link": "route-13",
+          "source_segment": "1"
+        },
+        {
+          "link": "route-14",
+          "source_segment": "3"
+        }
+      ],
+      "remaining_failed_flights": [
+        {
+          "link": "route-07",
+          "source_segment": "1"
+        },
+        {
+          "link": "route-08",
+          "source_segment": "1"
+        },
+        {
+          "link": "route-14",
+          "source_segment": "1"
+        }
+      ],
+      "flat_route_comparison": {
+        "samples": 3033,
+        "baseline_valid": 2878,
+        "new_block": 0,
+        "baseline_sweep": 2759,
+        "new_sweep_block": 0,
+        "after_valid": 2878,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "status": "RETAINED_PREVIOUS_FLOOR_CLOSURE_SOURCE_NO_ENDPOINT_REPAIR_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-07-mortuary/construction.json",
+      "remaining": "Individually audit complete map terrain, stairs/guards/supports, power/hiding/story and runtime integration; no acceptance inferred."
+    }
+  ],
+  "aggregate": {
+    "new_parts": 200,
+    "new_triangles": 2620,
+    "replaced_owned_steps": 144,
+    "flight_gains": 10,
+    "complete_link_gains": 7,
+    "remaining_failed_flights": 25,
+    "remaining_failed_links": 28,
+    "flat_samples": 110409,
+    "recovered_flat_poses": 47,
+    "new_flat_blocks": 0,
+    "new_flat_sweep_failures": 0
+  },
+  "remaining": "Wall/terrain penetrations, crossed flights, real terrain/shaft/portal revision, guards and intermediate supports; source candidates not runtime integration or completed map acceptance."
+}

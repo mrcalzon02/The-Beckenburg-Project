@@ -1,0 +1,1292 @@
+{
+  "id": "WLD-04",
+  "status": "ACTUAL_STAIR_END_SUPPORT_CANDIDATE_FULL_ROUTE_GATES_OPEN",
+  "source_glb": "development/levels/rebuild/floor-closure-pass/wld-04/closed-floors.glb",
+  "source_glb_sha256": "85f3a8d3b2516faccd8d72d566eec5afb5b2839d0621d78b0d7ff9defc660126",
+  "source_physics": "development/levels/rebuild/floor-closure-pass/wld-04/closed-floors.hcs2",
+  "source_physics_sha256": "202962dc366ccee56c2471468511fa6774183d30d782ac4f265ee64eb47b1e5e",
+  "layout": "development/levels/rebuild/wld-04/rough-layout.json",
+  "layout_sha256": "89430b74df791d484a7dd38df353a011d241bb727f7ff1c0a344f64f2e738104",
+  "targeted_segments": [
+    {
+      "link": "L03",
+      "segment": 0
+    },
+    {
+      "link": "L04",
+      "segment": 0
+    },
+    {
+      "link": "L06",
+      "segment": 0
+    },
+    {
+      "link": "L09",
+      "segment": 0
+    },
+    {
+      "link": "L10",
+      "segment": 0
+    },
+    {
+      "link": "L11",
+      "segment": 0
+    },
+    {
+      "link": "L13",
+      "segment": 0
+    }
+  ],
+  "new_parts": 16,
+  "new_triangles": 204,
+  "platforms": [
+    {
+      "name": "Authored stair end WLD-04 L03 0 low region0",
+      "link": "L03",
+      "segment": 0,
+      "end": "low",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "pad_polygon": [
+        [
+          14.185200667954863,
+          52.26716246495431
+        ],
+        [
+          14.731055268242871,
+          51.68231825036001
+        ],
+        [
+          13.268944731757129,
+          50.31768174963999
+        ],
+        [
+          12.723090131469121,
+          50.902525964234286
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-04 L03 0 high region0",
+      "link": "L03",
+      "segment": 0,
+      "end": "high",
+      "top_y": 3,
+      "bottom_y": 2.84,
+      "pad_polygon": [
+        [
+          28.73105526824287,
+          36.68231825036001
+        ],
+        [
+          29.27690986853088,
+          36.097474035765714
+        ],
+        [
+          27.81479933204514,
+          34.73283753504569
+        ],
+        [
+          27.26894473175713,
+          35.31768174963999
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-04 L04 0 low region0",
+      "link": "L04",
+      "segment": 0,
+      "end": "low",
+      "top_y": 3,
+      "bottom_y": 2.84,
+      "pad_polygon": [
+        [
+          28.87681240867132,
+          36.93338095116624
+        ],
+        [
+          28.989949493661168,
+          36.14142135623731
+        ],
+        [
+          27.010050506338832,
+          35.85857864376269
+        ],
+        [
+          26.896913421348984,
+          36.650538238691624
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-04 L04 0 low region1",
+      "link": "L04",
+      "segment": 0,
+      "end": "low",
+      "top_y": 3,
+      "bottom_y": 2.84,
+      "pad_polygon": [
+        [
+          28.87681240867132,
+          36.93338095116624
+        ],
+        [
+          28.989949493661168,
+          36.14142135623731
+        ],
+        [
+          27.010050506338832,
+          35.85857864376269
+        ],
+        [
+          26.896913421348984,
+          36.650538238691624
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-04 L04 0 high region0",
+      "link": "L04",
+      "segment": 0,
+      "end": "high",
+      "top_y": 6,
+      "bottom_y": 5.84,
+      "pad_polygon": [
+        [
+          30.989949493661168,
+          22.14142135623731
+        ],
+        [
+          31.103086578651016,
+          21.349461761308376
+        ],
+        [
+          29.12318759132868,
+          21.066619048833758
+        ],
+        [
+          29.010050506338832,
+          21.85857864376269
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-04 L04 0 high region1",
+      "link": "L04",
+      "segment": 0,
+      "end": "high",
+      "top_y": 6,
+      "bottom_y": 5.84,
+      "pad_polygon": [
+        [
+          30.989949493661168,
+          22.14142135623731
+        ],
+        [
+          31.103086578651016,
+          21.349461761308376
+        ],
+        [
+          29.12318759132868,
+          21.066619048833758
+        ],
+        [
+          29.010050506338832,
+          21.85857864376269
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-04 L06 0 low region0",
+      "link": "L06",
+      "segment": 0,
+      "end": "low",
+      "top_y": 3,
+      "bottom_y": 2.84,
+      "pad_polygon": [
+        [
+          29.272792206135783,
+          35.85857864376269
+        ],
+        [
+          28.707106781186546,
+          35.292893218813454
+        ],
+        [
+          27.292893218813454,
+          36.707106781186546
+        ],
+        [
+          27.85857864376269,
+          37.27279220613578
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-04 L09 0 low region0",
+      "link": "L09",
+      "segment": 0,
+      "end": "low",
+      "top_y": 3,
+      "bottom_y": 2.84,
+      "pad_polygon": [
+        [
+          43.8930500890423,
+          51.91785703596015
+        ],
+        [
+          43.992277876713665,
+          51.12403473458921
+        ],
+        [
+          42.007722123286335,
+          50.87596526541079
+        ],
+        [
+          41.90849433561497,
+          51.66978756678173
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-04 L10 0 high region0",
+      "link": "L10",
+      "segment": 0,
+      "end": "high",
+      "top_y": 3,
+      "bottom_y": 2.84,
+      "pad_polygon": [
+        [
+          43.707106781186546,
+          51.707106781186546
+        ],
+        [
+          44.27279220613578,
+          51.14142135623731
+        ],
+        [
+          42.85857864376269,
+          49.72720779386422
+        ],
+        [
+          42.292893218813454,
+          50.292893218813454
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-04 L10 0 high region1",
+      "link": "L10",
+      "segment": 0,
+      "end": "high",
+      "top_y": 3,
+      "bottom_y": 2.84,
+      "pad_polygon": [
+        [
+          43.707106781186546,
+          51.707106781186546
+        ],
+        [
+          44.27279220613578,
+          51.14142135623731
+        ],
+        [
+          42.85857864376269,
+          49.72720779386422
+        ],
+        [
+          42.292893218813454,
+          50.292893218813454
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-04 L11 0 low region0",
+      "link": "L11",
+      "segment": 0,
+      "end": "low",
+      "top_y": 3,
+      "bottom_y": 2.84,
+      "pad_polygon": [
+        [
+          44.239754047789276,
+          51.32095155551905
+        ],
+        [
+          43.91250932451495,
+          50.59094409590709
+        ],
+        [
+          42.08749067548505,
+          51.40905590409291
+        ],
+        [
+          42.414735398759376,
+          52.13906336370487
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-04 L11 0 low region1",
+      "link": "L11",
+      "segment": 0,
+      "end": "low",
+      "top_y": 3,
+      "bottom_y": 2.84,
+      "pad_polygon": [
+        [
+          44.239754047789276,
+          51.32095155551905
+        ],
+        [
+          43.91250932451495,
+          50.59094409590709
+        ],
+        [
+          42.08749067548505,
+          51.40905590409291
+        ],
+        [
+          42.414735398759376,
+          52.13906336370487
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-04 L11 0 high region0",
+      "link": "L11",
+      "segment": 0,
+      "end": "high",
+      "top_y": 6,
+      "bottom_y": 5.84,
+      "pad_polygon": [
+        [
+          30.912509324514954,
+          21.59094409590709
+        ],
+        [
+          30.585264601240628,
+          20.86093663629513
+        ],
+        [
+          28.76024595221072,
+          21.679048444480948
+        ],
+        [
+          29.087490675485046,
+          22.40905590409291
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-04 L11 0 high region1",
+      "link": "L11",
+      "segment": 0,
+      "end": "high",
+      "top_y": 6,
+      "bottom_y": 5.84,
+      "pad_polygon": [
+        [
+          30.912509324514954,
+          21.59094409590709
+        ],
+        [
+          30.585264601240628,
+          20.86093663629513
+        ],
+        [
+          28.76024595221072,
+          21.679048444480948
+        ],
+        [
+          29.087490675485046,
+          22.40905590409291
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-04 L13 0 low region0",
+      "link": "L13",
+      "segment": 0,
+      "end": "low",
+      "top_y": 6,
+      "bottom_y": 5.84,
+      "pad_polygon": [
+        [
+          27.0,
+          13.0
+        ],
+        [
+          27.0,
+          12.2
+        ],
+        [
+          25.0,
+          12.2
+        ],
+        [
+          25.0,
+          13.0
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-04 L13 0 high region0",
+      "link": "L13",
+      "segment": 0,
+      "end": "high",
+      "top_y": 10.5,
+      "bottom_y": 10.34,
+      "pad_polygon": [
+        [
+          27.0,
+          4.2
+        ],
+        [
+          27.0,
+          3.4000000000000004
+        ],
+        [
+          25.0,
+          3.4000000000000004
+        ],
+        [
+          25.0,
+          4.2
+        ]
+      ]
+    }
+  ],
+  "landing_trims": [],
+  "removed_source_meshes": [],
+  "removed_native_parts": [],
+  "decisions": [
+    {
+      "link": "L03",
+      "segment": 0,
+      "end": "low",
+      "authored_point": [
+        14.0,
+        0,
+        51.0
+      ],
+      "actual_existing_top_receivers": [
+        "L02 support 0"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            14.0,
+            51.0
+          ],
+          [
+            13.268944731757129,
+            50.31768174963999
+          ],
+          [
+            12.723090131469121,
+            50.902525964234286
+          ],
+          [
+            13.413762153607422,
+            51.5471531848967
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-04 L03 0 low region0"
+      ]
+    },
+    {
+      "link": "L03",
+      "segment": 0,
+      "end": "high",
+      "authored_point": [
+        28.0,
+        3,
+        36.0
+      ],
+      "actual_existing_top_receivers": [
+        "L03 flight0 step17"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            28.731056598413783,
+            36.68231682517689
+          ],
+          [
+            29.27690986853088,
+            36.097474035765714
+          ],
+          [
+            27.81479933204514,
+            34.73283753504569
+          ],
+          [
+            27.26895,
+            35.31768
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-04 L03 0 high region0"
+      ]
+    },
+    {
+      "link": "L04",
+      "segment": 0,
+      "end": "low",
+      "authored_point": [
+        28.0,
+        3,
+        36.0
+      ],
+      "actual_existing_top_receivers": [
+        "Authored stair end WLD-04 L03 0 high region0",
+        "L03 flight0 step17"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            28.891311349595078,
+            36.831888364699935
+          ],
+          [
+            28.945501545720706,
+            36.45255699182054
+          ],
+          [
+            28.73106,
+            36.68232
+          ]
+        ],
+        [
+          [
+            28.87681240867132,
+            36.93338095116624
+          ],
+          [
+            28.891311349595078,
+            36.831888364699935
+          ],
+          [
+            28.73106,
+            36.68232
+          ],
+          [
+            28.541450587589612,
+            36.88547211958314
+          ]
+        ],
+        [
+          [
+            26.900582275961977,
+            36.624856256400676
+          ],
+          [
+            26.896913421348984,
+            36.650538238691624
+          ],
+          [
+            26.93373474878871,
+            36.65579842832587
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-04 L04 0 low region0",
+        "Authored stair end WLD-04 L04 0 low region1"
+      ]
+    },
+    {
+      "link": "L04",
+      "segment": 0,
+      "end": "high",
+      "authored_point": [
+        30.0,
+        6,
+        22.0
+      ],
+      "actual_existing_top_receivers": [
+        "L04 flight0 step17",
+        "L05 support 0",
+        "L07 support 0",
+        "L11 flight0 step17",
+        "L12 support 0"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            31.049366423263095,
+            21.52959
+          ],
+          [
+            30.09408,
+            21.52959
+          ],
+          [
+            30.0,
+            21.999999999999996
+          ]
+        ],
+        [
+          [
+            31.030870455415133,
+            21.854974623959567
+          ],
+          [
+            31.077353973123643,
+            21.52959
+          ],
+          [
+            31.049366423263095,
+            21.52959
+          ],
+          [
+            30.91251,
+            21.59094
+          ]
+        ],
+        [
+          [
+            29.057049712821634,
+            21.52959
+          ],
+          [
+            29.010050506338832,
+            21.85857864376269
+          ],
+          [
+            29.99999267685389,
+            21.99999895383627
+          ],
+          [
+            30.09408,
+            21.52959
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-04 L04 0 high region0",
+        "Authored stair end WLD-04 L04 0 high region1"
+      ]
+    },
+    {
+      "link": "L06",
+      "segment": 0,
+      "end": "low",
+      "authored_point": [
+        28.0,
+        3,
+        36.0
+      ],
+      "actual_existing_top_receivers": [
+        "Authored stair end WLD-04 L03 0 high region0",
+        "L03 flight0 step17"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            29.272792206135783,
+            35.85857864376269
+          ],
+          [
+            28.707106781186546,
+            35.292893218813454
+          ],
+          [
+            28.566022284186023,
+            35.433977715813974
+          ],
+          [
+            29.15121534521925,
+            35.980155504679225
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-04 L06 0 low region0"
+      ]
+    },
+    {
+      "link": "L06",
+      "segment": 0,
+      "end": "high",
+      "authored_point": [
+        12.0,
+        6,
+        20.0
+      ],
+      "actual_existing_top_receivers": [
+        "Floor hut.001",
+        "Floor hut.002",
+        "Restored floor hut 0 region0"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "L09",
+      "segment": 0,
+      "end": "low",
+      "authored_point": [
+        43.0,
+        3,
+        51.0
+      ],
+      "actual_existing_top_receivers": [
+        "L10 flight0 step17"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            43.89580641647761,
+            51.89580641647761
+          ],
+          [
+            43.992277876713665,
+            51.12403473458921
+          ],
+          [
+            43.0,
+            51.0
+          ]
+        ],
+        [
+          [
+            43.8930500890423,
+            51.91785703596015
+          ],
+          [
+            43.89580641647761,
+            51.89580641647761
+          ],
+          [
+            43.70711,
+            51.70711
+          ],
+          [
+            43.540437632206,
+            51.87378047885561
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-04 L09 0 low region0"
+      ]
+    },
+    {
+      "link": "L09",
+      "segment": 0,
+      "end": "high",
+      "authored_point": [
+        45.0,
+        6,
+        35.0
+      ],
+      "actual_existing_top_receivers": [
+        "Floor store",
+        "L09 flight0 step17",
+        "Restored floor store 3 region1"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "L10",
+      "segment": 0,
+      "end": "low",
+      "authored_point": [
+        28.0,
+        0,
+        66.0
+      ],
+      "actual_existing_top_receivers": [
+        "L01 support 1",
+        "L02 support 0"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "L10",
+      "segment": 0,
+      "end": "high",
+      "authored_point": [
+        43.0,
+        3,
+        51.0
+      ],
+      "actual_existing_top_receivers": [
+        "Authored stair end WLD-04 L09 0 low region0"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            44.25708435261851,
+            51.15712920975458
+          ],
+          [
+            44.27279220613578,
+            51.14142135623731
+          ],
+          [
+            42.85857864376269,
+            49.72720779386422
+          ],
+          [
+            42.292893218813454,
+            50.292893218813454
+          ],
+          [
+            43.0,
+            51.0
+          ]
+        ],
+        [
+          [
+            43.94972360862103,
+            51.464489953752064
+          ],
+          [
+            44.25708435261851,
+            51.15712920975458
+          ],
+          [
+            43.99228,
+            51.12403
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-04 L10 0 high region0",
+        "Authored stair end WLD-04 L10 0 high region1"
+      ]
+    },
+    {
+      "link": "L11",
+      "segment": 0,
+      "end": "low",
+      "authored_point": [
+        43.0,
+        3,
+        51.0
+      ],
+      "actual_existing_top_receivers": [
+        "Authored stair end WLD-04 L09 0 low region0",
+        "Authored stair end WLD-04 L10 0 high region0",
+        "Authored stair end WLD-04 L10 0 high region1",
+        "L10 flight0 step17"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            44.06704294775883,
+            50.935672947758825
+          ],
+          [
+            43.91250932451495,
+            50.59094409590709
+          ],
+          [
+            43.78118404761905,
+            50.649814047619046
+          ]
+        ],
+        [
+          [
+            44.239754047789276,
+            51.32095155551905
+          ],
+          [
+            44.194410170574805,
+            51.21979982942523
+          ],
+          [
+            43.97423076679317,
+            51.43997923320696
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-04 L11 0 low region0",
+        "Authored stair end WLD-04 L11 0 low region1"
+      ]
+    },
+    {
+      "link": "L11",
+      "segment": 0,
+      "end": "high",
+      "authored_point": [
+        30.0,
+        6,
+        22.0
+      ],
+      "actual_existing_top_receivers": [
+        "Authored stair end WLD-04 L04 0 high region0",
+        "Authored stair end WLD-04 L04 0 high region1",
+        "L04 flight0 step17",
+        "L05 support 0",
+        "L07 support 0",
+        "L11 flight0 step17",
+        "L12 support 0"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            28.831217683995124,
+            21.83737
+          ],
+          [
+            28.969129186692683,
+            22.145018736786866
+          ],
+          [
+            29.013080073585662,
+            21.83737
+          ]
+        ],
+        [
+          [
+            28.81317,
+            21.65532387133403
+          ],
+          [
+            28.76024595221072,
+            21.679048444480948
+          ],
+          [
+            28.81317,
+            21.79710978185703
+          ]
+        ],
+        [
+          [
+            29.05454519519548,
+            21.54712119762571
+          ],
+          [
+            28.95061,
+            21.59371283685127
+          ],
+          [
+            28.95061,
+            21.83737
+          ],
+          [
+            29.013080073585662,
+            21.83737
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-04 L11 0 high region0",
+        "Authored stair end WLD-04 L11 0 high region1"
+      ]
+    },
+    {
+      "link": "L13",
+      "segment": 0,
+      "end": "low",
+      "authored_point": [
+        26,
+        6,
+        12.2
+      ],
+      "actual_existing_top_receivers": [],
+      "authored_patch_polygons": [
+        [
+          [
+            27.0,
+            13.0
+          ],
+          [
+            27.0,
+            12.2
+          ],
+          [
+            25.0,
+            12.2
+          ],
+          [
+            25.0,
+            13.0
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-04 L13 0 low region0"
+      ]
+    },
+    {
+      "link": "L13",
+      "segment": 0,
+      "end": "high",
+      "authored_point": [
+        26,
+        10.5,
+        4.2
+      ],
+      "actual_existing_top_receivers": [
+        "Floor landing"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            25.25,
+            3.4000000000000004
+          ],
+          [
+            25.0,
+            3.4000000000000004
+          ],
+          [
+            25.0,
+            4.2
+          ],
+          [
+            25.25,
+            4.2
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-04 L13 0 high region0"
+      ]
+    }
+  ],
+  "stair_components": [
+    "47:L03 flight0 step1",
+    "48:L03 flight0 step2",
+    "49:L03 flight0 step3",
+    "50:L03 flight0 step4",
+    "51:L03 flight0 step5",
+    "52:L03 flight0 step6",
+    "53:L03 flight0 step7",
+    "54:L03 flight0 step8",
+    "55:L03 flight0 step9",
+    "56:L03 flight0 step10",
+    "57:L03 flight0 step11",
+    "58:L03 flight0 step12",
+    "59:L03 flight0 step13",
+    "60:L03 flight0 step14",
+    "61:L03 flight0 step15",
+    "62:L03 flight0 step16",
+    "63:L03 flight0 step17",
+    "64:L04 flight0 step1",
+    "65:L04 flight0 step2",
+    "66:L04 flight0 step3",
+    "67:L04 flight0 step4",
+    "68:L04 flight0 step5",
+    "69:L04 flight0 step6",
+    "70:L04 flight0 step7",
+    "71:L04 flight0 step8",
+    "72:L04 flight0 step9",
+    "73:L04 flight0 step10",
+    "74:L04 flight0 step11",
+    "75:L04 flight0 step12",
+    "76:L04 flight0 step13",
+    "77:L04 flight0 step14",
+    "78:L04 flight0 step15",
+    "79:L04 flight0 step16",
+    "80:L04 flight0 step17",
+    "83:L06 flight0 step1",
+    "84:L06 flight0 step2",
+    "85:L06 flight0 step3",
+    "86:L06 flight0 step4",
+    "87:L06 flight0 step5",
+    "88:L06 flight0 step6",
+    "89:L06 flight0 step7",
+    "90:L06 flight0 step8",
+    "91:L06 flight0 step9",
+    "92:L06 flight0 step10",
+    "93:L06 flight0 step11",
+    "94:L06 flight0 step12",
+    "95:L06 flight0 step13",
+    "96:L06 flight0 step14",
+    "97:L06 flight0 step15",
+    "98:L06 flight0 step16",
+    "99:L06 flight0 step17",
+    "104:L09 flight0 step1",
+    "105:L09 flight0 step2",
+    "106:L09 flight0 step3",
+    "107:L09 flight0 step4",
+    "108:L09 flight0 step5",
+    "109:L09 flight0 step6",
+    "110:L09 flight0 step7",
+    "111:L09 flight0 step8",
+    "112:L09 flight0 step9",
+    "113:L09 flight0 step10",
+    "114:L09 flight0 step11",
+    "115:L09 flight0 step12",
+    "116:L09 flight0 step13",
+    "117:L09 flight0 step14",
+    "118:L09 flight0 step15",
+    "119:L09 flight0 step16",
+    "120:L09 flight0 step17",
+    "121:L10 flight0 step1",
+    "122:L10 flight0 step2",
+    "123:L10 flight0 step3",
+    "124:L10 flight0 step4",
+    "125:L10 flight0 step5",
+    "126:L10 flight0 step6",
+    "127:L10 flight0 step7",
+    "128:L10 flight0 step8",
+    "129:L10 flight0 step9",
+    "130:L10 flight0 step10",
+    "131:L10 flight0 step11",
+    "132:L10 flight0 step12",
+    "133:L10 flight0 step13",
+    "134:L10 flight0 step14",
+    "135:L10 flight0 step15",
+    "136:L10 flight0 step16",
+    "137:L10 flight0 step17",
+    "138:L11 flight0 step1",
+    "139:L11 flight0 step2",
+    "140:L11 flight0 step3",
+    "141:L11 flight0 step4",
+    "142:L11 flight0 step5",
+    "143:L11 flight0 step6",
+    "144:L11 flight0 step7",
+    "145:L11 flight0 step8",
+    "146:L11 flight0 step9",
+    "147:L11 flight0 step10",
+    "148:L11 flight0 step11",
+    "149:L11 flight0 step12",
+    "150:L11 flight0 step13",
+    "151:L11 flight0 step14",
+    "152:L11 flight0 step15",
+    "153:L11 flight0 step16",
+    "154:L11 flight0 step17",
+    "157:L13 flight0 step1",
+    "158:L13 flight0 step2",
+    "159:L13 flight0 step3",
+    "160:L13 flight0 step4",
+    "161:L13 flight0 step5",
+    "162:L13 flight0 step6",
+    "163:L13 flight0 step7",
+    "164:L13 flight0 step8",
+    "165:L13 flight0 step9",
+    "166:L13 flight0 step10",
+    "167:L13 flight0 step11",
+    "168:L13 flight0 step12",
+    "169:L13 flight0 step13",
+    "170:L13 flight0 step14",
+    "171:L13 flight0 step15",
+    "172:L13 flight0 step16",
+    "173:L13 flight0 step17",
+    "174:L13 flight0 step18",
+    "175:L13 flight0 step19",
+    "176:L13 flight0 step20",
+    "177:L13 flight0 step21",
+    "178:L13 flight0 step22",
+    "179:L13 flight0 step23",
+    "180:L13 flight0 step24",
+    "181:L13 flight0 step25",
+    "182:L14 flight0 step1",
+    "183:L14 flight0 step2",
+    "184:L14 flight0 step3",
+    "185:L14 flight0 step4",
+    "186:L14 flight0 step5",
+    "187:L14 flight0 step6",
+    "188:L14 flight0 step7",
+    "189:L14 flight0 step8",
+    "190:L14 flight0 step9",
+    "191:L14 flight0 step10",
+    "192:L14 flight0 step11",
+    "193:L14 flight0 step12",
+    "194:L14 flight0 step13",
+    "197:L14B flight0 step1",
+    "198:L14B flight0 step2",
+    "199:L14B flight0 step3",
+    "200:L14B flight0 step4",
+    "201:L14B flight0 step5",
+    "202:L14B flight0 step6",
+    "203:L14B flight0 step7",
+    "204:L14B flight0 step8",
+    "205:L14B flight0 step9",
+    "206:L14B flight0 step10",
+    "207:L14B flight0 step11",
+    "208:L14B flight0 step12",
+    "209:L14B flight0 step13",
+    "Authored stair end WLD-04 L03 0 low region0",
+    "Authored stair end WLD-04 L03 0 high region0",
+    "Authored stair end WLD-04 L04 0 low region0",
+    "Authored stair end WLD-04 L04 0 low region1",
+    "Authored stair end WLD-04 L04 0 high region0",
+    "Authored stair end WLD-04 L04 0 high region1",
+    "Authored stair end WLD-04 L06 0 low region0",
+    "Authored stair end WLD-04 L09 0 low region0",
+    "Authored stair end WLD-04 L10 0 high region0",
+    "Authored stair end WLD-04 L10 0 high region1",
+    "Authored stair end WLD-04 L11 0 low region0",
+    "Authored stair end WLD-04 L11 0 low region1",
+    "Authored stair end WLD-04 L11 0 high region0",
+    "Authored stair end WLD-04 L11 0 high region1",
+    "Authored stair end WLD-04 L13 0 low region0",
+    "Authored stair end WLD-04 L13 0 high region0"
+  ],
+  "retained_glb_resources": {
+    "original_binary_bytes_preserved": 1969192,
+    "original_static_resources_preserved": true,
+    "replaced_scene_nodes": []
+  },
+  "glb_sha256": "f75bc781ca51ae1c645eee6dba9ebace6f9becd377a211af5ea0830b0ad88e34",
+  "physics_sha256": "8f1008cf77e4d377d2db78c8a0e004977734de5640c9e44e5115a5045d200494",
+  "generator_sha256": "38c042e4dfd641a017597a9f399273da313a7d655fe66ee9492578fb1fa77838",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-04-whole-site.png",
+      "sha256": "bd7ef66f06bc29dcd1cdcb8a4abe66e45b85f058b443aba73adc5eea1e476451",
+      "type": "native full scene"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-04-new-landings.png",
+      "sha256": "381e0873bdb8606b02730ea078c4e6bb659e7cf08c63e05621b866788a879b76",
+      "type": "native isolated actual landing changes; context hidden"
+    }
+  ],
+  "source_layout": "development/levels/rebuild/wld-04/rough-layout.json",
+  "source_layout_sha256": "89430b74df791d484a7dd38df353a011d241bb727f7ff1c0a344f64f2e738104",
+  "flight_replacements": [],
+  "corner_bridges": [],
+  "source_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {
+      "0": 0
+    },
+    "L04": {
+      "0": 0
+    },
+    "L05": {},
+    "L06": {
+      "0": 0
+    },
+    "L07": {},
+    "L08": {},
+    "L09": {
+      "0": 0
+    },
+    "L10": {
+      "0": 0
+    },
+    "L11": {
+      "0": 0
+    },
+    "L12": {},
+    "L13": {
+      "0": 0
+    },
+    "L14": {
+      "2": 2
+    },
+    "L15": {},
+    "L14B": {
+      "2": 2
+    }
+  },
+  "open_findings": [],
+  "remaining": "Independent solids/material/pivot/native checks and all25flat/continuous stair regressions. Wall/terrain penetrations, crossed flights, circulation, supports/guards and actual runtime/network/hardware gates remain open."
+}

@@ -1059,3 +1059,18 @@ Sixtytwoactual native frames and eleven sheets viewed construction3/5finish1/5;2
 Floor/cap source checkpoint 60088739088bdfab11f0b15d6bafe07606acc44a committed; publication/ref readback recorded separately. Gallery8226originalPNGs generation/check PASS; library1771localGLBs/1619distinct hashes includes25candidate aliases, only6new distinct map exports, no new individual props. Remaining35stair segments span11sites: WLD03(2),04(7),05(4),06(2),08(3),09(6),11(1),12(2),13(1),17(2),18(5). Continue native stair/terrain/body corrections and shared-coordinate runtime integration; full29packet/follow-on goal active.
 
 Source60088739 pushed/ref verified; complete GitHub tree readback at8aa0c6ce PASS for all247source/binding paths. Exact current source/dependency hashes and151persisted checkout-byte files PASS. PR86 updated with current evidence/remaining gates. Public gallery page200 unchanged/new paired floor sheet404: actual deployment remains pending accepted integration. Receipt in floor-closure-pass/verification/publication-readback.json. Next actual implementation: remaining35stairsegments/35links across11sites and structure/terrain fit, then shared-coordinate native runtime integration; full29packet/follow-on objective active.
+
+
+## 2026-11-07 / roster stair end and high-corner batch
+
+# Stair end and corner construction checkpoint
+
+All29packets have an explicit decision in roster.json. Eleven source-only candidates add visible closed end supports. Battery and other overhanging high landings retain the original walkway; descending flights move inward with full-width flat lead-ins and updated authored-layout.json coordinates. Native stair component identities are explicit. Original geometry, UVs, resources, pivots and collision remain exact except the individually named replaced stair treads. Saved terrain and its holes remain unchanged.
+
+All25native candidates compared:110409flat samples,99937baseline-valid standing poses,94879qualified sweeps,47recovered poses, zero new blocks/sweep failures.221vertical segments improve186→196 passing both ways;84full links improve49→56; no previous passing direction regresses. Both cemetery14segmentloops remain pass both ways. Independent exact resource/mesh/native/closed solid/nondegenerate and editable packed-source checks pass across11new candidates. Rejected narrowing and stale-rotation evidence remains labeled and excluded from usable asset counts.
+
+Native overview/isolated/closeup captures are construction evidence only. Closeup sheets show actual battery lead-ins and other repairs; several terrain/roof/wall views remain occluded. Construction3/5, finish1/5. No full visual acceptance or runtime unlock.
+
+Next batch:25failed flight segments and28failed complete links remain. Author real wall/portal/floor openings, earth grading/holes and separate crossed-flight bays; preserve the40space budget and asset library. Recheck exact support/headroom and full routes after each structural revision. Guards/framing, canonical van arrival, power/hiding/story, native runtime integration, networking, installed hardware and recovery gates stay open. Do not use fog to excuse unfinished structure. No editor UI or round-duration testing.
+
+Previous goal turn verified unchanged published atmosphere; no new construction occurred in that turn. This continuation resumes interrupted construction and produces actual new geometry/evidence. Starting HEAD ef030dcdb7f61eb6228b2848a4a78b847e3f8acf. Fresh remote main cc65453c; full42431982917 atfad6c7a9 SUCCESS, GPU42431982951/installer42431982920 previously verified SUCCESS atsame earlier source; no exact-current-source full CI or gameplay acceptance inferred. Source SHA/publication readback follows.

@@ -37,3 +37,6 @@ development/levels/rebuild/terrain-occupancy-pass/**/*.blend[0-9]
 
 # Scoped floor/cap Blender construction backups.
 development/levels/rebuild/floor-closure-pass/**/*.blend[0-9]
+
+# Scoped stair construction backups.
+development/levels/rebuild/stair-landing-pass/**/*.blend[0-9]

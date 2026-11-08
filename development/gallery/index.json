@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 8226,
+  "count": 8270,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -77544,6 +77544,446 @@
       "height": 900,
       "bytes": 705867,
       "sha256": "4043605eeff18632513436992693e7db7903e8d617e22af9f97155d36db20711"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/closeup-sheet-1.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/closeup-sheet-1.png",
+      "title": "Closeup sheet 1",
+      "kind": "Native stair closeup; overhead caps/distant context hidden, some joins occluded; not runtime",
+      "width": 1200,
+      "height": 780,
+      "bytes": 382595,
+      "sha256": "8703b814fc43195deb09a99b959f1ce784425b69f01e5eb91f1c67580c0d9b8f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/closeup-sheet-2.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/closeup-sheet-2.png",
+      "title": "Closeup sheet 2",
+      "kind": "Native stair closeup; overhead caps/distant context hidden, some joins occluded; not runtime",
+      "width": 1200,
+      "height": 780,
+      "bytes": 428047,
+      "sha256": "f4afd60ed441c5409b4efa68b20348c57c6e714aa8cbb2f7dbbdcf4ce59500ca"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/closeup-sheet-3.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/closeup-sheet-3.png",
+      "title": "Closeup sheet 3",
+      "kind": "Native stair closeup; overhead caps/distant context hidden, some joins occluded; not runtime",
+      "width": 1200,
+      "height": 780,
+      "bytes": 242617,
+      "sha256": "59e99d38c59f1ce6738ec2fa4e65767508b30498aefb2222eadd069aecdd9d27"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/new-landings-sheet-1.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/new-landings-sheet-1.png",
+      "title": "New landings sheet 1",
+      "kind": "Native isolated stair additions; context hidden, not runtime",
+      "width": 1200,
+      "height": 780,
+      "bytes": 22888,
+      "sha256": "af75262255a6a49a6baceefd2ed8ed95ab492a3199b44f8483ee85e876816c47"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/new-landings-sheet-2.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/new-landings-sheet-2.png",
+      "title": "New landings sheet 2",
+      "kind": "Native isolated stair additions; context hidden, not runtime",
+      "width": 1200,
+      "height": 780,
+      "bytes": 21073,
+      "sha256": "451bd4962ad7c659de2d2f9ec90f221eae83b347a595404b33b5a406707bc7e4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/whole-site-sheet-1.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/whole-site-sheet-1.png",
+      "title": "Whole site sheet 1",
+      "kind": "Native stair/landing construction overview; runtime gates open",
+      "width": 1200,
+      "height": 780,
+      "bytes": 183609,
+      "sha256": "b5bfb8bb55cd0260799339d8dc60db290972d90b18eafcb74213ff0bedb83a6e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/whole-site-sheet-2.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/whole-site-sheet-2.png",
+      "title": "Whole site sheet 2",
+      "kind": "Native stair/landing construction overview; runtime gates open",
+      "width": 1200,
+      "height": 780,
+      "bytes": 147090,
+      "sha256": "8c8c8001dd881cb7cf9a32447b29206918903b1fa9b8a411443f34af8114742a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-03-L04-closeup-0.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-03-L04-closeup-0.png",
+      "title": "Wld 03 l04 closeup 0",
+      "kind": "Native stair closeup; overhead caps/distant context hidden, some joins occluded; not runtime",
+      "width": 900,
+      "height": 700,
+      "bytes": 499425,
+      "sha256": "1ff00cfe48aa475d6f1180edbea38a4f49cfcaf2a934041c7f4fe6f4ca4d3a95"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-03-new-landings.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-03-new-landings.png",
+      "title": "Wld 03 new landings",
+      "kind": "Native isolated stair additions; context hidden, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 545805,
+      "sha256": "f5c85bb8d0de84f7b9727ebf277b048970b2a5a13a110cc7c66089635cf2c202"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-03-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-03-whole-site.png",
+      "title": "Wld 03 whole site",
+      "kind": "Native stair/landing construction overview; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 778781,
+      "sha256": "ccf8de34741b806ab5712a04c65af826de977e8518ef4ff9a052ff508fed0491"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-04-L03-closeup-0.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-04-L03-closeup-0.png",
+      "title": "Wld 04 l03 closeup 0",
+      "kind": "Native stair closeup; overhead caps/distant context hidden, some joins occluded; not runtime",
+      "width": 900,
+      "height": 700,
+      "bytes": 650952,
+      "sha256": "b4370a9b7058970b52e410cecfdcc0c9d1471ea84d78038f30dccd4400115bea"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-04-new-landings.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-04-new-landings.png",
+      "title": "Wld 04 new landings",
+      "kind": "Native isolated stair additions; context hidden, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 546008,
+      "sha256": "381e0873bdb8606b02730ea078c4e6bb659e7cf08c63e05621b866788a879b76"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-04-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-04-whole-site.png",
+      "title": "Wld 04 whole site",
+      "kind": "Native stair/landing construction overview; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 732068,
+      "sha256": "bd7ef66f06bc29dcd1cdcb8a4abe66e45b85f058b443aba73adc5eea1e476451"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-05-L09-closeup-0.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-05-L09-closeup-0.png",
+      "title": "Wld 05 l09 closeup 0",
+      "kind": "Native stair closeup; overhead caps/distant context hidden, some joins occluded; not runtime",
+      "width": 900,
+      "height": 700,
+      "bytes": 675195,
+      "sha256": "cfcf30909a2c18a8b141b1305b9e4ee1261b1d868262463b345e9abdb83cd071"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-05-new-landings.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-05-new-landings.png",
+      "title": "Wld 05 new landings",
+      "kind": "Native isolated stair additions; context hidden, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 545667,
+      "sha256": "2955cc0f0c0874b79321ed997a8d4a885955cf2b9c825f4541cd59b6e6663318"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-05-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-05-whole-site.png",
+      "title": "Wld 05 whole site",
+      "kind": "Native stair/landing construction overview; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 751213,
+      "sha256": "57bbbd2612e226f9300e271dbec565b1f97f551209510bb0368e89b49c4e74cb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-06-L16-closeup-0.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-06-L16-closeup-0.png",
+      "title": "Wld 06 l16 closeup 0",
+      "kind": "Native stair closeup; overhead caps/distant context hidden, some joins occluded; not runtime",
+      "width": 900,
+      "height": 700,
+      "bytes": 559162,
+      "sha256": "131da1ca0a7aef1452b013fb90db14785405f33bcf4bdcb5e51c70f245cf3426"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-06-new-landings.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-06-new-landings.png",
+      "title": "Wld 06 new landings",
+      "kind": "Native isolated stair additions; context hidden, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 545227,
+      "sha256": "222d7dc4742bc2a655e13abb3b1de5b840cdb3e32816cace83e18fb1bc4d25c0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-06-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-06-whole-site.png",
+      "title": "Wld 06 whole site",
+      "kind": "Native stair/landing construction overview; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 742648,
+      "sha256": "0a440a5d2de0450ba384b1fb3c315ec8c1324f2585af5f8301445deb1d4fad2b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-08-L17-closeup-0.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-08-L17-closeup-0.png",
+      "title": "Wld 08 l17 closeup 0",
+      "kind": "Native stair closeup; overhead caps/distant context hidden, some joins occluded; not runtime",
+      "width": 900,
+      "height": 700,
+      "bytes": 689415,
+      "sha256": "63f02d8571c27e80355d817e70a8b9609ceb3ecb9174d2afcdf27d2e279df2a2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-08-new-landings.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-08-new-landings.png",
+      "title": "Wld 08 new landings",
+      "kind": "Native isolated stair additions; context hidden, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 545538,
+      "sha256": "ca2b1ab1ee93bd04b8cd3a4285ce199076e2dc0279649f1a96ab4e423e283a3e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-08-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-08-whole-site.png",
+      "title": "Wld 08 whole site",
+      "kind": "Native stair/landing construction overview; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 761889,
+      "sha256": "55c4f5843c353ce2c3d172cfe7e844bad5289367bb13d959c2f6ebbaef809d96"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-09-L18-closeup-0.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-09-L18-closeup-0.png",
+      "title": "Wld 09 l18 closeup 0",
+      "kind": "Native stair closeup; overhead caps/distant context hidden, some joins occluded; not runtime",
+      "width": 900,
+      "height": 700,
+      "bytes": 476685,
+      "sha256": "5757a0e89c1103fb3cb3c1c6aa1d2e61fda6cc6e13b5950c2b39f08ebedee3ce"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-09-new-landings.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-09-new-landings.png",
+      "title": "Wld 09 new landings",
+      "kind": "Native isolated stair additions; context hidden, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 548715,
+      "sha256": "37490eacd26c19aab06a3d327e53a2a04013eabad3fa9730d20f21a3852a170b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-09-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-09-whole-site.png",
+      "title": "Wld 09 whole site",
+      "kind": "Native stair/landing construction overview; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 763598,
+      "sha256": "a2d0078f10aeb6aabbdf31f5e30133254dfec8c37f2f8ab981b21f57fcf0ff40"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-11-L02-closeup-0.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-11-L02-closeup-0.png",
+      "title": "Wld 11 l02 closeup 0",
+      "kind": "Native stair closeup; overhead caps/distant context hidden, some joins occluded; not runtime",
+      "width": 900,
+      "height": 700,
+      "bytes": 514875,
+      "sha256": "01c6cfa13a34076b51b10eaa7f5ab8caaab370c10a81eff0abbcdafcd852067e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-11-new-landings.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-11-new-landings.png",
+      "title": "Wld 11 new landings",
+      "kind": "Native isolated stair additions; context hidden, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 546012,
+      "sha256": "962b0ce31d4d44b88bd004973b46fbeba6538c8ed5e6bc8192814951c4dd71f3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-11-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-11-whole-site.png",
+      "title": "Wld 11 whole site",
+      "kind": "Native stair/landing construction overview; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 709061,
+      "sha256": "a667dc79acc2c0463cce169aff582a00e1c0fdf7304eea8d204f064b44749f03"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-12-L16-closeup-0.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-12-L16-closeup-0.png",
+      "title": "Wld 12 l16 closeup 0",
+      "kind": "Native stair closeup; overhead caps/distant context hidden, some joins occluded; not runtime",
+      "width": 900,
+      "height": 700,
+      "bytes": 669098,
+      "sha256": "35b7e7d00abf6fd22f4884c05c705e3104ede4fe9dcb1f1cd468ab579d6d1cc0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-12-new-landings.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-12-new-landings.png",
+      "title": "Wld 12 new landings",
+      "kind": "Native isolated stair additions; context hidden, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 545787,
+      "sha256": "a01291fd6a4f9725045d15862e36a3eecf569aff7ec8bd0653dc237ba672cbd6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-12-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-12-whole-site.png",
+      "title": "Wld 12 whole site",
+      "kind": "Native stair/landing construction overview; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 702254,
+      "sha256": "9b7bae9a342b3038ecaa737a2d5132139c87b15bb775b7a2d65ccdd8dd1a54b8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-13-L19-closeup-0.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-13-L19-closeup-0.png",
+      "title": "Wld 13 l19 closeup 0",
+      "kind": "Native stair closeup; overhead caps/distant context hidden, some joins occluded; not runtime",
+      "width": 900,
+      "height": 700,
+      "bytes": 687208,
+      "sha256": "9064c8ed911693af98a8d0dccdc14768287ce837c70bec63e9fa1029e243094d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-13-new-landings.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-13-new-landings.png",
+      "title": "Wld 13 new landings",
+      "kind": "Native isolated stair additions; context hidden, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 545538,
+      "sha256": "f21ae586fb2824d50fee22eac6bd1cea7059474e10b5c5e3a2c44bc70b90b4fa"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-13-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-13-whole-site.png",
+      "title": "Wld 13 whole site",
+      "kind": "Native stair/landing construction overview; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 750716,
+      "sha256": "44c50134a31b282b66e2514fdf21cb9a63c92c6847d4fc4cf0061450001c0bbc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-17-new-landings.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-17-new-landings.png",
+      "title": "Wld 17 new landings",
+      "kind": "Native isolated stair additions; context hidden, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 549411,
+      "sha256": "7cde61296e17d3e1ee1b43bd3ee4785bd14e51226b4212512a7672ca457a6a52"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-17-route-11-closeup-0.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-17-route-11-closeup-0.png",
+      "title": "Wld 17 route 11 closeup 0",
+      "kind": "Native stair closeup; overhead caps/distant context hidden, some joins occluded; not runtime",
+      "width": 900,
+      "height": 700,
+      "bytes": 700832,
+      "sha256": "c75be326b867ebef9381dcb5d35972ae15edc8b5c076f8c4cb169a87a57d73b8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-17-route-12-closeup-1.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-17-route-12-closeup-1.png",
+      "title": "Wld 17 route 12 closeup 1",
+      "kind": "Native stair closeup; overhead caps/distant context hidden, some joins occluded; not runtime",
+      "width": 900,
+      "height": 700,
+      "bytes": 712080,
+      "sha256": "df63980beec3d023151e62844b70df6bbc3615c81c10a9b4630a754df9a8e810"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-17-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-17-whole-site.png",
+      "title": "Wld 17 whole site",
+      "kind": "Native stair/landing construction overview; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 734938,
+      "sha256": "0f8b2bde1630ed60f042cc43c3d15e2b2a7de35360689a300f27579d8d78efb3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-18-new-landings.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-18-new-landings.png",
+      "title": "Wld 18 new landings",
+      "kind": "Native isolated stair additions; context hidden, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 552581,
+      "sha256": "d5c5dedf500ee205617df71e5a13032cb4da9159b77c35d18e948a38240765be"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-18-route-07-closeup-0.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-18-route-07-closeup-0.png",
+      "title": "Wld 18 route 07 closeup 0",
+      "kind": "Native stair closeup; overhead caps/distant context hidden, some joins occluded; not runtime",
+      "width": 900,
+      "height": 700,
+      "bytes": 681134,
+      "sha256": "ac551c6125df47975e8ce7c233c72ecbd84f5b94338c140ab1fb97eddc9c3ce4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-18-route-13-closeup-1.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-18-route-13-closeup-1.png",
+      "title": "Wld 18 route 13 closeup 1",
+      "kind": "Native stair closeup; overhead caps/distant context hidden, some joins occluded; not runtime",
+      "width": 900,
+      "height": 700,
+      "bytes": 693415,
+      "sha256": "90fb9a6c7f68a7b2ef44e729c13bfadd6f002338b1148dd9add27a18679db60b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-18-route-14-closeup-2.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-18-route-14-closeup-2.png",
+      "title": "Wld 18 route 14 closeup 2",
+      "kind": "Native stair closeup; overhead caps/distant context hidden, some joins occluded; not runtime",
+      "width": 900,
+      "height": 700,
+      "bytes": 674375,
+      "sha256": "a7c9683813cf5359c173c8184728fd03dc68958ea1fb71b61fbbd30cef2e4dea"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-18-route-14-closeup-3.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-18-route-14-closeup-3.png",
+      "title": "Wld 18 route 14 closeup 3",
+      "kind": "Native stair closeup; overhead caps/distant context hidden, some joins occluded; not runtime",
+      "width": 900,
+      "height": 700,
+      "bytes": 703415,
+      "sha256": "b665741af6c896265b7dad069a08635f6dba28d6ce6234377aafb1cc79d02f2e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-18-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-18-whole-site.png",
+      "title": "Wld 18 whole site",
+      "kind": "Native stair/landing construction overview; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 721980,
+      "sha256": "5d61f575693bb449544c99e52ffdf444343dc48c02940c01cb75261b70177bda"
     },
     {
       "path": "development/levels/rebuild/captures/stair-movement-batch/wld-14-mitered-candidate-construction.png",

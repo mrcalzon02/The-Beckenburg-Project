@@ -6083,7 +6083,7 @@
     "baseline_clear_metres": 6,
     "baseline_opaque_metres": 24,
     "full_map_acceptance": false,
-    "mechanism": "Shared6\u201324m radial policy before alpha blending at actual surface depth; weather sky horizon; no depth writes",
+    "mechanism": "Shared6–24m radial policy before alpha blending at actual surface depth; weather sky horizon; no depth writes",
     "focused_checks": 10,
     "actual_runtime_frames": 52
   },
@@ -6120,5 +6120,22 @@
     "new_parts": 296,
     "new_triangles": 9816,
     "recovered_flat_poses": 248
+  },
+  "stair_landing_checkpoint": {
+    "status": "BREADTH_BY_STAGE_STAIR_END_AND_CORNER_CONSTRUCTION",
+    "evidence": "development/levels/rebuild/stair-landing-pass/roster.json",
+    "aggregate": {
+      "new_parts": 200,
+      "new_triangles": 2620,
+      "replaced_owned_steps": 144,
+      "flight_gains": 10,
+      "complete_link_gains": 7,
+      "remaining_failed_flights": 25,
+      "remaining_failed_links": 28,
+      "flat_samples": 110409,
+      "recovered_flat_poses": 47,
+      "new_flat_blocks": 0,
+      "new_flat_sweep_failures": 0
+    }
   }
 }

@@ -435,3 +435,18 @@ Failures preserved: old open-context Academy export, actual Prison exterior-serv
 Recovery: corrected source21d20b29 full42429527482 raw365/0/0/365 verified. PR82 expected-head merged to mainfad6c7a92b3025f62159f5ac7d53618a569adfe8 and reconciled into this branch. Its production tree matches c93d141d native42426323930; relevant renderer/assets remain previously verified. Main full42431982917 and Pages42431982068 were queued at observation. House candidate5c3daf92 full42430309980/native42430312740/GPU42430317334 are queued; keep these exact handles. Encounter4afae307 full42427846432 raw368/0/0/368 and native/GPU PASS independently. Preserve concurrent PR83 hunter work; do not force-push or restart valid live handles.
 
 Next breadth batch: native/runtime coordinate/collision/ownership bridge, resolve the8elevation links and sweep all sites' required routes; actual saved editor holes/terrain/arrival and supported reusable-model placement; then roof/service/detail/story passes across the roster. Continue all29packets and later unfinished maps. No round-duration tests or whole-rebuild completion claim.
+
+
+## 2026-11-07 / roster stair end and high-corner batch
+
+# Stair end and corner construction checkpoint
+
+All29packets have an explicit decision in roster.json. Eleven source-only candidates add visible closed end supports. Battery and other overhanging high landings retain the original walkway; descending flights move inward with full-width flat lead-ins and updated authored-layout.json coordinates. Native stair component identities are explicit. Original geometry, UVs, resources, pivots and collision remain exact except the individually named replaced stair treads. Saved terrain and its holes remain unchanged.
+
+All25native candidates compared:110409flat samples,99937baseline-valid standing poses,94879qualified sweeps,47recovered poses, zero new blocks/sweep failures.221vertical segments improve186→196 passing both ways;84full links improve49→56; no previous passing direction regresses. Both cemetery14segmentloops remain pass both ways. Independent exact resource/mesh/native/closed solid/nondegenerate and editable packed-source checks pass across11new candidates. Rejected narrowing and stale-rotation evidence remains labeled and excluded from usable asset counts.
+
+Native overview/isolated/closeup captures are construction evidence only. Closeup sheets show actual battery lead-ins and other repairs; several terrain/roof/wall views remain occluded. Construction3/5, finish1/5. No full visual acceptance or runtime unlock.
+
+Next batch:25failed flight segments and28failed complete links remain. Author real wall/portal/floor openings, earth grading/holes and separate crossed-flight bays; preserve the40space budget and asset library. Recheck exact support/headroom and full routes after each structural revision. Guards/framing, canonical van arrival, power/hiding/story, native runtime integration, networking, installed hardware and recovery gates stay open. Do not use fog to excuse unfinished structure. No editor UI or round-duration testing.
+
+Previous goal turn verified unchanged published atmosphere; no new construction occurred in that turn. This continuation resumes interrupted construction and produces actual new geometry/evidence. Starting HEAD ef030dcdb7f61eb6228b2848a4a78b847e3f8acf. Fresh remote main cc65453c; full42431982917 atfad6c7a9 SUCCESS, GPU42431982951/installer42431982920 previously verified SUCCESS atsame earlier source; no exact-current-source full CI or gameplay acceptance inferred. Source SHA/publication readback follows.

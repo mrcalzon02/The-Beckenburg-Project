@@ -1,0 +1,1324 @@
+{
+  "id": "WLD-18",
+  "status": "ACTUAL_STAIR_END_SUPPORT_CANDIDATE_FULL_ROUTE_GATES_OPEN",
+  "source_glb": "development/levels/rebuild/floor-closure-pass/wld-18/closed-floors.glb",
+  "source_glb_sha256": "31170fe77b5f4eb67752d66af9de3a136cc7553b806cac2d8f2fedd00b9b9ed3",
+  "source_physics": "development/levels/rebuild/floor-closure-pass/wld-18/closed-floors.hcs2",
+  "source_physics_sha256": "fb8f28c9019654d7fc68c53a31faabcf144d27a929f73e9dd5b42ec5b56cac7b",
+  "layout": "development/levels/rebuild/stair-landing-pass/wld-18/authored-layout.json",
+  "layout_sha256": "2be07d34fb392d67f649fa687d937f78105522c9363e2bd95f48694bd97bff68",
+  "targeted_segments": [
+    {
+      "link": "route-07",
+      "segment": 1
+    },
+    {
+      "link": "route-08",
+      "segment": 1
+    },
+    {
+      "link": "route-13",
+      "segment": 1
+    },
+    {
+      "link": "route-14",
+      "segment": 1
+    },
+    {
+      "link": "route-14",
+      "segment": 3
+    }
+  ],
+  "new_parts": 76,
+  "new_triangles": 984,
+  "platforms": [
+    {
+      "name": "Authored stair end WLD-18 route-07 1 corner-bridge region0",
+      "link": "route-07",
+      "segment": 1,
+      "end": "corner-bridge",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "pad_polygon": [
+        [
+          18.75,
+          48.0
+        ],
+        [
+          18.75,
+          47.2
+        ],
+        [
+          17.25,
+          47.2
+        ],
+        [
+          17.25,
+          48.0
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-18 route-08 1 low region0",
+      "link": "route-08",
+      "segment": 1,
+      "end": "low",
+      "top_y": -4,
+      "bottom_y": -4.16,
+      "pad_polygon": [
+        [
+          5.25,
+          33.2
+        ],
+        [
+          5.25,
+          34.0
+        ],
+        [
+          6.75,
+          34.0
+        ],
+        [
+          6.75,
+          33.2
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-18 route-13 1 corner-bridge region0",
+      "link": "route-13",
+      "segment": 1,
+      "end": "corner-bridge",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "pad_polygon": [
+        [
+          52.75,
+          48.0
+        ],
+        [
+          52.75,
+          47.2
+        ],
+        [
+          51.25,
+          47.2
+        ],
+        [
+          51.25,
+          48.0
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-18 route-14 1 corner-bridge region0",
+      "link": "route-14",
+      "segment": 1,
+      "end": "corner-bridge",
+      "top_y": -4,
+      "bottom_y": -4.16,
+      "pad_polygon": [
+        [
+          53.25,
+          28.0
+        ],
+        [
+          53.25,
+          28.8
+        ],
+        [
+          54.75,
+          28.8
+        ],
+        [
+          54.75,
+          28.0
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-18 route-14 1 low region0",
+      "link": "route-14",
+      "segment": 1,
+      "end": "low",
+      "top_y": -6,
+      "bottom_y": -6.16,
+      "pad_polygon": [
+        [
+          54.75,
+          34.8
+        ],
+        [
+          54.75,
+          34.0
+        ],
+        [
+          53.25,
+          34.0
+        ],
+        [
+          53.25,
+          34.8
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-18 route-14 3 corner-bridge region0",
+      "link": "route-14",
+      "segment": 3,
+      "end": "corner-bridge",
+      "top_y": -6,
+      "bottom_y": -6.16,
+      "pad_polygon": [
+        [
+          44.75,
+          34.0
+        ],
+        [
+          44.75,
+          33.2
+        ],
+        [
+          43.25,
+          33.2
+        ],
+        [
+          43.25,
+          34.0
+        ]
+      ]
+    }
+  ],
+  "landing_trims": [],
+  "removed_source_meshes": [
+    "route-07 flight0 step1",
+    "route-07 flight0 step2",
+    "route-07 flight0 step3",
+    "route-07 flight0 step4",
+    "route-07 flight0 step5",
+    "route-07 flight0 step6",
+    "route-07 flight0 step7",
+    "route-07 flight0 step8",
+    "route-07 flight0 step9",
+    "route-07 flight0 step10",
+    "route-07 flight0 step11",
+    "route-07 flight0 step12",
+    "route-07 flight0 step13",
+    "route-07 flight0 step14",
+    "route-07 flight0 step15",
+    "route-07 flight0 step16",
+    "route-07 flight0 step17",
+    "route-07 flight0 step18",
+    "route-07 flight0 step19",
+    "route-07 flight0 step20",
+    "route-07 flight0 step21",
+    "route-07 flight0 step22",
+    "route-07 flight0 step23",
+    "route-13 flight0 step1",
+    "route-13 flight0 step2",
+    "route-13 flight0 step3",
+    "route-13 flight0 step4",
+    "route-13 flight0 step5",
+    "route-13 flight0 step6",
+    "route-13 flight0 step7",
+    "route-13 flight0 step8",
+    "route-13 flight0 step9",
+    "route-13 flight0 step10",
+    "route-13 flight0 step11",
+    "route-13 flight0 step12",
+    "route-13 flight0 step13",
+    "route-13 flight0 step14",
+    "route-13 flight0 step15",
+    "route-13 flight0 step16",
+    "route-13 flight0 step17",
+    "route-13 flight0 step18",
+    "route-13 flight0 step19",
+    "route-13 flight0 step20",
+    "route-13 flight0 step21",
+    "route-13 flight0 step22",
+    "route-13 flight0 step23",
+    "route-14 flight0 step1",
+    "route-14 flight0 step2",
+    "route-14 flight0 step3",
+    "route-14 flight0 step4",
+    "route-14 flight0 step5",
+    "route-14 flight0 step6",
+    "route-14 flight0 step7",
+    "route-14 flight0 step8",
+    "route-14 flight0 step9",
+    "route-14 flight0 step10",
+    "route-14 flight0 step11",
+    "route-14 flight0 step12",
+    "route-14 flight1 step1",
+    "route-14 flight1 step2",
+    "route-14 flight1 step3",
+    "route-14 flight1 step4",
+    "route-14 flight1 step5",
+    "route-14 flight1 step6",
+    "route-14 flight1 step7",
+    "route-14 flight1 step8",
+    "route-14 flight1 step9",
+    "route-14 flight1 step10",
+    "route-14 flight1 step11",
+    "route-14 flight1 step12"
+  ],
+  "removed_native_parts": [
+    "172:route-07 flight0 step1",
+    "173:route-07 flight0 step2",
+    "174:route-07 flight0 step3",
+    "175:route-07 flight0 step4",
+    "176:route-07 flight0 step5",
+    "177:route-07 flight0 step6",
+    "178:route-07 flight0 step7",
+    "179:route-07 flight0 step8",
+    "180:route-07 flight0 step9",
+    "181:route-07 flight0 step10",
+    "182:route-07 flight0 step11",
+    "183:route-07 flight0 step12",
+    "184:route-07 flight0 step13",
+    "185:route-07 flight0 step14",
+    "186:route-07 flight0 step15",
+    "187:route-07 flight0 step16",
+    "188:route-07 flight0 step17",
+    "189:route-07 flight0 step18",
+    "190:route-07 flight0 step19",
+    "191:route-07 flight0 step20",
+    "192:route-07 flight0 step21",
+    "193:route-07 flight0 step22",
+    "194:route-07 flight0 step23",
+    "226:route-13 flight0 step1",
+    "227:route-13 flight0 step2",
+    "228:route-13 flight0 step3",
+    "229:route-13 flight0 step4",
+    "230:route-13 flight0 step5",
+    "231:route-13 flight0 step6",
+    "232:route-13 flight0 step7",
+    "233:route-13 flight0 step8",
+    "234:route-13 flight0 step9",
+    "235:route-13 flight0 step10",
+    "236:route-13 flight0 step11",
+    "237:route-13 flight0 step12",
+    "238:route-13 flight0 step13",
+    "239:route-13 flight0 step14",
+    "240:route-13 flight0 step15",
+    "241:route-13 flight0 step16",
+    "242:route-13 flight0 step17",
+    "243:route-13 flight0 step18",
+    "244:route-13 flight0 step19",
+    "245:route-13 flight0 step20",
+    "246:route-13 flight0 step21",
+    "247:route-13 flight0 step22",
+    "248:route-13 flight0 step23",
+    "252:route-14 flight0 step1",
+    "253:route-14 flight0 step2",
+    "254:route-14 flight0 step3",
+    "255:route-14 flight0 step4",
+    "256:route-14 flight0 step5",
+    "257:route-14 flight0 step6",
+    "258:route-14 flight0 step7",
+    "259:route-14 flight0 step8",
+    "260:route-14 flight0 step9",
+    "261:route-14 flight0 step10",
+    "262:route-14 flight0 step11",
+    "263:route-14 flight0 step12",
+    "264:route-14 flight1 step1",
+    "265:route-14 flight1 step2",
+    "266:route-14 flight1 step3",
+    "267:route-14 flight1 step4",
+    "268:route-14 flight1 step5",
+    "269:route-14 flight1 step6",
+    "270:route-14 flight1 step7",
+    "271:route-14 flight1 step8",
+    "272:route-14 flight1 step9",
+    "273:route-14 flight1 step10",
+    "274:route-14 flight1 step11",
+    "275:route-14 flight1 step12"
+  ],
+  "decisions": [
+    {
+      "link": "route-07",
+      "segment": 1,
+      "end": "corner-bridge",
+      "authored_point": [
+        18,
+        0,
+        48
+      ],
+      "actual_existing_top_receivers": [
+        "route-07 landing0"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            18.75,
+            47.25
+          ],
+          [
+            18.75,
+            47.2
+          ],
+          [
+            17.25,
+            47.2
+          ],
+          [
+            17.25,
+            47.25
+          ]
+        ],
+        [
+          [
+            18.0,
+            47.25
+          ],
+          [
+            17.25,
+            47.25
+          ],
+          [
+            17.25,
+            48.0
+          ],
+          [
+            18.0,
+            48.0
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-18 route-07 1 corner-bridge region0"
+      ]
+    },
+    {
+      "link": "route-07",
+      "segment": 1,
+      "end": "low",
+      "authored_point": [
+        18,
+        -4,
+        32
+      ],
+      "actual_existing_top_receivers": [
+        "Floor west.004"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "route-07",
+      "segment": 1,
+      "end": "high",
+      "authored_point": [
+        18.0,
+        0,
+        47.2
+      ],
+      "actual_existing_top_receivers": [
+        "Authored stair end WLD-18 route-07 1 corner-bridge region0",
+        "route-07 landing0"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "route-08",
+      "segment": 1,
+      "end": "low",
+      "authored_point": [
+        6,
+        -4,
+        34
+      ],
+      "actual_existing_top_receivers": [
+        "route-08 landing0"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            5.25,
+            33.2
+          ],
+          [
+            5.25,
+            33.25
+          ],
+          [
+            6.75,
+            33.25
+          ],
+          [
+            6.75,
+            33.2
+          ]
+        ],
+        [
+          [
+            5.25,
+            33.25
+          ],
+          [
+            5.25,
+            34.0
+          ],
+          [
+            6.0,
+            34.0
+          ],
+          [
+            6.0,
+            33.25
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-18 route-08 1 low region0"
+      ]
+    },
+    {
+      "link": "route-08",
+      "segment": 1,
+      "end": "high",
+      "authored_point": [
+        6,
+        0,
+        48
+      ],
+      "actual_existing_top_receivers": [
+        "Floor exit.002"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "route-13",
+      "segment": 1,
+      "end": "corner-bridge",
+      "authored_point": [
+        52,
+        0,
+        48
+      ],
+      "actual_existing_top_receivers": [
+        "route-13 landing0"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            52.75,
+            47.25
+          ],
+          [
+            52.75,
+            47.2
+          ],
+          [
+            51.25,
+            47.2
+          ],
+          [
+            51.25,
+            47.25
+          ]
+        ],
+        [
+          [
+            52.75,
+            48.0
+          ],
+          [
+            52.75,
+            47.25
+          ],
+          [
+            52.0,
+            47.25
+          ],
+          [
+            52.0,
+            48.0
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-18 route-13 1 corner-bridge region0"
+      ]
+    },
+    {
+      "link": "route-13",
+      "segment": 1,
+      "end": "low",
+      "authored_point": [
+        52,
+        -4,
+        40.5
+      ],
+      "actual_existing_top_receivers": [
+        "route-13 landing2"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "route-13",
+      "segment": 1,
+      "end": "high",
+      "authored_point": [
+        52.0,
+        0,
+        47.2
+      ],
+      "actual_existing_top_receivers": [
+        "Authored stair end WLD-18 route-13 1 corner-bridge region0",
+        "route-13 landing0"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "route-14",
+      "segment": 1,
+      "end": "corner-bridge",
+      "authored_point": [
+        54,
+        -4,
+        28
+      ],
+      "actual_existing_top_receivers": [
+        "route-14 landing0"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            54.0,
+            28.8
+          ],
+          [
+            54.75,
+            28.8
+          ],
+          [
+            54.75,
+            28.0
+          ],
+          [
+            54.0,
+            28.0
+          ]
+        ],
+        [
+          [
+            53.25,
+            28.75
+          ],
+          [
+            53.25,
+            28.8
+          ],
+          [
+            54.0,
+            28.8
+          ],
+          [
+            54.0,
+            28.75
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-18 route-14 1 corner-bridge region0"
+      ]
+    },
+    {
+      "link": "route-14",
+      "segment": 1,
+      "end": "low",
+      "authored_point": [
+        54,
+        -6,
+        34
+      ],
+      "actual_existing_top_receivers": [
+        "route-14 landing2"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            54.75,
+            34.8
+          ],
+          [
+            54.75,
+            34.0
+          ],
+          [
+            54.0,
+            34.0
+          ],
+          [
+            54.0,
+            34.8
+          ]
+        ],
+        [
+          [
+            53.25,
+            34.75
+          ],
+          [
+            53.25,
+            34.8
+          ],
+          [
+            54.0,
+            34.8
+          ],
+          [
+            54.0,
+            34.75
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-18 route-14 1 low region0"
+      ]
+    },
+    {
+      "link": "route-14",
+      "segment": 1,
+      "end": "high",
+      "authored_point": [
+        54.0,
+        -4,
+        28.8
+      ],
+      "actual_existing_top_receivers": [
+        "Authored stair end WLD-18 route-14 1 corner-bridge region0",
+        "route-14 landing0"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "route-14",
+      "segment": 3,
+      "end": "corner-bridge",
+      "authored_point": [
+        44,
+        -6,
+        34
+      ],
+      "actual_existing_top_receivers": [
+        "route-14 landing2"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            44.75,
+            33.25
+          ],
+          [
+            44.75,
+            33.2
+          ],
+          [
+            43.25,
+            33.2
+          ],
+          [
+            43.25,
+            33.25
+          ]
+        ],
+        [
+          [
+            44.0,
+            33.25
+          ],
+          [
+            43.25,
+            33.25
+          ],
+          [
+            43.25,
+            34.0
+          ],
+          [
+            44.0,
+            34.0
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-18 route-14 3 corner-bridge region0"
+      ]
+    },
+    {
+      "link": "route-14",
+      "segment": 3,
+      "end": "low",
+      "authored_point": [
+        44,
+        -8,
+        28
+      ],
+      "actual_existing_top_receivers": [
+        "Floor east"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "route-14",
+      "segment": 3,
+      "end": "high",
+      "authored_point": [
+        44.0,
+        -6,
+        33.2
+      ],
+      "actual_existing_top_receivers": [
+        "Authored stair end WLD-18 route-14 3 corner-bridge region0",
+        "route-14 landing2"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    }
+  ],
+  "stair_components": [
+    "171:route-07 landing0",
+    "195:route-08 landing0",
+    "196:route-08 flight0 step1",
+    "197:route-08 flight0 step2",
+    "198:route-08 flight0 step3",
+    "199:route-08 flight0 step4",
+    "200:route-08 flight0 step5",
+    "201:route-08 flight0 step6",
+    "202:route-08 flight0 step7",
+    "203:route-08 flight0 step8",
+    "204:route-08 flight0 step9",
+    "205:route-08 flight0 step10",
+    "206:route-08 flight0 step11",
+    "207:route-08 flight0 step12",
+    "208:route-08 flight0 step13",
+    "209:route-08 flight0 step14",
+    "210:route-08 flight0 step15",
+    "211:route-08 flight0 step16",
+    "212:route-08 flight0 step17",
+    "213:route-08 flight0 step18",
+    "214:route-08 flight0 step19",
+    "215:route-08 flight0 step20",
+    "216:route-08 flight0 step21",
+    "217:route-08 flight0 step22",
+    "218:route-08 flight0 step23",
+    "223:route-13 landing0",
+    "224:route-13 landing2",
+    "225:route-13 landing3",
+    "249:route-14 landing0",
+    "250:route-14 landing2",
+    "251:route-14 landing4",
+    "279:route-18 flight0 step1",
+    "280:route-18 flight0 step2",
+    "281:route-18 flight0 step3",
+    "282:route-18 flight0 step4",
+    "283:route-18 flight0 step5",
+    "284:route-18 flight0 step6",
+    "285:route-18 flight0 step7",
+    "286:route-18 flight0 step8",
+    "287:route-18 flight0 step9",
+    "288:route-18 flight0 step10",
+    "289:route-18 flight0 step11",
+    "290:route-18 flight0 step12",
+    "291:route-18 flight0 step13",
+    "292:route-18 flight0 step14",
+    "293:route-18 flight0 step15",
+    "294:route-18 flight0 step16",
+    "295:route-18 flight0 step17",
+    "296:route-18 flight0 step18",
+    "297:route-18 flight0 step19",
+    "298:route-18 flight0 step20",
+    "299:route-18 flight0 step21",
+    "300:route-18 flight0 step22",
+    "301:route-18 flight0 step23",
+    "Rebuilt stair WLD-18 route-07 flight0 part0",
+    "Rebuilt stair WLD-18 route-07 flight0 part1",
+    "Rebuilt stair WLD-18 route-07 flight0 part2",
+    "Rebuilt stair WLD-18 route-07 flight0 part3",
+    "Rebuilt stair WLD-18 route-07 flight0 part4",
+    "Rebuilt stair WLD-18 route-07 flight0 part5",
+    "Rebuilt stair WLD-18 route-07 flight0 part6",
+    "Rebuilt stair WLD-18 route-07 flight0 part7",
+    "Rebuilt stair WLD-18 route-07 flight0 part8",
+    "Rebuilt stair WLD-18 route-07 flight0 part9",
+    "Rebuilt stair WLD-18 route-07 flight0 part10",
+    "Rebuilt stair WLD-18 route-07 flight0 part11",
+    "Rebuilt stair WLD-18 route-07 flight0 part12",
+    "Rebuilt stair WLD-18 route-07 flight0 part13",
+    "Rebuilt stair WLD-18 route-07 flight0 part14",
+    "Rebuilt stair WLD-18 route-07 flight0 part15",
+    "Rebuilt stair WLD-18 route-07 flight0 part16",
+    "Rebuilt stair WLD-18 route-07 flight0 part17",
+    "Rebuilt stair WLD-18 route-07 flight0 part18",
+    "Rebuilt stair WLD-18 route-07 flight0 part19",
+    "Rebuilt stair WLD-18 route-07 flight0 part20",
+    "Rebuilt stair WLD-18 route-07 flight0 part21",
+    "Rebuilt stair WLD-18 route-07 flight0 part22",
+    "Rebuilt stair WLD-18 route-13 flight0 part0",
+    "Rebuilt stair WLD-18 route-13 flight0 part1",
+    "Rebuilt stair WLD-18 route-13 flight0 part2",
+    "Rebuilt stair WLD-18 route-13 flight0 part3",
+    "Rebuilt stair WLD-18 route-13 flight0 part4",
+    "Rebuilt stair WLD-18 route-13 flight0 part5",
+    "Rebuilt stair WLD-18 route-13 flight0 part6",
+    "Rebuilt stair WLD-18 route-13 flight0 part7",
+    "Rebuilt stair WLD-18 route-13 flight0 part8",
+    "Rebuilt stair WLD-18 route-13 flight0 part9",
+    "Rebuilt stair WLD-18 route-13 flight0 part10",
+    "Rebuilt stair WLD-18 route-13 flight0 part11",
+    "Rebuilt stair WLD-18 route-13 flight0 part12",
+    "Rebuilt stair WLD-18 route-13 flight0 part13",
+    "Rebuilt stair WLD-18 route-13 flight0 part14",
+    "Rebuilt stair WLD-18 route-13 flight0 part15",
+    "Rebuilt stair WLD-18 route-13 flight0 part16",
+    "Rebuilt stair WLD-18 route-13 flight0 part17",
+    "Rebuilt stair WLD-18 route-13 flight0 part18",
+    "Rebuilt stair WLD-18 route-13 flight0 part19",
+    "Rebuilt stair WLD-18 route-13 flight0 part20",
+    "Rebuilt stair WLD-18 route-13 flight0 part21",
+    "Rebuilt stair WLD-18 route-13 flight0 part22",
+    "Rebuilt stair WLD-18 route-14 flight0 part0",
+    "Rebuilt stair WLD-18 route-14 flight0 part1",
+    "Rebuilt stair WLD-18 route-14 flight0 part2",
+    "Rebuilt stair WLD-18 route-14 flight0 part3",
+    "Rebuilt stair WLD-18 route-14 flight0 part4",
+    "Rebuilt stair WLD-18 route-14 flight0 part5",
+    "Rebuilt stair WLD-18 route-14 flight0 part6",
+    "Rebuilt stair WLD-18 route-14 flight0 part7",
+    "Rebuilt stair WLD-18 route-14 flight0 part8",
+    "Rebuilt stair WLD-18 route-14 flight0 part9",
+    "Rebuilt stair WLD-18 route-14 flight0 part10",
+    "Rebuilt stair WLD-18 route-14 flight0 part11",
+    "Rebuilt stair WLD-18 route-14 flight1 part0",
+    "Rebuilt stair WLD-18 route-14 flight1 part1",
+    "Rebuilt stair WLD-18 route-14 flight1 part2",
+    "Rebuilt stair WLD-18 route-14 flight1 part3",
+    "Rebuilt stair WLD-18 route-14 flight1 part4",
+    "Rebuilt stair WLD-18 route-14 flight1 part5",
+    "Rebuilt stair WLD-18 route-14 flight1 part6",
+    "Rebuilt stair WLD-18 route-14 flight1 part7",
+    "Rebuilt stair WLD-18 route-14 flight1 part8",
+    "Rebuilt stair WLD-18 route-14 flight1 part9",
+    "Rebuilt stair WLD-18 route-14 flight1 part10",
+    "Rebuilt stair WLD-18 route-14 flight1 part11",
+    "Authored stair end WLD-18 route-07 1 corner-bridge region0",
+    "Authored stair end WLD-18 route-08 1 low region0",
+    "Authored stair end WLD-18 route-13 1 corner-bridge region0",
+    "Authored stair end WLD-18 route-14 1 corner-bridge region0",
+    "Authored stair end WLD-18 route-14 1 low region0",
+    "Authored stair end WLD-18 route-14 3 corner-bridge region0"
+  ],
+  "retained_glb_resources": {
+    "original_binary_bytes_preserved": 1282448,
+    "original_static_resources_preserved": true,
+    "replaced_scene_nodes": [
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181,
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      188,
+      189,
+      190,
+      191,
+      192,
+      193,
+      194,
+      226,
+      227,
+      228,
+      229,
+      230,
+      231,
+      232,
+      233,
+      234,
+      235,
+      236,
+      237,
+      238,
+      239,
+      240,
+      241,
+      242,
+      243,
+      244,
+      245,
+      246,
+      247,
+      248,
+      252,
+      253,
+      254,
+      255,
+      256,
+      257,
+      258,
+      259,
+      260,
+      261,
+      262,
+      263,
+      264,
+      265,
+      266,
+      267,
+      268,
+      269,
+      270,
+      271,
+      272,
+      273,
+      274,
+      275
+    ]
+  },
+  "glb_sha256": "79dc7d418075e5adeb105644df1aff7deeb4ecbd869c72a6bb0986fd490d1d1e",
+  "physics_sha256": "6bfeb31baaa60e1c122b9a6a0890af34b0fbc7c66beb961b9abc427fdea85b73",
+  "generator_sha256": "38c042e4dfd641a017597a9f399273da313a7d655fe66ee9492578fb1fa77838",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-18-whole-site.png",
+      "sha256": "5d61f575693bb449544c99e52ffdf444343dc48c02940c01cb75261b70177bda",
+      "type": "native full scene"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-18-new-landings.png",
+      "sha256": "d5c5dedf500ee205617df71e5a13032cb4da9159b77c35d18e948a38240765be",
+      "type": "native isolated actual landing changes; context hidden"
+    }
+  ],
+  "source_layout": "development/levels/rebuild/wld-18/rough-layout.json",
+  "source_layout_sha256": "14c93d8b8b1f04d84d9c0c830662ec23ff1e08b0eb2969310179eee59a5e414d",
+  "flight_replacements": [
+    {
+      "link": "route-07",
+      "source_segment": 1,
+      "old_points": [
+        [
+          18,
+          0,
+          48
+        ],
+        [
+          18,
+          -4,
+          32
+        ]
+      ],
+      "new_points": [
+        [
+          18.0,
+          0,
+          47.2
+        ],
+        [
+          18,
+          -4,
+          32
+        ]
+      ],
+      "shift_metres": 0.8,
+      "original_landings_retained": [
+        "route-07 landing0"
+      ],
+      "new_stair_parts": [
+        "Rebuilt stair WLD-18 route-07 flight0 part0",
+        "Rebuilt stair WLD-18 route-07 flight0 part1",
+        "Rebuilt stair WLD-18 route-07 flight0 part2",
+        "Rebuilt stair WLD-18 route-07 flight0 part3",
+        "Rebuilt stair WLD-18 route-07 flight0 part4",
+        "Rebuilt stair WLD-18 route-07 flight0 part5",
+        "Rebuilt stair WLD-18 route-07 flight0 part6",
+        "Rebuilt stair WLD-18 route-07 flight0 part7",
+        "Rebuilt stair WLD-18 route-07 flight0 part8",
+        "Rebuilt stair WLD-18 route-07 flight0 part9",
+        "Rebuilt stair WLD-18 route-07 flight0 part10",
+        "Rebuilt stair WLD-18 route-07 flight0 part11",
+        "Rebuilt stair WLD-18 route-07 flight0 part12",
+        "Rebuilt stair WLD-18 route-07 flight0 part13",
+        "Rebuilt stair WLD-18 route-07 flight0 part14",
+        "Rebuilt stair WLD-18 route-07 flight0 part15",
+        "Rebuilt stair WLD-18 route-07 flight0 part16",
+        "Rebuilt stair WLD-18 route-07 flight0 part17",
+        "Rebuilt stair WLD-18 route-07 flight0 part18",
+        "Rebuilt stair WLD-18 route-07 flight0 part19",
+        "Rebuilt stair WLD-18 route-07 flight0 part20",
+        "Rebuilt stair WLD-18 route-07 flight0 part21",
+        "Rebuilt stair WLD-18 route-07 flight0 part22"
+      ]
+    },
+    {
+      "link": "route-13",
+      "source_segment": 1,
+      "old_points": [
+        [
+          52,
+          0,
+          48
+        ],
+        [
+          52,
+          -4,
+          40.5
+        ]
+      ],
+      "new_points": [
+        [
+          52.0,
+          0,
+          47.2
+        ],
+        [
+          52,
+          -4,
+          40.5
+        ]
+      ],
+      "shift_metres": 0.8,
+      "original_landings_retained": [
+        "route-13 landing0"
+      ],
+      "new_stair_parts": [
+        "Rebuilt stair WLD-18 route-13 flight0 part0",
+        "Rebuilt stair WLD-18 route-13 flight0 part1",
+        "Rebuilt stair WLD-18 route-13 flight0 part2",
+        "Rebuilt stair WLD-18 route-13 flight0 part3",
+        "Rebuilt stair WLD-18 route-13 flight0 part4",
+        "Rebuilt stair WLD-18 route-13 flight0 part5",
+        "Rebuilt stair WLD-18 route-13 flight0 part6",
+        "Rebuilt stair WLD-18 route-13 flight0 part7",
+        "Rebuilt stair WLD-18 route-13 flight0 part8",
+        "Rebuilt stair WLD-18 route-13 flight0 part9",
+        "Rebuilt stair WLD-18 route-13 flight0 part10",
+        "Rebuilt stair WLD-18 route-13 flight0 part11",
+        "Rebuilt stair WLD-18 route-13 flight0 part12",
+        "Rebuilt stair WLD-18 route-13 flight0 part13",
+        "Rebuilt stair WLD-18 route-13 flight0 part14",
+        "Rebuilt stair WLD-18 route-13 flight0 part15",
+        "Rebuilt stair WLD-18 route-13 flight0 part16",
+        "Rebuilt stair WLD-18 route-13 flight0 part17",
+        "Rebuilt stair WLD-18 route-13 flight0 part18",
+        "Rebuilt stair WLD-18 route-13 flight0 part19",
+        "Rebuilt stair WLD-18 route-13 flight0 part20",
+        "Rebuilt stair WLD-18 route-13 flight0 part21",
+        "Rebuilt stair WLD-18 route-13 flight0 part22"
+      ]
+    },
+    {
+      "link": "route-14",
+      "source_segment": 1,
+      "old_points": [
+        [
+          54,
+          -4,
+          28
+        ],
+        [
+          54,
+          -6,
+          34
+        ]
+      ],
+      "new_points": [
+        [
+          54.0,
+          -4,
+          28.8
+        ],
+        [
+          54,
+          -6,
+          34
+        ]
+      ],
+      "shift_metres": 0.8,
+      "original_landings_retained": [
+        "route-14 landing0"
+      ],
+      "new_stair_parts": [
+        "Rebuilt stair WLD-18 route-14 flight0 part0",
+        "Rebuilt stair WLD-18 route-14 flight0 part1",
+        "Rebuilt stair WLD-18 route-14 flight0 part2",
+        "Rebuilt stair WLD-18 route-14 flight0 part3",
+        "Rebuilt stair WLD-18 route-14 flight0 part4",
+        "Rebuilt stair WLD-18 route-14 flight0 part5",
+        "Rebuilt stair WLD-18 route-14 flight0 part6",
+        "Rebuilt stair WLD-18 route-14 flight0 part7",
+        "Rebuilt stair WLD-18 route-14 flight0 part8",
+        "Rebuilt stair WLD-18 route-14 flight0 part9",
+        "Rebuilt stair WLD-18 route-14 flight0 part10",
+        "Rebuilt stair WLD-18 route-14 flight0 part11"
+      ]
+    },
+    {
+      "link": "route-14",
+      "source_segment": 3,
+      "old_points": [
+        [
+          44,
+          -6,
+          34
+        ],
+        [
+          44,
+          -8,
+          28
+        ]
+      ],
+      "new_points": [
+        [
+          44.0,
+          -6,
+          33.2
+        ],
+        [
+          44,
+          -8,
+          28
+        ]
+      ],
+      "shift_metres": 0.8,
+      "original_landings_retained": [
+        "route-14 landing2"
+      ],
+      "new_stair_parts": [
+        "Rebuilt stair WLD-18 route-14 flight1 part0",
+        "Rebuilt stair WLD-18 route-14 flight1 part1",
+        "Rebuilt stair WLD-18 route-14 flight1 part2",
+        "Rebuilt stair WLD-18 route-14 flight1 part3",
+        "Rebuilt stair WLD-18 route-14 flight1 part4",
+        "Rebuilt stair WLD-18 route-14 flight1 part5",
+        "Rebuilt stair WLD-18 route-14 flight1 part6",
+        "Rebuilt stair WLD-18 route-14 flight1 part7",
+        "Rebuilt stair WLD-18 route-14 flight1 part8",
+        "Rebuilt stair WLD-18 route-14 flight1 part9",
+        "Rebuilt stair WLD-18 route-14 flight1 part10",
+        "Rebuilt stair WLD-18 route-14 flight1 part11"
+      ]
+    }
+  ],
+  "corner_bridges": [
+    {
+      "link": "route-07",
+      "source_segment": 1,
+      "points": [
+        [
+          18,
+          0,
+          48
+        ],
+        [
+          18.0,
+          0,
+          47.2
+        ]
+      ],
+      "width": 1.5
+    },
+    {
+      "link": "route-13",
+      "source_segment": 1,
+      "points": [
+        [
+          52,
+          0,
+          48
+        ],
+        [
+          52.0,
+          0,
+          47.2
+        ]
+      ],
+      "width": 1.5
+    },
+    {
+      "link": "route-14",
+      "source_segment": 1,
+      "points": [
+        [
+          54,
+          -4,
+          28
+        ],
+        [
+          54.0,
+          -4,
+          28.8
+        ]
+      ],
+      "width": 1.5
+    },
+    {
+      "link": "route-14",
+      "source_segment": 3,
+      "points": [
+        [
+          44,
+          -6,
+          34
+        ],
+        [
+          44.0,
+          -6,
+          33.2
+        ]
+      ],
+      "width": 1.5
+    }
+  ],
+  "source_segment_map": {
+    "route-01": {},
+    "route-02": {},
+    "route-03": {},
+    "route-04": {},
+    "route-05": {},
+    "route-06": {},
+    "route-07": {
+      "2": 1
+    },
+    "route-08": {
+      "1": 1
+    },
+    "route-09": {},
+    "route-10": {},
+    "route-11": {},
+    "route-12": {},
+    "route-13": {
+      "2": 1
+    },
+    "route-14": {
+      "2": 1,
+      "5": 3
+    },
+    "route-15": {},
+    "route-16": {},
+    "route-17": {},
+    "route-18": {
+      "0": 0
+    },
+    "route-19": {}
+  },
+  "open_findings": [],
+  "remaining": "Independent solids/material/pivot/native checks and all25flat/continuous stair regressions. Wall/terrain penetrations, crossed flights, circulation, supports/guards and actual runtime/network/hardware gates remain open."
+}

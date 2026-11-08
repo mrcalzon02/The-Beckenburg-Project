@@ -9,8 +9,8 @@ import argparse,csv,hashlib,json,math,os,subprocess
 ROOT=Path(__file__).resolve().parents[1]
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True);parser.add_argument('--require-authored-chains',action='store_true');parser.add_argument('--bearing-pass',action='store_true');parser.add_argument('--deck-pass',action='store_true');parser.add_argument('--occupancy-pass',action='store_true');parser.add_argument('--closure-pass',action='store_true');args=parser.parse_args();assert sum([args.bearing_pass,args.deck_pass,args.occupancy_pass,args.closure_pass])<=1
-    comparing=args.bearing_pass or args.deck_pass or args.occupancy_pass or args.closure_pass
+    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True);parser.add_argument('--require-authored-chains',action='store_true');parser.add_argument('--bearing-pass',action='store_true');parser.add_argument('--deck-pass',action='store_true');parser.add_argument('--occupancy-pass',action='store_true');parser.add_argument('--closure-pass',action='store_true');parser.add_argument('--stair-end-pass',action='store_true');args=parser.parse_args();assert sum([args.bearing_pass,args.deck_pass,args.occupancy_pass,args.closure_pass,args.stair_end_pass])<=1
+    comparing=args.bearing_pass or args.deck_pass or args.occupancy_pass or args.closure_pass or args.stair_end_pass
     build=ROOT/'build/roster-stair-probe';build.mkdir(parents=True,exist_ok=True)
     sites=json.loads((ROOT/'development/levels/rebuild/furnishings/room-programs.json').read_text(encoding='utf-8'))['sites']
     chain_path=ROOT/'development/levels/rebuild/movement-chains.json';declared=json.loads(chain_path.read_text())['sites']
@@ -40,12 +40,25 @@ def main():
                 out=before;bearing=json.loads((before/'construction.json').read_text());bearing=dict(bearing,source_glb_sha256=bearing['glb_sha256'],source_physics_sha256=bearing['physics_sha256']);variants=[('before_bearing',before,oldmesh,oldphysics),('after_bearing',before,oldmesh,oldphysics)]
         if args.closure_pass:
             options=[(ROOT/f'development/levels/rebuild/terrain-occupancy-pass/assemblies/{site.lower()}','occupied-terrain'),(ROOT/f'development/levels/rebuild/deck-fit-pass/{site.lower()}','deck-terrain'),(ROOT/f'development/levels/rebuild/terrain-fit-pass/{site.lower()}','supported-terrain')];before,stem=next((p,n) for p,n in options if (p/(n+'.glb')).exists());out=ROOT/f'development/levels/rebuild/floor-closure-pass/{site.lower()}';bearing=json.loads((out/'construction.json').read_text());variants=[('before_bearing',before,stem+'.glb',stem+'.hcs2'),('after_bearing',out,'closed-floors.glb','closed-floors.hcs2')]
+        if args.stair_end_pass:
+            before=ROOT/f'development/levels/rebuild/floor-closure-pass/{site.lower()}';out=ROOT/f'development/levels/rebuild/stair-landing-pass/{site.lower()}';candidate=out/'supported-stairs.glb'
+            if candidate.exists():
+                bearing=json.loads((out/'construction.json').read_text());variants=[('before_bearing',before,'closed-floors.glb','closed-floors.hcs2'),('after_bearing',out,'supported-stairs.glb','supported-stairs.hcs2')]
+            else:
+                out=before;bearing=json.loads((out/'construction.json').read_text());bearing=dict(bearing,source_glb_sha256=bearing['glb_sha256'],source_physics_sha256=bearing['physics_sha256']);variants=[('before_bearing',before,'closed-floors.glb','closed-floors.hcs2'),('after_bearing',before,'closed-floors.glb','closed-floors.hcs2')]
         for variant,folder,mesh,physics in variants:
+            active_layout_path=layout_path
+            mapping={}
+            if args.stair_end_pass and 'source_layout' in bearing:
+                active_layout_path=ROOT/bearing['source_layout' if variant=='before_bearing' else 'layout']
+                if variant=='after_bearing':mapping=bearing.get('source_segment_map',{})
+            layout=json.loads(active_layout_path.read_text(encoding='utf-8'))
             if comparing:
                 contract_path=out/'construction.json';original=json.loads((ROOT/f'development/levels/rebuild/furnishings/{site.lower()}/physics-contract.json').read_text());contract=dict(stair_components=original['stair_components'],source_glb_sha256=bearing['source_glb_sha256'] if variant=='before_bearing' else bearing['glb_sha256'],physics_sha256=bearing['source_physics_sha256'] if variant=='before_bearing' else bearing['physics_sha256'])
             else:contract_path=folder/'physics-contract.json';contract=json.loads(contract_path.read_text(encoding='utf-8'))
             assert sha(folder/mesh)==contract['source_glb_sha256'] and sha(folder/physics)==contract['physics_sha256'],(site,variant)
-            bindings[site]['variants'][variant]={'contract':sha(contract_path),'physics':sha(folder/physics),'glb':sha(folder/mesh)}
+            bindings[site]['variants'][variant]={'contract':sha(contract_path),'physics':sha(folder/physics),'glb':sha(folder/mesh),'layout':sha(active_layout_path)}
+            if args.stair_end_pass and variant=='after_bearing' and (ROOT/f'development/levels/rebuild/stair-landing-pass/{site.lower()}/construction.json').exists():contract['stair_components']=bearing['stair_components']
             for name in contract['stair_components']:
                 assert '\t' not in name and '\n' not in name
                 names.append(f'{site}:{variant}\t{name}')
@@ -57,7 +70,9 @@ def main():
                     if vertical:paths.append(row)
                     if abs(p[1]-q[1])<.01:continue
                     assert math.hypot(q[0]-p[0],q[2]-p[2])>.01,(site,link['id'])
-                    rows.append(row)
+                    # Stable baseline identity; coordinates are the revised physical flight.
+                    source_index=mapping.get(link['id'],{}).get(str(i),i)
+                    rows.append('\t'.join(map(str,[site,variant,folder/physics,contract['physics_sha256'],link['id'],source_index,*p,*q])))
             # Join only unique, exact authored endpoints. No inferred connector
             # or reset at a floor boundary: carry the actual feet position from
             # one full source link into the next.

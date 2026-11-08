@@ -5736,6 +5736,34 @@ Evidence and verification: development/levels/rebuild/floor-closure-pass/verific
 
 Older-map obligation: All29roster decisions explicit. Nineteenzero-addition results do not establish complete map fitness. Preserve source assets, exact native earth punches,40space envelope and canonical van/power/hiding/story; remaining35stairsegments/35links, legacy producer migration, mature-source and actual runtime/network/hardware gates remain.
 
+### DEV-417 — High stair landing overhangs descending treads; narrowing it removes walkway support
+
+**Status:** FIX VERIFIED IN NATIVE CANDIDATES: full25movement/source regression; runtime integration open · **Affected:** Battery WLD-17 routes11/12 and analogous high landing corners WLD-09/WLD-18
+
+Original high landing blocks standing headroom on descending treads. Rejected narrow-platform pilot passed stair centres but regressed six side-lane standing samples and sweeps.
+
+Cause / uncertainty: Treating the stair centre independently of the full-width adjoining flat walkway.
+
+Fix / next action: Retain original full landing and all flat route coordinates; inset the descending flight beyond the overhang, add a visible closed bridge and revise the shared authored route points. Never change support/body tolerances or remove blockers to manufacture passes. Final all25 native checks:110409flat samples,99937baseline valid,94879qualified sweeps,47recovered standing poses; zero new blocks/sweepfailures.221flight segments186→196passing both ways,84full links49→56; zero passing-direction regressions. Both battery links pass, original walkway full width retained. Independent exported/native solids and all11editable packed sources pass.
+
+Evidence and verification: development/levels/rebuild/stair-landing-pass/rejected/battery-narrowed-turn-*; final verification and native captures under stair-landing-pass/
+
+Older-map obligation: Individually audit all29packets and older maps for stair/landing joins, guards, full-width circulation, depth and surface support; source candidate passes are not runtime integration.
+
+### DEV-418 — Unupdated tread rotation cuts an unsupported wedge from a new stair landing
+
+**Status:** FIX VERIFIED IN NATIVE CANDIDATES: full25movement/source regression; runtime integration open · **Affected:** Stair landing construction candidate WLD-17 route12; rebuilt high corners across WLD-09/WLD-18 also regenerated
+
+First full-width candidate retained all standing poses but introduced one side-lane sweep failure and lost support at the route12 stair-to-bridge transition.
+
+Cause / uncertainty: Blender matrix_world had not updated after rotating newly created tread boxes; planar subtraction used an unrotated top footprint. Splitting coplanar triangles and float slivers made the missing wedge harder to diagnose.
+
+Fix / next action: Update the dependency graph before reading final world top coordinates; subtract a complete convex top only when its area equals the actual triangle union. Snap authored cutters to10micrometres, bake only new transforms and triangulate before exact export/native comparison. Preserve rejected native results; do not modify production tolerances. Final all25 native checks:110409flat samples,99937baseline valid,94879qualified sweeps,47recovered standing poses; zero new blocks/sweepfailures.221flight segments186→196passing both ways,84full links49→56; zero passing-direction regressions. Both battery links pass, original walkway full width retained. Independent exported/native solids and all11editable packed sources pass.
+
+Evidence and verification: development/levels/rebuild/stair-landing-pass/rejected/stale-rotation-*; tools/build_stair_landings.py; tools/check_stair_landings.py
+
+Older-map obligation: Audit actual rotated object footprints after transform/geometry changes; preserve original props, UVs, pivots and saved terrain holes. All25candidate movement and source checks required; complete runtime/network/hardware acceptance remains open.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

@@ -1,0 +1,458 @@
+{
+  "id": "WLD-06",
+  "status": "ACTUAL_STAIR_END_SUPPORT_CANDIDATE_FULL_ROUTE_GATES_OPEN",
+  "source_glb": "development/levels/rebuild/floor-closure-pass/wld-06/closed-floors.glb",
+  "source_glb_sha256": "095782aade4fea3277dfec6d144bcd20071779bd64ddb8f9e0a128f9787b1e31",
+  "source_physics": "development/levels/rebuild/floor-closure-pass/wld-06/closed-floors.hcs2",
+  "source_physics_sha256": "e3fb784f518e4766b6ccd65aa4bbae02b5ab1ceb7f489aa138962e9822641054",
+  "layout": "development/levels/layouts/wld-06/layout.json",
+  "layout_sha256": "f37184525debe30440a0d215c685e22ef40561077ee6ae6fb823e7587dc99304",
+  "targeted_segments": [
+    {
+      "link": "L16",
+      "segment": 0
+    },
+    {
+      "link": "L17",
+      "segment": 0
+    }
+  ],
+  "new_parts": 6,
+  "new_triangles": 80,
+  "platforms": [
+    {
+      "name": "Authored stair end WLD-06 L16 0 high region0",
+      "link": "L16",
+      "segment": 0,
+      "end": "high",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "pad_polygon": [
+        [
+          17.79047091126913,
+          32.02219758592259
+        ],
+        [
+          17.0082289800072,
+          32.18982085690729
+        ],
+        [
+          17.427287157468943,
+          34.14542568506211
+        ],
+        [
+          18.20952908873087,
+          33.97780241407741
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-06 L16 0 high region1",
+      "link": "L16",
+      "segment": 0,
+      "end": "high",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "pad_polygon": [
+        [
+          17.79047091126913,
+          32.02219758592259
+        ],
+        [
+          17.0082289800072,
+          32.18982085690729
+        ],
+        [
+          17.427287157468943,
+          34.14542568506211
+        ],
+        [
+          18.20952908873087,
+          33.97780241407741
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-06 L16 0 high region2",
+      "link": "L16",
+      "segment": 0,
+      "end": "high",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "pad_polygon": [
+        [
+          17.79047091126913,
+          32.02219758592259
+        ],
+        [
+          17.0082289800072,
+          32.18982085690729
+        ],
+        [
+          17.427287157468943,
+          34.14542568506211
+        ],
+        [
+          18.20952908873087,
+          33.97780241407741
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-06 L16 0 high region3",
+      "link": "L16",
+      "segment": 0,
+      "end": "high",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "pad_polygon": [
+        [
+          17.79047091126913,
+          32.02219758592259
+        ],
+        [
+          17.0082289800072,
+          32.18982085690729
+        ],
+        [
+          17.427287157468943,
+          34.14542568506211
+        ],
+        [
+          18.20952908873087,
+          33.97780241407741
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-06 L17 0 high region0",
+      "link": "L17",
+      "segment": 0,
+      "end": "high",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "pad_polygon": [
+        [
+          45.790470911269125,
+          33.97780241407741
+        ],
+        [
+          46.572712842531054,
+          34.14542568506211
+        ],
+        [
+          46.991771019992804,
+          32.18982085690729
+        ],
+        [
+          46.209529088730875,
+          32.02219758592259
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-06 L17 0 high region1",
+      "link": "L17",
+      "segment": 0,
+      "end": "high",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "pad_polygon": [
+        [
+          45.790470911269125,
+          33.97780241407741
+        ],
+        [
+          46.572712842531054,
+          34.14542568506211
+        ],
+        [
+          46.991771019992804,
+          32.18982085690729
+        ],
+        [
+          46.209529088730875,
+          32.02219758592259
+        ]
+      ]
+    }
+  ],
+  "landing_trims": [],
+  "removed_source_meshes": [],
+  "removed_native_parts": [],
+  "decisions": [
+    {
+      "link": "L16",
+      "segment": 0,
+      "end": "low",
+      "authored_point": [
+        32.0,
+        -2.5,
+        30.0
+      ],
+      "actual_existing_top_receivers": [
+        "Floor undercroft"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "L16",
+      "segment": 0,
+      "end": "high",
+      "authored_point": [
+        18.0,
+        0,
+        33.0
+      ],
+      "actual_existing_top_receivers": [
+        "L14 support 1",
+        "L15 support 0",
+        "L16 flight0 step14"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            17.246429975193173,
+            33.30142550110851
+          ],
+          [
+            17.326220185257583,
+            33.67377981474242
+          ],
+          [
+            17.999999072180636,
+            32.9999956701763
+          ]
+        ],
+        [
+          [
+            17.75904,
+            34.074335790234024
+          ],
+          [
+            18.20952908873087,
+            33.97780241407741
+          ],
+          [
+            18.0,
+            33.0
+          ],
+          [
+            17.75904,
+            33.24096
+          ]
+        ],
+        [
+          [
+            17.34440028630717,
+            33.75862028630717
+          ],
+          [
+            17.427287157468943,
+            34.14542568506211
+          ],
+          [
+            17.677573003722138,
+            34.09179300372214
+          ]
+        ],
+        [
+          [
+            17.75904,
+            32.0289351347
+          ],
+          [
+            17.75904,
+            33.09638
+          ],
+          [
+            18.000000000075893,
+            33.00000000035417
+          ],
+          [
+            17.79047,
+            32.0222
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-06 L16 0 high region0",
+        "Authored stair end WLD-06 L16 0 high region1",
+        "Authored stair end WLD-06 L16 0 high region2",
+        "Authored stair end WLD-06 L16 0 high region3"
+      ]
+    },
+    {
+      "link": "L17",
+      "segment": 0,
+      "end": "low",
+      "authored_point": [
+        32.0,
+        -2.5,
+        30.0
+      ],
+      "actual_existing_top_receivers": [
+        "Floor undercroft"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "L17",
+      "segment": 0,
+      "end": "high",
+      "authored_point": [
+        46.0,
+        0,
+        33.0
+      ],
+      "actual_existing_top_receivers": [
+        "L17 flight0 step14",
+        "L18 support 0"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            45.790470911269125,
+            33.97780241407741
+          ],
+          [
+            46.24096,
+            34.074335790234024
+          ],
+          [
+            46.24096,
+            32.0289351347
+          ],
+          [
+            46.20953,
+            32.0222
+          ]
+        ],
+        [
+          [
+            46.67377981474242,
+            33.67377981474242
+          ],
+          [
+            46.9917698785635,
+            32.18982618357737
+          ],
+          [
+            46.24096,
+            32.0289351347
+          ],
+          [
+            46.24096,
+            33.24096
+          ]
+        ],
+        [
+          [
+            46.32242699627786,
+            34.09179300372214
+          ],
+          [
+            46.572712842531054,
+            34.14542568506211
+          ],
+          [
+            46.65559971369283,
+            33.75862028630717
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-06 L17 0 high region0",
+        "Authored stair end WLD-06 L17 0 high region1"
+      ]
+    }
+  ],
+  "stair_components": [
+    "85:L16 flight0 step1",
+    "86:L16 flight0 step2",
+    "87:L16 flight0 step3",
+    "88:L16 flight0 step4",
+    "89:L16 flight0 step5",
+    "90:L16 flight0 step6",
+    "91:L16 flight0 step7",
+    "92:L16 flight0 step8",
+    "93:L16 flight0 step9",
+    "94:L16 flight0 step10",
+    "95:L16 flight0 step11",
+    "96:L16 flight0 step12",
+    "97:L16 flight0 step13",
+    "98:L16 flight0 step14",
+    "99:L17 flight0 step1",
+    "100:L17 flight0 step2",
+    "101:L17 flight0 step3",
+    "102:L17 flight0 step4",
+    "103:L17 flight0 step5",
+    "104:L17 flight0 step6",
+    "105:L17 flight0 step7",
+    "106:L17 flight0 step8",
+    "107:L17 flight0 step9",
+    "108:L17 flight0 step10",
+    "109:L17 flight0 step11",
+    "110:L17 flight0 step12",
+    "111:L17 flight0 step13",
+    "112:L17 flight0 step14",
+    "Authored stair end WLD-06 L16 0 high region0",
+    "Authored stair end WLD-06 L16 0 high region1",
+    "Authored stair end WLD-06 L16 0 high region2",
+    "Authored stair end WLD-06 L16 0 high region3",
+    "Authored stair end WLD-06 L17 0 high region0",
+    "Authored stair end WLD-06 L17 0 high region1"
+  ],
+  "retained_glb_resources": {
+    "original_binary_bytes_preserved": 1247528,
+    "original_static_resources_preserved": true,
+    "replaced_scene_nodes": []
+  },
+  "glb_sha256": "1425d99695ff2f76b553308f673ce97f4674b133c441072cad27068c7b8953f7",
+  "physics_sha256": "01d6d01677c756e186d161e5bfe55b3b210bd294523252b452ca6a83c5181b48",
+  "generator_sha256": "38c042e4dfd641a017597a9f399273da313a7d655fe66ee9492578fb1fa77838",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-06-whole-site.png",
+      "sha256": "0a440a5d2de0450ba384b1fb3c315ec8c1324f2585af5f8301445deb1d4fad2b",
+      "type": "native full scene"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-06-new-landings.png",
+      "sha256": "222d7dc4742bc2a655e13abb3b1de5b840cdb3e32816cace83e18fb1bc4d25c0",
+      "type": "native isolated actual landing changes; context hidden"
+    }
+  ],
+  "source_layout": "development/levels/layouts/wld-06/layout.json",
+  "source_layout_sha256": "f37184525debe30440a0d215c685e22ef40561077ee6ae6fb823e7587dc99304",
+  "flight_replacements": [],
+  "corner_bridges": [],
+  "source_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {
+      "0": 0
+    },
+    "L17": {
+      "0": 0
+    },
+    "L18": {}
+  },
+  "open_findings": [],
+  "remaining": "Independent solids/material/pivot/native checks and all25flat/continuous stair regressions. Wall/terrain penetrations, crossed flights, circulation, supports/guards and actual runtime/network/hardware gates remain open."
+}

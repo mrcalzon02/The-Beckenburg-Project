@@ -26,3 +26,13 @@ development/levels/rebuild/terrain-occupancy-pass/** -text
 
 # Floor/cap construction contracts bind exact source/evidence bytes.
 development/levels/rebuild/floor-closure-pass/** -text
+
+# Stair construction binds exact source/evidence bytes.
+development/levels/rebuild/stair-landing-pass/** -text
+
+# Hash-bound stair build/audit tools use stable checkout bytes.
+tools/build_stair_landings.py text eol=lf
+tools/check_stair_landings.py text eol=lf
+tools/render_stair_closeups.py text eol=lf
+tools/audit_roster_stairs.py text eol=lf
+tools/audit_macroterrain_fit.py text eol=lf
