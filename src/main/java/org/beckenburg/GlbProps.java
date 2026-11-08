@@ -169,6 +169,9 @@ public final class GlbProps {
     static int imageRow(double v,int height,boolean gltfTopLeft){
         return imageRow(v,height,gltfTopLeft,10497);
     }
+    private static int imageColumn(double u,int width,int wrap){
+        return Math.min(width-1,(int)(wrapUv(u,wrap)*width));
+    }
     static int imageRow(double v,int height,boolean gltfTopLeft,int wrap){
         if(height<1)throw new IllegalArgumentException("UV image height");
         double coord=wrapUv(v,wrap);
@@ -355,7 +358,7 @@ public final class GlbProps {
         if(index<0||index>=textures.size()||!Double.isFinite(u)||!Double.isFinite(v))
             throw new IllegalArgumentException("Invalid imported texture");
         BufferedImage image=material==vanCrtMaterial?vanCrtImage:textures.get(index);
-        int x=Math.min(image.getWidth()-1,(int)(wrapUv(u,samplerWrapS.get(index))*image.getWidth()));
+        int x=imageColumn(u,image.getWidth(),samplerWrapS.get(index));
         // GGBot's Blender source uses the actual glTF image origin at top-left.
         int y=imageRow(v,image.getHeight(),vehicleUvMaterials.get(index),samplerWrapT.get(index));
         int rgb=image.getRGB(x,y)&0xffffff;
@@ -376,8 +379,7 @@ public final class GlbProps {
         if(index<0||index>=textures.size()||!Double.isFinite(u)||!Double.isFinite(v))
             throw new IllegalArgumentException("Invalid glTF RGBA material");
         BufferedImage image=textures.get(index);
-        int x=Math.min(image.getWidth()-1,
-            (int)(wrapUv(u,samplerWrapS.get(index))*image.getWidth()));
+        int x=imageColumn(u,image.getWidth(),samplerWrapS.get(index));
         int y=imageRow(v,image.getHeight(),vehicleUvMaterials.get(index),
             samplerWrapT.get(index));
         int source=image.getRGB(x,y);
@@ -395,7 +397,7 @@ public final class GlbProps {
         if(index<0||index>=textures.size()||!Double.isFinite(u)||!Double.isFinite(v))
             throw new IllegalArgumentException("Invalid imported alpha");
         BufferedImage image=textures.get(index);
-        int x=Math.min(image.getWidth()-1,(int)(wrapUv(u,samplerWrapS.get(index))*image.getWidth()));
+        int x=imageColumn(u,image.getWidth(),samplerWrapS.get(index));
         int y=imageRow(v,image.getHeight(),vehicleUvMaterials.get(index),samplerWrapT.get(index));
         int texAlpha=(image.getRGB(x,y)>>>24)&255;
         return Math.max(0,Math.min(255,(int)Math.round(
@@ -414,6 +416,25 @@ public final class GlbProps {
     }
     static synchronized BufferedImage renderNativeMaterialReview(byte[] bytes,SceneRenderer renderer,double rotation,
             List<Long> faceIds,java.util.function.LongPredicate visibleFace,int checkerSize)throws IOException{
+        renderReview(bytes,renderer,rotation,faceIds,visibleFace,checkerSize,null);
+        return renderer.image();
+    }
+    static synchronized MaterialReviewFrame materialReviewFrame(byte[] bytes,SceneRenderer renderer,double rotation,
+            org.beckenburg.editor.EditorMeshPipeline.Mesh source,java.util.function.LongPredicate visibleFace,int checkerSize)throws IOException{
+        var frame=new MaterialReviewFrame(renderer.image());
+        renderReview(bytes,renderer,rotation,source.faceIds(),visibleFace,checkerSize,frame);
+        frame.bindVisible(source);
+        return frame;
+    }
+    static int reviewTexel(int material,double u,double v){
+        int index=material-TEXTURE_BASE;
+        if(index<0||index>=textures.size()||!Double.isFinite(u)||!Double.isFinite(v))return -1;
+        var image=textures.get(index);
+        int x=imageColumn(u,image.getWidth(),samplerWrapS.get(index));
+        return x+image.getWidth()*imageRow(v,image.getHeight(),vehicleUvMaterials.get(index),samplerWrapT.get(index));
+    }
+    private static void renderReview(byte[] bytes,SceneRenderer renderer,double rotation,
+            List<Long> faceIds,java.util.function.LongPredicate visibleFace,int checkerSize,MaterialReviewFrame frame)throws IOException{
         if(checkerSize<0 || checkerSize>2048)throw new IOException("Invalid checker size");
         List<List<?>> tables=List.of(textures,vehicleUvMaterials,samplerWrapS,samplerWrapT,materialNames,diffuseFactors);int[] lengths=tables.stream().mapToInt(List::size).toArray();int first=TEXTURE_BASE+textures.size();
         try{
@@ -433,13 +454,17 @@ public final class GlbProps {
                 textures.set(i,checker);
                 diffuseFactors.set(i,new double[]{1,1,1,diffuseFactors.get(i)[3]});
             }
+            var ids=faceIds;
+            if(frame!=null && model.triangles().size()!=faceIds.size())throw new IOException("Native face order unavailable");
             if(visibleFace!=null){
                 if(model.triangles().size()!=faceIds.size())throw new IOException("Native face order unavailable");
                 var faces=new ArrayList<Triangle>();
-                for(int i=0;i<faceIds.size();i++)if(visibleFace.test(faceIds.get(i)))faces.add(model.triangles().get(i));
+                var visibleIds=new ArrayList<Long>();
+                for(int i=0;i<faceIds.size();i++)if(visibleFace.test(faceIds.get(i))){faces.add(model.triangles().get(i));visibleIds.add(faceIds.get(i));}
+                ids=visibleIds;
                 model=new Model(List.copyOf(faces));
             }
-            renderer.drawNativeMaterialReview(model,rotation);return renderer.image();
+            renderer.drawNativeMaterialReview(model,rotation,ids,frame);
         }
         finally{for(int i=0;i<tables.size();i++)tables.get(i).subList(lengths[i],tables.get(i).size()).clear();gltfBlendMaterials.removeIf(id->id>=first);gltfMaskCutoffs.keySet().removeIf(id->id>=first);}
     }

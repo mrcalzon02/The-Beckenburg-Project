@@ -731,6 +731,7 @@ public final class G2TexturedModelGuiTest {
             }
         }
         verifyRelaxedFan();
+        verifyProjectedStroke();
         System.out.println("PASS G2 textured box: two workspaces, 8 vertices, 6 quads, 12 triangles, "
             +"36 runtime corners with transformed hard normals and UVs, undo/redo, OBJ bundle/GLB/glTF/native reopen");
     }
@@ -836,6 +837,125 @@ public final class G2TexturedModelGuiTest {
         for(int i=0;i<flat.faces().size();i++){var t=flatGame.triangles().get(i);var f=flat.faces().get(i);
             near(t.a().u(),f.a().u());near(t.a().v(),f.a().v());near(t.b().u(),f.b().u());near(t.b().v(),f.b().v());near(t.c().u(),f.c().u());near(t.c().v(),f.c().v());}
         edt(()->button(ui,"undoMesh"));await(()->ready(ui));check(project.snapshot().equals(original),"Undo conformal unwrap exactly");
+    }
+    private void verifyProjectedStroke()throws Exception{
+        Path source=Files.createDirectories(Path.of(System.getProperty("user.home"),"projection"));
+        var image=new BufferedImage(16,9,BufferedImage.TYPE_INT_ARGB);
+        for(int y=0;y<9;y++)for(int x=0;x<16;x++)image.setRGB(x,y,
+            ((x/2+y/2)%2==0?0xffbc956d:0xff866647)+x+16*y);
+        ImageIO.write(image,"png",source.resolve("strip.png").toFile());
+        Files.writeString(source.resolve("strip.mtl"),"newmtl strip\nKd 1 1 1\nmap_Kd strip.png\n");
+        Path obj=Files.writeString(source.resolve("strip.obj"),"""
+            mtllib strip.mtl
+            o projection
+            v -1 0 0
+            v 1 0 0
+            v 1 2 0
+            v -1 2 0
+            v -.45 .5 .3
+            v .45 .5 .3
+            v 0 1.4 .3
+            vt .09 .1
+            vt .37 .1
+            vt .37 .9
+            vt .55 .1
+            vt .90 .9
+            vt .55 .9
+            vt .96 .46
+            vt .98 .52
+            vt .97 .48
+            usemtl strip
+            f 1/1 2/2 3/3
+            f 1/4 3/5 4/6
+            f 5/7 6/8 7/9
+            """);
+        edt(()->ui.loadSource(obj));await(()->ready(ui));
+        edt(()->{project=(EditorTopologyProject)field(ui,"topologyProject");ui.openMaterials();
+            var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");
+            ((JComboBox<?>)field(workspace,"materialView")).setSelectedIndex(1);
+            var tabs=(JTabbedPane)field(ui,"materialTools");tabs.setSelectedIndex(tabs.indexOfTab("Layers"));
+            ((JList<?>)field(workspace,"faceList")).setSelectedIndex(2);select("materialReviewMode",0);spin("materialRotation",0d);
+            button(workspace,"isolate");});
+        reviewPixels();var before=project.snapshot();long a=before.faces().get(0).id(),b=before.faces().get(1).id(),back=before.faces().get(2).id();
+        edt(()->{
+            var frame=(MaterialReviewFrame)field(ui,"projectedFrame");check(frame.image.getWidth()>280,"Model projection gets the main canvas");
+            int visible=0;
+            for(int i=0;i<frame.image.getWidth()*frame.image.getHeight();i++)if(frame.face(i)==back){
+                visible++;check(frame.texel(i)==79,"Isolated rear face sampled the wrong texel");
+            }
+            check(visible>0,"Rear triangle genuinely renders when isolated");
+            var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");button(workspace,"showAll");
+            ((JList<?>)field(workspace,"faceList")).setSelectedIndex(0);
+        });reviewPixels();
+        edt(()->{
+            var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");
+            var frame=(MaterialReviewFrame)field(ui,"projectedFrame");
+            var view=(JLabel)field(ui,"materialRuntime");var pencil=(JToggleButton)field(workspace,"pencil");
+            if(pencil.isSelected())pencil.doClick();
+            int y=frame.image.getHeight()/2,left=-1,right=-1;
+            for(int x=0;x<frame.image.getWidth();x++){
+                long face=frame.face(frame.pixel(x,y));
+                check(face!=back,"Rear triangle escaped front depth coverage");
+                if(face==b && left<0)left=x;
+                if(face==a)right=x;
+            }
+            // Camera-space X may be reversed in the native renderer.
+            if(left<0||right<0||left>=right){
+                left=-1;right=-1;
+                for(int x=0;x<frame.image.getWidth();x++){
+                    long face=frame.face(frame.pixel(x,y));if(face==a && left<0)left=x;if(face==b)right=x;
+                }
+            }
+            check(left>=0 && right>left+4,"Two visible UV islands must meet across the stroke");
+            long first=frame.face(frame.pixel(left,y)),last=frame.face(frame.pixel(right,y));
+            check(first!=last && frame.texel(frame.pixel(left,y))==(first==a?69:72) && frame.texel(frame.pixel(right,y))==(last==a?69:72),"Runtime texel provenance");
+            int dx=(view.getWidth()-frame.image.getWidth())/2,dy=(view.getHeight()-frame.image.getHeight())/2;
+            projectedMouse(view,java.awt.event.MouseEvent.MOUSE_PRESSED,left+dx,y+dy);
+            check(((JList<?>)field(workspace,"faceList")).getSelectedIndex()==(first==a?0:1),"3D pick did not select the native face");
+            pencil.doClick();
+            projectedMouse(view,java.awt.event.MouseEvent.MOUSE_PRESSED,left+dx,y+dy);
+            workspace.getActionMap().get("cancelPencil").actionPerformed(new java.awt.event.ActionEvent(workspace,0,"cancel"));
+            projectedMouse(view,java.awt.event.MouseEvent.MOUSE_RELEASED,right+dx,y+dy);
+            check(field(ui,"projectedStroke")==null && field(ui,"modelingPreview")==null && project.snapshot()==before,"Escape canceled the projected gesture");
+            projectedMouse(view,java.awt.event.MouseEvent.MOUSE_PRESSED,left+dx,y+dy);
+            projectedMouse(view,java.awt.event.MouseEvent.MOUSE_DRAGGED,right+dx,y+dy);
+            projectedMouse(view,java.awt.event.MouseEvent.MOUSE_RELEASED,right+dx,y+dy);
+        });
+        await(()->reviewed(ui));check(project.snapshot()==before,"Projected pencil changed live state during review");
+        reviewPixels();edt(()->captureMaterial("projected-seam-stroke.png"));applyReview();
+        var painted=project.snapshot();var changed=ImageIO.read(new java.io.ByteArrayInputStream(painted.materials().get(0).png()));
+        int ink=((EditorMaterialWorkspace)field(ui,"materialWorkspace")).pencilColor();
+        check(before.faces()==painted.faces(),"Projected stroke modified geometry or UVs");
+        for(int y=0;y<9;y++)for(int x=0;x<16;x++)check(changed.getRGB(x,y)==(y==4&&(x>=3&&x<=5||x>=8&&x<=11)?ink:image.getRGB(x,y)),
+            "Projection changed wrong source texel "+x+","+y);
+        published.set(null);edt(()->button(ui,"apply"));await(()->published.get()!=null);
+        var model=GlbProps.model(published.get());
+        for(int i=0;i<3;i++){
+            var f=model.triangles().get(i);
+            double u=switch(i){case 0->.28;case 1->.65;default->.97;};
+            check(GlbProps.sample(f.material(),u,.5)==((i<2?ink:image.getRGB(15,4))&0xffffff),"Game sample differs on projected face "+i);
+        }
+        check(EditorTopologyProject.open(ImportedAssetLibrary.root().resolve(published.get()+".authoring.btop")).snapshot().equals(painted),"Projection archive differs");
+        edt(()->button(ui,"undoMesh"));await(()->ready(ui));check(project.snapshot().equals(before),"Undo complete projected seam stroke");
+        reviewPixels();
+        var opaque=(MaterialReviewFrame)field(ui,"projectedFrame");
+        for(int x=0;x<8;x++)image.setRGB(x,4,image.getRGB(x,4)&0xffffff);
+        var png=new java.io.ByteArrayOutputStream();ImageIO.write(image,"PNG",png);
+        var cutout=EditorMeshMaterial.fromPng("cutout.png",png.toByteArray(),10497,10497,
+            EditorMeshMaterial.Alpha.MASK,EditorMeshMaterial.Origin.BOTTOM_LEFT);
+        var mesh=project.previewBindMaterial(a,cutout).mesh();
+        var renderer=new SceneRenderer();renderer.setRenderSize(opaque.image.getWidth(),opaque.image.getHeight());
+        var masked=GlbProps.materialReviewFrame(org.beckenburg.editor.EditorGlbWriter.encode(mesh),renderer,0,mesh,null,0);
+        int through=0,retained=0;
+        for(int i=0;i<opaque.image.getWidth()*opaque.image.getHeight();i++)if(opaque.face(i)==a){
+            if(masked.face(i)==back){check(masked.texel(i)==79,"Alpha cutout exposed incorrect rear texel");through++;}
+            else if(masked.face(i)==a)retained++;
+        }
+        check(through>0 && retained>0,"Projection must honor both accepted and discarded alpha-mask pixels");
+    }
+    private static void projectedMouse(JLabel view,int type,int x,int y){
+        view.dispatchEvent(new java.awt.event.MouseEvent(view,type,System.currentTimeMillis(),java.awt.event.InputEvent.BUTTON1_DOWN_MASK,
+            x,y,1,false,type==java.awt.event.MouseEvent.MOUSE_DRAGGED?0:1));
     }
     public static void main(String[] args) throws Exception {
         Path home=Files.createTempDirectory("g2-textured-");

@@ -219,6 +219,15 @@ public final class EditorMaterialPencilTest {
             tiledFace(project);
             var original=project.snapshot();
             var face=original.faces().get(10);
+            var stale=project.observe();project.restore(original);
+            var binding=original.materials().stream().filter(m->m.key().equals(face.material())).findFirst().orElseThrow();
+            String active=binding.layers().get(0).id();
+            try{project.previewProjectedPencil(stale,face.id(),active,Map.of(face.id(),List.of(0)),0xffff00ff);throw new AssertionError("Accepted stale projection");}
+            catch(IllegalArgumentException expected){check(project.snapshot()==original,"Stale projected input changed the scene");}
+            for(var invalid:List.of(Map.of(face.id(),List.of(-1)),Map.of(Long.MAX_VALUE,List.of(0)))){
+                try{project.previewProjectedPencil(project.observe(),face.id(),active,invalid,0xffff00ff);throw new AssertionError("Accepted invalid projected sample");}
+                catch(IllegalArgumentException expected){check(project.snapshot()==original,"Invalid projected input changed native state");}
+            }
             var preview=project.previewPencil(face.id(),List.of(1,2,3),0xffff00ff);
             project.applyPreview(preview);
             var painted=project.snapshot();

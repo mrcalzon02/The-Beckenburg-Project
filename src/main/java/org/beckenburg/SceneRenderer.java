@@ -3916,11 +3916,13 @@ public final class SceneRenderer {
                 }else texel=material>=GlbProps.TEXTURE_BASE
                     ?GlbProps.sample(material,uu,vv)
                     :material>=LevelMaterials.BASE?LevelMaterials.sample(material,uu,vv):MaterialAtlas.sample(material,uu,vv);
+                if(reviewFrame!=null)reviewFrame.record(k,reviewFace,GlbProps.reviewTexel(material,uu,vv));
                 int tr=(texel>>16)&255,tg=(texel>>8)&255,tb=texel&255;
                 color=((tr*((tint>>16)&255)/255)<<16) |
                     ((tg*((tint>>8)&255)/255)<<8) |
                      (tb*(tint&255)/255);
             }
+            if(reviewFrame!=null && material<0)reviewFrame.record(k,reviewFace,-1);
             // A partial BLEND pixel overlays the already depth-tested world
             // but must not occlude opaque ground or distant trees. MASK
             // pixels above glTF cutoff remain fully depth-writing geometry.
@@ -3961,13 +3963,26 @@ public final class SceneRenderer {
     }
 
     /** Material window uses the production import, clip, depth and textured triangle pipeline. */
+    private MaterialReviewFrame reviewFrame;
+    private long reviewFace;
     void drawNativeMaterialReview(GlbProps.Model model,double rotation){
+        drawNativeMaterialReview(model,rotation,List.of(),null);
+    }
+    void drawNativeMaterialReview(GlbProps.Model model,double rotation,List<Long> ids,MaterialReviewFrame frame){
         for(int yy=0;yy<renderHeight;yy++)for(int xx=0;xx<renderWidth;xx++)pixels[yy*renderWidth+xx]=((xx/16+yy/16)&1)==0?0x41474f:0x343a42;
         Arrays.fill(depths,Double.POSITIVE_INFINITY);environmentLight=1;weatherLightScale=1;fogDensity=0;
         x=0;z=-3.3;eyeHeight=1.1;yaw=0;pitch=0;lamp=false;
         var bounds=devAssetBounds(model);double scale=2/Math.max(.0001,Math.max(bounds[3],Math.max(bounds[4],bounds[5])));double cx=bounds[0]*scale,cz=bounds[2]*scale;
         var faces=new ArrayList<Face>();imported(faces,"native_material_review",model,-cx*Math.cos(rotation)+cz*Math.sin(rotation),.1-bounds[1]*scale,-cx*Math.sin(rotation)-cz*Math.cos(rotation),scale,scale,scale,rotation);
-        for(var f:faces){if(!faceInFrustum(f))continue;var clipped=clip(new Vertex(camera(f.a),f.au,f.av),new Vertex(camera(f.b),f.bu,f.bv),new Vertex(camera(f.c),f.cu,f.cv));for(int k=1;k+1<clipped.size();k++)triangle(clipped.get(0),clipped.get(k),clipped.get(k+1),f.color,f.material,1);}
+        reviewFrame=frame;
+        try{
+            for(int i=0;i<faces.size();i++){
+                var f=faces.get(i);if(!faceInFrustum(f))continue;
+                if(frame!=null)reviewFace=ids.get(i);
+                var clipped=clip(new Vertex(camera(f.a),f.au,f.av),new Vertex(camera(f.b),f.bu,f.bv),new Vertex(camera(f.c),f.cu,f.cv));
+                for(int k=1;k+1<clipped.size();k++)triangle(clipped.get(0),clipped.get(k),clipped.get(k+1),f.color,f.material,1);
+            }
+        }finally{reviewFrame=null;}
     }
     /**
      * Separate DEV ASSET ROOM scene, deliberately not a HouseMap.Site or player

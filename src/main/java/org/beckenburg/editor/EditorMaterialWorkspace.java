@@ -40,6 +40,9 @@ public final class EditorMaterialWorkspace extends JPanel {
     public Visibility visibility() { return visibility; }
     public interface PencilAction { void preview(long face,List<Integer> texels,int color); }
     private PencilAction pencilAction;
+    private Runnable cancelProjection=()->{};
+    private Runnable viewChanged=()->{};
+    private final JComboBox<String> materialView=new JComboBox<>(new String[]{"Texture / UV","Model projection"});
     private final JToggleButton pencil=new JToggleButton("Pencil");
     private final JButton ink=new JButton("Color");
     private Color paintColor=new Color(255,0,255);
@@ -88,7 +91,7 @@ public final class EditorMaterialWorkspace extends JPanel {
         bind("I",isolate); bind("H",hide); bind("shift H",showAll);
         canvas.setBackground(new Color(29,33,39));canvas.setPreferredSize(new Dimension(520,500));
         var reset=new JButton("Fit texture");reset.addActionListener(e->{zoom=1;panX=panY=0;canvas.repaint();});
-        var center=new JPanel(new BorderLayout(3,5));var heading=new JPanel(new BorderLayout());heading.add(new JLabel("TEXTURE / UV VIEW"),BorderLayout.WEST);heading.add(reset,BorderLayout.EAST);center.add(heading,BorderLayout.NORTH);center.add(canvas,BorderLayout.CENTER);
+        var center=new JPanel(new BorderLayout(3,5));var heading=new JPanel(new BorderLayout());heading.add(materialView,BorderLayout.WEST);heading.add(reset,BorderLayout.EAST);center.add(heading,BorderLayout.NORTH);center.add(canvas,BorderLayout.CENTER);
         var tiles=new JPanel(new FlowLayout(FlowLayout.LEFT,5,1));
         tiles.add(new JLabel("Tile U"));tiles.add(tileU);tiles.add(new JLabel("V"));tiles.add(tileV);tiles.add(faceTile);
         center.add(tiles,BorderLayout.SOUTH);
@@ -139,13 +142,33 @@ public final class EditorMaterialWorkspace extends JPanel {
         };canvas.addMouseListener(mouse);canvas.addMouseMotionListener(mouse);
         getInputMap(WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).put(KeyStroke.getKeyStroke("ESCAPE"),"cancelPencil");
         getActionMap().put("cancelPencil",new AbstractAction(){public void actionPerformed(ActionEvent e){
-            stroke=null;lastPixel=null;canvas.repaint();
+            stroke=null;lastPixel=null;cancelProjection.run();canvas.repaint();
         }});
         var right=new JPanel(new BorderLayout(4,8));var properties=new JScrollPane(new Properties(settings));properties.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);right.add(properties,BorderLayout.CENTER);right.add(runtime,BorderLayout.SOUTH);right.setPreferredSize(new Dimension(300,500));right.setMinimumSize(new Dimension(240,200));
         var split=new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,center,right);split.setResizeWeight(.7);split.setBorder(null);add(left,BorderLayout.WEST);add(split,BorderLayout.CENTER);
+        var thumbnail=new JPanel(new BorderLayout());thumbnail.add(new JLabel("Texture / UV"),BorderLayout.NORTH);
+        thumbnail.setPreferredSize(new Dimension(280,190));
+        materialView.getAccessibleContext().setAccessibleName("Material editor view");
+        materialView.addActionListener(e->{
+            stroke=null;lastPixel=null;cancelProjection.run();
+            if(modelView()){
+                center.remove(canvas);right.remove(runtime);center.add(runtime,BorderLayout.CENTER);
+                thumbnail.add(canvas,BorderLayout.CENTER);right.add(thumbnail,BorderLayout.SOUTH);
+            }else{
+                thumbnail.remove(canvas);right.remove(thumbnail);center.remove(runtime);
+                center.add(canvas,BorderLayout.CENTER);right.add(runtime,BorderLayout.SOUTH);
+            }
+            tiles.setVisible(!modelView());reset.setVisible(!modelView());revalidate();repaint();
+            SwingUtilities.invokeLater(viewChanged);
+        });
         var bottom=new JPanel(new BorderLayout(4,4));bottom.add(status,BorderLayout.NORTH);bottom.add(commands,BorderLayout.SOUTH);add(bottom,BorderLayout.SOUTH);
     }
     public void setPencilAction(PencilAction action){pencilAction=action;}
+    public void setProjectionCancel(Runnable cancel){cancelProjection=java.util.Objects.requireNonNull(cancel);}
+    public void setViewChanged(Runnable action){viewChanged=java.util.Objects.requireNonNull(action);}
+    public boolean modelView(){return materialView.getSelectedIndex()==1;}
+    public boolean pencilActive(){return pencil.isSelected()&&pencil.isEnabled();}
+    public int pencilColor(){return paintColor.getRGB();}
     private static int centerTile(double a,double b,double c){return (int)Math.floor(a/3+b/3+c/3);}
     private void changeTile(){
         tile=new EditorUvTile((Integer)tileU.getValue(),(Integer)tileV.getValue());

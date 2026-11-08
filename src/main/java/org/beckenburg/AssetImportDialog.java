@@ -157,7 +157,27 @@ public final class AssetImportDialog {
     private JDialog materialDialog;
     private EditorMaterialWorkspace materialWorkspace;
     private final JButton openMaterials=new JButton("MATERIALS / UV...");
-    private final JLabel materialRuntime=new JLabel("Actual runtime preview",SwingConstants.CENTER);
+    private final JLabel materialRuntime=new JLabel("Actual runtime preview",SwingConstants.CENTER){
+        @Override protected void paintComponent(Graphics graphics){
+            super.paintComponent(graphics);
+            var frame=projectedFrame;
+            if(frame!=null && selectedHit!=null && materialWorkspace!=null && materialWorkspace.modelView() &&
+                modelingPreview==null && !materialWorkspace.pencilActive()){
+                graphics.drawImage(frame.outline(selectedHit.faceId()),(getWidth()-frame.image.getWidth())/2,(getHeight()-frame.image.getHeight())/2,null);
+            }
+            var stroke=projectedStroke;if(stroke==null||stroke.frame!=projectedFrame)return;
+            int width=stroke.frame.image.getWidth();
+            int dx=(getWidth()-width)/2,dy=(getHeight()-stroke.frame.image.getHeight())/2;
+            graphics.setColor(stroke.color==0?Color.WHITE:new Color(stroke.color,true));
+            for(int i=stroke.coverage.nextSetBit(0);i>=0;){
+                int end=Math.min(stroke.coverage.nextClearBit(i),(i/width+1)*width);
+                graphics.fillRect(dx+i%width,dy+i/width,end-i,1);i=stroke.coverage.nextSetBit(end);
+            }
+        }
+    };
+    private MaterialReviewFrame projectedFrame;
+    private MaterialReviewStroke projectedStroke;
+    private int reviewWidth,reviewHeight;
     private final JSpinner materialRotation=new JSpinner(new SpinnerNumberModel(0d,-360d,360d,15d));
     private final JComboBox<EditorTopologyProject.UvTransform> uvOperation=new JComboBox<>(EditorTopologyProject.UvTransform.values());
     private final JComboBox<String> uvScope=new JComboBox<>(new String[]{"Selected face","Connected UV island"}),uvPivot=new JComboBox<>(new String[]{"UV bounds center","UV origin"});
@@ -534,6 +554,14 @@ public final class AssetImportDialog {
             materialDialog=new JDialog(dialog,"Material Editor - Texture & UV",false);materialDialog.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
             materialDialog.addWindowListener(new WindowAdapter(){public void windowClosing(WindowEvent e){if(modelingPreview!=null)clearModelingPreview();materialDialog.setVisible(false);}});
             materialRuntime.setPreferredSize(new Dimension(280,190));
+            materialRuntime.setMinimumSize(new Dimension(160,120));
+            materialRuntime.addComponentListener(new ComponentAdapter(){
+                @Override public void componentResized(ComponentEvent e){refreshMaterialWindow();}
+            });
+            installProjectionInput();
+            materialDialog.addWindowFocusListener(new WindowAdapter(){
+                @Override public void windowLostFocus(WindowEvent e){projectedStroke=null;materialRuntime.repaint();}
+            });
             var runtime=new JPanel(new BorderLayout(4,4));runtime.add(new JLabel("ACTUAL RUNTIME PREVIEW"),BorderLayout.NORTH);runtime.add(materialRuntime,BorderLayout.CENTER);runtime.add(EditorTopologyWorkspace.column(uvDensity,EditorTopologyWorkspace.form("Preview",materialReviewMode,"Model rotation",materialRotation)),BorderLayout.SOUTH);materialReviewMode.addActionListener(e->refreshMaterialWindow());materialRotation.addChangeListener(e->refreshMaterialWindow());
             var bindings=EditorTopologyWorkspace.column(new JLabel("MATERIAL PROPERTIES"),EditorTopologyWorkspace.form("Material",materialList),materialSwatch,previewMaterial,new JSeparator(),EditorTopologyWorkspace.form("New PNG wrap",materialWrap,"Alpha",materialAlpha,"UV origin",materialOrigin),chooseMaterial,new JLabel("<html>PNG changes are captured in a native preview.<br>Apply commits one face assignment.</html>"));
             var values=new JPanel(new GridLayout(0,2,5,5));values.add(uvFirstLabel);values.add(uvFirst);values.add(uvSecondLabel);values.add(uvSecond);
@@ -610,6 +638,8 @@ public final class AssetImportDialog {
                 if(!busy && modelingPreview==null && layer!=null && materialWorkspace.visibility().includes(face))
                     beginMaterialPreview(p->p.previewPencil(face,layer.id(),texels,color,tile));
             });
+            materialWorkspace.setProjectionCancel(()->{projectedStroke=null;materialRuntime.repaint();});
+            materialWorkspace.setViewChanged(this::refreshMaterialWindow);
             var fileMenu=new JMenuBar();fileMenu.add(EditorTopologyWorkspace.menu("File",openPaintRecovery));materialDialog.setJMenuBar(fileMenu);
             var panel=new JPanel(new BorderLayout());panel.add(materialWorkspace,BorderLayout.CENTER);panel.add(paintRecoveryStatus,BorderLayout.SOUTH);
             materialDialog.setContentPane(panel);materialDialog.setSize(1160,760);materialDialog.setMinimumSize(new Dimension(900,600));materialDialog.setLocationRelativeTo(dialog);
@@ -622,6 +652,42 @@ public final class AssetImportDialog {
         normalAnchor=id;
         selectedHit=new EditorMeshPicking.Hit(id,face.a().vertex(),face.a().vertex(),face.b().vertex(),0,face.a().u(),face.a().v());
         selectionLabel.setText("Face "+id);refreshMeshControls();preview.repaint();
+    }
+    private Point reviewPoint(MouseEvent event,MaterialReviewFrame frame){
+        return new Point(event.getX()-(materialRuntime.getWidth()-frame.image.getWidth())/2,
+            event.getY()-(materialRuntime.getHeight()-frame.image.getHeight())/2);
+    }
+    private void installProjectionInput(){
+        materialRuntime.setToolTipText("Click a visible face to select it. With Pencil enabled, drag to paint this material.");
+        var mouse=new MouseAdapter(){
+            @Override public void mousePressed(MouseEvent e){
+                projectedStroke=null;var frame=projectedFrame;
+                if(!SwingUtilities.isLeftMouseButton(e)||frame==null||busy||modelingPreview!=null||topologyProject==null ||
+                    topologyProject.snapshot()!=materialRenderState)return;
+                var point=reviewPoint(e,frame);
+                long hit=frame.face(frame.pixel(point.x,point.y));
+                if(!materialWorkspace.pencilActive()){if(hit>=0)selectMaterialFace(hit);return;}
+                var layer=paintLayer.getSelectedValue();
+                if(selectedHit==null||layer==null||shownPaintMaterial==null)return;
+                projectedStroke=new MaterialReviewStroke(frame,topologyProject.observe(),selectedHit.faceId(),layer.id(),
+                    e.isShiftDown()?0:materialWorkspace.pencilColor(),shownPaintMaterial.key());
+                projectedStroke.sample(point);
+                materialRuntime.repaint();
+            }
+            @Override public void mouseDragged(MouseEvent e){
+                if(projectedStroke!=null){projectedStroke.sample(reviewPoint(e,projectedStroke.frame));materialRuntime.repaint();}
+            }
+            @Override public void mouseReleased(MouseEvent e){
+                var stroke=projectedStroke;projectedStroke=null;materialRuntime.repaint();
+                if(stroke==null||stroke.frame!=projectedFrame||busy||modelingPreview!=null||!SwingUtilities.isLeftMouseButton(e)||
+                    selectedHit==null || selectedHit.faceId()!=stroke.anchor || paintLayer.getSelectedValue()==null ||
+                    !paintLayer.getSelectedValue().id().equals(stroke.layer) || !materialWorkspace.pencilActive())return;
+                stroke.sample(reviewPoint(e,stroke.frame));
+                if(stroke.overflow){materialWorkspace.previewIssue("Projected stroke exceeds the 65536 face/texel sample limit");return;}
+                if(!stroke.samples.isEmpty())beginMaterialPreview(p->p.previewProjectedPencil(stroke.observed,stroke.anchor,stroke.layer,stroke.samples,stroke.color));
+            }
+        };
+        materialRuntime.addMouseListener(mouse);materialRuntime.addMouseMotionListener(mouse);
     }
     private void showLayerSettings(){
         var layer=paintLayer.getSelectedValue();
@@ -648,6 +714,7 @@ public final class AssetImportDialog {
         boolean bound=material!=null;
         if(material==null&&materialList.getSelectedItem() instanceof EditorMeshMaterial m)material=m;
         materialWorkspace.observe(state,face,material,modelingPreview==null?null:modelingPreview.description());
+        materialRuntime.repaint();
         if(material!=shownPaintMaterial){
             var prior=paintLayer.getSelectedValue();
             updatingPaintLayers=true;paintLayers.clear();
@@ -694,16 +761,19 @@ public final class AssetImportDialog {
         }else uvDensity.setText("Select a bound face to measure UVs");
         int checker=CHECKER_SIZES[materialReviewMode.getSelectedIndex()];
         if(materialWorkspace.visibleFaces()==0){
-            materialRenderState=null;materialRuntime.setIcon(null);materialRuntime.setText("No visible faces");return;
+            materialRenderState=null;projectedFrame=null;projectedStroke=null;materialRuntime.setIcon(null);materialRuntime.setText("No visible faces");return;
         }
-        if(materialRendering||state==materialRenderState&&rotation==materialRenderedRotation&&checker==renderedChecker&&visibility.equals(materialRenderedVisibility))return;
-        materialRenderState=state;materialRenderedRotation=rotation;materialRenderedVisibility=visibility;renderedChecker=checker;materialRendering=true;materialRuntime.setIcon(null);materialRuntime.setText("Rendering captured native state...");
+        int width=materialWorkspace.modelView()?Math.max(160,Math.min(840,materialRuntime.getWidth())):280;
+        int height=materialWorkspace.modelView()?Math.max(120,Math.min(600,materialRuntime.getHeight())):190;
+        if(materialRendering||state==materialRenderState&&rotation==materialRenderedRotation&&checker==renderedChecker&&visibility.equals(materialRenderedVisibility)&&width==reviewWidth&&height==reviewHeight)return;
+        reviewWidth=width;reviewHeight=height;
+        materialRenderState=state;materialRenderedRotation=rotation;materialRenderedVisibility=visibility;renderedChecker=checker;materialRendering=true;projectedFrame=null;projectedStroke=null;materialRuntime.setIcon(null);materialRuntime.setText("Rendering captured native state...");
         var captured=state;var mesh=modelingPreview!=null?modelingMesh:
             workingObservation!=null && workingObservation.snapshot()==state ? workingObservation.mesh() : topologyProject.mesh();
-        new SwingWorker<java.awt.image.BufferedImage,Void>(){
-            protected java.awt.image.BufferedImage doInBackground()throws Exception{var renderer=new SceneRenderer();renderer.setRenderSize(280,190);return GlbProps.renderNativeMaterialReview(EditorGlbWriter.encode(mesh),renderer,Math.toRadians(rotation),mesh.faceIds(),visibility.filtered()?visibility::includes:null,checker);}
+        new SwingWorker<MaterialReviewFrame,Void>(){
+            protected MaterialReviewFrame doInBackground()throws Exception{var renderer=new SceneRenderer();renderer.setRenderSize(width,height);return GlbProps.materialReviewFrame(EditorGlbWriter.encode(mesh),renderer,Math.toRadians(rotation),mesh,visibility.filtered()?visibility::includes:null,checker);}
             protected void done(){materialRendering=false;var current=modelingPreview!=null?modelingPreview.snapshot():topologyProject==null?null:topologyProject.snapshot();
-                if(current==captured&&checker==CHECKER_SIZES[materialReviewMode.getSelectedIndex()]&&visibility.equals(materialWorkspace.visibility())&&rotation==((Number)materialRotation.getValue()).doubleValue()){try{materialRuntime.setIcon(new ImageIcon(get()));materialRuntime.setText("");}catch(Exception failure){materialRuntime.setIcon(null);materialRuntime.setText("Preview unavailable: "+rootMessage(failure));}}
+                if(current==captured&&checker==CHECKER_SIZES[materialReviewMode.getSelectedIndex()]&&visibility.equals(materialWorkspace.visibility())&&rotation==((Number)materialRotation.getValue()).doubleValue()){try{projectedFrame=get();materialRuntime.setIcon(new ImageIcon(projectedFrame.image));materialRuntime.setText("");}catch(Exception failure){projectedFrame=null;materialRuntime.setIcon(null);materialRuntime.setText("Preview unavailable: "+rootMessage(failure));}}
                 refreshMaterialWindow();
             }
         }.execute();

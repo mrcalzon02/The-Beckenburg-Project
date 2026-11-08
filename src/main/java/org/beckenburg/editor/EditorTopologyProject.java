@@ -571,6 +571,28 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
             state.glbSource(),state.frames(),state.quads());
         return new EditPreview(this,state,after,revision,label);
     }
+    /** Samples come from the game renderer's visible pixels for the captured native revision. */
+    public synchronized EditPreview previewProjectedPencil(Observation observed,long faceId,String layer,
+            Map<Long,? extends Collection<Integer>> samples,int color){
+        if(!isCurrent(observed))throw new IllegalArgumentException("Model changed during projected stroke");
+        var material=boundPaintMaterial(faceId);
+        if(samples==null||samples.isEmpty()||samples.size()>65536)throw new IllegalArgumentException("Projected stroke has no paintable faces or exceeds budget");
+        var texels=new LinkedHashSet<Integer>();int found=0,count=0;
+        for(var face:state.faces()){
+            var touched=samples.get(face.id());if(touched==null)continue;
+            if(touched.isEmpty())throw new IllegalArgumentException("Projected face has no sampled pixels");
+            if(!material.key().equals(face.material()))throw new IllegalArgumentException("Projected stroke crossed the active material");
+            found++;
+            for(int address:touched){
+                if(address<0||address>=material.width()*material.height()||++count>65536)
+                    throw new IllegalArgumentException("Projected stroke exceeds texture bounds or budget");
+                texels.add(address);
+            }
+        }
+        if(found!=samples.size()||texels.isEmpty())throw new IllegalArgumentException("Projected stroke has no valid native samples");
+        var painted=material.pencil(material.key(),layer,texels,color);
+        return previewMaterialChange(material,painted,"PROJECTED PENCIL / "+found+" faces / "+texels.size()+" texels");
+    }
     private String paintKey(String original){
         String prefix="paint-"+EditorChange.fingerprint(original).substring(0,32);
         var keys=new HashSet<String>();
