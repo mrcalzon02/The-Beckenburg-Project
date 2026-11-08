@@ -545,12 +545,14 @@ public final class G2TexturedModelGuiTest {
         }
         check(project.snapshot().equals(painted),"Undo removal, reorder, rename, second stroke and layer creation");
     }
-    private void verifyPaintRecovery(EditorTopologyProject.State painted)throws Exception{
+    private Path awaitPaintRecovery()throws Exception{
         long revision=project.revision();
         await(()->{try{return ((JLabel)field(ui,"paintRecoveryStatus")).getText().equals("Paint recovery saved · revision "+revision);}
             catch(Exception e){throw new RuntimeException(e);}});
-        var recovery=(EditorPaintRecovery)field(ui,"paintRecovery");
-        Path file=recovery.file();
+        return ((EditorPaintRecovery)field(ui,"paintRecovery")).file();
+    }
+    private void verifyPaintRecovery(EditorTopologyProject.State painted)throws Exception{
+        Path file=awaitPaintRecovery();
         byte[] durable=Files.readAllBytes(file);
         check(EditorTopologyProject.decode(durable).equals(painted),"Autosave captures the unsaved stroke");
         check(project.hasUnsavedChanges(),"Autosave must leave the manual document dirty");
@@ -969,6 +971,7 @@ public final class G2TexturedModelGuiTest {
             check(improved>0,"Padding must preserve more ink in the filtered model view at angle index "+angle);
         }
         edt(()->button(ui,"undoMesh"));await(()->ready(ui));check(project.snapshot().equals(before),"Undo padded stroke");
+        check(EditorTopologyProject.open(awaitPaintRecovery()).snapshot().equals(before),"Recovery must persist the final projected undo");
         for(int x=0;x<8;x++)image.setRGB(x,4,image.getRGB(x,4)&0xffffff);
         var png=new java.io.ByteArrayOutputStream();ImageIO.write(image,"PNG",png);
         var cutout=EditorMeshMaterial.fromPng("cutout.png",png.toByteArray(),10497,10497,
