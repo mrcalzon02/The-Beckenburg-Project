@@ -262,10 +262,19 @@ public final class AssetImportDialog {
         reverseSlide.addActionListener(e -> clearModelingPreview());
         previewSlide.addActionListener(e -> {
             if (busy || selectedHit == null || selectionMode.getSelectedIndex() != 1) return;
-            long from = reverseSlide.isSelected() ? selectedHit.edgeB() : selectedHit.edgeA();
-            long toward = reverseSlide.isSelected() ? selectedHit.edgeA() : selectedHit.edgeB();
-            double fraction = ((Number) slideFraction.getValue()).doubleValue();
-            beginModelingPreview(p -> p.previewVertexSlide(from, toward, fraction));
+            var hit=selectedHit;boolean reverse=reverseSlide.isSelected();
+            double fraction=((Number)slideFraction.getValue()).doubleValue();
+            if(edgeObservation!=null) {
+                if(!hasEdgeSelection()) {
+                    clearEdgeSelection();refreshMeshControls();selectionLabel.setText("Pick the loop again after the model changed");return;
+                }
+                if(edgeMode.getSelectedItem()!=EditorMeshEdges.Mode.LOOP) return;
+                var selection=edgeObservation;
+                beginModelingPreview(p->p.previewLoopSlide(selection,hit.edgeA(),hit.edgeB(),hit.faceId(),reverse,fraction));
+            } else {
+                long from=reverse?hit.edgeB():hit.edgeA(), toward=reverse?hit.edgeA():hit.edgeB();
+                beginModelingPreview(p->p.previewVertexSlide(from,toward,fraction));
+            }
         });
         bevelDepth.addChangeListener(e->clearModelingPreview());
         previewBevel.addActionListener(e->{if(busy||topologyProject==null||selectedHit==null||selectionMode.getSelectedIndex()==2)return;var hit=selectedHit;boolean corner=selectionMode.getSelectedIndex()==0;double depth=((Number)bevelDepth.getValue()).doubleValue();beginModelingPreview(p->p.previewBevel(corner?hit.vertexId():hit.edgeA(),corner?hit.vertexId():hit.edgeB(),hit.faceId(),depth));});
@@ -468,7 +477,10 @@ public final class AssetImportDialog {
         previewFaceEdit.setEnabled(editable&&selectionMode.getSelectedIndex()==2&&selectedHit!=null);
         edgeMode.setEnabled(editable);
         selectEdges.setEnabled(editable && selectionMode.getSelectedIndex()==1 && selectedHit!=null);
-        previewSlide.setEnabled(editable && !hasEdgeSelection() && selectionMode.getSelectedIndex()==1 && selectedHit!=null);
+        boolean loopSlide=hasEdgeSelection() && edgeMode.getSelectedItem()==EditorMeshEdges.Mode.LOOP;
+        previewSlide.setText(loopSlide?"PREVIEW LOOP SLIDE":"PREVIEW VERTEX SLIDE");
+        reverseSlide.setText(loopSlide?"Use opposite quad side":"Reverse edge direction");
+        previewSlide.setEnabled(editable && (!hasEdgeSelection() || loopSlide) && selectionMode.getSelectedIndex()==1 && selectedHit!=null);
         previewBevel.setEnabled(editable&&!hasEdgeSelection()&&selectionMode.getSelectedIndex()!=2&&selectedHit!=null);
         chooseMaterial.setEnabled(editable&&selectionMode.getSelectedIndex()==2&&selectedHit!=null);previewMaterial.setEnabled(chooseMaterial.isEnabled()&&materialList.getSelectedItem()!=null);
         for(var c:List.of(materialList,materialWrap,materialAlpha,materialOrigin,uvOperation,uvScope,uvPivot,uvFirst,uvSecond))c.setEnabled(editable);

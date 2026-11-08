@@ -14,6 +14,33 @@ public final class EditorMeshEdgesTest {
     private static long at(EditorTopologyProject p,double x,double z){
         return p.snapshot().vertices().stream().filter(v->v.x()==x && v.z()==z).findFirst().orElseThrow().id();
     }
+    private static long faceOn(EditorTopologyProject.State state,long a,long b){
+        for(var f:state.faces()){
+            var ids=Set.of(f.a().vertex(),f.b().vertex(),f.c().vertex());
+            if(ids.contains(a)&&ids.contains(b))return f.id();
+        }
+        throw new AssertionError("Missing seed face");
+    }
+    private interface Action {void run();}
+    private static void refused(Action action){try{action.run();throw new AssertionError("Expected slide refusal");}catch(IllegalArgumentException expected){}}
+    private static void slides(EditorTopologyProject grid,long a,long b){
+        var before=grid.snapshot();var observation=grid.observe();long face=faceOn(before,a,b);
+        var first=grid.previewLoopSlide(observation,a,b,face,false,.25);
+        var opposite=grid.previewLoopSlide(observation,a,b,face,true,.25);
+        for(int i=0;i<before.vertices().size();i++){
+            var old=before.vertices().get(i);var v=first.snapshot().vertices().get(i);var w=opposite.snapshot().vertices().get(i);
+            if(old.z()==0)check(Math.abs(v.z())==.25&&w.z()==-v.z()&&v.x()==old.x()&&v.y()==old.y(),"Both loop sides follow each original rail");
+            else check(v.equals(old)&&w.equals(old),"Unselected grid vertices remain exact");
+        }
+        check(first.snapshot().faces().equals(before.faces())&&first.snapshot().quads().equals(before.quads()),"Slide preserves every native face, UV, normal and quad");
+        var history=new EditorHistory<>(grid,10);history.execute(()->grid.applyPreview(first));
+        refused(()->grid.applyPreview(opposite));refused(()->grid.previewLoopSlide(observation,a,b,face,false,.25));
+        check(history.undo()&&grid.snapshot().equals(before),"One step restores all slide vertices");
+        long outerA=at(grid,0,-2),outerB=at(grid,1,-2),outerFace=faceOn(before,outerA,outerB);
+        refused(()->grid.previewLoopSlide(grid.observe(),outerA,outerB,outerFace,false,.25));
+        refused(()->grid.previewLoopSlide(grid.observe(),outerA,outerB,outerFace,true,.25));
+        refused(()->grid.previewLoopSlide(grid.observe(),a,b,face,false,1));
+    }
     private static void maximum(){
         int columns=300,rows=200;
         var vertices=new ArrayList<EditorTopologyProject.Vertex>();
@@ -31,6 +58,8 @@ public final class EditorMeshEdgesTest {
         var observation=p.observe();long a=100L*(columns+1)+150;
         check(EditorMeshEdges.select(observation,LOOP,a,a+1).size()==columns,"Maximum grid interior loop");
         check(EditorMeshEdges.select(observation,RING,a,a+1).size()==rows+1,"Maximum grid ring");
+        var slide=p.previewLoopSlide(observation,a,a+1,2L*(100*columns+150),false,.25);
+        check(slide.snapshot().faces().size()==120000 && slide.snapshot().vertices().get((int)a).y()==100.25,"Maximum grid loop slide within256MiB");
     }
     public static void main(String[] args)throws Exception{
         var grid=project(EditorMeshPrimitives.preview(new EditorMeshPrimitives.Parameters(EditorMeshPrimitives.Kind.PLANE,4,1,4,4,4)));
@@ -47,6 +76,14 @@ public final class EditorMeshEdgesTest {
         check(wrapped.size()==8&&new HashSet<>(wrapped).size()==8,"Closed cylinder ring terminates after eight distinct edges");
         var around=EditorMeshEdges.select(cylinder.observe(),LOOP,side.b().vertex(),side.c().vertex());
         check(around.size()==8,"Interior cylinder loop closes once");
+        var shifted=cylinder.previewLoopSlide(cylinder.observe(),side.b().vertex(),side.c().vertex(),side.id(),false,.25);
+        for(int i=0;i<cylinder.snapshot().vertices().size();i++){
+            var old=cylinder.snapshot().vertices().get(i);var moved=shifted.snapshot().vertices().get(i);
+            if(old.y()==0)check(Math.abs(moved.y())==.25 && old.x()==moved.x() && old.z()==moved.z(),"Closed loop shifts along vertical cylinder rails");
+            else check(old.equals(moved),"Outside cylinder row unchanged");
+        }
+        refused(()->cylinder.previewLoopSlide(cylinder.observe(),side.a().vertex(),side.b().vertex(),side.id(),false,.25));
+        refused(()->cylinder.previewLoopSlide(cylinder.observe(),side.a().vertex(),side.b().vertex(),side.id(),true,.25));
         var split=project(EditorMeshPipeline.read("triangles.obj","v 0 0 0\nv 1 0 0\nv 1 1 0\nv 0 1 0\nf 1 2 3\nf 1 3 4\n".getBytes(StandardCharsets.UTF_8)));
         try{EditorMeshEdges.select(split.observe(),LOOP,0,1);throw new AssertionError("Inferred a quad from two triangles");}catch(IllegalArgumentException expected){}
         var cube=project(EditorMeshPrimitives.preview(new EditorMeshPrimitives.Parameters(EditorMeshPrimitives.Kind.BOX,2,2,2,8,1)));
@@ -62,8 +99,16 @@ public final class EditorMeshEdgesTest {
         mixed.restore(new EditorTopologyProject.State(m.sceneId(),m.sourceFingerprint(),m.name(),m.sourceBytes(),m.vertices(),m.faces(),m.materials(),m.glbSource(),m.frames(),m.quads().stream().filter(q->!q.equals(removed)).toList()));
         var stopped=EditorMeshEdges.select(mixed.observe(),LOOP,at(mixed,-1,0),at(mixed,0,0));
         check(stopped.size()==2 && stopped.stream().allMatch(e->e.a().x()<=0&&e.b().x()<=0),"Unpaired incident triangles stop continuation");
-        if(args.length>0 && args[0].equals("--stress")) maximum();
+
         check(grid.isCurrent(obs),"Traversal leaves native state and revision unchanged");
-        System.out.println("PASS authored quad edge traversal: regular interior and closed loops, opposite-edge rings, triangle/diagonal refusals and native revision stability");
+        slides(grid,a,b);
+        byte[] originalGlb=EditorGlbWriter.encode(grid.mesh());
+        var source=EditorTopologyProject.fromGlb("grid.glb",originalGlb,Path.of("source-grid.btop"));
+        var sourceBefore=source.snapshot();long start=at(source,0,0),end=at(source,1,0);
+        source.applyPreview(source.previewLoopSlide(source.observe(),start,end,faceOn(sourceBefore,start,end),false,.25));
+        check(source.snapshot().glbSource()==sourceBefore.glbSource()&&Arrays.equals(originalGlb,source.snapshot().glbSource().original()),"Source-backed loop slide preserves the original GLB");
+        EditorGlbWriter.validate(source.mesh(),EditorGlbWriter.encode(source.mesh()));
+        if(args.length>0 && args[0].equals("--stress")) maximum();
+        System.out.println("PASS authored quad edge traversal and whole-loop slide: regular interior and closed loops, opposite-edge rings, triangle/diagonal refusals and native revision stability");
     }
 }

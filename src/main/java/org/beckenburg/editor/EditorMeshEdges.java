@@ -70,6 +70,59 @@ public final class EditorMeshEdges {
         return selected.stream().map(e->new Segment(positions.get(e.a),positions.get(e.b))).toList();
     }
 
+    private record RailSide(long firstFace,long secondFace,long targetA,long targetB) {}
+
+    /** Pick the rail on the clicked quad, then follow its shared endpoint around the entire loop. */
+    static Map<Long,Long> loopRails(Observation observation,long first,long second,long activeFace,boolean reverse) {
+        var loop=select(observation,Mode.LOOP,first,second);
+        if (loop.size()<2) throw new IllegalArgumentException("Pick a loop with at least two edges");
+        var incident=new HashMap<Long,List<Edge>>();
+        var choices=new HashMap<Edge,List<RailSide>>();
+        for (var segment:loop) {
+            var edge=Edge.of(segment.a().id(),segment.b().id());
+            choices.put(edge,new ArrayList<>(2));
+            incident.computeIfAbsent(edge.a,k->new ArrayList<>(2)).add(edge);
+            incident.computeIfAbsent(edge.b,k->new ArrayList<>(2)).add(edge);
+        }
+        if (incident.values().stream().anyMatch(edges->edges.size()>2)) throw new IllegalArgumentException("Slide requires one unbranched loop");
+        var faces=new HashMap<Long,Face>();
+        for (var face:observation.snapshot().faces()) faces.put(face.id(),face);
+        for (var quad:observation.snapshot().quads()) {
+            var a=faces.get(quad.first());var b=faces.get(quad.second());
+            long[] rim={a.a().vertex(),a.b().vertex(),a.c().vertex(),b.c().vertex()};
+            for (int i=0;i<4;i++) {
+                long from=rim[i],to=rim[(i+1)%4];var key=Edge.of(from,to);var sides=choices.get(key);
+                if (sides==null) continue;
+                long oppositeFrom=rim[(i+3)%4],oppositeTo=rim[(i+2)%4];
+                sides.add(new RailSide(a.id(),b.id(),key.a==from?oppositeFrom:oppositeTo,key.b==to?oppositeTo:oppositeFrom));
+            }
+        }
+        var seed=Edge.of(first,second);var seedChoices=choices.get(seed);
+        var picked=seedChoices.stream().filter(s->s.firstFace==activeFace || s.secondFace==activeFace).findFirst()
+                .orElseThrow(()->new IllegalArgumentException("The picked face does not supply a quad rail"));
+        if(reverse) picked=seedChoices.stream().filter(s->s.firstFace!=activeFace && s.secondFace!=activeFace).findFirst()
+                .orElseThrow(()->new IllegalArgumentException("The opposite side has no authored quad rail"));
+        var targets=new HashMap<Long,Long>();targets.put(seed.a,picked.targetA);targets.put(seed.b,picked.targetB);
+        var queue=new ArrayDeque<Edge>();var visited=new HashSet<Edge>();queue.add(seed);visited.add(seed);
+        while (!queue.isEmpty()) {
+            var edge=queue.removeFirst();
+            for(long endpoint:new long[]{edge.a,edge.b}) for(var next:incident.get(endpoint)) {
+                if(!visited.add(next)) continue;
+                var candidates=choices.get(next);RailSide matched=null;
+                for(var side:candidates) {
+                    if (!targets.getOrDefault(next.a,side.targetA).equals(side.targetA) || !targets.getOrDefault(next.b,side.targetB).equals(side.targetB)) continue;
+                    if(matched!=null) throw new IllegalArgumentException("Ambiguous quad rail at loop junction");
+                    matched=side;
+                }
+                if(matched==null)throw new IllegalArgumentException("The selected side has no continuous quad rail");
+                targets.put(next.a,matched.targetA);targets.put(next.b,matched.targetB);queue.addLast(next);
+            }
+        }
+        if(visited.size()!=loop.size() || targets.values().stream().anyMatch(targets::containsKey)
+                || new HashSet<>(targets.values()).size()!=targets.size()) throw new IllegalArgumentException("Slide rails intersect or merge");
+        return targets;
+    }
+
     private static void extend(long center,long incoming,Map<Long,List<Wedge>> fans,Set<Edge> visited,Deque<Edge> queue) {
         var fan=fans.get(center);
         if (fan==null || (fan.size()!=2 && fan.size()!=4)) return;

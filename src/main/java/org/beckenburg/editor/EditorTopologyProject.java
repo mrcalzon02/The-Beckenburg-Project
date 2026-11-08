@@ -244,48 +244,58 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
     }
     /** Slide one endpoint along an incident edge while preserving the surface and its open outline. */
     public synchronized EditPreview previewVertexSlide(long from, long toward, double fraction) {
-        if (from == toward || !Double.isFinite(fraction) || fraction <= 0 || fraction >= 1) {
-            throw new IllegalArgumentException("Choose distinct endpoints and a fraction strictly between 0 and 1");
-        }
-        var points = indexVertices(state.vertices());
-        var start = points.get(from);
-        var end = points.get(toward);
-        if (start == null || end == null || !start.part().equals(end.part())) {
-            throw new IllegalArgumentException("Pick an edge within one native mesh part");
-        }
         if (!topology(state).manifold()) throw new IllegalArgumentException("Repair invalid topology before sliding");
-        double dx = end.x() - start.x(), dy = end.y() - start.y(), dz = end.z() - start.z();
-        var direction = EditorMeshNormals.unit(new EditorMeshPipeline.Normal(dx, dy, dz));
-        var moved = new Vertex(from, start.part(), start.x() + dx * fraction,
-                start.y() + dy * fraction, start.z() + dz * fraction);
-        if (moved.equals(start)) throw new IllegalArgumentException("Slide is below native coordinate precision");
-        var next = new HashMap<>(points);
-        next.put(from, moved);
-        var neighbors = new HashMap<Long,Integer>();
-        for (var face : state.faces()) {
-            if (face.a().vertex() != from && face.b().vertex() != from && face.c().vertex() != from) continue;
-            var corners = List.of(face.a(), face.b(), face.c());
-            for (var corner : corners) if (corner.vertex() != from) neighbors.merge(corner.vertex(), 1, Integer::sum);
-            var normal = EditorMeshNormals.face(triangle(face, points));
-            if (Math.abs(dot(normal, direction)) > 1e-12) throw new IllegalArgumentException("Slide would change the incident surface");
-            var afterNormal = EditorMeshNormals.face(triangle(face, next));
-            if (!(dot(normal, afterNormal) > 0)) throw new IllegalArgumentException("Slide would collapse or reverse a triangle");
+        return previewSlide(Map.of(from,toward),fraction,"Slide vertex " + from + " toward " + toward);
+    }
+
+    public synchronized EditPreview previewLoopSlide(Observation selection,long first,long second,long activeFace,
+                                                     boolean reverse,double fraction) {
+        if (!isCurrent(selection)) throw new IllegalArgumentException("Pick the loop again after a native revision change");
+        var rails = EditorMeshEdges.loopRails(selection,first,second,activeFace,reverse);
+        return previewSlide(rails,fraction,"Slide loop / " + rails.size() + " vertices");
+    }
+
+    private EditPreview previewSlide(Map<Long,Long> rails,double fraction,String label) {
+        if (!Double.isFinite(fraction) || fraction<=0 || fraction>=1) throw new IllegalArgumentException("Slide fraction must be strictly between 0 and 1");
+        var points=indexVertices(state.vertices());var next=new HashMap<>(points);
+        var directions=new HashMap<Long,EditorMeshPipeline.Normal>();var neighbors=new HashMap<Long,Map<Long,Integer>>();
+        for(var rail:rails.entrySet()) {
+            var start=points.get(rail.getKey());var end=points.get(rail.getValue());
+            if(start==null || end==null || start==end || !start.part().equals(end.part())) throw new IllegalArgumentException("Pick distinct endpoints within one native part");
+            double dx=end.x()-start.x(),dy=end.y()-start.y(),dz=end.z()-start.z();
+            directions.put(start.id(),EditorMeshNormals.unit(new EditorMeshPipeline.Normal(dx,dy,dz)));
+            var moved=new Vertex(start.id(),start.part(),start.x()+dx*fraction,start.y()+dy*fraction,start.z()+dz*fraction);
+            if(moved.equals(start)) throw new IllegalArgumentException("Slide is below native coordinate precision");
+            next.put(start.id(),moved);neighbors.put(start.id(),new HashMap<>());
         }
-        if (!neighbors.containsKey(toward)) throw new IllegalArgumentException("Slide target is not a connected native vertex");
-        for (var neighbor : neighbors.entrySet()) {
-            if (neighbor.getValue() != 1) continue;
-            var v = points.get(neighbor.getKey());
-            var outline = EditorMeshNormals.unit(new EditorMeshPipeline.Normal(v.x()-start.x(), v.y()-start.y(), v.z()-start.z()));
-            double cx = outline.y()*direction.z()-outline.z()*direction.y();
-            double cy = outline.z()*direction.x()-outline.x()*direction.z();
-            double cz = outline.x()*direction.y()-outline.y()*direction.x();
-            if (Math.hypot(Math.hypot(cx, cy), cz) > 1e-12) throw new IllegalArgumentException("Slide would move the open outline");
+        for(var face:state.faces()) {
+            if(!rails.containsKey(face.a().vertex()) && !rails.containsKey(face.b().vertex()) && !rails.containsKey(face.c().vertex())) continue;
+            var normal=EditorMeshNormals.face(triangle(face,points));var corners=List.of(face.a(),face.b(),face.c());
+            for(var corner:corners) {
+                long id=corner.vertex();var direction=directions.get(id);if(direction==null) continue;
+                if(Math.abs(dot(normal,direction))>1e-12) throw new IllegalArgumentException("Slide would change the incident surface");
+                for(var other:corners) if(other.vertex()!=id) neighbors.get(id).merge(other.vertex(),1,Integer::sum);
+            }
+            if(!(dot(normal,EditorMeshNormals.face(triangle(face,next)))>0)) throw new IllegalArgumentException("Slide would collapse or reverse a triangle");
         }
-        var vertices = new ArrayList<Vertex>(state.vertices().size());
-        for (var v : state.vertices()) vertices.add(v.id() == from ? moved : v);
-        var after = new State(id, sourceFingerprint, state.name(), state.sourceBytes(), vertices, state.faces(),
-                state.materials(), state.glbSource(), state.frames(), state.quads());
-        return new EditPreview(this, state, after, revision, "Slide vertex " + from + " toward " + toward + " by " + fraction);
+        for(var rail:rails.entrySet()) {
+            var local=neighbors.get(rail.getKey());
+            if(!local.containsKey(rail.getValue())) throw new IllegalArgumentException("Slide target is not a connected native vertex");
+            var start=points.get(rail.getKey());var direction=directions.get(start.id());
+            for(var neighbor:local.entrySet()) {
+                if(neighbor.getValue()!=1) continue;
+                var v=points.get(neighbor.getKey());
+                var outline=EditorMeshNormals.unit(new EditorMeshPipeline.Normal(v.x()-start.x(),v.y()-start.y(),v.z()-start.z()));
+                double cx=outline.y()*direction.z()-outline.z()*direction.y();
+                double cy=outline.z()*direction.x()-outline.x()*direction.z();
+                double cz=outline.x()*direction.y()-outline.y()*direction.x();
+                if(Math.hypot(Math.hypot(cx,cy),cz)>1e-12) throw new IllegalArgumentException("Slide would move the open outline");
+            }
+        }
+        var vertices=new ArrayList<Vertex>(state.vertices().size());
+        for(var v:state.vertices()) vertices.add(next.get(v.id()));
+        var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),vertices,state.faces(),state.materials(),state.glbSource(),state.frames(),state.quads());
+        return new EditPreview(this,state,after,revision,label+" by "+fraction);
     }
     private static double dot(EditorMeshPipeline.Normal a, EditorMeshPipeline.Normal b) {
         return a.x()*b.x() + a.y()*b.y() + a.z()*b.z();

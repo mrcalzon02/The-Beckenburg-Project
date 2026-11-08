@@ -39,7 +39,64 @@ public final class AssetImportBoundaryGuiTest {
     private static void awaitEdges(AssetImportDialog dock)throws Exception {
         await(()->{try{return (boolean)call(dock,"hasEdgeSelection",new Class<?>[0]);}catch(Exception e){throw new RuntimeException(e);}});
     }
-    private static void verifyInteriorGrid(AssetImportDialog dock,Path root,Path output)throws Exception {
+    private static void pickGridSeed(AssetImportDialog dock)throws Exception {
+            var ref=call(dock,"workingReference",new Class<?>[0]);var view=call(dock,"viewport",new Class<?>[]{List.class,int.class,int.class},ref,0,dock.workingViewportWidth());
+            var point=EditorMeshPicking.Projection.TOP.project(.5,0,.015);
+            int x=(Integer)call(view,"x",new Class<?>[]{double.class},point.x()),y=(Integer)call(view,"y",new Class<?>[]{double.class},point.y());
+            var canvas=(JPanel)field(dock,"preview");canvas.dispatchEvent(new MouseEvent(canvas,MouseEvent.MOUSE_PRESSED,System.currentTimeMillis(),0,x,y,1,false,1));
+    }
+    private static void verifyLoopSlide(AssetImportDialog dock,EditorTopologyProject project,Path output,
+                                       AtomicReference<String> published)throws Exception {
+        var initial=project.snapshot();
+        edt(()->{
+            pickGridSeed(dock);((JComboBox<?>)field(dock,"edgeMode")).setSelectedItem(EditorMeshEdges.Mode.LOOP);
+            button(dock,"selectEdges");
+        });
+        awaitEdges(dock);
+        edt(()->{
+            tool((JDialog)field(dock,"dialog"),"Move").doClick();
+            check(((JButton)field(dock,"previewSlide")).getText().equals("PREVIEW LOOP SLIDE"),"Move inspector acts on whole selected loop");
+            button(dock,"previewSlide");
+        });
+        await(()->reviewed(dock));
+        edt(()->{
+            var candidate=(EditorTopologyProject.EditPreview)field(dock,"modelingPreview");
+            check(project.snapshot()==initial,"Loop preview does not mutate native geometry");
+            for(int i=0;i<initial.vertices().size();i++){
+                var old=initial.vertices().get(i);var now=candidate.snapshot().vertices().get(i);
+                if(old.z()==0)check(now.z()==.25,"Clicked quad side supplies positive Z rail");
+                else check(now.equals(old),"First preview changes only selected vertices");
+            }
+            capture(dock,output.resolve("human-loop-slide-preview.png"));button(dock,"cancelFaceEdit");
+            ((JCheckBox)field(dock,"reverseSlide")).doClick();button(dock,"previewSlide");
+        });
+        await(()->reviewed(dock));
+        edt(()->{
+            button(dock,"applyFaceEdit");var after=project.snapshot();
+            for(int i=0;i<initial.vertices().size();i++){
+                var old=initial.vertices().get(i);var now=after.vertices().get(i);
+                if(old.z()==0)check(now.z()==-.25&&now.x()==old.x()&&now.y()==old.y(),"Reverse moves every row vertex along the opposite real rail");
+                else check(now.equals(old),"Surrounding surface exact");
+            }
+            check(after.faces().equals(initial.faces())&&after.quads().equals(initial.quads()),"Native corner attributes, winding and quad identities preserved");
+            button(dock,"undoMesh");check(project.snapshot().equals(initial),"One human undo restores entire slide");
+            button(dock,"redoMesh");button(dock,"saveMesh");button(dock,"reopenMesh");
+            check(EditorTopologyProject.open(project.documentPath()).snapshot().equals(after),"Slide persists through fresh native reopen");
+        });
+        await(()->ready(dock));edt(()->button(dock,"apply"));await(()->published.get()!=null);
+        String id=published.getAndSet(null);var actual=GlbProps.model(id).triangles();var expected=project.mesh().triangles();
+        check(actual.size()==expected.size(),"Runtime loop face count");
+        for(int i=0;i<actual.size();i++){
+            var g=actual.get(i);var n=expected.get(i);var got=List.of(g.a(),g.b(),g.c());var wanted=List.of(n.a(),n.b(),n.c());
+            for(int j=0;j<3;j++){var a=got.get(j);var b=wanted.get(j);check(a.x()==b.x()&&a.y()==b.y()&&a.z()==b.z()&&a.u()==b.u()&&a.v()==b.v(),"Every loop slide game corner and UV matches native mesh");}
+        }
+        Files.write(output.resolve("human-loop-slide.glb"),ImportedAssetLibrary.read(id));
+        var archived=ImportedAssetLibrary.root().resolve(id+".authoring.btop");
+        check(EditorTopologyProject.open(archived).snapshot().equals(project.snapshot()),"Published slide archive exact");
+        Files.copy(archived,output.resolve("human-loop-slide.btop"),StandardCopyOption.REPLACE_EXISTING);
+        edt(()->tool((JDialog)field(dock,"dialog"),"Select").doClick());
+    }
+    private static void verifyInteriorGrid(AssetImportDialog dock,Path root,Path output,AtomicReference<String> published)throws Exception {
         var mesh=EditorMeshPrimitives.preview(new EditorMeshPrimitives.Parameters(EditorMeshPrimitives.Kind.PLANE,4,1,4,4,4));
         var grid=EditorTopologyProject.fromMesh(mesh,"1".repeat(64),root.resolve("fixture.btop"));
         Path source=root.resolve("grid.obj");try(var stream=Files.newOutputStream(source)){EditorObjWriter.write(grid.snapshot(),stream);}
@@ -48,10 +105,7 @@ public final class AssetImportBoundaryGuiTest {
         edt(()->{
             ((JComboBox<?>)field(dock,"meshView")).setSelectedItem(EditorMeshPicking.Projection.TOP);
             ((JComboBox<?>)field(dock,"selectionMode")).setSelectedItem("EDGE");
-            var ref=call(dock,"workingReference",new Class<?>[0]);var view=call(dock,"viewport",new Class<?>[]{List.class,int.class,int.class},ref,0,dock.workingViewportWidth());
-            var point=EditorMeshPicking.Projection.TOP.project(.5,0,.015);
-            int x=(Integer)call(view,"x",new Class<?>[]{double.class},point.x()),y=(Integer)call(view,"y",new Class<?>[]{double.class},point.y());
-            var canvas=(JPanel)field(dock,"preview");canvas.dispatchEvent(new MouseEvent(canvas,MouseEvent.MOUSE_PRESSED,System.currentTimeMillis(),0,x,y,1,false,1));
+            pickGridSeed(dock);
             ((JComboBox<?>)field(dock,"edgeMode")).setSelectedItem(EditorMeshEdges.Mode.RING);button(dock,"selectEdges");
         });
         awaitEdges(dock);
@@ -76,7 +130,7 @@ public final class AssetImportBoundaryGuiTest {
             button(dock,"undoMesh");check(project.snapshot().equals(before),"One undo restores complete interior grid");
             tool((JDialog)field(dock,"dialog"),"Select").doClick();
         });
-        await(()->ready(dock));
+        await(()->ready(dock));verifyLoopSlide(dock,project,output,published);
     }
     public static void main(String[] args) throws Exception {
         Path root=Files.createTempDirectory("native-boundary-");
@@ -86,7 +140,7 @@ public final class AssetImportBoundaryGuiTest {
         var ui=new AtomicReference<AssetImportDialog>(); var published=new AtomicReference<String>();
         try {
             edt(()->{var dock=new AssetImportDialog(null,published::set);ui.set(dock);((JDialog)field(dock,"dialog")).setVisible(true);});
-            var dock=ui.get();verifyInteriorGrid(dock,root,output);edt(()->dock.loadSource(source));await(()->ready(dock)); var project=(EditorTopologyProject)field(dock,"topologyProject");
+            var dock=ui.get();verifyInteriorGrid(dock,root,output,published);edt(()->dock.loadSource(source));await(()->ready(dock)); var project=(EditorTopologyProject)field(dock,"topologyProject");
             var before=project.snapshot();long epoch=project.revision();check(before.quads().size()==4,"Four source OBJ quads retained in native editor");var inner=new HashSet<Long>();
             for(var v:before.vertices())if(Math.abs(v.x())==1 && Math.abs(v.y())==1)inner.add(v.id());
             var outer=before.vertices().stream().filter(v->v.x()==-2 && v.y()==-2).findFirst().orElseThrow();
@@ -144,7 +198,7 @@ public final class AssetImportBoundaryGuiTest {
             Files.write(output.resolve("human-authored-quads.glb"),outputGlb);
             Files.write(output.resolve("human-authored-quads.btop"),project.snapshotBytes());
             Files.writeString(output.resolve("human-authored-quads.obj"),RING);
-            System.out.println("PASS native interior quad loop/ring and boundary selection: exact grid transform/undo, directed hole rim, separate parts, native reopen and actual game corners");
+            System.out.println("PASS native interior quad loop/ring, whole-loop slide and boundary selection: exact grid transform/undo, directed hole rim, separate parts, native reopen and actual game corners");
         } finally {
             edt(()->{if(ui.get()!=null)((JDialog)field(ui.get(),"dialog")).dispose();});System.setProperty("user.home",previous);
             try(var paths=Files.walk(root)){for(var path:paths.sorted(Comparator.reverseOrder()).toList())Files.deleteIfExists(path);}
