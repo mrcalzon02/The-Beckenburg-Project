@@ -116,6 +116,20 @@ public final class CastleLevelEdits {
         return false;
     }
     public synchronized List<Surface> surfaces(){return List.copyOf(surfaces.values());}
+    /** Ordered references to just the editable objects requested by a hierarchy page. */
+    record ObjectSlice(int objectCount,List<Surface> surfaces,List<Prop> props,List<Lamp> lamps) {}
+    synchronized ObjectSlice objectSlice(int offset,int limit) {
+        int lampStart=surfaces.size()+props.size();
+        long end=(long)offset+limit;
+        return new ObjectSlice(lampStart+lamps.size(),slice(surfaces,0,offset,end),
+            slice(props,surfaces.size(),offset,end),slice(lamps,lampStart,offset,end));
+    }
+    private static <T> List<T> slice(Map<String,T> items,int start,int offset,long end) {
+        int first=Math.max(0,offset-start);
+        long last=Math.min(items.size(),end-start);
+        if (first>=last) return List.of();
+        return items.values().stream().skip(first).limit(last-first).toList();
+    }
     synchronized Surface surfaceById(String id) { return surfaces.get(id); }
     synchronized Prop propById(String id) { return props.get(id); }
     synchronized Lamp lampById(String id) { return lamps.get(id); }

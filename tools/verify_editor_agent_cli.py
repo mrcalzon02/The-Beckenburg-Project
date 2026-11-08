@@ -47,13 +47,20 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
         assert 'state' not in summary and 'hierarchy' not in summary
         assert page['result'] == {'total': len(full['hierarchy']), 'offset': 0, 'nodes': [node]}
         assert one['result'] == node and one['revision'] == rev
+        total = len(full['hierarchy'])
+        offsets = [*range(0, total, 17), total]
+        pages = run([f'hierarchy\t{rev}\t{offset}\t17' for offset in offsets])
+        for offset, reply in zip(offsets, pages):
+            data = reply['result']['result']
+            assert data == {'total': total, 'offset': offset, 'nodes': full['hierarchy'][offset:offset + 17]}
         first_by_id = {}
         for row in full['hierarchy']:
             first_by_id.setdefault(row['id'], row)
         direct = run([f'node\t{rev}\t{node_id}' for node_id in first_by_id])
         assert [reply['result']['result'] for reply in direct] == list(first_by_id.values())
         invalid = run([f'node\t{rev-1}\t{node["id"]}', f'node\t{rev}\tmissing-node',
-                       f'hierarchy\t{rev}\t0\t65'], expected=1)
+                       f'hierarchy\t{rev}\t0\t65', f'hierarchy\t{rev}\t{total + 1}\t1',
+                       f'hierarchy\t{rev - 1}\t0\t1'], expected=1)
         assert all(not row['ok'] for row in invalid)
         return sizes[0], sizes[-1]
 

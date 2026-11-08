@@ -111,10 +111,9 @@ public final class EditorAgentService<S> {
         require(expected);
         if (offset < 0 || limit < 1 || limit > 64) throw new IllegalArgumentException("Expected offset >= 0 and limit 1 to 64");
         var project = host.project();
-        var nodes = project.hierarchy();
-        int end = pageEnd(nodes.size(),offset,limit);
+        var page = project.hierarchyPage(offset,limit);
         return new Evidence<>(project.id(), expected,
-                new NodePage(nodes.size(), offset, List.copyOf(nodes.subList(offset, end))));
+                new NodePage(page.total(), page.offset(), page.nodes()));
     }
 
     public Evidence<EditorProject.Node> node(long expected, String id) {

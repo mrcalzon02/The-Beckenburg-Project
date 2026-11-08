@@ -125,6 +125,12 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         return List.copyOf(result);
     }
     public synchronized Node node(String id) { return propNode(indexOf(id)); }
+    public synchronized HierarchyPage hierarchyPage(int offset,int limit) {
+        int end=HierarchyPage.end(props.size(),offset,limit);
+        var rows=new ArrayList<Node>(end-offset);
+        for (int i=offset;i<end;i++) rows.add(propNode(i));
+        return new HierarchyPage(props.size(),offset,rows);
+    }
     private Node propNode(int index) {
         var prop = props.get(index);
         return new Node(propIds.get(index),"PROP",prop.mesh()+" / room "+prop.room(),prop.x(),prop.y(),prop.z());

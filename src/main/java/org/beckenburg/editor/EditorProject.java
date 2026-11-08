@@ -28,6 +28,22 @@ public interface EditorProject<S> {
     String title();
     Path documentPath();
     List<Node> hierarchy();
+    record HierarchyPage(int total,int offset,List<Node> nodes) {
+        public HierarchyPage {
+            nodes=List.copyOf(nodes);
+            if (offset<0 || offset>total || nodes.size()>64 || nodes.size()>total-offset)
+                throw new IllegalArgumentException("Invalid native hierarchy page");
+        }
+        public static int end(int total,int offset,int limit) {
+            if (offset<0 || offset>total || limit<1 || limit>64)
+                throw new IllegalArgumentException("Expected a valid page offset and limit 1 to 64");
+            return offset+Math.min(limit,total-offset);
+        }
+    }
+    default HierarchyPage hierarchyPage(int offset,int limit) {
+        var rows=hierarchy();
+        return new HierarchyPage(rows.size(),offset,rows.subList(offset,HierarchyPage.end(rows.size(),offset,limit)));
+    }
     /** Hosts can resolve one human hierarchy row directly from their native storage. */
     default Node node(String id) {
         for (var row : hierarchy()) if (row.id().equals(id)) return row;
