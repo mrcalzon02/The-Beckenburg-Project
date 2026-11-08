@@ -244,3 +244,9 @@ In the Material Editor Pack tab, select a bound face and preview the layout for 
 In the Material Editor’s Pack tab, select a face and choose corner A, B, C or Entire island. Pin and Unpin preview a reversible native edit. Cyan dots identify pinned corners. A corner pin follows the shared UV vertex up to a seam or material boundary. During relaxation the pinned UV stays fixed. During packing any pin holds its whole island in place. Free islands use the remaining space. Packing refuses pinned layouts that violate the atlas border or gutter.
 
 Native BTOP version 11 retains pins on save and reopen. Game meshes consume the authored UVs. Pin flags belong to the native authoring document.
+
+### Marking UV seams
+
+In the Material Editor's **Seams** tab, select a bound face and choose edge A–B, B–C or C–A. **Mark seam** previews a cut on both sides of a paired edge. Apply records one native history entry. Pink lines show authored marks. The original UV coordinates remain in place until an operation moves them.
+
+Connected-island transforms, packing, relaxation and vertex pinning stop at these cuts. **Clear mark** removes the authored cut. Differing UV coordinates and material boundaries continue to separate islands. BTOP version 12 stores the marks in the authoring document. The game consumes the exported per-corner UV coordinates.

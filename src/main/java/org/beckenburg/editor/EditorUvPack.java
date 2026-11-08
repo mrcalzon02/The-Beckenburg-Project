@@ -63,8 +63,8 @@ final class EditorUvPack {
         for(int i=0;i<chart.length;i++){
             var island=chart[i];if(island==null || island.fixed)continue;
             var f=faces.get(i);
-            var next=new Face(f.id(),f.part(),place(f.a(),island,scale,width,height),place(f.b(),island,scale,width,height),
-                place(f.c(),island,scale,width,height),f.material());
+            var next=f.withCorners(place(f.a(),island,scale,width,height),place(f.b(),island,scale,width,height),
+                place(f.c(),island,scale,width,height));
             double ratio=area(next)/area(f)/scale/scale;
             if(!Double.isFinite(ratio)||Math.abs(ratio-1)>1e-7)throw new IllegalArgumentException("Packed face exceeds UV precision");
             faces.set(i,next);

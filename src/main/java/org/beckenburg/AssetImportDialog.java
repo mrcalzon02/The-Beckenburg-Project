@@ -186,6 +186,8 @@ public final class AssetImportDialog {
     private final JButton packMaterialUvs=new JButton("Preview material packing");
     private final JComboBox<String> pinScope=new JComboBox<>(new String[]{"Corner A","Corner B","Corner C","Entire island"});
     private final JButton pinUvs=new JButton("Pin"),unpinUvs=new JButton("Unpin");
+    private final JComboBox<String> seamEdge=new JComboBox<>(new String[]{"A–B","B–C","C–A"});
+    private final JButton markSeam=new JButton("Mark seam"),clearSeam=new JButton("Clear mark");
     private final JSpinner packPadding=new JSpinner(new SpinnerNumberModel(1,0,1024,1));
     private final JCheckBox keepPackDensity=new JCheckBox("Keep current texel density");
     private double materialRenderedRotation=Double.NaN;
@@ -534,7 +536,10 @@ public final class AssetImportDialog {
             var runtime=new JPanel(new BorderLayout(4,4));runtime.add(new JLabel("ACTUAL RUNTIME PREVIEW"),BorderLayout.NORTH);runtime.add(materialRuntime,BorderLayout.CENTER);runtime.add(EditorTopologyWorkspace.column(uvDensity,EditorTopologyWorkspace.form("Preview",materialReviewMode,"Model rotation",materialRotation)),BorderLayout.SOUTH);materialReviewMode.addActionListener(e->refreshMaterialWindow());materialRotation.addChangeListener(e->refreshMaterialWindow());
             var bindings=EditorTopologyWorkspace.column(new JLabel("MATERIAL PROPERTIES"),EditorTopologyWorkspace.form("Material",materialList),materialSwatch,previewMaterial,new JSeparator(),EditorTopologyWorkspace.form("New PNG wrap",materialWrap,"Alpha",materialAlpha,"UV origin",materialOrigin),chooseMaterial,new JLabel("<html>PNG changes are captured in a native preview.<br>Apply commits one face assignment.</html>"));
             var values=new JPanel(new GridLayout(0,2,5,5));values.add(uvFirstLabel);values.add(uvFirst);values.add(uvSecondLabel);values.add(uvSecond);
-            var uvSettings=EditorTopologyWorkspace.column(new JLabel("NATIVE CORNER UVS"),EditorTopologyWorkspace.form("Operation",uvOperation,"Scope",uvScope,"Pivot",uvPivot),values,previewUv,fixUvStretch,relaxUvInterior,new JLabel("<html>Island traversal stops at UV seams<br>and material boundaries.<br>Negative scale mirrors UVs.<br>Zero scale is refused.<br>Apply / Cancel uses native history.</html>"));
+            var seamButtons=new JPanel(new GridLayout(1,2,3,0));seamButtons.add(markSeam);seamButtons.add(clearSeam);
+            var uvSettings=EditorTopologyWorkspace.column(new JLabel("NATIVE CORNER UVS"),EditorTopologyWorkspace.form("Operation",uvOperation,"Scope",uvScope,"Pivot",uvPivot),values,previewUv,fixUvStretch,relaxUvInterior);
+            markSeam.addActionListener(e->previewSeam(true));clearSeam.addActionListener(e->previewSeam(false));
+            clearSeam.setToolTipText("Remove the authored mark. Existing UV coordinates stay in place.");
             fixUvStretch.setToolTipText("Preview uniform texel scale on this face while preserving its UV area and center");
             fixUvStretch.addActionListener(e->{
                 if(selectedHit==null)return;
@@ -565,10 +570,14 @@ public final class AssetImportDialog {
             materialTools.addTab("Pack",EditorTopologyWorkspace.column(new JLabel("SELECTED MATERIAL ISLANDS"),
                 EditorTopologyWorkspace.form("Gutter (texels)",packPadding),keepPackDensity,packMaterialUvs,
                 EditorTopologyWorkspace.form("Pin selection",pinScope),pinUvs,unpinUvs));
+            materialTools.addTab("Seams",EditorTopologyWorkspace.column(EditorTopologyWorkspace.form("Face edge",seamEdge),seamButtons));
             pinScope.setToolTipText("Packing holds any island with a pinned UV in place.");
             pinUvs.addActionListener(e->previewPin(true));
             unpinUvs.addActionListener(e->previewPin(false));
-            materialTools.addChangeListener(e->{if(materialWorkspace!=null)materialWorkspace.showPins(materialTools.getSelectedComponent()==materialTools.getComponentAt(materialTools.indexOfTab("Pack")));});
+            materialTools.addChangeListener(e->{if(materialWorkspace!=null){
+                String tab=materialTools.getTitleAt(materialTools.getSelectedIndex());
+                materialWorkspace.showUvGuides(tab.equals("Pack"),tab.equals("Seams"));
+            }});
             packMaterialUvs.setToolTipText("Place all islands of the selected material in tile zero. The source image stays fixed.");
             packMaterialUvs.addActionListener(e->{
                 if(selectedHit==null)return;
@@ -658,6 +667,7 @@ public final class AssetImportDialog {
         previewPaintStyle.setEnabled(layerEditable);paintBlend.setEnabled(layerEditable);paintOpacity.setEnabled(layerEditable);
         packMaterialUvs.setEnabled(layerEditable);packPadding.setEnabled(layerEditable);keepPackDensity.setEnabled(layerEditable);
         pinScope.setEnabled(layerEditable);pinUvs.setEnabled(layerEditable);unpinUvs.setEnabled(layerEditable);
+        seamEdge.setEnabled(layerEditable);markSeam.setEnabled(layerEditable);clearSeam.setEnabled(layerEditable);
         paintLayer.setEnabled(layerEditable);paintLayerName.setEnabled(layerEditable);
         addPaintLayer.setEnabled(layerEditable && paintLayers.size()<16);removePaintLayer.setEnabled(layerEditable && paintLayers.size()>1);
         raisePaintLayer.setEnabled(layerEditable && paintLayer.getSelectedIndex()>0);
@@ -784,6 +794,11 @@ public final class AssetImportDialog {
         if(selectedHit==null)return;
         long face=selectedHit.faceId();int index=pinScope.getSelectedIndex();
         beginMaterialPreview(p->p.previewUvPins(face,index==3?-1:index,pin));
+    }
+    private void previewSeam(boolean mark){
+        if(selectedHit==null)return;
+        long id=selectedHit.faceId();int edge=seamEdge.getSelectedIndex();
+        beginMaterialPreview(p->p.previewSeam(id,edge,mark));
     }
     private void beginMaterialPreview(java.util.function.Function<EditorTopologyProject,EditorTopologyProject.EditPreview> operation){
         if(materialWorkspace!=null)materialWorkspace.previewIssue(null);

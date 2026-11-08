@@ -22,7 +22,7 @@ final class EditorUvRelax {
         for(int i=0;i<count;i++){
             var e=graph.edges().get(island[i/3]*3+i%3);
             int twin=e.twin();
-            if(twin<0 || e.uvSeam() || local[twin/3]<0){fixed[i]=true;fixed[next(i)]=true;continue;}
+            if(EditorTopologyProject.uvNeighbor(state,graph,island[i/3],i%3)<0 || local[twin/3]<0){fixed[i]=true;fixed[next(i)]=true;continue;}
             int t=local[twin/3]*3+twin%3;
             join(i,next(t));join(next(i),t);
         }
@@ -124,7 +124,7 @@ final class EditorUvRelax {
                     throw new IllegalArgumentException("Relaxed UV exceeds native coordinate budget");
                 if(nu!=c.u() || nv!=c.v()){corners[k]=new Corner(c.vertex(),nu,nv,c.normal());changed=true;}
             }
-            if(changed)output.set(island[i],new Face(f.id(),f.part(),corners[0],corners[1],corners[2],f.material()));
+            if(changed)output.set(island[i],f.withCorners(corners[0],corners[1],corners[2]));
         }
         return output;
     }

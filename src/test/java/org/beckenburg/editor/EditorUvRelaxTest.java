@@ -128,13 +128,44 @@ public final class EditorUvRelaxTest {
         }
         p.restore(before);
     }
+    private static void seams(EditorTopologyProject p)throws Exception{
+        var before=p.snapshot();long id=before.faces().get(0).id();
+        try{p.previewSeam(id,0,true);throw new AssertionError("Marked a boundary without a twin");}
+        catch(IllegalArgumentException expected){check(p.snapshot()==before,"Boundary refusal mutated native state");}
+        p.applyPreview(p.previewSeam(id,1,true));
+        try{p.previewRelaxInterior(id);throw new AssertionError("Relaxation moved the marked edge through an alternate fan path");}
+        catch(IllegalArgumentException expected){check(expected.getMessage().contains("interior vertices"),"Unexpected relaxation refusal");}
+        p.applyPreview(p.previewSeam(id,2,true));
+        var marked=p.snapshot();
+        check(marked.vertices()==before.vertices() && marked.materials()==before.materials(),"Marking a seam changed geometry or material");
+        for(int i=0;i<before.faces().size();i++){
+            var a=before.faces().get(i);var b=marked.faces().get(i);
+            check(a.a()==b.a() && a.b()==b.b() && a.c()==b.c(),"Marking a seam changed native UVs");
+        }
+        check(marked.faces().get(0).seamMask()==6 && marked.faces().get(1).marked(2) && marked.faces().get(3).marked(1),"Both sides of the cut must be marked");
+        var fan=p.previewUvPins(id,2,true).snapshot();
+        var pack=EditorUvPack.pack(marked,p.topology(),marked.materials().get(0),1,false);
+        check(pack.islands()==3 && pack.faces().get(0).seamMask()==6,"Packing must separate marked UV islands and retain the cuts");
+        check(fan.faces().get(0).c().pinned() && !fan.faces().get(1).c().pinned(),"UV pin crossed a marked seam");
+        p.save();check(EditorTopologyProject.open(p.documentPath()).snapshot().equals(marked),"Native reopen lost explicit seams");
+        var move=p.previewUvTransform(id,true,EditorTopologyProject.UvTransform.MOVE,.25,0,true);
+        p.applyPreview(move);var moved=p.snapshot();
+        for(int i=1;i<5;i++)check(moved.faces().get(i)==marked.faces().get(i),"Island move crossed an authored seam");
+        check(moved.faces().get(0).marked(1),"UV movement erased seam intent");
+        for(int edge:new int[]{1,2})p.applyPreview(p.previewSeam(id,edge,false));
+        var clear=p.snapshot();
+        check(clear.faces().get(0).seamMask()==0 && clear.faces().get(0).a()==moved.faces().get(0).a(),"Clearing a mark moved a UV");
+        var repeat=p.previewUvTransform(id,true,EditorTopologyProject.UvTransform.MOVE,.25,0,true).snapshot();
+        check(repeat.faces().get(1)==clear.faces().get(1),"Clearing an explicit mark joined discontinuous UVs");
+        p.restore(before);
+    }
     public static void main(String[] args)throws Exception{
         var dir=Files.createTempDirectory("native-uv-relax-");
         try{
             var captured=EditorObjMaterials.capture(source(dir));
             var project=EditorTopologyProject.fromMesh(captured.mesh(),captured.sourceFingerprint(),dir.resolve("fan.btop"));
             var before=project.snapshot();
-            packing(project);
+            seams(project);packing(project);
             var edit=project.previewRelaxInterior(before.faces().get(0).id());
             verify(before,edit.snapshot());
             project.applyPreview(edit);project.save();

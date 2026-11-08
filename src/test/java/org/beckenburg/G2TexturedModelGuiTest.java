@@ -796,6 +796,27 @@ public final class G2TexturedModelGuiTest {
         for(int step=0;step<3;step++){edt(()->button(ui,"undoMesh"));await(()->ready(ui));}
         check(project.snapshot().equals(packed),"Undo pin history exactly");
         edt(()->button(ui,"undoMesh"));await(()->ready(ui));check(project.snapshot().equals(original),"Undo material packing exactly");
+        edt(()->{var tabs=(JTabbedPane)field(ui,"materialTools");tabs.setSelectedIndex(tabs.indexOfTab("Seams"));});
+        for(int edge:new int[]{1,2}){
+            edt(()->{select("seamEdge",edge);button(ui,"markSeam");});applyReview();
+        }
+        var cut=project.snapshot();
+        check(cut.faces().get(0).seamMask()==6,"Actual Material Editor cuts both selected edges");
+        edt(()->{captureMaterial("uv-seams.png");button(ui,"saveMesh");});await(()->ready(ui));
+        check(EditorTopologyProject.open(project.documentPath()).snapshot().equals(cut),"Saved human seam marks reopen");
+        edt(()->{var tabs=(JTabbedPane)field(ui,"materialTools");tabs.setSelectedIndex(tabs.indexOfTab("UV edit"));
+            ((JComboBox<?>)field(ui,"uvOperation")).setSelectedItem(EditorTopologyProject.UvTransform.MOVE);
+            select("uvScope",1);spin("uvFirst",.25);spin("uvSecond",0d);button(ui,"previewUv");});
+        applyReview();var moved=project.snapshot();
+        for(int i=1;i<5;i++)check(moved.faces().get(i)==cut.faces().get(i),"Human island move crossed cut");
+        published.set(null);reviewPixels();edt(()->button(ui,"apply"));await(()->published.get()!=null);
+        var seamGame=GlbProps.model(published.get());
+        for(int i=0;i<5;i++){var t=seamGame.triangles().get(i);var f=moved.faces().get(i);
+            near(t.a().u(),f.a().u());near(t.a().v(),f.a().v());near(t.b().u(),f.b().u());near(t.b().v(),f.b().v());near(t.c().u(),f.c().u());near(t.c().v(),f.c().v());}
+        edt(()->{var tabs=(JTabbedPane)field(ui,"materialTools");tabs.setSelectedIndex(tabs.indexOfTab("Seams"));button(ui,"clearSeam");});applyReview();
+        check(!project.snapshot().faces().get(0).marked(2),"Material Editor cleared selected seam");
+        for(int step=0;step<4;step++){edt(()->button(ui,"undoMesh"));await(()->ready(ui));}
+        check(project.snapshot().equals(original),"Undo human seam edits exactly");
     }
     public static void main(String[] args) throws Exception {
         Path home=Files.createTempDirectory("g2-textured-");

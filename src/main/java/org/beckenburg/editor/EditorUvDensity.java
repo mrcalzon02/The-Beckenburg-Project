@@ -64,7 +64,7 @@ public record EditorUvDensity(double texelsPerUnit,double stretch) {
         if(Math.signum(result.determinant())!=sign || measured.stretch()>1+1e-7 ||
             Math.abs(measured.texelsPerUnit()/density.texelsPerUnit()-1)>1e-7)
             throw new IllegalArgumentException("UV coordinates cannot represent the requested correction");
-        return new EditorTopologyProject.Face(face.id(),face.part(),corners[0],corners[1],corners[2],face.material());
+        return face.withCorners(corners[0],corners[1],corners[2]);
     }
     private static EditorMeshPipeline.Vertex withUv(EditorMeshPipeline.Vertex v,EditorTopologyProject.Corner c){
         return new EditorMeshPipeline.Vertex(v.x(),v.y(),v.z(),c.u(),c.v(),v.normal());
@@ -109,7 +109,7 @@ public record EditorUvDensity(double texelsPerUnit,double stretch) {
                     throw new IllegalArgumentException("Island correction exceeds native UV range");
                 corners[i]=new EditorTopologyProject.Corner(c.vertex(),u,v,c.normal());
             }
-            var next=new EditorTopologyProject.Face(face.id(),face.part(),corners[0],corners[1],corners[2],face.material());
+            var next=face.withCorners(corners[0],corners[1],corners[2]);
             double ratio=signedUvArea(next)/signedUvArea(face);
             if(!Double.isFinite(ratio) || Math.abs(ratio-1)>1e-7)
                 throw new IllegalArgumentException("Island correction cannot preserve signed UV areas");
