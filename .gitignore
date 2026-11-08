@@ -40,3 +40,6 @@ development/levels/rebuild/floor-closure-pass/**/*.blend[0-9]
 
 # Scoped stair construction backups.
 development/levels/rebuild/stair-landing-pass/**/*.blend[0-9]
+
+# Scoped structural opening Blender backups.
+development/levels/rebuild/stair-opening-pass/**/*.blend[0-9]

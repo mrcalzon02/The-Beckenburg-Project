@@ -36,3 +36,9 @@ tools/check_stair_landings.py text eol=lf
 tools/render_stair_closeups.py text eol=lf
 tools/audit_roster_stairs.py text eol=lf
 tools/audit_macroterrain_fit.py text eol=lf
+
+# Physical stair shell source/evidence fingerprints.
+development/levels/rebuild/stair-opening-pass/** -text
+tools/build_stair_openings.py text eol=lf
+tools/check_stair_openings.py text eol=lf
+tools/render_stair_openings.py text eol=lf

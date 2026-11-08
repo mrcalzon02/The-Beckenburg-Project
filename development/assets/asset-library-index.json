@@ -1,8 +1,8 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 1783,
-  "unique_local_file_hashes": 1629,
+  "local_files": 1792,
+  "unique_local_file_hashes": 1638,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
@@ -11,8 +11,8 @@
     "source_library_masters": 120,
     "additional_custom_model_sources": 22,
     "review_assemblies": 173,
-    "reference_and_rejected_studies": 29,
-    "native_map_exports": 162
+    "reference_and_rejected_studies": 30,
+    "native_map_exports": 170
   },
   "archive_index": {
     "path": "development/assets/local-library-manifest.json",
@@ -26882,6 +26882,114 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "79dc7d418075e5adeb105644df1aff7deeb4ecbd869c72a6bb0986fd490d1d1e",
       "bytes": 1684616
+    },
+    {
+      "id": "mine-walkway-conflict-opened-stairs",
+      "label": "mine-walkway-conflict-opened-stairs",
+      "maps": [],
+      "category": "reference_and_rejected_studies",
+      "path": "development/levels/rebuild/stair-opening-pass/rejected/mine-walkway-conflict-opened-stairs.glb",
+      "collection": "reference_and_rejected_studies",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "12db253a12c6f4236a8c01613f7535c528629c4445eff0d11deb762df9bfe270",
+      "bytes": 1546840
+    },
+    {
+      "id": "opened-stairs",
+      "label": "opened-stairs",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/stair-opening-pass/wld-03/opened-stairs.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "141dbe4da15d1ff10059478606c00a86519fd3aeca39843d3db492273c1fffda",
+      "bytes": 2404928
+    },
+    {
+      "id": "opened-stairs",
+      "label": "opened-stairs",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/stair-opening-pass/wld-04/opened-stairs.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "1ce88b37867f4ca8b1a65398dca3a3b4f01565c246f81bd48037ccca6810c4de",
+      "bytes": 2232080
+    },
+    {
+      "id": "opened-stairs",
+      "label": "opened-stairs",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/stair-opening-pass/wld-05/opened-stairs.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "f988ab35517dee90e7de0ff42cdfbae1c618534997e3449e7540d769abe48775",
+      "bytes": 1538732
+    },
+    {
+      "id": "opened-stairs",
+      "label": "opened-stairs",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/stair-opening-pass/wld-06/opened-stairs.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "d5d32696363ceca0accdc61f924683d3519f715a83d6eeac5c71ff7e2b7e30cc",
+      "bytes": 1571084
+    },
+    {
+      "id": "opened-stairs",
+      "label": "opened-stairs",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/stair-opening-pass/wld-08/opened-stairs.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "5847fa47893086dfe45c274e9df08b4562cc07bc6edcdfef26d3e5ff44ad853d",
+      "bytes": 1401164
+    },
+    {
+      "id": "opened-stairs",
+      "label": "opened-stairs",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/stair-opening-pass/wld-09/opened-stairs.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "9abc8639c04cc23d8e2377f7a9408424e86ceeff1bd9829ef0aa36e74af0d885",
+      "bytes": 3047668
+    },
+    {
+      "id": "opened-stairs",
+      "label": "opened-stairs",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/stair-opening-pass/wld-13/opened-stairs.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "191b5e8e3990565770e1c6c7213e56925a5a75d2fc182d3c6ecb1c59715f67a0",
+      "bytes": 1487556
+    },
+    {
+      "id": "opened-stairs",
+      "label": "opened-stairs",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/stair-opening-pass/wld-18/opened-stairs.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "445ff0760d4ad3287214c4d99969b494a4d993415737aa10a1a94a7fe102a4bc",
+      "bytes": 1716920
     },
     {
       "id": "rough-shell",

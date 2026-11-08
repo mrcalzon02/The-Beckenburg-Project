@@ -18,6 +18,7 @@ for path in sorted(set(paths)):
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
     if '/atmosphere-all-levels/' in path:kind='Runtime shared fog and skybox comparison' if 'sheet' in p.name else 'Runtime OpenGL atmosphere capture' if '/opengl/' in path else 'Runtime software atmosphere capture'
+    elif '/stair-opening-batch/' in path:kind='Native rejected pilot aperture review; not final source' if 'pilot-before-' in path else 'Native physical stair aperture inspection; construction cameras, not runtime'
     elif '/stair-landing-fit-batch/' in path:kind='Native stair closeup; overhead caps/distant context hidden, some joins occluded; not runtime' if 'closeup' in p.name else 'Native isolated stair additions; context hidden, not runtime' if 'new-landings' in p.name else 'Native stair/landing construction overview; runtime gates open'
     elif '/floor-closure-batch/' in path:kind='Native paired structural plate inspection;150W neutral fill, not runtime' if '-room-' in p.name or 'paired-closure' in p.name else 'Native isolated floor/cap additions; zero-part outcomes may be empty' if 'repaired-plates' in p.name else 'Native floor/cap construction overview or comparison; runtime gates open'
     elif '/room-terrain-batch/' in path:kind='Native first-person paired occupied-terrain review; neutral150W fill, not runtime' if '-room-' in p.name or 'paired-room' in p.name else 'Native saved editor occupied-room excavation review; construction candidate'

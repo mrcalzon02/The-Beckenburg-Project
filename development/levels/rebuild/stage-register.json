@@ -6083,7 +6083,7 @@
     "baseline_clear_metres": 6,
     "baseline_opaque_metres": 24,
     "full_map_acceptance": false,
-    "mechanism": "Shared6â€“24m radial policy before alpha blending at actual surface depth; weather sky horizon; no depth writes",
+    "mechanism": "Shared6Ã¢â‚¬â€œ24m radial policy before alpha blending at actual surface depth; weather sky horizon; no depth writes",
     "focused_checks": 10,
     "actual_runtime_frames": 52
   },
@@ -6138,5 +6138,24 @@
       "new_flat_sweep_failures": 0
     },
     "source_sha": "39126b2804dd7bc7e42b1c1841b4a77754d937b4"
+  },
+  "stair_shell_opening_checkpoint": {
+    "status": "BREADTH_BY_STAGE_PHYSICAL_STAIR_SHELL_OPENINGS",
+    "evidence": "development/levels/rebuild/stair-opening-pass/roster.json",
+    "aggregate": {
+      "modified_sites": 8,
+      "modified_original_shells": 29,
+      "closed_replacement_parts": 29,
+      "new_triangles": 1024,
+      "independent_shaft_samples": 5049,
+      "flight_gains": 12,
+      "complete_link_gains": 12,
+      "remaining_failed_flights": 13,
+      "remaining_failed_links": 16,
+      "flat_samples": 110409,
+      "recovered_flat_poses": 3,
+      "new_flat_blocks": 0,
+      "new_flat_sweep_failures": 0
+    }
   }
 }

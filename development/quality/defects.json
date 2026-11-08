@@ -4542,8 +4542,52 @@
       "symptom": "WLD04closeup is filled by terrain; several WLD13/WLD18joins remain behind walls/caps. Isolated additions in whole-site overviews are too small for detailed seam inspection.",
       "cause": "A common high-end camera and bounding-distance context rule does not guarantee a clear line of sight to every distinct architectural join.",
       "action": "Keep captures truthfully labeled and withheld from complete visual acceptance; retain geometry/physics blockers. Next native review should author per-join cameras/cut planes or physically resolve the terrain/wall/cap conflicts first. Do not remove those blockers from playable geometry to improve a diagnostic view.",
-      "evidence": "development/levels/rebuild/captures/stair-landing-fit-batch/closeup-sheet-1.png; closeup-sheet-2.png; closeup-sheet-3.png; verification/captures.json",
+      "evidence": "development/levels/rebuild/captures/stair-landing-fit-batch/closeup-sheet-1.png; closeup-sheet-2.png; closeup-sheet-3.png; verification/captures.json; physical aperture batch nine actual native sheets reviewed; WLD03terrain/WLD05mine/WLD09turbine views still partly obstructed, not complete visual acceptance.",
       "older_maps": "Audit actual visible joins at standing/crouched height across all29packets. Whole-site and isolated exports do not replace in-room/native/runtime visual review."
+    },
+    {
+      "id": "DEV-421",
+      "title": "Authored stair routes intersect continuous structural walls and floor caps",
+      "status": "PARTIAL NATIVE REPAIR VERIFIED: eight candidates; remaining terrain/crossed-flight blockers open",
+      "affected": "WLD03/04/05/06/08/09/13/18source stair corridors",
+      "symptom": "Production native sweeps stop at room/undercroft/lab/dorm/gallery walls and internal floor/cap cells along authored vertical routes.",
+      "cause": "Original structural shell openings did not follow the full authored stair body volume, despite stair/route coordinates being present.",
+      "action": "Replace29individually named shell parts with closed physical apertures; retain all unrelated meshes/resources/UVs/pivots/native records and fixed context.5049independent body samples and actual native sweep comparisons pass:221flights196\u2192208and84links56\u219268bothways, zero previous passing-direction regression.13flights/16links remain failing; no runtime or whole-map completion inferred.",
+      "evidence": "development/levels/rebuild/stair-opening-pass/; tools/build_stair_openings.py; tools/check_stair_openings.py; tools/audit_macroterrain_fit.py; verification/failure-contacts.tsv; captures/stair-opening-batch/",
+      "older_maps": "Audit all29packets and older sources individually for real render/body/optical openings,160mmdeck depth, wall thickness, supports and roof/light isolation; keep native runtime integration/power/hiding/story/hardware gates open."
+    },
+    {
+      "id": "DEV-422",
+      "title": "Flight-only headroom cuts leave blocked landing caps and tread-level wall thresholds",
+      "status": "FIX VERIFIED IN EIGHT NATIVE CANDIDATES; broader map acceptance open",
+      "affected": "WLD08L20, WLD09wall crossings, WLD18route14landing/floor-cap cells",
+      "symptom": "First aperture draft cleared central wall areas but stopped at the terminal plane or remaining cap over the intermediate flat landing. Opened wall lower edge also struck the actual foot capsule between treads.",
+      "cause": "Only the sloped centre flight was subtracted, excluding intermediate flats, endpoint footprint and stepped foot/body envelope.",
+      "action": "Use the full existing continuous link including flat landings,350mmconstant-height terminal extensions,2.2mheadroom and full authored width+40mm. Wall lower face follows tread clearance down250mm; slab lower face retains supports atfeet+5mm. Do not change production movement tolerances. Exact closed source/native and complete-route comparisons pass; remaining failures explicitly preserved.",
+      "evidence": "development/levels/rebuild/stair-opening-pass/; tools/build_stair_openings.py; tools/check_stair_openings.py; tools/audit_macroterrain_fit.py; verification/independent-sources.json; verification/flight-sweeps.tsv",
+      "older_maps": "Audit every stair/body footprint and all intermediate/terminal landings; one centreline ray or disconnected flight pass does not prove complete circulation."
+    },
+    {
+      "id": "DEV-423",
+      "title": "Crossed mine stair shaft removes support from an upper walkway",
+      "status": "OPEN GEOMETRIC CONFLICT; rejected shaft deletion withheld and six regressions restored",
+      "affected": "WLD05L16stair and L18flat walkway atX11,Y-6,Z42",
+      "symptom": "Uncoupled shaft draft caused six previously valid flat samples to lose support at the centre and both side lanes, across two adjoining walkway segments.",
+      "cause": "Existing rough stair bay climbs through the floor used by another authored route. Carving necessary headroom there destroys the higher walkway.",
+      "action": "Preserve rejected actual GLB/HCS2/metadata and full failing probes. Withhold cuts for terrain/crossed-step-only links until a separate stair bay is authored; retain the original upper floor. Final110409flat samples restore all previous valid poses with zero new blocks/sweepfailures. Stair conflict remains a required redesign, not called fixed.",
+      "evidence": "development/levels/rebuild/stair-opening-pass/rejected/mine-walkway-conflict-*; rejected/uncoupled-shaft-native-route-probes.tsv; verification/native-route-fit.json",
+      "older_maps": "Individually audit grade-separated crossings and all upper routes before removing floors for stair shafts. Preserve40space limits, geometry/native shared coordinates and actual saved terrain holes."
+    },
+    {
+      "id": "DEV-424",
+      "title": "Structural fit reporter could return success while recording new flat-route regressions",
+      "status": "FIX VERIFIED: opening-pass now asserts no new blocks or sweep failures after preserving raw report",
+      "affected": "New structural opening batch using tools/audit_macroterrain_fit.py",
+      "symptom": "Initial draft produced6new_block findings while the general measurement script still exited0; manual raw-probe inspection caught and rejected it.",
+      "cause": "The original tool was designed to report terrain findings, so a successful measurement process was not a no-regression acceptance gate.",
+      "action": "For the new opening-pass mode, retain all raw probes/report then assert every site has zero new_block and new_sweep_block. Final complete run exits0 with both counters zero, and docs distinguish measured findings from map acceptance.",
+      "evidence": "development/levels/rebuild/stair-opening-pass/; tools/build_stair_openings.py; tools/check_stair_openings.py; tools/audit_macroterrain_fit.py; rejected/uncoupled-shaft-native-route-fit.json; verification/stair-openings-flat.log",
+      "older_maps": "Do not infer geometry acceptance from reporter exit codes alone. Retain before/after production-pose evidence, all failed cases and per-map obligations; existing general terrain finding mode remains a measurement tool."
     }
   ],
   "audit_categories": [

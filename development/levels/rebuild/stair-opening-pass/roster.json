@@ -1,0 +1,448 @@
+{
+  "scope": 29,
+  "status": "BREADTH_BY_STAGE_PHYSICAL_STAIR_SHELL_OPENINGS",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "status": "RETAINED_LATEST_LANDING_OR_FLOOR_SOURCE_NO_SHELL_CUT_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/academy/construction.json",
+      "remaining_failed_flights": [],
+      "remaining": "Terrain/crossed-flight/structural identity and full native/runtime acceptance individually required."
+    },
+    {
+      "id": "ASYLUM",
+      "status": "RETAINED_LATEST_LANDING_OR_FLOOR_SOURCE_NO_SHELL_CUT_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/asylum/construction.json",
+      "remaining_failed_flights": [],
+      "remaining": "Terrain/crossed-flight/structural identity and full native/runtime acceptance individually required."
+    },
+    {
+      "id": "CASTLE",
+      "status": "RETAINED_MATURE_SOURCE_INDIVIDUAL_AUDIT_PENDING",
+      "previous_evidence": null,
+      "remaining_failed_flights": [],
+      "remaining": "Terrain/crossed-flight/structural identity and full native/runtime acceptance individually required."
+    },
+    {
+      "id": "CHURCH",
+      "status": "RETAINED_LATEST_LANDING_OR_FLOOR_SOURCE_NO_SHELL_CUT_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/church/construction.json",
+      "remaining_failed_flights": [],
+      "remaining": "Terrain/crossed-flight/structural identity and full native/runtime acceptance individually required."
+    },
+    {
+      "id": "COLLEGE",
+      "status": "RETAINED_LATEST_LANDING_OR_FLOOR_SOURCE_NO_SHELL_CUT_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/college/construction.json",
+      "remaining_failed_flights": [],
+      "remaining": "Terrain/crossed-flight/structural identity and full native/runtime acceptance individually required."
+    },
+    {
+      "id": "FARMHOUSE",
+      "status": "RETAINED_LATEST_LANDING_OR_FLOOR_SOURCE_NO_SHELL_CUT_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/farmhouse/construction.json",
+      "remaining_failed_flights": [],
+      "remaining": "Terrain/crossed-flight/structural identity and full native/runtime acceptance individually required."
+    },
+    {
+      "id": "HOUSE",
+      "status": "RETAINED_MATURE_SOURCE_INDIVIDUAL_AUDIT_PENDING",
+      "previous_evidence": null,
+      "remaining_failed_flights": [],
+      "remaining": "Terrain/crossed-flight/structural identity and full native/runtime acceptance individually required."
+    },
+    {
+      "id": "MANSION",
+      "status": "RETAINED_LATEST_LANDING_OR_FLOOR_SOURCE_NO_SHELL_CUT_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/mansion/construction.json",
+      "remaining_failed_flights": [],
+      "remaining": "Terrain/crossed-flight/structural identity and full native/runtime acceptance individually required."
+    },
+    {
+      "id": "PRISON",
+      "status": "RETAINED_LATEST_LANDING_OR_FLOOR_SOURCE_NO_SHELL_CUT_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/prison/construction.json",
+      "remaining_failed_flights": [],
+      "remaining": "Terrain/crossed-flight/structural identity and full native/runtime acceptance individually required."
+    },
+    {
+      "id": "SCHOOL",
+      "status": "RETAINED_LATEST_LANDING_OR_FLOOR_SOURCE_NO_SHELL_CUT_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/school/construction.json",
+      "remaining_failed_flights": [],
+      "remaining": "Terrain/crossed-flight/structural identity and full native/runtime acceptance individually required."
+    },
+    {
+      "id": "WLD-01",
+      "status": "RETAINED_MATURE_SOURCE_INDIVIDUAL_AUDIT_PENDING",
+      "previous_evidence": null,
+      "remaining_failed_flights": [],
+      "remaining": "Terrain/crossed-flight/structural identity and full native/runtime acceptance individually required."
+    },
+    {
+      "id": "WLD-02",
+      "status": "RETAINED_MATURE_SOURCE_INDIVIDUAL_AUDIT_PENDING",
+      "previous_evidence": null,
+      "remaining_failed_flights": [],
+      "remaining": "Terrain/crossed-flight/structural identity and full native/runtime acceptance individually required."
+    },
+    {
+      "id": "WLD-03",
+      "status": "PHYSICAL_STAIR_SHELL_APERTURES_BUILT_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/stair-opening-pass/wld-03/construction.json",
+      "new_parts": 1,
+      "new_triangles": 40,
+      "modified_original_shells": 1,
+      "removed_volume_m3": 0.6256002683997091,
+      "passing_flight_gains": [],
+      "remaining_failed_flights": [
+        {
+          "link": "L04",
+          "source_segment": "0"
+        },
+        {
+          "link": "L07",
+          "source_segment": "0"
+        }
+      ],
+      "flat_comparison": {
+        "samples": 3549,
+        "baseline_valid": 3175,
+        "new_block": 0,
+        "baseline_sweep": 3012,
+        "new_sweep_block": 0,
+        "after_valid": 3175,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-04",
+      "status": "PHYSICAL_STAIR_SHELL_APERTURES_BUILT_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/stair-opening-pass/wld-04/construction.json",
+      "new_parts": 1,
+      "new_triangles": 36,
+      "modified_original_shells": 1,
+      "removed_volume_m3": 0.4152866451585231,
+      "passing_flight_gains": [
+        {
+          "link": "L09",
+          "source_segment": "0"
+        }
+      ],
+      "remaining_failed_flights": [
+        {
+          "link": "L03",
+          "source_segment": "0"
+        },
+        {
+          "link": "L04",
+          "source_segment": "0"
+        },
+        {
+          "link": "L06",
+          "source_segment": "0"
+        },
+        {
+          "link": "L11",
+          "source_segment": "0"
+        }
+      ],
+      "flat_comparison": {
+        "samples": 1413,
+        "baseline_valid": 1092,
+        "new_block": 0,
+        "baseline_sweep": 992,
+        "new_sweep_block": 0,
+        "after_valid": 1092,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-05",
+      "status": "PHYSICAL_STAIR_SHELL_APERTURES_BUILT_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/stair-opening-pass/wld-05/construction.json",
+      "new_parts": 1,
+      "new_triangles": 32,
+      "modified_original_shells": 1,
+      "removed_volume_m3": 0.13313689683173813,
+      "passing_flight_gains": [],
+      "remaining_failed_flights": [
+        {
+          "link": "L16",
+          "source_segment": "0"
+        },
+        {
+          "link": "L17",
+          "source_segment": "0"
+        }
+      ],
+      "flat_comparison": {
+        "samples": 3510,
+        "baseline_valid": 2849,
+        "new_block": 0,
+        "baseline_sweep": 2729,
+        "new_sweep_block": 0,
+        "after_valid": 2849,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-06",
+      "status": "PHYSICAL_STAIR_SHELL_APERTURES_BUILT_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/stair-opening-pass/wld-06/construction.json",
+      "new_parts": 2,
+      "new_triangles": 80,
+      "modified_original_shells": 2,
+      "removed_volume_m3": 1.2160223036084474,
+      "passing_flight_gains": [
+        {
+          "link": "L16",
+          "source_segment": "0"
+        },
+        {
+          "link": "L17",
+          "source_segment": "0"
+        }
+      ],
+      "remaining_failed_flights": [],
+      "flat_comparison": {
+        "samples": 3744,
+        "baseline_valid": 3543,
+        "new_block": 0,
+        "baseline_sweep": 3400,
+        "new_sweep_block": 0,
+        "after_valid": 3543,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-07",
+      "status": "RETAINED_LATEST_LANDING_OR_FLOOR_SOURCE_NO_SHELL_CUT_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-07/construction.json",
+      "remaining_failed_flights": [],
+      "remaining": "Terrain/crossed-flight/structural identity and full native/runtime acceptance individually required."
+    },
+    {
+      "id": "WLD-08",
+      "status": "PHYSICAL_STAIR_SHELL_APERTURES_BUILT_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/stair-opening-pass/wld-08/construction.json",
+      "new_parts": 5,
+      "new_triangles": 156,
+      "modified_original_shells": 5,
+      "removed_volume_m3": 1.7623974653440144,
+      "passing_flight_gains": [
+        {
+          "link": "L17",
+          "source_segment": "0"
+        },
+        {
+          "link": "L18",
+          "source_segment": "0"
+        },
+        {
+          "link": "L20",
+          "source_segment": "0"
+        }
+      ],
+      "remaining_failed_flights": [],
+      "flat_comparison": {
+        "samples": 4062,
+        "baseline_valid": 3275,
+        "new_block": 0,
+        "baseline_sweep": 3110,
+        "new_sweep_block": 0,
+        "after_valid": 3275,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-09",
+      "status": "PHYSICAL_STAIR_SHELL_APERTURES_BUILT_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/stair-opening-pass/wld-09/construction.json",
+      "new_parts": 7,
+      "new_triangles": 280,
+      "modified_original_shells": 7,
+      "removed_volume_m3": 4.919462061187971,
+      "passing_flight_gains": [
+        {
+          "link": "L07",
+          "source_segment": "0"
+        },
+        {
+          "link": "L09",
+          "source_segment": "0"
+        }
+      ],
+      "remaining_failed_flights": [
+        {
+          "link": "L11",
+          "source_segment": "0"
+        },
+        {
+          "link": "L12",
+          "source_segment": "0"
+        },
+        {
+          "link": "L18",
+          "source_segment": "0"
+        }
+      ],
+      "flat_comparison": {
+        "samples": 3123,
+        "baseline_valid": 2322,
+        "new_block": 0,
+        "baseline_sweep": 2223,
+        "new_sweep_block": 0,
+        "after_valid": 2322,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-10",
+      "status": "RETAINED_LATEST_LANDING_OR_FLOOR_SOURCE_NO_SHELL_CUT_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-10/construction.json",
+      "remaining_failed_flights": [],
+      "remaining": "Terrain/crossed-flight/structural identity and full native/runtime acceptance individually required."
+    },
+    {
+      "id": "WLD-11",
+      "status": "RETAINED_LATEST_LANDING_OR_FLOOR_SOURCE_NO_SHELL_CUT_TARGETED",
+      "previous_evidence": "development/levels/rebuild/stair-landing-pass/wld-11/construction.json",
+      "remaining_failed_flights": [],
+      "remaining": "Terrain/crossed-flight/structural identity and full native/runtime acceptance individually required."
+    },
+    {
+      "id": "WLD-12",
+      "status": "RETAINED_LATEST_LANDING_OR_FLOOR_SOURCE_NO_SHELL_CUT_TARGETED",
+      "previous_evidence": "development/levels/rebuild/stair-landing-pass/wld-12/construction.json",
+      "remaining_failed_flights": [
+        {
+          "link": "L16",
+          "source_segment": "0"
+        },
+        {
+          "link": "L17",
+          "source_segment": "0"
+        }
+      ],
+      "remaining": "Terrain/crossed-flight/structural identity and full native/runtime acceptance individually required."
+    },
+    {
+      "id": "WLD-13",
+      "status": "PHYSICAL_STAIR_SHELL_APERTURES_BUILT_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/stair-opening-pass/wld-13/construction.json",
+      "new_parts": 1,
+      "new_triangles": 32,
+      "modified_original_shells": 1,
+      "removed_volume_m3": 0.2956801405334275,
+      "passing_flight_gains": [
+        {
+          "link": "L19",
+          "source_segment": "0"
+        }
+      ],
+      "remaining_failed_flights": [],
+      "flat_comparison": {
+        "samples": 4239,
+        "baseline_valid": 3920,
+        "new_block": 0,
+        "baseline_sweep": 3795,
+        "new_sweep_block": 0,
+        "after_valid": 3920,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-14",
+      "status": "RETAINED_LATEST_LANDING_OR_FLOOR_SOURCE_NO_SHELL_CUT_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-14/construction.json",
+      "remaining_failed_flights": [],
+      "remaining": "Terrain/crossed-flight/structural identity and full native/runtime acceptance individually required."
+    },
+    {
+      "id": "WLD-15",
+      "status": "RETAINED_LATEST_LANDING_OR_FLOOR_SOURCE_NO_SHELL_CUT_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-15/construction.json",
+      "remaining_failed_flights": [],
+      "remaining": "Terrain/crossed-flight/structural identity and full native/runtime acceptance individually required."
+    },
+    {
+      "id": "WLD-16",
+      "status": "RETAINED_LATEST_LANDING_OR_FLOOR_SOURCE_NO_SHELL_CUT_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-16/construction.json",
+      "remaining_failed_flights": [],
+      "remaining": "Terrain/crossed-flight/structural identity and full native/runtime acceptance individually required."
+    },
+    {
+      "id": "WLD-17",
+      "status": "RETAINED_LATEST_LANDING_OR_FLOOR_SOURCE_NO_SHELL_CUT_TARGETED",
+      "previous_evidence": "development/levels/rebuild/stair-landing-pass/wld-17/construction.json",
+      "remaining_failed_flights": [],
+      "remaining": "Terrain/crossed-flight/structural identity and full native/runtime acceptance individually required."
+    },
+    {
+      "id": "WLD-18",
+      "status": "PHYSICAL_STAIR_SHELL_APERTURES_BUILT_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/stair-opening-pass/wld-18/construction.json",
+      "new_parts": 11,
+      "new_triangles": 368,
+      "modified_original_shells": 11,
+      "removed_volume_m3": 0.8877469345912902,
+      "passing_flight_gains": [
+        {
+          "link": "route-07",
+          "source_segment": "1"
+        },
+        {
+          "link": "route-08",
+          "source_segment": "1"
+        },
+        {
+          "link": "route-14",
+          "source_segment": "1"
+        }
+      ],
+      "remaining_failed_flights": [],
+      "flat_comparison": {
+        "samples": 3033,
+        "baseline_valid": 2878,
+        "new_block": 0,
+        "baseline_sweep": 2760,
+        "new_sweep_block": 0,
+        "after_valid": 2881,
+        "recovered_pose": 3,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "status": "RETAINED_LATEST_LANDING_OR_FLOOR_SOURCE_NO_SHELL_CUT_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-07-mortuary/construction.json",
+      "remaining_failed_flights": [],
+      "remaining": "Terrain/crossed-flight/structural identity and full native/runtime acceptance individually required."
+    }
+  ],
+  "aggregate": {
+    "modified_sites": 8,
+    "modified_original_shells": 29,
+    "closed_replacement_parts": 29,
+    "new_triangles": 1024,
+    "independent_shaft_samples": 5049,
+    "flight_gains": 12,
+    "complete_link_gains": 12,
+    "remaining_failed_flights": 13,
+    "remaining_failed_links": 16,
+    "flat_samples": 110409,
+    "recovered_flat_poses": 3,
+    "new_flat_blocks": 0,
+    "new_flat_sweep_failures": 0
+  },
+  "remaining": "Terrain and crossed-flight bay revision, endpoint support, guard/framing/finish/roof identity, source migration and actual native/runtime/network/installed hardware gates remain open."
+}

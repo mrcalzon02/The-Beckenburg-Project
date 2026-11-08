@@ -1078,3 +1078,20 @@ Previous goal turn verified unchanged published atmosphere; no new construction 
 Stair end/corner implementation source 39126b2804dd7bc7e42b1c1841b4a77754d937b4. Eleven editable candidates/200closed parts/2620triangles,144owned old steps intentionally replaced. All final checks and47recovered flat poses pass as documented. Gallery8270PNGs, asset pointer1783files/1629distinct hashes includes11newmapexports and1rejectedstudy; no individual props invented. Full rebuild remains active; exact remote publication and gallery deployment readback follow.
 
 Complete GitHub tree readback at040edca3 verifies all128distinct source/binding blobs against exact local Git objects. Remote source39126b28confirmed. Gallery page200/unchanged, new stair closeup image404: deployment still pending accepted integration. DEV417–419record rejected narrowing, stale rotation and initial native/export mismatch corrections; DEV420keeps occluded review cameras open. All29packet/follow-on goals remain active; next real structural work is25failed flights/28links, then runtime/native ownership integration.
+
+
+## 2026-11-08 / roster physical stair shell aperture batch
+
+# Physical stair shell opening checkpoint
+
+All29packets have explicit decisions in roster.json. Eight source candidates replace29named walls/floor-cap parts with29closed shells/1024triangles, using actual continuous stair and landing body volumes. Original unrelated mesh/UV/image resources, poses, native records, fixed context seals, props, saved editor terrain/earth holes and40space envelope remain unchanged. Wall thresholds allow the actual step footprint; slab supports are retained wherever they do not conflict with necessary shaft headroom. No render-only or collision-only cut.
+
+All25candidate native comparison:110409flat samples,99984baseline-valid poses,94970qualified sweeps,3recovered poses; zero new blocks/sweep failures.221flight segments improve196→208passing both directions;84full links56→68. Zero previously passing stair/chain direction regresses, including both cemetery14segmentloops. Independent retained resources/meshes/native, closed nondegenerate outward solids,5049standing-body shaft samples and all8editable packed sources pass.
+
+Nine sheets/54native construction frames viewed; original two-site pilot captures retained separately as a superseded study. Construction3/5, finish1/5. Thick apertures are visible, but terrain/crossed-stair and several camera/roof obstructions remain; DEV420visual framing obligation extended. No full visual or map acceptance.
+
+Rejected mine shaft draft removed support from6previously valid walkway samples. Actual bad GLB/native/metadata and full probes remain in rejected/. That geometry is withheld: the crossed flight needs a separately authored bay. New opening-pass flat audit fails on any new block/sweep failure.
+
+Next:13failed flight segments and16failed complete links. WLD03/04/12terrain conflicts require real saved editor terrain/grading or changed stair bays; WLD05/09/12crossed flights need separate bays/landings and full footprint support. Then migrate unified native coordinates/ownership into runtime while retaining access/service/hiding/story contracts. Framing/guards, roofs/light separation, canonical van arrival, finishes, networking, installed hardware and recovery gates stay open. No editor UI or round-duration testing. Full28base+annex and follow-on unfinished-map goal remains active.
+
+Previous goal turn PROGRESS: implemented, checked and published landing sources39126b28/040edca3/d0348dc1. This session startsd0348dc1 and continues actual geometry. Fresh maincc65453c; full42431982917/GPU42431982951/installer42431982920 SUCCESS atfad6c7a9; no exact-current-source CI or installed acceptance inferred. Source SHA/publication readback follows.
