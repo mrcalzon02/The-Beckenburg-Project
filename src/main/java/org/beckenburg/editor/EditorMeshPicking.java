@@ -100,33 +100,104 @@ public final class EditorMeshPicking {
         private static final int MAX_TESTS=5_000_000;
         private final EditorTopologyProject.State state;
         private final boolean perspective;
-        private final Map<Long,Point> points=new HashMap<>();
+        private final Projector projection;
+        private final Map<Long,Point> points;
         private final Triangle[] triangles;
-        private final List<Node> nodes=new ArrayList<>();
-        private record Triangle(EditorTopologyProject.Face face,Point a,Point b,Point c,double minX,double minY,double maxX,double maxY){}
+        private final List<Node> nodes;
+        private record Triangle(int faceIndex,Point a,Point b,Point c,double minX,double minY,double maxX,double maxY){}
         private record Node(double minX,double minY,double maxX,double maxY,int from,int to,int left,int right){}
         private Prepared(EditorTopologyProject.State state,Projector projection){
-            this.state=Objects.requireNonNull(state);Objects.requireNonNull(projection);perspective=projection.perspective();
+            this.state=Objects.requireNonNull(state);this.projection=Objects.requireNonNull(projection);perspective=projection.perspective();
+            points=new HashMap<>();
+            nodes=new ArrayList<>();
             for(var v:state.vertices())points.put(v.id(),projection.project(v.x(),v.y(),v.z()));
             var all=new ArrayList<Triangle>();
-            for(var f:state.faces()){
+            for(int i=0;i<state.faces().size();i++){
+                var f=state.faces().get(i);
                 var a=points.get(f.a().vertex());var b=points.get(f.b().vertex());var c=points.get(f.c().vertex());
-                double minX=Math.min(a.x(),Math.min(b.x(),c.x())),minY=Math.min(a.y(),Math.min(b.y(),c.y()));
-                double maxX=Math.max(a.x(),Math.max(b.x(),c.x())),maxY=Math.max(a.y(),Math.max(b.y(),c.y()));
-                if(Double.isFinite(minX)&&Double.isFinite(minY)&&Double.isFinite(maxX)&&Double.isFinite(maxY))all.add(new Triangle(f,a,b,c,minX,minY,maxX,maxY));
+                if (visible(a) && visible(b) && visible(c)) all.add(triangle(i,a,b,c));
             }
             triangles=all.toArray(Triangle[]::new);if(triangles.length>0)build(0,triangles.length);
         }
-        private int build(int from,int to){
+        private static boolean visible(Point p) { return Double.isFinite(p.x()) && Double.isFinite(p.y()); }
+        private static Triangle triangle(int index,Point a,Point b,Point c) {
+            return new Triangle(index,a,b,c,Math.min(a.x(),Math.min(b.x(),c.x())),Math.min(a.y(),Math.min(b.y(),c.y())),
+                Math.max(a.x(),Math.max(b.x(),c.x())),Math.max(a.y(),Math.max(b.y(),c.y())));
+        }
+        private Prepared(Prepared previous,EditorTopologyProject.State state,Map<Long,Point> points,
+                         Triangle[] triangles,List<Node> nodes) {
+            this.state=state;
+            projection=previous.projection;
+            perspective=previous.perspective;
+            this.points=points;
+            this.triangles=triangles;
+            this.nodes=nodes;
+        }
+        /** Attribute-only edits keep projected geometry. Hits always read the requested native face. */
+        public Prepared update(EditorTopologyProject.State next,Projector camera) {
+            if (camera!=projection) return prepare(next,camera);
+            if (state==next) return this;
+            if (state.vertices().size()!=next.vertices().size() || state.faces().size()!=next.faces().size())
+                return prepare(next,camera);
+            for (int i=0;i<state.faces().size();i++) {
+                var a=state.faces().get(i);
+                var b=next.faces().get(i);
+                if (a!=b && (a.a().vertex()!=b.a().vertex() || a.b().vertex()!=b.b().vertex() ||
+                    a.c().vertex()!=b.c().vertex())) return prepare(next,camera);
+            }
+            Map<Long,Point> updated=points;
+            if (state.vertices()!=next.vertices()) for (int i=0;i<state.vertices().size();i++) {
+                var old=state.vertices().get(i);
+                var v=next.vertices().get(i);
+                if (v.id()!=old.id()) return prepare(next,camera);
+                if (v.equals(old)) continue;
+                Point projected=camera.project(v.x(),v.y(),v.z());
+                if (visible(projected)!=visible(points.get(v.id()))) return prepare(next,camera);
+                if (updated==points) updated=new HashMap<>(points);
+                updated.put(v.id(),projected);
+            }
+            if (updated==points) return new Prepared(this,next,points,triangles,nodes);
+            var changed=triangles.clone();
+            for (int i=0;i<changed.length;i++) {
+                var t=triangles[i];
+                var face=next.faces().get(t.faceIndex());
+                var a=updated.get(face.a().vertex());
+                var b=updated.get(face.b().vertex());
+                var c=updated.get(face.c().vertex());
+                if (a!=t.a() || b!=t.b() || c!=t.c()) changed[i]=triangle(t.faceIndex(),a,b,c);
+            }
+            var refitted=new ArrayList<>(nodes);
+            for (int i=nodes.size()-1;i>=0;i--) {
+                var n=nodes.get(i);
+                if (n.left()<0) {
+                    for (int t=n.from();t<n.to();t++) if (changed[t]!=triangles[t]) {
+                        refitted.set(i,bounds(changed,n.from(),n.to()));
+                        break;
+                    }
+                } else {
+                    var left=refitted.get(n.left());
+                    var right=refitted.get(n.right());
+                    if (left!=nodes.get(n.left()) || right!=nodes.get(n.right()))
+                        refitted.set(i,new Node(Math.min(left.minX(),right.minX()),Math.min(left.minY(),right.minY()),
+                            Math.max(left.maxX(),right.maxX()),Math.max(left.maxY(),right.maxY()),n.from(),n.to(),n.left(),n.right()));
+                }
+            }
+            return new Prepared(this,next,updated,changed,refitted);
+        }
+        private static Node bounds(Triangle[] triangles,int from,int to){
             double minX=Double.POSITIVE_INFINITY,minY=minX,maxX=Double.NEGATIVE_INFINITY,maxY=maxX;
             for(int i=from;i<to;i++){var t=triangles[i];minX=Math.min(minX,t.minX());minY=Math.min(minY,t.minY());maxX=Math.max(maxX,t.maxX());maxY=Math.max(maxY,t.maxY());}
+            return new Node(minX,minY,maxX,maxY,from,to,-1,-1);
+        }
+        private int build(int from,int to){
+            var range=bounds(triangles,from,to);
             int index=nodes.size();nodes.add(null);int left=-1,right=-1;
             if(to-from>8){
-                boolean x=maxX-minX>=maxY-minY;
+                boolean x=range.maxX()-range.minX()>=range.maxY()-range.minY();
                 Arrays.sort(triangles,from,to,Comparator.comparingDouble(t->x?t.minX()*.5+t.maxX()*.5:t.minY()*.5+t.maxY()*.5));
                 int mid=(from+to)>>>1;left=build(from,mid);right=build(mid,to);
             }
-            nodes.set(index,new Node(minX,minY,maxX,maxY,from,to,left,right));return index;
+            nodes.set(index,new Node(range.minX(),range.minY(),range.maxX(),range.maxY(),from,to,left,right));return index;
         }
         private static void finite(double value){if(!Double.isFinite(value))throw new IllegalArgumentException("Nonfinite pick");}
         private static double tolerance(double value){return 64*Math.ulp(Math.abs(value))+1e-10;}
@@ -136,7 +207,7 @@ public final class EditorMeshPicking {
             if(node.left()>=0)return query(node.right(),x,y,query(node.left(),x,y,hit,budget),budget);
             for(int i=node.from();i<node.to();i++){
                 if(++budget[0]>MAX_TESTS)throw new IllegalArgumentException("Selection geometry work budget exceeded; select a smaller region");
-                var t=triangles[i];var face=t.face();var p=new Point[]{t.a(),t.b(),t.c()};
+                var t=triangles[i];var face=state.faces().get(t.faceIndex());var p=new Point[]{t.a(),t.b(),t.c()};
                 double ax=p[0].x()-p[2].x(),ay=p[0].y()-p[2].y(),bx=p[1].x()-p[2].x(),by=p[1].y()-p[2].y();
                 double det=ax*by-ay*bx,scale=Math.hypot(ax,ay)*Math.hypot(bx,by);
                 if(!Double.isFinite(det)||Math.abs(det)<=scale*1e-12)continue;

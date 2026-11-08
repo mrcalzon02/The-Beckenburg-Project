@@ -87,8 +87,8 @@ public final class AssetImportDialog {
     private final JComboBox<String> selectionMode=new JComboBox<>(new String[]{"VERTEX","EDGE","FACE"});
     private final JLabel selectionLabel=new JLabel("Click a triangle in the working mesh");
     private EditorMeshPicking.Hit selectedHit,hoverHit;
-    private EditorTopologyProject.State pickingState,hoverState;
-    private EditorMeshPicking.Projector pickingCamera,hoverCamera;
+    private EditorTopologyProject.State hoverState;
+    private EditorMeshPicking.Projector hoverCamera;
     private EditorMeshPicking.Prepared preparedPicking;
     private Viewport hoverViewport;
     private int hoverMode;
@@ -942,7 +942,7 @@ public final class AssetImportDialog {
         var result=new Viewport((xmin+xmax)*.5+(camera.perspective()?cameraPanX:0),(ymin+ymax)*.5+(camera.perspective()?cameraPanY:0),scale*(camera.perspective()?cameraZoom:1),left,width,getPreviewHeight());cache.put(key,result);return result;
     }
     private EditorMeshPicking.Hit nativePick(EditorTopologyProject.State state,EditorMeshPicking.Projector camera,double x,double y){
-        if(pickingState!=state||pickingCamera!=camera){preparedPicking=EditorMeshPicking.prepare(state,camera);pickingState=state;pickingCamera=camera;}
+        preparedPicking=preparedPicking==null ? EditorMeshPicking.prepare(state,camera) : preparedPicking.update(state,camera);
         return preparedPicking.pick(x,y).orElse(null);
     }
     private void clearHover(){if(hoverHit!=null){hoverHit=null;preview.repaint();}}
@@ -1098,12 +1098,18 @@ public final class AssetImportDialog {
         var polygon=path.stream().map(p->new EditorMeshPicking.Point((p.x-view.width()/2)/view.scale()+view.centerX(),(p.y-view.height()/2)/view.scale()+view.centerY(),0)).toList();
         busy=true;choose.setEnabled(false);apply.setEnabled(false);refreshMeshControls();selectionLabel.setText("Selecting vertices...");
         new SwingWorker<java.util.Set<Long>,Void>(){
-            protected java.util.Set<Long> doInBackground(){var query=EditorMeshPicking.prepare(state,selectedProjection);return lasso?query.verticesInLasso(polygon,xray):query.verticesInBox(minX,minY,maxX,maxY,xray);}
+            private final EditorMeshPicking.Prepared prior=preparedPicking;
+            private EditorMeshPicking.Prepared query;
+            protected java.util.Set<Long> doInBackground(){
+                query=prior==null ? EditorMeshPicking.prepare(state,selectedProjection) : prior.update(state,selectedProjection);
+                return lasso?query.verticesInLasso(polygon,xray):query.verticesInBox(minX,minY,maxX,maxY,xray);
+            }
             protected void done(){
                 busy=false;choose.setEnabled(true);
                 try{
                     var ids=get();if(request!=selectionGeneration)throw new java.util.concurrent.CancellationException("Selection canceled");
                     if(topologyProject!=project||project.revision()!=nativeRevision||project.snapshot()!=state)throw new IOException("Mesh changed during selection");
+                    preparedPicking=query;
                     selectionMode.setSelectedItem("VERTEX");selectedHit=null;
                     if(!ids.isEmpty()){vertexId.setValue(ids.iterator().next());selectVertex();}else selectedVertex=null;
                     selectedVertices=ids;selectionLabel.setText(ids.size()+" vertices / "+(xray?"X-ray":"visible"));
