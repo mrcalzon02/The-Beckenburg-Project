@@ -165,13 +165,14 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
           "evidence": [
             "development/levels/rebuild/structures/academy/implementation.json",
             "development/levels/rebuild/structures/verification.json",
             "development/levels/rebuild/structures/README.md",
             "development/levels/rebuild/structures/academy/physics-contract.json",
-            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/route-probes.json"
           ],
           "defects": [
             "DEV-354",
@@ -182,7 +183,7 @@
             "DEV-362",
             "DEV-363"
           ],
-          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
+          "next_action": "All1720tread centres supported/spine-clear; full body/traversability/swept movement remains open. Continue supported source-library placements, explicit stair movement integration and final structural/terrain/services detail. Candidate collision does not unlock a map."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -300,13 +301,14 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
           "evidence": [
             "development/levels/rebuild/structures/asylum/implementation.json",
             "development/levels/rebuild/structures/verification.json",
             "development/levels/rebuild/structures/README.md",
             "development/levels/rebuild/structures/asylum/physics-contract.json",
-            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/route-probes.json"
           ],
           "defects": [
             "DEV-354",
@@ -317,7 +319,7 @@
             "DEV-362",
             "DEV-363"
           ],
-          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
+          "next_action": "All1720tread centres supported/spine-clear; full body/traversability/swept movement remains open. Continue supported source-library placements, explicit stair movement integration and final structural/terrain/services detail. Candidate collision does not unlock a map."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -760,13 +762,14 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
           "evidence": [
             "development/levels/rebuild/structures/church/implementation.json",
             "development/levels/rebuild/structures/verification.json",
             "development/levels/rebuild/structures/README.md",
             "development/levels/rebuild/structures/church/physics-contract.json",
-            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/route-probes.json"
           ],
           "defects": [
             "DEV-354",
@@ -777,7 +780,7 @@
             "DEV-362",
             "DEV-363"
           ],
-          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
+          "next_action": "All1720tread centres supported/spine-clear; full body/traversability/swept movement remains open. Continue supported source-library placements, explicit stair movement integration and final structural/terrain/services detail. Candidate collision does not unlock a map."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -895,14 +898,15 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "451300b05e9f6b8ddbe033d7ce6e87c54c166eb3",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
           "evidence": [
             "development/levels/rebuild/structures/college/implementation.json",
             "development/levels/rebuild/structures/verification.json",
             "development/levels/rebuild/structures/README.md",
             "development/levels/rebuild/structures/college/physics-contract.json",
             "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json",
-            "development/levels/rebuild/verification/roster-separated-2026-11-07/route-probes.json"
+            "development/levels/rebuild/verification/roster-separated-2026-11-07/route-probes.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/route-probes.json"
           ],
           "defects": [
             "DEV-354",
@@ -913,7 +917,7 @@
             "DEV-362",
             "DEV-363"
           ],
-          "next_action": "Continue physical terrain/editor punch integration, guarded and structurally supported flights/landings, full capsule sweeps and roster source-library placement. Point support/headroom results do not unlock a map."
+          "next_action": "All1720tread centres supported/spine-clear; full body/traversability/swept movement remains open. Continue supported source-library placements, explicit stair movement integration and final structural/terrain/services detail. Candidate collision does not unlock a map."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -1029,13 +1033,14 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
           "evidence": [
             "development/levels/rebuild/structures/farmhouse/implementation.json",
             "development/levels/rebuild/structures/verification.json",
             "development/levels/rebuild/structures/README.md",
             "development/levels/rebuild/structures/farmhouse/physics-contract.json",
-            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/route-probes.json"
           ],
           "defects": [
             "DEV-354",
@@ -1046,7 +1051,7 @@
             "DEV-362",
             "DEV-363"
           ],
-          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
+          "next_action": "All1720tread centres supported/spine-clear; full body/traversability/swept movement remains open. Continue supported source-library placements, explicit stair movement integration and final structural/terrain/services detail. Candidate collision does not unlock a map."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -1526,14 +1531,15 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "451300b05e9f6b8ddbe033d7ce6e87c54c166eb3",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
           "evidence": [
             "development/levels/rebuild/structures/mansion/implementation.json",
             "development/levels/rebuild/structures/verification.json",
             "development/levels/rebuild/structures/README.md",
             "development/levels/rebuild/structures/mansion/physics-contract.json",
             "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json",
-            "development/levels/rebuild/verification/roster-separated-2026-11-07/route-probes.json"
+            "development/levels/rebuild/verification/roster-separated-2026-11-07/route-probes.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/route-probes.json"
           ],
           "defects": [
             "DEV-354",
@@ -1544,7 +1550,7 @@
             "DEV-362",
             "DEV-363"
           ],
-          "next_action": "Continue physical terrain/editor punch integration, guarded and structurally supported flights/landings, full capsule sweeps and roster source-library placement. Point support/headroom results do not unlock a map."
+          "next_action": "All1720tread centres supported/spine-clear; full body/traversability/swept movement remains open. Continue supported source-library placements, explicit stair movement integration and final structural/terrain/services detail. Candidate collision does not unlock a map."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -1661,13 +1667,14 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
           "evidence": [
             "development/levels/rebuild/structures/prison/implementation.json",
             "development/levels/rebuild/structures/verification.json",
             "development/levels/rebuild/structures/README.md",
             "development/levels/rebuild/structures/prison/physics-contract.json",
-            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/route-probes.json"
           ],
           "defects": [
             "DEV-354",
@@ -1678,7 +1685,7 @@
             "DEV-362",
             "DEV-363"
           ],
-          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
+          "next_action": "All1720tread centres supported/spine-clear; full body/traversability/swept movement remains open. Continue supported source-library placements, explicit stair movement integration and final structural/terrain/services detail. Candidate collision does not unlock a map."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -1793,13 +1800,14 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
           "evidence": [
             "development/levels/rebuild/structures/school/implementation.json",
             "development/levels/rebuild/structures/verification.json",
             "development/levels/rebuild/structures/README.md",
             "development/levels/rebuild/structures/school/physics-contract.json",
-            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/route-probes.json"
           ],
           "defects": [
             "DEV-354",
@@ -1810,7 +1818,7 @@
             "DEV-362",
             "DEV-363"
           ],
-          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
+          "next_action": "All1720tread centres supported/spine-clear; full body/traversability/swept movement remains open. Continue supported source-library placements, explicit stair movement integration and final structural/terrain/services detail. Candidate collision does not unlock a map."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -2139,13 +2147,14 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
           "evidence": [
             "development/levels/rebuild/structures/wld-03/implementation.json",
             "development/levels/rebuild/structures/verification.json",
             "development/levels/rebuild/structures/README.md",
             "development/levels/rebuild/structures/wld-03/physics-contract.json",
-            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/route-probes.json"
           ],
           "defects": [
             "DEV-354",
@@ -2158,7 +2167,7 @@
             "DEV-359",
             "DEV-360"
           ],
-          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
+          "next_action": "All1720tread centres supported/spine-clear; full body/traversability/swept movement remains open. Continue supported source-library placements, explicit stair movement integration and final structural/terrain/services detail. Candidate collision does not unlock a map."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -2267,13 +2276,14 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
           "evidence": [
             "development/levels/rebuild/structures/wld-04/implementation.json",
             "development/levels/rebuild/structures/verification.json",
             "development/levels/rebuild/structures/README.md",
             "development/levels/rebuild/structures/wld-04/physics-contract.json",
-            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/route-probes.json"
           ],
           "defects": [
             "DEV-354",
@@ -2286,7 +2296,7 @@
             "DEV-359",
             "DEV-360"
           ],
-          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
+          "next_action": "All1720tread centres supported/spine-clear; full body/traversability/swept movement remains open. Continue supported source-library placements, explicit stair movement integration and final structural/terrain/services detail. Candidate collision does not unlock a map."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -2395,13 +2405,14 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
           "evidence": [
             "development/levels/rebuild/structures/wld-05/implementation.json",
             "development/levels/rebuild/structures/verification.json",
             "development/levels/rebuild/structures/README.md",
             "development/levels/rebuild/structures/wld-05/physics-contract.json",
-            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/route-probes.json"
           ],
           "defects": [
             "DEV-354",
@@ -2414,7 +2425,7 @@
             "DEV-359",
             "DEV-360"
           ],
-          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
+          "next_action": "All1720tread centres supported/spine-clear; full body/traversability/swept movement remains open. Continue supported source-library placements, explicit stair movement integration and final structural/terrain/services detail. Candidate collision does not unlock a map."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -2521,13 +2532,14 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
           "evidence": [
             "development/levels/rebuild/structures/wld-06/implementation.json",
             "development/levels/rebuild/structures/verification.json",
             "development/levels/rebuild/structures/README.md",
             "development/levels/rebuild/structures/wld-06/physics-contract.json",
-            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/route-probes.json"
           ],
           "defects": [
             "DEV-354",
@@ -2538,7 +2550,7 @@
             "DEV-362",
             "DEV-363"
           ],
-          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
+          "next_action": "All1720tread centres supported/spine-clear; full body/traversability/swept movement remains open. Continue supported source-library placements, explicit stair movement integration and final structural/terrain/services detail. Candidate collision does not unlock a map."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -2645,13 +2657,14 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
           "evidence": [
             "development/levels/rebuild/structures/wld-07/implementation.json",
             "development/levels/rebuild/structures/verification.json",
             "development/levels/rebuild/structures/README.md",
             "development/levels/rebuild/structures/wld-07/physics-contract.json",
-            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/route-probes.json"
           ],
           "defects": [
             "DEV-354",
@@ -2662,7 +2675,7 @@
             "DEV-362",
             "DEV-363"
           ],
-          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
+          "next_action": "All1720tread centres supported/spine-clear; full body/traversability/swept movement remains open. Continue supported source-library placements, explicit stair movement integration and final structural/terrain/services detail. Candidate collision does not unlock a map."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -2769,13 +2782,14 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
           "evidence": [
             "development/levels/rebuild/structures/wld-08/implementation.json",
             "development/levels/rebuild/structures/verification.json",
             "development/levels/rebuild/structures/README.md",
             "development/levels/rebuild/structures/wld-08/physics-contract.json",
-            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/route-probes.json"
           ],
           "defects": [
             "DEV-354",
@@ -2786,7 +2800,7 @@
             "DEV-362",
             "DEV-363"
           ],
-          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
+          "next_action": "All1720tread centres supported/spine-clear; full body/traversability/swept movement remains open. Continue supported source-library placements, explicit stair movement integration and final structural/terrain/services detail. Candidate collision does not unlock a map."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -2895,14 +2909,15 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "451300b05e9f6b8ddbe033d7ce6e87c54c166eb3",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
           "evidence": [
             "development/levels/rebuild/structures/wld-09/implementation.json",
             "development/levels/rebuild/structures/verification.json",
             "development/levels/rebuild/structures/README.md",
             "development/levels/rebuild/structures/wld-09/physics-contract.json",
             "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json",
-            "development/levels/rebuild/verification/roster-separated-2026-11-07/route-probes.json"
+            "development/levels/rebuild/verification/roster-separated-2026-11-07/route-probes.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/route-probes.json"
           ],
           "defects": [
             "DEV-354",
@@ -2914,7 +2929,7 @@
             "DEV-363",
             "DEV-364"
           ],
-          "next_action": "Continue physical terrain/editor punch integration, guarded and structurally supported flights/landings, full capsule sweeps and roster source-library placement. Point support/headroom results do not unlock a map."
+          "next_action": "All1720tread centres supported/spine-clear; full body/traversability/swept movement remains open. Continue supported source-library placements, explicit stair movement integration and final structural/terrain/services detail. Candidate collision does not unlock a map."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -3023,13 +3038,14 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
           "evidence": [
             "development/levels/rebuild/structures/wld-10/implementation.json",
             "development/levels/rebuild/structures/verification.json",
             "development/levels/rebuild/structures/README.md",
             "development/levels/rebuild/structures/wld-10/physics-contract.json",
-            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/route-probes.json"
           ],
           "defects": [
             "DEV-354",
@@ -3042,7 +3058,7 @@
             "DEV-359",
             "DEV-360"
           ],
-          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
+          "next_action": "All1720tread centres supported/spine-clear; full body/traversability/swept movement remains open. Continue supported source-library placements, explicit stair movement integration and final structural/terrain/services detail. Candidate collision does not unlock a map."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -3149,13 +3165,14 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
           "evidence": [
             "development/levels/rebuild/structures/wld-11/implementation.json",
             "development/levels/rebuild/structures/verification.json",
             "development/levels/rebuild/structures/README.md",
             "development/levels/rebuild/structures/wld-11/physics-contract.json",
-            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/route-probes.json"
           ],
           "defects": [
             "DEV-354",
@@ -3166,7 +3183,7 @@
             "DEV-362",
             "DEV-363"
           ],
-          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
+          "next_action": "All1720tread centres supported/spine-clear; full body/traversability/swept movement remains open. Continue supported source-library placements, explicit stair movement integration and final structural/terrain/services detail. Candidate collision does not unlock a map."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -3275,13 +3292,14 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
           "evidence": [
             "development/levels/rebuild/structures/wld-12/implementation.json",
             "development/levels/rebuild/structures/verification.json",
             "development/levels/rebuild/structures/README.md",
             "development/levels/rebuild/structures/wld-12/physics-contract.json",
-            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/route-probes.json"
           ],
           "defects": [
             "DEV-354",
@@ -3294,7 +3312,7 @@
             "DEV-359",
             "DEV-360"
           ],
-          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
+          "next_action": "All1720tread centres supported/spine-clear; full body/traversability/swept movement remains open. Continue supported source-library placements, explicit stair movement integration and final structural/terrain/services detail. Candidate collision does not unlock a map."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -3401,13 +3419,14 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
           "evidence": [
             "development/levels/rebuild/structures/wld-13/implementation.json",
             "development/levels/rebuild/structures/verification.json",
             "development/levels/rebuild/structures/README.md",
             "development/levels/rebuild/structures/wld-13/physics-contract.json",
-            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/route-probes.json"
           ],
           "defects": [
             "DEV-354",
@@ -3418,7 +3437,7 @@
             "DEV-362",
             "DEV-363"
           ],
-          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
+          "next_action": "All1720tread centres supported/spine-clear; full body/traversability/swept movement remains open. Continue supported source-library placements, explicit stair movement integration and final structural/terrain/services detail. Candidate collision does not unlock a map."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -3526,14 +3545,15 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "451300b05e9f6b8ddbe033d7ce6e87c54c166eb3",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
           "evidence": [
             "development/levels/rebuild/structures/wld-14/implementation.json",
             "development/levels/rebuild/structures/verification.json",
             "development/levels/rebuild/structures/README.md",
             "development/levels/rebuild/structures/wld-14/physics-contract.json",
             "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json",
-            "development/levels/rebuild/verification/roster-separated-2026-11-07/route-probes.json"
+            "development/levels/rebuild/verification/roster-separated-2026-11-07/route-probes.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/route-probes.json"
           ],
           "defects": [
             "DEV-354",
@@ -3544,14 +3564,20 @@
             "DEV-362",
             "DEV-363"
           ],
-          "next_action": "Continue physical terrain/editor punch integration, guarded and structurally supported flights/landings, full capsule sweeps and roster source-library placement. Point support/headroom results do not unlock a map."
+          "next_action": "All1720tread centres supported/spine-clear; full body/traversability/swept movement remains open. Continue supported source-library placements, explicit stair movement integration and final structural/terrain/services detail. Candidate collision does not unlock a map."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
+          "evidence": [
+            "development/levels/rebuild/wld-14/terrain-world/verification.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/README.md"
+          ],
+          "defects": [
+            "DEV-363",
+            "DEV-366"
+          ],
+          "next_action": "Preserve actual saved editor holes; finish geographic footprint/desquareify, cliff fringe, engineered rims/retaining walls, foundations, guards and canonical-van arrival. Full actor sweeps/visual/containment acceptance remains open."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -3652,13 +3678,14 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
           "evidence": [
             "development/levels/rebuild/structures/wld-15/implementation.json",
             "development/levels/rebuild/structures/verification.json",
             "development/levels/rebuild/structures/README.md",
             "development/levels/rebuild/structures/wld-15/physics-contract.json",
-            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/route-probes.json"
           ],
           "defects": [
             "DEV-354",
@@ -3671,7 +3698,7 @@
             "DEV-359",
             "DEV-360"
           ],
-          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
+          "next_action": "All1720tread centres supported/spine-clear; full body/traversability/swept movement remains open. Continue supported source-library placements, explicit stair movement integration and final structural/terrain/services detail. Candidate collision does not unlock a map."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -3777,13 +3804,14 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
           "evidence": [
             "development/levels/rebuild/structures/wld-16/implementation.json",
             "development/levels/rebuild/structures/verification.json",
             "development/levels/rebuild/structures/README.md",
             "development/levels/rebuild/structures/wld-16/physics-contract.json",
-            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/route-probes.json"
           ],
           "defects": [
             "DEV-354",
@@ -3794,7 +3822,7 @@
             "DEV-362",
             "DEV-363"
           ],
-          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
+          "next_action": "All1720tread centres supported/spine-clear; full body/traversability/swept movement remains open. Continue supported source-library placements, explicit stair movement integration and final structural/terrain/services detail. Candidate collision does not unlock a map."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -3900,13 +3928,14 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
           "evidence": [
             "development/levels/rebuild/structures/wld-17/implementation.json",
             "development/levels/rebuild/structures/verification.json",
             "development/levels/rebuild/structures/README.md",
             "development/levels/rebuild/structures/wld-17/physics-contract.json",
-            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/route-probes.json"
           ],
           "defects": [
             "DEV-354",
@@ -3917,7 +3946,7 @@
             "DEV-362",
             "DEV-363"
           ],
-          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
+          "next_action": "All1720tread centres supported/spine-clear; full body/traversability/swept movement remains open. Continue supported source-library placements, explicit stair movement integration and final structural/terrain/services detail. Candidate collision does not unlock a map."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -4025,14 +4054,15 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "451300b05e9f6b8ddbe033d7ce6e87c54c166eb3",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
           "evidence": [
             "development/levels/rebuild/structures/wld-18/implementation.json",
             "development/levels/rebuild/structures/verification.json",
             "development/levels/rebuild/structures/README.md",
             "development/levels/rebuild/structures/wld-18/physics-contract.json",
             "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json",
-            "development/levels/rebuild/verification/roster-separated-2026-11-07/route-probes.json"
+            "development/levels/rebuild/verification/roster-separated-2026-11-07/route-probes.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/route-probes.json"
           ],
           "defects": [
             "DEV-354",
@@ -4043,14 +4073,20 @@
             "DEV-362",
             "DEV-363"
           ],
-          "next_action": "Continue physical terrain/editor punch integration, guarded and structurally supported flights/landings, full capsule sweeps and roster source-library placement. Point support/headroom results do not unlock a map."
+          "next_action": "All1720tread centres supported/spine-clear; full body/traversability/swept movement remains open. Continue supported source-library placements, explicit stair movement integration and final structural/terrain/services detail. Candidate collision does not unlock a map."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
+          "evidence": [
+            "development/levels/rebuild/wld-18/terrain-world/verification.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/README.md"
+          ],
+          "defects": [
+            "DEV-363",
+            "DEV-366"
+          ],
+          "next_action": "Preserve actual saved editor holes; finish geographic footprint/desquareify, cliff fringe, engineered rims/retaining walls, foundations, guards and canonical-van arrival. Full actor sweeps/visual/containment acceptance remains open."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -4150,13 +4186,14 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
           "evidence": [
             "development/levels/rebuild/structures/wld-07-mortuary/implementation.json",
             "development/levels/rebuild/structures/verification.json",
             "development/levels/rebuild/structures/README.md",
             "development/levels/rebuild/structures/wld-07-mortuary/physics-contract.json",
-            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/route-probes.json"
           ],
           "defects": [
             "DEV-354",
@@ -4167,14 +4204,20 @@
             "DEV-362",
             "DEV-363"
           ],
-          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
+          "next_action": "All1720tread centres supported/spine-clear; full body/traversability/swept movement remains open. Continue supported source-library placements, explicit stair movement integration and final structural/terrain/services detail. Candidate collision does not unlock a map."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
+          "evidence": [
+            "development/levels/rebuild/wld-07-mortuary/terrain-world/verification.json",
+            "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/README.md"
+          ],
+          "defects": [
+            "DEV-363",
+            "DEV-366"
+          ],
+          "next_action": "Preserve actual saved editor holes; finish geographic footprint/desquareify, cliff fringe, engineered rims/retaining walls, foundations, guards and canonical-van arrival. Full actor sweeps/visual/containment acceptance remains open."
         },
         "S05": {
           "status": "NOT_AUDITED",
