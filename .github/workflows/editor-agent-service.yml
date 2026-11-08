@@ -10,6 +10,7 @@ on:
       - 'src/main/java/org/beckenburg/DeveloperLevelEditor.java'
       - 'src/main/java/org/beckenburg/AssetImportDialog.java'
       - 'src/main/java/org/beckenburg/MaterialReview*.java'
+      - 'src/test/java/org/beckenburg/MaterialReviewMipTest.java'
       - 'src/main/java/org/beckenburg/GlbProps.java'
       - 'src/main/java/org/beckenburg/SceneRenderer.java'
       - 'src/main/java/org/beckenburg/editor/EditorMaterialWorkspace.java'

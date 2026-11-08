@@ -91,6 +91,10 @@ java -Xmx256m -ea -cp "%BECK_EDITOR_AGENT_CP%;build\test" org.beckenburg.editor.
 if errorlevel 1 exit /b 1
 java -Xmx64m -ea -cp "%BECK_EDITOR_AGENT_CP%;build\test" org.beckenburg.editor.EditorMaterialPencilTest
 if errorlevel 1 exit /b 1
+javac --release 17 -encoding UTF-8 -cp "%BECK_EDITOR_AGENT_CP%" -d build\test src\test\java\org\beckenburg\MaterialReviewMipTest.java
+if errorlevel 1 exit /b 1
+java -Xmx96m -ea -cp "%BECK_EDITOR_AGENT_CP%;build\test" org.beckenburg.MaterialReviewMipTest
+if errorlevel 1 exit /b 1
 java -Xmx256m -ea -cp "%BECK_EDITOR_AGENT_CP%;build\test" org.beckenburg.editor.EditorModelWorkspaceTest
 if errorlevel 1 exit /b 1
 java -Djava.util.prefs.PreferencesFactory=org.beckenburg.VerificationPreferencesFactory -Xmx256m -ea -cp "%BECK_EDITOR_AGENT_CP%;build\test" org.beckenburg.AssetImportWorkspaceGuiTest

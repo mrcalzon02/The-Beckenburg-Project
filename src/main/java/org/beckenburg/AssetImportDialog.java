@@ -176,6 +176,7 @@ public final class AssetImportDialog {
         }
     };
     private MaterialReviewFrame projectedFrame;
+    private MaterialReviewMip.Cache reviewMips=new MaterialReviewMip.Cache();
     private MaterialReviewStroke projectedStroke;
     private int reviewWidth,reviewHeight;
     private final JSpinner materialRotation=new JSpinner(new SpinnerNumberModel(0d,-360d,360d,15d));
@@ -552,6 +553,9 @@ public final class AssetImportDialog {
         selectionMode.setSelectedIndex(2);
         if(materialDialog==null){
             materialDialog=new JDialog(dialog,"Material Editor - Texture & UV",false);materialDialog.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+            materialDialog.addComponentListener(new ComponentAdapter(){
+                @Override public void componentHidden(ComponentEvent event){reviewMips=new MaterialReviewMip.Cache();}
+            });
             materialDialog.addWindowListener(new WindowAdapter(){public void windowClosing(WindowEvent e){if(modelingPreview!=null)clearModelingPreview();materialDialog.setVisible(false);}});
             materialRuntime.setPreferredSize(new Dimension(280,190));
             materialRuntime.setMinimumSize(new Dimension(160,120));
@@ -773,8 +777,9 @@ public final class AssetImportDialog {
         materialRenderState=state;materialRenderedRotation=rotation;materialRenderedVisibility=visibility;renderedMode=mode;materialRendering=true;projectedFrame=null;projectedStroke=null;materialRuntime.setIcon(null);materialRuntime.setText("Rendering captured native state...");
         var captured=state;var mesh=modelingPreview!=null?modelingMesh:
             workingObservation!=null && workingObservation.snapshot()==state ? workingObservation.mesh() : topologyProject.mesh();
+        var mipCache=reviewMips;
         new SwingWorker<MaterialReviewFrame,Void>(){
-            protected MaterialReviewFrame doInBackground()throws Exception{var renderer=new SceneRenderer();renderer.setRenderSize(width,height);return GlbProps.materialReviewFrame(EditorGlbWriter.encode(mesh),renderer,Math.toRadians(rotation),mesh,visibility.filtered()?visibility::includes:null,checker,mip);}
+            protected MaterialReviewFrame doInBackground()throws Exception{var renderer=new SceneRenderer();renderer.setRenderSize(width,height);return GlbProps.materialReviewFrame(EditorGlbWriter.encode(mesh),renderer,Math.toRadians(rotation),mesh,visibility.filtered()?visibility::includes:null,checker,mip,mipCache);}
             protected void done(){materialRendering=false;var current=modelingPreview!=null?modelingPreview.snapshot():topologyProject==null?null:topologyProject.snapshot();
                 if(current==captured&&mode==materialReviewMode.getSelectedIndex()&&visibility.equals(materialWorkspace.visibility())&&rotation==((Number)materialRotation.getValue()).doubleValue()){try{projectedFrame=get();materialRuntime.setIcon(new ImageIcon(projectedFrame.image));materialRuntime.setText("");}catch(Exception failure){projectedFrame=null;materialRuntime.setIcon(null);materialRuntime.setText("Preview unavailable: "+rootMessage(failure));}}
                 refreshMaterialWindow();

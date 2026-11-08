@@ -841,6 +841,7 @@ public final class G2TexturedModelGuiTest {
         edt(()->button(ui,"undoMesh"));await(()->ready(ui));check(project.snapshot().equals(original),"Undo conformal unwrap exactly");
     }
     private void verifyProjectedStroke()throws Exception{
+        verifyMipUpdates();
         var odd=new BufferedImage(3,1,BufferedImage.TYPE_INT_ARGB);
         odd.setRGB(2,0,0xffffffff);
         check(MaterialReviewMip.level(odd,1,false).getRGB(0,0)==0xff9c9c9c,"Odd-width footprint must retain the final sRGB texel");
@@ -992,11 +993,18 @@ public final class G2TexturedModelGuiTest {
     }
     private int[][] seamMipViews(String evidence)throws Exception{
         int[][] views=new int[2][];
+        var cache=(MaterialReviewMip.Cache)field(ui,"reviewMips");
         for(int i=0;i<views.length;i++){
             double angle=i*22d;
+            long previous=cache.filteredTexels;
             edt(()->{select("materialReviewMode",5);spin("materialRotation",angle);});
             views[i]=reviewPixels();
             var frame=(MaterialReviewFrame)field(ui,"projectedFrame");int visible=0;
+            if(i==1)check(previous==cache.filteredTexels,"Camera rotation refiltered unchanged source texels");
+            var renderer=new SceneRenderer();int w=frame.image.getWidth(),h=frame.image.getHeight();renderer.setRenderSize(w,h);
+            var mesh=project.mesh();
+            var full=GlbProps.materialReviewFrame(org.beckenburg.editor.EditorGlbWriter.encode(mesh),renderer,Math.toRadians(angle),mesh,null,0,2,null);
+            check(Arrays.equals(views[i],full.image.getRGB(0,0,w,h,null,0,w)),"Cached mip differs from full native render");
             for(int p=0;p<views[i].length;p++)if(frame.face(p)>=0){
                 visible++;check(frame.texel(p)==-1,"Filtered footprint cannot identify a single paint texel");
             }
@@ -1005,6 +1013,28 @@ public final class G2TexturedModelGuiTest {
         }
         edt(()->{select("materialReviewMode",0);spin("materialRotation",0d);});reviewPixels();
         return views;
+    }
+    private static void verifyMipUpdates(){
+        var cache=new MaterialReviewMip.Cache();
+        var source=new BufferedImage(33,17,BufferedImage.TYPE_INT_ARGB);
+        for(int y=0;y<17;y++)for(int x=0;x<33;x++)source.setRGB(x,y,0xff000000);
+        cache.level(0,source,4,true);
+        check(cache.filteredTexels==170,"Expected 128+32+8+2 filtered pixels");
+        source.setRGB(16,8,0xffffffff);
+        cache.level(0,source,1,true); // Deeper retained levels must also stay current.
+        long dirty=cache.filteredTexels-170;
+        check(dirty>0&&dirty<=16,"Single center texel affected too many mip pixels: "+dirty);
+        for(int step=0;step<3;step++){
+            if(step==1)source.setRGB(16,8,0); // Erase a previously opaque contribution.
+            if(step==2)source.setRGB(32,16,0x804080ff);
+            for(int level=1;level<=4;level++){
+                var actual=cache.level(0,source,level,true);
+                var full=MaterialReviewMip.level(source,level,true);
+                for(int y=0;y<full.getHeight();y++)for(int x=0;x<full.getWidth();x++)
+                    check(actual.getRGB(x,y)==full.getRGB(x,y),"Dirty odd-size mip differs at level "+level);
+            }
+        }
+        System.out.println("PASS local mip regeneration: "+dirty+" filtered pixels after center edit versus 170 for full chain");
     }
     private static int colorDistance(int pixel,int ink){
         int r=(pixel>>>16&255)-(ink>>>16&255),g=(pixel>>>8&255)-(ink>>>8&255),b=(pixel&255)-(ink&255);
