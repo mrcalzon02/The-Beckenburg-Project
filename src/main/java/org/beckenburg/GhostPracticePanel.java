@@ -7,10 +7,11 @@ import java.util.List;
 
 /** Local first-person spectral command-training viewport. No privileged ghost information. */
 public final class GhostPracticePanel extends JPanel implements KeyListener,FocusListener {
-    private final HouseMap map=new HouseMap();
-    private final GhostPracticeSession practice=new GhostPracticeSession(map,20261015L);
+    private final HouseMap map;
+    private final GhostPracticeSession practice;
     private final SceneRenderer renderer=new SceneRenderer();
     private final Runnable exit;
+    private final String exitLabel;
     private final javax.swing.Timer timer;
     private long last=System.nanoTime();
     private double accumulator;
@@ -18,6 +19,12 @@ public final class GhostPracticePanel extends JPanel implements KeyListener,Focu
     private final MouseLook mouseLook;
 
     public GhostPracticePanel(Runnable exit){
+        this(new HouseMap(),exit,"CASTLE");
+    }
+    GhostPracticePanel(HouseMap map,Runnable exit,String exitLabel){
+        this.map=java.util.Objects.requireNonNull(map);
+        practice=new GhostPracticeSession(map,20261015L);
+        this.exitLabel=exitLabel;
         this.exit=java.util.Objects.requireNonNull(exit);
         setFocusable(true);
         mouseLook=new MouseLook(this,(dx,dy)->MouseLook.rotate(renderer,dx,dy));
@@ -32,8 +39,8 @@ public final class GhostPracticePanel extends JPanel implements KeyListener,Focu
     public void close(){timer.stop();mouseLook.close();}
     public GhostPracticeSession session(){return practice;}
     private void syncCamera(){
-        renderer.x=map.centerX(practice.ghostRoom());
-        renderer.z=map.centerZ(practice.ghostRoom());
+        var spawn=map.spawn(practice.ghostRoom());
+        renderer.x=spawn.x();renderer.z=spawn.z();renderer.eyeHeight=spawn.y()+1.62;
     }
     private void frame(){
         long now=System.nanoTime();double dt=Math.max(0,Math.min(.075,(now-last)/1e9));last=now;
@@ -137,7 +144,7 @@ public final class GhostPracticePanel extends JPanel implements KeyListener,Focu
             List<Integer> paths=obs.exits();
             String target=paths.isEmpty()?"NONE":map.roomName(paths.get(Math.floorMod(choice,paths.size())));
             g.drawString("Z / Q SELECT ROOM    SPACE DRIFT → "+target,14,stageH+24);
-            g.drawString("1 WHISPER  2 DISTURB  3 MANIFEST  4 STRIKE  ESC CASTLE",14,stageH+46);
+            g.drawString("1 WHISPER  2 DISTURB  3 MANIFEST  4 STRIKE  ESC "+exitLabel,14,stageH+46);
             g.setColor(new Color(152,206,180));
             g.drawString("READY: "+obs.legalActions()+"   HITS: "+practice.strikes()+"/2",14,stageH+68);
             g.setColor(practice.outcome()==GhostPracticeSession.Outcome.ACTIVE?new Color(212,176,228):new Color(147,235,171));

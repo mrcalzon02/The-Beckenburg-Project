@@ -182,9 +182,11 @@
           "id": "M3-02",
           "name": "Isolated playtest plus exact restoration of unsaved editor state",
           "scope": [
-            "src/main/java/org/beckenburg/DeveloperLevelEditor.java"
+            "src/main/java/org/beckenburg/DeveloperLevelEditor.java",
+            "src/main/java/org/beckenburg/EditorPlaytest.java"
           ],
-          "status": "planned",
+          "status": "tested",
+          "implementationEvidence": "EditorAgentGuiTest drives the human Playtest button for an unsaved Castle spawn and mission prop. The actual Castle hub and House spectral gameplay render and advance while a separate LAN host retains its connected peer and identical native diagnostic snapshot. Native state, revision, disk bytes, editor camera, selection, dirty state and shared undo history survive return. Agent-triggered playtest is still open.",
           "dependsOn": [
             "M3-01"
           ],

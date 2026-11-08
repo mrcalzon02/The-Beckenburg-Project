@@ -36,6 +36,7 @@ public final class DeveloperLevelEditor extends JPanel {
     private EditorHistory<LevelAuthoringSession.Snapshot> missionHistory;
     private EditorAgentService<LevelAuthoringSession.Snapshot> missionAgent;
     private EditorObservationBridge observation;
+    private boolean playtesting;
     private HouseMap missionMap;
     private long missionMapRevision=-1;
     private HouseMap.Site missionSite;
@@ -212,6 +213,7 @@ public final class DeveloperLevelEditor extends JPanel {
     private void requireEditorThread(){
         if(!SwingUtilities.isEventDispatchThread()||editorClosed)
             throw new IllegalStateException("Editor must be open and called on its event thread");
+        if(playtesting)throw new IllegalStateException("Return from playtest to access the editor");
     }
     /** Future transports must dispatch to the EDT and bind this active service. */
     public EditorAgentService<?> agentService(){
@@ -462,6 +464,7 @@ public final class DeveloperLevelEditor extends JPanel {
         commands.add(undoButton);commands.add(redoButton);
         JButton evidence=button("VERIFY SCENE");
         evidence.addActionListener(e->showAgentEvidence());commands.add(evidence);
+        var playtest=button("PLAYTEST");playtest.addActionListener(e->playtest());commands.add(playtest);
         JButton authoringGuide=button("PSX GUIDE");
         authoringGuide.setToolTipText("Offline editor engineering reference and machine manifest");
         authoringGuide.addActionListener(e->org.beckenburg.editor.EditorAuthoringReference.show(window));
@@ -1318,6 +1321,17 @@ public final class DeveloperLevelEditor extends JPanel {
         status.setText("Redo • scene modified, SAVE to persist");
     }
     private void save(){saveCurrent();}
+    private void playtest(){
+        requireEditorThread();
+        var activeMission=mission==null?null:currentMissionMap();
+        playtesting=true;timer.stop();keys.clear();
+        try{EditorPlaytest.run(window,activeMission);}
+        catch(IOException|RuntimeException failure){JOptionPane.showMessageDialog(window,failure.toString(),"Playtest failed",JOptionPane.ERROR_MESSAGE);}
+        finally{
+            playtesting=false;
+            if(!editorClosed){timer.start();viewport.requestFocusInWindow();}
+        }
+    }
     private void stopObservation(){
         if(observation!=null){observation.close();observation=null;}
     }

@@ -26,6 +26,8 @@ The response carries `X-Editor-Revision`. URL-encode parameter values. The bridg
 
 ### Native service capabilities
 
+The Level Editor’s **Playtest** button runs local gameplay against the current unsaved level. Castle uses its walkable hub with a temporary player profile. Mission levels use spectral practice with their current authored geometry and a fresh gameplay session. **Return to editor** closes the gameplay panel and restores access to the same edit session. The editor retains its revision, selection, camera and undo history. The observation API declines scene requests while gameplay owns input. Playtest currently starts from the human editor.
+
 - Inspection returns the actual unsaved authoring snapshot, hierarchy, document path, revision and explicit capabilities/operation/test lists.
 - Every exposed write requires the last observed revision. A transaction contains 1–64 allowlisted commands and creates one shared undo entry. Invalid commands restore the entire before-state. Human edits, Undo, Redo and Save use this same service/history.
 - Save uses existing host serialization. Reopen replaces state in the existing authoring object, is undoable, and rolls back malformed input.

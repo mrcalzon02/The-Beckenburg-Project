@@ -12,6 +12,10 @@ for %%T in (GroundRecoverySupportParityTest EditorAgentServiceTest EditorChangeI
 )
 java -Djava.util.prefs.PreferencesFactory=org.beckenburg.VerificationPreferencesFactory -ea -cp "%BECK_EDITOR_AGENT_CP%;build\test" org.beckenburg.EditorAgentGuiTest
 if errorlevel 1 exit /b 1
+javac --release 17 -encoding UTF-8 -cp "%BECK_EDITOR_AGENT_CP%" -d build\test src\test\java\org\beckenburg\GhostPracticeGuiTest.java
+if errorlevel 1 exit /b 1
+java -Djava.util.prefs.PreferencesFactory=org.beckenburg.VerificationPreferencesFactory -ea -cp "%BECK_EDITOR_AGENT_CP%;build\test" org.beckenburg.GhostPracticeGuiTest
+if errorlevel 1 exit /b 1
 java -Djava.util.prefs.PreferencesFactory=org.beckenburg.VerificationPreferencesFactory -ea -cp "%BECK_EDITOR_AGENT_CP%;build\test" org.beckenburg.AssetImportTopologyGuiTest
 if errorlevel 1 exit /b 1
 java -Djava.util.prefs.PreferencesFactory=org.beckenburg.VerificationPreferencesFactory -ea -cp "%BECK_EDITOR_AGENT_CP%;build\test" org.beckenburg.AssetImportBoxSelectionGuiTest

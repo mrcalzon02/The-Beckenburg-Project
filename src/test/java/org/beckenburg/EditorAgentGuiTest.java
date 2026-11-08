@@ -55,6 +55,65 @@ public final class EditorAgentGuiTest {
         check(failure.get()==null&&stage.get()==3,"Actual human recovery menu completed: "+failure.get());
     }
     private record Access(String url,String bearer){}
+    private static Object member(Object instance,String name)throws Exception{
+        var field=instance.getClass().getDeclaredField(name);field.setAccessible(true);return field.get(instance);
+    }
+    private static void verifyPlaytest(DeveloperLevelEditor editor,HouseMap missionMap,Path output)throws Exception{
+        var service=editor.agentService();var before=service.inspect();
+        var hierarchy=(JList<?>)member(editor,"hierarchy");hierarchy.setSelectedIndex(0);
+        byte[] saved=Files.readAllBytes(before.document());
+        var camera=(SceneRenderer)member(editor,"renderer");
+        var selection=member(editor,"chosen");check(selection!=null,"Human selection before playtest");
+        double[] view={camera.x,camera.z,camera.yaw,camera.pitch,camera.eyeHeight};
+        boolean castle=missionMap==null;
+        Object dirty=member(editor,castle?"castleDirty":"missionDirty");
+        var error=new AtomicReference<Throwable>();var played=new java.util.concurrent.atomic.AtomicBoolean();
+        boolean[] turnStarted={false};
+        long start=System.nanoTime();
+        Timer driver=new Timer(100,event->{
+            for(Window w:Window.getWindows())if(w instanceof JDialog dialog && dialog.isShowing()){
+                try{
+                    if(dialog.getTitle().equals("Playtest failed"))throw new AssertionError("Playtest initialization failed");
+                    JPanel game=castle?component(dialog,CastleHubPanel.class):component(dialog,GhostPracticePanel.class);
+                    if(game==null)continue;
+                    if(System.nanoTime()-start>60_000_000_000L)throw new AssertionError("Playtest did not advance");
+                    try{service.summary();throw new AssertionError("Editor service accepted access while playing");}
+                    catch(IllegalStateException expected){}
+                    if(castle){
+                        var hub=(CastleHubPanel)game;var render=(SceneRenderer)member(hub,"renderer");
+                        double yaw=((CastleLevelEdits.Snapshot)before.state()).spawnYaw();
+                        if(!turnStarted[0]){
+                            check(render.yaw==yaw,"Castle gameplay started at the unsaved authored yaw");
+                            hub.keyPressed(new java.awt.event.KeyEvent(hub,java.awt.event.KeyEvent.KEY_PRESSED,0,0,java.awt.event.KeyEvent.VK_LEFT,' '));
+                            turnStarted[0]=true;
+                            return;
+                        }
+                        if(render.yaw==yaw)return;
+                        var profile=(ProfileStore)member(hub,"profile");profile.save();
+                        check(!Files.exists(ProfileStore.defaultPath()),"Castle playtest wrote the player profile");
+                    }else{
+                        var practice=(GhostPracticePanel)game;var playable=(HouseMap)member(practice,"map");
+                        check(playable!=missionMap && playable.level()==missionMap.level(),"Playtest must consume the reviewed runtime definition");
+                        if(practice.session().tickCount()==0)return;
+                        var eye=(SceneRenderer)member(practice,"renderer");
+                        double expectedEye=playable.floorY(practice.session().ghostRoom())+1.62;
+                        check(Math.abs(eye.eyeHeight-expectedEye)<1e-6,"Practice camera height "+eye.eyeHeight+" differs from authored room eye height "+expectedEye);
+                    }
+                    var image=new java.awt.image.BufferedImage(game.getWidth(),game.getHeight(),java.awt.image.BufferedImage.TYPE_INT_RGB);
+                    var g=image.createGraphics();try{game.paint(g);}finally{g.dispose();}
+                    javax.imageio.ImageIO.write(image,"PNG",output.resolve(castle?"castle-playtest.png":"house-playtest.png").toFile());
+                    played.set(true);button(dialog,"Return to editor").doClick();
+                }catch(Throwable failure){error.set(failure);dialog.dispose();}
+            }
+        });
+        driver.start();try{button(editor,"PLAYTEST").doClick();}finally{driver.stop();}
+        if(error.get()!=null)throw new AssertionError("Playtest failed",error.get());
+        var after=service.inspect();
+        check(played.get() && before.revision()==after.revision() && before.state().equals(after.state()),"Playtest changed authoritative document or revision");
+        check(java.util.Arrays.equals(saved,Files.readAllBytes(after.document())),"Playtest changed saved level");
+        check(selection==member(editor,"chosen") && dirty.equals(member(editor,castle?"castleDirty":"missionDirty")),"Playtest changed selection or dirty state");
+        check(java.util.Arrays.equals(view,new double[]{camera.x,camera.z,camera.yaw,camera.pitch,camera.eyeHeight}),"Playtest changed editor camera");
+    }
     private static void verifyPalette(DeveloperLevelEditor editor,boolean mission)throws Exception{
         var palette=DeveloperLevelEditor.class.getDeclaredField("assetPalette");palette.setAccessible(true);
         var visible=component((Container)palette.get(editor),JList.class).getModel();
@@ -165,7 +224,11 @@ public final class EditorAgentGuiTest {
         System.setProperty("user.home",home.toString());
         AtomicReference<JFrame> window=new AtomicReference<>();
         AtomicReference<DeveloperLevelEditor> editor=new AtomicReference<>();
-        try{
+        var joined=new java.util.concurrent.CountDownLatch(1);
+        try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT);
+            var peer=new LanClient("127.0.0.1",host.port(),false,"Observer",line->{if(line.startsWith("SITE|"))joined.countDown();})){
+            check(joined.await(10,java.util.concurrent.TimeUnit.SECONDS) && host.connected()==1,"Real multiplayer peer joined independent host");
+            var hostBefore=host.devAdminSnapshot();
             SwingUtilities.invokeAndWait(()->{
                 DeveloperLevelEditor.open(null);
                 for(Window w:Window.getWindows())if(w instanceof JFrame f&&f.getContentPane() instanceof DeveloperLevelEditor e){
@@ -187,6 +250,11 @@ public final class EditorAgentGuiTest {
                     check(CastleLevelEdits.current().spawn()[2]==originalYaw,"Human Castle recovery uses same singleton");
                     button(e,"UNDO").doClick();
                     check(CastleLevelEdits.current().spawn()[2]==1.125,"Human undo restores pre-recovery Castle edits");
+                    verifyPlaytest(e,null,output);
+                    button(e,"REDO").doClick();
+                    check(CastleLevelEdits.current().spawn()[2]==originalYaw,"Playtest preserved Castle redo");
+                    button(e,"UNDO").doClick();
+                    check(CastleLevelEdits.current().spawn()[2]==1.125,"Playtest preserved Castle undo");
                     var open=DeveloperLevelEditor.class.getDeclaredMethod("openMission",HouseMap.Site.class);
                     open.setAccessible(true);open.invoke(e,HouseMap.Site.HOUSE);
                     var finish=DeveloperLevelEditor.class.getDeclaredMethod("finishSceneOpen");finish.setAccessible(true);finish.invoke(e);
@@ -202,6 +270,7 @@ public final class EditorAgentGuiTest {
                     Object editedMap=currentMap.invoke(e);
                     check(initialMap!=editedMap&&editedMap==currentMap.invoke(e),"Committed native change invalidates map exactly until revision is consumed");
                     check(((HouseMap)editedMap).level().props().get(0).x()==node.x()+.125,"Cache rebuild consumes authoritative native props");
+                    verifyPlaytest(e,(HouseMap)editedMap,output);
                     var undo=button(e,"UNDO");check(undo!=null,"Human undo button exists");undo.doClick();
                     check(service.inspect().hierarchy().get(0).x()==node.x(),"Human undo reverses agent edit");
                     var redo=button(e,"REDO");redo.doClick();
@@ -222,6 +291,7 @@ public final class EditorAgentGuiTest {
                 }catch(Exception failure){throw new RuntimeException(failure);}
             });
             var access=openAccess(editor.get());
+            check(host.connected()==1 && hostBefore.equals(host.devAdminSnapshot()),"Playtests changed independent LAN host state");
             verifyObservation(editor.get(),output,access);
             SwingUtilities.invokeAndWait(()->{
                 try{
@@ -245,6 +315,6 @@ public final class EditorAgentGuiTest {
             });
             try(var files=Files.walk(home)){files.sorted(java.util.Comparator.reverseOrder()).forEach(p->{try{Files.deleteIfExists(p);}catch(Exception ignored){}});}
         }
-        System.out.println("PASS real Windows editor: mission/Castle recovery and history, authenticated loopback observation of an unsaved inspector move, PNG capture, scene replacement and listener shutdown");
+        System.out.println("PASS real Windows editor: isolated Castle and House gameplay, exact unsaved-state return, unaffected connected LAN host, native history, authenticated observation and renderer capture");
     }
 }

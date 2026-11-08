@@ -10,6 +10,20 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-270 — Spectral practice camera ignored the current room elevation
+
+**Status:** fixed-scoped; real House cellar playtest verified · **Affected:** Ghost practice gameplay and mission playtests in rooms above or below ground
+
+In House Cellar Storage, the ghost HUD identified the basement but the renderer viewed it from ground-floor eye height.
+
+Cause / uncertainty: The practice camera copied room spawn X and Z while leaving the renderer eye height at its default 1.62 metres.
+
+Fix / next action: Set the camera from the authored spawn in all three axes on each sync, including after drifting rooms.
+
+Evidence and verification: The Windows editor test failed its room-height assertion before the fix. The corrected real renderer passed at -1.38 metres in Cellar Storage, whose authored floor is -3 metres. The desktop suite captures house-playtest.png.
+
+Older-map obligation: The shared practice panel uses the current room spawn on every map. Direct basement evidence covers House.
+
 ### DEV-269 — Mission editor retained Castle assets after switching scenes
 
 **Status:** fixed-scoped; real Castle and House palette parity verified · **Affected:** Level Editor scene selection and post-import palette refresh
