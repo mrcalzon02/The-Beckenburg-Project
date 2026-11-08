@@ -1,0 +1,23 @@
+2026-11-08T00:15:47.299833300Z [AWT-EventQueue-0] OPENING WORLD3D HOUSE hardware_available=false preview=async-software-world output=0x0 first_frame_state=not-yet-ready
+2026-11-08T00:15:47.319702100Z [AWT-EventQueue-0] OPENING WORLD3D CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=no-frame-but-bounded
+2026-11-08T00:15:47.319702100Z [AWT-EventQueue-0] OPENING WORLD3D HOUSE hardware_available=false preview=async-software-world output=0x0 first_frame_state=not-yet-ready
+2026-11-08T00:15:47.331978500Z [AWT-EventQueue-0] OPENING WORLD3D CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=no-frame-but-bounded
+2026-11-08T00:15:47.331978500Z [AWT-EventQueue-0] OPENING WORLD3D HOUSE hardware_available=false preview=async-software-world output=0x0 first_frame_state=not-yet-ready
+2026-11-08T00:15:47.339837900Z [AWT-EventQueue-0] OPENING WORLD3D CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=no-frame-but-bounded
+2026-11-08T00:15:47.360177800Z [AWT-EventQueue-0] OPENING WORLD3D HOUSE hardware_available=false preview=async-software-world output=0x0 first_frame_state=not-yet-ready
+2026-11-08T00:15:47.367078700Z [AWT-EventQueue-0] OPENING WORLD3D CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=no-frame-but-bounded
+2026-11-08T00:15:47.367078700Z [AWT-EventQueue-0] OPENING WORLD3D HOUSE hardware_available=false preview=async-software-world output=0x0 first_frame_state=not-yet-ready
+2026-11-08T00:15:47.377358900Z [AWT-EventQueue-0] OPENING WORLD3D CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=no-frame-but-bounded
+2026-11-08T00:15:47.377358900Z [AWT-EventQueue-0] OPENING WORLD3D HOUSE hardware_available=false preview=async-software-world output=0x0 first_frame_state=not-yet-ready
+2026-11-08T00:15:47.380440300Z [AWT-EventQueue-0] OPENING WORLD3D CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=no-frame-but-bounded
+2026-11-08T00:15:47.401282600Z [AWT-EventQueue-0] OPENING WORLD3D HOUSE hardware_available=false preview=async-software-world output=0x0 first_frame_state=not-yet-ready
+2026-11-08T00:15:47.410056100Z [AWT-EventQueue-0] OPENING WORLD3D CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=no-frame-but-bounded
+2026-11-08T00:15:47.410056100Z [AWT-EventQueue-0] OPENING WORLD3D HOUSE hardware_available=false preview=async-software-world output=0x0 first_frame_state=not-yet-ready
+2026-11-08T00:15:47.418766800Z [AWT-EventQueue-0] OPENING WORLD3D CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=no-frame-but-bounded
+2026-11-08T00:15:47.418766800Z [AWT-EventQueue-0] OPENING WORLD3D HOUSE hardware_available=false preview=async-software-world output=0x0 first_frame_state=not-yet-ready
+2026-11-08T00:15:47.419808900Z [AWT-EventQueue-0] OPENING WORLD3D CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=no-frame-but-bounded
+2026-11-08T00:15:48.966713100Z [AWT-EventQueue-0] RENDER SLOW stage=idle faces=108379 visible_faces=57762 culled_faces=50617 target=320x200 build_ms=1105 lighting_raster_ms=388
+Exception in thread "main" java.lang.AssertionError: Missing POSTURE|0|; tail=[VANDOOR|0, BODY|0|16140|0|20400|180|5, POSTURE|0|0|5, BODY|1|14900|0|18000|270|5, POSTURE|1|0|5, HIDING|0, BODY|2|21650|500|36250|270|5, POSTURE|2|0|5, TEAMMAP|1|14|14|-1|-1|-1, STATE|5|14|-1|-1|role:1|0, UVTRACE|RESET, COUNTER|RESET, STAMINA|70|70|0, COUNTER|RESET, STAMINA|70|70|0]
+	at org.beckenburg.LanHunterAnimationGameplayTest$Peer.await(LanHunterAnimationGameplayTest.java:34)
+	at org.beckenburg.LanHunterAnimationGameplayTest.run(LanHunterAnimationGameplayTest.java:140)
+	at org.beckenburg.LanHunterAnimationGameplayTest.main(LanHunterAnimationGameplayTest.java:83)

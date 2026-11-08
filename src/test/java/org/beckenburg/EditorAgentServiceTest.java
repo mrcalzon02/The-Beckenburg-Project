@@ -25,23 +25,25 @@ public final class EditorAgentServiceTest {
             var renderer=new SceneRenderer();renderer.setRenderSize(320,200);
             var host=new LevelEditorAgent(session,()->new HouseMap(HouseMap.Site.HOUSE,session.level()),renderer,access);
             var service=new EditorAgentService<>(host,history);
-            var original=session.prop(0);long initial=service.inspect().revision();
-            var move=Map.of("id","prop-0","x",Double.toString(original.x()+.125),
+            int editable=0;while(HouseAuthoringAttachments.required(session.sourceLevel(),session.prop(editable)))editable++;
+            final int index=editable;
+            var original=session.prop(index);long initial=service.inspect().revision();
+            var move=Map.of("id",session.nodeId(index),"x",Double.toString(original.x()+.125),
                 "y",Double.toString(original.y()),"z",Double.toString(original.z()));
             service.transact(initial,"move-prop",move);
-            check(session.prop(0).x()==original.x()+.125,"Agent modified actual active authoring session");
+            check(session.prop(index).x()==original.x()+.125,"Agent modified actual active authoring session");
             check(service.inspect().state().props().equals(session.props()),"Unsaved readback is exact");
             rejects(()->service.transact(initial,"move-prop",move));
             check(service.test(session.revision(),"mission-runtime-parity").result().stream().allMatch(EditorAgentService.Check::passed),
                 "Native HouseMap rendering props and collision match edited scene");
-            service.undo(session.revision());check(session.prop(0).equals(original),"Shared undo restores native prop");
-            service.redo(session.revision());var moved=session.prop(0);
-            history.execute(()->session.put(0,original));
-            service.undo(session.revision());check(session.prop(0).equals(moved),"Human and agent use same history");
-            var invalid=Map.of("id","prop-0","x","NaN","y","0","z","0");
+            service.undo(session.revision());check(session.prop(index).equals(original),"Shared undo restores native prop");
+            service.redo(session.revision());var moved=session.prop(index);
+            history.execute(()->session.put(index,original));
+            service.undo(session.revision());check(session.prop(index).equals(moved),"Human and agent use same history");
+            var invalid=Map.of("id",session.nodeId(index),"x","NaN","y","0","z","0");
             rejects(()->service.transact(session.revision(),List.of(
                 new EditorAgentService.Command("move-prop",move),new EditorAgentService.Command("move-prop",invalid))));
-            check(session.prop(0).equals(moved),"Mid-batch failure restores every edit");
+            check(session.prop(index).equals(moved),"Mid-batch failure restores every edit");
             rejects(()->service.transact(session.revision(),"shell",Map.of()));
             var beforeCancel=session.snapshot();
             var polls=new java.util.concurrent.atomic.AtomicInteger();
@@ -53,8 +55,8 @@ public final class EditorAgentServiceTest {
                 throw new AssertionError("Cancellation ignored");
             }catch(java.util.concurrent.CancellationException expected){}
             check(session.snapshot().equals(beforeCancel),"Cancellation after first native edit restores full scene identity and props");
-            service.undo(session.revision());check(session.prop(0).equals(original),"Cancelled batch adds no undo entry and preserves earlier history");
-            service.redo(session.revision());check(session.prop(0).equals(moved),"Earlier redo remains valid after cancelled batch");
+            service.undo(session.revision());check(session.prop(index).equals(original),"Cancelled batch adds no undo entry and preserves earlier history");
+            service.redo(session.revision());check(session.prop(index).equals(moved),"Earlier redo remains valid after cancelled batch");
             Thread.currentThread().interrupt();
             try{
                 service.transact(session.revision(),List.of(new EditorAgentService.Command("move-prop",move)));
@@ -65,14 +67,14 @@ public final class EditorAgentServiceTest {
             var unrelated=new LevelAuthoringSession(HouseMap.Site.SCHOOL);
             rejects(()->new EditorAgentService<>(host,new EditorHistory<>(unrelated,2)));
             service.save(session.revision());
-            check(new HouseMap(HouseMap.Site.HOUSE).level().props().get(0).equals(moved),"Saved data consumed by real game load");
-            service.edit(()->session.put(0,original));service.reopen(session.revision());
-            check(session.prop(0).equals(moved),"Reopen loads authoritative persisted state into same session");
-            service.undo(session.revision());check(session.prop(0).equals(original),"Reopen is undoable");
+            check(new HouseMap(HouseMap.Site.HOUSE).level().props().get(index).equals(moved),"Saved data consumed by real game load");
+            service.edit(()->session.put(index,original));service.reopen(session.revision());
+            check(session.prop(index).equals(moved),"Reopen loads authoritative persisted state into same session");
+            service.undo(session.revision());check(session.prop(index).equals(original),"Reopen is undoable");
             Files.writeString(session.documentPath(),"corrupt document");
             try{service.reopen(session.revision());throw new AssertionError("Corrupt file accepted");}
             catch(java.io.IOException expected){}
-            check(session.prop(0).equals(original),"Bad reopen preserves unsaved state");
+            check(session.prop(index).equals(original),"Bad reopen preserves unsaved state");
             var spawn=session.level().room(0).spawn();renderer.x=spawn.x();renderer.z=spawn.z();renderer.eyeHeight=spawn.y()+1.62;
             var capture=service.capture(session.revision(),home.resolve("mission.png"));
             var image=javax.imageio.ImageIO.read(capture.result().file().toFile());

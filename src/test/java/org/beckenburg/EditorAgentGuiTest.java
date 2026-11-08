@@ -82,6 +82,18 @@ public final class EditorAgentGuiTest {
                     check(CastleLevelEdits.current().spawn()[2]==1.125,"Human undo restores pre-recovery Castle edits");
                     var open=DeveloperLevelEditor.class.getDeclaredMethod("openMission",HouseMap.Site.class);
                     open.setAccessible(true);open.invoke(e,HouseMap.Site.HOUSE);
+                    var fresh=e.agentService();
+                    check(fresh.inspect().state() instanceof LevelAuthoringSession.Snapshot snapshot
+                        &&UserLevelLibrary.HOUSE_REBUILD.equals(snapshot.architecture())&&snapshot.props().size()==45,
+                        "Actual fresh human editor opens furnished rebuilt architecture");
+                    check(!Files.exists(LevelAuthoringSession.path(HouseMap.Site.HOUSE)),"Opening fresh human editor does not implicitly save");
+                    fresh.capture(fresh.inspect().revision(),output.resolve("house-fresh-default.png"));
+                    fresh.save(fresh.inspect().revision());
+                    check(new HouseMap(HouseMap.Site.HOUSE).level().id().equals("briar-rebuild"),"Actual fresh human save loads in gameplay");
+                    // The remaining scenario explicitly exercises a historical
+                    // document's recovery and human rebuild/undo workflow.
+                    LevelAuthoringSession.saveProps(LevelAuthoringSession.path(HouseMap.Site.HOUSE),"beckenburg/house",LevelPlans.legacyHouseSource().props());
+                    open.invoke(e,HouseMap.Site.HOUSE);
                     var service=e.agentService();var before=service.inspect();var node=before.hierarchy().get(0);
                     var currentMap=DeveloperLevelEditor.class.getDeclaredMethod("currentMissionMap");currentMap.setAccessible(true);
                     Object initialMap=currentMap.invoke(e);

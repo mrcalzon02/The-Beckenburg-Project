@@ -17,8 +17,9 @@ public final class LevelAuthoringRecoveryTest {
             var service=new EditorAgentService<>(new LevelEditorAgent(session,()->new HouseMap(HouseMap.Site.HOUSE,session.level()),
                 new SceneRenderer(),()->{}),history);
             var original=session.snapshot();service.save(session.revision());
-            var p=session.prop(0);
-            service.transact(session.revision(),"move-prop",Map.of("id",session.nodeId(0),"x",Double.toString(p.x()+.25),
+            int editable=0;while(HouseAuthoringAttachments.required(session.sourceLevel(),session.prop(editable)))editable++;
+            var p=session.prop(editable);
+            service.transact(session.revision(),"move-prop",Map.of("id",session.nodeId(editable),"x",Double.toString(p.x()+.25),
                 "y",Double.toString(p.y()),"z",Double.toString(p.z())));
             var moved=session.snapshot();service.save(session.revision());
             byte[] prior=Files.readAllBytes(EditorDocumentStore.previous(session.documentPath()));
@@ -42,8 +43,7 @@ public final class LevelAuthoringRecoveryTest {
             check(service.test(session.revision(),"mission-runtime-parity").result().stream().allMatch(EditorAgentService.Check::passed),"Recovered/undone unsaved state still uses native colliders");
             // CLI bootstrap has no live session/source to fall back on. A bad
             // primary must not be parsed before validating its previous file.
-            var versionless=org.beckenburg.editor.RuntimeSceneDocument.load(session.documentPath());versionless.remove(HouseSourceVersions.NODE);
-            org.beckenburg.editor.RuntimeSceneDocument.save(EditorDocumentStore.previous(session.documentPath()),versionless);
+            LevelAuthoringSession.saveProps(EditorDocumentStore.previous(session.documentPath()),"beckenburg/house",LevelPlans.legacyHouseSource().props());
             byte[] legacy=Files.readAllBytes(EditorDocumentStore.previous(session.documentPath()));Files.writeString(session.documentPath(),"corrupt primary before CLI open");
             LevelAuthoringSession.recoverSavedDocument(HouseMap.Site.HOUSE);
             check(java.util.Arrays.equals(legacy,Files.readAllBytes(session.documentPath()))&&new HouseMap().level().id().equals("house"),"Bootstrap restores exact original source without reading corrupt primary");

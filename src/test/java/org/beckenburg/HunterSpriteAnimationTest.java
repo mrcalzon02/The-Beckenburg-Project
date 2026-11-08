@@ -17,6 +17,9 @@ public final class HunterSpriteAnimationTest {
         check(tracker.sample(body(.4,true),.6)==HunterSpriteAnimation.Pose.CROUCH,"host crouch selects authored pose");
         check(tracker.sample(body(8,false),.7)==HunterSpriteAnimation.Pose.IDLE,"teleport does not animate walking");
         check(tracker.sample(body(8,false),.1)==HunterSpriteAnimation.Pose.IDLE,"clock reset clears gait");
+        check(tracker.sample(body(8.31,false),1.2)==HunterSpriteAnimation.Pose.IDLE,"A missing second of observations resets stale gait rather than inventing stride");
+        check(tracker.sample(body(8.62,false),1.3)==HunterSpriteAnimation.Pose.WALK_A,"First contiguous received stride starts at A after a gap");
+        check(tracker.sample(body(8.93,false),1.4)==HunterSpriteAnimation.Pose.WALK_B,"Second contiguous received stride reaches B after a gap");
         for(String identity:CharacterVisuals.HUNTERS)for(int facing:new int[]{0,2,4,5}){
             var walkA=HunterSpriteAnimation.frame(identity,facing,HunterSpriteAnimation.Pose.WALK_A);
             var walkB=HunterSpriteAnimation.frame(identity,facing,HunterSpriteAnimation.Pose.WALK_B);

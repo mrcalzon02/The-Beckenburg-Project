@@ -18,6 +18,8 @@ for path in sorted(set(paths)):
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
     if '/synthetic-controls/' in path:kind='Synthetic GPU depth control'
+    elif '/hunter-gait-recovery-software/' in path:kind='Runtime software hunter gait diagnostic'
+    elif '/house-fresh-default/' in path:kind='Runtime fresh default House editor and CLI verification'
     elif '/hiding-energy/' in path:kind='Runtime hiding-location energy material'
     elif '/house-final-lighting/' in path:kind='Runtime matched House door and circuit lighting review'
     elif '/house-functional-fill/' in path:kind='Rejected runtime inspection' if p.stem.startswith('rejected-') else 'Native geometry overview' if p.stem.startswith('native-') else 'Runtime daily household and garden functions'
