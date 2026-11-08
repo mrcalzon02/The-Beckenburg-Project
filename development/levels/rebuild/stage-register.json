@@ -202,13 +202,24 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
-            "development/levels/rebuild/terrain-overall-pass/README.md"
+            "development/levels/rebuild/terrain-overall-pass/README.md",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/terrain-overall-pass/assemblies/academy/review.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
           ],
-          "defects": [],
-          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
+          "defects": [
+            "DEV-390",
+            "DEV-391",
+            "DEV-392",
+            "DEV-393",
+            "DEV-394"
+          ],
+          "next_action": "Keep one cloister foundation datum; replace raised reservation pads with a continuous lawn and a real perimeter drain. Review east service court against the shoulder. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -367,13 +378,24 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
-            "development/levels/rebuild/terrain-overall-pass/README.md"
+            "development/levels/rebuild/terrain-overall-pass/README.md",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/terrain-overall-pass/assemblies/asylum/review.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
           ],
-          "defects": [],
-          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
+          "defects": [
+            "DEV-390",
+            "DEV-391",
+            "DEV-392",
+            "DEV-393",
+            "DEV-394"
+          ],
+          "next_action": "Retain staggered pavilion datums. Inspect service spine drainage and move isolated outbuildings rather than spreading a site-wide raised slab. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -556,7 +578,9 @@
             "development/levels/rebuild/verification/castle-cellar-2026-11-03/README.md",
             "development/levels/rebuild/verification/castle-cellar-2026-11-03/verification.json",
             "development/levels/rebuild/verification/castle-upper-2026-11-03/README.md",
-            "development/levels/rebuild/verification/castle-upper-2026-11-03/verification.json"
+            "development/levels/rebuild/verification/castle-upper-2026-11-03/verification.json",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json"
           ],
           "defects": [
             "DEV-236",
@@ -857,13 +881,24 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
-            "development/levels/rebuild/terrain-overall-pass/README.md"
+            "development/levels/rebuild/terrain-overall-pass/README.md",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/terrain-overall-pass/assemblies/church/review.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
           ],
-          "defects": [],
-          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
+          "defects": [
+            "DEV-390",
+            "DEV-391",
+            "DEV-392",
+            "DEV-393",
+            "DEV-394"
+          ],
+          "next_action": "Nave and parish wings share a shallow masonry plinth; crypt entrances require retained light wells, not sunken orange room pads. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -1027,13 +1062,24 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
-            "development/levels/rebuild/terrain-overall-pass/README.md"
+            "development/levels/rebuild/terrain-overall-pass/README.md",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/terrain-overall-pass/assemblies/college/review.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
           ],
-          "defects": [],
-          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
+          "defects": [
+            "DEV-390",
+            "DEV-391",
+            "DEV-392",
+            "DEV-393",
+            "DEV-394"
+          ],
+          "next_action": "Keep distinct three-building footprints and bridge supports. Evaluate bridge and service-tunnel levels against this shared valley; no whole-campus rectangular lawn plate. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -1192,13 +1238,24 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
-            "development/levels/rebuild/terrain-overall-pass/README.md"
+            "development/levels/rebuild/terrain-overall-pass/README.md",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/terrain-overall-pass/assemblies/farmhouse/review.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
           ],
-          "defects": [],
-          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
+          "defects": [
+            "DEV-390",
+            "DEV-391",
+            "DEV-392",
+            "DEV-393",
+            "DEV-394"
+          ],
+          "next_action": "Separate barn and farmhouse foundation runs; yard remains graded earth. Add supported barn apron only at delivery doors, retain room/model IDs. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -1360,7 +1417,9 @@
             "development/levels/rebuild/house/envelope-construction.md",
             "development/levels/rebuild/house/envelope-native-verification.json",
             "development/levels/rebuild/verification/house-envelope-2026-11-06/results.json",
-            "development/levels/rebuild/verification/house-envelope-2026-11-06/house-envelope-enhanced-physics.log"
+            "development/levels/rebuild/verification/house-envelope-2026-11-06/house-envelope-enhanced-physics.log",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json"
           ],
           "defects": [
             "DEV-300",
@@ -1724,13 +1783,24 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
-            "development/levels/rebuild/terrain-overall-pass/README.md"
+            "development/levels/rebuild/terrain-overall-pass/README.md",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/terrain-overall-pass/assemblies/mansion/review.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
           ],
-          "defects": [],
-          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
+          "defects": [
+            "DEV-390",
+            "DEV-391",
+            "DEV-392",
+            "DEV-393",
+            "DEV-394"
+          ],
+          "next_action": "Masonry foundations support the household wings. Service yard should fit the eastern shoulder; review its stair bay before refining cellar path strips. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -1891,13 +1961,24 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
-            "development/levels/rebuild/terrain-overall-pass/README.md"
+            "development/levels/rebuild/terrain-overall-pass/README.md",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/terrain-overall-pass/assemblies/prison/review.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
           ],
-          "defects": [],
-          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
+          "defects": [
+            "DEV-390",
+            "DEV-391",
+            "DEV-392",
+            "DEV-393",
+            "DEV-394"
+          ],
+          "next_action": "Wall panels need continuous concrete foundations, including the known unsupported perimeter pieces. Shape compound corners and arrival sally port around real construction, not the grounds rectangle. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -2053,13 +2134,24 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
-            "development/levels/rebuild/terrain-overall-pass/README.md"
+            "development/levels/rebuild/terrain-overall-pass/README.md",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/terrain-overall-pass/assemblies/school/review.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
           ],
-          "defects": [],
-          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
+          "defects": [
+            "DEV-390",
+            "DEV-391",
+            "DEV-392",
+            "DEV-393",
+            "DEV-394"
+          ],
+          "next_action": "Continuous teaching-block datum with distinct gym/service foundations. Recheck actual school bounds and entrance apron before promotion. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -2177,7 +2269,10 @@
         "S04": {
           "status": "NOT_AUDITED",
           "source_sha": null,
-          "evidence": [],
+          "evidence": [
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json"
+          ],
           "defects": [],
           "next_action": "Complete prerequisite stage"
         },
@@ -2288,7 +2383,10 @@
         "S04": {
           "status": "NOT_AUDITED",
           "source_sha": null,
-          "evidence": [],
+          "evidence": [
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json"
+          ],
           "defects": [],
           "next_action": "Complete prerequisite stage"
         },
@@ -2431,13 +2529,24 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
-            "development/levels/rebuild/terrain-overall-pass/README.md"
+            "development/levels/rebuild/terrain-overall-pass/README.md",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/terrain-overall-pass/assemblies/wld-03/review.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
           ],
-          "defects": [],
-          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
+          "defects": [
+            "DEV-390",
+            "DEV-391",
+            "DEV-392",
+            "DEV-393",
+            "DEV-394"
+          ],
+          "next_action": "Rock mass and cave roof/sidewalls must be authored as volumes. Reposition crossing cave/terrace routes to the shelf rather than grading down every historical orange strip. This heightfield is the exterior skin only. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -2589,13 +2698,24 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
-            "development/levels/rebuild/terrain-overall-pass/README.md"
+            "development/levels/rebuild/terrain-overall-pass/README.md",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/terrain-overall-pass/assemblies/wld-04/review.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
           ],
-          "defects": [],
-          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
+          "defects": [
+            "DEV-390",
+            "DEV-391",
+            "DEV-392",
+            "DEV-393",
+            "DEV-394"
+          ],
+          "next_action": "Retain real tower footings at the ridge bench. Rework the three-metre switchback terrace and hut entry after whole-site sections; tower decks remain elevated structures. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -2747,13 +2867,24 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
-            "development/levels/rebuild/terrain-overall-pass/README.md"
+            "development/levels/rebuild/terrain-overall-pass/README.md",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/terrain-overall-pass/assemblies/wld-05/review.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
           ],
-          "defects": [],
-          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
+          "defects": [
+            "DEV-390",
+            "DEV-391",
+            "DEV-392",
+            "DEV-393",
+            "DEV-394"
+          ],
+          "next_action": "Adit portal requires a rock face and buried tunnel roof. The minus-six/minus-ten workings stay underground, not giant open pits punched through all surface ground. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -2901,13 +3032,24 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
-            "development/levels/rebuild/terrain-overall-pass/README.md"
+            "development/levels/rebuild/terrain-overall-pass/README.md",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/terrain-overall-pass/assemblies/wld-06/review.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
           ],
-          "defects": [],
-          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
+          "defects": [
+            "DEV-390",
+            "DEV-391",
+            "DEV-392",
+            "DEV-393",
+            "DEV-394"
+          ],
+          "next_action": "Piers/fish house/boathouse need piles and deck skirts over the basin, not filled square ground pads. Verify actual undercroft and stair walls against waterline before promotion. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -3067,7 +3209,9 @@
             "development/levels/rebuild/terrain-overall-pass/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/saved-terrain-proof.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/graded-idempotence.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/visual-review.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/visual-review.json",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json"
           ],
           "defects": [],
           "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
@@ -3218,13 +3362,24 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
-            "development/levels/rebuild/terrain-overall-pass/README.md"
+            "development/levels/rebuild/terrain-overall-pass/README.md",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/terrain-overall-pass/assemblies/wld-08/review.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
           ],
-          "defects": [],
-          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
+          "defects": [
+            "DEV-390",
+            "DEV-391",
+            "DEV-392",
+            "DEV-393",
+            "DEV-394"
+          ],
+          "next_action": "Keep station on short supported plinths; service tunnel remains a buried structure. Move shelter or antenna service route if berms obstruct their real clearances. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -3376,13 +3531,24 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
-            "development/levels/rebuild/terrain-overall-pass/README.md"
+            "development/levels/rebuild/terrain-overall-pass/README.md",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/terrain-overall-pass/assemblies/wld-09/review.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
           ],
-          "defects": [],
-          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
+          "defects": [
+            "DEV-390",
+            "DEV-391",
+            "DEV-392",
+            "DEV-393",
+            "DEV-394"
+          ],
+          "next_action": "Construct an actual dam/retaining section and turbine foundations. Current ground-level crest may require blockout re-alignment; do not flatten the whole valley to keep it unchanged. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -3534,13 +3700,24 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
-            "development/levels/rebuild/terrain-overall-pass/README.md"
+            "development/levels/rebuild/terrain-overall-pass/README.md",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/terrain-overall-pass/assemblies/wld-10/review.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
           ],
-          "defects": [],
-          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
+          "defects": [
+            "DEV-390",
+            "DEV-391",
+            "DEV-392",
+            "DEV-393",
+            "DEV-394"
+          ],
+          "next_action": "Retain cloister identity and garden, construct bearing terrace and downhill retaining faces. Review the detached dormitory edge against the natural bench rather than a wide square pad. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -3688,13 +3865,24 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
-            "development/levels/rebuild/terrain-overall-pass/README.md"
+            "development/levels/rebuild/terrain-overall-pass/README.md",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/terrain-overall-pass/assemblies/wld-11/review.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
           ],
-          "defects": [],
-          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
+          "defects": [
+            "DEV-390",
+            "DEV-391",
+            "DEV-392",
+            "DEV-393",
+            "DEV-394"
+          ],
+          "next_action": "Raised houses and boardwalks remain 1.2m structures with actual piles. No dry land pad per building; engineer supported arrival-to-boardwalk rise and a real water/bank boundary. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -3846,13 +4034,24 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
-            "development/levels/rebuild/terrain-overall-pass/README.md"
+            "development/levels/rebuild/terrain-overall-pass/README.md",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/terrain-overall-pass/assemblies/wld-12/review.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
           ],
-          "defects": [],
-          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
+          "defects": [
+            "DEV-390",
+            "DEV-391",
+            "DEV-392",
+            "DEV-393",
+            "DEV-394"
+          ],
+          "next_action": "Track bed requires explicit supported embankment and bridge. Tunnel needs a solid hillside roof; lower ravine route must meet the banks. Reposition trestle approaches if their current angles fight this section. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -4000,13 +4199,24 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
-            "development/levels/rebuild/terrain-overall-pass/README.md"
+            "development/levels/rebuild/terrain-overall-pass/README.md",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+            "development/levels/rebuild/terrain-overall-pass/assemblies/wld-13/review.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
+            "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json"
           ],
-          "defects": [],
-          "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
+          "defects": [
+            "DEV-390",
+            "DEV-391",
+            "DEV-392",
+            "DEV-393",
+            "DEV-394"
+          ],
+          "next_action": "Industrial foundations follow the shore terrace. Dock/pile construction spans real water; bunk/mess block may need moving off the west rock shoulder. No continuous rectangular processing-yard stamp. Resolve measured terrain/blockout/capsule conflicts, foundations/retaining rims and supports; canonical van arrival, physical boundaries, water and runtime gates remain open. No master replacement or terrain acceptance."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -4167,7 +4377,9 @@
             "development/levels/rebuild/wld-14/terrain-world/verification.json",
             "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/README.md",
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
-            "development/levels/rebuild/terrain-overall-pass/README.md"
+            "development/levels/rebuild/terrain-overall-pass/README.md",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json"
           ],
           "defects": [
             "DEV-363",
@@ -4330,7 +4542,9 @@
           "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
-            "development/levels/rebuild/terrain-overall-pass/README.md"
+            "development/levels/rebuild/terrain-overall-pass/README.md",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json"
           ],
           "defects": [],
           "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
@@ -4483,7 +4697,9 @@
           "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
-            "development/levels/rebuild/terrain-overall-pass/README.md"
+            "development/levels/rebuild/terrain-overall-pass/README.md",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json"
           ],
           "defects": [],
           "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
@@ -4636,7 +4852,9 @@
           "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
-            "development/levels/rebuild/terrain-overall-pass/README.md"
+            "development/levels/rebuild/terrain-overall-pass/README.md",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json"
           ],
           "defects": [],
           "next_action": "Owner terrain-first batch: settle the whole-site landform/height layers and foundation envelope before further isolated connector repair.18native candidates lack continuous source terrain;7existing sources need macro review. Adjust blockouts and stair bays to a coherent terrain design, then engineer paths/retaining edges and real basement terrain punches. No acceptance from route strips."
@@ -4794,7 +5012,9 @@
             "development/levels/rebuild/wld-18/terrain-world/verification.json",
             "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/README.md",
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
-            "development/levels/rebuild/terrain-overall-pass/README.md"
+            "development/levels/rebuild/terrain-overall-pass/README.md",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json"
           ],
           "defects": [
             "DEV-363",
@@ -4962,7 +5182,9 @@
             "development/levels/rebuild/terrain-overall-pass/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/saved-terrain-proof.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/graded-idempotence.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/visual-review.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/visual-review.json",
+            "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+            "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json"
           ],
           "defects": [
             "DEV-363",
@@ -5079,9 +5301,10 @@
   "follow_on_scope_note": "After the28base locations and cemetery/mortuary annex,continue every remaining unfinished location in the current catalog/backlog,with regular checkpoints and synchronization; owner7November2026.",
   "terrain_priority_amendment": {
     "date": "2026-11-07",
-    "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+    "source_sha": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
     "owner_direction": "Overall terrain layers and elevations first; reshuffle blockouts as needed so coherent site terrain, structures and then routes agree.",
     "evidence": "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
-    "scope": "All29packets;25remaining candidates and4retained mature sources with individual audits; full follow-on goal preserved"
+    "scope": "All29packets;25remaining candidates and4retained mature sources with individual audits; full follow-on goal preserved",
+    "latest_execution": "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json"
   }
 }
