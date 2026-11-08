@@ -5,6 +5,8 @@ on:
     paths:
       - 'src/main/java/org/beckenburg/*EditorAgent*.java'
       - 'src/main/java/org/beckenburg/EditorAgentCli.java'
+      - 'src/main/java/org/beckenburg/HeadlessMaterialEditor.java'
+      - 'src/main/java/org/beckenburg/MaterialEditorAgent.java'
       - 'src/main/java/org/beckenburg/editor/EditorObservationBridge.java'
       - 'src/main/java/org/beckenburg/editor/EditorAgentProtocol.java'
       - 'src/main/java/org/beckenburg/DeveloperLevelEditor.java'
@@ -28,6 +30,7 @@ on:
       - 'src/test/java/org/beckenburg/LevelAuthoringRecoveryTest.java'
       - 'tools/verify_editor_agent_host.cmd'
       - 'tools/verify_editor_agent_cli.py'
+      - 'tools/verify_mesh_agent_cli.py'
       - 'tools/editor_mcp.py'
       - 'tools/editor_mcp_requirements.txt'
       - 'tools/verify_editor_mcp.py'

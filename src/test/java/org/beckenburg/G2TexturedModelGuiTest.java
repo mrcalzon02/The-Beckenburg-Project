@@ -1087,6 +1087,7 @@ public final class G2TexturedModelGuiTest {
         check(!Arrays.equals(colors,reviewPixels()),"Agent opacity edit did not affect displayed runtime pixels");
         var saved=EditorTopologyProject.open(project.documentPath());
         check(saved.snapshot().equals(project.snapshot())&&saved.savedWorkspace()!=null,"Native save must retain both mesh and human workspace");
+        verifyHeadlessMesh(access);
         published.set(null);edt(()->button(ui,"apply"));await(()->published.get()!=null);
         var game=GlbProps.model(published.get());var texture=saved.snapshot().materials().get(0);
         var png=ImageIO.read(new java.io.ByteArrayInputStream(texture.png()));
@@ -1103,6 +1104,25 @@ public final class G2TexturedModelGuiTest {
     private static void projectedMouse(JLabel view,int type,int x,int y){
         view.dispatchEvent(new java.awt.event.MouseEvent(view,type,System.currentTimeMillis(),java.awt.event.InputEvent.BUTTON1_DOWN_MASK,
             x,y,1,false,type==java.awt.event.MouseEvent.MOUSE_DRAGGED?0:1));
+    }
+    private void verifyHeadlessMesh(EditorObservationBridge access)throws Exception{
+        var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");
+        var view=(JComboBox<?>)field(workspace,"materialView");
+        edt(()->view.setSelectedIndex(0));reviewPixels();
+        byte[] pixels=materialRequest(access,"/capture?revision="+project.revision()).body();
+        String expected=java.util.HexFormat.of().formatHex(java.security.MessageDigest.getInstance("SHA-256").digest(pixels));
+        String javaHome=System.getenv().getOrDefault("JAVA_HOME",System.getProperty("java.home"));
+        var hostCode=Path.of(EditorAgentCli.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+        String classpath=Files.isRegularFile(hostCode)?hostCode.toString():System.getProperty("java.class.path");
+        var verify=new ProcessBuilder(System.getenv("EDITOR_MCP_PYTHON"),"tools/verify_mesh_agent_cli.py",
+            Path.of(javaHome,"bin","java").toString(),classpath,project.documentPath().toString(),expected,
+            Long.toString(project.snapshot().faces().get(2).id())).inheritIO();
+        // The installed fixture injects its Swing test driver into the parent process only.
+        verify.environment().remove("JAVA_TOOL_OPTIONS");
+        var child=verify.start();
+        try{check(child.waitFor(90,java.util.concurrent.TimeUnit.SECONDS)&&child.exitValue()==0,"Headless mesh acceptance failed");}
+        finally{if(child.isAlive())child.destroyForcibly();}
+        edt(()->view.setSelectedIndex(1));reviewPixels();
     }
     private int[][] seamMipViews(String evidence)throws Exception{
         int[][] views=new int[2][];

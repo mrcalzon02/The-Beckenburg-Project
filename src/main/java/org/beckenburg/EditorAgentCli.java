@@ -31,6 +31,14 @@ public final class EditorAgentCli {
         if(code!=0)System.exit(code);
     }
     private static int open(String[] args,PrintStream responses)throws Exception{
+        if(args.length>0&&args[0].equalsIgnoreCase("MESH")){
+            if(args.length!=2&&(args.length!=4||!args[2].equals("--face")))
+                throw new IllegalArgumentException("Usage: EditorAgentCli MESH document.btop [--face native-id]");
+            System.setProperty("java.awt.headless","true");
+            var host=new HeadlessMaterialEditor(Path.of(args[1]),args.length==4?Long.parseLong(args[3]):null);
+            return run(new EditorAgentService<>(host,host.project().createHistory(60)),
+                new BufferedReader(new InputStreamReader(System.in,StandardCharsets.UTF_8)),responses);
+        }
         if(args.length<2||args.length>3||(args.length==3&&!args[2].equals("--recover-previous")))
             throw new IllegalArgumentException("Usage: EditorAgentCli CASTLE|HOUSE|SCHOOL|... project-home [--recover-previous]");
         System.setProperty("user.home",Path.of(args[1]).toAbsolutePath().normalize().toString());

@@ -76,6 +76,16 @@ java -cp build/beckenburg-game.jar org.beckenburg.EditorAgentCli HOUSE C:/path/t
 
 Use `CASTLE` or a supported `HouseMap.Site` name. The explicit home selects the host's documents and preferences. To inspect unsaved changes in an open human editor, connect to that editor's authenticated session.
 
+For a mesh, pass the native BTOP document itself. The process uses the Material Editor's validated operations, bounded native history, file revision checks and game renderer.
+
+```text
+java -cp build/beckenburg-game.jar org.beckenburg.EditorAgentCli MESH "C:/assets/door.btop"
+```
+
+Send `revision`, then `selection<TAB>revision` to read the face saved in the workspace. The headless material view initially selects the top layer. If the workspace has no selected face, the result is null. Append `--face 12` to inspect a specific native face for the session. This option leaves the saved workspace selection intact. Use `set-layer-opacity` with the face and layer IDs, then read the selection again at the returned revision. Save and reopen use the existing BTOP path. A competing writer must reopen before it can save over a newer version.
+
+Mesh captures use the Material Editor's 280 × 190 base-material view at zero rotation with all faces enabled. Give `capture` a new PNG filename. The `visible-material` diagnostic tests whether the selected face contributes pixels. A bound face behind another surface fails the coverage check. The authenticated desktop session remains the entry point for inspecting its unsaved document, camera, visibility filters or diagnostic mip.
+
 Requests are UTF-8 lines with fields separated by **literal tabs**. Start with `summary` for the active revision, then use the revision returned by each operation. For a local edit, use `node` to read the target and `verify-position` to check the resulting coordinates. Use `inspect` when you need the entire scene.
 
 ```text

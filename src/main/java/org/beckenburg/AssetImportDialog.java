@@ -720,68 +720,25 @@ public final class AssetImportDialog {
         var host=new MaterialHost(topologyProject);host.checkAccess();
         return new EditorAgentService<>(host,meshHistory,this::meshChanged,()->{});
     }
-    private final class MaterialHost implements EditorAgentService.Host<EditorTopologyProject.State>,EditorAgentService.SelectionSource{
-        private final EditorTopologyProject document;
-        MaterialHost(EditorTopologyProject document){this.document=document;}
+    private final class MaterialHost extends MaterialEditorAgent {
+        MaterialHost(EditorTopologyProject document){super(document);}
         public void checkAccess(){
             if(!SwingUtilities.isEventDispatchThread()||document==null||document!=topologyProject||
                 materialDialog==null||!materialDialog.isShowing()||busy||modelingPreparing||modelingPreview!=null||projectedStroke!=null)
                 throw new IllegalStateException("Material document is unavailable or has an uncommitted preview");
         }
-        public EditorTopologyProject project(){return document;}
-        public EditorAgentService.DiskState compareSaved(EditorTopologyProject.State live)throws IOException{
-            var saved=EditorTopologyProject.decode(EditorDocumentStore.readDocument(document.documentPath()));
-            return live.equals(saved)?EditorAgentService.DiskState.MATCHES:EditorAgentService.DiskState.DIFFERS;
+        Long selectedFaceId(){return selectedHit==null?null:selectedHit.faceId();}
+        EditorMeshMaterial.LayerInfo selectedLayer(EditorMeshMaterial material){
+            return material==shownPaintMaterial?paintLayer.getSelectedValue():null;
         }
-        public long revision(){return document.revision();}
-        public java.util.Set<EditorAgentService.Capability> capabilities(){
-            return java.util.Set.of(EditorAgentService.Capability.INSPECT,EditorAgentService.Capability.CAPTURE,EditorAgentService.Capability.TEST,
-                EditorAgentService.Capability.TRANSACT,EditorAgentService.Capability.UNDO,EditorAgentService.Capability.REDO,
-                EditorAgentService.Capability.SAVE,EditorAgentService.Capability.REOPEN);
-        }
-        public List<String> operations(){return List.of("set-layer-opacity");}
-        public Map<String,Map<String,String>> operationParameters(){
-            return Map.of("set-layer-opacity",Map.of("face","integer","layer","string","opacity","integer"));
-        }
-        public EditorAgentService.Selection selection(){
-            if(selectedHit==null)return null;
-            var face=document.snapshot().faces().stream().filter(f->f.id()==selectedHit.faceId()).findFirst().orElse(null);
-            if(face==null)return null;
-            var details=new LinkedHashMap<String,String>();details.put("material",face.material());
-            var layer=paintLayer.getSelectedValue();
-            if(layer!=null){details.put("layer",layer.id());details.put("opacity",Integer.toString(layer.style().opacity()));details.put("blend",layer.style().blend().name());}
-            return new EditorAgentService.Selection("FACE",Long.toString(face.id()),details);
-        }
-        public List<String> tests(){return List.of("visible-material");}
-        public void apply(String operation,Map<String,String> arguments){
-            if(!operation.equals("set-layer-opacity")||!arguments.keySet().equals(java.util.Set.of("face","layer","opacity")))
-                throw new IllegalArgumentException("Expected face, layer and opacity");
-            var preview=document.previewLayerOpacity(Long.parseLong(arguments.get("face")),arguments.get("layer"),Integer.parseInt(arguments.get("opacity")));
-            document.applyPreview(preview);
-        }
-        public void validate(){checkAccess();} // Every native preview constructs a validated immutable State.
         public void save()throws IOException{saveAuthoringDocument();}
         public void reopen()throws IOException{reopenAuthoringDocument();}
         public void didReopen(){restoreWorkspace(document.savedWorkspace());}
-        private MaterialReviewFrame frame(){
+        MaterialReviewFrame frame(){
             if(materialRendering||projectedFrame==null||materialRenderState!=document.snapshot()||
                 !(materialRuntime.getIcon() instanceof ImageIcon icon)||icon.getImage()!=projectedFrame.image)
                 throw new IllegalStateException("Wait for the current native material render");
             return projectedFrame;
-        }
-        public EditorAgentService.Capture capture(Path path)throws IOException{
-            var image=frame().image;
-            if(!javax.imageio.ImageIO.write(image,"png",path.toFile()))throw new IOException("PNG writer unavailable");
-            return new EditorAgentService.Capture(path,image.getWidth(),image.getHeight(),"SceneRenderer material review");
-        }
-        public List<EditorAgentService.Check> test(String id){
-            var frame=frame();
-            var face=selectedHit==null?null:document.snapshot().faces().stream().filter(f->f.id()==selectedHit.faceId()).findFirst().orElse(null);
-            if(face==null)return List.of(new EditorAgentService.Check("FACE_SELECTED",false,"Select a native face"));
-            var binding=document.snapshot().materials().stream().filter(m->m.key().equals(face.material())).findFirst().orElse(null);
-            return List.of(new EditorAgentService.Check("BOUND_MATERIAL",binding!=null,binding==null?
-                "Face "+face.id()+" has no bound material":"Face "+face.id()+" uses "+binding.key()+" ("+binding.width()+" × "+binding.height()+")"),
-                new EditorAgentService.Check("VISIBLE_FACE",frame.boundTo(face.id(),face.material()),"Native rendered coverage for face "+face.id()));
         }
     }
     private void selectMaterialFace(long id){
