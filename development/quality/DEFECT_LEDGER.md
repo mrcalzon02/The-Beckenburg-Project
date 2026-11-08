@@ -5204,6 +5204,20 @@ Evidence and verification: development/levels/rebuild/verification/roster-landin
 
 Older-map obligation: Inspect each older map handoff against its actual current source and evidence; a regenerated planning note is not proof of a remaining runtime defect or of completed work.
 
+### DEV-379 — Legacy advisory stair run/riser fields lag the actual authored coordinate revision
+
+**Status:** OPEN; native coordinate/triangle results remain authoritative · **Affected:** COLLEGE L84, MANSION L59/L60 and retrospective roster stair dimension metadata
+
+Changed turn-landing paths retain inherited run_m/risers values; CollegeL84 advertises4.8m/18risers while its current flight coordinates span4.65m and actual native treads number17.
+
+Cause / uncertainty: The authored geometry builder derives steps from point coordinates, while inherited schematic dimension hints are independent fields and were not normalized during path revision.
+
+Fix / next action: Use current authored points, exact exported tread centres and physics-contract identities for present movement/fit evidence. Normalize legacy dimension hints in the next coordinated source-regeneration checkpoint and audit all other stair links; do not treat advisory fields as measured built dimensions. This is not a reason to weaken current native checks.
+
+Evidence and verification: development/levels/rebuild/{college,mansion}/rough-layout.json; structures/{college,mansion}/physics-contract.json; verification/roster-landings-2026-11-07/
+
+Older-map obligation: Compare each older source metadata row to its actual built geometry before consuming it for runtime/AI/service authoring. No global metadata correctness inferred from tested native paths.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

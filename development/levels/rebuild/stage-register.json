@@ -165,7 +165,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/structures/academy/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -176,7 +176,11 @@
             "development/levels/rebuild/academy/native-movement-batch.md",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
           ],
           "defects": [
             "DEV-354",
@@ -185,9 +189,10 @@
             "DEV-357",
             "DEV-361",
             "DEV-362",
-            "DEV-363"
+            "DEV-363",
+            "DEV-377"
           ],
-          "next_action": "Current explicit stair audit:170/221source segments pass both directions across roster;51failures remain. Repair actual landing, wall and unsupported contacts and complete flat-landing chains; bridge runtime ownership/navigation/services without dropping rough placements. Point support alone is not acceptance."
+          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -312,7 +317,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/structures/asylum/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -323,7 +328,11 @@
             "development/levels/rebuild/asylum/native-movement-batch.md",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
           ],
           "defects": [
             "DEV-354",
@@ -332,9 +341,10 @@
             "DEV-357",
             "DEV-361",
             "DEV-362",
-            "DEV-363"
+            "DEV-363",
+            "DEV-377"
           ],
-          "next_action": "Current explicit stair audit:170/221source segments pass both directions across roster;51failures remain. Repair actual landing, wall and unsupported contacts and complete flat-landing chains; bridge runtime ownership/navigation/services without dropping rough placements. Point support alone is not acceptance."
+          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -784,7 +794,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/structures/church/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -795,7 +805,11 @@
             "development/levels/rebuild/church/native-movement-batch.md",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
           ],
           "defects": [
             "DEV-354",
@@ -804,9 +818,10 @@
             "DEV-357",
             "DEV-361",
             "DEV-362",
-            "DEV-363"
+            "DEV-363",
+            "DEV-377"
           ],
-          "next_action": "Current explicit stair audit:170/221source segments pass both directions across roster;51failures remain. Repair actual landing, wall and unsupported contacts and complete flat-landing chains; bridge runtime ownership/navigation/services without dropping rough placements. Point support alone is not acceptance."
+          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -913,7 +928,7 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "451300b05e9f6b8ddbe033d7ce6e87c54c166eb3",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "tools/build_map_rebuild_roughs.py",
             "development/levels/rebuild/college/rough-layout.json",
@@ -924,14 +939,16 @@
             "development/levels/rebuild/college/rough-render-verification.json",
             "development/levels/rebuild/previews/college-revised-rough-plan.png",
             "development/levels/rebuild/college/search-envelope.json",
-            "development/levels/rebuild/college/search-layout.json"
+            "development/levels/rebuild/college/search-layout.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json"
           ],
           "defects": [],
           "next_action": "Continue physical terrain/editor punch integration, guarded and structurally supported flights/landings, full capsule sweeps and roster source-library placement. Point support/headroom results do not unlock a map."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/structures/college/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -943,7 +960,11 @@
             "development/levels/rebuild/college/native-movement-batch.md",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
           ],
           "defects": [
             "DEV-354",
@@ -952,9 +973,12 @@
             "DEV-357",
             "DEV-361",
             "DEV-362",
-            "DEV-363"
+            "DEV-363",
+            "DEV-377",
+            "DEV-375",
+            "DEV-378"
           ],
-          "next_action": "Current explicit stair audit:170/221source segments pass both directions across roster;51failures remain. Repair actual landing, wall and unsupported contacts and complete flat-landing chains; bridge runtime ownership/navigation/services without dropping rough placements. Point support alone is not acceptance."
+          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -979,11 +1003,13 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/furnishings/college/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
-            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json"
           ],
           "defects": [
             "DEV-370",
@@ -1077,7 +1103,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/structures/farmhouse/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -1088,7 +1114,11 @@
             "development/levels/rebuild/farmhouse/native-movement-batch.md",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
           ],
           "defects": [
             "DEV-354",
@@ -1097,9 +1127,10 @@
             "DEV-357",
             "DEV-361",
             "DEV-362",
-            "DEV-363"
+            "DEV-363",
+            "DEV-377"
           ],
-          "next_action": "Current explicit stair audit:170/221source segments pass both directions across roster;51failures remain. Repair actual landing, wall and unsupported contacts and complete flat-landing chains; bridge runtime ownership/navigation/services without dropping rough placements. Point support alone is not acceptance."
+          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -1568,7 +1599,7 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "451300b05e9f6b8ddbe033d7ce6e87c54c166eb3",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "tools/build_map_rebuild_roughs.py",
             "development/levels/rebuild/mansion/rough-layout.json",
@@ -1579,14 +1610,16 @@
             "development/levels/rebuild/mansion/rough-render-verification.json",
             "development/levels/rebuild/previews/mansion-revised-rough-plan.png",
             "development/levels/rebuild/mansion/search-envelope.json",
-            "development/levels/rebuild/mansion/search-layout.json"
+            "development/levels/rebuild/mansion/search-layout.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json"
           ],
           "defects": [],
           "next_action": "Continue physical terrain/editor punch integration, guarded and structurally supported flights/landings, full capsule sweeps and roster source-library placement. Point support/headroom results do not unlock a map."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/structures/mansion/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -1598,7 +1631,11 @@
             "development/levels/rebuild/mansion/native-movement-batch.md",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
           ],
           "defects": [
             "DEV-354",
@@ -1607,9 +1644,12 @@
             "DEV-357",
             "DEV-361",
             "DEV-362",
-            "DEV-363"
+            "DEV-363",
+            "DEV-377",
+            "DEV-375",
+            "DEV-378"
           ],
-          "next_action": "Current explicit stair audit:170/221source segments pass both directions across roster;51failures remain. Repair actual landing, wall and unsupported contacts and complete flat-landing chains; bridge runtime ownership/navigation/services without dropping rough placements. Point support alone is not acceptance."
+          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -1634,11 +1674,13 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/furnishings/mansion/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
-            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json"
           ],
           "defects": [
             "DEV-370",
@@ -1733,7 +1775,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/structures/prison/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -1744,7 +1786,11 @@
             "development/levels/rebuild/prison/native-movement-batch.md",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
           ],
           "defects": [
             "DEV-354",
@@ -1753,9 +1799,10 @@
             "DEV-357",
             "DEV-361",
             "DEV-362",
-            "DEV-363"
+            "DEV-363",
+            "DEV-377"
           ],
-          "next_action": "Current explicit stair audit:170/221source segments pass both directions across roster;51failures remain. Repair actual landing, wall and unsupported contacts and complete flat-landing chains; bridge runtime ownership/navigation/services without dropping rough placements. Point support alone is not acceptance."
+          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -1877,7 +1924,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/structures/school/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -1888,7 +1935,11 @@
             "development/levels/rebuild/school/native-movement-batch.md",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
           ],
           "defects": [
             "DEV-354",
@@ -1897,9 +1948,10 @@
             "DEV-357",
             "DEV-361",
             "DEV-362",
-            "DEV-363"
+            "DEV-363",
+            "DEV-377"
           ],
-          "next_action": "Current explicit stair audit:170/221source segments pass both directions across roster;51failures remain. Repair actual landing, wall and unsupported contacts and complete flat-landing chains; bridge runtime ownership/navigation/services without dropping rough placements. Point support alone is not acceptance."
+          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -2235,7 +2287,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/structures/wld-03/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -2246,7 +2298,11 @@
             "development/levels/rebuild/wld-03/native-movement-batch.md",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
           ],
           "defects": [
             "DEV-354",
@@ -2257,9 +2313,10 @@
             "DEV-362",
             "DEV-363",
             "DEV-359",
-            "DEV-360"
+            "DEV-360",
+            "DEV-377"
           ],
-          "next_action": "Current explicit stair audit:170/221source segments pass both directions across roster;51failures remain. Repair actual landing, wall and unsupported contacts and complete flat-landing chains; bridge runtime ownership/navigation/services without dropping rough placements. Point support alone is not acceptance."
+          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -2375,7 +2432,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/structures/wld-04/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -2386,7 +2443,11 @@
             "development/levels/rebuild/wld-04/native-movement-batch.md",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
           ],
           "defects": [
             "DEV-354",
@@ -2397,9 +2458,10 @@
             "DEV-362",
             "DEV-363",
             "DEV-359",
-            "DEV-360"
+            "DEV-360",
+            "DEV-377"
           ],
-          "next_action": "Current explicit stair audit:170/221source segments pass both directions across roster;51failures remain. Repair actual landing, wall and unsupported contacts and complete flat-landing chains; bridge runtime ownership/navigation/services without dropping rough placements. Point support alone is not acceptance."
+          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -2515,7 +2577,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/structures/wld-05/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -2526,7 +2588,11 @@
             "development/levels/rebuild/wld-05/native-movement-batch.md",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
           ],
           "defects": [
             "DEV-354",
@@ -2537,9 +2603,10 @@
             "DEV-362",
             "DEV-363",
             "DEV-359",
-            "DEV-360"
+            "DEV-360",
+            "DEV-377"
           ],
-          "next_action": "Current explicit stair audit:170/221source segments pass both directions across roster;51failures remain. Repair actual landing, wall and unsupported contacts and complete flat-landing chains; bridge runtime ownership/navigation/services without dropping rough placements. Point support alone is not acceptance."
+          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -2653,7 +2720,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/structures/wld-06/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -2664,7 +2731,11 @@
             "development/levels/rebuild/wld-06/native-movement-batch.md",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
           ],
           "defects": [
             "DEV-354",
@@ -2673,9 +2744,10 @@
             "DEV-357",
             "DEV-361",
             "DEV-362",
-            "DEV-363"
+            "DEV-363",
+            "DEV-377"
           ],
-          "next_action": "Current explicit stair audit:170/221source segments pass both directions across roster;51failures remain. Repair actual landing, wall and unsupported contacts and complete flat-landing chains; bridge runtime ownership/navigation/services without dropping rough placements. Point support alone is not acceptance."
+          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -2789,7 +2861,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/structures/wld-07/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -2800,7 +2872,11 @@
             "development/levels/rebuild/wld-07/native-movement-batch.md",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
           ],
           "defects": [
             "DEV-354",
@@ -2809,9 +2885,10 @@
             "DEV-357",
             "DEV-361",
             "DEV-362",
-            "DEV-363"
+            "DEV-363",
+            "DEV-377"
           ],
-          "next_action": "Current explicit stair audit:170/221source segments pass both directions across roster;51failures remain. Repair actual landing, wall and unsupported contacts and complete flat-landing chains; bridge runtime ownership/navigation/services without dropping rough placements. Point support alone is not acceptance."
+          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -2925,7 +3002,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/structures/wld-08/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -2936,7 +3013,11 @@
             "development/levels/rebuild/wld-08/native-movement-batch.md",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
           ],
           "defects": [
             "DEV-354",
@@ -2945,9 +3026,10 @@
             "DEV-357",
             "DEV-361",
             "DEV-362",
-            "DEV-363"
+            "DEV-363",
+            "DEV-377"
           ],
-          "next_action": "Current explicit stair audit:170/221source segments pass both directions across roster;51failures remain. Repair actual landing, wall and unsupported contacts and complete flat-landing chains; bridge runtime ownership/navigation/services without dropping rough placements. Point support alone is not acceptance."
+          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -3063,7 +3145,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/structures/wld-09/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3075,7 +3157,11 @@
             "development/levels/rebuild/wld-09/native-movement-batch.md",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
           ],
           "defects": [
             "DEV-354",
@@ -3085,9 +3171,10 @@
             "DEV-361",
             "DEV-362",
             "DEV-363",
-            "DEV-364"
+            "DEV-364",
+            "DEV-377"
           ],
-          "next_action": "Current explicit stair audit:170/221source segments pass both directions across roster;51failures remain. Repair actual landing, wall and unsupported contacts and complete flat-landing chains; bridge runtime ownership/navigation/services without dropping rough placements. Point support alone is not acceptance."
+          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -3203,7 +3290,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/structures/wld-10/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3214,7 +3301,11 @@
             "development/levels/rebuild/wld-10/native-movement-batch.md",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
           ],
           "defects": [
             "DEV-354",
@@ -3225,9 +3316,10 @@
             "DEV-362",
             "DEV-363",
             "DEV-359",
-            "DEV-360"
+            "DEV-360",
+            "DEV-377"
           ],
-          "next_action": "Current explicit stair audit:170/221source segments pass both directions across roster;51failures remain. Repair actual landing, wall and unsupported contacts and complete flat-landing chains; bridge runtime ownership/navigation/services without dropping rough placements. Point support alone is not acceptance."
+          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -3341,7 +3433,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/structures/wld-11/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3352,7 +3444,11 @@
             "development/levels/rebuild/wld-11/native-movement-batch.md",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
           ],
           "defects": [
             "DEV-354",
@@ -3361,9 +3457,10 @@
             "DEV-357",
             "DEV-361",
             "DEV-362",
-            "DEV-363"
+            "DEV-363",
+            "DEV-377"
           ],
-          "next_action": "Current explicit stair audit:170/221source segments pass both directions across roster;51failures remain. Repair actual landing, wall and unsupported contacts and complete flat-landing chains; bridge runtime ownership/navigation/services without dropping rough placements. Point support alone is not acceptance."
+          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -3479,7 +3576,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/structures/wld-12/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3490,7 +3587,11 @@
             "development/levels/rebuild/wld-12/native-movement-batch.md",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
           ],
           "defects": [
             "DEV-354",
@@ -3501,9 +3602,10 @@
             "DEV-362",
             "DEV-363",
             "DEV-359",
-            "DEV-360"
+            "DEV-360",
+            "DEV-377"
           ],
-          "next_action": "Current explicit stair audit:170/221source segments pass both directions across roster;51failures remain. Repair actual landing, wall and unsupported contacts and complete flat-landing chains; bridge runtime ownership/navigation/services without dropping rough placements. Point support alone is not acceptance."
+          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -3617,7 +3719,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/structures/wld-13/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3628,7 +3730,11 @@
             "development/levels/rebuild/wld-13/native-movement-batch.md",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
           ],
           "defects": [
             "DEV-354",
@@ -3637,9 +3743,10 @@
             "DEV-357",
             "DEV-361",
             "DEV-362",
-            "DEV-363"
+            "DEV-363",
+            "DEV-377"
           ],
-          "next_action": "Current explicit stair audit:170/221source segments pass both directions across roster;51failures remain. Repair actual landing, wall and unsupported contacts and complete flat-landing chains; bridge runtime ownership/navigation/services without dropping rough placements. Point support alone is not acceptance."
+          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -3745,16 +3852,18 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "451300b05e9f6b8ddbe033d7ce6e87c54c166eb3",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
-            "development/levels/rebuild/wld-14/rough-layout.json"
+            "development/levels/rebuild/wld-14/rough-layout.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json"
           ],
           "defects": [],
           "next_action": "Continue physical terrain/editor punch integration, guarded and structurally supported flights/landings, full capsule sweeps and roster source-library placement. Point support/headroom results do not unlock a map."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/structures/wld-14/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3766,7 +3875,11 @@
             "development/levels/rebuild/wld-14/native-movement-batch.md",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
           ],
           "defects": [
             "DEV-354",
@@ -3777,9 +3890,12 @@
             "DEV-362",
             "DEV-363",
             "DEV-373",
-            "DEV-374"
+            "DEV-374",
+            "DEV-377",
+            "DEV-376",
+            "DEV-378"
           ],
-          "next_action": "Current explicit stair audit:170/221source segments pass both directions across roster;51failures remain. Repair actual landing, wall and unsupported contacts and complete flat-landing chains; bridge runtime ownership/navigation/services without dropping rough placements. Point support alone is not acceptance."
+          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -3810,12 +3926,14 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/furnishings/wld-14/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
             "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/preservation.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/preservation.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json"
           ],
           "defects": [
             "DEV-370",
@@ -3901,7 +4019,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/structures/wld-15/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3912,7 +4030,11 @@
             "development/levels/rebuild/wld-15/native-movement-batch.md",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
           ],
           "defects": [
             "DEV-354",
@@ -3923,9 +4045,10 @@
             "DEV-362",
             "DEV-363",
             "DEV-359",
-            "DEV-360"
+            "DEV-360",
+            "DEV-377"
           ],
-          "next_action": "Current explicit stair audit:170/221source segments pass both directions across roster;51failures remain. Repair actual landing, wall and unsupported contacts and complete flat-landing chains; bridge runtime ownership/navigation/services without dropping rough placements. Point support alone is not acceptance."
+          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -4038,7 +4161,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/structures/wld-16/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4049,7 +4172,11 @@
             "development/levels/rebuild/wld-16/native-movement-batch.md",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
           ],
           "defects": [
             "DEV-354",
@@ -4058,9 +4185,10 @@
             "DEV-357",
             "DEV-361",
             "DEV-362",
-            "DEV-363"
+            "DEV-363",
+            "DEV-377"
           ],
-          "next_action": "Current explicit stair audit:170/221source segments pass both directions across roster;51failures remain. Repair actual landing, wall and unsupported contacts and complete flat-landing chains; bridge runtime ownership/navigation/services without dropping rough placements. Point support alone is not acceptance."
+          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -4173,7 +4301,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/structures/wld-17/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4184,7 +4312,11 @@
             "development/levels/rebuild/wld-17/native-movement-batch.md",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
           ],
           "defects": [
             "DEV-354",
@@ -4193,9 +4325,10 @@
             "DEV-357",
             "DEV-361",
             "DEV-362",
-            "DEV-363"
+            "DEV-363",
+            "DEV-377"
           ],
-          "next_action": "Current explicit stair audit:170/221source segments pass both directions across roster;51failures remain. Repair actual landing, wall and unsupported contacts and complete flat-landing chains; bridge runtime ownership/navigation/services without dropping rough placements. Point support alone is not acceptance."
+          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -4310,7 +4443,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/structures/wld-18/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4322,7 +4455,11 @@
             "development/levels/rebuild/wld-18/native-movement-batch.md",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
           ],
           "defects": [
             "DEV-354",
@@ -4331,9 +4468,10 @@
             "DEV-357",
             "DEV-361",
             "DEV-362",
-            "DEV-363"
+            "DEV-363",
+            "DEV-377"
           ],
-          "next_action": "Current explicit stair audit:170/221source segments pass both directions across roster;51failures remain. Repair actual landing, wall and unsupported contacts and complete flat-landing chains; bridge runtime ownership/navigation/services without dropping rough placements. Point support alone is not acceptance."
+          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -4453,7 +4591,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+          "source_sha": "00f2d2e5c3b8e3150f7de5e0c2e843fe7140b11e",
           "evidence": [
             "development/levels/rebuild/structures/wld-07-mortuary/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4464,7 +4602,11 @@
             "development/levels/rebuild/wld-07-mortuary/native-movement-batch.md",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
             "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
-            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json"
+            "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/complete-route-sweeps.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/failure-contacts.tsv",
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/milestone-comparison.json"
           ],
           "defects": [
             "DEV-354",
@@ -4473,9 +4615,10 @@
             "DEV-357",
             "DEV-361",
             "DEV-362",
-            "DEV-363"
+            "DEV-363",
+            "DEV-377"
           ],
-          "next_action": "Current explicit stair audit:170/221source segments pass both directions across roster;51failures remain. Repair actual landing, wall and unsupported contacts and complete flat-landing chains; bridge runtime ownership/navigation/services without dropping rough placements. Point support alone is not acceptance."
+          "next_action": "Current complete native audit:182/221vertical segments and44/84full stair links pass each direction; three connected multi-link chains pass. Repair remaining39vertical segments/40full links/four chains from exact contacts, plus flat network, terrain/guards/owner/services. Preserve all124rough allocations; no map unlock."
         },
         "S04": {
           "status": "IN_PROGRESS",
