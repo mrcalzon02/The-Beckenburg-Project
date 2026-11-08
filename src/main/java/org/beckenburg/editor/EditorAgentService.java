@@ -121,10 +121,7 @@ public final class EditorAgentService<S> {
         capable(Capability.INSPECT);
         require(expected);
         var project = host.project();
-        for (var node : project.hierarchy()) {
-            if (node.id().equals(id)) return new Evidence<>(project.id(), expected, node);
-        }
-        throw new IllegalArgumentException("Unknown native hierarchy node");
+        return new Evidence<>(project.id(), expected, project.node(id));
     }
     private void capable(Capability capability){
         host.checkAccess();

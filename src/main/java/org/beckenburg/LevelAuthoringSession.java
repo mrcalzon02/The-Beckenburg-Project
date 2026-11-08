@@ -121,12 +121,13 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
     }
     public synchronized List<Node> hierarchy(){
         ArrayList<Node> result=new ArrayList<>();
-        for(int i=0;i<props.size();i++){
-            Prop p=props.get(i);
-            result.add(new Node(propIds.get(i),"PROP",p.mesh()+" / room "+p.room(),
-                p.x(),p.y(),p.z()));
-        }
+        for(int i=0;i<props.size();i++) result.add(propNode(i));
         return List.copyOf(result);
+    }
+    public synchronized Node node(String id) { return propNode(indexOf(id)); }
+    private Node propNode(int index) {
+        var prop = props.get(index);
+        return new Node(propIds.get(index),"PROP",prop.mesh()+" / room "+prop.room(),prop.x(),prop.y(),prop.z());
     }
     public List<Asset> assets(){
         ArrayList<Asset> result=new ArrayList<>();

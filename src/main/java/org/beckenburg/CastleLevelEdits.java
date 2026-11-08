@@ -116,6 +116,9 @@ public final class CastleLevelEdits {
         return false;
     }
     public synchronized List<Surface> surfaces(){return List.copyOf(surfaces.values());}
+    synchronized Surface surfaceById(String id) { return surfaces.get(id); }
+    synchronized Prop propById(String id) { return props.get(id); }
+    synchronized Lamp lampById(String id) { return lamps.get(id); }
     /** Cached immutable collision/shadow primitives: per-pixel light rays must
      * never rebuild or allocate entire geometry lists while rendering. */
     private void ensureGeometryCache(){

@@ -47,6 +47,11 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
         assert 'state' not in summary and 'hierarchy' not in summary
         assert page['result'] == {'total': len(full['hierarchy']), 'offset': 0, 'nodes': [node]}
         assert one['result'] == node and one['revision'] == rev
+        first_by_id = {}
+        for row in full['hierarchy']:
+            first_by_id.setdefault(row['id'], row)
+        direct = run([f'node\t{rev}\t{node_id}' for node_id in first_by_id])
+        assert [reply['result']['result'] for reply in direct] == list(first_by_id.values())
         invalid = run([f'node\t{rev-1}\t{node["id"]}', f'node\t{rev}\tmissing-node',
                        f'hierarchy\t{rev}\t0\t65'], expected=1)
         assert all(not row['ok'] for row in invalid)

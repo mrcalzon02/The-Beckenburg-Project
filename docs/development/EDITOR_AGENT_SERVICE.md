@@ -83,7 +83,7 @@ The process test also runs the complete House workflow while the unrelated defau
 
 Start with `summary` to get the active scene ID, revision, capabilities, operations and test names. `hierarchy<TAB>revision<TAB>offset<TAB>limit` returns the total count and up to 64 native hierarchy rows in editor order. `node<TAB>revision<TAB>id` returns one row with its stable ID, kind, label and position. The angle-bracketed TAB denotes one literal tab in the existing line protocol. Use the returned revision for a validated edit. Refresh the summary after a stale revision error. Full `inspect` remains available for full native snapshot data.
 
-Both localized queries use the host's current human editor hierarchy on its owner thread. The service keeps no independent scene index. The small replies bound transmitted data. Host adapters can still construct the full hierarchy internally. On the November 7 verification fixtures the full and single-node UTF-8 responses were 42,296 and 191 bytes for House, and 103,149 and 154 bytes for Castle. These measurements cover payload size only.
+Both localized queries use the host's current human editor hierarchy on its owner thread. The service keeps no independent scene index. The small replies bound transmitted data. A single-node request builds one row in the two native adapters. Castle resolves the ID in its existing scene maps. Mission levels locate it in the existing stable-ID list and read the corresponding prop. Hierarchy paging still constructs the full hierarchy internally. On the November 7 verification fixtures the full and single-node UTF-8 responses were 42,296 and 191 bytes for House, and 103,149 and 154 bytes for Castle. These measurements cover payload size only.
 
 ## Batched headless edits
 

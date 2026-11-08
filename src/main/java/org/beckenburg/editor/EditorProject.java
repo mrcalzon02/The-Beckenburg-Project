@@ -28,6 +28,11 @@ public interface EditorProject<S> {
     String title();
     Path documentPath();
     List<Node> hierarchy();
+    /** Hosts can resolve one human hierarchy row directly from their native storage. */
+    default Node node(String id) {
+        for (var row : hierarchy()) if (row.id().equals(id)) return row;
+        throw new IllegalArgumentException("Unknown native hierarchy node");
+    }
     List<Asset> assets();
     S snapshot();
     void restore(S snapshot);
