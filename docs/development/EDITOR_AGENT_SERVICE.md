@@ -1,6 +1,6 @@
 # Editor Agent Service
 
-Owner priority, 2026-11-01: finish a small service over proven human editor operations, then continue the G0–G12 staged plan. Broad scripting and authenticated MCP remain later integrations. This priority supersedes the old requirement to defer **all** agent infrastructure until terrain completion; terrain-specific mutation still requires working human/runtime terrain gates.
+The reusable service exposes proven human editor operations over the trusted headless protocol and authenticated MCP. Terrain-specific mutations still require their human and runtime gates. Broad scripting remains a later stage.
 
 `org.beckenburg.editor.EditorAgentService<S>` owns no scene. An `EditorProject<S>`, its existing `EditorHistory<S>` and a host adapter supply all data, operations, renderer and tests. The portable core has no Swing or Beckenburg imports. The existing editor kit includes it without depending on game assets.
 
