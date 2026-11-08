@@ -84,7 +84,9 @@ async def verify(scope):
             assert state["sceneId"] == "another-game" and "capture_viewport" not in tools
             assert state["operations"] == {"increment": {}}
             first = (await call("inspect_nodes", revision=revision, ids=["room"]))["result"][0]
-            edited = await call("edit", revision=revision, commands=[{"operation": "increment", "arguments": {}}])
+            args = dict(revision=revision, sequence=1, commands=[{"operation": "increment", "arguments": {}}])
+            edited = await call("edit", **args)
+            assert await call("edit", **args) == edited
             proof = (await call("verify_position", revision=edited["revision"], id="room",
                                 x=first["x"] + 1, y=first["y"], z=first["z"]))["result"]
             assert proof["verified"] and proof["diskState"] == "UNSUPPORTED"
@@ -111,9 +113,11 @@ async def verify(scope):
             disk = await call("verify_position", revision=revision, id=key, **xyz)
             stale = await client.call_tool("playtest", {"revision": revision - 1})
             assert stale.isError
-            played = await client.call_tool("playtest", {"revision": revision})
+            played = await client.call_tool("playtest", {"revision": revision, "sequence": 30})
             assert not played.isError and len(played.content) == 1 and played.content[0].mimeType == "image/png", played.content[0].type
             png = base64.b64decode(played.content[0].data, validate=True)
+            replay = await client.call_tool("playtest", {"revision": revision, "sequence": 30})
+            assert not replay.isError and replay.content[0].data == played.content[0].data
             assert png[:8] == b"\x89PNG\r\n\x1a\n" and png != base64.b64decode(captured.content[0].data)
             assert tuple(int.from_bytes(png[i:i+4], "big") for i in (16, 20)) == (880, 550)
             assert before == await call("inspect_nodes", revision=revision, ids=[key])
@@ -174,12 +178,20 @@ async def verify(scope):
                 prop_id = "mcp-upper-lodging-chair"
                 place = {"operation": "place-prop", "arguments": dict(id=prop_id, mesh=chair, **spot)}
                 duplicate = dict(operation="place-prop", arguments=dict(place["arguments"], id=bed["id"]))
-                refused = await client.call_tool("edit", {"revision": revision, "commands": [place, duplicate]})
+                wrong = {"revision": revision, "commands": [place, duplicate], "sequence": 10}
+                refused = await client.call_tool("edit", wrong)
                 assert refused.isError
                 revision = (await call("inspect_scene", revision_only=True))["revision"]
+                repeated = await client.call_tool("edit", wrong)
+                assert repeated.isError and repeated.content[0].text == refused.content[0].text
+                assert (await call("inspect_scene", revision_only=True))["revision"] == revision
                 assert await walk(revision, spot)
-                result = await call("edit", revision=revision, commands=[
+                transaction = dict(revision=revision, sequence=11, commands=[
                     {"operation": "remove-surface", "arguments": {"id": "mcp-test-divider"}}, place])
+                result = await call("edit", **transaction)
+                assert result == await call("edit", **transaction)
+                mismatch = await client.call_tool("edit", dict(transaction, commands=[place]))
+                assert mismatch.isError and "different arguments" in mismatch.content[0].text
                 revision = result["revision"]
                 audit = (await call("run_test", revision=revision, id="castle-scene-audit"))["result"]
                 assert not any(check["code"] == "SPAWN_WALL_INTERSECTION" for check in audit)
@@ -203,6 +215,7 @@ async def verify(scope):
                 assert (await call("verify_position", revision=revision, id=key, **xyz))["result"]["diskState"] == "MATCHES"
                 # Undo the removal, reopen its saved repair, then undo that reopen.
                 reverted = await call("undo", revision=revision)
+                assert result == await call("edit", **transaction)
                 assert await walk(reverted["revision"], spot)
                 empty = await client.call_tool("capture_viewport", {"revision": reverted["revision"]})
                 assert not empty.isError and empty.content[0].data != capture.content[0].data

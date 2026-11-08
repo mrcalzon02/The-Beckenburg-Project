@@ -30,6 +30,7 @@ public final class EditorCorePortabilityTest {
         check(caught,"Unsafe or invalid project asset URI should be rejected");
     }
     public static void main(String[] args)throws Exception{
+        verifyReceiptRetention();
         Path folder=Files.createTempDirectory("portable-editor-");
         try{
             OtherGame project=new OtherGame(folder.resolve("map.txt"));
@@ -128,5 +129,20 @@ public final class EditorCorePortabilityTest {
                 }finally{if(process.isAlive())process.destroyForcibly();}
             }
         }finally{executor.shutdownNow();owner.set(Thread.currentThread());}
+    }
+    private static void verifyReceiptRetention(){
+        int[] calls={0};
+        var receipts=new EditorRequestJournal<String>(String::length,2,5);
+        for(int sequence:new int[]{2,1,3}){
+            String response=receipts.execute(sequence,"test-"+sequence,()->{calls[0]++;return "ok";});
+            check(response.equals("ok"),"Accepted out-of-order sequence in the active window");
+        }
+        check(receipts.execute(2,"test-2",()->"wrong").equals("ok"),"Retained exact receipt");
+        try{receipts.execute(1,"test-1",()->"wrong");throw new AssertionError("Retired sequence repeated");}
+        catch(EditorRequestJournal.Conflict expected){}
+        receipts.execute(4,"large",()->{calls[0]++;return "oversized";});
+        try{receipts.execute(4,"large",()->"wrong");throw new AssertionError("Evicted large receipt repeated");}
+        catch(EditorRequestJournal.Conflict expected){}
+        check(calls[0]==4,"Only original calls executed");
     }
 }

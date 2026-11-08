@@ -9,6 +9,8 @@ from urllib.parse import urlencode
 from mcp.server.fastmcp import FastMCP, Image
 from pydantic import BaseModel, ConfigDict, Field, FiniteFloat, create_model
 
+RequestSequence = Annotated[int, Field(ge=1, le=9223372036854775807)]
+
 
 class LiveEditor:
     def __init__(self, address: str, token: str):
@@ -145,47 +147,55 @@ def server(editor: LiveEditor):
             """Capture the active scene using the game renderer."""
             return editor.call("/capture", {"revision": revision})
 
+    def write(route, revision, sequence, body=b"", **fields):
+        if sequence is not None:
+            if "v1" not in summary.get("requestSequences", []):
+                raise ValueError("This editor does not support request sequences")
+            fields["sequenceV1"] = sequence
+        return editor.call(route, dict(revision=revision, **fields), body)
+
     if "/playtest" in summary["writeRoutes"]:
         @native_tool
-        def playtest(revision: int) -> Image:
+        def playtest(revision: int, sequence: RequestSequence | None = None) -> Image:
             """Run the human Playtest action until gameplay advances, capture its frame and return to the editor."""
-            return editor.call("/playtest", {"revision": revision}, b"")
+            return write("/playtest", revision, sequence)
 
     if "/focus" in summary["writeRoutes"]:
         @native_tool
-        def focus_node(revision: int, id: str) -> str:
+        def focus_node(revision: int, id: str, sequence: RequestSequence | None = None) -> str:
             """Select a native node and move the human editor camera to its inspection view."""
-            return editor.call("/focus", {"revision": revision, "id": id}, b"")
+            return write("/focus", revision, sequence, id=id)
 
     if "/edit" in summary["writeRoutes"] and summary["operations"]:
         command_type = edit_type(summary["operations"])
         @native_tool
-        def edit(revision: int, commands: Annotated[list[command_type], Field(min_length=1, max_length=64)]) -> str:
+        def edit(revision: int, commands: Annotated[list[command_type], Field(min_length=1, max_length=64)],
+                 sequence: RequestSequence | None = None) -> str:
             """Apply supported native commands in a single validated, undoable transaction."""
-            return editor.call("/edit", {"revision": revision}, encode_batch(commands))
+            return write("/edit", revision, sequence, encode_batch(commands))
 
     if "/undo" in summary["writeRoutes"]:
         @native_tool
-        def undo(revision: int) -> str:
+        def undo(revision: int, sequence: RequestSequence | None = None) -> str:
             """Undo one shared editor history entry."""
-            return editor.call("/undo", {"revision": revision}, b"")
+            return write("/undo", revision, sequence)
 
     if "/redo" in summary["writeRoutes"]:
         @native_tool
-        def redo(revision: int) -> str:
+        def redo(revision: int, sequence: RequestSequence | None = None) -> str:
             """Redo one shared editor history entry."""
-            return editor.call("/redo", {"revision": revision}, b"")
+            return write("/redo", revision, sequence)
 
     if "/save" in summary["writeRoutes"]:
         @native_tool
-        def save(revision: int) -> str:
+        def save(revision: int, sequence: RequestSequence | None = None) -> str:
             """Save the active document to its existing native path."""
-            return editor.call("/save", {"revision": revision}, b"")
+            return write("/save", revision, sequence)
     if "/reopen" in summary["writeRoutes"]:
         @native_tool
-        def reopen(revision: int) -> str:
+        def reopen(revision: int, sequence: RequestSequence | None = None) -> str:
             """Reopen this scene's saved document through shared undo history."""
-            return editor.call("/reopen", {"revision": revision}, b"")
+            return write("/reopen", revision, sequence)
     return mcp
 
 

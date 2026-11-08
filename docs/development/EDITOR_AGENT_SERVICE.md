@@ -49,6 +49,12 @@ Use `check_walkability(revision, x, y, z)` for a standing player's foot position
 
 In a Castle editing session, `place-prop` takes a new hierarchy ID, an approved palette mesh name, and world coordinates `x`, `y`, `z`. It uses the human palette's scale, orientation and collision footprint. `focus_node` selects that native row and positions the actual editor camera without changing the document revision. **Verify Scene → Focus object** uses the same view. Capture the viewport there, then check the prop's center and the neighboring passage. In the tested upper lodging the chair blocked standing at (5.75, 3.4, 13.5) and the aisle at (5.75, 3.4, 14.35) remained walkable. The trusted stdio equivalents are `focus<TAB>revision<TAB>id` and `walkability<TAB>revision<TAB>x<TAB>y<TAB>z`.
 
+### Retry a write after a lost response
+
+For a live authenticated session that advertises `requestSequences: ["v1"]`, pass an optional positive integer `sequence` to an MCP action. If the response is lost, send the same action, original revision, arguments and sequence. The editor returns the original receipt, failure or gameplay PNG even if later edits have changed the scene. A replay does not create an undo entry or run gameplay again. Read the current revision before issuing a new action.
+
+For trusted stdio, prefix a write with `once-v1<TAB>sequence<TAB>` on the same input line. For direct HTTP, set the `sequenceV1` query parameter on a POST. Give each distinct action a fresh, increasing number within the session. A different request with a retained number receives a conflict. The journal retains up to 64 receipts and 4 MiB of response data. It retires the lowest numbers first and refuses every sequence at or below the retired boundary. The history ends with the authenticated session or stdio process. Clients sharing a session must coordinate their numbers; after reconnecting, inspect the native scene to resolve an uncertain prior write.
+
 ### Embed the same transports in another editor
 
 The standalone Java 17 kit includes `EditorAgentProtocol.run(service, reader, writer)` for trusted headless processes and `EditorObservationBridge(service, scope, ownerExecutor)` for interactive editors. Construct the bridge on the project's owner thread. The executor must dispatch future requests to that thread. Display the session address and token to the user who enabled access, and close the bridge when the scene changes or the window closes.

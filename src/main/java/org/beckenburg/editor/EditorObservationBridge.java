@@ -20,6 +20,7 @@ public final class EditorObservationBridge implements AutoCloseable {
     private final boolean selection;
     private final boolean walkingCollision;
     private final boolean focus;
+    private final EditorRequestJournal<Reply> requests=new EditorRequestJournal<>(r->r.bytes.length);
     private static final int MAX_BYTES=4*1024*1024;
     private final HttpServer server;
     private final ExecutorService worker;
@@ -75,14 +76,15 @@ public final class EditorObservationBridge implements AutoCloseable {
                 var params=parameters(uri.getRawQuery(),uri.getRawPath().equals("/nodes"));
                 var task=new FutureTask<>(()->{
                     if(closed)throw new IllegalStateException("Observation session closed");
-                    return write?mutate(path,params.fields,body):observe(path,params);
+                    return write?writeRequest(path,params.fields,body):observe(path,params);
                 });
                 owner.execute(task);
                 try{reply=write?task.get():task.get(30,TimeUnit.SECONDS);}
                 finally{task.cancel(false);}
             }catch(ExecutionException failure){
                 var cause=failure.getCause();
-                if(cause instanceof IllegalStateException)error(exchange,409,"Editor revision or session changed");
+                if(cause instanceof EditorRequestJournal.Conflict conflict)error(exchange,409,conflict.getMessage());
+                else if(cause instanceof IllegalStateException)error(exchange,409,"Editor revision or session changed");
                 else if(cause instanceof IllegalArgumentException)error(exchange,400,"Invalid observation request");
                 else error(exchange,500,"Observation failed");
                 return;
@@ -91,7 +93,7 @@ public final class EditorObservationBridge implements AutoCloseable {
             catch(InterruptedException interrupted){Thread.currentThread().interrupt();return;}
             if(reply.bytes.length>MAX_BYTES){error(exchange,413,"Observation exceeds response limit");return;}
             if(reply.revision!=null)exchange.getResponseHeaders().set("X-Editor-Revision",reply.revision.toString());
-            send(exchange,200,reply.type,reply.bytes);
+            send(exchange,reply.status,reply.type,reply.bytes);
         }
     }
     private record Query(Map<String,String> fields,List<String> ids){}
@@ -107,7 +109,9 @@ public final class EditorObservationBridge implements AutoCloseable {
         }
         return new Query(result,ids);
     }
-    private record Reply(String type,byte[] bytes,Long revision){}
+    private record Reply(String type,byte[] bytes,Long revision,int status){
+        Reply(String type,byte[] bytes,Long revision){this(type,bytes,revision,200);}
+    }
     private List<String> writeRoutes(){
         if(scope==Scope.OBSERVE)return List.of();
         var routes=new ArrayList<String>();
@@ -129,6 +133,20 @@ public final class EditorObservationBridge implements AutoCloseable {
         if(capabilities.contains(EditorAgentService.Capability.TEST))routes.add("/test");
         if(capabilities.contains(EditorAgentService.Capability.CAPTURE))routes.add("/capture");
         return routes;
+    }
+    private Reply writeRequest(String path,Map<String,String> args,byte[] body)throws Exception{
+        String sequence=args.remove("sequenceV1");
+        if(sequence==null)return mutate(path,args,body);
+        String digest=EditorRequestJournal.digest(path+"\n"+EditorAgentProtocol.json(new TreeMap<>(args)),body);
+        return requests.execute(Long.parseLong(sequence),digest,()->{
+            try{return mutate(path,args,body);}
+            catch(IllegalStateException failure){return refused(409,"STALE_REVISION","Editor revision or session changed");}
+            catch(IllegalArgumentException failure){return refused(400,"INVALID_ARGUMENT","Invalid observation request");}
+            catch(Exception failure){return refused(500,"ACTION_FAILED","Editor action failed");}
+        });
+    }
+    private static Reply refused(int status,String code,String reason){
+        return new Reply("application/json",("{\"code\":\""+code+"\",\"error\":\""+reason+"\"}").getBytes(StandardCharsets.UTF_8),null,status);
     }
     private Reply mutate(String path,Map<String,String> args,byte[] body)throws Exception{
         if(path.equals("/focus"))requireKeys(args,"revision","id");else requireKeys(args,"revision");
@@ -157,7 +175,7 @@ public final class EditorObservationBridge implements AutoCloseable {
             var summary=service.summary();
             return json(Map.of("sceneId",summary.sceneId(),"revision",summary.revision(),
                 "tests",capabilities.contains(EditorAgentService.Capability.TEST)?summary.tests():List.of(),
-                "routes",readRoutes(),
+                "routes",readRoutes(),"requestSequences",scope==Scope.OBSERVE?List.of():List.of("v1"),
                 "writeRoutes",writeRoutes(),"operations",writeRoutes().contains("/edit")?service.operationParameters():Map.of()),summary.revision());
         }
         var current=service.sceneRevision();

@@ -55,7 +55,12 @@ with tempfile.TemporaryDirectory() as directory, session() as first:
     with session("--face", face) as second:
         other = second("revision")["revision"]
         args = ["set-layer-opacity", "face=" + face, "layer=" + layer]
-        rev = first("edit", rev, *args, "opacity=75")["revision"]
+        initial = rev
+        edit = first("once-v1", 1, "edit", initial, *args, "opacity=75")
+        assert first("once-v1", 1, "edit", initial, *args, "opacity=75") == edit
+        first("once-v1", 1, "edit", initial, *args, "opacity=80", ok=False)
+        rev = edit["revision"]
+        assert first("revision")["revision"] == rev
         changed = Path(directory) / "edited.png"
         first("capture", rev, changed)
         assert changed.read_bytes() != baseline.read_bytes()
@@ -65,11 +70,16 @@ with tempfile.TemporaryDirectory() as directory, session() as first:
         second("save", other, ok=False)
         other = second("reopen", other)["revision"]
         assert second("selection", other)["result"]["properties"]["opacity"] == "75"
-        first("batch", rev, *args, "opacity=60", "|", *args, "opacity=101", ok=False)
+        refused = ("once-v1", 2, "batch", rev, *args, "opacity=60", "|", *args, "opacity=101")
+        first(*refused, ok=False)
         fresh = first("revision")["revision"]
+        first(*refused, ok=False)
+        assert first("revision")["revision"] == fresh
         first("selection", rev, ok=False)
         assert first("selection", fresh)["result"]["properties"]["opacity"] == "75"
         rev = first("undo", fresh)["revision"]
+        assert first("selection", rev)["result"] == selected
+        assert first("once-v1", 1, "edit", initial, *args, "opacity=75") == edit
         assert first("selection", rev)["result"] == selected
         rev = first("redo", rev)["revision"]
         assert first("selection", rev)["result"]["properties"]["opacity"] == "75"

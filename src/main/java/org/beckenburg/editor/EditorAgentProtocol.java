@@ -44,8 +44,71 @@ public final class EditorAgentProtocol {
         }
         return commands;
     }
+    private record WireReply(String line,boolean failed){}
+    private static WireReply refusal(Exception failure){
+        try{return new WireReply(json(Map.of("ok",false,"error",failure.toString())),true);}
+        catch(ReflectiveOperationException impossible){throw new AssertionError(impossible);}
+    }
+    private static WireReply dispatch(EditorAgentService<?> service,String line){
+        try{
+            String[] parts=line.split("\t",-1);String command=parts[0];Object result;
+            if(command.equals("revision")){
+                if(parts.length!=1)throw new IllegalArgumentException("revision takes no arguments");
+                result=service.sceneRevision();
+            }else if(command.equals("summary")){
+                if(parts.length!=1)throw new IllegalArgumentException("summary takes no arguments");
+                result=service.summary();
+            }else if(command.equals("inspect")){
+                if(parts.length!=1)throw new IllegalArgumentException("inspect takes no arguments");
+                result=service.inspect();
+            }else{
+                if(parts.length<2)throw new IllegalArgumentException("Expected scene revision");
+                long revision=Long.parseLong(parts[1]);
+                int expected=switch(command){case "edit","batch","nodes"->-1;case "capture","playtest","test","node","focus"->3;case "hierarchy","changes","assets"->4;case "walkability"->5;case "verify-position"->6;default->2;};
+                if((expected>=0&&parts.length!=expected)||(expected<0&&parts.length<3))
+                    throw new IllegalArgumentException("Wrong argument count");
+                result=switch(command){
+                    case "edit" -> service.transact(revision, java.util.List.of(parseEdit(parts, 2, parts.length)));
+                    case "batch" -> service.transact(revision, parseBatch(parts,2));
+                    case "node" -> service.node(revision,parts[2]);
+                    case "focus" -> service.focus(revision,parts[2]);
+                    case "selection" -> service.selection(revision);
+                    case "walkability" -> service.walkability(revision,Double.parseDouble(parts[2]),Double.parseDouble(parts[3]),Double.parseDouble(parts[4]));
+                    case "verify-position" -> service.verifyPosition(revision,parts[2],Double.parseDouble(parts[3]),Double.parseDouble(parts[4]),Double.parseDouble(parts[5]));
+                    case "nodes" -> service.nodes(revision,java.util.Arrays.asList(parts).subList(2,parts.length));
+                    case "assets" -> service.assets(revision,Integer.parseInt(parts[2]),Integer.parseInt(parts[3]));
+                    case "hierarchy" -> service.hierarchy(revision,Integer.parseInt(parts[2]),Integer.parseInt(parts[3]));
+                    case "changes" -> service.changes(revision,Integer.parseInt(parts[2]),Integer.parseInt(parts[3]));
+                    case "undo" -> service.undo(revision);
+                    case "redo" -> service.redo(revision);
+                    case "save" -> service.save(revision);
+                    case "reopen" -> service.reopen(revision);
+                    case "recover" -> service.recoverPrevious(revision);
+                    case "capture" -> service.capture(revision,Path.of(parts[2]));
+                    case "playtest" -> service.playtest(revision,Path.of(parts[2]));
+                    case "test" -> service.test(revision,parts[2]);
+                    default -> throw new IllegalArgumentException("Unknown command: "+command);
+                };
+            }
+            boolean failed=result instanceof EditorAgentService.Evidence<?> e && e.result() instanceof java.util.List<?> list
+                && list.stream().anyMatch(item->item instanceof EditorAgentService.Check check&&!check.passed());
+            return new WireReply(json(Map.of("ok",true,"result",result)),failed);
+        }catch(Exception failure){return refusal(failure);}
+    }
+    private static WireReply handle(EditorAgentService<?> service,EditorRequestJournal<WireReply> journal,String line){
+        if(!line.startsWith("once-v1\t"))return dispatch(service,line);
+        try{
+            String[] envelope=line.split("\t",3);
+            if(envelope.length!=3)throw new IllegalArgumentException("Expected once-v1, sequence and action");
+            String action=envelope[2];int split=action.indexOf('\t');
+            if(split<0||!java.util.Set.of("edit","batch","undo","redo","save","reopen","recover","focus","playtest").contains(action.substring(0,split)))
+                throw new IllegalArgumentException("Request sequence requires an editor action");
+            return journal.execute(Long.parseLong(envelope[1]),EditorRequestJournal.digest(action,new byte[0]),()->dispatch(service,action));
+        }catch(Exception failure){return refusal(failure);}
+    }
     public static int run(EditorAgentService<?> service,BufferedReader requests,PrintStream responses)throws Exception{
         boolean failed=false;
+        var journal=new EditorRequestJournal<WireReply>(reply->reply.line.getBytes(java.nio.charset.StandardCharsets.UTF_8).length);
         for(;;){
             String line;
             try{line=readRequest(requests);}
@@ -53,53 +116,8 @@ public final class EditorAgentProtocol {
                 responses.println(json(Map.of("ok",false,"phase","protocol","error",failure.toString())));responses.flush();return 1;
             }
             if(line==null)break;
-            try{
-                String[] parts=line.split("\t",-1);String command=parts[0];Object result;
-                if(command.equals("revision")){
-                    if(parts.length!=1)throw new IllegalArgumentException("revision takes no arguments");
-                    result=service.sceneRevision();
-                }else if(command.equals("summary")){
-                    if(parts.length!=1)throw new IllegalArgumentException("summary takes no arguments");
-                    result=service.summary();
-                }else if(command.equals("inspect")){
-                    if(parts.length!=1)throw new IllegalArgumentException("inspect takes no arguments");
-                    result=service.inspect();
-                }else{
-                    if(parts.length<2)throw new IllegalArgumentException("Expected scene revision");
-                    long revision=Long.parseLong(parts[1]);
-                    int expected=switch(command){case "edit","batch","nodes"->-1;case "capture","playtest","test","node","focus"->3;case "hierarchy","changes","assets"->4;case "walkability"->5;case "verify-position"->6;default->2;};
-                    if((expected>=0&&parts.length!=expected)||(expected<0&&parts.length<3))
-                        throw new IllegalArgumentException("Wrong argument count");
-                    result=switch(command){
-                        case "edit" -> service.transact(revision, java.util.List.of(parseEdit(parts, 2, parts.length)));
-                        case "batch" -> service.transact(revision, parseBatch(parts,2));
-                        case "node" -> service.node(revision,parts[2]);
-                        case "focus" -> service.focus(revision,parts[2]);
-                        case "selection" -> service.selection(revision);
-                        case "walkability" -> service.walkability(revision,Double.parseDouble(parts[2]),Double.parseDouble(parts[3]),Double.parseDouble(parts[4]));
-                        case "verify-position" -> service.verifyPosition(revision,parts[2],Double.parseDouble(parts[3]),Double.parseDouble(parts[4]),Double.parseDouble(parts[5]));
-                        case "nodes" -> service.nodes(revision,java.util.Arrays.asList(parts).subList(2,parts.length));
-                        case "assets" -> service.assets(revision,Integer.parseInt(parts[2]),Integer.parseInt(parts[3]));
-                        case "hierarchy" -> service.hierarchy(revision,Integer.parseInt(parts[2]),Integer.parseInt(parts[3]));
-                        case "changes" -> service.changes(revision,Integer.parseInt(parts[2]),Integer.parseInt(parts[3]));
-                        case "undo" -> service.undo(revision);
-                        case "redo" -> service.redo(revision);
-                        case "save" -> service.save(revision);
-                        case "reopen" -> service.reopen(revision);
-                        case "recover" -> service.recoverPrevious(revision);
-                        case "capture" -> service.capture(revision,Path.of(parts[2]));
-                        case "playtest" -> service.playtest(revision,Path.of(parts[2]));
-                        case "test" -> service.test(revision,parts[2]);
-                        default -> throw new IllegalArgumentException("Unknown command: "+command);
-                    };
-                    if(result instanceof EditorAgentService.Evidence<?> e && e.result() instanceof java.util.List<?> list
-                        && list.stream().anyMatch(item->item instanceof EditorAgentService.Check check&&!check.passed()))failed=true;
-                }
-                responses.println(json(Map.of("ok",true,"result",result)));
-            }catch(Exception failure){
-                failed=true;responses.println(json(Map.of("ok",false,"error",failure.toString())));
-            }
-            responses.flush();
+            var reply=handle(service,journal,line);
+            failed|=reply.failed;responses.println(reply.line);responses.flush();
         }
         return failed?1:0;
     }
