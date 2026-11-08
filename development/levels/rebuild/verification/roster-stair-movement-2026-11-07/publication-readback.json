@@ -1,0 +1,365 @@
+{
+  "implementation_source": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+  "remote_head_verified": "713c25a835da16ac2a2c236715384677f0b4ab68",
+  "changed_files_verified": 87,
+  "method": "GitHub commit API file blob identities equal exact local Git tree for every changed file; remote branch SHA equals checkpoint SHA",
+  "files": [
+    {
+      "path": "beckenburg-development-gallery.html",
+      "git_blob_sha": "14c3bf1b88119752a793be08405b54545a0965f7"
+    },
+    {
+      "path": "development/assets/asset-library-index.json",
+      "git_blob_sha": "91418a483ef590e06184df22fcbc0ee823b42101"
+    },
+    {
+      "path": "development/gallery/index.json",
+      "git_blob_sha": "d9b031b730065dbf75e894032ec22451b41b5bfd"
+    },
+    {
+      "path": "development/levels/rebuild/academy/native-movement-batch.md",
+      "git_blob_sha": "86e5961c6ae90a2c4566e196fcd337276fad6232"
+    },
+    {
+      "path": "development/levels/rebuild/asylum/native-movement-batch.md",
+      "git_blob_sha": "fb03149e4864963538931494e248fc4ed4ead98e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-05.png",
+      "git_blob_sha": "ca430f760dd89390ddcb84babf7801e34a82a89e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-14-export-overview.png",
+      "git_blob_sha": "eb5d69730b628bba54b851d8e5e584c12f632453"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-14-room-workroom.png",
+      "git_blob_sha": "44f3c5ce7553567ff160c87b2ee4eaa1b9579493"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-movement-batch/capture-manifest.json",
+      "git_blob_sha": "13459b80c59d536bdf13f8fdf8b2fb6e9e10331f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-movement-batch/wld-14-mitered-candidate-construction.png",
+      "git_blob_sha": "cc744601131dd7327f895334277bb130da1e903c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-movement-batch/wld-14-mitered-candidate-top.png",
+      "git_blob_sha": "ab4c1f3e95531678d5478f1992e67d563ccad778"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-movement-batch/wld-14-rejected-rectangular-construction.png",
+      "git_blob_sha": "a15b0b5322e5f583b31388fdf554128194058125"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-movement-batch/wld-14-rejected-rectangular-top.png",
+      "git_blob_sha": "c83524db0b3eec8c436159b387d2e6355fd53e37"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-05.png",
+      "git_blob_sha": "4b11cedddca8372f2b8b6373f42f7e4ed26ace4f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-14/structure-export-closed.png",
+      "git_blob_sha": "0a5f19afedef9dadb13879e3827a6002a5531785"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-14/structure-export-cutaway.png",
+      "git_blob_sha": "ceedf1adf0c0682562fa53b79814a109e6e9e5a4"
+    },
+    {
+      "path": "development/levels/rebuild/church/native-movement-batch.md",
+      "git_blob_sha": "39a19d88816de8bb52ef4452c4a226a7aced57e8"
+    },
+    {
+      "path": "development/levels/rebuild/college/native-movement-batch.md",
+      "git_blob_sha": "d68bb4a9ff8372e1db1009076425d66b8370f199"
+    },
+    {
+      "path": "development/levels/rebuild/farmhouse/native-movement-batch.md",
+      "git_blob_sha": "5a6b7e9e77d8ce79d5095630726509d47ddd3dfb"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-14/furnished-physics.hcs2",
+      "git_blob_sha": "d7a564db09f7fe9cd57d9dc4954815f0926b2bd8"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-14/furnished.blend",
+      "git_blob_sha": "086c736ec80da55e13ac00818ed39daeabcc2dca"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-14/furnished.glb",
+      "git_blob_sha": "226f247a92056f8336eb2bff44aefa51cecce762"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-14/physics-contract.json",
+      "git_blob_sha": "9fbe8d7b0a0e1da6b5d9152b596df98ec212d3f3"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-14/placements.json",
+      "git_blob_sha": "f7faf8de10e2f18db6fed042040517dc7e8f0dc7"
+    },
+    {
+      "path": "development/levels/rebuild/mansion/native-movement-batch.md",
+      "git_blob_sha": "3e3d5c776e11ffcf79d2e39967c566a439088417"
+    },
+    {
+      "path": "development/levels/rebuild/prison/native-movement-batch.md",
+      "git_blob_sha": "e06f54c232b1f7559d7f4c10b58c576d8c0ebad4"
+    },
+    {
+      "path": "development/levels/rebuild/school/native-movement-batch.md",
+      "git_blob_sha": "63b682149733eb2860f7e8d62d4a2340e97dabcd"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-14/implementation.json",
+      "git_blob_sha": "8d004b7412a31f3041dfa5239954163dda690ae3"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-14/physics-contract.json",
+      "git_blob_sha": "c1e1bdaa525a6dbaeddb71d37b9dc3523c2d1743"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-14/rough-shell.blend",
+      "git_blob_sha": "ccc0679c41404772d430e172db271d7e9912ec72"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-14/rough-shell.glb",
+      "git_blob_sha": "48b9b11859860e4ea747a5ebf54d5b159565291e"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-14/structure-export-closed.png",
+      "git_blob_sha": "0a5f19afedef9dadb13879e3827a6002a5531785"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-14/structure-export-cutaway.png",
+      "git_blob_sha": "ceedf1adf0c0682562fa53b79814a109e6e9e5a4"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-14/structure-physics.hcs2",
+      "git_blob_sha": "43b1f494901ff641b083450f93dc2c3017e20caf"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/README.md",
+      "git_blob_sha": "6da793bffb2e2cca967868f1d05196688262ea76"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/contiguous-route-sweeps.tsv",
+      "git_blob_sha": "0225abfa068e4881e038eb2aa9501bd385a9dbec"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/curved-refinement.log",
+      "git_blob_sha": "7aa73355acca25dcb34f83a966b00b685a14fd6f"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/flat-routes/before-after-routes.tsv",
+      "git_blob_sha": "e7c4e0ad35d855d71b845eaeec9c6481c33df250"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/flat-routes/route-regressions.json",
+      "git_blob_sha": "3f2c4c1d08f6d2f33dba4b5a38fa739939fb08b3"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/flight-sweeps.tsv",
+      "git_blob_sha": "e13d57cdc836b70b179dba2824bf21bfa8a0d8ee"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/furnished-export.log",
+      "git_blob_sha": "eb56d62623b651624f02eea2aa557abfc1cc59b9"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/furnishing-refresh.log",
+      "git_blob_sha": "ecdf846606cf0951c0d8aff2bdc694c881161943"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/hollow-creek-controls.log",
+      "git_blob_sha": "7109cf8302f424b02d68d81575709a6170f778d4"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/legacy-controls.log",
+      "git_blob_sha": "5d905df760d9fa533ff9e6f1bfdd1a77fa30dea9"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/main-recovery-observation.json",
+      "git_blob_sha": "b135162860774a1d289debb01c233db25f3f1e7e"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/preservation.json",
+      "git_blob_sha": "f9f799f2db9ace6a51e671a4772fa07434902fee"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/rejected-rectangular-curve/flight-sweeps.tsv",
+      "git_blob_sha": "762212668ca27bbcadef93818340f408dafc7083"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/rejected-rectangular-curve/stair-movement.json",
+      "git_blob_sha": "046e5e4f3acd77da7399cab04cd7d70321851de2"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-controls.log",
+      "git_blob_sha": "9f631a42ef06d05dae561fed47e3809a7aa44da8"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/stair-movement.json",
+      "git_blob_sha": "8d62779e0dba41f2d50c13c10753d71dacc3afca"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/structure-export.log",
+      "git_blob_sha": "d3a7093b980ba5c9866233c6dc87bafea7fef40b"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/route-probes.json",
+      "git_blob_sha": "7331390f66e5c8b947a8aa4dd853afa5bdd07eb6"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/treads/tread-probes.tsv",
+      "git_blob_sha": "a8582bfe4926a0f0e4e21f31a0eb99d511dce37b"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/visual-capture.log",
+      "git_blob_sha": "12cdd23cd17b1b70b1c941db9fd71998769a33b6"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-stair-movement-2026-11-07/visual-review.json",
+      "git_blob_sha": "67b337aebce890de201d824f0bc4b0f2d92f8552"
+    },
+    {
+      "path": "development/levels/rebuild/wld-03/native-movement-batch.md",
+      "git_blob_sha": "6cea044e3e9888f44bfb972c2739cb294e68e654"
+    },
+    {
+      "path": "development/levels/rebuild/wld-04/native-movement-batch.md",
+      "git_blob_sha": "baae26309c1a3cfeef5aceb975c6be33c532b93e"
+    },
+    {
+      "path": "development/levels/rebuild/wld-05/native-movement-batch.md",
+      "git_blob_sha": "0a790003a38285f413b62fc0209b2206682a397f"
+    },
+    {
+      "path": "development/levels/rebuild/wld-06/native-movement-batch.md",
+      "git_blob_sha": "8a2e8017c13abc2c29dbe71bddc82929c43d0226"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07-mortuary/native-movement-batch.md",
+      "git_blob_sha": "0d11799432c24cc47d3f58c89b03aa0af1a14306"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07/native-movement-batch.md",
+      "git_blob_sha": "22544bf6bb333ec2e10d35196fec2a6bb3c19fc7"
+    },
+    {
+      "path": "development/levels/rebuild/wld-08/native-movement-batch.md",
+      "git_blob_sha": "dc4c96aed5e5136a6040768d2829c097153291a0"
+    },
+    {
+      "path": "development/levels/rebuild/wld-09/native-movement-batch.md",
+      "git_blob_sha": "b98030a00c85a8823185c11c6a6cf5515cd4906c"
+    },
+    {
+      "path": "development/levels/rebuild/wld-10/native-movement-batch.md",
+      "git_blob_sha": "70c2d7a26009624bd46b9765755e91e0195b2ab3"
+    },
+    {
+      "path": "development/levels/rebuild/wld-11/native-movement-batch.md",
+      "git_blob_sha": "267dd2e6c0188f3b7d502a257d637d116dd8e067"
+    },
+    {
+      "path": "development/levels/rebuild/wld-12/native-movement-batch.md",
+      "git_blob_sha": "9177feea3da2d1c90aebbbd2014d40fb0fab72c5"
+    },
+    {
+      "path": "development/levels/rebuild/wld-13/native-movement-batch.md",
+      "git_blob_sha": "f8948b15c7f1c39a0e5c6838c5d2e36d58b6e9c4"
+    },
+    {
+      "path": "development/levels/rebuild/wld-14/native-movement-batch.md",
+      "git_blob_sha": "661ff2fa0012139194ab7173a6d455f18893f221"
+    },
+    {
+      "path": "development/levels/rebuild/wld-15/native-movement-batch.md",
+      "git_blob_sha": "9467239ed84d38e4e06520490b986686e1f53337"
+    },
+    {
+      "path": "development/levels/rebuild/wld-16/native-movement-batch.md",
+      "git_blob_sha": "8da6cbc46b62bcd5190beea5504f4418c65e3b2a"
+    },
+    {
+      "path": "development/levels/rebuild/wld-17/native-movement-batch.md",
+      "git_blob_sha": "3f3dc6f49b8fcc118db816b3f5ec8d704a7100b6"
+    },
+    {
+      "path": "development/levels/rebuild/wld-18/native-movement-batch.md",
+      "git_blob_sha": "b663651a083a004e63e8b58d6578bab1d223bdfe"
+    },
+    {
+      "path": "development/quality/DEFECT_LEDGER.md",
+      "git_blob_sha": "670edc003f406613bf1050739177608d81592a71"
+    },
+    {
+      "path": "development/quality/defects.json",
+      "git_blob_sha": "6e40404eceb977d84a478011934cc3cf7b5527ad"
+    },
+    {
+      "path": "regression-tests.txt",
+      "git_blob_sha": "374c9d4a42517e808d69b58ba3731c4c76fa03ab"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/AuthoredSitePhysics.java",
+      "git_blob_sha": "2d95a7d31d0d999eb0459a94fc9a9f2c5a9c46ed"
+    },
+    {
+      "path": "src/test/java/org/beckenburg/AuthoredStairPhysicsTest.java",
+      "git_blob_sha": "3e14c1c1ee4f5b36e5487b875b00382fb9d04a1e"
+    },
+    {
+      "path": "tools/audit_furnishing_routes.py",
+      "git_blob_sha": "41d20caf314855b7f223f0fa7acbdae765573b6d"
+    },
+    {
+      "path": "tools/audit_roster_routes.py",
+      "git_blob_sha": "44000c206bde531a650068e5c215cbbf7f2d6d08"
+    },
+    {
+      "path": "tools/audit_roster_stairs.py",
+      "git_blob_sha": "e82bb7729a8dee8736e467793bca5e6729d99f61"
+    },
+    {
+      "path": "tools/build_development_gallery.py",
+      "git_blob_sha": "2df66e3d0d70e2046b740c2fc118c4b8eefb1d1e"
+    },
+    {
+      "path": "tools/java/FurnishingRouteProbe.java",
+      "git_blob_sha": "bf769420f02f80cd5e9e707505b5bb99e310e4e4"
+    },
+    {
+      "path": "tools/java/RosterRouteProbe.java",
+      "git_blob_sha": "209d9c61da7c47fbc8aa30e0bcd6d79da90b7ced"
+    },
+    {
+      "path": "tools/java/RosterStairMovementProbe.java",
+      "git_blob_sha": "46be8b89f956ad060ac7fc17e581358961eee15a"
+    },
+    {
+      "path": "tools/refine_roster_curved_stairs.py",
+      "git_blob_sha": "a2b3e662f032e3c67449d134cf9726618d305913"
+    },
+    {
+      "path": "tools/render_roster_stair_review.py",
+      "git_blob_sha": "795a788d265a282832212de6e4ce4dedc8eabaed"
+    },
+    {
+      "path": "tools/review_roster_structures.py",
+      "git_blob_sha": "11ec948929236f964cce97c9ca9daec5c15829e5"
+    }
+  ],
+  "gallery": {
+    "status": "PENDING_ACCEPTED_STACK_INTEGRATION",
+    "claim": "Current branch images are remotely present; not claimed deployed",
+    "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
+    "reachable": true,
+    "html_sha256": "f3113929a9810b2793fd9dc20ef25d8744fb54eb6734eb885cf6cc55f2d3fd39",
+    "contains_current_stair_capture": false
+  },
+  "remaining": "51source segments fail; full cyclic/top and flat landing routes, baseline support, runtime ownership/services, visual finish and deployment remain open"
+}
