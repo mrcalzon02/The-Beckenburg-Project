@@ -165,19 +165,24 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "c34e4f9f133e220f98348850e961ff268ab84fb7",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
           "evidence": [
             "development/levels/rebuild/structures/academy/implementation.json",
             "development/levels/rebuild/structures/verification.json",
-            "development/levels/rebuild/structures/README.md"
+            "development/levels/rebuild/structures/README.md",
+            "development/levels/rebuild/structures/academy/physics-contract.json",
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
-            "DEV-357"
+            "DEV-357",
+            "DEV-361",
+            "DEV-362",
+            "DEV-363"
           ],
-          "next_action": "Bridge actual source coordinates into runtime geometry/collision/room ownership; resolve authored elevation findings and sweep routes. Then terrain/editor holes, canonical arrival, supported reusable-model placement and source-specific roof/service/detail passes. Native blocking is not playable acceptance."
+          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -295,19 +300,24 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "c34e4f9f133e220f98348850e961ff268ab84fb7",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
           "evidence": [
             "development/levels/rebuild/structures/asylum/implementation.json",
             "development/levels/rebuild/structures/verification.json",
-            "development/levels/rebuild/structures/README.md"
+            "development/levels/rebuild/structures/README.md",
+            "development/levels/rebuild/structures/asylum/physics-contract.json",
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
-            "DEV-357"
+            "DEV-357",
+            "DEV-361",
+            "DEV-362",
+            "DEV-363"
           ],
-          "next_action": "Bridge actual source coordinates into runtime geometry/collision/room ownership; resolve authored elevation findings and sweep routes. Then terrain/editor holes, canonical arrival, supported reusable-model placement and source-specific roof/service/detail passes. Native blocking is not playable acceptance."
+          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -750,19 +760,24 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "c34e4f9f133e220f98348850e961ff268ab84fb7",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
           "evidence": [
             "development/levels/rebuild/structures/church/implementation.json",
             "development/levels/rebuild/structures/verification.json",
-            "development/levels/rebuild/structures/README.md"
+            "development/levels/rebuild/structures/README.md",
+            "development/levels/rebuild/structures/church/physics-contract.json",
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
-            "DEV-357"
+            "DEV-357",
+            "DEV-361",
+            "DEV-362",
+            "DEV-363"
           ],
-          "next_action": "Bridge actual source coordinates into runtime geometry/collision/room ownership; resolve authored elevation findings and sweep routes. Then terrain/editor holes, canonical arrival, supported reusable-model placement and source-specific roof/service/detail passes. Native blocking is not playable acceptance."
+          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -880,19 +895,24 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "c34e4f9f133e220f98348850e961ff268ab84fb7",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
           "evidence": [
             "development/levels/rebuild/structures/college/implementation.json",
             "development/levels/rebuild/structures/verification.json",
-            "development/levels/rebuild/structures/README.md"
+            "development/levels/rebuild/structures/README.md",
+            "development/levels/rebuild/structures/college/physics-contract.json",
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
-            "DEV-357"
+            "DEV-357",
+            "DEV-361",
+            "DEV-362",
+            "DEV-363"
           ],
-          "next_action": "Bridge actual source coordinates into runtime geometry/collision/room ownership; resolve authored elevation findings and sweep routes. Then terrain/editor holes, canonical arrival, supported reusable-model placement and source-specific roof/service/detail passes. Native blocking is not playable acceptance."
+          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -1008,19 +1028,24 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "c34e4f9f133e220f98348850e961ff268ab84fb7",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
           "evidence": [
             "development/levels/rebuild/structures/farmhouse/implementation.json",
             "development/levels/rebuild/structures/verification.json",
-            "development/levels/rebuild/structures/README.md"
+            "development/levels/rebuild/structures/README.md",
+            "development/levels/rebuild/structures/farmhouse/physics-contract.json",
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
-            "DEV-357"
+            "DEV-357",
+            "DEV-361",
+            "DEV-362",
+            "DEV-363"
           ],
-          "next_action": "Bridge actual source coordinates into runtime geometry/collision/room ownership; resolve authored elevation findings and sweep routes. Then terrain/editor holes, canonical arrival, supported reusable-model placement and source-specific roof/service/detail passes. Native blocking is not playable acceptance."
+          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -1500,19 +1525,24 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "c34e4f9f133e220f98348850e961ff268ab84fb7",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
           "evidence": [
             "development/levels/rebuild/structures/mansion/implementation.json",
             "development/levels/rebuild/structures/verification.json",
-            "development/levels/rebuild/structures/README.md"
+            "development/levels/rebuild/structures/README.md",
+            "development/levels/rebuild/structures/mansion/physics-contract.json",
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
-            "DEV-357"
+            "DEV-357",
+            "DEV-361",
+            "DEV-362",
+            "DEV-363"
           ],
-          "next_action": "Bridge actual source coordinates into runtime geometry/collision/room ownership; resolve authored elevation findings and sweep routes. Then terrain/editor holes, canonical arrival, supported reusable-model placement and source-specific roof/service/detail passes. Native blocking is not playable acceptance."
+          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -1629,19 +1659,24 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "c34e4f9f133e220f98348850e961ff268ab84fb7",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
           "evidence": [
             "development/levels/rebuild/structures/prison/implementation.json",
             "development/levels/rebuild/structures/verification.json",
-            "development/levels/rebuild/structures/README.md"
+            "development/levels/rebuild/structures/README.md",
+            "development/levels/rebuild/structures/prison/physics-contract.json",
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
-            "DEV-357"
+            "DEV-357",
+            "DEV-361",
+            "DEV-362",
+            "DEV-363"
           ],
-          "next_action": "Bridge actual source coordinates into runtime geometry/collision/room ownership; resolve authored elevation findings and sweep routes. Then terrain/editor holes, canonical arrival, supported reusable-model placement and source-specific roof/service/detail passes. Native blocking is not playable acceptance."
+          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -1756,19 +1791,24 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "c34e4f9f133e220f98348850e961ff268ab84fb7",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
           "evidence": [
             "development/levels/rebuild/structures/school/implementation.json",
             "development/levels/rebuild/structures/verification.json",
-            "development/levels/rebuild/structures/README.md"
+            "development/levels/rebuild/structures/README.md",
+            "development/levels/rebuild/structures/school/physics-contract.json",
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
-            "DEV-357"
+            "DEV-357",
+            "DEV-361",
+            "DEV-362",
+            "DEV-363"
           ],
-          "next_action": "Bridge actual source coordinates into runtime geometry/collision/room ownership; resolve authored elevation findings and sweep routes. Then terrain/editor holes, canonical arrival, supported reusable-model placement and source-specific roof/service/detail passes. Native blocking is not playable acceptance."
+          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -2087,27 +2127,36 @@
           "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "evidence": [
+            "development/levels/rebuild/wld-03/rough-layout.json"
+          ],
           "defects": [],
           "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "c34e4f9f133e220f98348850e961ff268ab84fb7",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
           "evidence": [
             "development/levels/rebuild/structures/wld-03/implementation.json",
             "development/levels/rebuild/structures/verification.json",
-            "development/levels/rebuild/structures/README.md"
+            "development/levels/rebuild/structures/README.md",
+            "development/levels/rebuild/structures/wld-03/physics-contract.json",
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
-            "DEV-357"
+            "DEV-357",
+            "DEV-361",
+            "DEV-362",
+            "DEV-363",
+            "DEV-359",
+            "DEV-360"
           ],
-          "next_action": "Bridge actual source coordinates into runtime geometry/collision/room ownership; resolve authored elevation findings and sweep routes. Then terrain/editor holes, canonical arrival, supported reusable-model placement and source-specific roof/service/detail passes. Native blocking is not playable acceptance."
+          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -2206,27 +2255,36 @@
           "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "evidence": [
+            "development/levels/rebuild/wld-04/rough-layout.json"
+          ],
           "defects": [],
           "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "c34e4f9f133e220f98348850e961ff268ab84fb7",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
           "evidence": [
             "development/levels/rebuild/structures/wld-04/implementation.json",
             "development/levels/rebuild/structures/verification.json",
-            "development/levels/rebuild/structures/README.md"
+            "development/levels/rebuild/structures/README.md",
+            "development/levels/rebuild/structures/wld-04/physics-contract.json",
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
-            "DEV-357"
+            "DEV-357",
+            "DEV-361",
+            "DEV-362",
+            "DEV-363",
+            "DEV-359",
+            "DEV-360"
           ],
-          "next_action": "Bridge actual source coordinates into runtime geometry/collision/room ownership; resolve authored elevation findings and sweep routes. Then terrain/editor holes, canonical arrival, supported reusable-model placement and source-specific roof/service/detail passes. Native blocking is not playable acceptance."
+          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -2325,27 +2383,36 @@
           "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "evidence": [
+            "development/levels/rebuild/wld-05/rough-layout.json"
+          ],
           "defects": [],
           "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "c34e4f9f133e220f98348850e961ff268ab84fb7",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
           "evidence": [
             "development/levels/rebuild/structures/wld-05/implementation.json",
             "development/levels/rebuild/structures/verification.json",
-            "development/levels/rebuild/structures/README.md"
+            "development/levels/rebuild/structures/README.md",
+            "development/levels/rebuild/structures/wld-05/physics-contract.json",
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
-            "DEV-357"
+            "DEV-357",
+            "DEV-361",
+            "DEV-362",
+            "DEV-363",
+            "DEV-359",
+            "DEV-360"
           ],
-          "next_action": "Bridge actual source coordinates into runtime geometry/collision/room ownership; resolve authored elevation findings and sweep routes. Then terrain/editor holes, canonical arrival, supported reusable-model placement and source-specific roof/service/detail passes. Native blocking is not playable acceptance."
+          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -2452,19 +2519,24 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "c34e4f9f133e220f98348850e961ff268ab84fb7",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
           "evidence": [
             "development/levels/rebuild/structures/wld-06/implementation.json",
             "development/levels/rebuild/structures/verification.json",
-            "development/levels/rebuild/structures/README.md"
+            "development/levels/rebuild/structures/README.md",
+            "development/levels/rebuild/structures/wld-06/physics-contract.json",
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
-            "DEV-357"
+            "DEV-357",
+            "DEV-361",
+            "DEV-362",
+            "DEV-363"
           ],
-          "next_action": "Bridge actual source coordinates into runtime geometry/collision/room ownership; resolve authored elevation findings and sweep routes. Then terrain/editor holes, canonical arrival, supported reusable-model placement and source-specific roof/service/detail passes. Native blocking is not playable acceptance."
+          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -2571,19 +2643,24 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "c34e4f9f133e220f98348850e961ff268ab84fb7",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
           "evidence": [
             "development/levels/rebuild/structures/wld-07/implementation.json",
             "development/levels/rebuild/structures/verification.json",
-            "development/levels/rebuild/structures/README.md"
+            "development/levels/rebuild/structures/README.md",
+            "development/levels/rebuild/structures/wld-07/physics-contract.json",
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
-            "DEV-357"
+            "DEV-357",
+            "DEV-361",
+            "DEV-362",
+            "DEV-363"
           ],
-          "next_action": "Bridge actual source coordinates into runtime geometry/collision/room ownership; resolve authored elevation findings and sweep routes. Then terrain/editor holes, canonical arrival, supported reusable-model placement and source-specific roof/service/detail passes. Native blocking is not playable acceptance."
+          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -2690,19 +2767,24 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "c34e4f9f133e220f98348850e961ff268ab84fb7",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
           "evidence": [
             "development/levels/rebuild/structures/wld-08/implementation.json",
             "development/levels/rebuild/structures/verification.json",
-            "development/levels/rebuild/structures/README.md"
+            "development/levels/rebuild/structures/README.md",
+            "development/levels/rebuild/structures/wld-08/physics-contract.json",
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
-            "DEV-357"
+            "DEV-357",
+            "DEV-361",
+            "DEV-362",
+            "DEV-363"
           ],
-          "next_action": "Bridge actual source coordinates into runtime geometry/collision/room ownership; resolve authored elevation findings and sweep routes. Then terrain/editor holes, canonical arrival, supported reusable-model placement and source-specific roof/service/detail passes. Native blocking is not playable acceptance."
+          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -2809,19 +2891,24 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "c34e4f9f133e220f98348850e961ff268ab84fb7",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
           "evidence": [
             "development/levels/rebuild/structures/wld-09/implementation.json",
             "development/levels/rebuild/structures/verification.json",
-            "development/levels/rebuild/structures/README.md"
+            "development/levels/rebuild/structures/README.md",
+            "development/levels/rebuild/structures/wld-09/physics-contract.json",
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
-            "DEV-357"
+            "DEV-357",
+            "DEV-361",
+            "DEV-362",
+            "DEV-363"
           ],
-          "next_action": "Bridge actual source coordinates into runtime geometry/collision/room ownership; resolve authored elevation findings and sweep routes. Then terrain/editor holes, canonical arrival, supported reusable-model placement and source-specific roof/service/detail passes. Native blocking is not playable acceptance."
+          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -2920,27 +3007,36 @@
           "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "evidence": [
+            "development/levels/rebuild/wld-10/rough-layout.json"
+          ],
           "defects": [],
           "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "c34e4f9f133e220f98348850e961ff268ab84fb7",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
           "evidence": [
             "development/levels/rebuild/structures/wld-10/implementation.json",
             "development/levels/rebuild/structures/verification.json",
-            "development/levels/rebuild/structures/README.md"
+            "development/levels/rebuild/structures/README.md",
+            "development/levels/rebuild/structures/wld-10/physics-contract.json",
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
-            "DEV-357"
+            "DEV-357",
+            "DEV-361",
+            "DEV-362",
+            "DEV-363",
+            "DEV-359",
+            "DEV-360"
           ],
-          "next_action": "Bridge actual source coordinates into runtime geometry/collision/room ownership; resolve authored elevation findings and sweep routes. Then terrain/editor holes, canonical arrival, supported reusable-model placement and source-specific roof/service/detail passes. Native blocking is not playable acceptance."
+          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -3047,19 +3143,24 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "c34e4f9f133e220f98348850e961ff268ab84fb7",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
           "evidence": [
             "development/levels/rebuild/structures/wld-11/implementation.json",
             "development/levels/rebuild/structures/verification.json",
-            "development/levels/rebuild/structures/README.md"
+            "development/levels/rebuild/structures/README.md",
+            "development/levels/rebuild/structures/wld-11/physics-contract.json",
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
-            "DEV-357"
+            "DEV-357",
+            "DEV-361",
+            "DEV-362",
+            "DEV-363"
           ],
-          "next_action": "Bridge actual source coordinates into runtime geometry/collision/room ownership; resolve authored elevation findings and sweep routes. Then terrain/editor holes, canonical arrival, supported reusable-model placement and source-specific roof/service/detail passes. Native blocking is not playable acceptance."
+          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -3158,27 +3259,36 @@
           "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "evidence": [
+            "development/levels/rebuild/wld-12/rough-layout.json"
+          ],
           "defects": [],
           "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "c34e4f9f133e220f98348850e961ff268ab84fb7",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
           "evidence": [
             "development/levels/rebuild/structures/wld-12/implementation.json",
             "development/levels/rebuild/structures/verification.json",
-            "development/levels/rebuild/structures/README.md"
+            "development/levels/rebuild/structures/README.md",
+            "development/levels/rebuild/structures/wld-12/physics-contract.json",
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
-            "DEV-357"
+            "DEV-357",
+            "DEV-361",
+            "DEV-362",
+            "DEV-363",
+            "DEV-359",
+            "DEV-360"
           ],
-          "next_action": "Bridge actual source coordinates into runtime geometry/collision/room ownership; resolve authored elevation findings and sweep routes. Then terrain/editor holes, canonical arrival, supported reusable-model placement and source-specific roof/service/detail passes. Native blocking is not playable acceptance."
+          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -3285,19 +3395,24 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "c34e4f9f133e220f98348850e961ff268ab84fb7",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
           "evidence": [
             "development/levels/rebuild/structures/wld-13/implementation.json",
             "development/levels/rebuild/structures/verification.json",
-            "development/levels/rebuild/structures/README.md"
+            "development/levels/rebuild/structures/README.md",
+            "development/levels/rebuild/structures/wld-13/physics-contract.json",
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
-            "DEV-357"
+            "DEV-357",
+            "DEV-361",
+            "DEV-362",
+            "DEV-363"
           ],
-          "next_action": "Bridge actual source coordinates into runtime geometry/collision/room ownership; resolve authored elevation findings and sweep routes. Then terrain/editor holes, canonical arrival, supported reusable-model placement and source-specific roof/service/detail passes. Native blocking is not playable acceptance."
+          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -3403,19 +3518,24 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "c34e4f9f133e220f98348850e961ff268ab84fb7",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
           "evidence": [
             "development/levels/rebuild/structures/wld-14/implementation.json",
             "development/levels/rebuild/structures/verification.json",
-            "development/levels/rebuild/structures/README.md"
+            "development/levels/rebuild/structures/README.md",
+            "development/levels/rebuild/structures/wld-14/physics-contract.json",
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
-            "DEV-357"
+            "DEV-357",
+            "DEV-361",
+            "DEV-362",
+            "DEV-363"
           ],
-          "next_action": "Bridge actual source coordinates into runtime geometry/collision/room ownership; resolve authored elevation findings and sweep routes. Then terrain/editor holes, canonical arrival, supported reusable-model placement and source-specific roof/service/detail passes. Native blocking is not playable acceptance."
+          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -3513,27 +3633,36 @@
           "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
+          "status": "IN_PROGRESS",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "evidence": [
+            "development/levels/rebuild/wld-15/rough-layout.json"
+          ],
           "defects": [],
           "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "c34e4f9f133e220f98348850e961ff268ab84fb7",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
           "evidence": [
             "development/levels/rebuild/structures/wld-15/implementation.json",
             "development/levels/rebuild/structures/verification.json",
-            "development/levels/rebuild/structures/README.md"
+            "development/levels/rebuild/structures/README.md",
+            "development/levels/rebuild/structures/wld-15/physics-contract.json",
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
-            "DEV-357"
+            "DEV-357",
+            "DEV-361",
+            "DEV-362",
+            "DEV-363",
+            "DEV-359",
+            "DEV-360"
           ],
-          "next_action": "Bridge actual source coordinates into runtime geometry/collision/room ownership; resolve authored elevation findings and sweep routes. Then terrain/editor holes, canonical arrival, supported reusable-model placement and source-specific roof/service/detail passes. Native blocking is not playable acceptance."
+          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -3639,19 +3768,24 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "c34e4f9f133e220f98348850e961ff268ab84fb7",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
           "evidence": [
             "development/levels/rebuild/structures/wld-16/implementation.json",
             "development/levels/rebuild/structures/verification.json",
-            "development/levels/rebuild/structures/README.md"
+            "development/levels/rebuild/structures/README.md",
+            "development/levels/rebuild/structures/wld-16/physics-contract.json",
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
-            "DEV-357"
+            "DEV-357",
+            "DEV-361",
+            "DEV-362",
+            "DEV-363"
           ],
-          "next_action": "Bridge actual source coordinates into runtime geometry/collision/room ownership; resolve authored elevation findings and sweep routes. Then terrain/editor holes, canonical arrival, supported reusable-model placement and source-specific roof/service/detail passes. Native blocking is not playable acceptance."
+          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -3757,19 +3891,24 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "c34e4f9f133e220f98348850e961ff268ab84fb7",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
           "evidence": [
             "development/levels/rebuild/structures/wld-17/implementation.json",
             "development/levels/rebuild/structures/verification.json",
-            "development/levels/rebuild/structures/README.md"
+            "development/levels/rebuild/structures/README.md",
+            "development/levels/rebuild/structures/wld-17/physics-contract.json",
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
-            "DEV-357"
+            "DEV-357",
+            "DEV-361",
+            "DEV-362",
+            "DEV-363"
           ],
-          "next_action": "Bridge actual source coordinates into runtime geometry/collision/room ownership; resolve authored elevation findings and sweep routes. Then terrain/editor holes, canonical arrival, supported reusable-model placement and source-specific roof/service/detail passes. Native blocking is not playable acceptance."
+          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -3875,19 +4014,24 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "c34e4f9f133e220f98348850e961ff268ab84fb7",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
           "evidence": [
             "development/levels/rebuild/structures/wld-18/implementation.json",
             "development/levels/rebuild/structures/verification.json",
-            "development/levels/rebuild/structures/README.md"
+            "development/levels/rebuild/structures/README.md",
+            "development/levels/rebuild/structures/wld-18/physics-contract.json",
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
-            "DEV-357"
+            "DEV-357",
+            "DEV-361",
+            "DEV-362",
+            "DEV-363"
           ],
-          "next_action": "Bridge actual source coordinates into runtime geometry/collision/room ownership; resolve authored elevation findings and sweep routes. Then terrain/editor holes, canonical arrival, supported reusable-model placement and source-specific roof/service/detail passes. Native blocking is not playable acceptance."
+          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
         },
         "S04": {
           "status": "NOT_AUDITED",
@@ -3994,19 +4138,24 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "c34e4f9f133e220f98348850e961ff268ab84fb7",
+          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
           "evidence": [
             "development/levels/rebuild/structures/wld-07-mortuary/implementation.json",
             "development/levels/rebuild/structures/verification.json",
-            "development/levels/rebuild/structures/README.md"
+            "development/levels/rebuild/structures/README.md",
+            "development/levels/rebuild/structures/wld-07-mortuary/physics-contract.json",
+            "development/levels/rebuild/verification/roster-routes-2026-11-07/all25/route-probes.json"
           ],
           "defects": [
             "DEV-354",
             "DEV-355",
             "DEV-356",
-            "DEV-357"
+            "DEV-357",
+            "DEV-361",
+            "DEV-362",
+            "DEV-363"
           ],
-          "next_action": "Bridge actual source coordinates into runtime geometry/collision/room ownership; resolve authored elevation findings and sweep routes. Then terrain/editor holes, canonical arrival, supported reusable-model placement and source-specific roof/service/detail passes. Native blocking is not playable acceptance."
+          "next_action": "Repair exact per-site capsule/head/edge failures from native collision probes, then continuous ascent/descent and wall/roof negatives. Continue roster source-library placement, persisted terrain holes, supported services and roof forms. Candidate GLB/HCS2 does not unlock a map; no local editor UI or round-duration tests."
         },
         "S04": {
           "status": "NOT_AUDITED",

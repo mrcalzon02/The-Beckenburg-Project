@@ -873,3 +873,14 @@ Failures preserved: old open-context Academy export, actual Prison exterior-serv
 Recovery: corrected source21d20b29 full42429527482 raw365/0/0/365 verified. PR82 expected-head merged to mainfad6c7a92b3025f62159f5ac7d53618a569adfe8 and reconciled into this branch. Its production tree matches c93d141d native42426323930; relevant renderer/assets remain previously verified. Main full42431982917 and Pages42431982068 were queued at observation. House candidate5c3daf92 full42430309980/native42430312740/GPU42430317334 are queued; keep these exact handles. Encounter4afae307 full42427846432 raw368/0/0/368 and native/GPU PASS independently. Preserve concurrent PR83 hunter work; do not force-push or restart valid live handles.
 
 Next breadth batch: native/runtime coordinate/collision/ownership bridge, resolve the8elevation links and sweep all sites' required routes; actual saved editor holes/terrain/arrival and supported reusable-model placement; then roof/service/detail/story passes across the roster. Continue all29packets and later unfinished maps. No round-duration tests or whole-rebuild completion claim.
+
+
+### 7 November 2026 — map-only route checkpoint 19e297a3a597389300db04c011b606245e50a377
+
+Owner stopped unrelated local editor acceptance work; no editor UI runs were launched for this map pass. Main last fetched/read back at cc65453cdd33a8804405fb538f773ee20d82b43e. No new release/full-round/renderer acceptance is claimed; inherited House-default failures remain separate and unmerged.
+
+Actual native work:25 editable scene/GLB rebuilds,129747triangles,6562closed solids,1528measured depth parts,559cap rays,1720treads and192fixed boundary checks PASS; originals/generators hash-verified. Eight unbuildable reservations now have authored flights, lookout turn platforms and an additional separated monastery west stair. Horizontal support strips no longer refill stair holes. Lighthouse rectangular/Boolean precision regressions repaired and independently checked.
+
+All25 exact GLB collision candidates read through the existing headless kernel.1720/1720tread centres supported,1630clear spine rays,852body-clear and819traversable point queries; these are not swept-route acceptance. All506revised-site spines clear.90remaining overhead obstructions and capsule failures are open DEV-361/363. No production movement, map registry or LAN contract change. All7updated contact sheets viewed; gallery7842PNGs and --check PASS. Evidence: development/levels/rebuild/verification/roster-routes-2026-11-07/.
+
+Next: publish/read back this map checkpoint; repair identified source-specific crossing flights/terrain obstructions and explicit stair movement before playable acceptance, continuing supported source-library model placement across the roster. Persisted basement terrain holes remain required. Parent PR85 stays held; live gallery deployment awaits accepted branch integration.
