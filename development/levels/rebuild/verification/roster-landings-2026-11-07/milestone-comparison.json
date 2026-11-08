@@ -1,0 +1,9 @@
+{
+  "before_source": "8ab6a082766065912bfcd1590dc9f6a906e3ff13",
+  "kernel_source_unchanged": true,
+  "prior170directionally_passing_segments_preserved_per_variant": true,
+  "current182pass_per_variant": true,
+  "newly_passing_segments_per_variant": 12,
+  "all221source_segment_keys_preserved": true,
+  "scope": "Geometry/landing changes with the exact same movement kernel; full path audit is stronger than earlier vertical-only chains."
+}

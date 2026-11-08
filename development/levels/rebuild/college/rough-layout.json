@@ -4084,6 +4084,11 @@
         [
           25.7,
           0,
+          37.35
+        ],
+        [
+          25.7,
+          0,
           36.6
         ],
         [
@@ -4097,7 +4102,7 @@
       "headroom_m": 2.2,
       "landing_depth_m": 1.5,
       "risers": 18,
-      "construction": "Authored separated flight/landing coordinates. Verify actual exported support, head/body clearance, approaches, guards and continuous runtime sweeps; no acceptance from centre lines.",
+      "construction": "Straight approach landing before the sideways turn; preserve clear width and remove upper landing overhang above incoming treads. Native complete path/guards/runtime integration remain required.",
       "note": "Separate real entrance/return flights; no floor-hopping graph substitute.",
       "player_access": "OPEN_ROUTE"
     },
@@ -5003,5 +5008,29 @@
       }
     },
     "reason": "Separate intersecting flights and remove folded-back landing obstructions; preserve functions and search envelope. Terrain holes and complete capsule sweeps remain required."
+  },
+  "landing_clearance_revision": {
+    "source_ref": "fe7f4972330a433473ce80428785c3cc597fba87",
+    "previous_layout_sha256": "6762dc357a7c05c9f215c5d111ff67ba77c07c3125ef537f835a764cc1c95657",
+    "previous_points": {
+      "L84": [
+        [
+          25.7,
+          -3,
+          42
+        ],
+        [
+          25.7,
+          0,
+          36.6
+        ],
+        [
+          28.3,
+          0,
+          36.6
+        ]
+      ]
+    },
+    "purpose": "Actual native failure contacts: turn landing intrudes over incoming treads; curved end joints and final lantern landing need continuous full-body support."
   }
 }

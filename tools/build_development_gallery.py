@@ -18,6 +18,7 @@ for path in sorted(set(paths)):
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
     if p.name.endswith('-saved-terrain.png'):kind='Native saved editor terrain inspection; punched physical geometry'
+    elif '/landing-batch/' in path:kind='Native stair landing comparison; rejected and candidate geometry' if '-actual-export-contact' in p.name else 'Rejected native stair landing geometry' if 'rejected-' in p.name else 'Native stair landing construction candidate; runtime integration pending'
     elif '/stair-movement-batch/' in path:kind='Rejected native curved-stair geometry' if 'rejected-' in p.name else 'Native curved-stair construction candidate; runtime acceptance pending'
     elif '/furnishing-batch/' in path:kind='Rejected native rough-prop placement study' if '/rejected-' in path else 'Native staged rough-model inspection' if p.name=='staged-source-inspection.png' else 'Native map rough-prop placement; refinement pending' if '-export-overview' in p.name or '-room-' in p.name or 'rough-allocation-sheet-' in p.name else 'Native model-library sample inspection'
     elif '/synthetic-controls/' in path:kind='Synthetic GPU depth control'

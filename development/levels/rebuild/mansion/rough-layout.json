@@ -2740,6 +2740,11 @@
         [
           41.5,
           0,
+          5.75
+        ],
+        [
+          41.5,
+          0,
           5
         ],
         [
@@ -2753,7 +2758,7 @@
       "headroom_m": 2.2,
       "landing_depth_m": 1.5,
       "risers": 18,
-      "construction": "Authored separated flight/landing coordinates. Verify actual exported support, head/body clearance, approaches, guards and continuous runtime sweeps; no acceptance from centre lines.",
+      "construction": "Straight approach landing before the sideways turn; preserve clear width and remove upper landing overhang above incoming treads. Native complete path/guards/runtime integration remain required.",
       "note": "Measured reservation only; physical capsule/headroom and underside tests remain required.",
       "player_access": "OPEN_ROUTE"
     },
@@ -2772,6 +2777,11 @@
         [
           44.5,
           3.6,
+          10.25
+        ],
+        [
+          44.5,
+          3.6,
           11
         ],
         [
@@ -2785,7 +2795,7 @@
       "headroom_m": 2.2,
       "landing_depth_m": 1.5,
       "risers": 20,
-      "construction": "Authored separated flight/landing coordinates. Verify actual exported support, head/body clearance, approaches, guards and continuous runtime sweeps; no acceptance from centre lines.",
+      "construction": "Straight approach landing before the sideways turn; preserve clear width and remove upper landing overhang above incoming treads. Native complete path/guards/runtime integration remain required.",
       "note": "Measured reservation only; physical capsule/headroom and underside tests remain required.",
       "player_access": "OPEN_ROUTE"
     },
@@ -3215,5 +3225,46 @@
       }
     },
     "reason": "Separate intersecting flights and remove folded-back landing obstructions; preserve functions and search envelope. Terrain holes and complete capsule sweeps remain required."
+  },
+  "landing_clearance_revision": {
+    "source_ref": "fe7f4972330a433473ce80428785c3cc597fba87",
+    "previous_layout_sha256": "48f68b3ada7f2e98fc93342b31398726cf9624c1355f0dc186d6e07440b43619",
+    "previous_points": {
+      "L59": [
+        [
+          41.5,
+          -3,
+          10.4
+        ],
+        [
+          41.5,
+          0,
+          5
+        ],
+        [
+          44.5,
+          0,
+          5
+        ]
+      ],
+      "L60": [
+        [
+          44.5,
+          0,
+          5
+        ],
+        [
+          44.5,
+          3.6,
+          11
+        ],
+        [
+          41.5,
+          3.6,
+          11
+        ]
+      ]
+    },
+    "purpose": "Actual native failure contacts: turn landing intrudes over incoming treads; curved end joints and final lantern landing need continuous full-body support."
   }
 }

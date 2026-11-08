@@ -2,7 +2,7 @@
   "id": "WLD-14",
   "title": "Morrow Point Lightstation",
   "source": "rebuild\\wld-14\\rough-layout.json",
-  "source_sha256": "83ca4db1f39fb9a14f2a082d59e4e788f7024b389477ef85aadd61f919741007",
+  "source_sha256": "ce25135534ea444a3be34c186a29a0ff6e6b493c478dddabac5a458f687dbd2e",
   "zones": 23,
   "routes": 24,
   "shell_openings": [
@@ -189,7 +189,7 @@
       "height": 2.45
     }
   ],
-  "meshes": 333,
+  "meshes": 335,
   "issues": [
     {
       "zone": "bed",
@@ -1322,18 +1322,18 @@
     "Tower spiral currently has sloped route mass only; treads, central void, headroom, door apertures and fall guards need engineering."
   ],
   "native_reopened": true,
-  "blend_sha256": "bfa8c2bc424f0caba57b947da399365470b9d3cfb9639d5a120254accd654426",
+  "blend_sha256": "2b18791f641f5e1ccf6760b54b08dcf7427f5fdc39254ebd10d7efaf25aeef22",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
-    "glb_sha256": "4087b9f31f04544945c70fd9a60723aa78417c283102b479bd9c8ee82de68c03",
+    "glb_sha256": "59e78531f2ee9f7c7f08dcf4c27c54dc296babeb56eb6950503948cfca48a21c",
     "independently_reimported": true,
-    "meshes": 329,
-    "triangles": 28678,
+    "meshes": 331,
+    "triangles": 28702,
     "floor_parts": 33,
     "ceiling_cap_parts": 12,
     "stair_treads": 176,
-    "checked_closed_solids": 303,
+    "checked_closed_solids": 305,
     "measured_depth_parts": 45,
     "exported_cap_rays": 12,
     "fixed_infill_routes": 0,
@@ -1352,7 +1352,7 @@
   "authoritative_input": "development/levels/rebuild/wld-14/rough-layout.json",
   "original_scene_preserved": true,
   "preserved_sources": {
-    "development/levels/rebuild/wld-14/rough-layout.json": "83ca4db1f39fb9a14f2a082d59e4e788f7024b389477ef85aadd61f919741007",
+    "development/levels/rebuild/wld-14/rough-layout.json": "ce25135534ea444a3be34c186a29a0ff6e6b493c478dddabac5a458f687dbd2e",
     "development/levels/blockouts/wld-14/rough-shell.blend": "6b8d0496c954c075010f6fe6c53264cf6880168668c432b43b72dc886284a27b",
     "development/levels/blockouts/wld-14/rough-shell.glb": "81dbb0d76ea5e0e6259c35915e9ed6e0bd6fd6930f04e7c5b4531b05e5334c00"
   },
@@ -1363,12 +1363,13 @@
     "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
   },
   "curved_stair_revision": {
-    "source_ref": "66c5e947b5c49b087d3d0b2eaf9932eaf926db52",
+    "source_ref": "fe7f4972330a433473ce80428785c3cc597fba87",
     "previous": {
-      "rough-shell.blend": "edb35471dc64506cc7c55dcb7adf4d50ed49b8cf8c612530e1722dc3f52e895d",
-      "rough-shell.glb": "ed654f2fe1b8774a80be1d22ad04f56a8a38ff3bc3f25f0a4ac912329125a62e"
+      "rough-shell.blend": "4ec3da590908967c8742d2afa2d5fa5c3b74cdd72088dded17de0c0db2882f79",
+      "rough-shell.glb": "6dd5a0305a74f20d3ae9b0f2a6fe633286ef55588077d467efaf8d859af17f14"
     },
-    "builder_sha256": "8cde05eaf03c2605d233d0be5a143f1ab700b9703280b4cc778c60a3650af88f",
+    "previous_input_origin": "Local structural generator output on the current authoritative layout; source_ref identifies repository context, not asserted byte identity of the generated input",
+    "builder_sha256": "f856ae21a5dea8b2291e2dc2d66fa802c94be4fc1e18ea711bfe67c0c6b1ccc1",
     "treads": 140,
     "components": [
       "route-20 flight0 step1",
@@ -1512,7 +1513,7 @@
       "route-24 flight26 step1",
       "route-24 flight27 step1"
     ],
-    "method": "Mitered continuous ribbon boundaries; same authored elevations/clear width and preserved object transforms",
+    "method": "Mitered continuous ribbon with matched cyclic end boundaries; authored elevations/clear width and original object transforms preserved",
     "limitation": "Actual complete native sweeps, guards, end landing and full source integration still gate acceptance."
   }
 }

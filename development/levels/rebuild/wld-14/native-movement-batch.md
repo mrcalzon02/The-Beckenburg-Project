@@ -1,22 +1,12 @@
-# WLD-14: native stair movement checkpoint
+# WLD-14: complete stair and landing sweep checkpoint
 
-Explicit component-set candidate audit; original playable readers retain literal behavior.
-133/142 authored segments ascend and 133/142 descend under actual 1.8m/.22m movement, with 5cm production sweeps.
-176/176 tread-centre poses traversable; centre results alone are not complete-path acceptance.
-Existing rough prop IDs, poses and model allocations retained.
+Source-native candidate only; no playable unlock.
+142/142 vertical segments ascend and 142/142 descend. 176/176 tread centres traverse.
 
-Evidence: ../verification/roster-stair-movement-2026-11-07/.
+All intermediate flat landing segments are now included in complete-link forward/reverse checks. Exact endpoint chains carry actual player feet across connected links without reinitializing at each floor. Source hashes, per-link results and failed physical component contacts: ../verification/roster-landings-2026-11-07/.
 
-Unfinished segment results:
+Remaining directional flight contacts:
 
-- route-20:27 BLOCKED_AT_7_OF_7/START_BLOCKED
-- route-21:0 START_BLOCKED/BLOCKED_AT_7_OF_7
-- route-21:27 BLOCKED_AT_7_OF_7/START_BLOCKED
-- route-22:0 START_BLOCKED/BLOCKED_AT_7_OF_7
-- route-22:27 BLOCKED_AT_7_OF_7/START_BLOCKED
-- route-23:0 START_BLOCKED/BLOCKED_AT_7_OF_7
-- route-23:27 BLOCKED_AT_7_OF_7/START_BLOCKED
-- route-24:0 START_BLOCKED/BLOCKED_AT_7_OF_7
-- route-24:27 BLOCKED_AT_5_OF_7/START_BLOCKED
+- No failed vertical flight in this audit; this is not a complete flat network, terrain, guard or gameplay acceptance.
 
-Next: repair actual failed landing/support/wall contacts and complete flat-landing link chains, then bridge authored ownership, services, human/AI navigation and replication. Preserve <=40 accessible spaces and staged rough-model placements; no runtime unlock or round-duration test. DEV-361/371 remain open; lighthouse curve geometry DEV-373 and float32 joins DEV-374 have scoped repairs.
+Next: repair actual missing support/landing, walls/portal heights, crossing stair solids and terrain contacts from these measured poses; preserve rough allocations. Native owner/room/navigation/services integration, guards, terrain/foundation/van/story and older-map audits remain. No local editor UI or round-duration test.

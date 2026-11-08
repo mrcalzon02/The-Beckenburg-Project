@@ -53,7 +53,7 @@ public final class RosterStairMovementProbe {
         }
         Files.write(Path.of(args[2]),out);
         var routes=new LinkedHashMap<String,List<String[]>>();
-        for(String row:Files.readAllLines(Path.of(args[1]))){String[] p=row.split("\t");routes.computeIfAbsent(p[0]+":"+p[1]+":"+p[4],k->new ArrayList<>()).add(p);}
+        for(String row:Files.readAllLines(Path.of(args[4]))){String[] p=row.split("\t");routes.computeIfAbsent(p[0]+":"+p[1]+":"+p[4],k->new ArrayList<>()).add(p);}
         var chains=new ArrayList<String>();chains.add("site\tvariant\tlink\tsegments\tlegacy_forward\tlegacy_reverse\tauthored_forward\tauthored_reverse");
         for(var entry:routes.values()){
             String[] p=entry.get(0);var points=new ArrayList<Vec>();boolean contiguous=true;
@@ -63,9 +63,7 @@ public final class RosterStairMovementProbe {
                 if(points.isEmpty())points.add(a);else if(!points.get(points.size()-1).equals(a))contiguous=false;
                 points.add(b);
             }
-            // The flight-only manifest omits intermediate level landings. Those
-            // routes must get a separate complete-path audit, not a fake chain.
-            if(!contiguous)continue;
+            if(!contiguous)throw new AssertionError("Incomplete authored route manifest");
             try(var in=Files.newInputStream(Path.of(p[2]))){old=AuthoredSitePhysics.read(in,p[3],List.of());}
             try(var in=Files.newInputStream(Path.of(p[2]))){map=AuthoredSitePhysics.read(in,p[3],List.of(),names.getOrDefault(p[0]+":"+p[1],Set.of()));}
             var reverse=new ArrayList<>(points);Collections.reverse(reverse);

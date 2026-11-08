@@ -4960,9 +4960,9 @@ Older-map obligation: Audit every older map independently for physical stair run
 
 Cause / uncertainty: Authored treads, body clearance, edges and the kernel narrow neighbour-height allowance need component-specific diagnosis. Clear centre rays cannot establish a full body sweep.
 
-Fix / next action: Explicit exact component identities enable bounded .25m riser/footprint handling while literal body/optical queries and all legacy readers retain behavior. 102 independent controls PASS; actual candidate 170/221 vertical segments pass both directions, 39/82 contiguous chains pass. 51 segments, five full lighthouse spiral transitions, intermediate-flat landing chains and actual playable integration remain open.
+Fix / next action: Explicit step handling retained. Authored landing repairs now yield182/221vertical segments and44/84complete links passing both directions; all intermediate flat landings included. Continuous exact-endpoint College, Mansion and five-turn lighthouse chains PASS; four other chains fail.39vertical segments remain physical blockers. No runtime integration/guard/terrain acceptance inferred.
 
-Evidence and verification: development/levels/rebuild/verification/roster-stair-movement-2026-11-07/; previous source-specific failures retained in earlier roster probes
+Evidence and verification: development/levels/rebuild/verification/roster-landings-2026-11-07/; prior stair checkpoint retains earlier failures
 
 Older-map obligation: Audit every older map independently for physical stair run, landings, headroom, deck openings, body/edge clearance and supported arrivals. No inherited acceptance.
 
@@ -5122,15 +5122,15 @@ Older-map obligation: Publish generated source indexes atomically and retain aut
 
 ### DEV-373 — Rectangular stair treads overlap inside curved lighthouse flights and leave outside gaps
 
-**Status:** MITERED CANDIDATE GEOMETRY FIXED; end/cyclic landing routes remain OPEN · **Affected:** WLD-14 native stair candidate and shared opt-in native movement contract
+**Status:** CURVED JOINS AND FULL TOWER CHAIN FIXED IN NATIVE CANDIDATE; guards/runtime OPEN · **Affected:** WLD-14 native stair candidate and shared opt-in native movement contract
 
 140 curved lighthouse tread solids have overlapping inner corners and visible outer gaps; whole-flight movement fails.
 
 Cause / uncertainty: Each chord was generated as an independently rotated rectangle rather than a ribbon with shared boundaries.
 
-Fix / next action: Replace140 existing tread meshes with shared mitered boundaries, preserving authored widths, elevations, object identities/transforms and triangle budget. Independently reimport closed solids and real composite HCS2. Four before/after views inspected. Five full spiral links still fail top/start transitions; do not claim completed stairs.
+Fix / next action: Shared cyclic miter boundaries join consecutive stair revolutions. Tangent/radial final landing connects lantern floor. All140treads retained at12triangles each; five-turn ground-to-lantern chain now passes actual continuous forward/reverse native sweeps without floor resets. Guards and runtime/story/room integration still open.
 
-Evidence and verification: development/levels/rebuild/verification/roster-stair-movement-2026-11-07/
+Evidence and verification: development/levels/rebuild/verification/roster-landings-2026-11-07/; previous rejected rectangle/first miter views retained
 
 Older-map obligation: All other locations and retained Castle/House/Blackpine/Hollow Creek require individual route and join audits. No inferred fix or playable unlock.
 
@@ -5147,6 +5147,62 @@ Fix / next action: Permit at most10micrometres of world-space edge allowance on 
 Evidence and verification: development/levels/rebuild/verification/roster-stair-movement-2026-11-07/
 
 Older-map obligation: All other locations and retained Castle/House/Blackpine/Hollow Creek require individual route and join audits. No inferred fix or playable unlock.
+
+### DEV-375 — Turn landings overhang the incoming stair flight and block standing movement
+
+**Status:** SCOPED NATIVE REPAIR VERIFIED; full map/runtime acceptance remains open · **Affected:** COLLEGE, MANSION, WLD-14 and shared full-source route audit
+
+CollegeL84 and MansionL59/L60 fail ascent against the landing slab, and descent lacks foot support.
+
+Cause / uncertainty: The sideways landing full width extends behind the flight endpoint over its final treads; schematic endpoint joins are not a usable turn.
+
+Fix / next action: Set back each flight endpoint0.75m and author a straight landing before the sideways turn, preserving original clear widths/rooms. All complete links and actual connected College basement/upper and Mansion basement/service/upper chains pass native sweeps both directions. Three native blend/GLB/HCS2 composites regenerated; source rough placements unchanged.
+
+Evidence and verification: development/levels/rebuild/verification/roster-landings-2026-11-07/
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek and every remaining site require individual physical route/landing/guard/owner audits. These checks do not certify unevaluated maps, services, networking or finished art.
+
+### DEV-376 — Cyclic stair end boundaries and missing final landing interrupt lighthouse ascent
+
+**Status:** SCOPED NATIVE REPAIR VERIFIED; full map/runtime acceptance remains open · **Affected:** COLLEGE, MANSION, WLD-14 and shared full-source route audit
+
+Nine individual lighthouse endpoint segments and allfive full spiral links remain blocked after the first mitered-tread revision.
+
+Cause / uncertainty: First/last offsets use separate tangent normals, leaving a cyclic gap; final upper floor lacks an authored tangent/radial landing.
+
+Fix / next action: Use shared averaged cyclic end normals and append actual tangent/radial lantern landing coordinates. Allfive revolutions and the connected142-segment chain pass1.8m/.22m production movement forward/reverse. Exported support/solids checked; no hidden ramp or collision waiver added.
+
+Evidence and verification: development/levels/rebuild/verification/roster-landings-2026-11-07/
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek and every remaining site require individual physical route/landing/guard/owner audits. These checks do not certify unevaluated maps, services, networking or finished art.
+
+### DEV-377 — Flight-only chain audit omits flat landing segments and resets at link boundaries
+
+**Status:** SCOPED NATIVE REPAIR VERIFIED; full map/runtime acceptance remains open · **Affected:** All25candidate route manifests and connected stair checks
+
+Previous82contiguous vertical chains do not prove intermediate flat landings or travel across an entire multi-link stair.
+
+Cause / uncertainty: The input manifest filtered level segments before joining, and separate link calls initialized a fresh feet pose.
+
+Fix / next action: Audit all84active vertically changing source links with every intermediate flat segment; also carry actual feet through seven maximal unique exact-endpoint chains.44links/three chains pass,40links/four chains remain failing and recorded. Failed source routes are not omitted or promoted.
+
+Evidence and verification: development/levels/rebuild/verification/roster-landings-2026-11-07/
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek and every remaining site require individual physical route/landing/guard/owner audits. These checks do not certify unevaluated maps, services, networking or finished art.
+
+### DEV-378 — Regenerated native scaffold next-step notes retain superseded sloped-mass instructions
+
+**Status:** CURRENT3NOTES UPDATED; shared note-generator carry-forward remains OPEN · **Affected:** COLLEGE, MANSION, WLD-14 structure NEXT.md and future scaffold regenerations
+
+Generated notes can still say that tower stairs are only sloped masses after actual140treads and connected native sweeps have been delivered.
+
+Cause / uncertainty: The scaffold generator copies historical source refine bullets without reconciling later native implementation evidence.
+
+Fix / next action: Replace the three regenerated next-step notes with current complete-link results and true unfinished guard/terrain/owner/services work. Preserve old source concepts. Update the shared note generator during a coordinated source-generator checkpoint so later regeneration cannot revive obsolete claims; do not silently alter all generator identities now.
+
+Evidence and verification: development/levels/rebuild/verification/roster-landings-2026-11-07/; structures/{college,mansion,wld-14}/NEXT.md; previous fe7f4972 notes
+
+Older-map obligation: Inspect each older map handoff against its actual current source and evidence; a regenerated planning note is not proof of a remaining runtime defect or of completed work.
 
 ## Required audit categories
 

@@ -25,14 +25,21 @@ def main():
     bpy.ops.wm.open_mainfile(filepath=str(folder/'rough-shell.blend'))
     objects=list(bpy.context.scene.objects);revised=[]
     for link in links:
-        points=link['points'];dirs=[]
+        points=[link['points'][0]]
+        for p,q in zip(link['points'],link['points'][1:]):
+            if abs(q[1]-p[1])<.01:break
+            points.append(q)
+        assert len(points)>10,'A curved flight needs its explicit rising polyline'
+        dirs=[]
         for p,q in zip(points,points[1:]):
             dx,dz=q[0]-p[0],q[2]-p[2];run=math.hypot(dx,dz)
             assert run>.01 and 0<q[1]-p[1]<=.18+1e-6,'Only ascending one-tread curve segments in this revision'
             dirs.append((dx/run,dz/run))
         offsets=[];half=link['width']/2
+        cyclic=math.hypot(points[-1][0]-points[0][0],points[-1][2]-points[0][2])<.001
         for i in range(len(points)):
             before=dirs[max(0,i-1)];after=dirs[min(i,len(dirs)-1)]
+            if cyclic and i in [0,len(points)-1]:before,after=dirs[-1],dirs[0]
             den=1+before[0]*after[0]+before[1]*after[1];assert den>1,'Reject sharp switchback; author a real landing'
             offsets.append((-(before[1]+after[1])/den*half,(before[0]+after[0])/den*half))
         for i,(p,q) in enumerate(zip(points,points[1:])):
@@ -60,7 +67,7 @@ def main():
     sealed=[link for link in data['links'] if link.get('player_access')=='SEALED_NO_ROUTE']
     report['structural_review']=inspect_export(folder,data,sealed)
     report['blend_sha256']=sha(folder/'rough-shell.blend')
-    report['curved_stair_revision']={'source_ref':source_ref,'previous':previous,'builder_sha256':sha(Path(__file__)),'treads':len(revised),'components':revised,'method':'Mitered continuous ribbon boundaries; same authored elevations/clear width and preserved object transforms','limitation':'Actual complete native sweeps, guards, end landing and full source integration still gate acceptance.'}
+    report['curved_stair_revision']={'source_ref':source_ref,'previous':previous,'previous_input_origin':'Local structural generator output on the current authoritative layout; source_ref identifies repository context, not asserted byte identity of the generated input','builder_sha256':sha(Path(__file__)),'treads':len(revised),'components':revised,'method':'Mitered continuous ribbon with matched cyclic end boundaries; authored elevations/clear width and original object transforms preserved','limitation':'Actual complete native sweeps, guards, end landing and full source integration still gate acceptance.'}
     (folder/'implementation.json').write_bytes((json.dumps(report,indent=2)+'\n').encode())
     print('REVISED_CURVED_STAIRS',args.site,len(revised),'closed authored tread solids',flush=True)
 

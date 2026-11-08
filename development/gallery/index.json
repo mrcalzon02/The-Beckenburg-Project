@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 7910,
+  "count": 7925,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -73702,8 +73702,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 1054500,
-      "sha256": "4597e3626bed7c91ce0702e5f13164979ced2a89409c1ab2b11a94a2d5c76f1e"
+      "bytes": 1054890,
+      "sha256": "4298a2fbacaf10d628ed9c73d4f4d01fa69cf638a0dff5b17d2e00313f105029"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/college-room-lecture.png",
@@ -73713,7 +73713,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1054176,
-      "sha256": "9046201f33232b812f69f8a80fd9a794cf8524c49488b1a3a6ebd57082b28859"
+      "sha256": "c5fda1d324989cd110f2f2d90e78c1ed2d3879307ee403f8c77d4e69532180b1"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/farmhouse-export-overview.png",
@@ -73752,8 +73752,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 1024639,
-      "sha256": "84589bee627be4a61a7376127276ce796e3314cd4ce2eeafecd6d8f1ac9f01cd"
+      "bytes": 1024796,
+      "sha256": "50ddb5b6e0e0042c9895787124faea9a51a8aafbaeb88dc7b24e27dabfc4f68c"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/mansion-room-library.png",
@@ -73763,7 +73763,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1082473,
-      "sha256": "934e8d11ff656b90cb5a7ba239d536d9df3503f927ff9c0d17aa5a95e343a3de"
+      "sha256": "db099aa662e141d68d3e252017f9f130befb199ab637cacdabaf023bd4c89474"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/prison-export-overview.png",
@@ -73812,8 +73812,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1920,
       "height": 880,
-      "bytes": 757574,
-      "sha256": "285d5d6f29417a21d813c6f94665f67981f38d1a4fb522014a984408aaf9d79e"
+      "bytes": 757607,
+      "sha256": "51f6e40a7fa9671d994de255c5749e7f1569b1084bd54c3f2da529e2432b7164"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-02.png",
@@ -73822,8 +73822,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1920,
       "height": 880,
-      "bytes": 814706,
-      "sha256": "98ce08e2e3fc08ab9d46df06c098bba95cd89b95b54355a20f6d7f59e1ed6675"
+      "bytes": 814674,
+      "sha256": "96b222e6211bee9c54cf15003dd186e222f0ebea704ecc7d2b4559d62194874c"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-03.png",
@@ -73852,8 +73852,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1920,
       "height": 880,
-      "bytes": 745869,
-      "sha256": "f73e74bd0f6bfc1b6bf6451401e95fb4b832e7c6512b931a9be3784d8c1dbcb3"
+      "bytes": 745850,
+      "sha256": "a0b9c1c199b77c800a47ea9b348daa9d2efee8a372714c042deda48ce8748616"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-06.png",
@@ -74152,8 +74152,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 1164513,
-      "sha256": "c3e6cbd169280b581b1986cd66fe78a5ac06e23f6c4be4e3c8171e0632762744"
+      "bytes": 1164540,
+      "sha256": "0719df984f1f14882101b70ba95bec892b18735c62bb5706cd936822114c0d16"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-14-room-workroom.png",
@@ -74163,7 +74163,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1067433,
-      "sha256": "1209e772d95fe03002c561fb26d0dc55def1823c4bd395f91662a2f20118ea67"
+      "sha256": "be9369b995986f2773679035fea7b5d65169db2e32a496413a778b1af7465b6f"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-15-export-overview.png",
@@ -74996,6 +74996,156 @@
       "sha256": "2258d97e973ac9e7b3d0aa6fe02ea2bcaf0f6d95c4cb1b588cbb4451f8c11103"
     },
     {
+      "path": "development/levels/rebuild/captures/landing-batch/college-actual-export-contact.png",
+      "url": "development/levels/rebuild/captures/landing-batch/college-actual-export-contact.png",
+      "title": "College actual export contact",
+      "kind": "Native stair landing comparison; rejected and candidate geometry",
+      "width": 1440,
+      "height": 1240,
+      "bytes": 454793,
+      "sha256": "af17ae7b0ef8ac68b52975ad41440120021b44357536187433becc1cc77ab578"
+    },
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/college-landing-candidate-construction.png",
+      "url": "development/levels/rebuild/captures/landing-batch/college-landing-candidate-construction.png",
+      "title": "College landing candidate construction",
+      "kind": "Native stair landing construction candidate; runtime integration pending",
+      "width": 1100,
+      "height": 900,
+      "bytes": 461589,
+      "sha256": "8150579fd3ec7678c7f130049566f9811ca5704962331ee2dc67e2393aac9158"
+    },
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/college-landing-candidate-top.png",
+      "url": "development/levels/rebuild/captures/landing-batch/college-landing-candidate-top.png",
+      "title": "College landing candidate top",
+      "kind": "Native stair landing construction candidate; runtime integration pending",
+      "width": 1100,
+      "height": 900,
+      "bytes": 479044,
+      "sha256": "aed947036969123722c0be80b81810797ad0d81b58db132582889f2ad480eebf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/college-rejected-prior-construction.png",
+      "url": "development/levels/rebuild/captures/landing-batch/college-rejected-prior-construction.png",
+      "title": "College rejected prior construction",
+      "kind": "Rejected native stair landing geometry",
+      "width": 1100,
+      "height": 900,
+      "bytes": 475564,
+      "sha256": "d8e3f1ef472d55daf6e33c6abaaca571634f2b6aaec866cea15c2c84576cbe14"
+    },
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/college-rejected-prior-top.png",
+      "url": "development/levels/rebuild/captures/landing-batch/college-rejected-prior-top.png",
+      "title": "College rejected prior top",
+      "kind": "Rejected native stair landing geometry",
+      "width": 1100,
+      "height": 900,
+      "bytes": 480596,
+      "sha256": "a21c158a55591bb841d6fe78243caadba035c2c49759460d2424bf4bdc588266"
+    },
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/mansion-actual-export-contact.png",
+      "url": "development/levels/rebuild/captures/landing-batch/mansion-actual-export-contact.png",
+      "title": "Mansion actual export contact",
+      "kind": "Native stair landing comparison; rejected and candidate geometry",
+      "width": 1440,
+      "height": 1240,
+      "bytes": 471813,
+      "sha256": "0285dfc08e10179e22d6237b968e6e38082f821c4c71c4b8f86351dd1f6e27e5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/mansion-landing-candidate-construction.png",
+      "url": "development/levels/rebuild/captures/landing-batch/mansion-landing-candidate-construction.png",
+      "title": "Mansion landing candidate construction",
+      "kind": "Native stair landing construction candidate; runtime integration pending",
+      "width": 1100,
+      "height": 900,
+      "bytes": 467085,
+      "sha256": "5592752f3c94eab6a4040335acbc7e64caea7eb0a308e5df8239881702257b3c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/mansion-landing-candidate-top.png",
+      "url": "development/levels/rebuild/captures/landing-batch/mansion-landing-candidate-top.png",
+      "title": "Mansion landing candidate top",
+      "kind": "Native stair landing construction candidate; runtime integration pending",
+      "width": 1100,
+      "height": 900,
+      "bytes": 551715,
+      "sha256": "319644f8efe6ca697e0f30fdb71fb73bee619aabde3f1a8542cffd70d69d348b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/mansion-rejected-prior-construction.png",
+      "url": "development/levels/rebuild/captures/landing-batch/mansion-rejected-prior-construction.png",
+      "title": "Mansion rejected prior construction",
+      "kind": "Rejected native stair landing geometry",
+      "width": 1100,
+      "height": 900,
+      "bytes": 472436,
+      "sha256": "d13cc62e3896693ed448e4cee8f1db803db24f0414937d55e72ea2dbfb227e56"
+    },
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/mansion-rejected-prior-top.png",
+      "url": "development/levels/rebuild/captures/landing-batch/mansion-rejected-prior-top.png",
+      "title": "Mansion rejected prior top",
+      "kind": "Rejected native stair landing geometry",
+      "width": 1100,
+      "height": 900,
+      "bytes": 553148,
+      "sha256": "3fb7edcce846165461970dde9743b32a7ae78666ad02df7a6c38869352643219"
+    },
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/wld-14-actual-export-contact.png",
+      "url": "development/levels/rebuild/captures/landing-batch/wld-14-actual-export-contact.png",
+      "title": "Wld 14 actual export contact",
+      "kind": "Native stair landing comparison; rejected and candidate geometry",
+      "width": 1440,
+      "height": 1240,
+      "bytes": 433011,
+      "sha256": "19674f37b8a8bc14cc03b0d874b69154d209961258f1b9af75f578e937068a49"
+    },
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/wld-14-landing-candidate-construction.png",
+      "url": "development/levels/rebuild/captures/landing-batch/wld-14-landing-candidate-construction.png",
+      "title": "Wld 14 landing candidate construction",
+      "kind": "Native stair landing construction candidate; runtime integration pending",
+      "width": 1100,
+      "height": 900,
+      "bytes": 505874,
+      "sha256": "0a24dd3470d618216b20a3c79b2bc98a93813c2d5526ac7838e92b9dc1bb542c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/wld-14-landing-candidate-top.png",
+      "url": "development/levels/rebuild/captures/landing-batch/wld-14-landing-candidate-top.png",
+      "title": "Wld 14 landing candidate top",
+      "kind": "Native stair landing construction candidate; runtime integration pending",
+      "width": 1100,
+      "height": 900,
+      "bytes": 594016,
+      "sha256": "a68dfb7ac2b9dbc861185e0d61a44e61af5511f4cdcde80bf9cc441e7f0b90d4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/wld-14-rejected-prior-construction.png",
+      "url": "development/levels/rebuild/captures/landing-batch/wld-14-rejected-prior-construction.png",
+      "title": "Wld 14 rejected prior construction",
+      "kind": "Rejected native stair landing geometry",
+      "width": 1100,
+      "height": 900,
+      "bytes": 488933,
+      "sha256": "6b925ba60ecb340c02b0a2f981e3f9f2e4a57574747cbbd09409be17563632ea"
+    },
+    {
+      "path": "development/levels/rebuild/captures/landing-batch/wld-14-rejected-prior-top.png",
+      "url": "development/levels/rebuild/captures/landing-batch/wld-14-rejected-prior-top.png",
+      "title": "Wld 14 rejected prior top",
+      "kind": "Rejected native stair landing geometry",
+      "width": 1100,
+      "height": 900,
+      "bytes": 593115,
+      "sha256": "3419a1736d40806b50ba01c8734b042039c6b81070102e2916a3031dda33f9a0"
+    },
+    {
       "path": "development/levels/rebuild/captures/stair-movement-batch/wld-14-mitered-candidate-construction.png",
       "url": "development/levels/rebuild/captures/stair-movement-batch/wld-14-mitered-candidate-construction.png",
       "title": "Wld 14 mitered candidate construction",
@@ -75103,7 +75253,7 @@
       "width": 960,
       "height": 720,
       "bytes": 343747,
-      "sha256": "686dea4f91769bd8e71e70b38dd1443046ae398f87db4a15a20eb7474e0c5657"
+      "sha256": "7dcbee2b114024ad5c2ceb403d54de135ddbcfb010ed8f17d201225a3848cf7c"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/college/structure-export-cutaway.png",
@@ -75113,7 +75263,7 @@
       "width": 960,
       "height": 720,
       "bytes": 381539,
-      "sha256": "d721ba4811a6a1d2427f574bcdb506bd9f81ef4de3452114b9689b99f2bdde5e"
+      "sha256": "47eabc1d8e47473a3e30ea7ea9699b260887ecf24aeadc137ff877a858225fac"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/farmhouse/structure-export-closed.png",
@@ -75143,7 +75293,7 @@
       "width": 960,
       "height": 720,
       "bytes": 367206,
-      "sha256": "9444e94ed8e097f08d7de1348004e15d6a30517e92df5217aa2b6ff01e5c82cc"
+      "sha256": "56b0a9014ba5f30ccc629c39cbb80dfa51755501b636e51c60cd7a01d4961d28"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/mansion/structure-export-cutaway.png",
@@ -75153,7 +75303,7 @@
       "width": 960,
       "height": 720,
       "bytes": 407542,
-      "sha256": "f3e6674bff35259ad628f5236176d2d4f1f889c9e7f3e41c8f6516e6c012777e"
+      "sha256": "96a5578a3c5b770a635f954fc4c8a986b1942f31cb400ea8cd3dce76274eaaff"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/prison/structure-export-closed.png",
@@ -75513,7 +75663,7 @@
       "width": 960,
       "height": 720,
       "bytes": 641045,
-      "sha256": "266bc9cc1760cc5110b2f1c58a31989d71aa29c4d08faa9af71bc04735a1adcc"
+      "sha256": "f13167980e2be426b5ffe87efbe857fbef24a52d7650811e362b025bc92cde35"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-14/structure-export-cutaway.png",
@@ -75523,7 +75673,7 @@
       "width": 960,
       "height": 720,
       "bytes": 673729,
-      "sha256": "23e3fc0248f37ade7402da04d9c786e02e629839524272bd2c68436e652614bf"
+      "sha256": "8c2715420eff15931378875244d63266366cd37efe1d9b1c72f66f9404e3fc0e"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-15/structure-export-closed.png",
@@ -75903,7 +76053,7 @@
       "width": 960,
       "height": 720,
       "bytes": 405749,
-      "sha256": "a2e7330fc501162670e55b1b5f0b14faca654e20bb8e024b3fdbc8fbfe4ab0e3"
+      "sha256": "e08135fd4c9d225512c7df9d632af89179ffaec4d9814b684624873ccfbdf3fb"
     },
     {
       "path": "development/levels/rebuild/structures/college/structure-export-closed.png",
@@ -75913,7 +76063,7 @@
       "width": 960,
       "height": 720,
       "bytes": 343747,
-      "sha256": "686dea4f91769bd8e71e70b38dd1443046ae398f87db4a15a20eb7474e0c5657"
+      "sha256": "7dcbee2b114024ad5c2ceb403d54de135ddbcfb010ed8f17d201225a3848cf7c"
     },
     {
       "path": "development/levels/rebuild/structures/college/structure-export-cutaway.png",
@@ -75923,7 +76073,7 @@
       "width": 960,
       "height": 720,
       "bytes": 381539,
-      "sha256": "d721ba4811a6a1d2427f574bcdb506bd9f81ef4de3452114b9689b99f2bdde5e"
+      "sha256": "47eabc1d8e47473a3e30ea7ea9699b260887ecf24aeadc137ff877a858225fac"
     },
     {
       "path": "development/levels/rebuild/structures/farmhouse/preview.png",
@@ -75963,7 +76113,7 @@
       "width": 960,
       "height": 720,
       "bytes": 397047,
-      "sha256": "cf96a01f99f3b5731b6dc730ba9b4d335eaeb466432e08b6f0df133118b3c96e"
+      "sha256": "e25e586e994c5db1bd952c0c048f842cb176b6d7d1091949f57ec3524e601865"
     },
     {
       "path": "development/levels/rebuild/structures/mansion/structure-export-closed.png",
@@ -75973,7 +76123,7 @@
       "width": 960,
       "height": 720,
       "bytes": 367206,
-      "sha256": "9444e94ed8e097f08d7de1348004e15d6a30517e92df5217aa2b6ff01e5c82cc"
+      "sha256": "56b0a9014ba5f30ccc629c39cbb80dfa51755501b636e51c60cd7a01d4961d28"
     },
     {
       "path": "development/levels/rebuild/structures/mansion/structure-export-cutaway.png",
@@ -75983,7 +76133,7 @@
       "width": 960,
       "height": 720,
       "bytes": 407542,
-      "sha256": "f3e6674bff35259ad628f5236176d2d4f1f889c9e7f3e41c8f6516e6c012777e"
+      "sha256": "96a5578a3c5b770a635f954fc4c8a986b1942f31cb400ea8cd3dce76274eaaff"
     },
     {
       "path": "development/levels/rebuild/structures/prison/preview.png",
@@ -76413,7 +76563,7 @@
       "width": 960,
       "height": 720,
       "bytes": 502272,
-      "sha256": "dbb78ac134e27080de72eb1b09e27cab9ca1117c21c3fe2cfbd1e2a96347cf2d"
+      "sha256": "402ccae0a7a81e10dfc6bf57d26a26c9f25634235230c674e0632de91b32395c"
     },
     {
       "path": "development/levels/rebuild/structures/wld-14/structure-export-closed.png",
@@ -76423,7 +76573,7 @@
       "width": 960,
       "height": 720,
       "bytes": 641045,
-      "sha256": "266bc9cc1760cc5110b2f1c58a31989d71aa29c4d08faa9af71bc04735a1adcc"
+      "sha256": "f13167980e2be426b5ffe87efbe857fbef24a52d7650811e362b025bc92cde35"
     },
     {
       "path": "development/levels/rebuild/structures/wld-14/structure-export-cutaway.png",
@@ -76433,7 +76583,7 @@
       "width": 960,
       "height": 720,
       "bytes": 673729,
-      "sha256": "23e3fc0248f37ade7402da04d9c786e02e629839524272bd2c68436e652614bf"
+      "sha256": "8c2715420eff15931378875244d63266366cd37efe1d9b1c72f66f9404e3fc0e"
     },
     {
       "path": "development/levels/rebuild/structures/wld-15/preview.png",
