@@ -46,7 +46,7 @@ public final class LevelPlans {
     static LevelDefinition buildSource(HouseMap.Site site) {
         return switch(site.name()) {
             case "USER" -> UserLevelLibrary.source();
-            case "HOUSE" -> house();
+            case "HOUSE" -> HouseSourceVersions.selected();
             case "HOLLOW_CREEK" -> HollowCreekLevel.build();
             case "MANSION" -> wing("mansion","Blackthorn Manor",10,20,26,38,3.6,
                 new String[]{"Grand staircase hall","Library","Dining hall","Scullery","Ballroom","Drawing room","Morning room","Upper gallery","Master suite","Servants corridor","Attic archive","Wine cellar"},"parquet","estate");

@@ -1199,7 +1199,7 @@
         },
         "S06": {
           "status": "IN_PROGRESS",
-          "source_sha": "e91d7e73d5da22d9e52bdad3776a666a4dc17f2d",
+          "source_sha": "60a239ddf6cd183cd4676cef241ae70a88d5107e",
           "evidence": [
             "development/levels/rebuild/house/story-construction.md",
             "development/levels/rebuild/house/story-native-verification.json",
@@ -1209,7 +1209,8 @@
             "development/levels/rebuild/house/services-native-verification.json",
             "development/levels/rebuild/house/services-contacts.json",
             "development/levels/rebuild/house/asset-use.csv",
-            "development/levels/rebuild/verification/house-heating-water-2026-11-07/verification.json"
+            "development/levels/rebuild/verification/house-heating-water-2026-11-07/verification.json",
+            "development/levels/rebuild/verification/house-native-migration-2026-11-07/verification.json"
           ],
           "defects": [
             "DEV-311",
@@ -1222,13 +1223,19 @@
             "DEV-322",
             "DEV-323",
             "DEV-324",
-            "DEV-325"
+            "DEV-325",
+            "DEV-335",
+            "DEV-337",
+            "DEV-338",
+            "DEV-339",
+            "DEV-341",
+            "DEV-342"
           ],
-          "next_action": "Verify current360/full/native/GPU and merged Pages; refine valve/vent detail, complete material/light/wear review and authored House encounter, saved editing/live promotion and complete House/client/network/mission/hardware gates; continue all29packets and then remaining unfinished maps."
+          "next_action": "Verify exact365/full/native/GPU and deployed migration captures; finish fresh House default promotion, authored encounter, matched door/circuit/light/material/wear and complete location/client/mission/hardware acceptance, then continue all29packets and later unfinished maps."
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "2eb8a9ead32eef7ef9ff73c4af9e6f7f8eb04ae8",
+          "source_sha": "60a239ddf6cd183cd4676cef241ae70a88d5107e",
           "evidence": [
             "development/levels/rebuild/house/story-construction.md",
             "development/levels/rebuild/house/story-native-verification.json",
@@ -1247,7 +1254,8 @@
             "development/levels/model-production/house-fridge/visual-review.json",
             "development/levels/rebuild/verification/house-functional-fill-2026-11-07/verification.json",
             "development/levels/rebuild/verification/house-template-compatibility-2026-11-07/verification.json",
-            "development/levels/rebuild/verification/house-fridge-relocation-2026-11-07/verification.json"
+            "development/levels/rebuild/verification/house-fridge-relocation-2026-11-07/verification.json",
+            "development/levels/rebuild/verification/house-native-migration-2026-11-07/verification.json"
           ],
           "defects": [
             "DEV-311",
@@ -1269,13 +1277,19 @@
             "DEV-331",
             "DEV-332",
             "DEV-333",
-            "DEV-334"
+            "DEV-334",
+            "DEV-335",
+            "DEV-337",
+            "DEV-338",
+            "DEV-339",
+            "DEV-341",
+            "DEV-342"
           ],
-          "next_action": "Verify current362/full/editor/GPU and deployed new captures; finish explicit built-in saved House migration, functional attachment safety, default promotion, authored encounter and matched light/material/full location acceptance; continue all29packets and later unfinished maps."
+          "next_action": "Verify exact365/full/native/GPU and deployed migration captures; finish fresh House default promotion, authored encounter, matched door/circuit/light/material/wear and complete location/client/mission/hardware acceptance, then continue all29packets and later unfinished maps."
         },
         "S08": {
           "status": "IN_PROGRESS",
-          "source_sha": "2eb8a9ead32eef7ef9ff73c4af9e6f7f8eb04ae8",
+          "source_sha": "60a239ddf6cd183cd4676cef241ae70a88d5107e",
           "evidence": [
             "development/levels/rebuild/verification/house-room-review-2026-11-07/verification.json",
             "development/levels/rebuild/verification/house-room-review-2026-11-07/reviewed-rooms.csv",
@@ -1285,7 +1299,8 @@
             "development/levels/model-production/house-fridge/visual-review.json",
             "development/levels/rebuild/verification/house-functional-fill-2026-11-07/verification.json",
             "development/levels/rebuild/verification/house-template-compatibility-2026-11-07/verification.json",
-            "development/levels/rebuild/verification/house-fridge-relocation-2026-11-07/verification.json"
+            "development/levels/rebuild/verification/house-fridge-relocation-2026-11-07/verification.json",
+            "development/levels/rebuild/verification/house-native-migration-2026-11-07/verification.json"
           ],
           "defects": [
             "DEV-326",
@@ -1296,13 +1311,19 @@
             "DEV-331",
             "DEV-332",
             "DEV-333",
-            "DEV-334"
+            "DEV-334",
+            "DEV-335",
+            "DEV-337",
+            "DEV-338",
+            "DEV-339",
+            "DEV-341",
+            "DEV-342"
           ],
-          "next_action": "Verify current362/full/editor/GPU and deployed new captures; finish explicit built-in saved House migration, functional attachment safety, default promotion, authored encounter and matched light/material/full location acceptance; continue all29packets and later unfinished maps."
+          "next_action": "Verify exact365/full/native/GPU and deployed migration captures; finish fresh House default promotion, authored encounter, matched door/circuit/light/material/wear and complete location/client/mission/hardware acceptance, then continue all29packets and later unfinished maps."
         },
         "S09": {
           "status": "IN_PROGRESS",
-          "source_sha": "2eb8a9ead32eef7ef9ff73c4af9e6f7f8eb04ae8",
+          "source_sha": "4afae307efe7b4903e14aca2d51d545ebcb0a21a",
           "evidence": [
             "development/levels/rebuild/house/story-construction.md",
             "development/levels/rebuild/house/story-native-verification.json",
@@ -1319,7 +1340,10 @@
             "development/levels/model-production/house-fridge/visual-review.json",
             "development/levels/rebuild/verification/house-functional-fill-2026-11-07/verification.json",
             "development/levels/rebuild/verification/house-template-compatibility-2026-11-07/verification.json",
-            "development/levels/rebuild/verification/house-fridge-relocation-2026-11-07/verification.json"
+            "development/levels/rebuild/verification/house-fridge-relocation-2026-11-07/verification.json",
+            "development/levels/rebuild/verification/house-native-migration-2026-11-07/verification.json",
+            "development/levels/rebuild/house/final-lighting-review.md",
+            "development/levels/rebuild/verification/house-final-lighting-2026-11-07/verification.json"
           ],
           "defects": [
             "DEV-311",
@@ -1340,16 +1364,29 @@
             "DEV-331",
             "DEV-332",
             "DEV-333",
-            "DEV-334"
+            "DEV-334",
+            "DEV-335",
+            "DEV-337",
+            "DEV-338",
+            "DEV-339",
+            "DEV-341",
+            "DEV-342"
           ],
-          "next_action": "Verify current362/full/editor/GPU and deployed new captures; finish explicit built-in saved House migration, functional attachment safety, default promotion, authored encounter and matched light/material/full location acceptance; continue all29packets and later unfinished maps."
+          "next_action": "Complete latest furnished compass/join review, exact-source encounter remote acceptance, fresh default promotion and whole-location/client/hardware gates; continue all29packets and later unfinished maps."
         },
         "S10": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "4afae307efe7b4903e14aca2d51d545ebcb0a21a",
+          "evidence": [
+            "development/levels/rebuild/house/final-lighting-review.md",
+            "development/levels/rebuild/verification/house-final-lighting-2026-11-07/verification.json",
+            "development/levels/rebuild/house/encounter.md",
+            "development/levels/rebuild/verification/house-encounter-2026-11-07/integration-source-sha256.json"
+          ],
+          "defects": [
+            "DEV-344"
+          ],
+          "next_action": "Complete latest furnished compass/join review, exact-source encounter remote acceptance, fresh default promotion and whole-location/client/hardware gates; continue all29packets and later unfinished maps."
         },
         "S11": {
           "status": "NOT_AUDITED",

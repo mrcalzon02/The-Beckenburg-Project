@@ -70,6 +70,22 @@ public final class GlbProps {
     private static final List<String> materialNames=new ArrayList<>();
     public static synchronized String materialName(int material){int i=material-TEXTURE_BASE;return i>=0&&i<materialNames.size()?materialNames.get(i):"";}
     private static final List<BufferedImage> textures=new ArrayList<>();
+    // Material identity/samplers stay separate. Immutable identical source PNGs
+    // need one decoded bitmap; weak entries do not retain transient DEV reviews.
+    private static final Map<String,java.lang.ref.WeakReference<BufferedImage>> sourcePictures=
+        new java.util.LinkedHashMap<>(128,.75f,true){
+            protected boolean removeEldestEntry(Map.Entry<String,java.lang.ref.WeakReference<BufferedImage>> e){return size()>512;}
+        };
+    private static BufferedImage sourcePicture(byte[] png,boolean readableCover)throws IOException{
+        String key;
+        try{key=java.util.HexFormat.of().formatHex(java.security.MessageDigest.getInstance("SHA-256").digest(png))+":"+readableCover;}
+        catch(java.security.NoSuchAlgorithmException impossible){throw new AssertionError(impossible);}
+        var prior=sourcePictures.get(key);var image=prior==null?null:prior.get();
+        if(image!=null)return image;
+        image=ImageIO.read(new ByteArrayInputStream(png));if(image==null)throw new IOException("Unsupported source material image");
+        if(readableCover)image=readableBookCover(image);
+        sourcePictures.put(key,new java.lang.ref.WeakReference<>(image));return image;
+    }
     // glTF 2.0 origin is upper-left. Apply it to vehicles and new authored
     // surface atlases; legacy art keeps its previously reviewed mapping.
     private static final List<Boolean> vehicleUvMaterials=new ArrayList<>();
@@ -422,7 +438,7 @@ public final class GlbProps {
     private static synchronized Model decode(byte[] bytes,String resourceName)throws IOException{
         var source=org.beckenburg.editor.EditorGlbReader.read(bytes);int[] materialIds=new int[source.materials().size()];
         for(var material:source.materials()){
-            int i=material.index();var picture=ImageIO.read(new ByteArrayInputStream(material.png()));if(bookCoverMaterial(resourceName))picture=readableBookCover(picture);
+            int i=material.index();var picture=sourcePicture(material.png(),bookCoverMaterial(resourceName));
             materialIds[i]=TEXTURE_BASE+textures.size();if(material.alpha().equals("BLEND"))gltfBlendMaterials.add(materialIds[i]);else if(material.alpha().equals("MASK"))gltfMaskCutoffs.put(materialIds[i],material.cutoff());
             textures.add(picture);samplerWrapS.add(material.wrapS());samplerWrapT.add(material.wrapT());
             boolean external=resourceName==null||ImportedAssetLibrary.approved(resourceName);

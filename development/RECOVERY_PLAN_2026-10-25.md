@@ -781,3 +781,83 @@ Current source revision first-principles-functional-furnishings-v1-981935462ed80
 Source definition/supports/exportZIP/native/asset-use and captures regenerated from actual source. Existing parent361 acceptance remains historical at its former coordinates. Current combined362/full/editor/GPU and merged new-capture gallery remain pending. House saved built-in migration/functional attachment safety/default promotion, authored encounter and complete final location/client/hardware acceptance remain open. All29packets and remaining unfinished maps continue. No round-duration tests.
 
 Owner-directed fridge relocation implementation2eb8a9ead32eef7ef9ff73c4af9e6f7f8eb04ae8; native/export/captures and current stage evidence bind this source. Compatibility checkpoint40485a83 was pushed and remotely verified. Current362 acceptance next.
+
+
+## House native migration / editor-memory recovery WIP — 7 November 2026
+
+Parent PR81 exact sourcec1fe6f53 full42420139114 actual362/0/0/362, native42420157493/GPU42420161347 SUCCESS; expected-head merge1fe0e2490a93c5f148f9f16c686ff7794aa7617e confirmed. Its17source/native/export/capture/index files were read back exactly. Main parente1b49eb7 full42418636058 actual361/0/0/361 and installer42418635872 pass independently.
+
+New isolated map/house-migration implements same-document architectural metadata, actual selected saved built-in House dispatch, human/Agent Services rebuild, three-way original fixture deltas/deletions, retained custom stable IDs/storey support, full snapshot source undo/redo and exact original native backup on explicit save. Source attachments refuse unsafe standalone edits. Actual saved-House source/breaker/52species-controller/solo/4TCP ghost trip/reset/resync tests pass. Actual native migration test with captures passes at256MB in41.112seconds. Existing editor identity/recovery/change/disk/schema, custom-template and Castle upgrade checks pass within their source scopes. Current manifest364 includes new migration and actual scene-retirement checks. Fresh default House still legacy pending final promotion/whole-location acceptance.
+
+Memory recovery is NOT ACCEPTED yet.512MB human GUI passed; configured256MB exposed actual CPU scene/topology retention OOM. A later GUI run misleadingly printedPASS after an AWT background OOM; that raw log is explicitly rejected. Source now retires inactive CPU geometry, clears old topology before replacement, preserves prepared destination source and makes asynchronous GUI failure fatal.256MB native GUI, exact return-pixel/preload retention and renderer regression retries remain pending. This WIP source is not release-ready. Failed compile/API/OOM/histogram evidence is retained under verification/house-native-migration-2026-11-07.
+
+Next: complete memory recovery tests; reconcile merged PR81/main and verify new deployed images; publish verified source and run exact364/full/native/GPU. Then House default promotion, actual authored encounter, final matched door/circuit/material/lighting and whole-location acceptance, followed by all29packets and later unfinished maps. No round-duration tests or physical FPS acceptance.
+
+
+## Verified House native migration and editor-memory checkpoint — 7 November 2026
+
+WIP5b857de8 and reconciled2bf304ac are recoverable on remote map/house-migration. Memory recovery now passes locally: real256MB Windows editor rebuild/humanUndoRedo/save/reopen/current-map/capture has no background exceptions, and fatal asynchronous errors are enforced. Actual Castle/House/Castle retirement preserves every return pixel and exact prepared destination identity. Release inactive CPU source/identity sets, old Castle topology before replacement, and old resident payloads. Original PNGs now share immutable decoded storage by content/treatment while retaining distinct materials/samplers/factors/alpha; no rescaling/artwork change or heap increase. Same retired diagnostic has90.47MB vs56.70MB byte arrays; this is not FPS or total process-memory acceptance.
+
+Final saved-native migration from a fresh43source native compile passes at256MB in41.494seconds, including actual4TCP/solo electrical tests and three inspected default-dispatch captures. Human560x350viewport capture is also inspected. Exact original backup, architecture/identity undo-redo, old source deltas/deletions and retained custom cellar support pass; actual source-triangle containment conflicts and required-attachment edits are refused. Dynamic/render/preload/payload/Workbench/metadata regressions and140material/13733203texel parity pass. Unchanged construction/native revision981935462ed806a0 remains131793triangles/230images/45props.365manifest preflight passes; exact current full/editor/GPU acceptance next.
+
+PR81 sourcec1fe6f53 full42420139114 actual362/0/0/362 and editor42420157493/GPU42420161347 passed; expected-head merge1fe0e2490a93c5f148f9f16c686ff7794aa7617e reconciled. Parent Pages42422291152 actual HTML/index/all98House diagnostic/asset PNGs match (100files). Main full42422292792 was observed live; installer42422292783 and editor42422292731 pass independently. Do not infer raw full acceptance from packaging. Failed API/fixture/256MB/background-PASS/return OOM logs remain explicitly rejected.
+
+Next: publish/read back this final verified source, run exact365/full/native/GPU and later verify deployed migration images. Finish fresh default House promotion, conservative saved custom attachment resolutions, authored encounter and final matched door/circuit/light/material/whole-location/client acceptance. Continue all29packets and remaining unfinished maps. No round-duration testing or physical FPS acceptance.
+
+Verified migration/memory implementation60a239ddf6cd183cd4676cef241ae70a88d5107e; stage/source hashes bind actual365manifest and local256MB/TCP/material evidence. Publish and obtain exact-source full/native/GPU; new captures require merged Pages readback.
+
+
+## House encounter WIP / native recovery priority — 7 November2026
+
+Protocol checkpoint698163b1 explicitly separates LAN3 authored cue compatibility from runtime integration. Core House train controller is now wired into actual solo/host paths; source test passes empty-room/full-object doorway/deck occlusion, one-shot/stale/reset, possession/death/disconnect/timeout and independent model-foot support, unchanged routes/cover. Two actual before/after renders were inspected and an original windup WAV generated. Real solo/TCP/photo/old-version/audio/GPU acceptance remains pending; no encounter completion or fresh default promotion.
+
+Protected PR82 sourcea613df30 GPU42424143713 PASS; full42424140271 remains observed live. Native42424140546 FAILS at CLI corrupt-primary bootstrap, despite actual256MB GUI and prior native checks passing: recoverSavedDocument loads the corrupt primary through source selection before restoring previous data (DEV-345). Preserve that raw failure. Next action is isolated native recovery correction and actual CLI regression before promoting either checkpoint. All29packets/later maps remain active; no round-duration or physical FPS claims.
+
+
+## Isolated native House bootstrap recovery correction — 7 November2026
+
+PR82 native42424140546 fails its actual corrupt-start CLI check: House source selection attempts to parse the corrupt primary before restoring valid previous data. All earlier native/256MB GUI checks and GPU42424143713 passed; full42424140271 remains observed live. Keep that source frozen while correcting independently.
+
+On fix/house-source-recovery, recoverSavedDocument now uses a fixed House fallback for parsing, then validates architecture/props/attachments from the candidate backup. Exact versionless/rebuilt backup bytes and gameplay source restore at256MB. Foreign/future/detached-service candidates preserve corrupt primary bytes. The exact formerly failing verify_editor_agent_cli.py now passes actual process bootstrap, recovery/save/stale/JSON/capture/native checks. Renderer/assets/construction and protocol2 are unchanged. New native/full corrected-source CI remains pending. Actual main1fe0e249 full42422292792 raw362/0/0/362 is recorded independently.
+
+Encounter WIP d8e6da1c is preserved and remotely verified on map/house-encounter, including two inspected train poses and original synthesized cue; actual solo/TCP/photo/protocol3 acceptance remains pending. Resolve recovery gate first, then resume House encounter/default promotion/final map acceptance and all29packets/later maps. No round-duration tests or physical FPS claims.
+
+Isolated corrupt-primary recovery implementationf3e215fc6c7c9c39464edd405645835a48cfb9ad; exact expanded native/CLI tests and control capture are committed. Publish isolated checkpoint and rerun failed native acceptance; keep live parent365 handle42424140271 unchanged until terminal.
+
+Reconciled isolated recovery sourcec93d141d into encounter work; parent PR82 remains on the same corrected source under its own acceptance runs.
+
+## Requested sync-only checkpoint — 7 November 2026
+
+Owner fridge objection is already fixed in merged PR81/main1fe0e2490a93c5f148f9f16c686ff7794aa7617e: south-wall centre14.9/14.1925/yawPI,6cm rear gap, clear of both doorways. No additional placement or model change in this checkpoint.
+
+Reconciled encounter parent142601aa includes corrected native recoveryc93d141d. Actual solo and four-TCP encounter integration tests pass at256MB, including normal film/no ghost credit, legacy protocol refusal, public pose, independent power, durable rotated reconnect/no replay and owner-disconnect abort. Host close cancels controller. Rejected test fixtures DEV346–349 and final logs retained. Core support/occlusion captures remain inspected; subjective audio and exact-source remote encounter/full/native/GPU acceptance remain pending.
+
+Recovery native42426323930 at c93d141d is SUCCESS; raw complete native/CLI PASS retained. Corrected full365 run42426485514 remains in progress at checkpoint; no inferred acceptance or merge. Main1fe0e249 full42422292792 actual362/0/0/362, installer42422292783 and native42422292731 PASS. New encounter captures remain branch-published only; deployed gallery readback awaits accepted merge. Gallery generated and checked. Stop after sync/commit as requested; next work is parent365 raw result, PR82 closeout and encounter remote acceptance, then House default/final whole-location review and remaining maps.
+
+## Furnished House matched lighting checkpoint — 7 November 2026
+
+Previous goal turn made concrete progress: verified and published encounter integration checkpoint4afae307, preserving corrected native recovery and owner fridge placement. Resume verified parent full365 run42426485514 is live; no restart or inferred acceptance. Main1fe0e249 still current at fetch; recorded raw362/0/0/362, native/editor and installer remain scoped parent evidence. PR84 now reviews encounter4afae307, with full42427846432, native42427846331 and GPU42427852522 live/queued; PR82 remains protectedc93d141d pending its actual365summary. Preserve concurrent PR83 hunter work.
+
+New branch map/house-final-review preserves those frozen sources. Actual256MB SceneRenderer CLASSIC captures cover both upper and lower joins at all15authored traversable spawns, each with six matched door/circuit/blackout/torch states:180runtime PNGs and30contact sheets. Every sheet was inspected. No new visible join leak was identified in this bounded view set; expected real doorway/stair light and independent van power are retained. Current45props/131793tri/230images and fridge14.9/14.1925 remain unchanged. Record exact review limits in house/final-lighting-review.md; these selected views do not accept whole rooms, GPU parity or physical FPS. Gallery actual PNGs/index generated/checked; deployment still requires accepted merge and actual readback.
+
+Next: parent365 raw result/PR82 merge and gallery deployment; exact encounter full/native/GPU; latest furnished compass and targeted source/receiver joins; fresh default promotion and complete client/mission/location acceptance. Continue all29packets and later unfinished maps. No round-duration testing.
+
+## Recovery priority: actual parent365 failure — 7 November 2026
+
+Run42426485514 at c93d141d1d9fa0e9fa1bef55485d182553f70ff0 is terminal. Despite a green advisory workflow wrapper, its raw summary is364passed/1failed/0skipped/365manifest. Reject full acceptance and hold PR82 merge. LanHunterAnimationGameplayTest misses WALK_B when cold software rendering/capture crosses the actual stale-observation reset interval. Production gait is unchanged. DEV350–352 record the timing error plus invalid zero-vector stop and premature STATE-before-body fixture assumptions.
+
+Isolated fix/hunter-gait-clock starts at exactc93d141d. Actual scheduled clock quiesces, every real host tick advances contiguously, TCP STEP/Ctrl and normal snapshots still drive all three live panels/renderers. Deliberate1.1second capture delays retain both stride frames; actual stationary snapshot, crouch/stand, scene reset and departure pass at256MB. Explicit stale-gap/A-B unit controls pass. Every original assertion remains. Failed fixture logs and raw parent summary preserved;12actual software pose captures published as diagnostics, two representative frames inspected. Source/render/assets/protocol are unchanged. New full365 still required.
+
+PR84 encounter4afae307 native42427846331/GPU42427852522 SUCCESS; full368run42427846432 remains live. Keep exact handle. House lighting review02f83c85 and fresh default candidate8994d699 are remotely verified separate branches; no acceptance or merge claim. Current remote main1fe0e249 retains fridge fix and raw362/0/0/362 acceptance. User overlay audit confirms committed ghost/chill/frost procedural effects are ancestors of remote main; three actual effect/folio/choreography checks pass. Ambient-temperature-driven continuous overlay was not found.
+
+Next: publish isolated correction and obtain new actual365summary before PR82 closeout; reconcile encounter only after its existing run terminates; then furnished review/default candidate and complete House/client/GPU/location gates, all29packets and remaining maps. No round-duration or physical FPS claims.
+
+## Fresh-default candidate reconciled verification — 7 November 2026
+
+Candidate8994d699 is reconciled with isolated gait recovery21d20b29 without losing encounter, lighting or independent defect histories. Source now selects the furnished House only for missing native documents and pins newly created custom Houses to its generation. Existing versionless built-in/custom documents retain original coordinates and bytes. Protected assemblies and actual source pivots remain enforced.
+
+Actual local seven focused tests PASS: fresh default/four-TCP electrical, template compatibility, native rebuild upgrade/52species ghost trip, recovery, identity, collision round-trip and agent service. DEV353 records and preserves four rejected first-prop/historical fixture assumptions. Actual Windows GUI PASS at256MB for fresh45prop editor open/no implicit write/capture/save/game load, then explicit historical recovery/rebuild/undo/redo/reopen. Separate CLI process PASS includes stable inspected independent furniture edit, parity, reopen/stale and corrupt-start recovery. Both actual fresh runtime captures inspected.369manifest preflight PASS is not full-suite execution. Gallery generated/checked; new captures still await accepted merge and deployment readback.
+
+Parent corrected full365run42429527482 at21d20b29 is still live. Earlier c93d141d run42426485514 actual364/1/0/365 remains rejected despite its green wrapper. Encounter4afae307 native42427846331/GPU42427852522 PASS; its full368run42427846432 still live. Preserve these handles and concurrent PR83 hunter implementation. Current main1fe0e249 already contains owner fridge relocation and procedural haunting/chill/frost effects; actual effect/folio/choreography checks passed during user-requested publication audit. A continuous ambient-temperature overlay is not established by those event effects.
+
+Next: exact candidate full369/native/GPU; parent365 raw result and expected-head merge/Pages; reconcile completed encounter run. Finish current House compass/join, client/mission and hardware acceptance, then all29packets and later unfinished maps. No round-duration tests or full rebuild completion claim.

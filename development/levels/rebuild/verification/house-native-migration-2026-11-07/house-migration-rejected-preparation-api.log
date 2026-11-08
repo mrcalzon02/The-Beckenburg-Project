@@ -1,0 +1,8 @@
+src\test\java\org\beckenburg\EditorSceneRetentionTest.java:18: error: cannot find symbol
+        scene.prepareStaticLevel(house);var prepared=field(scene,"preparedShellFaces");
+             ^
+  symbol:   method prepareStaticLevel(HouseMap)
+  location: variable scene of type SceneRenderer
+Note: src\test\java\org\beckenburg\PsxHorrorUiTest.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+1 error

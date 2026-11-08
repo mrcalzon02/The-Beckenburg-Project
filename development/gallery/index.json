@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 7394,
+  "count": 7625,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -3224,6 +3224,26 @@
       "sha256": "2a40d55b749fb2627b67650cc385a9ebb535b01005edb66d006df8c2826ef78f"
     },
     {
+      "path": "development/captures/house-encounter/train-after-runtime.png",
+      "url": "development/captures/house-encounter/train-after-runtime.png",
+      "title": "Train after runtime",
+      "kind": "Runtime authored House encounter study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 604553,
+      "sha256": "627874a9c96b39810d91cc7d012e37d0f9db285b2eb3d9ebf589cd6fceab3b79"
+    },
+    {
+      "path": "development/captures/house-encounter/train-before-runtime.png",
+      "url": "development/captures/house-encounter/train-before-runtime.png",
+      "title": "Train before runtime",
+      "kind": "Runtime authored House encounter study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 604228,
+      "sha256": "ca516035a4b3092bb322c089404b9f1a5dea5b2bc74c8099bd54f6b31776f604"
+    },
+    {
       "path": "development/captures/house-envelope/canonical-van-runtime.png",
       "url": "development/captures/house-envelope/canonical-van-runtime.png",
       "title": "Canonical van runtime",
@@ -3312,6 +3332,2106 @@
       "height": 625,
       "bytes": 431445,
       "sha256": "ae0274bfd69a0f8881cdbc03408afa26f383838b99b165c2b691cbc9fd5d2dba"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-00-floor-joins/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-00-floor-joins/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 131782,
+      "sha256": "311f6d73baf371e21d853bdb48aec777b03c278a292f2ae8bfa74b576ed5ab3e"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-00-floor-joins/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-00-floor-joins/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 19617,
+      "sha256": "b965140aec6caf6b7bff4cdd370abf498ddf7a6106173484d5b69176abe1dc89"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-00-floor-joins/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-00-floor-joins/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 37816,
+      "sha256": "3e5539bc8a857f16b25d7b960746ab7ead11e7040c2bf6c42539f7caeab112ac"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-00-floor-joins/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-00-floor-joins/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 19617,
+      "sha256": "b965140aec6caf6b7bff4cdd370abf498ddf7a6106173484d5b69176abe1dc89"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-00-floor-joins/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-00-floor-joins/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 545779,
+      "sha256": "29bbc1274124959cb87d4d3f3008a5c759c72c630730a264fcf41735957c6974"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-00-floor-joins/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-00-floor-joins/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 196960,
+      "sha256": "e4459102ab18bdd59d701d3d95fc7a8fe3a571647d51d81c5669116e7ab9d6db"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-00-floor-joins/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-00-floor-joins/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 149714,
+      "sha256": "631c1214db3e0f50b69d6027e7d339f52436e922430e58d4cbf435a0fa6fcd6c"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-00/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-00/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 157343,
+      "sha256": "f15269d605a55076c2dda37a6e80712d1867e76a36304cc04880bda6e7388420"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-00/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-00/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 20012,
+      "sha256": "22a81a61847e0de4fe06c77860aa677f27cfc4478f782c9e6d303f0f041b35a1"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-00/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-00/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 38127,
+      "sha256": "1bad62bdf3497c10df72713ba6a199a8227fdb3d7b0d8c9732b6f28133004fc4"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-00/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-00/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 20012,
+      "sha256": "22a81a61847e0de4fe06c77860aa677f27cfc4478f782c9e6d303f0f041b35a1"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-00/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-00/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 435273,
+      "sha256": "63876925f13ea90c1b241a78174649fc2db9817a6f1bd1b0f0f91a186943436a"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-00/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-00/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 127363,
+      "sha256": "458174f47b741fe6738dda9bdbfea82614c44f7587c909a7421c0605cb6727fb"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-00/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-00/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 87509,
+      "sha256": "1044119caeddf40d034067d0a350adfd67124c4e39888000053ee83af8cc9eee"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-01-floor-joins/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-01-floor-joins/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 122049,
+      "sha256": "ff38cf8cb32581e92651adc4893e940684c966d008b5c32ce570a9ed1cb336b7"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-01-floor-joins/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-01-floor-joins/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 38236,
+      "sha256": "0062617cff7630fc236980eea6ef762961cd14fefb421c68333e441de47e11db"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-01-floor-joins/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-01-floor-joins/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 53398,
+      "sha256": "d0b0ba62e2e2f946669683111662d3d08996d9791f8aac8d9dd01ae0fb96915d"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-01-floor-joins/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-01-floor-joins/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 38236,
+      "sha256": "0062617cff7630fc236980eea6ef762961cd14fefb421c68333e441de47e11db"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-01-floor-joins/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-01-floor-joins/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 417320,
+      "sha256": "ba3b8a358ca30a1a0b48d76a6838cb7cca8c4a71ff8468f9f9d259ac78b0e203"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-01-floor-joins/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-01-floor-joins/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 122430,
+      "sha256": "d5d15f9624175d22607026d6904e615d64faa0f56b9a91aa07a2d6cdb663f930"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-01-floor-joins/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-01-floor-joins/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 41474,
+      "sha256": "5a0a03d19a4cdd6826c6dbf469163d729713c4d63442dbe03a4dc1dc3076a6df"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-01/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-01/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 39251,
+      "sha256": "cdc47457a62a0274fe24c8327f24f3f6aa7086bc979cab0ceb8a2ad4891d9cb5"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-01/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-01/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 31880,
+      "sha256": "cea3457b56da4a672fec40be2edcbca68e3cb229efb943737d751d8901e31486"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-01/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-01/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 47925,
+      "sha256": "95beedb1e8312f3f822bdafa4c26ca5725fb653ea8a153979fc4374b3ee6c3b6"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-01/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-01/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 31880,
+      "sha256": "cea3457b56da4a672fec40be2edcbca68e3cb229efb943737d751d8901e31486"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-01/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-01/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 197820,
+      "sha256": "0cd390bce97ebf7e3978f3ce3af141a5461122f6b143433113e089b6b3a24483"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-01/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-01/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 39251,
+      "sha256": "cdc47457a62a0274fe24c8327f24f3f6aa7086bc979cab0ceb8a2ad4891d9cb5"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-01/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-01/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 31880,
+      "sha256": "cea3457b56da4a672fec40be2edcbca68e3cb229efb943737d751d8901e31486"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-02-floor-joins/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-02-floor-joins/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 137634,
+      "sha256": "40b10116b2e3c24d0a9ee7bc883ca8d377f178fbf8d3f67a9bb866ad2bc60bc5"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-02-floor-joins/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-02-floor-joins/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 51344,
+      "sha256": "0273662816ccec21f0e1ad78f51877b337a541a0deb8db4699b7850edb9acff9"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-02-floor-joins/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-02-floor-joins/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 68452,
+      "sha256": "b79dda31fafbdc07d3c5cb8dc10d847d2c1eb4eafe9d1c1227518f42ee8ce91a"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-02-floor-joins/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-02-floor-joins/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 51344,
+      "sha256": "0273662816ccec21f0e1ad78f51877b337a541a0deb8db4699b7850edb9acff9"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-02-floor-joins/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-02-floor-joins/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 485744,
+      "sha256": "dbd9cbae9af2443b0554d7b021378377dfeea15e02d4e7c76a34328c6f6a2521"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-02-floor-joins/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-02-floor-joins/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 137812,
+      "sha256": "fd2484998609d3671d8e1a6ba98a5f73c9cc9fe471bd5f8222ccb0a97623a9ac"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-02-floor-joins/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-02-floor-joins/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 52380,
+      "sha256": "449137b58e2f457102a9d8505305f5932551bd7cfff06d7db9394cf7d9257628"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-02/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-02/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 56205,
+      "sha256": "e3ad24796764304500e13882e93fe9dd4c2e19c82c13e6b367771e34098deb3f"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-02/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-02/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 42869,
+      "sha256": "d1d21a4c3599b711d7b84676955f7640468f7ee0b85915c9c584ff2e3d7c9033"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-02/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-02/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 61998,
+      "sha256": "b79dd5492a6b01cbd396a713b60eb463ce62cf53ba8287b3b190cb07b6206630"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-02/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-02/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 42870,
+      "sha256": "7d15507af1c71c4f8c6f121011fac6c2aa6d680c174c61a49cb85b062634bb83"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-02/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-02/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 269650,
+      "sha256": "1a4be01862dfd5f9dadb574431dfd7eb460c054cca163918170a73be5718d629"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-02/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-02/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 56205,
+      "sha256": "e3ad24796764304500e13882e93fe9dd4c2e19c82c13e6b367771e34098deb3f"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-02/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-02/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 42870,
+      "sha256": "7d15507af1c71c4f8c6f121011fac6c2aa6d680c174c61a49cb85b062634bb83"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-03-floor-joins/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-03-floor-joins/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 140958,
+      "sha256": "a6030743cd34f9166b0936db2ad03430bd91353364c38ddb35e532357cb6b2c4"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-03-floor-joins/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-03-floor-joins/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 32876,
+      "sha256": "26545a0b44d06be5b9b07c92655672e2528338f67ee9bcfbdd540cc3c955b47e"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-03-floor-joins/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-03-floor-joins/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 50703,
+      "sha256": "396bb35adc5ec3d3adfcf94656990789cb2db49deae1918dd3be4b457eb36008"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-03-floor-joins/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-03-floor-joins/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 36301,
+      "sha256": "a437375c201e9a12a6aae721055e593b37dcbbe52afb7f68283b267cc0c9d237"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-03-floor-joins/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-03-floor-joins/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 456410,
+      "sha256": "151327815c00375c8a5ef998df16d9d52ea861a45e9fc1f55e8d15474b64b31b"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-03-floor-joins/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-03-floor-joins/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 155278,
+      "sha256": "c48e3a9b94edae0e8e30037f80c824037829e601634ad1af2deda30e93959b0b"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-03-floor-joins/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-03-floor-joins/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 17095,
+      "sha256": "168d97af807214a9079944bcb76bef5c50e221ce85de509ee8cb183012641950"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-03/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-03/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 81669,
+      "sha256": "11cae27e701af2aea67ac2e709ee293fa831fa98e6e0b56bbb6a289d57b44e1b"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-03/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-03/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 30007,
+      "sha256": "d7766665d863fdfd8160c0c366ab3ed1c5243fb32ded54575fbb68526b229626"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-03/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-03/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 49334,
+      "sha256": "3a304fce0d4d8f316840f91ab80c0af37571755939c75b3069896c1e5ab67093"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-03/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-03/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 31106,
+      "sha256": "598a60318e314184af9942a305d8a2601da81ec15b864725fed186876e954148"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-03/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-03/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 350038,
+      "sha256": "52a0508bcfb9c0bb38b7d48b35b1ea166b9f924c40fda78dd2ca282c2c52c9b3"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-03/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-03/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 127520,
+      "sha256": "1d1f639a184d089aa1cded831c6ea9d95b96a44ab554d7d84fd84c9bbbe74178"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-03/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-03/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 16829,
+      "sha256": "2b975049ce425d505e6becd269baed23af330929682ca5d9e15a96f969269c43"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-04-floor-joins/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-04-floor-joins/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 168753,
+      "sha256": "8f63d0c0a313db7e2051cf2c11370d71ad90fc361a21bcb03ea8780996f87b50"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-04-floor-joins/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-04-floor-joins/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 34373,
+      "sha256": "d24c75cb0469a9b2afbd473e94e1ac44f7fc889cd1744bf1dba964a9d29e67e6"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-04-floor-joins/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-04-floor-joins/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 49845,
+      "sha256": "072ac1e10bae860d2c2ffa39d4a9fd3948c92b43b43d7e3008d4b752dcdd2837"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-04-floor-joins/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-04-floor-joins/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 34447,
+      "sha256": "edcb0a2da1c53cd0974c9bc870e5e5442642cc19d1bf4ebedb8bd4f93f6e649b"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-04-floor-joins/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-04-floor-joins/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 600264,
+      "sha256": "fd41726f50d3dabb8feb79ff135c5e29d71abcc9f37d9f7ffeec73eaa7a3e3d2"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-04-floor-joins/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-04-floor-joins/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 199052,
+      "sha256": "85556b40a9ed5b3928c010505d1a27d6d7c3a935c455b0c2a06c6c43913e2490"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-04-floor-joins/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-04-floor-joins/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 87587,
+      "sha256": "c0e2601ecc5f11ce038962f3bcb21ffa6e3662baab0376b2ea85b29aaf123f1a"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-04/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-04/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 115114,
+      "sha256": "954958967a218d6cc1600b822a1c5a69c13cafab4f39d0ceef4f352fdbcdca1a"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-04/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-04/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 33005,
+      "sha256": "44e99e64a3ae36fcd8139315a75926232b791d62114091a17c81dea289f48d9b"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-04/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-04/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 50656,
+      "sha256": "a6a437602407d967afcbd3e3b1502cfd7b4f3618a7733b50df3b70f86152e0f8"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-04/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-04/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 32668,
+      "sha256": "c2d4b21db95718b03a19618f07bb3155d1ce94bd9b5d7dfb6ac73dc37239bca8"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-04/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-04/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 424710,
+      "sha256": "3397cbf952e53b62385a3f2d6adb5171c933b8cab55f6d171eb919ad5e396529"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-04/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-04/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 134107,
+      "sha256": "d012f40ff493460c74fa5bbd702b6bc202f33859386df1e51881e3d30dbd05d9"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-04/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-04/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 56167,
+      "sha256": "6c9c2a8a7a75a463b0bbc46096fccc66fa2d38cccc3f0377e8bff0e3c76295d3"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-05-floor-joins/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-05-floor-joins/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 143229,
+      "sha256": "745cf9cd6cad1f86ccce07088bafbab7f8742976ede59efccf71502d829f961c"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-05-floor-joins/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-05-floor-joins/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 33755,
+      "sha256": "d73d8e97c89248e64200ea8f7e7c03f6b0a5f5f6bbdbd9646b3cb257c59f9cef"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-05-floor-joins/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-05-floor-joins/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 48075,
+      "sha256": "5307538c6096c68525fbf11cc4460cceba948eb93a3942be8c12ee493765ac5f"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-05-floor-joins/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-05-floor-joins/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 34773,
+      "sha256": "045753f1050f4ad996e53d00ddce28b6b503ca3c74e74dd8058620df857c222f"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-05-floor-joins/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-05-floor-joins/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 492629,
+      "sha256": "dc70cfdfe55a28d2b1d1ff828edbb9cdeb02ef0d3186d7cbede712b23433e027"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-05-floor-joins/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-05-floor-joins/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 158579,
+      "sha256": "4555b721a75fe37bf59208ead4657d9868ae8e4729912fb44e2847ea65c2250d"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-05-floor-joins/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-05-floor-joins/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 52338,
+      "sha256": "9d3b0b991d25271ebfd53e898a81c3d22aa2dad02789a32230d76de2ca6af85d"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-05/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-05/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 74523,
+      "sha256": "e5e8adf4fcfcf2a43e6f5072b81df167de3003b60a72eef4e85428f57e384793"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-05/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-05/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 29196,
+      "sha256": "52066596d996897d0b639f16ea9ffb68c2652bf6b6f5ed76e488206e020906e8"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-05/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-05/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 44582,
+      "sha256": "3208a0eb007104f2520ec3be2403e9ed6c5f9ec45ebdbf305ab419f40a3e57d1"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-05/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-05/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 29203,
+      "sha256": "81c838bb27aaff66f7c6e9cfb2822173de99ca045026545d6eaa32c2f247b1e4"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-05/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-05/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 296880,
+      "sha256": "97939367d1da737d6e41e91eab6a85d89cfcbf5e5869604fa14427b1db192130"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-05/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-05/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 82512,
+      "sha256": "8badcfba6477625f472d0fb963f0b3f018b6f2981b6324ab524a587474aaaf8b"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-05/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-05/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 36669,
+      "sha256": "75fd4697506d5701019e432e785dd6f11cf2f3bcffe10d06d6406f986b133b6d"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-06-floor-joins/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-06-floor-joins/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 107853,
+      "sha256": "a4f9ffa355cd9b3b101a8b83966236ac8b441fd825594fdb4e433a44d41a85a8"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-06-floor-joins/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-06-floor-joins/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 38743,
+      "sha256": "f3884f417ac34050142eeeb93bbf0ac3f94d8656a4c7bb5ed6ff15852d567d16"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-06-floor-joins/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-06-floor-joins/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 51673,
+      "sha256": "9219bc5fe62ea7efaaec8f3d6bdd9307c656bf22b753cd6b89fae2d6d90dcf0a"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-06-floor-joins/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-06-floor-joins/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 38743,
+      "sha256": "f3884f417ac34050142eeeb93bbf0ac3f94d8656a4c7bb5ed6ff15852d567d16"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-06-floor-joins/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-06-floor-joins/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 383432,
+      "sha256": "bcf8d6c4667fb2ef93fae787b820b81760b337bdaaa92b42ed9e0cc7121db201"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-06-floor-joins/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-06-floor-joins/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 107896,
+      "sha256": "62744dd25699da77b286c2eb9ae2b63b1e51a18bcca70d2a53d16769737b5cce"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-06-floor-joins/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-06-floor-joins/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 38763,
+      "sha256": "dfc0951a17d7e7a3694073aec301fa754a531231b81b746b3c97674ebbae15dd"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-06/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-06/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 42011,
+      "sha256": "2b6dc344a5cc72beabfef52b44b2d15cad7c0ce23ae90f1b511974870d63cfd8"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-06/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-06/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 32633,
+      "sha256": "0740c6e9040b56a6e3d4bd3c0cd18f39c2c7729a4d933765372f512372d21f3a"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-06/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-06/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 48299,
+      "sha256": "0da368e41dac5be2f89cdb1f1095697c8792be6de334c21bd56f4a4566b3685c"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-06/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-06/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 32633,
+      "sha256": "0740c6e9040b56a6e3d4bd3c0cd18f39c2c7729a4d933765372f512372d21f3a"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-06/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-06/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 207127,
+      "sha256": "91617437f807708ef5d33f972adc0f6695dd35beeacc3583cffccf23ce1c604d"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-06/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-06/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 42011,
+      "sha256": "2b6dc344a5cc72beabfef52b44b2d15cad7c0ce23ae90f1b511974870d63cfd8"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-06/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-06/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 32633,
+      "sha256": "0740c6e9040b56a6e3d4bd3c0cd18f39c2c7729a4d933765372f512372d21f3a"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-07-floor-joins/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-07-floor-joins/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 97714,
+      "sha256": "cf6f086ec9a147df70b1b2abf9dffb58340f065d6f4744b1b3a17c6f2ee58517"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-07-floor-joins/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-07-floor-joins/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 39799,
+      "sha256": "590f6f7c77fbdc99e59a94f8ab9e0cf53abd9d7b423dd94e9bd4e3b784e5f54d"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-07-floor-joins/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-07-floor-joins/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 58316,
+      "sha256": "e6ef58f8df6c1aecc8ce5a4d94fae5663511ae0ff4cf1171165975b4d443f48d"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-07-floor-joins/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-07-floor-joins/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 39799,
+      "sha256": "590f6f7c77fbdc99e59a94f8ab9e0cf53abd9d7b423dd94e9bd4e3b784e5f54d"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-07-floor-joins/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-07-floor-joins/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 375961,
+      "sha256": "d75fe2425ad128ddacecf7787e8c1e8cda1db03563b252d9db1b94f03c9f5bde"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-07-floor-joins/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-07-floor-joins/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 97714,
+      "sha256": "cf6f086ec9a147df70b1b2abf9dffb58340f065d6f4744b1b3a17c6f2ee58517"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-07-floor-joins/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-07-floor-joins/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 39799,
+      "sha256": "590f6f7c77fbdc99e59a94f8ab9e0cf53abd9d7b423dd94e9bd4e3b784e5f54d"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-07/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-07/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 43633,
+      "sha256": "1a0a35385bd01c979a7898d5e3910d13b15af8bda2c36ee83ca88e935035b4fb"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-07/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-07/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 29699,
+      "sha256": "1b3a46d1ff008d62a5ce3cf3393720c0aa4b3350e4c12d59be4d65feeb96fd8f"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-07/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-07/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 45670,
+      "sha256": "a1c8b98d006c1d4d8ec34007dd1de1d971be6ff91f81d5737ca2665319b76485"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-07/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-07/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 29699,
+      "sha256": "1b3a46d1ff008d62a5ce3cf3393720c0aa4b3350e4c12d59be4d65feeb96fd8f"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-07/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-07/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 212190,
+      "sha256": "4a3b2f73ac3050fdd2f5b938ba3b450fa06848b107094348e43c0844972d4c5e"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-07/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-07/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 43633,
+      "sha256": "1a0a35385bd01c979a7898d5e3910d13b15af8bda2c36ee83ca88e935035b4fb"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-07/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-07/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 29699,
+      "sha256": "1b3a46d1ff008d62a5ce3cf3393720c0aa4b3350e4c12d59be4d65feeb96fd8f"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-08-floor-joins/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-08-floor-joins/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 162318,
+      "sha256": "9a8b9b25c025dbfb2885c4dc34742e44dece63c8d440e055ad52b88122070c40"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-08-floor-joins/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-08-floor-joins/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 39786,
+      "sha256": "cd943d64499b447a1b089323bd30832e17948590ac7813eb35e2d3d9a3bb9a43"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-08-floor-joins/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-08-floor-joins/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 64046,
+      "sha256": "b493445dad4e28100a2ad7b1ec096b93a20855210b542de23dd9f0b0636ec923"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-08-floor-joins/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-08-floor-joins/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 39786,
+      "sha256": "cd943d64499b447a1b089323bd30832e17948590ac7813eb35e2d3d9a3bb9a43"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-08-floor-joins/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-08-floor-joins/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 535047,
+      "sha256": "98ae9cc5afdf9ba98e19d7280a735b3ad93e4902c4e471ac5f24fcdd49b069c5"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-08-floor-joins/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-08-floor-joins/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 162318,
+      "sha256": "9a8b9b25c025dbfb2885c4dc34742e44dece63c8d440e055ad52b88122070c40"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-08-floor-joins/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-08-floor-joins/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 39786,
+      "sha256": "cd943d64499b447a1b089323bd30832e17948590ac7813eb35e2d3d9a3bb9a43"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-08/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-08/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 102824,
+      "sha256": "d76761c1ef9f69151931b927303c17a790f5b1a305ece900f38697f53aa98abc"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-08/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-08/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 36002,
+      "sha256": "af261217c6cf5b1e662eacbdf1831d37b02ea57cc337397a90619672e42fe940"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-08/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-08/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 60940,
+      "sha256": "2d91c83a3d5c6e1c7073fa22e8d9e86e5b5cba55980b8a230f242c84ac340ebd"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-08/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-08/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 36002,
+      "sha256": "af261217c6cf5b1e662eacbdf1831d37b02ea57cc337397a90619672e42fe940"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-08/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-08/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 374629,
+      "sha256": "aae4b342f2ef1d9edf8aff9e58c288e35bb25f8c6d83542fd02f5ea17df8d6bc"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-08/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-08/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 102824,
+      "sha256": "d76761c1ef9f69151931b927303c17a790f5b1a305ece900f38697f53aa98abc"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-08/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-08/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 36002,
+      "sha256": "af261217c6cf5b1e662eacbdf1831d37b02ea57cc337397a90619672e42fe940"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-09-floor-joins/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-09-floor-joins/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 130058,
+      "sha256": "b42a18a5a6cf13dafaf85273f693b258274fe6fb4a416f0c298d53711cd63617"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-09-floor-joins/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-09-floor-joins/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 33535,
+      "sha256": "6aee9c72144207122de826b4f05fd57c116aceb687863807b37dbd68ec3b2133"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-09-floor-joins/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-09-floor-joins/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 43298,
+      "sha256": "2e3edc8ae819d13b4db1239a0ba081e2e758013931c4f7adc2d5452c57d7ba4f"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-09-floor-joins/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-09-floor-joins/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 37532,
+      "sha256": "366702859bf189aa81dbc8c0b34fd11442dc814bd8293b39aeb13151b42b72ad"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-09-floor-joins/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-09-floor-joins/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 423124,
+      "sha256": "5f641121bd500d7659e0429b6b6e00ab37baa68b8ea39395b722c1d7550e79a7"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-09-floor-joins/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-09-floor-joins/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 130385,
+      "sha256": "d0c3a4f443bd0963a8f6b646256d2d4709ffa23e2aa975a02fe5c5443b11d880"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-09-floor-joins/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-09-floor-joins/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 37866,
+      "sha256": "fd87f760880a9faac462f61de9cd370053aa3c91708208a64742e45984b5171c"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-09/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-09/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 40550,
+      "sha256": "3d64bb856e9dd699ea65b0cdad51d0ba7944b035f7092aca7ce40090e45fffad"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-09/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-09/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 30347,
+      "sha256": "5b2fa2e1aed7143e2a3d2d03a1419ba35d3981e795d1205e5c06144ae7cc167f"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-09/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-09/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 45397,
+      "sha256": "68c37fe2d748f635a9ad178f13b86c7f4b5de62ca8d850b9bcee5df6779e2a85"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-09/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-09/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 34154,
+      "sha256": "83e6a4cba699f0a83bef94730fc95867e8c191a2f80dd8336e3da6a128a4c4c3"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-09/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-09/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 210584,
+      "sha256": "e4d0f2575fd71c22fe0963418a6a2ae2daef377755a5d4d9247a1b62b6fcd821"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-09/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-09/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 40994,
+      "sha256": "2f41bcaec5790b802a7a35ab4a738835c53fbd288421132cb2e7881a6966a169"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-09/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-09/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 34600,
+      "sha256": "1e739455cae246a0cae853feb00112c91ad9d877aef9edc5f5a1ceaa919de0ae"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-10-floor-joins/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-10-floor-joins/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 104863,
+      "sha256": "5f0e6058d6b16a9741da16f59a5646e9e70c2b181b4cc2e3e34042a3fe3f14f1"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-10-floor-joins/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-10-floor-joins/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 30442,
+      "sha256": "8c51de2b9e6d490913d41fd293288c5b2d490ccdec8b628cbf753f14b5e1e8b7"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-10-floor-joins/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-10-floor-joins/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 44501,
+      "sha256": "c79fcf16080a39603fe749089419057709e8f70e74672a31cca6ed9b24d54d6b"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-10-floor-joins/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-10-floor-joins/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 30443,
+      "sha256": "d12af96bdd33116b3c71a150e2499f0c1a3dc9e3034e6f6ee3f2d4a17508d112"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-10-floor-joins/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-10-floor-joins/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 370832,
+      "sha256": "71e6b8527f132d6b662f89b316969eafdc36edd37d94a31496417e9ef469afb1"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-10-floor-joins/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-10-floor-joins/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 117504,
+      "sha256": "ccc83a1d8b5cd4299c79e00b95bee256556f6fbcfb7494a7485f445d042a7e59"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-10-floor-joins/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-10-floor-joins/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 42029,
+      "sha256": "4350ffad374ad63bd0c2ce9c85c9673491fc735dc891b1d616d6f59d57c0412f"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-10/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-10/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 29826,
+      "sha256": "a11159c15eea70cb6bd8fb582f7589358ed739cd3be06ac5449b9e985576cd03"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-10/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-10/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 28739,
+      "sha256": "688123f1143068ac6ee9e7fd7ada850ac11f1ddd24f6e80436f4ce957fc2c78c"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-10/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-10/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 46703,
+      "sha256": "164bf4bd8afb06d7b62867eff46252009a40c8c849713fe901f45f12f3f93230"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-10/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-10/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 28806,
+      "sha256": "81f1e82a2c5c1be8d026ee2c0158ec7a1d4b05093c386de9d5be3b373523d3f5"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-10/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-10/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 190557,
+      "sha256": "cf0a17ff999f87b5fe252baa91bcae877646070a784eba574838d41b97ae6692"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-10/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-10/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 40553,
+      "sha256": "089c07a4d8ef0bd5ea2afa8f6def46ce1f2b87f1b26745adcb00619cc2b1b41f"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-10/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-10/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 39647,
+      "sha256": "2372b8cdf3aad0b9fafcc75e31f0856e1a690e49a4c017eb882b38e46cc28fe9"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-11-floor-joins/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-11-floor-joins/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 98001,
+      "sha256": "6e6cc208141d7e5886cbef2e91bfa3dcfb1617f60d3fc1f88d72b33245707a58"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-11-floor-joins/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-11-floor-joins/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 25757,
+      "sha256": "9266aa898171b9c053f4d746b8d9ec29361c9af334cff481fd28d34070c573da"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-11-floor-joins/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-11-floor-joins/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 39525,
+      "sha256": "c8b74c3801bb8f637bf2891fad02db4636891f8e3eb7e15ccc9d52d4d6e3184b"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-11-floor-joins/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-11-floor-joins/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 25789,
+      "sha256": "9f8e405806d9a0accc8cc940b74b5c196b5194e8d7c4d4f7d9f3fcd5563bfd23"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-11-floor-joins/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-11-floor-joins/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 401038,
+      "sha256": "963cfc820109987504b7032cbfbffd2aff426f04824d0a839ac6907a85294b16"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-11-floor-joins/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-11-floor-joins/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 127533,
+      "sha256": "c1c01a159a8dc4a8f6b0b712218e64205e00d3ef731770bcfce454eec00c657e"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-11-floor-joins/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-11-floor-joins/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 81163,
+      "sha256": "bb4774b445fc353aa3a88d37b3aa7f32263c18c0e3bae2549c98c1ecf764454b"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-11/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-11/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 24513,
+      "sha256": "8fa338d4d2d3f7a1644f496d2ab6b63c42949161cd4e4a5c422dc75fa90169cf"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-11/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-11/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 23968,
+      "sha256": "95a5bc289d28f29a2f25d1cbf69d308ca4f44d32e38612da332bd7b8453ce1d9"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-11/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-11/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 42290,
+      "sha256": "1233e52f2e11e6f0f6605530d94dd759e496396250d21bc8b67acd75e7b01f24"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-11/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-11/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 23968,
+      "sha256": "95a5bc289d28f29a2f25d1cbf69d308ca4f44d32e38612da332bd7b8453ce1d9"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-11/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-11/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 170473,
+      "sha256": "8c5ea41fb5974d005eb7864ddad5eb7fea84c3a2ef75d2fc968c5e8d7936b032"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-11/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-11/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 35891,
+      "sha256": "3107bf9a963ef5d51ada3f89b6899d88da0695764d579c42bafc38069bae7daa"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-11/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-11/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 35628,
+      "sha256": "78b07e80d41dcb105c1ab85dde12c8dbffa3360522dbecb8b6293d0d4642bbe9"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-12-floor-joins/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-12-floor-joins/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 91733,
+      "sha256": "158ce26dae0128630641a749e4e8281e1978f9915d8ee60dbaeecc2b7b37a441"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-12-floor-joins/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-12-floor-joins/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 91733,
+      "sha256": "158ce26dae0128630641a749e4e8281e1978f9915d8ee60dbaeecc2b7b37a441"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-12-floor-joins/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-12-floor-joins/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 102796,
+      "sha256": "b9addc15cd2affa4ee7ddb11fe32614f1213383cc3b6e06b1a85269081cb29e4"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-12-floor-joins/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-12-floor-joins/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 91733,
+      "sha256": "158ce26dae0128630641a749e4e8281e1978f9915d8ee60dbaeecc2b7b37a441"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-12-floor-joins/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-12-floor-joins/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 391098,
+      "sha256": "5da257cf353e464f00351b9e48212d50a3d4629ab3c614bd154c118d9f81141c"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-12-floor-joins/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-12-floor-joins/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 91733,
+      "sha256": "158ce26dae0128630641a749e4e8281e1978f9915d8ee60dbaeecc2b7b37a441"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-12-floor-joins/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-12-floor-joins/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 91733,
+      "sha256": "158ce26dae0128630641a749e4e8281e1978f9915d8ee60dbaeecc2b7b37a441"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-12/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-12/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 68336,
+      "sha256": "ec5f1d7055e3efa70f816ffda2c6a3cabceed361781144c358dfefa43c289881"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-12/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-12/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 68336,
+      "sha256": "ec5f1d7055e3efa70f816ffda2c6a3cabceed361781144c358dfefa43c289881"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-12/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-12/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 76251,
+      "sha256": "4d1c8e63a55a52556fe62980afa8cff801b1f7895c7b7304e495d49107ff7afa"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-12/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-12/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 68336,
+      "sha256": "ec5f1d7055e3efa70f816ffda2c6a3cabceed361781144c358dfefa43c289881"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-12/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-12/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 283327,
+      "sha256": "45538c48081020c64308b2ba8fd08ad2941b16db4a8cf75c6c730c3ce9c2f2dd"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-12/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-12/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 68336,
+      "sha256": "ec5f1d7055e3efa70f816ffda2c6a3cabceed361781144c358dfefa43c289881"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-12/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-12/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 68336,
+      "sha256": "ec5f1d7055e3efa70f816ffda2c6a3cabceed361781144c358dfefa43c289881"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-13-floor-joins/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-13-floor-joins/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 84577,
+      "sha256": "0034515460fa470f4f6a584943fd05de25882ac90f4703acb6e480f3b0f0fa63"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-13-floor-joins/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-13-floor-joins/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 84345,
+      "sha256": "f640b6f9e642021a053cb696a8f2a4ad1b999658e5731505596e1f4968588ce5"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-13-floor-joins/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-13-floor-joins/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 86476,
+      "sha256": "fc81ae11d31a2a4d1db502a85d9b36f9a019db72e1dd368be414542b1f92505b"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-13-floor-joins/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-13-floor-joins/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 84577,
+      "sha256": "0034515460fa470f4f6a584943fd05de25882ac90f4703acb6e480f3b0f0fa63"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-13-floor-joins/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-13-floor-joins/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 343107,
+      "sha256": "50941a344ea35a31dd4c35ee4b1c10d0e015ce02674ef724ae8e50aca97299fa"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-13-floor-joins/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-13-floor-joins/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 84836,
+      "sha256": "bb2fa9b7124adb6abdfde44535aa89c6938b75816b1e37c76b2d789631dec330"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-13-floor-joins/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-13-floor-joins/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 84836,
+      "sha256": "bb2fa9b7124adb6abdfde44535aa89c6938b75816b1e37c76b2d789631dec330"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-13/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-13/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 78635,
+      "sha256": "2db27411c5b5b9ebaae5e6ee49d799adebdb984187d450920ff0d201073c02ab"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-13/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-13/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 78403,
+      "sha256": "3fd2c7c844ecef3aad39f605d1e1f846a2a17c3ca89d4ab33edac9217b93a0c8"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-13/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-13/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 78794,
+      "sha256": "95b227186b14e02d8a3b2d6d13ab719732da8266d3be061a179359a3a71b5f90"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-13/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-13/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 78635,
+      "sha256": "2db27411c5b5b9ebaae5e6ee49d799adebdb984187d450920ff0d201073c02ab"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-13/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-13/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 302150,
+      "sha256": "47bb446e54da5b7e2eefad7df2e7800f9cb3e4998871d6540dd9c8ab5ac08c0c"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-13/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-13/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 78635,
+      "sha256": "2db27411c5b5b9ebaae5e6ee49d799adebdb984187d450920ff0d201073c02ab"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-13/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-13/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 78635,
+      "sha256": "2db27411c5b5b9ebaae5e6ee49d799adebdb984187d450920ff0d201073c02ab"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-14-floor-joins/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-14-floor-joins/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 95910,
+      "sha256": "8147847152e6037a1da5c06cdfc28fba649c7c819830f6c701684c5fb5611a36"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-14-floor-joins/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-14-floor-joins/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 95910,
+      "sha256": "8147847152e6037a1da5c06cdfc28fba649c7c819830f6c701684c5fb5611a36"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-14-floor-joins/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-14-floor-joins/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 97379,
+      "sha256": "3dc132816270891b031e9c9d7df9be5adac3fe982f37d726f2850b2853be68d8"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-14-floor-joins/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-14-floor-joins/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 95910,
+      "sha256": "8147847152e6037a1da5c06cdfc28fba649c7c819830f6c701684c5fb5611a36"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-14-floor-joins/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-14-floor-joins/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 289459,
+      "sha256": "e5ca00d970b28e0cb4a778abab1464bce575b3fc966186a9b275b3ef86b0744f"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-14-floor-joins/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-14-floor-joins/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 95910,
+      "sha256": "8147847152e6037a1da5c06cdfc28fba649c7c819830f6c701684c5fb5611a36"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-14-floor-joins/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-14-floor-joins/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 95910,
+      "sha256": "8147847152e6037a1da5c06cdfc28fba649c7c819830f6c701684c5fb5611a36"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-14/closed-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-14/closed-all-circuits-runtime.png",
+      "title": "Closed all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 91284,
+      "sha256": "687b04fb6f9d6e4eaf9bf165c6ecc166fc0a9b1e8bf1887adf78d61d3a27967f"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-14/closed-breaker-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-14/closed-breaker-off-runtime.png",
+      "title": "Closed breaker off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 91284,
+      "sha256": "687b04fb6f9d6e4eaf9bf165c6ecc166fc0a9b1e8bf1887adf78d61d3a27967f"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-14/closed-breaker-off-torch-runtime.png",
+      "url": "development/captures/house-final-lighting/room-14/closed-breaker-off-torch-runtime.png",
+      "title": "Closed breaker off torch runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 92240,
+      "sha256": "018d552d7e25d94aae198c5f9fb88d5064a57dc93fee29d396ab9988bbe83e2c"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-14/closed-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-14/closed-own-circuit-off-runtime.png",
+      "title": "Closed own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 91284,
+      "sha256": "687b04fb6f9d6e4eaf9bf165c6ecc166fc0a9b1e8bf1887adf78d61d3a27967f"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-14/matched-lighting-contact-sheet.png",
+      "url": "development/captures/house-final-lighting/room-14/matched-lighting-contact-sheet.png",
+      "title": "Matched lighting contact sheet",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 1920,
+      "height": 848,
+      "bytes": 291995,
+      "sha256": "e85a5d186a22462a6076b97a77ead4ec440fd1d149391166cf9c534079c1558c"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-14/open-all-circuits-runtime.png",
+      "url": "development/captures/house-final-lighting/room-14/open-all-circuits-runtime.png",
+      "title": "Open all circuits runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 91284,
+      "sha256": "687b04fb6f9d6e4eaf9bf165c6ecc166fc0a9b1e8bf1887adf78d61d3a27967f"
+    },
+    {
+      "path": "development/captures/house-final-lighting/room-14/open-own-circuit-off-runtime.png",
+      "url": "development/captures/house-final-lighting/room-14/open-own-circuit-off-runtime.png",
+      "title": "Open own circuit off runtime",
+      "kind": "Runtime matched House door and circuit lighting review",
+      "width": 640,
+      "height": 400,
+      "bytes": 91284,
+      "sha256": "687b04fb6f9d6e4eaf9bf165c6ecc166fc0a9b1e8bf1887adf78d61d3a27967f"
     },
     {
       "path": "development/captures/house-fitout/cellar-refuge-runtime.png",
@@ -3432,6 +5552,26 @@
       "height": 625,
       "bytes": 608363,
       "sha256": "022dad3d1f86ad7b14d18ecd39f6d3b59c651c440ea3b439830b3d8702266dee"
+    },
+    {
+      "path": "development/captures/house-fresh-default/cli-fresh-house-runtime.png",
+      "url": "development/captures/house-fresh-default/cli-fresh-house-runtime.png",
+      "title": "Cli fresh house runtime",
+      "kind": "Runtime fresh default House editor and CLI verification",
+      "width": 560,
+      "height": 350,
+      "bytes": 143866,
+      "sha256": "56d6c6e46d6cdd1bd1369c69ad1b272b0249dd2af55468b463a172b8cb40cdc6"
+    },
+    {
+      "path": "development/captures/house-fresh-default/human-editor-fresh-house-runtime.png",
+      "url": "development/captures/house-fresh-default/human-editor-fresh-house-runtime.png",
+      "title": "Human editor fresh house runtime",
+      "kind": "Runtime fresh default House editor and CLI verification",
+      "width": 560,
+      "height": 350,
+      "bytes": 124494,
+      "sha256": "c2d6a9a0cdc4d55979553bed93bd4ba9720cd08e435b4d4e82ea9fbad44c8fc0"
     },
     {
       "path": "development/captures/house-functional-fill/garden-sitting-and-pots-runtime.png",
@@ -3792,6 +5932,56 @@
       "height": 625,
       "bytes": 102668,
       "sha256": "4dd4c4ad349a670528bc48ba4ef6c67a192cb096f0bca9b86ef2da9a2b048b4f"
+    },
+    {
+      "path": "development/captures/house-native-migration/saved-built-in-house-cellar-runtime.png",
+      "url": "development/captures/house-native-migration/saved-built-in-house-cellar-runtime.png",
+      "title": "Saved built in house cellar runtime",
+      "kind": "Runtime saved native House migration",
+      "width": 1000,
+      "height": 625,
+      "bytes": 594544,
+      "sha256": "953f906ff1aa17419850b9ec104cd8ef89f5e1c1464122e4c0eee93a06665d20"
+    },
+    {
+      "path": "development/captures/house-native-migration/saved-built-in-house-kitchen-runtime.png",
+      "url": "development/captures/house-native-migration/saved-built-in-house-kitchen-runtime.png",
+      "title": "Saved built in house kitchen runtime",
+      "kind": "Runtime saved native House migration",
+      "width": 1000,
+      "height": 625,
+      "bytes": 636479,
+      "sha256": "ed18075df34a153f652187211d1a05f5d8a579eca22e354613ee48eef7edef3c"
+    },
+    {
+      "path": "development/captures/house-native-migration/saved-built-in-house-landing-runtime.png",
+      "url": "development/captures/house-native-migration/saved-built-in-house-landing-runtime.png",
+      "title": "Saved built in house landing runtime",
+      "kind": "Runtime saved native House migration",
+      "width": 1000,
+      "height": 625,
+      "bytes": 583115,
+      "sha256": "bc7026b916da563ed25da548f8fc8ac20e96eee83e72914ff36b0180e701aecc"
+    },
+    {
+      "path": "development/captures/house-native-migration/windows-editor-rebuilt-kitchen-runtime.png",
+      "url": "development/captures/house-native-migration/windows-editor-rebuilt-kitchen-runtime.png",
+      "title": "Windows editor rebuilt kitchen runtime",
+      "kind": "Runtime saved native House migration",
+      "width": 560,
+      "height": 350,
+      "bytes": 106586,
+      "sha256": "999793bb4266accd57cbe5d56601cddba0da52077cae8f963e2496f6c8310750"
+    },
+    {
+      "path": "development/captures/house-native-recovery/legacy-house-cli-recovery-control-runtime.png",
+      "url": "development/captures/house-native-recovery/legacy-house-cli-recovery-control-runtime.png",
+      "title": "Legacy house cli recovery control runtime",
+      "kind": "Runtime legacy House editor recovery control",
+      "width": 560,
+      "height": 350,
+      "bytes": 121836,
+      "sha256": "b364e01fc8b0dac26a0a6188f6035c76e7641f7be9a9913a0ecfc2af3480528c"
     },
     {
       "path": "development/captures/house-room-review/house_rebuild_services/00-entrance-and-coat-vestibule/east.png",
@@ -4902,6 +7092,126 @@
       "height": 625,
       "bytes": 791470,
       "sha256": "0b5af25693c11ef2ff0946dbb0b3f8b7d0d265257f0b4059a0b9cf72f077f199"
+    },
+    {
+      "path": "development/captures/hunter-gait-recovery-software/cleric-crouch.png",
+      "url": "development/captures/hunter-gait-recovery-software/cleric-crouch.png",
+      "title": "Cleric crouch",
+      "kind": "Runtime software hunter gait diagnostic",
+      "width": 320,
+      "height": 200,
+      "bytes": 96243,
+      "sha256": "d910edc472148faa7edc3e9f08111fbc63c49a82a88a0e3acf30fe4a7c183794"
+    },
+    {
+      "path": "development/captures/hunter-gait-recovery-software/cleric-idle.png",
+      "url": "development/captures/hunter-gait-recovery-software/cleric-idle.png",
+      "title": "Cleric idle",
+      "kind": "Runtime software hunter gait diagnostic",
+      "width": 320,
+      "height": 200,
+      "bytes": 96438,
+      "sha256": "8a5a1e4267912ee9b55b12629498d1e4cde75ea97a1e842355fa77bbec35a9ea"
+    },
+    {
+      "path": "development/captures/hunter-gait-recovery-software/cleric-walk_a.png",
+      "url": "development/captures/hunter-gait-recovery-software/cleric-walk_a.png",
+      "title": "Cleric walk a",
+      "kind": "Runtime software hunter gait diagnostic",
+      "width": 320,
+      "height": 200,
+      "bytes": 94868,
+      "sha256": "6fba91632e0f5bc9691a1e2c07765c1412fc97409fb48dabcf629a8f83ca3d89"
+    },
+    {
+      "path": "development/captures/hunter-gait-recovery-software/cleric-walk_b.png",
+      "url": "development/captures/hunter-gait-recovery-software/cleric-walk_b.png",
+      "title": "Cleric walk b",
+      "kind": "Runtime software hunter gait diagnostic",
+      "width": 320,
+      "height": 200,
+      "bytes": 97283,
+      "sha256": "471ead6989fd23caae856f18d067ddf37737577e2b7e36e6f994619355af96de"
+    },
+    {
+      "path": "development/captures/hunter-gait-recovery-software/demonologist-crouch.png",
+      "url": "development/captures/hunter-gait-recovery-software/demonologist-crouch.png",
+      "title": "Demonologist crouch",
+      "kind": "Runtime software hunter gait diagnostic",
+      "width": 320,
+      "height": 200,
+      "bytes": 96169,
+      "sha256": "a07e6c54fcea3e04f52476e9e3a52c101e0e5f0ba2b175b9f93bf43218f5278d"
+    },
+    {
+      "path": "development/captures/hunter-gait-recovery-software/demonologist-idle.png",
+      "url": "development/captures/hunter-gait-recovery-software/demonologist-idle.png",
+      "title": "Demonologist idle",
+      "kind": "Runtime software hunter gait diagnostic",
+      "width": 320,
+      "height": 200,
+      "bytes": 96730,
+      "sha256": "67029f1f62756108a908f586a9ae5485ff0047ba1a8af5bcd740c253e279a943"
+    },
+    {
+      "path": "development/captures/hunter-gait-recovery-software/demonologist-walk_a.png",
+      "url": "development/captures/hunter-gait-recovery-software/demonologist-walk_a.png",
+      "title": "Demonologist walk a",
+      "kind": "Runtime software hunter gait diagnostic",
+      "width": 320,
+      "height": 200,
+      "bytes": 94895,
+      "sha256": "3d1614862cde8b824af4e9b2c67d4f6f46832fa366f64fd2a36edb21020e88a1"
+    },
+    {
+      "path": "development/captures/hunter-gait-recovery-software/demonologist-walk_b.png",
+      "url": "development/captures/hunter-gait-recovery-software/demonologist-walk_b.png",
+      "title": "Demonologist walk b",
+      "kind": "Runtime software hunter gait diagnostic",
+      "width": 320,
+      "height": 200,
+      "bytes": 97397,
+      "sha256": "9203ce6b75fb37533807fd0b595d0a89be3abe6d2285bb48a31b479319b9f05e"
+    },
+    {
+      "path": "development/captures/hunter-gait-recovery-software/observer-crouch.png",
+      "url": "development/captures/hunter-gait-recovery-software/observer-crouch.png",
+      "title": "Observer crouch",
+      "kind": "Runtime software hunter gait diagnostic",
+      "width": 320,
+      "height": 200,
+      "bytes": 96262,
+      "sha256": "78c85e01672b23e4bd4733c5a30b21800e5aba7237e1f3a99e9f735fab7c253c"
+    },
+    {
+      "path": "development/captures/hunter-gait-recovery-software/observer-idle.png",
+      "url": "development/captures/hunter-gait-recovery-software/observer-idle.png",
+      "title": "Observer idle",
+      "kind": "Runtime software hunter gait diagnostic",
+      "width": 320,
+      "height": 200,
+      "bytes": 96516,
+      "sha256": "34d83caed8b5c320951546d1514759fe79c2f6c69d26d8e50b17b0bfad30d275"
+    },
+    {
+      "path": "development/captures/hunter-gait-recovery-software/observer-walk_a.png",
+      "url": "development/captures/hunter-gait-recovery-software/observer-walk_a.png",
+      "title": "Observer walk a",
+      "kind": "Runtime software hunter gait diagnostic",
+      "width": 320,
+      "height": 200,
+      "bytes": 94940,
+      "sha256": "0dfd087bcc35c33c6f72250134e73fa4887a4dda8e4f5a289740b5ebcd7be6ff"
+    },
+    {
+      "path": "development/captures/hunter-gait-recovery-software/observer-walk_b.png",
+      "url": "development/captures/hunter-gait-recovery-software/observer-walk_b.png",
+      "title": "Observer walk b",
+      "kind": "Runtime software hunter gait diagnostic",
+      "width": 320,
+      "height": 200,
+      "bytes": 97330,
+      "sha256": "6c3e6b84586b7f065f08872483185f484ffd40ae8eb1d1adc9ca49acfdd21e6e"
     },
     {
       "path": "development/captures/wall-lamp-runtime/after/wall-lamp-0-off.png",

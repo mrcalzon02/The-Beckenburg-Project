@@ -2079,8 +2079,12 @@ public final class SceneRenderer {
     private void resetStableGpuCache(HouseMap map){
         String revision=map.level().revision()+":"+map.hidingDensity();
         if(stableGpuMap==map&&revision.equals(stableGpuRevision))return;
+        releaseStableGpuCache();
         stableGpuMap=map;
         stableGpuRevision=revision;
+    }
+    private void releaseStableGpuCache(){
+        stableGpuMap=null;stableGpuRevision=null;
         stableGpuCache.clear();
         stableGpuCacheOrder.clear();
         stableGpuBytes=0;
@@ -3079,8 +3083,32 @@ public final class SceneRenderer {
         for(var auxiliary:auxiliaryWorld.values())for(var chunk:auxiliary.chunks())releaseWorldChunk(chunk);
         auxiliaryWorld.clear();authoredFixtureGeometry.clear();nativeCache.clear();
         dynamicGeometry.clear();dynamicGeometryTriangles=0;dynamicGeometryMap=null;
+        stableGpuFaces.clear();shellGpuFaces.clear();residentSceneryFaces.clear();visibleResidentScenery.clear();
         for(var chunk:castleStaticChunks)releaseWorldChunk(chunk);
         for(var chunk:castleAssemblies.values())releaseWorldChunk(chunk);
+        // Native editor scene changes must release inactive CPU geometry as well
+        // as GPU buffers. Keeping Castle faces while building a furnished House
+        // retains both complete worlds at the small editor heap budget.
+        if(castleGeometryMap!=owner){
+            castleGeometryMap=null;castleGeometryRevision=-1;
+            castleStaticGeometry=List.of();castleStaticChunks=List.of();
+            castleAssemblies.clear();castleActiveAssemblies.clear();castleExportGeometry=List.of();castleEnvironment=null;
+            castleLightingMap=null;castleLighting=null;
+        }
+        // Preserve a newly prepared destination; drop only the previous source.
+        if(shellSourceMap!=owner){
+            shellSourceMap=null;shellSourceRevision="";preparedShellFaces=List.of();preparedShellChunks=List.of();
+            preparedShellMaterials=List.of();preparedShellMaterialFaces=List.of();
+        }
+        if(scenerySourceMap!=owner){
+            scenerySourceMap=null;sceneryRevision=null;sceneryInstances=null;expandedScenery=null;
+            preparedScenery.clear();preparedSceneryTriangles=0;
+        }
+        if(stableGpuMap!=null&&stableGpuMap!=owner)releaseStableGpuCache();
+        if(owner instanceof CastleHubMap){
+            cachedVan=null;cachedVanFaces=List.of();cachedRoadSite=null;cachedRoadFaces=List.of();enclosureFaces.clear();nativeBed=null;
+            houseLightingMap=null;houseLighting=null;
+        }
         residentSceneOwner=owner;residentSceneRevision=revision;
         gpuSceneId=GpuWorldRenderer.nextId();pinnedGpuFrame=null;
         lastUsableGpuFrame=null;presentedGpuFrame=null;gpuCompositeFrames.clear();
@@ -3341,6 +3369,10 @@ public final class SceneRenderer {
         if(castleGeometryMap!=map||castleGeometryRevision!=edits.revision()){
             for(var chunk:castleStaticChunks)releaseWorldChunk(chunk);
             for(var chunk:castleAssemblies.values())releaseWorldChunk(chunk);
+            // Release the previous topology before allocating its replacement.
+            // The unchanged surroundings keep their own reusable source cache.
+            castleStaticGeometry=List.of();castleStaticChunks=List.of();
+            castleAssemblies.clear();castleActiveAssemblies.clear();castleExportGeometry=List.of();
             castleGeometryMap=map;castleGeometryRevision=edits.revision();
             castleStaticGeometry=buildCastleStatic(map);castleStaticChunks=partitionCastle(castleStaticGeometry);
             castleAssemblies.clear();castleTopologyBuilds++;

@@ -1,0 +1,8 @@
+src\main\java\org\beckenburg\DeveloperLevelEditor.java:1334: error: cannot find symbol
+                case "REBUILD HOUSE / RETAIN EDITS" -> result=service.transact(state.revision(),"rebuild-house",Map.of("baseline","ORIGINAL"));
+                                                                                                                ^
+  symbol:   variable Map
+  location: class DeveloperLevelEditor
+Note: src\main\java\org\beckenburg\LanLobbyPanel.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+1 error

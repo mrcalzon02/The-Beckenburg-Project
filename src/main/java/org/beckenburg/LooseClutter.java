@@ -27,6 +27,7 @@ public final class LooseClutter {
     public record Noise(double x,double y,double z,double speed){}
     private final List<Noise> noises=new ArrayList<>();
     private final Map<Integer,String> authoredDescriptions=new HashMap<>();
+    private final Map<String,Integer> authoredItems=new HashMap<>();
     public synchronized List<Noise> drainNoises(){var result=List.copyOf(noises);noises.clear();return result;}
     private void noise(Item i,double speed){if(speed>1.2&&noises.size()<8)noises.add(new Noise(i.x,i.y,i.z,speed));}
     private static final class Item {
@@ -49,7 +50,7 @@ public final class LooseClutter {
                 var kind=Kind.valueOf(binding[0]);var parent=map.level().props().stream().filter(p->p.room()==socket.room()&&p.mesh().equals(binding[1])).findFirst().orElse(null);if(parent==null)continue;
                 double lx=Double.parseDouble(binding[2])*parent.scale(),lz=Double.parseDouble(binding[3])*parent.scale(),c=Math.cos(parent.yaw()),sn=Math.sin(parent.yaw());
                 double x=parent.x()+lx*c-lz*sn,z=parent.z()+lx*sn+lz*c,top=HouseRebuildStory.supported(parent,kind,x,z);if(!Double.isFinite(top))continue;
-                var item=new Item(items.size()+1,kind,x,top+.004,z,parent.yaw()+Double.parseDouble(binding[4]));items.add(item);authoredDescriptions.put(item.id,HouseRebuildStory.description(binding[5]));
+                var item=new Item(items.size()+1,kind,x,top+.004,z,parent.yaw()+Double.parseDouble(binding[4]));items.add(item);authoredDescriptions.put(item.id,HouseRebuildStory.description(binding[5]));authoredItems.put(binding[5],item.id);
             }return;
         }
         if(map.site()!=HouseMap.Site.HOUSE&&map.site()!=HouseMap.Site.FARMHOUSE&&map.site()!=HouseMap.Site.SCHOOL)return;
@@ -87,6 +88,28 @@ public final class LooseClutter {
         }
     }
     public synchronized List<State> states(){return items.stream().map(Item::state).toList();}
+    synchronized State authoredItem(String key){
+        Integer id=authoredItems.get(key);if(id==null)return null;
+        return items.stream().filter(i->i.id==id).map(Item::state).findFirst().orElse(null);
+    }
+    /** Host location script, never a network intent. Preserve support, momentum and ownership. */
+    synchronized boolean turnRestingAuthoredToy(String key,State anchor,double radians){
+        if(!Double.isFinite(radians)||Math.abs(radians)>Math.PI)return false;
+        var state=authoredItem(key);if(state==null||anchor==null||state.kind()!=Kind.TOY||state.holder()!=-1
+            ||Math.hypot(state.x()-anchor.x(),state.z()-anchor.z())>.015||Math.abs(state.y()-anchor.y())>.02
+            ||Math.abs(state.roll())>.025||Math.abs(state.yaw()-anchor.yaw())>.025)return false;
+        var i=item(state.id());if(i.armed||Math.abs(i.vx)+Math.abs(i.vy)+Math.abs(i.vz)+Math.abs(i.spin)>.015)return false;
+        // A complete rigid quarter-turn stays within the existing source support.
+        double next=i.yaw+radians;var source=map.level().sockets().stream().filter(s->s.type().equals("loose-object")&&s.id().equals(key)).findFirst().orElse(null);
+        if(source==null)return false;var binding=source.style().split("\\|");
+        var parent=map.level().props().stream().filter(p->p.room()==source.room()&&p.mesh().equals(binding[1])).findFirst().orElse(null);if(parent==null)return false;
+        double bottom=SceneRenderer.castleBounds(i.kind.mesh())[1];
+        for(var triangle:GlbProps.model(i.kind.mesh()).triangles())for(var v:List.of(triangle.a(),triangle.b(),triangle.c()))if(v.y()<bottom+.003){
+            double x=i.x+v.x()*Math.cos(next)-v.z()*Math.sin(next),z=i.z+v.x()*Math.sin(next)+v.z()*Math.cos(next);
+            try{if(Math.abs(HouseRebuildStory.surface(parent,x,z)-(i.y-i.kind.half+v.y()))>.012)return false;}catch(IllegalArgumentException unsupported){return false;}
+        }
+        i.yaw=next;return true;
+    }
     private Item item(int id){return items.stream().filter(i->i.id==id).findFirst().orElseThrow(()->new IllegalArgumentException("unknown clutter object"));}
     public synchronized int held(int seat){return items.stream().filter(i->i.holder==seat).mapToInt(i->i.id).findFirst().orElse(-1);}
     public synchronized State aimed(Observer o){

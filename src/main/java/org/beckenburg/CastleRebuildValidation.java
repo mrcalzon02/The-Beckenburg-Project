@@ -5,6 +5,22 @@ import java.util.*;
 /** Validate the merged native scene itself before an editor rebuild transaction commits. */
 final class CastleRebuildValidation {
     private CastleRebuildValidation(){}
+    /** Shared source-triangle check; callers provide their own world/pivot transform. */
+    static boolean modelConflict(List<LevelDefinition.Vec[]> first,List<LevelDefinition.Vec[]> second){
+        var a=new ArrayList<Tri>();var b=new ArrayList<Tri>();
+        for(var pair:List.of(Map.entry(first,a),Map.entry(second,b)))for(var face:pair.getKey()){
+            var x=face[0];var y=face[1];var z=face[2];pair.getValue().add(new Tri(new V(x.x(),x.y(),x.z()),new V(y.x(),y.y(),y.z()),new V(z.x(),z.y(),z.z())));
+        }
+        if(geometryKey(a).equals(geometryKey(b)))return true;
+        for(int axis=0;axis<3;axis++){
+            double amin=Double.POSITIVE_INFINITY,amax=Double.NEGATIVE_INFINITY,bmin=amin,bmax=amax;
+            for(var t:first)for(var v:t){double p=axis==0?v.x():axis==1?v.y():v.z();amin=Math.min(amin,p);amax=Math.max(amax,p);}
+            for(var t:second)for(var v:t){double p=axis==0?v.x():axis==1?v.y():v.z();bmin=Math.min(bmin,p);bmax=Math.max(bmax,p);}
+            if(amax<=bmin+.002||bmax<=amin+.002)return false;
+        }
+        for(var t:a)for(var u:b)if(overlap(t,u))return true;
+        return contained(a,closedSolids(b))||contained(b,closedSolids(a));
+    }
     private record Cell(int x,int y,int z){}
     private static Cell key(LevelDefinition.Vec p){return new Cell((int)Math.round(p.x()*8),(int)Math.round(p.y()*10000),(int)Math.round(p.z()*8));}
     private static void require(boolean value,String message){if(!value)throw new IllegalArgumentException("Castle rebuild conflict: "+message);}

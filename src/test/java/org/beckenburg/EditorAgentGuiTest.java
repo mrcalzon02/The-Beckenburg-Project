@@ -52,6 +52,8 @@ public final class EditorAgentGuiTest {
         check(failure.get()==null&&stage.get()==3,"Actual human recovery menu completed: "+failure.get());
     }
     public static void main(String[] args)throws Exception{
+        var backgroundFailure=new AtomicReference<Throwable>();var priorHandler=Thread.getDefaultUncaughtExceptionHandler();
+        Thread.setDefaultUncaughtExceptionHandler((thread,failure)->{backgroundFailure.compareAndSet(null,failure);failure.printStackTrace();});
         Path output=Path.of(args.length==0?"build/editor-agent-evidence":args[0]).toAbsolutePath();Files.createDirectories(output);
         Path home=Files.createTempDirectory("editor-agent-gui-");
         System.setProperty("user.home",home.toString());
@@ -80,6 +82,18 @@ public final class EditorAgentGuiTest {
                     check(CastleLevelEdits.current().spawn()[2]==1.125,"Human undo restores pre-recovery Castle edits");
                     var open=DeveloperLevelEditor.class.getDeclaredMethod("openMission",HouseMap.Site.class);
                     open.setAccessible(true);open.invoke(e,HouseMap.Site.HOUSE);
+                    var fresh=e.agentService();
+                    check(fresh.inspect().state() instanceof LevelAuthoringSession.Snapshot snapshot
+                        &&UserLevelLibrary.HOUSE_REBUILD.equals(snapshot.architecture())&&snapshot.props().size()==45,
+                        "Actual fresh human editor opens furnished rebuilt architecture");
+                    check(!Files.exists(LevelAuthoringSession.path(HouseMap.Site.HOUSE)),"Opening fresh human editor does not implicitly save");
+                    fresh.capture(fresh.inspect().revision(),output.resolve("house-fresh-default.png"));
+                    fresh.save(fresh.inspect().revision());
+                    check(new HouseMap(HouseMap.Site.HOUSE).level().id().equals("briar-rebuild"),"Actual fresh human save loads in gameplay");
+                    // The remaining scenario explicitly exercises a historical
+                    // document's recovery and human rebuild/undo workflow.
+                    LevelAuthoringSession.saveProps(LevelAuthoringSession.path(HouseMap.Site.HOUSE),"beckenburg/house",LevelPlans.legacyHouseSource().props());
+                    open.invoke(e,HouseMap.Site.HOUSE);
                     var service=e.agentService();var before=service.inspect();var node=before.hierarchy().get(0);
                     var currentMap=DeveloperLevelEditor.class.getDeclaredMethod("currentMissionMap");currentMap.setAccessible(true);
                     Object initialMap=currentMap.invoke(e);
@@ -106,6 +120,22 @@ public final class EditorAgentGuiTest {
                     check(service.inspect().hierarchy().get(0).x()==node.x(),"Human recovery restores previous real saved prop");
                     undo.doClick();
                     check(service.inspect().hierarchy().get(0).x()==node.x()+.125,"Human undo restores pre-recovery unsaved edit");
+                    service.transact(service.inspect().revision(),"move-prop",Map.of("id",node.id(),"x",Double.toString(node.x()),
+                        "y",Double.toString(node.y()),"z",Double.toString(node.z())));
+                    check(service.inspect().operations().contains("rebuild-house"),"Actual human House service exposes native rebuild");
+                    service.transact(service.inspect().revision(),"rebuild-house",Map.of("baseline","ORIGINAL"));
+                    check(((HouseMap)currentMap.invoke(e)).level().room(5).y()==2.8,"Human viewport consumes rebuilt authoritative upper storey");
+                    undo.doClick();check(((HouseMap)currentMap.invoke(e)).level().room(5).y()==3,"Human Undo restores original architecture");
+                    redo.doClick();check(((HouseMap)currentMap.invoke(e)).level().room(5).y()==2.8,"Human Redo restores rebuilt architecture");
+                    service.save(service.inspect().revision());service.reopen(service.inspect().revision());
+                    check(new HouseMap(HouseMap.Site.HOUSE).level().room(9).y()==-2.4,"Saved human editor rebuild becomes actual built-in House source");
+                    check(service.test(service.inspect().revision(),"mission-runtime-parity").result().stream().allMatch(c->c.passed()),"Human rebuilt native source retains actual multipart physics");
+                    var rendererField=DeveloperLevelEditor.class.getDeclaredField("renderer");rendererField.setAccessible(true);
+                    var nativeRenderer=(SceneRenderer)rendererField.get(e);nativeRenderer.lamp=true;
+                    nativeRenderer.x=16;nativeRenderer.z=12.4;nativeRenderer.eyeHeight=1.62;
+                    nativeRenderer.yaw=Math.atan2(14.9-16,14.1925-12.4);nativeRenderer.pitch=Math.atan2(.85-1.62,Math.hypot(14.9-16,14.1925-12.4));
+                    service.capture(service.inspect().revision(),output.resolve("windows-editor-rebuilt-kitchen-runtime.png"));
+                    Files.writeString(output.resolve("house-rebuilt-inspection.json"),EditorAgentCli.json(service.inspect()));
                     try{castle.inspect();throw new AssertionError("Old Castle service remains active");}
                     catch(IllegalStateException expected){}
                 }catch(Exception failure){throw new RuntimeException(failure);}
@@ -117,7 +147,9 @@ public final class EditorAgentGuiTest {
                 catch(IllegalStateException expected){}}
             });
             try(var files=Files.walk(home)){files.sorted(java.util.Comparator.reverseOrder()).forEach(p->{try{Files.deleteIfExists(p);}catch(Exception ignored){}});}
+            Thread.setDefaultUncaughtExceptionHandler(priorHandler);
         }
-        System.out.println("PASS real Windows editor: mission/Castle service and recovery, human undo/redo, save/reopen, actual recovery menu, runtime parity, Castle/House PNGs and stale/closed scene rejection");
+        if(backgroundFailure.get()!=null)throw new AssertionError("Native editor background thread failed",backgroundFailure.get());
+        System.out.println("PASS real Windows editor: mission/Castle service and recovery, human House architecture rebuild/undo/redo/save/reopen, actual recovery menu, runtime parity, native rebuilt capture and stale/closed scene rejection");
     }
 }

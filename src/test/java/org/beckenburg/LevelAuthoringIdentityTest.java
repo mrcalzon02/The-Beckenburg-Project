@@ -23,7 +23,7 @@ public final class LevelAuthoringIdentityTest {
                 var baseline=new LevelAuthoringSession(builtIn);baseline.validate();
                 check(baseline.props().equals(LevelPlans.buildSource(builtIn).props()),"Opening "+builtIn+" preserves all shipped native props");
             }
-            var site=HouseMap.Site.HOUSE;var nativeSource=LevelPlans.buildSource(site);
+            var site=HouseMap.Site.HOUSE;var nativeSource=LevelPlans.legacyHouseSource();
             // Existing BSCN v1 files already contain node IDs. Do not rewrite the format.
             LevelAuthoringSession.saveProps(LevelAuthoringSession.path(site),"beckenburg/house",nativeSource.props());
             var session=new LevelAuthoringSession(site);var original=session.snapshot();
@@ -65,8 +65,10 @@ public final class LevelAuthoringIdentityTest {
             var secondUser=new LevelAuthoringSession(HouseMap.Site.USER);
             byte[] secondBytes=Files.readAllBytes(secondUser.documentPath());
             check(firstUser.documentPath().equals(ownedPath)&&firstUser.id().equals(ownedId),"USER session identity and path pinned at open");
-            firstUser.remove(0);firstUser.save();firstUser.reopen();
-            check(firstUser.size()==nativeSource.props().size()-1,"Older session reopens its own source while another project is selected");
+            int ownedCount=firstUser.size(),editable=0;
+            while(!firstUser.prop(editable).mesh().equals("level_house_fridge_worn"))editable++;
+            firstUser.remove(editable);firstUser.save();firstUser.reopen();
+            check(firstUser.size()==ownedCount-1,"Older session reopens its own source while another project is selected");
             check(java.util.Arrays.equals(secondBytes,Files.readAllBytes(secondUser.documentPath())),"Older USER session cannot overwrite active second project");
             UserLevelLibrary.activate("OwnedFirst");
             check(new HouseMap(HouseMap.Site.USER).level().props().equals(firstUser.props()),"Real selected game reads first project's own saved changes");

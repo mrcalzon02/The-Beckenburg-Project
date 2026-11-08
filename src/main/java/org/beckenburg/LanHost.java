@@ -121,6 +121,7 @@ public final class LanHost implements AutoCloseable {
     private final int[] hunterRooms=new int[HUNTERS];
     private final long[] hunterSequences=new long[HUNTERS];
     private final HouseMap map;
+    private final HouseEncounter houseEncounter;
     private final RoomLighting lights=new RoomLighting();
     private final AmbientSanity ambientSanity=new AmbientSanity();
     private final LanWorld world;
@@ -266,6 +267,7 @@ public final class LanHost implements AutoCloseable {
         map=Objects.requireNonNull(authored);
         if(map.site()!=site)throw new IllegalArgumentException("Authored site mismatch");
         world=new LanWorld(map);
+        houseEncounter=new HouseEncounter(map);
         ghostPose=new LanGhostSpatial(map,4);
         if(!map.valid()||!RitualSites.valid(map))
             throw new IllegalArgumentException("unplayable authored investigation site");
@@ -2627,7 +2629,7 @@ public final class LanHost implements AutoCloseable {
     }
     private static String safeReason(String s){return s==null?"invalid command":s.replaceAll("[^A-Za-z0-9 ._-]","").substring(0,Math.min(85,s.replaceAll("[^A-Za-z0-9 ._-]","").length()));}
     private void tickSafely(){if(closed)return; synchronized(mutex){
-        if(!running)return;
+        if(!running){if(everStarted)houseEncounter.cancel();return;}
         long tickTime=aiDiagnostics.begin();
         try{tick++;
             mission.advanceClassClock(tick);
@@ -2658,6 +2660,18 @@ public final class LanHost implements AutoCloseable {
                 for(int seat=0;seat<HUNTERS;seat++)if(seats[seat]!=null&&seats[seat].worldMode){
                     var cue=LanSound.project(map,world.body(seat),room,noise.x(),noise.y(),noise.z(),LanSound.Cue.IMPACT,tick);
                     if(cue!=null)reply(seats[seat],cue.frame());
+                }
+            }
+            var encounterObservers=clutterObservers().stream().filter(o->seats[o.seat()]!=null&&seats[o.seat()].worldMode).toList();
+            var locationSound=houseEncounter.advance(tick,encounterObservers);
+            if(locationSound!=null){
+                for(int seat=0;seat<HUNTERS;seat++)if(seats[seat]!=null&&seats[seat].worldMode&&mission.alive(seat)){
+                    var cue=LanSound.project(map,world.body(seat),locationSound.room(),locationSound.x(),locationSound.y(),locationSound.z(),locationSound.cue(),tick);
+                    if(cue!=null)reply(seats[seat],cue.frame());
+                }
+                Peer spirit=seats[GHOST_SEAT];if(spirit!=null&&spirit.ghostWorldMode){var p=ghostPose.pose();
+                    var cue=LanSound.project(map,new LanWorld.Body(p.x(),p.y(),p.z(),0,p.room()),locationSound.room(),locationSound.x(),locationSound.y(),locationSound.z(),locationSound.cue(),tick);
+                    if(cue!=null)reply(spirit,cue.frame());
                 }
             }
             broadcastClutter();
@@ -3116,7 +3130,7 @@ public final class LanHost implements AutoCloseable {
                 aiDiagnosticsCsv());
         for(var bot:campaignBots)bot.close();campaignBots.clear();closed=true;if(voice!=null)voice.close();try{listener.close();}catch(IOException ignored){}
         for(Socket s:transports)try{s.close();}catch(IOException ignored){}
-        synchronized(mutex){for(Peer peer:seats)if(peer!=null){try{peer.socket.close();}catch(IOException ignored){}}}
+        synchronized(mutex){houseEncounter.cancel();for(Peer peer:seats)if(peer!=null){try{peer.socket.close();}catch(IOException ignored){}}}
         clock.shutdownNow();workers.shutdownNow();
     }
     private static final class Reservation {

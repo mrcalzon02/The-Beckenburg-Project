@@ -1,0 +1,181 @@
+room,name,x,feetY,z,yaw,pitch,state,doors,ownCircuit,breaker,torch,sha256
+0,Entrance and coat vestibule,19.0,0.0,19.4,-2.0441523686298098,0.2,closed-all-circuits,false,true,true,false,f15269d605a55076c2dda37a6e80712d1867e76a36304cc04880bda6e7388420
+0,Entrance and coat vestibule,19.0,0.0,19.4,-2.0441523686298098,0.2,closed-own-circuit-off,false,false,true,false,22a81a61847e0de4fe06c77860aa677f27cfc4478f782c9e6d303f0f041b35a1
+0,Entrance and coat vestibule,19.0,0.0,19.4,-2.0441523686298098,0.2,closed-breaker-off,false,true,false,false,22a81a61847e0de4fe06c77860aa677f27cfc4478f782c9e6d303f0f041b35a1
+0,Entrance and coat vestibule,19.0,0.0,19.4,-2.0441523686298098,0.2,open-own-circuit-off,true,false,true,false,1044119caeddf40d034067d0a350adfd67124c4e39888000053ee83af8cc9eee
+0,Entrance and coat vestibule,19.0,0.0,19.4,-2.0441523686298098,0.2,open-all-circuits,true,true,true,false,458174f47b741fe6738dda9bdbfea82614c44f7587c909a7421c0605cb6727fb
+0,Entrance and coat vestibule,19.0,0.0,19.4,-2.0441523686298098,0.2,closed-breaker-off-torch,false,true,false,true,1bad62bdf3497c10df72713ba6a199a8227fdb3d7b0d8c9732b6f28133004fc4
+0,Entrance and coat vestibule,19.0,0.0,19.4,-2.0441523686298098,-0.35,closed-all-circuits,false,true,true,false,311f6d73baf371e21d853bdb48aec777b03c278a292f2ae8bfa74b576ed5ab3e
+0,Entrance and coat vestibule,19.0,0.0,19.4,-2.0441523686298098,-0.35,closed-own-circuit-off,false,false,true,false,b965140aec6caf6b7bff4cdd370abf498ddf7a6106173484d5b69176abe1dc89
+0,Entrance and coat vestibule,19.0,0.0,19.4,-2.0441523686298098,-0.35,closed-breaker-off,false,true,false,false,b965140aec6caf6b7bff4cdd370abf498ddf7a6106173484d5b69176abe1dc89
+0,Entrance and coat vestibule,19.0,0.0,19.4,-2.0441523686298098,-0.35,open-own-circuit-off,true,false,true,false,631c1214db3e0f50b69d6027e7d339f52436e922430e58d4cbf435a0fa6fcd6c
+0,Entrance and coat vestibule,19.0,0.0,19.4,-2.0441523686298098,-0.35,open-all-circuits,true,true,true,false,e4459102ab18bdd59d701d3d95fc7a8fe3a571647d51d81c5669116e7ab9d6db
+0,Entrance and coat vestibule,19.0,0.0,19.4,-2.0441523686298098,-0.35,closed-breaker-off-torch,false,true,false,true,3e5539bc8a857f16b25d7b960746ab7ead11e7040c2bf6c42539f7caeab112ac
+1,Family sitting room,15.0,0.0,17.6,-2.3381459087144143,0.2,closed-all-circuits,false,true,true,false,cdc47457a62a0274fe24c8327f24f3f6aa7086bc979cab0ceb8a2ad4891d9cb5
+1,Family sitting room,15.0,0.0,17.6,-2.3381459087144143,0.2,closed-own-circuit-off,false,false,true,false,cea3457b56da4a672fec40be2edcbca68e3cb229efb943737d751d8901e31486
+1,Family sitting room,15.0,0.0,17.6,-2.3381459087144143,0.2,closed-breaker-off,false,true,false,false,cea3457b56da4a672fec40be2edcbca68e3cb229efb943737d751d8901e31486
+1,Family sitting room,15.0,0.0,17.6,-2.3381459087144143,0.2,open-own-circuit-off,true,false,true,false,cea3457b56da4a672fec40be2edcbca68e3cb229efb943737d751d8901e31486
+1,Family sitting room,15.0,0.0,17.6,-2.3381459087144143,0.2,open-all-circuits,true,true,true,false,cdc47457a62a0274fe24c8327f24f3f6aa7086bc979cab0ceb8a2ad4891d9cb5
+1,Family sitting room,15.0,0.0,17.6,-2.3381459087144143,0.2,closed-breaker-off-torch,false,true,false,true,95beedb1e8312f3f822bdafa4c26ca5725fb653ea8a153979fc4374b3ee6c3b6
+1,Family sitting room,15.0,0.0,17.6,-2.3381459087144143,-0.35,closed-all-circuits,false,true,true,false,ff38cf8cb32581e92651adc4893e940684c966d008b5c32ce570a9ed1cb336b7
+1,Family sitting room,15.0,0.0,17.6,-2.3381459087144143,-0.35,closed-own-circuit-off,false,false,true,false,0062617cff7630fc236980eea6ef762961cd14fefb421c68333e441de47e11db
+1,Family sitting room,15.0,0.0,17.6,-2.3381459087144143,-0.35,closed-breaker-off,false,true,false,false,0062617cff7630fc236980eea6ef762961cd14fefb421c68333e441de47e11db
+1,Family sitting room,15.0,0.0,17.6,-2.3381459087144143,-0.35,open-own-circuit-off,true,false,true,false,5a0a03d19a4cdd6826c6dbf469163d729713c4d63442dbe03a4dc1dc3076a6df
+1,Family sitting room,15.0,0.0,17.6,-2.3381459087144143,-0.35,open-all-circuits,true,true,true,false,d5d15f9624175d22607026d6904e615d64faa0f56b9a91aa07a2d6cdb663f930
+1,Family sitting room,15.0,0.0,17.6,-2.3381459087144143,-0.35,closed-breaker-off-torch,false,true,false,true,d0b0ba62e2e2f946669683111662d3d08996d9791f8aac8d9dd01ae0fb96915d
+2,Kitchen and cellar access,16.0,0.0,12.4,-2.0972415814851173,0.2,closed-all-circuits,false,true,true,false,e3ad24796764304500e13882e93fe9dd4c2e19c82c13e6b367771e34098deb3f
+2,Kitchen and cellar access,16.0,0.0,12.4,-2.0972415814851173,0.2,closed-own-circuit-off,false,false,true,false,7d15507af1c71c4f8c6f121011fac6c2aa6d680c174c61a49cb85b062634bb83
+2,Kitchen and cellar access,16.0,0.0,12.4,-2.0972415814851173,0.2,closed-breaker-off,false,true,false,false,d1d21a4c3599b711d7b84676955f7640468f7ee0b85915c9c584ff2e3d7c9033
+2,Kitchen and cellar access,16.0,0.0,12.4,-2.0972415814851173,0.2,open-own-circuit-off,true,false,true,false,7d15507af1c71c4f8c6f121011fac6c2aa6d680c174c61a49cb85b062634bb83
+2,Kitchen and cellar access,16.0,0.0,12.4,-2.0972415814851173,0.2,open-all-circuits,true,true,true,false,e3ad24796764304500e13882e93fe9dd4c2e19c82c13e6b367771e34098deb3f
+2,Kitchen and cellar access,16.0,0.0,12.4,-2.0972415814851173,0.2,closed-breaker-off-torch,false,true,false,true,b79dd5492a6b01cbd396a713b60eb463ce62cf53ba8287b3b190cb07b6206630
+2,Kitchen and cellar access,16.0,0.0,12.4,-2.0972415814851173,-0.35,closed-all-circuits,false,true,true,false,40b10116b2e3c24d0a9ee7bc883ca8d377f178fbf8d3f67a9bb866ad2bc60bc5
+2,Kitchen and cellar access,16.0,0.0,12.4,-2.0972415814851173,-0.35,closed-own-circuit-off,false,false,true,false,0273662816ccec21f0e1ad78f51877b337a541a0deb8db4699b7850edb9acff9
+2,Kitchen and cellar access,16.0,0.0,12.4,-2.0972415814851173,-0.35,closed-breaker-off,false,true,false,false,0273662816ccec21f0e1ad78f51877b337a541a0deb8db4699b7850edb9acff9
+2,Kitchen and cellar access,16.0,0.0,12.4,-2.0972415814851173,-0.35,open-own-circuit-off,true,false,true,false,449137b58e2f457102a9d8505305f5932551bd7cfff06d7db9394cf7d9257628
+2,Kitchen and cellar access,16.0,0.0,12.4,-2.0972415814851173,-0.35,open-all-circuits,true,true,true,false,fd2484998609d3671d8e1a6ba98a5f73c9cc9fe471bd5f8222ccb0a97623a9ac
+2,Kitchen and cellar access,16.0,0.0,12.4,-2.0972415814851173,-0.35,closed-breaker-off-torch,false,true,false,true,b79dda31fafbdc07d3c5cb8dc10d847d2c1eb4eafe9d1c1227518f42ee8ce91a
+3,Family dining room,18.7,0.0,11.8,-2.830994053218766,0.2,closed-all-circuits,false,true,true,false,11cae27e701af2aea67ac2e709ee293fa831fa98e6e0b56bbb6a289d57b44e1b
+3,Family dining room,18.7,0.0,11.8,-2.830994053218766,0.2,closed-own-circuit-off,false,false,true,false,598a60318e314184af9942a305d8a2601da81ec15b864725fed186876e954148
+3,Family dining room,18.7,0.0,11.8,-2.830994053218766,0.2,closed-breaker-off,false,true,false,false,d7766665d863fdfd8160c0c366ab3ed1c5243fb32ded54575fbb68526b229626
+3,Family dining room,18.7,0.0,11.8,-2.830994053218766,0.2,open-own-circuit-off,true,false,true,false,2b975049ce425d505e6becd269baed23af330929682ca5d9e15a96f969269c43
+3,Family dining room,18.7,0.0,11.8,-2.830994053218766,0.2,open-all-circuits,true,true,true,false,1d1f639a184d089aa1cded831c6ea9d95b96a44ab554d7d84fd84c9bbbe74178
+3,Family dining room,18.7,0.0,11.8,-2.830994053218766,0.2,closed-breaker-off-torch,false,true,false,true,3a304fce0d4d8f316840f91ab80c0af37571755939c75b3069896c1e5ab67093
+3,Family dining room,18.7,0.0,11.8,-2.830994053218766,-0.35,closed-all-circuits,false,true,true,false,a6030743cd34f9166b0936db2ad03430bd91353364c38ddb35e532357cb6b2c4
+3,Family dining room,18.7,0.0,11.8,-2.830994053218766,-0.35,closed-own-circuit-off,false,false,true,false,a437375c201e9a12a6aae721055e593b37dcbbe52afb7f68283b267cc0c9d237
+3,Family dining room,18.7,0.0,11.8,-2.830994053218766,-0.35,closed-breaker-off,false,true,false,false,26545a0b44d06be5b9b07c92655672e2528338f67ee9bcfbdd540cc3c955b47e
+3,Family dining room,18.7,0.0,11.8,-2.830994053218766,-0.35,open-own-circuit-off,true,false,true,false,168d97af807214a9079944bcb76bef5c50e221ce85de509ee8cb183012641950
+3,Family dining room,18.7,0.0,11.8,-2.830994053218766,-0.35,open-all-circuits,true,true,true,false,c48e3a9b94edae0e8e30037f80c824037829e601634ad1af2deda30e93959b0b
+3,Family dining room,18.7,0.0,11.8,-2.830994053218766,-0.35,closed-breaker-off-torch,false,true,false,true,396bb35adc5ec3d3adfcf94656990789cb2db49deae1918dd3be4b457eb36008
+4,Stair and service passage,18.8,0.0,16.5,-2.917480526637041,0.2,closed-all-circuits,false,true,true,false,954958967a218d6cc1600b822a1c5a69c13cafab4f39d0ceef4f352fdbcdca1a
+4,Stair and service passage,18.8,0.0,16.5,-2.917480526637041,0.2,closed-own-circuit-off,false,false,true,false,c2d4b21db95718b03a19618f07bb3155d1ce94bd9b5d7dfb6ac73dc37239bca8
+4,Stair and service passage,18.8,0.0,16.5,-2.917480526637041,0.2,closed-breaker-off,false,true,false,false,44e99e64a3ae36fcd8139315a75926232b791d62114091a17c81dea289f48d9b
+4,Stair and service passage,18.8,0.0,16.5,-2.917480526637041,0.2,open-own-circuit-off,true,false,true,false,6c9c2a8a7a75a463b0bbc46096fccc66fa2d38cccc3f0377e8bff0e3c76295d3
+4,Stair and service passage,18.8,0.0,16.5,-2.917480526637041,0.2,open-all-circuits,true,true,true,false,d012f40ff493460c74fa5bbd702b6bc202f33859386df1e51881e3d30dbd05d9
+4,Stair and service passage,18.8,0.0,16.5,-2.917480526637041,0.2,closed-breaker-off-torch,false,true,false,true,a6a437602407d967afcbd3e3b1502cfd7b4f3618a7733b50df3b70f86152e0f8
+4,Stair and service passage,18.8,0.0,16.5,-2.917480526637041,-0.35,closed-all-circuits,false,true,true,false,8f63d0c0a313db7e2051cf2c11370d71ad90fc361a21bcb03ea8780996f87b50
+4,Stair and service passage,18.8,0.0,16.5,-2.917480526637041,-0.35,closed-own-circuit-off,false,false,true,false,edcb0a2da1c53cd0974c9bc870e5e5442642cc19d1bf4ebedb8bd4f93f6e649b
+4,Stair and service passage,18.8,0.0,16.5,-2.917480526637041,-0.35,closed-breaker-off,false,true,false,false,d24c75cb0469a9b2afbd473e94e1ac44f7fc889cd1744bf1dba964a9d29e67e6
+4,Stair and service passage,18.8,0.0,16.5,-2.917480526637041,-0.35,open-own-circuit-off,true,false,true,false,c0e2601ecc5f11ce038962f3bcb21ffa6e3662baab0376b2ea85b29aaf123f1a
+4,Stair and service passage,18.8,0.0,16.5,-2.917480526637041,-0.35,open-all-circuits,true,true,true,false,85556b40a9ed5b3928c010505d1a27d6d7c3a935c455b0c2a06c6c43913e2490
+4,Stair and service passage,18.8,0.0,16.5,-2.917480526637041,-0.35,closed-breaker-off-torch,false,true,false,true,072ac1e10bae860d2c2ffa39d4a9fd3948c92b43b43d7e3008d4b752dcdd2837
+5,Upper landing and linen storage,18.8,2.8,19.2,-3.0354637033513456,0.2,closed-all-circuits,false,true,true,false,e5e8adf4fcfcf2a43e6f5072b81df167de3003b60a72eef4e85428f57e384793
+5,Upper landing and linen storage,18.8,2.8,19.2,-3.0354637033513456,0.2,closed-own-circuit-off,false,false,true,false,81c838bb27aaff66f7c6e9cfb2822173de99ca045026545d6eaa32c2f247b1e4
+5,Upper landing and linen storage,18.8,2.8,19.2,-3.0354637033513456,0.2,closed-breaker-off,false,true,false,false,52066596d996897d0b639f16ea9ffb68c2652bf6b6f5ed76e488206e020906e8
+5,Upper landing and linen storage,18.8,2.8,19.2,-3.0354637033513456,0.2,open-own-circuit-off,true,false,true,false,75fd4697506d5701019e432e785dd6f11cf2f3bcffe10d06d6406f986b133b6d
+5,Upper landing and linen storage,18.8,2.8,19.2,-3.0354637033513456,0.2,open-all-circuits,true,true,true,false,8badcfba6477625f472d0fb963f0b3f018b6f2981b6324ab524a587474aaaf8b
+5,Upper landing and linen storage,18.8,2.8,19.2,-3.0354637033513456,0.2,closed-breaker-off-torch,false,true,false,true,3208a0eb007104f2520ec3be2403e9ed6c5f9ec45ebdbf305ab419f40a3e57d1
+5,Upper landing and linen storage,18.8,2.8,19.2,-3.0354637033513456,-0.35,closed-all-circuits,false,true,true,false,745cf9cd6cad1f86ccce07088bafbab7f8742976ede59efccf71502d829f961c
+5,Upper landing and linen storage,18.8,2.8,19.2,-3.0354637033513456,-0.35,closed-own-circuit-off,false,false,true,false,045753f1050f4ad996e53d00ddce28b6b503ca3c74e74dd8058620df857c222f
+5,Upper landing and linen storage,18.8,2.8,19.2,-3.0354637033513456,-0.35,closed-breaker-off,false,true,false,false,d73d8e97c89248e64200ea8f7e7c03f6b0a5f5f6bbdbd9646b3cb257c59f9cef
+5,Upper landing and linen storage,18.8,2.8,19.2,-3.0354637033513456,-0.35,open-own-circuit-off,true,false,true,false,9d3b0b991d25271ebfd53e898a81c3d22aa2dad02789a32230d76de2ca6af85d
+5,Upper landing and linen storage,18.8,2.8,19.2,-3.0354637033513456,-0.35,open-all-circuits,true,true,true,false,4555b721a75fe37bf59208ead4657d9868ae8e4729912fb44e2847ea65c2250d
+5,Upper landing and linen storage,18.8,2.8,19.2,-3.0354637033513456,-0.35,closed-breaker-off-torch,false,true,false,true,5307538c6096c68525fbf11cc4460cceba948eb93a3942be8c12ee493765ac5f
+6,Parents bedroom and dressing,15.8,2.8,17.1,-2.120908576823199,0.2,closed-all-circuits,false,true,true,false,2b6dc344a5cc72beabfef52b44b2d15cad7c0ce23ae90f1b511974870d63cfd8
+6,Parents bedroom and dressing,15.8,2.8,17.1,-2.120908576823199,0.2,closed-own-circuit-off,false,false,true,false,0740c6e9040b56a6e3d4bd3c0cd18f39c2c7729a4d933765372f512372d21f3a
+6,Parents bedroom and dressing,15.8,2.8,17.1,-2.120908576823199,0.2,closed-breaker-off,false,true,false,false,0740c6e9040b56a6e3d4bd3c0cd18f39c2c7729a4d933765372f512372d21f3a
+6,Parents bedroom and dressing,15.8,2.8,17.1,-2.120908576823199,0.2,open-own-circuit-off,true,false,true,false,0740c6e9040b56a6e3d4bd3c0cd18f39c2c7729a4d933765372f512372d21f3a
+6,Parents bedroom and dressing,15.8,2.8,17.1,-2.120908576823199,0.2,open-all-circuits,true,true,true,false,2b6dc344a5cc72beabfef52b44b2d15cad7c0ce23ae90f1b511974870d63cfd8
+6,Parents bedroom and dressing,15.8,2.8,17.1,-2.120908576823199,0.2,closed-breaker-off-torch,false,true,false,true,0da368e41dac5be2f89cdb1f1095697c8792be6de334c21bd56f4a4566b3685c
+6,Parents bedroom and dressing,15.8,2.8,17.1,-2.120908576823199,-0.35,closed-all-circuits,false,true,true,false,a4f9ffa355cd9b3b101a8b83966236ac8b441fd825594fdb4e433a44d41a85a8
+6,Parents bedroom and dressing,15.8,2.8,17.1,-2.120908576823199,-0.35,closed-own-circuit-off,false,false,true,false,f3884f417ac34050142eeeb93bbf0ac3f94d8656a4c7bb5ed6ff15852d567d16
+6,Parents bedroom and dressing,15.8,2.8,17.1,-2.120908576823199,-0.35,closed-breaker-off,false,true,false,false,f3884f417ac34050142eeeb93bbf0ac3f94d8656a4c7bb5ed6ff15852d567d16
+6,Parents bedroom and dressing,15.8,2.8,17.1,-2.120908576823199,-0.35,open-own-circuit-off,true,false,true,false,dfc0951a17d7e7a3694073aec301fa754a531231b81b746b3c97674ebbae15dd
+6,Parents bedroom and dressing,15.8,2.8,17.1,-2.120908576823199,-0.35,open-all-circuits,true,true,true,false,62744dd25699da77b286c2eb9ae2b63b1e51a18bcca70d2a53d16769737b5cce
+6,Parents bedroom and dressing,15.8,2.8,17.1,-2.120908576823199,-0.35,closed-breaker-off-torch,false,true,false,true,9219bc5fe62ea7efaaec8f3d6bdd9307c656bf22b753cd6b89fae2d6d90dcf0a
+7,Child bedroom and study,15.0,2.8,12.4,-2.237704531034207,0.2,closed-all-circuits,false,true,true,false,1a0a35385bd01c979a7898d5e3910d13b15af8bda2c36ee83ca88e935035b4fb
+7,Child bedroom and study,15.0,2.8,12.4,-2.237704531034207,0.2,closed-own-circuit-off,false,false,true,false,1b3a46d1ff008d62a5ce3cf3393720c0aa4b3350e4c12d59be4d65feeb96fd8f
+7,Child bedroom and study,15.0,2.8,12.4,-2.237704531034207,0.2,closed-breaker-off,false,true,false,false,1b3a46d1ff008d62a5ce3cf3393720c0aa4b3350e4c12d59be4d65feeb96fd8f
+7,Child bedroom and study,15.0,2.8,12.4,-2.237704531034207,0.2,open-own-circuit-off,true,false,true,false,1b3a46d1ff008d62a5ce3cf3393720c0aa4b3350e4c12d59be4d65feeb96fd8f
+7,Child bedroom and study,15.0,2.8,12.4,-2.237704531034207,0.2,open-all-circuits,true,true,true,false,1a0a35385bd01c979a7898d5e3910d13b15af8bda2c36ee83ca88e935035b4fb
+7,Child bedroom and study,15.0,2.8,12.4,-2.237704531034207,0.2,closed-breaker-off-torch,false,true,false,true,a1c8b98d006c1d4d8ec34007dd1de1d971be6ff91f81d5737ca2665319b76485
+7,Child bedroom and study,15.0,2.8,12.4,-2.237704531034207,-0.35,closed-all-circuits,false,true,true,false,cf6f086ec9a147df70b1b2abf9dffb58340f065d6f4744b1b3a17c6f2ee58517
+7,Child bedroom and study,15.0,2.8,12.4,-2.237704531034207,-0.35,closed-own-circuit-off,false,false,true,false,590f6f7c77fbdc99e59a94f8ab9e0cf53abd9d7b423dd94e9bd4e3b784e5f54d
+7,Child bedroom and study,15.0,2.8,12.4,-2.237704531034207,-0.35,closed-breaker-off,false,true,false,false,590f6f7c77fbdc99e59a94f8ab9e0cf53abd9d7b423dd94e9bd4e3b784e5f54d
+7,Child bedroom and study,15.0,2.8,12.4,-2.237704531034207,-0.35,open-own-circuit-off,true,false,true,false,590f6f7c77fbdc99e59a94f8ab9e0cf53abd9d7b423dd94e9bd4e3b784e5f54d
+7,Child bedroom and study,15.0,2.8,12.4,-2.237704531034207,-0.35,open-all-circuits,true,true,true,false,cf6f086ec9a147df70b1b2abf9dffb58340f065d6f4744b1b3a17c6f2ee58517
+7,Child bedroom and study,15.0,2.8,12.4,-2.237704531034207,-0.35,closed-breaker-off-torch,false,true,false,true,e6ef58f8df6c1aecc8ce5a4d94fae5663511ae0ff4cf1171165975b4d443f48d
+8,Family bathroom,19.8,2.8,11.6,-2.29049968863988,0.2,closed-all-circuits,false,true,true,false,d76761c1ef9f69151931b927303c17a790f5b1a305ece900f38697f53aa98abc
+8,Family bathroom,19.8,2.8,11.6,-2.29049968863988,0.2,closed-own-circuit-off,false,false,true,false,af261217c6cf5b1e662eacbdf1831d37b02ea57cc337397a90619672e42fe940
+8,Family bathroom,19.8,2.8,11.6,-2.29049968863988,0.2,closed-breaker-off,false,true,false,false,af261217c6cf5b1e662eacbdf1831d37b02ea57cc337397a90619672e42fe940
+8,Family bathroom,19.8,2.8,11.6,-2.29049968863988,0.2,open-own-circuit-off,true,false,true,false,af261217c6cf5b1e662eacbdf1831d37b02ea57cc337397a90619672e42fe940
+8,Family bathroom,19.8,2.8,11.6,-2.29049968863988,0.2,open-all-circuits,true,true,true,false,d76761c1ef9f69151931b927303c17a790f5b1a305ece900f38697f53aa98abc
+8,Family bathroom,19.8,2.8,11.6,-2.29049968863988,0.2,closed-breaker-off-torch,false,true,false,true,2d91c83a3d5c6e1c7073fa22e8d9e86e5b5cba55980b8a230f242c84ac340ebd
+8,Family bathroom,19.8,2.8,11.6,-2.29049968863988,-0.35,closed-all-circuits,false,true,true,false,9a8b9b25c025dbfb2885c4dc34742e44dece63c8d440e055ad52b88122070c40
+8,Family bathroom,19.8,2.8,11.6,-2.29049968863988,-0.35,closed-own-circuit-off,false,false,true,false,cd943d64499b447a1b089323bd30832e17948590ac7813eb35e2d3d9a3bb9a43
+8,Family bathroom,19.8,2.8,11.6,-2.29049968863988,-0.35,closed-breaker-off,false,true,false,false,cd943d64499b447a1b089323bd30832e17948590ac7813eb35e2d3d9a3bb9a43
+8,Family bathroom,19.8,2.8,11.6,-2.29049968863988,-0.35,open-own-circuit-off,true,false,true,false,cd943d64499b447a1b089323bd30832e17948590ac7813eb35e2d3d9a3bb9a43
+8,Family bathroom,19.8,2.8,11.6,-2.29049968863988,-0.35,open-all-circuits,true,true,true,false,9a8b9b25c025dbfb2885c4dc34742e44dece63c8d440e055ad52b88122070c40
+8,Family bathroom,19.8,2.8,11.6,-2.29049968863988,-0.35,closed-breaker-off-torch,false,true,false,true,b493445dad4e28100a2ad7b1ec096b93a20855210b542de23dd9f0b0636ec923
+9,Cellar work passage,13.5,-2.4,18.5,-2.9842502188562166,0.2,closed-all-circuits,false,true,true,false,3d64bb856e9dd699ea65b0cdad51d0ba7944b035f7092aca7ce40090e45fffad
+9,Cellar work passage,13.5,-2.4,18.5,-2.9842502188562166,0.2,closed-own-circuit-off,false,false,true,false,83e6a4cba699f0a83bef94730fc95867e8c191a2f80dd8336e3da6a128a4c4c3
+9,Cellar work passage,13.5,-2.4,18.5,-2.9842502188562166,0.2,closed-breaker-off,false,true,false,false,5b2fa2e1aed7143e2a3d2d03a1419ba35d3981e795d1205e5c06144ae7cc167f
+9,Cellar work passage,13.5,-2.4,18.5,-2.9842502188562166,0.2,open-own-circuit-off,true,false,true,false,1e739455cae246a0cae853feb00112c91ad9d877aef9edc5f5a1ceaa919de0ae
+9,Cellar work passage,13.5,-2.4,18.5,-2.9842502188562166,0.2,open-all-circuits,true,true,true,false,2f41bcaec5790b802a7a35ab4a738835c53fbd288421132cb2e7881a6966a169
+9,Cellar work passage,13.5,-2.4,18.5,-2.9842502188562166,0.2,closed-breaker-off-torch,false,true,false,true,68c37fe2d748f635a9ad178f13b86c7f4b5de62ca8d850b9bcee5df6779e2a85
+9,Cellar work passage,13.5,-2.4,18.5,-2.9842502188562166,-0.35,closed-all-circuits,false,true,true,false,b42a18a5a6cf13dafaf85273f693b258274fe6fb4a416f0c298d53711cd63617
+9,Cellar work passage,13.5,-2.4,18.5,-2.9842502188562166,-0.35,closed-own-circuit-off,false,false,true,false,366702859bf189aa81dbc8c0b34fd11442dc814bd8293b39aeb13151b42b72ad
+9,Cellar work passage,13.5,-2.4,18.5,-2.9842502188562166,-0.35,closed-breaker-off,false,true,false,false,6aee9c72144207122de826b4f05fd57c116aceb687863807b37dbd68ec3b2133
+9,Cellar work passage,13.5,-2.4,18.5,-2.9842502188562166,-0.35,open-own-circuit-off,true,false,true,false,fd87f760880a9faac462f61de9cd370053aa3c91708208a64742e45984b5171c
+9,Cellar work passage,13.5,-2.4,18.5,-2.9842502188562166,-0.35,open-all-circuits,true,true,true,false,d0c3a4f443bd0963a8f6b646256d2d4709ffa23e2aa975a02fe5c5443b11d880
+9,Cellar work passage,13.5,-2.4,18.5,-2.9842502188562166,-0.35,closed-breaker-off-torch,false,true,false,true,2e3edc8ae819d13b4db1239a0ba081e2e758013931c4f7adc2d5452c57d7ba4f
+10,Heating hot-water and laundry,18.3,-2.4,12.4,-2.189224321167416,0.2,closed-all-circuits,false,true,true,false,a11159c15eea70cb6bd8fb582f7589358ed739cd3be06ac5449b9e985576cd03
+10,Heating hot-water and laundry,18.3,-2.4,12.4,-2.189224321167416,0.2,closed-own-circuit-off,false,false,true,false,81f1e82a2c5c1be8d026ee2c0158ec7a1d4b05093c386de9d5be3b373523d3f5
+10,Heating hot-water and laundry,18.3,-2.4,12.4,-2.189224321167416,0.2,closed-breaker-off,false,true,false,false,688123f1143068ac6ee9e7fd7ada850ac11f1ddd24f6e80436f4ce957fc2c78c
+10,Heating hot-water and laundry,18.3,-2.4,12.4,-2.189224321167416,0.2,open-own-circuit-off,true,false,true,false,2372b8cdf3aad0b9fafcc75e31f0856e1a690e49a4c017eb882b38e46cc28fe9
+10,Heating hot-water and laundry,18.3,-2.4,12.4,-2.189224321167416,0.2,open-all-circuits,true,true,true,false,089c07a4d8ef0bd5ea2afa8f6def46ce1f2b87f1b26745adcb00619cc2b1b41f
+10,Heating hot-water and laundry,18.3,-2.4,12.4,-2.189224321167416,0.2,closed-breaker-off-torch,false,true,false,true,164bf4bd8afb06d7b62867eff46252009a40c8c849713fe901f45f12f3f93230
+10,Heating hot-water and laundry,18.3,-2.4,12.4,-2.189224321167416,-0.35,closed-all-circuits,false,true,true,false,5f0e6058d6b16a9741da16f59a5646e9e70c2b181b4cc2e3e34042a3fe3f14f1
+10,Heating hot-water and laundry,18.3,-2.4,12.4,-2.189224321167416,-0.35,closed-own-circuit-off,false,false,true,false,d12af96bdd33116b3c71a150e2499f0c1a3dc9e3034e6f6ee3f2d4a17508d112
+10,Heating hot-water and laundry,18.3,-2.4,12.4,-2.189224321167416,-0.35,closed-breaker-off,false,true,false,false,8c51de2b9e6d490913d41fd293288c5b2d490ccdec8b628cbf753f14b5e1e8b7
+10,Heating hot-water and laundry,18.3,-2.4,12.4,-2.189224321167416,-0.35,open-own-circuit-off,true,false,true,false,4350ffad374ad63bd0c2ce9c85c9673491fc735dc891b1d616d6f59d57c0412f
+10,Heating hot-water and laundry,18.3,-2.4,12.4,-2.189224321167416,-0.35,open-all-circuits,true,true,true,false,ccc83a1d8b5cd4299c79e00b95bee256556f6fbcfb7494a7485f445d042a7e59
+10,Heating hot-water and laundry,18.3,-2.4,12.4,-2.189224321167416,-0.35,closed-breaker-off-torch,false,true,false,true,c79fcf16080a39603fe749089419057709e8f70e74672a31cca6ed9b24d54d6b
+11,Household and seasonal store,18.3,-2.4,17.6,-2.287808146601842,0.2,closed-all-circuits,false,true,true,false,8fa338d4d2d3f7a1644f496d2ab6b63c42949161cd4e4a5c422dc75fa90169cf
+11,Household and seasonal store,18.3,-2.4,17.6,-2.287808146601842,0.2,closed-own-circuit-off,false,false,true,false,95a5bc289d28f29a2f25d1cbf69d308ca4f44d32e38612da332bd7b8453ce1d9
+11,Household and seasonal store,18.3,-2.4,17.6,-2.287808146601842,0.2,closed-breaker-off,false,true,false,false,95a5bc289d28f29a2f25d1cbf69d308ca4f44d32e38612da332bd7b8453ce1d9
+11,Household and seasonal store,18.3,-2.4,17.6,-2.287808146601842,0.2,open-own-circuit-off,true,false,true,false,78b07e80d41dcb105c1ab85dde12c8dbffa3360522dbecb8b6293d0d4642bbe9
+11,Household and seasonal store,18.3,-2.4,17.6,-2.287808146601842,0.2,open-all-circuits,true,true,true,false,3107bf9a963ef5d51ada3f89b6899d88da0695764d579c42bafc38069bae7daa
+11,Household and seasonal store,18.3,-2.4,17.6,-2.287808146601842,0.2,closed-breaker-off-torch,false,true,false,true,1233e52f2e11e6f0f6605530d94dd759e496396250d21bc8b67acd75e7b01f24
+11,Household and seasonal store,18.3,-2.4,17.6,-2.287808146601842,-0.35,closed-all-circuits,false,true,true,false,6e6cc208141d7e5886cbef2e91bfa3dcfb1617f60d3fc1f88d72b33245707a58
+11,Household and seasonal store,18.3,-2.4,17.6,-2.287808146601842,-0.35,closed-own-circuit-off,false,false,true,false,9f8e405806d9a0accc8cc940b74b5c196b5194e8d7c4d4f7d9f3fcd5563bfd23
+11,Household and seasonal store,18.3,-2.4,17.6,-2.287808146601842,-0.35,closed-breaker-off,false,true,false,false,9266aa898171b9c053f4d746b8d9ec29361c9af334cff481fd28d34070c573da
+11,Household and seasonal store,18.3,-2.4,17.6,-2.287808146601842,-0.35,open-own-circuit-off,true,false,true,false,bb4774b445fc353aa3a88d37b3aa7f32263c18c0e3bae2549c98c1ecf764454b
+11,Household and seasonal store,18.3,-2.4,17.6,-2.287808146601842,-0.35,open-all-circuits,true,true,true,false,c1c01a159a8dc4a8f6b0b712218e64205e00d3ef731770bcfce454eec00c657e
+11,Household and seasonal store,18.3,-2.4,17.6,-2.287808146601842,-0.35,closed-breaker-off-torch,false,true,false,true,c8b74c3801bb8f637bf2891fad02db4636891f8e3eb7e15ccc9d52d4d6e3184b
+12,Rear garden and patio reservation,9.4,-0.011310751611667605,5.8,-2.4146074949578358,-0.04,closed-all-circuits,false,true,true,false,ec5f1d7055e3efa70f816ffda2c6a3cabceed361781144c358dfefa43c289881
+12,Rear garden and patio reservation,9.4,-0.011310751611667605,5.8,-2.4146074949578358,-0.04,closed-own-circuit-off,false,false,true,false,ec5f1d7055e3efa70f816ffda2c6a3cabceed361781144c358dfefa43c289881
+12,Rear garden and patio reservation,9.4,-0.011310751611667605,5.8,-2.4146074949578358,-0.04,closed-breaker-off,false,true,false,false,ec5f1d7055e3efa70f816ffda2c6a3cabceed361781144c358dfefa43c289881
+12,Rear garden and patio reservation,9.4,-0.011310751611667605,5.8,-2.4146074949578358,-0.04,open-own-circuit-off,true,false,true,false,ec5f1d7055e3efa70f816ffda2c6a3cabceed361781144c358dfefa43c289881
+12,Rear garden and patio reservation,9.4,-0.011310751611667605,5.8,-2.4146074949578358,-0.04,open-all-circuits,true,true,true,false,ec5f1d7055e3efa70f816ffda2c6a3cabceed361781144c358dfefa43c289881
+12,Rear garden and patio reservation,9.4,-0.011310751611667605,5.8,-2.4146074949578358,-0.04,closed-breaker-off-torch,false,true,false,true,4d1c8e63a55a52556fe62980afa8cff801b1f7895c7b7304e495d49107ff7afa
+12,Rear garden and patio reservation,9.4,-0.011310751611667605,5.8,-2.4146074949578358,-0.35,closed-all-circuits,false,true,true,false,158ce26dae0128630641a749e4e8281e1978f9915d8ee60dbaeecc2b7b37a441
+12,Rear garden and patio reservation,9.4,-0.011310751611667605,5.8,-2.4146074949578358,-0.35,closed-own-circuit-off,false,false,true,false,158ce26dae0128630641a749e4e8281e1978f9915d8ee60dbaeecc2b7b37a441
+12,Rear garden and patio reservation,9.4,-0.011310751611667605,5.8,-2.4146074949578358,-0.35,closed-breaker-off,false,true,false,false,158ce26dae0128630641a749e4e8281e1978f9915d8ee60dbaeecc2b7b37a441
+12,Rear garden and patio reservation,9.4,-0.011310751611667605,5.8,-2.4146074949578358,-0.35,open-own-circuit-off,true,false,true,false,158ce26dae0128630641a749e4e8281e1978f9915d8ee60dbaeecc2b7b37a441
+12,Rear garden and patio reservation,9.4,-0.011310751611667605,5.8,-2.4146074949578358,-0.35,open-all-circuits,true,true,true,false,158ce26dae0128630641a749e4e8281e1978f9915d8ee60dbaeecc2b7b37a441
+12,Rear garden and patio reservation,9.4,-0.011310751611667605,5.8,-2.4146074949578358,-0.35,closed-breaker-off-torch,false,true,false,true,b9addc15cd2affa4ee7ddb11fe32614f1213383cc3b6e06b1a85269081cb29e4
+13,Street and entrance approach,19.8,3.4396389572891793E-4,24.0,-1.7384235186319985,-0.04,closed-all-circuits,false,true,true,false,2db27411c5b5b9ebaae5e6ee49d799adebdb984187d450920ff0d201073c02ab
+13,Street and entrance approach,19.8,3.4396389572891793E-4,24.0,-1.7384235186319985,-0.04,closed-own-circuit-off,false,false,true,false,2db27411c5b5b9ebaae5e6ee49d799adebdb984187d450920ff0d201073c02ab
+13,Street and entrance approach,19.8,3.4396389572891793E-4,24.0,-1.7384235186319985,-0.04,closed-breaker-off,false,true,false,false,3fd2c7c844ecef3aad39f605d1e1f846a2a17c3ca89d4ab33edac9217b93a0c8
+13,Street and entrance approach,19.8,3.4396389572891793E-4,24.0,-1.7384235186319985,-0.04,open-own-circuit-off,true,false,true,false,2db27411c5b5b9ebaae5e6ee49d799adebdb984187d450920ff0d201073c02ab
+13,Street and entrance approach,19.8,3.4396389572891793E-4,24.0,-1.7384235186319985,-0.04,open-all-circuits,true,true,true,false,2db27411c5b5b9ebaae5e6ee49d799adebdb984187d450920ff0d201073c02ab
+13,Street and entrance approach,19.8,3.4396389572891793E-4,24.0,-1.7384235186319985,-0.04,closed-breaker-off-torch,false,true,false,true,95b227186b14e02d8a3b2d6d13ab719732da8266d3be061a179359a3a71b5f90
+13,Street and entrance approach,19.8,3.4396389572891793E-4,24.0,-1.7384235186319985,-0.35,closed-all-circuits,false,true,true,false,0034515460fa470f4f6a584943fd05de25882ac90f4703acb6e480f3b0f0fa63
+13,Street and entrance approach,19.8,3.4396389572891793E-4,24.0,-1.7384235186319985,-0.35,closed-own-circuit-off,false,false,true,false,0034515460fa470f4f6a584943fd05de25882ac90f4703acb6e480f3b0f0fa63
+13,Street and entrance approach,19.8,3.4396389572891793E-4,24.0,-1.7384235186319985,-0.35,closed-breaker-off,false,true,false,false,f640b6f9e642021a053cb696a8f2a4ad1b999658e5731505596e1f4968588ce5
+13,Street and entrance approach,19.8,3.4396389572891793E-4,24.0,-1.7384235186319985,-0.35,open-own-circuit-off,true,false,true,false,bb2fa9b7124adb6abdfde44535aa89c6938b75816b1e37c76b2d789631dec330
+13,Street and entrance approach,19.8,3.4396389572891793E-4,24.0,-1.7384235186319985,-0.35,open-all-circuits,true,true,true,false,bb2fa9b7124adb6abdfde44535aa89c6938b75816b1e37c76b2d789631dec330
+13,Street and entrance approach,19.8,3.4396389572891793E-4,24.0,-1.7384235186319985,-0.35,closed-breaker-off-torch,false,true,false,true,fc81ae11d31a2a4d1db502a85d9b36f9a019db72e1dd368be414542b1f92505b
+14,Van cargo interior,22.0,0.5,32.0,-1.921215046798329,-0.04,closed-all-circuits,false,true,true,false,687b04fb6f9d6e4eaf9bf165c6ecc166fc0a9b1e8bf1887adf78d61d3a27967f
+14,Van cargo interior,22.0,0.5,32.0,-1.921215046798329,-0.04,closed-own-circuit-off,false,false,true,false,687b04fb6f9d6e4eaf9bf165c6ecc166fc0a9b1e8bf1887adf78d61d3a27967f
+14,Van cargo interior,22.0,0.5,32.0,-1.921215046798329,-0.04,closed-breaker-off,false,true,false,false,687b04fb6f9d6e4eaf9bf165c6ecc166fc0a9b1e8bf1887adf78d61d3a27967f
+14,Van cargo interior,22.0,0.5,32.0,-1.921215046798329,-0.04,open-own-circuit-off,true,false,true,false,687b04fb6f9d6e4eaf9bf165c6ecc166fc0a9b1e8bf1887adf78d61d3a27967f
+14,Van cargo interior,22.0,0.5,32.0,-1.921215046798329,-0.04,open-all-circuits,true,true,true,false,687b04fb6f9d6e4eaf9bf165c6ecc166fc0a9b1e8bf1887adf78d61d3a27967f
+14,Van cargo interior,22.0,0.5,32.0,-1.921215046798329,-0.04,closed-breaker-off-torch,false,true,false,true,018d552d7e25d94aae198c5f9fb88d5064a57dc93fee29d396ab9988bbe83e2c
+14,Van cargo interior,22.0,0.5,32.0,-1.921215046798329,-0.35,closed-all-circuits,false,true,true,false,8147847152e6037a1da5c06cdfc28fba649c7c819830f6c701684c5fb5611a36
+14,Van cargo interior,22.0,0.5,32.0,-1.921215046798329,-0.35,closed-own-circuit-off,false,false,true,false,8147847152e6037a1da5c06cdfc28fba649c7c819830f6c701684c5fb5611a36
+14,Van cargo interior,22.0,0.5,32.0,-1.921215046798329,-0.35,closed-breaker-off,false,true,false,false,8147847152e6037a1da5c06cdfc28fba649c7c819830f6c701684c5fb5611a36
+14,Van cargo interior,22.0,0.5,32.0,-1.921215046798329,-0.35,open-own-circuit-off,true,false,true,false,8147847152e6037a1da5c06cdfc28fba649c7c819830f6c701684c5fb5611a36
+14,Van cargo interior,22.0,0.5,32.0,-1.921215046798329,-0.35,open-all-circuits,true,true,true,false,8147847152e6037a1da5c06cdfc28fba649c7c819830f6c701684c5fb5611a36
+14,Van cargo interior,22.0,0.5,32.0,-1.921215046798329,-0.35,closed-breaker-off-torch,false,true,false,true,3dc132816270891b031e9c9d7df9be5adac3fe982f37d726f2850b2853be68d8

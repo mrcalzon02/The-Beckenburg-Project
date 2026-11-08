@@ -1,0 +1,15 @@
+{
+  "source_sha": "4afae307efe7b4903e14aca2d51d545ebcb0a21a",
+  "construction": "first-principles-functional-furnishings-v1-981935462ed806a0",
+  "renderer": "SceneRenderer CLASSIC software runtime",
+  "heap_mb": 256,
+  "runtime_pngs": 180,
+  "contact_sheets": 30,
+  "all_sheets_visually_inspected": true,
+  "result": "No new visible leak in reviewed views; whole-location and GPU/hardware acceptance unfinished",
+  "files": {
+    "src/test/java/org/beckenburg/HouseFinalLightingReview.java": "913b414c9d6f9e5f6cde64a6a60998b90a5f75b95a47657108b6ea5d4080e4b4",
+    "development/captures/house-final-lighting/cameras-and-states.csv": "fda81cba8c573876300b341a1c4b1b621fd99822d4eaddac71cfdd819ef5501d",
+    "development/captures/house-final-lighting/source-revision.txt": "344e892f2cfb051413aa9106ecd763a1cd4b177221a2f8500999a422168b5000"
+  }
+}

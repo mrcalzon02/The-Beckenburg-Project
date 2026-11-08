@@ -61,6 +61,19 @@ public final class LanHunterAnimationGameplayTest {
             actor.panel.keyReleased(new KeyEvent(actor.panel,KeyEvent.KEY_RELEASED,0,0,key,KeyEvent.CHAR_UNDEFINED));
         });
     }
+    /** Exercise every real host tick while keeping slow raster/file IO out of
+     * simulation time. Never forge a position, pose, panel clock or packet. */
+    private static void advance(LanHost host,Peer[] peers,int count)throws Exception{
+        var tick=LanHost.class.getDeclaredMethod("tickSafely");tick.setAccessible(true);
+        for(int step=0;step<count;step++){
+            int[] marks=new int[peers.length];for(int i=0;i<peers.length;i++)marks[i]=peers[i].mark();
+            int now;synchronized(field(host,"mutex")){int before=(int)field(host,"tick");tick.invoke(host);now=(int)field(host,"tick");check(now==before+1&&host.running(),"Actual host tick must advance once without simulation failure");}
+            // Periodic state/world snapshots are emitted every fifth tick.
+            // STATE precedes the world batch. Wait through its final hunter's
+            // actual posture row, so no previous body is rendered by accident.
+            if(now%5==0)for(int i=0;i<peers.length;i++)peers[i].await(marks[i],"POSTURE|2|0|"+now);
+        }
+    }
     public static void main(String[] args)throws Exception{
         boolean gpu=List.of(args).contains("--gpu");
         java.lang.reflect.Method stop=null;
@@ -83,6 +96,11 @@ public final class LanHunterAnimationGameplayTest {
             cleric.await(0,"LOBBY|3|AI|3|WAITING");
             cleric.client.start();cleric.await(0,"INFO|mission started");
             for(Peer peer:peers){int mark=peer.mark();peer.client.view3D();peer.await(mark,"ACCEPT|VIEW3D");}
+            // A cold software render can take seconds on a shared CI worker.
+            // Let the in-flight real tick finish, then advance its actual method
+            // explicitly; otherwise each render can cross the gait reset gap.
+            var clock=(java.util.concurrent.ScheduledExecutorService)field(host,"clock");
+            clock.shutdown();check(clock.awaitTermination(5,TimeUnit.SECONDS),"Host clock must quiesce before deterministic acceptance ticks");
             var map=(HouseMap)field(host,"map");var world=(LanWorld)field(host,"world");Object mutex=field(host,"mutex");
             for(Peer peer:peers){
                 SwingUtilities.invokeAndWait(()->{peer.panel=new LanWorldPanel(peer.client);});
@@ -90,6 +108,7 @@ public final class LanHunterAnimationGameplayTest {
                 // Skip the opening using the same key path as the player.
                 press(peer,KeyEvent.VK_SPACE);
             }
+            advance(host,peers,1);
             var fixture=AuthoredTestSupport.flatCross(map,2.4).at();
             double x=fixture.x(),z=fixture.z(),y=fixture.y();
             var initial=new LanWorld.Body[]{world.body(0),world.body(1),world.body(2)};
@@ -108,16 +127,22 @@ public final class LanHunterAnimationGameplayTest {
                 check(render(viewer,seat,null)==HunterSpriteAnimation.Pose.IDLE,"new actor begins idle "+role);
                 var poses=EnumSet.noneOf(HunterSpriteAnimation.Pose.class);
                 for(int step=0;step<4;step++){
+                    advance(host,peers,1);
                     int received=viewer.mark(),accepted=actor.mark();actor.client.step(100,0);
                     actor.await(accepted,"ACCEPT|STEP");viewer.await(received,"POSTURE|"+seat+"|");
                     var pose=render(viewer,seat,null);boolean first=poses.add(pose);
                     if(first&&(pose==HunterSpriteAnimation.Pose.WALK_A||pose==HunterSpriteAnimation.Pose.WALK_B))
                         ImageIO.write(camera.image(),"PNG",captures.resolve(role+"-"+pose.name().toLowerCase(java.util.Locale.ROOT)+".png").toFile());
-                    Thread.sleep(110);
+                    // Deliberately reproduce a slow render/capture interval. Its
+                    // wall duration must not invent missing simulation samples.
+                    if(step==0)Thread.sleep(1100);
                 }
                 check(poses.contains(HunterSpriteAnimation.Pose.WALK_A)&&poses.contains(HunterSpriteAnimation.Pose.WALK_B),
                     "real accepted STEP packets must render both walk frames "+role+poses);
-                Thread.sleep(260);int stopped=viewer.mark();actor.client.step(0,0);viewer.await(stopped,"POSTURE|"+seat+"|");
+                // Stop sending movement and receive a real stationary periodic
+                // snapshot. STEP(0,0) is an invalid host motion vector, not stop.
+                advance(host,peers,3);int remainder=(int)field(host,"tick")%5;
+                if(remainder!=0)advance(host,peers,5-remainder);
                 check(render(viewer,seat,captures.resolve(role+"-idle.png"))==HunterSpriteAnimation.Pose.IDLE,"stop returns to idle "+role);
                 if(gpu)check(camera.frameDiagnostics().gpu(),"gameplay must use actual GPU world renderer");
                 int low=viewer.mark();press(actor,KeyEvent.VK_CONTROL);viewer.await(low,"POSTURE|"+seat+"|1|");
