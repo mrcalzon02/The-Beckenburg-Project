@@ -4522,6 +4522,28 @@
       "action": "Update the dependency graph before reading final world top coordinates; subtract a complete convex top only when its area equals the actual triangle union. Snap authored cutters to10micrometres, bake only new transforms and triangulate before exact export/native comparison. Preserve rejected native results; do not modify production tolerances. Final all25 native checks:110409flat samples,99937baseline valid,94879qualified sweeps,47recovered standing poses; zero new blocks/sweepfailures.221flight segments186\u2192196passing both ways,84full links49\u219256; zero passing-direction regressions. Both battery links pass, original walkway full width retained. Independent exported/native solids and all11editable packed sources pass.",
       "evidence": "development/levels/rebuild/stair-landing-pass/rejected/stale-rotation-*; tools/build_stair_landings.py; tools/check_stair_landings.py",
       "older_maps": "Audit actual rotated object footprints after transform/geometry changes; preserve original props, UVs, pivots and saved terrain holes. All25candidate movement and source checks required; complete runtime/network/hardware acceptance remains open."
+    },
+    {
+      "id": "DEV-419",
+      "title": "New transformed tread boxes differ from their exported native triangle records",
+      "status": "FIX VERIFIED: bake new transforms and triangulation; all11sources pass exact parity",
+      "affected": "Stair end/corner generator initial WLD-17 pilot; new transformed tread boxes",
+      "symptom": "Independent reimport stopped with export/native mismatch for Rebuilt stair WLD-17 route-11 flight0 part0.",
+      "cause": "New box transforms and exporter triangulation applied after native world-float records were computed can produce different triangle/float representations.",
+      "action": "Bake transforms on newly authored meshes only and triangulate before both GLB export and native record generation. Preserve all original pivots/resources; independently compare every new exported triangle and editable source to native records. Final eleven candidates pass.",
+      "evidence": "Observed interrupted build/stair-end-pilot.log traceback at session recovery (log later replaced by rerun); tools/build_stair_landings.py and tools/check_stair_landings.py; development/levels/rebuild/stair-landing-pass/verification/independent-sources.json",
+      "older_maps": "Individually check render/native coordinates after transformed geometry generation; never globally reset original imported asset pivots or UV materials."
+    },
+    {
+      "id": "DEV-420",
+      "title": "Several native stair review cameras are occluded or too distant for join acceptance",
+      "status": "OPEN: diagnostic framing/structural join review required",
+      "affected": "WLD04terrain closeup; WLD13/WLD18roof/wall closeups; isolated whole-site landing additions",
+      "symptom": "WLD04closeup is filled by terrain; several WLD13/WLD18joins remain behind walls/caps. Isolated additions in whole-site overviews are too small for detailed seam inspection.",
+      "cause": "A common high-end camera and bounding-distance context rule does not guarantee a clear line of sight to every distinct architectural join.",
+      "action": "Keep captures truthfully labeled and withheld from complete visual acceptance; retain geometry/physics blockers. Next native review should author per-join cameras/cut planes or physically resolve the terrain/wall/cap conflicts first. Do not remove those blockers from playable geometry to improve a diagnostic view.",
+      "evidence": "development/levels/rebuild/captures/stair-landing-fit-batch/closeup-sheet-1.png; closeup-sheet-2.png; closeup-sheet-3.png; verification/captures.json",
+      "older_maps": "Audit actual visible joins at standing/crouched height across all29packets. Whole-site and isolated exports do not replace in-room/native/runtime visual review."
     }
   ],
   "audit_categories": [

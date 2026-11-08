@@ -5764,6 +5764,34 @@ Evidence and verification: development/levels/rebuild/stair-landing-pass/rejecte
 
 Older-map obligation: Audit actual rotated object footprints after transform/geometry changes; preserve original props, UVs, pivots and saved terrain holes. All25candidate movement and source checks required; complete runtime/network/hardware acceptance remains open.
 
+### DEV-419 — New transformed tread boxes differ from their exported native triangle records
+
+**Status:** FIX VERIFIED: bake new transforms and triangulation; all11sources pass exact parity · **Affected:** Stair end/corner generator initial WLD-17 pilot; new transformed tread boxes
+
+Independent reimport stopped with export/native mismatch for Rebuilt stair WLD-17 route-11 flight0 part0.
+
+Cause / uncertainty: New box transforms and exporter triangulation applied after native world-float records were computed can produce different triangle/float representations.
+
+Fix / next action: Bake transforms on newly authored meshes only and triangulate before both GLB export and native record generation. Preserve all original pivots/resources; independently compare every new exported triangle and editable source to native records. Final eleven candidates pass.
+
+Evidence and verification: Observed interrupted build/stair-end-pilot.log traceback at session recovery (log later replaced by rerun); tools/build_stair_landings.py and tools/check_stair_landings.py; development/levels/rebuild/stair-landing-pass/verification/independent-sources.json
+
+Older-map obligation: Individually check render/native coordinates after transformed geometry generation; never globally reset original imported asset pivots or UV materials.
+
+### DEV-420 — Several native stair review cameras are occluded or too distant for join acceptance
+
+**Status:** OPEN: diagnostic framing/structural join review required · **Affected:** WLD04terrain closeup; WLD13/WLD18roof/wall closeups; isolated whole-site landing additions
+
+WLD04closeup is filled by terrain; several WLD13/WLD18joins remain behind walls/caps. Isolated additions in whole-site overviews are too small for detailed seam inspection.
+
+Cause / uncertainty: A common high-end camera and bounding-distance context rule does not guarantee a clear line of sight to every distinct architectural join.
+
+Fix / next action: Keep captures truthfully labeled and withheld from complete visual acceptance; retain geometry/physics blockers. Next native review should author per-join cameras/cut planes or physically resolve the terrain/wall/cap conflicts first. Do not remove those blockers from playable geometry to improve a diagnostic view.
+
+Evidence and verification: development/levels/rebuild/captures/stair-landing-fit-batch/closeup-sheet-1.png; closeup-sheet-2.png; closeup-sheet-3.png; verification/captures.json
+
+Older-map obligation: Audit actual visible joins at standing/crouched height across all29packets. Whole-site and isolated exports do not replace in-room/native/runtime visual review.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
