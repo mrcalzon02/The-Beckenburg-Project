@@ -594,20 +594,21 @@
     "Study industrial electrical separation, acoustics and usable inspection paths before runtime authoring."
   ],
   "native_reopened": true,
-  "blend_sha256": "b946807c1cb4ca3e93097bf764efb6ae3aab002f0e701b881ebbcaf48469c2e3",
+  "blend_sha256": "1c7f0c398696c2c4ae5cf26a5161a285bd81b761d944158a07b429f312c92f70",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
-    "glb_sha256": "5fe0e02fb2708a36832973244eb8525d96968d629cca4500cbd9a668d2fe204b",
+    "glb_sha256": "70900c232e2f17199453d61488aea051ab6466b0720fc0810d49ff5062ef6dec",
     "independently_reimported": true,
     "meshes": 349,
     "triangles": 4204,
     "floor_parts": 30,
     "ceiling_cap_parts": 20,
     "stair_treads": 215,
-    "checked_closed_solids": 327,
+    "checked_closed_solids": 349,
     "measured_depth_parts": 50,
     "exported_cap_rays": 20,
+    "route_support_solids": 22,
     "fixed_infill_routes": 0,
     "exported_fixed_boundary_checks": [],
     "wall_depth_m": 0.16,
@@ -630,8 +631,8 @@
   },
   "generator_sha256": {
     "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
-    "development/levels/blockouts/build_blockouts.py": "270e256c16ef0a2028a932227b04c45ea63efbdd44d5fff8f240e59e2d60ad42",
-    "development/levels/blockouts/structural_pass.py": "2682a49d3383d468a3208b63dadc14efbb3669906a403dfd0cee27aa8e8b290d",
+    "development/levels/blockouts/build_blockouts.py": "a79d81e4aed21ba6c86caf18273f9374e98dd4702f9434a294797ac138e69395",
+    "development/levels/blockouts/structural_pass.py": "9bbf596ad782cd629371cc9986d3fb198c6eec411be54496008e37028ebd276b",
     "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
   }
 }

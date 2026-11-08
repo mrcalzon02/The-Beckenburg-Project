@@ -381,20 +381,21 @@
     "Low-deck cutaway and both independent gangway clearances need review; sea must never fill the hold."
   ],
   "native_reopened": true,
-  "blend_sha256": "eb6d39b2944f4ff9849d86eb7efc0dfbaf58583a5d238f8307a5578f1a705d5a",
+  "blend_sha256": "c2b22c12f882fc08c0699b0793fee06cbbe4485e755b61940deefdfdfa5d25f4",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
-    "glb_sha256": "179472b89562a025a6460250e8a570fb53ccab298443313292968273d3f2f1c3",
+    "glb_sha256": "b409333f0ce1588b83cb93c0a85fd3f4528d2ef915e55a3f8d1b09d04abace11",
     "independently_reimported": true,
     "meshes": 174,
     "triangles": 8829,
     "floor_parts": 17,
     "ceiling_cap_parts": 4,
     "stair_treads": 68,
-    "checked_closed_solids": 156,
+    "checked_closed_solids": 171,
     "measured_depth_parts": 21,
     "exported_cap_rays": 4,
+    "route_support_solids": 15,
     "fixed_infill_routes": 0,
     "exported_fixed_boundary_checks": [],
     "wall_depth_m": 0.16,
@@ -417,8 +418,8 @@
   },
   "generator_sha256": {
     "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
-    "development/levels/blockouts/build_blockouts.py": "270e256c16ef0a2028a932227b04c45ea63efbdd44d5fff8f240e59e2d60ad42",
-    "development/levels/blockouts/structural_pass.py": "2682a49d3383d468a3208b63dadc14efbb3669906a403dfd0cee27aa8e8b290d",
+    "development/levels/blockouts/build_blockouts.py": "a79d81e4aed21ba6c86caf18273f9374e98dd4702f9434a294797ac138e69395",
+    "development/levels/blockouts/structural_pass.py": "9bbf596ad782cd629371cc9986d3fb198c6eec411be54496008e37028ebd276b",
     "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
   }
 }

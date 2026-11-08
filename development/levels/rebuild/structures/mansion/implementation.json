@@ -2,7 +2,7 @@
   "id": "MANSION",
   "title": "Blackthorn Manor \u2014 revised household-first rough",
   "source": "rebuild\\mansion\\rough-layout.json",
-  "source_sha256": "d7b4979d443fafeb99eb8930c9af0b5ce09809e2b62e12cd358f501c3570608b",
+  "source_sha256": "6817c7f5dd0c69b81ac7773a49824be2ae46917f07432d6e21c0ab4ab05ffd2d",
   "zones": 50,
   "routes": 49,
   "shell_openings": [
@@ -1848,20 +1848,21 @@
   ],
   "source_refinement": [],
   "native_reopened": true,
-  "blend_sha256": "20d3ed90b2842dbe24e84818aa9dcf88ca15af95dc48be6d96613104173a4e63",
+  "blend_sha256": "cc8823ef3621272d6209da9108ecbb58f3a4293743a24754a13c4b107247433e",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
-    "glb_sha256": "7cb1eee8af296d2c5a5eba97f338e3d623b6533b8a53b92f89d5e0b1079a7d68",
+    "glb_sha256": "fcd8f903947bb55e0b1ac954a9e4f967f1bd6e21f190a251a13b259a82a2679d",
     "independently_reimported": true,
     "meshes": 548,
     "triangles": 6612,
     "floor_parts": 75,
     "ceiling_cap_parts": 22,
     "stair_treads": 77,
-    "checked_closed_solids": 458,
+    "checked_closed_solids": 548,
     "measured_depth_parts": 97,
     "exported_cap_rays": 22,
+    "route_support_solids": 90,
     "fixed_infill_routes": 12,
     "exported_fixed_boundary_checks": [
       "L03",
@@ -1891,14 +1892,14 @@
   "authoritative_input": "development/levels/rebuild/mansion/rough-layout.json",
   "original_scene_preserved": true,
   "preserved_sources": {
-    "development/levels/rebuild/mansion/rough-layout.json": "d7b4979d443fafeb99eb8930c9af0b5ce09809e2b62e12cd358f501c3570608b",
+    "development/levels/rebuild/mansion/rough-layout.json": "6817c7f5dd0c69b81ac7773a49824be2ae46917f07432d6e21c0ab4ab05ffd2d",
     "development/levels/blockouts/mansion/rough-shell.blend": "23ebd55b9bc028324547a0b15aea27d4ea3d47f03d8063663bb8be398936c83a",
     "development/levels/blockouts/mansion/rough-shell.glb": "0ce64ffb798021c4ee8891b15e3a318a497ac0017685b236c7b9e3c565ef2322"
   },
   "generator_sha256": {
     "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
-    "development/levels/blockouts/build_blockouts.py": "270e256c16ef0a2028a932227b04c45ea63efbdd44d5fff8f240e59e2d60ad42",
-    "development/levels/blockouts/structural_pass.py": "2682a49d3383d468a3208b63dadc14efbb3669906a403dfd0cee27aa8e8b290d",
+    "development/levels/blockouts/build_blockouts.py": "a79d81e4aed21ba6c86caf18273f9374e98dd4702f9434a294797ac138e69395",
+    "development/levels/blockouts/structural_pass.py": "9bbf596ad782cd629371cc9986d3fb198c6eec411be54496008e37028ebd276b",
     "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
   }
 }

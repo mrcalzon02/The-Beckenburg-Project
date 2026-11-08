@@ -407,20 +407,21 @@
     "Limit mission to the authored tunnel segment; a locked maintenance end is a visible world boundary, not an infinite railway."
   ],
   "native_reopened": true,
-  "blend_sha256": "f546cbae0960a7cf9146f9ed2c9b55dd59b4754927fcb6c3168e7bf8ce8b704a",
+  "blend_sha256": "5c77e1457bf9e15f6116fe14befd79c8ae8f8b7b3f57bd9457e8a53deffa0247",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
-    "glb_sha256": "499314c22dbae36db7188213a5fc78693d1b6011ed951b094b862e52659e9932",
+    "glb_sha256": "c25f3b5d0e444d7dda6cd1eaa275629c8f2f887b957fdf04b0decb39bf7a19f1",
     "independently_reimported": true,
     "meshes": 129,
     "triangles": 1564,
     "floor_parts": 16,
     "ceiling_cap_parts": 6,
     "stair_treads": 34,
-    "checked_closed_solids": 103,
+    "checked_closed_solids": 129,
     "measured_depth_parts": 22,
     "exported_cap_rays": 6,
+    "route_support_solids": 26,
     "fixed_infill_routes": 0,
     "exported_fixed_boundary_checks": [],
     "wall_depth_m": 0.16,
@@ -443,8 +444,8 @@
   },
   "generator_sha256": {
     "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
-    "development/levels/blockouts/build_blockouts.py": "270e256c16ef0a2028a932227b04c45ea63efbdd44d5fff8f240e59e2d60ad42",
-    "development/levels/blockouts/structural_pass.py": "2682a49d3383d468a3208b63dadc14efbb3669906a403dfd0cee27aa8e8b290d",
+    "development/levels/blockouts/build_blockouts.py": "a79d81e4aed21ba6c86caf18273f9374e98dd4702f9434a294797ac138e69395",
+    "development/levels/blockouts/structural_pass.py": "9bbf596ad782cd629371cc9986d3fb198c6eec411be54496008e37028ebd276b",
     "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
   }
 }

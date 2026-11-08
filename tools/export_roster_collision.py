@@ -3,7 +3,7 @@
 Blender background only. No editor UI, native source rewrite or playable unlock.
 """
 from pathlib import Path
-import argparse,collections,hashlib,json,math,struct,sys
+import argparse,collections,hashlib,io,json,math,os,struct,sys
 import bpy
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -52,14 +52,15 @@ def export(folder,furnished=False):
             poses.append(dict(link=obj['link'],component=name,x=sum(p.x for p in worldpoints)/len(worldpoints),
                 y=max(p.z for p in worldpoints),z=-sum(p.y for p in worldpoints)/len(worldpoints)))
     target=folder/('furnished-physics.hcs2' if furnished else 'structure-physics.hcs2')
-    with target.open('wb') as stream:
+    with io.BytesIO() as stream:
         stream.write(struct.pack('>III',0x48435332,len(parts),sum(len(records) for name,closed,records in parts)))
         for name,closed,records in parts:
             raw=name.encode('utf-8');assert len(raw)<=256
             stream.write(struct.pack('>H',len(raw))+raw+struct.pack('>BI',int(closed),len(records)))
             for xyz,flags in records:stream.write(struct.pack('>9fB',*xyz,flags))
+        payload=stream.getvalue()
     assert hashlib.sha256(source.read_bytes()).hexdigest()==before
-    contract=dict(source_glb_sha256=before,physics_sha256=hashlib.sha256(target.read_bytes()).hexdigest(),
+    contract=dict(source_glb_sha256=before,physics_sha256=hashlib.sha256(payload).hexdigest(),
         exporter_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),stair_components=stairs,
         tread_centres=poses,dropped_degenerate_triangles=dropped,scope='Candidate native collision; gameplay/ownership/terrain/network gates remain open')
     layout=ROOT/f'development/levels/rebuild/{folder.name}/rough-layout.json'
@@ -70,7 +71,11 @@ def export(folder,furnished=False):
             assert face_keys(expected)==face_keys(terrain_faces),('GLB terrain differs from saved editor physical triangles/flags',folder.name)
             contract['saved_editor_terrain_fidelity']=dict(exact_float_triangle_and_flag_match=True,triangles=len(expected),
                 native_physics_sha256=hashlib.sha256(source_terrain.read_bytes()).hexdigest())
-    (folder/'physics-contract.json').write_bytes((json.dumps(contract,indent=2)+'\n').encode('utf-8'))
+    # Complete all geometry/fidelity assertions before replacing either prior
+    # authoritative artifact. Failed terrain checks must leave the old pair intact.
+    metadata=folder/'physics-contract.json';staged=target.with_suffix('.hcs2.tmp');staged_metadata=metadata.with_suffix('.json.tmp')
+    staged.write_bytes(payload);staged_metadata.write_bytes((json.dumps(contract,indent=2)+'\n').encode('utf-8'))
+    os.replace(staged,target);os.replace(staged_metadata,metadata)
     print('EXPORTED_HCS2',folder.name,len(parts),len(poses),'actual tread poses',flush=True)
 
 def main():

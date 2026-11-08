@@ -1,8 +1,8 @@
 {
   "id": "WLD-07",
   "title": "Saint Bartholomew's Forgotten Cemetery",
-  "source": "layouts\\wld-07\\layout.json",
-  "source_sha256": "d22635124d4e8167df3e5057c0c155ab1759e348995ba2d34946ff0959fd85ac",
+  "source": "rebuild\\wld-07\\rough-layout.json",
+  "source_sha256": "ca8e2f1c2fd69cc210cc4c72a980231274a3e0b4a6bd36ae815e9471a286806a",
   "zones": 13,
   "routes": 16,
   "shell_openings": [
@@ -133,22 +133,22 @@
       "height": 2.45
     }
   ],
-  "meshes": 134,
+  "meshes": 145,
   "issues": [
     {
       "zone": "stage",
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -158,15 +158,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -176,15 +176,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -194,15 +194,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -212,15 +212,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -230,15 +230,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -248,15 +248,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -266,15 +266,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -284,15 +284,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -302,15 +302,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -320,15 +320,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -350,20 +350,21 @@
     "Test underground exit visibility and tree-occlusion consistency."
   ],
   "native_reopened": true,
-  "blend_sha256": "8e1f76337694af958fbca9044fde867665726060bd23c54bb384afec2f6dc21d",
+  "blend_sha256": "c0963240b3e4ecbc66652607bda368c454b676a00909e1d47c82912bd358555d",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
-    "glb_sha256": "1ac422f70d5b4b34018a4b91cfd3a57291128c16e06f186f6e8894a3717509e5",
+    "glb_sha256": "406b7fd01cc49a0bb02b4998b5bcbead21f9cbc42ee54149470988e7228bcd46",
     "independently_reimported": true,
-    "meshes": 130,
-    "triangles": 1600,
-    "floor_parts": 15,
-    "ceiling_cap_parts": 10,
+    "meshes": 141,
+    "triangles": 7211,
+    "floor_parts": 21,
+    "ceiling_cap_parts": 9,
     "stair_treads": 34,
-    "checked_closed_solids": 104,
-    "measured_depth_parts": 25,
-    "exported_cap_rays": 10,
+    "checked_closed_solids": 140,
+    "measured_depth_parts": 30,
+    "exported_cap_rays": 9,
+    "route_support_solids": 28,
     "fixed_infill_routes": 0,
     "exported_fixed_boundary_checks": [],
     "wall_depth_m": 0.16,
@@ -377,17 +378,17 @@
       "Source-matched terrain holes, services, van and LAN integration"
     ]
   },
-  "authoritative_input": "development/levels/layouts/wld-07/layout.json",
+  "authoritative_input": "development/levels/rebuild/wld-07/rough-layout.json",
   "original_scene_preserved": true,
   "preserved_sources": {
-    "development/levels/layouts/wld-07/layout.json": "d22635124d4e8167df3e5057c0c155ab1759e348995ba2d34946ff0959fd85ac",
+    "development/levels/rebuild/wld-07/rough-layout.json": "ca8e2f1c2fd69cc210cc4c72a980231274a3e0b4a6bd36ae815e9471a286806a",
     "development/levels/blockouts/wld-07/rough-shell.blend": "d2565a85dee123c4450760e8e085b42b5bad4a6e31dcb4656b28cc83d346659d",
     "development/levels/blockouts/wld-07/rough-shell.glb": "f005cb36ec0debc52b832e26b4b3abf0b98ac09e52cd7e40dca64a2a45cc7528"
   },
   "generator_sha256": {
     "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
-    "development/levels/blockouts/build_blockouts.py": "270e256c16ef0a2028a932227b04c45ea63efbdd44d5fff8f240e59e2d60ad42",
-    "development/levels/blockouts/structural_pass.py": "2682a49d3383d468a3208b63dadc14efbb3669906a403dfd0cee27aa8e8b290d",
+    "development/levels/blockouts/build_blockouts.py": "a79d81e4aed21ba6c86caf18273f9374e98dd4702f9434a294797ac138e69395",
+    "development/levels/blockouts/structural_pass.py": "9bbf596ad782cd629371cc9986d3fb198c6eec411be54496008e37028ebd276b",
     "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
   }
 }

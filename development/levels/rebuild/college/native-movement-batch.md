@@ -1,12 +1,13 @@
-# COLLEGE: complete stair and landing sweep checkpoint
+# COLLEGE: terrain-first continuation after native path/basement checkpoint
 
-Source-native candidate only; no playable unlock.
-5/5 vertical segments ascend and 5/5 descend. 94/94 tread centres traverse.
+5/5 vertical segments pass ascent/descent in the candidate. All25path-solid windings were rebuilt and independently checked. Existing rough model IDs/placements remain allocated.
 
-All intermediate flat landing segments are now included in complete-link forward/reverse checks. Exact endpoint chains carry actual player feet across connected links without reinitializing at each floor. Source hashes, per-link results and failed physical component contacts: ../verification/roster-landings-2026-11-07/.
+Next: settle the overall landform, terrain layers, slope/terrace/drainage and foundation envelope before further isolated path repairs. Review the entire site and reshuffle blockouts or stair bays where needed. Current terrain decisions: development/levels/rebuild/terrain-overall-pass/. Preserve stable IDs,40accessible spaces and the shared coordinate/van contract.
 
-Remaining directional flight contacts:
+Current native evidence: development/levels/rebuild/verification/roster-basements-2026-11-07/. This is not a runtime unlock, final terrain/art or complete gameplay acceptance.
 
-- No failed vertical flight in this audit; this is not a complete flat network, terrain, guard or gameplay acceptance.
+Remaining measured vertical contacts:
 
-Next: repair actual missing support/landing, walls/portal heights, crossing stair solids and terrain contacts from these measured poses; preserve rough allocations. Native owner/room/navigation/services integration, guards, terrain/foundation/van/story and older-map audits remain. No local editor UI or round-duration test.
+- No failed vertical segment in this audit; other terrain, support, guard, room/owner/services and mission gates remain open.
+
+Use actual saved editor terrain punches for basement entrances; route strips alone do not settle ground. Finish grounded boundaries, retaining edges/foundations, canonical arrival, major/mounted capacities and later model/weather/story refinement. No local editor UI or round-duration tests.

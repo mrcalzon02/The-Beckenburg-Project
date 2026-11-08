@@ -1,0 +1,288 @@
+{
+  "scope": "25 candidate maps; flat authored routes at centre/side lanes, with actual actor capsule and baseline-qualified movement sweeps",
+  "revision_ref": null,
+  "changed_links_excluded": {},
+  "physics": {
+    "ACADEMY": {
+      "before": "96cf919591158191c9e048ce776de6bbc53f1a99e53125201cd8e988f6a3f702",
+      "after": "de6a63a3ce505f1f886afd908a9f6ecc828c40904aa5216c1cd984cb5c51226e"
+    },
+    "ASYLUM": {
+      "before": "adf982bcf25dd3e4633103ba8d6c38ea2027960c122c51fb4ab9c663a0379d51",
+      "after": "288d0a0a826fc9eb7efb5af59db6ce852e00e9cdd429d974bb551ba9b86a8d8b"
+    },
+    "CHURCH": {
+      "before": "ef8e570c44410eb33a108c2d5a0def9dedc4151b509528e1ae841a1c49a06e1e",
+      "after": "5c9b89dc120a1396f4ff720b9d837585446246eaa0ac3b4946bc9a9fa614b8bf"
+    },
+    "COLLEGE": {
+      "before": "98d521e7ae1240dc7c83c446714aea472a2b9fbeab5aad8edf28a08d1daf9a28",
+      "after": "58db0298c04c0d2ed9e455df4001e3c6ad8eb1ab74f4f96ce305e6f3fa0ba5b3"
+    },
+    "FARMHOUSE": {
+      "before": "df8144beaa435ae215a37d5a82eec4eeee18de1041dd07d73a2de6e13f5bb360",
+      "after": "1063508ccfb6205602764c756aa8c3e63eec8522316db60db481ac9c84648f27"
+    },
+    "MANSION": {
+      "before": "8d2e37040c9217888dd11eeccd2682c6c9dc50389e116cd00ab24611a2c90129",
+      "after": "5a82285f463ab96bf93f634d1db07e94c598e68ccc7efb7a0eecad08f38c58cb"
+    },
+    "PRISON": {
+      "before": "4a33e507295d951c1943f4840400d55a1ed8d3a778a9ef646ad270ce39567c9c",
+      "after": "e1b4969cc444aa98b756272504837230df9abbd2d7c7118e55b0e4e4ae19ec2f"
+    },
+    "SCHOOL": {
+      "before": "0297b82335e7f000d80613b954c2ac5c117f0fda68488fcd3bced3b88a2e62e9",
+      "after": "694d57bf67c6ae0c80b1dfb6eaaed16ca5e767148f402320e93df569349fc7d3"
+    },
+    "WLD-03": {
+      "before": "df72c23b0f1b098b156463f44b78a91eb5141514e1c447c1cebb46f3973ff3c5",
+      "after": "c432db931b7884bd393df49d1fe4aee15b091195e1c36f74afc7a32a7536f9e7"
+    },
+    "WLD-04": {
+      "before": "195acf6e74631b70d37795ca561fc113c5d2e2c5f80c186c535f197417200240",
+      "after": "3ea9593088d54f639e125ef1057bb5665f18c7ccb1aaed9be987018680aa14ff"
+    },
+    "WLD-05": {
+      "before": "1ce872aff686d228abf086957cdc32eee10d39083560531c204571dbd73217c4",
+      "after": "f89cf620a702943462c3d6d77bcec199a95662b4db09d9aeb3345c2b5441a557"
+    },
+    "WLD-06": {
+      "before": "67056fdabbd566f8799e5523bbbc68eb534fd65d7d0604fcf82a4e28c80cbea6",
+      "after": "32b2d6d1869245e194b70d4d39624c098e83764d1fd664798aca63be06c0eeff"
+    },
+    "WLD-07": {
+      "before": "82931c5cef6fc6c56fcd2bbcc8fbb89b8d9c4a5c1a1ef2eaf8d527ce33c76f72",
+      "after": "13fc19e16ac03a22760d18b9e257718a5218ee7a540b6de55832e234ca98d890"
+    },
+    "WLD-08": {
+      "before": "f38f0fca2f850d81cfb3b41cb435a30f688de4898af0fbf0a26c7a4c39ddc249",
+      "after": "29f517c1d5399ea0f47cd9f960c0a452831770ffd657563ed6c989a858079a5c"
+    },
+    "WLD-09": {
+      "before": "716d448d22ea94d7b77c0df8d61bf9b5e7423e1756e96172f417114c32a57a4f",
+      "after": "ebb96b1927c941a6a6159b4404632d3ef1c0988a04493e15dfd2b6d526039a07"
+    },
+    "WLD-10": {
+      "before": "f9a230e11ceabae5286bb16a96c13af22315820c68b9020a257afc2fd4707c65",
+      "after": "93ec0a7cc0e60bbd0386acd647f7317ecb20b0dde3c0b212466fddc689489ca3"
+    },
+    "WLD-11": {
+      "before": "fa7499298aafa9e644ace387b8f06fd4b3ce61afee7ce6428903689d39310739",
+      "after": "320087e410d0dbfc400bb92de0c00fae81d3db116affedb70b54ca1ca2af05c2"
+    },
+    "WLD-12": {
+      "before": "1ceba3dbac4c7b1c0f8e470f8151d90f788bd7b0323b9782b8dc5800d9217364",
+      "after": "d89b02c71781369c363e605a4e2fb4349da694e08e80ace23695e647c48aa15e"
+    },
+    "WLD-13": {
+      "before": "6484039ad47ba100f36d4c80f5857940e3632b218c7c9374a4c36011a12cbac8",
+      "after": "ed9a5f51e1feef0e02cffdc47889bf3bcea8b42404249a2616a363bcafeba99d"
+    },
+    "WLD-14": {
+      "before": "730217e401b801a1e33869bb237c16c74930cf45c8a744cb3220bdde202632c4",
+      "after": "f439368e12f70d4383b5db995fd56ae8d11291a46c4066006b3c461fe76f75e5"
+    },
+    "WLD-15": {
+      "before": "164f20d94da7be63b4cbbda654724e6f907e1f66f7a8cbf633a730a8f69bcf2e",
+      "after": "fea0949e315c4d18af47b553879d58bbd156953b65863739283cc6e75ebe0879"
+    },
+    "WLD-16": {
+      "before": "2da003017853167ee7f149f22204f64f5bfd51f1c64497e215aaaf10c1115f52",
+      "after": "fdd525f5bfe137795e3747f283905753e30cbba90d4bd0b24d671e79c626ee20"
+    },
+    "WLD-17": {
+      "before": "03e5cec34a07e9f990e93a0c0d2a86d080f5b6f017d4b31b4cde4fd0bebb61d4",
+      "after": "d5c35a266ae3342d316257e03b3511c00cf6bcd5f4e45f8eb42a68c238391404"
+    },
+    "WLD-18": {
+      "before": "678de2a40490e67ad44a9a8a86ec97309d01af96222bfbe1dee62cf9167b57df",
+      "after": "35b0bf7d433bbcf0bf6b9745db40a3245b4aa8c250901ff0ef8c9c1ca63715a2"
+    },
+    "WLD-07-MORTUARY": {
+      "before": "ea41280c9150490eb368ef81a09865abffe94fef728b4443997ba10d27b74ed3",
+      "after": "3f1993a70d737f12e33e6d21d47ebaa461fd4b7c7248d3ede464e9c5f584cb06"
+    }
+  },
+  "kernel_jar_sha256": "8694a06b9483bea77f2af9130c14a4191e868f2389671b4460572f93a75edbe2",
+  "sites": {
+    "ACADEMY": {
+      "samples": 7908,
+      "baseline_valid": 7215,
+      "new_block": 0,
+      "baseline_sweep": 6853,
+      "new_sweep_block": 0
+    },
+    "ASYLUM": {
+      "samples": 7956,
+      "baseline_valid": 7172,
+      "new_block": 0,
+      "baseline_sweep": 6731,
+      "new_sweep_block": 0
+    },
+    "CHURCH": {
+      "samples": 3420,
+      "baseline_valid": 3176,
+      "new_block": 0,
+      "baseline_sweep": 2922,
+      "new_sweep_block": 0
+    },
+    "COLLEGE": {
+      "samples": 8289,
+      "baseline_valid": 7607,
+      "new_block": 0,
+      "baseline_sweep": 7211,
+      "new_sweep_block": 0
+    },
+    "FARMHOUSE": {
+      "samples": 4101,
+      "baseline_valid": 3715,
+      "new_block": 0,
+      "baseline_sweep": 3373,
+      "new_sweep_block": 0
+    },
+    "MANSION": {
+      "samples": 7311,
+      "baseline_valid": 6924,
+      "new_block": 0,
+      "baseline_sweep": 6492,
+      "new_sweep_block": 0
+    },
+    "PRISON": {
+      "samples": 6636,
+      "baseline_valid": 6034,
+      "new_block": 0,
+      "baseline_sweep": 5725,
+      "new_sweep_block": 0
+    },
+    "SCHOOL": {
+      "samples": 5811,
+      "baseline_valid": 5193,
+      "new_block": 0,
+      "baseline_sweep": 4759,
+      "new_sweep_block": 0
+    },
+    "WLD-03": {
+      "samples": 3549,
+      "baseline_valid": 3243,
+      "new_block": 0,
+      "baseline_sweep": 3076,
+      "new_sweep_block": 0
+    },
+    "WLD-04": {
+      "samples": 1413,
+      "baseline_valid": 1054,
+      "new_block": 0,
+      "baseline_sweep": 948,
+      "new_sweep_block": 0
+    },
+    "WLD-05": {
+      "samples": 3510,
+      "baseline_valid": 3114,
+      "new_block": 0,
+      "baseline_sweep": 2977,
+      "new_sweep_block": 0
+    },
+    "WLD-06": {
+      "samples": 3744,
+      "baseline_valid": 3537,
+      "new_block": 0,
+      "baseline_sweep": 3365,
+      "new_sweep_block": 0
+    },
+    "WLD-07": {
+      "samples": 3579,
+      "baseline_valid": 3391,
+      "new_block": 0,
+      "baseline_sweep": 3260,
+      "new_sweep_block": 0
+    },
+    "WLD-08": {
+      "samples": 4062,
+      "baseline_valid": 3184,
+      "new_block": 0,
+      "baseline_sweep": 3037,
+      "new_sweep_block": 0
+    },
+    "WLD-09": {
+      "samples": 3123,
+      "baseline_valid": 2564,
+      "new_block": 0,
+      "baseline_sweep": 2452,
+      "new_sweep_block": 0
+    },
+    "WLD-10": {
+      "samples": 4152,
+      "baseline_valid": 3839,
+      "new_block": 0,
+      "baseline_sweep": 3682,
+      "new_sweep_block": 0
+    },
+    "WLD-11": {
+      "samples": 3663,
+      "baseline_valid": 3447,
+      "new_block": 0,
+      "baseline_sweep": 3260,
+      "new_sweep_block": 0
+    },
+    "WLD-12": {
+      "samples": 4173,
+      "baseline_valid": 4065,
+      "new_block": 0,
+      "baseline_sweep": 3930,
+      "new_sweep_block": 0
+    },
+    "WLD-13": {
+      "samples": 4239,
+      "baseline_valid": 4152,
+      "new_block": 0,
+      "baseline_sweep": 4011,
+      "new_sweep_block": 0
+    },
+    "WLD-14": {
+      "samples": 2583,
+      "baseline_valid": 2441,
+      "new_block": 0,
+      "baseline_sweep": 2349,
+      "new_sweep_block": 0
+    },
+    "WLD-15": {
+      "samples": 2940,
+      "baseline_valid": 2835,
+      "new_block": 0,
+      "baseline_sweep": 2725,
+      "new_sweep_block": 0
+    },
+    "WLD-16": {
+      "samples": 3243,
+      "baseline_valid": 2980,
+      "new_block": 0,
+      "baseline_sweep": 2847,
+      "new_sweep_block": 0
+    },
+    "WLD-17": {
+      "samples": 2913,
+      "baseline_valid": 1960,
+      "new_block": 0,
+      "baseline_sweep": 1867,
+      "new_sweep_block": 0
+    },
+    "WLD-18": {
+      "samples": 3033,
+      "baseline_valid": 2878,
+      "new_block": 0,
+      "baseline_sweep": 2759,
+      "new_sweep_block": 0
+    },
+    "WLD-07-MORTUARY": {
+      "samples": 5058,
+      "baseline_valid": 4846,
+      "new_block": 0,
+      "baseline_sweep": 4676,
+      "new_sweep_block": 0
+    }
+  },
+  "kernel_source_sha256": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+  "authored_stairs": true,
+  "limitation": "Preserving previously valid paths does not accept pre-existing failures, stairs, complete navigation, gameplay or finished models."
+}

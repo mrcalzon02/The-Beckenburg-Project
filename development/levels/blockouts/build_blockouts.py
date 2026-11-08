@@ -2,7 +2,7 @@
 Blender --background --factory-startup --python this_file
 No Java, engine, playable-map registry or source layouts are changed.
 """
-import bpy,math,json,hashlib,sys
+import bpy,bmesh,math,json,hashlib,sys
 from pathlib import Path
 from mathutils import Vector
 ROOT=Path(__file__).resolve().parent
@@ -104,7 +104,16 @@ def route_mesh(link,c,mat,structural_data=None):
                 bpy.context.view_layer.objects.active=o
                 modifier=o.modifiers.new('Shared stair shaft '+str(index),'BOOLEAN');modifier.operation='DIFFERENCE';modifier.object=cutter
                 bpy.ops.object.modifier_apply(modifier=modifier.name);bpy.data.objects.remove(cutter,do_unlink=True)
-            if not o.data.polygons:bpy.data.objects.remove(o,do_unlink=True)
+            if not o.data.polygons:bpy.data.objects.remove(o,do_unlink=True);continue
+        # X/-Z authoring reverses the initial strip winding. Boolean cuts used
+        # to repair it incidentally, so untouched strips exposed their underside
+        # as the walking surface. Orient every real solid explicitly instead.
+        bm=bmesh.new();bm.from_mesh(o.data)
+        bmesh.ops.remove_doubles(bm,verts=list(bm.verts),dist=.0001)
+        bmesh.ops.dissolve_degenerate(bm,edges=list(bm.edges),dist=.0001)
+        bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces))
+        assert bm.calc_volume(signed=True)>0,(link['id'],i,'route support needs a closed outward solid')
+        bm.to_mesh(o.data);bm.free();o.data.update()
 def build(path,output_root=None,structural=False):
     data=json.loads(path.read_text(encoding='utf-8'));folder=(output_root or ROOT)/path.parent.name;folder.mkdir(parents=True,exist_ok=True)
     sealed_links=[]

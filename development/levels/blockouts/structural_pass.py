@@ -138,19 +138,23 @@ def inspect_export(folder,data,sealed_links=()):
     bpy.ops.wm.read_factory_settings(use_empty=True)
     bpy.ops.import_scene.gltf(filepath=str(folder/'rough-shell.glb'))
     objects=[obj for obj in bpy.context.scene.objects if obj.type=='MESH']
-    triangles=0;caps=0;floors=0;stairs=0;invalid=[];closed=0;depths=[];rays=0
+    triangles=0;caps=0;floors=0;stairs=0;invalid=[];closed=0;depths=[];rays=0;route_solids=0
     for obj in objects:
         mesh=obj.data;mesh.calc_loop_triangles();triangles+=len(mesh.loop_triangles)
         if any(not math.isfinite(v) for vertex in mesh.vertices for v in vertex.co):invalid.append(obj.name)
         caps+=obj.get('role')=='ceiling-cap';floors+=obj.get('role')=='floor';stairs+=obj.get('role')=='structural-stair-step'
         role=obj.get('role','')
-        if role in ['floor','ceiling-cap','structural-stair-step','structural-stair-landing','rough shell wall','fixed-context-infill'] or obj.name.startswith('Header '):
+        if role in ['floor','ceiling-cap','structural-stair-step','structural-stair-landing','rough shell wall','fixed-context-infill','rough route support; stair/ramp engineering unverified'] or obj.name.startswith('Header '):
             edges=Counter()
             for tri in mesh.loop_triangles:
                 points=[tuple(round(v,5) for v in mesh.vertices[index].co) for index in tri.vertices]
                 for a,b in zip(points,points[1:]+points[:1]):edges[tuple(sorted((a,b)))]+=1
             assert all(count==2 for count in edges.values()),(data['id'],obj.name,'structural solid not closed')
             closed+=1
+        if role=='rough route support; stair/ramp engineering unverified':
+            bm=bmesh.new();bm.from_mesh(mesh);volume=bm.calc_volume(signed=True);bm.free()
+            assert volume>0,(data['id'],obj.name,'exported route support winding points inward')
+            route_solids+=1
         if role in ['floor','ceiling-cap']:
             points=[obj.matrix_world@v.co for v in mesh.vertices]
             depth=max(p.z for p in points)-min(p.z for p in points);assert abs(depth-.16)<.0001,(obj.name,depth)
@@ -207,7 +211,7 @@ def inspect_export(folder,data,sealed_links=()):
         bpy.ops.render.render(write_still=True)
     return dict(stage='STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED',glb_sha256=hashlib.sha256(raw).hexdigest(),
         independently_reimported=True,meshes=len(objects),triangles=triangles,floor_parts=floors,ceiling_cap_parts=caps,stair_treads=stairs,
-        checked_closed_solids=closed,measured_depth_parts=len(depths),exported_cap_rays=rays,
+        checked_closed_solids=closed,measured_depth_parts=len(depths),exported_cap_rays=rays,route_support_solids=route_solids,
         fixed_infill_routes=len(sealed_links),exported_fixed_boundary_checks=verified_seals,
         wall_depth_m=.16,floor_depth_m=.16,terrain='Exterior zone pads omitted; real saved terrain/hole work remains',
         roof='Closed ceiling/deck caps only; authored exterior roof form/weathering remains',

@@ -2,7 +2,7 @@
   "id": "COLLEGE",
   "title": "Beckenburg College \u2014 revised three-building campus rough",
   "source": "rebuild\\college\\rough-layout.json",
-  "source_sha256": "2f6b910c989a774d1f0ab6e8ec60e46d283a6fff929a14203ab04005d2229abc",
+  "source_sha256": "6b50a48a38f2bcd7b2036749fda15ec92aed6a4dfe9e7762fc953c20ffbc0b2d",
   "zones": 81,
   "routes": 44,
   "shell_openings": [
@@ -2549,20 +2549,21 @@
   ],
   "source_refinement": [],
   "native_reopened": true,
-  "blend_sha256": "376f5cd106f7a56fb2f778d7be7e73aca3574d1c7f138e5c32b5b6e0985ae1d8",
+  "blend_sha256": "67cd478bd8d2bbd29b49209f8fc78003c3f285b6b141a6ab87871a119839cb3b",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
-    "glb_sha256": "d9ddcbdadc2a130d2e747a95ddf3b682e398b43ec825fb3db4090ac2f3ad9f18",
+    "glb_sha256": "4969a0e27d0acb23b4a356e65b931be1158ff1063d6452d4f9732ccc51e23e87",
     "independently_reimported": true,
     "meshes": 691,
     "triangles": 8320,
     "floor_parts": 113,
     "ceiling_cap_parts": 38,
     "stair_treads": 94,
-    "checked_closed_solids": 613,
+    "checked_closed_solids": 691,
     "measured_depth_parts": 151,
     "exported_cap_rays": 38,
+    "route_support_solids": 78,
     "fixed_infill_routes": 44,
     "exported_fixed_boundary_checks": [
       "L09",
@@ -2624,14 +2625,14 @@
   "authoritative_input": "development/levels/rebuild/college/rough-layout.json",
   "original_scene_preserved": true,
   "preserved_sources": {
-    "development/levels/rebuild/college/rough-layout.json": "2f6b910c989a774d1f0ab6e8ec60e46d283a6fff929a14203ab04005d2229abc",
+    "development/levels/rebuild/college/rough-layout.json": "6b50a48a38f2bcd7b2036749fda15ec92aed6a4dfe9e7762fc953c20ffbc0b2d",
     "development/levels/blockouts/college/rough-shell.blend": "ad5328a656b07d9c5cdd00cd118aba54ac7f75a70a1f606c38d1b0358a6ad1e0",
     "development/levels/blockouts/college/rough-shell.glb": "4da60e9e6bae49a0950c4737686e63404121524862cf28ce0c93e271b8fc9465"
   },
   "generator_sha256": {
     "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
-    "development/levels/blockouts/build_blockouts.py": "270e256c16ef0a2028a932227b04c45ea63efbdd44d5fff8f240e59e2d60ad42",
-    "development/levels/blockouts/structural_pass.py": "2682a49d3383d468a3208b63dadc14efbb3669906a403dfd0cee27aa8e8b290d",
+    "development/levels/blockouts/build_blockouts.py": "a79d81e4aed21ba6c86caf18273f9374e98dd4702f9434a294797ac138e69395",
+    "development/levels/blockouts/structural_pass.py": "9bbf596ad782cd629371cc9986d3fb198c6eec411be54496008e37028ebd276b",
     "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
   }
 }

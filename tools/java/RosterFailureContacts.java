@@ -69,6 +69,9 @@ public final class RosterFailureContacts {
                 ctx=new Context(map,steps,tops);
             }
             var a=new Vec(Double.parseDouble(p[6]),Double.parseDouble(p[7]),Double.parseDouble(p[8]));var b=new Vec(Double.parseDouble(p[9]),Double.parseDouble(p[10]),Double.parseDouble(p[11]));if(a.y()>b.y()){Vec swap=a;a=b;b=swap;}
+            if(args.length>3&&args[3].equals("fixed-poses")){
+                Finding f=describe(ctx,a);out.add(String.join("\t",p[0],p[4],p[5],"pose",""+a.x(),""+a.y(),""+a.z(),f.reason,f.component));continue;
+            }
             for(String direction:List.of("up","down")){
                 Finding f=direction.equals("up")?sweep(ctx,a,b):sweep(ctx,b,a);if(f==null)continue;
                 out.add(String.join("\t",p[0],p[4],p[5],direction,""+f.feet.x(),""+f.feet.y(),""+f.feet.z(),f.reason,f.component));

@@ -578,20 +578,21 @@
     "Station expansion and radio plot remain design-only until persistence and legal events exist."
   ],
   "native_reopened": true,
-  "blend_sha256": "a6f4cb2c541027458412a31a864a5bb7a917e526df0529da2af6fa68df010cf4",
+  "blend_sha256": "52037f29caa06c68def28b0ebaee8e21705ba3e71a1aafc2682cd44426442295",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
-    "glb_sha256": "d69abf9df6847b12325cb9d5477cd976f815aafdbf2b38cd500578cefe0058c9",
+    "glb_sha256": "adbaf40105626068a459784f5877e95b32e70dad78f6dbe2bf0323e6088aee73",
     "independently_reimported": true,
     "meshes": 184,
     "triangles": 2280,
     "floor_parts": 25,
     "ceiling_cap_parts": 19,
     "stair_treads": 42,
-    "checked_closed_solids": 154,
+    "checked_closed_solids": 184,
     "measured_depth_parts": 44,
     "exported_cap_rays": 19,
+    "route_support_solids": 30,
     "fixed_infill_routes": 0,
     "exported_fixed_boundary_checks": [],
     "wall_depth_m": 0.16,
@@ -614,8 +615,8 @@
   },
   "generator_sha256": {
     "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
-    "development/levels/blockouts/build_blockouts.py": "270e256c16ef0a2028a932227b04c45ea63efbdd44d5fff8f240e59e2d60ad42",
-    "development/levels/blockouts/structural_pass.py": "2682a49d3383d468a3208b63dadc14efbb3669906a403dfd0cee27aa8e8b290d",
+    "development/levels/blockouts/build_blockouts.py": "a79d81e4aed21ba6c86caf18273f9374e98dd4702f9434a294797ac138e69395",
+    "development/levels/blockouts/structural_pass.py": "9bbf596ad782cd629371cc9986d3fb198c6eec411be54496008e37028ebd276b",
     "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
   }
 }

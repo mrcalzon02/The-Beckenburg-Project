@@ -2754,10 +2754,10 @@
         ]
       ],
       "rise_m": 3,
-      "run_m": 4.800000000000001,
+      "run_m": 4.65,
       "headroom_m": 2.2,
       "landing_depth_m": 1.5,
-      "risers": 18,
+      "risers": 17,
       "construction": "Straight approach landing before the sideways turn; preserve clear width and remove upper landing overhang above incoming treads. Native complete path/guards/runtime integration remain required.",
       "note": "Measured reservation only; physical capsule/headroom and underside tests remain required.",
       "player_access": "OPEN_ROUTE"
@@ -2791,7 +2791,7 @@
         ]
       ],
       "rise_m": 3.6,
-      "run_m": 5.760000000000001,
+      "run_m": 5.25,
       "headroom_m": 2.2,
       "landing_depth_m": 1.5,
       "risers": 20,

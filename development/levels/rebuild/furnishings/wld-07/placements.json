@@ -1,11 +1,11 @@
 {
   "site": "WLD-07",
   "status": "SOURCE_LIBRARY_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
-  "source_layout": "development/levels/layouts/wld-07/layout.json",
-  "source_layout_sha256": "d22635124d4e8167df3e5057c0c155ab1759e348995ba2d34946ff0959fd85ac",
-  "structure_glb_sha256": "1ac422f70d5b4b34018a4b91cfd3a57291128c16e06f186f6e8894a3717509e5",
-  "furnished_glb_sha256": "570c97c328854f37085f70a7008c5d26e62490676d7d26f32814c3a765bd6e08",
-  "native_sha256": "818d2cfa8bf1e1c3393448d0d8012a483d24dcd662703f653b525e960f768267",
+  "source_layout": "development/levels/rebuild/wld-07/rough-layout.json",
+  "source_layout_sha256": "ca8e2f1c2fd69cc210cc4c72a980231274a3e0b4a6bd36ae815e9471a286806a",
+  "structure_glb_sha256": "406b7fd01cc49a0bb02b4998b5bcbead21f9cbc42ee54149470988e7228bcd46",
+  "furnished_glb_sha256": "90386e1f028e2d63c24d45848dcf235c75e57418d6c035c1a54a51f0847be8f7",
+  "native_sha256": "7aae227842d1ab930c20161e7f70ab53f0fe4e6e53f9886703e3a4d4fd7ba5fc",
   "requests": 4,
   "placements": [
     {

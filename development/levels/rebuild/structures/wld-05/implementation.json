@@ -529,20 +529,21 @@
     "Inspect mine engineering references before detailed supports or ventilation routing."
   ],
   "native_reopened": true,
-  "blend_sha256": "2fa773874a9110727aa5bc914ae5743edf97f1b63ac813ca37685c0453c47643",
+  "blend_sha256": "ea50013ef4483f63b9f118937e21a68163e32b0e83fac788e945fe17491f78e6",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
-    "glb_sha256": "7f26c7cd8ef9cc1c27756bb195f5f5f567c44917ef135b8649a42fb0998d6ac0",
+    "glb_sha256": "dfa8ebc247575f049fa0c0e72c15279d3c93fca5dd0813be8a7e2aa988d10b9d",
     "independently_reimported": true,
     "meshes": 247,
     "triangles": 3004,
     "floor_parts": 27,
     "ceiling_cap_parts": 18,
     "stair_treads": 114,
-    "checked_closed_solids": 224,
+    "checked_closed_solids": 247,
     "measured_depth_parts": 45,
     "exported_cap_rays": 18,
+    "route_support_solids": 23,
     "fixed_infill_routes": 0,
     "exported_fixed_boundary_checks": [],
     "wall_depth_m": 0.16,
@@ -565,8 +566,8 @@
   },
   "generator_sha256": {
     "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
-    "development/levels/blockouts/build_blockouts.py": "270e256c16ef0a2028a932227b04c45ea63efbdd44d5fff8f240e59e2d60ad42",
-    "development/levels/blockouts/structural_pass.py": "2682a49d3383d468a3208b63dadc14efbb3669906a403dfd0cee27aa8e8b290d",
+    "development/levels/blockouts/build_blockouts.py": "a79d81e4aed21ba6c86caf18273f9374e98dd4702f9434a294797ac138e69395",
+    "development/levels/blockouts/structural_pass.py": "9bbf596ad782cd629371cc9986d3fb198c6eec411be54496008e37028ebd276b",
     "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
   }
 }

@@ -11,9 +11,10 @@ ROOT=Path(__file__).resolve().parents[1]
 def main():
     p=argparse.ArgumentParser();p.add_argument('--sites',nargs='+',required=True)
     p.add_argument('--seed-ref',required=True);p.add_argument('--blender',default='C:/Program Files/Blender Foundation/Blender 5.0/blender.exe')
+    p.add_argument('--terrain-source',nargs='*',default=[],help='Explicit same-world source mapping, e.g. WLD-07=WLD-07-MORTUARY; recorded through actual seed paths')
     args=p.parse_args();sites=[s.lower() for s in args.sites]
     seed=subprocess.check_output(['git','rev-parse',args.seed_ref],cwd=ROOT,text=True).strip()
-    subprocess.run([args.blender,'--background','--factory-startup','--python-exit-code','1','--python','tools/sample_roster_terrain.py','--','--sites',*sites,'--source-ref',seed],cwd=ROOT,check=True)
+    subprocess.run([args.blender,'--background','--factory-startup','--python-exit-code','1','--python','tools/sample_roster_terrain.py','--','--sites',*sites,'--source-ref',seed,'--terrain-source',*args.terrain_source],cwd=ROOT,check=True)
     java=Path(os.environ.get('JAVA_HOME','C:/Program Files/Java/jdk-17'))/'bin';build=ROOT/'build/roster-terrain';build.mkdir(parents=True,exist_ok=True)
     jar=ROOT/'build/beckenburg-game.jar';assert jar.exists(),'Build the game JAR first'
     subprocess.run([str(java/'javac.exe'),'-cp',str(jar),'-d',str(build),str(ROOT/'tools/java/RosterTerrainBuild.java')],cwd=ROOT,check=True)

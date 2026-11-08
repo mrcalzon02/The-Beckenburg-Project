@@ -1,0 +1,324 @@
+{
+  "scope": "25 candidate maps; flat authored routes at centre/side lanes, with actual actor capsule and baseline-qualified movement sweeps",
+  "revision_ref": "66942b34382507f77abbafac8e15ec9a9c2d2a53",
+  "changed_links_excluded": {
+    "ACADEMY": [],
+    "ASYLUM": [],
+    "CHURCH": [],
+    "COLLEGE": [],
+    "FARMHOUSE": [],
+    "MANSION": [],
+    "PRISON": [],
+    "SCHOOL": [],
+    "WLD-03": [],
+    "WLD-04": [],
+    "WLD-05": [],
+    "WLD-06": [],
+    "WLD-07": [
+      "L12",
+      "L13",
+      "L14",
+      "L15"
+    ],
+    "WLD-08": [],
+    "WLD-09": [],
+    "WLD-10": [],
+    "WLD-11": [],
+    "WLD-12": [],
+    "WLD-13": [],
+    "WLD-14": [],
+    "WLD-15": [],
+    "WLD-16": [],
+    "WLD-17": [],
+    "WLD-18": [],
+    "WLD-07-MORTUARY": [
+      "L12",
+      "L13",
+      "L14",
+      "L15"
+    ]
+  },
+  "physics": {
+    "ACADEMY": {
+      "before": "53b8fd4b472a40759d27729a37cc83ad401322d100b952c65882380a5370f60b",
+      "after": "de6a63a3ce505f1f886afd908a9f6ecc828c40904aa5216c1cd984cb5c51226e"
+    },
+    "ASYLUM": {
+      "before": "052bfca046bebe710f6b9d39907344cc82c209cb2b0f5f17b118e8bc6bad81f7",
+      "after": "288d0a0a826fc9eb7efb5af59db6ce852e00e9cdd429d974bb551ba9b86a8d8b"
+    },
+    "CHURCH": {
+      "before": "7d746c8ced923b048118a652068c87ed89fc01d6b7460cad426a528933816b98",
+      "after": "5c9b89dc120a1396f4ff720b9d837585446246eaa0ac3b4946bc9a9fa614b8bf"
+    },
+    "COLLEGE": {
+      "before": "8c3e24a25d42d2d0c340b49168df4ed2e89653bc10a54df93baab968327cf56f",
+      "after": "58db0298c04c0d2ed9e455df4001e3c6ad8eb1ab74f4f96ce305e6f3fa0ba5b3"
+    },
+    "FARMHOUSE": {
+      "before": "460e052ddbdf7e0bc987fb9118506bc73df414fccc8d24a83cb315ae9e6a5dec",
+      "after": "1063508ccfb6205602764c756aa8c3e63eec8522316db60db481ac9c84648f27"
+    },
+    "MANSION": {
+      "before": "aef00c7864d5d5d22ef3aac46788a545a2fb28ad2e259482205144ce943e7796",
+      "after": "5a82285f463ab96bf93f634d1db07e94c598e68ccc7efb7a0eecad08f38c58cb"
+    },
+    "PRISON": {
+      "before": "51d181846443ee69c2bfcc41abf5dac8c9d6a723e7f58578a5dd1c36adea0862",
+      "after": "e1b4969cc444aa98b756272504837230df9abbd2d7c7118e55b0e4e4ae19ec2f"
+    },
+    "SCHOOL": {
+      "before": "4b29d8348e6dac56dc1e21bc73e1d814658f389ded6ffc184d21f3dd52d5a96c",
+      "after": "694d57bf67c6ae0c80b1dfb6eaaed16ca5e767148f402320e93df569349fc7d3"
+    },
+    "WLD-03": {
+      "before": "6fb26c3dd219620aff124e716d7b8428bc75e9f1f57abfe83b925bd731ff990e",
+      "after": "c432db931b7884bd393df49d1fe4aee15b091195e1c36f74afc7a32a7536f9e7"
+    },
+    "WLD-04": {
+      "before": "b43a5acb63a19b40a3412df5ffaa0b42872129d6f8d932dc33c59f71eae83617",
+      "after": "3ea9593088d54f639e125ef1057bb5665f18c7ccb1aaed9be987018680aa14ff"
+    },
+    "WLD-05": {
+      "before": "0525b2e4436c3a2f250c0024f45d3842bffdc342e26a81e80ef20fd0096afa14",
+      "after": "f89cf620a702943462c3d6d77bcec199a95662b4db09d9aeb3345c2b5441a557"
+    },
+    "WLD-06": {
+      "before": "b5729dc36b77ed7ec9a8562a7253c969316ade18180ae63f6556e97272b6f0aa",
+      "after": "32b2d6d1869245e194b70d4d39624c098e83764d1fd664798aca63be06c0eeff"
+    },
+    "WLD-07": {
+      "before": "9cc00b9ac5e7a946b0032cebf45fa5d866c287d9b02d4447b35c2fa3712bb899",
+      "after": "5d8501a53b10e14a27483f0d1d37fe28db100002a749d9f789102ed9b6bea77c"
+    },
+    "WLD-08": {
+      "before": "a9af4bcc53c9dddbf1d53de81fdafcf845e9c84254829bf5c29daadb5fd8534e",
+      "after": "29f517c1d5399ea0f47cd9f960c0a452831770ffd657563ed6c989a858079a5c"
+    },
+    "WLD-09": {
+      "before": "b3085368fc35c010566c7ec15f17df8bdb815c1333891113f57667e5f23abcc9",
+      "after": "ebb96b1927c941a6a6159b4404632d3ef1c0988a04493e15dfd2b6d526039a07"
+    },
+    "WLD-10": {
+      "before": "40fed936b88ae7c697db1b7080180ec6fc834755d6cb35e1ac9222f7019b178d",
+      "after": "93ec0a7cc0e60bbd0386acd647f7317ecb20b0dde3c0b212466fddc689489ca3"
+    },
+    "WLD-11": {
+      "before": "688cf04d923aa8f1e9c224526006b69df563d4e5ee23e034a303279a40ea4e63",
+      "after": "320087e410d0dbfc400bb92de0c00fae81d3db116affedb70b54ca1ca2af05c2"
+    },
+    "WLD-12": {
+      "before": "694108e74debec74b07beaa167afd69afa32d63e2643d5f099966007ea6d2919",
+      "after": "d89b02c71781369c363e605a4e2fb4349da694e08e80ace23695e647c48aa15e"
+    },
+    "WLD-13": {
+      "before": "c137c060ee9c2344703fd09e16b38f912ccdacb3f810e072ddef356811955d7f",
+      "after": "ed9a5f51e1feef0e02cffdc47889bf3bcea8b42404249a2616a363bcafeba99d"
+    },
+    "WLD-14": {
+      "before": "0db6d2dfe46299862bf1d11b1ad7fc89579ddb72ab63d4783fab13be6f2de0f3",
+      "after": "f439368e12f70d4383b5db995fd56ae8d11291a46c4066006b3c461fe76f75e5"
+    },
+    "WLD-15": {
+      "before": "bcfbf66614b3879d54b3f5fd53b622a97caf38ff86e578a0839aa812eb7fff84",
+      "after": "fea0949e315c4d18af47b553879d58bbd156953b65863739283cc6e75ebe0879"
+    },
+    "WLD-16": {
+      "before": "48b1d7b7810c0294e8a9e02aa1d64797595815e0ead3b85494740585d03ebd61",
+      "after": "fdd525f5bfe137795e3747f283905753e30cbba90d4bd0b24d671e79c626ee20"
+    },
+    "WLD-17": {
+      "before": "3cd81d97523e62c32c9a15af58cf4f6efeae7b5f8a4b355882a916ba264a1fb9",
+      "after": "d5c35a266ae3342d316257e03b3511c00cf6bcd5f4e45f8eb42a68c238391404"
+    },
+    "WLD-18": {
+      "before": "24b811574d110eed666456d709d1f628d008171310875e7dc8d61aa4a84081b8",
+      "after": "35b0bf7d433bbcf0bf6b9745db40a3245b4aa8c250901ff0ef8c9c1ca63715a2"
+    },
+    "WLD-07-MORTUARY": {
+      "before": "5dabc68186d47453a59db5ec6f35e637b743150a4d467b457c4528cf70d1f79b",
+      "after": "4f347be007d71523c0db0f71c24b9c6cfc21026b84637620aefeb817b2bdab08"
+    }
+  },
+  "kernel_jar_sha256": "8694a06b9483bea77f2af9130c14a4191e868f2389671b4460572f93a75edbe2",
+  "sites": {
+    "ACADEMY": {
+      "samples": 7908,
+      "baseline_valid": 5929,
+      "new_block": 0,
+      "baseline_sweep": 5596,
+      "new_sweep_block": 0
+    },
+    "ASYLUM": {
+      "samples": 7956,
+      "baseline_valid": 6040,
+      "new_block": 0,
+      "baseline_sweep": 5641,
+      "new_sweep_block": 0
+    },
+    "CHURCH": {
+      "samples": 3420,
+      "baseline_valid": 2618,
+      "new_block": 0,
+      "baseline_sweep": 2390,
+      "new_sweep_block": 0
+    },
+    "COLLEGE": {
+      "samples": 8289,
+      "baseline_valid": 6831,
+      "new_block": 0,
+      "baseline_sweep": 6454,
+      "new_sweep_block": 0
+    },
+    "FARMHOUSE": {
+      "samples": 4101,
+      "baseline_valid": 2878,
+      "new_block": 0,
+      "baseline_sweep": 2579,
+      "new_sweep_block": 0
+    },
+    "MANSION": {
+      "samples": 7311,
+      "baseline_valid": 6285,
+      "new_block": 0,
+      "baseline_sweep": 5880,
+      "new_sweep_block": 0
+    },
+    "PRISON": {
+      "samples": 6636,
+      "baseline_valid": 5202,
+      "new_block": 0,
+      "baseline_sweep": 4906,
+      "new_sweep_block": 0
+    },
+    "SCHOOL": {
+      "samples": 5811,
+      "baseline_valid": 4617,
+      "new_block": 0,
+      "baseline_sweep": 4199,
+      "new_sweep_block": 0
+    },
+    "WLD-03": {
+      "samples": 3549,
+      "baseline_valid": 2222,
+      "new_block": 0,
+      "baseline_sweep": 2062,
+      "new_sweep_block": 0
+    },
+    "WLD-04": {
+      "samples": 1413,
+      "baseline_valid": 607,
+      "new_block": 0,
+      "baseline_sweep": 514,
+      "new_sweep_block": 0
+    },
+    "WLD-05": {
+      "samples": 3510,
+      "baseline_valid": 2890,
+      "new_block": 0,
+      "baseline_sweep": 2744,
+      "new_sweep_block": 0
+    },
+    "WLD-06": {
+      "samples": 3744,
+      "baseline_valid": 1824,
+      "new_block": 0,
+      "baseline_sweep": 1634,
+      "new_sweep_block": 0
+    },
+    "WLD-07": {
+      "samples": 2817,
+      "baseline_valid": 985,
+      "new_block": 0,
+      "baseline_sweep": 908,
+      "new_sweep_block": 0
+    },
+    "WLD-08": {
+      "samples": 4062,
+      "baseline_valid": 2185,
+      "new_block": 0,
+      "baseline_sweep": 2032,
+      "new_sweep_block": 0
+    },
+    "WLD-09": {
+      "samples": 3123,
+      "baseline_valid": 1830,
+      "new_block": 0,
+      "baseline_sweep": 1727,
+      "new_sweep_block": 0
+    },
+    "WLD-10": {
+      "samples": 4152,
+      "baseline_valid": 3147,
+      "new_block": 0,
+      "baseline_sweep": 2989,
+      "new_sweep_block": 0
+    },
+    "WLD-11": {
+      "samples": 3663,
+      "baseline_valid": 1225,
+      "new_block": 0,
+      "baseline_sweep": 1069,
+      "new_sweep_block": 0
+    },
+    "WLD-12": {
+      "samples": 4173,
+      "baseline_valid": 2067,
+      "new_block": 0,
+      "baseline_sweep": 1936,
+      "new_sweep_block": 0
+    },
+    "WLD-13": {
+      "samples": 4239,
+      "baseline_valid": 2733,
+      "new_block": 0,
+      "baseline_sweep": 2620,
+      "new_sweep_block": 0
+    },
+    "WLD-14": {
+      "samples": 2583,
+      "baseline_valid": 1898,
+      "new_block": 0,
+      "baseline_sweep": 1818,
+      "new_sweep_block": 0
+    },
+    "WLD-15": {
+      "samples": 2940,
+      "baseline_valid": 2307,
+      "new_block": 0,
+      "baseline_sweep": 2214,
+      "new_sweep_block": 0
+    },
+    "WLD-16": {
+      "samples": 3243,
+      "baseline_valid": 799,
+      "new_block": 0,
+      "baseline_sweep": 714,
+      "new_sweep_block": 0
+    },
+    "WLD-17": {
+      "samples": 2913,
+      "baseline_valid": 1517,
+      "new_block": 0,
+      "baseline_sweep": 1436,
+      "new_sweep_block": 0
+    },
+    "WLD-18": {
+      "samples": 3033,
+      "baseline_valid": 2160,
+      "new_block": 0,
+      "baseline_sweep": 2058,
+      "new_sweep_block": 0
+    },
+    "WLD-07-MORTUARY": {
+      "samples": 4296,
+      "baseline_valid": 2131,
+      "new_block": 3,
+      "baseline_sweep": 2007,
+      "new_sweep_block": 1
+    }
+  },
+  "kernel_source_sha256": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+  "authored_stairs": true,
+  "limitation": "Preserving previously valid paths does not accept pre-existing failures, stairs, complete navigation, gameplay or finished models."
+}

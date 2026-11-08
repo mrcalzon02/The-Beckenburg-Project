@@ -1,15 +1,13 @@
-# Hollowmere Farm — revised domestic and working-yard rough — next implementation steps
+# FARMHOUSE: terrain-first continuation after native path/basement checkpoint
 
-Rough shell blocking only. Source layout coordinates and elevations are retained.
+3/3 vertical segments pass ascent/descent in the candidate. All25path-solid windings were rebuilt and independently checked. Existing rough model IDs/placements remain allocated.
 
-1. Review actual apertures, floor openings and connector support against the approved concept.
-2. Engineer every amber elevation link: real flights or paths, landings, headroom, guards and terrain.
-3. Resolve overlapping shell partitions and route crossings before building navigation collision.
-4. Integrate the canonical van, authored room volumes, circuits, acoustics and protocol IDs.
-5. Furnish, dress and test human/AI hunts and rituals; retain the map lock until accepted.
+Next: settle the overall landform, terrain layers, slope/terrace/drainage and foundation envelope before further isolated path repairs. Review the entire site and reshuffle blockouts or stair bays where needed. Current terrain decisions: development/levels/rebuild/terrain-overall-pass/. Preserve stable IDs,40accessible spaces and the shared coordinate/van contract.
 
-Source-specific concerns:
+Current native evidence: development/levels/rebuild/verification/roster-basements-2026-11-07/. This is not a runtime unlock, final terrain/art or complete gameplay acceptance.
 
+Remaining measured vertical contacts:
 
+- No failed vertical segment in this audit; other terrain, support, guard, room/owner/services and mission gates remain open.
 
-See implementation.json for every connector and floor-opening reservation.
+Use actual saved editor terrain punches for basement entrances; route strips alone do not settle ground. Finish grounded boundaries, retaining edges/foundations, canonical arrival, major/mounted capacities and later model/weather/story refinement. No local editor UI or round-duration tests.

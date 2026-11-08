@@ -2216,20 +2216,21 @@
   ],
   "source_refinement": [],
   "native_reopened": true,
-  "blend_sha256": "3a06e670738f28d9f79e9c57f9323c9ad40387f1b88b702577c91eb0be9a6348",
+  "blend_sha256": "87269b040a9c2f1f2c6abf26caeb8ac5436cdaa7ba5d3b873d617fd3a54990e7",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
-    "glb_sha256": "0c73f924e5cf5b8fada9c5ed1b88994757400f24c8837924d7dab6aa10b7f74e",
+    "glb_sha256": "de9a4619d5e2e3956bb4b7a03e4ae3ed063482fd635b8d46a7c5c75f7a784c60",
     "independently_reimported": true,
     "meshes": 739,
     "triangles": 8876,
     "floor_parts": 113,
     "ceiling_cap_parts": 91,
     "stair_treads": 55,
-    "checked_closed_solids": 667,
+    "checked_closed_solids": 739,
     "measured_depth_parts": 204,
     "exported_cap_rays": 91,
+    "route_support_solids": 72,
     "fixed_infill_routes": 73,
     "exported_fixed_boundary_checks": [
       "L002",
@@ -2326,8 +2327,8 @@
   },
   "generator_sha256": {
     "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
-    "development/levels/blockouts/build_blockouts.py": "270e256c16ef0a2028a932227b04c45ea63efbdd44d5fff8f240e59e2d60ad42",
-    "development/levels/blockouts/structural_pass.py": "2682a49d3383d468a3208b63dadc14efbb3669906a403dfd0cee27aa8e8b290d",
+    "development/levels/blockouts/build_blockouts.py": "a79d81e4aed21ba6c86caf18273f9374e98dd4702f9434a294797ac138e69395",
+    "development/levels/blockouts/structural_pass.py": "9bbf596ad782cd629371cc9986d3fb198c6eec411be54496008e37028ebd276b",
     "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
   }
 }

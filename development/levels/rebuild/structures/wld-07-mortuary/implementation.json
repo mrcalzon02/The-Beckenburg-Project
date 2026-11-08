@@ -2,7 +2,7 @@
   "id": "WLD-07-MORTUARY",
   "title": "Saint Bartholomew's Cemetery & Vale Mortuary",
   "source": "rebuild\\wld-07-mortuary\\rough-layout.json",
-  "source_sha256": "3970885c0973bf336f9e625656dba5d09ffb83794e9ff7ff831d598044e3d00f",
+  "source_sha256": "b10be63f5beb5e4e9d033201955a1b4adc63c7fec994ff907f932d0797ba623c",
   "zones": 20,
   "routes": 25,
   "shell_openings": [
@@ -252,22 +252,22 @@
       "height": 2.45
     }
   ],
-  "meshes": 203,
+  "meshes": 213,
   "issues": [
     {
       "zone": "stage",
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -277,15 +277,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -295,15 +295,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -313,15 +313,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -331,15 +331,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -349,15 +349,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -367,15 +367,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -385,15 +385,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -403,15 +403,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -421,15 +421,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -439,15 +439,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -457,15 +457,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -475,15 +475,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -493,15 +493,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -511,15 +511,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -529,15 +529,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -547,15 +547,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -565,15 +565,15 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          11.0,
+          8.5,
           15.1,
-          28.0,
+          14.0,
           16.9
         ],
         [
-          28.0,
+          42.0,
           15.1,
-          45.0,
+          47.5,
           16.9
         ]
       ]
@@ -597,20 +597,21 @@
     "Review mortuary room hygiene/service separation before detailed dressing; use appropriate purpose-built fixtures."
   ],
   "native_reopened": true,
-  "blend_sha256": "4534f697501f0fc02059cc190eeb01401078a4e91e4c7e4053d2f0a9bb20701d",
+  "blend_sha256": "2b1d7656849281ee0e3f447f859a7ea0f4a2141830cf41e61f635be649bfd6aa",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
-    "glb_sha256": "7b51fce063c08b13e35777459dab31afb977f56c55464fd02acfcab98f84f32c",
+    "glb_sha256": "2458c67f8a78b95151f4aae8adb4684c90bb09e3219f96c5f71224f95a69164e",
     "independently_reimported": true,
-    "meshes": 199,
-    "triangles": 11430,
-    "floor_parts": 22,
-    "ceiling_cap_parts": 17,
+    "meshes": 209,
+    "triangles": 11550,
+    "floor_parts": 28,
+    "ceiling_cap_parts": 16,
     "stair_treads": 34,
-    "checked_closed_solids": 162,
-    "measured_depth_parts": 39,
-    "exported_cap_rays": 17,
+    "checked_closed_solids": 208,
+    "measured_depth_parts": 44,
+    "exported_cap_rays": 16,
+    "route_support_solids": 38,
     "fixed_infill_routes": 0,
     "exported_fixed_boundary_checks": [],
     "wall_depth_m": 0.16,
@@ -627,14 +628,14 @@
   "authoritative_input": "development/levels/rebuild/wld-07-mortuary/rough-layout.json",
   "original_scene_preserved": true,
   "preserved_sources": {
-    "development/levels/rebuild/wld-07-mortuary/rough-layout.json": "3970885c0973bf336f9e625656dba5d09ffb83794e9ff7ff831d598044e3d00f",
+    "development/levels/rebuild/wld-07-mortuary/rough-layout.json": "b10be63f5beb5e4e9d033201955a1b4adc63c7fec994ff907f932d0797ba623c",
     "development/levels/blockouts/wld-07-mortuary/rough-shell.blend": "014e0a8a06c078acbe305af9f6994a5c73698ff3abb52b9667fb01a8198fd13f",
     "development/levels/blockouts/wld-07-mortuary/rough-shell.glb": "b2a89076c5721ac3f025855dffbd358a910227a3ebcc3f4bc40ba8c8bdb5a3ea"
   },
   "generator_sha256": {
     "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
-    "development/levels/blockouts/build_blockouts.py": "270e256c16ef0a2028a932227b04c45ea63efbdd44d5fff8f240e59e2d60ad42",
-    "development/levels/blockouts/structural_pass.py": "2682a49d3383d468a3208b63dadc14efbb3669906a403dfd0cee27aa8e8b290d",
+    "development/levels/blockouts/build_blockouts.py": "a79d81e4aed21ba6c86caf18273f9374e98dd4702f9434a294797ac138e69395",
+    "development/levels/blockouts/structural_pass.py": "9bbf596ad782cd629371cc9986d3fb198c6eec411be54496008e37028ebd276b",
     "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
   }
 }

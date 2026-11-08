@@ -1,0 +1,14 @@
+{
+  "expected_terrain_rejection": true,
+  "prior_pair_preserved": true,
+  "before": {
+    "structure-physics.hcs2": "35fd15ddb093d5569a091b0e67c9ac2a8cdab663a167aeb3fb8c1fb9cdfbd176",
+    "physics-contract.json": "e13a012f443788f859a3f3d736785396f2e305d3bc9dbd013f09d0918ed4df12"
+  },
+  "after": {
+    "structure-physics.hcs2": "35fd15ddb093d5569a091b0e67c9ac2a8cdab663a167aeb3fb8c1fb9cdfbd176",
+    "physics-contract.json": "e13a012f443788f859a3f3d736785396f2e305d3bc9dbd013f09d0918ed4df12"
+  },
+  "exporter_sha256": "0eebf9807ce7c05feaf327ec33e7ced6557034c1f7e579cc05cadad89d07284b",
+  "legacy_ref": null
+}

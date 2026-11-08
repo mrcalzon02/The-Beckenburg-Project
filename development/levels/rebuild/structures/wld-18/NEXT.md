@@ -1,20 +1,22 @@
-# Site Cinder-6 — next implementation steps
+# WLD-18: terrain-first continuation after native path/basement checkpoint
 
-Rough shell blocking only. Source layout coordinates and elevations are retained.
+1/6 vertical segments pass ascent/descent in the candidate. All25path-solid windings were rebuilt and independently checked. Existing rough model IDs/placements remain allocated.
 
-1. Review actual apertures, floor openings and connector support against the approved concept.
-2. Engineer every amber elevation link: real flights or paths, landings, headroom, guards and terrain.
-3. Resolve overlapping shell partitions and route crossings before building navigation collision.
-4. Integrate the canonical van, authored room volumes, circuits, acoustics and protocol IDs.
-5. Furnish, dress and test human/AI hunts and rituals; retain the map lock until accepted.
+Next: settle the overall landform, terrain layers, slope/terrace/drainage and foundation envelope before further isolated path repairs. Review the entire site and reshuffle blockouts or stair bays where needed. Current terrain decisions: development/levels/rebuild/terrain-overall-pass/. Preserve stable IDs,40accessible spaces and the shared coordinate/van contract.
 
-Source-specific concerns:
+Current native evidence: development/levels/rebuild/verification/roster-basements-2026-11-07/. This is not a runtime unlock, final terrain/art or complete gameplay acceptance.
 
-- Terrain-first massing is not terrain acceptance: resolve drainage, incised paths, retaining edges, foundation contacts and every grade before detailed structures.
-- Check floor/wall/roof joins, upper-deck undersides and corners with adjacent lights toggled; log every discovered failure.
-- Engineer stairs, landings, openings, guards, door swings and two exits before collision/navigation approval.
-- Inspect each model purpose, scale, UVs and true support surface before placing furniture or clutter.
-- Public decommissioned-site context only; not a reconstruction of an operational facility.
-- Keep every mandatory route off the shaft void. Real ring guards, falling protection and stair headroom require engineering.
+Remaining measured vertical contacts:
 
-See implementation.json for every connector and floor-opening reservation.
+- route-07:1 up PHYSICAL_COMPONENT 62:Wall west S.001
+- route-07:1 down PHYSICAL_COMPONENT 62:Wall west S.001
+- route-08:1 up PHYSICAL_COMPONENT 41:Wall exit N
+- route-08:1 down PHYSICAL_COMPONENT 41:Wall exit N
+- route-13:1 up PHYSICAL_COMPONENT 223:route-13 landing0
+- route-13:1 down NO_FOOT_SUPPORT_0.0_-0.22 -
+- route-14:1 up PHYSICAL_COMPONENT 95:Floor exhibit.016
+- route-14:1 down PHYSICAL_COMPONENT 128:Ceiling cap east.016
+- route-14:3 up PHYSICAL_COMPONENT 118:Ceiling cap east.006
+- route-14:3 down PHYSICAL_COMPONENT 118:Ceiling cap east.006
+
+Use actual saved editor terrain punches for basement entrances; route strips alone do not settle ground. Finish grounded boundaries, retaining edges/foundations, canonical arrival, major/mounted capacities and later model/weather/story refinement. No local editor UI or round-duration tests.

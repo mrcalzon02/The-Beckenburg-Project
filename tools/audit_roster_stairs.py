@@ -9,9 +9,10 @@ import argparse,csv,hashlib,json,math,os,subprocess
 ROOT=Path(__file__).resolve().parents[1]
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True);parser.add_argument('--require-authored-chains',action='store_true');args=parser.parse_args()
     build=ROOT/'build/roster-stair-probe';build.mkdir(parents=True,exist_ok=True)
     sites=json.loads((ROOT/'development/levels/rebuild/furnishings/room-programs.json').read_text(encoding='utf-8'))['sites']
+    chain_path=ROOT/'development/levels/rebuild/movement-chains.json';declared=json.loads(chain_path.read_text())['sites']
     rows=[];paths=[];names=[];bindings={};chain_bindings=[]
     for site in sites:
         base=ROOT/f'development/levels/rebuild/structures/{site.lower()}'
@@ -54,6 +55,17 @@ def main():
                 chain='CHAIN/'+'/'.join(used);chain_bindings.append(dict(site=site,variant=variant,id=chain,links=used))
                 for i,(p,q) in enumerate(zip(joined,joined[1:])):
                     paths.append('\t'.join(map(str,[site,variant,folder/physics,contract['physics_sha256'],chain,i,*p,*q])))
+            by_id={link['id']:link for link in layout['links']}
+            for authored in declared.get(site,[]):
+                joined=[]
+                for step in authored['links']:
+                    link=by_id[step['link']];assert link.get('player_access')!='SEALED_NO_ROUTE'
+                    points=list(reversed(link['points'])) if step.get('reverse') else link['points']
+                    if joined:assert joined[-1]==points[0],(site,authored['id'],'Disconnected authored source endpoints')
+                    joined.extend(points if not joined else points[1:])
+                if authored.get('closed'):assert joined[0]==joined[-1],(site,'Circulation loop not closed')
+                for i,(p,q) in enumerate(zip(joined,joined[1:])):
+                    paths.append('\t'.join(map(str,[site,variant,folder/physics,contract['physics_sha256'],'AUTHORED/'+authored['id'],i,*p,*q])))
     for filename,data in [('names.tsv',names),('flights.tsv',rows),('full-paths.tsv',paths)]:
         (build/filename).write_bytes(('\n'.join(data)+'\n').encode())
     java=Path(os.environ.get('JAVA_HOME','C:/Program Files/Java/jdk-17'))/'bin';jar=ROOT/'build/beckenburg-game.jar'
@@ -70,7 +82,9 @@ def main():
             summary[variant][site]={'flights':len(selected),**{key:sum(r[key]=='PASS' for r in selected) for key in ['legacy_up','legacy_down','authored_up','authored_down']}}
     report={'status':'CANDIDATE_STAIR_MOVEMENT_AUDIT_NOT_MAP_ACCEPTANCE','bindings':bindings,'source_hashes':{s:sha(ROOT/s) for s in sources+['tools/audit_roster_stairs.py']},'dependency_jar_sha256':sha(jar),'sites':summary,'limitation':'Explicit stair sets are not yet connected to playable level ownership or replication. Failed complete flights remain blockers; centre support is not complete movement acceptance.'}
     chains=list(csv.DictReader((build/'chains.tsv').read_text(encoding='utf-8').splitlines(),delimiter='\t'))
-    report['complete_routes']={v:{'routes':len([r for r in chains if r['variant']==v and not r['link'].startswith('CHAIN/')]),**{k:sum(r[k]=='PASS' for r in chains if r['variant']==v and not r['link'].startswith('CHAIN/')) for k in ['legacy_forward','legacy_reverse','authored_forward','authored_reverse']}} for v in ['structure','furnished']}
+    report['complete_routes']={v:{'routes':len([r for r in chains if r['variant']==v and not r['link'].startswith(('CHAIN/','AUTHORED/'))]),**{k:sum(r[k]=='PASS' for r in chains if r['variant']==v and not r['link'].startswith(('CHAIN/','AUTHORED/'))) for k in ['legacy_forward','legacy_reverse','authored_forward','authored_reverse']}} for v in ['structure','furnished']}
+    report['authored_routes']=[r for r in chains if r['link'].startswith('AUTHORED/')]
+    report['source_hashes'][chain_path.relative_to(ROOT).as_posix()]=sha(chain_path)
     report['cross_link_chains']={'bindings':chain_bindings,'results':[r for r in chains if r['link'].startswith('CHAIN/')],'scope':'Maximal unique exact source-endpoint chains; ascending normalization, no invented inter-room segment. Other links retain separate complete-path checks.'}
     report['chain_scope']='Every active vertically changing link, with all intermediate flat landing segments and forward/reverse continuous position; no reinitialization at each segment. This does not cover the separate flat-only route network.'
     args.output.mkdir(parents=True,exist_ok=True)
@@ -80,5 +94,7 @@ def main():
     (args.output/'stair-movement.json').write_bytes((json.dumps(report,indent=2)+'\n').encode())
     print({v:{k:sum(s[k] for s in per.values()) for k in ['flights','legacy_up','legacy_down','authored_up','authored_down']} for v,per in summary.items()})
     print(report['complete_routes'])
+    print(report['authored_routes'])
+    if args.require_authored_chains:assert report['authored_routes'] and all(r['authored_forward']=='PASS' and r['authored_reverse']=='PASS' for r in report['authored_routes']),'Declared circulation route is not physically complete'
 
 if __name__=='__main__':main()

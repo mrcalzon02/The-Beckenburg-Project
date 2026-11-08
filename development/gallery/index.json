@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 7925,
+  "count": 7932,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -71326,6 +71326,66 @@
       "sha256": "f63348a4ce71e7f5fc85e17f92d8e133e8f5f335c803839641d59e2e9f41aa37"
     },
     {
+      "path": "development/levels/rebuild/captures/basement-batch/wld-07-east-entry.png",
+      "url": "development/levels/rebuild/captures/basement-batch/wld-07-east-entry.png",
+      "title": "Wld 07 east entry",
+      "kind": "Native first-person export inspection; neutral review illumination, not runtime",
+      "width": 1100,
+      "height": 900,
+      "bytes": 889011,
+      "sha256": "855b873eb4f11d96c5c94027674d6d7658197f05144557275418a9b447ed69f9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/basement-batch/wld-07-lower-west-landing.png",
+      "url": "development/levels/rebuild/captures/basement-batch/wld-07-lower-west-landing.png",
+      "title": "Wld 07 lower west landing",
+      "kind": "Native first-person export inspection; neutral review illumination, not runtime",
+      "width": 1100,
+      "height": 900,
+      "bytes": 991703,
+      "sha256": "3247a265e8cd844a3e76fe978b7739738a65c4c09d2b4d5a4d67d0978c4690c0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/basement-batch/wld-07-mortuary-east-entry.png",
+      "url": "development/levels/rebuild/captures/basement-batch/wld-07-mortuary-east-entry.png",
+      "title": "Wld 07 mortuary east entry",
+      "kind": "Native first-person export inspection; neutral review illumination, not runtime",
+      "width": 1100,
+      "height": 900,
+      "bytes": 889071,
+      "sha256": "b58c0ada67f2657adbe871bb8aacde13603817652648d269a163bda6d24ec258"
+    },
+    {
+      "path": "development/levels/rebuild/captures/basement-batch/wld-07-mortuary-lower-west-landing.png",
+      "url": "development/levels/rebuild/captures/basement-batch/wld-07-mortuary-lower-west-landing.png",
+      "title": "Wld 07 mortuary lower west landing",
+      "kind": "Native first-person export inspection; neutral review illumination, not runtime",
+      "width": 1100,
+      "height": 900,
+      "bytes": 991728,
+      "sha256": "30bfd8be6d33cb88706d2e76aea4871c8e957116f7713ae52c5f70586c95e3ce"
+    },
+    {
+      "path": "development/levels/rebuild/captures/basement-batch/wld-07-mortuary-west-entry.png",
+      "url": "development/levels/rebuild/captures/basement-batch/wld-07-mortuary-west-entry.png",
+      "title": "Wld 07 mortuary west entry",
+      "kind": "Native first-person export inspection; neutral review illumination, not runtime",
+      "width": 1100,
+      "height": 900,
+      "bytes": 902278,
+      "sha256": "62dd286919a8923058aa6578c06938f076f2f219aa72ccc0d0cd2bc25d7bb365"
+    },
+    {
+      "path": "development/levels/rebuild/captures/basement-batch/wld-07-west-entry.png",
+      "url": "development/levels/rebuild/captures/basement-batch/wld-07-west-entry.png",
+      "title": "Wld 07 west entry",
+      "kind": "Native first-person export inspection; neutral review illumination, not runtime",
+      "width": 1100,
+      "height": 900,
+      "bytes": 902504,
+      "sha256": "984d0f414d12dcd0d222db146af8a9b1a40213d44508dc2d097dad705c8e7083"
+    },
+    {
       "path": "development/levels/rebuild/captures/castle-closeout/castle/archive/east.png",
       "url": "development/levels/rebuild/captures/castle-closeout/castle/archive/east.png",
       "title": "East",
@@ -73642,8 +73702,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 1054770,
-      "sha256": "2fb4d79cc12d0c4c5bd3b1bb6795772069651ab1d5d1d11e9b2f4b115a965d0b"
+      "bytes": 1054825,
+      "sha256": "21ed1c11c94bd40df6248951b58718ee6c73ca067e3eefa8de97643ba8395d92"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/academy-room-reception.png",
@@ -73653,7 +73713,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1045991,
-      "sha256": "db875201a17cdd06094f6d872380338418483b037884a5c4bf27b5a81646df03"
+      "sha256": "b96bdf6734d1e0a465f830f3bb35473da2a3ab5e491e1cd2e25898b3ea21448c"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/asylum-export-overview.png",
@@ -73662,8 +73722,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 1069547,
-      "sha256": "c3c1b448aea0181eb09d417a8519d53effc0239f60bc8463ab43f90fb19ba9bc"
+      "bytes": 1069508,
+      "sha256": "52b63755ccf2dcb1c739973f723d467d940a1fa9c4d5f134346a6d26622610f1"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/asylum-room-ground-north-a.png",
@@ -73673,7 +73733,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1094107,
-      "sha256": "03f857c7b66e1aa193d67f93e69f56b84e0fd1479c0a2025f1f87219247d0b85"
+      "sha256": "4cf6b2317148b34e5a9d78b4abe48ad2d06a71f2e971ea9ec99435e094ac6f6d"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/church-export-overview.png",
@@ -73682,8 +73742,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 1000089,
-      "sha256": "a75a27a60349762681ec7eac6e6fd22d261305fa8c00aa7a1e9e15b65f7f8b1f"
+      "bytes": 1000137,
+      "sha256": "f9a1c8b8b48d5c7582d8646cc000f38bda6e02d902cc99ea9144ec51e051a37f"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/church-room-nave.png",
@@ -73693,7 +73753,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1049096,
-      "sha256": "b6e572ccf9760908019577f72985aa4d50fee62dde8f40b71cdd68b5859e414a"
+      "sha256": "3cea6583fccb6c172c20bcfa241cd07c60ff10155dd0d67fdcc99b29b3b28feb"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/college-export-overview.png",
@@ -73702,8 +73762,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 1054890,
-      "sha256": "4298a2fbacaf10d628ed9c73d4f4d01fa69cf638a0dff5b17d2e00313f105029"
+      "bytes": 1054926,
+      "sha256": "f21f31a43bc913aad14a0fbd45eff795d6fc8424d5c88d9f93cc928ea2e5412f"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/college-room-lecture.png",
@@ -73713,7 +73773,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1054176,
-      "sha256": "c5fda1d324989cd110f2f2d90e78c1ed2d3879307ee403f8c77d4e69532180b1"
+      "sha256": "36684d271134a6fddca3730b6f6ad3c084398c8905b533f203ad2acd77aa02c9"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/farmhouse-export-overview.png",
@@ -73722,8 +73782,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 1025536,
-      "sha256": "d1da63acda20e6d8cfead45ddc0c8ba8159747210003d914a829e86df94954df"
+      "bytes": 1025535,
+      "sha256": "57722470ef53e4e3bf1a93cd36804efc13617e975038f2b5f89d596f8580ba0d"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/farmhouse-room-stall-a.png",
@@ -73733,7 +73793,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1089980,
-      "sha256": "d517ae9a570cd2dc34636141ca26ca83dc0b958ccaffa7547ad29a34b4929f77"
+      "sha256": "890c6a40ae73a0e26d13097d155bccd094d293bb0888c5ee04a417bceaf27d28"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/library-pilot.png",
@@ -73752,8 +73812,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 1024796,
-      "sha256": "50ddb5b6e0e0042c9895787124faea9a51a8aafbaeb88dc7b24e27dabfc4f68c"
+      "bytes": 1024878,
+      "sha256": "1ca81795cb54215510182f676d433459ceaa5b615b8d6b2b84a792df5527807a"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/mansion-room-library.png",
@@ -73763,7 +73823,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1082473,
-      "sha256": "db099aa662e141d68d3e252017f9f130befb199ab637cacdabaf023bd4c89474"
+      "sha256": "1b2147a219656a0d9a994f92beeed679b51bc9f2b2422392f8b75dc939ff36b0"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/prison-export-overview.png",
@@ -73772,8 +73832,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 1086634,
-      "sha256": "8a181d713cc4dd4a0d8d71e54402b62abd862d98ef76a12aea091d3f12c326bd"
+      "bytes": 1086498,
+      "sha256": "fda94dcfce98647d5bf0d99fee50f405cb3e0aec3ceb3ded97d22f5d66372351"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/prison-room-a-lower-cell-01.png",
@@ -73783,7 +73843,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1129248,
-      "sha256": "1b691caeb60e38345137a25af8a92781a763b93a99241eefdfc187a635d0ea0c"
+      "sha256": "174fbe38b5b61511542bca71c9228cf66b28f8eec57140314131449260cc2a8d"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/rejected-pilot/farmhouse-room-repair.png",
@@ -73812,8 +73872,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1920,
       "height": 880,
-      "bytes": 757607,
-      "sha256": "51f6e40a7fa9671d994de255c5749e7f1569b1084bd54c3f2da529e2432b7164"
+      "bytes": 757608,
+      "sha256": "a286c6e1a932c9c4fdb6001a417af37ea3f116f6e7597add2ddd5a56c2fecc18"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-02.png",
@@ -73822,8 +73882,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1920,
       "height": 880,
-      "bytes": 814674,
-      "sha256": "96b222e6211bee9c54cf15003dd186e222f0ebea704ecc7d2b4559d62194874c"
+      "bytes": 814612,
+      "sha256": "121773cab94e211cb61f44d49e8a825990e49747aca455e12adc21067ec84ea4"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-03.png",
@@ -73832,8 +73892,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1920,
       "height": 880,
-      "bytes": 680481,
-      "sha256": "331fbbaaef0fc7506791e1f90b828891032570e775663d8104751fbfa3a28f02"
+      "bytes": 680647,
+      "sha256": "ccc1940f7779b8d7422c7e7644039753aa2240177bb384fff35fe74c253372cc"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-04.png",
@@ -73842,8 +73902,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1920,
       "height": 880,
-      "bytes": 718377,
-      "sha256": "8b745f1c79bf0f530399cb51dbbf3bad54201fba420136dd70c5776bf83088e1"
+      "bytes": 741390,
+      "sha256": "80e82e832a372d6ee3ea27977c58017736a10e75ab1fbc857f3934cd13e62306"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-05.png",
@@ -73852,8 +73912,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1920,
       "height": 880,
-      "bytes": 745850,
-      "sha256": "a0b9c1c199b77c800a47ea9b348daa9d2efee8a372714c042deda48ce8748616"
+      "bytes": 745901,
+      "sha256": "90ebefc598501b735dfb47002e4cffb020ee9ce941c73cb4408f952665ba333f"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-06.png",
@@ -73862,8 +73922,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1920,
       "height": 880,
-      "bytes": 725006,
-      "sha256": "dfd78d6a9b633443bf1b086160119456d6d6049ab63ee3bd53261bd4e628259e"
+      "bytes": 725028,
+      "sha256": "124742a4cca404fa0c7569a5f617e97a0f92d875486276b4cc1e666e50b55cd1"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-07.png",
@@ -73872,8 +73932,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1920,
       "height": 880,
-      "bytes": 248230,
-      "sha256": "f5763f7a147e534728935d81a7e15c353550d6ead1c03736305855155967c71c"
+      "bytes": 250648,
+      "sha256": "074b50dda5c679187dfb5e22a9b8e28c1d684ed1f5fa981c0ae2c1f72aafd1bd"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/school-export-overview.png",
@@ -73882,8 +73942,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 1035086,
-      "sha256": "accdf3faa82acc59b45cb55898e149db8f7f6c478a0d6217d0826f7072b7db74"
+      "bytes": 1035128,
+      "sha256": "c5778af46111d8828870beef056eb5c9142a7388fcffbf6b2ba4202699d05b02"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/school-room-class-a.png",
@@ -73893,7 +73953,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1087541,
-      "sha256": "0848be25e490b4f5a2763da58fd61061723e2e52b496acf1e60376e68208b8e2"
+      "sha256": "0a72fdf09c669a3289981b275998e290962ff5080d5857b5466a37d8a91c76ca"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/staged-source-inspection.png",
@@ -73912,8 +73972,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 997357,
-      "sha256": "efca5b42e561c8f1b6a16bbd9eecdd407cf2f81b07a3f0b52b4ccbaf41269d2c"
+      "bytes": 997391,
+      "sha256": "e8163c1333d6a95df615a86493acaa43cb769f7fe43adc2e4495f91d271c7933"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-03-room-shelter.png",
@@ -73923,7 +73983,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1017014,
-      "sha256": "a01059f5694f79d82cf17fc54ddcd353135b0ee8c8552e65114175939321f5d5"
+      "sha256": "65656e20a6d2bdd23d46523daa80064bfef7a2fc86c1e4c9efd4fd675697e009"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-04-export-overview.png",
@@ -73932,8 +73992,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 990575,
-      "sha256": "cefb4cf0e6ce7270cda1d94075f6b954c06f623648cc2f77f88355676f3c1e77"
+      "bytes": 990504,
+      "sha256": "5128975bf0b1aae744fcd9dbee5f9bf0531507425a22ec4c9e6e516c9d5cfae0"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-04-room-hut.png",
@@ -73943,7 +74003,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1004309,
-      "sha256": "98fb6533eb0ef83613032c1b54a51e1073d12864834e178db2c4b5a596bb70a4"
+      "sha256": "9119460082c8a5a08ce0698b08b4119b70ea532ca0e03733eba3cf46d981a81f"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-05-export-overview.png",
@@ -73952,8 +74012,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 1040265,
-      "sha256": "12616c70a52aeff53ad1a65ca0f3decf3de63510212bfe612ab93ecd7c477a4d"
+      "bytes": 1040317,
+      "sha256": "4d04bdfc804555f43eab1d17fcb97806677a878a937b9605a8429418795f39e1"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-05-room-ore-west.png",
@@ -73963,7 +74023,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1039009,
-      "sha256": "f4ec494ffef84bb3b7686a57a67af3f6514579d8fd5c35582e502d898ad175dd"
+      "sha256": "6df73a588afd9d4d3c8960fea89dbc50e1b7df5af9fa5b9f173ab051312888ce"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-06-export-overview.png",
@@ -73972,8 +74032,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 1030280,
-      "sha256": "c7aa7dcafeef3e27021e7e46ccdf086e4dd4ec7f76b948c4c028077d2e6b1ee2"
+      "bytes": 1030060,
+      "sha256": "f25af59cb18263d0239645cd12b18aba1cd25ea5fb0bb111298331a931599e82"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-06-room-cottage-a.png",
@@ -73983,7 +74043,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1023463,
-      "sha256": "ce15833cfde7dade11fe682ba23e84d427d7261df5703e7d4d798af5883e94b0"
+      "sha256": "7821e3f1fa6a39a31768ad2a61ef31b5f82f6620e2a2b022060dc099a20054a9"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-07-export-overview.png",
@@ -73992,8 +74052,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 1010748,
-      "sha256": "0e1fb900cb2ac3c49e395557ba5bfc17b0caa24623afec73e9009a5409cefb95"
+      "bytes": 1081637,
+      "sha256": "f2cd6d33483e4b145e9305463a14c904a5a6c1f60123e11c29dc2bf081f2b63e"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-07-mortuary-export-overview.png",
@@ -74002,8 +74062,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 1175846,
-      "sha256": "9ccfa5a119d0b5ce65c7bb8da908df80ce22f8f95c85f0194ba21e25f7ad47f2"
+      "bytes": 1171709,
+      "sha256": "ea1616200b2cb9208925a02c5dbaa687f93b56ea0149fed7c12220f3e81cbae6"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-07-mortuary-room-mort-prep.png",
@@ -74013,7 +74073,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1025717,
-      "sha256": "e80163d33fa2324828b7dc310688e462479428b54d3537715005cca73bb265c3"
+      "sha256": "3e21f03e8ed99e3fc0a5f566c65c949c6e7b0bf841d17706a177b1c4c09fe721"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-07-room-chapel.png",
@@ -74023,7 +74083,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1050096,
-      "sha256": "78610e68e59e394d01cf994d1dbe86210115925eda5565619ef786e91c0b75bf"
+      "sha256": "b60208baebb4a205f11802950a4af9cf244074dc07ab0e5ac127615b2888b5d9"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-08-export-overview.png",
@@ -74032,8 +74092,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 1050002,
-      "sha256": "c682c07a7c0d576ca9f8cacdfb7ab78ccfbec1ffd81a4c587896aa0dde39cd3b"
+      "bytes": 1049929,
+      "sha256": "87b89ad8c9939fab6a453c28ccb140160d326e2d4babf0acca976ecb8e6a8ae6"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-08-room-lab.png",
@@ -74043,7 +74103,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1045495,
-      "sha256": "9fcdec6bb0b59ee1436bf9f72c8947289b9f1f5f635914207f7e3872fc6311b2"
+      "sha256": "529099c88a00f8d8d1194e4edb5a5c6ba76748499f62cc33706c14743814d495"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-09-export-overview.png",
@@ -74052,8 +74112,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 1046036,
-      "sha256": "e5e8e7a3c7103bac0f68f38389fed08824550b8f340bd29d66bcd71d8f523f3f"
+      "bytes": 1045974,
+      "sha256": "3af027fc0fac2b2beed0034be633dc07d999616c4ba96eee53703d599094ab65"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-09-room-turbine.png",
@@ -74063,7 +74123,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1066656,
-      "sha256": "6f7c0c2c0ffbf84413613814b48fd841c740269f53c1388c77d265d32df5eb1d"
+      "sha256": "201e42b6c4e348532a73fd84d4883fa951d96c3a1838400ea69f88427a979cbc"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-10-export-overview.png",
@@ -74073,7 +74133,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1048795,
-      "sha256": "5dd9e291ba8a64f60b10290578156cd86be17374abce9af2a8827926c387b822"
+      "sha256": "cb6f3ba7ec2296bdb26b4932ddf7e9a378ee4a0f7c96820e422daac1fd56cc4b"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-10-room-archive.png",
@@ -74083,7 +74143,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1003964,
-      "sha256": "fc35ecf0ddeecfa6f6865da4d5b4a69c27dbb0b4df5973253f5a3af55ec7876f"
+      "sha256": "26357e434f32c2f4523f9a74252dc2712a6d7d8d839c8393be51922a571bdcb7"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-11-export-overview.png",
@@ -74092,8 +74152,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 991329,
-      "sha256": "893f896deab1ae09ce3c2fe9ba1659e0fea854eff57870c1cc885f45a750e71c"
+      "bytes": 991337,
+      "sha256": "ca0ee48ef4dae5882f3d0d1a1674c9005973e6d9d24356046063d8b92f924a4a"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-11-room-house-a.png",
@@ -74103,7 +74163,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1062325,
-      "sha256": "a6c835daaf005bdfea907974e4268ce2afbc319170ed3f3ded6aaf6c43042670"
+      "sha256": "c5fc906a741b782aa7bc33efe7c2f8c713d30653569177f2db95bff252a6ddff"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-12-export-overview.png",
@@ -74112,8 +74172,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 994860,
-      "sha256": "03ea1b5992eea211b36e8e769337f2bee82accccd2f53a3e8986518f6c2898f7"
+      "bytes": 994701,
+      "sha256": "5c4f28f45e190fa4a962654ee80a214b7fbf4058df5c2bf635e6527a847cea53"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-12-room-signal.png",
@@ -74123,7 +74183,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1038986,
-      "sha256": "84ab92d2d9083ff3df38e1e785a3b59b604f12b058c46aa53c43e5dd57b5d3b8"
+      "sha256": "83a70661f42b0b55d9f710c4f05d551df2e9e225a42033ee4f60bc5c8ab84e2a"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-13-export-overview.png",
@@ -74132,8 +74192,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 1024615,
-      "sha256": "15615dd7f650d3048f40823fc0d057b9524b146d17af000aea912e856d5dc6f9"
+      "bytes": 1024503,
+      "sha256": "e392a18e9a7785da72db98914df3f2f3af2558f51b594d2dd5e816a65c8f372a"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-13-room-processing.png",
@@ -74143,7 +74203,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1038088,
-      "sha256": "9023a7552e19f6e87acdf979d53b3e24b1432a6c7d5b6d94975e95a7fdd773ba"
+      "sha256": "8c312e4dd7fdf621ad479d0ead3173d1f32bcbfc5ef5b006a7c0a8ecfc42ac61"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-14-export-overview.png",
@@ -74152,8 +74212,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 1164540,
-      "sha256": "0719df984f1f14882101b70ba95bec892b18735c62bb5706cd936822114c0d16"
+      "bytes": 1164644,
+      "sha256": "1f2f69e31b800f4e4743b04ec27793df64e906a897532229177182c388dea1ef"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-14-room-workroom.png",
@@ -74163,7 +74223,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1067433,
-      "sha256": "be9369b995986f2773679035fea7b5d65169db2e32a496413a778b1af7465b6f"
+      "sha256": "ff8bf0f2b36a85f7178df1d4a9cfafc72aec727c074a3bd73484d19d3bf63f69"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-15-export-overview.png",
@@ -74172,8 +74232,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 1056304,
-      "sha256": "72583934a64b5a6bdfbcf6db7075923710694ad18821139397390ea0c663775b"
+      "bytes": 1056447,
+      "sha256": "8f649ec68714163c08acb1884658f55aeb5599cfcfee2ea417e6830dd9af7e40"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-15-room-processing.png",
@@ -74183,7 +74243,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1018219,
-      "sha256": "a80a4797d8657d6ecfb01410fc08bad771468a01ce6109d4cd44ec36c5d3fea7"
+      "sha256": "3967cccb8e6156a021070171fb460db95f1c2242fc0b030e67e3fa15df54178e"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-16-export-overview.png",
@@ -74192,8 +74252,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 1122476,
-      "sha256": "997ba5597f02f41d11593491988f8dc8abeabdfb8b1b56f60d1edbe77895c82a"
+      "bytes": 1122104,
+      "sha256": "58e1deffac20a5a5709348c3625c247a5382dd0f1a3fe857343cf0bc766819a7"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-16-room-office.png",
@@ -74203,7 +74263,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1053847,
-      "sha256": "199f7a44b758d8c90c48cc11c175089d721684c85b70313678a66168dc92f49d"
+      "sha256": "aa732d1796bd89b9bd31fa781433e56eb6d7f2381715718f17e5a229340743eb"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-17-export-overview.png",
@@ -74212,8 +74272,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 1065322,
-      "sha256": "c05064ec1db238ac140b4b653a01bd57ec8165c7fbdf39004383864e044bd81e"
+      "bytes": 1064954,
+      "sha256": "815fbfba88be25a5ee34d12efcaf1ca0db93a805cda42070876a17c49344d82b"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-17-room-barracks.png",
@@ -74223,7 +74283,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1020035,
-      "sha256": "73d8f4d02333cd3a42bd8713fda5dbadb071e14550064f37bd9da3c7ab76c54d"
+      "sha256": "964de86e950fcb1b4a3c641af8e449e645747a86f0e76754a9dc5c9f3a71e72c"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-18-export-overview.png",
@@ -74232,8 +74292,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 1037617,
-      "sha256": "6e0438463c4f65378cc5f3be49cb3eed5a65cd010befe74afb926cf477d3ad8f"
+      "bytes": 1037610,
+      "sha256": "96d6b0f2c00610a785e11a09163605f4e1459b975f7f223d081fd09a8415f492"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-18-room-shop.png",
@@ -74243,7 +74303,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1010126,
-      "sha256": "a2449b27337f70585bc651f2208b053e5be7a5298fd18f5553541f2f0950d9f9"
+      "sha256": "104f9a238e026f3a7cb85c0d806435a454beb37f7b3afce68fa9a958ce1f31cd"
     },
     {
       "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/00-entrance-and-coat-vestibule/east.png",
@@ -75193,7 +75253,7 @@
       "width": 960,
       "height": 720,
       "bytes": 401494,
-      "sha256": "b1633c03bed624245753257f0a311274181ffcd13cdec5d82e312dda44c3301f"
+      "sha256": "276ff45ce16f671ca6c1d9d31f74d3f1f918f244985b3fb710b00dec8ca912a1"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/academy/structure-export-cutaway.png",
@@ -75203,7 +75263,7 @@
       "width": 960,
       "height": 720,
       "bytes": 447390,
-      "sha256": "3addb84f0d44a6a7693fef37721aeae83ac3cc092531a294c8fce59d4385d5a4"
+      "sha256": "3d1fe63d77df6050551420ef94d359ec49e5137ac398ea77b3af8abecc12691b"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/asylum/structure-export-closed.png",
@@ -75213,7 +75273,7 @@
       "width": 960,
       "height": 720,
       "bytes": 358561,
-      "sha256": "45095f9d5f5dbab0ea6870ecda1f81afb8089b9a34ff3cec419cf7ef8e4ced6b"
+      "sha256": "27c7b79a35ccad4ef8370657e3565d18b700d533018552dd927d348e06909674"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/asylum/structure-export-cutaway.png",
@@ -75223,7 +75283,7 @@
       "width": 960,
       "height": 720,
       "bytes": 407729,
-      "sha256": "76c4c9fcb6d339fe781c19af78132ec12d5218686f5b51b945d103cb9fa8c69e"
+      "sha256": "8091503ea6a5f6c1f1bbb33751d003907f43e1b5836b67da5baf61508d4566ca"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/church/structure-export-closed.png",
@@ -75233,7 +75293,7 @@
       "width": 960,
       "height": 720,
       "bytes": 370184,
-      "sha256": "2b016d52290bc6b18c408f6ea6c212dbc7f6b245de081ea9b937092cb8786883"
+      "sha256": "4148c118249da25c3f8f59ed6ae356ea91f32480ee21e0db37ff3903bc6bb67d"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/church/structure-export-cutaway.png",
@@ -75243,7 +75303,7 @@
       "width": 960,
       "height": 720,
       "bytes": 406054,
-      "sha256": "bde010e2c35ff0b1bb0d17e081effe5158eb7c432cd4708ac0eaae2ad5e1053f"
+      "sha256": "093fe4ec4fb4c623d3e7a473675341263f98131892f6af3ad5d9acb41b0c9c40"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/college/structure-export-closed.png",
@@ -75253,7 +75313,7 @@
       "width": 960,
       "height": 720,
       "bytes": 343747,
-      "sha256": "7dcbee2b114024ad5c2ceb403d54de135ddbcfb010ed8f17d201225a3848cf7c"
+      "sha256": "4350692c545f01ffe1c484c53894e9bc029327859f43e6ab9a2dddd343ae58dd"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/college/structure-export-cutaway.png",
@@ -75263,7 +75323,7 @@
       "width": 960,
       "height": 720,
       "bytes": 381539,
-      "sha256": "47eabc1d8e47473a3e30ea7ea9699b260887ecf24aeadc137ff877a858225fac"
+      "sha256": "09b31b8cca4a230b5c906dc0104df5a5eaf9bc26c675a707356a92e21e4cf010"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/farmhouse/structure-export-closed.png",
@@ -75273,7 +75333,7 @@
       "width": 960,
       "height": 720,
       "bytes": 367598,
-      "sha256": "59cafbe12bc696caebef3c40e2369416f2883da553013a56078a57db62fec0bc"
+      "sha256": "8459a730ecc2c56a208766204f83b75efa2d055985a294a14f6bd5416ba75bb6"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/farmhouse/structure-export-cutaway.png",
@@ -75283,7 +75343,7 @@
       "width": 960,
       "height": 720,
       "bytes": 409349,
-      "sha256": "1efd976f872c5e8f479804c1c257582b7dfd00ae92e70c17553ec75a5c80a367"
+      "sha256": "491d0934d30b9304376ca686861cf8adb5bbe90ae55f4cb8d7e42072cd26db25"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/mansion/structure-export-closed.png",
@@ -75293,7 +75353,7 @@
       "width": 960,
       "height": 720,
       "bytes": 367206,
-      "sha256": "56b0a9014ba5f30ccc629c39cbb80dfa51755501b636e51c60cd7a01d4961d28"
+      "sha256": "7e122d179119aa86868ee30ea9e9997c0620b1510baecc0dd598e7d42e5f74a6"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/mansion/structure-export-cutaway.png",
@@ -75303,7 +75363,7 @@
       "width": 960,
       "height": 720,
       "bytes": 407542,
-      "sha256": "96a5578a3c5b770a635f954fc4c8a986b1942f31cb400ea8cd3dce76274eaaff"
+      "sha256": "33c48ec38627758db3bd715d896287ba895c7d0663f350986fb5cb24a1fa7a9e"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/prison/structure-export-closed.png",
@@ -75313,7 +75373,7 @@
       "width": 960,
       "height": 720,
       "bytes": 357079,
-      "sha256": "fe631559c108bbeb635a7beb1d6dc7ec6ba26bcc763ab95d2955d01169b92566"
+      "sha256": "eda9a70c90688c982e7bdd81900cd5431c3eb2738a3a402d6f0b660b30d23cae"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/prison/structure-export-cutaway.png",
@@ -75323,7 +75383,7 @@
       "width": 960,
       "height": 720,
       "bytes": 404089,
-      "sha256": "dede297342ea5a7d31be3dadbdc7c6dd5ff4ba56296284112e3997409f8c773f"
+      "sha256": "b2a7cda1938e9074febddda325ca8dc9efdbdf0e4e97615c5ce712a7e41359fe"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-01.png",
@@ -75362,8 +75422,8 @@
       "kind": "Native structural blocking review; runtime integration pending",
       "width": 1920,
       "height": 768,
-      "bytes": 288119,
-      "sha256": "bddecd75f68f5bda09cd34fbf6a09f36608073a932f58eefe65f9016c6bdae6b"
+      "bytes": 324759,
+      "sha256": "3900e552f260d1dd47d4ff2b1bbd43066de13dc5200c8f10fc4e98a175a06a77"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-05.png",
@@ -75392,8 +75452,8 @@
       "kind": "Native structural blocking review; runtime integration pending",
       "width": 1920,
       "height": 768,
-      "bytes": 115990,
-      "sha256": "1aa90e60242d701f7c7ac5af4a07063d026065fb15b7fca292c74218bb6d7083"
+      "bytes": 115715,
+      "sha256": "c5443d620d2b821b38fac408d48b76b31c5947d334448ab20577ce54e97904fc"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/school/structure-export-closed.png",
@@ -75403,7 +75463,7 @@
       "width": 960,
       "height": 720,
       "bytes": 346938,
-      "sha256": "eb1fedcca050a838b064f7c583af8ddc4cbe63366a3ea7b3f006da459c6e32c9"
+      "sha256": "a2a98207b7385350e1393c92bbef05f0d0e473215587fa19f377771d5c5ee233"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/school/structure-export-cutaway.png",
@@ -75413,7 +75473,7 @@
       "width": 960,
       "height": 720,
       "bytes": 385946,
-      "sha256": "4b4f8423a7360e491b9bbecffdeba8421e9b155ec5782102d157294f1e846804"
+      "sha256": "d4af328fd413f22d722be179f8ed58f9233f3c83a441b20991e951f245cb84e9"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-03/structure-export-closed.png",
@@ -75423,7 +75483,7 @@
       "width": 960,
       "height": 720,
       "bytes": 254763,
-      "sha256": "7ad518b66195a492e56016070c39d2106a8ed932288b96771065997e51bc6b6a"
+      "sha256": "37790f8b45dabcf0ee670316e7ed4d841bb36c34373b219b88d38d7d14e01678"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-03/structure-export-cutaway.png",
@@ -75433,7 +75493,7 @@
       "width": 960,
       "height": 720,
       "bytes": 266855,
-      "sha256": "607832d6a532bdb989cf035a6c85c988d84e45f507d0e762653c3e3fcb77f4cb"
+      "sha256": "29fcb28bc2c2bf10e3ae22f8908f5d13ee68c796b3a647f8bbe905e5bda9c107"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-04/structure-export-closed.png",
@@ -75443,7 +75503,7 @@
       "width": 960,
       "height": 720,
       "bytes": 341653,
-      "sha256": "2f7dc6408cb28af8b12b9eec9a2e0343222954c27ab522c0e83bbf4c06df89c8"
+      "sha256": "ed5f0ad589f1710899e870e092c7884fbd4cc191950dcd94aa82d6dfbf28fb1e"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-04/structure-export-cutaway.png",
@@ -75453,7 +75513,7 @@
       "width": 960,
       "height": 720,
       "bytes": 352178,
-      "sha256": "76afb80dcb196db58fc8d7458a57e22bf6a99964a3e7388a8e8e31a86d6a4d1d"
+      "sha256": "669b3f2e3700b92f2bd734da93d9a48f0dc01eb73b111781871e55659e716a00"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-05/structure-export-closed.png",
@@ -75463,7 +75523,7 @@
       "width": 960,
       "height": 720,
       "bytes": 366810,
-      "sha256": "70bcfb1b0dba08b4043b5fcaf71f121588433631245217dac69d90949164255e"
+      "sha256": "70b1268228a98e0f25a45ea997b8fab0eace24b5822a7e9221d1df1f27bfecc4"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-05/structure-export-cutaway.png",
@@ -75473,7 +75533,7 @@
       "width": 960,
       "height": 720,
       "bytes": 400209,
-      "sha256": "2576d364e32dfc4e949911a141eb141a937c306e1320ed7ef0b2fcbf6edb4ad8"
+      "sha256": "20b766c38626a0e9539fdef3025c59713ba37ed768ff3cca3ec00130aec5d0c0"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-06/structure-export-closed.png",
@@ -75483,7 +75543,7 @@
       "width": 960,
       "height": 720,
       "bytes": 332028,
-      "sha256": "382ab64cfeeba40888ebb29946c43172404957393e9d596df3744cbfe546027f"
+      "sha256": "d08af599840f5ed7a473e3fed2e84e9c092afcc53297cbc7f6ad309dea815af0"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-06/structure-export-cutaway.png",
@@ -75493,7 +75553,7 @@
       "width": 960,
       "height": 720,
       "bytes": 348244,
-      "sha256": "e7674dd8eddd709923fdad9ad252d8d74d843871d61131f5c2e96d2799674a8a"
+      "sha256": "bcba3b76a7150cb21b2825f3b96b0127aaa71b38ba1f81cb28885b21cf1884d9"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-07-mortuary/structure-export-closed.png",
@@ -75502,8 +75562,8 @@
       "kind": "Native structural blocking review; runtime integration pending",
       "width": 960,
       "height": 720,
-      "bytes": 447550,
-      "sha256": "b232b09da48b2e9e46266ec382b139b2b59e12837078df0a1996163c3055812e"
+      "bytes": 447641,
+      "sha256": "06d3e2b9b387e80215284fabbb20fd81c9c0c9372f434765f051c827fcaf71be"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-07-mortuary/structure-export-cutaway.png",
@@ -75512,8 +75572,8 @@
       "kind": "Native structural blocking review; runtime integration pending",
       "width": 960,
       "height": 720,
-      "bytes": 474096,
-      "sha256": "15750cb53de683ab558db385ef79cc3408417a6f066c83ba3bc6d83ba826edb6"
+      "bytes": 473488,
+      "sha256": "82b40918ea47a22a895e9828d6833614a3c92cfbc47428464abef466203c7ff5"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-07/structure-export-closed.png",
@@ -75522,8 +75582,8 @@
       "kind": "Native structural blocking review; runtime integration pending",
       "width": 960,
       "height": 720,
-      "bytes": 324750,
-      "sha256": "c3644a1b8839957abd0a8bb2796212229785306467a3eb442c6140e2d7cfccbc"
+      "bytes": 487233,
+      "sha256": "fe2be2952882aee5e55e4c84a0e376b299c8c118473d6f6cdbd596138d321b0d"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-07/structure-export-cutaway.png",
@@ -75532,8 +75592,8 @@
       "kind": "Native structural blocking review; runtime integration pending",
       "width": 960,
       "height": 720,
-      "bytes": 344370,
-      "sha256": "cd33bebef08470928cd1cbfdfce889aa14b0712980d9913f04b5ec5464bab261"
+      "bytes": 508803,
+      "sha256": "60091c3ce9e8eae9b2c12d9b3a90447fc879296009f1136afd7b78e4d465ed9c"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-08/structure-export-closed.png",
@@ -75543,7 +75603,7 @@
       "width": 960,
       "height": 720,
       "bytes": 304339,
-      "sha256": "8d933a0e06d77a454f32d6b48851df954b54e39cdf349996b9bf419ad84df2fc"
+      "sha256": "4b2f3d8973d573867b62892262d970eaf9e83f886724d731f1d3398e69e2f2b5"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-08/structure-export-cutaway.png",
@@ -75553,7 +75613,7 @@
       "width": 960,
       "height": 720,
       "bytes": 333009,
-      "sha256": "c9cef68b7e92984579b21dbe1501f7e77659cdf420afe485ca0f408352f4b419"
+      "sha256": "9eaeb1e7f5a7d7f4c8e4cc87556cc992e805cc47c9383ebed3252f3f7e42cccd"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-09/structure-export-closed.png",
@@ -75563,7 +75623,7 @@
       "width": 960,
       "height": 720,
       "bytes": 366652,
-      "sha256": "440a5550a8305ea48f9d30085a18e26c158387a0ecd6afa02a22bce8b00fccda"
+      "sha256": "108e78ce0e823b0ac9a5e4a5245445dc311b21e750054eb11f0d15aec983be53"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-09/structure-export-cutaway.png",
@@ -75573,7 +75633,7 @@
       "width": 960,
       "height": 720,
       "bytes": 387216,
-      "sha256": "665dcfa5ff2b33c13f88ede7b0dc11625c66648b221e7789024a0c5d9a6eea37"
+      "sha256": "7f9524f4c4245f3d8f7c6f77db69dcbb2e386864b3f33652f45af5a9cb30714a"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-10/structure-export-closed.png",
@@ -75583,7 +75643,7 @@
       "width": 960,
       "height": 720,
       "bytes": 286523,
-      "sha256": "0d452337ad8f57a76de5dc32cc5eae782c843780c6ff44289d0b5f9ac2a71123"
+      "sha256": "c21748ae6ea4b4e60edd6575105e7b7069ccb95c674dade74ff4c1fac968e53b"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-10/structure-export-cutaway.png",
@@ -75593,7 +75653,7 @@
       "width": 960,
       "height": 720,
       "bytes": 315777,
-      "sha256": "aba1a7de28c376590eb38a02430e366969c9eeaa1c8a67cddf25c1a582cf339b"
+      "sha256": "447ffb8a70a58092487aac9686edcf2614f176c6a4988dc524a9e868d98211bd"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-11/structure-export-closed.png",
@@ -75603,7 +75663,7 @@
       "width": 960,
       "height": 720,
       "bytes": 340492,
-      "sha256": "ad82d34b432d118cfb587ea11d5f6773da14fac96868aabe20008bdc2eea4e99"
+      "sha256": "6e8bf61c37226ae31a0293114607cbca6914ef45903fb532d55d623843d0d18a"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-11/structure-export-cutaway.png",
@@ -75613,7 +75673,7 @@
       "width": 960,
       "height": 720,
       "bytes": 359551,
-      "sha256": "b4b4be312b58c854ef3081314b9414108c450002808f5a0845d4b52d9f2e4d29"
+      "sha256": "166224c13f5ece975bb8f6061e8e146de05722d20b51aebb1b9a757f03a6fd91"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-12/structure-export-closed.png",
@@ -75623,7 +75683,7 @@
       "width": 960,
       "height": 720,
       "bytes": 262736,
-      "sha256": "6e6fbcfcdd40284fdad103a73affdcd50afa89d0c46ad33279ef73f6b95ffe9b"
+      "sha256": "9be23f427bb85545bd1e3143a1748a1b62ddc3962d580a49155054dc4855978d"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-12/structure-export-cutaway.png",
@@ -75633,7 +75693,7 @@
       "width": 960,
       "height": 720,
       "bytes": 274422,
-      "sha256": "b7d3d84ca2d9d2b316791d61bed9dde095fe2bf608c17be0522a50353425695a"
+      "sha256": "db623e520587ef2d4a2615c086e9133e4e06aed41e1dc60ad2f204213047dd91"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-13/structure-export-closed.png",
@@ -75643,7 +75703,7 @@
       "width": 960,
       "height": 720,
       "bytes": 287211,
-      "sha256": "8136b55c95cc9001443ef18817c9dc5b672891d42710f0d14e72a6dd51616459"
+      "sha256": "177a12a6645b17f311b88f4921e4ef1898c059e15f2e3b784e944791dabe42f6"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-13/structure-export-cutaway.png",
@@ -75653,7 +75713,7 @@
       "width": 960,
       "height": 720,
       "bytes": 318793,
-      "sha256": "2064b060388fc6db3e2e4beb725dc90fa5ea9dc6ad339a921feca35d8ae8b55b"
+      "sha256": "195db1c5be36c5b7cf4d9d7ea7b71a90d270cbcc4a722e3bc6aeb87cb7335423"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-14/structure-export-closed.png",
@@ -75663,7 +75723,7 @@
       "width": 960,
       "height": 720,
       "bytes": 641045,
-      "sha256": "f13167980e2be426b5ffe87efbe857fbef24a52d7650811e362b025bc92cde35"
+      "sha256": "7383aea27bfd34bc1fed01140d57f9ea6f66ee5609e4206a49a5cbf570144606"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-14/structure-export-cutaway.png",
@@ -75673,7 +75733,7 @@
       "width": 960,
       "height": 720,
       "bytes": 673729,
-      "sha256": "8c2715420eff15931378875244d63266366cd37efe1d9b1c72f66f9404e3fc0e"
+      "sha256": "914032a729b7ff34f6ef7c78a8b0efc61b1d33640ba4aac0f7d6b9938d1c4954"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-15/structure-export-closed.png",
@@ -75683,7 +75743,7 @@
       "width": 960,
       "height": 720,
       "bytes": 636846,
-      "sha256": "fe6ed2f3787ab1d82d0080f989bff2b091689d684f5155717c4a3bc29b2d6eec"
+      "sha256": "1174eb86a205dd328251b1ed2bfb7760a010ff87040b96b8d7f866a5545e549d"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-15/structure-export-cutaway.png",
@@ -75693,7 +75753,7 @@
       "width": 960,
       "height": 720,
       "bytes": 645969,
-      "sha256": "cc7c39019f4805e6d038ed1298064dd8540b3777e1fa358b8a747721dc37e398"
+      "sha256": "8d8567cd1a2e5587e980a0c20084a00edc015391486a87c8c127e4d7b48047ad"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-16/structure-export-closed.png",
@@ -75703,7 +75763,7 @@
       "width": 960,
       "height": 720,
       "bytes": 606209,
-      "sha256": "6a5c2097b55e081c689cf96dddc101c1754044f58b1dc1838a0f351f6feb0e9e"
+      "sha256": "15cae7eb5860db0b63ced26cbd9d3317765633896896f87d131d0957cb859be1"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-16/structure-export-cutaway.png",
@@ -75713,7 +75773,7 @@
       "width": 960,
       "height": 720,
       "bytes": 630885,
-      "sha256": "09e2668484319e24396fa557019f3329b13e58d42dd9e2e2cd870295bb81d025"
+      "sha256": "ba33113132e59c3ef32bd216822cafa03597e85ac86509beb6596ebdf5132aee"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-17/structure-export-closed.png",
@@ -75723,7 +75783,7 @@
       "width": 960,
       "height": 720,
       "bytes": 533762,
-      "sha256": "ccb517fc249976981751d704f0d34d903d354d4b4b06502f6ebd24ae4a1f7f10"
+      "sha256": "74f9356a56e83aca6272c3f5aea1da5524adc9de6118499502effd5e124f96c9"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-17/structure-export-cutaway.png",
@@ -75733,7 +75793,7 @@
       "width": 960,
       "height": 720,
       "bytes": 558284,
-      "sha256": "e415c9ea58299a955ce41dcd07d0783b0df6420d89538f9432390ea9366a38c3"
+      "sha256": "b9039b73c1ea613df0df63a6dde92e1400234821f712c3f10d79e5113d1b9f32"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-18/structure-export-closed.png",
@@ -75743,7 +75803,7 @@
       "width": 960,
       "height": 720,
       "bytes": 539983,
-      "sha256": "2b818767b2930ca6cb9ad3b048d4cfc995277fc7c7f95ddf3d4a9fd16254164e"
+      "sha256": "6e99b5c772d7e65dc327d3f3e3b3e17e49a6dd7325fce3819fc750813b19d601"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-18/structure-export-cutaway.png",
@@ -75753,7 +75813,7 @@
       "width": 960,
       "height": 720,
       "bytes": 555906,
-      "sha256": "3ff295e8385e5afb2a72cc9a3de2e8436c4f3519e002e8a3b6de74579c40642f"
+      "sha256": "153ec0f2e7f94d89e0a94932140f5fe484bbb1c8c7053277307a19064fb7c63b"
     },
     {
       "path": "development/levels/rebuild/previews/academy-revised-rough-plan.png",
@@ -75936,6 +75996,16 @@
       "sha256": "f7a67fb5496c6c7f00f5d7582899d1c0abd008ddb6760597eb8a4862be03eee1"
     },
     {
+      "path": "development/levels/rebuild/previews/wld-07-saved-terrain.png",
+      "url": "development/levels/rebuild/previews/wld-07-saved-terrain.png",
+      "title": "Wld 07 saved terrain",
+      "kind": "Native saved editor terrain inspection; punched physical geometry",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 42517,
+      "sha256": "3fc627a956a4128d8ef60f83596d1991ed8f68f0d6ce9f547d077de326a65870"
+    },
+    {
       "path": "development/levels/rebuild/previews/wld-14-saved-terrain.png",
       "url": "development/levels/rebuild/previews/wld-14-saved-terrain.png",
       "title": "Wld 14 saved terrain",
@@ -75963,7 +76033,7 @@
       "width": 960,
       "height": 720,
       "bytes": 415408,
-      "sha256": "b64f0fad64991f1d724dc79b3b1c5fef8787f20b3e824aba8aecfb1b8e4f98d9"
+      "sha256": "9986adee8413bd566e04fae0bf76368320cb331bb47b50093648673dea0f4032"
     },
     {
       "path": "development/levels/rebuild/structures/academy/structure-export-closed.png",
@@ -75973,7 +76043,7 @@
       "width": 960,
       "height": 720,
       "bytes": 401494,
-      "sha256": "b1633c03bed624245753257f0a311274181ffcd13cdec5d82e312dda44c3301f"
+      "sha256": "276ff45ce16f671ca6c1d9d31f74d3f1f918f244985b3fb710b00dec8ca912a1"
     },
     {
       "path": "development/levels/rebuild/structures/academy/structure-export-cutaway.png",
@@ -75983,7 +76053,7 @@
       "width": 960,
       "height": 720,
       "bytes": 447390,
-      "sha256": "3addb84f0d44a6a7693fef37721aeae83ac3cc092531a294c8fce59d4385d5a4"
+      "sha256": "3d1fe63d77df6050551420ef94d359ec49e5137ac398ea77b3af8abecc12691b"
     },
     {
       "path": "development/levels/rebuild/structures/asylum/preview.png",
@@ -75993,7 +76063,7 @@
       "width": 960,
       "height": 720,
       "bytes": 412045,
-      "sha256": "c530b93de2d1127bdcef2e0f5fec12461fcc59e5238169a0a68ba08fd091c7e8"
+      "sha256": "5fd65a388e82586ff475e80986bdf7d9a38b7f276bca304d24725082d7625acf"
     },
     {
       "path": "development/levels/rebuild/structures/asylum/structure-export-closed.png",
@@ -76003,7 +76073,7 @@
       "width": 960,
       "height": 720,
       "bytes": 358561,
-      "sha256": "45095f9d5f5dbab0ea6870ecda1f81afb8089b9a34ff3cec419cf7ef8e4ced6b"
+      "sha256": "27c7b79a35ccad4ef8370657e3565d18b700d533018552dd927d348e06909674"
     },
     {
       "path": "development/levels/rebuild/structures/asylum/structure-export-cutaway.png",
@@ -76013,7 +76083,7 @@
       "width": 960,
       "height": 720,
       "bytes": 407729,
-      "sha256": "76c4c9fcb6d339fe781c19af78132ec12d5218686f5b51b945d103cb9fa8c69e"
+      "sha256": "8091503ea6a5f6c1f1bbb33751d003907f43e1b5836b67da5baf61508d4566ca"
     },
     {
       "path": "development/levels/rebuild/structures/church/preview.png",
@@ -76023,7 +76093,7 @@
       "width": 960,
       "height": 720,
       "bytes": 386462,
-      "sha256": "334db906e4d2aae81b1fd980ff95c803160d7fabf3ebbdd4c3bb977b9df237e0"
+      "sha256": "3e42e4c209e5f2be77cba9d1bac98b2aecc4143634bc97c0c091ec27df6e8665"
     },
     {
       "path": "development/levels/rebuild/structures/church/structure-export-closed.png",
@@ -76033,7 +76103,7 @@
       "width": 960,
       "height": 720,
       "bytes": 370184,
-      "sha256": "2b016d52290bc6b18c408f6ea6c212dbc7f6b245de081ea9b937092cb8786883"
+      "sha256": "4148c118249da25c3f8f59ed6ae356ea91f32480ee21e0db37ff3903bc6bb67d"
     },
     {
       "path": "development/levels/rebuild/structures/church/structure-export-cutaway.png",
@@ -76043,7 +76113,7 @@
       "width": 960,
       "height": 720,
       "bytes": 406054,
-      "sha256": "bde010e2c35ff0b1bb0d17e081effe5158eb7c432cd4708ac0eaae2ad5e1053f"
+      "sha256": "093fe4ec4fb4c623d3e7a473675341263f98131892f6af3ad5d9acb41b0c9c40"
     },
     {
       "path": "development/levels/rebuild/structures/college/preview.png",
@@ -76053,7 +76123,7 @@
       "width": 960,
       "height": 720,
       "bytes": 405749,
-      "sha256": "e08135fd4c9d225512c7df9d632af89179ffaec4d9814b684624873ccfbdf3fb"
+      "sha256": "a65dbbd217be4cfc07886959fd981b688c4d46725d059f63acb6ce8c19727993"
     },
     {
       "path": "development/levels/rebuild/structures/college/structure-export-closed.png",
@@ -76063,7 +76133,7 @@
       "width": 960,
       "height": 720,
       "bytes": 343747,
-      "sha256": "7dcbee2b114024ad5c2ceb403d54de135ddbcfb010ed8f17d201225a3848cf7c"
+      "sha256": "4350692c545f01ffe1c484c53894e9bc029327859f43e6ab9a2dddd343ae58dd"
     },
     {
       "path": "development/levels/rebuild/structures/college/structure-export-cutaway.png",
@@ -76073,7 +76143,7 @@
       "width": 960,
       "height": 720,
       "bytes": 381539,
-      "sha256": "47eabc1d8e47473a3e30ea7ea9699b260887ecf24aeadc137ff877a858225fac"
+      "sha256": "09b31b8cca4a230b5c906dc0104df5a5eaf9bc26c675a707356a92e21e4cf010"
     },
     {
       "path": "development/levels/rebuild/structures/farmhouse/preview.png",
@@ -76083,7 +76153,7 @@
       "width": 960,
       "height": 720,
       "bytes": 399206,
-      "sha256": "4edabd8fc5da6fe2346f2151a21a756d119ba83f285b930f18b417c209e440bf"
+      "sha256": "91b6309c6798beb83faed15225fd1e9bfe342a26e4435dda5094a92ee689827b"
     },
     {
       "path": "development/levels/rebuild/structures/farmhouse/structure-export-closed.png",
@@ -76093,7 +76163,7 @@
       "width": 960,
       "height": 720,
       "bytes": 367598,
-      "sha256": "59cafbe12bc696caebef3c40e2369416f2883da553013a56078a57db62fec0bc"
+      "sha256": "8459a730ecc2c56a208766204f83b75efa2d055985a294a14f6bd5416ba75bb6"
     },
     {
       "path": "development/levels/rebuild/structures/farmhouse/structure-export-cutaway.png",
@@ -76103,7 +76173,7 @@
       "width": 960,
       "height": 720,
       "bytes": 409349,
-      "sha256": "1efd976f872c5e8f479804c1c257582b7dfd00ae92e70c17553ec75a5c80a367"
+      "sha256": "491d0934d30b9304376ca686861cf8adb5bbe90ae55f4cb8d7e42072cd26db25"
     },
     {
       "path": "development/levels/rebuild/structures/mansion/preview.png",
@@ -76113,7 +76183,7 @@
       "width": 960,
       "height": 720,
       "bytes": 397047,
-      "sha256": "e25e586e994c5db1bd952c0c048f842cb176b6d7d1091949f57ec3524e601865"
+      "sha256": "67bcc5d74e2bc64de735583d3a855b200ed7cedebd392f6ef404f211441047d9"
     },
     {
       "path": "development/levels/rebuild/structures/mansion/structure-export-closed.png",
@@ -76123,7 +76193,7 @@
       "width": 960,
       "height": 720,
       "bytes": 367206,
-      "sha256": "56b0a9014ba5f30ccc629c39cbb80dfa51755501b636e51c60cd7a01d4961d28"
+      "sha256": "7e122d179119aa86868ee30ea9e9997c0620b1510baecc0dd598e7d42e5f74a6"
     },
     {
       "path": "development/levels/rebuild/structures/mansion/structure-export-cutaway.png",
@@ -76133,7 +76203,7 @@
       "width": 960,
       "height": 720,
       "bytes": 407542,
-      "sha256": "96a5578a3c5b770a635f954fc4c8a986b1942f31cb400ea8cd3dce76274eaaff"
+      "sha256": "33c48ec38627758db3bd715d896287ba895c7d0663f350986fb5cb24a1fa7a9e"
     },
     {
       "path": "development/levels/rebuild/structures/prison/preview.png",
@@ -76143,7 +76213,7 @@
       "width": 960,
       "height": 720,
       "bytes": 418865,
-      "sha256": "131db4a24299da6dac48fa08656e793332b287aebd8a3d9bd4065381d4b86ef2"
+      "sha256": "fb848fb3448adb5f0750e198c9544c242a24ee2995d9de2ce8d482aa81e69ba0"
     },
     {
       "path": "development/levels/rebuild/structures/prison/structure-export-closed.png",
@@ -76153,7 +76223,7 @@
       "width": 960,
       "height": 720,
       "bytes": 357079,
-      "sha256": "fe631559c108bbeb635a7beb1d6dc7ec6ba26bcc763ab95d2955d01169b92566"
+      "sha256": "eda9a70c90688c982e7bdd81900cd5431c3eb2738a3a402d6f0b660b30d23cae"
     },
     {
       "path": "development/levels/rebuild/structures/prison/structure-export-cutaway.png",
@@ -76163,7 +76233,7 @@
       "width": 960,
       "height": 720,
       "bytes": 404089,
-      "sha256": "dede297342ea5a7d31be3dadbdc7c6dd5ff4ba56296284112e3997409f8c773f"
+      "sha256": "b2a7cda1938e9074febddda325ca8dc9efdbdf0e4e97615c5ce712a7e41359fe"
     },
     {
       "path": "development/levels/rebuild/structures/school/preview.png",
@@ -76173,7 +76243,7 @@
       "width": 960,
       "height": 720,
       "bytes": 411771,
-      "sha256": "fa7e4a3abca8dbe325e2a50602e2c81cce88911192ed398db468670ba2962099"
+      "sha256": "a96cacf1489c3b75f4243f139e2b343d13b76cf61a6c701ca59566ee5462570a"
     },
     {
       "path": "development/levels/rebuild/structures/school/structure-export-closed.png",
@@ -76183,7 +76253,7 @@
       "width": 960,
       "height": 720,
       "bytes": 346938,
-      "sha256": "eb1fedcca050a838b064f7c583af8ddc4cbe63366a3ea7b3f006da459c6e32c9"
+      "sha256": "a2a98207b7385350e1393c92bbef05f0d0e473215587fa19f377771d5c5ee233"
     },
     {
       "path": "development/levels/rebuild/structures/school/structure-export-cutaway.png",
@@ -76193,7 +76263,7 @@
       "width": 960,
       "height": 720,
       "bytes": 385946,
-      "sha256": "4b4f8423a7360e491b9bbecffdeba8421e9b155ec5782102d157294f1e846804"
+      "sha256": "d4af328fd413f22d722be179f8ed58f9233f3c83a441b20991e951f245cb84e9"
     },
     {
       "path": "development/levels/rebuild/structures/wld-03/preview.png",
@@ -76203,7 +76273,7 @@
       "width": 960,
       "height": 720,
       "bytes": 377153,
-      "sha256": "87a45cee85a036a56e0d869875b3a92735eded765a319648aaa9a174953fb358"
+      "sha256": "278792e0ba8f6ca72ec0621213b08077a9447462f9250d2d624532d614c9dc5f"
     },
     {
       "path": "development/levels/rebuild/structures/wld-03/structure-export-closed.png",
@@ -76213,7 +76283,7 @@
       "width": 960,
       "height": 720,
       "bytes": 254763,
-      "sha256": "7ad518b66195a492e56016070c39d2106a8ed932288b96771065997e51bc6b6a"
+      "sha256": "37790f8b45dabcf0ee670316e7ed4d841bb36c34373b219b88d38d7d14e01678"
     },
     {
       "path": "development/levels/rebuild/structures/wld-03/structure-export-cutaway.png",
@@ -76223,7 +76293,7 @@
       "width": 960,
       "height": 720,
       "bytes": 266855,
-      "sha256": "607832d6a532bdb989cf035a6c85c988d84e45f507d0e762653c3e3fcb77f4cb"
+      "sha256": "29fcb28bc2c2bf10e3ae22f8908f5d13ee68c796b3a647f8bbe905e5bda9c107"
     },
     {
       "path": "development/levels/rebuild/structures/wld-04/preview.png",
@@ -76233,7 +76303,7 @@
       "width": 960,
       "height": 720,
       "bytes": 374092,
-      "sha256": "10826436c5020c08819e2ec845422e518744b52a1ae80b813c8193f25f51d5e2"
+      "sha256": "1c0a5f7cf52df4c3649c07ea5122d33f949672f82ef51f39e922e4888f1f1b79"
     },
     {
       "path": "development/levels/rebuild/structures/wld-04/structure-export-closed.png",
@@ -76243,7 +76313,7 @@
       "width": 960,
       "height": 720,
       "bytes": 341653,
-      "sha256": "2f7dc6408cb28af8b12b9eec9a2e0343222954c27ab522c0e83bbf4c06df89c8"
+      "sha256": "ed5f0ad589f1710899e870e092c7884fbd4cc191950dcd94aa82d6dfbf28fb1e"
     },
     {
       "path": "development/levels/rebuild/structures/wld-04/structure-export-cutaway.png",
@@ -76253,7 +76323,7 @@
       "width": 960,
       "height": 720,
       "bytes": 352178,
-      "sha256": "76afb80dcb196db58fc8d7458a57e22bf6a99964a3e7388a8e8e31a86d6a4d1d"
+      "sha256": "669b3f2e3700b92f2bd734da93d9a48f0dc01eb73b111781871e55659e716a00"
     },
     {
       "path": "development/levels/rebuild/structures/wld-05/preview.png",
@@ -76263,7 +76333,7 @@
       "width": 960,
       "height": 720,
       "bytes": 399727,
-      "sha256": "b85fbbd7e7ddaecd4eca242e1171e0838ab6b5450362a14bbb0d98afd5feeb24"
+      "sha256": "5c6ef658b933d9eedd6a40b218a2a8cad8b62cc4aa7f1f2504741415963db39b"
     },
     {
       "path": "development/levels/rebuild/structures/wld-05/structure-export-closed.png",
@@ -76273,7 +76343,7 @@
       "width": 960,
       "height": 720,
       "bytes": 366810,
-      "sha256": "70bcfb1b0dba08b4043b5fcaf71f121588433631245217dac69d90949164255e"
+      "sha256": "70b1268228a98e0f25a45ea997b8fab0eace24b5822a7e9221d1df1f27bfecc4"
     },
     {
       "path": "development/levels/rebuild/structures/wld-05/structure-export-cutaway.png",
@@ -76283,7 +76353,7 @@
       "width": 960,
       "height": 720,
       "bytes": 400209,
-      "sha256": "2576d364e32dfc4e949911a141eb141a937c306e1320ed7ef0b2fcbf6edb4ad8"
+      "sha256": "20b766c38626a0e9539fdef3025c59713ba37ed768ff3cca3ec00130aec5d0c0"
     },
     {
       "path": "development/levels/rebuild/structures/wld-06/preview.png",
@@ -76293,7 +76363,7 @@
       "width": 960,
       "height": 720,
       "bytes": 397264,
-      "sha256": "3b79a04f63c9e63ea784250b855a04995316bbb6de4c905656b72301ea56ccba"
+      "sha256": "c01fdc6d4238b9a9d923b510a82c51512922571137e242a7aa7581a1d67cd0d0"
     },
     {
       "path": "development/levels/rebuild/structures/wld-06/structure-export-closed.png",
@@ -76303,7 +76373,7 @@
       "width": 960,
       "height": 720,
       "bytes": 332028,
-      "sha256": "382ab64cfeeba40888ebb29946c43172404957393e9d596df3744cbfe546027f"
+      "sha256": "d08af599840f5ed7a473e3fed2e84e9c092afcc53297cbc7f6ad309dea815af0"
     },
     {
       "path": "development/levels/rebuild/structures/wld-06/structure-export-cutaway.png",
@@ -76313,7 +76383,7 @@
       "width": 960,
       "height": 720,
       "bytes": 348244,
-      "sha256": "e7674dd8eddd709923fdad9ad252d8d74d843871d61131f5c2e96d2799674a8a"
+      "sha256": "bcba3b76a7150cb21b2825f3b96b0127aaa71b38ba1f81cb28885b21cf1884d9"
     },
     {
       "path": "development/levels/rebuild/structures/wld-07-mortuary/preview.png",
@@ -76322,8 +76392,8 @@
       "kind": "Native planning-scene preview",
       "width": 960,
       "height": 720,
-      "bytes": 518472,
-      "sha256": "c8e9d7611282292eeef1a0ed9e02640c804066e05ee464449aa4792af30ac83e"
+      "bytes": 516687,
+      "sha256": "886b43ccf1d91703c441bf7403c522da0e1fbd2a56500e48446d99fbbe005a93"
     },
     {
       "path": "development/levels/rebuild/structures/wld-07-mortuary/structure-export-closed.png",
@@ -76332,8 +76402,8 @@
       "kind": "Reimported native structure export review",
       "width": 960,
       "height": 720,
-      "bytes": 447550,
-      "sha256": "b232b09da48b2e9e46266ec382b139b2b59e12837078df0a1996163c3055812e"
+      "bytes": 447641,
+      "sha256": "06d3e2b9b387e80215284fabbb20fd81c9c0c9372f434765f051c827fcaf71be"
     },
     {
       "path": "development/levels/rebuild/structures/wld-07-mortuary/structure-export-cutaway.png",
@@ -76342,8 +76412,8 @@
       "kind": "Reimported native structure export review",
       "width": 960,
       "height": 720,
-      "bytes": 474096,
-      "sha256": "15750cb53de683ab558db385ef79cc3408417a6f066c83ba3bc6d83ba826edb6"
+      "bytes": 473488,
+      "sha256": "82b40918ea47a22a895e9828d6833614a3c92cfbc47428464abef466203c7ff5"
     },
     {
       "path": "development/levels/rebuild/structures/wld-07/preview.png",
@@ -76352,8 +76422,8 @@
       "kind": "Native planning-scene preview",
       "width": 960,
       "height": 720,
-      "bytes": 378599,
-      "sha256": "382e2c9a2af96ff286e1e115450dc3798918de5bef9e94627a43a758f0e4848e"
+      "bytes": 451663,
+      "sha256": "af38a66886e51917c82784ad351287bb7cfd79d86aa655290f04046d950d0c3c"
     },
     {
       "path": "development/levels/rebuild/structures/wld-07/structure-export-closed.png",
@@ -76362,8 +76432,8 @@
       "kind": "Reimported native structure export review",
       "width": 960,
       "height": 720,
-      "bytes": 324750,
-      "sha256": "c3644a1b8839957abd0a8bb2796212229785306467a3eb442c6140e2d7cfccbc"
+      "bytes": 487233,
+      "sha256": "fe2be2952882aee5e55e4c84a0e376b299c8c118473d6f6cdbd596138d321b0d"
     },
     {
       "path": "development/levels/rebuild/structures/wld-07/structure-export-cutaway.png",
@@ -76372,8 +76442,8 @@
       "kind": "Reimported native structure export review",
       "width": 960,
       "height": 720,
-      "bytes": 344370,
-      "sha256": "cd33bebef08470928cd1cbfdfce889aa14b0712980d9913f04b5ec5464bab261"
+      "bytes": 508803,
+      "sha256": "60091c3ce9e8eae9b2c12d9b3a90447fc879296009f1136afd7b78e4d465ed9c"
     },
     {
       "path": "development/levels/rebuild/structures/wld-08/preview.png",
@@ -76383,7 +76453,7 @@
       "width": 960,
       "height": 720,
       "bytes": 399118,
-      "sha256": "2b346a82816e251ff6d21dd4579b3ba3bd80cc3bab34ed0c8676b280e614f44a"
+      "sha256": "3571ad13757a316cf7495f683d7723233211719763c3bc809c3fefe249d33b0e"
     },
     {
       "path": "development/levels/rebuild/structures/wld-08/structure-export-closed.png",
@@ -76393,7 +76463,7 @@
       "width": 960,
       "height": 720,
       "bytes": 304339,
-      "sha256": "8d933a0e06d77a454f32d6b48851df954b54e39cdf349996b9bf419ad84df2fc"
+      "sha256": "4b2f3d8973d573867b62892262d970eaf9e83f886724d731f1d3398e69e2f2b5"
     },
     {
       "path": "development/levels/rebuild/structures/wld-08/structure-export-cutaway.png",
@@ -76403,7 +76473,7 @@
       "width": 960,
       "height": 720,
       "bytes": 333009,
-      "sha256": "c9cef68b7e92984579b21dbe1501f7e77659cdf420afe485ca0f408352f4b419"
+      "sha256": "9eaeb1e7f5a7d7f4c8e4cc87556cc992e805cc47c9383ebed3252f3f7e42cccd"
     },
     {
       "path": "development/levels/rebuild/structures/wld-09/preview.png",
@@ -76413,7 +76483,7 @@
       "width": 960,
       "height": 720,
       "bytes": 406310,
-      "sha256": "0adfd748810f1e2a5cc4e194fe633f8b45828bfb07259fe404bbe43eb9b28da3"
+      "sha256": "19107118cb253746b3e866ffe43f587d311c1aa367c5dbd357d0149c5d8aa88a"
     },
     {
       "path": "development/levels/rebuild/structures/wld-09/structure-export-closed.png",
@@ -76423,7 +76493,7 @@
       "width": 960,
       "height": 720,
       "bytes": 366652,
-      "sha256": "440a5550a8305ea48f9d30085a18e26c158387a0ecd6afa02a22bce8b00fccda"
+      "sha256": "108e78ce0e823b0ac9a5e4a5245445dc311b21e750054eb11f0d15aec983be53"
     },
     {
       "path": "development/levels/rebuild/structures/wld-09/structure-export-cutaway.png",
@@ -76433,7 +76503,7 @@
       "width": 960,
       "height": 720,
       "bytes": 387216,
-      "sha256": "665dcfa5ff2b33c13f88ede7b0dc11625c66648b221e7789024a0c5d9a6eea37"
+      "sha256": "7f9524f4c4245f3d8f7c6f77db69dcbb2e386864b3f33652f45af5a9cb30714a"
     },
     {
       "path": "development/levels/rebuild/structures/wld-10/preview.png",
@@ -76443,7 +76513,7 @@
       "width": 960,
       "height": 720,
       "bytes": 398021,
-      "sha256": "a8c0bbb4197c66baa548d4f61228695b49f0c351e17a124435d941e9ff5f10af"
+      "sha256": "4bc8b575d532c9bbacabf6b6db1cdd107c89addceb6204019f5a1d676a618f7e"
     },
     {
       "path": "development/levels/rebuild/structures/wld-10/structure-export-closed.png",
@@ -76453,7 +76523,7 @@
       "width": 960,
       "height": 720,
       "bytes": 286523,
-      "sha256": "0d452337ad8f57a76de5dc32cc5eae782c843780c6ff44289d0b5f9ac2a71123"
+      "sha256": "c21748ae6ea4b4e60edd6575105e7b7069ccb95c674dade74ff4c1fac968e53b"
     },
     {
       "path": "development/levels/rebuild/structures/wld-10/structure-export-cutaway.png",
@@ -76463,7 +76533,7 @@
       "width": 960,
       "height": 720,
       "bytes": 315777,
-      "sha256": "aba1a7de28c376590eb38a02430e366969c9eeaa1c8a67cddf25c1a582cf339b"
+      "sha256": "447ffb8a70a58092487aac9686edcf2614f176c6a4988dc524a9e868d98211bd"
     },
     {
       "path": "development/levels/rebuild/structures/wld-11/preview.png",
@@ -76473,7 +76543,7 @@
       "width": 960,
       "height": 720,
       "bytes": 368450,
-      "sha256": "00963ed0bd2f49b8cad812233e56100c19174978649940da5e5d17f2826d8a21"
+      "sha256": "b65529bbf9d14a36bcc6ab4dd129176afc575c8fe5bef3bd2ae4a7734d44cb1c"
     },
     {
       "path": "development/levels/rebuild/structures/wld-11/structure-export-closed.png",
@@ -76483,7 +76553,7 @@
       "width": 960,
       "height": 720,
       "bytes": 340492,
-      "sha256": "ad82d34b432d118cfb587ea11d5f6773da14fac96868aabe20008bdc2eea4e99"
+      "sha256": "6e8bf61c37226ae31a0293114607cbca6914ef45903fb532d55d623843d0d18a"
     },
     {
       "path": "development/levels/rebuild/structures/wld-11/structure-export-cutaway.png",
@@ -76493,7 +76563,7 @@
       "width": 960,
       "height": 720,
       "bytes": 359551,
-      "sha256": "b4b4be312b58c854ef3081314b9414108c450002808f5a0845d4b52d9f2e4d29"
+      "sha256": "166224c13f5ece975bb8f6061e8e146de05722d20b51aebb1b9a757f03a6fd91"
     },
     {
       "path": "development/levels/rebuild/structures/wld-12/preview.png",
@@ -76503,7 +76573,7 @@
       "width": 960,
       "height": 720,
       "bytes": 366207,
-      "sha256": "474bd247336ae79eff0f8a7d7199a221e2570396c96ac60b39abcf38f1c58273"
+      "sha256": "4a9564046c08c5d48fb3667a5d7d0221b41789b8085f55007bcbf9dd6167d6cc"
     },
     {
       "path": "development/levels/rebuild/structures/wld-12/structure-export-closed.png",
@@ -76513,7 +76583,7 @@
       "width": 960,
       "height": 720,
       "bytes": 262736,
-      "sha256": "6e6fbcfcdd40284fdad103a73affdcd50afa89d0c46ad33279ef73f6b95ffe9b"
+      "sha256": "9be23f427bb85545bd1e3143a1748a1b62ddc3962d580a49155054dc4855978d"
     },
     {
       "path": "development/levels/rebuild/structures/wld-12/structure-export-cutaway.png",
@@ -76523,7 +76593,7 @@
       "width": 960,
       "height": 720,
       "bytes": 274422,
-      "sha256": "b7d3d84ca2d9d2b316791d61bed9dde095fe2bf608c17be0522a50353425695a"
+      "sha256": "db623e520587ef2d4a2615c086e9133e4e06aed41e1dc60ad2f204213047dd91"
     },
     {
       "path": "development/levels/rebuild/structures/wld-13/preview.png",
@@ -76533,7 +76603,7 @@
       "width": 960,
       "height": 720,
       "bytes": 383858,
-      "sha256": "0955cb252d47c65ed1202978e6a1f57ac75ea8daf030078ab732aae8148b018a"
+      "sha256": "fb1d0c9123e2759369d6de66d21b0ea98afaab6d68eaff056e8d7736e8f8087e"
     },
     {
       "path": "development/levels/rebuild/structures/wld-13/structure-export-closed.png",
@@ -76543,7 +76613,7 @@
       "width": 960,
       "height": 720,
       "bytes": 287211,
-      "sha256": "8136b55c95cc9001443ef18817c9dc5b672891d42710f0d14e72a6dd51616459"
+      "sha256": "177a12a6645b17f311b88f4921e4ef1898c059e15f2e3b784e944791dabe42f6"
     },
     {
       "path": "development/levels/rebuild/structures/wld-13/structure-export-cutaway.png",
@@ -76553,7 +76623,7 @@
       "width": 960,
       "height": 720,
       "bytes": 318793,
-      "sha256": "2064b060388fc6db3e2e4beb725dc90fa5ea9dc6ad339a921feca35d8ae8b55b"
+      "sha256": "195db1c5be36c5b7cf4d9d7ea7b71a90d270cbcc4a722e3bc6aeb87cb7335423"
     },
     {
       "path": "development/levels/rebuild/structures/wld-14/preview.png",
@@ -76563,7 +76633,7 @@
       "width": 960,
       "height": 720,
       "bytes": 502272,
-      "sha256": "402ccae0a7a81e10dfc6bf57d26a26c9f25634235230c674e0632de91b32395c"
+      "sha256": "b69e7f79a781139e839c0f2b3ad891b66764fd3c6589c7f4d4bc27be9ef376fb"
     },
     {
       "path": "development/levels/rebuild/structures/wld-14/structure-export-closed.png",
@@ -76573,7 +76643,7 @@
       "width": 960,
       "height": 720,
       "bytes": 641045,
-      "sha256": "f13167980e2be426b5ffe87efbe857fbef24a52d7650811e362b025bc92cde35"
+      "sha256": "7383aea27bfd34bc1fed01140d57f9ea6f66ee5609e4206a49a5cbf570144606"
     },
     {
       "path": "development/levels/rebuild/structures/wld-14/structure-export-cutaway.png",
@@ -76583,7 +76653,7 @@
       "width": 960,
       "height": 720,
       "bytes": 673729,
-      "sha256": "8c2715420eff15931378875244d63266366cd37efe1d9b1c72f66f9404e3fc0e"
+      "sha256": "914032a729b7ff34f6ef7c78a8b0efc61b1d33640ba4aac0f7d6b9938d1c4954"
     },
     {
       "path": "development/levels/rebuild/structures/wld-15/preview.png",
@@ -76593,7 +76663,7 @@
       "width": 960,
       "height": 720,
       "bytes": 424563,
-      "sha256": "dfa9e555586d7734e228eed9a220803008c3d3606cc53e08f2e2b879adf2e34e"
+      "sha256": "661c501fd4b73f76df08eee24228a773716c73bfcfb315f2c72e2fed71792eea"
     },
     {
       "path": "development/levels/rebuild/structures/wld-15/structure-export-closed.png",
@@ -76603,7 +76673,7 @@
       "width": 960,
       "height": 720,
       "bytes": 636846,
-      "sha256": "fe6ed2f3787ab1d82d0080f989bff2b091689d684f5155717c4a3bc29b2d6eec"
+      "sha256": "1174eb86a205dd328251b1ed2bfb7760a010ff87040b96b8d7f866a5545e549d"
     },
     {
       "path": "development/levels/rebuild/structures/wld-15/structure-export-cutaway.png",
@@ -76613,7 +76683,7 @@
       "width": 960,
       "height": 720,
       "bytes": 645969,
-      "sha256": "cc7c39019f4805e6d038ed1298064dd8540b3777e1fa358b8a747721dc37e398"
+      "sha256": "8d8567cd1a2e5587e980a0c20084a00edc015391486a87c8c127e4d7b48047ad"
     },
     {
       "path": "development/levels/rebuild/structures/wld-16/preview.png",
@@ -76623,7 +76693,7 @@
       "width": 960,
       "height": 720,
       "bytes": 498097,
-      "sha256": "9b832f8a47e2c9890aa462e572e364825ca710379c50fd4a7cd31b0d22da8cad"
+      "sha256": "2f2da82e5d447242049c033d03588121fa7e7177b8be5517ed7f7b392d852224"
     },
     {
       "path": "development/levels/rebuild/structures/wld-16/structure-export-closed.png",
@@ -76633,7 +76703,7 @@
       "width": 960,
       "height": 720,
       "bytes": 606209,
-      "sha256": "6a5c2097b55e081c689cf96dddc101c1754044f58b1dc1838a0f351f6feb0e9e"
+      "sha256": "15cae7eb5860db0b63ced26cbd9d3317765633896896f87d131d0957cb859be1"
     },
     {
       "path": "development/levels/rebuild/structures/wld-16/structure-export-cutaway.png",
@@ -76643,7 +76713,7 @@
       "width": 960,
       "height": 720,
       "bytes": 630885,
-      "sha256": "09e2668484319e24396fa557019f3329b13e58d42dd9e2e2cd870295bb81d025"
+      "sha256": "ba33113132e59c3ef32bd216822cafa03597e85ac86509beb6596ebdf5132aee"
     },
     {
       "path": "development/levels/rebuild/structures/wld-17/preview.png",
@@ -76653,7 +76723,7 @@
       "width": 960,
       "height": 720,
       "bytes": 458518,
-      "sha256": "8a792ed960356620048623247a8f0db94a3cfb31f427c5f7af794fac0633bbd8"
+      "sha256": "01876862315fac2dc9ae9f85d34f4c6e60e1a9574062b07b82804f8aa2042f26"
     },
     {
       "path": "development/levels/rebuild/structures/wld-17/structure-export-closed.png",
@@ -76663,7 +76733,7 @@
       "width": 960,
       "height": 720,
       "bytes": 533762,
-      "sha256": "ccb517fc249976981751d704f0d34d903d354d4b4b06502f6ebd24ae4a1f7f10"
+      "sha256": "74f9356a56e83aca6272c3f5aea1da5524adc9de6118499502effd5e124f96c9"
     },
     {
       "path": "development/levels/rebuild/structures/wld-17/structure-export-cutaway.png",
@@ -76673,7 +76743,7 @@
       "width": 960,
       "height": 720,
       "bytes": 558284,
-      "sha256": "e415c9ea58299a955ce41dcd07d0783b0df6420d89538f9432390ea9366a38c3"
+      "sha256": "b9039b73c1ea613df0df63a6dde92e1400234821f712c3f10d79e5113d1b9f32"
     },
     {
       "path": "development/levels/rebuild/structures/wld-18/preview.png",
@@ -76683,7 +76753,7 @@
       "width": 960,
       "height": 720,
       "bytes": 445933,
-      "sha256": "d2e78a2f3a79635104c4e9d17e2f14c7d29ca0a8fe5eef54c41a3d1441736fad"
+      "sha256": "05a9d9e84d1329d48c1934806e70923b02d711ae5b5c0d93f7d8bbab2d2b6fc8"
     },
     {
       "path": "development/levels/rebuild/structures/wld-18/structure-export-closed.png",
@@ -76693,7 +76763,7 @@
       "width": 960,
       "height": 720,
       "bytes": 539983,
-      "sha256": "2b818767b2930ca6cb9ad3b048d4cfc995277fc7c7f95ddf3d4a9fd16254164e"
+      "sha256": "6e99b5c772d7e65dc327d3f3e3b3e17e49a6dd7325fce3819fc750813b19d601"
     },
     {
       "path": "development/levels/rebuild/structures/wld-18/structure-export-cutaway.png",
@@ -76703,7 +76773,7 @@
       "width": 960,
       "height": 720,
       "bytes": 555906,
-      "sha256": "3ff295e8385e5afb2a72cc9a3de2e8436c4f3519e002e8a3b6de74579c40642f"
+      "sha256": "153ec0f2e7f94d89e0a94932140f5fe484bbb1c8c7053277307a19064fb7c63b"
     },
     {
       "path": "development/performance/hardware/2026-10-26/captures/baseline-main-f6793bda-run-1-continuous-house-0.png",

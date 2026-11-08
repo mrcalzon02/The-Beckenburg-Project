@@ -12,6 +12,9 @@ public final class RosterTerrainBuild {
     private static String hash(Path file)throws Exception {
         return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(file)));
     }
+    private static String hashText(String value)throws Exception {
+        return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(value.getBytes(java.nio.charset.StandardCharsets.UTF_8)));
+    }
     public static void main(String[] args)throws Exception {
         for(String site:args) build(site.toLowerCase(Locale.ROOT));
     }
@@ -42,6 +45,40 @@ public final class RosterTerrainBuild {
                     throw new IllegalStateException("Refusing to replace authored source heights: "+site);
         }
         String heightBefore=hash(world.tilePath(0,0));
+        Path grades=input.resolve("grades.tsv"),gradeMarker=root.resolve("authored-path-grading.sha256");
+        if(Files.exists(grades)&&!Files.readString(grades).isBlank()) {
+            var layers=new TerrainLayerStack(world,0,0);String program=hash(grades);
+            var requested=Files.readAllLines(grades).stream().filter(row->!row.isBlank()).toList();
+            var existing=new HashSet<String>();for(var layer:layers.layers())existing.add(layer.name());
+            boolean apply=true;
+            if(Files.exists(gradeMarker)) {
+                var marker=Files.readAllLines(gradeMarker);
+                if(marker.size()!=2||!marker.get(1).equals(hash(layers.path())))
+                    throw new IllegalStateException("Authored path grading changed; explicit layer reconciliation required");
+                apply=!marker.get(0).equals(program);
+                if(apply) {
+                    var oldRows=requested.stream().filter(row->existing.contains(row.split("\t")[0])).toList();
+                    if(!marker.get(0).equals(hashText(String.join("\n",oldRows)+"\n")))
+                        throw new IllegalStateException("Existing grade definition changed; preserve layer and reconcile explicitly");
+                }
+            } else for(String row:requested)if(existing.contains(row.split("\t")[0]))
+                throw new IllegalStateException("Grade name collides with an existing untracked sculpt layer");
+            if(apply) {
+                var created=new HashMap<String,Integer>();
+                for(String row:requested) {
+                    String[] v=row.split("\t");if(existing.contains(v[0]))continue;
+                    Integer selected=created.get(v[0]);
+                    if(selected==null){selected=layers.addLayer(v[0]);created.put(v[0],selected);}
+                    layers.selectLayer(selected);var points=new ArrayList<TerrainLayerStack.Point>();
+                    for(int i=3;i<v.length;i+=3)points.add(new TerrainLayerStack.Point(
+                        (Double.parseDouble(v[i])-x0)/2,(Double.parseDouble(v[i+1])-z0)/2,Double.parseDouble(v[i+2])));
+                    layers.gradePath(points,Double.parseDouble(v[1])/2,Double.parseDouble(v[2])/2);
+                }
+                layers.save();Files.writeString(gradeMarker,program+"\n"+hash(layers.path())+"\n");
+            }
+            if(!heightBefore.equals(hash(world.tilePath(0,0))))throw new IllegalStateException("Non-destructive grading changed source PNG");
+            System.out.println("SAVED_EDITOR_PATH_GRADE "+site+" source PNG unchanged; layer document "+hash(layers.path()));
+        }
         var topology=AdaptiveTerrainTopology.open(world);int before=topology.cutoutCount();
         var cuts=new ArrayList<TerrainEntranceMesh.Bounds>();
         for(String row:Files.readAllLines(input.resolve("cuts.tsv"))) {

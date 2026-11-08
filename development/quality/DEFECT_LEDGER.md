@@ -5030,9 +5030,9 @@ Native inspection retains broadly rectangular extents; lighthouse cliff/water fr
 
 Cause / uncertainty: The saved-world bridge deliberately starts from existing rough terrain sources; correct persistent hole topology is not final geographic/architectural design.
 
-Fix / next action: Author physical edges, banks/coves/approach necks, engineered soil cuts and supported foundation/rim pieces, then verify standing/crouched arrival with canonical van, full movement and render/light separation. Preserve genuine native holes and all access routes. Keep S04 unaccepted.
+Fix / next action: Overall terrain-first audit now records18remaining native candidates without continuous terrain,3proposal landforms and4saved punched sources needing macro review. Settle landform/height layers, slopes/drainage/foundations and reshuffle blockouts as authorized before further isolated path repairs. Finish edges/rims/guards/canonical van/desquareify per site; retained4mature maps require individual audits.
 
-Evidence and verification: verification/roster-editor-terrain-2026-11-07/visual-review.json; previews/*-saved-terrain.png; structures/wld-14/wld-18/wld-07-mortuary actual GLB cutaways; quality/DESQUAREIFY_GATE.md
+Evidence and verification: development/levels/rebuild/terrain-overall-pass/; verification/roster-basements-2026-11-07/; earlier saved-editor terrain evidence retained
 
 Older-map obligation: Audit every terrain footprint individually. Native hole success does not certify prior ground shapes, source padding, model support or boundary containment.
 
@@ -5094,15 +5094,15 @@ Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require indiv
 
 ### DEV-371 — Many authored flat route samples fail baseline native support or body checks
 
-**Status:** OPEN; native route/terrain/portal repair before playable acceptance · **Affected:** 25remaining native map candidates; per-site baseline-invalid counts in route-regressions.json
+**Status:** PARTIAL; path winding corrected,9511current baseline-invalid poses remain · **Affected:** 25remaining native map candidates; per-site baseline-invalid counts in route-regressions.json
 
 Of109506flat-route centre/side samples,36448are already unsupported or body-blocked before furnishing. These are not valid walkable samples.
 
 Cause / uncertainty: Native proposals still include schematic connectors, terrain/foundation omissions, incomplete portal/ownership integration and physically conflicting routes; diagnosis is per source rather than inferred from closed solids.
 
-Fix / next action: Retain exact before/after rows and baseline invalid counts. Repair actual support, walls/portal thresholds, authored route coordinates and containment, then continuous human/AI/room-objective acceptance. Do not call zero new furniture regressions a complete circulation pass.
+Fix / next action: Current110409flat samples contain100898valid/9511invalid poses; both revision and furnishing gates have zero new qualified blocks. Corrected876inward walking tops, but remaining source support/wall/terrain conditions require terrain-first whole-site review. Preserve initial36448/109506failed evidence and current exact rows.
 
-Evidence and verification: development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/; furnishings/<site>/placements.json; room-programs.json; actual export captures
+Evidence and verification: development/levels/rebuild/verification/roster-basements-2026-11-07/; prior roster-prop-allocation-2026-11-07/; terrain-overall-pass/
 
 Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/model/route audits. First spatial allocation does not certify complete model quality, capacity, services, native collision/navigation or map availability.
 
@@ -5192,13 +5192,13 @@ Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek and every rem
 
 ### DEV-378 — Regenerated native scaffold next-step notes retain superseded sloped-mass instructions
 
-**Status:** CURRENT3NOTES UPDATED; shared note-generator carry-forward remains OPEN · **Affected:** COLLEGE, MANSION, WLD-14 structure NEXT.md and future scaffold regenerations
+**Status:** CURRENT25HANDOFFS UPDATED; generator carry-forward remains OPEN · **Affected:** COLLEGE, MANSION, WLD-14 structure NEXT.md and future scaffold regenerations
 
 Generated notes can still say that tower stairs are only sloped masses after actual140treads and connected native sweeps have been delivered.
 
 Cause / uncertainty: The scaffold generator copies historical source refine bullets without reconciling later native implementation evidence.
 
-Fix / next action: Replace the three regenerated next-step notes with current complete-link results and true unfinished guard/terrain/owner/services work. Preserve old source concepts. Update the shared note generator during a coordinated source-generator checkpoint so later regeneration cannot revive obsolete claims; do not silently alter all generator identities now.
+Fix / next action: All25current NEXT/workflow notes now reflect measured source results and owner terrain-first priority. Shared scaffold still copies historical refine notes on later regeneration; fix during the terrain-generator pass without treating them as runtime evidence.
 
 Evidence and verification: development/levels/rebuild/verification/roster-landings-2026-11-07/; structures/{college,mansion,wld-14}/NEXT.md; previous fe7f4972 notes
 
@@ -5206,17 +5206,157 @@ Older-map obligation: Inspect each older map handoff against its actual current 
 
 ### DEV-379 — Legacy advisory stair run/riser fields lag the actual authored coordinate revision
 
-**Status:** OPEN; native coordinate/triangle results remain authoritative · **Affected:** COLLEGE L84, MANSION L59/L60 and retrospective roster stair dimension metadata
+**Status:** KNOWN3DIMENSION HINTS CORRECTED; rest-of-roster metadata audit OPEN · **Affected:** COLLEGE L84, MANSION L59/L60 and retrospective roster stair dimension metadata
 
 Changed turn-landing paths retain inherited run_m/risers values; CollegeL84 advertises4.8m/18risers while its current flight coordinates span4.65m and actual native treads number17.
 
 Cause / uncertainty: The authored geometry builder derives steps from point coordinates, while inherited schematic dimension hints are independent fields and were not normalized during path revision.
 
-Fix / next action: Use current authored points, exact exported tread centres and physics-contract identities for present movement/fit evidence. Normalize legacy dimension hints in the next coordinated source-regeneration checkpoint and audit all other stair links; do not treat advisory fields as measured built dimensions. This is not a reason to weaken current native checks.
+Fix / next action: Coordinated native regeneration normalizes CollegeL84/MansionL59/L60run/riser hints to their actual point geometry and exported tread counts. Preserve exact source geometry as authority; other inherited metadata still requires individual review.
 
 Evidence and verification: development/levels/rebuild/{college,mansion}/rough-layout.json; structures/{college,mansion}/physics-contract.json; verification/roster-landings-2026-11-07/
 
 Older-map obligation: Compare each older source metadata row to its actual built geometry before consuming it for runtime/AI/service authoring. No global metadata correctness inferred from tested native paths.
+
+### DEV-380 — Terrain sampling uses immutable seed-layout cuts instead of current authored basement entries
+
+**Status:** CURRENT CUT DATA IMPLEMENTED; selected worlds verified · **Affected:** WLD-07/WLD-07-MORTUARY and shared terrain/export/route authoring; explicit per-site results in evidence
+
+Saved terrain could retain requests from an earlier layout after stair/foundation revisions.
+
+Cause / uncertainty: The sampler used the seed layout for both stable height sampling and mutable foundation/stair cut requests.
+
+Fix / next action: Keep seed mesh/heights/coastline immutable, take current zone/link cuts separately and fingerprint the cut definition without the derived world binding. Both cemetery worlds persist/reopen current punches; older world cut definitions require individual audits.
+
+Evidence and verification: development/levels/rebuild/verification/roster-basements-2026-11-07/
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/terrain/route audits. No playable availability, services, guards, final terrain, visuals or complete mission acceptance is inferred for unaudited maps.
+
+### DEV-381 — Base cemetery lacks a terrain source and profile for saved-world integration
+
+**Status:** SHARED CEMETERY SOURCE AUTHORED; final terrain acceptance OPEN · **Affected:** WLD-07/WLD-07-MORTUARY and shared terrain/export/route authoring; explicit per-site results in evidence
+
+Base cemetery terrain sampling fails with no ground mesh; an attached saved world alone is not imported by the scaffold without a terrain contract.
+
+Cause / uncertainty: The older base packet omitted terrain while its mortuary annex already carried a same-world cemetery landform.
+
+Fix / next action: Explicitly sample the annex terrain at its immutable source SHA, cropped to base bounds. All13original cemetery zone coordinates match at that seed. Add the actual cemetery profile, import saved physical triangles, never silently substitute a flat or unrelated map. Invalid donor rejects and preserves18world files.
+
+Evidence and verification: development/levels/rebuild/verification/roster-basements-2026-11-07/
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/terrain/route audits. No playable availability, services, guards, final terrain, visuals or complete mission acceptance is inferred for unaudited maps.
+
+### DEV-382 — Cemetery ossuary stairs cross vestibule walls before reaching the basement floor
+
+**Status:** NATIVE BASEMENT LINKS AND DECLARED CIRCULATION LOOPS VERIFIED; runtime OPEN · **Affected:** WLD-07/WLD-07-MORTUARY and shared terrain/export/route authoring; explicit per-site results in evidence
+
+Both cemetery/annex routes hit west/east vestibule walls aroundY-0.9, while destination floor isY-3.
+
+Cause / uncertainty: A single schematic diagonal runs through the partition midway through the descent.
+
+Fix / next action: Allfour basement links pass continuous ascent/descent. Both14-segment source circulation loops include approaches, descent, passage, ascent and surface return; forward/reverse PASS in structural and furnished variants.
+
+Evidence and verification: development/levels/rebuild/verification/roster-basements-2026-11-07/
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/terrain/route audits. No playable availability, services, guards, final terrain, visuals or complete mission acceptance is inferred for unaudited maps.
+
+### DEV-383 — Native collision exporter overwrites its previous payload before terrain validation rejects a candidate
+
+**Status:** PREVALIDATE AND STAGED FILE REPLACEMENT IMPLEMENTED; negative controls PASS · **Affected:** WLD-07/WLD-07-MORTUARY and shared terrain/export/route authoring; explicit per-site results in evidence
+
+Rejected missing-terrain candidate changes the old HCS2 while leaving its old contract behind.
+
+Cause / uncertainty: Authoritative binary write precedes exact saved-terrain triangle/flag validation.
+
+Fix / next action: Build bytes in memory, finish geometry/fidelity assertions, stage binary/metadata and replace files only afterward. Actual legacy66942b34 negative control destroys the previous pair; corrected exporter rejects the same source and preserves both prior byte hashes. This is prevalidation/per-file replacement, not a crash-atomic two-file transaction.
+
+Evidence and verification: development/levels/rebuild/verification/roster-basements-2026-11-07/
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/terrain/route audits. No playable availability, services, guards, final terrain, visuals or complete mission acceptance is inferred for unaudited maps.
+
+### DEV-384 — Moving cemetery stair openings invalidates old approach endpoints and room-centre anchors
+
+**Status:** APPROACHES AND AUTHORITATIVE STANDING RESERVATIONS VERIFIED; runtime mapping OPEN · **Affected:** WLD-07/WLD-07-MORTUARY and shared terrain/export/route authoring; explicit per-site results in evidence
+
+Initial revision preserves vertical routes but creates67qualified flat-route blocks,48on the old entrance approaches.
+
+Cause / uncertainty: The new stair void passes through the former room-centre approach/spawn reservation.
+
+Fix / next action: Four authored upper standing anchors pass literal native walking; fourold room-centre negatives correctly fail. Both complete entrance/surface loops pass; unchanged route comparisons preserve allpreviously qualified samples/sweeps.
+
+Evidence and verification: development/levels/rebuild/verification/roster-basements-2026-11-07/
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/terrain/route audits. No playable availability, services, guards, final terrain, visuals or complete mission acceptance is inferred for unaudited maps.
+
+### DEV-385 — Uncut route slabs expose inward top faces and mark undersides as walking supports
+
+**Status:** ALL25CANDIDATE ROUTE SOLIDS FIXED;1015flat tops independently PASS · **Affected:** WLD-07/WLD-07-MORTUARY and shared terrain/export/route authoring; explicit per-site results in evidence
+
+Independent prior HCS2 inspection finds876of1011flat route solids with inward or nonwalking top faces. Some Boolean-trimmed strips happen to be correct.
+
+Cause / uncertainty: X/-Z authoring reverses original winding; Boolean operations incidentally repair some objects while untouched strips stay inside out.
+
+Fix / next action: Rebuilt25native/furnished scenes. Actual HCS2 audit finds0inward/nonwalking tops among1015flat12cm path solids, compared with876of1011at66942b34. Independent GLB checks validate1025outward closed route solids including10sloping ones. All124rough placements unchanged.
+
+Evidence and verification: development/levels/rebuild/verification/roster-basements-2026-11-07/
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/terrain/route audits. No playable availability, services, guards, final terrain, visuals or complete mission acceptance is inferred for unaudited maps.
+
+### DEV-386 — Local path grading can disturb adjoining route shoulders when overall terrain is unsettled
+
+**Status:** SOURCE NETWORK GRADING VERIFIED; overall terrain acceptance OPEN · **Affected:** Cemetery/annex and shared native map authoring; PRISON specifically for DEV-388
+
+A new terrain shoulder blocks a prior qualified crypt path, and isolated approach grading alters adjacent source routes.
+
+Cause / uncertainty: Coarse2m lattice and unrelated local path strokes do not establish a coherent shared walking network.
+
+Fix / next action: Use actual editable TerrainLayerStack gradePath layers on the connected source network. Raw height PNGs remain byte-identical to the original annex source; punches remain actual topology. Grade programs and documents fingerprinted, append-only updates preserve earlier layers, exact rerun preserves24world files. Owner now prioritizes full-site terrain/elevations and blockout reshuffles before further route refinements.
+
+Evidence and verification: development/levels/rebuild/verification/roster-basements-2026-11-07/; captures/structure-batch/roster-structure-sheet-02.png; captures/basement-batch/
+
+Older-map obligation: Audit other maps individually. Neither physical path probes nor a native overview proves finished terrain, model support, lighting, services, networking or complete map acceptance.
+
+### DEV-387 — Before/after route comparator reuses old feet Y after valid terrain support changes
+
+**Status:** SCENE-SPECIFIC GROUNDING FIXED; independent negative controls PASS · **Affected:** Cemetery/annex and shared native map authoring; PRISON specifically for DEV-388
+
+A supported millimetre-scale terrain change can be reported as a body/sweep obstruction because the after scene is queried at the old ground height.
+
+Cause / uncertainty: The comparator reused one feet vector for two distinct native surfaces.
+
+Fix / next action: Each scene uses its own measured support Y within the original2cm comparison budget; body/footprint/production sweep rules remain unchanged. Exact ground heights emitted in rows. Independent1cm plane fixture reproduces old false positive; new low roof, missing support and excessive-height negatives still fail. Accepted unchanged-route and current prop-route audits have zero new blocks.
+
+Evidence and verification: development/levels/rebuild/verification/roster-basements-2026-11-07/; captures/structure-batch/roster-structure-sheet-02.png; captures/basement-batch/
+
+Older-map obligation: Audit other maps individually. Neither physical path probes nor a native overview proves finished terrain, model support, lighting, services, networking or complete map acceptance.
+
+### DEV-388 — Prison blocking overview shows isolated unsupported boundary panels
+
+**Status:** OPEN; terrain/foundation and enclosure assembly required · **Affected:** Cemetery/annex and shared native map authoring; PRISON specifically for DEV-388
+
+Several exterior wall/barrier panels appear detached from the main prison structure with no visible ground or footing in the native overview.
+
+Cause / uncertainty: Fixed closure blockers were authored without the overall compound terrain/foundation context; exact structural attachment still requires per-panel inspection.
+
+Fix / next action: During terrain-first pass author the compound ground and continuous supporting enclosure/returns, then inspect each panel placement and containment route.192fixed boundary rays do not prove physical support or visual coherence.
+
+Evidence and verification: development/levels/rebuild/verification/roster-basements-2026-11-07/; captures/structure-batch/roster-structure-sheet-02.png; captures/basement-batch/
+
+Older-map obligation: Audit other maps individually. Neither physical path probes nor a native overview proves finished terrain, model support, lighting, services, networking or complete map acceptance.
+
+### DEV-389 — Route reservation surfaces overlap real floor planes in rough native assemblies
+
+**Status:** OPEN; remove coplanar source overlaps during terrain/structure refinement · **Affected:** Cemetery/annex and shared native map authoring; PRISON specifically for DEV-388
+
+Native basement-entry views show a black foreground band; source route/floor surfaces share the same authored walking plane.
+
+Cause / uncertainty: Confirmed coplanar slab/floor geometry; renderer-specific contribution to the visible band still requires separation review.
+
+Fix / next action: Retain actual support while removing overlapping reservation geometry where real floors or accepted terrain already supply the surface. Review native/runtime images and normal/collision parity. Do not conceal the problem with lighting, alpha, a global collision change or a claimed visual pass.
+
+Evidence and verification: development/levels/rebuild/verification/roster-basements-2026-11-07/; captures/structure-batch/roster-structure-sheet-02.png; captures/basement-batch/
+
+Older-map obligation: Audit other maps individually. Neither physical path probes nor a native overview proves finished terrain, model support, lighting, services, networking or complete map acceptance.
 
 ## Required audit categories
 

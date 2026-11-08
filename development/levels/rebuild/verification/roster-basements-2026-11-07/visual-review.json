@@ -1,0 +1,182 @@
+{
+  "scope": "All14current roster sheets viewed:25closed/cutaway structures and25furnished overviews/room cutaways; sixcurrent150W-neutral-review-fill first-person basement exports actually viewed",
+  "sheets": [
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-01.png",
+      "sha256": "5eb39fd65a445303004216357d1e4f224941d3da9c0ad54aa552513aec1daf7f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-02.png",
+      "sha256": "17696b5c8fa8d15c1d396e6c3fc141c5d508fdf7989ec24533a44662388c9ba6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-03.png",
+      "sha256": "9ca5728ef33258ddae98285648bd35df3f9a1178779bd52289b729f1c65e315b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-04.png",
+      "sha256": "3900e552f260d1dd47d4ff2b1bbd43066de13dc5200c8f10fc4e98a175a06a77"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-05.png",
+      "sha256": "80ff966c65c167b03871ff7503d647937d9dd149f5ee1b1eeffef19d5861e497"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-06.png",
+      "sha256": "79669221d504fbfd2666511645c2a93978f050e66531566a5c9b5efa9c120113"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-07.png",
+      "sha256": "c5443d620d2b821b38fac408d48b76b31c5947d334448ab20577ce54e97904fc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-01.png",
+      "sha256": "a286c6e1a932c9c4fdb6001a417af37ea3f116f6e7597add2ddd5a56c2fecc18"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-02.png",
+      "sha256": "121773cab94e211cb61f44d49e8a825990e49747aca455e12adc21067ec84ea4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-03.png",
+      "sha256": "ccc1940f7779b8d7422c7e7644039753aa2240177bb384fff35fe74c253372cc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-04.png",
+      "sha256": "80e82e832a372d6ee3ea27977c58017736a10e75ab1fbc857f3934cd13e62306"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-05.png",
+      "sha256": "90ebefc598501b735dfb47002e4cffb020ee9ce941c73cb4408f952665ba333f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-06.png",
+      "sha256": "124742a4cca404fa0c7569a5f617e97a0f92d875486276b4cc1e666e50b55cd1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-07.png",
+      "sha256": "074b50dda5c679187dfb5e22a9b8e28c1d684ed1f5fa981c0ae2c1f72aafd1bd"
+    }
+  ],
+  "basement_views": [
+    {
+      "site": "wld-07",
+      "path": "development/levels/rebuild/captures/basement-batch/wld-07-west-entry.png",
+      "sha256": "984d0f414d12dcd0d222db146af8a9b1a40213d44508dc2d097dad705c8e7083",
+      "source_glb_sha256": "90386e1f028e2d63c24d45848dcf235c75e57418d6c035c1a54a51f0847be8f7",
+      "camera_engine": [
+        7.5,
+        1.55,
+        16
+      ],
+      "look_at_engine": [
+        13.4,
+        -2.65,
+        16
+      ],
+      "type": "NATIVE_FIRST_PERSON_EXPORT_INSPECTION_WITH_REVIEW_FILL",
+      "intact_geometry_not_render_masked": true,
+      "limitation": "Neutral inspection light is not installed fixture/runtime gameplay evidence. Guards, final surfaces and owner/services integration remain open."
+    },
+    {
+      "site": "wld-07",
+      "path": "development/levels/rebuild/captures/basement-batch/wld-07-lower-west-landing.png",
+      "sha256": "3247a265e8cd844a3e76fe978b7739738a65c4c09d2b4d5a4d67d0978c4690c0",
+      "source_glb_sha256": "90386e1f028e2d63c24d45848dcf235c75e57418d6c035c1a54a51f0847be8f7",
+      "camera_engine": [
+        15.5,
+        -1.4,
+        16
+      ],
+      "look_at_engine": [
+        8.5,
+        0.6,
+        16
+      ],
+      "type": "NATIVE_FIRST_PERSON_EXPORT_INSPECTION_WITH_REVIEW_FILL",
+      "intact_geometry_not_render_masked": true,
+      "limitation": "Neutral inspection light is not installed fixture/runtime gameplay evidence. Guards, final surfaces and owner/services integration remain open."
+    },
+    {
+      "site": "wld-07",
+      "path": "development/levels/rebuild/captures/basement-batch/wld-07-east-entry.png",
+      "sha256": "855b873eb4f11d96c5c94027674d6d7658197f05144557275418a9b447ed69f9",
+      "source_glb_sha256": "90386e1f028e2d63c24d45848dcf235c75e57418d6c035c1a54a51f0847be8f7",
+      "camera_engine": [
+        48.5,
+        1.55,
+        16
+      ],
+      "look_at_engine": [
+        42.6,
+        -2.65,
+        16
+      ],
+      "type": "NATIVE_FIRST_PERSON_EXPORT_INSPECTION_WITH_REVIEW_FILL",
+      "intact_geometry_not_render_masked": true,
+      "limitation": "Neutral inspection light is not installed fixture/runtime gameplay evidence. Guards, final surfaces and owner/services integration remain open."
+    },
+    {
+      "site": "wld-07-mortuary",
+      "path": "development/levels/rebuild/captures/basement-batch/wld-07-mortuary-west-entry.png",
+      "sha256": "62dd286919a8923058aa6578c06938f076f2f219aa72ccc0d0cd2bc25d7bb365",
+      "source_glb_sha256": "d939dc7bf418a5bf445a4164460ed644952e2a7779ed139f11dd2ef8d1aea893",
+      "camera_engine": [
+        7.5,
+        1.55,
+        16
+      ],
+      "look_at_engine": [
+        13.4,
+        -2.65,
+        16
+      ],
+      "type": "NATIVE_FIRST_PERSON_EXPORT_INSPECTION_WITH_REVIEW_FILL",
+      "intact_geometry_not_render_masked": true,
+      "limitation": "Neutral inspection light is not installed fixture/runtime gameplay evidence. Guards, final surfaces and owner/services integration remain open."
+    },
+    {
+      "site": "wld-07-mortuary",
+      "path": "development/levels/rebuild/captures/basement-batch/wld-07-mortuary-lower-west-landing.png",
+      "sha256": "30bfd8be6d33cb88706d2e76aea4871c8e957116f7713ae52c5f70586c95e3ce",
+      "source_glb_sha256": "d939dc7bf418a5bf445a4164460ed644952e2a7779ed139f11dd2ef8d1aea893",
+      "camera_engine": [
+        15.5,
+        -1.4,
+        16
+      ],
+      "look_at_engine": [
+        8.5,
+        0.6,
+        16
+      ],
+      "type": "NATIVE_FIRST_PERSON_EXPORT_INSPECTION_WITH_REVIEW_FILL",
+      "intact_geometry_not_render_masked": true,
+      "limitation": "Neutral inspection light is not installed fixture/runtime gameplay evidence. Guards, final surfaces and owner/services integration remain open."
+    },
+    {
+      "site": "wld-07-mortuary",
+      "path": "development/levels/rebuild/captures/basement-batch/wld-07-mortuary-east-entry.png",
+      "sha256": "b58c0ada67f2657adbe871bb8aacde13603817652648d269a163bda6d24ec258",
+      "source_glb_sha256": "d939dc7bf418a5bf445a4164460ed644952e2a7779ed139f11dd2ef8d1aea893",
+      "camera_engine": [
+        48.5,
+        1.55,
+        16
+      ],
+      "look_at_engine": [
+        42.6,
+        -2.65,
+        16
+      ],
+      "type": "NATIVE_FIRST_PERSON_EXPORT_INSPECTION_WITH_REVIEW_FILL",
+      "intact_geometry_not_render_masked": true,
+      "limitation": "Neutral inspection light is not installed fixture/runtime gameplay evidence. Guards, final surfaces and owner/services integration remain open."
+    }
+  ],
+  "construction_score": 3,
+  "finish_score": 1,
+  "scale": "1-5",
+  "assessment": "Basement openings are visible with intact exported geometry and actual saved-world punches. Stairs join their source landings; circulation is independently measured. Models remain initial rough space reservations. Overall terrain is missing on18candidate maps and unaccepted on7; source architecture still needs whole-site terrain relationships, guarded/founded structures and proper materials/roof/story detail. Prison isolated panels and coplanar route/floor bands remain DEV-388/389.",
+  "limitation": "Native inspection light is not a runtime fixture. These are not game, hardware, full light-bleed, AI, multiplayer or final art acceptance."
+}

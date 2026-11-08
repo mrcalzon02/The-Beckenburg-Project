@@ -35,6 +35,7 @@ def main():
         unresolved=[item for item in report['issues'] if 'rough mass' in item.get('issue','') or 'needs an authored' in item.get('issue','')]
         reports.append(dict(id=site['id'],folder=folder.name,triangles=check['triangles'],closed_solids=check['checked_closed_solids'],
             depth_parts=check['measured_depth_parts'],cap_rays=check['exported_cap_rays'],stair_treads=check['stair_treads'],fixed_routes=check['fixed_infill_routes'],
+            route_support_solids=check['route_support_solids'],
             open_search_spaces=source.get('search_envelope',{}).get('accessible_spaces'),
             basement_zones=[zone['id'] for zone in source['zones'] if zone['y']<0 and zone['kind'] not in ['outside','staging']],
             unresolved_elevation_support=unresolved,stage='NATIVE_BLOCKING_NOT_RUNTIME_ACCEPTED'))

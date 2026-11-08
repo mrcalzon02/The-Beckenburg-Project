@@ -18,6 +18,15 @@ The owner directs completing Castle's full revision as the central hub and prima
 
 ## 1. Outcome and governing decisions
 
+Owner terrain-priority amendment, 7 November 2026: settle each remaining site's
+overall terrain layers, landform and elevations before further isolated path or
+orange connector repairs. Review the whole site: slopes, terraces, drainage,
+retaining edges and foundation heights. Reshuffle building groups, room blocks or
+stair bays where needed to fit a coherent landform; preserve stable IDs, reusable
+models, the40-space envelope and shared authored coordinates. Checkpoint current
+work first, then execute this as a roster-wide terrain pass. Existing rough path
+coordinates are review inputs, not an instruction to force terrain around them.
+
 Owner amendment, 7 November 2026: resume breadth by stage across the remaining
 roster. The House construction pilot has established the representative method;
 remaining House closeout runs continue independently. Do not hold all other maps
