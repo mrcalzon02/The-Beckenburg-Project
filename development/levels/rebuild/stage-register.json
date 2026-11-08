@@ -2630,7 +2630,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "ade63e647bc0510ad99ef9e6f083c7fa459cba91",
           "evidence": [
             "development/levels/rebuild/structures/wld-03/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -2686,7 +2686,7 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "ade63e647bc0510ad99ef9e6f083c7fa459cba91",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -2832,7 +2832,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "ade63e647bc0510ad99ef9e6f083c7fa459cba91",
           "evidence": [
             "development/levels/rebuild/structures/wld-04/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -2888,7 +2888,7 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "ade63e647bc0510ad99ef9e6f083c7fa459cba91",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -3783,7 +3783,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "ade63e647bc0510ad99ef9e6f083c7fa459cba91",
           "evidence": [
             "development/levels/rebuild/structures/wld-09/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3839,7 +3839,7 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "ade63e647bc0510ad99ef9e6f083c7fa459cba91",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -4738,7 +4738,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "790b3cc4a9ac4fef6ad66bc54c4f6f22ece6a93d",
+          "source_sha": "ade63e647bc0510ad99ef9e6f083c7fa459cba91",
           "evidence": [
             "development/levels/rebuild/structures/wld-14/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4805,7 +4805,7 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "790b3cc4a9ac4fef6ad66bc54c4f6f22ece6a93d",
+          "source_sha": "ade63e647bc0510ad99ef9e6f083c7fa459cba91",
           "evidence": [
             "development/levels/rebuild/wld-14/terrain-world/verification.json",
             "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/README.md",
@@ -5337,7 +5337,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "ade63e647bc0510ad99ef9e6f083c7fa459cba91",
           "evidence": [
             "development/levels/rebuild/structures/wld-17/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -5391,7 +5391,7 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "ade63e647bc0510ad99ef9e6f083c7fa459cba91",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -5926,7 +5926,7 @@
   },
   "occupied_room_terrain": {
     "status": "REAL_EDITOR_TERRAIN_EXCAVATION_CANDIDATES_VERIFIED_NOT_RUNTIME_ACCEPTED",
-    "source_sha": null,
+    "source_sha": "ade63e647bc0510ad99ef9e6f083c7fa459cba91",
     "sites": [
       "WLD-03",
       "WLD-04",
