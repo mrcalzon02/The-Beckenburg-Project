@@ -8,7 +8,7 @@ import java.util.*;
  * derived from stable indexed vertices/corner UVs. No game scene is duplicated.
  */
 public final class EditorTopologyProject implements EditorProject<EditorTopologyProject.State> {
-    private static final int MAGIC=0x42544f50,VERSION=9,MAX_VERTICES=EditorMeshPipeline.MAX_TRIANGLES*3;
+    private static final int MAGIC=0x42544f50,VERSION=10,MAX_VERTICES=EditorMeshPipeline.MAX_TRIANGLES*3;
     public record Vertex(long id,String part,double x,double y,double z){
         public Vertex {
             text(part);if(id<0||!Double.isFinite(x)||!Double.isFinite(y)||!Double.isFinite(z))throw new IllegalArgumentException("Invalid topology vertex");
@@ -501,6 +501,9 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
     public enum UvTransform { MOVE, ROTATE, SCALE }
     /** Paint the selected face's shared base-color texture in one reviewable native edit. */
     public synchronized EditPreview previewPencil(long faceId,Collection<Integer> texels,int color) {
+        return previewPencil(faceId,null,texels,color);
+    }
+    public synchronized EditPreview previewPencil(long faceId,String layer,Collection<Integer> texels,int color) {
         var face=state.faces().stream().filter(f->f.id()==faceId).findFirst().orElseThrow();
         var material=state.materials().stream().filter(m->m.key().equals(face.material())).findFirst()
             .orElseThrow(()->new IllegalArgumentException("Bind a PNG before painting"));
@@ -515,22 +518,25 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
                 ((a>=0&&b>=0&&c>=0)||(a<=0&&b<=0&&c<=0))) inside.add(p);
         }
         if(inside.isEmpty())throw new IllegalArgumentException("No texel centers inside the selected face");
+        var painted=material.pencil(material.key(),layer==null?material.layers().get(0).id():layer,inside,color);
+        return previewMaterialChange(material,painted,"BASE COLOR PENCIL / "+inside.size()+" texels");
+    }
+    private EditPreview previewMaterialChange(EditorMeshMaterial material,EditorMeshMaterial painted,String label){
+        if(painted==material)throw new IllegalArgumentException("No paint layer change");
         boolean fork=false;
         if(state.glbSource()!=null)try{fork=state.glbSource().nativeMaterials().contains(material);}
         catch(IOException invalid){throw new UncheckedIOException(invalid);}
         String key=fork?paintKey(material.key()):material.key();
-        var painted=material.pencil(key,inside,color);
-        if(painted==material)throw new IllegalArgumentException("Stroke does not change this layer");
         var materials=new ArrayList<>(state.materials());
         List<Face> faces=state.faces();
         if(fork){
-            materials.add(painted);
+            materials.add(painted.withKey(key));
             faces=faces.stream().map(f->f.material().equals(material.key())?
                 new Face(f.id(),f.part(),f.a(),f.b(),f.c(),key):f).toList();
         }else materials.set(materials.indexOf(material),painted);
         var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),state.vertices(),faces,materials,
             state.glbSource(),state.frames(),state.quads());
-        return new EditPreview(this,state,after,revision,"BASE COLOR PENCIL / "+inside.size()+" texels");
+        return new EditPreview(this,state,after,revision,label);
     }
     private String paintKey(String original){
         String prefix="paint-"+EditorChange.fingerprint(original).substring(0,32);
@@ -540,21 +546,27 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         for(int n=2;keys.contains(key);n++)key=prefix+"-"+n;
         return key;
     }
-    public synchronized EditPreview previewPaintStyle(long faceId,EditorMeshMaterial.PaintStyle style){
+    private EditorMeshMaterial boundPaintMaterial(long faceId){
         var face=state.faces().stream().filter(f->f.id()==faceId).findFirst().orElseThrow();
-        var materials=new ArrayList<>(state.materials());
-        for(int i=0;i<materials.size();i++){
-            var material=materials.get(i);
-            if(!material.key().equals(face.material()))continue;
-            if(material.paintedTileCount()==0)throw new IllegalArgumentException("Paint the base-color layer first");
-            var next=material.withStyle(style);
-            if(next==material)throw new IllegalArgumentException("Layer settings already match");
-            materials.set(i,next);
-            var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),state.vertices(),state.faces(),
-                materials,state.glbSource(),state.frames(),state.quads());
-            return new EditPreview(this,state,after,revision,"BASE COLOR / "+style.blend()+" / "+style.opacity()+"%");
-        }
-        throw new IllegalArgumentException("Select a bound face");
+        return state.materials().stream().filter(m->m.key().equals(face.material())).findFirst()
+            .orElseThrow(()->new IllegalArgumentException("Select a bound face"));
+    }
+    public synchronized EditPreview previewPaintStyle(long faceId,EditorMeshMaterial.PaintStyle style){
+        var material=boundPaintMaterial(faceId);
+        return previewMaterialChange(material,material.withStyle(style),"BASE COLOR / "+style.blend()+" / "+style.opacity()+"%");
+    }
+    public enum LayerEdit { ADD, CONFIGURE, UP, DOWN, REMOVE }
+    public synchronized EditPreview previewPaintLayer(long faceId,String id,LayerEdit edit,String name,EditorMeshMaterial.PaintStyle style){
+        var material=boundPaintMaterial(faceId);
+        var stack=material.stack();
+        var next=switch(edit){
+            case ADD -> stack.add(id,name);
+            case CONFIGURE -> stack.configure(id,name,style);
+            case UP -> stack.move(id,1);
+            case DOWN -> stack.move(id,-1);
+            case REMOVE -> stack.remove(id);
+        };
+        return previewMaterialChange(material,material.withStack(next),"BASE COLOR / "+edit);
     }
     private static double uvSide(Corner a,Corner b,double u,double v){
         return (b.u()-a.u())*(v-a.v())-(b.v()-a.v())*(u-a.u());
@@ -703,7 +715,8 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
     }
     private static void write(State state,EditorModelWorkspace workspace,OutputStream out)throws IOException{
         boolean normals=state.faces().stream().anyMatch(f->f.a().normal()!=null||f.b().normal()!=null||f.c().normal()!=null);
-        int version=EditorMeshMaterial.hasStyles(state.materials())?9:EditorMeshMaterial.hasPaint(state.materials())?8:workspace!=null?7:!state.quads().isEmpty()?6:!state.frames().isEmpty()?5:state.glbSource()!=null?4:state.materials().isEmpty()?(normals?2:1):3;
+        int paintEncoding=EditorMeshMaterial.paintEncoding(state.materials());
+        int version=paintEncoding>1?6+paintEncoding:workspace!=null?7:!state.quads().isEmpty()?6:!state.frames().isEmpty()?5:state.glbSource()!=null?4:state.materials().isEmpty()?(normals?2:1):3;
         var data=new DataOutputStream(out);data.writeInt(MAGIC);data.writeInt(version);
         data.writeUTF(state.sceneId());data.writeUTF(state.sourceFingerprint());data.writeUTF(state.name());data.writeLong(state.sourceBytes());
         data.writeInt(state.vertices().size());for(var v:state.vertices()){
@@ -711,7 +724,12 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         }
         data.writeInt(state.faces().size());for(var f:state.faces()){
             data.writeLong(f.id());data.writeUTF(f.part());for(var c:List.of(f.a(),f.b(),f.c())){data.writeLong(c.vertex());data.writeDouble(c.u());data.writeDouble(c.v());if(version>=2){data.writeBoolean(c.normal()!=null);if(c.normal()!=null){data.writeDouble(c.normal().x());data.writeDouble(c.normal().y());data.writeDouble(c.normal().z());}}}if(version>=3)data.writeUTF(f.material());
-        }if(version>=3)EditorMeshMaterial.writeTable(data,state.materials());if(version>=4){byte[] glb=state.glbSource()==null?new byte[0]:state.glbSource().original();data.writeInt(glb.length);data.write(glb);}if(version>=5)EditorMeshFrame.write(data,state.frames());if(version>=6){data.writeInt(state.quads().size());for(var pair:state.quads()){data.writeLong(pair.first());data.writeLong(pair.second());}}if(version>=8){EditorMeshMaterial.writePaint(data,state.materials());if(version>=9)EditorMeshMaterial.writeStyles(data,state.materials());data.writeBoolean(workspace!=null);}if(version>=7&&workspace!=null)workspace.write(data);data.flush();
+        }
+        if(version>=3)EditorMeshMaterial.writeTable(data,state.materials());
+        if(version>=4){byte[] glb=state.glbSource()==null?new byte[0]:state.glbSource().original();data.writeInt(glb.length);data.write(glb);}if(version>=5)EditorMeshFrame.write(data,state.frames());if(version>=6){data.writeInt(state.quads().size());for(var pair:state.quads()){data.writeLong(pair.first());data.writeLong(pair.second());}}
+        if(version>=8){EditorMeshMaterial.writePaintEdits(data,state.materials(),paintEncoding);data.writeBoolean(workspace!=null);}
+        if(version>=7&&workspace!=null)workspace.write(data);
+        data.flush();
     }
     private static int count(DataInputStream data,int max)throws IOException{int count=data.readInt();if(count<0||count>max)throw new IOException("Topology count budget exceeded");return count;}
     private static State read(Path path)throws IOException{return decode(EditorMeshPipeline.readSource(path,EditorDocumentStore.MAX_BYTES));}
@@ -739,8 +757,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
             EditorGlbReader.Document glb=null;if(version>=4){int length=data.readInt();if((length<28&&!(version>=5&&length==0))||length>4_000_000)throw new IOException("Native GLB source byte budget exceeded");if(length>0){byte[] original=data.readNBytes(length);if(original.length!=length)throw new EOFException("Truncated GLB source");glb=EditorGlbReader.read(original);glb.requireEditable();}}
             var frames=version>=5?EditorMeshFrame.read(data):Map.<String,EditorMeshFrame>of();
             var quads=new ArrayList<EditorMeshQuad>();if(version>=6){int pairs=count(data,faces.size()/2);for(int i=0;i<pairs;i++)quads.add(new EditorMeshQuad(data.readLong(),data.readLong()));}
-            if(version>=8)materials=EditorMeshMaterial.readPaint(data,materials);
-            if(version>=9)materials=EditorMeshMaterial.readStyles(data,materials);
+            if(version>=8)materials=EditorMeshMaterial.readPaintEdits(data,materials,version-6);
             var state=new State(id,source,name,size,vertices,faces,materials,glb,frames,quads);
             var workspace=version>=7&&(version==7||data.readBoolean())?EditorModelWorkspace.read(data,vertices.size()):null;
             if(workspace!=null && workspace.forState(state)!=workspace)throw new IOException("Workspace references missing native components");

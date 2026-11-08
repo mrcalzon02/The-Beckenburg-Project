@@ -19,6 +19,15 @@ public final class EditorPaintRecoveryTest {
     private static void child(Path dir,EditorDocumentStore.Checkpoint stop)throws Exception{
         var project=create(dir);
         stroke(project,1,0xffff00ff);
+        long face=project.snapshot().faces().get(10).id();
+        project.applyPreview(project.previewPaintLayer(face,"paint",EditorTopologyProject.LayerEdit.ADD,"Recovered detail",
+            EditorMeshMaterial.PaintStyle.DEFAULT));
+        var material=project.snapshot().materials().get(project.snapshot().materials().size()-1);
+        String detail=material.layers().get(1).id();
+        project.applyPreview(project.previewPencil(face,detail,List.of(1),0xff0000ff));
+        project.applyPreview(project.previewPaintLayer(face,detail,EditorTopologyProject.LayerEdit.CONFIGURE,"Recovered detail",
+            new EditorMeshMaterial.PaintStyle(EditorMeshMaterial.Blend.SCREEN,75)));
+        Files.writeString(dir.resolve("expected-sha"),EditorDocumentStore.fingerprint(project.snapshotBytes()));
         var writer=new EditorPaintRecovery(project,r->{throw new AssertionError("Crash boundary missed");},point->{
             if(point==stop)Runtime.getRuntime().halt(37);
         });
@@ -37,9 +46,12 @@ public final class EditorPaintRecoveryTest {
         check(Files.exists(EditorDocumentStore.journal(draft)),"Expected a durable interrupted journal");
         var original=EditorTopologyProject.open(dir.resolve("original.btop"));
         var initial=original.snapshot();
-        stroke(original,1,0xffff00ff);
         var restored=EditorPaintRecovery.openCopy(draft,dir.resolve("restored.btop"));
-        check(restored.snapshot().equals(original.snapshot()),"Recovered wrong native paint state");
+        check(EditorDocumentStore.fingerprint(restored.snapshotBytes()).equals(Files.readString(dir.resolve("expected-sha"))),
+            "Crash recovery must reproduce every byte of the layered native state");
+        var materials=restored.snapshot().materials();
+        var detail=materials.get(materials.size()-1).layers().get(1);
+        check(detail.name().equals("Recovered detail") && detail.style().opacity()==75,"Layer settings lost on recovery");
         check(EditorTopologyProject.open(dir.resolve("original.btop")).snapshot().equals(initial),"Manual save changed");
         check(!Files.exists(EditorDocumentStore.journal(draft)),"Recovery journal not consumed");
     }

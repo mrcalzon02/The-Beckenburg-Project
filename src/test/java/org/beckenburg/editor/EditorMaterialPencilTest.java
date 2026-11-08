@@ -73,14 +73,62 @@ public final class EditorMaterialPencilTest {
         }
         p.restore(clean);
     }
+    private static void stackContracts(EditorTopologyProject project)throws Exception{
+        var original=project.snapshot();
+        var face=original.faces().get(10);
+        project.applyPreview(project.previewPaintLayer(face.id(),"paint",EditorTopologyProject.LayerEdit.ADD,
+            "Detail",EditorMeshMaterial.PaintStyle.DEFAULT));
+        var empty=project.snapshot();
+        var derived=empty.materials().get(empty.materials().size()-1);
+        String detail=derived.layers().get(1).id();
+        check(empty.materials().containsAll(original.materials()) && derived.paintedTileCount()==0 && derived.hasLayerEdits(),
+            "Empty layer survives as native authoring without dropping original GLB materials");
+        check(ByteBuffer.wrap(project.snapshotBytes()).getInt(4)==10 &&
+            EditorTopologyProject.decode(project.snapshotBytes()).equals(empty),"Empty native stack roundtrip");
+        project.applyPreview(project.previewPencil(face.id(),detail,List.of(2),0xff00ffff));
+        var painted=project.snapshot();
+        project.applyPreview(project.previewPaintLayer(face.id(),detail,EditorTopologyProject.LayerEdit.DOWN,"",
+            EditorMeshMaterial.PaintStyle.DEFAULT));
+        check(EditorMeshMaterial.paintHistoryBytes(painted.materials(),project.snapshot().materials())==0,
+            "Layer movement must retain tile payloads");
+        EditorGlbWriter.validate(project.mesh(),EditorGlbWriter.encode(project.mesh()));
+        for(int i=2;i<EditorPaintStack.LIMIT;i++)project.applyPreview(project.previewPaintLayer(face.id(),detail,
+            EditorTopologyProject.LayerEdit.ADD,"Layer "+i,EditorMeshMaterial.PaintStyle.DEFAULT));
+        var maximum=project.snapshot();
+        try{
+            project.previewPaintLayer(face.id(),detail,EditorTopologyProject.LayerEdit.ADD,"Excess",EditorMeshMaterial.PaintStyle.DEFAULT);
+            throw new AssertionError("Layer count limit ignored");
+        }catch(IllegalArgumentException expected){check(project.snapshot()==maximum,"Excess layer changed native state");}
+        try{
+            project.previewPencil(face.id(),"missing",List.of(2),0xff000000);
+            throw new AssertionError("Unknown layer accepted");
+        }catch(IllegalArgumentException expected){check(project.snapshot()==maximum,"Invalid layer changed native state");}
+        project.restore(original);
+    }
+    private static void legacyPaintFiles()throws IOException{
+        var dir=Path.of("development/quality/evidence/material-pencil-2026-11-07");
+        for(var name:List.of("painted","styled")){
+            byte[] document=Files.readAllBytes(dir.resolve(name+".btop"));
+            var state=EditorTopologyProject.decode(document);
+            var m=state.materials().get(0);
+            check(m.layers().size()==1 && m.layers().get(0).id().equals("paint"),"Legacy overlay must remain editable");
+            var image=javax.imageio.ImageIO.read(new ByteArrayInputStream(m.png()));
+            boolean styled=name.equals("styled");
+            check(ByteBuffer.wrap(document).getInt(4)==(styled?9:8) &&
+                image.getRGB(2,0)==(styled?0xff008000:0xffff00ff),"Legacy blend and paint texel");
+            EditorObjBundle.validate(state,Files.readAllBytes(dir.resolve(name+".obj.zip")));
+        }
+    }
     public static void main(String[] args)throws Exception {
         historyBudget();
         blendModes();
+        legacyPaintFiles();
         Path dir=Files.createTempDirectory("pencil-native-");
         try {
             Path glb=Path.of("development/quality/evidence/g2-textured-roundtrip-2026-11-07/edited.glb");
             var project=EditorTopologyProject.fromGlb("box.glb",Files.readAllBytes(glb),dir.resolve("box.btop"));
             historyEviction(project);
+            stackContracts(project);
             var original=project.snapshot();
             var face=original.faces().get(10);
             var preview=project.previewPencil(face.id(),List.of(1,2,3),0xffff00ff);

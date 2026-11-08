@@ -221,15 +221,12 @@ public final class G2TexturedModelGuiTest {
         await(()->ready(ui));
         check(project.snapshot().equals(painted),"Redo restores the painted layer");
         verifyLayerStyle(workspace,painted);
+        verifyLayerStack(workspace,painted);
         edt(()->((JList<?>)field(workspace,"faceList")).setSelectedIndex(10));
         await(()->{try{return !(boolean)field(ui,"materialRendering") && field(ui,"materialRenderState")==project.snapshot()
             && ((JLabel)field(ui,"materialRuntime")).getIcon()!=null;}catch(Exception e){throw new RuntimeException(e);}});
         edt(()->{
-            var pane=((JDialog)field(ui,"materialDialog")).getContentPane();
-            var shot=new BufferedImage(pane.getWidth(),pane.getHeight(),BufferedImage.TYPE_INT_ARGB);
-            var graphics=shot.createGraphics();
-            try{pane.printAll(graphics);}finally{graphics.dispose();}
-            ImageIO.write(shot,"png",output.resolve("painted-workspace.png").toFile());
+            captureMaterial("painted-workspace.png");
             button(ui,"saveMesh");
             check(ui.exportObj(output.resolve("painted.obj.zip")),"Painted OBJ bundle export");
             button(ui,"apply");
@@ -245,6 +242,13 @@ public final class G2TexturedModelGuiTest {
         edt(()->button(ui,"undoMesh"));
         await(()->ready(ui));
         check(project.snapshot().equals(original),"Return fixture to the original textured state after publication");
+    }
+    private void captureMaterial(String filename)throws Exception{
+        var pane=((JDialog)field(ui,"materialDialog")).getContentPane();
+        var shot=new BufferedImage(pane.getWidth(),pane.getHeight(),BufferedImage.TYPE_INT_ARGB);
+        var graphics=shot.createGraphics();
+        try{pane.printAll(graphics);}finally{graphics.dispose();}
+        ImageIO.write(shot,"png",output.resolve(filename).toFile());
     }
     private void verifyLayerStyle(EditorMaterialWorkspace workspace,EditorTopologyProject.State painted)throws Exception{
         edt(()->{
@@ -262,11 +266,7 @@ public final class G2TexturedModelGuiTest {
         await(()->{try{return !(boolean)field(ui,"materialRendering") && field(ui,"materialRenderState")==styled &&
             ((JLabel)field(ui,"materialRuntime")).getIcon()!=null;}catch(Exception e){throw new RuntimeException(e);}});
         edt(()->{
-            var pane=((JDialog)field(ui,"materialDialog")).getContentPane();
-            var shot=new BufferedImage(pane.getWidth(),pane.getHeight(),BufferedImage.TYPE_INT_ARGB);
-            var graphics=shot.createGraphics();
-            try{pane.printAll(graphics);}finally{graphics.dispose();}
-            ImageIO.write(shot,"png",output.resolve("layer-settings.png").toFile());
+            captureMaterial("layer-settings.png");
             button(ui,"saveMesh");
             check(ui.exportObj(output.resolve("styled.obj.zip")),"Export editable layer settings");
             button(ui,"apply");
@@ -282,6 +282,101 @@ public final class G2TexturedModelGuiTest {
         edt(()->button(ui,"undoMesh"));
         await(()->ready(ui));
         check(project.snapshot().equals(painted),"Undo style must retain original paint stroke");
+    }
+    private static <T extends java.awt.Component> T find(java.awt.Container parent,Class<T> kind){
+        for(var c:parent.getComponents()){
+            if(kind.isInstance(c))return kind.cast(c);
+            if(c instanceof java.awt.Container container){
+                T found=find(container,kind);if(found!=null)return found;
+            }
+        }
+        return null;
+    }
+    private void verifyLayerStack(EditorMaterialWorkspace workspace,EditorTopologyProject.State painted)throws Exception{
+        edt(()->{
+            ((JList<?>)field(workspace,"faceList")).setSelectedIndex(10);
+            button(ui,"addPaintLayer");
+        });
+        applyReview();
+        edt(()->{
+            check(((JList<?>)field(workspace,"faceList")).getSelectedIndex()==10 &&
+                ((JList<?>)field(ui,"paintLayer")).getSelectedIndex()==0,
+                "Keep face selected and activate the newly added layer for the next stroke");
+            var ink=(JButton)field(workspace,"ink");
+            SwingUtilities.invokeLater(ink::doClick);
+        });
+        var picker=new AtomicReference<JDialog>();
+        await(()->{
+            for(var window:java.awt.Window.getWindows())if(window instanceof JDialog d && d.isShowing() &&
+                find(d,JColorChooser.class)!=null){picker.set(d);return true;}
+            return false;
+        });
+        edt(()->{
+            var d=picker.get();
+            find(d,JColorChooser.class).setColor(java.awt.Color.BLUE);
+            d.getRootPane().getDefaultButton().doClick();
+        });
+        edt(()->{
+            var canvas=(JPanel)field(workspace,"canvas");
+            double[] r=(double[])call(workspace,"imageRect",new Class<?>[0]);
+            for(int event:List.of(java.awt.event.MouseEvent.MOUSE_PRESSED,java.awt.event.MouseEvent.MOUSE_RELEASED))
+                canvas.dispatchEvent(new java.awt.event.MouseEvent(canvas,event,System.currentTimeMillis(),0,
+                    (int)(r[0]+.625*r[2]),(int)(r[1]+.125*r[3]),1,false,1));
+        });
+        applyReview();
+        var two=project.snapshot();
+        String top=two.materials().get(0).layers().get(1).id();
+        edt(()->{
+            ((JList<?>)field(workspace,"faceList")).setSelectedIndex(10);
+            ((JList<?>)field(ui,"paintLayer")).setSelectedIndex(0);
+            ((JTextField)field(ui,"paintLayerName")).setText("Blue detail");
+            button(ui,"previewPaintStyle");
+        });
+        applyReview();
+        var renamed=project.snapshot();
+        check(renamed.materials().get(0).layers().get(1).name().equals("Blue detail"),"Rename upper layer");
+        await(()->{try{return !(boolean)field(ui,"materialRendering") && field(ui,"materialRenderState")==renamed &&
+            ((JLabel)field(ui,"materialRuntime")).getIcon()!=null;}catch(Exception e){throw new RuntimeException(e);}});
+        edt(()->{
+            button(ui,"saveMesh");
+            captureMaterial("layer-stack.png");
+            check(ui.exportObj(output.resolve("stack.obj.zip")),"Export editable stack");
+            button(ui,"apply");
+        });
+        await(()->published.get()!=null);
+        var game=GlbProps.model(published.get());
+        check(GlbProps.sampleRgba(game.triangles().get(10).material(),.625,.125)==0xff0000ff,"Game renders blue layer above magenta");
+        var archive=ImportedAssetLibrary.root().resolve(published.get()+".authoring.btop");
+        check(EditorTopologyProject.open(archive).snapshot().equals(renamed),"Native stack archive readback");
+        Files.copy(archive,output.resolve("stack.btop"),StandardCopyOption.REPLACE_EXISTING);
+        published.set(null);
+        edt(()->{
+            ((JList<?>)field(workspace,"faceList")).setSelectedIndex(10);
+            ((JList<?>)field(ui,"paintLayer")).setSelectedIndex(0);
+            button(ui,"lowerPaintLayer");
+        });
+        applyReview();
+        var moved=project.snapshot().materials().get(0);
+        check(moved.layers().get(0).id().equals(top),"Reordering changes composition order and preserves ID");
+        var image=ImageIO.read(new java.io.ByteArrayInputStream(moved.png()));
+        check(image.getRGB(2,0)==0xffff00ff,"Lowered blue layer exposes magenta above");
+        edt(()->button(ui,"apply"));
+        await(()->published.get()!=null);
+        var reordered=GlbProps.model(published.get());
+        check(GlbProps.sampleRgba(reordered.triangles().get(10).material(),.625,.125)==0xffff00ff,"Published layer order");
+        published.set(null);
+        edt(()->{
+            ((JList<?>)field(workspace,"faceList")).setSelectedIndex(10);
+            ((JList<?>)field(ui,"paintLayer")).setSelectedIndex(1);
+            button(ui,"removePaintLayer");
+        });
+        applyReview();
+        check(project.snapshot().materials().get(0).layers().size()==1,"Remove just the selected layer");
+        for(int i=0;i<5;i++){
+            edt(()->button(ui,"undoMesh"));
+            await(()->ready(ui));
+        }
+        check(project.snapshot().equals(painted),"Undo removal, reorder, rename, second stroke and layer creation");
     }
     private void verifyPaintRecovery(EditorTopologyProject.State painted)throws Exception{
         long revision=project.revision();

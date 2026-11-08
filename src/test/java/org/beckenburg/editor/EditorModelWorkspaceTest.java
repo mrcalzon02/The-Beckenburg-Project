@@ -28,7 +28,7 @@ public final class EditorModelWorkspaceTest {
             competing.recoverPrevious();check(competing.savedWorkspace().equals(view(2))&&competing.snapshot().equals(state),"Backup restores exact workspace/geometry pair");
             var damaged=before.clone();damaged[damaged.length-1]=2;refuse(()->EditorTopologyProject.decode(damaged));
             var staleId=before.clone();ByteBuffer.wrap(staleId).putLong(staleId.length-9,Long.MAX_VALUE);refuse(()->EditorTopologyProject.decode(staleId));
-            var future=before.clone();ByteBuffer.wrap(future).putInt(4,10);refuse(()->EditorTopologyProject.decode(future));
+            var future=before.clone();ByteBuffer.wrap(future).putInt(4,11);refuse(()->EditorTopologyProject.decode(future));
             refuse(()->view(Double.NaN));refuse(()->view(50));
             System.out.println("PASS native workspace: version6/7, exact geometry/view save, fresh open, stale-writer protection, recovery, invalid ID/flag/future refusal");
         }finally{try(var paths=Files.walk(root)){for(var file:paths.sorted(Comparator.reverseOrder()).toList())Files.deleteIfExists(file);}}
