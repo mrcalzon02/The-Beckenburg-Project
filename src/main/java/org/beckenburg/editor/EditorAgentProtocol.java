@@ -45,8 +45,17 @@ public final class EditorAgentProtocol {
         return commands;
     }
     private record WireReply(String line,boolean failed){}
+    static String errorCode(Throwable failure){
+        if(failure instanceof EditorRequestJournal.Conflict)return "SEQUENCE_CONFLICT";
+        if(failure instanceof EditorAgentService.StaleRevision)return "STALE_REVISION";
+        if(failure instanceof UnsupportedOperationException)return "UNSUPPORTED_CAPABILITY";
+        if(failure instanceof IllegalArgumentException)return "INVALID_ARGUMENT";
+        if(failure instanceof IllegalStateException)return "INVALID_STATE";
+        if(failure instanceof java.io.IOException||failure instanceof java.io.UncheckedIOException)return "IO_ERROR";
+        return "INTERNAL";
+    }
     private static WireReply refusal(Exception failure){
-        try{return new WireReply(json(Map.of("ok",false,"error",failure.toString())),true);}
+        try{return new WireReply(json(Map.of("ok",false,"code",errorCode(failure),"error",failure.toString())),true);}
         catch(ReflectiveOperationException impossible){throw new AssertionError(impossible);}
     }
     private static WireReply dispatch(EditorAgentService<?> service,String line){
@@ -95,20 +104,39 @@ public final class EditorAgentProtocol {
             return new WireReply(json(Map.of("ok",true,"result",result)),failed);
         }catch(Exception failure){return refusal(failure);}
     }
-    private static WireReply handle(EditorAgentService<?> service,EditorRequestJournal<WireReply> journal,String line){
-        if(!line.startsWith("once-v1\t"))return dispatch(service,line);
+    private static final java.util.Set<String> ACTIONS=java.util.Set.of("edit","batch","undo","redo","save","reopen","recover","focus","playtest");
+    private static WireReply handle(EditorAgentService<?> service,EditorRequestJournal<WireReply> journal,java.util.Set<String> known,String line){
         try{
-            String[] envelope=line.split("\t",3);
-            if(envelope.length!=3)throw new IllegalArgumentException("Expected once-v1, sequence and action");
-            String action=envelope[2];int split=action.indexOf('\t');
-            if(split<0||!java.util.Set.of("edit","batch","undo","redo","save","reopen","recover","focus","playtest").contains(action.substring(0,split)))
-                throw new IllegalArgumentException("Request sequence requires an editor action");
-            return journal.execute(Long.parseLong(envelope[1]),EditorRequestJournal.digest(action,new byte[0]),()->dispatch(service,action));
+            Long sequence=null;String request=line;
+            if(line.startsWith("once-v1\t")){
+                String[] envelope=line.split("\t",3);
+                if(envelope.length!=3)throw new IllegalArgumentException("Expected once-v1, sequence and action");
+                sequence=Long.parseLong(envelope[1]);request=envelope[2];
+            }
+            int split=request.indexOf('\t');String action=split<0?request:request.substring(0,split);
+            if(!ACTIONS.contains(action)){
+                if(sequence!=null)throw new IllegalArgumentException("Request sequence requires an editor action");
+                if(!action.equals("actions"))return dispatch(service,request);
+                var parts=request.split("\t",-1);
+                if(parts.length!=4)throw new IllegalArgumentException("Expected actions, revision, after, limit");
+                var current=service.sceneRevision();
+                if(Long.parseLong(parts[1])!=current.revision())throw new EditorAgentService.StaleRevision();
+                var page=journal.page(Long.parseLong(parts[2]),Integer.parseInt(parts[3]));
+                return new WireReply(json(Map.of("ok",true,"result",new EditorAgentService.Evidence<>(current.sceneId(),current.revision(),page))),false);
+            }
+            var fields=request.split("\t",-1);
+            var names=action.equals("edit")||action.equals("batch")?EditorRequestJournal.operationNames(fields,2,known):java.util.List.<String>of();
+            String nativeRequest=request;
+            return journal.track(action,names,sequence,fields.length<2?null:EditorRequestJournal.revisionField(fields[1]),
+                EditorRequestJournal.digest(request,new byte[0]),()->dispatch(service,nativeRequest),reply->!reply.failed,
+                ()->service.sceneRevision().revision());
         }catch(Exception failure){return refusal(failure);}
     }
     public static int run(EditorAgentService<?> service,BufferedReader requests,PrintStream responses)throws Exception{
         boolean failed=false;
         var journal=new EditorRequestJournal<WireReply>(reply->reply.line.getBytes(java.nio.charset.StandardCharsets.UTF_8).length);
+        java.util.Set<String> known;
+        try{known=java.util.Set.copyOf(service.summary().operations());}catch(RuntimeException unavailable){known=java.util.Set.of();}
         for(;;){
             String line;
             try{line=readRequest(requests);}
@@ -116,7 +144,7 @@ public final class EditorAgentProtocol {
                 responses.println(json(Map.of("ok",false,"phase","protocol","error",failure.toString())));responses.flush();return 1;
             }
             if(line==null)break;
-            var reply=handle(service,journal,line);
+            var reply=handle(service,journal,known,line);
             failed|=reply.failed;responses.println(reply.line);responses.flush();
         }
         return failed?1:0;

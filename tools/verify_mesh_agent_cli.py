@@ -18,12 +18,14 @@ def session(*options):
                           text=True, encoding="utf-8") as child:
         failed = False
 
-        def request(*fields, ok=True):
+        def request(*fields, ok=True, code=None):
             nonlocal failed
             child.stdin.write("\t".join(map(str, fields)) + "\n")
             child.stdin.flush()
             reply = json.loads(child.stdout.readline())
             assert reply["ok"] == ok, reply
+            if code is not None:
+                assert reply["code"] == code, reply
             result = reply.get("result")
             if not ok or fields[0] == "test" and any(not check["passed"] for check in result["result"]):
                 failed = True
@@ -58,7 +60,7 @@ with tempfile.TemporaryDirectory() as directory, session() as first:
         initial = rev
         edit = first("once-v1", 1, "edit", initial, *args, "opacity=75")
         assert first("once-v1", 1, "edit", initial, *args, "opacity=75") == edit
-        first("once-v1", 1, "edit", initial, *args, "opacity=80", ok=False)
+        first("once-v1", 1, "edit", initial, *args, "opacity=80", ok=False, code="SEQUENCE_CONFLICT")
         rev = edit["revision"]
         assert first("revision")["revision"] == rev
         changed = Path(directory) / "edited.png"
@@ -75,12 +77,18 @@ with tempfile.TemporaryDirectory() as directory, session() as first:
         fresh = first("revision")["revision"]
         first(*refused, ok=False)
         assert first("revision")["revision"] == fresh
-        first("selection", rev, ok=False)
+        first("selection", rev, ok=False, code="STALE_REVISION")
         assert first("selection", fresh)["result"]["properties"]["opacity"] == "75"
         rev = first("undo", fresh)["revision"]
         assert first("selection", rev)["result"] == selected
         assert first("once-v1", 1, "edit", initial, *args, "opacity=75") == edit
         assert first("selection", rev)["result"] == selected
+        page = first("actions", rev, 0, 64)["result"]
+        entries = [e for e in page["events"] if e["sequence"] == 1]
+        assert [e["outcome"] for e in entries] == ["applied", "replayed", "sequence-conflict", "replayed"]
+        assert all(e["operations"] == ["set-layer-opacity"] for e in entries)
+        assert entries[-1]["observedRevision"] == rev and "opacity=75" not in json.dumps(page)
+        assert [e["outcome"] for e in page["events"] if e["sequence"] == 2] == ["refused", "replayed-refusal"]
         rev = first("redo", rev)["revision"]
         assert first("selection", rev)["result"]["properties"]["opacity"] == "75"
         rev = first("undo", rev)["revision"]

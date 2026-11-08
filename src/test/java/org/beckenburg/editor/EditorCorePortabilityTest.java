@@ -144,5 +144,10 @@ public final class EditorCorePortabilityTest {
         try{receipts.execute(4,"large",()->"wrong");throw new AssertionError("Evicted large receipt repeated");}
         catch(EditorRequestJournal.Conflict expected){}
         check(calls[0]==4,"Only original calls executed");
+        for(int i=0;i<140;i++)receipts.track("undo",List.of(),null,4L,"test",()->"ok","ok"::equals,()->5L);
+        var page=receipts.page(0,3);
+        check(page.firstAvailable()==13&&page.lastEvent()==140&&page.events().size()==3,"Bounded action history with explicit retention gap");
+        var recent=receipts.page(139,1).events().get(0);
+        check(recent.event()==140&&recent.observedRevision()==5&&recent.outcome().equals("applied"),"Cursor returns the newest actual event");
     }
 }

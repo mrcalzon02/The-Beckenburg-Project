@@ -135,7 +135,7 @@
             "Stale revision rejected and no scene change",
             "Partial batch failure restores exact prior snapshot"
           ],
-          "implementationEvidence": "Native stale/batch/cancellation rollback tests, shared human undo/redo, source disk guard and failed-restore regression; no generic scripting or remote writes are admitted."
+          "implementationEvidence": "Native stale/batch/cancellation rollback tests, shared human undo/redo, source disk guard and failed-restore regression. The authorized MCP adapter issues typed writes through the same service."
         },
         {
           "id": "M2-02",
@@ -153,7 +153,7 @@
             "Duplicate idempotency request makes no second object",
             "Undo/redo and save/reload preserve scene"
           ],
-          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
+          "implementationEvidence": "At ab650b4b the installed Castle client inspected the upper lodging, repaired a spawn wall and placed a native palette prop in one transaction. The chair and its collider survived save/reopen, and one human undo removed both. The v1 session sequence additionally covers duplicate requests. Other command families, including lamps and doors, still require native acceptance."
         }
       ]
     },
@@ -186,7 +186,7 @@
             "src/main/java/org/beckenburg/EditorPlaytest.java"
           ],
           "status": "tested",
-          "implementationEvidence": "EditorAgentGuiTest drives the human Playtest button for an unsaved Castle spawn and mission prop. The actual Castle hub and House spectral gameplay render and advance while a separate LAN host retains its connected peer and identical native diagnostic snapshot. Native state, revision, disk bytes, editor camera, selection, dirty state and shared undo history survive return. Agent-triggered playtest is still open.",
+          "implementationEvidence": "EditorAgentGuiTest drives the human Playtest button for an unsaved Castle spawn and mission prop. The actual Castle hub and House spectral gameplay advance while a separate LAN host retains its connected peer. At 14a6b7ff MCP returned gameplay PNGs from both hosts and preserved the editor revision, position proof and disk state. Installed acceptance run 42491180436 passed.",
           "dependsOn": [
             "M3-01"
           ],
@@ -300,8 +300,13 @@
         {
           "id": "M6-01",
           "name": "Second-game/module adapters after main editor acceptance",
-          "scope": [],
-          "status": "planned",
+          "scope": [
+            "src/main/java/org/beckenburg/MaterialEditorAgent.java",
+            "src/main/java/org/beckenburg/HeadlessMaterialEditor.java",
+            "src/test/java/org/beckenburg/editor/EditorCorePortabilityTest.java"
+          ],
+          "status": "tested",
+          "implementationEvidence": "Installed run 42490462726 verified the separate Material Editor module and stdio host against the same native BTOP and renderer. Standalone run 42492465409 exercised an unrelated Java 17 project through its own adapter. This covers module adoption and independent adapter reuse within this repository.",
           "dependsOn": [
             "M5-02",
             "M4-02"
@@ -327,15 +332,18 @@
     "TIMEOUT",
     "SAVE_FAILED",
     "RENDER_UNAVAILABLE",
-    "INTERNAL"
+    "INTERNAL",
+    "SEQUENCE_CONFLICT",
+    "INVALID_STATE",
+    "IO_ERROR"
   ],
-  "nextTask": "A2 verify Java17 focused workflow and Windows installed UI; A3 shared-vertex height delta transaction; A4 runtime mesh and collision",
+  "nextTask": "Continue M2-02 native command coverage and M3-03 basement diagnostics alongside the dependency-ordered G2/G3 material and modeling work.",
   "evidence": {
-    "sourceVerified": false,
-    "installedWindowsVerified": false,
-    "mcpConnected": false,
-    "agentEditedRealScene": false,
-    "notes": "T1 stitched-world and A1 adaptive topology focused Java17 workflow pass. A2 UI source committed and acceptance pending; A3-A6 and T3-T9 no runtime proof."
+    "sourceVerified": true,
+    "installedWindowsVerified": true,
+    "mcpConnected": true,
+    "agentEditedRealScene": true,
+    "notes": "These flags cover the verified agent service on Castle, House and native mesh documents. Installed run 42492463902, source ab650b4b, includes the upper-floor repair, gameplay capture, disk readback and mesh host. Terrain and later domain gates retain their own acceptance criteria."
   },
   "executionOrder": "Human terrain/loading-zone/stitched-world modules (T0-T8) first; then existing agentic milestones M0-M6. Agent adapters must reuse tested module operations.",
   "terrainWorldPlan": "docs/development/TERRAIN_WORLD_SYSTEM_PLAN.md",
@@ -807,9 +815,9 @@
     }
   ],
   "nextGoalWork": [
-    "Verify new exact-source310 native/standalone/full results for disk/snapshot/schema/bootstrap/history contracts",
-    "Continue G2 human parametric primitives and actual selection/gizmos on the same indexed project; then reversible edge/face modeling and material/normal interchange",
-    "Continue dependency-ordered G3-G12 without fake scene data or premature gate completion; original PDF bytes and installed hardware acceptance remain separate"
+    "Extend validated native commands and structured diagnostics only after their human editor and gameplay paths are verified.",
+    "Continue open G2/G3 modeling and material requirements, including native channel support and larger-texture authoring.",
+    "Track G4 terrain, G5/G6 sound, G7 animation, G8/G9 schema and plugin work, G10 isolation, G11 diagnostics and G12 hardware acceptance against their own gates."
   ],
   "ownerPriority": {
     "date": "2026-11-01",

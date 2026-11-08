@@ -13,6 +13,9 @@ import java.util.Set;
  */
 public final class EditorAgentService<S> {
     public enum Capability { INSPECT, TRANSACT, UNDO, REDO, SAVE, REOPEN, RECOVER_PREVIOUS, CAPTURE, TEST }
+    static final class StaleRevision extends IllegalStateException {
+        StaleRevision(){super("Stale scene revision; inspect again");}
+    }
     public record Check(String code, boolean passed, String detail) {}
     public enum DiskState { MATCHES, DIFFERS, MISSING, UNREADABLE, UNSUPPORTED }
     public record PositionProof(EditorProject.Node actual,boolean verified,boolean committed,DiskState diskState){}
@@ -213,7 +216,7 @@ public final class EditorAgentService<S> {
     }
     private void require(long expected) {
         host.checkAccess();
-        if(expected!=host.revision())throw new IllegalStateException("Stale scene revision; inspect again");
+        if(expected!=host.revision())throw new StaleRevision();
     }
     public Evidence<Void> transact(long expected, String operation, Map<String,String> arguments) {
         return transact(expected,List.of(new Command(operation,arguments)));

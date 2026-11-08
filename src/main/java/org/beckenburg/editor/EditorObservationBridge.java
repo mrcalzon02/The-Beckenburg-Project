@@ -20,6 +20,7 @@ public final class EditorObservationBridge implements AutoCloseable {
     private final boolean selection;
     private final boolean walkingCollision;
     private final boolean focus;
+    private final Set<String> knownOperations;
     private final EditorRequestJournal<Reply> requests=new EditorRequestJournal<>(r->r.bytes.length);
     private static final int MAX_BYTES=4*1024*1024;
     private final HttpServer server;
@@ -31,7 +32,9 @@ public final class EditorObservationBridge implements AutoCloseable {
     /** Construct on the owner thread and dispatch all later requests through that host's executor. */
     public EditorObservationBridge(EditorAgentService<?> service,Scope scope,Executor owner)throws IOException{
         this.service=Objects.requireNonNull(service);this.scope=Objects.requireNonNull(scope);this.owner=Objects.requireNonNull(owner);
-        capabilities=Set.copyOf(service.summary().capabilities());
+        var summary=service.summary();
+        capabilities=Set.copyOf(summary.capabilities());
+        knownOperations=Set.copyOf(summary.operations());
         selection=service.supportsSelection();
         walkingCollision=service.supportsWalkability();
         focus=service.supportsFocus();
@@ -82,11 +85,8 @@ public final class EditorObservationBridge implements AutoCloseable {
                 try{reply=write?task.get():task.get(30,TimeUnit.SECONDS);}
                 finally{task.cancel(false);}
             }catch(ExecutionException failure){
-                var cause=failure.getCause();
-                if(cause instanceof EditorRequestJournal.Conflict conflict)error(exchange,409,conflict.getMessage());
-                else if(cause instanceof IllegalStateException)error(exchange,409,"Editor revision or session changed");
-                else if(cause instanceof IllegalArgumentException)error(exchange,400,"Invalid observation request");
-                else error(exchange,500,"Observation failed");
+                var denied=failureReply(failure.getCause());
+                send(exchange,denied.status,denied.type,denied.bytes);
                 return;
             }catch(IllegalArgumentException invalid){error(exchange,400,"Invalid observation request");return;}
             catch(TimeoutException timeout){error(exchange,503,"Editor busy");return;}
@@ -130,23 +130,33 @@ public final class EditorObservationBridge implements AutoCloseable {
         var routes=new ArrayList<>(List.of("/summary","/revision","/hierarchy","/node","/nodes","/changes","/assets","/verify-position"));
         if(selection)routes.add("/selection");
         if(walkingCollision)routes.add("/walkability");
+        if(scope!=Scope.OBSERVE)routes.add("/actions");
         if(capabilities.contains(EditorAgentService.Capability.TEST))routes.add("/test");
         if(capabilities.contains(EditorAgentService.Capability.CAPTURE))routes.add("/capture");
         return routes;
     }
     private Reply writeRequest(String path,Map<String,String> args,byte[] body)throws Exception{
         String sequence=args.remove("sequenceV1");
-        if(sequence==null)return mutate(path,args,body);
         String digest=EditorRequestJournal.digest(path+"\n"+EditorAgentProtocol.json(new TreeMap<>(args)),body);
-        return requests.execute(Long.parseLong(sequence),digest,()->{
+        var operations=path.equals("/edit")?EditorRequestJournal.operationNames(new String(body,StandardCharsets.UTF_8).split("\t",-1),0,knownOperations):List.<String>of();
+        return requests.track(path.substring(1),operations,sequence==null?null:Long.parseLong(sequence),
+            EditorRequestJournal.revisionField(args.get("revision")),digest,()->{
             try{return mutate(path,args,body);}
-            catch(IllegalStateException failure){return refused(409,"STALE_REVISION","Editor revision or session changed");}
-            catch(IllegalArgumentException failure){return refused(400,"INVALID_ARGUMENT","Invalid observation request");}
-            catch(Exception failure){return refused(500,"ACTION_FAILED","Editor action failed");}
-        });
+            catch(Exception failure){return failureReply(failure);}
+        },reply->reply.status==200,()->service.sceneRevision().revision());
     }
     private static Reply refused(int status,String code,String reason){
         return new Reply("application/json",("{\"code\":\""+code+"\",\"error\":\""+reason+"\"}").getBytes(StandardCharsets.UTF_8),null,status);
+    }
+    private static Reply failureReply(Throwable failure){
+        String code=EditorAgentProtocol.errorCode(failure);
+        return switch(code){
+            case "SEQUENCE_CONFLICT" -> refused(409,code,failure.getMessage());
+            case "STALE_REVISION" -> refused(409,code,"Editor revision changed");
+            case "INVALID_STATE" -> refused(409,code,"Editor state unavailable");
+            case "INVALID_ARGUMENT","UNSUPPORTED_CAPABILITY" -> refused(400,code,"Invalid or unavailable editor request");
+            default -> refused(500,code,"Editor request failed");
+        };
     }
     private Reply mutate(String path,Map<String,String> args,byte[] body)throws Exception{
         if(path.equals("/focus"))requireKeys(args,"revision","id");else requireKeys(args,"revision");
@@ -184,9 +194,13 @@ public final class EditorObservationBridge implements AutoCloseable {
             return json(current,current.revision());
         }
         long revision=Long.parseLong(args.remove("revision"));
-        if(revision!=current.revision())throw new IllegalStateException("Stale revision");
+        if(revision!=current.revision())throw new EditorAgentService.StaleRevision();
         Object value;
         switch(path){
+            case "/actions" -> {
+                requireKeys(args,"after","limit");if(scope==Scope.OBSERVE)throw new IllegalArgumentException();
+                value=new EditorAgentService.Evidence<>(current.sceneId(),revision,requests.page(Long.parseLong(args.get("after")),Integer.parseInt(args.get("limit"))));
+            }
             case "/selection" -> {requireKeys(args);if(!selection)throw new IllegalArgumentException();value=service.selection(revision);}
             case "/walkability" -> {
                 requireKeys(args,"x","y","z");if(!walkingCollision)throw new IllegalArgumentException();
@@ -225,7 +239,11 @@ public final class EditorObservationBridge implements AutoCloseable {
         return new Reply("application/json",EditorAgentProtocol.json(value).getBytes(StandardCharsets.UTF_8),revision);
     }
     private static void error(HttpExchange exchange,int status,String message)throws IOException{
-        send(exchange,status,"application/json",("{\"error\":\""+message+"\"}").getBytes(StandardCharsets.UTF_8));
+        String code=switch(status){
+            case 400->"INVALID_ARGUMENT";case 401->"UNAUTHORIZED";case 403->"FORBIDDEN";case 405->"METHOD_UNAVAILABLE";
+            case 413->"RESPONSE_TOO_LARGE";case 503->"BUSY";default->"INTERNAL";
+        };
+        var reply=refused(status,code,message);send(exchange,status,reply.type,reply.bytes);
     }
     private static void send(HttpExchange exchange,int status,String type,byte[] bytes)throws IOException{
         exchange.getResponseHeaders().set("Content-Type",type);

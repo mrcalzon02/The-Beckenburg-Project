@@ -23,6 +23,7 @@ async def verify(scope):
         assert ("reopen" in tools) == (scope in ("save", "material-save"))
         assert ("playtest" in tools) == (scope in ("edit", "save"))
         assert ("check_walkability" in tools) == (scope in ("observe", "edit", "save"))
+        assert ("recent_actions" in tools) == (scope not in ("observe", "material"))
         assert set(tools["verify_position"].inputSchema["required"]) == {"revision", "id", "x", "y", "z"}
 
         async def call(name, **args):
@@ -84,9 +85,13 @@ async def verify(scope):
             assert state["sceneId"] == "another-game" and "capture_viewport" not in tools
             assert state["operations"] == {"increment": {}}
             first = (await call("inspect_nodes", revision=revision, ids=["room"]))["result"][0]
+            cursor = (await call("recent_actions", revision=revision))["result"]["lastEvent"]
             args = dict(revision=revision, sequence=1, commands=[{"operation": "increment", "arguments": {}}])
             edited = await call("edit", **args)
             assert await call("edit", **args) == edited
+            audit = (await call("recent_actions", revision=edited["revision"], after=cursor))["result"]["events"]
+            assert [e["outcome"] for e in audit] == ["applied", "replayed"]
+            assert all(e["operations"] == ["increment"] and e["sequence"] == 1 for e in audit)
             proof = (await call("verify_position", revision=edited["revision"], id="room",
                                 x=first["x"] + 1, y=first["y"], z=first["z"]))["result"]
             assert proof["verified"] and proof["diskState"] == "UNSUPPORTED"
@@ -112,7 +117,7 @@ async def verify(scope):
             before = await call("inspect_nodes", revision=revision, ids=[key])
             disk = await call("verify_position", revision=revision, id=key, **xyz)
             stale = await client.call_tool("playtest", {"revision": revision - 1})
-            assert stale.isError
+            assert stale.isError and "STALE_REVISION" in stale.content[0].text
             played = await client.call_tool("playtest", {"revision": revision, "sequence": 30})
             assert not played.isError and len(played.content) == 1 and played.content[0].mimeType == "image/png", played.content[0].type
             png = base64.b64decode(played.content[0].data, validate=True)
@@ -191,7 +196,7 @@ async def verify(scope):
                 result = await call("edit", **transaction)
                 assert result == await call("edit", **transaction)
                 mismatch = await client.call_tool("edit", dict(transaction, commands=[place]))
-                assert mismatch.isError and "different arguments" in mismatch.content[0].text
+                assert mismatch.isError and "SEQUENCE_CONFLICT" in mismatch.content[0].text
                 revision = result["revision"]
                 audit = (await call("run_test", revision=revision, id="castle-scene-audit"))["result"]
                 assert not any(check["code"] == "SPAWN_WALL_INTERSECTION" for check in audit)
@@ -217,6 +222,17 @@ async def verify(scope):
                 reverted = await call("undo", revision=revision)
                 assert result == await call("edit", **transaction)
                 assert await walk(reverted["revision"], spot)
+                page = (await call("recent_actions", revision=reverted["revision"], limit=64))["result"]
+                sequence = [e for e in page["events"] if e["sequence"] == 11]
+                assert [e["outcome"] for e in sequence] == ["applied", "replayed", "sequence-conflict", "replayed"]
+                assert sequence[0]["operations"] == ["remove-surface", "place-prop"]
+                assert sequence[0]["digest"] == sequence[3]["digest"] != sequence[2]["digest"]
+                assert sequence[3]["observedRevision"] == reverted["revision"]
+                assert os.environ["EDITOR_AGENT_TOKEN"] not in json.dumps(page) and prop_id not in json.dumps(page)
+                assert not (await call("recent_actions", revision=reverted["revision"], after=page["lastEvent"]))["result"]["events"]
+                (output / "mcp-castle-actions.json").write_text(json.dumps(
+                    {"sceneId": state["sceneId"], "revision": reverted["revision"], "sourceCommit": os.environ.get("GITHUB_SHA"),
+                     "actions": page}, indent=2), encoding="utf-8")
                 empty = await client.call_tool("capture_viewport", {"revision": reverted["revision"]})
                 assert not empty.isError and empty.content[0].data != capture.content[0].data
                 (output / "mcp-upper-room-before.png").write_bytes(base64.b64decode(empty.content[0].data, validate=True))

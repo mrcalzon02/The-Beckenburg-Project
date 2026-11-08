@@ -33,7 +33,9 @@ class LiveEditor:
             if len(data) > 4 * 1024 * 1024:
                 raise ValueError("Editor response exceeds limit")
             if reply.status != 200:
-                raise ValueError(f"Editor HTTP {reply.status}: {json.loads(data)['error']}")
+                problem = json.loads(data)
+                code = f" [{problem['code']}]" if "code" in problem else ""
+                raise ValueError(f"Editor HTTP {reply.status}{code}: {problem['error']}")
             if route in ("/capture", "/playtest"):
                 if reply.headers.get_content_type() != "image/png" or not data.startswith(b"\x89PNG\r\n\x1a\n"):
                     raise ValueError("Invalid editor capture")
@@ -102,6 +104,12 @@ def server(editor: LiveEditor):
 
     def page(route, revision, offset, limit):
         return editor.call(route, {"revision": revision, "offset": offset, "limit": limit})
+
+    if "/actions" in summary["routes"]:
+        @native_tool
+        def recent_actions(revision: int, after: int = 0, limit: int = 16) -> str:
+            """Read bounded session audit events after the supplied event number."""
+            return editor.call("/actions", dict(revision=revision, after=after, limit=limit))
 
     if "/selection" in summary["routes"]:
         @native_tool
