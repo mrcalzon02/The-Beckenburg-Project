@@ -13,6 +13,7 @@ public final class InvestigationSession {
     public enum Instrument { EMF, THERMOMETER, SPIRIT_BOX }
     public enum Outcome { ACTIVE, CLEANSED, RETREATED, LOST }
     private final HouseMap map;
+    private final HouseEncounter houseEncounter;
     private final Random random;
     private final Role role;
     private final HunterDiscipline classSkills=new HunterDiscipline(1);
@@ -179,7 +180,7 @@ public final class InvestigationSession {
         hunterLevel=level;
         maxHealth=HunterProgression.maxHealth(level);
         health=maxHealth;
-        this.map=map; this.role=role; this.random=new Random(seed);
+        this.map=map;this.houseEncounter=new HouseEncounter(map); this.role=role; this.random=new Random(seed);
         evidenceSeed=seed;
         thermalPolarity=GhostEvidenceProfile.thermal(assignedGhost);
         int month=java.time.LocalDate.now().getMonthValue();
@@ -292,6 +293,8 @@ public final class InvestigationSession {
         }
         var clutterObserver=new LooseClutter.Observer(0,playerX,playerY,playerZ,clutterYaw,clutterPitch,!hidden&&health>0,HunterPosture.eye(crouched));
         for(var hit:map.clutter().advance(List.of(clutterObserver))){health=Math.max(0,health-hit.damage());log("Struck by a flying object! -"+hit.damage()+" health.");if(health==0){finish(Outcome.LOST);return;}}
+        var locationSound=houseEncounter.advance(ticks,List.of(clutterObserver));
+        if(locationSound!=null)pendingSounds.add(new WorldCue(locationSound.room(),locationSound.x(),locationSound.y(),locationSound.z(),locationSound.cue(),ticks));
         if(hidden&&(hidingAt==null||Math.hypot(playerX-hidingAt.x(),playerZ-hidingAt.z())>.02
                 ||Math.abs(playerY-hidingAt.y())>.1||(shrubHidden?(!crouched||OutdoorHiding.containing(map.level(),playerX,playerY,playerZ,map.hidingDensity())==null||ghost.room()==playerRoom&&Math.hypot(playerX-map.centerX(playerRoom),playerZ-map.centerZ(playerRoom))<2.4):!LevelClosets.available(map.level(),playerRoom,map.hidingDensity()))))leaveHiding();
         ghost.advance(ticks,sheltered?-1:playerRoom,playerRoom==ghost.room()&&!hidden&&!sheltered?1:0);
@@ -570,6 +573,7 @@ public final class InvestigationSession {
     private void finish(Outcome result) {
         if(rewarded)return;
         outcome=result;rewarded=true;
+        houseEncounter.cancel();
         int base=switch(result){case CLEANSED->220 + measuredTools.size()*40 + health/2 + (apparitionPhotographed?45:0);case RETREATED->measuredTools.size()*30 + (apparitionPhotographed?25:0);case LOST->0;case ACTIVE->0;};
         payouts=CampaignPartyRules.hostCredits(base,partySize);
     }

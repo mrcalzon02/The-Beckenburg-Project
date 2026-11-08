@@ -1,0 +1,12 @@
+2026-11-07T22:54:13.599128300Z [main] RENDER SLOW stage=idle faces=91914 visible_faces=46648 culled_faces=45266 target=320x200 build_ms=891 lighting_raster_ms=967
+castleStaticGeometry=0
+castleEnvironment=null
+preparedShellFaces=0
+preparedScenery=0
+residentSceneryFaces=0
+stableGpuFaces=0
+shellGpuFaces=0
+cachedVanFaces=0
+cachedRoadFaces=0
+RETIRED_PROFILE_PID=14776
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space: failed reallocation of scalar replaced objects

@@ -1,0 +1,1206 @@
+14776:
+ num     #instances         #bytes  class name (module)
+-------------------------------------------------------
+   1:         19130       90471264  [B (java.base@17.0.12)
+   2:         10313       31369856  [I (java.base@17.0.12)
+   3:        382323       30585840  org.beckenburg.GlbProps$Vertex
+   4:        127441        4078112  org.beckenburg.GlbProps$Triangle
+   5:         34734        1389360  java.util.LinkedHashMap$Entry (java.base@17.0.12)
+   6:          6292        1272256  [Ljava.lang.Object; (java.base@17.0.12)
+   7:         24282        1165536  org.beckenburg.FixtureLighting$Shadow
+   8:         15337         613480  org.beckenburg.LevelDefinition$Vec
+   9:          1671         606960  [D (java.base@17.0.12)
+  10:            38         555336  [F (java.base@17.0.12)
+  11:         17324         554368  org.beckenburg.HouseRebuildEnvelope$Vertex
+  12:         18159         435816  java.lang.String (java.base@17.0.12)
+  13:          3138         384656  java.lang.Class (java.base@17.0.12)
+  14:          8804         352160  org.beckenburg.FixtureLighting$RGB
+  15:          8803         352120  org.beckenburg.FixtureLighting$Key
+  16:          8548         273536  org.beckenburg.HouseRebuildEnvelope$Triangle
+  17:           406         271456  [Ljava.util.HashMap$Node; (java.base@17.0.12)
+  18:          8803         211272  org.beckenburg.FixtureLighting$Lit
+  19:          4672         149504  java.util.HashMap$Node (java.base@17.0.12)
+  20:          4596         147072  java.util.concurrent.ConcurrentHashMap$Node (java.base@17.0.12)
+  21:          6034         144816  java.lang.Long (java.base@17.0.12)
+  22:          3170         101440  java.lang.invoke.LambdaForm$Name (java.base@17.0.12)
+  23:           796          95520  sun.awt.image.ByteInterleavedRaster (java.desktop@17.0.12)
+  24:           277          76448  [C (java.base@17.0.12)
+  25:          1565          75120  java.lang.invoke.MemberName (java.base@17.0.12)
+  26:          1155          55440  org.beckenburg.FixtureLighting$DistantProbe
+  27:           696          52896  [Ljava.lang.ref.SoftReference; (java.base@17.0.12)
+  28:          1226          49040  java.lang.invoke.MethodType (java.base@17.0.12)
+  29:          1155          46200  org.beckenburg.FixtureLighting$DistantCell
+  30:          1425          44712  [Ljava.lang.Class; (java.base@17.0.12)
+  31:           798          44688  java.awt.image.PixelInterleavedSampleModel (java.desktop@17.0.12)
+  32:          1252          40064  java.lang.invoke.MethodType$ConcurrentWeakInternSet$WeakEntry (java.base@17.0.12)
+  33:            78          39904  [Ljava.util.concurrent.ConcurrentHashMap$Node; (java.base@17.0.12)
+  34:          1642          39408  org.beckenburg.CastleHubMap$GroundCell
+  35:           796          38208  java.awt.image.DataBufferByte (java.desktop@17.0.12)
+  36:          2272          36352  java.lang.Integer (java.base@17.0.12)
+  37:           810          32400  java.awt.image.BufferedImage (java.desktop@17.0.12)
+  38:           495          31216  [Ljava.lang.invoke.LambdaForm$Name; (java.base@17.0.12)
+  39:           473          30272  org.beckenburg.LevelDefinition$Socket
+  40:           367          29360  org.beckenburg.CastleHubArchitecturalPlan$Wall
+  41:           317          27896  java.lang.reflect.Method (java.base@17.0.12)
+  42:          1101          26424  java.lang.invoke.ResolvedMethodName (java.base@17.0.12)
+  43:           649          25960  java.lang.invoke.BoundMethodHandle$Species_LL (java.base@17.0.12)
+  44:           114          25232  [Ljava.lang.invoke.MethodHandle; (java.base@17.0.12)
+  45:          1030          24720  java.util.ImmutableCollections$ListN (java.base@17.0.12)
+  46:          1007          24168  java.lang.invoke.LambdaForm$NamedFunction (java.base@17.0.12)
+  47:           495          23760  dev.mrcalzon.weather.WeatherSurfaceGrid$Surface
+  48:           490          23520  java.lang.invoke.LambdaForm (java.base@17.0.12)
+  49:           569          22760  java.util.TreeMap$Entry (java.base@17.0.12)
+  50:           471          22608  java.util.HashMap (java.base@17.0.12)
+  51:           559          22360  java.lang.ref.SoftReference (java.base@17.0.12)
+  52:           689          22048  org.beckenburg.AuthoredSitePhysics$Part
+  53:           813          19512  sun.java2d.StateTrackableDelegate (java.desktop@17.0.12)
+  54:           796          19104  [[B (java.base@17.0.12)
+  55:           758          18192  org.beckenburg.FixtureLighting$Cell
+  56:           513          17664  [Ljava.lang.String; (java.base@17.0.12)
+  57:          1047          16752  java.lang.Object (java.base@17.0.12)
+  58:           232          16704  org.beckenburg.CastleLevelEdits$Surface
+  59:           687          16488  org.beckenburg.HouseRebuildEnvelope$Part
+  60:           217          15624  java.lang.reflect.Field (java.base@17.0.12)
+  61:           431          13792  java.lang.invoke.DirectMethodHandle (java.base@17.0.12)
+  62:            51          13392  [J (java.base@17.0.12)
+  63:           415          13280  java.lang.invoke.MethodTypeForm (java.base@17.0.12)
+  64:           475          11400  java.util.ArrayList (java.base@17.0.12)
+  65:           465          11160  java.util.ImmutableCollections$List12 (java.base@17.0.12)
+  66:           341          10912  jdk.internal.math.FDBigInteger (java.base@17.0.12)
+  67:           150          10800  org.beckenburg.LevelDefinition$Collider
+  68:           264          10560  java.lang.invoke.DirectMethodHandle$Accessor (java.base@17.0.12)
+  69:           199           9552  sun.java2d.loops.Blit (java.desktop@17.0.12)
+  70:           194           9312  java.lang.invoke.MethodHandleImpl$CountingWrapper (java.base@17.0.12)
+  71:           114           9120  org.beckenburg.CastleLevelEdits$Prop
+  72:           101           8888  org.beckenburg.CastleLevelEdits$Lamp
+  73:           362           8688  java.lang.module.ModuleDescriptor$Exports (java.base@17.0.12)
+  74:           262           8384  sun.security.util.KnownOIDs (java.base@17.0.12)
+  75:           108           7776  org.beckenburg.CastleWarehouse$Exhibit
+  76:           162           7776  sun.java2d.loops.ScaledBlit (java.desktop@17.0.12)
+  77:            21           7728  java.lang.Thread (java.base@17.0.12)
+  78:           119           7616  java.util.concurrent.ConcurrentHashMap (java.base@17.0.12)
+  79:           156           7488  java.lang.invoke.LambdaFormEditor$Transform (java.base@17.0.12)
+  80:           282           6768  java.util.ImmutableCollections$Set12 (java.base@17.0.12)
+  81:           405           6480  java.lang.Short (java.base@17.0.12)
+  82:            89           5696  org.beckenburg.CastleHubDecor$Light
+  83:            99           5544  org.beckenburg.CastleHubArchitecturalPlan$Deck
+  84:           131           5240  java.lang.invoke.BoundMethodHandle$Species_LLL (java.base@17.0.12)
+  85:           108           5184  java.lang.invoke.BoundMethodHandle$Species_LLLL (java.base@17.0.12)
+  86:           108           5184  org.beckenburg.CastleShelfLabels$Tile
+  87:            63           5040  java.net.URI (java.base@17.0.12)
+  88:           147           4704  java.lang.invoke.BoundMethodHandle$Species_L (java.base@17.0.12)
+  89:           191           4584  jdk.internal.module.ServicesCatalog$ServiceProvider (java.base@17.0.12)
+  90:           108           4320  java.math.BigInteger (java.base@17.0.12)
+  91:            90           4320  sun.java2d.loops.MaskBlit (java.desktop@17.0.12)
+  92:            61           4296  [S (java.base@17.0.12)
+  93:           133           4256  java.lang.module.ModuleDescriptor$Requires (java.base@17.0.12)
+  94:           129           4128  org.beckenburg.EquipmentModelCatalog$Stage
+  95:           253           4048  java.util.HashSet (java.base@17.0.12)
+  96:            63           4032  java.lang.module.ModuleDescriptor (java.base@17.0.12)
+  97:            45           3960  org.beckenburg.LevelDefinition$Prop
+  98:            70           3920  java.lang.Module (java.base@17.0.12)
+  99:           163           3912  java.util.ImmutableCollections$SetN (java.base@17.0.12)
+ 100:            94           3760  java.lang.invoke.BoundMethodHandle$Species_LJ (java.base@17.0.12)
+ 101:            47           3760  org.beckenburg.CastleRooms$Room
+ 102:            31           3720  org.beckenburg.FixtureLighting$Source
+ 103:            64           3584  org.beckenburg.CastleRooms$Edge
+ 104:            63           3528  jdk.internal.module.ModuleReferenceImpl (java.base@17.0.12)
+ 105:            55           3520  org.beckenburg.CastleDoorSlots$WindowFrameBox
+ 106:            85           3400  java.lang.invoke.DirectMethodHandle$Constructor (java.base@17.0.12)
+ 107:            82           3280  java.lang.invoke.MethodHandleImpl$AsVarargsCollector (java.base@17.0.12)
+ 108:            50           3200  java.security.Provider$Service (java.base@17.0.12)
+ 109:           200           3200  org.beckenburg.GlbProps$Model
+ 110:            56           3136  java.lang.invoke.BoundMethodHandle$Species_LLLLLLL (java.base@17.0.12)
+ 111:             2           3000  [Lsun.java2d.loops.GraphicsPrimitive; (java.desktop@17.0.12)
+ 112:           122           2928  java.security.Provider$ServiceKey (java.base@17.0.12)
+ 113:             7           2888  [Lorg.beckenburg.AuthoredSitePhysics$Part;
+ 114:            45           2880  org.beckenburg.CastleHubMap$Furnishing
+ 115:            39           2808  java.lang.reflect.Constructor (java.base@17.0.12)
+ 116:           105           2680  [[C (java.base@17.0.12)
+ 117:            36           2592  org.beckenburg.CastleDoorSlots$Slot
+ 118:           108           2592  org.beckenburg.CastleShelfLabels$Key
+ 119:            20           2560  [Lsun.font.PhysicalFont; (java.desktop@17.0.12)
+ 120:            40           2560  java.lang.Class$ReflectionData (java.base@17.0.12)
+ 121:            27           2472  [Z (java.base@17.0.12)
+ 122:            50           2400  org.beckenburg.GhostHauntingFolio$Entry
+ 123:            42           2352  org.beckenburg.EquipmentTiers$Plan
+ 124:            16           2304  java.awt.image.DirectColorModel (java.desktop@17.0.12)
+ 125:            47           2256  sun.java2d.loops.MaskFill (java.desktop@17.0.12)
+ 126:            31           2232  org.beckenburg.CastleHubArchitecturalPlan$Trim
+ 127:            68           2176  java.lang.invoke.LambdaForm$Kind (java.base@17.0.12)
+ 128:           128           2048  java.lang.Character (java.base@17.0.12)
+ 129:            42           2016  java.lang.invoke.BoundMethodHandle$Species_LLLLL (java.base@17.0.12)
+ 130:            62           1984  jdk.internal.loader.BuiltinClassLoader$LoadedModule (java.base@17.0.12)
+ 131:            27           1944  org.beckenburg.LevelDefinition$Portal
+ 132:            60           1920  java.lang.ref.WeakReference (java.base@17.0.12)
+ 133:            20           1920  sun.font.CompositeFont (java.desktop@17.0.12)
+ 134:            58           1856  java.lang.invoke.SimpleMethodHandle (java.base@17.0.12)
+ 135:            28           1848  [[I (java.base@17.0.12)
+ 136:            57           1824  org.beckenburg.LanSound$Cue
+ 137:            38           1824  org.beckenburg.VanArrivalStreet$RoadTile
+ 138:            45           1800  java.io.ObjectStreamField (java.base@17.0.12)
+ 139:             6           1784  [Ljava.util.Hashtable$Entry; (java.base@17.0.12)
+ 140:            72           1728  java.lang.invoke.Invokers (java.base@17.0.12)
+ 141:            72           1728  java.util.concurrent.CopyOnWriteArrayList (java.base@17.0.12)
+ 142:            53           1696  org.beckenburg.EquipmentModelCatalog$Variant
+ 143:            42           1680  java.security.AccessControlContext (java.base@17.0.12)
+ 144:            42           1680  org.beckenburg.EquipmentRegistry$Tool
+ 145:            35           1680  org.beckenburg.VanInteriorLayout$ToolSocket
+ 146:            33           1584  java.time.temporal.ValueRange (java.base@17.0.12)
+ 147:            14           1568  org.beckenburg.LooseClutter$Item
+ 148:            15           1560  sun.awt.image.IntegerInterleavedRaster (java.desktop@17.0.12)
+ 149:            19           1520  org.beckenburg.HauntedFixtures$Fixture
+ 150:            63           1512  java.lang.module.ResolvedModule (java.base@17.0.12)
+ 151:            63           1512  java.security.Provider$UString (java.base@17.0.12)
+ 152:            63           1512  jdk.internal.module.SystemModuleFinders$2 (java.base@17.0.12)
+ 153:            63           1512  jdk.internal.module.SystemModuleFinders$SystemModuleReader (java.base@17.0.12)
+ 154:            62           1488  java.lang.module.ModuleDescriptor$Provides (java.base@17.0.12)
+ 155:            13           1472  [Ljava.lang.reflect.Method; (java.base@17.0.12)
+ 156:            30           1440  sun.java2d.loops.DrawGlyphListAA (java.desktop@17.0.12)
+ 157:            45           1440  sun.java2d.loops.SurfaceType (java.desktop@17.0.12)
+ 158:             1           1376  [Ljdk.internal.math.FDBigInteger; (java.base@17.0.12)
+ 159:            19           1368  java.awt.geom.AffineTransform (java.desktop@17.0.12)
+ 160:            57           1368  sun.font.TrueTypeFont$DirectoryEntry (java.desktop@17.0.12)
+ 161:            17           1360  org.beckenburg.LevelDefinition$Room
+ 162:            27           1296  sun.java2d.loops.BlitBg (java.desktop@17.0.12)
+ 163:            39           1280  [Ljava.math.BigInteger; (java.base@17.0.12)
+ 164:            30           1200  java.time.temporal.ChronoField (java.base@17.0.12)
+ 165:            25           1200  org.beckenburg.CastleHubDecor$Switch
+ 166:            10           1200  org.beckenburg.SoundVolume
+ 167:            28           1120  java.math.BigDecimal (java.base@17.0.12)
+ 168:            20           1120  org.beckenburg.CastleHubArchitecturalPlan$StairSolid
+ 169:             1           1104  [Lsun.security.util.KnownOIDs; (java.base@17.0.12)
+ 170:            17           1088  org.beckenburg.CastleFinish$Fitting
+ 171:             2           1080  [Ljava.lang.Integer; (java.base@17.0.12)
+ 172:            15           1080  dev.mrcalzon.weather.WeatherType
+ 173:             3           1072  [[J (java.base@17.0.12)
+ 174:            19           1064  sun.java2d.loops.GraphicsPrimitiveProxy (java.desktop@17.0.12)
+ 175:             1           1040  [Ljava.lang.Long; (java.base@17.0.12)
+ 176:             1           1040  [Ljava.lang.Short; (java.base@17.0.12)
+ 177:            26           1040  org.beckenburg.GhostIdentity$Type
+ 178:            31            992  java.lang.invoke.VarHandle$AccessMode (java.base@17.0.12)
+ 179:            31            992  jdk.internal.reflect.NativeConstructorAccessorImpl (java.base@17.0.12)
+ 180:             1            984  org.beckenburg.SceneRenderer
+ 181:            61            976  jdk.internal.module.SystemModuleFinders$3 (java.base@17.0.12)
+ 182:            30            960  java.security.Provider$EngineDescription (java.base@17.0.12)
+ 183:            28            928  [Ljava.time.format.DateTimeFormatterBuilder$DateTimePrinterParser; (java.base@17.0.12)
+ 184:            19            912  jdk.internal.ref.CleanerImpl$PhantomCleanableRef (java.base@17.0.12)
+ 185:            12            904  [Ljava.util.WeakHashMap$Entry; (java.base@17.0.12)
+ 186:            28            896  java.util.Locale (java.base@17.0.12)
+ 187:            14            896  org.beckenburg.CastleServiceFixtures$Piece
+ 188:             1            888  [Ljava.lang.reflect.Field; (java.base@17.0.12)
+ 189:             6            864  [Ljava.lang.invoke.MemberName; (java.base@17.0.12)
+ 190:            18            864  java.awt.image.SinglePixelPackedSampleModel (java.desktop@17.0.12)
+ 191:            27            864  java.lang.invoke.BoundMethodHandle$Species_I (java.base@17.0.12)
+ 192:            36            864  sun.awt.SunHints$Value (java.desktop@17.0.12)
+ 193:            27            864  sun.util.locale.BaseLocale (java.base@17.0.12)
+ 194:            26            832  java.lang.ref.ReferenceQueue (java.base@17.0.12)
+ 195:            17            816  sun.java2d.loops.DrawGlyphList (java.desktop@17.0.12)
+ 196:            17            816  sun.java2d.loops.FillRect (java.desktop@17.0.12)
+ 197:            25            800  java.time.format.DateTimeFormatterBuilder$NumberPrinterParser (java.base@17.0.12)
+ 198:             8            768  java.awt.image.IndexColorModel (java.desktop@17.0.12)
+ 199:            16            768  java.lang.invoke.BoundMethodHandle$SpeciesData (java.base@17.0.12)
+ 200:            24            768  sun.font.EAttribute (java.desktop@17.0.12)
+ 201:            16            768  sun.java2d.loops.DrawLine (java.desktop@17.0.12)
+ 202:            16            768  sun.java2d.loops.DrawPath (java.desktop@17.0.12)
+ 203:            16            768  sun.java2d.loops.DrawPolygons (java.desktop@17.0.12)
+ 204:            16            768  sun.java2d.loops.DrawRect (java.desktop@17.0.12)
+ 205:            16            768  sun.java2d.loops.FillPath (java.desktop@17.0.12)
+ 206:            16            768  sun.java2d.loops.FillSpans (java.desktop@17.0.12)
+ 207:            23            736  java.util.Hashtable$Entry (java.base@17.0.12)
+ 208:            15            720  java.awt.image.DataBufferInt (java.desktop@17.0.12)
+ 209:             9            720  java.lang.invoke.BoundMethodHandle$Species_LLLLLLLLLLLLL (java.base@17.0.12)
+ 210:            15            720  org.beckenburg.CastleWarehouse$Rack
+ 211:            11            704  java.nio.DirectByteBuffer (java.base@17.0.12)
+ 212:            17            680  sun.util.locale.LocaleObjectCache$CacheEntry (java.base@17.0.12)
+ 213:            28            672  java.time.format.DateTimeFormatterBuilder$CompositePrinterParser (java.base@17.0.12)
+ 214:            14            672  sun.java2d.loops.TransformHelper (java.desktop@17.0.12)
+ 215:            27            648  [Ljava.lang.reflect.Constructor; (java.base@17.0.12)
+ 216:            16            640  [Ljava.lang.invoke.BoundMethodHandle$SpeciesData; (java.base@17.0.12)
+ 217:            10            640  java.lang.invoke.BoundMethodHandle$Species_LLLLLLLLL (java.base@17.0.12)
+ 218:            16            640  java.time.format.DateTimeFormatter (java.base@17.0.12)
+ 219:            10            640  org.beckenburg.VanInteriorLayout$Fixture
+ 220:             7            632  [Lsun.java2d.loops.RenderCache$Entry; (java.desktop@17.0.12)
+ 221:             3            624  [Ljava.lang.invoke.LambdaForm; (java.base@17.0.12)
+ 222:            39            624  java.util.HashMap$EntrySet (java.base@17.0.12)
+ 223:            26            624  java.util.jar.Attributes$Name (java.base@17.0.12)
+ 224:            11            616  java.util.LinkedHashMap (java.base@17.0.12)
+ 225:            38            608  java.lang.constant.ReferenceClassDescImpl (java.base@17.0.12)
+ 226:            19            608  java.util.ImmutableCollections$MapN (java.base@17.0.12)
+ 227:            19            608  sun.font.SunFontManager$FontRegistrationInfo (java.desktop@17.0.12)
+ 228:             5            600  [Ljava.lang.ClassValue$Entry; (java.base@17.0.12)
+ 229:            25            600  java.time.LocalTime (java.base@17.0.12)
+ 230:            18            576  java.awt.Color (java.desktop@17.0.12)
+ 231:            18            576  javax.imageio.spi.DigraphNode (java.desktop@17.0.12)
+ 232:             9            576  org.beckenburg.CastleHubArchitecturalPlan$Roof
+ 233:            12            576  sun.java2d.loops.DrawGlyphListLCD (java.desktop@17.0.12)
+ 234:             7            560  java.util.concurrent.TimeUnit (java.base@17.0.12)
+ 235:            10            560  sun.invoke.util.Wrapper (java.base@17.0.12)
+ 236:             1            536  [Lorg.beckenburg.EquipmentModelCatalog$Stage;
+ 237:             1            528  [Ljava.lang.Character; (java.base@17.0.12)
+ 238:            16            512  java.time.temporal.ChronoUnit (java.base@17.0.12)
+ 239:            32            512  jdk.internal.reflect.DelegatingConstructorAccessorImpl (java.base@17.0.12)
+ 240:            21            504  java.util.AbstractMap$SimpleImmutableEntry (java.base@17.0.12)
+ 241:             9            504  org.beckenburg.CastleDoorSlots$WindowSlot
+ 242:             2            496  [Lorg.beckenburg.LanSound$Cue;
+ 243:             7            496  [Lsun.invoke.util.Wrapper; (java.base@17.0.12)
+ 244:            20            480  [Ljava.security.ProtectionDomain; (java.base@17.0.12)
+ 245:            10            480  [Lsun.awt.SunHints$Value; (java.desktop@17.0.12)
+ 246:            12            480  java.lang.OutOfMemoryError (java.base@17.0.12)
+ 247:            12            480  java.lang.invoke.MethodHandleImpl$IntrinsicMethodHandle (java.base@17.0.12)
+ 248:            16            472  [Ljava.io.ObjectStreamField; (java.base@17.0.12)
+ 249:            19            456  java.time.Duration (java.base@17.0.12)
+ 250:             3            456  sun.font.TrueTypeFont (java.desktop@17.0.12)
+ 251:            19            456  sun.java2d.loops.CompositeType (java.desktop@17.0.12)
+ 252:            28            448  java.lang.ref.ReferenceQueue$Lock (java.base@17.0.12)
+ 253:             8            448  org.beckenburg.CastleMuseum$Exhibit
+ 254:             4            448  sun.font.FileFontStrike (java.desktop@17.0.12)
+ 255:            11            440  java.lang.invoke.VarHandleReferences$FieldInstanceReadWrite (java.base@17.0.12)
+ 256:             1            432  [[[C (java.base@17.0.12)
+ 257:             6            432  org.beckenburg.VanStreetHouses$House
+ 258:            13            416  jdk.internal.reflect.NativeMethodAccessorImpl (java.base@17.0.12)
+ 259:            13            416  sun.security.jca.ProviderConfig (java.base@17.0.12)
+ 260:            17            408  org.beckenburg.EvidenceSignals$Weather
+ 261:            12            400  [Ljava.lang.constant.ClassDesc; (java.base@17.0.12)
+ 262:            10            400  java.util.EnumMap (java.base@17.0.12)
+ 263:             9            392  [Ljava.lang.invoke.MethodType; (java.base@17.0.12)
+ 264:             7            392  org.beckenburg.CastleHubDecor$Accent
+ 265:             8            384  java.util.WeakHashMap (java.base@17.0.12)
+ 266:            12            384  org.beckenburg.BlackpineStoryDressing$RoomStory
+ 267:             8            384  org.beckenburg.LooseClutter$Kind
+ 268:            24            384  sun.font.Font2DHandle (java.desktop@17.0.12)
+ 269:             8            384  sun.font.FontFamily (java.desktop@17.0.12)
+ 270:             1            376  java.lang.ref.Finalizer$FinalizerThread (java.base@17.0.12)
+ 271:             1            376  jdk.internal.misc.InnocuousThread (java.base@17.0.12)
+ 272:            23            368  java.awt.font.TextAttribute (java.desktop@17.0.12)
+ 273:            23            368  java.lang.Float (java.base@17.0.12)
+ 274:             1            368  java.lang.ref.Reference$ReferenceHandler (java.base@17.0.12)
+ 275:            15            360  java.lang.RuntimePermission (java.base@17.0.12)
+ 276:             9            360  java.util.WeakHashMap$Entry (java.base@17.0.12)
+ 277:             9            360  org.beckenburg.CastleHubMap$Station
+ 278:            15            360  org.beckenburg.EquipmentRegistry$Evidence
+ 279:             5            360  org.beckenburg.HouseRebuildEnvelope$Geometry
+ 280:            11            352  java.lang.constant.DirectMethodHandleDesc$Kind (java.base@17.0.12)
+ 281:            11            352  java.lang.invoke.MethodHandleNatives$CallSiteContext (java.base@17.0.12)
+ 282:             4            352  sun.awt.image.BufImgSurfaceData (java.desktop@17.0.12)
+ 283:             3            336  [Lsun.font.EAttribute; (java.desktop@17.0.12)
+ 284:            14            336  java.lang.Double (java.base@17.0.12)
+ 285:             6            336  java.nio.DirectLongBufferU (java.base@17.0.12)
+ 286:             6            336  org.beckenburg.LevelDefinition$Guard
+ 287:             7            336  sun.java2d.pipe.PixelToParallelogramConverter (java.desktop@17.0.12)
+ 288:             9            320  [Ljava.lang.invoke.LambdaFormEditor$Transform; (java.base@17.0.12)
+ 289:             5            320  java.awt.color.ICC_ColorSpace (java.desktop@17.0.12)
+ 290:            10            320  java.lang.constant.DirectMethodHandleDescImpl (java.base@17.0.12)
+ 291:             5            320  java.lang.invoke.BoundMethodHandle$Species_LLLLLLLL (java.base@17.0.12)
+ 292:             5            320  java.net.URL (java.base@17.0.12)
+ 293:             8            320  java.security.ProtectionDomain (java.base@17.0.12)
+ 294:             8            320  java.util.IdentityHashMap (java.base@17.0.12)
+ 295:             8            320  jdk.internal.loader.NativeLibraries$NativeLibraryImpl (java.base@17.0.12)
+ 296:            13            312  org.beckenburg.GhostIdentity$Behavior
+ 297:            19            304  java.time.format.DateTimeFormatterBuilder$CharLiteralPrinterParser (java.base@17.0.12)
+ 298:             1            288  [Ljava.lang.invoke.LambdaForm$Kind; (java.base@17.0.12)
+ 299:             3            288  [Lsun.font.TrueTypeFont$DirectoryEntry; (java.desktop@17.0.12)
+ 300:            12            288  java.awt.AlphaComposite (java.desktop@17.0.12)
+ 301:             9            288  java.lang.ClassValue$Entry (java.base@17.0.12)
+ 302:             9            288  java.lang.constant.PrimitiveClassDescImpl (java.base@17.0.12)
+ 303:             6            288  java.util.Hashtable (java.base@17.0.12)
+ 304:             6            288  java.util.prefs.WindowsPreferences (java.prefs@17.0.12)
+ 305:             9            288  jdk.internal.org.objectweb.asm.Type (java.base@17.0.12)
+ 306:             6            288  org.beckenburg.CastleClutterWorld$Socket
+ 307:            12            288  org.beckenburg.HauntedFixtures$Kind
+ 308:             6            288  sun.font.FontStrikeDisposer (java.desktop@17.0.12)
+ 309:             7            280  java.io.FileDescriptor (java.base@17.0.12)
+ 310:             7            280  java.lang.invoke.MethodHandleImpl$WrappedMember (java.base@17.0.12)
+ 311:             7            280  java.security.CodeSource (java.base@17.0.12)
+ 312:             7            280  jdk.internal.logger.LazyLoggers$LazyLoggerAccessor (java.base@17.0.12)
+ 313:             7            280  org.beckenburg.AuthoredSitePhysics
+ 314:             1            272  org.beckenburg.FixtureLighting
+ 315:            17            272  sun.invoke.util.ValueConversions$WrapperCache (java.base@17.0.12)
+ 316:            11            264  java.lang.invoke.MethodHandleImpl$Intrinsic (java.base@17.0.12)
+ 317:            11            264  java.util.regex.Pattern$BmpCharProperty (java.base@17.0.12)
+ 318:            11            264  org.beckenburg.HouseMap$Site
+ 319:             2            256  [Lsun.font.PhysicalStrike; (java.desktop@17.0.12)
+ 320:             4            256  java.lang.ClassValue$ClassValueMap (java.base@17.0.12)
+ 321:            16            256  java.util.HashMap$KeySet (java.base@17.0.12)
+ 322:             8            256  java.util.regex.Pattern$Branch (java.base@17.0.12)
+ 323:             8            256  org.beckenburg.CharacterVisuals$Shape
+ 324:             4            256  org.beckenburg.FixtureLighting$1
+ 325:             8            256  org.beckenburg.GraphicsOptions$DisplaySize
+ 326:             8            256  sun.util.locale.BaseLocale$Key (java.base@17.0.12)
+ 327:             5            240  [Ljava.lang.invoke.LambdaForm$NamedFunction; (java.base@17.0.12)
+ 328:             2            240  [Lorg.beckenburg.GhostIdentity$Type;
+ 329:             1            240  dev.mrcalzon.weather.WeatherSystem
+ 330:            10            240  java.lang.constant.MethodTypeDescImpl (java.base@17.0.12)
+ 331:             6            240  java.lang.ref.Finalizer (java.base@17.0.12)
+ 332:            10            240  java.nio.charset.CoderResult (java.base@17.0.12)
+ 333:            10            240  java.nio.file.StandardOpenOption (java.base@17.0.12)
+ 334:            10            240  java.util.concurrent.atomic.AtomicLong (java.base@17.0.12)
+ 335:             6            240  java.util.stream.StreamOpFlag (java.base@17.0.12)
+ 336:             5            240  org.beckenburg.CastleRelations$Resident
+ 337:            10            240  org.beckenburg.EquipmentTiers$Role
+ 338:            10            240  org.beckenburg.SoundVolume$Source
+ 339:            10            240  sun.awt.SunHints$Key (java.desktop@17.0.12)
+ 340:             6            240  sun.font.FontStrikeDesc (java.desktop@17.0.12)
+ 341:             6            240  sun.font.StrikeCache$SoftDisposerRef (java.desktop@17.0.12)
+ 342:             5            240  sun.java2d.loops.DrawParallelogram (java.desktop@17.0.12)
+ 343:             5            240  sun.java2d.loops.FillParallelogram (java.desktop@17.0.12)
+ 344:             1            232  [Lorg.beckenburg.EquipmentModelCatalog$Variant;
+ 345:            13            224  [Ljava.lang.constant.ConstantDesc; (java.base@17.0.12)
+ 346:             2            224  java.awt.image.ComponentColorModel (java.desktop@17.0.12)
+ 347:             4            224  java.io.FileCleanable (java.base@17.0.12)
+ 348:             4            224  org.beckenburg.CastleAnnex$Space
+ 349:             7            224  org.beckenburg.GraphicsOptions$Detail
+ 350:             4            224  org.beckenburg.PsxPipeline$Preset
+ 351:             4            224  sun.font.StrikeMetrics (java.desktop@17.0.12)
+ 352:             2            224  sun.security.provider.HashDrbg (java.base@17.0.12)
+ 353:             3            216  [[D (java.base@17.0.12)
+ 354:             3            216  java.awt.Font (java.desktop@17.0.12)
+ 355:             3            216  java.lang.invoke.BoundMethodHandle$Species_LLLLLLLLLLL (java.base@17.0.12)
+ 356:             3            216  java.util.ResourceBundle$CacheKey (java.base@17.0.12)
+ 357:             9            216  java.util.regex.Pattern$GroupHead (java.base@17.0.12)
+ 358:             9            216  java.util.regex.Pattern$GroupTail (java.base@17.0.12)
+ 359:             9            216  org.beckenburg.FixtureLighting$Kind
+ 360:             3            216  sun.nio.ch.FileChannelImpl (java.base@17.0.12)
+ 361:             9            216  sun.util.logging.PlatformLogger$Level (java.base@17.0.12)
+ 362:             2            208  java.util.jar.JarFile$JarFileEntry (java.base@17.0.12)
+ 363:            13            208  jdk.internal.reflect.DelegatingMethodAccessorImpl (java.base@17.0.12)
+ 364:             5            200  org.beckenburg.DirectionalSprites$PoseKey
+ 365:             5            200  sun.nio.fs.WindowsPath (java.base@17.0.12)
+ 366:             8            192  [Ljava.util.regex.Pattern$Node; (java.base@17.0.12)
+ 367:             8            192  dev.mrcalzon.weather.WeatherSurfaceGrid$Material
+ 368:             6            192  java.lang.ThreadLocal$ThreadLocalMap$Entry (java.base@17.0.12)
+ 369:             6            192  java.lang.invoke.LambdaForm$BasicType (java.base@17.0.12)
+ 370:             6            192  java.lang.invoke.VarForm (java.base@17.0.12)
+ 371:             8            192  java.math.RoundingMode (java.base@17.0.12)
+ 372:             8            192  java.net.NetPermission (java.base@17.0.12)
+ 373:             3            192  java.nio.DirectByteBufferR (java.base@17.0.12)
+ 374:             6            192  java.time.format.TextStyle (java.base@17.0.12)
+ 375:             8            192  java.util.ArrayDeque (java.base@17.0.12)
+ 376:            12            192  java.util.HashMap$Values (java.base@17.0.12)
+ 377:             6            192  java.util.ResourceBundle$KeyElementReference (java.base@17.0.12)
+ 378:             6            192  java.util.stream.FindOps$FindOp (java.base@17.0.12)
+ 379:             3            192  java.util.zip.Inflater (java.base@17.0.12)
+ 380:             6            192  jdk.internal.reflect.UnsafeObjectFieldAccessorImpl (java.base@17.0.12)
+ 381:             6            192  jdk.internal.reflect.UnsafeQualifiedObjectFieldAccessorImpl (java.base@17.0.12)
+ 382:             6            192  org.beckenburg.CastleUpperLayout$Bed
+ 383:             8            192  sun.reflect.generics.tree.SimpleClassTypeSignature (java.base@17.0.12)
+ 384:             2            176  java.util.regex.Pattern (java.base@17.0.12)
+ 385:             2            176  org.beckenburg.LevelDefinition$Stair
+ 386:             1            168  [[Ljava.math.BigInteger; (java.base@17.0.12)
+ 387:             7            168  java.lang.System$Logger$Level (java.base@17.0.12)
+ 388:             3            168  java.nio.HeapByteBuffer (java.base@17.0.12)
+ 389:             7            168  java.util.Collections$SetFromMap (java.base@17.0.12)
+ 390:             3            168  java.util.Properties (java.base@17.0.12)
+ 391:             7            168  java.util.regex.Pattern$BmpCharPropertyGreedy (java.base@17.0.12)
+ 392:             7            168  org.beckenburg.LanGhostAnimation$Phase
+ 393:             3            168  sun.font.CMap$CMapFormat4 (java.desktop@17.0.12)
+ 394:             2            160  [Ljava.lang.constant.DirectMethodHandleDesc$Kind; (java.base@17.0.12)
+ 395:             2            160  [Lorg.beckenburg.EquipmentRegistry$Evidence;
+ 396:             5            160  [[Lsun.awt.FontDescriptor; (java.desktop@17.0.12)
+ 397:             5            160  [[S (java.base@17.0.12)
+ 398:             5            160  java.lang.Package (java.base@17.0.12)
+ 399:             4            160  java.lang.invoke.DirectMethodHandle$Interface (java.base@17.0.12)
+ 400:             5            160  java.lang.invoke.MethodHandles$Lookup (java.base@17.0.12)
+ 401:             5            160  java.lang.invoke.VarHandle$AccessType (java.base@17.0.12)
+ 402:             5            160  java.util.Collections$SynchronizedMap (java.base@17.0.12)
+ 403:            10            160  java.util.Formatter$Flags (java.base@17.0.12)
+ 404:             5            160  java.util.RegularEnumSet (java.base@17.0.12)
+ 405:             5            160  javax.imageio.spi.SubRegistry (java.desktop@17.0.12)
+ 406:             5            160  jdk.internal.loader.NativeLibraries (java.base@17.0.12)
+ 407:             5            160  org.beckenburg.GraphicsOptions$Aspect
+ 408:             5            160  sun.java2d.cmm.ProfileDeferralInfo (java.desktop@17.0.12)
+ 409:             5            160  sun.util.locale.provider.LocaleProviderAdapter$Type (java.base@17.0.12)
+ 410:             1            152  sun.awt.Win32FontManager (java.desktop@17.0.12)
+ 411:             1            144  [Ljava.lang.invoke.VarHandle$AccessMode; (java.base@17.0.12)
+ 412:             2            144  [Ljava.math.BigDecimal; (java.base@17.0.12)
+ 413:             6            144  dev.mrcalzon.lighting.LightModel$Beam
+ 414:             3            144  java.lang.ThreadGroup (java.base@17.0.12)
+ 415:             2            144  java.lang.invoke.BoundMethodHandle$Species_LLLLLLLLLL (java.base@17.0.12)
+ 416:             3            144  java.time.temporal.JulianFields$Field (java.base@17.0.12)
+ 417:             6            144  java.util.regex.Pattern$$Lambda$21/0x80000002a (java.base@17.0.12)
+ 418:             3            144  javax.imageio.ImageTypeSpecifier$Packed (java.desktop@17.0.12)
+ 419:             6            144  jdk.internal.perf.PerfCounter (java.base@17.0.12)
+ 420:             3            144  org.beckenburg.CastleSurroundings$ParkedVehicle
+ 421:             6            144  org.beckenburg.EquipmentRegistry$Purpose
+ 422:             6            144  org.beckenburg.GhostDomain$Action
+ 423:             6            144  org.beckenburg.GhostHauntingFolio$Tier
+ 424:             6            144  org.beckenburg.GhostHauntingFolio$Visual
+ 425:             2            144  org.beckenburg.VanArrivalStreet$RoadObject
+ 426:             3            144  org.beckenburg.VanInteriorLayout$Clearance
+ 427:             6            144  org.beckenburg.VanLiveScreens$Panel
+ 428:             1            136  [Ljava.time.temporal.ChronoField; (java.base@17.0.12)
+ 429:             4            136  [Lsun.invoke.util.ValueConversions$WrapperCache; (java.base@17.0.12)
+ 430:             8            136  [Lsun.reflect.generics.tree.TypeArgument; (java.base@17.0.12)
+ 431:             8            128  [Ljava.security.Principal; (java.base@17.0.12)
+ 432:             2            128  [Lsun.awt.image.BufferedImageGraphicsConfig; (java.desktop@17.0.12)
+ 433:             1            128  [Lsun.font.CharToGlyphMapper; (java.desktop@17.0.12)
+ 434:             4            128  java.awt.font.FontRenderContext (java.desktop@17.0.12)
+ 435:             4            128  java.io.RandomAccessFile (java.base@17.0.12)
+ 436:             8            128  java.lang.ThreadLocal (java.base@17.0.12)
+ 437:             4            128  java.lang.ref.PhantomReference (java.base@17.0.12)
+ 438:             8            128  java.security.ProtectionDomain$Key (java.base@17.0.12)
+ 439:             4            128  java.util.Collections$UnmodifiableMap (java.base@17.0.12)
+ 440:             8            128  java.util.concurrent.atomic.AtomicInteger (java.base@17.0.12)
+ 441:             8            128  java.util.regex.Pattern$BranchConn (java.base@17.0.12)
+ 442:             4            128  sun.java2d.DefaultDisposerRecord (java.desktop@17.0.12)
+ 443:             2            128  sun.nio.cs.SingleByte$Encoder (java.base@17.0.12)
+ 444:             8            128  sun.reflect.generics.tree.ClassTypeSignature (java.base@17.0.12)
+ 445:             2            128  sun.security.provider.SHA2$SHA256 (java.base@17.0.12)
+ 446:             3            120  [Ljava.lang.invoke.LambdaForm$BasicType; (java.base@17.0.12)
+ 447:             1            120  dev.mrcalzon.weather.WeatherModule
+ 448:             3            120  java.lang.invoke.VarHandle$AccessDescriptor (java.base@17.0.12)
+ 449:             5            120  java.lang.module.ModuleDescriptor$Opens (java.base@17.0.12)
+ 450:             5            120  java.time.format.SignStyle (java.base@17.0.12)
+ 451:             3            120  java.util.ResourceBundle$BundleReference (java.base@17.0.12)
+ 452:             5            120  java.util.stream.StreamOpFlag$Type (java.base@17.0.12)
+ 453:             5            120  javax.imageio.spi.PartiallyOrderedSet (java.desktop@17.0.12)
+ 454:             3            120  jdk.internal.math.FloatingDecimal$BinaryToASCIIBuffer (java.base@17.0.12)
+ 455:             5            120  jdk.internal.math.FloatingDecimal$PreparedASCIIToBinaryBuffer (java.base@17.0.12)
+ 456:             3            120  org.beckenburg.VanInteriorLayout$CeilingLight
+ 457:             5            120  sun.nio.fs.WindowsPathType (java.base@17.0.12)
+ 458:             3            112  [Ljava.lang.Thread; (java.base@17.0.12)
+ 459:             1            112  [Ljava.time.LocalTime; (java.base@17.0.12)
+ 460:             2            112  [Lorg.beckenburg.CastleHubMap$Station;
+ 461:             2            112  [Lorg.beckenburg.SoundVolume$Source;
+ 462:             2            112  java.lang.invoke.BoundMethodHandle$Species_LLLLLL (java.base@17.0.12)
+ 463:             2            112  java.nio.DirectIntBufferRU (java.base@17.0.12)
+ 464:             7            112  java.util.Collections$UnmodifiableSet (java.base@17.0.12)
+ 465:             7            112  jdk.internal.logger.LazyLoggers$JdkLazyLogger (java.base@17.0.12)
+ 466:             1            112  org.beckenburg.CastleLevelEdits
+ 467:             1            112  org.beckenburg.FixtureLighting$FrameStats
+ 468:             2            112  org.beckenburg.LevelDefinition$Void
+ 469:             7            112  sun.java2d.loops.RenderCache (java.desktop@17.0.12)
+ 470:             7            112  sun.util.logging.PlatformLogger (java.base@17.0.12)
+ 471:             2            104  [Lsun.util.logging.PlatformLogger$Level; (java.base@17.0.12)
+ 472:             2            104  [[Ljava.lang.String; (java.base@17.0.12)
+ 473:             1            104  jdk.internal.loader.ClassLoaders$AppClassLoader (java.base@17.0.12)
+ 474:             1            104  jdk.internal.loader.ClassLoaders$BootClassLoader (java.base@17.0.12)
+ 475:             1            104  jdk.internal.loader.ClassLoaders$PlatformClassLoader (java.base@17.0.12)
+ 476:             1            104  sun.awt.windows.WFontConfiguration (java.desktop@17.0.12)
+ 477:             1            104  sun.security.jca.ProviderList$1 (java.base@17.0.12)
+ 478:             1            104  sun.security.provider.Sun (java.base@17.0.12)
+ 479:             2             96  [Ljava.lang.System$Logger$Level; (java.base@17.0.12)
+ 480:             6             96  [Ljava.util.prefs.NodeChangeListener; (java.prefs@17.0.12)
+ 481:             6             96  [Ljava.util.prefs.PreferenceChangeListener; (java.prefs@17.0.12)
+ 482:             2             96  [Lorg.beckenburg.GraphicsOptions$Detail;
+ 483:             2             96  [Lorg.beckenburg.GraphicsOptions$DisplaySize;
+ 484:             2             96  [Lorg.beckenburg.LooseClutter$Kind;
+ 485:             1             96  [Lsun.font.CompositeFont; (java.desktop@17.0.12)
+ 486:             1             96  [Lsun.font.FileFont; (java.desktop@17.0.12)
+ 487:             1             96  [Lsun.util.locale.BaseLocale; (java.base@17.0.12)
+ 488:             4             96  dev.mrcalzon.lighting.LightingModule$Preset
+ 489:             4             96  java.awt.Queue (java.desktop@17.0.12)
+ 490:             4             96  java.awt.desktop.UserSessionEvent$Reason (java.desktop@17.0.12)
+ 491:             3             96  java.io.File (java.base@17.0.12)
+ 492:             4             96  java.lang.ClassValue$Version (java.base@17.0.12)
+ 493:             3             96  java.lang.Runtime$Version (java.base@17.0.12)
+ 494:             3             96  java.lang.constant.DynamicConstantDesc$AnonymousDynamicConstantDesc (java.base@17.0.12)
+ 495:             4             96  java.lang.module.ModuleDescriptor$Modifier (java.base@17.0.12)
+ 496:             4             96  java.lang.module.ModuleDescriptor$Requires$Modifier (java.base@17.0.12)
+ 497:             4             96  java.math.MathContext (java.base@17.0.12)
+ 498:             4             96  java.time.format.DateTimeFormatterBuilder$OffsetIdPrinterParser (java.base@17.0.12)
+ 499:             4             96  java.time.format.DateTimeFormatterBuilder$SettingsParser (java.base@17.0.12)
+ 500:             2             96  java.util.TreeMap (java.base@17.0.12)
+ 501:             3             96  java.util.concurrent.locks.ReentrantLock$NonfairSync (java.base@17.0.12)
+ 502:             6             96  java.util.regex.Pattern$$Lambda$19/0x800000025 (java.base@17.0.12)
+ 503:             4             96  java.util.regex.Pattern$Qtype (java.base@17.0.12)
+ 504:             4             96  java.util.stream.StreamShape (java.base@17.0.12)
+ 505:             1             96  jdk.internal.jimage.ImageReader$SharedImageReader (java.base@17.0.12)
+ 506:             4             96  jdk.internal.logger.BootstrapLogger$LoggingBackend (java.base@17.0.12)
+ 507:             4             96  org.beckenburg.CastleLevelEdits$Kind
+ 508:             3             96  org.beckenburg.CastleTraining$Bay
+ 509:             4             96  org.beckenburg.EquipmentRegistry$Origin
+ 510:             4             96  org.beckenburg.GhostIdentity$Emf
+ 511:             4             96  org.beckenburg.GhostIdentity$Thermal
+ 512:             4             96  org.beckenburg.GhostIdentity$Voice
+ 513:             4             96  org.beckenburg.GraphicsOptions$Mode
+ 514:             3             96  org.beckenburg.GraphicsOptions$Upscale
+ 515:             4             96  org.beckenburg.HunterSpriteAnimation$Pose
+ 516:             3             96  org.beckenburg.LanCase$Tool
+ 517:             4             96  org.beckenburg.LevelEnclosure$Setting
+ 518:             1             96  org.beckenburg.SceneRenderer$FrameDiagnostics
+ 519:             4             96  org.beckenburg.VanInteriorLayout$Mount
+ 520:             2             96  org.beckenburg.VanStaging$Placement
+ 521:             4             96  sun.awt.image.BufImgSurfaceManager (java.desktop@17.0.12)
+ 522:             1             96  sun.font.AttributeValues (java.desktop@17.0.12)
+ 523:             2             96  sun.font.CompositeStrike (java.desktop@17.0.12)
+ 524:             3             96  sun.font.FreetypeFontScaler (java.desktop@17.0.12)
+ 525:             3             96  sun.font.TrueTypeGlyphMapper (java.desktop@17.0.12)
+ 526:             4             96  sun.java2d.StateTrackable$State (java.desktop@17.0.12)
+ 527:             6             96  sun.java2d.pipe.AAShapePipe (java.desktop@17.0.12)
+ 528:             6             96  sun.java2d.pipe.TextRenderer (java.desktop@17.0.12)
+ 529:             2             96  sun.nio.cs.StreamEncoder (java.base@17.0.12)
+ 530:             3             96  sun.reflect.generics.repository.ClassRepository (java.base@17.0.12)
+ 531:             1             88  [Ljava.awt.geom.AffineTransform; (java.desktop@17.0.12)
+ 532:             1             88  [Lorg.beckenburg.EvidenceSignals$Weather;
+ 533:             2             88  [Lsun.security.jca.ProviderConfig; (java.base@17.0.12)
+ 534:             1             88  com.sun.imageio.plugins.bmp.BMPImageReaderSpi (java.desktop@17.0.12)
+ 535:             1             88  com.sun.imageio.plugins.bmp.BMPImageWriterSpi (java.desktop@17.0.12)
+ 536:             1             88  com.sun.imageio.plugins.gif.GIFImageReaderSpi (java.desktop@17.0.12)
+ 537:             1             88  com.sun.imageio.plugins.gif.GIFImageWriterSpi (java.desktop@17.0.12)
+ 538:             1             88  com.sun.imageio.plugins.jpeg.JPEGImageReaderSpi (java.desktop@17.0.12)
+ 539:             1             88  com.sun.imageio.plugins.jpeg.JPEGImageWriterSpi (java.desktop@17.0.12)
+ 540:             1             88  com.sun.imageio.plugins.png.PNGImageReaderSpi (java.desktop@17.0.12)
+ 541:             1             88  com.sun.imageio.plugins.png.PNGImageWriterSpi (java.desktop@17.0.12)
+ 542:             1             88  com.sun.imageio.plugins.tiff.TIFFImageReaderSpi (java.desktop@17.0.12)
+ 543:             1             88  com.sun.imageio.plugins.tiff.TIFFImageWriterSpi (java.desktop@17.0.12)
+ 544:             1             88  com.sun.imageio.plugins.wbmp.WBMPImageReaderSpi (java.desktop@17.0.12)
+ 545:             1             88  com.sun.imageio.plugins.wbmp.WBMPImageWriterSpi (java.desktop@17.0.12)
+ 546:             1             88  org.beckenburg.HouseMap
+ 547:             1             80  [Ldev.mrcalzon.weather.WeatherType;
+ 548:             2             80  [Ljava.lang.OutOfMemoryError; (java.base@17.0.12)
+ 549:             1             80  [Ljava.lang.ThreadLocal$ThreadLocalMap$Entry; (java.base@17.0.12)
+ 550:             1             80  [Ljava.nio.ByteBuffer; (java.base@17.0.12)
+ 551:             1             80  [Ljava.time.temporal.ChronoUnit; (java.base@17.0.12)
+ 552:             2             80  [Ljava.util.stream.StreamOpFlag$Type; (java.base@17.0.12)
+ 553:             2             80  [Lorg.beckenburg.CastleRelations$Resident;
+ 554:             2             80  [Lorg.beckenburg.GhostDomain$Action;
+ 555:             2             80  [Lorg.beckenburg.GhostHauntingFolio$Tier;
+ 556:             2             80  [Lorg.beckenburg.GhostHauntingFolio$Visual;
+ 557:             2             80  [Lorg.beckenburg.GraphicsOptions$Aspect;
+ 558:             2             80  [Lorg.beckenburg.VanLiveScreens$Panel;
+ 559:             1             80  java.awt.EventQueue (java.desktop@17.0.12)
+ 560:             2             80  java.io.BufferedWriter (java.base@17.0.12)
+ 561:             2             80  java.io.PrintStream (java.base@17.0.12)
+ 562:             2             80  java.lang.ModuleLayer (java.base@17.0.12)
+ 563:             2             80  java.lang.module.Configuration (java.base@17.0.12)
+ 564:             2             80  java.time.format.DateTimeFormatterBuilder$FractionPrinterParser (java.base@17.0.12)
+ 565:             2             80  java.util.Collections$SingletonMap (java.base@17.0.12)
+ 566:             2             80  java.util.Locale$Category (java.base@17.0.12)
+ 567:             5             80  java.util.regex.Pattern$BitClass (java.base@17.0.12)
+ 568:             1             80  java.util.zip.ZipFile$Source (java.base@17.0.12)
+ 569:             2             80  javax.imageio.ImageTypeSpecifier$Interleaved (java.desktop@17.0.12)
+ 570:             1             80  jdk.internal.reflect.DelegatingClassLoader (java.base@17.0.12)
+ 571:             2             80  org.beckenburg.LooseClutter
+ 572:             1             80  sun.font.FontDesignMetrics (java.desktop@17.0.12)
+ 573:             1             80  sun.font.GlyphList (java.desktop@17.0.12)
+ 574:             2             80  sun.java2d.pipe.Region (java.desktop@17.0.12)
+ 575:             1             80  sun.util.cldr.CLDRLocaleProviderAdapter (java.base@17.0.12)
+ 576:             1             72  [Ljavax.imageio.ImageTypeSpecifier; (java.desktop@17.0.12)
+ 577:             1             72  [Lorg.beckenburg.GhostIdentity$Behavior;
+ 578:             2             72  [[[I (java.base@17.0.12)
+ 579:             3             72  java.lang.StringBuilder (java.base@17.0.12)
+ 580:             3             72  java.lang.invoke.MethodHandleImpl$ArrayAccess (java.base@17.0.12)
+ 581:             3             72  java.lang.invoke.VarHandle$VarHandleDesc$Kind (java.base@17.0.12)
+ 582:             3             72  java.security.DrbgParameters$Capability (java.base@17.0.12)
+ 583:             3             72  java.security.Permissions (java.base@17.0.12)
+ 584:             3             72  java.security.SecurityPermission (java.base@17.0.12)
+ 585:             3             72  java.time.Instant (java.base@17.0.12)
+ 586:             3             72  java.time.LocalDate (java.base@17.0.12)
+ 587:             3             72  java.time.ZoneOffset (java.base@17.0.12)
+ 588:             3             72  java.time.format.ResolverStyle (java.base@17.0.12)
+ 589:             1             72  java.util.concurrent.ThreadPoolExecutor (java.base@17.0.12)
+ 590:             3             72  java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject (java.base@17.0.12)
+ 591:             3             72  java.util.stream.Collector$Characteristics (java.base@17.0.12)
+ 592:             3             72  java.util.stream.MatchOps$MatchKind (java.base@17.0.12)
+ 593:             3             72  java.util.zip.Inflater$InflaterZStreamRef (java.base@17.0.12)
+ 594:             3             72  jdk.internal.math.FloatingDecimal$ExceptionalBinaryToASCIIBuffer (java.base@17.0.12)
+ 595:             3             72  org.beckenburg.CastleDoorSlots$Type
+ 596:             3             72  org.beckenburg.EquipmentTiers$Tier
+ 597:             3             72  org.beckenburg.GhostIdentity$Rite
+ 598:             3             72  org.beckenburg.GraphicsOptions$Antialias
+ 599:             1             72  org.beckenburg.LevelDefinition
+ 600:             3             72  sun.awt.AppContext$State (java.desktop@17.0.12)
+ 601:             1             72  sun.net.www.protocol.jar.URLJarFile (java.base@17.0.12)
+ 602:             3             72  sun.nio.ch.NativeThreadSet (java.base@17.0.12)
+ 603:             3             72  sun.reflect.generics.tree.ClassSignature (java.base@17.0.12)
+ 604:             3             72  sun.security.util.LazyCodeSourcePermissionCollection (java.base@17.0.12)
+ 605:             2             64  [Ldev.mrcalzon.lighting.LightingModule$Preset;
+ 606:             1             64  [Ljava.awt.image.BufferedImage; (java.desktop@17.0.12)
+ 607:             1             64  [Ljava.lang.invoke.MethodHandleImpl$Intrinsic; (java.base@17.0.12)
+ 608:             2             64  [Ljava.nio.charset.CoderResult; (java.base@17.0.12)
+ 609:             2             64  [Ljava.util.stream.Collector$Characteristics; (java.base@17.0.12)
+ 610:             2             64  [Lorg.beckenburg.GraphicsOptions$Antialias;
+ 611:             2             64  [Lorg.beckenburg.GraphicsOptions$Mode;
+ 612:             2             64  [Lorg.beckenburg.GraphicsOptions$Upscale;
+ 613:             1             64  [Lorg.beckenburg.HauntedFixtures$Kind;
+ 614:             1             64  [Lorg.beckenburg.HouseMap$Site;
+ 615:             2             64  [Lorg.beckenburg.PsxPipeline$Preset;
+ 616:             3             64  [Lsun.reflect.generics.tree.ClassTypeSignature; (java.base@17.0.12)
+ 617:             1             64  dev.mrcalzon.lighting.LightingFrameProfiler
+ 618:             2             64  java.awt.color.ICC_Profile (java.desktop@17.0.12)
+ 619:             2             64  java.awt.color.ICC_ProfileRGB (java.desktop@17.0.12)
+ 620:             2             64  java.io.BufferedOutputStream (java.base@17.0.12)
+ 621:             2             64  java.io.FileOutputStream (java.base@17.0.12)
+ 622:             4             64  java.lang.ClassValue$Identity (java.base@17.0.12)
+ 623:             2             64  java.lang.ref.ReferenceQueue$Null (java.base@17.0.12)
+ 624:             2             64  java.security.MessageDigest$Delegate$CloneableDelegate (java.base@17.0.12)
+ 625:             1             64  java.security.SecureRandom (java.base@17.0.12)
+ 626:             2             64  java.time.format.DateTimeFormatterBuilder$TextPrinterParser (java.base@17.0.12)
+ 627:             2             64  java.time.temporal.IsoFields$Unit (java.base@17.0.12)
+ 628:             2             64  java.util.HexFormat (java.base@17.0.12)
+ 629:             4             64  java.util.IdentityHashMap$KeySet (java.base@17.0.12)
+ 630:             2             64  java.util.Vector (java.base@17.0.12)
+ 631:             4             64  java.util.concurrent.ConcurrentHashMap$ValuesView (java.base@17.0.12)
+ 632:             2             64  java.util.zip.ZipFile$CleanableResource (java.base@17.0.12)
+ 633:             4             64  jdk.internal.module.ServicesCatalog (java.base@17.0.12)
+ 634:             1             64  org.beckenburg.CastleHubMap
+ 635:             1             64  org.beckenburg.SceneRenderer$1
+ 636:             1             64  org.beckenburg.SceneRenderer$2
+ 637:             1             64  org.beckenburg.SceneRenderer$3
+ 638:             2             64  sun.awt.SoftCache (java.desktop@17.0.12)
+ 639:             2             64  sun.java2d.ReentrantContextProviderTL$1 (java.desktop@17.0.12)
+ 640:             1             64  sun.java2d.loops.RenderLoops (java.desktop@17.0.12)
+ 641:             2             64  sun.nio.fs.NativeBuffer (java.base@17.0.12)
+ 642:             1             64  sun.nio.fs.WindowsFileAttributes (java.base@17.0.12)
+ 643:             1             56  [Ljava.lang.Runnable; (java.base@17.0.12)
+ 644:             2             56  [Ljava.lang.reflect.Type; (java.base@17.0.12)
+ 645:             1             56  [Ljava.nio.file.StandardOpenOption; (java.base@17.0.12)
+ 646:             1             56  [Lorg.beckenburg.EquipmentTiers$Role;
+ 647:             1             56  [Lorg.beckenburg.FixtureLighting$Kind;
+ 648:             3             56  [Lsun.reflect.generics.tree.FormalTypeParameter; (java.base@17.0.12)
+ 649:             1             56  [[Lsun.awt.SunHints$Value; (java.desktop@17.0.12)
+ 650:             1             56  dev.mrcalzon.weather.WeatherView
+ 651:             1             56  java.lang.invoke.BoundMethodHandle$Specializer (java.base@17.0.12)
+ 652:             1             56  java.net.SocketPermission (java.base@17.0.12)
+ 653:             1             56  java.util.jar.JarFile (java.base@17.0.12)
+ 654:             1             56  jdk.internal.org.objectweb.asm.Label (java.base@17.0.12)
+ 655:             1             56  org.beckenburg.GraphicsOptions
+ 656:             1             56  org.beckenburg.HouseServiceNetwork$1
+ 657:             1             56  org.beckenburg.SceneRenderer$InstanceStats
+ 658:             1             56  org.beckenburg.WorldWater$1
+ 659:             1             56  sun.awt.AppContext (java.desktop@17.0.12)
+ 660:             1             56  sun.java2d.NullSurfaceData (java.desktop@17.0.12)
+ 661:             1             48  [Ldev.mrcalzon.weather.WeatherSurfaceGrid$Material;
+ 662:             3             48  [Ljava.lang.annotation.Annotation; (java.base@17.0.12)
+ 663:             1             48  [Ljava.math.RoundingMode; (java.base@17.0.12)
+ 664:             1             48  [Ljava.util.concurrent.TimeUnit; (java.base@17.0.12)
+ 665:             1             48  [Lorg.beckenburg.LanGhostAnimation$Phase;
+ 666:             2             48  [Lorg.beckenburg.SoundVolume$Kind;
+ 667:             2             48  [Lorg.beckenburg.SoundVolume$Shape;
+ 668:             1             48  [Lsun.font.FontStrike; (java.desktop@17.0.12)
+ 669:             1             48  dev.mrcalzon.lighting.LightingModule$Settings
+ 670:             2             48  dev.mrcalzon.water.WaterDocument
+ 671:             1             48  dev.mrcalzon.weather.WeatherAudio
+ 672:             2             48  java.io.File$PathStatus (java.base@17.0.12)
+ 673:             2             48  java.io.OutputStreamWriter (java.base@17.0.12)
+ 674:             1             48  java.lang.NullPointerException (java.base@17.0.12)
+ 675:             1             48  java.lang.ProcessEnvironment (java.base@17.0.12)
+ 676:             1             48  java.lang.ProcessHandleImpl (java.base@17.0.12)
+ 677:             1             48  java.lang.invoke.BoundMethodHandle$Specializer$Factory (java.base@17.0.12)
+ 678:             2             48  java.lang.invoke.MethodHandles$Lookup$ClassOption (java.base@17.0.12)
+ 679:             2             48  java.lang.reflect.ReflectPermission (java.base@17.0.12)
+ 680:             3             48  java.nio.channels.spi.AbstractInterruptibleChannel$1 (java.base@17.0.12)
+ 681:             3             48  java.nio.charset.CodingErrorAction (java.base@17.0.12)
+ 682:             2             48  java.security.BasicPermissionCollection (java.base@17.0.12)
+ 683:             3             48  java.security.SecureClassLoader$CodeSourceKey (java.base@17.0.12)
+ 684:             3             48  java.text.AttributedCharacterIterator$Attribute (java.base@17.0.12)
+ 685:             2             48  java.time.LocalDateTime (java.base@17.0.12)
+ 686:             2             48  java.time.format.DateTimeFormatterBuilder$1 (java.base@17.0.12)
+ 687:             2             48  java.time.format.DateTimeFormatterBuilder$ZoneIdPrinterParser (java.base@17.0.12)
+ 688:             2             48  java.time.format.DateTimeTextProvider$LocaleStore (java.base@17.0.12)
+ 689:             2             48  java.util.BitSet (java.base@17.0.12)
+ 690:             3             48  java.util.LinkedHashMap$LinkedEntrySet (java.base@17.0.12)
+ 691:             3             48  java.util.LinkedHashMap$LinkedValues (java.base@17.0.12)
+ 692:             3             48  java.util.Optional (java.base@17.0.12)
+ 693:             3             48  java.util.ResourceBundle$NoFallbackControl (java.base@17.0.12)
+ 694:             3             48  java.util.WeakHashMap$KeySet (java.base@17.0.12)
+ 695:             2             48  java.util.concurrent.ConcurrentLinkedQueue (java.base@17.0.12)
+ 696:             2             48  java.util.concurrent.ConcurrentLinkedQueue$Node (java.base@17.0.12)
+ 697:             1             48  java.util.concurrent.ConcurrentSkipListMap (java.base@17.0.12)
+ 698:             3             48  java.util.concurrent.atomic.AtomicBoolean (java.base@17.0.12)
+ 699:             3             48  java.util.concurrent.locks.ReentrantLock (java.base@17.0.12)
+ 700:             2             48  java.util.regex.Pattern$BmpCharPredicate$$Lambda$22/0x80000002b (java.base@17.0.12)
+ 701:             2             48  java.util.regex.Pattern$Ques (java.base@17.0.12)
+ 702:             2             48  java.util.regex.Pattern$Start (java.base@17.0.12)
+ 703:             1             48  jdk.internal.jimage.ImageHeader (java.base@17.0.12)
+ 704:             1             48  jdk.internal.loader.URLClassPath$JarLoader (java.base@17.0.12)
+ 705:             2             48  jdk.internal.misc.Signal (java.base@17.0.12)
+ 706:             2             48  jdk.internal.misc.Signal$NativeHandler (java.base@17.0.12)
+ 707:             3             48  jdk.internal.util.Preconditions$1 (java.base@17.0.12)
+ 708:             2             48  org.beckenburg.CastleHubDecor$Mount
+ 709:             2             48  org.beckenburg.EquipmentRegistry$State
+ 710:             2             48  org.beckenburg.HouseRebuildEnvelope$Key
+ 711:             1             48  org.beckenburg.LevelDefinition$Dock
+ 712:             2             48  org.beckenburg.SoundDocument
+ 713:             2             48  org.beckenburg.SoundVolume$Kind
+ 714:             2             48  org.beckenburg.SoundVolume$Shape
+ 715:             2             48  org.beckenburg.VanStaging
+ 716:             1             48  org.beckenburg.VanStreetHouses$EndBuilding
+ 717:             2             48  sun.awt.MostRecentKeyValue (java.desktop@17.0.12)
+ 718:             2             48  sun.font.FontDesignMetrics$MetricsKey (java.desktop@17.0.12)
+ 719:             3             48  sun.font.TrueTypeFont$TTDisposerRecord (java.desktop@17.0.12)
+ 720:             1             48  sun.java2d.SurfaceData$PixelToPgramLoopConverter (java.desktop@17.0.12)
+ 721:             1             48  sun.java2d.loops.Blit$GeneralMaskBlit (java.desktop@17.0.12)
+ 722:             1             48  sun.java2d.loops.DrawGlyphListColor (java.desktop@17.0.12)
+ 723:             1             48  sun.java2d.loops.DrawGlyphListColor$General (java.desktop@17.0.12)
+ 724:             3             48  sun.java2d.pipe.SpanClipRenderer (java.desktop@17.0.12)
+ 725:             3             48  sun.nio.ch.FileDispatcherImpl (java.base@17.0.12)
+ 726:             2             48  sun.nio.fs.NativeBuffer$Deallocator (java.base@17.0.12)
+ 727:             2             48  sun.reflect.generics.factory.CoreReflectionFactory (java.base@17.0.12)
+ 728:             2             48  sun.reflect.generics.scope.ClassScope (java.base@17.0.12)
+ 729:             2             48  sun.security.jca.ProviderList (java.base@17.0.12)
+ 730:             2             48  sun.security.jca.ProviderList$3 (java.base@17.0.12)
+ 731:             1             48  sun.security.provider.MoreDrbgParameters (java.base@17.0.12)
+ 732:             1             40  [Ldev.mrcalzon.lighting.LightModel$Beam;
+ 733:             1             40  [Ljava.lang.invoke.VarHandle$AccessType; (java.base@17.0.12)
+ 734:             1             40  [Ljava.time.format.SignStyle; (java.base@17.0.12)
+ 735:             1             40  [Ljava.time.format.TextStyle; (java.base@17.0.12)
+ 736:             1             40  [Ljava.util.stream.StreamOpFlag; (java.base@17.0.12)
+ 737:             1             40  [Lorg.beckenburg.EquipmentRegistry$Purpose;
+ 738:             1             40  [Lsun.font.FontDesignMetrics; (java.desktop@17.0.12)
+ 739:             1             40  [Lsun.java2d.loops.RenderLoops; (java.desktop@17.0.12)
+ 740:             1             40  [Lsun.java2d.loops.SurfaceType; (java.desktop@17.0.12)
+ 741:             1             40  [Lsun.nio.fs.WindowsPathType; (java.base@17.0.12)
+ 742:             1             40  [Lsun.util.locale.provider.LocaleProviderAdapter$Type; (java.base@17.0.12)
+ 743:             1             40  [[Ljava.lang.invoke.LambdaForm$Name; (java.base@17.0.12)
+ 744:             1             40  [[[Lsun.awt.FontDescriptor; (java.desktop@17.0.12)
+ 745:             1             40  [[[S (java.base@17.0.12)
+ 746:             1             40  java.awt.BasicStroke (java.desktop@17.0.12)
+ 747:             1             40  java.io.BufferedInputStream (java.base@17.0.12)
+ 748:             1             40  java.lang.ArithmeticException (java.base@17.0.12)
+ 749:             1             40  java.lang.ClassCastException (java.base@17.0.12)
+ 750:             1             40  java.lang.Package$VersionInfo (java.base@17.0.12)
+ 751:             1             40  java.lang.VirtualMachineError (java.base@17.0.12)
+ 752:             1             40  java.lang.invoke.VarHandleInts$FieldInstanceReadWrite (java.base@17.0.12)
+ 753:             1             40  java.time.format.DateTimeFormatterBuilder (java.base@17.0.12)
+ 754:             1             40  java.util.ResourceBundle$2 (java.base@17.0.12)
+ 755:             1             40  jdk.internal.event.SecurityProviderServiceEvent (java.base@17.0.12)
+ 756:             1             40  jdk.internal.loader.URLClassPath (java.base@17.0.12)
+ 757:             1             40  jdk.internal.ref.Cleaner (java.base@17.0.12)
+ 758:             1             40  jdk.internal.ref.CleanerImpl$CleanerCleanable (java.base@17.0.12)
+ 759:             1             40  org.beckenburg.SceneRenderer$ShellChunkStats
+ 760:             1             40  sun.awt.image.BufferedImageGraphicsConfig (java.desktop@17.0.12)
+ 761:             1             40  sun.awt.resources.awt (java.desktop@17.0.12)
+ 762:             1             40  sun.font.FontDesignMetrics$KeyReference (java.desktop@17.0.12)
+ 763:             1             40  sun.nio.cs.StandardCharsets$Aliases (java.base@17.0.12)
+ 764:             1             40  sun.nio.cs.StandardCharsets$Cache (java.base@17.0.12)
+ 765:             1             40  sun.nio.cs.StandardCharsets$Classes (java.base@17.0.12)
+ 766:             1             40  sun.util.locale.InternalLocaleBuilder (java.base@17.0.12)
+ 767:             1             40  sun.util.locale.provider.LocaleResources$ResourceReference (java.base@17.0.12)
+ 768:             1             40  sun.util.resources.Bundles$1 (java.base@17.0.12)
+ 769:             1             40  sun.util.resources.Bundles$BundleReference (java.base@17.0.12)
+ 770:             1             32  [Ljava.awt.Queue; (java.desktop@17.0.12)
+ 771:             1             32  [Ljava.awt.desktop.UserSessionEvent$Reason; (java.desktop@17.0.12)
+ 772:             2             32  [Ljava.lang.StackTraceElement; (java.base@17.0.12)
+ 773:             1             32  [Ljava.lang.ThreadGroup; (java.base@17.0.12)
+ 774:             1             32  [Ljava.lang.invoke.MethodHandleImpl$ArrayAccess; (java.base@17.0.12)
+ 775:             1             32  [Ljava.lang.invoke.VarHandle$VarHandleDesc$Kind; (java.base@17.0.12)
+ 776:             1             32  [Ljava.lang.module.ModuleDescriptor$Modifier; (java.base@17.0.12)
+ 777:             1             32  [Ljava.lang.module.ModuleDescriptor$Requires$Modifier; (java.base@17.0.12)
+ 778:             1             32  [Ljava.security.DrbgParameters$Capability; (java.base@17.0.12)
+ 779:             1             32  [Ljava.time.format.DateTimeFormatterBuilder$SettingsParser; (java.base@17.0.12)
+ 780:             1             32  [Ljava.time.format.ResolverStyle; (java.base@17.0.12)
+ 781:             1             32  [Ljava.time.temporal.IsoFields$Field; (java.base@17.0.12)
+ 782:             1             32  [Ljava.time.temporal.JulianFields$Field; (java.base@17.0.12)
+ 783:             1             32  [Ljava.util.regex.Pattern$Qtype; (java.base@17.0.12)
+ 784:             1             32  [Ljava.util.stream.MatchOps$MatchKind; (java.base@17.0.12)
+ 785:             1             32  [Ljava.util.stream.StreamShape; (java.base@17.0.12)
+ 786:             1             32  [Ljdk.internal.logger.BootstrapLogger$LoggingBackend; (java.base@17.0.12)
+ 787:             1             32  [Ljdk.internal.module.ServicesCatalog; (java.base@17.0.12)
+ 788:             1             32  [Lorg.beckenburg.CastleDoorSlots$Type;
+ 789:             1             32  [Lorg.beckenburg.CastleLevelEdits$Kind;
+ 790:             1             32  [Lorg.beckenburg.EquipmentRegistry$Origin;
+ 791:             1             32  [Lorg.beckenburg.EquipmentTiers$Tier;
+ 792:             1             32  [Lorg.beckenburg.GhostIdentity$Emf;
+ 793:             1             32  [Lorg.beckenburg.GhostIdentity$Rite;
+ 794:             1             32  [Lorg.beckenburg.GhostIdentity$Thermal;
+ 795:             1             32  [Lorg.beckenburg.GhostIdentity$Voice;
+ 796:             1             32  [Lorg.beckenburg.HunterSpriteAnimation$Pose;
+ 797:             1             32  [Lorg.beckenburg.LanCase$Tool;
+ 798:             1             32  [Lorg.beckenburg.LevelEnclosure$Setting;
+ 799:             1             32  [Lorg.beckenburg.VanInteriorLayout$Mount;
+ 800:             1             32  [Lsun.awt.AppContext$State; (java.desktop@17.0.12)
+ 801:             1             32  [Lsun.java2d.StateTrackable$State; (java.desktop@17.0.12)
+ 802:             1             32  [Lsun.nio.fs.NativeBuffer; (java.base@17.0.12)
+ 803:             2             32  dev.mrcalzon.water.WaterModule
+ 804:             1             32  java.awt.color.ICC_ProfileGray (java.desktop@17.0.12)
+ 805:             1             32  java.io.FileInputStream (java.base@17.0.12)
+ 806:             1             32  java.io.WinNTFileSystem (java.base@17.0.12)
+ 807:             2             32  java.lang.Boolean (java.base@17.0.12)
+ 808:             1             32  java.lang.Module$ArchivedData (java.base@17.0.12)
+ 809:             2             32  java.lang.Shutdown$Lock (java.base@17.0.12)
+ 810:             1             32  java.lang.StringBuffer (java.base@17.0.12)
+ 811:             1             32  java.lang.module.ModuleDescriptor$Version (java.base@17.0.12)
+ 812:             2             32  java.nio.ByteOrder (java.base@17.0.12)
+ 813:             1             32  java.nio.DirectByteBuffer$Deallocator (java.base@17.0.12)
+ 814:             2             32  java.time.format.DateTimeFormatterBuilder$StringLiteralPrinterParser (java.base@17.0.12)
+ 815:             2             32  java.util.Collections$SingletonSet (java.base@17.0.12)
+ 816:             1             32  java.util.ImmutableCollections$ListItr (java.base@17.0.12)
+ 817:             1             32  java.util.LinkedList (java.base@17.0.12)
+ 818:             2             32  java.util.ResourceBundle$SingleFormatControl (java.base@17.0.12)
+ 819:             2             32  java.util.concurrent.ConcurrentHashMap$EntrySetView (java.base@17.0.12)
+ 820:             1             32  java.util.concurrent.SynchronousQueue (java.base@17.0.12)
+ 821:             1             32  java.util.concurrent.ThreadLocalRandom (java.base@17.0.12)
+ 822:             1             32  java.util.zip.ZipCoder$UTF8ZipCoder (java.base@17.0.12)
+ 823:             1             32  jdk.internal.loader.ArchivedClassLoaders (java.base@17.0.12)
+ 824:             2             32  jdk.internal.loader.ClassLoaderValue (java.base@17.0.12)
+ 825:             1             32  jdk.internal.module.ArchivedModuleGraph (java.base@17.0.12)
+ 826:             1             32  jdk.internal.org.objectweb.asm.ConstantDynamic (java.base@17.0.12)
+ 827:             1             32  jdk.internal.org.objectweb.asm.Handle (java.base@17.0.12)
+ 828:             1             32  org.beckenburg.CastleResidentAnimation$Routine
+ 829:             1             32  sun.awt.PostEventQueue (java.desktop@17.0.12)
+ 830:             1             32  sun.awt.Win32GraphicsEnvironment (java.desktop@17.0.12)
+ 831:             1             32  sun.awt.image.BufferedImageDevice (java.desktop@17.0.12)
+ 832:             1             32  sun.font.CompositeGlyphMapper (java.desktop@17.0.12)
+ 833:             2             32  sun.java2d.pipe.PixelToShapeConverter (java.desktop@17.0.12)
+ 834:             2             32  sun.java2d.pipe.SpanShapeRenderer$Composite (java.desktop@17.0.12)
+ 835:             1             32  sun.reflect.generics.reflectiveObjects.TypeVariableImpl (java.base@17.0.12)
+ 836:             1             32  sun.security.util.KnownOIDs$1 (java.base@17.0.12)
+ 837:             1             32  sun.security.util.KnownOIDs$10 (java.base@17.0.12)
+ 838:             1             32  sun.security.util.KnownOIDs$2 (java.base@17.0.12)
+ 839:             1             32  sun.security.util.KnownOIDs$3 (java.base@17.0.12)
+ 840:             1             32  sun.security.util.KnownOIDs$4 (java.base@17.0.12)
+ 841:             1             32  sun.security.util.KnownOIDs$5 (java.base@17.0.12)
+ 842:             1             32  sun.security.util.KnownOIDs$6 (java.base@17.0.12)
+ 843:             1             32  sun.security.util.KnownOIDs$7 (java.base@17.0.12)
+ 844:             1             32  sun.security.util.KnownOIDs$8 (java.base@17.0.12)
+ 845:             1             32  sun.security.util.KnownOIDs$9 (java.base@17.0.12)
+ 846:             1             32  sun.util.locale.provider.LocaleResources (java.base@17.0.12)
+ 847:             1             32  sun.util.resources.Bundles$CacheKey (java.base@17.0.12)
+ 848:             1             24  [Ljava.io.File$PathStatus; (java.base@17.0.12)
+ 849:             1             24  [Ljava.lang.invoke.MethodHandles$Lookup$ClassOption; (java.base@17.0.12)
+ 850:             1             24  [Ljava.lang.reflect.TypeVariable; (java.base@17.0.12)
+ 851:             1             24  [Ljava.net.URL; (java.base@17.0.12)
+ 852:             1             24  [Ljava.nio.file.LinkOption; (java.base@17.0.12)
+ 853:             1             24  [Ljava.time.temporal.IsoFields$Unit; (java.base@17.0.12)
+ 854:             1             24  [Ljava.util.Comparators$NaturalOrderComparator; (java.base@17.0.12)
+ 855:             1             24  [Ljava.util.Locale$Category; (java.base@17.0.12)
+ 856:             1             24  [Ljava.util.jar.Manifest; (java.base@17.0.12)
+ 857:             1             24  [Lorg.beckenburg.CastleHubDecor$Mount;
+ 858:             1             24  [Lorg.beckenburg.EquipmentRegistry$State;
+ 859:             1             24  [Lsun.reflect.generics.tree.FieldTypeSignature; (java.base@17.0.12)
+ 860:             1             24  com.sun.imageio.spi.FileImageInputStreamSpi (java.desktop@17.0.12)
+ 861:             1             24  com.sun.imageio.spi.FileImageOutputStreamSpi (java.desktop@17.0.12)
+ 862:             1             24  com.sun.imageio.spi.InputStreamImageInputStreamSpi (java.desktop@17.0.12)
+ 863:             1             24  com.sun.imageio.spi.OutputStreamImageOutputStreamSpi (java.desktop@17.0.12)
+ 864:             1             24  com.sun.imageio.spi.RAFImageInputStreamSpi (java.desktop@17.0.12)
+ 865:             1             24  com.sun.imageio.spi.RAFImageOutputStreamSpi (java.desktop@17.0.12)
+ 866:             1             24  java.lang.NamedPackage (java.base@17.0.12)
+ 867:             1             24  java.lang.ProcessHandleImpl$$Lambda$191/0x000001994d16ad70 (java.base@17.0.12)
+ 868:             1             24  java.lang.ThreadLocal$ThreadLocalMap (java.base@17.0.12)
+ 869:             1             24  java.lang.invoke.DirectMethodHandle$EnsureInitialized (java.base@17.0.12)
+ 870:             1             24  java.lang.invoke.MethodHandleImpl$ArrayAccessor$1 (java.base@17.0.12)
+ 871:             1             24  java.lang.invoke.MethodHandleImpl$Makers$3 (java.base@17.0.12)
+ 872:             1             24  java.lang.invoke.MethodType$ConcurrentWeakInternSet (java.base@17.0.12)
+ 873:             1             24  java.lang.invoke.VarHandle$TypesAndInvokers (java.base@17.0.12)
+ 874:             1             24  java.lang.invoke.VarHandleByteArrayAsInts$ArrayHandle (java.base@17.0.12)
+ 875:             1             24  java.lang.invoke.VarHandleByteArrayAsLongs$ArrayHandle (java.base@17.0.12)
+ 876:             1             24  java.lang.invoke.VarHandles$1 (java.base@17.0.12)
+ 877:             1             24  java.net.Inet6AddressImpl (java.base@17.0.12)
+ 878:             1             24  java.nio.file.LinkOption (java.base@17.0.12)
+ 879:             1             24  java.time.format.DecimalStyle (java.base@17.0.12)
+ 880:             1             24  java.time.temporal.IsoFields$Field$1 (java.base@17.0.12)
+ 881:             1             24  java.time.temporal.IsoFields$Field$2 (java.base@17.0.12)
+ 882:             1             24  java.time.temporal.IsoFields$Field$3 (java.base@17.0.12)
+ 883:             1             24  java.time.temporal.IsoFields$Field$4 (java.base@17.0.12)
+ 884:             1             24  java.util.Collections$EmptyMap (java.base@17.0.12)
+ 885:             1             24  java.util.Collections$UnmodifiableRandomAccessList (java.base@17.0.12)
+ 886:             1             24  java.util.Comparators$NaturalOrderComparator (java.base@17.0.12)
+ 887:             1             24  java.util.Locale$Cache (java.base@17.0.12)
+ 888:             1             24  java.util.OptionalDouble (java.base@17.0.12)
+ 889:             1             24  java.util.OptionalInt (java.base@17.0.12)
+ 890:             1             24  java.util.ResourceBundle$Control$CandidateListCache (java.base@17.0.12)
+ 891:             1             24  java.util.jar.Manifest (java.base@17.0.12)
+ 892:             1             24  java.util.zip.ZipFile$Source$Key (java.base@17.0.12)
+ 893:             1             24  javax.imageio.ImageIO$CacheInfo (java.desktop@17.0.12)
+ 894:             1             24  jdk.internal.jimage.ImageReader (java.base@17.0.12)
+ 895:             1             24  jdk.internal.loader.URLClassPath$FileLoader (java.base@17.0.12)
+ 896:             1             24  jdk.internal.logger.BootstrapLogger$RedirectedLoggers (java.base@17.0.12)
+ 897:             1             24  jdk.internal.logger.SurrogateLogger (java.base@17.0.12)
+ 898:             1             24  jdk.internal.module.ModuleHashes (java.base@17.0.12)
+ 899:             1             24  jdk.internal.module.SystemModuleFinders$SystemModuleFinder (java.base@17.0.12)
+ 900:             1             24  jdk.internal.ref.CleanerImpl (java.base@17.0.12)
+ 901:             1             24  org.beckenburg.HauntedFixtures
+ 902:             1             24  org.beckenburg.HunterSpriteAnimation$Tracker
+ 903:             1             24  sun.awt.SunHints$LCDContrastKey (java.desktop@17.0.12)
+ 904:             1             24  sun.awt.WeakIdentityHashMap (java.desktop@17.0.12)
+ 905:             1             24  sun.awt.util.PerformanceLogger$TimeData (java.desktop@17.0.12)
+ 906:             1             24  sun.font.CMap$NullCMapClass (java.desktop@17.0.12)
+ 907:             1             24  sun.java2d.marlin.DMarlinRenderingEngine$1 (java.desktop@17.0.12)
+ 908:             1             24  sun.java2d.pipe.AAShapePipe$1 (java.desktop@17.0.12)
+ 909:             1             24  sun.nio.ch.Util$BufferCache (java.base@17.0.12)
+ 910:             1             24  sun.nio.cs.ISO_8859_1 (java.base@17.0.12)
+ 911:             1             24  sun.nio.cs.MS1252 (java.base@17.0.12)
+ 912:             1             24  sun.nio.cs.StandardCharsets (java.base@17.0.12)
+ 913:             1             24  sun.nio.cs.US_ASCII (java.base@17.0.12)
+ 914:             1             24  sun.nio.cs.UTF_16 (java.base@17.0.12)
+ 915:             1             24  sun.nio.cs.UTF_16BE (java.base@17.0.12)
+ 916:             1             24  sun.nio.cs.UTF_16LE (java.base@17.0.12)
+ 917:             1             24  sun.nio.cs.UTF_8 (java.base@17.0.12)
+ 918:             1             24  sun.nio.fs.WindowsFileSystem (java.base@17.0.12)
+ 919:             1             24  sun.nio.fs.WindowsSecurityDescriptor (java.base@17.0.12)
+ 920:             1             24  sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl (java.base@17.0.12)
+ 921:             1             24  sun.reflect.generics.tree.FormalTypeParameter (java.base@17.0.12)
+ 922:             1             24  sun.security.provider.DRBG (java.base@17.0.12)
+ 923:             1             24  sun.util.locale.BaseLocale$Cache (java.base@17.0.12)
+ 924:             1             24  sun.util.locale.provider.DecimalFormatSymbolsProviderImpl (java.base@17.0.12)
+ 925:             1             16  [Ljava.lang.Throwable; (java.base@17.0.12)
+ 926:             1             16  [Ljava.lang.constant.Constable; (java.base@17.0.12)
+ 927:             1             16  [Ljava.nio.file.attribute.FileAttribute; (java.base@17.0.12)
+ 928:             1             16  [Ljava.security.Provider; (java.base@17.0.12)
+ 929:             1             16  [Ljava.security.cert.Certificate; (java.base@17.0.12)
+ 930:             1             16  [Ljava.util.prefs.AbstractPreferences; (java.prefs@17.0.12)
+ 931:             1             16  [Lorg.beckenburg.FixtureLighting$Source;
+ 932:             1             16  [Lorg.beckenburg.FixtureLighting$Weighted;
+ 933:             1             16  [Lorg.beckenburg.SceneRenderer$Point;
+ 934:             1             16  com.sun.imageio.stream.StreamCloser$1 (java.desktop@17.0.12)
+ 935:             1             16  dev.mrcalzon.weather.WeatherSurfaceGrid
+ 936:             1             16  dev.mrcalzon.weather.WeatherSystem$$Lambda$117/0x000001994d132b88
+ 937:             1             16  java.awt.Component$1 (java.desktop@17.0.12)
+ 938:             1             16  java.awt.Component$AWTTreeLock (java.desktop@17.0.12)
+ 939:             1             16  java.awt.Component$DummyRequestFocusController (java.desktop@17.0.12)
+ 940:             1             16  java.awt.EventQueue$1 (java.desktop@17.0.12)
+ 941:             1             16  java.awt.EventQueue$2 (java.desktop@17.0.12)
+ 942:             1             16  java.awt.Font$FontAccessImpl (java.desktop@17.0.12)
+ 943:             1             16  java.awt.GraphicsEnvironment$$Lambda$7/0x000001994d04ffb8 (java.desktop@17.0.12)
+ 944:             1             16  java.awt.Image$1 (java.desktop@17.0.12)
+ 945:             1             16  java.awt.ImageCapabilities (java.desktop@17.0.12)
+ 946:             1             16  java.awt.Toolkit$3 (java.desktop@17.0.12)
+ 947:             1             16  java.awt.font.JavaAWTFontAccessImpl (java.desktop@17.0.12)
+ 948:             1             16  java.awt.image.DataBuffer$1 (java.desktop@17.0.12)
+ 949:             1             16  java.io.FileDescriptor$1 (java.base@17.0.12)
+ 950:             1             16  java.io.RandomAccessFile$2 (java.base@17.0.12)
+ 951:             1             16  java.lang.ApplicationShutdownHooks$1 (java.base@17.0.12)
+ 952:             1             16  java.lang.CharacterData00 (java.base@17.0.12)
+ 953:             1             16  java.lang.CharacterDataLatin1 (java.base@17.0.12)
+ 954:             1             16  java.lang.ProcessEnvironment$EntryComparator (java.base@17.0.12)
+ 955:             1             16  java.lang.ProcessEnvironment$NameComparator (java.base@17.0.12)
+ 956:             1             16  java.lang.ProcessHandleImpl$$Lambda$190/0x000001994d16ab58 (java.base@17.0.12)
+ 957:             1             16  java.lang.Runtime (java.base@17.0.12)
+ 958:             1             16  java.lang.String$CaseInsensitiveComparator (java.base@17.0.12)
+ 959:             1             16  java.lang.System$2 (java.base@17.0.12)
+ 960:             1             16  java.lang.Terminator$1 (java.base@17.0.12)
+ 961:             1             16  java.lang.invoke.ClassSpecializer$1 (java.base@17.0.12)
+ 962:             1             16  java.lang.invoke.MemberName$Factory (java.base@17.0.12)
+ 963:             1             16  java.lang.invoke.MethodHandleImpl$1 (java.base@17.0.12)
+ 964:             1             16  java.lang.invoke.MethodHandleImpl$Makers$1 (java.base@17.0.12)
+ 965:             1             16  java.lang.invoke.MethodHandleImpl$Makers$2 (java.base@17.0.12)
+ 966:             1             16  java.lang.invoke.StringConcatFactory$1 (java.base@17.0.12)
+ 967:             1             16  java.lang.invoke.StringConcatFactory$2 (java.base@17.0.12)
+ 968:             1             16  java.lang.invoke.StringConcatFactory$3 (java.base@17.0.12)
+ 969:             1             16  java.lang.invoke.VarHandle$1 (java.base@17.0.12)
+ 970:             1             16  java.lang.invoke.VarHandleByteArrayAsInts$ArrayHandle$$Lambda$10/0x000001994d05cf28 (java.base@17.0.12)
+ 971:             1             16  java.lang.invoke.VarHandleByteArrayAsLongs$ArrayHandle$$Lambda$11/0x000001994d05d870 (java.base@17.0.12)
+ 972:             1             16  java.lang.module.ModuleDescriptor$1 (java.base@17.0.12)
+ 973:             1             16  java.lang.ref.Cleaner (java.base@17.0.12)
+ 974:             1             16  java.lang.ref.Cleaner$1 (java.base@17.0.12)
+ 975:             1             16  java.lang.ref.Reference$1 (java.base@17.0.12)
+ 976:             1             16  java.lang.reflect.ReflectAccess (java.base@17.0.12)
+ 977:             1             16  java.net.InetAddress$1 (java.base@17.0.12)
+ 978:             1             16  java.net.InetAddress$PlatformNameService (java.base@17.0.12)
+ 979:             1             16  java.net.URI$1 (java.base@17.0.12)
+ 980:             1             16  java.net.URL$3 (java.base@17.0.12)
+ 981:             1             16  java.net.URL$DefaultFactory (java.base@17.0.12)
+ 982:             1             16  java.nio.Bits$1 (java.base@17.0.12)
+ 983:             1             16  java.nio.Buffer$1 (java.base@17.0.12)
+ 984:             1             16  java.nio.file.Files$AcceptAllFilter (java.base@17.0.12)
+ 985:             1             16  java.security.AllPermission (java.base@17.0.12)
+ 986:             1             16  java.security.ProtectionDomain$JavaSecurityAccessImpl (java.base@17.0.12)
+ 987:             1             16  java.security.Security$2 (java.base@17.0.12)
+ 988:             1             16  java.text.DecimalFormatSymbols$$Lambda$59/0x800000061 (java.base@17.0.12)
+ 989:             1             16  java.time.chrono.IsoChronology (java.base@17.0.12)
+ 990:             1             16  java.time.format.DateTimeFormatter$$Lambda$49/0x800000057 (java.base@17.0.12)
+ 991:             1             16  java.time.format.DateTimeFormatter$$Lambda$50/0x800000058 (java.base@17.0.12)
+ 992:             1             16  java.time.format.DateTimeFormatterBuilder$$Lambda$48/0x800000056 (java.base@17.0.12)
+ 993:             1             16  java.time.format.DateTimeFormatterBuilder$InstantPrinterParser (java.base@17.0.12)
+ 994:             1             16  java.time.format.DateTimeTextProvider (java.base@17.0.12)
+ 995:             1             16  java.time.format.DateTimeTextProvider$1 (java.base@17.0.12)
+ 996:             1             16  java.util.Collections$EmptyEnumeration (java.base@17.0.12)
+ 997:             1             16  java.util.Collections$EmptyIterator (java.base@17.0.12)
+ 998:             1             16  java.util.Collections$EmptyList (java.base@17.0.12)
+ 999:             1             16  java.util.Collections$EmptySet (java.base@17.0.12)
+1000:             1             16  java.util.EnumMap$1 (java.base@17.0.12)
+1001:             1             16  java.util.IdentityHashMap$Values (java.base@17.0.12)
+1002:             1             16  java.util.ImmutableCollections$Access$1 (java.base@17.0.12)
+1003:             1             16  java.util.LinkedHashSet (java.base@17.0.12)
+1004:             1             16  java.util.Locale$Builder (java.base@17.0.12)
+1005:             1             16  java.util.ResourceBundle$1 (java.base@17.0.12)
+1006:             1             16  java.util.ResourceBundle$Control (java.base@17.0.12)
+1007:             1             16  java.util.Spliterators$EmptySpliterator$OfDouble (java.base@17.0.12)
+1008:             1             16  java.util.Spliterators$EmptySpliterator$OfInt (java.base@17.0.12)
+1009:             1             16  java.util.Spliterators$EmptySpliterator$OfLong (java.base@17.0.12)
+1010:             1             16  java.util.Spliterators$EmptySpliterator$OfRef (java.base@17.0.12)
+1011:             1             16  java.util.TreeMap$Values (java.base@17.0.12)
+1012:             1             16  java.util.concurrent.ConcurrentSkipListSet (java.base@17.0.12)
+1013:             1             16  java.util.concurrent.SynchronousQueue$TransferStack (java.base@17.0.12)
+1014:             1             16  java.util.concurrent.ThreadPoolExecutor$AbortPolicy (java.base@17.0.12)
+1015:             1             16  java.util.concurrent.atomic.AtomicReference (java.base@17.0.12)
+1016:             1             16  java.util.jar.Attributes (java.base@17.0.12)
+1017:             1             16  java.util.jar.JavaUtilJarAccessImpl (java.base@17.0.12)
+1018:             1             16  java.util.prefs.WindowsPreferences$$Lambda$1/0x000001994d043f48 (java.prefs@17.0.12)
+1019:             1             16  java.util.prefs.WindowsPreferencesFactory (java.prefs@17.0.12)
+1020:             1             16  java.util.regex.CharPredicates$$Lambda$20/0x800000029 (java.base@17.0.12)
+1021:             1             16  java.util.regex.Pattern$LastNode (java.base@17.0.12)
+1022:             1             16  java.util.regex.Pattern$Node (java.base@17.0.12)
+1023:             1             16  java.util.stream.Collectors$$Lambda$30/0x000001994d070120 (java.base@17.0.12)
+1024:             1             16  java.util.stream.Collectors$$Lambda$31/0x000001994d070360 (java.base@17.0.12)
+1025:             1             16  java.util.stream.Collectors$$Lambda$44/0x800000052 (java.base@17.0.12)
+1026:             1             16  java.util.stream.Collectors$$Lambda$45/0x800000053 (java.base@17.0.12)
+1027:             1             16  java.util.stream.Collectors$$Lambda$46/0x800000054 (java.base@17.0.12)
+1028:             1             16  java.util.stream.Collectors$$Lambda$5/0x800000010 (java.base@17.0.12)
+1029:             1             16  java.util.stream.Collectors$$Lambda$6/0x800000011 (java.base@17.0.12)
+1030:             1             16  java.util.stream.DoublePipeline$$Lambda$71/0x000001994d0ae858 (java.base@17.0.12)
+1031:             1             16  java.util.stream.DoublePipeline$$Lambda$73/0x000001994d0af708 (java.base@17.0.12)
+1032:             1             16  java.util.stream.FindOps$FindSink$OfDouble$$Lambda$143/0x000001994d0baa20 (java.base@17.0.12)
+1033:             1             16  java.util.stream.FindOps$FindSink$OfDouble$$Lambda$144/0x000001994d0bac68 (java.base@17.0.12)
+1034:             1             16  java.util.stream.FindOps$FindSink$OfDouble$$Lambda$145/0x000001994d0bae80 (java.base@17.0.12)
+1035:             1             16  java.util.stream.FindOps$FindSink$OfDouble$$Lambda$146/0x000001994d0bb0c8 (java.base@17.0.12)
+1036:             1             16  java.util.stream.FindOps$FindSink$OfInt$$Lambda$60/0x800000062 (java.base@17.0.12)
+1037:             1             16  java.util.stream.FindOps$FindSink$OfInt$$Lambda$61/0x800000063 (java.base@17.0.12)
+1038:             1             16  java.util.stream.FindOps$FindSink$OfInt$$Lambda$62/0x800000064 (java.base@17.0.12)
+1039:             1             16  java.util.stream.FindOps$FindSink$OfInt$$Lambda$63/0x800000065 (java.base@17.0.12)
+1040:             1             16  java.util.stream.FindOps$FindSink$OfRef$$Lambda$11/0x80000001a (java.base@17.0.12)
+1041:             1             16  java.util.stream.FindOps$FindSink$OfRef$$Lambda$12/0x80000001b (java.base@17.0.12)
+1042:             1             16  java.util.stream.FindOps$FindSink$OfRef$$Lambda$13/0x80000001c (java.base@17.0.12)
+1043:             1             16  java.util.stream.FindOps$FindSink$OfRef$$Lambda$14/0x80000001d (java.base@17.0.12)
+1044:             1             16  java.util.stream.IntPipeline$$Lambda$14/0x000001994d066920 (java.base@17.0.12)
+1045:             1             16  java.util.stream.IntPipeline$$Lambda$81/0x000001994d0afe18 (java.base@17.0.12)
+1046:             1             16  java.util.stream.LongPipeline$$Lambda$174/0x000001994d0bc9c0 (java.base@17.0.12)
+1047:             1             16  java.util.stream.Nodes$EmptyNode$OfDouble (java.base@17.0.12)
+1048:             1             16  java.util.stream.Nodes$EmptyNode$OfInt (java.base@17.0.12)
+1049:             1             16  java.util.stream.Nodes$EmptyNode$OfLong (java.base@17.0.12)
+1050:             1             16  java.util.stream.Nodes$EmptyNode$OfRef (java.base@17.0.12)
+1051:             1             16  java.util.stream.ReferencePipeline$$Lambda$15/0x000001994d06bd48 (java.base@17.0.12)
+1052:             1             16  java.util.zip.ZipFile$1 (java.base@17.0.12)
+1053:             1             16  javax.imageio.spi.IIORegistry (java.desktop@17.0.12)
+1054:             1             16  javax.swing.event.EventListenerList (java.desktop@17.0.12)
+1055:             1             16  jdk.internal.jimage.ImageReaderFactory$1 (java.base@17.0.12)
+1056:             1             16  jdk.internal.jimage.ImageStringsReader (java.base@17.0.12)
+1057:             1             16  jdk.internal.jimage.decompressor.Decompressor (java.base@17.0.12)
+1058:             1             16  jdk.internal.logger.LazyLoggers$1 (java.base@17.0.12)
+1059:             1             16  jdk.internal.logger.LazyLoggers$LazyLoggerFactories (java.base@17.0.12)
+1060:             1             16  jdk.internal.math.FloatingDecimal$1 (java.base@17.0.12)
+1061:             1             16  jdk.internal.misc.ScopedMemoryAccess (java.base@17.0.12)
+1062:             1             16  jdk.internal.misc.TerminatingThreadLocal$1 (java.base@17.0.12)
+1063:             1             16  jdk.internal.misc.Unsafe (java.base@17.0.12)
+1064:             1             16  jdk.internal.module.ArchivedBootLayer (java.base@17.0.12)
+1065:             1             16  jdk.internal.module.ModuleLoaderMap$Mapper (java.base@17.0.12)
+1066:             1             16  jdk.internal.module.ModulePatcher (java.base@17.0.12)
+1067:             1             16  jdk.internal.module.ModuleTarget (java.base@17.0.12)
+1068:             1             16  jdk.internal.perf.Perf (java.base@17.0.12)
+1069:             1             16  jdk.internal.reflect.BootstrapConstructorAccessorImpl (java.base@17.0.12)
+1070:             1             16  jdk.internal.reflect.GeneratedConstructorAccessor1 (java.base@17.0.12)
+1071:             1             16  jdk.internal.reflect.ReflectionFactory (java.base@17.0.12)
+1072:             1             16  org.beckenburg.AuthoredSitePhysics$$Lambda$12/0x000001994d00b768
+1073:             1             16  org.beckenburg.AuthoredSitePhysics$$Lambda$13/0x000001994d00b9a0
+1074:             1             16  org.beckenburg.CastleCellar$$Lambda$54/0x000001994d0ce5c8
+1075:             1             16  org.beckenburg.CastleClutterWorld
+1076:             1             16  org.beckenburg.CastleDoorSlots$$Lambda$25/0x000001994d014a00
+1077:             1             16  org.beckenburg.CastleGround$$Lambda$53/0x000001994d0ce380
+1078:             1             16  org.beckenburg.CastleHubDecor$$Lambda$127/0x000001994d138c98
+1079:             1             16  org.beckenburg.CastleHubMap$$Lambda$52/0x000001994d0ce138
+1080:             1             16  org.beckenburg.CastleRooms$$Lambda$123/0x000001994d135000
+1081:             1             16  org.beckenburg.CastleUpper$$Lambda$115/0x000001994d131ee0
+1082:             1             16  org.beckenburg.CastleUpper$$Lambda$26/0x000001994d015278
+1083:             1             16  org.beckenburg.CastleUpper$$Lambda$27/0x000001994d0154b0
+1084:             1             16  org.beckenburg.CastleWarehouse$$Lambda$128/0x000001994d1394d0
+1085:             1             16  org.beckenburg.DeckSlabs$$Lambda$142/0x000001994d11a250
+1086:             1             16  org.beckenburg.FixtureLighting$$Lambda$114/0x000001994d131ca8
+1087:             1             16  org.beckenburg.GlbProps$$Lambda$160/0x000001994d100430
+1088:             1             16  org.beckenburg.HauntedFixtures$$Lambda$161/0x000001994d100a78
+1089:             1             16  org.beckenburg.HauntedFixtures$$Lambda$170/0x000001994d101598
+1090:             1             16  org.beckenburg.HidingBudget$$Lambda$104/0x000001994d12cee0
+1091:             1             16  org.beckenburg.HidingBudget$$Lambda$105/0x000001994d12d128
+1092:             1             16  org.beckenburg.HidingBudget$$Lambda$106/0x000001994d12d340
+1093:             1             16  org.beckenburg.HouseGeneratorFeed$$Lambda$95/0x000001994d1166e8
+1094:             1             16  org.beckenburg.HouseGeneratorFeed$$Lambda$96/0x000001994d116930
+1095:             1             16  org.beckenburg.HouseGeneratorFeed$$Lambda$97/0x000001994d116b78
+1096:             1             16  org.beckenburg.HouseMap$$Lambda$162/0x000001994d100cb0
+1097:             1             16  org.beckenburg.HouseMap$$Lambda$167/0x000001994d100ee8
+1098:             1             16  org.beckenburg.HouseRebuildEnvelope$$Lambda$57/0x000001994d0d6278
+1099:             1             16  org.beckenburg.HouseRebuildEnvelope$$Lambda$66/0x000001994d105b90
+1100:             1             16  org.beckenburg.HouseRebuildEnvelope$$Lambda$68/0x000001994d106428
+1101:             1             16  org.beckenburg.HouseRebuildEnvelope$$Lambda$69/0x000001994d106660
+1102:             1             16  org.beckenburg.HouseRebuildEnvelope$$Lambda$70/0x000001994d1068a8
+1103:             1             16  org.beckenburg.HouseRebuildEnvelope$$Lambda$72/0x000001994d106ac0
+1104:             1             16  org.beckenburg.HouseRebuildEnvelope$$Lambda$74/0x000001994d106cd8
+1105:             1             16  org.beckenburg.HouseRebuildEnvelope$$Lambda$75/0x000001994d106ef0
+1106:             1             16  org.beckenburg.HouseRebuildEnvelope$$Lambda$76/0x000001994d107108
+1107:             1             16  org.beckenburg.HouseRebuildEnvelope$Builder$$Lambda$80/0x000001994d114248
+1108:             1             16  org.beckenburg.HouseRebuildFitout$$Lambda$86/0x000001994d115380
+1109:             1             16  org.beckenburg.HouseRebuildFunctions$$Lambda$84/0x000001994d114ce8
+1110:             1             16  org.beckenburg.HouseRebuildLandscape$$Lambda$59/0x000001994d0d7160
+1111:             1             16  org.beckenburg.HouseRebuildServices$$Lambda$99/0x000001994d117618
+1112:             1             16  org.beckenburg.HouseServiceNetwork$$Lambda$58/0x000001994d0d6b10
+1113:             1             16  org.beckenburg.HouseServiceNetwork$$Lambda$88/0x000001994d115a08
+1114:             1             16  org.beckenburg.HouseServiceNetwork$$Lambda$89/0x000001994d115c40
+1115:             1             16  org.beckenburg.HouseServiceNetwork$$Lambda$90/0x000001994d115e78
+1116:             1             16  org.beckenburg.HouseServiceNetwork$$Lambda$92/0x000001994d116090
+1117:             1             16  org.beckenburg.HouseServiceNetwork$$Lambda$93/0x000001994d1164d0
+1118:             1             16  org.beckenburg.LevelEnclosure$$Lambda$60/0x000001994d0d7bd8
+1119:             1             16  org.beckenburg.LooseClutter$$Lambda$135/0x000001994d13ec00
+1120:             1             16  org.beckenburg.LooseClutter$$Lambda$178/0x000001994d0f8cc0
+1121:             1             16  org.beckenburg.SafeAreaHaze$$Lambda$139/0x000001994d1225f8
+1122:             1             16  org.beckenburg.SceneRenderer$$Lambda$130/0x000001994d13a3c0
+1123:             1             16  org.beckenburg.SceneRenderer$$Lambda$153/0x000001994d11afc0
+1124:             1             16  org.beckenburg.SceneRenderer$$Lambda$154/0x000001994d11b1f8
+1125:             1             16  org.beckenburg.SceneRenderer$$Lambda$43/0x000001994d0c4348
+1126:             1             16  org.beckenburg.SceneRenderer$ResidentWorldChunk$$Lambda$131/0x000001994d13aa00
+1127:             1             16  org.beckenburg.SceneryInstances$$Lambda$155/0x000001994d11b828
+1128:             1             16  org.beckenburg.SceneryInstances$$Lambda$173/0x000001994d0f8000
+1129:             1             16  org.beckenburg.SceneryInstances$$Lambda$175/0x000001994d0f8218
+1130:             1             16  org.beckenburg.SceneryInstances$Template$$Lambda$158/0x000001994d100000
+1131:             1             16  org.beckenburg.SceneryInstances$Template$$Lambda$159/0x000001994d100218
+1132:             1             16  org.beckenburg.VanInteriorLayout$$Lambda$110/0x000001994d12e608
+1133:             1             16  org.beckenburg.VanLiveScreens$$Lambda$118/0x000001994d136830
+1134:             1             16  org.beckenburg.VanRackStock$$Lambda$119/0x000001994d136e70
+1135:             1             16  org.beckenburg.VanRackStock$$Lambda$120/0x000001994d137088
+1136:             1             16  org.beckenburg.VanRackStock$$Lambda$121/0x000001994d1372c0
+1137:             1             16  org.beckenburg.VanRackStock$$Lambda$122/0x000001994d1374f8
+1138:             1             16  org.beckenburg.VanStreetHouses$$Lambda$62/0x000001994d104e58
+1139:             1             16  org.beckenburg.WorldTerrainSurface$$Lambda$103/0x000001994d12c490
+1140:             1             16  org.beckenburg.WorldTerrainSurface$$Lambda$82/0x000001994d114868
+1141:             1             16  org.beckenburg.WorldTerrainSurface$$Lambda$83/0x000001994d114ab0
+1142:             1             16  org.beckenburg.editor.EditorDocumentStore$$Lambda$51/0x000001994d0cdf20
+1143:             1             16  org.beckenburg.editor.EditorMeshOrder$$Lambda$48/0x000001994d0c5ba8
+1144:             1             16  org.beckenburg.editor.EditorMeshOrder$$Lambda$49/0x000001994d0c5fe8
+1145:             1             16  sun.awt.AppContext$6 (java.desktop@17.0.12)
+1146:             1             16  sun.awt.AppContext$GetAppContextLock (java.desktop@17.0.12)
+1147:             1             16  sun.awt.SunDisplayChanger (java.desktop@17.0.12)
+1148:             1             16  sun.awt.image.PixelConverter (java.desktop@17.0.12)
+1149:             1             16  sun.awt.image.PixelConverter$Argb (java.desktop@17.0.12)
+1150:             1             16  sun.awt.image.PixelConverter$ArgbBm (java.desktop@17.0.12)
+1151:             1             16  sun.awt.image.PixelConverter$ArgbPre (java.desktop@17.0.12)
+1152:             1             16  sun.awt.image.PixelConverter$Bgrx (java.desktop@17.0.12)
+1153:             1             16  sun.awt.image.PixelConverter$ByteGray (java.desktop@17.0.12)
+1154:             1             16  sun.awt.image.PixelConverter$Rgba (java.desktop@17.0.12)
+1155:             1             16  sun.awt.image.PixelConverter$RgbaPre (java.desktop@17.0.12)
+1156:             1             16  sun.awt.image.PixelConverter$Rgbx (java.desktop@17.0.12)
+1157:             1             16  sun.awt.image.PixelConverter$Ushort4444Argb (java.desktop@17.0.12)
+1158:             1             16  sun.awt.image.PixelConverter$Ushort555Rgb (java.desktop@17.0.12)
+1159:             1             16  sun.awt.image.PixelConverter$Ushort555Rgbx (java.desktop@17.0.12)
+1160:             1             16  sun.awt.image.PixelConverter$Ushort565Rgb (java.desktop@17.0.12)
+1161:             1             16  sun.awt.image.PixelConverter$UshortGray (java.desktop@17.0.12)
+1162:             1             16  sun.awt.image.PixelConverter$Xbgr (java.desktop@17.0.12)
+1163:             1             16  sun.awt.image.PixelConverter$Xrgb (java.desktop@17.0.12)
+1164:             1             16  sun.font.SunFontManager$T1Filter (java.desktop@17.0.12)
+1165:             1             16  sun.font.SunFontManager$TTFilter (java.desktop@17.0.12)
+1166:             1             16  sun.java2d.Disposer (java.desktop@17.0.12)
+1167:             1             16  sun.java2d.Disposer$$Lambda$40/0x000001994d03bdd8 (java.desktop@17.0.12)
+1168:             1             16  sun.java2d.HeadlessGraphicsEnvironment (java.desktop@17.0.12)
+1169:             1             16  sun.java2d.SurfaceData$PixelToShapeLoopConverter (java.desktop@17.0.12)
+1170:             1             16  sun.java2d.WindowsSurfaceManagerFactory (java.desktop@17.0.12)
+1171:             1             16  sun.java2d.loops.GraphicsPrimitiveMgr$1 (java.desktop@17.0.12)
+1172:             1             16  sun.java2d.loops.GraphicsPrimitiveMgr$2 (java.desktop@17.0.12)
+1173:             1             16  sun.java2d.marlin.DMarlinRenderingEngine (java.desktop@17.0.12)
+1174:             1             16  sun.java2d.pipe.AATextRenderer (java.desktop@17.0.12)
+1175:             1             16  sun.java2d.pipe.AlphaColorPipe (java.desktop@17.0.12)
+1176:             1             16  sun.java2d.pipe.AlphaPaintPipe (java.desktop@17.0.12)
+1177:             1             16  sun.java2d.pipe.DrawImage (java.desktop@17.0.12)
+1178:             1             16  sun.java2d.pipe.GeneralCompositePipe (java.desktop@17.0.12)
+1179:             1             16  sun.java2d.pipe.LCDTextRenderer (java.desktop@17.0.12)
+1180:             1             16  sun.java2d.pipe.LoopPipe (java.desktop@17.0.12)
+1181:             1             16  sun.java2d.pipe.NullPipe (java.desktop@17.0.12)
+1182:             1             16  sun.java2d.pipe.OutlineTextRenderer (java.desktop@17.0.12)
+1183:             1             16  sun.java2d.pipe.SolidTextRenderer (java.desktop@17.0.12)
+1184:             1             16  sun.java2d.pipe.ValidatePipe (java.desktop@17.0.12)
+1185:             1             16  sun.net.www.protocol.file.Handler (java.base@17.0.12)
+1186:             1             16  sun.net.www.protocol.jar.Handler (java.base@17.0.12)
+1187:             1             16  sun.net.www.protocol.jar.JarFileFactory (java.base@17.0.12)
+1188:             1             16  sun.net.www.protocol.jrt.Handler (java.base@17.0.12)
+1189:             1             16  sun.nio.ch.Util$1 (java.base@17.0.12)
+1190:             1             16  sun.nio.fs.NativeBuffers$1 (java.base@17.0.12)
+1191:             1             16  sun.nio.fs.WindowsChannelFactory$1 (java.base@17.0.12)
+1192:             1             16  sun.nio.fs.WindowsFileSystemProvider (java.base@17.0.12)
+1193:             1             16  sun.security.provider.AbstractDrbg$$Lambda$45/0x000001994d0a1c58 (java.base@17.0.12)
+1194:             1             16  sun.security.provider.AbstractDrbg$SeederHolder$$Lambda$46/0x000001994d0a40d0 (java.base@17.0.12)
+1195:             1             16  sun.security.provider.DRBG$$Lambda$44/0x000001994d0a0748 (java.base@17.0.12)
+1196:             1             16  sun.security.provider.NativeSeedGenerator (java.base@17.0.12)
+1197:             1             16  sun.util.cldr.CLDRBaseLocaleDataMetaInfo (java.base@17.0.12)
+1198:             1             16  sun.util.cldr.CLDRLocaleProviderAdapter$$Lambda$51/0x800000059 (java.base@17.0.12)
+1199:             1             16  sun.util.locale.InternalLocaleBuilder$CaseInsensitiveChar (java.base@17.0.12)
+1200:             1             16  sun.util.resources.LocaleData (java.base@17.0.12)
+1201:             1             16  sun.util.resources.LocaleData$LocaleDataStrategy (java.base@17.0.12)
+1202:             1             16  sun.util.resources.cldr.provider.CLDRLocaleDataMetaInfo (jdk.localedata@17.0.12)
+Total        758055      167343728

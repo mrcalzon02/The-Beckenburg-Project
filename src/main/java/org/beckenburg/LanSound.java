@@ -62,7 +62,8 @@ public final class LanSound {
         SPIRIT_BOX_LEAVE(0,91,"SPIRIT BOX / LEAVE"),
         SPIRIT_BOX_HELP(0,91,"SPIRIT BOX / HELP ME"),
         SPIRIT_BOX_HERE(0,91,"SPIRIT BOX / I'M HERE"),
-        SPIRIT_BOX_OUT(0,91,"SPIRIT BOX / GET OUT");
+        SPIRIT_BOX_OUT(0,91,"SPIRIT BOX / GET OUT"),
+        TOY_WINDUP(4,46,"A SMALL WOODEN TOY CLICKS");
         final int acousticBudget, baseGain;
         final String caption;
         Cue(int budget, int gain, String caption) { acousticBudget=budget;baseGain=gain;this.caption=caption; }
@@ -74,7 +75,7 @@ public final class LanSound {
                     CAMERA,BOOK,POTION,DOTS_MOTOR,DOTS_STOP,SPARK,
                     INCENSE_BURN,FIRELIGHT_IGNITE,FIRELIGHT_OUT,DROP,ELECTRIC_HUM,MONITOR_HUM,
                     PHONE_RING,ALARM_BELL,FIRE_BELL,RADIO_PLAY,RUNNING_WATER,
-                    SPIRIT_BOX_STATIC->Tier.AMBIENT;
+                    SPIRIT_BOX_STATIC,TOY_WINDUP->Tier.AMBIENT;
             case WHISPER,SPIRIT_BOX_LEAVE,SPIRIT_BOX_HELP,SPIRIT_BOX_HERE,
                     SPIRIT_BOX_OUT->Tier.MINOR;
             case DISTURB,MANIFEST,GHOST_DRIFT,WARD,HORROR_STING_A,

@@ -29,8 +29,12 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
     public long revision(){return session.revision();}
     public void checkAccess(){access.run();}
     public java.util.Set<EditorAgentService.Capability> capabilities(){return java.util.Set.of(EditorAgentService.Capability.values());}
-    public List<String> operations(){return List.of("move-prop");}
+    public List<String> operations(){return session.canRebuildHouse()?List.of("move-prop","rebuild-house"):List.of("move-prop");}
     public void apply(String operation,Map<String,String> args){
+        if(operation.equals("rebuild-house")){
+            if(!args.equals(Map.of("baseline","ORIGINAL")))throw new IllegalArgumentException("Expected rebuild-house baseline ORIGINAL");
+            session.rebuildHouse();return;
+        }
         if(!operation.equals("move-prop")||!args.keySet().equals(java.util.Set.of("id","x","y","z")))
             throw new IllegalArgumentException("Expected move-prop with id, x, y, z");
         String id=args.get("id");
@@ -64,7 +68,7 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
                 }
             }
         }
-        boolean reordered=!before.ids().equals(after.ids());
+        boolean reordered=!before.ids().equals(after.ids())||!java.util.Objects.equals(before.architecture(),after.architecture());
         return new EditorChange.Details(nodes,assets,nodes.isEmpty()&&!reordered?java.util.Set.of():java.util.Set.of(EditorChange.Dependency.values()),bounds,reordered);
     }
     public void validate(){session.validate();}

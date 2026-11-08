@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 7394,
+  "count": 7401,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -3224,6 +3224,26 @@
       "sha256": "2a40d55b749fb2627b67650cc385a9ebb535b01005edb66d006df8c2826ef78f"
     },
     {
+      "path": "development/captures/house-encounter/train-after-runtime.png",
+      "url": "development/captures/house-encounter/train-after-runtime.png",
+      "title": "Train after runtime",
+      "kind": "Runtime authored House encounter study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 604553,
+      "sha256": "627874a9c96b39810d91cc7d012e37d0f9db285b2eb3d9ebf589cd6fceab3b79"
+    },
+    {
+      "path": "development/captures/house-encounter/train-before-runtime.png",
+      "url": "development/captures/house-encounter/train-before-runtime.png",
+      "title": "Train before runtime",
+      "kind": "Runtime authored House encounter study",
+      "width": 1000,
+      "height": 625,
+      "bytes": 604228,
+      "sha256": "ca516035a4b3092bb322c089404b9f1a5dea5b2bc74c8099bd54f6b31776f604"
+    },
+    {
       "path": "development/captures/house-envelope/canonical-van-runtime.png",
       "url": "development/captures/house-envelope/canonical-van-runtime.png",
       "title": "Canonical van runtime",
@@ -3792,6 +3812,56 @@
       "height": 625,
       "bytes": 102668,
       "sha256": "4dd4c4ad349a670528bc48ba4ef6c67a192cb096f0bca9b86ef2da9a2b048b4f"
+    },
+    {
+      "path": "development/captures/house-native-migration/saved-built-in-house-cellar-runtime.png",
+      "url": "development/captures/house-native-migration/saved-built-in-house-cellar-runtime.png",
+      "title": "Saved built in house cellar runtime",
+      "kind": "Runtime saved native House migration",
+      "width": 1000,
+      "height": 625,
+      "bytes": 594544,
+      "sha256": "953f906ff1aa17419850b9ec104cd8ef89f5e1c1464122e4c0eee93a06665d20"
+    },
+    {
+      "path": "development/captures/house-native-migration/saved-built-in-house-kitchen-runtime.png",
+      "url": "development/captures/house-native-migration/saved-built-in-house-kitchen-runtime.png",
+      "title": "Saved built in house kitchen runtime",
+      "kind": "Runtime saved native House migration",
+      "width": 1000,
+      "height": 625,
+      "bytes": 636479,
+      "sha256": "ed18075df34a153f652187211d1a05f5d8a579eca22e354613ee48eef7edef3c"
+    },
+    {
+      "path": "development/captures/house-native-migration/saved-built-in-house-landing-runtime.png",
+      "url": "development/captures/house-native-migration/saved-built-in-house-landing-runtime.png",
+      "title": "Saved built in house landing runtime",
+      "kind": "Runtime saved native House migration",
+      "width": 1000,
+      "height": 625,
+      "bytes": 583115,
+      "sha256": "bc7026b916da563ed25da548f8fc8ac20e96eee83e72914ff36b0180e701aecc"
+    },
+    {
+      "path": "development/captures/house-native-migration/windows-editor-rebuilt-kitchen-runtime.png",
+      "url": "development/captures/house-native-migration/windows-editor-rebuilt-kitchen-runtime.png",
+      "title": "Windows editor rebuilt kitchen runtime",
+      "kind": "Runtime saved native House migration",
+      "width": 560,
+      "height": 350,
+      "bytes": 106586,
+      "sha256": "999793bb4266accd57cbe5d56601cddba0da52077cae8f963e2496f6c8310750"
+    },
+    {
+      "path": "development/captures/house-native-recovery/legacy-house-cli-recovery-control-runtime.png",
+      "url": "development/captures/house-native-recovery/legacy-house-cli-recovery-control-runtime.png",
+      "title": "Legacy house cli recovery control runtime",
+      "kind": "Runtime legacy House editor recovery control",
+      "width": 560,
+      "height": 350,
+      "bytes": 121836,
+      "sha256": "b364e01fc8b0dac26a0a6188f6035c76e7641f7be9a9913a0ecfc2af3480528c"
     },
     {
       "path": "development/captures/house-room-review/house_rebuild_services/00-entrance-and-coat-vestibule/east.png",

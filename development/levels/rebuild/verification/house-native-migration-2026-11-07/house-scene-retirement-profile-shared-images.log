@@ -1,0 +1,13 @@
+2026-11-07T23:02:28.723016800Z [main] RENDER SLOW stage=idle faces=91914 visible_faces=46648 culled_faces=45266 target=320x200 build_ms=1245 lighting_raster_ms=1065
+castleStaticGeometry=0
+castleEnvironment=null
+preparedShellFaces=0
+preparedScenery=0
+residentSceneryFaces=0
+stableGpuFaces=0
+shellGpuFaces=0
+cachedVanFaces=0
+cachedRoadFaces=0
+RETIRED_PROFILE_PID=19308
+2026-11-07T23:02:44.966296Z [main] RENDER SLOW stage=idle faces=91914 visible_faces=46648 culled_faces=45266 target=320x200 build_ms=48 lighting_raster_ms=926
+PASS actual Castle/House scene retirement, destination preload reuse, rebuilt return and exact runtime pixel parity

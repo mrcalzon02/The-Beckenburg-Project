@@ -235,6 +235,12 @@ public final class LanAudio implements AutoCloseable {
         }finally{output=null;release(line);}
     }
     /** Pure deterministic stereo 16-bit PCM. Useful for audio quality and pan regression tests. */
+    private static double woodenToy(double t,double noise){
+        double first=t-.025,second=t-.105;
+        return (first<0?0:.75*Math.sin(2*Math.PI*920*first)*Math.exp(-first*95))
+            +(second<0?0:.63*Math.sin(2*Math.PI*640*second)*Math.exp(-second*85))
+            +.09*noise*Math.exp(-t*24);
+    }
     public static byte[] synthesize(LanSound.CueEvent event){
         if(event==null)throw new IllegalArgumentException("event required");
         int samples=switch(event.cue()){
@@ -249,6 +255,7 @@ public final class LanAudio implements AutoCloseable {
             case CAMERA->2600; case WARD->9500; case POTION->5100;
             case RITUAL_START,RITUAL_END->12000;case IMPACT->7500;
             case GHOST_DRIFT->9300;
+            case TOY_WINDUP->4800;
             case DOTS_MOTOR->6800;case DOTS_STOP->2400;
             case SPARK->1600;case INCENSE_BURN->5500;
             case FIRELIGHT_IGNITE->3400;case FIRELIGHT_OUT->2600;
@@ -308,6 +315,7 @@ public final class LanAudio implements AutoCloseable {
                 case RITUAL_START->.36*Math.sin(2*Math.PI*(70+210*t)*t)+.19*Math.sin(2*Math.PI*111*t)+.15*noise;
                 case RITUAL_END->.3*Math.sin(2*Math.PI*(240-180*t)*t)+.25*Math.sin(2*Math.PI*70*t)+.12*noise;
                 case IMPACT->.62*noise*Math.exp(-t*30)+.49*Math.sin(2*Math.PI*(102-83*t)*t)*Math.exp(-t*8);
+                case TOY_WINDUP->woodenToy(t,noise);
                 case GHOST_DRIFT->.39*Math.sin(2*Math.PI*(67+160*t)*t)+.22*noise*Math.sin(2*Math.PI*23*t);
                 case DOTS_MOTOR->.34*Math.sin(2*Math.PI*(155+25*Math.sin(t*26))*t)
                     +.19*Math.sin(2*Math.PI*320*t)+.12*noise;

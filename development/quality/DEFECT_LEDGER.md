@@ -4588,6 +4588,216 @@ Evidence and verification: User rejection; development/captures/house-template-c
 
 Older-map obligation: Review appliance placement as a functional room arrangement individually; passing collision alone never accepts an older layout.
 
+### DEV-335 — Saved built-in House has no architectural version or safe rebuild operation
+
+**Status:** SCOPED NATIVE/GAMEPLAY SOURCE PASS; final363/native/GPU acceptance pending · **Affected:** House native editor document and upcoming live default promotion
+
+Saved built-in House props contain stable native IDs but no indication of which building owns their coordinates. Replacing default architecture would reinterpret them; resetting would discard custom edits.
+
+Cause / uncertainty: Built-in editor snapshots and BSCN payload only tracked props, unlike Castle layout-version migration.
+
+Fix / next action: Store validated architecture metadata in the same native BSCN; make it undoable with props. Add explicit human/Agent Services three-way rebuild preserving authored deltas, deletions and custom IDs; abort unsupported/obstructing edits, preserve original bytes before first rebuild save, and route real saved House dispatch through selected source. Fresh default promotion remains gated separately.
+
+Evidence and verification: HouseSourceVersions.java; HouseRebuildUpgrade.java; HouseRebuildUpgradeTest; native editor command
+
+Older-map obligation: Every existing saved architecture needs its own baseline/version/conflict tests. No automatic migration or older-map acceptance.
+
+### DEV-336 — House rebuild editor command initially fails compilation on Map reference
+
+**Status:** SOURCE CORRECTED; successful package and native migration checks pass · **Affected:** New DeveloperLevelEditor House rebuild command only
+
+Package compiler reports cannot find symbol Map at new House rebuild command.
+
+Cause / uncertainty: New UI case used unqualified Map without an import in this class.
+
+Fix / next action: Use qualified java.util.Map consistent with surrounding editor commands; preserve failing package log and require fresh successful package.
+
+Evidence and verification: build/house-migration-rejected-missing-map-import.log; native migration checkpoint
+
+Older-map obligation: No older-map or runtime claim from a failed package.
+
+### DEV-337 — Standalone native edits can detach rebuilt functional assemblies
+
+**Status:** SCOPED GUARD PASS; actual native generator move/remove refused without state loss; whole-assembly authoring remains separate · **Affected:** Rebuilt House built-in and USER authoring; source controls, pipes, supported story objects and bedding
+
+The previous generic put/remove path accepts moving or deleting the generator alone while its authored starter/feed sockets remain at their source coordinates; moving a table or bed similarly leaves supported authored children behind.
+
+Cause / uncertainty: Prop-only editor commands had no attachment/dependency contract.
+
+Fix / next action: Identify source service/story/bed/loose-parent dependencies. Refuse standalone edits/removals of those assemblies and validate them before compose/save; keep ordinary independent furniture editable. Migration rejects dependent assembly conflicts rather than detaching or losing user edits. Full assembly-authoring operations remain separate work.
+
+Evidence and verification: HouseAuthoringAttachments.java; HouseRebuildUpgradeTest generator move/remove state-preservation assertions; c1fe6f53 prior put/remove source
+
+Older-map obligation: Audit fixture/parent relationships individually on each old map; these guards cover rebuilt House source only.
+
+### DEV-338 — Retained House object validation needs full source-model containment checks
+
+**Status:** SCOPED SOURCE/CONFIGURED256MB NATIVE PASS; source-bound365/full/editor/GPU pending; no physical FPS or older-map acceptance · **Affected:** New native House three-way migration custom-object conflict validation
+
+A vertex-inside-body check alone cannot prove that a large retained model does not contain a smaller default fitting or duplicate/cross an open source surface.
+
+Cause / uncertainty: Initial House conflict validator used source vertices and physical bodies without complete triangle crossing/closed-volume containment.
+
+Fix / next action: Reuse the existing Castle validation geometry kernel through a world-triangle entrypoint: reject duplicate geometry, proper triangle crossings and containment in either direction. Preserve Castle construction and existing validation behavior. Add actual nested-source-crate regression.
+
+Evidence and verification: HouseRebuildUpgradeTest nested native crate geometry; shared CastleRebuildValidation.modelConflict; older Castle validation regression
+
+Older-map obligation: Audit retained custom models and full source supports individually; broad boxes and vertex-only checks cannot certify older maps.
+
+### DEV-339 — Windows editor retains inactive Castle geometry while loading rebuilt House and exhausts256MB heap
+
+**Status:** SCOPED SOURCE/CONFIGURED256MB NATIVE PASS; source-bound365/full/editor/GPU pending; no physical FPS or older-map acceptance · **Affected:** Actual Windows editor switching Castle and House, including native House migration; retained-renderer scene families
+
+New256MB human-editor migrated kitchen capture produces OutOfMemoryError in D3D Screen Updater, TimerQueue and AWT EventQueue. Histogram retains529264Face objects/50.8MB and881030Point objects/35.2MB plus model/image memory.512MB earlier GUI path passed but does not accept configured256MB.
+
+Cause / uncertainty: activateResidentScene released resident GPU batches but kept inactive Castle static geometry/chunks/assemblies/environment and inactive House prepared geometry reachable across scene-family switches. Castle topology replacement also held previous CPU faces/chunks/active assemblies until after the replacement allocation. House-frame identity sets retained prior source faces on return to Castle.
+
+Fix / next action: Retire inactive CPU source geometry and owners during authoritative scene activation, preserving an already prepared destination and normal warm frames. Require real256MB GUI retry, exact return-render pixel parity, preload identity and existing retained-renderer checks. Keep normal native viewport resolution in the capture.
+
+Evidence and verification: house-migration-rejected-gui-256-oom.log; house-migration-gui-256-histogram.log; EditorSceneRetentionTest; actual Windows editor retry
+
+Older-map obligation: Audit scene changes including native locations and GPU ownership; this fix is not physical FPS or other-map visual acceptance.
+
+### DEV-340 — Scene retirement regression initially calls nonexistent preparation API
+
+**Status:** SCOPED SOURCE/CONFIGURED256MB NATIVE PASS; source-bound365/full/editor/GPU pending; no physical FPS or older-map acceptance · **Affected:** New EditorSceneRetentionTest compilation only
+
+Compiler rejects prepareStaticLevel(HouseMap).
+
+Cause / uncertainty: Test used the wrong preparation method name.
+
+Fix / next action: Use actual prepareStaticScene API; preserve rejected compile log and require fresh compile/run.
+
+Evidence and verification: house-migration-rejected-preparation-api.log; EditorSceneRetentionTest
+
+Older-map obligation: No acceptance from a test that failed compilation.
+
+### DEV-341 — Native GUI test can report PASS after background AWT OutOfMemoryError
+
+**Status:** SCOPED SOURCE/CONFIGURED256MB NATIVE PASS; source-bound365/full/editor/GPU pending; no physical FPS or older-map acceptance · **Affected:** EditorAgentGuiTest and reported Windows native acceptance
+
+256MB retry logs AWT OutOfMemoryError while rebuilding Castle, then prints PASS and exits0 because assertions later succeed.
+
+Cause / uncertainty: Test tracked only exceptions returned through invokeAndWait; Swing timer/D3D background failures were unobserved.
+
+Fix / next action: Install a scoped uncaught-exception handler, retain the first asynchronous failure, restore previous handler on close and fail the test after cleanup if any thread failed. Preserve raw misleading-PASS log; do not accept it.
+
+Evidence and verification: house-migration-rejected-gui-background-oom.log; native GUI uncaught failure assertion
+
+Older-map obligation: Older green GUI results are scoped evidence; inspect raw logs and do not infer absence of background errors.
+
+### DEV-342 — Identical immutable PNGs decode separately for every imported material
+
+**Status:** SCOPED CORRECTION PASS; actual256MB scene return and clean Windows editor pass · **Affected:** Shared runtime GLB material loading, House/Castle/native editor source collection
+
+After complete inactive-scene retirement, the256MB Castle return still fails. Retired-cache histogram shows90.47MB byte arrays,31.37MB int arrays and30.59MB source vertices; all inspected inactive CPU cache fields are empty.
+
+Cause / uncertainty: GlbProps.decode invokes ImageIO.read for each material, retaining independent identical PNG bitmaps even when materials or models reference the same source image.
+
+Fix / next action: Share immutable decoded PNGs by SHA256 plus readable-cover treatment; keep all material IDs/UV/sampler/factor/alpha metadata separate. Use a bounded512-entry weak-reference lookup so transient native reviews are not retained. No image resizing, artwork changes or raised heap. After sharing the matching retired checkpoint shows56.70MB byte arrays; exact RGBA/material tests, return pixels and real256MB GUI pass.
+
+Evidence and verification: SourceImageSharingTest; house-scene-retired-histogram.log and house-scene-retired-shared-images-histogram.log; clean house-migration-gui-256.log;365manifest/native checks
+
+Older-map obligation: Source PNG sharing covers loader identity only. Preserve per-location material/UV and hardware acceptance; raw heap-class differences are not FPS or total process-memory benchmarks.
+
+### DEV-343 — Image-sharing test uses a live-screen name outside the existing contract
+
+**Status:** TEST FIXTURE CORRECTED; actual independent live-screen/source-image check passes · **Affected:** New source-image-sharing regression fixture only
+
+liveSurfaceMaterial refuses sharing-test-live despite the prior PNG/material assertions passing.
+
+Cause / uncertainty: Fixture omitted required van live screen prefix.
+
+Fix / next action: Use actual named live-screen contract and rerun; preserve rejected fixture log.
+
+Evidence and verification: house-migration-rejected-live-surface-name.log; SourceImageSharingTest.log
+
+Older-map obligation: No source/live-screen runtime failure inferred from the rejected test fixture.
+
+### DEV-344 — House authored train encounter has no runtime implementation
+
+**Status:** CORE/SOLO/REAL4TCP PASS LOCALLY; remote encounter and subjective audio/whole-location acceptance pending · **Affected:** House first-principles story/atmosphere stage
+
+Supported records and loose belongings existed, but the required individually authored optional location encounter remained plan-only.
+
+Cause / uncertainty: No location-specific host/solo controller was connected to runtime.
+
+Fix / next action: Add an original once-per-round supported wooden-train turn while room is empty and investigators lack full-object sight. Reuse real loose-state replication and source support, add original ambient audio, protect possession/death/disconnect/timeout and evidence negatives. Protocol3 is a separate explicit compatibility checkpoint.
+
+Evidence and verification: HouseEncounterTest; HouseEncounterSessionTest; HouseEncounterNetworkTest; actual before/after captures and original windup WAV; house-encounter-2026-11-07 proof directory
+
+Older-map obligation: Each location needs its own authored encounter, predicates, host/privacy/evidence/reset and actual visual/audio review.
+
+### DEV-345 — House CLI recovery reads corrupt primary architecture before restoring valid backup
+
+**Status:** CORRECTED SOURCE NATIVE CI PASS 42426323930 at c93d141d; full365 run42426485514 still observed in progress · **Affected:** PR82 native42424140546; explicit editor-agent --recover bootstrap after primary corruption
+
+Windows native migration/GUI checks pass, but corrupt-start CLI recovery fails because LevelPlans.buildSource selects architecture by decoding the corrupt primary before the previous document is restored.
+
+Cause / uncertainty: New source selection preceded existing primary-corruption recovery.
+
+Fix / next action: Use a fixed legacy parse fallback for House bootstrap and select/validate architectural authority from the backup being restored. Preserve previous identity/future metadata checks and validate required rebuilt attachments before replacement. Added actual versionless/rebuilt byte-exact bootstrap plus foreign/future/detached-service refusal tests. Rerun the exact previously failing CLI script.
+
+Evidence and verification: development/levels/rebuild/verification/house-native-recovery-2026-11-07/; native-42424140546-failed.log; LevelAuthoringRecoveryTest; actual verify_editor_agent_cli.py PASS; corrected native-42426323930.log actual complete native/CLI PASS
+
+Older-map obligation: Audit pre-recovery source/version selection independently for every other native adapter. This correction does not accept unaudited maps.
+
+### DEV-346 — Encounter test compile omitted existing helper classes and used nonexistent resume API
+
+**Status:** TEST FIXTURE CORRECTED; final actual solo and four-TCP checks PASS · **Affected:** New House encounter integration test fixture
+
+Initial verification attempt failed; rejected evidence preserved.
+
+Cause / uncertainty: Partial javac omitted helper dependencies and referenced confirmResumeTicket.
+
+Fix / next action: Compile actual helpers and use acknowledgeStoredResume.
+
+Evidence and verification: development/levels/rebuild/verification/house-encounter-2026-11-07/house-encounter-rejected-helper-and-resume-api.log; final HouseEncounterSessionTest.log and HouseEncounterNetworkTest.log
+
+Older-map obligation: No older-map runtime defect or acceptance inferred from this fixture correction.
+
+### DEV-347 — Reconnect test acknowledged a fresh nonrotated token
+
+**Status:** TEST FIXTURE CORRECTED; final actual solo and four-TCP checks PASS · **Affected:** New House encounter integration test fixture
+
+Initial verification attempt failed; rejected evidence preserved.
+
+Cause / uncertainty: Fixture attempted RESUMEACK on initial welcome instead of resumed token rotation.
+
+Fix / next action: Persist real capability and acknowledge only after reconnect rotation.
+
+Evidence and verification: development/levels/rebuild/verification/house-encounter-2026-11-07/house-encounter-rejected-fresh-token-ack.log; final HouseEncounterSessionTest.log and HouseEncounterNetworkTest.log
+
+Older-map obligation: No older-map runtime defect or acceptance inferred from this fixture correction.
+
+### DEV-348 — Encounter fixture jumped host clock past ghost authority
+
+**Status:** TEST FIXTURE CORRECTED; final actual solo and four-TCP checks PASS · **Affected:** New House encounter integration test fixture
+
+Initial verification attempt failed; rejected evidence preserved.
+
+Cause / uncertainty: Direct tick jump violated GhostDomain contiguous-clock contract.
+
+Fix / next action: Advance every actual host tick through eligibility; no production clock relaxation.
+
+Evidence and verification: development/levels/rebuild/verification/house-encounter-2026-11-07/house-encounter-rejected-clock-jump.log; final HouseEncounterSessionTest.log and HouseEncounterNetworkTest.log
+
+Older-map obligation: No older-map runtime defect or acceptance inferred from this fixture correction.
+
+### DEV-349 — Encounter fixture discarded sound while waiting for later pose
+
+**Status:** TEST FIXTURE CORRECTED; final actual solo and four-TCP checks PASS · **Affected:** New House encounter integration test fixture
+
+Initial verification attempt failed; rejected evidence preserved.
+
+Cause / uncertainty: Fixture awaited CLUTTER before earlier SOUND and used a closed acoustic path.
+
+Fix / next action: Await sound first and use actual occluded but acoustically connected corner; retain source cue gain.
+
+Evidence and verification: development/levels/rebuild/verification/house-encounter-2026-11-07/house-encounter-rejected-cue-order-fixture.log; final HouseEncounterSessionTest.log and HouseEncounterNetworkTest.log
+
+Older-map obligation: No older-map runtime defect or acceptance inferred from this fixture correction.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

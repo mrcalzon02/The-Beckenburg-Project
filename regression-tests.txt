@@ -346,6 +346,12 @@ PreparedLightBatchParityTest
 EditorAgentServiceTest
 LevelAuthoringIdentityTest
 HouseTemplateCompatibilityTest
+HouseRebuildUpgradeTest
+EditorSceneRetentionTest
+SourceImageSharingTest
+HouseEncounterTest
+HouseEncounterSessionTest
+HouseEncounterNetworkTest
 LevelAuthoringRecoveryTest
 CastleWorldTerrainTest
 CastleCellarConstructionTest

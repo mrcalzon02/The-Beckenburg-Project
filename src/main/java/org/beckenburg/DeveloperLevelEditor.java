@@ -1322,6 +1322,7 @@ public final class DeveloperLevelEditor extends JPanel {
         var service=agentService();
         var choices=new ArrayList<>(List.of("INSPECT","TEST","CAPTURE PNG","REOPEN SAVED"));
         if(mission==null)choices.add("REBUILD CASTLE / RETAIN EDITS");
+        else if(mission.canRebuildHouse())choices.add("REBUILD HOUSE / RETAIN EDITS");
         if(service.inspect().capabilities().contains(EditorAgentService.Capability.RECOVER_PREVIOUS))choices.add("RECOVER PREVIOUS SAVE");
         String choice=(String)JOptionPane.showInputDialog(window,"Inspect, test or capture the active game scene.",
             "Scene verification",JOptionPane.PLAIN_MESSAGE,null,
@@ -1330,6 +1331,7 @@ public final class DeveloperLevelEditor extends JPanel {
         try{
             var state=service.inspect();Object result;
             switch(choice){
+                case "REBUILD HOUSE / RETAIN EDITS" -> result=service.transact(state.revision(),"rebuild-house",java.util.Map.of("baseline","ORIGINAL"));
                 case "REBUILD CASTLE / RETAIN EDITS" -> {
                     if(data.snapshot().rebuildLayout()>=CastleRebuildUpgrade.VERSION){result="Castle already uses the rebuilt layout; saved edits are unchanged.";break;}
                     var base=(CastleRebuildUpgrade.Baseline)JOptionPane.showInputDialog(window,

@@ -1,0 +1,4 @@
+Exception in thread "main" java.lang.AssertionError: missing ACCEPT|RESUMEACK
+	at org.beckenburg.AuthoredLevelNetworkTest$Peer.await(AuthoredLevelNetworkTest.java:9)
+	at org.beckenburg.HouseEncounterNetworkTest.scenario(HouseEncounterNetworkTest.java:43)
+	at org.beckenburg.HouseEncounterNetworkTest.main(HouseEncounterNetworkTest.java:83)
