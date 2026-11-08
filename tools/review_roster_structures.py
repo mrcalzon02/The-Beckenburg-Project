@@ -26,6 +26,10 @@ def main():
         assert hashlib.sha256((folder/'rough-shell.blend').read_bytes()).hexdigest()==report['blend_sha256']
         for name,digest in report['preserved_sources'].items():assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==digest,(site['id'],name)
         for name,digest in report['generator_sha256'].items():assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==digest,(site['id'],'stale generator',name)
+        if 'curved_stair_revision' in report:
+            revision=report['curved_stair_revision']
+            assert hashlib.sha256((ROOT/'tools/refine_roster_curved_stairs.py').read_bytes()).hexdigest()==revision['builder_sha256'],(site['id'],'stale curved stair revision')
+            assert len(revision['components'])==revision['treads'] and revision['treads']>0
         assert len(check['exported_fixed_boundary_checks'])==check['fixed_infill_routes']
         source=json.loads((ROOT/report['authoritative_input']).read_text(encoding='utf-8'))
         unresolved=[item for item in report['issues'] if 'rough mass' in item.get('issue','') or 'needs an authored' in item.get('issue','')]

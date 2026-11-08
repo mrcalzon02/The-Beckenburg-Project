@@ -1,0 +1,760 @@
+{
+  "status": "CANDIDATE_STAIR_MOVEMENT_AUDIT_NOT_MAP_ACCEPTANCE",
+  "bindings": {
+    "ACADEMY": {
+      "layout": "5fc6eb736017becfda5cb86a133e0bfac07dab98511e75d9b306ede9bb7e1ec6",
+      "variants": {
+        "structure": {
+          "contract": "c227effdf94cdf39e4fc3d05ea24df9d455fb817572c1d1e863e64da65df4668",
+          "physics": "56ce72a4f5c35ac374fc3a868cfbf460f230014a0aebc3eff64f48762ce6294f",
+          "glb": "9b73526d2674ed697964131dc9cf864dbd8792565bb2d62ec59d2f7d569826a1"
+        },
+        "furnished": {
+          "contract": "6734b3923f243e8c8a37d1c43b32f517604a66bab9143fd7f90d39ed268d6002",
+          "physics": "53b8fd4b472a40759d27729a37cc83ad401322d100b952c65882380a5370f60b",
+          "glb": "82b060617e68960f24a38f6f9b521f8d6225581894e8c7e572bd6912d80771ff"
+        }
+      }
+    },
+    "ASYLUM": {
+      "layout": "ccf60d8128b8937c54c1f81203e4d18c7b64d0527f4a36c362d8062e814d9f30",
+      "variants": {
+        "structure": {
+          "contract": "7e6f991319ea29a4a8caad81fe4db59ae72ea447ec47b15378bb1fb22e7e58c2",
+          "physics": "525cfc32d5896027d1f8c1e3aea880d8bd63a437d45412d4ae5d5b774b43c51b",
+          "glb": "b1523a557375c41db66874530bd9284d7ec2e734b62cf7f8fe5a589be085af16"
+        },
+        "furnished": {
+          "contract": "95ed18ba2d3011c3f18555d37b55b0510920cadc5f1367dc5d0e02fd5d394ab3",
+          "physics": "052bfca046bebe710f6b9d39907344cc82c209cb2b0f5f17b118e8bc6bad81f7",
+          "glb": "99908e1b676471644097396db8537425d2b27adb1f64381950f71614aa7c89b8"
+        }
+      }
+    },
+    "CHURCH": {
+      "layout": "ecbdd6aec2a671c81c4dd46143dc5660fdc9dd568f62772ca472afc40976ca05",
+      "variants": {
+        "structure": {
+          "contract": "58fd52e2463df8304aca9a001aa4e66f21be0c75b4405823653f068f940b155a",
+          "physics": "12e12c15e70f61fb0035cc4c0a379f2b0932beba3bdab2cd2ee57324044903bb",
+          "glb": "c3c12cd177a7f155297afa87997e8a539ff02f333dcba5fee2904a9952393874"
+        },
+        "furnished": {
+          "contract": "cb4723ae2a2cd127e33c129658738af18cabd26d78e2012f981111e31d4db07e",
+          "physics": "7d746c8ced923b048118a652068c87ed89fc01d6b7460cad426a528933816b98",
+          "glb": "fcae3babfdbb0e1aa6d3952a11a9149fe667b58ec6e588f4a055a60b95ee26a5"
+        }
+      }
+    },
+    "COLLEGE": {
+      "layout": "6762dc357a7c05c9f215c5d111ff67ba77c07c3125ef537f835a764cc1c95657",
+      "variants": {
+        "structure": {
+          "contract": "7846ebc7cedf457ca1d4343fd60056299c9077e780964493377a4a247ed8cee2",
+          "physics": "39c9639c4b5681375d5fe048abce093c100ff3ce92d6f4ca8348ebd4b1893d56",
+          "glb": "d22736d78c590bd44f0799f48e3623188b9e566cd7284fa5747adcd65d19d819"
+        },
+        "furnished": {
+          "contract": "6a3522d64e93cda767da1aefd085f0b9513432a8af9234539a72841ba1211bfd",
+          "physics": "247d73bcc737fe9a792a7a9b1d62cfe7b93b0185da8f65c1de3bb591fc65bfe1",
+          "glb": "31aca6d57d897cb110c52ba7393369e180dbd213b54efbc1ee54d35c7eea419e"
+        }
+      }
+    },
+    "FARMHOUSE": {
+      "layout": "232298bbcf6445cbe4db945820730a339cab60f0e615b6efee930544a363f727",
+      "variants": {
+        "structure": {
+          "contract": "23d7ecb9b16d02c9adeb581acc05eceec528793b8933912cf29e83d733b47608",
+          "physics": "027c6befc8365fcd4c6feaf392e9ddaff795b61a7305809478b81e27f98e3aaa",
+          "glb": "0161f8d6ddadd406704d2458dc8579c206c98f2c6051c530f962d1fb13384354"
+        },
+        "furnished": {
+          "contract": "9f3a88c9d7cb6c0a34ef80d7706c3cd666bedfaaf32065e301af4606a3848a3f",
+          "physics": "460e052ddbdf7e0bc987fb9118506bc73df414fccc8d24a83cb315ae9e6a5dec",
+          "glb": "3accb54ce020e206c4ab5185b72abb01593b474647754b1a013f3ee324fd595f"
+        }
+      }
+    },
+    "MANSION": {
+      "layout": "48f68b3ada7f2e98fc93342b31398726cf9624c1355f0dc186d6e07440b43619",
+      "variants": {
+        "structure": {
+          "contract": "fb58149c10e68f4eff304dfcf9a799526e90bf75785d5aba89ddeaac9c819bde",
+          "physics": "f146c7bbbbe26f176e2059c024c68f67fe976bb2fb3efdb243d8dc1c6f1cc228",
+          "glb": "35b198492962b42deadbcaad57e16d6e96eb57a4a33a39d06f76c224e45c9d0e"
+        },
+        "furnished": {
+          "contract": "b97fbdb118f866bb82e352be7be775f9f1f76a1c584b768f6eff69a7e7d7ae56",
+          "physics": "cf48e179032bfdbcec02828c7d31a4b32b2ea77500ffc2cb2dd8221f759f228d",
+          "glb": "bc07ca757fd3bd871619ef14ed8bdd64cc3272007412dd7dec1c739964c5ad80"
+        }
+      }
+    },
+    "PRISON": {
+      "layout": "548b61dcf583118aae41252fb898139c440801532f4fee8cb45aae9a216b0e6c",
+      "variants": {
+        "structure": {
+          "contract": "10783028ed98114084d46e18c262d357c00e7b7e106eab4b6e26b77c67e450fe",
+          "physics": "4d602d7b17725a553b02f6610bb4eb73391de90bfce998d73d38402a05440e19",
+          "glb": "0c73f924e5cf5b8fada9c5ed1b88994757400f24c8837924d7dab6aa10b7f74e"
+        },
+        "furnished": {
+          "contract": "9131df57254daffcce960797ca6600795c452e56c71ae801fc2a96021bf63b58",
+          "physics": "51d181846443ee69c2bfcc41abf5dac8c9d6a723e7f58578a5dd1c36adea0862",
+          "glb": "c7b5fe3f830b74b3a87e811b240f56080bfa877eb93bb1471c0877dae8d5d2ba"
+        }
+      }
+    },
+    "SCHOOL": {
+      "layout": "f63f0a5606fe1cb18fec602d096400af399bb0e314f4cd8ff238e5c26927c79e",
+      "variants": {
+        "structure": {
+          "contract": "5f876652993b3f46e6955802acc608c1aefe29c4a4515d5487fc25738c1d63e6",
+          "physics": "4bebc9b9b6d6d8ae6dc33d34c0efdba63f482e0356849c6eb48e7dd69be5aaa7",
+          "glb": "92d3742f39901e4bde984372cfb2b23f11ef20062e825be55fbb7b5874bff91e"
+        },
+        "furnished": {
+          "contract": "12fad87b8cc44a53500a48fa2b64fe6fb338ed1a1807ad55caf96994f262cc34",
+          "physics": "4b29d8348e6dac56dc1e21bc73e1d814658f389ded6ffc184d21f3dd52d5a96c",
+          "glb": "bab2075d8ef30c078d765ed8b6fcb42b2b850a711f53f2f4fa3722816f19b4e2"
+        }
+      }
+    },
+    "WLD-03": {
+      "layout": "c47d8e1884c077d768b9cfe321d0d606937fad5c63e519b84e1cd731ec51a102",
+      "variants": {
+        "structure": {
+          "contract": "98ff33ffc52df6f432cb440dc85fd15837d6f1a8e153227fdc911e4e1b815c6c",
+          "physics": "0722c611348fdbd280dded3b2df10b26012a3c6d814fa814aef696883c949240",
+          "glb": "a9bd89a1436b456bdd25d96a234b9d65a5c07d65afe9ffdce58a11a938366825"
+        },
+        "furnished": {
+          "contract": "61d7aaca8bb2304ce3a06568f873ebee8b47bdf33dabde7bbe60ecac76903bd0",
+          "physics": "6fb26c3dd219620aff124e716d7b8428bc75e9f1f57abfe83b925bd731ff990e",
+          "glb": "b537e19ad1c2bd2893d2ab3dfb7cfc2ee051bf0bb5d34976a2284a6fabc67037"
+        }
+      }
+    },
+    "WLD-04": {
+      "layout": "89430b74df791d484a7dd38df353a011d241bb727f7ff1c0a344f64f2e738104",
+      "variants": {
+        "structure": {
+          "contract": "8ebd921715f43559ca57e45e1d4ce3fc0a3a0f98bfb7832afa0fc2be50468400",
+          "physics": "6e8e6be4b44db1ee2968d479115a12f8b45e5c3f9acc0c3218d2469b6607d683",
+          "glb": "e867c065c029b4f706395e2cf143b80de6db38a2fb6051f4d068079c2856a3b8"
+        },
+        "furnished": {
+          "contract": "ae450e7917a6e1a6bfd0672ac80de4f2e711a310ba4cc01d9bca0a70e6ce5831",
+          "physics": "b43a5acb63a19b40a3412df5ffaa0b42872129d6f8d932dc33c59f71eae83617",
+          "glb": "a551e31150806f61f58b875604394cf36ee3488049e450b99a3332fe393ce35c"
+        }
+      }
+    },
+    "WLD-05": {
+      "layout": "17b6cfd01a82cb37b3ff4e351cd8078f4b60d274752c9a6bf96097a705d8a467",
+      "variants": {
+        "structure": {
+          "contract": "788dfd9c64d8d174677301c70e9b928b28b7f9d557d2b116658021b5db746938",
+          "physics": "2e1a12095d3b4ccdc7ab330448b8bc5fc2f03782024a0af21603b930bce14347",
+          "glb": "7f26c7cd8ef9cc1c27756bb195f5f5f567c44917ef135b8649a42fb0998d6ac0"
+        },
+        "furnished": {
+          "contract": "a55e25421da297b7db62179ab5a3628f90f93528baf9c6e227341c312cf97afc",
+          "physics": "0525b2e4436c3a2f250c0024f45d3842bffdc342e26a81e80ef20fd0096afa14",
+          "glb": "84d988522c7f56f0edd4d6a5e52e486938d4531e69184791e4d68a03086ccdaf"
+        }
+      }
+    },
+    "WLD-06": {
+      "layout": "f37184525debe30440a0d215c685e22ef40561077ee6ae6fb823e7587dc99304",
+      "variants": {
+        "structure": {
+          "contract": "137257f25eabcb9be8abdd44940862d982f268a89aeaf9fd295ff28a6c90d931",
+          "physics": "f77abbf9bf8bfecb5e488b2ca5d2dd56c8d2a6bf7c358ca5b2cc500b39c0384a",
+          "glb": "a3dc0ddc4a323dc9dbe13be19d0fe6b9742f892c358b28cba7306a54a0add037"
+        },
+        "furnished": {
+          "contract": "97543fa47b28b6cfb989e6696dba42e0f6d08fa11d0dd7e60192641ebf10f15e",
+          "physics": "b5729dc36b77ed7ec9a8562a7253c969316ade18180ae63f6556e97272b6f0aa",
+          "glb": "7102280be55ab2513dc48c84be817b7d1a87c624301d909ab1681882cbb5a5a9"
+        }
+      }
+    },
+    "WLD-07": {
+      "layout": "d22635124d4e8167df3e5057c0c155ab1759e348995ba2d34946ff0959fd85ac",
+      "variants": {
+        "structure": {
+          "contract": "6fe945eb62950b4b3191b2a0988e8d2384dbe8fe1f1e3ba86c489ebe39cb3c3f",
+          "physics": "533d8cca3468645ad20e8f0d5ef037d4d8f67a4216670c4c1a4ed98d3e3ccb69",
+          "glb": "1ac422f70d5b4b34018a4b91cfd3a57291128c16e06f186f6e8894a3717509e5"
+        },
+        "furnished": {
+          "contract": "8a1a8a5dbd15f3295c3fa498a23c22513e2a1d1e5b6a83963f0a7d587a5c4ff7",
+          "physics": "9cc00b9ac5e7a946b0032cebf45fa5d866c287d9b02d4447b35c2fa3712bb899",
+          "glb": "570c97c328854f37085f70a7008c5d26e62490676d7d26f32814c3a765bd6e08"
+        }
+      }
+    },
+    "WLD-08": {
+      "layout": "616f6928fa4a55515027b3b3dd434ba6db6d044df2ab9ecb19e862efb675955b",
+      "variants": {
+        "structure": {
+          "contract": "38cee5367ee888b47c42c5e950f9c2a82c27d3f9f899ea49b78ce055f596c4df",
+          "physics": "002f83a17109f75d15f3b95dcf23d2f63500a42827c71cf11a30d778ffdc5410",
+          "glb": "d69abf9df6847b12325cb9d5477cd976f815aafdbf2b38cd500578cefe0058c9"
+        },
+        "furnished": {
+          "contract": "78847acd83ada5c868383ab1105ce106421d7144dd9bc17fa71a63b08b0d9857",
+          "physics": "a9af4bcc53c9dddbf1d53de81fdafcf845e9c84254829bf5c29daadb5fd8534e",
+          "glb": "c37c66eb8214e4ea6c602f8756d4055186639ccfd8e28d140c964af1a7ec0357"
+        }
+      }
+    },
+    "WLD-09": {
+      "layout": "8d0eda0c66da33cf9b75c0d54a9efd12634bb6d2b9646ff1e9274506fb04b3c4",
+      "variants": {
+        "structure": {
+          "contract": "acc719f65f80ca9e0fffd31e082c558db5978fe78d908b13b7f84ac56b071a03",
+          "physics": "589bd8ea7122b73284aa8b8f343913f9f6d7432bf011a893a3672d47a0a059ab",
+          "glb": "5fe0e02fb2708a36832973244eb8525d96968d629cca4500cbd9a668d2fe204b"
+        },
+        "furnished": {
+          "contract": "9ea7286f774b75c8b35e93c233c4f584b083f7a74d7dfb93c05e41baf63abbd9",
+          "physics": "b3085368fc35c010566c7ec15f17df8bdb815c1333891113f57667e5f23abcc9",
+          "glb": "4dd49798bd58711773191178637f4b19ff36286104440b444c72e59e888e8711"
+        }
+      }
+    },
+    "WLD-10": {
+      "layout": "def95a294d30c062f7a094058eace403c534471c814768f0c745864bb394adb9",
+      "variants": {
+        "structure": {
+          "contract": "381ff0841d30a2bab2c667f2081726d3692000765d4792ee055a7a43e0324d64",
+          "physics": "b3c7308b7b6eddb70a545df14851697f1ced0fb1fdb3d1559e19279017c0c9ea",
+          "glb": "fce4e043a3413ba2ad0c8f5242666b1afd17d13f10d963247b71ff64d566cdbf"
+        },
+        "furnished": {
+          "contract": "53379ae56bcc720a9627e03523523348d64b0a249e3ce0006be4d1708dfc8b63",
+          "physics": "40fed936b88ae7c697db1b7080180ec6fc834755d6cb35e1ac9222f7019b178d",
+          "glb": "583951edd4eeafe44ca3d96eb8816821c09fd06ee88f96187220d34bb1bf03d2"
+        }
+      }
+    },
+    "WLD-11": {
+      "layout": "a16ce066da5d6eb9bc7a008c07f1ba9713f49573f85f86647dd3d38d327ab5bf",
+      "variants": {
+        "structure": {
+          "contract": "e24dce7c5c517d9e451b7222a31f45d5ba1529f3c3f5c6ab1d053264b7332cca",
+          "physics": "398f2a2f086f3b498118ff0f7bcbd9f6065a2aa993f97fa175c12e415c02249a",
+          "glb": "1a519c772329f646dd7d5945464a52d36ea1de10f66e0030c634df9e4f0029dc"
+        },
+        "furnished": {
+          "contract": "c60d2e0ff1625bdfafc1294ed09d7a30310655073955851713faedd3d06f7c4b",
+          "physics": "688cf04d923aa8f1e9c224526006b69df563d4e5ee23e034a303279a40ea4e63",
+          "glb": "7122e46aaa269b5dedb0c3fc86211ff621b250c400003c50d36fad4ea4ed0034"
+        }
+      }
+    },
+    "WLD-12": {
+      "layout": "fa046a161697963df497145ab559be4608d837140c9e9c375aeb5c5c28c086b8",
+      "variants": {
+        "structure": {
+          "contract": "56e08e989580fff5cd680a5a12c58008e4d0aeeffbc31c13b98cf23402a373d3",
+          "physics": "1eb1b537a99d857cd8e96f93defad49ba8959a051c691107376a3feec2a0bddd",
+          "glb": "499314c22dbae36db7188213a5fc78693d1b6011ed951b094b862e52659e9932"
+        },
+        "furnished": {
+          "contract": "27467b833f692bcafca44101321141be306a12be61b29be087c5019507581f86",
+          "physics": "694108e74debec74b07beaa167afd69afa32d63e2643d5f099966007ea6d2919",
+          "glb": "655e052b76bb8e4ad28fb86a01113bed32c1f53def62dfc678d2433508b22346"
+        }
+      }
+    },
+    "WLD-13": {
+      "layout": "4d8dd90826c02b30cb4c64073f745a847f63e16110aaa4f8297b4543e0c6a732",
+      "variants": {
+        "structure": {
+          "contract": "9db632ef35e04bd9487f2a09c6d8ec6f0b031fbf0cf318aa9f1860f07f51237c",
+          "physics": "bef20bfa4eb0538bc3114eca08d6c658b3c38d5fe7c1d12b05d433a68a027347",
+          "glb": "f5de2ba5de7744c35fa9eb3c9a0ba3f87b1bd7572e095b35d4ee162def89fb29"
+        },
+        "furnished": {
+          "contract": "b89eb17f0d04a01c455a90f77c699086dcc4c987a911b9bae8b8ff2bae792f8e",
+          "physics": "c137c060ee9c2344703fd09e16b38f912ccdacb3f810e072ddef356811955d7f",
+          "glb": "ddd6a28c9b69ff20a86fa2231508eb614fd24c5966a043b55f6b36f23b0dd226"
+        }
+      }
+    },
+    "WLD-14": {
+      "layout": "83ca4db1f39fb9a14f2a082d59e4e788f7024b389477ef85aadd61f919741007",
+      "variants": {
+        "structure": {
+          "contract": "ed0a59902a1b67c4939541d2cb381cd9076320cc325eb5f20fb21380fcce509b",
+          "physics": "aa44eadf7df873517b08863d5cf640a44b3f1e20392f0080bd57d32c3cf5ae96",
+          "glb": "4087b9f31f04544945c70fd9a60723aa78417c283102b479bd9c8ee82de68c03"
+        },
+        "furnished": {
+          "contract": "fa85ce1543917d7e3f8f2ca112824d8849168ac3cd61874f7d8ed2ad464a030a",
+          "physics": "49de0930f86d875364ebe575860f2c026b7877d36f5bf9db03052b3f61c1da2e",
+          "glb": "29cc742e4fb2e7093de89da5a756c334815f3d903998f9ef1c30ced804322e57"
+        }
+      }
+    },
+    "WLD-15": {
+      "layout": "61b30866a5835365252340c1c5b13ccebc5119386dd3f11a6e05a6d99ce5c64f",
+      "variants": {
+        "structure": {
+          "contract": "9d928a779a95d9cea6695f43ae07d25886bbe0c44d45d1d8b47ffc8e3143cd63",
+          "physics": "449dc9e3d454d6a9152d60895cf959ea261790b699379f308a24b1d21ee2444a",
+          "glb": "179472b89562a025a6460250e8a570fb53ccab298443313292968273d3f2f1c3"
+        },
+        "furnished": {
+          "contract": "7b24dc973394768d6af0fcd14e35a1d7ba9c9c98ac0b829c7e25ceb7315ff64d",
+          "physics": "bcfbf66614b3879d54b3f5fd53b622a97caf38ff86e578a0839aa812eb7fff84",
+          "glb": "ba191c314009a9134699663e5c9a8a8816dd922eac9af54652015dc04e205098"
+        }
+      }
+    },
+    "WLD-16": {
+      "layout": "06ed2a033d19123f48dd5f7b65a9c5d40bf699c47ed0c7f3ee91668c9f2e71cb",
+      "variants": {
+        "structure": {
+          "contract": "189a663e31bc25e96fbe04a6a96c12ab1032e9f84b799b70836f323d031584d9",
+          "physics": "658ab87d2931cf2d2d6e186953eb5e77e4febca18bb73fea3d5d2d8ba6f09970",
+          "glb": "2e340ebf09090f1acf17b7491f4e2c436167737be4ffe2d5df10a478002576aa"
+        },
+        "furnished": {
+          "contract": "dcc10086423df434115066dc953152f5567b5509b2d72d0edf0883025f975d6a",
+          "physics": "48b1d7b7810c0294e8a9e02aa1d64797595815e0ead3b85494740585d03ebd61",
+          "glb": "db101b4d5f692826961bed4d615ad67a1c411fdb275ad4b72048c5e7ca4ce2a2"
+        }
+      }
+    },
+    "WLD-17": {
+      "layout": "392474ba8bbdd4c03ac96283355bc4f08023fc72d745fe0643c608f5f75e9e37",
+      "variants": {
+        "structure": {
+          "contract": "bcbf50ac83fd345f9c1a8a28c31a9b563d3ef0b536c9ba1dbbf9a2e476b378d4",
+          "physics": "f7a07ab4a892957cfc596e14f179aaff6ea6374a5d27b39820389fa5b2de5f17",
+          "glb": "11861eed129b37d19595d09ce48ec50ef62be90e91568a6c6c963367fca57a7b"
+        },
+        "furnished": {
+          "contract": "d54d8377e13e50f2e867d0359a4d85bbdb8d72a75e193da62718b6e29ade8f17",
+          "physics": "3cd81d97523e62c32c9a15af58cf4f6efeae7b5f8a4b355882a916ba264a1fb9",
+          "glb": "af753fe449aba13df7800721d33e3c7c5378b3dc348e8b3d342134c3fc6b7e7c"
+        }
+      }
+    },
+    "WLD-18": {
+      "layout": "14c93d8b8b1f04d84d9c0c830662ec23ff1e08b0eb2969310179eee59a5e414d",
+      "variants": {
+        "structure": {
+          "contract": "b1ca50f19738ba064fb0def3873eedded18c56db4cf5f14894b1e3e3e2bda55d",
+          "physics": "cdce098d7a429c7e5861425bd378b09fc348921509b184416892d2fbb149dcc0",
+          "glb": "1b8c5a495dea8db9bbd23bd3818e26a4667532544996e389b07f9f00d900c897"
+        },
+        "furnished": {
+          "contract": "bced283d4145a94561b4216db5fde293e873412ed4f7fe752675b06d4d0e0c16",
+          "physics": "24b811574d110eed666456d709d1f628d008171310875e7dc8d61aa4a84081b8",
+          "glb": "75801a6ce1329ca384a53eee6389081cac185eabdb8ea2187c86285020f20f39"
+        }
+      }
+    },
+    "WLD-07-MORTUARY": {
+      "layout": "3970885c0973bf336f9e625656dba5d09ffb83794e9ff7ff831d598044e3d00f",
+      "variants": {
+        "structure": {
+          "contract": "e8f0af7f906ed978686fe61489cacb1ae0e3d1742bf5cb722b0e9243ad541958",
+          "physics": "29b0f6f1a6a97f010f5a2466cf7e0e13362df16c212fea7d10964dbd8a9b5ebb",
+          "glb": "7b51fce063c08b13e35777459dab31afb977f56c55464fd02acfcab98f84f32c"
+        },
+        "furnished": {
+          "contract": "8c7891542c8567e281406d7af5dcd7ba6b94ca5ae62213a0c235dab89f90eaaf",
+          "physics": "5dabc68186d47453a59db5ec6f35e637b743150a4d467b457c4528cf70d1f79b",
+          "glb": "4e7c87380adf7ea61be67eba3287cd34669b607e432b91cb12d44170290bb7bc"
+        }
+      }
+    }
+  },
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "e983aae3fdd2cead8fbcf5c52451318d16656405ead5f3c5cab00610886dd406",
+    "tools/audit_roster_stairs.py": "ad7e37fc3bb9485413dbf18a8ee5f63a76a520a82e631638ca818802a8ddbbe7"
+  },
+  "dependency_jar_sha256": "8694a06b9483bea77f2af9130c14a4191e868f2389671b4460572f93a75edbe2",
+  "sites": {
+    "structure": {
+      "ACADEMY": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "ASYLUM": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      },
+      "CHURCH": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "COLLEGE": {
+        "flights": 5,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 4,
+        "authored_down": 4
+      },
+      "FARMHOUSE": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "MANSION": {
+        "flights": 4,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      },
+      "PRISON": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "SCHOOL": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      },
+      "WLD-03": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 1,
+        "authored_down": 1
+      },
+      "WLD-04": {
+        "flights": 9,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      },
+      "WLD-05": {
+        "flights": 4,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 0,
+        "authored_down": 0
+      },
+      "WLD-06": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 0,
+        "authored_down": 0
+      },
+      "WLD-07": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 0,
+        "authored_down": 0
+      },
+      "WLD-08": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 0,
+        "authored_down": 0
+      },
+      "WLD-09": {
+        "flights": 7,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 1,
+        "authored_down": 1
+      },
+      "WLD-10": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "WLD-11": {
+        "flights": 1,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 0,
+        "authored_down": 0
+      },
+      "WLD-12": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 0,
+        "authored_down": 0
+      },
+      "WLD-13": {
+        "flights": 1,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 0,
+        "authored_down": 0
+      },
+      "WLD-14": {
+        "flights": 142,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 133,
+        "authored_down": 133
+      },
+      "WLD-15": {
+        "flights": 4,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 4,
+        "authored_down": 4
+      },
+      "WLD-16": {
+        "flights": 0,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 0,
+        "authored_down": 0
+      },
+      "WLD-17": {
+        "flights": 5,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "WLD-18": {
+        "flights": 6,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 1,
+        "authored_down": 1
+      },
+      "WLD-07-MORTUARY": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 0,
+        "authored_down": 0
+      }
+    },
+    "furnished": {
+      "ACADEMY": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "ASYLUM": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      },
+      "CHURCH": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "COLLEGE": {
+        "flights": 5,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 4,
+        "authored_down": 4
+      },
+      "FARMHOUSE": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "MANSION": {
+        "flights": 4,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      },
+      "PRISON": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "SCHOOL": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      },
+      "WLD-03": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 1,
+        "authored_down": 1
+      },
+      "WLD-04": {
+        "flights": 9,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      },
+      "WLD-05": {
+        "flights": 4,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 0,
+        "authored_down": 0
+      },
+      "WLD-06": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 0,
+        "authored_down": 0
+      },
+      "WLD-07": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 0,
+        "authored_down": 0
+      },
+      "WLD-08": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 0,
+        "authored_down": 0
+      },
+      "WLD-09": {
+        "flights": 7,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 1,
+        "authored_down": 1
+      },
+      "WLD-10": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "WLD-11": {
+        "flights": 1,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 0,
+        "authored_down": 0
+      },
+      "WLD-12": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 0,
+        "authored_down": 0
+      },
+      "WLD-13": {
+        "flights": 1,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 0,
+        "authored_down": 0
+      },
+      "WLD-14": {
+        "flights": 142,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 133,
+        "authored_down": 133
+      },
+      "WLD-15": {
+        "flights": 4,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 4,
+        "authored_down": 4
+      },
+      "WLD-16": {
+        "flights": 0,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 0,
+        "authored_down": 0
+      },
+      "WLD-17": {
+        "flights": 5,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "WLD-18": {
+        "flights": 6,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 1,
+        "authored_down": 1
+      },
+      "WLD-07-MORTUARY": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 0,
+        "authored_down": 0
+      }
+    }
+  },
+  "limitation": "Explicit stair sets are not yet connected to playable level ownership or replication. Failed complete flights remain blockers; centre support is not complete movement acceptance.",
+  "contiguous_chains": {
+    "structure": {
+      "routes": 82,
+      "legacy_forward": 0,
+      "legacy_reverse": 0,
+      "authored_forward": 39,
+      "authored_reverse": 39
+    },
+    "furnished": {
+      "routes": 82,
+      "legacy_forward": 0,
+      "legacy_reverse": 0,
+      "authored_forward": 39,
+      "authored_reverse": 39
+    }
+  },
+  "chain_limitation": "Only contiguous nonlevel segments are chained. Switchback links with intermediate flat landings require an additional whole-path test."
+}

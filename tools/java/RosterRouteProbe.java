@@ -22,12 +22,14 @@ public final class RosterRouteProbe {
         var output=new ArrayList<String>();
         output.add("site\tlink\tcomponent\tx\ty\tz\tsupported\tspine_clear\tbody_clear\ttraversable\toverhead_component");
         String current=""; AuthoredSitePhysics physics=null;
+        var steps=new HashMap<String,Set<String>>();
+        if(args.length>2)for(String row:Files.readAllLines(Path.of(args[2]))){String[] p=row.split("\t");if(!steps.computeIfAbsent(p[0],k->new HashSet<>()).add(p[1]))throw new AssertionError("Duplicate stair identity");}
         for(String row:Files.readAllLines(Path.of(args[0]))) {
             String[] p=row.split("\t");
             if(!current.equals(p[0])) {
                 current=p[0];
                 try(var in=Files.newInputStream(Path.of(p[1]))) {
-                    physics=AuthoredSitePhysics.read(in,p[2],List.of());
+                    physics=AuthoredSitePhysics.read(in,p[2],List.of(),steps.getOrDefault(current,Set.of()));
                 }
             }
             double x=Double.parseDouble(p[5]),y=Double.parseDouble(p[6]),z=Double.parseDouble(p[7]);

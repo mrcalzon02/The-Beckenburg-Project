@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 7906,
+  "count": 7910,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -73852,8 +73852,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1920,
       "height": 880,
-      "bytes": 745907,
-      "sha256": "29f0b6228d7fa87a0a85c69a622899b792a21ffe8a952e0114bb48a2243372fd"
+      "bytes": 745869,
+      "sha256": "f73e74bd0f6bfc1b6bf6451401e95fb4b832e7c6512b931a9be3784d8c1dbcb3"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-06.png",
@@ -74152,8 +74152,8 @@
       "kind": "Native map rough-prop placement; refinement pending",
       "width": 1200,
       "height": 1000,
-      "bytes": 1164604,
-      "sha256": "903c52f9654f7eb5bfe9a1fadbdb455fc6c22c2ed78c29be9cc97b1f43747416"
+      "bytes": 1164513,
+      "sha256": "c3e6cbd169280b581b1986cd66fe78a5ac06e23f6c4be4e3c8171e0632762744"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-14-room-workroom.png",
@@ -74163,7 +74163,7 @@
       "width": 1200,
       "height": 1000,
       "bytes": 1067433,
-      "sha256": "698744c59fe0334058cd9f7c3f88727b00ba6e91d37ab9456856cb99c9d37999"
+      "sha256": "1209e772d95fe03002c561fb26d0dc55def1823c4bd395f91662a2f20118ea67"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/wld-15-export-overview.png",
@@ -74996,6 +74996,46 @@
       "sha256": "2258d97e973ac9e7b3d0aa6fe02ea2bcaf0f6d95c4cb1b588cbb4451f8c11103"
     },
     {
+      "path": "development/levels/rebuild/captures/stair-movement-batch/wld-14-mitered-candidate-construction.png",
+      "url": "development/levels/rebuild/captures/stair-movement-batch/wld-14-mitered-candidate-construction.png",
+      "title": "Wld 14 mitered candidate construction",
+      "kind": "Native curved-stair construction candidate; runtime acceptance pending",
+      "width": 1100,
+      "height": 900,
+      "bytes": 572543,
+      "sha256": "811af5ef1a48357332a16bf7bde8be63bdb0a290cf444ec7451c8b7143db601d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-movement-batch/wld-14-mitered-candidate-top.png",
+      "url": "development/levels/rebuild/captures/stair-movement-batch/wld-14-mitered-candidate-top.png",
+      "title": "Wld 14 mitered candidate top",
+      "kind": "Native curved-stair construction candidate; runtime acceptance pending",
+      "width": 1100,
+      "height": 900,
+      "bytes": 723473,
+      "sha256": "49ae5270d5b2d2d67bfa88a252a89759f2e615c812078fc6e381e1a6a340239e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-movement-batch/wld-14-rejected-rectangular-construction.png",
+      "url": "development/levels/rebuild/captures/stair-movement-batch/wld-14-rejected-rectangular-construction.png",
+      "title": "Wld 14 rejected rectangular construction",
+      "kind": "Rejected native curved-stair geometry",
+      "width": 1100,
+      "height": 900,
+      "bytes": 583093,
+      "sha256": "90f26a1dec9b44e1dc79eff232cd1a8df13f2440c1c49fb84acfe1bc283b80cb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-movement-batch/wld-14-rejected-rectangular-top.png",
+      "url": "development/levels/rebuild/captures/stair-movement-batch/wld-14-rejected-rectangular-top.png",
+      "title": "Wld 14 rejected rectangular top",
+      "kind": "Rejected native curved-stair geometry",
+      "width": 1100,
+      "height": 900,
+      "bytes": 740126,
+      "sha256": "37e5faffd3484283c0e7b3aa79879ecd06452cdce84f245fa10513ded206d83b"
+    },
+    {
       "path": "development/levels/rebuild/captures/structure-batch/academy/structure-export-closed.png",
       "url": "development/levels/rebuild/captures/structure-batch/academy/structure-export-closed.png",
       "title": "Structure export closed",
@@ -75182,8 +75222,8 @@
       "kind": "Native structural blocking review; runtime integration pending",
       "width": 1920,
       "height": 768,
-      "bytes": 342335,
-      "sha256": "43661d980fb095c30f50181dcb9b8366b107b11f8be83f40f32d6e93f0308b66"
+      "bytes": 342300,
+      "sha256": "80ff966c65c167b03871ff7503d647937d9dd149f5ee1b1eeffef19d5861e497"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-06.png",
@@ -75472,8 +75512,8 @@
       "kind": "Native structural blocking review; runtime integration pending",
       "width": 960,
       "height": 720,
-      "bytes": 641177,
-      "sha256": "423409176ade1fb154a5055bef73a5b1bac85cebc151b0b95812304f527f76cc"
+      "bytes": 641045,
+      "sha256": "266bc9cc1760cc5110b2f1c58a31989d71aa29c4d08faa9af71bc04735a1adcc"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-14/structure-export-cutaway.png",
@@ -75482,8 +75522,8 @@
       "kind": "Native structural blocking review; runtime integration pending",
       "width": 960,
       "height": 720,
-      "bytes": 673762,
-      "sha256": "da22da42028c394286084cd3e77293d8a0e3e7e2add791e3cb04ba7511a88993"
+      "bytes": 673729,
+      "sha256": "23e3fc0248f37ade7402da04d9c786e02e629839524272bd2c68436e652614bf"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-15/structure-export-closed.png",
@@ -76382,8 +76422,8 @@
       "kind": "Reimported native structure export review",
       "width": 960,
       "height": 720,
-      "bytes": 641177,
-      "sha256": "423409176ade1fb154a5055bef73a5b1bac85cebc151b0b95812304f527f76cc"
+      "bytes": 641045,
+      "sha256": "266bc9cc1760cc5110b2f1c58a31989d71aa29c4d08faa9af71bc04735a1adcc"
     },
     {
       "path": "development/levels/rebuild/structures/wld-14/structure-export-cutaway.png",
@@ -76392,8 +76432,8 @@
       "kind": "Reimported native structure export review",
       "width": 960,
       "height": 720,
-      "bytes": 673762,
-      "sha256": "da22da42028c394286084cd3e77293d8a0e3e7e2add791e3cb04ba7511a88993"
+      "bytes": 673729,
+      "sha256": "23e3fc0248f37ade7402da04d9c786e02e629839524272bd2c68436e652614bf"
     },
     {
       "path": "development/levels/rebuild/structures/wld-15/preview.png",

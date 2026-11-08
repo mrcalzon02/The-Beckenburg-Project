@@ -4954,15 +4954,15 @@ Older-map obligation: Audit every older map independently for physical stair run
 
 ### DEV-361 — Native stepped candidates fail current body and traversability queries
 
-**Status:** OPEN; candidate maps remain locked · **Affected:** Six revised remote candidates and potentially other new tread-based sites; existing mature maps not certified
+**Status:** PARTIAL: explicit stair movement implemented; source landings and runtime integration OPEN · **Affected:** Six revised remote candidates and potentially other new tread-based sites; existing mature maps not certified
 
 506 supported tread centres with clear spine rays still include capsule/body and four-footprint support failures; monastery has zero traversable tread centres in the current kernel.
 
 Cause / uncertainty: Authored treads, body clearance, edges and the kernel narrow neighbour-height allowance need component-specific diagnosis. Clear centre rays cannot establish a full body sweep.
 
-Fix / next action: Preserve exact per-tread results and hashed HCS2/GLB. Next diagnose per-component capsule contacts and real ascent/descent/edge/wall negatives, then repair measured routes and explicit stair movement integration. Do not weaken global collision or claim playable acceptance.
+Fix / next action: Explicit exact component identities enable bounded .25m riser/footprint handling while literal body/optical queries and all legacy readers retain behavior. 102 independent controls PASS; actual candidate 170/221 vertical segments pass both directions, 39/82 contiguous chains pass. 51 segments, five full lighthouse spiral transitions, intermediate-flat landing chains and actual playable integration remain open.
 
-Evidence and verification: development/levels/rebuild/verification/roster-routes-2026-11-07/; six revised rough-layout.json; structures/<site>/physics-contract.json and structure-physics.hcs2; tools/audit_roster_routes.py
+Evidence and verification: development/levels/rebuild/verification/roster-stair-movement-2026-11-07/; previous source-specific failures retained in earlier roster probes
 
 Older-map obligation: Audit every older map independently for physical stair run, landings, headroom, deck openings, body/edge clearance and supported arrivals. No inherited acceptance.
 
@@ -5119,6 +5119,34 @@ Fix / next action: Write a temporary sibling, close it and atomically replace th
 Evidence and verification: tools/index_staged_map_models.py write_atomic; current asset-library-index.json and furnishing index-verification.json; observed OSError errno22 during direct overwrite in this authoring session
 
 Older-map obligation: Publish generated source indexes atomically and retain authoritative prior bytes on failure. This changes no asset or runtime geometry.
+
+### DEV-373 — Rectangular stair treads overlap inside curved lighthouse flights and leave outside gaps
+
+**Status:** MITERED CANDIDATE GEOMETRY FIXED; end/cyclic landing routes remain OPEN · **Affected:** WLD-14 native stair candidate and shared opt-in native movement contract
+
+140 curved lighthouse tread solids have overlapping inner corners and visible outer gaps; whole-flight movement fails.
+
+Cause / uncertainty: Each chord was generated as an independently rotated rectangle rather than a ribbon with shared boundaries.
+
+Fix / next action: Replace140 existing tread meshes with shared mitered boundaries, preserving authored widths, elevations, object identities/transforms and triangle budget. Independently reimport closed solids and real composite HCS2. Four before/after views inspected. Five full spiral links still fail top/start transitions; do not claim completed stairs.
+
+Evidence and verification: development/levels/rebuild/verification/roster-stair-movement-2026-11-07/
+
+Older-map obligation: All other locations and retained Castle/House/Blackpine/Hollow Creek require individual route and join audits. No inferred fix or playable unlock.
+
+### DEV-374 — Float32 shared stair joins can report unsupported micrometre seams
+
+**Status:** BOUNDED OPT-IN JOIN QUERY FIXED; analytic negative controls PASS · **Affected:** WLD-14 native stair candidate and shared opt-in native movement contract
+
+Mitered treads can disagree by several micrometres after separate GLB object transforms; exact shared path endpoints report START_UNSUPPORTED.
+
+Cause / uncertainty: Independent float32 transformed vertices cross an overly strict barycentric edge tolerance.
+
+Fix / next action: Permit at most10micrometres of world-space edge allowance on explicitly named stair components only. 6micrometre seam passes,0.1mm gap and absent tread remain unsupported. Ordinary floor and unannotated-reader tolerances are unchanged; HCS triangles and optical/body geometry remain exact.
+
+Evidence and verification: development/levels/rebuild/verification/roster-stair-movement-2026-11-07/
+
+Older-map obligation: All other locations and retained Castle/House/Blackpine/Hollow Creek require individual route and join audits. No inferred fix or playable unlock.
 
 ## Required audit categories
 

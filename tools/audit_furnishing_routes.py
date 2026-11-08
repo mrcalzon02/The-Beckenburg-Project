@@ -5,9 +5,9 @@ import argparse,csv,hashlib,json,math,os,subprocess
 ROOT=Path(__file__).resolve().parents[1]
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True);parser.add_argument('--authored-stairs',action='store_true');args=parser.parse_args()
     plans=json.loads((ROOT/'development/levels/rebuild/furnishings/room-programs.json').read_text())['sites']
-    build=ROOT/'build/furnishing-route-probe';build.mkdir(parents=True,exist_ok=True);rows=[];hashes={}
+    build=ROOT/'build/furnishing-route-probe';build.mkdir(parents=True,exist_ok=True);rows=[];hashes={};names=[]
     for site in plans:
         base=ROOT/f'development/levels/rebuild/structures/{site.lower()}';new=ROOT/f'development/levels/rebuild/furnishings/{site.lower()}'
         b=json.loads((base/'physics-contract.json').read_text());n=json.loads((new/'physics-contract.json').read_text())
@@ -15,6 +15,8 @@ def main():
             assert hashlib.sha256((folder/mesh).read_bytes()).hexdigest()==contract['source_glb_sha256']
             assert hashlib.sha256((folder/physics).read_bytes()).hexdigest()==contract['physics_sha256']
         hashes[site]=dict(before=b['physics_sha256'],after=n['physics_sha256'])
+        for phase,contract in [('before',b),('after',n)]:
+            for name in contract['stair_components']:names.append(f'{site}:{phase}\t{name}')
         report=json.loads((base/'implementation.json').read_text());layout=json.loads((ROOT/report['authoritative_input']).read_text())
         for link in layout['links']:
             if link.get('player_access')=='SEALED_NO_ROUTE':continue
@@ -30,8 +32,12 @@ def main():
                         rows.append('\t'.join(str(v) for v in [site,base/'structure-physics.hcs2',b['physics_sha256'],new/'furnished-physics.hcs2',n['physics_sha256'],link['id']+':'+str(segment),x,p[1],z,lane]))
     source=build/'input.tsv';source.write_bytes(('\n'.join(rows)+'\n').encode())
     java=Path(os.environ.get('JAVA_HOME','C:/Program Files/Java/jdk-17'))/'bin';jar=ROOT/'build/beckenburg-game.jar'
-    subprocess.run([str(java/'javac.exe'),'-cp',str(jar),'-d',str(build),str(ROOT/'tools/java/FurnishingRouteProbe.java')],check=True)
-    output=build/'results.tsv';subprocess.run([str(java/'java.exe'),'-Djava.awt.headless=true','-cp',str(build)+os.pathsep+str(jar),'FurnishingRouteProbe',str(source),str(output)],check=True)
+    # Always compile current source explicitly; avoid loading an older loose
+    # class from a previous opt-in audit ahead of the dependency JAR.
+    kernel=ROOT/'src/main/java/org/beckenburg/AuthoredSitePhysics.java'
+    subprocess.run([str(java/'javac.exe'),'-cp',str(jar),'-d',str(build),str(kernel),str(ROOT/'tools/java/FurnishingRouteProbe.java')],check=True)
+    (build/'stairs.tsv').write_bytes(('\n'.join(names)+'\n').encode())
+    output=build/'results.tsv';subprocess.run([str(java/'java.exe'),'-Djava.awt.headless=true','-cp',str(build)+os.pathsep+str(jar),'FurnishingRouteProbe',str(source),str(output),*([str(build/'stairs.tsv')] if args.authored_stairs else [])],check=True)
     probes=list(csv.DictReader(output.read_text(encoding='utf-8').splitlines(),delimiter='\t'));summary={}
     for site in plans:
         selected=[r for r in probes if r['site']==site]
@@ -39,6 +45,7 @@ def main():
     args.output.mkdir(parents=True,exist_ok=True);(args.output/'before-after-routes.tsv').write_bytes(output.read_bytes().replace(b'\r\n',b'\n'))
     report=dict(scope='25 candidate maps; flat authored routes at centre/side lanes, with actual actor capsule and baseline-qualified movement sweeps',
         physics=hashes,kernel_jar_sha256=hashlib.sha256(jar.read_bytes()).hexdigest(),sites=summary,
+        kernel_source_sha256=hashlib.sha256(kernel.read_bytes()).hexdigest(),authored_stairs=args.authored_stairs,
         limitation='Preserving previously valid paths does not accept pre-existing failures, stairs, complete navigation, gameplay or finished models.')
     (args.output/'route-regressions.json').write_bytes((json.dumps(report,indent=2)+'\n').encode())
     print({k:sum(v[k] for v in summary.values()) for k in ['samples','baseline_valid','new_block','baseline_sweep','new_sweep_block']})

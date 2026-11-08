@@ -1,0 +1,42 @@
+{
+  "scope": "Four isolated actual-export curved-stair views plus four updated lighthouse whole/room exports actually viewed",
+  "views": [
+    {
+      "path": "development/levels/rebuild/captures/stair-movement-batch/wld-14-rejected-rectangular-construction.png",
+      "sha256": "90f26a1dec9b44e1dc79eff232cd1a8df13f2440c1c49fb84acfe1bc283b80cb",
+      "type": "NATIVE_ACTUAL_EXPORT_ISOLATED_STAIR_CONSTRUCTION",
+      "status": "REJECTED_PRIOR_RECTANGULAR_TREADS",
+      "source_glb_sha256": "ed654f2fe1b8774a80be1d22ad04f56a8a38ff3bc3f25f0a4ac912329125a62e",
+      "source_ref": "66c5e947b5c49b087d3d0b2eaf9932eaf926db52"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-movement-batch/wld-14-rejected-rectangular-top.png",
+      "sha256": "37e5faffd3484283c0e7b3aa79879ecd06452cdce84f245fa10513ded206d83b",
+      "type": "NATIVE_ACTUAL_EXPORT_ISOLATED_STAIR_CONSTRUCTION",
+      "status": "REJECTED_PRIOR_RECTANGULAR_TREADS",
+      "source_glb_sha256": "ed654f2fe1b8774a80be1d22ad04f56a8a38ff3bc3f25f0a4ac912329125a62e",
+      "source_ref": "66c5e947b5c49b087d3d0b2eaf9932eaf926db52"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-movement-batch/wld-14-mitered-candidate-construction.png",
+      "sha256": "811af5ef1a48357332a16bf7bde8be63bdb0a290cf444ec7451c8b7143db601d",
+      "type": "NATIVE_ACTUAL_EXPORT_ISOLATED_STAIR_CONSTRUCTION",
+      "status": "CANDIDATE_MITERED_JOINS_GUARDS_AND_COMPLETE_ROUTE_ACCEPTANCE_OPEN",
+      "source_glb_sha256": "4087b9f31f04544945c70fd9a60723aa78417c283102b479bd9c8ee82de68c03",
+      "source_ref": "WORKING_CANDIDATE"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-movement-batch/wld-14-mitered-candidate-top.png",
+      "sha256": "49ae5270d5b2d2d67bfa88a252a89759f2e615c812078fc6e381e1a6a340239e",
+      "type": "NATIVE_ACTUAL_EXPORT_ISOLATED_STAIR_CONSTRUCTION",
+      "status": "CANDIDATE_MITERED_JOINS_GUARDS_AND_COMPLETE_ROUTE_ACCEPTANCE_OPEN",
+      "source_glb_sha256": "4087b9f31f04544945c70fd9a60723aa78417c283102b479bd9c8ee82de68c03",
+      "source_ref": "WORKING_CANDIDATE"
+    }
+  ],
+  "construction_score": 3,
+  "finish_score": 1,
+  "scale": "1-5",
+  "assessment": "Mitered tread boundaries remove the rectangular inner overlap and outer gaps visible in the rejected top/construction views. All 140 treads retain authored rise/clear width; 12 triangles each, no added ornament. Guard rails, top/cyclic landings, surrounding terrain fringe, retaining and full physical route acceptance remain unfinished. Workroom prop remains a rough allocation rather than complete capacity.",
+  "limitations": "Five continuous multi-revolution tower links still fail their end/start transitions; 51/221 source segments fail overall. Native views do not prove runtime lighting or gameplay."
+}
