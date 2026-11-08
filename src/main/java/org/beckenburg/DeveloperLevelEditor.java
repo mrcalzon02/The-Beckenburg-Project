@@ -85,6 +85,7 @@ public final class DeveloperLevelEditor extends JPanel {
         workPlane.setValue(spawn.y());
     }
     private void finishSceneOpen(){
+        refreshAssetPalette();
         chosen=null;renderer.clearEditorSelection();lightVolumeOverlay.setSelected(false);
         lightVolume=null;lightVolumeKey="";filter.setText("");
         refresh();
@@ -657,13 +658,16 @@ public final class DeveloperLevelEditor extends JPanel {
                 if(id.equals(library.getItemAt(i))){listed=true;break;}
             if(!listed)library.addItem(id);
             library.setSelectedItem(id);
-            if(assetPalette!=null)assetPalette.reload(project);
+            refreshAssetPalette();
             chooseTool(EditorTool.PROP);
             status.setText("Imported "+id+" — PROP click places in the live scene; Ctrl+S saves placement");
             viewport.requestFocusInWindow();
         });
     }
 
+    private void refreshAssetPalette(){
+        if(assetPalette!=null)assetPalette.reload(mission==null?project:mission);
+    }
     private static JButton button(String name){return new JButton(name);}
     private JPanel objectInspector(){
         JPanel panel=new JPanel(new BorderLayout(4,3));

@@ -18,6 +18,7 @@ Read `/summary` for the active scene ID, revision, supported observation routes 
 | `/node` | revision, id | One native row |
 | `/nodes` | revision, repeated id | Up to 64 native rows in request order |
 | `/changes` | revision, offset, limit | Latest committed change page |
+| `/assets` | revision, offset, limit | Active editor palette entries and catalog fingerprint |
 | `/test` | revision, id | Named host test with individual structured checks |
 | `/capture` | revision | PNG from the active host renderer |
 
@@ -105,6 +106,8 @@ Start with `summary` to get the active scene ID, revision, capabilities, operati
 Both localized queries use the host's current human editor hierarchy on its owner thread. The service keeps no independent scene index. The small replies bound transmitted data. A single-node request builds one row in the two native adapters. Castle resolves the ID in its existing scene maps. Mission levels locate it in the existing stable-ID list and read the corresponding prop. Both native adapters construct only the requested hierarchy rows. Mission pages address the native prop list by index. Castle pages slice its ordered native maps and read station or spawn rows only when requested. Reaching a late entry in a Castle map still requires walking earlier entries. On the November 7 verification fixtures the full and single-node UTF-8 responses were 42,296 and 191 bytes for House, and 103,149 and 154 bytes for Castle. These measurements cover payload size only.
 
 For a sparse selection, `nodes<TAB>revision<TAB>id1<TAB>id2` returns up to 64 native hierarchy rows in request order under one revision. A missing ID or stale revision fails the entire read. This also lets a client fetch the current values for several updated IDs from a change page in one request.
+
+The CLI also accepts `assets<TAB>revision<TAB>offset<TAB>limit`. Asset pages follow the active editor's unfiltered palette order. An import can change the runtime catalog without editing the scene. Compare the catalog fingerprint across pages and restart at offset zero if it changes.
 
 ## Batched headless edits
 

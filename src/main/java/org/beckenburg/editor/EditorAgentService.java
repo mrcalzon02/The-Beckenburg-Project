@@ -78,6 +78,7 @@ public final class EditorAgentService<S> {
     public record Summary(String sceneId, long revision, Set<Capability> capabilities,
                           List<String> operations, List<String> tests) {}
     public record NodePage(int total, int offset, List<EditorProject.Node> nodes) {}
+    public record AssetPage(int total,int offset,String catalogFingerprint,List<EditorProject.Asset> assets){}
     public record ChangePage(long beforeRevision, boolean fullScene, int total, int offset,
                              List<EditorChange.Node> nodes) {}
 
@@ -121,6 +122,19 @@ public final class EditorAgentService<S> {
         require(expected);
         var project = host.project();
         return new Evidence<>(project.id(), expected, project.node(id));
+    }
+    /** Use the active project's human palette source. Imports can change it between scene edits. */
+    public Evidence<AssetPage> assets(long expected,int offset,int limit){
+        capable(Capability.INSPECT);
+        require(expected);
+        var catalog=host.project().assets();
+        int end=pageEnd(catalog.size(),offset,limit);
+        var signature=new StringBuilder();
+        for(var asset:catalog){
+            for(var field:List.of(asset.uri(),asset.category(),asset.label()))
+                signature.append(field.length()).append(':').append(field);
+        }
+        return evidence(new AssetPage(catalog.size(),offset,EditorChange.fingerprint(signature.toString()),List.copyOf(catalog.subList(offset,end))));
     }
     /** Resolve a bounded selection against one native revision, preserving caller order. */
     public Evidence<List<EditorProject.Node>> nodes(long expected, List<String> ids){

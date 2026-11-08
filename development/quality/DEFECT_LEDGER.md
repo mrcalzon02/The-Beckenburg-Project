@@ -10,6 +10,20 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-269 — Mission editor retained Castle assets after switching scenes
+
+**Status:** fixed-scoped; real Castle and House palette parity verified · **Affected:** Level Editor scene selection and post-import palette refresh
+
+After opening House the Assets tab still offered Castle materials and the Castle water module.
+
+Cause / uncertainty: The palette was created with the Castle project and refreshed against that project after imports regardless of the active level.
+
+Fix / next action: Reload from the active project on scene open and import. Serve paged assets through the same project adapter.
+
+Evidence and verification: EditorAgentGuiTest failed at aa4b8956 on the Castle-only Materials category in House. The corrected test compares every visible Castle and House row with the native catalog and verifies HTTP asset readback.
+
+Older-map obligation: All mission sites share this selection path. Desktop parity was verified directly for House and Castle.
+
 ### DEV-267 — Hunters stay upright after damage and incapacitation
 
 **Status:** fixed-scoped; reaction assets, real TCP and native OpenGL review pass; installed acceptance pending · **Affected:** Cleric, Observer and Demonologist world sprites, all six hunter seats and hunter camera lenses

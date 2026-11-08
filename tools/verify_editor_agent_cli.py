@@ -48,6 +48,20 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
         assert page['result'] == {'total': len(full['hierarchy']), 'offset': 0, 'nodes': [node]}
         assert one['result'] == node and one['revision'] == rev
         total = len(full['hierarchy'])
+        catalog = run([f'assets\t{rev}\t0\t1'])[0]['result']['result']
+        assert catalog['total'] > 0 and len(catalog['assets']) == 1
+        asset_offsets = range(0, catalog['total'], 64)
+        asset_pages = run([f'assets\t{rev}\t{offset}\t64' for offset in asset_offsets])
+        entries = []
+        for offset, reply in zip(asset_offsets, asset_pages):
+            page = reply['result']['result']
+            assert page['catalogFingerprint'] == catalog['catalogFingerprint'] and page['offset'] == offset
+            entries.extend(page['assets'])
+        assert len(entries) == catalog['total'] and entries[0] == catalog['assets'][0]
+        if full['sceneId'] == 'beckenburg/house':
+            assert all(asset['category'] == 'Models' for asset in entries)
+        else:
+            assert any(asset['uri'] == 'water://surface' for asset in entries)
         offsets = [*range(0, total, 17), total]
         pages = run([f'hierarchy\t{rev}\t{offset}\t17' for offset in offsets])
         for offset, reply in zip(offsets, pages):

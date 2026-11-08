@@ -55,6 +55,24 @@ public final class EditorAgentGuiTest {
         check(failure.get()==null&&stage.get()==3,"Actual human recovery menu completed: "+failure.get());
     }
     private record Access(String url,String bearer){}
+    private static void verifyPalette(DeveloperLevelEditor editor,boolean mission)throws Exception{
+        var palette=DeveloperLevelEditor.class.getDeclaredField("assetPalette");palette.setAccessible(true);
+        var visible=component((Container)palette.get(editor),JList.class).getModel();
+        check(visible.getSize()>0,"Palette displays runtime assets");
+        var service=editor.agentService();long rev=service.summary().revision();
+        String fingerprint=null;
+        for(int offset=0;offset<visible.getSize();offset+=64){
+            var page=service.assets(rev,offset,64).result();
+            check(page.total()==visible.getSize() && page.offset()==offset,"Palette matches native catalog size and position");
+            check(fingerprint==null || fingerprint.equals(page.catalogFingerprint()),"Stable catalog identity across pages");
+            fingerprint=page.catalogFingerprint();
+            for(int i=0;i<page.assets().size();i++){
+                var row=page.assets().get(i);
+                check(row.equals(visible.getElementAt(offset+i)),"Service asset differs from actual editor palette");
+                if(mission)check(row.category().equals("Models"),"Mission has a Castle-only asset category");
+            }
+        }
+    }
     private static final HttpClient CLIENT=HttpClient.newHttpClient();
     private static Access openAccess(DeveloperLevelEditor editor)throws Exception{
         var access=new AtomicReference<Access>();
@@ -130,6 +148,12 @@ public final class EditorAgentGuiTest {
         var changes=request(access,"/changes?revision="+changed+"&offset=0&limit=1","GET",access.bearer());
         check(changes.statusCode()==200 && new String(changes.body(),StandardCharsets.UTF_8).contains("\"prop-0\""),"Expose human move metadata");
         check(request(access,"/test?revision="+changed+"&id=mission-runtime-parity","GET",access.bearer()).statusCode()==200,"Read focused diagnostic");
+        var assets=request(access,"/assets?revision="+changed+"&offset=0&limit=2","GET",access.bearer());
+        SwingUtilities.invokeAndWait(()->{
+            try{expected.set(EditorAgentCli.json(editor.agentService().assets(changed,0,2)));}
+            catch(Exception failure){throw new RuntimeException(failure);}
+        });
+        check(assets.statusCode()==200 && expected.get().equals(new String(assets.body(),StandardCharsets.UTF_8)),"Return exact native asset page over HTTP");
         var capture=request(access,"/capture?revision="+changed,"GET",access.bearer());
         var image=javax.imageio.ImageIO.read(new java.io.ByteArrayInputStream(capture.body()));
         check(capture.statusCode()==200 && image!=null && image.getWidth()==560 && image.getHeight()==350,"Real renderer capture");
@@ -152,6 +176,7 @@ public final class EditorAgentGuiTest {
             SwingUtilities.invokeAndWait(()->{
                 try{
                     var e=editor.get();var castle=e.agentService();var state=castle.inspect();
+                    verifyPalette(e,false);
                     castle.capture(state.revision(),output.resolve("castle.png"));
                     double originalYaw=CastleLevelEdits.current().spawn()[2];
                     castle.save(state.revision());
@@ -164,6 +189,8 @@ public final class EditorAgentGuiTest {
                     check(CastleLevelEdits.current().spawn()[2]==1.125,"Human undo restores pre-recovery Castle edits");
                     var open=DeveloperLevelEditor.class.getDeclaredMethod("openMission",HouseMap.Site.class);
                     open.setAccessible(true);open.invoke(e,HouseMap.Site.HOUSE);
+                    var finish=DeveloperLevelEditor.class.getDeclaredMethod("finishSceneOpen");finish.setAccessible(true);finish.invoke(e);
+                    verifyPalette(e,true);
                     var service=e.agentService();var before=service.inspect();var node=before.hierarchy().get(0);
                     var currentMap=DeveloperLevelEditor.class.getDeclaredMethod("currentMissionMap");currentMap.setAccessible(true);
                     Object initialMap=currentMap.invoke(e);

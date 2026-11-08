@@ -96,7 +96,7 @@ final class EditorObservationBridge implements AutoCloseable {
         var args=query.fields;
         if(path.equals("/summary") && args.isEmpty())
             return json(Map.of("sceneId",summary.sceneId(),"revision",summary.revision(),"tests",summary.tests(),
-                "routes",List.of("/summary","/hierarchy","/node","/nodes","/changes","/test","/capture")),summary.revision());
+                "routes",List.of("/summary","/hierarchy","/node","/nodes","/changes","/assets","/test","/capture")),summary.revision());
         long revision=Long.parseLong(args.remove("revision"));
         if(revision!=summary.revision())throw new IllegalStateException("Stale revision");
         Object value;
@@ -104,6 +104,7 @@ final class EditorObservationBridge implements AutoCloseable {
             case "/node" -> {requireKeys(args,"id");value=service.node(revision,args.get("id"));}
             case "/nodes" -> {requireKeys(args);value=service.nodes(revision,query.ids);}
             case "/changes" -> {requireKeys(args,"offset","limit");value=service.changes(revision,Integer.parseInt(args.get("offset")),Integer.parseInt(args.get("limit")));}
+            case "/assets" -> {requireKeys(args,"offset","limit");value=service.assets(revision,Integer.parseInt(args.get("offset")),Integer.parseInt(args.get("limit")));}
             case "/hierarchy" -> {requireKeys(args,"offset","limit");value=service.hierarchy(revision,Integer.parseInt(args.get("offset")),Integer.parseInt(args.get("limit")));}
             case "/test" -> {requireKeys(args,"id");value=service.test(revision,args.get("id"));}
             case "/capture" -> {
