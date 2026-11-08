@@ -17,6 +17,19 @@ Implementation baseline: `31876318f03760fe7a60866de174302e6c30a39b` on the appro
 
 ## Current code and evidence state
 
+### G1 exit evidence at c90bb25e
+
+The original G1 exit checks passed on the same Java 17 source revision in the standalone and native workflows. The texture-painting extension still assigns paint-tile history and unsaved layer recovery to G1/G3.
+
+| Required result | Verification and scope |
+|---|---|
+| Independent Java 17 kit and explicit host capabilities | The portable build compiled without game classes or assets. `EditorCorePortabilityTest` exercised another adapter and checked refusal of capture on a host without a renderer. [Standalone run](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/42460103400) |
+| Stable identity, migration and roundtrip | `LevelAuthoringIdentityTest` checked retained IDs after deletion, undo and deterministic reopen. `EditorSchemaCompatibilityTest` exercised legacy yaw and refused unsupported component data and future Castle layout versions. The native disk and recovery tests checked both host codecs. [Native run](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/42460104627) |
+| Transaction failure, cancellation and recovery | `EditorAgentServiceTest` checked rollback and preserved redo after cancellation. The portable document store test interrupted writes before and after rename and verified recovery, conflict and owner checks. [Native run](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/42460104627) · [Standalone run](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/42460103400) |
+| Shared node and host consumption | `EditorAgentGuiTest` used the active human editor, its history and both native hosts. The public CLI suite verified paging, native runtime parity, real renderer output and process reopen. `EditorChangeIntegrationTest` checked committed fingerprints, mission collider bounds, Castle surface undo and navigation invalidation. Castle retains conservative whole-scene invalidation for world changes. [Native run](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/42460104627) |
+
+The next material-history evidence required by TP-10 and TP-13 is a reversible native paint transaction with bounded tile storage, followed by fresh-process recovery of unsaved layer data. Existing mission and Castle undo/recovery tests exercise scene documents. [Texture painting requirements](TEXTURE_PAINTING_INTEGRATION.md)
+
 | Gate | Authoritative entry points and actual evidence | State / remaining work |
 |---|---|---|
 | G0 | DOCUMENT_CHAIN.json, exact eight original PDFs, complete direct extracts and preserved transcriptions; hash/size/ordered-page audit passes; this source/module/current-state map. | ACCEPTED for intake/indexing only. |
