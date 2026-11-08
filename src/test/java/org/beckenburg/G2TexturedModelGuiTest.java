@@ -213,6 +213,7 @@ public final class G2TexturedModelGuiTest {
             "One stroke edits one tile and preserves source PNG");
         var composed=ImageIO.read(new java.io.ByteArrayInputStream(material.png()));
         for(int x=1;x<4;x++)check(composed.getRGB(x,0)==0xffff00ff,"Pencil interpolates each touched texel");
+        verifyPaintRecovery(painted);
         edt(()->button(ui,"undoMesh"));
         await(()->ready(ui));
         check(project.snapshot().equals(original),"One undo removes the whole stroke");
@@ -243,6 +244,40 @@ public final class G2TexturedModelGuiTest {
         edt(()->button(ui,"undoMesh"));
         await(()->ready(ui));
         check(project.snapshot().equals(original),"Return fixture to the original textured state after publication");
+    }
+    private void verifyPaintRecovery(EditorTopologyProject.State painted)throws Exception{
+        long revision=project.revision();
+        await(()->{try{return ((JLabel)field(ui,"paintRecoveryStatus")).getText().equals("Paint recovery saved · revision "+revision);}
+            catch(Exception e){throw new RuntimeException(e);}});
+        var recovery=(EditorPaintRecovery)field(ui,"paintRecovery");
+        Path file=recovery.file();
+        byte[] durable=Files.readAllBytes(file);
+        check(EditorTopologyProject.decode(durable).equals(painted),"Autosave captures the unsaved stroke");
+        check(project.hasUnsavedChanges(),"Autosave must leave the manual document dirty");
+        var fresh=new AtomicReference<AssetImportDialog>();
+        try{
+            edt(()->{
+                var window=new AssetImportDialog(null,id->{});
+                fresh.set(window);
+                ((JDialog)field(window,"dialog")).setVisible(true);
+                window.loadPaintRecovery(file);
+            });
+            await(()->ready(fresh.get()));
+            edt(()->{
+                var copy=(EditorTopologyProject)field(fresh.get(),"topologyProject");
+                check(copy.snapshot().equals(painted) && !copy.documentPath().equals(file) &&
+                    !copy.documentPath().equals(project.documentPath()),"Recovery opens an independent writable native copy");
+                button(fresh.get(),"saveMesh");
+            });
+            check(Arrays.equals(durable,Files.readAllBytes(file)),"Saving the recovered copy changed the recovery file");
+            Path invalid=Files.writeString(Path.of(System.getProperty("user.home"),"invalid-draft.btop"),"truncated");
+            var current=(EditorTopologyProject)field(fresh.get(),"topologyProject");
+            edt(()->fresh.get().loadPaintRecovery(invalid));
+            await(()->ready(fresh.get()));
+            edt(()->check(field(fresh.get(),"topologyProject")==current &&
+                ((JLabel)field(fresh.get(),"paintRecoveryStatus")).getText().startsWith("Recovery refused"),
+                "Bad recovery input must preserve the open editor document"));
+        }finally{edt(()->{if(fresh.get()!=null)((JDialog)field(fresh.get(),"dialog")).dispose();});}
     }
     private static void near(double actual,double expected) {
         check(Math.abs(actual-expected)<1e-5,"Expected "+expected+", got "+actual);

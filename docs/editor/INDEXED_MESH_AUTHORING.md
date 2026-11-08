@@ -224,3 +224,9 @@ Use **File → EXPORT glTF / GLB**, then give the copy a `.gltf` filename to exp
 Select a bound face in the Material Editor, choose Pencil and a color, then drag on its UV canvas. Release previews one stroke. Apply edit commits it to native history. Shift-drag removes pencil marks and exposes the original texture. Escape cancels an active drag. The stroke covers texels whose centers lie inside the selected triangle. Other faces sharing those texels show the same change.
 
 BTOP8 stores one sparse base-color overlay and the original PNG. Existing unpainted documents retain their earlier format. The OBJ bundle carries the native overlay and a composited texture view. GLB and the game receive the composited texture. Source-backed GLB edits retain the original material and bind a painted derivative. The current pencil supports one-texel opaque strokes and a 2048-tile budget across the native material table. Layer stacks, additional channels and unsaved paint autosave remain open.
+
+### Recovering unsaved paint
+
+After a paint edit is committed, the editor writes a native recovery document in the background under `~/.beckenburg/editor/paint-recovery`. The status line gives the last saved revision and shows write failures. Undo, redo and later model edits in the same session update that draft. A pending pencil preview only becomes recoverable after Apply.
+
+Use **File → Open paint recovery…** in the Material Editor or Model Editor. Select the native draft, or its pending journal after an interrupted write. The editor opens a separate writable BTOP copy. Manual saves, publication and closing the window leave the recovery document available. A session keeps one current draft and one prior distinct backup. Drafts from separate sessions have unique filenames and remain in the recovery directory.

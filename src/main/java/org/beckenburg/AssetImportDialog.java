@@ -3,6 +3,7 @@ package org.beckenburg;
 import org.beckenburg.editor.EditorGlbWriter;
 import org.beckenburg.editor.EditorGltfFile;
 import org.beckenburg.editor.EditorGltfSource;
+import org.beckenburg.editor.EditorPaintRecovery;
 import org.beckenburg.editor.EditorDocumentStore;
 import org.beckenburg.editor.EditorTopologyWorkspace;
 import org.beckenburg.editor.EditorMaterialWorkspace;
@@ -169,6 +170,9 @@ public final class AssetImportDialog {
     private EditorTopologyProject.State listedMaterials;
     private EditorObjMaterials.Capture sourceCapture;
     private EditorGltfSource gltfSource;
+    private EditorPaintRecovery paintRecovery;
+    private final JLabel paintRecoveryStatus=new JLabel();
+    private final JButton openPaintRecovery=new JButton("Open paint recovery…");
     private EditorTopologyWorkspace workspace;
     private record MeshPart(String name,int vertices,int faces,String label){@Override public String toString(){return label+" / "+faces+" triangles";}}
     private final JTextField partSearch=new JTextField();
@@ -327,7 +331,8 @@ public final class AssetImportDialog {
         footer.add(apply);footer.add(close);
         content.setBorder(BorderFactory.createEmptyBorder(6,6,6,6));
         // Existing native controls and actions, arranged around the modeling viewport.
-        var menus=new JMenuBar();menus.add(EditorTopologyWorkspace.menu("File",newMesh,choose,saveMesh,reopenMesh,exportMesh,exportGlb,close));menus.add(EditorTopologyWorkspace.menu("Edit",undoMesh,redoMesh));
+        openPaintRecovery.addActionListener(e->choosePaintRecovery());
+        var menus=new JMenuBar();menus.add(EditorTopologyWorkspace.menu("File",newMesh,choose,saveMesh,reopenMesh,openPaintRecovery,exportMesh,exportGlb,close));menus.add(EditorTopologyWorkspace.menu("Edit",undoMesh,redoMesh));
         EditorTopologyWorkspace.shortcut(menus.getMenu(0),1,KeyEvent.VK_O);EditorTopologyWorkspace.shortcut(menus.getMenu(0),2,KeyEvent.VK_S);EditorTopologyWorkspace.shortcut(menus.getMenu(1),0,KeyEvent.VK_Z);EditorTopologyWorkspace.shortcut(menus.getMenu(1),1,KeyEvent.VK_Y);
         var inspector=new JPanel(new BorderLayout(0,8));var toolTitle=new JLabel("SELECT");inspector.add(toolTitle,BorderLayout.NORTH);inspector.add(new JScrollPane(inspectorCards),BorderLayout.CENTER);inspector.add(EditorTopologyWorkspace.column(applyFaceEdit,cancelFaceEdit),BorderLayout.SOUTH);
         inspector.setBorder(BorderFactory.createEmptyBorder(8,5,5,5));
@@ -517,7 +522,9 @@ public final class AssetImportDialog {
                 if(!busy && modelingPreview==null && materialWorkspace.visibility().includes(face))
                     beginModelingPreview(p->p.previewPencil(face,texels,color));
             });
-            materialDialog.setContentPane(materialWorkspace);materialDialog.setSize(1160,760);materialDialog.setMinimumSize(new Dimension(900,600));materialDialog.setLocationRelativeTo(dialog);
+            var fileMenu=new JMenuBar();fileMenu.add(EditorTopologyWorkspace.menu("File",openPaintRecovery));materialDialog.setJMenuBar(fileMenu);
+            var panel=new JPanel(new BorderLayout());panel.add(materialWorkspace,BorderLayout.CENTER);panel.add(paintRecoveryStatus,BorderLayout.SOUTH);
+            materialDialog.setContentPane(panel);materialDialog.setSize(1160,760);materialDialog.setMinimumSize(new Dimension(900,600));materialDialog.setLocationRelativeTo(dialog);
         }
         materialDialog.setVisible(true);refreshMaterialWindow();
     }
@@ -658,7 +665,7 @@ public final class AssetImportDialog {
             var mesh=new EditorMeshPipeline.Mesh("New mesh",List.of(),0);
             var project=EditorTopologyProject.fromMesh(mesh,EditorMeshPipeline.sourceFingerprint("native-mesh-v1".getBytes(java.nio.charset.StandardCharsets.UTF_8)),document);
             project.save();clearPrimitivePreview();selectedHit=null;normalAnchor=null;selectionLabel.setText("Click a triangle in the working mesh");topologyProject=project;meshHistory=new EditorHistory<>(project,60);workingObservation=project.observe();source=workingObservation.mesh();result=null;
-            path=document;sourceCapture=null;gltfSource=null;reviewedSourceFingerprint=project.diskFingerprint();authoringNote="Native primitive authoring; generated fallback atlas.";sourceTextureBytes=0;
+            path=document;sourceCapture=null;gltfSource=null;paintRecovery=null;paintRecoveryStatus.setText("");reviewedSourceFingerprint=project.diskFingerprint();authoringNote="Native primitive authoring; generated fallback atlas.";sourceTextureBytes=0;
             vertexId.setValue(0L);selectVertex();refreshMeshControls();pathLabel.setText(document.getFileName()+" | native authoring");
             if(slider.getValue()!=0)slider.setValue(0);else recalculate();
         }catch(IOException|RuntimeException failure){details.append("\nNEW MESH FAILED: "+rootMessage(failure));}
@@ -681,10 +688,42 @@ public final class AssetImportDialog {
     }
     private void meshChanged(){
         clearModelingPreview();
+        boolean previouslyPainted=workingObservation!=null && workingObservation.snapshot().materials().stream()
+            .anyMatch(m->m.paintedTileCount()>0);
         var selected=selectedVertices;workingObservation=topologyProject.observe(workingObservation);source=workingObservation.mesh();selectVertex();
         if(!selected.isEmpty()){var ids=new java.util.HashSet<Long>();for(var v:topologyProject.snapshot().vertices())if(selected.contains(v.id()))ids.add(v.id());selectedVertices=java.util.Set.copyOf(ids);}
         refreshMeshControls();
+        checkpointPaint(previouslyPainted);
         if(slider.getValue()!=0)slider.setValue(0);else recalculate();
+    }
+    private void checkpointPaint(boolean previouslyPainted){
+        if(paintRecovery==null || !paintRecovery.owns(topologyProject)){
+            if(!previouslyPainted && workingObservation.snapshot().materials().stream().noneMatch(m->m.paintedTileCount()>0))return;
+            var project=topologyProject;
+            paintRecovery=new EditorPaintRecovery(project,result->SwingUtilities.invokeLater(()->{
+                if(project!=topologyProject || paintRecovery==null || !paintRecovery.file().equals(result.file()))return;
+                paintRecoveryStatus.setText(result.error()==null?"Paint recovery saved · revision "+result.revision():
+                    "Paint recovery failed · "+result.error());
+                paintRecoveryStatus.setToolTipText(result.file().toString());
+            }));
+        }
+        paintRecovery.request(workingObservation,captureWorkspace());
+    }
+    private void choosePaintRecovery(){
+        if(busy)return;
+        if(hasUnsavedMeshChanges() && JOptionPane.showConfirmDialog(dialog,"Leave current edits and open a recovered copy?",
+            "Unsaved mesh",JOptionPane.YES_NO_OPTION)!=JOptionPane.YES_OPTION)return;
+        var chooser=new JFileChooser(EditorPaintRecovery.directory().toFile());
+        chooser.setDialogTitle("Open a paint recovery copy");
+        chooser.setFileHidingEnabled(false);
+        chooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Paint recovery document or pending journal","btop","journal"));
+        if(chooser.showOpenDialog(dialog)==JFileChooser.APPROVE_OPTION)loadPaintRecovery(chooser.getSelectedFile().toPath());
+    }
+    void loadPaintRecovery(Path selected){
+        String name=selected.getFileName().toString();
+        if(name.startsWith(".") && name.endsWith(".btop.editor.journal"))
+            selected=selected.resolveSibling(name.substring(1,name.length()-".editor.journal".length()));
+        loadSource(selected,true);
     }
     private static EditorMeshPipeline.Vertex glbCorner(GlbProps.Vertex v){
         var normal=v.nx()==0&&v.ny()==0&&v.nz()==0?null:new EditorMeshPipeline.Normal(v.nx(),v.ny(),v.nz());
@@ -706,6 +745,11 @@ public final class AssetImportDialog {
     }
     /** Same native import path for the human chooser and source-backed verification. */
     void loadSource(Path candidate){
+        boolean draft=EditorPaintRecovery.directory().equals(candidate.toAbsolutePath().normalize().getParent());
+        if(draft)loadPaintRecovery(candidate);else loadSource(candidate,false);
+    }
+    private void loadSource(Path candidate,boolean recovering){
+        var previousProject=topologyProject;
         normalAnchor=null;
         cameraGesture=null;cameraZoom=1;cameraPanX=0;cameraPanY=0;
         clearModelingPreview();
@@ -719,9 +763,12 @@ public final class AssetImportDialog {
         new SwingWorker<Loaded,Void>(){
             @Override protected Loaded doInBackground()throws Exception{
                 String extension=candidate.getFileName().toString().toLowerCase(Locale.ROOT);
+                if(recovering && !extension.endsWith(".btop"))throw new IOException("Choose a native paint recovery document");
                 if(extension.endsWith(".btop")){
                     sourceTextureBytes=0;
-                    var project=EditorTopologyProject.open(candidate);return new Loaded(project.mesh(),project,"",project.diskFingerprint());
+                    var project=recovering?EditorPaintRecovery.openCopy(candidate,Path.of(System.getProperty("user.home"),
+                        ".beckenburg","editor","topology",java.util.UUID.randomUUID()+".btop")):EditorTopologyProject.open(candidate);
+                    return new Loaded(project.mesh(),project,recovering?"Opened a separate copy of the paint recovery document.":"",project.diskFingerprint());
                 }
                 if(gltfModel(extension)){
                     boolean json=extension.endsWith(".gltf");
@@ -762,11 +809,18 @@ public final class AssetImportDialog {
                 try{
                     var loaded=get();sourceCapture=loaded.capture();gltfSource=loaded.gltf();source=loaded.mesh();topologyProject=loaded.project();workingObservation=topologyProject==null?null:topologyProject.observe();if(workingObservation!=null)source=workingObservation.mesh();authoringNote=loaded.note();reviewedSourceFingerprint=loaded.reviewedFingerprint();
                     meshHistory=topologyProject==null?null:new EditorHistory<>(topologyProject,60);
-                    path=candidate;vertexId.setValue(topologyProject==null||topologyProject.snapshot().vertices().isEmpty()?0L:topologyProject.snapshot().vertices().get(0).id());
+                    paintRecovery=null;paintRecoveryStatus.setText("");path=recovering?topologyProject.documentPath():candidate;vertexId.setValue(topologyProject==null||topologyProject.snapshot().vertices().isEmpty()?0L:topologyProject.snapshot().vertices().get(0).id());
                     selectVertex();refreshMeshControls();slider.setValue(0);
                     pathLabel.setText(candidate.getFileName()+" | "+source.triangles().size()+" source triangles");
                     if(topologyProject!=null && topologyProject.savedWorkspace()!=null)restoreWorkspace(topologyProject.savedWorkspace());else recalculate();
                 }catch(Exception e){
+                    if(recovering && previousProject!=null && previousProject==topologyProject){
+                        refreshMeshControls();updatePublishAvailability();
+                        pathLabel.setText(path==null?"Model Editor":path.getFileName().toString());
+                        paintRecoveryStatus.setText("Recovery refused · "+rootMessage(e));
+                        details.append("\nPAINT RECOVERY REFUSED: "+rootMessage(e));
+                        return;
+                    }
                     source=null;result=null;path=null;sourceCapture=null;gltfSource=null;topologyProject=null;workingObservation=null;meshHistory=null;refreshMeshControls();apply.setEnabled(false);
                     details.setText("IMPORT ERROR: "+rootMessage(e));
                     pathLabel.setText("Unable to read "+candidate.getFileName());

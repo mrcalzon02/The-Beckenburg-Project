@@ -734,6 +734,9 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         return snapshotBytes(savedWorkspace());
     }
     private byte[] snapshotBytes(EditorModelWorkspace workspace)throws IOException{
+        return snapshotBytes(state,workspace);
+    }
+    static byte[] snapshotBytes(State state,EditorModelWorkspace workspace)throws IOException{
         var buffer=new ByteArrayOutputStream();var bounded=new FilterOutputStream(buffer){
             int count;
             private void reserve(int length)throws IOException{if(length<0||length>EditorDocumentStore.MAX_BYTES-count)throw new IOException("Topology output exceeds byte budget");count+=length;}
