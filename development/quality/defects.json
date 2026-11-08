@@ -4390,6 +4390,17 @@
       "action": "Fifteen authored envelopes now have physical0.16m closed slabs, exact stair cutouts and84new native-grounded bearing parts. Quarter-metre coverage independently proves24796newly supported samples,11564retained source top samples; full terrain/guard/frame and gameplay acceptance remain open.",
       "evidence": "development/levels/rebuild/deck-fit-pass/verification/; tools/build_roster_decks.py; tools/check_roster_decks.py",
       "older_maps": "All29roster decisions explicit; other24 sources retained individually, no unaudited older-map acceptance. Preserve true basement holes,40-space envelope, shared authored coordinates and canonical van contract."
+    },
+    {
+      "id": "DEV-407",
+      "title": "Independent deck audit misclassifies tiny closed plates and shared top boundaries",
+      "status": "CHECKER FIX VERIFIED: translated double-precision volume and paired interior edge probes",
+      "affected": "Offline physical exterior deck verification; no production collision tolerance change",
+      "symptom": "World-origin float32 tetrahedra gave a false negative volume of -2.1484990914661523e-05 for closed WLD11 exterior service plate81; quarter-metre grid rays on an exact diagonal seam hit both disjoint tops.",
+      "cause": "Cancellation in global-coordinate single-precision volume accumulation and treating shared polygon boundaries as interior overlap.",
+      "action": "Translate all tetrahedra to a local vertex and accumulate in Python double precision; retain the closed edge count and positive-volume requirement. For a shared top hit, probe both interiors at0.2mm offsets and reject actual overlapping interiors. Actual five-site export/contact/coverage checks pass; production body/support/depth tolerances untouched.",
+      "evidence": "tools/check_roster_decks.py; development/levels/rebuild/deck-fit-pass/verification/export-contact-coverage.json; independent-export.log",
+      "older_maps": "Retain prior independent map audit obligations. This is an audit numerical fix, not automatic terrain or map acceptance; rerun actual artifacts per site."
     }
   ],
   "audit_categories": [

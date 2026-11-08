@@ -1,0 +1,328 @@
+{
+  "observed_utc": "2026-11-08T07:13:24.049437+00:00",
+  "source_checkpoint": "790b3cc4a9ac4fef6ad66bc54c4f6f22ece6a93d",
+  "remote_head_verified": "ebeab1105a7fa7baae327453d0b75ba85395ba70",
+  "remote_tree_sha": "89e9a9963eeb443118e23decdc4a93160ee03ffe",
+  "method": "Complete non-truncated GitHub recursive tree compared to exact local Git tree for union of five-site deck source and checkpoint-binding changed paths",
+  "checkpoints": [
+    {
+      "commit": "790b3cc4a9ac4fef6ad66bc54c4f6f22ece6a93d",
+      "changed_files": 74
+    },
+    {
+      "commit": "ebeab1105a7fa7baae327453d0b75ba85395ba70",
+      "changed_files": 15
+    }
+  ],
+  "verified_file_count": 74,
+  "verified_blobs": [
+    {
+      "path": ".gitattributes",
+      "sha": "c1f2f8c4887a994c4e698f343901c6e1062e4d49"
+    },
+    {
+      "path": ".gitignore",
+      "sha": "23dca26bc14deca68d8056fdfb86944b719abd2a"
+    },
+    {
+      "path": "ASSET_LIBRARY.md",
+      "sha": "c6578ec94b90f38eec146c0a71fee4c268393b02"
+    },
+    {
+      "path": "beckenburg-development-gallery.html",
+      "sha": "c62552260c2c4d67b1112d10ee8317da0fa019a4"
+    },
+    {
+      "path": "development/RECOVERY_PLAN_2026-10-25.md",
+      "sha": "22a6053f5546e6486c8e71d95c44d265ead1f5b8"
+    },
+    {
+      "path": "development/assets/asset-library-index.json",
+      "sha": "e587e2a1985cf13f9331712d83293276e2024eca"
+    },
+    {
+      "path": "development/gallery/index.json",
+      "sha": "cd417f41b6d168dc3defd65352b1beefb4793d56"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/deck-sheet-01.png",
+      "sha": "c3cc03034f17b89869344f74e85c838ceebf1f2c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/deck-sheet-02.png",
+      "sha": "11200a2b716c6287e631486e55e5d4148b4d6515"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/deck-sheet-03.png",
+      "sha": "39d5ddfd14193e114f5e51facbbc5d4a3c4a67fd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-06-deck-side.png",
+      "sha": "653472a6a4538dc873720fe07dd899f50f973221"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-06-overview.png",
+      "sha": "a6841e6b70a1f5eb77ffd1b2916e0e4a617bf641"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-11-deck-side.png",
+      "sha": "05cb94f2029181b85e125ba5a3f8fea47de28a35"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-11-overview.png",
+      "sha": "4ac5a80c15b8e6c11c443813d94a727daac3ae86"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-14-deck-side.png",
+      "sha": "c74e1b8b49e1cab63dd11774ab4ae1a98d8616ae"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-14-overview.png",
+      "sha": "6ea28b511cb79ba5987d10cc5994a006d4190a39"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-15-deck-side.png",
+      "sha": "abcf86ff1f786268133fd20ef98bfaee1aa54259"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-15-overview.png",
+      "sha": "03255d3c121da786755d5cc8c266a0a14a23e736"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-16-deck-side.png",
+      "sha": "7b34f3be3616ff815b96e1e8ec918f8c86d7bae6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/deck-fit-batch/wld-16-overview.png",
+      "sha": "afa9ad4a8772c5b9568d4f56fa59197de291e0cf"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/README.md",
+      "sha": "6c6cd97c92ce3387a9355521791808c7fb739b15"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/deck-policies.json",
+      "sha": "dbf2c9cc6072903d1482d47eac321ec09af09719"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/roster.json",
+      "sha": "dde6860ac560467f791d6d7df2051c1adc11bc83"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/verification/complete-route-sweeps.tsv",
+      "sha": "c83dca8b98513b6e9caf1e51fa5b922ec9fac68e"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/verification/export-contact-coverage.json",
+      "sha": "2b44f603ea4273d764a9e3d3b9f6f3c6c88016c1"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/verification/failure-contacts.tsv",
+      "sha": "55bf596888aca0488fd68d137f9a07aac8c108fe"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/verification/flat-movement.log",
+      "sha": "c24738fed936a142357cf93a2783343725a4c3b6"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/verification/flight-sweeps.tsv",
+      "sha": "dbe3c86886e3a6f2461afd8f0929be293672cd62"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/verification/generation.log",
+      "sha": "222c654c7941ea34d8f5348c6732a6d533205e1d"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/verification/independent-export.log",
+      "sha": "567a7c498b8524ab188a4534d5b43d6c89a12434"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/verification/native-route-fit.json",
+      "sha": "5c7d97059d604eda929b9bedfbe4474e3bb9c92a"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/verification/native-route-probes.tsv",
+      "sha": "8c5903f6479faf21b57109ea5065d047c63fd56d"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/verification/rejected-boolean-pilot.log",
+      "sha": "3e57d4add2b37058cfb530030b0375949ce7d5a5"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/verification/rejected-native-collinear.log",
+      "sha": "75cc3d5614932d32ef0f8a8bd735c0e9d7386924"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/verification/stair-movement.json",
+      "sha": "f1cc2bb233b1cc3f0fe6b086ca527608776e2405"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/verification/stair-movement.log",
+      "sha": "ae3a2f33a08439e9537e70eb17ec64664169fdf9"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/verification/tool-source-hashes.json",
+      "sha": "3c2b55f1631c3cdded60707aab5f2405bbf9fb9c"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/verification/visual-review.json",
+      "sha": "498838cf6a76e808de79c3d5f0aa2ed80ee6e8c9"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/wld-06/NEXT.md",
+      "sha": "f5de6dc4eeebdd3f94bd33d0225d9d1c711ce8f9"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/wld-06/construction.json",
+      "sha": "d51910fa731d962ad140eb5a8121663e691063c6"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/wld-06/deck-terrain.blend",
+      "sha": "07a3b742e4978651839bfcf1fde51ca340199fc1"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/wld-06/deck-terrain.glb",
+      "sha": "0e62839ec4c319fde8eef3fce1dfc16f133921e7"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/wld-06/deck-terrain.hcs2",
+      "sha": "0e3ca4810ce4db5f6c1f385c5e3bbb40f1fd4edd"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/wld-11/NEXT.md",
+      "sha": "a474556221ad03e58a73d820022683360341d38f"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/wld-11/construction.json",
+      "sha": "b5d3844f5af3d47eadab22383b5003b35c44ded2"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/wld-11/deck-terrain.blend",
+      "sha": "6c8329108b9b06034b2acead876e50acc591e34e"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/wld-11/deck-terrain.glb",
+      "sha": "ee53075116c4a4e6222a78c664f9ce8014066127"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/wld-11/deck-terrain.hcs2",
+      "sha": "8ab8f031f0f2fb03e803061eaa583beb8134dec0"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/wld-14/NEXT.md",
+      "sha": "0380425bac9a33d498bac52bdaa42350c3d0a6e4"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/wld-14/construction.json",
+      "sha": "8696d60c42a85720cd46f05d82520d8241d9520f"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/wld-14/deck-terrain.blend",
+      "sha": "85386fb144b06ddb1cd9ca987dc5d33299f8d221"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/wld-14/deck-terrain.glb",
+      "sha": "6092abcacd6e30fb0b67e06a01a5cc87dc5bc739"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/wld-14/deck-terrain.hcs2",
+      "sha": "5216bb9c9e8fe357fb377a880a02518789b5c9b8"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/wld-15/NEXT.md",
+      "sha": "3f98fa1f16e95f8732fdea0b4eca4dde0e124a02"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/wld-15/construction.json",
+      "sha": "dc8575c53183c4eb974bc6a4a27ca98256a63e32"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/wld-15/deck-terrain.blend",
+      "sha": "252063c505c5fcb9c8ea85780b5b7ed3890c63bb"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/wld-15/deck-terrain.glb",
+      "sha": "14383dd11e444d1dcf809a1dcaeb23859cff03c3"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/wld-15/deck-terrain.hcs2",
+      "sha": "e867249ac9198f2ba6e9843daa62ac3e3b73b6a7"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/wld-16/NEXT.md",
+      "sha": "016bc5e8a9767fb617524a9306f1a728e9ab5315"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/wld-16/construction.json",
+      "sha": "9370263098ee0868162d96b4b3143275c175d77c"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/wld-16/deck-terrain.blend",
+      "sha": "5fb608423e6d8098d59a767bbb6dd19ef4af9824"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/wld-16/deck-terrain.glb",
+      "sha": "8590d20c99083df4ac5f4ab3a48608b391a1db20"
+    },
+    {
+      "path": "development/levels/rebuild/deck-fit-pass/wld-16/deck-terrain.hcs2",
+      "sha": "56d0b10caa57058be9134a40d7b28c8f47aba1f6"
+    },
+    {
+      "path": "development/levels/rebuild/stage-register.json",
+      "sha": "c01eb41a19eb9476ded53ee85b9ca2371c85e1f9"
+    },
+    {
+      "path": "development/quality/DEFECT_LEDGER.md",
+      "sha": "969c0a19658e3d3a332ef960df2d6f4751c29f38"
+    },
+    {
+      "path": "development/quality/defects.json",
+      "sha": "8abcccf60913450e29dc1187f290234b7ec69d0c"
+    },
+    {
+      "path": "tools/audit_macroterrain_fit.py",
+      "sha": "794a12a2148abfc504449bacf222496e91bb310d"
+    },
+    {
+      "path": "tools/audit_roster_stairs.py",
+      "sha": "4dbce6badb1f29516573220be9e7b391f592b384"
+    },
+    {
+      "path": "tools/build_development_gallery.py",
+      "sha": "38e85137f1e1c1837c09d547772b1f583f82be27"
+    },
+    {
+      "path": "tools/build_roster_decks.py",
+      "sha": "275e86b8c8e65399316bb2761d228be2b661c32f"
+    },
+    {
+      "path": "tools/build_roster_foundations.py",
+      "sha": "1a6abba7144523b68333f18157b725198670ee7c"
+    },
+    {
+      "path": "tools/check_macroterrain_exports.py",
+      "sha": "a35ca3b8ca1b762c6f159ae4a5ac9a860d6d03c8"
+    },
+    {
+      "path": "tools/check_roster_decks.py",
+      "sha": "8dd95e61fc7a07150b08de077d937132a13e28ab"
+    },
+    {
+      "path": "tools/index_staged_map_models.py",
+      "sha": "7b23b096c4f5d5f37537bc3beec899d2dc0c76e5"
+    }
+  ],
+  "gallery_observations": [
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
+      "status": 200,
+      "sha256": "f3113929a9810b2793fd9dc20ef25d8744fb54eb6734eb885cf6cc55f2d3fd39"
+    },
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/development/levels/rebuild/captures/deck-fit-batch/deck-sheet-01.png",
+      "status": 404
+    }
+  ],
+  "limitation": "Remote source delivery only; new gallery image deployment pending accepted integration. No gameplay or hardware acceptance inferred."
+}

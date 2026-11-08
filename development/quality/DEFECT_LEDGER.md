@@ -5596,6 +5596,20 @@ Evidence and verification: development/levels/rebuild/deck-fit-pass/verification
 
 Older-map obligation: All29roster decisions explicit; other24 sources retained individually, no unaudited older-map acceptance. Preserve true basement holes,40-space envelope, shared authored coordinates and canonical van contract.
 
+### DEV-407 — Independent deck audit misclassifies tiny closed plates and shared top boundaries
+
+**Status:** CHECKER FIX VERIFIED: translated double-precision volume and paired interior edge probes · **Affected:** Offline physical exterior deck verification; no production collision tolerance change
+
+World-origin float32 tetrahedra gave a false negative volume of -2.1484990914661523e-05 for closed WLD11 exterior service plate81; quarter-metre grid rays on an exact diagonal seam hit both disjoint tops.
+
+Cause / uncertainty: Cancellation in global-coordinate single-precision volume accumulation and treating shared polygon boundaries as interior overlap.
+
+Fix / next action: Translate all tetrahedra to a local vertex and accumulate in Python double precision; retain the closed edge count and positive-volume requirement. For a shared top hit, probe both interiors at0.2mm offsets and reject actual overlapping interiors. Actual five-site export/contact/coverage checks pass; production body/support/depth tolerances untouched.
+
+Evidence and verification: tools/check_roster_decks.py; development/levels/rebuild/deck-fit-pass/verification/export-contact-coverage.json; independent-export.log
+
+Older-map obligation: Retain prior independent map audit obligations. This is an audit numerical fix, not automatic terrain or map acceptance; rerun actual artifacts per site.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
