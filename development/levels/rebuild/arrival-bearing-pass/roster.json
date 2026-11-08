@@ -1,0 +1,499 @@
+{
+  "status": "BROAD_ARRIVAL_BEARING_SOURCE_PASS_NOT_MAP_ACCEPTANCE",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "decision": "BUILD_ATTACHED_END_BEARING",
+      "source": "development/levels/rebuild/flat-circulation-pass/academy/construction.json",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/academy/construction.json",
+      "parts": 1,
+      "triangles": 12
+    },
+    {
+      "id": "ASYLUM",
+      "decision": "BUILD_ATTACHED_END_BEARING",
+      "source": "development/levels/rebuild/flat-circulation-pass/asylum/construction.json",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/asylum/construction.json",
+      "parts": 1,
+      "triangles": 12
+    },
+    {
+      "id": "CHURCH",
+      "decision": "BUILD_ATTACHED_END_BEARING",
+      "source": "development/levels/rebuild/flat-circulation-pass/church/construction.json",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/church/construction.json",
+      "parts": 1,
+      "triangles": 12
+    },
+    {
+      "id": "COLLEGE",
+      "decision": "BUILD_ATTACHED_END_BEARING",
+      "source": "development/levels/rebuild/flat-circulation-pass/college/construction.json",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/college/construction.json",
+      "parts": 1,
+      "triangles": 12
+    },
+    {
+      "id": "FARMHOUSE",
+      "decision": "BUILD_ATTACHED_END_BEARING",
+      "source": "development/levels/rebuild/flat-circulation-pass/farmhouse/construction.json",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/farmhouse/construction.json",
+      "parts": 1,
+      "triangles": 12
+    },
+    {
+      "id": "MANSION",
+      "decision": "BUILD_ATTACHED_END_BEARING",
+      "source": "development/levels/rebuild/flat-circulation-pass/mansion/construction.json",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/mansion/construction.json",
+      "parts": 1,
+      "triangles": 12
+    },
+    {
+      "id": "PRISON",
+      "decision": "BUILD_ATTACHED_END_BEARING",
+      "source": "development/levels/rebuild/flat-circulation-pass/prison/construction.json",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/prison/construction.json",
+      "parts": 1,
+      "triangles": 12
+    },
+    {
+      "id": "SCHOOL",
+      "decision": "BUILD_ATTACHED_END_BEARING",
+      "source": "development/levels/rebuild/flat-circulation-pass/school/construction.json",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/school/construction.json",
+      "parts": 1,
+      "triangles": 12
+    },
+    {
+      "id": "WLD-03",
+      "decision": "BUILD_ATTACHED_END_BEARING",
+      "source": "development/levels/rebuild/flat-circulation-pass/wld-03/construction.json",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-03/construction.json",
+      "parts": 1,
+      "triangles": 12
+    },
+    {
+      "id": "WLD-04",
+      "decision": "BUILD_ATTACHED_END_BEARING",
+      "source": "development/levels/rebuild/flat-circulation-pass/wld-04/construction.json",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-04/construction.json",
+      "parts": 1,
+      "triangles": 12
+    },
+    {
+      "id": "WLD-05",
+      "decision": "BUILD_ATTACHED_END_BEARING",
+      "source": "development/levels/rebuild/flat-circulation-pass/wld-05/construction.json",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-05/construction.json",
+      "parts": 1,
+      "triangles": 12
+    },
+    {
+      "id": "WLD-06",
+      "decision": "BUILD_ATTACHED_END_BEARING",
+      "source": "development/levels/rebuild/flat-circulation-pass/wld-06/construction.json",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-06/construction.json",
+      "parts": 1,
+      "triangles": 12
+    },
+    {
+      "id": "WLD-07",
+      "decision": "RETAIN_EXISTING_SUPPORTED_ARRIVAL",
+      "source": "development/levels/rebuild/flat-circulation-pass/wld-07/construction.json",
+      "reason": "Current strict production footprint already passes; no redundant slab"
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "decision": "RETAIN_EXISTING_SUPPORTED_ARRIVAL",
+      "source": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/construction.json",
+      "reason": "Current strict production footprint already passes; no redundant slab"
+    },
+    {
+      "id": "WLD-08",
+      "decision": "BUILD_ATTACHED_END_BEARING",
+      "source": "development/levels/rebuild/flat-circulation-pass/wld-08/construction.json",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-08/construction.json",
+      "parts": 1,
+      "triangles": 12
+    },
+    {
+      "id": "WLD-09",
+      "decision": "REJECT_SLAB_ONLY_TERRAIN_INTRUSION_REQUIRES_REDESIGN",
+      "source": "development/levels/rebuild/flat-circulation-pass/wld-09/construction.json",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/rejected/terrain-blocked-wld09/construction.json",
+      "parts": 1,
+      "triangles": 12,
+      "reason": "Terrain intersects body at original anchor; source unchanged pending actual saved terrain/approach redesign"
+    },
+    {
+      "id": "WLD-10",
+      "decision": "BUILD_ATTACHED_END_BEARING",
+      "source": "development/levels/rebuild/flat-circulation-pass/wld-10/construction.json",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-10/construction.json",
+      "parts": 1,
+      "triangles": 12
+    },
+    {
+      "id": "WLD-11",
+      "decision": "BUILD_ATTACHED_END_BEARING",
+      "source": "development/levels/rebuild/flat-circulation-pass/wld-11/construction.json",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-11/construction.json",
+      "parts": 1,
+      "triangles": 12
+    },
+    {
+      "id": "WLD-12",
+      "decision": "BUILD_ATTACHED_END_BEARING",
+      "source": "development/levels/rebuild/flat-circulation-pass/wld-12/construction.json",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-12/construction.json",
+      "parts": 1,
+      "triangles": 12
+    },
+    {
+      "id": "WLD-13",
+      "decision": "BUILD_ATTACHED_END_BEARING",
+      "source": "development/levels/rebuild/flat-circulation-pass/wld-13/construction.json",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-13/construction.json",
+      "parts": 1,
+      "triangles": 12
+    },
+    {
+      "id": "WLD-14",
+      "decision": "BUILD_ATTACHED_END_BEARING",
+      "source": "development/levels/rebuild/flat-circulation-pass/wld-14/construction.json",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-14/construction.json",
+      "parts": 1,
+      "triangles": 12
+    },
+    {
+      "id": "WLD-15",
+      "decision": "RETAIN_EXISTING_SUPPORTED_ARRIVAL",
+      "source": "development/levels/rebuild/flat-circulation-pass/wld-15/construction.json",
+      "reason": "Current strict production footprint already passes; no redundant slab"
+    },
+    {
+      "id": "WLD-16",
+      "decision": "BUILD_ATTACHED_END_BEARING",
+      "source": "development/levels/rebuild/flat-circulation-pass/wld-16/construction.json",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-16/construction.json",
+      "parts": 1,
+      "triangles": 12
+    },
+    {
+      "id": "WLD-17",
+      "decision": "BUILD_ATTACHED_END_BEARING",
+      "source": "development/levels/rebuild/flat-circulation-pass/wld-17/construction.json",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-17/construction.json",
+      "parts": 1,
+      "triangles": 12
+    },
+    {
+      "id": "WLD-18",
+      "decision": "BUILD_ATTACHED_END_BEARING",
+      "source": "development/levels/rebuild/flat-circulation-pass/wld-18/construction.json",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-18/construction.json",
+      "parts": 1,
+      "triangles": 12
+    },
+    {
+      "id": "CASTLE",
+      "decision": "RETAIN_MATURE_SOURCE_INDIVIDUAL_ACCEPTANCE_OPEN",
+      "reason": "Not a finite rough path endpoint; no inferred correction"
+    },
+    {
+      "id": "HOUSE",
+      "decision": "RETAIN_MATURE_SOURCE_INDIVIDUAL_ACCEPTANCE_OPEN",
+      "reason": "Not a finite rough path endpoint; no inferred correction"
+    },
+    {
+      "id": "WLD-01",
+      "decision": "RETAIN_MATURE_SOURCE_INDIVIDUAL_ACCEPTANCE_OPEN",
+      "reason": "Not a finite rough path endpoint; no inferred correction"
+    },
+    {
+      "id": "WLD-02",
+      "decision": "RETAIN_MATURE_SOURCE_INDIVIDUAL_ACCEPTANCE_OPEN",
+      "reason": "Not a finite rough path endpoint; no inferred correction"
+    }
+  ],
+  "generator_sha256": "7f4a5b7532532d27ca0a1ad9c9548f50469d5e278d5836dff25c4239ba79265f",
+  "active_sources": [
+    {
+      "id": "ACADEMY",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/academy/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/academy/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/academy/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/academy/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/academy/supported-arrival.blend",
+      "native_sha256": "bc6dfb54d2f18ff364a8d336400117a98b90da3c0a2c7d3c3cf3cf28d43732c1",
+      "glb_sha256": "0d6c919e196d88efe872824cc56d77980547ae74fb515382238be19ba3677243"
+    },
+    {
+      "id": "ASYLUM",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/asylum/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/asylum/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.blend",
+      "native_sha256": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f",
+      "glb_sha256": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc"
+    },
+    {
+      "id": "CHURCH",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/church/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/church/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.blend",
+      "native_sha256": "749e68015c83f9f0a6533014bfd7dbf50d0a2aa8637a5b0d8d370e5aff34631b",
+      "glb_sha256": "6c84ab22e599b8ed9e00b04d7ab52ec0f08955b267023086a0cc64f37f54eee7"
+    },
+    {
+      "id": "COLLEGE",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/college/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/college/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.blend",
+      "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+      "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce"
+    },
+    {
+      "id": "FARMHOUSE",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/farmhouse/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/farmhouse/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/farmhouse/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/farmhouse/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/farmhouse/supported-arrival.blend",
+      "native_sha256": "f668b6cbb16efdb3958f5fb23ae227442bdf33a04051e6bb5868e1e53292013d",
+      "glb_sha256": "388ac64c2d6dfb1438d877c072d35b187d11a27eff2087b3ee1d87f6df4874fe"
+    },
+    {
+      "id": "MANSION",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/mansion/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/mansion/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/mansion/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/mansion/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/mansion/supported-arrival.blend",
+      "native_sha256": "fdd18c6a1aa8e7e4f5807e5c818a44902f49d0f04652e5792f4b6b225ec23522",
+      "glb_sha256": "8cc08dcd125fc1300b07fdbfd7d4e295ed9af4f6a8c17fd2fad845c082c4d9cd"
+    },
+    {
+      "id": "PRISON",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/prison/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/prison/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.blend",
+      "native_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a",
+      "glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665"
+    },
+    {
+      "id": "SCHOOL",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/school/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/school/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/school/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/school/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/school/supported-arrival.blend",
+      "native_sha256": "2cbdbebb0f876c6a5221e0dead0a7c92d68c8f33ba6a729552e0e2b3ee5692f5",
+      "glb_sha256": "d711e5effcaa0d46935d7478965b84e26741cbd456668ccc0fef7d144a71ca81"
+    },
+    {
+      "id": "WLD-03",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-03/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/wld-03/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.blend",
+      "native_sha256": "53bb18456bb62ce280f2c98518216773c990ffcf25f91b90e89047d22394755d",
+      "glb_sha256": "02364175c5e663eebbba54f1badcbaeff2d4740e2d33a66b03a1e7aa58879827"
+    },
+    {
+      "id": "WLD-04",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-04/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/wld-04/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/wld-04/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/wld-04/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/wld-04/supported-arrival.blend",
+      "native_sha256": "48bf36601e3e525f3a7b6e12599d9ca08f71b7fed1414b0835113463923f4be0",
+      "glb_sha256": "04bb6cba8e8f472dc6affaac3cf0e8c35b7b80d12971f7b248dcf8e126fe4ab4"
+    },
+    {
+      "id": "WLD-05",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-05/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/wld-05/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/wld-05/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/wld-05/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/wld-05/supported-arrival.blend",
+      "native_sha256": "9d82c6c1a087a9074e57dffef7bc034f5d3386aa960914327760f41ce434c1e2",
+      "glb_sha256": "f7ffd6d8cef1cfe3b114b33ceeb5308946690c1992288af0e3dca6e1c2c2ca5c"
+    },
+    {
+      "id": "WLD-06",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-06/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/wld-06/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/wld-06/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/wld-06/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/wld-06/supported-arrival.blend",
+      "native_sha256": "dbd5964da3ad901105f365a349d7f26a65d4a326f27f6a280ba245c56d6c6ab6",
+      "glb_sha256": "0524653897558f68984fae679087888b6d7b964cae99760444ee965e9e138bd8"
+    },
+    {
+      "id": "WLD-07",
+      "construction": "development/levels/rebuild/flat-circulation-pass/wld-07/construction.json",
+      "layout": "development/levels/rebuild/flat-circulation-pass/wld-07/authored-layout.json",
+      "glb": "development/levels/rebuild/flat-circulation-pass/wld-07/open-circulation.glb",
+      "native": "development/levels/rebuild/flat-circulation-pass/wld-07/open-circulation.hcs2",
+      "blend": "development/levels/rebuild/flat-circulation-pass/wld-07/open-circulation.blend",
+      "native_sha256": "dbcbac7db2c6edae6eab154b2c2e49e281b85dc473597eedcd641380bb44488f",
+      "glb_sha256": "c0835f2a8da1d2d5fb74397a5870087cbee1bf353e143c7a272a90d3f1ac2fc5"
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "construction": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/construction.json",
+      "layout": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/authored-layout.json",
+      "glb": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/open-circulation.glb",
+      "native": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/open-circulation.hcs2",
+      "blend": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/open-circulation.blend",
+      "native_sha256": "4dfaf5f74664ed78e970f91e5faf796e9c8293a92eb2edb03e1f5bd7e97c9b82",
+      "glb_sha256": "16139753b6b42685b50cea0d9471d19d0565aa59a68f4b3a6efae3dd7e8568b9"
+    },
+    {
+      "id": "WLD-08",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-08/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/wld-08/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/wld-08/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/wld-08/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/wld-08/supported-arrival.blend",
+      "native_sha256": "705681e346e1447d24dff4ea01a9130945d4a230934aa770f99ee7efe051b25e",
+      "glb_sha256": "8d8ed465a39e9310a2c5908377338efa62d55ac9a026842910cd446a2576d45f"
+    },
+    {
+      "id": "WLD-09",
+      "construction": "development/levels/rebuild/flat-circulation-pass/wld-09/construction.json",
+      "layout": "development/levels/rebuild/flat-circulation-pass/wld-09/authored-layout.json",
+      "glb": "development/levels/rebuild/flat-circulation-pass/wld-09/open-circulation.glb",
+      "native": "development/levels/rebuild/flat-circulation-pass/wld-09/open-circulation.hcs2",
+      "blend": "development/levels/rebuild/flat-circulation-pass/wld-09/open-circulation.blend",
+      "native_sha256": "f9a54f267327e12fe4d887ac4f32404d3e3e3932572996b607d03730d30806d9",
+      "glb_sha256": "dfa0dc6a6c0b6d444848aa116d5114f34574274e1ba8fe468ebfacc03ad40408"
+    },
+    {
+      "id": "WLD-10",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-10/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/wld-10/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/wld-10/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/wld-10/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/wld-10/supported-arrival.blend",
+      "native_sha256": "4993026e84e4b9d1aca2f15dcec72e7e0ca7ad9a594e3bff5ec8cb466f393dc0",
+      "glb_sha256": "ac976befb5199a73d530e329b32d61a103f84d47c6629faaab9c6d80f3dc7e36"
+    },
+    {
+      "id": "WLD-11",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-11/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/wld-11/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/wld-11/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/wld-11/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/wld-11/supported-arrival.blend",
+      "native_sha256": "d47d1abfd8f43d2a3606e966ee1e390c472946edd45abc423d1006844bfa5703",
+      "glb_sha256": "761e577ba4f38cc8bb87a577e816f019848c6f57e07a774e833846a7f717fb1b"
+    },
+    {
+      "id": "WLD-12",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-12/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/wld-12/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.blend",
+      "native_sha256": "ae9152a762c3cbba562c2506a8eba2c56f50532139342bbb07ce65bc6f7ad796",
+      "glb_sha256": "6f07852dd643f4f634812581ed101dcfc50907b5978a20add3af0e7f8086ae7c"
+    },
+    {
+      "id": "WLD-13",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-13/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/wld-13/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/wld-13/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/wld-13/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/wld-13/supported-arrival.blend",
+      "native_sha256": "89e9da35994a7d6aa371d09f4ab40591090c6ff5efb56c338d124d5674daf457",
+      "glb_sha256": "710ccc729436a7522495bfd0092db38ec2c52c9dddb091da1fde0ad4a412539a"
+    },
+    {
+      "id": "WLD-14",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-14/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/wld-14/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/wld-14/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/wld-14/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/wld-14/supported-arrival.blend",
+      "native_sha256": "9a54181977e940370c354c998a2d01231c3101868f479cf1113f0295b42cac51",
+      "glb_sha256": "8f2d47e899bad5871e8cd08893ca0c966ed08bc0a2b372621684e328fcee56fb"
+    },
+    {
+      "id": "WLD-15",
+      "construction": "development/levels/rebuild/flat-circulation-pass/wld-15/construction.json",
+      "layout": "development/levels/rebuild/flat-circulation-pass/wld-15/authored-layout.json",
+      "glb": "development/levels/rebuild/flat-circulation-pass/wld-15/open-circulation.glb",
+      "native": "development/levels/rebuild/flat-circulation-pass/wld-15/open-circulation.hcs2",
+      "blend": "development/levels/rebuild/flat-circulation-pass/wld-15/open-circulation.blend",
+      "native_sha256": "96fbab703fb380fbc79c08e2e4af90aabe5eb62c0c468856ba49321dfec437f8",
+      "glb_sha256": "0ff9378ee4178e923048299a562dd86b9fdab5ba462f814d18fa5d883829717b"
+    },
+    {
+      "id": "WLD-16",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-16/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/wld-16/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.blend",
+      "native_sha256": "7bee02548eb6d248fdac250cc4c71b5e33e3bcbb4a8501b08702d7bfc6f4e38d",
+      "glb_sha256": "ec67aa906397fd445590f1ffc71384a834fa68d793bef6c1288f3bcdc15f827c"
+    },
+    {
+      "id": "WLD-17",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-17/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/wld-17/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/wld-17/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/wld-17/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/wld-17/supported-arrival.blend",
+      "native_sha256": "ed9569eb45bb155244f065446c2db0d40401980218d6afb47bbdfe47c825796c",
+      "glb_sha256": "ba8c6a04d0ac39459d8dcc0edd536af70e3ce7133e4eb446eb1675a799abce97"
+    },
+    {
+      "id": "WLD-18",
+      "construction": "development/levels/rebuild/arrival-bearing-pass/wld-18/construction.json",
+      "layout": "development/levels/rebuild/arrival-bearing-pass/wld-18/authored-layout.json",
+      "glb": "development/levels/rebuild/arrival-bearing-pass/wld-18/supported-arrival.glb",
+      "native": "development/levels/rebuild/arrival-bearing-pass/wld-18/supported-arrival.hcs2",
+      "blend": "development/levels/rebuild/arrival-bearing-pass/wld-18/supported-arrival.blend",
+      "native_sha256": "3ca38ad737d20d6ec6cead7d75493d91ec43dc53f47af29a8d25ab5bbb5063d6",
+      "glb_sha256": "7bd52a27880d366df6d70eaf3653fb5aee8cea6dcd241bddcf2f870fef6ddb0c"
+    }
+  ],
+  "aggregate": {
+    "revised_sites": 21,
+    "new_closed_parts": 21,
+    "new_triangles": 252,
+    "source_candidates_retained": 4,
+    "mature_sources_retained": 4,
+    "source_arrival_anchors_recovered": 21,
+    "flat_links_before": 380,
+    "flat_links_after": 389,
+    "flat_links_total": 566,
+    "incomplete_flat_links": 177,
+    "current_strict_samples": 119775,
+    "current_strict_valid": 106355,
+    "current_strict_invalid": 13420,
+    "current_strict_recovered": 63,
+    "current_strict_new_invalid": 0,
+    "flights": 221,
+    "flights_pass_both_ways": 221,
+    "vertical_links": 84,
+    "vertical_links_pass_both_ways": 84,
+    "historical_body_samples": 110409,
+    "historical_body_before_valid": 102726,
+    "historical_body_after_valid": 102726,
+    "new_body_or_sweep_failures": 0,
+    "scope": "Scoped source pass. All29 packets retain individual landscape/structure/services/art/runtime/gameplay/network/hardware acceptance obligations."
+  }
+}

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 8494,
+  "count": 8545,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -62194,6 +62194,516 @@
       "height": 200,
       "bytes": 58658,
       "sha256": "70f98012e4dcc091a1ea54d23179f99ed42cccbf2cfbe8116ff1d47cc94a26e8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/academy-arrival-after.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/academy-arrival-after.png",
+      "title": "Academy arrival after",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 419849,
+      "sha256": "04e2fba9d70b9a26fd2225a223f5cb7961bc79553edab3354046daa151f18907"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/academy-arrival-before.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/academy-arrival-before.png",
+      "title": "Academy arrival before",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 417913,
+      "sha256": "6d947e683a4c4eaac0bf79048c6000fbbbbe0f07b8e3a5f91921c5e25fcb037e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/arrival-pilot-sheet.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/arrival-pilot-sheet.png",
+      "title": "Arrival pilot sheet",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 1000,
+      "height": 1620,
+      "bytes": 570777,
+      "sha256": "a2207c25ff78227c2e677aa5e05a5da0142a42274e11993c85b0d2944eb18cd2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/arrival-roster-sheet-1.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/arrival-roster-sheet-1.png",
+      "title": "Arrival roster sheet 1",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 1000,
+      "height": 1620,
+      "bytes": 558995,
+      "sha256": "f35dc109810a0fbf7da641f10a3b8d71ccbeda483a68239488b14d5ca2065020"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/arrival-roster-sheet-2.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/arrival-roster-sheet-2.png",
+      "title": "Arrival roster sheet 2",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 1000,
+      "height": 1620,
+      "bytes": 540139,
+      "sha256": "9ba5559ef8bf6c4a6c9dadfbdf475ee4677bf3d0baf5863920b17a6d982d2165"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/arrival-roster-sheet-3.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/arrival-roster-sheet-3.png",
+      "title": "Arrival roster sheet 3",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 1000,
+      "height": 1620,
+      "bytes": 586610,
+      "sha256": "13332f38ad43926ed83bb591d9f5539d2dd6e49a4b5dfcfc62b334bada943999"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/arrival-roster-sheet-4.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/arrival-roster-sheet-4.png",
+      "title": "Arrival roster sheet 4",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 1000,
+      "height": 1620,
+      "bytes": 574757,
+      "sha256": "b545b93ded502b3f44e7e38a98a57c2adf0f10c4fd8b379948037e4296926520"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/arrival-roster-sheet-5.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/arrival-roster-sheet-5.png",
+      "title": "Arrival roster sheet 5",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 1000,
+      "height": 1620,
+      "bytes": 606258,
+      "sha256": "e02f2a977949805af5fcafe347a5743e276028b46b8beee7d29e2f8eba4ee9c0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/arrival-roster-sheet-6.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/arrival-roster-sheet-6.png",
+      "title": "Arrival roster sheet 6",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 1000,
+      "height": 405,
+      "bytes": 153173,
+      "sha256": "dfced6032c37ecfe683ddfdcb24be99e90205dc66523dcc3b27959f6c0624c68"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/asylum-arrival-after.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/asylum-arrival-after.png",
+      "title": "Asylum arrival after",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 427644,
+      "sha256": "2a777ab4d74b75351af6334c8b39d58542ac05f8b26a8002f3882b8ad61941f6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/asylum-arrival-before.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/asylum-arrival-before.png",
+      "title": "Asylum arrival before",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 425919,
+      "sha256": "4339ae3149c2a9e4f6468c1a7d457a4e0b6b467863887201fbf82817d3e9bc10"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/church-arrival-after.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/church-arrival-after.png",
+      "title": "Church arrival after",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 430086,
+      "sha256": "322d8f76726fcf2a864f04c22af4a4d0d6dd00d9f11c76219cc24810e23e60a9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/church-arrival-before.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/church-arrival-before.png",
+      "title": "Church arrival before",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 428235,
+      "sha256": "11a1c257c4bbe34c94b4363e4921f1e775139cedec7260c5cb873aa561cdd907"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/college-arrival-after.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/college-arrival-after.png",
+      "title": "College arrival after",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 436738,
+      "sha256": "05c592a63571d0d82ac4074ee7fd2ed927579861666a4d4f9472c54910212284"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/college-arrival-before.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/college-arrival-before.png",
+      "title": "College arrival before",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 435394,
+      "sha256": "5e1c1b680659173c71f28b2216d53cb1abe88ec1553ddd59954b03d87b1c3a62"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/farmhouse-arrival-after.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/farmhouse-arrival-after.png",
+      "title": "Farmhouse arrival after",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 410456,
+      "sha256": "53ebcd952be7587b689b6fbe09519906eceee8484bba5bdc7a468c749a8c5a11"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/farmhouse-arrival-before.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/farmhouse-arrival-before.png",
+      "title": "Farmhouse arrival before",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 408211,
+      "sha256": "fba17eb5c34413631379eacb80e7ec1032796152334047e5bb7f6547a2d1acaf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/mansion-arrival-after.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/mansion-arrival-after.png",
+      "title": "Mansion arrival after",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 418816,
+      "sha256": "cc843570a3ac552fb5930f5f08cf31fc69f66467cece99e6da64da869bdc66f4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/mansion-arrival-before.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/mansion-arrival-before.png",
+      "title": "Mansion arrival before",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 416728,
+      "sha256": "0e1eafaa990ab041507a71dd4b1407c540bc24ecb7b76f6196ae2fc6b288f33c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/prison-arrival-after.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/prison-arrival-after.png",
+      "title": "Prison arrival after",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 425447,
+      "sha256": "a2931137e1cf24dee446d8c6265a31caa4e6daf0be7c6327d78764ce1c49faa2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/prison-arrival-before.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/prison-arrival-before.png",
+      "title": "Prison arrival before",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 423186,
+      "sha256": "ea574fecbaa7f832f59a4785251528cb136824228be884ece0cd9637c8799cb1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/rejected-terrain-wld09/wld-09-arrival-after.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/rejected-terrain-wld09/wld-09-arrival-after.png",
+      "title": "Wld 09 arrival after",
+      "kind": "Rejected native arrival bearing; terrain intrusion unresolved",
+      "width": 800,
+      "height": 600,
+      "bytes": 457211,
+      "sha256": "3dc3208f3e2bd5f17856d22b60642cd25ce06aecbd64a668345fe1284ef083fd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/rejected-terrain-wld09/wld-09-arrival-before.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/rejected-terrain-wld09/wld-09-arrival-before.png",
+      "title": "Wld 09 arrival before",
+      "kind": "Rejected native arrival bearing; terrain intrusion unresolved",
+      "width": 800,
+      "height": 600,
+      "bytes": 457211,
+      "sha256": "36eecbe9d362c73c0d3bda4aabbdb275445c7449c9a8ba361d67ed37fc9d6977"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/school-arrival-after.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/school-arrival-after.png",
+      "title": "School arrival after",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 428495,
+      "sha256": "d3a200d4425abde2e36e694b3825aa962925a686c25e2bca83e2c32db8bd4ce2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/school-arrival-before.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/school-arrival-before.png",
+      "title": "School arrival before",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 426147,
+      "sha256": "779d95e10a3fb7dd5d64c7d212a8174cddddd31e12cb7acf32122a3e177c4427"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-03-arrival-after.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-03-arrival-after.png",
+      "title": "Wld 03 arrival after",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 439896,
+      "sha256": "489bc3761ae2dbb1dd49d1e6c1123b6c12fe68da6e2cdaa5c214c279854fd732"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-03-arrival-before.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-03-arrival-before.png",
+      "title": "Wld 03 arrival before",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 438235,
+      "sha256": "5684fdef812625c82536020e42526f99abdc92a977ac1d23f3cba1d7910e343a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-04-arrival-after.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-04-arrival-after.png",
+      "title": "Wld 04 arrival after",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 439574,
+      "sha256": "452bc0029e066c849bbdeec03afb9904eb5be00b181fb8af81a55500de2e158c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-04-arrival-before.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-04-arrival-before.png",
+      "title": "Wld 04 arrival before",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 438054,
+      "sha256": "0d7922a9a6ba9350182325e9dfc137ed12d32de5821ff0a856f257bda083681a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-05-arrival-after.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-05-arrival-after.png",
+      "title": "Wld 05 arrival after",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 438973,
+      "sha256": "7d2a3ae43f8f96d40adb4846d5dfd7e5db59ee8e5aaefd64fd965fcaa8b21cd6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-05-arrival-before.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-05-arrival-before.png",
+      "title": "Wld 05 arrival before",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 437694,
+      "sha256": "ddbee52531599dcc410870911dae7011a40bc64df6b4bf3abc4e5f1c2c55492f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-06-arrival-after.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-06-arrival-after.png",
+      "title": "Wld 06 arrival after",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 439787,
+      "sha256": "e2757543d0dc20cb10841d6fe913c460c62088956040da21a5aec65aa25c72c6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-06-arrival-before.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-06-arrival-before.png",
+      "title": "Wld 06 arrival before",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 438066,
+      "sha256": "50fd7a8aacd479b4fca3638e98b87629ceb1d472824384ea314f576e2d68e43f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-08-arrival-after.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-08-arrival-after.png",
+      "title": "Wld 08 arrival after",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 434938,
+      "sha256": "6742632974948d13e600b1954fa57413c62955823b9d60a08ab830c06292ae4b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-08-arrival-before.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-08-arrival-before.png",
+      "title": "Wld 08 arrival before",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 432794,
+      "sha256": "a4242bd99b83558a52b0f52918a456496b50a65b08d5e0d15192680fcffeb419"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-10-arrival-after.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-10-arrival-after.png",
+      "title": "Wld 10 arrival after",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 424500,
+      "sha256": "268ad2add276bfcdbf8614aec1d792f5256d55ae32bdd2bab14f6306fb65b38e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-10-arrival-before.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-10-arrival-before.png",
+      "title": "Wld 10 arrival before",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 422208,
+      "sha256": "a9e2a6233a70a360ff487414ef1558891e61de8fe185942a9ceb9d179c1c3dcf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-11-arrival-after.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-11-arrival-after.png",
+      "title": "Wld 11 arrival after",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 457603,
+      "sha256": "2b54328c8f2229503411074a9fa5c9f2b6481c838b5dce08dd90bdd4dbac3ccf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-11-arrival-before.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-11-arrival-before.png",
+      "title": "Wld 11 arrival before",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 456487,
+      "sha256": "a7919b29581a58ef47d3abffc4db90673fd0ddfea1078faa8133b8930a687c03"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-12-arrival-after.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-12-arrival-after.png",
+      "title": "Wld 12 arrival after",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 439396,
+      "sha256": "3bddf4a1ccd845ebddb895ffc34946e4b103ab9e9090e12e7dbacb1c6d61523f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-12-arrival-before.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-12-arrival-before.png",
+      "title": "Wld 12 arrival before",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 438000,
+      "sha256": "907b79c660fd5da55c9d68bc30678eef895587863e5aba90ed068343551b00a3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-13-arrival-after.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-13-arrival-after.png",
+      "title": "Wld 13 arrival after",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 438789,
+      "sha256": "83d526bc2524a54156aac7cc3c3d731c8b347b82e1a664ba2c1ba8354bc8affa"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-13-arrival-before.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-13-arrival-before.png",
+      "title": "Wld 13 arrival before",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 437535,
+      "sha256": "2fb737ca8fea391188cdae701c527f3e59dd651f0926f417c15d88e878a92837"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-14-arrival-after.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-14-arrival-after.png",
+      "title": "Wld 14 arrival after",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 484759,
+      "sha256": "df5216d5ee75ec3e3085bd26ceae3078535933fd206280712d62c869c260fa1c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-14-arrival-before.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-14-arrival-before.png",
+      "title": "Wld 14 arrival before",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 484127,
+      "sha256": "aaa83b9d3197f3c45d2807ed00cc4d52f71bf179ef23c6559629d0978ed9c94b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-16-arrival-after.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-16-arrival-after.png",
+      "title": "Wld 16 arrival after",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 484704,
+      "sha256": "2a622cdc461253183b40268ba9d3e5676f2f9748a4080242b394a8d9e970c6d3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-16-arrival-before.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-16-arrival-before.png",
+      "title": "Wld 16 arrival before",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 484134,
+      "sha256": "90d8e9f3e68297a19efe8728f21351049740a80b2ddf25d19dbcfb28792b66c5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-17-arrival-after.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-17-arrival-after.png",
+      "title": "Wld 17 arrival after",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 488197,
+      "sha256": "47e950974b1e5596bf5a833f8effd29f47b2b80c4bf62be749fe13d2c174ed7b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-17-arrival-before.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-17-arrival-before.png",
+      "title": "Wld 17 arrival before",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 488832,
+      "sha256": "8ce2a63bf831a5403daf7dc6b7311e071c83c13cdedfa5814776a35e3b38312e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-18-arrival-after.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-18-arrival-after.png",
+      "title": "Wld 18 arrival after",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 484624,
+      "sha256": "63696ca0471feeb7e365a1fec482a2585fbf340a46dd4c312d5c218ee496d26f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-18-arrival-before.png",
+      "url": "development/levels/rebuild/captures/arrival-bearing-batch/wld-18-arrival-before.png",
+      "title": "Wld 18 arrival before",
+      "kind": "Native paired arrival end-bearing construction; no canonical van/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 484133,
+      "sha256": "3e9d47d380db2a9115b6e76b1b0820aa6c241e4ecc2bc0df3c9cc40b7e94e255"
     },
     {
       "path": "development/levels/rebuild/captures/atmosphere-all-levels/atmosphere-courtyard-sheet.png",

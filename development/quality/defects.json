@@ -4874,6 +4874,39 @@
       "action": "Freeze exact consumed input bytes inside the new hash-bound source package; preserve original layout files and all coordinates. Alias-aware builders and route audits load the byte-identical snapshots. Candidate before-layout bindings reference frozen copies, and original working/repository SHA values are recorded. No native/model/route geometry changes. All three movement comparisons and25source/native/editable reopens pass with unchanged counts. Actual geometry/image hashes remain identical to implementation49ad38e.",
       "evidence": "development/levels/rebuild/flat-circulation-pass/verification/source-layout-aliases.json; source-layouts; tools/audit_current_flat_routes.py; tools/audit_roster_stairs.py; tools/audit_macroterrain_fit.py",
       "older_maps": "Audit legacy byte-bound inputs individually across platforms; do not rewrite unrelated original layouts or infer all prior contracts fixed."
+    },
+    {
+      "id": "DEV-451",
+      "title": "Finite arrival path prisms end under standing anchors without full footprint support",
+      "status": "FIX VERIFIED FOR21SOURCE ANCHORS; OTHER ARRIVAL AND RUNTIME GATES OPEN",
+      "affected": "21 revised roster construction sources; WLD-09 explicitly rejected; three already-supported source arrivals and four mature maps retained individually",
+      "symptom": "Standing anchor is supported at its centre but the rear .22m footprint falls beyond the authored finite route slab.",
+      "cause": "Rough route prisms terminate exactly at the spawn/staging point, with no standing setback.",
+      "action": "Append a .35m closed terminal slab at the actual path end, using its full route width, measured12cm depth and original source material. Preserve all existing GLB/node/resource/native/world records and source IDs. Verify21anchors with production full-foot traversal and inspect actual paired exported construction captures. Entire arrival routes, canonical van relationship and overall foundations remain separate.",
+      "evidence": "development/levels/rebuild/arrival-bearing-pass/roster.json; verification/current-flat-movement.json; verification/independent-sources.json; captures/arrival-bearing-batch",
+      "older_maps": "Audit every other arrival/spawn/hiding/ritual anchor with actual full footprints, including mature Castle/House/Blackpine/Hollow Creek. This source repair does not accept runtime arrival/van/terrain or allmap circulation."
+    },
+    {
+      "id": "DEV-452",
+      "title": "New arrival source inspector mistakes exported UV seams and lazy image data for broken assets",
+      "status": "FIX VERIFIED ON21FINAL SOURCES",
+      "affected": "tools/review_arrival_bearings.py; first local pilot checks only",
+      "symptom": "First checker reports open edges on a closed UV-split box; next checker rejects lazily loaded packed images after reopening Blender.",
+      "cause": "GLB UV boundaries intentionally split vertices; Blender defers packed pixel decoding until used. Object-level topology and has_data alone are insufficient.",
+      "action": "Inspect coordinate-coincident topology in a temporary bmesh at1micrometre, preserve actual source/export bytes, require packed referenced images with real dimensions and decoded pixel storage. Independently compare actual exported/native triangle flags and unchanged original binary/resource/node prefixes. Correct new construction metadata to report only newly appended parts, linking inherited work through its exact source contract.",
+      "evidence": "development/levels/rebuild/arrival-bearing-pass/verification/logs/arrival-pilot-review.log; arrival-pilot-review-final.log; independent-sources.json; tools/review_arrival_bearings.py",
+      "older_maps": "Do not rewrite actual model UVs or weld production geometry merely to satisfy an inspector. Continue individual exported/editable/native checks for each source."
+    },
+    {
+      "id": "DEV-453",
+      "title": "WLD-09 saved terrain intersects the original arrival body; slab-only repair is buried",
+      "status": "OPEN; SLAB-ONLY STUDY REJECTED",
+      "affected": "WLD-09 arrival L01 original anchor [36,0,82]",
+      "symptom": "After filling the missing rear footprint, production traversal still fails against terrain-site-0-1:surface. Actual exported closeup shows terrain covering the proposed slab.",
+      "cause": "Existing terrain/arrival datum conflict was masked by earlier missing-foot support diagnostics. Adding floor support cannot remove soil from the body volume.",
+      "action": "Preserve rejected GLB/native/Blender/layout and paired PNGs with exact relocation hashes. Keep flat-circulation-pass/wld-09 as the active source. Next coordinated terrain/arrival revision must remove actual soil intrusion while preserving saved basement holes, intended landform, stable coordinates and passing vertical routes. Do not hide it with fog or move a spawn independently.",
+      "evidence": "development/levels/rebuild/arrival-bearing-pass/rejected/terrain-blocked-wld09; development/levels/rebuild/captures/arrival-bearing-batch/rejected-terrain-wld09; verification/current-flat-failure-contacts.tsv",
+      "older_maps": "Audit arrival/van bodies against actual saved terrain across all locations; individually verify support and body/head clearance. Other unsupported anchors may mask additional terrain/wall collisions."
     }
   ],
   "audit_categories": [

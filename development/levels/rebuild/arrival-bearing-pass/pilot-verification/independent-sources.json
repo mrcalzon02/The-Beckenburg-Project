@@ -1,0 +1,78 @@
+{
+  "status": "PASS_FINAL_REVALIDATION_OF_PILOT_SOURCES",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "0d6c919e196d88efe872824cc56d77980547ae74fb515382238be19ba3677243",
+      "native_sha256": "bc6dfb54d2f18ff364a8d336400117a98b90da3c0a2c7d3c3cf3cf28d43732c1",
+      "blend_sha256": "82181fef010e1528592ffb04800b0c261ba60f0907f8bdcdb851d568fc9fd383",
+      "source_contract_sha256": "cb9412fbf1d780eaa35a9411cbd4a49dab8c9644c324561176f913f75cfbfac6",
+      "packed_images": 13,
+      "retained_native_parts": 627,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing ACADEMY 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    },
+    {
+      "id": "WLD-06",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "0524653897558f68984fae679087888b6d7b964cae99760444ee965e9e138bd8",
+      "native_sha256": "dbd5964da3ad901105f365a349d7f26a65d4a326f27f6a280ba245c56d6c6ab6",
+      "blend_sha256": "604936b90ddbfa85bf53dd0f1cdd10b9d6a81b994d960a78cc54b7ddca79bc1c",
+      "source_contract_sha256": "b1e7550972e0f910e4a1b9d2ef00083f2efb8e16d64058c291169d25d4a7173a",
+      "packed_images": 9,
+      "retained_native_parts": 383,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing WLD-06 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    },
+    {
+      "id": "WLD-11",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "761e577ba4f38cc8bb87a577e816f019848c6f57e07a774e833846a7f717fb1b",
+      "native_sha256": "d47d1abfd8f43d2a3606e966ee1e390c472946edd45abc423d1006844bfa5703",
+      "blend_sha256": "6a68bcaee4f760f832728c99fcd1fba346e539f7b41a09c711f4fea6a6407d80",
+      "source_contract_sha256": "9bc7ad1fbcc449ea6e1ec42032f96c7b4f662e2ee18c3c384dedb83848553daf",
+      "packed_images": 6,
+      "retained_native_parts": 360,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing WLD-11 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    },
+    {
+      "id": "WLD-12",
+      "status": "PASS_APPEND_PRESERVATION_CLOSED_NATIVE_UV_EDITABLE_SOURCE",
+      "glb_sha256": "6f07852dd643f4f634812581ed101dcfc50907b5978a20add3af0e7f8086ae7c",
+      "native_sha256": "ae9152a762c3cbba562c2506a8eba2c56f50532139342bbb07ce65bc6f7ad796",
+      "blend_sha256": "0f8abd0e2445231a1dd15fa999ce853569be73411d0f893298f689087ff9d016",
+      "source_contract_sha256": "1dfdbbb04533fb7ed4690665a20c2492ee91f3ace51ffae2f265b1a2701e8b71",
+      "packed_images": 9,
+      "retained_native_parts": 197,
+      "new_solids": [
+        {
+          "name": "Arrival end bearing WLD-12 0",
+          "triangles": 12,
+          "closed": true,
+          "uv_layers": 1
+        }
+      ]
+    }
+  ],
+  "checker_sha256": "70f945662dd84fd0d7c2aa773ac6215733fb274bd6fd6eaa9dd4aa6c4a1daff2"
+}

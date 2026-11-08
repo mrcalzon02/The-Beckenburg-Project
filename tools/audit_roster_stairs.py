@@ -9,7 +9,7 @@ import argparse,csv,hashlib,json,math,os,subprocess
 ROOT=Path(__file__).resolve().parents[1]
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True);parser.add_argument('--require-authored-chains',action='store_true');parser.add_argument('--bearing-pass',action='store_true');parser.add_argument('--deck-pass',action='store_true');parser.add_argument('--occupancy-pass',action='store_true');parser.add_argument('--closure-pass',action='store_true');parser.add_argument('--stair-end-pass',action='store_true');parser.add_argument('--opening-pass',action='store_true');parser.add_argument('--bay-pass',action='store_true');parser.add_argument('--bench-pass',action='store_true');parser.add_argument('--connection-pass',action='store_true');parser.add_argument('--flat-pass',action='store_true');args=parser.parse_args();assert sum([args.bearing_pass,args.deck_pass,args.occupancy_pass,args.closure_pass,args.stair_end_pass,args.opening_pass,args.bay_pass,args.bench_pass,args.connection_pass,args.flat_pass])<=1
+    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True);parser.add_argument('--require-authored-chains',action='store_true');parser.add_argument('--bearing-pass',action='store_true');parser.add_argument('--deck-pass',action='store_true');parser.add_argument('--occupancy-pass',action='store_true');parser.add_argument('--closure-pass',action='store_true');parser.add_argument('--stair-end-pass',action='store_true');parser.add_argument('--opening-pass',action='store_true');parser.add_argument('--bay-pass',action='store_true');parser.add_argument('--bench-pass',action='store_true');parser.add_argument('--connection-pass',action='store_true');parser.add_argument('--flat-pass',action='store_true');parser.add_argument('--arrival-pass',action='store_true');args=parser.parse_args();args.flat_pass=args.flat_pass or args.arrival_pass;assert sum([args.bearing_pass,args.deck_pass,args.occupancy_pass,args.closure_pass,args.stair_end_pass,args.opening_pass,args.bay_pass,args.bench_pass,args.connection_pass,args.flat_pass])<=1
     comparing=args.bearing_pass or args.deck_pass or args.occupancy_pass or args.closure_pass or args.stair_end_pass or args.opening_pass or args.bay_pass or args.bench_pass or args.connection_pass or args.flat_pass
     build=ROOT/'build/roster-stair-probe';build.mkdir(parents=True,exist_ok=True)
     sites=json.loads((ROOT/'development/levels/rebuild/furnishings/room-programs.json').read_text(encoding='utf-8'))['sites']
@@ -86,6 +86,12 @@ def main():
                 out=before;bearing=json.loads((out/'construction.json').read_text());bearing=dict(bearing,source_glb_sha256=bearing['glb_sha256'],source_physics_sha256=bearing['physics_sha256']);variants=[('before_bearing',before,stem+'.glb',stem+'.hcs2'),('after_bearing',before,stem+'.glb',stem+'.hcs2')]
                 if 'before_layout' in bearing:
                     bearing['before_layout']=bearing['layout'];bearing['before_segment_map']=bearing.get('source_segment_map',{});bearing['before_stair_components']=bearing['stair_components']
+        if args.arrival_pass:
+            before=ROOT/f'development/levels/rebuild/flat-circulation-pass/{site.lower()}';out=ROOT/f'development/levels/rebuild/arrival-bearing-pass/{site.lower()}'
+            if (out/'construction.json').exists():
+                bearing=json.loads((out/'construction.json').read_text());variants=[('before_bearing',before,'open-circulation.glb','open-circulation.hcs2'),('after_bearing',out,'supported-arrival.glb','supported-arrival.hcs2')]
+            else:
+                out=before;bearing=json.loads((before/'construction.json').read_text());bearing=dict(bearing,source_glb_sha256=bearing['glb_sha256'],source_physics_sha256=bearing['physics_sha256'],before_layout=bearing['layout'],before_segment_map=bearing.get('source_segment_map',{}),before_stair_components=bearing['stair_components']);variants=[('before_bearing',before,'open-circulation.glb','open-circulation.hcs2'),('after_bearing',before,'open-circulation.glb','open-circulation.hcs2')]
         for variant,folder,mesh,physics in variants:
             active_layout_path=layout_path
             mapping={}

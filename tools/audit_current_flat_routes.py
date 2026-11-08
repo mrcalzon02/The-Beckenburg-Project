@@ -2,15 +2,21 @@
 Original valid-route regression remains a separate unchanged-coordinate check.
 """
 from pathlib import Path
-import collections,csv,hashlib,json,math,os,subprocess
+import argparse,collections,csv,hashlib,json,math,os,subprocess
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'development/levels/rebuild';OUT=BASE/'flat-circulation-pass/verification';BUILD=ROOT/'build/current-flat-probe'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def latest(site):
  return next((BASE/f/site.lower(),stem) for f,stem in [('stair-connection-pass','connected-stairs'),('stair-terrain-pass/assemblies','benched-terrain'),('stair-bay-pass','bayed-stairs'),('stair-opening-pass','opened-stairs'),('stair-landing-pass','supported-stairs'),('floor-closure-pass','closed-floors')] if (BASE/f/site.lower()/(stem+'.hcs2')).exists())
 def main():
+ global OUT,BUILD
+ p=argparse.ArgumentParser();p.add_argument('--arrival-pass',action='store_true');args=p.parse_args()
+ if args.arrival_pass:OUT=BASE/'arrival-bearing-pass/verification';BUILD=ROOT/'build/arrival-flat-probe'
+ OUT.mkdir(parents=True,exist_ok=True)
  BUILD.mkdir(parents=True,exist_ok=True);sites=json.loads((BASE/'furnishings/room-programs.json').read_text())['sites'];paths=[];names=[];lane_names=[];lanes=[];bindings={}
  for site in sites:
-  before,stem=latest(site);current=BASE/'flat-circulation-pass'/site.lower();variants=[('before',before,stem),('after',current,'open-circulation')] if (current/'construction.json').exists() else [('before',before,stem),('after',before,stem)];bindings[site]={}
+  before,stem=(BASE/'flat-circulation-pass'/site.lower(),'open-circulation') if args.arrival_pass else latest(site);current=BASE/'flat-circulation-pass'/site.lower();variants=[('before',before,stem),('after',current,'open-circulation')] if (current/'construction.json').exists() else [('before',before,stem),('after',before,stem)];bindings[site]={}
+  if args.arrival_pass:
+   current=BASE/'arrival-bearing-pass'/site.lower();variants=[('before',before,stem),('after',current,'supported-arrival')] if (current/'construction.json').exists() else [('before',before,stem),('after',before,stem)]
   for phase,folder,name in variants:
    c=folder/'construction.json';meta=json.loads(c.read_text());layout=ROOT/(json.loads((current/'construction.json').read_text())['before_layout'] if phase=='before' and (current/'construction.json').exists() else meta['layout']);data=json.loads(layout.read_text());native=folder/(name+'.hcs2');digest=sha(native);assert digest==meta['physics_sha256'];stairs=meta.get('stair_components',json.loads((BASE/'furnishings'/site.lower()/'physics-contract.json').read_text())['stair_components']);names.extend(site+':'+phase+'\t'+n for n in stairs);bindings[site][phase]=dict(contract=c.relative_to(ROOT).as_posix(),contract_sha256=sha(c),layout=layout.relative_to(ROOT).as_posix(),layout_sha256=sha(layout),native=native.relative_to(ROOT).as_posix(),native_sha256=digest)
    if phase=='after':

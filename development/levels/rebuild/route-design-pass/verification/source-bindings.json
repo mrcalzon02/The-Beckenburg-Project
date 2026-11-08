@@ -1,0 +1,52 @@
+{
+  "ACADEMY": {
+    "contract": "development/levels/rebuild/flat-circulation-pass/academy/construction.json",
+    "contract_sha256": "3847ef596a8bd6f285db4410036d5c50d2bcb2b36c7d61d5cf0dd80bc49b742f",
+    "layout": "development/levels/rebuild/flat-circulation-pass/academy/authored-layout.json",
+    "layout_sha256": "e44e6dc381ef07297a4b1c67ed4278595b4766ebe792cdd708f2e9d46e5274bb",
+    "native": "development/levels/rebuild/flat-circulation-pass/academy/open-circulation.hcs2",
+    "native_sha256": "f548b8696ed82994343dd1fe0ce853d10d3400708e896244758f007b91bda16e",
+    "glb": "development/levels/rebuild/flat-circulation-pass/academy/open-circulation.glb",
+    "glb_sha256": "a7a30b3f8c4b569ee3056ddfee5ad1d71e3c072e921e1154610b1d39433822ae"
+  },
+  "ASYLUM": {
+    "contract": "development/levels/rebuild/flat-circulation-pass/asylum/construction.json",
+    "contract_sha256": "4864791efd068aa226e97df30a29c0fb5d2b71a89c0ec508507340251a5b8e91",
+    "layout": "development/levels/rebuild/flat-circulation-pass/asylum/authored-layout.json",
+    "layout_sha256": "ae527fd8c5f0c2a05f668f62670862618abbfe467b46e5aeaa21e36cc311fa1f",
+    "native": "development/levels/rebuild/flat-circulation-pass/asylum/open-circulation.hcs2",
+    "native_sha256": "aa6b4b6ebf4584d978f77158ec399713a173976e562159ddbe527897c61fbab3",
+    "glb": "development/levels/rebuild/flat-circulation-pass/asylum/open-circulation.glb",
+    "glb_sha256": "abeb53b241297f971e0e45580c6c0bf3f76a415e8bc60c605efe89f23e9a4f3b"
+  },
+  "WLD-06": {
+    "contract": "development/levels/rebuild/flat-circulation-pass/wld-06/construction.json",
+    "contract_sha256": "1a25a4acfc4fe3d7efcde8693bbbfe766dac393b0031415205b6ab691d086d77",
+    "layout": "development/levels/rebuild/flat-circulation-pass/wld-06/authored-layout.json",
+    "layout_sha256": "d8f312a488befbaacf6b81f815dc5720ed6fc38adddd5641f0fb42b6e1af56b3",
+    "native": "development/levels/rebuild/flat-circulation-pass/wld-06/open-circulation.hcs2",
+    "native_sha256": "79821cf51f4a836dd6865da84f541b80687443853598c9e25aecf8578858f198",
+    "glb": "development/levels/rebuild/flat-circulation-pass/wld-06/open-circulation.glb",
+    "glb_sha256": "73dca896208524ab037bd63f4722b14939c42a2272fdd0bbc852fa9a0ac713d5"
+  },
+  "WLD-11": {
+    "contract": "development/levels/rebuild/flat-circulation-pass/wld-11/construction.json",
+    "contract_sha256": "c38af6cb80cb3a22e162ebbc3b6d1aaa54ee12e7a72eb5fe04eb5c36be03552b",
+    "layout": "development/levels/rebuild/flat-circulation-pass/wld-11/authored-layout.json",
+    "layout_sha256": "3fde7248675385c404ff07eff16f56b03d4f663acf991f0919dedc1d8d8c2929",
+    "native": "development/levels/rebuild/flat-circulation-pass/wld-11/open-circulation.hcs2",
+    "native_sha256": "4eb95de0b8e6f4251d01b3455939c0747bbe8cdc6fa833ec9f6b3b9b564366e6",
+    "glb": "development/levels/rebuild/flat-circulation-pass/wld-11/open-circulation.glb",
+    "glb_sha256": "a8467a6e0c5b59c4b3ae18d4289e08d455b7e3f58f646b9e56b8d9ac2226a851"
+  },
+  "WLD-12": {
+    "contract": "development/levels/rebuild/flat-circulation-pass/wld-12/construction.json",
+    "contract_sha256": "e4c9d31898aa3b4ff10f8b080b0900ec081de90888df3e3f2ee90385ef1c9965",
+    "layout": "development/levels/rebuild/flat-circulation-pass/wld-12/authored-layout.json",
+    "layout_sha256": "756abc1558d99a94a37cbb808da954d27abfb1d5cffccdde64afdc47877582e3",
+    "native": "development/levels/rebuild/flat-circulation-pass/wld-12/open-circulation.hcs2",
+    "native_sha256": "da0e062878daef37a57daeedcd46bf4b9a0c9f80616a4edb5e4494ffbe00e2cc",
+    "glb": "development/levels/rebuild/flat-circulation-pass/wld-12/open-circulation.glb",
+    "glb_sha256": "5df37d8e883429903e37e5bbbee836f6514dd8fe81346272b5da111dd9b483f3"
+  }
+}

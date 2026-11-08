@@ -106,3 +106,16 @@ tools/render_flat_wall_profiles.py text eol=lf
 
 # Frozen inherited JSON keeps its exact original CRLF bytes.
 development/levels/rebuild/flat-circulation-pass/source-layouts/** whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Exact arrival source contracts and native verification bytes.
+development/levels/rebuild/arrival-bearing-pass/** -text
+development/levels/rebuild/route-design-pass/** -text
+development/levels/rebuild/arrival-bearing-pass/**/*.tsv whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/build_arrival_bearings.py text eol=lf
+tools/review_arrival_bearings.py text eol=lf
+tools/design_flat_routes.py text eol=lf
+tools/java/FlatRouteDesigner.java text eol=lf
+
+# Raw route TSV ends with an intentionally empty points field on failed designs.
+development/levels/rebuild/route-design-pass/**/*.tsv whitespace=-blank-at-eol,cr-at-eol
+development/levels/rebuild/arrival-bearing-pass/**/*.log -diff

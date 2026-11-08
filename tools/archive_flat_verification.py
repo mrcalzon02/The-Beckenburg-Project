@@ -6,7 +6,11 @@ import argparse,gzip,hashlib,json
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'development/levels/rebuild/flat-circulation-pass';INDEX=BASE/'verification/archive-index.json'
 def digest(data):return hashlib.sha256(data).hexdigest()
 def main():
- p=argparse.ArgumentParser();p.add_argument('--check',action='store_true');p.add_argument('--restore-to',type=Path);args=p.parse_args();old=json.loads(INDEX.read_text()) if INDEX.exists() else dict(files=[]);records={r['original_path']:r for r in old['files']}
+ global BASE,INDEX
+ p=argparse.ArgumentParser();p.add_argument('--root',type=Path,help='Repository-relative source pass; default remains flat-circulation-pass');p.add_argument('--check',action='store_true');p.add_argument('--restore-to',type=Path);args=p.parse_args()
+ if args.root is not None:
+  BASE=(ROOT/args.root).resolve();assert BASE.is_relative_to(ROOT/'development/levels/rebuild') and BASE.is_dir();INDEX=BASE/'verification/archive-index.json'
+ old=json.loads(INDEX.read_text()) if INDEX.exists() else dict(files=[]);records={r['original_path']:r for r in old['files']}
  if not args.check and args.restore_to is None:
   for path in sorted(BASE.rglob('*.tsv')):
    if path.stat().st_size<2_000_000:continue

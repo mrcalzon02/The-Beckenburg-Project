@@ -57,3 +57,6 @@ development/levels/rebuild/stair-connection-pass/**/*.blend[0-9]
 development/levels/rebuild/stair-connection-pass/**/*.lock
 
 development/levels/rebuild/flat-circulation-pass/**/*.blend[0-9]
+
+# Arrival authoring scene backups.
+development/levels/rebuild/arrival-bearing-pass/**/*.blend[0-9]

@@ -6229,3 +6229,11 @@ House, Farmhouse, School, Church, Castle and all other previously authored areas
 ## Continuity
 
 At every map/model checkpoint: update open issues; check for related defects in reused assets; record new checks and remaining limitations; refresh the shared gallery; commit and push actual evidence. Before a fix is marked complete, rerun the checks it can affect (especially stairs after changing floor depth).
+
+## 2026-11-08 arrival bearing batch
+
+- DEV-451: repaired21 finite source path ends so original arrival anchors have full footprint support; full arrival/van/terrain/runtime acceptance remains open.
+- DEV-452: corrected new checker handling of GLB UV vertex splits and lazy packed-image loading; temporary topology checks do not alter production assets.
+- DEV-453: WLD-09 [36,0,82] intersects saved terrain; slab-only model/captures retained as rejected. The next terrain revision must repair the actual landform/body conflict.
+
+Actual checks, raw outputs, independent model inspection and preserved rejections are in development/levels/rebuild/arrival-bearing-pass. All older maps retain individual checklist obligations.
