@@ -91,6 +91,34 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         public long revision(){return revision;}
         public EditorMeshPipeline.Mesh mesh(){return EditorTopologyProject.mesh(state);}
         public EditorMeshTopology topology(){return EditorTopologyProject.topology(state);}
+        /** Ordered native vertices on the manifold boundary containing the picked edge. */
+        public List<Vertex> boundaryLoop(long first, long second) {
+            var graph = topology();
+            if (!graph.manifold()) throw new IllegalArgumentException("Repair invalid topology before selecting a boundary");
+            int[] outgoing = new int[state.vertices().size()];
+            Arrays.fill(outgoing, -1);
+            int start = -1;
+            boolean reverse = false;
+            for (var edge : graph.edges()) {
+                if (!edge.boundary()) continue;
+                int origin = edge.origin(), destination = edge.destination();
+                if (outgoing[origin] != -1) throw new IllegalArgumentException("Branched native boundary");
+                outgoing[origin] = destination;
+                long a = state.vertices().get(origin).id(), b = state.vertices().get(destination).id();
+                if (a == first && b == second) start = origin;
+                if (a == second && b == first) { start = destination; reverse = true; }
+            }
+            if (start < 0) throw new IllegalArgumentException("Pick an edge on an open mesh boundary");
+            var loop = new ArrayList<Vertex>();
+            int current = start;
+            do {
+                if (current < 0 || loop.size() >= outgoing.length) throw new IllegalArgumentException("Incomplete native boundary");
+                loop.add(state.vertices().get(current));
+                current = outgoing[current];
+            } while (current != start);
+            if (reverse) Collections.reverse(loop.subList(1, loop.size()));
+            return List.copyOf(loop);
+        }
     }
     public synchronized Observation observe(){return new Observation(this,state,revision);}
     public synchronized boolean isCurrent(Observation observation){return observation!=null&&observation.owner==this&&observation.state==state&&observation.revision==revision;}

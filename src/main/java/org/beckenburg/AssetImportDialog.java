@@ -105,6 +105,10 @@ public final class AssetImportDialog {
     private boolean lassoGesture;
     private final JComboBox<EditorTopologyProject.FaceEdit> faceOperation=new JComboBox<>(EditorTopologyProject.FaceEdit.values());
     private final JSpinner faceAmount=new JSpinner(new SpinnerNumberModel(.25,-10000d,10000d,.05));
+    private final JButton selectBoundary = new JButton("SELECT BOUNDARY LOOP");
+    private EditorTopologyProject.Observation boundaryObservation;
+    private List<EditorTopologyProject.Vertex> boundaryVertices = List.of();
+    private java.util.Set<Long> boundaryIds = java.util.Set.of();
     private final JSpinner slideFraction = new JSpinner(new SpinnerNumberModel(.25, .001, .999, .05));
     private final JCheckBox reverseSlide = new JCheckBox("Reverse edge direction");
     private final JButton previewSlide = new JButton("PREVIEW VERTEX SLIDE");
@@ -182,7 +186,7 @@ public final class AssetImportDialog {
         compareView.setToolTipText("Compare working geometry with the reduction preview; pending model edits always show both views.");compareView.addActionListener(e->{cancelAxisDrag();cancelBoxSelection();preview.repaint();});
         meshView.addActionListener(e->{cancelAxisDrag();cancelBoxSelection();cameraGesture=null;cameraZoom=1;cameraPanX=0;cameraPanY=0;fitCamera.setVisible(projection()==EditorMeshPicking.Projection.PERSPECTIVE);preview.repaint();});
         meshView.setToolTipText("Perspective: right-drag to orbit, middle-drag to pan, wheel to zoom. Fit view restores framing.");
-        fitCamera.setVisible(false);fitCamera.addActionListener(e->{cancelAxisDrag();cancelBoxSelection();cameraZoom=1;cameraPanX=0;cameraPanY=0;preview.repaint();});selectionMode.addActionListener(e->{cancelAxisDrag();refreshMeshControls();preview.repaint();});
+        fitCamera.setVisible(false);fitCamera.addActionListener(e->{cancelAxisDrag();cancelBoxSelection();cameraZoom=1;cameraPanX=0;cameraPanY=0;preview.repaint();});selectionMode.addActionListener(e->{clearBoundary();cancelAxisDrag();refreshMeshControls();preview.repaint();});
         preview.addMouseListener(new MouseAdapter(){
             @Override public void mouseExited(MouseEvent e){clearHover();}
             @Override public void mousePressed(MouseEvent e){clearHover();if(e.getButton()==MouseEvent.BUTTON1){if(!beginAxisDrag(e.getX(),e.getY())){
@@ -242,6 +246,7 @@ public final class AssetImportDialog {
         });
         previewMaterial.addActionListener(e->{if(selectedHit!=null&&materialList.getSelectedItem() instanceof EditorMeshMaterial material){long face=selectedHit.faceId();beginModelingPreview(p->p.previewBindMaterial(face,material));}});
         previewFaceEdit.addActionListener(e->previewModelingEdit());cancelFaceEdit.addActionListener(e->clearModelingPreview());
+        selectBoundary.addActionListener(e -> selectBoundaryLoop());
         slideFraction.addChangeListener(e -> clearModelingPreview());
         reverseSlide.addActionListener(e -> clearModelingPreview());
         previewSlide.addActionListener(e -> {
@@ -281,7 +286,7 @@ public final class AssetImportDialog {
         EditorTopologyWorkspace.shortcut(menus.getMenu(0),1,KeyEvent.VK_O);EditorTopologyWorkspace.shortcut(menus.getMenu(0),2,KeyEvent.VK_S);EditorTopologyWorkspace.shortcut(menus.getMenu(1),0,KeyEvent.VK_Z);EditorTopologyWorkspace.shortcut(menus.getMenu(1),1,KeyEvent.VK_Y);
         var inspector=new JPanel(new BorderLayout(0,8));var toolTitle=new JLabel("SELECT");inspector.add(toolTitle,BorderLayout.NORTH);inspector.add(new JScrollPane(inspectorCards),BorderLayout.CENTER);inspector.add(EditorTopologyWorkspace.column(applyFaceEdit,cancelFaceEdit),BorderLayout.SOUTH);
         inspector.setBorder(BorderFactory.createEmptyBorder(8,5,5,5));
-        inspectorCards.add("Select",EditorTopologyWorkspace.column(EditorTopologyWorkspace.form("Area shape",areaShape,"Occlusion",xraySelect),boxSelect,new JLabel("Drag in the working view. Escape cancels.")));
+        inspectorCards.add("Select",EditorTopologyWorkspace.column(EditorTopologyWorkspace.form("Area shape",areaShape,"Occlusion",xraySelect),boxSelect,selectBoundary,new JLabel("Drag in the working view. Escape cancels.")));
         inspectorCards.add("Move",EditorTopologyWorkspace.column(EditorTopologyWorkspace.form("Vertex ID",vertexId,"X",vertexX,"Y",vertexY,"Z",vertexZ,"Grid (0 off)",meshSnap),moveVertex,EditorTopologyWorkspace.form("Slide fraction",slideFraction),reverseSlide,previewSlide));
         inspectorCards.add("Transform",EditorTopologyWorkspace.column(EditorTopologyWorkspace.form("Space",transformSpace,"Operation",transformKind,"Axis",transformAxis,"Degrees / factor",transformAmount,"Pivot",transformPivot,"Angle snap",angleSnap),previewTransform));
         inspectorCards.add("Create",EditorTopologyWorkspace.column(EditorTopologyWorkspace.form("Primitive",primitiveKind,"Width",primitiveWidth,"Height",primitiveHeight,"Depth",primitiveDepth,"Segments",primitiveSegments,"Rings / grid",primitiveRings),previewPrimitive,applyPrimitive));
@@ -433,6 +438,7 @@ public final class AssetImportDialog {
         beginModelingPreview(p->{try{return p.previewBindMaterial(face,EditorMeshMaterial.fromPng(png.getFileName().toString(),EditorMeshPipeline.readSource(png,4_000_000),wrap,wrap,alpha,origin));}catch(IOException bad){throw new java.io.UncheckedIOException(bad);}});
     }
     private void refreshMeshControls(){
+        if (boundaryObservation != null && !hasBoundary()) clearBoundary();
         var materialState=topologyProject==null?null:topologyProject.snapshot();
         if(listedMaterials!=materialState){listedMaterials=materialState;Object selected=materialList.getSelectedItem();materialList.removeAllItems();if(materialState!=null)for(var m:materialState.materials())materialList.addItem(m);if(selected!=null)for(int i=0;i<materialList.getItemCount();i++)if(materialList.getItemAt(i).equals(selected))materialList.setSelectedIndex(i);refreshMaterialSwatch();}
 
@@ -449,8 +455,9 @@ public final class AssetImportDialog {
         boxSelect.setEnabled(editable);xraySelect.setEnabled(editable);areaShape.setEnabled(editable);
         faceOperation.setEnabled(topologyProject!=null&&!busy);faceAmount.setEnabled(topologyProject!=null&&!busy);
         previewFaceEdit.setEnabled(editable&&selectionMode.getSelectedIndex()==2&&selectedHit!=null);
-        previewSlide.setEnabled(editable && selectionMode.getSelectedIndex()==1 && selectedHit!=null);
-        previewBevel.setEnabled(editable&&selectionMode.getSelectedIndex()!=2&&selectedHit!=null);
+        selectBoundary.setEnabled(editable && selectionMode.getSelectedIndex()==1 && selectedHit!=null);
+        previewSlide.setEnabled(editable && !hasBoundary() && selectionMode.getSelectedIndex()==1 && selectedHit!=null);
+        previewBevel.setEnabled(editable&&!hasBoundary()&&selectionMode.getSelectedIndex()!=2&&selectedHit!=null);
         chooseMaterial.setEnabled(editable&&selectionMode.getSelectedIndex()==2&&selectedHit!=null);previewMaterial.setEnabled(chooseMaterial.isEnabled()&&materialList.getSelectedItem()!=null);
         for(var c:List.of(materialList,materialWrap,materialAlpha,materialOrigin,uvOperation,uvScope,uvPivot,uvFirst,uvSecond))c.setEnabled(editable);
         previewUv.setEnabled(editable&&selectionMode.getSelectedIndex()==2&&selectedHit!=null);
@@ -824,6 +831,7 @@ public final class AssetImportDialog {
         if(busy||modelingPreview!=null||topologyProject==null||source.triangles().isEmpty()||x<0||x>=workingViewportWidth())return;
         var view=viewport(workingReference(),0,workingViewportWidth());
         double px=(x-view.left()-view.width()/2)/view.scale()+view.centerX(),py=(y-view.height()/2)/view.scale()+view.centerY();
+        clearBoundary();
         selectedHit=nativePick(topologyProject.snapshot(),projector(workingReference()),px,py);
         if(selectedHit!=null)normalAnchor=selectedHit.faceId();
         if(selectedHit==null){selectedVertex=null;selectedVertices=java.util.Set.of();selectionLabel.setText("No triangle selected");refreshMeshControls();preview.repaint();return;}
@@ -834,10 +842,48 @@ public final class AssetImportDialog {
             default->"Face "+selectedHit.faceId();});
         refreshMeshControls();preview.repaint();
     }
+    private void clearBoundary() {
+        boundaryObservation = null;
+        boundaryVertices = List.of();
+        boundaryIds = java.util.Set.of();
+    }
+    private boolean hasBoundary() {
+        return boundaryObservation != null && topologyProject != null && topologyProject.isCurrent(boundaryObservation);
+    }
+    private void selectBoundaryLoop() {
+        if (busy || selectedHit == null || selectionMode.getSelectedIndex()!=1) return;
+        var project = topologyProject;
+        var observation = project.observe();
+        var seed = selectedHit;
+        busy = true;
+        choose.setEnabled(false);
+        apply.setEnabled(false);
+        refreshMeshControls();
+        new SwingWorker<List<EditorTopologyProject.Vertex>,Void>() {
+            protected List<EditorTopologyProject.Vertex> doInBackground() {
+                return observation.boundaryLoop(seed.edgeA(), seed.edgeB());
+            }
+            protected void done() {
+                try {
+                    var vertices = get();
+                    if (topologyProject == project && project.isCurrent(observation) && seed == selectedHit && selectionMode.getSelectedIndex()==1) {
+                        selectedVertex = null;
+                        selectedVertices = java.util.Set.of();
+                        boundaryVertices = vertices;
+                        boundaryIds = vertices.stream().map(EditorTopologyProject.Vertex::id).collect(java.util.stream.Collectors.toUnmodifiableSet());
+                        boundaryObservation = observation;
+                        selectionLabel.setText("Boundary loop / " + vertices.size() + " edges");
+                    }
+                } catch (Exception refused) { selectionLabel.setText(rootMessage(refused)); }
+                finally { busy = false; choose.setEnabled(true); refreshMeshControls(); updatePublishAvailability(); preview.repaint(); }
+            }
+        }.execute();
+    }
     private java.util.Set<Long> selectedIds(){
         if(topologyProject==null)return java.util.Set.of();
         if(selectionMode.getSelectedIndex()==0)return selectedVertices;
         if(selectedHit==null)return java.util.Set.of();
+        if(selectionMode.getSelectedIndex()==1 && hasBoundary())return boundaryIds;
         if(selectionMode.getSelectedIndex()==1)return java.util.Set.copyOf(List.of(selectedHit.edgeA(),selectedHit.edgeB()));
         return topologyProject.snapshot().faces().stream().filter(f->f.id()==selectedHit.faceId()).findFirst()
             .map(f->java.util.Set.copyOf(List.of(f.a().vertex(),f.b().vertex(),f.c().vertex()))).orElse(java.util.Set.of());
@@ -938,6 +984,17 @@ public final class AssetImportDialog {
             g.setColor(new Color(255,218,87));for(var v:topologyProject.snapshot().vertices())if(selectedVertices.contains(v.id())){
                 var p=camera.project(v.x(),v.y(),v.z());g.fillOval(view.x(p.x())-2,view.y(p.y())-2,4,4);
             }
+        }
+        if (title.equals("WORKING MESH") && hasBoundary() && selectionMode.getSelectedIndex()==1) {
+            g.setColor(new Color(255,218,87));g.setStroke(new BasicStroke(3));
+            var previous = boundaryVertices.get(boundaryVertices.size()-1);
+            for (var vertex : boundaryVertices) {
+                var a = camera.project(previous.x(),previous.y(),previous.z());
+                var b = camera.project(vertex.x(),vertex.y(),vertex.z());
+                g.drawLine(view.x(a.x()),view.y(a.y()),view.x(b.x()),view.y(b.y()));
+                previous = vertex;
+            }
+            g.setStroke(new BasicStroke(1));
         }
         if(title.equals("WORKING MESH")&&selectedHit!=null&&selectionMode.getSelectedIndex()>0){
             var state=topologyProject.snapshot();var ids=new java.util.HashMap<Long,EditorTopologyProject.Vertex>();for(var v:state.vertices())ids.put(v.id(),v);

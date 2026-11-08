@@ -164,3 +164,9 @@ EditorLocalFrameTest covers native v5/OBJ/bundle/GLB roundtrip, exact shared his
 In the Model Editor, pick an edge in EDGE mode and open Move. Slide fraction sets how far the first endpoint moves toward the second. Reverse edge direction swaps the endpoints. Preview, Apply and Cancel use the same native revision and history controls as the other model tools. The fraction must be strictly between zero and one. The direction must lie in every incident face plane and follow any open outline edges. Collapsed or reversed triangles are refused. Native IDs, UVs, raw corner normals, material bindings, part frames and original source ownership stay with the model.
 
 The actual UI test slides an interior OBJ vertex, checks its unchanged outline and attributes, undoes and redoes the edit, reopens the native file and compares every published game corner and the native archive. Evidence is in `development/quality/evidence/model-slide-2026-11-07`. Whole-loop sliding and loop/ring selection remain open G2 requirements.
+
+## Boundary loop selection
+
+In EDGE mode, click a rim edge and choose **Select Boundary Loop** in the Select inspector. The highlighted loop follows the native half-edges all the way around that perimeter. It can trace the outside of a part or the edge of a hole. Transforms and movement gizmos then operate on every vertex of that loop. Interior edges and invalid topology are refused. Selection runs against an immutable observation of the current native project and expires when its revision changes.
+
+AssetImportBoundaryGuiTest picks the hole in an OBJ ring with a separate part, scales only its inner rim, undoes/redoes the edit, reopens the saved file and compares each game vertex. Capture: `development/quality/evidence/model-boundary-2026-11-07/human-boundary-loop.png`. Interior loop/ring selection and whole-loop slide remain open.
