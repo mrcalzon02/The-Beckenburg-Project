@@ -6002,6 +6002,76 @@ Evidence and verification: development/levels/rebuild/stair-terrain-pass/verific
 
 Older-map obligation: Migrate actual native/runtime ownership only through verified coordinate/layout/terrain contracts; metadata or export existence is not gameplay acceptance. Preserve frozen sources and legacy controls.
 
+### DEV-436 — New connection builder assumes every retained floor-stage contract already declares stair identities
+
+**Status:** FIX VERIFIED: explicit before/after identities pass native movement and export/source checks · **Affected:** WLD15retained floor-closure source during connection batch
+
+First source build stopped with KeyError stair_components after WLD04/05 exported.
+
+Cause / uncertainty: Floor-closure contracts predate the explicit per-map stair identity migration.
+
+Fix / next action: Use the actual original furnishings physics contract only when the current contract has no explicit stair_components; preserve current declarations otherwise. New source report records exact before/after identity sets, independently exercised by unchanged production movement.
+
+Evidence and verification: development/levels/rebuild/stair-connection-pass/verification/rejected-missing-floor-contract-build.log; tools/build_stair_bays.py
+
+Older-map obligation: Individually consume each source-stage contract; never infer a whole scene is stairs or relax unknown component checks.
+
+### DEV-437 — Saved-terrain continuation reads tile settings from the wrong source stage
+
+**Status:** FIXED AND ACTUAL BATTERY WORLD REOPENED · **Affected:** WLD17saved occupancy-world terrain continuation
+
+First authoring attempt failed because terrain-overall-pass/samples/wld-17/settings.tsv does not exist.
+
+Cause / uncertainty: Helper assumed every source world originated in macroterrain rather than occupancy construction.
+
+Fix / next action: Read settings from the exact selected saved worlds owning source package. Original WLD17world/height image retained; new lower-only layer verified against actual native/export/editable geometry, original sources and persistent hole probes.
+
+Evidence and verification: development/levels/rebuild/stair-connection-pass/verification/rejected-wrong-terrain-settings.log; terrain/wld-17-world.json; terrain/verification/independent-sources.json
+
+Older-map obligation: Saved-world/settings/height/layer/topology provenance must all refer to the same actual source; audit older worlds individually.
+
+### DEV-438 — Revised stair hubs and excavated entry joins expose incomplete full-footprint structural support
+
+**Status:** FIX VERIFIED FOR FIVE CANDIDATES; remaining flat/map acceptance open · **Affected:** WLD05L05/L08near adit high hub; WLD17route01/02lower entrance and route03approach
+
+First connection pilot passed all221flights but mine flat sweeps regressed twice; battery flat approach still hit terrain. Lowering actual soil then exposed two lower entry sweeps and a previously passing complete route02.
+
+Cause / uncertainty: Old hub/top tread and entry joins relied on incidental soil or incomplete platform edges; centre standing support did not prove the moving foot footprint.
+
+Fix / next action: Mine receives a real closed common hub plate after both sloping rises finish. Battery receives actual LOWER_ONLY saved terrain plus closed full-width approach and lower entry bearing plates; rerun all flat lanes and continuous flight/link/chain comparisons without changing movement tolerances. Final all25native comparison:221/221flight segments and84/84complete vertical links pass both ways, no passing direction/chain regression.110409flat samples recover149poses with0newstanding/0newsweep failures. All9129remaining pre-existing invalid flat samples diagnosed separately.
+
+Evidence and verification: development/levels/rebuild/stair-connection-pass/rejected/pilot-01/verification; rejected/pilot-02/verification; tools/build_stair_connections.py; tools/finish_connection_terrain.py
+
+Older-map obligation: Reaudit physical threshold/endpoint/turn footprints after terrain and stair revision. All29packets retain individual native/runtime/visual acceptance obligations.
+
+### DEV-439 — Native connection inspection shows black triangular landing regions and unfinished stair surfaces
+
+**Status:** OPEN: actual coverage/material/light attribution and final architecture review required · **Affected:** WLD04clearing/hut level landing; WLD05adit shared hub; audit other source landings individually; WLD18exhibit threshold black rectangular region in paired native views
+
+Paired neutral150Wnative captures show large black regions bounded by structural/old surface edges. New routes may pass while the visible joins remain unaccepted.
+
+Cause / uncertainty: Unverified: distinguish actual coverage voids, existing material faces/normals, adjacent slab occlusion and neutral-light shadowing with native triangle/face diagnostics and actual runtime light separation.
+
+Fix / next action: Keep construction/finish acceptance open; retain paired captures and audit floor coverage, underside/closed edges, original materials and actual circuits/roof/corner separation. Do not mask with fog or call source movement evidence a complete visual map approval.
+
+Evidence and verification: development/levels/rebuild/captures/stair-connection-batch/connection-sheet-1.png; wld-04-clearing-hub-after.png; wld-04-hut-entry-after.png; wld-05-adit-hub-after.png
+
+Older-map obligation: Complete individual MAP_FITNESS_CHECKLIST floor/light/material audits across all29packets and follow-on locations; isolated neutral construction views are not runtime acceptance.
+
+### DEV-440 — Complete vertical circulation does not close the remaining invalid flat route network
+
+**Status:** OPEN: actual native flat samples diagnosed, physical revisions required across all25candidates · **Affected:** All25rebuild candidates;9129of110409sampled flat positions still invalid after connection batch
+
+All221vertical flights and84complete vertical links pass, but101280of110409flat centre/side samples are valid.6714remaining pose diagnoses identify actual physical components,2079lack centre support,252closed-solid/interior or invalid poses; remaining84involve footprint/height spread.
+
+Cause / uncertainty: Existing flat route reservations intersect actual walls/caps/terrain/props or lack full support. Zero new regressions cannot be treated as all routes passing.
+
+Fix / next action: Retain complete native failed-pose table and per-site component/segment/reason counts. Next batch authors real wall/door/cap apertures, coherent flat approaches, terrain/body clearance and prop moves against current shared source coordinates; repeat all flat/vertical/chained regressions. Preserve search envelope, services and reusable asset library.
+
+Evidence and verification: development/levels/rebuild/stair-connection-pass/verification/remaining-flat-routes.json; remaining-flat-contacts.tsv; remaining-flat-input.tsv; tools/diagnose_remaining_flat_routes.py
+
+Older-map obligation: Each of29packets and follow-on maps needs actual native and runtime route/support audit; four mature sources are not covered by the25candidate table. No acceptance inferred from vertical routes alone.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

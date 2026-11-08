@@ -47,8 +47,8 @@ def main():
         path=ROOT/name;assert path.is_file(),('Missing indexed model',name)
         if name.startswith('assets/libraries/'):collection='source_library_masters'
         elif any(s in name for s in ['/site-kits/','/previews/','/relic-review/','/crypt-review/','_kit_refined_']):collection='review_assemblies'
-        elif any(v in name for v in ['/terrain-fit-pass/rejected/','/stair-landing-pass/rejected/','/stair-opening-pass/rejected/','/stair-bay-pass/rejected/','/stair-terrain-pass/rejected/']):collection='reference_and_rejected_studies'
-        elif any(s in name for s in ['/rebuild/structures/','/blockouts/','/rebuild/furnishings/','/terrain-overall-pass/assemblies/','/rebuild/terrain-fit-pass/','/rebuild/deck-fit-pass/','/rebuild/terrain-occupancy-pass/assemblies/','/rebuild/floor-closure-pass/','/rebuild/stair-landing-pass/','/rebuild/stair-opening-pass/','/rebuild/stair-bay-pass/','/rebuild/stair-terrain-pass/assemblies/']):collection='native_map_exports'
+        elif any(v in name for v in ['/terrain-fit-pass/rejected/','/stair-landing-pass/rejected/','/stair-opening-pass/rejected/','/stair-bay-pass/rejected/','/stair-terrain-pass/rejected/','/stair-connection-pass/rejected/']):collection='reference_and_rejected_studies'
+        elif any(s in name for s in ['/rebuild/structures/','/blockouts/','/rebuild/furnishings/','/terrain-overall-pass/assemblies/','/rebuild/terrain-fit-pass/','/rebuild/deck-fit-pass/','/rebuild/terrain-occupancy-pass/assemblies/','/rebuild/floor-closure-pass/','/rebuild/stair-landing-pass/','/rebuild/stair-opening-pass/','/rebuild/stair-bay-pass/','/rebuild/stair-terrain-pass/assemblies/','/rebuild/stair-connection-pass/']):collection='native_map_exports'
         elif any(s in name for s in ['/rejected/','/references/','/evidence/']):collection='reference_and_rejected_studies'
         else:collection='additional_custom_model_sources'
         aliases.append(dict(id=path.stem,label=path.stem,maps=[],category=collection,path=name,collection=collection,

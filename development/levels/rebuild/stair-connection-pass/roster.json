@@ -1,0 +1,545 @@
+{
+  "scope": 29,
+  "status": "BREADTH_BY_STAGE_PHYSICAL_STAIR_CONVERGENCE_AND_COMPLETE_APPROACH_CANDIDATES",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "status": "RETAINED_LATEST_SOURCE_REQUIRES_INDIVIDUAL_MAP_ACCEPTANCE",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/academy/construction.json"
+    },
+    {
+      "id": "ASYLUM",
+      "status": "RETAINED_LATEST_SOURCE_REQUIRES_INDIVIDUAL_MAP_ACCEPTANCE",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/asylum/construction.json"
+    },
+    {
+      "id": "CASTLE",
+      "status": "RETAINED_LATEST_SOURCE_REQUIRES_INDIVIDUAL_MAP_ACCEPTANCE",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "previous_evidence": null
+    },
+    {
+      "id": "CHURCH",
+      "status": "RETAINED_LATEST_SOURCE_REQUIRES_INDIVIDUAL_MAP_ACCEPTANCE",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/church/construction.json"
+    },
+    {
+      "id": "COLLEGE",
+      "status": "RETAINED_LATEST_SOURCE_REQUIRES_INDIVIDUAL_MAP_ACCEPTANCE",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/college/construction.json"
+    },
+    {
+      "id": "FARMHOUSE",
+      "status": "RETAINED_LATEST_SOURCE_REQUIRES_INDIVIDUAL_MAP_ACCEPTANCE",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/farmhouse/construction.json"
+    },
+    {
+      "id": "HOUSE",
+      "status": "RETAINED_LATEST_SOURCE_REQUIRES_INDIVIDUAL_MAP_ACCEPTANCE",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "previous_evidence": null
+    },
+    {
+      "id": "MANSION",
+      "status": "RETAINED_LATEST_SOURCE_REQUIRES_INDIVIDUAL_MAP_ACCEPTANCE",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/mansion/construction.json"
+    },
+    {
+      "id": "PRISON",
+      "status": "RETAINED_LATEST_SOURCE_REQUIRES_INDIVIDUAL_MAP_ACCEPTANCE",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/prison/construction.json"
+    },
+    {
+      "id": "SCHOOL",
+      "status": "RETAINED_LATEST_SOURCE_REQUIRES_INDIVIDUAL_MAP_ACCEPTANCE",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/school/construction.json"
+    },
+    {
+      "id": "WLD-01",
+      "status": "RETAINED_LATEST_SOURCE_REQUIRES_INDIVIDUAL_MAP_ACCEPTANCE",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "previous_evidence": null
+    },
+    {
+      "id": "WLD-02",
+      "status": "RETAINED_LATEST_SOURCE_REQUIRES_INDIVIDUAL_MAP_ACCEPTANCE",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "previous_evidence": null
+    },
+    {
+      "id": "WLD-03",
+      "status": "RETAINED_LATEST_SOURCE_REQUIRES_INDIVIDUAL_MAP_ACCEPTANCE",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "previous_evidence": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-03/construction.json"
+    },
+    {
+      "id": "WLD-04",
+      "status": "ACTUAL_STAIR_CONNECTION_SOURCE_CANDIDATE_NOT_MAP_ACCEPTED",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "evidence": "development/levels/rebuild/stair-connection-pass/wld-04/construction.json",
+      "design": {
+        "points": {
+          "L04": [
+            [
+              28,
+              3,
+              36
+            ],
+            [
+              29.5,
+              6,
+              25.5
+            ],
+            [
+              30,
+              6,
+              22
+            ]
+          ],
+          "L11": [
+            [
+              43,
+              3,
+              51
+            ],
+            [
+              31.57,
+              6,
+              25.5
+            ],
+            [
+              30,
+              6,
+              22
+            ]
+          ],
+          "L06": [
+            [
+              12,
+              6,
+              20
+            ],
+            [
+              12,
+              6,
+              28
+            ],
+            [
+              20,
+              6,
+              28
+            ],
+            [
+              28,
+              3,
+              36
+            ]
+          ]
+        },
+        "build": [
+          "L04",
+          "L11",
+          "L06"
+        ],
+        "shared": {},
+        "reason": "Finish both hillside stair heads before convergence at a common level landing; enter the hut through an actual floor-level opening instead of climbing through its wall."
+      },
+      "native_sha256": "766d059f61672303843b9586bccefd4f584237c156cb37f89470d2c962596a85",
+      "glb_sha256": "0b651d47c432a6a166cde1caf60cf6590330841d6832611177e08125928209b6",
+      "new_parts": 63,
+      "new_triangles": 788
+    },
+    {
+      "id": "WLD-05",
+      "status": "ACTUAL_STAIR_CONNECTION_SOURCE_CANDIDATE_NOT_MAP_ACCEPTED",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "evidence": "development/levels/rebuild/stair-connection-pass/wld-05/construction.json",
+      "design": {
+        "points": {
+          "L09": [
+            [
+              30,
+              0,
+              52
+            ],
+            [
+              28.3,
+              0,
+              52
+            ],
+            [
+              28.3,
+              0,
+              49
+            ],
+            [
+              28,
+              -6,
+              31
+            ]
+          ],
+          "L17": [
+            [
+              11,
+              -6,
+              52
+            ],
+            [
+              26.5,
+              0,
+              52
+            ],
+            [
+              30,
+              0,
+              52
+            ]
+          ]
+        },
+        "build": [
+          "L09",
+          "L17"
+        ],
+        "shared": {},
+        "hub_landings": [
+          {
+            "link": "L09",
+            "elevation": 0,
+            "polygon": [
+              [
+                27.3,
+                50
+              ],
+              [
+                31.5,
+                50
+              ],
+              [
+                31.5,
+                53
+              ],
+              [
+                27.3,
+                53
+              ]
+            ]
+          }
+        ],
+        "reason": "Separate the two sloping columns before a common level adit hub; finish both rises before the return routes meet."
+      },
+      "native_sha256": "f9f6fa9a23a62ae5a00fccdfbad9828d495d96c0385c9b14d9a6e76f3069d18a",
+      "glb_sha256": "cc60805247fc26bfc05669ebc51d0ab564c4ea62f26a22636ec700494c7b11dc",
+      "new_parts": 80,
+      "new_triangles": 1166
+    },
+    {
+      "id": "WLD-06",
+      "status": "RETAINED_LATEST_SOURCE_REQUIRES_INDIVIDUAL_MAP_ACCEPTANCE",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "previous_evidence": "development/levels/rebuild/stair-opening-pass/wld-06/construction.json"
+    },
+    {
+      "id": "WLD-07",
+      "status": "RETAINED_LATEST_SOURCE_REQUIRES_INDIVIDUAL_MAP_ACCEPTANCE",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-07/construction.json"
+    },
+    {
+      "id": "WLD-08",
+      "status": "RETAINED_LATEST_SOURCE_REQUIRES_INDIVIDUAL_MAP_ACCEPTANCE",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "previous_evidence": "development/levels/rebuild/stair-opening-pass/wld-08/construction.json"
+    },
+    {
+      "id": "WLD-09",
+      "status": "RETAINED_LATEST_SOURCE_REQUIRES_INDIVIDUAL_MAP_ACCEPTANCE",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "previous_evidence": "development/levels/rebuild/stair-bay-pass/wld-09/construction.json"
+    },
+    {
+      "id": "WLD-10",
+      "status": "RETAINED_LATEST_SOURCE_REQUIRES_INDIVIDUAL_MAP_ACCEPTANCE",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-10/construction.json"
+    },
+    {
+      "id": "WLD-11",
+      "status": "RETAINED_LATEST_SOURCE_REQUIRES_INDIVIDUAL_MAP_ACCEPTANCE",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "previous_evidence": "development/levels/rebuild/stair-landing-pass/wld-11/construction.json"
+    },
+    {
+      "id": "WLD-12",
+      "status": "RETAINED_LATEST_SOURCE_REQUIRES_INDIVIDUAL_MAP_ACCEPTANCE",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "previous_evidence": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-12/construction.json"
+    },
+    {
+      "id": "WLD-13",
+      "status": "RETAINED_LATEST_SOURCE_REQUIRES_INDIVIDUAL_MAP_ACCEPTANCE",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "previous_evidence": "development/levels/rebuild/stair-opening-pass/wld-13/construction.json"
+    },
+    {
+      "id": "WLD-14",
+      "status": "RETAINED_LATEST_SOURCE_REQUIRES_INDIVIDUAL_MAP_ACCEPTANCE",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-14/construction.json"
+    },
+    {
+      "id": "WLD-15",
+      "status": "ACTUAL_STAIR_CONNECTION_SOURCE_CANDIDATE_NOT_MAP_ACCEPTED",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "evidence": "development/levels/rebuild/stair-connection-pass/wld-15/construction.json",
+      "design": {
+        "points": {
+          "route-17": [
+            [
+              26,
+              0,
+              46
+            ],
+            [
+              23,
+              0,
+              46
+            ],
+            [
+              23,
+              3,
+              36
+            ],
+            [
+              26,
+              3,
+              36
+            ]
+          ]
+        },
+        "build": [],
+        "retain_flights": [
+          "route-17"
+        ],
+        "shared": {},
+        "reason": "Add closed full-width low/high approach and endpoint support while retaining the existing passing physical flight."
+      },
+      "native_sha256": "65ea86d5f1c611f2d35cd6c1198e57dca62302302e4b4ba401be50e47640c21c",
+      "glb_sha256": "dfb08915bb4aca584cb6f3640441853b37256a3e7cc6d8c1c51ac00baa2fe6f6",
+      "new_parts": 3,
+      "new_triangles": 60
+    },
+    {
+      "id": "WLD-16",
+      "status": "RETAINED_LATEST_SOURCE_REQUIRES_INDIVIDUAL_MAP_ACCEPTANCE",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-16/construction.json"
+    },
+    {
+      "id": "WLD-17",
+      "status": "ACTUAL_STAIR_CONNECTION_SOURCE_CANDIDATE_NOT_MAP_ACCEPTED",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "evidence": "development/levels/rebuild/stair-connection-pass/wld-17/construction.json",
+      "design": {
+        "points": {
+          "route-02": [
+            [
+              32,
+              0,
+              72
+            ],
+            [
+              32,
+              0,
+              68
+            ],
+            [
+              32,
+              2,
+              58
+            ]
+          ],
+          "route-03": [
+            [
+              32,
+              2,
+              58
+            ],
+            [
+              40,
+              2,
+              56
+            ],
+            [
+              40,
+              4,
+              48
+            ]
+          ]
+        },
+        "build": [],
+        "retain_flights": [
+          "route-02",
+          "route-03"
+        ],
+        "shared": {},
+        "hub_landings": [
+          {
+            "link": "route-02",
+            "elevation": 0,
+            "polygon": [
+              [
+                31,
+                71.5
+              ],
+              [
+                33,
+                71.5
+              ],
+              [
+                33,
+                75.5
+              ],
+              [
+                31,
+                75.5
+              ]
+            ]
+          }
+        ],
+        "reason": "Support the complete turning approach footprint, not only its centreline; retain the existing passing flight."
+      },
+      "native_sha256": "3a7f0af68702dcfaa0244a777020b56464d13be376a87c6154995fef1751c32f",
+      "glb_sha256": "f78ae198db1ff17d7504bcce2f0fde3539c8e25b0931384f72f2a7e005177ac8",
+      "new_parts": 6,
+      "new_triangles": 9409
+    },
+    {
+      "id": "WLD-18",
+      "status": "ACTUAL_STAIR_CONNECTION_SOURCE_CANDIDATE_NOT_MAP_ACCEPTED",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "evidence": "development/levels/rebuild/stair-connection-pass/wld-18/construction.json",
+      "design": {
+        "points": {
+          "route-13": [
+            [
+              36,
+              0,
+              48
+            ],
+            [
+              52,
+              0,
+              48
+            ],
+            [
+              52,
+              0,
+              47.2
+            ],
+            [
+              52,
+              -4,
+              40.5
+            ],
+            [
+              52,
+              -4,
+              34
+            ],
+            [
+              48,
+              -4,
+              34
+            ]
+          ]
+        },
+        "build": [],
+        "retain_flights": [
+          "route-13"
+        ],
+        "shared": {},
+        "reason": "Close the lower exhibit entry/endpoint support around the preserved floor-height wall aperture and existing stair."
+      },
+      "native_sha256": "022550b758eb5fac8e443659de182827d1aa5e5230408c81dbcf0c4dd0324346",
+      "glb_sha256": "8628719c0b461e64f89f25e018ed3fc260ce372e250380d26e3ea34e59441a74",
+      "new_parts": 1,
+      "new_triangles": 12
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "status": "RETAINED_LATEST_SOURCE_REQUIRES_INDIVIDUAL_MAP_ACCEPTANCE",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-07-mortuary/construction.json"
+    }
+  ],
+  "aggregate": {
+    "revised_sites": 5,
+    "new_native_parts": 153,
+    "closed_structural_parts": 152,
+    "saved_terrain_parts": 1,
+    "new_triangles": 11435,
+    "new_structural_triangles": 2118,
+    "replaced_source_meshes": 125,
+    "flights_pass_both_directions": 221,
+    "flight_total": 221,
+    "flight_gain": 3,
+    "complete_links_pass_both_directions": 84,
+    "complete_link_total": 84,
+    "complete_link_gain": 6,
+    "flat_samples": 110409,
+    "baseline_valid": 101131,
+    "qualified_sweeps": 96122,
+    "after_valid": 101280,
+    "recovered_poses": 149,
+    "new_flat_blocks": 0,
+    "new_flat_sweep_failures": 0,
+    "remaining_invalid_flat_samples": 9129,
+    "battery_saved_terrain_triangles": 9317,
+    "battery_common_vertices": 5127,
+    "battery_lowered_vertices": 680,
+    "battery_raised_vertices": 0,
+    "battery_hole_probes": 737,
+    "battery_existing_punched_leaves": 2064,
+    "battery_added_punched_leaves": 0,
+    "battery_bearing_samples": 40,
+    "battery_new_footing_gaps": 0
+  },
+  "remaining": "Remaining9129flat-route samples require actual wall/cap/furniture/terrain/support revision, followed by native/runtime ownership and whole-map acceptance. Clear vertical paths are not map completion."
+}

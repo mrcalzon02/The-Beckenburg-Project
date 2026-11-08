@@ -66,3 +66,18 @@ tools/check_saved_terrain_consumer.py text eol=lf
 tools/export_roster_collision.py text eol=lf
 tools/review_roster_furnishings.py text eol=lf
 tools/audit_roster_terrain_envelopes.py text eol=lf
+
+# Physical stair connection source/evidence fingerprints.
+development/levels/rebuild/stair-connection-pass/** -text
+tools/build_stair_connections.py text eol=lf
+tools/check_stair_connections.py text eol=lf
+tools/render_stair_connections.py text eol=lf
+
+tools/author_connection_terrain.py text eol=lf
+tools/finish_connection_terrain.py text eol=lf
+
+tools/diagnose_remaining_flat_routes.py text eol=lf
+
+# Preserve raw Java TSV CRLF and Blender logs without rewriting evidence.
+development/levels/rebuild/stair-connection-pass/**/*.tsv whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+development/levels/rebuild/stair-connection-pass/**/*.log -diff

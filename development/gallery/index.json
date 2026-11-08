@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 8417,
+  "count": 8444,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -77924,6 +77924,276 @@
       "height": 750,
       "bytes": 506667,
       "sha256": "d32033dd2ecccd0b87b3d2e7c31e3651af961b7ea0773e70c9d373ed3cbb5491"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/connection-sheet-1.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/connection-sheet-1.png",
+      "title": "Connection sheet 1",
+      "kind": "Native connection construction context/contact sheet; not arrival/runtime acceptance",
+      "width": 1000,
+      "height": 1185,
+      "bytes": 586447,
+      "sha256": "d00b34edf88c0afe71283c4b376084ffea19519aa39108bc3ecff37153301adb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/connection-sheet-2.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/connection-sheet-2.png",
+      "title": "Connection sheet 2",
+      "kind": "Native connection construction context/contact sheet; not arrival/runtime acceptance",
+      "width": 1000,
+      "height": 1185,
+      "bytes": 564773,
+      "sha256": "bb7e3ebfa9e2a43903fe208351bc51cf7fdd6a0f9fe76815d8752fdedf00b7ec"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/connection-sheet-3.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/connection-sheet-3.png",
+      "title": "Connection sheet 3",
+      "kind": "Native connection construction context/contact sheet; not arrival/runtime acceptance",
+      "width": 1000,
+      "height": 790,
+      "bytes": 221846,
+      "sha256": "9569e89509e1fb19f0ed7ec0c66ea55c620bf7c306e4fd50bcdc841adb3fb719"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/connection-sheet-4.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/connection-sheet-4.png",
+      "title": "Connection sheet 4",
+      "kind": "Native connection construction context/contact sheet; not arrival/runtime acceptance",
+      "width": 1000,
+      "height": 790,
+      "bytes": 264292,
+      "sha256": "e68777ed966f4528afcb9a2dd6434fb55859fe6855ebdd8813e8057a206d17c2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/rejected-entry-gap-wld-17-battery-approach-after.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/rejected-entry-gap-wld-17-battery-approach-after.png",
+      "title": "Rejected entry gap wld 17 battery approach after",
+      "kind": "Native rejected connection pilot; not final candidate",
+      "width": 1000,
+      "height": 750,
+      "bytes": 651128,
+      "sha256": "39b2cfd99a8ae00349bea90d6fda5d073d060e9748f3f2265ad7a1ea1e2a49cd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/rejected-entry-gap-wld-17-battery-approach-before.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/rejected-entry-gap-wld-17-battery-approach-before.png",
+      "title": "Rejected entry gap wld 17 battery approach before",
+      "kind": "Native rejected connection pilot; not final candidate",
+      "width": 1000,
+      "height": 750,
+      "bytes": 648444,
+      "sha256": "f705ebf4907f3038776a08f311dfe530f3bd262bf6738e8965ef69256cf2163d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/rejected-entry-gap-wld-17-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/rejected-entry-gap-wld-17-whole-site.png",
+      "title": "Rejected entry gap wld 17 whole site",
+      "kind": "Native rejected connection pilot; not final candidate",
+      "width": 1000,
+      "height": 750,
+      "bytes": 491043,
+      "sha256": "6e93920d6d502f7a43e694ea0f52d8e2ffb9c2c3f7e3b84b1b4a2bedea732102"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/wld-04-clearing-hub-after.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/wld-04-clearing-hub-after.png",
+      "title": "Wld 04 clearing hub after",
+      "kind": "Native paired intact connection/landing inspection, neutral150Wfill; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 619603,
+      "sha256": "d862ba839d0ca12e0578f384a864bb5e2484733867a25c58a6642ffc24cf9d11"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/wld-04-clearing-hub-before.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/wld-04-clearing-hub-before.png",
+      "title": "Wld 04 clearing hub before",
+      "kind": "Native paired intact connection/landing inspection, neutral150Wfill; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 658916,
+      "sha256": "7cea6516bf8e96d2d254c23204899d4652f24fd2d8a54341c3dc2fd50dbbc618"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/wld-04-hut-entry-after.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/wld-04-hut-entry-after.png",
+      "title": "Wld 04 hut entry after",
+      "kind": "Native paired intact connection/landing inspection, neutral150Wfill; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 682439,
+      "sha256": "17ccd5ab2d6687407e4b4815668216df5da1a38836542a38e1d1fbf388e678bb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/wld-04-hut-entry-before.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/wld-04-hut-entry-before.png",
+      "title": "Wld 04 hut entry before",
+      "kind": "Native paired intact connection/landing inspection, neutral150Wfill; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 726791,
+      "sha256": "80d1152adc5ac8bcc01be015d9a515683aff3a8355d35af344bfb3abd72e3572"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/wld-04-isolated-stair-hub.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/wld-04-isolated-stair-hub.png",
+      "title": "Wld 04 isolated stair hub",
+      "kind": "Native isolated stair hub; all other context hidden",
+      "width": 1000,
+      "height": 750,
+      "bytes": 463966,
+      "sha256": "85fcd67838aafbbd4355b0402a7468aff00bcd97f9677b1f28def76e115a5ae3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/wld-04-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/wld-04-whole-site.png",
+      "title": "Wld 04 whole site",
+      "kind": "Native connection construction context/contact sheet; not arrival/runtime acceptance",
+      "width": 1000,
+      "height": 750,
+      "bytes": 498590,
+      "sha256": "1ae5a7d887d6d9a3e268eb024ee217a8cef229a200eb5f1a8636e27cec92dd88"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/wld-05-adit-hub-after.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/wld-05-adit-hub-after.png",
+      "title": "Wld 05 adit hub after",
+      "kind": "Native paired intact connection/landing inspection, neutral150Wfill; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 633267,
+      "sha256": "8eb5032b2184c9c566aad617b47b6e0e03ec58f01f054a8fa10892211761210c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/wld-05-adit-hub-before.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/wld-05-adit-hub-before.png",
+      "title": "Wld 05 adit hub before",
+      "kind": "Native paired intact connection/landing inspection, neutral150Wfill; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 720311,
+      "sha256": "c20cde57ca69120e7acca30a3ac609e644d384b14fc873a363ed9c5a52404f8d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/wld-05-isolated-stair-hub.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/wld-05-isolated-stair-hub.png",
+      "title": "Wld 05 isolated stair hub",
+      "kind": "Native isolated stair hub; all other context hidden",
+      "width": 1000,
+      "height": 750,
+      "bytes": 408484,
+      "sha256": "9499b14702cbe4dcc6c1fb7b31a2631e658fd6da82d813076e25f25b2b8a59b1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/wld-05-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/wld-05-whole-site.png",
+      "title": "Wld 05 whole site",
+      "kind": "Native connection construction context/contact sheet; not arrival/runtime acceptance",
+      "width": 1000,
+      "height": 750,
+      "bytes": 502506,
+      "sha256": "b67360cadea5b551fe07e8e5600e2b3692151a45bf1b20b22f58564926af76ea"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/wld-15-crew-approach-after.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/wld-15-crew-approach-after.png",
+      "title": "Wld 15 crew approach after",
+      "kind": "Native paired intact connection/landing inspection, neutral150Wfill; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 630532,
+      "sha256": "1445fbf4f2b81f9ceaba215abbb7e07af186d013eff06a3edc2f5af5982a55ec"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/wld-15-crew-approach-before.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/wld-15-crew-approach-before.png",
+      "title": "Wld 15 crew approach before",
+      "kind": "Native paired intact connection/landing inspection, neutral150Wfill; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 645615,
+      "sha256": "1cc3b9b3172f3f6799080e18279963158da27c356fc43a70ddb10c3849f6cc00"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/wld-15-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/wld-15-whole-site.png",
+      "title": "Wld 15 whole site",
+      "kind": "Native connection construction context/contact sheet; not arrival/runtime acceptance",
+      "width": 1000,
+      "height": 750,
+      "bytes": 498663,
+      "sha256": "7728ea8d88bd829f720c5164c93730727f3bf0714f6e5a7e6de32a6c2ba37f4f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/wld-17-battery-approach-after.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/wld-17-battery-approach-after.png",
+      "title": "Wld 17 battery approach after",
+      "kind": "Native paired intact connection/landing inspection, neutral150Wfill; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 650848,
+      "sha256": "d5609d22cd96665ebf8a7aa146c961da4ab1cdc5af5561bfb05e5e6a1d88af74"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/wld-17-battery-approach-before.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/wld-17-battery-approach-before.png",
+      "title": "Wld 17 battery approach before",
+      "kind": "Native paired intact connection/landing inspection, neutral150Wfill; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 648444,
+      "sha256": "00f18013f0a3c396e5b898a0a8db909d75c8c3b5db9155dc80a76f21e82e54a8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/wld-17-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/wld-17-saved-terrain.png",
+      "title": "Wld 17 saved terrain",
+      "kind": "Actual saved editor terrain diagnostic; not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 70953,
+      "sha256": "c4bc2edf8c7c71f66d7e60c581d8ce16cff3183fa939f125ba0a0680c8da74a5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/wld-17-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/wld-17-whole-site.png",
+      "title": "Wld 17 whole site",
+      "kind": "Native connection construction context/contact sheet; not arrival/runtime acceptance",
+      "width": 1000,
+      "height": 750,
+      "bytes": 491177,
+      "sha256": "67d099c258278baf78362f3233ccda8d7cf0abd9f02fc0a989779b4be49091e2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/wld-18-exhibit-threshold-after.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/wld-18-exhibit-threshold-after.png",
+      "title": "Wld 18 exhibit threshold after",
+      "kind": "Native paired intact connection/landing inspection, neutral150Wfill; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 713059,
+      "sha256": "0d52143cd724bcec1193f0c5101401aeaac7ecfd0051d28c1d2b4d0f9a8f7474"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/wld-18-exhibit-threshold-before.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/wld-18-exhibit-threshold-before.png",
+      "title": "Wld 18 exhibit threshold before",
+      "kind": "Native paired intact connection/landing inspection, neutral150Wfill; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 711342,
+      "sha256": "1730dd9a415d881b2e3929ae4211d6883b9a9e61a54f002d5ce683969cbecaa4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-connection-batch/wld-18-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-connection-batch/wld-18-whole-site.png",
+      "title": "Wld 18 whole site",
+      "kind": "Native connection construction context/contact sheet; not arrival/runtime acceptance",
+      "width": 1000,
+      "height": 750,
+      "bytes": 475472,
+      "sha256": "1c78adbc1b4ebd58d58d1a17c1f2fd8b1217aa5171b3dc777452ca91db0a96fc"
     },
     {
       "path": "development/levels/rebuild/captures/stair-landing-fit-batch/closeup-sheet-1.png",

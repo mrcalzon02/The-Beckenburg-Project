@@ -6208,5 +6208,41 @@
       "new_flat_sweep_failures": 0
     },
     "source_sha": "e5426fb97a70046c80defd06b78be5e3ce7fe21f"
+  },
+  "stair_connection_checkpoint": {
+    "status": "IN_PROGRESS_NATIVE_CONNECTIONS_VERIFIED_MAP_ACCEPTANCE_OPEN",
+    "evidence": "development/levels/rebuild/stair-connection-pass/roster.json",
+    "aggregate": {
+      "revised_sites": 5,
+      "new_native_parts": 153,
+      "closed_structural_parts": 152,
+      "saved_terrain_parts": 1,
+      "new_triangles": 11435,
+      "new_structural_triangles": 2118,
+      "replaced_source_meshes": 125,
+      "flights_pass_both_directions": 221,
+      "flight_total": 221,
+      "flight_gain": 3,
+      "complete_links_pass_both_directions": 84,
+      "complete_link_total": 84,
+      "complete_link_gain": 6,
+      "flat_samples": 110409,
+      "baseline_valid": 101131,
+      "qualified_sweeps": 96122,
+      "after_valid": 101280,
+      "recovered_poses": 149,
+      "new_flat_blocks": 0,
+      "new_flat_sweep_failures": 0,
+      "remaining_invalid_flat_samples": 9129,
+      "battery_saved_terrain_triangles": 9317,
+      "battery_common_vertices": 5127,
+      "battery_lowered_vertices": 680,
+      "battery_raised_vertices": 0,
+      "battery_hole_probes": 737,
+      "battery_existing_punched_leaves": 2064,
+      "battery_added_punched_leaves": 0,
+      "battery_bearing_samples": 40,
+      "battery_new_footing_gaps": 0
+    }
   }
 }

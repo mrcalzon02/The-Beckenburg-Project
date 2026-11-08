@@ -13,8 +13,8 @@ from build_roster_floor_closures import difference,clean_polygon
 from build_roster_decks import area
 from planar_structure import plate
 BASE=ROOT/'development/levels/rebuild';OUT=BASE/'stair-terrain-pass'
-def main():
-    for site in ['WLD-03','WLD-04','WLD-12']:
+def main(sites=('WLD-03','WLD-04','WLD-12')):
+    for site in sites:
         w=json.loads((OUT/(site.lower()+'-world.json')).read_text());source=ROOT/w['source_glb'];native=ROOT/w['source_physics'];world=ROOT/w['world'];prior=json.loads(source.with_name('construction.json').read_text());assert sha(source)==w['source_glb_sha256'] and sha(native)==w['source_physics_sha256'];assert all(sha(ROOT/name)==h for name,h in w['world_files_sha256'].items());bpy.ops.wm.read_factory_settings(use_empty=True);bpy.ops.import_scene.gltf(filepath=str(source));old=[o for o in bpy.context.scene.objects if o.type=='MESH' and o.get('role','').startswith('saved editor terrain')];assert len(old)==1,(site,'terrain mesh identity');old=old[0];name=old.name;materials=list(old.data.materials);bpy.data.objects.remove(old,do_unlink=True);points=[];faces=[];chunks=sorted((world/'scene-package/meshes').glob('site*.obj'))
         for chunk in chunks:
             offset=len(points)

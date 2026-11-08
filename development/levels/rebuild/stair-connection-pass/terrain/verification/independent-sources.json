@@ -1,0 +1,22 @@
+{
+  "status": "PASS_SCOPED_SAVED_WORLD_SOURCE_NATIVE_EDITABLE_CHECKS",
+  "sites": [
+    {
+      "id": "WLD-17",
+      "preserved_nonterrain_meshes": 259,
+      "preserved_nonterrain_native_parts": 259,
+      "actual_shared_terrain_triangles": 9317,
+      "common_saved_vertices": 5127,
+      "lowered_saved_vertices": 680,
+      "raised_saved_vertices": 0,
+      "source_height_unchanged": true,
+      "prior_world_unchanged": true,
+      "packed_images": 11,
+      "blend_sha256": "323c9b6953ab9fae37b5630e27d29c1e985ba84e3034111afd49401ad82d54cd",
+      "glb_sha256": "5d7e76f0b0e0ca58efa6cadb3229a5b961555d0e244ec1cda7c25aab01e9ab4a",
+      "physics_sha256": "098eb92e894a0a82fbc43e07546234c22e4cf558f0754d94bcd83677efda3e74"
+    }
+  ],
+  "checker_sha256": "06234287904d23b1fe31d0708cf64ed7fa1203cde04fa08e142f1826a9f1af58",
+  "limitations": "No terrain aesthetic/retaining/cave/physical edge/van arrival or actual runtime/hardware acceptance."
+}

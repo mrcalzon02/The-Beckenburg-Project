@@ -7,7 +7,7 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'tools'))
 from export_roster_collision import native_faces
 from check_roster_decks import read_parts
 from review_roster_macroterrain import sha
-BASE=ROOT/'development/levels/rebuild/stair-terrain-pass'
+BASE=ROOT/(sys.argv[sys.argv.index('--root')+1] if '--root' in sys.argv else 'development/levels/rebuild/stair-terrain-pass')
 def tree(path):
     points=[];faces=[]
     for xyz,flags in native_faces(path):

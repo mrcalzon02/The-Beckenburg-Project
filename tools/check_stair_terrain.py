@@ -10,7 +10,9 @@ from review_roster_macroterrain import records,sha
 from export_roster_collision import face_keys,native_faces
 from check_roster_decks import read_parts
 BASE=ROOT/'development/levels/rebuild/stair-terrain-pass'
-def main():
+def main(base=None):
+    global BASE
+    if base is not None:BASE=base
     rows=[];(BASE/'verification').mkdir(exist_ok=True)
     for p in sorted((BASE/'assemblies').glob('*/construction.json')):
         r=json.loads(p.read_text());folder=p.parent;world=ROOT/r['world'];author=json.loads((BASE/(r['id'].lower()+'-world.json')).read_text());source=ROOT/r['source_glb'];target=folder/'benched-terrain.glb';native=folder/'benched-terrain.hcs2';old=ROOT/r['source_physics']
