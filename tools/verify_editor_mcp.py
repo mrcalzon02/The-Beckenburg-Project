@@ -11,7 +11,8 @@ from mcp.client.stdio import stdio_client
 
 
 async def verify(scope):
-    settings = StdioServerParameters(command=sys.executable, args=[str(Path(__file__).with_name("editor_mcp.py"))],
+    adapter = os.environ.get("EDITOR_MCP_SCRIPT", str(Path(__file__).with_name("editor_mcp.py")))
+    settings = StdioServerParameters(command=sys.executable, args=[adapter],
                                      env={key: os.environ[key] for key in ("EDITOR_AGENT_URL", "EDITOR_AGENT_TOKEN")})
     async with stdio_client(settings) as (reader, writer), ClientSession(reader, writer) as client:
         await client.initialize()

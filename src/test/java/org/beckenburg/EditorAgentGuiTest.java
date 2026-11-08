@@ -194,6 +194,22 @@ public final class EditorAgentGuiTest {
             check(child.waitFor(90,java.util.concurrent.TimeUnit.SECONDS) && child.exitValue()==0,"MCP client acceptance: "+scope);
         }finally{if(child.isAlive())child.destroyForcibly();}
     }
+    static void verifyCastleMcpRepair(DeveloperLevelEditor editor)throws Exception{
+        SwingUtilities.invokeAndWait(()->{
+            var service=editor.agentService();var rev=service.summary().revision();
+            var spawn=service.node(rev,"start").result();
+            service.transact(rev,"put-surface",Map.of("id","mcp-test-divider","kind","WALL",
+                "x0",String.valueOf(spawn.x()-1),"z0",String.valueOf(spawn.z()),"x1",String.valueOf(spawn.x()+1),"z1",String.valueOf(spawn.z()),
+                "base","0","height","2","material","0"));
+        });
+        var writable=openAccess(editor,"save");verifyMcp(writable,"save");
+        SwingUtilities.invokeAndWait(()->{
+            var undo=button(editor,"UNDO");undo.doClick();
+            check(CastleLevelEdits.current().surfaceById("mcp-test-divider")!=null,"Human undo restored the agent-removed wall");
+            undo.doClick();undo.doClick();
+            check(CastleLevelEdits.current().surfaceById("mcp-test-divider")==null,"Fixture edits reversed through shared history");
+        });
+    }
     private static HttpResponse<byte[]> request(Access access,String path,String method,String auth)throws Exception{
         var request=HttpRequest.newBuilder(URI.create(access.url()+path)).timeout(java.time.Duration.ofSeconds(30))
             .method(method,HttpRequest.BodyPublishers.noBody());
@@ -284,22 +300,7 @@ public final class EditorAgentGuiTest {
                 }
                 check(editor.get()!=null,"Actual human editor opened");
             });
-            if(System.getenv("EDITOR_MCP_PYTHON")!=null){
-                SwingUtilities.invokeAndWait(()->{
-                    var service=editor.get().agentService();var rev=service.summary().revision();
-                    var spawn=service.node(rev,"start").result();
-                    service.transact(rev,"put-surface",Map.of("id","mcp-test-divider","kind","WALL",
-                        "x0",String.valueOf(spawn.x()-1),"z0",String.valueOf(spawn.z()),"x1",String.valueOf(spawn.x()+1),"z1",String.valueOf(spawn.z()),
-                        "base","0","height","2","material","0"));
-                });
-                var writable=openAccess(editor.get(),"save");verifyMcp(writable,"save");
-                SwingUtilities.invokeAndWait(()->{
-                    var undo=button(editor.get(),"UNDO");undo.doClick();
-                    check(CastleLevelEdits.current().surfaceById("mcp-test-divider")!=null,"Human undo restored the agent-removed wall");
-                    undo.doClick();undo.doClick();
-                    check(CastleLevelEdits.current().surfaceById("mcp-test-divider")==null,"Fixture edits reversed through shared history");
-                });
-            }
+            if(System.getenv("EDITOR_MCP_PYTHON")!=null)verifyCastleMcpRepair(editor.get());
             SwingUtilities.invokeAndWait(()->{
                 try{
                     var e=editor.get();var castle=e.agentService();var state=castle.inspect();
