@@ -596,7 +596,7 @@ public final class AssetImportDialog {
     }
     private void beginModelingPreview(java.util.function.Function<EditorTopologyProject,EditorTopologyProject.EditPreview> editOperation){
         if(busy||topologyProject==null)return;
-        if(!topologyProject.isCurrent(workingObservation)){workingObservation=topologyProject.observe();source=workingObservation.mesh();}
+        if(!topologyProject.isCurrent(workingObservation)){workingObservation=topologyProject.observe(workingObservation);source=workingObservation.mesh();}
         cancelAxisDrag();cancelBoxSelection();clearPrimitivePreview();clearModelingPreview();
         var project=topologyProject;var state=workingObservation.snapshot();long nativeRevision=workingObservation.revision();int request=modelingGeneration;var working=source;
         busy=true;modelingPreparing=true;choose.setEnabled(false);refreshMeshControls();details.append("\nPreparing native model edit...");
@@ -654,7 +654,7 @@ public final class AssetImportDialog {
         for(var v:observed.vertices())if(v.id()==id){selectedVertex=v;selectedVertices=java.util.Set.of(id);vertexX.setValue(v.x());vertexY.setValue(v.y());vertexZ.setValue(v.z());return;}
     }
     private void refreshWorkingObservation(){
-        var selected=selectedVertices;workingObservation=topologyProject.observe();source=workingObservation.mesh();selectVertex();
+        var selected=selectedVertices;workingObservation=topologyProject.observe(workingObservation);source=workingObservation.mesh();selectVertex();
         var valid=new java.util.HashSet<Long>();for(var v:workingObservation.snapshot().vertices())if(selected.contains(v.id()))valid.add(v.id());
         if(!valid.isEmpty()&&(selectedVertex==null||!valid.contains(selectedVertex.id()))){vertexId.setValue(valid.stream().mapToLong(Long::longValue).min().orElseThrow());selectVertex();}
         selectedVertices=java.util.Set.copyOf(valid);
@@ -666,7 +666,7 @@ public final class AssetImportDialog {
     }
     private void meshChanged(){
         clearModelingPreview();
-        var selected=selectedVertices;workingObservation=topologyProject.observe();source=workingObservation.mesh();selectVertex();
+        var selected=selectedVertices;workingObservation=topologyProject.observe(workingObservation);source=workingObservation.mesh();selectVertex();
         if(!selected.isEmpty()){var ids=new java.util.HashSet<Long>();for(var v:topologyProject.snapshot().vertices())if(selected.contains(v.id()))ids.add(v.id());selectedVertices=java.util.Set.copyOf(ids);}
         refreshMeshControls();
         if(slider.getValue()!=0)slider.setValue(0);else recalculate();

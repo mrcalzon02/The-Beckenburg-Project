@@ -91,6 +91,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         private final long revision;
         private Observation(EditorTopologyProject owner,State state,long revision){this.owner=owner;this.state=state;this.revision=revision;}
         private Map<Long,Vertex> vertexIndex;
+        private volatile EditorMeshPipeline.Mesh derivedMesh;
         /** Lookup in this immutable native observation. Built once per gesture when needed. */
         public synchronized Vertex vertex(long id) {
             if (vertexIndex==null) vertexIndex=indexVertices(state.vertices());
@@ -98,8 +99,11 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         }
         public State snapshot(){return state;}
         public long revision(){return revision;}
-        public EditorMeshPipeline.Mesh mesh(){return EditorTopologyProject.mesh(state);}
-        public EditorMeshTopology topology(){return EditorTopologyProject.topology(state);}
+        public synchronized EditorMeshPipeline.Mesh mesh(){
+            if(derivedMesh==null) derivedMesh=EditorTopologyProject.mesh(state);
+            return derivedMesh;
+        }
+        public EditorMeshTopology topology(){return EditorTopologyProject.topology(state,mesh());}
         /** Ordered native vertices on the manifold boundary containing the picked edge. */
         public List<Vertex> boundaryLoop(long first, long second) {
             var graph = topology();
@@ -130,6 +134,14 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         }
     }
     public synchronized Observation observe(){return new Observation(this,state,revision);}
+    /** Reuse unchanged immutable render triangles when advancing the human viewport. */
+    public synchronized Observation observe(Observation previous) {
+        var next=observe();
+        if (previous!=null && previous.owner==this && previous.derivedMesh!=null) {
+            next.derivedMesh=state==previous.state ? previous.derivedMesh : updateMesh(previous.derivedMesh,state);
+        }
+        return next;
+    }
     public synchronized boolean isCurrent(Observation observation){return observation!=null&&observation.owner==this&&observation.state==state&&observation.revision==revision;}
     public record SavedReview(byte[] bytes,String diskFingerprint){
         public SavedReview {bytes=bytes.clone();}
@@ -187,17 +199,51 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         return new EditorMeshPipeline.Mesh(state.name(),triangles,state.sourceBytes(),ids,state.materials(),state.glbSource(),state.faces().stream().map(Face::id).toList(),visibleFrames,state.quads());
     }
     private static Map<Long,Vertex> indexVertices(List<Vertex> values){var map=new HashMap<Long,Vertex>();for(var v:values)map.put(v.id(),v);return map;}
+    private static EditorMeshPipeline.Mesh updateMesh(EditorMeshPipeline.Mesh old,State state) {
+        if (old.triangles().size()!=state.faces().size()) return mesh(state);
+        var vertices=indexVertices(state.vertices());
+        var triangles=new ArrayList<EditorMeshPipeline.Triangle>(state.faces().size());
+        for (int i=0;i<state.faces().size();i++) {
+            var face=state.faces().get(i);
+            var prior=old.triangles().get(i);
+            if (face.id()!=old.faceIds().get(i) || !face.part().equals(prior.part()) ||
+                face.a().vertex()!=old.cornerVertexIds().get(3*i) || face.b().vertex()!=old.cornerVertexIds().get(3*i+1) ||
+                face.c().vertex()!=old.cornerVertexIds().get(3*i+2)) return mesh(state);
+            var a=updatedCorner(face.a(),prior.a(),vertices);
+            var b=updatedCorner(face.b(),prior.b(),vertices);
+            var c=updatedCorner(face.c(),prior.c(),vertices);
+            triangles.add(a==prior.a() && b==prior.b() && c==prior.c() && face.material().equals(prior.material())
+                ? prior : new EditorMeshPipeline.Triangle(face.part(),a,b,c,face.material()));
+        }
+        var visibleFrames=new TreeMap<String,EditorMeshFrame>();
+        if (!state.frames().isEmpty()) for (var face:state.faces()) {
+            var frame=state.frames().get(face.part());
+            if (frame!=null) visibleFrames.put(face.part(),frame);
+        }
+        return new EditorMeshPipeline.Mesh(state.name(),triangles,state.sourceBytes(),old.cornerVertexIds(),
+            state.materials(),state.glbSource(),old.faceIds(),visibleFrames,state.quads());
+    }
+    private static EditorMeshPipeline.Vertex updatedCorner(Corner c,EditorMeshPipeline.Vertex prior,Map<Long,Vertex> vertices) {
+        var v=vertices.get(c.vertex());
+        if (Double.compare(v.x(),prior.x())==0 && Double.compare(v.y(),prior.y())==0 && Double.compare(v.z(),prior.z())==0 &&
+            Double.compare(c.u(),prior.u())==0 && Double.compare(c.v(),prior.v())==0 && Objects.equals(c.normal(),prior.normal()))
+            return prior;
+        return new EditorMeshPipeline.Vertex(v.x(),v.y(),v.z(),c.u(),c.v(),c.normal());
+    }
     private static EditorMeshPipeline.Triangle triangle(Face f,Map<Long,Vertex> values){return new EditorMeshPipeline.Triangle(f.part(),corner(f.a(),values),corner(f.b(),values),corner(f.c(),values),f.material());}
     private static Corner normalCorner(Corner c,EditorMeshPipeline.Normal n){return new Corner(c.vertex(),c.u(),c.v(),n);}
     private static Face normalFace(Face f,EditorMeshPipeline.Triangle t){return new Face(f.id(),f.part(),normalCorner(f.a(),t.a().normal()),normalCorner(f.b(),t.b().normal()),normalCorner(f.c(),t.c().normal()),f.material());}
     public synchronized EditorMeshPipeline.Mesh mesh(){return mesh(state);}
     public synchronized EditorMeshTopology topology(){return topology(state);}
     private static EditorMeshTopology topology(State state){
+        return topology(state,mesh(state));
+    }
+    private static EditorMeshTopology topology(State state,EditorMeshPipeline.Mesh mesh){
         var positions=new ArrayList<EditorMeshTopology.Vertex>();var ids=new HashMap<Long,Integer>();
         for(var v:state.vertices()){ids.put(v.id(),positions.size());positions.add(new EditorMeshTopology.Vertex(v.part(),v.x(),v.y(),v.z()));}
         int[] origins=new int[state.faces().size()*3];int i=0;
         for(var face:state.faces())for(var corner:List.of(face.a(),face.b(),face.c()))origins[i++]=ids.get(corner.vertex());
-        return EditorMeshTopology.buildIndexed(mesh(state),positions,origins);
+        return EditorMeshTopology.buildIndexed(mesh,positions,origins);
     }
     public enum FaceEdit { EXTRUDE, INSET }
     /** A validated candidate in this project's native schema; it owns no editor/runtime authority. */

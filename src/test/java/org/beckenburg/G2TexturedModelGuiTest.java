@@ -97,7 +97,9 @@ public final class G2TexturedModelGuiTest {
         edt(() -> ui.openMaterials());
         for (int i=0;i<12;i++) {
             final int face = i;
+            var original=new AtomicReference<EditorMeshPipeline.Mesh>();
             edt(() -> {
+                original.set((EditorMeshPipeline.Mesh)field(ui,"source"));
                 var faces = (JList<?>)field(field(ui,"materialWorkspace"),"faceList");
                 faces.clearSelection();
                 faces.setSelectedIndex(face);
@@ -110,6 +112,17 @@ public final class G2TexturedModelGuiTest {
                 }
             });
             applyReview();
+            edt(() -> {
+                var next=(EditorMeshPipeline.Mesh)field(ui,"source");
+                check(next.equals(project.mesh()),"Incremental viewport must equal full native derivation");
+                for (int j=0;j<next.triangles().size();j++) {
+                    var prior=original.get().triangles().get(j);
+                    var current=next.triangles().get(j);
+                    check((prior==current)==(j!=face),"Only the newly bound face changes");
+                    check(prior.a()==current.a() && prior.b()==current.b() && prior.c()==current.c(),
+                        "Binding a material reuses the existing geometry corners");
+                }
+            });
         }
         await(() -> {
             try { return !(boolean)field(ui,"materialRendering") && ((JLabel)field(ui,"materialRuntime")).getIcon()!=null; }
