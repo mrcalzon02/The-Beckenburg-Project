@@ -136,7 +136,9 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
     saved_revision = run(['summary'])[0]['result']['revision']
     castle_change = run([f'edit\t{saved_revision}\tset-spawn\tx=12.5\tz=19\tyaw=1.125',
                          f'changes\t{saved_revision + 1}\t0\t1'])[-1]
-    assert castle_change['result']['result']['fullScene'], 'Castle reports conservative invalidation'
+    spawn_change = castle_change['result']['result']
+    assert not spawn_change['fullScene'] and spawn_change['total'] == 1
+    assert spawn_change['nodes'][0]['id'] == 'start' and spawn_change['nodes'][0]['kind'] == 'UPDATED'
     reopened_castle = run(['inspect'])[0]['result']
     assert reopened_castle['state'] == rows_castle[-1]['result']['state']
     recovered_castle = run([f'recover\t{reopened_castle["revision"]}', 'inspect'])[-1]['result']

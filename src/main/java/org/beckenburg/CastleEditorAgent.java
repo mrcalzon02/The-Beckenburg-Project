@@ -1,6 +1,7 @@
 package org.beckenburg;
 
 import org.beckenburg.editor.EditorAgentService;
+import org.beckenburg.editor.EditorChange;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
@@ -22,6 +23,62 @@ public final class CastleEditorAgent implements EditorAgentService.Host<CastleLe
     }
     public CastleEditorProject project(){return project;}
     public long revision(){return scene.revision();}
+    private record Station(double x,double z) {}
+    private record Spawn(double x,double z,double yaw) {}
+    private static Spawn spawn(CastleLevelEdits.Snapshot s) { return new Spawn(s.spawnX(),s.spawnZ(),s.spawnYaw()); }
+
+    /** Temporary comparison of native records in the same resolution order as the human hierarchy. */
+    private static Map<String,Object> nodes(CastleLevelEdits.Snapshot state) {
+        var values=new java.util.LinkedHashMap<String,Object>();
+        for (var surface:state.surfaces()) values.put(surface.id(),surface);
+        for (var prop:state.props()) values.putIfAbsent(prop.id(),prop);
+        for (var lamp:state.lamps()) values.putIfAbsent(lamp.id(),lamp);
+        var stations=state.stations();
+        for (var station:CastleHubMap.Station.values()) {
+            var p=stations.get(station.name());
+            values.putIfAbsent(station.name(),new Station(p[0],p[1]));
+        }
+        values.putIfAbsent("start",spawn(state));
+        return values;
+    }
+    private static String fingerprint(Object value) {
+        return value==null ? null : EditorChange.fingerprint("castle-node/v1:"+value);
+    }
+    private static void collectAssets(Object value,java.util.Set<String> assets) {
+        if (value instanceof CastleLevelEdits.Prop p) assets.add("assets://models/"+p.mesh());
+        if (value instanceof CastleLevelEdits.Lamp l) {
+            assets.add("assets://models/"+l.on());
+            assets.add("assets://models/"+l.off());
+        }
+    }
+    public EditorChange.Details changes(CastleLevelEdits.Snapshot before,CastleLevelEdits.Snapshot after) {
+        if (before.sameWorld(after)) {
+            var a=spawn(before);
+            var b=spawn(after);
+            if (a.equals(b)) return new EditorChange.Details(List.of(),java.util.Set.of(),java.util.Set.of(),null,false);
+            if (after.surfaces().stream().anyMatch(s->s.id().equals("start")) ||
+                after.props().stream().anyMatch(p->p.id().equals("start")) ||
+                after.lamps().stream().anyMatch(l->l.id().equals("start"))) return EditorChange.Details.full();
+            var node=new EditorChange.Node("start",EditorChange.Kind.UPDATED,fingerprint(a),fingerprint(b));
+            return new EditorChange.Details(List.of(node),java.util.Set.of(),java.util.Set.of(EditorChange.Dependency.RENDER),null,false);
+        }
+        var old=nodes(before);
+        var next=nodes(after);
+        var ids=new java.util.LinkedHashSet<>(old.keySet());
+        ids.addAll(next.keySet());
+        var changes=new java.util.ArrayList<EditorChange.Node>();
+        var assets=new java.util.HashSet<String>();
+        for (String id:ids) {
+            var a=old.get(id);
+            var b=next.get(id);
+            if (java.util.Objects.equals(a,b)) continue;
+            var kind=a==null ? EditorChange.Kind.ADDED : b==null ? EditorChange.Kind.REMOVED : EditorChange.Kind.UPDATED;
+            changes.add(new EditorChange.Node(id,kind,fingerprint(a),fingerprint(b)));
+            collectAssets(a,assets);
+            collectAssets(b,assets);
+        }
+        return new EditorChange.Details(changes,assets,java.util.Set.of(EditorChange.Dependency.values()),null,true);
+    }
     public void checkAccess(){access.run();}
     public java.util.Set<EditorAgentService.Capability> capabilities(){
         return java.util.EnumSet.allOf(EditorAgentService.Capability.class);

@@ -215,10 +215,13 @@ public final class CastleLevelEdits {
         @Override public Map<String,double[]> stations(){return copyStations(stations);}
         @Override public boolean equals(Object value){
             if(this==value)return true;if(!(value instanceof Snapshot other))return false;
+            return Double.compare(spawnX,other.spawnX)==0 && Double.compare(spawnZ,other.spawnZ)==0 &&
+                Double.compare(spawnYaw,other.spawnYaw)==0 && sameWorld(other);
+        }
+        boolean sameWorld(Snapshot other){
             if(!props.equals(other.props)||!lamps.equals(other.lamps)||!surfaces.equals(other.surfaces)
                 ||!floorPaint.equals(other.floorPaint)||!wallPaint.equals(other.wallPaint)||!navBlocked.equals(other.navBlocked)
-                ||!doors.equals(other.doors)||Double.compare(spawnX,other.spawnX)!=0||Double.compare(spawnZ,other.spawnZ)!=0
-                ||Double.compare(spawnYaw,other.spawnYaw)!=0||!stations.keySet().equals(other.stations.keySet()))return false;
+                ||!doors.equals(other.doors)||!stations.keySet().equals(other.stations.keySet()))return false;
             for(var entry:stations.entrySet())if(!java.util.Arrays.equals(entry.getValue(),other.stations.get(entry.getKey())))return false;
             return true;
         }
