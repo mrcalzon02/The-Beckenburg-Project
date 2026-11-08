@@ -31,6 +31,10 @@ public final class EditorMeshPicking {
             if(!Double.isFinite(x)||!Double.isFinite(y)||!Double.isFinite(z)||!Double.isFinite(radius)||radius<=0||!Double.isFinite(yawDegrees)||!Double.isFinite(pitchDegrees)||Math.abs(pitchDegrees)>89)throw new IllegalArgumentException("Invalid orbit camera");
             this.x=x;this.y=y;this.z=z;this.radius=radius;double yaw=Math.toRadians(yawDegrees),pitch=Math.toRadians(pitchDegrees),sy=Math.sin(yaw),cy=Math.cos(yaw),sp=Math.sin(pitch),cp=Math.cos(pitch);right=new double[]{cy,0,-sy};up=new double[]{-sy*sp,cp,-cy*sp};near=new double[]{sy*cp,sp,cy*cp};
         }
+        public boolean sameProjection(Camera other) {
+            return other != null && x == other.x && y == other.y && z == other.z && radius == other.radius
+                    && Arrays.equals(right, other.right) && Arrays.equals(up, other.up) && Arrays.equals(near, other.near);
+        }
         private double dot(double[] axis,double a,double b,double c){return axis[0]*a+axis[1]*b+axis[2]*c;}
         private double distance(double a,double b,double c){return 3-dot(near,(a-x)/radius,(b-y)/radius,(c-z)/radius);}
         public Point project(double a,double b,double c){double d=distance(a,b,c);if(!Double.isFinite(d)||d<=.05)return new Point(Double.NaN,Double.NaN,Double.NaN);return new Point(dot(right,(a-x)/radius,(b-y)/radius,(c-z)/radius)/d,-dot(up,(a-x)/radius,(b-y)/radius,(c-z)/radius)/d,1/d);}
@@ -46,9 +50,29 @@ public final class EditorMeshPicking {
     }
     /** Stable framing derived from actual authoring vertices, never mutable scene state. */
     public static Camera camera(Collection<EditorMeshPipeline.Vertex> vertices,double yaw,double pitch){
-        double minX=Double.POSITIVE_INFINITY,minY=minX,minZ=minX,maxX=Double.NEGATIVE_INFINITY,maxY=maxX,maxZ=maxX;
-        for(var v:vertices){minX=Math.min(minX,v.x());minY=Math.min(minY,v.y());minZ=Math.min(minZ,v.z());maxX=Math.max(maxX,v.x());maxY=Math.max(maxY,v.y());maxZ=Math.max(maxZ,v.z());}
-        if(vertices.isEmpty())return new Camera(0,0,0,1,yaw,pitch);double radius=Math.hypot(Math.hypot(maxX*.5-minX*.5,maxY*.5-minY*.5),maxZ*.5-minZ*.5);return new Camera(minX*.5+maxX*.5,minY*.5+maxY*.5,minZ*.5+maxZ*.5,Math.max(1e-6,radius),yaw,pitch);
+        var bounds = new CameraBounds();
+        for (var vertex : vertices) bounds.add(vertex);
+        return bounds.camera(yaw, pitch);
+    }
+    public static Camera cameraForTriangles(List<EditorMeshPipeline.Triangle> triangles, double yaw, double pitch) {
+        var bounds = new CameraBounds();
+        for (var triangle : triangles) {
+            bounds.add(triangle.a()); bounds.add(triangle.b()); bounds.add(triangle.c());
+        }
+        return bounds.camera(yaw, pitch);
+    }
+    private static final class CameraBounds {
+        double minX = Double.POSITIVE_INFINITY, minY = minX, minZ = minX;
+        double maxX = Double.NEGATIVE_INFINITY, maxY = maxX, maxZ = maxX;
+        void add(EditorMeshPipeline.Vertex v) {
+            minX = Math.min(minX, v.x()); minY = Math.min(minY, v.y()); minZ = Math.min(minZ, v.z());
+            maxX = Math.max(maxX, v.x()); maxY = Math.max(maxY, v.y()); maxZ = Math.max(maxZ, v.z());
+        }
+        Camera camera(double yaw, double pitch) {
+            if (minX == Double.POSITIVE_INFINITY) return new Camera(0, 0, 0, 1, yaw, pitch);
+            double radius = Math.hypot(Math.hypot(maxX*.5-minX*.5, maxY*.5-minY*.5), maxZ*.5-minZ*.5);
+            return new Camera(minX*.5+maxX*.5, minY*.5+maxY*.5, minZ*.5+maxZ*.5, Math.max(1e-6,radius), yaw, pitch);
+        }
     }
     public static EditorMeshPipeline.Normal unitAxis(int axis){return switch(axis){case 0->new EditorMeshPipeline.Normal(1,0,0);case 1->new EditorMeshPipeline.Normal(0,1,0);case 2->new EditorMeshPipeline.Normal(0,0,1);default->throw new IllegalArgumentException("Axis must be0..2");};}
     public record Hit(long faceId,long vertexId,long edgeA,long edgeB,double depth,double u,double v){}

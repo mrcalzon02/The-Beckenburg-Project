@@ -42,7 +42,10 @@ public final class AssetImportSlideGuiTest {
             refuse(()->project.previewVertexSlide(center,east,1));
             var cube=EditorTopologyProject.fromMesh(EditorMeshPrimitives.preview(new EditorMeshPrimitives.Parameters(EditorMeshPrimitives.Kind.BOX,2,2,2,12,1)),"0".repeat(64),root.resolve("box.btop"));
             var side=cube.snapshot().faces().get(0);refuse(()->cube.previewVertexSlide(side.a().vertex(),side.b().vertex(),.25));
+            var cameraBefore=new AtomicReference<EditorMeshPicking.Projector>();
             edt(()->{
+                ((JComboBox<?>)field(dock,"meshView")).setSelectedItem(EditorMeshPicking.Projection.PERSPECTIVE);
+                cameraBefore.set((EditorMeshPicking.Projector)call(dock,"projector",new Class<?>[]{List.class},project.mesh().triangles()));
                 ((JComboBox<?>)field(dock,"meshView")).setSelectedItem(EditorMeshPicking.Projection.FRONT);
                 ((JComboBox<?>)field(dock,"selectionMode")).setSelectedItem("EDGE");
                 tool((JDialog)field(dock,"dialog"),"Move").doClick();
@@ -69,6 +72,9 @@ public final class AssetImportSlideGuiTest {
                 button(dock,"undoMesh");check(project.snapshot().equals(initial),"One undo restores slide");
                 button(dock,"redoMesh");button(dock,"saveMesh");button(dock,"reopenMesh");
                 check(EditorTopologyProject.open(project.documentPath()).snapshot().equals(moved),"Fresh native reopen retains slide");
+                ((JComboBox<?>)field(dock,"meshView")).setSelectedItem(EditorMeshPicking.Projection.PERSPECTIVE);
+                check(call(dock,"projector",new Class<?>[]{List.class},project.mesh().triangles())==cameraBefore.get(),
+                        "Interior slide with unchanged bounds retains the same perspective projection");
             });
             await(()->ready(dock));edt(()->button(dock,"apply"));await(()->published.get()!=null);
             var actual=GlbProps.model(published.get()).triangles();var expected=project.mesh().triangles();

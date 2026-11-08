@@ -44,15 +44,19 @@ public final class AssetImportDialog {
     private final JLabel pathLabel=new JLabel("Choose OBJ, STL, GLB or native BTOP mesh");
     private final JButton apply=new JButton("PUBLISH TO EDITOR");
     private final JButton choose=new JButton("CHOOSE MODEL");
+    private final ModelWireframeBuffer workingWireframe = new ModelWireframeBuffer();
+    private final ModelWireframeBuffer previewWireframe = new ModelWireframeBuffer();
     private final JPanel preview=new JPanel(){
         @Override public void paintComponent(Graphics g){
             super.paintComponent(g);
             Graphics2D p=(Graphics2D)g.create();
             p.setColor(new Color(20,24,29));p.fillRect(0,0,getWidth(),getHeight());
             if(source!=null)draw(p,source.triangles(),0,workingViewportWidth(),topologyProject==null?"SOURCE":"WORKING MESH");
+            else workingWireframe.clear();
             if(modelingMesh!=null)draw(p,modelingMesh.triangles(),getWidth()/2,getWidth()-getWidth()/2,"MODEL EDIT PREVIEW");
             else if(primitivePreview!=null)draw(p,primitivePreview.triangles(),getWidth()/2,getWidth()-getWidth()/2,"PRIMITIVE PREVIEW");
             else if(result!=null&&comparisonVisible())draw(p,result.optimized().triangles(),workingViewportWidth(),getWidth()-workingViewportWidth(),"PREVIEW");
+            else previewWireframe.clear();
             p.dispose();
         }
     };
@@ -797,14 +801,15 @@ public final class AssetImportDialog {
     private EditorMeshPicking.Projector projector(List<EditorMeshPipeline.Triangle> reference){
         if(projection()!=EditorMeshPicking.Projection.PERSPECTIVE)return projection();
         if(cameraReference!=reference||cachedCamera==null||cachedYaw!=cameraYaw||cachedPitch!=cameraPitch){
-            var vertices=new ArrayList<EditorMeshPipeline.Vertex>(reference.size()*3);for(var t:reference){vertices.add(t.a());vertices.add(t.b());vertices.add(t.c());}
-            cachedCamera=EditorMeshPicking.camera(vertices,cameraYaw,cameraPitch);cameraReference=reference;cachedYaw=cameraYaw;cachedPitch=cameraPitch;
+            var fitted = EditorMeshPicking.cameraForTriangles(reference, cameraYaw, cameraPitch);
+            if (!fitted.sameProjection(cachedCamera)) cachedCamera = fitted;
+            cameraReference = reference; cachedYaw = cameraYaw; cachedPitch = cameraPitch;
         }return cachedCamera;
     }
     private List<EditorMeshPipeline.Triangle> workingReference(){return modelingBounds==null?source.triangles():modelingBounds;}
-    private record Viewport(double centerX,double centerY,double scale,int left,int width,int height){
-        int x(double value){return left+width/2+(int)Math.round((value-centerX)*scale);}
-        int y(double value){return height/2+(int)Math.round((value-centerY)*scale);}
+    private record Viewport(double centerX,double centerY,double scale,int left,int width,int height) implements ModelWireframeBuffer.View {
+        public int x(double value){return left+width/2+(int)Math.round((value-centerX)*scale);}
+        public int y(double value){return height/2+(int)Math.round((value-centerY)*scale);}
     }
     private Viewport viewport(List<EditorMeshPipeline.Triangle> reference,int left,int width){
         var camera=projector(reference);var key=new ViewKey(camera,left,width,getPreviewHeight(),cameraPanX,cameraPanY,cameraZoom);
@@ -955,16 +960,9 @@ public final class AssetImportDialog {
         var view=viewport(reference,left,width);var camera=projector(reference);
         g.setColor(new Color(181,206,213));
         g.drawString(title+"  /  "+tris.size()+" triangles",left+10,18);
-        int skip=Math.max(1,tris.size()/12000);
         g.setColor(new Color(113,168,188,120));
-        for(int i=0;i<tris.size();i+=skip){
-            var t=tris.get(i);
-            int[] xs=new int[3],ys=new int[3];int k=0;
-            for(var v:new EditorMeshPipeline.Vertex[]{t.a(),t.b(),t.c()}){
-                var p=camera.project(v.x(),v.y(),v.z());xs[k]=view.x(p.x());ys[k]=view.y(p.y());k++;
-            }
-            g.drawPolygon(xs,ys,3);
-        }
+        var wireframe = left == 0 ? workingWireframe : previewWireframe;
+        wireframe.draw(g, tris, camera, view);
         if(normalOverlay.isSelected()){
             g.setColor(new Color(75,232,193));g.drawString("CORNER NORMALS / authored or derived / sampled",left+10,34);
             int step=Math.max(1,(tris.size()+399)/400);double screenLength=28/view.scale();
