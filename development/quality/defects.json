@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-07",
+  "updated": "2026-11-08",
   "issues": [
     {
       "id": "DEV-276",
@@ -4461,11 +4461,11 @@
       "id": "DEV-413",
       "title": "Battery native room view has unresolved black floor regions",
       "status": "OPEN: inspect actual floor/shaft geometry and material/normal state",
-      "affected": "Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline",
+      "affected": "Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline; WLD04ruin dark interior floor region in paired threshold native inspection (cause unverified)",
       "symptom": "The after native battery first-person frame exposes black rectangular and polygonal floor regions after earth is removed.",
       "cause": "Not yet established; could include authored stair openings or malformed/unrelated floor reservations/surfaces.",
       "action": "Retain paired intact PNG and actual source hashes. Inspect the exact exported floors, openings, normals/materials and native body/light behavior in the next roster-wide floor/shaft pass; do not infer that this image is accepted or that all black areas share one cause.",
-      "evidence": "development/levels/rebuild/terrain-occupancy-pass/; development/levels/rebuild/captures/room-terrain-batch/; tools/append_static_glb.py; tools/check_room_terrain.py",
+      "evidence": "development/levels/rebuild/terrain-occupancy-pass/; development/levels/rebuild/captures/room-terrain-batch/; tools/append_static_glb.py; tools/check_room_terrain.py; WLD04ruin paired threshold views also show a residual dark L-shaped interior region; distinguish floor coverage from lighting/occlusion before visual acceptance.",
       "older_maps": "All29packets retained; other20candidate geometry unchanged and four mature maps retain individual retrofit obligations. No runtime unlock or complete map acceptance; preserve40space envelope, canonical van, power/hiding/story, original props/UVs/pivots and real basement punches."
     },
     {
@@ -4632,6 +4632,83 @@
       "action": "Read each record polygon explicitly before intersection/difference. Final three candidate builds and actual reopened exported/native/editable checks pass; movement comparisons recover292standing poses with no new flat or stair regressions.",
       "evidence": "development/levels/rebuild/stair-bay-pass/; tools/build_stair_bays.py; verification/; rejected/observed-construction-failures.txt; restored_shaft_parts in actual construction metadata",
       "older_maps": "Preserve source helper contracts and exact saved-world fingerprints when migrating frozen map producers; no unverified old map fix inferred."
+    },
+    {
+      "id": "DEV-429",
+      "title": "Current saved-terrain layout points to a nonexistent scene descriptor",
+      "status": "FIX VERIFIED: actual scene.bin bound and independently checked",
+      "affected": "Initial stair-terrain composite current_saved_editor_terrain contract",
+      "symptom": "New contract initially named scene-package/scene.properties although the persistent editor uses scene.bin.",
+      "cause": "Assumed scene descriptor filename rather than inspecting the actual persisted package.",
+      "action": "Bind actual scene.bin, current native physics, all published OBJ chunks and exact saved-world files. Independent checker requires the descriptor to exist and all declared files to match hashes. Shared producer consumes actual current contract.",
+      "evidence": "development/levels/rebuild/stair-terrain-pass/verification/independent-sources.json; tools/compose_stair_terrain.py",
+      "older_maps": "Inspect real package filenames and saved topology, never infer editor/runtime integration from plausible metadata. Individual older-map contracts remain audit obligations."
+    },
+    {
+      "id": "DEV-430",
+      "title": "Unchanged terrain-pass fallback reuses stale prior-bay stair identities",
+      "status": "FIX VERIFIED: unchanged cases normalize before state to their current source",
+      "affected": "tools/audit_roster_stairs.py --bench-pass unchanged WLD05/WLD09bay candidates",
+      "symptom": "Native reader correctly rejected unknown old L15/L16tread IDs because the fallback loaded a current bay payload with its prior-bay component set.",
+      "cause": "Nested checkpoint metadata carried before_layout/before_stair_components from a previous construction comparison into an unchanged self-comparison.",
+      "action": "Normalize unchanged before layout, segment mapping and explicit stair component identities to the current source metadata. Keep strict unknown-component rejection. Final221segment/84link comparison, all25bindings and source hashes pass with zero previously passing-direction regressions.",
+      "evidence": "development/levels/rebuild/stair-terrain-pass/verification/stair-movement.json; tools/audit_roster_stairs.py",
+      "older_maps": "Audit every before/after source coordinate/layout/component binding when combining stage snapshots. Do not weaken physics or silently discard unknown stair identities."
+    },
+    {
+      "id": "DEV-431",
+      "title": "Isolated upper stair grading obstructs lower circulation through the same hillside",
+      "status": "FIX VERIFIED FOR THREE NATIVE CANDIDATES; landscape/retaining acceptance open",
+      "affected": "WLD03L15lower path, WLD12L06/L07west return, coupled hillside/railway terrain levels",
+      "symptom": "First absolute grading draft introduced145standing and151sweep regressions. An upper-only lower-only draft still lowered previously high soil into lower paths headroom rather than below their circulation plane.",
+      "cause": "Treating an upper path datum as an independent terrain target; existing lower paths sometimes ran beneath a higher ground surface. Raising/filling was also inappropriate for an excavation bench.",
+      "action": "Use existing editor LOWER_ONLY brush API on named non-destructive layers; jointly constrain stair beds and every existing flat circulation segment. Preserve old source height PNGs and all punches. Independent comparison17010common vertices:2361lowered, zero raised. Final110409flat samples recover852poses with zero new standing/sweep regressions. Coarse cut banks remain explicitly unaccepted.",
+      "evidence": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-*; rejected/upper-only-cut-*; rejected/bench-flat-contacts.tsv; verification/independent-sources.json; tools/java/RosterTerrainBuild.java",
+      "older_maps": "Audit the complete terrain/floor hierarchy and buried or stacked circulation, not isolated connector ribbons. Retaining/cave/water/physical edges and canonical van arrival remain individual gates across29packets."
+    },
+    {
+      "id": "DEV-432",
+      "title": "Ruin threshold uses incidental soil instead of a complete structural walking surface",
+      "status": "FIX VERIFIED: real closed160mmthreshold restores swept support",
+      "affected": "WLD04L07ruin west threshold X40,Y6,Z22; centre and left approach lanes",
+      "symptom": "Excavation left all standing samples valid but two previously passing sweeps lost foot support immediately west of the room floor.",
+      "cause": "A small gap between the approach support and room slab had relied on the old terrain for footprint support.",
+      "action": "Add a measured2mclear-width160mmclosed bearing threshold, subtracting existing top surfaces to avoid coplanar duplicates. Rendered/exported/native/editable source matches. Exact native contact diagnosis retained; final all25flat regression counters zero. Paired intact threshold images inspected. Actual pre-threshold native bytes restored with SHA c6853c362f4c0cd556c2b1137d164710388fc18ab625fd21c9d3dcdc819dcd4d matching captured failure:4directional failures versus0after the repair.",
+      "evidence": "development/levels/rebuild/stair-terrain-pass/rejected/bench-flat-sweep-contacts.tsv; assemblies/wld-04/construction.json; verification/independent-sources.json; captures/stair-terrain-batch/wld-04-threshold-after.png; verification/threshold-control.json; rejected/ruin-threshold-before.hcs2",
+      "older_maps": "Audit complete threshold foot footprints at door/floor/route joins, including under changed terrain. Centre support alone is insufficient."
+    },
+    {
+      "id": "DEV-433",
+      "title": "Terrain excavation exposes previously embedded railway foundation feet",
+      "status": "FIX VERIFIED: five physical extensions restore seven newly exposed footing samples",
+      "affected": "WLD12Bearing skirts0016/0017/0018/0022/0042after lower circulation excavation",
+      "symptom": "Before/after actual terrain rays found7previously embedded external footing samples above the revised soil.",
+      "cause": "Preserved foundation geometry still referenced the former higher soil datum after terrain excavation.",
+      "action": "Append closed connected extensions touching the original skirt bottoms and embedding350mminto the actual new soil; preserve original model pivots/resources/native records. Independent audit uses actual native extension vertices and soil rays, yielding zero new exposed footing samples across all3sites. Full native movement regressions remain zero; five isolated soil-contact renders inspected.",
+      "evidence": "development/levels/rebuild/stair-terrain-pass/rejected/pre-extension-bearing-contacts.json; verification/bearing-contacts.json; assemblies/wld-12/construction.json; captures/stair-terrain-batch/*soil-bearing.png",
+      "older_maps": "Recheck foundations, piles, roots and ground-mounted facilities individually whenever terrain moves. This scoped footing repair does not establish all retaining/framing/guard or whole-map support acceptance."
+    },
+    {
+      "id": "DEV-434",
+      "title": "Excavated terrain banks remain coarse and serrated in native whole-site views",
+      "status": "OPEN: authored slope/retaining/erosion and landscape visual refinement required",
+      "affected": "WLD03hillside and WLD04forestry terrace cuts; WLD12trench context",
+      "symptom": "Full-site native renders expose faceted deep banks around newly cleared routes, with rough structure/support geometry and incomplete edge treatment.",
+      "cause": "Initial coherent circulation excavation uses the existing source grid/adaptive topology; physical usability correction is ahead of finished civil/rock/landscape construction.",
+      "action": "Keep visual terrain acceptance open. Author site-specific retaining/rock transitions, coherent slope sections, drainage and physical boundaries, then review whole sites with the canonical van. Do not pass the desquareify/landscape gate from native route counts or conceal the banks with fog.",
+      "evidence": "development/levels/rebuild/stair-terrain-pass/verification/visual-review.json; captures/stair-terrain-batch/terrain-sheet-*.png; development/quality/DESQUAREIFY_GATE.md",
+      "older_maps": "Individually audit all29packets, including older landforms; no blockout rectangle/material stamp or perturbed outer box counts as accepted terrain."
+    },
+    {
+      "id": "DEV-435",
+      "title": "Shared map producers ignore current saved terrain and chunked editor publications",
+      "status": "FIX VERIFIED IN SHARED SOURCE CONSUMERS; runtime integration open",
+      "affected": "structural_pass.saved_editor_terrain, structural build caller, collision/furnishing terrain fidelity checks and envelope classification",
+      "symptom": "New composite layouts contain current_saved_editor_terrain with actual chunked publications; older consumers only recognized the single legacy saved_editor_terrain mesh field.",
+      "cause": "Stage-specific terrain authority was bound in metadata without corresponding shared producer selection/OBJ-chunk support.",
+      "action": "Prefer the explicit current contract, import each actual published chunk with correct vertex offsets, retain hash checking and exact legacy single-mesh behavior. Align structural/export/furnishing/envelope consumers. Actual3current worlds and real WLD18legacy control import with exact native triangle/flag equality; deliberately stale legacy control cannot replace current terrain. No installed runtime unlock inferred.",
+      "evidence": "development/levels/rebuild/stair-terrain-pass/verification/terrain-contract-consumer.json; tools/check_saved_terrain_consumer.py; development/levels/blockouts/structural_pass.py",
+      "older_maps": "Migrate actual native/runtime ownership only through verified coordinate/layout/terrain contracts; metadata or export existence is not gameplay acceptance. Preserve frozen sources and legacy controls."
     }
   ],
   "audit_categories": [

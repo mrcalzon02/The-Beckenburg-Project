@@ -46,3 +46,7 @@ development/levels/rebuild/stair-opening-pass/**/*.blend[0-9]
 
 # Scoped authored bay Blender backups.
 development/levels/rebuild/stair-bay-pass/**/*.blend[0-9]
+
+# Scoped saved terrain review backups/transient editor locks.
+development/levels/rebuild/stair-terrain-pass/**/*.blend[0-9]
+development/levels/rebuild/stair-terrain-pass/**/*.lock

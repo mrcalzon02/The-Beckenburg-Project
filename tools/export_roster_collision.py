@@ -65,7 +65,7 @@ def export(folder,furnished=False):
         tread_centres=poses,dropped_degenerate_triangles=dropped,scope='Candidate native collision; gameplay/ownership/terrain/network gates remain open')
     layout=ROOT/f'development/levels/rebuild/{folder.name}/rough-layout.json'
     if layout.exists():
-        authority=json.loads(layout.read_text(encoding='utf-8')).get('saved_editor_terrain')
+        authority=(json.loads(layout.read_text(encoding='utf-8')).get('current_saved_editor_terrain') or json.loads(layout.read_text(encoding='utf-8')).get('saved_editor_terrain'))
         if authority:
             source_terrain=ROOT/authority['native_physics'];expected=native_faces(source_terrain)
             assert face_keys(expected)==face_keys(terrain_faces),('GLB terrain differs from saved editor physical triangles/flags',folder.name)

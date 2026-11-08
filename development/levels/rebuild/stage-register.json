@@ -6083,7 +6083,7 @@
     "baseline_clear_metres": 6,
     "baseline_opaque_metres": 24,
     "full_map_acceptance": false,
-    "mechanism": "Shared6ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“24m radial policy before alpha blending at actual surface depth; weather sky horizon; no depth writes",
+    "mechanism": "Shared6ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ24m radial policy before alpha blending at actual surface depth; weather sky horizon; no depth writes",
     "focused_checks": 10,
     "actual_runtime_frames": 52
   },
@@ -6180,5 +6180,32 @@
     },
     "source_sha": "e8ed8e66b7e1d4c460ca7e7b084ed062fc1eec97",
     "reconciled_sha": "535ff78a6e0311727bc285fe97729faa67d7f67a"
+  },
+  "stair_terrain_checkpoint": {
+    "status": "BREADTH_BY_STAGE_ACTUAL_SAVED_TERRAIN_CIRCULATION_BENCH_AND_BASEMENT_PUNCHES",
+    "evidence": "development/levels/rebuild/stair-terrain-pass/roster.json",
+    "aggregate": {
+      "revised_sites": 3,
+      "actual_saved_terrain_triangles": 30539,
+      "lowered_common_vertices": 2361,
+      "common_vertices_compared": 17010,
+      "raised_common_vertices": 0,
+      "original_height_pngs_preserved": 3,
+      "additional_basement_punch_requests": 112,
+      "additional_punched_leaves": 291,
+      "threshold_parts": 1,
+      "new_footing_extensions": 5,
+      "new_footing_gaps": 0,
+      "flight_gains": 4,
+      "complete_link_gains": 5,
+      "remaining_failed_flights": 3,
+      "remaining_failed_links": 6,
+      "flat_samples": 110409,
+      "baseline_valid": 100279,
+      "qualified_sweeps": 95282,
+      "recovered_poses": 852,
+      "new_flat_blocks": 0,
+      "new_flat_sweep_failures": 0
+    }
   }
 }

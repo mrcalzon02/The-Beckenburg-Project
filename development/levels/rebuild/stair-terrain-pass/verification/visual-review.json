@@ -1,0 +1,138 @@
+{
+  "status": "SCOPED_NATIVE_CONSTRUCTION_REVIEW_NOT_TERRAIN_VISUAL_ACCEPTANCE",
+  "images": [
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/terrain-sheet-1.png",
+      "sha256": "549383cf0079da6f7216a605247e4fc3bcbe2338653a4117b0acdf8139525ccc",
+      "type": "Native whole-site context/contact sheet; not runtime"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/terrain-sheet-2.png",
+      "sha256": "fe257e1e05cd7ba4ba1acb4abb147e49a9eb1f6726fea2de7c09d04306962658",
+      "type": "Native whole-site context/contact sheet; not runtime"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/terrain-sheet-3.png",
+      "sha256": "e61436945cc421383f9ec7fb267c91f41860a1246eca8510a28db7e42ecd02f2",
+      "type": "Native whole-site context/contact sheet; not runtime"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/terrain-sheet-4.png",
+      "sha256": "4dfbfe59612d9f836af6ae7afc9dd95fa62499461b251da167e54355f6a38a66",
+      "type": "Native whole-site context/contact sheet; not runtime"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-03-saved-terrain.png",
+      "sha256": "5b8303523201cc5aad809965de6e990af8d97b456b52006ce73b8046fe65722c",
+      "type": "Native saved topology diagnostic"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-03-stair-after.png",
+      "sha256": "5232e8279c7a299d843372c4d7d50f28ce1281dc44c90bc25d41c0c807714a0c",
+      "type": "Native paired intact surface inspection150W"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-03-stair-before.png",
+      "sha256": "2ef8960d00436ba000fdacc36926baa6c798f9dfcc031a37fd6e301b6756e921",
+      "type": "Native paired intact surface inspection150W"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-03-whole-site.png",
+      "sha256": "dcaca2170c53c3ce185a064fe2d4febcea4c7cffeb5a369a54fb19cd76206f7b",
+      "type": "Native whole-site context/contact sheet; not runtime"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-saved-terrain.png",
+      "sha256": "821f7b7a28d835a8835b943e1fc6ca6d78434934f0407346515232db8907bf05",
+      "type": "Native saved topology diagnostic"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-stair-after.png",
+      "sha256": "43ef2e4bc5a3289ce85cd01d601c809ec3f9173f150553731345d4e82705e30b",
+      "type": "Native paired intact surface inspection150W"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-stair-before.png",
+      "sha256": "2e8ab284a23a841154bf2de6081067b1b01cf5c259cc4f73eff71414adafe260",
+      "type": "Native paired intact surface inspection150W"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-threshold-after.png",
+      "sha256": "8618123536e81c12b627a220e6dc6bf91f6879ccdbe48c5ca490f2f208754f24",
+      "type": "Native paired intact surface inspection150W"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-threshold-before.png",
+      "sha256": "5814b19d3a6f924a15b22875db997afd84f6887b91a3cfc702d307cb2ba451f5",
+      "type": "Native paired intact surface inspection150W"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-whole-site.png",
+      "sha256": "f42bfc3e675bbcf9cb1f6d54c0f5da3606d9c79253c9eda57c0f992cfa01ce40",
+      "type": "Native whole-site context/contact sheet; not runtime"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-bearing-skirt-0016-soil-bearing.png",
+      "sha256": "342ac77d6b860116433de4ec6ff26ae00e13cbadf826fa496d07576bef8309ad",
+      "type": "Native isolated soil-bearing inspection; other site context hidden"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-bearing-skirt-0017-soil-bearing.png",
+      "sha256": "8c746a215500d8c9a93baa7fc5a54d82bac70c1ee6a18290a3a005a395c77b9f",
+      "type": "Native isolated soil-bearing inspection; other site context hidden"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-bearing-skirt-0018-soil-bearing.png",
+      "sha256": "b03333ac5db94151e35d8512e29cf9d570490ca347ce63116eff9c46a84e470d",
+      "type": "Native isolated soil-bearing inspection; other site context hidden"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-bearing-skirt-0022-soil-bearing.png",
+      "sha256": "e65cb87e9a43dba1f9bcfe681524c7388c79c54fca651f44167c1a9627c14e43",
+      "type": "Native isolated soil-bearing inspection; other site context hidden"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-bearing-skirt-0042-soil-bearing.png",
+      "sha256": "8da86f682211463ab5e20dc94144107ddf19114679869fcda0e6599e93ec411b",
+      "type": "Native isolated soil-bearing inspection; other site context hidden"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-saved-terrain.png",
+      "sha256": "f9c6d1baf051c28606c7f0fe50d4d0760811f6bec6c5eb1d72c6b766e95ea533",
+      "type": "Native saved topology diagnostic"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-stair-after.png",
+      "sha256": "a6cce8d1ab35c83d680f042d7015f913bf819a2ab0ff60b77e43966c6ea849a0",
+      "type": "Native paired intact surface inspection150W"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-stair-before.png",
+      "sha256": "bbc6d375e54be4ddeb12be80a3775746c86517c31e7d8a4e4c855de8fca94f4c",
+      "type": "Native paired intact surface inspection150W"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-whole-site.png",
+      "sha256": "9123e932843332970270f6dba301f7c9d461c2ba1e4eb3dfb1fd60da33fba574",
+      "type": "Native whole-site context/contact sheet; not runtime"
+    }
+  ],
+  "frames": 19,
+  "sheets_observed": 4,
+  "construction_score": "3/5",
+  "finish_score": "1/5",
+  "findings": [
+    "Actual stairs emerge from former obstructing terrain; basement topology and paired threshold/soil-bearing geometry inspected.",
+    "Five extensions touch original foundation skirts and actual soil; other site context intentionally hidden in their detail views.",
+    "Serrated cut banks and incomplete retaining/rock/cave/water/boundary/van-arrival/guard/art remain OPEN.",
+    "WLD04ruin still has a dark L-shaped interior region in threshold views; floor coverage vs lighting remains unresolved.",
+    "No physical player camera, installed circuit/torch lighting, runtime/network/hardware or whole-site landscape acceptance inferred."
+  ],
+  "source_hashes": {
+    "tools/author_stair_terrain.py": "fcb72cb807c8a6c116f3b43078318d0460ffcf432bc451b66eccb3932d6e6732",
+    "tools/compose_stair_terrain.py": "d41349ba1519fc4933b4350b35eda13511838cc9ca04e70902d940238c68cdb1",
+    "tools/render_stair_terrain.py": "4d66d96c3aaab438cb27465c911b3bdee2c96898e313435ddd11e6953edc85e3",
+    "tools/render_stair_threshold.py": "9283640a509a34a65e83fe2404b9310e41ff8f221657bfa5c452ad62cb9285e6",
+    "tools/java/RosterTerrainBuild.java": "de0763d64f58440f0f7b97ef0247443df44f6553d318030836385ca08052f2b8"
+  }
+}

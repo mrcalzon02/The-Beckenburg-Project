@@ -5682,7 +5682,7 @@ Older-map obligation: All29packets retained; other20candidate geometry unchanged
 
 ### DEV-413 — Battery native room view has unresolved black floor regions
 
-**Status:** OPEN: inspect actual floor/shaft geometry and material/normal state · **Affected:** Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline
+**Status:** OPEN: inspect actual floor/shaft geometry and material/normal state · **Affected:** Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline; WLD04ruin dark interior floor region in paired threshold native inspection (cause unverified)
 
 The after native battery first-person frame exposes black rectangular and polygonal floor regions after earth is removed.
 
@@ -5690,7 +5690,7 @@ Cause / uncertainty: Not yet established; could include authored stair openings 
 
 Fix / next action: Retain paired intact PNG and actual source hashes. Inspect the exact exported floors, openings, normals/materials and native body/light behavior in the next roster-wide floor/shaft pass; do not infer that this image is accepted or that all black areas share one cause.
 
-Evidence and verification: development/levels/rebuild/terrain-occupancy-pass/; development/levels/rebuild/captures/room-terrain-batch/; tools/append_static_glb.py; tools/check_room_terrain.py
+Evidence and verification: development/levels/rebuild/terrain-occupancy-pass/; development/levels/rebuild/captures/room-terrain-batch/; tools/append_static_glb.py; tools/check_room_terrain.py; WLD04ruin paired threshold views also show a residual dark L-shaped interior region; distinguish floor coverage from lighting/occlusion before visual acceptance.
 
 Older-map obligation: All29packets retained; other20candidate geometry unchanged and four mature maps retain individual retrofit obligations. No runtime unlock or complete map acceptance; preserve40space envelope, canonical van, power/hiding/story, original props/UVs/pivots and real basement punches.
 
@@ -5903,6 +5903,104 @@ Fix / next action: Read each record polygon explicitly before intersection/diffe
 Evidence and verification: development/levels/rebuild/stair-bay-pass/; tools/build_stair_bays.py; verification/; rejected/observed-construction-failures.txt; restored_shaft_parts in actual construction metadata
 
 Older-map obligation: Preserve source helper contracts and exact saved-world fingerprints when migrating frozen map producers; no unverified old map fix inferred.
+
+### DEV-429 — Current saved-terrain layout points to a nonexistent scene descriptor
+
+**Status:** FIX VERIFIED: actual scene.bin bound and independently checked · **Affected:** Initial stair-terrain composite current_saved_editor_terrain contract
+
+New contract initially named scene-package/scene.properties although the persistent editor uses scene.bin.
+
+Cause / uncertainty: Assumed scene descriptor filename rather than inspecting the actual persisted package.
+
+Fix / next action: Bind actual scene.bin, current native physics, all published OBJ chunks and exact saved-world files. Independent checker requires the descriptor to exist and all declared files to match hashes. Shared producer consumes actual current contract.
+
+Evidence and verification: development/levels/rebuild/stair-terrain-pass/verification/independent-sources.json; tools/compose_stair_terrain.py
+
+Older-map obligation: Inspect real package filenames and saved topology, never infer editor/runtime integration from plausible metadata. Individual older-map contracts remain audit obligations.
+
+### DEV-430 — Unchanged terrain-pass fallback reuses stale prior-bay stair identities
+
+**Status:** FIX VERIFIED: unchanged cases normalize before state to their current source · **Affected:** tools/audit_roster_stairs.py --bench-pass unchanged WLD05/WLD09bay candidates
+
+Native reader correctly rejected unknown old L15/L16tread IDs because the fallback loaded a current bay payload with its prior-bay component set.
+
+Cause / uncertainty: Nested checkpoint metadata carried before_layout/before_stair_components from a previous construction comparison into an unchanged self-comparison.
+
+Fix / next action: Normalize unchanged before layout, segment mapping and explicit stair component identities to the current source metadata. Keep strict unknown-component rejection. Final221segment/84link comparison, all25bindings and source hashes pass with zero previously passing-direction regressions.
+
+Evidence and verification: development/levels/rebuild/stair-terrain-pass/verification/stair-movement.json; tools/audit_roster_stairs.py
+
+Older-map obligation: Audit every before/after source coordinate/layout/component binding when combining stage snapshots. Do not weaken physics or silently discard unknown stair identities.
+
+### DEV-431 — Isolated upper stair grading obstructs lower circulation through the same hillside
+
+**Status:** FIX VERIFIED FOR THREE NATIVE CANDIDATES; landscape/retaining acceptance open · **Affected:** WLD03L15lower path, WLD12L06/L07west return, coupled hillside/railway terrain levels
+
+First absolute grading draft introduced145standing and151sweep regressions. An upper-only lower-only draft still lowered previously high soil into lower paths headroom rather than below their circulation plane.
+
+Cause / uncertainty: Treating an upper path datum as an independent terrain target; existing lower paths sometimes ran beneath a higher ground surface. Raising/filling was also inappropriate for an excavation bench.
+
+Fix / next action: Use existing editor LOWER_ONLY brush API on named non-destructive layers; jointly constrain stair beds and every existing flat circulation segment. Preserve old source height PNGs and all punches. Independent comparison17010common vertices:2361lowered, zero raised. Final110409flat samples recover852poses with zero new standing/sweep regressions. Coarse cut banks remain explicitly unaccepted.
+
+Evidence and verification: development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-*; rejected/upper-only-cut-*; rejected/bench-flat-contacts.tsv; verification/independent-sources.json; tools/java/RosterTerrainBuild.java
+
+Older-map obligation: Audit the complete terrain/floor hierarchy and buried or stacked circulation, not isolated connector ribbons. Retaining/cave/water/physical edges and canonical van arrival remain individual gates across29packets.
+
+### DEV-432 — Ruin threshold uses incidental soil instead of a complete structural walking surface
+
+**Status:** FIX VERIFIED: real closed160mmthreshold restores swept support · **Affected:** WLD04L07ruin west threshold X40,Y6,Z22; centre and left approach lanes
+
+Excavation left all standing samples valid but two previously passing sweeps lost foot support immediately west of the room floor.
+
+Cause / uncertainty: A small gap between the approach support and room slab had relied on the old terrain for footprint support.
+
+Fix / next action: Add a measured2mclear-width160mmclosed bearing threshold, subtracting existing top surfaces to avoid coplanar duplicates. Rendered/exported/native/editable source matches. Exact native contact diagnosis retained; final all25flat regression counters zero. Paired intact threshold images inspected. Actual pre-threshold native bytes restored with SHA c6853c362f4c0cd556c2b1137d164710388fc18ab625fd21c9d3dcdc819dcd4d matching captured failure:4directional failures versus0after the repair.
+
+Evidence and verification: development/levels/rebuild/stair-terrain-pass/rejected/bench-flat-sweep-contacts.tsv; assemblies/wld-04/construction.json; verification/independent-sources.json; captures/stair-terrain-batch/wld-04-threshold-after.png; verification/threshold-control.json; rejected/ruin-threshold-before.hcs2
+
+Older-map obligation: Audit complete threshold foot footprints at door/floor/route joins, including under changed terrain. Centre support alone is insufficient.
+
+### DEV-433 — Terrain excavation exposes previously embedded railway foundation feet
+
+**Status:** FIX VERIFIED: five physical extensions restore seven newly exposed footing samples · **Affected:** WLD12Bearing skirts0016/0017/0018/0022/0042after lower circulation excavation
+
+Before/after actual terrain rays found7previously embedded external footing samples above the revised soil.
+
+Cause / uncertainty: Preserved foundation geometry still referenced the former higher soil datum after terrain excavation.
+
+Fix / next action: Append closed connected extensions touching the original skirt bottoms and embedding350mminto the actual new soil; preserve original model pivots/resources/native records. Independent audit uses actual native extension vertices and soil rays, yielding zero new exposed footing samples across all3sites. Full native movement regressions remain zero; five isolated soil-contact renders inspected.
+
+Evidence and verification: development/levels/rebuild/stair-terrain-pass/rejected/pre-extension-bearing-contacts.json; verification/bearing-contacts.json; assemblies/wld-12/construction.json; captures/stair-terrain-batch/*soil-bearing.png
+
+Older-map obligation: Recheck foundations, piles, roots and ground-mounted facilities individually whenever terrain moves. This scoped footing repair does not establish all retaining/framing/guard or whole-map support acceptance.
+
+### DEV-434 — Excavated terrain banks remain coarse and serrated in native whole-site views
+
+**Status:** OPEN: authored slope/retaining/erosion and landscape visual refinement required · **Affected:** WLD03hillside and WLD04forestry terrace cuts; WLD12trench context
+
+Full-site native renders expose faceted deep banks around newly cleared routes, with rough structure/support geometry and incomplete edge treatment.
+
+Cause / uncertainty: Initial coherent circulation excavation uses the existing source grid/adaptive topology; physical usability correction is ahead of finished civil/rock/landscape construction.
+
+Fix / next action: Keep visual terrain acceptance open. Author site-specific retaining/rock transitions, coherent slope sections, drainage and physical boundaries, then review whole sites with the canonical van. Do not pass the desquareify/landscape gate from native route counts or conceal the banks with fog.
+
+Evidence and verification: development/levels/rebuild/stair-terrain-pass/verification/visual-review.json; captures/stair-terrain-batch/terrain-sheet-*.png; development/quality/DESQUAREIFY_GATE.md
+
+Older-map obligation: Individually audit all29packets, including older landforms; no blockout rectangle/material stamp or perturbed outer box counts as accepted terrain.
+
+### DEV-435 — Shared map producers ignore current saved terrain and chunked editor publications
+
+**Status:** FIX VERIFIED IN SHARED SOURCE CONSUMERS; runtime integration open · **Affected:** structural_pass.saved_editor_terrain, structural build caller, collision/furnishing terrain fidelity checks and envelope classification
+
+New composite layouts contain current_saved_editor_terrain with actual chunked publications; older consumers only recognized the single legacy saved_editor_terrain mesh field.
+
+Cause / uncertainty: Stage-specific terrain authority was bound in metadata without corresponding shared producer selection/OBJ-chunk support.
+
+Fix / next action: Prefer the explicit current contract, import each actual published chunk with correct vertex offsets, retain hash checking and exact legacy single-mesh behavior. Align structural/export/furnishing/envelope consumers. Actual3current worlds and real WLD18legacy control import with exact native triangle/flag equality; deliberately stale legacy control cannot replace current terrain. No installed runtime unlock inferred.
+
+Evidence and verification: development/levels/rebuild/stair-terrain-pass/verification/terrain-contract-consumer.json; tools/check_saved_terrain_consumer.py; development/levels/blockouts/structural_pass.py
+
+Older-map obligation: Migrate actual native/runtime ownership only through verified coordinate/layout/terrain contracts; metadata or export existence is not gameplay acceptance. Preserve frozen sources and legacy controls.
 
 ## Required audit categories
 

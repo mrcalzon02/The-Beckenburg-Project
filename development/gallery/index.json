@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 8388,
+  "count": 8417,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -79204,6 +79204,296 @@
       "height": 700,
       "bytes": 630088,
       "sha256": "ac2c624a20804582d9f73bd4b9e404a3bec59a8e697b2f33aa490904d600d987"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/rejected-raising-grade/wld-03-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/rejected-raising-grade/wld-03-saved-terrain.png",
+      "title": "Wld 03 saved terrain",
+      "kind": "Native rejected terrain pilot, not final source",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 70048,
+      "sha256": "5b8303523201cc5aad809965de6e990af8d97b456b52006ce73b8046fe65722c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/rejected-raising-grade/wld-04-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/rejected-raising-grade/wld-04-saved-terrain.png",
+      "title": "Wld 04 saved terrain",
+      "kind": "Native rejected terrain pilot, not final source",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 42221,
+      "sha256": "821f7b7a28d835a8835b943e1fc6ca6d78434934f0407346515232db8907bf05"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/rejected-raising-grade/wld-12-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/rejected-raising-grade/wld-12-saved-terrain.png",
+      "title": "Wld 12 saved terrain",
+      "kind": "Native rejected terrain pilot, not final source",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 54664,
+      "sha256": "f9c6d1baf051c28606c7f0fe50d4d0760811f6bec6c5eb1d72c6b766e95ea533"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/rejected-upper-only-cut/wld-03-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/rejected-upper-only-cut/wld-03-saved-terrain.png",
+      "title": "Wld 03 saved terrain",
+      "kind": "Native rejected terrain pilot, not final source",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 70048,
+      "sha256": "5b8303523201cc5aad809965de6e990af8d97b456b52006ce73b8046fe65722c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/rejected-upper-only-cut/wld-04-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/rejected-upper-only-cut/wld-04-saved-terrain.png",
+      "title": "Wld 04 saved terrain",
+      "kind": "Native rejected terrain pilot, not final source",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 42221,
+      "sha256": "821f7b7a28d835a8835b943e1fc6ca6d78434934f0407346515232db8907bf05"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/rejected-upper-only-cut/wld-12-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/rejected-upper-only-cut/wld-12-saved-terrain.png",
+      "title": "Wld 12 saved terrain",
+      "kind": "Native rejected terrain pilot, not final source",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 54664,
+      "sha256": "f9c6d1baf051c28606c7f0fe50d4d0760811f6bec6c5eb1d72c6b766e95ea533"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/terrain-sheet-1.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/terrain-sheet-1.png",
+      "title": "Terrain sheet 1",
+      "kind": "Native terrain construction overview/contact sheet; no arrival/runtime acceptance",
+      "width": 1200,
+      "height": 780,
+      "bytes": 403602,
+      "sha256": "549383cf0079da6f7216a605247e4fc3bcbe2338653a4117b0acdf8139525ccc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/terrain-sheet-2.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/terrain-sheet-2.png",
+      "title": "Terrain sheet 2",
+      "kind": "Native terrain construction overview/contact sheet; no arrival/runtime acceptance",
+      "width": 1200,
+      "height": 780,
+      "bytes": 370780,
+      "sha256": "fe257e1e05cd7ba4ba1acb4abb147e49a9eb1f6726fea2de7c09d04306962658"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/terrain-sheet-3.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/terrain-sheet-3.png",
+      "title": "Terrain sheet 3",
+      "kind": "Native terrain construction overview/contact sheet; no arrival/runtime acceptance",
+      "width": 1200,
+      "height": 780,
+      "bytes": 368633,
+      "sha256": "e61436945cc421383f9ec7fb267c91f41860a1246eca8510a28db7e42ecd02f2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/terrain-sheet-4.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/terrain-sheet-4.png",
+      "title": "Terrain sheet 4",
+      "kind": "Native terrain construction overview/contact sheet; no arrival/runtime acceptance",
+      "width": 1200,
+      "height": 780,
+      "bytes": 49195,
+      "sha256": "4dfbfe59612d9f836af6ae7afc9dd95fa62499461b251da167e54355f6a38a66"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-03-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/wld-03-saved-terrain.png",
+      "title": "Wld 03 saved terrain",
+      "kind": "Actual saved editor terrain topology diagnostic; not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 70048,
+      "sha256": "5b8303523201cc5aad809965de6e990af8d97b456b52006ce73b8046fe65722c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-03-stair-after.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/wld-03-stair-after.png",
+      "title": "Wld 03 stair after",
+      "kind": "Native paired intact terrain/threshold inspection, neutral150Wfill; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 717614,
+      "sha256": "5232e8279c7a299d843372c4d7d50f28ce1281dc44c90bc25d41c0c807714a0c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-03-stair-before.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/wld-03-stair-before.png",
+      "title": "Wld 03 stair before",
+      "kind": "Native paired intact terrain/threshold inspection, neutral150Wfill; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 717312,
+      "sha256": "2ef8960d00436ba000fdacc36926baa6c798f9dfcc031a37fd6e301b6756e921"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-03-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/wld-03-whole-site.png",
+      "title": "Wld 03 whole site",
+      "kind": "Native terrain construction overview/contact sheet; no arrival/runtime acceptance",
+      "width": 1000,
+      "height": 750,
+      "bytes": 530723,
+      "sha256": "dcaca2170c53c3ce185a064fe2d4febcea4c7cffeb5a369a54fb19cd76206f7b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-saved-terrain.png",
+      "title": "Wld 04 saved terrain",
+      "kind": "Actual saved editor terrain topology diagnostic; not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 42221,
+      "sha256": "821f7b7a28d835a8835b943e1fc6ca6d78434934f0407346515232db8907bf05"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-stair-after.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-stair-after.png",
+      "title": "Wld 04 stair after",
+      "kind": "Native paired intact terrain/threshold inspection, neutral150Wfill; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 676841,
+      "sha256": "43ef2e4bc5a3289ce85cd01d601c809ec3f9173f150553731345d4e82705e30b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-stair-before.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-stair-before.png",
+      "title": "Wld 04 stair before",
+      "kind": "Native paired intact terrain/threshold inspection, neutral150Wfill; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 664411,
+      "sha256": "2e8ab284a23a841154bf2de6081067b1b01cf5c259cc4f73eff71414adafe260"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-threshold-after.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-threshold-after.png",
+      "title": "Wld 04 threshold after",
+      "kind": "Native paired intact terrain/threshold inspection, neutral150Wfill; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 742132,
+      "sha256": "8618123536e81c12b627a220e6dc6bf91f6879ccdbe48c5ca490f2f208754f24"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-threshold-before.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-threshold-before.png",
+      "title": "Wld 04 threshold before",
+      "kind": "Native paired intact terrain/threshold inspection, neutral150Wfill; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 739500,
+      "sha256": "5814b19d3a6f924a15b22875db997afd84f6887b91a3cfc702d307cb2ba451f5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-whole-site.png",
+      "title": "Wld 04 whole site",
+      "kind": "Native terrain construction overview/contact sheet; no arrival/runtime acceptance",
+      "width": 1000,
+      "height": 750,
+      "bytes": 497608,
+      "sha256": "f42bfc3e675bbcf9cb1f6d54c0f5da3606d9c79253c9eda57c0f992cfa01ce40"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-bearing-skirt-0016-soil-bearing.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-bearing-skirt-0016-soil-bearing.png",
+      "title": "Wld 12 bearing skirt 0016 soil bearing",
+      "kind": "Native isolated soil-bearing construction; other site context hidden",
+      "width": 1000,
+      "height": 750,
+      "bytes": 672173,
+      "sha256": "342ac77d6b860116433de4ec6ff26ae00e13cbadf826fa496d07576bef8309ad"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-bearing-skirt-0017-soil-bearing.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-bearing-skirt-0017-soil-bearing.png",
+      "title": "Wld 12 bearing skirt 0017 soil bearing",
+      "kind": "Native isolated soil-bearing construction; other site context hidden",
+      "width": 1000,
+      "height": 750,
+      "bytes": 644991,
+      "sha256": "8c746a215500d8c9a93baa7fc5a54d82bac70c1ee6a18290a3a005a395c77b9f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-bearing-skirt-0018-soil-bearing.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-bearing-skirt-0018-soil-bearing.png",
+      "title": "Wld 12 bearing skirt 0018 soil bearing",
+      "kind": "Native isolated soil-bearing construction; other site context hidden",
+      "width": 1000,
+      "height": 750,
+      "bytes": 613610,
+      "sha256": "b03333ac5db94151e35d8512e29cf9d570490ca347ce63116eff9c46a84e470d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-bearing-skirt-0022-soil-bearing.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-bearing-skirt-0022-soil-bearing.png",
+      "title": "Wld 12 bearing skirt 0022 soil bearing",
+      "kind": "Native isolated soil-bearing construction; other site context hidden",
+      "width": 1000,
+      "height": 750,
+      "bytes": 581743,
+      "sha256": "e65cb87e9a43dba1f9bcfe681524c7388c79c54fca651f44167c1a9627c14e43"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-bearing-skirt-0042-soil-bearing.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-bearing-skirt-0042-soil-bearing.png",
+      "title": "Wld 12 bearing skirt 0042 soil bearing",
+      "kind": "Native isolated soil-bearing construction; other site context hidden",
+      "width": 1000,
+      "height": 750,
+      "bytes": 691791,
+      "sha256": "8da86f682211463ab5e20dc94144107ddf19114679869fcda0e6599e93ec411b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-saved-terrain.png",
+      "title": "Wld 12 saved terrain",
+      "kind": "Actual saved editor terrain topology diagnostic; not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 54664,
+      "sha256": "f9c6d1baf051c28606c7f0fe50d4d0760811f6bec6c5eb1d72c6b766e95ea533"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-stair-after.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-stair-after.png",
+      "title": "Wld 12 stair after",
+      "kind": "Native paired intact terrain/threshold inspection, neutral150Wfill; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 704991,
+      "sha256": "a6cce8d1ab35c83d680f042d7015f913bf819a2ab0ff60b77e43966c6ea849a0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-stair-before.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-stair-before.png",
+      "title": "Wld 12 stair before",
+      "kind": "Native paired intact terrain/threshold inspection, neutral150Wfill; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 709580,
+      "sha256": "bbc6d375e54be4ddeb12be80a3775746c86517c31e7d8a4e4c855de8fca94f4c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-whole-site.png",
+      "title": "Wld 12 whole site",
+      "kind": "Native terrain construction overview/contact sheet; no arrival/runtime acceptance",
+      "width": 1000,
+      "height": 750,
+      "bytes": 472841,
+      "sha256": "9123e932843332970270f6dba301f7c9d461c2ba1e4eb3dfb1fd60da33fba574"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/academy/structure-export-closed.png",

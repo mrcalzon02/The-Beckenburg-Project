@@ -1,8 +1,8 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 1795,
-  "unique_local_file_hashes": 1641,
+  "local_files": 1804,
+  "unique_local_file_hashes": 1650,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
@@ -11,8 +11,8 @@
     "source_library_masters": 120,
     "additional_custom_model_sources": 22,
     "review_assemblies": 173,
-    "reference_and_rejected_studies": 30,
-    "native_map_exports": 173
+    "reference_and_rejected_studies": 36,
+    "native_map_exports": 176
   },
   "archive_index": {
     "path": "development/assets/local-library-manifest.json",
@@ -27026,6 +27026,114 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "445ff0760d4ad3287214c4d99969b494a4d993415737aa10a1a94a7fe102a4bc",
       "bytes": 1716920
+    },
+    {
+      "id": "benched-terrain",
+      "label": "benched-terrain",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-03/benched-terrain.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "c8d7de3841892a75eb5daced79c74faecf33fd8a04a8e9e7c6acaa286f7c8c3e",
+      "bytes": 3371180
+    },
+    {
+      "id": "benched-terrain",
+      "label": "benched-terrain",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-04/benched-terrain.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "f0afa6f65a20899b82a84c1f4a48c1060e9d889b94202b5466e8be2de93a3fc9",
+      "bytes": 3089376
+    },
+    {
+      "id": "benched-terrain",
+      "label": "benched-terrain",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-12/benched-terrain.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "c35e18ab57ace05afb97dc58daace0c83d093f4255e960bc59b88917959a8672",
+      "bytes": 3058664
+    },
+    {
+      "id": "benched-terrain",
+      "label": "benched-terrain",
+      "maps": [],
+      "category": "reference_and_rejected_studies",
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-assemblies/wld-03/benched-terrain.glb",
+      "collection": "reference_and_rejected_studies",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "05120af3b951834c3d9080e06100d9388704af1482e33334b84fc7e538bcfb00",
+      "bytes": 3371180
+    },
+    {
+      "id": "benched-terrain",
+      "label": "benched-terrain",
+      "maps": [],
+      "category": "reference_and_rejected_studies",
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-assemblies/wld-04/benched-terrain.glb",
+      "collection": "reference_and_rejected_studies",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "918884b1ebaa7e053745957982f56dc0e76a7ed1244f8be48e00ce06abcc4b79",
+      "bytes": 3087460
+    },
+    {
+      "id": "benched-terrain",
+      "label": "benched-terrain",
+      "maps": [],
+      "category": "reference_and_rejected_studies",
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-assemblies/wld-12/benched-terrain.glb",
+      "collection": "reference_and_rejected_studies",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "89abef68502c03e7a16c7afb1cc06c9247129f33f56be7ebeee9abc3b3282a38",
+      "bytes": 3049760
+    },
+    {
+      "id": "benched-terrain",
+      "label": "benched-terrain",
+      "maps": [],
+      "category": "reference_and_rejected_studies",
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-assemblies/wld-03/benched-terrain.glb",
+      "collection": "reference_and_rejected_studies",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "62cd5ff6df5c0ad857324fb78de7b256366a9b8d44299db408538a925522d7b2",
+      "bytes": 3371180
+    },
+    {
+      "id": "benched-terrain",
+      "label": "benched-terrain",
+      "maps": [],
+      "category": "reference_and_rejected_studies",
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-assemblies/wld-04/benched-terrain.glb",
+      "collection": "reference_and_rejected_studies",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "729bc72a5a34ee4c30a7068718914dcd3fb130d61f4761568a807cb6d9a705f1",
+      "bytes": 3087460
+    },
+    {
+      "id": "benched-terrain",
+      "label": "benched-terrain",
+      "maps": [],
+      "category": "reference_and_rejected_studies",
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-assemblies/wld-12/benched-terrain.glb",
+      "collection": "reference_and_rejected_studies",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "1269a3b505c45b074ed4eaa091530ffc6396c054e64df2c3cba847268694c415",
+      "bytes": 3049760
     },
     {
       "id": "rough-shell",

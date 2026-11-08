@@ -1,0 +1,684 @@
+{
+  "scope": 29,
+  "status": "BREADTH_BY_STAGE_ACTUAL_SAVED_TERRAIN_CIRCULATION_BENCH_AND_BASEMENT_PUNCHES",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "status": "RETAINED_LATEST_BAY_SHELL_LANDING_FLOOR_SOURCE_NO_TERRAIN_CHANGE_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/academy/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "ASYLUM",
+      "status": "RETAINED_LATEST_BAY_SHELL_LANDING_FLOOR_SOURCE_NO_TERRAIN_CHANGE_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/asylum/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "CASTLE",
+      "status": "RETAINED_MATURE_SOURCE_REQUIRES_INDIVIDUAL_ACCEPTANCE",
+      "previous_evidence": null,
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "CHURCH",
+      "status": "RETAINED_LATEST_BAY_SHELL_LANDING_FLOOR_SOURCE_NO_TERRAIN_CHANGE_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/church/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "COLLEGE",
+      "status": "RETAINED_LATEST_BAY_SHELL_LANDING_FLOOR_SOURCE_NO_TERRAIN_CHANGE_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/college/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "FARMHOUSE",
+      "status": "RETAINED_LATEST_BAY_SHELL_LANDING_FLOOR_SOURCE_NO_TERRAIN_CHANGE_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/farmhouse/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "HOUSE",
+      "status": "RETAINED_MATURE_SOURCE_REQUIRES_INDIVIDUAL_ACCEPTANCE",
+      "previous_evidence": null,
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "MANSION",
+      "status": "RETAINED_LATEST_BAY_SHELL_LANDING_FLOOR_SOURCE_NO_TERRAIN_CHANGE_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/mansion/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "PRISON",
+      "status": "RETAINED_LATEST_BAY_SHELL_LANDING_FLOOR_SOURCE_NO_TERRAIN_CHANGE_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/prison/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "SCHOOL",
+      "status": "RETAINED_LATEST_BAY_SHELL_LANDING_FLOOR_SOURCE_NO_TERRAIN_CHANGE_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/school/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "WLD-01",
+      "status": "RETAINED_MATURE_SOURCE_REQUIRES_INDIVIDUAL_ACCEPTANCE",
+      "previous_evidence": null,
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "WLD-02",
+      "status": "RETAINED_MATURE_SOURCE_REQUIRES_INDIVIDUAL_ACCEPTANCE",
+      "previous_evidence": null,
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "WLD-03",
+      "status": "ACTUAL_SAVED_EDITOR_TERRAIN_AND_NATIVE_COMPOSITE_BUILT_NOT_LANDSCAPE_ACCEPTED",
+      "evidence": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-03/construction.json",
+      "saved_world": "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world",
+      "grading_limit": "LOWER_ONLY",
+      "new_basement_punch_requests": 0,
+      "saved_new_punched_leaves": 0,
+      "terrain_triangles": 9462,
+      "threshold_repairs": [],
+      "bearing_extensions": [],
+      "passing_flight_gains": [
+        {
+          "site": "WLD-03",
+          "variant": "after_bearing",
+          "link": "L04",
+          "segment": "0",
+          "legacy_up": "START_BLOCKED",
+          "legacy_down": "START_BLOCKED",
+          "authored_up": "PASS",
+          "authored_down": "PASS"
+        },
+        {
+          "site": "WLD-03",
+          "variant": "after_bearing",
+          "link": "L07",
+          "segment": "0",
+          "legacy_up": "START_BLOCKED",
+          "legacy_down": "BLOCKED_AT_11_OF_285",
+          "authored_up": "PASS",
+          "authored_down": "PASS"
+        }
+      ],
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "flat_comparison": {
+        "samples": 3549,
+        "baseline_valid": 3175,
+        "new_block": 0,
+        "baseline_sweep": 3012,
+        "new_sweep_block": 0,
+        "after_valid": 3247,
+        "recovered_pose": 72,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-04",
+      "status": "ACTUAL_SAVED_EDITOR_TERRAIN_AND_NATIVE_COMPOSITE_BUILT_NOT_LANDSCAPE_ACCEPTED",
+      "evidence": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-04/construction.json",
+      "saved_world": "development/levels/rebuild/stair-terrain-pass/worlds/wld-04/terrain-world",
+      "grading_limit": "LOWER_ONLY",
+      "new_basement_punch_requests": 0,
+      "saved_new_punched_leaves": 0,
+      "terrain_triangles": 8375,
+      "threshold_repairs": [
+        {
+          "name": "Authored ruin threshold bearing plate region0",
+          "top_y": 6,
+          "bottom_y": 5.84,
+          "threshold": [
+            40,
+            6,
+            22
+          ],
+          "clear_width": 2
+        }
+      ],
+      "bearing_extensions": [],
+      "passing_flight_gains": [
+        {
+          "site": "WLD-04",
+          "variant": "after_bearing",
+          "link": "L03",
+          "segment": "0",
+          "legacy_up": "START_BLOCKED",
+          "legacy_down": "START_UNSUPPORTED",
+          "authored_up": "PASS",
+          "authored_down": "PASS"
+        },
+        {
+          "site": "WLD-04",
+          "variant": "after_bearing",
+          "link": "L11",
+          "segment": "0",
+          "legacy_up": "START_BLOCKED",
+          "legacy_down": "BLOCKED_AT_17_OF_318",
+          "authored_up": "PASS",
+          "authored_down": "PASS"
+        }
+      ],
+      "remaining_failed_flights": [
+        {
+          "site": "WLD-04",
+          "variant": "after_bearing",
+          "link": "L04",
+          "segment": "0",
+          "legacy_up": "START_UNSUPPORTED",
+          "legacy_down": "BLOCKED_AT_16_OF_142",
+          "authored_up": "BLOCKED_AT_120_OF_142",
+          "authored_down": "BLOCKED_AT_17_OF_142"
+        },
+        {
+          "site": "WLD-04",
+          "variant": "after_bearing",
+          "link": "L06",
+          "segment": "0",
+          "legacy_up": "START_UNSUPPORTED",
+          "legacy_down": "START_UNSUPPORTED",
+          "authored_up": "BLOCKED_AT_138_OF_227",
+          "authored_down": "BLOCKED_AT_81_OF_227"
+        }
+      ],
+      "remaining_failed_links": [
+        {
+          "site": "WLD-04",
+          "variant": "after_bearing",
+          "link": "L04",
+          "segments": "1",
+          "legacy_forward": "START_UNSUPPORTED",
+          "legacy_reverse": "BLOCKED_SEGMENT_0_AT_16_OF_142",
+          "authored_forward": "BLOCKED_SEGMENT_0_AT_120_OF_142",
+          "authored_reverse": "BLOCKED_SEGMENT_0_AT_17_OF_142"
+        },
+        {
+          "site": "WLD-04",
+          "variant": "after_bearing",
+          "link": "L06",
+          "segments": "1",
+          "legacy_forward": "START_UNSUPPORTED",
+          "legacy_reverse": "START_UNSUPPORTED",
+          "authored_forward": "BLOCKED_SEGMENT_0_AT_81_OF_227",
+          "authored_reverse": "BLOCKED_SEGMENT_0_AT_138_OF_227"
+        }
+      ],
+      "flat_comparison": {
+        "samples": 1413,
+        "baseline_valid": 1092,
+        "new_block": 0,
+        "baseline_sweep": 992,
+        "new_sweep_block": 0,
+        "after_valid": 1184,
+        "recovered_pose": 92,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-05",
+      "status": "RETAINED_LATEST_BAY_SHELL_LANDING_FLOOR_SOURCE_NO_TERRAIN_CHANGE_TARGETED",
+      "previous_evidence": "development/levels/rebuild/stair-bay-pass/wld-05/construction.json",
+      "remaining_failed_flights": [
+        {
+          "site": "WLD-05",
+          "variant": "after_bearing",
+          "link": "L17",
+          "segment": "0",
+          "legacy_up": "START_BLOCKED",
+          "legacy_down": "BLOCKED_AT_8_OF_190",
+          "authored_up": "BLOCKED_AT_178_OF_190",
+          "authored_down": "BLOCKED_AT_9_OF_190"
+        }
+      ],
+      "remaining_failed_links": [
+        {
+          "site": "WLD-05",
+          "variant": "after_bearing",
+          "link": "L17",
+          "segments": "1",
+          "legacy_forward": "START_BLOCKED",
+          "legacy_reverse": "BLOCKED_SEGMENT_0_AT_8_OF_190",
+          "authored_forward": "BLOCKED_SEGMENT_0_AT_178_OF_190",
+          "authored_reverse": "BLOCKED_SEGMENT_0_AT_9_OF_190"
+        }
+      ]
+    },
+    {
+      "id": "WLD-06",
+      "status": "RETAINED_LATEST_BAY_SHELL_LANDING_FLOOR_SOURCE_NO_TERRAIN_CHANGE_TARGETED",
+      "previous_evidence": "development/levels/rebuild/stair-opening-pass/wld-06/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "WLD-07",
+      "status": "RETAINED_LATEST_BAY_SHELL_LANDING_FLOOR_SOURCE_NO_TERRAIN_CHANGE_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-07/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "WLD-08",
+      "status": "RETAINED_LATEST_BAY_SHELL_LANDING_FLOOR_SOURCE_NO_TERRAIN_CHANGE_TARGETED",
+      "previous_evidence": "development/levels/rebuild/stair-opening-pass/wld-08/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "WLD-09",
+      "status": "RETAINED_LATEST_BAY_SHELL_LANDING_FLOOR_SOURCE_NO_TERRAIN_CHANGE_TARGETED",
+      "previous_evidence": "development/levels/rebuild/stair-bay-pass/wld-09/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "WLD-10",
+      "status": "RETAINED_LATEST_BAY_SHELL_LANDING_FLOOR_SOURCE_NO_TERRAIN_CHANGE_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-10/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "WLD-11",
+      "status": "RETAINED_LATEST_BAY_SHELL_LANDING_FLOOR_SOURCE_NO_TERRAIN_CHANGE_TARGETED",
+      "previous_evidence": "development/levels/rebuild/stair-landing-pass/wld-11/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "WLD-12",
+      "status": "ACTUAL_SAVED_EDITOR_TERRAIN_AND_NATIVE_COMPOSITE_BUILT_NOT_LANDSCAPE_ACCEPTED",
+      "evidence": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-12/construction.json",
+      "saved_world": "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world",
+      "grading_limit": "LOWER_ONLY",
+      "new_basement_punch_requests": 112,
+      "saved_new_punched_leaves": 291,
+      "terrain_triangles": 12702,
+      "threshold_repairs": [],
+      "bearing_extensions": [
+        {
+          "name": "Grounded skirt extension Bearing skirt 0016",
+          "source_bearing": "Bearing skirt 0016",
+          "footprint": [
+            [
+              28.0,
+              21.9
+            ],
+            [
+              30.0,
+              21.9
+            ],
+            [
+              30.0,
+              22.35
+            ],
+            [
+              28.0,
+              22.35
+            ]
+          ],
+          "top_y": [
+            -0.6401153564453125,
+            -0.694757080078125,
+            -0.694757080078125,
+            -0.6401153564453125
+          ],
+          "bottom_y": [
+            -2.016015625,
+            -2.0482460021972657,
+            -2.0482460021972657,
+            -2.016015625
+          ],
+          "terrain_probe_points": [
+            [
+              28.0,
+              22.35
+            ],
+            [
+              30.0,
+              22.35
+            ]
+          ],
+          "terrain_y": [
+            -1.666015625,
+            -1.6982460021972656
+          ],
+          "embedding_metres": 0.35
+        },
+        {
+          "name": "Grounded skirt extension Bearing skirt 0017",
+          "source_bearing": "Bearing skirt 0017",
+          "footprint": [
+            [
+              30.0,
+              21.9
+            ],
+            [
+              32.0,
+              21.9
+            ],
+            [
+              32.0,
+              22.35
+            ],
+            [
+              30.0,
+              22.35
+            ]
+          ],
+          "top_y": [
+            -0.694757080078125,
+            -0.7187057495117187,
+            -0.7187057495117187,
+            -0.694757080078125
+          ],
+          "bottom_y": [
+            -2.0482460021972657,
+            -1.8878494262695313,
+            -1.8878494262695313,
+            -2.0482460021972657
+          ],
+          "terrain_probe_points": [
+            [
+              30.0,
+              22.35
+            ],
+            [
+              32.0,
+              22.35
+            ]
+          ],
+          "terrain_y": [
+            -1.6982460021972656,
+            -1.5378494262695312
+          ],
+          "embedding_metres": 0.35
+        },
+        {
+          "name": "Grounded skirt extension Bearing skirt 0018",
+          "source_bearing": "Bearing skirt 0018",
+          "footprint": [
+            [
+              32.0,
+              21.9
+            ],
+            [
+              34.0,
+              21.9
+            ],
+            [
+              34.0,
+              22.35
+            ],
+            [
+              32.0,
+              22.35
+            ]
+          ],
+          "top_y": [
+            -0.7187057495117187,
+            -0.718804931640625,
+            -0.718804931640625,
+            -0.7187057495117187
+          ],
+          "bottom_y": [
+            -1.8878494262695313,
+            -1.0885520935058595,
+            -1.0885520935058595,
+            -1.8878494262695313
+          ],
+          "terrain_probe_points": [
+            [
+              32.0,
+              22.35
+            ],
+            [
+              34.0,
+              22.35
+            ]
+          ],
+          "terrain_y": [
+            -1.5378494262695312,
+            -0.7385520935058594
+          ],
+          "embedding_metres": 0.35
+        },
+        {
+          "name": "Grounded skirt extension Bearing skirt 0022",
+          "source_bearing": "Bearing skirt 0022",
+          "footprint": [
+            [
+              28.1,
+              20.0
+            ],
+            [
+              28.1,
+              22.0
+            ],
+            [
+              27.65,
+              22.0
+            ],
+            [
+              27.65,
+              20.0
+            ]
+          ],
+          "top_y": [
+            -0.4473854064941406,
+            -0.5502220153808594,
+            -0.5502220153808594,
+            -0.4473854064941406
+          ],
+          "bottom_y": [
+            -0.4973854064941406,
+            -1.5015464782714845,
+            -1.5015464782714845,
+            -0.4973854064941406
+          ],
+          "terrain_probe_points": [
+            [
+              27.65,
+              20.0
+            ],
+            [
+              27.65,
+              22.0
+            ]
+          ],
+          "terrain_y": [
+            -0.09738540649414062,
+            -1.1515464782714844
+          ],
+          "embedding_metres": 0.35
+        },
+        {
+          "name": "Grounded skirt extension Bearing skirt 0042",
+          "source_bearing": "Bearing skirt 0042",
+          "footprint": [
+            [
+              52.0,
+              29.9
+            ],
+            [
+              54.0,
+              29.9
+            ],
+            [
+              54.0,
+              30.35
+            ],
+            [
+              52.0,
+              30.35
+            ]
+          ],
+          "top_y": [
+            -0.9389739990234375,
+            -0.37504730224609373,
+            -0.37504730224609373,
+            -0.9389739990234375
+          ],
+          "bottom_y": [
+            -0.9889739990234375,
+            -0.8261428833007812,
+            -0.8261428833007812,
+            -0.9889739990234375
+          ],
+          "terrain_probe_points": [
+            [
+              52.0,
+              30.35
+            ],
+            [
+              54.0,
+              30.35
+            ]
+          ],
+          "terrain_y": [
+            -0.5889739990234375,
+            -0.47614288330078125
+          ],
+          "embedding_metres": 0.35
+        }
+      ],
+      "passing_flight_gains": [],
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [],
+      "flat_comparison": {
+        "samples": 4173,
+        "baseline_valid": 3389,
+        "new_block": 0,
+        "baseline_sweep": 3269,
+        "new_sweep_block": 0,
+        "after_valid": 4077,
+        "recovered_pose": 688,
+        "affected_segments": {}
+      }
+    },
+    {
+      "id": "WLD-13",
+      "status": "RETAINED_LATEST_BAY_SHELL_LANDING_FLOOR_SOURCE_NO_TERRAIN_CHANGE_TARGETED",
+      "previous_evidence": "development/levels/rebuild/stair-opening-pass/wld-13/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "WLD-14",
+      "status": "RETAINED_LATEST_BAY_SHELL_LANDING_FLOOR_SOURCE_NO_TERRAIN_CHANGE_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-14/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "WLD-15",
+      "status": "RETAINED_LATEST_BAY_SHELL_LANDING_FLOOR_SOURCE_NO_TERRAIN_CHANGE_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-15/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [
+        {
+          "site": "WLD-15",
+          "variant": "after_bearing",
+          "link": "route-17",
+          "segments": "3",
+          "legacy_forward": "START_BLOCKED",
+          "legacy_reverse": "BLOCKED_SEGMENT_1_AT_6_OF_100",
+          "authored_forward": "START_BLOCKED",
+          "authored_reverse": "BLOCKED_SEGMENT_2_AT_28_OF_30"
+        }
+      ]
+    },
+    {
+      "id": "WLD-16",
+      "status": "RETAINED_LATEST_BAY_SHELL_LANDING_FLOOR_SOURCE_NO_TERRAIN_CHANGE_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-16/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    },
+    {
+      "id": "WLD-17",
+      "status": "RETAINED_LATEST_BAY_SHELL_LANDING_FLOOR_SOURCE_NO_TERRAIN_CHANGE_TARGETED",
+      "previous_evidence": "development/levels/rebuild/stair-landing-pass/wld-17/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [
+        {
+          "site": "WLD-17",
+          "variant": "after_bearing",
+          "link": "route-03",
+          "segments": "2",
+          "legacy_forward": "BLOCKED_SEGMENT_0_AT_1_OF_83",
+          "legacy_reverse": "START_BLOCKED",
+          "authored_forward": "BLOCKED_SEGMENT_0_AT_1_OF_83",
+          "authored_reverse": "BLOCKED_SEGMENT_1_AT_1_OF_83"
+        }
+      ]
+    },
+    {
+      "id": "WLD-18",
+      "status": "RETAINED_LATEST_BAY_SHELL_LANDING_FLOOR_SOURCE_NO_TERRAIN_CHANGE_TARGETED",
+      "previous_evidence": "development/levels/rebuild/stair-opening-pass/wld-18/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": [
+        {
+          "site": "WLD-18",
+          "variant": "after_bearing",
+          "link": "route-13",
+          "segments": "5",
+          "legacy_forward": "BLOCKED_SEGMENT_2_AT_1_OF_68",
+          "legacy_reverse": "START_BLOCKED",
+          "authored_forward": "BLOCKED_SEGMENT_4_AT_38_OF_40",
+          "authored_reverse": "START_BLOCKED"
+        }
+      ]
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "status": "RETAINED_LATEST_BAY_SHELL_LANDING_FLOOR_SOURCE_NO_TERRAIN_CHANGE_TARGETED",
+      "previous_evidence": "development/levels/rebuild/floor-closure-pass/wld-07-mortuary/construction.json",
+      "remaining_failed_flights": [],
+      "remaining_failed_links": []
+    }
+  ],
+  "aggregate": {
+    "revised_sites": 3,
+    "actual_saved_terrain_triangles": 30539,
+    "lowered_common_vertices": 2361,
+    "common_vertices_compared": 17010,
+    "raised_common_vertices": 0,
+    "original_height_pngs_preserved": 3,
+    "additional_basement_punch_requests": 112,
+    "additional_punched_leaves": 291,
+    "threshold_parts": 1,
+    "new_footing_extensions": 5,
+    "new_footing_gaps": 0,
+    "flight_gains": 4,
+    "complete_link_gains": 5,
+    "remaining_failed_flights": 3,
+    "remaining_failed_links": 6,
+    "flat_samples": 110409,
+    "baseline_valid": 100279,
+    "qualified_sweeps": 95282,
+    "recovered_poses": 852,
+    "new_flat_blocks": 0,
+    "new_flat_sweep_failures": 0
+  },
+  "remaining": "Serrated/coarse cut banks, retaining/cave/physical edges/water/ground contacts and canonical van arrival require individual landscape/native/runtime acceptance; no unlock."
+}

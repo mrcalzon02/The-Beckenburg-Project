@@ -12,11 +12,32 @@ public final class RosterTerrainBuild {
     private static Path inputRoot=Path.of("build/terrain-samples");
     private static Path outputRoot=Path.of("development/levels/rebuild");
     private static Path previewRoot=Path.of("development/levels/rebuild/previews");
+    private static boolean cutOnlyGrades;
     private static String hash(Path file)throws Exception {
         return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(file)));
     }
     private static String hashText(String value)throws Exception {
         return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(value.getBytes(java.nio.charset.StandardCharsets.UTF_8)));
+    }
+    /** Sculpt through the existing lower-only editor brush. No source image
+     * writes, private layer mutation, new runtime behavior or height filling. */
+    private static void cutOnlyGrade(TerrainLayerStack layers,List<TerrainLayerStack.Point> points,double halfWidth,double shoulder){
+        int n=layers.cells();double radius=halfWidth+shoulder;int changed=0;
+        for(int z=1;z<n;z++)for(int x=1;x<n;x++){
+            double distance=Double.POSITIVE_INFINITY,target=0;
+            for(int i=1;i<points.size();i++){
+                var a=points.get(i-1);var b=points.get(i);double dx=b.x()-a.x(),dz=b.z()-a.z(),ls=dx*dx+dz*dz;
+                if(ls<1e-9)continue;
+                double t=Math.max(0,Math.min(1,((x-a.x())*dx+(z-a.z())*dz)/ls));double d=Math.hypot(x-a.x()-t*dx,z-a.z()-t*dz);
+                if(d<distance){distance=d;target=a.elevation()+(b.elevation()-a.elevation())*t;}
+            }
+            if(distance>=radius)continue;
+            double blend=distance<=halfWidth?1:shoulder==0?0:(radius-distance)/shoulder;
+            blend=blend*blend*(3-2*blend);double before=layers.height(x,z),desired=before+(Math.min(before,target)-before)*blend;
+            if(desired<before){layers.brush(TerrainLayerStack.Brush.FLATTEN,x,z,.49,1,desired,0,1,TerrainLayerStack.FlattenLimit.LOWER_ONLY);changed++;}
+            if(layers.height(x,z)>before+1e-6)throw new IllegalStateException("Cut-only bench raised source landform");
+        }
+        layers.finishStroke();System.out.println("EDITOR_LOWER_ONLY_BENCH changed="+changed+" raised=0");
     }
     public static void main(String[] args)throws Exception {
         var sites=new ArrayList<String>();
@@ -24,6 +45,7 @@ public final class RosterTerrainBuild {
             case "--input-root" -> inputRoot=Path.of(args[++i]);
             case "--output-root" -> outputRoot=Path.of(args[++i]);
             case "--preview-root" -> previewRoot=Path.of(args[++i]);
+            case "--cut-only-grades" -> cutOnlyGrades=true;
             default -> sites.add(args[i]);
         }
         if(sites.isEmpty())throw new IllegalArgumentException("Select explicit terrain sites");
@@ -59,7 +81,7 @@ public final class RosterTerrainBuild {
         String heightBefore=hash(world.tilePath(0,0));
         Path grades=input.resolve("grades.tsv"),gradeMarker=root.resolve("authored-path-grading.sha256");
         if(Files.exists(grades)&&!Files.readString(grades).isBlank()) {
-            var layers=new TerrainLayerStack(world,0,0);String program=hash(grades);
+            var layers=new TerrainLayerStack(world,0,0);String program=cutOnlyGrades?hashText("LOWER_ONLY\n"+Files.readString(grades)):hash(grades);
             var requested=Files.readAllLines(grades).stream().filter(row->!row.isBlank()).toList();
             var existing=new HashSet<String>();for(var layer:layers.layers())existing.add(layer.name());
             boolean apply=true;
@@ -70,7 +92,7 @@ public final class RosterTerrainBuild {
                 apply=!marker.get(0).equals(program);
                 if(apply) {
                     var oldRows=requested.stream().filter(row->existing.contains(row.split("\t")[0])).toList();
-                    if(!marker.get(0).equals(hashText(String.join("\n",oldRows)+"\n")))
+                    if(!marker.get(0).equals(hashText((cutOnlyGrades?"LOWER_ONLY\n":"")+String.join("\n",oldRows)+"\n")))
                         throw new IllegalStateException("Existing grade definition changed; preserve layer and reconcile explicitly");
                 }
             } else for(String row:requested)if(existing.contains(row.split("\t")[0]))
@@ -84,7 +106,8 @@ public final class RosterTerrainBuild {
                     layers.selectLayer(selected);var points=new ArrayList<TerrainLayerStack.Point>();
                     for(int i=3;i<v.length;i+=3)points.add(new TerrainLayerStack.Point(
                         (Double.parseDouble(v[i])-x0)/2,(Double.parseDouble(v[i+1])-z0)/2,Double.parseDouble(v[i+2])));
-                    layers.gradePath(points,Double.parseDouble(v[1])/2,Double.parseDouble(v[2])/2);
+                    if(cutOnlyGrades)cutOnlyGrade(layers,points,Double.parseDouble(v[1])/2,Double.parseDouble(v[2])/2);
+                    else layers.gradePath(points,Double.parseDouble(v[1])/2,Double.parseDouble(v[2])/2);
                 }
                 layers.save();Files.writeString(gradeMarker,program+"\n"+hash(layers.path())+"\n");
             }

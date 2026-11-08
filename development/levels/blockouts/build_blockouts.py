@@ -126,7 +126,7 @@ def build(path,output_root=None,structural=False):
     if 'terrain' in data:
         from proposal_landforms import build_landform
         build_landform(data)
-        if structural and data.get('saved_editor_terrain'):
+        if structural and (data.get('current_saved_editor_terrain') or data.get('saved_editor_terrain')):
             from structural_pass import saved_editor_terrain
             old=[o for o in scene.objects if o.type=='MESH' and o.name.startswith('Authored ') and 'terrain' in o.name]
             assert len(old)==1,'Expected one predecessor proposal terrain'

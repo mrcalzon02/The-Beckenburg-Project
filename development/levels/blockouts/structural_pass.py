@@ -13,20 +13,25 @@ def saved_editor_terrain(data,collection,material):
     """Import the exact mesh published from persistent editor punched leaves."""
     from pathlib import Path
     root=Path(__file__).resolve().parents[3]
-    contract=data['saved_editor_terrain']
+    contract=data.get('current_saved_editor_terrain') or data['saved_editor_terrain']
     for name,digest in contract['files_sha256'].items():
         assert hashlib.sha256((root/name).read_bytes()).hexdigest()==digest,('Stale saved editor terrain',name)
     points=[];faces=[]
-    for row in (root/contract['mesh']).read_text(encoding='utf-8').splitlines():
-        values=row.split()
-        if not values:continue
-        if values[0]=='v':
-            x,y,z=map(float,values[1:4]);points.append((x,-z,y))
-        elif values[0]=='f':faces.append(tuple(int(v.split('/')[0])-1 for v in values[1:]))
+    chunks=contract.get('mesh_chunks') or [contract['mesh']]
+    for chunk in chunks:
+        offset=len(points)
+        for row in (root/chunk).read_text(encoding='utf-8').splitlines():
+            values=row.split()
+            if not values:continue
+            if values[0]=='v':
+                x,y,z=map(float,values[1:4]);points.append((x,-z,y))
+            elif values[0]=='f':faces.append(tuple(offset+int(v.split('/')[0])-1 for v in values[1:]))
     assert points and faces and all(len(face)==3 for face in faces),'Editor terrain must publish actual triangles'
     mesh=bpy.data.meshes.new('Saved editor terrain');mesh.from_pydata(points,[],faces);mesh.update()
     obj=bpy.data.objects.new('Saved editor terrain '+data['id'],mesh);collection.objects.link(obj);mesh.materials.append(material)
-    obj['role']='saved editor terrain / actual punched leaves';obj['source_obj_sha256']=contract['files_sha256'][contract['mesh']]
+    obj['role']='saved editor terrain / actual punched leaves'
+    if len(chunks)==1:obj['source_obj_sha256']=contract['files_sha256'][chunks[0]]
+    else:obj['source_mesh_chunks_sha256']=json.dumps({p:contract['files_sha256'][p] for p in chunks})
     obj['terrain_contract']=json.dumps(contract);return obj
 
 def shaped_deck(zone,holes,collection,material,role):

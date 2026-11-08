@@ -1,0 +1,96 @@
+{
+  "flights": [
+    {
+      "site": "WLD-04",
+      "variant": "after_bearing",
+      "link": "L04",
+      "segment": "0",
+      "legacy_up": "START_UNSUPPORTED",
+      "legacy_down": "BLOCKED_AT_16_OF_142",
+      "authored_up": "BLOCKED_AT_120_OF_142",
+      "authored_down": "BLOCKED_AT_17_OF_142"
+    },
+    {
+      "site": "WLD-04",
+      "variant": "after_bearing",
+      "link": "L06",
+      "segment": "0",
+      "legacy_up": "START_UNSUPPORTED",
+      "legacy_down": "START_UNSUPPORTED",
+      "authored_up": "BLOCKED_AT_138_OF_227",
+      "authored_down": "BLOCKED_AT_81_OF_227"
+    },
+    {
+      "site": "WLD-05",
+      "variant": "after_bearing",
+      "link": "L17",
+      "segment": "0",
+      "legacy_up": "START_BLOCKED",
+      "legacy_down": "BLOCKED_AT_8_OF_190",
+      "authored_up": "BLOCKED_AT_178_OF_190",
+      "authored_down": "BLOCKED_AT_9_OF_190"
+    }
+  ],
+  "complete_links": [
+    {
+      "site": "WLD-04",
+      "variant": "after_bearing",
+      "link": "L04",
+      "segments": "1",
+      "legacy_forward": "START_UNSUPPORTED",
+      "legacy_reverse": "BLOCKED_SEGMENT_0_AT_16_OF_142",
+      "authored_forward": "BLOCKED_SEGMENT_0_AT_120_OF_142",
+      "authored_reverse": "BLOCKED_SEGMENT_0_AT_17_OF_142"
+    },
+    {
+      "site": "WLD-04",
+      "variant": "after_bearing",
+      "link": "L06",
+      "segments": "1",
+      "legacy_forward": "START_UNSUPPORTED",
+      "legacy_reverse": "START_UNSUPPORTED",
+      "authored_forward": "BLOCKED_SEGMENT_0_AT_81_OF_227",
+      "authored_reverse": "BLOCKED_SEGMENT_0_AT_138_OF_227"
+    },
+    {
+      "site": "WLD-05",
+      "variant": "after_bearing",
+      "link": "L17",
+      "segments": "1",
+      "legacy_forward": "START_BLOCKED",
+      "legacy_reverse": "BLOCKED_SEGMENT_0_AT_8_OF_190",
+      "authored_forward": "BLOCKED_SEGMENT_0_AT_178_OF_190",
+      "authored_reverse": "BLOCKED_SEGMENT_0_AT_9_OF_190"
+    },
+    {
+      "site": "WLD-15",
+      "variant": "after_bearing",
+      "link": "route-17",
+      "segments": "3",
+      "legacy_forward": "START_BLOCKED",
+      "legacy_reverse": "BLOCKED_SEGMENT_1_AT_6_OF_100",
+      "authored_forward": "START_BLOCKED",
+      "authored_reverse": "BLOCKED_SEGMENT_2_AT_28_OF_30"
+    },
+    {
+      "site": "WLD-17",
+      "variant": "after_bearing",
+      "link": "route-03",
+      "segments": "2",
+      "legacy_forward": "BLOCKED_SEGMENT_0_AT_1_OF_83",
+      "legacy_reverse": "START_BLOCKED",
+      "authored_forward": "BLOCKED_SEGMENT_0_AT_1_OF_83",
+      "authored_reverse": "BLOCKED_SEGMENT_1_AT_1_OF_83"
+    },
+    {
+      "site": "WLD-18",
+      "variant": "after_bearing",
+      "link": "route-13",
+      "segments": "5",
+      "legacy_forward": "BLOCKED_SEGMENT_2_AT_1_OF_68",
+      "legacy_reverse": "START_BLOCKED",
+      "authored_forward": "BLOCKED_SEGMENT_4_AT_38_OF_40",
+      "authored_reverse": "START_BLOCKED"
+    }
+  ]
+}

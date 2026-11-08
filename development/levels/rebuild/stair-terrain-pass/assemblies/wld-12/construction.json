@@ -1,0 +1,453 @@
+{
+  "id": "WLD-12",
+  "status": "ACTUAL_SAVED_STAIR_TERRAIN_COMPOSITE_CANDIDATE_NOT_ACCEPTED",
+  "source_glb": "development/levels/rebuild/stair-bay-pass/wld-12/bayed-stairs.glb",
+  "source_glb_sha256": "492ce0fae4f521c6260eb98bf6119c77edc1ca2d20ac00535787ff0166abcd11",
+  "source_physics": "development/levels/rebuild/stair-bay-pass/wld-12/bayed-stairs.hcs2",
+  "source_physics_sha256": "63ac0bf239737b5afe9b49d6a1709be4ec346825d938161336ee8519b369f55c",
+  "before_layout": "development/levels/rebuild/stair-bay-pass/wld-12/authored-layout.json",
+  "before_layout_sha256": "48e3490e8c678432fbe841a03dbb5e1bdd46c618ca172184555dcc7495cd328c",
+  "layout": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-12/authored-layout.json",
+  "layout_sha256": "47958e12195200b8f3178c9a640750ccb9fe2a77fcb42ff04c3193ff0227eb77",
+  "before_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {
+      "2": 0
+    },
+    "L17": {
+      "1": 0
+    },
+    "L18": {}
+  },
+  "source_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {
+      "2": 0
+    },
+    "L17": {
+      "1": 0
+    },
+    "L18": {}
+  },
+  "before_stair_components": [
+    "Authored stair end WLD-12 L16 0 high region0",
+    "Authored stair end WLD-12 L17 0 high region0",
+    "Bayed stair WLD-12 L16 step0",
+    "Bayed stair WLD-12 L16 step1",
+    "Bayed stair WLD-12 L16 step2",
+    "Bayed stair WLD-12 L16 step3",
+    "Bayed stair WLD-12 L16 step4",
+    "Bayed stair WLD-12 L16 step5",
+    "Bayed stair WLD-12 L16 step6",
+    "Bayed stair WLD-12 L16 step7",
+    "Bayed stair WLD-12 L16 step8",
+    "Bayed stair WLD-12 L16 step9",
+    "Bayed stair WLD-12 L16 step10",
+    "Bayed stair WLD-12 L16 step11",
+    "Bayed stair WLD-12 L16 step12",
+    "Bayed stair WLD-12 L16 step13",
+    "Bayed stair WLD-12 L16 step14",
+    "Bayed stair WLD-12 L16 step15",
+    "Bayed stair WLD-12 L16 step16",
+    "Bayed stair WLD-12 L16 step17",
+    "Bayed stair WLD-12 L16 step18",
+    "Bayed stair WLD-12 L16 step19",
+    "Bayed stair WLD-12 L16 step20",
+    "Bayed stair WLD-12 L16 step21",
+    "Bayed stair WLD-12 L17 step0",
+    "Bayed stair WLD-12 L17 step1",
+    "Bayed stair WLD-12 L17 step2",
+    "Bayed stair WLD-12 L17 step3",
+    "Bayed stair WLD-12 L17 step4",
+    "Bayed stair WLD-12 L17 step5",
+    "Bayed stair WLD-12 L17 step6",
+    "Bayed stair WLD-12 L17 step7",
+    "Bayed stair WLD-12 L17 step8",
+    "Bayed stair WLD-12 L17 step9",
+    "Bayed stair WLD-12 L17 step10",
+    "Bayed stair WLD-12 L17 step11",
+    "Bayed stair WLD-12 L17 step12",
+    "Bayed stair WLD-12 L17 step13",
+    "Bayed stair WLD-12 L17 step14",
+    "Bayed stair WLD-12 L17 step15",
+    "Bayed stair WLD-12 L17 step16",
+    "Bayed stair WLD-12 L17 step17",
+    "Retained upper hub WLD-12 L17 2 region0",
+    "Retained upper hub WLD-12 L17 2 region1",
+    "Retained upper hub WLD-12 L17 3 region0",
+    "Retained upper hub WLD-12 L17 3 region1",
+    "Bay landing WLD-12 L16 7 region0",
+    "Bay landing WLD-12 L17 2 region0",
+    "Bay landing WLD-12 L17 2 region1",
+    "Bay landing WLD-12 L17 2 region2"
+  ],
+  "stair_components": [
+    "Authored stair end WLD-12 L16 0 high region0",
+    "Authored stair end WLD-12 L17 0 high region0",
+    "Bayed stair WLD-12 L16 step0",
+    "Bayed stair WLD-12 L16 step1",
+    "Bayed stair WLD-12 L16 step2",
+    "Bayed stair WLD-12 L16 step3",
+    "Bayed stair WLD-12 L16 step4",
+    "Bayed stair WLD-12 L16 step5",
+    "Bayed stair WLD-12 L16 step6",
+    "Bayed stair WLD-12 L16 step7",
+    "Bayed stair WLD-12 L16 step8",
+    "Bayed stair WLD-12 L16 step9",
+    "Bayed stair WLD-12 L16 step10",
+    "Bayed stair WLD-12 L16 step11",
+    "Bayed stair WLD-12 L16 step12",
+    "Bayed stair WLD-12 L16 step13",
+    "Bayed stair WLD-12 L16 step14",
+    "Bayed stair WLD-12 L16 step15",
+    "Bayed stair WLD-12 L16 step16",
+    "Bayed stair WLD-12 L16 step17",
+    "Bayed stair WLD-12 L16 step18",
+    "Bayed stair WLD-12 L16 step19",
+    "Bayed stair WLD-12 L16 step20",
+    "Bayed stair WLD-12 L16 step21",
+    "Bayed stair WLD-12 L17 step0",
+    "Bayed stair WLD-12 L17 step1",
+    "Bayed stair WLD-12 L17 step2",
+    "Bayed stair WLD-12 L17 step3",
+    "Bayed stair WLD-12 L17 step4",
+    "Bayed stair WLD-12 L17 step5",
+    "Bayed stair WLD-12 L17 step6",
+    "Bayed stair WLD-12 L17 step7",
+    "Bayed stair WLD-12 L17 step8",
+    "Bayed stair WLD-12 L17 step9",
+    "Bayed stair WLD-12 L17 step10",
+    "Bayed stair WLD-12 L17 step11",
+    "Bayed stair WLD-12 L17 step12",
+    "Bayed stair WLD-12 L17 step13",
+    "Bayed stair WLD-12 L17 step14",
+    "Bayed stair WLD-12 L17 step15",
+    "Bayed stair WLD-12 L17 step16",
+    "Bayed stair WLD-12 L17 step17",
+    "Retained upper hub WLD-12 L17 2 region0",
+    "Retained upper hub WLD-12 L17 2 region1",
+    "Retained upper hub WLD-12 L17 3 region0",
+    "Retained upper hub WLD-12 L17 3 region1",
+    "Bay landing WLD-12 L16 7 region0",
+    "Bay landing WLD-12 L17 2 region0",
+    "Bay landing WLD-12 L17 2 region1",
+    "Bay landing WLD-12 L17 2 region2"
+  ],
+  "world": "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world",
+  "world_files_sha256": {
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/adaptive-topology.bin": "9dc0268d4f305252f5ef08e952814650eaf7e2e781ac0cf33aef1a02068f6431",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/authored-cuts.tsv": "47b4e89866a0bbf2771bb7250fe680d392802465df0ccf038217ac641fc59756",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/authored-path-grading.sha256": "794d815cc7cae67f2b92b8b7fc5c95866d90ad5277da5dc55fb547bc8c297858",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/source-provenance.json": "2225e50573bb084a77d72e5c6695c01e1771c4fdc86f4c55322893e304f3dc5b",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/terrain-physics.hcs2": "14db9b98c1091f14fe5da2819febb65c7cae88e2617c8acf8e3144c1c864531d",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/tile_0_0.png": "7061a02d78be96ba09939bcbdb32a120002d95f4302fd8c1206bdf5231ed78a3",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/verification.json": "18c8f8298331342ebb7adb4d64bece728cb0ef94b3542073b7c16188c8f11698",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/world.properties": "ce1bdef52e93322565338582604f0aa81a8f072fb3f4909e4f1f192af98a9a2f",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/.scene.bin.editor.previous": "1f0d2fb6550bc78ae64825f4b6f4ba54cfc4ff84e6b3fa160e565eadefd80a33",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/scene.bin": "b63571a049fdb57808b86353a90bc3e041f4a2b342afbb6df9cf679d4a7708ff",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/terrain-layers/tile_0_0.bin": "f64f8e8caa97aafd2da7090459029f880b2df7ad3dce8de638fe7e2c54a17339",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-0-0.obj": "9c2be7a828c8c744f4a922fd50806bae2a0e1dfc31f3faf9e7bc1b0ef796b082",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-0-1.obj": "2b1c53cc4e063582392a58753a2a370502dd6f8b26cd73fb49f0259f624c0111",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-1-0.obj": "8ad897fb847a95a7ced43c1eab83dbea5929fd922d0334b58d435e41dff11a6c",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-1-1.obj": "e0d454904e070d5f667f671f9a77e03b8004bc08f2380e676fef8006c207c3fc"
+  },
+  "removed_source_meshes": [
+    "Saved editor macroterrain WLD-12"
+  ],
+  "removed_native_parts": [
+    "terrain-site-0-0:surface",
+    "terrain-site-1-0:surface",
+    "terrain-site-0-1:surface",
+    "terrain-site-1-1:surface"
+  ],
+  "terrain_mesh": "Saved editor stair bench terrain WLD-12",
+  "terrain_triangles": 12702,
+  "threshold_repairs": [],
+  "bearing_extensions": [
+    {
+      "name": "Grounded skirt extension Bearing skirt 0016",
+      "source_bearing": "Bearing skirt 0016",
+      "footprint": [
+        [
+          28.0,
+          21.9
+        ],
+        [
+          30.0,
+          21.9
+        ],
+        [
+          30.0,
+          22.35
+        ],
+        [
+          28.0,
+          22.35
+        ]
+      ],
+      "top_y": [
+        -0.6401153564453125,
+        -0.694757080078125,
+        -0.694757080078125,
+        -0.6401153564453125
+      ],
+      "bottom_y": [
+        -2.016015625,
+        -2.0482460021972657,
+        -2.0482460021972657,
+        -2.016015625
+      ],
+      "terrain_probe_points": [
+        [
+          28.0,
+          22.35
+        ],
+        [
+          30.0,
+          22.35
+        ]
+      ],
+      "terrain_y": [
+        -1.666015625,
+        -1.6982460021972656
+      ],
+      "embedding_metres": 0.35
+    },
+    {
+      "name": "Grounded skirt extension Bearing skirt 0017",
+      "source_bearing": "Bearing skirt 0017",
+      "footprint": [
+        [
+          30.0,
+          21.9
+        ],
+        [
+          32.0,
+          21.9
+        ],
+        [
+          32.0,
+          22.35
+        ],
+        [
+          30.0,
+          22.35
+        ]
+      ],
+      "top_y": [
+        -0.694757080078125,
+        -0.7187057495117187,
+        -0.7187057495117187,
+        -0.694757080078125
+      ],
+      "bottom_y": [
+        -2.0482460021972657,
+        -1.8878494262695313,
+        -1.8878494262695313,
+        -2.0482460021972657
+      ],
+      "terrain_probe_points": [
+        [
+          30.0,
+          22.35
+        ],
+        [
+          32.0,
+          22.35
+        ]
+      ],
+      "terrain_y": [
+        -1.6982460021972656,
+        -1.5378494262695312
+      ],
+      "embedding_metres": 0.35
+    },
+    {
+      "name": "Grounded skirt extension Bearing skirt 0018",
+      "source_bearing": "Bearing skirt 0018",
+      "footprint": [
+        [
+          32.0,
+          21.9
+        ],
+        [
+          34.0,
+          21.9
+        ],
+        [
+          34.0,
+          22.35
+        ],
+        [
+          32.0,
+          22.35
+        ]
+      ],
+      "top_y": [
+        -0.7187057495117187,
+        -0.718804931640625,
+        -0.718804931640625,
+        -0.7187057495117187
+      ],
+      "bottom_y": [
+        -1.8878494262695313,
+        -1.0885520935058595,
+        -1.0885520935058595,
+        -1.8878494262695313
+      ],
+      "terrain_probe_points": [
+        [
+          32.0,
+          22.35
+        ],
+        [
+          34.0,
+          22.35
+        ]
+      ],
+      "terrain_y": [
+        -1.5378494262695312,
+        -0.7385520935058594
+      ],
+      "embedding_metres": 0.35
+    },
+    {
+      "name": "Grounded skirt extension Bearing skirt 0022",
+      "source_bearing": "Bearing skirt 0022",
+      "footprint": [
+        [
+          28.1,
+          20.0
+        ],
+        [
+          28.1,
+          22.0
+        ],
+        [
+          27.65,
+          22.0
+        ],
+        [
+          27.65,
+          20.0
+        ]
+      ],
+      "top_y": [
+        -0.4473854064941406,
+        -0.5502220153808594,
+        -0.5502220153808594,
+        -0.4473854064941406
+      ],
+      "bottom_y": [
+        -0.4973854064941406,
+        -1.5015464782714845,
+        -1.5015464782714845,
+        -0.4973854064941406
+      ],
+      "terrain_probe_points": [
+        [
+          27.65,
+          20.0
+        ],
+        [
+          27.65,
+          22.0
+        ]
+      ],
+      "terrain_y": [
+        -0.09738540649414062,
+        -1.1515464782714844
+      ],
+      "embedding_metres": 0.35
+    },
+    {
+      "name": "Grounded skirt extension Bearing skirt 0042",
+      "source_bearing": "Bearing skirt 0042",
+      "footprint": [
+        [
+          52.0,
+          29.9
+        ],
+        [
+          54.0,
+          29.9
+        ],
+        [
+          54.0,
+          30.35
+        ],
+        [
+          52.0,
+          30.35
+        ]
+      ],
+      "top_y": [
+        -0.9389739990234375,
+        -0.37504730224609373,
+        -0.37504730224609373,
+        -0.9389739990234375
+      ],
+      "bottom_y": [
+        -0.9889739990234375,
+        -0.8261428833007812,
+        -0.8261428833007812,
+        -0.9889739990234375
+      ],
+      "terrain_probe_points": [
+        [
+          52.0,
+          30.35
+        ],
+        [
+          54.0,
+          30.35
+        ]
+      ],
+      "terrain_y": [
+        -0.5889739990234375,
+        -0.47614288330078125
+      ],
+      "embedding_metres": 0.35
+    }
+  ],
+  "preserved_nonterrain_parts": 194,
+  "retained_glb_resources": {
+    "original_binary_bytes_preserved": 1555628,
+    "original_static_resources_preserved": true,
+    "replaced_scene_nodes": [
+      137
+    ]
+  },
+  "glb_sha256": "c35e18ab57ace05afb97dc58daace0c83d093f4255e960bc59b88917959a8672",
+  "physics_sha256": "f64a770b8d4f58f52bc3b62cdc9cc43994add98312271235eedf0589bd50aa6a",
+  "composer_sha256": "d41349ba1519fc4933b4350b35eda13511838cc9ca04e70902d940238c68cdb1",
+  "remaining": "Independent saved editor/source/export/native/regression and landscape/retaining/cave/water/van arrival acceptance. No runtime unlock."
+}

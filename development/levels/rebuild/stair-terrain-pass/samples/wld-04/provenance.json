@@ -1,0 +1,484 @@
+{
+  "id": "WLD-04",
+  "source_world": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-04/terrain-world",
+  "source_height_sha256": "c34bc04fc96dfdf7ed70d5d9790e326aff76b3cc1674822a0bfd901689628fc9",
+  "layout": "development/levels/rebuild/wld-04/rough-layout.json",
+  "layout_sha256": "89430b74df791d484a7dd38df353a011d241bb727f7ff1c0a344f64f2e738104",
+  "program": [
+    {
+      "link": "L03",
+      "points": [
+        [
+          14.0,
+          0,
+          51.0
+        ],
+        [
+          28.0,
+          3,
+          36.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5
+    },
+    {
+      "link": "L04",
+      "points": [
+        [
+          28.0,
+          3,
+          36.0
+        ],
+        [
+          30.0,
+          6,
+          22.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5
+    },
+    {
+      "link": "L06",
+      "points": [
+        [
+          12.0,
+          6,
+          20.0
+        ],
+        [
+          28.0,
+          3,
+          36.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5
+    },
+    {
+      "link": "L11",
+      "points": [
+        [
+          43.0,
+          3,
+          51.0
+        ],
+        [
+          30.0,
+          6,
+          22.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5
+    },
+    {
+      "link": "L01",
+      "segment": 0,
+      "points": [
+        [
+          28.0,
+          0,
+          78.0
+        ],
+        [
+          28.0,
+          0,
+          72.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L01",
+      "segment": 1,
+      "points": [
+        [
+          28.0,
+          0,
+          72.0
+        ],
+        [
+          28.0,
+          0,
+          66.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L02",
+      "segment": 0,
+      "points": [
+        [
+          28.0,
+          0,
+          66.0
+        ],
+        [
+          14.0,
+          0,
+          51.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L05",
+      "segment": 0,
+      "points": [
+        [
+          30.0,
+          6,
+          22.0
+        ],
+        [
+          20.0,
+          6,
+          20.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L05",
+      "segment": 1,
+      "points": [
+        [
+          20.0,
+          6,
+          20.0
+        ],
+        [
+          12.0,
+          6,
+          20.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L07",
+      "segment": 0,
+      "points": [
+        [
+          30.0,
+          6,
+          22.0
+        ],
+        [
+          40.0,
+          6,
+          22.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L07",
+      "segment": 1,
+      "points": [
+        [
+          40.0,
+          6,
+          22.0
+        ],
+        [
+          47.0,
+          6,
+          22.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L08",
+      "segment": 0,
+      "points": [
+        [
+          47.0,
+          6,
+          22.0
+        ],
+        [
+          45.0,
+          6,
+          30.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.55,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L08",
+      "segment": 1,
+      "points": [
+        [
+          45.0,
+          6,
+          30.0
+        ],
+        [
+          45.0,
+          6,
+          35.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.55,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L12",
+      "segment": 0,
+      "points": [
+        [
+          30.0,
+          6,
+          22.0
+        ],
+        [
+          30.0,
+          6,
+          14.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L12",
+      "segment": 1,
+      "points": [
+        [
+          30.0,
+          6,
+          14.0
+        ],
+        [
+          30.0,
+          6,
+          8.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L13",
+      "segment": 1,
+      "points": [
+        [
+          26,
+          10.5,
+          4.2
+        ],
+        [
+          26,
+          10.5,
+          3.45
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L14",
+      "segment": 0,
+      "points": [
+        [
+          26,
+          10.5,
+          3.45
+        ],
+        [
+          30.8,
+          10.5,
+          3.45
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.55,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L14",
+      "segment": 1,
+      "points": [
+        [
+          30.8,
+          10.5,
+          3.45
+        ],
+        [
+          30.8,
+          10.5,
+          4.2
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.55,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L14",
+      "segment": 3,
+      "points": [
+        [
+          30.8,
+          12.75,
+          8.1
+        ],
+        [
+          30.8,
+          12.75,
+          8.85
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.55,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L15",
+      "segment": 0,
+      "points": [
+        [
+          27.0,
+          15,
+          5.0
+        ],
+        [
+          30.0,
+          15,
+          5.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L15",
+      "segment": 1,
+      "points": [
+        [
+          30.0,
+          15,
+          5.0
+        ],
+        [
+          33.0,
+          15,
+          5.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L14B",
+      "segment": 0,
+      "points": [
+        [
+          30.8,
+          12.75,
+          8.85
+        ],
+        [
+          28.2,
+          12.75,
+          8.85
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.55,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L14B",
+      "segment": 1,
+      "points": [
+        [
+          28.2,
+          12.75,
+          8.85
+        ],
+        [
+          28.2,
+          12.75,
+          8.1
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.55,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L14B",
+      "segment": 3,
+      "points": [
+        [
+          28.2,
+          15,
+          4.2
+        ],
+        [
+          28.2,
+          15,
+          3.45
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.55,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    }
+  ],
+  "grading_limit": "LOWER_ONLY",
+  "new_basement_punches": [],
+  "method": "Actual editor non-destructive lower-only bench layers and persistent footprint topology punches; retain source landforms/source16bitPNG and previous holes; no room-pad snapping or render-only hole."
+}

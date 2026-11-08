@@ -32,7 +32,7 @@ def main():
             assert pose['triangles']==assets[pose['asset']]['triangles']
             assert abs(pose['bounds'][2]-pose['floor_y'])<.001
             poses.append(pose)
-        terrain=json.loads((ROOT/r['source_layout']).read_text()).get('saved_editor_terrain')
+        terrain=(json.loads((ROOT/r['source_layout']).read_text()).get('current_saved_editor_terrain') or json.loads((ROOT/r['source_layout']).read_text()).get('saved_editor_terrain'))
         if terrain:
             assert p['saved_editor_terrain_fidelity']['exact_float_triangle_and_flag_match']
             assert digest(ROOT/terrain['native_physics'])==p['saved_editor_terrain_fidelity']['native_physics_sha256']

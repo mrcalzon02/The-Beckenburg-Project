@@ -48,3 +48,21 @@ development/levels/rebuild/stair-bay-pass/** -text
 tools/build_stair_bays.py text eol=lf
 tools/check_stair_bays.py text eol=lf
 tools/render_stair_bays.py text eol=lf
+
+# Saved terrain layers, topology and source receipts bind exact checkout bytes.
+development/levels/rebuild/stair-terrain-pass/** -text
+tools/author_stair_terrain.py text eol=lf
+tools/compose_stair_terrain.py text eol=lf
+tools/check_stair_terrain.py text eol=lf
+tools/audit_stair_terrain_bearings.py text eol=lf
+tools/render_stair_terrain.py text eol=lf
+tools/render_stair_threshold.py text eol=lf
+tools/java/RosterTerrainBuild.java text eol=lf
+
+# Shared terrain contract consumer fingerprints.
+development/levels/blockouts/structural_pass.py text eol=lf
+development/levels/blockouts/build_blockouts.py text eol=lf
+tools/check_saved_terrain_consumer.py text eol=lf
+tools/export_roster_collision.py text eol=lf
+tools/review_roster_furnishings.py text eol=lf
+tools/audit_roster_terrain_envelopes.py text eol=lf
