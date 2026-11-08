@@ -62,7 +62,37 @@ def shaped_deck(zone,holes,collection,material,role):
     bm.to_mesh(obj.data);bm.free();obj.data.update()
     return obj
 
+def deck_openings(elevation,data):
+    """Exact authored shaft footprints, with the existing2.2m clearance rule.
+
+    Flight strips stop at their endpoints. The repair pass retains original
+    terminal landings rather than adding new terminal caps.
+    Axis-aligned bounds are a broad-phase query, not a floor-cut polygon.
+    """
+    openings=[]
+    for link in data['links']:
+        for index,(p,q) in enumerate(zip(link['points'],link['points'][1:])):
+            if link['kind']!='stairs' and abs(p[1]-q[1])<.01:continue
+            if elevation<=min(p[1],q[1])+.001 or elevation>max(p[1],q[1])+2.2:continue
+            run=math.hypot(q[0]-p[0],q[2]-p[2])
+            if run<.01:continue
+            half=link['width']/2+.15;nx=-(q[2]-p[2])/run*half;nz=(q[0]-p[0])/run*half
+            polygon=[(p[0]+nx,p[2]+nz),(q[0]+nx,q[2]+nz),(q[0]-nx,q[2]-nz),(p[0]-nx,p[2]-nz)]
+            openings.append(dict(link=link['id'],segment=index,polygon=polygon))
+        # Continuous turns need the swept corridor's joined corner, not the
+        # disjoint ends of two rectangles. No separate terminal cap is added.
+        for index,point in enumerate(link['points'][1:-1],1):
+            if elevation<=point[1]+.001 or elevation>point[1]+2.2:continue
+            previous=link['points'][index-1];following=link['points'][index+1]
+            if link['kind']!='stairs' and abs(previous[1]-point[1])<.01 and abs(following[1]-point[1])<.01:continue
+            radius=link['width']/2+.15
+            polygon=[(point[0]+radius*math.cos(2*math.pi*i/24),point[2]+radius*math.sin(2*math.pi*i/24)) for i in range(24)]
+            openings.append(dict(link=link['id'],joint=index,polygon=polygon))
+    return openings
+
+
 def deck_holes(elevation,data):
+    """Legacy broad bounds for frozen producers; repaired scenes use deck_openings."""
     holes=[]
     for link in data['links']:
         for p,q in zip(link['points'],link['points'][1:]):

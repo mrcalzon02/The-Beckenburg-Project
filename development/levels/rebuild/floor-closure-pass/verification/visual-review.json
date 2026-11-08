@@ -1,0 +1,70 @@
+{
+  "status": "SCOPED_NATIVE_CONSTRUCTION_INSPECTION_NOT_FINISHED_MAP_ACCEPTANCE",
+  "sheets": [
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-01.png",
+      "sha256": "250bdb4a585d7c94eb4ee6c729ed03e79edbced744761a101bf3a712be5b2999",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-02.png",
+      "sha256": "ffa3e4c24a4cbe6779b5d8e4f2cc7f62eef986bd2690947d123958aff971e4a2",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-03.png",
+      "sha256": "dee35d11063310ae49bd1805dd7fc635d1b12dbbbe2d2729ca5403ba111f2d09",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-04.png",
+      "sha256": "02f5f34f674a2a253cceb473a5dc5a27e4b513fe7dee1005cca0b3e6ae111451",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-05.png",
+      "sha256": "ba2384b54d3a8bb1af3d58bf87c06c3f5b284d2211866f143d2330e77710660b",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-06.png",
+      "sha256": "be968fe5c6564f831b6bc114453183392e9fe8d4e00afec1585cf9a57bfdbc7d",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-07.png",
+      "sha256": "ae3da7adca882f08fea79d3a5d87a7fbcc67ee2bbb8db3be4c3c542a407a0b2f",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-08.png",
+      "sha256": "8034d2c567c2aaeb1c031151af0788a15185bfc2faf6291c1f289d9cd6e39c39",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-09.png",
+      "sha256": "84cd587774a93ec48e1a72f256ddf8f6d223cb8ce3f9b820654962e78fb4fd62",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/paired-closure-sheet-01.png",
+      "sha256": "b3d905d9e754ceb538dc899fd61427849e24580f8f007a27484c866a66eea49a",
+      "observed": true
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/paired-closure-sheet-02.png",
+      "sha256": "0e6eadc7cac1c07bd242147a8f06ddb5f268bacee4a08af767f8baf23ee6059a",
+      "observed": true
+    }
+  ],
+  "actual_native_frames": 62,
+  "construction_score_out_of_5": 3,
+  "finish_score_out_of_5": 1,
+  "findings": [
+    "All25whole native scenes and isolated new plate outcomes reviewed;19zero-part isolation images are deliberately empty.",
+    "Paired intact native150W studies show old floor/ceiling gaps becoming actual closed surfaces; close views are limited, not full-room art approval.",
+    "The lighthouse view retains the curved stair with a smoother supported deck edge and joined headroom. Guards, surfaces and all-room fixture/circuit tests remain.",
+    "No actual terrain world or source prop was replaced by this additive plate pass. Whole-site terrain, cliff/roof/cave identity and source-library art finish remain open.",
+    "Four mature maps retain separate audits. No runtime unlock, installed lighting, multiplayer or hardware performance acceptance."
+  ]
+}

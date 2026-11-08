@@ -1,8 +1,8 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 1746,
-  "unique_local_file_hashes": 1613,
+  "local_files": 1771,
+  "unique_local_file_hashes": 1619,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
@@ -12,7 +12,7 @@
     "additional_custom_model_sources": 22,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 28,
-    "native_map_exports": 126
+    "native_map_exports": 151
   },
   "archive_index": {
     "path": "development/assets/local-library-manifest.json",
@@ -26104,6 +26104,306 @@
       "bytes": 591624
     },
     {
+      "id": "closed-floors",
+      "label": "closed-floors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/floor-closure-pass/academy/closed-floors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "d4e6ac582bd4f685b73b7330134b5ff810d6bfae4a5d858d94d8c4085c874bff",
+      "bytes": 1726040
+    },
+    {
+      "id": "closed-floors",
+      "label": "closed-floors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/floor-closure-pass/asylum/closed-floors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "252b6e9dc4f9c1f795891e6f245604eb226747632ac4178d8494d22dd7e0faf7",
+      "bytes": 1948460
+    },
+    {
+      "id": "closed-floors",
+      "label": "closed-floors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/floor-closure-pass/church/closed-floors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "a468b86717a032c9f394f96cd2c36de36cd1572c63d18d77a30afd7a441f25cf",
+      "bytes": 991968
+    },
+    {
+      "id": "closed-floors",
+      "label": "closed-floors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/floor-closure-pass/college/closed-floors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "d40df9082b1410c7b632b8536d2d7ceaf9253ddf175d26277da12234f8b39555",
+      "bytes": 2327336
+    },
+    {
+      "id": "closed-floors",
+      "label": "closed-floors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/floor-closure-pass/farmhouse/closed-floors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "39f262d69a872623f9027e66fbd0c50f219f37c595d2e60ddf3ca3484256527e",
+      "bytes": 1172684
+    },
+    {
+      "id": "closed-floors",
+      "label": "closed-floors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/floor-closure-pass/mansion/closed-floors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "621ce73eeed2b3153b2a6a9e04e7f1446729610dcb220e3910556ab994e97d91",
+      "bytes": 1655024
+    },
+    {
+      "id": "closed-floors",
+      "label": "closed-floors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/floor-closure-pass/prison/closed-floors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "e1d27f13672b2a33181decf5dfd0f1bd1a7927fe77c0a6a075aa8f5b3cc1b825",
+      "bytes": 2340428
+    },
+    {
+      "id": "closed-floors",
+      "label": "closed-floors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/floor-closure-pass/school/closed-floors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "ca3d75d73422c3e509b554cf508376f7c2f13d07307ef1f013d7be67ef5a4a53",
+      "bytes": 1678056
+    },
+    {
+      "id": "closed-floors",
+      "label": "closed-floors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/floor-closure-pass/wld-03/closed-floors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "f701f6f728c5b70c8f9d436076d1d798051ab756ebfb02c5e23c46531de1a804",
+      "bytes": 2391248
+    },
+    {
+      "id": "closed-floors",
+      "label": "closed-floors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/floor-closure-pass/wld-04/closed-floors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "85f3a8d3b2516faccd8d72d566eec5afb5b2839d0621d78b0d7ff9defc660126",
+      "bytes": 2199780
+    },
+    {
+      "id": "closed-floors",
+      "label": "closed-floors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/floor-closure-pass/wld-05/closed-floors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "8caf77bf3cdd013b0936a426df076024175c8ebada5bc70b4f00255b9a7d6683",
+      "bytes": 1524180
+    },
+    {
+      "id": "closed-floors",
+      "label": "closed-floors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/floor-closure-pass/wld-06/closed-floors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "095782aade4fea3277dfec6d144bcd20071779bd64ddb8f9e0a128f9787b1e31",
+      "bytes": 1553432
+    },
+    {
+      "id": "closed-floors",
+      "label": "closed-floors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/floor-closure-pass/wld-07-mortuary/closed-floors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "90dc20ba98abca7fd91f7e3ddbae1e5363dcc9b5d15ac37f28cc1bdda3322101",
+      "bytes": 1360832
+    },
+    {
+      "id": "closed-floors",
+      "label": "closed-floors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/floor-closure-pass/wld-07/closed-floors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "aecd7aad299cc492b6b6979b8c81cefe844bb695c8703f45b4a08ba7722154d7",
+      "bytes": 863552
+    },
+    {
+      "id": "closed-floors",
+      "label": "closed-floors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/floor-closure-pass/wld-08/closed-floors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "1525ec3f37fbf6774619681d9d59f04def3dd3c1741beeb8576d1ff60a275fb5",
+      "bytes": 1387248
+    },
+    {
+      "id": "closed-floors",
+      "label": "closed-floors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/floor-closure-pass/wld-09/closed-floors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "740862241b4611cdf9ed6ec4d8bf8bec733a4e87a18778ab9519ddca0e4bddd9",
+      "bytes": 2962048
+    },
+    {
+      "id": "closed-floors",
+      "label": "closed-floors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/floor-closure-pass/wld-10/closed-floors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "e1c26be107b1abff82c5cebc3a111e866a3485fc4da20641ea205ef55e2e2f8b",
+      "bytes": 1605748
+    },
+    {
+      "id": "closed-floors",
+      "label": "closed-floors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/floor-closure-pass/wld-11/closed-floors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "dee9d5acce1a8c391cca55aa2cbc21d54dbcc82862ee43b863bff5fb124bbb82",
+      "bytes": 1743928
+    },
+    {
+      "id": "closed-floors",
+      "label": "closed-floors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/floor-closure-pass/wld-12/closed-floors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "37aebdfa43c4390c867edceb3a20773e87cd7d221d771d0ade2c20d61bc4b617",
+      "bytes": 1654060
+    },
+    {
+      "id": "closed-floors",
+      "label": "closed-floors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/floor-closure-pass/wld-13/closed-floors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "f0bb84a66c7be9d4a031d695c43cae7da3ef3542f06bb00483caa5d26cd358a1",
+      "bytes": 1484520
+    },
+    {
+      "id": "closed-floors",
+      "label": "closed-floors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/floor-closure-pass/wld-14/closed-floors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "de67d0bcc375d5d1f809ef0ea3a29b65f608f45f9871ce2829efbb2a5afa4f0b",
+      "bytes": 4363532
+    },
+    {
+      "id": "closed-floors",
+      "label": "closed-floors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/floor-closure-pass/wld-15/closed-floors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "362a6829df41f7877cc91563cca078c39f66f61a54743a614d503c2c07c07381",
+      "bytes": 637508
+    },
+    {
+      "id": "closed-floors",
+      "label": "closed-floors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/floor-closure-pass/wld-16/closed-floors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "921f6a57d8c681bd14f9f59deb8ebe9b7891a17e4f0f1d96302b674d1aaab365",
+      "bytes": 591624
+    },
+    {
+      "id": "closed-floors",
+      "label": "closed-floors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/floor-closure-pass/wld-17/closed-floors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "16e14a7dc6105b52c7a5c8c3ea7032b0ed32486211922302ccae4568ca971b75",
+      "bytes": 1744652
+    },
+    {
+      "id": "closed-floors",
+      "label": "closed-floors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/floor-closure-pass/wld-18/closed-floors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "31170fe77b5f4eb67752d66af9de3a136cc7553b806cac2d8f2fedd00b9b9ed3",
+      "bytes": 1559716
+    },
+    {
       "id": "furnished",
       "label": "furnished",
       "maps": [],
@@ -28494,6 +28794,139 @@
       "paths": [
         "assets/runtime/models/painting_1.glb",
         "development/assets/castle-museum/references/reused-models/painting_1.glb"
+      ]
+    },
+    {
+      "sha256": "dee9d5acce1a8c391cca55aa2cbc21d54dbcc82862ee43b863bff5fb124bbb82",
+      "paths": [
+        "development/levels/rebuild/deck-fit-pass/wld-11/deck-terrain.glb",
+        "development/levels/rebuild/floor-closure-pass/wld-11/closed-floors.glb"
+      ]
+    },
+    {
+      "sha256": "362a6829df41f7877cc91563cca078c39f66f61a54743a614d503c2c07c07381",
+      "paths": [
+        "development/levels/rebuild/deck-fit-pass/wld-15/deck-terrain.glb",
+        "development/levels/rebuild/floor-closure-pass/wld-15/closed-floors.glb"
+      ]
+    },
+    {
+      "sha256": "921f6a57d8c681bd14f9f59deb8ebe9b7891a17e4f0f1d96302b674d1aaab365",
+      "paths": [
+        "development/levels/rebuild/deck-fit-pass/wld-16/deck-terrain.glb",
+        "development/levels/rebuild/floor-closure-pass/wld-16/closed-floors.glb"
+      ]
+    },
+    {
+      "sha256": "d4e6ac582bd4f685b73b7330134b5ff810d6bfae4a5d858d94d8c4085c874bff",
+      "paths": [
+        "development/levels/rebuild/floor-closure-pass/academy/closed-floors.glb",
+        "development/levels/rebuild/terrain-fit-pass/academy/supported-terrain.glb"
+      ]
+    },
+    {
+      "sha256": "252b6e9dc4f9c1f795891e6f245604eb226747632ac4178d8494d22dd7e0faf7",
+      "paths": [
+        "development/levels/rebuild/floor-closure-pass/asylum/closed-floors.glb",
+        "development/levels/rebuild/terrain-fit-pass/asylum/supported-terrain.glb"
+      ]
+    },
+    {
+      "sha256": "a468b86717a032c9f394f96cd2c36de36cd1572c63d18d77a30afd7a441f25cf",
+      "paths": [
+        "development/levels/rebuild/floor-closure-pass/church/closed-floors.glb",
+        "development/levels/rebuild/terrain-fit-pass/church/supported-terrain.glb"
+      ]
+    },
+    {
+      "sha256": "d40df9082b1410c7b632b8536d2d7ceaf9253ddf175d26277da12234f8b39555",
+      "paths": [
+        "development/levels/rebuild/floor-closure-pass/college/closed-floors.glb",
+        "development/levels/rebuild/terrain-fit-pass/college/supported-terrain.glb"
+      ]
+    },
+    {
+      "sha256": "39f262d69a872623f9027e66fbd0c50f219f37c595d2e60ddf3ca3484256527e",
+      "paths": [
+        "development/levels/rebuild/floor-closure-pass/farmhouse/closed-floors.glb",
+        "development/levels/rebuild/terrain-fit-pass/farmhouse/supported-terrain.glb"
+      ]
+    },
+    {
+      "sha256": "621ce73eeed2b3153b2a6a9e04e7f1446729610dcb220e3910556ab994e97d91",
+      "paths": [
+        "development/levels/rebuild/floor-closure-pass/mansion/closed-floors.glb",
+        "development/levels/rebuild/terrain-fit-pass/mansion/supported-terrain.glb"
+      ]
+    },
+    {
+      "sha256": "e1d27f13672b2a33181decf5dfd0f1bd1a7927fe77c0a6a075aa8f5b3cc1b825",
+      "paths": [
+        "development/levels/rebuild/floor-closure-pass/prison/closed-floors.glb",
+        "development/levels/rebuild/terrain-fit-pass/prison/supported-terrain.glb"
+      ]
+    },
+    {
+      "sha256": "ca3d75d73422c3e509b554cf508376f7c2f13d07307ef1f013d7be67ef5a4a53",
+      "paths": [
+        "development/levels/rebuild/floor-closure-pass/school/closed-floors.glb",
+        "development/levels/rebuild/terrain-fit-pass/school/supported-terrain.glb"
+      ]
+    },
+    {
+      "sha256": "f701f6f728c5b70c8f9d436076d1d798051ab756ebfb02c5e23c46531de1a804",
+      "paths": [
+        "development/levels/rebuild/floor-closure-pass/wld-03/closed-floors.glb",
+        "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-03/occupied-terrain.glb"
+      ]
+    },
+    {
+      "sha256": "90dc20ba98abca7fd91f7e3ddbae1e5363dcc9b5d15ac37f28cc1bdda3322101",
+      "paths": [
+        "development/levels/rebuild/floor-closure-pass/wld-07-mortuary/closed-floors.glb",
+        "development/levels/rebuild/terrain-fit-pass/wld-07-mortuary/supported-terrain.glb"
+      ]
+    },
+    {
+      "sha256": "aecd7aad299cc492b6b6979b8c81cefe844bb695c8703f45b4a08ba7722154d7",
+      "paths": [
+        "development/levels/rebuild/floor-closure-pass/wld-07/closed-floors.glb",
+        "development/levels/rebuild/terrain-fit-pass/wld-07/supported-terrain.glb"
+      ]
+    },
+    {
+      "sha256": "e1c26be107b1abff82c5cebc3a111e866a3485fc4da20641ea205ef55e2e2f8b",
+      "paths": [
+        "development/levels/rebuild/floor-closure-pass/wld-10/closed-floors.glb",
+        "development/levels/rebuild/terrain-fit-pass/wld-10/supported-terrain.glb"
+      ]
+    },
+    {
+      "sha256": "37aebdfa43c4390c867edceb3a20773e87cd7d221d771d0ade2c20d61bc4b617",
+      "paths": [
+        "development/levels/rebuild/floor-closure-pass/wld-12/closed-floors.glb",
+        "development/levels/rebuild/terrain-fit-pass/wld-12/supported-terrain.glb"
+      ]
+    },
+    {
+      "sha256": "f0bb84a66c7be9d4a031d695c43cae7da3ef3542f06bb00483caa5d26cd358a1",
+      "paths": [
+        "development/levels/rebuild/floor-closure-pass/wld-13/closed-floors.glb",
+        "development/levels/rebuild/terrain-fit-pass/wld-13/supported-terrain.glb"
+      ]
+    },
+    {
+      "sha256": "16e14a7dc6105b52c7a5c8c3ea7032b0ed32486211922302ccae4568ca971b75",
+      "paths": [
+        "development/levels/rebuild/floor-closure-pass/wld-17/closed-floors.glb",
+        "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-17/occupied-terrain.glb"
+      ]
+    },
+    {
+      "sha256": "31170fe77b5f4eb67752d66af9de3a136cc7553b806cac2d8f2fedd00b9b9ed3",
+      "paths": [
+        "development/levels/rebuild/floor-closure-pass/wld-18/closed-floors.glb",
+        "development/levels/rebuild/terrain-fit-pass/wld-18/supported-terrain.glb"
       ]
     },
     {

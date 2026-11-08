@@ -23,3 +23,6 @@ development/levels/rebuild/deck-fit-pass/** -text
 
 # Occupancy excavation sources and receipts bind exact bytes.
 development/levels/rebuild/terrain-occupancy-pass/** -text
+
+# Floor/cap construction contracts bind exact source/evidence bytes.
+development/levels/rebuild/floor-closure-pass/** -text

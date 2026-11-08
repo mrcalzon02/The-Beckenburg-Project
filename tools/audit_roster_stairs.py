@@ -9,8 +9,8 @@ import argparse,csv,hashlib,json,math,os,subprocess
 ROOT=Path(__file__).resolve().parents[1]
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True);parser.add_argument('--require-authored-chains',action='store_true');parser.add_argument('--bearing-pass',action='store_true');parser.add_argument('--deck-pass',action='store_true');parser.add_argument('--occupancy-pass',action='store_true');args=parser.parse_args();assert sum([args.bearing_pass,args.deck_pass,args.occupancy_pass])<=1
-    comparing=args.bearing_pass or args.deck_pass or args.occupancy_pass
+    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True);parser.add_argument('--require-authored-chains',action='store_true');parser.add_argument('--bearing-pass',action='store_true');parser.add_argument('--deck-pass',action='store_true');parser.add_argument('--occupancy-pass',action='store_true');parser.add_argument('--closure-pass',action='store_true');args=parser.parse_args();assert sum([args.bearing_pass,args.deck_pass,args.occupancy_pass,args.closure_pass])<=1
+    comparing=args.bearing_pass or args.deck_pass or args.occupancy_pass or args.closure_pass
     build=ROOT/'build/roster-stair-probe';build.mkdir(parents=True,exist_ok=True)
     sites=json.loads((ROOT/'development/levels/rebuild/furnishings/room-programs.json').read_text(encoding='utf-8'))['sites']
     chain_path=ROOT/'development/levels/rebuild/movement-chains.json';declared=json.loads(chain_path.read_text())['sites']
@@ -38,6 +38,8 @@ def main():
                 bearing=json.loads((out/'construction.json').read_text());variants=[('before_bearing',before,oldmesh,oldphysics),('after_bearing',out,'occupied-terrain.glb','occupied-terrain.hcs2')]
             else:
                 out=before;bearing=json.loads((before/'construction.json').read_text());bearing=dict(bearing,source_glb_sha256=bearing['glb_sha256'],source_physics_sha256=bearing['physics_sha256']);variants=[('before_bearing',before,oldmesh,oldphysics),('after_bearing',before,oldmesh,oldphysics)]
+        if args.closure_pass:
+            options=[(ROOT/f'development/levels/rebuild/terrain-occupancy-pass/assemblies/{site.lower()}','occupied-terrain'),(ROOT/f'development/levels/rebuild/deck-fit-pass/{site.lower()}','deck-terrain'),(ROOT/f'development/levels/rebuild/terrain-fit-pass/{site.lower()}','supported-terrain')];before,stem=next((p,n) for p,n in options if (p/(n+'.glb')).exists());out=ROOT/f'development/levels/rebuild/floor-closure-pass/{site.lower()}';bearing=json.loads((out/'construction.json').read_text());variants=[('before_bearing',before,stem+'.glb',stem+'.hcs2'),('after_bearing',out,'closed-floors.glb','closed-floors.hcs2')]
         for variant,folder,mesh,physics in variants:
             if comparing:
                 contract_path=out/'construction.json';original=json.loads((ROOT/f'development/levels/rebuild/furnishings/{site.lower()}/physics-contract.json').read_text());contract=dict(stair_components=original['stair_components'],source_glb_sha256=bearing['source_glb_sha256'] if variant=='before_bearing' else bearing['glb_sha256'],physics_sha256=bearing['source_physics_sha256'] if variant=='before_bearing' else bearing['physics_sha256'])

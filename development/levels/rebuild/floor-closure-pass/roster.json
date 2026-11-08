@@ -1,0 +1,502 @@
+{
+  "scope": 29,
+  "status": "BREADTH_BY_STAGE_STRUCTURAL_FLOOR_CAP_RESTORATION",
+  "source_commit": null,
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "status": "RETAINED_EXACT_SOURCE_NO_FALSE_SHAFT_REPAIR_NEEDED_IN_THIS_RULE",
+      "evidence": "development/levels/rebuild/floor-closure-pass/academy/construction.json",
+      "new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "flat_route_comparison": {
+        "samples": 7908,
+        "baseline_valid": 7041,
+        "new_block": 0,
+        "baseline_sweep": 6690,
+        "new_sweep_block": 0,
+        "after_valid": 7041,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      },
+      "full_map_accepted": false
+    },
+    {
+      "id": "ASYLUM",
+      "status": "RETAINED_EXACT_SOURCE_NO_FALSE_SHAFT_REPAIR_NEEDED_IN_THIS_RULE",
+      "evidence": "development/levels/rebuild/floor-closure-pass/asylum/construction.json",
+      "new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "flat_route_comparison": {
+        "samples": 7956,
+        "baseline_valid": 7172,
+        "new_block": 0,
+        "baseline_sweep": 6731,
+        "new_sweep_block": 0,
+        "after_valid": 7172,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      },
+      "full_map_accepted": false
+    },
+    {
+      "id": "CASTLE",
+      "status": "MATURE_SOURCE_RETAINED_INDIVIDUAL_RETROFIT_AUDIT_OPEN",
+      "full_map_accepted": false
+    },
+    {
+      "id": "CHURCH",
+      "status": "RETAINED_EXACT_SOURCE_NO_FALSE_SHAFT_REPAIR_NEEDED_IN_THIS_RULE",
+      "evidence": "development/levels/rebuild/floor-closure-pass/church/construction.json",
+      "new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "flat_route_comparison": {
+        "samples": 3420,
+        "baseline_valid": 3176,
+        "new_block": 0,
+        "baseline_sweep": 2922,
+        "new_sweep_block": 0,
+        "after_valid": 3176,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      },
+      "full_map_accepted": false
+    },
+    {
+      "id": "COLLEGE",
+      "status": "RETAINED_EXACT_SOURCE_NO_FALSE_SHAFT_REPAIR_NEEDED_IN_THIS_RULE",
+      "evidence": "development/levels/rebuild/floor-closure-pass/college/construction.json",
+      "new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "flat_route_comparison": {
+        "samples": 8289,
+        "baseline_valid": 7607,
+        "new_block": 0,
+        "baseline_sweep": 7211,
+        "new_sweep_block": 0,
+        "after_valid": 7607,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      },
+      "full_map_accepted": false
+    },
+    {
+      "id": "FARMHOUSE",
+      "status": "RETAINED_EXACT_SOURCE_NO_FALSE_SHAFT_REPAIR_NEEDED_IN_THIS_RULE",
+      "evidence": "development/levels/rebuild/floor-closure-pass/farmhouse/construction.json",
+      "new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "flat_route_comparison": {
+        "samples": 4101,
+        "baseline_valid": 3707,
+        "new_block": 0,
+        "baseline_sweep": 3366,
+        "new_sweep_block": 0,
+        "after_valid": 3707,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      },
+      "full_map_accepted": false
+    },
+    {
+      "id": "HOUSE",
+      "status": "MATURE_SOURCE_RETAINED_INDIVIDUAL_RETROFIT_AUDIT_OPEN",
+      "full_map_accepted": false
+    },
+    {
+      "id": "MANSION",
+      "status": "RETAINED_EXACT_SOURCE_NO_FALSE_SHAFT_REPAIR_NEEDED_IN_THIS_RULE",
+      "evidence": "development/levels/rebuild/floor-closure-pass/mansion/construction.json",
+      "new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "flat_route_comparison": {
+        "samples": 7311,
+        "baseline_valid": 6924,
+        "new_block": 0,
+        "baseline_sweep": 6492,
+        "new_sweep_block": 0,
+        "after_valid": 6924,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      },
+      "full_map_accepted": false
+    },
+    {
+      "id": "PRISON",
+      "status": "RETAINED_EXACT_SOURCE_NO_FALSE_SHAFT_REPAIR_NEEDED_IN_THIS_RULE",
+      "evidence": "development/levels/rebuild/floor-closure-pass/prison/construction.json",
+      "new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "flat_route_comparison": {
+        "samples": 6636,
+        "baseline_valid": 6034,
+        "new_block": 0,
+        "baseline_sweep": 5725,
+        "new_sweep_block": 0,
+        "after_valid": 6034,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      },
+      "full_map_accepted": false
+    },
+    {
+      "id": "SCHOOL",
+      "status": "RETAINED_EXACT_SOURCE_NO_FALSE_SHAFT_REPAIR_NEEDED_IN_THIS_RULE",
+      "evidence": "development/levels/rebuild/floor-closure-pass/school/construction.json",
+      "new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "flat_route_comparison": {
+        "samples": 5811,
+        "baseline_valid": 5193,
+        "new_block": 0,
+        "baseline_sweep": 4759,
+        "new_sweep_block": 0,
+        "after_valid": 5193,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      },
+      "full_map_accepted": false
+    },
+    {
+      "id": "WLD-01",
+      "status": "MATURE_SOURCE_RETAINED_INDIVIDUAL_RETROFIT_AUDIT_OPEN",
+      "full_map_accepted": false
+    },
+    {
+      "id": "WLD-02",
+      "status": "MATURE_SOURCE_RETAINED_INDIVIDUAL_RETROFIT_AUDIT_OPEN",
+      "full_map_accepted": false
+    },
+    {
+      "id": "WLD-03",
+      "status": "RETAINED_EXACT_SOURCE_NO_FALSE_SHAFT_REPAIR_NEEDED_IN_THIS_RULE",
+      "evidence": "development/levels/rebuild/floor-closure-pass/wld-03/construction.json",
+      "new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "flat_route_comparison": {
+        "samples": 3549,
+        "baseline_valid": 3171,
+        "new_block": 0,
+        "baseline_sweep": 3001,
+        "new_sweep_block": 0,
+        "after_valid": 3171,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      },
+      "full_map_accepted": false
+    },
+    {
+      "id": "WLD-04",
+      "status": "ACTUAL_CLOSED_FLOOR_CAP_REPAIRS_NATIVE_VERIFIED_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/floor-closure-pass/wld-04/construction.json",
+      "new_parts": 6,
+      "new_triangles": 80,
+      "restored_area_m2": 80.19089447974693,
+      "flat_route_comparison": {
+        "samples": 1413,
+        "baseline_valid": 1002,
+        "new_block": 0,
+        "baseline_sweep": 897,
+        "new_sweep_block": 0,
+        "after_valid": 1086,
+        "recovered_pose": 84,
+        "affected_segments": {}
+      },
+      "full_map_accepted": false
+    },
+    {
+      "id": "WLD-05",
+      "status": "ACTUAL_CLOSED_FLOOR_CAP_REPAIRS_NATIVE_VERIFIED_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/floor-closure-pass/wld-05/construction.json",
+      "new_parts": 3,
+      "new_triangles": 28,
+      "restored_area_m2": 22.239290475845337,
+      "flat_route_comparison": {
+        "samples": 3510,
+        "baseline_valid": 2832,
+        "new_block": 0,
+        "baseline_sweep": 2705,
+        "new_sweep_block": 0,
+        "after_valid": 2832,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      },
+      "full_map_accepted": false
+    },
+    {
+      "id": "WLD-06",
+      "status": "ACTUAL_CLOSED_FLOOR_CAP_REPAIRS_NATIVE_VERIFIED_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/floor-closure-pass/wld-06/construction.json",
+      "new_parts": 3,
+      "new_triangles": 44,
+      "restored_area_m2": 40.18083453178406,
+      "flat_route_comparison": {
+        "samples": 3744,
+        "baseline_valid": 3539,
+        "new_block": 0,
+        "baseline_sweep": 3392,
+        "new_sweep_block": 0,
+        "after_valid": 3539,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      },
+      "full_map_accepted": false
+    },
+    {
+      "id": "WLD-07",
+      "status": "RETAINED_EXACT_SOURCE_NO_FALSE_SHAFT_REPAIR_NEEDED_IN_THIS_RULE",
+      "evidence": "development/levels/rebuild/floor-closure-pass/wld-07/construction.json",
+      "new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "flat_route_comparison": {
+        "samples": 3579,
+        "baseline_valid": 3557,
+        "new_block": 0,
+        "baseline_sweep": 3460,
+        "new_sweep_block": 0,
+        "after_valid": 3557,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      },
+      "full_map_accepted": false
+    },
+    {
+      "id": "WLD-08",
+      "status": "ACTUAL_CLOSED_FLOOR_CAP_REPAIRS_NATIVE_VERIFIED_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/floor-closure-pass/wld-08/construction.json",
+      "new_parts": 10,
+      "new_triangles": 104,
+      "restored_area_m2": 167.4024958461523,
+      "flat_route_comparison": {
+        "samples": 4062,
+        "baseline_valid": 3111,
+        "new_block": 0,
+        "baseline_sweep": 2967,
+        "new_sweep_block": 0,
+        "after_valid": 3275,
+        "recovered_pose": 164,
+        "affected_segments": {}
+      },
+      "full_map_accepted": false
+    },
+    {
+      "id": "WLD-09",
+      "status": "ACTUAL_CLOSED_FLOOR_CAP_REPAIRS_NATIVE_VERIFIED_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/floor-closure-pass/wld-09/construction.json",
+      "new_parts": 5,
+      "new_triangles": 64,
+      "restored_area_m2": 256.89761650562286,
+      "flat_route_comparison": {
+        "samples": 3123,
+        "baseline_valid": 2320,
+        "new_block": 0,
+        "baseline_sweep": 2219,
+        "new_sweep_block": 0,
+        "after_valid": 2320,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      },
+      "full_map_accepted": false
+    },
+    {
+      "id": "WLD-10",
+      "status": "RETAINED_EXACT_SOURCE_NO_FALSE_SHAFT_REPAIR_NEEDED_IN_THIS_RULE",
+      "evidence": "development/levels/rebuild/floor-closure-pass/wld-10/construction.json",
+      "new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "flat_route_comparison": {
+        "samples": 4152,
+        "baseline_valid": 3695,
+        "new_block": 0,
+        "baseline_sweep": 3547,
+        "new_sweep_block": 0,
+        "after_valid": 3695,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      },
+      "full_map_accepted": false
+    },
+    {
+      "id": "WLD-11",
+      "status": "RETAINED_EXACT_SOURCE_NO_FALSE_SHAFT_REPAIR_NEEDED_IN_THIS_RULE",
+      "evidence": "development/levels/rebuild/floor-closure-pass/wld-11/construction.json",
+      "new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "flat_route_comparison": {
+        "samples": 3663,
+        "baseline_valid": 3448,
+        "new_block": 0,
+        "baseline_sweep": 3297,
+        "new_sweep_block": 0,
+        "after_valid": 3448,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      },
+      "full_map_accepted": false
+    },
+    {
+      "id": "WLD-12",
+      "status": "RETAINED_EXACT_SOURCE_NO_FALSE_SHAFT_REPAIR_NEEDED_IN_THIS_RULE",
+      "evidence": "development/levels/rebuild/floor-closure-pass/wld-12/construction.json",
+      "new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "flat_route_comparison": {
+        "samples": 4173,
+        "baseline_valid": 3377,
+        "new_block": 0,
+        "baseline_sweep": 3254,
+        "new_sweep_block": 0,
+        "after_valid": 3377,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      },
+      "full_map_accepted": false
+    },
+    {
+      "id": "WLD-13",
+      "status": "RETAINED_EXACT_SOURCE_NO_FALSE_SHAFT_REPAIR_NEEDED_IN_THIS_RULE",
+      "evidence": "development/levels/rebuild/floor-closure-pass/wld-13/construction.json",
+      "new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "flat_route_comparison": {
+        "samples": 4239,
+        "baseline_valid": 3920,
+        "new_block": 0,
+        "baseline_sweep": 3795,
+        "new_sweep_block": 0,
+        "after_valid": 3920,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      },
+      "full_map_accepted": false
+    },
+    {
+      "id": "WLD-14",
+      "status": "ACTUAL_CLOSED_FLOOR_CAP_REPAIRS_NATIVE_VERIFIED_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/floor-closure-pass/wld-14/construction.json",
+      "new_parts": 269,
+      "new_triangles": 9496,
+      "restored_area_m2": 14.052660787509922,
+      "flat_route_comparison": {
+        "samples": 2583,
+        "baseline_valid": 2441,
+        "new_block": 0,
+        "baseline_sweep": 2352,
+        "new_sweep_block": 0,
+        "after_valid": 2441,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      },
+      "full_map_accepted": false
+    },
+    {
+      "id": "WLD-15",
+      "status": "RETAINED_EXACT_SOURCE_NO_FALSE_SHAFT_REPAIR_NEEDED_IN_THIS_RULE",
+      "evidence": "development/levels/rebuild/floor-closure-pass/wld-15/construction.json",
+      "new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "flat_route_comparison": {
+        "samples": 2940,
+        "baseline_valid": 2835,
+        "new_block": 0,
+        "baseline_sweep": 2728,
+        "new_sweep_block": 0,
+        "after_valid": 2835,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      },
+      "full_map_accepted": false
+    },
+    {
+      "id": "WLD-16",
+      "status": "RETAINED_EXACT_SOURCE_NO_FALSE_SHAFT_REPAIR_NEEDED_IN_THIS_RULE",
+      "evidence": "development/levels/rebuild/floor-closure-pass/wld-16/construction.json",
+      "new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "flat_route_comparison": {
+        "samples": 3243,
+        "baseline_valid": 2980,
+        "new_block": 0,
+        "baseline_sweep": 2881,
+        "new_sweep_block": 0,
+        "after_valid": 2980,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      },
+      "full_map_accepted": false
+    },
+    {
+      "id": "WLD-17",
+      "status": "RETAINED_EXACT_SOURCE_NO_FALSE_SHAFT_REPAIR_NEEDED_IN_THIS_RULE",
+      "evidence": "development/levels/rebuild/floor-closure-pass/wld-17/construction.json",
+      "new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "flat_route_comparison": {
+        "samples": 2913,
+        "baseline_valid": 2717,
+        "new_block": 0,
+        "baseline_sweep": 2629,
+        "new_sweep_block": 0,
+        "after_valid": 2717,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      },
+      "full_map_accepted": false
+    },
+    {
+      "id": "WLD-18",
+      "status": "RETAINED_EXACT_SOURCE_NO_FALSE_SHAFT_REPAIR_NEEDED_IN_THIS_RULE",
+      "evidence": "development/levels/rebuild/floor-closure-pass/wld-18/construction.json",
+      "new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "flat_route_comparison": {
+        "samples": 3033,
+        "baseline_valid": 2878,
+        "new_block": 0,
+        "baseline_sweep": 2759,
+        "new_sweep_block": 0,
+        "after_valid": 2878,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      },
+      "full_map_accepted": false
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "status": "RETAINED_EXACT_SOURCE_NO_FALSE_SHAFT_REPAIR_NEEDED_IN_THIS_RULE",
+      "evidence": "development/levels/rebuild/floor-closure-pass/wld-07-mortuary/construction.json",
+      "new_parts": 0,
+      "new_triangles": 0,
+      "restored_area_m2": 0,
+      "flat_route_comparison": {
+        "samples": 5058,
+        "baseline_valid": 5012,
+        "new_block": 0,
+        "baseline_sweep": 4879,
+        "new_sweep_block": 0,
+        "after_valid": 5012,
+        "recovered_pose": 0,
+        "affected_segments": {}
+      },
+      "full_map_accepted": false
+    }
+  ]
+}

@@ -1,0 +1,321 @@
+{
+  "id": "WLD-16",
+  "status": "FLOOR_CAP_RESTORATION_CANDIDATE_RUNTIME_GATES_OPEN",
+  "source_glb": "development/levels/rebuild/deck-fit-pass/wld-16/deck-terrain.glb",
+  "source_glb_sha256": "921f6a57d8c681bd14f9f59deb8ebe9b7891a17e4f0f1d96302b674d1aaab365",
+  "source_physics": "development/levels/rebuild/deck-fit-pass/wld-16/deck-terrain.hcs2",
+  "source_physics_sha256": "e5d8de5aab164b62c1f582363367b94e4586e8cfea4fd74159538e8e1a2c693a",
+  "layout": "development/levels/rebuild/wld-16/rough-layout.json",
+  "layout_sha256": "06ed2a033d19123f48dd5f7b65a9c5d40bf699c47ed0c7f3ee91668c9f2e71cb",
+  "new_parts": 0,
+  "new_triangles": 0,
+  "restored_area_m2": 0,
+  "plates": [],
+  "decisions": [
+    {
+      "zone": "office",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Floor office",
+        "route-02 support 0",
+        "route-04 support 0",
+        "route-05 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "office",
+      "role": "ceiling-cap",
+      "elevation": 3,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap office"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "manager",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Floor manager",
+        "route-05 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "manager",
+      "role": "ceiling-cap",
+      "elevation": 3,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap manager"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "laundry",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Floor laundry",
+        "route-10 support 0",
+        "route-11 support 0",
+        "route-12 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "laundry",
+      "role": "ceiling-cap",
+      "elevation": 3,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap laundry"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "plant",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Floor plant",
+        "route-11 support 0",
+        "route-12 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "plant",
+      "role": "ceiling-cap",
+      "elevation": 3,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap plant"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "room1",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Floor room1",
+        "route-15 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "room1",
+      "role": "ceiling-cap",
+      "elevation": 3,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap room1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "room5",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Floor room5",
+        "route-19 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "room5",
+      "role": "ceiling-cap",
+      "elevation": 3,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap room5"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "room2",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Floor room2",
+        "route-16 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "room2",
+      "role": "ceiling-cap",
+      "elevation": 3,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap room2"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "room6",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Floor room6",
+        "route-20 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "room6",
+      "role": "ceiling-cap",
+      "elevation": 3,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap room6"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "room3",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Floor room3",
+        "route-17 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "room3",
+      "role": "ceiling-cap",
+      "elevation": 3,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap room3"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "room7",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Floor room7",
+        "route-10 support 0",
+        "route-21 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "room7",
+      "role": "ceiling-cap",
+      "elevation": 3,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap room7"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "room4",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Floor room4",
+        "route-18 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "room4",
+      "role": "ceiling-cap",
+      "elevation": 3,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap room4"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "room8",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Floor room8",
+        "route-10 support 0",
+        "route-12 support 0",
+        "route-22 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "room8",
+      "role": "ceiling-cap",
+      "elevation": 3,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap room8"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    }
+  ],
+  "discarded_boundary_noise": [],
+  "retained_glb_resources": {
+    "original_static_resources_preserved": true,
+    "no_new_geometry": true
+  },
+  "glb_sha256": "921f6a57d8c681bd14f9f59deb8ebe9b7891a17e4f0f1d96302b674d1aaab365",
+  "physics_sha256": "e5d8de5aab164b62c1f582363367b94e4586e8cfea4fd74159538e8e1a2c693a",
+  "generator_sha256": "6effb668806dddf424cf37763d4115b2553afe829684efd5d5748b5dba0c5d1b",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-16-whole-site.png",
+      "sha256": "5cc469e9ee50632cd2a99cec114c3455570a8c8aa863580b4478c2963707295c",
+      "type": "native full export overview"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-16-repaired-plates.png",
+      "sha256": "6b6c4024f15134ef80f7ff3cbf9d101df6874144cc55b6b49f88854e0c3232c1",
+      "type": "native isolated newly restored structural plates; context hidden for inspection"
+    }
+  ],
+  "remaining": "Independent exact export/solid/shaft/optical checks, continuous flat/stair regression, standing captures and whole-site structure/light/runtime/network/performance acceptance."
+}

@@ -189,7 +189,11 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/terrain-occupancy-pass/roster.json"
+            "development/levels/rebuild/terrain-occupancy-pass/roster.json",
+            "development/levels/rebuild/floor-closure-pass/academy/construction.json",
+            "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+            "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
           ],
           "defects": [
             "DEV-354",
@@ -205,9 +209,12 @@
             "DEV-395",
             "DEV-396",
             "DEV-398",
-            "DEV-410"
+            "DEV-410",
+            "DEV-414",
+            "DEV-415",
+            "DEV-416"
           ],
-          "next_action": "Across the roster, replace overly broad diagonal stair-shaft floor/ceiling reservations with exact authored apertures and restore unrelated regions; verify continuous ascent/descent and light separation. Continue physical terrain/building/retaining/cave/boundary fit and shared-coordinate runtime integration. No stage/map acceptance; preserve40space policy, canonical van, true punches and source models."
+          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -382,7 +389,11 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/terrain-occupancy-pass/roster.json"
+            "development/levels/rebuild/terrain-occupancy-pass/roster.json",
+            "development/levels/rebuild/floor-closure-pass/asylum/construction.json",
+            "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+            "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
           ],
           "defects": [
             "DEV-354",
@@ -398,9 +409,12 @@
             "DEV-395",
             "DEV-396",
             "DEV-398",
-            "DEV-410"
+            "DEV-410",
+            "DEV-414",
+            "DEV-415",
+            "DEV-416"
           ],
-          "next_action": "Across the roster, replace overly broad diagonal stair-shaft floor/ceiling reservations with exact authored apertures and restore unrelated regions; verify continuous ascent/descent and light separation. Continue physical terrain/building/retaining/cave/boundary fit and shared-coordinate runtime integration. No stage/map acceptance; preserve40space policy, canonical van, true punches and source models."
+          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -903,7 +917,11 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/terrain-occupancy-pass/roster.json"
+            "development/levels/rebuild/terrain-occupancy-pass/roster.json",
+            "development/levels/rebuild/floor-closure-pass/church/construction.json",
+            "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+            "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
           ],
           "defects": [
             "DEV-354",
@@ -919,9 +937,12 @@
             "DEV-395",
             "DEV-396",
             "DEV-398",
-            "DEV-410"
+            "DEV-410",
+            "DEV-414",
+            "DEV-415",
+            "DEV-416"
           ],
-          "next_action": "Across the roster, replace overly broad diagonal stair-shaft floor/ceiling reservations with exact authored apertures and restore unrelated regions; verify continuous ascent/descent and light separation. Continue physical terrain/building/retaining/cave/boundary fit and shared-coordinate runtime integration. No stage/map acceptance; preserve40space policy, canonical van, true punches and source models."
+          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -1099,7 +1120,11 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/terrain-occupancy-pass/roster.json"
+            "development/levels/rebuild/terrain-occupancy-pass/roster.json",
+            "development/levels/rebuild/floor-closure-pass/college/construction.json",
+            "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+            "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
           ],
           "defects": [
             "DEV-354",
@@ -1117,9 +1142,12 @@
             "DEV-395",
             "DEV-396",
             "DEV-398",
-            "DEV-410"
+            "DEV-410",
+            "DEV-414",
+            "DEV-415",
+            "DEV-416"
           ],
-          "next_action": "Across the roster, replace overly broad diagonal stair-shaft floor/ceiling reservations with exact authored apertures and restore unrelated regions; verify continuous ascent/descent and light separation. Continue physical terrain/building/retaining/cave/boundary fit and shared-coordinate runtime integration. No stage/map acceptance; preserve40space policy, canonical van, true punches and source models."
+          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -1294,7 +1322,11 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/terrain-occupancy-pass/roster.json"
+            "development/levels/rebuild/terrain-occupancy-pass/roster.json",
+            "development/levels/rebuild/floor-closure-pass/farmhouse/construction.json",
+            "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+            "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
           ],
           "defects": [
             "DEV-354",
@@ -1310,9 +1342,12 @@
             "DEV-395",
             "DEV-396",
             "DEV-398",
-            "DEV-410"
+            "DEV-410",
+            "DEV-414",
+            "DEV-415",
+            "DEV-416"
           ],
-          "next_action": "Across the roster, replace overly broad diagonal stair-shaft floor/ceiling reservations with exact authored apertures and restore unrelated regions; verify continuous ascent/descent and light separation. Continue physical terrain/building/retaining/cave/boundary fit and shared-coordinate runtime integration. No stage/map acceptance; preserve40space policy, canonical van, true punches and source models."
+          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -1855,7 +1890,11 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/terrain-occupancy-pass/roster.json"
+            "development/levels/rebuild/terrain-occupancy-pass/roster.json",
+            "development/levels/rebuild/floor-closure-pass/mansion/construction.json",
+            "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+            "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
           ],
           "defects": [
             "DEV-354",
@@ -1873,9 +1912,12 @@
             "DEV-395",
             "DEV-396",
             "DEV-398",
-            "DEV-410"
+            "DEV-410",
+            "DEV-414",
+            "DEV-415",
+            "DEV-416"
           ],
-          "next_action": "Across the roster, replace overly broad diagonal stair-shaft floor/ceiling reservations with exact authored apertures and restore unrelated regions; verify continuous ascent/descent and light separation. Continue physical terrain/building/retaining/cave/boundary fit and shared-coordinate runtime integration. No stage/map acceptance; preserve40space policy, canonical van, true punches and source models."
+          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -2051,7 +2093,11 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/terrain-occupancy-pass/roster.json"
+            "development/levels/rebuild/terrain-occupancy-pass/roster.json",
+            "development/levels/rebuild/floor-closure-pass/prison/construction.json",
+            "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+            "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
           ],
           "defects": [
             "DEV-354",
@@ -2068,9 +2114,12 @@
             "DEV-395",
             "DEV-396",
             "DEV-398",
-            "DEV-410"
+            "DEV-410",
+            "DEV-414",
+            "DEV-415",
+            "DEV-416"
           ],
-          "next_action": "Across the roster, replace overly broad diagonal stair-shaft floor/ceiling reservations with exact authored apertures and restore unrelated regions; verify continuous ascent/descent and light separation. Continue physical terrain/building/retaining/cave/boundary fit and shared-coordinate runtime integration. No stage/map acceptance; preserve40space policy, canonical van, true punches and source models."
+          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -2242,7 +2291,11 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/terrain-occupancy-pass/roster.json"
+            "development/levels/rebuild/terrain-occupancy-pass/roster.json",
+            "development/levels/rebuild/floor-closure-pass/school/construction.json",
+            "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+            "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
           ],
           "defects": [
             "DEV-354",
@@ -2258,9 +2311,12 @@
             "DEV-395",
             "DEV-396",
             "DEV-398",
-            "DEV-410"
+            "DEV-410",
+            "DEV-414",
+            "DEV-415",
+            "DEV-416"
           ],
-          "next_action": "Across the roster, replace overly broad diagonal stair-shaft floor/ceiling reservations with exact authored apertures and restore unrelated regions; verify continuous ascent/descent and light separation. Continue physical terrain/building/retaining/cave/boundary fit and shared-coordinate runtime integration. No stage/map acceptance; preserve40space policy, canonical van, true punches and source models."
+          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -2657,7 +2713,11 @@
             "development/levels/rebuild/terrain-occupancy-pass/roster.json",
             "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-03/construction.json",
             "development/levels/rebuild/terrain-occupancy-pass/verification/independent-export.json",
-            "development/levels/rebuild/terrain-occupancy-pass/verification/stair-movement.json"
+            "development/levels/rebuild/terrain-occupancy-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/wld-03/construction.json",
+            "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+            "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
           ],
           "defects": [
             "DEV-354",
@@ -2680,9 +2740,12 @@
             "DEV-409",
             "DEV-411",
             "DEV-412",
-            "DEV-413"
+            "DEV-413",
+            "DEV-414",
+            "DEV-415",
+            "DEV-416"
           ],
-          "next_action": "Across the roster, replace overly broad diagonal stair-shaft floor/ceiling reservations with exact authored apertures and restore unrelated regions; verify continuous ascent/descent and light separation. Continue physical terrain/building/retaining/cave/boundary fit and shared-coordinate runtime integration. No stage/map acceptance; preserve40space policy, canonical van, true punches and source models."
+          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -2859,7 +2922,11 @@
             "development/levels/rebuild/terrain-occupancy-pass/roster.json",
             "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-04/construction.json",
             "development/levels/rebuild/terrain-occupancy-pass/verification/independent-export.json",
-            "development/levels/rebuild/terrain-occupancy-pass/verification/stair-movement.json"
+            "development/levels/rebuild/terrain-occupancy-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/wld-04/construction.json",
+            "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+            "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
           ],
           "defects": [
             "DEV-354",
@@ -2882,9 +2949,12 @@
             "DEV-409",
             "DEV-411",
             "DEV-412",
-            "DEV-413"
+            "DEV-413",
+            "DEV-414",
+            "DEV-415",
+            "DEV-416"
           ],
-          "next_action": "Across the roster, replace overly broad diagonal stair-shaft floor/ceiling reservations with exact authored apertures and restore unrelated regions; verify continuous ascent/descent and light separation. Continue physical terrain/building/retaining/cave/boundary fit and shared-coordinate runtime integration. No stage/map acceptance; preserve40space policy, canonical van, true punches and source models."
+          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -3058,7 +3128,11 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/terrain-occupancy-pass/roster.json"
+            "development/levels/rebuild/terrain-occupancy-pass/roster.json",
+            "development/levels/rebuild/floor-closure-pass/wld-05/construction.json",
+            "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+            "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
           ],
           "defects": [
             "DEV-354",
@@ -3076,9 +3150,12 @@
             "DEV-395",
             "DEV-396",
             "DEV-398",
-            "DEV-410"
+            "DEV-410",
+            "DEV-414",
+            "DEV-415",
+            "DEV-416"
           ],
-          "next_action": "Across the roster, replace overly broad diagonal stair-shaft floor/ceiling reservations with exact authored apertures and restore unrelated regions; verify continuous ascent/descent and light separation. Continue physical terrain/building/retaining/cave/boundary fit and shared-coordinate runtime integration. No stage/map acceptance; preserve40space policy, canonical van, true punches and source models."
+          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -3246,7 +3323,11 @@
             "development/levels/rebuild/deck-fit-pass/README.md",
             "development/levels/rebuild/deck-fit-pass/verification/export-contact-coverage.json",
             "development/levels/rebuild/deck-fit-pass/verification/stair-movement.json",
-            "development/levels/rebuild/terrain-occupancy-pass/roster.json"
+            "development/levels/rebuild/terrain-occupancy-pass/roster.json",
+            "development/levels/rebuild/floor-closure-pass/wld-06/construction.json",
+            "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+            "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
           ],
           "defects": [
             "DEV-354",
@@ -3266,9 +3347,12 @@
             "DEV-404",
             "DEV-405",
             "DEV-406",
-            "DEV-410"
+            "DEV-410",
+            "DEV-414",
+            "DEV-415",
+            "DEV-416"
           ],
-          "next_action": "Across the roster, replace overly broad diagonal stair-shaft floor/ceiling reservations with exact authored apertures and restore unrelated regions; verify continuous ascent/descent and light separation. Continue physical terrain/building/retaining/cave/boundary fit and shared-coordinate runtime integration. No stage/map acceptance; preserve40space policy, canonical van, true punches and source models."
+          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -3440,7 +3524,11 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/terrain-occupancy-pass/roster.json"
+            "development/levels/rebuild/terrain-occupancy-pass/roster.json",
+            "development/levels/rebuild/floor-closure-pass/wld-07/construction.json",
+            "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+            "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
           ],
           "defects": [
             "DEV-354",
@@ -3462,9 +3550,12 @@
             "DEV-395",
             "DEV-396",
             "DEV-398",
-            "DEV-410"
+            "DEV-410",
+            "DEV-414",
+            "DEV-415",
+            "DEV-416"
           ],
-          "next_action": "Across the roster, replace overly broad diagonal stair-shaft floor/ceiling reservations with exact authored apertures and restore unrelated regions; verify continuous ascent/descent and light separation. Continue physical terrain/building/retaining/cave/boundary fit and shared-coordinate runtime integration. No stage/map acceptance; preserve40space policy, canonical van, true punches and source models."
+          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -3623,7 +3714,11 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/terrain-occupancy-pass/roster.json"
+            "development/levels/rebuild/terrain-occupancy-pass/roster.json",
+            "development/levels/rebuild/floor-closure-pass/wld-08/construction.json",
+            "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+            "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
           ],
           "defects": [
             "DEV-354",
@@ -3639,9 +3734,12 @@
             "DEV-395",
             "DEV-396",
             "DEV-398",
-            "DEV-410"
+            "DEV-410",
+            "DEV-414",
+            "DEV-415",
+            "DEV-416"
           ],
-          "next_action": "Across the roster, replace overly broad diagonal stair-shaft floor/ceiling reservations with exact authored apertures and restore unrelated regions; verify continuous ascent/descent and light separation. Continue physical terrain/building/retaining/cave/boundary fit and shared-coordinate runtime integration. No stage/map acceptance; preserve40space policy, canonical van, true punches and source models."
+          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -3811,7 +3909,11 @@
             "development/levels/rebuild/terrain-occupancy-pass/roster.json",
             "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-09/construction.json",
             "development/levels/rebuild/terrain-occupancy-pass/verification/independent-export.json",
-            "development/levels/rebuild/terrain-occupancy-pass/verification/stair-movement.json"
+            "development/levels/rebuild/terrain-occupancy-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/wld-09/construction.json",
+            "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+            "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
           ],
           "defects": [
             "DEV-354",
@@ -3833,9 +3935,12 @@
             "DEV-409",
             "DEV-411",
             "DEV-412",
-            "DEV-413"
+            "DEV-413",
+            "DEV-414",
+            "DEV-415",
+            "DEV-416"
           ],
-          "next_action": "Across the roster, replace overly broad diagonal stair-shaft floor/ceiling reservations with exact authored apertures and restore unrelated regions; verify continuous ascent/descent and light separation. Continue physical terrain/building/retaining/cave/boundary fit and shared-coordinate runtime integration. No stage/map acceptance; preserve40space policy, canonical van, true punches and source models."
+          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -4009,7 +4114,11 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/terrain-occupancy-pass/roster.json"
+            "development/levels/rebuild/terrain-occupancy-pass/roster.json",
+            "development/levels/rebuild/floor-closure-pass/wld-10/construction.json",
+            "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+            "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
           ],
           "defects": [
             "DEV-354",
@@ -4027,9 +4136,12 @@
             "DEV-395",
             "DEV-396",
             "DEV-398",
-            "DEV-410"
+            "DEV-410",
+            "DEV-414",
+            "DEV-415",
+            "DEV-416"
           ],
-          "next_action": "Across the roster, replace overly broad diagonal stair-shaft floor/ceiling reservations with exact authored apertures and restore unrelated regions; verify continuous ascent/descent and light separation. Continue physical terrain/building/retaining/cave/boundary fit and shared-coordinate runtime integration. No stage/map acceptance; preserve40space policy, canonical van, true punches and source models."
+          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -4197,7 +4309,11 @@
             "development/levels/rebuild/deck-fit-pass/README.md",
             "development/levels/rebuild/deck-fit-pass/verification/export-contact-coverage.json",
             "development/levels/rebuild/deck-fit-pass/verification/stair-movement.json",
-            "development/levels/rebuild/terrain-occupancy-pass/roster.json"
+            "development/levels/rebuild/terrain-occupancy-pass/roster.json",
+            "development/levels/rebuild/floor-closure-pass/wld-11/construction.json",
+            "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+            "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
           ],
           "defects": [
             "DEV-354",
@@ -4217,9 +4333,12 @@
             "DEV-404",
             "DEV-405",
             "DEV-406",
-            "DEV-410"
+            "DEV-410",
+            "DEV-414",
+            "DEV-415",
+            "DEV-416"
           ],
-          "next_action": "Across the roster, replace overly broad diagonal stair-shaft floor/ceiling reservations with exact authored apertures and restore unrelated regions; verify continuous ascent/descent and light separation. Continue physical terrain/building/retaining/cave/boundary fit and shared-coordinate runtime integration. No stage/map acceptance; preserve40space policy, canonical van, true punches and source models."
+          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -4393,7 +4512,11 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/terrain-occupancy-pass/roster.json"
+            "development/levels/rebuild/terrain-occupancy-pass/roster.json",
+            "development/levels/rebuild/floor-closure-pass/wld-12/construction.json",
+            "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+            "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
           ],
           "defects": [
             "DEV-354",
@@ -4411,9 +4534,12 @@
             "DEV-395",
             "DEV-396",
             "DEV-398",
-            "DEV-410"
+            "DEV-410",
+            "DEV-414",
+            "DEV-415",
+            "DEV-416"
           ],
-          "next_action": "Across the roster, replace overly broad diagonal stair-shaft floor/ceiling reservations with exact authored apertures and restore unrelated regions; verify continuous ascent/descent and light separation. Continue physical terrain/building/retaining/cave/boundary fit and shared-coordinate runtime integration. No stage/map acceptance; preserve40space policy, canonical van, true punches and source models."
+          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -4577,7 +4703,11 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/terrain-occupancy-pass/roster.json"
+            "development/levels/rebuild/terrain-occupancy-pass/roster.json",
+            "development/levels/rebuild/floor-closure-pass/wld-13/construction.json",
+            "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+            "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
           ],
           "defects": [
             "DEV-354",
@@ -4593,9 +4723,12 @@
             "DEV-395",
             "DEV-396",
             "DEV-398",
-            "DEV-410"
+            "DEV-410",
+            "DEV-414",
+            "DEV-415",
+            "DEV-416"
           ],
-          "next_action": "Across the roster, replace overly broad diagonal stair-shaft floor/ceiling reservations with exact authored apertures and restore unrelated regions; verify continuous ascent/descent and light separation. Continue physical terrain/building/retaining/cave/boundary fit and shared-coordinate runtime integration. No stage/map acceptance; preserve40space policy, canonical van, true punches and source models."
+          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -4770,7 +4903,11 @@
             "development/levels/rebuild/terrain-occupancy-pass/roster.json",
             "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-14/construction.json",
             "development/levels/rebuild/terrain-occupancy-pass/verification/independent-export.json",
-            "development/levels/rebuild/terrain-occupancy-pass/verification/stair-movement.json"
+            "development/levels/rebuild/terrain-occupancy-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/wld-14/construction.json",
+            "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+            "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
           ],
           "defects": [
             "DEV-354",
@@ -4799,9 +4936,12 @@
             "DEV-409",
             "DEV-411",
             "DEV-412",
-            "DEV-413"
+            "DEV-413",
+            "DEV-414",
+            "DEV-415",
+            "DEV-416"
           ],
-          "next_action": "Across the roster, replace overly broad diagonal stair-shaft floor/ceiling reservations with exact authored apertures and restore unrelated regions; verify continuous ascent/descent and light separation. Continue physical terrain/building/retaining/cave/boundary fit and shared-coordinate runtime integration. No stage/map acceptance; preserve40space policy, canonical van, true punches and source models."
+          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -4985,7 +5125,11 @@
             "development/levels/rebuild/deck-fit-pass/README.md",
             "development/levels/rebuild/deck-fit-pass/verification/export-contact-coverage.json",
             "development/levels/rebuild/deck-fit-pass/verification/stair-movement.json",
-            "development/levels/rebuild/terrain-occupancy-pass/roster.json"
+            "development/levels/rebuild/terrain-occupancy-pass/roster.json",
+            "development/levels/rebuild/floor-closure-pass/wld-15/construction.json",
+            "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+            "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
           ],
           "defects": [
             "DEV-354",
@@ -5007,9 +5151,12 @@
             "DEV-404",
             "DEV-405",
             "DEV-406",
-            "DEV-410"
+            "DEV-410",
+            "DEV-414",
+            "DEV-415",
+            "DEV-416"
           ],
-          "next_action": "Across the roster, replace overly broad diagonal stair-shaft floor/ceiling reservations with exact authored apertures and restore unrelated regions; verify continuous ascent/descent and light separation. Continue physical terrain/building/retaining/cave/boundary fit and shared-coordinate runtime integration. No stage/map acceptance; preserve40space policy, canonical van, true punches and source models."
+          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -5176,7 +5323,11 @@
             "development/levels/rebuild/deck-fit-pass/README.md",
             "development/levels/rebuild/deck-fit-pass/verification/export-contact-coverage.json",
             "development/levels/rebuild/deck-fit-pass/verification/stair-movement.json",
-            "development/levels/rebuild/terrain-occupancy-pass/roster.json"
+            "development/levels/rebuild/terrain-occupancy-pass/roster.json",
+            "development/levels/rebuild/floor-closure-pass/wld-16/construction.json",
+            "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+            "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
           ],
           "defects": [
             "DEV-354",
@@ -5196,9 +5347,12 @@
             "DEV-404",
             "DEV-405",
             "DEV-406",
-            "DEV-410"
+            "DEV-410",
+            "DEV-414",
+            "DEV-415",
+            "DEV-416"
           ],
-          "next_action": "Across the roster, replace overly broad diagonal stair-shaft floor/ceiling reservations with exact authored apertures and restore unrelated regions; verify continuous ascent/descent and light separation. Continue physical terrain/building/retaining/cave/boundary fit and shared-coordinate runtime integration. No stage/map acceptance; preserve40space policy, canonical van, true punches and source models."
+          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -5364,7 +5518,11 @@
             "development/levels/rebuild/terrain-occupancy-pass/roster.json",
             "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-17/construction.json",
             "development/levels/rebuild/terrain-occupancy-pass/verification/independent-export.json",
-            "development/levels/rebuild/terrain-occupancy-pass/verification/stair-movement.json"
+            "development/levels/rebuild/terrain-occupancy-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/wld-17/construction.json",
+            "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+            "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
           ],
           "defects": [
             "DEV-354",
@@ -5385,9 +5543,12 @@
             "DEV-409",
             "DEV-411",
             "DEV-412",
-            "DEV-413"
+            "DEV-413",
+            "DEV-414",
+            "DEV-415",
+            "DEV-416"
           ],
-          "next_action": "Across the roster, replace overly broad diagonal stair-shaft floor/ceiling reservations with exact authored apertures and restore unrelated regions; verify continuous ascent/descent and light separation. Continue physical terrain/building/retaining/cave/boundary fit and shared-coordinate runtime integration. No stage/map acceptance; preserve40space policy, canonical van, true punches and source models."
+          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -5553,7 +5714,11 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/terrain-occupancy-pass/roster.json"
+            "development/levels/rebuild/terrain-occupancy-pass/roster.json",
+            "development/levels/rebuild/floor-closure-pass/wld-18/construction.json",
+            "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+            "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
           ],
           "defects": [
             "DEV-354",
@@ -5569,9 +5734,12 @@
             "DEV-395",
             "DEV-396",
             "DEV-398",
-            "DEV-410"
+            "DEV-410",
+            "DEV-414",
+            "DEV-415",
+            "DEV-416"
           ],
-          "next_action": "Across the roster, replace overly broad diagonal stair-shaft floor/ceiling reservations with exact authored apertures and restore unrelated regions; verify continuous ascent/descent and light separation. Continue physical terrain/building/retaining/cave/boundary fit and shared-coordinate runtime integration. No stage/map acceptance; preserve40space policy, canonical van, true punches and source models."
+          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -5731,7 +5899,11 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/terrain-occupancy-pass/roster.json"
+            "development/levels/rebuild/terrain-occupancy-pass/roster.json",
+            "development/levels/rebuild/floor-closure-pass/wld-07-mortuary/construction.json",
+            "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+            "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
           ],
           "defects": [
             "DEV-354",
@@ -5753,9 +5925,12 @@
             "DEV-395",
             "DEV-396",
             "DEV-398",
-            "DEV-410"
+            "DEV-410",
+            "DEV-414",
+            "DEV-415",
+            "DEV-416"
           ],
-          "next_action": "Across the roster, replace overly broad diagonal stair-shaft floor/ceiling reservations with exact authored apertures and restore unrelated regions; verify continuous ascent/descent and light separation. Continue physical terrain/building/retaining/cave/boundary fit and shared-coordinate runtime integration. No stage/map acceptance; preserve40space policy, canonical van, true punches and source models."
+          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -5936,5 +6111,14 @@
     ],
     "evidence": "development/levels/rebuild/terrain-occupancy-pass/roster.json",
     "recovered_flat_poses": 1237
+  },
+  "structural_floor_caps": {
+    "source_sha": null,
+    "status": "ALL25NATIVE_CANDIDATES_INSPECTED_SIX_ACTUALLY_REPAIRED_RUNTIME_GATES_OPEN",
+    "evidence": "development/levels/rebuild/floor-closure-pass/roster.json",
+    "restored_area_m2": 580.9637926266614,
+    "new_parts": 296,
+    "new_triangles": 9816,
+    "recovered_flat_poses": 248
   }
 }

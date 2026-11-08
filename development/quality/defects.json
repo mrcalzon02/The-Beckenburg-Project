@@ -4427,11 +4427,11 @@
     {
       "id": "DEV-410",
       "title": "Diagonal stair AABBs remove unrelated room-floor and cap regions",
-      "status": "PARTIAL FIX: lookout ruin12floor pieces verified; cross-roster audit and central correction OPEN",
+      "status": "BATCH REPAIR VERIFIED: six candidate sites; legacy producer migration and older-map audit OPEN",
       "affected": "Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline",
       "symptom": "Excavation exposed4new blocked poses and2failed sweeps where the lookout ruin floor had been removed by an unrelated diagonal flight bounding box.",
       "cause": "Shared structural_pass.deck_holes reserves each entire axis-aligned flight rectangle instead of its actual shaft footprint.",
-      "action": "Restore the ruin gap only outside exact diagonal flight polygons and source walking tops with12closed0.16m plates. Final all25comparison has zero new blocks and no passing stairs/links/chains regress. Preserve rejected raw probes. Next broad batch must correct exact floor/cap shaft reservations across all25candidates and individually audit older mature maps.",
+      "action": "Restore the ruin gap only outside exact diagonal flight polygons and source walking tops with12closed0.16m plates. Final all25comparison has zero new blocks and no passing stairs/links/chains regress. Preserve rejected raw probes. Next broad batch must correct exact floor/cap shaft reservations across all25candidates and individually audit older mature maps. Subsequent floor/cap pass audits25current candidates and adds296closed parts/9816triangles restoring580.964m\u00b2 across6sites, retaining old source geometry. Joined exact polygons preserve all baseline passing stairs/links/chains/loops and recover248flat poses. The legacy broad-bounds helper remains for frozen producers; its migration and mature-source audits are not claimed complete.",
       "evidence": "development/levels/rebuild/terrain-occupancy-pass/; development/levels/rebuild/captures/room-terrain-batch/; tools/append_static_glb.py; tools/check_room_terrain.py",
       "older_maps": "All29packets retained; other20candidate geometry unchanged and four mature maps retain individual retrofit obligations. No runtime unlock or complete map acceptance; preserve40space envelope, canonical van, power/hiding/story, original props/UVs/pivots and real basement punches."
     },
@@ -4467,6 +4467,39 @@
       "action": "Retain paired intact PNG and actual source hashes. Inspect the exact exported floors, openings, normals/materials and native body/light behavior in the next roster-wide floor/shaft pass; do not infer that this image is accepted or that all black areas share one cause.",
       "evidence": "development/levels/rebuild/terrain-occupancy-pass/; development/levels/rebuild/captures/room-terrain-batch/; tools/append_static_glb.py; tools/check_room_terrain.py",
       "older_maps": "All29packets retained; other20candidate geometry unchanged and four mature maps retain individual retrofit obligations. No runtime unlock or complete map acceptance; preserve40space envelope, canonical van, power/hiding/story, original props/UVs/pivots and real basement punches."
+    },
+    {
+      "id": "DEV-414",
+      "title": "Convex clipping creates excessive structural fragments around circular floors",
+      "status": "REJECTED FIRST STUDY; compact planar restoration verified",
+      "affected": "Source-only structural floor/cap construction across25remaining candidates, with six actual repair sites and four mature sources retained",
+      "symptom": "The initial lighthouse floor restoration emitted9905parts/116128triangles for22.55m\u00b2 before joined-turn correction.",
+      "cause": "Subtracting disjoint triangles still split polygons along infinite edge lines; independent prisms retained every fragment.",
+      "action": "Reject disjoint cutter intersections before splitting, union constrained planar patches, dissolve only coplanar seams and extrude edge-connected regions. Final whole6site batch296parts/9816triangles includes joined spiral headroom. Triangle/part counts are geometry evidence, not sustained FPS acceptance.",
+      "evidence": "development/levels/rebuild/floor-closure-pass/verification/; tools/build_roster_floor_closures.py; tools/planar_structure.py; structural_pass.deck_openings",
+      "older_maps": "All29roster decisions explicit. Nineteenzero-addition results do not establish complete map fitness. Preserve source assets, exact native earth punches,40space envelope and canonical van/power/hiding/story; remaining35stairsegments/35links, legacy producer migration, mature-source and actual runtime/network/hardware gates remain."
+    },
+    {
+      "id": "DEV-415",
+      "title": "Merged planar floor patches can have pinched solids and degenerate triangulation",
+      "status": "FIX VERIFIED: closed edge-connected regions and zero-area cleanup",
+      "affected": "Source-only structural floor/cap construction across25remaining candidates, with six actual repair sites and four mature sources retained",
+      "symptom": "A merged circular plate had25nonmanifold vertical edges at point contacts; the native reader also rejected repeated-vertex triangles in a merged lookout floor.",
+      "cause": "Regions touching only at a point shared extruded vertical edges; dissolved planar bridge loops produced zero-area triangles.",
+      "action": "Extrude edge-connected planar regions independently, explicitly triangulate and remove zero-area planar faces before building thickness. Actual exported solids/native reader pass with exact edge closure and0.16m volume/area thickness. Production parser and collision tolerances unchanged; preserve rejected native log.",
+      "evidence": "development/levels/rebuild/floor-closure-pass/verification/; tools/build_roster_floor_closures.py; tools/planar_structure.py; structural_pass.deck_openings",
+      "older_maps": "All29roster decisions explicit. Nineteenzero-addition results do not establish complete map fitness. Preserve source assets, exact native earth punches,40space envelope and canonical van/power/hiding/story; remaining35stairsegments/35links, legacy producer migration, mature-source and actual runtime/network/hardware gates remain."
+    },
+    {
+      "id": "DEV-416",
+      "title": "Independent flight rectangles leave spiral-turn headroom wedges",
+      "status": "FIX VERIFIED: joined authored intermediate corridor corners",
+      "affected": "Source-only structural floor/cap construction across25remaining candidates, with six actual repair sites and four mature sources retained",
+      "symptom": "First closure draft regressed80previously passing lighthouse stair segments in both directions, fivecomplete links and their automatic chain; the independent standing-body sample also failed.",
+      "cause": "Adjacent chord rectangles meet at the centreline but leave outer turn wedges that were incorrectly restored as floor above the stair.",
+      "action": "Add24-sided swept-corridor join polygons at intermediate connected points with unchanged2.2m clearance; retain original terminal landings. All221flights/84links compare without new passing-direction regressions,3237independent body shaft samples clear; both cemeteryloops remain pass both directions. Preserve full rejected stair/flight tables.",
+      "evidence": "development/levels/rebuild/floor-closure-pass/verification/; tools/build_roster_floor_closures.py; tools/planar_structure.py; structural_pass.deck_openings",
+      "older_maps": "All29roster decisions explicit. Nineteenzero-addition results do not establish complete map fitness. Preserve source assets, exact native earth punches,40space envelope and canonical van/power/hiding/story; remaining35stairsegments/35links, legacy producer migration, mature-source and actual runtime/network/hardware gates remain."
     }
   ],
   "audit_categories": [

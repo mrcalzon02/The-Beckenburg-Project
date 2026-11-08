@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 8153,
+  "count": 8226,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -74394,6 +74394,736 @@
       "height": 350,
       "bytes": 319657,
       "sha256": "c1cd9bb200f25f4070c6f8996a50778da9d0dd33b805bdb45d87becdab549769"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/academy-repaired-plates.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/academy-repaired-plates.png",
+      "title": "Academy repaired plates",
+      "kind": "Native isolated floor/cap additions; zero-part outcomes may be empty",
+      "width": 1200,
+      "height": 900,
+      "bytes": 545538,
+      "sha256": "1da61ddea80ca4e618f4af864735c66d936c64897917819cd23f865efbbb51c7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/academy-whole-site.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/academy-whole-site.png",
+      "title": "Academy whole site",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 739708,
+      "sha256": "497e756e36cadf9730a25d99a83ab37f5294984bfb97a0d13146250e7d23b046"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/asylum-repaired-plates.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/asylum-repaired-plates.png",
+      "title": "Asylum repaired plates",
+      "kind": "Native isolated floor/cap additions; zero-part outcomes may be empty",
+      "width": 1200,
+      "height": 900,
+      "bytes": 545538,
+      "sha256": "399e84e09234f5533fb9edd1b5f800bda0eac295dcfaef6ac1a5f6b3169a23a9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/asylum-whole-site.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/asylum-whole-site.png",
+      "title": "Asylum whole site",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 747248,
+      "sha256": "b4beeae80a7d92d1f1ca82321ae9ae5b9328165c76dc2dab28c5854eb3ec0d59"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/church-repaired-plates.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/church-repaired-plates.png",
+      "title": "Church repaired plates",
+      "kind": "Native isolated floor/cap additions; zero-part outcomes may be empty",
+      "width": 1200,
+      "height": 900,
+      "bytes": 545538,
+      "sha256": "973c0b47908c1725726bc3b5b95e034e8ca2fdc8bd9aa4c9e41d7a677c55445e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/church-whole-site.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/church-whole-site.png",
+      "title": "Church whole site",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 710565,
+      "sha256": "62cf7474fdab6b309c94ba69d56f52181e914cab62c1c513fd2284596f2cb484"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-01.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-01.png",
+      "title": "Closure sheet 01",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 1440,
+      "bytes": 255868,
+      "sha256": "250bdb4a585d7c94eb4ee6c729ed03e79edbced744761a101bf3a712be5b2999"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-02.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-02.png",
+      "title": "Closure sheet 02",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 1440,
+      "bytes": 254567,
+      "sha256": "ffa3e4c24a4cbe6779b5d8e4f2cc7f62eef986bd2690947d123958aff971e4a2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-03.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-03.png",
+      "title": "Closure sheet 03",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 1440,
+      "bytes": 329989,
+      "sha256": "dee35d11063310ae49bd1805dd7fc635d1b12dbbbe2d2729ca5403ba111f2d09"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-04.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-04.png",
+      "title": "Closure sheet 04",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 1440,
+      "bytes": 267174,
+      "sha256": "02f5f34f674a2a253cceb473a5dc5a27e4b513fe7dee1005cca0b3e6ae111451"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-05.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-05.png",
+      "title": "Closure sheet 05",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 1440,
+      "bytes": 283879,
+      "sha256": "ba2384b54d3a8bb1af3d58bf87c06c3f5b284d2211866f143d2330e77710660b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-06.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-06.png",
+      "title": "Closure sheet 06",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 1440,
+      "bytes": 268040,
+      "sha256": "be968fe5c6564f831b6bc114453183392e9fe8d4e00afec1585cf9a57bfdbc7d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-07.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-07.png",
+      "title": "Closure sheet 07",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 1440,
+      "bytes": 287453,
+      "sha256": "ae3da7adca882f08fea79d3a5d87a7fbcc67ee2bbb8db3be4c3c542a407a0b2f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-08.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-08.png",
+      "title": "Closure sheet 08",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 1440,
+      "bytes": 277381,
+      "sha256": "8034d2c567c2aaeb1c031151af0788a15185bfc2faf6291c1f289d9cd6e39c39"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-09.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-09.png",
+      "title": "Closure sheet 09",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 480,
+      "bytes": 82408,
+      "sha256": "84cd587774a93ec48e1a72f256ddf8f6d223cb8ce3f9b820654962e78fb4fd62"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/college-repaired-plates.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/college-repaired-plates.png",
+      "title": "College repaired plates",
+      "kind": "Native isolated floor/cap additions; zero-part outcomes may be empty",
+      "width": 1200,
+      "height": 900,
+      "bytes": 545538,
+      "sha256": "f7c392c1cdb569da72d9c7574a78d43e384315a7e8400d44d6464d19ac4b93e7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/college-whole-site.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/college-whole-site.png",
+      "title": "College whole site",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 733506,
+      "sha256": "7d25c0b7643dd9a905714bb41f25175e30181b1a78639f4bff4e5ec3c54338f3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/farmhouse-repaired-plates.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/farmhouse-repaired-plates.png",
+      "title": "Farmhouse repaired plates",
+      "kind": "Native isolated floor/cap additions; zero-part outcomes may be empty",
+      "width": 1200,
+      "height": 900,
+      "bytes": 545538,
+      "sha256": "09c12282fca25cc6b80101bf8ee66f29b45b5087a8671f3331bc4d1c80b2d0ab"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/farmhouse-whole-site.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/farmhouse-whole-site.png",
+      "title": "Farmhouse whole site",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 747915,
+      "sha256": "f0a16b70477a6927f8069959d6698bb68d2c16b8efb28f54bcad3c5df7dd28f9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/mansion-repaired-plates.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/mansion-repaired-plates.png",
+      "title": "Mansion repaired plates",
+      "kind": "Native isolated floor/cap additions; zero-part outcomes may be empty",
+      "width": 1200,
+      "height": 900,
+      "bytes": 545538,
+      "sha256": "70fe33828365fa993196aa7700ce99ba1fd74182937735c5fa68a0aa0119757f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/mansion-whole-site.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/mansion-whole-site.png",
+      "title": "Mansion whole site",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 730371,
+      "sha256": "d65468003246830d8ef488afc16e96659977e5b1ee76705c3394e1c22ee6d15e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/paired-closure-sheet-01.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/paired-closure-sheet-01.png",
+      "title": "Paired closure sheet 01",
+      "kind": "Native paired structural plate inspection;150W neutral fill, not runtime",
+      "width": 1200,
+      "height": 1440,
+      "bytes": 1013173,
+      "sha256": "b3d905d9e754ceb538dc899fd61427849e24580f8f007a27484c866a66eea49a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/paired-closure-sheet-02.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/paired-closure-sheet-02.png",
+      "title": "Paired closure sheet 02",
+      "kind": "Native paired structural plate inspection;150W neutral fill, not runtime",
+      "width": 1200,
+      "height": 1440,
+      "bytes": 1039482,
+      "sha256": "0e6eadc7cac1c07bd242147a8f06ddb5f268bacee4a08af767f8baf23ee6059a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/prison-repaired-plates.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/prison-repaired-plates.png",
+      "title": "Prison repaired plates",
+      "kind": "Native isolated floor/cap additions; zero-part outcomes may be empty",
+      "width": 1200,
+      "height": 900,
+      "bytes": 545538,
+      "sha256": "ec52d382c40ec168cabcc981cab5e33a69f47021d2a66e4c3e33742d0485837c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/prison-whole-site.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/prison-whole-site.png",
+      "title": "Prison whole site",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 787908,
+      "sha256": "5d71d706f11e74a5fa46e014f2f1928243aeca817cdc468c4f928acff7a61fa3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/school-repaired-plates.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/school-repaired-plates.png",
+      "title": "School repaired plates",
+      "kind": "Native isolated floor/cap additions; zero-part outcomes may be empty",
+      "width": 1200,
+      "height": 900,
+      "bytes": 545538,
+      "sha256": "ec52d382c40ec168cabcc981cab5e33a69f47021d2a66e4c3e33742d0485837c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/school-whole-site.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/school-whole-site.png",
+      "title": "School whole site",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 911773,
+      "sha256": "c2806f2cdf3eb7b35aa444d1a21d0d96ddf021e4c351f7375ed77328105bfcc5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-03-repaired-plates.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-03-repaired-plates.png",
+      "title": "Wld 03 repaired plates",
+      "kind": "Native isolated floor/cap additions; zero-part outcomes may be empty",
+      "width": 1200,
+      "height": 900,
+      "bytes": 545538,
+      "sha256": "312dcdc5cc9a04c998b07ca2a487f0daf7f0d27af872552719cd85358eb34b7b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-03-whole-site.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-03-whole-site.png",
+      "title": "Wld 03 whole site",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 779041,
+      "sha256": "81645174e01a7234ecabb4677da8adb4ec8080997cda0ceddc91bae2f85a3b20"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-04-repaired-plates.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-04-repaired-plates.png",
+      "title": "Wld 04 repaired plates",
+      "kind": "Native isolated floor/cap additions; zero-part outcomes may be empty",
+      "width": 1200,
+      "height": 900,
+      "bytes": 553067,
+      "sha256": "7537d86b98ea1773f88a525d282bd787d5da481791e26dd3b5cac98de2de9f9b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-04-room-after.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-04-room-after.png",
+      "title": "Wld 04 room after",
+      "kind": "Native paired structural plate inspection;150W neutral fill, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 728233,
+      "sha256": "b46c6baa5e009e2c94957d5f20a7ef0ae0b357862464764af4ffb5d9327a36b2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-04-room-before.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-04-room-before.png",
+      "title": "Wld 04 room before",
+      "kind": "Native paired structural plate inspection;150W neutral fill, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 728652,
+      "sha256": "01f75a2125dc64fea7e31cb32ff4dd82d5f6c51bfe76369b552368cfbf72af1a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-04-whole-site.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-04-whole-site.png",
+      "title": "Wld 04 whole site",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 732396,
+      "sha256": "1fd18b493506fa21af84f9834b6083c0121ddd90fdfb8c938d59002f943863c9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-05-repaired-plates.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-05-repaired-plates.png",
+      "title": "Wld 05 repaired plates",
+      "kind": "Native isolated floor/cap additions; zero-part outcomes may be empty",
+      "width": 1200,
+      "height": 900,
+      "bytes": 549547,
+      "sha256": "20b9ed5d1d81146c1a2a52fa6d969282bae9284a1dc1c5ab4a1cfc5cc59353dd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-05-room-after.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-05-room-after.png",
+      "title": "Wld 05 room after",
+      "kind": "Native paired structural plate inspection;150W neutral fill, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 703044,
+      "sha256": "4642f0399fcbb416955a8b5f3b0d7c4923abff61994fc5ba6c0cb5f95c72e071"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-05-room-before.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-05-room-before.png",
+      "title": "Wld 05 room before",
+      "kind": "Native paired structural plate inspection;150W neutral fill, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 672916,
+      "sha256": "9ac3b5c07b9e60a664e4edd87e06b8430775e00b3379e739d8371cb97dd0fcf5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-05-whole-site.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-05-whole-site.png",
+      "title": "Wld 05 whole site",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 751038,
+      "sha256": "d82f4819b4243df919daea12b8d33e9fc0cb89596340ac8ecd744d4d66c4a4eb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-06-repaired-plates.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-06-repaired-plates.png",
+      "title": "Wld 06 repaired plates",
+      "kind": "Native isolated floor/cap additions; zero-part outcomes may be empty",
+      "width": 1200,
+      "height": 900,
+      "bytes": 547281,
+      "sha256": "f0ea5ae039d4cab2ba6640172b94b0393c9562886a16b00fa1e9933d54963775"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-06-room-after.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-06-room-after.png",
+      "title": "Wld 06 room after",
+      "kind": "Native paired structural plate inspection;150W neutral fill, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 686059,
+      "sha256": "ac57bb2deefc1a03435fc63c31386436ddfbeacf64973375b746b374cfc49a03"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-06-room-before.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-06-room-before.png",
+      "title": "Wld 06 room before",
+      "kind": "Native paired structural plate inspection;150W neutral fill, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 582693,
+      "sha256": "ab70e906181797d70e43fa1e833e5218054eb5108e690ea52e91968be65c7f6f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-06-whole-site.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-06-whole-site.png",
+      "title": "Wld 06 whole site",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 742774,
+      "sha256": "843a78622bb67b5d9d7f9303ed4c4302efff9c525da3a6a43442ab5d48e42319"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-07-mortuary-repaired-plates.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-07-mortuary-repaired-plates.png",
+      "title": "Wld 07 mortuary repaired plates",
+      "kind": "Native isolated floor/cap additions; zero-part outcomes may be empty",
+      "width": 1200,
+      "height": 900,
+      "bytes": 545538,
+      "sha256": "0956d7bdc06ebb3f867907dfa1d77b590de9b2c2bbe0afd1435451890aa0d0ad"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-07-mortuary-whole-site.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-07-mortuary-whole-site.png",
+      "title": "Wld 07 mortuary whole site",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 803108,
+      "sha256": "16ecb8a00b191a2f1dc2e2c59b6c8494fdbf0578e1bca50cf61a86461bff4638"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-07-repaired-plates.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-07-repaired-plates.png",
+      "title": "Wld 07 repaired plates",
+      "kind": "Native isolated floor/cap additions; zero-part outcomes may be empty",
+      "width": 1200,
+      "height": 900,
+      "bytes": 545538,
+      "sha256": "9e71c787074455a15ad928e08ae885f75193018b319a10804d0bc2c94796e325"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-07-whole-site.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-07-whole-site.png",
+      "title": "Wld 07 whole site",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 721182,
+      "sha256": "fe4570f5eb78b30c282f7ce7eb0a6fea047e3e15ba72693774b92c4e067d195a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-08-repaired-plates.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-08-repaired-plates.png",
+      "title": "Wld 08 repaired plates",
+      "kind": "Native isolated floor/cap additions; zero-part outcomes may be empty",
+      "width": 1200,
+      "height": 900,
+      "bytes": 551316,
+      "sha256": "09edcdc6258b2addccd159826dcb830149527943d4a64fb9d8f73e582f9109b8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-08-room-after.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-08-room-after.png",
+      "title": "Wld 08 room after",
+      "kind": "Native paired structural plate inspection;150W neutral fill, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 668827,
+      "sha256": "9750780168094163d50632cf899edf70b1b2792b0060e01256929dad9d0c9a5e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-08-room-before.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-08-room-before.png",
+      "title": "Wld 08 room before",
+      "kind": "Native paired structural plate inspection;150W neutral fill, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 563912,
+      "sha256": "3435a4f7038ef4879178957df403c57370428ee4cd9436eb5202c1bdb51f1248"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-08-whole-site.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-08-whole-site.png",
+      "title": "Wld 08 whole site",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 761889,
+      "sha256": "5703670640843c4ed747fe2c0a6b46086cd5ed80ee71e23814e3f68b79471b05"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-09-repaired-plates.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-09-repaired-plates.png",
+      "title": "Wld 09 repaired plates",
+      "kind": "Native isolated floor/cap additions; zero-part outcomes may be empty",
+      "width": 1200,
+      "height": 900,
+      "bytes": 556257,
+      "sha256": "d153e0f2902c64cf2bc771db4eb34579d8d29b813eec7fb8a7eba9a6d27712e9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-09-room-after.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-09-room-after.png",
+      "title": "Wld 09 room after",
+      "kind": "Native paired structural plate inspection;150W neutral fill, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 716834,
+      "sha256": "a6751f2fc2ef9cfe1564d95b4da4f4176174402fa034b9de7b2703b6b04be4c3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-09-room-before.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-09-room-before.png",
+      "title": "Wld 09 room before",
+      "kind": "Native paired structural plate inspection;150W neutral fill, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 535163,
+      "sha256": "18e11edce9384c19589345f6956b69b2eb5af72d6edc4d620c7402675ab064d0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-09-whole-site.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-09-whole-site.png",
+      "title": "Wld 09 whole site",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 763078,
+      "sha256": "d94d0b623a3faaf03613daa3c5dd7799bc6b060bdaea4e9de452202d50d5e11a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-10-repaired-plates.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-10-repaired-plates.png",
+      "title": "Wld 10 repaired plates",
+      "kind": "Native isolated floor/cap additions; zero-part outcomes may be empty",
+      "width": 1200,
+      "height": 900,
+      "bytes": 545538,
+      "sha256": "436912b75c1787f071e8572c7688100dd397ed21e9b5887b6fcb10c9f4483649"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-10-whole-site.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-10-whole-site.png",
+      "title": "Wld 10 whole site",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 772580,
+      "sha256": "89e053815b187fe928c5330718b19499ff7b5dd5cc8d7249caa38f11d1dd9d6d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-11-repaired-plates.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-11-repaired-plates.png",
+      "title": "Wld 11 repaired plates",
+      "kind": "Native isolated floor/cap additions; zero-part outcomes may be empty",
+      "width": 1200,
+      "height": 900,
+      "bytes": 545538,
+      "sha256": "436912b75c1787f071e8572c7688100dd397ed21e9b5887b6fcb10c9f4483649"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-11-whole-site.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-11-whole-site.png",
+      "title": "Wld 11 whole site",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 709182,
+      "sha256": "3a8411868791374e417050c59cb5a693af746b6a62f36d98cabcee9adecad2c7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-12-repaired-plates.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-12-repaired-plates.png",
+      "title": "Wld 12 repaired plates",
+      "kind": "Native isolated floor/cap additions; zero-part outcomes may be empty",
+      "width": 1200,
+      "height": 900,
+      "bytes": 545538,
+      "sha256": "15e8e64d4f21890c4ff94e4879ace229bd39dacb38ab7ad32a6ff470c150dd82"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-12-whole-site.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-12-whole-site.png",
+      "title": "Wld 12 whole site",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 702534,
+      "sha256": "7593fe644473047e2737584066288c5b571431f35b4b7fab5fd36856e2256c42"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-13-repaired-plates.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-13-repaired-plates.png",
+      "title": "Wld 13 repaired plates",
+      "kind": "Native isolated floor/cap additions; zero-part outcomes may be empty",
+      "width": 1200,
+      "height": 900,
+      "bytes": 545538,
+      "sha256": "15e8e64d4f21890c4ff94e4879ace229bd39dacb38ab7ad32a6ff470c150dd82"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-13-whole-site.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-13-whole-site.png",
+      "title": "Wld 13 whole site",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 750716,
+      "sha256": "4a236373ad2873b48af6df1aa91f8d8431901e86a4abcac0bfbc27a59c7a98a3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-14-repaired-plates.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-14-repaired-plates.png",
+      "title": "Wld 14 repaired plates",
+      "kind": "Native isolated floor/cap additions; zero-part outcomes may be empty",
+      "width": 1200,
+      "height": 900,
+      "bytes": 550457,
+      "sha256": "93ebbe51baa1a5fcdf6cfa2dda8cc901ad9b07ef97a3ba733729b2b8531896cc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-14-room-after.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-14-room-after.png",
+      "title": "Wld 14 room after",
+      "kind": "Native paired structural plate inspection;150W neutral fill, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 818097,
+      "sha256": "66ace66e3dd523f92be2d77948de4ce3c8a8a54b4948cbe82649420b24afe067"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-14-room-before.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-14-room-before.png",
+      "title": "Wld 14 room before",
+      "kind": "Native paired structural plate inspection;150W neutral fill, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 825088,
+      "sha256": "a201d1d90aec6c7ebdc5d1150585af88859daa9490a5b6f901e5b4c7036ee2b0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-14-whole-site.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-14-whole-site.png",
+      "title": "Wld 14 whole site",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 857560,
+      "sha256": "2b764ff740963a41ae2b29fbdf6b1da88b3cafacaceb81bb17305be934828ede"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-15-repaired-plates.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-15-repaired-plates.png",
+      "title": "Wld 15 repaired plates",
+      "kind": "Native isolated floor/cap additions; zero-part outcomes may be empty",
+      "width": 1200,
+      "height": 900,
+      "bytes": 545538,
+      "sha256": "6b6c4024f15134ef80f7ff3cbf9d101df6874144cc55b6b49f88854e0c3232c1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-15-whole-site.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-15-whole-site.png",
+      "title": "Wld 15 whole site",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 744461,
+      "sha256": "0e84557bdc571d3159ab828fb1f98afed53ae0923f79ffaf0081f7e7696d7002"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-16-repaired-plates.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-16-repaired-plates.png",
+      "title": "Wld 16 repaired plates",
+      "kind": "Native isolated floor/cap additions; zero-part outcomes may be empty",
+      "width": 1200,
+      "height": 900,
+      "bytes": 545538,
+      "sha256": "6b6c4024f15134ef80f7ff3cbf9d101df6874144cc55b6b49f88854e0c3232c1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-16-whole-site.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-16-whole-site.png",
+      "title": "Wld 16 whole site",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 792661,
+      "sha256": "5cc469e9ee50632cd2a99cec114c3455570a8c8aa863580b4478c2963707295c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-17-repaired-plates.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-17-repaired-plates.png",
+      "title": "Wld 17 repaired plates",
+      "kind": "Native isolated floor/cap additions; zero-part outcomes may be empty",
+      "width": 1200,
+      "height": 900,
+      "bytes": 545538,
+      "sha256": "16e7ac6b582be8455d4d0ff2c610d50f95818ee1021105d47d70a63d68cd8453"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-17-whole-site.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-17-whole-site.png",
+      "title": "Wld 17 whole site",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 734938,
+      "sha256": "02683e2768a51bc79bba37c13476d6ef2e46d2cc2cc962a7ce4865e94a2b748f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-18-repaired-plates.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-18-repaired-plates.png",
+      "title": "Wld 18 repaired plates",
+      "kind": "Native isolated floor/cap additions; zero-part outcomes may be empty",
+      "width": 1200,
+      "height": 900,
+      "bytes": 545538,
+      "sha256": "0956d7bdc06ebb3f867907dfa1d77b590de9b2c2bbe0afd1435451890aa0d0ad"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-18-whole-site.png",
+      "url": "development/levels/rebuild/captures/floor-closure-batch/wld-18-whole-site.png",
+      "title": "Wld 18 whole site",
+      "kind": "Native floor/cap construction overview or comparison; runtime gates open",
+      "width": 1200,
+      "height": 900,
+      "bytes": 721944,
+      "sha256": "925522cbb25910536138080843feb54f01078170b294c915a7aecb9b9289be81"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/academy-export-overview.png",

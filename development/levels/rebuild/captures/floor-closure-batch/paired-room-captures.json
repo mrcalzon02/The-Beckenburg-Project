@@ -1,0 +1,254 @@
+[
+  {
+    "site": "WLD-04",
+    "zone": "store",
+    "role": "floor",
+    "phase": "before",
+    "path": "development/levels/rebuild/captures/floor-closure-batch/wld-04-room-before.png",
+    "sha256": "01f75a2125dc64fea7e31cb32ff4dd82d5f6c51bfe76369b552368cfbf72af1a",
+    "source_glb_sha256": "b2a7f7098eeec354036c86c826b8d6a67448546db3ce34840b78e35e252c379a",
+    "eye": [
+      41.286293029785156,
+      7.62,
+      34.95245361328125
+    ],
+    "target": [
+      41.58629302978515,
+      6,
+      35.25245361328125
+    ],
+    "type": "NATIVE_INTACT_PAIRED_STRUCTURAL_VIEW_NEUTRAL150W_FILL",
+    "limitation": "Authored inspection eye, not verified avatar/fixture/runtime acceptance. Geometry intact; no render mask."
+  },
+  {
+    "site": "WLD-04",
+    "zone": "store",
+    "role": "floor",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/floor-closure-batch/wld-04-room-after.png",
+    "sha256": "b46c6baa5e009e2c94957d5f20a7ef0ae0b357862464764af4ffb5d9327a36b2",
+    "source_glb_sha256": "85f3a8d3b2516faccd8d72d566eec5afb5b2839d0621d78b0d7ff9defc660126",
+    "eye": [
+      41.286293029785156,
+      7.62,
+      34.95245361328125
+    ],
+    "target": [
+      41.58629302978515,
+      6,
+      35.25245361328125
+    ],
+    "type": "NATIVE_INTACT_PAIRED_STRUCTURAL_VIEW_NEUTRAL150W_FILL",
+    "limitation": "Authored inspection eye, not verified avatar/fixture/runtime acceptance. Geometry intact; no render mask."
+  },
+  {
+    "site": "WLD-05",
+    "zone": "haul",
+    "role": "ceiling-cap",
+    "phase": "before",
+    "path": "development/levels/rebuild/captures/floor-closure-batch/wld-05-room-before.png",
+    "sha256": "9ac3b5c07b9e60a664e4edd87e06b8430775e00b3379e739d8371cb97dd0fcf5",
+    "source_glb_sha256": "9b98b5bc0cfa50b37a638981442b08e5ca646a5827573ca137e8323842bd6aa8",
+    "eye": [
+      30.164154688517254,
+      -4.38,
+      34.59397951761881
+    ],
+    "target": [
+      30.464154688517254,
+      -3.16,
+      34.89397951761881
+    ],
+    "type": "NATIVE_INTACT_PAIRED_STRUCTURAL_VIEW_NEUTRAL150W_FILL",
+    "limitation": "Authored inspection eye, not verified avatar/fixture/runtime acceptance. Geometry intact; no render mask."
+  },
+  {
+    "site": "WLD-05",
+    "zone": "haul",
+    "role": "ceiling-cap",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/floor-closure-batch/wld-05-room-after.png",
+    "sha256": "4642f0399fcbb416955a8b5f3b0d7c4923abff61994fc5ba6c0cb5f95c72e071",
+    "source_glb_sha256": "8caf77bf3cdd013b0936a426df076024175c8ebada5bc70b4f00255b9a7d6683",
+    "eye": [
+      30.164154688517254,
+      -4.38,
+      34.59397951761881
+    ],
+    "target": [
+      30.464154688517254,
+      -3.16,
+      34.89397951761881
+    ],
+    "type": "NATIVE_INTACT_PAIRED_STRUCTURAL_VIEW_NEUTRAL150W_FILL",
+    "limitation": "Authored inspection eye, not verified avatar/fixture/runtime acceptance. Geometry intact; no render mask."
+  },
+  {
+    "site": "WLD-06",
+    "zone": "undercroft",
+    "role": "ceiling-cap",
+    "phase": "before",
+    "path": "development/levels/rebuild/captures/floor-closure-batch/wld-06-room-before.png",
+    "sha256": "ab70e906181797d70e43fa1e833e5218054eb5108e690ea52e91968be65c7f6f",
+    "source_glb_sha256": "bc09795ec372a7ce1f4c67d08e2dc4249445a158d1d3d78dd6871eb03b3ac0e1",
+    "eye": [
+      29.627938588460285,
+      -0.8799999999999999,
+      33.14168485005697
+    ],
+    "target": [
+      29.927938588460286,
+      0.33999999999999997,
+      33.441684850056966
+    ],
+    "type": "NATIVE_INTACT_PAIRED_STRUCTURAL_VIEW_NEUTRAL150W_FILL",
+    "limitation": "Authored inspection eye, not verified avatar/fixture/runtime acceptance. Geometry intact; no render mask."
+  },
+  {
+    "site": "WLD-06",
+    "zone": "undercroft",
+    "role": "ceiling-cap",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/floor-closure-batch/wld-06-room-after.png",
+    "sha256": "ac57bb2deefc1a03435fc63c31386436ddfbeacf64973375b746b374cfc49a03",
+    "source_glb_sha256": "095782aade4fea3277dfec6d144bcd20071779bd64ddb8f9e0a128f9787b1e31",
+    "eye": [
+      29.627938588460285,
+      -0.8799999999999999,
+      33.14168485005697
+    ],
+    "target": [
+      29.927938588460286,
+      0.33999999999999997,
+      33.441684850056966
+    ],
+    "type": "NATIVE_INTACT_PAIRED_STRUCTURAL_VIEW_NEUTRAL150W_FILL",
+    "limitation": "Authored inspection eye, not verified avatar/fixture/runtime acceptance. Geometry intact; no render mask."
+  },
+  {
+    "site": "WLD-08",
+    "zone": "tunnel",
+    "role": "ceiling-cap",
+    "phase": "before",
+    "path": "development/levels/rebuild/captures/floor-closure-batch/wld-08-room-before.png",
+    "sha256": "3435a4f7038ef4879178957df403c57370428ee4cd9436eb5202c1bdb51f1248",
+    "source_glb_sha256": "bad9c0d45da64c46f4c38ad63c84d50f47af6d02b4cb218801a7b08682c9edff",
+    "eye": [
+      28.310101826985676,
+      -0.8799999999999999,
+      34.561461766560875
+    ],
+    "target": [
+      28.610101826985677,
+      0.33999999999999997,
+      34.86146176656087
+    ],
+    "type": "NATIVE_INTACT_PAIRED_STRUCTURAL_VIEW_NEUTRAL150W_FILL",
+    "limitation": "Authored inspection eye, not verified avatar/fixture/runtime acceptance. Geometry intact; no render mask."
+  },
+  {
+    "site": "WLD-08",
+    "zone": "tunnel",
+    "role": "ceiling-cap",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/floor-closure-batch/wld-08-room-after.png",
+    "sha256": "9750780168094163d50632cf899edf70b1b2792b0060e01256929dad9d0c9a5e",
+    "source_glb_sha256": "1525ec3f37fbf6774619681d9d59f04def3dd3c1741beeb8576d1ff60a275fb5",
+    "eye": [
+      28.310101826985676,
+      -0.8799999999999999,
+      34.561461766560875
+    ],
+    "target": [
+      28.610101826985677,
+      0.33999999999999997,
+      34.86146176656087
+    ],
+    "type": "NATIVE_INTACT_PAIRED_STRUCTURAL_VIEW_NEUTRAL150W_FILL",
+    "limitation": "Authored inspection eye, not verified avatar/fixture/runtime acceptance. Geometry intact; no render mask."
+  },
+  {
+    "site": "WLD-09",
+    "zone": "turbine",
+    "role": "ceiling-cap",
+    "phase": "before",
+    "path": "development/levels/rebuild/captures/floor-closure-batch/wld-09-room-before.png",
+    "sha256": "18e11edce9384c19589345f6956b69b2eb5af72d6edc4d620c7402675ab064d0",
+    "source_glb_sha256": "f49b69c3ec1bd68accef5c71c6c4d3725874cedd32e08f0e90e40c6396e1a1be",
+    "eye": [
+      55.30303446451823,
+      -4.38,
+      40.82576115926107
+    ],
+    "target": [
+      55.603034464518224,
+      1.84,
+      41.12576115926107
+    ],
+    "type": "NATIVE_INTACT_PAIRED_STRUCTURAL_VIEW_NEUTRAL150W_FILL",
+    "limitation": "Authored inspection eye, not verified avatar/fixture/runtime acceptance. Geometry intact; no render mask."
+  },
+  {
+    "site": "WLD-09",
+    "zone": "turbine",
+    "role": "ceiling-cap",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/floor-closure-batch/wld-09-room-after.png",
+    "sha256": "a6751f2fc2ef9cfe1564d95b4da4f4176174402fa034b9de7b2703b6b04be4c3",
+    "source_glb_sha256": "740862241b4611cdf9ed6ec4d8bf8bec733a4e87a18778ab9519ddca0e4bddd9",
+    "eye": [
+      55.30303446451823,
+      -4.38,
+      40.82576115926107
+    ],
+    "target": [
+      55.603034464518224,
+      1.84,
+      41.12576115926107
+    ],
+    "type": "NATIVE_INTACT_PAIRED_STRUCTURAL_VIEW_NEUTRAL150W_FILL",
+    "limitation": "Authored inspection eye, not verified avatar/fixture/runtime acceptance. Geometry intact; no render mask."
+  },
+  {
+    "site": "WLD-14",
+    "zone": "tower1",
+    "role": "floor",
+    "phase": "before",
+    "path": "development/levels/rebuild/captures/floor-closure-batch/wld-14-room-before.png",
+    "sha256": "a201d1d90aec6c7ebdc5d1150585af88859daa9490a5b6f901e5b4c7036ee2b0",
+    "source_glb_sha256": "52103b4b63a0044459a5071cd77ea2a5f3cf4c2df44917e1ae5f54c9329e2f88",
+    "eye": [
+      33.520286560058594,
+      5.220000000000001,
+      9.152776082356771
+    ],
+    "target": [
+      33.82028656005859,
+      3.6,
+      9.452776082356772
+    ],
+    "type": "NATIVE_INTACT_PAIRED_STRUCTURAL_VIEW_NEUTRAL150W_FILL",
+    "limitation": "Authored inspection eye, not verified avatar/fixture/runtime acceptance. Geometry intact; no render mask."
+  },
+  {
+    "site": "WLD-14",
+    "zone": "tower1",
+    "role": "floor",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/floor-closure-batch/wld-14-room-after.png",
+    "sha256": "66ace66e3dd523f92be2d77948de4ce3c8a8a54b4948cbe82649420b24afe067",
+    "source_glb_sha256": "de67d0bcc375d5d1f809ef0ea3a29b65f608f45f9871ce2829efbb2a5afa4f0b",
+    "eye": [
+      33.520286560058594,
+      5.220000000000001,
+      9.152776082356771
+    ],
+    "target": [
+      33.82028656005859,
+      3.6,
+      9.452776082356772
+    ],
+    "type": "NATIVE_INTACT_PAIRED_STRUCTURAL_VIEW_NEUTRAL150W_FILL",
+    "limitation": "Authored inspection eye, not verified avatar/fixture/runtime acceptance. Geometry intact; no render mask."
+  }
+]
