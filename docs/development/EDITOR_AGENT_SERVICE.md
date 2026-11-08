@@ -84,3 +84,13 @@ The process test also runs the complete House workflow while the unrelated defau
 Start with `summary` to get the active scene ID, revision, capabilities, operations and test names. `hierarchy<TAB>revision<TAB>offset<TAB>limit` returns the total count and up to 64 native hierarchy rows in editor order. `node<TAB>revision<TAB>id` returns one row with its stable ID, kind, label and position. The angle-bracketed TAB denotes one literal tab in the existing line protocol. Use the returned revision for a validated edit. Refresh the summary after a stale revision error. Full `inspect` remains available for full native snapshot data.
 
 Both localized queries use the host's current human editor hierarchy on its owner thread. The service keeps no independent scene index. The small replies bound transmitted data. Host adapters can still construct the full hierarchy internally. On the November 7 verification fixtures the full and single-node UTF-8 responses were 42,296 and 191 bytes for House, and 103,149 and 154 bytes for Castle. These measurements cover payload size only.
+
+## Batched headless edits
+
+`batch` takes the expected revision followed by one to 64 ordinary edit operations. Separate operations with a literal `|` field. All fields use the same tab delimiter as `edit`. A pipe inside a `key=value` field is part of its value. For example, the following request moves two props in a single native history entry. Replace `7` with the revision from `summary`.
+
+```text
+batch	7	move-prop	id=prop-0	x=1	y=0	z=3	|	move-prop	id=prop-1	x=2	y=0	z=4
+```
+
+The response carries the revision after the entire transaction. Use that revision for the next read, edit or undo. The service checks all operation names, applies supported human editor operations on the owner thread, validates the resulting scene and rolls back the transaction on failure. After an error, use `summary` to obtain the current revision. Native save is still explicit. The existing request limit of 16,384 UTF-16 code units applies to the complete line.

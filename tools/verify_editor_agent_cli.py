@@ -52,6 +52,24 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
         assert all(not row['ok'] for row in invalid)
         return sizes[0], sizes[-1]
 
+    def move(index, delta):
+        item = first['state']['props'][index]
+        return f'move-prop\tid=prop-{index}\tx={item["x"] + delta}\ty={item["y"]}\tz={item["z"]}'
+
+    edits = f'batch\t{revision}\t{move(0, .125)}\t|\t{move(1, .25)}'
+    accepted, inspected = run([edits, 'inspect'])
+    after_revision = accepted['result']['revision']
+    after = inspected['result']['state']
+    for index, delta in enumerate((.125, .25)):
+        assert after['props'][index]['x'] == first['state']['props'][index]['x'] + delta
+    restored = run([edits, f'undo\t{after_revision}', 'inspect'])[-1]['result']
+    assert restored['state'] == first['state'], 'One native undo reverses both edits'
+    bad = run([f'batch\t{revision}\t{move(0, .125)}\t|\tmove-prop\tid=missing-id', 'inspect'], expected=1)
+    assert not bad[0]['ok'] and bad[1]['result']['state'] == first['state'], 'Second operation failure rolls back the first'
+    malformed = run([edits + '\t|', f'batch\t{revision}\t|\t{move(0, .125)}',
+                     f'batch\t{revision}\t' + '\t|\t'.join([move(0, .125)] * 65), 'inspect'], expected=1)
+    assert all(not row['ok'] for row in malformed[:-1]) and malformed[-1]['result']['revision'] == revision
+
     house_sizes = verify_local_reads(first)
     rows = run([
         'inspect',

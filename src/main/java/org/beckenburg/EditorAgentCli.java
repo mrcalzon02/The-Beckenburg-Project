@@ -70,6 +70,30 @@ public final class EditorAgentCli {
         }
         return line.length()==0?null:line.toString();
     }
+    private static EditorAgentService.Command parseEdit(String[] fields, int start, int end) {
+        if (start >= end || fields[start].isEmpty()) throw new IllegalArgumentException("Expected edit operation");
+        Map<String,String> arguments = new LinkedHashMap<>();
+        for (int i = start + 1; i < end; i++) {
+            int split = fields[i].indexOf('=');
+            if (split < 1 || arguments.putIfAbsent(fields[i].substring(0, split), fields[i].substring(split + 1)) != null) {
+                throw new IllegalArgumentException("Expected unique key=value arguments");
+            }
+        }
+        return new EditorAgentService.Command(fields[start], arguments);
+    }
+
+    private static java.util.List<EditorAgentService.Command> parseBatch(String[] fields) {
+        var commands = new java.util.ArrayList<EditorAgentService.Command>();
+        int start = 2;
+        for (int i = start; i <= fields.length; i++) {
+            if (i == fields.length || fields[i].equals("|")) {
+                if (commands.size() == 64) throw new IllegalArgumentException("Batch exceeds 64 operations");
+                commands.add(parseEdit(fields, start, i));
+                start = i + 1;
+            }
+        }
+        return commands;
+    }
     static int run(EditorAgentService<?> service,BufferedReader requests,PrintStream responses)throws Exception{
         boolean failed=false;
         for(;;){
@@ -90,19 +114,12 @@ public final class EditorAgentCli {
                 }else{
                     if(parts.length<2)throw new IllegalArgumentException("Expected scene revision");
                     long revision=Long.parseLong(parts[1]);
-                    int expected=switch(command){case "edit"->-1;case "capture","test","node"->3;case "hierarchy"->4;default->2;};
+                    int expected=switch(command){case "edit","batch"->-1;case "capture","test","node"->3;case "hierarchy"->4;default->2;};
                     if((expected>=0&&parts.length!=expected)||(expected<0&&parts.length<3))
                         throw new IllegalArgumentException("Wrong argument count");
                     result=switch(command){
-                        case "edit" -> {
-                            Map<String,String> arguments=new LinkedHashMap<>();
-                            for(int i=3;i<parts.length;i++){
-                                int split=parts[i].indexOf('=');
-                                if(split<1||arguments.putIfAbsent(parts[i].substring(0,split),parts[i].substring(split+1))!=null)
-                                    throw new IllegalArgumentException("Expected unique key=value arguments");
-                            }
-                            yield service.transact(revision,parts[2],arguments);
-                        }
+                        case "edit" -> service.transact(revision, java.util.List.of(parseEdit(parts, 2, parts.length)));
+                        case "batch" -> service.transact(revision, parseBatch(parts));
                         case "node" -> service.node(revision,parts[2]);
                         case "hierarchy" -> service.hierarchy(revision,Integer.parseInt(parts[2]),Integer.parseInt(parts[3]));
                         case "undo" -> service.undo(revision);
