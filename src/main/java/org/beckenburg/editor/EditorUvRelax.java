@@ -14,25 +14,13 @@ final class EditorUvRelax {
     EditorUvRelax(State state,EditorMeshTopology graph,int[] island,int width,int height){
         this.faces=state.faces();this.island=island;this.width=width;this.height=height;
         int count=island.length*3;
-        root=new int[count];fixed=new boolean[count];
+        var chart=new EditorUvChart(state,graph,island);root=chart.root;fixed=chart.boundary;
         x=new double[count];y=new double[count];weight=new double[count];area=new double[island.length];
-        int[] local=new int[faces.size()];Arrays.fill(local,-1);
-        for(int i=0;i<island.length;i++)local[island[i]]=i;
-        for(int i=0;i<count;i++)root[i]=i;
-        for(int i=0;i<count;i++){
-            var e=graph.edges().get(island[i/3]*3+i%3);
-            int twin=e.twin();
-            if(EditorTopologyProject.uvNeighbor(state,graph,island[i/3],i%3)<0 || local[twin/3]<0){fixed[i]=true;fixed[next(i)]=true;continue;}
-            int t=local[twin/3]*3+twin%3;
-            join(i,next(t));join(next(i),t);
-        }
-        for(int i=0;i<count;i++)root[i]=find(i);
         for(int i=0;i<count;i++){
             var face=faces.get(island[i/3]);
             var c=switch(i%3){case 0->face.a();case 1->face.b();default->face.c();};
             if(c.pinned())fixed[root[i]]=true;
         }
-        for(int i=0;i<count;i++)if(fixed[i])fixed[root[i]]=true;
         boolean interior=false;
         for(int i=0;i<count;i++)if(!fixed[root[i]]){interior=true;break;}
         if(!interior)throw new IllegalArgumentException("This UV island has no interior vertices to relax");
@@ -55,8 +43,6 @@ final class EditorUvRelax {
         }
     }
     private static int next(int i){return i/3*3+(i%3+1)%3;}
-    private int find(int i){while(root[i]!=i){root[i]=root[root[i]];i=root[i];}return i;}
-    private void join(int a,int b){root[find(a)]=find(b);}
     private double signed(int face,double[] u,double[] v){
         int a=root[3*face],b=root[3*face+1],c=root[3*face+2];
         return (u[b]-u[a])*(v[c]-v[a])-(v[b]-v[a])*(u[c]-u[a]);

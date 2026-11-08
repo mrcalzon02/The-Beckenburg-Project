@@ -736,6 +736,7 @@ public final class G2TexturedModelGuiTest {
     }
     private void verifyRelaxedFan()throws Exception{
         var obj=EditorUvRelaxTest.source(Path.of(System.getProperty("user.home"),"fan"));
+        byte[] originalObj=Files.readAllBytes(obj);
         edt(()->ui.loadSource(obj));await(()->ready(ui));
         edt(()->{
             project=(EditorTopologyProject)field(ui,"topologyProject");
@@ -817,6 +818,24 @@ public final class G2TexturedModelGuiTest {
         check(!project.snapshot().faces().get(0).marked(2),"Material Editor cleared selected seam");
         for(int step=0;step<4;step++){edt(()->button(ui,"undoMesh"));await(()->ready(ui));}
         check(project.snapshot().equals(original),"Undo human seam edits exactly");
+        edt(()->button(ui,"unwrapIsland"));await(()->reviewed(ui));check(project.snapshot().equals(original),"LSCM preview changed live state");
+        reviewPixels();
+        edt(()->{var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");
+            check(((JLabel)field(workspace,"status")).getText().contains("RMS angle error"),"Unwrap preview shows measured angular error");
+            captureMaterial("uv-unwrap-preview.png");});
+        edt(()->button(ui,"cancelFaceEdit"));await(()->ready(ui));check(project.snapshot().equals(original),"Cancel LSCM");
+        edt(()->button(ui,"unwrapIsland"));applyReview();
+        var flat=project.snapshot();check(flat.faces().get(4)==original.faces().get(4),"LSCM crossed the UV seam");
+        for(int i=0;i<4;i++){near(flat.faces().get(i).c().u(),.5);near(flat.faces().get(i).c().v(),.5);}
+        published.set(null);reviewPixels();edt(()->{captureMaterial("uv-unwrap.png");button(ui,"apply");});await(()->published.get()!=null);
+        var flatGame=GlbProps.model(published.get());
+        var library=ImportedAssetLibrary.root();String name=published.get();
+        check(EditorTopologyProject.open(library.resolve(name+".authoring.btop")).snapshot().equals(flat),"Unwrap publication lost native editable UVs");
+        check(Arrays.equals(originalObj,Files.readAllBytes(library.resolve(name+".source.obj"))) && Arrays.equals(originalObj,Files.readAllBytes(obj)),
+            "Unwrap changed the original OBJ or its source archive");
+        for(int i=0;i<flat.faces().size();i++){var t=flatGame.triangles().get(i);var f=flat.faces().get(i);
+            near(t.a().u(),f.a().u());near(t.a().v(),f.a().v());near(t.b().u(),f.b().u());near(t.b().v(),f.b().v());near(t.c().u(),f.c().u());near(t.c().v(),f.c().v());}
+        edt(()->button(ui,"undoMesh"));await(()->ready(ui));check(project.snapshot().equals(original),"Undo conformal unwrap exactly");
     }
     public static void main(String[] args) throws Exception {
         Path home=Files.createTempDirectory("g2-textured-");

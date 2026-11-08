@@ -188,6 +188,7 @@ public final class AssetImportDialog {
     private final JButton pinUvs=new JButton("Pin"),unpinUvs=new JButton("Unpin");
     private final JComboBox<String> seamEdge=new JComboBox<>(new String[]{"A–B","B–C","C–A"});
     private final JButton markSeam=new JButton("Mark seam"),clearSeam=new JButton("Clear mark");
+    private final JButton unwrapIsland=new JButton("Unwrap island (LSCM)");
     private final JSpinner packPadding=new JSpinner(new SpinnerNumberModel(1,0,1024,1));
     private final JCheckBox keepPackDensity=new JCheckBox("Keep current texel density");
     private double materialRenderedRotation=Double.NaN;
@@ -570,7 +571,9 @@ public final class AssetImportDialog {
             materialTools.addTab("Pack",EditorTopologyWorkspace.column(new JLabel("SELECTED MATERIAL ISLANDS"),
                 EditorTopologyWorkspace.form("Gutter (texels)",packPadding),keepPackDensity,packMaterialUvs,
                 EditorTopologyWorkspace.form("Pin selection",pinScope),pinUvs,unpinUvs));
-            materialTools.addTab("Seams",EditorTopologyWorkspace.column(EditorTopologyWorkspace.form("Face edge",seamEdge),seamButtons));
+            materialTools.addTab("Seams",EditorTopologyWorkspace.column(EditorTopologyWorkspace.form("Face edge",seamEdge),seamButtons,unwrapIsland));
+            unwrapIsland.setToolTipText("Unfold this chart in texture pixels, holding its pinned UVs in place.");
+            unwrapIsland.addActionListener(e->{if(selectedHit!=null){long id=selectedHit.faceId();beginMaterialPreview(p->p.previewUnwrap(id));}});
             pinScope.setToolTipText("Packing holds any island with a pinned UV in place.");
             pinUvs.addActionListener(e->previewPin(true));
             unpinUvs.addActionListener(e->previewPin(false));
@@ -644,7 +647,7 @@ public final class AssetImportDialog {
         }
         boolean bound=material!=null;
         if(material==null&&materialList.getSelectedItem() instanceof EditorMeshMaterial m)material=m;
-        materialWorkspace.observe(state,face,material,modelingPreview!=null);
+        materialWorkspace.observe(state,face,material,modelingPreview==null?null:modelingPreview.description());
         if(material!=shownPaintMaterial){
             var prior=paintLayer.getSelectedValue();
             updatingPaintLayers=true;paintLayers.clear();
@@ -668,6 +671,7 @@ public final class AssetImportDialog {
         packMaterialUvs.setEnabled(layerEditable);packPadding.setEnabled(layerEditable);keepPackDensity.setEnabled(layerEditable);
         pinScope.setEnabled(layerEditable);pinUvs.setEnabled(layerEditable);unpinUvs.setEnabled(layerEditable);
         seamEdge.setEnabled(layerEditable);markSeam.setEnabled(layerEditable);clearSeam.setEnabled(layerEditable);
+        unwrapIsland.setEnabled(layerEditable);
         paintLayer.setEnabled(layerEditable);paintLayerName.setEnabled(layerEditable);
         addPaintLayer.setEnabled(layerEditable && paintLayers.size()<16);removePaintLayer.setEnabled(layerEditable && paintLayers.size()>1);
         raisePaintLayer.setEnabled(layerEditable && paintLayer.getSelectedIndex()>0);

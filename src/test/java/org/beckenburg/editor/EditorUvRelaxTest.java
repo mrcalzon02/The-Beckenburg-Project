@@ -71,7 +71,12 @@ public final class EditorUvRelaxTest {
         var packed=doc.previewPackMaterial(0,1,false).snapshot();
         check(packed.faces().size()==120000 && Math.abs(packed.faces().get(0).a().u()-.25)<1e-9,
             "Maximum material pack must place the island at its texel border");
-        System.out.println("PASS 120000-face fixed-boundary UV relaxation and material packing");
+        var flat=doc.previewUnwrap(0).snapshot();
+        var f=flat.faces().get(0);
+        double ux=f.b().u()-f.a().u(),uy=f.b().v()-f.a().v(),vx=f.c().u()-f.b().u(),vy=f.c().v()-f.b().v();
+        check(Math.abs(ux*vx+uy*vy)<1e-12 && Math.abs(Math.hypot(ux,uy)-Math.hypot(vx,vy))<1e-10,"Maximum flat chart lost angles or edge scale");
+        check(Math.abs(flat.faces().get((100*300+150)*2).a().u()-.5)<1e-9 && flat.faces().size()==120000,"Maximum chart interior did not unfold");
+        System.out.println("PASS 120000-face UV relaxation, packing and LSCM unwrap");
     }
     public static void verifyPack(EditorTopologyProject.State before,EditorTopologyProject.State after){
         double[][] bounds={{4,4,0,0},{4,4,0,0}};
@@ -159,6 +164,91 @@ public final class EditorUvRelaxTest {
         check(repeat.faces().get(1)==clear.faces().get(1),"Clearing an explicit mark joined discontinuous UVs");
         p.restore(before);
     }
+    private static EditorTopologyProject imported(Path dir,String name,String body)throws Exception{
+        var file=dir.resolve(name+".obj");Files.writeString(file,"mtllib fan.mtl\no "+name+"\nusemtl checker\n"+body);
+        var source=EditorObjMaterials.capture(file);
+        return EditorTopologyProject.fromMesh(source.mesh(),source.sourceFingerprint(),dir.resolve(name+".btop"));
+    }
+    private static void unwrap(Path dir)throws Exception{
+        javax.imageio.ImageIO.write(new java.awt.image.BufferedImage(8,4,java.awt.image.BufferedImage.TYPE_INT_ARGB),
+            "PNG",dir.resolve("checker.png").toFile());
+        String folded="""
+            v 0 0 0
+            v 1 0 0
+            v 0 1 0
+            v 1 0 1
+            vt 0 0
+            vt 1 0
+            vt .1 .4
+            vt .8 -.3
+            f 1/1 2/2 3/3
+            f 2/2 1/1 4/4
+            """;
+        var p=imported(dir,"fold",folded);
+        long id=p.snapshot().faces().get(0).id();
+        p.applyPreview(p.previewUvPins(id,0,true));p.applyPreview(p.previewUvPins(id,1,true));
+        var pinned=p.snapshot();var candidate=p.previewUnwrap(id);
+        check(p.snapshot()==pinned,"LSCM preview changed live document");
+        var first=candidate.snapshot().faces().get(0);var second=candidate.snapshot().faces().get(1);
+        check(first.a()==pinned.faces().get(0).a() && first.b()==pinned.faces().get(0).b(),"LSCM moved pinned corners");
+        check(Math.abs(first.c().u())<1e-9 && Math.abs(first.c().v()-2)<1e-9 &&
+            Math.abs(second.c().u()-1)<1e-9 && Math.abs(second.c().v()+2)<1e-9,"Folded triangles must unfold isometrically in texture pixels");
+        check(candidate.description().endsWith("→ 0.00°"),"Analytic folded fixture should have zero measured angular error: "+candidate.description());
+        p.applyPreview(candidate);p.save();check(EditorTopologyProject.open(p.documentPath()).snapshot().equals(p.snapshot()),"Unwrapped native document lost UVs");
+        var fitted=p.snapshot();
+        try{p.previewUnwrap(id);throw new AssertionError("Repeated LSCM created a numerical-only edit");}
+        catch(IllegalArgumentException expected){check(expected.getMessage().contains("already") && p.snapshot()==fitted,"Unexpected repeat refusal");}
+        p.restore(pinned);
+        p.applyPreview(p.previewUvPins(id,0,false));p.applyPreview(p.previewUvPins(id,1,false));
+        p.applyPreview(p.previewUvTransform(id,true,EditorTopologyProject.UvTransform.SCALE,-1,1,true));
+        p.applyPreview(p.previewUvPins(id,0,true));p.applyPreview(p.previewUvPins(id,1,true));
+        var reflected=p.previewUnwrap(id).snapshot();
+        check(Math.abs(reflected.faces().get(1).c().u()+1)<1e-9 && Math.abs(reflected.faces().get(0).c().v()-2)<1e-9,
+            "Mirrored chart lost its authored handedness");
+        var crossed=imported(dir,"pinned-fold",folded.replace("vt .8 -.3","vt .8 .3"));
+        long crossedId=crossed.snapshot().faces().get(0).id();
+        crossed.applyPreview(crossed.previewUvPins(crossedId,-1,true));var inverted=crossed.snapshot();
+        try{crossed.previewUnwrap(crossedId);throw new AssertionError("Folded fixed layout accepted");}
+        catch(IllegalArgumentException expected){check(expected.getMessage().contains("folds") && crossed.snapshot()==inverted,"Pinned fold refusal");}
+        var cone=imported(dir,"cone","""
+            v 0 0 0
+            v 1 0 0
+            v 1 1 0
+            v 0 1 0
+            v .5 .5 .75
+            vt 0 0
+            f 1/1 2/1 5/1
+            f 2/1 3/1 5/1
+            f 3/1 4/1 5/1
+            f 4/1 1/1 5/1
+            """);
+        var coneSource=cone.snapshot();long base=coneSource.faces().get(0).id();
+        var curved=cone.previewUnwrap(base);
+        check(curved.description().contains("undefined → ") && !curved.description().endsWith("→ 0.00°"),"Curved chart must report its residual angular distortion");
+        check(curved.snapshot().equals(cone.previewUnwrap(coneSource.faces().get(2).id()).snapshot()),"Unwrap changed when the seed face changed");
+        cone.applyPreview(cone.previewUvPins(base,0,true));cone.applyPreview(cone.previewUvPins(base,1,true));var conflict=cone.snapshot();
+        try{cone.previewUnwrap(base);throw new AssertionError("Coincident pin pair accepted");}
+        catch(IllegalArgumentException expected){check(expected.getMessage().contains("distinct") && cone.snapshot()==conflict,"Conflicting pins mutated native state");}
+        var closed=imported(dir,"tetra","""
+            v 0 0 0
+            v 1 0 0
+            v .5 .8660254 0
+            v .5 .2886751 .8164966
+            vt 0 0
+            f 1/1 3/1 2/1
+            f 1/1 2/1 4/1
+            f 2/1 3/1 4/1
+            f 3/1 1/1 4/1
+            """);
+        var before=closed.snapshot();long seed=before.faces().get(0).id();
+        try{closed.previewUnwrap(seed);throw new AssertionError("Uncut closed chart accepted");}
+        catch(IllegalArgumentException expected){check(expected.getMessage().contains("disk") && closed.snapshot()==before,"Closed-chart refusal");}
+        closed.applyPreview(closed.previewSeam(seed,0,true));closed.applyPreview(closed.previewSeam(seed,2,true));
+        closed.applyPreview(closed.previewSeam(before.faces().get(1).id(),2,true));
+        var disk=closed.previewUnwrap(seed).snapshot();
+        for(var f:disk.faces())check((f.b().u()-f.a().u())*(f.c().v()-f.a().v())-(f.b().v()-f.a().v())*(f.c().u()-f.a().u())>0,
+            "LSCM must open a collapsed tetrahedron along its authored cuts");
+    }
     public static void main(String[] args)throws Exception{
         var dir=Files.createTempDirectory("native-uv-relax-");
         try{
@@ -179,7 +269,8 @@ public final class EditorUvRelaxTest {
             var mirror=project.previewRelaxInterior(before.faces().get(0).id()).snapshot();
             check(Math.abs(mirror.faces().get(0).c().u()+.5)<1e-8,"Mirrored chart lost orientation");
             if(args.length==1 && args[0].equals("--stress"))maximum(dir);
-            System.out.println("PASS native UV interior relaxation: fixed boundary, seam exclusion, analytic center, mirrored winding and native reopen");
+            unwrap(dir);
+            System.out.println("PASS native UV relaxation and conformal unfold: pinned fold in rectangular texels, mirrored chart, cut tetrahedron and native reopen");
         }finally{
             try(var paths=Files.walk(dir)){for(var file:paths.sorted(Comparator.reverseOrder()).toList())Files.deleteIfExists(file);}
         }

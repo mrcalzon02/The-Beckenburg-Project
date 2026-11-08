@@ -716,6 +716,15 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
             before.glbSource(),before.frames(),before.quads());
         return new EditPreview(this,before,after,observed.revision(),"RELAX UV INTERIOR / "+island.length+" faces");
     }
+    public EditPreview previewUnwrap(long faceId){
+        var observed=observe();var before=observed.snapshot();var graph=observed.topology();
+        var material=boundPaintMaterial(before,faceId);
+        int[] island=uvFaces(before,faceId,graph);
+        var result=new EditorUvUnwrap(before,graph,island,material.width(),material.height()).solve();
+        var after=new State(id,sourceFingerprint,before.name(),before.sourceBytes(),before.vertices(),result.faces(),before.materials(),
+            before.glbSource(),before.frames(),before.quads());
+        return new EditPreview(this,before,after,observed.revision(),"LSCM / "+island.length+" faces / "+result.angleReport());
+    }
     public synchronized EditPreview previewUvTransform(long faceId,boolean island,UvTransform operation,double first,double second,boolean origin){
         Objects.requireNonNull(operation);
         if(!Double.isFinite(first)||!Double.isFinite(second)||Math.abs(first)>1_000_000||Math.abs(second)>1_000_000

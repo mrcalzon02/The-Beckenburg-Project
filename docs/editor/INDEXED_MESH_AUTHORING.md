@@ -250,3 +250,11 @@ Native BTOP version 11 retains pins on save and reopen. Game meshes consume the 
 In the Material Editor's **Seams** tab, select a bound face and choose edge A–B, B–C or C–A. **Mark seam** previews a cut on both sides of a paired edge. Apply records one native history entry. Pink lines show authored marks. The original UV coordinates remain in place until an operation moves them.
 
 Connected-island transforms, packing, relaxation and vertex pinning stop at these cuts. **Clear mark** removes the authored cut. Differing UV coordinates and material boundaries continue to separate islands. BTOP version 12 stores the marks in the authoring document. The game consumes the exported per-corner UV coordinates.
+
+### Conformal unwrapping
+
+Select a bound face in **Seams** and choose **Unwrap island (LSCM)**. Existing UV discontinuities, material boundaries and authored cuts define the chart. A closed surface needs cuts that open the selected island into a disk. Apply writes the reviewed coordinates in one undo step. The Pack tab can then place the resulting islands in the atlas.
+
+The solver fits triangle angles in texture pixels, including on rectangular textures. It holds user pins at their exact UVs and supplies boundary anchors when fewer than two vertices are pinned. It preserves the chart's existing handedness when its signed UV area is nonzero. The preview reports the root-mean-square difference between the 3D corner angles and the UV corner angles in degrees. Collapsed source triangles have undefined initial angular error.
+
+The editor refuses degenerate geometry, conflicting pins, nonconvergence, folded output or a self-intersecting boundary. The solve and boundary checks use bounded work. Refusal leaves the document untouched. [Least Squares Conformal Maps, Lévy et al.](https://www.cs.jhu.edu/~misha/Fall09/Levy02.pdf)
