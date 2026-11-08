@@ -416,13 +416,17 @@ public final class GlbProps {
     }
     static synchronized BufferedImage renderNativeMaterialReview(byte[] bytes,SceneRenderer renderer,double rotation,
             List<Long> faceIds,java.util.function.LongPredicate visibleFace,int checkerSize)throws IOException{
-        renderReview(bytes,renderer,rotation,faceIds,visibleFace,checkerSize,null);
+        renderReview(bytes,renderer,rotation,faceIds,visibleFace,checkerSize,0,null);
         return renderer.image();
     }
     static synchronized MaterialReviewFrame materialReviewFrame(byte[] bytes,SceneRenderer renderer,double rotation,
             org.beckenburg.editor.EditorMeshPipeline.Mesh source,java.util.function.LongPredicate visibleFace,int checkerSize)throws IOException{
-        var frame=new MaterialReviewFrame(renderer.image());
-        renderReview(bytes,renderer,rotation,source.faceIds(),visibleFace,checkerSize,frame);
+        return materialReviewFrame(bytes,renderer,rotation,source,visibleFace,checkerSize,0);
+    }
+    static synchronized MaterialReviewFrame materialReviewFrame(byte[] bytes,SceneRenderer renderer,double rotation,
+            org.beckenburg.editor.EditorMeshPipeline.Mesh source,java.util.function.LongPredicate visibleFace,int checkerSize,int mip)throws IOException{
+        var frame=new MaterialReviewFrame(renderer.image(),mip==0);
+        renderReview(bytes,renderer,rotation,source.faceIds(),visibleFace,checkerSize,mip,frame);
         frame.bindVisible(source);
         return frame;
     }
@@ -434,7 +438,7 @@ public final class GlbProps {
         return x+image.getWidth()*imageRow(v,image.getHeight(),vehicleUvMaterials.get(index),samplerWrapT.get(index));
     }
     private static void renderReview(byte[] bytes,SceneRenderer renderer,double rotation,
-            List<Long> faceIds,java.util.function.LongPredicate visibleFace,int checkerSize,MaterialReviewFrame frame)throws IOException{
+            List<Long> faceIds,java.util.function.LongPredicate visibleFace,int checkerSize,int mip,MaterialReviewFrame frame)throws IOException{
         if(checkerSize<0 || checkerSize>2048)throw new IOException("Invalid checker size");
         List<List<?>> tables=List.of(textures,vehicleUvMaterials,samplerWrapS,samplerWrapT,materialNames,diffuseFactors);int[] lengths=tables.stream().mapToInt(List::size).toArray();int first=TEXTURE_BASE+textures.size();
         try{
@@ -453,6 +457,11 @@ public final class GlbProps {
                 }
                 textures.set(i,checker);
                 diffuseFactors.set(i,new double[]{1,1,1,diffuseFactors.get(i)[3]});
+            }
+            if(mip>0)for(int i=lengths[0];i<textures.size();i++){
+                int material=TEXTURE_BASE+i;
+                boolean alpha=gltfBlendMaterials.contains(material)||gltfMaskCutoffs.containsKey(material);
+                textures.set(i,MaterialReviewMip.level(textures.get(i),mip,alpha));
             }
             var ids=faceIds;
             if(frame!=null && model.triangles().size()!=faceIds.size())throw new IOException("Native face order unavailable");

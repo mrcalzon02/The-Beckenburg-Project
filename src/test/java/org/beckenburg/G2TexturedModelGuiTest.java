@@ -839,6 +839,13 @@ public final class G2TexturedModelGuiTest {
         edt(()->button(ui,"undoMesh"));await(()->ready(ui));check(project.snapshot().equals(original),"Undo conformal unwrap exactly");
     }
     private void verifyProjectedStroke()throws Exception{
+        var odd=new BufferedImage(3,1,BufferedImage.TYPE_INT_ARGB);
+        odd.setRGB(2,0,0xffffffff);
+        check(MaterialReviewMip.level(odd,1,false).getRGB(0,0)==0xff9c9c9c,"Odd-width footprint must retain the final sRGB texel");
+        var translucent=new BufferedImage(2,1,BufferedImage.TYPE_INT_ARGB);
+        translucent.setRGB(0,0,0x00ff0000);translucent.setRGB(1,0,0xff0000ff);
+        check(MaterialReviewMip.level(translucent,1,true).getRGB(0,0)==0x800000ff,"Transparent RGB leaked into filtered color");
+        check(MaterialReviewMip.level(translucent,1,false).getRGB(0,0)==0xffbc00bc,"Opaque mip discarded hidden RGB");
         Path source=Files.createDirectories(Path.of(System.getProperty("user.home"),"projection"));
         var image=new BufferedImage(16,9,BufferedImage.TYPE_INT_ARGB);
         for(int y=0;y<9;y++)for(int x=0;x<16;x++)image.setRGB(x,y,
@@ -938,6 +945,7 @@ public final class G2TexturedModelGuiTest {
             check(GlbProps.sample(f.material(),u,.5)==((i<2?ink:image.getRGB(15,4))&0xffffff),"Game sample differs on projected face "+i);
         }
         check(EditorTopologyProject.open(ImportedAssetLibrary.root().resolve(published.get()+".authoring.btop")).snapshot().equals(painted),"Projection archive differs");
+        int[][] noPadding=seamMipViews("projected-no-padding-mip2.png");
         edt(()->button(ui,"undoMesh"));await(()->ready(ui));check(project.snapshot().equals(before),"Undo complete projected seam stroke");
         reviewPixels();
         var opaque=(MaterialReviewFrame)field(ui,"projectedFrame");
@@ -953,6 +961,13 @@ public final class G2TexturedModelGuiTest {
         applyReview();
         var padded=ImageIO.read(new java.io.ByteArrayInputStream(project.snapshot().materials().get(0).png()));
         for(int x=0;x<16;x++)check(padded.getRGB(x,4)==(x>=3&&x<=11?ink:image.getRGB(x,4)),"Padded seam texel "+x);
+        int[][] paddedViews=seamMipViews("projected-padding-mip2.png");
+        for(int angle=0;angle<paddedViews.length;angle++){
+            int improved=0;
+            for(int i=0;i<paddedViews[angle].length;i++)
+                if(colorDistance(paddedViews[angle][i],ink)<colorDistance(noPadding[angle][i],ink))improved++;
+            check(improved>0,"Padding must preserve more ink in the filtered model view at angle index "+angle);
+        }
         edt(()->button(ui,"undoMesh"));await(()->ready(ui));check(project.snapshot().equals(before),"Undo padded stroke");
         for(int x=0;x<8;x++)image.setRGB(x,4,image.getRGB(x,4)&0xffffff);
         var png=new java.io.ByteArrayOutputStream();ImageIO.write(image,"PNG",png);
@@ -971,6 +986,26 @@ public final class G2TexturedModelGuiTest {
     private static void projectedMouse(JLabel view,int type,int x,int y){
         view.dispatchEvent(new java.awt.event.MouseEvent(view,type,System.currentTimeMillis(),java.awt.event.InputEvent.BUTTON1_DOWN_MASK,
             x,y,1,false,type==java.awt.event.MouseEvent.MOUSE_DRAGGED?0:1));
+    }
+    private int[][] seamMipViews(String evidence)throws Exception{
+        int[][] views=new int[2][];
+        for(int i=0;i<views.length;i++){
+            double angle=i*22d;
+            edt(()->{select("materialReviewMode",5);spin("materialRotation",angle);});
+            views[i]=reviewPixels();
+            var frame=(MaterialReviewFrame)field(ui,"projectedFrame");int visible=0;
+            for(int p=0;p<views[i].length;p++)if(frame.face(p)>=0){
+                visible++;check(frame.texel(p)==-1,"Filtered footprint cannot identify a single paint texel");
+            }
+            check(visible>0,"Mip diagnostic lost visible model");
+            if(i==0)edt(()->captureMaterial(evidence));
+        }
+        edt(()->{select("materialReviewMode",0);spin("materialRotation",0d);});reviewPixels();
+        return views;
+    }
+    private static int colorDistance(int pixel,int ink){
+        int r=(pixel>>>16&255)-(ink>>>16&255),g=(pixel>>>8&255)-(ink>>>8&255),b=(pixel&255)-(ink&255);
+        return r*r+g*g+b*b;
     }
     public static void main(String[] args) throws Exception {
         Path home=Files.createTempDirectory("g2-textured-");

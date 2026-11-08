@@ -14,11 +14,13 @@ final class MaterialReviewFrame {
     private long outlineId=-1;
     private BufferedImage outline;
     private final Map<Long,String> bindings=new HashMap<>();
-    MaterialReviewFrame(BufferedImage image){
+    final boolean sourceTexels;
+    MaterialReviewFrame(BufferedImage image,boolean sourceTexels){
+        this.sourceTexels=sourceTexels;
         this.image=image;int n=Math.multiplyExact(image.getWidth(),image.getHeight());
         face=new long[n];texel=new int[n];Arrays.fill(face,-1);Arrays.fill(texel,-1);
     }
-    void record(int pixel,long id,int address){face[pixel]=id;texel[pixel]=address;}
+    void record(int pixel,long id,int address){face[pixel]=id;texel[pixel]=sourceTexels?address:-1;}
     int pixel(int x,int y){
         return x<0||y<0||x>=image.getWidth()||y>=image.getHeight()?-1:y*image.getWidth()+x;
     }

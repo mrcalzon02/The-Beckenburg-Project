@@ -197,9 +197,9 @@ public final class AssetImportDialog {
     private boolean updatingPaintLayers;
     private EditorTopologyProject.State materialRenderState;
     private EditorMaterialWorkspace.Visibility materialRenderedVisibility;
-    private final JComboBox<String> materialReviewMode=new JComboBox<>(new String[]{"Material","Checker · 1 texel","Checker · 8 texels","Checker · 32 texels"});
+    private final JComboBox<String> materialReviewMode=new JComboBox<>(new String[]{"Material","Checker · 1 texel","Checker · 8 texels","Checker · 32 texels","Mip 1","Mip 2","Mip 3","Mip 4"});
     private static final int[] CHECKER_SIZES={0,1,8,32};
-    private int renderedChecker;
+    private int renderedMode;
     private final JLabel uvDensity=new JLabel("Select a bound face to measure UVs");
     private final JButton fixUvStretch=new JButton("Fix selected face stretch");
     private final JButton relaxUvInterior=new JButton("Relax island interior");
@@ -667,6 +667,7 @@ public final class AssetImportDialog {
                 var point=reviewPoint(e,frame);
                 long hit=frame.face(frame.pixel(point.x,point.y));
                 if(!materialWorkspace.pencilActive()){if(hit>=0)selectMaterialFace(hit);return;}
+                if(!frame.sourceTexels){materialWorkspace.previewIssue("Select Material to paint base-level texels.");return;}
                 var layer=paintLayer.getSelectedValue();
                 if(selectedHit==null||layer==null||shownPaintMaterial==null)return;
                 projectedStroke=new MaterialReviewStroke(frame,topologyProject.observe(),selectedHit.faceId(),layer.id(),
@@ -759,21 +760,23 @@ public final class AssetImportDialog {
             uvDensity.setText(density.map(d->d.texelsPerUnit()==0?"Collapsed UV triangle":
                 String.format(Locale.ROOT,"%.2f texels/unit · %.2f× stretch",d.texelsPerUnit(),d.stretch())).orElse("Degenerate model triangle"));
         }else uvDensity.setText("Select a bound face to measure UVs");
-        int checker=CHECKER_SIZES[materialReviewMode.getSelectedIndex()];
+        int mode=materialReviewMode.getSelectedIndex();
+        int checker=mode<CHECKER_SIZES.length?CHECKER_SIZES[mode]:0;
+        int mip=Math.max(0,mode-CHECKER_SIZES.length+1);
         if(materialWorkspace.visibleFaces()==0){
             materialRenderState=null;projectedFrame=null;projectedStroke=null;materialRuntime.setIcon(null);materialRuntime.setText("No visible faces");return;
         }
         int width=materialWorkspace.modelView()?Math.max(160,Math.min(840,materialRuntime.getWidth())):280;
         int height=materialWorkspace.modelView()?Math.max(120,Math.min(600,materialRuntime.getHeight())):190;
-        if(materialRendering||state==materialRenderState&&rotation==materialRenderedRotation&&checker==renderedChecker&&visibility.equals(materialRenderedVisibility)&&width==reviewWidth&&height==reviewHeight)return;
+        if(materialRendering||state==materialRenderState&&rotation==materialRenderedRotation&&mode==renderedMode&&visibility.equals(materialRenderedVisibility)&&width==reviewWidth&&height==reviewHeight)return;
         reviewWidth=width;reviewHeight=height;
-        materialRenderState=state;materialRenderedRotation=rotation;materialRenderedVisibility=visibility;renderedChecker=checker;materialRendering=true;projectedFrame=null;projectedStroke=null;materialRuntime.setIcon(null);materialRuntime.setText("Rendering captured native state...");
+        materialRenderState=state;materialRenderedRotation=rotation;materialRenderedVisibility=visibility;renderedMode=mode;materialRendering=true;projectedFrame=null;projectedStroke=null;materialRuntime.setIcon(null);materialRuntime.setText("Rendering captured native state...");
         var captured=state;var mesh=modelingPreview!=null?modelingMesh:
             workingObservation!=null && workingObservation.snapshot()==state ? workingObservation.mesh() : topologyProject.mesh();
         new SwingWorker<MaterialReviewFrame,Void>(){
-            protected MaterialReviewFrame doInBackground()throws Exception{var renderer=new SceneRenderer();renderer.setRenderSize(width,height);return GlbProps.materialReviewFrame(EditorGlbWriter.encode(mesh),renderer,Math.toRadians(rotation),mesh,visibility.filtered()?visibility::includes:null,checker);}
+            protected MaterialReviewFrame doInBackground()throws Exception{var renderer=new SceneRenderer();renderer.setRenderSize(width,height);return GlbProps.materialReviewFrame(EditorGlbWriter.encode(mesh),renderer,Math.toRadians(rotation),mesh,visibility.filtered()?visibility::includes:null,checker,mip);}
             protected void done(){materialRendering=false;var current=modelingPreview!=null?modelingPreview.snapshot():topologyProject==null?null:topologyProject.snapshot();
-                if(current==captured&&checker==CHECKER_SIZES[materialReviewMode.getSelectedIndex()]&&visibility.equals(materialWorkspace.visibility())&&rotation==((Number)materialRotation.getValue()).doubleValue()){try{projectedFrame=get();materialRuntime.setIcon(new ImageIcon(projectedFrame.image));materialRuntime.setText("");}catch(Exception failure){projectedFrame=null;materialRuntime.setIcon(null);materialRuntime.setText("Preview unavailable: "+rootMessage(failure));}}
+                if(current==captured&&mode==materialReviewMode.getSelectedIndex()&&visibility.equals(materialWorkspace.visibility())&&rotation==((Number)materialRotation.getValue()).doubleValue()){try{projectedFrame=get();materialRuntime.setIcon(new ImageIcon(projectedFrame.image));materialRuntime.setText("");}catch(Exception failure){projectedFrame=null;materialRuntime.setIcon(null);materialRuntime.setText("Preview unavailable: "+rootMessage(failure));}}
                 refreshMaterialWindow();
             }
         }.execute();
