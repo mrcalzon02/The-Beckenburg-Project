@@ -39,15 +39,33 @@ final class EditorPaintLayer {
         if (next.size()>MAX_TILES) throw new IllegalArgumentException("Material paint tile budget exceeded");
         return next.equals(tiles)?this:new EditorPaintLayer(next);
     }
-    void draw(BufferedImage image) {
+    void draw(BufferedImage image,EditorMeshMaterial.PaintStyle style) {
         int columns=(image.getWidth()+SIDE-1)/SIDE;
         for (var entry:tiles.entrySet()) {
             int x0=(entry.getKey()%columns)*SIDE,y0=(entry.getKey()/columns)*SIDE;
             for (int y=0;y<SIDE && y+y0<image.getHeight();y++) for(int x=0;x<SIDE && x+x0<image.getWidth();x++){
                 int color=entry.getValue()[y*SIDE+x];
-                if (color!=0) image.setRGB(x0+x,y0+y,color);
+                if (color!=0) image.setRGB(x0+x,y0+y,composite(image.getRGB(x0+x,y0+y),color,style));
             }
         }
+    }
+    private static int composite(int base,int ink,EditorMeshMaterial.PaintStyle style) {
+        double opacity=style.opacity()/100d,backdrop=(base>>>24)/255d;
+        double alpha=opacity+backdrop*(1-opacity);
+        if(alpha==0)return 0;
+        int result=(int)Math.round(alpha*255)<<24;
+        for(int shift=0;shift<=16;shift+=8){
+            int b=(base>>>shift)&255,s=(ink>>>shift)&255;
+            double blended=switch(style.blend()){
+                case NORMAL -> s;
+                case ADD -> Math.min(255,b+s);
+                case MULTIPLY -> b*s/255d;
+                case SCREEN -> 255-(255-b)*(255-s)/255d;
+            };
+            double value=((1-opacity)*backdrop*b + opacity*((1-backdrop)*s+backdrop*blended))/alpha;
+            result|=(int)Math.round(value)<<shift;
+        }
+        return result;
     }
     void write(DataOutputStream out)throws IOException {
         out.writeInt(tiles.size());

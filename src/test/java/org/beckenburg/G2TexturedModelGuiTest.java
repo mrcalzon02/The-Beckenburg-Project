@@ -220,6 +220,7 @@ public final class G2TexturedModelGuiTest {
         edt(()->button(ui,"redoMesh"));
         await(()->ready(ui));
         check(project.snapshot().equals(painted),"Redo restores the painted layer");
+        verifyLayerStyle(workspace,painted);
         edt(()->((JList<?>)field(workspace,"faceList")).setSelectedIndex(10));
         await(()->{try{return !(boolean)field(ui,"materialRendering") && field(ui,"materialRenderState")==project.snapshot()
             && ((JLabel)field(ui,"materialRuntime")).getIcon()!=null;}catch(Exception e){throw new RuntimeException(e);}});
@@ -244,6 +245,43 @@ public final class G2TexturedModelGuiTest {
         edt(()->button(ui,"undoMesh"));
         await(()->ready(ui));
         check(project.snapshot().equals(original),"Return fixture to the original textured state after publication");
+    }
+    private void verifyLayerStyle(EditorMaterialWorkspace workspace,EditorTopologyProject.State painted)throws Exception{
+        edt(()->{
+            ((JList<?>)field(workspace,"faceList")).setSelectedIndex(10);
+            ((JTabbedPane)field(ui,"materialTools")).setSelectedIndex(2);
+            ((JComboBox<?>)field(ui,"paintBlend")).setSelectedItem(EditorMeshMaterial.Blend.MULTIPLY);
+            ((JSpinner)field(ui,"paintOpacity")).setValue(50);
+            button(ui,"previewPaintStyle");
+        });
+        await(()->reviewed(ui));
+        check(project.snapshot()==painted,"Style preview mutated the live layer");
+        applyReview();
+        var styled=project.snapshot();
+        edt(()->((JList<?>)field(workspace,"faceList")).setSelectedIndex(10));
+        await(()->{try{return !(boolean)field(ui,"materialRendering") && field(ui,"materialRenderState")==styled &&
+            ((JLabel)field(ui,"materialRuntime")).getIcon()!=null;}catch(Exception e){throw new RuntimeException(e);}});
+        edt(()->{
+            var pane=((JDialog)field(ui,"materialDialog")).getContentPane();
+            var shot=new BufferedImage(pane.getWidth(),pane.getHeight(),BufferedImage.TYPE_INT_ARGB);
+            var graphics=shot.createGraphics();
+            try{pane.printAll(graphics);}finally{graphics.dispose();}
+            ImageIO.write(shot,"png",output.resolve("layer-settings.png").toFile());
+            button(ui,"saveMesh");
+            check(ui.exportObj(output.resolve("styled.obj.zip")),"Export editable layer settings");
+            button(ui,"apply");
+        });
+        await(()->published.get()!=null);
+        var game=GlbProps.model(published.get());
+        check(GlbProps.sampleRgba(game.triangles().get(10).material(),.625,.125)==0xff008000,
+            "Game must show 50% multiply of magenta over green");
+        var file=ImportedAssetLibrary.root().resolve(published.get()+".authoring.btop");
+        check(EditorTopologyProject.open(file).snapshot().equals(styled),"Layer settings lost in native archive");
+        Files.copy(file,output.resolve("styled.btop"),StandardCopyOption.REPLACE_EXISTING);
+        published.set(null);
+        edt(()->button(ui,"undoMesh"));
+        await(()->ready(ui));
+        check(project.snapshot().equals(painted),"Undo style must retain original paint stroke");
     }
     private void verifyPaintRecovery(EditorTopologyProject.State painted)throws Exception{
         long revision=project.revision();

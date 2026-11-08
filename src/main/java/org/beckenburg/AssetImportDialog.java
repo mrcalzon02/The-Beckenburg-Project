@@ -163,6 +163,10 @@ public final class AssetImportDialog {
     private final JLabel uvFirstLabel=new JLabel("U distance"),uvSecondLabel=new JLabel("V distance");
     private final JButton previewUv=new JButton("PREVIEW UV TRANSFORM");
     private JTabbedPane materialTools;
+    private final JComboBox<EditorMeshMaterial.Blend> paintBlend=new JComboBox<>(EditorMeshMaterial.Blend.values());
+    private final JSpinner paintOpacity=new JSpinner(new SpinnerNumberModel(100,0,100,1));
+    private final JButton previewPaintStyle=new JButton("Preview layer settings");
+    private EditorMeshMaterial shownPaintMaterial;
     private EditorTopologyProject.State materialRenderState;
     private EditorMaterialWorkspace.Visibility materialRenderedVisibility;
     private double materialRenderedRotation=Double.NaN;
@@ -506,6 +510,14 @@ public final class AssetImportDialog {
             var values=new JPanel(new GridLayout(0,2,5,5));values.add(uvFirstLabel);values.add(uvFirst);values.add(uvSecondLabel);values.add(uvSecond);
             var uvSettings=EditorTopologyWorkspace.column(new JLabel("NATIVE CORNER UVS"),EditorTopologyWorkspace.form("Operation",uvOperation,"Scope",uvScope,"Pivot",uvPivot),values,previewUv,new JLabel("<html>Island traversal stops at UV seams<br>and material boundaries.<br>Negative scale mirrors UVs.<br>Zero scale is refused.<br>Apply / Cancel uses native history.</html>"));
             materialTools=new JTabbedPane();materialTools.addTab("Materials",bindings);materialTools.addTab("UV transform",uvSettings);
+            materialTools.addTab("Paint layer",EditorTopologyWorkspace.column(new JLabel("BASE-COLOR OVERLAY"),
+                EditorTopologyWorkspace.form("Blend",paintBlend,"Opacity (%)",paintOpacity),previewPaintStyle));
+            previewPaintStyle.addActionListener(e->{
+                if(selectedHit==null)return;
+                long face=selectedHit.faceId();
+                var style=new EditorMeshMaterial.PaintStyle((EditorMeshMaterial.Blend)paintBlend.getSelectedItem(),(int)paintOpacity.getValue());
+                beginModelingPreview(p->p.previewPaintStyle(face,style));
+            });
             var commands=new JPanel(new FlowLayout(FlowLayout.RIGHT,5,3));commands.add(sharedMaterialAction("Undo",undoMesh));commands.add(sharedMaterialAction("Redo",redoMesh));commands.add(sharedMaterialAction("Save document",saveMesh));commands.add(sharedMaterialAction("Apply edit",applyFaceEdit));commands.add(sharedMaterialAction("Cancel preview",cancelFaceEdit));
             var back=new JButton("Return to modeling");back.addActionListener(e->{if(modelingPreview!=null)clearModelingPreview();materialDialog.setVisible(false);dialog.toFront();});commands.add(back);
             materialWorkspace=new EditorMaterialWorkspace(materialTools,runtime,commands,id->{
@@ -534,6 +546,13 @@ public final class AssetImportDialog {
         if(state!=null&&face!=null){var found=state.faces().stream().filter(f->f.id()==face).findFirst().orElse(null);if(found!=null)material=state.materials().stream().filter(m->m.key().equals(found.material())).findFirst().orElse(null);}
         if(material==null&&materialList.getSelectedItem() instanceof EditorMeshMaterial m)material=m;
         materialWorkspace.observe(state,face,material,modelingPreview!=null);
+        if(material!=shownPaintMaterial){
+            var style=material==null?EditorMeshMaterial.PaintStyle.DEFAULT:material.paintStyle();
+            paintBlend.setSelectedItem(style.blend());paintOpacity.setValue(style.opacity());shownPaintMaterial=material;
+        }
+        boolean layerEditable=!busy && modelingPreview==null && face!=null && materialWorkspace.visibility().includes(face) &&
+            material!=null && material.paintedTileCount()>0 && state.faces().stream().anyMatch(f->f.id()==face && f.material().equals(shownPaintMaterial.key()));
+        previewPaintStyle.setEnabled(layerEditable);paintBlend.setEnabled(layerEditable);paintOpacity.setEnabled(layerEditable);
         double rotation=((Number)materialRotation.getValue()).doubleValue();
         var visibility=materialWorkspace.visibility();
         if(materialWorkspace.visibleFaces()==0){

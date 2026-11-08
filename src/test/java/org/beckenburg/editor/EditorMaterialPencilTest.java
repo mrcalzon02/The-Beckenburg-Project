@@ -25,6 +25,28 @@ public final class EditorMaterialPencilTest {
             throw new AssertionError("Paint reader accepted excess tiles");
         } catch(IOException expected) {}
     }
+    private static void blendModes() throws IOException {
+        var base=new java.awt.image.BufferedImage(2,2,java.awt.image.BufferedImage.TYPE_INT_ARGB);
+        base.setRGB(0,0,0xff4080c0);
+        var bytes=new ByteArrayOutputStream();
+        javax.imageio.ImageIO.write(base,"png",bytes);
+        var source=EditorMeshMaterial.fromPng("blend.png",bytes.toByteArray(),10497,10497,
+            EditorMeshMaterial.Alpha.BLEND,EditorMeshMaterial.Origin.TOP_LEFT);
+        var painted=source.pencil(source.key(),List.of(0,1),0xff804020);
+        var expected=Map.of(EditorMeshMaterial.Blend.NORMAL,0xff804020,EditorMeshMaterial.Blend.MULTIPLY,0xff202018,
+            EditorMeshMaterial.Blend.ADD,0xffc0c0e0,EditorMeshMaterial.Blend.SCREEN,0xffa0a0c8);
+        for(var mode:EditorMeshMaterial.Blend.values()){
+            var full=painted.withStyle(new EditorMeshMaterial.PaintStyle(mode,100));
+            var image=javax.imageio.ImageIO.read(new ByteArrayInputStream(full.png()));
+            check(image.getRGB(0,0)==expected.get(mode),"Unexpected "+mode+" RGB");
+            var half=painted.withStyle(new EditorMeshMaterial.PaintStyle(mode,50));
+            image=javax.imageio.ImageIO.read(new ByteArrayInputStream(half.png()));
+            check(image.getRGB(1,0)==0x80804020,"Transparent backdrop must preserve ink color and effective alpha");
+            var zero=painted.withStyle(new EditorMeshMaterial.PaintStyle(mode,0));
+            check(Arrays.equals(zero.png(),source.png()) && zero.paintedTileCount()==1,"Zero opacity retains paint");
+            check(EditorMeshMaterial.paintHistoryBytes(List.of(full),List.of(half))==0,"Style-only edit copied tiles");
+        }
+    }
     private static void historyEviction(EditorTopologyProject p){
         var clean=p.snapshot();
         long face=clean.faces().get(10).id();
@@ -53,6 +75,7 @@ public final class EditorMaterialPencilTest {
     }
     public static void main(String[] args)throws Exception {
         historyBudget();
+        blendModes();
         Path dir=Files.createTempDirectory("pencil-native-");
         try {
             Path glb=Path.of("development/quality/evidence/g2-textured-roundtrip-2026-11-07/edited.glb");
