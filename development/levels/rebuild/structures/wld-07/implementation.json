@@ -1,0 +1,393 @@
+{
+  "id": "WLD-07",
+  "title": "Saint Bartholomew's Forgotten Cemetery",
+  "source": "layouts\\wld-07\\layout.json",
+  "source_sha256": "d22635124d4e8167df3e5057c0c155ab1759e348995ba2d34946ff0959fd85ac",
+  "zones": 13,
+  "routes": 16,
+  "shell_openings": [
+    {
+      "zone": "chapel",
+      "side": "N",
+      "link": "L05",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "N",
+      "link": "L05",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "S",
+      "link": "L03",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage",
+      "side": "N",
+      "link": "L08",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage",
+      "side": "N",
+      "link": "L08",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage",
+      "side": "S",
+      "link": "L04",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage",
+      "side": "E",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage",
+      "side": "E",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "tool",
+      "side": "W",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "tool",
+      "side": "W",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west-stair",
+      "side": "S",
+      "link": "L12",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "west-stair",
+      "side": "S",
+      "link": "L12",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "east-stair",
+      "side": "S",
+      "link": "L13",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "east-stair",
+      "side": "S",
+      "link": "L13",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "ossuary",
+      "side": "N",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ossuary",
+      "side": "N",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "chamber",
+      "side": "S",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "chamber",
+      "side": "S",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    }
+  ],
+  "meshes": 144,
+  "issues": [
+    {
+      "zone": "stage",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.1,
+          15.1,
+          28.9,
+          16.9
+        ],
+        [
+          27.1,
+          15.1,
+          45.9,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "entry",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.1,
+          15.1,
+          28.9,
+          16.9
+        ],
+        [
+          27.1,
+          15.1,
+          45.9,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "avenue",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.1,
+          15.1,
+          28.9,
+          16.9
+        ],
+        [
+          27.1,
+          15.1,
+          45.9,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "chapel",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.1,
+          15.1,
+          28.9,
+          16.9
+        ],
+        [
+          27.1,
+          15.1,
+          45.9,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "cottage",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.1,
+          15.1,
+          28.9,
+          16.9
+        ],
+        [
+          27.1,
+          15.1,
+          45.9,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "garden",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.1,
+          15.1,
+          28.9,
+          16.9
+        ],
+        [
+          27.1,
+          15.1,
+          45.9,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "east-graves",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.1,
+          15.1,
+          28.9,
+          16.9
+        ],
+        [
+          27.1,
+          15.1,
+          45.9,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "old-graves",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.1,
+          15.1,
+          28.9,
+          16.9
+        ],
+        [
+          27.1,
+          15.1,
+          45.9,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "tool",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.1,
+          15.1,
+          28.9,
+          16.9
+        ],
+        [
+          27.1,
+          15.1,
+          45.9,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "west-stair",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.1,
+          15.1,
+          28.9,
+          16.9
+        ],
+        [
+          27.1,
+          15.1,
+          45.9,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "east-stair",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.1,
+          15.1,
+          28.9,
+          16.9
+        ],
+        [
+          27.1,
+          15.1,
+          45.9,
+          16.9
+        ]
+      ]
+    },
+    {
+      "link": "L14",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "L15",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    }
+  ],
+  "source_refinement": [
+    "Research burial-ground circulation and ossuary structure before detailed construction; keep fictional history explicit.",
+    "Place no rites on graves or inaccessible marker tops; all reservation squares are on clear paths/floors.",
+    "Test underground exit visibility and tree-occlusion consistency."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "4bd386a7ac921bbef0ba00ea46b9790ebb8e2fd3e3ae2eb6349ea1e052175e93",
+  "status": "rough-shell-blocked; runtime integration pending",
+  "structural_review": {
+    "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
+    "glb_sha256": "ee88efbf1634e760d426db90357670d6a71f6429a5d6fb470c1a3448681da944",
+    "independently_reimported": true,
+    "meshes": 140,
+    "triangles": 1680,
+    "floor_parts": 17,
+    "ceiling_cap_parts": 18,
+    "stair_treads": 34,
+    "checked_closed_solids": 114,
+    "measured_depth_parts": 35,
+    "exported_cap_rays": 18,
+    "fixed_infill_routes": 0,
+    "exported_fixed_boundary_checks": [],
+    "wall_depth_m": 0.16,
+    "floor_depth_m": 0.16,
+    "terrain": "Exterior zone pads omitted; real saved terrain/hole work remains",
+    "roof": "Closed ceiling/deck caps only; authored exterior roof form/weathering remains",
+    "remaining": [
+      "Capsule/optical/body/object and roof/skylight rays in actual engine",
+      "All remaining unresolved elevation routes and landings/guards",
+      "Original source asset fit and supported furnishings",
+      "Source-matched terrain holes, services, van and LAN integration"
+    ]
+  },
+  "authoritative_input": "development/levels/layouts/wld-07/layout.json",
+  "original_scene_preserved": true,
+  "preserved_sources": {
+    "development/levels/layouts/wld-07/layout.json": "d22635124d4e8167df3e5057c0c155ab1759e348995ba2d34946ff0959fd85ac",
+    "development/levels/blockouts/wld-07/rough-shell.blend": "d2565a85dee123c4450760e8e085b42b5bad4a6e31dcb4656b28cc83d346659d",
+    "development/levels/blockouts/wld-07/rough-shell.glb": "f005cb36ec0debc52b832e26b4b3abf0b98ac09e52cd7e40dca64a2a45cc7528"
+  },
+  "generator_sha256": {
+    "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
+    "development/levels/blockouts/build_blockouts.py": "988507821406b3680ea7c27058ee6d39ba86897f5a8321a1c7df9c5b381f18e5",
+    "development/levels/blockouts/structural_pass.py": "0df964bb27e8a3fb2a7cd1cc72abe50f57006338cc6cb4f0025d6a6e9eaaa721",
+    "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
+  }
+}

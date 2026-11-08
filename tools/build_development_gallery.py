@@ -10,7 +10,7 @@ paths=subprocess.check_output(['git','ls-files','--cached',* ([] if args.tracked
 items=[]
 for path in sorted(set(paths)):
     if not path.lower().endswith('.png'):continue
-    if not any(t in path for t in ['/previews/','/captures/','/screenshots/','/blockouts/']):continue
+    if not any(t in path for t in ['/previews/','/captures/','/screenshots/','/blockouts/','/rebuild/structures/']):continue
     p=ROOT/path
     if not p.exists():continue
     data=p.read_bytes()
@@ -18,6 +18,8 @@ for path in sorted(set(paths)):
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
     if '/synthetic-controls/' in path:kind='Synthetic GPU depth control'
+    elif '/structure-batch/' in path:kind='Native structural blocking review; runtime integration pending'
+    elif '/rebuild/structures/' in path:kind='Native planning-scene preview' if p.name=='preview.png' else 'Reimported native structure export review'
     elif '/hunter-gait-recovery-software/' in path:kind='Runtime software hunter gait diagnostic'
     elif '/house-fresh-default/' in path:kind='Runtime fresh default House editor and CLI verification'
     elif '/hiding-energy/' in path:kind='Runtime hiding-location energy material'

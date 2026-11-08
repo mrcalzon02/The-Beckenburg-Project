@@ -1,0 +1,582 @@
+{
+  "id": "WLD-05",
+  "title": "Dead Man's Claim",
+  "source": "layouts\\wld-05\\layout.json",
+  "source_sha256": "5b0ca78e4e8992bd4ae01226f7c745b73fe9881a20a0f0693fd6cff1d15a4970",
+  "zones": 14,
+  "routes": 18,
+  "shell_openings": [
+    {
+      "zone": "shack",
+      "side": "N",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "shack",
+      "side": "N",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "shack",
+      "side": "E",
+      "link": "L02",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "assay",
+      "side": "N",
+      "link": "L07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "assay",
+      "side": "N",
+      "link": "L07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "assay",
+      "side": "W",
+      "link": "L03",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "stores",
+      "side": "S",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "stores",
+      "side": "S",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "stores",
+      "side": "E",
+      "link": "L05",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "haul",
+      "side": "W",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "haul",
+      "side": "W",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "haul",
+      "side": "E",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "haul",
+      "side": "E",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ore-west",
+      "side": "N",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ore-west",
+      "side": "N",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ore-west",
+      "side": "S",
+      "link": "L18",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ore-west",
+      "side": "S",
+      "link": "L18",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ore-west",
+      "side": "E",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ore-west",
+      "side": "E",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ore-east",
+      "side": "N",
+      "link": "L12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ore-east",
+      "side": "N",
+      "link": "L12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ore-east",
+      "side": "W",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ore-east",
+      "side": "W",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cross",
+      "side": "S",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cross",
+      "side": "S",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cross",
+      "side": "S",
+      "link": "L12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cross",
+      "side": "S",
+      "link": "L12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cross",
+      "side": "E",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cross",
+      "side": "E",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "lift",
+      "side": "W",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "lift",
+      "side": "W",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "vent",
+      "side": "N",
+      "link": "L18",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "vent",
+      "side": "N",
+      "link": "L18",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "wash",
+      "side": "S",
+      "link": "L07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "wash",
+      "side": "S",
+      "link": "L07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "wash",
+      "side": "W",
+      "link": "L08",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "wash",
+      "side": "W",
+      "link": "L08",
+      "width": 2,
+      "height": 2.45
+    }
+  ],
+  "meshes": 229,
+  "issues": [
+    {
+      "zone": "stage",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          26.85,
+          29.85,
+          31.15,
+          53.15
+        ],
+        [
+          9.85,
+          50.85,
+          31.15,
+          53.15
+        ]
+      ]
+    },
+    {
+      "zone": "entry",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          26.85,
+          29.85,
+          31.15,
+          53.15
+        ],
+        [
+          9.85,
+          50.85,
+          31.15,
+          53.15
+        ]
+      ]
+    },
+    {
+      "zone": "shack",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          26.85,
+          29.85,
+          31.15,
+          53.15
+        ],
+        [
+          9.85,
+          50.85,
+          31.15,
+          53.15
+        ]
+      ]
+    },
+    {
+      "zone": "assay",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          26.85,
+          29.85,
+          31.15,
+          53.15
+        ],
+        [
+          9.85,
+          50.85,
+          31.15,
+          53.15
+        ]
+      ]
+    },
+    {
+      "zone": "stores",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          26.85,
+          29.85,
+          31.15,
+          53.15
+        ],
+        [
+          9.85,
+          50.85,
+          31.15,
+          53.15
+        ]
+      ]
+    },
+    {
+      "zone": "adit",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          26.85,
+          29.85,
+          31.15,
+          53.15
+        ],
+        [
+          9.85,
+          50.85,
+          31.15,
+          53.15
+        ]
+      ]
+    },
+    {
+      "zone": "haul",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.1,
+          30.1,
+          11.9,
+          31.9
+        ],
+        [
+          10.1,
+          30.1,
+          11.9,
+          52.9
+        ]
+      ]
+    },
+    {
+      "zone": "ore-west",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.1,
+          30.1,
+          11.9,
+          31.9
+        ],
+        [
+          10.1,
+          30.1,
+          11.9,
+          52.9
+        ]
+      ]
+    },
+    {
+      "zone": "ore-east",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.1,
+          30.1,
+          11.9,
+          31.9
+        ],
+        [
+          10.1,
+          30.1,
+          11.9,
+          52.9
+        ]
+      ]
+    },
+    {
+      "zone": "cross",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.1,
+          30.1,
+          11.9,
+          31.9
+        ],
+        [
+          10.1,
+          30.1,
+          11.9,
+          52.9
+        ]
+      ]
+    },
+    {
+      "zone": "lift",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.1,
+          30.1,
+          11.9,
+          31.9
+        ],
+        [
+          10.1,
+          30.1,
+          11.9,
+          52.9
+        ]
+      ]
+    },
+    {
+      "zone": "vent",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.1,
+          30.1,
+          11.9,
+          31.9
+        ],
+        [
+          10.1,
+          30.1,
+          11.9,
+          52.9
+        ]
+      ]
+    },
+    {
+      "zone": "wash",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          26.85,
+          29.85,
+          31.15,
+          53.15
+        ],
+        [
+          9.85,
+          50.85,
+          31.15,
+          53.15
+        ]
+      ]
+    },
+    {
+      "link": "L09",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "L15",
+      "issue": "Stair needs an authored longer flight/switchback; no fake vertical steps",
+      "rise": 4,
+      "run": 0.0,
+      "minimum_run": 5.52
+    },
+    {
+      "link": "L15",
+      "issue": "Elevation support is a rough mass, not an accepted stair or path",
+      "rise": 4,
+      "plan_run": 0.0,
+      "requires_switchbacks": true,
+      "source_note": "Reserve at least 6.4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "link": "L16",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "L17",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    }
+  ],
+  "source_refinement": [
+    "Engineer the adit descent as a long graded drift rather than using the schematic direct line as a steep stair.",
+    "Refine shaft void, lower-level gradients and two-way return with headroom and rock boundary tests.",
+    "Inspect mine engineering references before detailed supports or ventilation routing."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "37ed8e9f328b46fe7e982702ad6c220e711492efcedbb50a09726849e284e519",
+  "status": "rough-shell-blocked; runtime integration pending",
+  "structural_review": {
+    "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
+    "glb_sha256": "75695745b8cb02fcce6fb2990e96f644f8aaabeaa40f3cd0243618de79d99460",
+    "independently_reimported": true,
+    "meshes": 225,
+    "triangles": 2700,
+    "floor_parts": 32,
+    "ceiling_cap_parts": 11,
+    "stair_treads": 91,
+    "checked_closed_solids": 199,
+    "measured_depth_parts": 43,
+    "exported_cap_rays": 11,
+    "fixed_infill_routes": 0,
+    "exported_fixed_boundary_checks": [],
+    "wall_depth_m": 0.16,
+    "floor_depth_m": 0.16,
+    "terrain": "Exterior zone pads omitted; real saved terrain/hole work remains",
+    "roof": "Closed ceiling/deck caps only; authored exterior roof form/weathering remains",
+    "remaining": [
+      "Capsule/optical/body/object and roof/skylight rays in actual engine",
+      "All remaining unresolved elevation routes and landings/guards",
+      "Original source asset fit and supported furnishings",
+      "Source-matched terrain holes, services, van and LAN integration"
+    ]
+  },
+  "authoritative_input": "development/levels/layouts/wld-05/layout.json",
+  "original_scene_preserved": true,
+  "preserved_sources": {
+    "development/levels/layouts/wld-05/layout.json": "5b0ca78e4e8992bd4ae01226f7c745b73fe9881a20a0f0693fd6cff1d15a4970",
+    "development/levels/blockouts/wld-05/rough-shell.blend": "77212b2da77eb6c75415f39fee5eda3457c8790e79124c68324e0faf4969817f",
+    "development/levels/blockouts/wld-05/rough-shell.glb": "14e9ecfd815f57e60a89103a120138f0b430872bf84ba3d73d9ba27f3e8fedc2"
+  },
+  "generator_sha256": {
+    "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
+    "development/levels/blockouts/build_blockouts.py": "988507821406b3680ea7c27058ee6d39ba86897f5a8321a1c7df9c5b381f18e5",
+    "development/levels/blockouts/structural_pass.py": "0df964bb27e8a3fb2a7cd1cc72abe50f57006338cc6cb4f0025d6a6e9eaaa721",
+    "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
+  }
+}

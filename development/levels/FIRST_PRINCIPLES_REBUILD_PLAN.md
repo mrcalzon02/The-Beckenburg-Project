@@ -18,6 +18,19 @@ The owner directs completing Castle's full revision as the central hub and prima
 
 ## 1. Outcome and governing decisions
 
+Owner amendment, 7 November 2026: resume breadth by stage across the remaining
+roster. The House construction pilot has established the representative method;
+remaining House closeout runs continue independently. Do not hold all other maps
+behind further single-map refinement. Sweep blocking and traversal, then actual
+structural depth/openings/roof enclosure, then the shared asset library and
+supported model placement, then successive detail passes. Preserve mature Castle,
+House, Blackpine and Hollow Creek work while individually auditing their gates.
+Every roster pass records a concrete decision for all 29 packets; unchanged,
+blocked or unverified locations are not silently counted as finished. Floors need
+depth and undersides, walls need thickness, stair decks need real openings, and
+closed roofs must block skylight. Native structure blocking is an intermediate
+artifact, not permission to unlock a site before actual runtime integration.
+
 Every location must make sense as a place before it is dressed as a horror level. Its terrain, construction, circulation, services, daily activities and subsequent damage must explain its appearance. A prison needs actual cells and control layers; a school needs a coherent teaching day, washrooms and specialist spaces; a home needs ordinary household relationships. A room name and an asset count establish neither architecture nor identity.
 
 Rebuild the spatial design from its purpose. Preserve the valuable asset collection, clean masters, distinctive successful assemblies, approved concepts, lore, gameplay contracts and historical evidence. Each existing component receives an evidence-based retain/refit/replace decision. No map receives automatic acceptance because it is newer, and no useful asset is discarded merely because its original placement was poor.

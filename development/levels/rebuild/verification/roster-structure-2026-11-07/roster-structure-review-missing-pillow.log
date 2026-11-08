@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\tools\review_roster_structures.py", line 8, in <module>
+    from PIL import Image,ImageDraw
+ModuleNotFoundError: No module named 'PIL'

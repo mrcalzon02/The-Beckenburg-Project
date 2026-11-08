@@ -1,0 +1,402 @@
+{
+  "id": "WLD-17",
+  "title": "Battery Brackenhead",
+  "source": "layouts\\wld-17\\layout.json",
+  "source_sha256": "392474ba8bbdd4c03ac96283355bc4f08023fc72d745fe0643c608f5f75e9e37",
+  "zones": 15,
+  "routes": 17,
+  "shell_openings": [
+    {
+      "zone": "west",
+      "side": "N",
+      "link": "route-08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west",
+      "side": "E",
+      "link": "route-04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west",
+      "side": "E",
+      "link": "route-06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "east",
+      "side": "N",
+      "link": "route-09",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "east",
+      "side": "W",
+      "link": "route-05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "east",
+      "side": "W",
+      "link": "route-07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "N",
+      "link": "route-10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "W",
+      "link": "route-06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "E",
+      "link": "route-07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "magazine",
+      "side": "S",
+      "link": "route-08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "service",
+      "side": "S",
+      "link": "route-09",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "barracks",
+      "side": "E",
+      "link": "route-13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "lowgallery",
+      "side": "N",
+      "link": "route-13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "lowgallery",
+      "side": "N",
+      "link": "route-14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "lowgallery",
+      "side": "N",
+      "link": "route-15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "plant",
+      "side": "W",
+      "link": "route-14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "plant",
+      "side": "W",
+      "link": "route-17",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "records",
+      "side": "S",
+      "link": "route-15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "records",
+      "side": "E",
+      "link": "route-16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "pump",
+      "side": "W",
+      "link": "route-16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "pump",
+      "side": "E",
+      "link": "route-17",
+      "width": 1.5,
+      "height": 2.45
+    }
+  ],
+  "meshes": 238,
+  "issues": [
+    {
+      "zone": "approach",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          31.1,
+          57.1,
+          32.9,
+          68.9
+        ]
+      ]
+    },
+    {
+      "zone": "yard",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          39.1,
+          47.1,
+          40.9,
+          56.9
+        ],
+        [
+          11.1,
+          15.1,
+          20.9,
+          16.9
+        ],
+        [
+          47.1,
+          15.1,
+          56.9,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "west",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          39.1,
+          47.1,
+          40.9,
+          56.9
+        ],
+        [
+          11.1,
+          15.1,
+          20.9,
+          16.9
+        ],
+        [
+          47.1,
+          15.1,
+          56.9,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "east",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          39.1,
+          47.1,
+          40.9,
+          56.9
+        ],
+        [
+          11.1,
+          15.1,
+          20.9,
+          16.9
+        ],
+        [
+          47.1,
+          15.1,
+          56.9,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "gallery",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          39.1,
+          47.1,
+          40.9,
+          56.9
+        ],
+        [
+          11.1,
+          15.1,
+          20.9,
+          16.9
+        ],
+        [
+          47.1,
+          15.1,
+          56.9,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "magazine",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          39.1,
+          47.1,
+          40.9,
+          56.9
+        ],
+        [
+          11.1,
+          15.1,
+          20.9,
+          16.9
+        ],
+        [
+          47.1,
+          15.1,
+          56.9,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "service",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          39.1,
+          47.1,
+          40.9,
+          56.9
+        ],
+        [
+          11.1,
+          15.1,
+          20.9,
+          16.9
+        ],
+        [
+          47.1,
+          15.1,
+          56.9,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "director",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          29.1,
+          21.1,
+          38.9,
+          22.9
+        ]
+      ]
+    },
+    {
+      "link": "route-02",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "route-03",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "route-10",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "route-11",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "route-12",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    }
+  ],
+  "source_refinement": [
+    "Terrain-first massing is not terrain acceptance: resolve drainage, incised paths, retaining edges, foundation contacts and every grade before detailed structures.",
+    "Check floor/wall/roof joins, upper-deck undersides and corners with adjacent lights toggled; log every discovered failure.",
+    "Engineer stairs, landings, openings, guards, door swings and two exits before collision/navigation approval.",
+    "Inspect each model purpose, scale, UVs and true support surface before placing furniture or clutter.",
+    "Historic coastal-site functional reference only; original fictional battery with removed/inert equipment.",
+    "Roof cover over lower rooms requires full sealed slabs and stair voids; grade reservations are not accepted routes."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "2967a1e693fbf79506f1763be64c4c86679fbef71cad0a81c6364f839f7146c3",
+  "status": "rough-shell-blocked; runtime integration pending",
+  "structural_review": {
+    "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
+    "glb_sha256": "5179fbebc9dca845dc729fc5a0fc184ca788f98a48b33a217eab5c1a9d2ccaf1",
+    "independently_reimported": true,
+    "meshes": 234,
+    "triangles": 6196,
+    "floor_parts": 38,
+    "ceiling_cap_parts": 19,
+    "stair_treads": 87,
+    "checked_closed_solids": 221,
+    "measured_depth_parts": 57,
+    "exported_cap_rays": 19,
+    "fixed_infill_routes": 0,
+    "exported_fixed_boundary_checks": [],
+    "wall_depth_m": 0.16,
+    "floor_depth_m": 0.16,
+    "terrain": "Exterior zone pads omitted; real saved terrain/hole work remains",
+    "roof": "Closed ceiling/deck caps only; authored exterior roof form/weathering remains",
+    "remaining": [
+      "Capsule/optical/body/object and roof/skylight rays in actual engine",
+      "All remaining unresolved elevation routes and landings/guards",
+      "Original source asset fit and supported furnishings",
+      "Source-matched terrain holes, services, van and LAN integration"
+    ]
+  },
+  "authoritative_input": "development/levels/layouts/wld-17/layout.json",
+  "original_scene_preserved": true,
+  "preserved_sources": {
+    "development/levels/layouts/wld-17/layout.json": "392474ba8bbdd4c03ac96283355bc4f08023fc72d745fe0643c608f5f75e9e37",
+    "development/levels/blockouts/wld-17/rough-shell.blend": "ce7c0090f94cccb2222316ad3f3aeede73290ed20c8b47f821c975f5e3947988",
+    "development/levels/blockouts/wld-17/rough-shell.glb": "202020ddc1c27820125dd2ccb5b26563f7563a6b7dbc328799e2f394e6570551"
+  },
+  "generator_sha256": {
+    "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
+    "development/levels/blockouts/build_blockouts.py": "988507821406b3680ea7c27058ee6d39ba86897f5a8321a1c7df9c5b381f18e5",
+    "development/levels/blockouts/structural_pass.py": "0df964bb27e8a3fb2a7cd1cc72abe50f57006338cc6cb4f0025d6a6e9eaaa721",
+    "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
+  }
+}

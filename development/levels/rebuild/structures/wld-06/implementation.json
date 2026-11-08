@@ -1,0 +1,401 @@
+{
+  "id": "WLD-06",
+  "title": "Drowned Fisherman's Wharf",
+  "source": "layouts\\wld-06\\layout.json",
+  "source_sha256": "f37184525debe30440a0d215c685e22ef40561077ee6ae6fb823e7587dc99304",
+  "zones": 14,
+  "routes": 18,
+  "shell_openings": [
+    {
+      "zone": "cottage-a",
+      "side": "E",
+      "link": "L02",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage-a",
+      "side": "E",
+      "link": "L05",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage-a",
+      "side": "E",
+      "link": "L05",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage-b",
+      "side": "W",
+      "link": "L03",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage-b",
+      "side": "W",
+      "link": "L06",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage-b",
+      "side": "W",
+      "link": "L06",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "boathouse",
+      "side": "S",
+      "link": "L14",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "boathouse",
+      "side": "S",
+      "link": "L14",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "boathouse",
+      "side": "E",
+      "link": "L11",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "boathouse",
+      "side": "E",
+      "link": "L11",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "net",
+      "side": "W",
+      "link": "L12",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "net",
+      "side": "W",
+      "link": "L12",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "fish",
+      "side": "N",
+      "link": "L13",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "fish",
+      "side": "N",
+      "link": "L13",
+      "width": 2,
+      "height": 2.45
+    }
+  ],
+  "meshes": 120,
+  "issues": [
+    {
+      "zone": "stage",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          16.85,
+          28.85,
+          33.15,
+          34.15
+        ],
+        [
+          30.85,
+          28.85,
+          47.15,
+          34.15
+        ]
+      ]
+    },
+    {
+      "zone": "entry",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          16.85,
+          28.85,
+          33.15,
+          34.15
+        ],
+        [
+          30.85,
+          28.85,
+          47.15,
+          34.15
+        ]
+      ]
+    },
+    {
+      "zone": "cottage-a",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          16.85,
+          28.85,
+          33.15,
+          34.15
+        ],
+        [
+          30.85,
+          28.85,
+          47.15,
+          34.15
+        ]
+      ]
+    },
+    {
+      "zone": "cottage-b",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          16.85,
+          28.85,
+          33.15,
+          34.15
+        ],
+        [
+          30.85,
+          28.85,
+          47.15,
+          34.15
+        ]
+      ]
+    },
+    {
+      "zone": "quay",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          16.85,
+          28.85,
+          33.15,
+          34.15
+        ],
+        [
+          30.85,
+          28.85,
+          47.15,
+          34.15
+        ]
+      ]
+    },
+    {
+      "zone": "pier-w",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          16.85,
+          28.85,
+          33.15,
+          34.15
+        ],
+        [
+          30.85,
+          28.85,
+          47.15,
+          34.15
+        ]
+      ]
+    },
+    {
+      "zone": "pier-e",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          16.85,
+          28.85,
+          33.15,
+          34.15
+        ],
+        [
+          30.85,
+          28.85,
+          47.15,
+          34.15
+        ]
+      ]
+    },
+    {
+      "zone": "crossdock",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          16.85,
+          28.85,
+          33.15,
+          34.15
+        ],
+        [
+          30.85,
+          28.85,
+          47.15,
+          34.15
+        ]
+      ]
+    },
+    {
+      "zone": "boathouse",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          16.85,
+          28.85,
+          33.15,
+          34.15
+        ],
+        [
+          30.85,
+          28.85,
+          47.15,
+          34.15
+        ]
+      ]
+    },
+    {
+      "zone": "net",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          16.85,
+          28.85,
+          33.15,
+          34.15
+        ],
+        [
+          30.85,
+          28.85,
+          47.15,
+          34.15
+        ]
+      ]
+    },
+    {
+      "zone": "fish",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          16.85,
+          28.85,
+          33.15,
+          34.15
+        ],
+        [
+          30.85,
+          28.85,
+          47.15,
+          34.15
+        ]
+      ]
+    },
+    {
+      "zone": "west-stair",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          16.85,
+          28.85,
+          33.15,
+          34.15
+        ],
+        [
+          30.85,
+          28.85,
+          47.15,
+          34.15
+        ]
+      ]
+    },
+    {
+      "zone": "east-stair",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          16.85,
+          28.85,
+          33.15,
+          34.15
+        ],
+        [
+          30.85,
+          28.85,
+          47.15,
+          34.15
+        ]
+      ]
+    },
+    {
+      "link": "L16",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "L17",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    }
+  ],
+  "source_refinement": [
+    "Refine support piles, edge rails, guard openings and at least 2 m clear deck paths; diagrams show deck envelopes.",
+    "Choose and lock tide envelope before mission start; no required wading.",
+    "Research working-wharf and fish-house construction before detailed shell authoring."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "4888bce325d6c3100a3b1d376986cd3ae66051b47c828350a5fbb59f09d3311c",
+  "status": "rough-shell-blocked; runtime integration pending",
+  "structural_review": {
+    "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
+    "glb_sha256": "7f4f910807d40d328f10e9ebeafb7e09a4041bca6847dcacebbb90615d1d8b7c",
+    "independently_reimported": true,
+    "meshes": 116,
+    "triangles": 1392,
+    "floor_parts": 12,
+    "ceiling_cap_parts": 6,
+    "stair_treads": 28,
+    "checked_closed_solids": 86,
+    "measured_depth_parts": 18,
+    "exported_cap_rays": 6,
+    "fixed_infill_routes": 0,
+    "exported_fixed_boundary_checks": [],
+    "wall_depth_m": 0.16,
+    "floor_depth_m": 0.16,
+    "terrain": "Exterior zone pads omitted; real saved terrain/hole work remains",
+    "roof": "Closed ceiling/deck caps only; authored exterior roof form/weathering remains",
+    "remaining": [
+      "Capsule/optical/body/object and roof/skylight rays in actual engine",
+      "All remaining unresolved elevation routes and landings/guards",
+      "Original source asset fit and supported furnishings",
+      "Source-matched terrain holes, services, van and LAN integration"
+    ]
+  },
+  "authoritative_input": "development/levels/layouts/wld-06/layout.json",
+  "original_scene_preserved": true,
+  "preserved_sources": {
+    "development/levels/layouts/wld-06/layout.json": "f37184525debe30440a0d215c685e22ef40561077ee6ae6fb823e7587dc99304",
+    "development/levels/blockouts/wld-06/rough-shell.blend": "4246d229ca6d8279b574598385c61a7aeec92b6996de6869bcd25d58e8c260cc",
+    "development/levels/blockouts/wld-06/rough-shell.glb": "7bbcb9d852a5abc844f19e7af54754cf051a39700f3209e6418254e5167370c4"
+  },
+  "generator_sha256": {
+    "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
+    "development/levels/blockouts/build_blockouts.py": "988507821406b3680ea7c27058ee6d39ba86897f5a8321a1c7df9c5b381f18e5",
+    "development/levels/blockouts/structural_pass.py": "0df964bb27e8a3fb2a7cd1cc72abe50f57006338cc6cb4f0025d6a6e9eaaa721",
+    "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
+  }
+}

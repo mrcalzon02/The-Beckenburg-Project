@@ -1,0 +1,1085 @@
+{
+  "id": "CHURCH",
+  "title": "St. Brigid Parish \u2014 revised worship and crypt rough",
+  "source": "rebuild\\church\\rough-layout.json",
+  "source_sha256": "ecbdd6aec2a671c81c4dd46143dc5660fdc9dd568f62772ca472afc40976ca05",
+  "zones": 33,
+  "routes": 31,
+  "shell_openings": [
+    {
+      "zone": "nave",
+      "side": "N",
+      "link": "L32",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "nave",
+      "side": "N",
+      "link": "L32",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "nave",
+      "side": "S",
+      "link": "L31",
+      "width": 7.6,
+      "height": 2.45
+    },
+    {
+      "zone": "nave",
+      "side": "S",
+      "link": "L31",
+      "width": 7.6,
+      "height": 2.45
+    },
+    {
+      "zone": "nave",
+      "side": "W",
+      "link": "L08",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "nave",
+      "side": "W",
+      "link": "L08",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "nave",
+      "side": "E",
+      "link": "L11",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "nave",
+      "side": "E",
+      "link": "L11",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "rear-nave",
+      "side": "N",
+      "link": "L31",
+      "width": 7.6,
+      "height": 2.45
+    },
+    {
+      "zone": "rear-nave",
+      "side": "N",
+      "link": "L31",
+      "width": 7.6,
+      "height": 2.45
+    },
+    {
+      "zone": "rear-nave",
+      "side": "S",
+      "link": "L03",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "rear-nave",
+      "side": "S",
+      "link": "L03",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "rear-nave",
+      "side": "W",
+      "link": "L04",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "rear-nave",
+      "side": "W",
+      "link": "L04",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "vestibule",
+      "side": "N",
+      "link": "L03",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "vestibule",
+      "side": "N",
+      "link": "L03",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "vestibule",
+      "side": "S",
+      "link": "L02",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "vestibule",
+      "side": "S",
+      "link": "L02",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "parish-lobby",
+      "side": "N",
+      "link": "L05",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "parish-lobby",
+      "side": "N",
+      "link": "L05",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "parish-lobby",
+      "side": "N",
+      "link": "L06",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "parish-lobby",
+      "side": "N",
+      "link": "L06",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "parish-lobby",
+      "side": "W",
+      "link": "L07",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "parish-lobby",
+      "side": "W",
+      "link": "L07",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "parish-lobby",
+      "side": "E",
+      "link": "L04",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "parish-lobby",
+      "side": "E",
+      "link": "L04",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "office",
+      "side": "S",
+      "link": "L05",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "office",
+      "side": "S",
+      "link": "L05",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "records",
+      "side": "S",
+      "link": "L06",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "records",
+      "side": "S",
+      "link": "L06",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "parish-wc",
+      "side": "E",
+      "link": "L07",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "parish-wc",
+      "side": "E",
+      "link": "L07",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "conversation-entry",
+      "side": "W",
+      "link": "L09",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "conversation-entry",
+      "side": "W",
+      "link": "L09",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "conversation-entry",
+      "side": "W",
+      "link": "L10",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "conversation-entry",
+      "side": "W",
+      "link": "L10",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "conversation-entry",
+      "side": "E",
+      "link": "L08",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "conversation-entry",
+      "side": "E",
+      "link": "L08",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "confessional",
+      "side": "E",
+      "link": "L09",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "confessional",
+      "side": "E",
+      "link": "L09",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "consultation",
+      "side": "E",
+      "link": "L10",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "consultation",
+      "side": "E",
+      "link": "L10",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "chancel",
+      "side": "S",
+      "link": "L32",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "chancel",
+      "side": "S",
+      "link": "L32",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "chancel",
+      "side": "E",
+      "link": "L12",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "chancel",
+      "side": "E",
+      "link": "L12",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "N",
+      "link": "L13",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "N",
+      "link": "L13",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "S",
+      "link": "L16",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "S",
+      "link": "L16",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "W",
+      "link": "L11",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "W",
+      "link": "L11",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "W",
+      "link": "L17",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "E",
+      "link": "L17",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "E",
+      "link": "L17",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "vestry",
+      "side": "N",
+      "link": "L18",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "vestry",
+      "side": "N",
+      "link": "L18",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "vestry",
+      "side": "S",
+      "link": "L13",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "vestry",
+      "side": "S",
+      "link": "L13",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "vestry",
+      "side": "W",
+      "link": "L12",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "vestry",
+      "side": "W",
+      "link": "L12",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "vestry",
+      "side": "W",
+      "link": "L18",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "vestry",
+      "side": "E",
+      "link": "L14",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "vestry",
+      "side": "E",
+      "link": "L14",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "vestry",
+      "side": "E",
+      "link": "L15",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "vestry",
+      "side": "E",
+      "link": "L15",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "vestry-wash",
+      "side": "W",
+      "link": "L14",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "vestry-wash",
+      "side": "W",
+      "link": "L14",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "vestments",
+      "side": "W",
+      "link": "L15",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "vestments",
+      "side": "W",
+      "link": "L15",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "crypt-entry",
+      "side": "N",
+      "link": "L16",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "crypt-entry",
+      "side": "N",
+      "link": "L16",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "choir-stair",
+      "side": "W",
+      "link": "L20",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "choir-stair",
+      "side": "W",
+      "link": "L20",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "choir-stair",
+      "side": "E",
+      "link": "L19",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "choir-stair",
+      "side": "E",
+      "link": "L19",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "choir",
+      "side": "W",
+      "link": "L19",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "choir",
+      "side": "W",
+      "link": "L19",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "choir",
+      "side": "E",
+      "link": "L21",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "choir",
+      "side": "E",
+      "link": "L21",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "tower-stair",
+      "side": "E",
+      "link": "L20",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "tower-stair",
+      "side": "E",
+      "link": "L20",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "music-entry",
+      "side": "W",
+      "link": "L21",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "music-entry",
+      "side": "W",
+      "link": "L21",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "music-entry",
+      "side": "E",
+      "link": "L22",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "music-entry",
+      "side": "E",
+      "link": "L22",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "music-entry",
+      "side": "E",
+      "link": "L23",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "music-entry",
+      "side": "E",
+      "link": "L23",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "music-archive",
+      "side": "W",
+      "link": "L22",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "music-archive",
+      "side": "W",
+      "link": "L22",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "organ-service",
+      "side": "W",
+      "link": "L23",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "organ-service",
+      "side": "W",
+      "link": "L23",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "crypt-stair",
+      "side": "W",
+      "link": "L24",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "crypt-stair",
+      "side": "W",
+      "link": "L24",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "crypt-aisle",
+      "side": "W",
+      "link": "L25",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "crypt-aisle",
+      "side": "W",
+      "link": "L25",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "crypt-aisle",
+      "side": "E",
+      "link": "L24",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "crypt-aisle",
+      "side": "E",
+      "link": "L24",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "crypt-memorial",
+      "side": "E",
+      "link": "L25",
+      "width": 1.2,
+      "height": 2.45
+    },
+    {
+      "zone": "crypt-memorial",
+      "side": "E",
+      "link": "L25",
+      "width": 1.2,
+      "height": 2.45
+    }
+  ],
+  "meshes": 405,
+  "issues": [
+    {
+      "zone": "nave",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.7,
+          26.8,
+          32.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "rear-nave",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.7,
+          26.8,
+          32.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "vestibule",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.7,
+          26.8,
+          32.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "parish-lobby",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.7,
+          26.8,
+          32.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "office",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.7,
+          26.8,
+          32.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "records",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.7,
+          26.8,
+          32.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "parish-wc",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.7,
+          26.8,
+          32.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "conversation-entry",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.7,
+          26.8,
+          32.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "confessional",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.7,
+          26.8,
+          32.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "consultation",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.7,
+          26.8,
+          32.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "chancel",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.7,
+          26.8,
+          32.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "chapel",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.7,
+          26.8,
+          32.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "vestry",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.7,
+          26.8,
+          32.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "vestry-wash",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.7,
+          26.8,
+          32.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "vestments",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.7,
+          26.8,
+          32.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "crypt-entry",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.7,
+          26.8,
+          32.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "choir-stair",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          18.7,
+          26.8,
+          20.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "choir",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          18.7,
+          26.8,
+          20.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "tower-stair",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          18.7,
+          26.8,
+          20.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "music-entry",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          18.7,
+          26.8,
+          20.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "music-archive",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          18.7,
+          26.8,
+          20.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "organ-service",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          18.7,
+          26.8,
+          20.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "belfry",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          15.7,
+          26.8,
+          17.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "grounds",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.7,
+          26.8,
+          32.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "entry",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.7,
+          26.8,
+          32.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "zone": "stage",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.7,
+          26.8,
+          32.3,
+          33.2
+        ]
+      ]
+    },
+    {
+      "link": "L33",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "L34",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "L35",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    }
+  ],
+  "source_refinement": [],
+  "native_reopened": true,
+  "blend_sha256": "c54c2c1ad8738b4ede830c88867cacb5d5a918e22b2ef948a9fc1bd08046c899",
+  "status": "rough-shell-blocked; runtime integration pending",
+  "structural_review": {
+    "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
+    "glb_sha256": "66946692dd29e65cad5871e2830e197f9f9ffbedc80b74cbf4e3b26f0a745534",
+    "independently_reimported": true,
+    "meshes": 401,
+    "triangles": 4812,
+    "floor_parts": 70,
+    "ceiling_cap_parts": 46,
+    "stair_treads": 51,
+    "checked_closed_solids": 345,
+    "measured_depth_parts": 116,
+    "exported_cap_rays": 46,
+    "fixed_infill_routes": 4,
+    "exported_fixed_boundary_checks": [
+      "L26",
+      "L27",
+      "L28",
+      "L29"
+    ],
+    "wall_depth_m": 0.16,
+    "floor_depth_m": 0.16,
+    "terrain": "Exterior zone pads omitted; real saved terrain/hole work remains",
+    "roof": "Closed ceiling/deck caps only; authored exterior roof form/weathering remains",
+    "remaining": [
+      "Capsule/optical/body/object and roof/skylight rays in actual engine",
+      "All remaining unresolved elevation routes and landings/guards",
+      "Original source asset fit and supported furnishings",
+      "Source-matched terrain holes, services, van and LAN integration"
+    ]
+  },
+  "authoritative_input": "development/levels/rebuild/church/rough-layout.json",
+  "original_scene_preserved": true,
+  "preserved_sources": {
+    "development/levels/rebuild/church/rough-layout.json": "ecbdd6aec2a671c81c4dd46143dc5660fdc9dd568f62772ca472afc40976ca05"
+  },
+  "generator_sha256": {
+    "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
+    "development/levels/blockouts/build_blockouts.py": "988507821406b3680ea7c27058ee6d39ba86897f5a8321a1c7df9c5b381f18e5",
+    "development/levels/blockouts/structural_pass.py": "0df964bb27e8a3fb2a7cd1cc72abe50f57006338cc6cb4f0025d6a6e9eaaa721",
+    "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
+  }
+}

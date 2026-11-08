@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 7625,
+  "count": 7757,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -73536,6 +73536,576 @@
       "sha256": "2258d97e973ac9e7b3d0aa6fe02ea2bcaf0f6d95c4cb1b588cbb4451f8c11103"
     },
     {
+      "path": "development/levels/rebuild/captures/structure-batch/academy/structure-export-closed.png",
+      "url": "development/levels/rebuild/captures/structure-batch/academy/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 401504,
+      "sha256": "a148be4bfeeb71b7c90a76f3d0b466306e62fb4864f4f2e77b853cc3b884b755"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/academy/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/captures/structure-batch/academy/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 447467,
+      "sha256": "1d1b1470fa898286b70622cf8c4ab0a5ca9925fa1019fcab1c77e3a90ea0a8ad"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/asylum/structure-export-closed.png",
+      "url": "development/levels/rebuild/captures/structure-batch/asylum/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 358683,
+      "sha256": "e169bc23fd15bd8dcdcb1d95bd98003555112fb6446ea1ef73cd8ed5216c841e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/asylum/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/captures/structure-batch/asylum/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 408431,
+      "sha256": "1478f5db21aa9948c32f7de331c906b580c71d293596df805c9b98ae36ac2f3f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/church/structure-export-closed.png",
+      "url": "development/levels/rebuild/captures/structure-batch/church/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 370271,
+      "sha256": "4ea16ecbb3abf0891de72b2f67fab0f99db87ec00693948bc97a5c53ce9fbd9f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/church/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/captures/structure-batch/church/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 405448,
+      "sha256": "4fdc4375b30098974abf7a2ba41681ddd1f27b86f474e3b1602a138a6afd5f10"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/college/structure-export-closed.png",
+      "url": "development/levels/rebuild/captures/structure-batch/college/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 343549,
+      "sha256": "53fb9de4fdd187ede4262b7a188405deccb212f48ef04f5f2b37c60c78cdafdc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/college/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/captures/structure-batch/college/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 382143,
+      "sha256": "37b9cecf8522949059d8dde7627d6af42de46ed03b7f930753868049078cec04"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/farmhouse/structure-export-closed.png",
+      "url": "development/levels/rebuild/captures/structure-batch/farmhouse/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 363506,
+      "sha256": "0021db26ede65733587b9063f5a2d3ca0ce739486193cd4b89340836baf1587d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/farmhouse/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/captures/structure-batch/farmhouse/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 406342,
+      "sha256": "aa9f5181a27c85d06028a1eddcd422fc0431b9c9c8ab878a6639afe7385590a7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/mansion/structure-export-closed.png",
+      "url": "development/levels/rebuild/captures/structure-batch/mansion/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 366974,
+      "sha256": "55979da14494a823157bd98aa1c6b104a134eb4f244d29d17a240fe194f4d71f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/mansion/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/captures/structure-batch/mansion/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 407256,
+      "sha256": "8fc352f70060c3368ac9d8b596d23147e0165274fbb9e3b75f36ad06f0ddfa3b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/prison/structure-export-closed.png",
+      "url": "development/levels/rebuild/captures/structure-batch/prison/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 357247,
+      "sha256": "ec7ccd451f4d327d0ab2be386a3a6180e2d02859daa98b8b22feebbcf5485cb8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/prison/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/captures/structure-batch/prison/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 404548,
+      "sha256": "76567112dc7ead6f4bda4e80fc7e509b5b96378f2589893c5fcf03ef63380a9d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-01.png",
+      "url": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-01.png",
+      "title": "Roster structure sheet 01",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 1920,
+      "height": 768,
+      "bytes": 399781,
+      "sha256": "94885fd6eac5be52b93df543bacf2679ee4e91c26e8fb3ceb28095283e6b191a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-02.png",
+      "url": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-02.png",
+      "title": "Roster structure sheet 02",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 1920,
+      "height": 768,
+      "bytes": 383650,
+      "sha256": "2040f278d974405ca1f92137f68b2873c96b086eb158e2727656278e5a24c44e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-03.png",
+      "url": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-03.png",
+      "title": "Roster structure sheet 03",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 1920,
+      "height": 768,
+      "bytes": 276524,
+      "sha256": "bdecd619f89972c4e591642233c82a6fee4225593eec411ea5cf9e1d342ff9c6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-04.png",
+      "url": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-04.png",
+      "title": "Roster structure sheet 04",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 1920,
+      "height": 768,
+      "bytes": 286592,
+      "sha256": "b5967fd59c97e02cd6cb473b7c3602697863e98819efeae59afb8da29747a19a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-05.png",
+      "url": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-05.png",
+      "title": "Roster structure sheet 05",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 1920,
+      "height": 768,
+      "bytes": 340163,
+      "sha256": "1cb52479720e5a6d9debcaedd1115c5c8008109cf5b31453ad78623f66ca4e7d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-06.png",
+      "url": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-06.png",
+      "title": "Roster structure sheet 06",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 1920,
+      "height": 768,
+      "bytes": 499070,
+      "sha256": "ab6fcf11e793e7c3a45ade38ea13557470cfd1da61f9ab38926d86fe78b37273"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-07.png",
+      "url": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-07.png",
+      "title": "Roster structure sheet 07",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 1920,
+      "height": 768,
+      "bytes": 111524,
+      "sha256": "6f476487713055860c0647bd146bd96ec66b74e79f995482da6fcf84b291ede5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/school/structure-export-closed.png",
+      "url": "development/levels/rebuild/captures/structure-batch/school/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 347031,
+      "sha256": "607acc7161e0cf63308fe4c0a986d20af676a195b41aa3eb03793d27d2cf8e01"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/school/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/captures/structure-batch/school/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 386333,
+      "sha256": "163466691db41dfb58d5c403a20054234c4a78a0433ff2993fd657eb47649b21"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-03/structure-export-closed.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-03/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 254383,
+      "sha256": "c305e06877879f0497e842031fcf1ec01d1a90b12dae22d9eba8d053080dabd7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-03/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-03/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 266919,
+      "sha256": "756c471ac92176c1d8072ed00dc4d76574a270952b2a8e6f6fa136d685e1d7ec"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-04/structure-export-closed.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-04/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 341516,
+      "sha256": "d42fab3a1212115870f0657f429d92c06563e643a990ba277b81327a56dd377e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-04/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-04/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 353792,
+      "sha256": "dc62a9aa2327da3d13f5084525c279dab8a864b2a04a198f053b15e8b029f3cc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-05/structure-export-closed.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-05/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 364547,
+      "sha256": "7bf38149cb706c99bfa246d8f86981c54db8170602ff82c11c22c230d24998ae"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-05/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-05/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 401440,
+      "sha256": "66d6ce76697565a68915c72a22e3c9c57edb60341603d097b1da2618851c0ecd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-06/structure-export-closed.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-06/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 328008,
+      "sha256": "a7386b793ff250fad9951d1f395e0f1201724019061931eb6e6c4eb3e2b8d77d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-06/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-06/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 349356,
+      "sha256": "90cbd210c4433f8a08523c1d2b0df50112189131aaefd744f413236cc68814c6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-07-mortuary/structure-export-closed.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-07-mortuary/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 443130,
+      "sha256": "7e7d1c4214b6d9532a295a29e1a20b9ca435317c17830f709afc4e13d10583bc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-07-mortuary/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-07-mortuary/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 464706,
+      "sha256": "9c7d47cadeddf4110ba41e3a3b49eb20f6ce58327bc70e82ec52de5dcf9d00f9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-07/structure-export-closed.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-07/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 324446,
+      "sha256": "38718f6d4400975ed9825fe3d425ad009ef5299e551ab6a55c83f895b0c81207"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-07/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-07/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 343463,
+      "sha256": "eacb91f2ba05e8642ea70513b105e54ccb0e63c35edeb780675d172542ffc2b3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-08/structure-export-closed.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-08/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 301026,
+      "sha256": "a0a930041781ce2ce04c0622bff6b3f3e5b0c405f78d11e9eee86686aa45b993"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-08/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-08/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 333074,
+      "sha256": "7b1cb1095aa32179a9ec3abca3a8eb00024f1b169ce7523bd642b2dbedef35ac"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-09/structure-export-closed.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-09/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 346495,
+      "sha256": "b6ac207b1e1c58ef830183ceef017fd4b5a0c28029cb9b5c18abc290f1d9b90e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-09/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-09/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 376286,
+      "sha256": "b15689c87151ef2282fdeada75b53c6504d74b02adfca02b2cd892bfb794182b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-10/structure-export-closed.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-10/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 289279,
+      "sha256": "d526f42a4a0e2bcfcfe1129c6b9bfa420de50e3eaa355d8c8aeb5bda9327aff2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-10/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-10/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 317697,
+      "sha256": "491400ba28c15b99dc5d634d8df198e390930f9ffea9ee752480cb083bb9f261"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-11/structure-export-closed.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-11/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 340744,
+      "sha256": "bccf074c96ba63d5d49a402fbeebffd5a64a0a2db8f001d00f9e080626632e0f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-11/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-11/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 359397,
+      "sha256": "c1b4b7e4439ef44c542fcd82597898d4f7dd29293b8841481e5bd6ee42cedd7e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-12/structure-export-closed.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-12/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 257300,
+      "sha256": "9726c4f77f6b8cc70323898baf69b796bed2c344a81603f2b3484a1fee046045"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-12/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-12/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 269488,
+      "sha256": "d953919a0b87447213479cda821aa72a6daa0dadb8656b491d6c556ea09fcb85"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-13/structure-export-closed.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-13/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 287513,
+      "sha256": "cb595af57a82d88b702e14015b3e71d21feef5d3b80ee73957497513b9617d0d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-13/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-13/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 318874,
+      "sha256": "1f7e73fceac4531936b19f181989acd765e4693a37c601d603b05f39db697931"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-14/structure-export-closed.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-14/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 635722,
+      "sha256": "2f4b1b090a09ca0e30028a76e5cdb5d750b97ceef46a57c135c338e357ef4826"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-14/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-14/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 666883,
+      "sha256": "1c8d8700c7643871ca22d48bfbf9c797e9242d2c951cc9d67d716a6a5811783c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-15/structure-export-closed.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-15/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 634619,
+      "sha256": "19625fe2968a758f36bbd1395b6a712fac690d9cae4e7892348502e5df52d1b3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-15/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-15/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 645620,
+      "sha256": "3feff6a99cfb7304124f28cf2b72d820bbb232d3f2b277239a3375f645b8cd1b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-16/structure-export-closed.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-16/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 606209,
+      "sha256": "8781941ec12e8d70496c1862a8f5442039601f07c9d000f4034d998fed2f0020"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-16/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-16/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 630885,
+      "sha256": "eb0175e888d069748039464eb2c63d1e1cffe8ba15120e3daadfb88dedd99342"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-17/structure-export-closed.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-17/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 533743,
+      "sha256": "eea14b4c4a6e452abb123dc8dbf8b3f9c8721cbd997c2244cf4bf72ea6b42bb1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-17/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-17/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 560127,
+      "sha256": "5525fedee646eddc712b202f963ce96f8cbd270aeaee1e36ed4d3428b1eba468"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-18/structure-export-closed.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-18/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 534574,
+      "sha256": "c8e7d2a830bbd8bf6f87819722e084e4a2067726fad6d7ae576e22977273cd78"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-18/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/captures/structure-batch/wld-18/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Native structural blocking review; runtime integration pending",
+      "width": 960,
+      "height": 720,
+      "bytes": 550816,
+      "sha256": "7a7333a0b9697ac4eb22418cafc0723a7c8b7b493a655a160a23933b2c38bd20"
+    },
+    {
       "path": "development/levels/rebuild/previews/academy-revised-rough-plan.png",
       "url": "development/levels/rebuild/previews/academy-revised-rough-plan.png",
       "title": "Academy revised rough plan",
@@ -73704,6 +74274,756 @@
       "height": 1920,
       "bytes": 1688582,
       "sha256": "2c9ed85c36c9231adf9157be45a15f3958b78deb861ba907415c41a80a13a4c9"
+    },
+    {
+      "path": "development/levels/rebuild/structures/academy/preview.png",
+      "url": "development/levels/rebuild/structures/academy/preview.png",
+      "title": "Preview",
+      "kind": "Native planning-scene preview",
+      "width": 960,
+      "height": 720,
+      "bytes": 415212,
+      "sha256": "633da6ad6e2285012d4fb3cdec54cd5e634aea5e858bdfa485293949349f1dbf"
+    },
+    {
+      "path": "development/levels/rebuild/structures/academy/structure-export-closed.png",
+      "url": "development/levels/rebuild/structures/academy/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 401504,
+      "sha256": "a148be4bfeeb71b7c90a76f3d0b466306e62fb4864f4f2e77b853cc3b884b755"
+    },
+    {
+      "path": "development/levels/rebuild/structures/academy/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/structures/academy/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 447467,
+      "sha256": "1d1b1470fa898286b70622cf8c4ab0a5ca9925fa1019fcab1c77e3a90ea0a8ad"
+    },
+    {
+      "path": "development/levels/rebuild/structures/asylum/preview.png",
+      "url": "development/levels/rebuild/structures/asylum/preview.png",
+      "title": "Preview",
+      "kind": "Native planning-scene preview",
+      "width": 960,
+      "height": 720,
+      "bytes": 412314,
+      "sha256": "2baea289efc693ddd4f944ca58c6c3279e26d5867a3b4f919d800c601ed04266"
+    },
+    {
+      "path": "development/levels/rebuild/structures/asylum/structure-export-closed.png",
+      "url": "development/levels/rebuild/structures/asylum/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 358683,
+      "sha256": "e169bc23fd15bd8dcdcb1d95bd98003555112fb6446ea1ef73cd8ed5216c841e"
+    },
+    {
+      "path": "development/levels/rebuild/structures/asylum/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/structures/asylum/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 408431,
+      "sha256": "1478f5db21aa9948c32f7de331c906b580c71d293596df805c9b98ae36ac2f3f"
+    },
+    {
+      "path": "development/levels/rebuild/structures/church/preview.png",
+      "url": "development/levels/rebuild/structures/church/preview.png",
+      "title": "Preview",
+      "kind": "Native planning-scene preview",
+      "width": 960,
+      "height": 720,
+      "bytes": 386109,
+      "sha256": "3a1090d801ce767efebb904f3f706cf1b4ac055115f8de353b34a3f455088313"
+    },
+    {
+      "path": "development/levels/rebuild/structures/church/structure-export-closed.png",
+      "url": "development/levels/rebuild/structures/church/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 370271,
+      "sha256": "4ea16ecbb3abf0891de72b2f67fab0f99db87ec00693948bc97a5c53ce9fbd9f"
+    },
+    {
+      "path": "development/levels/rebuild/structures/church/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/structures/church/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 405448,
+      "sha256": "4fdc4375b30098974abf7a2ba41681ddd1f27b86f474e3b1602a138a6afd5f10"
+    },
+    {
+      "path": "development/levels/rebuild/structures/college/preview.png",
+      "url": "development/levels/rebuild/structures/college/preview.png",
+      "title": "Preview",
+      "kind": "Native planning-scene preview",
+      "width": 960,
+      "height": 720,
+      "bytes": 405637,
+      "sha256": "587cbbf0aec1255504b98ee8c9e604c2b01fd70b5077bb809dc4fb3f08cdc4f5"
+    },
+    {
+      "path": "development/levels/rebuild/structures/college/structure-export-closed.png",
+      "url": "development/levels/rebuild/structures/college/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 343549,
+      "sha256": "53fb9de4fdd187ede4262b7a188405deccb212f48ef04f5f2b37c60c78cdafdc"
+    },
+    {
+      "path": "development/levels/rebuild/structures/college/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/structures/college/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 382143,
+      "sha256": "37b9cecf8522949059d8dde7627d6af42de46ed03b7f930753868049078cec04"
+    },
+    {
+      "path": "development/levels/rebuild/structures/farmhouse/preview.png",
+      "url": "development/levels/rebuild/structures/farmhouse/preview.png",
+      "title": "Preview",
+      "kind": "Native planning-scene preview",
+      "width": 960,
+      "height": 720,
+      "bytes": 397227,
+      "sha256": "1d9eb22e3d0d07b7e7625be0d1680df3b70c4d7d068e0948eb538f3fb712031f"
+    },
+    {
+      "path": "development/levels/rebuild/structures/farmhouse/structure-export-closed.png",
+      "url": "development/levels/rebuild/structures/farmhouse/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 363506,
+      "sha256": "0021db26ede65733587b9063f5a2d3ca0ce739486193cd4b89340836baf1587d"
+    },
+    {
+      "path": "development/levels/rebuild/structures/farmhouse/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/structures/farmhouse/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 406342,
+      "sha256": "aa9f5181a27c85d06028a1eddcd422fc0431b9c9c8ab878a6639afe7385590a7"
+    },
+    {
+      "path": "development/levels/rebuild/structures/mansion/preview.png",
+      "url": "development/levels/rebuild/structures/mansion/preview.png",
+      "title": "Preview",
+      "kind": "Native planning-scene preview",
+      "width": 960,
+      "height": 720,
+      "bytes": 397150,
+      "sha256": "db71d9c6a547b9222b311e000d9fa13f0084ed8d79327f7c8f9dd2c5d1a4a967"
+    },
+    {
+      "path": "development/levels/rebuild/structures/mansion/structure-export-closed.png",
+      "url": "development/levels/rebuild/structures/mansion/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 366974,
+      "sha256": "55979da14494a823157bd98aa1c6b104a134eb4f244d29d17a240fe194f4d71f"
+    },
+    {
+      "path": "development/levels/rebuild/structures/mansion/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/structures/mansion/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 407256,
+      "sha256": "8fc352f70060c3368ac9d8b596d23147e0165274fbb9e3b75f36ad06f0ddfa3b"
+    },
+    {
+      "path": "development/levels/rebuild/structures/prison/preview.png",
+      "url": "development/levels/rebuild/structures/prison/preview.png",
+      "title": "Preview",
+      "kind": "Native planning-scene preview",
+      "width": 960,
+      "height": 720,
+      "bytes": 418995,
+      "sha256": "f2df727159a9082ec3f43b53d147f64b1920a83aa4bc59bc91e3accc8db01e16"
+    },
+    {
+      "path": "development/levels/rebuild/structures/prison/structure-export-closed.png",
+      "url": "development/levels/rebuild/structures/prison/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 357247,
+      "sha256": "ec7ccd451f4d327d0ab2be386a3a6180e2d02859daa98b8b22feebbcf5485cb8"
+    },
+    {
+      "path": "development/levels/rebuild/structures/prison/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/structures/prison/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 404548,
+      "sha256": "76567112dc7ead6f4bda4e80fc7e509b5b96378f2589893c5fcf03ef63380a9d"
+    },
+    {
+      "path": "development/levels/rebuild/structures/school/preview.png",
+      "url": "development/levels/rebuild/structures/school/preview.png",
+      "title": "Preview",
+      "kind": "Native planning-scene preview",
+      "width": 960,
+      "height": 720,
+      "bytes": 411828,
+      "sha256": "a8529a13df1119b7eb919d7b4336b87553ad61829522713da517209352baeec8"
+    },
+    {
+      "path": "development/levels/rebuild/structures/school/structure-export-closed.png",
+      "url": "development/levels/rebuild/structures/school/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 347031,
+      "sha256": "607acc7161e0cf63308fe4c0a986d20af676a195b41aa3eb03793d27d2cf8e01"
+    },
+    {
+      "path": "development/levels/rebuild/structures/school/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/structures/school/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 386333,
+      "sha256": "163466691db41dfb58d5c403a20054234c4a78a0433ff2993fd657eb47649b21"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-03/preview.png",
+      "url": "development/levels/rebuild/structures/wld-03/preview.png",
+      "title": "Preview",
+      "kind": "Native planning-scene preview",
+      "width": 960,
+      "height": 720,
+      "bytes": 377183,
+      "sha256": "7d5d846f3a4958e0f32707fc80ea60b18e5596836923e56f3c9fc742fbd2fe10"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-03/structure-export-closed.png",
+      "url": "development/levels/rebuild/structures/wld-03/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 254383,
+      "sha256": "c305e06877879f0497e842031fcf1ec01d1a90b12dae22d9eba8d053080dabd7"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-03/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/structures/wld-03/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 266919,
+      "sha256": "756c471ac92176c1d8072ed00dc4d76574a270952b2a8e6f6fa136d685e1d7ec"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-04/preview.png",
+      "url": "development/levels/rebuild/structures/wld-04/preview.png",
+      "title": "Preview",
+      "kind": "Native planning-scene preview",
+      "width": 960,
+      "height": 720,
+      "bytes": 373028,
+      "sha256": "8a0287328c19671c799de95e35f4a58d2d1ed923c386a27c047583f44e183d5e"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-04/structure-export-closed.png",
+      "url": "development/levels/rebuild/structures/wld-04/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 341516,
+      "sha256": "d42fab3a1212115870f0657f429d92c06563e643a990ba277b81327a56dd377e"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-04/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/structures/wld-04/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 353792,
+      "sha256": "dc62a9aa2327da3d13f5084525c279dab8a864b2a04a198f053b15e8b029f3cc"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-05/preview.png",
+      "url": "development/levels/rebuild/structures/wld-05/preview.png",
+      "title": "Preview",
+      "kind": "Native planning-scene preview",
+      "width": 960,
+      "height": 720,
+      "bytes": 398186,
+      "sha256": "3e2758cb33444e59099ff12125058e784cc3209337ac82f65e7ce5c509607dad"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-05/structure-export-closed.png",
+      "url": "development/levels/rebuild/structures/wld-05/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 364547,
+      "sha256": "7bf38149cb706c99bfa246d8f86981c54db8170602ff82c11c22c230d24998ae"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-05/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/structures/wld-05/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 401440,
+      "sha256": "66d6ce76697565a68915c72a22e3c9c57edb60341603d097b1da2618851c0ecd"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-06/preview.png",
+      "url": "development/levels/rebuild/structures/wld-06/preview.png",
+      "title": "Preview",
+      "kind": "Native planning-scene preview",
+      "width": 960,
+      "height": 720,
+      "bytes": 395256,
+      "sha256": "7fa16574cb08e1845806ae261f5daec5a518225cdcbfe6c37d09a4c9ef20628d"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-06/structure-export-closed.png",
+      "url": "development/levels/rebuild/structures/wld-06/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 328008,
+      "sha256": "a7386b793ff250fad9951d1f395e0f1201724019061931eb6e6c4eb3e2b8d77d"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-06/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/structures/wld-06/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 349356,
+      "sha256": "90cbd210c4433f8a08523c1d2b0df50112189131aaefd744f413236cc68814c6"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-07-mortuary/preview.png",
+      "url": "development/levels/rebuild/structures/wld-07-mortuary/preview.png",
+      "title": "Preview",
+      "kind": "Native planning-scene preview",
+      "width": 960,
+      "height": 720,
+      "bytes": 515983,
+      "sha256": "f3a2cf0203af9a3d8cf154e56fcc13103978c9f0dbc399e062abc2cacb358de8"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-07-mortuary/structure-export-closed.png",
+      "url": "development/levels/rebuild/structures/wld-07-mortuary/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 443130,
+      "sha256": "7e7d1c4214b6d9532a295a29e1a20b9ca435317c17830f709afc4e13d10583bc"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-07-mortuary/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/structures/wld-07-mortuary/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 464706,
+      "sha256": "9c7d47cadeddf4110ba41e3a3b49eb20f6ce58327bc70e82ec52de5dcf9d00f9"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-07/preview.png",
+      "url": "development/levels/rebuild/structures/wld-07/preview.png",
+      "title": "Preview",
+      "kind": "Native planning-scene preview",
+      "width": 960,
+      "height": 720,
+      "bytes": 378528,
+      "sha256": "9a2f7577783eeac926ac4fc7481f02951df8b63d6a36b0dfc56d4b7fa5308281"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-07/structure-export-closed.png",
+      "url": "development/levels/rebuild/structures/wld-07/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 324446,
+      "sha256": "38718f6d4400975ed9825fe3d425ad009ef5299e551ab6a55c83f895b0c81207"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-07/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/structures/wld-07/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 343463,
+      "sha256": "eacb91f2ba05e8642ea70513b105e54ccb0e63c35edeb780675d172542ffc2b3"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-08/preview.png",
+      "url": "development/levels/rebuild/structures/wld-08/preview.png",
+      "title": "Preview",
+      "kind": "Native planning-scene preview",
+      "width": 960,
+      "height": 720,
+      "bytes": 396034,
+      "sha256": "c3928cb6d26c2b0077ef5f79bcd373c0f569b879b0d66a89af184038cdda1e00"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-08/structure-export-closed.png",
+      "url": "development/levels/rebuild/structures/wld-08/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 301026,
+      "sha256": "a0a930041781ce2ce04c0622bff6b3f3e5b0c405f78d11e9eee86686aa45b993"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-08/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/structures/wld-08/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 333074,
+      "sha256": "7b1cb1095aa32179a9ec3abca3a8eb00024f1b169ce7523bd642b2dbedef35ac"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-09/preview.png",
+      "url": "development/levels/rebuild/structures/wld-09/preview.png",
+      "title": "Preview",
+      "kind": "Native planning-scene preview",
+      "width": 960,
+      "height": 720,
+      "bytes": 394496,
+      "sha256": "d4646706395e1e81767a4b06751378f17a1bf48d854a8991776483ebf3b438a2"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-09/structure-export-closed.png",
+      "url": "development/levels/rebuild/structures/wld-09/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 346495,
+      "sha256": "b6ac207b1e1c58ef830183ceef017fd4b5a0c28029cb9b5c18abc290f1d9b90e"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-09/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/structures/wld-09/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 376286,
+      "sha256": "b15689c87151ef2282fdeada75b53c6504d74b02adfca02b2cd892bfb794182b"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-10/preview.png",
+      "url": "development/levels/rebuild/structures/wld-10/preview.png",
+      "title": "Preview",
+      "kind": "Native planning-scene preview",
+      "width": 960,
+      "height": 720,
+      "bytes": 399968,
+      "sha256": "962ec0454b9c9869bdb2a7ee0d40df7c8cb23cd90f191031ece9ad4e8fa5dc71"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-10/structure-export-closed.png",
+      "url": "development/levels/rebuild/structures/wld-10/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 289279,
+      "sha256": "d526f42a4a0e2bcfcfe1129c6b9bfa420de50e3eaa355d8c8aeb5bda9327aff2"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-10/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/structures/wld-10/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 317697,
+      "sha256": "491400ba28c15b99dc5d634d8df198e390930f9ffea9ee752480cb083bb9f261"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-11/preview.png",
+      "url": "development/levels/rebuild/structures/wld-11/preview.png",
+      "title": "Preview",
+      "kind": "Native planning-scene preview",
+      "width": 960,
+      "height": 720,
+      "bytes": 368772,
+      "sha256": "ff51f3b5f09d87eaff8014953d44d7f187ef082da841a1f46da4c35364d7b8ca"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-11/structure-export-closed.png",
+      "url": "development/levels/rebuild/structures/wld-11/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 340744,
+      "sha256": "bccf074c96ba63d5d49a402fbeebffd5a64a0a2db8f001d00f9e080626632e0f"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-11/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/structures/wld-11/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 359397,
+      "sha256": "c1b4b7e4439ef44c542fcd82597898d4f7dd29293b8841481e5bd6ee42cedd7e"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-12/preview.png",
+      "url": "development/levels/rebuild/structures/wld-12/preview.png",
+      "title": "Preview",
+      "kind": "Native planning-scene preview",
+      "width": 960,
+      "height": 720,
+      "bytes": 362288,
+      "sha256": "f712cc7eda7a411fd82e3de1462b1cd1aa8b7a55ecea9a71f07d5d89a6dc00ca"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-12/structure-export-closed.png",
+      "url": "development/levels/rebuild/structures/wld-12/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 257300,
+      "sha256": "9726c4f77f6b8cc70323898baf69b796bed2c344a81603f2b3484a1fee046045"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-12/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/structures/wld-12/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 269488,
+      "sha256": "d953919a0b87447213479cda821aa72a6daa0dadb8656b491d6c556ea09fcb85"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-13/preview.png",
+      "url": "development/levels/rebuild/structures/wld-13/preview.png",
+      "title": "Preview",
+      "kind": "Native planning-scene preview",
+      "width": 960,
+      "height": 720,
+      "bytes": 384169,
+      "sha256": "3d1bd9d6aeb4589055b4421d5ec98bbf01418129f1ff2980bcfb5842ff1a02d6"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-13/structure-export-closed.png",
+      "url": "development/levels/rebuild/structures/wld-13/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 287513,
+      "sha256": "cb595af57a82d88b702e14015b3e71d21feef5d3b80ee73957497513b9617d0d"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-13/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/structures/wld-13/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 318874,
+      "sha256": "1f7e73fceac4531936b19f181989acd765e4693a37c601d603b05f39db697931"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-14/preview.png",
+      "url": "development/levels/rebuild/structures/wld-14/preview.png",
+      "title": "Preview",
+      "kind": "Native planning-scene preview",
+      "width": 960,
+      "height": 720,
+      "bytes": 496495,
+      "sha256": "94843053273832415e6b641d9f49c229d90581b49d975f570c56ddc69e62f754"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-14/structure-export-closed.png",
+      "url": "development/levels/rebuild/structures/wld-14/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 635722,
+      "sha256": "2f4b1b090a09ca0e30028a76e5cdb5d750b97ceef46a57c135c338e357ef4826"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-14/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/structures/wld-14/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 666883,
+      "sha256": "1c8d8700c7643871ca22d48bfbf9c797e9242d2c951cc9d67d716a6a5811783c"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-15/preview.png",
+      "url": "development/levels/rebuild/structures/wld-15/preview.png",
+      "title": "Preview",
+      "kind": "Native planning-scene preview",
+      "width": 960,
+      "height": 720,
+      "bytes": 423782,
+      "sha256": "8e7d4187832c6e8ea0d804ccdda423748c78747b441bef210902b6f51e5e26c5"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-15/structure-export-closed.png",
+      "url": "development/levels/rebuild/structures/wld-15/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 634619,
+      "sha256": "19625fe2968a758f36bbd1395b6a712fac690d9cae4e7892348502e5df52d1b3"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-15/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/structures/wld-15/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 645620,
+      "sha256": "3feff6a99cfb7304124f28cf2b72d820bbb232d3f2b277239a3375f645b8cd1b"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-16/preview.png",
+      "url": "development/levels/rebuild/structures/wld-16/preview.png",
+      "title": "Preview",
+      "kind": "Native planning-scene preview",
+      "width": 960,
+      "height": 720,
+      "bytes": 498097,
+      "sha256": "d48d1b35b8b5eeb3707bed03a902b7c65528f9243c6c0c2226a2094951cc07c4"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-16/structure-export-closed.png",
+      "url": "development/levels/rebuild/structures/wld-16/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 606209,
+      "sha256": "8781941ec12e8d70496c1862a8f5442039601f07c9d000f4034d998fed2f0020"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-16/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/structures/wld-16/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 630885,
+      "sha256": "eb0175e888d069748039464eb2c63d1e1cffe8ba15120e3daadfb88dedd99342"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-17/preview.png",
+      "url": "development/levels/rebuild/structures/wld-17/preview.png",
+      "title": "Preview",
+      "kind": "Native planning-scene preview",
+      "width": 960,
+      "height": 720,
+      "bytes": 458426,
+      "sha256": "b6f4203d331a79ba641f3ae0c4166a218bd261954ea6e14f7ff950ea8502994a"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-17/structure-export-closed.png",
+      "url": "development/levels/rebuild/structures/wld-17/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 533743,
+      "sha256": "eea14b4c4a6e452abb123dc8dbf8b3f9c8721cbd997c2244cf4bf72ea6b42bb1"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-17/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/structures/wld-17/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 560127,
+      "sha256": "5525fedee646eddc712b202f963ce96f8cbd270aeaee1e36ed4d3428b1eba468"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-18/preview.png",
+      "url": "development/levels/rebuild/structures/wld-18/preview.png",
+      "title": "Preview",
+      "kind": "Native planning-scene preview",
+      "width": 960,
+      "height": 720,
+      "bytes": 443336,
+      "sha256": "0258b35ce9f66fa65929c5e8cc4b60b05a0cad547604bdf26f62efc8a838cd87"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-18/structure-export-closed.png",
+      "url": "development/levels/rebuild/structures/wld-18/structure-export-closed.png",
+      "title": "Structure export closed",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 534574,
+      "sha256": "c8e7d2a830bbd8bf6f87819722e084e4a2067726fad6d7ae576e22977273cd78"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-18/structure-export-cutaway.png",
+      "url": "development/levels/rebuild/structures/wld-18/structure-export-cutaway.png",
+      "title": "Structure export cutaway",
+      "kind": "Reimported native structure export review",
+      "width": 960,
+      "height": 720,
+      "bytes": 550816,
+      "sha256": "7a7333a0b9697ac4eb22418cafc0723a7c8b7b493a655a160a23933b2c38bd20"
     },
     {
       "path": "development/performance/hardware/2026-10-26/captures/baseline-main-f6793bda-run-1-continuous-house-0.png",

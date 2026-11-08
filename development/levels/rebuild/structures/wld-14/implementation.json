@@ -1,0 +1,411 @@
+{
+  "id": "WLD-14",
+  "title": "Morrow Point Lightstation",
+  "source": "layouts\\wld-14\\layout.json",
+  "source_sha256": "080e5ac734ad19a9027c775b2beb84f5717855eaa5461cc569106e38b7537800",
+  "zones": 23,
+  "routes": 24,
+  "shell_openings": [
+    {
+      "zone": "foyer",
+      "side": "S",
+      "link": "route-03",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "foyer",
+      "side": "W",
+      "link": "route-04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "foyer",
+      "side": "E",
+      "link": "route-08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "sitting",
+      "side": "N",
+      "link": "route-05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "sitting",
+      "side": "E",
+      "link": "route-04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "kitchen",
+      "side": "N",
+      "link": "route-07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "kitchen",
+      "side": "W",
+      "link": "route-08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "kitchen",
+      "side": "E",
+      "link": "route-18",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "workroom",
+      "side": "S",
+      "link": "route-05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "workroom",
+      "side": "W",
+      "link": "route-15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "workroom",
+      "side": "E",
+      "link": "route-06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "store",
+      "side": "N",
+      "link": "route-16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "store",
+      "side": "S",
+      "link": "route-07",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "store",
+      "side": "W",
+      "link": "route-06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "store",
+      "side": "E",
+      "link": "route-09",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "stairs",
+      "side": "W",
+      "link": "route-09",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "bed",
+      "side": "W",
+      "link": "route-13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "bed",
+      "side": "E",
+      "link": "route-12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "study",
+      "side": "W",
+      "link": "route-12",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "study",
+      "side": "E",
+      "link": "route-11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "upperhall",
+      "side": "W",
+      "link": "route-11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "service-stair",
+      "side": "E",
+      "link": "route-15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "service-upper",
+      "side": "E",
+      "link": "route-13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "passage",
+      "side": "N",
+      "link": "route-17",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "passage",
+      "side": "S",
+      "link": "route-16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "generator",
+      "side": "S",
+      "link": "route-19",
+      "width": 1.5,
+      "height": 2.45
+    }
+  ],
+  "meshes": 347,
+  "issues": [
+    {
+      "zone": "bed",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          44.1,
+          35.1,
+          45.9,
+          44.9
+        ],
+        [
+          13.1,
+          33.1,
+          14.9,
+          42.9
+        ]
+      ]
+    },
+    {
+      "zone": "study",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          44.1,
+          35.1,
+          45.9,
+          44.9
+        ],
+        [
+          13.1,
+          33.1,
+          14.9,
+          42.9
+        ]
+      ]
+    },
+    {
+      "zone": "upperhall",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          44.1,
+          35.1,
+          45.9,
+          44.9
+        ],
+        [
+          13.1,
+          33.1,
+          14.9,
+          42.9
+        ]
+      ]
+    },
+    {
+      "zone": "service-upper",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          44.1,
+          35.1,
+          45.9,
+          44.9
+        ],
+        [
+          13.1,
+          33.1,
+          14.9,
+          42.9
+        ]
+      ]
+    },
+    {
+      "zone": "tower1",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          33.829798154109106,
+          8.476941384922318,
+          35.699999999999996,
+          10.9
+        ]
+      ]
+    },
+    {
+      "zone": "tower2",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          33.829798154109106,
+          8.476941384922318,
+          35.699999999999996,
+          10.9
+        ]
+      ]
+    },
+    {
+      "zone": "tower3",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          33.829798154109106,
+          8.476941384922318,
+          35.699999999999996,
+          10.9
+        ]
+      ]
+    },
+    {
+      "zone": "tower4",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          33.829798154109106,
+          8.476941384922318,
+          35.699999999999996,
+          10.9
+        ]
+      ]
+    },
+    {
+      "zone": "tower5",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          33.829798154109106,
+          8.476941384922318,
+          35.699999999999996,
+          10.9
+        ]
+      ]
+    },
+    {
+      "link": "route-10",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "route-14",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "route-20",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 28
+    },
+    {
+      "link": "route-21",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 28
+    },
+    {
+      "link": "route-22",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 28
+    },
+    {
+      "link": "route-23",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 28
+    },
+    {
+      "link": "route-24",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 28
+    }
+  ],
+  "source_refinement": [
+    "Terrain-first massing is not terrain acceptance: resolve drainage, incised paths, retaining edges, foundation contacts and every grade before detailed structures.",
+    "Check floor/wall/roof joins, upper-deck undersides and corners with adjacent lights toggled; log every discovered failure.",
+    "Engineer stairs, landings, openings, guards, door swings and two exits before collision/navigation approval.",
+    "Inspect each model purpose, scale, UVs and true support surface before placing furniture or clutter.",
+    "NPS station component reference only; all dimensions and story are original, not a measured historic replica.",
+    "Tower spiral currently has sloped route mass only; treads, central void, headroom, door apertures and fall guards need engineering."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "cb6e0d5db9504443ef2c6a68b51dc794590e5a1d260cd6a93bcbc0885fd0fdfa",
+  "status": "rough-shell-blocked; runtime integration pending",
+  "structural_review": {
+    "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
+    "glb_sha256": "4dca924a541fb3320eba785a4e9eaf55d5f1e69c2de2c052a06c0ccfb0200438",
+    "independently_reimported": true,
+    "meshes": 343,
+    "triangles": 19812,
+    "floor_parts": 47,
+    "ceiling_cap_parts": 14,
+    "stair_treads": 176,
+    "checked_closed_solids": 317,
+    "measured_depth_parts": 61,
+    "exported_cap_rays": 14,
+    "fixed_infill_routes": 0,
+    "exported_fixed_boundary_checks": [],
+    "wall_depth_m": 0.16,
+    "floor_depth_m": 0.16,
+    "terrain": "Exterior zone pads omitted; real saved terrain/hole work remains",
+    "roof": "Closed ceiling/deck caps only; authored exterior roof form/weathering remains",
+    "remaining": [
+      "Capsule/optical/body/object and roof/skylight rays in actual engine",
+      "All remaining unresolved elevation routes and landings/guards",
+      "Original source asset fit and supported furnishings",
+      "Source-matched terrain holes, services, van and LAN integration"
+    ]
+  },
+  "authoritative_input": "development/levels/layouts/wld-14/layout.json",
+  "original_scene_preserved": true,
+  "preserved_sources": {
+    "development/levels/layouts/wld-14/layout.json": "080e5ac734ad19a9027c775b2beb84f5717855eaa5461cc569106e38b7537800",
+    "development/levels/blockouts/wld-14/rough-shell.blend": "6b8d0496c954c075010f6fe6c53264cf6880168668c432b43b72dc886284a27b",
+    "development/levels/blockouts/wld-14/rough-shell.glb": "81dbb0d76ea5e0e6259c35915e9ed6e0bd6fd6930f04e7c5b4531b05e5334c00"
+  },
+  "generator_sha256": {
+    "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
+    "development/levels/blockouts/build_blockouts.py": "988507821406b3680ea7c27058ee6d39ba86897f5a8321a1c7df9c5b381f18e5",
+    "development/levels/blockouts/structural_pass.py": "0df964bb27e8a3fb2a7cd1cc72abe50f57006338cc6cb4f0025d6a6e9eaaa721",
+    "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
+  }
+}

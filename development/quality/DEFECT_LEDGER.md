@@ -4854,6 +4854,76 @@ Evidence and verification: development/levels/rebuild/verification/house-default
 
 Older-map obligation: No older-map authoring, whole-location or hardware acceptance inferred; audit explicit architecture/attachment fixtures individually.
 
+### DEV-354 — Remaining native rough shells omit enclosed ceilings and reserve only top-end stair holes
+
+**Status:** SCOPED NATIVE BATCH CHECKPOINT; actual runtime/location acceptance remains open · **Affected:** Remaining25structural candidates and shared rough/native export workflow
+
+Earlier shell recipe adds walls/floors but no top enclosure; elevated links reserve a small endpoint hole rather than the full flight.
+
+Cause / uncertainty: Rough-only geometry was not yet engineered for enclosed structures.
+
+Fix / next action: Add closed160mm caps/undersides, share actual upper floor undersides, cut whole-flight openings and build measured treads where run permits.25native exports pass;8links/runtime/roof-form gates remain.
+
+Evidence and verification: development/levels/rebuild/structures/; development/levels/rebuild/verification/roster-structure-2026-11-07/; 25packet implementation.json and verification.json; final Blender log; all50export views
+
+Older-map obligation: Castle/House/Blackpine/Hollow Creek are retained and individually unaudited for this new batch; never infer runtime or older-map fixes from native structure checks.
+
+### DEV-355 — Planning text and diagram stand-ins enter structural GLB exports
+
+**Status:** SCOPED NATIVE BATCH CHECKPOINT; actual runtime/location acceptance remains open · **Affected:** Remaining25structural candidates and shared rough/native export workflow
+
+Native labels can become large tessellated meshes; placeholder van and ritual diagram solids also enter a full-scene export.
+
+Cause / uncertainty: Unfiltered scene export treated editable planning annotations as construction geometry.
+
+Fix / next action: Keep editable native labels/marks, export structural meshes only and exclude diagram stand-ins. Actual Farmhouse export is5208triangles; shared pass131219across25. Canonical runtime van remains unchanged.
+
+Evidence and verification: development/levels/rebuild/structures/; development/levels/rebuild/verification/roster-structure-2026-11-07/; build_blockouts.py selection; native/GLB hashes; per-packet triangle and mesh counts
+
+Older-map obligation: Castle/House/Blackpine/Hollow Creek are retained and individually unaudited for this new batch; never infer runtime or older-map fixes from native structure checks.
+
+### DEV-356 — Search-envelope annotations leave context doors and exterior service mouths open
+
+**Status:** SCOPED NATIVE BATCH CHECKPOINT; actual runtime/location acceptance remains open · **Affected:** Remaining25structural candidates and shared rough/native export workflow
+
+Native rough recipe opens SEALED_NO_ROUTE links. First repaired Prison still fails exported boundary L107 between entry and east-service.
+
+Cause / uncertainty: Annotations were not physical seals; exterior sectors have no building wall to fill automatically.
+
+Fix / next action: Exclude sealed openings/support routes, retain solid walls/caps and build full shared exterior-mouth infill. All192authored fixed boundary checks pass. Preserve failed Academy and Prison exports. Actual runtime terrain/enclosure returns and bypass checks remain open.
+
+Evidence and verification: development/levels/rebuild/structures/; development/levels/rebuild/verification/roster-structure-2026-11-07/; rejected/structure-open-context-v1/; roster-structure-seals.log actual Prison failure; final native boundary arrays
+
+Older-map obligation: Castle/House/Blackpine/Hollow Creek are retained and individually unaudited for this new batch; never infer runtime or older-map fixes from native structure checks.
+
+### DEV-357 — Reusing an intermediate circular deck core can leave a top cap open
+
+**Status:** SCOPED NATIVE BATCH CHECKPOINT; actual runtime/location acceptance remains open · **Affected:** Remaining25structural candidates and shared rough/native export workflow
+
+Source review found shaped floor core fallback applied to ceiling copies, also duplicating intermediate upper-floor surfaces.
+
+Cause / uncertainty: The floor ring helper was reused without distinguishing the top enclosure from an intermediate stair/maintenance core.
+
+Fix / next action: Separate shaped structural decks, suppress caps already covered by the next floor, use a closed top disk and apply real apertures. Reimported lighthouse caps/decks and all final closed-solid/depth/ray checks pass; actual engine spiral/headroom/sky audit remains.
+
+Evidence and verification: development/levels/rebuild/structures/; development/levels/rebuild/verification/roster-structure-2026-11-07/; structural_pass.shaped_deck; WLD14 final exported source and reimported views; final Blender log
+
+Older-map obligation: Castle/House/Blackpine/Hollow Creek are retained and individually unaudited for this new batch; never infer runtime or older-map fixes from native structure checks.
+
+### DEV-358 — Native batch review assumes Pillow is installed in the active Python
+
+**Status:** SCOPED NATIVE BATCH CHECKPOINT; actual runtime/location acceptance remains open · **Affected:** Remaining25structural candidates and shared rough/native export workflow
+
+Review command exits with ModuleNotFoundError before producing contact sheets.
+
+Cause / uncertainty: The environment lacks the image dependency used by the new review script.
+
+Fix / next action: Install dependency only under workspace build/structure-review-python, add its lookup and document reproduction. Review and --check pass; all7sheets manually viewed.
+
+Evidence and verification: development/levels/rebuild/structures/; development/levels/rebuild/verification/roster-structure-2026-11-07/; roster-structure-review-missing-pillow.log; dependency log; final review PASS
+
+Older-map obligation: Castle/House/Blackpine/Hollow Creek are retained and individually unaudited for this new batch; never infer runtime or older-map fixes from native structure checks.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

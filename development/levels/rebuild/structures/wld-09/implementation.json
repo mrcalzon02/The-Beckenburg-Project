@@ -1,0 +1,613 @@
+{
+  "id": "WLD-09",
+  "title": "Blackwater Hydroelectric Dam",
+  "source": "layouts\\wld-09\\layout.json",
+  "source_sha256": "ac4bae32f511b941ff9a2345d8906899b8d4599eb886b3c3dd32f2b87c60f155",
+  "zones": 14,
+  "routes": 18,
+  "shell_openings": [
+    {
+      "zone": "control",
+      "side": "N",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "control",
+      "side": "N",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "control",
+      "side": "S",
+      "link": "L03",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "control",
+      "side": "S",
+      "link": "L03",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "office",
+      "side": "S",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "office",
+      "side": "S",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "office",
+      "side": "E",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "office",
+      "side": "E",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west-stair",
+      "side": "S",
+      "link": "L06",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "west-stair",
+      "side": "S",
+      "link": "L06",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "west-stair",
+      "side": "W",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west-stair",
+      "side": "W",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "turbine",
+      "side": "N",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "turbine",
+      "side": "N",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "turbine",
+      "side": "S",
+      "link": "L08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "turbine",
+      "side": "S",
+      "link": "L08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "workshop",
+      "side": "N",
+      "link": "L08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "workshop",
+      "side": "N",
+      "link": "L08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "S",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "S",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "S",
+      "link": "L17",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "S",
+      "link": "L17",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "valve",
+      "side": "N",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "valve",
+      "side": "N",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "valve",
+      "side": "E",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "valve",
+      "side": "E",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "return",
+      "side": "N",
+      "link": "L17",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "return",
+      "side": "N",
+      "link": "L17",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "return",
+      "side": "W",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "return",
+      "side": "W",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "plant",
+      "side": "S",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "plant",
+      "side": "S",
+      "link": "L13",
+      "width": 1.5,
+      "height": 2.45
+    }
+  ],
+  "meshes": 342,
+  "issues": [
+    {
+      "zone": "stage",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.1,
+          34.1,
+          50.9,
+          35.9
+        ],
+        [
+          43.85,
+          33.85,
+          71.15,
+          56.15
+        ],
+        [
+          48.85,
+          33.85,
+          71.15,
+          36.15
+        ],
+        [
+          68.85,
+          33.85,
+          71.15,
+          56.15
+        ],
+        [
+          55.85,
+          33.85,
+          71.15,
+          41.15
+        ]
+      ]
+    },
+    {
+      "zone": "entry",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.1,
+          34.1,
+          50.9,
+          35.9
+        ],
+        [
+          43.85,
+          33.85,
+          71.15,
+          56.15
+        ],
+        [
+          48.85,
+          33.85,
+          71.15,
+          36.15
+        ],
+        [
+          68.85,
+          33.85,
+          71.15,
+          56.15
+        ],
+        [
+          55.85,
+          33.85,
+          71.15,
+          41.15
+        ]
+      ]
+    },
+    {
+      "zone": "crest",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.1,
+          34.1,
+          50.9,
+          35.9
+        ],
+        [
+          43.85,
+          33.85,
+          71.15,
+          56.15
+        ],
+        [
+          48.85,
+          33.85,
+          71.15,
+          36.15
+        ],
+        [
+          68.85,
+          33.85,
+          71.15,
+          56.15
+        ],
+        [
+          55.85,
+          33.85,
+          71.15,
+          41.15
+        ]
+      ]
+    },
+    {
+      "zone": "control",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.1,
+          34.1,
+          50.9,
+          35.9
+        ],
+        [
+          43.85,
+          33.85,
+          71.15,
+          56.15
+        ],
+        [
+          48.85,
+          33.85,
+          71.15,
+          36.15
+        ],
+        [
+          68.85,
+          33.85,
+          71.15,
+          56.15
+        ],
+        [
+          55.85,
+          33.85,
+          71.15,
+          41.15
+        ]
+      ]
+    },
+    {
+      "zone": "office",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.1,
+          34.1,
+          50.9,
+          35.9
+        ],
+        [
+          43.85,
+          33.85,
+          71.15,
+          56.15
+        ],
+        [
+          48.85,
+          33.85,
+          71.15,
+          36.15
+        ],
+        [
+          68.85,
+          33.85,
+          71.15,
+          56.15
+        ],
+        [
+          55.85,
+          33.85,
+          71.15,
+          41.15
+        ]
+      ]
+    },
+    {
+      "zone": "west-stair",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.1,
+          34.1,
+          50.9,
+          35.9
+        ],
+        [
+          43.85,
+          33.85,
+          71.15,
+          56.15
+        ],
+        [
+          48.85,
+          33.85,
+          71.15,
+          36.15
+        ],
+        [
+          68.85,
+          33.85,
+          71.15,
+          56.15
+        ],
+        [
+          55.85,
+          33.85,
+          71.15,
+          41.15
+        ]
+      ]
+    },
+    {
+      "zone": "turbine",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          49.1,
+          26.1,
+          50.9,
+          35.9
+        ]
+      ]
+    },
+    {
+      "zone": "workshop",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          49.1,
+          26.1,
+          50.9,
+          35.9
+        ]
+      ]
+    },
+    {
+      "zone": "east-stair",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          30.1,
+          34.1,
+          50.9,
+          35.9
+        ],
+        [
+          43.85,
+          33.85,
+          71.15,
+          56.15
+        ],
+        [
+          48.85,
+          33.85,
+          71.15,
+          36.15
+        ],
+        [
+          68.85,
+          33.85,
+          71.15,
+          56.15
+        ],
+        [
+          55.85,
+          33.85,
+          71.15,
+          41.15
+        ]
+      ]
+    },
+    {
+      "zone": "spillway",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          49.1,
+          26.1,
+          50.9,
+          35.9
+        ]
+      ]
+    },
+    {
+      "zone": "plant",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          49.1,
+          26.1,
+          50.9,
+          35.9
+        ]
+      ]
+    },
+    {
+      "link": "L07",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "L09",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "L11",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "L12",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "L14",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "L18",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    }
+  ],
+  "source_refinement": [
+    "Plan actual turbine machinery bays and guarded openings; the hall volume is not final plant geometry.",
+    "Engineer 6 m descents with switchback landings; schematic lines must not become unsupported ramps.",
+    "Study industrial electrical separation, acoustics and usable inspection paths before runtime authoring."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "1a5bae16fb21babb6fd4dee761cc4c8bd08f92f35200c919dd8affa6826d302f",
+  "status": "rough-shell-blocked; runtime integration pending",
+  "structural_review": {
+    "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
+    "glb_sha256": "2ba0c8ef46db28329b2b17a90e14c30e671165d4922ce5a9ea15df930cae7907",
+    "independently_reimported": true,
+    "meshes": 338,
+    "triangles": 4056,
+    "floor_parts": 35,
+    "ceiling_cap_parts": 9,
+    "stair_treads": 215,
+    "checked_closed_solids": 315,
+    "measured_depth_parts": 44,
+    "exported_cap_rays": 9,
+    "fixed_infill_routes": 0,
+    "exported_fixed_boundary_checks": [],
+    "wall_depth_m": 0.16,
+    "floor_depth_m": 0.16,
+    "terrain": "Exterior zone pads omitted; real saved terrain/hole work remains",
+    "roof": "Closed ceiling/deck caps only; authored exterior roof form/weathering remains",
+    "remaining": [
+      "Capsule/optical/body/object and roof/skylight rays in actual engine",
+      "All remaining unresolved elevation routes and landings/guards",
+      "Original source asset fit and supported furnishings",
+      "Source-matched terrain holes, services, van and LAN integration"
+    ]
+  },
+  "authoritative_input": "development/levels/layouts/wld-09/layout.json",
+  "original_scene_preserved": true,
+  "preserved_sources": {
+    "development/levels/layouts/wld-09/layout.json": "ac4bae32f511b941ff9a2345d8906899b8d4599eb886b3c3dd32f2b87c60f155",
+    "development/levels/blockouts/wld-09/rough-shell.blend": "f377b7d01f1dbf1da555629743a01649784abcd68af87211d679c1d218d26edd",
+    "development/levels/blockouts/wld-09/rough-shell.glb": "faa319abaf63c8afb572c033e811ccc1fde07e3c188f164008a2e783e8fab183"
+  },
+  "generator_sha256": {
+    "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
+    "development/levels/blockouts/build_blockouts.py": "988507821406b3680ea7c27058ee6d39ba86897f5a8321a1c7df9c5b381f18e5",
+    "development/levels/blockouts/structural_pass.py": "0df964bb27e8a3fb2a7cd1cc72abe50f57006338cc6cb4f0025d6a6e9eaaa721",
+    "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
+  }
+}
