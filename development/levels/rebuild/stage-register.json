@@ -207,11 +207,18 @@
           "next_action": "Complete prerequisite stage"
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "evidence": [
+            "development/levels/rebuild/furnishings/academy/placements.json",
+            "development/levels/rebuild/furnishings/verification.json",
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+          ],
+          "defects": [
+            "DEV-370",
+            "DEV-371"
+          ],
+          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -343,11 +350,18 @@
           "next_action": "Complete prerequisite stage"
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "evidence": [
+            "development/levels/rebuild/furnishings/asylum/placements.json",
+            "development/levels/rebuild/furnishings/verification.json",
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+          ],
+          "defects": [
+            "DEV-370",
+            "DEV-371"
+          ],
+          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -804,11 +818,18 @@
           "next_action": "Complete prerequisite stage"
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "evidence": [
+            "development/levels/rebuild/furnishings/church/placements.json",
+            "development/levels/rebuild/furnishings/verification.json",
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+          ],
+          "defects": [
+            "DEV-370",
+            "DEV-371"
+          ],
+          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -941,11 +962,18 @@
           "next_action": "Complete prerequisite stage"
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "evidence": [
+            "development/levels/rebuild/furnishings/college/placements.json",
+            "development/levels/rebuild/furnishings/verification.json",
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+          ],
+          "defects": [
+            "DEV-370",
+            "DEV-371"
+          ],
+          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -1015,7 +1043,7 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": null,
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
           "evidence": [
             "tools/build_map_rebuild_roughs.py",
             "development/levels/rebuild/farmhouse/rough-layout.json",
@@ -1033,7 +1061,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
           "evidence": [
             "development/levels/rebuild/structures/farmhouse/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -1075,11 +1103,18 @@
           "next_action": "Complete prerequisite stage"
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "evidence": [
+            "development/levels/rebuild/furnishings/farmhouse/placements.json",
+            "development/levels/rebuild/furnishings/verification.json",
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+          ],
+          "defects": [
+            "DEV-370",
+            "DEV-371"
+          ],
+          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -1574,11 +1609,18 @@
           "next_action": "Complete prerequisite stage"
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "evidence": [
+            "development/levels/rebuild/furnishings/mansion/placements.json",
+            "development/levels/rebuild/furnishings/verification.json",
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+          ],
+          "defects": [
+            "DEV-370",
+            "DEV-371"
+          ],
+          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -1709,11 +1751,18 @@
           "next_action": "Complete prerequisite stage"
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "evidence": [
+            "development/levels/rebuild/furnishings/prison/placements.json",
+            "development/levels/rebuild/furnishings/verification.json",
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+          ],
+          "defects": [
+            "DEV-370",
+            "DEV-371"
+          ],
+          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -1842,11 +1891,18 @@
           "next_action": "Complete prerequisite stage"
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "evidence": [
+            "development/levels/rebuild/furnishings/school/placements.json",
+            "development/levels/rebuild/furnishings/verification.json",
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+          ],
+          "defects": [
+            "DEV-370",
+            "DEV-371"
+          ],
+          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -2191,11 +2247,18 @@
           "next_action": "Complete prerequisite stage"
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "evidence": [
+            "development/levels/rebuild/furnishings/wld-03/placements.json",
+            "development/levels/rebuild/furnishings/verification.json",
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+          ],
+          "defects": [
+            "DEV-370",
+            "DEV-371"
+          ],
+          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -2320,11 +2383,18 @@
           "next_action": "Complete prerequisite stage"
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "evidence": [
+            "development/levels/rebuild/furnishings/wld-04/placements.json",
+            "development/levels/rebuild/furnishings/verification.json",
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+          ],
+          "defects": [
+            "DEV-370",
+            "DEV-371"
+          ],
+          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -2449,11 +2519,18 @@
           "next_action": "Complete prerequisite stage"
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "evidence": [
+            "development/levels/rebuild/furnishings/wld-05/placements.json",
+            "development/levels/rebuild/furnishings/verification.json",
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+          ],
+          "defects": [
+            "DEV-370",
+            "DEV-371"
+          ],
+          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -2574,11 +2651,18 @@
           "next_action": "Complete prerequisite stage"
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "evidence": [
+            "development/levels/rebuild/furnishings/wld-06/placements.json",
+            "development/levels/rebuild/furnishings/verification.json",
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+          ],
+          "defects": [
+            "DEV-370",
+            "DEV-371"
+          ],
+          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -2699,11 +2783,18 @@
           "next_action": "Complete prerequisite stage"
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "evidence": [
+            "development/levels/rebuild/furnishings/wld-07/placements.json",
+            "development/levels/rebuild/furnishings/verification.json",
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+          ],
+          "defects": [
+            "DEV-370",
+            "DEV-371"
+          ],
+          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -2824,11 +2915,18 @@
           "next_action": "Complete prerequisite stage"
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "evidence": [
+            "development/levels/rebuild/furnishings/wld-08/placements.json",
+            "development/levels/rebuild/furnishings/verification.json",
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+          ],
+          "defects": [
+            "DEV-370",
+            "DEV-371"
+          ],
+          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -2953,11 +3051,18 @@
           "next_action": "Complete prerequisite stage"
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "evidence": [
+            "development/levels/rebuild/furnishings/wld-09/placements.json",
+            "development/levels/rebuild/furnishings/verification.json",
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+          ],
+          "defects": [
+            "DEV-370",
+            "DEV-371"
+          ],
+          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -3082,11 +3187,18 @@
           "next_action": "Complete prerequisite stage"
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "evidence": [
+            "development/levels/rebuild/furnishings/wld-10/placements.json",
+            "development/levels/rebuild/furnishings/verification.json",
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+          ],
+          "defects": [
+            "DEV-370",
+            "DEV-371"
+          ],
+          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -3207,11 +3319,18 @@
           "next_action": "Complete prerequisite stage"
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "evidence": [
+            "development/levels/rebuild/furnishings/wld-11/placements.json",
+            "development/levels/rebuild/furnishings/verification.json",
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+          ],
+          "defects": [
+            "DEV-370",
+            "DEV-371"
+          ],
+          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -3336,11 +3455,18 @@
           "next_action": "Complete prerequisite stage"
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "evidence": [
+            "development/levels/rebuild/furnishings/wld-12/placements.json",
+            "development/levels/rebuild/furnishings/verification.json",
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+          ],
+          "defects": [
+            "DEV-370",
+            "DEV-371"
+          ],
+          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -3461,11 +3587,18 @@
           "next_action": "Complete prerequisite stage"
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "evidence": [
+            "development/levels/rebuild/furnishings/wld-13/placements.json",
+            "development/levels/rebuild/furnishings/verification.json",
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+          ],
+          "defects": [
+            "DEV-370",
+            "DEV-371"
+          ],
+          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -3594,11 +3727,18 @@
           "next_action": "Complete prerequisite stage"
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "evidence": [
+            "development/levels/rebuild/furnishings/wld-14/placements.json",
+            "development/levels/rebuild/furnishings/verification.json",
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+          ],
+          "defects": [
+            "DEV-370",
+            "DEV-371"
+          ],
+          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -3722,11 +3862,18 @@
           "next_action": "Complete prerequisite stage"
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "evidence": [
+            "development/levels/rebuild/furnishings/wld-15/placements.json",
+            "development/levels/rebuild/furnishings/verification.json",
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+          ],
+          "defects": [
+            "DEV-370",
+            "DEV-371"
+          ],
+          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -3797,14 +3944,14 @@
         },
         "S02": {
           "status": "NOT_AUDITED",
-          "source_sha": null,
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
           "evidence": [],
           "defects": [],
           "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "ab1b0eb91cabcfbd3f577f302337dccd71e357a4",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
           "evidence": [
             "development/levels/rebuild/structures/wld-16/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3846,11 +3993,18 @@
           "next_action": "Complete prerequisite stage"
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "evidence": [
+            "development/levels/rebuild/furnishings/wld-16/placements.json",
+            "development/levels/rebuild/furnishings/verification.json",
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+          ],
+          "defects": [
+            "DEV-370",
+            "DEV-371"
+          ],
+          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -3970,11 +4124,18 @@
           "next_action": "Complete prerequisite stage"
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "evidence": [
+            "development/levels/rebuild/furnishings/wld-17/placements.json",
+            "development/levels/rebuild/furnishings/verification.json",
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+          ],
+          "defects": [
+            "DEV-370",
+            "DEV-371"
+          ],
+          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -4103,11 +4264,18 @@
           "next_action": "Complete prerequisite stage"
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "evidence": [
+            "development/levels/rebuild/furnishings/wld-18/placements.json",
+            "development/levels/rebuild/furnishings/verification.json",
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+          ],
+          "defects": [
+            "DEV-370",
+            "DEV-371"
+          ],
+          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -4234,11 +4402,18 @@
           "next_action": "Complete prerequisite stage"
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "evidence": [
+            "development/levels/rebuild/furnishings/wld-07-mortuary/placements.json",
+            "development/levels/rebuild/furnishings/verification.json",
+            "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json"
+          ],
+          "defects": [
+            "DEV-370",
+            "DEV-371"
+          ],
+          "next_action": "Initial existing rough spatial allocation only; complete room capacity, remaining site models/mounts, refinement and runtime services/ownership remain open. Preserve73058baseline-valid poses and68167valid sweeps; repair baseline/native stair failures before playable acceptance. Services prerequisite remains unaccepted."
         },
         "S08": {
           "status": "NOT_AUDITED",
