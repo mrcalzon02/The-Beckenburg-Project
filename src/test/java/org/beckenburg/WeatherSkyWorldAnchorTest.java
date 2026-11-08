@@ -6,11 +6,14 @@ import java.awt.image.BufferedImage;
 /** A camera turn/pitch must alter the viewed sky, not rotate a screen-fixed overlay. */
 public final class WeatherSkyWorldAnchorTest {
     private static BufferedImage sky(double heading,double pitch){
+        return sky(heading,pitch,.95);
+    }
+    private static BufferedImage sky(double heading,double pitch,double cover){
         int w=640,h=360;
         BufferedImage out=new BufferedImage(w,h,BufferedImage.TYPE_INT_RGB);
         var graphics=out.createGraphics();
         try{
-            var state=new WeatherSky.State(.86,0,0,.95,.07,0);
+            var state=new WeatherSky.State(.86,0,0,cover,.07,0);
             WeatherSky.paint(graphics,w,h,state,0x4245434b454e4255L,
                 .37,120,heading,0,pitch,275);
         }finally{graphics.dispose();}
@@ -30,6 +33,9 @@ public final class WeatherSkyWorldAnchorTest {
             throw new AssertionError("Sky elevation is nailed to the camera viewport");
         if(difference(straight,sky(0,0))!=0)
             throw new AssertionError("Static world weather sky is nondeterministic");
+        var clear=sky(0,0,0);
+        for(int i=1;i<12;i++)if(difference(clear,sky(i*Math.PI/6,0,0))!=0)
+            throw new AssertionError("Zero cloud cover still paints phantom cloud polygons");
         System.out.println("PASS: world-anchored weather sky pans and pitches with the viewpoint");
     }
 }

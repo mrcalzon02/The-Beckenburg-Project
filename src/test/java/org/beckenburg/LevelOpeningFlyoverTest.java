@@ -14,7 +14,23 @@ public final class LevelOpeningFlyoverTest {
             var start=flight.pose(0);
             var orbit=flight.pose(.39);
             var approach=flight.pose(.78);
+            var threshold=flight.pose(.93);
+            var entering=flight.pose(.965);
+            var inside=flight.pose(.975);
             var end=flight.pose(1);
+            var dock=map.van();
+            var atDoor=dock.local(threshold.x(),threshold.z());
+            var beyondDoor=dock.local(entering.x(),entering.z());
+            var atAisle=dock.local(inside.x(),inside.z());
+            ok(Math.abs(atDoor.x())<.08
+                &&atDoor.z()<VanStaging.FRONT
+                &&beyondDoor.z()>VanStaging.FRONT
+                &&atAisle.z()>VanStaging.FRONT
+                &&atAisle.z()<VanStaging.REAR,
+                "3D camera must enter the ACTUAL rear cargo aperture and aisle for "+site);
+            ok(Math.abs(threshold.y()-(dock.floorY()+1.62))<.001
+                &&Math.abs(inside.y()-(dock.floorY()+1.62))<.001,
+                "Loading flight must finish inside the van at human camera height");
             ok(end.equals(player),"Opening must hand off at the exact hunter camera for "+site);
             ok(flight.pose(-100).equals(start)&&flight.pose(500).equals(end),
                 "Opening progression clamps rather than extrapolating into walls");
@@ -22,6 +38,10 @@ public final class LevelOpeningFlyoverTest {
                 "Location flyover begins well above architecture and descends");
             ok(Math.hypot(start.x()-player.x(),start.z()-player.z())>5,
                 "The opening camera must survey the authored level, not start in the van");
+            var visibleFraming=LevelOpeningFlyover.framing(map);
+            ok(Math.hypot(start.x()-visibleFraming.cx(),start.z()-visibleFraming.cz())<18
+                    &&start.y()-visibleFraming.top()<=12,
+                "3D opening cannot begin beyond the perspective renderer's visible geometry range");
             for(int i=0;i<=100;i++){
                 var pose=flight.pose(i/100.);
                 ok(Double.isFinite(pose.x()+pose.y()+pose.z()+pose.yaw()+pose.pitch()),
@@ -44,6 +64,8 @@ public final class LevelOpeningFlyoverTest {
                 var image=new java.awt.image.BufferedImage(480,300,java.awt.image.BufferedImage.TYPE_INT_RGB);
                 var graphics=image.createGraphics();try{cinematic.draw(graphics,480,300);}finally{graphics.dispose();}
                 var after=cinematic.previewStatus();
+                ok(cinematic.uses3DWorldCamera(),
+                    "All software and OpenGL paths must use the real world-space flyover");
                 ok(after.requests()>=before.requests()&&after.failures()>=0,
                     "Opening instrumentation may not fabricate or lose readiness state");
                 ok(map.van().spawn(0).equals(spawn),

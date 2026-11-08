@@ -1,0 +1,101 @@
+{
+  "status": "FAIL",
+  "phase": "level_castle_training_cleansing-raised-ring-negative",
+  "source_sha256": "c19ef7a1a73f54c910fd6cf83c6cbff3cbcfd73382148af1922fcee164209ed2",
+  "triangle_count": 208,
+  "tolerance_metres": 0.001,
+  "criterion": "Every actual floor-inlay component bears directly on floorZ=0 within1mm; raised actual ring must fail",
+  "components": [
+    {
+      "id": 0,
+      "vertices": 80,
+      "bounds": [
+        [
+          -0.7200000286102295,
+          -0.7200000286102295,
+          0.15000000596046448
+        ],
+        [
+          0.7200000286102295,
+          0.7200000286102295,
+          0.15800000727176666
+        ]
+      ],
+      "contacts": [],
+      "supported": false
+    },
+    {
+      "id": 1,
+      "vertices": 8,
+      "bounds": [
+        [
+          0.3595500886440277,
+          0.0,
+          0.0
+        ],
+        [
+          0.6100000143051147,
+          0.030487293377518654,
+          0.00800000037997961
+        ]
+      ],
+      "contacts": [],
+      "supported": true
+    },
+    {
+      "id": 2,
+      "vertices": 8,
+      "bounds": [
+        [
+          -0.030487293377518654,
+          0.3595500886440277,
+          0.0
+        ],
+        [
+          3.735172768035864e-17,
+          0.6100000143051147,
+          0.00800000037997961
+        ]
+      ],
+      "contacts": [],
+      "supported": true
+    },
+    {
+      "id": 3,
+      "vertices": 8,
+      "bounds": [
+        [
+          -0.6100000143051147,
+          -0.030487293377518654,
+          0.0
+        ],
+        [
+          -0.3595500886440277,
+          7.470345536071728e-17,
+          0.00800000037997961
+        ]
+      ],
+      "contacts": [],
+      "supported": true
+    },
+    {
+      "id": 4,
+      "vertices": 8,
+      "bounds": [
+        [
+          -1.1205517973235347e-16,
+          -0.6100000143051147,
+          0.0
+        ],
+        [
+          0.030487293377518654,
+          -0.3595500886440277,
+          0.00800000037997961
+        ]
+      ],
+      "contacts": [],
+      "supported": true
+    }
+  ],
+  "expected": "FAIL"
+}

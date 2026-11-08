@@ -1,0 +1,418 @@
+{
+  "schema": "beckenburg.source-relic-study/1",
+  "status": "SOURCE_ONLY_NOT_CAPTURED_NOT_INSTALLED",
+  "site": "CASTLE",
+  "source_layout": "development/levels/layouts/castle/layout.json",
+  "source_layout_sha256": "8811f7757cef5ff5238d8bae4e3f3f02bc3134516832ee9b1a3225ef35622c35",
+  "source_model_catalog_sha256": "0db537fa84276166236d290249581a6940e7952d5126dcbe1b2c68d637b8bc6c",
+  "proposed_vault_relics": 12,
+  "counts_by_bank": {
+    "west": 6,
+    "east": 6
+  },
+  "actual_captured_in_campaign": 0,
+  "actual_installed_in_playable_castle": 0,
+  "source_only_display_cases": 12,
+  "reserve_aisle_xz": [
+    9.1,
+    35.0,
+    12.9,
+    49.0
+  ],
+  "checks": [
+    "unique physical artifact IDs",
+    "one distinct GLB per relic",
+    "case support and headroom",
+    "room bounds and masonry margin",
+    "stairs/aisle reservation",
+    "case nonoverlap",
+    "unapproved source assets"
+  ],
+  "limitations": [
+    "Expanded Castle's vault is not the native playable Castle cellar",
+    "No captured-in-campaign truth or recovery persistence wired",
+    "No playable scene save, interactable cases, locks or inventory system",
+    "The reserved schematic stairs still need structural architecture",
+    "Source material swatches/UV0 are not production textures"
+  ],
+  "placements": [
+    {
+      "id": "castle-relic-study-mourning-locket",
+      "catalog_source_mesh": "level_blockout_relic_mourning_locket",
+      "case_source_mesh": "level_blockout_relic_open_guard",
+      "zone": "vault",
+      "bank": "west",
+      "case_position": [
+        6.3,
+        -3.0,
+        30.75
+      ],
+      "relic_position": [
+        6.3,
+        -2.355,
+        30.75
+      ],
+      "yaw_rad": 0,
+      "case_bounds_xz": [
+        5.36,
+        29.89,
+        7.24,
+        31.61
+      ],
+      "relic_world_height_m": 0.408,
+      "source_only": true,
+      "captured_in_campaign": false,
+      "installed_in_playable_castle": false,
+      "gameplay_effect_defined": false,
+      "authoring_status": "RELIC_MODEL_GEOMETRY_ONLY"
+    },
+    {
+      "id": "castle-relic-study-votive-bell",
+      "catalog_source_mesh": "level_blockout_relic_votive_bell",
+      "case_source_mesh": "level_blockout_relic_open_guard",
+      "zone": "vault",
+      "bank": "west",
+      "case_position": [
+        6.3,
+        -3.0,
+        35.15
+      ],
+      "relic_position": [
+        6.3,
+        -2.365,
+        35.15
+      ],
+      "yaw_rad": 0,
+      "case_bounds_xz": [
+        5.36,
+        34.29,
+        7.24,
+        36.01
+      ],
+      "relic_world_height_m": 0.86,
+      "source_only": true,
+      "captured_in_campaign": false,
+      "installed_in_playable_castle": false,
+      "gameplay_effect_defined": false,
+      "authoring_status": "RELIC_MODEL_GEOMETRY_ONLY"
+    },
+    {
+      "id": "castle-relic-study-bronze-astrolabe",
+      "catalog_source_mesh": "level_blockout_relic_bronze_astrolabe",
+      "case_source_mesh": "level_blockout_relic_open_guard",
+      "zone": "vault",
+      "bank": "west",
+      "case_position": [
+        6.3,
+        -3.0,
+        39.55
+      ],
+      "relic_position": [
+        6.3,
+        -2.36,
+        39.55
+      ],
+      "yaw_rad": 0,
+      "case_bounds_xz": [
+        5.36,
+        38.69,
+        7.24,
+        40.41
+      ],
+      "relic_world_height_m": 1.075,
+      "source_only": true,
+      "captured_in_campaign": false,
+      "installed_in_playable_castle": false,
+      "gameplay_effect_defined": false,
+      "authoring_status": "RELIC_MODEL_GEOMETRY_ONLY"
+    },
+    {
+      "id": "castle-relic-study-sealed-urn",
+      "catalog_source_mesh": "level_blockout_relic_sealed_urn",
+      "case_source_mesh": "level_blockout_relic_open_guard",
+      "zone": "vault",
+      "bank": "west",
+      "case_position": [
+        6.3,
+        -3.0,
+        43.95
+      ],
+      "relic_position": [
+        6.3,
+        -2.365,
+        43.95
+      ],
+      "yaw_rad": 0,
+      "case_bounds_xz": [
+        5.36,
+        43.09,
+        7.24,
+        44.81
+      ],
+      "relic_world_height_m": 1.025,
+      "source_only": true,
+      "captured_in_campaign": false,
+      "installed_in_playable_castle": false,
+      "gameplay_effect_defined": false,
+      "authoring_status": "RELIC_MODEL_GEOMETRY_ONLY"
+    },
+    {
+      "id": "castle-relic-study-black-mirror",
+      "catalog_source_mesh": "level_blockout_relic_black_mirror",
+      "case_source_mesh": "level_blockout_relic_open_guard",
+      "zone": "vault",
+      "bank": "west",
+      "case_position": [
+        6.3,
+        -3.0,
+        48.35
+      ],
+      "relic_position": [
+        6.3,
+        -2.355,
+        48.35
+      ],
+      "yaw_rad": 0,
+      "case_bounds_xz": [
+        5.36,
+        47.49,
+        7.24,
+        49.21
+      ],
+      "relic_world_height_m": 1.595,
+      "source_only": true,
+      "captured_in_campaign": false,
+      "installed_in_playable_castle": false,
+      "gameplay_effect_defined": false,
+      "authoring_status": "RELIC_MODEL_GEOMETRY_ONLY"
+    },
+    {
+      "id": "castle-relic-study-bound-folio",
+      "catalog_source_mesh": "level_blockout_relic_bound_folio",
+      "case_source_mesh": "level_blockout_relic_open_guard",
+      "zone": "vault",
+      "bank": "west",
+      "case_position": [
+        6.3,
+        -3.0,
+        52.75
+      ],
+      "relic_position": [
+        6.3,
+        -2.355,
+        52.75
+      ],
+      "yaw_rad": 0,
+      "case_bounds_xz": [
+        5.36,
+        51.89,
+        7.24,
+        53.61
+      ],
+      "relic_world_height_m": 0.36,
+      "source_only": true,
+      "captured_in_campaign": false,
+      "installed_in_playable_castle": false,
+      "gameplay_effect_defined": false,
+      "authoring_status": "RELIC_MODEL_GEOMETRY_ONLY"
+    },
+    {
+      "id": "castle-relic-study-reliquary-box",
+      "catalog_source_mesh": "level_blockout_relic_reliquary_box",
+      "case_source_mesh": "level_blockout_relic_open_guard",
+      "zone": "vault",
+      "bank": "east",
+      "case_position": [
+        15.6,
+        -3.0,
+        30.75
+      ],
+      "relic_position": [
+        15.6,
+        -2.355,
+        30.75
+      ],
+      "yaw_rad": 0,
+      "case_bounds_xz": [
+        14.66,
+        29.89,
+        16.54,
+        31.61
+      ],
+      "relic_world_height_m": 0.74,
+      "source_only": true,
+      "captured_in_campaign": false,
+      "installed_in_playable_castle": false,
+      "gameplay_effect_defined": false,
+      "authoring_status": "RELIC_MODEL_GEOMETRY_ONLY"
+    },
+    {
+      "id": "castle-relic-study-pilgrim-lantern",
+      "catalog_source_mesh": "level_blockout_relic_pilgrim_lantern",
+      "case_source_mesh": "level_blockout_relic_open_guard",
+      "zone": "vault",
+      "bank": "east",
+      "case_position": [
+        15.6,
+        -3.0,
+        35.15
+      ],
+      "relic_position": [
+        15.6,
+        -2.355,
+        35.15
+      ],
+      "yaw_rad": 0,
+      "case_bounds_xz": [
+        14.66,
+        34.29,
+        16.54,
+        36.01
+      ],
+      "relic_world_height_m": 1.4025,
+      "source_only": true,
+      "captured_in_campaign": false,
+      "installed_in_playable_castle": false,
+      "gameplay_effect_defined": false,
+      "authoring_status": "RELIC_MODEL_GEOMETRY_ONLY"
+    },
+    {
+      "id": "castle-relic-study-ossuary-keys",
+      "catalog_source_mesh": "level_blockout_relic_ossuary_keys",
+      "case_source_mesh": "level_blockout_relic_open_guard",
+      "zone": "vault",
+      "bank": "east",
+      "case_position": [
+        15.6,
+        -3.0,
+        39.55
+      ],
+      "relic_position": [
+        15.6,
+        -2.355,
+        39.55
+      ],
+      "yaw_rad": 0,
+      "case_bounds_xz": [
+        14.66,
+        38.69,
+        16.54,
+        40.41
+      ],
+      "relic_world_height_m": 0.2925,
+      "source_only": true,
+      "captured_in_campaign": false,
+      "installed_in_playable_castle": false,
+      "gameplay_effect_defined": false,
+      "authoring_status": "RELIC_MODEL_GEOMETRY_ONLY"
+    },
+    {
+      "id": "castle-relic-study-censer",
+      "catalog_source_mesh": "level_blockout_relic_censer",
+      "case_source_mesh": "level_blockout_relic_open_guard",
+      "zone": "vault",
+      "bank": "east",
+      "case_position": [
+        15.6,
+        -3.0,
+        43.95
+      ],
+      "relic_position": [
+        15.6,
+        -2.355,
+        43.95
+      ],
+      "yaw_rad": 0,
+      "case_bounds_xz": [
+        14.66,
+        43.09,
+        16.54,
+        44.81
+      ],
+      "relic_world_height_m": 1.36,
+      "source_only": true,
+      "captured_in_campaign": false,
+      "installed_in_playable_castle": false,
+      "gameplay_effect_defined": false,
+      "authoring_status": "RELIC_MODEL_GEOMETRY_ONLY"
+    },
+    {
+      "id": "castle-relic-study-burial-mask",
+      "catalog_source_mesh": "level_blockout_relic_burial_mask",
+      "case_source_mesh": "level_blockout_relic_open_guard",
+      "zone": "vault",
+      "bank": "east",
+      "case_position": [
+        15.6,
+        -3.0,
+        48.35
+      ],
+      "relic_position": [
+        15.6,
+        -2.355,
+        48.35
+      ],
+      "yaw_rad": 0,
+      "case_bounds_xz": [
+        14.66,
+        47.49,
+        16.54,
+        49.21
+      ],
+      "relic_world_height_m": 0.95,
+      "source_only": true,
+      "captured_in_campaign": false,
+      "installed_in_playable_castle": false,
+      "gameplay_effect_defined": false,
+      "authoring_status": "RELIC_MODEL_GEOMETRY_ONLY"
+    },
+    {
+      "id": "castle-relic-study-pilgrim-chalice",
+      "catalog_source_mesh": "level_blockout_relic_pilgrim_chalice",
+      "case_source_mesh": "level_blockout_relic_open_guard",
+      "zone": "vault",
+      "bank": "east",
+      "case_position": [
+        15.6,
+        -3.0,
+        52.75
+      ],
+      "relic_position": [
+        15.6,
+        -2.355,
+        52.75
+      ],
+      "yaw_rad": 0,
+      "case_bounds_xz": [
+        14.66,
+        51.89,
+        16.54,
+        53.61
+      ],
+      "relic_world_height_m": 0.905,
+      "source_only": true,
+      "captured_in_campaign": false,
+      "installed_in_playable_castle": false,
+      "gameplay_effect_defined": false,
+      "authoring_status": "RELIC_MODEL_GEOMETRY_ONLY"
+    }
+  ],
+  "pages": [
+    {
+      "name": "west-vault-bank.glb",
+      "bytes": 320904,
+      "sha256": "9ef1c238d99e5e7fccaa5e6c9e63a06ee57f96454beb089ee47381d58d332dca",
+      "triangles": 2888,
+      "relic_count": 6
+    },
+    {
+      "name": "east-vault-bank.glb",
+      "bytes": 301624,
+      "sha256": "281bee468949d723e0240f29d60581e4b9882b76db83f1d683728c1e1db6e976",
+      "triangles": 2700,
+      "relic_count": 6
+    }
+  ],
+  "runtime_scene_changed": false,
+  "runtime_approved": false
+}

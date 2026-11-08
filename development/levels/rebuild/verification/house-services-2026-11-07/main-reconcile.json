@@ -1,0 +1,14 @@
+{
+  "implementation": "c5b86e3d3a699297483e6bff05e8976f5a63f4b8",
+  "concurrent_main": "ea6dbee005bf5b5f97d7241251c8daca375eccf5",
+  "unchanged_runtime_build_trees": {
+    "src": "37129b6beea8b12032de0e3790405cb4c77224d9",
+    "assets/runtime": "e05028944b150bde73866db4defa8f8eb887d9cc",
+    ".github": "915c05247ce807cb3d900c94fea63cace3781bb7",
+    "gpu-client": "2fc76a1540df3cdd244c21fe4924da09835cd907",
+    "tools": "b73b974b4dec229cc07a113218e0473e4d0e9c0a",
+    "water-module": "b50ab284316a87ef636b25e7b71b6707e599b592",
+    "lighting-module": "be257b217359a1c4ca9eb8deea6b4127fd6e8e77"
+  },
+  "kind": "concurrent NPC capture publication; source acceptance inputs unchanged"
+}

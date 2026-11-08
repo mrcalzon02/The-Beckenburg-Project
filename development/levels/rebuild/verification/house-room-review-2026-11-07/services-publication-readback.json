@@ -1,0 +1,138 @@
+{
+  "head": "a2c880128c1165e2bfb8c33dfff1db966c9e1f95",
+  "pr": 79,
+  "files": [
+    {
+      "path": "src/main/java/org/beckenburg/HouseRebuildServices.java",
+      "bytes": 8558,
+      "sha256": "c60e68200a7a32a5106af7f0395683a848b12602af87ba84b3eceb7b3982e61d",
+      "exact": true
+    },
+    {
+      "path": "src/main/java/org/beckenburg/HouseServiceNetwork.java",
+      "bytes": 5795,
+      "sha256": "93f43d7acf6b860fa88951aff418aead3f7142e88942d1ae9f1cdfb1f766b26e",
+      "exact": true
+    },
+    {
+      "path": "src/test/java/org/beckenburg/HouseRebuildServicesTest.java",
+      "bytes": 6490,
+      "sha256": "fa25b3138ce306c41fedb6457ce7a56106fc3101669ae7f0c52016c254607752",
+      "exact": true
+    },
+    {
+      "path": "regression-tests.txt",
+      "bytes": 8715,
+      "sha256": "8634767e92baa0fc593df75c3c0ff6984ee0862c212e4c5e7e0d0a2333405da2",
+      "exact": true
+    },
+    {
+      "path": "development/levels/blender/briar-rebuild-services-construction.blend",
+      "bytes": 13294844,
+      "sha256": "49416d21d323b0eaabecee04cee95239dda0a2373efae90e3f49051a624a5f0e",
+      "exact": true
+    },
+    {
+      "path": "development/levels/rebuild/house/services-runtime-export.zip",
+      "bytes": 13382127,
+      "sha256": "61b7e79a81584f2375c2c058e80aab9e6cdc3485051a2a7dd744e0e2d1ac1b2e",
+      "exact": true
+    },
+    {
+      "path": "development/levels/rebuild/house/services-contacts.json",
+      "bytes": 10340,
+      "sha256": "0b89f561e54e1466bcbcc1abfc384da7d81b263443780b857c9d2b11f909cb7b",
+      "exact": true
+    },
+    {
+      "path": "development/levels/rebuild/house/asset-use.csv",
+      "bytes": 10585,
+      "sha256": "42b1671a5a4f5f5350dc8b0350c93bc81f1c7d2f31aab71a9cf096b9dfd44393",
+      "exact": true
+    },
+    {
+      "path": "development/gallery/index.json",
+      "bytes": 3350536,
+      "sha256": "2043daf2b5d647ca4c45141b424cef8d3bf13a968386b4919da853bfb3c99d79",
+      "exact": true
+    },
+    {
+      "path": "development/captures/house-heating-water/bath-radiator-runtime.png",
+      "bytes": 710506,
+      "sha256": "2a76a651f13b840e075e34ba157a51e6fbf8ef6cab8c60c62defaaec2f7a47b5",
+      "exact": true
+    },
+    {
+      "path": "development/captures/house-heating-water/bathroom-water-runtime.png",
+      "bytes": 687279,
+      "sha256": "1b72ef00c6d1d96a77e27f0a04e9b436b4ad97fd05ca93dd878fd99840310d00",
+      "exact": true
+    },
+    {
+      "path": "development/captures/house-heating-water/boiler-pipework-runtime.png",
+      "bytes": 620595,
+      "sha256": "301d0685a349479b35f89dcdecd00440b1c93597a468cf3473e3d5f3ce508762",
+      "exact": true
+    },
+    {
+      "path": "development/captures/house-heating-water/child-radiator-runtime.png",
+      "bytes": 564127,
+      "sha256": "2da6ace2602cd976e2ebbe49ba5e897dd073877dc3f163b470cbde9380156a75",
+      "exact": true
+    },
+    {
+      "path": "development/captures/house-heating-water/dining-radiator-runtime.png",
+      "bytes": 777773,
+      "sha256": "8414c3d6448f132865c07043b38aedc3d13eeeea3197c9997279c4131322688e",
+      "exact": true
+    },
+    {
+      "path": "development/captures/house-heating-water/kitchen-radiator-runtime.png",
+      "bytes": 667627,
+      "sha256": "fd0fe5de4af3e337773b3fcf52213ef14a2fc4233069a8181634188d7eed003d",
+      "exact": true
+    },
+    {
+      "path": "development/captures/house-heating-water/landing-radiator-runtime.png",
+      "bytes": 899986,
+      "sha256": "cd6c1ec1e88336ac478af99b196aef170b3f211c0883b7c2a2f853168e23da74",
+      "exact": true
+    },
+    {
+      "path": "development/captures/house-heating-water/laundry-water-runtime.png",
+      "bytes": 667774,
+      "sha256": "686fa3df723a45a48a6b5dc7cff6d3d82356214befa94fe1571229c36a585d3f",
+      "exact": true
+    },
+    {
+      "path": "development/captures/house-heating-water/native-parcel-overview.png",
+      "bytes": 1419142,
+      "sha256": "243648be267959d98c81b5ab211a6b70d2e9e0041588049b3095543f0bfbca0c",
+      "exact": true
+    },
+    {
+      "path": "development/captures/house-heating-water/parents-radiator-runtime.png",
+      "bytes": 614386,
+      "sha256": "0585b960043152c02d7842a7af598112b6504be8970dbce361f8e961a7227f21",
+      "exact": true
+    },
+    {
+      "path": "development/captures/house-heating-water/rejected-boiler-front-pipes-runtime.png",
+      "bytes": 622419,
+      "sha256": "f55c6f42bb399380f78eeaed08e06697828423bea66c9d632ab4268b3c7451bf",
+      "exact": true
+    },
+    {
+      "path": "development/captures/house-heating-water/rejected-square-soil-head-runtime.png",
+      "bytes": 685802,
+      "sha256": "03ce154d4f71aa35240078f839c8d068501315706a954fa766d6c69fb4213662",
+      "exact": true
+    },
+    {
+      "path": "development/captures/house-heating-water/sitting-radiator-runtime.png",
+      "bytes": 638707,
+      "sha256": "32101a2efe3516a5af70afa264d614f1b7579d02917db1202d70a0e0c93c5346",
+      "exact": true
+    }
+  ]
+}

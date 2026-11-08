@@ -672,6 +672,12 @@ public final class DeveloperLevelEditor extends JPanel {
         if(assetPalette!=null)assetPalette.reload(mission==null?project:mission);
     }
     private static JButton button(String name){return new JButton(name);}
+    void rebuildCastle(CastleRebuildUpgrade.Baseline baseline){
+        requireEditorThread();if(mission!=null)throw new IllegalStateException("Castle is not the active scene");
+        castleAgent.transact(data.revision(),"rebuild-castle",java.util.Map.of("baseline",baseline.name()));
+        var spawn=data.spawn();renderer.x=spawn[0];renderer.z=spawn[1];renderer.eyeHeight=1.62;renderer.yaw=spawn[2];renderer.pitch=-.12;
+        status.setText("Castle rebuilt with saved edits retained; use UNDO to revert or SAVE to write");
+    }
     private JPanel objectInspector(){
         JPanel panel=new JPanel(new BorderLayout(4,3));
         JPanel addRow=new JPanel(new BorderLayout(3,3));
@@ -1366,6 +1372,8 @@ public final class DeveloperLevelEditor extends JPanel {
         if(service.summary().capabilities().contains(EditorAgentService.Capability.RECOVER_PREVIOUS))choices.add("RECOVER PREVIOUS SAVE");
         choices.add(observation==null?"START LOCAL OBSERVATION":"STOP LOCAL ACCESS");
         if(observation==null)choices.add("START LOCAL EDITING");
+        if(mission==null)choices.add("REBUILD CASTLE / RETAIN EDITS");
+        else if(mission.canRebuildHouse())choices.add("REBUILD HOUSE / RETAIN EDITS");
         String choice=(String)JOptionPane.showInputDialog(window,"Inspect, test or capture the active game scene.",
             "Scene verification",JOptionPane.PLAIN_MESSAGE,null,
             choices.toArray(),"INSPECT");
@@ -1425,6 +1433,14 @@ public final class DeveloperLevelEditor extends JPanel {
                         "Scene diagnostics",JOptionPane.PLAIN_MESSAGE,null,state.tests().toArray(),state.tests().get(0));
                     if(test==null)return;
                     result=service.test(state.revision(),test);
+                }
+                case "REBUILD HOUSE / RETAIN EDITS" -> result=service.transact(state.revision(),"rebuild-house",java.util.Map.of("baseline","ORIGINAL"));
+                case "REBUILD CASTLE / RETAIN EDITS" -> {
+                    if(data.snapshot().rebuildLayout()>=CastleRebuildUpgrade.VERSION){result="Castle already uses the rebuilt layout; saved edits are unchanged.";break;}
+                    var base=(CastleRebuildUpgrade.Baseline)JOptionPane.showInputDialog(window,
+                        "Choose the built-in layout on which this scene was authored. Custom edits are retained; conflicts leave the scene untouched. UNDO remains available and SAVE is explicit.",
+                        "Rebuild saved Castle",JOptionPane.PLAIN_MESSAGE,null,CastleRebuildUpgrade.Baseline.values(),CastleRebuildUpgrade.Baseline.ORIGINAL);
+                    if(base==null)return;rebuildCastle(base);result="Castle rebuilt with saved edits retained. Use SAVE to write the scene.";
                 }
                 case "CAPTURE PNG" -> {
                     JFileChooser chooser=new JFileChooser();chooser.setSelectedFile(new java.io.File("editor-scene.png"));

@@ -15,12 +15,20 @@ public final class CastleMuseum {
         new Exhibit("museum-armour-barrier","level_castle_museum_rope",31.5,0,6.45,0,
             "Retained velvet barrier protects the reconstructed museum display without closing the gallery"),
         new Exhibit("heritage-common-fireplace","level_castle_great_fireplace",7.6,0,22.66,0,
-            "Restored cold limestone fireplace; retained ashlar, original collection heraldry and capped historic heating context"));
+            "Restored cold limestone fireplace; retained ashlar, original collection heraldry and capped historic heating context"),
+        new Exhibit("heritage-archive-tapestry","level_castle_tapestry",36.5,.55,4.2625,0,
+            "Collection hanging conserved with modern support sleeve; original heraldic weave retained above archive circulation"),
+        new Exhibit("heritage-restoration-painting","level_castle_restoration_painting",42.75922,1.2,11,Math.PI/2,
+            "Retained picture of the western tower before reroofing; worn original frame reused by the archive"),
+        new Exhibit("heritage-archive-arms","level_castle_heraldic_arms",28.805,.8,12.5,-Math.PI/2,
+            "Conserved painted collection shield and crossed swords retained on modern steel saddles after restoration"),
+        new Exhibit("heritage-library-rug","level_castle_library_rug",14.6,3.4,9.2,0,
+            "Conserved household carpet returned to the upper reading room as a working furnishing"));
     public static void installDefaults(Map<String,CastleLevelEdits.Prop> props){
         for(var e:EXHIBITS){
             double[] b=SceneRenderer.castleBounds(e.mesh());double c=Math.abs(Math.cos(e.yaw())),s=Math.abs(Math.sin(e.yaw()));
             props.put(e.id(),new CastleLevelEdits.Prop(e.id(),e.mesh(),e.x(),e.y(),e.z(),1,e.yaw(),
-                (b[3]*c+b[5]*s)/2,(b[3]*s+b[5]*c)/2,false));
+                (b[3]*c+b[5]*s)/2,(b[3]*s+b[5]*c)/2,e.y()>=3.4));
         }
     }
 }

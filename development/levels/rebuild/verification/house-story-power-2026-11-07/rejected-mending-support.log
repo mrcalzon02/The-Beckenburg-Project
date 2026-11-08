@@ -1,0 +1,5 @@
+Exception in thread "main" java.lang.IllegalArgumentException: Unsupported story record inherited-mending-tin
+	at org.beckenburg.HouseRebuildStory$Dressing.record(HouseRebuildStory.java:30)
+	at org.beckenburg.HouseRebuildStory.source(HouseRebuildStory.java:12)
+	at org.beckenburg.HouseRebuildStory.map(HouseRebuildStory.java:7)
+	at org.beckenburg.HouseRebuildStoryTest.main(HouseRebuildStoryTest.java:18)

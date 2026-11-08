@@ -1,0 +1,55 @@
+{
+  "status": "SCOPED_NATIVE_HERITAGE_PILOT_VERIFIED",
+  "models": [
+    {
+      "id": "level_castle_restoration_painting",
+      "source_id": "painting_1",
+      "source_sha256": "98b2bb08b77934d8e243bbe6568f48919572998cf831c4790e75b6ea8b4506b3",
+      "sha256": "8b9268373618bb49c249811a2e163abbbb2ac21edf5208f162a7b312bab7ce6c",
+      "unchanged_geometry_UV_normal_indices_sha256": "158ddf688e365734ff4f64233e1f6d99f19809e4194b9fff2aff45af5c1fd101",
+      "triangles": 92,
+      "dimensions_metres": [
+        0.6104859709739685,
+        0.06156036782945762,
+        0.6840000152587891
+      ],
+      "runtime_png_sha256": "ef1ba700bd85b883979f0733319b88f8707aabb663e3a10027862254114c3ccb",
+      "texture_dimensions": [
+        512,
+        287
+      ],
+      "status": "REUSED_GEOMETRY_VERIFIED_VISUAL_NATIVE_REVIEW_PENDING"
+    },
+    {
+      "id": "level_castle_library_rug",
+      "source_id": "carpet_mp_1",
+      "source_sha256": "4b64e70d6b68ad34adb65e85a6766a6729eaeabd06e1b7ba1fad461363f90f28",
+      "sha256": "98c858877a9f7329de8c3f983fd487ad683942ffbc88c7ce9eada6dd5a71d253",
+      "unchanged_geometry_UV_normal_indices_sha256": "6e6aef213b4415f10e851b22c2fbe1464f8748f212c7cf1aff24a8ad7036f492",
+      "triangles": 18,
+      "dimensions_metres": [
+        3.2278482913970947,
+        2.0400002002716064,
+        0.010200000368058681
+      ],
+      "runtime_png_sha256": "edf5b58b068e2bc25a693ffedc6d9da4c6c8cee85684c790fa6396014fd5ca0f",
+      "texture_dimensions": [
+        512,
+        324
+      ],
+      "status": "REUSED_GEOMETRY_VERIFIED_VISUAL_NATIVE_REVIEW_PENDING"
+    }
+  ],
+  "runtime_evidence": "development/levels/rebuild/verification/castle-textiles-2026-11-06/verification.json",
+  "review": {
+    "construction": 5,
+    "measured_budget": 5,
+    "material_readability": 4,
+    "native_fit": 4,
+    "scale": "out of5; reasoned current-artifact review, not whole-site acceptance",
+    "reason": "Independent exported front/quarter/side/rear views and actual editor-service Castle captures inspected. Hanging has seven physically connected components to real wall plates; detached actual rail control fails. Existing frame/rug mesh normal UV index bytes and alpha policy unchanged. Full room/routes/fixtures and native save/reopen pass."
+  },
+  "source_files": {
+    "development/assets/build_castle_reused_surfaces.py": "4e2710222a14639e3a75a8770e5d97c1e7213d9ff0d96140c947c30b75f40b44"
+  }
+}

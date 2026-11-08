@@ -22,6 +22,9 @@ on:
       - 'src/main/java/org/beckenburg/LevelAssets.java'
       - 'src/main/java/org/beckenburg/LevelPlans.java'
       - 'src/main/java/org/beckenburg/DevAssetReviewCatalog.java'
+      - 'src/main/java/org/beckenburg/DevAssetGalleryLayout.java'
+      - 'src/test/java/org/beckenburg/DevAssetGalleryLayoutTest.java'
+      - 'src/main/java/org/beckenburg/DevAssetShowroom.java'
       - 'src/test/java/org/beckenburg/HollowCreekDevCatalogClassificationTest.java'
       - 'src/test/java/org/beckenburg/HollowCreekBillboardAlphaRuntimeTest.java'
       - 'src/main/java/org/beckenburg/DevAssetShowroom.java'
@@ -34,6 +37,14 @@ on:
       - 'water-module/src/main/java/dev/mrcalzon/water/WaterTerrainSnap.java'
       - 'src/main/java/org/beckenburg/editor/AdaptiveTerrainTopology.java'
       - 'src/main/java/org/beckenburg/SceneRenderer.java'
+      - 'src/test/java/org/beckenburg/CastlePrimitiveRuntimeFitTest.java'
+      - 'src/test/java/org/beckenburg/CastleRelicSourceDecodeTest.java'
+      - 'development/levels/primitive-props-v1/relic-review/**'
+      - 'src/test/java/org/beckenburg/CastlePortalTrimTest.java'
+      - 'development/levels/primitive-props-v1/models/**'
+      - 'development/levels/primitive-props-v1/refinement/**'
+      - 'src/test/java/org/beckenburg/DevRefinementReviewTest.java'
+      - 'development/levels/primitive-props-v1/previews/**'
       - '.github/workflows/dev-room-asset-review.yml'
 
 permissions:
@@ -57,6 +68,46 @@ jobs:
       - name: Compile and package actual assets (functional)
         shell: cmd
         run: build.cmd e2e
+      - name: Verify reusable three-storey gallery layout and deterministic slot mapping
+        shell: cmd
+        run: |
+          if not exist build\\dev-room\\test mkdir build\\dev-room\\test
+          javac --release 17 -encoding UTF-8 -cp build\\beckenburg-game.jar -d build\\dev-room\\test src\\test\\java\\org\\beckenburg\\DevAssetGalleryLayoutTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\\beckenburg-game.jar;build\\dev-room\\test org.beckenburg.DevAssetGalleryLayoutTest
+          if errorlevel 1 exit /b 1
+      - name: Capture all three model-gallery floors and source-only refinement bays (advisory)
+        shell: pwsh
+        run: |
+          & java '-Djava.awt.headless=true' -cp 'build/beckenburg-game.jar' 'org.beckenburg.DevAssetShowroom' '--dev-room' '--gallery-capture' '--kind=SOURCE_ONLY' '--limit=72' '--output=build/dev-room/multi-floor-source-gallery'
+          if ($LASTEXITCODE -ne 0) { throw 'Multi-floor source gallery renderer capture failed' }
+          $shots = @(Get-ChildItem 'build/dev-room/multi-floor-source-gallery' -Filter '*.png')
+          if ($shots.Count -ne 12) { throw "Expected 12 real gallery bay PNGs across three floors; got $($shots.Count)" }
+          $positions = @(Import-Csv 'build/dev-room/multi-floor-source-gallery/gallery-placements.csv')
+          if ($positions.Count -ne 72) { throw "Expected 72 stable inspection slots, got $($positions.Count)" }
+          if (@($positions | Where-Object { $_.floor -eq '3' }).Count -ne 24) { throw 'Third floor models were not indexed' }
+          $views = @(Import-Csv 'build/dev-room/multi-floor-source-gallery/gallery-visibility.csv')
+          if ($views.Count -ne 12) { throw "Expected 12 visibility-audited physical bays; got $($views.Count)" }
+          if (@($views | Where-Object { $_.visible -ne 'true' -or [int]$_.changedPixels -le 20 }).Count -gt 0) {
+            throw 'One or more gallery bays contains no distinguishable model geometry'
+          }
+          $decoded = @(Import-Csv 'build/dev-room/multi-floor-source-gallery/gallery-model-audits.csv')
+          if ($decoded.Count -ne 72 -or @($decoded | Where-Object { $_.state -eq 'MISSING' }).Count -gt 0) {
+            throw 'Source gallery includes a missing or undecodable model'
+          }
+          & java '-Djava.awt.headless=true' -cp 'build/beckenburg-game.jar' 'org.beckenburg.DevAssetShowroom' '--dev-room' '--gallery-capture' '--filter=level_blockout_refined_' '--limit=72' '--output=build/dev-room/multi-floor-refinements'
+          if ($LASTEXITCODE -ne 0) { throw 'Refinement gallery renderer capture failed' }
+          $refined = @(Import-Csv 'build/dev-room/multi-floor-refinements/gallery-placements.csv')
+          if ($refined.Count -ne 15) { throw "Expected 15 source-only refinements, got $($refined.Count)" }
+          $refinedAudit = @(Import-Csv 'build/dev-room/multi-floor-refinements/gallery-model-audits.csv')
+          if ($refinedAudit.Count -ne 15 -or @($refinedAudit | Where-Object { $_.state -ne 'REVIEW_REGISTRATION' }).Count -gt 0) {
+            throw 'Source-only refinement model decode/registration regression'
+          }
+          $refinedViews = @(Import-Csv 'build/dev-room/multi-floor-refinements/gallery-visibility.csv')
+          if ($refinedViews.Count -ne 3 -or @($refinedViews | Where-Object { $_.visible -ne 'true' }).Count -gt 0) {
+            throw 'Refinement gallery has a missing or invisible bay'
+          }
+          Write-Host 'PASS: 12 model-visible gallery bays and 15 audited source-only refinements'
       - name: Check actual Twins source alpha strips with game decoder (advisory)
         continue-on-error: true
         shell: cmd
@@ -85,7 +136,6 @@ jobs:
           java -Djava.awt.headless=true -ea -cp build\\beckenburg-game.jar;build\\dev-room\\test org.beckenburg.HollowCreekBillboardAlphaRuntimeTest
           if errorlevel 1 exit /b 1
       - name: Validate Hollow Creek source approval and catalog membership (advisory)
-        continue-on-error: true
         shell: cmd
         run: |
           if not exist build\\dev-room\\test mkdir build\\dev-room\\test
@@ -93,6 +143,65 @@ jobs:
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp build\\beckenburg-game.jar;build\\dev-room\\test org.beckenburg.HollowCreekDevCatalogClassificationTest
           if errorlevel 1 exit /b 1
+      - name: Decode and texture-sample all 22 relic/crypt GLBs using actual game importer (advisory)
+        shell: cmd
+        run: |
+          if not exist build\\dev-room\\test mkdir build\\dev-room\\test
+          javac --release 17 -encoding UTF-8 -cp build\\beckenburg-game.jar -d build\\dev-room\\test src\\test\\java\\org\\beckenburg\\CastleRelicSourceDecodeTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\\beckenburg-game.jar;build\\dev-room\\test org.beckenburg.CastleRelicSourceDecodeTest
+          if errorlevel 1 exit /b 1
+      - name: Decode all refined map GLBs in actual game importer without runtime registration (advisory)
+        shell: cmd
+        run: |
+          if not exist build\\dev-room\\test mkdir build\\dev-room\\test
+          javac --release 17 -encoding UTF-8 -cp build\\beckenburg-game.jar -d build\\dev-room\\test src\\test\\java\\org\\beckenburg\\DevRefinementReviewTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\\beckenburg-game.jar;build\\dev-room\\test org.beckenburg.DevRefinementReviewTest
+          if errorlevel 1 exit /b 1
+      - name: Native Castle prototype bounds, egress and real-renderer screenshot study (advisory)
+        shell: cmd
+        run: |
+          if not exist build\\dev-room\\test mkdir build\\dev-room\\test
+          javac --release 17 -encoding UTF-8 -cp build\\beckenburg-game.jar -d build\\dev-room\\test src\\test\\java\\org\\beckenburg\\CastlePrimitiveRuntimeFitTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\\beckenburg-game.jar;build\\dev-room\\test org.beckenburg.CastlePrimitiveRuntimeFitTest build\\dev-room\\native-castle-graybox
+          if errorlevel 1 exit /b 1
+      - name: Real DEV room four-angle captures of individual primitives and complete study layouts (advisory)
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          $models = @('level_blockout_quartermaster_counter','level_blockout_privacy_screen',
+              'level_blockout_lookout_spotter','level_blockout_mine_ventilation',
+              'level_blockout_layout_castle','level_blockout_layout_wld-04',
+              'level_blockout_relic_mourning_locket','level_blockout_relic_votive_bell',
+              'level_blockout_relic_black_mirror','level_blockout_relic_reliquary_box',
+              'level_blockout_relic_pilgrim_lantern','level_blockout_relic_bound_folio',
+              'level_blockout_relic_open_guard','level_blockout_relic_containment',
+              'level_blockout_sarcophagus_plain','level_blockout_sarcophagus_inscribed',
+              'level_blockout_sarcophagus_effigy',
+              'level_blockout_refined_castle_open_crypt_niche',
+              'level_blockout_refined_castle_sarcophagus_bier',
+              'level_blockout_refined_castle_candelabrum',
+              'level_blockout_refined_house_iron_stove',
+              'level_blockout_refined_school_coat_rail',
+              'level_blockout_refined_mortuary_instrument_cart',
+              'level_blockout_refined_rail_mechanical_semaphore',
+              'level_blockout_refined_lighthouse_fresnel_cage',
+              'level_blockout_refined_mine_open_ore_cart',
+              'level_blockout_refined_sawmill_guarded_blade_table',
+              'level_blockout_refined_cannery_suspended_hooks',
+              'level_blockout_refined_prison_visitation_grille',
+              'level_blockout_refined_camp_timber_washstand',
+              'level_blockout_refined_wharf_mooring_bollard',
+              'level_blockout_refined_battery_vent_cage',
+              'level_blockout_kit_refined_p01',
+              'level_blockout_kit_refined_p02',
+              'level_blockout_kit_refined_p03')
+          foreach ($model in $models) {
+            & java '-Djava.awt.headless=true' -cp 'build/beckenburg-game.jar' 'org.beckenburg.DevAssetShowroom' '--dev-room' '--capture' "--asset=$model" "--output=build/dev-room/primitive-studies/$model"
+            if ($LASTEXITCODE -ne 0) { Write-Warning "Primitive asset four-view capture failed: $model" }
+          }
       - name: Verify water socket connection and actual DEV sample construction
         shell: cmd
         run: |

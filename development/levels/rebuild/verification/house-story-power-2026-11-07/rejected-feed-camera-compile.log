@@ -1,0 +1,5 @@
+HouseRebuildStoryTest.java:69: error: cannot find symbol
+  captureMap.clearSight(Vec,Vec)
+  symbol: method clearSight(Vec,Vec)
+  location: variable captureMap of type HouseMap
+Recorded from actual javac output at owner pause.

@@ -31,6 +31,8 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
     private long last=System.nanoTime();
     private double clock;
     double gameplaySeconds(){return clock;}
+    private double clutterClock;
+    private int clutterTick;
     private double elevation;
     private boolean castleLightsOn=true,crouched,storeOpen;
     private final CrouchCamera crouchCamera=new CrouchCamera();
@@ -193,6 +195,9 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         if(!isShowing()||storeOpen){last=System.nanoTime();return;}
         if(archive.opened()){last=System.nanoTime();down.clear();repaint();return;}
         long now=System.nanoTime();double dt=Math.min(.07,Math.max(0,(now-last)/1e9));last=now;
+        clutterClock+=dt;
+        while(clutterClock>=.1){map.clutter().advance(java.util.List.of(clutterObserver()));clutterTick++;clutterClock-=.1;}
+        if(!map.clutter().drainNoises().isEmpty())GameSfx.play(LanSound.Cue.IMPACT);
         if(down.contains(KeyEvent.VK_LEFT))renderer.yaw+=dt*1.65;
         if(down.contains(KeyEvent.VK_RIGHT))renderer.yaw-=dt*1.65;
         if(down.contains(KeyEvent.VK_UP))renderer.pitch=Math.min(1.05,renderer.pitch+dt);
@@ -267,6 +272,31 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         openService(resident.name+" / "+resident.profession,conversation,this::closeService);
     }
     /** Warehouse equipment counter accesses the host-owned multiplayer inventory, never the campaign purse. */
+    boolean openAimedTraining(){
+        if(orientation.active()||storeOpen||archive.opened()||(serviceOverlay!=null&&serviceOverlay.isVisible()))return false;
+        var bay=CastleTraining.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw);
+        if(bay==null)return false;
+        openService(bay.title(),new CastleTrainingPanel(bay,this::closeService),this::closeService);return true;
+    }
+    boolean openAimedStory(){
+        if(orientation.active()||storeOpen||archive.opened())return false;
+        if(elevation>=-.3&&elevation<=1.8&&CastleWarehouse.aimed(map,renderer.x,renderer.z,renderer.yaw))return false;
+        var record=CastleStory.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw,renderer.pitch,HunterPosture.eye(crouched));
+        if(record==null)return false;
+        openService("MUSEUM RECORD",new CastleStoryPanel(record,this::closeService),this::closeService);return true;
+    }
+    private LooseClutter.Observer clutterObserver(){return new LooseClutter.Observer(0,renderer.x,elevation,renderer.z,renderer.yaw,renderer.pitch,!orientation.active()&&!storeOpen&&!archive.opened(),HunterPosture.eye(crouched));}
+    boolean handleClutter(int key){
+        if(orientation.active()||storeOpen||archive.opened())return false;
+        if(key!=KeyEvent.VK_F5&&key!=KeyEvent.VK_F12&&key!=KeyEvent.VK_CLOSE_BRACKET)return false;
+        var objects=map.clutter();int held=objects.held(0);var aimed=held<0?objects.aimed(clutterObserver()):null;
+        try{
+            if(key==KeyEvent.VK_F5&&held<0){if(aimed==null)return false;objects.action("TAKE",aimed.id(),clutterObserver(),clutterTick);}
+            else if(held>=0)objects.action(key==KeyEvent.VK_F5?"DROP":key==KeyEvent.VK_F12?"THROW":"ROTATE",held,clutterObserver(),clutterTick);
+            else return false;
+        }catch(IllegalArgumentException rejected){notice=rejected.getMessage();noticeTicks=65;}
+        return true;
+    }
     void openWarehouseInventory(){
         if(storeOpen||orientation.active())return;
         down.clear();look.release();actions.multiplayerInventory();
@@ -337,6 +367,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
             }
             openPauseMenu();return;
         }
+        if(handleClutter(key)){down.add(key);return;}
         if(key==KeyEvent.VK_E){
             var portal=map.aimedDoor(renderer.x,elevation,renderer.z,renderer.yaw);
             if(portal!=null){
@@ -350,6 +381,10 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
                 openResident(CastleRelations.aimed(map,renderer.x,renderer.z,renderer.yaw));
             }else if(CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw)!=null){
                 use(null);
+            }else if(openAimedTraining()){
+                // The same physically aimed native fixture owns prompt and action.
+            }else if(openAimedStory()){
+                // Retained museum objects explain the Castle's successive uses.
             }else if(elevation>1.8||elevation<-.3){
                 notice="Return to the ground floor to use workstations.";noticeTicks=90;
             }else use(CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw)!=null?
@@ -418,6 +453,15 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
             boolean atSwitch=CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw)!=null;
             boolean atWarehouse=elevation>=-.3&&elevation<=1.8&&CastleWarehouse.aimed(map,renderer.x,renderer.z,renderer.yaw);
             var atDoor=map.aimedDoor(renderer.x,elevation,renderer.z,renderer.yaw);
+            var training=orientation.active()?null:CastleTraining.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw);
+            var story=orientation.active()?null:CastleStory.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw,renderer.pitch,HunterPosture.eye(crouched));
+            int heldObject=map.clutter().held(0);
+            var loose=orientation.active()?null:heldObject>=0?map.clutter().states().stream().filter(s->s.id()==heldObject).findFirst().orElse(null):map.clutter().aimed(clutterObserver());
+            if(loose!=null){
+                g.setColor(new Color(11,16,21,230));g.fillRoundRect(12,h-144,w-24,56,8,8);
+                g.setColor(new Color(237,219,183));g.drawString(loose.kind().description,24,h-123);
+                g.setColor(new Color(178,211,200));g.drawString(heldObject>=0?"[ F5 ] DROP   ] ROTATE   [ F12 ] THROW":"[ F5 ] PICK UP",24,h-103);
+            }
             var resident=(elevation>=-.3&&elevation<=1.8)?CastleRelations.aimed(map,renderer.x,renderer.z,renderer.yaw):null;
             var nameplate=renderer.castleResidentNameplate(resident);
             if(nameplate!=null){
@@ -433,13 +477,13 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
                 g.setColor(new Color(248,221,170));
                 g.drawString(name,labelLeft+11,labelTop+17);
             }
-            if(atDoor!=null||station!=null||atSwitch||atWarehouse||resident!=null){
+            if(atDoor!=null||station!=null||atSwitch||atWarehouse||resident!=null||training!=null||story!=null){
                 String label=atDoor!=null?
                     (map.doorOpen(atDoor.id())?"CLOSE ":"OPEN ")+
                     (atDoor.gate()?"COURTYARD PORTCULLIS":"CASTLE DOOR"):
                     resident!=null?resident.name.toUpperCase(java.util.Locale.ROOT)+" / TALK":
                     atSwitch?"CASTLE LIGHT SWITCH":atWarehouse?
-                    "WAREHOUSE / MULTIPLAYER INVENTORY":station.label;
+                    "WAREHOUSE / MULTIPLAYER INVENTORY":training!=null?training.title():story!=null?"MUSEUM RECORD / "+story.title():station.label;
                 int labelWidth=Math.min(w-24,Math.max(250,g.getFontMetrics().stringWidth(label)+50));
                 int left=(w-labelWidth)/2;
                 g.setColor(new Color(11,16,21,220));g.fillRoundRect(left,h-75,labelWidth,36,8,8);

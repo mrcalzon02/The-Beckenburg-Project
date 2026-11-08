@@ -19,7 +19,7 @@
     },
     {
       "model": "relic containment plinths and cages",
-      "status": "needed or existing candidate: audit before authoring duplicates"
+      "status": "Existing source-only containment plinth model refined; 12 individual relic objects and display fixtures authored, not runtime-authorized or captured."
     },
     {
       "model": "quartermaster issue counter",
@@ -977,5 +977,63 @@
     "Quantities and asset budgets await room dressing plans.",
     "Existing candidates are verified filenames, not certified fit or finished availability.",
     "This is a model worklist, not implemented gameplay."
-  ]
+  ],
+  "proposed_crypt_sarcophagus_inventory": {
+    "source": "development/levels/primitive-props-v1/castle-crypt-proposal.json",
+    "computed_count_report": "development/levels/primitive-props-v1/crypt-review/castle-crypt-count.json",
+    "geometry_preview": "development/levels/primitive-props-v1/crypt-review/castle-crypt-preview.glb",
+    "level_authority": "EXPANDED_CASTLE_UNBUILT_CHAPEL_CRYPT_NOT_PLAYABLE_CASTLE",
+    "proposed_total": 8,
+    "planned_chambers": {
+      "crypt-west": 4,
+      "crypt-east": 4
+    },
+    "variant_counts": {
+      "level_blockout_sarcophagus_plain": 3,
+      "level_blockout_sarcophagus_inscribed": 3,
+      "level_blockout_sarcophagus_effigy": 2
+    },
+    "current_playable_castle_installed_count": 0,
+    "current_playable_castle_crypt_room_count": 0,
+    "status": "PROVISIONAL_SPATIAL_DESIGN_NOT_BUILT_OR_RUNTIME_APPROVED",
+    "forbidden_auto_placement": "Do not use existing relic vault, plant basement or stairs as burial-room authority."
+  },
+  "proposed_relic_vault_collection": {
+    "status": "SOURCE_ONLY_PHYSICAL_MODELS_NOT_CAPTURED_OR_INSTALLED",
+    "source": "development/levels/primitive-props-v1/relic-review/relic-inventory.json",
+    "preview_banks": [
+      "development/levels/primitive-props-v1/relic-review/west-vault-bank.glb",
+      "development/levels/primitive-props-v1/relic-review/east-vault-bank.glb"
+    ],
+    "reference_frame": "PROPOSED_EXPANDED_CASTLE_RELIC_VAULT_NOT_NATIVE_GAME_CRYPT_OR_CELLAR",
+    "proposed_individual_relics": 12,
+    "case_count": 12,
+    "bank_counts": {
+      "west": 6,
+      "east": 6
+    },
+    "actual_captured_in_campaign": 0,
+    "actual_installed_in_playable_castle": 0,
+    "independent_models": [
+      "level_blockout_relic_mourning_locket",
+      "level_blockout_relic_votive_bell",
+      "level_blockout_relic_bronze_astrolabe",
+      "level_blockout_relic_sealed_urn",
+      "level_blockout_relic_black_mirror",
+      "level_blockout_relic_bound_folio",
+      "level_blockout_relic_reliquary_box",
+      "level_blockout_relic_pilgrim_lantern",
+      "level_blockout_relic_ossuary_keys",
+      "level_blockout_relic_censer",
+      "level_blockout_relic_burial_mask",
+      "level_blockout_relic_pilgrim_chalice"
+    ],
+    "constraints": [
+      "Source-only GLBs, not usable ghost-hunting equipment or magical powers",
+      "No invented campaign recovered-item truth",
+      "Existing captured-relic basement vault is not a burial crypt",
+      "Do not replace approved evidence-tier ritual or inventory equipment",
+      "Do not auto-inject proposed expanded Castle scene positions into 44x36m playable Castle"
+    ]
+  }
 }

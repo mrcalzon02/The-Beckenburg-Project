@@ -1,0 +1,48 @@
+HOUSE XYZ geometry checked
+briar-rebuild reached elevations -2.4..2.8
+PASS briar-rebuild: swept van route reaches all 15 zones and all functional sockets, 61328 positions
+PASS HOUSE: disjoint wall finishes, exact deck apertures, distinct floor materials and physical/rendered guards
+PASS authored utilities: 12 reachable wall switches, 14 door acoustic links, 2 vertical stair links, source elevation and ambience
+PASS rebuilt House shell follows authored coordinates: 20817 elevated vertices
+PASS persisted editor holes: source unchanged, rollback/idempotence, 3430 shared render/collision faces, basement player/object/sight passage and filled-ground negatives
+level_kitchen_counter source-size 2.4000000953674316 x 1.1959999799728394 x 0.6969999969005585 floor=0.0
+level_bathtub source-size 1.600000023841858 x 0.8609999874606729 x 0.75 floor=2.8
+toilet_mp_1 source-size 0.5624032318592072 x 1.0063565969467163 x 0.8967615962028503 floor=2.8
+level_bath_basin source-size 0.6600000262260437 x 1.1360000371932983 x 0.5 floor=2.8
+level_laundry_washer source-size 0.6299999952316284 x 0.8725000619888306 x 0.8034999966621399 floor=-2.4
+PASS5 full-scale native fixtures; preserved pivots/terrain/stairs/services/van; swept all15zones and functional sockets: 60964 positions. Construction candidate only.
+REPRO original pilot outdoor walking=0.0 rendered terrain=-0.6499999761581421
+PASS House landscape 6072 source triangles; 1364 shared foot/mesh samples, relief=0.2262502791960873; 560 standing/crouched/body fence seam checks; all15zones/required sockets swept at 50229 positions; real cellar aperture and unchanged canonical van/fittings.
+PASS3 background residences/fences/solids moved12m down street; actual rendered clearance=6.295m; models, road and van retained
+PASS dwelling envelope: 161 closed outward parts, 1948 physical/1664 visible triangles; one20triangle main roof; 11 real openings, source edit/material independence, porch contact and all15zone/socket traversal at 53324 positions; digest=64b6f07f31b2eb6d22d8a812b5fd507bfc0de1e21e55ff6218610a7c140dbb13
+FIT family-sofa sofa_1 native=2.5999995470046997x1.1595666442975125x1.0048426194116473 support=floor
+FIT reading-chair armchair_1 native=1.4949047565460205x1.0665233097210862x0.9900396266179996 support=floor
+FIT television-stand tv_table_1_4 native=1.6400009989738464x0.740000009536744x0.5400000363588333 support=floor
+FIT family-television tv_mp_1 native=0.5100000500679016x0.7892655099882333x0.41831517964601517 support=television-stand
+FIT sitting-end-table bedside_table_1 native=0.5600010752677917x0.6399999488926937x0.5182906277477741 support=floor
+FIT family-dining-table dinner_table_1 native=1.700001060962677x0.8599999957732507x1.1000000834465027 support=floor
+FIT dining-chair-nw chair_mp_5 native=0.5145455896854401x1.0082636993378413x0.5254067927598953 support=floor
+FIT dining-chair-ne chair_mp_5 native=0.5145455896854401x1.0082636993378413x0.5254067927598953 support=floor
+FIT dining-chair-sw chair_mp_5 native=0.5145455896854401x1.0082636993378413x0.5254067927598953 support=floor
+FIT dining-chair-se chair_mp_5 native=0.5145455896854401x1.0082636993378413x0.5254067927598953 support=floor
+FIT parents-double-bed bed_4 native=2.740672469139099x0.9621343931708921x2.2906718254089355 support=floor
+FIT parents-bedside bedside_table_1 native=0.5600010752677917x0.6399999488926937x0.5182906277477741 support=floor
+FIT parents-wardrobe wardrobe_mp_1 native=1.3400089740753174x2.1000005891724953x0.6400001645088196 support=floor
+FIT child-single-bed bed_5 native=2.740672469139099x0.9621343931708921x1.4906718134880066 support=floor
+FIT child-bedside bedside_table_1 native=0.5600010752677917x0.6399999488926937x0.5182906277477741 support=floor
+FIT child-wardrobe wardrobe_mp_1 native=1.3400089740753174x2.1000005891724953x0.6400001645088196 support=floor
+FIT homework-desk level_student_desk native=1.100000023841858x0.7400000095367432x0.6499999761581421 support=floor
+FIT homework-chair chair_mp_5 native=0.5145455896854401x1.0082636993378413x0.5254067927598953 support=floor
+FIT landing-linen shelf_mp_6 native=0.8200029134750366x1.290000250696874x0.22000008821487427 support=floor
+FIT cellar-repair-bench level_workbench_worn native=1.7999999523162842x1.2200000286102295x0.7050000131130219 support=floor
+FIT seasonal-shelf-a shelf_mp_6 native=0.8200029134750366x1.290000250696874x0.22000008821487427 support=floor
+FIT seasonal-shelf-b shelf_mp_6 native=0.8200029134750366x1.290000250696874x0.22000008821487427 support=floor
+FIT heating-plant level_boiler_modern_worn native=1.100000023841858x2.3446996212005615x1.0499999523162842 support=floor
+FIT site-generator level_trace_generator native=1.5499999523162842x1.1549999713897705x0.8799999952316284 support=floor
+PASS 24 authored full-scale household fixtures; real tabletop support; all15anchors/zones/required sockets swept at 50831 positions
+PASS actual supported source/panel aim; connected light energy 4.800000000000001 -> 0.187;4TCP peers source/breaker independence,view-resync,ghost/distance rejection. Ghost-specific trip-event audit remains open.
+Exact runtime source native-texture-parity: 91227 textured triangles, 67 materials
+PASS 66 native materials / 8962879 texels exactly match actual runtime sampling, including original van atlas; UVs/mesh untouched
+Exact runtime source native-texture-parity-functions: 105409 textured triangles, 100 materials
+PASS 99 native materials / 11461357 texels exactly match actual runtime sampling, including original van atlas; UVs/mesh untouched
+PASS House construction pilot including editor-punched world terrain; remaining map gates stay open

@@ -1,0 +1,23 @@
+{
+  "status": "REVIEWED_SCOPED_INTEGRATION",
+  "reviewer": "Codex visual inspection of actual exported and native PNGs",
+  "reference": "https://www.metmuseum.org/art/collection/search/471046",
+  "scores_out_of_10": {
+    "readable_stone_carving": 8,
+    "silhouette_at_game_distance": 8,
+    "continuous_supported_construction": 10,
+    "surface_mapping": 8,
+    "retained_low_poly_style": 8
+  },
+  "rationale": "Connected hood/mantle/hands/codex/robe/plinth reads as a conserved low-poly stone figure. Generated pores/face/codex replace stretched inherited UVs. Front, rear, side and clay inspected; actual Castle front orientation corrected. Fine stone face detail is restrained at gameplay resolution; no physical-hardware performance claim.",
+  "hashes": {
+    "development/assets/castle-museum/previews/keeper-finish/clay.png": "26dc687bd86fbc43fa352c06d8b15675eb6a2191d7d0bd1254ef1e12c189ba1c",
+    "development/assets/castle-museum/previews/keeper-finish/front.png": "9dad0c9409584b96a1c2ab2021fc348f8c7e01f48297bcf6b863910fcfe2fcc6",
+    "development/assets/castle-museum/previews/keeper-finish/quarter.png": "274f81b9fc23591a6d3289e0df2dc0e11d928bd84c819233e421f3b8fb6ea56c",
+    "development/assets/castle-museum/previews/keeper-finish/rear.png": "f883f10d4f79686a2769acf9bbe3b1b07b48eb2a06e0c87f504342aede831e0e",
+    "development/assets/castle-museum/previews/keeper-finish/side.png": "a74f2299170d5eb52ac4f3e56211474bfe51397502087f040c0dafdf0a4101cc",
+    "assets/runtime/models/level_castle_keeper_statue.glb": "923ef5e9f924d0b4578d9094edfe0063e3c6b9934da609fa597c3d03f27e598a",
+    "development/assets/castle-museum/keeper_finished.blend": "dfe382206fc336dc5cea05c1724c0b9d428ddadab93f958d168b490d9cd7e221",
+    "development/levels/rebuild/captures/castle-construction/finish-keeper-runtime.png": "6089ccd649e45980f3fc72b6326a0ccca5a91bb2fd142cf21ca9308a665fd256"
+  }
+}

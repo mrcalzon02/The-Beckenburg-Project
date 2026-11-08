@@ -1,0 +1,445 @@
+{
+  "schema": "beckenburg.primitive-prop-placement/1",
+  "site": "CASTLE",
+  "title": "Castle Beckenburg",
+  "layout_source": "layouts/castle/layout.json",
+  "layout_source_sha256": "8811f7757cef5ff5238d8bae4e3f3f02bc3134516832ee9b1a3225ef35622c35",
+  "status": "review_only",
+  "world_frame": "X east/right; Y elevation up; Z source plan depth",
+  "placements": [
+    {
+      "id": "castle-01",
+      "zone": "great",
+      "model": "level_blockout_lecture_lectern",
+      "position": [
+        26.88,
+        0.0,
+        75.92
+      ],
+      "yaw_rad": 3.14159,
+      "anchor": [
+        0.12,
+        0.28
+      ],
+      "world_bounds_xz": [
+        26.3346,
+        75.605,
+        27.4254,
+        76.479
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "castle-02",
+      "zone": "map",
+      "model": "level_blockout_map_pinboard",
+      "position": [
+        6.4,
+        -0.085,
+        57.92
+      ],
+      "yaw_rad": 3.14159,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        5.31,
+        57.685,
+        7.49,
+        58.02
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "castle-03",
+      "zone": "map",
+      "model": "level_blockout_console",
+      "position": [
+        17.4,
+        -0.015,
+        70.08
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.67,
+        0.88
+      ],
+      "world_bounds_xz": [
+        16.6,
+        69.705,
+        18.2,
+        70.455
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "castle-04",
+      "zone": "armory",
+      "model": "level_blockout_quartermaster_counter",
+      "position": [
+        89.6,
+        -0.015,
+        70.08
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.88,
+        0.88
+      ],
+      "world_bounds_xz": [
+        88.365,
+        69.635,
+        90.835,
+        70.505
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "castle-05",
+      "zone": "workshop",
+      "model": "level_blockout_workbench",
+      "position": [
+        74.4,
+        -0.03,
+        38.4
+      ],
+      "yaw_rad": 3.14159,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        73.525,
+        38.01,
+        75.275,
+        38.79
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "castle-06",
+      "zone": "workshop",
+      "model": "level_blockout_utility_panel",
+      "position": [
+        89.6,
+        -0.36,
+        53.6
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.88,
+        0.88
+      ],
+      "world_bounds_xz": [
+        89.22,
+        53.39,
+        89.98,
+        53.74
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "castle-07",
+      "zone": "infirmary",
+      "model": "level_blockout_ward_bed",
+      "position": [
+        74.4,
+        0.0,
+        21.92
+      ],
+      "yaw_rad": 3.14159,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        73.96,
+        20.92,
+        74.84,
+        22.92
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "castle-08",
+      "zone": "infirmary",
+      "model": "level_blockout_privacy_screen",
+      "position": [
+        89.6,
+        0.0,
+        34.08
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.88,
+        0.88
+      ],
+      "world_bounds_xz": [
+        88.69,
+        34.0,
+        90.51,
+        34.42
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "castle-09",
+      "zone": "chapel",
+      "model": "level_blockout_pew",
+      "position": [
+        26.16,
+        0.005,
+        13.92
+      ],
+      "yaw_rad": 3.14159,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        25.3,
+        13.62,
+        27.02,
+        14.19
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "castle-10",
+      "zone": "archive",
+      "model": "level_blockout_archive_cabinet",
+      "position": [
+        5.68,
+        0.0,
+        31.36
+      ],
+      "yaw_rad": 3.14159,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        5.14,
+        31.125,
+        6.22,
+        31.652
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "castle-11",
+      "zone": "archive",
+      "model": "level_blockout_storage_shelf",
+      "position": [
+        16.32,
+        0.0,
+        52.64
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.88,
+        0.88
+      ],
+      "world_bounds_xz": [
+        15.495,
+        52.265,
+        17.145,
+        53.015
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "castle-12",
+      "zone": "radio",
+      "model": "level_blockout_console",
+      "position": [
+        70.32,
+        -0.015,
+        13.92
+      ],
+      "yaw_rad": 3.14159,
+      "anchor": [
+        0.88,
+        0.12
+      ],
+      "world_bounds_xz": [
+        69.52,
+        13.545,
+        71.12,
+        14.295
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "castle-13",
+      "zone": "research",
+      "model": "level_blockout_workbench",
+      "position": [
+        43.92,
+        -0.03,
+        26.08
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.12,
+        0.88
+      ],
+      "world_bounds_xz": [
+        43.045,
+        25.69,
+        44.795,
+        26.47
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "castle-14",
+      "zone": "vault",
+      "model": "level_blockout_relic_containment",
+      "position": [
+        5.68,
+        -3.0,
+        31.36
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        4.93,
+        30.635,
+        6.43,
+        32.085
+      ],
+      "floor_elevation": -3,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "castle-15",
+      "zone": "restoration",
+      "model": "level_blockout_restoration_scaffold",
+      "position": [
+        45.12,
+        6.5,
+        84.32
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.88,
+        0.88
+      ],
+      "world_bounds_xz": [
+        43.72,
+        83.495,
+        46.52,
+        85.145
+      ],
+      "floor_elevation": 6.5,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "castle-16",
+      "zone": "train-b",
+      "model": "level_blockout_ritual_training_rig",
+      "position": [
+        -24.8,
+        0.0,
+        29.68
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        -25.65,
+        28.855,
+        -23.95,
+        30.505
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "castle-17",
+      "zone": "train-c",
+      "model": "level_blockout_ritual_training_rig",
+      "position": [
+        -14.8,
+        0.0,
+        29.68
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        -15.65,
+        28.855,
+        -13.95,
+        30.505
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "castle-18",
+      "zone": "train-a",
+      "model": "level_blockout_ritual_training_rig",
+      "position": [
+        -4.8,
+        0.0,
+        29.68
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        -5.65,
+        28.855,
+        -3.95,
+        30.505
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    }
+  ],
+  "runtime_scene_changed": false,
+  "collision_verified": false
+}

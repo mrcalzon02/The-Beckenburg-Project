@@ -23,6 +23,30 @@ public final class CastleHubArchitecturalPlan {
         public boolean horizontal(){return Math.abs(z1-z0)<.001;}
         public double length(){return horizontal()?Math.abs(x1-x0):Math.abs(z1-z0);}
     }
+    /** A portal marker has zero thickness/height; its OWN authored lintel,
+     * not a hardcoded 2.7m opening, determines the exact trim clearance.
+     * All slab/doorway/collision queries continue to use the same walls. */
+    public static double portalHead(Wall marker,List<Wall> authoredWalls){
+        if(marker==null||!marker.hasDoor()||authoredWalls==null)
+            throw new IllegalArgumentException("Portal marker and walls required");
+        double start=marker.horizontal()?marker.x0():marker.z0();
+        double end=marker.horizontal()?marker.x1():marker.z1();
+        double fixed=marker.horizontal()?marker.z0():marker.x0();
+        double head=Double.POSITIVE_INFINITY;
+        for(var wall:authoredWalls){
+            if(wall.hasDoor()||wall.horizontal()!=marker.horizontal()
+                    ||wall.top()-wall.bottom()<.01)continue;
+            double otherFixed=wall.horizontal()?wall.z0():wall.x0();
+            double a=wall.horizontal()?wall.x0():wall.z0();
+            double b=wall.horizontal()?wall.x1():wall.z1();
+            if(Math.abs(otherFixed-fixed)>.001||a>start+.001||b<end-.001
+                    ||wall.bottom()<=marker.bottom()+.30)continue;
+            head=Math.min(head,wall.bottom());
+        }
+        // A newly authored portal can temporarily lack a header before the
+        // editor builds its lintel. Keep a bounded preview, never a 3m pillar.
+        return Double.isFinite(head)?head:marker.bottom()+DOOR_HEIGHT;
+    }
     public record Deck(double x0,double z0,double x1,double z1,
                        double height,int material){}
     public record Roof(double west,double east,double north,double south,
@@ -221,6 +245,14 @@ public final class CastleHubArchitecturalPlan {
     public static boolean onStairs(double x,double z){
         return x>=16&&x<=19&&z>=22&&z<=32;
     }
+    public record StairSolid(double x0,double z0,double x1,double z1,double top){}
+    private static final List<StairSolid> STAIR_SOLIDS=stairSolids();
+    private static List<StairSolid> stairSolids(){
+        var result=new ArrayList<StairSolid>();
+        for(int step=0;step<20;step++){double south=32-step*.5;result.add(new StairSolid(16,south-.5,19,south,(step+1)*GROUND_CEILING/20));}
+        return List.copyOf(result);
+    }
+    public static List<StairSolid> upperStairSolids(){return STAIR_SOLIDS;}
     public static double stairHeight(double x,double z){
         if(!onStairs(x,z))return 0;
         return Math.max(0,Math.min(GROUND_CEILING,(32-z)*GROUND_CEILING/10));

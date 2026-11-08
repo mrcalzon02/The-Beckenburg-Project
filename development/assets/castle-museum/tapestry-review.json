@@ -1,0 +1,186 @@
+{
+  "status": "SCOPED_NATIVE_HERITAGE_PILOT_VERIFIED",
+  "phase": "tapestry-wall-export",
+  "source_sha256": "ff4c8ecfd2965759b7c9b56fff0a6d35cbb655b988a8fcd697ccc1dc588c839c",
+  "triangle_count": 160,
+  "tolerance_metres": 0.001,
+  "criterion": "Every component reaches actual wall bearing plates through triangle contact within1mm; rigid audit coordinates(x,z,-y), wallY=0 becomes supportZ=0",
+  "components": [
+    {
+      "id": 0,
+      "vertices": 42,
+      "bounds": [
+        [
+          -0.699999988079071,
+          0.11999999731779099,
+          0.0560000017285347
+        ],
+        [
+          0.699999988079071,
+          2.240000009536743,
+          0.09799999743700027
+        ]
+      ],
+      "contacts": [
+        1,
+        3,
+        5,
+        6
+      ],
+      "supported": true
+    },
+    {
+      "id": 1,
+      "vertices": 8,
+      "bounds": [
+        [
+          -0.699999988079071,
+          2.2300000190734863,
+          0.0560000017285347
+        ],
+        [
+          0.699999988079071,
+          2.2799999713897705,
+          0.10400000214576721
+        ]
+      ],
+      "contacts": [
+        0,
+        3,
+        5,
+        6
+      ],
+      "supported": true
+    },
+    {
+      "id": 2,
+      "vertices": 8,
+      "bounds": [
+        [
+          -0.7300000190734863,
+          2.1700000762939453,
+          -0.0
+        ],
+        [
+          -0.6700000166893005,
+          2.3299999237060547,
+          0.012000000104308128
+        ]
+      ],
+      "contacts": [
+        3
+      ],
+      "supported": true
+    },
+    {
+      "id": 3,
+      "vertices": 8,
+      "bounds": [
+        [
+          -0.7149999737739563,
+          2.2300000190734863,
+          -0.0
+        ],
+        [
+          -0.6850000023841858,
+          2.2699999809265137,
+          0.10000000149011612
+        ]
+      ],
+      "contacts": [
+        0,
+        1,
+        2,
+        6
+      ],
+      "supported": true
+    },
+    {
+      "id": 4,
+      "vertices": 8,
+      "bounds": [
+        [
+          0.6700000166893005,
+          2.1700000762939453,
+          -0.0
+        ],
+        [
+          0.7300000190734863,
+          2.3299999237060547,
+          0.012000000104308128
+        ]
+      ],
+      "contacts": [
+        5
+      ],
+      "supported": true
+    },
+    {
+      "id": 5,
+      "vertices": 8,
+      "bounds": [
+        [
+          0.6850000023841858,
+          2.2300000190734863,
+          -0.0
+        ],
+        [
+          0.7149999737739563,
+          2.2699999809265137,
+          0.10000000149011612
+        ]
+      ],
+      "contacts": [
+        0,
+        1,
+        4,
+        6
+      ],
+      "supported": true
+    },
+    {
+      "id": 6,
+      "vertices": 12,
+      "bounds": [
+        [
+          -0.8199999928474426,
+          2.233349323272705,
+          0.054999999701976776
+        ],
+        [
+          0.8199999928474426,
+          2.2766506671905518,
+          0.10499999672174454
+        ]
+      ],
+      "contacts": [
+        0,
+        1,
+        3,
+        5
+      ],
+      "supported": true
+    }
+  ],
+  "physical_mount_plane": "Blender localY=0; only rear wall-plate surfaces touch it",
+  "dimensions_metres": [
+    1.6399999856948853,
+    0.10499999672174454,
+    2.2100000381469727
+  ],
+  "reference": "https://www.metmuseum.org/art/collection/search/467642",
+  "art": "Original built-in image generation; no reference photograph used as texture",
+  "runtime_evidence": "development/levels/rebuild/verification/castle-textiles-2026-11-06/verification.json",
+  "review": {
+    "construction": 5,
+    "measured_budget": 5,
+    "material_readability": 4,
+    "native_fit": 4,
+    "scale": "out of5; reasoned current-artifact review, not whole-site acceptance",
+    "reason": "Independent exported front/quarter/side/rear views and actual editor-service Castle captures inspected. Hanging has seven physically connected components to real wall plates; detached actual rail control fails. Existing frame/rug mesh normal UV index bytes and alpha policy unchanged. Full room/routes/fixtures and native save/reopen pass."
+  },
+  "source_files": {
+    "development/assets/build_castle_tapestry.py": "c30a0692b94da6e14f594ba612caddc3aefc0482a1f4f0de8abf15f84c2cf6b0",
+    "development/assets/inspect_castle_tapestry.py": "6533c50267553e7f2bcb3c150ef0ce427d5fb21a866e8dfd265a33327dcdb952"
+  }
+}

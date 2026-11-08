@@ -1,0 +1,215 @@
+{
+  "schema": "beckenburg.castle-sarcophagus-placement-audit/1",
+  "status": "SOURCE_ONLY_CRYPT_PROPOSAL_NO_BUILT_GAME_CRYPT",
+  "site": "CASTLE",
+  "expanded_castle_chapel_plan_sha256": "8811f7757cef5ff5238d8bae4e3f3f02bc3134516832ee9b1a3225ef35622c35",
+  "source_proposal_sha256": "4aa4f13d7d6df29bc50b0d3f36996aa069445295f3125cc301d530d6f23d92ae",
+  "source_model_catalog_sha256": "0db537fa84276166236d290249581a6940e7952d5126dcbe1b2c68d637b8bc6c",
+  "model_count": 298,
+  "total_sarcophagi_proposed": 8,
+  "total_sarcophagi_installed_in_playable_castle": 0,
+  "count_by_crypt_chamber": {
+    "crypt-east": 4,
+    "crypt-west": 4
+  },
+  "count_by_model": {
+    "level_blockout_sarcophagus_effigy": 2,
+    "level_blockout_sarcophagus_inscribed": 3,
+    "level_blockout_sarcophagus_plain": 3
+  },
+  "preview_triangles": 1560,
+  "preview_sha256": "ca5bc1ea37e1b244f73d7e74aea4a35971c6580faa3924a752d7b236f09ec2e3",
+  "floor_elevation_m": -3,
+  "central_aisle_width_m": 2,
+  "checks": [
+    "unique object IDs",
+    "per-chamber count",
+    "per-model count",
+    "room dimensions under existing proposed chapel",
+    "vertical clearance",
+    "wall margins",
+    "protected aisle",
+    "nonoverlap and lateral access"
+  ],
+  "not_verified": [
+    "actual chapel crypt architecture or staircase",
+    "runtime Castle cellar fit",
+    "wall/floor support",
+    "doors and navigation",
+    "collision",
+    "textures/lighting",
+    "sarcophagus gameplay interaction"
+  ],
+  "placements": [
+    {
+      "id": "crypt-west-01",
+      "zone": "crypt-west",
+      "model": "level_blockout_sarcophagus_plain",
+      "position": [
+        26.9,
+        -3.0,
+        17.5
+      ],
+      "yaw_rad": 0,
+      "floor_elevation": -3,
+      "world_bounds_xz": [
+        26.23,
+        16.2,
+        27.57,
+        18.8
+      ],
+      "runtime_approved": false,
+      "collision_verified": false,
+      "placement_status": "PROPOSED_ONLY"
+    },
+    {
+      "id": "crypt-west-02",
+      "zone": "crypt-west",
+      "model": "level_blockout_sarcophagus_inscribed",
+      "position": [
+        30,
+        -3.0,
+        17.5
+      ],
+      "yaw_rad": 0,
+      "floor_elevation": -3,
+      "world_bounds_xz": [
+        29.32,
+        16.205,
+        30.68,
+        18.795
+      ],
+      "runtime_approved": false,
+      "collision_verified": false,
+      "placement_status": "PROPOSED_ONLY"
+    },
+    {
+      "id": "crypt-west-03",
+      "zone": "crypt-west",
+      "model": "level_blockout_sarcophagus_effigy",
+      "position": [
+        26.9,
+        -3.0,
+        23
+      ],
+      "yaw_rad": 0,
+      "floor_elevation": -3,
+      "world_bounds_xz": [
+        26.17,
+        21.64,
+        27.63,
+        24.36
+      ],
+      "runtime_approved": false,
+      "collision_verified": false,
+      "placement_status": "PROPOSED_ONLY"
+    },
+    {
+      "id": "crypt-west-04",
+      "zone": "crypt-west",
+      "model": "level_blockout_sarcophagus_plain",
+      "position": [
+        30,
+        -3.0,
+        23
+      ],
+      "yaw_rad": 0,
+      "floor_elevation": -3,
+      "world_bounds_xz": [
+        29.33,
+        21.7,
+        30.67,
+        24.3
+      ],
+      "runtime_approved": false,
+      "collision_verified": false,
+      "placement_status": "PROPOSED_ONLY"
+    },
+    {
+      "id": "crypt-east-01",
+      "zone": "crypt-east",
+      "model": "level_blockout_sarcophagus_inscribed",
+      "position": [
+        35.9,
+        -3.0,
+        17.5
+      ],
+      "yaw_rad": 0,
+      "floor_elevation": -3,
+      "world_bounds_xz": [
+        35.22,
+        16.205,
+        36.58,
+        18.795
+      ],
+      "runtime_approved": false,
+      "collision_verified": false,
+      "placement_status": "PROPOSED_ONLY"
+    },
+    {
+      "id": "crypt-east-02",
+      "zone": "crypt-east",
+      "model": "level_blockout_sarcophagus_plain",
+      "position": [
+        39,
+        -3.0,
+        17.5
+      ],
+      "yaw_rad": 0,
+      "floor_elevation": -3,
+      "world_bounds_xz": [
+        38.33,
+        16.2,
+        39.67,
+        18.8
+      ],
+      "runtime_approved": false,
+      "collision_verified": false,
+      "placement_status": "PROPOSED_ONLY"
+    },
+    {
+      "id": "crypt-east-03",
+      "zone": "crypt-east",
+      "model": "level_blockout_sarcophagus_effigy",
+      "position": [
+        35.9,
+        -3.0,
+        23
+      ],
+      "yaw_rad": 0,
+      "floor_elevation": -3,
+      "world_bounds_xz": [
+        35.17,
+        21.64,
+        36.63,
+        24.36
+      ],
+      "runtime_approved": false,
+      "collision_verified": false,
+      "placement_status": "PROPOSED_ONLY"
+    },
+    {
+      "id": "crypt-east-04",
+      "zone": "crypt-east",
+      "model": "level_blockout_sarcophagus_inscribed",
+      "position": [
+        39,
+        -3.0,
+        23
+      ],
+      "yaw_rad": 0,
+      "floor_elevation": -3,
+      "world_bounds_xz": [
+        38.32,
+        21.705,
+        39.68,
+        24.295
+      ],
+      "runtime_approved": false,
+      "collision_verified": false,
+      "placement_status": "PROPOSED_ONLY"
+    }
+  ],
+  "runtime_approved": false,
+  "scene_mutated": false
+}

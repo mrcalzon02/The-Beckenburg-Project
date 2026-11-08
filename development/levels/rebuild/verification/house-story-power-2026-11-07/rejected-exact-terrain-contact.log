@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: Loose body cannot settle against actual editor terrain: expected=0.1704858751286371 actual=0.12103587512863712
+	at org.beckenburg.HouseRebuildStoryTest.check(HouseRebuildStoryTest.java:8)
+	at org.beckenburg.HouseRebuildStoryTest.main(HouseRebuildStoryTest.java:44)

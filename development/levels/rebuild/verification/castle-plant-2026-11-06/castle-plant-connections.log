@@ -1,0 +1,20 @@
+16:59:55 | INFO: Data are loaded, start creating Blender stuff
+16:59:55 | INFO: Blender create Mesh node Cube
+16:59:55 | INFO: glTF import finished in 0.01s
+Info: Saved as "plant_boiler.blend"
+INFO Draco mesh compression is available, use library at C:\Program Files\Blender Foundation\Blender 5.0\5.0\scripts\addons_core\io_scene_gltf2\extern_draco.dll
+16:59:56 | INFO: Starting glTF 2.0 export
+16:59:56 | INFO: Extracting primitive: Cube
+16:59:56 | INFO: Primitives created: 8
+16:59:56 | INFO: Finished glTF 2.0 export in 0.026099205017089844 s
+
+Info: Saved as "plant_connections.blend"
+16:59:56 | INFO: Starting glTF 2.0 export
+16:59:56 | INFO: Extracting primitive: Hot return sleeve meets exact source terminal and east masonry
+16:59:56 | INFO: Primitives created: 3
+16:59:56 | INFO: Finished glTF 2.0 export in 0.005509614944458008 s
+
+PASS84-triangle measured hot/cold wall sleeves and flue; original boiler unchanged
+Blender 5.0.0 (hash a37564c4df7a built 2025-11-18 11:06:54)
+
+Blender quit

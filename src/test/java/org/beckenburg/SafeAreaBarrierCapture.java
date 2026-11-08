@@ -7,10 +7,11 @@ import javax.imageio.ImageIO;
 public final class SafeAreaBarrierCapture {
     public static void main(String[] args)throws Exception{
         LevelVisualCapture.inspection();Path out=Path.of(args[0]);Files.createDirectories(out);
-        var map=new HouseMap();var van=map.van();var renderer=new SceneRenderer();
+        boolean rebuilt=args.length>1&&args[1].equals("--rebuilt-house");
+        var map=rebuilt?HouseRebuildFunctions.map():new HouseMap();var van=map.van();var renderer=new SceneRenderer();
         renderer.setRenderSize(640,400);renderer.setPsxPreset(PsxPipeline.Preset.OFF);
         renderer.environmentLight=1;renderer.roomLights=new RoomLighting();
-        for(String shot:List.of("van-exterior","van-inside","van-ward","castle-sanctuary","castle-courtyard")){
+        for(String shot:rebuilt?List.of("van-exterior","van-inside"):List.of("van-exterior","van-inside","van-ward","castle-sanctuary","castle-courtyard")){
             boolean castle=shot.startsWith("castle-");var placed=castle?CastleSurroundings.courtyardVan():van;
             var p=placed.world(shot.equals("van-inside")?0:4.5,shot.equals("van-inside")?-3.2:-5.5);
             var target=placed.world(0,.8);double targetY=placed.placement().y()+1.5;

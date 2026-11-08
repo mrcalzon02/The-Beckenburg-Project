@@ -40,7 +40,38 @@ public final class LevelAuthoringRecoveryTest {
             check(session.snapshot().equals(moved)&&java.util.Arrays.equals(saved,Files.readAllBytes(session.documentPath())),
                 "Foreign backup preserves exact live and on-disk native scene");
             check(service.test(session.revision(),"mission-runtime-parity").result().stream().allMatch(EditorAgentService.Check::passed),"Recovered/undone unsaved state still uses native colliders");
-            System.out.println("PASS native mission recovery: distinct backup, corrupt-file rejection, explicit restore, shared undo, real game load and foreign-scene isolation");
+            // CLI bootstrap has no live session/source to fall back on. A bad
+            // primary must not be parsed before validating its previous file.
+            var versionless=org.beckenburg.editor.RuntimeSceneDocument.load(session.documentPath());versionless.remove(HouseSourceVersions.NODE);
+            org.beckenburg.editor.RuntimeSceneDocument.save(EditorDocumentStore.previous(session.documentPath()),versionless);
+            byte[] legacy=Files.readAllBytes(EditorDocumentStore.previous(session.documentPath()));Files.writeString(session.documentPath(),"corrupt primary before CLI open");
+            LevelAuthoringSession.recoverSavedDocument(HouseMap.Site.HOUSE);
+            check(java.util.Arrays.equals(legacy,Files.readAllBytes(session.documentPath()))&&new HouseMap().level().id().equals("house"),"Bootstrap restores exact original source without reading corrupt primary");
+            Files.copy(school.documentPath(),EditorDocumentStore.previous(session.documentPath()),java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+            byte[] corrupt="foreign backup must not replace this corrupt primary".getBytes(java.nio.charset.StandardCharsets.UTF_8);Files.write(session.documentPath(),corrupt);
+            try{LevelAuthoringSession.recoverSavedDocument(HouseMap.Site.HOUSE);throw new AssertionError("Foreign bootstrap backup accepted");}catch(java.io.IOException expected){}
+            check(java.util.Arrays.equals(corrupt,Files.readAllBytes(session.documentPath())),"Rejected foreign bootstrap preserves exact primary bytes");Files.write(session.documentPath(),legacy);session.reopen();
+            var rebuilt=HouseRebuildFurnishings.source();var ids=java.util.stream.IntStream.range(0,rebuilt.props().size()).mapToObj(i->"rebuilt-"+i).toList();
+            session.restore(new LevelAuthoringSession.Snapshot("beckenburg/house",ids,rebuilt.props(),UserLevelLibrary.HOUSE_REBUILD));session.save();
+            byte[] validRebuilt=Files.readAllBytes(session.documentPath());int fridge=0;while(!session.prop(fridge).mesh().equals("level_house_fridge_worn"))fridge++;
+            var cold=session.prop(fridge);session.put(fridge,new org.beckenburg.LevelDefinition.Prop(cold.mesh(),cold.room(),cold.x()+.01,cold.y(),cold.z(),cold.scale(),cold.yaw(),cold.halfX(),cold.halfZ(),cold.height(),cold.support()));session.save();
+            Files.writeString(session.documentPath(),"corrupt rebuilt primary before CLI open");LevelAuthoringSession.recoverSavedDocument(HouseMap.Site.HOUSE);
+            var restored=new LevelAuthoringSession(HouseMap.Site.HOUSE);
+            check(java.util.Arrays.equals(validRebuilt,Files.readAllBytes(session.documentPath()))&&restored.snapshot().architecture().equals(UserLevelLibrary.HOUSE_REBUILD)
+                &&new HouseMap().level().room(5).y()==2.8&&restored.props().equals(rebuilt.props()),"Bootstrap validates backup metadata and restores exact rebuilt authority, props and default gameplay");
+            var invalid=org.beckenburg.editor.RuntimeSceneDocument.load(session.documentPath());var marker=invalid.find(HouseSourceVersions.NODE);
+            invalid.replace(new org.beckenburg.editor.RuntimeScene.Node(marker.id(),marker.name(),marker.parentId(),marker.layer(),marker.transform(),
+                java.util.List.of(new org.beckenburg.editor.RuntimeScene.Component(HouseSourceVersions.COMPONENT,Map.of("architecture","house-future-v99")))));
+            org.beckenburg.editor.RuntimeSceneDocument.save(EditorDocumentStore.previous(session.documentPath()),invalid);Files.write(session.documentPath(),corrupt);
+            try{LevelAuthoringSession.recoverSavedDocument(HouseMap.Site.HOUSE);throw new AssertionError("Future backup architecture accepted");}catch(java.io.IOException expected){}
+            check(java.util.Arrays.equals(corrupt,Files.readAllBytes(session.documentPath())),"Future backup cannot overwrite corrupt primary");
+            var detached=org.beckenburg.editor.RuntimeSceneDocument.load(EditorDocumentStore.previous(session.documentPath()));
+            detached.replace(HouseSourceVersions.node(UserLevelLibrary.HOUSE_REBUILD));
+            var generator=detached.nodes().stream().filter(n->n.name().equals("level_trace_generator")).findFirst().orElseThrow();detached.remove(generator.id());
+            org.beckenburg.editor.RuntimeSceneDocument.save(EditorDocumentStore.previous(session.documentPath()),detached);
+            try{LevelAuthoringSession.recoverSavedDocument(HouseMap.Site.HOUSE);throw new AssertionError("Detached rebuilt service backup accepted");}catch(java.io.IOException expected){}
+            check(java.util.Arrays.equals(corrupt,Files.readAllBytes(session.documentPath())),"Invalid source attachment backup preserves primary bytes");
+            System.out.println("PASS native mission recovery: distinct backup, corrupt-file rejection, explicit restore, shared undo, game load, foreign isolation and corrupt-primary legacy/rebuilt CLI bootstrap");
         }finally{
             System.setProperty("user.home",previous);
             try(var paths=Files.walk(home)){for(var p:paths.sorted(java.util.Comparator.reverseOrder()).toList())Files.deleteIfExists(p);}

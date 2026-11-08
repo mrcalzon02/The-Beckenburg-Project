@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "source_sha256": "bb7e2bfcfd7b4955859418852abff76128b9b7aae939c4f4e086ac3804b616bc",
+  "images": [
+    "heraldic-arms-imagegen-master.png"
+  ],
+  "criterion": "Fresh source reopen and packed-image pixel decode; source bytes unchanged"
+}

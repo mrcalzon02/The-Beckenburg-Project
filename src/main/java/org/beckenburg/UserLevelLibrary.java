@@ -19,6 +19,20 @@ import java.util.Properties;
  */
 public final class UserLevelLibrary {
     private UserLevelLibrary(){}
+    static final String HOUSE_ORIGINAL="house-original-v1";
+    static final String HOUSE_REBUILD="house-rebuild-v1";
+    private static final String SHIPPED="shipped-v1";
+
+    /** Explicit architectural generation, independent of the current default dispatch. */
+    static LevelDefinition templateSource(HouseMap.Site template,String generation){
+        if(template==HouseMap.Site.USER||template==HouseMap.Site.HOLLOW_CREEK)
+            throw new IllegalArgumentException("Choose an existing standard map template");
+        if(template==HouseMap.Site.HOUSE){
+            if(HOUSE_ORIGINAL.equals(generation))return LevelPlans.legacyHouseSource();
+            if(HOUSE_REBUILD.equals(generation))return HouseRebuildFurnishings.source();
+        }else if(SHIPPED.equals(generation))return LevelPlans.buildSource(template);
+        throw new IllegalArgumentException("Unsupported architectural generation "+generation+" for "+template);
+    }
     public static Path root(){
         return Path.of(System.getProperty("user.home"),".beckenburg","editor","user-levels")
             .toAbsolutePath().normalize();
@@ -81,20 +95,22 @@ public final class UserLevelLibrary {
     }
     /** Never overwrite a previous authored level, including an incomplete one. */
     public static void create(String id,HouseMap.Site template)throws IOException {
+        create(id,template,template==HouseMap.Site.HOUSE?HOUSE_ORIGINAL:SHIPPED);
+    }
+    static void create(String id,HouseMap.Site template,String generation)throws IOException {
         id=validateId(id);
-        if(template==HouseMap.Site.USER||template==HouseMap.Site.HOLLOW_CREEK)
-            throw new IllegalArgumentException("Choose an existing standard map template");
+        // Validate before making a folder: unsupported source versions must leave no partial project.
+        var source=templateSource(template,generation);
         Path folder=folder(id);
         if(Files.exists(folder))throw new IOException("Level already exists: "+id);
         Files.createDirectories(folder);
         Properties properties=new Properties();
         properties.setProperty("format","1");
         properties.setProperty("template",template.name());
+        properties.setProperty("architecture",generation);
         try(OutputStream out=Files.newOutputStream(folder.resolve("template.properties"))){
             properties.store(out,"Beckenburg authored level source");
         }
-        var source=LevelPlans.buildSource(template);
-        var scene=new org.beckenburg.editor.InMemoryRuntimeScene("beckenburg/user/"+id);
         // Persist the exact native source objects by reusing the standard
         // adapter serializer. Do not copy an unrelated Castle renderer.
         LevelAuthoringSession.saveProps(document(id),"beckenburg/user/"+id,source.props());
@@ -114,7 +130,13 @@ public final class UserLevelLibrary {
         catch(RuntimeException invalid){throw new IllegalStateException("Bad user level source",invalid);}
         if(template==HouseMap.Site.USER||template==HouseMap.Site.HOLLOW_CREEK)
             throw new IllegalStateException("User level template cannot refer to itself/native-only prototype");
-        LevelDefinition original=LevelPlans.buildSource(template);
+        // Versionless House projects predate the rebuild. Never reinterpret their
+        // authored coordinates against a later default building, or rewrite on open.
+        String generation=meta.getProperty("architecture",
+            template==HouseMap.Site.HOUSE?HOUSE_ORIGINAL:SHIPPED);
+        LevelDefinition original;
+        try{original=templateSource(template,generation);}
+        catch(IllegalArgumentException invalid){throw new IllegalStateException("Unsupported user level architecture",invalid);}
         // Preserve source asset, water and sound IDs until the reusable module
         // contract supports custom IDs for all three systems.
         return new LevelDefinition(original.id(),original.revision()+"-custom-"+id,

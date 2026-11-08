@@ -48,6 +48,12 @@ User requested saving/unifying existing work before beginning performance implem
 - D4 exact-source GPU suite SUCCESS confirms authored-face identity and subdivision normal test, but does not establish actual gameplay GPU residency.
 - **Do not infer that a Codex run has started.** This checkpoint only prepares future goal-oriented work.
 
+## 2026-11-04 — door-triggered light-cache and Castle fixture correction
+
+Source progression `0d12ad3e` (Castle global-to-regional door invalidation), `ede4bb14` (source-fitted wall switches and no sconce backing strip), `d09e4737` (bounded door history preserving same-side stationary rays), `f0b6d4f9` / `801c2965` (quantized real-ray test and CI trigger), `aacb391d` (decorative objects inherit edited parent yaw). The test fixture initially failed because five chosen positions shared only two 1/16m shadow keys; subsequent test positions are separated beyond key resolution, with actual CI results pending.
+
+Exact-source Castle focused CI [41947018830](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41947018830) PASS: 25 fitted switches, actual game-renderer screenshot and geometry checks; GPU [41947018869](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41947018869) PASS. Earlier actual House 320x200 submission-recorder [41945883549](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41945883549): toggle p50 375.616ms, p95 421.580ms, peak 80,874 shadow rays. This is an instrumented recording backend, **not** physical OpenGL frame-rate evidence. Corrected House diagnostic [41947973193](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41947973193) and installed Windows p50/p95/p99 remain pending at this entry. Preserve full source/UVs and true visual-occlusion parity. Do not call these A–G or release gates complete.
+
 ## Every next checkpoint
 
 ### Checkpoint [add sequential identifier]

@@ -108,33 +108,41 @@ public final class GpuUiSmoke {
   },15,"UI capture blocked: "+name);
   ImageIO.write(image,"png",OUTPUT.resolve(name+".png").toFile());
  }
- private record Walk(int key,int reverse,double x,double z){}
+ private record Walk(int key,int reverse,int second,int secondReverse,double x,double z){}
  private static Walk walk(JPanel panel)throws Exception{
   SceneRenderer scene=(SceneRenderer)field(panel,"scene");
   HouseMap map=(HouseMap)field(panel,"map");
+  return planWalk(map,scene);
+ }
+ private static Walk planWalk(HouseMap map,SceneRenderer scene){
   double feet=scene.eyeHeight-HunterPosture.eye(false);
-  int[] keys={KeyEvent.VK_W,KeyEvent.VK_S,KeyEvent.VK_A,KeyEvent.VK_D};
-  int[] reverse={KeyEvent.VK_S,KeyEvent.VK_W,KeyEvent.VK_D,KeyEvent.VK_A};
-  double[] dx={Math.sin(scene.yaw),-Math.sin(scene.yaw),Math.cos(scene.yaw),-Math.cos(scene.yaw)};
-  double[] dz={Math.cos(scene.yaw),-Math.cos(scene.yaw),-Math.sin(scene.yaw),Math.sin(scene.yaw)};
+  int[] keys={KeyEvent.VK_W,KeyEvent.VK_S,KeyEvent.VK_A,KeyEvent.VK_D,KeyEvent.VK_W,KeyEvent.VK_W,KeyEvent.VK_S,KeyEvent.VK_S};
+  int[] reverse={KeyEvent.VK_S,KeyEvent.VK_W,KeyEvent.VK_D,KeyEvent.VK_A,KeyEvent.VK_S,KeyEvent.VK_S,KeyEvent.VK_W,KeyEvent.VK_W};
+  int[] second={0,0,0,0,KeyEvent.VK_A,KeyEvent.VK_D,KeyEvent.VK_A,KeyEvent.VK_D};
+  int[] secondReverse={0,0,0,0,KeyEvent.VK_D,KeyEvent.VK_A,KeyEvent.VK_D,KeyEvent.VK_A};
+  int[] forward={1,-1,0,0,1,1,-1,-1},strafe={0,0,-1,1,-1,1,-1,1};
   for(int i=0;i<keys.length;i++){
+   double length=Math.hypot(forward[i],strafe[i]);
+   double dx=(Math.sin(scene.yaw)*forward[i]-Math.cos(scene.yaw)*strafe[i])/length;
+   double dz=(Math.cos(scene.yaw)*forward[i]+Math.sin(scene.yaw)*strafe[i])/length;
    var target=map.resolveMove(new LevelDefinition.Vec(scene.x,feet,scene.z),
-       scene.x+dx[i]*.6,scene.z+dz[i]*.6,HunterPosture.STANDING_HEIGHT);
+       scene.x+dx*.6,scene.z+dz*.6,HunterPosture.STANDING_HEIGHT);
    if(target!=null&&Math.hypot(target.x()-scene.x,target.z()-scene.z)>.5)
-    return new Walk(keys[i],reverse[i],scene.x,scene.z);
+    return new Walk(keys[i],reverse[i],second[i],secondReverse[i],scene.x,scene.z);
   }
-  throw new AssertionError("No short collision-valid WASD route from van spawn");
+  throw new AssertionError("No short collision-valid WASD route from van spawn: site="+map.site()+" x="+scene.x+" y="+feet+" z="+scene.z+" yaw="+scene.yaw);
  }
  private static double distance(JPanel panel,Walk route)throws Exception{
   SceneRenderer scene=(SceneRenderer)field(panel,"scene");return Math.hypot(scene.x-route.x(),scene.z-route.z());
  }
  private static void move(JPanel panel,Walk route,boolean returning)throws Exception{
   int code=returning?route.reverse():route.key();
+  int second=returning?route.secondReverse():route.second();
   try{
-   require(()->{key(panel,code,true);return Boolean.TRUE;},10,"Movement input blocked");
+   require(()->{key(panel,code,true);if(second!=0)key(panel,second,true);return Boolean.TRUE;},10,"Movement input blocked");
    require(()->(returning?distance(panel,route)<.22:distance(panel,route)>.30)?Boolean.TRUE:null,
        12,"Live WASD movement did not "+(returning?"return toward van spawn":"advance the hunter"));
-  }finally{SwingUtilities.invokeLater(()->key(panel,code,false));}
+  }finally{SwingUtilities.invokeLater(()->{key(panel,code,false);if(second!=0)key(panel,second,false);});}
  }
  private static JFrame launcher(){
   for(Window w:Window.getWindows())
@@ -180,7 +188,7 @@ public final class GpuUiSmoke {
  }
  public static void execute(GpuWorldRenderer gpu)throws Exception{
   Files.createDirectories(OUTPUT);
-  StringBuilder results=new StringBuilder("site,opening,dispatch_to_hunter_ms,active_frames,walk_metres,outcome\n");
+  StringBuilder results=new StringBuilder("site,opening,dispatch_to_hunter_ms,active_frames,walk_metres,outcome,gpu_prebake_submitted,gpu_prebake_confirmed,gpu_prebake_timeout\n");
   InvestigationGame.main(new String[0]);
   JFrame window=waitFor(()->{
    JFrame candidate=launcher();
@@ -235,6 +243,15 @@ public final class GpuUiSmoke {
       "Solo deploy was invoked but no live GamePanel appeared; inspect persisted case-stage diagnostics");
   require(()->Boolean.TRUE.equals(field(inGame,"initialFrameReady"))?Boolean.TRUE:null,65,
       "First sized GPU case frame never became ready: "+site.name());
+  int prewarmSubmitted=(Integer)field(inGame,"prewarmGpuSubmitted");
+  int prewarmConfirmed=(Integer)field(inGame,"prewarmGpuConfirmed");
+  boolean prewarmTimedOut=(Boolean)field(inGame,"prewarmGpuTimedOut");
+  if(prewarmSubmitted<0||prewarmConfirmed<0||prewarmConfirmed>prewarmSubmitted
+      ||prewarmSubmitted>3)
+   throw new AssertionError("Invalid real GL prewarm completion counters");
+  System.out.println("GPU PREBAKE DIAGNOSTIC site="+site+" submitted="+prewarmSubmitted+
+      " GL_confirmed="+prewarmConfirmed+" timed_out="+prewarmTimedOut+
+      " priority=van_then_exterior_then_entry");
   require(()->field(inGame,"opening")!=null?Boolean.TRUE:null,5,"Authored opening never started");
   if(!naturalOpening)require(()->{key(inGame,KeyEvent.VK_SPACE,true);return Boolean.TRUE;},10,"Intro skip blocked");
   require(()->field(inGame,"opening")==null&&(Integer)field(inGame,"frameCount")>=3?Boolean.TRUE:null,
@@ -277,7 +294,10 @@ public final class GpuUiSmoke {
    return returnedCastle!=null&&returnedCastle.isShowing()&&game(window.getContentPane())==null?Boolean.TRUE:null;
   },30,"Extraction did not return to Castle home");
   results.append(site.name()).append(',').append(naturalOpening?"natural":"skip").append(',')
-      .append(startupMillis).append(',').append(frames).append(',').append(walked).append(',').append(outcome).append('\n');
+      .append(startupMillis).append(',').append(frames).append(',').append(walked)
+      .append(',').append(outcome).append(',').append(prewarmSubmitted)
+      .append(',').append(prewarmConfirmed).append(',').append(prewarmTimedOut)
+      .append('\n');
   Files.writeString(OUTPUT.resolve("case-cycles.csv"),results);
   System.out.println("GPU UI PASS "+site.name()+" hunter ready="+startupMillis+"ms, walk="+walked+
       "m, frames="+frames+", real extraction="+outcome+", Castle home restored");

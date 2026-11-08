@@ -1,0 +1,29 @@
+CastleUpperConstructionTest 0
+WallLampSourceUvTest 0
+WallLampMountPlateTest 0
+CastleMuseumConstructionTest 0
+CastleTesterBedTest 0
+CastleFireplaceTest 0
+PreparedLightBatchParityTest 0
+CastleTapestryTest 0
+CastleHeritageSurfacesTest 0
+CastleHeraldicDisplayTest 0
+CastlePlantFitTest 0
+WorkbenchMaterialTest 0
+CastleTrainingLessonTest 0
+LanRiteNetworkTest 0
+CastleFinishPlacementTest 0
+CastleRebuildUpgradeTest 0
+EditorDiskRevisionTest 0
+CastleStoryTest 0
+CastleLooseClutterTest 0
+LooseClutterTest 0
+LooseClutterNetworkTest 0
+DynamicGeometryRetentionTest 1
+Exception in thread "main" java.lang.NoSuchMethodException: org.beckenburg.SceneRenderer.beginDynamicGeometry(org.beckenburg.HouseMap)
+	at java.base/java.lang.Class.getDeclaredMethod(Class.java:2675)
+	at org.beckenburg.DynamicGeometryRetentionTest.method(DynamicGeometryRetentionTest.java:11)
+	at org.beckenburg.DynamicGeometryRetentionTest.faces(DynamicGeometryRetentionTest.java:15)
+	at org.beckenburg.DynamicGeometryRetentionTest.parity(DynamicGeometryRetentionTest.java:23)
+	at org.beckenburg.DynamicGeometryRetentionTest.runAcceptance(DynamicGeometryRetentionTest.java:58)
+	at org.beckenburg.DynamicGeometryRetentionTest.main(DynamicGeometryRetentionTest.java:40)

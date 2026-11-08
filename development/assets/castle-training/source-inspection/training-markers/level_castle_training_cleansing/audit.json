@@ -1,0 +1,33 @@
+{
+  "source": "assets\\runtime\\models\\level_castle_training_cleansing.glb",
+  "sha256": "c19ef7a1a73f54c910fd6cf83c6cbff3cbcfd73382148af1922fcee164209ed2",
+  "materials": [
+    {
+      "mesh": 0,
+      "primitive": 0,
+      "material": "Rebuild Original ivory",
+      "image": 0,
+      "triangles": 208,
+      "uv_u": [
+        -1.9868215517249155e-08,
+        1.0
+      ],
+      "uv_v": [
+        0.0,
+        1.0
+      ],
+      "source_sampler": "glTF normalized UV0, SVG V-origin top-left"
+    }
+  ],
+  "warnings": [],
+  "images": [
+    {
+      "id": 0,
+      "name": "Original ivory diffuse",
+      "width": 64,
+      "height": 64,
+      "png_sha256": "e23a394efa8ee1df306f9968601592c6c4b61ce4dcf7295057af8d01173cb7e0",
+      "overlay_triangles": 208
+    }
+  ]
+}

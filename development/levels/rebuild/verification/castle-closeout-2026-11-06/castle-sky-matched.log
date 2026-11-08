@@ -1,0 +1,7 @@
+east-bridge identical_world_depth=true changed_sky_pixels=244 changed_solid_interior_pixels=0
+east-north-walk identical_world_depth=true changed_sky_pixels=244 changed_solid_interior_pixels=0
+east-south-walk identical_world_depth=true changed_sky_pixels=244 changed_solid_interior_pixels=0
+gallery identical_world_depth=true changed_sky_pixels=244 changed_solid_interior_pixels=0
+south-walk identical_world_depth=true changed_sky_pixels=0 changed_solid_interior_pixels=0
+west-walk identical_world_depth=true changed_sky_pixels=244 changed_solid_interior_pixels=0
+PASS actual sky changes=1220; world depth byte-identical; solid-interior changes=0

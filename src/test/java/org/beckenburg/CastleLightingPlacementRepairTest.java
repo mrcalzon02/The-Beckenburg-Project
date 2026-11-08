@@ -39,10 +39,12 @@ public final class CastleLightingPlacementRepairTest {
             check(pose.supported(),"sconce lacks real masonry support at "
                 +fixture.x()+","+fixture.z());
             for(String mesh:java.util.List.of(fixture.on(),fixture.off())){
-                var bounds=SceneRenderer.castleBounds(mesh);
-                double cx=bounds[0],cz=bounds[2],cy=Math.cos(fixture.yaw());
-                double sy=Math.sin(fixture.yaw());
-                double towardX=Math.sin(fixture.yaw()),towardZ=Math.cos(fixture.yaw());
+                // The renderer and mounting resolver share the OFF-state
+                // pivot even if the ON-state source mesh has different bounds.
+                var bounds=SceneRenderer.castleBounds(fixture.off());
+                double cx=bounds[0],cz=bounds[2],cy=Math.cos(pose.yaw());
+                double sy=Math.sin(pose.yaw());
+                double towardX=Math.sin(pose.yaw()),towardZ=Math.cos(pose.yaw());
                 double minClearance=Double.POSITIVE_INFINITY;
                 for(var t:GlbProps.model(mesh).triangles())
                     for(var v:new GlbProps.Vertex[]{t.a(),t.b(),t.c()}){
@@ -62,6 +64,26 @@ public final class CastleLightingPlacementRepairTest {
                            -(CastleDoorSlots.MASONRY_THICKNESS*.5+.011))<.00001,
                 "mounting plate must be fitted to the masonry face");
         }
+        // A slightly misrotated saved/editor wall light is realigned to the
+        // measured masonry plane, without moving the saved authoring point.
+        var reference=lamps.stream().filter(l->l.mount()==CastleHubDecor.Mount.WALL)
+            .findFirst().orElseThrow();
+        var expected=CastleWallLampMount.resolve(reference,CastleHubArchitecturalPlan.walls());
+        var skewed=new CastleHubDecor.Light(reference.on(),reference.off(),
+            reference.x(),reference.y(),reference.z(),reference.scale(),
+            reference.yaw()+.30,reference.mount());
+        var aligned=CastleWallLampMount.resolve(skewed,CastleHubArchitecturalPlan.walls());
+        check(aligned.supported()&&Math.abs(Math.sin(aligned.yaw()-expected.yaw()))<1e-8,
+            "editor yaw drift must snap a wall sconce parallel to real masonry");
+        check(Math.hypot(aligned.x()-expected.x(),aligned.z()-expected.z())<1e-8,
+            "yaw correction must retain fitted mesh contact and light-source position");
+        var ceiling=lamps.stream().filter(l->l.mount()==CastleHubDecor.Mount.CEILING)
+            .findFirst().orElseThrow();
+        var ceilingPose=CastleWallLampMount.resolve(ceiling,CastleHubArchitecturalPlan.walls());
+        check(!ceilingPose.supported()&&ceilingPose.x()==ceiling.x()
+                &&ceilingPose.z()==ceiling.z()&&ceilingPose.yaw()==ceiling.yaw(),
+            "wall fitting must never rotate or relocate ceiling lights");
+
         var lighting=new FixtureLighting(map);
         check(lighting.sources().size()==CastleLevelEdits.current().lamps().size(),"all fittings feed the game light engine");
         // Verify the actual illumination source is no longer buried in masonry.
@@ -135,13 +157,15 @@ public final class CastleLightingPlacementRepairTest {
                 CastleHubDecor.meshHeight(parent.mesh())*parent.scale()+.008))<.00001,
                 "book must rest on real table mesh height");
             reloaded.put(new CastleLevelEdits.Prop(parent.id(),parent.mesh(),
-                parent.x()+.6,parent.y(),parent.z()+.5,parent.scale(),parent.yaw(),
+                parent.x()+.6,parent.y(),parent.z()+.5,parent.scale(),
+                parent.yaw()+Math.PI/2,
                 parent.halfX(),parent.halfZ(),parent.upper()));
             check(CastleHubDecor.placedAccents(reloaded).stream().anyMatch(a->
                 a.mesh().equals("open_book_mp_1")
                 &&Math.abs(a.x()-parent.x()-.6)<.001
-                &&Math.abs(a.z()-parent.z()-.5)<.001),
-                "decorations follow the relocated editor prop");
+                &&Math.abs(a.z()-parent.z()-.5)<.001
+                &&Math.abs(a.yaw()-book.yaw()-Math.PI/2)<.00001),
+                "decorations must follow BOTH the translation and rotation of their editor support");
             reloaded.removeProp(parent.id());
             check(CastleHubDecor.placedAccents(reloaded).stream().noneMatch(a->
                 a.mesh().equals("open_book_mp_1")

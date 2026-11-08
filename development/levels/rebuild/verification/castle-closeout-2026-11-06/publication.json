@@ -1,0 +1,31 @@
+{
+  "source_head": "c0330d7df47e605f46c9073dbc58ae65f677be0c",
+  "status": "PASS",
+  "verified_remote_bytes": {
+    "src/main/java/dev/mrcalzon/weather/WeatherSky.java": {
+      "bytes": 5864,
+      "sha256": "40785a60051e65b4a891b9dd5bee13ce6c70ea56483d78d597c73fe623968816"
+    },
+    "development/levels/rebuild/captures/castle-closeout/castle/cellar-stair/north.png": {
+      "bytes": 53206,
+      "sha256": "e263455d268f9e4bf4f3dba895e597dde243af7b936a07c2a69fc1b7896cfc31"
+    },
+    "development/levels/rebuild/captures/castle-closeout/castle/train-a/south.png": {
+      "bytes": 46440,
+      "sha256": "9353d748e6d711690f279e17570dcb2f6a7f6d7430ace5fc3cbddc4aaede5a9c"
+    },
+    "development/levels/rebuild/captures/castle-closeout/sky-fixed/sky-east-bridge-runtime.png": {
+      "bytes": 22499,
+      "sha256": "dacf612b1555f021d85178dbf32664d1dab60ee2c4ad55fa49af38373d590d78"
+    },
+    "development/levels/rebuild/captures/castle-closeout/castle/castle-rooms.csv": {
+      "bytes": 6912,
+      "sha256": "336d90b4b95ab4c9fb3174735ed1f46cb0e241aeb0fd28dad7c4f5d632cc64c3"
+    },
+    "beckenburg-development-gallery.html": {
+      "bytes": 2591821,
+      "sha256": "7002a48c1ddb939570f3451996724b892fda18f3d3dd1e3c989363b278025154"
+    }
+  },
+  "pages": "New source not yet merged/deployed; exact branch publication verified"
+}

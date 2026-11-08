@@ -19,7 +19,7 @@ public final class LevelOpeningFlyover {
             scene.yaw=yaw;scene.pitch=pitch;
         }
     }
-    private final Pose aerial,orbit,approach,van,firstPerson;
+    private final Pose aerial,orbit,approach,van,insideVan,firstPerson;
     record Framing(double cx,double cz,double span,double top){}
     /** Outdoor ownership volumes are valid survey anchors, never building walls.
      * Exclude arrival/van zones so their long approach cannot dominate the shot. */
@@ -56,18 +56,35 @@ public final class LevelOpeningFlyover {
         var framing=framing(map);
         double cx=framing.cx(),cz=framing.cz(),span=framing.span(),top=framing.top();
         var dock=map.van().placement();
-        double elevation=top+Math.max(15,span*.55);
-        aerial=lookAt(cx-span*.58,elevation,cz-span*.79,cx,top*.35,cz);
-        orbit=lookAt(cx+span*.48,top+Math.max(11,span*.30),cz-span*.38,
-            cx,top*.35,cz);
-        // The final glide stays near the physical van, not through house walls.
-        double vy=map.van().floorY(),dx=dock.x()-cx,dz=dock.z()-cz;
-        double distance=Math.max(.01,Math.hypot(dx,dz));
-        double awayX=dx/distance,awayZ=dz/distance;
-        approach=lookAt(dock.x()+awayX*11,vy+10,dock.z()+awayZ*11,
-            dock.x(),vy+1.3,dock.z());
-        van=lookAt(dock.x()+awayX*3.6,vy+3.5,dock.z()+awayZ*3.6,
-            dock.x(),vy+1.2,dock.z());
+        // This renderer has a finite useful world range around the camera.
+        // The old high/far aerial camera put even the nearest architecture
+        // beyond its visible range on some sites, producing an empty sky.
+        // Survey nearby authored geometry in 3D and move across the location
+        // rather than trying to frame the entire level from miles away.
+        double sweep=Math.min(12,Math.max(9,span*.50));
+        double elevation=top+Math.min(9,Math.max(6,span*.20));
+        // A wide three-quarter exterior view must show the building walls
+        // instead of putting a huge, mostly unlit roof against the lens.
+        // Keep its target inside the 24m software scene visibility range.
+        aerial=lookAt(cx-sweep,elevation,cz-sweep*.82,cx,top*.26,cz);
+        orbit=lookAt(cx+sweep*.82,top+Math.min(9,Math.max(7,span*.20)),
+            cz-sweep*.65,cx,top*.34,cz);
+        // An authored cargo entrance, NOT a guessed line towards the van's
+        // centre: world() rotates this flight corridor with the real truck.
+        // The default loading cargo door is open, with an existing walkable
+        // ramp from FRONT-RAMP_LENGTH to FRONT and a clear central aisle.
+        var truck=map.van();
+        var rearApproach=truck.world(0,VanStaging.FRONT-VanStaging.RAMP_LENGTH-2.0);
+        var doorway=truck.world(0,VanStaging.FRONT-.22);
+        var inside=truck.world(0,VanStaging.FRONT+.52);
+        var target=truck.world(0,VanStaging.FRONT+1.40);
+        double floor=truck.floorY();
+        approach=lookAt(rearApproach.x(),floor+4.5,rearApproach.z(),
+            doorway.x(),floor+1.55,doorway.z());
+        van=lookAt(doorway.x(),floor+1.62,doorway.z(),
+            target.x(),floor+1.62,target.z());
+        insideVan=lookAt(inside.x(),floor+1.62,inside.z(),
+            target.x(),floor+1.62,target.z());
     }
     /** 0..1 cinematic progress, independent of frame rate or simulation tick. */
     public Pose pose(double progress){
@@ -77,7 +94,8 @@ public final class LevelOpeningFlyover {
         if(t<.39)return interpolate(aerial,orbit,t/.39);
         if(t<.78)return interpolate(orbit,approach,(t-.39)/.39);
         if(t<.93)return interpolate(approach,van,(t-.78)/.15);
-        return interpolate(van,firstPerson,(t-.93)/.07);
+        if(t<.975)return interpolate(van,insideVan,(t-.93)/.045);
+        return interpolate(insideVan,firstPerson,(t-.975)/.025);
     }
     public Pose firstPerson(){return firstPerson;}
 }

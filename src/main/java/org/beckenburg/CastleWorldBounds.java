@@ -8,6 +8,7 @@ public final class CastleWorldBounds {
     public static final double MIN_Y=-3.5;
     public static final int LEGACY_CELLS=MAX_X*MAX_Z;
     public static final int CELL_COUNT=(MAX_X-MIN_X)*MAX_Z;
+    public static boolean spawn(double x,double z,double yaw){return Double.isFinite(x+z+yaw)&&x>=MIN_X+1&&x<=MAX_X-2&&z>=MIN_Z+1&&z<=MAX_Z-2;}
     public static boolean cell(int x,int z){return x>=MIN_X&&x<MAX_X&&z>=MIN_Z&&z<MAX_Z;}
     public static int cellKey(int x,int z){
         if(!cell(x,z))throw new IllegalArgumentException("Tile outside castle");

@@ -31,6 +31,122 @@ public final class CharacterBillboardAnchorTest {
         check(deliberateOrbit==2,"meaningful camera orbit still changes perspective");
         check(DirectionalSprites.stableFacing("lore_master",0,0,0,
             cameraX(80),cameraZ(80))>=0,"Matthis uses the same stable pivots");
-        System.out.println("PASS castle billboards: alpha-pivot and stable view transitions");
+        int latched=DirectionalSprites.stableFacing("rowan_pike",0,0,0,
+            cameraX(65),cameraZ(65));
+        int raw=DirectionalSprites.facing(0,0,0,cameraX(65),cameraZ(65));
+        // At a hysteresis threshold the stable art can deliberately differ
+        // from raw facing; using raw geometry creates an instant 90-degree
+        // flicker even though the image has not yet changed.
+        check(latched==deliberateOrbit&&latched!=raw,
+            "returning across the threshold must retain the stable art view even when raw facing differs");
+        // Camera-facing is essential: stationary crossed quads become
+        // edge-on while circling an NPC and appear to jitter or disappear.
+        // The billboard is still in world space and keeps its floor anchor.
+        for(int degrees=0;degrees<360;degrees+=15){
+            double cx=cameraX(degrees),cz=cameraZ(degrees);
+            double[] axis=DirectionalSprites.cameraFacingPlaneAxis(cx,cz,0,0);
+            double dot=axis[0]*cx+axis[1]*cz;
+            check(Math.abs(dot)<1e-9,"NPC card must face camera in every quadrant");
+            check(Math.abs(Math.hypot(axis[0],axis[1])-1)<1e-9,
+                "NPC card must preserve full physical width while orbiting");
+            double[] farther=DirectionalSprites.cameraFacingPlaneAxis(cx*2,cz*2,0,0);
+            check(Math.abs(axis[0]-farther[0])<1e-9
+                    &&Math.abs(axis[1]-farther[1])<1e-9,
+                "camera distance must not change the billboard's rotation");
+        }
+        var left=DirectionalSprites.cameraFacingPlaneAxis(-.03,3,0,0);
+        var right=DirectionalSprites.cameraFacingPlaneAxis(.03,3,0,0);
+        check(left[0]*right[0]+left[1]*right[1]>.999,
+            "small lateral camera movement must smoothly rotate the card, not flip it");
+        var card=DirectionalSprites.groundedBillboardCard(1.79,.98,0);
+        check(Math.abs(card.left()+.49)<1e-9
+                &&Math.abs(card.right()-.49)<1e-9
+                &&Math.abs(card.bottom()+1.62)<1e-9
+                &&Math.abs(card.top()-.17)<1e-9,
+            "camera-facing card preserves an immutable actor-space sole and centre");
+        check(card.equals(DirectionalSprites.groundedBillboardCard(1.79,.98,0)),
+            "camera orbit cannot change world-space character height/width");
+        // Camera-facing source art still has directional shoe padding; it
+        // must not be mistaken for new body geometry below the floor.
+        for(int visibleSoleRow:new int[]{182,201,205,219}){
+            double sole=(visibleSoleRow+.5)/224.0;
+            double floorV=(card.top()-card.bottom())/1.79*sole;
+            check(Math.abs(floorV-sole)<1e-12,
+                "every approved boot pixel must map to fixed world floor");
+            check(DirectionalSprites.groundedUvAboveFloor(floorV,sole),
+                "substantial boot sole must remain on the supporting floor");
+            check(!DirectionalSprites.groundedUvAboveFloor(sole+1.0/224.0,sole)
+                    &&!DirectionalSprites.groundedUvAboveFloor(-.01,sole),
+                "stray alpha fringe beneath the boot must never render");
+        }
+        // Movement is not a change of character identity. Previously every
+        // millimetre of Tomas's routine discarded hysteresis and snapped art.
+        int tomasFront=DirectionalSprites.stableFacing("tomas_greaves",0,10,10,
+            10+cameraX(60),10+cameraZ(60));
+        check(tomasFront==1,"Tomas original angle selection");
+        int tomasMoving=DirectionalSprites.stableFacing("tomas_greaves",0,10.014,10.008,
+            10.014+cameraX(69),10.008+cameraZ(69));
+        check(tomasMoving==tomasFront,
+            "walking a few millimetres cannot reset Tomas's facing hysteresis");
+        // The GPU worker publishes readbacks asynchronously. Castle NPC
+        // projection must use the camera AND resident pose belonging to that
+        // exact frame, not the Swing camera from a newer frame.
+        var body=new CastleResidentAnimation.Body(10.02,9.97,180,
+            HunterSpriteAnimation.Pose.WALK_A);
+        var composite=new SceneRenderer.GpuCompositeFrame(7.5,1.62,8.25,
+            .30,-.07,java.util.Map.of(CastleRelations.Resident.TOMAS_GREAVES,body));
+        java.util.Map<Long,SceneRenderer.GpuCompositeFrame> snapshots=
+            java.util.Map.of(41L,composite);
+        var readback=new GpuWorldRenderer.Result(12,41,640,360,
+            new int[640*360],new float[640*360]);
+        check(SceneRenderer.gpuCompositeForReadback(snapshots,readback,
+                12,640,360)==composite,
+            "GPU readback must receive the exact submitted NPC and camera pose");
+        check(composite.residents().get(CastleRelations.Resident.TOMAS_GREAVES)==body,
+            "NPC world position and pose must be snapped with its GPU camera");
+        check(SceneRenderer.gpuCompositeForReadback(snapshots,readback,
+                13,640,360)==null,
+            "another level scene may not inherit an earlier Castle NPC view");
+        check(SceneRenderer.gpuCompositeForReadback(snapshots,readback,
+                12,320,200)==null,
+            "a different render size may not inherit a mismatched NPC depth");
+        check(SceneRenderer.gpuCompositeForReadback(java.util.Map.of(),readback,
+                12,640,360)==null,
+            "evicted or unknown GPU frame must not composite unsynchronized NPCs");
+        // Actual packaged Tomas art through the REAL compositor. A fixed
+        // body at a fixed world location must track a camera pan continuously
+        // without sideways teleports, vanishing edge-on or losing its shoes.
+        int renderWidth=640,renderHeight=360;double focal=275;
+        var standing=new CastleResidentAnimation.Body(0,0,0,HunterSpriteAnimation.Pose.IDLE);
+        double lastCentroid=Double.NEGATIVE_INFINITY;
+        for(int turn=-3;turn<=3;turn++){
+            double yaw=turn*.04;
+            int[] pixels=new int[renderWidth*renderHeight];
+            double[] depth=new double[pixels.length];
+            java.util.Arrays.fill(depth,Double.POSITIVE_INFINITY);
+            DirectionalSprites.beginHumanRenderTrace("tomas_greaves",renderWidth,renderHeight);
+            DirectionalSprites.drawResident(pixels,depth,0,-3,yaw,0,
+                CastleRelations.Resident.TOMAS_GREAVES,standing,0,true,
+                renderWidth,renderHeight,focal);
+            var trace=DirectionalSprites.endHumanRenderTrace();
+            int leftEdge=renderWidth,rightEdge=-1;
+            long sumX=0;int count=0;
+            for(int pixel=0;pixel<trace.pixels.length;pixel++)if(trace.pixels[pixel]!=0){
+                int px=pixel%renderWidth;
+                leftEdge=Math.min(leftEdge,px);rightEdge=Math.max(rightEdge,px);
+                sumX+=px;count++;
+            }
+            check(count>=120&&rightEdge-leftEdge>=12,
+                "real Tomas sprite collapses edge-on during camera pan "+turn);
+            double centroid=sumX/(double)count;
+            if(turn>-3){
+                check(centroid>lastCentroid+2&&centroid-lastCentroid<30,
+                    "Tomas slides or jumps rather than following smooth camera pan "+turn);
+            }
+            lastCentroid=centroid;
+            check(trace.belowFloor==0,
+                "camera-facing Tomas emits art below the physical castle floor");
+        }
+        System.out.println("PASS Castle camera-facing depth-tested NPCs: smooth orbit, persistent facing, fixed floor and async GPU pose alignment");
     }
 }

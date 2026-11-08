@@ -1,6 +1,9 @@
 package org.beckenburg;
 
 import java.awt.image.BufferedImage;
+import java.io.InputStream;
+import java.security.MessageDigest;
+import java.util.HexFormat;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -15,7 +18,35 @@ public final class TwinBodyVisualTest {
                 v=(v^image.getRGB(x,y))*1099511628211L;
         return v;
     }
-    public static void main(String[] args){
+    /** A repaired source-derived side silhouette must not be rejected by an
+     * obsolete sampled-pixel hash, or silently replaced by another damaged crop.
+     * Pin the exact eight-frame archive recorded by the runtime source manifest.
+     * The old golden was made before Twin A's head/feet alpha was restored.
+     */
+    private static void verifySourceDerivedTwinsArchive() throws Exception {
+        final long expectedSize=196394L;
+        final String expectedSha256=
+            "5e100032dd97623f60216f7cd657c338f709b13c7f2fd68b97ed5d8475aae41b";
+        try(InputStream zip=DirectionalSprites.class.getResourceAsStream("twins-directions.zip")){
+            check(zip!=null,"missing two-body Twins archive from packaged runtime");
+            MessageDigest digest=MessageDigest.getInstance("SHA-256");
+            byte[] buffer=new byte[8192];
+            long size=0;
+            int read;
+            while((read=zip.read(buffer))!=-1){
+                digest.update(buffer,0,read);
+                size+=read;
+            }
+            String actualSha256=HexFormat.of().formatHex(digest.digest());
+            check(size==expectedSize,"Twins archive byte count differs: actual="+size
+                +" expected="+expectedSize+" sha256="+actualSha256);
+            check(expectedSha256.equals(actualSha256),
+                "Twins repaired source-derived archive changed: actual="+actualSha256
+                    +" expected="+expectedSha256);
+        }
+    }
+    public static void main(String[] args) throws Exception {
+        verifySourceDerivedTwinsArchive();
         Set<Long> facesA=new HashSet<>(),facesB=new HashSet<>();
         for(int facing:new int[]{0,2,4,5}){
             var a=DirectionalSprites.frame("twins_a",facing);
@@ -25,16 +56,9 @@ public final class TwinBodyVisualTest {
             check(a.getColorModel().hasAlpha()&&b.getColorModel().hasAlpha(),
                 "Independent transparent body contours");
             check(fingerprint(a)!=fingerprint(b),"Twins were incorrectly flattened into the same sprite");
-            // Golden frames were visually compared with the approved master, not
-            // accepted merely for alpha coverage or dimensions. GrabCut previously
-            // erased Twin A's side-view hair/feet and Twin B's three-quarter feet.
-            // Preserve these exact source-derived silhouettes in the shipped JAR.
-            if(facing==2)
-                check(fingerprint(a)==-6517389577909631165L,
-                    "Twin A side-view head/feet crop differs from approved complete art");
-            if(facing==5)
-                check(fingerprint(b)==4819383925312170537L,
-                    "Twin B three-quarter feet crop differs from approved complete art");
+            // Byte-for-byte archive pin above protects every original PNG,
+            // including Twin A's repaired side head/feet and Twin B's 3/4 feet.
+            // The old sampled-pixel goldens predated the source-derived repair.
             check(DirectionalSprites.frame("ancient_twins_a",facing)==a,
                 "Ancient member A must reuse its proper parent, not a third person");
             check(DirectionalSprites.frame("ancient_twins_b",facing)==b,

@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "sources": [
+    {
+      "source": "plant_connections.blend",
+      "sha256": "153a1bcf0598648847858d2233af5f1c8e6e3407ac5cd976db789b7bc1618c03",
+      "images": [
+        "Original red diffuse",
+        "Original blue diffuse",
+        "Original steel diffuse"
+      ]
+    },
+    {
+      "source": "plant_boiler.blend",
+      "sha256": "984fd1913b31b3b0ce2178e68cab8f4ac1eec4314d3b6c1e721674d460c0f241",
+      "images": [
+        "Original iron diffuse",
+        "Original enamel diffuse",
+        "Original steel diffuse",
+        "Original green diffuse",
+        "Original ivory diffuse",
+        "Original red diffuse",
+        "Original brass diffuse",
+        "Original blue diffuse"
+      ]
+    }
+  ],
+  "unchanged_exports": {
+    "level_castle_plant_boiler.glb": "40d61907f6412f56104067e01b5bd24984ad879bcce7f5c1faddd85934750ff3",
+    "level_castle_plant_connections.glb": "46bf97856f2a040598a262a4f6cb59953009aae300e6aa05b113d2aa0a6961e8"
+  }
+}

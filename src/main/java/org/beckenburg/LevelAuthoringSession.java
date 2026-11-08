@@ -25,24 +25,32 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
     private static final String COMPONENT = "beckenburg.level.prop";
     private final String documentId;
     private final Path document;
-    private final LevelDefinition source;
+    private LevelDefinition source;
+    private final boolean builtInHouse;
     private final ArrayList<Prop> props = new ArrayList<>();
     private final ArrayList<String> propIds = new ArrayList<>();
     private long revision=1;
     private String diskFingerprint;
     /** Identity is authoring metadata paired with the native props, not another scene. */
-    public record Snapshot(String sceneId,List<String> ids,List<Prop> props){
+    public record Snapshot(String sceneId,List<String> ids,List<Prop> props,String architecture){
+        public Snapshot(String sceneId,List<String> ids,List<Prop> props){this(sceneId,ids,props,null);}
         public Snapshot{
             Objects.requireNonNull(sceneId);ids=List.copyOf(ids);props=List.copyOf(props);
             if(sceneId.isBlank()||ids.size()!=props.size()||ids.size()>4096
                 ||new java.util.HashSet<>(ids).size()!=ids.size()
                 ||ids.stream().anyMatch(id->id.isBlank()||id.length()>128))
                 throw new IllegalArgumentException("Invalid mission identity snapshot");
+            if(architecture!=null){
+                HouseSourceVersions.validate(architecture);
+                if(!sceneId.equals("beckenburg/house")||ids.contains(HouseSourceVersions.NODE))
+                    throw new IllegalArgumentException("House source metadata belongs to another mission");
+            }
         }
     }
 
     public LevelAuthoringSession(HouseMap.Site site) throws IOException {
         Objects.requireNonNull(site);
+        this.builtInHouse=site==HouseMap.Site.HOUSE;
         this.documentId=sceneId(site);this.document=path(site);
         this.source=LevelPlans.buildSource(site);
         var loaded=loadRevision(document,documentId,source);restore(loaded.state());diskFingerprint=loaded.fingerprint();
@@ -70,26 +78,33 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         return index;
     }
     public synchronized void put(int index,Prop prop){
-        checkProp(prop);props.set(index,prop);revision++;
+        checkProp(prop);HouseAuthoringAttachments.change(source,props.get(index),prop,propIds.get(index));props.set(index,prop);revision++;
     }
     public synchronized void add(Prop prop){
         checkProp(prop);
         if(props.size()>=4096)throw new IllegalStateException("Level object limit");
         props.add(prop);propIds.add("prop-"+java.util.UUID.randomUUID());revision++;
     }
-    public synchronized void remove(int index){props.remove(index);propIds.remove(index);revision++;}
+    public synchronized void remove(int index){HouseAuthoringAttachments.change(source,props.get(index),null,propIds.get(index));props.remove(index);propIds.remove(index);revision++;}
     public synchronized long revision(){return revision;}
-    public synchronized void validate(){snapshot();for(Prop prop:props)checkProp(prop);}
+    public synchronized void validate(){snapshot();for(Prop prop:props)checkProp(prop);HouseAuthoringAttachments.validate(source,props);}
     public synchronized void reopen()throws IOException{
         var loaded=loadRevision(document,documentId,source);restore(loaded.state());diskFingerprint=loaded.fingerprint();
     }
     public static void recoverSavedDocument(HouseMap.Site site)throws IOException{
-        recoverPreviousDocument(path(site),sceneId(site),LevelPlans.buildSource(site));
+        // A corrupt primary cannot select its architecture. The validated
+        // recovery candidate carries that authority, including rebuilt House.
+        var fallback=site==HouseMap.Site.HOUSE?LevelPlans.legacyHouseSource():LevelPlans.buildSource(site);
+        recoverPreviousDocument(path(site),sceneId(site),fallback);
     }
     private static void recoverPreviousDocument(Path document,String documentId,LevelDefinition source)throws IOException{
         RuntimeSceneDocument.restorePrevious(document,path->{
             var candidate=loadState(path,documentId,source);
-            for(var prop:candidate.props())checkProp(prop,source);
+            var authority=documentId.equals("beckenburg/house")?HouseSourceVersions.source(candidate.architecture()):source;
+            try{
+                for(var prop:candidate.props())checkProp(prop,authority);
+                HouseAuthoringAttachments.validate(authority,candidate.props());
+            }catch(IllegalArgumentException invalid){throw new IOException("Invalid recovered native source",invalid);}
         });
     }
     public synchronized void recoverPrevious()throws IOException{recoverPreviousDocument(document,documentId,source);reopen();}
@@ -106,14 +121,27 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
             throw new IllegalArgumentException("Invalid mission prop");
     }
     public synchronized void resetToSource(){
-        restore(sourceState(documentId,source.props()));
+        var state=sourceState(documentId,source.props());
+        restore(new Snapshot(state.sceneId(),state.ids(),state.props(),builtInHouse?HouseSourceVersions.generation(source):null));
     }
-    public LevelDefinition sourceLevel(){return source;}
-    public synchronized Snapshot snapshot(){return new Snapshot(documentId,propIds,props);}
+    public synchronized boolean canRebuildHouse(){return builtInHouse;}
+    public synchronized void rebuildHouse(){
+        if(!builtInHouse)throw new IllegalArgumentException("House rebuild requires the built-in House document");
+        if(source.id().equals("briar-rebuild"))return;
+        var next=HouseRebuildUpgrade.plan(snapshot());
+        // Validate a candidate without changing live source, history, revision or disk.
+        HouseRebuildUpgrade.validate(next);
+        restore(next.state());
+    }
+    public synchronized LevelDefinition sourceLevel(){return source;}
+    public synchronized Snapshot snapshot(){return new Snapshot(documentId,propIds,props,builtInHouse?HouseSourceVersions.generation(source):null);}
     public synchronized void restore(Snapshot snapshot){
         Objects.requireNonNull(snapshot);
         if(!documentId.equals(snapshot.sceneId()))throw new IllegalArgumentException("Snapshot belongs to another mission");
-        for(Prop prop:snapshot.props())checkProp(prop);
+        if(builtInHouse&&snapshot.ids().contains(HouseSourceVersions.NODE))throw new IllegalArgumentException("Reserved House source metadata ID");
+        var restoredSource=builtInHouse?HouseSourceVersions.source(snapshot.architecture()==null?UserLevelLibrary.HOUSE_ORIGINAL:snapshot.architecture()):source;
+        for(Prop prop:snapshot.props())checkProp(prop,restoredSource);
+        source=restoredSource;
         props.clear();props.addAll(snapshot.props());propIds.clear();propIds.addAll(snapshot.ids());revision++;
     }
     public synchronized LevelDefinition level(){
@@ -142,6 +170,15 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         return List.copyOf(result);
     }
     public synchronized void save() throws IOException {
+        validate();
+        if(builtInHouse&&source.id().equals("briar-rebuild")&&diskFingerprint!=null&&Files.exists(document)){
+            byte[] old=org.beckenburg.editor.EditorDocumentStore.readDocument(document);
+            if(diskFingerprint.equals(org.beckenburg.editor.EditorDocumentStore.fingerprint(old))
+                &&HouseSourceVersions.generation(RuntimeSceneDocument.load(document)).equals(UserLevelLibrary.HOUSE_ORIGINAL)){
+                Path backup=document.resolveSibling(document.getFileName()+".before-first-principles.bscn");
+                if(!Files.exists(backup))Files.write(backup,old,java.nio.file.StandardOpenOption.CREATE_NEW);
+            }
+        }
         diskFingerprint=RuntimeSceneDocument.saveIfUnchanged(documentPath(),sceneDocument(snapshot()),diskFingerprint);
     }
     static void saveProps(Path destination,String id,List<Prop> source) throws IOException {
@@ -167,13 +204,17 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
                     "height",Double.toString(p.height()),
                     "support",p.support())))));
         }
+        if(state.architecture()!=null)document.replace(HouseSourceVersions.node(state.architecture()));
         return document;
     }
     private record Loaded(Snapshot state,String fingerprint){}
     private static Snapshot loadState(Path path,String id,LevelDefinition source)throws IOException{return loadRevision(path,id,source).state();}
     private static Loaded loadRevision(Path path,String id,LevelDefinition source) throws IOException {
         RuntimeSceneDocument.recoverPending(path);
-        if(!Files.exists(path))return new Loaded(sourceState(id,source.props()),null);
+        if(!Files.exists(path)){
+            var state=sourceState(id,source.props());
+            return new Loaded(new Snapshot(id,state.ids(),state.props(),id.equals("beckenburg/house")?HouseSourceVersions.generation(source):null),null);
+        }
         return readStored(path,id,source);
     }
     synchronized boolean matchesSaved(Snapshot live)throws IOException{
@@ -186,6 +227,7 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         ArrayList<Prop> result=new ArrayList<>();
         ArrayList<String> ids=new ArrayList<>();
         for(var node:scene.nodes()){
+            if(node.id().equals(HouseSourceVersions.NODE)&&id.equals("beckenburg/house"))continue;
             if(node.components().size()!=1
                 ||!node.components().get(0).type().equals(COMPONENT))
                 throw new IOException("Unsupported level node "+node.id());
@@ -219,13 +261,15 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
                 throw new IOException("Invalid level object "+node.id()+" in "+path,invalid);
             }
         }
-        return new Loaded(new Snapshot(id,ids,result),loaded.fingerprint());
+        return new Loaded(new Snapshot(id,ids,result,id.equals("beckenburg/house")?HouseSourceVersions.generation(scene):null),loaded.fingerprint());
     }
     static LevelDefinition apply(HouseMap.Site site,LevelDefinition source){
         try{
             RuntimeSceneDocument.recoverPending(path(site));
             if(!Files.exists(path(site)))return source;
-            return compose(source,loadState(path(site),sceneId(site),source).props());
+            var state=loadState(path(site),sceneId(site),source);
+            var authority=site==HouseMap.Site.HOUSE?HouseSourceVersions.source(state.architecture()):source;
+            return compose(authority,state.props());
         }
         catch(IOException bad){
             throw new IllegalStateException("Cannot load authored "+site+" level",bad);
@@ -237,11 +281,20 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
      * helper used by LevelPlans during initial map construction.
      */
     static LevelDefinition compose(LevelDefinition source,List<Prop> edited){
+        HouseAuthoringAttachments.validate(source,edited);
+        if(source.props().equals(edited))return source;
         ArrayList<Collider> collision=new ArrayList<>(source.colliders());
-        for(Prop p:source.props())if(p.halfX()>0&&p.halfZ()>0)
-            collision.remove(LevelPlans.propCollider(p));
-        for(Prop p:edited)if(p.halfX()>0&&p.halfZ()>0)
-            collision.add(LevelPlans.propCollider(p));
+        var added=new ArrayList<>(edited);
+        for(Prop p:source.props()){
+            // Preserve exact source bodies for unchanged objects, including duplicates.
+            if(added.remove(p))continue;
+            for(var body:LevelPlans.propColliders(source,p)){
+                for(int i=0;i<collision.size();i++)if(LevelPlans.sameBody(collision.get(i),body)){
+                    collision.remove(i);break;
+                }
+            }
+        }
+        for(Prop p:added)collision.addAll(LevelPlans.propColliders(source,p));
         return new LevelDefinition(source.id(),source.revision(),source.title(),
             source.rooms(),source.portals(),source.stairs(),source.voids(),
             List.copyOf(edited),source.sockets(),collision,source.dock(),

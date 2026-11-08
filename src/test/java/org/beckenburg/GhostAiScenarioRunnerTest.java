@@ -17,8 +17,10 @@ public final class GhostAiScenarioRunnerTest {
             check(first.duration()==320&&first.emittedSounds()==8,
                 "Bounded authored sound pulses");
             check(first.recent().size()<=128,"Trace memory capped");
-            check(first.recent().stream().noneMatch(x->x.action().equals("STRIKE")),
-                "Synthetic audio never grants physical strike contact");
+            check(first.recent().stream().noneMatch(x->x.action().equals("STRIKE")
+                    ||x.action().equals("SIGNATURE")||x.action().equals("MANIFEST")),
+                "Synthetic SOUND may guide pursuit but cannot fabricate a hunter for "
+                    +species+": trace="+first.recent());
             check(first.timings().timings().get(NpcAiTelemetry.Metric.DECISION).calls()==320,
                 "Every actual real AI decision measured");
             check(first.timings().timings().get(NpcAiTelemetry.Metric.HEARING).calls()>0,
@@ -33,6 +35,6 @@ public final class GhostAiScenarioRunnerTest {
         try{GhostAiScenarioRunner.run(GhostIdentity.Type.SPIRIT,HouseMap.Site.HOUSE,
             5000,42L,true);}catch(IllegalArgumentException expected){invalid=true;}
         check(invalid,"Hard scenario time budget enforced");
-        System.out.println("PASS seeded real ghost/domain/cadence decision automation with no synthetic strikes");
+        System.out.println("PASS synthetic acoustic cues without forged victims, strike, manifestation or harmful signature");
     }
 }

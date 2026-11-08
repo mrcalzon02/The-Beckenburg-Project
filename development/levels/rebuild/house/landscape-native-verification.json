@@ -1,0 +1,13 @@
+{
+  "level": "briar-rebuild",
+  "revision": "first-principles-landscape-v1-09a90b8dc9035bf9",
+  "triangles": 89569,
+  "packed_images": 124,
+  "props": 5,
+  "spawns": 15,
+  "native_sha256": "9d6e2e1d0e84e8782d6e260ea7909379a029c6f584386185052cf4c1492f709e",
+  "definition_sha256": "ef5d78d016957b804b1bbe391f329b0aef0a6b944edea6032f26dbb2a39d54b6",
+  "geometry_sha256": "e12e2518b6ff7ad2da4711bda4cc64ea989b7f0378d76783a466d04fb88c4eaa",
+  "result": "PASS every source vertex/UV; packed images; original sockets; native file unchanged",
+  "acceptance": "construction candidate only; terrain/boundary and complete map gates open"
+}

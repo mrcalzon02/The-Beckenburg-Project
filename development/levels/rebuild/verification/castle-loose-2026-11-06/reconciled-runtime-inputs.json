@@ -1,0 +1,21 @@
+{
+  "implemented_source": "26be171cc22502bf54f75d209625274ad709d3b4",
+  "preserved_concurrent_main": "49d801bd222c67fb65452939368c833ae9c43b5b",
+  "identical_runtime_tree_blobs": {
+    "src": "5295405320159b45b9cefa6ba2681ced128be892",
+    "assets": "821c0a99a70f194d6ffef87d8bc34dbdd8ade48a",
+    "development/assets": "6f5a8a702f2b7780f6e7d9863aa8b3da0f279641",
+    "tools": "142531e03488590bd9477f12a1913f2519c1e7eb",
+    "water-module": "b50ab284316a87ef636b25e7b71b6707e599b592",
+    "lighting-module": "be257b217359a1c4ca9eb8deea6b4127fd6e8e77",
+    "gpu-client": "2fc76a1540df3cdd244c21fe4924da09835cd907",
+    ".github/workflows": "ceef962d7f0b2d7797a235627685066f38f56ec3",
+    ".gitattributes": "ab625727265468800b13a6951ebbbf71f57dcb85",
+    "build.cmd": "9f245be7e872891bc7f6cb348dcb12689b1922e5",
+    "build.sh": "a7a95d160c5b9d2961dc88402c07206f84d1d7d6",
+    "regression-tests.txt": "dff2f16692be30a60ffaf4b5cc9f105c04a49758"
+  },
+  "gallery_count": 6676,
+  "status": "PASS additional85resident PNGs/2CSVs preserved; no implementation/test/build/asset changes",
+  "online_acceptance": "Not yet claimed; fresh345/native/GPU required"
+}

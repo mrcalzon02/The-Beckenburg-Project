@@ -19,6 +19,33 @@ import javax.imageio.ImageIO;
  */
 public final class DirectionalSprites {
     private static final int W=SceneRenderer.W,H=SceneRenderer.H;
+    /** Test-only, current-thread observation of pixels emitted by the REAL
+     * character compositor. Never infer NPC pixels by subtracting full Castle
+     * renders: lighting caches and scenery can legitimately change between frames. */
+    static final class HumanRenderTrace {
+        final String identity;
+        final int width,height;
+        final byte[] pixels;
+        int visibleBody,visibleSole,hiddenSole,hiddenBody,belowFloor;
+        double closestSole=Double.POSITIVE_INFINITY;
+        int bottomVisible=-1;
+        HumanRenderTrace(String identity,int width,int height){
+            this.identity=identity;this.width=width;this.height=height;
+            this.pixels=new byte[width*height];
+        }
+    }
+    private static final ThreadLocal<HumanRenderTrace> ACTIVE_HUMAN_TRACE=new ThreadLocal<>();
+    static void beginHumanRenderTrace(String identity,int width,int height){
+        if(identity==null||width<=0||height<=0||ACTIVE_HUMAN_TRACE.get()!=null)
+            throw new IllegalArgumentException("invalid or nested character render trace");
+        ACTIVE_HUMAN_TRACE.set(new HumanRenderTrace(identity,width,height));
+    }
+    static HumanRenderTrace endHumanRenderTrace(){
+        HumanRenderTrace result=ACTIVE_HUMAN_TRACE.get();
+        ACTIVE_HUMAN_TRACE.remove();
+        if(result==null)throw new IllegalStateException("No human trace started");
+        return result;
+    }
     private static final double FOCAL=153.0,NEAR=.065; // exactly match SceneRenderer
     private static final String[] FACINGS={"front","front","side", "back_three_quarter",
             "back","back_three_quarter_mirrored","side_mirrored","front"};
@@ -84,8 +111,14 @@ public final class DirectionalSprites {
             double cameraX,double cameraZ){
         int raw=facing(heading,entityX,entityZ,cameraX,cameraZ);
         if(!GroundedSpriteFeet.isGroundedHuman(identity))return raw;
-        var key=new PoseKey(identity,Math.round(entityX*1000),Math.round(entityZ*1000),heading);
-        // These are stable Castle NPC positions, not moving network actors.
+        // Castle residents have durable identities and move in small authored
+        // routines. Position-millimetre/heading keys would be new every frame,
+        // discarding the hysteresis precisely while the player strafes nearby.
+        // Keep per-pose keys for network hunters, which may share appearances.
+        boolean resident=isCastleSupport(identity)||"lore_master".equals(identity);
+        var key=resident?new PoseKey(identity,0,0,0)
+            :new PoseKey(identity,Math.round(entityX*1000),Math.round(entityZ*1000),heading);
+        // Camera rotations do not reset an NPC's chosen source orientation.
         if(LAST_FACING.size()>256)LAST_FACING.clear();
         double a=Math.toDegrees(Math.atan2(cameraX-entityX,cameraZ-entityZ))-heading;
         int selected=LAST_FACING.compute(key,(k,old)->{
@@ -340,7 +373,7 @@ public final class DirectionalSprites {
             LanGhostAnimation.Phase phase,int animationFrame){
         drawPose(pixels,depth,cameraX,cameraZ,yaw,pitch,entityX,entityZ,heading,
             character,height,width,elevation,opacity,lamp,renderWidth,renderHeight,focal,
-            ancientTint,phase,animationFrame,null);
+            ancientTint,phase,animationFrame,null,-1);
     }
     public static void drawHunter(int[] pixels,double[] depth,double cameraX,double cameraZ,
             double yaw,double pitch,SceneRenderer.RemoteBody body,HunterSpriteAnimation.Pose pose,
@@ -357,25 +390,26 @@ public final class DirectionalSprites {
         double height=shape.height()*(body.crouched()?HunterPosture.CROUCH_HEIGHT/HunterPosture.STANDING_HEIGHT:1);
         drawPose(pixels,depth,cameraX,cameraZ,yaw,pitch,body.x(),body.z(),body.heading(),
             body.appearance(),height,shape.width(),elevation,255,lamp,renderWidth,renderHeight,focal,
-            false,LanGhostAnimation.Phase.LURK,0,image);
+            false,LanGhostAnimation.Phase.LURK,0,image,facing);
     }
     public static void drawResident(int[] pixels,double[] depth,double cameraX,double cameraZ,
             double yaw,double pitch,CastleRelations.Resident resident,CastleResidentAnimation.Body body,
             double elevation,boolean lamp,int renderWidth,int renderHeight,double focal){
         String id=CastleResidentAnimation.identity(resident);
-        var image=CastleResidentAnimation.frame(resident,
-            stableFacing(id,body.heading(),body.x(),body.z(),cameraX,cameraZ),body.pose());
+        int chosenView=stableFacing(id,body.heading(),body.x(),body.z(),cameraX,cameraZ);
+        var image=CastleResidentAnimation.frame(resident,chosenView,body.pose());
         double height=1.79*(body.pose()==HunterSpriteAnimation.Pose.CROUCH
             ?HunterPosture.CROUCH_HEIGHT/HunterPosture.STANDING_HEIGHT:1);
         drawPose(pixels,depth,cameraX,cameraZ,yaw,pitch,body.x(),body.z(),body.heading(),
             id,height,.98,elevation,255,lamp,renderWidth,renderHeight,focal,
-            false,LanGhostAnimation.Phase.LURK,0,image);
+            false,LanGhostAnimation.Phase.LURK,0,image,chosenView);
     }
     private static void drawPose(int[] pixels,double[] depth,double cameraX,double cameraZ,
             double yaw,double pitch,double entityX,double entityZ,int heading,
             String character,double height,double width,double elevation,int opacity,boolean lamp,
             int renderWidth,int renderHeight,double focal,boolean ancientTint,
-            LanGhostAnimation.Phase phase,int animationFrame,BufferedImage poseImage){
+            LanGhostAnimation.Phase phase,int animationFrame,BufferedImage poseImage,
+            int selectedView){
         if(pixels.length!=renderWidth*renderHeight||depth.length!=renderWidth*renderHeight
                 ||opacity<=0||height<=0)return;
         if(!Double.isFinite(entityX)||!Double.isFinite(entityZ))return;
@@ -396,9 +430,28 @@ public final class DirectionalSprites {
         if(anchorDepth<NEAR)return;
         double foot=renderHeight/2.0-(baseY*cy-ahead*sy)/nearBottom*focal;
         double head=renderHeight/2.0-(topY*cy-ahead*sy)/nearTop*focal;
+        double geometricFoot=foot;
         if(head>=foot)return;
-        BufferedImage sprite=poseImage!=null?poseImage:frame(character,stableFacing(character,heading,
-            entityX,entityZ,cameraX,cameraZ),phase,animationFrame);
+        // Choose directional art with hysteresis, but keep the physical
+        // quad continuously camera-facing. A source-view swap must never
+        // flip a flat card edge-on or shift the actor's world anchor.
+        int view=selectedView>=0?selectedView:stableFacing(character,heading,
+            entityX,entityZ,cameraX,cameraZ);
+        BufferedImage sprite=poseImage!=null?poseImage:frame(character,view,phase,animationFrame);
+        // A grounded human is a REAL depth-tested world object: the position
+        // and shoes remain in the 3D Castle, but the textured quad rotates
+        // smoothly toward the observer. An edge-on pair of world-locked planes
+        // was making Tomas disappear / slide as the player strafed.
+        if(GroundedSpriteFeet.isGroundedHuman(character)){
+            HumanRenderTrace observer=ACTIVE_HUMAN_TRACE.get();
+            if(observer!=null&&(!observer.identity.equals(character)
+                    ||observer.width!=renderWidth||observer.height!=renderHeight))
+                observer=null;
+            drawCameraFacingHuman(pixels,depth,cameraX,cameraZ,yaw,pitch,
+                entityX,entityZ,heading,view,sprite,height,width,elevation,opacity,
+                lamp,renderWidth,renderHeight,focal,observer);
+            return;
+        }
         // Grounded people have direction-dependent transparent bottom padding.
         // Move the image sampling rectangle (not its source pixels) so the last
         // visible shoe row stays at the actual world-floor contact projection.
@@ -412,8 +465,13 @@ public final class DirectionalSprites {
         double cx=renderWidth/2.0+right/anchorDepth*focal;
         // Re-centre the authored silhouette on its immutable world pivot.
         // Old code treated arbitrary transparent frame margins as body width.
-        if(GroundedSpriteFeet.isGroundedHuman(character))
+        if(GroundedSpriteFeet.isGroundedHuman(character)){
             cx+=(sprite.getWidth()*.5-bodyPivotX(sprite))*2*halfW/sprite.getWidth();
+            double correction=GroundedSpriteFeet.renderedFloorCorrection(depth,
+                renderWidth,renderHeight,cx,geometricFoot,nearBottom,halfW*2);
+            head+=correction;
+            foot+=correction;
+        }
         int x0=Math.max(0,(int)Math.floor(cx-halfW)),x1=Math.min(renderWidth-1,(int)Math.ceil(cx+halfW));
         int y0=Math.max(0,(int)Math.floor(head)),y1=Math.min(renderHeight-1,(int)Math.ceil(foot));
         if(x0>x1||y0>y1)return;
@@ -456,6 +514,133 @@ public final class DirectionalSprites {
                 }
                 pixels[k]=(red<<16)|(green<<8)|blue;
                 if(alpha>=220)depth[k]=rowDepth;
+            }
+        }
+    }
+    /** A moving observer rotates the quad, never the NPC's physical origin.
+     * Four camera quadrants all show the same full width instead of the
+     * edge-on collapse from picking actor-heading-aligned X/Z planes. */
+    record GroundedBillboardCard(double left,double right,double bottom,double top){}
+    /** Discard stray artist fringe below the actual last shoe row. */
+    static boolean groundedUvAboveFloor(double v,double sole){
+        return Double.isFinite(v+sole)&&v>=0&&v<=sole;
+    }
+    static GroundedBillboardCard groundedBillboardCard(double height,double width,double elevation){
+        if(!Double.isFinite(height+width+elevation)||height<=0||width<=0)
+            throw new IllegalArgumentException("invalid grounded human dimensions");
+        return new GroundedBillboardCard(-width*.5,width*.5,elevation-1.62,elevation-1.62+height);
+    }
+    /** World X/Z tangent to the camera-to-actor line. Camera yaw does not
+     * matter: a player orbit produces continuous axis rotation. Heading/view
+     * only choose the approved source artwork, never an edge-on plane. */
+    static double[] cameraFacingPlaneAxis(double cameraX,double cameraZ,
+            double entityX,double entityZ){
+        double dx=cameraX-entityX,dz=cameraZ-entityZ;
+        double distance=Math.hypot(dx,dz);
+        if(!Double.isFinite(distance))throw new IllegalArgumentException("Non-finite camera or actor");
+        if(distance<1e-5)return new double[]{1,0};
+        return new double[]{dz/distance,-dx/distance};
+    }
+    private static void drawCameraFacingHuman(int[] pixels,double[] depth,
+            double cameraX,double cameraZ,double yaw,double pitch,
+            double entityX,double entityZ,int heading,int view,BufferedImage sprite,
+            double height,double width,double elevation,int opacity,boolean lamp,
+            int renderWidth,int renderHeight,double focal,HumanRenderTrace observer){
+        double[] axis=cameraFacingPlaneAxis(cameraX,cameraZ,entityX,entityZ);
+        double ax=axis[0],az=axis[1];
+        double nx=-az,nz=ax,cy=Math.cos(pitch),sy=Math.sin(pitch);
+        double yawCos=Math.cos(yaw),yawSin=Math.sin(yaw);
+        double dx=entityX-cameraX,dz=entityZ-cameraZ;
+        double planeDistance=dx*nx+dz*nz;
+        if(Math.abs(planeDistance)<NEAR*.02)return;
+        int sh=sprite.getHeight(),sw=sprite.getWidth();
+        int soleRow=GroundedSpriteFeet.lastVisibleRow(sprite);
+        if(soleRow<0)return;
+        double sole=(soleRow+.5)/sh;
+        // The art source facing may change; the quad's world anchor, height
+        // and width remain constant. Shoe UVs alone accommodate alpha padding.
+        GroundedBillboardCard card=groundedBillboardCard(height,width,elevation);
+        double cardTop=card.top(),cardBottom=card.bottom();
+        // Project the four continuously facing 3D vertices to the viewport.
+        double left=card.left(),right=card.right();
+        double[] corners={left,cardTop,left,cardBottom,right,cardTop,right,cardBottom};
+        double minX=Double.POSITIVE_INFINITY,maxX=Double.NEGATIVE_INFINITY;
+        double minY=Double.POSITIVE_INFINITY,maxY=Double.NEGATIVE_INFINITY;
+        for(int i=0;i<corners.length;i+=2){
+            double wx=dx+axis[0]*corners[i],wz=dz+axis[1]*corners[i];
+            double projectedRight=-wx*yawCos+wz*yawSin,forward=wx*yawSin+wz*yawCos;
+            double ry=corners[i+1]*cy-forward*sy,rz=corners[i+1]*sy+forward*cy;
+            if(rz<NEAR)return; // Never draw through the near camera plane.
+            double sx=renderWidth*.5+projectedRight/rz*focal;
+            double py=renderHeight*.5-ry/rz*focal;
+            minX=Math.min(minX,sx);maxX=Math.max(maxX,sx);
+            minY=Math.min(minY,py);maxY=Math.max(maxY,py);
+        }
+        int x0=Math.max(0,(int)Math.floor(minX)-1),x1=Math.min(renderWidth-1,(int)Math.ceil(maxX)+1);
+        int y0=Math.max(0,(int)Math.floor(minY)-1),y1=Math.min(renderHeight-1,(int)Math.ceil(maxY)+1);
+        if(x0>x1||y0>y1)return;
+        double fogDistance=Math.hypot(dx,dz);
+        double fog=Math.min(.75,Math.max(0,(fogDistance-5)/15));
+        double illumination=(lamp?1.22:.55)*Math.max(.22,1-fogDistance/26.0);
+        for(int py=y0;py<=y1;py++){
+            double cameraUp=(renderHeight*.5-py-.5)/focal;
+            double rayY=cameraUp*cy+sy;
+            double rayForward=cy-cameraUp*sy;
+            for(int px=x0;px<=x1;px++){
+                double cameraRight=(px+.5-renderWidth*.5)/focal;
+                double rayX=-cameraRight*yawCos+rayForward*yawSin;
+                double rayZ=cameraRight*yawSin+rayForward*yawCos;
+                double denominator=rayX*nx+rayZ*nz;
+                if(Math.abs(denominator)<1e-8)continue;
+                double rayDepth=planeDistance/denominator;
+                if(rayDepth<NEAR||rayDepth>24)continue;
+                double atX=cameraX+rayDepth*rayX-entityX;
+                double atZ=cameraZ+rayDepth*rayZ-entityZ;
+                double u=(atX*ax+atZ*az-left)/width;
+                // Art-specific alpha margins change texture sampling, never
+                // the 3D plane: the authored last shoe row touches floor Y.
+                double v=(cardTop-rayDepth*rayY)/height*sole;
+                if(u<0||u>=1||!groundedUvAboveFloor(v,sole))continue;
+                int tx=(int)(u*sw),ty=Math.min(soleRow,(int)(v*sh));
+                int argb=sprite.getRGB(tx,ty);
+                int alpha=(argb>>>24)*Math.min(255,opacity)/255;
+                if(alpha<24)continue;
+                int pixel=py*renderWidth+px;
+                if(observer!=null){
+                    double aboveFloor=rayDepth*rayY-cardBottom;
+                    // The foot region is independently measured in world
+                    // metres, not against arbitrary screen-space Castle pixels.
+                    boolean solePixel=aboveFloor>=-1e-5&&aboveFloor<=.08
+                        &&ty>=soleRow-Math.max(4,sh/14)&&alpha>=96;
+                    if(rayDepth>=depth[pixel]){
+                        observer.hiddenBody++;
+                        if(solePixel)observer.hiddenSole++;
+                    }else{
+                        observer.pixels[pixel]=1;
+                        observer.visibleBody++;
+                        observer.bottomVisible=Math.max(py,observer.bottomVisible);
+                        if(aboveFloor<-.005)observer.belowFloor++;
+                        if(solePixel){
+                            observer.visibleSole++;
+                            observer.closestSole=Math.min(observer.closestSole,Math.max(0,aboveFloor));
+                        }
+                    }
+                }
+                if(rayDepth>=depth[pixel])continue;
+                int red=(int)Math.min(255,((argb>>>16)&255)*illumination);
+                int green=(int)Math.min(255,((argb>>>8)&255)*illumination);
+                int blue=(int)Math.min(255,(argb&255)*illumination);
+                red=(int)(red*(1-fog)+18*fog);
+                green=(int)(green*(1-fog)+21*fog);
+                blue=(int)(blue*(1-fog)+30*fog);
+                if(alpha<255){
+                    int bg=pixels[pixel];
+                    red=(red*alpha+((bg>>>16)&255)*(255-alpha))/255;
+                    green=(green*alpha+((bg>>>8)&255)*(255-alpha))/255;
+                    blue=(blue*alpha+(bg&255)*(255-alpha))/255;
+                }
+                pixels[pixel]=(red<<16)|(green<<8)|blue;
+                if(alpha>=220)depth[pixel]=rayDepth;
             }
         }
     }

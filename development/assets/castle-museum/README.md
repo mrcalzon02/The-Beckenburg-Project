@@ -26,3 +26,15 @@ The dedicated `development/assets/build_castle_bed.py` replaces the rejected2740
 The fireplace, bed and armour use the built-in image-generation tool. Original generated masters and exact prompts are in textures/; runtime atlas derivatives are512px and the curtain PNG256px with genuine alpha retained. The fireplace stays26 authored faces/56 exported triangles. The bed now has828 triangles after replacing overlapping canopy rail end-caps with a mitered ring; grain uses a consistent physical scale, carving stays on the inward headboard face, and bedding edges use narrow folds rather than repeating whole images. Prior844-triangle states and rejected procedural studies remain labeled in previews/.
 
 Actual archive/lodging/common-room captures and isolated final retained checks are under verification/castle-imagegen-2026-11-03. Safe-area work in the shared checkout is preserved separately. Full Castle and all29 map packets remain open.
+
+
+## Archive/library heritage batch — 6 November
+
+A160-triangle tapestry now bears on the archive's actual north wall through seven supported components. Original generated artwork,512x768px; real sewn sleeve/rail/brackets/plates; actual detached-rail control rejected. The ruined-tower picture uses the shipped92-triangle painting_1 frame, and the upper reading-room carpet uses the shipped18-triangle carpet_mp_1 mesh. Their geometry, normals, UVs, indices and alpha policy remain exact; new original PNGs supply the site story. Native frame is flush to east masonry, and the1cm rug remains walkable on the real upper deck.
+
+Editable packed sources, independent actual-export views and real Castle editor-service captures accompany all3 models. Built-in image-generation masters and exact prompts are in textures/. The old1312-triangle tapestry and magenta source-packing failure remain labeled rejected studies. Final34 targeted tests,337 manifest preflight and baseline335/0 full-CI evidence are kept separate in verification/castle-textiles-2026-11-06. Full Castle remains unfinished.
+
+
+## Referenced heraldic display
+
+Crossed swords and conserved painted shield use316tri and one original generated512px atlas. All14 actual export components reach real wall supports through triangle contact; a blade moved25cm fails. Packed source freshly reopens. The rejected exposed spine is preserved under previews/rejected-heraldic-exposed-spine; DEV-278 and actual exported bearing-height regression prevent recurrence. Source/native review: heraldic-review.json. Full Castle remains open.

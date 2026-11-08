@@ -1,0 +1,50 @@
+{
+  "HouseRebuildPhysicsTest": {
+    "exit": 0,
+    "seconds": 24.485
+  },
+  "AuthoredLevelPhysicsTest": {
+    "exit": 0,
+    "seconds": 0.468
+  },
+  "AuthoredLevelReachabilityTest": {
+    "exit": 0,
+    "seconds": 8.11
+  },
+  "AuthoredUtilitiesTest": {
+    "exit": 0,
+    "seconds": 1.219
+  },
+  "LevelSurfaceIntegrityTest": {
+    "exit": 0,
+    "seconds": 0.734
+  },
+  "DynamicGeometryRetentionTest": {
+    "exit": 0,
+    "seconds": 1.281
+  },
+  "PhysicalLightingTest": {
+    "exit": 0,
+    "seconds": 2.281
+  },
+  "HandheldSurfaceOcclusionTest": {
+    "exit": 0,
+    "seconds": 0.469
+  },
+  "PreparedLightBatchParityTest": {
+    "exit": 0,
+    "seconds": 38.063
+  },
+  "CastleLooseClutterTest": {
+    "exit": 0,
+    "seconds": 7.281
+  },
+  "CastlePortalSlotTest": {
+    "exit": 0,
+    "seconds": 1.703
+  },
+  "CastleRebuildUpgradeTest": {
+    "exit": 0,
+    "seconds": 4.531
+  }
+}

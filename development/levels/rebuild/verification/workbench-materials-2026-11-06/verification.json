@@ -1,0 +1,246 @@
+{
+  "status": "SCOPED_SHARED_WORKBENCH_MATERIAL_REPAIR_VERIFIED_FULL_CASTLE_OPEN",
+  "base_main": "ece487e12b72d8eae69911325082d8da2725cb27",
+  "models": {
+    "assets/runtime/models/level_workbench.glb": "d3fba3eae841e297c03570d92c357e83fee29e63efd2619c2541a525415b36ec",
+    "assets/runtime/models/level_workbench_worn.glb": "e72efab71e900744ad7f8f67dc459f01c486a501ccf0ce523f6d7605a9a98b31"
+  },
+  "original_masters": {
+    "assets/libraries/industrial/models/level_workbench.glb": "ff58b646de7af142a2d17a2de6d30af4c87fc570a0fbc39fe41f56d1073197c3",
+    "assets/libraries/industrial/models/level_workbench_worn.glb": "559f445c412bdc73d16412f67aaee4ef8acccd4fbc14980102935935a82bed94"
+  },
+  "sources": {
+    "development/assets/build_castle_preparation_benches.py": "968b2dba93cad5ec52fc9912a12ce0e1e573263bdb4721fca21aff7b6da3904d",
+    "development/assets/surface_castle_preparation_benches.py": "4020af183b7f208b81b60088f6e40843dce614a5a71e393bcd613d1929f6ce13",
+    "development/assets/inspect_preparation_bench_materials.py": "e57e53d934060f5510600c168c16d109c54610b5a5fab0e479908e9a853d6795",
+    "src/main/java/org/beckenburg/LevelAssets.java": "1665de634e1076bdd094f0675c636eb6816cd01db2fa8d18c79e097c971aa078",
+    "src/main/java/org/beckenburg/BeckenburgRegressionSuite.java": "9f188a89412c80e01ba786988cb67461155f355f7e95ddaaf95b88f045ccf99f",
+    "src/test/java/org/beckenburg/WorkbenchMaterialTest.java": "32c6400baab96befb02ab2fb83af05d92d551ea756caa886e6ef90036cd1771d",
+    "regression-tests.txt": "43029862c55adc30bfd8538f771b9522bb2333fc0d04c93b619a4a81190ef85a"
+  },
+  "tests": {
+    "BeckenburgRegressionManifestTest": {
+      "exit": 0,
+      "seconds": 1.172,
+      "log_sha256": "55662c58382344329fee6cd6790a1ad331b524839600e4a684aa3378fb2ccc93"
+    },
+    "CastleGroundConstructionTest": {
+      "exit": 0,
+      "seconds": 4.25,
+      "log_sha256": "a099c7c8db2e6437791d5f8e53108e525236a2b3fab0fbb6fcee8e0ea04f98ca"
+    },
+    "CastleRebuildTest": {
+      "exit": 0,
+      "seconds": 3.594,
+      "log_sha256": "787a4cff5996703fc450171a229972849eb88e716e602afe3ae7f7eeec59368c"
+    },
+    "CastleHeadquartersRevisionTest": {
+      "exit": 0,
+      "seconds": 5.328,
+      "log_sha256": "98b1c10b5ea0088ea01132e92111d8d258e4ecbf6738b81423815d7abd04bac0"
+    },
+    "CastleCellarConstructionTest": {
+      "exit": 0,
+      "seconds": 2.469,
+      "log_sha256": "28e3a24014081a35b84c7a8efdb88869686c07364aed52f6bc66b490c765926e"
+    },
+    "CastleTrainingAnnexTest": {
+      "exit": 0,
+      "seconds": 3.031,
+      "log_sha256": "ce94d3d8989a261eabecc08ed0fdf0f5716407194a728bc9ee7083ec1681209a"
+    },
+    "CastleWorldTerrainTest": {
+      "exit": 0,
+      "seconds": 1.437,
+      "log_sha256": "6242110dded78948d82d210f3f485ce85448fcf300256175d440dae2712c0aaf"
+    },
+    "CastleLightingPlacementRepairTest": {
+      "exit": 0,
+      "seconds": 1.735,
+      "log_sha256": "3e7e9fb1278c9e76df96d8a4105a812a6b0fbf42ec7f551b249370fce50e4cb1"
+    },
+    "CastleSnapshotContractTest": {
+      "exit": 0,
+      "seconds": 2.672,
+      "log_sha256": "11c5a80c58c4dd77dccdd707b4e32f5cf75c424c4f0c402776a014ccd9a78a70"
+    },
+    "CastleDocumentRecoveryTest": {
+      "exit": 0,
+      "seconds": 1.937,
+      "log_sha256": "90cd0cbf6339db63a6433d272beee7325aa55f76570438d114ff612d28a489d5"
+    },
+    "CastleEditorGeometryTest": {
+      "exit": 0,
+      "seconds": 1.156,
+      "log_sha256": "bbd32c3108aa5cb1bee720390a1d686de41daa2131ab041182159254e276eb96"
+    },
+    "CastlePortalSlotTest": {
+      "exit": 0,
+      "seconds": 1.407,
+      "log_sha256": "8679f37379f314a8b00ff8ff1150e3bdb680a7b583a7167f18faba86f43ac81e"
+    },
+    "CastleHubIntegrationTest": {
+      "exit": 0,
+      "seconds": 3.859,
+      "log_sha256": "637def90a0df7516a0ce86b440d3fd10300660270290b0ca71f40c1c65212144"
+    },
+    "CastleSignedConstructionTest": {
+      "exit": 0,
+      "seconds": 1.297,
+      "log_sha256": "ea486b0b5bd37db6027ebe7aaf1ce0786be023a3fd6642e7e09f672afbc243fb"
+    },
+    "CastleHomeInteractionTest": {
+      "exit": 0,
+      "seconds": 6.219,
+      "log_sha256": "1f441c5d1162591cc31db27e160949ab9a30d895feb7f9e5d174438f1cb8c8f3"
+    },
+    "CastleInventoryWorkstationTest": {
+      "exit": 0,
+      "seconds": 6.468,
+      "log_sha256": "99883161026c9d51200bbe5af3ea93c6d5132910bfdcdd541153cd7d324d2b7a"
+    },
+    "CastleOrientationTest": {
+      "exit": 0,
+      "seconds": 0.063,
+      "log_sha256": "86b31007c35bba35a08868dc2df2b8d1db37af1ea3629c091605ac581856a4e3"
+    },
+    "CastleContainedMenuTest": {
+      "exit": 0,
+      "seconds": 6.969,
+      "log_sha256": "e62ec3aec1f8c104e43886a64db38b5605a448069d435f7f6e17b4ab89dcf83e"
+    },
+    "CastleRelationsTest": {
+      "exit": 0,
+      "seconds": 1.578,
+      "log_sha256": "13dfb2033c48260b9a50fa09672b966c85a75fcbc95c5b28dcb0505d8ff0e6e4"
+    },
+    "CastleShelfLabelsTest": {
+      "exit": 0,
+      "seconds": 2.687,
+      "log_sha256": "fd82906959ff9c5ccd817cb1a360fb86a2de3c9abbed27b67d3af3f52427fa9a"
+    },
+    "CastleEditorAuditTest": {
+      "exit": 0,
+      "seconds": 0.891,
+      "log_sha256": "fcd4126ec731599503ad65f80ea86b218788c3e2f7428ddfc7704a3225a0f9d1"
+    },
+    "CastleFurnitureWallAuditTest": {
+      "exit": 0,
+      "seconds": 1.094,
+      "log_sha256": "4a3f5065c0d4a487c912b3fd61a73f9ee644447f392285d16644beb78f92c2ac"
+    },
+    "VanLightingAndCastleDoorTest": {
+      "exit": 0,
+      "seconds": 1.171,
+      "log_sha256": "e70dccc2307c6874d47e60190a1fc719d9f33921773d0c6b853f1093d03589e7"
+    },
+    "HouseRebuildTerrainTest": {
+      "exit": 0,
+      "seconds": 1.563,
+      "log_sha256": "ba55b67d5822620aed0ee5b4eff7cb7ab63fe59dbabc3b9607bfd5cf9f75551f"
+    },
+    "EditorAgentServiceTest": {
+      "exit": 0,
+      "seconds": 3.437,
+      "log_sha256": "32d7555b8f6ebf470d5cb025a7a366773d15e4cb9e3d7227a3065c045abb63af"
+    },
+    "CastleUpperConstructionTest": {
+      "exit": 0,
+      "seconds": 2.485,
+      "log_sha256": "2f224a069d7bbef68ba16d97003be1e11054c387b8c1d3c92a048d966e88d58a"
+    },
+    "WallLampSourceUvTest": {
+      "exit": 0,
+      "seconds": 0.219,
+      "log_sha256": "47cf6222699c321886c3bd28b9443d7d5e30eb47b8007b1b6662c54804bb000f"
+    },
+    "WallLampMountPlateTest": {
+      "exit": 0,
+      "seconds": 0.859,
+      "log_sha256": "df67d4484afbf614d77324c3a9fffca302e8b10e8741918116ac54d7561d9f38"
+    },
+    "CastleMuseumConstructionTest": {
+      "exit": 0,
+      "seconds": 1.172,
+      "log_sha256": "fbec34f336c9c866c7b30454cb5071ac1a1873a60b26dd04919842331ee73def"
+    },
+    "CastleTesterBedTest": {
+      "exit": 0,
+      "seconds": 1.14,
+      "log_sha256": "2824bbcb9180c116aa0333e7c321289aee4d8e1940b06280a2afdab07649ef9f"
+    },
+    "CastleFireplaceTest": {
+      "exit": 0,
+      "seconds": 1.25,
+      "log_sha256": "ad7b90675dd9a09a538d0ecf02920d6c3f2239bcd5904160f483c25e0f6f4f03"
+    },
+    "PreparedLightBatchParityTest": {
+      "exit": 0,
+      "seconds": 35.922,
+      "log_sha256": "99fdf1f7ad9d6432f6619d8822fd1244940b06928cd19939c346c0d66e6abbcd"
+    },
+    "CastleTapestryTest": {
+      "exit": 0,
+      "seconds": 1.125,
+      "log_sha256": "702550aa2d43bf7cecd72da8fbf127a85298c8507c5b47ae78d24b8c5170cba6"
+    },
+    "CastleHeritageSurfacesTest": {
+      "exit": 0,
+      "seconds": 1.157,
+      "log_sha256": "4af17385e611200b24144d9a3e4769053dc638f3bab4de3d04e3237a4eff143b"
+    },
+    "CastleHeraldicDisplayTest": {
+      "exit": 0,
+      "seconds": 1.125,
+      "log_sha256": "7615f9e0e4065346b06cf937fb7f7355e18682f7152a7fc066e766da9d78b6c6"
+    },
+    "CastlePlantFitTest": {
+      "exit": 0,
+      "seconds": 1.343,
+      "log_sha256": "2f62566d1f248c1787b18cea59bf1cc5cb896c39cedd1b5eeb81672d4ef909f4"
+    },
+    "WorkbenchMaterialTest": {
+      "exit": 0,
+      "seconds": 1.047,
+      "log_sha256": "a349006c0de48a68b0f5a1d44a5ecc6bed39733e8f7a824208f2809b20f10100"
+    }
+  },
+  "captures": {
+    "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-front.png": "abf06bce7671a240d46d076a4649cd6a0130ec32dce1e140b00c9ccee62442ce",
+    "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-quarter.png": "05f9b64eb3b1e0466b412374bb2a7b56441fe7e456286df20e0f4287134d9e94",
+    "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-rear.png": "a8a26599406a9b035dd40b12391878add64c94470f6c62a8954acc4ddd0360d0",
+    "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-side.png": "aa7958dd80d2de2afde0fffb458f95c59e07a73705d64d2bacde06f39fe87055",
+    "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench-top.png": "3302adade43d8166e4a3e95d134c032c99b667ff81b912dff7cc1fd2b1dae4bd",
+    "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-front.png": "8fb4192c6cea080b3bf320edc4a0359b283d9008ebdf9a4455dadaae137fdcf3",
+    "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-quarter.png": "cc6da1be2d52d5d864b79af3be80e0e7e4e4dd997c246a3efaf34f8b2d57b2ab",
+    "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-rear.png": "2c9ed0ec085304bf79d44c26fccc66cbec76164d301c8169a863299c6338f684",
+    "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-side.png": "13f2a1ef10ed4a6a1bd3442efc5308c018613ada0c138c853d6fe4e48b1f6d00",
+    "development/assets/castle-training/previews/generated-bench-materials/level_castle_preparation_bench_worn-top.png": "fde471afa4b774c7ec13c6920dfbab21cd97a10eca9b1be471081cc578f234f8",
+    "development/levels/rebuild/captures/castle-construction/workbench-material-0-runtime.png": "55002b85470d7cd20cfdb04f7b22cdf79040a12cc65798335b840fa2c56888d8",
+    "development/levels/rebuild/captures/castle-construction/workbench-material-1-runtime.png": "a71c7b323efa9d95b9172009343e397fbed63307a6c81ae832bf2e387a0b5130",
+    "development/assets/castle-training/previews/generated-bench-materials/level_workbench-clay.png": "77a377cccaa0153e746783ca4d803f193a653f7caa39ec4c9ba73d5a7b4f03e6",
+    "development/assets/castle-training/previews/generated-bench-materials/level_workbench_worn-clay.png": "2633d08842f02927fb677c740518d47f9716640a0d51aa49c0f7ae8f61f29670"
+  },
+  "reports": {
+    "development/assets/castle-training/bench-material-independent-review.json": "b97771418711a47f9848ee07e65859fda24bf07cec6647bec84e9997b937ffa9",
+    "development/assets/castle-training/initial-workbench-contact.json": "9162077d1b5394f78f693a6c1b7d2a26e4a8c8f0887bc7ee0257d3b502395432",
+    "development/assets/castle-training/level_castle_preparation_bench-export.json": "912b71c7fdb270abf65e0c61844810c0e5d645dcf1877f585f9ae1019770562a",
+    "development/assets/castle-training/level_castle_preparation_bench-generated-review.json": "ccfdcceba0317c087ca7a06bb1407d88718cbbe8d10eabe44d25630a8254e842",
+    "development/assets/castle-training/level_castle_preparation_bench-review.json": "ba8e4c144a0ca3e7603e23bafa26a49deb43074d4bc82d6dc498d673e5d00252",
+    "development/assets/castle-training/level_castle_preparation_bench-source.json": "054d414153ef814da892066a4377c5cfb429f653f9bbcae0a83d49d2ffde2076",
+    "development/assets/castle-training/level_castle_preparation_bench_worn-export.json": "16d0dda35ea3dbb504ec5c22b4a8edd6f3f7cb52a6b1bcf5accf0c021ad7e5c1",
+    "development/assets/castle-training/level_castle_preparation_bench_worn-generated-review.json": "410d44145491b547ce6bbfd509f11dddabcb81d9c9e4fabf23c243f24f44fad6",
+    "development/assets/castle-training/level_castle_preparation_bench_worn-review.json": "618e06861cfab2b441d9b3b5cc63f0320bba550e8171834f8dbd4c10b38a237f",
+    "development/assets/castle-training/level_castle_preparation_bench_worn-source.json": "57b973ecde4b6a8cc206585b4c88854ec082e06a7ebc61035fcccfbc70a11d8c",
+    "development/assets/castle-training/level_workbench-independent-export.json": "7d13bc0f8fd824b4dcad8e80ec476a4ba22e477263d4c50274a2e29801e4e4cd",
+    "development/assets/castle-training/level_workbench-raised-tool-negative.json": "9769a3b1c104eae1ce44263db51ce3ea4d4a9366ab3f90eb8147e57a9b66c896",
+    "development/assets/castle-training/level_workbench-rejected-source.json": "1ff32719c49b485273b0efdb297b1049ece0eddf7b5e2ec3fe6d41514c8a8bf8",
+    "development/assets/castle-training/level_workbench_worn-independent-export.json": "d6d0a340d346402a3e68663582e02377821bdfda6eb848b81cbf55fb796ffff9",
+    "development/assets/castle-training/level_workbench_worn-raised-tool-negative.json": "7cddd625e9a9492e08b1b6c7b2effd382cbc2e8750e3e96f34d9d5effaa861a2",
+    "development/assets/castle-training/level_workbench_worn-rejected-source.json": "120631bef2443f85453000e7b235d98c624aeef83a27529daddd44260e5f91cb"
+  },
+  "jar_sha256": "ab0e68c615af0bbe19722e7407ab1cb12610e915ac628aa630ee37fe797bcb1a",
+  "manifest_entries": 340,
+  "limits": "37 targeted checks;340-name preflight runs no bodies. Shared asset correction reaches existing IDs; each older map placement/lighting remains unaudited. Fresh branch CI/deployment required. Training work deferred at owner priority, preserved locally; signed spawn DEV-283 still open. Full Castle/all29 remain active. No round-duration testing.",
+  "capture_only_main_update": "5124b98270c0180210db3abdeefac85a43f559ad adds NPC screenshots/CSV only; runtime remains baseline ece487e1"
+}

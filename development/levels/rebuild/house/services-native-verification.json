@@ -1,0 +1,13 @@
+{
+  "level": "briar-rebuild",
+  "revision": "first-principles-heating-v1-1d5d95258b105737",
+  "triangles": 129529,
+  "packed_images": 213,
+  "props": 39,
+  "spawns": 15,
+  "native_sha256": "49416d21d323b0eaabecee04cee95239dda0a2373efae90e3f49051a624a5f0e",
+  "definition_sha256": "93b54cd383a2e63cbd29e4423df4aba0f1abfa57ff602b4726cdba31077a4200",
+  "geometry_sha256": "fe0ab3176654072bee7622d2ffa31db1f1619e0937425c33ca0281845c6a89bf",
+  "result": "PASS every source vertex/UV; packed images; original sockets; native file unchanged",
+  "acceptance": "construction candidate only; terrain/boundary and complete map gates open"
+}

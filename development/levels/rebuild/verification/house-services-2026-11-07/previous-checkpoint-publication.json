@@ -1,0 +1,38 @@
+{
+  "head": "59737f73e779c1961214c6c878211adc583259ed",
+  "status": "",
+  "remote": "59737f73e779c1961214c6c878211adc583259ed\trefs/heads/map/house-functional\n",
+  "pr": 75,
+  "files": [
+    {
+      "path": "src/main/java/org/beckenburg/SafeAreaBarrier.java",
+      "sha256": "9d44886ca35fab55fcbc83f62842a5046d14eb4ce36129c2a4e100aa27f0510e",
+      "exact": true
+    },
+    {
+      "path": "src/main/java/org/beckenburg/HouseRebuildFunctions.java",
+      "sha256": "af2594dc24837e8c575adedeec1392aa2831ccaa2ddc6e6b3337fde6037bd191",
+      "exact": true
+    },
+    {
+      "path": "development/gallery/index.json",
+      "sha256": "bfc44b42450b374d438f188de185b93258ced85f78a4a1aadb05ee3624a0fd74",
+      "exact": true
+    },
+    {
+      "path": "development/captures/house-sanctuary/van-exterior-00.png",
+      "sha256": "ce3ce9aa9f3b76541b88086c1b229dfd4908bca7984cb2f7c4bcb056f187b8c4",
+      "exact": true
+    },
+    {
+      "path": "development/captures/house-functions/parents-runtime.png",
+      "sha256": "ab2695caac8e77ae61bf171f6109852d7efb92e04d67800f1263dc9481b65c3a",
+      "exact": true
+    },
+    {
+      "path": "development/levels/rebuild/verification/sanctuary-reconcile-2026-11-07/unattended-work-audit.json",
+      "sha256": "8c94e14f31d1d992c72b90dfc4995bfe95097fa28a2afc13356b374c2ec4c0f1",
+      "exact": true
+    }
+  ]
+}

@@ -36,6 +36,7 @@ public final class InvestigationGame {
     private int pendingHires;
     private int caseNumber;
     private JLabel startupStatus;
+    private boolean shuttingDown;
 
     private void bootPhase(String message){
         BeckenburgDiagnostics.phase(message);
@@ -53,7 +54,11 @@ public final class InvestigationGame {
 
     private InvestigationGame(){
         bootPhase("Opening game window");
-        window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        // All close routes must stop the hidden non-daemon OpenGL worker too.
+        window.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        window.addWindowListener(new WindowAdapter(){
+            @Override public void windowClosing(WindowEvent event){shutdown();}
+        });
         if(UiBranding.desktopIcon()!=null)window.setIconImage(UiBranding.desktopIcon());
         window.setSize(1060,725);
         window.setMinimumSize(new Dimension(760,510));
@@ -265,12 +270,31 @@ public final class InvestigationGame {
         if("castle".equals(screen))showCastle();
         else showCard(screen);
     }
+    private static boolean stopOnExit(String resource,Runnable cleanup){
+        try{cleanup.run();return true;}
+        catch(Throwable failure){
+            BeckenburgDiagnostics.fail("Desktop shutdown / "+resource,failure);
+            return false;
+        }
+    }
     private void shutdown(){
-        closeLocalInvestigation();
-        if(networkLobby!=null){networkLobby.close();networkLobby=null;}
-        if(ghostPractice!=null){ghostPractice.close();ghostPractice=null;}
-        if(castle!=null){castle.close();castle=null;}
-        window.dispose();
+        if(shuttingDown)return;
+        shuttingDown=true;
+        int status=0;
+        // Each component gets its own cleanup attempt; one broken network or
+        // audio service must never prevent the process exit from completing.
+        if(networkLobby!=null){LanLobbyPanel closing=networkLobby;networkLobby=null;
+            if(!stopOnExit("multiplayer lobby",closing::close))status=1;}
+        if(!stopOnExit("investigation",this::closeLocalInvestigation))status=1;
+        if(ghostPractice!=null){GhostPracticePanel closing=ghostPractice;ghostPractice=null;
+            if(!stopOnExit("ghost practice",closing::close))status=1;}
+        if(castle!=null){CastleHubPanel closing=castle;castle=null;
+            if(!stopOnExit("castle lobby",closing::close))status=1;}
+        if(displayRevert!=null){displayRevert.stop();displayRevert=null;}
+        if(!stopOnExit("game window",window::dispose))status=1;
+        // Off the Swing EDT: libGDX must dispose its native GLFW context on
+        // the GL worker before Java terminates. The GPU join is time-bounded.
+        DesktopShutdown.requestExit(status);
     }
     private void confirmQuit(){
         if(GameDialogs.showConfirmDialog(window,"Leave Castle Beckenburg and exit the game?",
@@ -306,7 +330,7 @@ public final class InvestigationGame {
         routes.add(nav("start.castle","ENTER CASTLE",this::showCastle));
         routes.add(nav("start.options","OPTIONS",this::openOptions));
         routes.add(nav("start.extras","EXTRAS & SUPPORT",this::showExtras));
-        routes.add(nav("start.exit","EXIT",()->{if(networkLobby!=null)networkLobby.close();window.dispose();}));
+        routes.add(nav("start.exit","EXIT",this::shutdown));
         JPanel centered=transparentPanel(new GridBagLayout());centered.add(routes);
         account.setForeground(new Color(181,218,189));
         JPanel body=transparentPanel(new BorderLayout(12,12));

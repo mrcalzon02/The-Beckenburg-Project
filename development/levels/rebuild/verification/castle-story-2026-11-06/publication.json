@@ -1,0 +1,51 @@
+{
+  "source_head": "68e657318309ed95b5ef1d76fd5dc26a9f5f39af",
+  "status": "PASS independently fetched exact source/native-world/native-UI/gallery bytes",
+  "files": {
+    "src/main/java/org/beckenburg/CastleStory.java": {
+      "bytes": 3927,
+      "sha256": "2c24661a0f60d90ee5119a7efa2ffe8386f6bbf58fc223333b4f7eb557d0985c"
+    },
+    "src/main/java/org/beckenburg/CastleObjectRay.java": {
+      "bytes": 2467,
+      "sha256": "b2bbdc4632a237c97f1244f6a6c6fec2db7d4fced5dd1e9cabb65c2f78114bc4"
+    },
+    "src/main/java/org/beckenburg/CastleHubPanel.java": {
+      "bytes": 28388,
+      "sha256": "c4b71b9c22bc46180ccde7d94c1b05100f4fdbd8d6fd91f7a33e0a5c6d521ad8"
+    },
+    "src/test/java/org/beckenburg/CastleStoryTest.java": {
+      "bytes": 8276,
+      "sha256": "da95336ac4d3fcc7b65c040be525440c3e79bc29e9c605c870fd3bca24ca5bb0"
+    },
+    "development/captures/castle-story-ui/museum-armour-caption-record-world.png": {
+      "bytes": 153810,
+      "sha256": "137dbe5d5f08b6b0aa2d9d48be55e1c307c91ee957f2b0102cc93dcbf5491f8b"
+    },
+    "development/captures/castle-story-ui/museum-armour-caption-record-ui.png": {
+      "bytes": 30860,
+      "sha256": "dc08a685c668d6d087c42f8b5cfa29e265b9c01df564b87b56643aba9276ef67"
+    },
+    "development/captures/castle-story-ui/finish-keeper-statue-record-world.png": {
+      "bytes": 175915,
+      "sha256": "c220094ce17e6fd0fb88eef694c31c532d1904d122eb9e96608d4cec701a2de2"
+    },
+    "development/captures/castle-story-ui/finish-keeper-statue-record-ui.png": {
+      "bytes": 33458,
+      "sha256": "ef5fc5de4d7e6b7554dacb59d585f29ed8293457ce6dbf06183807b7c2379aaa"
+    },
+    "development/levels/rebuild/verification/castle-story-2026-11-06/checkpoint.json": {
+      "bytes": 8106,
+      "sha256": "5a4f31457f99d1acc9488a7a323952ccc5a9d0e9aa94de0d529c50e11ef7c6d8"
+    },
+    "beckenburg-development-gallery.html": {
+      "bytes": 2634987,
+      "sha256": "48ef2112155b95ab919a91fc0988948741c1d6e197aee096b4ccd6a7d9abbf4a"
+    },
+    "development/gallery/index.json": {
+      "bytes": 3007911,
+      "sha256": "92430451d7562c7b48f6a9bcba313be844bbe0abcb5f12997cd67848807b6010"
+    }
+  },
+  "pages": "Separate oversized root deployment gate remains open DEV-293; remote source verified"
+}

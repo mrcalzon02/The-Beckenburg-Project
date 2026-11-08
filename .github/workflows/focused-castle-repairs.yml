@@ -7,6 +7,8 @@ on:
       - 'src/main/java/org/beckenburg/SceneRenderer.java'
       - 'src/main/java/org/beckenburg/FixtureLighting.java'
       - 'src/main/java/org/beckenburg/CastleHubArchitecturalPlan.java'
+      - 'src/main/java/org/beckenburg/CastlePortalTrim.java'
+      - 'src/test/java/org/beckenburg/CastlePortalTrimTest.java'
       - 'src/test/java/org/beckenburg/LightingOcclusionRepairTest.java'
       - 'src/test/java/org/beckenburg/CastleLightingPlacementRepairTest.java'
       - 'src/test/java/org/beckenburg/CastleFurnitureWallAuditTest.java'
@@ -20,6 +22,9 @@ on:
       - 'src/main/java/org/beckenburg/LanHost.java'
       - 'src/test/java/org/beckenburg/GhostAiNavigationAuditTest.java'
       - 'src/main/java/org/beckenburg/GhostAiScenarioRunner.java'
+      - 'src/main/java/org/beckenburg/LanGhostPursuit.java'
+      - 'src/test/java/org/beckenburg/GhostAiScenarioRunnerTest.java'
+      - 'src/test/java/org/beckenburg/LanGhostPursuitTest.java'
       - 'src/test/java/org/beckenburg/GhostAiScenarioRunnerTest.java'
       - 'src/main/java/org/beckenburg/AssetImportDialog.java'
       - 'src/main/java/org/beckenburg/ImportedAssetLibrary.java'
@@ -49,6 +54,7 @@ on:
       - 'src/test/java/org/beckenburg/ImportedBookMaterialTest.java'
       - 'src/test/java/org/beckenburg/CharacterBillboardAnchorTest.java'
       - 'src/test/java/org/beckenburg/CastleLiveRepairVisualTest.java'
+      - 'src/test/java/org/beckenburg/CastleResidentArtRenderAudit.java'
       - 'src/main/java/org/beckenburg/CastleSurroundings.java'
       - 'src/main/java/org/beckenburg/VanArrivalStreet.java'
       - 'tools/ggbot_blend_export.py'
@@ -60,7 +66,7 @@ on:
       - '.github/workflows/focused-castle-repairs.yml'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   focused-castle-tests:
     runs-on: windows-latest
@@ -127,6 +133,28 @@ jobs:
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.GgBotBlenderSourceUvTest
           if errorlevel 1 exit /b 1
+      - name: Verify switch model scales, wall-facing and captured in-game screenshot
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\CastleSwitchMountTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.CastleSwitchMountTest
+          if errorlevel 1 exit /b 1
+      - name: Diagnose castle upper-floor wall cap occlusion (DEV-272)
+        continue-on-error: true
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\CastleWallCapsTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.CastleWallCapsTest build/e2e/castle-repairs
+          if errorlevel 1 exit /b 1
+      - name: Verify all authored Castle door reveals remain inside their own lintels and room bounds
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\CastlePortalTrimTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.CastlePortalTrimTest build/e2e/castle-repairs
+          if errorlevel 1 exit /b 1
       - name: Verify on-demand editor audit (diagnostic only)
         continue-on-error: true
         shell: cmd
@@ -162,13 +190,14 @@ jobs:
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.GhostAiNavigationAuditTest
           if errorlevel 1 exit /b 1
-      - name: Diagnostic — deterministic multi-species ghost action scenarios
-        continue-on-error: true
+      - name: Enforce physical-victim gate against synthetic sound and STRIKE-biased AI
         shell: cmd
         run: |
-          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\GhostAiScenarioRunnerTest.java
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\GhostAiScenarioRunnerTest.java src\test\java\org\beckenburg\LanGhostPursuitTest.java
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.GhostAiScenarioRunnerTest
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.LanGhostPursuitTest
           if errorlevel 1 exit /b 1
       - name: Book source-atlas and NPC world-pivot diagnostics
         continue-on-error: true
@@ -196,6 +225,46 @@ jobs:
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.CastleLiveRepairVisualTest
           if errorlevel 1 exit /b 1
+      - name: Verify actual Castle NPC foot pixels at every unobstructed angle (diagnostic)
+        shell: cmd
+        run: |
+          if not exist build\test mkdir build\test
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\CastleResidentArtRenderAudit.java src\test\java\org\beckenburg\GroundedSpriteFeetTest.java src\test\java\org\beckenburg\SpriteFloorContactTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.GroundedSpriteFeetTest
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.SpriteFloorContactTest
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.CastleResidentArtRenderAudit build/e2e/npc-grounding
+          if errorlevel 1 exit /b 1
+      - name: Archive exact in-game NPC captures, every resident and four directions
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: castle-npc-grounding-actual-game
+          path: build/e2e/npc-grounding/*
+          if-no-files-found: warn
+      - name: Publish all in-engine diagnostic screenshots including failed contacts
+        if: success()
+        shell: pwsh
+        run: |
+          $dest = "development/levels/previews/npc-ground-proof-2026-11-04/run-${{ github.run_id }}"
+          New-Item -ItemType Directory -Force -Path $dest | Out-Null
+          Copy-Item "build/e2e/npc-grounding/*" $dest -Force
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "$dest"
+          if (-not (git status --porcelain)) { Write-Host "Already published"; exit 0 }
+          git commit -m "Preserve exact renderer NPC view and foot grounding screenshots"
+          if ($LASTEXITCODE -ne 0) { throw "Cannot commit NPC screenshots" }
+          for ($attempt=1; $attempt -le 4; $attempt++) {
+            git pull --rebase origin main
+            if ($LASTEXITCODE -ne 0) { throw "Evidence rebase conflict" }
+            git push origin HEAD:main
+            if ($LASTEXITCODE -eq 0) { Write-Host "Actual PNGs published"; exit 0 }
+            Start-Sleep -Seconds $attempt
+          }
+          throw "Could not publish screenshot evidence without force"
       - name: Preserve castle inspection images
         if: always()
         uses: actions/upload-artifact@v4

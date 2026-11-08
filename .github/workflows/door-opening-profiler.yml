@@ -6,7 +6,10 @@ on:
     paths:
       - '.github/workflows/door-opening-profiler.yml'
       - 'src/test/java/org/beckenburg/DoorOpeningFrameProfile.java'
+      - 'src/test/java/org/beckenburg/ShellRegionRevisionCacheTest.java'
       - 'src/test/java/org/beckenburg/HouseDoorShadowCacheParityTest.java'
+      - 'src/test/java/org/beckenburg/StationaryDoorShadowRetentionTest.java'
+      - 'src/test/java/org/beckenburg/StationaryDoorShadowAlternationTest.java'
       - 'src/test/java/org/beckenburg/ResidentVertexPayloadTest.java'
       - 'src/main/java/org/beckenburg/HouseMap.java'
       - 'src/main/java/org/beckenburg/SceneRenderer.java'
@@ -46,6 +49,13 @@ jobs:
           javac --release 17 -encoding UTF-8 -cp build\\classes -d build\\test src\\test\\java\\org\\beckenburg\\PortalLightCellFilterTest.java
           if errorlevel 1 exit /b 1
           java -ea -cp "build\\classes;build\\test" org.beckenburg.PortalLightCellFilterTest
+      - name: Assert static shell materials and lighting revisions are reused between frames
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\ShellRegionRevisionCacheTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.ShellRegionRevisionCacheTest
+          if errorlevel 1 exit /b 1
       - name: Compare warmed and fresh House door shadow responses
         continue-on-error: true
         shell: cmd
@@ -53,10 +63,28 @@ jobs:
           javac --release 17 -encoding UTF-8 -cp build\\classes -d build\\test src\\test\\java\\org\\beckenburg\\HouseDoorShadowCacheParityTest.java
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp "build\\classes;build\\test" org.beckenburg.HouseDoorShadowCacheParityTest
+      - name: Verify same-side retained shadow rays across a real House door
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\StationaryDoorShadowRetentionTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.StationaryDoorShadowRetentionTest
+          if errorlevel 1 exit /b 1
+      - name: Validate alternating door-state shadow archive versus fresh physical rays
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\StationaryDoorShadowAlternationTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.StationaryDoorShadowAlternationTest
+          if errorlevel 1 exit /b 1
       - name: Capture CPU-software House door frame profile
         continue-on-error: true
         shell: cmd
         run: java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.DoorOpeningFrameProfile cpu
+      - name: Capture same-runner unarchived door-ray baseline for A/B comparison
+        continue-on-error: true
+        shell: cmd
+        run: java -Djava.awt.headless=true -Dbeckenburg.lighting.doorShadowArchive.disabled=true -ea -cp "build\classes;build\test" org.beckenburg.DoorOpeningFrameProfile submission
       - name: Capture resident GPU-submission revision and upload profile (not real GPU timer)
         continue-on-error: true
         shell: cmd

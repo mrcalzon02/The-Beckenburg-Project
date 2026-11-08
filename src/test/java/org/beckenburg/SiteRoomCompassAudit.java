@@ -349,8 +349,15 @@ public final class SiteRoomCompassAudit {
         CastleHubMap map=new CastleHubMap();
         var scene=new SceneRenderer();scene.setRenderSize(320,200);
         scene.setPsxPreset(PsxPipeline.Preset.CLASSIC);scene.lamp=true;
-        StringBuilder csv=new StringBuilder("room_name,floor,camera_x,camera_z,center_traversable,usable_camera,north,east,south,west\n");
-        for(var room:CastleRooms.ALL){
+        StringBuilder csv=new StringBuilder("room_id,room_name,access_class,floor,camera_x,camera_z,center_traversable,usable_camera,north,east,south,west\n");
+        var rooms=new ArrayList<>(CastleRooms.ALL);
+        // The signed annex and basement are authoritative native programmes too.
+        // ALL is the original core/upper ownership list, not the complete Castle.
+        for(var space:CastleAnnex.SPACES)if(CastleLevelEdits.current().surfaces().stream().anyMatch(s->s.id().equals("annex-floor-"+space.id())&&s.kind()==CastleLevelEdits.Kind.FLOOR))
+            rooms.add(new CastleRooms.Room(space.id(),space.name(),space.x0(),space.z0(),space.x1(),space.z1(),0,3.4,false,MaterialAtlas.STONE));
+        if(CastleCellar.active())rooms.addAll(CastleCellarLayout.ROOMS);
+        if(rooms.stream().map(CastleRooms.Room::id).distinct().count()!=rooms.size())throw new IllegalStateException("Duplicate Castle audit room");
+        for(var room:rooms){
             double cx=(room.x0()+room.x1())/2,cz=(room.z0()+room.z1())/2;
             boolean valid=map.traversable(cx,cz,room.floor());
             double px=cx,pz=cz;
@@ -378,7 +385,8 @@ public final class SiteRoomCompassAudit {
                 }catch(Exception e){filenames[face]="RENDER_ERROR";Files.writeString(
                     roomDir.resolve(FACING[face]+".error.txt"),e.toString());}
             }
-            csv.append(escape(room.name())).append(',').append(fmt(room.floor()))
+            boolean sealed=CastleGroundLayout.SEALED.contains(room.id())||CastleUpperLayout.SEALED.contains(room.id());
+            csv.append(escape(room.id())).append(',').append(escape(room.name())).append(',').append(sealed?"SEALED_CONTEXT_INSPECTION":"OPEN_PROGRAMME").append(',').append(fmt(room.floor()))
                 .append(',').append(Double.isFinite(px)?fmt(px):"").append(',')
                 .append(Double.isFinite(pz)?fmt(pz):"").append(',').append(valid)
                 .append(',').append(Double.isFinite(px)).append(',')
@@ -387,9 +395,9 @@ public final class SiteRoomCompassAudit {
         Files.writeString(out.resolve("castle-rooms.csv"),csv,StandardCharsets.UTF_8);
         Files.writeString(out.resolve("castle-purpose-review.txt"),
             "Castle Beckenburg is a headquarters, not a 15-zone investigation map. "
-            +"Ten authored CastleRooms are audited separately, preserving the independent "
+            +rooms.size()+" authored native/core/annex/cellar spaces are audited separately, preserving the independent "
             +"editor/doors/stations geometry. Room names and four cardinal captures "
-            +"do not substitute for a full navigability/playtest review.\n");
+            +"do not substitute for a full navigability/playtest review. Locally clear camera positions are not proof of player reachability. SEALED_CONTEXT_INSPECTION cameras are placed inside permanently inaccessible context for join inspection only.\n");
     }
     public static void main(String[] args)throws Exception{
         Path output=Path.of("build/map-first-principles-audit");

@@ -21,16 +21,24 @@ public final class GhostSpriteAtlasIntegrationTest {
         return present;
     }
     public static void main(String[] args)throws Exception{
-        String expected="8cdbe69101a951c0862b81a4b3b9a7555e9be8068f735466c2c77b5cd33a876d";
+        // 2026-11-02 targeted source-alpha cleanup (Possessive and Twins).
+        // Reassembled from all nine shipped binary parts and independently
+        // SHA-256 checked; any future unexpected payload change still fails.
+        String expected="e436b9980906dafc8aeca16fe556582638bc40caae10789734d6057e5923b24c";
         try(InputStream src=GhostSpriteAtlas.class.getResourceAsStream("ghost-sprite-expansion-v3.zip")){
             check(src!=null,"missing sprite archive from JAR classpath");
             MessageDigest md=MessageDigest.getInstance("SHA-256");
             byte[] data=new byte[8192];int n;long size=0;
             while((n=src.read(data))>=0){md.update(data,0,n);size+=n;}
-            check(size==6868626L,"ghost resource bytes changed: "+size);
+            // Always finish the digest before asserting archive size. A ZIP
+            // repack and changed PNG payload must be distinguishable in CI.
             StringBuilder hex=new StringBuilder();
             for(byte b:md.digest())hex.append(String.format("%02x",b&255));
-            check(expected.equals(hex.toString()),"ghost archive checksum mismatch");
+            String actual=hex.toString();
+            check(size==6883065L,"ghost resource bytes changed: expected=6883065 actual="+size
+                +" actualSha256="+actual+" approvedSha256="+expected);
+            check(expected.equals(actual),"ghost archive checksum mismatch: actual="
+                +actual+" approved="+expected);
         }
         check(GhostSpriteAtlas.installed(),"actual ghost atlas not loaded");
         check(GhostSpriteAtlas.atlasCount()==23*8,"missing ghost-direction atlas");
@@ -59,6 +67,6 @@ public final class GhostSpriteAtlasIntegrationTest {
         check(DirectionalSprites.frame("observer",0)!=null,"legacy player art intact");
         check(DirectionalSprites.frame("ancient_shade",4,LanGhostAnimation.Phase.WINDUP,2)!=null,
                 "live directional API missing Ancient pose");
-        System.out.println("PASS: verified 6.9MB archived bytes, 23 ghosts, 184 facing atlases, 8 states x 4 frames, preserved alpha/legacy bodies");
+        System.out.println("PASS: verified 6,883,065 archived bytes, 23 ghosts, 184 facing atlases, 8 states x 4 frames, preserved alpha/legacy bodies");
     }
 }

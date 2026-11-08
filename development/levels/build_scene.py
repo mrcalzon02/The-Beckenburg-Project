@@ -113,6 +113,14 @@ bpy.ops.object.light_add(type='SUN',location=(15,-15,20));bpy.context.object.rot
 camera_poses={'castle-rebuild':((59,-65,38),(22,-18,2)),'blackpine':((79,-85,46),(33,-30,1.5)),
               'house':((28,-34,3.8),(19,-19,3.0)),
               'briar-rebuild':((36,-39,22),(17,-16,1.4)),
+              'briar-rebuild-fit':((36,-39,22),(17,-16,1.4)),
+              'briar-rebuild-landscape':((38,-47,29),(15,-19,0)),
+              'briar-rebuild-envelope':((38,-47,29),(15,-19,0)),
+              'briar-rebuild-functions':((38,-47,29),(15,-19,0)),
+              'briar-rebuild-fitout':((38,-47,29),(15,-19,0)),
+              'briar-rebuild-story':((38,-47,29),(15,-19,0)),
+              'briar-rebuild-services':((38,-47,29),(15,-19,0)),
+              'briar-rebuild-furnishings':((38,-47,29),(15,-19,0)),
               'farmhouse':((55,-48,15),(27,-20,2.8)),
               'school':((58,-57,17),(28,-24,3.5)),
               'arrival-road':((12,-14,9),(0,5,1.0)),
@@ -130,6 +138,30 @@ scene.view_settings.view_transform='Standard';scene.view_settings.look='None';sc
 scene['level_id']=definition['id'];scene['revision']=definition['revision'];scene['source_of_truth']=('BlackpineLevel.java' if name=='blackpine' else 'LevelPlans.java')+' / LevelDefinition.java; regenerate after layout edits'
 scene['production_status']='development dressed site; gameplay acceptance pending' if name=='blackpine' else 'authored scene; see acceptance notes'
 sys.path.insert(0,str(ROOT/'development/levels'));import scene_metadata;scene_metadata.apply(scene,definition)
+if name=='briar-rebuild-fit':
+    scene['source_of_truth']='HouseRebuildFittings.java / HouseRebuild.java / LevelDefinition.java; regenerate after layout edits'
+    scene['production_status']='construction fixture-fit candidate; terrain/boundary and complete map acceptance pending'
+if name=='briar-rebuild-landscape':
+    scene['source_of_truth']='HouseRebuildLandscape.java / HouseRebuildFittings.java / editor landscape-world; regenerate after layout edits'
+    scene['production_status']='landscape construction candidate; visual landscape gate and complete map acceptance pending'
+if name=='briar-rebuild-envelope':
+    scene['source_of_truth']='HouseRebuildEnvelope.java / HouseRebuildLandscape.java / editor landscape-world; regenerate after layout edits'
+    scene['production_status']='dwelling envelope construction candidate; complete furnishing/utility/story and mission acceptance pending'
+if name=='briar-rebuild-furnishings':
+    scene['source_of_truth']='HouseRebuildFurnishings.java -> actual45props, generated180triangle fridge, retained supported coat and terrain-contact garden functions'
+    scene['production_status']='Isolated furnished construction candidate; encounters, saved migration, live promotion and complete location gates remain open'
+if name=='briar-rebuild-services':
+    scene['source_of_truth']='HouseRebuildServices.java -> exact runtime geometry, original radiators, source-contact heating/water/waste and preserved visible generator feed'
+    scene['production_status']='Isolated household services construction candidate; live promotion, fixture refinement, encounters and complete map gates remain open'
+if name=='briar-rebuild-story':
+    scene['source_of_truth']='HouseRebuildStory.java / HouseRebuildFitout.java / LooseClutter.java / SiteStories.java; regenerate after edits'
+    scene['production_status']='supported household-story construction candidate; encounter/promotion/migration/hardware acceptance pending; energy haze is runtime postprocessing'
+if name=='briar-rebuild-fitout':
+    scene['source_of_truth']='HouseRebuildFitout.java / HouseServiceNetwork.java / HouseRebuildFunctions.java; regenerate after edits'
+    scene['production_status']='fit-out construction candidate; story/promotion/mission/hardware gates open; sanctuary is analytic runtime postprocessing'
+if name=='briar-rebuild-functions':
+    scene['source_of_truth']='HouseRebuildFunctions.java / HouseRebuildEnvelope.java / editor landscape-world; regenerate after layout edits'
+    scene['production_status']='functional construction candidate; full services/detail/mission acceptance pending; analytic sanctuary haze is runtime postprocessing'
 scene['hiding_density']=json.loads((SRC/'scene-settings.json').read_text()).get('hidingDensity',100);scene['hiding_note']='All potential cupboards shown for authoring; runtime geometry/collision follow the contract density'
 out=ROOT/'development/levels/blender';out.mkdir(parents=True,exist_ok=True)
 suffix='-dressed' if name=='blackpine' else ''

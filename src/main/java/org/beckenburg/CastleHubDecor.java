@@ -112,9 +112,15 @@ public final class CastleHubDecor {
             if(source<0){result.add(accent);continue;}
             String id="ground"+source;
             var support=props.stream().filter(p->p.id().equals(id)).findFirst().orElse(null);
-            if(support!=null)result.add(new Accent(accent.mesh(),support.x(),
-                support.y()+meshHeight(support.mesh())*support.scale()+.008,
-                support.z(),accent.scale(),accent.yaw()));
+            if(support!=null){
+                // The original accent yaw is relative to its original table
+                // orientation. Preserve that relationship after the editor
+                // rotates the support; do not leave books/screens world-facing.
+                double yaw=accent.yaw()+support.yaw()-FURNISHINGS.get(source).yaw();
+                result.add(new Accent(accent.mesh(),support.x(),
+                    support.y()+meshHeight(support.mesh())*support.scale()+.008,
+                    support.z(),accent.scale(),yaw));
+            }
         }
         return List.copyOf(result);
     }

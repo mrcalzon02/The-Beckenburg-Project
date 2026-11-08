@@ -50,7 +50,9 @@ public final class WeatherSky {
                 int b=(int)clamp((36+14*pos+d*(111+11*pos))*(1-cloud*.48),0,255);
                 g.setColor(new Color(r,gr,b));g.fillRect(0,row,width,2);
             }
-            int bands=(int)(4+cloud*28);
+            // A clear night has no cloud layer. A fixed minimum previously left
+            // four hard polygon wisps floating over the Castle horizon at cover0.
+            int bands=cloud<=0?0:(int)(4+cloud*28);
             for(int i=0;i<bands;i++){
                 long h=mix(seed+i*0x9e3779b97f4a7c15L);
                 double direction=((h&0xffff)/65536.0-.5)*2*Math.PI;
@@ -66,7 +68,7 @@ public final class WeatherSky {
                 int hh=(int)Math.round((5+((h>>>41)&11)+cloud*10)*focal/153.0);
                 if(x+w<0||x-w>width||y+hh<0||y-hh>height)continue;
                 int shade=(int)(28+sky.daylight()*70*(1-cloud*.85));
-                g.setColor(new Color(shade,shade+2,shade+6,(int)(35+cloud*140)));
+                g.setColor(new Color(shade,shade+2,shade+6,(int)((35+cloud*140)*Math.min(1,cloud*6))));
                 g.fillPolygon(new int[]{x,x+w/4,x+w*3/4,x+w,x+w*3/4,x+w/5},
                     new int[]{y+hh/2,y,y-2,y+hh/2,y+hh,y+hh},6);
             }

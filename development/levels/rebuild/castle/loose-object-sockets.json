@@ -1,0 +1,90 @@
+{
+  "authority": "CastleClutterWorld.SOCKETS and actual CastleLevelEdits parent transforms; this is a derived review record",
+  "physics": "Existing LooseClutter10Hz/20swept substeps; actual native supports/openings and source mesh contact",
+  "owner": "Local protected Castle hub, seat0. No campaign inventory, live mission ghost or network authority is created.",
+  "reset": "New hub instance derives fresh bodies from available native parents; live parent deletion drops an existing body naturally. Body transforms do not rewrite editor scenes.",
+  "sockets": [
+    {
+      "id": 1,
+      "parent": "ground37",
+      "expected_parent_mesh": "dinner_table_1",
+      "kind": "MUG",
+      "relative_x": -0.4,
+      "relative_z": -0.18,
+      "purpose": "Common-room tea mug",
+      "movable": true
+    },
+    {
+      "id": 2,
+      "parent": "ground37",
+      "expected_parent_mesh": "dinner_table_1",
+      "kind": "TIN",
+      "relative_x": 0.4,
+      "relative_z": 0.18,
+      "purpose": "Common-room tea tin",
+      "movable": true
+    },
+    {
+      "id": 3,
+      "parent": "upper3",
+      "expected_parent_mesh": "dinner_table_1",
+      "kind": "BOOK",
+      "relative_x": -0.45,
+      "relative_z": 0.15,
+      "purpose": "Upper reading-room ledger",
+      "movable": true
+    },
+    {
+      "id": 4,
+      "parent": "upper-bedside-0",
+      "expected_parent_mesh": "bedside_table_1",
+      "kind": "MUG",
+      "relative_x": 0.0,
+      "relative_z": 0.0,
+      "purpose": "Resident's bedside mug",
+      "movable": true
+    },
+    {
+      "id": 5,
+      "parent": "finish-vault-table",
+      "expected_parent_mesh": "dinner_table_1",
+      "kind": "BOOK",
+      "relative_x": -0.4,
+      "relative_z": -0.15,
+      "purpose": "Collection-store accession ledger",
+      "movable": true
+    },
+    {
+      "id": 6,
+      "parent": "finish-vault-table",
+      "expected_parent_mesh": "dinner_table_1",
+      "kind": "CANDLESTICK",
+      "relative_x": 0.4,
+      "relative_z": 0.15,
+      "purpose": "Unlit conservation-store candlestick",
+      "movable": true
+    }
+  ],
+  "retained_models": {
+    "assets/runtime/models/level_loose_mug_worn.glb": {
+      "bytes": 25004,
+      "sha256": "449cdc544ed7304630ad63a128acabb03d8fb3b85182abdb04d7b50c90d3320a",
+      "unchanged_original_runtime_asset": true
+    },
+    "assets/runtime/models/level_loose_tin_worn.glb": {
+      "bytes": 35672,
+      "sha256": "fef263a52b924f87a3aaccc1a4cbf7064de1f77abe278c8478080f83c682a40e",
+      "unchanged_original_runtime_asset": true
+    },
+    "assets/runtime/models/level_loose_book_worn.glb": {
+      "bytes": 37524,
+      "sha256": "cbeb20e3f7d0575e196cc3c14c6b16607a2c9d1623cb22301b62f523126a3bc8",
+      "unchanged_original_runtime_asset": true
+    },
+    "assets/runtime/models/level_loose_candlestick_worn.glb": {
+      "bytes": 40652,
+      "sha256": "efdfb52216d5d3f28c614624154c29c4ab4a32a4bd5b239aa0f1674c03362134",
+      "unchanged_original_runtime_asset": true
+    }
+  }
+}

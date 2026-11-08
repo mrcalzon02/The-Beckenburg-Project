@@ -1,0 +1,5 @@
+PASS3 background residences/fences/solids moved12m down street; actual rendered clearance=6.295m; models, road and van retained
+2026-11-07T07:49:06.918590200Z [main] RENDER SLOW stage=idle faces=92811 visible_faces=42448 culled_faces=50363 target=1000x625 build_ms=1033 lighting_raster_ms=2043
+2026-11-07T07:49:09.075448600Z [main] RENDER SLOW stage=idle faces=80797 visible_faces=57752 culled_faces=23045 target=1000x625 build_ms=5 lighting_raster_ms=2099
+2026-11-07T07:49:11.296841900Z [main] RENDER SLOW stage=idle faces=64259 visible_faces=8706 culled_faces=55553 target=1000x625 build_ms=0 lighting_raster_ms=532
+PASS dwelling envelope: 161 closed outward parts, 1948 physical/1664 visible triangles; one20triangle main roof; 11 real openings, source edit/material independence, porch contact and all15zone/socket traversal at 53324 positions; digest=64b6f07f31b2eb6d22d8a812b5fd507bfc0de1e21e55ff6218610a7c140dbb13

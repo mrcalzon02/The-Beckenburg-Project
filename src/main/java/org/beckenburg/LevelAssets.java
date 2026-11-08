@@ -18,13 +18,19 @@ public final class LevelAssets {
         "level_camp_tent_fitted_pitch_04","level_camp_tent_fitted_pitch_05","level_camp_tent_fitted_pitch_06");
     public static final Set<String> TAILORED_FABRIC=Set.of("level_camp_tent_ridge_tailored","level_camp_tent_dome_tailored","level_camp_bedroll_rolled_tailored");
     public static final Set<String> AUTHORED_SURFACES=Set.of(
-        "level_castle_armour_display","level_castle_armour_label","level_castle_museum_rope","level_castle_four_poster_bed","level_castle_great_fireplace",
+        "level_house_fridge_worn",
+        "level_castle_keeper_statue",
+        "level_castle_training_banishment","level_castle_training_cleansing","level_castle_training_absolution",
+        "level_workbench","level_workbench_worn",
+        "level_castle_armour_display","level_castle_armour_label","level_castle_museum_rope","level_castle_four_poster_bed","level_castle_great_fireplace","level_castle_tapestry","level_castle_restoration_painting","level_castle_library_rug","level_castle_heraldic_arms",
         "level_camp_dock_shed_authored","level_camp_rowboat_authored","level_camp_folding_chair_authored",
         "level_camp_cooler_authored","level_camp_portable_toilet_open_authored","level_camp_portable_toilet_closed_authored",
         "level_camp_refuse_bin_authored","level_camp_heron_memorial_authored","level_camp_pavilion_fireplace_authored",
         "level_camp_bedroll_rolled_authored","level_trace_generator_authored","level_camp_pavilion_authored",
         "level_camp_picnic_table_authored","level_camp_fire_ring_authored");
     public static final Set<String> MODELS=Set.of(
+        "level_house_coat_hung",
+        "level_castle_plant_connections","level_castle_plant_boiler",
         "level_castle_retail_shelf",
         "bed_4","bed_5","bed_1","bed_2","bedside_table_1","toilet_mp_1","carpet_mp_1",
         "photo_frame_mp_1","painting_1","clock_1","wooden_crate_1","pipe_1","book_mp_2","plate_mp_1",

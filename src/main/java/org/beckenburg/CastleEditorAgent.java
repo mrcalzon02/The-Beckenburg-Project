@@ -145,6 +145,7 @@ public final class CastleEditorAgent implements EditorAgentService.Host<CastleLe
     }
     public List<String> operations(){return PARAMETERS.keySet().stream().sorted().toList();}
     private static final Map<String,Map<String,String>> PARAMETERS=Map.ofEntries(
+        Map.entry("rebuild-castle",Map.of("baseline",String.join("|",java.util.Arrays.stream(CastleRebuildUpgrade.Baseline.values()).map(Enum::name).toList()))),
         Map.entry("set-spawn",Map.of("x","number","z","number","yaw","number")),
         Map.entry("put-surface",Map.of("id","string","kind",String.join("|",java.util.Arrays.stream(CastleLevelEdits.Kind.values()).map(Enum::name).toList()),
             "x0","number","z0","number","x1","number","z1","number","base","number","height","number","material","integer")),
@@ -175,6 +176,9 @@ public final class CastleEditorAgent implements EditorAgentService.Host<CastleLe
                 scene.setNavBlocked(Integer.parseInt(args.get("x")),Integer.parseInt(args.get("z")),blocked);
             }
             case "place-prop" -> scene.placePaletteProp(args.get("id"),args.get("mesh"),number(args,"x"),number(args,"y"),number(args,"z"));
+            case "rebuild-castle" -> {
+                CastleRebuildUpgrade.apply(scene,CastleRebuildUpgrade.Baseline.valueOf(args.get("baseline")));
+            }
             case "set-spawn" -> {
                 scene.setSpawn(number(args,"x"),number(args,"z"),number(args,"yaw"));
             }

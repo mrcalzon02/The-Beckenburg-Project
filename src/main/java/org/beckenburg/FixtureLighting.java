@@ -28,6 +28,36 @@ public final class FixtureLighting {
  private long generation,invalidatedCells,consideredSources;
  /** Visibility changes caused by a portal are source-specific. */
  private long[] sourceOcclusionRevisions=new long[0];
+ /** Bounded journal: a chunk offscreen during several door transitions can
+  * replay exactly the ray changes it missed. If history rolls over, re-test
+  * the affected source conservatively instead of retaining stale light. */
+ private record DoorShadowChange(long revision,LevelDefinition.Portal house,
+                                CastleDoorSlots.Slot castle){}
+ private static final int DOOR_JOURNAL_LIMIT=64;
+ private final ArrayDeque<DoorShadowChange> doorJournal=new ArrayDeque<>();
+ private long discardedDoorChangesThrough=-1;
+ // Distinguish one door transition from multiple portal changes. No archive
+ // is valid after a different door moves, or a structural map revision.
+ private long doorTransitionSerial;
+ private DoorShadowChange lastDoorTransition;
+ private void recordDoorChange(long version,LevelDefinition.Portal house,
+                               CastleDoorSlots.Slot castle){
+  var change=new DoorShadowChange(version,house,castle);
+  doorJournal.addLast(change);
+  lastDoorTransition=change;
+  doorTransitionSerial++;
+  if(doorJournal.size()>DOOR_JOURNAL_LIMIT)
+   discardedDoorChangesThrough=doorJournal.removeFirst().revision();
+ }
+ private boolean stationaryRayChanged(Object key,long seen){
+  if(seen<=discardedDoorChangesThrough)return true;
+  for(var change:doorJournal){
+   if(change.revision()<=seen)continue;
+   if(change.house()!=null&&mayCrossChangedPortal(key,change.house()))return true;
+   if(change.castle()!=null&&castleDoorMayCrossCachedRay(key,change.castle()))return true;
+  }
+  return false;
+ }
  private static <K,V> Map<K,V> bounded(int limit){
   return new LinkedHashMap<K,V>(2048,.75f,true){
    @Override protected boolean removeEldestEntry(Map.Entry<K,V> eldest){
@@ -74,13 +104,69 @@ public final class FixtureLighting {
   private final Map<Object,Boolean> values=new HashMap<>();
   private long epoch=-1,globalEpoch=-1;
   private final long[] capturedSourceRevisions;
+  private long seenDoorTransitions;
+  // Reuse static visibility for the opposite pose of exactly ONE portal.
+  // Each immutable chunk owns at most one alternate, never 2^N door states.
+  private LevelDefinition.Portal alternatePortal;
+  private boolean alternateOpen;
+  private Map<Object,Boolean> alternateRays=new HashMap<>();
   private StationaryShadows(FixtureLighting owner){
    this.owner=owner;this.capturedSourceRevisions=new long[owner.sources.size()];
+   this.seenDoorTransitions=owner.doorTransitionSerial;
   }
-  public void release(){owner.stationaryShadowEntries-=values.size();values.clear();epoch=-1;globalEpoch=-1;}
+  public void release(){
+   owner.stationaryShadowEntries-=values.size();values.clear();
+   owner.discardAlternateShadows(this);epoch=-1;globalEpoch=-1;
+  }
+  /** Focused diagnostic for verifying retained actual source/ray entries. */
+  int entriesForSource(int source){
+   int count=0;for(var key:values.keySet())if(shadowSourceId(key)==source)count++;
+   return count;
+  }
  }
 
- private long stationaryShadowEntries;
+ private long stationaryShadowEntries,stationaryArchiveEntries,stationaryArchiveReuses;
+ private static final int MAX_ALTERNATE_SHADOW_RAYS=150_000;
+ private final boolean alternateDoorShadowCache=
+     !Boolean.getBoolean("beckenburg.lighting.doorShadowArchive.disabled");
+ public long archivedStationaryShadowEntries(){return stationaryArchiveEntries;}
+ public long reusedStationaryDoorShadowRays(){return stationaryArchiveReuses;}
+ private void discardAlternateShadows(StationaryShadows shadow){
+  stationaryArchiveEntries-=shadow.alternateRays.size();
+  shadow.alternateRays.clear();
+  shadow.alternatePortal=null;
+ }
+ private void exchangeDoorShadows(StationaryShadows shadow,
+         LevelDefinition.Portal door){
+  boolean open=door.door()?map.doorOpen(door.id()):map.windowOpen(door.id());
+  boolean restore=shadow.alternatePortal==door && shadow.alternateOpen==open;
+  Map<Object,Boolean> old=shadow.alternateRays;
+  int capacity=Math.max(0,MAX_ALTERNATE_SHADOW_RAYS
+      -(int)(stationaryArchiveEntries-old.size()));
+  var newlyArchived=new HashMap<Object,Boolean>();
+  var scan=shadow.values.entrySet().iterator();
+  while(scan.hasNext()){
+   var entry=scan.next();
+   int id=shadowSourceId(entry.getKey());
+   if(id<0||id>=sourceOcclusionRevisions.length){
+    scan.remove();continue;
+   }
+   long seen=shadow.capturedSourceRevisions[id];
+   if(seen==sourceOcclusionRevisions[id]
+       ||!stationaryRayChanged(entry.getKey(),seen))continue;
+   if(newlyArchived.size()<capacity)
+    newlyArchived.put(entry.getKey(),entry.getValue());
+   scan.remove();
+  }
+  stationaryArchiveEntries-=old.size();
+  if(restore)for(var entry:old.entrySet())
+   if(shadow.values.putIfAbsent(entry.getKey(),entry.getValue())==null)
+    stationaryArchiveReuses++;
+  shadow.alternateRays=newlyArchived;
+  shadow.alternatePortal=door;
+  shadow.alternateOpen=!open;
+  stationaryArchiveEntries+=newlyArchived.size();
+ }
  private StationaryShadows activeShadows;
  public StationaryShadows newStationaryShadows(){return new StationaryShadows(this);}
  public StationaryShadows useStationaryShadows(StationaryShadows next){
@@ -92,19 +178,26 @@ public final class FixtureLighting {
   var previous=activeShadows;
   if(next!=null){
    if(next.owner!=this)throw new IllegalArgumentException("Shadows belong to a different lighting scene");
+   long transitions=doorTransitionSerial-next.seenDoorTransitions;
+   boolean oneHouseDoor=alternateDoorShadowCache&&transitions==1
+       &&lastDoorTransition!=null&&lastDoorTransition.house()!=null;
    if(next.epoch!=regionEpoch){
     int before=next.values.size();
     if(next.globalEpoch!=occluderEpoch
         ||next.capturedSourceRevisions.length!=sourceOcclusionRevisions.length){
-     // A real global structural change invalidates every visibility result.
-     next.values.clear();
+     // A true structural change invalidates both portal poses.
+     next.values.clear();discardAlternateShadows(next);
+    }else if(oneHouseDoor){
+     exchangeDoorShadows(next,lastDoorTransition.house());
     }else{
-     // A single doorway only changes rays from lamps that can intersect
-     // that portal. Preserve every other source's immutable visibility.
+     // Keep the original conservative logic for unrelated/multiple doors.
+     if(transitions!=0)discardAlternateShadows(next);
      next.values.entrySet().removeIf(entry->{
       int id=shadowSourceId(entry.getKey());
-      return id<0||id>=sourceOcclusionRevisions.length
-          ||next.capturedSourceRevisions[id]!=sourceOcclusionRevisions[id];
+      if(id<0||id>=sourceOcclusionRevisions.length)return true;
+      long seen=next.capturedSourceRevisions[id];
+      return seen!=sourceOcclusionRevisions[id]
+          &&stationaryRayChanged(entry.getKey(),seen);
      });
     }
     stationaryShadowEntries-=before-next.values.size();
@@ -112,7 +205,11 @@ public final class FixtureLighting {
         sourceOcclusionRevisions.length);
     next.globalEpoch=occluderEpoch;
     next.epoch=regionEpoch;
+   }else if(transitions!=0){
+    // A distant portal move cannot be assumed safe for a later ray.
+    discardAlternateShadows(next);
    }
+   next.seenDoorTransitions=doorTransitionSerial;
   }
   activeShadows=next;return previous;
  }
@@ -361,6 +458,67 @@ public final class FixtureLighting {
   lodQueries=lodHits=lodVisibilityChecks=0;
   consideredSources=invalidatedCells=0;}
  private long castleDoorRevision=-1;
+ private final Map<String,Boolean> castleDoorStates=new HashMap<>();
+ /** Conservative swept volume: wood leaves rotate up to half the slot width
+  * off the wall; the portcullis rises by its full clear height. Lighting
+  * invalidation must cover BOTH poses, not just the doorway plane. */
+ private static double[] castleDoorBounds(CastleDoorSlots.Slot slot,double pad){
+  double along=slot.width()*.5+.4+pad;
+  double normal=(slot.gate()?.55:slot.width()*.5+.45)+pad;
+  double x=slot.horizontal()?along:normal,z=slot.horizontal()?normal:along;
+  return new double[]{slot.centerX()-x,slot.bottom()-.4-pad,slot.centerZ()-z,
+      slot.centerX()+x,slot.bottom()+(slot.gate()?2:1)*slot.clearHeight()+.4+pad,
+      slot.centerZ()+z};
+ }
+ private static boolean castleDoorRayCrosses(double ax,double ay,double az,
+      double bx,double by,double bz,CastleDoorSlots.Slot slot,double pad){
+  var box=castleDoorBounds(slot,pad);
+  return CastleDoorSlots.crossesBox(ax,ay,az,bx,by,bz,
+      box[0],box[1],box[2],box[3],box[4],box[5]);
+ }
+ private static boolean castleDoorInfluences(Source source,CastleDoorSlots.Slot slot){
+  var box=castleDoorBounds(slot,.35);
+  double dx=Math.max(box[0]-source.x,Math.max(0,source.x-box[3]));
+  double dy=Math.max(box[1]-source.y,Math.max(0,source.y-box[4]));
+  double dz=Math.max(box[2]-source.z,Math.max(0,source.z-box[5]));
+  return dx*dx+dy*dy+dz*dz<=source.radius*source.radius;
+ }
+ private boolean castleDoorMayCrossCachedRay(Object key,CastleDoorSlots.Slot slot){
+  int id=shadowSourceId(key);
+  if(id<0||id>=sources.size())return true;
+  Source source=sources.get(id);
+  if(!castleDoorInfluences(source,slot))return false;
+  double x,y,z;
+  if(key instanceof Shadow ray){
+   x=ray.x()/16.0;y=ray.y()/16.0;z=ray.z()/16.0;
+  }else if(key instanceof NormalShadow ray){
+   var p=ray.receiver();
+   x=Double.longBitsToDouble(p.x());y=Double.longBitsToDouble(p.y());
+   z=Double.longBitsToDouble(p.z());
+  }else return true;
+  // Includes receiver quantization and the normal-offset shadow sample.
+  return castleDoorRayCrosses(source.x,source.y,source.z,x,y,z,slot,.45);
+ }
+ /** The expensive source/receiver invalidation is confined to the swept leaf
+  * volume. A cell's half-diagonal margin safely covers every receiver point
+  * inside the cell, while leaving distant rooms' resident VBOs untouched. */
+ private void invalidateCastleDoor(CastleDoorSlots.Slot slot){
+  long revision=++generation;
+  recordDoorChange(revision,null,slot);
+  sight.keySet().removeIf(key->castleDoorMayCrossCachedRay(key,slot));
+  for(var source:sources){
+   if(!castleDoorInfluences(source,slot))continue;
+   sourceOcclusionRevisions[source.id]=revision;
+   eachInfluenceCell(source,key->{
+    double px=(key.x+.5)*cellSize,py=(key.y+.5)*cellSize,pz=(key.z+.5)*cellSize;
+    if(!castleDoorRayCrosses(source.x,source.y,source.z,px,py,pz,slot,
+         cellSize*.5+.45))return;
+    changedCells.put(key,revision);
+    occluderCells.put(key,revision);
+    invalidatedCells++;
+   });
+  }
+ }
  public FixtureLighting(HouseMap map){this.map=map;this.castle=null;
   for(var s:map.level().sockets())if(s.type().equals("light")){
    int control=controller(s);
@@ -399,9 +557,30 @@ public final class FixtureLighting {
   // Dynamic gate leaves change real shadow occlusion even when the clock and
   // circuits have not advanced. Retain expensive geometry caches otherwise.
   if(castle!=null&&castle.doorRevision()!=castleDoorRevision){
-   castleDoorRevision=castle.doorRevision();occluderEpoch=++generation;
-   Arrays.fill(sourceOcclusionRevisions,occluderEpoch);
-   sight.clear();colours.clear();normalColours.clear();distant.clear();
+   boolean global=castleDoorRevision<0;
+   int changes=0;
+   for(var slot:CastleDoorSlots.all()){
+    if(!CastleDoorSlots.available(slot))continue;
+    boolean open=castle.doorOpen(slot.id());
+    Boolean old=castleDoorStates.put(slot.id(),open);
+    if(old==null){if(castleDoorRevision>=0)global=true;}
+    else if(old.booleanValue()!=open){
+     if(CastleLevelEdits.current().doorType(slot.id())==CastleDoorSlots.Type.EMPTY)
+      global=true;
+     else{invalidateCastleDoor(slot);changes++;}
+    }
+   }
+   // A rapid open+close before the next render increments the map's door
+   // revision twice but leaves the actual topology UNCHANGED. Do not turn
+   // this zero-net interaction into a global light/shadow cache flush.
+   // Unknown/new slots and a newly created lighting scene still recover
+   // globally via the explicit checks above.
+   if(global){
+    occluderEpoch=++generation;
+    Arrays.fill(sourceOcclusionRevisions,occluderEpoch);
+    sight.clear();colours.clear();normalColours.clear();distant.clear();
+   }
+   castleDoorRevision=castle.doorRevision();
   }
   int cosmeticTick=(tick/6)*6;
   for(var source:sources){
@@ -422,6 +601,10 @@ public final class FixtureLighting {
  static boolean castleRayClear(CastleHubMap map,double ax,double ay,double az,double bx,double by,double bz){
   if(map==null||!Double.isFinite(ax+ay+az+bx+by+bz))return false;
   if(!map.worldSurface().clearSight(new LevelDefinition.Vec(ax,ay,az),new LevelDefinition.Vec(bx,by,bz)))return false;
+  for(var step:CastleHubArchitecturalPlan.upperStairSolids())
+   if(CastleDoorSlots.crossesBox(ax,ay,az,bx,by,bz,step.x0(),0,step.z0(),step.x1(),step.top(),step.z1()))return false;
+  for(var frame:CastleDoorSlots.windowFrames())
+   if(CastleDoorSlots.crossesBox(ax,ay,az,bx,by,bz,frame.x(),frame.y(),frame.z(),frame.x()+frame.width(),frame.y()+frame.height(),frame.z()+frame.depth()))return false;
   final double EPS=0.0001;
   for(var slot:CastleDoorSlots.all()){
    if(!CastleDoorSlots.available(slot))continue;
@@ -498,6 +681,7 @@ public final class FixtureLighting {
   * actual door, so testing just the door cell would leak light through walls. */
  private void invalidateOccludingPortal(LevelDefinition.Portal portal){
   long revision=++generation;
+  recordDoorChange(revision,portal,null);
   // House-shell probes use the shared ray cache, not the resident-chunk
   // stationary cache. Clearing ALL entries here previously caused 80k+
   // architectural rays and >1s geometry stalls on a single door toggle.
@@ -552,7 +736,7 @@ public final class FixtureLighting {
    else if(source.kind==Kind.CANDLE_CHANDELIER)f=LightModel.flicker(cosmeticTick*.37+source.id*2.1,options.flickerScale());
    else if(source.kind==Kind.TABLE_LAMP)f=map.fixtures().state(source.fixture).active()&&(circuits==null||circuits.supplied())?1:0;
    else if(source.kind==Kind.TELEVISION)f=map.fixtures().state(source.fixture).active()&&(circuits==null||circuits.supplied())?LightModel.flicker(cosmeticTick*1.7,options.flickerScale()):0;
-   else f=circuits==null?1:Math.max(0,Math.min(1,(circuits.brightness(source.room,tick)-.085)/.865));
+   else f=circuits==null?1:!circuits.supplied()?0:Math.max(0,Math.min(1,(circuits.brightness(source.room,tick)-.085)/.865));
    if(source.fixture>0&&source.kind!=Kind.TELEVISION&&source.kind!=Kind.TABLE_LAMP&&!map.fixtures().state(source.fixture).active())f=0;
    // True circuit, fixture and blackout changes are immediate. Subtle TV
    // and candle intensity variation updates every six simulation ticks.

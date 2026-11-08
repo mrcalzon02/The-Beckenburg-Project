@@ -1,0 +1,148 @@
+{
+  "schema": "beckenburg.castle-sarcophagus-count-proposal/1",
+  "status": "PROPOSED_CRYPT_ANNEX_NOT_IN_PLAYABLE_CASTLE",
+  "title": "Expanded Castle Beckenburg chapel crypt — eight sarcophagi (authoring proposal)",
+  "source_layout": "development/levels/layouts/castle/layout.json",
+  "native_playable_castle": {
+    "known_basement_room_ids": [
+      "cellar-stair",
+      "cellar-hall",
+      "vault",
+      "plant"
+    ],
+    "room_authority": "src/main/java/org/beckenburg/CastleCellarLayout.java",
+    "actual_authored_crypt_rooms": 0,
+    "actual_installed_sarcophagi": 0,
+    "explicit_non_interference": "The existing vault is the captured-relic vault, not a burial crypt."
+  },
+  "spatial_reference": "EXPANDED_MAP_PLAN_ONLY_NOT_CASTLEHUBMAP_METRES",
+  "concept": "Two dry below-chapel stone rooms flanking a 2m central approach aisle; no doors, stairs or built shell assumed.",
+  "proposed_floor_y": -3,
+  "proposed_ceil_y": 0,
+  "doorway_or_stair_implemented": false,
+  "corridor": {
+    "id": "crypt-gallery",
+    "bounds": [
+      32,
+      13,
+      34,
+      27
+    ],
+    "y": -3,
+    "min_clear_width_m": 2
+  },
+  "proposal_rooms": [
+    {
+      "id": "crypt-west",
+      "label": "West funerary chamber",
+      "bounds": [
+        25,
+        13,
+        32,
+        27
+      ],
+      "y": -3,
+      "height": 3,
+      "proposed_sarcophagus_count": 4
+    },
+    {
+      "id": "crypt-east",
+      "label": "East funerary chamber",
+      "bounds": [
+        34,
+        13,
+        41,
+        27
+      ],
+      "y": -3,
+      "height": 3,
+      "proposed_sarcophagus_count": 4
+    }
+  ],
+  "clearance": {
+    "wall_margin_m": 0.65,
+    "object_separation_m": 0.75,
+    "corridor_margin_m": 0.75,
+    "minimum_headroom_above_tomb_m": 0.7,
+    "note": "Geometry-only bounding-box trial; no playable physics, doors, route connectivity or authentic masonry accepted."
+  },
+  "proposed_total_sarcophagi": 8,
+  "model_count_targets": {
+    "level_blockout_sarcophagus_plain": 3,
+    "level_blockout_sarcophagus_inscribed": 3,
+    "level_blockout_sarcophagus_effigy": 2
+  },
+  "placements": [
+    {
+      "id": "crypt-west-01",
+      "room": "crypt-west",
+      "model": "level_blockout_sarcophagus_plain",
+      "x": 26.9,
+      "z": 17.5,
+      "yaw": 0
+    },
+    {
+      "id": "crypt-west-02",
+      "room": "crypt-west",
+      "model": "level_blockout_sarcophagus_inscribed",
+      "x": 30,
+      "z": 17.5,
+      "yaw": 0
+    },
+    {
+      "id": "crypt-west-03",
+      "room": "crypt-west",
+      "model": "level_blockout_sarcophagus_effigy",
+      "x": 26.9,
+      "z": 23,
+      "yaw": 0
+    },
+    {
+      "id": "crypt-west-04",
+      "room": "crypt-west",
+      "model": "level_blockout_sarcophagus_plain",
+      "x": 30,
+      "z": 23,
+      "yaw": 0
+    },
+    {
+      "id": "crypt-east-01",
+      "room": "crypt-east",
+      "model": "level_blockout_sarcophagus_inscribed",
+      "x": 35.9,
+      "z": 17.5,
+      "yaw": 0
+    },
+    {
+      "id": "crypt-east-02",
+      "room": "crypt-east",
+      "model": "level_blockout_sarcophagus_plain",
+      "x": 39,
+      "z": 17.5,
+      "yaw": 0
+    },
+    {
+      "id": "crypt-east-03",
+      "room": "crypt-east",
+      "model": "level_blockout_sarcophagus_effigy",
+      "x": 35.9,
+      "z": 23,
+      "yaw": 0
+    },
+    {
+      "id": "crypt-east-04",
+      "room": "crypt-east",
+      "model": "level_blockout_sarcophagus_inscribed",
+      "x": 39,
+      "z": 23,
+      "yaw": 0
+    }
+  ],
+  "obligations": [
+    "Author actual below-chapel crypt rooms, structural slabs, retaining walls and staircase/thresholds in expanded map editor.",
+    "Recheck doorway travel/accessibility and rite/haunting reservations against committed final 3D map.",
+    "Validate model world-space pivots, sepulchral geometry, UVs, lighting, collisions, occlusion, NPC navigation and visual tone.",
+    "Do not populate the playable Castle's relic vault, utility plant or stairwell.",
+    "Convert proposal count to installed count only after a verified runtime or editor scene commit."
+  ]
+}

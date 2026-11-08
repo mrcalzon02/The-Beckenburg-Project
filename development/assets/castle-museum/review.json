@@ -5,7 +5,12 @@
     "level_castle_armour_label",
     "level_castle_museum_rope",
     "level_castle_four_poster_bed",
-    "level_castle_great_fireplace"
+    "level_castle_great_fireplace",
+    "level_castle_tapestry",
+    "level_castle_restoration_painting",
+    "level_castle_library_rug",
+    "level_castle_heraldic_arms",
+    "level_castle_keeper_statue"
   ],
   "armour": "Source/export contact and measured-budget checks retained; cleaned front/back atlas and original86-triangle caption now placed in archive,29 packaged native/hub checks pass. Full Castle finish not accepted.",
   "other_assets": "Initial studies require independent primary-reference redesign/review before integration.",
@@ -17,10 +22,13 @@
     "previews/rejected-dense-armour"
   ],
   "references": "reference-brief.md",
-  "next": "Finish remaining tapestry/paintings/carpets, statues and heraldic displays; protected training/services and ruin/restoration detail. Resolve actual DEV-253 CI timeout; do not accept full Castle yet.",
-  "runtime_evidence": "development\\levels\\rebuild\\verification\\castle-museum-2026-11-03\\verification.json",
-  "remaining": "Other original study assets remain rejected/quarantined. Complete their independent reference/triangle-budget/contact/material reviews, protected training, services, restoration wear/story and full Castle acceptance.",
+  "next": "Complete saved-native rebuild preservation/upgrade and remaining story/weathering/loose-object/encounter and full hub/platform acceptance. Remaining models now placed; new checkpoint CI still required.",
+  "runtime_evidence": "development/levels/rebuild/verification/castle-textiles-2026-11-06/verification.json",
+  "remaining": "Complete saved-native rebuild preservation/upgrade and remaining story/weathering/loose-object/encounter and full hub/platform acceptance. Remaining models now placed; new checkpoint CI still required.",
   "bed": "828tri: final physical-scale wood UVs, folded bedding-edge mapping, carved inward headboard only, four transparent curtain sides and mitered canopy ring. Source/export contact and no-overlap end-area regression.",
   "fireplace": "26 authored faces/56tri, generated512px atlas, common-room hearth bearing on floor/back wall; cold retained fitting, no live fire/flue claim.",
-  "surfaces": "Built-in image-generation masters plus packed512px derivatives and256px transparent curtains. Prompts and originals retained in textures/. No procedural/PIL art substituted."
+  "surfaces": "Built-in image-generation masters plus packed512px derivatives and256px transparent curtains. Prompts and originals retained in textures/. No procedural/PIL art substituted.",
+  "heritage_batch": "160-triangle mounted tapestry; reused92-triangle frame and18-triangle carpet with original geometry/UVs/alpha preserved, new artwork, actual archive/library placement and34 retained checks.",
+  "heraldic": "316tri, original512px atlas,14 wall-supported components, actual detached blade rejected, native west archive wall/circulation/keeper/save/captures and35 targeted checks.",
+  "keeper": "1080tri continuous watertight stone carving; one authored generated512px UV atlas, no detached pieces; actual native archive/front orientation and17 finishing fixtures reviewed. Original rejected study retained unchanged."
 }

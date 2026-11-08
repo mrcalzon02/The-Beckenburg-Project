@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: Runtime source retains every physical body and multiplicity
+	at org.beckenburg.HouseTemplateCompatibilityTest.check(HouseTemplateCompatibilityTest.java:9)
+	at org.beckenburg.HouseTemplateCompatibilityTest.main(HouseTemplateCompatibilityTest.java:50)

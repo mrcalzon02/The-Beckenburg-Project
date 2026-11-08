@@ -1,0 +1,2 @@
+Exception in thread "main" java.lang.AssertionError: New stone plinth swallowed retained floor book
+	at org.beckenburg.CastleRebuildUpgradeTest.main(CastleRebuildUpgradeTest.java:74)

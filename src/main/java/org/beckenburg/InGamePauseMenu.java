@@ -27,7 +27,15 @@ public final class InGamePauseMenu {
     }
     public static void execute(Component parent){
         Action requested=choose(parent);
-        if(requested==Action.EXIT_GAME)System.exit(0);
+        if(requested==Action.EXIT_GAME){
+            // Route through the owning desktop window so its host/network,
+            // audio and hidden OpenGL worker are all stopped before JVM exit.
+            java.awt.Window window=javax.swing.SwingUtilities.getWindowAncestor(parent);
+            if(window!=null)window.dispatchEvent(new java.awt.event.WindowEvent(
+                window,java.awt.event.WindowEvent.WINDOW_CLOSING));
+            else DesktopShutdown.requestExit();
+            return;
+        }
         if(requested==Action.RETURN_TO_LOBBY){
             for(Component at=parent;at!=null;at=at.getParent())if(at instanceof javax.swing.JComponent component
                     &&component.getClientProperty("beckenburg.returnToLobby") instanceof Runnable back){back.run();return;}

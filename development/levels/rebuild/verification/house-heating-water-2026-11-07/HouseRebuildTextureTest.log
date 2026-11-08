@@ -1,0 +1,10 @@
+Exact runtime source native-texture-parity: 91227 textured triangles, 67 materials
+PASS 66 native materials / 8962879 texels exactly match actual runtime sampling, including original van atlas; UVs/mesh untouched
+Exact runtime source native-texture-parity-functions: 105409 textured triangles, 100 materials
+PASS 99 native materials / 11461357 texels exactly match actual runtime sampling, including original van atlas; UVs/mesh untouched
+Exact runtime source native-texture-parity-fitout: 112145 textured triangles, 109 materials
+PASS 108 native materials / 11972271 texels exactly match actual runtime sampling, including original van atlas; UVs/mesh untouched
+Exact runtime source native-texture-parity-story: 114189 textured triangles, 120 materials
+PASS 119 native materials / 12017327 texels exactly match actual runtime sampling, including original van atlas; UVs/mesh untouched
+Exact runtime source native-texture-parity-services: 129529 textured triangles, 124 materials
+PASS 123 native materials / 12033711 texels exactly match actual runtime sampling, including original van atlas; UVs/mesh untouched

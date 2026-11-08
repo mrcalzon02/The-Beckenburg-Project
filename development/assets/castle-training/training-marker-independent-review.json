@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "models": [
+    {
+      "id": "level_castle_training_banishment",
+      "triangles": 196,
+      "floor_components": 4,
+      "runtime_sha256": "483d99b7435b90a98d32b2001a73214a3124db0730a3a93b9688b124b29cfbca",
+      "source_sha256": "496d63600b0c17350434cf4801aab8b9e84029b61cbb6ce1cc63adcea18d48d4",
+      "packed_images": [
+        {
+          "name": "Original ivory diffuse",
+          "size": [
+            64,
+            64
+          ]
+        }
+      ]
+    },
+    {
+      "id": "level_castle_training_cleansing",
+      "triangles": 208,
+      "floor_components": 5,
+      "runtime_sha256": "c19ef7a1a73f54c910fd6cf83c6cbff3cbcfd73382148af1922fcee164209ed2",
+      "source_sha256": "4341a75852c561d67c7fe1b87a59322a8de9781ad55d6835f0c610f727934903",
+      "packed_images": [
+        {
+          "name": "Original ivory diffuse",
+          "size": [
+            64,
+            64
+          ]
+        }
+      ]
+    },
+    {
+      "id": "level_castle_training_absolution",
+      "triangles": 220,
+      "floor_components": 6,
+      "runtime_sha256": "e38988cc2a45e67df723eda92429d17c9eb23ed1672a96800dc24d4624d9d9cf",
+      "source_sha256": "63af61c54c4f2952e29cb04ed9cfdc118cd8f7bb028c90e57f961d6b1c16f648",
+      "packed_images": [
+        {
+          "name": "Original ivory diffuse",
+          "size": [
+            64,
+            64
+          ]
+        }
+      ]
+    }
+  ],
+  "scope": "Actual GLB floor contact/raised-ring controls/fresh packed sources; native visual and gameplay acceptance separate"
+}

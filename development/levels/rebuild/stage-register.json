@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "date": "2026-10-31",
+  "date": "2026-11-07",
   "timezone": "America/Anchorage",
   "status": "EXECUTION_IN_PROGRESS",
   "source_baseline": "ad9bb45c20c3754931637bdfa50968a35defeaf9",
@@ -368,10 +368,14 @@
           "evidence": [
             "development/levels/rebuild/castle/baseline.md",
             "development/levels/rebuild/source-baseline.json",
-            "development/levels/rebuild/captures/baseline/castle/castle-rooms.csv"
+            "development/levels/rebuild/captures/baseline/castle/castle-rooms.csv",
+            "development/levels/rebuild/verification/castle-closeout-2026-11-06/review.json"
           ],
-          "defects": [],
-          "next_action": "Complete detailed room/source inspection and retain/refit/replace decisions; inventory and captures do not grant architecture acceptance."
+          "defects": [
+            "DEV-248",
+            "DEV-290"
+          ],
+          "next_action": "All42 actual native spaces now have four-direction visual review,39open/3sealed; clear-night phantom cloud fix verified in matched native views. Complete saved-native rebuild preservation/upgrade, remaining supported story/loose-object/encounter and full hub/platform acceptance. Keep all29 packets active; no round-duration testing."
         },
         "S01": {
           "status": "IN_PROGRESS",
@@ -419,7 +423,12 @@
             "development\\levels\\rebuild\\verification\\castle-museum-2026-11-03\\README.md",
             "development\\levels\\rebuild\\verification\\castle-museum-2026-11-03\\verification.json",
             "development/levels/rebuild/verification/castle-imagegen-2026-11-03/README.md",
-            "development/levels/rebuild/verification/castle-imagegen-2026-11-03/verification.json"
+            "development/levels/rebuild/verification/castle-imagegen-2026-11-03/verification.json",
+            "development/levels/rebuild/verification/castle-textiles-2026-11-06/README.md",
+            "development/levels/rebuild/verification/castle-textiles-2026-11-06/verification.json",
+            "development/levels/rebuild/verification/castle-heraldic-2026-11-06/verification.json",
+            "development/levels/rebuild/verification/castle-plant-2026-11-06/verification.json",
+            "development/levels/rebuild/verification/castle-finish-2026-11-06/verification.json"
           ],
           "defects": [
             "DEV-236",
@@ -440,9 +449,17 @@
             "DEV-252",
             "DEV-253",
             "DEV-256",
-            "DEV-257"
+            "DEV-257",
+            "DEV-277",
+            "DEV-283",
+            "DEV-284",
+            "DEV-285",
+            "DEV-286",
+            "DEV-287",
+            "DEV-288",
+            "DEV-289"
           ],
-          "next_action": "Scoped native archive armour/caption/barrier, six828-triangle sprite-curtain tester beds and26-face common-room fireplace built and32 checks pass; generated surfaces and owner-requested bed UV/corner corrections reviewed. Full Castle remains open: remaining tapestry/paintings/carpets/statues/heraldry, protected training/plant/relic services, ruin/restoration story, full hub journey and platform/visual acceptance. Preserve39 spaces/3 seals. Resolve actual CI parity timeout; no stage accepted."
+          "next_action": "Finish Castle story/weathering and supported loose-object/encounter details, explicit saved-native rebuild preservation/upgrade and complete hub/platform acceptance; then remaining28 packets.17 final fittings and3 protected lessons now native;40 focused checks pass.39 open/3sealed; no round-duration test."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -478,7 +495,12 @@
             "development\\levels\\rebuild\\verification\\castle-museum-2026-11-03\\README.md",
             "development\\levels\\rebuild\\verification\\castle-museum-2026-11-03\\verification.json",
             "development/levels/rebuild/verification/castle-imagegen-2026-11-03/README.md",
-            "development/levels/rebuild/verification/castle-imagegen-2026-11-03/verification.json"
+            "development/levels/rebuild/verification/castle-imagegen-2026-11-03/verification.json",
+            "development/levels/rebuild/verification/castle-textiles-2026-11-06/README.md",
+            "development/levels/rebuild/verification/castle-textiles-2026-11-06/verification.json",
+            "development/levels/rebuild/verification/castle-heraldic-2026-11-06/verification.json",
+            "development/levels/rebuild/verification/castle-plant-2026-11-06/verification.json",
+            "development/levels/rebuild/verification/castle-finish-2026-11-06/verification.json"
           ],
           "defects": [
             "DEV-236",
@@ -500,9 +522,17 @@
             "DEV-252",
             "DEV-253",
             "DEV-256",
-            "DEV-257"
+            "DEV-257",
+            "DEV-277",
+            "DEV-283",
+            "DEV-284",
+            "DEV-285",
+            "DEV-286",
+            "DEV-287",
+            "DEV-288",
+            "DEV-289"
           ],
-          "next_action": "Scoped native archive armour/caption/barrier, six828-triangle sprite-curtain tester beds and26-face common-room fireplace built and32 checks pass; generated surfaces and owner-requested bed UV/corner corrections reviewed. Full Castle remains open: remaining tapestry/paintings/carpets/statues/heraldry, protected training/plant/relic services, ruin/restoration story, full hub journey and platform/visual acceptance. Preserve39 spaces/3 seals. Resolve actual CI parity timeout; no stage accepted."
+          "next_action": "Finish Castle story/weathering and supported loose-object/encounter details, explicit saved-native rebuild preservation/upgrade and complete hub/platform acceptance; then remaining28 packets.17 final fittings and3 protected lessons now native;40 focused checks pass.39 open/3sealed; no round-duration test."
         },
         "S06": {
           "status": "IN_PROGRESS",
@@ -517,7 +547,12 @@
             "development\\levels\\rebuild\\verification\\castle-museum-2026-11-03\\README.md",
             "development\\levels\\rebuild\\verification\\castle-museum-2026-11-03\\verification.json",
             "development/levels/rebuild/verification/castle-imagegen-2026-11-03/README.md",
-            "development/levels/rebuild/verification/castle-imagegen-2026-11-03/verification.json"
+            "development/levels/rebuild/verification/castle-imagegen-2026-11-03/verification.json",
+            "development/levels/rebuild/verification/castle-textiles-2026-11-06/README.md",
+            "development/levels/rebuild/verification/castle-textiles-2026-11-06/verification.json",
+            "development/levels/rebuild/verification/castle-heraldic-2026-11-06/verification.json",
+            "development/levels/rebuild/verification/castle-plant-2026-11-06/verification.json",
+            "development/levels/rebuild/verification/castle-finish-2026-11-06/verification.json"
           ],
           "defects": [
             "DEV-236",
@@ -539,9 +574,17 @@
             "DEV-252",
             "DEV-253",
             "DEV-256",
-            "DEV-257"
+            "DEV-257",
+            "DEV-277",
+            "DEV-283",
+            "DEV-284",
+            "DEV-285",
+            "DEV-286",
+            "DEV-287",
+            "DEV-288",
+            "DEV-289"
           ],
-          "next_action": "Scoped native archive armour/caption/barrier, six828-triangle sprite-curtain tester beds and26-face common-room fireplace built and32 checks pass; generated surfaces and owner-requested bed UV/corner corrections reviewed. Full Castle remains open: remaining tapestry/paintings/carpets/statues/heraldry, protected training/plant/relic services, ruin/restoration story, full hub journey and platform/visual acceptance. Preserve39 spaces/3 seals. Resolve actual CI parity timeout; no stage accepted."
+          "next_action": "Finish Castle story/weathering and supported loose-object/encounter details, explicit saved-native rebuild preservation/upgrade and complete hub/platform acceptance; then remaining28 packets.17 final fittings and3 protected lessons now native;40 focused checks pass.39 open/3sealed; no round-duration test."
         },
         "S07": {
           "status": "IN_PROGRESS",
@@ -554,7 +597,12 @@
             "development\\levels\\rebuild\\verification\\castle-museum-2026-11-03\\README.md",
             "development\\levels\\rebuild\\verification\\castle-museum-2026-11-03\\verification.json",
             "development/levels/rebuild/verification/castle-imagegen-2026-11-03/README.md",
-            "development/levels/rebuild/verification/castle-imagegen-2026-11-03/verification.json"
+            "development/levels/rebuild/verification/castle-imagegen-2026-11-03/verification.json",
+            "development/levels/rebuild/verification/castle-textiles-2026-11-06/README.md",
+            "development/levels/rebuild/verification/castle-textiles-2026-11-06/verification.json",
+            "development/levels/rebuild/verification/castle-heraldic-2026-11-06/verification.json",
+            "development/levels/rebuild/verification/castle-plant-2026-11-06/verification.json",
+            "development/levels/rebuild/verification/castle-finish-2026-11-06/verification.json"
           ],
           "defects": [
             "DEV-239",
@@ -573,16 +621,37 @@
             "DEV-252",
             "DEV-253",
             "DEV-256",
-            "DEV-257"
+            "DEV-257",
+            "DEV-277",
+            "DEV-283",
+            "DEV-284",
+            "DEV-285",
+            "DEV-286",
+            "DEV-287",
+            "DEV-288",
+            "DEV-289"
           ],
-          "next_action": "Scoped native archive armour/caption/barrier, six828-triangle sprite-curtain tester beds and26-face common-room fireplace built and32 checks pass; generated surfaces and owner-requested bed UV/corner corrections reviewed. Full Castle remains open: remaining tapestry/paintings/carpets/statues/heraldry, protected training/plant/relic services, ruin/restoration story, full hub journey and platform/visual acceptance. Preserve39 spaces/3 seals. Resolve actual CI parity timeout; no stage accepted."
+          "next_action": "Finish Castle story/weathering and supported loose-object/encounter details, explicit saved-native rebuild preservation/upgrade and complete hub/platform acceptance; then remaining28 packets.17 final fittings and3 protected lessons now native;40 focused checks pass.39 open/3sealed; no round-duration test."
         },
         "S08": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "evidence": [
+            "development/levels/rebuild/verification/castle-finish-2026-11-06/verification.json",
+            "development/levels/rebuild/verification/castle-closeout-2026-11-06/review.json"
+          ],
+          "defects": [
+            "DEV-283",
+            "DEV-284",
+            "DEV-285",
+            "DEV-286",
+            "DEV-287",
+            "DEV-288",
+            "DEV-289",
+            "DEV-248",
+            "DEV-290"
+          ],
+          "next_action": "All42 actual native spaces now have four-direction visual review,39open/3sealed; clear-night phantom cloud fix verified in matched native views. Complete saved-native rebuild preservation/upgrade, remaining supported story/loose-object/encounter and full hub/platform acceptance. Keep all29 packets active; no round-duration testing."
         },
         "S09": {
           "status": "NOT_AUDITED",
@@ -1022,7 +1091,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": null,
+          "source_sha": "a34d3b174f41e4ea53cfbfbe8ec13fe2de892cab",
           "evidence": [
             "src/main/java/org/beckenburg/HouseRebuild.java",
             "development/levels/rebuild/house/graybox-definition.json",
@@ -1030,54 +1099,278 @@
             "development/levels/rebuild/house/native-graybox-verification.json",
             "src/test/java/org/beckenburg/HouseRebuildTerrainTest.java",
             "development/levels/rebuild/house/terrain-world/scene-package/scene.bin",
-            "development/levels/rebuild/house/terrain-verification.md"
+            "development/levels/rebuild/house/terrain-verification.md",
+            "development/levels/rebuild/house/fixture-fit.md",
+            "development/levels/rebuild/house/landscape-construction.md",
+            "development/levels/rebuild/house/landscape-native-verification.json",
+            "development/levels/rebuild/verification/house-landscape-2026-11-06/results.json",
+            "development/levels/rebuild/house/envelope-construction.md",
+            "development/levels/rebuild/house/envelope-native-verification.json",
+            "development/levels/rebuild/verification/house-envelope-2026-11-06/results.json",
+            "development/levels/rebuild/verification/house-envelope-2026-11-06/house-envelope-enhanced-physics.log"
           ],
           "defects": [
-            "DEV-174"
+            "DEV-174",
+            "DEV-300",
+            "DEV-301",
+            "DEV-302",
+            "DEV-303",
+            "DEV-304",
+            "DEV-305",
+            "DEV-306",
+            "DEV-307"
           ],
-          "next_action": "Editor-punched world floor now passes isolated House movement/object/optical and exact-render tests. Complete rough layout batch and remaining House terrain, parcel, structural/facility and full mission/LAN/GPU gates before promotion."
+          "next_action": "One closed dwelling roof/exterior, supported porch, separated openings and owner-directed clear context verified;12packaged checks, enhanced House body and all66material sampler parity pass. Complete remaining terrain/architectural-light review and functional services/furniture/story, then mission/LAN/hardware and dispatch promotion. Other maps retain individual gates."
         },
         "S04": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "a34d3b174f41e4ea53cfbfbe8ec13fe2de892cab",
+          "evidence": [
+            "development/levels/rebuild/house/fixture-fit.md",
+            "development/levels/rebuild/house/landscape-construction.md",
+            "development/levels/rebuild/house/landscape-native-verification.json",
+            "development/levels/rebuild/verification/house-landscape-2026-11-06/results.json",
+            "development/levels/rebuild/house/envelope-construction.md",
+            "development/levels/rebuild/house/envelope-native-verification.json",
+            "development/levels/rebuild/verification/house-envelope-2026-11-06/results.json",
+            "development/levels/rebuild/verification/house-envelope-2026-11-06/house-envelope-enhanced-physics.log"
+          ],
+          "defects": [
+            "DEV-300",
+            "DEV-301",
+            "DEV-302",
+            "DEV-303",
+            "DEV-304",
+            "DEV-305",
+            "DEV-306",
+            "DEV-307"
+          ],
+          "next_action": "One closed dwelling roof/exterior, supported porch, separated openings and owner-directed clear context verified;12packaged checks, enhanced House body and all66material sampler parity pass. Complete remaining terrain/architectural-light review and functional services/furniture/story, then mission/LAN/hardware and dispatch promotion. Other maps retain individual gates."
         },
         "S05": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "e91d7e73d5da22d9e52bdad3776a666a4dc17f2d",
+          "evidence": [
+            "development/levels/rebuild/house/envelope-construction.md",
+            "development/levels/rebuild/house/envelope-native-verification.json",
+            "development/levels/rebuild/verification/house-envelope-2026-11-06/results.json",
+            "development/levels/rebuild/verification/house-envelope-2026-11-06/house-envelope-enhanced-physics.log",
+            "development/levels/rebuild/house/fitout-construction.md",
+            "development/levels/rebuild/house/fitout-services.json",
+            "development/levels/rebuild/house/fitout-native-verification.json",
+            "development/levels/rebuild/verification/house-fitout-2026-11-07/verification.json",
+            "src/main/java/org/beckenburg/HouseRebuildFitout.java",
+            "src/main/java/org/beckenburg/HouseServiceNetwork.java",
+            "src/test/java/org/beckenburg/HidingAreaHazeTest.java",
+            "development/levels/rebuild/house/story-construction.md",
+            "development/levels/rebuild/house/story-native-verification.json",
+            "development/levels/rebuild/house/story-belongings.json",
+            "development/levels/rebuild/verification/house-story-power-2026-11-07/verification.json",
+            "development/levels/rebuild/house/heating-water-construction.md",
+            "development/levels/rebuild/house/services-native-verification.json",
+            "development/levels/rebuild/house/services-contacts.json",
+            "development/levels/rebuild/house/asset-use.csv",
+            "development/levels/rebuild/verification/house-heating-water-2026-11-07/verification.json"
+          ],
+          "defects": [
+            "DEV-302",
+            "DEV-303",
+            "DEV-304",
+            "DEV-305",
+            "DEV-306",
+            "DEV-307",
+            "DEV-311",
+            "DEV-312",
+            "DEV-313",
+            "DEV-314",
+            "DEV-315",
+            "DEV-316",
+            "DEV-317",
+            "DEV-318",
+            "DEV-319",
+            "DEV-320",
+            "DEV-321",
+            "DEV-322",
+            "DEV-323",
+            "DEV-324",
+            "DEV-325"
+          ],
+          "next_action": "Verify current360/full/native/GPU and merged Pages; refine valve/vent detail, complete material/light/wear review and authored House encounter, saved editing/live promotion and complete House/client/network/mission/hardware gates; continue all29packets and then remaining unfinished maps."
         },
         "S06": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "60a239ddf6cd183cd4676cef241ae70a88d5107e",
+          "evidence": [
+            "development/levels/rebuild/house/story-construction.md",
+            "development/levels/rebuild/house/story-native-verification.json",
+            "development/levels/rebuild/house/story-belongings.json",
+            "development/levels/rebuild/verification/house-story-power-2026-11-07/verification.json",
+            "development/levels/rebuild/house/heating-water-construction.md",
+            "development/levels/rebuild/house/services-native-verification.json",
+            "development/levels/rebuild/house/services-contacts.json",
+            "development/levels/rebuild/house/asset-use.csv",
+            "development/levels/rebuild/verification/house-heating-water-2026-11-07/verification.json",
+            "development/levels/rebuild/verification/house-native-migration-2026-11-07/verification.json"
+          ],
+          "defects": [
+            "DEV-311",
+            "DEV-316",
+            "DEV-317",
+            "DEV-318",
+            "DEV-319",
+            "DEV-320",
+            "DEV-321",
+            "DEV-322",
+            "DEV-323",
+            "DEV-324",
+            "DEV-325",
+            "DEV-335",
+            "DEV-337",
+            "DEV-338",
+            "DEV-339",
+            "DEV-341",
+            "DEV-342"
+          ],
+          "next_action": "Verify exact365/full/native/GPU and deployed migration captures; finish fresh House default promotion, authored encounter, matched door/circuit/light/material/wear and complete location/client/mission/hardware acceptance, then continue all29packets and later unfinished maps."
         },
         "S07": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "60a239ddf6cd183cd4676cef241ae70a88d5107e",
+          "evidence": [
+            "development/levels/rebuild/house/story-construction.md",
+            "development/levels/rebuild/house/story-native-verification.json",
+            "development/levels/rebuild/house/story-belongings.json",
+            "development/levels/rebuild/verification/house-story-power-2026-11-07/verification.json",
+            "development/levels/rebuild/house/heating-water-construction.md",
+            "development/levels/rebuild/house/services-native-verification.json",
+            "development/levels/rebuild/house/services-contacts.json",
+            "development/levels/rebuild/house/asset-use.csv",
+            "development/levels/rebuild/verification/house-heating-water-2026-11-07/verification.json",
+            "development/levels/rebuild/verification/house-room-review-2026-11-07/verification.json",
+            "development/levels/rebuild/verification/house-room-review-2026-11-07/reviewed-rooms.csv",
+            "development/levels/rebuild/house/furnishings-construction.md",
+            "development/levels/rebuild/house/furnishings-native-verification.json",
+            "development/levels/rebuild/house/furnishings-supports.json",
+            "development/levels/model-production/house-fridge/visual-review.json",
+            "development/levels/rebuild/verification/house-functional-fill-2026-11-07/verification.json",
+            "development/levels/rebuild/verification/house-template-compatibility-2026-11-07/verification.json",
+            "development/levels/rebuild/verification/house-fridge-relocation-2026-11-07/verification.json",
+            "development/levels/rebuild/verification/house-native-migration-2026-11-07/verification.json"
+          ],
+          "defects": [
+            "DEV-311",
+            "DEV-316",
+            "DEV-317",
+            "DEV-318",
+            "DEV-319",
+            "DEV-320",
+            "DEV-321",
+            "DEV-322",
+            "DEV-323",
+            "DEV-324",
+            "DEV-325",
+            "DEV-326",
+            "DEV-327",
+            "DEV-328",
+            "DEV-329",
+            "DEV-330",
+            "DEV-331",
+            "DEV-332",
+            "DEV-333",
+            "DEV-334",
+            "DEV-335",
+            "DEV-337",
+            "DEV-338",
+            "DEV-339",
+            "DEV-341",
+            "DEV-342"
+          ],
+          "next_action": "Verify exact365/full/native/GPU and deployed migration captures; finish fresh House default promotion, authored encounter, matched door/circuit/light/material/wear and complete location/client/mission/hardware acceptance, then continue all29packets and later unfinished maps."
         },
         "S08": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "60a239ddf6cd183cd4676cef241ae70a88d5107e",
+          "evidence": [
+            "development/levels/rebuild/verification/house-room-review-2026-11-07/verification.json",
+            "development/levels/rebuild/verification/house-room-review-2026-11-07/reviewed-rooms.csv",
+            "development/levels/rebuild/house/furnishings-construction.md",
+            "development/levels/rebuild/house/furnishings-native-verification.json",
+            "development/levels/rebuild/house/furnishings-supports.json",
+            "development/levels/model-production/house-fridge/visual-review.json",
+            "development/levels/rebuild/verification/house-functional-fill-2026-11-07/verification.json",
+            "development/levels/rebuild/verification/house-template-compatibility-2026-11-07/verification.json",
+            "development/levels/rebuild/verification/house-fridge-relocation-2026-11-07/verification.json",
+            "development/levels/rebuild/verification/house-native-migration-2026-11-07/verification.json"
+          ],
+          "defects": [
+            "DEV-326",
+            "DEV-327",
+            "DEV-328",
+            "DEV-329",
+            "DEV-330",
+            "DEV-331",
+            "DEV-332",
+            "DEV-333",
+            "DEV-334",
+            "DEV-335",
+            "DEV-337",
+            "DEV-338",
+            "DEV-339",
+            "DEV-341",
+            "DEV-342"
+          ],
+          "next_action": "Verify exact365/full/native/GPU and deployed migration captures; finish fresh House default promotion, authored encounter, matched door/circuit/light/material/wear and complete location/client/mission/hardware acceptance, then continue all29packets and later unfinished maps."
         },
         "S09": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "60a239ddf6cd183cd4676cef241ae70a88d5107e",
+          "evidence": [
+            "development/levels/rebuild/house/story-construction.md",
+            "development/levels/rebuild/house/story-native-verification.json",
+            "development/levels/rebuild/house/story-belongings.json",
+            "development/levels/rebuild/verification/house-story-power-2026-11-07/verification.json",
+            "development/levels/rebuild/house/heating-water-construction.md",
+            "development/levels/rebuild/house/services-native-verification.json",
+            "development/levels/rebuild/house/services-contacts.json",
+            "development/levels/rebuild/house/asset-use.csv",
+            "development/levels/rebuild/verification/house-heating-water-2026-11-07/verification.json",
+            "development/levels/rebuild/house/furnishings-construction.md",
+            "development/levels/rebuild/house/furnishings-native-verification.json",
+            "development/levels/rebuild/house/furnishings-supports.json",
+            "development/levels/model-production/house-fridge/visual-review.json",
+            "development/levels/rebuild/verification/house-functional-fill-2026-11-07/verification.json",
+            "development/levels/rebuild/verification/house-template-compatibility-2026-11-07/verification.json",
+            "development/levels/rebuild/verification/house-fridge-relocation-2026-11-07/verification.json",
+            "development/levels/rebuild/verification/house-native-migration-2026-11-07/verification.json"
+          ],
+          "defects": [
+            "DEV-311",
+            "DEV-316",
+            "DEV-317",
+            "DEV-318",
+            "DEV-319",
+            "DEV-320",
+            "DEV-321",
+            "DEV-322",
+            "DEV-323",
+            "DEV-324",
+            "DEV-325",
+            "DEV-326",
+            "DEV-328",
+            "DEV-329",
+            "DEV-330",
+            "DEV-331",
+            "DEV-332",
+            "DEV-333",
+            "DEV-334",
+            "DEV-335",
+            "DEV-337",
+            "DEV-338",
+            "DEV-339",
+            "DEV-341",
+            "DEV-342"
+          ],
+          "next_action": "Verify exact365/full/native/GPU and deployed migration captures; finish fresh House default promotion, authored encounter, matched door/circuit/light/material/wear and complete location/client/mission/hardware acceptance, then continue all29packets and later unfinished maps."
         },
         "S10": {
           "status": "NOT_AUDITED",
@@ -3571,5 +3864,6 @@
     "site": "CASTLE",
     "owner_direction_date": "2026-11-03",
     "rule": "Complete the full Castle revision and actual hub verification before continuing remaining maps. Other28 packets remain in scope; no round-duration testing."
-  }
+  },
+  "follow_on_scope_note": "After the28base locations and cemetery/mortuary annex,continue every remaining unfinished location in the current catalog/backlog,with regular checkpoints and synchronization; owner7November2026."
 }

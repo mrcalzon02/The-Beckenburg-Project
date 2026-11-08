@@ -58,6 +58,23 @@ public final class LanGhostPursuitTest {
         GhostDomain.Command forbidden=brain.decide(new GhostDomain.Observation(170,5,4,100,false,true,
                 map.ghostExits(5),java.util.List.of(GhostDomain.Action.WHISPER)),true);
         ok(forbidden==null,"AI does not bypass cooldown or manifestation requirements");
-        System.out.println("PASS: bounded ghost hearing, coarse memory, route choice, physical pursuit, parity and expiry");
+        // Negative control for the precise AI regression: the Elder Blade Demon
+        // favors STRIKE, but an audible clue contains no collision-verified body.
+        // Check the normal preference tick, not just the ordinary pursuit path.
+        var blade=new LanGhostPursuit(map,8123,GhostIdentity.Type.ELDER_BLADE_DEMON);
+        var favored=GhostBehavior.profile(GhostIdentity.Type.ELDER_BLADE_DEMON);
+        ok(favored.favored()==GhostDomain.Action.STRIKE,
+            "negative control must actually exercise the strike-biased species");
+        int preferenceTick=Math.max(6,favored.aiPeriod());
+        var strikeReady=new GhostDomain.Observation(preferenceTick,4,4,100,true,true,
+            map.ghostExits(4),java.util.List.of(GhostDomain.Action.STRIKE));
+        blade.heard(4,4,map.centerX(4),map.centerZ(4),
+            LanGhostPursuit.Sound.EQUIPMENT,preferenceTick);
+        ok(blade.decide(strikeReady,false)==null,
+            "strike preference must not turn synthetic audio into spatial contact");
+        var contact=blade.decide(strikeReady,true);
+        ok(contact!=null&&contact.action()==GhostDomain.Action.STRIKE,
+            "host-confirmed physical contact still permits a legitimate strike");
+        System.out.println("PASS: bounded hearing and movement, species STRIKE preference cannot bypass physical-victim gate");
     }
 }

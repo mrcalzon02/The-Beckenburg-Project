@@ -1,0 +1,8 @@
+2026-11-07T22:51:43.373641700Z [main] RENDER SLOW stage=idle faces=91914 visible_faces=46648 culled_faces=45266 target=320x200 build_ms=902 lighting_raster_ms=911
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at org.beckenburg.SceneRenderer.mountedLamp(SceneRenderer.java:534)
+	at org.beckenburg.SceneRenderer.lambda$drawCastle$33(SceneRenderer.java:3397)
+	at org.beckenburg.SceneRenderer$$Lambda$133/0x000002678113b698.apply(Unknown Source)
+	at java.base/java.util.HashMap.computeIfAbsent(HashMap.java:1220)
+	at org.beckenburg.SceneRenderer.drawCastle(SceneRenderer.java:3396)
+	at org.beckenburg.EditorSceneRetentionTest.main(EditorSceneRetentionTest.java:25)

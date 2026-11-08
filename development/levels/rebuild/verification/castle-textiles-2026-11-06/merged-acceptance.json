@@ -1,0 +1,29 @@
+{
+  "full_run": 42324549464,
+  "tested_head": "1170e909b71852cd4b9c8a2f9044538355d8e93e",
+  "summary": "passed337 failed0 skipped0 manifest337",
+  "native": 42324381933,
+  "gpu": 42324389550,
+  "merge": "ce856492e666a29d2b5f159357fbb6cce917f65e",
+  "installer_run": 42326480315,
+  "installer": "SUCCESS",
+  "pages": {
+    "status": "PASS",
+    "merge_commit": "ce856492e666a29d2b5f159357fbb6cce917f65e",
+    "deployment": 42326479390,
+    "exact_deployed_bytes": {
+      "beckenburg-development-gallery.html": {
+        "bytes": 2464860,
+        "sha256": "db84a727f46a5f3cde4bc2369118a02ccb9a2238fcca90e998b2d15ebf6bc6d4"
+      },
+      "development/levels/rebuild/captures/castle-construction/archive-tapestry-0-runtime.png": {
+        "bytes": 468703,
+        "sha256": "694765ebf188c3ab8932a90ad653016067faa06193efdffe9a7da99dbdacd936"
+      },
+      "development/levels/rebuild/captures/castle-construction/library-rug-runtime.png": {
+        "bytes": 731976,
+        "sha256": "11590bb67da57aae144788f409b1d193c79807378c9b0ffbcc5c203712e4f503"
+      }
+    }
+  }
+}

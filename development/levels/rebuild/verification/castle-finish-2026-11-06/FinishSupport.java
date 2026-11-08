@@ -1,0 +1,2 @@
+package org.beckenburg;
+public class FinishSupport {public static void main(String[] args)throws Exception{System.setProperty("user.home",java.nio.file.Files.createTempDirectory("finish-support").toString());var m=new CastleHubMap();for(double x:new double[]{5.42,5.98})for(double z:new double[]{30.935,32.465})System.out.println(x+","+z+" terrain="+m.worldSurface().support(x,z,0,.5)+" ground="+CastleRooms.ground(x,z)+" floor="+CastleLevelEdits.current().floorSupports(x,z,0));}}

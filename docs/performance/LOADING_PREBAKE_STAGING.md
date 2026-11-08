@@ -1,0 +1,74 @@
+# Beckenburg loading prebake and 3D expedition approach
+
+## Contract
+
+A case starts with a genuine world-space 3D aerial view, descends over the actual authored property, travels down the correctly rotated van's rear cargo ramp, crosses the cargo doorway, enters the central aisle and hands off precisely to the hunter's first-person view. All backends get a perspective render; the 2D tactical-map fallback is forbidden. The loading transition never advances player movement, ghosts, hidden evidence or multiplayer authority.
+
+## Stage 1 — implemented
+
+- A dedicated low-resolution (180–300p) 3D software renderer runs off the Swing event thread, even on systems lacking OpenGL. It never competes for the active GPU context.
+- The real gameplay SceneRenderer makes up to three low-resolution camera prewarm passes before the final initial gameplay frame. Pass starts are checked against a 5-second budget, and its camera and framebuffer dimensions are then restored. The third pass targets the actual first authored interior when the five-second budget permits. This admits static shell chunks and nearby scenery/light visibility into the game's own caches.
+- The opening readiness window is bounded at seven seconds; a failed preview displays preparation status rather than the regressed map graphic. The transition can be skipped, and a failed cinematic cannot block mission access.
+- An automated renderer test records actual aerial/loading, van approach, rear-door crossing, interior aisle and exact player-camera handoff PNGs plus prewarm timing and geometry statistics.
+- Existing heavy scene geometry and materials are not duplicated into a separate cinematic-owned gameplay cache.
+
+## Stage 2 — in progress: reusable loading preparation by revision
+
+| Asset or calculation | Safe to prepare once | Must update during play |
+|---|---|---|
+| Geometry | Authored shell, GLB vertex/UV/normal batches, LODs, bounding volumes, terrain/road chunks | Changed/editor props, swinging doors |
+| Materials | Atlas decoding, mipmaps, texture residency, material lookup and shader variants | Animation, live camera/video images, procedural effects |
+| Lighting | Receiver-side static probe geometry, same-side light visibility, sorted lamp contributors | Door-dependent shadow rays, switching/flicker |
+| Visibility | Portal adjacency, static potential-visibility and BVH/octree structures | Frustum and moving-occluder checks |
+| Navigation | Static navmesh, ramp/stair stitching and traversal graph | Doors, obstacles and moving actors |
+| Sound | Source positions, attenuation and room acoustic paths | Real-time events and door acoustic openness |
+| Water/outdoors | Near-site terrain, shore/seabed tiles and geometry LOD | Dynamic water, weather and far streaming |
+
+No full-global lighting invalidation when a door moves. Keep static rays and only invalidate exact door-dependent cached receivers. Do not precompute every possible set of door states; the combinations explode exponentially.
+
+## Stage 3 — proposed: GPU upload and persistence
+
+CPU work may happen in workers; GPU resource creation must happen on the actual OpenGL owner thread. Version every prepared resource by level, editor, material and lighting revision. Upload the van, immediate exterior and first accessible room first, then expand without exceeding the established resident-world 128 MiB budget or prepared-scene 120,000-triangle limit. Track reuse, cache misses, submitted bytes, heap/VRAM pressure and eviction rather than pretending all geometry can stay resident.
+
+## Verification and performance targets
+
+Record true loading elapsed time, additional prewarm passes, generated shell chunks, submitted GPU bytes, geometry hits, light-ray counts and initial gameplay frame time. Compare cold and warmed p50/p95/p99, maintain a 30 FPS target (33.3ms budget) and run real door-open/close profiler checks. The earlier door-toggle submission-recorder p95 of 105.8ms is a separate open runtime problem; a loading prewarm alone does not fix a door-triggered cache invalidation.
+
+### Implemented Stage 2 slice: existing game-renderer immutable geometry (2026-11-04)
+
+- `InvestigationScenePrewarm` calls `SceneRenderer.prepareStaticScene(map)` before the first low-resolution camera pass on **the same renderer instance that gameplay uses**. This constructs/reuses the authored House shell triangles, chunk bounds, material face groups, and scenery instance index. No second cinematic-owned gameplay cache or renderer is introduced.
+- Preparation keys include the authored `level().revision()` and hiding-density revision. Exact map identity is also required. A changing door state is intentionally **not** part of the immutable preparation key; door-dependent physical lighting is still checked in the existing receiver-cell lighting system at runtime.
+- The resident scene owner now detects changes to those authored revision keys even when the map object is unchanged. It rejects old lighting owners/readbacks and assigns new GPU scene identity for an editor/authoring revision, **not** for each door movement.
+- `LOADING STATIC PREBAKE` diagnostics emit actual preparation duration, scene revision, staged shell chunks/faces, staged scenery instance count, warm-cache reuse flags and low-resolution camera passes. The 3D loading proof records these in `verification.txt`; `StaticScenePrebakeTest` checks warm reuse, a real door toggle, revision changes, distinct maps, cancellation and unchanged camera/player state. The GPU acceptance workflow runs this test.
+- This is **CPU-side immutable-scene staging and reuse**, not finished GPU upload scheduling, texture residency, navmesh prebaking, or static/acoustic precomputation across every map backend. Native-site and Castle-specific preparation still follow their existing owner-specific paths. Never report a GPU upload merely because a CPU batch exists.
+
+### Stage 3 GL-owner prewarm handoff integrated (partial upload priority, 2026-11-04)
+
+- On a real GPU run, `InvestigationScenePrewarm` now stages the actual van cargo approach camera (`flight.pose(.925)`), immediate exterior (`.60`), and first authored interior in that order. It uses the **same gameplay SceneRenderer and scene ID**. The authored 3D cinematic itself is unchanged.
+- A GPU `submit()` is only a queued request, and rapid previews previously overwrote each other. Between priority passes, the loading **SwingWorker** now waits for a matching completed GL readback with the exact scene ID and frame ID. The OpenGL owner thread remains the only place that uploads VBOs/textures. Acknowledgement means the corresponding completed draw did execute its uploads; it is not a direct GPU timestamp or a guarantee all possible future assets are resident.
+- Each GPU acknowledgement has a bounded **650 ms** wait, additionally limited by the pre-existing five-second pass-start budget. Cancellation, worker interruption, stopped backend, missed deadline and stale-scene readback cannot claim success. When a pass cannot be confirmed, the remaining prewarm passes stop rather than continually superseding its unrendered work; actual mission launch continues normally.
+- CPU-only recovery still receives the existing geometry and perspective prewarm; no fake GPU confirmation is reported. Diagnostics now distinguish `gpu_submitted_passes`, `gpu_confirmed_passes` and `gpu_prebake_timeout`, alongside CPU-only cache metrics. `GpuWorldRendererContractTest` tests scene/frame matching, asynchronous completion, cancellation and stopped-backend handling; `StaticScenePrebakeTest` tests cancellation. The live Mesa/Swing UI smoke records those counts per launched case in `case-cycles.csv`, even when no pass completes in time, so performance remains diagnostic rather than an ungrounded release gate.
+- This is **priority sequencing with confirmed GL-owner execution**, not yet asynchronous out-of-view resource transfers, a resident VRAM eviction policy or full texture atlas/mipmap staging. Actual time/byte benefit must be measured in the new UI smoke output.
+
+### Stage 3 instrumentation integrated (upload scheduling still pending)
+
+- `OpenGlWorldRenderer` records `GPU SCENE FIRST FRAME` from the **actual GL worker** after the first frame of a new scene ID. The line includes resident/dynamic VBO batches physically sent by `Mesh.setVertices`, uploaded bytes, reused VBO batches/bytes, newly uploaded textures/bytes, GL worker wall time and synchronous readback wall time. This distinguishes real backend upload activity from CPU-produced surface descriptions.
+- These measurements are **not hardware GPU timestamp queries** and do not claim that the staged initial frame satisfies 33.3 ms. Per-scene upload priority (van → immediate exterior → first accessible room), eviction/VRAM telemetry, and persistence by material/lighting revision still require acceptance work.
+
+Stage 3 is partially implemented; advanced residency and streaming remain planned. The 5-second prewarm budget limits the start of expensive camera passes, but the initial construction itself is not preemptible once begun; wall-clock and latency evidence must be reviewed before claiming a strict five-second ceiling. Resident GPU uploads remain owned by the actual OpenGL thread. The separate real door-toggle p95/p99 regression remains open.
+
+## Measured runtime improvement (2026-11-04)
+
+The House door submission-recorder A/B on Windows run 41963610654 kept the same authored map and 24 open/close toggles. A bounded 150,000-entry alternate stationary ray archive, now applied to House shell material batches as well as retained props, reduced cumulative shadow rays from 163,089 to 111,503 (31.6%). Recorded toggle p50 changed from 123.6 ms to 93.1 ms and p95 from 160.3 ms to 125.4 ms, while p99 grew from 361.9 ms to 393.5 ms. These results are **not OpenGL frame times** and do not prove worst-case 30 FPS. The initial unbaked door transition and resident VBO updates remain a priority.
+
+Static shell material lists and material-face grouping are prepared with the scene rather than recreated every frame; region revisions are cached by the exact lighting generation. A true door change still revalidates affected light cells, and any unrelated portal or global edit discards the door-state archive instead of reusing stale rays. Disabled A/B operation is available with the Java property `beckenburg.lighting.doorShadowArchive.disabled=true`.
+
+### Independent GPU baseline to compare after this handoff (run 41968521301)
+
+The earlier successful `Beckenburg GPU Renderer Acceptance` Mesa software-GL run covered 33 real House camera samples before the new upload-acknowledgement changes. It reported **CPU frame p50 9.685 ms, CPU frame p95 77.506 ms, GL draw-issue p95 36.183 ms, GL readback/copy p95 16.970 ms, and end-to-end wait/poll p95 148.021 ms**. Six real House camera rotations averaged 676 ms request-to-confirmation (worst 1076 ms). It also confirmed 158 resident House shell batches occupying 3,732,480 CPU vertex bytes, 1,340 static light-cache hits with zero further builds, and byte-identical resident VBO reuse across an unchanged draw. These are **not interactive hardware-GPU FPS measurements**, and the 33.3 ms target is not established at p95. Compare the new per-case `gpu_prebake_*` fields and GL first-frame upload bytes before attributing any measurable speedup to the new prewarm handshake.
+
+### Release handoff verification (2026-11-04)
+
+- The complete GPU renderer acceptance workflow at [run 41971609186](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41971609186) **passed** for the first full-resolution GPU prewarm acknowledgement implementation (`e9ee8ceb2161c629cbd59bb9576b1170c1d5fc71`). The same source passed [full multiplayer acceptance run 41971609160](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41971609160) and [true 3D map-to-van opening run 41971609156](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/41971609156).
+- The shipping workflow builds, tests and publishes its **own exact immutable checked-out SHA**. An automatically generated artifact commit from `github-actions[bot]` does not normally trigger another Actions push workflow. A subsequent maintainer-authorized main push is therefore required to ship newer source after an Actions-generated visual-proof commit; never retag an existing release or claim a build is uploaded before checking its new release asset.
+- This is acceptance evidence, **not** a declaration that the GPU p95/p99 and door stall are solved.

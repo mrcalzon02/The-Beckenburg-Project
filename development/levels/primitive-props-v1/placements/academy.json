@@ -1,0 +1,301 @@
+{
+  "schema": "beckenburg.primitive-prop-placement/1",
+  "site": "ACADEMY",
+  "title": "St. Alban Academy",
+  "layout_source": "layouts/academy/layout.json",
+  "layout_source_sha256": "fc29e99d0f318ca5fc1421d33552da317c79e5e1d769b38da8396053272d57ce",
+  "status": "review_only",
+  "world_frame": "X east/right; Y elevation up; Z source plan depth",
+  "placements": [
+    {
+      "id": "academy-01",
+      "zone": "library",
+      "model": "level_blockout_archive_cabinet",
+      "position": [
+        1.44,
+        0.0,
+        18.88
+      ],
+      "yaw_rad": 3.14159,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        0.9,
+        18.645,
+        1.98,
+        19.172
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "academy-02",
+      "zone": "library",
+      "model": "level_blockout_storage_shelf",
+      "position": [
+        10.56,
+        0.0,
+        37.12
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.88,
+        0.88
+      ],
+      "world_bounds_xz": [
+        9.735,
+        36.745,
+        11.385,
+        37.495
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "academy-03",
+      "zone": "lecture",
+      "model": "level_blockout_lecture_lectern",
+      "position": [
+        53.92,
+        0.0,
+        27.68
+      ],
+      "yaw_rad": 3.14159,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        53.3746,
+        27.365,
+        54.4654,
+        28.239
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "academy-04",
+      "zone": "lecture",
+      "model": "level_blockout_student_desk",
+      "position": [
+        66.08,
+        0.0,
+        27.68
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.88,
+        0.12
+      ],
+      "world_bounds_xz": [
+        65.73,
+        26.705,
+        66.43,
+        27.91
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "academy-05",
+      "zone": "lecture",
+      "model": "level_blockout_student_desk",
+      "position": [
+        53.92,
+        0.0,
+        38.32
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.12,
+        0.88
+      ],
+      "world_bounds_xz": [
+        53.57,
+        37.345,
+        54.27,
+        38.55
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "academy-06",
+      "zone": "lecture",
+      "model": "level_blockout_student_desk",
+      "position": [
+        66.08,
+        0.0,
+        38.32
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.88,
+        0.88
+      ],
+      "world_bounds_xz": [
+        65.73,
+        37.345,
+        66.43,
+        38.55
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "academy-07",
+      "zone": "lab",
+      "model": "level_blockout_workbench",
+      "position": [
+        53.92,
+        -0.03,
+        11.92
+      ],
+      "yaw_rad": 3.14159,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        53.045,
+        11.53,
+        54.795,
+        12.31
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "academy-08",
+      "zone": "lab",
+      "model": "level_blockout_assay_balance",
+      "position": [
+        66.08,
+        0.0,
+        24.08
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.88,
+        0.88
+      ],
+      "world_bounds_xz": [
+        65.43,
+        23.77,
+        66.73,
+        24.39
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "academy-09",
+      "zone": "office",
+      "model": "level_blockout_map_pinboard",
+      "position": [
+        1.56,
+        -0.085,
+        1.92
+      ],
+      "yaw_rad": 3.14159,
+      "anchor": [
+        0.13,
+        0.12
+      ],
+      "world_bounds_xz": [
+        0.47,
+        1.685,
+        2.65,
+        2.02
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "academy-10",
+      "zone": "office",
+      "model": "level_blockout_workbench",
+      "position": [
+        8.64,
+        -0.03,
+        14.08
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.72,
+        0.88
+      ],
+      "world_bounds_xz": [
+        7.765,
+        13.69,
+        9.515,
+        14.47
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "academy-11",
+      "zone": "archive",
+      "model": "level_blockout_archive_cabinet",
+      "position": [
+        1.44,
+        -3.0,
+        37.12
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.12,
+        0.88
+      ],
+      "world_bounds_xz": [
+        0.9,
+        36.828,
+        1.98,
+        37.355
+      ],
+      "floor_elevation": -3,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "academy-12",
+      "zone": "dining",
+      "model": "level_blockout_pew",
+      "position": [
+        21.36,
+        0.005,
+        1.2
+      ],
+      "yaw_rad": 3.14159,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        20.5,
+        0.9,
+        22.22,
+        1.47
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    }
+  ],
+  "runtime_scene_changed": false,
+  "collision_verified": false
+}

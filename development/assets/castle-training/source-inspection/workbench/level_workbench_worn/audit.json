@@ -1,0 +1,33 @@
+{
+  "source": "assets\\runtime\\models\\level_workbench_worn.glb",
+  "sha256": "e72efab71e900744ad7f8f67dc459f01c486a501ccf0ce523f6d7605a9a98b31",
+  "materials": [
+    {
+      "mesh": 0,
+      "primitive": 0,
+      "material": "Generated bench timber / worn cast steel / bare steel / grips / cartons",
+      "image": 0,
+      "triangles": 688,
+      "uv_u": [
+        0.0628100037574768,
+        0.9630600214004517
+      ],
+      "uv_v": [
+        0.01819998025894165,
+        0.9647200107574463
+      ],
+      "source_sampler": "glTF normalized UV0, SVG V-origin top-left"
+    }
+  ],
+  "warnings": [],
+  "images": [
+    {
+      "id": 0,
+      "name": "preparation-bench-worn-imagegen-master",
+      "width": 512,
+      "height": 512,
+      "png_sha256": "1e87f16a8ac4b375302c710bd6fd35fc858dcb27a116ca75e12f2b3adced1489",
+      "overlay_triangles": 688
+    }
+  ]
+}

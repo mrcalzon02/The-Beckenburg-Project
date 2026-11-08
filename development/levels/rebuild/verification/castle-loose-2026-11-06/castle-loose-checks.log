@@ -1,0 +1,29 @@
+BeckenburgRegressionManifestTest 0
+CastleGroundConstructionTest 0
+CastleRebuildTest 0
+CastleHeadquartersRevisionTest 0
+CastleCellarConstructionTest 0
+CastleTrainingAnnexTest 0
+CastleWorldTerrainTest 0
+CastleLightingPlacementRepairTest 0
+CastleSnapshotContractTest 0
+CastleDocumentRecoveryTest 0
+CastleEditorGeometryTest 0
+CastlePortalSlotTest 0
+CastleHubIntegrationTest 0
+CastleSignedConstructionTest 0
+CastleHomeInteractionTest 0
+CastleInventoryWorkstationTest 0
+CastleOrientationTest 0
+CastleContainedMenuTest 0
+CastleRelationsTest 0
+CastleShelfLabelsTest 0
+CastleEditorAuditTest 0
+CastleFurnitureWallAuditTest 0
+VanLightingAndCastleDoorTest 0
+HouseRebuildTerrainTest 0
+EditorAgentServiceTest 0
+CastleUpperConstructionTest 1
+Exception in thread "main" java.lang.AssertionError: Casement is a painted solid wall upper-wash-west
+	at org.beckenburg.CastleUpperConstructionTest.check(CastleUpperConstructionTest.java:9)
+	at org.beckenburg.CastleUpperConstructionTest.main(CastleUpperConstructionTest.java:67)

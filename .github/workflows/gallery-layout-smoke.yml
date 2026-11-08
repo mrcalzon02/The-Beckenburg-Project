@@ -1,0 +1,37 @@
+name: DEV gallery multi-floor layout smoke
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/main/java/org/beckenburg/DevAssetGalleryLayout.java'
+      - 'src/test/java/org/beckenburg/DevAssetGalleryLayoutTest.java'
+      - '.github/workflows/gallery-layout-smoke.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  address-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            src/main/java/org/beckenburg/DevAssetGalleryLayout.java
+            src/test/java/org/beckenburg/DevAssetGalleryLayoutTest.java
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Compile isolated DEV gallery address implementation and regression
+        run: |
+          mkdir -p build/gallery-layout-test
+          javac --release 17 -encoding UTF-8 -d build/gallery-layout-test \
+            src/main/java/org/beckenburg/DevAssetGalleryLayout.java \
+            src/test/java/org/beckenburg/DevAssetGalleryLayoutTest.java
+      - name: Verify floor, wing, bay, stand uniqueness and camera routing
+        run: java -ea -cp build/gallery-layout-test org.beckenburg.DevAssetGalleryLayoutTest

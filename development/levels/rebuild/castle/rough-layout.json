@@ -2351,15 +2351,15 @@
     },
     {
       "path": "src/main/java/org/beckenburg/CastleHubArchitecturalPlan.java",
-      "sha256": "302b4aae3ce2073c294c098aa607b85383041680f44e64479ed3e460c334d81f"
+      "sha256": "f62750d6b7698e90d72bd2a2c78c37d48bb8830088d3563c042950ca15745c25"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleHubMap.java",
-      "sha256": "a7d3c90b16fd662461f78c70ce2dcc57207a0195ee4e5f4ef3262370d5735ba4"
+      "sha256": "b5a4b09b2b943f8b8fb0f1c9e614feb66de0be8e45faee9256ed235234fb3e6e"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleRelations.java",
-      "sha256": "6c24b54ba8d047119dfd7338d288f710e1871f42df6de1fcca4399ccdd481993"
+      "sha256": "afce9f02800a9279ff006ec92a4c6764b69f47884a501b439ae08985f32ea6d2"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleSurroundings.java",
@@ -2367,7 +2367,7 @@
     },
     {
       "path": "src/main/java/org/beckenburg/CastleLevelEdits.java",
-      "sha256": "fa6283d52484223521c8d34548e93ba1c5ac1f0fc06445e4ff49f80c58f9aee4"
+      "sha256": "c52ca62700d622bc9ba1c31e47e22b7314ca1f74f4d1bbb09f06ab7ec59b12f6"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleAnnex.java",
@@ -2387,11 +2387,11 @@
     },
     {
       "path": "src/main/java/org/beckenburg/CastleHubDecor.java",
-      "sha256": "33173e9eb22d57c670d4b4abeb18f33666528ee665e2b801afe01d6e813ee62d"
+      "sha256": "63f3911d66705733ceceea3de3e990d073d5c86aa3456bd7fce6dc6bd9f98643"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleDoorSlots.java",
-      "sha256": "ffa81a232e3e6507fd3c72f1e248bf3603a4d29a3d58fe1454a9561356198c2a"
+      "sha256": "cd61709318b7e78e6cb05ab5109bd60e4e52df8429c7bc86a39252a106f47500"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleGround.java",
@@ -2411,7 +2411,47 @@
     },
     {
       "path": "src/main/java/org/beckenburg/CastleMuseum.java",
-      "sha256": "234ae6b2ae617bb832d47c7134a2f14f789c5036496124a4fc9415d408e4e10b"
+      "sha256": "10f721ff1a44657e624ddc4687a2e6569b99956e0e3fc80b67554b378b109e71"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/CastlePlant.java",
+      "sha256": "3d3cbcb84d8ac8e6533e914fdc126f4a23ceb81d8d372a7f4763be998ce6a02c"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/CastleTraining.java",
+      "sha256": "e5062955f5552bb9dba344a0a47c8310e17cc117c5d05930896afa56631dc18b"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/CastleFinish.java",
+      "sha256": "cadb781ca53cc81e5a1a465ccdcd18c2309c3eae679af0d823e0510ebeb5aa0d"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/CastleWorldBounds.java",
+      "sha256": "5fb76c35d516b201905741df6b3a8423c4de5dd9180bff9bebe129e1c396a9f5"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/CastleRebuildUpgrade.java",
+      "sha256": "aa4ddadd99a048468614c9d5b1d2f530d5d939518b9fffcfa34e72c457ed5c04"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/CastleRebuildValidation.java",
+      "sha256": "4118723e04d900701e07d0890298476b8116366651227d654639f1847e9b25cb"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/CastleObjectRay.java",
+      "sha256": "0ebe3246532fab4b926a3916d5e404efa12bbb7934fd0544cc46bd4d46d2152a"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/CastleStory.java",
+      "sha256": "dd678656ab20064bd0ea60e509186b929f4c0a3a938e5180884f887e61a676ae"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/CastleStoryPanel.java",
+      "sha256": "bd2aaf87e3fe6ec89284468d234a2a3af0f620ca2fdd5765d94210499fecb43b"
+    },
+    {
+      "path": "src/main/java/org/beckenburg/CastleClutterWorld.java",
+      "sha256": "6b358b7b9e37a009dbf5c2fa614f8cccba15ccf120771f01273ec03eaf3a99f8"
     },
     {
       "path": "src/main/java/org/beckenburg/CastleWarehouse.java",

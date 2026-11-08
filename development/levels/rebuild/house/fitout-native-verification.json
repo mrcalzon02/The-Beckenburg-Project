@@ -1,0 +1,13 @@
+{
+  "level": "briar-rebuild",
+  "revision": "first-principles-fitout-v1-ef9b5996f4772ece",
+  "triangles": 112145,
+  "packed_images": 193,
+  "props": 29,
+  "spawns": 15,
+  "native_sha256": "858bec2e62c0fc95fc76f0630c1b2e02578ca118f4e73cde73599c587174bd3a",
+  "definition_sha256": "ee95a52beafd18bc021fe5c7f5c514c04efa98c0247046a607a4979799ab19c1",
+  "geometry_sha256": "c171a66577ff692734f61b9a7414bb777789fcd7f7471de1eeb71bedb8194b81",
+  "result": "PASS every source vertex/UV; packed images; original sockets; native file unchanged",
+  "acceptance": "construction candidate only; terrain/boundary and complete map gates open"
+}

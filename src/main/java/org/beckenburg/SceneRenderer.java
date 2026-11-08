@@ -325,17 +325,19 @@ public final class SceneRenderer {
     private record FixtureMeshPose(String mesh,double x,double y,double z,double scale,double yaw){}
     private record DynamicGeometryEntry(Object pose,List<Face> faces,long frame){}
     private final java.util.Map<DynamicGeometryKey,DynamicGeometryEntry> dynamicGeometry=new java.util.HashMap<>();
-    private HouseMap dynamicGeometryMap;
+    private Object dynamicGeometryMap;
     private long dynamicGeometryFrame,dynamicGeometryTriangles,dynamicGeometryBuilds,dynamicGeometryHits;
     public record DynamicGeometryStats(long builds,long hits,long triangles,long limit,int entries){}
     public DynamicGeometryStats dynamicGeometryStats(){
         return new DynamicGeometryStats(dynamicGeometryBuilds,dynamicGeometryHits,
             dynamicGeometryTriangles,DYNAMIC_GEOMETRY_LIMIT,dynamicGeometry.size());
     }
-    private void beginDynamicGeometry(HouseMap map){
+    private void beginDynamicGeometry(Object map){
         if(dynamicGeometryMap!=map){dynamicGeometry.clear();dynamicGeometryTriangles=0;dynamicGeometryMap=map;}
         dynamicGeometryFrame++;
     }
+    // Preserve the House diagnostic entrypoint while Castle shares the same cache.
+    private void beginDynamicGeometry(HouseMap map){beginDynamicGeometry((Object)map);}
     private List<Face> dynamicGeometry(DynamicGeometryKey key,Object pose,
             java.util.function.Supplier<List<Face>> build){
         var old=dynamicGeometry.get(key);
@@ -504,22 +506,23 @@ public final class SceneRenderer {
     private static void mountedLamp(List<Face> out,CastleHubDecor.Light fixture,boolean on){
         String mesh=on?fixture.on():fixture.off();
         GlbProps.Model model=GlbProps.model(mesh);
-        double minX=Double.POSITIVE_INFINITY,minY=minX,minZ=minX;
-        double maxX=Double.NEGATIVE_INFINITY,maxY=maxX,maxZ=maxX;
-        for(GlbProps.Triangle t:model.triangles())for(GlbProps.Vertex v:
-                new GlbProps.Vertex[]{t.a(),t.b(),t.c()}){
-            minX=Math.min(minX,v.x());maxX=Math.max(maxX,v.x());
-            minY=Math.min(minY,v.y());maxY=Math.max(maxY,v.y());
-            minZ=Math.min(minZ,v.z());maxZ=Math.max(maxZ,v.z());
-        }
-        double ox=(minX+maxX)*.5,oz=(minZ+maxZ)*.5;
-        double oy=fixture.mount()==CastleHubDecor.Mount.CEILING?maxY:(minY+maxY)*.5;
-        double s=fixture.scale(),cy=Math.cos(fixture.yaw()),sy=Math.sin(fixture.yaw());
+        // Keep the exact same local pivot when the fixture changes power state.
+        // The fitted wall yaw comes from the masonry tangent, not saved drift.
+        double[] anchor=castleBounds(fixture.off());
+        double ox=anchor[0],oz=anchor[2];
+        double oy=fixture.mount()==CastleHubDecor.Mount.CEILING
+            ?anchor[1]+anchor[4]:anchor[1]+anchor[4]*.5;
+        double s=fixture.scale();
         var wallPose=CastleWallLampMount.resolve(fixture,CastleLevelEdits.current().walls());
+        double cy=Math.cos(wallPose.yaw()),sy=Math.sin(wallPose.yaw());
         // The real masonry is 42 cm thick. A 20 cm offset from its centreline
         // still lies *inside* the stone, so never centre the imported sconce
         // on that saved coordinate. Fit its furthest-back triangles instead.
-        if(fixture.mount()==CastleHubDecor.Mount.WALL&&wallPose.supported()){
+        // Source switch GLBs contain their OWN plate and lever. Sconce steel
+        // backing strips are not a universal wall fixture: adding one here
+        // produced the reported giant horizontal, stretched switch backplate.
+        if(fixture.mount()==CastleHubDecor.Mount.WALL&&wallPose.supported()
+                &&!mesh.equals("light_switch_1")){
             var plate=CastleWallLampMount.plate(fixture,wallPose);
             // Reuse the original sconce's weathered steel atlas region, not a flat color
             // or the fluorescent strip. Both power states retain the same metal finish.
@@ -980,18 +983,21 @@ public final class SceneRenderer {
         }
         List<Face> road=new ArrayList<>();
         arrivalRoadGeometry(road,van);
-        arrivalSurroundings(road,van,LevelEnclosure.setting(map.level().id()));
+        arrivalSurroundings(road,van,LevelEnclosure.setting(map.level().id()),VanStreetHouses.homes(map.level()));
         cachedRoadSite=van;
         cachedRoadFaces=List.copyOf(road);
         appendRetainedWorld(out,cachedRoadFaces,"arrival-road",map);
     }
 
     private static void arrivalSurroundings(List<Face> road,VanStaging van,LevelEnclosure.Setting setting){
+        arrivalSurroundings(road,van,setting,VanStreetHouses.HOMES);
+    }
+    private static void arrivalSurroundings(List<Face> road,VanStaging van,LevelEnclosure.Setting setting,List<VanStreetHouses.House> homes){
         if(setting==LevelEnclosure.Setting.SUBURBAN){
-            for(var home:VanStreetHouses.HOMES)streetResidence(road,van,home);
+            for(var home:homes)streetResidence(road,van,home);
             streetTerminus(road,van);
         }else if(setting==LevelEnclosure.Setting.URBAN){
-            for(var home:VanStreetHouses.HOMES)urbanStreetBlock(road,van,home);
+            for(var home:homes)urbanStreetBlock(road,van,home);
             streetTerminus(road,van);
         }else{
             // The blocked playable road continues visually into the woods/mountains.
@@ -1071,12 +1077,16 @@ public final class SceneRenderer {
         int ground=LevelEnclosure.setting(level.id())==LevelEnclosure.Setting.URBAN?LevelMaterials.CONCRETE:MaterialAtlas.FOLIAGE;
         var terrain=SiteTerrain.of(level);
         var worldSurface=WorldTerrainSurface.of(level);
+        boolean houseLandscape=level.id().equals("briar-rebuild")&&WorldTerrainSurface.walking(level);
+        if(houseLandscape)ground=HouseRebuildLandscape.material();
         if(worldSurface!=null){
             for(int i=0;i<worldSurface.triangleCount();i++){
                 var t=worldSurface.triangle(i);var a=t.a();var b=t.b();var c=t.c();
                 faces.add(new Face(new Point(a.x(),a.y(),a.z()),new Point(b.x(),b.y(),b.z()),
                     new Point(c.x(),c.y(),c.z()),0x9a9e89,ground,
-                    a.x()*.25,a.z()*.25,b.x()*.25,b.z()*.25,c.x()*.25,c.z()*.25));
+                    houseLandscape?HouseRebuildLandscape.u(a.x()):a.x()*.25,houseLandscape?HouseRebuildLandscape.v(a.z()):a.z()*.25,
+                    houseLandscape?HouseRebuildLandscape.u(b.x()):b.x()*.25,houseLandscape?HouseRebuildLandscape.v(b.z()):b.z()*.25,
+                    houseLandscape?HouseRebuildLandscape.u(c.x()):c.x()*.25,houseLandscape?HouseRebuildLandscape.v(c.z()):c.z()*.25));
             }
         }else if(level.id().equals("blackpine")){
             ground=GlbProps.model("level_woodland_floor").triangles().get(0).material();
@@ -1426,8 +1436,40 @@ public final class SceneRenderer {
     private static final int SHELL_CHUNK_SIZE=256;
     private HouseMap shellSourceMap;
     private String shellSourceRevision="";
+    /** CPU-owned loading preparation statistics; never a second scene cache. */
+    record StaticPreparation(String revision,boolean shellReused,
+            boolean sceneryReused,int shellChunks,int shellFaces,
+            int sceneryInstances,long elapsedNs){}
+    /** Stage 2: prepare existing immutable shell/material/AABB and instance
+     * indexes before the first gameplay frame. The cinematic never owns a
+     * duplicate of these faces. GPU uploads remain on the backend owner thread.
+     * Door positions are intentionally absent from the revision key: a door
+     * moving must not rebuild an entire level's immutable geometry. */
+    StaticPreparation prepareStaticScene(HouseMap map){
+        Objects.requireNonNull(map,"map");
+        long started=System.nanoTime();
+        String revision=map.level().revision()+":"+map.hidingDensity();
+        boolean sameShell=map==shellSourceMap&&revision.equals(shellSourceRevision);
+        boolean sameScenery=map==scenerySourceMap&&revision.equals(sceneryRevision);
+        // Native sites have a separate terrain owner and cache lifecycle.
+        // Do not report stale House geometry from an earlier renderer scene
+        // as though it had been prebaked for a native level.
+        if(map.nativeSite())return new StaticPreparation(revision,false,false,
+            0,0,0,System.nanoTime()-started);
+        staticShellChunks(map);
+        int count=scenery(map).instances().size();
+        return new StaticPreparation(revision,sameShell,sameScenery,
+            preparedShellChunks.size(),preparedShellFaces.size(),
+            count,System.nanoTime()-started);
+    }
     private List<Face> preparedShellFaces=List.of();
     private List<ShellChunk> preparedShellChunks=List.of();
+    // Material IDs belong to authored immutable chunks; preparing them once
+    // eliminates a LinkedHashSet scan/boxing every visible GPU frame.
+    private List<int[]> preparedShellMaterials=List.of();
+    // Prepared during level loading: no per-toggle source scans to find
+    // material faces across the same static shell chunk.
+    private List<java.util.Map<Integer,List<Face>>> preparedShellMaterialFaces=List.of();
     private boolean shellChunkCulling=true;
     /** Functional reference only; no player-facing option is introduced. */
     public void setShellChunkCulling(boolean enabled){shellChunkCulling=enabled;}
@@ -1694,6 +1736,7 @@ public final class SceneRenderer {
         quad(out,new Point(x0+ex,y0+.90,z0+ez),new Point(x1+ex,y1+.90,z1+ez),new Point(x1+ex,y1+.96,z1+ez),new Point(x0+ex,y0+.96,z0+ez),0x685035);
     }
     private static void levelDeck(List<Face> out,LevelDefinition level,LevelDefinition.Room r,boolean ceiling){
+        if(!ceiling&&r.outside()&&r.id()!=14&&WorldTerrainSurface.walking(level))return;
         var terrain=SiteTerrain.of(level);
         if(!ceiling&&terrain!=null&&r.outside()&&r.id()!=14){terrainDeck(out,terrain,r);return;}
         double deck=ceiling?r.y()+r.height():r.y(),surface=ceiling?deck-.04:deck;
@@ -1806,7 +1849,12 @@ public final class SceneRenderer {
         // This skin contains the original House's measured facade/porch.
         // A revised House definition must not inherit that unrelated envelope
         // merely because it uses the same gameplay site slot.
-        if(map.site()==HouseMap.Site.HOUSE&&level.id().equals("house"))houseExterior(out,level);
+        if(map.envelope()!=null){
+            for(var part:map.envelope().parts())for(var f:part.triangles())if(f.visible()){
+                var a=f.a();var b=f.b();var c=f.c();
+                out.add(new Face(new Point(a.p().x(),a.p().y(),a.p().z()),new Point(b.p().x(),b.p().y(),b.p().z()),new Point(c.p().x(),c.p().y(),c.p().z()),0xffffff,f.material(),a.u(),a.v(),b.u(),b.v(),c.u(),c.v(),13));
+            }
+        }else if(map.site()==HouseMap.Site.HOUSE&&level.id().equals("house"))houseExterior(out,level);
         else {
         // Roofs follow the actual upper footprint; pitched planes meet at a ridge.
         for(var r:level.rooms())if(!r.outside()&&r.y()>=0&&level.rooms().stream().noneMatch(up->!up.outside()&&up.y()>r.y()
@@ -1977,6 +2025,43 @@ public final class SceneRenderer {
     // shadow touching plaster must not retessellate distant timber merely
     // because both materials share one 256-face shell chunk.
     private final java.util.Map<ShellGpuKey,ShellChunk> residentShellMaterialBounds=new java.util.HashMap<>();
+    // Same camera-independent stationary rays as retained scenery, but now
+    // owned per House shell material. Door A->B->A restores only the exact
+    // receiver-side rays for that material and no other portal combination.
+    private final java.util.Map<ShellGpuKey,FixtureLighting.StationaryShadows>
+        residentShellShadows=new java.util.HashMap<>();
+    /** A lighting generation only changes when factors or occlusion actually
+     * change; a camera movement does NOT. Cache each chunk/material's spatial
+     * regionVersion until that generation changes, but keep the original
+     * exact cell lookup on revisions to preserve door-local correctness. */
+    private record ShellRegionStamp(long generation,long regionVersion){}
+    private final java.util.Map<ShellGpuKey,ShellRegionStamp> shellRegionStamps=new java.util.HashMap<>();
+    private FixtureLighting shellRegionLighting;
+    private long shellRegionChecks,shellRegionReuses;
+    public record ShellRegionStats(long spatialChecks,long generationReuses,int cachedRegions){}
+    public ShellRegionStats shellRegionStats(){
+        return new ShellRegionStats(shellRegionChecks,shellRegionReuses,shellRegionStamps.size());
+    }
+    private long cachedShellRegionVersion(ShellGpuKey key,ShellChunk bounds){
+        if(shellRegionLighting!=fixtureLighting){
+            // A new map has a different real light-field, even if its numeric
+            // generation accidentally equals that of an old map.
+            shellRegionLighting=fixtureLighting;
+            shellRegionStamps.clear();
+        }
+        long generation=fixtureLighting.frameRevision();
+        var current=shellRegionStamps.get(key);
+        if(current!=null&&current.generation()==generation){
+            shellRegionReuses++;
+            return current.regionVersion();
+        }
+        shellRegionChecks++;
+        long revision=fixtureLighting.regionVersion(
+            bounds.minX-.09,bounds.minY-.09,bounds.minZ-.09,
+            bounds.maxX+.09,bounds.maxY+.09,bounds.maxZ+.09);
+        shellRegionStamps.put(key,new ShellRegionStamp(generation,revision));
+        return revision;
+    }
     private long shellResidentBuilds,shellResidentHits,shellResidentBytes;
     public record ShellResidentStats(long builds,long hits,long bytes,int batches){}
     public ShellResidentStats shellResidentStats(){
@@ -1998,13 +2083,21 @@ public final class SceneRenderer {
     private void resetStableGpuCache(HouseMap map){
         String revision=map.level().revision()+":"+map.hidingDensity();
         if(stableGpuMap==map&&revision.equals(stableGpuRevision))return;
+        releaseStableGpuCache();
         stableGpuMap=map;
         stableGpuRevision=revision;
+    }
+    private void releaseStableGpuCache(){
+        stableGpuMap=null;stableGpuRevision=null;
         stableGpuCache.clear();
         stableGpuCacheOrder.clear();
         stableGpuBytes=0;
         residentShell.clear();
         residentShellMaterialBounds.clear();
+        for(var shadows:residentShellShadows.values())shadows.release();
+        residentShellShadows.clear();
+        shellRegionStamps.clear();
+        shellRegionLighting=null;
         shellResidentBytes=0;
     }
     /** Keep camera-space rasterization on OpenGL while retaining the stationary
@@ -2103,18 +2196,14 @@ public final class SceneRenderer {
             // Retained geometry keeps the full close-range probe topology.
             // Walking across a distance threshold must not retessellate walls.
             int lod=chunk.room>=0&&chunk.room<12?3:0;
-            var materials=new java.util.LinkedHashSet<Integer>();
-            for(int i=chunk.start;i<chunk.end;i++)
-                materials.add(preparedShellFaces.get(i).material);
+            int[] materials=preparedShellMaterials.get(chunkIndex);
             var stale=new java.util.HashSet<Integer>();
             var versions=new java.util.HashMap<Integer,Long>();
             for(int material:materials){
                 ShellGpuKey key=new ShellGpuKey(chunkIndex,material);
                 ShellChunk region=residentShellMaterialBounds.computeIfAbsent(
                     key,ignored->shellMaterialBounds(chunk,material));
-                long version=fixtureLighting.regionVersion(
-                    region.minX-.09,region.minY-.09,region.minZ-.09,
-                    region.maxX+.09,region.maxY+.09,region.maxZ+.09);
+                long version=cachedShellRegionVersion(key,region);
                 versions.put(material,version);
                 ResidentShell prev=residentShell.get(key);
                 if(prev==null||prev.lod()!=lod||prev.lightVersion()!=version)
@@ -2129,10 +2218,22 @@ public final class SceneRenderer {
                 int previousLod=preparingStableGpuLod;
                 preparingStableGpuFace=true;preparingStableGpuLod=lod;
                 try{
-                    for(int i=chunk.start;i<chunk.end;i++){
-                        Face face=preparedShellFaces.get(i);
-                        if(stale.contains(face.material))
-                            appendGpuFace(face,chunk.room,0,batches);
+                    for(int material:materials){
+                        if(!stale.contains(material))continue;
+                        ShellGpuKey key=new ShellGpuKey(chunkIndex,material);
+                        ShellChunk bound=residentShellMaterialBounds.get(key);
+                        var shadows=residentShellShadows.computeIfAbsent(key,
+                            ignored->fixtureLighting.newStationaryShadows());
+                        long visibilityRevision=fixtureLighting.regionOccluderVersion(
+                            bound.minX-.09,bound.minY-.09,bound.minZ-.09,
+                            bound.maxX+.09,bound.maxY+.09,bound.maxZ+.09);
+                        var prior=fixtureLighting.useStationaryShadows(shadows,visibilityRevision);
+                        try{
+                            for(Face face:preparedShellMaterialFaces.get(chunkIndex).get(material))
+                                appendGpuFace(face,chunk.room,0,batches);
+                        }finally{
+                            fixtureLighting.restoreStationaryShadows(prior);
+                        }
                     }
                 }finally{
                     preparingStableGpuFace=previousMode;
@@ -2158,8 +2259,8 @@ public final class SceneRenderer {
                     shellResidentBytes+=(long)vertices.length*Float.BYTES;
                     shellResidentBuilds++;
                 }
-                shellResidentHits+=materials.size()-stale.size();
-            }else shellResidentHits+=materials.size();
+                shellResidentHits+=materials.length-stale.size();
+            }else shellResidentHits+=materials.length;
             lastGpuFrustumFaces+=chunk.end-chunk.start;
             for(int material:materials){
                 ResidentShell prepared=residentShell.get(new ShellGpuKey(chunkIndex,material));
@@ -2250,10 +2351,46 @@ public final class SceneRenderer {
     /** Same scene and dimensions only: retain the last complete GPU image while
      * the next async readback is pending, never reveal an empty sky frame. */
     private GpuWorldRenderer.Result lastUsableGpuFrame;
+    /** The GL readback can be one or more frames behind Swing camera input.
+     * Composite character sprites against THAT readback's camera and resident
+     * poses, never the new camera against a stale color/depth buffer. */
+    record GpuCompositeFrame(double x,double eyeHeight,double z,double yaw,double pitch,
+            java.util.Map<CastleRelations.Resident,CastleResidentAnimation.Body> residents){}
+    private final java.util.LinkedHashMap<Long,GpuCompositeFrame> gpuCompositeFrames=
+        new java.util.LinkedHashMap<>(){
+            @Override protected boolean removeEldestEntry(java.util.Map.Entry<Long,GpuCompositeFrame> entry){
+                return size()>12;
+            }
+        };
+    private GpuCompositeFrame presentedGpuFrame;
+    static GpuCompositeFrame gpuCompositeForReadback(
+            java.util.Map<Long,GpuCompositeFrame> frames,GpuWorldRenderer.Result readback,
+            long sceneId,int width,int height){
+        return GpuWorldRenderer.belongsTo(readback,sceneId,width,height)
+            ?frames.get(readback.frameId()):null;
+    }
+    private Point presentedCamera(Point p,GpuCompositeFrame view){
+        if(view==null)return camera(p);
+        double dx=p.x-view.x(),dy=p.y-view.eyeHeight(),dz=p.z-view.z();
+        double cy=Math.cos(view.yaw()),sy=Math.sin(view.yaw());
+        double cp=Math.cos(view.pitch()),sp=Math.sin(view.pitch());
+        double forward=dx*sy+dz*cy;
+        return new Point(-dx*cy+dz*sy,dy*cp-forward*sp,dy*sp+forward*cp);
+    }
     public void pinCompletedGpuFrame(GpuWorldRenderer.Result result){if(!GpuWorldRenderer.belongsTo(result,gpuSceneId,renderWidth,renderHeight))throw new IllegalArgumentException("GPU result belongs to a different preview scene");pinnedGpuFrame=result;}
     /** GPU acceptance must verify the NEW scene was rendered, not merely a
      * previous resident framebuffer with coincidentally identical dimensions. */
     public long submittedGpuFrameId(){return lastSubmittedGpuFrame;}
+    /** Loader worker only. Wait until the GL context owner has processed this
+     * exact scene's latest submitted frame; never block gameplay or the EDT.
+     * A readback acknowledgement means its resident VBO/texture uploads have
+     * actually run, not merely that Swing enqueued a surface description. */
+    boolean awaitSubmittedGpuPrewarm(long timeoutNs,java.util.function.BooleanSupplier cancelled){
+        GpuWorldRenderer backend=GpuWorldRenderer.active();
+        return backend!=null&&backend.ready()
+            &&GpuWorldRenderer.awaitPreparedFrame(backend,gpuSceneId,
+                lastSubmittedGpuFrame,timeoutNs,cancelled);
+    }
     private boolean drawGpuFaces(List<Face> faces,HouseMap map){
         if(photographicSoftwareRaster)return false;
         GpuWorldRenderer backend=GpuWorldRenderer.active();
@@ -2301,6 +2438,13 @@ public final class SceneRenderer {
         if(activeWater!=null&&!activeWater.bodies().isEmpty())waterViews.put(submitted,waterView(waterClock));
         consumedWaterView=null;
         lastSubmittedGpuFrame=submitted;
+        var crew=new java.util.EnumMap<CastleRelations.Resident,CastleResidentAnimation.Body>(
+            CastleRelations.Resident.class);
+        if(waterCastle!=null&&castleCharactersVisible&&eyeHeight<2.0)
+            for(var resident:CastleRelations.Resident.values())
+                crew.put(resident,waterCastle.residents().body(resident));
+        gpuCompositeFrames.put(submitted,new GpuCompositeFrame(x,eyeHeight,z,yaw,pitch,
+            java.util.Map.copyOf(crew)));
         backend.submit(new GpuWorldRenderer.Frame(gpuSceneId,submitted,
             renderWidth,renderHeight,(float)focal,
             (float)psxPreset.snap,(float)psxPreset.affine,surfaces,
@@ -2315,6 +2459,8 @@ public final class SceneRenderer {
             available=lastUsableGpuFrame;
         lastGpuReadbackAvailable=GpuWorldRenderer.belongsTo(available,gpuSceneId,renderWidth,renderHeight);
         lastGpuReadbackFresh=lastGpuReadbackAvailable&&available.frameId()==submitted;
+        presentedGpuFrame=gpuCompositeForReadback(gpuCompositeFrames,available,
+            gpuSceneId,renderWidth,renderHeight);
         if(lastGpuReadbackAvailable){
             consumedWaterView=waterViews.get(available.frameId());
             int[] image=available.argb();
@@ -2338,6 +2484,8 @@ public final class SceneRenderer {
         shellSourceMap=map;shellSourceRevision=revision;
         preparedShellFaces=buildLevelShell(map);
         var chunks=new ArrayList<ShellChunk>();
+        var materialLists=new ArrayList<int[]>();
+        var materialFaceGroups=new ArrayList<java.util.Map<Integer,List<Face>>>();
         var roomIds=new java.util.HashSet<Integer>();
         for(int from=0;from<preparedShellFaces.size();){
             int room=preparedShellFaces.get(from).room;
@@ -2350,8 +2498,12 @@ public final class SceneRenderer {
             }
             double minX=Double.POSITIVE_INFINITY,minY=minX,minZ=minX;
             double maxX=Double.NEGATIVE_INFINITY,maxY=maxX,maxZ=maxX;
+            var materialIds=new java.util.LinkedHashSet<Integer>();
+            var grouped=new java.util.LinkedHashMap<Integer,java.util.ArrayList<Face>>();
             for(int i=from;i<end;i++){
                 var face=preparedShellFaces.get(i);
+                materialIds.add(face.material);
+                grouped.computeIfAbsent(face.material,ignored->new java.util.ArrayList<>()).add(face);
                 for(Point point:new Point[]{face.a,face.b,face.c}){
                     minX=Math.min(minX,point.x);maxX=Math.max(maxX,point.x);
                     minY=Math.min(minY,point.y);maxY=Math.max(maxY,point.y);
@@ -2359,10 +2511,17 @@ public final class SceneRenderer {
                 }
             }
             chunks.add(new ShellChunk(room,from,end,minX,minY,minZ,maxX,maxY,maxZ));
+            materialLists.add(materialIds.stream().mapToInt(Integer::intValue).toArray());
+            var immutableGroups=new java.util.LinkedHashMap<Integer,List<Face>>();
+            for(var entry:grouped.entrySet())
+                immutableGroups.put(entry.getKey(),List.copyOf(entry.getValue()));
+            materialFaceGroups.add(java.util.Collections.unmodifiableMap(immutableGroups));
             from=end;
         }
         shellPreparedRoomCount=roomIds.size();
         preparedShellChunks=List.copyOf(chunks);
+        preparedShellMaterials=List.copyOf(materialLists);
+        preparedShellMaterialFaces=List.copyOf(materialFaceGroups);
         return preparedShellChunks;
     }
     /** Convex-box rejection: only a shared outside plane for every corner
@@ -2390,6 +2549,17 @@ public final class SceneRenderer {
 
     private void levelArchitecture(List<Face> out,HouseMap map){
         if(map.nativeSite()){nativeArchitecture(out,map);return;}
+        generatorControls(out,map);
+        if(map.services()!=null){
+            var geometry=authoredFixtureGeometry.computeIfAbsent(map.services(),key->{
+                var faces=new ArrayList<Face>();
+                for(var part:map.services().parts())for(var f:part.triangles()){
+                    var a=f.a();var b=f.b();var c=f.c();int room=map.roomAt((a.p().x()+b.p().x()+c.p().x())/3,(a.p().y()+b.p().y()+c.p().y())/3,(a.p().z()+b.p().z()+c.p().z())/3);
+                    faces.add(new Face(new Point(a.p().x(),a.p().y(),a.p().z()),new Point(b.p().x(),b.p().y(),b.p().z()),new Point(c.p().x(),c.p().y(),c.p().z()),0xffffff,f.material(),a.u(),a.v(),b.u(),b.v(),c.u(),c.v(),room<0?13:room));
+                }return List.copyOf(faces);
+            });
+            appendRetainedWorld(out,geometry,map.services(),map);
+        }
         scenery(map);
         var enclosure=enclosureFaces.computeIfAbsent(map.level().revision(),
             key->{var owned=new ArrayList<Face>();for(var face:enclosureScenery(map.level()))owned.add(face.owned(13));return List.copyOf(owned);});
@@ -2504,9 +2674,12 @@ public final class SceneRenderer {
         }
         appendRetainedWorld(out,nativeBed,"native-water-bed",map);
     }
+    private void generatorControls(List<Face> out,HouseMap map){
+        for(var socket:map.level().sockets())if(socket.type().equals("generator")){List<Face> control=new ArrayList<>();imported(control,"button_12",socket.x(),socket.y(),socket.z(),.30,socket.yaw());own(out,control,socket.room());}
+    }
     private void nativeArchitecture(List<Face> out,HouseMap map){
         nativeWaterBed(out,map);
-        for(var socket:map.level().sockets())if(socket.type().equals("generator")){List<Face> control=new ArrayList<>();imported(control,"button_12",socket.x(),socket.y(),socket.z(),.30,socket.yaw());own(out,control,socket.room());}
+        generatorControls(out,map);
         for(var instance:HollowCreekScene.instances()){
             if(!objectInView(instance.x(),instance.z(),instance.radius(),100))continue;
             var retained=auxiliaryWorld.get(instance);
@@ -2718,13 +2891,28 @@ public final class SceneRenderer {
     private static void architecturalWall(List<Face> out,CastleHubArchitecturalPlan.Wall wall){
         if(wall.hasDoor())return;
         double half=CastleDoorSlots.MASONRY_THICKNESS*.5;
-        if(wall.horizontal())
-            texturedBox(out,wall.x0(),wall.bottom(),wall.z0()-half,
-                wall.x1()-wall.x0(),wall.top()-wall.bottom(),
-                CastleDoorSlots.MASONRY_THICKNESS,wall.material());
-        else texturedBox(out,wall.x0()-half,wall.bottom(),wall.z0(),
-                CastleDoorSlots.MASONRY_THICKNESS,wall.top()-wall.bottom(),
-                wall.z1()-wall.z0(),wall.material());
+        double x=wall.horizontal()?wall.x0():wall.x0()-half;
+        double z=wall.horizontal()?wall.z0()-half:wall.z0();
+        double sx=wall.horizontal()?wall.x1()-wall.x0():CastleDoorSlots.MASONRY_THICKNESS;
+        double sz=wall.horizontal()?CastleDoorSlots.MASONRY_THICKNESS:wall.z1()-wall.z0();
+        double top=wall.top();
+        // The ground wall cap and the upstairs floor used to occupy the same Y plane.
+        // Keep all vertical faces (including true collision-sized masonry) but replace
+        // the cap with only its uncovered portions. Moving the floor up or drawing a
+        // decal would hide the symptom without fixing the overlapping triangles.
+        var boxFaces=new ArrayList<Face>(12);
+        texturedBox(boxFaces,x,wall.bottom(),z,sx,top-wall.bottom(),sz,wall.material());
+        for(var face:boxFaces){
+            boolean upward=Math.abs(face.a.y-top)<1e-8
+                &&Math.abs(face.b.y-top)<1e-8&&Math.abs(face.c.y-top)<1e-8;
+            if(!upward)out.add(face);
+        }
+        for(var patch:CastleWallCaps.exposed(x,z,x+sx,z+sz,top,CastleRooms.structuralDecks()))
+            texturedQuad(out,new Point(patch.x0(),top,patch.z0()),
+                new Point(patch.x1(),top,patch.z0()),new Point(patch.x1(),top,patch.z1()),
+                new Point(patch.x0(),top,patch.z1()),wall.material(),
+                patch.x0()-x,patch.z0()-z,patch.x1()-x,patch.z0()-z,
+                patch.x1()-x,patch.z1()-z,patch.x0()-x,patch.z1()-z,0xffffff);
     }
     private static void castleDoorLeaf(List<Face> out,CastleDoorSlots.Slot slot,
                                         CastleDoorSlots.Type type,boolean open){
@@ -2778,45 +2966,19 @@ public final class SceneRenderer {
             if(wall.hasDoor()){
                 // Stone reveals span the depth between distinct inside and outside faces.
                 // Solid lintels are ordinary thick wall surfaces, not fake closed arches.
-                double left=wall.horizontal()?wall.x0():wall.z0();
-                double right=wall.horizontal()?wall.x1():wall.z1();
-                double y0=wall.bottom(),y1=y0+(Math.abs(wall.portalCenter()-15.5)<.01
-                    &&Math.abs(wall.z0()-34)<.01?2.95:CastleHubArchitecturalPlan.DOOR_HEIGHT);
-                if(wall.horizontal()){
-                    box(out,left-.085,y0,wall.z0()-.16,.17,y1-y0,.32,0x786c5b);
-                    box(out,right-.085,y0,wall.z0()-.16,.17,y1-y0,.32,0x786c5b);
-                    box(out,left-.12,y1-.13,wall.z0()-.18,right-left+.24,.19,.36,0x9b8970);
-                }else{
-                    box(out,wall.x0()-.16,y0,left-.085,.32,y1-y0,.17,0x786c5b);
-                    box(out,wall.x0()-.16,y0,right-.085,.32,y1-y0,.17,0x786c5b);
-                    box(out,wall.x0()-.18,y1-.13,left-.12,.36,.19,right-left+.24,0x9b8970);
-                }
+                // Authoritative portal marker and its actual header drive
+                // both geometry and collision: no duplicated guessed sizes.
+                for(var beam:CastlePortalTrim.beams(wall,walls))
+                    box(out,beam.x(),beam.y(),beam.z(),
+                        beam.width(),beam.height(),beam.depth(),beam.colour());
             }else architecturalWall(out,wall);
         }
-        for(var window:CastleDoorSlots.windows()){
-            // The wall was cut into a solid lower sill, upper lintel and
-            // side shoulders above. Wood mullions are recessed INTO the
-            // 42cm masonry depth, not pasted against its outer texture.
-            double hw=CastleDoorSlots.MASONRY_THICKNESS*.5;
-            double breadth=window.z1()-window.z0();
-            for(double side: new double[]{window.z0()-.065,window.z1()-.025})
-                texturedBox(out,window.x()-hw-.025,window.sill(),side,
-                    CastleDoorSlots.MASONRY_THICKNESS+.05,
-                    window.head()-window.sill(),.09,MaterialAtlas.AGED_WOOD);
-            for(double y:new double[]{window.sill(),window.head()-.08})
-                texturedBox(out,window.x()-hw-.025,y,window.z0(),
-                    CastleDoorSlots.MASONRY_THICKNESS+.05,.09,breadth,
-                    MaterialAtlas.AGED_WOOD);
-            texturedBox(out,window.x()-.045,(window.sill()+window.head())*.5-.05,
-                window.z0(),.09,.10,breadth,MaterialAtlas.AGED_WOOD);
-        }
+        for(var frame:CastleDoorSlots.windowFrames())
+            texturedBox(out,frame.x(),frame.y(),frame.z(),frame.width(),frame.height(),frame.depth(),MaterialAtlas.AGED_WOOD);
         castleSlabs(out,map);
         // Closed stone stair mass: the riser is on each tread's SOUTH edge.
-        for(int step=0;step<20;step++){
-            double south=32-step*.5,north=south-.5;
-            double top=(step+1)*CastleHubArchitecturalPlan.GROUND_CEILING/20.0;
-            texturedBox(out,16,0,north,3,top,.5,MaterialAtlas.STONE);
-        }
+        for(var step:CastleHubArchitecturalPlan.upperStairSolids())
+            texturedBox(out,step.x0(),0,step.z0(),step.x1()-step.x0(),step.top(),step.z1()-step.z0(),MaterialAtlas.STONE);
         for(double side:new double[]{16,19})for(int step=0;step<10;step++){
             double za=32-step,zb=za-1,ha=step*.34+.1,hb=(step+1)*.34+.1;
             for(double xx:new double[]{side-.05,side+.05})
@@ -2883,6 +3045,9 @@ public final class SceneRenderer {
     }
     public void drawCastle(CastleHubMap map,double clock){drawCastle(map,clock,true);}
     private final boolean castleResidentEnabled=worldResidentEnabled&&!Boolean.getBoolean("beckenburg.castle.resident.disabled");
+    // Exact in-game visual acceptance compares the same world depth with and
+    // without resident sprites; gameplay defaults to actors visible.
+    boolean castleCharactersVisible=true;
     private CastleHubMap castleGeometryMap,castleLightingMap;
     private long castleGeometryRevision=-1,castleTopologyBuilds;
     private List<Face> castleStaticGeometry=List.of();
@@ -2906,6 +3071,7 @@ public final class SceneRenderer {
     private final java.util.Set<Face> residentSceneryFaces=java.util.Collections.newSetFromMap(new java.util.IdentityHashMap<>());
     private int residentOmittedFaces;
     private Object residentSceneOwner;
+    private String residentSceneRevision;
     private void activateResidentScene(Object owner){
         // Settings are an immutable local snapshot, never host authority.
         // Recreate lighting and its dependent geometry once per APPLY, not on
@@ -2918,15 +3084,50 @@ public final class SceneRenderer {
             stableGpuMap=null;stableGpuRevision=null;
             residentSceneOwner=null;
         }
-        if(residentSceneOwner==owner)return;
+        String revision=owner instanceof HouseMap map
+            ?map.level().revision()+":"+map.hidingDensity():null;
+        if(residentSceneOwner==owner&&Objects.equals(residentSceneRevision,revision))return;
+        if(residentSceneOwner==owner){
+            // An editor or hiding-density revision must not reuse lighting
+            // probes or OpenGL readbacks from the previous authored topology.
+            // Ordinary door/light changes do NOT change this revision.
+            houseLightingMap=null;houseLighting=null;
+            stableGpuMap=null;stableGpuRevision=null;
+        }
         for(var chunk:residentScenery.values())releaseWorldChunk(chunk);
         residentScenery.clear();
         for(var auxiliary:auxiliaryWorld.values())for(var chunk:auxiliary.chunks())releaseWorldChunk(chunk);
         auxiliaryWorld.clear();authoredFixtureGeometry.clear();nativeCache.clear();
         dynamicGeometry.clear();dynamicGeometryTriangles=0;dynamicGeometryMap=null;
+        stableGpuFaces.clear();shellGpuFaces.clear();residentSceneryFaces.clear();visibleResidentScenery.clear();
         for(var chunk:castleStaticChunks)releaseWorldChunk(chunk);
         for(var chunk:castleAssemblies.values())releaseWorldChunk(chunk);
-        residentSceneOwner=owner;gpuSceneId=GpuWorldRenderer.nextId();pinnedGpuFrame=null;
+        // Native editor scene changes must release inactive CPU geometry as well
+        // as GPU buffers. Keeping Castle faces while building a furnished House
+        // retains both complete worlds at the small editor heap budget.
+        if(castleGeometryMap!=owner){
+            castleGeometryMap=null;castleGeometryRevision=-1;
+            castleStaticGeometry=List.of();castleStaticChunks=List.of();
+            castleAssemblies.clear();castleActiveAssemblies.clear();castleExportGeometry=List.of();castleEnvironment=null;
+            castleLightingMap=null;castleLighting=null;
+        }
+        // Preserve a newly prepared destination; drop only the previous source.
+        if(shellSourceMap!=owner){
+            shellSourceMap=null;shellSourceRevision="";preparedShellFaces=List.of();preparedShellChunks=List.of();
+            preparedShellMaterials=List.of();preparedShellMaterialFaces=List.of();
+        }
+        if(scenerySourceMap!=owner){
+            scenerySourceMap=null;sceneryRevision=null;sceneryInstances=null;expandedScenery=null;
+            preparedScenery.clear();preparedSceneryTriangles=0;
+        }
+        if(stableGpuMap!=null&&stableGpuMap!=owner)releaseStableGpuCache();
+        if(owner instanceof CastleHubMap){
+            cachedVan=null;cachedVanFaces=List.of();cachedRoadSite=null;cachedRoadFaces=List.of();enclosureFaces.clear();nativeBed=null;
+            houseLightingMap=null;houseLighting=null;
+        }
+        residentSceneOwner=owner;residentSceneRevision=revision;
+        gpuSceneId=GpuWorldRenderer.nextId();pinnedGpuFrame=null;
+        lastUsableGpuFrame=null;presentedGpuFrame=null;gpuCompositeFrames.clear();
     }
     private void releaseWorldChunk(ResidentWorldChunk chunk){
         for(var batch:chunk.batches.values())residentWorldBytes-=(long)batch.vertices().length*Float.BYTES;
@@ -3107,9 +3308,13 @@ public final class SceneRenderer {
         for(var trim:CastleHubArchitecturalPlan.trims())if(trim.mesh().contains("tower"))
             imported(castle,trim.mesh(),trim.x(),trim.y(),trim.z(),trim.sx(),trim.sy(),trim.sz(),trim.yaw());
         for(var roof:CastleLevelEdits.current().roofs())castleRoof(castle,roof);
-        for(var sw:CastleHubDecor.SWITCHES)if(CastleHubDecor.switchAvailable(sw))
-            mountedLamp(castle,new CastleHubDecor.Light("light_switch_1","light_switch_1",
-                sw.x(),sw.y(),sw.z(),.85,sw.yaw(),CastleHubDecor.Mount.WALL),true);
+        // Read actual imported bounds and actual masonry faces. A switch is a
+        // small surface plate, never a rescaled wall sconce or free-floating
+        // prop; orient each toward its supporting authored wall.
+        for(var sw:CastleHubDecor.SWITCHES)if(CastleHubDecor.switchAvailable(sw)){
+            var fitted=CastleSwitchMount.fit(sw,edits.walls());
+            if(fitted!=null)mountedLamp(castle,fitted,true);
+        }
         for(var piece:CastleServiceFixtures.all())
             castleProp(castle,piece.mesh(),piece.x(),piece.y(),piece.z(),piece.scale(),piece.yaw());
         for(var accent:CastleArchive.ACCENTS)
@@ -3134,6 +3339,37 @@ public final class SceneRenderer {
         // overlapped the actual authored arch at Z=11.50.
         return List.copyOf(castle);
     }
+    /**
+     * Explicit opt-in, source-checkout-only prototype overlay for automated
+     * Castle screenshot QA. It never writes CastleLevelEdits, the approved GLB
+     * registry, collision/nav data or the game's persistent save files.
+     */
+    public record CastlePrototypeReviewInstance(String mesh,double x,double y,
+                                                  double z,double yaw) {
+        public CastlePrototypeReviewInstance {
+            if(mesh==null||!mesh.startsWith("level_blockout_")
+                ||mesh.startsWith("level_blockout_layout_")
+                ||!mesh.matches("[a-z0-9_-]{1,90}")
+                ||!Double.isFinite(x+y+z+yaw))
+                throw new IllegalArgumentException("Invalid Castle review-only model");
+        }
+    }
+    private List<Face> castlePrototypeReviewFaces=List.of();
+    public void setCastlePrototypeReview(List<CastlePrototypeReviewInstance> studies)
+            throws java.io.IOException {
+        Objects.requireNonNull(studies);
+        if(studies.size()>20)throw new IllegalArgumentException("Too many review models");
+        var faces=new ArrayList<Face>();
+        for(var study:studies){
+            var source=DevAssetReviewCatalog.sourceModel(study.mesh());
+            imported(faces,study.mesh(),source,study.x(),study.y(),study.z(),
+                1,1,1,study.yaw());
+        }
+        // Swap only on full success; no partial or sticky asset frames.
+        castlePrototypeReviewFaces=List.copyOf(faces);
+    }
+    public void clearCastlePrototypeReview(){castlePrototypeReviewFaces=List.of();}
+
     public void drawCastle(CastleHubMap map,double clock,boolean lightsOn){
         long frameBegin=System.nanoTime();
         activateResidentScene(map);
@@ -3149,11 +3385,16 @@ public final class SceneRenderer {
         if(castleGeometryMap!=map||castleGeometryRevision!=edits.revision()){
             for(var chunk:castleStaticChunks)releaseWorldChunk(chunk);
             for(var chunk:castleAssemblies.values())releaseWorldChunk(chunk);
+            // Release the previous topology before allocating its replacement.
+            // The unchanged surroundings keep their own reusable source cache.
+            castleStaticGeometry=List.of();castleStaticChunks=List.of();
+            castleAssemblies.clear();castleActiveAssemblies.clear();castleExportGeometry=List.of();
             castleGeometryMap=map;castleGeometryRevision=edits.revision();
             castleStaticGeometry=buildCastleStatic(map);castleStaticChunks=partitionCastle(castleStaticGeometry);
             castleAssemblies.clear();castleTopologyBuilds++;
             // A new topology generation owns fresh handles and rejects old readbacks.
             gpuSceneId=GpuWorldRenderer.nextId();pinnedGpuFrame=null;
+            presentedGpuFrame=null;gpuCompositeFrames.clear();
         }
         castleActiveAssemblies.clear();
         for(var slot:CastleDoorSlots.all()){
@@ -3173,8 +3414,15 @@ public final class SceneRenderer {
             }));
         }
         var dynamic=new ArrayList<Face>();
+        beginDynamicGeometry(map);
+        for(var item:map.clutter().states())if(item.holder()!=-2)
+            dynamic.addAll(dynamicGeometry(new DynamicGeometryKey(false,item.id()),item,()->buildClutterGeometry(item)));
+        finishDynamicGeometry();
         if(editorSelection!=null)box(dynamic,editorSelection[0]-.04,editorSelection[1]+.02,
             editorSelection[2]-.04,.08,1.4,.08,0xffcb54);
+        // Never pulled into the normal world chunk cache or editor snapshots.
+        // Source-only studies exist only while an explicit QA caller requests them.
+        if(!castlePrototypeReviewFaces.isEmpty())dynamic.addAll(castlePrototypeReviewFaces);
         List<Face> castle;
         if(exportFullLevel||!gpuAvailable()||!castleResidentEnabled){
             castle=new ArrayList<>(castleStaticGeometry);
@@ -3182,6 +3430,10 @@ public final class SceneRenderer {
             castle.addAll(dynamic);
         }else castle=dynamic;
         if(exportFullLevel)castleExportGeometry=List.copyOf(castle);
+        // A frame ID must snapshot the same NPC pose as its Castle camera.
+        // The actual timer controls update; rasterization never advances time.
+        if(eyeHeight<2.0&&castleCharactersVisible)
+            map.residents().update(map,clock,x,z);
         long geometryReady=System.nanoTime();
         boolean gpuFrame=drawGpuFaces(castle,null);
         if(!gpuFrame)for(Face face:castle){
@@ -3190,19 +3442,36 @@ public final class SceneRenderer {
             drawLitFace(face,room,0);
         }
         sceneWater(null,gpuFrame,clock);long geometryRendered=System.nanoTime();
-        // Four real approved source-art directions, composited after castle
-        // geometry with its actual depth buffer (never through walls).
-        double playerFloor=CastleHubArchitecturalPlan.elevation(x,z,eyeHeight-1.62);
-        if(eyeHeight-playerFloor>=.9&&eyeHeight-playerFloor<=1.8)
-            EntityFootShadow.draw(pixels,depths,x,z,yaw,pitch,x,z,playerFloor-(eyeHeight-1.62),
-                .38,145,renderWidth,renderHeight,focal);
-        if(eyeHeight<2.0){
-            map.residents().update(map,clock,x,z);
-            for(var resident:CastleRelations.Resident.values()){
-                var body=map.residents().body(resident);
-                DirectionalSprites.drawResident(pixels,depths,x,z,yaw,pitch,resident,body,
-                    GroundedSpriteFeet.relativeElevation(0,eyeHeight),
-                    lightsOn&&map.lightOn(body.x(),1.0,body.z()),renderWidth,renderHeight,focal);
+        // GPU output is asynchronous. A current-camera NPC over a previous
+        // camera's walls/depth makes the character skid during a quick look
+        // left/right. Use the exact readback frame's camera AND NPC snapshot.
+        // If no matching snapshot survives, do not render a false-position
+        // character over stale geometry. Software mode uses the live camera.
+        GpuCompositeFrame shown=gpuFrame?presentedGpuFrame:null;
+        double viewX=shown==null?x:shown.x();
+        double viewEye=shown==null?eyeHeight:shown.eyeHeight();
+        double viewZ=shown==null?z:shown.z();
+        double viewYaw=shown==null?yaw:shown.yaw();
+        double viewPitch=shown==null?pitch:shown.pitch();
+        boolean compatible=!gpuFrame||shown!=null;
+        if(compatible){
+            double playerFloor=CastleHubArchitecturalPlan.elevation(
+                viewX,viewZ,viewEye-1.62);
+            if(viewEye-playerFloor>=.9&&viewEye-playerFloor<=1.8)
+                EntityFootShadow.draw(pixels,depths,viewX,viewZ,viewYaw,viewPitch,
+                    viewX,viewZ,playerFloor-(viewEye-1.62),
+                    .38,145,renderWidth,renderHeight,focal);
+            if(viewEye<2.0&&castleCharactersVisible){
+                for(var resident:CastleRelations.Resident.values()){
+                    var body=shown==null?map.residents().body(resident)
+                        :shown.residents().get(resident);
+                    if(body==null)continue;
+                    DirectionalSprites.drawResident(pixels,depths,
+                        viewX,viewZ,viewYaw,viewPitch,resident,body,
+                        GroundedSpriteFeet.relativeElevation(0,viewEye),
+                        lightsOn&&map.lightOn(body.x(),1.0,body.z()),
+                        renderWidth,renderHeight,focal);
+                }
             }
         }
 
@@ -3230,13 +3499,17 @@ public final class SceneRenderer {
      */
     public Nameplate castleResidentNameplate(CastleRelations.Resident resident){
         if(resident==null||eyeHeight>2.0)return null;
-        var body=waterCastle==null?new CastleResidentAnimation.Body(resident.x,resident.z,0,HunterSpriteAnimation.Pose.IDLE)
+        var shown=lastGpuReadbackAvailable?presentedGpuFrame:null;
+        var body=shown!=null?shown.residents().get(resident)
+            :waterCastle==null?new CastleResidentAnimation.Body(resident.x,resident.z,0,HunterSpriteAnimation.Pose.IDLE)
             :waterCastle.residents().body(resident);
+        if(body==null)return null;
         double height=body.pose()==HunterSpriteAnimation.Pose.CROUCH?HunterPosture.CROUCH_HEIGHT/HunterPosture.STANDING_HEIGHT:1;
-        double distance=Math.hypot(body.x()-x,body.z()-z);
+        double viewX=shown==null?x:shown.x(),viewZ=shown==null?z:shown.z();
+        double distance=Math.hypot(body.x()-viewX,body.z()-viewZ);
         if(distance<.55||distance>3.2)return null;
-        Point torso=camera(new Point(body.x(),1.25*height,body.z()));
-        Point head=camera(new Point(body.x(),2.02*height,body.z()));
+        Point torso=presentedCamera(new Point(body.x(),1.25*height,body.z()),shown);
+        Point head=presentedCamera(new Point(body.x(),2.02*height,body.z()),shown);
         if(torso.z<NEAR||head.z<NEAR)return null;
         int px=(int)Math.round(renderWidth*.5+torso.x/torso.z*focal);
         int py=(int)Math.round(renderHeight*.5-torso.y/torso.z*focal);
@@ -3340,6 +3613,7 @@ public final class SceneRenderer {
         if(!spiritualWarSanctuaryConfigured||spiritualWarVanSanctuary)areas.add(SafeAreaBarrier.van(map.van()));
         areas.addAll(map.temporarySafeAreas());areas.addAll(SafeAreaBarrier.visibleWards(map,markers));
         safeAreaPixels=SafeAreaHaze.draw(pixels,depths,renderWidth,renderHeight,focal,x,eyeHeight,z,yaw,pitch,clock,List.copyOf(areas));
+        safeAreaPixels+=SafeAreaHaze.drawHiding(pixels,depths,renderWidth,renderHeight,focal,x,eyeHeight,z,yaw,pitch,clock,map);
     }
     private void render(HouseMap map,int ghostRoom,boolean visibleGhost,int wardRoom,int hunterRoom,
             double clock,List<RemoteBody> others,Apparition apparition,List<WorldMark> markers){
@@ -3668,6 +3942,7 @@ public final class SceneRenderer {
         if(eyeHeight-playerFloor>=.9&&eyeHeight-playerFloor<=1.8)
             EntityFootShadow.draw(pixels,depths,x,z,yaw,pitch,x,z,playerFloor-(eyeHeight-1.62),
                 .38,145,renderWidth,renderHeight,focal);
+
         var soloGhost=visibleGhost&&apparition==null?SafeAreaBarrier.ghostSpawn(map,ghostRoom):null;
         if(visibleGhost&&(apparition!=null||soloGhost!=null)){
             double gx=apparition==null?soloGhost.x():apparition.x();
@@ -4095,6 +4370,144 @@ public final class SceneRenderer {
         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
         applyGraphicsEffects(clock);
     }
+    /**
+     * Reusable, physically stacked DEV gallery for a 72-entry review wing.
+     * The original six-stand drawDevAssetRoom remains available to old screenshots,
+     * topology probes and narrow reproducible single-model captures.
+     *
+     * Draw all three real floor decks, all four bay boundaries per floor and
+     * every inspection stand. Decode only meshes on the camera's current floor
+     * within the near-bay envelope; moving Q/E through the lift void or using
+     * floor buttons reveals the next floor without a gameplay scene transition.
+     */
+    public void drawDevAssetGallery(List<DevAssetReviewCatalog.Entry> wing,
+                                    double clock,double rotation){
+        Objects.requireNonNull(wing,"gallery wing");
+        if(wing.size()>DevAssetGalleryLayout.SLOTS_PER_WING)
+            throw new IllegalArgumentException("Gallery wing exceeds 72 exhibits");
+        paintSky(clock);
+        Arrays.fill(depths,Double.POSITIVE_INFINITY);
+        environmentLight=1.33;
+        weatherLightScale=1;
+        fogDensity=0;
+        List<Face> stage=new ArrayList<>();
+        final double height=DevAssetGalleryLayout.FLOOR_HEIGHT_M;
+        final double back=71.0;
+        // The three solid decks actually occupy different world-space Y levels.
+        // A 3x4 metre side lift void is open through both upper floors, so the
+        // existing free-flight camera can move between floors. Entry buttons
+        // additionally provide direct, reliable floor navigation.
+        for(int floor=0;floor<DevAssetGalleryLayout.FLOORS;floor++){
+            double fy=DevAssetGalleryLayout.floorY(floor);
+            int slab=floor%2==0?0xa7aab0:0x9da3aa;
+            if(floor==0){
+                box(stage,-11,fy-.37,-11,22,.34,82,slab);
+            }else{
+                box(stage,-11,fy-.37,-11,18.5,.34,82,slab);
+                box(stage,10.5,fy-.37,-11,.5,.34,82,slab);
+                box(stage,7.5,fy-.37,-11,3,.34,9,slab);
+                box(stage,7.5,fy-.37,2,3,.34,back-2,slab);
+            }
+            for(int bay=0;bay<DevAssetGalleryLayout.BAYS_PER_FLOOR;bay++){
+                for(int j=0;j<DevAssetGalleryLayout.SLOTS_PER_BAY;j++){
+                    double px=DevAssetGalleryLayout.standX(j);
+                    double pz=DevAssetGalleryLayout.standZ(bay,j);
+                    box(stage,px-1.18,fy-.03,pz-1.14,2.36,.23,2.28,
+                        j%2==0?0xb9bcc2:0xaeb4be);
+                    box(stage,px-1.22,fy-.05,pz-1.18,2.44,.055,2.36,
+                        0xb2a68e);
+                }
+                // Visible bay divisions without blocking walking routes.
+                if(bay>0)
+                    box(stage,-9.6,fy-.016,bay*DevAssetGalleryLayout.BAY_DEPTH_M-.06,
+                        17.0,.035,.12,0x9e8b65);
+            }
+            // Coloured stair/lift landing cues are real static inspection
+            // surfaces only: no collision, fake lift animation, or save format.
+            box(stage,7.4,fy-.01,-2.04,3.25,.055,.09,0xbbaa80);
+            box(stage,7.4,fy-.01,2.02,3.25,.055,.09,0xbbaa80);
+            box(stage,7.42,fy-.01,-2.0,.09,.055,4,0xbbaa80);
+            if(floor>0){
+                for(double zMarker:new double[]{-1.97,1.97}){
+                    box(stage,7.43,fy+.44,zMarker,.10,.88,.07,0x657480);
+                }
+            }
+            // Distinctly readable physical level bands at the walls.
+            box(stage,-10.98,fy+.36,-10.85,.065,.11,81.6,
+                floor==0?0x8ba6bd:floor==1?0x9bb391:0xc5a78a);
+        }
+        // Single enclosing hall, three storeys tall. Bay geometry has no
+        // per-page fake replacement wall and remains viewable by free flight.
+        box(stage,-11,-.37,-11,.28,height*DevAssetGalleryLayout.FLOORS+.32,82,0xbebfbe);
+        box(stage,10.72,-.37,-11,.28,height*DevAssetGalleryLayout.FLOORS+.32,82,0xbebfbe);
+        box(stage,-11,-.37,70.72,22,height*DevAssetGalleryLayout.FLOORS+.32,.28,0xd3d2d0);
+        box(stage,-11,height*DevAssetGalleryLayout.FLOORS-.03,-11,
+            22,.18,82,0xe5e3dd);
+        final int visibleFloor=DevAssetGalleryLayout.floorAtEye(eyeHeight);
+        // Cull by floor and bay distance before decoding a potentially large
+        // imported texture/model. All 72 contact locations remain physically
+        // present, while no more than nearby models are submitted per frame.
+        for(int i=0;i<wing.size();i++){
+            var address=DevAssetGalleryLayout.address(i);
+            if(address.floor()!=visibleFloor)continue;
+            double px=DevAssetGalleryLayout.standX(address.slot());
+            double pz=DevAssetGalleryLayout.standZ(address.bay(),address.slot());
+            if(Math.abs(pz-z)>DevAssetGalleryLayout.MODEL_RADIUS_M)continue;
+            var entry=wing.get(i);
+            if(entry.sprite())continue;
+            double fy=DevAssetGalleryLayout.floorY(address.floor());
+            try{
+                GlbProps.Model model=devReviewModel(entry);
+                double[] bounds=devAssetBounds(model);
+                double span=Math.max(bounds[3],Math.max(bounds[4],bounds[5]));
+                if(!Double.isFinite(span)||span<=0)
+                    throw new IllegalStateException("Invalid source dimensions");
+                double scale=Math.min(22,Math.min(
+                    2.0/Math.max(.0001,Math.max(bounds[3],bounds[5])),
+                    2.15/Math.max(.0001,bounds[4])));
+                double cx=bounds[0]*scale,cz=bounds[2]*scale;
+                double mx=px-(cx*Math.cos(rotation)-cz*Math.sin(rotation));
+                double mz=pz-(cx*Math.sin(rotation)+cz*Math.cos(rotation));
+                imported(stage,entry.id(),model,mx,fy+.2-bounds[1]*scale,mz,
+                    scale,scale,scale,rotation);
+            }catch(RuntimeException badMesh){
+                box(stage,px-.5,fy+.25,pz-.5,1,.12,1,0x90202b);
+            }
+        }
+        for(Face f:stage){
+            if(!faceInFrustum(f))continue;
+            var clipped=clip(new Vertex(camera(f.a),f.au,f.av),
+                new Vertex(camera(f.b),f.bu,f.bv),
+                new Vertex(camera(f.c),f.cu,f.cv));
+            for(int k=1;k+1<clipped.size();k++)
+                triangle(clipped.get(0),clipped.get(k),clipped.get(k+1),
+                    f.color,f.material,1.12);
+        }
+        for(int i=0;i<wing.size();i++){
+            var address=DevAssetGalleryLayout.address(i);
+            if(address.floor()!=visibleFloor)continue;
+            double pz=DevAssetGalleryLayout.standZ(address.bay(),address.slot());
+            if(Math.abs(pz-z)>DevAssetGalleryLayout.MODEL_RADIUS_M)continue;
+            var entry=wing.get(i);
+            if(!entry.sprite())continue;
+            double px=DevAssetGalleryLayout.standX(address.slot());
+            double ground=DevAssetGalleryLayout.floorY(address.floor());
+            try{
+                // DirectionalSprites uses a 1.62m camera origin internally;
+                // compensate for the DEV camera's actual absolute eye height.
+                double elevation=ground+.21-(eyeHeight-1.62);
+                DirectionalSprites.draw(pixels,depths,x,z,yaw,pitch,px,pz,
+                    Math.floorMod(180+(int)Math.round(Math.toDegrees(rotation)),360),
+                    entry.id(),1.82,1.00,elevation,255,true,
+                    renderWidth,renderHeight,focal);
+            }catch(RuntimeException badArt){
+                // Preserve the real missing-art warning rather than inventing a sprite.
+            }
+        }
+        PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
+        applyGraphicsEffects(clock);
+    }
+
     private static GlbProps.Model devReviewModel(DevAssetReviewCatalog.Entry entry){
         try{
             return entry.kind()==DevAssetReviewCatalog.Kind.SOURCE_ONLY

@@ -1,0 +1,325 @@
+{
+  "schema": "beckenburg.primitive-prop-placement/1",
+  "site": "PRISON",
+  "title": "Beckenburg Penitentiary",
+  "layout_source": "layouts/prison/layout.json",
+  "layout_source_sha256": "856e919d2997a4146d14ca39f75afcd7942382e3772bafca943d4be4af8e4f8e",
+  "status": "review_only",
+  "world_frame": "X east/right; Y elevation up; Z source plan depth",
+  "placements": [
+    {
+      "id": "prison-01",
+      "zone": "guard",
+      "model": "level_blockout_console",
+      "position": [
+        43.44,
+        -0.015,
+        59.2
+      ],
+      "yaw_rad": 3.14159,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        42.64,
+        58.825,
+        44.24,
+        59.575
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "prison-02",
+      "zone": "guard",
+      "model": "level_blockout_guard_keyboard",
+      "position": [
+        52.56,
+        -0.01,
+        66.8
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.88,
+        0.88
+      ],
+      "world_bounds_xz": [
+        51.825,
+        66.62,
+        53.295,
+        66.96
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "prison-03",
+      "zone": "intake",
+      "model": "level_blockout_archive_cabinet",
+      "position": [
+        11.92,
+        0.0,
+        59.2
+      ],
+      "yaw_rad": 3.14159,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        11.38,
+        58.965,
+        12.46,
+        59.492
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "prison-04",
+      "zone": "intake",
+      "model": "level_blockout_workbench",
+      "position": [
+        24.08,
+        -0.03,
+        66.8
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.88,
+        0.88
+      ],
+      "world_bounds_xz": [
+        23.205,
+        66.41,
+        24.955,
+        67.19
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "prison-05",
+      "zone": "block-a",
+      "model": "level_blockout_cell_door",
+      "position": [
+        11.44,
+        0.0,
+        26.32
+      ],
+      "yaw_rad": 3.14159,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        10.865,
+        26.26,
+        12.015,
+        26.46
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "prison-06",
+      "zone": "block-a",
+      "model": "level_blockout_cell_door",
+      "position": [
+        11.44,
+        0.0,
+        53.68
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.12,
+        0.88
+      ],
+      "world_bounds_xz": [
+        10.865,
+        53.54,
+        12.015,
+        53.74
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "prison-07",
+      "zone": "block-b",
+      "model": "level_blockout_cell_door",
+      "position": [
+        56.56,
+        0.0,
+        26.32
+      ],
+      "yaw_rad": 3.14159,
+      "anchor": [
+        0.88,
+        0.12
+      ],
+      "world_bounds_xz": [
+        55.985,
+        26.26,
+        57.135,
+        26.46
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "prison-08",
+      "zone": "isolation",
+      "model": "level_blockout_cell_door",
+      "position": [
+        68.56,
+        0.0,
+        31.84
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.88,
+        0.88
+      ],
+      "world_bounds_xz": [
+        67.985,
+        31.7,
+        69.135,
+        31.9
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "prison-09",
+      "zone": "medical",
+      "model": "level_blockout_ward_bed",
+      "position": [
+        30.16,
+        0.0,
+        5.44
+      ],
+      "yaw_rad": 3.14159,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        29.72,
+        4.44,
+        30.6,
+        6.44
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "prison-10",
+      "zone": "medical",
+      "model": "level_blockout_privacy_screen",
+      "position": [
+        43.84,
+        0.0,
+        14.56
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.88,
+        0.88
+      ],
+      "world_bounds_xz": [
+        42.93,
+        14.48,
+        44.75,
+        14.9
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "prison-11",
+      "zone": "plant",
+      "model": "level_blockout_utility_panel",
+      "position": [
+        24.88,
+        -3.36,
+        24.4
+      ],
+      "yaw_rad": 3.14159,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        24.5,
+        24.26,
+        25.26,
+        24.61
+      ],
+      "floor_elevation": -3,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "prison-12",
+      "zone": "plant",
+      "model": "level_blockout_workbench",
+      "position": [
+        43.12,
+        -3.03,
+        39.6
+      ],
+      "yaw_rad": 0,
+      "anchor": [
+        0.88,
+        0.88
+      ],
+      "world_bounds_xz": [
+        42.245,
+        39.21,
+        43.995,
+        39.99
+      ],
+      "floor_elevation": -3,
+      "clearance_checked": true,
+      "runtime_approved": false
+    },
+    {
+      "id": "prison-13",
+      "zone": "chapel",
+      "model": "level_blockout_pew",
+      "position": [
+        59.44,
+        0.005,
+        36.16
+      ],
+      "yaw_rad": 3.14159,
+      "anchor": [
+        0.12,
+        0.12
+      ],
+      "world_bounds_xz": [
+        58.58,
+        35.86,
+        60.3,
+        36.43
+      ],
+      "floor_elevation": 0,
+      "clearance_checked": true,
+      "runtime_approved": false
+    }
+  ],
+  "runtime_scene_changed": false,
+  "collision_verified": false
+}

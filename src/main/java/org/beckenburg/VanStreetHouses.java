@@ -45,6 +45,17 @@ public final class VanStreetHouses {
         new House(1,-18.69,3.8,4.6,4.42,.92,
             MaterialAtlas.PARQUET,MaterialAtlas.AGED_WOOD,"east corner home")
     );
+    /** A site's authored frontage reservation moves context without moving the vehicle or road. */
+    public static List<House> homes(LevelDefinition level){return homes(level.sockets());}
+    static List<House> homes(List<LevelDefinition.Socket> sockets){
+        var reservation=sockets.stream().filter(s->s.type().equals("arrival-context")).findFirst().orElse(null);
+        if(reservation==null)return HOMES;
+        var parts=reservation.style().split(":");
+        if(parts.length!=2||!parts[0].equals("house-side-setback-v1"))throw new IllegalArgumentException("Unknown arrival context reservation");
+        double setback=Double.parseDouble(parts[1]);
+        if(!Double.isFinite(setback)||setback<0||setback>30)throw new IllegalArgumentException("Invalid arrival context setback");
+        return HOMES.stream().map(h->h.side()>0?new House(h.outerX(),h.frontageZ()-setback,h.depth(),h.frontage(),h.wallHeight(),h.roofRise(),h.masonry(),h.roof(),h.character()):h).toList();
+    }
     /** A real terminus façade, behind the 16-metre playable roadway.
      * It forms a street closure, but doesn't masquerade as a navigation wall.
      */

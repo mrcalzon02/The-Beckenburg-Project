@@ -28,6 +28,10 @@ public record LevelDefinition(String id, String revision, String title,
             var inherited=new java.util.ArrayList<String>();
             for(Room r:rooms)for(Portal p:portals)if(inheritsWallPortal(r,p,rooms))inherited.add(r.id()+":"+p.id());
             if(!inherited.isEmpty())data+="contained-upper-openings-v1"+inherited;
+            String envelope=HouseRebuildEnvelope.fingerprint(rooms,portals,sockets);
+            if(!envelope.isEmpty())data+="structure-envelope-v1"+envelope;
+            String services=HouseServiceNetwork.fingerprint(sockets);
+            if(!services.isEmpty())data+="service-conduit-v1"+services;
             byte[] hash=java.security.MessageDigest.getInstance("SHA-256").digest(data.getBytes(java.nio.charset.StandardCharsets.UTF_8));
             revision=revision+"-"+java.util.HexFormat.of().formatHex(hash,0,8);
         }catch(java.security.NoSuchAlgorithmException impossible){throw new AssertionError(impossible);}

@@ -12,10 +12,11 @@ public final class RitualSites {
   String style=rite.name().toLowerCase(Locale.ROOT);
   var socket=map.level().sockets().stream().filter(s->s.type().equals("ritual")&&s.style().equals(style)).findFirst()
       .orElseThrow(()->new IllegalStateException("missing authored ritual "+style));
-  String name=switch(rite){case BANISHMENT->"Sealed Iron Circle";case CLEANSING->"Purification Font";case ABSOLUTION->"Memorial Lectern";};
+  String name=installationName(rite);
   return new Site(rite,socket.room(),name,socket.x(),socket.y(),socket.z());
  }
  public static List<Site> all(HouseMap map){return Arrays.stream(GhostIdentity.Rite.values()).map(x->site(map,x)).toList();}
+ public static String installationName(GhostIdentity.Rite rite){return switch(Objects.requireNonNull(rite)){case BANISHMENT->"Sealed Iron Circle";case CLEANSING->"Purification Font";case ABSOLUTION->"Memorial Lectern";};}
  public static boolean valid(HouseMap map){var sites=all(map);return sites.stream().map(Site::room).distinct().count()==3
    &&sites.stream().allMatch(x->map.roomAt(x.x(),x.y(),x.z())==x.room()&&map.traversable(x.x(),x.y(),x.z()));}
 }
