@@ -5691,12 +5691,15 @@
     "latest_execution": "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json"
   },
   "world_atmosphere": {
-    "source_sha": "862b65c2af88381035d364a0cd848d1e28f913b6",
-    "status": "SHARED_RUNTIME_IMPLEMENTED_LOCAL_RENDERER_VERIFIED",
+    "source_sha": "8cbc44da76f1fc5b5604788185076b5246cc563d",
+    "status": "SHARED_SURFACE_DEPTH_FOG_IMPLEMENTED_LOCAL_SOFTWARE_OPENGL_PACKAGE_VERIFIED",
     "scope": "Every Castle/investigation/custom world frame in software and OpenGL; twelve current sources captured, seventeen source-only packets inherit on integration, no unlock.",
     "evidence": "development/levels/rebuild/verification/atmosphere-all-levels/capture-manifest.json",
     "baseline_clear_metres": 6,
     "baseline_opaque_metres": 24,
-    "full_map_acceptance": false
+    "full_map_acceptance": false,
+    "mechanism": "Shared6\u201324m radial policy before alpha blending at actual surface depth; weather sky horizon; no depth writes",
+    "focused_checks": 10,
+    "actual_runtime_frames": 52
   }
 }
