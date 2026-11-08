@@ -768,6 +768,24 @@ public final class G2TexturedModelGuiTest {
                 "Boundary-only refusal stays visible in the Material Editor and preserves native state");
         });
         edt(()->button(ui,"undoMesh"));await(()->ready(ui));check(project.snapshot().equals(original),"Undo UV relaxation exactly");
+        edt(()->{
+            var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");
+            ((JList<?>)field(workspace,"faceList")).setSelectedIndex(0);
+            ((JTabbedPane)field(ui,"materialTools")).setSelectedIndex(3);
+            button(ui,"packMaterialUvs");
+        });
+        await(()->reviewed(ui));check(project.snapshot().equals(original),"Pack preview changed live UVs");
+        applyReview();
+        var packed=project.snapshot();EditorUvRelaxTest.verifyPack(original,packed);
+        published.set(null);
+        reviewPixels();edt(()->{captureMaterial("uv-packed.png");button(ui,"apply");});
+        await(()->published.get()!=null);
+        var packedGame=GlbProps.model(published.get());
+        for(int i=0;i<packed.faces().size();i++){
+            var f=packed.faces().get(i);var t=packedGame.triangles().get(i);
+            near(t.a().u(),f.a().u());near(t.a().v(),f.a().v());near(t.b().u(),f.b().u());near(t.b().v(),f.b().v());near(t.c().u(),f.c().u());near(t.c().v(),f.c().v());
+        }
+        edt(()->button(ui,"undoMesh"));await(()->ready(ui));check(project.snapshot().equals(original),"Undo material packing exactly");
     }
     public static void main(String[] args) throws Exception {
         Path home=Files.createTempDirectory("g2-textured-");

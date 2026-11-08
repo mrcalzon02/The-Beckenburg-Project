@@ -68,7 +68,51 @@ public final class EditorUvRelaxTest {
         var corrected=next.faces().get((100*300+150)*2).a();
         check(Math.abs(corrected.u()-.5)<Math.abs(corners.get(center).u()-.5) && next.faces().get(0).a()==corners.get(0),
             "Maximum chart must reduce interior displacement and retain pinned boundary");
-        System.out.println("PASS 120000-face fixed-boundary UV relaxation");
+        var packed=doc.previewPackMaterial(0,1,false).snapshot();
+        check(packed.faces().size()==120000 && Math.abs(packed.faces().get(0).a().u()-.25)<1e-9,
+            "Maximum material pack must place the island at its texel border");
+        System.out.println("PASS 120000-face fixed-boundary UV relaxation and material packing");
+    }
+    public static void verifyPack(EditorTopologyProject.State before,EditorTopologyProject.State after){
+        double[][] bounds={{4,4,0,0},{4,4,0,0}};
+        double scale=0;
+        for(int i=0;i<5;i++){
+            var a=before.faces().get(i);var b=after.faces().get(i);
+            double[] box=bounds[i<4?0:1];
+            for(var c:List.of(b.a(),b.b(),b.c())){
+                box[0]=Math.min(box[0],c.u()*4);box[1]=Math.min(box[1],c.v()*4);
+                box[2]=Math.max(box[2],c.u()*4);box[3]=Math.max(box[3],c.v()*4);
+            }
+            if(i==0)scale=(b.b().u()-b.a().u())/(a.b().u()-a.a().u());
+            var old=List.of(a.a(),a.b(),a.c());var next=List.of(b.a(),b.b(),b.c());
+            for(int k=1;k<3;k++){
+                check(scale>0 && Math.abs((next.get(k).u()-next.get(0).u())-scale*(old.get(k).u()-old.get(0).u()))<1e-10 &&
+                    Math.abs((next.get(k).v()-next.get(0).v())-scale*(old.get(k).v()-old.get(0).v()))<1e-10,
+                    "Packing must retain orientation and use one uniform scale");
+            }
+        }
+        for(var b:bounds)check(b[0]>=1-1e-10&&b[1]>=1-1e-10&&b[2]<=3+1e-10&&b[3]<=3+1e-10,"Atlas border");
+        var a=bounds[0];var b=bounds[1];
+        check(Math.max(Math.max(b[0]-a[2],a[0]-b[2]),Math.max(b[1]-a[3],a[1]-b[3]))>=1-1e-10,"One texel gutter between islands");
+        check(before.vertices()==after.vertices() && before.materials()==after.materials(),"Packing modified source geometry or texture");
+    }
+    private static void packing(EditorTopologyProject p){
+        var before=p.snapshot();
+        long id=before.faces().get(0).id();
+        try{p.previewPackMaterial(id,1,true);throw new AssertionError("Packed oversized islands at original density");}
+        catch(IllegalArgumentException expected){check(p.snapshot()==before,"Rejected packing mutated the document");}
+        var preview=p.previewPackMaterial(id,1,false);verifyPack(before,preview.snapshot());
+        check(p.previewPackMaterial(before.faces().get(4).id(),1,false).snapshot().equals(preview.snapshot()),"Packing depends on selected seed");
+        p.applyPreview(preview);p.restore(before);
+        for(int index:List.of(0,4))p.applyPreview(p.previewUvTransform(before.faces().get(index).id(),true,
+            EditorTopologyProject.UvTransform.SCALE,.125,.125,true));
+        var small=p.snapshot();var kept=p.previewPackMaterial(id,1,true).snapshot();
+        for(int i=0;i<5;i++){
+            var a=small.faces().get(i);var b=kept.faces().get(i);
+            check(Math.abs((a.b().u()-a.a().u())-(b.b().u()-b.a().u()))<1e-10 &&
+                Math.abs((a.c().v()-a.a().v())-(b.c().v()-b.a().v()))<1e-10,"Keep-density pack changed UV scale");
+        }
+        p.restore(before);
     }
     public static void main(String[] args)throws Exception{
         var dir=Files.createTempDirectory("native-uv-relax-");
@@ -76,6 +120,7 @@ public final class EditorUvRelaxTest {
             var captured=EditorObjMaterials.capture(source(dir));
             var project=EditorTopologyProject.fromMesh(captured.mesh(),captured.sourceFingerprint(),dir.resolve("fan.btop"));
             var before=project.snapshot();
+            packing(project);
             var edit=project.previewRelaxInterior(before.faces().get(0).id());
             verify(before,edit.snapshot());
             project.applyPreview(edit);project.save();

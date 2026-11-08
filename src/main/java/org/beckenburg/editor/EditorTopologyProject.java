@@ -597,17 +597,32 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         int[] queue=new int[state.faces().size()];int count=1;queue[0]=start;
         var selected=new BitSet(queue.length);selected.set(start);
         for(int head=0;head<count;head++){
-            int index=queue[head];var face=state.faces().get(index);
+            int index=queue[head];
             for(int i=0;i<3;i++){
-                var edge=graph.edges().get(index*3+i);
-                if(edge.twin()<0 || edge.uvSeam())continue;
-                int other=graph.edges().get(edge.twin()).face();
-                if(!selected.get(other) && face.material().equals(state.faces().get(other).material())){
+                int other=uvNeighbor(state,graph,index,i);
+                if(other>=0 && !selected.get(other)){
                     selected.set(other);queue[count++]=other;
                 }
             }
         }
         return Arrays.copyOf(queue,count);
+    }
+    static int uvNeighbor(State state,EditorMeshTopology graph,int index,int corner){
+        var edge=graph.edges().get(index*3+corner);
+        if(edge.twin()<0 || edge.uvSeam())return -1;
+        int other=graph.edges().get(edge.twin()).face();
+        return state.faces().get(index).material().equals(state.faces().get(other).material())?other:-1;
+    }
+    public EditPreview previewPackMaterial(long faceId,int padding,boolean keepDensity){
+        var observation=observe();
+        var before=observation.snapshot();
+        var material=boundPaintMaterial(before,faceId);
+        var result=EditorUvPack.pack(before,observation.topology(),material,padding,keepDensity);
+        var after=new State(id,sourceFingerprint,before.name(),before.sourceBytes(),before.vertices(),result.faces(),before.materials(),
+            before.glbSource(),before.frames(),before.quads());
+        if(after.equals(before))throw new IllegalArgumentException("Material islands are already packed");
+        return new EditPreview(this,before,after,observation.revision(),"PACK UV / "+result.islands()+" islands / "+
+            padding+" texel gutter / scale "+String.format(Locale.ROOT,"%.5f",result.scale()));
     }
     public synchronized EditPreview previewBalanceIsland(long faceId){
         var material=boundPaintMaterial(faceId);

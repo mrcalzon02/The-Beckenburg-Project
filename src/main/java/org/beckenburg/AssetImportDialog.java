@@ -183,6 +183,9 @@ public final class AssetImportDialog {
     private final JLabel uvDensity=new JLabel("Select a bound face to measure UVs");
     private final JButton fixUvStretch=new JButton("Fix selected face stretch");
     private final JButton relaxUvInterior=new JButton("Relax island interior");
+    private final JButton packMaterialUvs=new JButton("Preview material packing");
+    private final JSpinner packPadding=new JSpinner(new SpinnerNumberModel(1,0,1024,1));
+    private final JCheckBox keepPackDensity=new JCheckBox("Keep current texel density");
     private double materialRenderedRotation=Double.NaN;
     private boolean materialRendering;
     private EditorTopologyProject.State listedMaterials;
@@ -541,7 +544,7 @@ public final class AssetImportDialog {
                 if(selectedHit==null)return;
                 long id=selectedHit.faceId();beginMaterialPreview(p->p.previewRelaxInterior(id));
             });
-            materialTools=new JTabbedPane();materialTools.addTab("Materials",bindings);materialTools.addTab("UV transform",uvSettings);
+            materialTools=new JTabbedPane(JTabbedPane.TOP,JTabbedPane.SCROLL_TAB_LAYOUT);materialTools.addTab("Material",bindings);materialTools.addTab("UV edit",uvSettings);
             var layerButtons=new JPanel(new GridLayout(1,4,2,0));
             for(var b:List.of(addPaintLayer,removePaintLayer,raisePaintLayer,lowerPaintLayer)){
                 b.setMargin(new Insets(3,3,3,3));layerButtons.add(b);
@@ -554,9 +557,17 @@ public final class AssetImportDialog {
                     return super.getListCellRendererComponent(list,value,index,selected,focus);
                 }
             });
-            materialTools.addTab("Paint layers",EditorTopologyWorkspace.column(new JLabel("BASE-COLOR LAYERS"),
+            materialTools.addTab("Layers",EditorTopologyWorkspace.column(new JLabel("BASE-COLOR LAYERS"),
                 new JScrollPane(paintLayer),layerButtons,
                 EditorTopologyWorkspace.form("Name",paintLayerName,"Blend",paintBlend,"Opacity (%)",paintOpacity),previewPaintStyle));
+            materialTools.addTab("Pack",EditorTopologyWorkspace.column(new JLabel("SELECTED MATERIAL ISLANDS"),
+                EditorTopologyWorkspace.form("Gutter (texels)",packPadding),keepPackDensity,packMaterialUvs));
+            packMaterialUvs.setToolTipText("Place all islands of the selected material in tile zero. The source image stays fixed.");
+            packMaterialUvs.addActionListener(e->{
+                if(selectedHit==null)return;
+                long id=selectedHit.faceId();int padding=(int)packPadding.getValue();boolean keep=keepPackDensity.isSelected();
+                beginMaterialPreview(p->p.previewPackMaterial(id,padding,keep));
+            });
             paintLayer.addListSelectionListener(e->{if(!e.getValueIsAdjusting() && !updatingPaintLayers){showLayerSettings();refreshMaterialWindow();}});
             previewPaintStyle.addActionListener(e->previewLayerEdit(EditorTopologyProject.LayerEdit.CONFIGURE));
             addPaintLayer.addActionListener(e->previewLayerEdit(EditorTopologyProject.LayerEdit.ADD));
@@ -638,6 +649,7 @@ public final class AssetImportDialog {
         boolean layerEditable=!busy && modelingPreview==null && face!=null && materialWorkspace.visibility().includes(face) &&
             bound;
         previewPaintStyle.setEnabled(layerEditable);paintBlend.setEnabled(layerEditable);paintOpacity.setEnabled(layerEditable);
+        packMaterialUvs.setEnabled(layerEditable);packPadding.setEnabled(layerEditable);keepPackDensity.setEnabled(layerEditable);
         paintLayer.setEnabled(layerEditable);paintLayerName.setEnabled(layerEditable);
         addPaintLayer.setEnabled(layerEditable && paintLayers.size()<16);removePaintLayer.setEnabled(layerEditable && paintLayers.size()>1);
         raisePaintLayer.setEnabled(layerEditable && paintLayer.getSelectedIndex()>0);
