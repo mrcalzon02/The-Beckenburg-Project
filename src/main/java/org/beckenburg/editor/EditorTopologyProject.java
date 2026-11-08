@@ -8,7 +8,7 @@ import java.util.*;
  * derived from stable indexed vertices/corner UVs. No game scene is duplicated.
  */
 public final class EditorTopologyProject implements EditorProject<EditorTopologyProject.State> {
-    private static final int MAGIC=0x42544f50,VERSION=6,MAX_VERTICES=EditorMeshPipeline.MAX_TRIANGLES*3;
+    private static final int MAGIC=0x42544f50,VERSION=7,MAX_VERTICES=EditorMeshPipeline.MAX_TRIANGLES*3;
     public record Vertex(long id,String part,double x,double y,double z){
         public Vertex {
             text(part);if(id<0||!Double.isFinite(x)||!Double.isFinite(y)||!Double.isFinite(z))throw new IllegalArgumentException("Invalid topology vertex");
@@ -47,6 +47,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
     private final EditorGlbReader.Document sourceGlb;
     private State state;
     private State cleanState;
+    private EditorModelWorkspace savedWorkspace;
     private String diskFingerprint;
     private long revision=1;
     private static void text(String value){if(value==null||value.isBlank()||value.length()>512)throw new IllegalArgumentException("Invalid topology text");}
@@ -136,8 +137,11 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
     }
     /** The saved bytes and revision check share the same native monitor as edits. */
     public synchronized SavedReview saveReviewed(Observation observation)throws IOException{
+        return saveReviewed(observation,savedWorkspace);
+    }
+    public synchronized SavedReview saveReviewed(Observation observation,EditorModelWorkspace workspace)throws IOException{
         if(!isCurrent(observation))throw new IOException("Native mesh changed since review; review again before publishing");
-        save();return new SavedReview(snapshotBytes(),diskFingerprint);
+        save(workspace);return new SavedReview(snapshotBytes(),diskFingerprint);
     }
     public synchronized void exportObj(Observation observation,Path target,String expectedTargetSha)throws IOException{
         if(!isCurrent(observation))throw new IOException("Native mesh changed since export review");
@@ -572,9 +576,9 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         }
         state=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),vertices,faces,state.materials(),state.glbSource(),state.frames(),quads);revision++;
     }
-    private static void write(State state,OutputStream out)throws IOException{
+    private static void write(State state,EditorModelWorkspace workspace,OutputStream out)throws IOException{
         boolean normals=state.faces().stream().anyMatch(f->f.a().normal()!=null||f.b().normal()!=null||f.c().normal()!=null);
-        int version=!state.quads().isEmpty()?6:!state.frames().isEmpty()?5:state.glbSource()!=null?4:state.materials().isEmpty()?(normals?2:1):3;
+        int version=workspace!=null?7:!state.quads().isEmpty()?6:!state.frames().isEmpty()?5:state.glbSource()!=null?4:state.materials().isEmpty()?(normals?2:1):3;
         var data=new DataOutputStream(out);data.writeInt(MAGIC);data.writeInt(version);
         data.writeUTF(state.sceneId());data.writeUTF(state.sourceFingerprint());data.writeUTF(state.name());data.writeLong(state.sourceBytes());
         data.writeInt(state.vertices().size());for(var v:state.vertices()){
@@ -582,11 +586,13 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         }
         data.writeInt(state.faces().size());for(var f:state.faces()){
             data.writeLong(f.id());data.writeUTF(f.part());for(var c:List.of(f.a(),f.b(),f.c())){data.writeLong(c.vertex());data.writeDouble(c.u());data.writeDouble(c.v());if(version>=2){data.writeBoolean(c.normal()!=null);if(c.normal()!=null){data.writeDouble(c.normal().x());data.writeDouble(c.normal().y());data.writeDouble(c.normal().z());}}}if(version>=3)data.writeUTF(f.material());
-        }if(version>=3)EditorMeshMaterial.writeTable(data,state.materials());if(version>=4){byte[] glb=state.glbSource()==null?new byte[0]:state.glbSource().original();data.writeInt(glb.length);data.write(glb);}if(version>=5)EditorMeshFrame.write(data,state.frames());if(version>=6){data.writeInt(state.quads().size());for(var pair:state.quads()){data.writeLong(pair.first());data.writeLong(pair.second());}}data.flush();
+        }if(version>=3)EditorMeshMaterial.writeTable(data,state.materials());if(version>=4){byte[] glb=state.glbSource()==null?new byte[0]:state.glbSource().original();data.writeInt(glb.length);data.write(glb);}if(version>=5)EditorMeshFrame.write(data,state.frames());if(version>=6){data.writeInt(state.quads().size());for(var pair:state.quads()){data.writeLong(pair.first());data.writeLong(pair.second());}}if(version>=7)workspace.write(data);data.flush();
     }
     private static int count(DataInputStream data,int max)throws IOException{int count=data.readInt();if(count<0||count>max)throw new IOException("Topology count budget exceeded");return count;}
     private static State read(Path path)throws IOException{return decode(EditorMeshPipeline.readSource(path,EditorDocumentStore.MAX_BYTES));}
-    public static State decode(byte[] bytes)throws IOException{
+    private record Document(State state,EditorModelWorkspace workspace) {}
+    public static State decode(byte[] bytes)throws IOException{return decodeDocument(bytes).state();}
+    private static Document decodeDocument(byte[] bytes)throws IOException{
         if(bytes.length>EditorDocumentStore.MAX_BYTES)throw new IOException("Topology file exceeds byte budget");
         try{
             var data=new DataInputStream(new ByteArrayInputStream(bytes));
@@ -608,39 +614,51 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
             EditorGlbReader.Document glb=null;if(version>=4){int length=data.readInt();if((length<28&&!(version>=5&&length==0))||length>4_000_000)throw new IOException("Native GLB source byte budget exceeded");if(length>0){byte[] original=data.readNBytes(length);if(original.length!=length)throw new EOFException("Truncated GLB source");glb=EditorGlbReader.read(original);glb.requireEditable();}}
             var frames=version>=5?EditorMeshFrame.read(data):Map.<String,EditorMeshFrame>of();
             var quads=new ArrayList<EditorMeshQuad>();if(version>=6){int pairs=count(data,faces.size()/2);for(int i=0;i<pairs;i++)quads.add(new EditorMeshQuad(data.readLong(),data.readLong()));}
+            var state=new State(id,source,name,size,vertices,faces,materials,glb,frames,quads);
+            var workspace=version>=7?EditorModelWorkspace.read(data,vertices.size()):null;
+            if(workspace!=null && workspace.forState(state)!=workspace)throw new IOException("Workspace references missing native components");
             if(data.read()!=-1)throw new IOException("Trailing native topology data");
-            return new State(id,source,name,size,vertices,faces,materials,glb,frames,quads);
+            return new Document(state,workspace);
         }catch(IllegalArgumentException invalid){throw new IOException("Invalid native topology",invalid);}
     }
     private State owned(Path file)throws IOException{
         State value=read(file);if(!id.equals(value.sceneId())||!sourceFingerprint.equals(value.sourceFingerprint())||!Objects.equals(sourceGlb,value.glbSource()))throw new IOException("Foreign topology project/source provenance");return value;
     }
     public synchronized byte[] snapshotBytes()throws IOException{
+        return snapshotBytes(savedWorkspace());
+    }
+    private byte[] snapshotBytes(EditorModelWorkspace workspace)throws IOException{
         var buffer=new ByteArrayOutputStream();var bounded=new FilterOutputStream(buffer){
             int count;
             private void reserve(int length)throws IOException{if(length<0||length>EditorDocumentStore.MAX_BYTES-count)throw new IOException("Topology output exceeds byte budget");count+=length;}
             public void write(int value)throws IOException{reserve(1);out.write(value);}
             public void write(byte[] bytes,int offset,int length)throws IOException{reserve(length);out.write(bytes,offset,length);}
         };
-        write(state,bounded);return buffer.toByteArray();
+        write(state,workspace,bounded);return buffer.toByteArray();
     }
     public synchronized String diskFingerprint(){return diskFingerprint;}
-    public synchronized void save()throws IOException{
-        State expected=state;byte[] bytes=snapshotBytes();String previous=diskFingerprint;
-        EditorDocumentStore.saveIfUnchanged(path,out->out.write(bytes),this::owned,
-            file->{if(!expected.equals(owned(file)))throw new IOException("Topology readback differs from authoring state");},previous);
+    public synchronized EditorModelWorkspace savedWorkspace(){return savedWorkspace==null||cleanState==state?savedWorkspace:savedWorkspace.forState(state);}
+    public synchronized void save()throws IOException{save(savedWorkspace);}
+    public synchronized void save(EditorModelWorkspace workspace)throws IOException{
+        State expected=state;
+        var view=workspace==null?null:workspace.forState(state);
+        byte[] bytes=snapshotBytes(view);String previous=diskFingerprint;
+        EditorDocumentStore.saveIfUnchanged(path,out->out.write(bytes),this::owned,file->{
+            var prepared=decodeDocument(EditorMeshPipeline.readSource(file,EditorDocumentStore.MAX_BYTES));
+            if(!expected.equals(prepared.state()) || !Objects.equals(view,prepared.workspace()))throw new IOException("Native geometry or workspace readback differs");
+        },previous);
         diskFingerprint=EditorMeshPipeline.sourceFingerprint(bytes);
-        cleanState=expected;
+        cleanState=expected;savedWorkspace=view;
     }
     public static EditorTopologyProject open(Path path)throws IOException{
         EditorDocumentStore.recoverPending(path,EditorTopologyProject::read);
         byte[] bytes=EditorMeshPipeline.readSource(path,EditorDocumentStore.MAX_BYTES);
-        var project=new EditorTopologyProject(path,decode(bytes));project.diskFingerprint=EditorMeshPipeline.sourceFingerprint(bytes);return project;
+        var document=decodeDocument(bytes);var project=new EditorTopologyProject(path,document.state());project.savedWorkspace=document.workspace();project.diskFingerprint=EditorMeshPipeline.sourceFingerprint(bytes);return project;
     }
     public synchronized void reopen()throws IOException{
-        EditorDocumentStore.recoverPending(path,this::owned);byte[] bytes=EditorMeshPipeline.readSource(path,EditorDocumentStore.MAX_BYTES);State value=decode(bytes);
+        EditorDocumentStore.recoverPending(path,this::owned);byte[] bytes=EditorMeshPipeline.readSource(path,EditorDocumentStore.MAX_BYTES);var document=decodeDocument(bytes);State value=document.state();
         if(!id.equals(value.sceneId())||!sourceFingerprint.equals(value.sourceFingerprint())||!Objects.equals(sourceGlb,value.glbSource()))throw new IOException("Foreign topology project/source provenance");
-        restore(value);diskFingerprint=EditorMeshPipeline.sourceFingerprint(bytes);cleanState=value;
+        restore(value);diskFingerprint=EditorMeshPipeline.sourceFingerprint(bytes);cleanState=value;savedWorkspace=document.workspace();
     }
     public synchronized void recoverPrevious()throws IOException{EditorDocumentStore.restorePrevious(path,this::owned);reopen();}
 }
