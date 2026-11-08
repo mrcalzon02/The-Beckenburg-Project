@@ -95,7 +95,7 @@ public final class UserLevelLibrary {
     }
     /** Never overwrite a previous authored level, including an incomplete one. */
     public static void create(String id,HouseMap.Site template)throws IOException {
-        create(id,template,template==HouseMap.Site.HOUSE?HOUSE_ORIGINAL:SHIPPED);
+        create(id,template,template==HouseMap.Site.HOUSE?HOUSE_REBUILD:SHIPPED);
     }
     static void create(String id,HouseMap.Site template,String generation)throws IOException {
         id=validateId(id);

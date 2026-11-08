@@ -40,9 +40,9 @@ final class HouseSourceVersions {
         Path path=LevelAuthoringSession.path(HouseMap.Site.HOUSE);
         try{
             RuntimeSceneDocument.recoverPending(path);
-            // Fresh default promotion is a separate acceptance gate. Existing files
-            // without metadata must always retain the historical building.
-            if(!Files.exists(path))return source(UserLevelLibrary.HOUSE_ORIGINAL);
+            // A fresh installation starts in the authored rebuild. Existing files
+            // without metadata retain their historical building and coordinates.
+            if(!Files.exists(path))return source(UserLevelLibrary.HOUSE_REBUILD);
             var document=RuntimeSceneDocument.load(path);
             if(!document.sceneId().equals("beckenburg/house"))throw new IOException("House scene identity mismatch");
             return source(generation(document));
