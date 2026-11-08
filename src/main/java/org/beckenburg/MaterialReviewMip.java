@@ -1,8 +1,12 @@
 package org.beckenburg;
 
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.lang.ref.WeakReference;
 import java.util.BitSet;
 import java.util.LinkedHashMap;
+import org.beckenburg.editor.EditorGlbWriter;
+import org.beckenburg.editor.EditorMeshPipeline;
 
 /** Area-filtered base-color levels for the Material Editor's explicit mip inspection. */
 final class MaterialReviewMip {
@@ -23,9 +27,23 @@ final class MaterialReviewMip {
         private static final int MAX_TEXELS=8*1024*1024;
         private final LinkedHashMap<Integer,Chain> chains=new LinkedHashMap<>(16,.75f,true);
         private int reserved;
-        long filteredTexels;
+        long filteredTexels,comparedTexels,encodes;
+        private WeakReference<EditorMeshPipeline.Mesh> meshRef=new WeakReference<>(null);
+        private byte[] encoded;
+        /** The window renders one immutable native mesh at a time. Camera and visibility are separate. */
+        byte[] encode(EditorMeshPipeline.Mesh mesh)throws IOException{
+            if(meshRef.get()!=mesh){
+                encoded=EditorGlbWriter.encode(mesh);
+                meshRef=new WeakReference<>(mesh);
+                encodes++;
+            }
+            return encoded;
+        }
 
         BufferedImage level(int slot,BufferedImage source,int level,boolean alpha){
+            return level(slot,source,level,alpha,null);
+        }
+        BufferedImage level(int slot,BufferedImage source,int level,boolean alpha,byte[] glb){
             if(level<1||level>4)throw new IllegalArgumentException("Invalid cached preview mip");
             int w=source.getWidth(),h=source.getHeight();
             var chain=chains.get(slot);
@@ -41,7 +59,12 @@ final class MaterialReviewMip {
                 }
                 chain=new Chain(w,h,alpha,(int)capacity);chains.put(slot,chain);reserved+=capacity;
             }
-            BitSet changed=chain.updateBase(source);
+            var changed=new BitSet();
+            if(glb==null||glb!=encoded||chain.encoding!=encodes){
+                changed=chain.updateBase(source);
+                comparedTexels+=(long)w*h;
+                chain.encoding=glb!=null&&glb==encoded?encodes:-1;
+            }
             var input=source;
             for(int i=0;i<4&&(input.getWidth()>1||input.getHeight()>1);i++){
                 var target=chain.levels[i];
@@ -71,6 +94,7 @@ final class MaterialReviewMip {
         final boolean alpha;
         final int[] previous;
         final BufferedImage[] levels=new BufferedImage[4];
+        long encoding=-1;
         Chain(int w,int h,boolean alpha,int capacity){
             this.w=w;this.h=h;this.alpha=alpha;this.capacity=capacity;previous=new int[w*h];
         }

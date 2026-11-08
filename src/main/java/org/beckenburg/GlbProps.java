@@ -462,7 +462,8 @@ public final class GlbProps {
                 int material=TEXTURE_BASE+i;
                 boolean alpha=gltfBlendMaterials.contains(material)||gltfMaskCutoffs.containsKey(material);
                 var image=textures.get(i);
-                textures.set(i,cache==null?MaterialReviewMip.level(image,mip,alpha):cache.level(i-lengths[0],image,mip,alpha));
+                textures.set(i,cache==null?MaterialReviewMip.level(image,mip,alpha):
+                    cache.level(i-lengths[0],image,mip,alpha,checkerSize==0?bytes:null));
             }
             var ids=faceIds;
             if(frame!=null && model.triangles().size()!=faceIds.size())throw new IOException("Native face order unavailable");

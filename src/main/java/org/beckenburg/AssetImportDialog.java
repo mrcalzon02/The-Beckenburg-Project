@@ -779,7 +779,7 @@ public final class AssetImportDialog {
             workingObservation!=null && workingObservation.snapshot()==state ? workingObservation.mesh() : topologyProject.mesh();
         var mipCache=reviewMips;
         new SwingWorker<MaterialReviewFrame,Void>(){
-            protected MaterialReviewFrame doInBackground()throws Exception{var renderer=new SceneRenderer();renderer.setRenderSize(width,height);return GlbProps.materialReviewFrame(EditorGlbWriter.encode(mesh),renderer,Math.toRadians(rotation),mesh,visibility.filtered()?visibility::includes:null,checker,mip,mipCache);}
+            protected MaterialReviewFrame doInBackground()throws Exception{var renderer=new SceneRenderer();renderer.setRenderSize(width,height);return GlbProps.materialReviewFrame(mipCache.encode(mesh),renderer,Math.toRadians(rotation),mesh,visibility.filtered()?visibility::includes:null,checker,mip,mipCache);}
             protected void done(){materialRendering=false;var current=modelingPreview!=null?modelingPreview.snapshot():topologyProject==null?null:topologyProject.snapshot();
                 if(current==captured&&mode==materialReviewMode.getSelectedIndex()&&visibility.equals(materialWorkspace.visibility())&&rotation==((Number)materialRotation.getValue()).doubleValue()){try{projectedFrame=get();materialRuntime.setIcon(new ImageIcon(projectedFrame.image));materialRuntime.setText("");}catch(Exception failure){projectedFrame=null;materialRuntime.setIcon(null);materialRuntime.setText("Preview unavailable: "+rootMessage(failure));}}
                 refreshMaterialWindow();

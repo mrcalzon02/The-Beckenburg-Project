@@ -996,11 +996,12 @@ public final class G2TexturedModelGuiTest {
         var cache=(MaterialReviewMip.Cache)field(ui,"reviewMips");
         for(int i=0;i<views.length;i++){
             double angle=i*22d;
-            long previous=cache.filteredTexels;
+            long previous=cache.filteredTexels,scanned=cache.comparedTexels,encodes=cache.encodes;
             edt(()->{select("materialReviewMode",5);spin("materialRotation",angle);});
             views[i]=reviewPixels();
             var frame=(MaterialReviewFrame)field(ui,"projectedFrame");int visible=0;
             if(i==1)check(previous==cache.filteredTexels,"Camera rotation refiltered unchanged source texels");
+            if(i==1)check(scanned==cache.comparedTexels&&encodes==cache.encodes,"Camera rotation re-encoded or rescanned the native source");
             var renderer=new SceneRenderer();int w=frame.image.getWidth(),h=frame.image.getHeight();renderer.setRenderSize(w,h);
             var mesh=project.mesh();
             var full=GlbProps.materialReviewFrame(org.beckenburg.editor.EditorGlbWriter.encode(mesh),renderer,Math.toRadians(angle),mesh,null,0,2,null);
