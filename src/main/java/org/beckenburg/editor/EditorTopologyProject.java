@@ -212,6 +212,54 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         if(!topology(after).manifold())throw new IllegalArgumentException("Model edit would introduce invalid topology");
         return new EditPreview(this,state,after,revision,operation+" face "+faceId+" / +3 vertices, +6 triangles");
     }
+    /** Slide one endpoint along an incident edge while preserving the surface and its open outline. */
+    public synchronized EditPreview previewVertexSlide(long from, long toward, double fraction) {
+        if (from == toward || !Double.isFinite(fraction) || fraction <= 0 || fraction >= 1) {
+            throw new IllegalArgumentException("Choose distinct endpoints and a fraction strictly between 0 and 1");
+        }
+        var points = indexVertices(state.vertices());
+        var start = points.get(from);
+        var end = points.get(toward);
+        if (start == null || end == null || !start.part().equals(end.part())) {
+            throw new IllegalArgumentException("Pick an edge within one native mesh part");
+        }
+        if (!topology(state).manifold()) throw new IllegalArgumentException("Repair invalid topology before sliding");
+        double dx = end.x() - start.x(), dy = end.y() - start.y(), dz = end.z() - start.z();
+        var direction = EditorMeshNormals.unit(new EditorMeshPipeline.Normal(dx, dy, dz));
+        var moved = new Vertex(from, start.part(), start.x() + dx * fraction,
+                start.y() + dy * fraction, start.z() + dz * fraction);
+        if (moved.equals(start)) throw new IllegalArgumentException("Slide is below native coordinate precision");
+        var next = new HashMap<>(points);
+        next.put(from, moved);
+        var neighbors = new HashMap<Long,Integer>();
+        for (var face : state.faces()) {
+            if (face.a().vertex() != from && face.b().vertex() != from && face.c().vertex() != from) continue;
+            var corners = List.of(face.a(), face.b(), face.c());
+            for (var corner : corners) if (corner.vertex() != from) neighbors.merge(corner.vertex(), 1, Integer::sum);
+            var normal = EditorMeshNormals.face(triangle(face, points));
+            if (Math.abs(dot(normal, direction)) > 1e-12) throw new IllegalArgumentException("Slide would change the incident surface");
+            var afterNormal = EditorMeshNormals.face(triangle(face, next));
+            if (!(dot(normal, afterNormal) > 0)) throw new IllegalArgumentException("Slide would collapse or reverse a triangle");
+        }
+        if (!neighbors.containsKey(toward)) throw new IllegalArgumentException("Slide target is not a connected native vertex");
+        for (var neighbor : neighbors.entrySet()) {
+            if (neighbor.getValue() != 1) continue;
+            var v = points.get(neighbor.getKey());
+            var outline = EditorMeshNormals.unit(new EditorMeshPipeline.Normal(v.x()-start.x(), v.y()-start.y(), v.z()-start.z()));
+            double cx = outline.y()*direction.z()-outline.z()*direction.y();
+            double cy = outline.z()*direction.x()-outline.x()*direction.z();
+            double cz = outline.x()*direction.y()-outline.y()*direction.x();
+            if (Math.hypot(Math.hypot(cx, cy), cz) > 1e-12) throw new IllegalArgumentException("Slide would move the open outline");
+        }
+        var vertices = new ArrayList<Vertex>(state.vertices().size());
+        for (var v : state.vertices()) vertices.add(v.id() == from ? moved : v);
+        var after = new State(id, sourceFingerprint, state.name(), state.sourceBytes(), vertices, state.faces(),
+                state.materials(), state.glbSource(), state.frames());
+        return new EditPreview(this, state, after, revision, "Slide vertex " + from + " toward " + toward + " by " + fraction);
+    }
+    private static double dot(EditorMeshPipeline.Normal a, EditorMeshPipeline.Normal b) {
+        return a.x()*b.x() + a.y()*b.y() + a.z()*b.z();
+    }
     public synchronized EditPreview previewBevel(long first,long second,long activeFace,double depth){
         var selected=first==second?Set.of(first):Set.of(first,second);var beforeTopology=topology(state);if(!beforeTopology.manifold())throw new IllegalArgumentException("Bevel requires oriented manifold input; inspect or repair topology first");
         String part=state.vertices().stream().filter(v->v.id()==first).map(Vertex::part).findFirst().orElseThrow(()->new IllegalArgumentException("Unknown native bevel vertex"));for(var edge:beforeTopology.edges())if(edge.boundary()&&beforeTopology.faces().get(edge.face()).part().equals(part))throw new IllegalArgumentException("Bevel requires a closed native part");

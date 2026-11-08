@@ -105,6 +105,9 @@ public final class AssetImportDialog {
     private boolean lassoGesture;
     private final JComboBox<EditorTopologyProject.FaceEdit> faceOperation=new JComboBox<>(EditorTopologyProject.FaceEdit.values());
     private final JSpinner faceAmount=new JSpinner(new SpinnerNumberModel(.25,-10000d,10000d,.05));
+    private final JSpinner slideFraction = new JSpinner(new SpinnerNumberModel(.25, .001, .999, .05));
+    private final JCheckBox reverseSlide = new JCheckBox("Reverse edge direction");
+    private final JButton previewSlide = new JButton("PREVIEW VERTEX SLIDE");
     private final JSpinner bevelDepth=new JSpinner(new SpinnerNumberModel(.1,.000001,10000d,.05));
     private final JButton previewBevel=new JButton("PREVIEW BEVEL");
     private final JButton previewFaceEdit=new JButton("PREVIEW FACE EDIT"),applyFaceEdit=new JButton("APPLY MODEL EDIT"),cancelFaceEdit=new JButton("CANCEL MODEL EDIT");
@@ -239,6 +242,15 @@ public final class AssetImportDialog {
         });
         previewMaterial.addActionListener(e->{if(selectedHit!=null&&materialList.getSelectedItem() instanceof EditorMeshMaterial material){long face=selectedHit.faceId();beginModelingPreview(p->p.previewBindMaterial(face,material));}});
         previewFaceEdit.addActionListener(e->previewModelingEdit());cancelFaceEdit.addActionListener(e->clearModelingPreview());
+        slideFraction.addChangeListener(e -> clearModelingPreview());
+        reverseSlide.addActionListener(e -> clearModelingPreview());
+        previewSlide.addActionListener(e -> {
+            if (busy || selectedHit == null || selectionMode.getSelectedIndex() != 1) return;
+            long from = reverseSlide.isSelected() ? selectedHit.edgeB() : selectedHit.edgeA();
+            long toward = reverseSlide.isSelected() ? selectedHit.edgeA() : selectedHit.edgeB();
+            double fraction = ((Number) slideFraction.getValue()).doubleValue();
+            beginModelingPreview(p -> p.previewVertexSlide(from, toward, fraction));
+        });
         bevelDepth.addChangeListener(e->clearModelingPreview());
         previewBevel.addActionListener(e->{if(busy||topologyProject==null||selectedHit==null||selectionMode.getSelectedIndex()==2)return;var hit=selectedHit;boolean corner=selectionMode.getSelectedIndex()==0;double depth=((Number)bevelDepth.getValue()).doubleValue();beginModelingPreview(p->p.previewBevel(corner?hit.vertexId():hit.edgeA(),corner?hit.vertexId():hit.edgeB(),hit.faceId(),depth));});
         applyFaceEdit.addActionListener(e->{if(modelingPreview!=null&&!busy){var edit=modelingPreview;meshEdit(()->topologyProject.applyPreview(edit));if(topologyProject.snapshot()==edit.snapshot()){selectedHit=null;selectionLabel.setText("Model edit committed");}clearModelingPreview();}});
@@ -270,7 +282,7 @@ public final class AssetImportDialog {
         var inspector=new JPanel(new BorderLayout(0,8));var toolTitle=new JLabel("SELECT");inspector.add(toolTitle,BorderLayout.NORTH);inspector.add(new JScrollPane(inspectorCards),BorderLayout.CENTER);inspector.add(EditorTopologyWorkspace.column(applyFaceEdit,cancelFaceEdit),BorderLayout.SOUTH);
         inspector.setBorder(BorderFactory.createEmptyBorder(8,5,5,5));
         inspectorCards.add("Select",EditorTopologyWorkspace.column(EditorTopologyWorkspace.form("Area shape",areaShape,"Occlusion",xraySelect),boxSelect,new JLabel("Drag in the working view. Escape cancels.")));
-        inspectorCards.add("Move",EditorTopologyWorkspace.column(EditorTopologyWorkspace.form("Vertex ID",vertexId,"X",vertexX,"Y",vertexY,"Z",vertexZ,"Grid (0 off)",meshSnap),moveVertex));
+        inspectorCards.add("Move",EditorTopologyWorkspace.column(EditorTopologyWorkspace.form("Vertex ID",vertexId,"X",vertexX,"Y",vertexY,"Z",vertexZ,"Grid (0 off)",meshSnap),moveVertex,EditorTopologyWorkspace.form("Slide fraction",slideFraction),reverseSlide,previewSlide));
         inspectorCards.add("Transform",EditorTopologyWorkspace.column(EditorTopologyWorkspace.form("Space",transformSpace,"Operation",transformKind,"Axis",transformAxis,"Degrees / factor",transformAmount,"Pivot",transformPivot,"Angle snap",angleSnap),previewTransform));
         inspectorCards.add("Create",EditorTopologyWorkspace.column(EditorTopologyWorkspace.form("Primitive",primitiveKind,"Width",primitiveWidth,"Height",primitiveHeight,"Depth",primitiveDepth,"Segments",primitiveSegments,"Rings / grid",primitiveRings),previewPrimitive,applyPrimitive));
         inspectorCards.add("Face",EditorTopologyWorkspace.column(EditorTopologyWorkspace.form("Operation",faceOperation,"Distance / fraction",faceAmount),previewFaceEdit));
@@ -437,6 +449,7 @@ public final class AssetImportDialog {
         boxSelect.setEnabled(editable);xraySelect.setEnabled(editable);areaShape.setEnabled(editable);
         faceOperation.setEnabled(topologyProject!=null&&!busy);faceAmount.setEnabled(topologyProject!=null&&!busy);
         previewFaceEdit.setEnabled(editable&&selectionMode.getSelectedIndex()==2&&selectedHit!=null);
+        previewSlide.setEnabled(editable && selectionMode.getSelectedIndex()==1 && selectedHit!=null);
         previewBevel.setEnabled(editable&&selectionMode.getSelectedIndex()!=2&&selectedHit!=null);
         chooseMaterial.setEnabled(editable&&selectionMode.getSelectedIndex()==2&&selectedHit!=null);previewMaterial.setEnabled(chooseMaterial.isEnabled()&&materialList.getSelectedItem()!=null);
         for(var c:List.of(materialList,materialWrap,materialAlpha,materialOrigin,uvOperation,uvScope,uvPivot,uvFirst,uvSecond))c.setEnabled(editable);

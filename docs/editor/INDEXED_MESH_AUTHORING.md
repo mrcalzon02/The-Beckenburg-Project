@@ -158,3 +158,9 @@ EditorLocalFrameTest covers native v5/OBJ/bundle/GLB roundtrip, exact shared his
 
 
 **2026-11-02 native bevel checkpoint:** Model Editor Bevel card previews and commits a single flat convex support-edge/corner cut through authoritative native history. Closed topology, original retained IDs, seam UV/raw normal interpolation, active-face cap material, PNG/source/frame preservation and native/OBJ bundle/GLB readback are verified. Actual human controls, save/reopen, source-backed GLB publication and production renderer capture pass; near-maximum119988-face input passes under256MiB in independent Java17 kit. Evidence: `development/quality/evidence/native-bevel-2026-11-02`. Full G2 remains open: segmented/concave/region bevels, loop/ring, slide, incremental buffers and later painting/gates are not accepted by this checkpoint.
+
+## Vertex slide
+
+In the Model Editor, pick an edge in EDGE mode and open Move. Slide fraction sets how far the first endpoint moves toward the second. Reverse edge direction swaps the endpoints. Preview, Apply and Cancel use the same native revision and history controls as the other model tools. The fraction must be strictly between zero and one. The direction must lie in every incident face plane and follow any open outline edges. Collapsed or reversed triangles are refused. Native IDs, UVs, raw corner normals, material bindings, part frames and original source ownership stay with the model.
+
+The actual UI test slides an interior OBJ vertex, checks its unchanged outline and attributes, undoes and redoes the edit, reopens the native file and compares every published game corner and the native archive. Evidence is in `development/quality/evidence/model-slide-2026-11-07`. Whole-loop sliding and loop/ring selection remain open G2 requirements.
