@@ -953,6 +953,8 @@ public final class G2TexturedModelGuiTest {
         reviewPixels();
         var opaque=(MaterialReviewFrame)field(ui,"projectedFrame");
         var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");
+        var session=new AtomicReference<EditorObservationBridge>();edt(()->session.set(ui.startMaterialObservation()));
+        var access=session.get();
         edt(()->{
             ((JSpinner)field(workspace,"projectionPadding")).setValue(1);
             var view=(JLabel)field(ui,"materialRuntime");
@@ -961,6 +963,7 @@ public final class G2TexturedModelGuiTest {
             projectedMouse(view,java.awt.event.MouseEvent.MOUSE_RELEASED,gesture[1],gesture[2]);
         });
         await(()->reviewed(ui));check(project.snapshot()==before,"Gutter preview modified source");
+        check(materialRequest(access,"/revision").statusCode()==409,"An uncommitted material preview cannot be reported as the document");
         applyReview();
         var padded=ImageIO.read(new java.io.ByteArrayInputStream(project.snapshot().materials().get(0).png()));
         for(int x=0;x<16;x++)check(padded.getRGB(x,4)==(x>=3&&x<=11?ink:image.getRGB(x,4)),"Padded seam texel "+x);
@@ -971,7 +974,10 @@ public final class G2TexturedModelGuiTest {
                 if(colorDistance(paddedViews[angle][i],ink)<colorDistance(noPadding[angle][i],ink))improved++;
             check(improved>0,"Padding must preserve more ink in the filtered model view at angle index "+angle);
         }
+        verifyMaterialObservation(access);
+        long observedRevision=project.revision();
         edt(()->button(ui,"undoMesh"));await(()->ready(ui));check(project.snapshot().equals(before),"Undo padded stroke");
+        check(materialRequest(access,"/capture?revision="+observedRevision).statusCode()==409,"Human undo must invalidate material capture");
         check(EditorTopologyProject.open(awaitPaintRecovery()).snapshot().equals(before),"Recovery must persist the final projected undo");
         for(int x=0;x<8;x++)image.setRGB(x,4,image.getRGB(x,4)&0xffffff);
         var png=new java.io.ByteArrayOutputStream();ImageIO.write(image,"PNG",png);
@@ -986,6 +992,53 @@ public final class G2TexturedModelGuiTest {
             else if(masked.face(i)==a)retained++;
         }
         check(through>0 && retained>0,"Projection must honor both accepted and discarded alpha-mask pixels");
+        edt(()->((JDialog)field(ui,"materialDialog")).setVisible(false));
+        await(()->{try{return field(ui,"materialObservation")==null;}catch(Exception failure){throw new RuntimeException(failure);}});
+        try{materialRequest(access,"/revision");throw new AssertionError("Closed Material Editor observation still reachable");}
+        catch(java.io.IOException expected){}
+    }
+    private static java.net.http.HttpResponse<byte[]> materialRequest(EditorObservationBridge access,String route)throws Exception{
+        var request=java.net.http.HttpRequest.newBuilder(java.net.URI.create(access.url()+route))
+            .header("Authorization","Bearer "+access.token()).timeout(java.time.Duration.ofSeconds(8)).GET().build();
+        return java.net.http.HttpClient.newHttpClient().send(request,java.net.http.HttpResponse.BodyHandlers.ofByteArray());
+    }
+    private void verifyMaterialObservation(EditorObservationBridge access)throws Exception{
+        long revision=project.revision();var state=project.snapshot();
+        var summary=materialRequest(access,"/summary");
+        var json=new String(summary.body(),java.nio.charset.StandardCharsets.UTF_8);
+        check(summary.statusCode()==200&&json.contains(project.id())&&json.contains("\"writeRoutes\":[]"),"Observe the active mesh without write access");
+        var node=project.hierarchyPage(0,1).nodes().get(0);
+        var row=materialRequest(access,"/nodes?revision="+revision+"&id="+node.id());
+        check(row.statusCode()==200&&new String(row.body(),java.nio.charset.StandardCharsets.UTF_8).contains(EditorAgentProtocol.json(node)),
+            "Material session read the wrong native vertex");
+        var proof=materialRequest(access,"/verify-position?revision="+revision+"&id="+node.id()+"&x="+node.x()+"&y="+node.y()+"&z="+node.z());
+        var expectedDisk=Files.exists(project.documentPath())?(EditorTopologyProject.decode(Files.readAllBytes(project.documentPath())).equals(state)?"MATCHES":"DIFFERS"):"MISSING";
+        json=new String(proof.body(),java.nio.charset.StandardCharsets.UTF_8);
+        check(proof.statusCode()==200&&json.contains("\"verified\":true")&&json.contains("\"diskState\":\""+expectedDisk+"\""),"Material native disk proof");
+        var result=materialRequest(access,"/test?revision="+revision+"&id=visible-material");
+        json=new String(result.body(),java.nio.charset.StandardCharsets.UTF_8);
+        check(result.statusCode()==200&&json.contains("VISIBLE_FACE")&&!json.contains("\"passed\":false"),"Actual selected material failed verification");
+        int[] displayed=reviewPixels();
+        var capture=materialRequest(access,"/capture?revision="+revision);
+        check(capture.statusCode()==200,"Active material capture refused");
+        var image=ImageIO.read(new java.io.ByteArrayInputStream(capture.body()));
+        check(Arrays.equals(displayed,image.getRGB(0,0,image.getWidth(),image.getHeight(),null,0,image.getWidth())),"Agent PNG differs from human runtime pixels");
+        String python=System.getenv("EDITOR_MCP_PYTHON");
+        if(python!=null){
+            var child=new ProcessBuilder(python,"tools/verify_editor_mcp.py","material").inheritIO();
+            child.environment().put("EDITOR_AGENT_URL",access.url());child.environment().put("EDITOR_AGENT_TOKEN",access.token());
+            child.environment().put("EDITOR_EXPECT_SCENE",project.id());child.environment().put("EDITOR_EXPECT_VERTEX",node.id());
+            child.environment().put("EDITOR_EXPECT_PNG",java.util.HexFormat.of().formatHex(java.security.MessageDigest.getInstance("SHA-256").digest(capture.body())));
+            check(child.start().waitFor()==0,"Material MCP client failed");
+        }
+        var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");
+        var faces=(JList<?>)field(workspace,"faceList");int selected=faces.getSelectedIndex();
+        edt(()->faces.setSelectedIndex(2));reviewPixels();
+        var covered=materialRequest(access,"/test?revision="+revision+"&id=visible-material");
+        json=new String(covered.body(),java.nio.charset.StandardCharsets.UTF_8);
+        check(covered.statusCode()==200&&json.contains("\"code\":\"VISIBLE_FACE\",\"passed\":false"),"Covered rear face falsely passed visibility");
+        edt(()->faces.setSelectedIndex(selected));reviewPixels();
+        check(state==project.snapshot()&&revision==project.revision(),"Material observation edited the native document");
     }
     private static void projectedMouse(JLabel view,int type,int x,int y){
         view.dispatchEvent(new java.awt.event.MouseEvent(view,type,System.currentTimeMillis(),java.awt.event.InputEvent.BUTTON1_DOWN_MASK,

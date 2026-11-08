@@ -28,6 +28,10 @@ The response carries `X-Editor-Revision`. URL-encode parameter values. The bridg
 
 ### Connect an MCP client
 
+The separate **Material Editor** can open its own read-only session through **File → Start local observation**. Use its displayed address and token with the same MCP client. The scene ID is the active mesh document. `hierarchy` pages its native vertices and `inspect_nodes` resolves stable vertex IDs. `verify_position` compares the vertex with expected coordinates and reports the mesh document's disk state. `run_test(revision=revision, id="visible-material")` checks the selected face's native material and its coverage in the displayed renderer frame. **File → Verify visible material** runs the same diagnostic. `capture_viewport` returns that frame as a PNG, including the active rotation, visibility and preview mode.
+
+Apply or cancel a pending material preview before observing. A human edit or undo invalidates revision-bound reads. Returning to modeling, closing the Material Editor, opening another source, or choosing **Stop local observation** ends the session. This module exposes inspection, diagnostics and capture. Material writes continue through the human preview and shared history controls.
+
 1. In a Python 3.12 virtual environment, run `python -m pip install -r tools/editor_mcp_requirements.txt`.
 2. In **Verify Scene**, choose **Start Local Observation** for reads or **Start Local Editing** for validated transactions and shared undo/redo. Select **Also allow saving and reopening this document** to grant those two operations. Reopening reads the host's existing document and adds one undo step.
 3. Configure the client's stdio server command as that environment's Python executable. Pass the absolute path to `tools/editor_mcp.py` as its only argument. Set `EDITOR_AGENT_URL` to the displayed loopback address and `EDITOR_AGENT_TOKEN` to the token following `Bearer` in the access dialog. Supply the token through the client's private environment settings.

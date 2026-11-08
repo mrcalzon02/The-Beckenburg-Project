@@ -1,6 +1,7 @@
 """Exercise the public MCP adapter from a separate official SDK client against the open GUI fixture."""
 import asyncio
 import base64
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -17,7 +18,7 @@ async def verify(scope):
     async with stdio_client(settings) as (reader, writer), ClientSession(reader, writer) as client:
         await client.initialize()
         tools = {tool.name: tool for tool in (await client.list_tools()).tools}
-        assert ("edit" in tools) == (scope != "observe")
+        assert ("edit" in tools) == (scope not in ("observe", "material"))
         assert ("save" in tools) == (scope == "save")
         assert ("reopen" in tools) == (scope == "save")
         assert set(tools["verify_position"].inputSchema["required"]) == {"revision", "id", "x", "y", "z"}
@@ -33,6 +34,18 @@ async def verify(scope):
         assert await call("inspect_scene", revision_only=True) == {"sceneId": state["sceneId"], "revision": revision}
         resource = await client.read_resource("editor://active/summary")
         assert json.loads(resource.contents[0].text) == state
+        if scope == "material":
+            assert state["sceneId"] == os.environ["EDITOR_EXPECT_SCENE"] and state["writeRoutes"] == []
+            key = os.environ["EDITOR_EXPECT_VERTEX"]
+            node = (await call("inspect_nodes", revision=revision, ids=[key]))["result"][0]
+            assert node["id"] == key and node["kind"] == "VERTEX"
+            checks = (await call("run_test", revision=revision, id="visible-material"))["result"]
+            assert {row["code"] for row in checks} == {"BOUND_MATERIAL", "VISIBLE_FACE"} and all(row["passed"] for row in checks)
+            captured = await client.call_tool("capture_viewport", {"revision": revision})
+            assert not captured.isError and captured.content[0].mimeType == "image/png"
+            assert hashlib.sha256(base64.b64decode(captured.content[0].data)).hexdigest() == os.environ["EDITOR_EXPECT_PNG"]
+            print("PASS Material Editor MCP: native vertex, visible face binding and exact displayed runtime PNG")
+            return
         if scope == "portable":
             assert state["sceneId"] == "another-game" and "capture_viewport" not in tools
             assert state["operations"] == {"increment": {}}

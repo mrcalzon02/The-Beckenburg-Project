@@ -17,6 +17,8 @@ import org.beckenburg.editor.EditorObjMaterials;
 import org.beckenburg.editor.EditorMeshTopology;
 import org.beckenburg.editor.EditorTopologyProject;
 import org.beckenburg.editor.EditorHistory;
+import org.beckenburg.editor.EditorAgentService;
+import org.beckenburg.editor.EditorObservationBridge;
 import org.beckenburg.editor.EditorMeshPrimitives;
 import org.beckenburg.editor.EditorModelWorkspace;
 import org.beckenburg.editor.EditorModelWorkspace.Field;
@@ -176,6 +178,8 @@ public final class AssetImportDialog {
         }
     };
     private MaterialReviewFrame projectedFrame;
+    private EditorObservationBridge materialObservation;
+    private final JMenuItem materialAccess=new JMenuItem("Start local observation…");
     private MaterialReviewMip.Cache reviewMips=new MaterialReviewMip.Cache();
     private MaterialReviewStroke projectedStroke;
     private int reviewWidth,reviewHeight;
@@ -554,9 +558,12 @@ public final class AssetImportDialog {
         if(materialDialog==null){
             materialDialog=new JDialog(dialog,"Material Editor - Texture & UV",false);materialDialog.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
             materialDialog.addComponentListener(new ComponentAdapter(){
-                @Override public void componentHidden(ComponentEvent event){reviewMips=new MaterialReviewMip.Cache();}
+                @Override public void componentHidden(ComponentEvent event){stopMaterialObservation();reviewMips=new MaterialReviewMip.Cache();}
             });
-            materialDialog.addWindowListener(new WindowAdapter(){public void windowClosing(WindowEvent e){if(modelingPreview!=null)clearModelingPreview();materialDialog.setVisible(false);}});
+            materialDialog.addWindowListener(new WindowAdapter(){
+                public void windowClosing(WindowEvent e){hideMaterialWindow();}
+                public void windowClosed(WindowEvent e){stopMaterialObservation();}
+            });
             materialRuntime.setPreferredSize(new Dimension(280,190));
             materialRuntime.setMinimumSize(new Dimension(160,120));
             materialRuntime.addComponentListener(new ComponentAdapter(){
@@ -626,7 +633,7 @@ public final class AssetImportDialog {
             raisePaintLayer.addActionListener(e->previewLayerEdit(EditorTopologyProject.LayerEdit.UP));
             lowerPaintLayer.addActionListener(e->previewLayerEdit(EditorTopologyProject.LayerEdit.DOWN));
             var commands=new JPanel(new FlowLayout(FlowLayout.RIGHT,5,3));commands.add(sharedMaterialAction("Undo",undoMesh));commands.add(sharedMaterialAction("Redo",redoMesh));commands.add(sharedMaterialAction("Save document",saveMesh));commands.add(sharedMaterialAction("Apply edit",applyFaceEdit));commands.add(sharedMaterialAction("Cancel preview",cancelFaceEdit));
-            var back=new JButton("Return to modeling");back.addActionListener(e->{if(modelingPreview!=null)clearModelingPreview();materialDialog.setVisible(false);dialog.toFront();});commands.add(back);
+            var back=new JButton("Return to modeling");back.addActionListener(e->{hideMaterialWindow();dialog.toFront();});commands.add(back);
             materialWorkspace=new EditorMaterialWorkspace(materialTools,runtime,commands,id->{
                 if(busy||modelingPreview!=null||topologyProject==null)return;
                 selectMaterialFace(id);
@@ -644,11 +651,89 @@ public final class AssetImportDialog {
             });
             materialWorkspace.setProjectionCancel(()->{projectedStroke=null;materialRuntime.repaint();});
             materialWorkspace.setViewChanged(this::refreshMaterialWindow);
-            var fileMenu=new JMenuBar();fileMenu.add(EditorTopologyWorkspace.menu("File",openPaintRecovery));materialDialog.setJMenuBar(fileMenu);
+            var verify=new JButton("Verify visible material");
+            verify.addActionListener(e->{try{
+                var service=materialService();var checks=service.test(topologyProject.revision(),"visible-material").result();
+                var report=new StringBuilder();
+                for(var check:checks)report.append(check.passed()?"PASS  ":"FAIL  ").append(check.detail()).append('\n');
+                JOptionPane.showMessageDialog(materialDialog,report.toString(),"Visible material",JOptionPane.INFORMATION_MESSAGE);
+            }catch(RuntimeException failure){materialWorkspace.previewIssue(rootMessage(failure));}});
+            materialAccess.addActionListener(e->{
+                if(materialObservation!=null){stopMaterialObservation();return;}
+                try{
+                    var access=startMaterialObservation();
+                    var info=new JTextArea("Address  "+access.url()+"\nAuthorization: Bearer "+access.token(),3,68);
+                    info.setEditable(false);JOptionPane.showMessageDialog(materialDialog,info,"Read-only material observation",JOptionPane.INFORMATION_MESSAGE);
+                }catch(IOException|RuntimeException failure){materialWorkspace.previewIssue(rootMessage(failure));}
+            });
+            var fileMenu=new JMenuBar();var file=EditorTopologyWorkspace.menu("File",openPaintRecovery,verify);
+            file.add(materialAccess);fileMenu.add(file);materialDialog.setJMenuBar(fileMenu);
             var panel=new JPanel(new BorderLayout());panel.add(materialWorkspace,BorderLayout.CENTER);panel.add(paintRecoveryStatus,BorderLayout.SOUTH);
             materialDialog.setContentPane(panel);materialDialog.setSize(1160,760);materialDialog.setMinimumSize(new Dimension(900,600));materialDialog.setLocationRelativeTo(dialog);
         }
         materialDialog.setVisible(true);refreshMaterialWindow();
+    }
+    private void hideMaterialWindow(){
+        stopMaterialObservation();
+        if(modelingPreview!=null)clearModelingPreview();
+        materialDialog.setVisible(false);
+    }
+    EditorObservationBridge startMaterialObservation()throws IOException{
+        if(materialObservation!=null)throw new IllegalStateException("Material observation is already active");
+        materialObservation=new EditorObservationBridge(materialService(),EditorObservationBridge.Scope.OBSERVE,SwingUtilities::invokeLater);
+        materialAccess.setText("Stop local observation");
+        return materialObservation;
+    }
+    private void stopMaterialObservation(){
+        if(materialObservation!=null){materialObservation.close();materialObservation=null;}
+        materialAccess.setText("Start local observation…");
+    }
+    private EditorAgentService<EditorTopologyProject.State> materialService(){
+        var host=new MaterialHost(topologyProject);host.checkAccess();
+        return new EditorAgentService<>(host,meshHistory);
+    }
+    private final class MaterialHost implements EditorAgentService.Host<EditorTopologyProject.State>{
+        private final EditorTopologyProject document;
+        MaterialHost(EditorTopologyProject document){this.document=document;}
+        public void checkAccess(){
+            if(!SwingUtilities.isEventDispatchThread()||document==null||document!=topologyProject||
+                materialDialog==null||!materialDialog.isShowing()||busy||modelingPreparing||modelingPreview!=null||projectedStroke!=null)
+                throw new IllegalStateException("Material document is unavailable or has an uncommitted preview");
+        }
+        public EditorTopologyProject project(){return document;}
+        public EditorAgentService.DiskState compareSaved(EditorTopologyProject.State live)throws IOException{
+            var saved=EditorTopologyProject.decode(EditorDocumentStore.readDocument(document.documentPath()));
+            return live.equals(saved)?EditorAgentService.DiskState.MATCHES:EditorAgentService.DiskState.DIFFERS;
+        }
+        public long revision(){return document.revision();}
+        public java.util.Set<EditorAgentService.Capability> capabilities(){
+            return java.util.Set.of(EditorAgentService.Capability.INSPECT,EditorAgentService.Capability.CAPTURE,EditorAgentService.Capability.TEST);
+        }
+        public List<String> operations(){return List.of();}
+        public List<String> tests(){return List.of("visible-material");}
+        public void apply(String operation,Map<String,String> arguments){throw new UnsupportedOperationException("Observation only");}
+        public void validate(){throw new UnsupportedOperationException("Observation only");}
+        public void reopen(){throw new UnsupportedOperationException("Observation only");}
+        private MaterialReviewFrame frame(){
+            if(materialRendering||projectedFrame==null||materialRenderState!=document.snapshot()||
+                !(materialRuntime.getIcon() instanceof ImageIcon icon)||icon.getImage()!=projectedFrame.image)
+                throw new IllegalStateException("Wait for the current native material render");
+            return projectedFrame;
+        }
+        public EditorAgentService.Capture capture(Path path)throws IOException{
+            var image=frame().image;
+            if(!javax.imageio.ImageIO.write(image,"png",path.toFile()))throw new IOException("PNG writer unavailable");
+            return new EditorAgentService.Capture(path,image.getWidth(),image.getHeight(),"SceneRenderer material review");
+        }
+        public List<EditorAgentService.Check> test(String id){
+            var frame=frame();
+            var face=selectedHit==null?null:document.snapshot().faces().stream().filter(f->f.id()==selectedHit.faceId()).findFirst().orElse(null);
+            if(face==null)return List.of(new EditorAgentService.Check("FACE_SELECTED",false,"Select a native face"));
+            var binding=document.snapshot().materials().stream().filter(m->m.key().equals(face.material())).findFirst().orElse(null);
+            return List.of(new EditorAgentService.Check("BOUND_MATERIAL",binding!=null,binding==null?
+                "Face "+face.id()+" has no bound material":"Face "+face.id()+" uses "+binding.key()+" ("+binding.width()+" × "+binding.height()+")"),
+                new EditorAgentService.Check("VISIBLE_FACE",frame.boundTo(face.id(),face.material()),"Native rendered coverage for face "+face.id()));
+        }
     }
     private void selectMaterialFace(long id){
         var face=topologyProject.snapshot().faces().stream().filter(f->f.id()==id).findFirst().orElse(null);
@@ -939,7 +1024,7 @@ public final class AssetImportDialog {
             Path document=Path.of(System.getProperty("user.home"),".beckenburg","editor","topology",java.util.UUID.randomUUID()+".btop");
             var mesh=new EditorMeshPipeline.Mesh("New mesh",List.of(),0);
             var project=EditorTopologyProject.fromMesh(mesh,EditorMeshPipeline.sourceFingerprint("native-mesh-v1".getBytes(java.nio.charset.StandardCharsets.UTF_8)),document);
-            project.save();clearPrimitivePreview();selectedHit=null;normalAnchor=null;selectionLabel.setText("Click a triangle in the working mesh");topologyProject=project;meshHistory=project.createHistory(60);workingObservation=project.observe();source=workingObservation.mesh();result=null;
+            project.save();stopMaterialObservation();clearPrimitivePreview();selectedHit=null;normalAnchor=null;selectionLabel.setText("Click a triangle in the working mesh");topologyProject=project;meshHistory=project.createHistory(60);workingObservation=project.observe();source=workingObservation.mesh();result=null;
             path=document;sourceCapture=null;gltfSource=null;paintRecovery=null;paintRecoveryStatus.setText("");reviewedSourceFingerprint=project.diskFingerprint();authoringNote="Native primitive authoring; generated fallback atlas.";sourceTextureBytes=0;
             vertexId.setValue(0L);selectVertex();refreshMeshControls();pathLabel.setText(document.getFileName()+" | native authoring");
             if(slider.getValue()!=0)slider.setValue(0);else recalculate();
@@ -1024,6 +1109,7 @@ public final class AssetImportDialog {
         if(draft)loadPaintRecovery(candidate);else loadSource(candidate,false);
     }
     private void loadSource(Path candidate,boolean recovering){
+        stopMaterialObservation();
         var previousProject=topologyProject;
         normalAnchor=null;
         cameraGesture=null;cameraZoom=1;cameraPanX=0;cameraPanY=0;

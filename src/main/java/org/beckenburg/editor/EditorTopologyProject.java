@@ -215,7 +215,23 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         state=value;revision++;
     }
     public List<Asset> assets(){return List.of();}
-    public synchronized List<Node> hierarchy(){return state.vertices().stream().map(v->new Node("vertex-"+v.id(),"VERTEX",v.part()+" / "+v.id(),v.x(),v.y(),v.z())).toList();}
+    private static Node vertexRow(Vertex v){return new Node("vertex-"+v.id(),"VERTEX",v.part()+" / "+v.id(),v.x(),v.y(),v.z());}
+    public synchronized List<Node> hierarchy(){return state.vertices().stream().map(EditorTopologyProject::vertexRow).toList();}
+    public synchronized HierarchyPage hierarchyPage(int offset,int limit){
+        var vertices=state.vertices();int end=HierarchyPage.end(vertices.size(),offset,limit);
+        return new HierarchyPage(vertices.size(),offset,vertices.subList(offset,end).stream().map(EditorTopologyProject::vertexRow).toList());
+    }
+    public synchronized Node node(String id){
+        if(id!=null&&id.startsWith("vertex-")){
+            long key=Long.parseLong(id.substring(7));
+            if(id.equals("vertex-"+key)){
+                var vertices=state.vertices();
+                if(key>=0&&key<vertices.size()&&vertices.get((int)key).id()==key)return vertexRow(vertices.get((int)key));
+                for(var v:vertices)if(v.id()==key)return vertexRow(v);
+            }
+        }
+        throw new IllegalArgumentException("Unknown native vertex");
+    }
     private static Map<Long,Vertex> vertices(State state){var out=new HashMap<Long,Vertex>();for(var v:state.vertices())out.put(v.id(),v);return out;}
     private static EditorMeshPipeline.Vertex corner(Corner corner,Map<Long,Vertex> vertices){
         var v=vertices.get(corner.vertex());return new EditorMeshPipeline.Vertex(v.x(),v.y(),v.z(),corner.u(),corner.v(),corner.normal());
