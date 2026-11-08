@@ -532,7 +532,8 @@ public final class AssetImportDialog {
             fixUvStretch.setToolTipText("Preview uniform texel scale on this face while preserving its UV area and center");
             fixUvStretch.addActionListener(e->{
                 if(selectedHit==null)return;
-                long id=selectedHit.faceId();beginMaterialPreview(p->p.previewFixFaceStretch(id));
+                long id=selectedHit.faceId();boolean island=uvScope.getSelectedIndex()==1;
+                beginMaterialPreview(p->island?p.previewBalanceIsland(id):p.previewFixFaceStretch(id));
             });
             materialTools=new JTabbedPane();materialTools.addTab("Materials",bindings);materialTools.addTab("UV transform",uvSettings);
             var layerButtons=new JPanel(new GridLayout(1,4,2,0));
@@ -638,11 +639,15 @@ public final class AssetImportDialog {
         double rotation=((Number)materialRotation.getValue()).doubleValue();
         var visibility=materialWorkspace.visibility();
         fixUvStretch.setEnabled(false);
+        boolean island=uvScope.getSelectedIndex()==1;
+        fixUvStretch.setText(island?"Balance island stretch":"Fix selected face stretch");
+        fixUvStretch.setToolTipText(island?"Balance directional stretch across the connected UV island while preserving signed areas":
+            "Preview uniform texel scale on this face while preserving its UV area and center");
         if(bound && visibility.includes(face) && (modelingPreview!=null ||
             workingObservation!=null && workingObservation.snapshot()==state)){
             var nativeMesh=modelingPreview!=null?modelingMesh:workingObservation.mesh();
             var density=EditorUvDensity.measure(nativeMesh.triangles().get(faceIndex),material.width(),material.height());
-            fixUvStretch.setEnabled(layerEditable && density.filter(d->d.texelsPerUnit()>0 && d.stretch()>1+1e-10).isPresent());
+            fixUvStretch.setEnabled(layerEditable && density.filter(d->d.texelsPerUnit()>0 && (island || d.stretch()>1+1e-10)).isPresent());
             uvDensity.setText(density.map(d->d.texelsPerUnit()==0?"Collapsed UV triangle":
                 String.format(Locale.ROOT,"%.2f texels/unit · %.2f× stretch",d.texelsPerUnit(),d.stretch())).orElse("Degenerate model triangle"));
         }else uvDensity.setText("Select a bound face to measure UVs");

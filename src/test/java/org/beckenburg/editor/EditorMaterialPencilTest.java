@@ -148,6 +148,35 @@ public final class EditorMaterialPencilTest {
             EditorObjBundle.validate(state,Files.readAllBytes(dir.resolve(name+".obj.zip")));
         }
     }
+    private static void islandBalance(){
+        var a=new EditorTopologyProject.Corner(0,0,0);var b=new EditorTopologyProject.Corner(1,-1,0);
+        var c=new EditorTopologyProject.Corner(2,-1,1);var d=new EditorTopologyProject.Corner(3,0,1);
+        var faces=List.of(new EditorTopologyProject.Face(4,"island",a,b,c),new EditorTopologyProject.Face(7,"island",a,c,d));
+        double[][] points={{0,0},{2,0},{2,1},{0,2}};
+        java.util.function.Function<EditorTopologyProject.Corner,EditorMeshPipeline.Vertex> vertex=corner->{
+            var p=points[(int)corner.vertex()];return new EditorMeshPipeline.Vertex(p[0],p[1],0,corner.u(),corner.v());
+        };
+        java.util.function.Function<EditorTopologyProject.Face,EditorMeshPipeline.Triangle> geometry=
+            f->new EditorMeshPipeline.Triangle(f.part(),vertex.apply(f.a()),vertex.apply(f.b()),vertex.apply(f.c()));
+        var fixed=EditorUvDensity.balance(faces,new int[]{0,1},geometry,8,16);
+        double oldScore=0,newScore=0;
+        for(int i=0;i<2;i++){
+            var old=EditorUvDensity.measure(geometry.apply(faces.get(i)),8,16).orElseThrow();
+            var next=EditorUvDensity.measure(geometry.apply(fixed.get(i)),8,16).orElseThrow();
+            double area=i==0?1:2;
+            oldScore+=area*(old.stretch()+1/old.stretch());newScore+=area*(next.stretch()+1/next.stretch());
+            check(Math.abs(next.texelsPerUnit()-old.texelsPerUnit())<1e-9,"Per-face texel area changed");
+            var f=fixed.get(i);
+            double signed=(f.b().u()-f.a().u())*(f.c().v()-f.a().v())-(f.b().v()-f.a().v())*(f.c().u()-f.a().u());
+            check(Math.abs(signed+1)<1e-9,"Mirrored island changed orientation");
+        }
+        check(newScore<oldScore && fixed.get(0).a().equals(fixed.get(1).a()) && fixed.get(0).c().equals(fixed.get(1).b()),
+            "Island balance must reduce aggregate distortion without splitting its diagonal");
+        try{
+            EditorUvDensity.balance(fixed,new int[]{0,1},geometry,8,16);
+            throw new AssertionError("Accepted an island with no further common stretch correction");
+        }catch(IllegalArgumentException expected){}
+    }
     private static void tiledFace(EditorTopologyProject p)throws Exception{
         var original=p.snapshot();
         long face=original.faces().get(10).id();
@@ -179,6 +208,7 @@ public final class EditorMaterialPencilTest {
         historyBudget();
         blendModes();
         uvDensity();
+        islandBalance();
         legacyPaintFiles();
         Path dir=Files.createTempDirectory("pencil-native-");
         try {

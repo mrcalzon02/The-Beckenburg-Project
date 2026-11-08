@@ -134,6 +134,7 @@ public final class G2TexturedModelGuiTest {
         });
         verifyVisibility();
         verifyChecker();
+        verifyIslandStretch(png);
         verifyTiledPencil(png);
         verifyPencil(png);
         edt(() -> {
@@ -264,6 +265,56 @@ public final class G2TexturedModelGuiTest {
         });
         for(int i=0;i<4;i++){edt(()->button(ui,"undoMesh"));await(()->ready(ui));}
         check(project.snapshot().equals(before),"Undo restores the original sampler, UVs and pixels");
+    }
+    private void verifyIslandStretch(Path png)throws Exception{
+        var original=project.snapshot();
+        var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");
+        for(int index:List.of(10,11)){
+            edt(()->{
+                ((JList<?>)field(workspace,"faceList")).setSelectedIndex(index);
+                select("materialWrap",2);
+                ui.previewPngMaterial(png);
+            });
+            applyReview();
+        }
+        var before=project.snapshot();
+        edt(()->{
+            ((JList<?>)field(workspace,"faceList")).setSelectedIndex(10);
+            select("uvScope",1);
+            button(ui,"fixUvStretch");
+        });
+        await(()->reviewed(ui));
+        check(project.snapshot()==before,"Island preview mutated native state");
+        applyReview();
+        var after=project.snapshot();
+        for(int i=0;i<10;i++)check(after.faces().get(i)==before.faces().get(i),"Island correction crossed a material boundary");
+        int shared=0;
+        var first=after.faces().get(10);var second=after.faces().get(11);
+        for(var a:List.of(first.a(),first.b(),first.c()))for(var b:List.of(second.a(),second.b(),second.c()))
+            if(a.vertex()==b.vertex()){
+                check(a.u()==b.u() && a.v()==b.v(),"Correction introduced an internal UV seam");shared++;
+            }
+        check(shared==2,"Expected one connected diagonal");
+        var mesh=project.mesh();
+        for(int i:List.of(10,11)){
+            var density=EditorUvDensity.measure(mesh.triangles().get(i),4,4).orElseThrow();
+            near(density.stretch(),1);near(density.texelsPerUnit(),Math.sqrt(8));
+        }
+        edt(()->select("materialReviewMode",1));reviewPixels();
+        edt(()->{captureMaterial("uv-island.png");button(ui,"apply");});
+        await(()->published.get()!=null);
+        var game=GlbProps.model(published.get());
+        for(int i:List.of(10,11)){
+            var f=after.faces().get(i);var tri=game.triangles().get(i);
+            near(tri.a().u(),f.a().u());near(tri.a().v(),f.a().v());near(tri.b().u(),f.b().u());
+            near(tri.b().v(),f.b().v());near(tri.c().u(),f.c().u());near(tri.c().v(),f.c().v());
+        }
+        published.set(null);
+        edt(()->button(ui,"undoMesh"));await(()->ready(ui));
+        check(project.snapshot().equals(before),"Undo island change as one edit");
+        for(int i=0;i<2;i++){edt(()->button(ui,"undoMesh"));await(()->ready(ui));}
+        check(project.snapshot().equals(original),"Undo sampler setup");
+        edt(()->{select("materialReviewMode",0);select("uvScope",0);});
     }
     private void verifyVisibility() throws Exception {
         var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");

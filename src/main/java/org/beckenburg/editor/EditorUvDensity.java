@@ -68,4 +68,54 @@ public record EditorUvDensity(double texelsPerUnit,double stretch) {
     private static EditorMeshPipeline.Vertex withUv(EditorMeshPipeline.Vertex v,EditorTopologyProject.Corner c){
         return new EditorMeshPipeline.Vertex(v.x(),v.y(),v.z(),c.u(),c.v(),v.normal());
     }
+    /** Minimize area-weighted conformal stretch over unit-determinant affine changes of the whole island. */
+    static java.util.List<EditorTopologyProject.Face> balance(java.util.List<EditorTopologyProject.Face> faces,int[] island,
+            java.util.function.Function<EditorTopologyProject.Face,EditorMeshPipeline.Triangle> geometry,int width,int height){
+        double xx=0,xy=0,yy=0,area=0,centerU=0,centerV=0;
+        for(int index:island){
+            var face=faces.get(index);
+            var m=map(geometry.apply(face),width,height).orElseThrow(()->new IllegalArgumentException("Island has degenerate geometry"));
+            double det=Math.abs(m.determinant());
+            if(det==0)throw new IllegalArgumentException("Island contains collapsed UVs");
+            double world=m.length()*m.altitude(),weight=world/det;
+            xx+=weight*(m.uu()*m.uu()+m.uv()*m.uv());
+            xy+=weight*(m.uu()*m.vu()+m.uv()*m.vv());
+            yy+=weight*(m.vu()*m.vu()+m.vv()*m.vv());
+            area+=world;
+            centerU+=world*(face.a().u()/3+face.b().u()/3+face.c().u()/3);
+            centerV+=world*(face.a().v()/3+face.b().v()/3+face.c().v()/3);
+        }
+        centerU/=area;centerV/=area;
+        double scale=Math.max(xx,yy);
+        xx/=scale;xy/=scale;yy/=scale;
+        double largest=(xx+yy+Math.hypot(xx-yy,2*xy))/2;
+        double smallest=(xx*yy-xy*xy)/largest;
+        double factor=Math.pow(smallest/largest,.25);
+        if(!(factor>0) || !Double.isFinite(centerU) || !Double.isFinite(centerV))
+            throw new IllegalArgumentException("Island distortion exceeds numeric range");
+        if(factor>=1-1e-10)throw new IllegalArgumentException("Island has no common stretch direction to correct");
+        double angle=.5*Math.atan2(2*xy,xx-yy),cos=Math.cos(angle),sin=Math.sin(angle);
+        double a=factor*cos*cos+sin*sin/factor,b=(factor-1/factor)*sin*cos,d=factor*sin*sin+cos*cos/factor;
+        var output=new java.util.ArrayList<>(faces);
+        for(int index:island){
+            var face=faces.get(index);
+            var corners=new EditorTopologyProject.Corner[]{face.a(),face.b(),face.c()};
+            for(int i=0;i<3;i++){
+                var c=corners[i];double x=(c.u()-centerU)*width,y=(c.v()-centerV)*height;
+                double u=centerU+(a*x+b*y)/width,v=centerV+(b*x+d*y)/height;
+                if(!Double.isFinite(u)||!Double.isFinite(v)||Math.abs(u)>1e9||Math.abs(v)>1e9)
+                    throw new IllegalArgumentException("Island correction exceeds native UV range");
+                corners[i]=new EditorTopologyProject.Corner(c.vertex(),u,v,c.normal());
+            }
+            var next=new EditorTopologyProject.Face(face.id(),face.part(),corners[0],corners[1],corners[2],face.material());
+            double ratio=signedUvArea(next)/signedUvArea(face);
+            if(!Double.isFinite(ratio) || Math.abs(ratio-1)>1e-7)
+                throw new IllegalArgumentException("Island correction cannot preserve signed UV areas");
+            output.set(index,next);
+        }
+        return output;
+    }
+    private static double signedUvArea(EditorTopologyProject.Face f){
+        return (f.b().u()-f.a().u())*(f.c().v()-f.a().v())-(f.b().v()-f.a().v())*(f.c().u()-f.a().u());
+    }
 }
