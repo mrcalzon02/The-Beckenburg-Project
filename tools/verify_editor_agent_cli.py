@@ -58,6 +58,18 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
             first_by_id.setdefault(row['id'], row)
         direct = run([f'node\t{rev}\t{node_id}' for node_id in first_by_id])
         assert [reply['result']['result'] for reply in direct] == list(first_by_id.values())
+        selection = list(reversed(first_by_id))[:64]
+        request = f'nodes\t{rev}\t' + '\t'.join(selection)
+        lengths = []
+        combined = run([request], sizes=lengths)[0]['result']
+        assert combined['revision'] == rev and combined['result'] == [first_by_id[key] for key in selection]
+        individual = []
+        run([f'node\t{rev}\t{key}' for key in selection], sizes=individual)
+        assert lengths[0] < sum(individual)
+        print(f'{full["sceneId"]}: {len(selection)} localized reads: {sum(individual)} bytes individually, {lengths[0]} bytes batched')
+        invalid_selections = run([f'nodes\t{rev}', f'nodes\t{rev}\t{selection[0]}\tmissing-node', f'nodes\t{rev - 1}\t{selection[0]}',
+                                  f'nodes\t{rev}\t' + '\t'.join([selection[0]] * 65)], expected=1)
+        assert all(not row['ok'] for row in invalid_selections)
         invalid = run([f'node\t{rev-1}\t{node["id"]}', f'node\t{rev}\tmissing-node',
                        f'hierarchy\t{rev}\t0\t65', f'hierarchy\t{rev}\t{total + 1}\t1',
                        f'hierarchy\t{rev - 1}\t0\t1'], expected=1)

@@ -122,6 +122,14 @@ public final class EditorAgentService<S> {
         var project = host.project();
         return new Evidence<>(project.id(), expected, project.node(id));
     }
+    /** Resolve a bounded selection against one native revision, preserving caller order. */
+    public Evidence<List<EditorProject.Node>> nodes(long expected, List<String> ids){
+        capable(Capability.INSPECT);
+        require(expected);
+        if(ids.isEmpty() || ids.size()>64)throw new IllegalArgumentException("Expected 1 to 64 hierarchy node IDs");
+        var project=host.project();
+        return evidence(ids.stream().map(project::node).toList());
+    }
     private void capable(Capability capability){
         host.checkAccess();
         if(!host.capabilities().contains(capability))throw new UnsupportedOperationException("Unavailable capability: "+capability);
