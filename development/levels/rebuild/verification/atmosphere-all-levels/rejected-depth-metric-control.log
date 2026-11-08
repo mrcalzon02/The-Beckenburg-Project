@@ -1,0 +1,4 @@
+ACTUAL_OPENGL OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64
+2026-11-08T06:44:20.709475200Z [atmosphere-review-opengl] GPU SCENE FIRST FRAME scene=1 frame=1 surface_batches=1 vbo_uploaded_batches=1 vbo_uploaded_bytes=192 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=1 texture_uploaded_bytes=65536 gl_worker_ms=70.0781 readback_ms=7.7541 measurement=gl_worker_not_gpu_timestamp
+Exception in thread "main" java.lang.AssertionError: Actual OpenGL fragment fog/unchanged depth failed: 121820 depth=39.94744
+	at org.beckenburg.gpu.LevelAtmosphereGpuCapture.main(LevelAtmosphereGpuCapture.java:23)

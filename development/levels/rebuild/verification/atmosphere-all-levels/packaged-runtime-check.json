@@ -1,10 +1,16 @@
 {
   "status": "PASS_LOCAL_GAME_PACKAGE_AND_ATMOSPHERE_PAYLOAD",
-  "jar_sha256": "dc56c27b538140a07fc6a34ba9e7765d73b4c5e0affe4f3467a3782691c1ef8f",
+  "jar_sha256": "e8421aea395d23fc48b13a73de227a19332f1068a927e8dfd8aca4e2e461ecec",
   "exact_tested_production_classes": {
-    "org/beckenburg/LevelAtmosphere.class": "688bcf60cb22f60625d49670679f83720006b37938b3ebac575b82828f087571",
-    "org/beckenburg/SceneRenderer.class": "46c297a640e78e07303f9e5c49895d5eb6ded4c0d7465f09b5a2b2523b9d67bf"
+    "org/beckenburg/LevelAtmosphere.class": "743a27d0de53f5ea714048b6b7fd9ca9fc00841c26aaf6bb4e6bbf6877ba7618",
+    "org/beckenburg/LevelAtmosphere$Policy.class": "d5f4c3648a803940c64a0d495f189825bb1d808230852f287b74be0b885ba924",
+    "org/beckenburg/SceneRenderer.class": "50c90b90ee5936e15e4c0fe55597ba3111da67a0435891bc262fbeef3b9867dc",
+    "org/beckenburg/DirectionalSprites.class": "df53d5b73d38734a03f7eebe146069202e50ebc8bc73e67e84c950beb952ffca",
+    "org/beckenburg/SafeAreaHaze.class": "6cfe6526c24dfd8f8f5968b3f91fd1260a1821df659002e4a39cb130fc5d8cc3",
+    "org/beckenburg/EntityFootShadow.class": "9f54ce8517326df307274b6574730000fa50ea1aee664f6558b98ac72e993721",
+    "org/beckenburg/GpuWorldRenderer.class": "c378bf98c1309c8c37d444cf9425e7f67c01c5b3822143b583cf12abafa915ef",
+    "org/beckenburg/GpuWorldRenderer$Frame.class": "1d4479f7c20abf320e4097b95acd0e48dd22ae0b9689b7cdbe361f01e5f259ea"
   },
   "packaged_test_output": "PASS heavy baseline fog, radial depth, near preservation, sky/depth isolation; synthetic GPU composite control\n",
-  "scope": "Local root game JAR rebuilt through build.cmd package; exact tested production renderer/fog class bytes. Isolated synthetic GPU composite control against packaged production code. Not installed release, full multiplayer or sustained FPS acceptance."
+  "scope": "Final per-surface fog production classes match tested bytes; packaged tests pass. Local root JAR; no installed release or full multiplayer acceptance inferred."
 }

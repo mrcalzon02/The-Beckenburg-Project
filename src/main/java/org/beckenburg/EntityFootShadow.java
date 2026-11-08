@@ -47,7 +47,10 @@ public final class EntityFootShadow {
     int alpha=(int)(Math.min(255,opacity)*fade*fade);
     if(alpha==0)continue;
     int color=pixels[at],keep=255-alpha;
-    pixels[at]=((((color>>>16)&255)*keep/255)<<16)|((((color>>>8)&255)*keep/255)<<8)|((color&255)*keep/255);
+    int shadow=LevelAtmosphere.shadePixel(0,d,px,py);
+    pixels[at]=(((((color>>>16)&255)*keep+((shadow>>>16)&255)*alpha)/255)<<16)
+        |(((((color>>>8)&255)*keep+((shadow>>>8)&255)*alpha)/255)<<8)
+        |(((color&255)*keep+(shadow&255)*alpha)/255);
    }
   }
  }

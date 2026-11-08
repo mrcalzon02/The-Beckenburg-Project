@@ -2,56 +2,61 @@
   {
     "name": "LevelAtmosphereTest",
     "exit_code": 0,
-    "seconds": 0.063
+    "seconds": 0.531
   },
   {
     "name": "WeatherSkyWorldAnchorTest",
     "exit_code": 0,
-    "seconds": 0.156
+    "seconds": 0.125
   },
   {
     "name": "MissionWeatherTest",
     "exit_code": 0,
-    "seconds": 0.156
+    "seconds": 0.125
   },
   {
     "name": "RecordedWeatherTest",
     "exit_code": 0,
-    "seconds": 0.094
+    "seconds": 0.078
   },
   {
     "name": "WeatherAssetsIntegrationTest",
     "exit_code": 0,
-    "seconds": 4.937
+    "seconds": 3.547
   },
   {
     "name": "GpuReadbackTest",
     "exit_code": 0,
-    "seconds": 0.391
+    "seconds": 0.36
+  },
+  {
+    "name": "GpuWorldRendererContractTest",
+    "exit_code": 0,
+    "seconds": 0.093
   },
   {
     "name": "SafeAreaHazeTest",
     "exit_code": 0,
-    "seconds": 0.125
+    "seconds": 0.11
   },
   {
     "name": "WaterReviewRegressionTest",
     "exit_code": 0,
-    "seconds": 0.906
+    "seconds": 0.844
   },
   {
     "name": "CastleHubIntegrationTest",
     "exit_code": 0,
-    "seconds": 6.219
+    "seconds": 4.531
   },
   {
     "name": "synthetic-gpu-composite-control",
     "exit_code": 0,
-    "seconds": 10.375
+    "seconds": 8.203
   },
   {
     "name": "runtime-software",
     "exit_code": 0,
-    "seconds": 45.359
+    "seconds": 35.484
   }
 ]

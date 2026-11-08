@@ -3,32 +3,32 @@
   "sheets": [
     {
       "path": "development/levels/rebuild/captures/atmosphere-all-levels/atmosphere-courtyard-sheet.png",
-      "sha256": "6257c8c2e40942bdadc0934b73af4692572a6c8b29c3fe3590333fddf010aab2",
+      "sha256": "c778f4e9e531b58bb59d83021eac9b2d91589c7fc3f036b9a921e46fd296d0cf",
       "observed": true
     },
     {
       "path": "development/levels/rebuild/captures/atmosphere-all-levels/atmosphere-sheet-01.png",
-      "sha256": "161da06faecbeb774c8a860bb1d4ea4f2f54501bba4c614a09e797c644dfa1eb",
+      "sha256": "f9544210dcbb9dccf9d7644314a955557bf93b1fbd62b429e3d4b8cce20a3fb1",
       "observed": true
     },
     {
       "path": "development/levels/rebuild/captures/atmosphere-all-levels/atmosphere-sheet-02.png",
-      "sha256": "76ee2c3106833efba42ad204352dc3deaab27ee5dcad50a63b3ef0cb170a80a6",
+      "sha256": "60067ed84fd85e4e1712c3e5fc13993d8d6eb8a3d9c11a04c5133340ccabea76",
       "observed": true
     },
     {
       "path": "development/levels/rebuild/captures/atmosphere-all-levels/atmosphere-sheet-03.png",
-      "sha256": "cc4d8d5c3150f0fc7e30a556276596c72e023aa2ed84e8a4d59367e17dbb87ff",
+      "sha256": "18cf1d0b0a5b7907ec5f88c8a4affeed523c20e43eb11629e40b30cd7c4856fd",
       "observed": true
     },
     {
       "path": "development/levels/rebuild/captures/atmosphere-all-levels/atmosphere-sheet-04.png",
-      "sha256": "4ae603f1f112189062a2c9fdf4261f3d9fb003ab0ec236ce2d03de729865aa2b",
+      "sha256": "f4f298f37c480f2cbe70b4eaa750ce971ecb7f8cedc4952da590dc9bc52287b6",
       "observed": true
     }
   ],
   "frames": 52,
-  "scope": "Night atmosphere in software and actual RTX5070 OpenGL, identical authored capture views; supported courtyard supplement; no editor UI.",
+  "scope": "Final per-surface atmosphere in software and actual RTX5070 OpenGL; 52 authored runtime frames and five sheets observed; no editor UI.",
   "findings": [
     "Near van/masonry/room surfaces remain readable; far world converges toward the sky horizon.",
     "Upper world-anchored weather sky remains visible beyond physical level geometry; lower empty space receives horizon haze.",

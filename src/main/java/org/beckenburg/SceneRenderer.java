@@ -158,7 +158,7 @@ public final class SceneRenderer {
     private LevelAtmosphere.Frame atmosphereFrame=new LevelAtmosphere.Frame(0,0,0,6,24);
     public LevelAtmosphere.Frame atmosphereFrame(){return atmosphereFrame;}
     private void finishWorldAtmosphere(){
-        atmosphereFrame=levelAtmosphere.apply(pixels,depths,renderWidth,renderHeight,
+        atmosphereFrame=levelAtmosphere.inspect(depths,renderWidth,renderHeight,
             focal,Math.max(1,fogDensity)*weatherFogScale,
             LevelAtmosphere.fogColour(weatherFx.sky()));
     }
@@ -2455,7 +2455,7 @@ public final class SceneRenderer {
             true,(float)this.x,(float)eyeHeight,(float)this.z,
             (float)yaw,(float)pitch,
             lamp,(float)lampIntensity,(float)lampReach,
-            (float)lampWidth,flameLamp));
+            (float)lampWidth,flameLamp,LevelAtmosphere.policy()));
         GpuWorldRenderer.Result available=pinnedGpuFrame==null?backend.latest():pinnedGpuFrame;pinnedGpuFrame=null;
         if(GpuWorldRenderer.belongsTo(available,gpuSceneId,renderWidth,renderHeight))
             lastUsableGpuFrame=available;
@@ -2714,7 +2714,7 @@ public final class SceneRenderer {
         waterStatistics=view.module().composite(view.camera(),pixels,depths,view.clock(),(rgb,wx,wy,wz)->{
             double qx=Math.rint(wx*2)/2,qz=Math.rint(wz*2)/2;var light=fixtureLighting.sample(map==null?(waterCastle!=null&&waterCastle.outside(qx,qz)?13:0):map.nativeSite()?HollowCreekLevel.owner(qx,qz):map.roomAt(qx,wy,qz),qx,wy+.03,qz);var c=view.camera();double dx=wx-c.x(),dy=wy-c.y(),dz=wz-c.z(),forward=dx*Math.sin(c.yaw())+dz*Math.cos(c.yaw()),pz=dy*Math.sin(c.pitch())+forward*Math.cos(c.pitch()),px=-dx*Math.cos(c.yaw())+dz*Math.sin(c.yaw()),py=dy*Math.cos(c.pitch())-forward*Math.sin(c.pitch());double beam=view.lamp()&&pz>NEAR?view.intensity()*Math.max(0,1-pz/view.reach())*(view.flame()?1:Math.max(0,1-Math.hypot(px,py)/pz/view.width())):0;
             int result=0;double[] energy={light.r(),light.g(),light.b()};int i=0;
-            for(int shift:new int[]{16,8,0})result|=(int)Math.min(255,((rgb>>shift)&255)*(energy[i++]+beam)*environmentLight*weatherLightScale)<<shift;return result;
+            for(int shift:new int[]{16,8,0})result|=(int)Math.min(255,((rgb>>shift)&255)*(energy[i++]+beam)*environmentLight*weatherLightScale)<<shift;return LevelAtmosphere.shadeSquared(result,dx*dx+dy*dy+dz*dz);
         });
     }
     private static Point mountPoint(Point p,LevelDefinition.Socket s){
@@ -3374,6 +3374,7 @@ public final class SceneRenderer {
         }
         fixtureLighting=castleLighting;castleLighting.castleFrame(lightsOn,(int)(clock*10));
         paintSky(clock);Arrays.fill(depths,Double.POSITIVE_INFINITY);
+        try(var atmosphere=LevelAtmosphere.enter(renderWidth,renderHeight,focal,Math.max(1,fogDensity)*weatherFogScale,LevelAtmosphere.fogColour(weatherFx.sky()))){
         if(castleGeometryMap!=map||castleGeometryRevision!=edits.revision()){
             for(var chunk:castleStaticChunks)releaseWorldChunk(chunk);
             for(var chunk:castleAssemblies.values())releaseWorldChunk(chunk);
@@ -3486,6 +3487,7 @@ public final class SceneRenderer {
         recordLightingFrame(finished-frameBegin,geometryReady-frameBegin,
             geometryRendered-geometryReady,psxDone-psxStart,effectsDone-psxDone,
             lastGpuSubmittedTriangles,gpuFrame);
+        }
     }
     /** World-space head position for the resident actually being looked at.
      * Screen labels depend on visible sprite depth, not on workstation targeting.
@@ -3614,6 +3616,7 @@ public final class SceneRenderer {
         activateResidentScene(map);
         waterCastle=null;activeWater=waterOverride==null?WorldWater.module(map.level().water()):waterOverride;
         paintSky(map,clock);
+        try(var atmosphere=LevelAtmosphere.enter(renderWidth,renderHeight,focal,Math.max(1,fogDensity)*weatherFogScale,LevelAtmosphere.fogColour(weatherFx.sky()))){
         Arrays.fill(depths,Double.POSITIVE_INFINITY);
         if(houseLightingMap!=map){houseLightingMap=map;houseLighting=new FixtureLighting(map);}
         lightingMap=map;fixtureLighting=houseLighting;fixtureLighting.frame(roomLights,roomLightTick);
@@ -3667,6 +3670,7 @@ public final class SceneRenderer {
         recordLightingFrame(finished-frameBegin,geometryReady-geometryStart,
             geometryRendered-geometryReady,psxDone-psxStart,effectsDone-psxDone,
             gpuFrame?lastGpuSubmittedTriangles:visibleFaces,gpuFrame);
+        }
     }
     /** Screen-distance lighting tessellation budget: 64 children at most,
      * rather than 256 for every large surface regardless of viewing distance.
@@ -4178,6 +4182,10 @@ public final class SceneRenderer {
                 (BAYER[(px&3)+((py&3)<<2)]-7.5)/140.0;
             light=Math.max(.1,Math.min(1.45,light+lightingDither));
             int red=(int)(((color>>16)&255)*Math.max(.025,Math.min(1.6,lr+lightingDither))),green=(int)(((color>>8)&255)*Math.max(.025,Math.min(1.6,lg+lightingDither))),blue=(int)((color&255)*Math.max(.025,Math.min(1.6,lb+lightingDither)));
+            if(LevelAtmosphere.active()){
+                int fogged=LevelAtmosphere.shadePixel((Math.min(255,red)<<16)|(Math.min(255,green)<<8)|Math.min(255,blue),d,px,py);
+                red=(fogged>>>16)&255;green=(fogged>>>8)&255;blue=fogged&255;
+            }
             red=Math.min(255,red);green=Math.min(255,green);blue=Math.min(255,blue);
             if(gltfBlend&&sampledAlpha<255){
                 int background=pixels[k],ia=255-sampledAlpha;

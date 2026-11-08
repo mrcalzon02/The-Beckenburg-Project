@@ -1,5 +1,7 @@
 ACTUAL_OPENGL OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64
-2026-11-08T06:20:13.158995900Z [atmosphere-review-opengl] GPU SCENE FIRST FRAME scene=3 frame=1050 surface_batches=1046 vbo_uploaded_batches=1046 vbo_uploaded_bytes=12567840 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=298 texture_uploaded_bytes=43119936 gl_worker_ms=702.2518 readback_ms=8.8764 measurement=gl_worker_not_gpu_timestamp
-2026-11-08T06:20:13.163053300Z [atmosphere-review-opengl] GPU FRAME SLOW id=1050 surfaces=1046 target=640x400 raster_ms=693 readback_ms=8 uploaded_batches=1046 reused_batches=0 uploaded_bytes=12567840 reuse_saved_bytes=0 superseded=0
+2026-11-08T06:49:52.971471600Z [atmosphere-review-opengl] GPU SCENE FIRST FRAME scene=1 frame=1 surface_batches=1 vbo_uploaded_batches=1 vbo_uploaded_bytes=192 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=1 texture_uploaded_bytes=65536 gl_worker_ms=68.6892 readback_ms=7.2349 measurement=gl_worker_not_gpu_timestamp
+PASS actual OpenGL far-fog colour and BIT_IDENTICAL paired depth; authored40mplane readback=39.94744
+2026-11-08T06:49:59.560780600Z [atmosphere-review-opengl] GPU SCENE FIRST FRAME scene=4 frame=1051 surface_batches=1046 vbo_uploaded_batches=1046 vbo_uploaded_bytes=12567840 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=297 texture_uploaded_bytes=43054400 gl_worker_ms=710.4634 readback_ms=12.1435 measurement=gl_worker_not_gpu_timestamp
+2026-11-08T06:49:59.563692300Z [atmosphere-review-opengl] GPU FRAME SLOW id=1051 surfaces=1046 target=640x400 raster_ms=698 readback_ms=12 uploaded_batches=1046 reused_batches=0 uploaded_bytes=12567840 reuse_saved_bytes=0 superseded=0
 ATMOSPHERE_RUNTIME CASTLE-COURTYARD / actual OpenGL
 PASS2actual supported exterior Castle courtyard frames

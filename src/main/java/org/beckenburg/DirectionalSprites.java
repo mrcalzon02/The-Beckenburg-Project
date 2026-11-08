@@ -491,9 +491,11 @@ public final class DirectionalSprites {
                 int red=(int)(((argb>>>16)&255)*illumination),
                     green=(int)(((argb>>>8)&255)*illumination),
                     blue=(int)((argb&255)*illumination);
-                red=(int)(Math.min(255,red)*(1-fog)+18*fog);
-                green=(int)(Math.min(255,green)*(1-fog)+21*fog);
-                blue=(int)(Math.min(255,blue)*(1-fog)+30*fog);
+                if(!LevelAtmosphere.active()){
+                    red=(int)(Math.min(255,red)*(1-fog)+18*fog);
+                    green=(int)(Math.min(255,green)*(1-fog)+21*fog);
+                    blue=(int)(Math.min(255,blue)*(1-fog)+30*fog);
+                }
                 // Ancients already have their approved green variant stored in v3.
                 // Double tint is permitted only for the explicitly legacy base fallback.
                 if(ancientTint&&!GhostSpriteAtlas.supports(character)){
@@ -502,6 +504,8 @@ public final class DirectionalSprites {
                     blue=(int)(blue*.35);
                 }
                 int bg=pixels[k];
+                int atmospheric=LevelAtmosphere.shadePixel((Math.min(255,red)<<16)|(Math.min(255,green)<<8)|Math.min(255,blue),rowDepth,px,py);
+                red=(atmospheric>>>16)&255;green=(atmospheric>>>8)&255;blue=atmospheric&255;
                 if(alpha<255){
                     red=(red*alpha+((bg>>>16)&255)*(255-alpha))/255;
                     green=(green*alpha+((bg>>>8)&255)*(255-alpha))/255;
@@ -625,9 +629,14 @@ public final class DirectionalSprites {
                 int red=(int)Math.min(255,((argb>>>16)&255)*illumination);
                 int green=(int)Math.min(255,((argb>>>8)&255)*illumination);
                 int blue=(int)Math.min(255,(argb&255)*illumination);
-                red=(int)(red*(1-fog)+18*fog);
-                green=(int)(green*(1-fog)+21*fog);
-                blue=(int)(blue*(1-fog)+30*fog);
+                if(LevelAtmosphere.active()){
+                    int atmospheric=LevelAtmosphere.shadePixel((red<<16)|(green<<8)|blue,rayDepth,px,py);
+                    red=(atmospheric>>>16)&255;green=(atmospheric>>>8)&255;blue=atmospheric&255;
+                }else{
+                    red=(int)(red*(1-fog)+18*fog);
+                    green=(int)(green*(1-fog)+21*fog);
+                    blue=(int)(blue*(1-fog)+30*fog);
+                }
                 if(alpha<255){
                     int bg=pixels[pixel];
                     red=(red*alpha+((bg>>>16)&255)*(255-alpha))/255;

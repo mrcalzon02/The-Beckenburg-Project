@@ -7,7 +7,7 @@ def main():
     build=ROOT/'build/atmosphere-classes';build.mkdir(exist_ok=True);home=ROOT/'build/atmosphere-home';home.mkdir(exist_ok=True);temp=ROOT/'build/atmosphere-temp';temp.mkdir(exist_ok=True)
     evidence=ROOT/'development/levels/rebuild/verification/atmosphere-all-levels';evidence.mkdir(parents=True,exist_ok=True)
     java=Path('C:/Program Files/Java/jdk-17/bin');jar=ROOT/'build/beckenburg-game.jar'
-    tests=['LevelAtmosphereTest','AllLevelAtmosphereCapture','VerificationPreferencesFactory','WeatherSkyWorldAnchorTest','MissionWeatherTest','RecordedWeatherTest','WeatherAssetsIntegrationTest','GpuReadbackTest','SafeAreaHazeTest','WaterReviewRegressionTest','CastleHubIntegrationTest']
+    tests=['LevelAtmosphereTest','AllLevelAtmosphereCapture','VerificationPreferencesFactory','WeatherSkyWorldAnchorTest','MissionWeatherTest','RecordedWeatherTest','WeatherAssetsIntegrationTest','GpuReadbackTest','GpuWorldRendererContractTest','SafeAreaHazeTest','WaterReviewRegressionTest','CastleHubIntegrationTest']
     sources=[f for base in ['src/main/java','water-module/src/main/java','lighting-module/src/main/java'] for f in (ROOT/base).rglob('*.java')]+[ROOT/f'src/test/java/org/beckenburg/{t}.java' for t in tests]
     argfile=ROOT/'build/atmosphere-sources.txt';argfile.write_bytes(('\n'.join('"'+f.as_posix()+'"' for f in sources)).encode())
     subprocess.run([str(java/'javac.exe'),'--release','17','-encoding','UTF-8','-d',str(build),'@'+str(argfile)],check=True)

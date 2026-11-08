@@ -5492,7 +5492,7 @@ Software triangles fade independently while OpenGL geometry bypasses the fog; on
 
 Cause / uncertainty: Atmosphere was embedded in one raster path and one map classification instead of the completed world-depth composition shared by Castle and investigation levels.
 
-Fix / next action: Use one post-composition radial depth fog for both paths, including character/water world composition. Heavy baseline clear6m/fullyopaque24m, weather/mission fog can thicken it. Preserve depth and near colours; no per-map opt-in. Remove duplicate software triangle fog and native-only haze allocation.9focused checks, synthetic composite control and52actual runtime frames pass across12sources including supported exterior Castle courtyard.
+Fix / next action: Use one shared radial distance law and immutable per-frame policy for software fragments, OpenGL fragment-shader uniforms, water, directional sprites, safe-area shells and foot shadows before alpha blending. Heavy baseline clear6m/fullyopaque24m; weather/mission fog can thicken it. Preserve depth and near colours; no per-map opt-in. Remove native-only haze.10focused checks, labeled synthetic frame-contract control, paired actual GPU shader controls and52actual runtime frames pass across12sources. Final surface-depth implementation supersedes the initial final-frame composite approach.
 
 Evidence and verification: src/main/java/org/beckenburg/LevelAtmosphere.java; SceneRenderer.java; development/levels/rebuild/verification/atmosphere-all-levels/; captures/atmosphere-all-levels/
 
@@ -5506,7 +5506,7 @@ Visible empty space beyond map geometry exposes artificial dark hill bands and a
 
 Cause / uncertainty: The lower sky painted independent opaque sinusoidal hills, while software geometry blended toward another fixed colour.
 
-Fix / next action: Keep the existing world-anchored weather skybox/clouds and smoothly blend its horizon/lower hemisphere to the same weather-aware fog colour. Actual geometry occludes the background; sky/fog never write depth. Viewed all52software/OpenGLframes and5comparison sheets; weather sky anchoring and all tested sky/water/depth controls pass.
+Fix / next action: Keep the existing world-anchored weather skybox/clouds and smoothly blend its horizon/lower hemisphere to the same weather-aware fog colour. Actual geometry occludes the background; sky/fog never write depth. Viewed all52software/OpenGLframes and5comparison sheets; weather sky anchoring and all tested sky/water/depth controls pass; final fog is evaluated at each receiving surface before transparency composition.
 
 Evidence and verification: LevelAtmosphere.skyboxHaze; SceneRenderer.paintSky; verification/atmosphere-all-levels/capture-manifest.json
 
@@ -5525,6 +5525,20 @@ Fix / next action: Preserve the previous terrain-authoring dependency JAR under 
 Evidence and verification: build.cmd package_jar_only; verification/atmosphere-all-levels/packaging logs/receipt
 
 Older-map obligation: All12currently loadable runtime sources captured in software and real OpenGL. Remaining17rebuild packets inherit the common rendering path when integrated; this does not unlock them or establish complete terrain, physical boundary, gameplay/network or performance acceptance.
+
+### DEV-402 — Final-frame fog can erase nearby translucent objects against a distant background
+
+**Status:** FIX VERIFIED: surface-depth fog before alpha in both renderers and world layers · **Affected:** Initial atmosphere checkpoint862b65c2; shared world rendering and translucent ghost/material effects
+
+A nearby materializing ghost below220alpha retains background opaque depth; a final-depth fog pass can erase it using the distant wall depth.
+
+Cause / uncertainty: Post-composition fog has lost each translucent layer's own depth and cannot reconstruct correct foreground/background mixing.
+
+Fix / next action: Replace image post-fog with scoped shared per-surface policy. Software/GPU fog each fragment before blend; water, sprites, safe-area shells and foot shadows use their actual surface depth. Keep final depth inspection read-only. Real128-alpha ghost control passes near/far and unchanged depth; actual OpenGL fog-off/fog-on plane has exact fog colour and bit-identical depth. Legacy frame constructors preserve raw/studio callers; runtime policy is explicit. Register LevelAtmosphereTest in the full regression manifest (371entries; complete suite not claimed run).
+
+Evidence and verification: src/main/java/org/beckenburg/LevelAtmosphere.java; DirectionalSprites.java; GpuWorldRenderer.java; gpu-client/src/main/java/org/beckenburg/gpu/OpenGlWorldRenderer.java; verification/atmosphere-all-levels/
+
+Older-map obligation: All runtime maps share the same fix; source-only maps inherit on integration. Full map, physical terrain/boundary, installed multiplayer and performance acceptance remain open.
 
 ## Required audit categories
 
