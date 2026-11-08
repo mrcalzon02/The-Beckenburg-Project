@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 8350,
+  "count": 8388,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -77544,6 +77544,386 @@
       "height": 900,
       "bytes": 705867,
       "sha256": "4043605eeff18632513436992693e7db7903e8d617e22af9f97155d36db20711"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/bay-sheet-1.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/bay-sheet-1.png",
+      "title": "Bay sheet 1",
+      "kind": "Native authored stair bay construction inspection; not runtime",
+      "width": 1200,
+      "height": 780,
+      "bytes": 354916,
+      "sha256": "474914018837d3907fc4eacce8b69179b4471289974d4755daaea4eb34025cfc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/bay-sheet-2.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/bay-sheet-2.png",
+      "title": "Bay sheet 2",
+      "kind": "Native authored stair bay construction inspection; not runtime",
+      "width": 1200,
+      "height": 780,
+      "bytes": 413789,
+      "sha256": "df6e11056a27ecbe0da48772569a65617e730d612c89748ff7d8d4f0eb738b10"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/bay-sheet-3.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/bay-sheet-3.png",
+      "title": "Bay sheet 3",
+      "kind": "Native authored stair bay construction inspection; not runtime",
+      "width": 1200,
+      "height": 780,
+      "bytes": 327087,
+      "sha256": "2a1f1edbe28c98339bf9b934a52db480f9ca55111784652fad23d3cb551f4a89"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/bay-sheet-4.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/bay-sheet-4.png",
+      "title": "Bay sheet 4",
+      "kind": "Native authored stair bay construction inspection; not runtime",
+      "width": 1200,
+      "height": 780,
+      "bytes": 41507,
+      "sha256": "e8b1ac1f437c7f00514d718d65589521621e13aa3b3942ef933a9b8943199812"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-05-L15-cutaway.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-05-L15-cutaway.png",
+      "title": "Wld 05 l15 cutaway",
+      "kind": "Native superseded bay pilot; not final source",
+      "width": 1000,
+      "height": 750,
+      "bytes": 827706,
+      "sha256": "04c1d04c6806ce2ef1c94abca6912d38eff85efb72326ba2534959adb2d705a9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-05-L15-native-context--1.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-05-L15-native-context--1.png",
+      "title": "Wld 05 l15 native context  1",
+      "kind": "Native superseded bay pilot; not final source",
+      "width": 1000,
+      "height": 750,
+      "bytes": 804831,
+      "sha256": "7d4bc6603fec179115cdd11708ea0b8eb348afadc4f339bcb06114b42e1e20c5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-05-L15-native-context-1.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-05-L15-native-context-1.png",
+      "title": "Wld 05 l15 native context 1",
+      "kind": "Native superseded bay pilot; not final source",
+      "width": 1000,
+      "height": 750,
+      "bytes": 776685,
+      "sha256": "d4f57e3c3e2fa13c25b6c9669a638c534d23b2294f6a22c581f228e68518f753"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-05-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-05-whole-site.png",
+      "title": "Wld 05 whole site",
+      "kind": "Native superseded bay pilot; not final source",
+      "width": 1000,
+      "height": 750,
+      "bytes": 542322,
+      "sha256": "4b6c17db7872a9d604f29e1c322e439e5f61fcc037c3d7a8ef7e3e3e45771861"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-09-L09-cutaway.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-09-L09-cutaway.png",
+      "title": "Wld 09 l09 cutaway",
+      "kind": "Native superseded bay pilot; not final source",
+      "width": 1000,
+      "height": 750,
+      "bytes": 901233,
+      "sha256": "055e06c534b3fadaae38d8958f91a3777d84443a8cce57df1259343efaeff71a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-09-L09-native-context--1.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-09-L09-native-context--1.png",
+      "title": "Wld 09 l09 native context  1",
+      "kind": "Native superseded bay pilot; not final source",
+      "width": 1000,
+      "height": 750,
+      "bytes": 912935,
+      "sha256": "a5238b6147611ec6907faf34f79b4dfa637dd94acdd5ea532870b8a2cc2f1ff8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-09-L09-native-context-1.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-09-L09-native-context-1.png",
+      "title": "Wld 09 l09 native context 1",
+      "kind": "Native superseded bay pilot; not final source",
+      "width": 1000,
+      "height": 750,
+      "bytes": 930572,
+      "sha256": "86ef03bb43d72639bd8f2d5b9761b75d3555f27460f8186368a5f1245f4dbb47"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-09-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-09-whole-site.png",
+      "title": "Wld 09 whole site",
+      "kind": "Native superseded bay pilot; not final source",
+      "width": 1000,
+      "height": 750,
+      "bytes": 552637,
+      "sha256": "b95a42d2e39c302a313713ac156b69819543a78399e43b096d71c4866ebefe00"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-12-L16-cutaway.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-12-L16-cutaway.png",
+      "title": "Wld 12 l16 cutaway",
+      "kind": "Native superseded bay pilot; not final source",
+      "width": 1000,
+      "height": 750,
+      "bytes": 647564,
+      "sha256": "d55b552e9ef6ba5959c84d692f228327f965e22a18cbb9e24a8a30e985b9f3e2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-12-L16-native-context--1.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-12-L16-native-context--1.png",
+      "title": "Wld 12 l16 native context  1",
+      "kind": "Native superseded bay pilot; not final source",
+      "width": 1000,
+      "height": 750,
+      "bytes": 783569,
+      "sha256": "3de0179165c9deaa8b7a1ee86f63f68c10f0830420aee1a28dbdb7052f8cbd2d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-12-L16-native-context-1.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-12-L16-native-context-1.png",
+      "title": "Wld 12 l16 native context 1",
+      "kind": "Native superseded bay pilot; not final source",
+      "width": 1000,
+      "height": 750,
+      "bytes": 720945,
+      "sha256": "d6be19d5cc33391833db9f84f683c2c0f3d4b8cf6dca0bb155c8df1807139541"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-12-L17-cutaway.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-12-L17-cutaway.png",
+      "title": "Wld 12 l17 cutaway",
+      "kind": "Native superseded bay pilot; not final source",
+      "width": 1000,
+      "height": 750,
+      "bytes": 615759,
+      "sha256": "d05720d6300fd81b79e6a2230c32e2c227120202aada61bfe910eca5e9c916fa"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-12-L17-native-context--1.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-12-L17-native-context--1.png",
+      "title": "Wld 12 l17 native context  1",
+      "kind": "Native superseded bay pilot; not final source",
+      "width": 1000,
+      "height": 750,
+      "bytes": 747241,
+      "sha256": "4e40622d96c9bc29deaa10f7e37b7ef1c4cd33776da6af0efe117ca132f4e6a9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-12-L17-native-context-1.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-12-L17-native-context-1.png",
+      "title": "Wld 12 l17 native context 1",
+      "kind": "Native superseded bay pilot; not final source",
+      "width": 1000,
+      "height": 750,
+      "bytes": 713763,
+      "sha256": "c6679f6716e7c8effc2de72b8fdcd6691044af01ec495712ab0223f0e3f41d7e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-12-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/superseded-pilot/wld-12-whole-site.png",
+      "title": "Wld 12 whole site",
+      "kind": "Native superseded bay pilot; not final source",
+      "width": 1000,
+      "height": 750,
+      "bytes": 506712,
+      "sha256": "991d258daa06d6f1ac2c8d1a2fd6ce55faf8c77b9600606d55496923cb38d740"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-05-L15-cutaway.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/wld-05-L15-cutaway.png",
+      "title": "Wld 05 l15 cutaway",
+      "kind": "Native stair bay cutaway; walls/terrain hidden, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 727463,
+      "sha256": "b675a4159f4474384326cdccc91b23c8277bcb408638ecd5bcdf596e0a49f68d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-05-L15-native-context--1.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/wld-05-L15-native-context--1.png",
+      "title": "Wld 05 l15 native context  1",
+      "kind": "Native authored stair bay construction inspection; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 804747,
+      "sha256": "121da507d4940e528f3f876c754d06ef82b00b7943cf3621276cd6f528c98a60"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-05-L15-native-context-1.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/wld-05-L15-native-context-1.png",
+      "title": "Wld 05 l15 native context 1",
+      "kind": "Native authored stair bay construction inspection; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 776685,
+      "sha256": "5f1863ed12d23626eb4eb5c118ffd701664fef34376e087f1626e8147d4667bf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-05-L15-shaft-plan.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/wld-05-L15-shaft-plan.png",
+      "title": "Wld 05 l15 shaft plan",
+      "kind": "Native authored stair bay construction inspection; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 719850,
+      "sha256": "07b08adc07904fce8fe83835b6e203020ce16036277d7e7496e90c6b802d8559"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-05-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/wld-05-whole-site.png",
+      "title": "Wld 05 whole site",
+      "kind": "Native authored stair bay construction inspection; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 542322,
+      "sha256": "d82be0d501d5be7349489f29c3979642e13a26f203effd49c0825d80107523c6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-09-L09-cutaway.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/wld-09-L09-cutaway.png",
+      "title": "Wld 09 l09 cutaway",
+      "kind": "Native stair bay cutaway; walls/terrain hidden, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 901183,
+      "sha256": "0040aa2468334ed19e245d53451d74a7be54481566a69d350f8d7ffd1b1159da"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-09-L09-native-context--1.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/wld-09-L09-native-context--1.png",
+      "title": "Wld 09 l09 native context  1",
+      "kind": "Native authored stair bay construction inspection; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 913033,
+      "sha256": "fd5ad3fdff4fd40d35bce92a07a5315dc349134d0f12401ff44b7cf457e4dd02"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-09-L09-native-context-1.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/wld-09-L09-native-context-1.png",
+      "title": "Wld 09 l09 native context 1",
+      "kind": "Native authored stair bay construction inspection; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 930612,
+      "sha256": "77e62c9f729dd133f3adc3267b19669b7e9cc71fdda2323d4d744985b970838e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-09-L09-shaft-plan.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/wld-09-L09-shaft-plan.png",
+      "title": "Wld 09 l09 shaft plan",
+      "kind": "Native authored stair bay construction inspection; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 708910,
+      "sha256": "0d8b8292886b16d0247aaa7b8f595c26358da5c60dc6578cb408773578db8ea4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-09-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/wld-09-whole-site.png",
+      "title": "Wld 09 whole site",
+      "kind": "Native authored stair bay construction inspection; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 552378,
+      "sha256": "65e194cae12ce9f274a8b22e37578b98a729ca40dc2d191099bec50c95bd5822"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-12-L16-cutaway.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/wld-12-L16-cutaway.png",
+      "title": "Wld 12 l16 cutaway",
+      "kind": "Native stair bay cutaway; walls/terrain hidden, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 647363,
+      "sha256": "6f038d901840771346dbbbc6b5fab04eadb7e608737264ffb5d8c7f729ef02bd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-12-L16-native-context--1.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/wld-12-L16-native-context--1.png",
+      "title": "Wld 12 l16 native context  1",
+      "kind": "Native authored stair bay construction inspection; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 783065,
+      "sha256": "4e1867943cea83cd4d9a7aaa57abb864e5f67e631d1b7f9d00773eea820e3f6d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-12-L16-native-context-1.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/wld-12-L16-native-context-1.png",
+      "title": "Wld 12 l16 native context 1",
+      "kind": "Native authored stair bay construction inspection; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 721029,
+      "sha256": "385830e5845d1ef578c9db3e530e1ab68194d40e88a57d04d870681f97f60b5a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-12-L16-shaft-plan.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/wld-12-L16-shaft-plan.png",
+      "title": "Wld 12 l16 shaft plan",
+      "kind": "Native authored stair bay construction inspection; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 642099,
+      "sha256": "718ba0470b72f910a17774109e970ace4284a45dcd5349f02c99e60ce5c65710"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-12-L17-cutaway.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/wld-12-L17-cutaway.png",
+      "title": "Wld 12 l17 cutaway",
+      "kind": "Native stair bay cutaway; walls/terrain hidden, not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 617343,
+      "sha256": "27e31f33eecb8593f218bd7d914a2b93213dbe1674253dbb58a042f2e9d036b1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-12-L17-native-context--1.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/wld-12-L17-native-context--1.png",
+      "title": "Wld 12 l17 native context  1",
+      "kind": "Native authored stair bay construction inspection; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 747251,
+      "sha256": "def1d8b4415ca0d17ad263818f7e2881a137ca384e15cb83fdf6d2c22e976784"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-12-L17-native-context-1.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/wld-12-L17-native-context-1.png",
+      "title": "Wld 12 l17 native context 1",
+      "kind": "Native authored stair bay construction inspection; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 713921,
+      "sha256": "76485c4f2da9f12967ad7c635e3d223d486aa17049e0166c6bd2b5415cb0f17a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-12-L17-shaft-plan.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/wld-12-L17-shaft-plan.png",
+      "title": "Wld 12 l17 shaft plan",
+      "kind": "Native authored stair bay construction inspection; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 543129,
+      "sha256": "bc98bbab99a3a52fc326bf347a3b38b216ddfbd136eaa7d5d1acbd37e25c87c9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-bay-batch/wld-12-whole-site.png",
+      "url": "development/levels/rebuild/captures/stair-bay-batch/wld-12-whole-site.png",
+      "title": "Wld 12 whole site",
+      "kind": "Native authored stair bay construction inspection; not runtime",
+      "width": 1000,
+      "height": 750,
+      "bytes": 506667,
+      "sha256": "d32033dd2ecccd0b87b3d2e7c31e3651af961b7ea0773e70c9d373ed3cbb5491"
     },
     {
       "path": "development/levels/rebuild/captures/stair-landing-fit-batch/closeup-sheet-1.png",

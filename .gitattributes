@@ -42,3 +42,9 @@ development/levels/rebuild/stair-opening-pass/** -text
 tools/build_stair_openings.py text eol=lf
 tools/check_stair_openings.py text eol=lf
 tools/render_stair_openings.py text eol=lf
+
+# Authored stair bay coordinate/source fingerprints.
+development/levels/rebuild/stair-bay-pass/** -text
+tools/build_stair_bays.py text eol=lf
+tools/check_stair_bays.py text eol=lf
+tools/render_stair_bays.py text eol=lf

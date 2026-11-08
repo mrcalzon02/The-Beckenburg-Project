@@ -5744,7 +5744,7 @@ Original high landing blocks standing headroom on descending treads. Rejected na
 
 Cause / uncertainty: Treating the stair centre independently of the full-width adjoining flat walkway.
 
-Fix / next action: Retain original full landing and all flat route coordinates; inset the descending flight beyond the overhang, add a visible closed bridge and revise the shared authored route points. Never change support/body tolerances or remove blockers to manufacture passes. Final all25 native checks:110409flat samples,99937baseline valid,94879qualified sweeps,47recovered standing poses; zero new blocks/sweepfailures.221flight segments186→196passing both ways,84full links49→56; zero passing-direction regressions. Both battery links pass, original walkway full width retained. Independent exported/native solids and all11editable packed sources pass.
+Fix / next action: Retain original full landing and all flat route coordinates; inset the descending flight beyond the overhang, add a visible closed bridge and revise the shared authored route points. Never change support/body tolerances or remove blockers to manufacture passes. Final all25 native checks:110409flat samples,99937baseline valid,94879qualified sweeps,47recovered standing poses; zero new blocks/sweepfailures.221flight segments186→196passing both ways,84full links49→56; zero passing-direction regressions. Both battery links pass, original walkway full width retained. Independent exported/native solids and all11editable packed sources pass. Bay revision also retains existing terminal platform meshes and shallow upper tread standing surfaces when full tread columns move, preserving the adjoining full-width flat approaches.
 
 Evidence and verification: development/levels/rebuild/stair-landing-pass/rejected/battery-narrowed-turn-*; final verification and native captures under stair-landing-pass/
 
@@ -5788,7 +5788,7 @@ Cause / uncertainty: A common high-end camera and bounding-distance context rule
 
 Fix / next action: Keep captures truthfully labeled and withheld from complete visual acceptance; retain geometry/physics blockers. Next native review should author per-join cameras/cut planes or physically resolve the terrain/wall/cap conflicts first. Do not remove those blockers from playable geometry to improve a diagnostic view.
 
-Evidence and verification: development/levels/rebuild/captures/stair-landing-fit-batch/closeup-sheet-1.png; closeup-sheet-2.png; closeup-sheet-3.png; verification/captures.json; physical aperture batch nine actual native sheets reviewed; WLD03terrain/WLD05mine/WLD09turbine views still partly obstructed, not complete visual acceptance.
+Evidence and verification: development/levels/rebuild/captures/stair-landing-fit-batch/closeup-sheet-1.png; closeup-sheet-2.png; closeup-sheet-3.png; verification/captures.json; physical aperture batch nine actual native sheets reviewed; WLD03terrain/WLD05mine/WLD09turbine views still partly obstructed, not complete visual acceptance.; bay revision has19final native frames/four sheets: shaft plans expose actual mine opening, while several context cameras remain occluded. Not complete visual acceptance.
 
 Older-map obligation: Audit actual visible joins at standing/crouched height across all29packets. Whole-site and isolated exports do not replace in-room/native/runtime visual review.
 
@@ -5814,9 +5814,9 @@ First aperture draft cleared central wall areas but stopped at the terminal plan
 
 Cause / uncertainty: Only the sloped centre flight was subtracted, excluding intermediate flats, endpoint footprint and stepped foot/body envelope.
 
-Fix / next action: Use the full existing continuous link including flat landings,350mmconstant-height terminal extensions,2.2mheadroom and full authored width+40mm. Wall lower face follows tread clearance down250mm; slab lower face retains supports atfeet+5mm. Do not change production movement tolerances. Exact closed source/native and complete-route comparisons pass; remaining failures explicitly preserved.
+Fix / next action: Use the full existing continuous link including flat landings,350mmconstant-height terminal extensions,2.2mheadroom and full authored width+40mm. Wall lower face follows tread clearance down250mm; slab lower face retains supports atfeet+5mm. Do not change production movement tolerances. Exact closed source/native and complete-route comparisons pass; remaining failures explicitly preserved. Bay revision found the analogous sheared lower-cut wedge in an owned floor. Sloped vertical shaft cuts now remove full slab thickness, while flat supports remain; explicit new landing parts restore actual upper/lower walking faces.
 
-Evidence and verification: development/levels/rebuild/stair-opening-pass/; tools/build_stair_openings.py; tools/check_stair_openings.py; tools/audit_macroterrain_fit.py; verification/independent-sources.json; verification/flight-sweeps.tsv
+Evidence and verification: development/levels/rebuild/stair-opening-pass/; tools/build_stair_openings.py; tools/check_stair_openings.py; tools/audit_macroterrain_fit.py; verification/independent-sources.json; verification/flight-sweeps.tsv; development/levels/rebuild/stair-bay-pass/rejected/observed-construction-failures.txt
 
 Older-map obligation: Audit every stair/body footprint and all intermediate/terminal landings; one centreline ray or disconnected flight pass does not prove complete circulation.
 
@@ -5847,6 +5847,62 @@ Fix / next action: For the new opening-pass mode, retain all raw probes/report t
 Evidence and verification: development/levels/rebuild/stair-opening-pass/; tools/build_stair_openings.py; tools/check_stair_openings.py; tools/audit_macroterrain_fit.py; rejected/uncoupled-shaft-native-route-fit.json; verification/stair-openings-flat.log
 
 Older-map obligation: Do not infer geometry acceptance from reporter exit codes alone. Retain before/after production-pose evidence, all failed cases and per-map obligations; existing general terrain finding mode remains a measurement tool.
+
+### DEV-425 — Converging solid stair columns occupy room anchors and intersect independent routes
+
+**Status:** PARTIAL NATIVE BAY REPAIR VERIFIED: three sites; remaining mine/terrain conflicts open · **Affected:** WLD05ore-west/lower/vent, WLD09east/turbine/spillway/return, WLD12trestle/lower/return
+
+Multiple flights share a high anchor but their full solid columns overlap. Lower mine room centre lies inside a previous stair, and railway return crosses the descending column. First bay draft moved a mine flight into upper haul supportL10 and regressed a passing route.
+
+Cause / uncertainty: Rough links became separate full-height solid flights instead of a coherent shared stair hall or separated bays; moving one centreline did not account for all upper routes.
+
+Fix / next action: Mine: move shaft to west bay and share its actual flight with the lower return, retaining original link endpoints and rebuilding vacated floor shafts. Powerhouse: reuse existing main stair and add coherent lower bypass/landing; remove duplicate columns. Railway: separate descent and return with straight lead-ins. Preserve terminal pads and exact native component identities. Final25candidate checks:221flight segments208→214and84links68→73bothways,292recovered flat poses, zero previous passing-direction or flat regressions.7flights/11links remain, including mineL17and actual saved-terrain work.
+
+Evidence and verification: development/levels/rebuild/stair-bay-pass/; tools/build_stair_bays.py; verification/; rejected/first-bay-*; verification/remaining-links.json; source design and authored-layout.json
+
+Older-map obligation: Individually audit room/spawn anchors, upper paths, shared stair bays, full footprints and physical earth openings across29packets. Source candidates do not establish runtime ownership, global walkability, guard/framing or hardware acceptance.
+
+### DEV-426 — Stair exit clips diagonal tread corners when no physical toe landing is authored
+
+**Status:** FIX VERIFIED: actual closed toe landing and aligned lower approach; no kernel tolerance change · **Affected:** WLD09main east stair L09with new L11/L12routes; existing west stair L07lower approach
+
+Native complete paths stopped on first tread side/corner while standing poses remained valid; direct contacts identify L09flight0step1 and L07flight0step2.
+
+Cause / uncertainty: Flat approach left the diagonal flight sideways without a complete landing/straight lead-in. Generic floor ownership did not represent the actual stair transition, and full solid treads still occupied the approach.
+
+Fix / next action: Route away from the west stair low face before turning; align the main stair lower lead-in with its flight. Physically partition a measured2.5mclosed160mmtoe landing from the existing floor and give that actual native part its stair-landing identity. No phantom identities, broad whole-room stair tagging, movement exception or tolerance change. Widen physical upper hub; preserve existing pads and shallow upper tread standing surfaces while removing conflicting lower columns. Full native links and original110409flat comparisons pass with zero new regressions.
+
+Evidence and verification: development/levels/rebuild/stair-bay-pass/; tools/build_stair_bays.py; verification/; rejected/bay-path-contacts.tsv; bay-flat-contacts.tsv; verification/complete-route-sweeps.tsv; design.landing_pockets and hub_landings
+
+Older-map obligation: Audit actual foot/capsule corner clearance, complete flat-to-stair chains and landing dimensions. Centreline steps alone do not prove approach or exit circulation.
+
+### DEV-427 — Repeated cuts through already-authored shared passages create nonmanifold shell slivers
+
+**Status:** FIX VERIFIED: exact retained segment reuse and deduplicated physical cuts · **Affected:** Stair bay constructor WLD09workshop north wall existing physical aperture
+
+Generator rejected Bayed shell Opened stair shell Wall workshop N.001 as a new open solid.
+
+Cause / uncertainty: A shared route was independently recut through the same existing aperture, including overlapping duplicate cutter segments.
+
+Fix / next action: Retain exact pre-existing shared segment geometry; skip its duplicate shaft cutting and deduplicate equivalent new segments before Boolean work. Independent exported/native closed nondegenerate outward geometry checks pass for all3final sources. Preserve unrelated source resources and protected boundaries.
+
+Evidence and verification: development/levels/rebuild/stair-bay-pass/; tools/build_stair_bays.py; verification/; rejected/observed-construction-failures.txt; tools/check_stair_bays.py; verification/independent-sources.json
+
+Older-map obligation: Repeat independent geometric closure and exact native parity checks after every shared passage edit; never accept a Boolean merely because export succeeds.
+
+### DEV-428 — Bay floor restoration treats shaft-opening records as raw polygons
+
+**Status:** FIX VERIFIED: explicit polygon adapter; actual restored shaft solids checked · **Affected:** Initial tools/build_stair_bays.py old/new deck_openings integration
+
+Background authoring stopped with TypeError unhashable type slice while clipping a vacated shaft.
+
+Cause / uncertainty: deck_openings returns metadata records containing polygon coordinates, not polygon lists directly.
+
+Fix / next action: Read each record polygon explicitly before intersection/difference. Final three candidate builds and actual reopened exported/native/editable checks pass; movement comparisons recover292standing poses with no new flat or stair regressions.
+
+Evidence and verification: development/levels/rebuild/stair-bay-pass/; tools/build_stair_bays.py; verification/; rejected/observed-construction-failures.txt; restored_shaft_parts in actual construction metadata
+
+Older-map obligation: Preserve source helper contracts and exact saved-world fingerprints when migrating frozen map producers; no unverified old map fix inferred.
 
 ## Required audit categories
 

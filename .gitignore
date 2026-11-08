@@ -43,3 +43,6 @@ development/levels/rebuild/stair-landing-pass/**/*.blend[0-9]
 
 # Scoped structural opening Blender backups.
 development/levels/rebuild/stair-opening-pass/**/*.blend[0-9]
+
+# Scoped authored bay Blender backups.
+development/levels/rebuild/stair-bay-pass/**/*.blend[0-9]

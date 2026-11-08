@@ -6083,7 +6083,7 @@
     "baseline_clear_metres": 6,
     "baseline_opaque_metres": 24,
     "full_map_acceptance": false,
-    "mechanism": "Shared6ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“24m radial policy before alpha blending at actual surface depth; weather sky horizon; no depth writes",
+    "mechanism": "Shared6ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ24m radial policy before alpha blending at actual surface depth; weather sky horizon; no depth writes",
     "focused_checks": 10,
     "actual_runtime_frames": 52
   },
@@ -6158,5 +6158,25 @@
       "new_flat_sweep_failures": 0
     },
     "source_sha": "2e8459870892efc2900182206b204183fbd5cdf9"
+  },
+  "stair_bay_checkpoint": {
+    "status": "BREADTH_BY_STAGE_AUTHORED_SHARED_AND_SEPARATE_STAIR_BAYS",
+    "evidence": "development/levels/rebuild/stair-bay-pass/roster.json",
+    "aggregate": {
+      "revised_sites": 3,
+      "closed_new_parts": 102,
+      "new_triangles": 1808,
+      "replaced_source_parts": 159,
+      "flight_gains": 6,
+      "complete_link_gains": 5,
+      "remaining_failed_flights": 7,
+      "remaining_failed_links": 11,
+      "flat_samples": 110409,
+      "baseline_valid": 99987,
+      "qualified_sweeps": 94972,
+      "recovered_poses": 292,
+      "new_flat_blocks": 0,
+      "new_flat_sweep_failures": 0
+    }
   }
 }

@@ -1,0 +1,40 @@
+{
+  "status": "PASS_SCOPED_SOURCE_SOLID_NATIVE_EDITABLE_CHECKS",
+  "sites": [
+    {
+      "id": "WLD-05",
+      "retained_source_meshes": 247,
+      "replaced_source_parts": 51,
+      "closed_new_parts": 35,
+      "new_triangles": 636,
+      "packed_images": 12,
+      "blend_sha256": "ee883c44e46b2d50800a08757368f86fd213288ce71adc1bc10a2dcd645edbcf",
+      "glb_sha256": "1edde753b7934504ed9c373742160c4b12269bca435ff99bb79c43a820845186",
+      "physics_sha256": "7268261b7e63adc55f3641739148024217ade44e6a6366a4a791adc9eb783bc3"
+    },
+    {
+      "id": "WLD-09",
+      "retained_source_meshes": 311,
+      "replaced_source_parts": 72,
+      "closed_new_parts": 15,
+      "new_triangles": 438,
+      "packed_images": 12,
+      "blend_sha256": "9b0cec0ca33bcd1a893ec52efc7f9b156109c619a24d5d3659c2bc6687ba1458",
+      "glb_sha256": "b6724d04e3904677f5efcfc999384cc1e4aa325a061ee55ba5ca78e8cab398a5",
+      "physics_sha256": "50fbd8f405d342276be9ed7dce83fd384133c008f68c86b524bbbccca1dd2c87"
+    },
+    {
+      "id": "WLD-12",
+      "retained_source_meshes": 143,
+      "replaced_source_parts": 36,
+      "closed_new_parts": 52,
+      "new_triangles": 734,
+      "packed_images": 9,
+      "blend_sha256": "3d1a7cfa9f6fcf6af17cefb0fa308a6bbe155fae36c8c1c76c6445fb96cb9e49",
+      "glb_sha256": "492ce0fae4f521c6260eb98bf6119c77edc1ca2d20ac00535787ff0166abcd11",
+      "physics_sha256": "63ac0bf239737b5afe9b49d6a1709be4ec346825d938161336ee8519b369f55c"
+    }
+  ],
+  "checker_sha256": "85918a09428095c2cbf7dc9c9119ddf1b3e2b93d5a5b18ca1f4feefd0e50a7b8",
+  "limitations": "No full map, guard/support engineering, runtime/network or hardware acceptance."
+}
