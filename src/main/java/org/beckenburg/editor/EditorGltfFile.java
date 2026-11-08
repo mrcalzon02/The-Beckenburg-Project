@@ -38,23 +38,38 @@ public final class EditorGltfFile {
         var value = EditorGlbJson.read(StandardCharsets.UTF_8.newDecoder().decode(ByteBuffer.wrap(json)).toString());
         if (!(value instanceof Map<?,?>)) throw new IOException("Expected glTF document object");
         var root = EditorGlbReader.obj(value);
-        var buffer = singleBuffer(root);
-        if (!(buffer.remove("uri") instanceof String uri)) throw new IOException("Missing glTF buffer URI");
-        String prefix = uri.startsWith(URI) ? URI : GLTF_URI;
-        if (!uri.startsWith(prefix)) throw new IOException("Expected an embedded base64 glTF buffer");
-        byte[] bytes = decode(uri,prefix);
-        int declared = size(buffer.get("byteLength"));
-        if (declared < 1 || declared > bytes.length) throw new IOException("Truncated glTF buffer");
+        var binary = new ByteArrayOutputStream();
+        if (!(root.get("buffers") instanceof List<?> buffers) || buffers.isEmpty() || buffers.size()>4096)
+            throw new IOException("Invalid glTF buffer count");
+        int[] offsets=new int[buffers.size()], lengths=new int[buffers.size()];
+        for (int i=0;i<buffers.size();i++) {
+            if (!(buffers.get(i) instanceof Map<?,?> buffer) || !(buffer.get("uri") instanceof String uri))
+                throw new IOException("Missing glTF buffer URI");
+            if (buffers.size()>1 && !Set.of("uri","byteLength","name").containsAll(buffer.keySet()))
+                throw new IOException("Cannot merge glTF buffers with custom buffer metadata");
+            String prefix = uri.startsWith(URI) ? URI : GLTF_URI;
+            if (!uri.startsWith(prefix)) throw new IOException("Expected an embedded base64 glTF buffer");
+            byte[] bytes = decode(uri,prefix);
+            int declared = size(buffer.get("byteLength"));
+            if (declared < 1 || declared > bytes.length) throw new IOException("Truncated glTF buffer");
+            align(binary);
+            if ((long)binary.size()+declared>4_000_000) throw new IOException("glTF exceeds runtime buffer budget");
+            offsets[i]=binary.size();
+            lengths[i]=declared;
+            binary.write(bytes,0,declared);
+        }
         if (!(root.get("bufferViews") instanceof List<?> views)) throw new IOException("Missing glTF buffer views");
         for (Object valueView : views) {
-            if (!(valueView instanceof Map<?,?> view) || size(view.get("buffer"))!=0)
-                throw new IOException("Invalid glTF buffer view");
+            if (!(valueView instanceof Map<?,?>)) throw new IOException("Invalid glTF buffer view");
+            var view=EditorGlbReader.obj(valueView);
+            int index=size(view.get("buffer"));
+            if (index>=lengths.length) throw new IOException("Unknown glTF buffer index");
             int offset = view.containsKey("byteOffset") ? size(view.get("byteOffset")) : 0;
-            if ((long)offset + size(view.get("byteLength")) > declared)
+            if ((long)offset + size(view.get("byteLength")) > lengths[index])
                 throw new IOException("glTF buffer view exceeds declared buffer");
+            view.put("buffer",0);
+            view.put("byteOffset",offsets[index]+offset);
         }
-        var binary = new ByteArrayOutputStream();
-        binary.write(bytes,0,declared);
         if (root.get("images") instanceof List<?> images) {
             if (images.size()>64) throw new IOException("glTF image count exceeds runtime budget");
             for (Object item : images) {
@@ -67,7 +82,7 @@ public final class EditorGltfFile {
                 if (image.containsKey("mimeType") && !"image/png".equals(image.get("mimeType")))
                     throw new IOException("Image MIME type differs from PNG URI");
                 var png = decode(imageUri,"data:image/png;base64,");
-                while ((binary.size() & 3)!=0) binary.write(0);
+                align(binary);
                 if ((long)binary.size()+png.length>4_000_000) throw new IOException("glTF exceeds runtime buffer budget");
                 var imageViews = EditorGlbReader.arr(root.get("bufferViews"));
                 image.put("mimeType","image/png");
@@ -76,8 +91,15 @@ public final class EditorGltfFile {
                 binary.write(png);
             }
         }
+        var buffer = buffers.size()==1 ? singleBuffer(root) : new LinkedHashMap<String,Object>();
+        buffer.remove("uri");
         buffer.put("byteLength",binary.size());
+        root.put("buffers",List.of(buffer));
         return EditorGlbDocumentWriter.container(root,binary.toByteArray());
+    }
+
+    private static void align(ByteArrayOutputStream binary) {
+        while ((binary.size() & 3)!=0) binary.write(0);
     }
 
     private static int size(Object value) throws IOException {

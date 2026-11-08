@@ -226,7 +226,10 @@ public final class G2TexturedModelGuiTest {
         renderer.lamp=false;
         renderer.drawDevAssetRoom(List.of(new DevAssetReviewCatalog.Entry(DevAssetReviewCatalog.Kind.IMPORTED,published.get())),0,.4);
         ImageIO.write(renderer.image(),"png",output.resolve("game.png").toFile());
-        for (Path source : List.of(bundle,glb,gltf,output.resolve("edited.btop"))) {
+        var multi=output.resolve("multi-buffer.gltf");
+        Files.write(multi,EditorGltfFileTest.splitBuffers(Files.readAllBytes(gltf)));
+        EditorGlbWriter.validate(project.mesh(),EditorGltfFile.toGlb(Files.readAllBytes(multi)));
+        for (Path source : List.of(bundle,glb,gltf,multi,output.resolve("edited.btop"))) {
             edt(() -> ui.loadSource(source));
             await(() -> ready(ui));
             edt(() -> {
@@ -235,12 +238,12 @@ public final class G2TexturedModelGuiTest {
                     imported.snapshot().quads().size()==6,"Editor import of "+source);
                 if (source.toString().endsWith(".btop")) check(imported.snapshot().equals(edited),"Native reopen");
             });
-            if (source.equals(gltf)) {
+            if (source.equals(gltf) || source.equals(multi)) {
                 published.set(null);
                 edt(() -> button(ui,"apply"));
                 await(() -> published.get()!=null);
                 verifyRuntime(textured);
-                check(Arrays.equals(Files.readAllBytes(gltf),Files.readAllBytes(
+                check(Arrays.equals(Files.readAllBytes(source),Files.readAllBytes(
                     ImportedAssetLibrary.root().resolve(published.get()+".source.gltf"))),"Original JSON source archive");
             }
         }
