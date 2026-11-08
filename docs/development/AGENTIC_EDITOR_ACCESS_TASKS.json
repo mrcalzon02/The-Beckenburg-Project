@@ -62,9 +62,11 @@
           "id": "M1-02",
           "name": "Opt-in authenticated loopback GET protocol and shutdown lifecycle",
           "scope": [
-            "src/main/java/org/beckenburg/DeveloperLevelEditor.java"
+            "src/main/java/org/beckenburg/DeveloperLevelEditor.java",
+            "src/main/java/org/beckenburg/EditorObservationBridge.java"
           ],
-          "status": "planned",
+          "status": "tested",
+          "implementationEvidence": "aa4b8956, Windows native acceptance run 42468686735. The real Verify Scene menu issued per-session credentials. Missing and incorrect bearer tokens, browser-origin requests and POST were refused. Replacing the scene or closing the editor stopped the listener.",
           "dependsOn": [
             "M1-01"
           ],
@@ -96,9 +98,9 @@
           "id": "M1-04",
           "name": "Windows running editor observation end-to-end and evidence record",
           "scope": [
-            "src/test/java/org/beckenburg/DeveloperEditorLaunchTest.java"
+            "src/test/java/org/beckenburg/EditorAgentGuiTest.java"
           ],
-          "status": "in_progress",
+          "status": "tested",
           "dependsOn": [
             "M1-01",
             "M1-02",
@@ -109,7 +111,7 @@
             "Denied anonymous and mutation request tests",
             "Saved test logs and commit SHA"
           ],
-          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
+          "implementationEvidence": "At aa4b8956, Windows native acceptance run 42468686735 verified a manual unsaved X inspector edit, stale revision refusal, exact HTTP node readback, native change metadata, structured diagnostic access and renderer capture. The editor-agent-evidence workflow artifact includes local-observation-house.png."
         }
       ]
     },
