@@ -73,6 +73,37 @@ public final class EditorAgentService<S> {
         return new Inspection<>(p.id(),host.revision(),p.documentPath(),p.snapshot(),
             List.copyOf(p.hierarchy()),Set.copyOf(host.capabilities()),List.copyOf(host.operations()),List.copyOf(host.tests()));
     }
+    public record Summary(String sceneId, long revision, Set<Capability> capabilities,
+                          List<String> operations, List<String> tests) {}
+    public record NodePage(int total, int offset, List<EditorProject.Node> nodes) {}
+
+    public Summary summary() {
+        capable(Capability.INSPECT);
+        return new Summary(host.project().id(), host.revision(), Set.copyOf(host.capabilities()),
+                List.copyOf(host.operations()), List.copyOf(host.tests()));
+    }
+
+    public Evidence<NodePage> hierarchy(long expected, int offset, int limit) {
+        capable(Capability.INSPECT);
+        require(expected);
+        if (offset < 0 || limit < 1 || limit > 64) throw new IllegalArgumentException("Expected offset >= 0 and limit 1 to 64");
+        var project = host.project();
+        var nodes = project.hierarchy();
+        if (offset > nodes.size()) throw new IllegalArgumentException("Offset exceeds hierarchy size");
+        int end = offset + Math.min(limit, nodes.size() - offset);
+        return new Evidence<>(project.id(), expected,
+                new NodePage(nodes.size(), offset, List.copyOf(nodes.subList(offset, end))));
+    }
+
+    public Evidence<EditorProject.Node> node(long expected, String id) {
+        capable(Capability.INSPECT);
+        require(expected);
+        var project = host.project();
+        for (var node : project.hierarchy()) {
+            if (node.id().equals(id)) return new Evidence<>(project.id(), expected, node);
+        }
+        throw new IllegalArgumentException("Unknown native hierarchy node");
+    }
     private void capable(Capability capability){
         host.checkAccess();
         if(!host.capabilities().contains(capability))throw new UnsupportedOperationException("Unavailable capability: "+capability);

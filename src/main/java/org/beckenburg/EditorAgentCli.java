@@ -81,13 +81,16 @@ public final class EditorAgentCli {
             if(line==null)break;
             try{
                 String[] parts=line.split("\t",-1);String command=parts[0];Object result;
-                if(command.equals("inspect")){
+                if(command.equals("summary")){
+                    if(parts.length!=1)throw new IllegalArgumentException("summary takes no arguments");
+                    result=service.summary();
+                }else if(command.equals("inspect")){
                     if(parts.length!=1)throw new IllegalArgumentException("inspect takes no arguments");
                     result=service.inspect();
                 }else{
                     if(parts.length<2)throw new IllegalArgumentException("Expected scene revision");
                     long revision=Long.parseLong(parts[1]);
-                    int expected=switch(command){case "edit"->-1;case "capture","test"->3;default->2;};
+                    int expected=switch(command){case "edit"->-1;case "capture","test","node"->3;case "hierarchy"->4;default->2;};
                     if((expected>=0&&parts.length!=expected)||(expected<0&&parts.length<3))
                         throw new IllegalArgumentException("Wrong argument count");
                     result=switch(command){
@@ -100,6 +103,8 @@ public final class EditorAgentCli {
                             }
                             yield service.transact(revision,parts[2],arguments);
                         }
+                        case "node" -> service.node(revision,parts[2]);
+                        case "hierarchy" -> service.hierarchy(revision,Integer.parseInt(parts[2]),Integer.parseInt(parts[3]));
                         case "undo" -> service.undo(revision);
                         case "redo" -> service.redo(revision);
                         case "save" -> service.save(revision);

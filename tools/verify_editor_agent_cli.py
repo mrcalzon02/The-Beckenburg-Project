@@ -17,10 +17,12 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
     command = [args.java, '-Dfile.encoding=windows-1252', '-Djava.util.prefs.PreferencesFactory=org.beckenburg.VerificationPreferencesFactory',
                '-cp', args.classpath, 'org.beckenburg.EditorAgentCli', 'HOUSE', home]
 
-    def run(lines, expected=0, recover=False):
+    def run(lines, expected=0, recover=False, sizes=None):
         result = subprocess.run(command + (['--recover-previous'] if recover else []), input='\n'.join(lines) + '\n', text=True,
                                 encoding='utf-8', capture_output=True, timeout=120)
         assert result.returncode == expected, (result.returncode, result.stderr[-4000:], result.stdout[-1000:])
+        if sizes is not None:
+            sizes.extend(len(line.encode('utf-8')) for line in result.stdout.splitlines())
         rows = [json.loads(line) for line in result.stdout.splitlines()]
         assert len(rows) == len(lines), (len(rows), len(lines))
         return rows
@@ -33,6 +35,24 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
     prop = first['state']['props'][0]
     moved_x = prop['x'] + .125
     revision = first['revision']
+    def verify_local_reads(full):
+        rev = full['revision']
+        node = full['hierarchy'][0]
+        sizes = []
+        observed, summary, page, one = [row['result'] for row in run([
+            'inspect', 'summary', f'hierarchy\t{rev}\t0\t1', f'node\t{rev}\t{node["id"]}'
+        ], sizes=sizes)]
+        assert observed['hierarchy'] == full['hierarchy']
+        assert summary['revision'] == rev and summary['sceneId'] == full['sceneId']
+        assert 'state' not in summary and 'hierarchy' not in summary
+        assert page['result'] == {'total': len(full['hierarchy']), 'offset': 0, 'nodes': [node]}
+        assert one['result'] == node and one['revision'] == rev
+        invalid = run([f'node\t{rev-1}\t{node["id"]}', f'node\t{rev}\tmissing-node',
+                       f'hierarchy\t{rev}\t0\t65'], expected=1)
+        assert all(not row['ok'] for row in invalid)
+        return sizes[0], sizes[-1]
+
+    house_sizes = verify_local_reads(first)
     rows = run([
         'inspect',
         f'save\t{revision}',
@@ -46,6 +66,9 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
     assert rows[-1]['result']['state']['props'][0]['x'] == moved_x
     assert all(check['passed'] for check in rows[-2]['result']['result'])
     assert Path(rows[4]['result']['result']['file']).read_bytes().startswith(b'\x89PNG\r\n\x1a\n')
+    fresh_revision = run(['summary'])[0]['result']['revision']
+    local = run([f'node\t{fresh_revision}\tprop-0'])[0]['result']
+    assert local['result']['x'] == moved_x, 'Fresh host localized read observes the saved move'
     reopened = run(['inspect'])[0]['result']
     assert reopened['state'] == rows[-1]['result']['state'], 'Separate real host loads saved authoring state'
     recovered = run([f'recover\t{reopened["revision"]}', 'inspect'])[-1]['result']
@@ -63,6 +86,7 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
     assert unrelated_castle.read_text(encoding='utf-8') == 'format=invalid', 'Mission host never loads or migrates an unrelated Castle scene'
     command[-2:] = ['CASTLE', str(Path(home) / 'castle-project-caf\u00e9')]
     first_castle = run(['inspect'])[0]['result']
+    castle_sizes = verify_local_reads(first_castle)
     assert 'RECOVER_PREVIOUS' in first_castle['capabilities']
     assert '\u2022' in json.dumps(first_castle, ensure_ascii=False), 'Native Unicode labels survive UTF-8 transport'
     revision = first_castle['revision']
@@ -81,5 +105,6 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
     assert corrupt_castle.read_text(encoding='utf-8') == 'format=invalid'
     bootstrapped = run(['inspect'], recover=True)[0]['result']
     assert bootstrapped['state'] == reopened_castle['state'], 'Explicit pre-open recovery restores actual Castle source before singleton initialization'
+    print(f'Full inspection / one node UTF-8 response bytes: House {house_sizes}, Castle {castle_sizes}')
     (output / 'headless-castle-results.json').write_text(json.dumps(rows_castle, indent=2), encoding='utf-8')
 print('PASS headless public protocol: mission/Castle JSON edit/save/recovery, renderer capture, native parity, process reopen, corrupt-start bootstrap recovery and stale rejection')
