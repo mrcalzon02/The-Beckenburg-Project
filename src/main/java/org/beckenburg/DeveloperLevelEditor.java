@@ -4,6 +4,7 @@ import javax.swing.*;
 import org.beckenburg.editor.EditorTool;
 import org.beckenburg.editor.EditorHistory;
 import org.beckenburg.editor.EditorAgentService;
+import org.beckenburg.editor.EditorObservationBridge;
 import org.beckenburg.LevelDefinition.Prop;
 import org.beckenburg.editor.EditorPalettePanel;
 import javax.swing.event.ChangeListener;
@@ -1338,7 +1339,7 @@ public final class DeveloperLevelEditor extends JPanel {
     private void startObservation(EditorObservationBridge.Scope scope)throws IOException{
         requireEditorThread();
         if(observation!=null)throw new IllegalStateException("Observation session already open");
-        observation=new EditorObservationBridge(agentService(),scope);
+        observation=new EditorObservationBridge(agentService(),scope,SwingUtilities::invokeLater);
     }
     private void showAgentEvidence(){
         var service=agentService();

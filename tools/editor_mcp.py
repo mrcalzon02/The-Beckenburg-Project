@@ -113,15 +113,17 @@ def server(editor: LiveEditor):
         """Compare expected coordinates with the native node and report disk agreement."""
         return editor.call("/verify-position", dict(revision=revision, id=id, x=x, y=y, z=z))
 
-    @native_tool
-    def run_test(revision: int, id: str) -> str:
-        """Run one of the active editor's named diagnostics."""
-        return editor.call("/test", {"revision": revision, "id": id})
+    if "/test" in summary["routes"]:
+        @native_tool
+        def run_test(revision: int, id: str) -> str:
+            """Run one of the active editor's named diagnostics."""
+            return editor.call("/test", {"revision": revision, "id": id})
 
-    @native_tool
-    def capture_viewport(revision: int) -> Image:
-        """Capture the active scene using the game renderer."""
-        return editor.call("/capture", {"revision": revision})
+    if "/capture" in summary["routes"]:
+        @native_tool
+        def capture_viewport(revision: int) -> Image:
+            """Capture the active scene using the game renderer."""
+            return editor.call("/capture", {"revision": revision})
 
     if "/edit" in summary["writeRoutes"] and summary["operations"]:
         command_type = edit_type(summary["operations"])
@@ -130,11 +132,13 @@ def server(editor: LiveEditor):
             """Apply supported native commands in a single validated, undoable transaction."""
             return editor.call("/edit", {"revision": revision}, encode_batch(commands))
 
+    if "/undo" in summary["writeRoutes"]:
         @native_tool
         def undo(revision: int) -> str:
             """Undo one shared editor history entry."""
             return editor.call("/undo", {"revision": revision}, b"")
 
+    if "/redo" in summary["writeRoutes"]:
         @native_tool
         def redo(revision: int) -> str:
             """Redo one shared editor history entry."""

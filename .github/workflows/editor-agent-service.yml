@@ -5,7 +5,8 @@ on:
     paths:
       - 'src/main/java/org/beckenburg/*EditorAgent*.java'
       - 'src/main/java/org/beckenburg/EditorAgentCli.java'
-      - 'src/main/java/org/beckenburg/EditorObservationBridge.java'
+      - 'src/main/java/org/beckenburg/editor/EditorObservationBridge.java'
+      - 'src/main/java/org/beckenburg/editor/EditorAgentProtocol.java'
       - 'src/main/java/org/beckenburg/DeveloperLevelEditor.java'
       - 'src/main/java/org/beckenburg/LevelAuthoringSession.java'
       - 'src/main/java/org/beckenburg/CastleLevelEdits.java'

@@ -1,5 +1,7 @@
 package org.beckenburg;
 
+import org.beckenburg.editor.EditorAgentProtocol;
+
 import javax.swing.*;
 import java.awt.*;
 import java.nio.file.Files;
@@ -234,7 +236,7 @@ public final class EditorAgentGuiTest {
         var expected=new AtomicReference<String>();
         var movedX=new AtomicReference<Double>();
         SwingUtilities.invokeAndWait(()->{
-            try{expected.set(EditorAgentCli.json(editor.agentService().node(rev,"prop-0")));
+            try{expected.set(EditorAgentProtocol.json(editor.agentService().node(rev,"prop-0")));
                 var hierarchy=DeveloperLevelEditor.class.getDeclaredField("hierarchy");hierarchy.setAccessible(true);
                 ((JList<?>)hierarchy.get(editor)).setSelectedIndex(0);
                 var xField=DeveloperLevelEditor.class.getDeclaredField("x");xField.setAccessible(true);
@@ -250,7 +252,7 @@ public final class EditorAgentGuiTest {
         SwingUtilities.invokeAndWait(()->{
             try{var observed=editor.agentService().node(changed,"prop-0");
                 check(observed.result().x()==movedX.get(),"Manual X move reached native state");
-                expected.set(EditorAgentCli.json(observed));}
+                expected.set(EditorAgentProtocol.json(observed));}
             catch(Exception failure){throw new RuntimeException(failure);}
         });
         check(after.statusCode()==200 && expected.get().equals(new String(after.body(),StandardCharsets.UTF_8)),"Read native row after human move");
@@ -264,7 +266,7 @@ public final class EditorAgentGuiTest {
         SwingUtilities.invokeAndWait(()->verifyMismatchThroughMenu(editor));
         var batch=request(access,"/nodes?revision="+changed+"&id=prop-1&id=prop-0","GET",access.bearer());
         SwingUtilities.invokeAndWait(()->{
-            try{expected.set(EditorAgentCli.json(editor.agentService().nodes(changed,java.util.List.of("prop-1","prop-0"))));}
+            try{expected.set(EditorAgentProtocol.json(editor.agentService().nodes(changed,java.util.List.of("prop-1","prop-0"))));}
             catch(Exception failure){throw new RuntimeException(failure);}
         });
         check(batch.statusCode()==200 && expected.get().equals(new String(batch.body(),StandardCharsets.UTF_8)),"Ordered sparse observation");
@@ -273,7 +275,7 @@ public final class EditorAgentGuiTest {
         check(request(access,"/test?revision="+changed+"&id=mission-runtime-parity","GET",access.bearer()).statusCode()==200,"Read focused diagnostic");
         var assets=request(access,"/assets?revision="+changed+"&offset=0&limit=2","GET",access.bearer());
         SwingUtilities.invokeAndWait(()->{
-            try{expected.set(EditorAgentCli.json(editor.agentService().assets(changed,0,2)));}
+            try{expected.set(EditorAgentProtocol.json(editor.agentService().assets(changed,0,2)));}
             catch(Exception failure){throw new RuntimeException(failure);}
         });
         check(assets.statusCode()==200 && expected.get().equals(new String(assets.body(),StandardCharsets.UTF_8)),"Return exact native asset page over HTTP");
@@ -348,7 +350,7 @@ public final class EditorAgentGuiTest {
                     check(service.test(service.inspect().revision(),"mission-runtime-parity").result().stream().allMatch(c->c.passed()),
                         "Real editor's HouseMap has same reopened props and colliders");
                     service.capture(service.inspect().revision(),output.resolve("house.png"));
-                    Files.writeString(output.resolve("house-inspection.json"),EditorAgentCli.json(service.inspect()));
+                    Files.writeString(output.resolve("house-inspection.json"),EditorAgentProtocol.json(service.inspect()));
                     Files.writeString(service.inspect().document(),"corrupt fixture document");
                     recoverThroughMenu(e);
                     check(service.inspect().hierarchy().get(0).x()==node.x(),"Human recovery restores previous real saved prop");

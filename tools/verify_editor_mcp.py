@@ -32,6 +32,18 @@ async def verify(scope):
         revision = state["revision"]
         resource = await client.read_resource("editor://active/summary")
         assert json.loads(resource.contents[0].text) == state
+        if scope == "portable":
+            assert state["sceneId"] == "another-game" and "capture_viewport" not in tools
+            assert state["operations"] == {"increment": {}}
+            first = (await call("inspect_nodes", revision=revision, ids=["room"]))["result"][0]
+            edited = await call("edit", revision=revision, commands=[{"operation": "increment", "arguments": {}}])
+            proof = (await call("verify_position", revision=edited["revision"], id="room",
+                                x=first["x"] + 1, y=first["y"], z=first["z"]))["result"]
+            assert proof["verified"] and proof["diskState"] == "UNSUPPORTED"
+            undone = await call("undo", revision=edited["revision"])
+            assert (await call("inspect_nodes", revision=undone["revision"], ids=["room"]))["result"] == [first]
+            print("PASS standalone JAR: MCP dispatches another project's typed edit, native readback and undo")
+            return
         castle = state["sceneId"] == "beckenburg/castle"
         key = "start" if castle else "prop-0"
         node = (await call("inspect_nodes", revision=revision, ids=[key]))["result"][0]

@@ -63,7 +63,7 @@
           "name": "Opt-in authenticated loopback GET protocol and shutdown lifecycle",
           "scope": [
             "src/main/java/org/beckenburg/DeveloperLevelEditor.java",
-            "src/main/java/org/beckenburg/EditorObservationBridge.java"
+            "src/main/java/org/beckenburg/editor/EditorObservationBridge.java"
           ],
           "status": "tested",
           "implementationEvidence": "aa4b8956, Windows native acceptance run 42468686735. The real Verify Scene menu issued per-session credentials. Missing and incorrect bearer tokens, browser-origin requests and POST were refused. Replacing the scene or closing the editor stopped the listener.",
@@ -243,7 +243,7 @@
           "scope": [
             "src/test/java/org/beckenburg/editor/EditorCorePortabilityTest.java"
           ],
-          "status": "in_progress",
+          "status": "tested",
           "dependsOn": [
             "M4-01"
           ],
@@ -252,7 +252,7 @@
             "Same protocol and error semantics",
             "Save/reload deterministic"
           ],
-          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
+          "implementationEvidence": "The independent Java 17 project compiles against the kit JAR alone. EditorCorePortabilityTest exercises the same headless protocol, stale refusal, save/reload, owner-thread loopback and SDK MCP adapter. Its renderer-less host advertises no capture tool. The unrelated project's own integer document and undo history are authoritative."
         }
       ]
     },
@@ -263,7 +263,7 @@
         {
           "id": "M5-01",
           "name": "MCP tools/resources adapter mapping directly to service capabilities",
-          "scope": ["tools/editor_mcp.py", "src/main/java/org/beckenburg/EditorObservationBridge.java"],
+          "scope": ["tools/editor_mcp.py", "src/main/java/org/beckenburg/editor/EditorObservationBridge.java"],
           "status": "tested",
           "implementationEvidence": "An official SDK client discovered typed tools and the live summary resource over stdio in three human-issued session scopes. The Castle fixture verified transactional editing, stale refusal, undo/redo, explicit save, collision audit and native PNG. House verified unsaved human edits and edit-only access. The native bridge limits targets to the active scene and its own document path.",
           "dependsOn": [
@@ -280,8 +280,8 @@
           "id": "M5-02",
           "name": "Real installed editor agent repair demonstration",
           "scope": [],
-          "status": "in_progress",
-          "implementationEvidence": "A separate MCP client removed a deliberately misplaced Castle wall in the running desktop fixture, verified removal in the native change page and cleared the spawn collision audit. The human undo control restored the wall. Installed executable acceptance remains open.",
+          "status": "tested",
+          "implementationEvidence": "At 77d67a51 Windows CI run 42473083566 ran the production Windows installer on a disposable runner. The installed Beckenburg.exe --editor loaded the installed app JAR, and the SDK client used the installed tools/editor_mcp.py. It removed a deliberately misplaced Castle wall, verified the native change and cleared the spawn collision. Human Undo restored the wall. The artifact records the source SHA, executable/JAR/adapter paths, audit and real renderer PNG.",
           "dependsOn": [
             "M5-01"
           ],

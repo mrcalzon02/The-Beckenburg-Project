@@ -34,6 +34,12 @@ The response carries `X-Editor-Revision`. URL-encode parameter values. The bridg
 
 For example, Castle's `set-spawn` operation takes numeric x, z and yaw fields. Use the revision returned from a successful edit for `verify_position`, undo or save. If the revision is stale, inspect the scene again before retrying. After stopping access, switching scenes or closing the editor, start a fresh session and reconnect with its new address and token.
 
+### Embed the same transports in another editor
+
+The standalone Java 17 kit includes `EditorAgentProtocol.run(service, reader, writer)` for trusted headless processes and `EditorObservationBridge(service, scope, ownerExecutor)` for interactive editors. Construct the bridge on the project's owner thread. The executor must dispatch future requests to that thread. Display the session address and token to the user who enabled access, and close the bridge when the scene changes or the window closes.
+
+The project's host supplies its operation field schemas and capabilities. The same MCP adapter discovers those schemas at startup. The independent kit test's renderer-less project advertises its own increment operation, handles edits and undo through its native state, and omits viewport capture from discovery.
+
 ### Native service capabilities
 
 The Level Editor’s **Playtest** button runs local gameplay against the current unsaved level. Castle uses its walkable hub with a temporary player profile. Mission levels use spectral practice with their current authored geometry and a fresh gameplay session. **Return to editor** closes the gameplay panel and restores access to the same edit session. The editor retains its revision, selection, camera and undo history. The observation API declines scene requests while gameplay owns input. Playtest currently starts from the human editor.

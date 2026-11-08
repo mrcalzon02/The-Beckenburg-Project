@@ -10,7 +10,7 @@
 
 ## 1. User outcome and scope
 
-On November 8, 2026, the Windows editor passed authenticated loopback observation at `aa4b8956`. A local client read an unsaved inspector edit and captured the active renderer. Replacing the scene revoked the session. The MCP adapter and isolated playtest remain open. [Windows native acceptance](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/42468686735)
+On November 8, 2026, the Windows editor passed authenticated loopback observation, isolated local playtests and MCP editing. In the installed executable a client repaired a wall across the Castle spawn, captured the renderer, saved the repair and returned control to the human editor, whose Undo restored the wall. Other Castle audit findings remain independent of this repair. [Installed Windows acceptance](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/42473083566)
 
 An authorized agent must eventually be able to carry out: **"Open Castle Beckenburg; inspect the second floor; find and fix misplaced geometry; furnish the room; check collisions; playtest; show me an actual rendered result."** It must perform operations on the *same* editor/game scene that human tools use, not manufacture a second approximation or merely commit scene-looking code.
 

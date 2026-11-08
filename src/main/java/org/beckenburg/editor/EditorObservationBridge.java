@@ -1,4 +1,4 @@
-package org.beckenburg;
+package org.beckenburg.editor;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpServer;
@@ -10,13 +10,13 @@ import java.security.MessageDigest;
 import java.security.SecureRandom;
 import java.util.*;
 import java.util.concurrent.*;
-import javax.swing.SwingUtilities;
-import org.beckenburg.editor.EditorAgentService;
 
 /** Session-scoped access to one open editor. Every service call runs on its owner thread. */
-final class EditorObservationBridge implements AutoCloseable {
-    enum Scope { OBSERVE, EDIT, EDIT_AND_SAVE }
+public final class EditorObservationBridge implements AutoCloseable {
+    public enum Scope { OBSERVE, EDIT, EDIT_AND_SAVE }
     private final Scope scope;
+    private final Executor owner;
+    private final Set<EditorAgentService.Capability> capabilities;
     private static final int MAX_BYTES=4*1024*1024;
     private final HttpServer server;
     private final ExecutorService worker;
@@ -24,8 +24,10 @@ final class EditorObservationBridge implements AutoCloseable {
     private final String token;
     private volatile boolean closed;
 
-    EditorObservationBridge(EditorAgentService<?> service,Scope scope)throws IOException{
-        this.service=service;this.scope=scope;
+    /** Construct on the owner thread and dispatch all later requests through that host's executor. */
+    public EditorObservationBridge(EditorAgentService<?> service,Scope scope,Executor owner)throws IOException{
+        this.service=Objects.requireNonNull(service);this.scope=Objects.requireNonNull(scope);this.owner=Objects.requireNonNull(owner);
+        capabilities=Set.copyOf(service.summary().capabilities());
         var secret=new byte[32];new SecureRandom().nextBytes(secret);
         token=Base64.getUrlEncoder().withoutPadding().encodeToString(secret);
         server=HttpServer.create(new InetSocketAddress(InetAddress.getByName("127.0.0.1"),0),8);
@@ -34,8 +36,8 @@ final class EditorObservationBridge implements AutoCloseable {
         });
         server.createContext("/",this::handle);server.setExecutor(worker);server.start();
     }
-    String url(){return "http://127.0.0.1:"+server.getAddress().getPort();}
-    String token(){return token;}
+    public String url(){return "http://127.0.0.1:"+server.getAddress().getPort();}
+    public String token(){return token;}
     @Override public void close(){closed=true;server.stop(0);worker.shutdownNow();}
 
     private void handle(HttpExchange exchange)throws IOException{
@@ -69,7 +71,7 @@ final class EditorObservationBridge implements AutoCloseable {
                     if(closed)throw new IllegalStateException("Observation session closed");
                     return write?mutate(path,params.fields,body):observe(path,params);
                 });
-                SwingUtilities.invokeLater(task);
+                owner.execute(task);
                 try{reply=write?task.get():task.get(30,TimeUnit.SECONDS);}
                 finally{task.cancel(false);}
             }catch(ExecutionException failure){
@@ -101,11 +103,22 @@ final class EditorObservationBridge implements AutoCloseable {
     }
     private record Reply(String type,byte[] bytes,Long revision){}
     private List<String> writeRoutes(){
-        return switch(scope){
-            case OBSERVE -> List.of();
-            case EDIT -> List.of("/edit","/undo","/redo");
-            case EDIT_AND_SAVE -> List.of("/edit","/undo","/redo","/save","/reopen");
-        };
+        if(scope==Scope.OBSERVE)return List.of();
+        var routes=new ArrayList<String>();
+        if(capabilities.contains(EditorAgentService.Capability.TRANSACT))routes.add("/edit");
+        if(capabilities.contains(EditorAgentService.Capability.UNDO))routes.add("/undo");
+        if(capabilities.contains(EditorAgentService.Capability.REDO))routes.add("/redo");
+        if(scope==Scope.EDIT_AND_SAVE){
+            if(capabilities.contains(EditorAgentService.Capability.SAVE))routes.add("/save");
+            if(capabilities.contains(EditorAgentService.Capability.REOPEN))routes.add("/reopen");
+        }
+        return routes;
+    }
+    private List<String> readRoutes(){
+        var routes=new ArrayList<>(List.of("/summary","/hierarchy","/node","/nodes","/changes","/assets","/verify-position"));
+        if(capabilities.contains(EditorAgentService.Capability.TEST))routes.add("/test");
+        if(capabilities.contains(EditorAgentService.Capability.CAPTURE))routes.add("/capture");
+        return routes;
     }
     private Reply mutate(String path,Map<String,String> args,byte[] body)throws Exception{
         requireKeys(args,"revision");long revision=Long.parseLong(args.get("revision"));
@@ -115,7 +128,7 @@ final class EditorObservationBridge implements AutoCloseable {
             case "/edit" -> {
                 String batch=StandardCharsets.UTF_8.newDecoder().decode(java.nio.ByteBuffer.wrap(body)).toString();
                 if(batch.contains("\r")||batch.contains("\n"))throw new IllegalArgumentException();
-                result=service.transact(revision,EditorAgentCli.parseBatch(batch.split("\t",-1),0));
+                result=service.transact(revision,EditorAgentProtocol.parseBatch(batch.split("\t",-1),0));
             }
             case "/undo" -> result=service.undo(revision);
             case "/redo" -> result=service.redo(revision);
@@ -129,9 +142,10 @@ final class EditorObservationBridge implements AutoCloseable {
         var summary=service.summary();
         var args=query.fields;
         if(path.equals("/summary") && args.isEmpty())
-            return json(Map.of("sceneId",summary.sceneId(),"revision",summary.revision(),"tests",summary.tests(),
-                "routes",List.of("/summary","/hierarchy","/node","/nodes","/changes","/assets","/verify-position","/test","/capture"),
-                "writeRoutes",writeRoutes(),"operations",scope==Scope.OBSERVE?Map.of():service.operationParameters()),summary.revision());
+            return json(Map.of("sceneId",summary.sceneId(),"revision",summary.revision(),
+                "tests",capabilities.contains(EditorAgentService.Capability.TEST)?summary.tests():List.of(),
+                "routes",readRoutes(),
+                "writeRoutes",writeRoutes(),"operations",writeRoutes().contains("/edit")?service.operationParameters():Map.of()),summary.revision());
         long revision=Long.parseLong(args.remove("revision"));
         if(revision!=summary.revision())throw new IllegalStateException("Stale revision");
         Object value;
@@ -163,7 +177,7 @@ final class EditorObservationBridge implements AutoCloseable {
         if(!args.keySet().equals(Set.of(keys)))throw new IllegalArgumentException();
     }
     private static Reply json(Object value,long revision)throws ReflectiveOperationException{
-        return new Reply("application/json",EditorAgentCli.json(value).getBytes(StandardCharsets.UTF_8),revision);
+        return new Reply("application/json",EditorAgentProtocol.json(value).getBytes(StandardCharsets.UTF_8),revision);
     }
     private static void error(HttpExchange exchange,int status,String message)throws IOException{
         send(exchange,status,"application/json",("{\"error\":\""+message+"\"}").getBytes(StandardCharsets.UTF_8));
