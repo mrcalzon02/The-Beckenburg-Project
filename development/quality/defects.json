@@ -4863,6 +4863,17 @@
       "action": "Retain exact failing builder and raw log; remove fragment-union strategy. Withhold conflicting aperture cutters before geometry generation and keep original protected wall architecture. No manifold/volume/native rejection threshold changed.",
       "evidence": "development/levels/rebuild/flat-circulation-pass/rejected/union-guard-nonmanifold; tools/build_flat_circulation.py",
       "older_maps": "Require fresh actual reports and per-part assertions; a Blender process exit or unexecuted construction design is not successful source generation."
+    },
+    {
+      "id": "DEV-450",
+      "title": "Inherited layout hashes bind working CRLF bytes instead of published repository LF bytes",
+      "status": "FIX VERIFIED: exact frozen inputs and alias-aware movement/source checks pass",
+      "affected": "Five inherited WLD06/08/11/13/17JSONinputs; current candidate before-layout references and historic route controls",
+      "symptom": "Staged-byte preflight finds existing layout working bytes differ from repository bytes despite identical JSON coordinates.",
+      "cause": "Legacy layout paths predate hash-bound source attributes and inherit checkout newline conversion.",
+      "action": "Freeze exact consumed input bytes inside the new hash-bound source package; preserve original layout files and all coordinates. Alias-aware builders and route audits load the byte-identical snapshots. Candidate before-layout bindings reference frozen copies, and original working/repository SHA values are recorded. No native/model/route geometry changes. All three movement comparisons and25source/native/editable reopens pass with unchanged counts. Actual geometry/image hashes remain identical to implementation49ad38e.",
+      "evidence": "development/levels/rebuild/flat-circulation-pass/verification/source-layout-aliases.json; source-layouts; tools/audit_current_flat_routes.py; tools/audit_roster_stairs.py; tools/audit_macroterrain_fit.py",
+      "older_maps": "Audit legacy byte-bound inputs individually across platforms; do not rewrite unrelated original layouts or infer all prior contracts fixed."
     }
   ],
   "audit_categories": [

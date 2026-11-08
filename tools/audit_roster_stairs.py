@@ -18,7 +18,9 @@ def main():
     for site in sites:
         base=ROOT/f'development/levels/rebuild/structures/{site.lower()}'
         implementation=json.loads((base/'implementation.json').read_text(encoding='utf-8'))
-        layout_path=ROOT/implementation['authoritative_input'];layout=json.loads(layout_path.read_text(encoding='utf-8'))
+        layout_path=ROOT/implementation['authoritative_input'];alias_file=ROOT/'development/levels/rebuild/flat-circulation-pass/verification/source-layout-aliases.json'
+        if args.flat_pass and alias_file.exists():layout_path=ROOT/json.loads(alias_file.read_text())['files'].get(layout_path.relative_to(ROOT).as_posix(),{}).get('frozen_path',layout_path.relative_to(ROOT).as_posix())
+        layout=json.loads(layout_path.read_text(encoding='utf-8'))
         bindings[site]={'layout':sha(layout_path),'variants':{}}
         variants=[('structure',base,'rough-shell.glb','structure-physics.hcs2'),('furnished',ROOT/f'development/levels/rebuild/furnishings/{site.lower()}','furnished.glb','furnished-physics.hcs2')]
         if comparing:

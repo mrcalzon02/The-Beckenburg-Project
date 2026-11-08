@@ -1937,14 +1937,14 @@
       "before": {
         "contract": "development/levels/rebuild/stair-opening-pass/wld-06/construction.json",
         "contract_sha256": "3a38f14c1945963c8ace929d7e7236133c2c93aec652e433e968875fea84c461",
-        "layout": "development/levels/layouts/wld-06/layout.json",
+        "layout": "development/levels/rebuild/flat-circulation-pass/source-layouts/wld-06-inherited-layout.json",
         "layout_sha256": "f37184525debe30440a0d215c685e22ef40561077ee6ae6fb823e7587dc99304",
         "native": "development/levels/rebuild/stair-opening-pass/wld-06/opened-stairs.hcs2",
         "native_sha256": "81a1c3cc7fa52ab16bb34e26084f149c964ef25d25d2ee997a9be886909e1956"
       },
       "after": {
         "contract": "development/levels/rebuild/flat-circulation-pass/wld-06/construction.json",
-        "contract_sha256": "e0902f0e4a0b0fd733bf64073f0ff12895f4e50fede086ce490663add3197502",
+        "contract_sha256": "1a25a4acfc4fe3d7efcde8693bbbfe766dac393b0031415205b6ab691d086d77",
         "layout": "development/levels/rebuild/flat-circulation-pass/wld-06/authored-layout.json",
         "layout_sha256": "d8f312a488befbaacf6b81f815dc5720ed6fc38adddd5641f0fb42b6e1af56b3",
         "native": "development/levels/rebuild/flat-circulation-pass/wld-06/open-circulation.hcs2",
@@ -1973,14 +1973,14 @@
       "before": {
         "contract": "development/levels/rebuild/stair-opening-pass/wld-08/construction.json",
         "contract_sha256": "29eb52facca171cc842ba6e115f9f5ed16a7f4841eba85c74a28d7bd20c68d55",
-        "layout": "development/levels/layouts/wld-08/layout.json",
+        "layout": "development/levels/rebuild/flat-circulation-pass/source-layouts/wld-08-inherited-layout.json",
         "layout_sha256": "616f6928fa4a55515027b3b3dd434ba6db6d044df2ab9ecb19e862efb675955b",
         "native": "development/levels/rebuild/stair-opening-pass/wld-08/opened-stairs.hcs2",
         "native_sha256": "7c05868ea7e2e2bd70c9edbdc689b3285511f9017f030237fa98b484b0f30e99"
       },
       "after": {
         "contract": "development/levels/rebuild/flat-circulation-pass/wld-08/construction.json",
-        "contract_sha256": "6e8a6e4adeb27fd55dedfdb0ce67d77cc33a36b0e67a11177bf97d24a6d2e4d4",
+        "contract_sha256": "13f7613757e4491fc21f545793ef4f5180771439c7d392fb4e8ae251fc037d9e",
         "layout": "development/levels/rebuild/flat-circulation-pass/wld-08/authored-layout.json",
         "layout_sha256": "e3cac309bb0d4e0d48e221487538b122e33b176279cb42467eaef9cdf41e087e",
         "native": "development/levels/rebuild/flat-circulation-pass/wld-08/open-circulation.hcs2",
@@ -2027,14 +2027,14 @@
       "before": {
         "contract": "development/levels/rebuild/stair-landing-pass/wld-11/construction.json",
         "contract_sha256": "ea7faae432fec6e13d95e564fa7e98aa15e566141421aa1462c1dc504b642f19",
-        "layout": "development/levels/layouts/wld-11/layout.json",
+        "layout": "development/levels/rebuild/flat-circulation-pass/source-layouts/wld-11-inherited-layout.json",
         "layout_sha256": "a16ce066da5d6eb9bc7a008c07f1ba9713f49573f85f86647dd3d38d327ab5bf",
         "native": "development/levels/rebuild/stair-landing-pass/wld-11/supported-stairs.hcs2",
         "native_sha256": "a9a9f4ef211b8bdcd3d2118309bdd06ea673bb53e26c9348157fcba0176b4742"
       },
       "after": {
         "contract": "development/levels/rebuild/flat-circulation-pass/wld-11/construction.json",
-        "contract_sha256": "10b5177ddd191ab9014fae958095b932cb280152af8957cc31ef25b06abe1d03",
+        "contract_sha256": "c38af6cb80cb3a22e162ebbc3b6d1aaa54ee12e7a72eb5fe04eb5c36be03552b",
         "layout": "development/levels/rebuild/flat-circulation-pass/wld-11/authored-layout.json",
         "layout_sha256": "3fde7248675385c404ff07eff16f56b03d4f663acf991f0919dedc1d8d8c2929",
         "native": "development/levels/rebuild/flat-circulation-pass/wld-11/open-circulation.hcs2",
@@ -2063,14 +2063,14 @@
       "before": {
         "contract": "development/levels/rebuild/stair-opening-pass/wld-13/construction.json",
         "contract_sha256": "e9d7e4c854c834d90f69d25a86b455e276d5c45c34f063ec65a5cb560c4a1825",
-        "layout": "development/levels/layouts/wld-13/layout.json",
+        "layout": "development/levels/rebuild/flat-circulation-pass/source-layouts/wld-13-inherited-layout.json",
         "layout_sha256": "4d8dd90826c02b30cb4c64073f745a847f63e16110aaa4f8297b4543e0c6a732",
         "native": "development/levels/rebuild/stair-opening-pass/wld-13/opened-stairs.hcs2",
         "native_sha256": "a619ca847615a001e3a6af167c715e166209650d9d9871cdb5bfa192627fe664"
       },
       "after": {
         "contract": "development/levels/rebuild/flat-circulation-pass/wld-13/construction.json",
-        "contract_sha256": "5f3869f5d3a5be7ae61f617c85bf4c1b9444c2e8ca938048c2fb21a4b1b27a0b",
+        "contract_sha256": "31432fe4cacddffa98197f290d8eaf70d23d9ae753eadbf94aa33e66b4de92a1",
         "layout": "development/levels/rebuild/flat-circulation-pass/wld-13/authored-layout.json",
         "layout_sha256": "9a5706c016ac459e04b097a8a2b72517799ea5172e6ab5d3a8d94f7e466bbbb2",
         "native": "development/levels/rebuild/flat-circulation-pass/wld-13/open-circulation.hcs2",
@@ -2192,7 +2192,7 @@
     "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
     "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
     "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
-    "tools/audit_current_flat_routes.py": "e79b0ce7a66519a55196c9f2c95d89a7b6d31cad1fec3d94aa88356a03e0554c"
+    "tools/audit_current_flat_routes.py": "80a56a8db174409f4d9f7ae95c8d2edf3de1feaeb8e99aab0e5a9056b5df9be8"
   },
   "evidence_hashes": {
     "development/levels/rebuild/flat-circulation-pass/verification/current-flat-failure-contacts.tsv": "63d12841303a7a2029f89f704f8a475933b6108b3ed047c9e79fab7ce6db043d",

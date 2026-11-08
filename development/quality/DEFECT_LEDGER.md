@@ -6198,6 +6198,20 @@ Evidence and verification: development/levels/rebuild/flat-circulation-pass/reje
 
 Older-map obligation: Require fresh actual reports and per-part assertions; a Blender process exit or unexecuted construction design is not successful source generation.
 
+### DEV-450 — Inherited layout hashes bind working CRLF bytes instead of published repository LF bytes
+
+**Status:** FIX VERIFIED: exact frozen inputs and alias-aware movement/source checks pass · **Affected:** Five inherited WLD06/08/11/13/17JSONinputs; current candidate before-layout references and historic route controls
+
+Staged-byte preflight finds existing layout working bytes differ from repository bytes despite identical JSON coordinates.
+
+Cause / uncertainty: Legacy layout paths predate hash-bound source attributes and inherit checkout newline conversion.
+
+Fix / next action: Freeze exact consumed input bytes inside the new hash-bound source package; preserve original layout files and all coordinates. Alias-aware builders and route audits load the byte-identical snapshots. Candidate before-layout bindings reference frozen copies, and original working/repository SHA values are recorded. No native/model/route geometry changes. All three movement comparisons and25source/native/editable reopens pass with unchanged counts. Actual geometry/image hashes remain identical to implementation49ad38e.
+
+Evidence and verification: development/levels/rebuild/flat-circulation-pass/verification/source-layout-aliases.json; source-layouts; tools/audit_current_flat_routes.py; tools/audit_roster_stairs.py; tools/audit_macroterrain_fit.py
+
+Older-map obligation: Audit legacy byte-bound inputs individually across platforms; do not rewrite unrelated original layouts or infer all prior contracts fixed.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

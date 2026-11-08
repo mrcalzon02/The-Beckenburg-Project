@@ -153,7 +153,7 @@
     }
   ],
   "kernel_sha256": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
-  "stair_evidence_sha256": "fbdc6a6abf41823cefd4e28f78f988f0a0a6b28cd0b4c3c2b6914a87fec12328",
+  "stair_evidence_sha256": "071eb0b28895e42727dd36497deec4159695f1105bd8c96122bfd31bd0ed14cf",
   "independent_evidence_sha256": "1fcaa6fc7c1689f37fd37890fcff0b1f8a7c065465a5f06fac5a302713d043d0",
   "scope": "Unchanged production native parser and independent native reader actually loaded all current candidates; their degeneracy/domain/flag checks were not loosened."
 }

@@ -5,7 +5,7 @@
   "source_glb_sha256": "d5d32696363ceca0accdc61f924683d3519f715a83d6eeac5c71ff7e2b7e30cc",
   "source_physics": "development/levels/rebuild/stair-opening-pass/wld-06/opened-stairs.hcs2",
   "source_physics_sha256": "81a1c3cc7fa52ab16bb34e26084f149c964ef25d25d2ee997a9be886909e1956",
-  "before_layout": "development/levels/layouts/wld-06/layout.json",
+  "before_layout": "development/levels/rebuild/flat-circulation-pass/source-layouts/wld-06-inherited-layout.json",
   "before_layout_sha256": "f37184525debe30440a0d215c685e22ef40561077ee6ae6fb823e7587dc99304",
   "layout": "development/levels/rebuild/flat-circulation-pass/wld-06/authored-layout.json",
   "layout_sha256": "d8f312a488befbaacf6b81f815dc5720ed6fc38adddd5641f0fb42b6e1af56b3",
@@ -1493,5 +1493,6 @@
     },
     "generator_sha256": "a6336eb115e29021e65b11d366b0d3d67821e585626c93fad7368053e2efc058",
     "limitation": "Only completely covered original rough flat-route prisms; partial overlays, other duplicate structural surfaces, all optical/runtime and whole-map support acceptance remain open"
-  }
+  },
+  "original_before_layout_path": "development/levels/layouts/wld-06/layout.json"
 }

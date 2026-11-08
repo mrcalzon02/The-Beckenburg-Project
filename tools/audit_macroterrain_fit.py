@@ -18,7 +18,9 @@ def main():
     catalogue=json.loads(((ROOT/'development/levels/rebuild/terrain-fit-pass/support-policies.json') if args.bearing_pass or args.deck_pass or args.occupancy_pass or args.closure_pass or args.stair_end_pass or args.opening_pass or args.bay_pass or args.bench_pass or args.connection_pass or args.flat_pass else (BASE/'macroterrain-specs.json')).read_text())
     for site in catalogue['sites']:
         old=ROOT/f'development/levels/rebuild/furnishings/{site.lower()}';new=BASE/'assemblies'/site.lower();contract=json.loads((old/'physics-contract.json').read_text())
-        layout=ROOT/roster[site]['layout'];data=json.loads(layout.read_text())
+        layout=ROOT/roster[site]['layout'];alias_file=ROOT/'development/levels/rebuild/flat-circulation-pass/verification/source-layout-aliases.json'
+        if args.flat_pass and alias_file.exists():layout=ROOT/json.loads(alias_file.read_text())['files'].get(layout.relative_to(ROOT).as_posix(),{}).get('frozen_path',layout.relative_to(ROOT).as_posix())
+        data=json.loads(layout.read_text())
         if args.flat_pass:
             options=[ROOT/f'development/levels/rebuild/stair-connection-pass/{site.lower()}/connected-stairs.hcs2',ROOT/f'development/levels/rebuild/stair-terrain-pass/assemblies/{site.lower()}/benched-terrain.hcs2',ROOT/f'development/levels/rebuild/stair-bay-pass/{site.lower()}/bayed-stairs.hcs2',ROOT/f'development/levels/rebuild/stair-opening-pass/{site.lower()}/opened-stairs.hcs2',ROOT/f'development/levels/rebuild/stair-landing-pass/{site.lower()}/supported-stairs.hcs2',ROOT/f'development/levels/rebuild/floor-closure-pass/{site.lower()}/closed-floors.hcs2'];before=next(p for p in options if p.exists());candidate=ROOT/f'development/levels/rebuild/flat-circulation-pass/{site.lower()}/open-circulation.hcs2';after=candidate if candidate.exists() else before
         elif args.connection_pass:
