@@ -1,8 +1,8 @@
 {
   "id": "WLD-09",
   "title": "Blackwater Hydroelectric Dam",
-  "source": "layouts\\wld-09\\layout.json",
-  "source_sha256": "ac4bae32f511b941ff9a2345d8906899b8d4599eb886b3c3dd32f2b87c60f155",
+  "source": "rebuild\\wld-09\\rough-layout.json",
+  "source_sha256": "8d0eda0c66da33cf9b75c0d54a9efd12634bb6d2b9646ff1e9274506fb04b3c4",
   "zones": 14,
   "routes": 18,
   "shell_openings": [
@@ -231,7 +231,7 @@
       "height": 2.45
     }
   ],
-  "meshes": 359,
+  "meshes": 353,
   "issues": [
     {
       "zone": "stage",
@@ -262,10 +262,10 @@
           55.0
         ],
         [
-          56.5871740587948,
-          33.92665255286648,
-          70.4128259412052,
-          41.07334744713352
+          72.85,
+          27.0,
+          75.15,
+          43.0
         ]
       ]
     },
@@ -298,10 +298,10 @@
           55.0
         ],
         [
-          56.5871740587948,
-          33.92665255286648,
-          70.4128259412052,
-          41.07334744713352
+          72.85,
+          27.0,
+          75.15,
+          43.0
         ]
       ]
     },
@@ -334,10 +334,10 @@
           55.0
         ],
         [
-          56.5871740587948,
-          33.92665255286648,
-          70.4128259412052,
-          41.07334744713352
+          72.85,
+          27.0,
+          75.15,
+          43.0
         ]
       ]
     },
@@ -370,10 +370,10 @@
           55.0
         ],
         [
-          56.5871740587948,
-          33.92665255286648,
-          70.4128259412052,
-          41.07334744713352
+          72.85,
+          27.0,
+          75.15,
+          43.0
         ]
       ]
     },
@@ -406,10 +406,10 @@
           55.0
         ],
         [
-          56.5871740587948,
-          33.92665255286648,
-          70.4128259412052,
-          41.07334744713352
+          72.85,
+          27.0,
+          75.15,
+          43.0
         ]
       ]
     },
@@ -442,10 +442,10 @@
           55.0
         ],
         [
-          56.5871740587948,
-          33.92665255286648,
-          70.4128259412052,
-          41.07334744713352
+          72.85,
+          27.0,
+          75.15,
+          43.0
         ]
       ]
     },
@@ -454,16 +454,16 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          49.1,
-          27.0,
-          50.9,
-          35.0
+          55.1,
+          23.5,
+          56.9,
+          30.5
         ],
         [
-          56.5871740587948,
-          33.92665255286648,
-          70.4128259412052,
-          41.07334744713352
+          58.0,
+          41.85,
+          70.0,
+          44.15
         ]
       ]
     },
@@ -472,16 +472,16 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          49.1,
-          27.0,
-          50.9,
-          35.0
+          55.1,
+          23.5,
+          56.9,
+          30.5
         ],
         [
-          56.5871740587948,
-          33.92665255286648,
-          70.4128259412052,
-          41.07334744713352
+          58.0,
+          41.85,
+          70.0,
+          44.15
         ]
       ]
     },
@@ -514,10 +514,10 @@
           55.0
         ],
         [
-          56.5871740587948,
-          33.92665255286648,
-          70.4128259412052,
-          41.07334744713352
+          72.85,
+          27.0,
+          75.15,
+          43.0
         ]
       ]
     },
@@ -526,16 +526,16 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          49.1,
-          27.0,
-          50.9,
-          35.0
+          55.1,
+          23.5,
+          56.9,
+          30.5
         ],
         [
-          56.5871740587948,
-          33.92665255286648,
-          70.4128259412052,
-          41.07334744713352
+          58.0,
+          41.85,
+          70.0,
+          44.15
         ]
       ]
     },
@@ -544,16 +544,16 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          49.1,
-          27.0,
-          50.9,
-          35.0
+          55.1,
+          23.5,
+          56.9,
+          30.5
         ],
         [
-          56.5871740587948,
-          33.92665255286648,
-          70.4128259412052,
-          41.07334744713352
+          58.0,
+          41.85,
+          70.0,
+          44.15
         ]
       ]
     },
@@ -585,7 +585,7 @@
     {
       "link": "L18",
       "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
-      "flights": 1
+      "flights": 2
     }
   ],
   "source_refinement": [
@@ -594,20 +594,20 @@
     "Study industrial electrical separation, acoustics and usable inspection paths before runtime authoring."
   ],
   "native_reopened": true,
-  "blend_sha256": "0440fb2557211206412680ee88ef7e919a04302c3866cfc9388084e9ea7cac9f",
+  "blend_sha256": "427447fd89bcfeac468777ed9091a1a3e7157770504c48b8f73b6a7b69e170ee",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
-    "glb_sha256": "4d94e6530db8bde3d68ad95b5c772ebb0da50d1640a0f8b11ff714e3a393e48c",
+    "glb_sha256": "5fe0e02fb2708a36832973244eb8525d96968d629cca4500cbd9a668d2fe204b",
     "independently_reimported": true,
-    "meshes": 355,
-    "triangles": 4288,
-    "floor_parts": 28,
-    "ceiling_cap_parts": 34,
+    "meshes": 349,
+    "triangles": 4204,
+    "floor_parts": 30,
+    "ceiling_cap_parts": 20,
     "stair_treads": 215,
-    "checked_closed_solids": 333,
-    "measured_depth_parts": 62,
-    "exported_cap_rays": 34,
+    "checked_closed_solids": 327,
+    "measured_depth_parts": 50,
+    "exported_cap_rays": 20,
     "fixed_infill_routes": 0,
     "exported_fixed_boundary_checks": [],
     "wall_depth_m": 0.16,
@@ -621,10 +621,10 @@
       "Source-matched terrain holes, services, van and LAN integration"
     ]
   },
-  "authoritative_input": "development/levels/layouts/wld-09/layout.json",
+  "authoritative_input": "development/levels/rebuild/wld-09/rough-layout.json",
   "original_scene_preserved": true,
   "preserved_sources": {
-    "development/levels/layouts/wld-09/layout.json": "ac4bae32f511b941ff9a2345d8906899b8d4599eb886b3c3dd32f2b87c60f155",
+    "development/levels/rebuild/wld-09/rough-layout.json": "8d0eda0c66da33cf9b75c0d54a9efd12634bb6d2b9646ff1e9274506fb04b3c4",
     "development/levels/blockouts/wld-09/rough-shell.blend": "f377b7d01f1dbf1da555629743a01649784abcd68af87211d679c1d218d26edd",
     "development/levels/blockouts/wld-09/rough-shell.glb": "faa319abaf63c8afb572c033e811ccc1fde07e3c188f164008a2e783e8fab183"
   },

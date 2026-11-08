@@ -1,7 +1,7 @@
 {
   "version": 2,
   "id": "MANSION",
-  "title": "Blackthorn Manor — revised household-first rough",
+  "title": "Blackthorn Manor \u2014 revised household-first rough",
   "status": "S02_DESIGN_STUDY_NOT_RUNTIME_ACCEPTED",
   "site_bounds": [
     3,
@@ -2733,14 +2733,19 @@
       "width": 1.3,
       "points": [
         [
-          43,
+          41.5,
           -3,
-          4
+          10.4
         ],
         [
-          43,
+          41.5,
           0,
-          8.8
+          5
+        ],
+        [
+          44.5,
+          0,
+          5
         ]
       ],
       "rise_m": 3,
@@ -2748,7 +2753,7 @@
       "headroom_m": 2.2,
       "landing_depth_m": 1.5,
       "risers": 18,
-      "construction": "Separate flights stacked with full-run deck voids, real structure depth and continuous guards; landings remain clear.",
+      "construction": "Authored separated flight/landing coordinates. Verify actual exported support, head/body clearance, approaches, guards and continuous runtime sweeps; no acceptance from centre lines.",
       "note": "Measured reservation only; physical capsule/headroom and underside tests remain required.",
       "player_access": "OPEN_ROUTE"
     },
@@ -2760,14 +2765,19 @@
       "width": 1.3,
       "points": [
         [
-          43,
+          44.5,
           0,
-          4
+          5
         ],
         [
-          43,
+          44.5,
           3.6,
-          9.760000000000002
+          11
+        ],
+        [
+          41.5,
+          3.6,
+          11
         ]
       ],
       "rise_m": 3.6,
@@ -2775,7 +2785,7 @@
       "headroom_m": 2.2,
       "landing_depth_m": 1.5,
       "risers": 20,
-      "construction": "Separate flights stacked with full-run deck voids, real structure depth and continuous guards; landings remain clear.",
+      "construction": "Authored separated flight/landing coordinates. Verify actual exported support, head/body clearance, approaches, guards and continuous runtime sweeps; no acceptance from centre lines.",
       "note": "Measured reservation only; physical capsule/headroom and underside tests remain required.",
       "player_access": "OPEN_ROUTE"
     },
@@ -2787,14 +2797,14 @@
       "width": 1.3,
       "points": [
         [
-          43,
+          41.5,
           3.6,
-          4
+          11
         ],
         [
-          43,
+          41.5,
           7.2,
-          9.760000000000002
+          5
         ]
       ],
       "rise_m": 3.6,
@@ -2802,7 +2812,7 @@
       "headroom_m": 2.2,
       "landing_depth_m": 1.5,
       "risers": 20,
-      "construction": "Separate flights stacked with full-run deck voids, real structure depth and continuous guards; landings remain clear.",
+      "construction": "Authored separated flight/landing coordinates. Verify actual exported support, head/body clearance, approaches, guards and continuous runtime sweeps; no acceptance from centre lines.",
       "note": "Measured reservation only; physical capsule/headroom and underside tests remain required.",
       "player_access": "OPEN_ROUTE"
     }
@@ -3116,5 +3126,94 @@
     "gameplay_rule": "Evidence, ghost spawn/anchor, hiding, switches/tasks, ritual sites, loose objective props and required travel belong only to the connected open envelope. Context windows may show rooms, but no interaction or required search crosses the seal.",
     "context_rule": "Retain coherent historical rooms/assets behind permanent boundaries. Restrict whole wings to their hallways where useful; do not count shuttable ordinary doors as permanent seals.",
     "next_gate": "Build actual permanent seals and audit runtime player/ghost/object/optical boundaries and all objective placements; construct the maps inside the forty-space cap. Round-duration testing is outside this rebuild task."
+  },
+  "circulation_revision": {
+    "status": "AUTHORED_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+    "source": "development/levels/rebuild/mansion/rough-layout.json",
+    "source_sha256": "8df4ad11dfc5b2f7e9a86501aad6ac53d40f7f9b07f77b3ed778a14bfdd2ebed",
+    "original_links": {
+      "L59": {
+        "id": "L59",
+        "a": "cellar-stair",
+        "b": "service-stair",
+        "kind": "stairs",
+        "width": 1.3,
+        "points": [
+          [
+            43,
+            -3,
+            4
+          ],
+          [
+            43,
+            0,
+            8.8
+          ]
+        ],
+        "rise_m": 3,
+        "run_m": 4.800000000000001,
+        "headroom_m": 2.2,
+        "landing_depth_m": 1.5,
+        "risers": 18,
+        "construction": "Separate flights stacked with full-run deck voids, real structure depth and continuous guards; landings remain clear.",
+        "note": "Measured reservation only; physical capsule/headroom and underside tests remain required.",
+        "player_access": "OPEN_ROUTE"
+      },
+      "L60": {
+        "id": "L60",
+        "a": "service-stair",
+        "b": "upper-service-stair",
+        "kind": "stairs",
+        "width": 1.3,
+        "points": [
+          [
+            43,
+            0,
+            4
+          ],
+          [
+            43,
+            3.6,
+            9.760000000000002
+          ]
+        ],
+        "rise_m": 3.6,
+        "run_m": 5.760000000000001,
+        "headroom_m": 2.2,
+        "landing_depth_m": 1.5,
+        "risers": 20,
+        "construction": "Separate flights stacked with full-run deck voids, real structure depth and continuous guards; landings remain clear.",
+        "note": "Measured reservation only; physical capsule/headroom and underside tests remain required.",
+        "player_access": "OPEN_ROUTE"
+      },
+      "L61": {
+        "id": "L61",
+        "a": "upper-service-stair",
+        "b": "attic-stair",
+        "kind": "stairs",
+        "width": 1.3,
+        "points": [
+          [
+            43,
+            3.6,
+            4
+          ],
+          [
+            43,
+            7.2,
+            9.760000000000002
+          ]
+        ],
+        "rise_m": 3.6,
+        "run_m": 5.760000000000001,
+        "headroom_m": 2.2,
+        "landing_depth_m": 1.5,
+        "risers": 20,
+        "construction": "Separate flights stacked with full-run deck voids, real structure depth and continuous guards; landings remain clear.",
+        "note": "Measured reservation only; physical capsule/headroom and underside tests remain required.",
+        "player_access": "OPEN_ROUTE"
+      }
+    },
+    "reason": "Separate intersecting flights and remove folded-back landing obstructions; preserve functions and search envelope. Terrain holes and complete capsule sweeps remain required."
   }
 }

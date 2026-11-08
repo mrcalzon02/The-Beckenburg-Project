@@ -26,16 +26,16 @@ the exported boundary is ray-checked. Terrain support, enclosure returns and
 around/under/over bypasses remain actual runtime audit obligations. A threshold
 ray alone is not proof of a completely bounded forty-space playable envelope.
 
-Final native verification covers **129,747 triangles**, **6,562 closed solids**,
-**1,528 measured floor/deck parts**, **559 cap rays**, **1,720 stair treads** and
-**192 fixed-link boundary checks** across25 independently reimported exports.
-Source scenes and original inputs are hash-preserved. The eight formerly
-unbuildable links now have revised source flights; the monastery west stair was
-also separated from the north shaft. See the route checkpoint for actual HCS2
-probes. All506 revised-site tread centres have support and clear spine rays,
-but capsule/traversability failures remain open (DEV-361). These are not playable
-acceptance results. Rectangular and circular aperture sliver defects were repaired
-without relaxing the exported closed-solid gate (DEV-362).
+Current native verification covers **129,435 triangles**, **6,537 closed solids**,
+**1,488 measured floor/deck parts**, **517 cap rays**, **1,720 treads** and
+**192 fixed-link boundary checks**. All25 GLBs independently reimport;
+generators and preserved sources match their hashes. The eight formerly
+unbuildable links have revised flights. Five further packets separate crossing
+stairs and repair folded approaches/thresholds. Native collision now reports
+1720/1720treads supported and1678clear spine rays; remaining42overhead hits are
+terrain triangles in Lighthouse/Silo/Mortuary. Full body/traversability and swept
+route acceptance remain open. See `../verification/roster-separated-2026-11-07/`
+for current per-map/per-tread results; previous checkpoints remain historical.
 
 ## Bounded visual review
 

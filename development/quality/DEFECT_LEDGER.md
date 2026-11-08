@@ -4982,17 +4982,31 @@ Older-map obligation: Check every slab family after aperture changes. No unaudit
 
 ### DEV-363 — Roster collision probe exposes crossing stairs and terrain covering authored flights
 
-**Status:** OPEN; per-site geometry/terrain repairs required · **Affected:** College L84; Mansion L59/L60; WLD-09 L14/L18; WLD-14 route14/20; WLD-18 route07/08/13/18; mortuary L14/L15
+**Status:** NATIVE CROSSING/THRESHOLD REPAIRS VERIFIED;42terrain overhead obstructions and capsule acceptance remain OPEN · **Affected:** College L84; Mansion L59/L60; WLD-09 L14/L18; WLD-14 route14/20; WLD-18 route07/08/13/18; mortuary L14/L15
 
 All25 native collision exports load and1720tread centres have support, but90 head-height spine rays are obstructed across these6sites.
 
 Cause / uncertainty: Actual exported triangles identify crossing stair flights, a folded-back landing, gallery/exhibit walls and uncut proposal terrain over underground approaches. Native closed-solid checks cannot establish route clearance.
 
-Fix / next action: Retain exact per-pose overhead component names and hashes. Next separate crossing stair lanes/landings, repair wall passage coordinates and implement actual persisted terrain holes before physical terrain acceptance. Recheck full capsule routes, neighbouring routes and optical/solid negatives. Do not delete terrain visually or weaken collision to pass.
+Fix / next action: Retain exact per-pose overhead component names and hashes. Next separate crossing stair lanes/landings, repair wall passage coordinates and implement actual persisted terrain holes before physical terrain acceptance. Recheck full capsule routes, neighbouring routes and optical/solid negatives. Do not delete terrain visually or weaken collision to pass. Separated five-source revision removes48of90spine hits; College/Mansion/Hydroelectric386/386supported with clear spine rays. Remaining42hits all identify terrain triangles in Lighthouse/Silo/Mortuary. Evidence: verification/roster-separated-2026-11-07/.
 
 Evidence and verification: development/levels/rebuild/verification/roster-routes-2026-11-07/all25/tread-probes.tsv and route-probes.json; structures/<site>/physics-contract.json
 
 Older-map obligation: Audit retained Castle/House/Blackpine/Hollow Creek separately. Zero-tread WLD-16 is not a route pass. No map is unlocked by this source-wide read-only probe.
+
+### DEV-364 — Hydroelectric return stair still needs authored shaft enclosure and foundations
+
+**Status:** OPEN CONSTRUCTION DETAIL; native candidate only · **Affected:** WLD-09 east return stair L18 and its connection to the east-stair volume
+
+Revised return clears other flights but the native overview shows the intermediate/upper stairs beyond the original east-stair shell; final supporting foundations/enclosure are absent.
+
+Cause / uncertainty: Original shell contains only the upper landing storey; separated return needs its own full-height structural program rather than intersecting existing flight masses.
+
+Fix / next action: Preserve revised clear circulation coordinates, author the shared shaft/landing/storey surfaces and properly elevated wall apertures, then foundation/terrain support and guards. Keep candidate locked and rerun neighbouring routes after those additions.
+
+Evidence and verification: development/levels/rebuild/structures/wld-09/; captures/structure-batch/roster-structure-sheet-04.png; verification/roster-separated-2026-11-07/
+
+Older-map obligation: Audit full stair load paths and room/shaft volume parity individually across remote and retained maps; solid tread boxes are not final structural engineering or terrain support acceptance.
 
 ## Required audit categories
 

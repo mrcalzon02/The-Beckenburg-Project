@@ -1,0 +1,23 @@
+{
+  "COLLEGE": {
+    "treads": 94,
+    "supported": 94,
+    "spine_clear": 94,
+    "body_clear": 5,
+    "traversable": 1
+  },
+  "MANSION": {
+    "treads": 77,
+    "supported": 77,
+    "spine_clear": 77,
+    "body_clear": 4,
+    "traversable": 2
+  },
+  "WLD-09": {
+    "treads": 215,
+    "supported": 215,
+    "spine_clear": 215,
+    "body_clear": 179,
+    "traversable": 155
+  }
+}

@@ -2,7 +2,7 @@
   "id": "COLLEGE",
   "title": "Beckenburg College \u2014 revised three-building campus rough",
   "source": "rebuild\\college\\rough-layout.json",
-  "source_sha256": "b3496cb939a39eed91a43eaf396f8548d15d3445d843fd96336a17fe54e86d8c",
+  "source_sha256": "6762dc357a7c05c9f215c5d111ff67ba77c07c3125ef537f835a764cc1c95657",
   "zones": 81,
   "routes": 44,
   "shell_openings": [
@@ -1001,17 +1001,17 @@
       "height": 2.45
     }
   ],
-  "meshes": 693,
+  "meshes": 694,
   "issues": [
     {
       "zone": "teaching-hall",
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1026,10 +1026,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1044,10 +1044,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1062,10 +1062,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1080,10 +1080,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1098,10 +1098,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1116,10 +1116,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1134,10 +1134,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1152,10 +1152,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1170,10 +1170,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1188,10 +1188,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1206,10 +1206,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1224,10 +1224,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1242,10 +1242,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1260,10 +1260,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1278,10 +1278,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1296,10 +1296,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1314,10 +1314,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1332,10 +1332,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1350,10 +1350,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1368,10 +1368,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1386,10 +1386,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1404,10 +1404,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1422,10 +1422,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1440,10 +1440,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1458,10 +1458,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1476,10 +1476,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1494,10 +1494,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1512,10 +1512,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1530,10 +1530,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1548,10 +1548,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1566,10 +1566,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1584,10 +1584,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1602,10 +1602,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1620,10 +1620,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1638,10 +1638,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1656,10 +1656,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1674,10 +1674,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1692,10 +1692,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1710,10 +1710,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -1728,10 +1728,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -1752,10 +1752,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -1776,10 +1776,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -1800,10 +1800,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -1824,10 +1824,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -1848,10 +1848,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -1872,10 +1872,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -1896,10 +1896,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -1920,10 +1920,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -1944,10 +1944,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -1968,10 +1968,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -1992,10 +1992,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -2016,10 +2016,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -2040,10 +2040,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -2064,10 +2064,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -2088,10 +2088,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -2112,10 +2112,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -2136,10 +2136,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -2160,10 +2160,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -2184,10 +2184,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -2208,10 +2208,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -2232,10 +2232,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -2256,10 +2256,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -2280,10 +2280,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -2304,10 +2304,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -2328,10 +2328,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -2352,10 +2352,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -2376,10 +2376,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -2400,10 +2400,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -2424,10 +2424,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -2442,10 +2442,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -2460,10 +2460,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.15,
-          36.0,
-          27.85,
-          40.8
+          24.849999999999998,
+          36.6,
+          26.55,
+          42.0
         ],
         [
           45.15,
@@ -2478,10 +2478,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -2502,10 +2502,10 @@
       "issue": "Deck openings reserved; final stair headroom, guards and landings required",
       "openings": [
         [
-          26.1,
-          36.0,
-          27.9,
-          41.76
+          27.400000000000002,
+          36.6,
+          29.2,
+          42.36
         ],
         [
           30.1,
@@ -2549,18 +2549,18 @@
   ],
   "source_refinement": [],
   "native_reopened": true,
-  "blend_sha256": "fccfb5dce41a338b482f2c91d02551bba56b3c599b2df5fade944eb36ebd1556",
+  "blend_sha256": "e9d860dabb13c42d1c5e9405ff86bf833698571bc3e2f45f7816a673cb2bb20e",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
-    "glb_sha256": "62cb44baa56554f16d5fb669a0fd5516663bfca308d5e3a05aea3a345e422651",
+    "glb_sha256": "d22736d78c590bd44f0799f48e3623188b9e566cd7284fa5747adcd65d19d819",
     "independently_reimported": true,
-    "meshes": 689,
-    "triangles": 8288,
+    "meshes": 690,
+    "triangles": 8308,
     "floor_parts": 113,
     "ceiling_cap_parts": 38,
     "stair_treads": 94,
-    "checked_closed_solids": 611,
+    "checked_closed_solids": 612,
     "measured_depth_parts": 151,
     "exported_cap_rays": 38,
     "fixed_infill_routes": 44,
@@ -2624,7 +2624,7 @@
   "authoritative_input": "development/levels/rebuild/college/rough-layout.json",
   "original_scene_preserved": true,
   "preserved_sources": {
-    "development/levels/rebuild/college/rough-layout.json": "b3496cb939a39eed91a43eaf396f8548d15d3445d843fd96336a17fe54e86d8c",
+    "development/levels/rebuild/college/rough-layout.json": "6762dc357a7c05c9f215c5d111ff67ba77c07c3125ef537f835a764cc1c95657",
     "development/levels/blockouts/college/rough-shell.blend": "ad5328a656b07d9c5cdd00cd118aba54ac7f75a70a1f606c38d1b0358a6ad1e0",
     "development/levels/blockouts/college/rough-shell.glb": "4da60e9e6bae49a0950c4737686e63404121524862cf28ce0c93e271b8fc9465"
   },

@@ -1,8 +1,8 @@
 {
   "id": "WLD-18",
   "title": "Site Cinder-6",
-  "source": "layouts\\wld-18\\layout.json",
-  "source_sha256": "64ef060d286f7f0e3b3b8b128b857df006de4ff34ce1390c3da94c5420f8fbc1",
+  "source": "rebuild\\wld-18\\rough-layout.json",
+  "source_sha256": "97fd6d132333aab6a709f2965af8e1188e7f3ec3967f940eafabc61973491932",
   "zones": 16,
   "routes": 19,
   "shell_openings": [
@@ -99,6 +99,13 @@
     },
     {
       "zone": "exhibit",
+      "side": "S",
+      "link": "route-13",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "exhibit",
       "side": "W",
       "link": "route-12",
       "width": 1.5,
@@ -147,7 +154,7 @@
       "height": 2.45
     }
   ],
-  "meshes": 315,
+  "meshes": 307,
   "issues": [
     {
       "zone": "stage",
@@ -167,7 +174,7 @@
         ],
         [
           51.1,
-          34.0,
+          40.5,
           52.9,
           48.0
         ]
@@ -191,7 +198,7 @@
         ],
         [
           51.1,
-          34.0,
+          40.5,
           52.9,
           48.0
         ]
@@ -215,7 +222,7 @@
         ],
         [
           51.1,
-          34.0,
+          40.5,
           52.9,
           48.0
         ]
@@ -239,7 +246,7 @@
         ],
         [
           51.1,
-          34.0,
+          40.5,
           52.9,
           48.0
         ]
@@ -263,7 +270,7 @@
         ],
         [
           51.1,
-          34.0,
+          40.5,
           52.9,
           48.0
         ]
@@ -287,7 +294,7 @@
         ],
         [
           51.1,
-          34.0,
+          40.5,
           52.9,
           48.0
         ]
@@ -311,7 +318,7 @@
         ],
         [
           51.1,
-          34.0,
+          40.5,
           52.9,
           48.0
         ]
@@ -341,9 +348,9 @@
         ],
         [
           12.0,
-          35.1,
-          20.0,
-          36.9
+          28.1,
+          19.0,
+          29.9
         ]
       ]
     },
@@ -371,9 +378,9 @@
         ],
         [
           12.0,
-          35.1,
-          20.0,
-          36.9
+          28.1,
+          19.0,
+          29.9
         ]
       ]
     },
@@ -401,9 +408,9 @@
         ],
         [
           12.0,
-          35.1,
-          20.0,
-          36.9
+          28.1,
+          19.0,
+          29.9
         ]
       ]
     },
@@ -431,9 +438,9 @@
         ],
         [
           12.0,
-          35.1,
-          20.0,
-          36.9
+          28.1,
+          19.0,
+          29.9
         ]
       ]
     },
@@ -472,20 +479,20 @@
     "Keep every mandatory route off the shaft void. Real ring guards, falling protection and stair headroom require engineering."
   ],
   "native_reopened": true,
-  "blend_sha256": "57a14be5fd6ec4545958de4cf71c336c91333b56f38650b316e496616bf3b50f",
+  "blend_sha256": "fa5c091861e70415bf954044ea53dfcddf498fd30041ffafb129a6a80816f8e5",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
-    "glb_sha256": "802d18d8a7f7cd916be9a69642749931f66ef0f40a129efbe12d8ba265bd5f57",
+    "glb_sha256": "40024f8f70a71703be421f17b2d8e46ca92683c7c4ba8b76bc78fd63c70cad22",
     "independently_reimported": true,
-    "meshes": 311,
-    "triangles": 7150,
+    "meshes": 303,
+    "triangles": 7042,
     "floor_parts": 48,
-    "ceiling_cap_parts": 52,
+    "ceiling_cap_parts": 40,
     "stair_treads": 116,
-    "checked_closed_solids": 295,
-    "measured_depth_parts": 100,
-    "exported_cap_rays": 52,
+    "checked_closed_solids": 287,
+    "measured_depth_parts": 88,
+    "exported_cap_rays": 40,
     "fixed_infill_routes": 0,
     "exported_fixed_boundary_checks": [],
     "wall_depth_m": 0.16,
@@ -499,10 +506,10 @@
       "Source-matched terrain holes, services, van and LAN integration"
     ]
   },
-  "authoritative_input": "development/levels/layouts/wld-18/layout.json",
+  "authoritative_input": "development/levels/rebuild/wld-18/rough-layout.json",
   "original_scene_preserved": true,
   "preserved_sources": {
-    "development/levels/layouts/wld-18/layout.json": "64ef060d286f7f0e3b3b8b128b857df006de4ff34ce1390c3da94c5420f8fbc1",
+    "development/levels/rebuild/wld-18/rough-layout.json": "97fd6d132333aab6a709f2965af8e1188e7f3ec3967f940eafabc61973491932",
     "development/levels/blockouts/wld-18/rough-shell.blend": "8d50374a1daef03110ea79263aa7f2858fd2ee47d907b1fadd13cf2ca698ea46",
     "development/levels/blockouts/wld-18/rough-shell.glb": "810d80b78e7465c322bc4eb48c13a9e529959545bf953429750fe388b1cff97f"
   },

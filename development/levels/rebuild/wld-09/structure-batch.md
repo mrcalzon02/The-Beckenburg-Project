@@ -23,3 +23,8 @@ accessible search spaces. No round-duration tests or local editor UI automation.
 
 Next: repair map-specific movement failures and continue the reusable-model
 placement batch with individually supported, functional room arrangements.
+
+
+## Separated-flight revision
+
+Updated native result: 4204triangles, 327closed solids, 50measured deck parts, 20cap rays and 215treads. Current exact candidate collision and pose results: `../verification/roster-separated-2026-11-07/`. Distinct flight lanes/approaches replace the old crossing layout. All remaining roster spine obstructions are terrain; actual punched editor holes remain required. Full capsule movement and support/enclosure/roof/model refinements remain open.
