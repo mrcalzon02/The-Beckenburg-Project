@@ -21,6 +21,7 @@ async def verify(scope):
         assert ("edit" in tools) == (scope not in ("observe", "material"))
         assert ("save" in tools) == (scope in ("save", "material-save"))
         assert ("reopen" in tools) == (scope in ("save", "material-save"))
+        assert ("playtest" in tools) == (scope in ("edit", "save"))
         assert set(tools["verify_position"].inputSchema["required"]) == {"revision", "id", "x", "y", "z"}
 
         async def call(name, **args):
@@ -102,6 +103,21 @@ async def verify(scope):
         assert not captured.isError and captured.content[0].type == "image" and captured.content[0].mimeType == "image/png"
         diagnostics = await call("run_test", revision=revision, id=state["tests"][0])
         assert diagnostics["revision"] == revision and diagnostics["result"]
+        async def playtest(revision):
+            before = await call("inspect_nodes", revision=revision, ids=[key])
+            disk = await call("verify_position", revision=revision, id=key, **xyz)
+            stale = await client.call_tool("playtest", {"revision": revision - 1})
+            assert stale.isError
+            played = await client.call_tool("playtest", {"revision": revision})
+            assert not played.isError and len(played.content) == 1 and played.content[0].mimeType == "image/png", played.content[0].type
+            png = base64.b64decode(played.content[0].data, validate=True)
+            assert png[:8] == b"\x89PNG\r\n\x1a\n" and png != base64.b64decode(captured.content[0].data)
+            assert tuple(int.from_bytes(png[i:i+4], "big") for i in (16, 20)) == (880, 550)
+            assert before == await call("inspect_nodes", revision=revision, ids=[key])
+            assert disk == await call("verify_position", revision=revision, id=key, **xyz)
+            name = "castle" if castle else "house"
+            (Path("build/editor-agent-evidence") / f"mcp-{name}-playtest.png").write_bytes(png)
+            print(f"PASS {name} MCP playtest: live gameplay PNG, revision, position and disk state retained")
         if scope != "observe":
             schema = json.dumps(tools["edit"].inputSchema)
             assert all(name in schema for name in state["operations"])
@@ -125,6 +141,8 @@ async def verify(scope):
             assert await call("inspect_scene", revision_only=True) == {"sceneId": state["sceneId"], "revision": revision}
             matched = (await call("verify_position", revision=revision, id=key, **xyz))["result"]
             assert matched["verified"] and matched["committed"]
+            if not castle:
+                await playtest(revision)
             undone = await call("undo", revision=revision)
             assert (await call("inspect_nodes", revision=undone["revision"], ids=[key]))["result"] == [node]
             revision = (await call("redo", revision=undone["revision"]))["revision"]
@@ -136,6 +154,7 @@ async def verify(scope):
                 assert not any(check["code"] == "SPAWN_WALL_INTERSECTION" for check in audit)
                 delta = (await call("changes", revision=revision))["result"]
                 assert any(row["id"] == "mcp-test-divider" and row["kind"] == "REMOVED" for row in delta["nodes"])
+                await playtest(revision)
                 capture = await client.call_tool("capture_viewport", {"revision": revision})
                 assert not capture.isError
                 output = Path("build/editor-agent-evidence")

@@ -228,6 +228,7 @@ public final class EditorAgentGuiTest {
         check(request(access,"/summary","GET",null).statusCode()==401,"Anonymous observation denied");
         check(request(access,"/summary","GET","Bearer invalid").statusCode()==401,"Incorrect token denied");
         check(request(access,"/edit","POST",access.bearer()).statusCode()==405,"Mutation method denied");
+        check(request(access,"/playtest?revision="+rev,"POST",access.bearer()).statusCode()==405,"Observation scope cannot start gameplay");
         var browser=HttpRequest.newBuilder(URI.create(access.url()+"/summary")).header("Origin","https://example.invalid")
             .header("Authorization",access.bearer()).GET().build();
         check(CLIENT.send(browser,HttpResponse.BodyHandlers.discarding()).statusCode()==403,"Browser origin denied");

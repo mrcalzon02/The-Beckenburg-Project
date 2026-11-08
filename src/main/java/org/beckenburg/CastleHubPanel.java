@@ -30,6 +30,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
     private final AtmosphereAudio atmosphere=new AtmosphereAudio(AtmosphereAudio.Scene.CASTLE);
     private long last=System.nanoTime();
     private double clock;
+    double gameplaySeconds(){return clock;}
     private double elevation;
     private boolean castleLightsOn=true,crouched,storeOpen;
     private final CrouchCamera crouchCamera=new CrouchCamera();

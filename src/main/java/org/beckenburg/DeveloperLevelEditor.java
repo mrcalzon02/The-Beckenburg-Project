@@ -80,7 +80,7 @@ public final class DeveloperLevelEditor extends JPanel {
             missionDirty=true;
             if(event.details().fullScene()||!event.details().dependencies().isEmpty())refreshMissionPreview();
             refresh();
-        },()->missionDirty=false);
+        },()->missionDirty=false,this::runPlaytest);
         var spawn=playable.level().room(0).spawn();
         renderer.x=spawn.x();renderer.z=spawn.z();
         renderer.eyeHeight=spawn.y()+1.62;renderer.yaw=0;renderer.pitch=-.12;
@@ -210,7 +210,7 @@ public final class DeveloperLevelEditor extends JPanel {
         new CastleEditorAgent(project,map,renderer,()->{
             requireEditorThread();
             if(mission!=null)throw new IllegalStateException("Castle is not the active scene");
-        }),history,()->{castleDirty=true;refresh();},()->castleDirty=false);
+        }),history,event->{castleDirty=true;refresh();},()->castleDirty=false,this::runPlaytest);
     private void requireEditorThread(){
         if(!SwingUtilities.isEventDispatchThread()||editorClosed)
             throw new IllegalStateException("Editor must be open and called on its event thread");
@@ -1323,11 +1323,14 @@ public final class DeveloperLevelEditor extends JPanel {
     }
     private void save(){saveCurrent();}
     private void playtest(){
+        try{runPlaytest(null);}
+        catch(IOException|RuntimeException failure){JOptionPane.showMessageDialog(window,failure.toString(),"Playtest failed",JOptionPane.ERROR_MESSAGE);}
+    }
+    private EditorAgentService.Capture runPlaytest(java.nio.file.Path capture)throws IOException{
         requireEditorThread();
         var activeMission=mission==null?null:currentMissionMap();
         playtesting=true;timer.stop();keys.clear();
-        try{EditorPlaytest.run(window,activeMission);}
-        catch(IOException|RuntimeException failure){JOptionPane.showMessageDialog(window,failure.toString(),"Playtest failed",JOptionPane.ERROR_MESSAGE);}
+        try{return EditorPlaytest.run(window,activeMission,capture);}
         finally{
             playtesting=false;
             if(!editorClosed){timer.start();viewport.requestFocusInWindow();}
@@ -1358,7 +1361,7 @@ public final class DeveloperLevelEditor extends JPanel {
                 var scope=EditorObservationBridge.Scope.OBSERVE;
                 if(choice.equals("START LOCAL EDITING")){
                     var allowSave=new JCheckBox("Also allow saving and reopening this document");
-                    if(JOptionPane.showConfirmDialog(window,new Object[]{"Allow local clients with this token to edit this scene and use undo/redo?",allowSave},
+                    if(JOptionPane.showConfirmDialog(window,new Object[]{"Allow local clients to edit this scene, use undo/redo and run a local playtest?",allowSave},
                         "Local editing access",JOptionPane.OK_CANCEL_OPTION)!=JOptionPane.OK_OPTION)return;
                     scope=allowSave.isSelected()?EditorObservationBridge.Scope.EDIT_AND_SAVE:EditorObservationBridge.Scope.EDIT;
                 }

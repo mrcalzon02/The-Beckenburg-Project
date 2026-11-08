@@ -107,6 +107,7 @@ public final class EditorObservationBridge implements AutoCloseable {
     private List<String> writeRoutes(){
         if(scope==Scope.OBSERVE)return List.of();
         var routes=new ArrayList<String>();
+        if(service.supportsPlaytest())routes.add("/playtest");
         if(capabilities.contains(EditorAgentService.Capability.TRANSACT))routes.add("/edit");
         if(capabilities.contains(EditorAgentService.Capability.UNDO))routes.add("/undo");
         if(capabilities.contains(EditorAgentService.Capability.REDO))routes.add("/redo");
@@ -128,6 +129,7 @@ public final class EditorObservationBridge implements AutoCloseable {
         if(!path.equals("/edit") && body.length!=0)throw new IllegalArgumentException();
         EditorAgentService.Evidence<?> result;
         switch(path){
+            case "/playtest" -> {return image(revision,true);}
             case "/edit" -> {
                 String batch=StandardCharsets.UTF_8.newDecoder().decode(java.nio.ByteBuffer.wrap(body)).toString();
                 if(batch.contains("\r")||batch.contains("\n"))throw new IllegalArgumentException();
@@ -172,12 +174,7 @@ public final class EditorObservationBridge implements AutoCloseable {
             case "/test" -> {requireKeys(args,"id");value=service.test(revision,args.get("id"));}
             case "/capture" -> {
                 requireKeys(args);
-                Path file=Files.createTempFile("editor-observation-",".png");
-                try{
-                    service.capture(revision,file);
-                    if(Files.size(file)>MAX_BYTES)throw new IOException("Capture exceeds limit");
-                    return new Reply("image/png",Files.readAllBytes(file),revision);
-                }finally{Files.deleteIfExists(file);}
+                return image(revision,false);
             }
             default -> throw new IllegalArgumentException("Unknown observation");
         }
@@ -185,6 +182,14 @@ public final class EditorObservationBridge implements AutoCloseable {
     }
     private static void requireKeys(Map<String,String> args,String... keys){
         if(!args.keySet().equals(Set.of(keys)))throw new IllegalArgumentException();
+    }
+    private Reply image(long revision,boolean gameplay)throws IOException{
+        Path file=Files.createTempFile("editor-observation-",".png");
+        try{
+            if(gameplay)service.playtest(revision,file);else service.capture(revision,file);
+            if(Files.size(file)>MAX_BYTES)throw new IOException("Capture exceeds limit");
+            return new Reply("image/png",Files.readAllBytes(file),revision);
+        }finally{Files.deleteIfExists(file);}
     }
     private static Reply json(Object value,long revision)throws ReflectiveOperationException{
         return new Reply("application/json",EditorAgentProtocol.json(value).getBytes(StandardCharsets.UTF_8),revision);

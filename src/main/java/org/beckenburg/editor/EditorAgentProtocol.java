@@ -67,7 +67,7 @@ public final class EditorAgentProtocol {
                 }else{
                     if(parts.length<2)throw new IllegalArgumentException("Expected scene revision");
                     long revision=Long.parseLong(parts[1]);
-                    int expected=switch(command){case "edit","batch","nodes"->-1;case "capture","test","node"->3;case "hierarchy","changes","assets"->4;case "verify-position"->6;default->2;};
+                    int expected=switch(command){case "edit","batch","nodes"->-1;case "capture","playtest","test","node"->3;case "hierarchy","changes","assets"->4;case "verify-position"->6;default->2;};
                     if((expected>=0&&parts.length!=expected)||(expected<0&&parts.length<3))
                         throw new IllegalArgumentException("Wrong argument count");
                     result=switch(command){
@@ -86,6 +86,7 @@ public final class EditorAgentProtocol {
                         case "reopen" -> service.reopen(revision);
                         case "recover" -> service.recoverPrevious(revision);
                         case "capture" -> service.capture(revision,Path.of(parts[2]));
+                        case "playtest" -> service.playtest(revision,Path.of(parts[2]));
                         case "test" -> service.test(revision,parts[2]);
                         default -> throw new IllegalArgumentException("Unknown command: "+command);
                     };

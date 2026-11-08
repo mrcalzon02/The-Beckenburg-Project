@@ -22,7 +22,7 @@ class LiveEditor:
 
     def call(self, route, fields=None, body=None):
         path = route + ("?" + urlencode(fields, doseq=True) if fields else "")
-        conn = http.client.HTTPConnection("127.0.0.1", self.port, timeout=35)
+        conn = http.client.HTTPConnection("127.0.0.1", self.port, timeout=90 if route == "/playtest" else 35)
         try:
             conn.request("POST" if body is not None else "GET", path, body=body,
                          headers={"Authorization": "Bearer " + self.token})
@@ -32,7 +32,7 @@ class LiveEditor:
                 raise ValueError("Editor response exceeds limit")
             if reply.status != 200:
                 raise ValueError(f"Editor HTTP {reply.status}: {json.loads(data)['error']}")
-            if route == "/capture":
+            if route in ("/capture", "/playtest"):
                 if reply.headers.get_content_type() != "image/png" or not data.startswith(b"\x89PNG\r\n\x1a\n"):
                     raise ValueError("Invalid editor capture")
                 return Image(data=data, format="png")
@@ -138,6 +138,12 @@ def server(editor: LiveEditor):
         def capture_viewport(revision: int) -> Image:
             """Capture the active scene using the game renderer."""
             return editor.call("/capture", {"revision": revision})
+
+    if "/playtest" in summary["writeRoutes"]:
+        @native_tool
+        def playtest(revision: int) -> Image:
+            """Run the human Playtest action until gameplay advances, capture its frame and return to the editor."""
+            return editor.call("/playtest", {"revision": revision}, b"")
 
     if "/edit" in summary["writeRoutes"] and summary["operations"]:
         command_type = edit_type(summary["operations"])

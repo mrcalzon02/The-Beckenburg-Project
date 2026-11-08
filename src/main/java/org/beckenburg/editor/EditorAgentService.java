@@ -25,6 +25,7 @@ public final class EditorAgentService<S> {
                                 S state, List<EditorProject.Node> hierarchy,
                                 Set<Capability> capabilities, List<String> operations, List<String> tests) {}
     public record Capture(Path file, int width, int height, String renderer) {}
+    @FunctionalInterface public interface Playtest { Capture run(Path destination)throws IOException; }
     public record Evidence<T>(String sceneId, long revision, T result) {}
     public record Command(String operation, Map<String,String> arguments) {
         public Command {Objects.requireNonNull(operation);arguments=Map.copyOf(arguments);}
@@ -54,6 +55,7 @@ public final class EditorAgentService<S> {
     private final java.util.function.Consumer<EditorChange> changed;
     private final Runnable saved;
     private EditorChange lastChange;
+    private final Playtest playtest;
     public EditorAgentService(Host<S> host, EditorHistory<S> history) {
         this(host,history,()->{},()->{});
     }
@@ -68,7 +70,12 @@ public final class EditorAgentService<S> {
      */
     public EditorAgentService(Host<S> host, EditorHistory<S> history,
                               java.util.function.Consumer<EditorChange> changed, Runnable saved) {
+        this(host,history,changed,saved,null);
+    }
+    public EditorAgentService(Host<S> host, EditorHistory<S> history,
+                              java.util.function.Consumer<EditorChange> changed,Runnable saved,Playtest playtest){
         this.host=Objects.requireNonNull(host);this.history=Objects.requireNonNull(history);
+        this.playtest=playtest;
         this.changed=Objects.requireNonNull(changed);this.saved=Objects.requireNonNull(saved);
         if(!history.isFor(host.project()))throw new IllegalArgumentException("History belongs to another scene");
     }
@@ -252,6 +259,14 @@ public final class EditorAgentService<S> {
     }
     public Evidence<Capture> capture(long expected, Path destination) throws IOException {
         require(expected);capable(Capability.CAPTURE);return evidence(host.capture(destination));
+    }
+    public boolean supportsPlaytest(){return playtest!=null;}
+    public Evidence<Capture> playtest(long expected,Path destination)throws IOException{
+        require(expected);
+        if(playtest==null)throw new UnsupportedOperationException("Host does not provide gameplay playtest");
+        var result=playtest.run(destination);
+        require(expected);
+        return evidence(result);
     }
     /** Explicit disk recovery, followed by reload into the same live object.
      * Undo restores the prior live edit; it does not rewrite the recovered file. */
