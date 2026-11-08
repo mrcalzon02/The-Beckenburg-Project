@@ -17,3 +17,5 @@ The earlier34 link route-only study found no full-width reroute through its boun
 Reproduce with background Blender tools/build_arrival_bearings.py, tools/review_arrival_bearings.py; Python tools/audit_current_flat_routes.py --arrival-pass, tools/audit_roster_stairs.py --arrival-pass --require-authored-chains --output development/levels/rebuild/arrival-bearing-pass/verification, and tools/audit_macroterrain_fit.py --arrival-pass. Check decoded raw evidence with python tools/archive_flat_verification.py --root development/levels/rebuild/arrival-bearing-pass --check. Large tables are losslessly gzip archived; hashes bind decoded original bytes.
 
 No local editor UI, mission-duration test or runtime unlock. Shared heavy fog/weather sky remains unchanged. Gallery captures are committed on the rebuild branch; deployment is reported independently after actual remote observation.
+
+Published implementation: 414d8df61549685b84e6746ef62eee8fae1c8147. Exact source delivery and observed pending gallery deployment are recorded in verification/publication-readback.json.

@@ -1,0 +1,972 @@
+{
+  "observed_utc": "2026-11-08T13:39:34.723375+00:00",
+  "source_checkpoint": "414d8df61549685b84e6746ef62eee8fae1c8147",
+  "remote_head_verified": "414d8df61549685b84e6746ef62eee8fae1c8147",
+  "remote_tree_sha": "82c130ca8f56b3d801933c610df49dff99a01ed7",
+  "method": "Complete non-truncated GitHub recursive tree compared to exact local Git tree for all changed arrival-bearing source/export/native/model/capture/raw evidence/library/gallery/workflow files in the completed implementation milestone",
+  "checkpoints": [
+    {
+      "commit": "414d8df61549685b84e6746ef62eee8fae1c8147",
+      "changed_files": 236
+    }
+  ],
+  "verified_file_count": 236,
+  "verified_blobs": [
+    {
+      "path": ".gitattributes",
+      "sha": "41c970287d928ac2ed355123469d4b1a40a8e0c0"
+    },
+    {
+      "path": ".gitignore",
+      "sha": "38cdb706c736b160ee7bd467b3b3eb0592598c4d"
+    },
+    {
+      "path": "ASSET_LIBRARY.md",
+      "sha": "a7a74ca9e6712c3bffcaedf181c578f2e81d9c25"
+    },
+    {
+      "path": "beckenburg-development-gallery.html",
+      "sha": "f7086653d6fba121d7aa5dde3f87484a4069db96"
+    },
+    {
+      "path": "development/RECOVERY_PLAN_2026-10-25.md",
+      "sha": "2ae31987eef615a81c47ccf23ebd82cf91b90e09"
+    },
+    {
+      "path": "development/assets/asset-library-index.json",
+      "sha": "18c9e0099739d5df72c91b26c1b99411fd2ed420"
+    },
+    {
+      "path": "development/gallery/index.json",
+      "sha": "7ed793929731f3738491c5f838f6ec1b5e90ce75"
+    },
+    {
+      "path": "development/levels/rebuild/WORKFLOW.md",
+      "sha": "4fe0f669548beae915a9a247c6f05b072c9dddcb"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/NEXT.md",
+      "sha": "6c5a75b26051550d9b90a88b8879fa182816a7d0"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/README.md",
+      "sha": "c00b29daf029fe7b5e4da54d6636252ee600af97"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/academy/authored-layout.json",
+      "sha": "687c9b555e404462e7eea27fbe52a85ccb3f863e"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/academy/construction.json",
+      "sha": "78f32ddbed351aca31577b6d81d28df9fec4dcc7"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/academy/supported-arrival.blend",
+      "sha": "e4d09b297269cd892f7c4280a08c0a550025949e"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/academy/supported-arrival.glb",
+      "sha": "3cdf1319e310aa086f715bc79e02c91b37f3f66a"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/academy/supported-arrival.hcs2",
+      "sha": "8b842d2397ac7c2e108cfb6720bfca6cf0396afc"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/asylum/authored-layout.json",
+      "sha": "61505de617e7de7aad3897af150af885da94062d"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/asylum/construction.json",
+      "sha": "deedfbe86ab6ec6a3414625fb3ce2558ad16185b"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.blend",
+      "sha": "4df02f3c175c217f80f7a5c5544a30afe678eb44"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.glb",
+      "sha": "08709199d38c5fa82f457635d2381795aacf1be5"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/asylum/supported-arrival.hcs2",
+      "sha": "30b7f8dd0990faca51e6e112f696a3e0a7eb3435"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/church/authored-layout.json",
+      "sha": "c19f7a00c554108ec776e8f775c476fa1517250e"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/church/construction.json",
+      "sha": "e1c45dec2a9fc845b2958e86fc47f5b4004938f7"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.blend",
+      "sha": "2330d01a9a36b4ff34a6a2873f405be2b486ec2c"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.glb",
+      "sha": "665fb2efa5f7f06a0f9ed0ce769942d2f0cbf68d"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.hcs2",
+      "sha": "25dddd90bbf4ac3a8c6807dcbfc2e6f6ecbf1059"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/college/authored-layout.json",
+      "sha": "522684ea3ad448f5389f0e6fdf7649ee35106954"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/college/construction.json",
+      "sha": "e93debb8fafc8e2eca5eecc8f508a15fffa6216b"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.blend",
+      "sha": "b389e59f7e6d1fad8d244b7813b864c4962b6e56"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.glb",
+      "sha": "da7364dabf57fdfcc20dcdbcbb75a00c9ecce30a"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.hcs2",
+      "sha": "44734a7e5a63facfb8fabf18fee3346d83c186b4"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/farmhouse/authored-layout.json",
+      "sha": "515f6ebaea3027dc0bc6e8744f3ec8fec90f7edc"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/farmhouse/construction.json",
+      "sha": "8c3df754bcd371dbf08b957da99d7c36eec1584a"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/farmhouse/supported-arrival.blend",
+      "sha": "a6ff745c4c20d8820e14dc055ee62d1a7b86f1c2"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/farmhouse/supported-arrival.glb",
+      "sha": "64f300e65835ee31b56b56fd9d7e15e15808648f"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/farmhouse/supported-arrival.hcs2",
+      "sha": "d3f37a99c054c8b325a0dd9a40c36bc9d2b499dc"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/mansion/authored-layout.json",
+      "sha": "e46e05eaa968935629f0fddd03303dc6fc503651"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/mansion/construction.json",
+      "sha": "e88e99cb5c6891131d5450815448514d53a36f3a"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/mansion/supported-arrival.blend",
+      "sha": "3c25f9c5fe76552ff4ff4fd63274cd2c38a618b8"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/mansion/supported-arrival.glb",
+      "sha": "1e1d8d5965862dd5b96952cebff15e369bf8924c"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/mansion/supported-arrival.hcs2",
+      "sha": "19249e70dd5d24f1c46f72309b531e5db5c4659d"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/pilot-verification/captures.json",
+      "sha": "8af23aede52cd91e3b6674518d1ed1ddd3714ed1"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/pilot-verification/independent-sources.json",
+      "sha": "d10572781176bf7fdc95be888c5b024656164058"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/prison/authored-layout.json",
+      "sha": "ee99bafb3a1906ac03e8db8ad5b7ca14d56e44f0"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/prison/construction.json",
+      "sha": "6c733488bd793bec758de9d3d365e8d2c947a77d"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.blend",
+      "sha": "1edc4148e571c7d0f02669adb348cca8e56bfc25"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.glb",
+      "sha": "b57c01eef30483f7ca182415d4963c8c655dc236"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.hcs2",
+      "sha": "3d96e6930c4bcb8d9d4a8608ee77b67dd19654e9"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/rejected/terrain-blocked-wld09/README.md",
+      "sha": "87658d4509bc52b14bd8ee48e7a0e2282a13d57d"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/rejected/terrain-blocked-wld09/authored-layout.json",
+      "sha": "c47144d57d942ba31672298950136e459f312d43"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/rejected/terrain-blocked-wld09/captures.json",
+      "sha": "38f32c9850fe40139d081d0662420f4ab3cbae5d"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/rejected/terrain-blocked-wld09/construction.json",
+      "sha": "6b3d058c32415ec66d7e9c44f82e1eebf2c9a345"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/rejected/terrain-blocked-wld09/supported-arrival.blend",
+      "sha": "12566a17e4b313eec49b902e33909ee8fe167d04"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/rejected/terrain-blocked-wld09/supported-arrival.glb",
+      "sha": "0ffdaffeec0cc3ee85714620f72cd1de46f31bb2"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/rejected/terrain-blocked-wld09/supported-arrival.hcs2",
+      "sha": "1a8939e00d90e1edb374ffde64c6e0e5479bdcf8"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/rejected/terrain-blocked-wld09/verification/initial-current-flat-movement.json",
+      "sha": "97822357035cb2d104e16c8f50cbdb6bd86f2f24"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/rejected/terrain-blocked-wld09/verification/initial-independent-sources.json",
+      "sha": "5abc0c94f35d3c8aaeba5ea5c7d25d4821d77fe6"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/rejected/terrain-blocked-wld09/verification/initial-stair-movement.json",
+      "sha": "f50218b4d24f89eb50d8d5ee8223ea1d7005ef23"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/rejected/terrain-blocked-wld09/verification/relocations.json",
+      "sha": "742dd5c591f0fc499f2f111000c2952daeb73537"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/roster.json",
+      "sha": "0295fbe0eeebdffc1dce76a0a5df87003c21a351"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/school/authored-layout.json",
+      "sha": "eadaf3def9d51a1a33337573ff0f7d8e582ca407"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/school/construction.json",
+      "sha": "5a4218364783a1217d0c519825d30fc9cd661b1c"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/school/supported-arrival.blend",
+      "sha": "b040dfd245ef96adf5394b3259ff7e76800dce46"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/school/supported-arrival.glb",
+      "sha": "47fb8eb862f81aad663a995f4c7c4db997148e19"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/school/supported-arrival.hcs2",
+      "sha": "6daa83179bd33184b584a7803cb98c12bb973dc9"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/aggregate.json",
+      "sha": "cf3ee900249c8f1ea7474abd2a9ed2d6282e9a47"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/archive-index.json",
+      "sha": "12a8125bf30be52a54b7cbdec89a83fbd8f4d248"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/captures.json",
+      "sha": "75a0ea65e1ad195d75588be2c01163eee1b40c36"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/complete-route-sweeps.tsv",
+      "sha": "ce5fccea5474325f641e8b006f602f21d28169e6"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/contact-sheets.json",
+      "sha": "5c93f37db96627c89394dda200f8bd3e73d6d57d"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/current-flat-failure-contacts.tsv",
+      "sha": "776ae96608e23885158685c3af1825696f4f8e6d"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/current-flat-failure-input.tsv.gz",
+      "sha": "64fa57f2f40e7430241c199253f4aa6550a07479"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/current-flat-lane-input.tsv.gz",
+      "sha": "95062a711821d7bdc7c0824650267504363d44f8"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/current-flat-lane-names.tsv",
+      "sha": "b98584c63a8b67d8b5c46b4de1d9e236093e18bf"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/current-flat-lanes.tsv.gz",
+      "sha": "c591c527dfcada7788b12f5cb1709f42c254a1bb"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/current-flat-links.tsv",
+      "sha": "410db1f656985a50f5063f02af1f6247ba58224d"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/current-flat-movement.json",
+      "sha": "c71c1b357b1c7e875974406e9bf5d418b5b95544"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/current-flat-names.tsv",
+      "sha": "b98584c63a8b67d8b5c46b4de1d9e236093e18bf"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/current-flat-paths.tsv",
+      "sha": "0a807a08fff821831cf3ce353bf2e5f4912e6eab"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/failure-contacts.tsv",
+      "sha": "1d6361ed1d13282f592100dad34a1ebb95c186dd"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/flight-sweeps.tsv",
+      "sha": "35ac4e0d16412b9b769c55d17bdd006d5e596f22"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/independent-sources.json",
+      "sha": "a62789e21b0c3d33010dbcec65f2f7f7ea24d505"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/logs/arrival-batch-build.log",
+      "sha": "811127b5e20247ec3be2d9e8a3aefce9bdc70c55"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/logs/arrival-current-flat-final.log",
+      "sha": "23fc51544c370bcffce02ecdf622e35a617369f7"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/logs/arrival-current-flat.log",
+      "sha": "23fc51544c370bcffce02ecdf622e35a617369f7"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/logs/arrival-historical-final.log",
+      "sha": "761e5d043bb002d67eb2e34711ec12886377fe95"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/logs/arrival-historical.log",
+      "sha": "761e5d043bb002d67eb2e34711ec12886377fe95"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/logs/arrival-pilot-movement.log",
+      "sha": "5c9f316e750987c1c8cbc08acf2f656367b74dd7"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/logs/arrival-pilot-review-complete.log",
+      "sha": "bd266e608cf182c25dfd30df258ee136bbc17ce7"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/logs/arrival-pilot-review-final.log",
+      "sha": "ec33ac248bd60f3eb757344dff6d5b65f155eb3c"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/logs/arrival-pilot-review.log",
+      "sha": "61196620bfbe7a6af12b91aa3dbd7d4ff62c16d7"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/logs/arrival-pilot.log",
+      "sha": "0693abc3c6a969cb6becd7325a0c0988a5588a7c"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/logs/arrival-source-review-final.log",
+      "sha": "9c6696680f781c8332996c100cf56ba16cc566fd"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/logs/arrival-source-review.log",
+      "sha": "594eabf172ce718688c8f4fe582b0f2e37ad66ee"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/logs/arrival-stairs-final.log",
+      "sha": "cd07ed78c47f36c1e39cb5c1891db880374b74db"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/logs/arrival-stairs.log",
+      "sha": "cd07ed78c47f36c1e39cb5c1891db880374b74db"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/native-route-fit.json",
+      "sha": "12c1d57297fd545e4a86aac3b20e617ec3d664c2"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/native-route-probes.tsv.gz",
+      "sha": "b14570c63a5c67644ed4566f5d4d4614700177e3"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/remaining-routes.json",
+      "sha": "e4f8bba3584d9d8ef410f44c1d0ea0cce66b7fe3"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/stair-movement.json",
+      "sha": "1e703b6efd9b49dde8d2ba5f98bf867bd7a3a634"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/strict-standing-regression.json",
+      "sha": "515e378ffc4687086874e3e3cb4aadcc2215913e"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/verification/visual-review.json",
+      "sha": "b905428eecacd0ffbccb50d0295819d8acda51fd"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-03/authored-layout.json",
+      "sha": "1f6c588289ae1fe9553e0577e73031cc8a467a00"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-03/construction.json",
+      "sha": "0c1eb0a463ad4038781d2407341c9edee54603f1"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.blend",
+      "sha": "e23fcf0db134064fd2df7ca53ce939a6486bd626"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.glb",
+      "sha": "4bf926adfc7c281da02053aa0b4b9188ff2c50ac"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.hcs2",
+      "sha": "5c2ae23a979319b6511b2a51c7e9267b013e220b"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-04/authored-layout.json",
+      "sha": "721af52e34ad2fc63a4746cd01b2eb971a478288"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-04/construction.json",
+      "sha": "8fbe499d06030e2d594e9dc284060652516e3635"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-04/supported-arrival.blend",
+      "sha": "28ed2f1be0edabcab2b2e3a79948981b042a984b"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-04/supported-arrival.glb",
+      "sha": "cce3ef1399e699d3a0d10eb260a57a10f204ef88"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-04/supported-arrival.hcs2",
+      "sha": "c11ddc81d4f47b0401da9a213c37c81443526990"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-05/authored-layout.json",
+      "sha": "8cfd0542319c1c1f4d00fb84daede10b5f679ee7"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-05/construction.json",
+      "sha": "7709f4c80d066a6684f3862d4a588f9a4c145e54"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-05/supported-arrival.blend",
+      "sha": "d559f33b0eefc0e5ecddbad8878ec89045c9fef0"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-05/supported-arrival.glb",
+      "sha": "e8db8ca1e5cf4d908c051bd0fe2003a46f3853ac"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-05/supported-arrival.hcs2",
+      "sha": "e52d7d0f427d6c6f3e71f5f6f4027f8691caccb0"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-06/authored-layout.json",
+      "sha": "c30b0283ef817cdc8691a150d526426fad237467"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-06/construction.json",
+      "sha": "4f323a81609d4b3e9809badc3fcbb32eed32fbb6"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-06/supported-arrival.blend",
+      "sha": "ca3929e3ce04e5534952f1f25e971401d611ff0f"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-06/supported-arrival.glb",
+      "sha": "6c77207378311d3d5ec73134da865054789facb6"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-06/supported-arrival.hcs2",
+      "sha": "5a542e475c30a319f04a9b6c69090b9c05a773a6"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-08/authored-layout.json",
+      "sha": "ba8ebd942cd9532cb63edb09ab12355642198e93"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-08/construction.json",
+      "sha": "091c3704d08e3f787a99c231420b8019795da30a"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-08/supported-arrival.blend",
+      "sha": "705651d8b119e3374f0b2d3625a80fc4582cb692"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-08/supported-arrival.glb",
+      "sha": "488b9a100aa470686f58d8730d2e09c8080d8490"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-08/supported-arrival.hcs2",
+      "sha": "d0350d136e53e6c93d0c52fe7f6e19bf14dcb019"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-10/authored-layout.json",
+      "sha": "a3917cf419389f9c491281e5aad08a1eab023c9d"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-10/construction.json",
+      "sha": "36b6d1ecbd8bb429c8bc0a9f8929e59d8381677a"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-10/supported-arrival.blend",
+      "sha": "91bde5246e9d94d96636cf9bc115d552a19000f5"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-10/supported-arrival.glb",
+      "sha": "138b4e292a4f559a1c5aea1e327415ad53c4f936"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-10/supported-arrival.hcs2",
+      "sha": "06752ea2006597513dc955784c0ec06a10f81f39"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-11/authored-layout.json",
+      "sha": "a5f16c19dd4edfb9aab10128f87dfe154f2e3df3"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-11/construction.json",
+      "sha": "58ba23a569845cc7c5c6401a965432e4755723d3"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-11/supported-arrival.blend",
+      "sha": "e66892bf9c822d15d2b02a71a7dfa47e99a0ee8d"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-11/supported-arrival.glb",
+      "sha": "2d247f351472d14df3965bf7234105f4c538d102"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-11/supported-arrival.hcs2",
+      "sha": "303383b55773c1cf53cfe2f026ceebdf396ad7f1"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-12/authored-layout.json",
+      "sha": "e8c2e014bf9b398fa2cbc3576e5ee6808c9576c7"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-12/construction.json",
+      "sha": "581a51f2a9d1a526c28090faf5c13ca3ba987749"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.blend",
+      "sha": "5a014e697b2239cd787b1727e50ece28d690c557"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.glb",
+      "sha": "d01d99077b79544cd8ba0e9d76d15c38a67109de"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-12/supported-arrival.hcs2",
+      "sha": "46233cb91862abd460a42c69acefe65cbc7d047b"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-13/authored-layout.json",
+      "sha": "7a8a9c1d70e753504525efe424e686791687a7ab"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-13/construction.json",
+      "sha": "0542b5189791045ac219b922a5a0f1d536330def"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-13/supported-arrival.blend",
+      "sha": "b63acaba7758cbd286f4f86e75c5050123481f3c"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-13/supported-arrival.glb",
+      "sha": "464f1b1c071ee6275a93505b776c2b21a674ea1d"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-13/supported-arrival.hcs2",
+      "sha": "a6d608f67687d466701e9c6d20659bf6c7aca56e"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-14/authored-layout.json",
+      "sha": "f7d6a483f451cb2802550c9bfea233542db1004d"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-14/construction.json",
+      "sha": "29193c03c3b652186ba6faa97aca5657211cdb28"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-14/supported-arrival.blend",
+      "sha": "38239474c8e505dc9004746ba599dbfa05809ebe"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-14/supported-arrival.glb",
+      "sha": "e3ca59b9ca07f4d1605c8d618cfb086f6323662d"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-14/supported-arrival.hcs2",
+      "sha": "83ea557c7748cf489c2e1a6efe25f15094655740"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-16/authored-layout.json",
+      "sha": "cbdba7fb4a77f6341264940da94e6964dab76036"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-16/construction.json",
+      "sha": "670ad166acedfb26385cb54d0cc0657793a9b5de"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.blend",
+      "sha": "595cdf6e1dd80341ea11f355c233ef5c5c1d3d69"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.glb",
+      "sha": "4dd0b0d24ec66b9eb6627e4399311ea60622cb27"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.hcs2",
+      "sha": "dcca8c63085458b01b4f6665c61f4103544e8f24"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-17/authored-layout.json",
+      "sha": "6eaafe3e3ea948c069e3c8281e9ce05961da5b87"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-17/construction.json",
+      "sha": "dd429b6213d0d94c04bb7909336f98ca801ad732"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-17/supported-arrival.blend",
+      "sha": "76ec5e0eab7bec40be2801b076f6dc82fac86915"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-17/supported-arrival.glb",
+      "sha": "08da74c2aa5d7a4e1dc73a3f846947cca19574f8"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-17/supported-arrival.hcs2",
+      "sha": "274fc33365b76725cf788fdd844034ed03d6fb9a"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-18/authored-layout.json",
+      "sha": "cdfb8b460c3f817e807a25fc108a6a578a10d923"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-18/construction.json",
+      "sha": "b0d3f7c7c943300090ff84b3f31c88981db910df"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-18/supported-arrival.blend",
+      "sha": "a4dc314d88a05178dfab2da30113658d08333ce8"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-18/supported-arrival.glb",
+      "sha": "a41a43a395f7cb5a13acfb23683e814fe8503da8"
+    },
+    {
+      "path": "development/levels/rebuild/arrival-bearing-pass/wld-18/supported-arrival.hcs2",
+      "sha": "578f3a52e5bd5b98b6461aa3458b97229cfef5ec"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/academy-arrival-after.png",
+      "sha": "e2ec47f4275ac1976c9305d37b3316f464854a7a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/academy-arrival-before.png",
+      "sha": "889ccb080aca07d2b4401283095ce5877aaa6e4b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/arrival-pilot-sheet.png",
+      "sha": "75f9efcc1aaa08b768475f0e66fa5df1b79a5b5d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/arrival-roster-sheet-1.png",
+      "sha": "a54a189154aedbac0f3428eed7e3c335b21d929f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/arrival-roster-sheet-2.png",
+      "sha": "66969a25302e6a9de9ed7f5a8a11b4b231fd1754"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/arrival-roster-sheet-3.png",
+      "sha": "e3d0791ddac9b0718e7b6bf0c794eca9cb2eb4a0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/arrival-roster-sheet-4.png",
+      "sha": "db29179b1b8ab78e154dc89b16929064fd007e1f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/arrival-roster-sheet-5.png",
+      "sha": "0bf177934f4d0779df242e22afbc4bb43faabccc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/arrival-roster-sheet-6.png",
+      "sha": "99169d372d1fea102d089bd8b1cf51ef53e62149"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/asylum-arrival-after.png",
+      "sha": "0d514908ad173dff2beecb48d1ea3884c4c445a7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/asylum-arrival-before.png",
+      "sha": "0f20fc52fc40bc68a4a9f4743a4f9173f3a894aa"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/church-arrival-after.png",
+      "sha": "3455ad1cdc641029583b56796dbe33148babe4a7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/church-arrival-before.png",
+      "sha": "e970bf9ee248394853c55795c150d2420825c1c2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/college-arrival-after.png",
+      "sha": "f45c5b6d73cf1a5f230d67e37b05ee3acb5f3ce8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/college-arrival-before.png",
+      "sha": "525134cc84b72c64db91e0fecc432eadad820a03"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/farmhouse-arrival-after.png",
+      "sha": "7fdb15d4ed015b7ff78f9f26e3c454cd192363df"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/farmhouse-arrival-before.png",
+      "sha": "b0e55916a3b5611b756dc8b25220aa00ef60c043"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/mansion-arrival-after.png",
+      "sha": "7c470bf99a9c87aca32df89711903a85997c9ed5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/mansion-arrival-before.png",
+      "sha": "d44ee4d825537f0a299e546519f1608fdc70d349"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/prison-arrival-after.png",
+      "sha": "1e1db23fb6d8593a1edda08bb94198e2ba50d9f9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/prison-arrival-before.png",
+      "sha": "8c8e28a20b91210fcb79a6812ec0b86eb415def2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/rejected-terrain-wld09/wld-09-arrival-after.png",
+      "sha": "9e618d332979b7e77f901d167cc4ef5d0b7ecabb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/rejected-terrain-wld09/wld-09-arrival-before.png",
+      "sha": "e6f5f5cdd7397c9f10c577027dbd4fb18dc814d2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/school-arrival-after.png",
+      "sha": "c16327ee450ff0eecb6f5f220252c2c08bd44968"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/school-arrival-before.png",
+      "sha": "a78ef4cb7cf6aec62de6364fa182b5ca47f9b736"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-03-arrival-after.png",
+      "sha": "8695fb28a7b9f9f0e2a2966fdc203b84b9451e2f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-03-arrival-before.png",
+      "sha": "5395c088e65cf2fea78b4a8814380b31091f7c78"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-04-arrival-after.png",
+      "sha": "e780d175640bdf9ef4125ca5f25451bf9d173f17"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-04-arrival-before.png",
+      "sha": "f4fadf08a9f8eb1bd50de2a88fe264d36c25f675"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-05-arrival-after.png",
+      "sha": "971ec439b1e8943aef70e39fdf743a6cab94ca9d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-05-arrival-before.png",
+      "sha": "a56422597382c68428d58a3c5bcc9cdb4bceeb1f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-06-arrival-after.png",
+      "sha": "c90a5999bfbb312e7e7ca122e931da048bf73e9e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-06-arrival-before.png",
+      "sha": "c7c80086d21a512adeaa8a377d8cdddc13de4285"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-08-arrival-after.png",
+      "sha": "321e47b252418754106ec544ea5393594f1d4dbd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-08-arrival-before.png",
+      "sha": "142d18fd54deb4618b2087a7406a33546b0d0063"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-10-arrival-after.png",
+      "sha": "60b7d65b83982ff3ef0d89fe034fcbceb529909b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-10-arrival-before.png",
+      "sha": "633f0cd9afe72b458169253637da83754799d2e0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-11-arrival-after.png",
+      "sha": "bdde2d8bdccc2dbfd77010aead28aeafda45e866"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-11-arrival-before.png",
+      "sha": "1d9f509411da579007985f0ecc6a0850e9ca165c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-12-arrival-after.png",
+      "sha": "83d7d1ec070f0ff3820f05ab311cfd370f884b9a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-12-arrival-before.png",
+      "sha": "38ed274280cf3b1774bb69a199aab959c2a9460e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-13-arrival-after.png",
+      "sha": "8b270c0b706db9738e7dddc95396a50eabe8a91d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-13-arrival-before.png",
+      "sha": "fc6a274b8ed428b21c7e22bd28d9e8f2e96b475a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-14-arrival-after.png",
+      "sha": "8791414afa517d13e0a9bc16eb0f7496aa5e38b5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-14-arrival-before.png",
+      "sha": "e750400fe24dca0db74c04b0c9e2d32be803c6b9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-16-arrival-after.png",
+      "sha": "32e0fa2d80dd45f2ad1bb2b3cd59b4b415393f2d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-16-arrival-before.png",
+      "sha": "1abe5f0dc2ee9f231be96b7c1a4843227756245b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-17-arrival-after.png",
+      "sha": "b93beffbd9cb62663d28a5bb7b7164dd5ab016b4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-17-arrival-before.png",
+      "sha": "fa2d168bea2664d1cd50e87b281ddc1af2ef2ce3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-18-arrival-after.png",
+      "sha": "576310c42cc2a46aaed32748c423f53b83cb94f2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/arrival-bearing-batch/wld-18-arrival-before.png",
+      "sha": "b6a1e302d246d429e52650b2d3977c24ca8b0ef2"
+    },
+    {
+      "path": "development/levels/rebuild/route-design-pass/README.md",
+      "sha": "b37d26433dbb25e0173f445f93b820f71becc7ab"
+    },
+    {
+      "path": "development/levels/rebuild/route-design-pass/verification/design-input.tsv",
+      "sha": "8ed009a54f308dfc5dc1340adeff89ab59d0c973"
+    },
+    {
+      "path": "development/levels/rebuild/route-design-pass/verification/design-results.tsv",
+      "sha": "08baeb4f29e73a268b556ad7dea788d332963a59"
+    },
+    {
+      "path": "development/levels/rebuild/route-design-pass/verification/design-summary.json",
+      "sha": "de01492e30fca7a9da421c7687e039d543a8a6dc"
+    },
+    {
+      "path": "development/levels/rebuild/route-design-pass/verification/source-bindings.json",
+      "sha": "0eac1c8798639ca07e097bfb5adfec1b3a823b23"
+    },
+    {
+      "path": "development/levels/rebuild/route-design-pass/verification/stair-names.tsv",
+      "sha": "34c8e500a2824762d26fd5a761153580d2567298"
+    },
+    {
+      "path": "development/levels/rebuild/stage-register.json",
+      "sha": "adb8327ce71af3f4023544df2eee4184fd19e247"
+    },
+    {
+      "path": "development/quality/DEFECT_LEDGER.md",
+      "sha": "28a6fc85f429538a2e8ea24591ad7a7eacd99fac"
+    },
+    {
+      "path": "development/quality/defects.json",
+      "sha": "7eb04bb6c37f171e219d6116ce2f9b5379ca2f3c"
+    },
+    {
+      "path": "tools/archive_flat_verification.py",
+      "sha": "c8fbd5f26a4f63d5d26c857578b20f402a1762fb"
+    },
+    {
+      "path": "tools/audit_current_flat_routes.py",
+      "sha": "29acde47451032c999eff3fedc705184a4a1f7bf"
+    },
+    {
+      "path": "tools/audit_macroterrain_fit.py",
+      "sha": "3ce207e2560b471b173a17899b1a934d0751395b"
+    },
+    {
+      "path": "tools/audit_roster_stairs.py",
+      "sha": "d21766bdb3c005aa644d9580c2c2b2e3233ba6c9"
+    },
+    {
+      "path": "tools/build_arrival_bearings.py",
+      "sha": "bc1de2babaa3c8a959ba77f100b32d7981b201c6"
+    },
+    {
+      "path": "tools/build_development_gallery.py",
+      "sha": "60b41e11c9e36607144ce11063bd9a7de5b1c001"
+    },
+    {
+      "path": "tools/design_flat_routes.py",
+      "sha": "fa754a3ea9871e99358e95dc31936540242ee260"
+    },
+    {
+      "path": "tools/index_staged_map_models.py",
+      "sha": "c69db37bcce39aeb3d6aabd72ea0452ebf51f349"
+    },
+    {
+      "path": "tools/java/FlatRouteDesigner.java",
+      "sha": "6cf658a3bec4d6fe5232912a5f1e1d6d3a310cdb"
+    },
+    {
+      "path": "tools/review_arrival_bearings.py",
+      "sha": "622b50cfef97132719372d2ce8dc79cb2972da0d"
+    }
+  ],
+  "gallery_observations": [
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
+      "status": 200,
+      "sha256": "f3113929a9810b2793fd9dc20ef25d8744fb54eb6734eb885cf6cc55f2d3fd39"
+    },
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/development/levels/rebuild/captures/arrival-bearing-batch/arrival-roster-sheet-1.png",
+      "status": 404
+    }
+  ],
+  "limitation": "Remote source delivery only; new gallery image deployment pending accepted integration. No gameplay or hardware acceptance inferred."
+}
