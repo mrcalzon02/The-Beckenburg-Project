@@ -3130,7 +3130,7 @@ public final class LanHost implements AutoCloseable {
                 aiDiagnosticsCsv());
         for(var bot:campaignBots)bot.close();campaignBots.clear();closed=true;if(voice!=null)voice.close();try{listener.close();}catch(IOException ignored){}
         for(Socket s:transports)try{s.close();}catch(IOException ignored){}
-        synchronized(mutex){for(Peer peer:seats)if(peer!=null){try{peer.socket.close();}catch(IOException ignored){}}}
+        synchronized(mutex){houseEncounter.cancel();for(Peer peer:seats)if(peer!=null){try{peer.socket.close();}catch(IOException ignored){}}}
         clock.shutdownNow();workers.shutdownNow();
     }
     private static final class Reservation {

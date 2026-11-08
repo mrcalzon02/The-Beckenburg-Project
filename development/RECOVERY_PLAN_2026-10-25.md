@@ -825,3 +825,11 @@ Encounter WIP d8e6da1c is preserved and remotely verified on map/house-encounter
 Isolated corrupt-primary recovery implementationf3e215fc6c7c9c39464edd405645835a48cfb9ad; exact expanded native/CLI tests and control capture are committed. Publish isolated checkpoint and rerun failed native acceptance; keep live parent365 handle42424140271 unchanged until terminal.
 
 Reconciled isolated recovery sourcec93d141d into encounter work; parent PR82 remains on the same corrected source under its own acceptance runs.
+
+## Requested sync-only checkpoint — 7 November 2026
+
+Owner fridge objection is already fixed in merged PR81/main1fe0e2490a93c5f148f9f16c686ff7794aa7617e: south-wall centre14.9/14.1925/yawPI,6cm rear gap, clear of both doorways. No additional placement or model change in this checkpoint.
+
+Reconciled encounter parent142601aa includes corrected native recoveryc93d141d. Actual solo and four-TCP encounter integration tests pass at256MB, including normal film/no ghost credit, legacy protocol refusal, public pose, independent power, durable rotated reconnect/no replay and owner-disconnect abort. Host close cancels controller. Rejected test fixtures DEV346–349 and final logs retained. Core support/occlusion captures remain inspected; subjective audio and exact-source remote encounter/full/native/GPU acceptance remain pending.
+
+Recovery native42426323930 at c93d141d is SUCCESS; raw complete native/CLI PASS retained. Corrected full365 run42426485514 remains in progress at checkpoint; no inferred acceptance or merge. Main1fe0e249 full42422292792 actual362/0/0/362, installer42422292783 and native42422292731 PASS. New encounter captures remain branch-published only; deployed gallery readback awaits accepted merge. Gallery generated and checked. Stop after sync/commit as requested; next work is parent365 raw result, PR82 closeout and encounter remote acceptance, then House default/final whole-location review and remaining maps.

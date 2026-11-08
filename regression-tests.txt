@@ -350,6 +350,8 @@ HouseRebuildUpgradeTest
 EditorSceneRetentionTest
 SourceImageSharingTest
 HouseEncounterTest
+HouseEncounterSessionTest
+HouseEncounterNetworkTest
 LevelAuthoringRecoveryTest
 CastleWorldTerrainTest
 CastleCellarConstructionTest

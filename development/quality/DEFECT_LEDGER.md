@@ -4716,7 +4716,7 @@ Older-map obligation: No source/live-screen runtime failure inferred from the re
 
 ### DEV-344 — House authored train encounter has no runtime implementation
 
-**Status:** CORE IMPLEMENTED; source/occlusion/ownership/reset/support/render checks pass; actual solo/TCP/photo/audio acceptance pending · **Affected:** House first-principles story/atmosphere stage
+**Status:** CORE/SOLO/REAL4TCP PASS LOCALLY; remote encounter and subjective audio/whole-location acceptance pending · **Affected:** House first-principles story/atmosphere stage
 
 Supported records and loose belongings existed, but the required individually authored optional location encounter remained plan-only.
 
@@ -4724,13 +4724,13 @@ Cause / uncertainty: No location-specific host/solo controller was connected to 
 
 Fix / next action: Add an original once-per-round supported wooden-train turn while room is empty and investigators lack full-object sight. Reuse real loose-state replication and source support, add original ambient audio, protect possession/death/disconnect/timeout and evidence negatives. Protocol3 is a separate explicit compatibility checkpoint.
 
-Evidence and verification: HouseEncounterTest; actual before/after runtime captures and original windup WAV; remaining integration tests pending
+Evidence and verification: HouseEncounterTest; HouseEncounterSessionTest; HouseEncounterNetworkTest; actual before/after captures and original windup WAV; house-encounter-2026-11-07 proof directory
 
 Older-map obligation: Each location needs its own authored encounter, predicates, host/privacy/evidence/reset and actual visual/audio review.
 
 ### DEV-345 — House CLI recovery reads corrupt primary architecture before restoring valid backup
 
-**Status:** SCOPED CORRECTION PASS; actual failing CLI script and expanded backup matrix pass locally; corrected-source native CI pending · **Affected:** PR82 native42424140546; explicit editor-agent --recover bootstrap after primary corruption
+**Status:** CORRECTED SOURCE NATIVE CI PASS 42426323930 at c93d141d; full365 run42426485514 still observed in progress · **Affected:** PR82 native42424140546; explicit editor-agent --recover bootstrap after primary corruption
 
 Windows native migration/GUI checks pass, but corrupt-start CLI recovery fails because LevelPlans.buildSource selects architecture by decoding the corrupt primary before the previous document is restored.
 
@@ -4738,9 +4738,65 @@ Cause / uncertainty: New source selection preceded existing primary-corruption r
 
 Fix / next action: Use a fixed legacy parse fallback for House bootstrap and select/validate architectural authority from the backup being restored. Preserve previous identity/future metadata checks and validate required rebuilt attachments before replacement. Added actual versionless/rebuilt byte-exact bootstrap plus foreign/future/detached-service refusal tests. Rerun the exact previously failing CLI script.
 
-Evidence and verification: development/levels/rebuild/verification/house-native-recovery-2026-11-07/; native-42424140546-failed.log; LevelAuthoringRecoveryTest; actual verify_editor_agent_cli.py PASS
+Evidence and verification: development/levels/rebuild/verification/house-native-recovery-2026-11-07/; native-42424140546-failed.log; LevelAuthoringRecoveryTest; actual verify_editor_agent_cli.py PASS; corrected native-42426323930.log actual complete native/CLI PASS
 
 Older-map obligation: Audit pre-recovery source/version selection independently for every other native adapter. This correction does not accept unaudited maps.
+
+### DEV-346 — Encounter test compile omitted existing helper classes and used nonexistent resume API
+
+**Status:** TEST FIXTURE CORRECTED; final actual solo and four-TCP checks PASS · **Affected:** New House encounter integration test fixture
+
+Initial verification attempt failed; rejected evidence preserved.
+
+Cause / uncertainty: Partial javac omitted helper dependencies and referenced confirmResumeTicket.
+
+Fix / next action: Compile actual helpers and use acknowledgeStoredResume.
+
+Evidence and verification: development/levels/rebuild/verification/house-encounter-2026-11-07/house-encounter-rejected-helper-and-resume-api.log; final HouseEncounterSessionTest.log and HouseEncounterNetworkTest.log
+
+Older-map obligation: No older-map runtime defect or acceptance inferred from this fixture correction.
+
+### DEV-347 — Reconnect test acknowledged a fresh nonrotated token
+
+**Status:** TEST FIXTURE CORRECTED; final actual solo and four-TCP checks PASS · **Affected:** New House encounter integration test fixture
+
+Initial verification attempt failed; rejected evidence preserved.
+
+Cause / uncertainty: Fixture attempted RESUMEACK on initial welcome instead of resumed token rotation.
+
+Fix / next action: Persist real capability and acknowledge only after reconnect rotation.
+
+Evidence and verification: development/levels/rebuild/verification/house-encounter-2026-11-07/house-encounter-rejected-fresh-token-ack.log; final HouseEncounterSessionTest.log and HouseEncounterNetworkTest.log
+
+Older-map obligation: No older-map runtime defect or acceptance inferred from this fixture correction.
+
+### DEV-348 — Encounter fixture jumped host clock past ghost authority
+
+**Status:** TEST FIXTURE CORRECTED; final actual solo and four-TCP checks PASS · **Affected:** New House encounter integration test fixture
+
+Initial verification attempt failed; rejected evidence preserved.
+
+Cause / uncertainty: Direct tick jump violated GhostDomain contiguous-clock contract.
+
+Fix / next action: Advance every actual host tick through eligibility; no production clock relaxation.
+
+Evidence and verification: development/levels/rebuild/verification/house-encounter-2026-11-07/house-encounter-rejected-clock-jump.log; final HouseEncounterSessionTest.log and HouseEncounterNetworkTest.log
+
+Older-map obligation: No older-map runtime defect or acceptance inferred from this fixture correction.
+
+### DEV-349 — Encounter fixture discarded sound while waiting for later pose
+
+**Status:** TEST FIXTURE CORRECTED; final actual solo and four-TCP checks PASS · **Affected:** New House encounter integration test fixture
+
+Initial verification attempt failed; rejected evidence preserved.
+
+Cause / uncertainty: Fixture awaited CLUTTER before earlier SOUND and used a closed acoustic path.
+
+Fix / next action: Await sound first and use actual occluded but acoustically connected corner; retain source cue gain.
+
+Evidence and verification: development/levels/rebuild/verification/house-encounter-2026-11-07/house-encounter-rejected-cue-order-fixture.log; final HouseEncounterSessionTest.log and HouseEncounterNetworkTest.log
+
+Older-map obligation: No older-map runtime defect or acceptance inferred from this fixture correction.
 
 ## Required audit categories
 
