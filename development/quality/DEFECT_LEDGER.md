@@ -4728,6 +4728,48 @@ Evidence and verification: development/levels/rebuild/verification/house-native-
 
 Older-map obligation: Audit pre-recovery source/version selection independently for every other native adapter. This correction does not accept unaudited maps.
 
+### DEV-350 — Live-clock gait acceptance skips stride under cold render delays
+
+**Status:** SCOPED FIXTURE CORRECTION PASS LOCALLY; new remote full365 pending · **Affected:** LanHunterAnimationGameplayTest and parent recovery acceptance
+
+Full42426485514 reports364/1/0/365; cleric renders IDLE/WALK_A but no WALK_B.
+
+Cause / uncertainty: Host advances during seconds-long renderer/capture work; tracker intentionally resets gait after missing a second of observations.
+
+Fix / next action: Quiesce scheduler, invoke every actual host tick and await normal network body/posture batches. Retain all original three-role movement/idle/Ctrl/reset/departure assertions and deliberately delay capture1.1seconds. Added stale-gap/reset/A-B recovery unit controls.
+
+Evidence and verification: development/levels/rebuild/verification/hunter-gait-recovery-2026-11-07/; full-42426485514.log; hunter-gait-recovery-gameplay.log; hunter-gait-recovery-unit.log
+
+Older-map obligation: No production gait, other-map art, GPU gait or physical FPS acceptance inferred. Existing stale-observation reset remains unchanged.
+
+### DEV-351 — Gait fixture mistakes invalid zero-vector STEP for a stop command
+
+**Status:** SCOPED FIXTURE CORRECTION PASS LOCALLY; new remote full365 pending · **Affected:** LanHunterAnimationGameplayTest and parent recovery acceptance
+
+Controlled-clock fixture waits forever for a posture update after STEP(0,0).
+
+Cause / uncertainty: Motion vectors must be nonzero; the old live-clock test accidentally relied on unrelated periodic snapshots after rejection.
+
+Fix / next action: Stop sending movement, advance real ticks and await an actual stationary world snapshot; do not relax motion validation.
+
+Evidence and verification: development/levels/rebuild/verification/hunter-gait-recovery-2026-11-07/; hunter-gait-rejected-zero-step-fixture.log; hunter-gait-recovery-gameplay.log
+
+Older-map obligation: No production gait, other-map art, GPU gait or physical FPS acceptance inferred. Existing stale-observation reset remains unchanged.
+
+### DEV-352 — Controlled gait fixture reads STATE before completed body snapshot
+
+**Status:** SCOPED FIXTURE CORRECTION PASS LOCALLY; new remote full365 pending · **Affected:** LanHunterAnimationGameplayTest and parent recovery acceptance
+
+First controlled-clock stationary retry still renders an older moving body.
+
+Cause / uncertainty: Host periodic STATE precedes its world body/posture batch.
+
+Fix / next action: Wait through the actual final hunter posture row of that tick before rendering. No forged body or panel clock.
+
+Evidence and verification: development/levels/rebuild/verification/hunter-gait-recovery-2026-11-07/; hunter-gait-rejected-state-before-body-fixture.log; hunter-gait-recovery-gameplay.log
+
+Older-map obligation: No production gait, other-map art, GPU gait or physical FPS acceptance inferred. Existing stale-observation reset remains unchanged.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

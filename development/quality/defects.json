@@ -3708,6 +3708,39 @@
       "action": "Use a fixed legacy parse fallback for House bootstrap and select/validate architectural authority from the backup being restored. Preserve previous identity/future metadata checks and validate required rebuilt attachments before replacement. Added actual versionless/rebuilt byte-exact bootstrap plus foreign/future/detached-service refusal tests. Rerun the exact previously failing CLI script.",
       "evidence": "development/levels/rebuild/verification/house-native-recovery-2026-11-07/; native-42424140546-failed.log; LevelAuthoringRecoveryTest; actual verify_editor_agent_cli.py PASS",
       "older_maps": "Audit pre-recovery source/version selection independently for every other native adapter. This correction does not accept unaudited maps."
+    },
+    {
+      "id": "DEV-350",
+      "title": "Live-clock gait acceptance skips stride under cold render delays",
+      "status": "SCOPED FIXTURE CORRECTION PASS LOCALLY; new remote full365 pending",
+      "affected": "LanHunterAnimationGameplayTest and parent recovery acceptance",
+      "symptom": "Full42426485514 reports364/1/0/365; cleric renders IDLE/WALK_A but no WALK_B.",
+      "cause": "Host advances during seconds-long renderer/capture work; tracker intentionally resets gait after missing a second of observations.",
+      "action": "Quiesce scheduler, invoke every actual host tick and await normal network body/posture batches. Retain all original three-role movement/idle/Ctrl/reset/departure assertions and deliberately delay capture1.1seconds. Added stale-gap/reset/A-B recovery unit controls.",
+      "evidence": "development/levels/rebuild/verification/hunter-gait-recovery-2026-11-07/; full-42426485514.log; hunter-gait-recovery-gameplay.log; hunter-gait-recovery-unit.log",
+      "older_maps": "No production gait, other-map art, GPU gait or physical FPS acceptance inferred. Existing stale-observation reset remains unchanged."
+    },
+    {
+      "id": "DEV-351",
+      "title": "Gait fixture mistakes invalid zero-vector STEP for a stop command",
+      "status": "SCOPED FIXTURE CORRECTION PASS LOCALLY; new remote full365 pending",
+      "affected": "LanHunterAnimationGameplayTest and parent recovery acceptance",
+      "symptom": "Controlled-clock fixture waits forever for a posture update after STEP(0,0).",
+      "cause": "Motion vectors must be nonzero; the old live-clock test accidentally relied on unrelated periodic snapshots after rejection.",
+      "action": "Stop sending movement, advance real ticks and await an actual stationary world snapshot; do not relax motion validation.",
+      "evidence": "development/levels/rebuild/verification/hunter-gait-recovery-2026-11-07/; hunter-gait-rejected-zero-step-fixture.log; hunter-gait-recovery-gameplay.log",
+      "older_maps": "No production gait, other-map art, GPU gait or physical FPS acceptance inferred. Existing stale-observation reset remains unchanged."
+    },
+    {
+      "id": "DEV-352",
+      "title": "Controlled gait fixture reads STATE before completed body snapshot",
+      "status": "SCOPED FIXTURE CORRECTION PASS LOCALLY; new remote full365 pending",
+      "affected": "LanHunterAnimationGameplayTest and parent recovery acceptance",
+      "symptom": "First controlled-clock stationary retry still renders an older moving body.",
+      "cause": "Host periodic STATE precedes its world body/posture batch.",
+      "action": "Wait through the actual final hunter posture row of that tick before rendering. No forged body or panel clock.",
+      "evidence": "development/levels/rebuild/verification/hunter-gait-recovery-2026-11-07/; hunter-gait-rejected-state-before-body-fixture.log; hunter-gait-recovery-gameplay.log",
+      "older_maps": "No production gait, other-map art, GPU gait or physical FPS acceptance inferred. Existing stale-observation reset remains unchanged."
     }
   ],
   "audit_categories": [
